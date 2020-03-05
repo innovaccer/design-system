@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import Text from '@/components/atoms/text';
-import Icon from '../icon';
+import Icon from '@/components/atoms/icon';
 
 export type Size = 'regular' | 'tiny';
 
