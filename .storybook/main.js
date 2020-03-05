@@ -44,7 +44,6 @@ module.exports = {
     ];
     
     const newRules = rules.concat(customRules);
-    console.log(newRules)
 
     return { ...config, module: { ...config.module, rules: newRules}, resolve: { ...config.resolve, alias: { ...config.resolve.alias,  ...custom.resolve.alias}}}
   }

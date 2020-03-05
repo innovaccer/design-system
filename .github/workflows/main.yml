@@ -9,7 +9,7 @@ jobs:
       - name: Run chromatic test
         uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
+          node-version: '12.16.1'
       - run: npm install
       - run: npm run build-css
       - run: npm run chromatic
