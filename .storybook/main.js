@@ -20,6 +20,32 @@ module.exports = {
     }
   ],
   webpackFinal: (config) => {
-    return { ...config, resolve: { ...config.resolve, alias: { ...config.resolve.alias,  ...custom.resolve.alias}}}
+  
+    const rules = config.module.rules;
+    const customRules = [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+        include: path.resolve(__dirname, '../')
+      },
+       {
+        test: /\.woff($|\?)/,
+        loader: 'file-loader?limit=65000&mimetype=application/font-woff&name=[name].[ext]'
+      }, {
+        test: /\.woff2($|\?)/,
+        loader: 'file-loader?limit=65000&mimetype=application/font-woff2&name=[name].[ext]'
+      }, {
+        test: /\.[ot]tf($|\?)/,
+        loader: 'file-loader?limit=65000&mimetype=application/octet-stream&name=[name].[ext]'
+      }, {
+        test: /\.eot($|\?)/,
+        loader: 'file-loader?limit=65000&mimetype=application/vnd.ms-fontobject&name=[name].[ext]'
+      } 
+    ];
+    
+    const newRules = rules.concat(customRules);
+    console.log(newRules)
+
+    return { ...config, module: { ...config.module, rules: newRules}, resolve: { ...config.resolve, alias: { ...config.resolve.alias,  ...custom.resolve.alias}}}
   }
 };
