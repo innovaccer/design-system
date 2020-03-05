@@ -1,0 +1,17 @@
+# name: "Chromatic"
+# on: [push]
+
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v1
+#       - name: Run test
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: '12.x'
+#       - run: npm install
+#       - run: npm run chromatic
+#         env:
+#           CHROMATIC_APP_CODE: ${{ secrets.CHROMATIC_APP_CODE }}
+#           CI: true

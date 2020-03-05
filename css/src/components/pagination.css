@@ -1,0 +1,40 @@
+/* pagination */
+
+.Pagination {
+    display: flex;
+    vertical-align: middle;
+}
+
+.Pagination .Button {
+    width: var(--spacing-5);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.Pagination-pageIndex {
+    display: flex;
+    align-items: center;
+    padding-left: var(--spacing-xl);
+    padding-right: var(--spacing-xl);
+}
+
+.Pagination-pageIndex .Input{
+    min-width: var(--spacing-3);
+    width: var(--spacing-5);
+    
+    margin-right: var(--spacing);
+}
+
+.Pagination-pageIndex .Input-input {
+    text-align: center;
+}
+
+.Pagination-pageIndex .Input-input::-webkit-inner-spin-button,
+.Pagination-pageIndex .Input-input::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+.Pagination-pageIndex .Input-input {
+    -moz-appearance: textfield;
+}

@@ -1,0 +1,12 @@
+.Popover {
+  border-radius: var(--spacing-m);
+  position: absolute;
+  z-index: 999999;
+  background: var(--white);
+  box-shadow: var(--shadow-m);
+}
+
+.Popover--dark {
+  background: var(--inverse);
+  color: var(--white);
+}

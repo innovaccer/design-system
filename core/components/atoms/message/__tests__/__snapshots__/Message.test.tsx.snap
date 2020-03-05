@@ -1,0 +1,307 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message component 
+  
+ 1`] = `
+<div
+  className="Message Message--default"
+>
+  <div>
+    <div
+      className="Message-description"
+    >
+      Description goes here
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message component 
+  appearance: "alert"
+ 1`] = `
+<div
+  className="Message Message--alert"
+>
+  <div
+    className="Message-icon Message-icon--alert"
+  >
+    <Icon
+      appearance="alert"
+      name="error"
+      size={16}
+    />
+  </div>
+  <div>
+    <div
+      className="Message-description"
+    >
+      Description goes here
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message component 
+  appearance: "alert", title: "Title goes here"
+ 1`] = `
+<div
+  className="Message Message--alert"
+>
+  <div
+    className="Message-icon Message-icon--alert Message-icon--withTitle"
+  >
+    <Icon
+      appearance="alert"
+      name="error"
+      size={16}
+    />
+  </div>
+  <div>
+    <div
+      className="Message-title"
+    >
+      <Heading>
+        Title goes here
+      </Heading>
+    </div>
+    <div
+      className="Message-description"
+    >
+      Description goes here
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message component 
+  appearance: "default"
+ 1`] = `
+<div
+  className="Message Message--default"
+>
+  <div>
+    <div
+      className="Message-description"
+    >
+      Description goes here
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message component 
+  appearance: "default", title: "Title goes here"
+ 1`] = `
+<div
+  className="Message Message--default"
+>
+  <div>
+    <div
+      className="Message-title"
+    >
+      <Heading>
+        Title goes here
+      </Heading>
+    </div>
+    <div
+      className="Message-description"
+    >
+      Description goes here
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message component 
+  appearance: "info"
+ 1`] = `
+<div
+  className="Message Message--info"
+>
+  <div
+    className="Message-icon Message-icon--info"
+  >
+    <Icon
+      appearance="info"
+      name="info"
+      size={16}
+    />
+  </div>
+  <div>
+    <div
+      className="Message-description"
+    >
+      Description goes here
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message component 
+  appearance: "info", title: "Title goes here"
+ 1`] = `
+<div
+  className="Message Message--info"
+>
+  <div
+    className="Message-icon Message-icon--info Message-icon--withTitle"
+  >
+    <Icon
+      appearance="info"
+      name="info"
+      size={16}
+    />
+  </div>
+  <div>
+    <div
+      className="Message-title"
+    >
+      <Heading>
+        Title goes here
+      </Heading>
+    </div>
+    <div
+      className="Message-description"
+    >
+      Description goes here
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message component 
+  appearance: "success"
+ 1`] = `
+<div
+  className="Message Message--success"
+>
+  <div
+    className="Message-icon Message-icon--success"
+  >
+    <Icon
+      appearance="success"
+      name="check_circle"
+      size={16}
+    />
+  </div>
+  <div>
+    <div
+      className="Message-description"
+    >
+      Description goes here
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message component 
+  appearance: "success", title: "Title goes here"
+ 1`] = `
+<div
+  className="Message Message--success"
+>
+  <div
+    className="Message-icon Message-icon--success Message-icon--withTitle"
+  >
+    <Icon
+      appearance="success"
+      name="check_circle"
+      size={16}
+    />
+  </div>
+  <div>
+    <div
+      className="Message-title"
+    >
+      <Heading>
+        Title goes here
+      </Heading>
+    </div>
+    <div
+      className="Message-description"
+    >
+      Description goes here
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message component 
+  appearance: "warning"
+ 1`] = `
+<div
+  className="Message Message--warning"
+>
+  <div
+    className="Message-icon Message-icon--warning"
+  >
+    <Icon
+      appearance="warning"
+      name="warning"
+      size={16}
+    />
+  </div>
+  <div>
+    <div
+      className="Message-description"
+    >
+      Description goes here
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message component 
+  appearance: "warning", title: "Title goes here"
+ 1`] = `
+<div
+  className="Message Message--warning"
+>
+  <div
+    className="Message-icon Message-icon--warning Message-icon--withTitle"
+  >
+    <Icon
+      appearance="warning"
+      name="warning"
+      size={16}
+    />
+  </div>
+  <div>
+    <div
+      className="Message-title"
+    >
+      <Heading>
+        Title goes here
+      </Heading>
+    </div>
+    <div
+      className="Message-description"
+    >
+      Description goes here
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Message component 
+  title: "Title goes here"
+ 1`] = `
+<div
+  className="Message Message--default"
+>
+  <div>
+    <div
+      className="Message-title"
+    >
+      <Heading>
+        Title goes here
+      </Heading>
+    </div>
+    <div
+      className="Message-description"
+    >
+      Description goes here
+    </div>
+  </div>
+</div>
+`;

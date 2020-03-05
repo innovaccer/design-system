@@ -1,0 +1,97 @@
+/* badge */
+
+.Checkbox {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.Checkbox .Checkbox-input {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+
+/* Type: Unchecked  */
+
+.Checkbox-wrapper {
+    top: 0;
+    left: 0;
+    border: var(--border);
+    border-radius: var(--spacing-s);
+    margin-right: var(--spacing);
+    display: flex;
+    align-items: center;
+}
+
+.Checkbox-wrapper--regular {
+    height: var(--spacing-2);
+    width: var(--spacing-2);
+}
+
+.Checkbox-wrapper--tiny {
+    height: var(--spacing);
+    width: var(--spacing);
+}
+
+.Checkbox-wrapper:hover {
+    border: var(--spacing-xs) solid var(--inverse-lightest);
+    background-color: var(--shadow-0);
+}
+
+.Checkbox-wrapper:active {
+    border: var(--spacing-xs) solid var(--inverse-lightest);
+    background-color: var(--secondary-light);
+}
+
+.Checkbox-wrapper:focus {
+    border: var(--border);
+    background-color: var(--shadow-0);
+}
+
+.Checkbox--disabled .Checkbox-wrapper {
+    border: var(--spacing-xs) solid var(--secondary-light);
+    background-color: var(--secondary-lightest);
+    pointer-events: none;
+}
+
+
+/* Type: checked && Type: indeterminate  */
+
+.Checkbox-wrapper--checked,
+.Checkbox-wrapper--intermediate {
+    background-color: var(--primary);
+    border: 0;
+}
+
+.Checkbox-wrapper--checked:hover,
+.Checkbox-wrapper--intermediate:hover {
+    background-color: var(--primary-dark);
+    border: 0;
+}
+
+.Checkbox-wrapper--checked:active,
+.Checkbox-wrapper--intermediate:active {
+    background-color: var(--primary-darker);
+    border: 0;
+}
+
+.Checkbox-wrapper--checked:focus,
+.Checkbox-wrapper--intermediate:focus {
+    background-color: var(--primary);
+    border: 0;
+}
+
+.Checkbox--disabled .Checkbox-wrapper--checked,
+.Checkbox--disabled .Checkbox-wrapper--intermediate {
+    background-color: var(--primary-lighter);
+    border: 0;
+    pointer-events: none;
+}

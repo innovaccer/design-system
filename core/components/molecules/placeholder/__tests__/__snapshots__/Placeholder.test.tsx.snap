@@ -1,0 +1,1457 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Placeholder component 
+  
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  imageSize: "large"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  imageSize: "large", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  imageSize: "medium"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  imageSize: "medium", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  imageSize: "small"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  imageSize: "small", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  round: false
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  round: false, imageSize: "large"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  round: false, imageSize: "large", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  round: false, imageSize: "medium"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  round: false, imageSize: "medium", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  round: false, imageSize: "small"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  round: false, imageSize: "small", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  round: false, style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  round: true
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  round: true, imageSize: "large"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  round: true, imageSize: "large", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  round: true, imageSize: "medium"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  round: true, imageSize: "medium", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  round: true, imageSize: "small"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  round: true, imageSize: "small", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  round: true, style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, imageSize: "large"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, imageSize: "large", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, imageSize: "medium"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, imageSize: "medium", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, imageSize: "small"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, imageSize: "small", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, round: false
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, round: false, imageSize: "large"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, round: false, imageSize: "large", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, round: false, imageSize: "medium"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, round: false, imageSize: "medium", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, round: false, imageSize: "small"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, round: false, imageSize: "small", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, round: false, style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, round: true
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, round: true, imageSize: "large"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, round: true, imageSize: "large", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, round: true, imageSize: "medium"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, round: true, imageSize: "medium", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, round: true, imageSize: "small"
+ 1`] = `
+<div
+  className="Placeholder"
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, round: true, imageSize: "small", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, round: true, style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: false, style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+>
+  <Image
+    imageSize="small"
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, imageSize: "large"
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+>
+  <Image
+    imageSize="large"
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, imageSize: "large", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <Image
+    imageSize="large"
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, imageSize: "medium"
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+>
+  <Image
+    imageSize="medium"
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, imageSize: "medium", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <Image
+    imageSize="medium"
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, imageSize: "small"
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+>
+  <Image
+    imageSize="small"
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, imageSize: "small", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <Image
+    imageSize="small"
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, round: false
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+>
+  <Image
+    imageSize="small"
+    round={false}
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, round: false, imageSize: "large"
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+>
+  <Image
+    imageSize="large"
+    round={false}
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, round: false, imageSize: "large", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <Image
+    imageSize="large"
+    round={false}
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, round: false, imageSize: "medium"
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+>
+  <Image
+    imageSize="medium"
+    round={false}
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, round: false, imageSize: "medium", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <Image
+    imageSize="medium"
+    round={false}
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, round: false, imageSize: "small"
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+>
+  <Image
+    imageSize="small"
+    round={false}
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, round: false, imageSize: "small", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <Image
+    imageSize="small"
+    round={false}
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, round: false, style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <Image
+    imageSize="small"
+    round={false}
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, round: true
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+>
+  <Image
+    imageSize="small"
+    round={true}
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, round: true, imageSize: "large"
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+>
+  <Image
+    imageSize="large"
+    round={true}
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, round: true, imageSize: "large", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <Image
+    imageSize="large"
+    round={true}
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, round: true, imageSize: "medium"
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+>
+  <Image
+    imageSize="medium"
+    round={true}
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, round: true, imageSize: "medium", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <Image
+    imageSize="medium"
+    round={true}
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, round: true, imageSize: "small"
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+>
+  <Image
+    imageSize="small"
+    round={true}
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, round: true, imageSize: "small", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <Image
+    imageSize="small"
+    round={true}
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, round: true, style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <Image
+    imageSize="small"
+    round={true}
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;
+
+exports[`Placeholder component 
+  withImage: true, style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Placeholder Placeholder--withImage"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <Image
+    imageSize="small"
+  />
+  <div
+    className="ml-4 w-100"
+  >
+    <Paragraph
+      length="small"
+    />
+  </div>
+</div>
+`;

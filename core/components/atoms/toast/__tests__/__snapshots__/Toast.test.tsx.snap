@@ -1,0 +1,4977 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toast component 
+  open: false, title: "Sample Toast"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "alert"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "alert", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "alert", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "alert", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "alert", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "alert", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "alert", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "alert", message: "Sample string"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "alert", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "alert", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "alert", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "alert", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "alert", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "alert", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "alert", message: "Sample string", onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "alert", onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "default"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "default", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "default", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "default", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "default", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "default", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "default", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "default", message: "Sample string"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "default", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "default", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "default", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "default", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "default", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "default", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "default", message: "Sample string", onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "default", onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "info"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "info", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "info", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "info", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "info", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "info", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "info", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "info", message: "Sample string"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "info", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "info", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "info", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "info", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "info", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "info", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "info", message: "Sample string", onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "info", onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "success"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "success", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "success", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "success", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "success", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "success", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "success", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "success", message: "Sample string"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "success", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "success", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "success", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "success", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "success", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "success", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "success", message: "Sample string", onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "success", onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "warning"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "warning", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "warning", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "warning", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "warning", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "warning", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "warning", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "warning", message: "Sample string"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "warning", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "warning", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "warning", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "warning", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "warning", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "warning", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "warning", message: "Sample string", onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", appearance: "warning", onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", message: "Sample string"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", message: "Sample string", onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: false, title: "Sample Toast", onClose: "[Function]"
+ 1`] = `""`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="default"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="default"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "alert"
+ 1`] = `
+<div
+  className="Toast Toast--alert"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "alert", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--alert"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="alert"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="alert"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "alert", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--alert"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="alert"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="alert"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "alert", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--alert"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="alert"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "alert", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--alert"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="alert"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "alert", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--alert"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="alert"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "alert", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--alert"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="alert"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "alert", message: "Sample string"
+ 1`] = `
+<div
+  className="Toast Toast--alert"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "alert", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--alert"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="alert"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="alert"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "alert", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--alert"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="alert"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="alert"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "alert", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--alert"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="alert"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "alert", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--alert"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="alert"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "alert", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--alert"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="alert"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "alert", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--alert"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="alert"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "alert", message: "Sample string", onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--alert"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "alert", onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--alert"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "default"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "default", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="default"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "default", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="default"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "default", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "default", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "default", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "default", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "default", message: "Sample string"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "default", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="default"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "default", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="default"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "default", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "default", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "default", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "default", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "default", message: "Sample string", onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "default", onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "info"
+ 1`] = `
+<div
+  className="Toast Toast--info"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "info", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--info"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="info"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="info"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "info", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--info"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="info"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="info"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "info", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--info"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="info"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "info", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--info"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="info"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "info", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--info"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="info"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "info", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--info"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="info"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "info", message: "Sample string"
+ 1`] = `
+<div
+  className="Toast Toast--info"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "info", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--info"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="info"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="info"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "info", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--info"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="info"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="info"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "info", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--info"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="info"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "info", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--info"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="info"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "info", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--info"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="info"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "info", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--info"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="info"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "info", message: "Sample string", onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--info"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "info", onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--info"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "success"
+ 1`] = `
+<div
+  className="Toast Toast--success"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    check_circle
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "success", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--success"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    check_circle
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="success"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="success"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "success", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--success"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    check_circle
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="success"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="success"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "success", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--success"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    check_circle
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="success"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "success", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--success"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    check_circle
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="success"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "success", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--success"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    check_circle
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="success"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "success", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--success"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    check_circle
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="success"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "success", message: "Sample string"
+ 1`] = `
+<div
+  className="Toast Toast--success"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    check_circle
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "success", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--success"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    check_circle
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="success"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="success"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "success", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--success"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    check_circle
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="success"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="success"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "success", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--success"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    check_circle
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="success"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "success", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--success"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    check_circle
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="success"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "success", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--success"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    check_circle
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="success"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "success", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--success"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    check_circle
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="success"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "success", message: "Sample string", onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--success"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    check_circle
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "success", onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--success"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    check_circle
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "warning"
+ 1`] = `
+<div
+  className="Toast Toast--warning"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="default"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "warning", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--warning"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="default"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="warning"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="warning"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "warning", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--warning"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="default"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="warning"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="warning"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "warning", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--warning"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="default"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="warning"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "warning", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--warning"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="default"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="warning"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "warning", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--warning"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="default"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="warning"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "warning", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--warning"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="default"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="warning"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "warning", message: "Sample string"
+ 1`] = `
+<div
+  className="Toast Toast--warning"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="default"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="default"
+      >
+        Sample string
+      </Text>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "warning", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--warning"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="default"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="default"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="warning"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="warning"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "warning", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--warning"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="default"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="default"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="warning"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="warning"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "warning", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--warning"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="default"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="default"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="warning"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "warning", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--warning"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="default"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="default"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="warning"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "warning", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--warning"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="default"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="default"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="warning"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "warning", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--warning"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="default"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="default"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="warning"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "warning", message: "Sample string", onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--warning"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="default"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="default"
+      >
+        Sample string
+      </Text>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", appearance: "warning", onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--warning"
+>
+  <i
+    className="material-icons Toast-icon Toast-icon--left"
+  >
+    info
+  </i>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="default"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", message: "Sample string"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="default"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"},{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+      <ActionButton
+        appearance="default"
+        key="1"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", message: "Sample string", actions: [{"label":"Action 1","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 1"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}]
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", message: "Sample string", actions: [{"label":"Action 2","onClick":"[Function]"}], onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+    <div
+      className="Toast-actions"
+    >
+      <ActionButton
+        appearance="default"
+        key="0"
+        label="Action 2"
+        onClick={[MockFunction]}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", message: "Sample string", onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title Toast-title--withMessage"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+    <div
+      className="Toast-message"
+    >
+      <Text
+        appearance="white"
+      >
+        Sample string
+      </Text>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast component 
+  open: true, title: "Sample Toast", onClose: "[Function]"
+ 1`] = `
+<div
+  className="Toast Toast--default"
+>
+  <div
+    className="Toast-body"
+  >
+    <div
+      className="Toast-title"
+    >
+      <Heading
+        appearance="white"
+      >
+        Sample Toast
+      </Heading>
+      <div
+        onClick={[Function]}
+      >
+        <i
+          className="material-icons Toast-icon Toast-icon--right"
+        >
+          close
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+`;

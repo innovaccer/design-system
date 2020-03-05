@@ -1,0 +1,75 @@
+@keyframes shimmer {
+  0%{
+    background-position: -500px 0
+  }
+  100%{
+    background-position: 500px 0
+  }
+}
+
+.Placeholder--animation {
+  border-radius: var(--spacing-m);
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+  background: var(--secondary-lightest);
+  background: linear-gradient(to right, var(--secondary-lighter) 8%, var(--secondary-dark) 18%, var(--secondary-lighter) 33%);
+  background-size: 1000px 104px;
+}
+
+.Placeholder {
+  display: block;
+}
+
+.Placeholder--withImage {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.Placeholder-paragraph {
+  height: 16px;
+  margin-bottom: 8px;
+}
+
+.Placeholder-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.Placeholder-paragraph--small {
+  width: 33%;
+}
+
+.Placeholder-paragraph--medium {
+  width: 60%;
+}
+
+.Placeholder-paragraph--large {
+  width: 100%;
+}
+
+.Placeholder-image {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.Placeholder-image--small {
+  width: 16px;
+  height: 16px;
+}
+
+.Placeholder-image--medium {
+  width: 32px;
+  height: 32px;
+}
+
+.Placeholder-image--large {
+  width: 48px;
+  height: 48px;
+}
+
+.Placeholder-image--round {
+  border-radius: 50%;
+}

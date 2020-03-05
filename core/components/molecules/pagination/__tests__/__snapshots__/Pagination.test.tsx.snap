@@ -1,0 +1,721 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination component 
+  totalPages: 50, onPageChange: "[Function]"
+ 1`] = `
+<div
+  className="Pagination Pagination--basic"
+>
+  <Button
+    appearance="transparent"
+    disabled={true}
+    icon="first_page"
+    onClick={[Function]}
+    size="large"
+  />
+  <div
+    className="ml-4 mx-3"
+  >
+    <Button
+      disabled={true}
+      icon="navigate_before"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <div
+    className="mr-4 mx-3"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_next"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="last_page"
+    onClick={[Function]}
+    size="large"
+  />
+</div>
+`;
+
+exports[`Pagination component 
+  totalPages: 50, onPageChange: "[Function]", page: 1
+ 1`] = `
+<div
+  className="Pagination Pagination--basic"
+>
+  <Button
+    appearance="transparent"
+    disabled={true}
+    icon="first_page"
+    onClick={[Function]}
+    size="large"
+  />
+  <div
+    className="ml-4 mx-3"
+  >
+    <Button
+      disabled={true}
+      icon="navigate_before"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <div
+    className="mr-4 mx-3"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_next"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="last_page"
+    onClick={[Function]}
+    size="large"
+  />
+</div>
+`;
+
+exports[`Pagination component 
+  totalPages: 50, onPageChange: "[Function]", page: 5
+ 1`] = `
+<div
+  className="Pagination Pagination--basic"
+>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="first_page"
+    onClick={[Function]}
+    size="large"
+  />
+  <div
+    className="ml-4 mx-3"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_before"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <div
+    className="mr-4 mx-3"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_next"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="last_page"
+    onClick={[Function]}
+    size="large"
+  />
+</div>
+`;
+
+exports[`Pagination component 
+  totalPages: 50, onPageChange: "[Function]", page: 10
+ 1`] = `
+<div
+  className="Pagination Pagination--basic"
+>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="first_page"
+    onClick={[Function]}
+    size="large"
+  />
+  <div
+    className="ml-4 mx-3"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_before"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <div
+    className="mr-4 mx-3"
+  >
+    <Button
+      disabled={true}
+      icon="navigate_next"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <Button
+    appearance="transparent"
+    disabled={true}
+    icon="last_page"
+    onClick={[Function]}
+    size="large"
+  />
+</div>
+`;
+
+exports[`Pagination component 
+  totalPages: 50, onPageChange: "[Function]", page: 15
+ 1`] = `
+<div
+  className="Pagination Pagination--basic"
+>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="first_page"
+    onClick={[Function]}
+    size="large"
+  />
+  <div
+    className="ml-4 mx-3"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_before"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <div
+    className="mr-4 mx-3"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_next"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="last_page"
+    onClick={[Function]}
+    size="large"
+  />
+</div>
+`;
+
+exports[`Pagination component 
+  totalPages: 50, onPageChange: "[Function]", type: "basic"
+ 1`] = `
+<div
+  className="Pagination Pagination--basic"
+>
+  <Button
+    appearance="transparent"
+    disabled={true}
+    icon="first_page"
+    onClick={[Function]}
+    size="large"
+  />
+  <div
+    className="ml-4 mx-3"
+  >
+    <Button
+      disabled={true}
+      icon="navigate_before"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <div
+    className="mr-4 mx-3"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_next"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="last_page"
+    onClick={[Function]}
+    size="large"
+  />
+</div>
+`;
+
+exports[`Pagination component 
+  totalPages: 50, onPageChange: "[Function]", type: "basic", page: 1
+ 1`] = `
+<div
+  className="Pagination Pagination--basic"
+>
+  <Button
+    appearance="transparent"
+    disabled={true}
+    icon="first_page"
+    onClick={[Function]}
+    size="large"
+  />
+  <div
+    className="ml-4 mx-3"
+  >
+    <Button
+      disabled={true}
+      icon="navigate_before"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <div
+    className="mr-4 mx-3"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_next"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="last_page"
+    onClick={[Function]}
+    size="large"
+  />
+</div>
+`;
+
+exports[`Pagination component 
+  totalPages: 50, onPageChange: "[Function]", type: "basic", page: 5
+ 1`] = `
+<div
+  className="Pagination Pagination--basic"
+>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="first_page"
+    onClick={[Function]}
+    size="large"
+  />
+  <div
+    className="ml-4 mx-3"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_before"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <div
+    className="mr-4 mx-3"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_next"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="last_page"
+    onClick={[Function]}
+    size="large"
+  />
+</div>
+`;
+
+exports[`Pagination component 
+  totalPages: 50, onPageChange: "[Function]", type: "basic", page: 10
+ 1`] = `
+<div
+  className="Pagination Pagination--basic"
+>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="first_page"
+    onClick={[Function]}
+    size="large"
+  />
+  <div
+    className="ml-4 mx-3"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_before"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <div
+    className="mr-4 mx-3"
+  >
+    <Button
+      disabled={true}
+      icon="navigate_next"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <Button
+    appearance="transparent"
+    disabled={true}
+    icon="last_page"
+    onClick={[Function]}
+    size="large"
+  />
+</div>
+`;
+
+exports[`Pagination component 
+  totalPages: 50, onPageChange: "[Function]", type: "basic", page: 15
+ 1`] = `
+<div
+  className="Pagination Pagination--basic"
+>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="first_page"
+    onClick={[Function]}
+    size="large"
+  />
+  <div
+    className="ml-4 mx-3"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_before"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <div
+    className="mr-4 mx-3"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_next"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="last_page"
+    onClick={[Function]}
+    size="large"
+  />
+</div>
+`;
+
+exports[`Pagination component 
+  totalPages: 50, onPageChange: "[Function]", type: "jump"
+ 1`] = `
+<div
+  className="Pagination Pagination--jump"
+>
+  <Button
+    appearance="transparent"
+    disabled={true}
+    icon="first_page"
+    onClick={[Function]}
+    size="large"
+  />
+  <div
+    className="ml-4 mx-4"
+  >
+    <Button
+      disabled={true}
+      icon="navigate_before"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <div
+    className="Pagination-pageIndex"
+  >
+    <Input
+      clearButton={false}
+      name="page"
+      onChangeHandler={[Function]}
+      size="large"
+      type="number"
+      value={1}
+    />
+    <Text>
+       of 10 pages
+    </Text>
+  </div>
+  <div
+    className="mr-4 mx-4"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_next"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="last_page"
+    onClick={[Function]}
+    size="large"
+  />
+</div>
+`;
+
+exports[`Pagination component 
+  totalPages: 50, onPageChange: "[Function]", type: "jump", page: 1
+ 1`] = `
+<div
+  className="Pagination Pagination--jump"
+>
+  <Button
+    appearance="transparent"
+    disabled={true}
+    icon="first_page"
+    onClick={[Function]}
+    size="large"
+  />
+  <div
+    className="ml-4 mx-4"
+  >
+    <Button
+      disabled={true}
+      icon="navigate_before"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <div
+    className="Pagination-pageIndex"
+  >
+    <Input
+      clearButton={false}
+      name="page"
+      onChangeHandler={[Function]}
+      size="large"
+      type="number"
+      value={1}
+    />
+    <Text>
+       of 10 pages
+    </Text>
+  </div>
+  <div
+    className="mr-4 mx-4"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_next"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="last_page"
+    onClick={[Function]}
+    size="large"
+  />
+</div>
+`;
+
+exports[`Pagination component 
+  totalPages: 50, onPageChange: "[Function]", type: "jump", page: 5
+ 1`] = `
+<div
+  className="Pagination Pagination--jump"
+>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="first_page"
+    onClick={[Function]}
+    size="large"
+  />
+  <div
+    className="ml-4 mx-4"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_before"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <div
+    className="Pagination-pageIndex"
+  >
+    <Input
+      clearButton={false}
+      name="page"
+      onChangeHandler={[Function]}
+      size="large"
+      type="number"
+      value={5}
+    />
+    <Text>
+       of 10 pages
+    </Text>
+  </div>
+  <div
+    className="mr-4 mx-4"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_next"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="last_page"
+    onClick={[Function]}
+    size="large"
+  />
+</div>
+`;
+
+exports[`Pagination component 
+  totalPages: 50, onPageChange: "[Function]", type: "jump", page: 10
+ 1`] = `
+<div
+  className="Pagination Pagination--jump"
+>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="first_page"
+    onClick={[Function]}
+    size="large"
+  />
+  <div
+    className="ml-4 mx-4"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_before"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <div
+    className="Pagination-pageIndex"
+  >
+    <Input
+      clearButton={false}
+      name="page"
+      onChangeHandler={[Function]}
+      size="large"
+      type="number"
+      value={10}
+    />
+    <Text>
+       of 10 pages
+    </Text>
+  </div>
+  <div
+    className="mr-4 mx-4"
+  >
+    <Button
+      disabled={true}
+      icon="navigate_next"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <Button
+    appearance="transparent"
+    disabled={true}
+    icon="last_page"
+    onClick={[Function]}
+    size="large"
+  />
+</div>
+`;
+
+exports[`Pagination component 
+  totalPages: 50, onPageChange: "[Function]", type: "jump", page: 15
+ 1`] = `
+<div
+  className="Pagination Pagination--jump"
+>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="first_page"
+    onClick={[Function]}
+    size="large"
+  />
+  <div
+    className="ml-4 mx-4"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_before"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <div
+    className="Pagination-pageIndex"
+  >
+    <Input
+      clearButton={false}
+      name="page"
+      onChangeHandler={[Function]}
+      size="large"
+      type="number"
+      value={15}
+    />
+    <Text>
+       of 10 pages
+    </Text>
+  </div>
+  <div
+    className="mr-4 mx-4"
+  >
+    <Button
+      disabled={false}
+      icon="navigate_next"
+      onClick={[Function]}
+      size="large"
+    />
+  </div>
+  <Button
+    appearance="transparent"
+    disabled={false}
+    icon="last_page"
+    onClick={[Function]}
+    size="large"
+  />
+</div>
+`;

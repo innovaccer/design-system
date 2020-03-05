@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalFooter component should match the snapshot when Modal Footer is with two action buttons 1`] = `
+<div
+  className="Modal-footer"
+>
+  <Button
+    appearance="basic"
+    onClick={[Function]}
+  >
+    Basic
+  </Button>
+  <Button
+    appearance="primary"
+    onClick={[Function]}
+  >
+    Primary
+  </Button>
+</div>
+`;

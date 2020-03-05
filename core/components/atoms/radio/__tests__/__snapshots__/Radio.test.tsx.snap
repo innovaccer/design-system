@@ -1,0 +1,8695 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio component 
+  name: "Options", value: "Options"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", checked: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", checked: true
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: false, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: false, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: false, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: false, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: false, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: false, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: false, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: false, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: true, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: true, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: true, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: true, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: true, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: true, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: true, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: true, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", disabled: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: false, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: false, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: false, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: false, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: false, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: false, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: false, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: false, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: true, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: true, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: true, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: true, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: true, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: true, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: true, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: true, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, disabled: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: false, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: false, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: false, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: false, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: false, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: false, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: false, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: false, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: true, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: true, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: true, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: true, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: true, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: true, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: true, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: true, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, disabled: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", selected: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", checked: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", checked: true
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: false, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: false, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: false, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: false, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: false, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: false, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: false, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: false, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: true, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: true, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: true, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: true, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: true, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: true, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: true, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: true, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", disabled: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: false, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: false, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: false, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: false, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: false, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: false, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: false, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: false, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: true, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: true, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: true, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: true, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: true, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: true, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: true, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: true, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, disabled: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: false, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: false, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: false, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: false, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: false, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: false, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: false, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: false, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: true, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: true, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: true, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: true, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: true, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: true, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: true, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: true, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, disabled: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+  <Text
+    small={false}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "regular", selected: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--regular"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--regular"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--regular"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", checked: false
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", checked: true
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: false
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: false, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: false, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: false, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: false, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: false, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: false, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: false, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: false, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: true, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: true, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: true, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: true, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: true, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: true, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: true, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: true, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", disabled: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: false
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: false, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: false, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: false, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: false, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: false, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: false, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: false, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: false, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: true, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: true, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: true, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: true, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: true, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: true, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: true, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: true, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, disabled: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: false
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: false, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: false, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: false, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: false, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: false, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: false, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: false, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: false, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={false}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: true, checked: false
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: true, checked: false, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: true, checked: false, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: true, checked: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={false}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: true, checked: true
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: true, checked: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: true, checked: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: true, checked: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      checked={true}
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, disabled: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--disabled Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      disabled={true}
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, label: "Radio"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, label: "Radio", onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+  <Text
+    small={true}
+  >
+    Radio
+  </Text>
+</div>
+`;
+
+exports[`Radio component 
+  name: "Options", value: "Options", size: "tiny", selected: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Radio Radio--tiny"
+>
+  <div
+    className="Radio-outerWrapper Radio-outerWrapper--tiny"
+  >
+    <input
+      className="Radio-input"
+      name="Options"
+      onChange={[Function]}
+      type="radio"
+      value="Options"
+    />
+    <span
+      className="Radio-wrapper Radio-wrapper--tiny"
+    />
+  </div>
+</div>
+`;

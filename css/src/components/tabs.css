@@ -1,0 +1,60 @@
+/* tabs */
+
+.Tabs {
+    display: flex;
+    flex-direction: column;
+}
+
+.Tabs-header {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    border-bottom: var(--border);
+    height: var(--spacing-4);
+}
+
+.Tab {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    min-width: 40px;
+    padding-top: var(--spacing-l);
+    padding-bottom: var(--spacing-2);
+    text-align: center;
+    margin-left: var(--spacing-l);
+    margin-right: var(--spacing-l);
+}
+
+.Tab:nth-child(1) {
+    margin-left: 0;
+}
+
+.Tab:last-child {
+    margin-right: 0;
+}
+
+.Tab--active, .Tab:hover {
+    margin-bottom: -1px;
+    border-bottom: var(--spacing-s) solid var(--primary);
+}
+
+.Tab-count {
+    display: flex;
+    margin-right: var(--spacing-l);
+}
+
+.Tab-count .Badge {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.Tab-icon {
+    display: flex;
+    margin-right: var(--spacing-l);
+    font-size: var(--font-size-m);
+    color: var(--text-subtle);
+}
+
+.Tab-icon--active {
+    color: var(--text);
+}

@@ -1,0 +1,188 @@
+:root {
+  /* Colors */
+
+  /* default */
+  --primary: var(--jal);
+  --secondary: var(--stone);
+  --success: var(--neem);
+  --alert: var(--mirch);
+  --warning: var(--haldi);
+  --accent1: var(--tawak);
+  --accent2: var(--jamun);
+  --accent3: var(--neel);
+  --accent4: var(--nimbu);
+  --inverse: var(--night);
+
+  /* dark */
+  --primary-dark: var(--jal-dark);
+  --secondary-dark: var(--stone-dark);
+  --success-dark: var(--neem-dark);
+  --alert-dark: var(--mirch-dark);
+  --warning-dark: var(--haldi-dark);
+  --accent1-dark: var(--tawak-dark);
+  --accent2-dark: var(--jamun-dark);
+  --accent3-dark: var(--neel-dark);
+  --accent4-dark: var(--nimbu-dark);
+
+  /* darker */
+  --primary-darker: var(--jal-darker);
+  --secondary-darker: var(--stone-darker);
+  --success-darker: var(--neem-darker);
+  --alert-darker: var(--mirch-darker);
+  --warning-darker: var(--haldi-darker);
+  --accent1-darker: var(--tawak-darker);
+  --accent2-darker: var(--jamun-darker);
+  --accent3-darker: var(--neel-darker);
+  --accent4-darker: var(--nimbu-darker);
+
+  /* light */
+  --primary-light: var(--jal-light);
+  --secondary-light: var(--stone-light);
+  --success-light: var(--neem-light);
+  --alert-light: var(--mirch-light);
+  --warning-light: var(--haldi-light);
+  --accent1-light: var(--tawak-light);
+  --accent2-light: var(--jamun-light);
+  --accent3-light: var(--neel-light);
+  --accent4-light: var(--nimbu-light);
+  --inverse-light: var(--night-light);
+
+  /* lighter */
+  --primary-lighter: var(--jal-lighter);
+  --secondary-lighter: var(--stone-lighter);
+  --success-lighter: var(--neem-lighter);
+  --alert-lighter: var(--mirch-lighter);
+  --warning-lighter: var(--haldi-lighter);
+  --accent1-lighter: var(--tawak-lighter);
+  --accent2-lighter: var(--jamun-lighter);
+  --accent3-lighter: var(--neel-lighter);
+  --accent4-lighter: var(--nimbu-lighter);
+
+  /* lightest */
+  --primary-lightest: var(--jal-lightest);
+  --secondary-lightest: var(--stone-lightest);
+  --success-lightest: var(--neem-lightest);
+  --alert-lightest: var(--mirch-lightest);
+  --warning-lightest: var(--haldi-lightest);
+  --accent1-lightest: var(--tawak-lightest);
+  --accent2-lightest: var(--jamun-lightest);
+  --accent3-lightest: var(--neel-lightest);
+  --accent4-lightest: var(--nimbu-lightest);
+  --inverse-lightest: var(--night-lightest);
+
+  /* shadow */
+  --primary-shadow: color-mod(var(--primary) a(0.16));
+  --secondary-shadow: color-mod(var(--secondary) a(0.16));
+  --success-shadow: color-mod(var(--success) a(0.16));
+  --alert-shadow: color-mod(var(--alert) a(0.16));
+  --warning-shadow: color-mod(var(--warning) a(0.16));
+  --accent1-shadow: color-mod(var(--accent1) a(0.16));
+  --accent2-shadow: color-mod(var(--accent2) a(0.16));
+  --accent3-shadow: color-mod(var(--accent3) a(0.16));
+  --accent4-shadow: color-mod(var(--accent4) a(0.16));
+  --inverse-shadow: color-mod(var(--inverse) a(0.16));
+
+  /* Text colors */
+  --text: var(--night);
+  --text-subtle: var(--night-light);
+  --text-link: var(--primary);
+  --text-disabled: var(--inverse-lightest);
+  --text-destructive: var(--alert);
+  --text-white: var(--white);
+
+  /* spacing */
+  --spacing-xs: 1px;
+  --spacing-s: 2px;
+  --spacing-m: 4px;
+  --spacing: 8px;
+  --spacing-l: 12px;
+  /* 8 * 2 */
+  --spacing-2: 16px;
+  /* 8 * 3 */
+  --spacing-xl: 24px;
+  /* 8 * 4 */
+  --spacing-3: 32px;
+  /* 8 * 6 */
+  --spacing-4: 48px;
+  /* 8 * 8 */
+  --spacing-5: 64px;
+  /* 8 * 12 */
+  --spacing-6: 96px;
+  /* 8 * 16 */
+  --spacing-7: 128px;
+  /* 8 * 22 */
+  --spacing-8: 176px;
+  /* 8 * 32 */
+  --spacing-9: 256px;
+
+  /* Fonts */
+  --font-family: 'Nunito Sans';
+
+  /* Font size */
+  --font-size-xxs: 4px;
+  --font-size-xs: 8px;
+  --font-size-s: 12px;
+  --font-size: 14px;
+  --font-size-m: 16px;
+  --font-size-l: 20px;
+  --font-size-xl: 28px;
+  --font-size-xxl: 32px;
+  --font-size-xxxl: 40px;
+
+  /* Font weight  */
+  --font-weight-normal: 400;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+  --font-weight-bolder: 800;
+
+  /* Line height or Font height  */
+  --font-height-normal: normal;
+  --font-height-s: 16px;
+  --font-height: 20px;
+  --font-height-m: 24px;
+  --font-height-l: 32px;
+  --font-height-xl: 40px;
+  --font-height-xxl: 48px;
+
+  /* Letter spacing */
+  --letter-spacing: 0.5px;
+
+  /* body settings */
+
+  /* Link */
+  --link-color: var(--primary);
+  --link-decoration: none;
+  --link-hover-color: var(--primary);
+  --link-hover-decoration: none;
+  --link-font-weight: var(--font-weight-medium);
+
+  /* border */
+  --border: var(--spacing-xs) solid var(--secondary);
+  --border-s: var(--spacing-s) solid var(--secondary);
+
+  /* padding */
+
+  /* shadow */
+  --shadow-s: 0 1px 4px 0 rgba(0, 0, 0, 0.16);
+  --shadow-m: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+  --shadow-l: 0 4px 16px 0 rgba(0, 0, 0, 0.16);
+  --shadow-spread: 0 0 0 3px;
+
+  /* 
+  Grid breakpoints
+  Define the minimum dimensions at which your layout will change,
+  adapting to different screen sizes, for use in media queries. 
+  */
+
+  --grid-s-breakpoint: 576px;
+  --grid-m-breakpoint: 768px;
+  --grid-l-breakpoint: 992px;
+  --grid-xl-breakpoint: 1200px;
+
+  /* 
+  Grid columns
+ Set the number of columns and specify the width of the gutters. 
+ */
+
+  --grid-columns: 12;
+}

@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalHeader component 
+  onClose: "[Function]"
+ 1`] = `
+<div
+  className="Modal-header-wrapper"
+>
+  <div
+    className="Modal-header"
+  >
+    <div>
+      <Heading
+        size="m"
+      />
+    </div>
+    <i
+      className="material-icons Modal-close-icon"
+      onClick={[Function]}
+    >
+      close
+    </i>
+  </div>
+</div>
+`;
+
+exports[`ModalHeader component 
+  onClose: "[Function]", heading: "events"
+ 1`] = `
+<div
+  className="Modal-header-wrapper"
+>
+  <div
+    className="Modal-header"
+  >
+    <div>
+      <Heading
+        size="m"
+      >
+        events
+      </Heading>
+    </div>
+    <i
+      className="material-icons Modal-close-icon"
+      onClick={[Function]}
+    >
+      close
+    </i>
+  </div>
+</div>
+`;
+
+exports[`ModalHeader component 
+  onClose: "[Function]", heading: "events", subHeading: "events"
+ 1`] = `
+<div
+  className="Modal-header-wrapper"
+>
+  <div
+    className="Modal-header"
+  >
+    <div>
+      <Heading
+        size="m"
+      >
+        events
+      </Heading>
+    </div>
+    <i
+      className="material-icons Modal-close-icon"
+      onClick={[Function]}
+    >
+      close
+    </i>
+  </div>
+  <div
+    className="Modal-header-subheader"
+  >
+    <Text
+      appearance="subtle"
+    >
+      events
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`ModalHeader component 
+  onClose: "[Function]", icon: "events"
+ 1`] = `
+<div
+  className="Modal-header-wrapper"
+>
+  <div
+    className="Modal-header"
+  >
+    <i
+      className="material-icons Modal-header-icon"
+    >
+      events
+    </i>
+    <div>
+      <Heading
+        size="m"
+      />
+    </div>
+    <i
+      className="material-icons Modal-close-icon"
+      onClick={[Function]}
+    >
+      close
+    </i>
+  </div>
+</div>
+`;
+
+exports[`ModalHeader component 
+  onClose: "[Function]", icon: "events", heading: "events"
+ 1`] = `
+<div
+  className="Modal-header-wrapper"
+>
+  <div
+    className="Modal-header"
+  >
+    <i
+      className="material-icons Modal-header-icon"
+    >
+      events
+    </i>
+    <div>
+      <Heading
+        size="m"
+      >
+        events
+      </Heading>
+    </div>
+    <i
+      className="material-icons Modal-close-icon"
+      onClick={[Function]}
+    >
+      close
+    </i>
+  </div>
+</div>
+`;
+
+exports[`ModalHeader component 
+  onClose: "[Function]", icon: "events", heading: "events", subHeading: "events"
+ 1`] = `
+<div
+  className="Modal-header-wrapper"
+>
+  <div
+    className="Modal-header"
+  >
+    <i
+      className="material-icons Modal-header-icon"
+    >
+      events
+    </i>
+    <div>
+      <Heading
+        size="m"
+      >
+        events
+      </Heading>
+    </div>
+    <i
+      className="material-icons Modal-close-icon"
+      onClick={[Function]}
+    >
+      close
+    </i>
+  </div>
+  <div
+    className="Modal-header-subheader Modal-header-subheader--withIcon"
+  >
+    <Text
+      appearance="subtle"
+    >
+      events
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`ModalHeader component 
+  onClose: "[Function]", icon: "events", subHeading: "events"
+ 1`] = `
+<div
+  className="Modal-header-wrapper"
+>
+  <div
+    className="Modal-header"
+  >
+    <i
+      className="material-icons Modal-header-icon"
+    >
+      events
+    </i>
+    <div>
+      <Heading
+        size="m"
+      />
+    </div>
+    <i
+      className="material-icons Modal-close-icon"
+      onClick={[Function]}
+    >
+      close
+    </i>
+  </div>
+  <div
+    className="Modal-header-subheader Modal-header-subheader--withIcon"
+  >
+    <Text
+      appearance="subtle"
+    >
+      events
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`ModalHeader component 
+  onClose: "[Function]", subHeading: "events"
+ 1`] = `
+<div
+  className="Modal-header-wrapper"
+>
+  <div
+    className="Modal-header"
+  >
+    <div>
+      <Heading
+        size="m"
+      />
+    </div>
+    <i
+      className="material-icons Modal-close-icon"
+      onClick={[Function]}
+    >
+      close
+    </i>
+  </div>
+  <div
+    className="Modal-header-subheader"
+  >
+    <Text
+      appearance="subtle"
+    >
+      events
+    </Text>
+  </div>
+</div>
+`;

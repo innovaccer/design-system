@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs component 
+  children: "[ReactNode]"
+ 1`] = `
+<div
+  className="Tabs"
+>
+  <div
+    className="Tabs-header"
+  >
+    <div
+      className="Tab Tab--active"
+      key="0"
+      onClick={[Function]}
+    />
+    <div
+      className="Tab"
+      key="1"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="Tabs-content"
+  >
+    <Tab
+      label={<React.Fragment />}
+    />
+  </div>
+</div>
+`;
+
+exports[`Tabs component 
+  children: "[ReactNode]", activeTab: 0
+ 1`] = `
+<div
+  className="Tabs"
+>
+  <div
+    className="Tabs-header"
+  >
+    <div
+      className="Tab Tab--active"
+      key="0"
+      onClick={[Function]}
+    />
+    <div
+      className="Tab"
+      key="1"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="Tabs-content"
+  >
+    <Tab
+      label={<React.Fragment />}
+    />
+  </div>
+</div>
+`;
+
+exports[`Tabs component 
+  children: "[ReactNode]", activeTab: 0, onTabChange: "[Function]"
+ 1`] = `
+<div
+  className="Tabs"
+>
+  <div
+    className="Tabs-header"
+  >
+    <div
+      className="Tab Tab--active"
+      key="0"
+      onClick={[Function]}
+    />
+    <div
+      className="Tab"
+      key="1"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="Tabs-content"
+  >
+    <Tab
+      label={<React.Fragment />}
+    />
+  </div>
+</div>
+`;
+
+exports[`Tabs component 
+  children: "[ReactNode]", activeTab: 1
+ 1`] = `
+<div
+  className="Tabs"
+>
+  <div
+    className="Tabs-header"
+  >
+    <div
+      className="Tab"
+      key="0"
+      onClick={[Function]}
+    />
+    <div
+      className="Tab Tab--active"
+      key="1"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="Tabs-content"
+  >
+    <Tab
+      label={<React.Fragment />}
+    />
+  </div>
+</div>
+`;
+
+exports[`Tabs component 
+  children: "[ReactNode]", activeTab: 1, onTabChange: "[Function]"
+ 1`] = `
+<div
+  className="Tabs"
+>
+  <div
+    className="Tabs-header"
+  >
+    <div
+      className="Tab"
+      key="0"
+      onClick={[Function]}
+    />
+    <div
+      className="Tab Tab--active"
+      key="1"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="Tabs-content"
+  >
+    <Tab
+      label={<React.Fragment />}
+    />
+  </div>
+</div>
+`;
+
+exports[`Tabs component 
+  children: "[ReactNode]", activeTab: 2
+ 1`] = `
+<div
+  className="Tabs"
+>
+  <div
+    className="Tabs-header"
+  >
+    <div
+      className="Tab Tab--active"
+      key="0"
+      onClick={[Function]}
+    />
+    <div
+      className="Tab"
+      key="1"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="Tabs-content"
+  >
+    <Tab
+      label={<React.Fragment />}
+    />
+  </div>
+</div>
+`;
+
+exports[`Tabs component 
+  children: "[ReactNode]", activeTab: 2, onTabChange: "[Function]"
+ 1`] = `
+<div
+  className="Tabs"
+>
+  <div
+    className="Tabs-header"
+  >
+    <div
+      className="Tab Tab--active"
+      key="0"
+      onClick={[Function]}
+    />
+    <div
+      className="Tab"
+      key="1"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="Tabs-content"
+  >
+    <Tab
+      label={<React.Fragment />}
+    />
+  </div>
+</div>
+`;
+
+exports[`Tabs component 
+  children: "[ReactNode]", onTabChange: "[Function]"
+ 1`] = `
+<div
+  className="Tabs"
+>
+  <div
+    className="Tabs-header"
+  >
+    <div
+      className="Tab Tab--active"
+      key="0"
+      onClick={[Function]}
+    />
+    <div
+      className="Tab"
+      key="1"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="Tabs-content"
+  >
+    <Tab
+      label={<React.Fragment />}
+    />
+  </div>
+</div>
+`;

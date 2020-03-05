@@ -1,0 +1,148 @@
+/* input */
+
+.Input {
+    display: flex;
+    flex-direction: column;
+
+    min-width: var(--spacing-9);
+}
+
+.Input-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+
+    border-radius: var(--spacing-m);
+    border: var(--border);
+
+    padding-right: var(--spacing-l);
+    padding-left: var(--spacing-l);
+}
+
+.Input-wrapper--tiny {
+    height: var(--spacing-xl);
+    padding-top: var(--spacing-m);
+    padding-bottom: var(--spacing-m);
+}
+
+.Input-wrapper--regular {
+    height: var(--spacing-3);
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
+}
+
+.Input-wrapper--large {
+    height: 40px;
+}
+
+.Input-wrapper--large .Input-input {
+    line-height: var(--font-height-m);
+    font-size: var(--font-size-m);
+}
+
+.Input-wrapper--large .Input-icon {
+    font-size: var(--font-size-l);
+}
+
+.Input-wrapper:focus-within  {
+    border: var(--spacing-xs) solid var(--primary);
+}
+
+.Input-wrapper:focus-within .Input-icon--left {
+    color: var(--primary);
+}
+
+.Input-wrapper--error:focus-within {
+    border: var(--spacing-xs) solid var(--alert);
+    box-shadow: var(--shadow-spread) var(--alert-shadow);
+}
+
+.Input-wrapper--error:focus-within .Input-icon--left {
+    color: var(--alert);
+}
+
+.Input-wrapper--disabled {
+    background: var(--secondary-lightest);
+    border-color: var(--secondary-light);
+}
+
+.Input-wrapper--disabled .Input-icon--left {
+    color: var(--inverse-lightest);
+}
+
+.Input-wrapper--error {
+    border: var(--spacing-xs) solid var(--alert);
+}
+
+.Input-input {
+    display: flex;
+    width: 100%;
+
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size);
+    line-height: var(--font-height-s);
+    color: var(--night);
+    padding: 0;
+	
+    border: none;
+}
+
+.Input-input::placeholder {
+    color: var(--inverse-light);
+}
+
+.Input-input:disabled {
+    background: var(--secondary-lightest);
+}
+
+.Input-input:disabled .Input-input::placeholder {
+    color: var(--inverse-light);
+}
+
+.Input-icon {
+    display: flex;
+    align-content: center;
+    font-size: var(--font-size-m);
+}
+
+.Input-icon--left {
+    margin-right: var(--spacing);
+    color: var(--inverse);
+}
+
+.Input-icon--right {
+    cursor: pointer;
+    margin-left: var(--spacing);
+    color: var(--inverse-lightest);
+}
+
+.Input-icon--error {
+    color: var(--alert);
+    margin-right: var(--spacing-m);
+    font-size: var(--font-size);
+}
+
+.Input-caption {
+    display: flex;
+    align-items: center;
+    margin-top: var(--spacing-m);
+}
+
+.Input-label {
+    display: flex;
+    margin-bottom: var(--spacing-m);
+}
+
+.Input-label span {
+    height: var(--spacing-m);
+    width: var(--spacing-m);
+    border-radius: 50%;
+    background: var(--alert);
+    margin-left: var(--spacing-m);
+}
+
+.Input-inlineLabel {
+    margin-right: var(--spacing);
+}

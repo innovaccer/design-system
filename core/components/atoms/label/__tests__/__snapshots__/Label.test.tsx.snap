@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label component 
+  children: "Label"
+ 1`] = `
+<GenericText
+  className="Label"
+  componentType="label"
+>
+  Label
+</GenericText>
+`;
+
+exports[`Label component 
+  children: "Label", disabled: false
+ 1`] = `
+<GenericText
+  className="Label"
+  componentType="label"
+>
+  Label
+</GenericText>
+`;
+
+exports[`Label component 
+  children: "Label", disabled: true
+ 1`] = `
+<GenericText
+  className="Label"
+  componentType="label"
+>
+  Label
+</GenericText>
+`;

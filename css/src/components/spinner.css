@@ -1,0 +1,61 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+.Spinner {
+  animation: rotate 2s linear infinite;
+}
+
+.Spinner--small {
+  height: 16px;
+  width: 16px;
+}
+
+.Spinner--medium {
+  height: 32px;
+  width: 32x;
+}
+
+.Spinner--large {
+  height: 48px;
+  width: 48px;
+}
+
+.Circle {
+  stroke-linecap: round;
+  stroke-dasharray: 1 200;
+  stroke-dashoffset: 0;
+  animation: spin 1.5s ease-in-out infinite;
+}
+
+.Circle--primary {
+  stroke: var(--primary);
+}
+
+.Circle--secondary {
+  stroke: var(--secondary-dark);
+}
+
+.Circle--white {
+  stroke: var(--white);
+}

@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalDescription component 
+  
+ 1`] = `
+<div
+  className="Modal-description pl-6 pr-6"
+/>
+`;
+
+exports[`ModalDescription component 
+  description: "Sample String"
+ 1`] = `
+<div
+  className="Modal-description pl-6 pr-6"
+>
+  <div>
+    <Text>
+      Sample String
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`ModalDescription component 
+  description: "Sample String", removePadding: false
+ 1`] = `
+<div
+  className="Modal-description pl-6 pr-6"
+>
+  <div>
+    <Text>
+      Sample String
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`ModalDescription component 
+  description: "Sample String", removePadding: true
+ 1`] = `
+<div
+  className="Modal-description"
+>
+  <div>
+    <Text>
+      Sample String
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`ModalDescription component 
+  removePadding: false
+ 1`] = `
+<div
+  className="Modal-description pl-6 pr-6"
+/>
+`;
+
+exports[`ModalDescription component 
+  removePadding: true
+ 1`] = `
+<div
+  className="Modal-description"
+/>
+`;
+
+exports[`ModalDescription component 
+  title: "Sample String"
+ 1`] = `
+<div
+  className="Modal-description pl-6 pr-6"
+>
+  <div>
+    <Text
+      weight="strong"
+    >
+      Sample String
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`ModalDescription component 
+  title: "Sample String", description: "Sample String"
+ 1`] = `
+<div
+  className="Modal-description pl-6 pr-6"
+>
+  <div>
+    <Text
+      weight="strong"
+    >
+      Sample String
+    </Text>
+  </div>
+  <div>
+    <Text>
+      Sample String
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`ModalDescription component 
+  title: "Sample String", description: "Sample String", removePadding: false
+ 1`] = `
+<div
+  className="Modal-description pl-6 pr-6"
+>
+  <div>
+    <Text
+      weight="strong"
+    >
+      Sample String
+    </Text>
+  </div>
+  <div>
+    <Text>
+      Sample String
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`ModalDescription component 
+  title: "Sample String", description: "Sample String", removePadding: true
+ 1`] = `
+<div
+  className="Modal-description"
+>
+  <div>
+    <Text
+      weight="strong"
+    >
+      Sample String
+    </Text>
+  </div>
+  <div>
+    <Text>
+      Sample String
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`ModalDescription component 
+  title: "Sample String", removePadding: false
+ 1`] = `
+<div
+  className="Modal-description pl-6 pr-6"
+>
+  <div>
+    <Text
+      weight="strong"
+    >
+      Sample String
+    </Text>
+  </div>
+</div>
+`;
+
+exports[`ModalDescription component 
+  title: "Sample String", removePadding: true
+ 1`] = `
+<div
+  className="Modal-description"
+>
+  <div>
+    <Text
+      weight="strong"
+    >
+      Sample String
+    </Text>
+  </div>
+</div>
+`;

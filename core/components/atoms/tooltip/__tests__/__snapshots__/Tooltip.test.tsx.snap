@@ -1,0 +1,361 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip component 
+  tooltip: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<PopperWrapper
+  appendToBody={true}
+  offset="Medium"
+  on="hover"
+  placement="bottom"
+  style={Object {}}
+  trigger={
+    <Button>
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  tooltip: "Sample string", children: "[ReactNode]", appendToBody: false
+ 1`] = `
+<PopperWrapper
+  appendToBody={false}
+  offset="Medium"
+  on="hover"
+  placement="bottom"
+  style={Object {}}
+  trigger={
+    <Button>
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  tooltip: "Sample string", children: "[ReactNode]", appendToBody: true
+ 1`] = `
+<PopperWrapper
+  appendToBody={true}
+  offset="Medium"
+  on="hover"
+  placement="bottom"
+  style={Object {}}
+  trigger={
+    <Button>
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  tooltip: "Sample string", children: "[ReactNode]", position: "bottom"
+ 1`] = `
+<PopperWrapper
+  appendToBody={true}
+  offset="Medium"
+  on="hover"
+  placement="bottom"
+  style={Object {}}
+  trigger={
+    <Button>
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  tooltip: "Sample string", children: "[ReactNode]", position: "bottom", appendToBody: false
+ 1`] = `
+<PopperWrapper
+  appendToBody={false}
+  offset="Medium"
+  on="hover"
+  placement="bottom"
+  style={Object {}}
+  trigger={
+    <Button>
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  tooltip: "Sample string", children: "[ReactNode]", position: "bottom", appendToBody: true
+ 1`] = `
+<PopperWrapper
+  appendToBody={true}
+  offset="Medium"
+  on="hover"
+  placement="bottom"
+  style={Object {}}
+  trigger={
+    <Button>
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  tooltip: "Sample string", children: "[ReactNode]", position: "left"
+ 1`] = `
+<PopperWrapper
+  appendToBody={true}
+  offset="Medium"
+  on="hover"
+  placement="left"
+  style={Object {}}
+  trigger={
+    <Button>
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  tooltip: "Sample string", children: "[ReactNode]", position: "left", appendToBody: false
+ 1`] = `
+<PopperWrapper
+  appendToBody={false}
+  offset="Medium"
+  on="hover"
+  placement="left"
+  style={Object {}}
+  trigger={
+    <Button>
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  tooltip: "Sample string", children: "[ReactNode]", position: "left", appendToBody: true
+ 1`] = `
+<PopperWrapper
+  appendToBody={true}
+  offset="Medium"
+  on="hover"
+  placement="left"
+  style={Object {}}
+  trigger={
+    <Button>
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  tooltip: "Sample string", children: "[ReactNode]", position: "right"
+ 1`] = `
+<PopperWrapper
+  appendToBody={true}
+  offset="Medium"
+  on="hover"
+  placement="right"
+  style={Object {}}
+  trigger={
+    <Button>
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  tooltip: "Sample string", children: "[ReactNode]", position: "right", appendToBody: false
+ 1`] = `
+<PopperWrapper
+  appendToBody={false}
+  offset="Medium"
+  on="hover"
+  placement="right"
+  style={Object {}}
+  trigger={
+    <Button>
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  tooltip: "Sample string", children: "[ReactNode]", position: "right", appendToBody: true
+ 1`] = `
+<PopperWrapper
+  appendToBody={true}
+  offset="Medium"
+  on="hover"
+  placement="right"
+  style={Object {}}
+  trigger={
+    <Button>
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  tooltip: "Sample string", children: "[ReactNode]", position: "top"
+ 1`] = `
+<PopperWrapper
+  appendToBody={true}
+  offset="Medium"
+  on="hover"
+  placement="top"
+  style={Object {}}
+  trigger={
+    <Button>
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  tooltip: "Sample string", children: "[ReactNode]", position: "top", appendToBody: false
+ 1`] = `
+<PopperWrapper
+  appendToBody={false}
+  offset="Medium"
+  on="hover"
+  placement="top"
+  style={Object {}}
+  trigger={
+    <Button>
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  tooltip: "Sample string", children: "[ReactNode]", position: "top", appendToBody: true
+ 1`] = `
+<PopperWrapper
+  appendToBody={true}
+  offset="Medium"
+  on="hover"
+  placement="top"
+  style={Object {}}
+  trigger={
+    <Button>
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;

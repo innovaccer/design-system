@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component 
+  
+ 1`] = `
+<div
+  className="Card"
+>
+  <span>
+    Hello
+  </span>
+</div>
+`;
+
+exports[`Card component 
+  shadow: "dark"
+ 1`] = `
+<div
+  className="Card Card--shadow-dark"
+>
+  <span>
+    Hello
+  </span>
+</div>
+`;
+
+exports[`Card component 
+  shadow: "dark", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Card Card--shadow-dark"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <span>
+    Hello
+  </span>
+</div>
+`;
+
+exports[`Card component 
+  shadow: "light"
+ 1`] = `
+<div
+  className="Card Card--shadow-light"
+>
+  <span>
+    Hello
+  </span>
+</div>
+`;
+
+exports[`Card component 
+  shadow: "light", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Card Card--shadow-light"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <span>
+    Hello
+  </span>
+</div>
+`;
+
+exports[`Card component 
+  shadow: "medium"
+ 1`] = `
+<div
+  className="Card Card--shadow-medium"
+>
+  <span>
+    Hello
+  </span>
+</div>
+`;
+
+exports[`Card component 
+  shadow: "medium", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Card Card--shadow-medium"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <span>
+    Hello
+  </span>
+</div>
+`;
+
+exports[`Card component 
+  style: {"width":"150px","height":"150px"}
+ 1`] = `
+<div
+  className="Card"
+  style={
+    Object {
+      "height": "150px",
+      "width": "150px",
+    }
+  }
+>
+  <span>
+    Hello
+  </span>
+</div>
+`;

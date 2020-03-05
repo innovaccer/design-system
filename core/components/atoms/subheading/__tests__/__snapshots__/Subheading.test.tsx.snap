@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Subheading component 
+  children: "Subheading"
+ 1`] = `
+<GenericText
+  className="Subheading Subheading--default"
+  componentType="h4"
+>
+  Subheading
+</GenericText>
+`;
+
+exports[`Subheading component 
+  children: "Subheading", appearance: "default"
+ 1`] = `
+<GenericText
+  className="Subheading Subheading--default"
+  componentType="h4"
+>
+  Subheading
+</GenericText>
+`;
+
+exports[`Subheading component 
+  children: "Subheading", appearance: "disabled"
+ 1`] = `
+<GenericText
+  className="Subheading Subheading--disabled"
+  componentType="h4"
+>
+  Subheading
+</GenericText>
+`;
+
+exports[`Subheading component 
+  children: "Subheading", appearance: "subtle"
+ 1`] = `
+<GenericText
+  className="Subheading Subheading--subtle"
+  componentType="h4"
+>
+  Subheading
+</GenericText>
+`;
+
+exports[`Subheading component 
+  children: "Subheading", appearance: "white"
+ 1`] = `
+<GenericText
+  className="Subheading Subheading--white"
+  componentType="h4"
+>
+  Subheading
+</GenericText>
+`;

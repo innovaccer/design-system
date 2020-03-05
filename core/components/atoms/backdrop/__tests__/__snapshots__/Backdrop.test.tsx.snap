@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Backdrop component 
+  open: false
+ 1`] = `
+<Portal
+  containerInfo={<body />}
+>
+  <div
+    className="Backdrop"
+  />
+</Portal>
+`;
+
+exports[`Backdrop component 
+  open: true
+ 1`] = `
+<Portal
+  containerInfo={<body />}
+>
+  <div
+    className="Backdrop"
+  />
+</Portal>
+`;

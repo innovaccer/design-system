@@ -1,0 +1,2209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link component 
+  
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+/>
+`;
+
+exports[`Link component 
+  children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  rel="Sample string"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  rel="Sample string"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_blank"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  target="_blank"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_blank", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  target="_blank"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_blank", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  target="_blank"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_blank", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  target="_blank"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_blank", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  rel="Sample string"
+  target="_blank"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_blank", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  rel="Sample string"
+  target="_blank"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_blank", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_blank"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_blank", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_blank"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_parent"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  target="_parent"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_parent", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  target="_parent"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_parent", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  target="_parent"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_parent", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  target="_parent"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_parent", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  rel="Sample string"
+  target="_parent"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_parent", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  rel="Sample string"
+  target="_parent"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_parent", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_parent"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_parent", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_parent"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_self"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  target="_self"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_self", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  target="_self"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_self", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  target="_self"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_self", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  target="_self"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_self", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  rel="Sample string"
+  target="_self"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_self", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  rel="Sample string"
+  target="_self"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_self", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_self"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_self", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_self"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_top"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  target="_top"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_top", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  target="_top"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_top", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  target="_top"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_top", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  target="_top"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_top", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  rel="Sample string"
+  target="_top"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_top", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  rel="Sample string"
+  target="_top"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_top", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_top"
+/>
+`;
+
+exports[`Link component 
+  href: "Sample string", target: "_top", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_top"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  rel="Sample string"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  rel="Sample string"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_blank"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  target="_blank"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_blank", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  target="_blank"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_blank", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  target="_blank"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_blank", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  target="_blank"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_blank", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  rel="Sample string"
+  target="_blank"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_blank", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  rel="Sample string"
+  target="_blank"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_blank", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_blank"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_blank", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_blank"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_parent"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  target="_parent"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_parent", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  target="_parent"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_parent", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  target="_parent"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_parent", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  target="_parent"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_parent", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  rel="Sample string"
+  target="_parent"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_parent", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  rel="Sample string"
+  target="_parent"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_parent", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_parent"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_parent", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_parent"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_self"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  target="_self"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_self", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  target="_self"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_self", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  target="_self"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_self", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  target="_self"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_self", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  rel="Sample string"
+  target="_self"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_self", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  rel="Sample string"
+  target="_self"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_self", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_self"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_self", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_self"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_top"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  target="_top"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_top", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  target="_top"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_top", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  target="_top"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_top", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  target="_top"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_top", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  rel="Sample string"
+  target="_top"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_top", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  rel="Sample string"
+  target="_top"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_top", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_top"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_top", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  href="Sample string"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_top"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  rel="Sample string"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  rel="Sample string"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_blank"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  target="_blank"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_blank", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  target="_blank"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_blank", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  target="_blank"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_blank", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  target="_blank"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_blank", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  rel="Sample string"
+  target="_blank"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_blank", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  rel="Sample string"
+  target="_blank"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_blank", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_blank"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_blank", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_blank"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_parent"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  target="_parent"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_parent", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  target="_parent"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_parent", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  target="_parent"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_parent", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  target="_parent"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_parent", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  rel="Sample string"
+  target="_parent"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_parent", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  rel="Sample string"
+  target="_parent"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_parent", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_parent"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_parent", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_parent"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_self"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  target="_self"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_self", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  target="_self"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_self", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  target="_self"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_self", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  target="_self"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_self", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  rel="Sample string"
+  target="_self"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_self", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  rel="Sample string"
+  target="_self"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_self", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_self"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_self", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_self"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_top"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  target="_top"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_top", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  target="_top"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_top", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  target="_top"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_top", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  target="_top"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_top", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  rel="Sample string"
+  target="_top"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_top", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  rel="Sample string"
+  target="_top"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_top", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_top"
+/>
+`;
+
+exports[`Link component 
+  id: "Sample string", target: "_top", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  id="Sample string"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_top"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+/>
+`;
+
+exports[`Link component 
+  onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  rel="Sample string"
+/>
+`;
+
+exports[`Link component 
+  rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  rel="Sample string"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  rel="Sample string"
+/>
+`;
+
+exports[`Link component 
+  rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  rel="Sample string"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  target: "_blank"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  target="_blank"
+/>
+`;
+
+exports[`Link component 
+  target: "_blank", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  target="_blank"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  target: "_blank", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  target="_blank"
+/>
+`;
+
+exports[`Link component 
+  target: "_blank", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  target="_blank"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  target: "_blank", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  rel="Sample string"
+  target="_blank"
+/>
+`;
+
+exports[`Link component 
+  target: "_blank", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  rel="Sample string"
+  target="_blank"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  target: "_blank", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_blank"
+/>
+`;
+
+exports[`Link component 
+  target: "_blank", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_blank"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  target: "_parent"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  target="_parent"
+/>
+`;
+
+exports[`Link component 
+  target: "_parent", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  target="_parent"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  target: "_parent", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  target="_parent"
+/>
+`;
+
+exports[`Link component 
+  target: "_parent", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  target="_parent"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  target: "_parent", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  rel="Sample string"
+  target="_parent"
+/>
+`;
+
+exports[`Link component 
+  target: "_parent", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  rel="Sample string"
+  target="_parent"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  target: "_parent", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_parent"
+/>
+`;
+
+exports[`Link component 
+  target: "_parent", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_parent"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  target: "_self"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  target="_self"
+/>
+`;
+
+exports[`Link component 
+  target: "_self", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  target="_self"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  target: "_self", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  target="_self"
+/>
+`;
+
+exports[`Link component 
+  target: "_self", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  target="_self"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  target: "_self", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  rel="Sample string"
+  target="_self"
+/>
+`;
+
+exports[`Link component 
+  target: "_self", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  rel="Sample string"
+  target="_self"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  target: "_self", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_self"
+/>
+`;
+
+exports[`Link component 
+  target: "_self", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_self"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  target: "_top"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  target="_top"
+/>
+`;
+
+exports[`Link component 
+  target: "_top", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  target="_top"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  target: "_top", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  target="_top"
+/>
+`;
+
+exports[`Link component 
+  target: "_top", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  target="_top"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  target: "_top", rel: "Sample string"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  rel="Sample string"
+  target="_top"
+/>
+`;
+
+exports[`Link component 
+  target: "_top", rel: "Sample string", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  rel="Sample string"
+  target="_top"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;
+
+exports[`Link component 
+  target: "_top", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_top"
+/>
+`;
+
+exports[`Link component 
+  target: "_top", rel: "Sample string", onClick: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<GenericText
+  className="Link"
+  componentType="a"
+  onClick={[MockFunction]}
+  rel="Sample string"
+  target="_top"
+>
+  <span>
+    Link
+  </span>
+</GenericText>
+`;

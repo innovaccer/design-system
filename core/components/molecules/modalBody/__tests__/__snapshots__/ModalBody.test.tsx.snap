@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalBody component should match the snapshot for Modal Body with scroll 1`] = `
+<div
+  className="Modal-body"
+>
+  <div
+    style={
+      Object {
+        "height": "500px",
+      }
+    }
+  >
+    <p>
+      Modal Body
+    </p>
+  </div>
+</div>
+`;
+
+exports[`ModalBody component should match the snapshot for Modal Body without scroll 1`] = `
+<div
+  className="Modal-body"
+>
+  <p>
+    Modal Body
+  </p>
+</div>
+`;

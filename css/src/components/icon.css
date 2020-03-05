@@ -1,0 +1,63 @@
+/* Although the icons in the font can be scaled to any size, in accordance with material design icons guidelines, 
+ * we recommend them to be shown in either 18, 24, 36 or 48px. The default being 24px. 
+ * https://google.github.io/material-design-icons/
+ */
+
+
+/* Rules for sizing the icon. */
+
+
+/* .material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; } */
+
+
+/* Rules for using icons as black on a light background. */
+
+
+/* .material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); } */
+
+
+/* Rules for using icons as white on a dark background. */
+
+
+/* .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); } */
+
+.Icon--subtle {
+  color: var(--text-subtle);
+}
+
+.Icon--disabled {
+  color: var(--text-disabled);
+}
+
+.Icon--destructive {
+  color: var(--text-destructive);
+}
+
+.Icon--white {
+  color: var(--text-white);
+}
+
+.Icon--default {
+  color: var(--text);
+}
+
+.Icon--info {
+  color: var(--primary);
+}
+
+.Icon--success {
+  color: var(--success);
+}
+
+.Icon--warning {
+  color: var(--warning);
+}
+
+.Icon--alert {
+  color: var(--alert);
+}

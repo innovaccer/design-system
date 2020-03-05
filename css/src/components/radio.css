@@ -1,0 +1,99 @@
+/* Radio */
+
+.Radio {
+    display: flex;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    align-items: center;
+}
+
+.Radio-outerWrapper {
+    position: relative;
+    margin-right: var(--spacing);
+}
+
+.Radio-outerWrapper--regular {
+    height: var(--spacing-2);
+    width: var(--spacing-2);
+}
+
+.Radio-outerWrapper--tiny {
+    height: var(--spacing-l);
+    width: var(--spacing-l);
+}
+
+.Radio-input {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+.Radio-wrapper {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.Radio--disabled .Radio-wrapper {
+    border: var(--spacing-xs) solid var(--secondary-light);
+    background-color: var(--secondary-lightest);
+    pointer-events: none;
+}
+
+.Radio-input:checked~.Radio-wrapper {
+    border: var(--spacing-xs) solid var(--primary);
+}
+
+.Radio-input:checked~.Radio-wrapper:focus {
+    border: var(--spacing-xs) solid var(--primary-dark);
+}
+
+.Radio-input:checked~.Radio-wrapper:after {
+    display: block;
+}
+
+.Radio-wrapper:after {
+    content: "";
+    display: none;
+    border-radius: 50%;
+    background: var(--primary);
+}
+
+.Radio-wrapper--regular:after {
+    width: var(--spacing);
+    height: var(--spacing);
+}
+
+.Radio-wrapper--tiny:after {
+    width: var(--spacing-m);
+    height: var(--spacing-m); 
+    border: var(--spacing-xs) solid var(--primary);
+}
+
+.Radio--disabled .Radio-input:checked~.Radio-wrapper {
+    border: var(--spacing-xs) solid var(--primary-lighter);
+    pointer-events: none;
+}
+
+.Radio--disabled .Radio-input:checked~.Radio-wrapper:after {
+    background: var(--primary-lighter);
+}
+
+.Radio--disabled .Radio-wrapper--checked {
+    border: var(--spacing-xs) solid var(--primary-lighter);
+    pointer-events: none;
+}

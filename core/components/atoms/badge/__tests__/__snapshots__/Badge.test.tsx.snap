@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge component 
+  children: "Badge"
+ 1`] = `
+<span
+  className="Badge Badge--secondary"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "accent1"
+ 1`] = `
+<span
+  className="Badge Badge--accent1"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "accent1", subtle: false
+ 1`] = `
+<span
+  className="Badge Badge--accent1"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "accent1", subtle: true
+ 1`] = `
+<span
+  className="Badge Badge--subtle-accent1"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "accent2"
+ 1`] = `
+<span
+  className="Badge Badge--accent2"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "accent2", subtle: false
+ 1`] = `
+<span
+  className="Badge Badge--accent2"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "accent2", subtle: true
+ 1`] = `
+<span
+  className="Badge Badge--subtle-accent2"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "accent3"
+ 1`] = `
+<span
+  className="Badge Badge--accent3"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "accent3", subtle: false
+ 1`] = `
+<span
+  className="Badge Badge--accent3"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "accent3", subtle: true
+ 1`] = `
+<span
+  className="Badge Badge--subtle-accent3"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "accent4"
+ 1`] = `
+<span
+  className="Badge Badge--accent4"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "accent4", subtle: false
+ 1`] = `
+<span
+  className="Badge Badge--accent4"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "accent4", subtle: true
+ 1`] = `
+<span
+  className="Badge Badge--subtle-accent4"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "alert"
+ 1`] = `
+<span
+  className="Badge Badge--alert"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "alert", subtle: false
+ 1`] = `
+<span
+  className="Badge Badge--alert"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "alert", subtle: true
+ 1`] = `
+<span
+  className="Badge Badge--subtle-alert"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "primary"
+ 1`] = `
+<span
+  className="Badge Badge--primary"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "primary", subtle: false
+ 1`] = `
+<span
+  className="Badge Badge--primary"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "primary", subtle: true
+ 1`] = `
+<span
+  className="Badge Badge--subtle-primary"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "secondary"
+ 1`] = `
+<span
+  className="Badge Badge--secondary"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "secondary", subtle: false
+ 1`] = `
+<span
+  className="Badge Badge--secondary"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "secondary", subtle: true
+ 1`] = `
+<span
+  className="Badge Badge--subtle-secondary"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "success"
+ 1`] = `
+<span
+  className="Badge Badge--success"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "success", subtle: false
+ 1`] = `
+<span
+  className="Badge Badge--success"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "success", subtle: true
+ 1`] = `
+<span
+  className="Badge Badge--subtle-success"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "warning"
+ 1`] = `
+<span
+  className="Badge Badge--warning"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "warning", subtle: false
+ 1`] = `
+<span
+  className="Badge Badge--warning"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", appearance: "warning", subtle: true
+ 1`] = `
+<span
+  className="Badge Badge--subtle-warning"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", subtle: false
+ 1`] = `
+<span
+  className="Badge Badge--secondary"
+>
+  Badge
+</span>
+`;
+
+exports[`Badge component 
+  children: "Badge", subtle: true
+ 1`] = `
+<span
+  className="Badge Badge--subtle-secondary"
+>
+  Badge
+</span>
+`;

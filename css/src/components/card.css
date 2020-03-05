@@ -1,0 +1,21 @@
+/* badge */
+
+.Card {
+  border-radius: var(--spacing-m);
+  border: var(--border);
+}
+
+.Card--shadow-light {
+  border: none;
+  box-shadow: var(--shadow-s);
+}
+
+.Card--shadow-medium {
+  border: none;
+  box-shadow: var(--shadow-m);
+}
+
+.Card--shadow-dark {
+  border: none;
+  box-shadow: var(--shadow-l);
+}
