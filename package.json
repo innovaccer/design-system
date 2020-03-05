@@ -9,7 +9,7 @@
     "start": "start-storybook",
     "dev": "concurrently --kill-others \"npm run watch-css\" \"npm run start\"",
     "storybook": "start-storybook",
-    "build-storybook": "npm run build-css && build-storybook -c .storybook -o .dist",
+    "build-storybook": "build-storybook -c .storybook -o .dist --loglevel error",
     "deploy-storybook": "aws s3 sync .dist s3://$BUCKET_NAME/ --delete",
     "setup-css-dev": "./scripts/setup-local-css.sh",
     "lint": "tslint --project tsconfig.json 'core/**/*.{tx,tsx}'",
