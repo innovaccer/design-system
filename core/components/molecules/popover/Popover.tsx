@@ -14,6 +14,7 @@ export interface IPopoverProps {
   dark?: boolean;
   closeOnBackdropClick?: boolean;
   on?: ActionType;
+  open?: boolean;
   style?: React.CSSProperties;
 }
 
@@ -27,7 +28,8 @@ const Popover: React.FunctionComponent<IPopoverProps> = props => {
     on = 'click',
     style = {},
     children,
-    trigger
+    trigger,
+    open
   } = props;
 
   const classes = classNames({
@@ -49,6 +51,7 @@ const Popover: React.FunctionComponent<IPopoverProps> = props => {
     hoverable,
     style,
     placement: position,
+    open
   };
 
   return (
