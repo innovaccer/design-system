@@ -2,18 +2,14 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import Tooltip, { ITooltipProps as IProps } from '../Tooltip';
 import Button from '@/components/atoms/button';
-import { TestHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/TestHelper';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const Position = ['top', 'bottom', 'left', 'right'];
 const StringValue = 'Sample string';
-const BooleanValue = [true, false];
-const ReactNodeValue = <Button>Button</Button>;
 
-const Mapper = {
-  position: valueHelper(Position, { iterate: true }),
+const mapper = {
+  position: valueHelper(Position, { required: true, iterate: true }),
   tooltip: valueHelper(StringValue, { required: true }),
-  children: valueHelper(ReactNodeValue, { required: true }),
-  appendToBody: valueHelper(BooleanValue, { iterate: true }),
 };
 
 describe('Tooltip component', () => {
@@ -26,12 +22,12 @@ describe('Tooltip component', () => {
         <Tooltip
           {...rest}
         >
-          {children}
+          <Button>Button</Button>
         </Tooltip>
       );
       expect(tree).toMatchSnapshot();
     });
   };
 
-  TestHelper(Mapper, testFunc);
+  testHelper(mapper, testFunc);
 });

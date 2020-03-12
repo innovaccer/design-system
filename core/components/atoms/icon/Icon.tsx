@@ -34,8 +34,8 @@ const Icon: React.FunctionComponent<IIconProps> = props => {
   });
 
   const styles = {
-    fontSize: size ? `${size}px` : '14px',
-    width: size ? `${size}px` : '14px',
+    fontSize: (size) ? `${size}px` : 'var(--font-size)',
+    width: (size) ? `${size}px` : 'var(--font-size)',
   };
 
   const onClickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {

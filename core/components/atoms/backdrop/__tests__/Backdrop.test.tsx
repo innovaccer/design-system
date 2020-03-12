@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import Backdrop, { IBackdropProps as IProps } from '../Backdrop';
-import { TestHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/TestHelper';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const BooleanValue = [true, false];
-const Mapper = {
-  open: valueHelper(BooleanValue, { required: true, iterate: true })
-};
+const booleanValue = [true, false];
 
 describe('Backdrop component', () => {
+  const mapper = {
+    open: valueHelper(booleanValue, { required: true, iterate: true })
+  };
+
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as IProps;
 
@@ -22,5 +23,5 @@ describe('Backdrop component', () => {
     });
   };
 
-  TestHelper(Mapper, testFunc);
+  testHelper(mapper, testFunc);
 });

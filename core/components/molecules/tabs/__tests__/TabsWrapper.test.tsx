@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { TestHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/TestHelper';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Tab from '../Tab';
-import Tabs, { ITabsProps as IProps } from '../Tabs';
+import TabsWrapper, { ITabsWrapperProps as IProps } from '../TabsWrapper';
 
 const TabValue = [0, 1, 2];
-const FunctionValue = [jest.fn()];
+const FunctionValue = jest.fn();
 const ReactNodeValue = (
   <>
     <Tab label={<></>} />
@@ -14,27 +14,27 @@ const ReactNodeValue = (
 );
 
 const Mapper: Record<string, any> = {
-  activeTab: valueHelper(TabValue, { iterate: true }),
-  onTabChange: valueHelper(FunctionValue, { iterate: true }),
+  activeTab: valueHelper(TabValue, { required: true, iterate: true }),
+  onTabChange: valueHelper(FunctionValue, { required: true }),
   children: valueHelper(ReactNodeValue, { required: true }),
 };
 
-describe('Tabs component', () => {
+describe('TabsWrapper component', () => {
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as IProps;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
-        <Tabs
+        <TabsWrapper
           {...attr}
         >
           <Tab label={<></>} />
           <Tab label={<></>} />
-        </Tabs>
+        </TabsWrapper>
       );
       expect(tree).toMatchSnapshot();
     });
   };
 
-  TestHelper(Mapper, testFunc);
+  testHelper(Mapper, testFunc);
 });

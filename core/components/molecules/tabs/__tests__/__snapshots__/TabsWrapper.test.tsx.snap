@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabsWrapper component 
+  activeTab: 0, onTabChange: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<div
+  className="TabsWrapper"
+>
+  <div
+    className="TabsWrapper-header"
+  >
+    <div
+      className="Tab Tab--active"
+      key="0"
+      onClick={[Function]}
+    />
+    <div
+      className="Tab"
+      key="1"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="TabsWrapper-content"
+  >
+    <Tab
+      label={<React.Fragment />}
+    />
+  </div>
+</div>
+`;
+
+exports[`TabsWrapper component 
+  activeTab: 1, onTabChange: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<div
+  className="TabsWrapper"
+>
+  <div
+    className="TabsWrapper-header"
+  >
+    <div
+      className="Tab"
+      key="0"
+      onClick={[Function]}
+    />
+    <div
+      className="Tab Tab--active"
+      key="1"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="TabsWrapper-content"
+  >
+    <Tab
+      label={<React.Fragment />}
+    />
+  </div>
+</div>
+`;
+
+exports[`TabsWrapper component 
+  activeTab: 2, onTabChange: "[Function]", children: "[ReactNode]"
+ 1`] = `
+<div
+  className="TabsWrapper"
+>
+  <div
+    className="TabsWrapper-header"
+  >
+    <div
+      className="Tab Tab--active"
+      key="0"
+      onClick={[Function]}
+    />
+    <div
+      className="Tab"
+      key="1"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="TabsWrapper-content"
+  >
+    <Tab
+      label={<React.Fragment />}
+    />
+  </div>
+</div>
+`;

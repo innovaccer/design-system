@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Paragraph component 
-  children: "Sample string"
+  appearance: "default"
  1`] = `
 <GenericText
   className="Text Text--default"
@@ -12,18 +12,7 @@ exports[`Paragraph component
 `;
 
 exports[`Paragraph component 
-  children: "Sample string", appearance: "default"
- 1`] = `
-<GenericText
-  className="Text Text--default"
-  componentType="p"
->
-  Sample string
-</GenericText>
-`;
-
-exports[`Paragraph component 
-  children: "Sample string", appearance: "destructive"
+  appearance: "destructive"
  1`] = `
 <GenericText
   className="Text Text--destructive"
@@ -34,7 +23,7 @@ exports[`Paragraph component
 `;
 
 exports[`Paragraph component 
-  children: "Sample string", appearance: "disabled"
+  appearance: "disabled"
  1`] = `
 <GenericText
   className="Text Text--disabled"
@@ -45,7 +34,7 @@ exports[`Paragraph component
 `;
 
 exports[`Paragraph component 
-  children: "Sample string", appearance: "subtle"
+  appearance: "subtle"
  1`] = `
 <GenericText
   className="Text Text--subtle"
@@ -56,78 +45,12 @@ exports[`Paragraph component
 `;
 
 exports[`Paragraph component 
-  children: "Sample string", appearance: "white"
+  appearance: "white"
  1`] = `
 <GenericText
   className="Text Text--white"
   componentType="p"
 >
   Sample string
-</GenericText>
-`;
-
-exports[`Paragraph component 
-  children: 10
- 1`] = `
-<GenericText
-  className="Text Text--default"
-  componentType="p"
->
-  10
-</GenericText>
-`;
-
-exports[`Paragraph component 
-  children: 10, appearance: "default"
- 1`] = `
-<GenericText
-  className="Text Text--default"
-  componentType="p"
->
-  10
-</GenericText>
-`;
-
-exports[`Paragraph component 
-  children: 10, appearance: "destructive"
- 1`] = `
-<GenericText
-  className="Text Text--destructive"
-  componentType="p"
->
-  10
-</GenericText>
-`;
-
-exports[`Paragraph component 
-  children: 10, appearance: "disabled"
- 1`] = `
-<GenericText
-  className="Text Text--disabled"
-  componentType="p"
->
-  10
-</GenericText>
-`;
-
-exports[`Paragraph component 
-  children: 10, appearance: "subtle"
- 1`] = `
-<GenericText
-  className="Text Text--subtle"
-  componentType="p"
->
-  10
-</GenericText>
-`;
-
-exports[`Paragraph component 
-  children: 10, appearance: "white"
- 1`] = `
-<GenericText
-  className="Text Text--white"
-  componentType="p"
->
-  10
 </GenericText>
 `;

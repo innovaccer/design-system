@@ -3,7 +3,7 @@ import { number } from '@storybook/addon-knobs';
 import addons from '@storybook/addons';
 import { action } from '@storybook/addon-actions';
 
-import Tabs from './Tabs';
+import TabsWrapper from './TabsWrapper';
 import Tab from './Tab';
 import Text from '@/components/atoms/text';
 import Badge from '@/components/atoms/badge';
@@ -22,7 +22,7 @@ export const all = () => {
     1
   );
 
-  const tabIconClass = (tabIndex:number) => {
+  const tabIconClass = (tabIndex: number) => {
     return classNames({
       ['material-icons']: true,
       ['Tab-icon']: true,
@@ -36,7 +36,7 @@ export const all = () => {
   };
 
   return (
-    <Tabs
+    <TabsWrapper
       activeTab={activeTab}
       onTabChange={onTabChangeHandler}
     >
@@ -77,7 +77,7 @@ export const all = () => {
           Third Tab
         </div>
       </Tab>
-    </Tabs>
+    </TabsWrapper>
   );
 };
 

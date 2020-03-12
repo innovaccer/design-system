@@ -1,21 +1,19 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import Text, { ITextProps as IProps } from '../Text';
-import { TestHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/TestHelper';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const Appearance = ['default', 'white', 'destructive', 'subtle', 'disabled'];
-const Weight = ['strong', 'medium'];
+const appearance = ['default', 'white', 'destructive', 'subtle', 'disabled'];
+const weight = ['strong', 'medium'];
 const BooleanValue = [true, false];
 const StringValue = 'Sample String';
 
-const Mapper = {
-  children: valueHelper(StringValue, { required: true }),
-  weight: valueHelper(Weight, { iterate: true }),
-  small: valueHelper(BooleanValue, { iterate: true }),
-  appearance: valueHelper(Appearance, { iterate: true }),
-};
-
 describe('Text component', () => {
+  const mapper = {
+    children: valueHelper(StringValue, { required: true }),
+    appearance: valueHelper(appearance, { required: true, iterate: true }),
+  };
+
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as IProps;
 
@@ -29,5 +27,49 @@ describe('Text component', () => {
     });
   };
 
-  TestHelper(Mapper, testFunc);
+  testHelper(mapper, testFunc);
+});
+
+describe('Text component', () => {
+  const mapper = {
+    children: valueHelper(StringValue, { required: true }),
+    weight: valueHelper(weight, { required: true, iterate: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as IProps;
+
+    it(testMessageHelper(attr), () => {
+      const tree = shallow(
+        <Text
+          {...attr}
+        />
+      );
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('Text component', () => {
+  const mapper = {
+    children: valueHelper(StringValue, { required: true }),
+    small: valueHelper(BooleanValue, { required: true, iterate: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as IProps;
+
+    it(testMessageHelper(attr), () => {
+      const tree = shallow(
+        <Text
+          {...attr}
+        />
+      );
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
 });

@@ -1,26 +1,24 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { TestHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/TestHelper';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Radio, { IRadioProps as IProps } from '../Radio';
 
-const Size = ['tiny', 'regular'];
+const size = ['tiny', 'regular'];
 const BooleanValue = [true, false];
-const Label = ['Radio'];
-const FunctionValue = [jest.fn()];
+const label = 'Radio';
+const FunctionValue = jest.fn();
 const StringValue = 'Options';
 
-const Mapper: Record<string, any> = {
-  size: valueHelper(Size, { iterate: true }),
-  selected: valueHelper(BooleanValue, { iterate: true }),
-  disabled: valueHelper(BooleanValue, { iterate: true }),
-  checked: valueHelper(BooleanValue, { iterate: true }),
-  label: valueHelper(Label, { iterate: true }),
-  onChange: valueHelper(FunctionValue, { iterate: true }),
-  name: valueHelper(StringValue, { required: true }),
-  value: valueHelper(StringValue, { required: true }),
-};
-
 describe('Radio component', () => {
+  const mapper: Record<string, any> = {
+    size: valueHelper(size, { required: true, iterate: true }),
+    selected: valueHelper(true, { required: true }),
+    label: valueHelper(label, { required: true }),
+    onChange: valueHelper(FunctionValue, { required: true }),
+    name: valueHelper(StringValue, { required: true }),
+    value: valueHelper(StringValue, { required: true }),
+  };
+
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as IProps;
 
@@ -34,5 +32,31 @@ describe('Radio component', () => {
     });
   };
 
-  TestHelper(Mapper, testFunc);
+  testHelper(mapper, testFunc);
+});
+
+describe('Radio component', () => {
+  const mapper: Record<string, any> = {
+    disabled: valueHelper(BooleanValue, { required: true, iterate: true }),
+    selected: valueHelper(true, { required: true }),
+    label: valueHelper(label, { required: true }),
+    onChange: valueHelper(FunctionValue, { required: true }),
+    name: valueHelper(StringValue, { required: true }),
+    value: valueHelper(StringValue, { required: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as IProps;
+
+    it(testMessageHelper(attr), () => {
+      const tree = shallow(
+        <Radio
+          {...attr}
+        />
+      );
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
 });

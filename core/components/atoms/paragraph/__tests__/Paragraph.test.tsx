@@ -1,33 +1,29 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import Paragraph, { IParagraphProps as IProps } from '../Paragraph';
-import { TestHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/TestHelper';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const Appearance = ['default', 'white', 'destructive', 'subtle', 'disabled'];
-const StringValue = ['Sample string'];
-const NumberValue = [10];
+const appearance = ['default', 'white', 'destructive', 'subtle', 'disabled'];
 
-const Mapper = {
-  appearance: valueHelper(Appearance, { iterate: true }),
-  children: valueHelper([...StringValue, ...NumberValue], { required: true, iterate: true }),
+const mapper = {
+  appearance: valueHelper(appearance, { required: true, iterate: true }),
 };
 
 describe('Paragraph component', () => {
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as IProps;
-    const { children, ...rest } = attr;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
         <Paragraph
-          {...rest}
+          {...attr}
         >
-          {children}
+          Sample string
         </Paragraph>
       );
       expect(tree).toMatchSnapshot();
     });
   };
 
-  TestHelper(Mapper, testFunc);
+  testHelper(mapper, testFunc);
 });

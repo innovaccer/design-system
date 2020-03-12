@@ -84,7 +84,7 @@ const iterateMapper = (Mapper: Record<string, any>, testFunc?: ((props: Record<s
   }
 }
 
-export const TestHelper = (Mapper: Record<string, any>, testFunc: ((props: Record<string, any>) => void)): void => {
+export const testHelper = (Mapper: Record<string, any>, testFunc: ((props: Record<string, any>) => void)): void => {
   iterateMapper(Mapper, testFunc);
 }
 

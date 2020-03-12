@@ -1,0 +1,151 @@
+/* datepicker */
+
+.RangePicker {
+    display: flex;
+}
+
+.DatePicker {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    min-width: 330px;
+}
+
+.DatePicker-header {
+    display: flex;
+    padding-left: var(--spacing-2);
+    padding-right: var(--spacing-2);
+    padding-top: var(--spacing-l);
+    padding-bottom: var(--spacing);
+}
+
+.DatePicker-headerIcon {
+    cursor: pointer;
+    user-select: none;
+}
+
+.DatePicker-headerIcon--disabled .Icon {
+    color: var(--text-disabled);
+    pointer-events: none;
+}
+
+.DatePicker-headerContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    padding-top: var(--spacing-m);
+    padding-bottom: var(--spacing-m);
+    user-select: none;
+}
+
+.DatePicker-headerContent--noIcon-left {
+    margin-left: var(--spacing-3);
+}
+
+.DatePicker-headerContent--noIcon-right {
+    margin-right: var(--spacing-3);
+}
+
+.DatePicker-body {
+    display: flex;
+    flex-direction: column;
+    padding-left: var(--spacing-3);
+    padding-right: var(--spacing-3);
+    padding-bottom: var(--spacing-xl);
+}
+
+.DatePicker-valueRow {
+    display: flex;
+    margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
+    justify-content: center;
+}
+
+.DatePicker-valueRow:first-child {
+    margin-top: 0;
+}
+
+.DatePicker-valueRow:last-child {
+    margin-bottom: 0;
+}
+
+.DatePicker-value {
+    cursor: pointer;
+    user-select: none;
+    border-radius: var(--spacing-m);
+}
+
+.DatePicker-value:first-child {
+    margin-left: 0;
+}
+
+.DatePicker-value:last-child {
+    margin-right: 0;
+}
+
+.DatePicker-value:hover {
+    background: var(--secondary);
+}
+
+.DatePicker-value--inRange,
+.DatePicker-value--inRange:hover {
+    background: var(--primary-lightest);
+    border-radius: 0;
+    padding-top: var(--spacing-s);
+    padding-bottom: var(--spacing-s);
+}
+
+.DatePicker-value--inRange-error,
+.DatePicker-value--inRange-error:hover {
+    background: var(--alert-lightest);
+    border-radius: 0;
+    padding-top: var(--spacing-s);
+    padding-bottom: var(--spacing-s);
+}
+
+.DatePicker-value--active,
+.DatePicker-value--active:hover {
+    background: var(--primary);
+}
+
+.DatePicker--year .DatePicker-value,
+.DatePicker--month .DatePicker-value {
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
+    padding-left: var(--spacing-l);
+    padding-right: var(--spacing-l);
+    margin-left: var(--spacing-2);
+    margin-right: var(--spacing-2);
+}
+
+.DatePicker--date {
+    --value-width: var(--spacing-4);
+}
+
+.DatePicker--date .DatePicker-valueRow {
+    margin-top: var(--spacing-s);
+    margin-bottom: var(--spacing-s);
+}
+
+.DatePicker--date .DatePicker-value {
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
+    width: var(--value-width);
+    text-align: center;
+}
+
+.DatePicker-value--dummy {
+    pointer-events: none;
+}
+
+.DatePicker-value--disabled {
+    pointer-events: none;
+}
+
+.DatePicker-dayValues {
+    display: flex;
+    justify-content: center;
+}

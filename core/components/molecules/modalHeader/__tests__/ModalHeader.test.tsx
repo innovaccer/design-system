@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import ModalHeader, { IModalHeaderProps as IProps } from '../ModalHeader';
-import { TestHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/TestHelper';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const StringValue = ['events'];
 const FunctionValue = jest.fn();
@@ -27,5 +27,5 @@ describe('ModalHeader component', () => {
     });
   };
 
-  TestHelper(Mapper, testFunc);
+  testHelper(Mapper, testFunc);
 });

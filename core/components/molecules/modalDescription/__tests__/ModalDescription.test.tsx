@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import ModalDescription, { IModalDescriptionProps as IProps } from '../ModalDescription';
-import { TestHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/TestHelper';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const BooleanValue = [true, false];
 const StringValue = ['Sample String'];
@@ -27,5 +27,5 @@ describe('ModalDescription component', () => {
     });
   };
 
-  TestHelper(Mapper, testFunc);
+  testHelper(Mapper, testFunc);
 });

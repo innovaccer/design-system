@@ -1,17 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Avatar component 
-  children: "JD"
- 1`] = `
-<span
-  className="Avatar Avatar--primary"
->
-  JD
-</span>
-`;
-
-exports[`Avatar component 
-  children: "JD", appearance: "accent1"
+  appearance: "accent1"
  1`] = `
 <span
   className="Avatar Avatar--accent1"
@@ -21,7 +11,7 @@ exports[`Avatar component
 `;
 
 exports[`Avatar component 
-  children: "JD", appearance: "accent2"
+  appearance: "accent2"
  1`] = `
 <span
   className="Avatar Avatar--accent2"
@@ -31,7 +21,7 @@ exports[`Avatar component
 `;
 
 exports[`Avatar component 
-  children: "JD", appearance: "accent3"
+  appearance: "accent3"
  1`] = `
 <span
   className="Avatar Avatar--accent3"
@@ -41,7 +31,7 @@ exports[`Avatar component
 `;
 
 exports[`Avatar component 
-  children: "JD", appearance: "accent4"
+  appearance: "accent4"
  1`] = `
 <span
   className="Avatar Avatar--accent4"
@@ -51,7 +41,7 @@ exports[`Avatar component
 `;
 
 exports[`Avatar component 
-  children: "JD", appearance: "alert"
+  appearance: "alert"
  1`] = `
 <span
   className="Avatar Avatar--alert"
@@ -61,7 +51,7 @@ exports[`Avatar component
 `;
 
 exports[`Avatar component 
-  children: "JD", appearance: "primary"
+  appearance: "primary"
  1`] = `
 <span
   className="Avatar Avatar--primary"
@@ -71,7 +61,7 @@ exports[`Avatar component
 `;
 
 exports[`Avatar component 
-  children: "JD", appearance: "success"
+  appearance: "success"
  1`] = `
 <span
   className="Avatar Avatar--success"
@@ -81,7 +71,7 @@ exports[`Avatar component
 `;
 
 exports[`Avatar component 
-  children: "JD", appearance: "warning"
+  appearance: "warning"
  1`] = `
 <span
   className="Avatar Avatar--warning"

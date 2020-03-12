@@ -1,22 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Message component 
-  
- 1`] = `
-<div
-  className="Message Message--default"
->
-  <div>
-    <div
-      className="Message-description"
-    >
-      Description goes here
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Message component 
   appearance: "alert"
  1`] = `
 <div
@@ -266,29 +250,6 @@ exports[`Message component
       size={16}
     />
   </div>
-  <div>
-    <div
-      className="Message-title"
-    >
-      <Heading>
-        Title goes here
-      </Heading>
-    </div>
-    <div
-      className="Message-description"
-    >
-      Description goes here
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Message component 
-  title: "Title goes here"
- 1`] = `
-<div
-  className="Message Message--default"
->
   <div>
     <div
       className="Message-title"

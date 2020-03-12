@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Size } from '@/components/atoms/button';
 import Label from '@/components/atoms/label';
-import Text from  '@/components/atoms/text';
+import Text from '@/components/atoms/text';
 import Tooltip from '@/components/atoms/tooltip';
 
 export type InputType = 'text' | 'password' | 'number';
@@ -123,7 +123,7 @@ const Input = React.forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
           <i className={rightIconClass} onClick={e => onClearHandler && onClearHandler(e)}>close</i>
         }
       </div>
-      { size !== 'tiny' && caption && (
+      {size !== 'tiny' && caption && (
         <div className="Input-caption">
           {error &&
             <i className={errorIconClass}>error</i>

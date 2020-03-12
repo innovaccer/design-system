@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch component 
+  appearance: "alert", checked: true, disabled: false
+ 1`] = `
+<div
+  className="Switch Switch--regular"
+>
+  <input
+    checked={true}
+    className="Switch-input"
+    disabled={false}
+    type="checkbox"
+  />
+  <span
+    className="Switch-wrapper Switch-wrapper--regular Switch-wrapper--alert Switch-wrapper--checked"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`Switch component 
+  appearance: "alert", checked: true, disabled: true
+ 1`] = `
+<div
+  className="Switch Switch--disabled Switch--regular"
+>
+  <input
+    checked={true}
+    className="Switch-input"
+    disabled={true}
+    type="checkbox"
+  />
+  <span
+    className="Switch-wrapper Switch-wrapper--disabled Switch-wrapper--regular Switch-wrapper--alert Switch-wrapper--checked Switch-wrapper--checkedDisabled"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`Switch component 
+  appearance: "primary", checked: true, disabled: false
+ 1`] = `
+<div
+  className="Switch Switch--regular"
+>
+  <input
+    checked={true}
+    className="Switch-input"
+    disabled={false}
+    type="checkbox"
+  />
+  <span
+    className="Switch-wrapper Switch-wrapper--regular Switch-wrapper--primary Switch-wrapper--checked"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`Switch component 
+  appearance: "primary", checked: true, disabled: true
+ 1`] = `
+<div
+  className="Switch Switch--disabled Switch--regular"
+>
+  <input
+    checked={true}
+    className="Switch-input"
+    disabled={true}
+    type="checkbox"
+  />
+  <span
+    className="Switch-wrapper Switch-wrapper--disabled Switch-wrapper--regular Switch-wrapper--primary Switch-wrapper--checked Switch-wrapper--checkedDisabled"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`Switch component 
+  appearance: "success", checked: true, disabled: false
+ 1`] = `
+<div
+  className="Switch Switch--regular"
+>
+  <input
+    checked={true}
+    className="Switch-input"
+    disabled={false}
+    type="checkbox"
+  />
+  <span
+    className="Switch-wrapper Switch-wrapper--regular Switch-wrapper--success Switch-wrapper--checked"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`Switch component 
+  appearance: "success", checked: true, disabled: true
+ 1`] = `
+<div
+  className="Switch Switch--disabled Switch--regular"
+>
+  <input
+    checked={true}
+    className="Switch-input"
+    disabled={true}
+    type="checkbox"
+  />
+  <span
+    className="Switch-wrapper Switch-wrapper--disabled Switch-wrapper--regular Switch-wrapper--success Switch-wrapper--checked Switch-wrapper--checkedDisabled"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`Switch component 
+  appearance: "warning", checked: true, disabled: false
+ 1`] = `
+<div
+  className="Switch Switch--regular"
+>
+  <input
+    checked={true}
+    className="Switch-input"
+    disabled={false}
+    type="checkbox"
+  />
+  <span
+    className="Switch-wrapper Switch-wrapper--regular Switch-wrapper--warning Switch-wrapper--checked"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`Switch component 
+  appearance: "warning", checked: true, disabled: true
+ 1`] = `
+<div
+  className="Switch Switch--disabled Switch--regular"
+>
+  <input
+    checked={true}
+    className="Switch-input"
+    disabled={true}
+    type="checkbox"
+  />
+  <span
+    className="Switch-wrapper Switch-wrapper--disabled Switch-wrapper--regular Switch-wrapper--warning Switch-wrapper--checked Switch-wrapper--checkedDisabled"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`Switch component 
+  checked: true
+ 1`] = `
+<div
+  className="Switch Switch--regular"
+>
+  <input
+    checked={true}
+    className="Switch-input"
+    type="checkbox"
+  />
+  <span
+    className="Switch-wrapper Switch-wrapper--regular Switch-wrapper--primary Switch-wrapper--checked"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`Switch component 
+  checked: true, size: "regular"
+ 1`] = `
+<div
+  className="Switch Switch--regular"
+>
+  <input
+    checked={true}
+    className="Switch-input"
+    type="checkbox"
+  />
+  <span
+    className="Switch-wrapper Switch-wrapper--regular Switch-wrapper--primary Switch-wrapper--checked"
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`Switch component 
+  checked: true, size: "tiny"
+ 1`] = `
+<div
+  className="Switch Switch--tiny"
+>
+  <input
+    checked={true}
+    className="Switch-input"
+    type="checkbox"
+  />
+  <span
+    className="Switch-wrapper Switch-wrapper--tiny Switch-wrapper--primary Switch-wrapper--checked"
+    onClick={[Function]}
+  />
+</div>
+`;

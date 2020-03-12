@@ -1,14 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Image placeholder component 
-  
- 1`] = `
-<div
-  className="Placeholder-paragraph Placeholder--animation Placeholder-paragraph--medium"
-/>
-`;
-
-exports[`Image placeholder component 
   length: "large"
  1`] = `
 <div

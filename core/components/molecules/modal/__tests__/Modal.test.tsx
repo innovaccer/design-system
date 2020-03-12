@@ -2,10 +2,10 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import Modal, { IModalProps as IProps } from '../Modal';
 import ModalHeader from '@/components/molecules/modalHeader';
-import { TestHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/TestHelper';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const FunctionValue = jest.fn();
-const Dimension = ['small', 'medium', 'large'];
+const dimension = ['small', 'medium', 'large'];
 const BooleanValue = [true, false];
 const modalHeaderOptions = {
   onClose: () => null,
@@ -13,15 +13,13 @@ const modalHeaderOptions = {
   heading: 'Heading',
   subHeading: 'Subheading'
 };
-const ReactNodeValue = [(<ModalHeader {...modalHeaderOptions} />)];
 
-const Mapper = {
+const mapper = {
   onClose: valueHelper(FunctionValue, { required: true }),
-  backdrop: valueHelper(BooleanValue, { iterate: true }),
-  closeOnEscape: valueHelper(BooleanValue, { iterate: true }),
-  dimension: valueHelper(Dimension, { iterate: true }),
-  open: valueHelper(BooleanValue, { required: true, iterate: true }),
-  children: valueHelper(ReactNodeValue, { iterate: true }),
+  backdrop: valueHelper(BooleanValue, { required: true, iterate: true }),
+  dimension: valueHelper(dimension, { required: true, iterate: true }),
+  open: valueHelper(true, { required: true }),
+
 };
 
 describe('Modal component', () => {
@@ -32,7 +30,7 @@ describe('Modal component', () => {
     it(testMessageHelper(attr), () => {
       const tree = shallow(
         <Modal {...rest}>
-          {children}
+          <ModalHeader {...modalHeaderOptions} />
         </Modal>
       );
 
@@ -40,6 +38,5 @@ describe('Modal component', () => {
     });
   };
 
-  TestHelper(Mapper, testFunc);
-  // TestHelper(Mapper, testFunc(true));
+  testHelper(mapper, testFunc);
 });

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Image placeholder component 
-  
+  imagesize: "large"
  1`] = `
 <div
   className="Placeholder-image Placeholder--animation Placeholder-image--small"
@@ -9,23 +9,15 @@ exports[`Image placeholder component
 `;
 
 exports[`Image placeholder component 
-  imageSize: "large"
+  imagesize: "medium"
  1`] = `
 <div
-  className="Placeholder-image Placeholder--animation Placeholder-image--large"
+  className="Placeholder-image Placeholder--animation Placeholder-image--small"
 />
 `;
 
 exports[`Image placeholder component 
-  imageSize: "medium"
- 1`] = `
-<div
-  className="Placeholder-image Placeholder--animation Placeholder-image--medium"
-/>
-`;
-
-exports[`Image placeholder component 
-  imageSize: "small"
+  imagesize: "small"
  1`] = `
 <div
   className="Placeholder-image Placeholder--animation Placeholder-image--small"
@@ -41,55 +33,7 @@ exports[`Image placeholder component
 `;
 
 exports[`Image placeholder component 
-  round: false, imageSize: "large"
- 1`] = `
-<div
-  className="Placeholder-image Placeholder--animation Placeholder-image--large"
-/>
-`;
-
-exports[`Image placeholder component 
-  round: false, imageSize: "medium"
- 1`] = `
-<div
-  className="Placeholder-image Placeholder--animation Placeholder-image--medium"
-/>
-`;
-
-exports[`Image placeholder component 
-  round: false, imageSize: "small"
- 1`] = `
-<div
-  className="Placeholder-image Placeholder--animation Placeholder-image--small"
-/>
-`;
-
-exports[`Image placeholder component 
   round: true
- 1`] = `
-<div
-  className="Placeholder-image Placeholder--animation Placeholder-image--round Placeholder-image--small"
-/>
-`;
-
-exports[`Image placeholder component 
-  round: true, imageSize: "large"
- 1`] = `
-<div
-  className="Placeholder-image Placeholder--animation Placeholder-image--round Placeholder-image--large"
-/>
-`;
-
-exports[`Image placeholder component 
-  round: true, imageSize: "medium"
- 1`] = `
-<div
-  className="Placeholder-image Placeholder--animation Placeholder-image--round Placeholder-image--medium"
-/>
-`;
-
-exports[`Image placeholder component 
-  round: true, imageSize: "small"
  1`] = `
 <div
   className="Placeholder-image Placeholder--animation Placeholder-image--round Placeholder-image--small"
