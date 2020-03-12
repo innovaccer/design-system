@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import PlaceholderParagraph, { IPlaceholderParagraphProps as IProps } from '../PlaceholderParagraph';
-import { TestHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/TestHelper';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const Length = ['small', 'medium', 'large'];
+const length = ['small', 'medium', 'large'];
 
-const Mapper = {
-  length: valueHelper(Length, { iterate: true })
+const mapper = {
+  length: valueHelper(length, { required: true, iterate: true })
 };
 
 describe('Image placeholder component', () => {
@@ -23,5 +23,5 @@ describe('Image placeholder component', () => {
     });
   };
 
-  TestHelper(Mapper, testFunc);
+  testHelper(mapper, testFunc);
 });

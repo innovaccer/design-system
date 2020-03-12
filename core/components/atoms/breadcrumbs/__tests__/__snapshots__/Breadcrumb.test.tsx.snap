@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumb component 
+  children: ["[ReactNode]"]
+ 1`] = `
+<li
+  className="Breadcrumb"
+>
+  <h2>
+    Hello World
+  </h2>
+</li>
+`;

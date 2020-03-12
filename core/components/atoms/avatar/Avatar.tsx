@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-type Appearance = 'primary' | 'alert' | 'warning' | 'success' | 'accent1' | 'accent2' | 'accent3' | 'accent4';
+export type Appearance = 'primary' | 'alert' | 'warning' | 'success' | 'accent1' | 'accent2' | 'accent3' | 'accent4';
 
 export interface IAvatarProps {
   appearance?: Appearance;

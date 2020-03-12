@@ -1,9 +1,12 @@
 /* input */
 
+.Input-input::-ms-clear {
+    display: none;
+}
+
 .Input {
     display: flex;
     flex-direction: column;
-
     min-width: var(--spacing-9);
 }
 
@@ -12,10 +15,8 @@
     flex-direction: row;
     align-items: center;
     box-sizing: border-box;
-
     border-radius: var(--spacing-m);
     border: var(--border);
-
     padding-right: var(--spacing-l);
     padding-left: var(--spacing-l);
 }
@@ -45,7 +46,7 @@
     font-size: var(--font-size-l);
 }
 
-.Input-wrapper:focus-within  {
+.Input-wrapper:focus-within {
     border: var(--spacing-xs) solid var(--primary);
 }
 
@@ -78,14 +79,12 @@
 .Input-input {
     display: flex;
     width: 100%;
-
     font-family: var(--font-family);
     font-weight: var(--font-weight-normal);
     font-size: var(--font-size);
     line-height: var(--font-height-s);
     color: var(--night);
     padding: 0;
-	
     border: none;
 }
 

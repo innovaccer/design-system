@@ -1,38 +1,35 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import Link, { ILinkProps as IProps } from '../Link';
-import { TestHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/TestHelper';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const Target = ['_blank', '_self', '_parent', '_top'];
-const StringValue = ['Sample string'];
-const FunctionValue = [jest.fn()];
-const ReactNodeValue = [(<span>Link</span>)];
+const target = ['_blank', '_self', '_parent', '_top'];
+const StringValue = 'Sample string';
+const FunctionValue = jest.fn();
 
 const Mapper = {
-  id: valueHelper(StringValue, { iterate: true }),
-  href: valueHelper(StringValue, { iterate: true }),
-  target: valueHelper(Target, { iterate: true }),
-  rel: valueHelper(StringValue, { iterate: true }),
-  onClick: valueHelper(FunctionValue, { iterate: true }),
-  children: valueHelper(ReactNodeValue, { iterate: true })
+  id: valueHelper(StringValue, { required: true }),
+  href: valueHelper(StringValue, { required: true }),
+  target: valueHelper(target, { required: true, iterate: true }),
+  rel: valueHelper(StringValue, { required: true }),
+  onClick: valueHelper(FunctionValue, { required: true }),
 };
 
 describe('Link component', () => {
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as IProps;
-    const { children, ...rest } = attr;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
         <Link
-          {...rest}
+          {...attr}
         >
-          {children}
+          <span>Link</span>
         </Link>
       );
       expect(tree).toMatchSnapshot();
     });
   };
 
-  TestHelper(Mapper, testFunc);
+  testHelper(Mapper, testFunc);
 });

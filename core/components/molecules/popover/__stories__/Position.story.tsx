@@ -1,0 +1,59 @@
+import * as React from 'react';
+import Popover, { PositionType } from '../Popover';
+import Button from '@/components/atoms/button';
+import { action } from '@storybook/addon-actions';
+
+// CSF format story
+export const position = () => {
+  const positions: PositionType[] = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end'];
+  const appendToBody = false;
+  const hoverable = false;
+  const closeOnBackdropClick = true;
+  const dark = false;
+
+  const trigger: React.ReactElement[] = [];
+  positions.forEach(pos => {
+    trigger.push(
+      <div ref={buttonRef => buttonRef?.click()}>
+        <Button appearance="basic">{pos}</Button>
+      </div>
+    );
+  });
+
+  const options = {
+    appendToBody,
+    dark,
+    closeOnBackdropClick,
+    hoverable,
+    style: {
+      height: '50px',
+      width: '150px',
+      padding: '16px'
+    }
+  };
+
+  const style = {
+    display: 'flex',
+    'flex-wrap': 'wrap',
+  };
+
+  return (
+    <div style={style}>
+      {
+        positions.map((pos, ind) => {
+          return (
+            <div key={ind} style={{ marginTop: '80px', marginRight: '20%', marginBottom: ind >= 3 ? '55px' : '0px' }} >
+              <Popover trigger={trigger[ind]} position={pos} {...options}>
+                <p>Popup</p>
+                <Button appearance="primary" onClick={action('button clicked inside popover')}>Click</Button>
+              </Popover>
+            </div>
+          );
+        })
+      }
+    </div>
+
+  );
+};
+
+export default { title: 'Popover' };

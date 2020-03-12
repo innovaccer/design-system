@@ -64,36 +64,33 @@ body {
 
 /* Heading */
 .Heading {
-  font-weight: var(--heading-weight);
-  font-size: var(--heading-size);
-  line-height: var(--heading-height);
-  --heading-weight: var(--font-weight-bold);
-  --heading-size: var(--font-size-m);
-  --heading-height: var(--font-height-m);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-m);
+  line-height: var(--font-height-m);
 }
 
 .Heading--m {
-  --heading-weight: var(--font-weight-medium);
-  --heading-size: var(--font-size-l);
-  --heading-height: var(--font-height-l);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-l);
+  line-height: var(--font-height-l);
 }
 
 .Heading--l {
-  --heading-weight: var(--font-weight-normal);
-  --heading-size: var(--font-size-xl);
-  --heading-height: var(--font-height-xl);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-xl);
+  line-height: var(--font-height-xl);
 }
 
 .Heading--xl {
-  --heading-weight: var(--font-weight-medium);
-  --heading-size: var(--font-size-xxl);
-  --heading-height: var(--font-height-xxl);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-xxl);
+  line-height: var(--font-height-xxl);
 }
 
 .Heading--xxl {
-  --heading-weight: var(--font-weight-normal);
-  --heading-size: var(--font-size-xxxl);
-  --heading-height: var(--font-height-xxl);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-xxxl);
+  line-height: var(--font-height-xxl);
 }
 
 .Heading--default {

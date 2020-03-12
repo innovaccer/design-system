@@ -27,18 +27,18 @@
 }
 
 .Spinner--small {
-  height: 16px;
-  width: 16px;
+  height: var(--spacing-2);
+  width: var(--spacing-2);
 }
 
 .Spinner--medium {
-  height: 32px;
-  width: 32x;
+  height: var(--spacing-3);
+  width: var(--spacing-3);
 }
 
 .Spinner--large {
-  height: 48px;
-  width: 48px;
+  height: var(--spacing-4);
+  width: var(--spacing-4);
 }
 
 .Circle {

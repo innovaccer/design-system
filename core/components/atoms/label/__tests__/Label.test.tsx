@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import Label, { ILabelProps as IProps } from '../Label';
-import { TestHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/TestHelper';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const StringValue = 'Label';
 const BooleanValue = [true, false];
-const Mapper = {
-  children: valueHelper(StringValue, { required: true }),
-  disabled: valueHelper(BooleanValue, { iterate: true })
+const mapper = {
+  disabled: valueHelper(BooleanValue, { required: true, iterate: true })
 };
 
 describe('Label component', () => {
@@ -22,5 +20,5 @@ describe('Label component', () => {
     });
   };
 
-  TestHelper(Mapper, testFunc);
+  testHelper(mapper, testFunc);
 });

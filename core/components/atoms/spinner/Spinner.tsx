@@ -1,8 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-type Appearance = 'primary' | 'secondary' | 'white';
-type Size = 'small' | 'medium' | 'large';
+export type Appearance = 'primary' | 'secondary' | 'white';
+export type Size = 'small' | 'medium' | 'large';
 
 export interface ISpinnerProps {
   size?: Size;

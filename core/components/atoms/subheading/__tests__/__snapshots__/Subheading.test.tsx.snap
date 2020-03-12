@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Subheading component 
-  children: "Subheading"
+  appearance: "default"
  1`] = `
 <GenericText
   className="Subheading Subheading--default"
@@ -12,18 +12,7 @@ exports[`Subheading component
 `;
 
 exports[`Subheading component 
-  children: "Subheading", appearance: "default"
- 1`] = `
-<GenericText
-  className="Subheading Subheading--default"
-  componentType="h4"
->
-  Subheading
-</GenericText>
-`;
-
-exports[`Subheading component 
-  children: "Subheading", appearance: "disabled"
+  appearance: "disabled"
  1`] = `
 <GenericText
   className="Subheading Subheading--disabled"
@@ -34,7 +23,7 @@ exports[`Subheading component
 `;
 
 exports[`Subheading component 
-  children: "Subheading", appearance: "subtle"
+  appearance: "subtle"
  1`] = `
 <GenericText
   className="Subheading Subheading--subtle"
@@ -45,7 +34,7 @@ exports[`Subheading component
 `;
 
 exports[`Subheading component 
-  children: "Subheading", appearance: "white"
+  appearance: "white"
  1`] = `
 <GenericText
   className="Subheading Subheading--white"

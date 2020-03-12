@@ -1,0 +1,105 @@
+.Switch {
+    display: flex;
+}
+
+.Switch--tiny {
+    height: var(--spacing-2);
+    width: var(--spacing-3);
+}
+
+.Switch--regular {
+    height: var(--spacing-xl);
+    width: var(--spacing-4);
+}
+
+.Switch--large {
+    height: var(--spacing-3);
+    width: var(--spacing-5);
+}
+
+.Switch-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.Switch-wrapper {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    line-height: 100%;
+    padding: var(--spacing-xs);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-light);
+}
+
+.Switch-wrapper--tiny {
+    border-radius: 10px;
+}
+
+.Switch-wrapper--regular {
+    border-radius: 34px;
+}
+
+.Switch-wrapper--large {
+    border-radius: 38px;
+}
+
+.Switch-wrapper:before {
+    content: "";
+    height: 100%;
+    width: 50%;
+    background-color: var(--shadow-0);
+    box-shadow: 0 0 var(--spacing-xs) 0 var(--shadow-20);
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.Switch-wrapper--checked.Switch-wrapper--primary {
+    background-color: var(--primary);
+}
+
+.Switch-wrapper--checked.Switch-wrapper--alert {
+    background-color: var(--alert);
+}
+
+.Switch-wrapper--checked.Switch-wrapper--success {
+    background-color: var(--success);
+}
+
+.Switch-wrapper--checked.Switch-wrapper--warning {
+    background-color: var(--warning);
+}
+
+.Switch-wrapper--checked:before {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+}
+
+.Switch--disabled {
+    pointer-events: none;
+}
+
+.Switch-wrapper--disabled:before {
+    background-color: var(--secondary-lightest);
+}
+
+.Switch-wrapper--checkedDisabled.Switch-wrapper--primary {
+    background-color: var(--primary-lighter);
+}
+
+.Switch-wrapper--checkedDisabled.Switch-wrapper--alert {
+    background-color: var(--alert-lighter);
+}
+
+.Switch-wrapper--checkedDisabled.Switch-wrapper--success {
+    background-color: var(--success-lighter);
+}
+
+.Switch-wrapper--checkedDisabled.Switch-wrapper--warning {
+    background-color: var(--warning-lighter);
+}

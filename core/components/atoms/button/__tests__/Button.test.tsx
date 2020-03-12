@@ -1,46 +1,152 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { TestHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/TestHelper';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Button, { IButtonProps as IProps } from '../Button';
 
 const BooleanValue = [true, false];
-const Icon = ['events'];
-const IconAlign = ['left', 'right'];
-const Size = ['tiny', 'regular', 'large'];
-const Appearance = ['basic', 'primary', 'success', 'alert', 'transparent'];
-const FunctionValue = [jest.fn()];
-const StringValue = ['button'];
-
-const Mapper: Record<string, any> = {
-  children: valueHelper(StringValue, { iterate: true }),
-  size: valueHelper(Size, { iterate: true }),
-  appearance: valueHelper(Appearance, { iterate: true }),
-  expanded: valueHelper(BooleanValue, { iterate: true }),
-  disabled: valueHelper(BooleanValue, { iterate: true }),
-  loading: valueHelper(BooleanValue, { iterate: true }),
-  icon: valueHelper(Icon, { iterate: true }),
-  iconAlign: valueHelper(IconAlign, { iterate: true }),
-  onClick: valueHelper(FunctionValue, { iterate: true }),
-  onMouseEnter: valueHelper(FunctionValue, { iterate: true }),
-  onMouseLeave: valueHelper(FunctionValue, { iterate: true }),
-};
+const icon = 'events';
+const iconAlign = ['left', 'right'];
+const size = ['tiny', 'regular', 'large'];
+const appearance = ['basic', 'primary', 'success', 'alert', 'transparent'];
 
 describe('Button component', () => {
+  const mapper: Record<string, any> = {
+    appearance: valueHelper(appearance, { required: true, iterate: true }),
+    expanded: valueHelper(BooleanValue, { required: true, iterate: true }),
+  };
+
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as IProps;
-    const { children, ...rest } = attr;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
         <Button
-          {...rest}
+          {...attr}
         >
-          {children}
+          Button
         </Button >
       );
       expect(tree).toMatchSnapshot();
     });
   };
 
-  TestHelper(Mapper, testFunc);
+  testHelper(mapper, testFunc);
+});
+
+describe('Button component', () => {
+  const mapper: Record<string, any> = {
+    size: valueHelper(size, { required: true, iterate: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as IProps;
+
+    it(testMessageHelper(attr), () => {
+      const tree = shallow(
+        <Button
+          {...attr}
+        >
+          Button
+        </Button >
+      );
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('Button component', () => {
+  const mapper: Record<string, any> = {
+    size: valueHelper(size, { required: true, iterate: true }),
+    icon: valueHelper(icon, { required: true }),
+    iconAlign: valueHelper(iconAlign, { required: true, iterate: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as IProps;
+
+    it(testMessageHelper(attr), () => {
+      const tree = shallow(
+        <Button
+          {...attr}
+        >
+          Button
+        </Button >
+      );
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('Button component', () => {
+  const mapper: Record<string, any> = {
+    appearance: valueHelper(appearance, { required: true, iterate: true }),
+    disabled: valueHelper(true, { required: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as IProps;
+
+    it(testMessageHelper(attr), () => {
+      const tree = shallow(
+        <Button
+          {...attr}
+        >
+          Button
+        </Button >
+      );
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('Button component', () => {
+  const mapper: Record<string, any> = {
+    appearance: valueHelper(appearance, { required: true, iterate: true }),
+    loading: valueHelper(true, { required: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as IProps;
+
+    it(testMessageHelper(attr), () => {
+      const tree = shallow(
+        <Button
+          {...attr}
+        >
+          Button
+        </Button >
+      );
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('Button component with no children', () => {
+  const mapper: Record<string, any> = {
+    appearance: valueHelper(appearance, { required: true, iterate: true }),
+    loading: valueHelper(true, { required: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as IProps;
+
+    it(testMessageHelper(attr), () => {
+      const tree = shallow(
+        <Button
+          {...attr}
+        />
+      );
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
 });

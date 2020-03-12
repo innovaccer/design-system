@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import Card, { ICardProps as IProps } from '../Card';
-import { TestHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/TestHelper';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const Shadow = ['light', 'medium', 'dark'];
 const Style = [{
@@ -10,8 +10,8 @@ const Style = [{
 }];
 
 const Mapper = {
-  shadow: valueHelper(Shadow, { iterate: true }),
-  style: valueHelper(Style, { iterate: true })
+  shadow: valueHelper(Shadow, { required: true, iterate: true }),
+  style: valueHelper(Style, { required: true, iterate: true })
 };
 
 describe('Card component', () => {
@@ -30,5 +30,5 @@ describe('Card component', () => {
     });
   };
 
-  TestHelper(Mapper, testFunc);
+  testHelper(Mapper, testFunc);
 });

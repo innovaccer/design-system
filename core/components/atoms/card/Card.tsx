@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-type Shadows = 'light' | 'medium' | 'dark';
+export type Shadows = 'light' | 'medium' | 'dark';
 
 export interface ICardProps {
   shadow?: Shadows;

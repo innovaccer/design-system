@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { PopperWrapper } from '@/utils';
 
-type PositionType = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end';
+export type PositionType = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end';
 type ActionType = 'click' | 'hover';
 
 export interface IPopoverProps {

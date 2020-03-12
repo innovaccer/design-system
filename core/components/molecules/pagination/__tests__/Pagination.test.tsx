@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import Pagination, { IPaginationProps as IProps } from '../Pagination';
-import { TestHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/TestHelper';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const PageNumber = [1, 5, 10, 15];
-const TotalPages = 50;
-const PaginationType = ['basic', 'jump'];
+const pageNumber = [1, 5, 10, 15];
+const totalPages = 50;
+const paginationType = ['basic', 'jump'];
 const FunctionValue = jest.fn();
 
-const Mapper: Record<string, any> = {
-  type: valueHelper(PaginationType, { iterate: true }),
-  page: valueHelper(PageNumber, { iterate: true }),
-  totalPages: valueHelper(TotalPages, { required: true }),
+const mapper: Record<string, any> = {
+  type: valueHelper(paginationType, { required: true, iterate: true }),
+  page: valueHelper(pageNumber, { required: true, iterate: true }),
+  totalPages: valueHelper(totalPages, { required: true }),
   onPageChange: valueHelper(FunctionValue, { required: true }),
 };
 
@@ -31,5 +31,5 @@ describe('Pagination component', () => {
     });
   };
 
-  TestHelper(Mapper, testFunc);
+  testHelper(mapper, testFunc);
 });

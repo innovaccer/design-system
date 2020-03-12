@@ -1,11 +1,11 @@
 /* tabs */
 
-.Tabs {
+.TabsWrapper {
     display: flex;
     flex-direction: column;
 }
 
-.Tabs-header {
+.TabsWrapper-header {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
