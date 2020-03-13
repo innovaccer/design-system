@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { select, text, boolean } from '@storybook/addon-knobs';
-import Input from '../Input';
+import InputMask from './InputMask';
 import { action } from '@storybook/addon-actions';
 
 // CSF format story
@@ -24,7 +24,7 @@ export const all = () => {
 
   const placeholder = text(
     'placeholder',
-    'Placeholder'
+    'dd/mm/yy'
   );
 
   const disabled = boolean(
@@ -74,13 +74,14 @@ export const all = () => {
 
   return (
     <div style={{ maxWidth: '300px' }}>
-      <Input
+      <InputMask
         name="input"
         type={inputType}
         value={value}
         disabled={disabled}
         onChange={action('on-change')}
         onClick={action('on-click')}
+        onBlur={action('on-blur')}
         onClear={action('on-clear')}
         placeholder={placeholder}
         label={label}
@@ -92,6 +93,8 @@ export const all = () => {
         caption={caption}
         info={info}
         clearButton={clearButton}
+        mask={{ name: 'date', type: 'dd-mm-yy' }}
+        validator={{ name: 'date', type: 'dd-mm-yy' }}
       />
     </div>
   );
@@ -99,4 +102,4 @@ export const all = () => {
 
 // Required for CSF format story
 // https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Input' };
+export default { title: 'InputMask' };

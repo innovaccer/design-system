@@ -79,9 +79,10 @@ export const all = () => {
         type={inputType}
         value={value}
         disabled={disabled}
-        onChangeHandler={action('on-change')}
-        onClickHandler={action('on-click')}
-        onClearHandler={action('on-clear')}
+        onChange={action('on-change')}
+        onClick={action('on-click')}
+        onBlur={action('on-blur')}
+        onClear={action('on-clear')}
         placeholder={placeholder}
         label={label}
         inlineLabel={inlineLabel}

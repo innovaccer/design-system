@@ -6,6 +6,7 @@ import Text from '@/components/atoms/text';
 import Tooltip from '@/components/atoms/tooltip';
 
 export type InputType = 'text' | 'password' | 'number';
+export type AutoComplete = 'on' | 'off';
 
 export interface IInputProps {
   name: string;
@@ -13,7 +14,7 @@ export interface IInputProps {
   label?: string;
   inlineLabel?: string;
   type?: InputType;
-  value?: string | number;
+  value?: string;
   loading?: boolean;
   icon?: string;
   placeholder?: string;
@@ -23,9 +24,11 @@ export interface IInputProps {
   caption?: string;
   clearButton?: boolean;
   info?: string;
-  onClearHandler?: (e: React.MouseEvent<HTMLElement>) => void;
-  onChangeHandler?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onClickHandler?: (e: React.MouseEvent<HTMLInputElement>) => void;
+  autocomplete?: AutoComplete;
+  onClear?: (e: React.MouseEvent<HTMLElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }
 
 const Input = React.forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
@@ -44,12 +47,14 @@ const Input = React.forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
     required,
     error,
     info,
-    onChangeHandler,
-    onClickHandler,
-    onClearHandler,
+    autocomplete,
+    onChange,
+    onClick,
+    onClear,
+    onBlur
   } = props;
 
-  const disabled = propDisabled || !onChangeHandler;
+  const disabled = propDisabled || !onChange;
 
   const classes = classNames({
     ['Input']: true,
@@ -109,8 +114,10 @@ const Input = React.forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
           className={inputClass}
           ref={ref}
           value={value}
-          onChange={e => onChangeHandler && onChangeHandler(e)}
-          onClick={e => onClickHandler && onClickHandler(e)}
+          autoComplete={autocomplete}
+          onChange={e => onChange && onChange(e)}
+          onBlur={e => onBlur && onBlur(e)}
+          onClick={e => onClick && onClick(e)}
           required={required}
           disabled={disabled}
         />
@@ -120,7 +127,7 @@ const Input = React.forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
           </Tooltip>
         )}
         {(clearButton && value && !disabled) &&
-          <i className={rightIconClass} onClick={e => onClearHandler && onClearHandler(e)}>close</i>
+          <i className={rightIconClass} onClick={e => onClear && onClear(e)}>close</i>
         }
       </div>
       {size !== 'tiny' && caption && (

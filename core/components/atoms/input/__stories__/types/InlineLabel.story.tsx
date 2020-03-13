@@ -15,7 +15,7 @@ export const inlineLabel = () => {
           type="number"
           size="regular"
           inlineLabel={label}
-          onChangeHandler={action('on-change')}
+          onChange={action('on-change')}
         />
         <br />
         <Text weight="strong">Regular</Text>
@@ -27,7 +27,7 @@ export const inlineLabel = () => {
           type="number"
           size="large"
           inlineLabel={label}
-          onChangeHandler={action('on-change')}
+          onChange={action('on-change')}
         />
         <br />
         <Text weight="strong">Large</Text>

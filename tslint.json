@@ -9,6 +9,7 @@
     "member-ordering": false,
     "ordered-imports": false,
     "no-implicit-dependencies": false,
+    "no-increment-decrement": false,
     "no-namespace": false,
     "trailing-comma": false,
     "variable-name": false,
