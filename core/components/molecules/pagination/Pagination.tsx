@@ -69,8 +69,8 @@ const Pagination: React.FunctionComponent<IPaginationProps> = props => {
             type="number"
             size="large"
             clearButton={false}
-            onChangeHandler={inputChangeHandler}
-            value={page}
+            onChange={inputChangeHandler}
+            value={`${page}`}
           />
           <Text>{` of ${totalPages} pages`}</Text>
         </div>

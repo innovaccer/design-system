@@ -23,7 +23,7 @@ export const basic = () => {
         <Input
           name="input"
           value="Value"
-          onChangeHandler={action('on-change')}
+          onChange={action('on-change')}
           clearButton={true}
         />
         <br />
@@ -34,7 +34,7 @@ export const basic = () => {
           name="input"
           value=""
           placeholder="Placeholder"
-          onChangeHandler={action('on-change')}
+          onChange={action('on-change')}
           clearButton={true}
           info="sample info tooltip"
         />
@@ -45,7 +45,7 @@ export const basic = () => {
         <Input
           name="input"
           value="Value"
-          onChangeHandler={action('on-change')}
+          onChange={action('on-change')}
           clearButton={true}
           error={true}
         />
@@ -56,7 +56,7 @@ export const basic = () => {
         <Input
           name="input"
           value="Value"
-          onChangeHandler={action('on-change')}
+          onChange={action('on-change')}
           disabled={true}
 
         />

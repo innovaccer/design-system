@@ -25,7 +25,7 @@ export const iconLeft = () => {
         <Input
           name="input"
           value="Value"
-          onChangeHandler={action('on-change')}
+          onChange={action('on-change')}
           clearButton={true}
           icon={icon}
         />
@@ -37,7 +37,7 @@ export const iconLeft = () => {
           name="input"
           value=""
           placeholder="Placeholder"
-          onChangeHandler={action('on-change')}
+          onChange={action('on-change')}
           clearButton={true}
           info="sample info tooltip"
           icon={icon}
@@ -49,7 +49,7 @@ export const iconLeft = () => {
         <Input
           name="input"
           value="Value"
-          onChangeHandler={action('on-change')}
+          onChange={action('on-change')}
           clearButton={true}
           error={true}
           icon={icon}
@@ -61,7 +61,7 @@ export const iconLeft = () => {
         <Input
           name="input"
           value="Value"
-          onChangeHandler={action('on-change')}
+          onChange={action('on-change')}
           disabled={true}
           icon={icon}
         />

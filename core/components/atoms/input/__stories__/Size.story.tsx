@@ -35,9 +35,9 @@ export const size = () => {
                 <Input
                   name="input"
                   value={value}
-                  onChangeHandler={action('on-change')}
-                  onClickHandler={action('on-click')}
-                  onClearHandler={action('on-clear')}
+                  onChange={action('on-change')}
+                  onClick={action('on-click')}
+                  onClear={action('on-clear')}
                   placeholder={placeholder}
                   label={label}
                   size={InputSize}

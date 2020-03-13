@@ -24,7 +24,7 @@ export const withLabel = () => {
           <Input
             name="input"
             value="Value"
-            onChangeHandler={action('on-change')}
+            onChange={action('on-change')}
             clearButton={true}
             label="Full Name"
             required={true}
@@ -38,7 +38,7 @@ export const withLabel = () => {
           name="input"
           value="Value"
           type="password"
-          onChangeHandler={action('on-change')}
+          onChange={action('on-change')}
           clearButton={true}
           label="Password"
           required={true}
@@ -52,7 +52,7 @@ export const withLabel = () => {
           name="input"
           value="Value"
           type="password"
-          onChangeHandler={action('on-change')}
+          onChange={action('on-change')}
           clearButton={true}
           label="Password"
           required={true}
