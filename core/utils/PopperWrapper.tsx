@@ -38,6 +38,7 @@ interface IProps {
   offset: keyof typeof Offsets;
   closeOnBackdropClick?: boolean;
   hoverable?: boolean;
+  open?: boolean;
 }
 
 interface IState {
@@ -55,13 +56,21 @@ class PopperWrapper extends React.Component<IProps, IState> {
     super(props);
 
     this.state = {
-      open: false,
+      open: props.open || false,
       mouseLeaveDelay: 50,
       mouseEnterDelay: 0
     };
 
     this.triggerRef = React.createRef();
     this.popupRef = React.createRef();
+  }
+
+  componentWillUpdate(nextProps: IProps) {
+    if (nextProps.open !== undefined && this.props.open !== nextProps.open) {
+      this.setState({
+        open: nextProps.open
+      });
+    }
   }
 
   public componentWillUnmount() {
@@ -157,12 +166,12 @@ class PopperWrapper extends React.Component<IProps, IState> {
 
     const element = React.cloneElement(
       (
-        <span className="d-inline-block">
+        <span className="d-inline-flex PopperWrapper-trigger">
           {trigger}
-        </span>
+        </span> 
       ),
       options
-      );
+    );
 
     return element;
   }

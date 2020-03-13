@@ -6,6 +6,11 @@ import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const all = () => {
+  const open = boolean(
+    'open',
+    true
+  );
+
   const position = select(
     'position',
     ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end'],
@@ -31,6 +36,7 @@ export const all = () => {
     closeOnBackdropClick,
     on,
     hoverable,
+    open,
     style: {
       height: '100px',
       width: '200px',
