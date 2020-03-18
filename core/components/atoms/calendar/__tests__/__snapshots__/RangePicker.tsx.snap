@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RangePicker component 
+  
+ 1`] = `
+<Component
+  endDate={2020-03-10T18:30:00.000Z}
+  rangePicker={true}
+  startDate={2020-03-02T18:30:00.000Z}
+/>
+`;
+
+exports[`RangePicker component 
+  monthsInView: 1
+ 1`] = `
+<Component
+  endDate={2020-03-10T18:30:00.000Z}
+  monthsInView={1}
+  rangePicker={true}
+  startDate={2020-03-02T18:30:00.000Z}
+/>
+`;
+
+exports[`RangePicker component 
+  monthsInView: 1
+ 2`] = `
+<Component
+  endDate={2020-03-10T18:30:00.000Z}
+  monthNav={11}
+  monthsInView={1}
+  rangePicker={true}
+  startDate={2020-03-02T18:30:00.000Z}
+  yearNav={2019}
+/>
+`;
+
+exports[`RangePicker component 
+  monthsInView: 2
+ 1`] = `
+<Component
+  endDate={2020-03-10T18:30:00.000Z}
+  monthsInView={2}
+  rangePicker={true}
+  startDate={2020-03-02T18:30:00.000Z}
+/>
+`;
+
+exports[`RangePicker component 
+  monthsInView: 2
+ 2`] = `
+<Component
+  endDate={2020-03-10T18:30:00.000Z}
+  monthNav={11}
+  monthsInView={2}
+  rangePicker={true}
+  startDate={2020-03-02T18:30:00.000Z}
+  yearNav={2019}
+/>
+`;
+
+exports[`RangePicker component 
+  monthsInView: 3
+ 1`] = `
+<Component
+  endDate={2020-03-10T18:30:00.000Z}
+  monthsInView={3}
+  rangePicker={true}
+  startDate={2020-03-02T18:30:00.000Z}
+/>
+`;
+
+exports[`RangePicker component 
+  monthsInView: 3
+ 2`] = `
+<Component
+  endDate={2020-03-10T18:30:00.000Z}
+  monthNav={11}
+  monthsInView={3}
+  rangePicker={true}
+  startDate={2020-03-02T18:30:00.000Z}
+  yearNav={2019}
+/>
+`;
+
+exports[`RangePicker component 
+  view: "date"
+ 1`] = `
+<Component
+  endDate={2020-03-10T18:30:00.000Z}
+  rangePicker={true}
+  startDate={2020-03-02T18:30:00.000Z}
+  view="date"
+>
+  RangePicker
+</Component>
+`;
+
+exports[`RangePicker component 
+  view: "month"
+ 1`] = `
+<Component
+  endDate={2020-03-10T18:30:00.000Z}
+  rangePicker={true}
+  startDate={2020-03-02T18:30:00.000Z}
+  view="month"
+>
+  RangePicker
+</Component>
+`;
+
+exports[`RangePicker component 
+  view: "year"
+ 1`] = `
+<Component
+  endDate={2020-03-10T18:30:00.000Z}
+  rangePicker={true}
+  startDate={2020-03-02T18:30:00.000Z}
+  view="year"
+>
+  RangePicker
+</Component>
+`;
