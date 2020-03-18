@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { boolean, select, date, number } from '@storybook/addon-knobs';
-import DatePicker from './DatePicker';
+import DatePicker from '@/components/atoms/datepicker';
 import Card from '@/components/atoms/card';
 import { action } from '@storybook/addon-actions';
 
@@ -8,7 +8,7 @@ import { action } from '@storybook/addon-actions';
 export const all = () => {
   const monthsInView = number(
     'monthsInView',
-    2
+    1
   );
 
   const dateValue = date(
@@ -20,16 +20,6 @@ export const all = () => {
     'view',
     ['date', 'month', 'year'],
     undefined
-  );
-
-  const rangePicker = boolean(
-    'rangePicker',
-    false
-  );
-
-  const rangeLimit = number(
-    'rangeLimit',
-    0
   );
 
   const firstDayOfWeek = select(
@@ -53,10 +43,21 @@ export const all = () => {
     true
   );
 
+  const yearNav = number(
+    'yearNav',
+    -1
+  );
+
+  const monthNav = number(
+    'monthNav',
+    -1
+  );
+
   const attr: Record<string, any> = {};
   if (disabledBefore) attr.disabledBefore = disabledBefore;
   if (disabledAfter) attr.disabledAfter = disabledAfter;
-  if (rangeLimit) attr.rangeLimit = rangeLimit;
+  if (yearNav !== -1) attr.yearNav = yearNav;
+  if (monthNav !== -1) attr.monthNav = monthNav;
 
   return (
     <Card
@@ -67,11 +68,9 @@ export const all = () => {
     >
       <DatePicker
         monthsInView={monthsInView}
-        rangePicker={rangePicker}
         jumpView={jumpView}
         date={dateValue}
         onDateChange={(currDate?: Date) => action(`on date change : ${currDate}`)()}
-        onRangeChange={(startDate?: Date, endDate?: Date) => action(`on range change: ${startDate} - ${endDate}`)()}
         view={view}
         firstDayOfWeek={firstDayOfWeek}
         {...attr}
@@ -82,4 +81,4 @@ export const all = () => {
 
 // Required for CSF format story
 // https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Calendar/DatePicker' };
+export default { title: 'Calendar/Datepicker' };

@@ -13,7 +13,8 @@ import {
   getDaysInMonth,
   getFirstDayOfMonth,
   getIndexOfDay,
-  getYearBlock
+  getYearBlock,
+  convertToDate
 } from './utility';
 
 export type View = 'date' | 'month' | 'year';
@@ -39,9 +40,17 @@ export interface IDatePickerProps {
   startDate?: DateType;
   endDate?: DateType;
   rangeLimit?: number;
+  yearNav?: number;
+  monthNav?: number;
 }
 
 export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
+  const now = Date.now();
+  const {
+    year: nowYear,
+    month: nowMonth,
+  } = getDateInfo(now);
+
   const {
     monthsInView = 1,
     view: viewProp = 'date',
@@ -49,6 +58,8 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
     date: dateProp,
     rangePicker,
     rangeLimit,
+    yearNav: yearNavProp = nowYear,
+    monthNav: monthNavProp = nowMonth,
     startDate: startDateProp,
     endDate: endDateProp,
     disabledBefore,
@@ -58,7 +69,7 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
   } = props;
 
   let {
-    jumpView
+    jumpView = true
   } = props;
 
   if (jumpView) {
@@ -75,13 +86,7 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
     days
   } = config;
 
-  const now = Date.now();
-  const {
-    year: nowYear,
-    month: nowMonth,
-  } = getDateInfo(now);
-
-  const [view, setView] = React.useState<View>(viewProp);
+  const [view, setView] = React.useState<View>(monthsInView > 1 ? 'date' : viewProp);
   const [state, setState] = React.useState<State>({
     year: undefined,
     month: undefined,
@@ -91,9 +96,9 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
   const [hoverDateState, setHoverDateState] = React.useState<Date | undefined>();
   const [startDateState, setStartDateState] = React.useState<Date | undefined>();
   const [endDateState, setEndDateState] = React.useState<Date | undefined>();
-  const [yearBlockNav, setYearBlockNav] = React.useState<number>(getYearBlock(nowYear));
-  const [yearNav, setYearNav] = React.useState<number>(nowYear);
-  const [monthNav, setMonthNav] = React.useState<number>(nowMonth);
+  const [yearBlockNav, setYearBlockNav] = React.useState<number>(getYearBlock(yearNavProp));
+  const [yearNav, setYearNav] = React.useState<number>(yearNavProp);
+  const [monthNav, setMonthNav] = React.useState<number>(monthNavProp);
 
   const {
     year: yearState,
@@ -102,9 +107,20 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
   } = state;
 
   React.useEffect(() => {
+    setYearNav(yearNavProp);
+    setYearBlockNav(getYearBlock(yearNavProp));
+  }, [yearNavProp]);
+
+  React.useEffect(() => {
+    setMonthNav(monthNavProp);
+  }, [monthNavProp]);
+
+  React.useEffect(() => {
     if (dateProp) {
       const { year, month, date } = getDateInfo(dateProp);
       updateState(year, month, date);
+      const d = convertToDate(dateProp);
+      setCurrDateState(d);
     }
   }, [dateProp]);
 
@@ -112,19 +128,24 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
     if (startDateProp) {
       const { year, month, date } = getDateInfo(startDateProp);
       updateState(year, month, date);
+      const d = convertToDate(startDateProp);
+      setStartDateState(d);
     }
   }, [startDateProp]);
 
   React.useEffect(() => {
-    if (endDateProp) {
+    if (startDateProp && endDateProp) {
       const { year, month, date } = getDateInfo(endDateProp);
       updateState(year, month, date);
+      const d = convertToDate(endDateProp);
+      setEndDateState(d);
     }
   }, [endDateProp]);
 
   React.useEffect(() => {
-    setView(viewProp);
-  }, [viewProp]);
+    if (monthsInView === 1) setView(viewProp);
+    else setView('date');
+  }, [monthsInView, viewProp]);
 
   React.useEffect(() => {
     if (currDateState) {
@@ -156,9 +177,10 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
 
   React.useEffect(() => {
     if (endDateState) {
-      if (onRangeChange) onRangeChange(startDateState, endDateState);
+      const inRangeError = getInRangeError();
+      if (onRangeChange && !inRangeError) onRangeChange(startDateState, endDateState);
     }
-  }, [startDateState, endDateState]);
+  }, [endDateState]);
 
   React.useEffect(() => {
     if (yearState !== undefined && monthsInView < 2) {
@@ -189,12 +211,36 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
     return { yearBlock, year, month };
   };
 
+  const getInRangeError = () => {
+    if (rangePicker && rangeLimit && startDateState) {
+      const {
+        date: startDate
+      } = getDateInfo(startDateState);
+
+      const nextLimitDate = new Date(startDateState);
+      nextLimitDate.setDate(startDate + rangeLimit);
+
+      const {
+        year: hoverYear,
+        month: hoverMonth,
+        date: hoverDate
+      } = getDateInfo(hoverDateState);
+      const {
+        year: endYear,
+        month: endMonth,
+        date: endDate
+      } = getDateInfo(endDateState);
+
+      return (
+        compareDate(nextLimitDate, 'less', hoverYear, hoverMonth, hoverDate + 1)
+        || compareDate(nextLimitDate, 'less', endYear, endMonth, endDate + 1)
+      );
+    }
+    return false;
+  };
+
   const updateState = (year: number, month?: number, date?: number) => {
     setState({ year, month, date });
-    if (year !== undefined && month !== undefined && date !== undefined) {
-      const d = getDateValue(year, month, date);
-      setCurrDateState(d);
-    }
   };
 
   const selectYear = (year: number) => {
@@ -214,6 +260,8 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
     } = getNavDateInfo(index);
 
     updateState(yearNavVal, monthNavVal, date);
+    const d = getDateValue(yearNavVal, monthNavVal, date);
+    setCurrDateState(d);
   };
 
   const renderJumpButton = (type: string) => {
@@ -420,31 +468,15 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
     let inRangeError = false;
 
     if (rangePicker) {
-      if (rangeLimit && startDateState && hoverDateState) {
-        const {
-          date: startDate
-        } = getDateInfo(startDateState);
-
-        const nextLimitDate = new Date(startDateState);
-        nextLimitDate.setDate(startDate + rangeLimit);
-
-        const {
-          year: hoverYear,
-          month: hoverMonth,
-          date: hoverDate
-        } = getDateInfo(hoverDateState);
-        inRangeError = compareDate(nextLimitDate, 'less', hoverYear, hoverMonth, hoverDate + 1);
+      if (rangeLimit && startDateState) {
+        inRangeError = getInRangeError();
       }
     }
 
     const onClickHandler = (date: number) => {
       if (rangePicker) {
-        if (startDateState) {
-          if (!inRangeError) selectDate(index, date);
-        }
-        if (endDateState) {
-          selectDate(index, date);
-        }
+        if (!inRangeError) selectDate(index, date);
+        if (endDateState) selectDate(index, date);
       } else {
         selectDate(index, date);
       }

@@ -50,8 +50,8 @@ const Popover: React.FunctionComponent<IPopoverProps> = props => {
     on,
     hoverable,
     style,
-    placement: position,
-    open
+    open,
+    placement: position
   };
 
   return (

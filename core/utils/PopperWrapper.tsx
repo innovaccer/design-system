@@ -168,7 +168,7 @@ class PopperWrapper extends React.Component<IProps, IState> {
       (
         <span className="d-inline-flex PopperWrapper-trigger">
           {trigger}
-        </span> 
+        </span>
       ),
       options
     );
