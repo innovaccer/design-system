@@ -1,16 +1,19 @@
 import * as React from 'react';
-import DatePicker, { View } from '@/components/atoms/datepicker';
+import Calendar from '@/components/atoms/calendar/Calendar';
+import { Day } from '@/components/atoms/calendar/types';
 import Card from '@/components/atoms/card';
 
 // CSF format story
-export const view = () => {
-  const values: View[] = ['year', 'month', 'date'];
+export const firstDayOfWeek = () => {
+  const values: Day[] = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
   const style = {
     display: 'flex',
+    flexWrap: 'wrap'
   };
 
   return (
+    // @ts-ignore
     <div style={style}>
       {values.map((v, index) => (
         <Card
@@ -19,12 +22,13 @@ export const view = () => {
           style={{
             marginRight: '50px',
             maxWidth: '330px',
-            alignSelf: 'flex-start'
+            alignSelf: 'flex-start',
+            marginTop: '20px'
           }}
         >
-          <DatePicker
+          <Calendar
             date={new Date(2020, 2, 1)}
-            view={v}
+            firstDayOfWeek={v}
           />
         </Card>
       ))}
@@ -34,4 +38,4 @@ export const view = () => {
 
 // Required for CSF format story
 // https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Calendar/Datepicker' };
+export default { title: 'Calendar' };

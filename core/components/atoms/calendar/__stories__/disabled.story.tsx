@@ -1,5 +1,6 @@
 import * as React from 'react';
-import DatePicker, { View } from '@/components/atoms/datepicker';
+import Calendar from '@/components/atoms/calendar/Calendar';
+import { View } from '@/components/atoms/calendar/types';
 import Card from '@/components/atoms/card';
 import Heading from '@/components/atoms/heading';
 
@@ -25,7 +26,7 @@ export const disabled = () => {
               alignSelf: 'flex-start'
             }}
           >
-            <DatePicker
+            <Calendar
               date={new Date(2020, 2, 15)}
               disabledBefore={new Date(2020, 2, 10)}
               view={v}
@@ -46,7 +47,7 @@ export const disabled = () => {
               alignSelf: 'flex-start'
             }}
           >
-            <DatePicker
+            <Calendar
               date={new Date(2020, 2, 15)}
               disabledAfter={new Date(2020, 2, 20)}
               view={v}
@@ -67,7 +68,7 @@ export const disabled = () => {
               alignSelf: 'flex-start'
             }}
           >
-            <DatePicker
+            <Calendar
               date={new Date(2020, 2, 15)}
               disabledBefore={new Date(2020, 2, 10)}
               disabledAfter={new Date(2020, 2, 20)}
