@@ -1,17 +1,13 @@
-/* datepicker */
+/* calendar */
 
-.RangePicker {
-    display: flex;
-}
-
-.DatePicker {
+.Calendar {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     min-width: 330px;
 }
 
-.DatePicker-header {
+.Calendar-header {
     display: flex;
     padding-left: var(--spacing-2);
     padding-right: var(--spacing-2);
@@ -19,17 +15,17 @@
     padding-bottom: var(--spacing);
 }
 
-.DatePicker-headerIcon {
+.Calendar-headerIcon {
     cursor: pointer;
     user-select: none;
 }
 
-.DatePicker-headerIcon--disabled .Icon {
+.Calendar-headerIcon--disabled .Icon {
     color: var(--text-disabled);
     pointer-events: none;
 }
 
-.DatePicker-headerContent {
+.Calendar-headerContent {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,15 +37,15 @@
     user-select: none;
 }
 
-.DatePicker-headerContent--noIcon-left {
+.Calendar-headerContent--noIcon-left {
     margin-left: var(--spacing-3);
 }
 
-.DatePicker-headerContent--noIcon-right {
+.Calendar-headerContent--noIcon-right {
     margin-right: var(--spacing-3);
 }
 
-.DatePicker-body {
+.Calendar-body {
     display: flex;
     flex-direction: column;
     padding-left: var(--spacing-3);
@@ -57,62 +53,62 @@
     padding-bottom: var(--spacing-xl);
 }
 
-.DatePicker-valueRow {
+.Calendar-valueRow {
     display: flex;
     margin-top: var(--spacing);
     margin-bottom: var(--spacing);
     justify-content: center;
 }
 
-.DatePicker-valueRow:first-child {
+.Calendar-valueRow:first-child {
     margin-top: 0;
 }
 
-.DatePicker-valueRow:last-child {
+.Calendar-valueRow:last-child {
     margin-bottom: 0;
 }
 
-.DatePicker-value {
+.Calendar-value {
     cursor: pointer;
     user-select: none;
     border-radius: var(--spacing-m);
 }
 
-.DatePicker-value:first-child {
+.Calendar-value:first-child {
     margin-left: 0;
 }
 
-.DatePicker-value:last-child {
+.Calendar-value:last-child {
     margin-right: 0;
 }
 
-.DatePicker-value:hover {
+.Calendar-value:hover {
     background: var(--secondary);
 }
 
-.DatePicker-value--inRange,
-.DatePicker-value--inRange:hover {
+.Calendar-value--inRange,
+.Calendar-value--inRange:hover {
     background: var(--primary-lightest);
     border-radius: 0;
     padding-top: var(--spacing-s);
     padding-bottom: var(--spacing-s);
 }
 
-.DatePicker-value--inRange-error,
-.DatePicker-value--inRange-error:hover {
+.Calendar-value--inRange-error,
+.Calendar-value--inRange-error:hover {
     background: var(--alert-lightest);
     border-radius: 0;
     padding-top: var(--spacing-s);
     padding-bottom: var(--spacing-s);
 }
 
-.DatePicker-value--active,
-.DatePicker-value--active:hover {
+.Calendar-value--active,
+.Calendar-value--active:hover {
     background: var(--primary);
 }
 
-.DatePicker--year .DatePicker-value,
-.DatePicker--month .DatePicker-value {
+.Calendar--year .Calendar-value,
+.Calendar--month .Calendar-value {
     padding-top: var(--spacing);
     padding-bottom: var(--spacing);
     padding-left: var(--spacing-l);
@@ -121,31 +117,31 @@
     margin-right: var(--spacing-2);
 }
 
-.DatePicker--date {
+.Calendar--date {
     --value-width: var(--spacing-4);
 }
 
-.DatePicker--date .DatePicker-valueRow {
+.Calendar--date .Calendar-valueRow {
     margin-top: var(--spacing-s);
     margin-bottom: var(--spacing-s);
 }
 
-.DatePicker--date .DatePicker-value {
+.Calendar--date .Calendar-value {
     padding-top: var(--spacing);
     padding-bottom: var(--spacing);
     width: var(--value-width);
     text-align: center;
 }
 
-.DatePicker-value--dummy {
+.Calendar-value--dummy {
     pointer-events: none;
 }
 
-.DatePicker-value--disabled {
+.Calendar-value--disabled {
     pointer-events: none;
 }
 
-.DatePicker-dayValues {
+.Calendar-dayValues {
     display: flex;
     justify-content: center;
 }

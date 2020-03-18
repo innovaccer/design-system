@@ -1,16 +1,11 @@
 import * as React from 'react';
 import { boolean, select, date, number } from '@storybook/addon-knobs';
-import DatePicker from '@/components/atoms/datepicker';
+import { DatePicker } from '@/components/atoms/calendar';
 import Card from '@/components/atoms/card';
 import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const all = () => {
-  const monthsInView = number(
-    'monthsInView',
-    1
-  );
-
   const dateValue = date(
     'date',
     undefined
@@ -63,11 +58,10 @@ export const all = () => {
     <Card
       shadow="light"
       style={{
-        maxWidth: `${monthsInView * 330}px`
+        maxWidth: '330px'
       }}
     >
       <DatePicker
-        monthsInView={monthsInView}
         jumpView={jumpView}
         date={dateValue}
         onDateChange={(currDate?: Date) => action(`on date change : ${currDate}`)()}

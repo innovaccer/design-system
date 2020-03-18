@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { boolean, select, date, number } from '@storybook/addon-knobs';
-import DatePicker from '@/components/atoms/datepicker';
+import { RangePicker } from '@/components/atoms/calendar';
 import Card from '@/components/atoms/card';
 import { action } from '@storybook/addon-actions';
 
@@ -77,9 +77,8 @@ export const all = () => {
         maxWidth: `${monthsInView * 330}px`
       }}
     >
-      <DatePicker
+      <RangePicker
         monthsInView={monthsInView}
-        rangePicker={true}
         jumpView={jumpView}
         startDate={startDate}
         endDate={endDate}

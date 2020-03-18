@@ -6,6 +6,7 @@ import Subheading from '@/components/atoms/subheading';
 import Text from '@/components/atoms/text';
 
 import config from './config';
+import { DateType, Day, View, State } from './types';
 import {
   compareDate,
   compareDecade,
@@ -17,16 +18,7 @@ import {
   convertToDate
 } from './utility';
 
-export type View = 'date' | 'month' | 'year';
-export type Day = 'sunday' | 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday' | 'saturday';
-export type DateType = number | Date;
-export type State = {
-  year?: number,
-  month?: number,
-  date?: number
-};
-
-export interface IDatePickerProps {
+export interface ICalendarProps {
   onDateChange?: (date?: Date) => void;
   onRangeChange?: (startDate?: Date, endDate?: Date) => void;
   monthsInView?: number;
@@ -44,7 +36,7 @@ export interface IDatePickerProps {
   monthNav?: number;
 }
 
-export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
+export const Calendar: React.FunctionComponent<ICalendarProps> = props => {
   const now = Date.now();
   const {
     year: nowYear,
@@ -323,8 +315,8 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
     }
 
     const headerIconClass = classNames({
-      'DatePicker-headerIcon': true,
-      'DatePicker-headerIcon--disabled': disabled
+      'Calendar-headerIcon': true,
+      'Calendar-headerIcon--disabled': disabled
     });
 
     return (
@@ -346,9 +338,9 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
     } = getNavDateInfo(index);
 
     const headerContentClass = classNames({
-      'DatePicker-headerContent': true,
-      'DatePicker-headerContent--noIcon-left': index === monthsInView - 1,
-      'DatePicker-headerContent--noIcon-right': index === 0,
+      'Calendar-headerContent': true,
+      'Calendar-headerContent--noIcon-left': index === monthsInView - 1,
+      'Calendar-headerContent--noIcon-right': index === 0,
     });
 
     let headerContent = '';
@@ -375,7 +367,7 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
     const noOfRows = Math.ceil(yearBlockRange / yearsInRow);
 
     return Array.from({ length: noOfRows }, (_y, row) => (
-      <div className="DatePicker-valueRow">
+      <div className="Calendar-valueRow">
         {Array.from({ length: yearsInRow }, (_x, col) => {
           const offset = yearsInRow * row + col;
           if (offset === yearBlockNav) return undefined;
@@ -385,9 +377,9 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
           const active = !disabled && yearNav === year;
 
           const valueClass = classNames({
-            'DatePicker-value': true,
-            'DatePicker-value--active': active,
-            'DatePicker-value--disabled': disabled
+            'Calendar-value': true,
+            'Calendar-value--active': active,
+            'Calendar-value--disabled': disabled
           });
 
           return (
@@ -404,7 +396,7 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
     const noOfRows = Math.ceil(monthBlock / monthsInRow);
 
     return Array.from({ length: noOfRows }, (_y, row) => (
-      <div className="DatePicker-valueRow">
+      <div className="Calendar-valueRow">
         {Array.from({ length: monthsInRow }, (_x, col) => {
           const month = monthsInRow * row + col;
           const disabled = compareDate(disabledBefore, 'more', yearNav, month)
@@ -412,9 +404,9 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
           const active = !disabled && yearState === yearNav && monthNav === month;
 
           const valueClass = classNames({
-            'DatePicker-value': true,
-            'DatePicker-value--active': active,
-            'DatePicker-value--dummy': disabled
+            'Calendar-value': true,
+            'Calendar-value--active': active,
+            'Calendar-value--dummy': disabled
           });
           return (
             <div className={valueClass} onClick={() => selectMonth(month)}>
@@ -429,10 +421,10 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
   const renderBodyDate = (index: number) => {
     return (
       <>
-        <div className="DatePicker-dayValues">
+        <div className="Calendar-dayValues">
           {renderDayValues()}
         </div>
-        <div className="DatePicker-dateValues">
+        <div className="Calendar-dateValues">
           {renderDateValues(index)}
         </div>
       </>
@@ -442,8 +434,8 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
   const renderDayValues = () => {
     return Array.from({ length: 7 }, (_x, day) => {
       const valueClass = classNames({
-        'DatePicker-value': true,
-        'DatePicker-value--dummy': true
+        'Calendar-value': true,
+        'Calendar-value--dummy': true
       });
       const dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
 
@@ -494,7 +486,7 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
     return Array.from({ length: noOfRows }, (_y, row) => (
       <>
         {dummyDays < daysInRow && (
-          <div className="DatePicker-valueRow">
+          <div className="Calendar-valueRow">
             {Array.from({ length: daysInRow }, (_x, col) => {
               const date = daysInRow * row + col - dummyDays + 1;
               const dummy = date <= 0 || date > dayRange;
@@ -529,12 +521,12 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
               }
 
               const valueClass = classNames({
-                'DatePicker-value': true,
-                'DatePicker-value--active': active,
-                'DatePicker-value--dummy': dummy || disabled,
-                'DatePicker-value--disabled': disabled,
-                'DatePicker-value--inRange': inRange,
-                'DatePicker-value--inRange-error': inRange && inRangeError,
+                'Calendar-value': true,
+                'Calendar-value--active': active,
+                'Calendar-value--dummy': dummy || disabled,
+                'Calendar-value--disabled': disabled,
+                'Calendar-value--inRange': inRange,
+                'Calendar-value--inRange-error': inRange && inRangeError,
               });
               return (
                 <div
@@ -554,18 +546,18 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
     ));
   };
 
-  const renderDatePicker = (index: number) => {
+  const renderCalendar = (index: number) => {
     const wrapperClass = classNames({
-      ['DatePicker']: true,
-      [`DatePicker--${view}`]: view
+      ['Calendar']: true,
+      [`Calendar--${view}`]: view
     });
 
     const headerClass = classNames({
-      'DatePicker-header': true
+      'Calendar-header': true
     });
 
     const bodyClass = classNames({
-      'DatePicker-body': true
+      'Calendar-body': true
     });
 
     return (
@@ -597,10 +589,10 @@ export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
   return (
     <div className="RangePicker">
       {Array.from({ length: monthsInView }, (_x, index) => {
-        return renderDatePicker(index);
+        return renderCalendar(index);
       })}
     </div>
   );
 };
 
-export default DatePicker;
+export default Calendar;

@@ -1,4 +1,4 @@
-import { DateType, Day } from './DatePicker';
+import { DateType, Day } from './types';
 import config from './config';
 
 type Operator = 'less' | 'more' | 'equal';

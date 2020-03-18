@@ -1,5 +1,5 @@
 import * as React from 'react';
-import DatePicker from '@/components/atoms/datepicker';
+import { RangePicker } from '@/components/atoms/calendar';
 import Card from '@/components/atoms/card';
 
 // CSF format story
@@ -21,8 +21,7 @@ export const monthsInView = () => {
             alignSelf: 'flex-start'
           }}
         >
-          <DatePicker
-            rangePicker={true}
+          <RangePicker
             monthsInView={x}
             startDate={new Date(2019, 11, 3)}
             endDate={new Date(2020, x - 2, 11)}
