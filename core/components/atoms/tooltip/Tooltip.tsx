@@ -18,6 +18,7 @@ interface IState {
     left: number;
   };
   style: React.CSSProperties;
+  open: boolean;
 }
 
 /**
@@ -39,7 +40,8 @@ class Tooltip extends React.Component<ITooltipProps, IState> {
         top: 0,
         left: 0,
       },
-      style: {}
+      style: {},
+      open: false
     };
   }
 
@@ -47,6 +49,14 @@ class Tooltip extends React.Component<ITooltipProps, IState> {
     position: 'bottom',
     appendToBody: true
   };
+
+  public onToggle = (open: boolean) => {
+    this.setState({ open });
+  }
+
+  componentWillUnmount() {
+    this.setState({ open: false });
+  }
 
   public render() {
     const {
@@ -75,6 +85,8 @@ class Tooltip extends React.Component<ITooltipProps, IState> {
         appendToBody={appendToBody}
         on={'hover'}
         offset={'Medium'}
+        onToggle={this.onToggle}
+        open={this.state.open}
       >
         {tooltipWrapper}
       </PopperWrapper>

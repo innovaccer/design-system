@@ -13,15 +13,19 @@ export const theme = () => {
   const trigger = <div ref={buttonRef => buttonRef?.click()}><Button appearance="basic">Light Theme</Button></div>;
   const triggerDark = <div ref={buttonRef => buttonRef?.click()}><Button appearance="basic">Dark Theme</Button></div>;
 
+  const onToggle = () => null;
+
   const options = {
     appendToBody,
     closeOnBackdropClick,
     hoverable,
+    onToggle,
     style: {
       height: '100px',
       width: '200px',
       padding: '16px'
-    }
+    },
+    open: true
   };
 
   return (

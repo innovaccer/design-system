@@ -39,6 +39,7 @@ interface IProps {
   closeOnBackdropClick?: boolean;
   hoverable?: boolean;
   open?: boolean;
+  onToggle: (open: boolean) => void;
 }
 
 interface IState {
@@ -65,22 +66,13 @@ class PopperWrapper extends React.Component<IProps, IState> {
     this.popupRef = React.createRef();
   }
 
-  componentWillUpdate(nextProps: IProps) {
-    if (nextProps.open !== undefined && this.props.open !== nextProps.open) {
-      this.setState({
-        open: nextProps.open
-      });
-    }
-  }
-
   public componentWillUnmount() {
     clearTimeout(this._timer);
     document.removeEventListener('mousedown', this.doesNodeContainClick);
   }
 
   public handleMouseLeave = (event: React.MouseEvent<HTMLElement>) => {
-    const { hoverable = false } = this.props;
-
+    const { hoverable = false, onToggle } = this.props;
     if (hoverable) {
       clearTimeout(this._timer);
       this._timer = window.setTimeout(() => {
@@ -90,7 +82,7 @@ class PopperWrapper extends React.Component<IProps, IState> {
         }
       }, this.state.mouseLeaveDelay);
     } else {
-      this.setState({ open: false });
+      onToggle(false);
       if (this.props.children.props.onMouseLeave) {
         this.props.children.props.onMouseLeave(event);
       }
@@ -98,8 +90,7 @@ class PopperWrapper extends React.Component<IProps, IState> {
   }
 
   public handleMouseEnter = (event: React.MouseEvent<HTMLElement>) => {
-    const { hoverable = false } = this.props;
-
+    const { hoverable = false, onToggle } = this.props;
     if (hoverable) {
       clearTimeout(this._timer);
       this._timer = window.setTimeout(() => {
@@ -109,7 +100,7 @@ class PopperWrapper extends React.Component<IProps, IState> {
         }
       }, this.state.mouseEnterDelay);
     } else {
-      this.setState({ open: true });
+      onToggle(true);
       if (this.props.children.props.onMouseEnter) {
         this.props.children.props.onMouseEnter(event);
       }
@@ -117,7 +108,8 @@ class PopperWrapper extends React.Component<IProps, IState> {
   }
 
   public togglePopper = () => {
-    this.setState({ open: !this.state.open });
+    const { open = false, onToggle } = this.props;
+    onToggle(!open);
   }
 
   public doesNodeContainClick = (event: Event) => {
@@ -133,7 +125,7 @@ class PopperWrapper extends React.Component<IProps, IState> {
 
   public componentDidMount() {
     const { on = 'click', closeOnBackdropClick = true } = this.props;
-    const { open } = this.state;
+    const { open } = this.props;
 
     if (on === 'click' && open && closeOnBackdropClick) {
       document.addEventListener('mousedown', this.doesNodeContainClick);
@@ -142,7 +134,7 @@ class PopperWrapper extends React.Component<IProps, IState> {
 
   public componentDidUpdate() {
     const { on = 'click', closeOnBackdropClick = true } = this.props;
-    const { open } = this.state;
+    const { open } = this.props;
 
     if (on === 'click' && open && closeOnBackdropClick) {
       document.addEventListener('mousedown', this.doesNodeContainClick);
@@ -200,12 +192,12 @@ class PopperWrapper extends React.Component<IProps, IState> {
 
   public render() {
     const { trigger, children, placement, appendToBody, on = 'click', offset } = this.props;
-    const { open } = this.state;
+    const { open } = this.props;
 
     return (
       <Manager>
         <Reference innerRef={this.triggerRef}>{({ ref }) => this.getTriggerElement(trigger, ref, on)}</Reference>
-        {open &&
+        {(open || this.state.open) &&
           appendToBody &&
           ReactDOM.createPortal(
             (
@@ -219,7 +211,7 @@ class PopperWrapper extends React.Component<IProps, IState> {
             ),
             document.body
           )}
-        {open && !appendToBody && (
+        {(open || this.state.open) && !appendToBody && (
           <Popper placement={placement} innerRef={this.popupRef}>
             {({ ref, style, placement }) => {
               const newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
