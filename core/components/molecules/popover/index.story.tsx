@@ -3,12 +3,13 @@ import { boolean, select } from '@storybook/addon-knobs';
 import Popover from './Popover';
 import Button from '@/components/atoms/button';
 import { action } from '@storybook/addon-actions';
+import { updateKnob } from '@/utils/storybookEventEmitter';
 
 // CSF format story
 export const all = () => {
   const open = boolean(
     'open',
-    true
+    false
   );
 
   const position = select(
@@ -26,6 +27,10 @@ export const all = () => {
   const closeOnBackdropClick = boolean('closeOnBackdropClick', true);
   const dark = boolean('dark', false);
 
+  const onToggle = () => {
+    updateKnob('open', !open);
+  };
+
   const trigger = <Button appearance="basic">Open Popup</Button>;
 
   const options = {
@@ -37,6 +42,7 @@ export const all = () => {
     on,
     hoverable,
     open,
+    onToggle,
     style: {
       height: '100px',
       width: '200px',

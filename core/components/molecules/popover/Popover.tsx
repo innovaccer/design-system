@@ -16,6 +16,7 @@ export interface IPopoverProps {
   on?: ActionType;
   open?: boolean;
   style?: React.CSSProperties;
+  onToggle: () => void;
 }
 
 const Popover: React.FunctionComponent<IPopoverProps> = props => {
@@ -29,7 +30,8 @@ const Popover: React.FunctionComponent<IPopoverProps> = props => {
     style = {},
     children,
     trigger,
-    open
+    open,
+    onToggle
   } = props;
 
   const classes = classNames({
@@ -51,6 +53,7 @@ const Popover: React.FunctionComponent<IPopoverProps> = props => {
     hoverable,
     style,
     open,
+    onToggle,
     placement: position
   };
 

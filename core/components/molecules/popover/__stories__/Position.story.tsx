@@ -20,16 +20,20 @@ export const position = () => {
     );
   });
 
+  const onToggle = () => null;
+
   const options = {
     appendToBody,
     dark,
     closeOnBackdropClick,
     hoverable,
+    onToggle,
     style: {
       height: '50px',
       width: '150px',
       padding: '16px'
-    }
+    },
+    open: true
   };
 
   const style = {

@@ -7,7 +7,7 @@ export { default as Button } from './components/atoms/button';
 export { default as Card } from './components/atoms/card';
 export { default as Checkbox } from './components/atoms/checkbox';
 export { default as Column } from './components/atoms/column';
-export { default as Datepicker } from './components/atoms/datepicker';
+export { default as Datepicker } from './components/atoms/calendar';
 export { default as Heading } from './components/atoms/heading';
 export { default as Icon } from './components/atoms/icon';
 export { default as Input } from './components/atoms/input';
