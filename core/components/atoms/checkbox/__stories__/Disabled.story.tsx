@@ -41,12 +41,12 @@ export const disabled = () => {
       </div>
       <div style={innerStyle}>
         <Checkbox
-          intermediate={true}
+          indeterminate={true}
           disabled={true}
           label={label}
         />
         <br />
-        <Text weight="strong">Intermediate</Text>
+        <Text weight="strong">Indeterminate</Text>
       </div>
     </div>
 

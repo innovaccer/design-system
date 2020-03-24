@@ -117,7 +117,7 @@ exports[`Checkbox component
 `;
 
 exports[`Checkbox component 
-  intermediate: true, disabled: false, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  indeterminate: true, disabled: false, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
 <div
   className="Checkbox Checkbox--regular"
@@ -130,7 +130,7 @@ exports[`Checkbox component
     value="Checkbox"
   />
   <span
-    className="Checkbox-wrapper Checkbox-wrapper--regular Checkbox-wrapper--intermediate"
+    className="Checkbox-wrapper Checkbox-wrapper--regular Checkbox-wrapper--indeterminate"
     onClick={[Function]}
   >
     <Icon
@@ -148,7 +148,7 @@ exports[`Checkbox component
 `;
 
 exports[`Checkbox component 
-  intermediate: true, disabled: true, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  indeterminate: true, disabled: true, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
 <div
   className="Checkbox Checkbox--disabled Checkbox--regular"
@@ -161,7 +161,7 @@ exports[`Checkbox component
     value="Checkbox"
   />
   <span
-    className="Checkbox-wrapper Checkbox-wrapper--regular Checkbox-wrapper--intermediate"
+    className="Checkbox-wrapper Checkbox-wrapper--regular Checkbox-wrapper--indeterminate"
     onClick={[Function]}
   >
     <Icon

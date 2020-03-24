@@ -29,8 +29,8 @@ export const checkbox = () => {
     false
   );
 
-  const intermediate = boolean(
-    'intermediate',
+  const indeterminate = boolean(
+    'indeterminate',
     false
   );
 
@@ -41,14 +41,14 @@ export const checkbox = () => {
 
   const onChangeHandler = (checkedValue: boolean) => {
     updateKnob('checked', checkedValue);
-    updateKnob('intermediate', false);
+    updateKnob('indeterminate', false);
     return action(`onChange: ${checkedValue}`)();
   };
 
   return (
     <Checkbox
       checked={checked}
-      intermediate={intermediate}
+      indeterminate={indeterminate}
       disabled={disabled}
       size={size}
       label={label}

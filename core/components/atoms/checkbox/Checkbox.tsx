@@ -8,7 +8,7 @@ export type Size = 'regular' | 'tiny';
 export interface ICheckboxProps {
   size?: Size;
   checked?: boolean;
-  intermediate?: boolean;
+  indeterminate?: boolean;
   disabled?: boolean;
   label?: string;
   name?: string;
@@ -35,8 +35,8 @@ const Checkbox = React.forwardRef<HTMLInputElement, ICheckboxProps>((props, forw
   const [checked, setChecked] = React.useState(props.checked);
 
   React.useEffect(() => {
-    setIntermediate(props.intermediate);
-  }, [props.intermediate]);
+    setIndeterminate(props.indeterminate);
+  }, [props.indeterminate]);
 
   React.useEffect(() => {
     setChecked(props.checked);
@@ -52,21 +52,21 @@ const Checkbox = React.forwardRef<HTMLInputElement, ICheckboxProps>((props, forw
     ['Checkbox-wrapper']: true,
     [`Checkbox-wrapper--${size}`]: size,
     ['Checkbox-wrapper--checked']: checked,
-    ['Checkbox-wrapper--intermediate']: props.intermediate,
+    ['Checkbox-wrapper--indeterminate']: props.indeterminate,
   });
 
-  const setIntermediate = (intermediate: any) => {
-    ref.current!.indeterminate = intermediate;
+  const setIndeterminate = (indeterminate: any) => {
+    ref.current!.indeterminate = indeterminate;
   };
 
   const onChangeHandler = () => {
-    const checkedValue = (props.intermediate) ? true : !checked;
+    const checkedValue = (props.indeterminate) ? true : !checked;
     setChecked(checkedValue);
-    setIntermediate(false);
+    setIndeterminate(false);
     if (onChange) onChange(checkedValue);
   };
 
-  const IconName = (props.intermediate) ? 'remove' : ((checked) ? 'check' : '');
+  const IconName = (props.indeterminate) ? 'remove' : ((checked) ? 'check' : '');
   const IconSize = (size) === 'tiny' ? 8 : 16;
 
   return (
