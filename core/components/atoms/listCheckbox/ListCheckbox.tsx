@@ -40,7 +40,7 @@ const ListCheckbox = React.forwardRef<HTMLDivElement, IListCheckboxProps>((props
     const totalCount = list.length;
     const countT = listArray.filter(Boolean).length;
     const status = countT < totalCount;
-    const obj = (countT > 0) ? { checked: !status, intermediate: status } : { checked: !status, intermediate: false };
+    const obj = (countT > 0) ? { checked: !status, indeterminate: status } : { checked: !status, indeterminate: false };
     return obj;
   };
 
@@ -67,7 +67,7 @@ const ListCheckbox = React.forwardRef<HTMLDivElement, IListCheckboxProps>((props
     return (value === false);
   });
 
-  const parent = { checked: props.checked ? props.checked : false, intermediate: false };
+  const parent = { checked: props.checked ? props.checked : false, indeterminate: false };
   const parentObj = (childStatus) ? parent : calcParentStatus(childArray);
   const [parentStatus, setParentStatus] = React.useState(parentObj);
   const [checked, setChecked] = React.useState(childArray);
@@ -100,7 +100,7 @@ const ListCheckbox = React.forwardRef<HTMLDivElement, IListCheckboxProps>((props
     const updatedArray = [...childArray].fill(checkedValue);
     setChecked(updatedArray);
     if (checkedValue) {
-      setParentStatus({ checked: checkedValue, intermediate: !checkedValue });
+      setParentStatus({ checked: checkedValue, indeterminate: !checkedValue });
     }
     if (onChange) {
       const selectedValues = checkedValue ? getValuesArray() : [];
@@ -116,7 +116,7 @@ const ListCheckbox = React.forwardRef<HTMLDivElement, IListCheckboxProps>((props
           label={label}
           onChange={handleParentChange}
           checked={parentStatus.checked}
-          intermediate={parentStatus.intermediate}
+          indeterminate={parentStatus.indeterminate}
         />
       </div>
       <div className={'ListCheckbox-scroller'} style={style} ref={ref}>

@@ -66,31 +66,31 @@
 /* Type: checked && Type: indeterminate  */
 
 .Checkbox-wrapper--checked,
-.Checkbox-wrapper--intermediate {
+.Checkbox-wrapper--indeterminate {
     background-color: var(--primary);
     border: 0;
 }
 
 .Checkbox-wrapper--checked:hover,
-.Checkbox-wrapper--intermediate:hover {
+.Checkbox-wrapper--indeterminate:hover {
     background-color: var(--primary-dark);
     border: 0;
 }
 
 .Checkbox-wrapper--checked:active,
-.Checkbox-wrapper--intermediate:active {
+.Checkbox-wrapper--indeterminate:active {
     background-color: var(--primary-darker);
     border: 0;
 }
 
 .Checkbox-wrapper--checked:focus,
-.Checkbox-wrapper--intermediate:focus {
+.Checkbox-wrapper--indeterminate:focus {
     background-color: var(--primary);
     border: 0;
 }
 
 .Checkbox--disabled .Checkbox-wrapper--checked,
-.Checkbox--disabled .Checkbox-wrapper--intermediate {
+.Checkbox--disabled .Checkbox-wrapper--indeterminate {
     background-color: var(--primary-lighter);
     border: 0;
     pointer-events: none;

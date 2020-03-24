@@ -7,12 +7,13 @@ exports[`Input component
   className="Input"
 >
   <div
-    className="Input-wrapper Input-wrapper--regular"
+    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
       className="Input-input Input-input--regular"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       placeholder="Placeholder"
@@ -28,7 +29,7 @@ exports[`Input component
   className="Input"
 >
   <div
-    className="Input-wrapper Input-wrapper--regular"
+    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <i
       className="material-icons Input-icon Input-icon--left"
@@ -37,8 +38,9 @@ exports[`Input component
     </i>
     <input
       className="Input-input Input-input--regular"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       placeholder="Placeholder"
@@ -54,23 +56,18 @@ exports[`Input component
   className="Input"
 >
   <div
-    className="Input-wrapper Input-wrapper--regular"
+    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
       className="Input-input Input-input--regular"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       placeholder="Placeholder"
       value="value"
     />
-    <i
-      className="material-icons Input-icon Input-icon--right"
-      onClick={[Function]}
-    >
-      close
-    </i>
   </div>
 </div>
 `;
@@ -82,7 +79,7 @@ exports[`Input component
   className="Input"
 >
   <div
-    className="Input-wrapper Input-wrapper--regular"
+    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <i
       className="material-icons Input-icon Input-icon--left"
@@ -91,19 +88,14 @@ exports[`Input component
     </i>
     <input
       className="Input-input Input-input--regular"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       placeholder="Placeholder"
       value="value"
     />
-    <i
-      className="material-icons Input-icon Input-icon--right"
-      onClick={[Function]}
-    >
-      close
-    </i>
   </div>
 </div>
 `;
@@ -115,12 +107,13 @@ exports[`Input component
   className="Input"
 >
   <div
-    className="Input-wrapper Input-wrapper--large"
+    className="Input-wrapper Input-wrapper--large Input-wrapper--disabled"
   >
     <input
       className="Input-input Input-input--large"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
     />
@@ -135,7 +128,7 @@ exports[`Input component
   className="Input"
 >
   <div
-    className="Input-wrapper Input-wrapper--large"
+    className="Input-wrapper Input-wrapper--large Input-wrapper--disabled"
   >
     <div
       className="Input-inlineLabel"
@@ -148,8 +141,9 @@ exports[`Input component
     </div>
     <input
       className="Input-input Input-input--large"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       type="number"
@@ -165,12 +159,13 @@ exports[`Input component
   className="Input"
 >
   <div
-    className="Input-wrapper Input-wrapper--regular"
+    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
       className="Input-input Input-input--regular"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
     />
@@ -185,7 +180,7 @@ exports[`Input component
   className="Input"
 >
   <div
-    className="Input-wrapper Input-wrapper--regular"
+    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <div
       className="Input-inlineLabel"
@@ -198,8 +193,9 @@ exports[`Input component
     </div>
     <input
       className="Input-input Input-input--regular"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       type="number"
@@ -215,12 +211,13 @@ exports[`Input component
   className="Input"
 >
   <div
-    className="Input-wrapper Input-wrapper--tiny"
+    className="Input-wrapper Input-wrapper--tiny Input-wrapper--disabled"
   >
     <input
       className="Input-input Input-input--tiny"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
     />
@@ -235,7 +232,7 @@ exports[`Input component
   className="Input"
 >
   <div
-    className="Input-wrapper Input-wrapper--tiny"
+    className="Input-wrapper Input-wrapper--tiny Input-wrapper--disabled"
   >
     <div
       className="Input-inlineLabel"
@@ -248,8 +245,9 @@ exports[`Input component
     </div>
     <input
       className="Input-input Input-input--tiny"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       type="number"
@@ -265,12 +263,13 @@ exports[`Input component
   className="Input"
 >
   <div
-    className="Input-wrapper Input-wrapper--regular"
+    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
       className="Input-input Input-input--regular"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       type="number"
@@ -286,12 +285,13 @@ exports[`Input component
   className="Input"
 >
   <div
-    className="Input-wrapper Input-wrapper--regular"
+    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
       className="Input-input Input-input--regular"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       type="password"
@@ -307,12 +307,13 @@ exports[`Input component
   className="Input"
 >
   <div
-    className="Input-wrapper Input-wrapper--regular"
+    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
       className="Input-input Input-input--regular"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       type="text"
@@ -334,6 +335,7 @@ exports[`Input component
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       value="value"
@@ -360,6 +362,7 @@ exports[`Input component
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       value="value"
@@ -381,6 +384,7 @@ exports[`Input component
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       value="value"
@@ -407,6 +411,7 @@ exports[`Input component
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       value="value"
@@ -422,22 +427,17 @@ exports[`Input component
   className="Input"
 >
   <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--error"
+    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled Input-wrapper--error"
   >
     <input
       className="Input-input Input-input--regular"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       value="value"
     />
-    <i
-      className="material-icons Input-icon Input-icon--right"
-      onClick={[Function]}
-    >
-      close
-    </i>
   </div>
 </div>
 `;
@@ -449,7 +449,7 @@ exports[`Input component
   className="Input"
 >
   <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--error"
+    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled Input-wrapper--error"
   >
     <i
       className="material-icons Input-icon Input-icon--left"
@@ -458,18 +458,13 @@ exports[`Input component
     </i>
     <input
       className="Input-input Input-input--regular"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       value="value"
     />
-    <i
-      className="material-icons Input-icon Input-icon--right"
-      onClick={[Function]}
-    >
-      close
-    </i>
   </div>
 </div>
 `;
@@ -489,23 +484,18 @@ exports[`Input component
     <span />
   </div>
   <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--error"
+    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled Input-wrapper--error"
   >
     <input
       className="Input-input Input-input--regular"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       required={true}
       value="value"
     />
-    <i
-      className="material-icons Input-icon Input-icon--right"
-      onClick={[Function]}
-    >
-      close
-    </i>
   </div>
   <div
     className="Input-caption"
@@ -541,23 +531,18 @@ exports[`Input component
     <span />
   </div>
   <div
-    className="Input-wrapper Input-wrapper--regular"
+    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
       className="Input-input Input-input--regular"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       required={true}
       value="value"
     />
-    <i
-      className="material-icons Input-icon Input-icon--right"
-      onClick={[Function]}
-    >
-      close
-    </i>
   </div>
 </div>
 `;
@@ -577,23 +562,18 @@ exports[`Input component
     <span />
   </div>
   <div
-    className="Input-wrapper Input-wrapper--regular"
+    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
       className="Input-input Input-input--regular"
-      disabled={false}
+      disabled={true}
       name="name"
+      onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       required={true}
       value="value"
     />
-    <i
-      className="material-icons Input-icon Input-icon--right"
-      onClick={[Function]}
-    >
-      close
-    </i>
   </div>
   <div
     className="Input-caption"

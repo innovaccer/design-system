@@ -10,7 +10,7 @@ export const all = () => {
     paddingLeft: '25px',
     paddingTop: '5px',
   };
-  const parentObj = { checked: false, intermediate: false };
+  const parentObj = { checked: false, indeterminate: false };
   const labels = ['InConnect', 'InGraph', 'InReport'];
   const childArray = Array(labels.length).fill(false);
 
@@ -21,7 +21,7 @@ export const all = () => {
     const updatedArray = [...childArray].fill(checkedValue);
     setChecked(updatedArray);
     if (checkedValue) {
-      setParentStatus({ checked: checkedValue, intermediate: !checkedValue });
+      setParentStatus({ checked: checkedValue, indeterminate: !checkedValue });
     }
   };
 
@@ -31,7 +31,7 @@ export const all = () => {
     const totalCount = labels.length;
     const countT = updateCheck.filter(Boolean).length;
     const status = countT < totalCount;
-    const obj = (countT > 0) ? { checked: !status, intermediate: status } : { checked: !status, intermediate: false };
+    const obj = (countT > 0) ? { checked: !status, indeterminate: status } : { checked: !status, indeterminate: false };
     setChecked(updateCheck);
     setParentStatus(obj);
   };
@@ -40,7 +40,7 @@ export const all = () => {
     <div>
       <Checkbox
         checked={parentStatus.checked}
-        intermediate={parentStatus.intermediate}
+        indeterminate={parentStatus.indeterminate}
         label={'Innovaccer'}
         onChange={handleParentChange}
         value={'Innovaccer'}
