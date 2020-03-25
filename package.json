@@ -1,5 +1,5 @@
 {
-  "name": "design-system",
+  "name": "@stile/design-system",
   "version": "0.0.0",
   "description": "",
   "main": "dist/index.umd.js",
@@ -18,7 +18,8 @@
     "build-css": "gulp --gulpfile css/gulpfile.js build",
     "clean-css": "gulp --gulpfile css/gulpfile.js clean",
     "watch-css": "gulp --gulpfile css/gulpfile.js build && gulp --gulpfile css/gulpfile.js watch",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build && git add dist -f"
   },
   "keywords": [],
   "author": "",
