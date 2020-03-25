@@ -15,16 +15,14 @@ export interface IListCheckboxProps {
   label?: string;
   checked?: boolean;
   list: ICheckboxProps[];
-  style?: React.CSSProperties;
   onChange?: (childArray: boolean[]) => void;
 }
 
-const ListCheckbox = React.forwardRef<HTMLDivElement, IListCheckboxProps>((props, ref) => {
+const ListCheckbox = React.forwardRef<HTMLInputElement, IListCheckboxProps>((props, ref) => {
   const {
     list,
     onChange,
     label,
-    style,
   } = props;
 
   const childArray = props.checked ? Array(list.length).fill(props.checked) : [];
@@ -47,7 +45,8 @@ const ListCheckbox = React.forwardRef<HTMLDivElement, IListCheckboxProps>((props
   const getValuesArray = () => {
     const values: any[] = [];
     list.map(item => {
-      values.push(item);
+      const { value } = item;
+      values.push(value);
     });
 
     return values;
@@ -74,9 +73,7 @@ const ListCheckbox = React.forwardRef<HTMLDivElement, IListCheckboxProps>((props
   const [selectedArray, setSelectedArray] = React.useState(getSelectedValues(checked));
 
   React.useEffect(() => {
-    if (props.checked !== undefined) {
-      setParentStatus({ ...parentStatus, checked: props.checked! });
-    }
+    setParentStatus({ ...parentStatus, checked: props.checked! });
   }, [props.checked]);
 
   const handleChildChange = (checkedValue: boolean, index: number) => {
@@ -86,11 +83,12 @@ const ListCheckbox = React.forwardRef<HTMLDivElement, IListCheckboxProps>((props
     setChecked(updateCheck);
     setParentStatus(obj);
     if (onChange) {
+      const { value } = list[index];
       if (!checkedValue) {
-        const ind = selectedArray.indexOf(list[index]);
+        const ind = selectedArray.indexOf(value);
         selectedArray.splice(ind, 1);
       }
-      const selectedValues = checkedValue ? selectedArray.concat(list[index]) : selectedArray;
+      const selectedValues = checkedValue ? selectedArray.concat(value) : selectedArray;
       setSelectedArray(selectedValues);
       onChange(selectedValues);
     }
@@ -110,35 +108,31 @@ const ListCheckbox = React.forwardRef<HTMLDivElement, IListCheckboxProps>((props
   };
 
   return (
-    <div className={'ListCheckbox'}>
-      <div className={'ListCheckbox-wrapper'}>
-        <Checkbox
-          label={label}
-          onChange={handleParentChange}
-          checked={parentStatus.checked}
-          intermediate={parentStatus.intermediate}
-        />
-      </div>
-      <div className={'ListCheckbox-scroller'} style={style} ref={ref}>
+    <div>
+      <Checkbox
+        ref={ref}
+        label={label}
+        onChange={handleParentChange}
+        checked={parentStatus.checked}
+        intermediate={parentStatus.intermediate}
+      />
       {
         list.map((item, ind) => {
           const { label: childLabel, size, onChange: childOnChange } = item;
           return (
-            <div className={'ListCheckbox-childWrapper'} key={`checkbox-${ind}`}>
-              <Checkbox
-                label={childLabel}
-                checked={checked[ind]}
-                size={size}
-                onChange={c => {
-                  handleChildChange(c, ind);
-                  if (childOnChange) childOnChange(checked[ind]);
-                }}
-              />
-            </div>
+            <Checkbox
+              key={`checkbox-${ind}`}
+              label={childLabel}
+              checked={checked[ind]}
+              size={size}
+              onChange={c => {
+                handleChildChange(c, ind);
+                if (childOnChange) childOnChange(checked[ind]);
+              }}
+            />
           );
         })
       }
-      </div>
     </div>
   );
 });

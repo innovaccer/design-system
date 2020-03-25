@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 type ReactMouseEvent = (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 
-export type Appearance = 'default' | 'destructive' | 'white' | 'subtle' | 'disabled' | 'info' | 'alert' | 'warning' | 'success';
+export type Appearance = 'destructive' | 'white' | 'subtle' | 'disabled' | 'info' | 'alert' | 'warning' | 'success';
 
 export type IconType = 'filled' | 'outline' | 'rounded' | 'sharp';
 
