@@ -4,7 +4,7 @@ exports[`Calendar component
   
  1`] = `
 <div
-  className="RangePicker"
+  className="d-flex"
 >
   <div
     className="Calendar Calendar--date"
@@ -121,6 +121,7 @@ exports[`Calendar component
       </div>
       <div
         className="Calendar-dateValues"
+        onMouseLeave={[Function]}
       >
         <div
           className="Calendar-valueRow"
@@ -513,7 +514,7 @@ exports[`Calendar component
   disabledAfter: 1584642600000
  1`] = `
 <div
-  className="RangePicker"
+  className="d-flex"
 >
   <div
     className="Calendar Calendar--date"
@@ -630,6 +631,7 @@ exports[`Calendar component
       </div>
       <div
         className="Calendar-dateValues"
+        onMouseLeave={[Function]}
       >
         <div
           className="Calendar-valueRow"
@@ -1022,7 +1024,7 @@ exports[`Calendar component
   disabledBefore: 1583778600000
  1`] = `
 <div
-  className="RangePicker"
+  className="d-flex"
 >
   <div
     className="Calendar Calendar--date"
@@ -1139,6 +1141,7 @@ exports[`Calendar component
       </div>
       <div
         className="Calendar-dateValues"
+        onMouseLeave={[Function]}
       >
         <div
           className="Calendar-valueRow"
@@ -1531,7 +1534,7 @@ exports[`Calendar component
   disabledBefore: 1583778600000, disabledAfter: 1584642600000
  1`] = `
 <div
-  className="RangePicker"
+  className="d-flex"
 >
   <div
     className="Calendar Calendar--date"
@@ -1648,6 +1651,7 @@ exports[`Calendar component
       </div>
       <div
         className="Calendar-dateValues"
+        onMouseLeave={[Function]}
       >
         <div
           className="Calendar-valueRow"
@@ -2040,7 +2044,7 @@ exports[`Calendar component
   firstDayOfWeek: "friday"
  1`] = `
 <div
-  className="RangePicker"
+  className="d-flex"
 >
   <div
     className="Calendar Calendar--date"
@@ -2157,6 +2161,7 @@ exports[`Calendar component
       </div>
       <div
         className="Calendar-dateValues"
+        onMouseLeave={[Function]}
       >
         <div
           className="Calendar-valueRow"
@@ -2549,7 +2554,7 @@ exports[`Calendar component
   firstDayOfWeek: "monday"
  1`] = `
 <div
-  className="RangePicker"
+  className="d-flex"
 >
   <div
     className="Calendar Calendar--date"
@@ -2666,6 +2671,7 @@ exports[`Calendar component
       </div>
       <div
         className="Calendar-dateValues"
+        onMouseLeave={[Function]}
       >
         <div
           className="Calendar-valueRow"
@@ -3097,7 +3103,7 @@ exports[`Calendar component
   firstDayOfWeek: "saturday"
  1`] = `
 <div
-  className="RangePicker"
+  className="d-flex"
 >
   <div
     className="Calendar Calendar--date"
@@ -3214,6 +3220,7 @@ exports[`Calendar component
       </div>
       <div
         className="Calendar-dateValues"
+        onMouseLeave={[Function]}
       >
         <div
           className="Calendar-valueRow"
@@ -3606,7 +3613,7 @@ exports[`Calendar component
   firstDayOfWeek: "sunday"
  1`] = `
 <div
-  className="RangePicker"
+  className="d-flex"
 >
   <div
     className="Calendar Calendar--date"
@@ -3723,6 +3730,7 @@ exports[`Calendar component
       </div>
       <div
         className="Calendar-dateValues"
+        onMouseLeave={[Function]}
       >
         <div
           className="Calendar-valueRow"
@@ -4115,7 +4123,7 @@ exports[`Calendar component
   firstDayOfWeek: "thursday"
  1`] = `
 <div
-  className="RangePicker"
+  className="d-flex"
 >
   <div
     className="Calendar Calendar--date"
@@ -4232,6 +4240,7 @@ exports[`Calendar component
       </div>
       <div
         className="Calendar-dateValues"
+        onMouseLeave={[Function]}
       >
         <div
           className="Calendar-valueRow"
@@ -4624,7 +4633,7 @@ exports[`Calendar component
   firstDayOfWeek: "tuesday"
  1`] = `
 <div
-  className="RangePicker"
+  className="d-flex"
 >
   <div
     className="Calendar Calendar--date"
@@ -4741,6 +4750,7 @@ exports[`Calendar component
       </div>
       <div
         className="Calendar-dateValues"
+        onMouseLeave={[Function]}
       >
         <div
           className="Calendar-valueRow"
@@ -5172,7 +5182,7 @@ exports[`Calendar component
   firstDayOfWeek: "wednesday"
  1`] = `
 <div
-  className="RangePicker"
+  className="d-flex"
 >
   <div
     className="Calendar Calendar--date"
@@ -5289,6 +5299,7 @@ exports[`Calendar component
       </div>
       <div
         className="Calendar-dateValues"
+        onMouseLeave={[Function]}
       >
         <div
           className="Calendar-valueRow"

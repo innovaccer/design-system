@@ -1,21 +1,10 @@
 import * as React from 'react';
 import { boolean, select, date, number } from '@storybook/addon-knobs';
 import { RangePicker } from '@/components/atoms/calendar';
-import Card from '@/components/atoms/card';
 import { action } from '@storybook/addon-actions';
 
 // CSF format story
-export const all = () => {
-  const withInput = boolean(
-    'withInput',
-    false
-  );
-
-  const monthsInView = number(
-    'monthsInView',
-    1
-  );
-
+export const withInput = () => {
   const startDate = date(
     'startDate',
     undefined
@@ -26,15 +15,22 @@ export const all = () => {
     undefined
   );
 
+  const inputFormat = select(
+    'inputFormat',
+    ['mm/dd/yy', 'dd/mm/yy', 'yy-mm-dd', 'mm-dd-yy', 'dd-mm-yy', 'yy-mm-dd'],
+    undefined
+  );
+
+  const outputFormat = select(
+    'outputFormat',
+    ['mm/dd/yy', 'dd/mm/yy', 'yy-mm-dd', 'mm-dd-yy', 'dd-mm-yy', 'yy-mm-dd'],
+    undefined
+  );
+
   const view = select(
     'view',
     ['date', 'month', 'year'],
     undefined
-  );
-
-  const rangeLimit = number(
-    'rangeLimit',
-    0
   );
 
   const firstDayOfWeek = select(
@@ -71,44 +67,22 @@ export const all = () => {
   const attr: Record<string, any> = {};
   if (disabledBefore) attr.disabledBefore = disabledBefore;
   if (disabledAfter) attr.disabledAfter = disabledAfter;
-  if (rangeLimit) attr.rangeLimit = rangeLimit;
   if (yearNav !== -1) attr.yearNav = yearNav;
   if (monthNav !== -1) attr.monthNav = monthNav;
 
-  if (withInput) {
-    return (
-      <RangePicker
-        withInput={withInput}
-        monthsInView={monthsInView}
-        jumpView={jumpView}
-        startDate={startDate}
-        endDate={endDate}
-        onRangeChange={(sDate?: Date, eDate?: Date) => action(`on range change: ${sDate} - ${eDate}`)()}
-        view={view}
-        firstDayOfWeek={firstDayOfWeek}
-        {...attr}
-      />
-    );
-  }
   return (
-    <Card
-      shadow="light"
-      style={{
-        maxWidth: `${monthsInView * 330}px`
-      }}
-    >
-      <RangePicker
-        withInput={withInput}
-        monthsInView={monthsInView}
-        jumpView={jumpView}
-        startDate={startDate}
-        endDate={endDate}
-        onRangeChange={(sDate?: Date, eDate?: Date) => action(`on range change: ${sDate} - ${eDate}`)()}
-        view={view}
-        firstDayOfWeek={firstDayOfWeek}
-        {...attr}
-      />
-    </Card>
+    <RangePicker
+      withInput={true}
+      startDate={startDate}
+      endDate={endDate}
+      inputFormat={inputFormat}
+      outputFormat={outputFormat}
+      jumpView={jumpView}
+      onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) => action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()}
+      view={view}
+      firstDayOfWeek={firstDayOfWeek}
+      {...attr}
+    />
   );
 };
 

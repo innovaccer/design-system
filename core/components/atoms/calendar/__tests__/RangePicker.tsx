@@ -4,6 +4,7 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 import RangePicker, { IRangePickerProps as IProps } from '../RangePicker';
 
 const view = ['year', 'month', 'date'];
+const booleanValue = [true, false];
 
 describe('RangePicker component', () => {
   const mapper: Record<string, any> = {
@@ -81,6 +82,29 @@ describe('RangePicker component', () => {
 describe('RangePicker component', () => {
   const mapper: Record<string, any> = {
     rangeLimit: valueHelper(7, { required: true, iterate: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as IProps;
+
+    it(testMessageHelper(attr), () => {
+      const tree = shallow(
+        <RangePicker
+          startDate={new Date(2020, 2, 3)}
+          endDate={new Date(2020, 2, 11)}
+          {...attr}
+        />
+      );
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('RangePicker component', () => {
+  const mapper: Record<string, any> = {
+    withInput: valueHelper(booleanValue, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {

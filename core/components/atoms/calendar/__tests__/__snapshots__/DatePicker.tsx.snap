@@ -4,7 +4,7 @@ exports[`DatePicker component
   view: "date"
  1`] = `
 <Component
-  date={2020-02-29T18:30:00.000Z}
+  onDateChange={[Function]}
   view="date"
 >
   DatePicker
@@ -15,7 +15,7 @@ exports[`DatePicker component
   view: "month"
  1`] = `
 <Component
-  date={2020-02-29T18:30:00.000Z}
+  onDateChange={[Function]}
   view="month"
 >
   DatePicker
@@ -26,9 +26,61 @@ exports[`DatePicker component
   view: "year"
  1`] = `
 <Component
-  date={2020-02-29T18:30:00.000Z}
+  onDateChange={[Function]}
   view="year"
 >
   DatePicker
 </Component>
+`;
+
+exports[`DatePicker component 
+  withInput: false
+ 1`] = `
+<Component
+  onDateChange={[Function]}
+>
+  DatePicker
+</Component>
+`;
+
+exports[`DatePicker component 
+  withInput: true
+ 1`] = `
+<Popover
+  appendToBody={true}
+  onToggle={[Function]}
+  open={false}
+  trigger={
+    <ForwardRef
+      error={false}
+      mask={
+        Array [
+          /\\\\d/,
+          /\\\\d/,
+          "/",
+          /\\\\d/,
+          /\\\\d/,
+          "/",
+          /\\\\d/,
+          /\\\\d/,
+          /\\\\d/,
+          /\\\\d/,
+        ]
+      }
+      name="datepicker"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClear={[Function]}
+      placeholder="dd/mm/yy"
+      placeholderChar="_"
+      value=""
+    />
+  }
+>
+  <Component
+    onDateChange={[Function]}
+  >
+    DatePicker
+  </Component>
+</Popover>
 `;
