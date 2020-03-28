@@ -6,7 +6,7 @@ import Subheading from '@/components/atoms/subheading';
 import Text from '@/components/atoms/text';
 
 import config from './config';
-import { DateType, Day, View, State } from './types';
+import { Day, View, State } from './types';
 import {
   compareDate,
   compareDecade,
@@ -19,18 +19,18 @@ import {
 } from './utility';
 
 export interface ICalendarProps {
-  onDateChange?: (date?: Date) => void;
-  onRangeChange?: (startDate?: Date, endDate?: Date) => void;
+  onDateChange?: (date: Date | undefined) => void;
+  onRangeChange?: (startDate: Date | undefined, endDate: Date | undefined) => void;
   monthsInView?: number;
   jumpView?: boolean;
-  date?: DateType;
+  date?: Date;
   firstDayOfWeek?: Day;
   view?: View;
-  disabledBefore?: DateType;
-  disabledAfter?: DateType;
+  disabledBefore?: Date;
+  disabledAfter?: Date;
   rangePicker?: boolean;
-  startDate?: DateType;
-  endDate?: DateType;
+  startDate?: Date;
+  endDate?: Date;
   rangeLimit?: number;
   yearNav?: number;
   monthNav?: number;
@@ -99,38 +99,31 @@ export const Calendar: React.FunctionComponent<ICalendarProps> = props => {
   } = state;
 
   React.useEffect(() => {
-    setYearNav(yearNavProp);
-    setYearBlockNav(getYearBlock(yearNavProp));
-  }, [yearNavProp]);
-
-  React.useEffect(() => {
-    setMonthNav(monthNavProp);
-  }, [monthNavProp]);
-
-  React.useEffect(() => {
     if (dateProp) {
       const { year, month, date } = getDateInfo(dateProp);
       updateState(year, month, date);
       const d = convertToDate(dateProp);
       setCurrDateState(d);
+    } else {
+      setCurrDateState(undefined);
     }
   }, [dateProp]);
 
   React.useEffect(() => {
     if (startDateProp) {
-      const { year, month, date } = getDateInfo(startDateProp);
-      updateState(year, month, date);
       const d = convertToDate(startDateProp);
       setStartDateState(d);
+    } else {
+      setStartDateState(undefined);
     }
   }, [startDateProp]);
 
   React.useEffect(() => {
-    if (startDateProp && endDateProp) {
-      const { year, month, date } = getDateInfo(endDateProp);
-      updateState(year, month, date);
+    if (endDateProp) {
       const d = convertToDate(endDateProp);
       setEndDateState(d);
+    } else {
+      setEndDateState(undefined);
     }
   }, [endDateProp]);
 
@@ -143,23 +136,31 @@ export const Calendar: React.FunctionComponent<ICalendarProps> = props => {
     if (currDateState) {
       if (onDateChange) onDateChange(currDateState);
       if (rangePicker) {
-        if (!startDateState) setStartDateState(currDateState);
-        if (startDateState) {
+        if (startDateState && endDateState) {
+          setEndDateState(undefined);
+          setHoverDateState(undefined);
+          setStartDateState(currDateState);
+        } else {
           const {
             year,
             month,
             date
           } = getDateInfo(currDateState);
-          if (compareDate(startDateState, 'less', year, month, date)) {
-            setEndDateState(currDateState);
+          if (startDateState) {
+            if (compareDate(startDateState, 'more', year, month, date)) {
+              setStartDateState(currDateState);
+            } else {
+              setEndDateState(currDateState);
+            }
+          } else if (endDateState) {
+            if (compareDate(endDateState, 'less', year, month, date)) {
+              setEndDateState(currDateState);
+            } else {
+              setStartDateState(currDateState);
+            }
           } else {
             setStartDateState(currDateState);
           }
-        }
-        if (endDateState) {
-          setEndDateState(undefined);
-          setHoverDateState(undefined);
-          setStartDateState(currDateState);
         }
       } else {
         setStartDateState(currDateState);
@@ -168,11 +169,8 @@ export const Calendar: React.FunctionComponent<ICalendarProps> = props => {
   }, [currDateState]);
 
   React.useEffect(() => {
-    if (endDateState) {
-      const inRangeError = getInRangeError();
-      if (onRangeChange && !inRangeError) onRangeChange(startDateState, endDateState);
-    }
-  }, [endDateState]);
+    if (onRangeChange) onRangeChange(startDateState, endDateState);
+  }, [startDateState, endDateState]);
 
   React.useEffect(() => {
     if (yearState !== undefined && monthsInView < 2) {
@@ -186,6 +184,15 @@ export const Calendar: React.FunctionComponent<ICalendarProps> = props => {
       setMonthNav(monthState);
     }
   }, [monthState]);
+
+  React.useEffect(() => {
+    setYearNav(yearNavProp);
+    setYearBlockNav(getYearBlock(yearNavProp));
+  }, [yearNavProp]);
+
+  React.useEffect(() => {
+    setMonthNav(monthNavProp);
+  }, [monthNavProp]);
 
   const getDateValue = (year: number, month: number, date: number): Date | undefined => {
     const d = new Date(year, month, date);
@@ -204,29 +211,44 @@ export const Calendar: React.FunctionComponent<ICalendarProps> = props => {
   };
 
   const getInRangeError = () => {
-    if (rangePicker && rangeLimit && startDateState) {
+    if (rangePicker && rangeLimit) {
       const {
+        year: startYear,
+        month: startMonth,
         date: startDate
       } = getDateInfo(startDateState);
 
-      const nextLimitDate = new Date(startDateState);
-      nextLimitDate.setDate(startDate + rangeLimit);
-
-      const {
-        year: hoverYear,
-        month: hoverMonth,
-        date: hoverDate
-      } = getDateInfo(hoverDateState);
       const {
         year: endYear,
         month: endMonth,
         date: endDate
       } = getDateInfo(endDateState);
 
-      return (
-        compareDate(nextLimitDate, 'less', hoverYear, hoverMonth, hoverDate + 1)
-        || compareDate(nextLimitDate, 'less', endYear, endMonth, endDate + 1)
-      );
+      const {
+        year: hoverYear,
+        month: hoverMonth,
+        date: hoverDate
+      } = getDateInfo(hoverDateState);
+
+      let limitDate: Date;
+      if (startDateState) {
+        limitDate = new Date(startDateState);
+        limitDate.setDate(startDate + rangeLimit);
+
+        return (
+          compareDate(limitDate, 'less', hoverYear, hoverMonth, hoverDate + 1)
+          || compareDate(limitDate, 'less', endYear, endMonth, endDate + 1)
+        );
+      }
+      if (endDateState) {
+        limitDate = new Date(endDateState);
+        limitDate.setDate(endDate - rangeLimit);
+
+        return (
+          compareDate(limitDate, 'more', hoverYear, hoverMonth, hoverDate - 1)
+          || compareDate(limitDate, 'more', startYear, startMonth, startDate - 1)
+        );
+      }
     }
     return false;
   };
@@ -419,12 +441,18 @@ export const Calendar: React.FunctionComponent<ICalendarProps> = props => {
   };
 
   const renderBodyDate = (index: number) => {
+    const onMouseLeaveHandler = () => {
+      if (rangePicker) {
+        setHoverDateState(undefined);
+      }
+    };
+
     return (
       <>
         <div className="Calendar-dayValues">
           {renderDayValues()}
         </div>
-        <div className="Calendar-dateValues">
+        <div className="Calendar-dateValues" onMouseLeave={onMouseLeaveHandler}>
           {renderDateValues(index)}
         </div>
       </>
@@ -457,18 +485,15 @@ export const Calendar: React.FunctionComponent<ICalendarProps> = props => {
     const dayDiff = getFirstDayOfMonth(yearNavVal, monthNavVal) - getIndexOfDay(firstDayOfWeek);
     const dummyDays = (dayDiff + daysInRow) % daysInRow;
     const noOfRows = Math.ceil((dayRange + dummyDays) / daysInRow);
-    let inRangeError = false;
-
-    if (rangePicker) {
-      if (rangeLimit && startDateState) {
-        inRangeError = getInRangeError();
-      }
-    }
+    const inRangeError = getInRangeError();
 
     const onClickHandler = (date: number) => {
       if (rangePicker) {
-        if (!inRangeError) selectDate(index, date);
-        if (endDateState) selectDate(index, date);
+        if (startDateState && endDateState) {
+          selectDate(index, date);
+        } else {
+          if (!inRangeError) selectDate(index, date);
+        }
       } else {
         selectDate(index, date);
       }
@@ -476,8 +501,8 @@ export const Calendar: React.FunctionComponent<ICalendarProps> = props => {
 
     const onMouseOverHandler = (date: number) => {
       if (rangePicker) {
-        if (!endDateState) {
-          const d = getDateValue(yearNavVal, monthNavVal, date);
+        const d = getDateValue(yearNavVal, monthNavVal, date);
+        if (!(startDateState && endDateState)) {
           setHoverDateState(d);
         }
       }
@@ -498,25 +523,29 @@ export const Calendar: React.FunctionComponent<ICalendarProps> = props => {
               let active = !disabled && yearState === yearNavVal && monthState === monthNavVal && dateState === date;
               let inRange = false;
               if (rangePicker) {
-                if (startDateState) {
+                active = !disabled
+                  && (
+                    compareDate(startDateState, 'equal', yearNavVal, monthNavVal, date)
+                    || compareDate(endDateState, 'equal', yearNavVal, monthNavVal, date)
+                  );
+                if (startDateState && endDateState) {
+                  inRange = !disabled
+                    && compareDate(startDateState, 'less', yearNavVal, monthNavVal, date)
+                    && compareDate(endDateState, 'more', yearNavVal, monthNavVal, date);
+                } else if (startDateState) {
                   inRange = !disabled
                     && (
                       compareDate(hoverDateState, 'more', yearNavVal, monthNavVal, date)
                       || compareDate(hoverDateState, 'equal', yearNavVal, monthNavVal, date)
                     )
                     && compareDate(startDateState, 'less', yearNavVal, monthNavVal, date);
-                }
-                if (endDateState) {
-                  active = !disabled
-                    && (
-                      compareDate(startDateState, 'equal', yearNavVal, monthNavVal, date)
-                      || compareDate(endDateState, 'equal', yearNavVal, monthNavVal, date)
-                    );
+                } else if (endDateState) {
                   inRange = !disabled
                     && (
-                      compareDate(startDateState, 'less', yearNavVal, monthNavVal, date)
-                      && compareDate(endDateState, 'more', yearNavVal, monthNavVal, date)
-                    );
+                      compareDate(hoverDateState, 'less', yearNavVal, monthNavVal, date)
+                      || compareDate(hoverDateState, 'equal', yearNavVal, monthNavVal, date)
+                    )
+                    && compareDate(endDateState, 'more', yearNavVal, monthNavVal, date);
                 }
               }
 
@@ -587,7 +616,7 @@ export const Calendar: React.FunctionComponent<ICalendarProps> = props => {
   };
 
   return (
-    <div className="RangePicker">
+    <div className="d-flex">
       {Array.from({ length: monthsInView }, (_x, index) => {
         return renderCalendar(index);
       })}

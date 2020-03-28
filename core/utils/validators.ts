@@ -62,7 +62,7 @@ export const dateValidator = (format: string, val: string): boolean => {
   }
 }
 
-const e: Record<string, Function> = {
+const e: Record<string, any> = {
   date: dateValidator
 }
 export default e;

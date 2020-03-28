@@ -4,9 +4,8 @@ exports[`RangePicker component
   
  1`] = `
 <Component
-  endDate={2020-03-10T18:30:00.000Z}
+  onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
 />
 `;
 
@@ -14,10 +13,9 @@ exports[`RangePicker component
   monthsInView: 1
  1`] = `
 <Component
-  endDate={2020-03-10T18:30:00.000Z}
   monthsInView={1}
+  onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
 />
 `;
 
@@ -25,11 +23,10 @@ exports[`RangePicker component
   monthsInView: 1
  2`] = `
 <Component
-  endDate={2020-03-10T18:30:00.000Z}
   monthNav={11}
   monthsInView={1}
+  onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
   yearNav={2019}
 />
 `;
@@ -38,10 +35,9 @@ exports[`RangePicker component
   monthsInView: 2
  1`] = `
 <Component
-  endDate={2020-03-10T18:30:00.000Z}
   monthsInView={2}
+  onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
 />
 `;
 
@@ -49,11 +45,10 @@ exports[`RangePicker component
   monthsInView: 2
  2`] = `
 <Component
-  endDate={2020-03-10T18:30:00.000Z}
   monthNav={11}
   monthsInView={2}
+  onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
   yearNav={2019}
 />
 `;
@@ -62,10 +57,9 @@ exports[`RangePicker component
   monthsInView: 3
  1`] = `
 <Component
-  endDate={2020-03-10T18:30:00.000Z}
   monthsInView={3}
+  onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
 />
 `;
 
@@ -73,11 +67,10 @@ exports[`RangePicker component
   monthsInView: 3
  2`] = `
 <Component
-  endDate={2020-03-10T18:30:00.000Z}
   monthNav={11}
   monthsInView={3}
+  onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
   yearNav={2019}
 />
 `;
@@ -86,9 +79,8 @@ exports[`RangePicker component
   view: "date"
  1`] = `
 <Component
-  endDate={2020-03-10T18:30:00.000Z}
+  onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
   view="date"
 >
   RangePicker
@@ -99,9 +91,8 @@ exports[`RangePicker component
   view: "month"
  1`] = `
 <Component
-  endDate={2020-03-10T18:30:00.000Z}
+  onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
   view="month"
 >
   RangePicker
@@ -112,11 +103,97 @@ exports[`RangePicker component
   view: "year"
  1`] = `
 <Component
-  endDate={2020-03-10T18:30:00.000Z}
+  onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
   view="year"
 >
   RangePicker
 </Component>
+`;
+
+exports[`RangePicker component 
+  withInput: false
+ 1`] = `
+<Component
+  onRangeChange={[Function]}
+  rangePicker={true}
+/>
+`;
+
+exports[`RangePicker component 
+  withInput: true
+ 1`] = `
+<Popover
+  appendToBody={true}
+  onToggle={[Function]}
+  open={false}
+  trigger={
+    <div
+      className="RangePicker-input"
+    >
+      <ForwardRef
+        error={false}
+        mask={
+          Array [
+            /\\\\d/,
+            /\\\\d/,
+            "/",
+            /\\\\d/,
+            /\\\\d/,
+            "/",
+            /\\\\d/,
+            /\\\\d/,
+            /\\\\d/,
+            /\\\\d/,
+          ]
+        }
+        name="rangePicker-start"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClear={[Function]}
+        onClick={[Function]}
+        placeholder="dd/mm/yy"
+        placeholderChar="_"
+        value=""
+      />
+      <div
+        className="RangePicker-rangeSeparator"
+      >
+        <Text>
+           - 
+        </Text>
+      </div>
+      <ForwardRef
+        error={false}
+        mask={
+          Array [
+            /\\\\d/,
+            /\\\\d/,
+            "/",
+            /\\\\d/,
+            /\\\\d/,
+            "/",
+            /\\\\d/,
+            /\\\\d/,
+            /\\\\d/,
+            /\\\\d/,
+          ]
+        }
+        name="rangePicker-end"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClear={[Function]}
+        onClick={[Function]}
+        placeholder="dd/mm/yy"
+        placeholderChar="_"
+        value=""
+      />
+    </div>
+  }
+>
+  <Component
+    onRangeChange={[Function]}
+    rangePicker={true}
+  />
+</Popover>
 `;
