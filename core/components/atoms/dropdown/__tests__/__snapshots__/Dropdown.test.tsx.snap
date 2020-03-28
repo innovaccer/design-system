@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown component 
+  
+ 1`] = `
+<div>
+  <Dropdown
+    bottomOptionsSliced={false}
+    limit={10}
+    listOptions={Array []}
+    offset={0}
+    onChange={[Function]}
+    onScroll={[Function]}
+    onSearchChange={[Function]}
+    topOptionsSliced={false}
+  />
+</div>
+`;

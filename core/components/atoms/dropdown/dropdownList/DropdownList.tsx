@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Popover, { PositionType } from '@/components/molecules/popover';
+import Popover, { Position } from '@/components/molecules/popover';
 import DropdownButton from '@/components/atoms/dropdown/dropdownButton';
 import Icon from '@/components/atoms/icon';
 import ListCheckbox from '@/components/atoms/listCheckbox';
@@ -14,9 +14,9 @@ export type Size = 'tiny' | 'regular';
 
 export type DropdownAlign = 'left' | 'right';
 
-const DropdownAlignMapping = {
-  right: 'bottom-start' as PositionType,
-  left: 'bottom-end' as PositionType
+const DropdownAlignMapping: Record<string, Position> = {
+  right: 'bottom-start',
+  left: 'bottom-end'
 };
 
 export interface Option {

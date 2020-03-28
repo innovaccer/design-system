@@ -3,7 +3,10 @@
   "rules": {
     "max-line-length": {
       "options": [120]
-  },
+    },
+    "no-console": {
+      "severity": "warning"
+    },
     "object-literal-sort-keys": false,
     "no-submodule-imports": false,
     "member-ordering": false,
