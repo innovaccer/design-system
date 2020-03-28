@@ -2,11 +2,11 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { PopperWrapper } from '@/utils';
 
-export type PositionType = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end';
+export type Position = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end';
 type ActionType = 'click' | 'hover';
 
 export interface IPopoverProps {
-  position?: PositionType;
+  position?: Position;
   appendToBody?: boolean;
   verticalOffset?: number;
   trigger: React.ReactElement<any>;
@@ -16,7 +16,7 @@ export interface IPopoverProps {
   on?: ActionType;
   open?: boolean;
   style?: React.CSSProperties;
-  onToggle: () => void;
+  onToggle: (open: boolean, type?: string) => void;
 }
 
 const Popover: React.FunctionComponent<IPopoverProps> = props => {

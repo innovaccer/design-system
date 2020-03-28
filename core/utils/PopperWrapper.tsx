@@ -39,7 +39,7 @@ interface IProps {
   closeOnBackdropClick?: boolean;
   hoverable?: boolean;
   open?: boolean;
-  onToggle: (open: boolean) => void;
+  onToggle: (open: boolean, type?: string) => void;
 }
 
 interface IState {
@@ -82,7 +82,7 @@ class PopperWrapper extends React.Component<IProps, IState> {
         }
       }, this.state.mouseLeaveDelay);
     } else {
-      onToggle(false);
+      onToggle(false, 'mouseLeave');
       if (this.props.children.props.onMouseLeave) {
         this.props.children.props.onMouseLeave(event);
       }
@@ -100,16 +100,16 @@ class PopperWrapper extends React.Component<IProps, IState> {
         }
       }, this.state.mouseEnterDelay);
     } else {
-      onToggle(true);
+      onToggle(true, 'mouseEnter');
       if (this.props.children.props.onMouseEnter) {
         this.props.children.props.onMouseEnter(event);
       }
     }
   }
 
-  public togglePopper = () => {
+  public togglePopper = (type?: string) => {
     const { open = false, onToggle } = this.props;
-    onToggle(!open);
+    onToggle(!open, type);
   }
 
   public doesNodeContainClick = (event: Event) => {
@@ -119,7 +119,7 @@ class PopperWrapper extends React.Component<IProps, IState> {
         this.findDOMNode(this.triggerRef).contains(event.target as HTMLElement)
       )
     ) {
-      this.togglePopper();
+      this.togglePopper('outsideClick');
     }
   }
 
@@ -153,7 +153,7 @@ class PopperWrapper extends React.Component<IProps, IState> {
         }
         : {
           ref,
-          onClick: this.togglePopper
+          onClick: () => this.togglePopper('onClick')
         };
 
     const element = React.cloneElement(

@@ -7,6 +7,8 @@ exports[`Tooltip component
   appendToBody={true}
   offset="Medium"
   on="hover"
+  onToggle={[Function]}
+  open={false}
   placement="bottom"
   style={Object {}}
   trigger={
@@ -31,6 +33,8 @@ exports[`Tooltip component
   appendToBody={true}
   offset="Medium"
   on="hover"
+  onToggle={[Function]}
+  open={false}
   placement="left"
   style={Object {}}
   trigger={
@@ -55,6 +59,8 @@ exports[`Tooltip component
   appendToBody={true}
   offset="Medium"
   on="hover"
+  onToggle={[Function]}
+  open={false}
   placement="right"
   style={Object {}}
   trigger={
@@ -79,6 +85,8 @@ exports[`Tooltip component
   appendToBody={true}
   offset="Medium"
   on="hover"
+  onToggle={[Function]}
+  open={false}
   placement="top"
   style={Object {}}
   trigger={
