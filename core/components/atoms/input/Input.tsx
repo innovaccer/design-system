@@ -75,7 +75,8 @@ const Input = React.forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
   const leftIconClass = classNames({
     ['material-icons']: true,
     ['Input-icon']: true,
-    ['Input-icon--left']: true
+    ['Input-icon--left']: true,
+    ['Input-icon--disabled']: !value
   });
 
   const rightIconClass = classNames({
