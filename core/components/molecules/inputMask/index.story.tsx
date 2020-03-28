@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { select, text, boolean } from '@storybook/addon-knobs';
 import InputMask from './InputMask';
+import masks from './masks';
 import { action } from '@storybook/addon-actions';
 
 // CSF format story
@@ -93,8 +94,7 @@ export const all = () => {
         caption={caption}
         info={info}
         clearButton={clearButton}
-        mask={{ name: 'date', type: 'dd-mm-yy' }}
-        validator={{ name: 'date', type: 'dd-mm-yy' }}
+        mask={masks['date']['mm/dd/yy']}
       />
     </div>
   );

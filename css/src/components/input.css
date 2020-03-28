@@ -111,6 +111,10 @@
     color: var(--inverse);
 }
 
+.Input-icon--disabled {
+    color: var(--inverse-lightest);
+}
+
 .Input-icon--right {
     cursor: pointer;
     margin-left: var(--spacing);

@@ -1,4 +1,7 @@
-export const dateMask = {
+import { DateFormat } from "@/components/atoms/calendar/types";
+import { Mask } from "./InputMask";
+
+export const dateMask: Record<DateFormat, Mask> = {
   'dd/mm/yy': [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
   'mm/dd/yy': [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
   'yy/mm/dd': [/\d/, /\d/, /\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/],
@@ -7,7 +10,7 @@ export const dateMask = {
   'yy-mm-dd': [/\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/],
 }
 
-const e: Record<string, Record<string, (string | RegExp)[]>> = {
+const e: Record<string, Record<string, Mask>> = {
   date: dateMask
 }
 export default e;
