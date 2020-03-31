@@ -28,6 +28,10 @@ export const all = () => {
 
   const closeOnSelect = boolean('close on select', true);
 
+  const loadingOptions = boolean('loading', false);
+
+  const selectAll = boolean('select All', false);
+
   const icon = text('icon', '');
 
   const placeholder = text('placeholder', 'Select');
@@ -64,10 +68,12 @@ export const all = () => {
     maxHeight,
     limit,
     subheading,
+    selectAll,
+    loadingOptions,
     options: dropdownOptions,
     onChange: onChangeHandler,
     style: {
-      marginLeft: '128px'
+      marginLeft: '128px',
     }
   };
 

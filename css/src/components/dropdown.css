@@ -20,6 +20,10 @@
     border-top: var(--spacing-xs) solid var(--secondary-light);
 }
 
+.Dropdown-wrapper {
+    min-height: var(--spacing-7);
+}
+
 .Dropdown-buttonWrapper {
     display: flex;
     justify-content: flex-end;
@@ -30,7 +34,8 @@
 }
 
 .Option-wrapper,
-.Dropdown .ListCheckbox-wrapper,
+.Option-loadingWrapper,
+.Dropdown .ListCheckbox-parentWrapper,
 .Dropdown .ListCheckbox-childWrapper {
     display: flex;
     padding-top: 6px;
@@ -40,18 +45,31 @@
 }
 
 .Option-wrapper:hover,
-.Dropdown .ListCheckbox-wrapper:hover,
+.Dropdown .ListCheckbox-parentWrapper:hover,
 .Dropdown .ListCheckbox-childWrapper:hover {
     background-color: var(--secondary-lightest);
     cursor: pointer;
 }
 
-.Dropdown .ListCheckbox-wrapper {
+.Dropdown .ListCheckbox-parentWrapper {
     padding-top: 10px;
 }
 
 .Dropdown .ListCheckbox-childWrapper:last-child {
     padding-bottom: 10px;
+}
+
+.Dropdown .ListCheckbox .Checkbox {
+    overflow: hidden;
+}
+
+.Dropdown-loaderWrapper {
+    margin-top: var(--spacing-s);
+    margin-bottom: var(--spacing-s);
+}
+
+.Option-loadingWrapper {
+    pointer-events: none;
 }
 
 .Option-wrapper--selected {
@@ -68,8 +86,16 @@
 }
 
 .Option-label {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+}
+
+.Option-text,
+.Dropdown .ListCheckbox .Checkbox .Text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .Option-wrapper--icon {
@@ -77,7 +103,6 @@
 }
 
 .Option-icon {
-    /* Confirm this */
     margin-top: 3px;
 }
 
