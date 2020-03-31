@@ -13,6 +13,7 @@ export interface IDropdownButtonProps {
   inlineLabel?: string;
   placeholder?: string;
   children?: string;
+  width?: React.ReactText;
   onClick?: ReactMouseEvent;
   onMouseEnter?: ReactMouseEvent;
   onMouseLeave?: ReactMouseEvent;
@@ -22,6 +23,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, IDropdownButtonProps>
   const {
     size = 'regular',
     children,
+    width,
     placeholder,
     icon,
     disabled,
@@ -45,19 +47,24 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, IDropdownButtonProps>
     ['DropdownButton-label']: true,
   });
 
+  const style = {
+    minWidth: width,
+    maxWidth: width,
+  };
+
   const appearance = disabled ? 'disabled' : 'default';
   const value = children ? children : placeholder;
   const iconName = value ? 'keyboard_arrow_down' : 'more_horiz';
 
   return (
-    <button ref={ref} value={children} className={buttonClass} disabled={disabled} {...rest} >
+    <button ref={ref} value={children} className={buttonClass} disabled={disabled} {...rest} style={style}>
       {value && (
         <div className="DropdownButton-wrapper">
           {(inlineLabel && !icon) && (
             <div className={labelClass}> {inlineLabel.charAt(0).toUpperCase()}{inlineLabel.slice(1)} </div>
           )}
           {(icon && !inlineLabel) && <Icon appearance={appearance} helpers={['mr-4']} name={icon} />}
-          <div>{value && `${value.charAt(0).toUpperCase()}${value.slice(1)}`}</div>
+          <div className={'DropdownButton-text'}>{value && `${value.charAt(0).toUpperCase()}${value.slice(1)}`}</div>
         </div>
       )}
       <Icon appearance={appearance} name={iconName} />

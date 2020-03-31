@@ -1,5 +1,4 @@
 .DropdownButton {
-    min-width: var(--spacing-7);
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -10,6 +9,7 @@
 .DropdownButton-wrapper {
     display: flex;
     flex-direction: row;
+    overflow: hidden;
 }
 
 .DropdownButton--tiny {
@@ -39,6 +39,13 @@
 .DropdownButton-label {
     color: var(--inverse-light);
     margin-right: var(--spacing);
+}
+
+.DropdownButton-text {
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .DropdownButton--placeholder {
