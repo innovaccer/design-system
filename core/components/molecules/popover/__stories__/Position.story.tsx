@@ -1,11 +1,11 @@
 import * as React from 'react';
-import Popover, { Position } from '../Popover';
+import Popover, { PositionType } from '../Popover';
 import Button from '@/components/atoms/button';
 import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const position = () => {
-  const positions: Position[] = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end'];
+  const positions: PositionType[] = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end'];
   const appendToBody = false;
   const hoverable = false;
   const closeOnBackdropClick = true;
