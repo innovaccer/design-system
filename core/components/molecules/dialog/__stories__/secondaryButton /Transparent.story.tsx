@@ -3,12 +3,8 @@ import { boolean } from '@storybook/addon-knobs';
 import addons from '@storybook/addons';
 import { action } from '@storybook/addon-actions';
 import Dialog from '../../Dialog';
-
-const emitter = (type: any, options: any) => addons.getChannel().emit(type, options);
-
-const updateKnob = (name: any, value: any) => (
-  emitter('storybookjs/knobs/change', { name, value })
-);
+import { docPage } from '@/utils/docPage';
+import { updateKnob } from '@/utils/storybookEventEmitter';
 
 export const transparent = () => {
   const open = boolean('open', true);
@@ -35,4 +31,12 @@ export const transparent = () => {
   );
 };
 
-export default { title: 'Dialog/SecondaryButton' };
+export default {
+  title: 'Molecules|Dialog/SecondaryButton',
+  component: Dialog,
+  parameters: {
+    docs: {
+      page: () => docPage({ title: 'Dialog' })
+    }
+  }
+};

@@ -23,7 +23,7 @@ exports[`Placeholder component
   <div
     className="ml-4 w-100"
   >
-    <Paragraph
+    <PlaceholderParagraph
       length="small"
     />
   </div>
@@ -50,13 +50,13 @@ exports[`Placeholder component
     }
   }
 >
-  <Image
+  <PlaceholderImage
     imageSize="large"
   />
   <div
     className="ml-4 w-100"
   >
-    <Paragraph
+    <PlaceholderParagraph
       length="small"
     />
   </div>
@@ -83,13 +83,13 @@ exports[`Placeholder component
     }
   }
 >
-  <Image
+  <PlaceholderImage
     imageSize="medium"
   />
   <div
     className="ml-4 w-100"
   >
-    <Paragraph
+    <PlaceholderParagraph
       length="small"
     />
   </div>
@@ -116,13 +116,13 @@ exports[`Placeholder component
     }
   }
 >
-  <Image
+  <PlaceholderImage
     imageSize="small"
   />
   <div
     className="ml-4 w-100"
   >
-    <Paragraph
+    <PlaceholderParagraph
       length="small"
     />
   </div>
@@ -149,14 +149,14 @@ exports[`Placeholder component
     }
   }
 >
-  <Image
+  <PlaceholderImage
     imageSize="small"
     round={false}
   />
   <div
     className="ml-4 w-100"
   >
-    <Paragraph
+    <PlaceholderParagraph
       length="small"
     />
   </div>
@@ -183,14 +183,14 @@ exports[`Placeholder component
     }
   }
 >
-  <Image
+  <PlaceholderImage
     imageSize="small"
     round={true}
   />
   <div
     className="ml-4 w-100"
   >
-    <Paragraph
+    <PlaceholderParagraph
       length="small"
     />
   </div>
@@ -217,13 +217,13 @@ exports[`Placeholder component
     }
   }
 >
-  <Image
+  <PlaceholderImage
     imageSize="small"
   />
   <div
     className="ml-4 w-100"
   >
-    <Paragraph
+    <PlaceholderParagraph
       length="small"
     />
   </div>

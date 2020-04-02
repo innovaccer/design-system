@@ -6,15 +6,30 @@ export type Position = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-star
 type ActionType = 'click' | 'hover';
 
 export interface IPopoverProps {
+  /**
+   * @default "bottom"
+   */
   position?: Position;
+  /**
+   * @default true
+   */
   appendToBody?: boolean;
   verticalOffset?: number;
   trigger: React.ReactElement<any>;
   hoverable?: boolean;
   dark?: boolean;
+  /**
+   * @default true
+   */
   closeOnBackdropClick?: boolean;
+  /**
+   * @default 'click'
+   */
   on?: ActionType;
   open?: boolean;
+  /**
+   * @default {}
+   */
   style?: React.CSSProperties;
   onToggle: (open: boolean, type?: string) => void;
 }
@@ -22,12 +37,12 @@ export interface IPopoverProps {
 const Popover: React.FunctionComponent<IPopoverProps> = props => {
   const {
     position = 'bottom',
-    dark = false,
-    hoverable = false,
     closeOnBackdropClick = true,
     appendToBody = true,
     on = 'click',
     style = {},
+    dark,
+    hoverable,
     children,
     trigger,
     open,

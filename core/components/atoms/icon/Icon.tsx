@@ -1,18 +1,28 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-type ReactMouseEvent = (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-
 export type Appearance = 'default' | 'destructive' | 'white' | 'subtle' | 'disabled' | 'info' | 'alert' | 'warning' | 'success';
 
 export type IconType = 'filled' | 'outline' | 'rounded' | 'sharp';
 
 export interface IIconProps {
+  /**
+   * Material icon name
+   */
   name: string;
   size?: number;
+  /**
+   * @default "filled"
+   */
   type?: IconType;
+  /**
+   * @default "default"
+   */
   appearance?: Appearance;
-  onClick?: ReactMouseEvent;
+  onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+  /**
+   * Array of helper classes
+   */
   helpers?: string[];
 }
 

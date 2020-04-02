@@ -3,13 +3,16 @@ import GenericText from '../_text';
 import classNames from 'classnames';
 
 export interface ILabelProps {
-  children: React.ReactChild;
+  /**
+   * @type {React.ReactNode}
+   */
+  children: React.ReactNode;
   disabled?: boolean;
 }
 
-const Label: React.FunctionComponent<ILabelProps> = props => {
+const Label = (props: ILabelProps) => {
   const {
-    disabled = false,
+    disabled,
     children,
     ...rest
   } = props;

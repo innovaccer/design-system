@@ -7,14 +7,30 @@ import ActionButton from './ActionButton';
 export type Appearance = 'default' | 'info' | 'success' | 'alert' | 'warning';
 
 export type Action = {
+  /**
+   * Label of `ActionButton`
+   */
   label: string,
   onClick: (e: React.MouseEvent) => void
 };
 
 export interface IToastProps {
   title: string;
+  /**
+   * @default "default"
+   */
   appearance?: Appearance;
   message?: string;
+  /**
+   * Array for `ActionButton`(maxLen: 2)
+   *
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * Action: {
+   *    label: string,
+   *    onClick: (e: React.MouseEvent) => void
+   * }
+   * </pre>
+   */
   actions?: Action[];
   onClose?: () => void;
 }

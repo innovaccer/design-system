@@ -33,6 +33,7 @@ export const metricInput = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Input' };
+export default {
+  title: 'Atoms|Input',
+  component: Input
+};

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { select } from '@storybook/addon-knobs';
 import PlaceholderParagraph from '../PlaceholderParagraph';
+import { docPage } from '@/utils/docPage';
 
 export const all = () => {
   const length = select(
@@ -18,4 +19,12 @@ export const all = () => {
   );
 };
 
-export default { title: 'Loaders/Placeholder/Paragraph' };
+export default {
+  title: 'Atoms|Loaders/Placeholder/Paragraph',
+  component: PlaceholderParagraph,
+  parameters: {
+    docs: {
+      page: () => docPage({ title: 'PlaceholderParagraph' })
+    }
+  }
+};

@@ -1,10 +1,13 @@
 import * as React from 'react';
 
 export interface IBreadcrumbProps {
+  /**
+   * Will be wrapped in a `list item`
+   */
   children: React.ReactNode;
 }
 
-const Breadcrumb: React.FunctionComponent<IBreadcrumbProps> = props => {
+export const Breadcrumb: React.FunctionComponent<IBreadcrumbProps> = props => {
   const {
     children,
   } = props;
@@ -15,5 +18,7 @@ const Breadcrumb: React.FunctionComponent<IBreadcrumbProps> = props => {
     </li>
   );
 };
+
+Breadcrumb.displayName = 'Breadcrumb';
 
 export default Breadcrumb;

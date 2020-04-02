@@ -5,10 +5,33 @@ import { getOptions, getValuesFromSelectedObj, getIndexesFromSelectedObj, getLab
 
 export interface IDropdownProps extends IDropdownListProps {
   url?: string;
+  /**
+   * @default 0
+   */
   offset?: number;
+  /**
+   * @default 10
+   */
   limit?: number;
+  /**
+   * @default 30
+   */
   stateLimit?: number;
+  /**
+   * @default false
+   */
   selectAll?: boolean;
+  /**
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * Option: {
+   *    icon?: string;
+   *    subInfo?: string;
+   *    label: string;
+   *    value: any;
+   *    selected?: boolean;
+   * }
+   * </pre>
+   */
   options: Option[];
   onChange?: (selected: any[] | any) => void;
 }
@@ -20,12 +43,12 @@ interface Selected {
 
 const Dropdown: React.FunctionComponent<IDropdownProps> = props => {
   const {
-    url,
     offset = 0,
     limit = 10,
     stateLimit = 30,
-    onChange,
     selectAll = false,
+    url,
+    onChange,
     ...rest
   } = props;
 

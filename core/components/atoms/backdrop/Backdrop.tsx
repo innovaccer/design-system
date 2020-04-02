@@ -5,6 +5,9 @@ import classNames from 'classnames';
 const { useEffect, useState } = React;
 
 export interface IBackdropProps {
+  /**
+   * @default false
+   */
   open: boolean;
 }
 

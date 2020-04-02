@@ -75,6 +75,7 @@ export const basic = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Input/Types' };
+export default {
+  title: 'Atoms|Input/Types',
+  component: Input
+};

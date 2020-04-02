@@ -1,4 +1,4 @@
-import { DateFormat } from "@/components/atoms/calendar/types";
+import { DateFormat } from "@/components/organisms/calendar/types";
 import { Mask } from "./InputMask";
 
 export const dateMask: Record<DateFormat, Mask> = {

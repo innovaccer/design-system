@@ -3,7 +3,7 @@ import { select } from '@storybook/addon-knobs';
 import Spinner from '../Spinner';
 
 // CSF format story
-export const spinner = () => {
+export const all = () => {
   const appearance = select(
     'appearance',
     ['primary', 'secondary', 'white'],
@@ -28,6 +28,7 @@ export const spinner = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Loaders/Spinner' };
+export default {
+  title: 'Atoms|Loaders/Spinner',
+  component: Spinner
+};

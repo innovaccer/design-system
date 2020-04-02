@@ -2,13 +2,22 @@ import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
 
-export type Size = 'm' | 'l' | 'xl' | 'xxl';
+export type Size = 'default' | 'm' | 'l' | 'xl' | 'xxl';
 
 export type Appearance = 'default' | 'subtle' | 'disabled' | 'white';
 
 export interface IHeadingProps {
+  /**
+   * Text to be rendered
+   */
   children: string;
+  /**
+   * @default "default"
+   */
   appearance?: Appearance;
+  /**
+   * @default "default"
+   */
   size?: Size;
 }
 
@@ -17,12 +26,12 @@ const sizeMap = {
   l: 'h3',
   xl: 'h2',
   xxl: 'h1',
-  '': 'h3'
+  default: 'h3'
 };
 
-const Heading: React.FunctionComponent<IHeadingProps> = props => {
+const Heading = (props: IHeadingProps) => {
   const {
-    size = '',
+    size = 'default',
     appearance = 'default',
     children,
     ...rest
@@ -30,7 +39,7 @@ const Heading: React.FunctionComponent<IHeadingProps> = props => {
 
   const classes = classNames({
     Heading: true,
-    [`Heading--${size}`]: size,
+    [`Heading--${size}`]: size !== 'default',
     [`Heading--${appearance}`]: appearance
   });
 

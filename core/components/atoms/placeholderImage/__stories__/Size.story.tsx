@@ -2,6 +2,7 @@ import * as React from 'react';
 import { boolean } from '@storybook/addon-knobs';
 import PlaceholderImage, { Size } from '../PlaceholderImage';
 import Text from '@/components/atoms/text';
+import { docPage } from '@/utils/docPage';
 
 export const size = () => {
   const round = boolean('round', false);
@@ -29,4 +30,12 @@ export const size = () => {
   );
 };
 
-export default { title: 'Loaders/Placeholder/Image' };
+export default {
+  title: 'Atoms|Loaders/Placeholder/Image',
+  component: PlaceholderImage,
+  parameters: {
+    docs: {
+      page: () => docPage({ title: 'PlaceholderImage' })
+    }
+  }
+};

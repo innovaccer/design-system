@@ -2,8 +2,6 @@ import * as React from 'react';
 import Spinner from '@/components/atoms/spinner';
 import classNames from 'classnames';
 
-type ReactMouseEvent = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-
 export type Appearance = 'basic' | 'primary' | 'success' | 'alert' | 'transparent';
 
 export type Size = 'tiny' | 'regular' | 'large';
@@ -11,17 +9,29 @@ export type Size = 'tiny' | 'regular' | 'large';
 export type Alignment = 'left' | 'right';
 
 export interface IButtonProps {
+  /**
+   * @default "regular"
+   */
   size?: Size;
+  /**
+   * @default "basic"
+   */
   appearance?: Appearance;
   disabled?: boolean;
   expanded?: boolean;
   loading?: boolean;
+  /**
+   * Material icon name
+   */
   icon?: string;
+  /**
+   * @default "left"
+   */
   iconAlign?: Alignment;
   children?: string;
-  onClick?: ReactMouseEvent;
-  onMouseEnter?: ReactMouseEvent;
-  onMouseLeave?: ReactMouseEvent;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onMouseEnter?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 const Button: React.FunctionComponent<IButtonProps> = props => {

@@ -5,7 +5,13 @@ export type Size = 'regular' | 'tiny' | 'large';
 export type Appearance = 'primary' | 'alert' | 'success' | 'warning';
 
 export interface ISwitchProps {
+  /**
+   * @default "regular"
+   */
   size?: Size;
+  /**
+   * @default "primary"
+   */
   appearance?: Appearance;
   checked?: boolean;
   disabled?: boolean;
@@ -14,7 +20,7 @@ export interface ISwitchProps {
   onChange?: (selected: boolean) => void;
 }
 
-const Switch = React.forwardRef<HTMLInputElement, ISwitchProps>((props, ref) => {
+export const Switch = React.forwardRef<HTMLInputElement, ISwitchProps>((props, ref) => {
   const {
     size = 'regular',
     appearance = 'primary',

@@ -11,13 +11,22 @@ export interface IModalProps {
   onClose: (reason?: string, event?: Event) => void;
   backdrop?: boolean;
   closeOnEscape?: boolean;
+  /**
+   * @default "small"
+   */
   dimension?: Dimension;
   open: boolean;
   children?: React.ReactNode;
 }
 
 const Modal: React.FunctionComponent<IModalProps> = props => {
-  const { dimension = 'small', open = false, children, onClose, backdrop = false } = props;
+  const {
+    dimension = 'small',
+    open,
+    children,
+    onClose,
+    backdrop
+  } = props;
   const [modalClasses, setClasses] = useState<string>('Modal');
 
   const classes = classNames({

@@ -6,9 +6,21 @@ export type PositionType = 'top' | 'bottom' | 'left' | 'right';
 type IDivProps = Omit<JSX.IntrinsicElements['div'], 'ref'>;
 
 export interface ITooltipProps extends IDivProps {
+  /**
+   * Text to be rendered in tooltip
+   */
   tooltip: string;
+  /**
+   * Component to be rendered as trigger for tooltip
+   */
   children: React.ReactElement<any>;
+  /**
+   * @default "bottom"
+   */
   position?: PositionType;
+  /**
+   * @default true
+   */
   appendToBody?: boolean;
 }
 
@@ -28,8 +40,6 @@ interface IState {
  * The preferred and default side is the bottom.
  *
  * For left navigation with only icons, show tooltip on the right.
- * @class Tooltip
- * @extends {React.Component<ITooltipProps, IState>}
  */
 class Tooltip extends React.Component<ITooltipProps, IState> {
   constructor(props: ITooltipProps) {
@@ -45,11 +55,6 @@ class Tooltip extends React.Component<ITooltipProps, IState> {
     };
   }
 
-  public static defaultProps: Partial<ITooltipProps> = {
-    position: 'bottom',
-    appendToBody: true
-  };
-
   public onToggle = (open: boolean) => {
     this.setState({ open });
   }
@@ -61,9 +66,9 @@ class Tooltip extends React.Component<ITooltipProps, IState> {
   public render() {
     const {
       appendToBody = false,
+      position = 'bottom',
       tooltip,
       children,
-      position = '',
       ...props
     } = this.props;
 

@@ -1,18 +1,11 @@
 import * as React from 'react';
 import { select, text, boolean } from '@storybook/addon-knobs';
-import addons from '@storybook/addons';
 import { action } from '@storybook/addon-actions';
-import Checkbox from '../index';
-
-const emitter = (type: any, options: any) => addons.getChannel().emit(type, options);
-
-const updateKnob = (name: any, value: any) => (
-  emitter('storybookjs/knobs/change', { name, value })
-);
+import { updateKnob } from '@/utils/storybookEventEmitter';
+import Checkbox from '../Checkbox';
 
 // CSF format story
-export const checkbox = () => {
-
+export const all = () => {
   const size = select(
     'size',
     ['tiny', 'regular'],
@@ -57,6 +50,7 @@ export const checkbox = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Checkbox' };
+export default {
+  title: 'Atoms|Checkbox',
+  component: Checkbox
+};

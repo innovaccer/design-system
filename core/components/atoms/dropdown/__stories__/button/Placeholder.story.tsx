@@ -2,6 +2,7 @@ import * as React from 'react';
 import Dropdown from '../../Dropdown';
 import Text from '@/components/atoms/text';
 import { storyOptions } from '../../utils/Options';
+import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const placeholder = () => {
@@ -23,6 +24,12 @@ export const placeholder = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Dropdown/button' };
+export default {
+  title: 'Atoms|Dropdown/Button',
+  component: Dropdown,
+  parameters: {
+    docs: {
+      page: () => docPage({ title: 'Dropdown' })
+    }
+  }
+};

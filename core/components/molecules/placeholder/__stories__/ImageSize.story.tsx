@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Placeholder, { } from '../Placeholder';
+import Placeholder from '../Placeholder';
 import PlaceholderParagraph from '@/components/atoms/placeholderParagraph';
-import { Size } from '@/components/atoms/placeholderImage';
+import PlaceholderImage, { Size } from '@/components/atoms/placeholderImage';
 import Text from '@/components/atoms/text';
 
 export const imageSize = () => {
@@ -26,4 +26,8 @@ export const imageSize = () => {
   );
 };
 
-export default { title: 'Loaders/Placeholder' };
+export default {
+  title: 'Molecules|Loaders/Placeholder',
+  component: Placeholder,
+  subcomponents: { PlaceholderImage, PlaceholderParagraph }
+};

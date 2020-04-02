@@ -1,37 +1,54 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Size } from '@/components/atoms/button';
+// import { Size } from '@/components/atoms/button';
 import Label from '@/components/atoms/label';
 import Text from '@/components/atoms/text';
 import Tooltip from '@/components/atoms/tooltip';
 
 export type InputType = 'text' | 'password' | 'number';
 export type AutoComplete = 'on' | 'off';
+export type Size = 'tiny' | 'regular' | 'large';
 
 export interface IInputProps {
   name: string;
-  size?: Size;
-  label?: string;
-  inlineLabel?: string;
   type?: InputType;
   value?: string;
-  loading?: boolean;
-  icon?: string;
   placeholder?: string;
+  autocomplete?: AutoComplete;
+  /**
+   * @default "regular"
+   */
+  size?: Size;
+  /**
+   * Material icon name
+   */
+  icon?: string;
+  label?: string;
+  /**
+   * Label to be displayed inside `input`
+   */
+  inlineLabel?: string;
+  /**
+   * Text to be displayed below `input`
+   */
+  caption?: string;
+  clearButton?: boolean;
+  loading?: boolean;
   disabled?: boolean;
   required?: boolean;
   error?: boolean;
-  caption?: string;
-  clearButton?: boolean;
+  /**
+   * Text to be rendered in info `tooltip`
+   * @default true
+   */
   info?: string;
-  autocomplete?: AutoComplete;
   onClear?: (e: React.MouseEvent<HTMLElement>) => void;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }
 
-const Input = React.forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
+export const Input = React.forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
   const {
     size = 'regular',
     clearButton = true,

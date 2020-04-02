@@ -6,6 +6,9 @@ import Icon from '@/components/atoms/icon';
 export type Size = 'regular' | 'tiny';
 
 export interface ICheckboxProps {
+  /**
+   * @default "regular"
+   */
   size?: Size;
   checked?: boolean;
   indeterminate?: boolean;
@@ -16,7 +19,7 @@ export interface ICheckboxProps {
   onChange?: (checked: boolean) => void;
 }
 
-const Checkbox = React.forwardRef<HTMLInputElement, ICheckboxProps>((props, forwardedRef) => {
+export const Checkbox = React.forwardRef<HTMLInputElement, ICheckboxProps>((props, forwardedRef) => {
   const {
     size = 'regular',
     label,

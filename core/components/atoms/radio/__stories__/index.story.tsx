@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { select, text, boolean } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
 import Radio from '../index';
+import docPage from '@/utils/docPage';
 
 // CSF format story
-export const radio = () => {
+export const all = () => {
 
   const size = select(
     'size',
@@ -11,31 +12,37 @@ export const radio = () => {
     undefined
   );
 
-  const label = text(
-    'label',
-    'Radio'
-  );
-
-  const disabled = boolean(
-    'disabled',
-    false
-  );
-
-  const name = 'gender';
-
   return (
     <div>
       <Radio
-        disabled={disabled}
         size={size}
-        label={label}
-        name={name}
-        value={label}
+        label={'Option 1'}
+        name={'options'}
+        value={'Option 1'}
+      />
+      <Radio
+        size={size}
+        label={'Option 2'}
+        name={'options'}
+        value={'Option 2'}
+        defaultChecked={true}
+      />
+      <Radio
+        size={size}
+        label={'Option 3'}
+        name={'options'}
+        value={'Option 3'}
       />
     </div>
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Radio' };
+export default {
+  title: 'Atoms|Radio',
+  component: Radio,
+  parameters: {
+    docs: {
+      page: () => docPage({ props: { exclude: ['key'] } })
+    }
+  }
+};

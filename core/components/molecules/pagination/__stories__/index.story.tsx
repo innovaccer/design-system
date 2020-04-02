@@ -31,6 +31,7 @@ export const all = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Pagination' };
+export default {
+  title: 'Molecules|Pagination',
+  component: Pagination
+};

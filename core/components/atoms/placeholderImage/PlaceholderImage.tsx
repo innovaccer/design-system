@@ -5,10 +5,13 @@ export type Size = 'small' | 'medium' | 'large';
 
 export interface IPlaceholderImageProps {
   round?: boolean;
+  /**
+   * @default "small"
+   */
   imageSize?: Size;
 }
 
-const Image: React.FunctionComponent<IPlaceholderImageProps> = props => {
+const PlaceholderImage: React.FunctionComponent<IPlaceholderImageProps> = props => {
   const {
     imageSize = 'small',
     round,
@@ -26,4 +29,4 @@ const Image: React.FunctionComponent<IPlaceholderImageProps> = props => {
   );
 };
 
-export default Image;
+export default PlaceholderImage;

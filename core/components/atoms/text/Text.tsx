@@ -5,13 +5,19 @@ import classNames from 'classnames';
 export type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled';
 
 export interface ITextProps {
+  /**
+   * @type {string}
+   */
   children: string;
   weight?: 'strong' | 'medium';
   small?: boolean;
+  /**
+   * @default "default"
+   */
   appearance?: Appearance;
 }
 
-const Text: React.FunctionComponent<ITextProps> = props => {
+const Text = (props: ITextProps) => {
   const {
     appearance = 'default',
     children,

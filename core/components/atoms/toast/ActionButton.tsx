@@ -4,6 +4,9 @@ import Text from '@/components/atoms/text';
 import { Appearance } from './Toast';
 
 export interface IProps {
+  /**
+   * @default "default"
+   */
   appearance?: Appearance;
   label: string;
   onClick?: (e: React.MouseEvent) => void;

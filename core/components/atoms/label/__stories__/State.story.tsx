@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Label from '../index';
+import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const state = () => {
@@ -28,6 +29,14 @@ export const state = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Typography/Label' };
+const title = 'Atoms|Typography/Label';
+
+export default {
+  title,
+  component: Label,
+  parameters: {
+    docs: {
+      page: () => docPage({ title })
+    }
+  }
+};

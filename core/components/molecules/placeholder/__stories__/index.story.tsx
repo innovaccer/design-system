@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { boolean, select } from '@storybook/addon-knobs';
-import Placeholder, {} from '../Placeholder';
+import Placeholder from '../Placeholder';
 import PlaceholderParagraph from '@/components/atoms/placeholderParagraph';
+import PlaceholderImage from '@/components/atoms/placeholderImage';
 
 export const all = () => {
   const withImage = boolean('withImage', false);
@@ -24,4 +25,8 @@ export const all = () => {
   );
 };
 
-export default { title: 'Loaders/Placeholder' };
+export default {
+  title: 'Molecules|Loaders/Placeholder',
+  component: Placeholder,
+  subcomponents: { PlaceholderImage, PlaceholderParagraph }
+};

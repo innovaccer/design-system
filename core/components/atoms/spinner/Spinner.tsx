@@ -5,8 +5,14 @@ export type Appearance = 'primary' | 'secondary' | 'white';
 export type Size = 'small' | 'medium' | 'large';
 
 export interface ISpinnerProps {
-  size?: Size;
+  /**
+   * @default "primary"
+   */
   appearance?:  Appearance;
+  /**
+   * @default "medium"
+   */
+  size?: Size;
 }
 
 const Spinner: React.FunctionComponent<ISpinnerProps> = props => {

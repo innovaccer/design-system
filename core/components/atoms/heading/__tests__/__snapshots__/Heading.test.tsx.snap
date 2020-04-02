@@ -49,6 +49,7 @@ exports[`Heading component
  1`] = `
 <GenericText
   className="Heading Heading--default"
+  componentType="h3"
 >
   Heading
 </GenericText>

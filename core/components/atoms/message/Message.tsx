@@ -12,8 +12,14 @@ const IconMapping = {
 };
 
 export interface IMessageProps {
+  /**
+   * @default "default"
+   */
   appearance?: Appearance;
   title?: string;
+  /**
+   * @type {React.ReactNode}
+   */
   children: React.ReactNode;
 }
 

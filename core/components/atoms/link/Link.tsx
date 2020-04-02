@@ -3,14 +3,16 @@ import GenericText from '../_text';
 import classNames from 'classnames';
 
 export type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
-export type LinkOnClickHandler = (event: React.MouseEvent<HTMLAnchorElement>) => void;
 
 export interface ILinkProps {
   id?: string;
   href?: string;
   target?: LinkTarget;
   rel?: string;
-  onClick?: LinkOnClickHandler;
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+  /**
+   * @type {React.ReactNode}
+   */
   children?: React.ReactNode;
 }
 

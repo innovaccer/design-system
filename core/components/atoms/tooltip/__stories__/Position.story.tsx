@@ -42,6 +42,7 @@ export const position = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Tooltip' };
+export default {
+  title: 'Atoms|Tooltip',
+  component: Tooltip
+};

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Heading, { Size } from '../index';
 import Text from '@/components/atoms/text';
+import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const size = () => {
@@ -50,6 +51,14 @@ export const size = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Typography/heading' };
+const title = 'Atoms|Typography/Heading';
+
+export default {
+  title,
+  component: Heading,
+  parameters: {
+    docs: {
+      page: () => docPage({ title })
+    }
+  }
+};

@@ -5,7 +5,13 @@ import classNames from 'classnames';
 export type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled';
 
 export interface IParagraphProps {
-  children: any;
+  /**
+   * @type {React.ReactNode}
+   */
+  children: React.ReactNode;
+  /**
+   * @default "default"
+   */
   appearance?: Appearance ;
 }
 

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PlaceholderParagraph, { Sizes } from '../PlaceholderParagraph';
 import Text from '@/components/atoms/text';
+import { docPage } from '@/utils/docPage';
 
 export const size = () => {
   const length: Sizes[] = ['small', 'medium', 'large'];
@@ -22,4 +23,12 @@ export const size = () => {
   );
 };
 
-export default { title: 'Loaders/Placeholder/Paragraph' };
+export default {
+  title: 'Atoms|Loaders/Placeholder/Paragraph',
+  component: PlaceholderParagraph,
+  parameters: {
+    docs: {
+      page: () => docPage({ title: 'PlaceholderParagraph' })
+    }
+  }
+};

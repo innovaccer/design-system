@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { optionsKnob } from '@storybook/addon-knobs';
 import Subheading from '../index';
+import { docPage } from '@/utils/docPage';
 
 // CSF format story
-export const subheading = () => {
+export const all = () => {
   const appearance = optionsKnob(
     'appearance',
     { undefined, default: 'default', subtle: 'subtle', disabled: 'disabled', white: 'white' },
@@ -24,6 +25,14 @@ export const subheading = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Typography/SubHeading' };
+const title = 'Atoms|Typography/Subheading';
+
+export default {
+  title,
+  component: Subheading,
+  parameters: {
+    docs: {
+      page: () => docPage({ title })
+    }
+  }
+};

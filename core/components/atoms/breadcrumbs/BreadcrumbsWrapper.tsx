@@ -3,10 +3,13 @@ import Heading from '@/components/atoms/heading';
 
 export interface IBreadcrumbsWrapperProps {
   heading?: string;
+  /**
+   * All `Breadcrumb` Component will be wrapped in a `list`
+   */
   children: React.ReactNode;
 }
 
-const BreadcrumbsWrapper: React.FunctionComponent<IBreadcrumbsWrapperProps> = props => {
+export const BreadcrumbsWrapper: React.FunctionComponent<IBreadcrumbsWrapperProps> = props => {
   const {
     children,
     heading,
@@ -21,5 +24,7 @@ const BreadcrumbsWrapper: React.FunctionComponent<IBreadcrumbsWrapperProps> = pr
     </div>
   );
 };
+
+BreadcrumbsWrapper.displayName = 'BreadcrumbsWrapper';
 
 export default BreadcrumbsWrapper;

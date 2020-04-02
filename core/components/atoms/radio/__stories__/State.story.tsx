@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Radio from '../index';
+import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const state = () => {
@@ -32,6 +33,12 @@ export const state = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Radio' };
+export default {
+  title: 'Atoms|Radio',
+  component: Radio,
+  parameters: {
+    docs: {
+      page: () => docPage({ props: { exclude: ['key'] } })
+    }
+  }
+};

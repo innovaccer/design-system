@@ -20,7 +20,7 @@ export const all = () => {
   };
 
   return (
-    <div style={{ marginTop: '30px', marginLeft:'150px' }}>
+    <div style={{ marginTop: '30px', marginLeft: '150px' }}>
       <Tooltip {...options} >
         <Button>{position}</Button>
       </Tooltip>
@@ -28,6 +28,7 @@ export const all = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Tooltip' };
+export default {
+  title: 'Atoms|Tooltip',
+  component: Tooltip
+};

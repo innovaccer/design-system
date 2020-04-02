@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { boolean, optionsKnob } from '@storybook/addon-knobs';
 import Text from '../index';
+import { docPage } from '@/utils/docPage';
 
 // CSF format story
-export const text = () => {
+export const all = () => {
   const weight = optionsKnob('weight', { strong: 'strong', medium: 'medium' }, undefined, {
     display: 'inline-radio'
   });
@@ -30,6 +31,14 @@ export const text = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Typography/Text' };
+const title = 'Atoms|Typography/Text';
+
+export default {
+  title,
+  component: Text,
+  parameters: {
+    docs: {
+      page: () => docPage({ title })
+    }
+  }
+};

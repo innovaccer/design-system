@@ -4,14 +4,24 @@ import Input, { IInputProps } from '@/components/atoms/input';
 export type Mask = (string | RegExp)[];
 
 export interface IInputMaskProps extends IInputProps {
+  /**
+   * Every value of Array represent either fixed char or regular expression for particular index
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * Mask: (string | RegExp)[]
+   * </pre>
+   */
   mask: Mask;
+  /**
+   * Character to be used for empty value at particular index in `mask`
+   * @default "_"
+   */
   placeholderChar?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>, val?: string) => void;
   onBlur?: (e: React.ChangeEvent<HTMLInputElement>, val?: string) => void;
   onClear?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
-const InputMask = React.forwardRef<HTMLInputElement, IInputMaskProps>((props, forwardRef) => {
+export const InputMask = React.forwardRef<HTMLInputElement, IInputMaskProps>((props, forwardRef) => {
   const {
     mask: maskProp,
     value: valueProp,

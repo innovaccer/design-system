@@ -4,11 +4,14 @@ import { ITabProps } from './Tab';
 
 export interface ITabsWrapperProps {
   activeTab?: number;
+  /**
+   * `Tab` Component will be wrapped in `TabsWrapper` container
+   */
   children: React.FunctionComponentElement<ITabProps>[];
   onTabChange?: (tabIndex: number) => void;
 }
 
-const TabsWrapper: React.FunctionComponent<ITabsWrapperProps> = props => {
+export const TabsWrapper: React.FunctionComponent<ITabsWrapperProps> = props => {
   const {
     children = [],
     onTabChange

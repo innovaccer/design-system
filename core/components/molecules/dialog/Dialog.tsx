@@ -8,33 +8,45 @@ import Button, { Appearance } from '@/components/atoms/button';
 export interface IDialogProps {
   onClose: (reason?: string, event?: Event|React.MouseEvent<HTMLElement, MouseEvent>) => void;
   closeOnEscape?: boolean;
+  /**
+   * @default "small"
+   */
   dimension?: Dimension;
   open: boolean;
   heading?: string;
+  /**
+   * Material icon name
+   */
   icon?: string;
   title?: string;
   description?: string;
   primaryButtonLabel: string;
+  /**
+   * @default "primary"
+   */
   primaryButtonAppearance?: Appearance;
   primaryButtonCallback: () => void;
   secondaryButtonLabel: string;
+  /**
+   * @default "basic"
+   */
   secondaryButtonAppearance?: Appearance;
   secondaryButtonCallback: () => void;
 }
 
 const Dialog: React.FunctionComponent<IDialogProps> = props => {
   const {
+    dimension = 'small',
+    primaryButtonAppearance = 'primary',
+    secondaryButtonAppearance = 'basic',
     open,
     onClose,
-    dimension = 'small',
     icon,
     heading = '',
     title = '',
     description = '',
-    primaryButtonAppearance = 'primary',
     primaryButtonLabel,
     primaryButtonCallback,
-    secondaryButtonAppearance = 'basic',
     secondaryButtonLabel,
     secondaryButtonCallback } = props;
 

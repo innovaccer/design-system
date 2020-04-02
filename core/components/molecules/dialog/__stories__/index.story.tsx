@@ -3,12 +3,7 @@ import { boolean, select } from '@storybook/addon-knobs';
 import addons from '@storybook/addons';
 import { action } from '@storybook/addon-actions';
 import Dialog from '../Dialog';
-
-const emitter = (type: any, options: any) => addons.getChannel().emit(type, options);
-
-const updateKnob = (name: any, value: any) => (
-  emitter('storybookjs/knobs/change', { name, value })
-);
+import { updateKnob } from '@/utils/storybookEventEmitter';
 
 export const all = () => {
   const open = boolean('open', false);
@@ -51,8 +46,11 @@ export const all = () => {
   };
 
   return (
-      <Dialog {...options} />
+    <Dialog {...options} />
   );
 };
 
-export default { title: 'Dialog' };
+export default {
+  title: 'Molecules|Dialog',
+  component: Dialog
+};

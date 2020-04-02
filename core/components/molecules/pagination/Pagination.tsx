@@ -8,6 +8,9 @@ import classNames from 'classnames';
 export type PaginationType = 'basic' | 'jump';
 
 export interface IPaginationProps {
+  /**
+   * @default "basic"
+   */
   type?: PaginationType;
   totalPages: number;
   page?: number;

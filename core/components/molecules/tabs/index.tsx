@@ -1,4 +1,4 @@
-import TabsWrapper from './TabsWrapper';
-export default TabsWrapper;
+export { TabsWrapper } from './TabsWrapper';
+export { Tab } from './Tab';
 
 export * from './TabsWrapper';

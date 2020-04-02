@@ -36,27 +36,60 @@ export interface Subheading {
 }
 
 export interface IDropdownListProps {
+  /**
+   * @default "regular"
+   */
   size?: Size;
+  /**
+   * @default "right"
+   */
   dropdownAlign?: DropdownAlign;
   icon?: string;
   placeholder?: string;
   inlineLabel?: string;
+  /**
+   * @default "No Result Found"
+   */
   searchResultMessage?: string;
   disabled?: boolean;
   search?: boolean;
   checkboxes?: boolean;
+  /**
+   * @default true
+   */
   closeOnSelect?: boolean;
   showApplyButton?: boolean;
   loadingOptions?: boolean;
+  /**
+   * @default 2
+   */
   checkedValuesOffset?: number;
+  /**
+   * @default 0
+   */
   bottomScrollOffset?: number;
   topScrollOffset?: number;
+  /**
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * Subheading: {
+   *    \[key: number\]: string;
+   * }
+   * </pre>
+   *
+   * @default {}
+   */
   subheading?: Subheading;
+  /**
+   * @default 200
+   */
   maxHeight?: number;
   style?: React.CSSProperties;
 }
 
 interface IOptionsProps extends IDropdownListProps {
+  /**
+   * @default []
+   */
   listOptions: Option[];
   searchTerm: string;
   bottomOptionsSliced?: boolean;
@@ -65,6 +98,9 @@ interface IOptionsProps extends IDropdownListProps {
   limit: number;
   offset: number;
   optionsLength: number;
+  /**
+   * @default []
+   */
   selectedAll?: number[];
   selected?: any;
   onSearchChange?: (searchText: string) => void;
@@ -93,13 +129,13 @@ const DropdownList: React.FunctionComponent<IOptionsProps> = props => {
     dropdownAlign = 'right',
     checkedValuesOffset = 2,
     closeOnSelect = true,
-    loadingOptions = false,
-    selectAll,
     searchResultMessage = 'No Result Found',
-    placeholder,
-    searchTerm,
     maxHeight = 200,
     bottomScrollOffset = 0,
+    loadingOptions,
+    selectAll,
+    placeholder,
+    searchTerm,
     limit,
     offset,
     optionsLength,

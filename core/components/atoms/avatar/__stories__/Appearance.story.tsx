@@ -5,7 +5,6 @@ import Text from '@/components/atoms/text';
 
 // CSF format story
 export const appearance = () => {
-
   const children = text('children', 'JD');
   const weight = 'strong';
 
@@ -33,10 +32,10 @@ export const appearance = () => {
         );
       })}
     </div>
-
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Avatar' };
+export default {
+  title: 'Atoms|Avatar',
+  component: Avatar
+};

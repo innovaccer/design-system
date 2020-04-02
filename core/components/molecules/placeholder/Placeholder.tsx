@@ -6,6 +6,9 @@ import PlaceholderImage, { Size } from '@/components/atoms/placeholderImage';
 export interface IPlaceholderProps {
   withImage?: boolean;
   round?: boolean;
+  /**
+   * @default "small"
+   */
   imageSize?:  Size;
   style?: React.CSSProperties;
 }

@@ -6,6 +6,10 @@ export type Shadows = 'light' | 'medium' | 'dark';
 export interface ICardProps {
   shadow?: Shadows;
   style?: React.CSSProperties;
+  /**
+   * Will be wrapped in a "Card" container
+   */
+  children: React.ReactNode;
 }
 
 const Card: React.FunctionComponent<ICardProps> = props => {

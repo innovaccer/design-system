@@ -60,4 +60,7 @@ export const position = () => {
   );
 };
 
-export default { title: 'Popover' };
+export default {
+  title: 'Molecules|Popover',
+  component: Popover
+};

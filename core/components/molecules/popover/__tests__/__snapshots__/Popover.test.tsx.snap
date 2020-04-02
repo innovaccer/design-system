@@ -6,7 +6,6 @@ exports[`Popover component
 <PopperWrapper
   appendToBody={true}
   closeOnBackdropClick={false}
-  hoverable={false}
   offset="Large"
   on="click"
   placement="bottom"
@@ -46,7 +45,6 @@ exports[`Popover component
 <PopperWrapper
   appendToBody={true}
   closeOnBackdropClick={true}
-  hoverable={false}
   offset="Large"
   on="click"
   placement="bottom"
@@ -86,7 +84,6 @@ exports[`Popover component
 <PopperWrapper
   appendToBody={true}
   closeOnBackdropClick={false}
-  hoverable={false}
   offset="Large"
   on="click"
   placement="bottom-end"
@@ -126,7 +123,6 @@ exports[`Popover component
 <PopperWrapper
   appendToBody={true}
   closeOnBackdropClick={true}
-  hoverable={false}
   offset="Large"
   on="click"
   placement="bottom-end"
@@ -166,7 +162,6 @@ exports[`Popover component
 <PopperWrapper
   appendToBody={true}
   closeOnBackdropClick={false}
-  hoverable={false}
   offset="Large"
   on="click"
   placement="bottom-start"
@@ -206,7 +201,6 @@ exports[`Popover component
 <PopperWrapper
   appendToBody={true}
   closeOnBackdropClick={true}
-  hoverable={false}
   offset="Large"
   on="click"
   placement="bottom-start"
@@ -246,7 +240,6 @@ exports[`Popover component
 <PopperWrapper
   appendToBody={true}
   closeOnBackdropClick={false}
-  hoverable={false}
   offset="Large"
   on="click"
   placement="top"
@@ -286,7 +279,6 @@ exports[`Popover component
 <PopperWrapper
   appendToBody={true}
   closeOnBackdropClick={true}
-  hoverable={false}
   offset="Large"
   on="click"
   placement="top"
@@ -326,7 +318,6 @@ exports[`Popover component
 <PopperWrapper
   appendToBody={true}
   closeOnBackdropClick={false}
-  hoverable={false}
   offset="Large"
   on="click"
   placement="top-end"
@@ -366,7 +357,6 @@ exports[`Popover component
 <PopperWrapper
   appendToBody={true}
   closeOnBackdropClick={true}
-  hoverable={false}
   offset="Large"
   on="click"
   placement="top-end"
@@ -406,7 +396,6 @@ exports[`Popover component
 <PopperWrapper
   appendToBody={true}
   closeOnBackdropClick={false}
-  hoverable={false}
   offset="Large"
   on="click"
   placement="top-start"
@@ -446,7 +435,6 @@ exports[`Popover component
 <PopperWrapper
   appendToBody={true}
   closeOnBackdropClick={true}
-  hoverable={false}
   offset="Large"
   on="click"
   placement="top-start"
@@ -486,7 +474,6 @@ exports[`Popover component
 <PopperWrapper
   appendToBody={true}
   closeOnBackdropClick={false}
-  hoverable={false}
   offset="Large"
   on="click"
   placement="bottom"
@@ -526,7 +513,6 @@ exports[`Popover component
 <PopperWrapper
   appendToBody={true}
   closeOnBackdropClick={true}
-  hoverable={false}
   offset="Large"
   on="click"
   placement="bottom"
@@ -566,7 +552,6 @@ exports[`Popover component
 <PopperWrapper
   appendToBody={true}
   closeOnBackdropClick={false}
-  hoverable={false}
   offset="Large"
   on="click"
   placement="bottom"
@@ -606,7 +591,6 @@ exports[`Popover component
 <PopperWrapper
   appendToBody={true}
   closeOnBackdropClick={true}
-  hoverable={false}
   offset="Large"
   on="click"
   placement="bottom"

@@ -34,6 +34,7 @@ export const size = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Loaders/Spinner' };
+export default {
+  title: 'Atoms|Loaders/Spinner',
+  component: Spinner
+};

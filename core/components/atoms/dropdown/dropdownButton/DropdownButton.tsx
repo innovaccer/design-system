@@ -7,6 +7,9 @@ type ReactMouseEvent = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) 
 export type Size = 'tiny' | 'regular';
 
 export interface IDropdownButtonProps {
+  /**
+   * @default "regular"
+   */
   size?: Size;
   disabled?: boolean;
   icon?: string;

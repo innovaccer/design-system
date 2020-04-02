@@ -23,6 +23,7 @@ export const multiOptions = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Dropdown' };
+export default {
+  title: 'Atoms|Dropdown',
+  component: Dropdown
+};

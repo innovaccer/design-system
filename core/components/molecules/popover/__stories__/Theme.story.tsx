@@ -47,4 +47,7 @@ export const theme = () => {
   );
 };
 
-export default { title: 'Popover' };
+export default {
+  title: 'Molecules|Popover',
+  component: Popover
+};

@@ -34,6 +34,7 @@ export const all = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Icon' };
+export default {
+  title: 'Atoms|Icon',
+  component: Icon
+};

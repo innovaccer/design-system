@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Paragraph, { Appearance } from '../index';
 import Text from '@/components/atoms/text';
+import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const appearance = () => {
@@ -33,6 +34,14 @@ export const appearance = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Typography/Paragraph' };
+const title = 'Atoms|Typography/Paragraph';
+
+export default {
+  title,
+  component: Paragraph,
+  parameters: {
+    docs: {
+      page: () => docPage({ title })
+    }
+  }
+};

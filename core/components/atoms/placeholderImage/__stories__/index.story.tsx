@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { boolean, select } from '@storybook/addon-knobs';
 import PlaceholderImage from '../PlaceholderImage';
+import { docPage } from '@/utils/docPage';
 
 export const all = () => {
   const round = boolean('round', false);
@@ -19,4 +20,12 @@ export const all = () => {
   );
 };
 
-export default { title: 'Loaders/Placeholder/Image' };
+export default {
+  title: 'Atoms|Loaders/Placeholder/Image',
+  component: PlaceholderImage,
+  parameters: {
+    docs: {
+      page: () => docPage({ title: 'PlaceholderImage' })
+    }
+  }
+};

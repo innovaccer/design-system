@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Subheading, { Appearance } from '../index';
 import Text from '@/components/atoms/text';
+import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const appearance = () => {
@@ -36,6 +37,14 @@ export const appearance = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Typography/SubHeading' };
+const title = 'Atoms|Typography/Subheading';
+
+export default {
+  title,
+  component: Subheading,
+  parameters: {
+    docs: {
+      page: () => docPage({ title })
+    }
+  }
+};

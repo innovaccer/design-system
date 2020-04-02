@@ -7,7 +7,6 @@ import Text from '@/components/atoms/text';
 
 // CSF format story
 export const size = () => {
-
   const value = text(
     'value',
     ''
@@ -53,6 +52,7 @@ export const size = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Input' };
+export default {
+  title: 'Atoms|Input',
+  component: Input
+};

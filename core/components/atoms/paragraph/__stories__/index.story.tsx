@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { optionsKnob } from '@storybook/addon-knobs';
 import Paragraph from '../index';
+import { docPage } from '@/utils/docPage';
 
 // CSF format story
-export const paragraph = () => {
+export const all = () => {
   const appearance = optionsKnob(
     'appearance',
     { white: 'white', destructive: 'destructive', subtle: 'subtle', disabled: 'disabled' },
@@ -25,6 +26,14 @@ export const paragraph = () => {
   );
 };
 
-// Required for CSF format story
-// https://medium.com/storybookjs/component-story-format-66f4c32366df
-export default { title: 'Typography/Paragraph' };
+const title = 'Atoms|Typography/Paragraph';
+
+export default {
+  title,
+  component: Paragraph,
+  parameters: {
+    docs: {
+      page: () => docPage({ title })
+    }
+  }
+};

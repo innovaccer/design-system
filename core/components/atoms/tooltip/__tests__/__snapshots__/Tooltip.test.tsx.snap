@@ -4,7 +4,7 @@ exports[`Tooltip component
   position: "bottom", tooltip: "Sample string"
  1`] = `
 <PopperWrapper
-  appendToBody={true}
+  appendToBody={false}
   offset="Medium"
   on="hover"
   onToggle={[Function]}
@@ -30,7 +30,7 @@ exports[`Tooltip component
   position: "left", tooltip: "Sample string"
  1`] = `
 <PopperWrapper
-  appendToBody={true}
+  appendToBody={false}
   offset="Medium"
   on="hover"
   onToggle={[Function]}
@@ -56,7 +56,7 @@ exports[`Tooltip component
   position: "right", tooltip: "Sample string"
  1`] = `
 <PopperWrapper
-  appendToBody={true}
+  appendToBody={false}
   offset="Medium"
   on="hover"
   onToggle={[Function]}
@@ -82,7 +82,7 @@ exports[`Tooltip component
   position: "top", tooltip: "Sample string"
  1`] = `
 <PopperWrapper
-  appendToBody={true}
+  appendToBody={false}
   offset="Medium"
   on="hover"
   onToggle={[Function]}

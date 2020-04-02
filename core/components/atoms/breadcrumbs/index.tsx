@@ -1,4 +1,4 @@
-import BreadcrumbsWrapper from './BreadcrumbsWrapper';
-export default BreadcrumbsWrapper;
+export { BreadcrumbsWrapper } from './BreadcrumbsWrapper';
+export { Breadcrumb } from './Breadcrumb';
 
 export * from './BreadcrumbsWrapper';
