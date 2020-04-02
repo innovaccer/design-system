@@ -3,12 +3,12 @@ import { addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs } from '@storybook/addon-knobs';
 import { primary } from './themes';
-import { withPropsTable } from 'storybook-addon-react-docgen';
+import { DocsContainer } from '@storybook/addon-docs/blocks';
 import { withHTML } from '@whitespace/storybook-addon-html/react';
 import { withA11y } from '@storybook/addon-a11y';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { jsxDecorator } from 'storybook-addon-jsx';
-import React from 'react';
+import { docPage } from '@/utils/docPage';
 import '../css';
 
 // Option defaults:
@@ -78,10 +78,22 @@ addParameters({
      * be the order they display
      * @type {Function}
      */
-    storySort: undefined
+    storySort: (a, b) => {
+      if(a[1].kind === b[1].kind) {
+        if(a[1].story === 'All') return 0;
+        if(b[1].story === 'All') return 1;
+        return 0;
+      } else {
+        return a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
+      }
+    },
   },
   viewport: {
     viewports: INITIAL_VIEWPORTS
+  },
+  docs: {
+    container: DocsContainer,
+    page: docPage
   }
 });
 
@@ -115,7 +127,6 @@ const infoOptions = {
 addDecorator(jsxDecorator);
 
 addDecorator(withKnobs);
-addDecorator(withPropsTable);
 
 const CenterDecorator = storyFn => {
   const Com = storyFn();
@@ -124,7 +135,6 @@ const CenterDecorator = storyFn => {
 addDecorator(withHTML);
 addDecorator(withA11y);
 addDecorator(CenterDecorator);
-
 addDecorator(withInfo(infoOptions));
 
 configure(require.context('../core/components', true, /\.story\.(js|tsx)$/), module);

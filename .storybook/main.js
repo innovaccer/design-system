@@ -11,16 +11,28 @@ module.exports = {
         },
         tsDocgenLoaderOptions: {
           tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
+          propFilter(prop) {
+            if (prop.parent) {
+              return !prop.parent.fileName.includes('node_modules');
+            }
+            return true;
+          },
+          // shouldExtractLiteralValuesFromEnum: true
         },
         forkTsCheckerWebpackPluginOptions: {
           colors: false, // disables built-in colors in logger messages
         },
         include: [path.resolve(__dirname, '../core')],
       },
+    },
+    {
+      name: "@storybook/addon-docs/preset",
+      options: {
+        configureJSX: true
+      }
     }
   ],
   webpackFinal: (config) => {
-  
     const rules = config.module.rules;
     const customRules = [
       {
