@@ -16,7 +16,8 @@ function globals() {
     react: 'React',
     'react-dom': 'ReactDOM',
     'classnames': 'classNames',
-    'react-popper': 'reactPopper'
+    'react-popper': 'reactPopper',
+    'axios': 'axios'
   };
 }
 
@@ -25,7 +26,7 @@ export default {
 
   // Specify here external modules which you don't want to include in your bundle (for instance: 'lodash', 'moment' etc.)
   // https://rollupjs.org/guide/en#external-e-external
-  external: ['react', 'react-dom', 'classnames', 'react-popper'],
+  external: ['react', 'react-dom', 'classnames', 'react-popper', 'axios'],
 
   plugins: [
     alias({
