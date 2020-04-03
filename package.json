@@ -22,7 +22,8 @@
     "clean-css": "gulp --gulpfile css/gulpfile.js clean",
     "watch-css": "gulp --gulpfile css/gulpfile.js build && gulp --gulpfile css/gulpfile.js watch",
     "build-js": "rollup -c",
-    "build": "npm run build-css && npm run build-js"
+    "build": "npm run build-css && npm run build-js",
+    "version": "npm run build && git add dist -f && git add css/dist -f"
   },
   "keywords": [],
   "author": "",
