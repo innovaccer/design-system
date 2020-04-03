@@ -22,6 +22,7 @@ export { default as Row } from './components/atoms/row';
 export { default as Spinner } from './components/atoms/spinner';
 export { default as Subheading } from './components/atoms/subheading';
 export { default as Switch } from './components/atoms/switch';
+export { default as Table } from './components/organisms/table';
 export { default as Text } from './components/atoms/text';
 export { default as Toast } from './components/atoms/toast';
 export { default as Tooltip } from './components/atoms/tooltip';
