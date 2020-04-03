@@ -4,6 +4,9 @@
   "description": "",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
+  "directories": {
+    "css": "css"
+  },
   "scripts": {
     "chromatic": "chromatic",
     "test": "jest",
@@ -18,7 +21,8 @@
     "build-css": "gulp --gulpfile css/gulpfile.js build",
     "clean-css": "gulp --gulpfile css/gulpfile.js clean",
     "watch-css": "gulp --gulpfile css/gulpfile.js build && gulp --gulpfile css/gulpfile.js watch",
-    "build": "rollup -c"
+    "build-js": "rollup -c",
+    "build": "npm run build-css && npm run build-js"
   },
   "keywords": [],
   "author": "",
@@ -62,6 +66,8 @@
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^8.0.0",
     "gulp-sourcemaps": "^2.6.5",
+    "install": "^0.13.0",
+    "npm": "^6.14.4",
     "postcss-color-mod-function": "^3.0.3",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
@@ -69,6 +75,7 @@
     "react-is": "^16.12.0",
     "rollup": "^2.0.6",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
     "storybook-chromatic": "^3.4.1",
     "ts-jest": "^22.4.6",
     "ts-loader": "^6.2.1",
@@ -81,6 +88,7 @@
   },
   "dependencies": {
     "@types/classnames": "^2.2.9",
+    "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "material-design-icons": "^3.0.1",
     "react-dom": "^16.8.6",
