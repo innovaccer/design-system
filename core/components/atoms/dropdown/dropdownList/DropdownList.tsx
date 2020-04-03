@@ -37,39 +37,63 @@ export interface Subheading {
 
 export interface IDropdownListProps {
   /**
+   * Size of `dropdown`
    * @default "regular"
    */
   size?: Size;
   /**
+   * Align the dropdown left/right
    * @default "right"
    */
   dropdownAlign?: DropdownAlign;
+  /**
+   * Material icon name
+   */
   icon?: string;
+  /**
+   * String to show when no options are selected
+   */
   placeholder?: string;
+  /**
+   * Label inside `dropdown button`
+   */
   inlineLabel?: string;
   /**
+   * Display message when there is no result
    * @default "No Result Found"
    */
   searchResultMessage?: string;
+  /**
+   * Determines if `dropdown` is disabled
+   */
   disabled?: boolean;
+  /**
+   * Determines if user can type to search for options
+   */
   search?: boolean;
+  /**
+   * Determines if user can select more than one items
+   */
   checkboxes?: boolean;
   /**
+   * Determines if dropdown closes on select
    * @default true
    */
   closeOnSelect?: boolean;
+  /**
+   * Updates the value of selected array after apply button is clicked, applicable in case of multiple selections
+   */
   showApplyButton?: boolean;
+  /**
+   * Shows loaders when waiting for options
+   */
   loadingOptions?: boolean;
   /**
    * @default 2
    */
   checkedValuesOffset?: number;
   /**
-   * @default 0
-   */
-  bottomScrollOffset?: number;
-  topScrollOffset?: number;
-  /**
+   * Subheading object
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * Subheading: {
    *    \[key: number\]: string;
@@ -80,16 +104,17 @@ export interface IDropdownListProps {
    */
   subheading?: Subheading;
   /**
+   * Specifies max height of `dropdown options`
    * @default 200
    */
   maxHeight?: number;
+  /**
+   * Adds custom CSS to `dropdown`
+   */
   style?: React.CSSProperties;
 }
 
 interface IOptionsProps extends IDropdownListProps {
-  /**
-   * @default []
-   */
   listOptions: Option[];
   searchTerm: string;
   bottomOptionsSliced?: boolean;
@@ -98,10 +123,7 @@ interface IOptionsProps extends IDropdownListProps {
   limit: number;
   offset: number;
   optionsLength: number;
-  /**
-   * @default []
-   */
-  selectedAll?: number[];
+  bottomScrollOffset?: number;
   selected?: any;
   onSearchChange?: (searchText: string) => void;
   onScroll?: (direction: string) => void;
@@ -124,7 +146,6 @@ const DropdownList: React.FunctionComponent<IOptionsProps> = props => {
   const {
     subheading = {},
     listOptions = [],
-    selectedAll = [],
     size = 'regular',
     dropdownAlign = 'right',
     checkedValuesOffset = 2,
@@ -430,7 +451,6 @@ const DropdownList: React.FunctionComponent<IOptionsProps> = props => {
         updatedSelectedArray={updatedChecked}
         style={dropdownStyle}
         ref={dropdownRef}
-        selectedAll={selectedAll}
         selected={selected}
         selectedLabels={selectedLabels}
         optionsLength={optionsLength}

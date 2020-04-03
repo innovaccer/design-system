@@ -6,10 +6,12 @@ export type Size = 'small' | 'medium' | 'large';
 
 export interface ISpinnerProps {
   /**
+   * Color of `spinner`
    * @default "primary"
    */
   appearance?:  Appearance;
   /**
+   * Size of `spinner`
    * @default "medium"
    */
   size?: Size;

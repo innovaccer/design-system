@@ -6,17 +6,34 @@ export type Appearance = 'primary' | 'alert' | 'success' | 'warning';
 
 export interface ISwitchProps {
   /**
+   * Size of `swicth`
    * @default "regular"
    */
   size?: Size;
   /**
+   * Color of `switch`
    * @default "primary"
    */
   appearance?: Appearance;
+  /**
+   * Denotes Selection
+   */
   checked?: boolean;
+  /**
+   * Disables the `switch`, making it unable to be pressed
+   */
   disabled?: boolean;
+  /**
+   * Name of `switch`
+   */
   name?: string;
+  /**
+   * Value of `swicth`
+   */
   value?: string;
+  /**
+   * Callback function called when `switch` is toggled
+   */
   onChange?: (selected: boolean) => void;
 }
 

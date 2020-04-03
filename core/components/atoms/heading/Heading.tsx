@@ -12,10 +12,12 @@ export interface IHeadingProps {
    */
   children: string;
   /**
+   * Color of `heading`
    * @default "default"
    */
   appearance?: Appearance;
   /**
+   * size of `heading`
    * @default "default"
    */
   size?: Size;

@@ -6,10 +6,12 @@ export type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disab
 
 export interface IParagraphProps {
   /**
+   * Text to be rendered
    * @type {React.ReactNode}
    */
   children: React.ReactNode;
   /**
+   * Color of `paragraph`
    * @default "default"
    */
   appearance?: Appearance ;

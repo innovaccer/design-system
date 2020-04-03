@@ -7,15 +7,37 @@ export type Size = 'regular' | 'tiny';
 
 export interface ICheckboxProps {
   /**
+   * Size of the `checkbox`
    * @default "regular"
    */
   size?: Size;
+  /**
+   * Denotes Selection
+   */
   checked?: boolean;
+  /**
+   * Used in case of nested `checkboxes`, overwrites checked if true
+   */
   indeterminate?: boolean;
+  /**
+   * Disables the `checkbox`, making it unable to be pressed
+   */
   disabled?: boolean;
+  /**
+   * Describes Label of the `checkbox`
+   */
   label?: string;
+  /**
+   * Name of the `checkbox`
+   */
   name?: string;
+  /**
+   * Value of the `checkbox`
+   */
   value?: string;
+  /**
+   * Callback function called when user the selects an option
+   */
   onChange?: (checked: boolean) => void;
 }
 

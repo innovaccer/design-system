@@ -10,25 +10,44 @@ export type Alignment = 'left' | 'right';
 
 export interface IButtonProps {
   /**
+   * The size of `button`
    * @default "regular"
    */
   size?: Size;
   /**
+   * Color of the `button`
    * @default "basic"
    */
   appearance?: Appearance;
+  /**
+   * Disables the `button`, making it unable to be pressed
+   */
   disabled?: boolean;
+  /**
+   * Expands the `button` to full width
+   */
   expanded?: boolean;
+  /**
+   * Adds loader inside `button` when waiting for an action to complete
+   */
   loading?: boolean;
   /**
+   * Name of icon that is to be added inside `button`
    * Material icon name
    */
   icon?: string;
   /**
+   * Align icon left or right
    * @default "left"
    */
   iconAlign?: Alignment;
+  /**
+   * Text to be added inside `button`
+   */
   children?: string;
+  /**
+   * Handler to be called when `button` is clicked
+   */
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   onMouseEnter?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;

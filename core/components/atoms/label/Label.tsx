@@ -4,9 +4,13 @@ import classNames from 'classnames';
 
 export interface ILabelProps {
   /**
+   * Text to be rendered
    * @type {React.ReactNode}
    */
   children: React.ReactNode;
+  /**
+   * Disables the `label`
+   */
   disabled?: boolean;
 }
 

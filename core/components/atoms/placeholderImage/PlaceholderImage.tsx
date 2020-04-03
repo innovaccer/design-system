@@ -4,8 +4,12 @@ import classNames from 'classnames';
 export type Size = 'small' | 'medium' | 'large';
 
 export interface IPlaceholderImageProps {
+  /**
+   * changes shape of `placeholder` to circle
+   */
   round?: boolean;
   /**
+   * Specifies dimension of `placeholder`
    * @default "small"
    */
   imageSize?: Size;

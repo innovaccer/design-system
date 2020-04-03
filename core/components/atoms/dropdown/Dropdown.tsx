@@ -4,24 +4,32 @@ import DropdownList, { IDropdownListProps, Option } from '@/components/atoms/dro
 import { getOptions, getValuesFromSelectedObj, getIndexesFromSelectedObj, getLabelsFromInd } from './utils/utility';
 
 export interface IDropdownProps extends IDropdownListProps {
+  /**
+   * API end point
+   */
   url?: string;
   /**
+   * Starting index of option
    * @default 0
    */
   offset?: number;
   /**
+   * Number of options to be added when scroller hits top/bottom
    * @default 10
    */
   limit?: number;
   /**
+   * Number of options to be rendered at a time inside `dropdown`
    * @default 30
    */
   stateLimit?: number;
   /**
+   * Determines if all options are to be pre-selected
    * @default false
    */
   selectAll?: boolean;
   /**
+   * Options to render inside `dropdown`
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * Option: {
    *    icon?: string;
@@ -33,6 +41,9 @@ export interface IDropdownProps extends IDropdownListProps {
    * </pre>
    */
   options: Option[];
+  /**
+   * Callback function called when user selects an option
+   */
   onChange?: (selected: any[] | any) => void;
 }
 

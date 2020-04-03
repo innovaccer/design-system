@@ -19,12 +19,27 @@ import {
 } from './utility';
 
 export interface ICalendarProps {
+  /**
+   * Callback function called when date is changed
+   */
   onDateChange?: (date: Date | undefined) => void;
   onRangeChange?: (startDate: Date | undefined, endDate: Date | undefined) => void;
+  /**
+   * Number of visible months
+   */
   monthsInView?: number;
   jumpView?: boolean;
+  /**
+   * Selected date
+   */
   date?: Date;
+  /**
+   * Specifies first day of week to be rendered
+   */
   firstDayOfWeek?: Day;
+  /**
+   * View inside `calendar`
+   */
   view?: View;
   disabledBefore?: Date;
   disabledAfter?: Date;

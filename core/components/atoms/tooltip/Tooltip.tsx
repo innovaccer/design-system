@@ -7,18 +7,20 @@ type IDivProps = Omit<JSX.IntrinsicElements['div'], 'ref'>;
 
 export interface ITooltipProps extends IDivProps {
   /**
-   * Text to be rendered in tooltip
+   * Text to be rendered in `tooltip`
    */
   tooltip: string;
   /**
-   * Component to be rendered as trigger for tooltip
+   * Component to be rendered as trigger for `tooltip`
    */
   children: React.ReactElement<any>;
   /**
+   * Position to place the `tooltip`
    * @default "bottom"
    */
   position?: PositionType;
   /**
+   * Appends `tooltip` wrapper inside body
    * @default true
    */
   appendToBody?: boolean;

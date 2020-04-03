@@ -12,8 +12,17 @@ export interface IPaginationProps {
    * @default "basic"
    */
   type?: PaginationType;
+  /**
+   * Total number of pages
+   */
   totalPages: number;
+  /**
+   * Current page
+   */
   page?: number;
+  /**
+   *  Callback when page is changed
+   */
   onPageChange: (page: number) => void;
 }
 

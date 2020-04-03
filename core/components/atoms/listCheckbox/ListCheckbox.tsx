@@ -18,7 +18,6 @@ export interface IListCheckboxProps {
   list: ICheckboxProps[];
   updatedSelectedArray?: boolean[];
   style?: React.CSSProperties;
-  selectedAll?: any[];
   selected?: any[];
   selectedLabels?: string[];
   optionsLength: number;

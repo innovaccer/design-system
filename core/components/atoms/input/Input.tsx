@@ -10,12 +10,28 @@ export type AutoComplete = 'on' | 'off';
 export type Size = 'tiny' | 'regular' | 'large';
 
 export interface IInputProps {
+  /**
+   * Name of the `input`
+   */
   name: string;
+  /**
+   * Type of text inside `input`
+   */
   type?: InputType;
+  /**
+   * Value of the `input`
+   */
   value?: string;
+  /**
+   * Text to display when input is empty
+   */
   placeholder?: string;
+  /**
+   * Specifies whether `input field should have autocomplete enabled
+   */
   autocomplete?: AutoComplete;
   /**
+   * Size of the `input`
    * @default "regular"
    */
   size?: Size;
@@ -23,6 +39,9 @@ export interface IInputProps {
    * Material icon name
    */
   icon?: string;
+  /**
+   * Text to be displayed above `input`
+   */
   label?: string;
   /**
    * Label to be displayed inside `input`
@@ -33,18 +52,42 @@ export interface IInputProps {
    */
   caption?: string;
   clearButton?: boolean;
+  /**
+   * Adds loader inside input when waiting for an action to complete
+   */
   loading?: boolean;
+  /**
+   * Disables the `input`, making it unable to type
+   */
   disabled?: boolean;
+  /**
+   * Shows the user that this field id required
+   */
   required?: boolean;
+  /**
+   * Shows error state in case of failed validation
+   */
   error?: boolean;
   /**
    * Text to be rendered in info `tooltip`
    * @default true
    */
   info?: string;
+  /**
+   * Callback function when user clicks the clear button
+   */
   onClear?: (e: React.MouseEvent<HTMLElement>) => void;
+  /**
+   * Callback function when `input` text changes
+   */
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  /**
+   * Handler to be called when `input` is clicked
+   */
   onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
+  /**
+   * Handler to be called when `input` loses focus
+   */
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }
 

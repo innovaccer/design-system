@@ -7,30 +7,53 @@ type ActionType = 'click' | 'hover';
 
 export interface IPopoverProps {
   /**
+   *  Position to place the `trigger`
    * @default "bottom"
    */
   position?: Position;
   /**
+   * Appends `trigger` wrapper inside body
    * @default true
    */
   appendToBody?: boolean;
+  /**
+   * Vertical offset from `trigger`
+   */
   verticalOffset?: number;
+  /**
+   * Element triggering the `popover`
+   */
   trigger: React.ReactElement<any>;
+  /**
+   * Holds `popover` on hove
+   */
   hoverable?: boolean;
+  /**
+   * Changes background of `popover`
+   */
   dark?: boolean;
   /**
+   * Closes `popover` on outside click
    * @default true
    */
   closeOnBackdropClick?: boolean;
   /**
+   * Event triggering the `popover`
    * @default 'click'
    */
   on?: ActionType;
+  /**
+   * Handles open/close
+   */
   open?: boolean;
   /**
+   * Adds CSS to `popover` element
    * @default {}
    */
   style?: React.CSSProperties;
+  /**
+   * Callback after `popover` is toggled
+   */
   onToggle: (open: boolean, type?: string) => void;
 }
 

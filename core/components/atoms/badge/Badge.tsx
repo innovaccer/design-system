@@ -5,12 +5,16 @@ export type Appearance = 'primary' | 'secondary' | 'alert' | 'warning' | 'succes
 
 export interface IBadgeProps {
   /**
+   * Color of the `badge`
    * @default "secondary"
    */
   appearance?: Appearance;
+  /**
+   * Makes badge subtle
+   */
   subtle?: boolean;
   /**
-   * Text to be rendered
+   * Text to be added inside `badge`
    */
   children: string;
 }

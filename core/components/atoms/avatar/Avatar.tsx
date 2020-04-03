@@ -5,6 +5,7 @@ export type Appearance = 'primary' | 'alert' | 'warning' | 'success' | 'accent1'
 
 export interface IAvatarProps {
   /**
+   * Color of `avatar`
    * @default "primary"
    */
   appearance?: Appearance;

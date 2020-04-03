@@ -2,6 +2,9 @@ import * as React from 'react';
 import Heading from '@/components/atoms/heading';
 
 export interface IBreadcrumbsWrapperProps {
+  /**
+   * Heading of breadcrumb
+   */
   heading?: string;
   /**
    * All `Breadcrumb` Component will be wrapped in a `list`

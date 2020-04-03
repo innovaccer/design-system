@@ -8,6 +8,9 @@ interface IProps extends IDivProps {
    * Trigger the function on outside click
    */
   onOutsideClick: (event: Event) => void;
+  /**
+   * Element to be rendered
+   */
   children: React.ReactElement<any>;
 }
 

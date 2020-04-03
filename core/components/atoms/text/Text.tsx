@@ -6,12 +6,20 @@ export type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disab
 
 export interface ITextProps {
   /**
+   * Text to be rendered
    * @type {string}
    */
   children: string;
+  /**
+   * Denotes weight of `text`
+   */
   weight?: 'strong' | 'medium';
+  /**
+   * Changes size of `text`
+   */
   small?: boolean;
   /**
+   * Color of `text`
    * @default "default"
    */
   appearance?: Appearance;

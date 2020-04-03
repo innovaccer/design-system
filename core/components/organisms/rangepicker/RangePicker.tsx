@@ -10,13 +10,25 @@ import { getDateInfo, convertToDate, compareDate, translateToString, translateTo
 
 export interface IRangePickerProps {
   onRangeChange?: (startDate: Date, endDate: Date, startValue?: string, endValue?: string) => void;
+  /**
+   * Number of visible months
+   */
   monthsInView?: number;
   jumpView?: boolean;
+  /**
+   * Specifies first day of week to be rendered
+   */
   firstDayOfWeek?: Day;
   view?: View;
   disabledBefore?: DateType;
   disabledAfter?: DateType;
+  /**
+   * Starting date of `range picker`
+   */
   startDate?: DateType;
+  /**
+   * End date of `range picker`
+   */
   endDate?: DateType;
   rangeLimit?: number;
   yearNav?: number;

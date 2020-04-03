@@ -8,14 +8,30 @@ import OutsideClick from '@/components/atoms/outsideClick';
 export type Dimension = 'small' | 'medium' | 'large';
 
 export interface IModalProps {
+  /**
+   * Callback for `modal` close event
+   */
   onClose: (reason?: string, event?: Event) => void;
+  /**
+   * Closes `modal` on outside click
+   */
   backdrop?: boolean;
+  /**
+   * Closes `modal` on pressing escape key
+   */
   closeOnEscape?: boolean;
   /**
+   * Dimension of `modal`
    * @default "small"
    */
   dimension?: Dimension;
+  /**
+   * Handles open/close state
+   */
   open: boolean;
+  /**
+   * Element to be rendered
+   */
   children?: React.ReactNode;
 }
 

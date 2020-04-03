@@ -8,16 +8,31 @@ import validators from '@/utils/validators';
 import { convertToDate, translateToDate, translateToString, Validator } from '../calendar/utility';
 
 export interface IDatePickerProps {
+  /**
+   * Callback function called when date is changed
+   */
   onDateChange?: (date: Date, dateVal?: string) => void;
   jumpView?: boolean;
+  /**
+   * Selected date
+   */
   date?: DateType;
+  /**
+   * Specifies first day of week to be rendered
+   */
   firstDayOfWeek?: Day;
+  /**
+   * View inside `calendar`
+   */
   view?: View;
   disabledBefore?: DateType;
   disabledAfter?: DateType;
   yearNav?: number;
   monthNav?: number;
   withInput?: boolean;
+  /**
+   * Position of `date picker`
+   */
   position?: Position;
   inputFormat?: DateFormat;
   outputFormat?: DateFormat;

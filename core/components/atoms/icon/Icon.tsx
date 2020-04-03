@@ -10,15 +10,23 @@ export interface IIconProps {
    * Material icon name
    */
   name: string;
+  /**
+   * Size of `icon`
+   */
   size?: number;
   /**
+   * Type of material `icon`
    * @default "filled"
    */
   type?: IconType;
   /**
+   * Color of `icon`
    * @default "default"
    */
   appearance?: Appearance;
+  /**
+   * Handler to be called when icon is clicked
+   */
   onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   /**
    * Array of helper classes

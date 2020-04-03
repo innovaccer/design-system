@@ -6,10 +6,12 @@ export type Appearance = 'default' | 'subtle' | 'disabled' | 'white';
 
 export interface ISubheadingProps {
   /**
+   * Text to be rendered
    * @type {string}
    */
   children: string;
   /**
+   * Color of `subheading`
    * @default "default"
    */
   appearance?: Appearance;

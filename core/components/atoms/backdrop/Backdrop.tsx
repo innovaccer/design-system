@@ -6,6 +6,7 @@ const { useEffect, useState } = React;
 
 export interface IBackdropProps {
   /**
+   * Handles open/close state
    * @default false
    */
   open: boolean;

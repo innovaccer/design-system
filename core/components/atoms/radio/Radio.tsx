@@ -6,14 +6,33 @@ export type Size = 'regular' | 'tiny';
 
 export interface IRadioProps {
   /**
+   * Size of `radio`
    * @default "regular"
    */
   size?: Size;
+  /**
+   * Disables the `radio`, making it unable to be pressed
+   */
   disabled?: boolean;
+  /**
+   * Describes Label of the `radio`
+   */
   label?: string;
+  /**
+   * Name of the `radio`
+   */
   name: string;
+  /**
+   * Name of the `radio`
+   */
   value: string;
+  /**
+   * Denotes Selection
+   */
   defaultChecked?: boolean;
+  /**
+   * Callback function called when user the selects an option
+   */
   onChange?: (checked: boolean) => void;
 }
 

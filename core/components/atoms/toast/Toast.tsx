@@ -11,15 +11,25 @@ export type Action = {
    * Label of `ActionButton`
    */
   label: string,
+  /**
+   * Click Handler
+   */
   onClick: (e: React.MouseEvent) => void
 };
 
 export interface IToastProps {
+  /**
+   * Title of `toast`
+   */
   title: string;
   /**
+   * Color of `toast`
    * @default "default"
    */
   appearance?: Appearance;
+  /**
+   * Message to be rendered inside `toast`
+   */
   message?: string;
   /**
    * Array for `ActionButton`(maxLen: 2)
