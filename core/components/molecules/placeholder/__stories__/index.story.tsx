@@ -10,7 +10,7 @@ export const all = () => {
   const imageSize = select(
     'imageSize',
     ['small', 'medium', 'large'],
-    'small'
+    undefined
   );
 
   const options = {

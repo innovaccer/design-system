@@ -1,13 +1,13 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-export type Sizes = 'small' | 'medium' | 'large';
+export type Length = 'small' | 'medium' | 'large';
 
 export interface IPlaceholderParagraphProps {
   /**
    * @default "medium"
    */
-  length?: Sizes;
+  length?: Length;
 }
 
 const PlaceholderParagraph: React.FunctionComponent<IPlaceholderParagraphProps> = props => {
