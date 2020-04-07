@@ -1488,7 +1488,6 @@ body {
 .Checkbox {
     display: flex;
     cursor: pointer;
-    align-items: center;
     vertical-align: middle;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -1518,12 +1517,12 @@ body {
 
 .Checkbox-wrapper--regular {
     height: var(--spacing-2);
-    width: var(--spacing-2);
+    min-width: var(--spacing-2);
 }
 
 .Checkbox-wrapper--tiny {
     height: var(--spacing);
-    width: var(--spacing);
+    min-width: var(--spacing);
 }
 
 .Checkbox-wrapper:hover {
@@ -1604,7 +1603,7 @@ body {
     border-top: var(--spacing-xs) solid var(--secondary-light);
 }
 
-.Dropdown-wrapper {
+.Dropdown-errorWrapper {
     min-height: var(--spacing-7);
 }
 
@@ -1643,7 +1642,7 @@ body {
     padding-bottom: 10px;
 }
 
-.Dropdown .ListCheckbox .Checkbox {
+.Dropdown .ListCheckbox-childWrapper .Checkbox {
     overflow: hidden;
 }
 
@@ -1680,6 +1679,11 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.Option-text--wrap,
+.Dropdown--wrap.Dropdown .ListCheckbox .Checkbox .Text {
+    white-space: unset;
 }
 
 .Option-wrapper--icon {

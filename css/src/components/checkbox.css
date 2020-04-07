@@ -3,7 +3,6 @@
 .Checkbox {
     display: flex;
     cursor: pointer;
-    align-items: center;
     vertical-align: middle;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -33,12 +32,12 @@
 
 .Checkbox-wrapper--regular {
     height: var(--spacing-2);
-    width: var(--spacing-2);
+    min-width: var(--spacing-2);
 }
 
 .Checkbox-wrapper--tiny {
     height: var(--spacing);
-    width: var(--spacing);
+    min-width: var(--spacing);
 }
 
 .Checkbox-wrapper:hover {

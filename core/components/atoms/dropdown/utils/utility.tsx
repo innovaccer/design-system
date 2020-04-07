@@ -9,6 +9,7 @@ export const getOptions = (offset: number, limit: number, searchTerm: string, op
     resolve({
       offset,
       slicedOptions: searchedOptions.slice(offset, offset + limit),
+      length: searchedOptions.length,
       options: searchedOptions,
     });
   });
@@ -38,10 +39,10 @@ export const getValuesFromInd = (selectedArray: number[], options: any[]) => {
   return result;
 };
 
-export const getLabelsFromInd = (selectedArray: number[], options: any[]) => {
+export const getLabelsFromSelectedObj = (options: any[]) => {
   const result: string[] = [];
-  selectedArray.forEach(ind => {
-    result.push(options[ind].label);
+  options.forEach(option => {
+    result.push(option.label);
   });
 
   return result;

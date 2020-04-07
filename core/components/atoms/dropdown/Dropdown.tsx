@@ -1,28 +1,13 @@
 import * as React from 'react';
-import axios from 'axios';
 import DropdownList, { IDropdownListProps, Option } from '@/components/atoms/dropdown/dropdownList';
-import { getOptions, getValuesFromSelectedObj, getIndexesFromSelectedObj, getLabelsFromInd } from './utils/utility';
+import { getOptions, getValuesFromSelectedObj, getLabelsFromSelectedObj } from './utils/utility';
 
 export interface IDropdownProps extends IDropdownListProps {
-  /**
-   * API end point
-   */
-  url?: string;
-  /**
-   * Starting index of option
-   * @default 0
-   */
-  offset?: number;
   /**
    * Number of options to be added when scroller hits top/bottom
    * @default 10
    */
   limit?: number;
-  /**
-   * Number of options to be rendered at a time inside `dropdown`
-   * @default 30
-   */
-  stateLimit?: number;
   /**
    * Determines if all options are to be pre-selected
    * @default false
@@ -54,23 +39,23 @@ interface Selected {
 
 const Dropdown: React.FunctionComponent<IDropdownProps> = props => {
   const {
-    offset = 0,
     limit = 10,
-    stateLimit = 30,
     selectAll = false,
-    url,
     onChange,
     ...rest
   } = props;
 
-  const [topOffset, setTopOffset] = React.useState(offset);
-  const [bottomOffset, setBottomOffset] = React.useState(offset);
+  const [topOffset, setTopOffset] = React.useState(0);
+  const [bottomOffset, setBottomOffset] = React.useState(0);
   const [options, setOptions] = React.useState<Option[]>([]);
   const [topOptionsSliced, setTopOptionsSliced] = React.useState(false);
   const [bottomOptionsSliced, setBottomOptionsSliced] = React.useState(false);
   const [selectedAll, setSelectedAll] = React.useState(selectAll);
   const [searchTerm, setSearchTerm] = React.useState('');
+  const [stateLimit, setStateLimit] = React.useState(2 * limit);
+  const [slicedOptionLength, setSlicedOptionLength] = React.useState(0);
   const length = (props.options) ? props.options.length : 0;
+  const [optionsLength, setOptionLength] = React.useState(length);
   const [selected, setSelected] = React.useState<Selected>({
     label: [],
     value: [],
@@ -92,26 +77,16 @@ const Dropdown: React.FunctionComponent<IDropdownProps> = props => {
     return result;
   };
 
-  const getOptionsfromAPI = (updatedOffset: number | undefined, direction: string | undefined) => {
-    const optionOffset = updatedOffset ? updatedOffset : offset;
-    axios.get(`${url}?offset=${optionOffset}&limit=${limit}&search=${searchTerm}`).
-      then(res => {
-        const { offset: newOffset, results } = res.data;
-        if (updatedOffset !== undefined && direction !== undefined) {
-          updateOptionsOnScroll(res.data, updatedOffset, direction);
-        } else {
-          setOptions(results);
-          setBottomOffset(newOffset);
-        }
-      });
-  };
-
-  const getDropdownOptions = (updatedOffset: number | undefined, direction: string | undefined) => {
-    const optionOffset = updatedOffset ? updatedOffset : offset;
-    getOptions(optionOffset, limit, searchTerm, props.options).then((res: any) => {
+  const getDropdownOptions = (updatedOffset: number, optionsLimit: number, direction: string | undefined) => {
+    getOptions(updatedOffset, optionsLimit, searchTerm, props.options).then((res: any) => {
       if (updatedOffset !== undefined && direction !== undefined) {
-        updateOptionsOnScroll(res, updatedOffset, direction);
+        const { slicedOptions } = res;
+        const slicedLength = limit - slicedOptions.length;
+        setSlicedOptionLength(slicedLength);
+        updateOptionsOnScroll(res, updatedOffset, direction, slicedLength);
       } else {
+        setSlicedOptionLength(0);
+        setOptionLength(res.length);
         setOptions(res.slicedOptions);
         setBottomOffset(res.offset);
       }
@@ -119,29 +94,26 @@ const Dropdown: React.FunctionComponent<IDropdownProps> = props => {
   };
 
   React.useEffect(() => {
-    if (!url) {
-      const selectedOptions = getSelectedFromOptions();
-      setSelected(selectedOptions);
-      setSelectedAll(selectAll);
-      getDropdownOptions(undefined, undefined);
-    }
-  }, [props.options, selectAll]);
+    setStateLimit(2 * limit);
+  }, [limit]);
 
   React.useEffect(() => {
-    getDropdownOptions(undefined, undefined);
+    const selectedOptions = getSelectedFromOptions();
+    setSelected(selectedOptions);
+    setSelectedAll(selectAll);
+    getDropdownOptions(0, limit, undefined);
+
+  }, [props.options, selectAll, limit]);
+
+  React.useEffect(() => {
+    getDropdownOptions(0, limit, undefined);
   }, [searchTerm]);
-
-  React.useEffect(() => {
-    if (!props.options) {
-      getOptionsfromAPI(undefined, undefined);
-    }
-  }, [url, searchTerm]);
 
   const onSearchChange = (search: string) => {
     setSearchTerm(search);
   };
 
-  const updateOptionsOnScroll = (result: any, updatedOffset: number, direction: string) => {
+  const updateOptionsOnScroll = (result: any, updatedOffset: number, direction: string, slicedLength: number) => {
     if (bottomOptionsSliced) setBottomOptionsSliced(false);
     if (topOptionsSliced) setTopOptionsSliced(false);
 
@@ -152,7 +124,7 @@ const Dropdown: React.FunctionComponent<IDropdownProps> = props => {
       const len = updatedOptions.length;
       if (len > stateLimit) {
         updatedOptions = updatedOptions.slice(len - stateLimit, len);
-        setTopOffset(updatedOffset - stateLimit + limit);
+        setTopOffset(updatedOffset - stateLimit + limit - slicedLength);
         setBottomOptionsSliced(true);
       }
       setBottomOffset(updatedOffset);
@@ -170,27 +142,22 @@ const Dropdown: React.FunctionComponent<IDropdownProps> = props => {
   };
 
   const OnScrollOptions = (direction: string) => {
-    const updatedOffset = direction === 'down' ? bottomOffset + limit : topOffset - limit;
-    if (updatedOffset >= 0) {
-      if (url && !props.options) {
-        getOptionsfromAPI(updatedOffset, direction);
-      } else {
-        getDropdownOptions(updatedOffset, direction);
-      }
-    }
+    const condition = direction === 'down' ? (bottomOffset + limit > optionsLength) : (topOffset - limit < 0);
+    const optionsLimit = condition ? (direction === 'down' ? optionsLength - bottomOffset : topOffset) : limit;
+    const updatedOffset = direction === 'down' ? bottomOffset + optionsLimit : topOffset - optionsLimit;
+    const offsetInOptions = updatedOffset >= 0 && updatedOffset !== optionsLength && optionsLimit > 0;
+    if (offsetInOptions) getDropdownOptions(updatedOffset, optionsLimit, direction);
   };
 
   const onChangeOptions = (selectedArray: any[]) => {
     if (onChange) onChange(selectedArray);
-
   };
 
   const onSelectAll = (selectedAllOptions: boolean) => {
     if (props.options) {
       const optionsCopy = props.options.slice();
       const selectedArray = selectedAllOptions ? getValuesFromSelectedObj(optionsCopy) : [];
-      const selectedArrayInd = selectedAllOptions ? getIndexesFromSelectedObj(optionsCopy) : [];
-      const selectedArrayLabel = selectedAllOptions ? getLabelsFromInd(selectedArrayInd, optionsCopy) : [];
+      const selectedArrayLabel = selectedAllOptions ? getLabelsFromSelectedObj(optionsCopy) : [];
       setSelected({ label: selectedArrayLabel, value: selectedArray });
       setSelectedAll(false);
       if (onChange) onChange(selectedArray);
@@ -201,6 +168,7 @@ const Dropdown: React.FunctionComponent<IDropdownProps> = props => {
     <div>
       <DropdownList
         listOptions={options}
+        slicedOptionsLength={slicedOptionLength}
         selectAll={selectedAll}
         selected={selected}
         searchTerm={searchTerm}

@@ -85,6 +85,10 @@ export interface IDropdownListProps {
    */
   showApplyButton?: boolean;
   /**
+   * Wrap label to next line if it is too long
+   */
+  optionsWrap?: boolean;
+  /**
    * Shows loaders when waiting for options
    */
   loadingOptions?: boolean;
@@ -121,6 +125,7 @@ interface IOptionsProps extends IDropdownListProps {
   topOptionsSliced?: boolean;
   selectAll: boolean;
   limit: number;
+  slicedOptionsLength: number;
   offset: number;
   optionsLength: number;
   bottomScrollOffset?: number;
@@ -150,9 +155,11 @@ const DropdownList: React.FunctionComponent<IOptionsProps> = props => {
     dropdownAlign = 'right',
     checkedValuesOffset = 2,
     closeOnSelect = true,
+    optionsWrap = false,
     searchResultMessage = 'No Result Found',
     maxHeight = 200,
     bottomScrollOffset = 0,
+    slicedOptionsLength,
     loadingOptions,
     selectAll,
     placeholder,
@@ -237,7 +244,12 @@ const DropdownList: React.FunctionComponent<IOptionsProps> = props => {
 
   React.useEffect(() => {
     if (props.bottomOptionsSliced && dropdownRef.current) {
-      const updatedScrollTop = dropdownRef.current.scrollTop - (limit * 32);
+      const className = checkboxes ? '.ListCheckbox-childWrapper' : '.Option-wrapper';
+      const element = document.querySelectorAll(className);
+      const index = element.length - limit + slicedOptionsLength;
+      const marker = element[index] as HTMLElement;
+      const updatedScrollTop = marker.offsetTop - maxHeight;
+
       dropdownRef.current.scrollTop = updatedScrollTop;
       lastScrollTop = updatedScrollTop;
       if (checkboxes) setSelected(checkboxSelected);
@@ -246,9 +258,13 @@ const DropdownList: React.FunctionComponent<IOptionsProps> = props => {
 
   React.useEffect(() => {
     if (props.topOptionsSliced && dropdownRef.current) {
-      const updatedScrollTop = dropdownRef.current.scrollTop + (limit * 32);
-      dropdownRef.current.scrollTop = updatedScrollTop;
-      lastScrollTop = updatedScrollTop;
+      const className = checkboxes ? '.ListCheckbox-childWrapper' : '.Option-wrapper';
+      const element = document.querySelectorAll(className);
+      const index = limit - slicedOptionsLength;
+      const marker = element[index] as HTMLElement;
+
+      dropdownRef.current.scrollTop = marker.offsetTop;
+      lastScrollTop = marker.offsetTop;
       if (checkboxes) setSelected(checkboxSelected);
     }
   }, [props.topOptionsSliced]);
@@ -308,6 +324,16 @@ const DropdownList: React.FunctionComponent<IOptionsProps> = props => {
 
     return OptionWrapper;
   };
+
+  const dropdownClass = classNames({
+    ['Dropdown']: true,
+    ['Dropdown--wrap']: optionsWrap,
+  });
+
+  const optionTextClass = classNames({
+    ['Option-text']: true,
+    ['Option-text--wrap']: optionsWrap,
+  });
 
   const onToggleDropdown = () => {
     if (!disabled) setDropdownOpen(!dropdownOpen);
@@ -372,8 +398,7 @@ const DropdownList: React.FunctionComponent<IOptionsProps> = props => {
   const handleMenuScroll = (e: React.SyntheticEvent<HTMLDivElement>) => {
     const element = e.target as HTMLDivElement;
     const scrollTop = element.scrollTop;
-
-    if (scrollTop < lastScrollTop) {
+    if (scrollTop <= lastScrollTop) {
       if (scrollTop === 0) onScrollDropdown('up', scrollTop);
     } else {
       const scrollContainerBottomPosition = Math.round(element.scrollTop + element.clientHeight);
@@ -466,7 +491,7 @@ const DropdownList: React.FunctionComponent<IOptionsProps> = props => {
       <div className={getOptionWrapperClass(optionIcon, value, index)} onClick={e => optionClickHandler(e, item)}>
         {optionIcon && <div className={'Option-icon'}><Icon helpers={['mr-4']} name={optionIcon} /></div>}
         <div className={'Option-label'}>
-          <div className={'Option-text'}>{label}</div>
+          <div className={optionTextClass}>{label}</div>
           {subInfo && <div className={'Option-subinfo'}>{subInfo}</div>}
         </div>
       </div>
@@ -483,7 +508,7 @@ const DropdownList: React.FunctionComponent<IOptionsProps> = props => {
     }
     if (listOptions.length === 0) {
       return (
-        <div className={'Dropdown-wrapper'}>
+        <div className={'Dropdown-errorWrapper'}>
           <div className={'Option-wrapper'}>
             <div className={'Option-subinfo'}>{searchResultMessage}</div>
           </div>
@@ -515,7 +540,7 @@ const DropdownList: React.FunctionComponent<IOptionsProps> = props => {
   };
 
   return (
-    <div className={'Dropdown'} onScroll={handleMenuScroll} style={dropdownDivStyle}>
+    <div className={dropdownClass} onScroll={handleMenuScroll} style={dropdownDivStyle}>
       <Popover
         onToggle={onToggleDropdown}
         trigger={trigger}

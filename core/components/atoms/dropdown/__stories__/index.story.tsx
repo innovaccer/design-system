@@ -40,8 +40,6 @@ export const all = () => {
 
   const checkedValuesOffset = number('checked offset', 2);
 
-  const stateLimit = number('state limit', 30);
-
   const maxHeight = number('maximum height', 200);
 
   const limit = number('limit', 10);
@@ -64,7 +62,6 @@ export const all = () => {
     checkboxes,
     showApplyButton,
     checkedValuesOffset,
-    stateLimit,
     maxHeight,
     limit,
     subheading,
