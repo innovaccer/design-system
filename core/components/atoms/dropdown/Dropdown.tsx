@@ -1,8 +1,8 @@
 import * as React from 'react';
-import DropdownList, { IDropdownListProps, Option } from '@/components/atoms/dropdown/dropdownList';
+import DropdownList, { DropdownListProps, Option } from '@/components/atoms/dropdown/dropdownList';
 import { getOptions, getValuesFromSelectedObj, getLabelsFromSelectedObj } from './utils/utility';
 
-export interface IDropdownProps extends IDropdownListProps {
+export interface DropdownProps extends DropdownListProps {
   /**
    * Number of options to be added when scroller hits top/bottom
    * @default 10
@@ -37,7 +37,7 @@ interface Selected {
   value: any[];
 }
 
-const Dropdown: React.FunctionComponent<IDropdownProps> = props => {
+export const Dropdown: React.FunctionComponent<DropdownProps> = props => {
   const {
     limit = 10,
     selectAll = false,

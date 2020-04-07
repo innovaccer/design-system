@@ -18,7 +18,7 @@ import {
   convertToDate
 } from './utility';
 
-export interface ICalendarProps {
+export interface CalendarProps {
   /**
    * Callback function called when date is changed
    */
@@ -51,7 +51,7 @@ export interface ICalendarProps {
   monthNav?: number;
 }
 
-export const Calendar: React.FunctionComponent<ICalendarProps> = props => {
+export const Calendar: React.FunctionComponent<CalendarProps> = props => {
   const now = Date.now();
   const {
     year: nowYear,

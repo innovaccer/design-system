@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 export type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled';
 
-export interface IParagraphProps {
+export interface ParagraphProps {
   /**
    * Text to be rendered
    * @type {React.ReactNode}
@@ -17,7 +17,7 @@ export interface IParagraphProps {
   appearance?: Appearance ;
 }
 
-const Paragraph: React.FunctionComponent<IParagraphProps> = props => {
+export const Paragraph: React.FunctionComponent<ParagraphProps> = props => {
   const {
     appearance = 'default',
     children,

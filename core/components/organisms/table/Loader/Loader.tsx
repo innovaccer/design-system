@@ -2,7 +2,7 @@ import * as React from 'react';
 import Placeholder from '@/components/molecules/placeholder';
 import PlaceholderParagraph, { Length } from '@/components/atoms/placeholderParagraph';
 
-interface IProps {
+interface Props {
   rows?: number;
   rowHeight?: number;
 }
@@ -22,7 +22,7 @@ interface IProps {
 //   </div>
 // );
 
-class Loader extends React.PureComponent<IProps> {
+class Loader extends React.PureComponent<Props> {
   columns: string[] = [
     '4%',
     '4%',

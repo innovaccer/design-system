@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
-import DatePicker, { IDatePickerProps as IProps } from '../DatePicker';
+import DatePicker, { DatePickerProps as Props } from '../DatePicker';
 
 const view = ['year', 'month', 'date'];
 const booleanValue = [true, false];
@@ -12,7 +12,7 @@ describe('DatePicker component', () => {
   };
 
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
@@ -36,7 +36,7 @@ describe('DatePicker component', () => {
   };
 
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(

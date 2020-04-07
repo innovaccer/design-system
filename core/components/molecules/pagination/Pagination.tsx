@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 export type PaginationType = 'basic' | 'jump';
 
-export interface IPaginationProps {
+export interface PaginationProps {
   /**
    * @default "basic"
    */
@@ -26,7 +26,7 @@ export interface IPaginationProps {
   onPageChange: (page: number) => void;
 }
 
-const Pagination: React.FunctionComponent<IPaginationProps> = props => {
+export const Pagination: React.FunctionComponent<PaginationProps> = props => {
   const {
     type = 'basic',
     totalPages,

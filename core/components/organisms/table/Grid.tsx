@@ -5,9 +5,9 @@ import Cell from './Cell';
 import Header from './Header';
 import Loader, { PartialLoader } from './Loader';
 
-import { IState, IProps, ICache, ISchema, IGridActions } from './interfaces';
+import { IState, Props, ICache, ISchema, IGridActions } from './interfaces';
 
-class Grid extends React.PureComponent<IProps, IState> {
+class Grid extends React.PureComponent<Props, IState> {
   // Refs
   centerGridRef: React.RefObject<HTMLDivElement> = React.createRef();
   centerScrollRef: React.RefObject<HTMLDivElement> = React.createRef();
@@ -43,7 +43,7 @@ class Grid extends React.PureComponent<IProps, IState> {
     virtualization: true,
   };
 
-  constructor(props: IProps) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       position: 0,
@@ -58,7 +58,7 @@ class Grid extends React.PureComponent<IProps, IState> {
     }
   }
 
-  componentDidUpdate(prevProps: IProps, prevState: IState) {
+  componentDidUpdate(prevProps: Props, prevState: IState) {
     if (prevProps.schema !== this.props.schema) {
       this.setState({ gridMeta: this.updateSchema(this.props.schema) });
     }
@@ -330,9 +330,9 @@ class Grid extends React.PureComponent<IProps, IState> {
     dynamicRowHeight,
   }: {
     index: number;
-    rowHeight?: IProps['rowHeight'];
-    row: IProps['data'][0];
-    schema: IProps['schema'];
+    rowHeight?: Props['rowHeight'];
+    row: Props['data'][0];
+    schema: Props['schema'];
     dynamicRowHeight: boolean;
   }) => {
     return (
@@ -362,7 +362,7 @@ class Grid extends React.PureComponent<IProps, IState> {
     );
   }
 
-  getVirtualList = (state: IState, props: IProps) => {
+  getVirtualList = (state: IState, props: Props) => {
     const leftRows = [];
     const centerRows = [];
 

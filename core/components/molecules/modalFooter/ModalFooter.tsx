@@ -1,11 +1,11 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-interface IModalFooterProps {
+export interface ModalFooterProps {
   children: React.ReactElement[];
 }
 
-const ModalFooter: React.FunctionComponent<IModalFooterProps> = props => {
+export const ModalFooter: React.FunctionComponent<ModalFooterProps> = props => {
   const { children } = props;
 
   const classes = classNames({

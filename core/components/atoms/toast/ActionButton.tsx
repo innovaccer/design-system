@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Text from '@/components/atoms/text';
 import { Appearance } from './Toast';
 
-export interface IProps {
+export interface Props {
   /**
    * @default "default"
    */
@@ -12,7 +12,7 @@ export interface IProps {
   onClick?: (e: React.MouseEvent) => void;
 }
 
-const ActionButton: React.FunctionComponent<IProps> = props => {
+const ActionButton: React.FunctionComponent<Props> = props => {
   const {
     appearance = 'default',
     label,

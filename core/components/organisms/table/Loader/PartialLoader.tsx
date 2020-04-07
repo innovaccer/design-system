@@ -3,14 +3,14 @@ import Placeholder from '@/components/molecules/placeholder';
 import { ISchema } from '../interfaces';
 import PlaceholderParagraph, { Length } from '@/components/atoms/placeholderParagraph';
 
-type IDivIntrinsicProps = JSX.IntrinsicElements['div'];
+type DivIntrinsicProps = JSX.IntrinsicElements['div'];
 
-interface IProps extends IDivIntrinsicProps {
+interface Props extends DivIntrinsicProps {
   schema: ISchema[];
   rowStyle: React.CSSProperties;
 }
 
-class PartialLoader extends React.PureComponent<IProps> {
+class PartialLoader extends React.PureComponent<Props> {
   render() {
     const { rowStyle, schema, ...rest } = this.props;
 

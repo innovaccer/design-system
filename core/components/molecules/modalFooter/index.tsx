@@ -1,4 +1,2 @@
-import ModalFooter from './ModalFooter';
-
-export default ModalFooter;
+export { default } from './ModalFooter';
 export * from './ModalFooter';

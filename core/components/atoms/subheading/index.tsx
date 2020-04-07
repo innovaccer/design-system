@@ -1,4 +1,2 @@
-import Subheading from './Subheading';
-export default Subheading;
-
+export { default } from './Subheading';
 export * from './Subheading';

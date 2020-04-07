@@ -28,7 +28,7 @@ enum Offsets {
   Large = '8px'
 }
 
-interface IProps {
+interface Props {
   trigger: React.ReactElement<any>;
   placement: PositionType;
   children: React.ReactElement<any>;
@@ -48,12 +48,12 @@ interface IState {
   mouseEnterDelay: number;
 }
 
-class PopperWrapper extends React.Component<IProps, IState> {
+class PopperWrapper extends React.Component<Props, IState> {
   private triggerRef: React.RefObject<HTMLElement>;
   private popupRef: React.RefObject<HTMLDivElement>;
   private _timer?: number;
 
-  constructor(props: IProps) {
+  constructor(props: Props) {
     super(props);
 
     this.state = {

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 export type Appearance = 'primary' | 'secondary' | 'alert' | 'warning' | 'success' | 'accent1' | 'accent2' | 'accent3' | 'accent4';
 
-export interface IBadgeProps {
+export interface BadgeProps {
   /**
    * Color of the `badge`
    * @default "secondary"
@@ -19,7 +19,7 @@ export interface IBadgeProps {
   children: string;
 }
 
-const Badge = (props: IBadgeProps) => {
+export const Badge = (props: BadgeProps) => {
   const {
     appearance = 'secondary',
     children,

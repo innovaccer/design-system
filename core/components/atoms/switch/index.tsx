@@ -1,4 +1,2 @@
-import Radio from './Switch';
-export default Radio;
-
+export { default } from './Switch';
 export * from './Switch';

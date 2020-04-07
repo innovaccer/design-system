@@ -2,13 +2,13 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Text from '@/components/atoms/text';
 
-export interface IModalDescriptionProps {
+export interface ModalDescriptionProps {
   title?: string;
   description?: string;
   removePadding?: boolean;
 }
 
-const ModalDescription: React.FunctionComponent<IModalDescriptionProps> = props => {
+export const ModalDescription: React.FunctionComponent<ModalDescriptionProps> = props => {
   const { title = '', description = '', removePadding = false } = props;
 
   const classes = classNames({

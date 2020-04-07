@@ -3,11 +3,11 @@ import classNames from 'classnames';
 
 const { useRef, useEffect, useState } = React;
 
-interface IModalBodyProps {
+export interface ModalBodyProps {
   children: React.ReactNode;
 }
 
-const ModalBody: React.FunctionComponent<IModalBodyProps> = props => {
+export const ModalBody: React.FunctionComponent<ModalBodyProps> = props => {
   const [scroll, setScroll] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const { children } = props;

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 export type Appearance = 'primary' | 'alert' | 'warning' | 'success' | 'accent1' | 'accent2' | 'accent3' | 'accent4';
 
-export interface IAvatarProps {
+export interface AvatarProps {
   /**
    * Color of `avatar`
    * @default "primary"
@@ -17,7 +17,7 @@ export interface IAvatarProps {
 
 const initialsLength = 2;
 
-const Avatar = (props: IAvatarProps) => {
+export const Avatar = (props: AvatarProps) => {
   const {
     appearance = 'primary',
     children

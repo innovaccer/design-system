@@ -1,14 +1,14 @@
 import * as React from 'react';
 
-type IDivIntrinsicProps = JSX.IntrinsicElements['div'];
+type DivIntrinsicProps = JSX.IntrinsicElements['div'];
 
-interface IProps extends IDivIntrinsicProps {
+interface Props extends DivIntrinsicProps {
   template: React.ElementType;
   width: React.CSSProperties['width'];
   rowIndex: number;
 }
 
-class Cell extends React.PureComponent<IProps> {
+class Cell extends React.PureComponent<Props> {
   render() {
     const { template, rowIndex, width, ...rest } = this.props;
     const Template = template;

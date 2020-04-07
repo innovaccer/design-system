@@ -3,7 +3,7 @@ import Checkbox from '@/components/atoms/checkbox';
 
 export type Size = 'regular' | 'tiny';
 
-export interface ICheckboxProps {
+export interface CheckboxProps {
   size?: Size;
   checked?: boolean;
   label: string;
@@ -11,11 +11,11 @@ export interface ICheckboxProps {
   onChange?: (checked: boolean) => void;
 }
 
-export interface IListCheckboxProps {
+export interface ListCheckboxProps {
   label?: string;
   showParentCheckbox?: boolean;
   checked?: boolean;
-  list: ICheckboxProps[];
+  list: CheckboxProps[];
   updatedSelectedArray?: boolean[];
   style?: React.CSSProperties;
   selected?: any[];
@@ -25,7 +25,7 @@ export interface IListCheckboxProps {
   onUpdateSelected?: (selected: number[]) => void;
 }
 
-const ListCheckbox = React.forwardRef<HTMLDivElement, IListCheckboxProps>((props, ref) => {
+export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>((props, ref) => {
   const {
     list,
     showParentCheckbox = true,

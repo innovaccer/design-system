@@ -3,12 +3,12 @@ import Calendar from '../calendar/Calendar';
 import { View, Day, DateType, DateFormat } from '../calendar/types';
 import Text from '@/components/atoms/text';
 import Popover, { Position } from '@/components/molecules/popover';
-import InputMask, { Mask, IInputMaskProps } from '@/components/molecules/inputMask';
+import InputMask, { Mask, InputMaskProps } from '@/components/molecules/inputMask';
 import masks from '@/components/molecules/inputMask/masks';
 import validators from '@/utils/validators';
 import { getDateInfo, convertToDate, compareDate, translateToString, translateToDate, Validator } from '../calendar/utility';
 
-export interface IRangePickerProps {
+export interface RangePickerProps {
   onRangeChange?: (startDate: Date, endDate: Date, startValue?: string, endValue?: string) => void;
   /**
    * Number of visible months
@@ -38,13 +38,13 @@ export interface IRangePickerProps {
   inputFormat?: DateFormat;
   outputFormat?: DateFormat;
   rangeSeparator?: string;
-  startInputProps?: IInputMaskProps;
-  endInputProps?: IInputMaskProps;
+  startnputProps?: InputMaskProps;
+  endnputProps?: InputMaskProps;
   mask?: Mask;
   validator?: Validator;
 }
 
-export const RangePicker: React.FunctionComponent<IRangePickerProps> = props => {
+export const RangePicker: React.FunctionComponent<RangePickerProps> = props => {
   const {
     startDate: startDateProp,
     endDate: endDateProp,
@@ -54,12 +54,12 @@ export const RangePicker: React.FunctionComponent<IRangePickerProps> = props => 
     inputFormat = 'dd/mm/yy',
     outputFormat = 'mm/dd/yy',
     rangeSeparator = ' - ',
-    startInputProps = {
+    startnputProps = {
       name: 'rangePicker-start',
       placeholderChar: '_',
       placeholder: inputFormat
     },
-    endInputProps = {
+    endnputProps = {
       name: 'rangePicker-end',
       placeholderChar: '_',
       placeholder: inputFormat
@@ -201,7 +201,7 @@ export const RangePicker: React.FunctionComponent<IRangePickerProps> = props => 
       setOpen(true);
 
       if (type === 'start') {
-        const placeholderChar = startInputProps.placeholderChar ? startInputProps.placeholderChar : '_';
+        const placeholderChar = startnputProps.placeholderChar ? startnputProps.placeholderChar : '_';
         if (val && !val.includes(placeholderChar)) {
           const d = translateToDate(inputFormat, val, validator);
           if (d) {
@@ -220,7 +220,7 @@ export const RangePicker: React.FunctionComponent<IRangePickerProps> = props => 
         }
       }
       if (type === 'end') {
-        const placeholderChar = endInputProps.placeholderChar ? endInputProps.placeholderChar : '_';
+        const placeholderChar = endnputProps.placeholderChar ? endnputProps.placeholderChar : '_';
         if (val && !val.includes(placeholderChar)) {
           const d = translateToDate(inputFormat, val, validator);
           if (d) setEndDate(d);
@@ -230,11 +230,11 @@ export const RangePicker: React.FunctionComponent<IRangePickerProps> = props => 
 
     const onBlurHandler = (_e: React.ChangeEvent<HTMLInputElement>, val: string, type: string) => {
       if (type === 'start') {
-        const placeholderChar = startInputProps.placeholderChar ? startInputProps.placeholderChar : '_';
+        const placeholderChar = startnputProps.placeholderChar ? startnputProps.placeholderChar : '_';
         if (!val || val.includes(placeholderChar)) setStartDate(undefined);
       }
       if (type === 'end') {
-        const placeholderChar = endInputProps.placeholderChar ? endInputProps.placeholderChar : '_';
+        const placeholderChar = endnputProps.placeholderChar ? endnputProps.placeholderChar : '_';
         if (!val || val.includes(placeholderChar)) setEndDate(undefined);
       }
     };
@@ -259,7 +259,7 @@ export const RangePicker: React.FunctionComponent<IRangePickerProps> = props => 
     const trigger = (
       <div className="RangePicker-input">
         <InputMask
-          {...startInputProps}
+          {...startnputProps}
           mask={mask}
           value={startDate ? translateToString(inputFormat, startDate) : ''}
           onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => onChangeHandler(e, val || '', 'start')}
@@ -272,7 +272,7 @@ export const RangePicker: React.FunctionComponent<IRangePickerProps> = props => 
           <Text>{rangeSeparator}</Text>
         </div>
         <InputMask
-          {...endInputProps}
+          {...endnputProps}
           mask={mask}
           value={endDate ? translateToString(inputFormat, endDate) : ''}
           onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => onChangeHandler(e, val || '', 'end')}

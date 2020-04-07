@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 export type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
 
-export interface ILinkProps {
+export interface LinkProps {
   /**
    * HTML ID of `link`
    */
@@ -29,7 +29,7 @@ export interface ILinkProps {
   children?: React.ReactNode;
 }
 
-const Link: React.FunctionComponent<ILinkProps> = props => {
+export const Link: React.FunctionComponent<LinkProps> = props => {
   const {
     children,
     ...rest

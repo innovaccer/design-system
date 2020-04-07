@@ -1,4 +1,2 @@
-import OutsideClick from './OutsideClick';
-
-export default OutsideClick;
+export { default } from './OutsideClick';
 export * from './OutsideClick';

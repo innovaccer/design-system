@@ -2,12 +2,12 @@ import * as React from 'react';
 import Calendar from '../calendar/Calendar';
 import { View, Day, DateType, DateFormat } from '../calendar/types';
 import Popover, { Position } from '@/components/molecules/popover';
-import InputMask, { Mask, IInputMaskProps } from '@/components/molecules/inputMask';
+import InputMask, { Mask, InputMaskProps } from '@/components/molecules/inputMask';
 import masks from '@/components/molecules/inputMask/masks';
 import validators from '@/utils/validators';
 import { convertToDate, translateToDate, translateToString, Validator } from '../calendar/utility';
 
-export interface IDatePickerProps {
+export interface DatePickerProps {
   /**
    * Callback function called when date is changed
    */
@@ -36,12 +36,12 @@ export interface IDatePickerProps {
   position?: Position;
   inputFormat?: DateFormat;
   outputFormat?: DateFormat;
-  inputProps?: IInputMaskProps;
+  inputProps?: InputMaskProps;
   mask?: Mask;
   validator?: Validator;
 }
 
-export const DatePicker: React.FunctionComponent<IDatePickerProps> = props => {
+export const DatePicker: React.FunctionComponent<DatePickerProps> = props => {
   const {
     date: dateProp,
     withInput = false,

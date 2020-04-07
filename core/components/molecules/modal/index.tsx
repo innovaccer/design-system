@@ -1,4 +1,2 @@
-import Modal from './Modal';
-
-export default Modal;
+export { default, default as Modal } from './Modal';
 export * from './Modal';

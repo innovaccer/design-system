@@ -1,4 +1,2 @@
-import ModalDescription from './ModalDescription';
-
-export default ModalDescription;
+export { default } from './ModalDescription';
 export * from './ModalDescription';

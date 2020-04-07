@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 export type Shadows = 'light' | 'medium' | 'dark';
 
-export interface ICardProps {
+export interface CardProps {
   /**
    * Shadow of the `card`
    */
@@ -18,7 +18,7 @@ export interface ICardProps {
   children: React.ReactNode;
 }
 
-const Card: React.FunctionComponent<ICardProps> = props => {
+export const Card: React.FunctionComponent<CardProps> = props => {
   const {
     shadow,
     children,

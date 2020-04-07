@@ -3,13 +3,13 @@
 import * as React from 'react';
 import { Title, Props, Description, Primary, Story, PropsProps } from '@storybook/addon-docs/blocks';
 
-interface IDocPageProps {
+interface DocPageProps {
   title?: string;
   description?: React.ReactNode;
   props?: PropsProps;
 }
 
-export const docPage = (props: IDocPageProps) => {
+export const docPage = (props: DocPageProps) => {
   const {
     title,
     description,

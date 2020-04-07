@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { boolean } from '@storybook/addon-knobs';
-import addons from '@storybook/addons';
 import { action } from '@storybook/addon-actions';
 import Dialog from '../../Dialog';
 import { docPage } from '@/utils/docPage';

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Input, { IInputProps } from '@/components/atoms/input';
+import Input, { InputProps } from '@/components/atoms/input';
 
 export type Mask = (string | RegExp)[];
 
-export interface IInputMaskProps extends IInputProps {
+export interface InputMaskProps extends InputProps {
   /**
    * Every value of Array represent either fixed char or regular expression for particular index
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
@@ -21,7 +21,7 @@ export interface IInputMaskProps extends IInputProps {
   onClear?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
-export const InputMask = React.forwardRef<HTMLInputElement, IInputMaskProps>((props, forwardRef) => {
+export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, forwardRef) => {
   const {
     mask: maskProp,
     value: valueProp,

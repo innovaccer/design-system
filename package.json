@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
+  "types": "dist/core/index.type.d.ts",
   "directories": {
     "css": "css"
   },
@@ -22,7 +23,8 @@
     "clean-css": "gulp --gulpfile css/gulpfile.js clean",
     "watch-css": "gulp --gulpfile css/gulpfile.js build && gulp --gulpfile css/gulpfile.js watch",
     "build-js": "rollup -c",
-    "build": "npm run build-css && npm run build-js",
+    "build-type": "rm -rf .lib && tsc -b tsconfig.type.json",
+    "build": "npm run build-css && npm run build-js && npm run build-type",
     "version": "./scripts/version.sh"
   },
   "keywords": [],
@@ -38,7 +40,6 @@
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-json": "^4.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
-    "@rollup/plugin-typescript": "^4.0.0",
     "@storybook/addon-a11y": "^5.3.1",
     "@storybook/addon-actions": "^5.2.8",
     "@storybook/addon-docs": "^5.2.8",

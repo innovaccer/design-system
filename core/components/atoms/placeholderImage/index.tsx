@@ -1,4 +1,2 @@
-import PlaceholderImage from './PlaceholderImage';
-
-export default PlaceholderImage;
+export { default } from './PlaceholderImage';
 export * from './PlaceholderImage';

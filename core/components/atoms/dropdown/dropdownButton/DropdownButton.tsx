@@ -6,7 +6,7 @@ type ReactMouseEvent = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) 
 
 export type Size = 'tiny' | 'regular';
 
-export interface IDropdownButtonProps {
+export interface DropdownButtonProps {
   /**
    * @default "regular"
    */
@@ -22,7 +22,7 @@ export interface IDropdownButtonProps {
   onMouseLeave?: ReactMouseEvent;
 }
 
-const DropdownButton = React.forwardRef<HTMLButtonElement, IDropdownButtonProps>((props, ref) => {
+const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>((props, ref) => {
   const {
     size = 'regular',
     children,

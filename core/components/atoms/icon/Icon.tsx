@@ -5,7 +5,7 @@ export type Appearance = 'default' | 'destructive' | 'white' | 'subtle' | 'disab
 
 export type IconType = 'filled' | 'outline' | 'rounded' | 'sharp';
 
-export interface IIconProps {
+export interface IconProps {
   /**
    * Material icon name
    */
@@ -34,7 +34,7 @@ export interface IIconProps {
   helpers?: string[];
 }
 
-const Icon: React.FunctionComponent<IIconProps> = props => {
+export const Icon: React.FunctionComponent<IconProps> = props => {
   const {
     appearance = 'default',
     type = 'filled',

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { ITabProps } from './Tab';
+import { TabProps } from './Tab';
 
-export interface ITabsWrapperProps {
+export interface TabsWrapperProps {
   /**
    * Index of desired selected `tab`
    */
@@ -10,14 +10,14 @@ export interface ITabsWrapperProps {
   /**
    * `Tab` Component will be wrapped in `TabsWrapper` container
    */
-  children: React.FunctionComponentElement<ITabProps>[];
+  children: React.FunctionComponentElement<TabProps>[];
   /**
    * Called with a new index when a new tab is selected by user
    */
   onTabChange?: (tabIndex: number) => void;
 }
 
-export const TabsWrapper: React.FunctionComponent<ITabsWrapperProps> = props => {
+export const TabsWrapper: React.FunctionComponent<TabsWrapperProps> = props => {
   const {
     children = [],
     onTabChange

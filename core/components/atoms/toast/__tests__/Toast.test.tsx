@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import { testHelper, filterUndefined, valueHelper, arrayHelper, testMessageHelper } from '@/utils/testHelper';
-import Toast, { IToastProps as IProps } from '../Toast';
+import Toast, { ToastProps as Props } from '../Toast';
 
 const appearance = ['default', 'info', 'success', 'alert', 'warning'];
 const StringValue = 'Sample string';
@@ -21,7 +21,7 @@ describe('Toast component', () => {
   };
 
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
@@ -46,7 +46,7 @@ describe('Toast component', () => {
   };
 
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(

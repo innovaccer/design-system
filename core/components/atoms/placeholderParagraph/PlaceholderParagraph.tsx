@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 export type Length = 'small' | 'medium' | 'large';
 
-export interface IPlaceholderParagraphProps {
+export interface PlaceholderParagraphProps {
   /**
    * Size of `placeholder`
    * @default "medium"
@@ -11,7 +11,7 @@ export interface IPlaceholderParagraphProps {
   length?: Length;
 }
 
-const PlaceholderParagraph: React.FunctionComponent<IPlaceholderParagraphProps> = props => {
+export const PlaceholderParagraph: React.FunctionComponent<PlaceholderParagraphProps> = props => {
   const { length = 'medium' } = props;
 
   const classes = classNames({

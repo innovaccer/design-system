@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
-import Dropdown, { IDropdownProps as IProps } from '../Dropdown';
+import Dropdown, { DropdownProps as Props } from '../Dropdown';
 import { storyOptions, subInfoItems, iconItems, storySections, multiSelectedStoryOptions, selectedStoryOptions } from '../utils/Options';
 
 const size = ['tiny', 'regular'];
@@ -20,7 +20,7 @@ describe('Dropdown component', () => {
     onChange: valueHelper(FunctionValue, { required: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
@@ -40,7 +40,7 @@ describe('Dropdown component', () => {
     onChange: valueHelper(FunctionValue, { required: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
@@ -61,7 +61,7 @@ describe('Dropdown component', () => {
     onChange: valueHelper(FunctionValue, { required: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
@@ -81,7 +81,7 @@ describe('Dropdown component', () => {
     onChange: valueHelper(FunctionValue, { required: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
@@ -103,7 +103,7 @@ describe('Dropdown component', () => {
     onChange: valueHelper(FunctionValue, { required: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
@@ -124,7 +124,7 @@ describe('Dropdown component', () => {
     onChange: valueHelper(FunctionValue, { required: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
@@ -146,7 +146,7 @@ describe('Dropdown component', () => {
     onChange: valueHelper(FunctionValue, { required: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
@@ -166,7 +166,7 @@ describe('Dropdown component', () => {
     onChange: valueHelper(FunctionValue, { required: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
@@ -186,7 +186,7 @@ describe('Dropdown component', () => {
     onChange: valueHelper(FunctionValue, { required: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
@@ -208,7 +208,7 @@ describe('Dropdown component', () => {
     onChange: valueHelper(FunctionValue, { required: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
@@ -230,7 +230,7 @@ describe('Dropdown component', () => {
     onChange: valueHelper(FunctionValue, { required: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
@@ -252,7 +252,7 @@ describe('Dropdown component', () => {
     onChange: valueHelper(FunctionValue, { required: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
@@ -272,7 +272,7 @@ describe('Dropdown component', () => {
     onChange: valueHelper(FunctionValue, { required: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
@@ -293,7 +293,7 @@ describe('Dropdown component', () => {
     onChange: valueHelper(FunctionValue, { required: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
@@ -315,7 +315,7 @@ describe('Dropdown component', () => {
     onChange: valueHelper(FunctionValue, { required: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(

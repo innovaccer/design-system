@@ -1,4 +1,2 @@
-import Toast from './Toast';
-export default Toast;
-
+export { default } from './Toast';
 export * from './Toast';

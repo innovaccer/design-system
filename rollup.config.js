@@ -13,7 +13,7 @@ const formats = ['esm', 'umd'] // 'cjs'
 
 function globals() {
   return {
-    react: 'React',
+    'react': 'React',
     'react-dom': 'ReactDOM',
     'classnames': 'classNames',
     'react-popper': 'reactPopper',

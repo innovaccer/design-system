@@ -7,7 +7,7 @@ import OutsideClick from '@/components/atoms/outsideClick';
 
 export type Dimension = 'small' | 'medium' | 'large';
 
-export interface IModalProps {
+export interface ModalProps {
   /**
    * Callback for `modal` close event
    */
@@ -35,7 +35,7 @@ export interface IModalProps {
   children?: React.ReactNode;
 }
 
-const Modal: React.FunctionComponent<IModalProps> = props => {
+const Modal = (props: ModalProps) => {
   const {
     dimension = 'small',
     open,

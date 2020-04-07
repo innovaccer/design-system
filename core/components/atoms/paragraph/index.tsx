@@ -1,4 +1,2 @@
-import Text from './Paragraph';
-export default Text;
-
+export { default } from './Paragraph';
 export * from './Paragraph';

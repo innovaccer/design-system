@@ -4,7 +4,7 @@ import classNames from 'classnames';
 export type Appearance = 'primary' | 'secondary' | 'white';
 export type Size = 'small' | 'medium' | 'large';
 
-export interface ISpinnerProps {
+export interface SpinnerProps {
   /**
    * Color of `spinner`
    * @default "primary"
@@ -17,7 +17,7 @@ export interface ISpinnerProps {
   size?: Size;
 }
 
-const Spinner: React.FunctionComponent<ISpinnerProps> = props => {
+export const Spinner: React.FunctionComponent<SpinnerProps> = props => {
   const {
     appearance = 'primary',
     size = 'medium'

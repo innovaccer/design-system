@@ -3,9 +3,9 @@ import { Omit } from 'utility-types';
 import { PopperWrapper } from '@/utils';
 
 export type PositionType = 'top' | 'bottom' | 'left' | 'right';
-type IDivProps = Omit<JSX.IntrinsicElements['div'], 'ref'>;
+type DivProps = Omit<JSX.IntrinsicElements['div'], 'ref'>;
 
-export interface ITooltipProps extends IDivProps {
+export interface TooltipProps extends DivProps {
   /**
    * Text to be rendered in `tooltip`
    */
@@ -43,8 +43,8 @@ interface IState {
  *
  * For left navigation with only icons, show tooltip on the right.
  */
-class Tooltip extends React.Component<ITooltipProps, IState> {
-  constructor(props: ITooltipProps) {
+export class Tooltip extends React.Component<TooltipProps, IState> {
+  constructor(props: TooltipProps) {
     super(props);
 
     this.state = {
