@@ -1,4 +1,5 @@
 /* if the viewport is between 0 to 575 pixels wide. */
+
 .Row {
   display: flex;
   flex-wrap: wrap;
@@ -181,7 +182,7 @@
 }
 
 /* if the viewport is between 576 and 767 pixels wide. */
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: var(--grid-s-breakpoint)) {
   .Col--s {
     flex-basis: 0;
     flex-grow: 1;
@@ -286,7 +287,7 @@
 }
 
 /* if the viewport is between 768 and 991 pixels wide. */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: var(--grid-m-breakpoint)) {
   .Col--m {
     flex-basis: 0;
     flex-grow: 1;
@@ -391,7 +392,7 @@
 }
 
 /* if the viewport is between 992 and 1199 pixels wide. */
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: var(--grid-l-breakpoint)) {
   .Col--l {
     flex-basis: 0;
     flex-grow: 1;
@@ -496,7 +497,7 @@
 }
 
 /* if the viewport is 1200 pixels wide or wider. */
-@media (min-width: 1200px) {
+@media (min-width: var(--grid-xl-breakpoint)) {
   .Col--xl {
     flex-basis: 0;
     flex-grow: 1;
