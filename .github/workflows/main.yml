@@ -62,6 +62,9 @@ jobs:
         with:
           node-version: '10.x'
       
+      - name: npm install
+        run: npm install
+      
       - name: deploy storybook
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
