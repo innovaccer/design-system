@@ -23,7 +23,7 @@
     "watch-css": "gulp --gulpfile css/gulpfile.js build && gulp --gulpfile css/gulpfile.js watch",
     "build-js": "rollup -c",
     "build": "npm run build-css && npm run build-js",
-    "version": "npm run build && git add dist -f && git add css/dist -f"
+    "version": "./scripts/version.sh"
   },
   "keywords": [],
   "author": "",

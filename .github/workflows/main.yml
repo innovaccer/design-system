@@ -1,8 +1,10 @@
-name: "Testing"
-on: [push]
-
+name: "Test build release"
+on:
+  push:
+    branches:
+      - master
 jobs:
-  test:
+  visual_test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -16,3 +18,34 @@ jobs:
         env:
           CHROMATIC_APP_CODE: ${{ secrets.CHROMATIC_APP_CODE }}
           CI: true
+  release:
+    needs: visual_test 
+    name: Release tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      
+      - name: Check for release commit
+        id: 'is_release_commit'
+        uses: /aregee/design-system/actions/check-release-commit@master
+      
+      - uses: actions/setup-node@v1
+        if: steps.is_release_commit.outputs.result == 1
+        with:
+          node-version: '8.x'
+      
+      - name: npm install
+        if: steps.is_release_commit.outputs.result == 1
+        run: npm install
+        
+      - name: setup git
+        if: steps.is_release_commit.outputs.result == 1
+        run: git checkout -b preparing-module-for-npm-publish && git config --global user.email "release-bot@innovaccer.com" && git config --global user.name "release-bot"
+      
+      - name: bump module version
+        if: steps.is_release_commit.outputs.result == 1
+        run: npm version $(git log -1 --pretty=format:%s) -m "Released %s"
+        
+      - name: push module tags to github
+        if: steps.is_release_commit.outputs.result == 1
+        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:master --follow-tags
