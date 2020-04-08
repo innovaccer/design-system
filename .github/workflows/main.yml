@@ -50,22 +50,9 @@ jobs:
       - name: push module tags to github
         if: steps.is_release_commit.outputs.result == 1
         run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:master --follow-tags
-
-  storybook:
-    needs: release
-    name: Deploy storybook
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '10.x'
-      
-      - name: npm install
-        run: npm install
-      
+        
       - name: deploy storybook
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        if: steps.is_release_commit.outputs.result == 1
         run: npm run deploy-storybook -- --ci
