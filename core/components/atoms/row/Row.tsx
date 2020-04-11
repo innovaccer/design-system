@@ -5,6 +5,7 @@ type RowColumns = '1' | '2' | '3' | '4' | '5' | '6';
 
 export interface RowProps {
   group?: RowColumns;
+  groupXS?: RowColumns;
   groupS?: RowColumns;
   groupM?: RowColumns;
   groupL?: RowColumns;
@@ -12,15 +13,16 @@ export interface RowProps {
 }
 
 export const Row: React.FunctionComponent<RowProps> = props => {
-  const { group, groupS, groupM, groupL, groupXL } = props;
+  const { group, groupXS, groupS, groupM, groupL, groupXL } = props;
 
   const classes = classNames({
     Row: true,
-    [`RowCols--${group}`]: group,
-    [`RowCols--s-${groupS}`]: groupS,
-    [`RowCols--m-${groupM}`]: groupM,
-    [`RowCols--l-${groupL}`]: groupL,
-    [`RowCols--xl-${groupXL}`]: groupXL
+    [`RowGroup--${group}`]: group,
+    [`RowGroup--xs-${groupXS}`]: groupXS,
+    [`RowGroup--s-${groupS}`]: groupS,
+    [`RowGroup--m-${groupM}`]: groupM,
+    [`RowGroup--l-${groupL}`]: groupL,
+    [`RowGroup--xl-${groupXL}`]: groupXL
   });
   return <div className={classes}>{props.children}</div>;
 };

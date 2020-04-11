@@ -1,31 +1,37 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-type columns = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'auto';
+type Columns = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'auto';
 
 export interface ColumnProps {
-  size?: columns;
-  sizeS?: columns | 's';
-  sizeM?: columns | 'm';
-  sizeL?: columns | 'l';
-  sizeXL?: columns | 'xl';
+  size?: Columns;
+  sizeXS?: Columns;
+  sizeS?: Columns;
+  sizeM?: Columns;
+  sizeL?: Columns;
+  sizeXL?: Columns;
 }
 
 export const Column: React.FunctionComponent<ColumnProps> = props => {
-  const { size, sizeS, sizeM, sizeL, sizeXL } = props;
+  const {
+    size,
+    sizeXS,
+    sizeS,
+    sizeM,
+    sizeL,
+    sizeXL
+  } = props;
 
   const classes = classNames({
-    ['Col']: !size,
-    ['Col--s']: sizeS && sizeS === 's',
-    ['Col--m']: sizeM && sizeM === 'm',
-    ['Col--l']: sizeL && sizeL === 'l',
-    ['Col--xl']: sizeXL && sizeXL === 'xl',
+    ['Col']: true,
     [`Col--${size}`]: size,
-    [`Col--s-${sizeS}`]: sizeS && sizeS !== 's',
-    [`Col--m-${sizeM}`]: sizeM && sizeM !== 'm',
-    [`Col--l-${sizeL}`]: sizeL && sizeL !== 'l',
-    [`Col--xl-${sizeXL}`]: sizeXL && sizeXL !== 'xl'
+    [`Col--xs-${sizeXS}`]: sizeXS,
+    [`Col--s-${sizeS}`]: sizeS,
+    [`Col--m-${sizeM}`]: sizeM,
+    [`Col--l-${sizeL}`]: sizeL,
+    [`Col--xl-${sizeXL}`]: sizeXL,
   });
+
   return <div className={classes}>{props.children}</div>;
 };
 

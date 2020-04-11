@@ -9,6 +9,9 @@ export const RowGroup = () => {
   const group = optionsKnob('group', { 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6' }, undefined, {
     display: 'inline-radio'
   });
+  const groupXS = optionsKnob('groupXS', { 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6' }, undefined, {
+    display: 'inline-radio'
+  });
   const groupS = optionsKnob('groupS', { 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6' }, undefined, {
     display: 'inline-radio'
   });
@@ -27,7 +30,8 @@ export const RowGroup = () => {
     groupXL,
     groupL,
     groupM,
-    groupS
+    groupS,
+    groupXS
   };
   return (
     <Row {...rowOptions}>
@@ -50,6 +54,28 @@ export const RowGroup = () => {
 export const ColumnSize = () => {
   const size = optionsKnob(
     'size',
+    {
+      1: '1',
+      2: '2',
+      3: '3',
+      4: '4',
+      5: '5',
+      6: '6',
+      7: '7',
+      8: '8',
+      9: '9',
+      10: '10',
+      11: '11',
+      12: '12',
+      auto: 'auto'
+    },
+    undefined,
+    {
+      display: 'inline-radio'
+    }
+  );
+  const sizeXS = optionsKnob(
+    'sizeXS',
     {
       1: '1',
       2: '2',
@@ -164,7 +190,8 @@ export const ColumnSize = () => {
     sizeXL,
     sizeL,
     sizeM,
-    sizeS
+    sizeS,
+    sizeXS
   };
   return (
     <Row>
