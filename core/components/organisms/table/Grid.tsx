@@ -394,7 +394,7 @@ class Grid extends React.PureComponent<Props, IState> {
     );
   }
 
-  getVirtualList = (state: IState, props: Props) => {
+  getVirtualList = (state: IState, props: IProps) => {
     const leftRows = [];
     const centerRows = [];
 

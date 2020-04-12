@@ -23,7 +23,7 @@ export interface ICache {
   height: number[];
 }
 
-export interface Props extends DivProps {
+export interface IProps extends DivProps {
   data: Record<string, any>[];
   /**
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
