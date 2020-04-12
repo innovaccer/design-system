@@ -1,11 +1,21 @@
 type DivProps = JSX.IntrinsicElements['div'];
 
 export interface ISchema {
-  width: number;
-  template: React.ElementType;
+  width?: number;
+  template?: React.ElementType;
   pinned?: 'LEFT';
-  get: (props: any) => any;
-  header: React.ElementType;
+  get?: (props: any) => any;
+  header?: React.ElementType;
+  name: string;
+  displayName: string;
+}
+
+export interface ILoaderSchema {
+  width?: number;
+  withImage?: boolean;
+  round?: boolean;
+  imageSize?: string;
+  pinned?: 'LEFT';
 }
 
 export interface ICache {
@@ -18,21 +28,35 @@ export interface Props extends DivProps {
   /**
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * ISchema: {
-   *    width: number;
-   *    template: React.ElementType;
+   *    width?: number;
+   *    template?: React.ElementType;
    *    pinned?: 'LEFT';
-   *    get: (props: any) => any;
-   *    header: React.ElementType;
+   *    get?: (props: any) => any;
+   *    header?: React.ElementType;
+   *    name: string;
+   *    displayName: string;
    * }
    * </pre>
    */
   schema: ISchema[];
   /**
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * LoaderSchema: {
+   *    width?: number;
+   *    withImage?: boolean;
+   *    round?: boolean;
+   *    imageSize?: string;
+   *    pinned?: 'LEFT';
+   * }
+   * </pre>
+   */
+  loaderSchema?: ILoaderSchema[];
+  /**
    * In case of dynamic height this will be taken
    * as minimun height
    */
-  rowHeight: number;
-  headerHeight: number;
+  rowHeight?: number;
+  headerHeight?: number;
   /**
    * Function which is invoked when user is about to reach
    * the end
@@ -86,6 +110,8 @@ export interface IState {
     centerSchema: ISchema[];
     leftWidth: number;
     centerWidth: number;
+    leftLoaderSchema?: ILoaderSchema[];
+    centerLoaderSchema?: ILoaderSchema[];
   };
 }
 
