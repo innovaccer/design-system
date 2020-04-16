@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { ISchema } from './interfaces';
+import { Schema } from './interfaces';
 
 interface Props {
-  leftSchema: ISchema[];
-  centerSchema: ISchema[];
+  leftSchema: Schema[];
+  centerSchema: Schema[];
   leftWidth: number;
   centerWidth: number;
   getRef: (ref: React.RefObject<HTMLDivElement>) => void;
@@ -15,7 +15,7 @@ interface Props {
 class Header extends React.Component<Props> {
   centerHeaderRef: React.RefObject<HTMLDivElement> = React.createRef();
 
-  getHeader = (schema: ISchema[]) => {
+  getHeader = (schema: Schema[]) => {
     const { headerHeight } = this.props;
     return (
       <div

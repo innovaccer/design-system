@@ -6,7 +6,7 @@ import Header from './Header';
 import Loader from './Loader';
 import Pagination from '@/components/molecules/pagination';
 
-import { IState, Props, ICache, ISchema, IGridActions, ILoaderSchema } from './interfaces';
+import { State, Props, ICache,Schema, GridActions, LoadingSchema } from './interfaces';
 
 interface GridProps extends Props {
   totalPages: number;
@@ -16,7 +16,7 @@ interface GridProps extends Props {
 }
 
 type SimpleObject = Record<string, any>;
-class Grid extends React.PureComponent<GridProps, IState> {
+class Grid extends React.PureComponent<GridProps, State> {
   // Refs
   centerGridRef: React.RefObject<HTMLDivElement> = React.createRef();
   centerScrollRef: React.RefObject<HTMLDivElement> = React.createRef();
@@ -74,7 +74,7 @@ class Grid extends React.PureComponent<GridProps, IState> {
     }
   }
 
-  componentDidUpdate(prevProps: GridProps, prevState: IState) {
+  componentDidUpdate(prevProps: GridProps, prevState: State) {
     if (prevProps.schema !== this.props.schema) {
       this.setState({ gridMeta: this.updateSchema(this.props.schema, this.props.loaderSchema!) });
     }
@@ -120,7 +120,7 @@ class Grid extends React.PureComponent<GridProps, IState> {
    * and will re-render the grid
    * @memberof Grid
    */
-  refreshRows: IGridActions['refreshRows'] = (indexs, all) => {
+  refreshRows: GridActions['refreshRows'] = (indexs, all) => {
     if (all) {
       this.cache.height = [];
       this.calculatedRowHeight = [];
@@ -256,7 +256,7 @@ class Grid extends React.PureComponent<GridProps, IState> {
     this.sync(scrollLeft, scrollTarget);
   }
 
-  updateSchema = (schema: ISchema[], loaderSchema: ILoaderSchema[]) => {
+  updateSchema = (schema: Schema[], loaderSchema: LoadingSchema[]) => {
     const leftSchema = schema.filter(({ pinned }) => pinned === 'LEFT');
     const centerSchema = schema.filter(({ pinned }) => !pinned);
 
@@ -412,7 +412,7 @@ class Grid extends React.PureComponent<GridProps, IState> {
     );
   }
 
-  getVirtualList = (state: IState, props: GridProps) => {
+  getVirtualList = (state: State, props: GridProps) => {
     const leftRows = [];
     const centerRows = [];
 

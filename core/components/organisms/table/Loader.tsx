@@ -2,11 +2,11 @@ import * as React from 'react';
 import Placeholder from '@/components/molecules/placeholder';
 import PlaceholderParagraph from '@/components/atoms/placeholderParagraph';
 import { Size } from '@/components/atoms/placeholderImage';
-import { ILoaderSchema, ISchema } from './interfaces';
+import { LoadingSchema, Schema } from './interfaces';
 
 interface Props {
-  loaderSchema?: ILoaderSchema[];
-  schema?: ISchema[];
+  loaderSchema?: LoadingSchema[];
+  schema?: Schema[];
   rows?: number;
   rowHeight?: number;
   style?: React.CSSProperties;
@@ -14,14 +14,14 @@ interface Props {
 }
 
 class Loader extends React.PureComponent<Props> {
-  defaultLoaderSchema: ILoaderSchema[] = Array(10).fill({
+  defaultLoaderSchema: LoadingSchema[] = Array(10).fill({
     width: 100,
     withImage: false,
     round: false,
     imageSize: 'small',
   });
 
-  getLoaderRows = (rows: number, height: number, loadingSchema: ILoaderSchema[], schema: ISchema[]) => {
+  getLoaderRows = (rows: number, height: number, loadingSchema: LoadingSchema[], schema: Schema[]) => {
     const columnLength = schema ? schema.length : loadingSchema.length;
     const list = Array(rows).fill(0);
     const column = Array(columnLength).fill(0);

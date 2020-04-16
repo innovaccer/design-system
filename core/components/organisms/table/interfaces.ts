@@ -1,6 +1,6 @@
 type DivProps = JSX.IntrinsicElements['div'];
 
-export interface ISchema {
+export interface Schema {
   width?: number;
   template?: React.ElementType;
   pinned?: 'LEFT';
@@ -10,7 +10,7 @@ export interface ISchema {
   displayName: string;
 }
 
-export interface ILoaderSchema {
+export interface LoadingSchema {
   width?: number;
   withImage?: boolean;
   round?: boolean;
@@ -38,7 +38,7 @@ export interface Props extends DivProps {
    * }
    * </pre>
    */
-  schema: ISchema[];
+  schema: Schema[];
   /**
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * LoaderSchema: {
@@ -50,7 +50,7 @@ export interface Props extends DivProps {
    * }
    * </pre>
    */
-  loaderSchema?: ILoaderSchema[];
+  loaderSchema?: LoadingSchema[];
   /**
    * In case of dynamic height this will be taken
    * as minimun height
@@ -94,19 +94,19 @@ export interface Props extends DivProps {
   /**
    * Assign the gridActions to passed variable
    */
-  getGridActions?: (gridActions?: IGridActions) => void;
+  getGridActions?: (gridActions?: GridActions) => void;
 }
 
-export interface IState {
+export interface State {
   isScrolling: Boolean;
   position: number;
   gridMeta: {
-    leftSchema: ISchema[];
-    centerSchema: ISchema[];
+    leftSchema: Schema[];
+    centerSchema: Schema[];
     leftWidth: number;
     centerWidth: number;
-    leftLoaderSchema?: ILoaderSchema[];
-    centerLoaderSchema?: ILoaderSchema[];
+    leftLoaderSchema?: LoadingSchema[];
+    centerLoaderSchema?: LoadingSchema[];
   };
 }
 
@@ -116,6 +116,6 @@ export interface TableState {
   data: any[];
 }
 
-export interface IGridActions {
+export interface GridActions {
   refreshRows: (indexs: number[], all?: boolean) => void;
 }
