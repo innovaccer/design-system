@@ -3,7 +3,6 @@ import Card, { Shadows } from '../Card';
 
 // CSF format story
 export const shadow = () => {
-
   const styles = {
     height: '150px',
     width: '150px',

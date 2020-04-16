@@ -1,7 +1,6 @@
 import * as React from 'react';
 import PlaceholderParagraph, { Length } from '../PlaceholderParagraph';
 import Text from '@/components/atoms/text';
-import { docPage } from '@/utils/docPage';
 
 export const size = () => {
   const length: Length[] = ['small', 'medium', 'large'];
@@ -28,7 +27,9 @@ export default {
   component: PlaceholderParagraph,
   parameters: {
     docs: {
-      page: () => docPage({ title: 'PlaceholderParagraph' })
+      docPage: {
+        title: 'PlaceholderParagraph'
+      }
     }
   }
 };

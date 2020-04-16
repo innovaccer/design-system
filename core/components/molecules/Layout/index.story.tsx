@@ -211,4 +211,8 @@ export const ColumnSize = () => {
   );
 };
 
-export default { title: 'Layout' };
+export default {
+  title: 'Layout',
+  component: Column,
+  subcomponents: { Row }
+};

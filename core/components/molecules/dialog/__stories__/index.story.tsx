@@ -52,5 +52,12 @@ export const all = () => {
 
 export default {
   title: 'Molecules|Dialog',
-  component: Dialog
+  component: Dialog,
+  parameters: {
+    docs: {
+      docPage: {
+        noStory: true
+      }
+    }
+  }
 };

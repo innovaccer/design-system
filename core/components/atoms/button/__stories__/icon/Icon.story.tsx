@@ -3,7 +3,6 @@ import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import Button, { Size } from '../../Button';
 import Text from '@/components/atoms/text';
-import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const icon = () => {
@@ -68,7 +67,9 @@ export default {
   component: Button,
   parameters: {
     docs: {
-      page: () => docPage({ title: 'Button' })
+      docPage: {
+        title: 'Button'
+      }
     }
   }
 };

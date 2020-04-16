@@ -23,7 +23,7 @@ export const Avatar = (props: AvatarProps) => {
     children
   } = props;
 
-  const initials = children.slice(0, initialsLength);
+  const initials = children.trim().slice(0, initialsLength);
   const classes = classNames({
     Avatar: true,
     [`Avatar--${appearance}`]: appearance,

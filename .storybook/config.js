@@ -93,8 +93,9 @@ addParameters({
   },
   docs: {
     container: DocsContainer,
-    page: docPage
-  }
+    page: docPage,
+    docPage: {}
+  },
 });
 
 const infoOptions = {

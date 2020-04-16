@@ -3,7 +3,7 @@ import { boolean } from '@storybook/addon-knobs';
 
 import { action } from '@storybook/addon-actions';
 import Dialog from '../../Dialog';
-import { docPage } from '@/utils/docPage';
+
 import { updateKnob } from '@/utils/storybookEventEmitter';
 
 export const basic = () => {
@@ -36,7 +36,10 @@ export default {
   component: Dialog,
   parameters: {
     docs: {
-      page: () => docPage({ title: 'Dialog' })
+      docPage: {
+        title: 'Dialog',
+        noStory: true
+      },
     }
   }
 };

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Switch from '../../Switch';
 import Text from '@/components/atoms/text';
-import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const alert = () => {
@@ -35,7 +34,9 @@ export default {
   component: Switch,
   parameters: {
     docs: {
-      page: () => docPage({ title: 'Switch' })
+      docPage: {
+        title: 'Switch'
+      }
     }
   }
 };

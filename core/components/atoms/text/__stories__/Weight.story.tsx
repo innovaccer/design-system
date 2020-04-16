@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Text from '../index';
-import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const weight = () => {
@@ -28,7 +27,9 @@ export default {
   component: Text,
   parameters: {
     docs: {
-      page: () => docPage({ title })
+      docPage: {
+        title
+      }
     }
   }
 };

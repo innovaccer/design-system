@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { optionsKnob } from '@storybook/addon-knobs';
 import Paragraph from '../index';
-import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const all = () => {
@@ -33,7 +32,9 @@ export default {
   component: Paragraph,
   parameters: {
     docs: {
-      page: () => docPage({ title })
+      docPage: {
+        title
+      }
     }
   }
 };

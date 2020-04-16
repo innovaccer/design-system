@@ -42,7 +42,9 @@ export default {
   component: Radio,
   parameters: {
     docs: {
-      page: () => docPage({ props: { exclude: ['key'] } })
+      docPage: {
+        props: { exclude: ['key'] }
+      }
     }
   }
 };

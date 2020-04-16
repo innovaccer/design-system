@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Paragraph, { Appearance } from '../index';
 import Text from '@/components/atoms/text';
-import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const appearance = () => {
@@ -41,7 +40,9 @@ export default {
   component: Paragraph,
   parameters: {
     docs: {
-      page: () => docPage({ title })
+      docPage: {
+        title
+      }
     }
   }
 };

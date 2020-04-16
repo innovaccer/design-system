@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Radio from '../index';
-import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const state = () => {
@@ -38,7 +37,9 @@ export default {
   component: Radio,
   parameters: {
     docs: {
-      page: () => docPage({ props: { exclude: ['key'] } })
+      docPage: {
+        props: { exclude: ['key'] }
+      }
     }
   }
 };

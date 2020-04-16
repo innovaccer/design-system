@@ -58,7 +58,33 @@ export const all = () => {
   );
 };
 
+const customCode = `() => {
+  const [open, setOpen] = React.useState(false);
+  return(
+    <Popover closeOnBackdropClick on="click" open={open} onToggle={function (open) { setOpen(open); }} position="bottom-start" style={{
+        height: '100px',
+        padding: '16px',
+        width: '200px'
+      }} trigger={<Button appearance="basic">Open Popup</Button>}
+      >
+      <p>
+        Popup
+      </p>
+      <Button appearance="primary">
+        Click
+      </Button>
+    </Popover>
+  );
+}`;
+
 export default {
   title: 'Molecules|Popover',
-  component: Popover
+  component: Popover,
+  parameters: {
+    docs: {
+      docPage: {
+        customCode
+      }
+    }
+  }
 };

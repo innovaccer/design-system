@@ -2,7 +2,6 @@ import * as React from 'react';
 import Dropdown from '../../Dropdown';
 import Text from '@/components/atoms/text';
 import { storyOptions, selectedStoryOptions, multiSelectedStoryOptions } from '../../utils/Options';
-import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const selected = () => {
@@ -34,7 +33,9 @@ export default {
   component: Dropdown,
   parameters: {
     docs: {
-      page: () => docPage({ title: 'Dropdown' })
+      docPage: {
+        title: 'Dropdown'
+      }
     }
   }
 };

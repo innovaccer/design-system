@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Label from '../index';
-import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const state = () => {
@@ -36,7 +35,9 @@ export default {
   component: Label,
   parameters: {
     docs: {
-      page: () => docPage({ title })
+      docPage: {
+        title
+      }
     }
   }
 };

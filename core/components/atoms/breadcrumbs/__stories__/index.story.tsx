@@ -35,10 +35,5 @@ export const all = () => {
 export default {
   title: 'Atoms|Breadcrumbs',
   component: BreadcrumbsWrapper,
-  subcomponents: { Breadcrumb },
-  parameters: {
-    props: {
-      propTablesExclude: [Link]
-    }
-  }
+  subcomponents: { Breadcrumb }
 };

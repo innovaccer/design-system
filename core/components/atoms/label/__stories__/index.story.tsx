@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { boolean } from '@storybook/addon-knobs';
 import Label from '../index';
-import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const all = () => {
@@ -24,7 +23,9 @@ export default {
   component: Label,
   parameters: {
     docs: {
-      page: () => docPage({ title })
+      docPage: {
+        title
+      }
     }
   }
 };

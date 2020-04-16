@@ -2,7 +2,6 @@ import * as React from 'react';
 import { text, select } from '@storybook/addon-knobs';
 import Link from '../index';
 import { action } from '@storybook/addon-actions';
-import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const all = () => {
@@ -28,7 +27,9 @@ export default {
   component: Link,
   parameters: {
     docs: {
-      page: () => docPage({ title })
+      docPage: {
+        title
+      }
     }
   }
 };

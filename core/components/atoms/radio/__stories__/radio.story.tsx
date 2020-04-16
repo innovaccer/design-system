@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { select, text, boolean } from '@storybook/addon-knobs';
 import Radio from '../index';
-import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const radio = () => {
@@ -42,7 +41,9 @@ export default {
   component: Radio,
   parameters: {
     docs: {
-      page: () => docPage({ props: { exclude: ['key'] } })
+      docPage: {
+        props: { exclude: ['key'] }
+      }
     }
   }
 };

@@ -68,5 +68,12 @@ export const withLabel = () => {
 
 export default {
   title: 'Atoms|Input/Types',
-  component: Input
+  component: Input,
+  parameters: {
+    docs: {
+      docPage: {
+        title: 'Input'
+      }
+    }
+  }
 };

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Heading, { Size } from '../index';
 import Text from '@/components/atoms/text';
-import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const size = () => {
@@ -58,7 +57,9 @@ export default {
   component: Heading,
   parameters: {
     docs: {
-      page: () => docPage({ title })
+      docPage: {
+        title
+      }
     }
   }
 };

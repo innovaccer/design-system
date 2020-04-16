@@ -16,5 +16,12 @@ export const all = () => {
 
 export default {
   title: 'Atoms|Backdrop',
-  component: Backdrop
+  component: Backdrop,
+  parameters: {
+    docs: {
+      docPage: {
+        noStory: true,
+      }
+    }
+  }
 };

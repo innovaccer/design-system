@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Pagination component 
-  type: "basic", page: 1, totalPages: 50, onPageChange: "[Function]"
+  type: "basic", docPage: {
  1`] = `
 <div
   className="Pagination Pagination--basic"
@@ -44,7 +44,7 @@ exports[`Pagination component
 `;
 
 exports[`Pagination component 
-  type: "basic", page: 5, totalPages: 50, onPageChange: "[Function]"
+  type: "basic", docPage: {
  1`] = `
 <div
   className="Pagination Pagination--basic"
@@ -87,7 +87,7 @@ exports[`Pagination component
 `;
 
 exports[`Pagination component 
-  type: "basic", page: 10, totalPages: 50, onPageChange: "[Function]"
+  type: "basic", docPage: {
  1`] = `
 <div
   className="Pagination Pagination--basic"
@@ -130,7 +130,7 @@ exports[`Pagination component
 `;
 
 exports[`Pagination component 
-  type: "basic", page: 15, totalPages: 50, onPageChange: "[Function]"
+  type: "basic", docPage: {
  1`] = `
 <div
   className="Pagination Pagination--basic"
@@ -173,7 +173,7 @@ exports[`Pagination component
 `;
 
 exports[`Pagination component 
-  type: "jump", page: 1, totalPages: 50, onPageChange: "[Function]"
+  type: "jump", docPage: {
  1`] = `
 <div
   className="Pagination Pagination--jump"
@@ -231,7 +231,7 @@ exports[`Pagination component
 `;
 
 exports[`Pagination component 
-  type: "jump", page: 5, totalPages: 50, onPageChange: "[Function]"
+  type: "jump", docPage: {
  1`] = `
 <div
   className="Pagination Pagination--jump"
@@ -289,7 +289,7 @@ exports[`Pagination component
 `;
 
 exports[`Pagination component 
-  type: "jump", page: 10, totalPages: 50, onPageChange: "[Function]"
+  type: "jump", docPage: {
  1`] = `
 <div
   className="Pagination Pagination--jump"
@@ -347,7 +347,7 @@ exports[`Pagination component
 `;
 
 exports[`Pagination component 
-  type: "jump", page: 15, totalPages: 50, onPageChange: "[Function]"
+  type: "jump", docPage: {
  1`] = `
 <div
   className="Pagination Pagination--jump"

@@ -15,6 +15,7 @@
     "removeComments": true,
     "strictNullChecks": true,
     "skipLibCheck": true,
+    "esModuleInterop": true,
     "lib": [
       "es6",
       "es7",

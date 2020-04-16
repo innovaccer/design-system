@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { boolean, optionsKnob } from '@storybook/addon-knobs';
 import Text from '../index';
-import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const all = () => {
@@ -38,7 +37,9 @@ export default {
   component: Text,
   parameters: {
     docs: {
-      page: () => docPage({ title })
+      docPage: {
+        title
+      }
     }
   }
 };

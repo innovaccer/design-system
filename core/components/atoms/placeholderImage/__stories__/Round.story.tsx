@@ -1,7 +1,6 @@
 import * as React from 'react';
 import PlaceholderImage from '../PlaceholderImage';
 import Text from '@/components/atoms/text';
-import { docPage } from '@/utils/docPage';
 
 export const round = () => {
   const imageSize = 'medium';
@@ -27,7 +26,9 @@ export default {
   component: PlaceholderImage,
   parameters: {
     docs: {
-      page: () => docPage({ title: 'PlaceholderImage' })
+      docPage: {
+        title: 'PlaceholderImage'
+      }
     }
   }
 };

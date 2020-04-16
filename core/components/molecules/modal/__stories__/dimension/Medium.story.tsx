@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { boolean } from '@storybook/addon-knobs';
-
 import { action } from '@storybook/addon-actions';
 import Modal from '../../Modal';
 import ModalHeader from '@/components/molecules/modalHeader';
@@ -8,7 +7,7 @@ import ModalDescription from '@/components/molecules/modalDescription';
 import ModalFooter from '@/components/molecules/modalFooter';
 import ModalBody from '@/components/molecules/modalBody';
 import Button from '@/components/atoms/button';
-import { docPage } from '@/utils/docPage';
+
 import { updateKnob } from '@/utils/storybookEventEmitter';
 
 export const medium = () => {
@@ -64,7 +63,10 @@ export default {
   component: Modal,
   parameters: {
     docs: {
-      page: () => docPage({ title: 'Modal' })
+      docPage: {
+        title: 'Modal',
+        noStory: true
+      }
     }
   }
 };

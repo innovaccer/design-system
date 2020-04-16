@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
 import Radio, { Size } from '../index';
-import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const size = () => {
@@ -44,7 +43,9 @@ export default {
   component: Radio,
   parameters: {
     docs: {
-      page: () => docPage({ props: { exclude: ['key'] } })
+      docPage: {
+        props: { exclude: ['key'] }
+      }
     }
   }
 };

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Text, { Appearance } from '../index';
-import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const appearance = () => {
@@ -33,7 +32,9 @@ export default {
   component: Text,
   parameters: {
     docs: {
-      page: () => docPage({ title })
+      docPage: {
+        title
+      }
     }
   }
 };

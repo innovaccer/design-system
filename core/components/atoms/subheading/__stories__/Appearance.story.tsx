@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Subheading, { Appearance } from '../index';
 import Text from '@/components/atoms/text';
-import { docPage } from '@/utils/docPage';
 
 // CSF format story
 export const appearance = () => {
@@ -44,7 +43,9 @@ export default {
   component: Subheading,
   parameters: {
     docs: {
-      page: () => docPage({ title })
+      docPage: {
+        title
+      }
     }
   }
 };
