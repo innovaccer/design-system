@@ -1,7 +1,7 @@
 {
   "name": "design-system",
   "version": "1.0.0-0",
-  "description": "",
+  "description": "React components library project for Innovaccer Design System",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
   "types": "dist/core/index.type.d.ts",
@@ -27,9 +27,8 @@
     "build": "npm run build-css && npm run build-js && npm run build-type",
     "version": "./scripts/version.sh"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Innovaccer",
+  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.7",
@@ -99,5 +98,14 @@
     "storybook-addon-jsx": "^7.1.14",
     "throttle-debounce": "^2.1.0",
     "utility-types": "^3.10.0"
-  }
+  },
+  "bugs": "https://github.com/innovaccer/design-system/issues",
+  "homepage": "https://innovaccer.github.io/design-system",
+  "keywords": [
+    "React",
+    "Design System",
+    "Typescript",
+    "Innovaccer"
+  ],
+  "repository": "github:innovaccer/design-system"
 }
