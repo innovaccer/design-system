@@ -37,5 +37,10 @@ export const appearance = () => {
 
 export default {
   title: 'Atoms|Avatar',
-  component: Avatar
+  component: Avatar,
+  // parameters: {
+    // options: {
+    //   selectedPanel: 'kadira/jsx/panel'
+    // }
+  // }
 };
