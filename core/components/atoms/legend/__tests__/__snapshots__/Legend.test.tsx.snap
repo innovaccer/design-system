@@ -1,0 +1,491 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar component 
+  iconAppearance: "accent1", label: "Legend"
+ 1`] = `
+<div
+  className="Legend"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <i
+    className="material-icons"
+    style={
+      Object {
+        "color": "var(--accent1)",
+        "fontSize": "14px",
+        "marginRight": "var(--spacing)",
+        "width": "14px",
+      }
+    }
+  >
+    fiber_manual_record_filled
+  </i>
+  <Text>
+    Legend
+  </Text>
+</div>
+`;
+
+exports[`Avatar component 
+  iconAppearance: "accent2", label: "Legend"
+ 1`] = `
+<div
+  className="Legend"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <i
+    className="material-icons"
+    style={
+      Object {
+        "color": "var(--accent2)",
+        "fontSize": "14px",
+        "marginRight": "var(--spacing)",
+        "width": "14px",
+      }
+    }
+  >
+    fiber_manual_record_filled
+  </i>
+  <Text>
+    Legend
+  </Text>
+</div>
+`;
+
+exports[`Avatar component 
+  iconAppearance: "accent3", label: "Legend"
+ 1`] = `
+<div
+  className="Legend"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <i
+    className="material-icons"
+    style={
+      Object {
+        "color": "var(--accent3)",
+        "fontSize": "14px",
+        "marginRight": "var(--spacing)",
+        "width": "14px",
+      }
+    }
+  >
+    fiber_manual_record_filled
+  </i>
+  <Text>
+    Legend
+  </Text>
+</div>
+`;
+
+exports[`Avatar component 
+  iconAppearance: "accent4", label: "Legend"
+ 1`] = `
+<div
+  className="Legend"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <i
+    className="material-icons"
+    style={
+      Object {
+        "color": "var(--accent4)",
+        "fontSize": "14px",
+        "marginRight": "var(--spacing)",
+        "width": "14px",
+      }
+    }
+  >
+    fiber_manual_record_filled
+  </i>
+  <Text>
+    Legend
+  </Text>
+</div>
+`;
+
+exports[`Avatar component 
+  iconAppearance: "alert", label: "Legend"
+ 1`] = `
+<div
+  className="Legend"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <i
+    className="material-icons"
+    style={
+      Object {
+        "color": "var(--alert)",
+        "fontSize": "14px",
+        "marginRight": "var(--spacing)",
+        "width": "14px",
+      }
+    }
+  >
+    fiber_manual_record_filled
+  </i>
+  <Text>
+    Legend
+  </Text>
+</div>
+`;
+
+exports[`Avatar component 
+  iconAppearance: "inverse", label: "Legend"
+ 1`] = `
+<div
+  className="Legend"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <i
+    className="material-icons"
+    style={
+      Object {
+        "color": "var(--inverse)",
+        "fontSize": "14px",
+        "marginRight": "var(--spacing)",
+        "width": "14px",
+      }
+    }
+  >
+    fiber_manual_record_filled
+  </i>
+  <Text>
+    Legend
+  </Text>
+</div>
+`;
+
+exports[`Avatar component 
+  iconAppearance: "primary", label: "Legend"
+ 1`] = `
+<div
+  className="Legend"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <i
+    className="material-icons"
+    style={
+      Object {
+        "color": "var(--primary)",
+        "fontSize": "14px",
+        "marginRight": "var(--spacing)",
+        "width": "14px",
+      }
+    }
+  >
+    fiber_manual_record_filled
+  </i>
+  <Text>
+    Legend
+  </Text>
+</div>
+`;
+
+exports[`Avatar component 
+  iconAppearance: "secondary", label: "Legend"
+ 1`] = `
+<div
+  className="Legend"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <i
+    className="material-icons"
+    style={
+      Object {
+        "color": "var(--secondary)",
+        "fontSize": "14px",
+        "marginRight": "var(--spacing)",
+        "width": "14px",
+      }
+    }
+  >
+    fiber_manual_record_filled
+  </i>
+  <Text>
+    Legend
+  </Text>
+</div>
+`;
+
+exports[`Avatar component 
+  iconAppearance: "success", label: "Legend"
+ 1`] = `
+<div
+  className="Legend"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <i
+    className="material-icons"
+    style={
+      Object {
+        "color": "var(--success)",
+        "fontSize": "14px",
+        "marginRight": "var(--spacing)",
+        "width": "14px",
+      }
+    }
+  >
+    fiber_manual_record_filled
+  </i>
+  <Text>
+    Legend
+  </Text>
+</div>
+`;
+
+exports[`Avatar component 
+  iconAppearance: "warning", label: "Legend"
+ 1`] = `
+<div
+  className="Legend"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <i
+    className="material-icons"
+    style={
+      Object {
+        "color": "var(--warning)",
+        "fontSize": "14px",
+        "marginRight": "var(--spacing)",
+        "width": "14px",
+      }
+    }
+  >
+    fiber_manual_record_filled
+  </i>
+  <Text>
+    Legend
+  </Text>
+</div>
+`;
+
+exports[`Avatar component 
+  labelAppearance: "default", label: "Legend"
+ 1`] = `
+<div
+  className="Legend"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <i
+    className="material-icons"
+    style={
+      Object {
+        "color": "var(--inverse)",
+        "fontSize": "14px",
+        "marginRight": "var(--spacing)",
+        "width": "14px",
+      }
+    }
+  >
+    fiber_manual_record_filled
+  </i>
+  <Text
+    appearance="default"
+  >
+    Legend
+  </Text>
+</div>
+`;
+
+exports[`Avatar component 
+  labelAppearance: "destructive", label: "Legend"
+ 1`] = `
+<div
+  className="Legend"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <i
+    className="material-icons"
+    style={
+      Object {
+        "color": "var(--inverse)",
+        "fontSize": "14px",
+        "marginRight": "var(--spacing)",
+        "width": "14px",
+      }
+    }
+  >
+    fiber_manual_record_filled
+  </i>
+  <Text
+    appearance="destructive"
+  >
+    Legend
+  </Text>
+</div>
+`;
+
+exports[`Avatar component 
+  labelAppearance: "disabled", label: "Legend"
+ 1`] = `
+<div
+  className="Legend"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <i
+    className="material-icons"
+    style={
+      Object {
+        "color": "var(--inverse)",
+        "fontSize": "14px",
+        "marginRight": "var(--spacing)",
+        "width": "14px",
+      }
+    }
+  >
+    fiber_manual_record_filled
+  </i>
+  <Text
+    appearance="disabled"
+  >
+    Legend
+  </Text>
+</div>
+`;
+
+exports[`Avatar component 
+  labelAppearance: "subtle", label: "Legend"
+ 1`] = `
+<div
+  className="Legend"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <i
+    className="material-icons"
+    style={
+      Object {
+        "color": "var(--inverse)",
+        "fontSize": "14px",
+        "marginRight": "var(--spacing)",
+        "width": "14px",
+      }
+    }
+  >
+    fiber_manual_record_filled
+  </i>
+  <Text
+    appearance="subtle"
+  >
+    Legend
+  </Text>
+</div>
+`;
+
+exports[`Avatar component 
+  labelAppearance: "white", label: "Legend"
+ 1`] = `
+<div
+  className="Legend"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <i
+    className="material-icons"
+    style={
+      Object {
+        "color": "var(--inverse)",
+        "fontSize": "14px",
+        "marginRight": "var(--spacing)",
+        "width": "14px",
+      }
+    }
+  >
+    fiber_manual_record_filled
+  </i>
+  <Text
+    appearance="white"
+  >
+    Legend
+  </Text>
+</div>
+`;
+
+exports[`Avatar component 
+  labelWeight: "medium", label: "Legend"
+ 1`] = `
+<div
+  className="Legend"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <i
+    className="material-icons"
+    style={
+      Object {
+        "color": "var(--inverse)",
+        "fontSize": "14px",
+        "marginRight": "var(--spacing)",
+        "width": "14px",
+      }
+    }
+  >
+    fiber_manual_record_filled
+  </i>
+  <Text
+    weight="medium"
+  >
+    Legend
+  </Text>
+</div>
+`;
+
+exports[`Avatar component 
+  labelWeight: "strong", label: "Legend"
+ 1`] = `
+<div
+  className="Legend"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <i
+    className="material-icons"
+    style={
+      Object {
+        "color": "var(--inverse)",
+        "fontSize": "14px",
+        "marginRight": "var(--spacing)",
+        "width": "14px",
+      }
+    }
+  >
+    fiber_manual_record_filled
+  </i>
+  <Text
+    weight="strong"
+  >
+    Legend
+  </Text>
+</div>
+`;
