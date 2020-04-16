@@ -2,9 +2,8 @@ import * as React from 'react';
 import { boolean, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import Grid from '../Grid';
+import Table from '../Table';
 import { ISchema, IGridActions, ILoaderSchema } from '../interfaces';
-import { updateKnob } from '@/utils/storybookEventEmitter';
 import Checkbox from '@/components/atoms/checkbox';
 import Avatar, { Appearance } from '@/components/atoms/avatar';
 import Button from '@/components/atoms/button';
@@ -12,18 +11,7 @@ import userData from './users';
 
 type SimpleObject = Record<string, any>;
 const appearance: Appearance[] = ['primary', 'success', 'alert', 'warning'];
-let limit = 1;
-let data: SimpleObject[] = [];
 let gridActions: IGridActions;
-
-const getData = () => {
-  const { users } = userData;
-  for (let i = 0; i < limit; i++) {
-    data = [...data, ...users];
-  }
-
-  return data;
-};
 
 const getSchema = (index: number) => {
   const { schema } = userData;
@@ -32,10 +20,6 @@ const getSchema = (index: number) => {
 
 const loadMore = () => {
   action('load more data')();
-  setTimeout(() => {
-    limit++;
-    updateKnob('loadingMoreData', true);
-  }, 2500);
 };
 
 const getGridActions = (gActions?: IGridActions) => {
@@ -59,14 +43,14 @@ export const all = () => {
     false
   );
 
-  const virtualization = boolean(
-    'virtualization',
-    true
-  );
-
   const pinned = boolean(
     'pinned',
     true
+  );
+
+  const pagination = boolean(
+    'pagination',
+    true,
   );
 
   const buffer = number(
@@ -82,6 +66,11 @@ export const all = () => {
   const headerHeight = number(
     'headerHeight',
     40
+  );
+
+  const limit = number(
+    'limit',
+    10
   );
 
   const [allChecked, setAllChecked] = React.useState(false);
@@ -162,7 +151,7 @@ export const all = () => {
       get: ({ firstName, lastName }: SimpleObject) => ({
         x: firstName[0] + lastName[0],
       }),
-      header: () => <div/>,
+      header: () => <div />,
       name: '',
       displayName: '',
     },
@@ -219,7 +208,7 @@ export const all = () => {
   }
 
   return (
-    <Grid
+    <Table
       style={{
         maxHeight: '300px',
         maxWidth: 1200,
@@ -232,15 +221,16 @@ export const all = () => {
       dynamicRowHeight={dynamicRowHeight}
       rowHeight={rowHeight}
       headerHeight={headerHeight}
-      virtualization={virtualization}
       schema={schema}
       loaderSchema={loaderSchema}
-      data={getData()}
+      data={userData.users}
+      pagination={pagination}
+      limit={limit}
     />
   );
 };
 
 export default {
   title: 'Organisms|Table',
-  component: Grid
+  component: Table
 };

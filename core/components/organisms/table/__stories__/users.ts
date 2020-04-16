@@ -620,7 +620,7 @@ const schema = [
   }
 ];
 const data = {
-  users,
+  users: [...users, ...users],
   schema,
 }
 

@@ -78,10 +78,6 @@ export interface Props extends DivProps {
    */
   loader?: React.ReactChild;
   /**
-   * Will show loader in last two rows
-   */
-  loadingMoreData?: boolean;
-  /**
    * Will show overlay in place of grid
    */
   showOverlay?: boolean;
@@ -92,10 +88,9 @@ export interface Props extends DivProps {
    */
   dynamicRowHeight?: boolean;
   /**
-   * Grid will be virtualized only visible and buffered rows will be
-   * rendered in the dom
+   * Adds pagination component
    */
-  virtualization?: boolean;
+  pagination?: boolean;
   /**
    * Assign the gridActions to passed variable
    */
@@ -113,6 +108,12 @@ export interface IState {
     leftLoaderSchema?: ILoaderSchema[];
     centerLoaderSchema?: ILoaderSchema[];
   };
+}
+
+export interface TableState {
+  offset: number;
+  totalPages: number;
+  data: any[];
 }
 
 export interface IGridActions {
