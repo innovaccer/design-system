@@ -601,4 +601,27 @@ const users = [
   },
 ];
 
-export default users;
+const schema = [
+  {
+    name: 'name',
+    display_name: 'Name'
+  },
+  {
+    name: 'gender',
+    display_name: 'Gender'
+  },
+  {
+    name: 'email',
+    display_name: 'Email'
+  },
+  {
+    name: '',
+    display_name: 'Note'
+  }
+];
+const data = {
+  users,
+  schema,
+}
+
+export default data;

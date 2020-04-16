@@ -3,12 +3,12 @@ import { boolean, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import Grid from '../Grid';
-import { ISchema, IGridActions } from '../interfaces';
-import users from './users';
+import { ISchema, IGridActions, ILoaderSchema } from '../interfaces';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 import Checkbox from '@/components/atoms/checkbox';
 import Avatar, { Appearance } from '@/components/atoms/avatar';
 import Button from '@/components/atoms/button';
+import userData from './users';
 
 type SimpleObject = Record<string, any>;
 const appearance: Appearance[] = ['primary', 'success', 'alert', 'warning'];
@@ -17,11 +17,17 @@ let data: SimpleObject[] = [];
 let gridActions: IGridActions;
 
 const getData = () => {
+  const { users } = userData;
   for (let i = 0; i < limit; i++) {
     data = [...data, ...users];
   }
 
   return data;
+};
+
+const getSchema = (index: number) => {
+  const { schema } = userData;
+  return schema[index];
 };
 
 const loadMore = () => {
@@ -80,6 +86,37 @@ export const all = () => {
 
   const [allChecked, setAllChecked] = React.useState(false);
 
+  const loaderSchema: ILoaderSchema[] = [
+    {
+      width: 50,
+      round: true,
+      withImage: false,
+      pinned: pinned ? 'LEFT' : undefined,
+    },
+    {
+      round: false,
+      withImage: false,
+      pinned: pinned ? 'LEFT' : undefined,
+    },
+    {
+      width: 200,
+      round: true,
+      pinned: pinned ? 'LEFT' : undefined,
+    },
+    {
+      width: 200,
+    },
+    {
+      width: 200,
+      round: true,
+    },
+    {
+      width: 200,
+      round: false,
+      withImage: false,
+    },
+  ];
+
   const schema: ISchema[] = [
     {
       width: 50,
@@ -108,9 +145,10 @@ export const all = () => {
           </div>
         );
       },
+      name: '',
+      displayName: '',
     },
     {
-      width: 100,
       pinned: pinned ? 'LEFT' : undefined,
       template: ({ x, rowIndex }: SimpleObject) => (
         <div className="image-wrapper">
@@ -124,7 +162,9 @@ export const all = () => {
       get: ({ firstName, lastName }: SimpleObject) => ({
         x: firstName[0] + lastName[0],
       }),
-      header: () => <></>,
+      header: () => <div/>,
+      name: '',
+      displayName: '',
     },
     {
       width: 200,
@@ -138,23 +178,21 @@ export const all = () => {
         firstName,
         lastName,
       }),
-      header: () => <div className="cell-wrapper">Name</div>,
+      name: getSchema(0).name,
+      displayName: getSchema(0).display_name,
     },
     {
       width: 200,
-      template: ({ x }: SimpleObject) => (
-        <div className="cell-wrapper">{x}</div>
-      ),
-      get: ({ gender }: SimpleObject) => ({ x: gender }),
-      header: () => <div className="cell-wrapper">Gender</div>,
+      name: getSchema(1).name,
+      displayName: getSchema(1).display_name,
     },
     {
       width: 200,
-      template: ({ x }: SimpleObject) => (
-        <div className="cell-wrapper ellipsis">{x}</div>
+      template: (props: SimpleObject) => (
+        <div className="cell-wrapper ellipsis">{props[getSchema(2).name]}</div>
       ),
-      get: ({ email }: SimpleObject) => ({ x: email }),
-      header: () => <div className="cell-wrapper">Email</div>,
+      name: getSchema(2).name,
+      displayName: getSchema(2).display_name,
     },
     {
       width: 200,
@@ -170,8 +208,8 @@ export const all = () => {
           )}
         </div>
       ),
-      get: () => ({}),
-      header: () => <div className="cell-wrapper">Note</div>,
+      name: getSchema(3).name,
+      displayName: getSchema(3).display_name,
     },
   ];
 
@@ -196,6 +234,7 @@ export const all = () => {
       headerHeight={headerHeight}
       virtualization={virtualization}
       schema={schema}
+      loaderSchema={loaderSchema}
       data={getData()}
     />
   );

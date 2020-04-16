@@ -25,10 +25,12 @@ class Header extends React.Component<Props> {
         }}
         className="row header"
       >
-        {schema.map(({ width, header: HeaderComp }, j) => {
+        {schema.map(({ width = 100, header: HeaderComp, displayName }, j) => {
+          const defautHeader = () => <div className="cell-wrapper">{displayName}</div>;
+          const HeaderComponent = !HeaderComp ? defautHeader : HeaderComp;
           return (
             <div className="cell" key={j} style={{ width }}>
-              <HeaderComp />
+              <HeaderComponent />
             </div>
           );
         })}
