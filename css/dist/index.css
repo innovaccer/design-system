@@ -806,6 +806,18 @@ body {
   color: var(--text-white);
 }
 
+.Legend {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.Legend:hover {
+    cursor: pointer;
+}
 /* badge */
 
 .Avatar {
