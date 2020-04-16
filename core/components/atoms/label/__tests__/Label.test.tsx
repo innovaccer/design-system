@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Label, { ILabelProps as IProps } from '../Label';
+import Label, { LabelProps as Props } from '../Label';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const BooleanValue = [true, false];
@@ -10,7 +10,7 @@ const mapper = {
 
 describe('Label component', () => {
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(

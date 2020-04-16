@@ -1,4 +1,2 @@
-import ModalBody from './ModalBody';
-
-export default ModalBody;
+export { default } from './ModalBody';
 export * from './ModalBody';

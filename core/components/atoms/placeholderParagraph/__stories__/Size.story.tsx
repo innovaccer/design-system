@@ -1,10 +1,10 @@
 import * as React from 'react';
-import PlaceholderParagraph, { Sizes } from '../PlaceholderParagraph';
+import PlaceholderParagraph, { Length } from '../PlaceholderParagraph';
 import Text from '@/components/atoms/text';
 import { docPage } from '@/utils/docPage';
 
 export const size = () => {
-  const length: Sizes[] = ['small', 'medium', 'large'];
+  const length: Length[] = ['small', 'medium', 'large'];
 
   return (
     <div>

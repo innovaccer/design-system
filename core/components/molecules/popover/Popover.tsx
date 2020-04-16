@@ -5,7 +5,7 @@ import { PopperWrapper } from '@/utils';
 export type Position = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end';
 type ActionType = 'click' | 'hover';
 
-export interface IPopoverProps {
+export interface PopoverProps {
   /**
    *  Position to place the `trigger`
    * @default "bottom"
@@ -57,7 +57,7 @@ export interface IPopoverProps {
   onToggle: (open: boolean, type?: string) => void;
 }
 
-const Popover: React.FunctionComponent<IPopoverProps> = props => {
+export const Popover: React.FunctionComponent<PopoverProps> = props => {
   const {
     position = 'bottom',
     closeOnBackdropClick = true,

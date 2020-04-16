@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import PlaceholderImage, { Size } from '@/components/atoms/placeholderImage';
 
-export interface IPlaceholderProps {
+export interface PlaceholderProps {
   /**
    * Shows `placeholder` along with image
    */
@@ -23,7 +23,7 @@ export interface IPlaceholderProps {
   style?: React.CSSProperties;
 }
 
-const Placeholder: React.FunctionComponent<IPlaceholderProps> = props => {
+export const Placeholder: React.FunctionComponent<PlaceholderProps> = props => {
   const {
     imageSize = 'small',
     withImage,

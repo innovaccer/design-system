@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Subheading, { ISubheadingProps as IProps } from '../Subheading';
+import Subheading, { SubheadingProps as Props } from '../Subheading';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const appearance = ['default', 'subtle', 'disabled', 'white'];
@@ -11,7 +11,7 @@ const mapper = {
 
 describe('Subheading component', () => {
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(

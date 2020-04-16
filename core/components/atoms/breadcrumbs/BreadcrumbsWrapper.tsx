@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Heading from '@/components/atoms/heading';
 
-export interface IBreadcrumbsWrapperProps {
+export interface BreadcrumbsWrapperProps {
   /**
    * Heading of breadcrumb
    */
@@ -12,7 +12,7 @@ export interface IBreadcrumbsWrapperProps {
   children: React.ReactNode;
 }
 
-export const BreadcrumbsWrapper: React.FunctionComponent<IBreadcrumbsWrapperProps> = props => {
+export const BreadcrumbsWrapper: React.FunctionComponent<BreadcrumbsWrapperProps> = props => {
   const {
     children,
     heading,

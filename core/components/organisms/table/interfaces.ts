@@ -1,4 +1,4 @@
-type IDivProps = JSX.IntrinsicElements['div'];
+type DivProps = JSX.IntrinsicElements['div'];
 
 export interface ISchema {
   width: number;
@@ -13,7 +13,7 @@ export interface ICache {
   height: number[];
 }
 
-export interface IProps extends IDivProps {
+export interface Props extends DivProps {
   data: Record<string, any>[];
   /**
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">

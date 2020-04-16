@@ -3,14 +3,14 @@ import classNames from 'classnames';
 import Heading from '@/components/atoms/heading';
 import Text from '@/components/atoms/text';
 
-export interface IModalHeaderProps {
+export interface ModalHeaderProps {
   icon?: string;
   heading?: string;
   onClose: (reason?: string, event?: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   subHeading?: string;
 }
 
-const ModalHeader: React.FunctionComponent<IModalHeaderProps> = props => {
+export const ModalHeader: React.FunctionComponent<ModalHeaderProps> = props => {
   const { heading = '', icon = '', subHeading = '' } = props;
 
   const classes = classNames({

@@ -1,4 +1,2 @@
-import Placeholder from './Placeholder';
-
-export default Placeholder;
+export { default } from './Placeholder';
 export * from './Placeholder';

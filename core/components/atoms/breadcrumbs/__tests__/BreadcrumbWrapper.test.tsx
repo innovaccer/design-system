@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import BreadcrumbWrapper, { IBreadcrumbsWrapperProps as IProps } from '../BreadcrumbsWrapper';
+import BreadcrumbWrapper, { BreadcrumbsWrapperProps as Props } from '../BreadcrumbsWrapper';
 import Breadcrumb from '../Breadcrumb';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -14,7 +14,7 @@ const Mapper = {
 
 describe('BreadcrumbWrapper component', () => {
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
     const {
       children,
       ...rest

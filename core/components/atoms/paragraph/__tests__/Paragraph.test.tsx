@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Paragraph, { IParagraphProps as IProps } from '../Paragraph';
+import Paragraph, { ParagraphProps as Props } from '../Paragraph';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const appearance = ['default', 'white', 'destructive', 'subtle', 'disabled'];
@@ -11,7 +11,7 @@ const mapper = {
 
 describe('Paragraph component', () => {
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(

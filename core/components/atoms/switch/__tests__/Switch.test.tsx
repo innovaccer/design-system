@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
-import Switch, { ISwitchProps as IProps } from '../Switch';
+import Switch, { SwitchProps as Props } from '../Switch';
 
 export const size = ['tiny', 'regular'];
 export const appearance = ['primary', 'alert', 'success', 'warning'];
@@ -15,7 +15,7 @@ describe('Switch component', () => {
   };
 
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
     it(testMessageHelper(attr), () => {
       const tree = shallow(
         <Switch
@@ -35,7 +35,7 @@ describe('Switch component', () => {
   };
 
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
     it(testMessageHelper(attr), () => {
       const tree = shallow(
         <Switch

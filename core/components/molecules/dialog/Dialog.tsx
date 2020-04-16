@@ -5,7 +5,7 @@ import ModalDescription from '@/components/molecules/modalDescription';
 import ModalFooter from '@/components/molecules/modalFooter';
 import Button, { Appearance } from '@/components/atoms/button';
 
-export interface IDialogProps {
+export interface DialogProps {
   /**
    * Callback for `dialog` close event
    */
@@ -64,7 +64,7 @@ export interface IDialogProps {
   secondaryButtonCallback: () => void;
 }
 
-const Dialog: React.FunctionComponent<IDialogProps> = props => {
+const Dialog: React.FunctionComponent<DialogProps> = props => {
   const {
     dimension = 'small',
     primaryButtonAppearance = 'primary',

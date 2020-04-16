@@ -1,4 +1,2 @@
-import ListCheckbox from './ListCheckbox';
-export default ListCheckbox;
-
+export { default } from './ListCheckbox';
 export * from './ListCheckbox';

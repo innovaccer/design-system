@@ -1,4 +1,2 @@
-import PlaceholderParagraph from './PlaceholderParagraph';
-
-export default PlaceholderParagraph;
+export { default } from './PlaceholderParagraph';
 export * from './PlaceholderParagraph';

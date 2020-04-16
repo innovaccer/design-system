@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Spinner, { ISpinnerProps as IProps } from '../Spinner';
+import Spinner, { SpinnerProps as Props } from '../Spinner';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const appearance = ['primary', 'secondary', 'white'];
@@ -12,7 +12,7 @@ describe('Spinner component', () => {
   };
 
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
@@ -33,7 +33,7 @@ describe('Spinner component', () => {
   };
 
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(

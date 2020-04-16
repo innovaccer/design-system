@@ -9,7 +9,7 @@ export type InputType = 'text' | 'password' | 'number';
 export type AutoComplete = 'on' | 'off';
 export type Size = 'tiny' | 'regular' | 'large';
 
-export interface IInputProps {
+export interface InputProps {
   /**
    * Name of the `input`
    */
@@ -91,7 +91,7 @@ export interface IInputProps {
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }
 
-export const Input = React.forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
+export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
     size = 'regular',
     clearButton = true,

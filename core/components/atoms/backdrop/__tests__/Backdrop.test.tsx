@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Backdrop, { IBackdropProps as IProps } from '../Backdrop';
+import Backdrop, { BackdropProps as Props } from '../Backdrop';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const booleanValue = [true, false];
@@ -11,7 +11,7 @@ describe('Backdrop component', () => {
   };
 
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(

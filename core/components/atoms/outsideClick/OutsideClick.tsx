@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-type IDivProps = JSX.IntrinsicElements['div'];
+export type DivProps = JSX.IntrinsicElements['div'];
 
-interface IProps extends IDivProps {
+export interface OutsideClickProps extends DivProps {
   /**
    * Trigger the function on outside click
    */
@@ -17,12 +17,12 @@ interface IProps extends IDivProps {
 /**
  * Handle click outside component
  * @class OutsideClick
- * @extends {React.Component<IProps, never>}
+ * @extends {React.Component<OutsideClickProps, never>}
  */
-class OutsideClick extends React.Component<IProps, never> {
+export class OutsideClick extends React.Component<OutsideClickProps, never> {
   public container: React.RefObject<HTMLDivElement>;
 
-  constructor(props: IProps) {
+  constructor(props: OutsideClickProps) {
     super(props);
     this.container = React.createRef<HTMLDivElement>();
   }
@@ -73,5 +73,4 @@ class OutsideClick extends React.Component<IProps, never> {
   }
 }
 
-export { IProps, IDivProps };
 export default OutsideClick;

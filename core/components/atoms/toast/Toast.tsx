@@ -17,7 +17,7 @@ export type Action = {
   onClick: (e: React.MouseEvent) => void
 };
 
-export interface IToastProps {
+export interface ToastProps {
   /**
    * Title of `toast`
    */
@@ -45,7 +45,7 @@ export interface IToastProps {
   onClose?: () => void;
 }
 
-const Toast: React.FunctionComponent<IToastProps> = props => {
+export const Toast: React.FunctionComponent<ToastProps> = props => {
   const {
     appearance = 'default',
     title,

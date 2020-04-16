@@ -1,0 +1,32 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": ".lib",
+    "incremental": true,
+    "esModuleInterop": true,
+    "composite": true,
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "declarationDir": "dist",
+    "lib": [
+      "es6",
+      "es7",
+      "es2017",
+      "dom"
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "core/*"
+      ]
+    }
+  },
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules",
+    "core/**/__tests__",
+    "core/**/__stories__",
+    ".github"
+  ]
+}

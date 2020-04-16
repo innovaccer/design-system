@@ -6,7 +6,7 @@ export type Size = 'default' | 'm' | 'l' | 'xl' | 'xxl';
 
 export type Appearance = 'default' | 'subtle' | 'disabled' | 'white';
 
-export interface IHeadingProps {
+export interface HeadingProps {
   /**
    * Text to be rendered
    */
@@ -31,7 +31,7 @@ const sizeMap = {
   default: 'h3'
 };
 
-const Heading = (props: IHeadingProps) => {
+export const Heading = (props: HeadingProps) => {
   const {
     size = 'default',
     appearance = 'default',

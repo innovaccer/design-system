@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 type RowColumns = '1' | '2' | '3' | '4' | '5' | '6';
 
-interface IProps {
+export interface RowProps {
   group?: RowColumns;
   groupS?: RowColumns;
   groupM?: RowColumns;
@@ -11,7 +11,7 @@ interface IProps {
   groupXL?: RowColumns;
 }
 
-const Row: React.FunctionComponent<IProps> = props => {
+export const Row: React.FunctionComponent<RowProps> = props => {
   const { group, groupS, groupM, groupL, groupXL } = props;
 
   const classes = classNames({

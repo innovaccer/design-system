@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 export type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled';
 
-export interface ITextProps {
+export interface TextProps {
   /**
    * Text to be rendered
    * @type {string}
@@ -25,7 +25,7 @@ export interface ITextProps {
   appearance?: Appearance;
 }
 
-const Text = (props: ITextProps) => {
+export const Text = (props: TextProps) => {
   const {
     appearance = 'default',
     children,

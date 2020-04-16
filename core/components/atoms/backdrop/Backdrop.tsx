@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 const { useEffect, useState } = React;
 
-export interface IBackdropProps {
+export interface BackdropProps {
   /**
    * Handles open/close state
    * @default false
@@ -12,7 +12,7 @@ export interface IBackdropProps {
   open: boolean;
 }
 
-const Backdrop: React.FunctionComponent<IBackdropProps> = props => {
+const Backdrop = (props: BackdropProps) => {
   const [savedBodyOverflow, setBodyOverflow] = useState<string | null>(null);
   const [backdropClasses, setClasses] = useState<string>('Backdrop');
   const { open = false } = props;
@@ -54,14 +54,14 @@ const Backdrop: React.FunctionComponent<IBackdropProps> = props => {
     };
   }, [open]);
 
-  const BacdropElement = ReactDOM.createPortal(
+  const BackdropElement = ReactDOM.createPortal(
     (
       <div className={backdropClasses} />
     ),
     document.body
   );
 
-  return BacdropElement;
+  return BackdropElement;
 };
 
 export default Backdrop;

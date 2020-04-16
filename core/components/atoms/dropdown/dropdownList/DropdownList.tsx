@@ -35,7 +35,7 @@ export interface Subheading {
   [key: number]: string;
 }
 
-export interface IDropdownListProps {
+export interface DropdownListProps {
   /**
    * Size of `dropdown`
    * @default "regular"
@@ -118,7 +118,7 @@ export interface IDropdownListProps {
   style?: React.CSSProperties;
 }
 
-interface IOptionsProps extends IDropdownListProps {
+interface OptionsProps extends DropdownListProps {
   listOptions: Option[];
   searchTerm: string;
   bottomOptionsSliced?: boolean;
@@ -147,7 +147,7 @@ const usePrevious = (value: any) => {
   return ref.current;
 };
 
-const DropdownList: React.FunctionComponent<IOptionsProps> = props => {
+const DropdownList: React.FunctionComponent<OptionsProps> = props => {
   const {
     subheading = {},
     listOptions = [],

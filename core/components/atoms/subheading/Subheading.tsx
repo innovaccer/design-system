@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 export type Appearance = 'default' | 'subtle' | 'disabled' | 'white';
 
-export interface ISubheadingProps {
+export interface SubheadingProps {
   /**
    * Text to be rendered
    * @type {string}
@@ -17,7 +17,7 @@ export interface ISubheadingProps {
   appearance?: Appearance;
 }
 
-const Subheading = (props: ISubheadingProps) => {
+export const Subheading = (props: SubheadingProps) => {
   const {
     appearance = 'default',
     children,

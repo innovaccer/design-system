@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 type columns = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'auto';
 
-interface IProps {
+export interface ColumnProps {
   size?: columns;
   sizeS?: columns | 's';
   sizeM?: columns | 'm';
@@ -11,7 +11,7 @@ interface IProps {
   sizeXL?: columns | 'xl';
 }
 
-const Column: React.FunctionComponent<IProps> = props => {
+export const Column: React.FunctionComponent<ColumnProps> = props => {
   const { size, sizeS, sizeM, sizeL, sizeXL } = props;
 
   const classes = classNames({

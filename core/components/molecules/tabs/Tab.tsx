@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-export interface ITabProps {
+export interface TabProps {
   label: React.ReactNode;
 }
 
-export const Tab: React.FunctionComponent<ITabProps> = props => {
+export const Tab: React.FunctionComponent<TabProps> = props => {
   const {
     children,
   } = props;

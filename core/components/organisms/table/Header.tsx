@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { ISchema } from '.';
+import { ISchema } from './interfaces';
 
-interface IProps {
+interface Props {
   leftSchema: ISchema[];
   centerSchema: ISchema[];
   leftWidth: number;
@@ -12,7 +12,7 @@ interface IProps {
 }
 
 // TODO: Stop header rendering on every render without causing any side effect
-class Header extends React.Component<IProps> {
+class Header extends React.Component<Props> {
   centerHeaderRef: React.RefObject<HTMLDivElement> = React.createRef();
 
   getHeader = (schema: ISchema[]) => {

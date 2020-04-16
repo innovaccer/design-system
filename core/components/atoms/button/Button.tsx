@@ -8,7 +8,7 @@ export type Size = 'tiny' | 'regular' | 'large';
 
 export type Alignment = 'left' | 'right';
 
-export interface IButtonProps {
+export interface ButtonProps {
   /**
    * The size of `button`
    * @default "regular"
@@ -53,7 +53,7 @@ export interface IButtonProps {
   onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-const Button: React.FunctionComponent<IButtonProps> = props => {
+export const Button: React.FunctionComponent<ButtonProps> = props => {
   const {
     appearance = 'basic',
     size = 'regular',

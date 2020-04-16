@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-interface IProps {
+interface Props {
   children: React.ReactNode;
   componentType: string;
   className?: string;
 }
 
-const GenericText = ({ children, componentType = 'span', className, ...props }: IProps) => {
+const GenericText = ({ children, componentType = 'span', className, ...props }: Props) => {
   return React.createElement(componentType, { ...props, className }, children);
 };
 

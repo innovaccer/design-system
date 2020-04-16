@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Breadcrumb, { IBreadcrumbProps as IProps } from '../Breadcrumb';
+import Breadcrumb, { BreadcrumbProps as Props } from '../Breadcrumb';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const ReactNode = [(<h2>Hello World</h2>)];
@@ -11,7 +11,7 @@ const Mapper = {
 
 describe('Breadcrumb component', () => {
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
     const { children } = attr;
 
     it(testMessageHelper(attr), () => {

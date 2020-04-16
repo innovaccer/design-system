@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Modal, { IModalProps as IProps } from '../Modal';
+import Modal, { ModalProps as Props } from '../Modal';
 import ModalHeader from '@/components/molecules/modalHeader';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -24,7 +24,7 @@ const mapper = {
 
 describe('Modal component', () => {
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
     const { children, ...rest } = attr;
 
     it(testMessageHelper(attr), () => {

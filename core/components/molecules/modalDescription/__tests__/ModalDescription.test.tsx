@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import ModalDescription, { IModalDescriptionProps as IProps } from '../ModalDescription';
+import ModalDescription, { ModalDescriptionProps as Props } from '../ModalDescription';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const BooleanValue = [true, false];
@@ -14,7 +14,7 @@ const Mapper = {
 
 describe('ModalDescription component', () => {
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(

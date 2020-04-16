@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 export type Size = 'small' | 'medium' | 'large';
 
-export interface IPlaceholderImageProps {
+export interface PlaceholderImageProps {
   /**
    * changes shape of `placeholder` to circle
    */
@@ -15,7 +15,7 @@ export interface IPlaceholderImageProps {
   imageSize?: Size;
 }
 
-const PlaceholderImage: React.FunctionComponent<IPlaceholderImageProps> = props => {
+export const PlaceholderImage: React.FunctionComponent<PlaceholderImageProps> = props => {
   const {
     imageSize = 'small',
     round,

@@ -1,4 +1,2 @@
-import Radio from './Radio';
-export default Radio;
-
+export { default } from './Radio';
 export * from './Radio';

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Card, { ICardProps as IProps } from '../Card';
+import Card, { CardProps as Props } from '../Card';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const Shadow = ['light', 'medium', 'dark'];
@@ -16,7 +16,7 @@ const Mapper = {
 
 describe('Card component', () => {
   const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as IProps;
+    const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(

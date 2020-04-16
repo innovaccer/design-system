@@ -4,7 +4,7 @@ import Text from '@/components/atoms/text';
 
 export type Size = 'regular' | 'tiny';
 
-export interface IRadioProps {
+export interface RadioProps {
   /**
    * Size of `radio`
    * @default "regular"
@@ -36,7 +36,7 @@ export interface IRadioProps {
   onChange?: (checked: boolean) => void;
 }
 
-export const Radio = React.forwardRef<HTMLInputElement, IRadioProps>((props, forwardedRef) => {
+export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forwardedRef) => {
   const {
     size = 'regular',
     label,

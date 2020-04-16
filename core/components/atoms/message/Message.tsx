@@ -11,7 +11,7 @@ const IconMapping = {
   alert: 'error',
 };
 
-export interface IMessageProps {
+export interface MessageProps {
   /**
    * Color of `message`
    * @default "default"
@@ -28,7 +28,7 @@ export interface IMessageProps {
   children: React.ReactNode;
 }
 
-const Message: React.FunctionComponent<IMessageProps> = props => {
+export const Message: React.FunctionComponent<MessageProps> = props => {
   const {
     appearance = 'default',
     title,

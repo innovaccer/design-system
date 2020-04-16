@@ -2,7 +2,7 @@ import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
 
-export interface ILabelProps {
+export interface LabelProps {
   /**
    * Text to be rendered
    * @type {React.ReactNode}
@@ -14,7 +14,7 @@ export interface ILabelProps {
   disabled?: boolean;
 }
 
-const Label = (props: ILabelProps) => {
+export const Label = (props: LabelProps) => {
   const {
     disabled,
     children,
