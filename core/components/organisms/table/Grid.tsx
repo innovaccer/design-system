@@ -4,11 +4,19 @@ import { throttle, debounce } from 'throttle-debounce';
 import Cell from './Cell';
 import Header from './Header';
 import Loader from './Loader';
+import Pagination from '@/components/molecules/pagination';
 
 import { IState, Props, ICache, ISchema, IGridActions, ILoaderSchema } from './interfaces';
 
+interface GridProps extends Props {
+  totalPages: number;
+  offset: number;
+  loadingMoreData?: boolean;
+  onPageChange?: (pageNo: number) => void;
+}
+
 type SimpleObject = Record<string, any>;
-class Grid extends React.PureComponent<Props, IState> {
+class Grid extends React.PureComponent<GridProps, IState> {
   // Refs
   centerGridRef: React.RefObject<HTMLDivElement> = React.createRef();
   centerScrollRef: React.RefObject<HTMLDivElement> = React.createRef();
@@ -20,6 +28,7 @@ class Grid extends React.PureComponent<Props, IState> {
   calculatedRowHeight: number[] = [];
   calculatedRowTopPosition: number[] = [];
   calculateRowHeight = false;
+  totalPages: number = 0;
   rowHeight: number;
   headerHeight: number;
 
@@ -44,12 +53,14 @@ class Grid extends React.PureComponent<Props, IState> {
   public static defaultProps = {
     buffer: 5,
     virtualization: true,
+    pagination: false,
   };
 
-  constructor(props: Props) {
+  constructor(props: GridProps) {
     super(props);
     this.rowHeight = props.rowHeight ? props.rowHeight : 50;
     this.headerHeight = props.headerHeight ? props.headerHeight : 40;
+
     this.state = {
       position: 0,
       isScrolling: false,
@@ -63,7 +74,7 @@ class Grid extends React.PureComponent<Props, IState> {
     }
   }
 
-  componentDidUpdate(prevProps: Props, prevState: IState) {
+  componentDidUpdate(prevProps: GridProps, prevState: IState) {
     if (prevProps.schema !== this.props.schema) {
       this.setState({ gridMeta: this.updateSchema(this.props.schema, this.props.loaderSchema!) });
     }
@@ -89,6 +100,14 @@ class Grid extends React.PureComponent<Props, IState> {
     ) {
       this.rowHeight = this.props.rowHeight ? this.props.rowHeight : this.rowHeight;
       this.headerHeight = this.props.headerHeight ? this.props.headerHeight : this.headerHeight;
+    }
+
+    if (prevProps.pagination !== this.props.pagination) {
+      this.gridRef.current!.scrollTop = 0;
+      this.loadMoreDataPosition = {
+        position: -1,
+        end: -1,
+      };
     }
   }
 
@@ -287,7 +306,6 @@ class Grid extends React.PureComponent<Props, IState> {
 
     // set scrolling to false once scroll is paused for a definite time
     this.debouncedSetScroll(false);
-
     this.loadMoreData(position, visibleCount, data.length);
   }
 
@@ -349,8 +367,8 @@ class Grid extends React.PureComponent<Props, IState> {
   }: {
     index: number;
     rowHeight: number;
-    row: Props['data'][0];
-    schema: Props['schema'];
+    row: GridProps['data'][0];
+    schema: GridProps['schema'];
     dynamicRowHeight: boolean;
   }) => {
     return (
@@ -379,10 +397,10 @@ class Grid extends React.PureComponent<Props, IState> {
 
           const getObj = !get ? defaultGet : get;
           const templateComp = !template ? defaultTemplate : template;
-
+          const rowIndex = this.props.pagination ? index + this.props.offset : index;
           return (
             <Cell
-              rowIndex={index}
+              rowIndex={rowIndex}
               key={j}
               width={width}
               template={templateComp}
@@ -394,29 +412,23 @@ class Grid extends React.PureComponent<Props, IState> {
     );
   }
 
-  getVirtualList = (state: IState, props: IProps) => {
+  getVirtualList = (state: IState, props: GridProps) => {
     const leftRows = [];
     const centerRows = [];
 
     const heightCache = this.cache.height;
-
     const {
       gridMeta: { leftSchema, centerSchema },
     } = state;
-    const { buffer, data, dynamicRowHeight = false, virtualization } = props;
+    const { buffer, data, dynamicRowHeight = false } = props;
     const rowHeight = this.rowHeight;
 
     const position = this.getScrollPosition();
 
     const visibleCount = this.getVisibleRowsCount();
     let start = Math.max(position - visibleCount - buffer!, 0);
-    let end = Math.min(position + visibleCount + buffer!, data.length - 1);
+    const end = Math.min(position + visibleCount + buffer!, data.length - 1);
     const rowCache = this.cache.row;
-
-    if (!virtualization) {
-      start = 0;
-      end = data.length - 1;
-    }
 
     // We can approximate where the user has landed but we can
     // show if the correct row there unitl we have redered all the
@@ -478,7 +490,6 @@ class Grid extends React.PureComponent<Props, IState> {
         heightCache[index] = this.calculatedRowHeight[index];
       }
     }
-
     return { leftGrid: leftRows, centerGrid: centerRows };
   }
 
@@ -510,6 +521,12 @@ class Grid extends React.PureComponent<Props, IState> {
     return total;
   }
 
+  onPageChange = (pageNo: number) => {
+    if (this.props.onPageChange) {
+      this.props.onPageChange(pageNo);
+    }
+  }
+
   render() {
     const {
       data,
@@ -519,7 +536,8 @@ class Grid extends React.PureComponent<Props, IState> {
       buffer: __2,
       getGridActions: __3,
       dynamicRowHeight,
-      virtualization,
+      pagination,
+      totalPages,
       loading,
       loader,
       overlay,
@@ -605,7 +623,7 @@ class Grid extends React.PureComponent<Props, IState> {
         <div
           className="grid"
           ref={this.gridRef}
-          onScroll={virtualization ? this.handleGridScroll : undefined}
+          onScroll={this.handleGridScroll}
         >
           <div
             style={{
@@ -679,6 +697,17 @@ class Grid extends React.PureComponent<Props, IState> {
             )}
           </div>
         </div>
+        {
+          pagination && (
+            <div className="Table-paginationWrapper">
+              <Pagination
+                type={'jump'}
+                totalPages={totalPages}
+                onPageChange={this.onPageChange}
+              />
+            </div>
+          )
+        }
         <div className="grid-scroll">
           <div
             className="grid-scroll-left"

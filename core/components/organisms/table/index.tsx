@@ -1,3 +1,3 @@
-export { default, default as Table } from './Grid';
-export { Props as TableProps } from './interfaces';
+export { default, default as Table } from './Table';
+export { TableProps } from './Table';
 export * from './interfaces';

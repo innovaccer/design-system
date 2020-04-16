@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Placeholder from '@/components/molecules/placeholder';
-import PlaceholderParagraph, { Length } from '@/components/atoms/placeholderParagraph';
+import PlaceholderParagraph from '@/components/atoms/placeholderParagraph';
 import { Size } from '@/components/atoms/placeholderImage';
 import { ILoaderSchema, ISchema } from './interfaces';
 
@@ -12,21 +12,6 @@ interface Props {
   style?: React.CSSProperties;
   className: string;
 }
-
-// export const Placeholder = ({
-//   style,
-//   shimmerWidth,
-// }: {
-//   /**
-//    *  Column width is mandatory for proper rendering
-//    */
-//   style: React.CSSProperties;
-//   shimmerWidth: React.CSSProperties['width'];
-// }) => (
-//   <div className="loader-column" style={style}>
-//     <div className="shimmer" style={{ width: shimmerWidth }}></div>
-//   </div>
-// );
 
 class Loader extends React.PureComponent<Props> {
   defaultLoaderSchema: ILoaderSchema[] = Array(10).fill({
@@ -44,7 +29,6 @@ class Loader extends React.PureComponent<Props> {
     return list.map((_, i) => (
       <div className="loader-row" key={i} style={{ height }}>
         {column.map((col, j) => {
-          const len: Length[] = ['small', 'medium'];
           const {
             withImage = false,
             round = false,
@@ -61,7 +45,7 @@ class Loader extends React.PureComponent<Props> {
               round={round}
               imageSize={imageSize as Size}
             >
-              <PlaceholderParagraph length={len[i % len.length]} />
+              <PlaceholderParagraph />
             </Placeholder>
           );
         })}
