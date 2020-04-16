@@ -2671,6 +2671,7 @@ body {
     background-color: var(--warning-lighter);
 }
 /* Table loader */
+
 .loader-wrapper {
     overflow: hidden;
 }
@@ -2678,7 +2679,7 @@ body {
 .loader-row {
     display: flex;
     &:not(:last-child) {
-    border-bottom: 1px solid #efefef;
+        border-bottom: 1px solid #efefef;
     }
 }
 
@@ -2694,19 +2695,12 @@ body {
     border-radius: 4px;
     max-height: 20px;
     background: #f6f7f8;
-    background-image: linear-gradient(
-    to right,
-    #eeeeee 8%,
-    #dddddd 18%,
-    #eeeeee 33%
-    );
+    background-image: linear-gradient( to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
     background-repeat: no-repeat;
     background-size: 800px 104px;
     display: inline-block;
     position: relative;
-
     -webkit-animation-duration: 1s;
-
             animation-duration: 1s;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
@@ -2718,198 +2712,207 @@ body {
             animation-timing-function: linear;
 }
 
-
 @-webkit-keyframes placeholderShimmer {
     0% {
         background-position: -468px 0;
     }
-
     100% {
         background-position: 468px 0;
     }
 }
-
 
 @keyframes placeholderShimmer {
     0% {
         background-position: -468px 0;
     }
-
     100% {
         background-position: 468px 0;
     }
 }
 
+
 /* Table grid */
+
 .craft-smart-grid {
     border: 1px solid #eee;
     display: flex;
     flex-direction: column;
     height: 100%;
 }
-  
-    .craft-smart-grid * {
-      box-sizing: border-box;
-    }
-  
-    .grid {
-      overflow-y: auto;
-      position: initial;
-    }
-  
-    .grid-body {
-      display: flex;
-      width: auto;
-    }
-  
-    .grid-left,
-    .grid-center {
-      flex-shrink: 0;
-      height: 100%;
-    }
-  
-    .grid-center {
-      width: 100%;
-    }
-  
-    .grid-center-body {
-      position: relative;
-      height: 100%;
-      width: 100%;
-      overflow-x: auto;
-    }
-  
-    .hide-scroll-bar::-webkit-scrollbar {
-      height: 0px; /* Remove scrollbar space */
-      background: transparent; /* Optional: just make scrollbar invisible */
-    }
-  
-    .hide-scroll-bar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  
-    .overflow-y-hidden {
-      overflow-y: hidden;
-    }
-  
-    .grid-left-body {
-      position: relative;
-    }
-  
-    .grid-center-body-inner {
-      height: 100%;
-      overflow: hidden;
-      position: relative;
-    }
-  
-    .row {
-      position: absolute;
-    }
-  
-    .row.header {
-      position: relative;
-    }
-  
-    .grid-center .row {
-      flex-shrink: 0;
-      border-bottom: 1px solid #efefef;
-      display: flex;
-    }
-  
-    .cell {
-      flex-shrink: 0;
-    }
-  
-    .cell:not(:last-child) {
-      border-right: 1px solid #efefef;
-    }
-  
-    .grid-left .row {
-      border-bottom: 1px solid #efefef;
-      border-right: 1px solid #efefef;
-    }
-  
-    .row {
-      display: flex;
-    }
-  
-    .grid-scroll {
-      display: flex;
-      background: #efefef;
-      flex-shrink: 0;
-    }
-  
-    img {
-      height: 30px;
-    }
-  
-    .grid-scroll,
-    .grid-scroll-center > div {
-      height: 12px;
-    }
-  
-    .grid-scroll-center {
-      overflow-x: scroll;
-      -ms-overflow-style: scrollbar;
-      height: 12px;
-    }
-  
-    .partial-loader {
-      width: 100%;
-      position: absolute;
-      border-right: 1px solid #efefef;
-    }
 
-    .partial-loader .loader-column:not(:last-child) {
-        border-right: 1px solid #efefef;
-    }
-  
-    .grid-header {
-      flex-shrink: 0;
-      display: flex;
-      border-bottom: 1px solid #efefef;
-    }
-  
-    .grid-header-left {
-      border-right: 1px solid #efefef;
-    }
-  
-    .grid-header-left,
-    .grid-header-center {
-      flex-shrink: 0;
-      overflow-y: hidden;
-    }
-  
-    .grid-header-center {
-      overflow-x: auto;
-    }
-  
-  .grid-scroll .grid-scroll-center::-webkit-scrollbar {
+.craft-smart-grid * {
+    box-sizing: border-box;
+}
+
+.grid {
+    overflow-y: auto;
+    position: initial;
+}
+
+.grid-body {
+    display: flex;
+    width: auto;
+}
+
+.grid-left,
+.grid-center {
+    flex-shrink: 0;
+    height: 100%;
+}
+
+.grid-center {
+    width: 100%;
+}
+
+.grid-center-body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.hide-scroll-bar::-webkit-scrollbar {
+    height: 0px;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+
+.hide-scroll-bar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.overflow-y-hidden {
+    overflow-y: hidden;
+}
+
+.grid-left-body {
+    position: relative;
+}
+
+.grid-center-body-inner {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.row {
+    position: absolute;
+}
+
+.row.header {
+    position: relative;
+}
+
+.grid-center .row {
+    flex-shrink: 0;
+    border-bottom: 1px solid #efefef;
+    display: flex;
+}
+
+.cell {
+    flex-shrink: 0;
+}
+
+.cell:not(:last-child) {
+    border-right: 1px solid #efefef;
+}
+
+.grid-left .row {
+    border-bottom: 1px solid #efefef;
+    border-right: 1px solid #efefef;
+}
+
+.row {
+    display: flex;
+}
+
+.grid-scroll {
+    display: flex;
+    background: #efefef;
+    flex-shrink: 0;
+}
+
+img {
+    height: 30px;
+}
+
+.grid-scroll,
+.grid-scroll-center>div {
+    height: 12px;
+}
+
+.grid-scroll-center {
+    overflow-x: scroll;
+    -ms-overflow-style: scrollbar;
+    height: 12px;
+}
+
+.partial-loader {
+    width: 100%;
+    position: absolute;
+    border-right: 1px solid #efefef;
+}
+
+.partial-loader .loader-column:not(:last-child) {
+    border-right: 1px solid #efefef;
+}
+
+.grid-header {
+    flex-shrink: 0;
+    display: flex;
+    border-bottom: 1px solid #efefef;
+}
+
+.grid-header-left {
+    border-right: 1px solid #efefef;
+}
+
+.grid-header-left,
+.grid-header-center {
+    flex-shrink: 0;
+    overflow-y: hidden;
+}
+
+.grid-header-center {
+    overflow-x: auto;
+}
+
+.grid-scroll .grid-scroll-center::-webkit-scrollbar {
     -webkit-appearance: none;
     height: 10px;
-  }
-  .grid-scroll .grid-scroll-center::-webkit-scrollbar-thumb {
+}
+
+.grid-scroll .grid-scroll-center::-webkit-scrollbar-thumb {
     border-radius: 8px;
     background-color: rgba(0, 0, 0, 0.2);
-  }
-  
-  .cell-wrapper {
+}
+
+.cell-wrapper {
     padding: 8px 12px;
-  }
-  
-  .ellipsis {
+}
+
+.ellipsis {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-  
-  .image-wrapper {
+}
+
+.image-wrapper {
     display: flex;
     justify-content: center;
     height: 100%;
     padding-top: 8px;
-  }
+}
+
+.Table-paginationWrapper {
+  padding-top: var(--spacing);
+  padding-bottom: var(--spacing);
+  border-top: 1px solid #efefef;
+  display: flex;
+  justify-content: center;
+}
 /* tabs */
 
 .TabsWrapper {
