@@ -3,7 +3,7 @@ import Input, { InputProps } from '@/components/atoms/input';
 
 export type Mask = (string | RegExp)[];
 
-interface extraProps {
+export interface MaskProps {
   /**
    * Every value of Array represent either fixed char or regular expression for particular index
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
@@ -21,7 +21,7 @@ interface extraProps {
   onClear?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
-export type InputMaskProps = InputProps & extraProps;
+export type InputMaskProps = InputProps & MaskProps;
 
 export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, forwardRef) => {
   const {
