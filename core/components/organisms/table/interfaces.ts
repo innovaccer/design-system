@@ -18,7 +18,7 @@ export interface LoadingSchema {
   pinned?: 'LEFT';
 }
 
-export interface ICache {
+export interface Cache {
   row: Record<string, { left: React.ReactElement | null; center: React.ReactElement | null }>;
   height: number[];
 }

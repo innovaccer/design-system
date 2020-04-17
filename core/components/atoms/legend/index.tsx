@@ -1,4 +1,2 @@
-import Legend from './Legend';
-
-export default Legend;
+export { default } from './Legend';
 export * from './Legend';

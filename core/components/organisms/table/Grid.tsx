@@ -6,7 +6,7 @@ import Header from './Header';
 import Loader from './Loader';
 import Pagination from '@/components/molecules/pagination';
 
-import { State, Props, ICache,Schema, GridActions, LoadingSchema } from './interfaces';
+import { State, Props, Cache, Schema, GridActions, LoadingSchema } from './interfaces';
 
 interface GridProps extends Props {
   totalPages: number;
@@ -39,7 +39,7 @@ class Grid extends React.PureComponent<GridProps, State> {
   };
 
   // Cache row with there index
-  cache: ICache = {
+  cache: Cache = {
     row: {},
     // this cache is needed to check for optimization during scroll
     // when user is scroll we can check the cache and row in row cache

@@ -41,7 +41,7 @@ export interface LegendProps {
   onMouseLeave?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-const Legend = (props: LegendProps) => {
+export const Legend = (props: LegendProps) => {
   const {
     icon = 'fiber_manual_record',
     iconAppearance = 'inverse',
@@ -56,7 +56,7 @@ const Legend = (props: LegendProps) => {
     style,
   } = props;
 
-  const LegendClass = classNames({
+  const legendClass = classNames({
     ['Legend']: true,
   });
 
@@ -69,7 +69,7 @@ const Legend = (props: LegendProps) => {
 
   return (
     <div
-      className={LegendClass}
+      className={legendClass}
       onClick={e => onClick && onClick(e)}
       onMouseEnter={e => onMouseEnter && onMouseEnter(e)}
       onMouseLeave={e => onMouseLeave && onMouseLeave(e)}
