@@ -411,7 +411,7 @@ export const Calendar: React.FunctionComponent<CalendarProps> = props => {
 
           const year = yearBlockNav + offset;
           const disabled = compareDate(disabledBefore, 'more', year) || compareDate(disabledAfter, 'less', year);
-          const active = !disabled && yearNav === year;
+          const active = !disabled && !rangePicker && yearNav === year;
 
           const valueClass = classNames({
             'Calendar-value': true,
