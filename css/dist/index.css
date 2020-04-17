@@ -1162,6 +1162,8 @@ body {
 
 .Button-icon {
     line-height: inherit;
+    display: flex;
+    align-items: center;
 }
 
 .Button-icon--left {
@@ -1172,23 +1174,11 @@ body {
     margin-left: var(--spacing);
 }
 
-.Button--tiny .Button-icon {
-    font-size: var(--font-size-s);
-}
-
 .Button--tiny .Button-icon--left {
     margin-right: var(--spacing-m);
 }
 .Button--tiny .Button-icon--right {
     margin-left: var(--spacing-m);
-}
-
-.Button--regular .Button-icon {
-    font-size: var(--font-size-m);
-}
-
-.Button--large .Button-icon {
-    font-size: var(--font-size-l);
 }
 
 .Button--basic {
@@ -1900,15 +1890,11 @@ body {
     font-size: var(--font-size-m);
 }
 
-.Input-wrapper--large .Input-icon {
-    font-size: var(--font-size-l);
-}
-
 .Input-wrapper:focus-within {
     border: var(--spacing-xs) solid var(--primary);
 }
 
-.Input-wrapper:focus-within .Input-icon--left {
+.Input-wrapper:focus-within .Input-icon--left .Icon {
     color: var(--primary);
 }
 
@@ -1917,7 +1903,7 @@ body {
     box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
-.Input-wrapper--error:focus-within .Input-icon--left {
+.Input-wrapper--error:focus-within .Input-icon--left .Icon {
     color: var(--alert);
 }
 
@@ -1926,7 +1912,7 @@ body {
     border-color: var(--secondary-light);
 }
 
-.Input-wrapper--disabled .Input-icon--left {
+.Input-wrapper--disabled .Input-icon--left .Icon{
     color: var(--inverse-lightest);
 }
 
@@ -1996,23 +1982,22 @@ body {
     font-size: var(--font-size-m);
 }
 
-.Input-icon--left {
+.Input-icon--left .Icon {
     margin-right: var(--spacing);
     color: var(--inverse);
 }
 
-.Input-icon--disabled {
+.Input-icon--disabled .Icon{
     color: var(--inverse-lightest);
 }
 
-.Input-icon--right {
+.Input-icon--right .Icon{
     cursor: pointer;
     margin-left: var(--spacing);
     color: var(--inverse-lightest);
 }
 
 .Input-icon--error {
-    color: var(--alert);
     margin-right: var(--spacing-m);
     font-size: var(--font-size);
 }
@@ -2171,9 +2156,10 @@ body {
 }
 
 .Modal-close-icon {
+  display: flex;
+  align-items: center;
   cursor: pointer;
   position: absolute;
-  font-size: var(--font-size-m);
   right: var(--spacing-2);
 }
 
@@ -2209,7 +2195,8 @@ body {
 }
 
 .Modal-header-icon {
-  font-size: var(--font-size-m);
+  display: flex;
+  align-items: center;
   margin-right: var(--spacing-2);
 }
 
@@ -3021,14 +3008,14 @@ img {
     background-color: var(--warning);
 }
 
-.Toast--warning .Toast-icon {
+.Toast--warning {
     color: var(--text);
 }
 
 .Toast-icon {
-    font-size: var(--font-size-m);
+    display: flex;
+    margin-top: var(--spacing-m);
     line-height: var(--font-height-m);
-    color: var(--text-white);
 }
 
 .Toast-icon--left {
