@@ -33,7 +33,7 @@ jobs:
       - uses: actions/setup-node@v1
         if: steps.is_release_commit.outputs.result == 1
         with:
-          node-version: '8.x'
+          node-version: '10.x'
       
       - name: npm install
         if: steps.is_release_commit.outputs.result == 1
