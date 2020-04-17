@@ -1,11 +1,10 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('classnames'), require('react-dom'), require('react-popper'), require('axios')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'react', 'classnames', 'react-dom', 'react-popper', 'axios'], factory) :
-  (global = global || self, factory(global.inno = {}, global.React, global.classNames, global.ReactDOM, global.reactPopper, global.axios));
-}(this, (function (exports, React, classNames, ReactDOM, reactPopper, axios) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('classnames'), require('react-dom'), require('react-popper')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'react', 'classnames', 'react-dom', 'react-popper'], factory) :
+  (global = global || self, factory(global.inno = {}, global.React, global.classNames, global.ReactDOM, global.reactPopper));
+}(this, (function (exports, React, classNames, ReactDOM, reactPopper) { 'use strict';
 
   classNames = classNames && Object.prototype.hasOwnProperty.call(classNames, 'default') ? classNames['default'] : classNames;
-  axios = axios && Object.prototype.hasOwnProperty.call(axios, 'default') ? axios['default'] : axios;
 
   function _typeof(obj) {
     "@babel/helpers - typeof";
@@ -298,12 +297,11 @@
   }
 
   var initialsLength = 2;
-
   var Avatar = function Avatar(props) {
     var _props$appearance = props.appearance,
         appearance = _props$appearance === void 0 ? 'primary' : _props$appearance,
         children = props.children;
-    var initials = children.slice(0, initialsLength);
+    var initials = children.trim().slice(0, initialsLength);
     var classes = classNames(_defineProperty({
       Avatar: true
     }, "Avatar--".concat(appearance), appearance));
@@ -366,10 +364,10 @@
         enableBodyScroll();
       };
     }, [open]);
-    var BacdropElement = ReactDOM.createPortal( /*#__PURE__*/React.createElement("div", {
+    var BackdropElement = ReactDOM.createPortal( /*#__PURE__*/React.createElement("div", {
       className: backdropClasses
     }), document.body);
-    return BacdropElement;
+    return BackdropElement;
   };
 
   var Badge = function Badge(props) {
@@ -408,7 +406,6 @@
     xxl: 'h1',
     "default": 'h3'
   };
-
   var Heading = function Heading(props) {
     var _classNames;
 
@@ -504,7 +501,6 @@
       className: iconClass
     }, icon), children && "".concat(children.charAt(0).toUpperCase()).concat(children.slice(1)));
   };
-
   Button.displayName = 'Button';
 
   var Card = function Card(props) {
@@ -638,11 +634,12 @@
     var _classNames;
 
     var size = props.size,
+        sizeXS = props.sizeXS,
         sizeS = props.sizeS,
         sizeM = props.sizeM,
         sizeL = props.sizeL,
         sizeXL = props.sizeXL;
-    var classes = classNames((_classNames = {}, _defineProperty(_classNames, 'Col', !size), _defineProperty(_classNames, 'Col--s', sizeS && sizeS === 's'), _defineProperty(_classNames, 'Col--m', sizeM && sizeM === 'm'), _defineProperty(_classNames, 'Col--l', sizeL && sizeL === 'l'), _defineProperty(_classNames, 'Col--xl', sizeXL && sizeXL === 'xl'), _defineProperty(_classNames, "Col--".concat(size), size), _defineProperty(_classNames, "Col--s-".concat(sizeS), sizeS && sizeS !== 's'), _defineProperty(_classNames, "Col--m-".concat(sizeM), sizeM && sizeM !== 'm'), _defineProperty(_classNames, "Col--l-".concat(sizeL), sizeL && sizeL !== 'l'), _defineProperty(_classNames, "Col--xl-".concat(sizeXL), sizeXL && sizeXL !== 'xl'), _classNames));
+    var classes = classNames((_classNames = {}, _defineProperty(_classNames, 'Col', true), _defineProperty(_classNames, "Col--".concat(size), size), _defineProperty(_classNames, "Col--xs-".concat(sizeXS), sizeXS), _defineProperty(_classNames, "Col--s-".concat(sizeS), sizeS), _defineProperty(_classNames, "Col--m-".concat(sizeM), sizeM), _defineProperty(_classNames, "Col--l-".concat(sizeL), sizeL), _defineProperty(_classNames, "Col--xl-".concat(sizeXL), sizeXL), _classNames));
     return /*#__PURE__*/React.createElement("div", {
       className: classes
     }, props.children);
@@ -1253,7 +1250,7 @@
           if (offset === yearBlockNav) return undefined;
           var year = yearBlockNav + offset;
           var disabled = compareDate(disabledBefore, 'more', year) || compareDate(disabledAfter, 'less', year);
-          var active = !disabled && yearNav === year;
+          var active = !disabled && !rangePicker && yearNav === year;
           var valueClass = classNames({
             'Calendar-value': true,
             'Calendar-value--active': active,
@@ -2514,6 +2511,8 @@
   };
 
   var DropdownList = function DropdownList(props) {
+    var _classNames3, _classNames4;
+
     var _props$subheading = props.subheading,
         subheading = _props$subheading === void 0 ? {} : _props$subheading,
         _props$listOptions = props.listOptions,
@@ -2526,12 +2525,15 @@
         checkedValuesOffset = _props$checkedValuesO === void 0 ? 2 : _props$checkedValuesO,
         _props$closeOnSelect = props.closeOnSelect,
         closeOnSelect = _props$closeOnSelect === void 0 ? true : _props$closeOnSelect,
+        _props$optionsWrap = props.optionsWrap,
+        optionsWrap = _props$optionsWrap === void 0 ? false : _props$optionsWrap,
         _props$searchResultMe = props.searchResultMessage,
         searchResultMessage = _props$searchResultMe === void 0 ? 'No Result Found' : _props$searchResultMe,
         _props$maxHeight = props.maxHeight,
         maxHeight = _props$maxHeight === void 0 ? 200 : _props$maxHeight,
         _props$bottomScrollOf = props.bottomScrollOffset,
         bottomScrollOffset = _props$bottomScrollOf === void 0 ? 0 : _props$bottomScrollOf,
+        slicedOptionsLength = props.slicedOptionsLength,
         loadingOptions = props.loadingOptions,
         selectAll = props.selectAll,
         placeholder = props.placeholder,
@@ -2652,7 +2654,11 @@
     }, [props.selected]);
     React.useEffect(function () {
       if (props.bottomOptionsSliced && dropdownRef.current) {
-        var updatedScrollTop = dropdownRef.current.scrollTop - limit * 32;
+        var className = checkboxes ? '.ListCheckbox-childWrapper' : '.Option-wrapper';
+        var element = document.querySelectorAll(className);
+        var index = element.length - limit + slicedOptionsLength;
+        var marker = element[index];
+        var updatedScrollTop = marker.offsetTop - maxHeight;
         dropdownRef.current.scrollTop = updatedScrollTop;
         lastScrollTop = updatedScrollTop;
         if (checkboxes) setSelected(checkboxSelected);
@@ -2660,9 +2666,12 @@
     }, [props.bottomOptionsSliced]);
     React.useEffect(function () {
       if (props.topOptionsSliced && dropdownRef.current) {
-        var updatedScrollTop = dropdownRef.current.scrollTop + limit * 32;
-        dropdownRef.current.scrollTop = updatedScrollTop;
-        lastScrollTop = updatedScrollTop;
+        var className = checkboxes ? '.ListCheckbox-childWrapper' : '.Option-wrapper';
+        var element = document.querySelectorAll(className);
+        var index = limit - slicedOptionsLength;
+        var marker = element[index];
+        dropdownRef.current.scrollTop = marker.offsetTop;
+        lastScrollTop = marker.offsetTop;
         if (checkboxes) setSelected(checkboxSelected);
       }
     }, [props.topOptionsSliced]);
@@ -2706,6 +2715,9 @@
       var OptionWrapper = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Option-wrapper', true), _defineProperty(_classNames2, 'Option-wrapper--top', index === 0), _defineProperty(_classNames2, 'Option-wrapper--bottom', index + 1 === listOptions.length), _defineProperty(_classNames2, 'Option-wrapper--icon', optionIcon), _defineProperty(_classNames2, 'Option-wrapper--selected', selected[0] === optionValue), _classNames2));
       return OptionWrapper;
     };
+
+    var dropdownClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Dropdown', true), _defineProperty(_classNames3, 'Dropdown--wrap', optionsWrap), _classNames3));
+    var optionTextClass = classNames((_classNames4 = {}, _defineProperty(_classNames4, 'Option-text', true), _defineProperty(_classNames4, 'Option-text--wrap', optionsWrap), _classNames4));
 
     var onToggleDropdown = function onToggleDropdown() {
       if (!disabled) setDropdownOpen(!dropdownOpen);
@@ -2776,7 +2788,7 @@
       var element = e.target;
       var scrollTop = element.scrollTop;
 
-      if (scrollTop < lastScrollTop) {
+      if (scrollTop <= lastScrollTop) {
         if (scrollTop === 0) onScrollDropdown('up', scrollTop);
       } else {
         var scrollContainerBottomPosition = Math.round(element.scrollTop + element.clientHeight);
@@ -2884,7 +2896,7 @@
       })), /*#__PURE__*/React.createElement("div", {
         className: 'Option-label'
       }, /*#__PURE__*/React.createElement("div", {
-        className: 'Option-text'
+        className: optionTextClass
       }, label), subInfo && /*#__PURE__*/React.createElement("div", {
         className: 'Option-subinfo'
       }, subInfo)));
@@ -2899,7 +2911,7 @@
 
       if (listOptions.length === 0) {
         return /*#__PURE__*/React.createElement("div", {
-          className: 'Dropdown-wrapper'
+          className: 'Dropdown-errorWrapper'
         }, /*#__PURE__*/React.createElement("div", {
           className: 'Option-wrapper'
         }, /*#__PURE__*/React.createElement("div", {
@@ -2924,7 +2936,7 @@
     };
 
     return /*#__PURE__*/React.createElement("div", {
-      className: 'Dropdown',
+      className: dropdownClass,
       onScroll: handleMenuScroll,
       style: dropdownDivStyle
     }, /*#__PURE__*/React.createElement(Popover, {
@@ -2952,6 +2964,7 @@
       resolve({
         offset: offset,
         slicedOptions: searchedOptions.slice(offset, offset + limit),
+        length: searchedOptions.length,
         options: searchedOptions
       });
     });
@@ -2965,37 +2978,28 @@
     });
     return selectedValues;
   };
-  var getIndexesFromSelectedObj = function getIndexesFromSelectedObj() {
-    var selectedArray = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-    return Array.from(Array(selectedArray.length).keys());
-  };
-  var getLabelsFromInd = function getLabelsFromInd(selectedArray, options) {
+  var getLabelsFromSelectedObj = function getLabelsFromSelectedObj(options) {
     var result = [];
-    selectedArray.forEach(function (ind) {
-      result.push(options[ind].label);
+    options.forEach(function (option) {
+      result.push(option.label);
     });
     return result;
   };
 
   var Dropdown = function Dropdown(props) {
-    var _props$offset = props.offset,
-        offset = _props$offset === void 0 ? 0 : _props$offset,
-        _props$limit = props.limit,
+    var _props$limit = props.limit,
         limit = _props$limit === void 0 ? 10 : _props$limit,
-        _props$stateLimit = props.stateLimit,
-        stateLimit = _props$stateLimit === void 0 ? 30 : _props$stateLimit,
         _props$selectAll = props.selectAll,
         selectAll = _props$selectAll === void 0 ? false : _props$selectAll,
-        url = props.url,
         onChange = props.onChange,
-        rest = _objectWithoutProperties(props, ["offset", "limit", "stateLimit", "selectAll", "url", "onChange"]);
+        rest = _objectWithoutProperties(props, ["limit", "selectAll", "onChange"]);
 
-    var _React$useState = React.useState(offset),
+    var _React$useState = React.useState(0),
         _React$useState2 = _slicedToArray(_React$useState, 2),
         topOffset = _React$useState2[0],
         setTopOffset = _React$useState2[1];
 
-    var _React$useState3 = React.useState(offset),
+    var _React$useState3 = React.useState(0),
         _React$useState4 = _slicedToArray(_React$useState3, 2),
         bottomOffset = _React$useState4[0],
         setBottomOffset = _React$useState4[1];
@@ -3025,15 +3029,30 @@
         searchTerm = _React$useState14[0],
         setSearchTerm = _React$useState14[1];
 
+    var _React$useState15 = React.useState(2 * limit),
+        _React$useState16 = _slicedToArray(_React$useState15, 2),
+        stateLimit = _React$useState16[0],
+        setStateLimit = _React$useState16[1];
+
+    var _React$useState17 = React.useState(0),
+        _React$useState18 = _slicedToArray(_React$useState17, 2),
+        slicedOptionLength = _React$useState18[0],
+        setSlicedOptionLength = _React$useState18[1];
+
     var length = props.options ? props.options.length : 0;
 
-    var _React$useState15 = React.useState({
+    var _React$useState19 = React.useState(length),
+        _React$useState20 = _slicedToArray(_React$useState19, 2),
+        optionsLength = _React$useState20[0],
+        setOptionLength = _React$useState20[1];
+
+    var _React$useState21 = React.useState({
       label: [],
       value: []
     }),
-        _React$useState16 = _slicedToArray(_React$useState15, 2),
-        selected = _React$useState16[0],
-        setSelected = _React$useState16[1];
+        _React$useState22 = _slicedToArray(_React$useState21, 2),
+        selected = _React$useState22[0],
+        setSelected = _React$useState22[1];
 
     var getSelectedFromOptions = function getSelectedFromOptions() {
       var selectedValues = [];
@@ -3055,28 +3074,16 @@
       return result;
     };
 
-    var getOptionsfromAPI = function getOptionsfromAPI(updatedOffset, direction) {
-      var optionOffset = updatedOffset ? updatedOffset : offset;
-      axios.get("".concat(url, "?offset=").concat(optionOffset, "&limit=").concat(limit, "&search=").concat(searchTerm)).then(function (res) {
-        var _res$data = res.data,
-            newOffset = _res$data.offset,
-            results = _res$data.results;
-
+    var getDropdownOptions = function getDropdownOptions(updatedOffset, optionsLimit, direction) {
+      getOptions(updatedOffset, optionsLimit, searchTerm, props.options).then(function (res) {
         if (updatedOffset !== undefined && direction !== undefined) {
-          updateOptionsOnScroll(res.data, updatedOffset, direction);
+          var slicedOptions = res.slicedOptions;
+          var slicedLength = limit - slicedOptions.length;
+          setSlicedOptionLength(slicedLength);
+          updateOptionsOnScroll(res, updatedOffset, direction, slicedLength);
         } else {
-          setOptions(results);
-          setBottomOffset(newOffset);
-        }
-      });
-    };
-
-    var getDropdownOptions = function getDropdownOptions(updatedOffset, direction) {
-      var optionOffset = updatedOffset ? updatedOffset : offset;
-      getOptions(optionOffset, limit, searchTerm, props.options).then(function (res) {
-        if (updatedOffset !== undefined && direction !== undefined) {
-          updateOptionsOnScroll(res, updatedOffset, direction);
-        } else {
+          setSlicedOptionLength(0);
+          setOptionLength(res.length);
           setOptions(res.slicedOptions);
           setBottomOffset(res.offset);
         }
@@ -3084,27 +3091,23 @@
     };
 
     React.useEffect(function () {
-      if (!url) {
-        var selectedOptions = getSelectedFromOptions();
-        setSelected(selectedOptions);
-        setSelectedAll(selectAll);
-        getDropdownOptions(undefined, undefined);
-      }
-    }, [props.options, selectAll]);
+      setStateLimit(2 * limit);
+    }, [limit]);
     React.useEffect(function () {
-      getDropdownOptions(undefined, undefined);
+      var selectedOptions = getSelectedFromOptions();
+      setSelected(selectedOptions);
+      setSelectedAll(selectAll);
+      getDropdownOptions(0, limit, undefined);
+    }, [props.options, selectAll, limit]);
+    React.useEffect(function () {
+      getDropdownOptions(0, limit, undefined);
     }, [searchTerm]);
-    React.useEffect(function () {
-      if (!props.options) {
-        getOptionsfromAPI(undefined, undefined);
-      }
-    }, [url, searchTerm]);
 
     var onSearchChange = function onSearchChange(search) {
       setSearchTerm(search);
     };
 
-    var updateOptionsOnScroll = function updateOptionsOnScroll(result, updatedOffset, direction) {
+    var updateOptionsOnScroll = function updateOptionsOnScroll(result, updatedOffset, direction, slicedLength) {
       if (bottomOptionsSliced) setBottomOptionsSliced(false);
       if (topOptionsSliced) setTopOptionsSliced(false);
       var slicedOptions = result.slicedOptions;
@@ -3116,7 +3119,7 @@
 
         if (len > stateLimit) {
           updatedOptions = updatedOptions.slice(len - stateLimit, len);
-          setTopOffset(updatedOffset - stateLimit + limit);
+          setTopOffset(updatedOffset - stateLimit + limit - slicedLength);
           setBottomOptionsSliced(true);
         }
 
@@ -3138,15 +3141,11 @@
     };
 
     var OnScrollOptions = function OnScrollOptions(direction) {
-      var updatedOffset = direction === 'down' ? bottomOffset + limit : topOffset - limit;
-
-      if (updatedOffset >= 0) {
-        if (url && !props.options) {
-          getOptionsfromAPI(updatedOffset, direction);
-        } else {
-          getDropdownOptions(updatedOffset, direction);
-        }
-      }
+      var condition = direction === 'down' ? bottomOffset + limit > optionsLength : topOffset - limit < 0;
+      var optionsLimit = condition ? direction === 'down' ? optionsLength - bottomOffset : topOffset : limit;
+      var updatedOffset = direction === 'down' ? bottomOffset + optionsLimit : topOffset - optionsLimit;
+      var offsetInOptions = updatedOffset >= 0 && updatedOffset !== optionsLength && optionsLimit > 0;
+      if (offsetInOptions) getDropdownOptions(updatedOffset, optionsLimit, direction);
     };
 
     var onChangeOptions = function onChangeOptions(selectedArray) {
@@ -3157,8 +3156,7 @@
       if (props.options) {
         var optionsCopy = props.options.slice();
         var selectedArray = selectedAllOptions ? getValuesFromSelectedObj(optionsCopy) : [];
-        var selectedArrayInd = selectedAllOptions ? getIndexesFromSelectedObj(optionsCopy) : [];
-        var selectedArrayLabel = selectedAllOptions ? getLabelsFromInd(selectedArrayInd, optionsCopy) : [];
+        var selectedArrayLabel = selectedAllOptions ? getLabelsFromSelectedObj(optionsCopy) : [];
         setSelected({
           label: selectedArrayLabel,
           value: selectedArray
@@ -3170,6 +3168,7 @@
 
     return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(DropdownList, _extends({
       listOptions: options,
+      slicedOptionsLength: slicedOptionLength,
       selectAll: selectedAll,
       selected: selected,
       searchTerm: searchTerm,
@@ -3185,8 +3184,51 @@
       setSearchTerm: onSearchChange
     }, rest)));
   };
-
   Dropdown.displayName = 'Dropdown';
+
+  var Legend = function Legend(props) {
+    var _props$icon = props.icon,
+        icon = _props$icon === void 0 ? 'fiber_manual_record' : _props$icon,
+        _props$iconAppearance = props.iconAppearance,
+        iconAppearance = _props$iconAppearance === void 0 ? 'inverse' : _props$iconAppearance,
+        _props$iconType = props.iconType,
+        iconType = _props$iconType === void 0 ? 'filled' : _props$iconType,
+        _props$iconSize = props.iconSize,
+        iconSize = _props$iconSize === void 0 ? 14 : _props$iconSize,
+        labelAppearance = props.labelAppearance,
+        label = props.label,
+        labelWeight = props.labelWeight,
+        _onMouseEnter = props.onMouseEnter,
+        _onMouseLeave = props.onMouseLeave,
+        _onClick = props.onClick,
+        style = props.style;
+    var legendClass = classNames(_defineProperty({}, 'Legend', true));
+    var styles = {
+      color: "var(--".concat(iconAppearance, ")"),
+      fontSize: "".concat(iconSize, "px"),
+      width: "".concat(iconSize, "px"),
+      marginRight: 'var(--spacing)'
+    };
+    return /*#__PURE__*/React.createElement("div", {
+      className: legendClass,
+      onClick: function onClick(e) {
+        return _onClick && _onClick(e);
+      },
+      onMouseEnter: function onMouseEnter(e) {
+        return _onMouseEnter && _onMouseEnter(e);
+      },
+      onMouseLeave: function onMouseLeave(e) {
+        return _onMouseLeave && _onMouseLeave(e);
+      },
+      style: style
+    }, /*#__PURE__*/React.createElement("i", {
+      className: 'material-icons',
+      style: styles
+    }, "".concat(icon, "_").concat(iconType)), /*#__PURE__*/React.createElement(Text, {
+      appearance: labelAppearance,
+      weight: labelWeight
+    }, label));
+  };
 
   var Link = function Link(props) {
     var children = props.children,
@@ -3207,7 +3249,6 @@
     warning: 'warning',
     alert: 'error'
   };
-
   var Message = function Message(props) {
     var _classNames, _classNames2;
 
@@ -3235,7 +3276,7 @@
   /**
    * Handle click outside component
    * @class OutsideClick
-   * @extends {React.Component<IProps, never>}
+   * @extends {React.Component<OutsideClickProps, never>}
    */
   var OutsideClick = /*#__PURE__*/function (_React$Component) {
     _inherits(OutsideClick, _React$Component);
@@ -3370,13 +3411,14 @@
     var _classNames;
 
     var group = props.group,
+        groupXS = props.groupXS,
         groupS = props.groupS,
         groupM = props.groupM,
         groupL = props.groupL,
         groupXL = props.groupXL;
     var classes = classNames((_classNames = {
       Row: true
-    }, _defineProperty(_classNames, "RowCols--".concat(group), group), _defineProperty(_classNames, "RowCols--s-".concat(groupS), groupS), _defineProperty(_classNames, "RowCols--m-".concat(groupM), groupM), _defineProperty(_classNames, "RowCols--l-".concat(groupL), groupL), _defineProperty(_classNames, "RowCols--xl-".concat(groupXL), groupXL), _classNames));
+    }, _defineProperty(_classNames, "RowGroup--".concat(group), group), _defineProperty(_classNames, "RowGroup--xs-".concat(groupXS), groupXS), _defineProperty(_classNames, "RowGroup--s-".concat(groupS), groupS), _defineProperty(_classNames, "RowGroup--m-".concat(groupM), groupM), _defineProperty(_classNames, "RowGroup--l-".concat(groupL), groupL), _defineProperty(_classNames, "RowGroup--xl-".concat(groupXL), groupXL), _classNames));
     return /*#__PURE__*/React.createElement("div", {
       className: classes
     }, props.children);
@@ -3626,15 +3668,25 @@
           },
           className: "row header"
         }, schema.map(function (_ref, j) {
-          var width = _ref.width,
-              HeaderComp = _ref.header;
+          var _ref$width = _ref.width,
+              width = _ref$width === void 0 ? 100 : _ref$width,
+              HeaderComp = _ref.header,
+              displayName = _ref.displayName;
+
+          var defautHeader = function defautHeader() {
+            return /*#__PURE__*/React.createElement("div", {
+              className: "cell-wrapper"
+            }, displayName);
+          };
+
+          var HeaderComponent = !HeaderComp ? defautHeader : HeaderComp;
           return /*#__PURE__*/React.createElement("div", {
             className: "cell",
             key: j,
             style: {
               width: width
             }
-          }, /*#__PURE__*/React.createElement(HeaderComp, null));
+          }, /*#__PURE__*/React.createElement(HeaderComponent, null));
         }));
       });
 
@@ -3720,20 +3772,6 @@
     }, children));
   };
 
-  // export const Placeholder = ({
-  //   style,
-  //   shimmerWidth,
-  // }: {
-  //   /**
-  //    *  Column width is mandatory for proper rendering
-  //    */
-  //   style: React.CSSProperties;
-  //   shimmerWidth: React.CSSProperties['width'];
-  // }) => (
-  //   <div className="loader-column" style={style}>
-  //     <div className="shimmer" style={{ width: shimmerWidth }}></div>
-  //   </div>
-  // );
   var Loader = /*#__PURE__*/function (_React$PureComponent) {
     _inherits(Loader, _React$PureComponent);
 
@@ -3750,10 +3788,17 @@
 
       _this = _super.call.apply(_super, [this].concat(args));
 
-      _defineProperty(_assertThisInitialized(_this), "columns", ['4%', '4%', '14%', '13%', '11%', '7%', '9%', '14%', '11%', '13%']);
+      _defineProperty(_assertThisInitialized(_this), "defaultLoaderSchema", Array(10).fill({
+        width: 100,
+        withImage: false,
+        round: false,
+        imageSize: 'small'
+      }));
 
-      _defineProperty(_assertThisInitialized(_this), "getLoaderRows", function (rows, height) {
+      _defineProperty(_assertThisInitialized(_this), "getLoaderRows", function (rows, height, loadingSchema, schema) {
+        var columnLength = schema ? schema.length : loadingSchema.length;
         var list = Array(rows).fill(0);
+        var column = Array(columnLength).fill(0);
         return list.map(function (_, i) {
           return /*#__PURE__*/React.createElement("div", {
             className: "loader-row",
@@ -3761,16 +3806,28 @@
             style: {
               height: height
             }
-          }, _this.columns.map(function (width, j) {
-            var len = ['small', 'medium'];
+          }, column.map(function (col, j) {
+            var _loadingSchema$j = loadingSchema[j],
+                _loadingSchema$j$with = _loadingSchema$j.withImage,
+                withImage = _loadingSchema$j$with === void 0 ? false : _loadingSchema$j$with,
+                _loadingSchema$j$roun = _loadingSchema$j.round,
+                round = _loadingSchema$j$roun === void 0 ? false : _loadingSchema$j$roun,
+                _loadingSchema$j$imag = _loadingSchema$j.imageSize,
+                imageSize = _loadingSchema$j$imag === void 0 ? 'small' : _loadingSchema$j$imag;
+
+            var _ref = schema ? schema[j] : loadingSchema[j],
+                _ref$width = _ref.width,
+                width = _ref$width === void 0 ? 100 : _ref$width;
+
             return /*#__PURE__*/React.createElement(Placeholder, {
-              key: j,
+              key: "".concat(col, "-").concat(j),
               style: {
                 width: width
-              }
-            }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
-              length: len[i % len.length]
-            }));
+              },
+              withImage: withImage,
+              round: round,
+              imageSize: imageSize
+            }, /*#__PURE__*/React.createElement(PlaceholderParagraph, null));
           }));
         });
       });
@@ -3783,10 +3840,13 @@
       value: function render() {
         var _this$props = this.props,
             rows = _this$props.rows,
-            rowHeight = _this$props.rowHeight;
-        return /*#__PURE__*/React.createElement("div", {
-          className: "loader-wrapper"
-        }, this.getLoaderRows(rows, rowHeight));
+            rowHeight = _this$props.rowHeight,
+            loaderSchema = _this$props.loaderSchema,
+            schema = _this$props.schema,
+            rest = _objectWithoutProperties(_this$props, ["rows", "rowHeight", "loaderSchema", "schema"]);
+
+        var loadingSchema = loaderSchema ? loaderSchema : this.defaultLoaderSchema;
+        return /*#__PURE__*/React.createElement("div", rest, this.getLoaderRows(rows, rowHeight, loadingSchema, schema));
       }
     }]);
 
@@ -3794,52 +3854,86 @@
   }(React.PureComponent);
 
   _defineProperty(Loader, "defaultProps", {
-    rowHeight: 40,
+    rowHeight: 50,
     rows: 20
   });
 
-  var PartialLoader = /*#__PURE__*/function (_React$PureComponent) {
-    _inherits(PartialLoader, _React$PureComponent);
+  var Pagination = function Pagination(props) {
+    var _classNames;
 
-    var _super = _createSuper(PartialLoader);
+    var _props$type = props.type,
+        type = _props$type === void 0 ? 'basic' : _props$type,
+        totalPages = props.totalPages,
+        onPageChange = props.onPageChange;
 
-    function PartialLoader() {
-      _classCallCheck(this, PartialLoader);
+    var _React$useState = React.useState(props.page ? props.page : 1),
+        _React$useState2 = _slicedToArray(_React$useState, 2),
+        page = _React$useState2[0],
+        setPage = _React$useState2[1];
 
-      return _super.apply(this, arguments);
-    }
+    var wrapperClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Pagination', true), _defineProperty(_classNames, "Pagination--".concat(type), type), _classNames));
+    React.useEffect(function () {
+      if (page) onPageChange(page);
+    }, [page]);
 
-    _createClass(PartialLoader, [{
-      key: "render",
-      value: function render() {
-        var _this$props = this.props,
-            rowStyle = _this$props.rowStyle,
-            schema = _this$props.schema,
-            rest = _objectWithoutProperties(_this$props, ["rowStyle", "schema"]);
+    var inputChangeHandler = function inputChangeHandler(e) {
+      e.preventDefault();
+      var val = parseInt(e.target.value.trim(), 10);
 
-        return /*#__PURE__*/React.createElement("div", rest, [0, 1].map(function (i) {
-          return /*#__PURE__*/React.createElement("div", {
-            key: i,
-            className: "loader-row",
-            style: rowStyle
-          }, schema.map(function (_ref, j) {
-            var width = _ref.width;
-            var len = ['small', 'medium'];
-            return /*#__PURE__*/React.createElement(Placeholder, {
-              key: j,
-              style: {
-                width: width
-              }
-            }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
-              length: len[i % len.length]
-            }));
-          }));
-        }));
+      if (!val || val > 0 && val <= totalPages) {
+        setPage(val);
       }
-    }]);
+    };
 
-    return PartialLoader;
-  }(React.PureComponent);
+    var buttonHelper = [];
+    if (type === 'basic') buttonHelper.push('mx-3');else buttonHelper.push('mx-4');
+    return /*#__PURE__*/React.createElement("div", {
+      className: wrapperClass
+    }, /*#__PURE__*/React.createElement(Button, {
+      onClick: function onClick() {
+        return setPage(1);
+      },
+      disabled: page === 1,
+      appearance: "transparent",
+      size: "large",
+      icon: "first_page"
+    }), /*#__PURE__*/React.createElement("div", {
+      className: ['ml-4'].concat(buttonHelper).join(' ')
+    }, /*#__PURE__*/React.createElement(Button, {
+      onClick: function onClick() {
+        return page > 1 && setPage(page - 1);
+      },
+      disabled: page === 1,
+      size: "large",
+      icon: "navigate_before"
+    })), type === 'jump' && /*#__PURE__*/React.createElement("div", {
+      className: "Pagination-pageIndex"
+    }, /*#__PURE__*/React.createElement(Input, {
+      name: "page",
+      type: "number",
+      size: "large",
+      clearButton: false,
+      onChange: inputChangeHandler,
+      value: "".concat(page)
+    }), /*#__PURE__*/React.createElement(Text, null, " of ".concat(totalPages, " pages"))), /*#__PURE__*/React.createElement("div", {
+      className: ['mr-4'].concat(buttonHelper).join(' ')
+    }, /*#__PURE__*/React.createElement(Button, {
+      onClick: function onClick() {
+        return page < totalPages && setPage(page + 1);
+      },
+      disabled: page === totalPages,
+      size: "large",
+      icon: "navigate_next"
+    })), /*#__PURE__*/React.createElement(Button, {
+      onClick: function onClick() {
+        return setPage(totalPages);
+      },
+      disabled: page === totalPages,
+      appearance: "transparent",
+      size: "large",
+      icon: "last_page"
+    }));
+  };
 
   var Grid = /*#__PURE__*/function (_React$PureComponent) {
     _inherits(Grid, _React$PureComponent);
@@ -3871,6 +3965,12 @@
       _defineProperty(_assertThisInitialized(_this), "calculatedRowTopPosition", []);
 
       _defineProperty(_assertThisInitialized(_this), "calculateRowHeight", false);
+
+      _defineProperty(_assertThisInitialized(_this), "totalPages", 0);
+
+      _defineProperty(_assertThisInitialized(_this), "rowHeight", void 0);
+
+      _defineProperty(_assertThisInitialized(_this), "headerHeight", void 0);
 
       _defineProperty(_assertThisInitialized(_this), "loadMoreDataPosition", {
         position: -1,
@@ -3945,7 +4045,7 @@
       });
 
       _defineProperty(_assertThisInitialized(_this), "getVisibleRowsCount", function () {
-        return _this.gridRef.current ? Math.round(_this.gridRef.current.offsetHeight / _this.props.rowHeight) : 0;
+        return _this.gridRef.current ? Math.round(_this.gridRef.current.offsetHeight / _this.rowHeight) : 0;
       });
 
       _defineProperty(_assertThisInitialized(_this), "getScrollPosition", function () {
@@ -3954,12 +4054,10 @@
         }
 
         var scrollTop = _this.gridRef.current.scrollTop;
-        var _this$props = _this.props,
-            dynamicRowHeight = _this$props.dynamicRowHeight,
-            rowHeight = _this$props.rowHeight;
+        var dynamicRowHeight = _this.props.dynamicRowHeight;
 
         if (!dynamicRowHeight) {
-          return Math.round(scrollTop / _this.props.rowHeight);
+          return Math.round(scrollTop / _this.rowHeight);
         }
 
         var index = _this.calculatedRowTopPosition.findIndex(function (position) {
@@ -3974,7 +4072,7 @@
           return 0;
         }
 
-        return Math.round((scrollTop - _this.calculatedRowTopPosition[_this.calculatedRowTopPosition.length - 1]) / rowHeight) + _this.calculatedRowTopPosition.length;
+        return Math.round((scrollTop - _this.calculatedRowTopPosition[_this.calculatedRowTopPosition.length - 1]) / _this.rowHeight) + _this.calculatedRowTopPosition.length;
       });
 
       _defineProperty(_assertThisInitialized(_this), "sync", throttle(75, false, function (scrollLeft, scrollTarget) {
@@ -3998,7 +4096,7 @@
         _this.sync(scrollLeft, scrollTarget);
       });
 
-      _defineProperty(_assertThisInitialized(_this), "updateSchema", function (schema) {
+      _defineProperty(_assertThisInitialized(_this), "updateSchema", function (schema, loaderSchema) {
         var leftSchema = schema.filter(function (_ref) {
           var pinned = _ref.pinned;
           return pinned === 'LEFT';
@@ -4007,17 +4105,27 @@
           var pinned = _ref2.pinned;
           return !pinned;
         });
+        var leftLoaderSchema = loaderSchema ? loaderSchema.filter(function (_ref3) {
+          var pinned = _ref3.pinned;
+          return pinned === 'LEFT';
+        }) : undefined;
+        var centerLoaderSchema = loaderSchema ? loaderSchema.filter(function (_ref4) {
+          var pinned = _ref4.pinned;
+          return !pinned;
+        }) : undefined;
         var leftWidth = leftSchema.reduce(function (total, current) {
-          return total + current.width;
+          return total + (current.width ? current.width : 100);
         }, 0);
         var centerWidth = centerSchema.reduce(function (total, current) {
-          return total + current.width;
+          return total + (current.width ? current.width : 100);
         }, 0);
         return {
           leftSchema: leftSchema,
           centerSchema: centerSchema,
           leftWidth: leftWidth,
-          centerWidth: centerWidth
+          centerWidth: centerWidth,
+          leftLoaderSchema: leftLoaderSchema,
+          centerLoaderSchema: centerLoaderSchema
         };
       });
 
@@ -4100,31 +4208,47 @@
         };
       });
 
-      _defineProperty(_assertThisInitialized(_this), "createRow", function (_ref3) {
-        var index = _ref3.index,
-            rowHeight = _ref3.rowHeight,
-            row = _ref3.row,
-            schema = _ref3.schema,
-            dynamicRowHeight = _ref3.dynamicRowHeight;
+      _defineProperty(_assertThisInitialized(_this), "createRow", function (_ref5) {
+        var index = _ref5.index,
+            row = _ref5.row,
+            schema = _ref5.schema,
+            dynamicRowHeight = _ref5.dynamicRowHeight;
         return /*#__PURE__*/React.createElement("div", {
           "data-row": index,
           style: _objectSpread2({
             width: '100%',
-            height: dynamicRowHeight ? _this.calculatedRowHeight[index] : rowHeight,
+            height: dynamicRowHeight ? _this.calculatedRowHeight[index] : _this.rowHeight,
             transform: "translateY(".concat(_this.getTopPosition(index), "px)")
           }, _this.getHiddenRowStyling(index)),
           className: "row ".concat(row.className || ''),
           key: index
-        }, schema.map(function (_ref4, j) {
-          var width = _ref4.width,
-              template = _ref4.template,
-              get = _ref4.get;
+        }, schema.map(function (_ref6, j) {
+          var _ref6$width = _ref6.width,
+              width = _ref6$width === void 0 ? 100 : _ref6$width,
+              template = _ref6.template,
+              get = _ref6.get,
+              name = _ref6.name;
+          var defaultGet = row[name] ? function (rowObj) {
+            return _defineProperty({}, name, rowObj[name]);
+          } : function () {
+            return {};
+          };
+
+          var defaultTemplate = function defaultTemplate(props) {
+            return /*#__PURE__*/React.createElement("div", {
+              className: "cell-wrapper"
+            }, props[name] ? props[name] : props.rowIndex);
+          };
+
+          var getObj = !get ? defaultGet : get;
+          var templateComp = !template ? defaultTemplate : template;
+          var rowIndex = _this.props.pagination ? index + _this.props.offset : index;
           return /*#__PURE__*/React.createElement(Cell, _extends({
-            rowIndex: index,
+            rowIndex: rowIndex,
             key: j,
             width: width,
-            template: template
-          }, get(row)));
+            template: templateComp
+          }, getObj(row)));
         }));
       });
 
@@ -4137,10 +4261,9 @@
             centerSchema = _state$gridMeta.centerSchema;
         var buffer = props.buffer,
             data = props.data,
-            rowHeight = props.rowHeight,
             _props$dynamicRowHeig = props.dynamicRowHeight,
-            dynamicRowHeight = _props$dynamicRowHeig === void 0 ? false : _props$dynamicRowHeig,
-            virtualization = props.virtualization;
+            dynamicRowHeight = _props$dynamicRowHeig === void 0 ? false : _props$dynamicRowHeig;
+        var rowHeight = _this.rowHeight;
 
         var position = _this.getScrollPosition();
 
@@ -4148,16 +4271,10 @@
 
         var start = Math.max(position - visibleCount - buffer, 0);
         var end = Math.min(position + visibleCount + buffer, data.length - 1);
-        var rowCache = _this.cache.row;
-
-        if (!virtualization) {
-          start = 0;
-          end = data.length - 1;
-        } // We can approximate where the user has landed but we can
+        var rowCache = _this.cache.row; // We can approximate where the user has landed but we can
         // show if the correct row there unitl we have redered all the
         // previous rows once
         // expect the case when table is first rendered
-
 
         if (dynamicRowHeight && !_this.calculatedRowTopPosition[position] && position !== 0) {
           start = Math.min(_this.calculatedRowTopPosition.length - 1, start);
@@ -4212,7 +4329,7 @@
         var dynamicRowHeight = _this.props.dynamicRowHeight;
 
         if (!dynamicRowHeight) {
-          return _this.props.rowHeight * index;
+          return _this.rowHeight * index;
         }
 
         return _this.calculatedRowTopPosition[index];
@@ -4223,27 +4340,34 @@
       });
 
       _defineProperty(_assertThisInitialized(_this), "getGridHeight", function () {
-        var _this$props2 = _this.props,
-            dynamicRowHeight = _this$props2.dynamicRowHeight,
-            data = _this$props2.data,
-            rowHeight = _this$props2.rowHeight,
-            loadingMoreData = _this$props2.loadingMoreData;
+        var _this$props = _this.props,
+            dynamicRowHeight = _this$props.dynamicRowHeight,
+            data = _this$props.data,
+            loadingMoreData = _this$props.loadingMoreData;
 
         if (!dynamicRowHeight) {
-          return data.length * rowHeight + (loadingMoreData ? rowHeight * 2 : 0);
+          return data.length * _this.rowHeight + (loadingMoreData ? _this.rowHeight * 2 : 0);
         }
 
         var total = 0;
         data.forEach(function (__, index) {
-          total += _this.calculatedRowHeight[index] || rowHeight;
+          total += _this.calculatedRowHeight[index] || _this.rowHeight;
         });
         return total;
       });
 
+      _defineProperty(_assertThisInitialized(_this), "onPageChange", function (pageNo) {
+        if (_this.props.onPageChange) {
+          _this.props.onPageChange(pageNo);
+        }
+      });
+
+      _this.rowHeight = _props.rowHeight ? _props.rowHeight : 50;
+      _this.headerHeight = _props.headerHeight ? _props.headerHeight : 40;
       _this.state = {
         position: 0,
         isScrolling: false,
-        gridMeta: _this.updateSchema(_this.props.schema)
+        gridMeta: _this.updateSchema(_this.props.schema, _this.props.loaderSchema)
       };
 
       if (_props.getGridActions) {
@@ -4260,7 +4384,7 @@
       value: function componentDidUpdate(prevProps, prevState) {
         if (prevProps.schema !== this.props.schema) {
           this.setState({
-            gridMeta: this.updateSchema(this.props.schema)
+            gridMeta: this.updateSchema(this.props.schema, this.props.loaderSchema)
           });
         }
 
@@ -4271,27 +4395,41 @@
             this.calulateRowHeightAndRender();
           }
         }
+
+        if (prevProps.rowHeight !== this.props.rowHeight || prevProps.headerHeight !== this.props.headerHeight) {
+          this.rowHeight = this.props.rowHeight ? this.props.rowHeight : this.rowHeight;
+          this.headerHeight = this.props.headerHeight ? this.props.headerHeight : this.headerHeight;
+        }
+
+        if (prevProps.pagination !== this.props.pagination) {
+          this.gridRef.current.scrollTop = 0;
+          this.loadMoreDataPosition = {
+            position: -1,
+            end: -1
+          };
+        }
       }
     }, {
       key: "render",
       value: function render() {
-        var _this$props3 = this.props,
-            data = _this$props3.data,
-            __ = _this$props3.schema,
-            __1 = _this$props3.loadMore,
-            __2 = _this$props3.buffer,
-            __3 = _this$props3.getGridActions,
-            dynamicRowHeight = _this$props3.dynamicRowHeight,
-            rowHeight = _this$props3.rowHeight,
-            virtualization = _this$props3.virtualization,
-            loading = _this$props3.loading,
-            loader = _this$props3.loader,
-            overlay = _this$props3.overlay,
-            showOverlay = _this$props3.showOverlay,
-            loadingMoreData = _this$props3.loadingMoreData,
-            headerHeight = _this$props3.headerHeight,
-            className = _this$props3.className,
-            rest = _objectWithoutProperties(_this$props3, ["data", "schema", "loadMore", "buffer", "getGridActions", "dynamicRowHeight", "rowHeight", "virtualization", "loading", "loader", "overlay", "showOverlay", "loadingMoreData", "headerHeight", "className"]);
+        var _this$props2 = this.props,
+            data = _this$props2.data,
+            __ = _this$props2.schema,
+            loaderSchema = _this$props2.loaderSchema,
+            __1 = _this$props2.loadMore,
+            __2 = _this$props2.buffer,
+            __3 = _this$props2.getGridActions,
+            dynamicRowHeight = _this$props2.dynamicRowHeight,
+            pagination = _this$props2.pagination,
+            totalPages = _this$props2.totalPages,
+            loading = _this$props2.loading,
+            loader = _this$props2.loader,
+            overlay = _this$props2.overlay,
+            showOverlay = _this$props2.showOverlay,
+            loadingMoreData = _this$props2.loadingMoreData,
+            headerHeight = _this$props2.headerHeight,
+            className = _this$props2.className,
+            rest = _objectWithoutProperties(_this$props2, ["data", "schema", "loaderSchema", "loadMore", "buffer", "getGridActions", "dynamicRowHeight", "pagination", "totalPages", "loading", "loader", "overlay", "showOverlay", "loadingMoreData", "headerHeight", "className"]);
 
         var gridMeta = this.state.gridMeta;
         var visibleCount = this.getVisibleRowsCount();
@@ -4315,8 +4453,10 @@
           return /*#__PURE__*/React.createElement("div", _extends({}, girdRestProps, {
             ref: this.gridRef
           }), /*#__PURE__*/React.createElement(Loader, {
+            loaderSchema: loaderSchema,
             rows: visibleCount > 0 ? visibleCount + 1 : undefined,
-            rowHeight: rowHeight
+            rowHeight: this.rowHeight,
+            className: "loader-wrapper"
           }));
         }
 
@@ -4340,7 +4480,7 @@
         var gridHeight = this.getGridHeight();
 
         if (dynamicRowHeight && loadingMoreData) {
-          gridHeight += rowHeight * 2;
+          gridHeight += this.rowHeight * 2;
         }
 
         return /*#__PURE__*/React.createElement("div", girdRestProps, /*#__PURE__*/React.createElement(Header, {
@@ -4349,12 +4489,12 @@
           leftSchema: gridMeta.leftSchema,
           centerWidth: gridMeta.centerWidth,
           leftWidth: gridMeta.leftWidth,
-          headerHeight: headerHeight,
+          headerHeight: this.headerHeight,
           syncHorizontalScroll: this.syncHorizontalScroll
         }), /*#__PURE__*/React.createElement("div", {
           className: "grid",
           ref: this.gridRef,
-          onScroll: virtualization ? this.handleGridScroll : undefined
+          onScroll: this.handleGridScroll
         }, /*#__PURE__*/React.createElement("div", {
           style: {
             height: gridHeight
@@ -4367,15 +4507,15 @@
           className: "grid-left"
         }, /*#__PURE__*/React.createElement("div", {
           className: "grid-left-body"
-        }, leftGrid, loadingMoreData && /*#__PURE__*/React.createElement(PartialLoader, {
+        }, leftGrid, loadingMoreData && /*#__PURE__*/React.createElement(Loader, {
           style: {
-            transform: "translateY(".concat(dynamicRowHeight ? gridHeight - rowHeight * 2 : this.getTopPosition(data.length), "px)")
+            transform: "translateY(".concat(dynamicRowHeight ? gridHeight - this.rowHeight * 2 : this.getTopPosition(data.length), "px)")
           },
           schema: gridMeta.leftSchema,
+          loaderSchema: gridMeta.leftLoaderSchema,
           className: "partial-loader",
-          rowStyle: {
-            height: rowHeight
-          }
+          rowHeight: this.rowHeight,
+          rows: 2
         }))), gridMeta.centerWidth > 0 && /*#__PURE__*/React.createElement("div", {
           style: {
             width: "calc(100% - ".concat(gridMeta.leftWidth, "px)")
@@ -4390,16 +4530,22 @@
             minWidth: gridMeta.centerWidth
           },
           className: "grid-center-body-inner"
-        }, centerGrid, loadingMoreData && /*#__PURE__*/React.createElement(PartialLoader, {
+        }, centerGrid, loadingMoreData && /*#__PURE__*/React.createElement(Loader, {
           schema: gridMeta.centerSchema,
+          loaderSchema: gridMeta.centerLoaderSchema,
           style: {
-            transform: "translateY(".concat(dynamicRowHeight ? gridHeight - rowHeight * 2 : this.getTopPosition(data.length), "px)")
+            transform: "translateY(".concat(dynamicRowHeight ? gridHeight - this.rowHeight * 2 : this.getTopPosition(data.length), "px)")
           },
           className: "partial-loader",
-          rowStyle: {
-            height: rowHeight
-          }
-        })))))), /*#__PURE__*/React.createElement("div", {
+          rowHeight: this.rowHeight,
+          rows: 2
+        })))))), pagination && /*#__PURE__*/React.createElement("div", {
+          className: "Table-paginationWrapper"
+        }, /*#__PURE__*/React.createElement(Pagination, {
+          type: 'jump',
+          totalPages: totalPages,
+          onPageChange: this.onPageChange
+        })), /*#__PURE__*/React.createElement("div", {
           className: "grid-scroll"
         }, /*#__PURE__*/React.createElement("div", {
           className: "grid-scroll-left",
@@ -4426,8 +4572,115 @@
 
   _defineProperty(Grid, "defaultProps", {
     buffer: 5,
-    virtualization: true
+    virtualization: true,
+    pagination: false
   });
+
+  var Table = /*#__PURE__*/function (_React$PureComponent) {
+    _inherits(Table, _React$PureComponent);
+
+    var _super = _createSuper(Table);
+
+    function Table(props) {
+      var _this;
+
+      _classCallCheck(this, Table);
+
+      _this = _super.call(this, props);
+
+      _defineProperty(_assertThisInitialized(_this), "limit", void 0);
+
+      _defineProperty(_assertThisInitialized(_this), "calcTotalPages", function () {
+        var totalPages = Math.round(_this.props.data.length / _this.limit);
+        totalPages = _this.props.data.length / _this.limit <= totalPages ? totalPages : totalPages + 1;
+        return totalPages;
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "getData", function () {
+        if (!_this.props.pagination) {
+          return _this.props.data;
+        }
+
+        var recordsCopy = _this.props.data.slice();
+
+        var offset = 0;
+        var slicedData = recordsCopy.slice(offset, offset + _this.limit);
+        return slicedData;
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "onPageChange", function (pageNo) {
+        var offset = (pageNo - 1) * _this.limit;
+
+        var dataCopy = _this.props.data.slice();
+
+        var data = dataCopy.slice(offset, offset + _this.limit);
+
+        _this.setState({
+          offset: offset,
+          data: data
+        });
+      });
+
+      _this.limit = props.limit ? props.limit : 10;
+      _this.state = {
+        offset: 0,
+        data: _this.getData(),
+        totalPages: _this.calcTotalPages()
+      };
+      return _this;
+    }
+
+    _createClass(Table, [{
+      key: "componentDidUpdate",
+      value: function componentDidUpdate(prevProps) {
+        if (prevProps.pagination !== this.props.pagination || prevProps.limit !== this.props.limit) {
+          this.limit = this.props.limit ? this.props.limit : 10;
+          this.setState({
+            offset: 0,
+            data: this.getData(),
+            totalPages: this.calcTotalPages()
+          });
+        }
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this$props = this.props,
+            schema = _this$props.schema,
+            style = _this$props.style,
+            loadMore = _this$props.loadMore,
+            loading = _this$props.loading,
+            getGridActions = _this$props.getGridActions,
+            buffer = _this$props.buffer,
+            dynamicRowHeight = _this$props.dynamicRowHeight,
+            rowHeight = _this$props.rowHeight,
+            headerHeight = _this$props.headerHeight,
+            loaderSchema = _this$props.loaderSchema,
+            pagination = _this$props.pagination;
+        var loadingMoreData = this.props.pagination ? false : this.props.loadingMoreData;
+        return /*#__PURE__*/React.createElement(Grid, {
+          style: style,
+          loadMore: loadMore,
+          loading: loading,
+          loadingMoreData: loadingMoreData,
+          getGridActions: dynamicRowHeight ? getGridActions : undefined,
+          buffer: buffer,
+          dynamicRowHeight: dynamicRowHeight,
+          rowHeight: rowHeight,
+          headerHeight: headerHeight,
+          schema: schema,
+          loaderSchema: loaderSchema,
+          data: this.state.data,
+          offset: this.state.offset,
+          pagination: pagination,
+          totalPages: this.state.totalPages,
+          onPageChange: this.onPageChange
+        });
+      }
+    }]);
+
+    return Table;
+  }(React.PureComponent);
 
   var ActionButton = function ActionButton(props) {
     var _classNames;
@@ -4511,7 +4764,6 @@
       });
     }))));
   };
-
   Toast.displayName = 'Toast';
 
   var useEffect$1 = React.useEffect,
@@ -4678,83 +4930,6 @@
     }, primaryButtonLabel)));
   };
 
-  var Pagination = function Pagination(props) {
-    var _classNames;
-
-    var _props$type = props.type,
-        type = _props$type === void 0 ? 'basic' : _props$type,
-        totalPages = props.totalPages,
-        onPageChange = props.onPageChange;
-
-    var _React$useState = React.useState(props.page ? props.page : 1),
-        _React$useState2 = _slicedToArray(_React$useState, 2),
-        page = _React$useState2[0],
-        setPage = _React$useState2[1];
-
-    var wrapperClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Pagination', true), _defineProperty(_classNames, "Pagination--".concat(type), type), _classNames));
-    React.useEffect(function () {
-      if (page) onPageChange(page);
-    }, [page]);
-
-    var inputChangeHandler = function inputChangeHandler(e) {
-      e.preventDefault();
-      var val = parseInt(e.target.value.trim(), 10);
-
-      if (!val || val > 0 && val <= totalPages) {
-        setPage(val);
-      }
-    };
-
-    var buttonHelper = [];
-    if (type === 'basic') buttonHelper.push('mx-3');else buttonHelper.push('mx-4');
-    return /*#__PURE__*/React.createElement("div", {
-      className: wrapperClass
-    }, /*#__PURE__*/React.createElement(Button, {
-      onClick: function onClick() {
-        return setPage(1);
-      },
-      disabled: page === 1,
-      appearance: "transparent",
-      size: "large",
-      icon: "first_page"
-    }), /*#__PURE__*/React.createElement("div", {
-      className: ['ml-4'].concat(buttonHelper).join(' ')
-    }, /*#__PURE__*/React.createElement(Button, {
-      onClick: function onClick() {
-        return page > 1 && setPage(page - 1);
-      },
-      disabled: page === 1,
-      size: "large",
-      icon: "navigate_before"
-    })), type === 'jump' && /*#__PURE__*/React.createElement("div", {
-      className: "Pagination-pageIndex"
-    }, /*#__PURE__*/React.createElement(Input, {
-      name: "page",
-      type: "number",
-      size: "large",
-      clearButton: false,
-      onChange: inputChangeHandler,
-      value: "".concat(page)
-    }), /*#__PURE__*/React.createElement(Text, null, " of ".concat(totalPages, " pages"))), /*#__PURE__*/React.createElement("div", {
-      className: ['mr-4'].concat(buttonHelper).join(' ')
-    }, /*#__PURE__*/React.createElement(Button, {
-      onClick: function onClick() {
-        return page < totalPages && setPage(page + 1);
-      },
-      disabled: page === totalPages,
-      size: "large",
-      icon: "navigate_next"
-    })), /*#__PURE__*/React.createElement(Button, {
-      onClick: function onClick() {
-        return setPage(totalPages);
-      },
-      disabled: page === totalPages,
-      appearance: "transparent",
-      size: "large",
-      icon: "last_page"
-    }));
-  };
-
   var RangePicker = function RangePicker(props) {
     var startDateProp = props.startDate,
         endDateProp = props.endDate,
@@ -4771,12 +4946,14 @@
         _props$startInputProp = props.startInputProps,
         startInputProps = _props$startInputProp === void 0 ? {
       name: 'rangePicker-start',
+      label: 'Start Date',
       placeholderChar: '_',
       placeholder: inputFormat
     } : _props$startInputProp,
         _props$endInputProps = props.endInputProps,
         endInputProps = _props$endInputProps === void 0 ? {
       name: 'rangePicker-end',
+      label: 'End Date',
       placeholderChar: '_',
       placeholder: inputFormat
     } : _props$endInputProps,
@@ -4831,14 +5008,14 @@
       setStartDate(d);
     }, [startDateProp]);
     React.useEffect(function () {
-      var d = startDateProp ? convertToDate(startDateProp, inputFormat, validator) : undefined;
+      var d = endDateProp ? convertToDate(endDateProp, inputFormat, validator) : undefined;
       setEndDate(d);
     }, [endDateProp]);
     React.useEffect(function () {
       setYearNav(yearNavProp);
     }, [yearNavProp]);
     React.useEffect(function () {
-      setYearNav(monthNavProp);
+      setMonthNav(monthNavProp);
     }, [monthNavProp]);
     React.useEffect(function () {
       var sError = !startDate;
@@ -5153,6 +5330,7 @@
   exports.Icon = Icon;
   exports.Input = Input;
   exports.Label = Label;
+  exports.Legend = Legend;
   exports.Link = Link;
   exports.ListCheckbox = ListCheckbox;
   exports.Message = Message;
@@ -5161,6 +5339,7 @@
   exports.Pagination = Pagination;
   exports.Paragraph = Paragraph;
   exports.Placeholder = Placeholder;
+  exports.PlaceholderParagraph = PlaceholderParagraph;
   exports.Popover = Popover;
   exports.Radio = Radio;
   exports.RangePicker = RangePicker;
@@ -5169,7 +5348,7 @@
   exports.Subheading = Subheading;
   exports.Switch = Switch;
   exports.Tab = Tab;
-  exports.Table = Grid;
+  exports.Table = Table;
   exports.TabsWrapper = TabsWrapper;
   exports.Text = Text;
   exports.Toast = Toast;

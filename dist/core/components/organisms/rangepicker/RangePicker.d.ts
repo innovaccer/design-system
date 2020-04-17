@@ -1,0 +1,30 @@
+import * as React from 'react';
+import { View, Day, DateType, DateFormat } from '../calendar/types';
+import { Position } from '@/components/molecules/popover';
+import { Mask, InputMaskProps } from '@/components/molecules/inputMask';
+import { Validator } from '../calendar/utility';
+export interface RangePickerProps {
+    onRangeChange?: (startDate: Date, endDate: Date, startValue?: string, endValue?: string) => void;
+    monthsInView?: number;
+    jumpView?: boolean;
+    firstDayOfWeek?: Day;
+    view?: View;
+    disabledBefore?: DateType;
+    disabledAfter?: DateType;
+    startDate?: DateType;
+    endDate?: DateType;
+    rangeLimit?: number;
+    yearNav?: number;
+    monthNav?: number;
+    withInput?: boolean;
+    position?: Position;
+    inputFormat?: DateFormat;
+    outputFormat?: DateFormat;
+    rangeSeparator?: string;
+    startInputProps?: Omit<InputMaskProps, 'mask'>;
+    endInputProps?: Omit<InputMaskProps, 'mask'>;
+    mask?: Mask;
+    validator?: Validator;
+}
+export declare const RangePicker: React.FunctionComponent<RangePickerProps>;
+export default RangePicker;
