@@ -82,6 +82,8 @@
 
 .Button-icon {
     line-height: inherit;
+    display: flex;
+    align-items: center;
 }
 
 .Button-icon--left {
@@ -92,23 +94,11 @@
     margin-left: var(--spacing);
 }
 
-.Button--tiny .Button-icon {
-    font-size: var(--font-size-s);
-}
-
 .Button--tiny .Button-icon--left {
     margin-right: var(--spacing-m);
 }
 .Button--tiny .Button-icon--right {
     margin-left: var(--spacing-m);
-}
-
-.Button--regular .Button-icon {
-    font-size: var(--font-size-m);
-}
-
-.Button--large .Button-icon {
-    font-size: var(--font-size-l);
 }
 
 .Button--basic {

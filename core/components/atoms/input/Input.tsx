@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import Label from '@/components/atoms/label';
 import Text from '@/components/atoms/text';
 import Tooltip from '@/components/atoms/tooltip';
+import Icon from '@/components/atoms/icon';
 
 export type InputType = 'text' | 'password' | 'number';
 export type AutoComplete = 'on' | 'off';
@@ -91,6 +92,12 @@ export interface InputProps {
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }
 
+const sizeMapping = {
+  tiny: 12,
+  regular: 16,
+  large: 20,
+};
+
 export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
     size = 'regular',
@@ -133,20 +140,17 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
   });
 
   const leftIconClass = classNames({
-    ['material-icons']: true,
     ['Input-icon']: true,
     ['Input-icon--left']: true,
     ['Input-icon--disabled']: !value
   });
 
   const rightIconClass = classNames({
-    ['material-icons']: true,
     ['Input-icon']: true,
     ['Input-icon--right']: true
   });
 
   const errorIconClass = classNames({
-    ['material-icons']: true,
     ['Input-icon']: true,
     ['Input-icon--error']: true
   });
@@ -165,9 +169,14 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
             <Text appearance="subtle">{inlineLabel}</Text>
           </div>
         )}
-        {size !== 'tiny' && icon &&
-          <i className={leftIconClass}>{icon}</i>
-        }
+        {size !== 'tiny' && icon && (
+          <div className={leftIconClass}>
+            <Icon
+              name={icon}
+              size={sizeMapping[size]}
+            />
+          </div>
+        )}
         <input
           name={name}
           type={type}
@@ -184,22 +193,28 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
         />
         {((!value && !disabled) || (value && disabled)) && info && (
           <Tooltip position="top" tooltip={info}>
-            <i className={rightIconClass}>info</i>
+            <div className={rightIconClass}><Icon name={'info'} size={sizeMapping[size]} /></div>
           </Tooltip>
         )}
-        {(clearButton && value && !disabled) &&
-          <i className={rightIconClass} onClick={e => onClear && onClear(e)}>close</i>
-        }
+        {(clearButton && value && !disabled) && (
+          <div className={rightIconClass} onClick={e => onClear && onClear(e)}>
+            <Icon name={'close'} size={sizeMapping[size]} />
+          </div>
+        )}
       </div>
-      {size !== 'tiny' && caption && (
-        <div className="Input-caption">
-          {error &&
-            <i className={errorIconClass}>error</i>
-          }
-          <Text appearance={error ? 'destructive' : 'subtle'} small={true} weight="medium">{`${caption}`}</Text>
-        </div>
-      )}
-    </div>
+      {
+        size !== 'tiny' && caption && (
+          <div className="Input-caption">
+            {error && (
+              <div className={errorIconClass}>
+                <Icon name={'error'} appearance={'alert'} />
+              </div>
+            )}
+            <Text appearance={error ? 'destructive' : 'subtle'} small={true} weight="medium">{`${caption}`}</Text>
+          </div>
+        )
+      }
+    </div >
   );
 });
 

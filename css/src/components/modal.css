@@ -58,9 +58,10 @@
 }
 
 .Modal-close-icon {
+  display: flex;
+  align-items: center;
   cursor: pointer;
   position: absolute;
-  font-size: var(--font-size-m);
   right: var(--spacing-2);
 }
 
@@ -96,7 +97,8 @@
 }
 
 .Modal-header-icon {
-  font-size: var(--font-size-m);
+  display: flex;
+  align-items: center;
   margin-right: var(--spacing-2);
 }
 

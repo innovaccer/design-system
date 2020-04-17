@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Heading from '@/components/atoms/heading';
 import Text from '@/components/atoms/text';
+import Icon from '@/components/atoms/icon';
 
 export interface ModalHeaderProps {
   icon?: string;
@@ -26,18 +27,18 @@ export const ModalHeader: React.FunctionComponent<ModalHeaderProps> = props => {
     const { onClose } = props;
 
     return (
-      <i
-        className="material-icons Modal-close-icon"
+      <div
+        className="Modal-close-icon"
         onClick={(event: React.MouseEvent<HTMLElement, MouseEvent>) => onClose('IconClick', event)}
       >
-        close
-      </i>
+        <Icon name={'close'} size={16}/>
+      </div>
     );
   };
 
   const getHeaderIcon = () => {
     return (
-      <i className="material-icons Modal-header-icon">{icon}</i>
+      <div className="Modal-header-icon"><Icon name={icon} size={16}/></div>
     );
   };
 

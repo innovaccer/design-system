@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Spinner from '@/components/atoms/spinner';
+import Icon from '@/components/atoms/icon';
 import classNames from 'classnames';
 
 export type Appearance = 'basic' | 'primary' | 'success' | 'alert' | 'transparent';
@@ -53,6 +54,12 @@ export interface ButtonProps {
   onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
+const sizeMapping = {
+  tiny: 12,
+  regular: 16,
+  large: 20,
+};
+
 export const Button: React.FunctionComponent<ButtonProps> = props => {
   const {
     appearance = 'basic',
@@ -76,7 +83,6 @@ export const Button: React.FunctionComponent<ButtonProps> = props => {
   });
 
   const iconClass = classNames({
-    ['material-icons']: true,
     ['Button-icon']: true,
     [`Button-icon--${iconAlign}`]: children && iconAlign
   });
@@ -84,7 +90,15 @@ export const Button: React.FunctionComponent<ButtonProps> = props => {
   return (
     <button className={buttonClass} disabled={disabled || loading} {...rest} >
       {loading && <Spinner size="small" appearance={(appearance === 'basic' || appearance === 'transparent') ? 'secondary' : 'white'} />}
-      {icon && !loading && <i className={iconClass}>{icon}</i>}
+      {icon && !loading && (
+        <div className={iconClass}>
+          <Icon
+            name={icon}
+            appearance={disabled ? 'disabled' : (appearance === 'basic' || appearance === 'transparent') ? 'default' : 'white'}
+            size={sizeMapping[size]}
+          />
+        </div>
+      )}
       {children && `${children.charAt(0).toUpperCase()}${children.slice(1)}`}
     </button>
   );

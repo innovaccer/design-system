@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Heading from '@/components/atoms/heading';
 import Text from '@/components/atoms/text';
+import Icon from '@/components/atoms/icon';
 import ActionButton from './ActionButton';
 
 export type Appearance = 'default' | 'info' | 'success' | 'alert' | 'warning';
@@ -59,14 +60,14 @@ export const Toast: React.FunctionComponent<ToastProps> = props => {
     [`Toast--${appearance}`]: appearance,
   });
 
-  const Icon: Record<string, any> = {
+  const IconMapping: Record<string, any> = {
     info: 'info',
     success: 'check_circle',
     alert: 'info',
     warning: 'info'
   };
 
-  const icon = Icon[appearance];
+  const icon = IconMapping[appearance];
 
   const titleClass = classNames({
     ['Toast-title']: true,
@@ -74,7 +75,6 @@ export const Toast: React.FunctionComponent<ToastProps> = props => {
   });
 
   const iconClass = (align: string) => classNames({
-    ['material-icons']: true,
     ['Toast-icon']: true,
     [`Toast-icon--${align}`]: align
   });
@@ -85,7 +85,11 @@ export const Toast: React.FunctionComponent<ToastProps> = props => {
 
   return (
     <div className={wrapperClass}>
-      {icon && <i className={iconClass('left')}>{icon}</i>}
+      {icon && (
+        <div className={iconClass('left')}>
+          <Icon name={icon} size={16} appearance={appearance !== 'warning' ? 'white' : 'default'} />
+        </div>
+      )}
       <div className="Toast-body">
         <div className={titleClass}>
           <Heading
@@ -94,7 +98,7 @@ export const Toast: React.FunctionComponent<ToastProps> = props => {
             {title}
           </Heading>
           <div onClick={onCloseHandler}>
-            <i className={iconClass('right')}>close</i>
+            <div className={iconClass('right')}><Icon name={'close'} size={16} /></div>
           </div>
         </div>
         {message && (

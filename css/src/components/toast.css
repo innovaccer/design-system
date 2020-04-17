@@ -34,14 +34,14 @@
     background-color: var(--warning);
 }
 
-.Toast--warning .Toast-icon {
+.Toast--warning {
     color: var(--text);
 }
 
 .Toast-icon {
-    font-size: var(--font-size-m);
+    display: flex;
+    margin-top: var(--spacing-m);
     line-height: var(--font-height-m);
-    color: var(--text-white);
 }
 
 .Toast-icon--left {
