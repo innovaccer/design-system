@@ -27,7 +27,7 @@ export interface Props extends DivProps {
   data: Record<string, any>[];
   /**
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
-   * ISchema: {
+   * Schema: {
    *    width?: number;
    *    template?: React.ElementType;
    *    pinned?: 'LEFT';
@@ -41,7 +41,7 @@ export interface Props extends DivProps {
   schema: Schema[];
   /**
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
-   * LoaderSchema: {
+   * LoadingSchema: {
    *    width?: number;
    *    withImage?: boolean;
    *    round?: boolean;
@@ -54,18 +54,23 @@ export interface Props extends DivProps {
   /**
    * In case of dynamic height this will be taken
    * as minimun height
+   * @default  50
    */
   rowHeight?: number;
+  /**
+   * Height of header row
+   * @default 40
+   */
   headerHeight?: number;
   /**
    * Function which is invoked when user is about to reach
    * the end
    */
-
   loadMore?: () => void;
   /**
-   * extra rows to be rendered
+   * Extra rows to be rendered
    * above and below visible table
+   * @default 5
    */
   buffer?: number;
   /**
@@ -73,22 +78,25 @@ export interface Props extends DivProps {
    */
   loading?: boolean;
   /**
-   * This will render if loading is true
-   * parent element will gird's first div
+   * This component will render if loading is true
    */
-  loader?: React.ReactChild;
+  loader?: React.ReactNode;
   /**
-   * Will show overlay in place of grid
+   * Will show an overlay in place of grid
    */
   showOverlay?: boolean;
-  overlay?: React.ReactChild;
+  /**
+   * This will render overlay component
+   */
+  overlay?: React.ReactNode;
   /**
    * Each row height will be calculated dynamically
-   * Given row height will be considered as minimun row height
+   * and given row height will be considered as minimun row height
    */
   dynamicRowHeight?: boolean;
   /**
    * Adds pagination component
+   * @default false
    */
   pagination?: boolean;
   /**

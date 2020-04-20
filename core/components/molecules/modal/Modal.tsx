@@ -9,19 +9,19 @@ export type Dimension = 'small' | 'medium' | 'large';
 
 export interface ModalProps {
   /**
-   * Callback for `modal` close event
+   * Callback for `Modal` close event
    */
   onClose: (reason?: string, event?: Event) => void;
   /**
-   * Closes `modal` on outside click
+   * Closes `Modal` on outside click
    */
   backdrop?: boolean;
   /**
-   * Closes `modal` on pressing escape key
+   * Closes `Modal` on pressing escape key
    */
   closeOnEscape?: boolean;
   /**
-   * Dimension of `modal`
+   * Dimension of `Modal`
    * @default "small"
    */
   dimension?: Dimension;

@@ -9,7 +9,7 @@ export const size = () => {
   const sizes: Size[] = ['tiny', 'regular'];
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', minHeight: '270px' }}>
       {
         sizes.map((dropdownSize, ind) => {
           return (

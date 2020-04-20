@@ -7,15 +7,15 @@ import Button, { Appearance } from '@/components/atoms/button';
 
 export interface DialogProps {
   /**
-   * Callback for `dialog` close event
+   * Callback for `Dialog` close event
    */
   onClose: (reason?: string, event?: Event | React.MouseEvent<HTMLElement, MouseEvent>) => void;
   /**
-   * closes `dialog` on pressing escape key
+   * closes `Dialog` on pressing escape key
    */
   closeOnEscape?: boolean;
   /**
-   * Dimension of `dialog`
+   * Dimension of `Dialog`
    * @default "small"
    */
   dimension?: Dimension;
@@ -33,15 +33,15 @@ export interface DialogProps {
    */
   title?: string;
   /**
-   * Description inside `dialog`
+   * Description inside `Dialog`
    */
   description?: string;
   /**
-   * Label of first button inside `dialog`
+   * Label of first button inside `Dialog`
    */
   primaryButtonLabel: string;
   /**
-   * Color of second button inside `dialog`
+   * Color of second button inside `Dialog`
    * @default "primary"
    */
   primaryButtonAppearance?: Appearance;
@@ -50,11 +50,11 @@ export interface DialogProps {
    */
   primaryButtonCallback: () => void;
   /**
-   * Label of second button inside `dialog`
+   * Label of second button inside `Dialog`
    */
   secondaryButtonLabel: string;
   /**
-   * Color of second button inside `dialog`
+   * Color of second button inside `Dialog`
    * @default "basic"
    */
   secondaryButtonAppearance?: Appearance;

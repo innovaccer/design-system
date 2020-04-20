@@ -12,7 +12,7 @@ export interface MaskProps {
    */
   mask: Mask;
   /**
-   * Character to be used for empty value at particular index in `mask`
+   * Character to be used for empty value at particular index in `Mask`
    * @default "_"
    */
   placeholderChar?: string;

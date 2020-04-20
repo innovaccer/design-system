@@ -21,24 +21,24 @@ export interface PopoverProps {
    */
   verticalOffset?: number;
   /**
-   * Element triggering the `popover`
+   * Element triggering the `Popover`
    */
   trigger: React.ReactElement<any>;
   /**
-   * Holds `popover` on hove
+   * Holds `Popover` on hove
    */
   hoverable?: boolean;
   /**
-   * Changes background of `popover`
+   * Changes background of `Popover`
    */
   dark?: boolean;
   /**
-   * Closes `popover` on outside click
+   * Closes `Popover` on outside click
    * @default true
    */
   closeOnBackdropClick?: boolean;
   /**
-   * Event triggering the `popover`
+   * Event triggering the `Popover`
    * @default 'click'
    */
   on?: ActionType;
@@ -47,12 +47,12 @@ export interface PopoverProps {
    */
   open?: boolean;
   /**
-   * Adds CSS to `popover` element
+   * Adds CSS to `Popover` element
    * @default {}
    */
   style?: React.CSSProperties;
   /**
-   * Callback after `popover` is toggled
+   * Callback after `Popover` is toggled
    */
   onToggle: (open: boolean, type?: string) => void;
 }

@@ -6,7 +6,7 @@ import { storyOptions, selectedStoryOptions, multiSelectedStoryOptions } from '.
 // CSF format story
 export const selected = () => {
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', minHeight: '300px' }}>
       <div style={{ marginRight: '5%' }}>
         <Text weight="strong">{'Unselected'}</Text><br /><br />
         <Dropdown placeholder={'Select'} options={storyOptions} />

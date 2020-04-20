@@ -83,7 +83,26 @@ export const all = () => {
   );
 };
 
+const customCode = `() => {
+  const options = [{label: 'Option1',value: 'Option1'},{label: 'Option2',value: 'Option2'},{label: 'Option3',value: 'Option3'},{label: 'Option4',value: 'Option4'},{label: 'Option5',value: 'Option5'},{label: 'Option6',value: 'Option6'},{label: 'Option7',value: 'Option7'},{label: 'Option8',value: 'Option8'},{label: 'Option9',value: 'Option9'},{label: 'Option10',value: 'Option10'}];
+  return (
+    <div style={{minHeight: '250px'}}>
+      <Dropdown
+        options={options}
+        placeholder={'Select'}
+      />
+    </div>
+  )
+}`;
+
 export default {
   title: 'Atoms|Dropdown',
-  component: Dropdown
+  component: Dropdown,
+  parameters: {
+    docs: {
+      docPage: {
+        customCode
+      }
+    }
+  }
 };

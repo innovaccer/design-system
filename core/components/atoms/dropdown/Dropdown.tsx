@@ -14,7 +14,7 @@ export interface DropdownProps extends DropdownListProps {
    */
   selectAll?: boolean;
   /**
-   * Options to render inside `dropdown`
+   * Options to render inside `Dropdown`
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * Option: {
    *    icon?: string;

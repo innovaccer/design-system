@@ -4,7 +4,7 @@ import { TabProps } from './Tab';
 
 export interface TabsWrapperProps {
   /**
-   * Index of desired selected `tab`
+   * Index of desired selected `Tab`
    */
   activeTab?: number;
   /**

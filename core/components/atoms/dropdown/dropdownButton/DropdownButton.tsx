@@ -60,7 +60,14 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
   const iconName = value ? 'keyboard_arrow_down' : 'more_horiz';
 
   return (
-    <button ref={ref} value={children} className={buttonClass} disabled={disabled} {...rest} style={style}>
+    <button
+      ref={ref}
+      value={children}
+      className={buttonClass}
+      disabled={disabled}
+      style={!placeholder && !children ? {} : style}
+      {...rest}
+    >
       {value && (
         <div className="DropdownButton-wrapper">
           {(inlineLabel && !icon) && (

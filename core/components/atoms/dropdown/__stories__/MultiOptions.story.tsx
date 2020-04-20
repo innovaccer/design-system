@@ -6,7 +6,7 @@ import { storyOptions } from '../utils/Options';
 // CSF format story
 export const multiOptions = () => {
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', minHeight: '300px' }}>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginRight: '5%' }}>
         <Text weight="strong">{'With Apply Button'}</Text><br />
         {

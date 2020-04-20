@@ -3,7 +3,7 @@ import { boolean, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import Table from '../Table';
-import { ISchema, IGridActions, ILoaderSchema } from '../interfaces';
+import { Schema, GridActions, LoadingSchema } from '../interfaces';
 import Checkbox from '@/components/atoms/checkbox';
 import Avatar, { Appearance } from '@/components/atoms/avatar';
 import Button from '@/components/atoms/button';
@@ -11,7 +11,7 @@ import userData from './users';
 
 type SimpleObject = Record<string, any>;
 const appearance: Appearance[] = ['primary', 'success', 'alert', 'warning'];
-let gridActions: IGridActions;
+let gridActions: GridActions;
 
 const getSchema = (index: number) => {
   const { schema } = userData;
@@ -22,7 +22,7 @@ const loadMore = () => {
   action('load more data')();
 };
 
-const getGridActions = (gActions?: IGridActions) => {
+const getGridActions = (gActions?: GridActions) => {
   action('get grid actions')();
   if (gActions) gridActions = gActions;
 };
@@ -75,7 +75,7 @@ export const all = () => {
 
   const [allChecked, setAllChecked] = React.useState(false);
 
-  const loaderSchema: ILoaderSchema[] = [
+  const loaderSchema: LoadingSchema[] = [
     {
       width: 50,
       round: true,
@@ -106,7 +106,7 @@ export const all = () => {
     },
   ];
 
-  const schema: ISchema[] = [
+  const schema: Schema[] = [
     {
       width: 50,
       template: ({ checked }: SimpleObject) => {
@@ -230,7 +230,29 @@ export const all = () => {
   );
 };
 
+const customCode = `() => {
+  const appearance = ['primary', 'success', 'alert', 'warning']
+  const pinned = true
+  const schema = [{pinned: pinned ? 'LEFT' : undefined,template: ({ x, rowIndex }) => (<div className="image-wrapper"><Avatar appearance={appearance[rowIndex % appearance.length]}>{x}</Avatar></div>),get: ({ firstName, lastName }) => ({x: firstName[0] + lastName[0],}),header: () => <div />,name: '',displayName: '',},{width: 200,template: (row) => (<div className="cell-wrapper">{row.firstName} {row.lastName}</div>),pinned: pinned ? 'LEFT' : undefined,get: ({ firstName, lastName }) => ({firstName,lastName,}),name: 'name',displayName: 'Name',},{width: 200,name: 'gender',displayName: 'Gender',},{width: 200,template: (props) => (<div className="cell-wrapper ellipsis">{props['email']}</div>),name: 'email',displayName: 'Email',},{width: 200,name: 'note',displayName: 'Note',},];
+  const data = [{firstName: 'Brooke',lastName: 'Heeran',email: 'bheeran0@altervista.org',gender: 'Female',},{firstName: 'Frazer',lastName: 'Cathro',email: 'fcathro1@ucla.edu',gender: 'Male',},{firstName: 'Lemmie',lastName: 'Ciric',email: 'lciric2@dmoz.org',gender: 'Male',},{firstName: 'Randy',lastName: 'Boatwright',email: 'rboatwright3@arstechnica.com',gender: 'Male',},{firstName: 'Rolando',lastName: 'Cyples',email: 'rcyples4@biglobe.ne.jp',gender: 'Male',},{firstName: 'Lem',lastName: 'Males',email: 'lmales5@admin.ch',gender: 'Male',},{firstName: 'Sayres',lastName: 'Adelberg',email: 'sadelberg6@uol.com.br',gender: 'Male',},{firstName: 'Murray',lastName: 'Bravington',email: 'mbravington7@drupal.org',gender: 'Male',},{firstName: 'Jena',lastName: 'Swatheridge',email: 'jswatheridge8@npr.org',gender: 'Female',},{firstName: 'Annabel',lastName: 'Nelsey',email: 'anelsey9@google.com',gender: 'Female',}]
+  return (
+    <Table
+      buffer={5} data={data} headerHeight={40} limit={10} loaderSchema={[{ pinned: 'LEFT' , round: false, withImage: false }, { pinned: 'LEFT' , round: true, width: 200 }, { width: 200 }, { round: true, width: 200 }, { round: false, width: 200, withImage: false } ]} rowHeight={50} schema={schema} style={{
+        maxHeight: '300px',
+        maxWidth: 1200
+      }}
+    />
+  );
+}`;
+
 export default {
   title: 'Organisms|Table',
-  component: Table
+  component: Table,
+  parameters: {
+    docs: {
+      docPage: {
+        customCode
+      }
+    }
+  }
 };

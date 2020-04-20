@@ -6,7 +6,7 @@ import { storyOptions } from '../utils/Options';
 // CSF format story
 export const search = () => {
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', minHeight: '300px' }}>
       <div style={{ marginRight: '5%' }}>
         <Text weight="strong">{'Search'}</Text><br /><br />
         <Dropdown search={true} placeholder={'Select'} options={storyOptions} />

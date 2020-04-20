@@ -8,7 +8,7 @@ export const optionsWrap = () => {
   const optionsWrapBoolean = [true, false];
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', minHeight: '240px' }}>
       {
         optionsWrapBoolean.map((wrap, ind) => {
           return (

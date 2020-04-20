@@ -3,7 +3,14 @@ import Grid from './Grid';
 import { Props, TableState } from './interfaces';
 
 export interface TableProps extends Props {
+  /**
+   * Number of records to be shown on a page in case of pagination
+   * @default 10
+   */
   limit?: number;
+  /**
+   * Shows the loader when user is about to reach the end
+   */
   loadingMoreData?: boolean;
 }
 

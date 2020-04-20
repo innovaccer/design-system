@@ -6,7 +6,7 @@ import { storyOptions, subInfoItems, iconItems } from '../utils/Options';
 // CSF format story
 export const itemStates = () => {
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', minHeight: '240px' }}>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginRight: '5%' }}>
         <Text weight="strong">{'SubInfo'}</Text><br />
         {

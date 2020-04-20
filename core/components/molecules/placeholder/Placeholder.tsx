@@ -5,15 +5,15 @@ import PlaceholderImage, { Size } from '@/components/atoms/placeholderImage';
 
 export interface PlaceholderProps {
   /**
-   * Shows `placeholder` along with image
+   * Shows `Placeholder` along with image
    */
   withImage?: boolean;
   /**
-   * Changes shape of `placeholder` to circle
+   * Changes shape of `Placeholder` to circle
    */
   round?: boolean;
   /**
-   * Specifies dimension of `placeholder`
+   * Specifies dimension of `Placeholder`
    * @default "small"
    */
   imageSize?:  Size;

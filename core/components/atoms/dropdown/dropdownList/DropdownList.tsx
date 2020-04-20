@@ -37,12 +37,12 @@ export interface Subheading {
 
 export interface DropdownListProps {
   /**
-   * Size of `dropdown`
+   * Size of `Dropdown`
    * @default "regular"
    */
   size?: Size;
   /**
-   * Align the dropdown left/right
+   * Aligns the `Dropdown` left/right
    * @default "right"
    */
   dropdownAlign?: DropdownAlign;
@@ -55,7 +55,7 @@ export interface DropdownListProps {
    */
   placeholder?: string;
   /**
-   * Label inside `dropdown button`
+   * Label inside `Dropdown button`
    */
   inlineLabel?: string;
   /**
@@ -93,6 +93,7 @@ export interface DropdownListProps {
    */
   loadingOptions?: boolean;
   /**
+   * Number of selected options to be shown on `Dropdown button`
    * @default 2
    */
   checkedValuesOffset?: number;
@@ -108,12 +109,12 @@ export interface DropdownListProps {
    */
   subheading?: Subheading;
   /**
-   * Specifies max height of `dropdown options`
+   * Specifies max height of `Dropdown options`
    * @default 200
    */
   maxHeight?: number;
   /**
-   * Adds custom CSS to `dropdown`
+   * Adds custom CSS to `Dropdown`
    */
   style?: React.CSSProperties;
 }

@@ -8,7 +8,7 @@ export const disabled = () => {
   const disabledStates = [true, false];
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', minHeight: '280px' }}>
       {
         disabledStates.map((state, ind) => {
           return (

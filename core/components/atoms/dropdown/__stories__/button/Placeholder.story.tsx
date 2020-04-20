@@ -8,7 +8,7 @@ export const placeholder = () => {
   const placeholderValues = ['', 'Select'];
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', minHeight: '270px' }}>
       {
         placeholderValues.map((state, ind) => {
           return (

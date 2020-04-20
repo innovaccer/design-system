@@ -6,6 +6,7 @@ import classNames from 'classnames';
 export interface LegendProps {
   /**
    * Name of icon to be rendered inside `Legend`
+   * @default "fiber_manual_record"
    */
   icon?: string;
   /**
@@ -14,6 +15,7 @@ export interface LegendProps {
   label: string;
   /**
    * Color of Icon
+   * @default "inverse"
    */
   iconAppearance?: string;
   /**
@@ -22,10 +24,12 @@ export interface LegendProps {
   labelAppearance?: LabelAppearance;
   /**
    * Type of Icon
+   * @default "filled"
    */
   iconType?: IconType;
   /**
    * Size of Icon
+   * @default 14
    */
   iconSize?: number;
   /**

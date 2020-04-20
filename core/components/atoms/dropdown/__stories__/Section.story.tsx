@@ -6,7 +6,7 @@ import { storyOptions, storySections } from '../utils/Options';
 // CSF format story
 export const sections = () => {
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', minHeight: '280px' }}>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginRight: '5%' }}>
         <Text weight="strong">{'With Sections'}</Text><br />
         {
