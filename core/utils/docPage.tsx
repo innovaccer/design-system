@@ -107,11 +107,6 @@ const StoryComp = props => {
   const [jsxCode, setJsxCode] = React.useState<string>(`${importString}\n\n${jsx}`);
   const [htmlCode, setHtmlCode] = React.useState<string>(`${html}`);
 
-  React.useEffect(() => {
-    setJsxCode(`${importString}\n\n${jsx}`);
-    setHtmlCode(`${html}`);
-  }, [storyId]);
-
   const importScope = imports.reduce((out, curr) => {
     out[curr.displayName] = curr;
     return out;
@@ -123,18 +118,21 @@ const StoryComp = props => {
       element: Element,
     } = live;
 
-    if (!error) {
-      const editor = document.querySelector('.npm__react-simple-code-editor__textarea');
-      if (editor) {
-        const jsxValue = editor.value;
-        setJsxCode(jsxValue);
+    React.useEffect(() => {
+      if (!error) {
+        const editor = document.querySelector('.npm__react-simple-code-editor__textarea');
 
-        try {
-          const htmlValue = beautifyHTML(renderToStaticMarkup(<Element />), beautifyHTMLOptions);
-          setHtmlCode(htmlValue);
-        } catch (e) { }
+        if (editor) {
+          const jsxValue = editor.value;
+          setJsxCode(jsxValue);
+
+          try {
+            const htmlValue = beautifyHTML(renderToStaticMarkup(<Element />), beautifyHTMLOptions);
+            setHtmlCode(htmlValue);
+          } catch (e) { }
+        }
       }
-    }
+    }, [live]);
 
     return (
       <></>
@@ -213,7 +211,7 @@ export const docPage = () => {
       {!noStory && (
         <>
           <Heading>Story</Heading>
-          <StoryComp customCode={customCode} />
+          <StoryComp key={storyId} customCode={customCode} />
           <br />
         </>
       )}
