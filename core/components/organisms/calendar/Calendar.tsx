@@ -18,38 +18,83 @@ import {
   convertToDate
 } from './utility';
 
-export interface CalendarProps {
+export interface SharedProps {
+  /**
+   * Number of months rendered in view
+   * @default 1
+   */
+  monthsInView?: number;
+  /**
+   * Enables jumping to different view on clicking on Calendar Header
+   *
+   * **set to `false` if monthsInView > 1**
+   */
+  jumpView?: boolean;
+  /**
+   * Specifies first day of week to be rendered
+   * @default "sunday"
+   */
+  firstDayOfWeek?: Day;
+  /**
+   * Specifies initial view of `Calendar`
+   * @default "date"
+   */
+  view?: View;
+  /**
+   * Dates to be disabled before mentioned date
+   */
+  disabledBefore?: Date;
+  /**
+   * Dates to be disabled after mentioned date
+   */
+  disabledAfter?: Date;
+  /**
+   * Initial year to be set for navigation
+   *
+   * **use only if date, startDate and endDate are undefined**
+   */
+  yearNav?: number;
+  /**
+   * Initial month to be set for navigation
+   *
+   * **use only if date, startDate and endDate are undefined**
+   */
+  monthNav?: number;
+}
+
+export type CalendarProps = {
   /**
    * Callback function called when date is changed
    */
-  onDateChange?: (date: Date | undefined) => void;
-  onRangeChange?: (startDate: Date | undefined, endDate: Date | undefined) => void;
+  onDateChange?: (date: Date) => void;
   /**
-   * Number of visible months
+   * Callback function called when range is changed
    */
-  monthsInView?: number;
-  jumpView?: boolean;
+  onRangeChange?: (startDate: Date | undefined, endDate: Date | undefined) => void;
+
   /**
    * Selected date
    */
   date?: Date;
   /**
-   * Specifies first day of week to be rendered
+   * Set if want to use as RangePicker
    */
-  firstDayOfWeek?: Day;
-  /**
-   * View inside `calendar`
-   */
-  view?: View;
-  disabledBefore?: Date;
-  disabledAfter?: Date;
   rangePicker?: boolean;
+  /**
+   * Selected startDate for RangePicker
+   */
   startDate?: Date;
+  /**
+   * Selected endDate for RangePicker
+   */
   endDate?: Date;
+  /**
+   * Allowed limit for difference in startDate and endDate
+   *
+   * **set `0` or `undefined` for infinite limit**
+   */
   rangeLimit?: number;
-  yearNav?: number;
-  monthNav?: number;
-}
+} & SharedProps;
 
 export const Calendar: React.FunctionComponent<CalendarProps> = props => {
   const now = Date.now();

@@ -15,42 +15,42 @@ export const dateValidator = (format: string, val: string): boolean => {
   }
 
   switch (format) {
-    case 'dd/mm/yy':
+    case 'dd/mm/yyyy':
       var p = val.split('/');
       var date = +p[0];
       var month = +p[1];
       var year = +p[2];
       return validate(date, month, year);
 
-    case 'mm/dd/yy':
+    case 'mm/dd/yyyy':
       var p = val.split('/');
       var date = +p[1];
       var month = +p[0];
       var year = +p[2];
       return validate(date, month, year);
 
-    case 'yy/mm/dd':
+    case 'yyyy/mm/dd':
       var p = val.split('/');
       var date = +p[2];
       var month = +p[1];
       var year = +p[0];
       return validate(date, month, year);
 
-    case 'dd-mm-yy':
+    case 'dd-mm-yyyy':
       var p = val.split('-');
       var date = +p[0];
       var month = +p[1];
       var year = +p[2];
       return validate(date, month, year);
 
-    case 'mm-dd-yy':
+    case 'mm-dd-yyyy':
       var p = val.split('-');
       var date = +p[1];
       var month = +p[0];
       var year = +p[2];
       return validate(date, month, year);
 
-    case 'yy-mm-dd':
+    case 'yyyy-mm-dd':
       var p = val.split('-');
       var date = +p[2];
       var month = +p[1];

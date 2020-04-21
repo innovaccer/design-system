@@ -1,6 +1,6 @@
 export type View = 'date' | 'month' | 'year';
 export type Day = 'sunday' | 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday' | 'saturday';
-export type DateFormat = 'mm/dd/yy' | 'dd/mm/yy' | 'yy/mm/dd' | 'mm-dd-yy' | 'dd-mm-yy' | 'yy-mm-dd';
+export type DateFormat = 'mm/dd/yyyy' | 'dd/mm/yyyy' | 'yyyy/mm/dd' | 'mm-dd-yyyy' | 'dd-mm-yyyy' | 'yyyy-mm-dd';
 export type DateObject = {
   year: number,
   month: number,

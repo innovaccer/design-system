@@ -1,52 +1,64 @@
 import * as React from 'react';
-import Calendar from '../calendar/Calendar';
-import { View, Day, DateType, DateFormat } from '../calendar/types';
+import { Calendar, SharedProps } from '../calendar/Calendar';
+import { DateType, DateFormat } from '../calendar/types';
 import Popover, { Position } from '@/components/molecules/popover';
 import InputMask, { Mask, InputMaskProps } from '@/components/molecules/inputMask';
 import masks from '@/components/molecules/inputMask/masks';
 import validators from '@/utils/validators';
 import { convertToDate, translateToDate, translateToString, Validator } from '../calendar/utility';
 
-export interface DatePickerProps {
+export type DatePickerProps = {
   /**
    * Callback function called when date is changed
+   * @argument date Date object
+   * @argument dateVal Date string value as per `outputFormat`
    */
-  onDateChange?: (date: Date, dateVal?: string) => void;
-  jumpView?: boolean;
+  onDateChange?: (date: Date, dateVal: string) => void;
   /**
    * Selected date
+   *
+   * `number` - number of milliseconds elapsed since January 1, 1970, 00:00:00 UTC
+   *
+   * `string` - Date string value as per `inputFormat`
    */
   date?: DateType;
   /**
-   * Specifies first day of week to be rendered
+   * Set if `InputMask` should be used as trigger
    */
-  firstDayOfWeek?: Day;
-  /**
-   * View inside `calendar`
-   */
-  view?: View;
-  disabledBefore?: DateType;
-  disabledAfter?: DateType;
-  yearNav?: number;
-  monthNav?: number;
   withInput?: boolean;
   /**
-   * Position of `date picker`
+   * Position of `DatePicker` w.r.t. `InputMask`
    */
   position?: Position;
+  /**
+   * Should be used if `date` is of type `string`
+   * @default "mm/dd/yyyy"
+   */
   inputFormat?: DateFormat;
+  /**
+   * Should be used to translate `date` to desired format for `onDateChange` callback
+   * @default "mm/dd/yyyy"
+   */
   outputFormat?: DateFormat;
+  /**
+   * Props to be used for `InputMask`
+   */
   inputProps?: InputMaskProps;
+  /**
+   * custom Mask for the mentioned inputFormat
+   */
   mask?: Mask;
+  /**
+   * custom Validator for the mentioned inputFormat and outputFormat
+   */
   validator?: Validator;
-}
+} & SharedProps;
 
 export const DatePicker: React.FunctionComponent<DatePickerProps> = props => {
   const {
     date: dateProp,
-    withInput = false,
-    inputFormat = 'dd/mm/yy',
-    outputFormat = 'mm/dd/yy',
+    inputFormat = 'mm/dd/yyyy',
+    outputFormat = 'mm/dd/yyyy',
     inputProps = {
       name: 'datepicker',
       placeholder: inputFormat,
@@ -54,6 +66,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = props => {
     },
     mask = masks.date[inputFormat],
     validator = validators.date,
+    withInput,
     position,
     disabledBefore,
     disabledAfter,

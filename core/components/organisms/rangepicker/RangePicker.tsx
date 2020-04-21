@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Calendar from '../calendar/Calendar';
-import { View, Day, DateType, DateFormat } from '../calendar/types';
+import { Calendar, SharedProps } from '../calendar/Calendar';
+import { DateType, DateFormat } from '../calendar/types';
 import Text from '@/components/atoms/text';
 import Popover, { Position } from '@/components/molecules/popover';
 import InputMask, { Mask, InputMaskProps } from '@/components/molecules/inputMask';
@@ -8,41 +8,68 @@ import masks from '@/components/molecules/inputMask/masks';
 import validators from '@/utils/validators';
 import { getDateInfo, convertToDate, compareDate, translateToString, translateToDate, Validator } from '../calendar/utility';
 
-export interface RangePickerProps {
+export type RangePickerProps = {
+  /**
+   * @argument startDate Start Date object
+   * @argument endDate End Date object
+   * @argument startDateVal Start Date string value as per `outputFormat`
+   * @argument endDateVal End Date string value as per `outputFormat`
+   */
   onRangeChange?: (startDate: Date, endDate: Date, startValue?: string, endValue?: string) => void;
   /**
-   * Number of visible months
-   */
-  monthsInView?: number;
-  jumpView?: boolean;
-  /**
-   * Specifies first day of week to be rendered
-   */
-  firstDayOfWeek?: Day;
-  view?: View;
-  disabledBefore?: DateType;
-  disabledAfter?: DateType;
-  /**
-   * Starting date of `range picker`
+   * Start date of `RangePicker`
    */
   startDate?: DateType;
   /**
-   * End date of `range picker`
+   * End date of `RangePicker`
    */
   endDate?: DateType;
+  /**
+   * Allowed limit for difference in startDate and endDate
+   *
+   * **set `0` or `undefined` for infinite limit**
+   */
   rangeLimit?: number;
-  yearNav?: number;
-  monthNav?: number;
+  /**
+   * Set if `InputMask` should be used as trigger
+   */
   withInput?: boolean;
+  /**
+   * Position of `RangePicker` w.r.t. `InputMask`
+   */
   position?: Position;
+  /**
+   * Should be used if `date` is of type `string`
+   * @default "mm/dd/yyyy"
+   */
   inputFormat?: DateFormat;
+  /**
+   * Should be used to translate `date` to desired format for `onRangeChange` callback
+   * @default "mm/dd/yyyy"
+   */
   outputFormat?: DateFormat;
+  /**
+   * Separator to be used between the two `InputMask`
+   * @default " - "
+   */
   rangeSeparator?: string;
-  startInputProps?: Omit<InputMaskProps, 'mask'>;
-  endInputProps?: Omit<InputMaskProps, 'mask'>;
+  /**
+   * Props to be used for Start date `InputMask`
+   */
+  startInputProps?: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear'>;
+  /**
+   * Props to be used for Start date `InputMask`
+   */
+  endInputProps?: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear'>;
+  /**
+   * custom Mask for the mentioned inputFormat
+   */
   mask?: Mask;
+  /**
+   * custom Validator for the mentioned inputFormat and outputFormat
+   */
   validator?: Validator;
-}
+} & SharedProps;
 
 export const RangePicker: React.FunctionComponent<RangePickerProps> = props => {
   const {
@@ -50,9 +77,8 @@ export const RangePicker: React.FunctionComponent<RangePickerProps> = props => {
     endDate: endDateProp,
     yearNav: yearNavProp,
     monthNav: monthNavProp,
-    withInput = false,
-    inputFormat = 'dd/mm/yy',
-    outputFormat = 'mm/dd/yy',
+    inputFormat = 'mm/dd/yyyy',
+    outputFormat = 'mm/dd/yyyy',
     rangeSeparator = ' - ',
     startInputProps = {
       name: 'rangePicker-start',
@@ -68,6 +94,7 @@ export const RangePicker: React.FunctionComponent<RangePickerProps> = props => {
     },
     mask = masks.date[inputFormat],
     validator = validators.date,
+    withInput,
     position,
     disabledBefore,
     disabledAfter,

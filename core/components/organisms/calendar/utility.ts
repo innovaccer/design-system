@@ -141,7 +141,7 @@ export const translateToString = (format: string, d: Date): string => {
       case 'mm':
         out += (month < 10 && '0') + (month + 1);
         break;
-      case 'yy':
+      case 'yyyy':
         out += year;
         break;
       case 'dd':
