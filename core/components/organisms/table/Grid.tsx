@@ -205,7 +205,6 @@ class Grid extends React.PureComponent<GridProps, State> {
     if (!dynamicRowHeight) {
       return Math.round(scrollTop / this.rowHeight);
     }
-
     const index = this.calculatedRowTopPosition.findIndex(
       position => position > scrollTop
     );

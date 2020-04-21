@@ -35,9 +35,10 @@ class Table extends React.PureComponent<TableProps, TableState> {
   }
 
   getData = () => {
-    if (!this.props.pagination) {
+    if (!this.props.pagination || this.props.data.length === 0) {
       return this.props.data;
     }
+
     const recordsCopy = this.props.data.slice();
     const offset = 0;
     const slicedData = recordsCopy.slice(offset, offset + this.limit);
@@ -46,7 +47,8 @@ class Table extends React.PureComponent<TableProps, TableState> {
 
   componentDidUpdate(prevProps: TableProps) {
     if ((prevProps.pagination !== this.props.pagination) ||
-      (prevProps.limit !== this.props.limit)
+      (prevProps.limit !== this.props.limit) ||
+      (prevProps.data.length !== this.props.data.length)
     ) {
       this.limit = this.props.limit ? this.props.limit : 10;
       this.setState({

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Text from '@/components/atoms/text';
 import { Schema } from './interfaces';
 
 interface Props {
@@ -26,7 +27,7 @@ class Header extends React.Component<Props> {
         className="row header"
       >
         {schema.map(({ width = 100, header: HeaderComp, displayName }, j) => {
-          const defautHeader = () => <div className="cell-wrapper">{displayName}</div>;
+          const defautHeader = () => <div className="cell-wrapper"><Text weight={'strong'}>{displayName}</Text></div>;
           const HeaderComponent = !HeaderComp ? defautHeader : HeaderComp;
           return (
             <div className="cell" key={j} style={{ width }}>
