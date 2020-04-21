@@ -28,3 +28,21 @@
 * 4a982d0 v1.0.0-1
 * 9aa237b chore: adds release workflow and action to release tag triggerd by release commits
 * 134802d chore: moves .npmrc to .npmrc.stub
+
+-------------------
+ **v1.0.0-2**  (2020-04-21) 
+
+* 7ac8bc6 v1.0.0-2
+* 3bd14f2 fix: reverts removing style from CardProp
+* 51a8deb fix: replaces yy with yyyy in stories
+* b28be96 fix: fixes dropdown loading issue
+* d9eb83c fix: removes redundant prop defaults and adds missing info for docPage
+* 91cad22 fix: replace yy in DateFormats with yyyy
+* 4816650 docs: fixes navigation issue due to code-editor
+* 0a2b76a fix: fixes table laoding issue
+* d54cc94 fix: typo
+* 229bc20 fix: subtitle of design system
+* 2e2f667 chore: moves storybook deployment action to release job
+* d76e5cb chore: refactors doc
+* 745554c build: build
+* 194ffab chore: replaces material icon with Icon component

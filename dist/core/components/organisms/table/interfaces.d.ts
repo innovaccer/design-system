@@ -32,9 +32,9 @@ export interface Props extends DivProps {
     loadMore?: () => void;
     buffer?: number;
     loading?: boolean;
-    loader?: React.ReactChild;
+    loader?: React.ReactNode;
     showOverlay?: boolean;
-    overlay?: React.ReactChild;
+    overlay?: React.ReactNode;
     dynamicRowHeight?: boolean;
     pagination?: boolean;
     getGridActions?: (gridActions?: GridActions) => void;

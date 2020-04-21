@@ -1,7 +1,7 @@
 import * as React from 'react';
-export declare type Shadows = 'light' | 'medium' | 'dark';
+export declare type Shadow = 'light' | 'medium' | 'dark';
 export interface CardProps {
-    shadow?: Shadows;
+    shadow?: Shadow;
     style?: React.CSSProperties;
     children: React.ReactNode;
 }

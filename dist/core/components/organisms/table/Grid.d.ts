@@ -66,6 +66,6 @@ declare class Grid extends React.PureComponent<GridProps, State> {
     getHeaderRef: (ref: React.RefObject<HTMLDivElement>) => void;
     getGridHeight: () => number;
     onPageChange: (pageNo: number) => void;
-    render(): string | number | JSX.Element;
+    render(): {};
 }
 export default Grid;

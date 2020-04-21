@@ -324,8 +324,7 @@
         backdropClasses = _useState4[0],
         setClasses = _useState4[1];
 
-    var _props$open = props.open,
-        open = _props$open === void 0 ? false : _props$open;
+    var open = props.open;
     var classes = classNames({
       Backdrop: true
     });
@@ -473,68 +472,6 @@
     }, circleProps)));
   };
 
-  var Button = function Button(props) {
-    var _classNames, _classNames2;
-
-    var _props$appearance = props.appearance,
-        appearance = _props$appearance === void 0 ? 'basic' : _props$appearance,
-        _props$size = props.size,
-        size = _props$size === void 0 ? 'regular' : _props$size,
-        _props$iconAlign = props.iconAlign,
-        iconAlign = _props$iconAlign === void 0 ? 'left' : _props$iconAlign,
-        children = props.children,
-        icon = props.icon,
-        expanded = props.expanded,
-        loading = props.loading,
-        disabled = props.disabled,
-        rest = _objectWithoutProperties(props, ["appearance", "size", "iconAlign", "children", "icon", "expanded", "loading", "disabled"]);
-
-    var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--expanded', expanded), _defineProperty(_classNames, "Button--".concat(size), size), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, "Button--".concat(appearance), appearance), _defineProperty(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _classNames));
-    var iconClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'material-icons', true), _defineProperty(_classNames2, 'Button-icon', true), _defineProperty(_classNames2, "Button-icon--".concat(iconAlign), children && iconAlign), _classNames2));
-    return /*#__PURE__*/React.createElement("button", _extends({
-      className: buttonClass,
-      disabled: disabled || loading
-    }, rest), loading && /*#__PURE__*/React.createElement(Spinner, {
-      size: "small",
-      appearance: appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white'
-    }), icon && !loading && /*#__PURE__*/React.createElement("i", {
-      className: iconClass
-    }, icon), children && "".concat(children.charAt(0).toUpperCase()).concat(children.slice(1)));
-  };
-  Button.displayName = 'Button';
-
-  var Card = function Card(props) {
-    var shadow = props.shadow,
-        children = props.children,
-        rest = _objectWithoutProperties(props, ["shadow", "children"]);
-
-    var classes = classNames(_defineProperty({
-      Card: true
-    }, "Card--shadow-".concat(shadow), shadow));
-    return /*#__PURE__*/React.createElement("div", _extends({
-      className: classes
-    }, rest), children);
-  };
-
-  var Text = function Text(props) {
-    var _classNames;
-
-    var _props$appearance = props.appearance,
-        appearance = _props$appearance === void 0 ? 'default' : _props$appearance,
-        children = props.children,
-        weight = props.weight,
-        small = props.small,
-        rest = _objectWithoutProperties(props, ["appearance", "children", "weight", "small"]);
-
-    var classes = classNames((_classNames = {
-      Text: true
-    }, _defineProperty(_classNames, "Text--".concat(appearance), appearance), _defineProperty(_classNames, "Text--".concat(weight), weight), _defineProperty(_classNames, 'Text--small', small), _classNames));
-    return /*#__PURE__*/React.createElement(GenericText, _extends({
-      className: classes,
-      componentType: "span"
-    }, rest), children);
-  };
-
   var Icon = function Icon(props) {
     var _classNames;
 
@@ -563,6 +500,78 @@
       style: styles,
       onClick: onClickHandler
     }, "".concat(name, "_").concat(type));
+  };
+
+  var sizeMapping = {
+    tiny: 12,
+    regular: 16,
+    large: 20
+  };
+  var Button = function Button(props) {
+    var _classNames, _classNames2;
+
+    var _props$appearance = props.appearance,
+        appearance = _props$appearance === void 0 ? 'basic' : _props$appearance,
+        _props$size = props.size,
+        size = _props$size === void 0 ? 'regular' : _props$size,
+        _props$iconAlign = props.iconAlign,
+        iconAlign = _props$iconAlign === void 0 ? 'left' : _props$iconAlign,
+        children = props.children,
+        icon = props.icon,
+        expanded = props.expanded,
+        loading = props.loading,
+        disabled = props.disabled,
+        rest = _objectWithoutProperties(props, ["appearance", "size", "iconAlign", "children", "icon", "expanded", "loading", "disabled"]);
+
+    var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--expanded', expanded), _defineProperty(_classNames, "Button--".concat(size), size), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, "Button--".concat(appearance), appearance), _defineProperty(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _classNames));
+    var iconClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Button-icon', true), _defineProperty(_classNames2, "Button-icon--".concat(iconAlign), children && iconAlign), _classNames2));
+    return /*#__PURE__*/React.createElement("button", _extends({
+      className: buttonClass,
+      disabled: disabled || loading
+    }, rest), loading && /*#__PURE__*/React.createElement(Spinner, {
+      size: "small",
+      appearance: appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white'
+    }), icon && !loading && /*#__PURE__*/React.createElement("div", {
+      className: iconClass
+    }, /*#__PURE__*/React.createElement(Icon, {
+      name: icon,
+      appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? 'default' : 'white',
+      size: sizeMapping[size]
+    })), children && "".concat(children.charAt(0).toUpperCase()).concat(children.slice(1)));
+  };
+  Button.displayName = 'Button';
+
+  var Card = function Card(props) {
+    var _props$shadow = props.shadow,
+        shadow = _props$shadow === void 0 ? 'medium' : _props$shadow,
+        children = props.children,
+        rest = _objectWithoutProperties(props, ["shadow", "children"]);
+
+    var classes = classNames(_defineProperty({
+      Card: true
+    }, "Card--shadow-".concat(shadow), shadow));
+    return /*#__PURE__*/React.createElement("div", _extends({
+      className: classes
+    }, rest), children);
+  };
+
+  var Text = function Text(props) {
+    var _classNames;
+
+    var _props$appearance = props.appearance,
+        appearance = _props$appearance === void 0 ? 'default' : _props$appearance,
+        children = props.children,
+        weight = props.weight,
+        small = props.small,
+        rest = _objectWithoutProperties(props, ["appearance", "children", "weight", "small"]);
+
+    var classes = classNames((_classNames = {
+      Text: true
+    }, _defineProperty(_classNames, "Text--".concat(appearance), appearance), _defineProperty(_classNames, "Text--".concat(weight), weight), _defineProperty(_classNames, 'Text--small', small), _classNames));
+    return /*#__PURE__*/React.createElement(GenericText, _extends({
+      className: classes,
+      componentType: "span"
+    }, rest), children);
   };
 
   var Checkbox = React.forwardRef(function (props, forwardedRef) {
@@ -811,7 +820,7 @@
           out += (month < 10 && '0') + (month + 1);
           break;
 
-        case 'yy':
+        case 'yyyy':
           out += year;
           break;
 
@@ -1827,6 +1836,11 @@
     return Tooltip;
   }(React.Component);
 
+  var sizeMapping$1 = {
+    tiny: 12,
+    regular: 16,
+    large: 20
+  };
   var Input = React.forwardRef(function (props, ref) {
     var _classNames2, _classNames3, _classNames4, _classNames5, _classNames6;
 
@@ -1855,9 +1869,9 @@
     var classes = classNames(_defineProperty({}, 'Input', true));
     var inputWrapperClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Input-wrapper', true), _defineProperty(_classNames2, "Input-wrapper--".concat(size), size), _defineProperty(_classNames2, 'Input-wrapper--disabled', disabled), _defineProperty(_classNames2, 'Input-wrapper--error', error), _classNames2));
     var inputClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Input-input', true), _defineProperty(_classNames3, "Input-input--".concat(size), size), _classNames3));
-    var leftIconClass = classNames((_classNames4 = {}, _defineProperty(_classNames4, 'material-icons', true), _defineProperty(_classNames4, 'Input-icon', true), _defineProperty(_classNames4, 'Input-icon--left', true), _defineProperty(_classNames4, 'Input-icon--disabled', !value), _classNames4));
-    var rightIconClass = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'material-icons', true), _defineProperty(_classNames5, 'Input-icon', true), _defineProperty(_classNames5, 'Input-icon--right', true), _classNames5));
-    var errorIconClass = classNames((_classNames6 = {}, _defineProperty(_classNames6, 'material-icons', true), _defineProperty(_classNames6, 'Input-icon', true), _defineProperty(_classNames6, 'Input-icon--error', true), _classNames6));
+    var leftIconClass = classNames((_classNames4 = {}, _defineProperty(_classNames4, 'Input-icon', true), _defineProperty(_classNames4, 'Input-icon--left', true), _defineProperty(_classNames4, 'Input-icon--disabled', !value), _classNames4));
+    var rightIconClass = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'Input-icon', true), _defineProperty(_classNames5, 'Input-icon--right', true), _classNames5));
+    var errorIconClass = classNames((_classNames6 = {}, _defineProperty(_classNames6, 'Input-icon', true), _defineProperty(_classNames6, 'Input-icon--error', true), _classNames6));
     return /*#__PURE__*/React.createElement("div", {
       className: classes
     }, size !== 'tiny' && label && /*#__PURE__*/React.createElement("div", {
@@ -1868,9 +1882,12 @@
       className: "Input-inlineLabel"
     }, /*#__PURE__*/React.createElement(Text, {
       appearance: "subtle"
-    }, inlineLabel)), size !== 'tiny' && icon && /*#__PURE__*/React.createElement("i", {
+    }, inlineLabel)), size !== 'tiny' && icon && /*#__PURE__*/React.createElement("div", {
       className: leftIconClass
-    }, icon), /*#__PURE__*/React.createElement("input", {
+    }, /*#__PURE__*/React.createElement(Icon, {
+      name: icon,
+      size: sizeMapping$1[size]
+    })), /*#__PURE__*/React.createElement("input", {
       name: name,
       type: type,
       placeholder: placeholder,
@@ -1892,18 +1909,27 @@
     }), (!value && !disabled || value && disabled) && info && /*#__PURE__*/React.createElement(Tooltip, {
       position: "top",
       tooltip: info
-    }, /*#__PURE__*/React.createElement("i", {
+    }, /*#__PURE__*/React.createElement("div", {
       className: rightIconClass
-    }, "info")), clearButton && value && !disabled && /*#__PURE__*/React.createElement("i", {
+    }, /*#__PURE__*/React.createElement(Icon, {
+      name: 'info',
+      size: sizeMapping$1[size]
+    }))), clearButton && value && !disabled && /*#__PURE__*/React.createElement("div", {
       className: rightIconClass,
       onClick: function onClick(e) {
         return onClear && onClear(e);
       }
-    }, "close")), size !== 'tiny' && caption && /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement(Icon, {
+      name: 'close',
+      size: sizeMapping$1[size]
+    }))), size !== 'tiny' && caption && /*#__PURE__*/React.createElement("div", {
       className: "Input-caption"
-    }, error && /*#__PURE__*/React.createElement("i", {
+    }, error && /*#__PURE__*/React.createElement("div", {
       className: errorIconClass
-    }, "error"), /*#__PURE__*/React.createElement(Text, {
+    }, /*#__PURE__*/React.createElement(Icon, {
+      name: 'error',
+      appearance: 'alert'
+    })), /*#__PURE__*/React.createElement(Text, {
       appearance: error ? 'destructive' : 'subtle',
       small: true,
       weight: "medium"
@@ -2073,12 +2099,12 @@
   });
 
   var dateMask = {
-    'dd/mm/yy': [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
-    'mm/dd/yy': [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
-    'yy/mm/dd': [/\d/, /\d/, /\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/],
-    'dd-mm-yy': [/\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
-    'mm-dd-yy': [/\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
-    'yy-mm-dd': [/\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]
+    'dd/mm/yyyy': [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
+    'mm/dd/yyyy': [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
+    'yyyy/mm/dd': [/\d/, /\d/, /\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/],
+    'dd-mm-yyyy': [/\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
+    'mm-dd-yyyy': [/\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
+    'yyyy-mm-dd': [/\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]
   };
   var e = {
     date: dateMask
@@ -2096,42 +2122,42 @@
     };
 
     switch (format) {
-      case 'dd/mm/yy':
+      case 'dd/mm/yyyy':
         var p = val.split('/');
         var date = +p[0];
         var month = +p[1];
         var year = +p[2];
         return validate(date, month, year);
 
-      case 'mm/dd/yy':
+      case 'mm/dd/yyyy':
         var p = val.split('/');
         var date = +p[1];
         var month = +p[0];
         var year = +p[2];
         return validate(date, month, year);
 
-      case 'yy/mm/dd':
+      case 'yyyy/mm/dd':
         var p = val.split('/');
         var date = +p[2];
         var month = +p[1];
         var year = +p[0];
         return validate(date, month, year);
 
-      case 'dd-mm-yy':
+      case 'dd-mm-yyyy':
         var p = val.split('-');
         var date = +p[0];
         var month = +p[1];
         var year = +p[2];
         return validate(date, month, year);
 
-      case 'mm-dd-yy':
+      case 'mm-dd-yyyy':
         var p = val.split('-');
         var date = +p[1];
         var month = +p[0];
         var year = +p[2];
         return validate(date, month, year);
 
-      case 'yy-mm-dd':
+      case 'yyyy-mm-dd':
         var p = val.split('-');
         var date = +p[2];
         var month = +p[1];
@@ -2148,12 +2174,10 @@
 
   var DatePicker = function DatePicker(props) {
     var dateProp = props.date,
-        _props$withInput = props.withInput,
-        withInput = _props$withInput === void 0 ? false : _props$withInput,
         _props$inputFormat = props.inputFormat,
-        inputFormat = _props$inputFormat === void 0 ? 'dd/mm/yy' : _props$inputFormat,
+        inputFormat = _props$inputFormat === void 0 ? 'mm/dd/yyyy' : _props$inputFormat,
         _props$outputFormat = props.outputFormat,
-        outputFormat = _props$outputFormat === void 0 ? 'mm/dd/yy' : _props$outputFormat,
+        outputFormat = _props$outputFormat === void 0 ? 'mm/dd/yyyy' : _props$outputFormat,
         _props$inputProps = props.inputProps,
         inputProps = _props$inputProps === void 0 ? {
       name: 'datepicker',
@@ -2164,11 +2188,12 @@
         mask = _props$mask === void 0 ? e.date[inputFormat] : _props$mask,
         _props$validator = props.validator,
         validator = _props$validator === void 0 ? e$1.date : _props$validator,
+        withInput = props.withInput,
         position = props.position,
         disabledBefore = props.disabledBefore,
         disabledAfter = props.disabledAfter,
         onDateChange = props.onDateChange,
-        rest = _objectWithoutProperties(props, ["date", "withInput", "inputFormat", "outputFormat", "inputProps", "mask", "validator", "position", "disabledBefore", "disabledAfter", "onDateChange"]);
+        rest = _objectWithoutProperties(props, ["date", "inputFormat", "outputFormat", "inputProps", "mask", "validator", "withInput", "position", "disabledBefore", "disabledAfter", "onDateChange"]);
 
     var _React$useState = React.useState(),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -2295,10 +2320,9 @@
       ref: ref,
       value: children,
       className: buttonClass,
-      disabled: disabled
-    }, rest, {
-      style: style
-    }), value && /*#__PURE__*/React.createElement("div", {
+      disabled: disabled,
+      style: !placeholder && !children ? {} : style
+    }, rest), value && /*#__PURE__*/React.createElement("div", {
       className: "DropdownButton-wrapper"
     }, inlineLabel && !icon && /*#__PURE__*/React.createElement("div", {
       className: labelClass
@@ -3094,11 +3118,13 @@
       setStateLimit(2 * limit);
     }, [limit]);
     React.useEffect(function () {
-      var selectedOptions = getSelectedFromOptions();
-      setSelected(selectedOptions);
-      setSelectedAll(selectAll);
-      getDropdownOptions(0, limit, undefined);
-    }, [props.options, selectAll, limit]);
+      if (props.options.length > 0) {
+        var selectedOptions = getSelectedFromOptions();
+        setSelected(selectedOptions);
+        setSelectedAll(selectAll);
+        getDropdownOptions(0, limit, undefined);
+      }
+    }, [JSON.stringify(props.options), selectAll, limit]);
     React.useEffect(function () {
       getDropdownOptions(0, limit, undefined);
     }, [searchTerm]);
@@ -3676,7 +3702,9 @@
           var defautHeader = function defautHeader() {
             return /*#__PURE__*/React.createElement("div", {
               className: "cell-wrapper"
-            }, displayName);
+            }, /*#__PURE__*/React.createElement(Text, {
+              weight: 'strong'
+            }, displayName));
           };
 
           var HeaderComponent = !HeaderComp ? defautHeader : HeaderComp;
@@ -4597,7 +4625,7 @@
       });
 
       _defineProperty(_assertThisInitialized(_this), "getData", function () {
-        if (!_this.props.pagination) {
+        if (!_this.props.pagination || _this.props.data.length === 0) {
           return _this.props.data;
         }
 
@@ -4633,7 +4661,7 @@
     _createClass(Table, [{
       key: "componentDidUpdate",
       value: function componentDidUpdate(prevProps) {
-        if (prevProps.pagination !== this.props.pagination || prevProps.limit !== this.props.limit) {
+        if (prevProps.pagination !== this.props.pagination || prevProps.limit !== this.props.limit || prevProps.data.length !== this.props.data.length) {
           this.limit = this.props.limit ? this.props.limit : 10;
           this.setState({
             offset: 0,
@@ -4716,19 +4744,19 @@
         actions = props.actions,
         onClose = props.onClose;
     var wrapperClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Toast', true), _defineProperty(_classNames, "Toast--".concat(appearance), appearance), _classNames));
-    var Icon = {
+    var IconMapping = {
       info: 'info',
       success: 'check_circle',
       alert: 'info',
       warning: 'info'
     };
-    var icon = Icon[appearance];
+    var icon = IconMapping[appearance];
     var titleClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Toast-title', true), _defineProperty(_classNames2, 'Toast-title--withMessage', message), _classNames2));
 
     var iconClass = function iconClass(align) {
       var _classNames3;
 
-      return classNames((_classNames3 = {}, _defineProperty(_classNames3, 'material-icons', true), _defineProperty(_classNames3, 'Toast-icon', true), _defineProperty(_classNames3, "Toast-icon--".concat(align), align), _classNames3));
+      return classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Toast-icon', true), _defineProperty(_classNames3, "Toast-icon--".concat(align), align), _classNames3));
     };
 
     var onCloseHandler = function onCloseHandler() {
@@ -4737,9 +4765,13 @@
 
     return /*#__PURE__*/React.createElement("div", {
       className: wrapperClass
-    }, icon && /*#__PURE__*/React.createElement("i", {
+    }, icon && /*#__PURE__*/React.createElement("div", {
       className: iconClass('left')
-    }, icon), /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement(Icon, {
+      name: icon,
+      size: 16,
+      appearance: appearance !== 'warning' ? 'white' : 'default'
+    })), /*#__PURE__*/React.createElement("div", {
       className: "Toast-body"
     }, /*#__PURE__*/React.createElement("div", {
       className: titleClass
@@ -4747,9 +4779,12 @@
       appearance: appearance !== 'warning' ? 'white' : 'default'
     }, title), /*#__PURE__*/React.createElement("div", {
       onClick: onCloseHandler
-    }, /*#__PURE__*/React.createElement("i", {
+    }, /*#__PURE__*/React.createElement("div", {
       className: iconClass('right')
-    }, "close"))), message && /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement(Icon, {
+      name: 'close',
+      size: 16
+    })))), message && /*#__PURE__*/React.createElement("div", {
       className: "Toast-message"
     }, /*#__PURE__*/React.createElement(Text, {
       appearance: appearance !== 'warning' ? 'white' : 'default'
@@ -4832,18 +4867,24 @@
 
     var getCloseButton = function getCloseButton() {
       var onClose = props.onClose;
-      return /*#__PURE__*/React.createElement("i", {
-        className: "material-icons Modal-close-icon",
+      return /*#__PURE__*/React.createElement("div", {
+        className: "Modal-close-icon",
         onClick: function onClick(event) {
           return onClose('IconClick', event);
         }
-      }, "close");
+      }, /*#__PURE__*/React.createElement(Icon, {
+        name: 'close',
+        size: 16
+      }));
     };
 
     var getHeaderIcon = function getHeaderIcon() {
-      return /*#__PURE__*/React.createElement("i", {
-        className: "material-icons Modal-header-icon"
-      }, icon);
+      return /*#__PURE__*/React.createElement("div", {
+        className: "Modal-header-icon"
+      }, /*#__PURE__*/React.createElement(Icon, {
+        name: icon,
+        size: 16
+      }));
     };
 
     var closeButton = getCloseButton();
@@ -4935,12 +4976,10 @@
         endDateProp = props.endDate,
         yearNavProp = props.yearNav,
         monthNavProp = props.monthNav,
-        _props$withInput = props.withInput,
-        withInput = _props$withInput === void 0 ? false : _props$withInput,
         _props$inputFormat = props.inputFormat,
-        inputFormat = _props$inputFormat === void 0 ? 'dd/mm/yy' : _props$inputFormat,
+        inputFormat = _props$inputFormat === void 0 ? 'mm/dd/yyyy' : _props$inputFormat,
         _props$outputFormat = props.outputFormat,
-        outputFormat = _props$outputFormat === void 0 ? 'mm/dd/yy' : _props$outputFormat,
+        outputFormat = _props$outputFormat === void 0 ? 'mm/dd/yyyy' : _props$outputFormat,
         _props$rangeSeparator = props.rangeSeparator,
         rangeSeparator = _props$rangeSeparator === void 0 ? ' - ' : _props$rangeSeparator,
         _props$startInputProp = props.startInputProps,
@@ -4961,12 +5000,13 @@
         mask = _props$mask === void 0 ? e.date[inputFormat] : _props$mask,
         _props$validator = props.validator,
         validator = _props$validator === void 0 ? e$1.date : _props$validator,
+        withInput = props.withInput,
         position = props.position,
         disabledBefore = props.disabledBefore,
         disabledAfter = props.disabledAfter,
         onRangeChange = props.onRangeChange,
         rangeLimit = props.rangeLimit,
-        rest = _objectWithoutProperties(props, ["startDate", "endDate", "yearNav", "monthNav", "withInput", "inputFormat", "outputFormat", "rangeSeparator", "startInputProps", "endInputProps", "mask", "validator", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"]);
+        rest = _objectWithoutProperties(props, ["startDate", "endDate", "yearNav", "monthNav", "inputFormat", "outputFormat", "rangeSeparator", "startInputProps", "endInputProps", "mask", "validator", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"]);
 
     var _React$useState = React.useState(),
         _React$useState2 = _slicedToArray(_React$useState, 2),

@@ -1,18 +1,12 @@
 import * as React from 'react';
-import { View, Day, DateType, DateFormat } from '../calendar/types';
+import { SharedProps } from '../calendar/Calendar';
+import { DateType, DateFormat } from '../calendar/types';
 import { Position } from '@/components/molecules/popover';
 import { Mask, InputMaskProps } from '@/components/molecules/inputMask';
 import { Validator } from '../calendar/utility';
-export interface DatePickerProps {
-    onDateChange?: (date: Date, dateVal?: string) => void;
-    jumpView?: boolean;
+export declare type DatePickerProps = {
+    onDateChange?: (date: Date, dateVal: string) => void;
     date?: DateType;
-    firstDayOfWeek?: Day;
-    view?: View;
-    disabledBefore?: DateType;
-    disabledAfter?: DateType;
-    yearNav?: number;
-    monthNav?: number;
     withInput?: boolean;
     position?: Position;
     inputFormat?: DateFormat;
@@ -20,6 +14,6 @@ export interface DatePickerProps {
     inputProps?: InputMaskProps;
     mask?: Mask;
     validator?: Validator;
-}
+} & SharedProps;
 export declare const DatePicker: React.FunctionComponent<DatePickerProps>;
 export default DatePicker;

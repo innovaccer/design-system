@@ -15,5 +15,8 @@ export interface ButtonProps {
     onMouseEnter?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
-export declare const Button: React.FunctionComponent<ButtonProps>;
+export declare const Button: {
+    (props: ButtonProps): JSX.Element;
+    displayName: string;
+};
 export default Button;
