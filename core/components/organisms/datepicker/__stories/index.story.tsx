@@ -12,6 +12,18 @@ export const all = () => {
     false
   );
 
+  const inputFormat = select(
+    'inputFormat',
+    ['mm/dd/yyyy', 'dd/mm/yyyy', 'yyyy-mm-dd', 'mm-dd-yyyy', 'dd-mm-yyyy', 'yyyy-mm-dd'],
+    undefined
+  );
+
+  const outputFormat = select(
+    'outputFormat',
+    ['mm/dd/yyyy', 'dd/mm/yyyy', 'yyyy-mm-dd', 'mm-dd-yyyy', 'dd-mm-yyyy', 'yyyy-mm-dd'],
+    undefined
+  );
+
   const dateValue = date(
     'date',
     undefined
@@ -64,6 +76,8 @@ export const all = () => {
     return (
       <DatePicker
         withInput={withInput}
+        inputFormat={inputFormat}
+        outputFormat={outputFormat}
         jumpView={jumpView}
         date={dateValue}
         onDateChange={(currDate?: Date) => action(`on date change : ${currDate}`)()}
@@ -82,6 +96,8 @@ export const all = () => {
     >
       <DatePicker
         withInput={withInput}
+        inputFormat={inputFormat}
+        outputFormat={outputFormat}
         jumpView={jumpView}
         date={dateValue}
         onDateChange={(currDate?: Date) => action(`on date change : ${currDate}`)()}

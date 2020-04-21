@@ -17,6 +17,18 @@ export const all = () => {
     1
   );
 
+  const inputFormat = select(
+    'inputFormat',
+    ['mm/dd/yyyy', 'dd/mm/yyyy', 'yyyy-mm-dd', 'mm-dd-yyyy', 'dd-mm-yyyy', 'yyyy-mm-dd'],
+    undefined
+  );
+
+  const outputFormat = select(
+    'outputFormat',
+    ['mm/dd/yyyy', 'dd/mm/yyyy', 'yyyy-mm-dd', 'mm-dd-yyyy', 'dd-mm-yyyy', 'yyyy-mm-dd'],
+    undefined
+  );
+
   const startDate = date(
     'startDate',
     undefined
@@ -81,6 +93,8 @@ export const all = () => {
       <RangePicker
         withInput={withInput}
         monthsInView={monthsInView}
+        inputFormat={inputFormat}
+        outputFormat={outputFormat}
         jumpView={jumpView}
         startDate={startDate}
         endDate={endDate}

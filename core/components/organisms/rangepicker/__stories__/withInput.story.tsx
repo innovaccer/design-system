@@ -18,13 +18,13 @@ export const withInput = () => {
 
   const inputFormat = select(
     'inputFormat',
-    ['mm/dd/yy', 'dd/mm/yy', 'yy-mm-dd', 'mm-dd-yy', 'dd-mm-yy', 'yy-mm-dd'],
+    ['mm/dd/yyyy', 'dd/mm/yyyy', 'yyyy-mm-dd', 'mm-dd-yyyy', 'dd-mm-yyyy', 'yyyy-mm-dd'],
     undefined
   );
 
   const outputFormat = select(
     'outputFormat',
-    ['mm/dd/yy', 'dd/mm/yy', 'yy-mm-dd', 'mm-dd-yy', 'dd-mm-yy', 'yy-mm-dd'],
+    ['mm/dd/yyyy', 'dd/mm/yyyy', 'yyyy-mm-dd', 'mm-dd-yyyy', 'dd-mm-yyyy', 'yyyy-mm-dd'],
     undefined
   );
 
