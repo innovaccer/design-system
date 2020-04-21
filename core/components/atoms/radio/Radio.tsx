@@ -6,24 +6,24 @@ export type Size = 'regular' | 'tiny';
 
 export interface RadioProps {
   /**
-   * Size of `radio`
+   * Size of `Radio`
    * @default "regular"
    */
   size?: Size;
   /**
-   * Disables the `radio`, making it unable to be pressed
+   * Disables the `Radio`, making it unable to be pressed
    */
   disabled?: boolean;
   /**
-   * Describes Label of the `radio`
+   * Describes Label of the `Radio`
    */
   label?: string;
   /**
-   * Name of the `radio`
+   * Name of the `Radio`
    */
   name: string;
   /**
-   * Name of the `radio`
+   * Name of the `Radio`
    */
   value: string;
   /**

@@ -7,7 +7,7 @@ export type Size = 'regular' | 'tiny';
 
 export interface CheckboxProps {
   /**
-   * Size of the `checkbox`
+   * Size of the `Checkbox`
    * @default "regular"
    */
   size?: Size;
@@ -16,23 +16,23 @@ export interface CheckboxProps {
    */
   checked?: boolean;
   /**
-   * Used in case of nested `checkboxes`, overwrites checked if true
+   * Used in case of nested `Checkbox`, overwrites checked if true
    */
   indeterminate?: boolean;
   /**
-   * Disables the `checkbox`, making it unable to be pressed
+   * Disables the `Checkbox`, making it unable to be pressed
    */
   disabled?: boolean;
   /**
-   * Describes Label of the `checkbox`
+   * Describes Label of the `Checkbox`
    */
   label?: string;
   /**
-   * Name of the `checkbox`
+   * Name of the `Checkbox`
    */
   name?: string;
   /**
-   * Value of the `checkbox`
+   * Value of the `Checkbox`
    */
   value?: string;
   /**

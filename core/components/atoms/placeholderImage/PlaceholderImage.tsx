@@ -5,11 +5,11 @@ export type Size = 'small' | 'medium' | 'large';
 
 export interface PlaceholderImageProps {
   /**
-   * changes shape of `placeholder` to circle
+   * Changes shape of `Placeholder` to circle
    */
   round?: boolean;
   /**
-   * Specifies dimension of `placeholder`
+   * Specifies dimension of `Placeholder`
    * @default "small"
    */
   imageSize?: Size;

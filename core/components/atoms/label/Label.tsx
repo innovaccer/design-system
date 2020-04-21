@@ -9,7 +9,7 @@ export interface LabelProps {
    */
   children: React.ReactNode;
   /**
-   * Disables the `label`
+   * Disables the `Label`
    */
   disabled?: boolean;
 }

@@ -7,20 +7,20 @@ type DivProps = Omit<JSX.IntrinsicElements['div'], 'ref'>;
 
 export interface TooltipProps extends DivProps {
   /**
-   * Text to be rendered in `tooltip`
+   * Text to be rendered in `Tooltip`
    */
   tooltip: string;
   /**
-   * Component to be rendered as trigger for `tooltip`
+   * Component to be rendered as trigger for `Tooltip`
    */
   children: React.ReactElement<any>;
   /**
-   * Position to place the `tooltip`
+   * Position to place the `Tooltip`
    * @default "bottom"
    */
   position?: PositionType;
   /**
-   * Appends `tooltip` wrapper inside body
+   * Appends `Tooltip` wrapper inside body
    * @default true
    */
   appendToBody?: boolean;

@@ -11,16 +11,16 @@ export interface IconProps {
    */
   name: string;
   /**
-   * Size of `icon`
+   * Size of `Icon`
    */
   size?: number;
   /**
-   * Type of material `icon`
+   * Type of material `Icon`
    * @default "filled"
    */
   type?: IconType;
   /**
-   * Color of `icon`
+   * Color of `Icon`
    * @default "default"
    */
   appearance?: Appearance;

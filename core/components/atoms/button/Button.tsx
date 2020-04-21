@@ -11,29 +11,29 @@ export type Alignment = 'left' | 'right';
 
 export interface ButtonProps {
   /**
-   * The size of `button`
+   * The size of `Button`
    * @default "regular"
    */
   size?: Size;
   /**
-   * Color of the `button`
+   * Color of the `Button`
    * @default "basic"
    */
   appearance?: Appearance;
   /**
-   * Disables the `button`, making it unable to be pressed
+   * Disables the `Button`, making it unable to be pressed
    */
   disabled?: boolean;
   /**
-   * Expands the `button` to full width
+   * Expands the `Button` to full width
    */
   expanded?: boolean;
   /**
-   * Adds loader inside `button` when waiting for an action to complete
+   * Adds loader inside `Button` when waiting for an action to complete
    */
   loading?: boolean;
   /**
-   * Name of icon that is to be added inside `button`
+   * Name of icon that is to be added inside `Button`
    * Material icon name
    */
   icon?: string;
@@ -43,11 +43,11 @@ export interface ButtonProps {
    */
   iconAlign?: Alignment;
   /**
-   * Text to be added inside `button`
+   * Text to be added inside `Button`
    */
   children?: string;
   /**
-   * Handler to be called when `button` is clicked
+   * Handler to be called when `Button` is clicked
    */
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   onMouseEnter?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
@@ -60,7 +60,7 @@ const sizeMapping = {
   large: 20,
 };
 
-export const Button: React.FunctionComponent<ButtonProps> = props => {
+export const Button = (props: ButtonProps) => {
   const {
     appearance = 'basic',
     size = 'regular',

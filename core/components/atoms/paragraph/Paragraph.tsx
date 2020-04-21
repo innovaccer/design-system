@@ -11,7 +11,7 @@ export interface ParagraphProps {
    */
   children: React.ReactNode;
   /**
-   * Color of `paragraph`
+   * Color of `Paragraph`
    * @default "default"
    */
   appearance?: Appearance ;

@@ -11,15 +11,15 @@ export interface TextProps {
    */
   children: string;
   /**
-   * Denotes weight of `text`
+   * Denotes weight of `Text`
    */
   weight?: 'strong' | 'medium';
   /**
-   * Changes size of `text`
+   * Changes size of `Text`
    */
   small?: boolean;
   /**
-   * Color of `text`
+   * Color of `Text`
    * @default "default"
    */
   appearance?: Appearance;

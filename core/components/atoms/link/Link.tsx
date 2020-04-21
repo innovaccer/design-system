@@ -6,11 +6,11 @@ export type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
 
 export interface LinkProps {
   /**
-   * HTML ID of `link`
+   * HTML ID of `Link`
    */
   id?: string;
   /**
-   * The URL to navigate to when the `link` is clicked
+   * The URL to navigate to when the `Link` is clicked
    */
   href?: string;
   /**
@@ -19,7 +19,7 @@ export interface LinkProps {
   target?: LinkTarget;
   rel?: string;
   /**
-   * Handler to be called when `link` is clicked
+   * Handler to be called when `Link` is clicked
    */
   onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
   /**

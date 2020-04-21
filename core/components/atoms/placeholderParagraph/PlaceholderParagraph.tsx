@@ -5,7 +5,7 @@ export type Length = 'small' | 'medium' | 'large';
 
 export interface PlaceholderParagraphProps {
   /**
-   * Size of `placeholder`
+   * Size of `Placeholder`
    * @default "medium"
    */
   length?: Length;

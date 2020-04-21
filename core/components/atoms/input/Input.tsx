@@ -12,15 +12,15 @@ export type Size = 'tiny' | 'regular' | 'large';
 
 export interface InputProps {
   /**
-   * Name of the `input`
+   * Name of the `Input`
    */
   name: string;
   /**
-   * Type of text inside `input`
+   * Type of text inside `Input`
    */
   type?: InputType;
   /**
-   * Value of the `input`
+   * Value of the `Input`
    */
   value?: string;
   /**
@@ -32,7 +32,7 @@ export interface InputProps {
    */
   autocomplete?: AutoComplete;
   /**
-   * Size of the `input`
+   * Size of the `Input`
    * @default "regular"
    */
   size?: Size;
@@ -41,24 +41,29 @@ export interface InputProps {
    */
   icon?: string;
   /**
-   * Text to be displayed above `input`
+   * Text to be displayed above `Input`
    */
   label?: string;
   /**
-   * Label to be displayed inside `input`
+   * Label to be displayed inside `Input`
    */
   inlineLabel?: string;
   /**
-   * Text to be displayed below `input`
+   * Text to be displayed below `Input`
    */
   caption?: string;
+  /**
+   * Shows the 'clear' icon if value is not empty
+   */
   clearButton?: boolean;
   /**
    * Adds loader inside input when waiting for an action to complete
    */
   loading?: boolean;
   /**
-   * Disables the `input`, making it unable to type
+   * Disables the `Input`, making it unable to type
+   *
+   * **set to `true` if onChange is not provided**
    */
   disabled?: boolean;
   /**
@@ -70,7 +75,7 @@ export interface InputProps {
    */
   error?: boolean;
   /**
-   * Text to be rendered in info `tooltip`
+   * Text to be rendered in info `Tooltip`
    * @default true
    */
   info?: string;
@@ -79,15 +84,15 @@ export interface InputProps {
    */
   onClear?: (e: React.MouseEvent<HTMLElement>) => void;
   /**
-   * Callback function when `input` text changes
+   * Callback function when `Input` text changes
    */
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   /**
-   * Handler to be called when `input` is clicked
+   * Handler to be called when `Input` is clicked
    */
   onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
   /**
-   * Handler to be called when `input` loses focus
+   * Handler to be called when `Input` loses focus
    */
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }

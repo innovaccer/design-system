@@ -11,7 +11,7 @@ export interface SubheadingProps {
    */
   children: string;
   /**
-   * Color of `subheading`
+   * Color of `Subheading`
    * @default "default"
    */
   appearance?: Appearance;

@@ -20,20 +20,20 @@ export type Action = {
 
 export interface ToastProps {
   /**
-   * Title of `toast`
+   * Title of `Toast`
    */
   title: string;
   /**
-   * Color of `toast`
+   * Color of `Toast`
    * @default "default"
    */
   appearance?: Appearance;
   /**
-   * Message to be rendered inside `toast`
+   * Message to be rendered inside `Toast`
    */
   message?: string;
   /**
-   * Array for `ActionButton`(maxLen: 2)
+   * Array for `ActionButton`**(maxLen: 2)**
    *
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * Action: {

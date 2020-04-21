@@ -5,12 +5,12 @@ export type Appearance = 'primary' | 'alert' | 'warning' | 'success' | 'accent1'
 
 export interface AvatarProps {
   /**
-   * Color of `avatar`
+   * Color of the `Avatar`
    * @default "primary"
    */
   appearance?: Appearance;
   /**
-   * Only first 2 characters are rendered
+   * **Only first 2 characters are rendered**
    */
   children: string;
 }

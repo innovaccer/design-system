@@ -13,12 +13,12 @@ const IconMapping = {
 
 export interface MessageProps {
   /**
-   * Color of `message`
+   * Color of `Message`
    * @default "default"
    */
   appearance?: Appearance;
   /**
-   * Title of the `message`
+   * Title of the `Message`
    */
   title?: string;
   /**

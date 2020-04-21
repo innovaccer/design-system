@@ -6,12 +6,12 @@ export type Appearance = 'primary' | 'alert' | 'success' | 'warning';
 
 export interface SwitchProps {
   /**
-   * Size of `swicth`
+   * Size of `Switch`
    * @default "regular"
    */
   size?: Size;
   /**
-   * Color of `switch`
+   * Color of `Switch`
    * @default "primary"
    */
   appearance?: Appearance;
@@ -20,19 +20,19 @@ export interface SwitchProps {
    */
   checked?: boolean;
   /**
-   * Disables the `switch`, making it unable to be pressed
+   * Disables the `Switch`, making it unable to be pressed
    */
   disabled?: boolean;
   /**
-   * Name of `switch`
+   * Name of `Switch`
    */
   name?: string;
   /**
-   * Value of `swicth`
+   * Value of `Switch`
    */
   value?: string;
   /**
-   * Callback function called when `switch` is toggled
+   * Callback function called when `Switch` is toggled
    */
   onChange?: (selected: boolean) => void;
 }

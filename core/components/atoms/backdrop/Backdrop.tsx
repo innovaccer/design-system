@@ -7,7 +7,6 @@ const { useEffect, useState } = React;
 export interface BackdropProps {
   /**
    * Handles open/close state
-   * @default false
    */
   open: boolean;
 }
@@ -15,7 +14,7 @@ export interface BackdropProps {
 const Backdrop = (props: BackdropProps) => {
   const [savedBodyOverflow, setBodyOverflow] = useState<string | null>(null);
   const [backdropClasses, setClasses] = useState<string>('Backdrop');
-  const { open = false } = props;
+  const { open } = props;
 
   const classes = classNames({
     Backdrop: true
