@@ -7,7 +7,7 @@
   Innovaccer Design System
 </h1>
 <h3 align="center">
-  A React  UI Toolkit for building Web Applications.
+  A React based UI Toolkit for building Web Applications.
 </h3>
 
 
