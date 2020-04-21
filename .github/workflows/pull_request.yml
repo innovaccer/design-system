@@ -1,0 +1,26 @@
+name: Pull request 
+
+on: pull_request  
+
+jobs:
+  lint_test_build:
+    name: lint, test and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+            
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      
+      - name: npm install
+        run: npm install
+      
+      - name: lint
+        run: npm run lint
+
+      - name: test
+        run: npm run test
+
+      - name: build
+        run: npm run build
