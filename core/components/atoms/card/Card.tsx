@@ -10,6 +10,10 @@ export interface CardProps {
    */
   shadow?: Shadow;
   /**
+   * Adds CSS to `card` component
+   */
+  style?: React.CSSProperties;
+  /**
    * Will be wrapped in a `Card` container
    */
   children: React.ReactNode;
