@@ -98,12 +98,13 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = props => {
   }, [limit]);
 
   React.useEffect(() => {
-    const selectedOptions = getSelectedFromOptions();
-    setSelected(selectedOptions);
-    setSelectedAll(selectAll);
-    getDropdownOptions(0, limit, undefined);
-
-  }, [props.options, selectAll, limit]);
+    if (props.options.length > 0) {
+      const selectedOptions = getSelectedFromOptions();
+      setSelected(selectedOptions);
+      setSelectedAll(selectAll);
+      getDropdownOptions(0, limit, undefined);
+    }
+  }, [JSON.stringify(props.options), selectAll, limit]);
 
   React.useEffect(() => {
     getDropdownOptions(0, limit, undefined);
