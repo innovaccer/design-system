@@ -11,7 +11,7 @@ export interface PlaceholderParagraphProps {
   length?: Length;
 }
 
-export const PlaceholderParagraph: React.FunctionComponent<PlaceholderParagraphProps> = props => {
+export const PlaceholderParagraph = (props: PlaceholderParagraphProps) => {
   const { length = 'medium' } = props;
 
   const classes = classNames({
@@ -24,5 +24,7 @@ export const PlaceholderParagraph: React.FunctionComponent<PlaceholderParagraphP
     <div className={classes} />
   );
 };
+
+PlaceholderParagraph.displayName = 'PlaceholderParagraph';
 
 export default PlaceholderParagraph;

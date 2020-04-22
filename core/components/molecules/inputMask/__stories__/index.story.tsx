@@ -25,7 +25,7 @@ export const all = () => {
 
   const placeholder = text(
     'placeholder',
-    'dd/mm/yy'
+    'mm/dd/yyyy'
   );
 
   const disabled = boolean(
@@ -94,7 +94,7 @@ export const all = () => {
         caption={caption}
         info={info}
         clearButton={clearButton}
-        mask={masks.date['mm/dd/yy']}
+        mask={masks.date['mm/dd/yyyy']}
       />
     </div>
   );

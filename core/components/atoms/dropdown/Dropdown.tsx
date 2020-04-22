@@ -37,7 +37,7 @@ interface Selected {
   value: any[];
 }
 
-export const Dropdown: React.FunctionComponent<DropdownProps> = props => {
+export const Dropdown = (props: DropdownProps) => {
   const {
     limit = 10,
     selectAll = false,

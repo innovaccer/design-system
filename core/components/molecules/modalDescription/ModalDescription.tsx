@@ -8,7 +8,7 @@ export interface ModalDescriptionProps {
   removePadding?: boolean;
 }
 
-export const ModalDescription: React.FunctionComponent<ModalDescriptionProps> = props => {
+export const ModalDescription = (props: ModalDescriptionProps) => {
   const { title = '', description = '', removePadding = false } = props;
 
   const classes = classNames({
@@ -35,5 +35,7 @@ export const ModalDescription: React.FunctionComponent<ModalDescriptionProps> = 
     </div>
   );
 };
+
+ModalDescription.displayName = 'ModalDescription';
 
 export default ModalDescription;

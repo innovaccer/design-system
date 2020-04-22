@@ -71,7 +71,7 @@ export type RangePickerProps = {
   validator?: Validator;
 } & SharedProps;
 
-export const RangePicker: React.FunctionComponent<RangePickerProps> = props => {
+export const RangePicker = (props: RangePickerProps) => {
   const {
     startDate: startDateProp,
     endDate: endDateProp,
@@ -362,5 +362,7 @@ export const RangePicker: React.FunctionComponent<RangePickerProps> = props => {
     />
   );
 };
+
+RangePicker.displayName = 'RangePicker';
 
 export default RangePicker;

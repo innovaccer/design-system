@@ -10,9 +10,10 @@ export interface RowProps {
   groupM?: RowColumns;
   groupL?: RowColumns;
   groupXL?: RowColumns;
+  children: React.ReactNode;
 }
 
-export const Row: React.FunctionComponent<RowProps> = props => {
+export const Row = (props: RowProps) => {
   const { group, groupXS, groupS, groupM, groupL, groupXL } = props;
 
   const classes = classNames({
@@ -26,5 +27,7 @@ export const Row: React.FunctionComponent<RowProps> = props => {
   });
   return <div className={classes}>{props.children}</div>;
 };
+
+Row.displayName = 'Row';
 
 export default Row;

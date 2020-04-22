@@ -15,7 +15,7 @@ export interface PlaceholderImageProps {
   imageSize?: Size;
 }
 
-export const PlaceholderImage: React.FunctionComponent<PlaceholderImageProps> = props => {
+export const PlaceholderImage = (props: PlaceholderImageProps) => {
   const {
     imageSize = 'small',
     round,
@@ -32,5 +32,7 @@ export const PlaceholderImage: React.FunctionComponent<PlaceholderImageProps> = 
     <div className={classes} />
   );
 };
+
+PlaceholderImage.displayName = 'PlaceholderImage';
 
 export default PlaceholderImage;

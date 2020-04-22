@@ -82,4 +82,6 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
   );
 });
 
+DropdownButton.displayName = 'DropdownButton';
+
 export default DropdownButton;

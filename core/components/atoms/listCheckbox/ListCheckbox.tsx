@@ -179,4 +179,6 @@ export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>(
   );
 });
 
+ListCheckbox.displayName = 'ListCheckbox';
+
 export default ListCheckbox;

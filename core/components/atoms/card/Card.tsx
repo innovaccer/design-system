@@ -19,7 +19,7 @@ export interface CardProps {
   children: React.ReactNode;
 }
 
-export const Card: React.FunctionComponent<CardProps> = props => {
+export const Card = (props: CardProps) => {
   const {
     shadow = 'medium',
     children,
@@ -37,5 +37,7 @@ export const Card: React.FunctionComponent<CardProps> = props => {
     </div>
   );
 };
+
+Card.displayName = 'Card';
 
 export default Card;

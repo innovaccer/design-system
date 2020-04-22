@@ -46,7 +46,7 @@ export interface ToastProps {
   onClose?: () => void;
 }
 
-export const Toast: React.FunctionComponent<ToastProps> = props => {
+export const Toast = (props: ToastProps) => {
   const {
     appearance = 'default',
     title,

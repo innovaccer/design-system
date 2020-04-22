@@ -96,7 +96,7 @@ export type CalendarProps = {
   rangeLimit?: number;
 } & SharedProps;
 
-export const Calendar: React.FunctionComponent<CalendarProps> = props => {
+export const Calendar = (props: CalendarProps) => {
   const now = Date.now();
   const {
     year: nowYear,
@@ -683,5 +683,7 @@ export const Calendar: React.FunctionComponent<CalendarProps> = props => {
     </div>
   );
 };
+
+Calendar.displayName = 'Calendar';
 
 export default Calendar;

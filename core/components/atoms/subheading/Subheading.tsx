@@ -36,4 +36,6 @@ export const Subheading = (props: SubheadingProps) => {
   );
 };
 
+Subheading.displayName = 'Subheading';
+
 export default Subheading;

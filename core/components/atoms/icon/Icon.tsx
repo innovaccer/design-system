@@ -34,7 +34,7 @@ export interface IconProps {
   helpers?: string[];
 }
 
-export const Icon: React.FunctionComponent<IconProps> = props => {
+export const Icon = (props: IconProps) => {
   const {
     appearance = 'default',
     type = 'filled',
@@ -71,5 +71,7 @@ export const Icon: React.FunctionComponent<IconProps> = props => {
     </i>
   );
 };
+
+Icon.displayName = 'Icon';
 
 export default Icon;

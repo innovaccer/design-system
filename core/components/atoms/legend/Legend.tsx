@@ -95,4 +95,6 @@ export const Legend = (props: LegendProps) => {
   );
 };
 
+Legend.displayName = 'Legend';
+
 export default Legend;

@@ -17,7 +17,7 @@ export interface TabsWrapperProps {
   onTabChange?: (tabIndex: number) => void;
 }
 
-export const TabsWrapper: React.FunctionComponent<TabsWrapperProps> = props => {
+export const TabsWrapper = (props: TabsWrapperProps) => {
   const {
     children = [],
     onTabChange
@@ -71,5 +71,7 @@ export const TabsWrapper: React.FunctionComponent<TabsWrapperProps> = props => {
     </div>
   );
 };
+
+TabsWrapper.displayName = 'TabsWrapper';
 
 export default TabsWrapper;

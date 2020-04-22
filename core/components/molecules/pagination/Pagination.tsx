@@ -26,7 +26,7 @@ export interface PaginationProps {
   onPageChange: (page: number) => void;
 }
 
-export const Pagination: React.FunctionComponent<PaginationProps> = props => {
+export const Pagination = (props: PaginationProps) => {
   const {
     type = 'basic',
     totalPages,
@@ -105,5 +105,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = props => {
     </div>
   );
 };
+
+Pagination.displayName = 'Pagination';
 
 export default Pagination;

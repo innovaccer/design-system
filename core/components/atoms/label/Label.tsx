@@ -33,4 +33,6 @@ export const Label = (props: LabelProps) => {
   );
 };
 
+Label.displayName = 'Label';
+
 export default Label;

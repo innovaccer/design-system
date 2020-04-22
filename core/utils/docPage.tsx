@@ -160,7 +160,7 @@ const StoryComp = props => {
             activeTab={activeTab}
             onTabChange={tab => setActiveTab(tab)}
           >
-            <Tab label={'JSX'}>
+            <Tab label={'React'}>
               <div style={{ position: 'relative' }}>
                 <CopyComp
                   onClick={() => {

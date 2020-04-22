@@ -17,7 +17,7 @@ export interface SpinnerProps {
   size?: Size;
 }
 
-export const Spinner: React.FunctionComponent<SpinnerProps> = props => {
+export const Spinner = (props: SpinnerProps) => {
   const {
     appearance = 'primary',
     size = 'medium'
@@ -50,5 +50,7 @@ export const Spinner: React.FunctionComponent<SpinnerProps> = props => {
     </svg>
   );
 };
+
+Spinner.displayName = 'Spinner';
 
 export default Spinner;

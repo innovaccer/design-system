@@ -5,7 +5,7 @@ export interface ModalFooterProps {
   children: React.ReactElement[];
 }
 
-export const ModalFooter: React.FunctionComponent<ModalFooterProps> = props => {
+export const ModalFooter = (props: ModalFooterProps) => {
   const { children } = props;
 
   const classes = classNames({
@@ -18,5 +18,7 @@ export const ModalFooter: React.FunctionComponent<ModalFooterProps> = props => {
     </div>
   );
 };
+
+ModalFooter.displayName = 'ModalFooter';
 
 export default ModalFooter;

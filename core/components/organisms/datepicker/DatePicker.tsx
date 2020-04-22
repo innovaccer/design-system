@@ -54,7 +54,7 @@ export type DatePickerProps = {
   validator?: Validator;
 } & SharedProps;
 
-export const DatePicker: React.FunctionComponent<DatePickerProps> = props => {
+export const DatePicker = (props: DatePickerProps) => {
   const {
     date: dateProp,
     inputFormat = 'mm/dd/yyyy',
@@ -171,5 +171,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = props => {
     />
   );
 };
+
+DatePicker.displayName = 'DatePicker';
 
 export default DatePicker;

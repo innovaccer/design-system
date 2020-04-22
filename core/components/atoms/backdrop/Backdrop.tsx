@@ -63,4 +63,6 @@ const Backdrop = (props: BackdropProps) => {
   return BackdropElement;
 };
 
+Backdrop.displayName = 'Backdrop';
+
 export default Backdrop;

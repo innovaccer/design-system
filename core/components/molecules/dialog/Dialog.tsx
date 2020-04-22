@@ -64,7 +64,7 @@ export interface DialogProps {
   secondaryButtonCallback: () => void;
 }
 
-const Dialog: React.FunctionComponent<DialogProps> = props => {
+const Dialog = (props: DialogProps) => {
   const {
     dimension = 'small',
     primaryButtonAppearance = 'primary',
@@ -108,5 +108,7 @@ const Dialog: React.FunctionComponent<DialogProps> = props => {
     </Modal>
   );
 };
+
+Dialog.displayName = 'Dialog';
 
 export default Dialog;

@@ -40,4 +40,6 @@ export const Badge = (props: BadgeProps) => {
   );
 };
 
+Badge.displayName = 'Badge';
+
 export default Badge;

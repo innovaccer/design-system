@@ -7,7 +7,7 @@ export interface ModalBodyProps {
   children: React.ReactNode;
 }
 
-export const ModalBody: React.FunctionComponent<ModalBodyProps> = props => {
+export const ModalBody = (props: ModalBodyProps) => {
   const [scroll, setScroll] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const { children } = props;
@@ -31,5 +31,7 @@ export const ModalBody: React.FunctionComponent<ModalBodyProps> = props => {
     </div>
   );
 };
+
+ModalBody.displayName = 'ModalBody';
 
 export default ModalBody;

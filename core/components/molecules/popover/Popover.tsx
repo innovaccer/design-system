@@ -55,9 +55,13 @@ export interface PopoverProps {
    * Callback after `Popover` is toggled
    */
   onToggle: (open: boolean, type?: string) => void;
+  /**
+   * To be rendered in `Popover` component
+   */
+  children: React.ReactNode;
 }
 
-export const Popover: React.FunctionComponent<PopoverProps> = props => {
+export const Popover = (props: PopoverProps) => {
   const {
     position = 'bottom',
     closeOnBackdropClick = true,
@@ -101,5 +105,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = props => {
     </PopperWrapper>
   );
 };
+
+Popover.displayName = 'Popover';
 
 export default Popover;

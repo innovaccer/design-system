@@ -148,7 +148,7 @@ const usePrevious = (value: any) => {
   return ref.current;
 };
 
-const DropdownList: React.FunctionComponent<OptionsProps> = props => {
+const DropdownList = (props: OptionsProps) => {
   const {
     subheading = {},
     listOptions = [],
@@ -558,6 +558,6 @@ const DropdownList: React.FunctionComponent<OptionsProps> = props => {
   );
 };
 
-DropdownList.displayName = 'Dropdown';
+DropdownList.displayName = 'DropdownList';
 
 export default DropdownList;

@@ -36,4 +36,6 @@ export const Paragraph: React.FunctionComponent<ParagraphProps> = props => {
   );
 };
 
+Paragraph.displayName = 'Paragraph';
+
 export default Paragraph;

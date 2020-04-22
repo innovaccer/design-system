@@ -21,9 +21,13 @@ export interface PlaceholderProps {
    * Adds CSS
    */
   style?: React.CSSProperties;
+  /**
+   * To be rendered in `Placeholder` wrapper
+   */
+  children: React.ReactNode;
 }
 
-export const Placeholder: React.FunctionComponent<PlaceholderProps> = props => {
+export const Placeholder = (props: PlaceholderProps) => {
   const {
     imageSize = 'small',
     withImage,
@@ -48,5 +52,7 @@ export const Placeholder: React.FunctionComponent<PlaceholderProps> = props => {
     </div>
   );
 };
+
+Placeholder.displayName = 'Placeholder';
 
 export default Placeholder;

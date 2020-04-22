@@ -52,4 +52,6 @@ export const Heading = (props: HeadingProps) => {
   );
 };
 
+Heading.displayName = 'Heading';
+
 export default Heading;

@@ -52,4 +52,6 @@ export const Text = (props: TextProps) => {
   );
 };
 
+Text.displayName = 'Text';
+
 export default Text;

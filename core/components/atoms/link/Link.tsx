@@ -46,4 +46,6 @@ export const Link: React.FunctionComponent<LinkProps> = props => {
   );
 };
 
+Link.displayName = 'Link';
+
 export default Link;

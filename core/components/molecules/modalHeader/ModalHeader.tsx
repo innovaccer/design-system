@@ -11,7 +11,7 @@ export interface ModalHeaderProps {
   subHeading?: string;
 }
 
-export const ModalHeader: React.FunctionComponent<ModalHeaderProps> = props => {
+export const ModalHeader = (props: ModalHeaderProps) => {
   const { heading = '', icon = '', subHeading = '' } = props;
 
   const classes = classNames({
@@ -65,5 +65,7 @@ export const ModalHeader: React.FunctionComponent<ModalHeaderProps> = props => {
     </div>
   );
 };
+
+ModalHeader.displayName = 'ModalHeader';
 
 export default ModalHeader;

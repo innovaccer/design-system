@@ -61,4 +61,6 @@ export const Message: React.FunctionComponent<MessageProps> = props => {
   );
 };
 
+Message.displayName = 'Message';
+
 export default Message;
