@@ -20,9 +20,7 @@ describe('RangePicker component', () => {
           startDate={new Date(2020, 2, 3)}
           endDate={new Date(2020, 2, 11)}
           {...attr}
-        >
-          RangePicker
-        </RangePicker >
+        />
       );
       expect(tree).toMatchSnapshot();
     });

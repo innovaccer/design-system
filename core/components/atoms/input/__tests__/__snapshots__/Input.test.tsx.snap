@@ -31,11 +31,14 @@ exports[`Input component
   <div
     className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
-    <i
-      className="material-icons Input-icon Input-icon--left Input-icon--disabled"
+    <div
+      className="Input-icon Input-icon--left Input-icon--disabled"
     >
-      events
-    </i>
+      <Icon
+        name="events"
+        size={16}
+      />
+    </div>
     <input
       className="Input-input Input-input--regular"
       disabled={true}
@@ -81,11 +84,14 @@ exports[`Input component
   <div
     className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
-    <i
-      className="material-icons Input-icon Input-icon--left"
+    <div
+      className="Input-icon Input-icon--left"
     >
-      events
-    </i>
+      <Icon
+        name="events"
+        size={16}
+      />
+    </div>
     <input
       className="Input-input Input-input--regular"
       disabled={true}
@@ -353,11 +359,14 @@ exports[`Input component
   <div
     className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
-    <i
-      className="material-icons Input-icon Input-icon--left"
+    <div
+      className="Input-icon Input-icon--left"
     >
-      events
-    </i>
+      <Icon
+        name="events"
+        size={16}
+      />
+    </div>
     <input
       className="Input-input Input-input--regular"
       disabled={true}
@@ -402,11 +411,14 @@ exports[`Input component
   <div
     className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
-    <i
-      className="material-icons Input-icon Input-icon--left"
+    <div
+      className="Input-icon Input-icon--left"
     >
-      events
-    </i>
+      <Icon
+        name="events"
+        size={16}
+      />
+    </div>
     <input
       className="Input-input Input-input--regular"
       disabled={true}
@@ -451,11 +463,14 @@ exports[`Input component
   <div
     className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled Input-wrapper--error"
   >
-    <i
-      className="material-icons Input-icon Input-icon--left"
+    <div
+      className="Input-icon Input-icon--left"
     >
-      events
-    </i>
+      <Icon
+        name="events"
+        size={16}
+      />
+    </div>
     <input
       className="Input-input Input-input--regular"
       disabled={true}
@@ -500,11 +515,14 @@ exports[`Input component
   <div
     className="Input-caption"
   >
-    <i
-      className="material-icons Input-icon Input-icon--error"
+    <div
+      className="Input-icon Input-icon--error"
     >
-      error
-    </i>
+      <Icon
+        appearance="alert"
+        name="error"
+      />
+    </div>
     <Text
       appearance="destructive"
       small={true}

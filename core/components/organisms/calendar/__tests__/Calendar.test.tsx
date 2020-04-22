@@ -19,9 +19,7 @@ describe('Calendar component', () => {
         <Calendar
           date={new Date(2020, 2, 15)}
           {...attr}
-        >
-          Calendar
-        </Calendar >
+        />
       );
       expect(tree).toMatchSnapshot();
     });
@@ -43,9 +41,7 @@ describe('Calendar component', () => {
         <Calendar
           date={new Date(2020, 2, 15)}
           {...attr}
-        >
-          Calendar
-        </Calendar >
+        />
       );
       expect(tree).toMatchSnapshot();
     });

@@ -1,3 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tab component with Label 1`] = `<Fragment />`;
+exports[`Tab component with Label 1`] = `
+<Fragment>
+  Tab
+</Fragment>
+`;

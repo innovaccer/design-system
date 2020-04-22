@@ -3,44 +3,36 @@
 exports[`DatePicker component 
   view: "date"
  1`] = `
-<Component
+<Calendar
   onDateChange={[Function]}
   view="date"
->
-  DatePicker
-</Component>
+/>
 `;
 
 exports[`DatePicker component 
   view: "month"
  1`] = `
-<Component
+<Calendar
   onDateChange={[Function]}
   view="month"
->
-  DatePicker
-</Component>
+/>
 `;
 
 exports[`DatePicker component 
   view: "year"
  1`] = `
-<Component
+<Calendar
   onDateChange={[Function]}
   view="year"
->
-  DatePicker
-</Component>
+/>
 `;
 
 exports[`DatePicker component 
   withInput: false
  1`] = `
-<Component
+<Calendar
   onDateChange={[Function]}
->
-  DatePicker
-</Component>
+/>
 `;
 
 exports[`DatePicker component 
@@ -71,16 +63,14 @@ exports[`DatePicker component
       onBlur={[Function]}
       onChange={[Function]}
       onClear={[Function]}
-      placeholder="dd/mm/yy"
+      placeholder="mm/dd/yyyy"
       placeholderChar="_"
       value=""
     />
   }
 >
-  <Component
+  <Calendar
     onDateChange={[Function]}
-  >
-    DatePicker
-  </Component>
+  />
 </Popover>
 `;

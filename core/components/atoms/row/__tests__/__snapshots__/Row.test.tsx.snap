@@ -2,7 +2,7 @@
 
 exports[`Row component should match the snapshot with RowColumns 1`] = `
 <div
-  className="Row RowCols--2"
+  className="Row RowGroup--2"
 >
   Row
 </div>
@@ -10,7 +10,7 @@ exports[`Row component should match the snapshot with RowColumns 1`] = `
 
 exports[`Row component should match the snapshot with rowColumnsSM 1`] = `
 <div
-  className="Row RowCols--s-2"
+  className="Row RowGroup--s-2"
 >
   Row
 </div>

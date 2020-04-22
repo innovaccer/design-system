@@ -3,7 +3,7 @@
 exports[`RangePicker component 
   
  1`] = `
-<Component
+<Calendar
   onRangeChange={[Function]}
   rangePicker={true}
 />
@@ -12,7 +12,7 @@ exports[`RangePicker component
 exports[`RangePicker component 
   monthsInView: 1
  1`] = `
-<Component
+<Calendar
   monthsInView={1}
   onRangeChange={[Function]}
   rangePicker={true}
@@ -22,7 +22,7 @@ exports[`RangePicker component
 exports[`RangePicker component 
   monthsInView: 1
  2`] = `
-<Component
+<Calendar
   monthNav={11}
   monthsInView={1}
   onRangeChange={[Function]}
@@ -34,7 +34,7 @@ exports[`RangePicker component
 exports[`RangePicker component 
   monthsInView: 2
  1`] = `
-<Component
+<Calendar
   monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
@@ -44,7 +44,7 @@ exports[`RangePicker component
 exports[`RangePicker component 
   monthsInView: 2
  2`] = `
-<Component
+<Calendar
   monthNav={11}
   monthsInView={2}
   onRangeChange={[Function]}
@@ -56,7 +56,7 @@ exports[`RangePicker component
 exports[`RangePicker component 
   monthsInView: 3
  1`] = `
-<Component
+<Calendar
   monthsInView={3}
   onRangeChange={[Function]}
   rangePicker={true}
@@ -66,7 +66,7 @@ exports[`RangePicker component
 exports[`RangePicker component 
   monthsInView: 3
  2`] = `
-<Component
+<Calendar
   monthNav={11}
   monthsInView={3}
   onRangeChange={[Function]}
@@ -78,43 +78,37 @@ exports[`RangePicker component
 exports[`RangePicker component 
   view: "date"
  1`] = `
-<Component
+<Calendar
   onRangeChange={[Function]}
   rangePicker={true}
   view="date"
->
-  RangePicker
-</Component>
+/>
 `;
 
 exports[`RangePicker component 
   view: "month"
  1`] = `
-<Component
+<Calendar
   onRangeChange={[Function]}
   rangePicker={true}
   view="month"
->
-  RangePicker
-</Component>
+/>
 `;
 
 exports[`RangePicker component 
   view: "year"
  1`] = `
-<Component
+<Calendar
   onRangeChange={[Function]}
   rangePicker={true}
   view="year"
->
-  RangePicker
-</Component>
+/>
 `;
 
 exports[`RangePicker component 
   withInput: false
  1`] = `
-<Component
+<Calendar
   onRangeChange={[Function]}
   rangePicker={true}
 />
@@ -133,6 +127,7 @@ exports[`RangePicker component
     >
       <ForwardRef
         error={false}
+        label="Start Date"
         mask={
           Array [
             /\\\\d/,
@@ -152,7 +147,7 @@ exports[`RangePicker component
         onChange={[Function]}
         onClear={[Function]}
         onClick={[Function]}
-        placeholder="dd/mm/yy"
+        placeholder="mm/dd/yyyy"
         placeholderChar="_"
         value=""
       />
@@ -165,6 +160,7 @@ exports[`RangePicker component
       </div>
       <ForwardRef
         error={false}
+        label="End Date"
         mask={
           Array [
             /\\\\d/,
@@ -184,14 +180,14 @@ exports[`RangePicker component
         onChange={[Function]}
         onClear={[Function]}
         onClick={[Function]}
-        placeholder="dd/mm/yy"
+        placeholder="mm/dd/yyyy"
         placeholderChar="_"
         value=""
       />
     </div>
   }
 >
-  <Component
+  <Calendar
     onRangeChange={[Function]}
     rangePicker={true}
   />

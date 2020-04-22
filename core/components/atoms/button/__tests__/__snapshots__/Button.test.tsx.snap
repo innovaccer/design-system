@@ -246,11 +246,15 @@ exports[`Button component
 <button
   className="Button Button--large Button--basic Button--iconAlign-left"
 >
-  <i
-    className="material-icons Button-icon Button-icon--left"
+  <div
+    className="Button-icon Button-icon--left"
   >
-    events
-  </i>
+    <Icon
+      appearance="default"
+      name="events"
+      size={20}
+    />
+  </div>
   Button
 </button>
 `;
@@ -261,11 +265,15 @@ exports[`Button component
 <button
   className="Button Button--large Button--basic Button--iconAlign-right"
 >
-  <i
-    className="material-icons Button-icon Button-icon--right"
+  <div
+    className="Button-icon Button-icon--right"
   >
-    events
-  </i>
+    <Icon
+      appearance="default"
+      name="events"
+      size={20}
+    />
+  </div>
   Button
 </button>
 `;
@@ -286,11 +294,15 @@ exports[`Button component
 <button
   className="Button Button--regular Button--basic Button--iconAlign-left"
 >
-  <i
-    className="material-icons Button-icon Button-icon--left"
+  <div
+    className="Button-icon Button-icon--left"
   >
-    events
-  </i>
+    <Icon
+      appearance="default"
+      name="events"
+      size={16}
+    />
+  </div>
   Button
 </button>
 `;
@@ -301,11 +313,15 @@ exports[`Button component
 <button
   className="Button Button--regular Button--basic Button--iconAlign-right"
 >
-  <i
-    className="material-icons Button-icon Button-icon--right"
+  <div
+    className="Button-icon Button-icon--right"
   >
-    events
-  </i>
+    <Icon
+      appearance="default"
+      name="events"
+      size={16}
+    />
+  </div>
   Button
 </button>
 `;
@@ -326,11 +342,15 @@ exports[`Button component
 <button
   className="Button Button--tiny Button--basic Button--iconAlign-left"
 >
-  <i
-    className="material-icons Button-icon Button-icon--left"
+  <div
+    className="Button-icon Button-icon--left"
   >
-    events
-  </i>
+    <Icon
+      appearance="default"
+      name="events"
+      size={12}
+    />
+  </div>
   Button
 </button>
 `;
@@ -341,11 +361,15 @@ exports[`Button component
 <button
   className="Button Button--tiny Button--basic Button--iconAlign-right"
 >
-  <i
-    className="material-icons Button-icon Button-icon--right"
+  <div
+    className="Button-icon Button-icon--right"
   >
-    events
-  </i>
+    <Icon
+      appearance="default"
+      name="events"
+      size={12}
+    />
+  </div>
   Button
 </button>
 `;

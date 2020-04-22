@@ -8,8 +8,8 @@ const TabValue = [0, 1, 2];
 const FunctionValue = jest.fn();
 const ReactNodeValue = (
   <>
-    <Tab label={<></>} />
-    <Tab label={<></>} />
+    <Tab label={<></>}>Tab 1</Tab>
+    <Tab label={<></>}>Tab 2</Tab>
   </>
 );
 
@@ -28,8 +28,8 @@ describe('TabsWrapper component', () => {
         <TabsWrapper
           {...attr}
         >
-          <Tab label={<></>} />
-          <Tab label={<></>} />
+          <Tab label={<></>}>Tab 1</Tab>
+          <Tab label={<></>}>Tab 2</Tab>
         </TabsWrapper>
       );
       expect(tree).toMatchSnapshot();

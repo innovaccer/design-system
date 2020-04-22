@@ -23,9 +23,11 @@ exports[`TabsWrapper component
   <div
     className="TabsWrapper-content"
   >
-    <Component
+    <Tab
       label={<React.Fragment />}
-    />
+    >
+      Tab 1
+    </Tab>
   </div>
 </div>
 `;
@@ -53,9 +55,11 @@ exports[`TabsWrapper component
   <div
     className="TabsWrapper-content"
   >
-    <Component
+    <Tab
       label={<React.Fragment />}
-    />
+    >
+      Tab 2
+    </Tab>
   </div>
 </div>
 `;
@@ -83,9 +87,11 @@ exports[`TabsWrapper component
   <div
     className="TabsWrapper-content"
   >
-    <Component
+    <Tab
       label={<React.Fragment />}
-    />
+    >
+      Tab 1
+    </Tab>
   </div>
 </div>
 `;

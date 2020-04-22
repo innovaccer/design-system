@@ -2,7 +2,7 @@
 
 exports[`Column component should match the snapshot with columns 1`] = `
 <div
-  className="Col--12"
+  className="Col Col--12"
 >
   Primary
 </div>

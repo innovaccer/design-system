@@ -19,9 +19,7 @@ describe('DatePicker component', () => {
         <DatePicker
           date={new Date(2020, 2, 1)}
           {...attr}
-        >
-          DatePicker
-        </DatePicker >
+        />
       );
       expect(tree).toMatchSnapshot();
     });
@@ -43,9 +41,7 @@ describe('DatePicker component', () => {
         <DatePicker
           date={new Date(2020, 2, 1)}
           {...attr}
-        >
-          DatePicker
-        </DatePicker >
+        />
       );
       expect(tree).toMatchSnapshot();
     });

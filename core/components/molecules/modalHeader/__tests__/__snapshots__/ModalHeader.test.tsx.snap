@@ -14,12 +14,15 @@ exports[`ModalHeader component
         size="m"
       />
     </div>
-    <i
-      className="material-icons Modal-close-icon"
+    <div
+      className="Modal-close-icon"
       onClick={[Function]}
     >
-      close
-    </i>
+      <Icon
+        name="close"
+        size={16}
+      />
+    </div>
   </div>
 </div>
 `;
@@ -40,12 +43,15 @@ exports[`ModalHeader component
         events
       </Heading>
     </div>
-    <i
-      className="material-icons Modal-close-icon"
+    <div
+      className="Modal-close-icon"
       onClick={[Function]}
     >
-      close
-    </i>
+      <Icon
+        name="close"
+        size={16}
+      />
+    </div>
   </div>
 </div>
 `;
@@ -66,12 +72,15 @@ exports[`ModalHeader component
         events
       </Heading>
     </div>
-    <i
-      className="material-icons Modal-close-icon"
+    <div
+      className="Modal-close-icon"
       onClick={[Function]}
     >
-      close
-    </i>
+      <Icon
+        name="close"
+        size={16}
+      />
+    </div>
   </div>
   <div
     className="Modal-header-subheader"
@@ -94,22 +103,28 @@ exports[`ModalHeader component
   <div
     className="Modal-header"
   >
-    <i
-      className="material-icons Modal-header-icon"
+    <div
+      className="Modal-header-icon"
     >
-      events
-    </i>
+      <Icon
+        name="events"
+        size={16}
+      />
+    </div>
     <div>
       <Heading
         size="m"
       />
     </div>
-    <i
-      className="material-icons Modal-close-icon"
+    <div
+      className="Modal-close-icon"
       onClick={[Function]}
     >
-      close
-    </i>
+      <Icon
+        name="close"
+        size={16}
+      />
+    </div>
   </div>
 </div>
 `;
@@ -123,11 +138,14 @@ exports[`ModalHeader component
   <div
     className="Modal-header"
   >
-    <i
-      className="material-icons Modal-header-icon"
+    <div
+      className="Modal-header-icon"
     >
-      events
-    </i>
+      <Icon
+        name="events"
+        size={16}
+      />
+    </div>
     <div>
       <Heading
         size="m"
@@ -135,12 +153,15 @@ exports[`ModalHeader component
         events
       </Heading>
     </div>
-    <i
-      className="material-icons Modal-close-icon"
+    <div
+      className="Modal-close-icon"
       onClick={[Function]}
     >
-      close
-    </i>
+      <Icon
+        name="close"
+        size={16}
+      />
+    </div>
   </div>
 </div>
 `;
@@ -154,11 +175,14 @@ exports[`ModalHeader component
   <div
     className="Modal-header"
   >
-    <i
-      className="material-icons Modal-header-icon"
+    <div
+      className="Modal-header-icon"
     >
-      events
-    </i>
+      <Icon
+        name="events"
+        size={16}
+      />
+    </div>
     <div>
       <Heading
         size="m"
@@ -166,12 +190,15 @@ exports[`ModalHeader component
         events
       </Heading>
     </div>
-    <i
-      className="material-icons Modal-close-icon"
+    <div
+      className="Modal-close-icon"
       onClick={[Function]}
     >
-      close
-    </i>
+      <Icon
+        name="close"
+        size={16}
+      />
+    </div>
   </div>
   <div
     className="Modal-header-subheader Modal-header-subheader--withIcon"
@@ -194,22 +221,28 @@ exports[`ModalHeader component
   <div
     className="Modal-header"
   >
-    <i
-      className="material-icons Modal-header-icon"
+    <div
+      className="Modal-header-icon"
     >
-      events
-    </i>
+      <Icon
+        name="events"
+        size={16}
+      />
+    </div>
     <div>
       <Heading
         size="m"
       />
     </div>
-    <i
-      className="material-icons Modal-close-icon"
+    <div
+      className="Modal-close-icon"
       onClick={[Function]}
     >
-      close
-    </i>
+      <Icon
+        name="close"
+        size={16}
+      />
+    </div>
   </div>
   <div
     className="Modal-header-subheader Modal-header-subheader--withIcon"
@@ -237,12 +270,15 @@ exports[`ModalHeader component
         size="m"
       />
     </div>
-    <i
-      className="material-icons Modal-close-icon"
+    <div
+      className="Modal-close-icon"
       onClick={[Function]}
     >
-      close
-    </i>
+      <Icon
+        name="close"
+        size={16}
+      />
+    </div>
   </div>
   <div
     className="Modal-header-subheader"

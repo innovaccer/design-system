@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dropdown component 
-  checkboxes: true, options: [{"label":"Option1","value":"Option1","selected":false},{"label":"Option2","value":"Option2","selected":true},{"label":"Option3","value":"Option3","selected":false},{"label":"Option4","value":"Option4","selected":false},{"label":"Option5","value":"Option5","selected":false},{"label":"Option6","value":"Option6","selected":false},{"label":"Option7","value":"Option7","selected":true},{"label":"Option8","value":"Option8","selected":false},{"label":"Option9","value":"Option9","selected":false},{"label":"Option10","value":"Option10","selected":false}], placeholder: "Select", onChange: "[Function]"
+  checkboxes: true, options: [{"label":"Option 1","value":"Option 1","selected":false},{"label":"Option 2","value":"Option 2","selected":true},{"label":"Option 3","value":"Option 3","selected":false},{"label":"Option 4","value":"Option 4","selected":false},{"label":"Option 5","value":"Option 5","selected":false},{"label":"Option 6","value":"Option 6","selected":false},{"label":"Option 7","value":"Option 7","selected":true},{"label":"Option 8","value":"Option 8","selected":false},{"label":"Option 9","value":"Option 9","selected":false},{"label":"Option 10","value":"Option 10","selected":false}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     checkboxes={true}
     limit={10}
@@ -17,54 +17,54 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
+          "label": "Option 1",
           "selected": false,
-          "value": "Option1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
+          "label": "Option 2",
           "selected": true,
-          "value": "Option2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
+          "label": "Option 3",
           "selected": false,
-          "value": "Option3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
+          "label": "Option 4",
           "selected": false,
-          "value": "Option4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
+          "label": "Option 5",
           "selected": false,
-          "value": "Option5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
+          "label": "Option 6",
           "selected": false,
-          "value": "Option6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
+          "label": "Option 7",
           "selected": true,
-          "value": "Option7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
+          "label": "Option 8",
           "selected": false,
-          "value": "Option8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
+          "label": "Option 9",
           "selected": false,
-          "value": "Option9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
+          "label": "Option 10",
           "selected": false,
-          "value": "Option10",
+          "value": "Option 10",
         },
       ]
     }
@@ -79,16 +79,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  checkboxes: true, selectAll: true, options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], placeholder: "Select", onChange: "[Function]"
+  checkboxes: true, selectAll: true, options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     checkboxes={true}
     limit={10}
@@ -101,44 +102,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -153,16 +154,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  checkboxes: true, showApplyButton: false, options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], placeholder: "Select", onChange: "[Function]"
+  checkboxes: true, showApplyButton: false, options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     checkboxes={true}
     limit={10}
@@ -175,44 +177,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -228,16 +230,17 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     showApplyButton={false}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  checkboxes: true, showApplyButton: true, options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], placeholder: "Select", onChange: "[Function]"
+  checkboxes: true, showApplyButton: true, options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     checkboxes={true}
     limit={10}
@@ -250,44 +253,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -303,16 +306,17 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     showApplyButton={true}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  disabled: false, placeholder: "Select", icon: "events", options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], onChange: "[Function]"
+  disabled: false, placeholder: "Select", icon: "events", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     disabled={false}
     icon="events"
@@ -326,44 +330,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -378,16 +382,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  disabled: false, placeholder: "Select", inlineLabel: "Label", options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], onChange: "[Function]"
+  disabled: false, placeholder: "Select", inlineLabel: "Label", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     disabled={false}
     inlineLabel="Label"
@@ -401,44 +406,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -453,16 +458,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  disabled: false, placeholder: "Select", inlineLabel: "Label", options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], onChange: "[Function]"
+  disabled: false, placeholder: "Select", inlineLabel: "Label", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  2`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     disabled={false}
     inlineLabel="Label"
@@ -476,44 +482,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -528,16 +534,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  disabled: false, placeholder: "Select", options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], onChange: "[Function]"
+  disabled: false, placeholder: "Select", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     disabled={false}
     limit={10}
@@ -550,44 +557,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -602,16 +609,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  disabled: true, placeholder: "Select", icon: "events", options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], onChange: "[Function]"
+  disabled: true, placeholder: "Select", icon: "events", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     disabled={true}
     icon="events"
@@ -625,44 +633,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -677,16 +685,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  disabled: true, placeholder: "Select", inlineLabel: "Label", options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], onChange: "[Function]"
+  disabled: true, placeholder: "Select", inlineLabel: "Label", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     disabled={true}
     inlineLabel="Label"
@@ -700,44 +709,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -752,16 +761,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  disabled: true, placeholder: "Select", inlineLabel: "Label", options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], onChange: "[Function]"
+  disabled: true, placeholder: "Select", inlineLabel: "Label", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  2`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     disabled={true}
     inlineLabel="Label"
@@ -775,44 +785,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -827,16 +837,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  disabled: true, placeholder: "Select", options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], onChange: "[Function]"
+  disabled: true, placeholder: "Select", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     disabled={true}
     limit={10}
@@ -849,44 +860,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -901,16 +912,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  dropdownAlign: "left", options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], onChange: "[Function]"
+  dropdownAlign: "left", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     dropdownAlign="left"
     limit={10}
@@ -923,44 +935,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -974,16 +986,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  dropdownAlign: "right", options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], onChange: "[Function]"
+  dropdownAlign: "right", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     dropdownAlign="right"
     limit={10}
@@ -996,44 +1009,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -1047,16 +1060,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  options: [{"label":"Option1","value":"Option1","icon":"events"},{"label":"Option2","value":"Option2","icon":"events"},{"label":"Option3","value":"Option3","icon":"events"}], placeholder: "Select", onChange: "[Function]"
+  options: [{"label":"Option 1","value":"Option 1","icon":"events"},{"label":"Option 2","value":"Option 2","icon":"events"},{"label":"Option 3","value":"Option 3","icon":"events"}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
@@ -1069,18 +1083,18 @@ exports[`Dropdown component
       Array [
         Object {
           "icon": "events",
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
           "icon": "events",
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
           "icon": "events",
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
       ]
     }
@@ -1095,16 +1109,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  options: [{"label":"Option1","value":"Option1","selected":false},{"label":"Option2","value":"Option2","selected":true},{"label":"Option3","value":"Option3","selected":false},{"label":"Option4","value":"Option4","selected":false},{"label":"Option5","value":"Option5","selected":false},{"label":"Option6","value":"Option6","selected":false},{"label":"Option7","value":"Option7","selected":false},{"label":"Option8","value":"Option8","selected":false},{"label":"Option9","value":"Option9","selected":false},{"label":"Option10","value":"Option10","selected":false}], placeholder: "Select", onChange: "[Function]"
+  options: [{"label":"Option 1","value":"Option 1","selected":false},{"label":"Option 2","value":"Option 2","selected":true},{"label":"Option 3","value":"Option 3","selected":false},{"label":"Option 4","value":"Option 4","selected":false},{"label":"Option 5","value":"Option 5","selected":false},{"label":"Option 6","value":"Option 6","selected":false},{"label":"Option 7","value":"Option 7","selected":false},{"label":"Option 8","value":"Option 8","selected":false},{"label":"Option 9","value":"Option 9","selected":false},{"label":"Option 10","value":"Option 10","selected":false}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
@@ -1116,54 +1131,54 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
+          "label": "Option 1",
           "selected": false,
-          "value": "Option1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
+          "label": "Option 2",
           "selected": true,
-          "value": "Option2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
+          "label": "Option 3",
           "selected": false,
-          "value": "Option3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
+          "label": "Option 4",
           "selected": false,
-          "value": "Option4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
+          "label": "Option 5",
           "selected": false,
-          "value": "Option5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
+          "label": "Option 6",
           "selected": false,
-          "value": "Option6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
+          "label": "Option 7",
           "selected": false,
-          "value": "Option7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
+          "label": "Option 8",
           "selected": false,
-          "value": "Option8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
+          "label": "Option 9",
           "selected": false,
-          "value": "Option9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
+          "label": "Option 10",
           "selected": false,
-          "value": "Option10",
+          "value": "Option 10",
         },
       ]
     }
@@ -1178,16 +1193,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  options: [{"label":"Option1","value":"Option1","subInfo":"subInfo"},{"label":"Option2","value":"Option2","subInfo":"subInfo"},{"label":"Option3","value":"Option3","subInfo":"subInfo"}], placeholder: "Select", onChange: "[Function]"
+  options: [{"label":"Option 1","value":"Option 1","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","subInfo":"subInfo"}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
@@ -1199,19 +1215,19 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
+          "label": "Option 1",
           "subInfo": "subInfo",
-          "value": "Option1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
+          "label": "Option 2",
           "subInfo": "subInfo",
-          "value": "Option2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
+          "label": "Option 3",
           "subInfo": "subInfo",
-          "value": "Option3",
+          "value": "Option 3",
         },
       ]
     }
@@ -1226,16 +1242,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], onChange: "[Function]"
+  options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
@@ -1247,44 +1264,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -1298,16 +1315,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], onChange: "[Function]"
+  options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  2`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
@@ -1319,44 +1337,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -1370,16 +1388,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], onChange: "[Function]", placeholder: "Select"
+  options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]", placeholder: "Select"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
@@ -1391,44 +1410,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -1443,16 +1462,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], onChange: "[Function]", placeholder: "Select"
+  options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]", placeholder: "Select"
  2`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
@@ -1464,44 +1484,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -1516,16 +1536,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  search: true, loading: false, options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], placeholder: "Select", onChange: "[Function]"
+  search: true, loading: false, options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
@@ -1538,44 +1559,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -1591,16 +1612,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  search: true, loading: true, options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], placeholder: "Select", onChange: "[Function]"
+  search: true, loading: true, options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
@@ -1613,44 +1635,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -1666,16 +1688,17 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  size: "regular", placeholder: "Select", options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], onChange: "[Function]"
+  size: "regular", placeholder: "Select", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
@@ -1687,44 +1710,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -1740,16 +1763,17 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     size="regular"
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  size: "tiny", placeholder: "Select", options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], onChange: "[Function]"
+  size: "tiny", placeholder: "Select", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
@@ -1761,44 +1785,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -1814,16 +1838,17 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     size="tiny"
+    slicedOptionsLength={0}
     topOptionsSliced={false}
   />
 </div>
 `;
 
 exports[`Dropdown component 
-  subheading: {"0":"subheading","5":"subheading"}, options: [{"label":"Option1","value":"Option1"},{"label":"Option2","value":"Option2"},{"label":"Option3","value":"Option3"},{"label":"Option4","value":"Option4"},{"label":"Option5","value":"Option5"},{"label":"Option6","value":"Option6"},{"label":"Option7","value":"Option7"},{"label":"Option8","value":"Option8"},{"label":"Option9","value":"Option9"},{"label":"Option10","value":"Option10"}], placeholder: "Select", onChange: "[Function]"
+  subheading: {"0":"subheading","5":"subheading"}, options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <div>
-  <Dropdown
+  <DropdownList
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
@@ -1835,44 +1860,44 @@ exports[`Dropdown component
     options={
       Array [
         Object {
-          "label": "Option1",
-          "value": "Option1",
+          "label": "Option 1",
+          "value": "Option 1",
         },
         Object {
-          "label": "Option2",
-          "value": "Option2",
+          "label": "Option 2",
+          "value": "Option 2",
         },
         Object {
-          "label": "Option3",
-          "value": "Option3",
+          "label": "Option 3",
+          "value": "Option 3",
         },
         Object {
-          "label": "Option4",
-          "value": "Option4",
+          "label": "Option 4",
+          "value": "Option 4",
         },
         Object {
-          "label": "Option5",
-          "value": "Option5",
+          "label": "Option 5",
+          "value": "Option 5",
         },
         Object {
-          "label": "Option6",
-          "value": "Option6",
+          "label": "Option 6",
+          "value": "Option 6",
         },
         Object {
-          "label": "Option7",
-          "value": "Option7",
+          "label": "Option 7",
+          "value": "Option 7",
         },
         Object {
-          "label": "Option8",
-          "value": "Option8",
+          "label": "Option 8",
+          "value": "Option 8",
         },
         Object {
-          "label": "Option9",
-          "value": "Option9",
+          "label": "Option 9",
+          "value": "Option 9",
         },
         Object {
-          "label": "Option10",
-          "value": "Option10",
+          "label": "Option 10",
+          "value": "Option 10",
         },
       ]
     }
@@ -1887,6 +1912,7 @@ exports[`Dropdown component
       }
     }
     setSearchTerm={[Function]}
+    slicedOptionsLength={0}
     subheading={
       Object {
         "0": "subheading",

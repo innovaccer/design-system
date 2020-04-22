@@ -6,11 +6,15 @@ exports[`Toast component
 <div
   className="Toast Toast--alert"
 >
-  <i
-    className="material-icons Toast-icon Toast-icon--left"
+  <div
+    className="Toast-icon Toast-icon--left"
   >
-    info
-  </i>
+    <Icon
+      appearance="white"
+      name="info"
+      size={16}
+    />
+  </div>
   <div
     className="Toast-body"
   >
@@ -25,11 +29,14 @@ exports[`Toast component
       <div
         onClick={[Function]}
       >
-        <i
-          className="material-icons Toast-icon Toast-icon--right"
+        <div
+          className="Toast-icon Toast-icon--right"
         >
-          close
-        </i>
+          <Icon
+            name="close"
+            size={16}
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -56,11 +63,14 @@ exports[`Toast component
       <div
         onClick={[Function]}
       >
-        <i
-          className="material-icons Toast-icon Toast-icon--right"
+        <div
+          className="Toast-icon Toast-icon--right"
         >
-          close
-        </i>
+          <Icon
+            name="close"
+            size={16}
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -73,11 +83,15 @@ exports[`Toast component
 <div
   className="Toast Toast--info"
 >
-  <i
-    className="material-icons Toast-icon Toast-icon--left"
+  <div
+    className="Toast-icon Toast-icon--left"
   >
-    info
-  </i>
+    <Icon
+      appearance="white"
+      name="info"
+      size={16}
+    />
+  </div>
   <div
     className="Toast-body"
   >
@@ -92,11 +106,14 @@ exports[`Toast component
       <div
         onClick={[Function]}
       >
-        <i
-          className="material-icons Toast-icon Toast-icon--right"
+        <div
+          className="Toast-icon Toast-icon--right"
         >
-          close
-        </i>
+          <Icon
+            name="close"
+            size={16}
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -109,11 +126,15 @@ exports[`Toast component
 <div
   className="Toast Toast--success"
 >
-  <i
-    className="material-icons Toast-icon Toast-icon--left"
+  <div
+    className="Toast-icon Toast-icon--left"
   >
-    check_circle
-  </i>
+    <Icon
+      appearance="white"
+      name="check_circle"
+      size={16}
+    />
+  </div>
   <div
     className="Toast-body"
   >
@@ -128,11 +149,14 @@ exports[`Toast component
       <div
         onClick={[Function]}
       >
-        <i
-          className="material-icons Toast-icon Toast-icon--right"
+        <div
+          className="Toast-icon Toast-icon--right"
         >
-          close
-        </i>
+          <Icon
+            name="close"
+            size={16}
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -145,11 +169,15 @@ exports[`Toast component
 <div
   className="Toast Toast--warning"
 >
-  <i
-    className="material-icons Toast-icon Toast-icon--left"
+  <div
+    className="Toast-icon Toast-icon--left"
   >
-    info
-  </i>
+    <Icon
+      appearance="default"
+      name="info"
+      size={16}
+    />
+  </div>
   <div
     className="Toast-body"
   >
@@ -164,11 +192,14 @@ exports[`Toast component
       <div
         onClick={[Function]}
       >
-        <i
-          className="material-icons Toast-icon Toast-icon--right"
+        <div
+          className="Toast-icon Toast-icon--right"
         >
-          close
-        </i>
+          <Icon
+            name="close"
+            size={16}
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -181,11 +212,15 @@ exports[`Toast component
 <div
   className="Toast Toast--alert"
 >
-  <i
-    className="material-icons Toast-icon Toast-icon--left"
+  <div
+    className="Toast-icon Toast-icon--left"
   >
-    info
-  </i>
+    <Icon
+      appearance="white"
+      name="info"
+      size={16}
+    />
+  </div>
   <div
     className="Toast-body"
   >
@@ -200,11 +235,14 @@ exports[`Toast component
       <div
         onClick={[Function]}
       >
-        <i
-          className="material-icons Toast-icon Toast-icon--right"
+        <div
+          className="Toast-icon Toast-icon--right"
         >
-          close
-        </i>
+          <Icon
+            name="close"
+            size={16}
+          />
+        </div>
       </div>
     </div>
     <div
@@ -226,11 +264,15 @@ exports[`Toast component
 <div
   className="Toast Toast--alert"
 >
-  <i
-    className="material-icons Toast-icon Toast-icon--left"
+  <div
+    className="Toast-icon Toast-icon--left"
   >
-    info
-  </i>
+    <Icon
+      appearance="white"
+      name="info"
+      size={16}
+    />
+  </div>
   <div
     className="Toast-body"
   >
@@ -245,11 +287,14 @@ exports[`Toast component
       <div
         onClick={[Function]}
       >
-        <i
-          className="material-icons Toast-icon Toast-icon--right"
+        <div
+          className="Toast-icon Toast-icon--right"
         >
-          close
-        </i>
+          <Icon
+            name="close"
+            size={16}
+          />
+        </div>
       </div>
     </div>
     <div
@@ -295,11 +340,14 @@ exports[`Toast component
       <div
         onClick={[Function]}
       >
-        <i
-          className="material-icons Toast-icon Toast-icon--right"
+        <div
+          className="Toast-icon Toast-icon--right"
         >
-          close
-        </i>
+          <Icon
+            name="close"
+            size={16}
+          />
+        </div>
       </div>
     </div>
     <div
@@ -335,11 +383,14 @@ exports[`Toast component
       <div
         onClick={[Function]}
       >
-        <i
-          className="material-icons Toast-icon Toast-icon--right"
+        <div
+          className="Toast-icon Toast-icon--right"
         >
-          close
-        </i>
+          <Icon
+            name="close"
+            size={16}
+          />
+        </div>
       </div>
     </div>
     <div
@@ -371,11 +422,15 @@ exports[`Toast component
 <div
   className="Toast Toast--info"
 >
-  <i
-    className="material-icons Toast-icon Toast-icon--left"
+  <div
+    className="Toast-icon Toast-icon--left"
   >
-    info
-  </i>
+    <Icon
+      appearance="white"
+      name="info"
+      size={16}
+    />
+  </div>
   <div
     className="Toast-body"
   >
@@ -390,11 +445,14 @@ exports[`Toast component
       <div
         onClick={[Function]}
       >
-        <i
-          className="material-icons Toast-icon Toast-icon--right"
+        <div
+          className="Toast-icon Toast-icon--right"
         >
-          close
-        </i>
+          <Icon
+            name="close"
+            size={16}
+          />
+        </div>
       </div>
     </div>
     <div
@@ -416,11 +474,15 @@ exports[`Toast component
 <div
   className="Toast Toast--info"
 >
-  <i
-    className="material-icons Toast-icon Toast-icon--left"
+  <div
+    className="Toast-icon Toast-icon--left"
   >
-    info
-  </i>
+    <Icon
+      appearance="white"
+      name="info"
+      size={16}
+    />
+  </div>
   <div
     className="Toast-body"
   >
@@ -435,11 +497,14 @@ exports[`Toast component
       <div
         onClick={[Function]}
       >
-        <i
-          className="material-icons Toast-icon Toast-icon--right"
+        <div
+          className="Toast-icon Toast-icon--right"
         >
-          close
-        </i>
+          <Icon
+            name="close"
+            size={16}
+          />
+        </div>
       </div>
     </div>
     <div
@@ -471,11 +536,15 @@ exports[`Toast component
 <div
   className="Toast Toast--success"
 >
-  <i
-    className="material-icons Toast-icon Toast-icon--left"
+  <div
+    className="Toast-icon Toast-icon--left"
   >
-    check_circle
-  </i>
+    <Icon
+      appearance="white"
+      name="check_circle"
+      size={16}
+    />
+  </div>
   <div
     className="Toast-body"
   >
@@ -490,11 +559,14 @@ exports[`Toast component
       <div
         onClick={[Function]}
       >
-        <i
-          className="material-icons Toast-icon Toast-icon--right"
+        <div
+          className="Toast-icon Toast-icon--right"
         >
-          close
-        </i>
+          <Icon
+            name="close"
+            size={16}
+          />
+        </div>
       </div>
     </div>
     <div
@@ -516,11 +588,15 @@ exports[`Toast component
 <div
   className="Toast Toast--success"
 >
-  <i
-    className="material-icons Toast-icon Toast-icon--left"
+  <div
+    className="Toast-icon Toast-icon--left"
   >
-    check_circle
-  </i>
+    <Icon
+      appearance="white"
+      name="check_circle"
+      size={16}
+    />
+  </div>
   <div
     className="Toast-body"
   >
@@ -535,11 +611,14 @@ exports[`Toast component
       <div
         onClick={[Function]}
       >
-        <i
-          className="material-icons Toast-icon Toast-icon--right"
+        <div
+          className="Toast-icon Toast-icon--right"
         >
-          close
-        </i>
+          <Icon
+            name="close"
+            size={16}
+          />
+        </div>
       </div>
     </div>
     <div
@@ -571,11 +650,15 @@ exports[`Toast component
 <div
   className="Toast Toast--warning"
 >
-  <i
-    className="material-icons Toast-icon Toast-icon--left"
+  <div
+    className="Toast-icon Toast-icon--left"
   >
-    info
-  </i>
+    <Icon
+      appearance="default"
+      name="info"
+      size={16}
+    />
+  </div>
   <div
     className="Toast-body"
   >
@@ -590,11 +673,14 @@ exports[`Toast component
       <div
         onClick={[Function]}
       >
-        <i
-          className="material-icons Toast-icon Toast-icon--right"
+        <div
+          className="Toast-icon Toast-icon--right"
         >
-          close
-        </i>
+          <Icon
+            name="close"
+            size={16}
+          />
+        </div>
       </div>
     </div>
     <div
@@ -616,11 +702,15 @@ exports[`Toast component
 <div
   className="Toast Toast--warning"
 >
-  <i
-    className="material-icons Toast-icon Toast-icon--left"
+  <div
+    className="Toast-icon Toast-icon--left"
   >
-    info
-  </i>
+    <Icon
+      appearance="default"
+      name="info"
+      size={16}
+    />
+  </div>
   <div
     className="Toast-body"
   >
@@ -635,11 +725,14 @@ exports[`Toast component
       <div
         onClick={[Function]}
       >
-        <i
-          className="material-icons Toast-icon Toast-icon--right"
+        <div
+          className="Toast-icon Toast-icon--right"
         >
-          close
-        </i>
+          <Icon
+            name="close"
+            size={16}
+          />
+        </div>
       </div>
     </div>
     <div
