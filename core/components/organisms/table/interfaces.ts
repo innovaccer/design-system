@@ -1,5 +1,3 @@
-type DivProps = JSX.IntrinsicElements['div'];
-
 export interface Schema {
   width?: number;
   template?: React.ElementType;
@@ -23,7 +21,7 @@ export interface Cache {
   height: number[];
 }
 
-export interface Props extends DivProps {
+export interface Props {
   data: Record<string, any>[];
   /**
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
@@ -103,6 +101,14 @@ export interface Props extends DivProps {
    * Assign the gridActions to passed variable
    */
   getGridActions?: (gridActions?: GridActions) => void;
+  /**
+   * Adds Custom CSS to `Table`
+   */
+  style?: React.CSSProperties;
+  /**
+   * Adds Custom class name to `Table grid`
+   */
+  className?: string;
 }
 
 export interface State {
