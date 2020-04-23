@@ -61,7 +61,7 @@ describe('Table component', () => {
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
-    
+
     it(testMessageHelper(attr), () => {
       const tree = shallow(
         <Table
