@@ -11,6 +11,7 @@
   "scripts": {
     "chromatic": "chromatic",
     "test": "jest",
+    "test:ci": "jest --onlyChanged",
     "start": "start-storybook -p 5000",
     "dev": "concurrently --kill-others \"npm run watch-css\" \"npm run start\"",
     "storybook": "start-storybook",
