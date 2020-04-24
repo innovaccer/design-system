@@ -6,40 +6,48 @@ exports[`Pagination component
 <div
   className="Pagination Pagination--basic"
 >
-  <Button
-    appearance="transparent"
-    disabled={true}
-    icon="first_page"
-    onClick={[Function]}
-    size="large"
-  />
   <div
-    className="ml-4 mx-3"
+    className="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
   >
     <Button
+      appearance="transparent"
       disabled={true}
-      icon="navigate_before"
+      icon="first_page"
       onClick={[Function]}
       size="large"
     />
+    <div
+      className="ml-4 mx-3"
+    >
+      <Button
+        disabled={true}
+        icon="navigate_before"
+        onClick={[Function]}
+        size="large"
+      />
+    </div>
   </div>
   <div
-    className="mr-4 mx-3"
+    className="Pagination-buttonWrapper Pagination-buttonWrapper--next"
   >
+    <div
+      className="mr-4 mx-3"
+    >
+      <Button
+        disabled={false}
+        icon="navigate_next"
+        onClick={[Function]}
+        size="large"
+      />
+    </div>
     <Button
+      appearance="transparent"
       disabled={false}
-      icon="navigate_next"
+      icon="last_page"
       onClick={[Function]}
       size="large"
     />
   </div>
-  <Button
-    appearance="transparent"
-    disabled={false}
-    icon="last_page"
-    onClick={[Function]}
-    size="large"
-  />
 </div>
 `;
 
@@ -49,40 +57,48 @@ exports[`Pagination component
 <div
   className="Pagination Pagination--basic"
 >
-  <Button
-    appearance="transparent"
-    disabled={false}
-    icon="first_page"
-    onClick={[Function]}
-    size="large"
-  />
   <div
-    className="ml-4 mx-3"
+    className="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
   >
     <Button
+      appearance="transparent"
       disabled={false}
-      icon="navigate_before"
+      icon="first_page"
+      onClick={[Function]}
+      size="large"
+    />
+    <div
+      className="ml-4 mx-3"
+    >
+      <Button
+        disabled={false}
+        icon="navigate_before"
+        onClick={[Function]}
+        size="large"
+      />
+    </div>
+  </div>
+  <div
+    className="Pagination-buttonWrapper Pagination-buttonWrapper--next"
+  >
+    <div
+      className="mr-4 mx-3"
+    >
+      <Button
+        disabled={false}
+        icon="navigate_next"
+        onClick={[Function]}
+        size="large"
+      />
+    </div>
+    <Button
+      appearance="transparent"
+      disabled={false}
+      icon="last_page"
       onClick={[Function]}
       size="large"
     />
   </div>
-  <div
-    className="mr-4 mx-3"
-  >
-    <Button
-      disabled={false}
-      icon="navigate_next"
-      onClick={[Function]}
-      size="large"
-    />
-  </div>
-  <Button
-    appearance="transparent"
-    disabled={false}
-    icon="last_page"
-    onClick={[Function]}
-    size="large"
-  />
 </div>
 `;
 
@@ -92,40 +108,48 @@ exports[`Pagination component
 <div
   className="Pagination Pagination--basic"
 >
-  <Button
-    appearance="transparent"
-    disabled={false}
-    icon="first_page"
-    onClick={[Function]}
-    size="large"
-  />
   <div
-    className="ml-4 mx-3"
+    className="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
   >
     <Button
+      appearance="transparent"
       disabled={false}
-      icon="navigate_before"
+      icon="first_page"
       onClick={[Function]}
       size="large"
     />
+    <div
+      className="ml-4 mx-3"
+    >
+      <Button
+        disabled={false}
+        icon="navigate_before"
+        onClick={[Function]}
+        size="large"
+      />
+    </div>
   </div>
   <div
-    className="mr-4 mx-3"
+    className="Pagination-buttonWrapper Pagination-buttonWrapper--next"
   >
+    <div
+      className="mr-4 mx-3"
+    >
+      <Button
+        disabled={true}
+        icon="navigate_next"
+        onClick={[Function]}
+        size="large"
+      />
+    </div>
     <Button
+      appearance="transparent"
       disabled={true}
-      icon="navigate_next"
+      icon="last_page"
       onClick={[Function]}
       size="large"
     />
   </div>
-  <Button
-    appearance="transparent"
-    disabled={true}
-    icon="last_page"
-    onClick={[Function]}
-    size="large"
-  />
 </div>
 `;
 
@@ -135,40 +159,48 @@ exports[`Pagination component
 <div
   className="Pagination Pagination--basic"
 >
-  <Button
-    appearance="transparent"
-    disabled={false}
-    icon="first_page"
-    onClick={[Function]}
-    size="large"
-  />
   <div
-    className="ml-4 mx-3"
+    className="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
   >
     <Button
+      appearance="transparent"
       disabled={false}
-      icon="navigate_before"
+      icon="first_page"
+      onClick={[Function]}
+      size="large"
+    />
+    <div
+      className="ml-4 mx-3"
+    >
+      <Button
+        disabled={false}
+        icon="navigate_before"
+        onClick={[Function]}
+        size="large"
+      />
+    </div>
+  </div>
+  <div
+    className="Pagination-buttonWrapper Pagination-buttonWrapper--next"
+  >
+    <div
+      className="mr-4 mx-3"
+    >
+      <Button
+        disabled={false}
+        icon="navigate_next"
+        onClick={[Function]}
+        size="large"
+      />
+    </div>
+    <Button
+      appearance="transparent"
+      disabled={false}
+      icon="last_page"
       onClick={[Function]}
       size="large"
     />
   </div>
-  <div
-    className="mr-4 mx-3"
-  >
-    <Button
-      disabled={false}
-      icon="navigate_next"
-      onClick={[Function]}
-      size="large"
-    />
-  </div>
-  <Button
-    appearance="transparent"
-    disabled={false}
-    icon="last_page"
-    onClick={[Function]}
-    size="large"
-  />
 </div>
 `;
 
@@ -178,22 +210,26 @@ exports[`Pagination component
 <div
   className="Pagination Pagination--jump"
 >
-  <Button
-    appearance="transparent"
-    disabled={true}
-    icon="first_page"
-    onClick={[Function]}
-    size="large"
-  />
   <div
-    className="ml-4 mx-4"
+    className="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
   >
     <Button
+      appearance="transparent"
       disabled={true}
-      icon="navigate_before"
+      icon="first_page"
       onClick={[Function]}
       size="large"
     />
+    <div
+      className="ml-4 mx-4"
+    >
+      <Button
+        disabled={true}
+        icon="navigate_before"
+        onClick={[Function]}
+        size="large"
+      />
+    </div>
   </div>
   <div
     className="Pagination-pageIndex"
@@ -211,22 +247,26 @@ exports[`Pagination component
     </Text>
   </div>
   <div
-    className="mr-4 mx-4"
+    className="Pagination-buttonWrapper Pagination-buttonWrapper--next"
   >
+    <div
+      className="mr-4 mx-4"
+    >
+      <Button
+        disabled={false}
+        icon="navigate_next"
+        onClick={[Function]}
+        size="large"
+      />
+    </div>
     <Button
+      appearance="transparent"
       disabled={false}
-      icon="navigate_next"
+      icon="last_page"
       onClick={[Function]}
       size="large"
     />
   </div>
-  <Button
-    appearance="transparent"
-    disabled={false}
-    icon="last_page"
-    onClick={[Function]}
-    size="large"
-  />
 </div>
 `;
 
@@ -236,22 +276,26 @@ exports[`Pagination component
 <div
   className="Pagination Pagination--jump"
 >
-  <Button
-    appearance="transparent"
-    disabled={false}
-    icon="first_page"
-    onClick={[Function]}
-    size="large"
-  />
   <div
-    className="ml-4 mx-4"
+    className="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
   >
     <Button
+      appearance="transparent"
       disabled={false}
-      icon="navigate_before"
+      icon="first_page"
       onClick={[Function]}
       size="large"
     />
+    <div
+      className="ml-4 mx-4"
+    >
+      <Button
+        disabled={false}
+        icon="navigate_before"
+        onClick={[Function]}
+        size="large"
+      />
+    </div>
   </div>
   <div
     className="Pagination-pageIndex"
@@ -269,22 +313,26 @@ exports[`Pagination component
     </Text>
   </div>
   <div
-    className="mr-4 mx-4"
+    className="Pagination-buttonWrapper Pagination-buttonWrapper--next"
   >
+    <div
+      className="mr-4 mx-4"
+    >
+      <Button
+        disabled={false}
+        icon="navigate_next"
+        onClick={[Function]}
+        size="large"
+      />
+    </div>
     <Button
+      appearance="transparent"
       disabled={false}
-      icon="navigate_next"
+      icon="last_page"
       onClick={[Function]}
       size="large"
     />
   </div>
-  <Button
-    appearance="transparent"
-    disabled={false}
-    icon="last_page"
-    onClick={[Function]}
-    size="large"
-  />
 </div>
 `;
 
@@ -294,22 +342,26 @@ exports[`Pagination component
 <div
   className="Pagination Pagination--jump"
 >
-  <Button
-    appearance="transparent"
-    disabled={false}
-    icon="first_page"
-    onClick={[Function]}
-    size="large"
-  />
   <div
-    className="ml-4 mx-4"
+    className="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
   >
     <Button
+      appearance="transparent"
       disabled={false}
-      icon="navigate_before"
+      icon="first_page"
       onClick={[Function]}
       size="large"
     />
+    <div
+      className="ml-4 mx-4"
+    >
+      <Button
+        disabled={false}
+        icon="navigate_before"
+        onClick={[Function]}
+        size="large"
+      />
+    </div>
   </div>
   <div
     className="Pagination-pageIndex"
@@ -327,22 +379,26 @@ exports[`Pagination component
     </Text>
   </div>
   <div
-    className="mr-4 mx-4"
+    className="Pagination-buttonWrapper Pagination-buttonWrapper--next"
   >
+    <div
+      className="mr-4 mx-4"
+    >
+      <Button
+        disabled={true}
+        icon="navigate_next"
+        onClick={[Function]}
+        size="large"
+      />
+    </div>
     <Button
+      appearance="transparent"
       disabled={true}
-      icon="navigate_next"
+      icon="last_page"
       onClick={[Function]}
       size="large"
     />
   </div>
-  <Button
-    appearance="transparent"
-    disabled={true}
-    icon="last_page"
-    onClick={[Function]}
-    size="large"
-  />
 </div>
 `;
 
@@ -352,22 +408,26 @@ exports[`Pagination component
 <div
   className="Pagination Pagination--jump"
 >
-  <Button
-    appearance="transparent"
-    disabled={false}
-    icon="first_page"
-    onClick={[Function]}
-    size="large"
-  />
   <div
-    className="ml-4 mx-4"
+    className="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
   >
     <Button
+      appearance="transparent"
       disabled={false}
-      icon="navigate_before"
+      icon="first_page"
       onClick={[Function]}
       size="large"
     />
+    <div
+      className="ml-4 mx-4"
+    >
+      <Button
+        disabled={false}
+        icon="navigate_before"
+        onClick={[Function]}
+        size="large"
+      />
+    </div>
   </div>
   <div
     className="Pagination-pageIndex"
@@ -385,21 +445,25 @@ exports[`Pagination component
     </Text>
   </div>
   <div
-    className="mr-4 mx-4"
+    className="Pagination-buttonWrapper Pagination-buttonWrapper--next"
   >
+    <div
+      className="mr-4 mx-4"
+    >
+      <Button
+        disabled={false}
+        icon="navigate_next"
+        onClick={[Function]}
+        size="large"
+      />
+    </div>
     <Button
+      appearance="transparent"
       disabled={false}
-      icon="navigate_next"
+      icon="last_page"
       onClick={[Function]}
       size="large"
     />
   </div>
-  <Button
-    appearance="transparent"
-    disabled={false}
-    icon="last_page"
-    onClick={[Function]}
-    size="large"
-  />
 </div>
 `;

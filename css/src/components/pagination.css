@@ -3,6 +3,8 @@
 .Pagination {
     display: flex;
     vertical-align: middle;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .Pagination .Button {
@@ -11,17 +13,22 @@
     padding-right: 20px;
 }
 
+.Pagination-buttonWrapper {
+    display: flex;
+    flex-direction: row;
+}
+
 .Pagination-pageIndex {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding-left: var(--spacing-xl);
     padding-right: var(--spacing-xl);
 }
 
-.Pagination-pageIndex .Input{
+.Pagination-pageIndex .Input {
     min-width: var(--spacing-3);
     width: var(--spacing-5);
-    
     margin-right: var(--spacing);
 }
 
@@ -37,4 +44,21 @@
 
 .Pagination-pageIndex .Input-input {
     -moz-appearance: textfield;
+}
+
+@media (max-width: 575px) {
+    .Pagination-pageIndex {
+        order: -1;
+        flex-basis: 100%;
+    }
+    .Pagination-buttonWrapper {
+        margin-top: var(--spacing);
+        width: 50%;
+    }
+    .Pagination-buttonWrapper--next {
+        justify-content: flex-start;
+    }
+    .Pagination-buttonWrapper--previous {
+        justify-content: flex-end;
+    }
 }

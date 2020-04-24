@@ -37,7 +37,18 @@ export const Pagination = (props: PaginationProps) => {
 
   const wrapperClass = classNames({
     ['Pagination']: true,
-    [`Pagination--${type}`]: type
+    [`Pagination--${type}`]: type,
+  });
+
+  const nextButtonWrapperClass = classNames({
+    ['Pagination-buttonWrapper']: true,
+    ['Pagination-buttonWrapper--next']: true,
+
+  });
+
+  const prevButtonWrapperClass = classNames({
+    ['Pagination-buttonWrapper']: true,
+    ['Pagination-buttonWrapper--previous']: true,
   });
 
   React.useEffect(() => {
@@ -59,20 +70,22 @@ export const Pagination = (props: PaginationProps) => {
 
   return (
     <div className={wrapperClass}>
-      <Button
-        onClick={() => setPage(1)}
-        disabled={page === 1}
-        appearance="transparent"
-        size="large"
-        icon="first_page"
-      />
-      <div className={['ml-4', ...buttonHelper].join(' ')}>
+      <div className={prevButtonWrapperClass}>
         <Button
-          onClick={() => (page > 1 && setPage(page - 1))}
+          onClick={() => setPage(1)}
           disabled={page === 1}
+          appearance="transparent"
           size="large"
-          icon="navigate_before"
+          icon="first_page"
         />
+        <div className={['ml-4', ...buttonHelper].join(' ')}>
+          <Button
+            onClick={() => (page > 1 && setPage(page - 1))}
+            disabled={page === 1}
+            size="large"
+            icon="navigate_before"
+          />
+        </div>
       </div>
       {type === 'jump' && (
         <div className="Pagination-pageIndex">
@@ -87,22 +100,24 @@ export const Pagination = (props: PaginationProps) => {
           <Text>{` of ${totalPages} pages`}</Text>
         </div>
       )}
-      <div className={['mr-4', ...buttonHelper].join(' ')}>
+      <div className={nextButtonWrapperClass}>
+        <div className={['mr-4', ...buttonHelper].join(' ')}>
+          <Button
+            onClick={() => (page < totalPages && setPage(page + 1))}
+            disabled={page === totalPages}
+            size="large"
+            icon="navigate_next"
+          />
+        </div>
         <Button
-          onClick={() => (page < totalPages && setPage(page + 1))}
+          onClick={() => setPage(totalPages)}
           disabled={page === totalPages}
+          appearance="transparent"
           size="large"
-          icon="navigate_next"
+          icon="last_page"
         />
       </div>
-      <Button
-        onClick={() => setPage(totalPages)}
-        disabled={page === totalPages}
-        appearance="transparent"
-        size="large"
-        icon="last_page"
-      />
-    </div>
+    </div >
   );
 };
 
