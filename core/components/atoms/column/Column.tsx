@@ -10,7 +10,8 @@ export interface ColumnProps {
   sizeM?: Columns;
   sizeL?: Columns;
   sizeXL?: Columns;
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  utilityClass?: string;
 }
 
 export const Column = (props: ColumnProps) => {
@@ -20,7 +21,8 @@ export const Column = (props: ColumnProps) => {
     sizeS,
     sizeM,
     sizeL,
-    sizeXL
+    sizeXL,
+    utilityClass
   } = props;
 
   const classes = classNames({
@@ -31,6 +33,7 @@ export const Column = (props: ColumnProps) => {
     [`Col--m-${sizeM}`]: sizeM,
     [`Col--l-${sizeL}`]: sizeL,
     [`Col--xl-${sizeXL}`]: sizeXL,
+    [`${utilityClass}`]: utilityClass
   });
 
   return <div className={classes}>{props.children}</div>;

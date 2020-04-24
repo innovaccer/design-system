@@ -10,11 +10,12 @@ export interface RowProps {
   groupM?: RowColumns;
   groupL?: RowColumns;
   groupXL?: RowColumns;
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  utilityClass?: string;
 }
 
 export const Row = (props: RowProps) => {
-  const { group, groupXS, groupS, groupM, groupL, groupXL } = props;
+  const { group, groupXS, groupS, groupM, groupL, groupXL, utilityClass } = props;
 
   const classes = classNames({
     Row: true,
@@ -23,7 +24,8 @@ export const Row = (props: RowProps) => {
     [`RowGroup--s-${groupS}`]: groupS,
     [`RowGroup--m-${groupM}`]: groupM,
     [`RowGroup--l-${groupL}`]: groupL,
-    [`RowGroup--xl-${groupXL}`]: groupXL
+    [`RowGroup--xl-${groupXL}`]: groupXL,
+    [`${utilityClass}`]: utilityClass
   });
   return <div className={classes}>{props.children}</div>;
 };
