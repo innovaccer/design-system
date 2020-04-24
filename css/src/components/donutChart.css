@@ -1,0 +1,12 @@
+/* Donut Chart */
+
+.DonutChart {
+    height: 100%;
+}
+
+.DonutChart-legends {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--spacing-l) 0;
+}

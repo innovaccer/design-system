@@ -8,6 +8,7 @@ export { CardProps } from './components/atoms/card';
 export { CheckboxProps } from './components/atoms/checkbox';
 export { ColumnProps } from './components/atoms/column';
 export { DatePickerProps } from './components/organisms/datepicker';
+export { DonutChartProps } from './components/organisms/donutChart';
 export { DropdownProps } from './components/atoms/dropdown';
 export { HeadingProps } from './components/atoms/heading';
 export { IconProps } from './components/atoms/icon';
