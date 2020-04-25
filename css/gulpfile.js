@@ -12,7 +12,6 @@ const materialFont = '../node_modules/material-design-icons/iconfont/MaterialIco
 const sources = [
   './src/tokens/*.css',
   './src/variables/*.css',
-  './src/reset.css',
   materialIcons,
   './src/core/*.css',
   './src/components/*.css',
