@@ -1,4 +1,4 @@
-import * as React from 'react';
+/// <reference types="react" />
 import { SharedProps } from '../calendar/Calendar';
 import { DateType, DateFormat } from '../calendar/types';
 import { Position } from '@/components/molecules/popover';
@@ -15,5 +15,8 @@ export declare type DatePickerProps = {
     mask?: Mask;
     validator?: Validator;
 } & SharedProps;
-export declare const DatePicker: React.FunctionComponent<DatePickerProps>;
+export declare const DatePicker: {
+    (props: DatePickerProps): JSX.Element;
+    displayName: string;
+};
 export default DatePicker;

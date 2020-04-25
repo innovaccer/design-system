@@ -1,11 +1,17 @@
-import * as React from 'react';
+/// <reference types="react" />
 export declare const RowGroup: () => JSX.Element;
 export declare const ColumnSize: () => JSX.Element;
 declare const _default: {
     title: string;
-    component: React.FunctionComponent<import("../../atoms/column").ColumnProps>;
+    component: {
+        (props: import("../../atoms/column").ColumnProps): JSX.Element;
+        displayName: string;
+    };
     subcomponents: {
-        Row: React.FunctionComponent<import("../../atoms/row").RowProps>;
+        Row: {
+            (props: import("../../atoms/row").RowProps): JSX.Element;
+            displayName: string;
+        };
     };
 };
 export default _default;

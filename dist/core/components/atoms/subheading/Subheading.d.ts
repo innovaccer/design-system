@@ -4,5 +4,8 @@ export interface SubheadingProps {
     children: string;
     appearance?: Appearance;
 }
-export declare const Subheading: (props: SubheadingProps) => JSX.Element;
+export declare const Subheading: {
+    (props: SubheadingProps): JSX.Element;
+    displayName: string;
+};
 export default Subheading;

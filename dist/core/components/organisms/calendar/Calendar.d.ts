@@ -1,4 +1,4 @@
-import * as React from 'react';
+/// <reference types="react" />
 import { Day, View } from './types';
 export interface SharedProps {
     monthsInView?: number;
@@ -19,5 +19,8 @@ export declare type CalendarProps = {
     endDate?: Date;
     rangeLimit?: number;
 } & SharedProps;
-export declare const Calendar: React.FunctionComponent<CalendarProps>;
+export declare const Calendar: {
+    (props: CalendarProps): JSX.Element;
+    displayName: string;
+};
 export default Calendar;

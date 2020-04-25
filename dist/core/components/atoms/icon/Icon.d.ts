@@ -9,5 +9,8 @@ export interface IconProps {
     onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
     helpers?: string[];
 }
-export declare const Icon: React.FunctionComponent<IconProps>;
+export declare const Icon: {
+    (props: IconProps): JSX.Element;
+    displayName: string;
+};
 export default Icon;

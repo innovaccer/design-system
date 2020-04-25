@@ -1,4 +1,4 @@
-import * as React from 'react';
+/// <reference types="react" />
 export declare type PaginationType = 'basic' | 'jump';
 export interface PaginationProps {
     type?: PaginationType;
@@ -6,5 +6,8 @@ export interface PaginationProps {
     page?: number;
     onPageChange: (page: number) => void;
 }
-export declare const Pagination: React.FunctionComponent<PaginationProps>;
+export declare const Pagination: {
+    (props: PaginationProps): JSX.Element;
+    displayName: string;
+};
 export default Pagination;

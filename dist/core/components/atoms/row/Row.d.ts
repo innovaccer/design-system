@@ -7,6 +7,11 @@ export interface RowProps {
     groupM?: RowColumns;
     groupL?: RowColumns;
     groupXL?: RowColumns;
+    children?: React.ReactNode;
+    utilityClass?: string;
 }
-export declare const Row: React.FunctionComponent<RowProps>;
+export declare const Row: {
+    (props: RowProps): JSX.Element;
+    displayName: string;
+};
 export default Row;

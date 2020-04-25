@@ -5,6 +5,10 @@ export interface PlaceholderProps {
     round?: boolean;
     imageSize?: Size;
     style?: React.CSSProperties;
+    children: React.ReactNode;
 }
-export declare const Placeholder: React.FunctionComponent<PlaceholderProps>;
+export declare const Placeholder: {
+    (props: PlaceholderProps): JSX.Element;
+    displayName: string;
+};
 export default Placeholder;

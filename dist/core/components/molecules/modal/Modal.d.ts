@@ -8,5 +8,8 @@ export interface ModalProps {
     open: boolean;
     children?: React.ReactNode;
 }
-declare const Modal: (props: ModalProps) => JSX.Element;
+declare const Modal: {
+    (props: ModalProps): JSX.Element;
+    displayName: string;
+};
 export default Modal;

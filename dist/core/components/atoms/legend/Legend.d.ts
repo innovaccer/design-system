@@ -14,5 +14,8 @@ export interface LegendProps {
     onMouseEnter?: (e: React.MouseEvent<HTMLDivElement>) => void;
     onMouseLeave?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
-export declare const Legend: (props: LegendProps) => JSX.Element;
+export declare const Legend: {
+    (props: LegendProps): JSX.Element;
+    displayName: string;
+};
 export default Legend;

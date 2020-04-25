@@ -1,4 +1,4 @@
-import * as React from 'react';
+/// <reference types="react" />
 import { DropdownListProps, Option } from '@/components/atoms/dropdown/dropdownList';
 export interface DropdownProps extends DropdownListProps {
     limit?: number;
@@ -6,5 +6,8 @@ export interface DropdownProps extends DropdownListProps {
     options: Option[];
     onChange?: (selected: any[] | any) => void;
 }
-export declare const Dropdown: React.FunctionComponent<DropdownProps>;
+export declare const Dropdown: {
+    (props: DropdownProps): JSX.Element;
+    displayName: string;
+};
 export default Dropdown;

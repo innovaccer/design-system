@@ -2,6 +2,7 @@ import { createElement, useEffect as useEffect$2, useState as useState$2, forwar
 import classNames from 'classnames';
 import { createPortal, findDOMNode } from 'react-dom';
 import { Manager, Reference, Popper } from 'react-popper';
+import { ResponsiveContainer, PieChart, Pie, Cell as Cell$1, Tooltip as Tooltip$1, Sector } from 'recharts';
 
 function _typeof(obj) {
   "@babel/helpers - typeof";
@@ -306,6 +307,7 @@ var Avatar = function Avatar(props) {
     className: classes
   }, initials);
 };
+Avatar.displayName = 'Avatar';
 
 var useEffect = useEffect$2,
     useState = useState$2;
@@ -366,6 +368,8 @@ var Backdrop = function Backdrop(props) {
   return BackdropElement;
 };
 
+Backdrop.displayName = 'Backdrop';
+
 var Badge = function Badge(props) {
   var _classNames;
 
@@ -382,6 +386,7 @@ var Badge = function Badge(props) {
     className: classes
   }, rest), children);
 };
+Badge.displayName = 'Badge';
 
 var GenericText = function GenericText(_ref) {
   var children = _ref.children,
@@ -420,6 +425,7 @@ var Heading = function Heading(props) {
     componentType: sizeMap[size]
   }, rest), children);
 };
+Heading.displayName = 'Heading';
 
 var BreadcrumbsWrapper = function BreadcrumbsWrapper(props) {
   var children = props.children,
@@ -468,6 +474,7 @@ var Spinner = function Spinner(props) {
     className: circleClasses
   }, circleProps)));
 };
+Spinner.displayName = 'Spinner';
 
 var Icon = function Icon(props) {
   var _classNames;
@@ -498,6 +505,7 @@ var Icon = function Icon(props) {
     onClick: onClickHandler
   }, "".concat(name, "_").concat(type));
 };
+Icon.displayName = 'Icon';
 
 var sizeMapping = {
   tiny: 12,
@@ -551,6 +559,7 @@ var Card = function Card(props) {
     className: classes
   }, rest), children);
 };
+Card.displayName = 'Card';
 
 var Text = function Text(props) {
   var _classNames;
@@ -570,6 +579,7 @@ var Text = function Text(props) {
     componentType: "span"
   }, rest), children);
 };
+Text.displayName = 'Text';
 
 var Checkbox = forwardRef(function (props, forwardedRef) {
   var _classNames, _classNames2;
@@ -644,12 +654,14 @@ var Column = function Column(props) {
       sizeS = props.sizeS,
       sizeM = props.sizeM,
       sizeL = props.sizeL,
-      sizeXL = props.sizeXL;
-  var classes = classNames((_classNames = {}, _defineProperty(_classNames, 'Col', true), _defineProperty(_classNames, "Col--".concat(size), size), _defineProperty(_classNames, "Col--xs-".concat(sizeXS), sizeXS), _defineProperty(_classNames, "Col--s-".concat(sizeS), sizeS), _defineProperty(_classNames, "Col--m-".concat(sizeM), sizeM), _defineProperty(_classNames, "Col--l-".concat(sizeL), sizeL), _defineProperty(_classNames, "Col--xl-".concat(sizeXL), sizeXL), _classNames));
+      sizeXL = props.sizeXL,
+      utilityClass = props.utilityClass;
+  var classes = classNames((_classNames = {}, _defineProperty(_classNames, 'Col', true), _defineProperty(_classNames, "Col--".concat(size), size), _defineProperty(_classNames, "Col--xs-".concat(sizeXS), sizeXS), _defineProperty(_classNames, "Col--s-".concat(sizeS), sizeS), _defineProperty(_classNames, "Col--m-".concat(sizeM), sizeM), _defineProperty(_classNames, "Col--l-".concat(sizeL), sizeL), _defineProperty(_classNames, "Col--xl-".concat(sizeXL), sizeXL), _defineProperty(_classNames, "".concat(utilityClass), utilityClass), _classNames));
   return /*#__PURE__*/createElement("div", {
     className: classes
   }, props.children);
 };
+Column.displayName = 'Column';
 
 var Subheading = function Subheading(props) {
   var _props$appearance = props.appearance,
@@ -665,6 +677,7 @@ var Subheading = function Subheading(props) {
     componentType: 'h4'
   }, rest), children);
 };
+Subheading.displayName = 'Subheading';
 
 var config = {
   yearBlockRange: 12,
@@ -1445,6 +1458,7 @@ var Calendar = function Calendar(props) {
     return renderCalendar(index);
   }));
 };
+Calendar.displayName = 'Calendar';
 
 var Offsets;
 
@@ -1703,6 +1717,10 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
   return PopperWrapper;
 }(Component);
 
+var colorToHex = function colorToHex(color) {
+  return getComputedStyle(document.documentElement).getPropertyValue("--".concat(color));
+};
+
 var Popover = function Popover(props) {
   var _props$position = props.position,
       position = _props$position === void 0 ? 'bottom' : _props$position,
@@ -1741,6 +1759,7 @@ var Popover = function Popover(props) {
     offset: "Large"
   }), PopoverWrapper);
 };
+Popover.displayName = 'Popover';
 
 var Label = function Label(props) {
   var disabled = props.disabled,
@@ -1756,6 +1775,7 @@ var Label = function Label(props) {
     componentType: "label"
   }, rest), children);
 };
+Label.displayName = 'Label';
 
 /**
  * Tooltip is used to displays floating content in relation to a target when that target is hovered.
@@ -2290,6 +2310,158 @@ var DatePicker = function DatePicker(props) {
     onDateChange: onDateChangeHandler
   }));
 };
+DatePicker.displayName = 'DatePicker';
+
+var DonutChart = function DonutChart(props) {
+  var _props$donutWidth = props.donutWidth,
+      donutWidth = _props$donutWidth === void 0 ? 20 : _props$donutWidth,
+      _props$colors = props.colors,
+      colors = _props$colors === void 0 ? ['primary', 'secondary', 'inverse', 'success', 'warning', 'alert'] : _props$colors,
+      _props$withCenterText = props.withCenterText,
+      withCenterText = _props$withCenterText === void 0 ? true : _props$withCenterText,
+      _props$colorOfTotalCo = props.colorOfTotalCount,
+      colorOfTotalCount = _props$colorOfTotalCo === void 0 ? 'success' : _props$colorOfTotalCo,
+      data = props.data,
+      radius = props.radius,
+      withLegends = props.withLegends,
+      withTooltip = props.withTooltip,
+      withActiveSegment = props.withActiveSegment;
+  var columnOptions = {
+    chart: {
+      size: withLegends ? '9' : '12',
+      sizeS: '12',
+      sizeXS: '12'
+    },
+    legends: {
+      size: '3',
+      sizeS: '12',
+      sizeXS: '12'
+    }
+  };
+
+  var renderActiveShape = function renderActiveShape(activeShapeProps) {
+    var RADIAN = Math.PI / 180;
+    var cx = activeShapeProps.cx,
+        cy = activeShapeProps.cy,
+        midAngle = activeShapeProps.midAngle,
+        innerRadius = activeShapeProps.innerRadius,
+        outerRadius = activeShapeProps.outerRadius,
+        startAngle = activeShapeProps.startAngle,
+        endAngle = activeShapeProps.endAngle,
+        fill = activeShapeProps.fill,
+        payload = activeShapeProps.payload,
+        percent = activeShapeProps.percent,
+        value = activeShapeProps.value;
+    var sin = Math.sin(-RADIAN * midAngle);
+    var cos = Math.cos(-RADIAN * midAngle);
+    var sx = cx + (outerRadius + 10) * cos;
+    var sy = cy + (outerRadius + 10) * sin;
+    var mx = cx + (outerRadius + 30) * cos;
+    var my = cy + (outerRadius + 30) * sin;
+    var ex = mx + (cos >= 0 ? 1 : -1) * 22;
+    var ey = my;
+    var textAnchor = cos >= 0 ? 'start' : 'end';
+    var total = Math.ceil(value / percent);
+    return /*#__PURE__*/createElement("g", null, withCenterText && /*#__PURE__*/createElement(Fragment, null, /*#__PURE__*/createElement("text", {
+      x: cx,
+      y: cy,
+      "font-size": 'var(--font-size-xl)',
+      textAnchor: "middle"
+    }, "Total"), /*#__PURE__*/createElement("text", {
+      x: cx,
+      y: cy,
+      dy: 22,
+      "font-size": 'var(--font-size-l)',
+      textAnchor: "middle",
+      fill: colorToHex(colorOfTotalCount)
+    }, total)), /*#__PURE__*/createElement(Sector, {
+      cx: cx,
+      cy: cy,
+      innerRadius: innerRadius,
+      outerRadius: outerRadius,
+      startAngle: startAngle,
+      endAngle: endAngle,
+      fill: fill
+    }), withActiveSegment && /*#__PURE__*/createElement(Fragment, null, /*#__PURE__*/createElement(Sector, {
+      cx: cx,
+      cy: cy,
+      startAngle: startAngle,
+      endAngle: endAngle,
+      innerRadius: outerRadius + 6,
+      outerRadius: outerRadius + 10,
+      fill: fill
+    }), /*#__PURE__*/createElement("path", {
+      d: "M".concat(sx, ",").concat(sy, "L").concat(mx, ",").concat(my, "L").concat(ex, ",").concat(ey),
+      stroke: fill,
+      fill: "none"
+    }), /*#__PURE__*/createElement("circle", {
+      cx: ex,
+      cy: ey,
+      r: 2,
+      fill: fill,
+      stroke: "none"
+    }), /*#__PURE__*/createElement("text", {
+      x: ex + (cos >= 0 ? 1 : -1) * 12,
+      y: ey,
+      dy: -18,
+      textAnchor: textAnchor,
+      fill: fill
+    }, "".concat(payload.name)), /*#__PURE__*/createElement("text", {
+      x: ex + (cos >= 0 ? 1 : -1) * 12,
+      y: ey,
+      textAnchor: textAnchor,
+      fill: "#333"
+    }, "".concat(value)), /*#__PURE__*/createElement("text", {
+      x: ex + (cos >= 0 ? 1 : -1) * 12,
+      y: ey,
+      dy: 18,
+      textAnchor: textAnchor,
+      fill: "#999"
+    }, "".concat((percent * 100).toFixed(0), "%"))));
+  };
+
+  var _React$useState = useState$2(0),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      activeIndex = _React$useState2[0],
+      setActiveIndex = _React$useState2[1];
+
+  var onPieEnter = function onPieEnter(_data, index) {
+    setActiveIndex(index);
+  };
+
+  var getColor = function getColor(index, type) {
+    var color = colors[index % colors.length];
+    var colorHex = colorToHex(color);
+    return type === 'hex' ? colorHex : color;
+  };
+
+  var oRadius = withActiveSegment ? radius ? .725 * radius : '72.5%' : radius || '100%';
+  var iRadius = withActiveSegment ? radius ? (100 - donutWidth) / 100 * oRadius : "".concat((100 - donutWidth) / 100 * 72.5, "%") : radius ? (100 - donutWidth) / 100 * radius : "".concat(100 - donutWidth, "%");
+  return /*#__PURE__*/createElement(Row, {
+    utilityClass: "DonutChart"
+  }, /*#__PURE__*/createElement(Column, columnOptions.chart, /*#__PURE__*/createElement(ResponsiveContainer, null, /*#__PURE__*/createElement(PieChart, null, /*#__PURE__*/createElement(Pie, {
+    data: data,
+    dataKey: "value",
+    activeIndex: activeIndex,
+    activeShape: renderActiveShape,
+    onMouseEnter: onPieEnter,
+    outerRadius: oRadius,
+    innerRadius: iRadius
+  }, data.map(function (_entry, index) {
+    return /*#__PURE__*/createElement(Cell$1, {
+      fill: getColor(index, 'hex'),
+      key: index
+    });
+  })), withTooltip && /*#__PURE__*/createElement(Tooltip$1, null)))), withLegends && /*#__PURE__*/createElement(Column, _extends({
+    utilityClass: "DonutChart-legends"
+  }, columnOptions.legends), data.map(function (d, i) {
+    return /*#__PURE__*/createElement(Legend, {
+      key: i,
+      label: "".concat(d.name, " - ").concat(d.value),
+      iconAppearance: getColor(i)
+    });
+  })));
+};
 
 var DropdownButton = forwardRef(function (props, ref) {
   var _classNames;
@@ -2334,6 +2506,7 @@ var DropdownButton = forwardRef(function (props, ref) {
     name: iconName
   }));
 });
+DropdownButton.displayName = 'DropdownButton';
 
 var ListCheckbox = forwardRef(function (props, ref) {
   var list = props.list,
@@ -2504,6 +2677,7 @@ var ListCheckbox = forwardRef(function (props, ref) {
     }));
   })));
 });
+ListCheckbox.displayName = 'ListCheckbox';
 
 var PlaceholderParagraph = function PlaceholderParagraph(props) {
   var _props$length = props.length,
@@ -2516,6 +2690,7 @@ var PlaceholderParagraph = function PlaceholderParagraph(props) {
     className: classes
   });
 };
+PlaceholderParagraph.displayName = 'PlaceholderParagraph';
 
 var DropdownAlignMapping = {
   right: 'bottom-start',
@@ -2970,7 +3145,7 @@ var DropdownList = function DropdownList(props) {
   }, search && renderSearch(), renderDropdownSection(), showApplyButton && checkboxes && renderApplyButton()));
 };
 
-DropdownList.displayName = 'Dropdown';
+DropdownList.displayName = 'DropdownList';
 
 var getSearchedOptions = function getSearchedOptions(options, searchTerm) {
   var result = options.filter(function (option) {
@@ -3252,6 +3427,7 @@ var Legend = function Legend(props) {
     weight: labelWeight
   }, label));
 };
+Legend.displayName = 'Legend';
 
 var Link = function Link(props) {
   var children = props.children,
@@ -3265,6 +3441,7 @@ var Link = function Link(props) {
     componentType: "a"
   }, rest), children);
 };
+Link.displayName = 'Link';
 
 var IconMapping = {
   success: 'check_circle',
@@ -3295,6 +3472,7 @@ var Message = function Message(props) {
     className: "Message-description"
   }, children)));
 };
+Message.displayName = 'Message';
 
 /**
  * Handle click outside component
@@ -3385,6 +3563,7 @@ var Paragraph = function Paragraph(props) {
     componentType: "p"
   }, rest), children);
 };
+Paragraph.displayName = 'Paragraph';
 
 var Radio = forwardRef(function (props, forwardedRef) {
   var _classNames, _classNames2, _classNames3;
@@ -3438,14 +3617,16 @@ var Row = function Row(props) {
       groupS = props.groupS,
       groupM = props.groupM,
       groupL = props.groupL,
-      groupXL = props.groupXL;
+      groupXL = props.groupXL,
+      utilityClass = props.utilityClass;
   var classes = classNames((_classNames = {
     Row: true
-  }, _defineProperty(_classNames, "RowGroup--".concat(group), group), _defineProperty(_classNames, "RowGroup--xs-".concat(groupXS), groupXS), _defineProperty(_classNames, "RowGroup--s-".concat(groupS), groupS), _defineProperty(_classNames, "RowGroup--m-".concat(groupM), groupM), _defineProperty(_classNames, "RowGroup--l-".concat(groupL), groupL), _defineProperty(_classNames, "RowGroup--xl-".concat(groupXL), groupXL), _classNames));
+  }, _defineProperty(_classNames, "RowGroup--".concat(group), group), _defineProperty(_classNames, "RowGroup--xs-".concat(groupXS), groupXS), _defineProperty(_classNames, "RowGroup--s-".concat(groupS), groupS), _defineProperty(_classNames, "RowGroup--m-".concat(groupM), groupM), _defineProperty(_classNames, "RowGroup--l-".concat(groupL), groupL), _defineProperty(_classNames, "RowGroup--xl-".concat(groupXL), groupXL), _defineProperty(_classNames, "".concat(utilityClass), utilityClass), _classNames));
   return /*#__PURE__*/createElement("div", {
     className: classes
   }, props.children);
 };
+Row.displayName = 'Row';
 
 var Switch = forwardRef(function (props, ref) {
   var _classNames, _classNames2;
@@ -3775,6 +3956,7 @@ var PlaceholderImage = function PlaceholderImage(props) {
     className: classes
   });
 };
+PlaceholderImage.displayName = 'PlaceholderImage';
 
 var Placeholder = function Placeholder(props) {
   var _props$imageSize = props.imageSize,
@@ -3796,6 +3978,7 @@ var Placeholder = function Placeholder(props) {
     className: "ml-4 w-100"
   }, children));
 };
+Placeholder.displayName = 'Placeholder';
 
 var Loader = /*#__PURE__*/function (_React$PureComponent) {
   _inherits(Loader, _React$PureComponent);
@@ -3884,7 +4067,7 @@ _defineProperty(Loader, "defaultProps", {
 });
 
 var Pagination = function Pagination(props) {
-  var _classNames;
+  var _classNames, _classNames2, _classNames3;
 
   var _props$type = props.type,
       type = _props$type === void 0 ? 'basic' : _props$type,
@@ -3897,6 +4080,8 @@ var Pagination = function Pagination(props) {
       setPage = _React$useState2[1];
 
   var wrapperClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Pagination', true), _defineProperty(_classNames, "Pagination--".concat(type), type), _classNames));
+  var nextButtonWrapperClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Pagination-buttonWrapper', true), _defineProperty(_classNames2, 'Pagination-buttonWrapper--next', true), _classNames2));
+  var prevButtonWrapperClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Pagination-buttonWrapper', true), _defineProperty(_classNames3, 'Pagination-buttonWrapper--previous', true), _classNames3));
   useEffect$2(function () {
     if (page) onPageChange(page);
   }, [page]);
@@ -3914,6 +4099,8 @@ var Pagination = function Pagination(props) {
   if (type === 'basic') buttonHelper.push('mx-3');else buttonHelper.push('mx-4');
   return /*#__PURE__*/createElement("div", {
     className: wrapperClass
+  }, /*#__PURE__*/createElement("div", {
+    className: prevButtonWrapperClass
   }, /*#__PURE__*/createElement(Button, {
     onClick: function onClick() {
       return setPage(1);
@@ -3931,7 +4118,7 @@ var Pagination = function Pagination(props) {
     disabled: page === 1,
     size: "large",
     icon: "navigate_before"
-  })), type === 'jump' && /*#__PURE__*/createElement("div", {
+  }))), type === 'jump' && /*#__PURE__*/createElement("div", {
     className: "Pagination-pageIndex"
   }, /*#__PURE__*/createElement(Input, {
     name: "page",
@@ -3941,6 +4128,8 @@ var Pagination = function Pagination(props) {
     onChange: inputChangeHandler,
     value: "".concat(page)
   }), /*#__PURE__*/createElement(Text, null, " of ".concat(totalPages, " pages"))), /*#__PURE__*/createElement("div", {
+    className: nextButtonWrapperClass
+  }, /*#__PURE__*/createElement("div", {
     className: ['mr-4'].concat(buttonHelper).join(' ')
   }, /*#__PURE__*/createElement(Button, {
     onClick: function onClick() {
@@ -3957,8 +4146,9 @@ var Pagination = function Pagination(props) {
     appearance: "transparent",
     size: "large",
     icon: "last_page"
-  }));
+  })));
 };
+Pagination.displayName = 'Pagination';
 
 var Grid = /*#__PURE__*/function (_React$PureComponent) {
   _inherits(Grid, _React$PureComponent);
@@ -4848,6 +5038,8 @@ var Modal = function Modal(props) {
   }));
 };
 
+Modal.displayName = 'Modal';
+
 var ModalHeader = function ModalHeader(props) {
   var _props$heading = props.heading,
       heading = _props$heading === void 0 ? '' : _props$heading,
@@ -4897,6 +5089,7 @@ var ModalHeader = function ModalHeader(props) {
     appearance: "subtle"
   }, subHeading)));
 };
+ModalHeader.displayName = 'ModalHeader';
 
 var ModalDescription = function ModalDescription(props) {
   var _props$title = props.title,
@@ -4914,6 +5107,7 @@ var ModalDescription = function ModalDescription(props) {
     weight: "strong"
   }, title)), description && /*#__PURE__*/createElement("div", null, /*#__PURE__*/createElement(Text, null, description)));
 };
+ModalDescription.displayName = 'ModalDescription';
 
 var ModalFooter = function ModalFooter(props) {
   var children = props.children;
@@ -4924,6 +5118,7 @@ var ModalFooter = function ModalFooter(props) {
     className: classes
   }, children);
 };
+ModalFooter.displayName = 'ModalFooter';
 
 var Dialog = function Dialog(props) {
   var _props$dimension = props.dimension,
@@ -4967,6 +5162,8 @@ var Dialog = function Dialog(props) {
     onClick: primaryButtonCallback
   }, primaryButtonLabel)));
 };
+
+Dialog.displayName = 'Dialog';
 
 var RangePicker = function RangePicker(props) {
   var startDateProp = props.startDate,
@@ -5303,6 +5500,7 @@ var RangePicker = function RangePicker(props) {
     rangeLimit: rangeLimit
   }));
 };
+RangePicker.displayName = 'RangePicker';
 
 var TabsWrapper = function TabsWrapper(props) {
   var _props$children = props.children,
@@ -5345,10 +5543,12 @@ var TabsWrapper = function TabsWrapper(props) {
     className: "TabsWrapper-content"
   }, children[activeTab]));
 };
+TabsWrapper.displayName = 'TabsWrapper';
 
 var Tab = function Tab(props) {
   var children = props.children;
   return /*#__PURE__*/createElement(Fragment, null, children);
 };
+Tab.displayName = 'Tab';
 
-export { Avatar, Backdrop, Badge, Breadcrumb, BreadcrumbsWrapper, Button, Card, Checkbox, Column, DatePicker, Dialog, Dropdown, Heading, Icon, Input, Label, Legend, Link, ListCheckbox, Message, Modal, OutsideClick, Pagination, Paragraph, Placeholder, PlaceholderParagraph, Popover, Radio, RangePicker, Row, Spinner, Subheading, Switch, Tab, Table, TabsWrapper, Text, Toast, Tooltip };
+export { Avatar, Backdrop, Badge, Breadcrumb, BreadcrumbsWrapper, Button, Card, Checkbox, Column, DatePicker, Dialog, DonutChart, Dropdown, Heading, Icon, Input, Label, Legend, Link, ListCheckbox, Message, Modal, OutsideClick, Pagination, Paragraph, Placeholder, PlaceholderParagraph, Popover, Radio, RangePicker, Row, Spinner, Subheading, Switch, Tab, Table, TabsWrapper, Text, Toast, Tooltip };

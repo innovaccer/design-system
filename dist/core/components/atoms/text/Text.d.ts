@@ -6,5 +6,8 @@ export interface TextProps {
     small?: boolean;
     appearance?: Appearance;
 }
-export declare const Text: (props: TextProps) => JSX.Element;
+export declare const Text: {
+    (props: TextProps): JSX.Element;
+    displayName: string;
+};
 export default Text;

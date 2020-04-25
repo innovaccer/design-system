@@ -5,5 +5,8 @@ export interface BadgeProps {
     subtle?: boolean;
     children: string;
 }
-export declare const Badge: (props: BadgeProps) => JSX.Element;
+export declare const Badge: {
+    (props: BadgeProps): JSX.Element;
+    displayName: string;
+};
 export default Badge;

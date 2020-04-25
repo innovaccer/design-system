@@ -6,5 +6,8 @@ export interface HeadingProps {
     appearance?: Appearance;
     size?: Size;
 }
-export declare const Heading: (props: HeadingProps) => JSX.Element;
+export declare const Heading: {
+    (props: HeadingProps): JSX.Element;
+    displayName: string;
+};
 export default Heading;

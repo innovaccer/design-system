@@ -46,3 +46,19 @@
 * d76e5cb chore: refactors doc
 * 745554c build: build
 * 194ffab chore: replaces material icon with Icon component
+
+-------------------
+ **v1.0.0-3**  (2020-04-25) 
+
+* 3c8cf13 v1.0.0-3
+* 657d052 fix: removes reset css
+* b05123b fix: fixes Pagination CSS
+* 378d7b0 fix: updates snpashot testing action
+* 63ec98b feat: adds DonutChart
+* 7179755 fix: adds utilityClass in Row and Column
+* 737654b chore: adds github issue and pull request templates
+* 25700ef chore: adds pull request action
+* 57c01b4 chore: fixes lint
+* 9eb0920 feat: adds tests for table component
+* bdb16fc chore: updates broken tests
+* 475b381 chore: test fixes and renames JSX to React in docPage

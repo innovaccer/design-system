@@ -1,7 +1,10 @@
-import * as React from 'react';
+/// <reference types="react" />
 export declare const view: () => JSX.Element;
 declare const _default: {
     title: string;
-    component: React.FunctionComponent<import("..").DatePickerProps>;
+    component: {
+        (props: import("..").DatePickerProps): JSX.Element;
+        displayName: string;
+    };
 };
 export default _default;

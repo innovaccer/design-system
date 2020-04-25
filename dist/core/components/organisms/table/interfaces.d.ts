@@ -1,5 +1,4 @@
 /// <reference types="react" />
-declare type DivProps = JSX.IntrinsicElements['div'];
 export interface Schema {
     width?: number;
     template?: React.ElementType;
@@ -23,7 +22,7 @@ export interface Cache {
     }>;
     height: number[];
 }
-export interface Props extends DivProps {
+export interface Props {
     data: Record<string, any>[];
     schema: Schema[];
     loaderSchema?: LoadingSchema[];
@@ -38,6 +37,8 @@ export interface Props extends DivProps {
     dynamicRowHeight?: boolean;
     pagination?: boolean;
     getGridActions?: (gridActions?: GridActions) => void;
+    style?: React.CSSProperties;
+    className?: string;
 }
 export interface State {
     isScrolling: Boolean;
@@ -59,4 +60,3 @@ export interface TableState {
 export interface GridActions {
     refreshRows: (indexs: number[], all?: boolean) => void;
 }
-export {};

@@ -17,5 +17,8 @@ export interface DialogProps {
     secondaryButtonAppearance?: Appearance;
     secondaryButtonCallback: () => void;
 }
-declare const Dialog: React.FunctionComponent<DialogProps>;
+declare const Dialog: {
+    (props: DialogProps): JSX.Element;
+    displayName: string;
+};
 export default Dialog;

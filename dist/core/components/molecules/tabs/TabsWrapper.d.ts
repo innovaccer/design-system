@@ -5,5 +5,8 @@ export interface TabsWrapperProps {
     children: React.FunctionComponentElement<TabProps>[];
     onTabChange?: (tabIndex: number) => void;
 }
-export declare const TabsWrapper: React.FunctionComponent<TabsWrapperProps>;
+export declare const TabsWrapper: {
+    (props: TabsWrapperProps): JSX.Element;
+    displayName: string;
+};
 export default TabsWrapper;

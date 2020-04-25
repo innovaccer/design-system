@@ -4,5 +4,8 @@ export interface AvatarProps {
     appearance?: Appearance;
     children: string;
 }
-export declare const Avatar: (props: AvatarProps) => JSX.Element;
+export declare const Avatar: {
+    (props: AvatarProps): JSX.Element;
+    displayName: string;
+};
 export default Avatar;

@@ -5,5 +5,8 @@ export interface ModalHeaderProps {
     onClose: (reason?: string, event?: React.MouseEvent<HTMLElement, MouseEvent>) => void;
     subHeading?: string;
 }
-export declare const ModalHeader: React.FunctionComponent<ModalHeaderProps>;
+export declare const ModalHeader: {
+    (props: ModalHeaderProps): JSX.Element;
+    displayName: string;
+};
 export default ModalHeader;

@@ -7,6 +7,11 @@ export interface ColumnProps {
     sizeM?: Columns;
     sizeL?: Columns;
     sizeXL?: Columns;
+    children?: React.ReactNode;
+    utilityClass?: string;
 }
-export declare const Column: React.FunctionComponent<ColumnProps>;
+export declare const Column: {
+    (props: ColumnProps): JSX.Element;
+    displayName: string;
+};
 export default Column;

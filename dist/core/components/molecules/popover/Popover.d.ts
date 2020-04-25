@@ -13,6 +13,10 @@ export interface PopoverProps {
     open?: boolean;
     style?: React.CSSProperties;
     onToggle: (open: boolean, type?: string) => void;
+    children: React.ReactNode;
 }
-export declare const Popover: React.FunctionComponent<PopoverProps>;
+export declare const Popover: {
+    (props: PopoverProps): JSX.Element;
+    displayName: string;
+};
 export default Popover;

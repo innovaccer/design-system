@@ -1,4 +1,4 @@
-import * as React from 'react';
+/// <reference types="react" />
 import { SharedProps } from '../calendar/Calendar';
 import { DateType, DateFormat } from '../calendar/types';
 import { Position } from '@/components/molecules/popover';
@@ -19,5 +19,8 @@ export declare type RangePickerProps = {
     mask?: Mask;
     validator?: Validator;
 } & SharedProps;
-export declare const RangePicker: React.FunctionComponent<RangePickerProps>;
+export declare const RangePicker: {
+    (props: RangePickerProps): JSX.Element;
+    displayName: string;
+};
 export default RangePicker;

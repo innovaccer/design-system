@@ -5,5 +5,8 @@ export interface CardProps {
     style?: React.CSSProperties;
     children: React.ReactNode;
 }
-export declare const Card: React.FunctionComponent<CardProps>;
+export declare const Card: {
+    (props: CardProps): JSX.Element;
+    displayName: string;
+};
 export default Card;

@@ -11,5 +11,8 @@ export interface ToastProps {
     actions?: Action[];
     onClose?: () => void;
 }
-export declare const Toast: React.FunctionComponent<ToastProps>;
+export declare const Toast: {
+    (props: ToastProps): JSX.Element;
+    displayName: string;
+};
 export default Toast;

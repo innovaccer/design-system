@@ -51,5 +51,8 @@ interface OptionsProps extends DropdownListProps {
     onSelectAll?: (selectedAll: boolean) => void;
     setSearchTerm?: (searchTerm: string) => void;
 }
-declare const DropdownList: React.FunctionComponent<OptionsProps>;
+declare const DropdownList: {
+    (props: OptionsProps): JSX.Element;
+    displayName: string;
+};
 export default DropdownList;
