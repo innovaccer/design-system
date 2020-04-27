@@ -80,7 +80,12 @@ const CopyComp = props => {
 };
 
 const renderCodeBlock = (val: string) => (
-  <pre style={{ position: 'relative', fontFamily: 'monospace', fontSize: '13px', background: '#f8f8f8' }}>
+  <pre style={{ position: 'relative', fontFamily: 'monospace', fontSize: '13px', background: '#f8f8f8', margin: 0 }}>
+    <style>
+      {`pre {
+        margin: 0;
+      }`}
+    </style>
     <CopyComp onClick={() => copyCode(val)} />
     <SyntaxHighlighter language="javascript" style={vs2015} showLineNumbers={true}>
       {val}
@@ -88,14 +93,19 @@ const renderCodeBlock = (val: string) => (
   </pre>
 );
 
+const getStory = () => {
+  const { storyId } = __STORYBOOK_STORY_STORE__.getSelection();
+  const story = __STORYBOOK_STORY_STORE__.fromId(storyId);
+  return { storyId, story };
+};
+
 const StoryComp = props => {
   const {
     customCode
   } = props;
 
-  const { storyId } = __STORYBOOK_STORY_STORE__.getSelection();
-  const story = __STORYBOOK_STORY_STORE__.fromId(storyId);
-  const comp = story.storyFn().props.children.props.children.props.children;
+  const { story, storyId } = getStory();
+  const comp = story.getOriginal()();
   const sp = story.parameters;
   const imports = [sp.component, ...(sp.subcomponents ? Object.values(sp.subcomponents) : [])];
 
@@ -183,9 +193,7 @@ const StoryComp = props => {
 };
 
 export const docPage = () => {
-  const { storyId } = __STORYBOOK_STORY_STORE__.getSelection();
-  const story = __STORYBOOK_STORY_STORE__.fromId(storyId);
-  const comp = story.storyFn().props.children.props.children.props.children;
+  const { story, storyId } = getStory();
   const sp = story.parameters;
 
   const {

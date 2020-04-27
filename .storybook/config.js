@@ -4,10 +4,8 @@ import { withInfo } from '@storybook/addon-info';
 import { withKnobs } from '@storybook/addon-knobs';
 import { primary } from './themes';
 import { DocsContainer } from '@storybook/addon-docs/blocks';
-import { withHTML } from '@whitespace/storybook-addon-html/react';
 import { withA11y } from '@storybook/addon-a11y';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { jsxDecorator } from 'storybook-addon-jsx';
 import { docPage } from '@/utils/docPage';
 import '../css';
 
@@ -125,15 +123,12 @@ const infoOptions = {
   }
 };
 
-addDecorator(jsxDecorator);
-
 addDecorator(withKnobs);
 
 const CenterDecorator = storyFn => {
   const Com = storyFn();
   return Com;
 };
-addDecorator(withHTML);
 addDecorator(withA11y);
 addDecorator(CenterDecorator);
 addDecorator(withInfo(infoOptions));
