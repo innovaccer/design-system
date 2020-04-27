@@ -20,15 +20,13 @@ export const all = () => {
   );
 };
 
-const title = 'Atoms|Typography/Link';
-
 export default {
-  title,
+  title: 'Atoms|Typography/Link',
   component: Link,
   parameters: {
     docs: {
       docPage: {
-        title
+        title: 'Link'
       }
     }
   }

@@ -34,15 +34,13 @@ export const all = () => {
   );
 };
 
-const title = 'Atoms|Typography/Heading';
-
 export default {
-  title,
+  title: 'Atoms|Typography/Heading',
   component: Heading,
   parameters: {
     docs: {
       docPage: {
-        title
+        title: 'Heading'
       }
     }
   }

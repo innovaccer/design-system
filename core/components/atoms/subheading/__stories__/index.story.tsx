@@ -24,15 +24,13 @@ export const all = () => {
   );
 };
 
-const title = 'Atoms|Typography/Subheading';
-
 export default {
-  title,
+  title: 'Atoms|Typography/Subheading',
   component: Subheading,
   parameters: {
     docs: {
       docPage: {
-        title
+        title: 'Subheading'
       }
     }
   }

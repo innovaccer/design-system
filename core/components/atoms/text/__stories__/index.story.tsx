@@ -30,15 +30,13 @@ export const all = () => {
   );
 };
 
-const title = 'Atoms|Typography/Text';
-
 export default {
-  title,
+  title: 'Atoms|Typography/Text',
   component: Text,
   parameters: {
     docs: {
       docPage: {
-        title
+        title: 'Text'
       }
     }
   }

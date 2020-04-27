@@ -25,15 +25,13 @@ export const all = () => {
   );
 };
 
-const title = 'Atoms|Typography/Paragraph';
-
 export default {
-  title,
+  title: 'Atoms|Typography/Paragraph',
   component: Paragraph,
   parameters: {
     docs: {
       docPage: {
-        title
+        title: 'Paragraph'
       }
     }
   }

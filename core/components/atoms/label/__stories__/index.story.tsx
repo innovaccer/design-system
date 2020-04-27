@@ -16,15 +16,13 @@ export const all = () => {
   );
 };
 
-const title = 'Atoms|Typography/Label';
-
 export default {
-  title,
+  title: 'Atoms|Typography/Label',
   component: Label,
   parameters: {
     docs: {
       docPage: {
-        title
+        title: 'Label'
       }
     }
   }
