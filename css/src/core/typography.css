@@ -22,6 +22,7 @@ body {
 
 /* Text */
 .Text {
+  margin: 0;
   line-height: var(--font-height);
 }
 
@@ -64,6 +65,7 @@ body {
 
 /* Heading */
 .Heading {
+  margin: 0;
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-m);
   line-height: var(--font-height-m);
@@ -121,6 +123,7 @@ body {
 
 /* Subheading */
 .Subheading {
+  margin: 0;
   font-weight: var(--font-weight-bolder);
   font-size: var(--spacing-l);
   line-height: var(--font-height-m);
