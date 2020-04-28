@@ -81,6 +81,7 @@ export const DatePicker = (props: DatePickerProps) => {
     ...rest
   } = props;
 
+  const [init, setInit] = React.useState<boolean>(false);
   const [date, setDate] = React.useState<Date | undefined>();
   const [error, setError] = React.useState<boolean>(false);
   const [open, setOpen] = React.useState<boolean>(openProp);
@@ -98,7 +99,7 @@ export const DatePicker = (props: DatePickerProps) => {
     setError(!date);
 
     if (onDateChange) {
-      if (date) {
+      if (init && date) {
         const dVal = translateToString(outputFormat, date);
         onDateChange(date, dVal);
       }
@@ -106,12 +107,14 @@ export const DatePicker = (props: DatePickerProps) => {
   }, [date]);
 
   const onDateChangeHandler = (d?: Date) => {
+    setInit(true);
     if (d) setDate(d);
   };
 
   if (withInput) {
     const onChangeHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
       setOpen(true);
+      setInit(true);
       const placeholderChar = '_';
       if (val && !val.includes(placeholderChar)) {
         const d = translateToDate(inputFormat, val, validator);

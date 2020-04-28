@@ -109,6 +109,7 @@ export const RangePicker = (props: RangePickerProps) => {
     ...rest
   } = props;
 
+  const [init, setInit] = React.useState<boolean>(false);
   const [startDate, setStartDate] = React.useState<Date | undefined>();
   const [endDate, setEndDate] = React.useState<Date | undefined>();
   const [yearNav, setYearNav] = React.useState<number | undefined>(yearNavProp);
@@ -158,7 +159,7 @@ export const RangePicker = (props: RangePickerProps) => {
     if (onRangeChange) {
       if (startDate && endDate) {
         const inRangeError = getInRangeError();
-        if (!inRangeError && !sError && !eError) {
+        if (init && !inRangeError && !sError && !eError) {
           const sValue = translateToString(outputFormat, startDate);
           const eValue = translateToString(outputFormat, endDate);
           onRangeChange(startDate, endDate, sValue, eValue);
@@ -199,6 +200,7 @@ export const RangePicker = (props: RangePickerProps) => {
   };
 
   const onRangeChangeHandler = (sDate?: Date, eDate?: Date) => {
+    if (sDate && eDate) setInit(true);
     if (sDate) setStartDate(sDate);
     if (eDate) setEndDate(eDate);
   };
@@ -224,6 +226,7 @@ export const RangePicker = (props: RangePickerProps) => {
     };
 
     const onChangeHandler = (_e: React.ChangeEvent<HTMLInputElement>, val: string, type: string) => {
+      setInit(true);
       setOpen(true);
 
       if (type === 'start') {

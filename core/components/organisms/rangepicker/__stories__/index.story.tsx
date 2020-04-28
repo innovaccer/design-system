@@ -104,7 +104,7 @@ export const all = () => {
         jumpView={jumpView}
         startDate={startDate}
         endDate={endDate}
-        onRangeChange={(sDate?: Date, eDate?: Date) => action(`on range change: ${sDate} - ${eDate}`)()}
+        onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) => action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()}
         view={view}
         firstDayOfWeek={firstDayOfWeek}
         {...attr}
@@ -124,7 +124,7 @@ export const all = () => {
         jumpView={jumpView}
         startDate={startDate}
         endDate={endDate}
-        onRangeChange={(sDate?: Date, eDate?: Date) => action(`on range change: ${sDate} - ${eDate}`)()}
+        onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) => action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()}
         view={view}
         firstDayOfWeek={firstDayOfWeek}
         {...attr}
