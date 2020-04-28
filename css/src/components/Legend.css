@@ -8,3 +8,8 @@
 .Legend:hover {
     cursor: pointer;
 }
+
+.Legend-icon {
+    border-radius: var(--spacing-s);
+    margin-right: var(--spacing);
+}

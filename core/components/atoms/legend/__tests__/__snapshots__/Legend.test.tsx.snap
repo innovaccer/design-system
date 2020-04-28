@@ -9,19 +9,16 @@ exports[`Legend component
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <i
-    className="material-icons"
+  <span
+    className="Legend-icon"
     style={
       Object {
-        "color": "var(--accent1)",
-        "fontSize": "14px",
-        "marginRight": "var(--spacing)",
+        "background": "var(--accent1)",
+        "height": "14px",
         "width": "14px",
       }
     }
-  >
-    fiber_manual_record_filled
-  </i>
+  />
   <Text>
     Legend
   </Text>
@@ -37,19 +34,16 @@ exports[`Legend component
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <i
-    className="material-icons"
+  <span
+    className="Legend-icon"
     style={
       Object {
-        "color": "var(--accent2)",
-        "fontSize": "14px",
-        "marginRight": "var(--spacing)",
+        "background": "var(--accent2)",
+        "height": "14px",
         "width": "14px",
       }
     }
-  >
-    fiber_manual_record_filled
-  </i>
+  />
   <Text>
     Legend
   </Text>
@@ -65,19 +59,16 @@ exports[`Legend component
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <i
-    className="material-icons"
+  <span
+    className="Legend-icon"
     style={
       Object {
-        "color": "var(--accent3)",
-        "fontSize": "14px",
-        "marginRight": "var(--spacing)",
+        "background": "var(--accent3)",
+        "height": "14px",
         "width": "14px",
       }
     }
-  >
-    fiber_manual_record_filled
-  </i>
+  />
   <Text>
     Legend
   </Text>
@@ -93,19 +84,16 @@ exports[`Legend component
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <i
-    className="material-icons"
+  <span
+    className="Legend-icon"
     style={
       Object {
-        "color": "var(--accent4)",
-        "fontSize": "14px",
-        "marginRight": "var(--spacing)",
+        "background": "var(--accent4)",
+        "height": "14px",
         "width": "14px",
       }
     }
-  >
-    fiber_manual_record_filled
-  </i>
+  />
   <Text>
     Legend
   </Text>
@@ -121,19 +109,16 @@ exports[`Legend component
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <i
-    className="material-icons"
+  <span
+    className="Legend-icon"
     style={
       Object {
-        "color": "var(--alert)",
-        "fontSize": "14px",
-        "marginRight": "var(--spacing)",
+        "background": "var(--alert)",
+        "height": "14px",
         "width": "14px",
       }
     }
-  >
-    fiber_manual_record_filled
-  </i>
+  />
   <Text>
     Legend
   </Text>
@@ -149,19 +134,16 @@ exports[`Legend component
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <i
-    className="material-icons"
+  <span
+    className="Legend-icon"
     style={
       Object {
-        "color": "var(--inverse)",
-        "fontSize": "14px",
-        "marginRight": "var(--spacing)",
+        "background": "var(--inverse)",
+        "height": "14px",
         "width": "14px",
       }
     }
-  >
-    fiber_manual_record_filled
-  </i>
+  />
   <Text>
     Legend
   </Text>
@@ -177,19 +159,16 @@ exports[`Legend component
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <i
-    className="material-icons"
+  <span
+    className="Legend-icon"
     style={
       Object {
-        "color": "var(--primary)",
-        "fontSize": "14px",
-        "marginRight": "var(--spacing)",
+        "background": "var(--primary)",
+        "height": "14px",
         "width": "14px",
       }
     }
-  >
-    fiber_manual_record_filled
-  </i>
+  />
   <Text>
     Legend
   </Text>
@@ -205,19 +184,16 @@ exports[`Legend component
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <i
-    className="material-icons"
+  <span
+    className="Legend-icon"
     style={
       Object {
-        "color": "var(--secondary)",
-        "fontSize": "14px",
-        "marginRight": "var(--spacing)",
+        "background": "var(--secondary)",
+        "height": "14px",
         "width": "14px",
       }
     }
-  >
-    fiber_manual_record_filled
-  </i>
+  />
   <Text>
     Legend
   </Text>
@@ -233,19 +209,16 @@ exports[`Legend component
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <i
-    className="material-icons"
+  <span
+    className="Legend-icon"
     style={
       Object {
-        "color": "var(--success)",
-        "fontSize": "14px",
-        "marginRight": "var(--spacing)",
+        "background": "var(--success)",
+        "height": "14px",
         "width": "14px",
       }
     }
-  >
-    fiber_manual_record_filled
-  </i>
+  />
   <Text>
     Legend
   </Text>
@@ -261,19 +234,16 @@ exports[`Legend component
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <i
-    className="material-icons"
+  <span
+    className="Legend-icon"
     style={
       Object {
-        "color": "var(--warning)",
-        "fontSize": "14px",
-        "marginRight": "var(--spacing)",
+        "background": "var(--warning)",
+        "height": "14px",
         "width": "14px",
       }
     }
-  >
-    fiber_manual_record_filled
-  </i>
+  />
   <Text>
     Legend
   </Text>
@@ -289,19 +259,16 @@ exports[`Legend component
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <i
-    className="material-icons"
+  <span
+    className="Legend-icon"
     style={
       Object {
-        "color": "var(--inverse)",
-        "fontSize": "14px",
-        "marginRight": "var(--spacing)",
+        "background": "var(--inverse)",
+        "height": "14px",
         "width": "14px",
       }
     }
-  >
-    fiber_manual_record_filled
-  </i>
+  />
   <Text
     appearance="default"
   >
@@ -319,19 +286,16 @@ exports[`Legend component
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <i
-    className="material-icons"
+  <span
+    className="Legend-icon"
     style={
       Object {
-        "color": "var(--inverse)",
-        "fontSize": "14px",
-        "marginRight": "var(--spacing)",
+        "background": "var(--inverse)",
+        "height": "14px",
         "width": "14px",
       }
     }
-  >
-    fiber_manual_record_filled
-  </i>
+  />
   <Text
     appearance="destructive"
   >
@@ -349,19 +313,16 @@ exports[`Legend component
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <i
-    className="material-icons"
+  <span
+    className="Legend-icon"
     style={
       Object {
-        "color": "var(--inverse)",
-        "fontSize": "14px",
-        "marginRight": "var(--spacing)",
+        "background": "var(--inverse)",
+        "height": "14px",
         "width": "14px",
       }
     }
-  >
-    fiber_manual_record_filled
-  </i>
+  />
   <Text
     appearance="disabled"
   >
@@ -379,19 +340,16 @@ exports[`Legend component
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <i
-    className="material-icons"
+  <span
+    className="Legend-icon"
     style={
       Object {
-        "color": "var(--inverse)",
-        "fontSize": "14px",
-        "marginRight": "var(--spacing)",
+        "background": "var(--inverse)",
+        "height": "14px",
         "width": "14px",
       }
     }
-  >
-    fiber_manual_record_filled
-  </i>
+  />
   <Text
     appearance="subtle"
   >
@@ -409,19 +367,16 @@ exports[`Legend component
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <i
-    className="material-icons"
+  <span
+    className="Legend-icon"
     style={
       Object {
-        "color": "var(--inverse)",
-        "fontSize": "14px",
-        "marginRight": "var(--spacing)",
+        "background": "var(--inverse)",
+        "height": "14px",
         "width": "14px",
       }
     }
-  >
-    fiber_manual_record_filled
-  </i>
+  />
   <Text
     appearance="white"
   >
@@ -439,19 +394,16 @@ exports[`Legend component
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <i
-    className="material-icons"
+  <span
+    className="Legend-icon"
     style={
       Object {
-        "color": "var(--inverse)",
-        "fontSize": "14px",
-        "marginRight": "var(--spacing)",
+        "background": "var(--inverse)",
+        "height": "14px",
         "width": "14px",
       }
     }
-  >
-    fiber_manual_record_filled
-  </i>
+  />
   <Text
     weight="medium"
   >
@@ -469,19 +421,16 @@ exports[`Legend component
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <i
-    className="material-icons"
+  <span
+    className="Legend-icon"
     style={
       Object {
-        "color": "var(--inverse)",
-        "fontSize": "14px",
-        "marginRight": "var(--spacing)",
+        "background": "var(--inverse)",
+        "height": "14px",
         "width": "14px",
       }
     }
-  >
-    fiber_manual_record_filled
-  </i>
+  />
   <Text
     weight="strong"
   >

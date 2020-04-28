@@ -4,8 +4,6 @@ import Legend from '../Legend';
 
 // CSF format story
 export const all = () => {
-  const icon = text('icon', 'fiber_manual_record');
-
   const label = text('label', 'Legend');
 
   const iconAppearance = text('Icon Appearance', 'inverse');
@@ -20,22 +18,14 @@ export const all = () => {
     display: 'inline-radio'
   });
 
-  const iconType = select(
-    'Icon Type',
-    ['filled', 'outline', 'rounded', 'sharp'],
-    undefined
-  );
-
   const iconSize = number('iconSize', 14);
 
   const options = {
-    icon,
     label,
     iconAppearance,
     labelAppearance,
     labelWeight,
     iconSize,
-    iconType,
   };
 
   return (

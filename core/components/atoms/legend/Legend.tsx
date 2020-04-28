@@ -1,14 +1,8 @@
 import * as React from 'react';
-import { IconType } from '@/components/atoms/icon';
 import Text, { Appearance as LabelAppearance, } from '@/components/atoms/text';
 import classNames from 'classnames';
 
 export interface LegendProps {
-  /**
-   * Name of icon to be rendered inside `Legend`
-   * @default "fiber_manual_record"
-   */
-  icon?: string;
   /**
    * Describes label of the `Legend`
    */
@@ -22,11 +16,6 @@ export interface LegendProps {
    * Color of label
    */
   labelAppearance?: LabelAppearance;
-  /**
-   * Type of Icon
-   * @default "filled"
-   */
-  iconType?: IconType;
   /**
    * Size of Icon
    * @default 14
@@ -47,9 +36,7 @@ export interface LegendProps {
 
 export const Legend = (props: LegendProps) => {
   const {
-    icon = 'fiber_manual_record',
     iconAppearance = 'inverse',
-    iconType = 'filled',
     iconSize = 14,
     labelAppearance,
     label,
@@ -65,10 +52,9 @@ export const Legend = (props: LegendProps) => {
   });
 
   const styles = {
-    color: `var(--${iconAppearance})`,
-    fontSize: `${iconSize}px`,
+    background: `var(--${iconAppearance})`,
+    height: `${iconSize}px`,
     width: `${iconSize}px`,
-    marginRight: 'var(--spacing)',
   };
 
   return (
@@ -79,12 +65,7 @@ export const Legend = (props: LegendProps) => {
       onMouseLeave={e => onMouseLeave && onMouseLeave(e)}
       style={style}
     >
-      <i
-        className={'material-icons'}
-        style={styles}
-      >
-        {`${icon}_${iconType}`}
-      </i>
+      <span className="Legend-icon" style={styles} />
       <Text
         appearance={labelAppearance}
         weight={labelWeight}
