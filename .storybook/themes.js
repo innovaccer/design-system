@@ -1,4 +1,5 @@
 import { create } from '@storybook/theming/create';
+import packageJson from '../package.json';
 
 export const primary = create({
   base: 'light',
@@ -31,7 +32,7 @@ export const primary = create({
   inputTextColor: 'black',
   inputBorderRadius: 4,
 
-  brandTitle: 'Innovaccer UI sandbox',
-  brandUrl: 'https://innovaccer.github.io/ui-kit/',
+  brandTitle: `Innovaccer UI sandbox | v${packageJson.version}`,
+  brandUrl: 'https://github.com/aregee/design-system/',
   brandImage: 'https://innovaccer.com/static/image/site-logo/innovaccer-logo-black.svg',
 });
