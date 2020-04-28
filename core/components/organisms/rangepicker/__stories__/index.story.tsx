@@ -12,6 +12,11 @@ export const all = () => {
     false
   );
 
+  const open = boolean(
+    'open',
+    false
+  );
+
   const monthsInView = number(
     'monthsInView',
     1
@@ -92,6 +97,7 @@ export const all = () => {
     return (
       <RangePicker
         withInput={withInput}
+        open={open}
         monthsInView={monthsInView}
         inputFormat={inputFormat}
         outputFormat={outputFormat}

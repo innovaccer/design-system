@@ -27,6 +27,8 @@ export const view = () => {
             startDate={new Date(2020, 2, 3)}
             endDate={new Date(2020, 2, 11)}
             view={v}
+            yearNav={2020}
+            monthNav={2}
           />
         </Card>
       ))}

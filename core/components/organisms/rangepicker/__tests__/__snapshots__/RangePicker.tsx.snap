@@ -76,6 +76,166 @@ exports[`RangePicker component
 `;
 
 exports[`RangePicker component 
+  open: false
+ 1`] = `
+<Popover
+  appendToBody={true}
+  onToggle={[Function]}
+  open={false}
+  trigger={
+    <div
+      className="RangePicker-input"
+    >
+      <ForwardRef
+        error={false}
+        label="Start Date"
+        mask={
+          Array [
+            /\\\\d/,
+            /\\\\d/,
+            "/",
+            /\\\\d/,
+            /\\\\d/,
+            "/",
+            /\\\\d/,
+            /\\\\d/,
+            /\\\\d/,
+            /\\\\d/,
+          ]
+        }
+        name="rangePicker-start"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClear={[Function]}
+        onClick={[Function]}
+        placeholder="mm/dd/yyyy"
+        placeholderChar="_"
+        value=""
+      />
+      <div
+        className="RangePicker-rangeSeparator"
+      >
+        <Text>
+           - 
+        </Text>
+      </div>
+      <ForwardRef
+        error={false}
+        label="End Date"
+        mask={
+          Array [
+            /\\\\d/,
+            /\\\\d/,
+            "/",
+            /\\\\d/,
+            /\\\\d/,
+            "/",
+            /\\\\d/,
+            /\\\\d/,
+            /\\\\d/,
+            /\\\\d/,
+          ]
+        }
+        name="rangePicker-end"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClear={[Function]}
+        onClick={[Function]}
+        placeholder="mm/dd/yyyy"
+        placeholderChar="_"
+        value=""
+      />
+    </div>
+  }
+>
+  <Calendar
+    onRangeChange={[Function]}
+    rangePicker={true}
+  />
+</Popover>
+`;
+
+exports[`RangePicker component 
+  open: true
+ 1`] = `
+<Popover
+  appendToBody={true}
+  onToggle={[Function]}
+  open={true}
+  trigger={
+    <div
+      className="RangePicker-input"
+    >
+      <ForwardRef
+        error={false}
+        label="Start Date"
+        mask={
+          Array [
+            /\\\\d/,
+            /\\\\d/,
+            "/",
+            /\\\\d/,
+            /\\\\d/,
+            "/",
+            /\\\\d/,
+            /\\\\d/,
+            /\\\\d/,
+            /\\\\d/,
+          ]
+        }
+        name="rangePicker-start"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClear={[Function]}
+        onClick={[Function]}
+        placeholder="mm/dd/yyyy"
+        placeholderChar="_"
+        value=""
+      />
+      <div
+        className="RangePicker-rangeSeparator"
+      >
+        <Text>
+           - 
+        </Text>
+      </div>
+      <ForwardRef
+        error={false}
+        label="End Date"
+        mask={
+          Array [
+            /\\\\d/,
+            /\\\\d/,
+            "/",
+            /\\\\d/,
+            /\\\\d/,
+            "/",
+            /\\\\d/,
+            /\\\\d/,
+            /\\\\d/,
+            /\\\\d/,
+          ]
+        }
+        name="rangePicker-end"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClear={[Function]}
+        onClick={[Function]}
+        placeholder="mm/dd/yyyy"
+        placeholderChar="_"
+        value=""
+      />
+    </div>
+  }
+>
+  <Calendar
+    onRangeChange={[Function]}
+    rangePicker={true}
+  />
+</Popover>
+`;
+
+exports[`RangePicker component 
   view: "date"
  1`] = `
 <Calendar

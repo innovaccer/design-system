@@ -12,6 +12,11 @@ export const all = () => {
     false
   );
 
+  const open = boolean(
+    'open',
+    false
+  );
+
   const inputFormat = select(
     'inputFormat',
     ['mm/dd/yyyy', 'dd/mm/yyyy', 'yyyy-mm-dd', 'mm-dd-yyyy', 'dd-mm-yyyy', 'yyyy-mm-dd'],
@@ -76,6 +81,7 @@ export const all = () => {
     return (
       <DatePicker
         withInput={withInput}
+        open={open}
         inputFormat={inputFormat}
         outputFormat={outputFormat}
         jumpView={jumpView}

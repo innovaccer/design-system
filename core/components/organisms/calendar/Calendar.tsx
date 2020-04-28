@@ -51,13 +51,15 @@ export interface SharedProps {
   /**
    * Initial year to be set for navigation
    *
-   * **use only if date, startDate and endDate are undefined**
+   * **use only if date, startDate and endDate are all set or undefined**
    */
   yearNav?: number;
   /**
    * Initial month to be set for navigation
    *
-   * **use only if date, startDate and endDate are undefined**
+   * **0 indexed(0-11)**
+   *
+   * **use only if date, startDate and endDate are all set or undefined**
    */
   monthNav?: number;
 }
@@ -71,7 +73,6 @@ export type CalendarProps = {
    * Callback function called when range is changed
    */
   onRangeChange?: (startDate: Date | undefined, endDate: Date | undefined) => void;
-
   /**
    * Selected date
    */

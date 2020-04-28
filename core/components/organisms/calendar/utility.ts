@@ -169,7 +169,7 @@ export const translateToDate = (format: string, val: string, validator?: Validat
         case 'mm':
           month = +v[i] - 1;
           break;
-        case 'yy':
+        case 'yyyy':
           year = +v[i];
           break;
         case 'dd':

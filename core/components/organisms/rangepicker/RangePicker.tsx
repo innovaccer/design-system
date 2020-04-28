@@ -35,6 +35,11 @@ export type RangePickerProps = {
    */
   withInput?: boolean;
   /**
+   * Sets open state of `Popover`
+   * @default false
+   */
+  open?: boolean;
+  /**
    * Position of `RangePicker` w.r.t. `InputMask`
    */
   position?: Position;
@@ -77,6 +82,7 @@ export const RangePicker = (props: RangePickerProps) => {
     endDate: endDateProp,
     yearNav: yearNavProp,
     monthNav: monthNavProp,
+    open: openProp = false,
     inputFormat = 'mm/dd/yyyy',
     outputFormat = 'mm/dd/yyyy',
     rangeSeparator = ' - ',
@@ -107,7 +113,7 @@ export const RangePicker = (props: RangePickerProps) => {
   const [endDate, setEndDate] = React.useState<Date | undefined>();
   const [yearNav, setYearNav] = React.useState<number | undefined>(yearNavProp);
   const [monthNav, setMonthNav] = React.useState<number | undefined>(monthNavProp);
-  const [open, setOpen] = React.useState<boolean>(false);
+  const [open, setOpen] = React.useState<boolean>(openProp);
   const [startError, setStartError] = React.useState<boolean>(false);
   const [endError, setEndError] = React.useState<boolean>(false);
 
@@ -130,13 +136,13 @@ export const RangePicker = (props: RangePickerProps) => {
   }, [monthNavProp]);
 
   React.useEffect(() => {
+    setOpen(openProp);
+  }, [openProp]);
+
+  React.useEffect(() => {
     let sError = !startDate;
     let eError = !endDate;
 
-    const {
-      year: sYear,
-      month: sMonth,
-    } = getDateInfo(startDate);
     const {
       year: eYear,
       month: eMonth,
@@ -145,15 +151,6 @@ export const RangePicker = (props: RangePickerProps) => {
     if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
       sError = true;
       eError = true;
-    }
-
-    if (startDate) {
-      setYearNav(sYear);
-      setMonthNav(sMonth);
-    }
-    if (endDate) {
-      setYearNav(eYear);
-      setMonthNav(eMonth);
     }
 
     setStartError(sError);

@@ -49,3 +49,26 @@ describe('DatePicker component', () => {
 
   testHelper(mapper, testFunc);
 });
+
+describe('DatePicker component', () => {
+  const mapper: Record<string, any> = {
+    open: valueHelper(booleanValue, { required: true, iterate: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+
+    it(testMessageHelper(attr), () => {
+      const tree = shallow(
+        <DatePicker
+          date={new Date(2020, 2, 1)}
+          withInput={true}
+          {...attr}
+        />
+      );
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});

@@ -102,7 +102,7 @@ describe('RangePicker component', () => {
 
 describe('RangePicker component', () => {
   const mapper: Record<string, any> = {
-    withInput: valueHelper(booleanValue, { required: true, iterate: true }),
+    withInput: valueHelper(booleanValue, { required: true, iterate: true })
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -113,6 +113,30 @@ describe('RangePicker component', () => {
         <RangePicker
           startDate={new Date(2020, 2, 3)}
           endDate={new Date(2020, 2, 11)}
+          {...attr}
+        />
+      );
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('RangePicker component', () => {
+  const mapper: Record<string, any> = {
+    open: valueHelper(booleanValue, { required: true, iterate: true })
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+
+    it(testMessageHelper(attr), () => {
+      const tree = shallow(
+        <RangePicker
+          startDate={new Date(2020, 2, 3)}
+          endDate={new Date(2020, 2, 11)}
+          withInput={true}
           {...attr}
         />
       );

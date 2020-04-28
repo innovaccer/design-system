@@ -1,6 +1,88 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DatePicker component 
+  open: false
+ 1`] = `
+<Popover
+  appendToBody={true}
+  onToggle={[Function]}
+  open={false}
+  position="bottom-start"
+  trigger={
+    <ForwardRef
+      error={false}
+      mask={
+        Array [
+          /\\\\d/,
+          /\\\\d/,
+          "/",
+          /\\\\d/,
+          /\\\\d/,
+          "/",
+          /\\\\d/,
+          /\\\\d/,
+          /\\\\d/,
+          /\\\\d/,
+        ]
+      }
+      name="datepicker"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClear={[Function]}
+      placeholder="mm/dd/yyyy"
+      placeholderChar="_"
+      value=""
+    />
+  }
+>
+  <Calendar
+    onDateChange={[Function]}
+  />
+</Popover>
+`;
+
+exports[`DatePicker component 
+  open: true
+ 1`] = `
+<Popover
+  appendToBody={true}
+  onToggle={[Function]}
+  open={true}
+  position="bottom-start"
+  trigger={
+    <ForwardRef
+      error={false}
+      mask={
+        Array [
+          /\\\\d/,
+          /\\\\d/,
+          "/",
+          /\\\\d/,
+          /\\\\d/,
+          "/",
+          /\\\\d/,
+          /\\\\d/,
+          /\\\\d/,
+          /\\\\d/,
+        ]
+      }
+      name="datepicker"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClear={[Function]}
+      placeholder="mm/dd/yyyy"
+      placeholderChar="_"
+      value=""
+    />
+  }
+>
+  <Calendar
+    onDateChange={[Function]}
+  />
+</Popover>
+`;
+
+exports[`DatePicker component 
   view: "date"
  1`] = `
 <Calendar
@@ -42,6 +124,7 @@ exports[`DatePicker component
   appendToBody={true}
   onToggle={[Function]}
   open={false}
+  position="bottom-start"
   trigger={
     <ForwardRef
       error={false}

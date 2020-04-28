@@ -27,7 +27,13 @@ export type DatePickerProps = {
    */
   withInput?: boolean;
   /**
+   * Sets open state of `Popover`
+   * @default false
+   */
+  open?: boolean;
+  /**
    * Position of `DatePicker` w.r.t. `InputMask`
+   * @default "bottom-start"
    */
   position?: Position;
   /**
@@ -57,6 +63,8 @@ export type DatePickerProps = {
 export const DatePicker = (props: DatePickerProps) => {
   const {
     date: dateProp,
+    open: openProp = false,
+    position = 'bottom-start',
     inputFormat = 'mm/dd/yyyy',
     outputFormat = 'mm/dd/yyyy',
     inputProps = {
@@ -67,7 +75,6 @@ export const DatePicker = (props: DatePickerProps) => {
     mask = masks.date[inputFormat],
     validator = validators.date,
     withInput,
-    position,
     disabledBefore,
     disabledAfter,
     onDateChange,
@@ -76,12 +83,16 @@ export const DatePicker = (props: DatePickerProps) => {
 
   const [date, setDate] = React.useState<Date | undefined>();
   const [error, setError] = React.useState<boolean>(false);
-  const [open, setOpen] = React.useState<boolean>(false);
+  const [open, setOpen] = React.useState<boolean>(openProp);
 
   React.useEffect(() => {
     const d = convertToDate(dateProp, inputFormat, validator);
     setDate(d);
   }, [dateProp]);
+
+  React.useEffect(() => {
+    setOpen(openProp);
+  }, [openProp]);
 
   React.useEffect(() => {
     setError(!date);

@@ -22,6 +22,8 @@ export const rangeLimit = () => {
           startDate={new Date(2020, 2, 3)}
           endDate={new Date(2020, 2, 11)}
           rangeLimit={7}
+          yearNav={2020}
+          monthNav={2}
         />
       </Card>
     </div>
