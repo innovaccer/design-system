@@ -8,6 +8,7 @@ export declare type DatePickerProps = {
     onDateChange?: (date: Date, dateVal: string) => void;
     date?: DateType;
     withInput?: boolean;
+    open?: boolean;
     position?: Position;
     inputFormat?: DateFormat;
     outputFormat?: DateFormat;

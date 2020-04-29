@@ -318,6 +318,7 @@ body {
 
 /* Text */
 .Text {
+  margin: 0;
   line-height: var(--font-height);
 }
 
@@ -360,6 +361,7 @@ body {
 
 /* Heading */
 .Heading {
+  margin: 0;
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-m);
   line-height: var(--font-height-m);
@@ -417,6 +419,7 @@ body {
 
 /* Subheading */
 .Subheading {
+  margin: 0;
   font-weight: var(--font-weight-bolder);
   font-size: var(--spacing-l);
   line-height: var(--font-height-m);
@@ -451,6 +454,11 @@ body {
 
 .Legend:hover {
     cursor: pointer;
+}
+
+.Legend-icon {
+    border-radius: var(--spacing-s);
+    margin-right: var(--spacing);
 }
 /* badge */
 
@@ -690,6 +698,8 @@ body {
 
 .BreadcrumbsWrapper-list {
     display: flex;
+    margin: 0;
+    padding: 0;
     flex-direction: row;
 }
 
@@ -724,6 +734,7 @@ body {
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
+    border: 0;
     border-radius: var(--spacing-m);
 
     padding-top: var(--spacing);
@@ -738,6 +749,10 @@ body {
     color: var(--text-white);
 	
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.Button:focus {
+    outline: 0;
 }
 
 .Button--iconAlign-right {

@@ -10,6 +10,7 @@ export declare type RangePickerProps = {
     endDate?: DateType;
     rangeLimit?: number;
     withInput?: boolean;
+    open?: boolean;
     position?: Position;
     inputFormat?: DateFormat;
     outputFormat?: DateFormat;

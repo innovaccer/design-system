@@ -861,7 +861,7 @@
             month = +v[i] - 1;
             break;
 
-          case 'yy':
+          case 'yyyy':
             year = +v[i];
             break;
 
@@ -2193,6 +2193,10 @@
 
   var DatePicker = function DatePicker(props) {
     var dateProp = props.date,
+        _props$open = props.open,
+        openProp = _props$open === void 0 ? false : _props$open,
+        _props$position = props.position,
+        position = _props$position === void 0 ? 'bottom-start' : _props$position,
         _props$inputFormat = props.inputFormat,
         inputFormat = _props$inputFormat === void 0 ? 'mm/dd/yyyy' : _props$inputFormat,
         _props$outputFormat = props.outputFormat,
@@ -2208,36 +2212,43 @@
         _props$validator = props.validator,
         validator = _props$validator === void 0 ? e$1.date : _props$validator,
         withInput = props.withInput,
-        position = props.position,
         disabledBefore = props.disabledBefore,
         disabledAfter = props.disabledAfter,
         onDateChange = props.onDateChange,
-        rest = _objectWithoutProperties(props, ["date", "inputFormat", "outputFormat", "inputProps", "mask", "validator", "withInput", "position", "disabledBefore", "disabledAfter", "onDateChange"]);
+        rest = _objectWithoutProperties(props, ["date", "open", "position", "inputFormat", "outputFormat", "inputProps", "mask", "validator", "withInput", "disabledBefore", "disabledAfter", "onDateChange"]);
 
-    var _React$useState = React.useState(),
+    var _React$useState = React.useState(false),
         _React$useState2 = _slicedToArray(_React$useState, 2),
-        date = _React$useState2[0],
-        setDate = _React$useState2[1];
+        init = _React$useState2[0],
+        setInit = _React$useState2[1];
 
-    var _React$useState3 = React.useState(false),
+    var _React$useState3 = React.useState(),
         _React$useState4 = _slicedToArray(_React$useState3, 2),
-        error = _React$useState4[0],
-        setError = _React$useState4[1];
+        date = _React$useState4[0],
+        setDate = _React$useState4[1];
 
     var _React$useState5 = React.useState(false),
         _React$useState6 = _slicedToArray(_React$useState5, 2),
-        open = _React$useState6[0],
-        setOpen = _React$useState6[1];
+        error = _React$useState6[0],
+        setError = _React$useState6[1];
+
+    var _React$useState7 = React.useState(openProp),
+        _React$useState8 = _slicedToArray(_React$useState7, 2),
+        open = _React$useState8[0],
+        setOpen = _React$useState8[1];
 
     React.useEffect(function () {
       var d = convertToDate(dateProp, inputFormat, validator);
       setDate(d);
     }, [dateProp]);
     React.useEffect(function () {
+      setOpen(openProp);
+    }, [openProp]);
+    React.useEffect(function () {
       setError(!date);
 
       if (onDateChange) {
-        if (date) {
+        if (init && date) {
           var dVal = translateToString(outputFormat, date);
           onDateChange(date, dVal);
         }
@@ -2245,12 +2256,14 @@
     }, [date]);
 
     var onDateChangeHandler = function onDateChangeHandler(d) {
+      setInit(true);
       if (d) setDate(d);
     };
 
     if (withInput) {
       var onChangeHandler = function onChangeHandler(_e, val) {
         setOpen(true);
+        setInit(true);
         var placeholderChar = '_';
 
         if (val && !val.includes(placeholderChar)) {
@@ -3387,12 +3400,8 @@
   Dropdown.displayName = 'Dropdown';
 
   var Legend = function Legend(props) {
-    var _props$icon = props.icon,
-        icon = _props$icon === void 0 ? 'fiber_manual_record' : _props$icon,
-        _props$iconAppearance = props.iconAppearance,
+    var _props$iconAppearance = props.iconAppearance,
         iconAppearance = _props$iconAppearance === void 0 ? 'inverse' : _props$iconAppearance,
-        _props$iconType = props.iconType,
-        iconType = _props$iconType === void 0 ? 'filled' : _props$iconType,
         _props$iconSize = props.iconSize,
         iconSize = _props$iconSize === void 0 ? 14 : _props$iconSize,
         labelAppearance = props.labelAppearance,
@@ -3404,10 +3413,9 @@
         style = props.style;
     var legendClass = classNames(_defineProperty({}, 'Legend', true));
     var styles = {
-      color: "var(--".concat(iconAppearance, ")"),
-      fontSize: "".concat(iconSize, "px"),
-      width: "".concat(iconSize, "px"),
-      marginRight: 'var(--spacing)'
+      background: "var(--".concat(iconAppearance, ")"),
+      height: "".concat(iconSize, "px"),
+      width: "".concat(iconSize, "px")
     };
     return /*#__PURE__*/React.createElement("div", {
       className: legendClass,
@@ -3421,10 +3429,10 @@
         return _onMouseLeave && _onMouseLeave(e);
       },
       style: style
-    }, /*#__PURE__*/React.createElement("i", {
-      className: 'material-icons',
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "Legend-icon",
       style: styles
-    }, "".concat(icon, "_").concat(iconType)), /*#__PURE__*/React.createElement(Text, {
+    }), /*#__PURE__*/React.createElement(Text, {
       appearance: labelAppearance,
       weight: labelWeight
     }, label));
@@ -5172,6 +5180,8 @@
         endDateProp = props.endDate,
         yearNavProp = props.yearNav,
         monthNavProp = props.monthNav,
+        _props$open = props.open,
+        openProp = _props$open === void 0 ? false : _props$open,
         _props$inputFormat = props.inputFormat,
         inputFormat = _props$inputFormat === void 0 ? 'mm/dd/yyyy' : _props$inputFormat,
         _props$outputFormat = props.outputFormat,
@@ -5202,42 +5212,47 @@
         disabledAfter = props.disabledAfter,
         onRangeChange = props.onRangeChange,
         rangeLimit = props.rangeLimit,
-        rest = _objectWithoutProperties(props, ["startDate", "endDate", "yearNav", "monthNav", "inputFormat", "outputFormat", "rangeSeparator", "startInputProps", "endInputProps", "mask", "validator", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"]);
+        rest = _objectWithoutProperties(props, ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "rangeSeparator", "startInputProps", "endInputProps", "mask", "validator", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"]);
 
-    var _React$useState = React.useState(),
+    var _React$useState = React.useState(false),
         _React$useState2 = _slicedToArray(_React$useState, 2),
-        startDate = _React$useState2[0],
-        setStartDate = _React$useState2[1];
+        init = _React$useState2[0],
+        setInit = _React$useState2[1];
 
     var _React$useState3 = React.useState(),
         _React$useState4 = _slicedToArray(_React$useState3, 2),
-        endDate = _React$useState4[0],
-        setEndDate = _React$useState4[1];
+        startDate = _React$useState4[0],
+        setStartDate = _React$useState4[1];
 
-    var _React$useState5 = React.useState(yearNavProp),
+    var _React$useState5 = React.useState(),
         _React$useState6 = _slicedToArray(_React$useState5, 2),
-        yearNav = _React$useState6[0],
-        setYearNav = _React$useState6[1];
+        endDate = _React$useState6[0],
+        setEndDate = _React$useState6[1];
 
-    var _React$useState7 = React.useState(monthNavProp),
+    var _React$useState7 = React.useState(yearNavProp),
         _React$useState8 = _slicedToArray(_React$useState7, 2),
-        monthNav = _React$useState8[0],
-        setMonthNav = _React$useState8[1];
+        yearNav = _React$useState8[0],
+        setYearNav = _React$useState8[1];
 
-    var _React$useState9 = React.useState(false),
+    var _React$useState9 = React.useState(monthNavProp),
         _React$useState10 = _slicedToArray(_React$useState9, 2),
-        open = _React$useState10[0],
-        setOpen = _React$useState10[1];
+        monthNav = _React$useState10[0],
+        setMonthNav = _React$useState10[1];
 
-    var _React$useState11 = React.useState(false),
+    var _React$useState11 = React.useState(openProp),
         _React$useState12 = _slicedToArray(_React$useState11, 2),
-        startError = _React$useState12[0],
-        setStartError = _React$useState12[1];
+        open = _React$useState12[0],
+        setOpen = _React$useState12[1];
 
     var _React$useState13 = React.useState(false),
         _React$useState14 = _slicedToArray(_React$useState13, 2),
-        endError = _React$useState14[0],
-        setEndError = _React$useState14[1];
+        startError = _React$useState14[0],
+        setStartError = _React$useState14[1];
+
+    var _React$useState15 = React.useState(false),
+        _React$useState16 = _slicedToArray(_React$useState15, 2),
+        endError = _React$useState16[0],
+        setEndError = _React$useState16[1];
 
     React.useEffect(function () {
       var d = startDateProp ? convertToDate(startDateProp, inputFormat, validator) : undefined;
@@ -5254,31 +5269,20 @@
       setMonthNav(monthNavProp);
     }, [monthNavProp]);
     React.useEffect(function () {
+      setOpen(openProp);
+    }, [openProp]);
+    React.useEffect(function () {
       var sError = !startDate;
       var eError = !endDate;
 
-      var _getDateInfo = getDateInfo(startDate),
-          sYear = _getDateInfo.year,
-          sMonth = _getDateInfo.month;
-
-      var _getDateInfo2 = getDateInfo(endDate),
-          eYear = _getDateInfo2.year,
-          eMonth = _getDateInfo2.month,
-          eDate = _getDateInfo2.date;
+      var _getDateInfo = getDateInfo(endDate),
+          eYear = _getDateInfo.year,
+          eMonth = _getDateInfo.month,
+          eDate = _getDateInfo.date;
 
       if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
         sError = true;
         eError = true;
-      }
-
-      if (startDate) {
-        setYearNav(sYear);
-        setMonthNav(sMonth);
-      }
-
-      if (endDate) {
-        setYearNav(eYear);
-        setMonthNav(eMonth);
       }
 
       setStartError(sError);
@@ -5288,7 +5292,7 @@
         if (startDate && endDate) {
           var inRangeError = getInRangeError();
 
-          if (!inRangeError && !sError && !eError) {
+          if (init && !inRangeError && !sError && !eError) {
             var sValue = translateToString(outputFormat, startDate);
             var eValue = translateToString(outputFormat, endDate);
             onRangeChange(startDate, endDate, sValue, eValue);
@@ -5299,15 +5303,15 @@
 
     var getInRangeError = function getInRangeError() {
       if (rangeLimit) {
-        var _getDateInfo3 = getDateInfo(startDate),
-            sYear = _getDateInfo3.year,
-            sMonth = _getDateInfo3.month,
-            sDate = _getDateInfo3.date;
+        var _getDateInfo2 = getDateInfo(startDate),
+            sYear = _getDateInfo2.year,
+            sMonth = _getDateInfo2.month,
+            sDate = _getDateInfo2.date;
 
-        var _getDateInfo4 = getDateInfo(endDate),
-            eYear = _getDateInfo4.year,
-            eMonth = _getDateInfo4.month,
-            eDate = _getDateInfo4.date;
+        var _getDateInfo3 = getDateInfo(endDate),
+            eYear = _getDateInfo3.year,
+            eMonth = _getDateInfo3.month,
+            eDate = _getDateInfo3.date;
 
         var limitDate;
 
@@ -5328,6 +5332,7 @@
     };
 
     var onRangeChangeHandler = function onRangeChangeHandler(sDate, eDate) {
+      if (sDate && eDate) setInit(true);
       if (sDate) setStartDate(sDate);
       if (eDate) setEndDate(eDate);
     };
@@ -5335,18 +5340,18 @@
     if (withInput) {
       var updateNav = function updateNav(type) {
         if (type === 'start') {
-          var _getDateInfo5 = getDateInfo(startDate),
-              year = _getDateInfo5.year,
-              month = _getDateInfo5.month;
+          var _getDateInfo4 = getDateInfo(startDate),
+              year = _getDateInfo4.year,
+              month = _getDateInfo4.month;
 
           setYearNav(year);
           setMonthNav(month);
         }
 
         if (type === 'end') {
-          var _getDateInfo6 = getDateInfo(endDate),
-              _year = _getDateInfo6.year,
-              _month = _getDateInfo6.month;
+          var _getDateInfo5 = getDateInfo(endDate),
+              _year = _getDateInfo5.year,
+              _month = _getDateInfo5.month;
 
           setYearNav(_year);
           setMonthNav(_month);
@@ -5354,6 +5359,7 @@
       };
 
       var onChangeHandler = function onChangeHandler(_e, val, type) {
+        setInit(true);
         setOpen(true);
 
         if (type === 'start') {
@@ -5366,10 +5372,10 @@
               setStartDate(d);
 
               if (endDate) {
-                var _getDateInfo7 = getDateInfo(endDate),
-                    eYear = _getDateInfo7.year,
-                    eMonth = _getDateInfo7.month,
-                    eDate = _getDateInfo7.date;
+                var _getDateInfo6 = getDateInfo(endDate),
+                    eYear = _getDateInfo6.year,
+                    eMonth = _getDateInfo6.month,
+                    eDate = _getDateInfo6.date;
 
                 if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
                   setEndDate(undefined);

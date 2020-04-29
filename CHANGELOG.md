@@ -62,3 +62,19 @@
 * 9eb0920 feat: adds tests for table component
 * bdb16fc chore: updates broken tests
 * 475b381 chore: test fixes and renames JSX to React in docPage
+
+-------------------
+ **v1.0.0-4**  (2020-04-29) 
+
+* 99b9963 v1.0.0-4
+* 4042981 chore: updates developer guidelines
+* 7539f8e fix: updates storybook title
+* 373d0d0 fix: updates focus state for button
+* 2301f67 fix: replaces icon with span in legend
+* 1a148e5 fix: fixes callback call on initial render of DatePicker and RangePicker
+* 6fbcee6 fix: adds open prop in DatePicker and RangePicker and general calendar fixes
+* c9a952b docs: updates docs for using styles and font
+* f8a9ffc fix: Breadcrumb css fix after removing reset.css
+* fd0c66b fix: moves current stories to corrensponding variants folder
+* d8a20e7 fix: removes JSX and HTML knobs from storybook canvas
+* 39a8dc3 fix: fixes after removing reset.css
