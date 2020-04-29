@@ -32,7 +32,7 @@ export interface DonutChartProps {
   /**
    * Show active Segment on hovering chart
    *
-   * **Radius will be 72.5% of the original radius**
+   * **Radius will be 70% of the original radius**
    */
   withActiveSegment?: boolean;
   /**
@@ -62,7 +62,7 @@ export interface DonutChartProps {
 export const DonutChart = (props: DonutChartProps) => {
   const {
     donutWidth = 20,
-    colors = ['primary', 'secondary', 'inverse', 'success', 'warning', 'alert'],
+    colors = ['primary', 'secondary', 'success', 'warning', 'alert'],
     withCenterText = true,
     colorOfTotalCount = 'success',
     data,
@@ -83,6 +83,19 @@ export const DonutChart = (props: DonutChartProps) => {
       sizeS: '12',
       sizeXS: '12'
     }
+  };
+
+  const ChartTooltip = (chartProps: any) => {
+    const payload = chartProps.payload[0];
+
+    if (payload) {
+      return (
+        <div className="DonutChart-tooltip">
+          {`${payload.name}${chartProps.separator}${(+payload.value).toLocaleString()}`}
+        </div>
+      );
+    }
+    return null;
   };
 
   const renderActiveShape = (activeShapeProps: any) => {
@@ -107,17 +120,17 @@ export const DonutChart = (props: DonutChartProps) => {
       <g>
         {withCenterText && (
           <>
-          <text x={cx} y={cy} font-size={'var(--font-size-xl)'} textAnchor="middle">Total</text>
-          <text
-            x={cx}
-            y={cy}
-            dy={22}
-            font-size={'var(--font-size-l)'}
-            textAnchor="middle"
-            fill={colorToHex(colorOfTotalCount)}
-          >
-            {total}
-          </text>
+            <text x={cx} y={cy} font-size={'var(--font-size-xl)'} textAnchor="middle">Total</text>
+            <text
+              x={cx}
+              y={cy}
+              dy={22}
+              font-size={'var(--font-size-l)'}
+              textAnchor="middle"
+              fill={colorToHex(colorOfTotalCount)}
+            >
+              {total.toLocaleString()}
+            </text>
           </>
         )}
 
@@ -144,7 +157,7 @@ export const DonutChart = (props: DonutChartProps) => {
             <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
             <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
             <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={-18} textAnchor={textAnchor} fill={fill}>{`${payload.name}`}</text>
-            <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`${value}`}</text>
+            <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`${value.toLocaleString()}`}</text>
             <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#999">
               {`${(percent * 100).toFixed(0)}%`}
             </text>
@@ -167,8 +180,15 @@ export const DonutChart = (props: DonutChartProps) => {
     return (type === 'hex') ? colorHex : color;
   };
 
-  const oRadius = withActiveSegment ? (radius ? .725 * radius : '72.5%') : radius || '100%';
-  const iRadius = withActiveSegment ? (radius ? (100 - donutWidth) / 100 * (oRadius as number) : `${(100 - donutWidth) / 100 * 72.5}%`) : (radius ? (100 - donutWidth) / 100 * radius : `${(100 - donutWidth)}%`);
+  const oRadius = withActiveSegment ? (radius ? .7 * radius : '70%') : radius || '100%';
+  const iRadius = withActiveSegment ? (radius ? (100 - donutWidth) / 100 * (oRadius as number) : `${(100 - donutWidth) / 100 * 70}%`) : (radius ? (100 - donutWidth) / 100 * radius : `${(100 - donutWidth)}%`);
+  // const tooltipPayload = data.reduce((out: Data[], curr) => {
+  //   out.push({
+  //     name: curr.name,
+  //     value: (+curr.value).toLocaleString()
+  //   });
+  //   return out;
+  // }, []);
 
   return (
     <Row utilityClass="DonutChart">
@@ -188,13 +208,15 @@ export const DonutChart = (props: DonutChartProps) => {
                 data.map((_entry, index) => <Cell fill={getColor(index, 'hex')} key={index} />)
               }
             </Pie>
-            {withTooltip && <Tooltip />}
+            {withTooltip && <Tooltip separator=": " content={<ChartTooltip />} />}
           </PieChart>
         </ResponsiveContainer>
       </Column>
       {withLegends && (
         <Column utilityClass="DonutChart-legends" {...columnOptions.legends}>
-          {data.map((d, i) => <Legend key={i} label={`${d.name} - ${d.value}`} iconAppearance={getColor(i)} />)}
+          {data.map((d, i) => (
+            <Legend key={i} label={`${d.name} - ${(+d.value).toLocaleString()}`} iconAppearance={getColor(i)} />
+          ))}
         </Column>
       )}
     </Row>

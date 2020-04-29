@@ -10,3 +10,10 @@
     justify-content: center;
     padding: var(--spacing-l) 0;
 }
+
+.DonutChart-tooltip {
+    color: var(--white);
+    padding: var(--spacing) var(--spacing-2);
+    border-radius: var(--spacing-m);
+    background: var(--inverse);
+}

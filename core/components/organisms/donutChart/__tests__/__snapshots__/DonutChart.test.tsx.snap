@@ -385,14 +385,14 @@ exports[`DonutChart component
           endAngle={360}
           fill="#808080"
           hide={false}
-          innerRadius="58%"
+          innerRadius="56%"
           isAnimationActive={true}
           labelLine={true}
           legendType="rect"
           minAngle={0}
           nameKey="name"
           onMouseEnter={[Function]}
-          outerRadius="72.5%"
+          outerRadius="70%"
           paddingAngle={0}
           startAngle={0}
           stroke="#fff"
@@ -854,12 +854,12 @@ exports[`DonutChart component
       label="Group B - 300"
     />
     <Legend
-      iconAppearance="inverse"
+      iconAppearance="success"
       key="2"
       label="Group C - 300"
     />
     <Legend
-      iconAppearance="success"
+      iconAppearance="warning"
       key="3"
       label="Group D - 200"
     />
@@ -1081,6 +1081,7 @@ exports[`DonutChart component
           }
           animationDuration={400}
           animationEasing="ease"
+          content={<ChartTooltip />}
           contentStyle={Object {}}
           coordinate={
             Object {
@@ -1095,7 +1096,7 @@ exports[`DonutChart component
           itemStyle={Object {}}
           labelStyle={Object {}}
           offset={10}
-          separator=" : "
+          separator=": "
           useTranslate3d={false}
           viewBox={
             Object {
