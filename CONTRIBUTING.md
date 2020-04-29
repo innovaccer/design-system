@@ -1,20 +1,7 @@
-# Contributing to Innovaccer Design System
+# Contribution Guidelines
 
 We are happy that you wish to contribute to this project. For that reason, we
 present you with this guide.
-
-## Contents
-
-- [Contents](#contents)
-- [How Do I Contribute?](#how-do-i-contribute)
-- [Development](#development)
-- [Reporting Bugs](#reporting-bugs)
-    - [Issue Search](#issue-search)
-    - [Check If It's Been Fixed](#check-if-its-been-fixed)
-- [Request Features](#request-features)
-    - [Submitting a Pull Request](#submitting-a-pull-request)
-    - [Make Changes and Commit](#make-changes-and-commit)
-- [Update Tests](#update-tests)
 
 ## How Do I Contribute?
 
@@ -23,25 +10,10 @@ of involvement and technical knowledge required, such as:
 
 * [Reporting Bugs](#reporting-bugs)
 * [Request Features](#request-features)
+* [Development](#development)
 
 **Please read this document carefully. It will help maintainers and readers
 in solving your issue(s), evaluating your feature request, etc.**
-
-## Development
-
-```bash
-#clone repository
-git clone https://github.com/innovaccer/design-system.git
-
-#install dependencies
-npm install
-
-#start development server
-npm run dev
-```
-
-The server runs on a random port and url is opened automaticaly in browser as the project uses storybook for component developement and documentation.
-
 
 
 ## Reporting Bugs
@@ -56,11 +28,10 @@ If you've found a bug, please file a report in our [issue tracker](https://githu
 
 ### Issue Search
 
-Search to see if it has already been reported via
-the issue search.
+Search to see if it has already been reported via the *issue search*.
 If so, up-vote it (using GitHub reactions) or add additional helpful details to
 the existing issue to show that it's affecting multiple people.
- 
+
 ### Check If It's Been Fixed
 
 Check if the issue has been fixed — try to reproduce it using the latest
@@ -70,11 +41,210 @@ Check if the issue has been fixed — try to reproduce it using the latest
 
 New feature requests are welcomed. Analyze whether the idea fits within the scope of the project. Then, detail your request, ensuring context and use case is provided.
 
-**Please provide:**
+Please provide:
 
 * A detailed description of the advantages of your request
 * A potential implementation or design
 * Whatever else you have in your mind 🤓
+
+## Development
+
+### Setting up the environment
+1. Fork the repository on Github.
+
+2. Run the environment locally:
+	```bash
+   #clone repository
+   git clone https://github.com/[GITHUB_USERNAME]/design-system.git
+   
+   #change directory to the cloned repository
+   cd design-system
+
+   #create new branch
+   git checkout -b [BRANCH_NAME]
+
+   #install dependencies
+   npm install
+
+   #start development server
+   npm run dev
+   ```
+
+The server runs on port 5000 and url is opened automaticaly in browser as the project uses storybook for component developement and documentation.
+
+### Colding guidelines for a component
+
+#### Folder structure
+
+```bash
+#change directory according to component type
+#ELEMENT_TYPE = atoms | molecules | organisms
+cd core/[ELEMENT_TYPE]
+
+#make component directory
+mkdir [COMPONENT_NAME(in camel case)]
+
+#change directory to component
+cd [COMPONENT_NAME]
+
+#make directories for stories and tests
+mkdir __tests__
+mkdir __stories__
+mkdir __stories__/variants
+```
+
+#### Typescript Types
+
+- Component *types* names must be uppercase, e.g. Appearance, Size, etc.
+- Component Props interface should be named as '[COMPONENT_NAME]Props', e.g. AvatarProps, HeadingProps.
+
+#### Exports
+
+- Export Component as named export, e.g. export Avatar from './core/index.tsx'.
+- Export Component Props from `./core/index.type.tsx`
+
+#### DocPage
+
+- [jsdoc](https://jsdoc.app/) is used for prop description
+- Custom props can be passed to docPage from corresponding story as follows:
+
+```tsx
+// Storybook CSF Format
+export default {
+  title: 'Atoms|Avatar',
+  component: Backdrop,
+  parameters: {
+    docs: {
+      docPage: {
+        noStory: true, // If you don't want to include Story in docPage
+        title: 'Avatar', // Custom title
+        description: 'Dummy description', // Custom description
+        customCode: '() => <Avatar>JD</Avatar>' // Custom code for live code editor
+      }
+    }
+  }
+};
+```
+
+
+
+### Example Component
+
+Let's assume we want to add *Avatar* component in *Atoms* category.
+
+##### Create folder structure
+
+ ```bash
+cd core/atoms
+mkdir avatar
+cd avatar
+mkdir __tests__
+mkdir __stories__
+mkdir __stories__/variants
+ ```
+
+##### ./core/components/atoms/avatar/Avatar.tsx
+
+```tsx
+import * as React from 'react';
+import classNames from 'classnames';
+
+export type Appearance = 'primary' | 'alert' | 'warning' | 'success' | 'accent1' | 'accent2' | 'accent3' | 'accent4';
+
+export interface AvatarProps {
+  /**
+   * Color of the `Avatar`
+   * @default "primary"
+   */
+  appearance?: Appearance;
+  /**
+   * **Only first 2 characters are rendered**
+   */
+  children: string;
+}
+
+const initialsLength = 2;
+
+export const Avatar = (props: AvatarProps) => {
+  const {
+    appearance = 'primary',
+    children
+  } = props;
+
+  const initials = children.trim().slice(0, initialsLength);
+  const classes = classNames({
+    Avatar: true,
+    [`Avatar--${appearance}`]: appearance,
+  });
+
+  return (
+    <span className={classes}>{initials}</span>
+  );
+};
+
+Avatar.displayName = 'Avatar';
+
+export default Avatar;
+```
+
+  ##### ./core/components/atoms/avatar/index.tsx
+
+```tsx
+export { default } from './Avatar';
+export * from './Avatar';
+```
+##### ./core/components/atoms/avatar/\_\_stories\_\_/index.story.tsx
+
+```tsx
+import * as React from 'react';
+import { select, text } from '@storybook/addon-knobs';
+import Avatar from '../Avatar';
+
+export const all = () => {
+  const appearance = select(
+    'appearance',
+    ['primary', 'alert', 'warning', 'success', 'accent1', 'accent2', 'accent3', 'accent4'],
+    undefined
+  );
+
+  const children = text('children', 'JD');
+
+  return (
+    <Avatar
+      appearance={appearance}
+    >
+      {children}
+    </Avatar>
+  );
+};
+
+export default {
+  title: 'Atoms|Avatar',
+  component: Avatar
+};
+```
+
+##### ./core/components/atoms/avatar/\_\_tests\_\_/Avatar.test.tsx
+
+```tsx
+import * as React from 'react';
+import { shallow } from 'enzyme';
+import Avatar from '../Avatar';
+
+describe('Avatar component', () => {
+  it('with primary appearance', () => {
+      const tree = shallow(
+        <Avatar
+					appearance={'primary'}
+        >
+          JD
+        </Avatar>
+      );
+      expect(tree).toMatchSnapshot();
+    });
+});
+
+```
 
 ### Submitting a Pull Request
 
@@ -88,31 +258,30 @@ Subsequent pull requests only need to follow step 3 and beyond.
 5. Issue a Pull Request to the official repository
 6. Your Pull Request is reviewed by a committer and merged into the repository
 
-**NOTE**: While there are other ways to accomplish the steps using other tools,
-the examples here will assume most actions will be performed via `git` on
-command line.
+**NOTE**: While there are other ways to accomplish the steps using other tools, the examples here will assume most actions will be performed via `git` on command line.
 
-For more information on maintaining a fork, please see the GitHub Help article
-titled [Fork a Repo](https://help.github.com/articles/fork-a-repo/), and
+For more information on maintaining a fork, please see the GitHub Help article titled [Fork a Repo](https://help.github.com/articles/fork-a-repo/), and
 information on [rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing).
 
 ### Make Changes and Commit
 
 #### Before Commit
 
-Before committing, **you must ensure there are no linting errors and
-all tests pass.**
+Before committing, **you must ensure there are no linting errors and all tests pass.**
 
 To ensure the above conditions, run:
 
 For lint:
+
 ```bash
 npm run lint
 ```
+
 For tests:
-```bash
-npm test
-```
+
+  ```bash
+npm run test
+  ```
 
 Then, and only then, you can create your pull request.
 

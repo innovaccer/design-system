@@ -91,7 +91,7 @@ Components can be imported as mentioned below:
 
 ```
 
-## Development Setup:
+## How to run locally?
 
 ```bash
 #clone repository
