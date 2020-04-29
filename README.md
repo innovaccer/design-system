@@ -95,7 +95,7 @@ Components can be imported as mentioned below:
 
 ```bash
 #clone repository
-git clone https://github.com/innovaccer/design-system.git
+git clone https://github.com/aregee/design-system.git
 
 #install dependencies
 npm install
@@ -114,13 +114,13 @@ npm run dev
 
 ## ❗ Code of Conduct
 
- We expect everyone participating in the community to abide by our [**Code of Conduct**](https://github.com/innovaccer/design-system/blob/master/CODE_OF_CONDUCT.md). Please read it. Please follow it. We work hard to build each other up and create amazing things together. 💪💜
+ We expect everyone participating in the community to abide by our [**Code of Conduct**](https://github.com/aregee/design-system/blob/master/CODE_OF_CONDUCT.md). Please read it. Please follow it. We work hard to build each other up and create amazing things together. 💪💜
 
 ## 🤝 How to Contribute
 
 Whether you're helping us fix bugs, improve the docs, or spread the word, we'd love to have you as part of the community! :muscle::purple_heart:
 
-Check out our [**Contributing Guide**](https://github.com/innovaccer/design-system/blob/master/CONTRIBUTING.md) for ideas on contributing and setup steps for getting our repositories up and running on your local machine.
+Check out our [**Contributing Guide**](https://github.com/aregee/design-system/blob/master/CONTRIBUTING.md) for ideas on contributing and setup steps for getting our repositories up and running on your local machine.
 
 ### A note on how this repository is organized
 
@@ -132,7 +132,7 @@ We are currently only accepting bug fixes.
 
 ## :memo: License
 
-Licensed under the [MIT License](https://github.com/innovaccer/design-system/blob/master/LICENSE).
+Licensed under the [MIT License](https://github.com/aregee/design-system/blob/master/LICENSE).
 
 ## 💜 Thanks
 
