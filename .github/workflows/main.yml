@@ -60,7 +60,11 @@ jobs:
         run: npm publish --access public
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-          
+
+      - name: remove .npmrc
+        if: steps.is_release_commit.outputs.result == 1
+        run: rm -rf .npmrc
+    
       - name: deploy storybook
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
