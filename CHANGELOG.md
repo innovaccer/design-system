@@ -78,3 +78,14 @@
 * fd0c66b fix: moves current stories to corrensponding variants folder
 * d8a20e7 fix: removes JSX and HTML knobs from storybook canvas
 * 39a8dc3 fix: fixes after removing reset.css
+
+-------------------
+ **v1.0.0-5**  (2020-04-30) 
+
+* 896952e v1.0.0-5
+* cfa30b2 chore: updates npm publish action
+* 56017b7 chore: adds npm publish action and adds scope to @innovaccer
+* 65aabcb fix: icon strange width fix
+* 47b32f5 fix: adds responsivness in RangePicker and removes rangeSeparator prop
+* 3433782 fix: adds custom tooltip in DonutChart
+* 0222fbd chore: updates urls from innovaccer to aregee

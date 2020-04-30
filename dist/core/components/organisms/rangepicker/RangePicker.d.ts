@@ -14,7 +14,6 @@ export declare type RangePickerProps = {
     position?: Position;
     inputFormat?: DateFormat;
     outputFormat?: DateFormat;
-    rangeSeparator?: string;
     startInputProps?: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear'>;
     endInputProps?: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear'>;
     mask?: Mask;

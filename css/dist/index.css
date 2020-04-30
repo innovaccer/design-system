@@ -958,6 +958,11 @@ body {
 }
 /* calendar */
 
+.Calendar-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .Calendar {
     display: flex;
     flex-direction: column;
@@ -1242,6 +1247,13 @@ body {
     justify-content: center;
     padding: var(--spacing-l) 0;
 }
+
+.DonutChart-tooltip {
+    color: var(--white);
+    padding: var(--spacing) var(--spacing-2);
+    border-radius: var(--spacing-m);
+    background: var(--inverse);
+}
 .Dropdown {
     position: relative;
     min-width: var(--spacing-7);
@@ -1471,6 +1483,9 @@ body {
 
 /* .material-icons.md-light { color: rgba(255, 255, 255, 1); }
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); } */
+.Icon {
+  overflow: hidden;
+}
 
 .Icon--subtle {
   color: var(--text-subtle);
@@ -2156,13 +2171,25 @@ body {
 }
 
 .RangePicker-input {
-    display: flex;
+    box-sizing: border-box;
 }
 
-.RangePicker-rangeSeparator {
-    margin-top: var(--spacing-xl);
-    margin-left: var(--spacing-l);
-    margin-right: var(--spacing-l);
+.RangePicker-input--startDate {
+    padding-right: var(--spacing-m);
+}
+
+.RangePicker-input--endDate {
+    padding-left: var(--spacing-m);
+}
+
+@media (max-width: 576px) {
+    .RangePicker-input {
+        padding: 0;
+    }
+
+    .RangePicker-input--endDate {
+        padding-top: var(--spacing);
+    }
 }
 @-webkit-keyframes rotate {
   0% {

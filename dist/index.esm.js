@@ -206,11 +206,13 @@ function _possibleConstructorReturn(self, call) {
 }
 
 function _createSuper(Derived) {
+  var hasNativeReflectConstruct = _isNativeReflectConstruct();
+
   return function () {
     var Super = _getPrototypeOf(Derived),
         result;
 
-    if (_isNativeReflectConstruct()) {
+    if (hasNativeReflectConstruct) {
       var NewTarget = _getPrototypeOf(this).constructor;
 
       result = Reflect.construct(Super, arguments, NewTarget);
@@ -274,7 +276,7 @@ function _unsupportedIterableToArray(o, minLen) {
   if (typeof o === "string") return _arrayLikeToArray(o, minLen);
   var n = Object.prototype.toString.call(o).slice(8, -1);
   if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(n);
+  if (n === "Map" || n === "Set") return Array.from(o);
   if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
 }
 
@@ -395,7 +397,7 @@ var GenericText = function GenericText(_ref) {
       className = _ref.className,
       props = _objectWithoutProperties(_ref, ["children", "componentType", "className"]);
 
-  return createElement(componentType, _objectSpread2({}, props, {
+  return createElement(componentType, _objectSpread2(_objectSpread2({}, props), {}, {
     className: className
   }), children);
 };
@@ -1451,7 +1453,7 @@ var Calendar = function Calendar(props) {
   };
 
   return /*#__PURE__*/createElement("div", {
-    className: "d-flex"
+    className: "Calendar-wrapper"
   }, Array.from({
     length: monthsInView
   }, function (_x, index) {
@@ -1557,7 +1559,7 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
       var _this$props$style = _this.props.style,
           style = _this$props$style === void 0 ? {} : _this$props$style;
 
-      var newStyle = _objectSpread2({}, style, {}, oldStyle);
+      var newStyle = _objectSpread2(_objectSpread2({}, style), oldStyle);
 
       var position = placement ? placement.split('-')[0] : placement;
 
@@ -2329,7 +2331,7 @@ var DonutChart = function DonutChart(props) {
   var _props$donutWidth = props.donutWidth,
       donutWidth = _props$donutWidth === void 0 ? 20 : _props$donutWidth,
       _props$colors = props.colors,
-      colors = _props$colors === void 0 ? ['primary', 'secondary', 'inverse', 'success', 'warning', 'alert'] : _props$colors,
+      colors = _props$colors === void 0 ? ['primary', 'secondary', 'success', 'warning', 'alert'] : _props$colors,
       _props$withCenterText = props.withCenterText,
       withCenterText = _props$withCenterText === void 0 ? true : _props$withCenterText,
       _props$colorOfTotalCo = props.colorOfTotalCount,
@@ -2350,6 +2352,18 @@ var DonutChart = function DonutChart(props) {
       sizeS: '12',
       sizeXS: '12'
     }
+  };
+
+  var ChartTooltip = function ChartTooltip(chartProps) {
+    var payload = chartProps.payload[0];
+
+    if (payload) {
+      return /*#__PURE__*/createElement("div", {
+        className: "DonutChart-tooltip"
+      }, "".concat(payload.name).concat(chartProps.separator).concat((+payload.value).toLocaleString()));
+    }
+
+    return null;
   };
 
   var renderActiveShape = function renderActiveShape(activeShapeProps) {
@@ -2387,7 +2401,7 @@ var DonutChart = function DonutChart(props) {
       "font-size": 'var(--font-size-l)',
       textAnchor: "middle",
       fill: colorToHex(colorOfTotalCount)
-    }, total)), /*#__PURE__*/createElement(Sector, {
+    }, total.toLocaleString())), /*#__PURE__*/createElement(Sector, {
       cx: cx,
       cy: cy,
       innerRadius: innerRadius,
@@ -2424,7 +2438,7 @@ var DonutChart = function DonutChart(props) {
       y: ey,
       textAnchor: textAnchor,
       fill: "#333"
-    }, "".concat(value)), /*#__PURE__*/createElement("text", {
+    }, "".concat(value.toLocaleString())), /*#__PURE__*/createElement("text", {
       x: ex + (cos >= 0 ? 1 : -1) * 12,
       y: ey,
       dy: 18,
@@ -2448,8 +2462,15 @@ var DonutChart = function DonutChart(props) {
     return type === 'hex' ? colorHex : color;
   };
 
-  var oRadius = withActiveSegment ? radius ? .725 * radius : '72.5%' : radius || '100%';
-  var iRadius = withActiveSegment ? radius ? (100 - donutWidth) / 100 * oRadius : "".concat((100 - donutWidth) / 100 * 72.5, "%") : radius ? (100 - donutWidth) / 100 * radius : "".concat(100 - donutWidth, "%");
+  var oRadius = withActiveSegment ? radius ? .7 * radius : '70%' : radius || '100%';
+  var iRadius = withActiveSegment ? radius ? (100 - donutWidth) / 100 * oRadius : "".concat((100 - donutWidth) / 100 * 70, "%") : radius ? (100 - donutWidth) / 100 * radius : "".concat(100 - donutWidth, "%"); // const tooltipPayload = data.reduce((out: Data[], curr) => {
+  //   out.push({
+  //     name: curr.name,
+  //     value: (+curr.value).toLocaleString()
+  //   });
+  //   return out;
+  // }, []);
+
   return /*#__PURE__*/createElement(Row, {
     utilityClass: "DonutChart"
   }, /*#__PURE__*/createElement(Column, columnOptions.chart, /*#__PURE__*/createElement(ResponsiveContainer, null, /*#__PURE__*/createElement(PieChart, null, /*#__PURE__*/createElement(Pie, {
@@ -2465,12 +2486,15 @@ var DonutChart = function DonutChart(props) {
       fill: getColor(index, 'hex'),
       key: index
     });
-  })), withTooltip && /*#__PURE__*/createElement(Tooltip$1, null)))), withLegends && /*#__PURE__*/createElement(Column, _extends({
+  })), withTooltip && /*#__PURE__*/createElement(Tooltip$1, {
+    separator: ": ",
+    content: /*#__PURE__*/createElement(ChartTooltip, null)
+  })))), withLegends && /*#__PURE__*/createElement(Column, _extends({
     utilityClass: "DonutChart-legends"
   }, columnOptions.legends), data.map(function (d, i) {
     return /*#__PURE__*/createElement(Legend, {
       key: i,
-      label: "".concat(d.name, " - ").concat(d.value),
+      label: "".concat(d.name, " - ").concat((+d.value).toLocaleString()),
       iconAppearance: getColor(i)
     });
   })));
@@ -2604,7 +2628,7 @@ var ListCheckbox = forwardRef(function (props, ref) {
   }, [JSON.stringify(selected)]);
   useEffect$2(function () {
     if (props.checked !== undefined) {
-      setParentStatus(_objectSpread2({}, parentStatus, {
+      setParentStatus(_objectSpread2(_objectSpread2({}, parentStatus), {}, {
         checked: props.checked
       }));
     }
@@ -4695,7 +4719,7 @@ var Grid = /*#__PURE__*/function (_React$PureComponent) {
 
 
       if (!this.state.isScrolling) {
-        this.cache = _objectSpread2({}, this.cache, {
+        this.cache = _objectSpread2(_objectSpread2({}, this.cache), {}, {
           row: {}
         });
       }
@@ -5184,8 +5208,6 @@ var RangePicker = function RangePicker(props) {
       inputFormat = _props$inputFormat === void 0 ? 'mm/dd/yyyy' : _props$inputFormat,
       _props$outputFormat = props.outputFormat,
       outputFormat = _props$outputFormat === void 0 ? 'mm/dd/yyyy' : _props$outputFormat,
-      _props$rangeSeparator = props.rangeSeparator,
-      rangeSeparator = _props$rangeSeparator === void 0 ? ' - ' : _props$rangeSeparator,
       _props$startInputProp = props.startInputProps,
       startInputProps = _props$startInputProp === void 0 ? {
     name: 'rangePicker-start',
@@ -5210,7 +5232,7 @@ var RangePicker = function RangePicker(props) {
       disabledAfter = props.disabledAfter,
       onRangeChange = props.onRangeChange,
       rangeLimit = props.rangeLimit,
-      rest = _objectWithoutProperties(props, ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "rangeSeparator", "startInputProps", "endInputProps", "mask", "validator", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"]);
+      rest = _objectWithoutProperties(props, ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "startInputProps", "endInputProps", "mask", "validator", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"]);
 
   var _React$useState = useState$2(false),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -5425,8 +5447,11 @@ var RangePicker = function RangePicker(props) {
       }
     };
 
-    var trigger = /*#__PURE__*/createElement("div", {
-      className: "RangePicker-input"
+    var trigger = /*#__PURE__*/createElement(Row, {
+      group: '2',
+      groupXS: '1'
+    }, /*#__PURE__*/createElement(Column, {
+      utilityClass: "RangePicker-input RangePicker-input--startDate"
     }, /*#__PURE__*/createElement(InputMask, _extends({}, startInputProps, {
       mask: mask,
       value: startDate ? translateToString(inputFormat, startDate) : '',
@@ -5443,9 +5468,9 @@ var RangePicker = function RangePicker(props) {
         return onClickHandler('start');
       },
       error: startError
-    })), /*#__PURE__*/createElement("div", {
-      className: "RangePicker-rangeSeparator"
-    }, /*#__PURE__*/createElement(Text, null, rangeSeparator)), /*#__PURE__*/createElement(InputMask, _extends({}, endInputProps, {
+    }))), /*#__PURE__*/createElement(Column, {
+      utilityClass: "RangePicker-input RangePicker-input--endDate"
+    }, /*#__PURE__*/createElement(InputMask, _extends({}, endInputProps, {
       mask: mask,
       value: endDate ? translateToString(inputFormat, endDate) : '',
       onChange: function onChange(e, val) {
@@ -5461,7 +5486,7 @@ var RangePicker = function RangePicker(props) {
         return onClickHandler('end');
       },
       error: endError
-    })));
+    }))));
 
     var onToggleHandler = function onToggleHandler(o, type) {
       switch (type) {
