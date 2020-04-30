@@ -1,5 +1,5 @@
 {
-  "name": "design-system",
+  "name": "@innovaccer/design-system",
   "version": "1.0.0-4",
   "description": "React components library project for Innovaccer Design System",
   "main": "dist/index.umd.js",

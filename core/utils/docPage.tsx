@@ -61,7 +61,8 @@ const JSXtoStringOptions = {
 
 const copyCode = (val: string) => navigator.clipboard.writeText(val);
 
-const importsToStr = (imports: string[]): string => `import { ${imports.join(', ')} } from 'design-system';`;
+const importsToStr = (imports: string[]): string =>
+`import { ${imports.join(', ')} } from '@innovaccer/design-system';`;
 
 const CopyComp = props => {
   const { onClick } = props;

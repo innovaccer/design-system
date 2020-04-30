@@ -1,5 +1,2 @@
-//${NPM_DOMAIN}/:_authToken=${NPM_TOKEN}
-always-auth = true
-registry = ${NPM_URL}
-strict-ssl = false
-package-lock=false
+access=public
+//registry.npmjs.org/:_authToken=${NPM_TOKEN}

@@ -41,6 +41,7 @@ nb-configuration.xml
 # NPM Files
 # --------------------
 package-lock.json
+.npmrc
 
 # --------------------
 # Node Files

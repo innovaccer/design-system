@@ -24,17 +24,17 @@ There are two main steps to use a component in your project:
 Run the following command using [npm](https://www.npmjs.com/)  to add the component library to your project:
 
 ```bash
-npm install design-system
+npm install @innovaccer/design-system
 ```
 
 **Adding style:**
 
-As this component library is part of a framework-agnostic design system used at Innovaccer the styling is done with CSS using CSS variables for theming and BEM methodology for reusable and modular styling. So it requires you to include CSS in your project by either importing or serving it as a static file. The complete stylesheet is published as part of the component library at path `design-system/css`.
+As this component library is part of a framework-agnostic design system used at Innovaccer the styling is done with CSS using CSS variables for theming and BEM methodology for reusable and modular styling. So it requires you to include CSS in your project by either importing or serving it as a static file. The complete stylesheet is published as part of the component library at path `@innovaccer/design-system/css`.
 
 Import style at your app's root.
 
 ```js
-import 'design-system/css';
+import '@innovaccer/design-system/css';
 ```
 
 **Using design system font:**
@@ -87,7 +87,7 @@ Components can be imported as mentioned below:
   BreadcrumbsWrapper,
   Breadcrumb,
   ...
-} from 'design-system'
+} from '@innovaccer/design-system'
 
 ```
 

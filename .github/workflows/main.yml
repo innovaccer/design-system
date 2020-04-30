@@ -50,7 +50,13 @@ jobs:
       - name: push module tags to github
         if: steps.is_release_commit.outputs.result == 1
         run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:master --follow-tags
-        
+
+      - run: cp .npmrc.stub .npmrc
+      - name: Publish to npmjs
+        run: npm publish --access public
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+          
       - name: deploy storybook
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
