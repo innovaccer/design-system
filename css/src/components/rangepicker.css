@@ -3,11 +3,23 @@
 }
 
 .RangePicker-input {
-    display: flex;
+    box-sizing: border-box;
 }
 
-.RangePicker-rangeSeparator {
-    margin-top: var(--spacing-xl);
-    margin-left: var(--spacing-l);
-    margin-right: var(--spacing-l);
+.RangePicker-input--startDate {
+    padding-right: var(--spacing-m);
+}
+
+.RangePicker-input--endDate {
+    padding-left: var(--spacing-m);
+}
+
+@media (max-width: 576px) {
+    .RangePicker-input {
+        padding: 0;
+    }
+
+    .RangePicker-input--endDate {
+        padding-top: var(--spacing);
+    }
 }

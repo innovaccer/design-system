@@ -83,69 +83,71 @@ exports[`RangePicker component
   onToggle={[Function]}
   open={false}
   trigger={
-    <div
-      className="RangePicker-input"
+    <Row
+      group="2"
+      groupXS="1"
     >
-      <ForwardRef
-        error={false}
-        label="Start Date"
-        mask={
-          Array [
-            /\\\\d/,
-            /\\\\d/,
-            "/",
-            /\\\\d/,
-            /\\\\d/,
-            "/",
-            /\\\\d/,
-            /\\\\d/,
-            /\\\\d/,
-            /\\\\d/,
-          ]
-        }
-        name="rangePicker-start"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClear={[Function]}
-        onClick={[Function]}
-        placeholder="mm/dd/yyyy"
-        placeholderChar="_"
-        value=""
-      />
-      <div
-        className="RangePicker-rangeSeparator"
+      <Column
+        utilityClass="RangePicker-input RangePicker-input--startDate"
       >
-        <Text>
-           - 
-        </Text>
-      </div>
-      <ForwardRef
-        error={false}
-        label="End Date"
-        mask={
-          Array [
-            /\\\\d/,
-            /\\\\d/,
-            "/",
-            /\\\\d/,
-            /\\\\d/,
-            "/",
-            /\\\\d/,
-            /\\\\d/,
-            /\\\\d/,
-            /\\\\d/,
-          ]
-        }
-        name="rangePicker-end"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClear={[Function]}
-        onClick={[Function]}
-        placeholder="mm/dd/yyyy"
-        placeholderChar="_"
-        value=""
-      />
-    </div>
+        <ForwardRef
+          error={false}
+          label="Start Date"
+          mask={
+            Array [
+              /\\\\d/,
+              /\\\\d/,
+              "/",
+              /\\\\d/,
+              /\\\\d/,
+              "/",
+              /\\\\d/,
+              /\\\\d/,
+              /\\\\d/,
+              /\\\\d/,
+            ]
+          }
+          name="rangePicker-start"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClear={[Function]}
+          onClick={[Function]}
+          placeholder="mm/dd/yyyy"
+          placeholderChar="_"
+          value=""
+        />
+      </Column>
+      <Column
+        utilityClass="RangePicker-input RangePicker-input--endDate"
+      >
+        <ForwardRef
+          error={false}
+          label="End Date"
+          mask={
+            Array [
+              /\\\\d/,
+              /\\\\d/,
+              "/",
+              /\\\\d/,
+              /\\\\d/,
+              "/",
+              /\\\\d/,
+              /\\\\d/,
+              /\\\\d/,
+              /\\\\d/,
+            ]
+          }
+          name="rangePicker-end"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClear={[Function]}
+          onClick={[Function]}
+          placeholder="mm/dd/yyyy"
+          placeholderChar="_"
+          value=""
+        />
+      </Column>
+    </Row>
   }
 >
   <Calendar
@@ -163,69 +165,71 @@ exports[`RangePicker component
   onToggle={[Function]}
   open={true}
   trigger={
-    <div
-      className="RangePicker-input"
+    <Row
+      group="2"
+      groupXS="1"
     >
-      <ForwardRef
-        error={false}
-        label="Start Date"
-        mask={
-          Array [
-            /\\\\d/,
-            /\\\\d/,
-            "/",
-            /\\\\d/,
-            /\\\\d/,
-            "/",
-            /\\\\d/,
-            /\\\\d/,
-            /\\\\d/,
-            /\\\\d/,
-          ]
-        }
-        name="rangePicker-start"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClear={[Function]}
-        onClick={[Function]}
-        placeholder="mm/dd/yyyy"
-        placeholderChar="_"
-        value=""
-      />
-      <div
-        className="RangePicker-rangeSeparator"
+      <Column
+        utilityClass="RangePicker-input RangePicker-input--startDate"
       >
-        <Text>
-           - 
-        </Text>
-      </div>
-      <ForwardRef
-        error={false}
-        label="End Date"
-        mask={
-          Array [
-            /\\\\d/,
-            /\\\\d/,
-            "/",
-            /\\\\d/,
-            /\\\\d/,
-            "/",
-            /\\\\d/,
-            /\\\\d/,
-            /\\\\d/,
-            /\\\\d/,
-          ]
-        }
-        name="rangePicker-end"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClear={[Function]}
-        onClick={[Function]}
-        placeholder="mm/dd/yyyy"
-        placeholderChar="_"
-        value=""
-      />
-    </div>
+        <ForwardRef
+          error={false}
+          label="Start Date"
+          mask={
+            Array [
+              /\\\\d/,
+              /\\\\d/,
+              "/",
+              /\\\\d/,
+              /\\\\d/,
+              "/",
+              /\\\\d/,
+              /\\\\d/,
+              /\\\\d/,
+              /\\\\d/,
+            ]
+          }
+          name="rangePicker-start"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClear={[Function]}
+          onClick={[Function]}
+          placeholder="mm/dd/yyyy"
+          placeholderChar="_"
+          value=""
+        />
+      </Column>
+      <Column
+        utilityClass="RangePicker-input RangePicker-input--endDate"
+      >
+        <ForwardRef
+          error={false}
+          label="End Date"
+          mask={
+            Array [
+              /\\\\d/,
+              /\\\\d/,
+              "/",
+              /\\\\d/,
+              /\\\\d/,
+              "/",
+              /\\\\d/,
+              /\\\\d/,
+              /\\\\d/,
+              /\\\\d/,
+            ]
+          }
+          name="rangePicker-end"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClear={[Function]}
+          onClick={[Function]}
+          placeholder="mm/dd/yyyy"
+          placeholderChar="_"
+          value=""
+        />
+      </Column>
+    </Row>
   }
 >
   <Calendar
@@ -282,69 +286,71 @@ exports[`RangePicker component
   onToggle={[Function]}
   open={false}
   trigger={
-    <div
-      className="RangePicker-input"
+    <Row
+      group="2"
+      groupXS="1"
     >
-      <ForwardRef
-        error={false}
-        label="Start Date"
-        mask={
-          Array [
-            /\\\\d/,
-            /\\\\d/,
-            "/",
-            /\\\\d/,
-            /\\\\d/,
-            "/",
-            /\\\\d/,
-            /\\\\d/,
-            /\\\\d/,
-            /\\\\d/,
-          ]
-        }
-        name="rangePicker-start"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClear={[Function]}
-        onClick={[Function]}
-        placeholder="mm/dd/yyyy"
-        placeholderChar="_"
-        value=""
-      />
-      <div
-        className="RangePicker-rangeSeparator"
+      <Column
+        utilityClass="RangePicker-input RangePicker-input--startDate"
       >
-        <Text>
-           - 
-        </Text>
-      </div>
-      <ForwardRef
-        error={false}
-        label="End Date"
-        mask={
-          Array [
-            /\\\\d/,
-            /\\\\d/,
-            "/",
-            /\\\\d/,
-            /\\\\d/,
-            "/",
-            /\\\\d/,
-            /\\\\d/,
-            /\\\\d/,
-            /\\\\d/,
-          ]
-        }
-        name="rangePicker-end"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClear={[Function]}
-        onClick={[Function]}
-        placeholder="mm/dd/yyyy"
-        placeholderChar="_"
-        value=""
-      />
-    </div>
+        <ForwardRef
+          error={false}
+          label="Start Date"
+          mask={
+            Array [
+              /\\\\d/,
+              /\\\\d/,
+              "/",
+              /\\\\d/,
+              /\\\\d/,
+              "/",
+              /\\\\d/,
+              /\\\\d/,
+              /\\\\d/,
+              /\\\\d/,
+            ]
+          }
+          name="rangePicker-start"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClear={[Function]}
+          onClick={[Function]}
+          placeholder="mm/dd/yyyy"
+          placeholderChar="_"
+          value=""
+        />
+      </Column>
+      <Column
+        utilityClass="RangePicker-input RangePicker-input--endDate"
+      >
+        <ForwardRef
+          error={false}
+          label="End Date"
+          mask={
+            Array [
+              /\\\\d/,
+              /\\\\d/,
+              "/",
+              /\\\\d/,
+              /\\\\d/,
+              "/",
+              /\\\\d/,
+              /\\\\d/,
+              /\\\\d/,
+              /\\\\d/,
+            ]
+          }
+          name="rangePicker-end"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClear={[Function]}
+          onClick={[Function]}
+          placeholder="mm/dd/yyyy"
+          placeholderChar="_"
+          value=""
+        />
+      </Column>
+    </Row>
   }
 >
   <Calendar

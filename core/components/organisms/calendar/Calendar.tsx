@@ -677,7 +677,7 @@ export const Calendar = (props: CalendarProps) => {
   };
 
   return (
-    <div className="d-flex">
+    <div className="Calendar-wrapper">
       {Array.from({ length: monthsInView }, (_x, index) => {
         return renderCalendar(index);
       })}

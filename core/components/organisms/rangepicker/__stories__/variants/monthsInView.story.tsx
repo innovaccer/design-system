@@ -17,7 +17,6 @@ export const monthsInView = () => {
           shadow="light"
           style={{
             marginTop: '20px',
-            maxWidth: `${x * 330}px`,
             alignSelf: 'flex-start'
           }}
         >

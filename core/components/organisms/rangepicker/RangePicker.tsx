@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Calendar, SharedProps } from '../calendar/Calendar';
 import { DateType, DateFormat } from '../calendar/types';
-import Text from '@/components/atoms/text';
 import Popover, { Position } from '@/components/molecules/popover';
 import InputMask, { Mask, InputMaskProps } from '@/components/molecules/inputMask';
 import masks from '@/components/molecules/inputMask/masks';
 import validators from '@/utils/validators';
 import { getDateInfo, convertToDate, compareDate, translateToString, translateToDate, Validator } from '../calendar/utility';
+import { Row, Column } from '@/index';
 
 export type RangePickerProps = {
   /**
@@ -54,11 +54,6 @@ export type RangePickerProps = {
    */
   outputFormat?: DateFormat;
   /**
-   * Separator to be used between the two `InputMask`
-   * @default " - "
-   */
-  rangeSeparator?: string;
-  /**
    * Props to be used for Start date `InputMask`
    */
   startInputProps?: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear'>;
@@ -85,7 +80,6 @@ export const RangePicker = (props: RangePickerProps) => {
     open: openProp = false,
     inputFormat = 'mm/dd/yyyy',
     outputFormat = 'mm/dd/yyyy',
-    rangeSeparator = ' - ',
     startInputProps = {
       name: 'rangePicker-start',
       label: 'Start Date',
@@ -286,31 +280,32 @@ export const RangePicker = (props: RangePickerProps) => {
     };
 
     const trigger = (
-      <div className="RangePicker-input">
-        <InputMask
-          {...startInputProps}
-          mask={mask}
-          value={startDate ? translateToString(inputFormat, startDate) : ''}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => onChangeHandler(e, val || '', 'start')}
-          onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => onBlurHandler(e, val || '', 'start')}
-          onClear={() => onClearHandler('start')}
-          onClick={() => onClickHandler('start')}
-          error={startError}
-        />
-        <div className="RangePicker-rangeSeparator">
-          <Text>{rangeSeparator}</Text>
-        </div>
-        <InputMask
-          {...endInputProps}
-          mask={mask}
-          value={endDate ? translateToString(inputFormat, endDate) : ''}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => onChangeHandler(e, val || '', 'end')}
-          onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => onBlurHandler(e, val || '', 'end')}
-          onClear={() => onClearHandler('end')}
-          onClick={() => onClickHandler('end')}
-          error={endError}
-        />
-      </div>
+      <Row group={'2'} groupXS={'1'}>
+        <Column utilityClass="RangePicker-input RangePicker-input--startDate">
+          <InputMask
+            {...startInputProps}
+            mask={mask}
+            value={startDate ? translateToString(inputFormat, startDate) : ''}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => onChangeHandler(e, val || '', 'start')}
+            onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => onBlurHandler(e, val || '', 'start')}
+            onClear={() => onClearHandler('start')}
+            onClick={() => onClickHandler('start')}
+            error={startError}
+          />
+        </Column>
+        <Column utilityClass="RangePicker-input RangePicker-input--endDate">
+          <InputMask
+            {...endInputProps}
+            mask={mask}
+            value={endDate ? translateToString(inputFormat, endDate) : ''}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => onChangeHandler(e, val || '', 'end')}
+            onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => onBlurHandler(e, val || '', 'end')}
+            onClear={() => onClearHandler('end')}
+            onClick={() => onClickHandler('end')}
+            error={endError}
+          />
+        </Column>
+      </Row>
     );
 
     const onToggleHandler = (o: boolean, type?: string) => {
