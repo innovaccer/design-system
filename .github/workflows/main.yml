@@ -51,8 +51,12 @@ jobs:
         if: steps.is_release_commit.outputs.result == 1
         run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:master --follow-tags
 
-      - run: cp .npmrc.stub .npmrc
+      - name: gnerate .npmrc
+        if: steps.is_release_commit.outputs.result == 1
+        run: cp .npmrc.stub .npmrc
+
       - name: Publish to npmjs
+        if: steps.is_release_commit.outputs.result == 1
         run: npm publish --access public
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
