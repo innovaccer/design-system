@@ -33,11 +33,6 @@ export const all = () => {
     false
   );
 
-  const loadingMoreData = boolean(
-    'loadingMoreData',
-    false
-  );
-
   const dynamicRowHeight = boolean(
     'dynamicRowHeight',
     false
@@ -111,7 +106,7 @@ export const all = () => {
       width: 50,
       template: ({ checked }: SimpleObject) => {
         return (
-          <div className="cell-wrapper">
+          <div className="TableGrid-cellWrapper">
             <Checkbox
               checked={checked || allChecked}
             />
@@ -119,12 +114,9 @@ export const all = () => {
         );
       },
       pinned: pinned ? 'LEFT' : undefined,
-      get: ({ checked }: SimpleObject) => ({
-        checked,
-      }),
       header: () => {
         return (
-          <div className="cell-wrapper">
+          <div className="TableGrid-cellWrapper">
             <Checkbox
               checked={allChecked}
               onChange={(checked: boolean) => {
@@ -134,13 +126,13 @@ export const all = () => {
           </div>
         );
       },
-      name: '',
+      name: 'checked',
       displayName: '',
     },
     {
       pinned: pinned ? 'LEFT' : undefined,
       template: ({ x, rowIndex }: SimpleObject) => (
-        <div className="image-wrapper">
+        <div className="TableGrid-cellWrapper">
           <Avatar
             appearance={appearance[rowIndex % appearance.length]}
           >
@@ -151,21 +143,19 @@ export const all = () => {
       get: ({ firstName, lastName }: SimpleObject) => ({
         x: firstName[0] + lastName[0],
       }),
-      header: () => <div />,
-      name: '',
+      name: 'name',
       displayName: '',
     },
     {
       width: 200,
       template: (row: SimpleObject) => (
-        <div className="cell-wrapper">
-          {row.firstName} {row.lastName}
+        <div className="TableGrid-cellWrapper">
+          {row.name}
         </div>
       ),
       pinned: pinned ? 'LEFT' : undefined,
       get: ({ firstName, lastName }: SimpleObject) => ({
-        firstName,
-        lastName,
+        name: `${firstName} ${lastName}`,
       }),
       name: getSchema(0).name,
       displayName: getSchema(0).display_name,
@@ -178,7 +168,7 @@ export const all = () => {
     {
       width: 200,
       template: (props: SimpleObject) => (
-        <div className="cell-wrapper ellipsis">{props[getSchema(2).name]}</div>
+        <div className="TableGrid-cellWrapper ellipsis">{props[getSchema(2).name]}</div>
       ),
       name: getSchema(2).name,
       displayName: getSchema(2).display_name,
@@ -187,7 +177,7 @@ export const all = () => {
       width: 200,
       template: ({ rowIndex }: SimpleObject) => (
         <div
-          className={'cell-wrapper'}
+          className={'TableGrid-cellWrapper'}
         >
           {rowIndex}
           {dynamicRowHeight && (
@@ -215,7 +205,6 @@ export const all = () => {
       }}
       loadMore={loadMore}
       loading={loading}
-      loadingMoreData={loadingMoreData}
       getGridActions={dynamicRowHeight ? getGridActions : undefined}
       buffer={buffer}
       dynamicRowHeight={dynamicRowHeight}
@@ -233,7 +222,7 @@ export const all = () => {
 const customCode = `() => {
   const appearance = ['primary', 'success', 'alert', 'warning']
   const pinned = true
-  const schema = [{pinned: pinned ? 'LEFT' : undefined,template: ({ x, rowIndex }) => (<div className="image-wrapper"><Avatar appearance={appearance[rowIndex % appearance.length]}>{x}</Avatar></div>),get: ({ firstName, lastName }) => ({x: firstName[0] + lastName[0],}),header: () => <div />,name: '',displayName: '',},{width: 200,template: (row) => (<div className="cell-wrapper">{row.firstName} {row.lastName}</div>),pinned: pinned ? 'LEFT' : undefined,get: ({ firstName, lastName }) => ({firstName,lastName,}),name: 'name',displayName: 'Name',},{width: 200,name: 'gender',displayName: 'Gender',},{width: 200,template: (props) => (<div className="cell-wrapper ellipsis">{props['email']}</div>),name: 'email',displayName: 'Email',},{width: 200,name: 'note',displayName: 'Note',},];
+  const schema = [{pinned: pinned ? 'LEFT' : undefined,template: ({ x, rowIndex }) => (<div className="TableGrid-cellWrapper"><Avatar appearance={appearance[rowIndex % appearance.length]}>{x}</Avatar></div>),get: ({ firstName, lastName }) => ({x: firstName[0] + lastName[0],}),header: () => <div />,name: '',displayName: '',},{width: 200,template: (row) => (<div className="TableGrid-cellWrapper">{row.firstName} {row.lastName}</div>),pinned: pinned ? 'LEFT' : undefined,get: ({ firstName, lastName }) => ({firstName,lastName,}),name: 'name',displayName: 'Name',},{width: 200,name: 'gender',displayName: 'Gender',},{width: 200,template: (props) => (<div className="TableGrid-cellWrapper ellipsis">{props['email']}</div>),name: 'email',displayName: 'Email',},{width: 200,name: 'note',displayName: 'Note',},];
   const data = [{firstName: 'Brooke',lastName: 'Heeran',email: 'bheeran0@altervista.org',gender: 'Female',},{firstName: 'Frazer',lastName: 'Cathro',email: 'fcathro1@ucla.edu',gender: 'Male',},{firstName: 'Lemmie',lastName: 'Ciric',email: 'lciric2@dmoz.org',gender: 'Male',},{firstName: 'Randy',lastName: 'Boatwright',email: 'rboatwright3@arstechnica.com',gender: 'Male',},{firstName: 'Rolando',lastName: 'Cyples',email: 'rcyples4@biglobe.ne.jp',gender: 'Male',},{firstName: 'Lem',lastName: 'Males',email: 'lmales5@admin.ch',gender: 'Male',},{firstName: 'Sayres',lastName: 'Adelberg',email: 'sadelberg6@uol.com.br',gender: 'Male',},{firstName: 'Murray',lastName: 'Bravington',email: 'mbravington7@drupal.org',gender: 'Male',},{firstName: 'Jena',lastName: 'Swatheridge',email: 'jswatheridge8@npr.org',gender: 'Female',},{firstName: 'Annabel',lastName: 'Nelsey',email: 'anelsey9@google.com',gender: 'Female',}]
   return (
     <Table

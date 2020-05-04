@@ -84,14 +84,11 @@ class Table extends React.PureComponent<TableProps, TableState> {
       pagination,
     } = this.props;
 
-    const loadingMoreData = this.props.pagination ? false : this.props.loadingMoreData;
-
     return (
       <Grid
         style={style}
         loadMore={loadMore}
         loading={loading}
-        loadingMoreData={loadingMoreData}
         getGridActions={dynamicRowHeight ? getGridActions : undefined}
         buffer={buffer}
         dynamicRowHeight={dynamicRowHeight}

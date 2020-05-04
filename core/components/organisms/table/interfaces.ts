@@ -76,18 +76,6 @@ export interface Props {
    */
   loading?: boolean;
   /**
-   * This component will render if loading is true
-   */
-  loader?: React.ReactNode;
-  /**
-   * Will show an overlay in place of grid
-   */
-  showOverlay?: boolean;
-  /**
-   * This will render overlay component
-   */
-  overlay?: React.ReactNode;
-  /**
    * Each row height will be calculated dynamically
    * and given row height will be considered as minimun row height
    */

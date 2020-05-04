@@ -24,13 +24,17 @@ class Header extends React.Component<Props> {
         style={{
           height: headerHeight,
         }}
-        className="row header"
+        className="TableGrid-row TableGrid-row--header"
       >
         {schema.map(({ width = 100, header: HeaderComp, displayName }, j) => {
-          const defautHeader = () => <div className="cell-wrapper"><Text weight={'strong'}>{displayName}</Text></div>;
+          const defautHeader = () => (
+            <div className="TableGrid-cellWrapper">
+              <Text weight={'strong'}>{displayName}</Text>
+            </div>
+          );
           const HeaderComponent = !HeaderComp ? defautHeader : HeaderComp;
           return (
-            <div className="cell" key={j} style={{ width }}>
+            <div className="TableGrid-cell" key={j} style={{ width }}>
               <HeaderComponent />
             </div>
           );
@@ -54,12 +58,12 @@ class Header extends React.Component<Props> {
     } = this.props;
     return (
       <div
-        className="grid-header hide-scroll-bar"
+        className="TableGrid-header hide-scroll-bar"
         style={{ height: headerHeight }}
       >
         {leftWidth > 0 && (
           <div
-            className="grid-header-left hide-scroll-bar"
+            className="TableGrid-leftHeader hide-scroll-bar"
             style={{ width: leftWidth }}
           >
             {this.getHeader(leftSchema)}
@@ -69,7 +73,7 @@ class Header extends React.Component<Props> {
           <div
             ref={this.centerHeaderRef}
             onScroll={syncHorizontalScroll}
-            className="grid-header-center hide-scroll-bar"
+            className="TableGrid-centerHeader hide-scroll-bar"
             style={{ width: `calc(100% - ${leftWidth}px)` }}
           >
             <div style={{ width: centerWidth }}>

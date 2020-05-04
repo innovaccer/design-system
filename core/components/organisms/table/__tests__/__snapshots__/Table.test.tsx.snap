@@ -279,7 +279,6 @@ exports[`Table component
       },
     ]
   }
-  loadingMoreData={false}
   offset={0}
   onPageChange={[Function]}
   pagination={true}

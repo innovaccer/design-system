@@ -14,7 +14,7 @@ class Cell extends React.PureComponent<Props> {
     const Template = template;
 
     return (
-      <div className="cell" style={{ width }}>
+      <div className="TableGrid-cell" style={{ width }}>
         <Template rowIndex={rowIndex} {...rest} />
       </div>
     );

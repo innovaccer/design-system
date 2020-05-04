@@ -23,7 +23,7 @@ const schema: Schema[] = [
   {
     width: 200,
     template: (row: any) => (
-      <div className="cell-wrapper">
+      <div className="TableGrid-cellWrapper">
         {row.firstName} {row.lastName}
       </div>
     ),

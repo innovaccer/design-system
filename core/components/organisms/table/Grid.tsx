@@ -11,7 +11,6 @@ import { State, Props, Cache, Schema, GridActions, LoadingSchema } from './inter
 interface GridProps extends Props {
   totalPages: number;
   offset: number;
-  loadingMoreData?: boolean;
   onPageChange?: (pageNo: number) => void;
 }
 
@@ -146,10 +145,10 @@ class Grid extends React.PureComponent<GridProps, State> {
 
   calulateRowHeightAndRender = () => {
     const leftRows = document.querySelectorAll(
-      '.grid .grid-body .grid-left-body .row'
+      '.TableGrid-body--left .TableGrid-row'
     );
     const centerRows = document.querySelectorAll(
-      '.grid .grid-body .grid-center-body .row'
+      '.TableGrid-body--center .TableGrid-row'
     );
 
     if (
@@ -226,7 +225,7 @@ class Grid extends React.PureComponent<GridProps, State> {
     );
   }
 
-  sync = throttle(75, false, (scrollLeft: number, scrollTarget: any) => {
+  sync = throttle(25, false, (scrollLeft: number, scrollTarget: any) => {
     if (
       this.centerGridRef.current &&
       scrollTarget !== this.centerGridRef.current
@@ -381,14 +380,14 @@ class Grid extends React.PureComponent<GridProps, State> {
           transform: `translateY(${this.getTopPosition(index)}px)`,
           ...this.getHiddenRowStyling(index),
         }}
-        className={`row ${row.className || ''}`}
+        className={`TableGrid-row ${row.className || ''}`}
         key={index}
       >
         {schema.map(({ width = 100, template, get, name }, j) => {
           const defaultGet = row[name] ? (rowObj: SimpleObject) => ({ [name]: rowObj[name] }) : () => ({});
           const defaultTemplate = (props: SimpleObject) => {
             return (
-              <div className="cell-wrapper">
+              <div className="TableGrid-cellWrapper">
                 {props[name] ? props[name] : props.rowIndex}
               </div>
             );
@@ -505,10 +504,10 @@ class Grid extends React.PureComponent<GridProps, State> {
   }
 
   getGridHeight = () => {
-    const { dynamicRowHeight, data, loadingMoreData } = this.props;
+    const { dynamicRowHeight, data } = this.props;
 
     if (!dynamicRowHeight) {
-      return data.length * this.rowHeight + (loadingMoreData ? this.rowHeight * 2 : 0);
+      return data.length * this.rowHeight;
     }
 
     let total = 0;
@@ -538,12 +537,8 @@ class Grid extends React.PureComponent<GridProps, State> {
       pagination,
       totalPages,
       loading,
-      loader,
-      overlay,
-      showOverlay,
-      loadingMoreData,
       headerHeight,
-      className,
+      className = '',
       ...rest
     } = this.props;
 
@@ -551,7 +546,7 @@ class Grid extends React.PureComponent<GridProps, State> {
     const visibleCount = this.getVisibleRowsCount();
 
     const girdRestProps = {
-      className: `craft-smart-grid ${className || ''}`,
+      className: `TableGrid-wrapper ${className}`,
       ...rest,
     };
 
@@ -564,9 +559,6 @@ class Grid extends React.PureComponent<GridProps, State> {
     }
 
     if (loading) {
-      if (loader) {
-        return loader;
-      }
       return (
         <div {...girdRestProps} ref={this.gridRef}>
           <Loader
@@ -575,14 +567,6 @@ class Grid extends React.PureComponent<GridProps, State> {
             rowHeight={this.rowHeight}
             className="loader-wrapper"
           />
-        </div>
-      );
-    }
-
-    if (showOverlay) {
-      return (
-        <div ref={this.gridRef} {...girdRestProps}>
-          {overlay}
         </div>
       );
     }
@@ -600,11 +584,7 @@ class Grid extends React.PureComponent<GridProps, State> {
       };
     }
 
-    let gridHeight = this.getGridHeight();
-
-    if (dynamicRowHeight && loadingMoreData) {
-      gridHeight += this.rowHeight * 2;
-    }
+    const gridHeight = this.getGridHeight();
 
     return (
       <div {...girdRestProps}>
@@ -620,7 +600,7 @@ class Grid extends React.PureComponent<GridProps, State> {
 
         {/* Grid Body */}
         <div
-          className="grid"
+          className="TableGrid"
           ref={this.gridRef}
           onScroll={this.handleGridScroll}
         >
@@ -628,31 +608,15 @@ class Grid extends React.PureComponent<GridProps, State> {
             style={{
               height: gridHeight,
             }}
-            className="grid-body"
+            className="d-flex w-100"
           >
             {/*
              * Left Pinned Grid
              */}
             {gridMeta.leftWidth > 0 && (
-              <div style={{ width: gridMeta.leftWidth }} className="grid-left">
-                <div className="grid-left-body">
+              <div style={{ width: gridMeta.leftWidth }} className="TableGrid-left">
+                <div className="TableGrid-body--left">
                   {leftGrid}
-                  {loadingMoreData && (
-                    <Loader
-                      style={{
-                        transform: `translateY(${
-                          dynamicRowHeight
-                            ? gridHeight - this.rowHeight * 2
-                            : this.getTopPosition(data.length)
-                          }px)`,
-                      }}
-                      schema={gridMeta.leftSchema}
-                      loaderSchema={gridMeta.leftLoaderSchema}
-                      className="partial-loader"
-                      rowHeight={this.rowHeight}
-                      rows={2}
-                    />
-                  )}
                 </div>
               </div>
             )}
@@ -662,38 +626,38 @@ class Grid extends React.PureComponent<GridProps, State> {
             {gridMeta.centerWidth > 0 && (
               <div
                 style={{ width: `calc(100% - ${gridMeta.leftWidth}px)` }}
-                className="grid-center"
+                className="TableGrid-center"
               >
                 <div
                   ref={this.centerGridRef}
-                  className="grid-center-body hide-scroll-bar"
+                  className="TableGrid-body--center hide-scroll-bar"
                   onScroll={this.syncHorizontalScroll}
                 >
                   <div
                     style={{ minWidth: gridMeta.centerWidth }}
-                    className="grid-center-body-inner"
+                    className="TableGrid-innerBody--center"
                   >
                     {centerGrid}
-                    {loadingMoreData && (
-                      <Loader
-                        schema={gridMeta.centerSchema}
-                        loaderSchema={gridMeta.centerLoaderSchema}
-                        style={{
-                          transform: `translateY(${
-                            dynamicRowHeight
-                              ? gridHeight - this.rowHeight * 2
-                              : this.getTopPosition(data.length)
-                            }px)`,
-                        }}
-                        className="partial-loader"
-                        rowHeight={this.rowHeight}
-                        rows={2}
-                      />
-                    )}
                   </div>
                 </div>
               </div>
             )}
+          </div>
+        </div>
+        <div className="TableGrid-scroll">
+          <div
+            className="TableGrid-leftScroll"
+            style={{ width: gridMeta.leftWidth }}
+          />
+          <div
+            style={{
+              width: `calc(100% - ${gridMeta.leftWidth}px)`,
+            }}
+            className="TableGrid-centerScroll"
+            ref={this.centerScrollRef}
+            onScroll={this.syncHorizontalScroll}
+          >
+            <div style={{ width: gridMeta.centerWidth, height: '100%' }} />
           </div>
         </div>
         {
@@ -707,22 +671,6 @@ class Grid extends React.PureComponent<GridProps, State> {
             </div>
           )
         }
-        <div className="grid-scroll">
-          <div
-            className="grid-scroll-left"
-            style={{ width: gridMeta.leftWidth }}
-          />
-          <div
-            style={{
-              width: `calc(100% - ${gridMeta.leftWidth}px)`,
-            }}
-            className="grid-scroll-center overflow-y-hidden"
-            ref={this.centerScrollRef}
-            onScroll={this.syncHorizontalScroll}
-          >
-            <div style={{ width: gridMeta.centerWidth }} />
-          </div>
-        </div>
       </div>
     );
   }
