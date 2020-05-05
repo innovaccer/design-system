@@ -1,11 +1,32 @@
 export let dropdownOptions: any[] = [];
+export const group1: any[] = [];
+const group2: any[] = [];
 
-for (let i = 1; i <= 50; i++) {
-  dropdownOptions.push({
+for (let i = 1; i <= 40; i++) {
+  group1.push({
     label: `Option ${i}`,
     value: `Option ${i}`,
   });
 }
+
+for (let i = 41; i <= 50; i++) {
+  group2.push({
+    label: `Option ${i}`,
+    value: `Option ${i}`,
+  });
+}
+
+dropdownOptions.push({
+  group: true,
+  label: 'Group 1',
+  items: group1,
+});
+
+dropdownOptions.push({
+  group: true,
+  label: 'Group 2',
+  items: group2,
+});
 
 export const selectedStoryOptions: any[] = [];
 
@@ -27,7 +48,7 @@ for (let i = 1; i <= 10; i++) {
   });
 }
 
-export const storyOptions = dropdownOptions.slice(0, 10);
+export const storyOptions = group1.slice(0, 10);
 
 export const storyWrapOptions = [
   {
@@ -43,8 +64,6 @@ export const storyWrapOptions = [
     value: 'Innovaccer Analytics'
   }
 ];
-
-export const storySections = { 0: 'subheading', 5: 'subheading' };
 
 export const subInfoItems = [
   {

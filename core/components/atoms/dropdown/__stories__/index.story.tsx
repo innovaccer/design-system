@@ -44,8 +44,6 @@ export const all = () => {
 
   const limit = number('limit', 10);
 
-  const subheading = { 0: 'subheading', 40: 'sub' };
-
   const onChangeHandler = (selectedValues: any[]) => {
     return action(`selected values length: ${selectedValues}`)();
   };
@@ -64,7 +62,6 @@ export const all = () => {
     checkedValuesOffset,
     maxHeight,
     limit,
-    subheading,
     selectAll,
     loadingOptions,
     options: dropdownOptions,

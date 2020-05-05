@@ -68,7 +68,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -80,6 +80,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -143,7 +144,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={true}
@@ -155,6 +156,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -218,7 +220,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -231,6 +233,7 @@ exports[`Dropdown component
     setSearchTerm={[Function]}
     showApplyButton={false}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -294,7 +297,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -307,6 +310,7 @@ exports[`Dropdown component
     setSearchTerm={[Function]}
     showApplyButton={true}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -371,7 +375,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -383,6 +387,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -447,7 +452,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -459,6 +464,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -523,7 +529,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -535,6 +541,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -598,7 +605,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -610,6 +617,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -674,7 +682,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -686,6 +694,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -750,7 +759,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -762,6 +771,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -826,7 +836,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -838,6 +848,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -901,7 +912,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -913,6 +924,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -976,7 +988,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     searchTerm=""
     selectAll={false}
     selected={
@@ -987,6 +999,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1050,7 +1063,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     searchTerm=""
     selectAll={false}
     selected={
@@ -1061,6 +1074,88 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
+    topOptionsSliced={false}
+  />
+</div>
+`;
+
+exports[`Dropdown component 
+  options: [{"group":true,"label":"Group 1","items":[{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}]}], placeholder: "Select", onChange: "[Function]"
+ 1`] = `
+<div>
+  <DropdownList
+    bottomOptionsSliced={false}
+    limit={10}
+    listOptions={Array []}
+    offset={0}
+    onChange={[Function]}
+    onScroll={[Function]}
+    onSearchChange={[Function]}
+    onSelectAll={[Function]}
+    options={
+      Array [
+        Object {
+          "group": true,
+          "items": Array [
+            Object {
+              "label": "Option 1",
+              "value": "Option 1",
+            },
+            Object {
+              "label": "Option 2",
+              "value": "Option 2",
+            },
+            Object {
+              "label": "Option 3",
+              "value": "Option 3",
+            },
+            Object {
+              "label": "Option 4",
+              "value": "Option 4",
+            },
+            Object {
+              "label": "Option 5",
+              "value": "Option 5",
+            },
+            Object {
+              "label": "Option 6",
+              "value": "Option 6",
+            },
+            Object {
+              "label": "Option 7",
+              "value": "Option 7",
+            },
+            Object {
+              "label": "Option 8",
+              "value": "Option 8",
+            },
+            Object {
+              "label": "Option 9",
+              "value": "Option 9",
+            },
+            Object {
+              "label": "Option 10",
+              "value": "Option 10",
+            },
+          ],
+          "label": "Group 1",
+        },
+      ]
+    }
+    optionsLength={0}
+    placeholder="Select"
+    searchTerm=""
+    selectAll={false}
+    selected={
+      Object {
+        "label": Array [],
+        "value": Array [],
+      }
+    }
+    setSearchTerm={[Function]}
+    slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1098,7 +1193,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={3}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -1110,6 +1205,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1182,7 +1278,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -1194,6 +1290,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1231,7 +1328,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={3}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -1243,6 +1340,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1305,7 +1403,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     searchTerm=""
     selectAll={false}
     selected={
@@ -1316,6 +1414,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1378,7 +1477,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     searchTerm=""
     selectAll={false}
     selected={
@@ -1389,6 +1488,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1451,7 +1551,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -1463,6 +1563,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1525,7 +1626,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -1537,6 +1638,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1600,7 +1702,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     search={true}
     searchTerm=""
@@ -1613,6 +1715,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1676,7 +1779,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     search={true}
     searchTerm=""
@@ -1689,6 +1792,7 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1751,7 +1855,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -1764,6 +1868,7 @@ exports[`Dropdown component
     setSearchTerm={[Function]}
     size="regular"
     slicedOptionsLength={0}
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1826,7 +1931,7 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={10}
+    optionsLength={0}
     placeholder="Select"
     searchTerm=""
     selectAll={false}
@@ -1839,86 +1944,7 @@ exports[`Dropdown component
     setSearchTerm={[Function]}
     size="tiny"
     slicedOptionsLength={0}
-    topOptionsSliced={false}
-  />
-</div>
-`;
-
-exports[`Dropdown component 
-  subheading: {"0":"subheading","5":"subheading"}, options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], placeholder: "Select", onChange: "[Function]"
- 1`] = `
-<div>
-  <DropdownList
-    bottomOptionsSliced={false}
-    limit={10}
-    listOptions={Array []}
-    offset={0}
-    onChange={[Function]}
-    onScroll={[Function]}
-    onSearchChange={[Function]}
-    onSelectAll={[Function]}
-    options={
-      Array [
-        Object {
-          "label": "Option 1",
-          "value": "Option 1",
-        },
-        Object {
-          "label": "Option 2",
-          "value": "Option 2",
-        },
-        Object {
-          "label": "Option 3",
-          "value": "Option 3",
-        },
-        Object {
-          "label": "Option 4",
-          "value": "Option 4",
-        },
-        Object {
-          "label": "Option 5",
-          "value": "Option 5",
-        },
-        Object {
-          "label": "Option 6",
-          "value": "Option 6",
-        },
-        Object {
-          "label": "Option 7",
-          "value": "Option 7",
-        },
-        Object {
-          "label": "Option 8",
-          "value": "Option 8",
-        },
-        Object {
-          "label": "Option 9",
-          "value": "Option 9",
-        },
-        Object {
-          "label": "Option 10",
-          "value": "Option 10",
-        },
-      ]
-    }
-    optionsLength={10}
-    placeholder="Select"
-    searchTerm=""
-    selectAll={false}
-    selected={
-      Object {
-        "label": Array [],
-        "value": Array [],
-      }
-    }
-    setSearchTerm={[Function]}
-    slicedOptionsLength={0}
-    subheading={
-      Object {
-        "0": "subheading",
-        "5": "subheading",
-      }
-    }
+    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>

@@ -2,13 +2,20 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Dropdown, { DropdownProps as Props } from '../Dropdown';
-import { storyOptions, subInfoItems, iconItems, storySections, multiSelectedStoryOptions, selectedStoryOptions } from '../utils/Options';
+import { storyOptions, subInfoItems, iconItems, multiSelectedStoryOptions, selectedStoryOptions } from '../utils/Options';
 
 const size = ['tiny', 'regular'];
 const dropdownAlign = ['left', 'right'];
 const BooleanValue = [true, false];
 const placeholderValue = ['Select'];
 const options = [subInfoItems, iconItems];
+const SectionOptions = [
+  {
+    group: true,
+    label: 'Group 1',
+    items: storyOptions,
+  }
+];
 
 const FunctionValue = jest.fn();
 
@@ -118,8 +125,7 @@ describe('Dropdown component', () => {
 
 describe('Dropdown component', () => {
   const mapper: Record<string, any> = {
-    subheading: valueHelper(storySections, { required: true }),
-    options: valueHelper(storyOptions, { required: true }),
+    options: valueHelper(SectionOptions, { required: true }),
     placeholder: valueHelper(placeholderValue, { required: true, iterate: true }),
     onChange: valueHelper(FunctionValue, { required: true }),
   };

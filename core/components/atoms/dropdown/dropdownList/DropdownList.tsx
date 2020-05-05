@@ -27,7 +27,9 @@ export interface Option {
   selected?: boolean;
 }
 
-export interface Options {
+export interface SubHeadingOption {
+  group: boolean;
+  label: string;
   items: Option[];
 }
 
@@ -98,17 +100,6 @@ export interface DropdownListProps {
    */
   checkedValuesOffset?: number;
   /**
-   * Subheading object
-   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
-   * Subheading: {
-   *    \[key: number\]: string;
-   * }
-   * </pre>
-   *
-   * @default {}
-   */
-  subheading?: Subheading;
-  /**
    * Specifies max height of `Dropdown options`
    * @default 200
    */
@@ -121,6 +112,7 @@ export interface DropdownListProps {
 
 interface OptionsProps extends DropdownListProps {
   listOptions: Option[];
+  subheading?: Subheading;
   searchTerm: string;
   bottomOptionsSliced?: boolean;
   topOptionsSliced?: boolean;
@@ -317,7 +309,7 @@ const DropdownList = (props: OptionsProps) => {
   const getOptionWrapperClass = (optionIcon: string, optionValue: any, index: number) => {
     const OptionWrapper = classNames({
       ['Option-wrapper']: true,
-      ['Option-wrapper--top']: index === 0,
+      ['Option-wrapper--top']: index === 0 && !subheading[0],
       ['Option-wrapper--bottom']: index + 1 === listOptions.length,
       ['Option-wrapper--icon']: optionIcon,
       ['Option-wrapper--selected']: selected[0] === optionValue
@@ -350,8 +342,13 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const onCancelOptions = () => {
+    setCheckboxSelected([]);
+    setPreviousSelected([]);
+    setPreviousSelectedLabels([]);
+    setSelectedLabels([]);
     setButtonLabel(placeholder);
     setDropdownOpen(false);
+    if (onChange) onChange([]);
   };
 
   const onApplyOptions = () => {

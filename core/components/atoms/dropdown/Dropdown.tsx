@@ -1,5 +1,5 @@
 import * as React from 'react';
-import DropdownList, { DropdownListProps, Option } from '@/components/atoms/dropdown/dropdownList';
+import DropdownList, { DropdownListProps, Option, SubHeadingOption, Subheading } from '@/components/atoms/dropdown/dropdownList';
 import { getOptions, getValuesFromSelectedObj, getLabelsFromSelectedObj } from './utils/utility';
 
 export interface DropdownProps extends DropdownListProps {
@@ -23,9 +23,14 @@ export interface DropdownProps extends DropdownListProps {
    *    value: any;
    *    selected?: boolean;
    * }
+   * Subheading: {
+   *    group: boolean;
+   *    label: string;
+   *    items: Option[];
+   * }
    * </pre>
    */
-  options: Option[];
+  options: (Option | SubHeadingOption)[];
   /**
    * Callback function called when user selects an option
    */
@@ -45,6 +50,8 @@ export const Dropdown = (props: DropdownProps) => {
     ...rest
   } = props;
 
+  const [dropdownOptions, setDropdownOptions] = React.useState<Option[]>([]);
+  const [subheadingObj, setSubheadingObj] = React.useState<Subheading>({});
   const [topOffset, setTopOffset] = React.useState(0);
   const [bottomOffset, setBottomOffset] = React.useState(0);
   const [options, setOptions] = React.useState<Option[]>([]);
@@ -54,7 +61,7 @@ export const Dropdown = (props: DropdownProps) => {
   const [searchTerm, setSearchTerm] = React.useState('');
   const [stateLimit, setStateLimit] = React.useState(2 * limit);
   const [slicedOptionLength, setSlicedOptionLength] = React.useState(0);
-  const length = (props.options) ? props.options.length : 0;
+  const length = (dropdownOptions) ? dropdownOptions.length : 0;
   const [optionsLength, setOptionLength] = React.useState(length);
   const [selected, setSelected] = React.useState<Selected>({
     label: [],
@@ -64,7 +71,7 @@ export const Dropdown = (props: DropdownProps) => {
   const getSelectedFromOptions = () => {
     const selectedValues: any[] = [];
     const selectedLabels: string[] = [];
-    const optionsArray = props.options.slice();
+    const optionsArray = dropdownOptions.slice();
 
     const selectedFilter = (option: any) => {
       if (option.selected || (selectAll && props.checkboxes)) {
@@ -78,7 +85,7 @@ export const Dropdown = (props: DropdownProps) => {
   };
 
   const getDropdownOptions = (updatedOffset: number, optionsLimit: number, direction: string | undefined) => {
-    getOptions(updatedOffset, optionsLimit, searchTerm, props.options).then((res: any) => {
+    getOptions(updatedOffset, optionsLimit, searchTerm, dropdownOptions).then((res: any) => {
       if (updatedOffset !== undefined && direction !== undefined) {
         const { slicedOptions } = res;
         const slicedLength = limit - slicedOptions.length;
@@ -99,12 +106,33 @@ export const Dropdown = (props: DropdownProps) => {
 
   React.useEffect(() => {
     if (props.options.length > 0) {
+      const selectOptions: Option[] = [];
+      let subheadingObject: Subheading = {};
+
+      props.options.forEach(option => {
+        const { group, label, items } = option as SubHeadingOption;
+        if (group || items) {
+          subheadingObject = { ...subheadingObject, [selectOptions.length]: label };
+          items.forEach(item => {
+            selectOptions.push(item);
+          });
+        } else {
+          selectOptions.push(option as Option);
+        }
+      });
+      setDropdownOptions(selectOptions);
+      setSubheadingObj(subheadingObject);
+    }
+  }, [JSON.stringify(props.options)]);
+
+  React.useEffect(() => {
+    if (dropdownOptions.length > 0) {
       const selectedOptions = getSelectedFromOptions();
       setSelected(selectedOptions);
       setSelectedAll(selectAll);
       getDropdownOptions(0, limit, undefined);
     }
-  }, [JSON.stringify(props.options), selectAll, limit]);
+  }, [JSON.stringify(dropdownOptions), selectAll, limit]);
 
   React.useEffect(() => {
     getDropdownOptions(0, limit, undefined);
@@ -155,13 +183,13 @@ export const Dropdown = (props: DropdownProps) => {
   };
 
   const onSelectAll = (selectedAllOptions: boolean) => {
-    if (props.options) {
-      const optionsCopy = props.options.slice();
+    if (dropdownOptions) {
+      const optionsCopy = dropdownOptions.slice();
       const selectedArray = selectedAllOptions ? getValuesFromSelectedObj(optionsCopy) : [];
       const selectedArrayLabel = selectedAllOptions ? getLabelsFromSelectedObj(optionsCopy) : [];
       setSelected({ label: selectedArrayLabel, value: selectedArray });
       setSelectedAll(false);
-      if (onChange) onChange(selectedArray);
+      if (onChange && !props.showApplyButton) onChange(selectedArray);
     }
   };
 
@@ -169,6 +197,7 @@ export const Dropdown = (props: DropdownProps) => {
     <div>
       <DropdownList
         listOptions={options}
+        subheading={subheadingObj}
         slicedOptionsLength={slicedOptionLength}
         selectAll={selectedAll}
         selected={selected}
