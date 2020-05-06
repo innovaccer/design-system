@@ -13,9 +13,11 @@
 
 ## 🚀 Get Up and Running
 
+>💡 If your app runs on `Innovaccer UI engine` you don't need following two steps, please see *Using Components* section bellow.
+
 There are two main steps to use a component in your project:
-- Installing component library using npm or yarn
-- Importing stylesheet
+1. Installing component library using npm or yarn.
+2. Loading stylesheet.
 
 
 **Installing component library:**
