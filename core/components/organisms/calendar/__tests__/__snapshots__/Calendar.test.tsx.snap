@@ -31,7 +31,7 @@ exports[`Calendar component
         onClick={[Function]}
       >
         <Heading>
-          May 2020
+          Mar 2020
         </Heading>
       </div>
       <div
@@ -127,31 +127,6 @@ exports[`Calendar component
           className="Calendar-valueRow"
         >
           <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
             className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
@@ -173,10 +148,6 @@ exports[`Calendar component
               2
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -232,6 +203,10 @@ exports[`Calendar component
               7
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -254,10 +229,6 @@ exports[`Calendar component
               9
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -313,6 +284,10 @@ exports[`Calendar component
               14
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -335,10 +310,6 @@ exports[`Calendar component
               16
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -394,6 +365,10 @@ exports[`Calendar component
               21
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -416,10 +391,6 @@ exports[`Calendar component
               23
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -475,6 +446,10 @@ exports[`Calendar component
               28
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -497,10 +472,6 @@ exports[`Calendar component
               30
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -512,16 +483,6 @@ exports[`Calendar component
               31
             </Text>
           </div>
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
           <div
             className="Calendar-value Calendar-value--dummy"
             onClick={[Function]}
@@ -580,7 +541,7 @@ exports[`Calendar component
         onClick={[Function]}
       >
         <Heading>
-          May 2020
+          Mar 2020
         </Heading>
       </div>
       <div
@@ -676,212 +637,161 @@ exports[`Calendar component
           className="Calendar-valueRow"
         >
           <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               1
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               2
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               3
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               4
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               5
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               6
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               7
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               8
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               9
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               10
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               11
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               12
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               13
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               14
-            </Text>
-          </div>
-          <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          >
-            <Text
-              appearance="disabled"
-            >
-              15
-            </Text>
-          </div>
-          <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          >
-            <Text
-              appearance="disabled"
-            >
-              16
             </Text>
           </div>
         </div>
@@ -889,45 +799,67 @@ exports[`Calendar component
           className="Calendar-valueRow"
         >
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
+            >
+              15
+            </Text>
+          </div>
+          <div
+            className="Calendar-value"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            <Text
+              appearance="default"
+            >
+              16
+            </Text>
+          </div>
+          <div
+            className="Calendar-value"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            <Text
+              appearance="default"
             >
               17
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               18
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               19
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               20
             </Text>
@@ -943,6 +875,10 @@ exports[`Calendar component
               21
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
@@ -965,10 +901,6 @@ exports[`Calendar component
               23
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
@@ -1024,6 +956,10 @@ exports[`Calendar component
               28
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
@@ -1046,10 +982,6 @@ exports[`Calendar component
               30
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
@@ -1061,16 +993,6 @@ exports[`Calendar component
               31
             </Text>
           </div>
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
           <div
             className="Calendar-value Calendar-value--dummy"
             onClick={[Function]}
@@ -1111,7 +1033,7 @@ exports[`Calendar component
       className="Calendar-header"
     >
       <div
-        className="Calendar-headerIcon"
+        className="Calendar-headerIcon Calendar-headerIcon--disabled"
       >
         <Icon
           helpers={
@@ -1129,7 +1051,7 @@ exports[`Calendar component
         onClick={[Function]}
       >
         <Heading>
-          May 2020
+          Mar 2020
         </Heading>
       </div>
       <div
@@ -1225,137 +1147,108 @@ exports[`Calendar component
           className="Calendar-valueRow"
         >
           <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value"
+            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="default"
+              appearance="disabled"
             >
               1
             </Text>
           </div>
           <div
-            className="Calendar-value"
+            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="default"
+              appearance="disabled"
             >
               2
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
-            className="Calendar-value"
+            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="default"
+              appearance="disabled"
             >
               3
             </Text>
           </div>
           <div
-            className="Calendar-value"
+            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="default"
+              appearance="disabled"
             >
               4
             </Text>
           </div>
           <div
-            className="Calendar-value"
+            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="default"
+              appearance="disabled"
             >
               5
             </Text>
           </div>
           <div
-            className="Calendar-value"
+            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="default"
+              appearance="disabled"
             >
               6
             </Text>
           </div>
           <div
-            className="Calendar-value"
+            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="default"
+              appearance="disabled"
             >
               7
-            </Text>
-          </div>
-          <div
-            className="Calendar-value"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          >
-            <Text
-              appearance="default"
-            >
-              8
-            </Text>
-          </div>
-          <div
-            className="Calendar-value"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          >
-            <Text
-              appearance="default"
-            >
-              9
             </Text>
           </div>
         </div>
         <div
           className="Calendar-valueRow"
         >
+          <div
+            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            <Text
+              appearance="disabled"
+            >
+              8
+            </Text>
+          </div>
+          <div
+            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            <Text
+              appearance="disabled"
+            >
+              9
+            </Text>
+          </div>
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -1411,6 +1304,10 @@ exports[`Calendar component
               14
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -1433,10 +1330,6 @@ exports[`Calendar component
               16
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -1492,6 +1385,10 @@ exports[`Calendar component
               21
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -1514,10 +1411,6 @@ exports[`Calendar component
               23
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -1573,6 +1466,10 @@ exports[`Calendar component
               28
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -1595,10 +1492,6 @@ exports[`Calendar component
               30
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -1610,16 +1503,6 @@ exports[`Calendar component
               31
             </Text>
           </div>
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
           <div
             className="Calendar-value Calendar-value--dummy"
             onClick={[Function]}
@@ -1660,7 +1543,7 @@ exports[`Calendar component
       className="Calendar-header"
     >
       <div
-        className="Calendar-headerIcon"
+        className="Calendar-headerIcon Calendar-headerIcon--disabled"
       >
         <Icon
           helpers={
@@ -1678,7 +1561,7 @@ exports[`Calendar component
         onClick={[Function]}
       >
         <Heading>
-          May 2020
+          Mar 2020
         </Heading>
       </div>
       <div
@@ -1774,31 +1657,6 @@ exports[`Calendar component
           className="Calendar-valueRow"
         >
           <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
             className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
             onMouseOver={[Function]}
@@ -1820,10 +1678,6 @@ exports[`Calendar component
               2
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
@@ -1879,6 +1733,10 @@ exports[`Calendar component
               7
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
@@ -1901,85 +1759,59 @@ exports[`Calendar component
               9
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               10
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               11
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               12
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               13
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               14
-            </Text>
-          </div>
-          <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          >
-            <Text
-              appearance="disabled"
-            >
-              15
-            </Text>
-          </div>
-          <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          >
-            <Text
-              appearance="disabled"
-            >
-              16
             </Text>
           </div>
         </div>
@@ -1987,45 +1819,67 @@ exports[`Calendar component
           className="Calendar-valueRow"
         >
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
+            >
+              15
+            </Text>
+          </div>
+          <div
+            className="Calendar-value"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            <Text
+              appearance="default"
+            >
+              16
+            </Text>
+          </div>
+          <div
+            className="Calendar-value"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          >
+            <Text
+              appearance="default"
             >
               17
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               18
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               19
             </Text>
           </div>
           <div
-            className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
+            className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
           >
             <Text
-              appearance="disabled"
+              appearance="default"
             >
               20
             </Text>
@@ -2041,6 +1895,10 @@ exports[`Calendar component
               21
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
@@ -2063,10 +1921,6 @@ exports[`Calendar component
               23
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
@@ -2122,6 +1976,10 @@ exports[`Calendar component
               28
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
@@ -2144,10 +2002,6 @@ exports[`Calendar component
               30
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value Calendar-value--dummy Calendar-value--disabled"
             onClick={[Function]}
@@ -2159,16 +2013,6 @@ exports[`Calendar component
               31
             </Text>
           </div>
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
           <div
             className="Calendar-value Calendar-value--dummy"
             onClick={[Function]}
@@ -2227,7 +2071,7 @@ exports[`Calendar component
         onClick={[Function]}
       >
         <Heading>
-          May 2020
+          Mar 2020
         </Heading>
       </div>
       <div
@@ -2323,6 +2167,16 @@ exports[`Calendar component
           className="Calendar-valueRow"
         >
           <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
             className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
@@ -2377,6 +2231,10 @@ exports[`Calendar component
               5
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -2399,10 +2257,6 @@ exports[`Calendar component
               7
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -2458,6 +2312,10 @@ exports[`Calendar component
               12
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -2480,10 +2338,6 @@ exports[`Calendar component
               14
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -2539,6 +2393,10 @@ exports[`Calendar component
               19
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -2561,10 +2419,6 @@ exports[`Calendar component
               21
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -2620,6 +2474,10 @@ exports[`Calendar component
               26
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -2642,10 +2500,6 @@ exports[`Calendar component
               28
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -2679,16 +2533,6 @@ exports[`Calendar component
               31
             </Text>
           </div>
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
           <div
             className="Calendar-value Calendar-value--dummy"
             onClick={[Function]}
@@ -2737,7 +2581,7 @@ exports[`Calendar component
         onClick={[Function]}
       >
         <Heading>
-          May 2020
+          Mar 2020
         </Heading>
       </div>
       <div
@@ -2853,6 +2697,16 @@ exports[`Calendar component
             onMouseOver={[Function]}
           />
           <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
             className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
@@ -2863,6 +2717,10 @@ exports[`Calendar component
               1
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -2885,10 +2743,6 @@ exports[`Calendar component
               3
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -2944,6 +2798,10 @@ exports[`Calendar component
               8
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -2966,10 +2824,6 @@ exports[`Calendar component
               10
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -3025,6 +2879,10 @@ exports[`Calendar component
               15
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -3047,10 +2905,6 @@ exports[`Calendar component
               17
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -3106,6 +2960,10 @@ exports[`Calendar component
               22
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -3128,10 +2986,6 @@ exports[`Calendar component
               24
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -3187,6 +3041,10 @@ exports[`Calendar component
               29
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -3209,6 +3067,31 @@ exports[`Calendar component
               31
             </Text>
           </div>
+          <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
         </div>
       </div>
     </div>
@@ -3247,7 +3130,7 @@ exports[`Calendar component
         onClick={[Function]}
       >
         <Heading>
-          May 2020
+          Mar 2020
         </Heading>
       </div>
       <div
@@ -3348,31 +3231,6 @@ exports[`Calendar component
             onMouseOver={[Function]}
           />
           <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
             className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
@@ -3383,10 +3241,6 @@ exports[`Calendar component
               1
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -3442,6 +3296,10 @@ exports[`Calendar component
               6
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -3464,10 +3322,6 @@ exports[`Calendar component
               8
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -3523,6 +3377,10 @@ exports[`Calendar component
               13
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -3545,10 +3403,6 @@ exports[`Calendar component
               15
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -3604,6 +3458,10 @@ exports[`Calendar component
               20
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -3626,10 +3484,6 @@ exports[`Calendar component
               22
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -3685,6 +3539,10 @@ exports[`Calendar component
               27
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -3707,10 +3565,6 @@ exports[`Calendar component
               29
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -3733,16 +3587,6 @@ exports[`Calendar component
               31
             </Text>
           </div>
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
           <div
             className="Calendar-value Calendar-value--dummy"
             onClick={[Function]}
@@ -3796,7 +3640,7 @@ exports[`Calendar component
         onClick={[Function]}
       >
         <Heading>
-          May 2020
+          Mar 2020
         </Heading>
       </div>
       <div
@@ -3892,31 +3736,6 @@ exports[`Calendar component
           className="Calendar-valueRow"
         >
           <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
             className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
@@ -3938,10 +3757,6 @@ exports[`Calendar component
               2
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -3997,6 +3812,10 @@ exports[`Calendar component
               7
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -4019,10 +3838,6 @@ exports[`Calendar component
               9
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -4078,6 +3893,10 @@ exports[`Calendar component
               14
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -4100,10 +3919,6 @@ exports[`Calendar component
               16
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -4159,6 +3974,10 @@ exports[`Calendar component
               21
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -4181,10 +4000,6 @@ exports[`Calendar component
               23
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -4240,6 +4055,10 @@ exports[`Calendar component
               28
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -4262,10 +4081,6 @@ exports[`Calendar component
               30
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -4277,16 +4092,6 @@ exports[`Calendar component
               31
             </Text>
           </div>
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
           <div
             className="Calendar-value Calendar-value--dummy"
             onClick={[Function]}
@@ -4345,7 +4150,7 @@ exports[`Calendar component
         onClick={[Function]}
       >
         <Heading>
-          May 2020
+          Mar 2020
         </Heading>
       </div>
       <div
@@ -4446,6 +4251,16 @@ exports[`Calendar component
             onMouseOver={[Function]}
           />
           <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
             className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
@@ -4489,6 +4304,10 @@ exports[`Calendar component
               4
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -4511,10 +4330,6 @@ exports[`Calendar component
               6
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -4570,6 +4385,10 @@ exports[`Calendar component
               11
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -4592,10 +4411,6 @@ exports[`Calendar component
               13
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -4651,6 +4466,10 @@ exports[`Calendar component
               18
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -4673,10 +4492,6 @@ exports[`Calendar component
               20
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -4732,6 +4547,10 @@ exports[`Calendar component
               25
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -4754,10 +4573,6 @@ exports[`Calendar component
               27
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -4802,16 +4617,6 @@ exports[`Calendar component
               31
             </Text>
           </div>
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
           <div
             className="Calendar-value Calendar-value--dummy"
             onClick={[Function]}
@@ -4855,7 +4660,7 @@ exports[`Calendar component
         onClick={[Function]}
       >
         <Heading>
-          May 2020
+          Mar 2020
         </Heading>
       </div>
       <div
@@ -4966,6 +4771,16 @@ exports[`Calendar component
             onMouseOver={[Function]}
           />
           <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
             className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
@@ -4987,6 +4802,10 @@ exports[`Calendar component
               2
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -5009,10 +4828,6 @@ exports[`Calendar component
               4
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -5068,6 +4883,10 @@ exports[`Calendar component
               9
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -5090,10 +4909,6 @@ exports[`Calendar component
               11
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -5149,6 +4964,10 @@ exports[`Calendar component
               16
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -5171,10 +4990,6 @@ exports[`Calendar component
               18
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -5230,6 +5045,10 @@ exports[`Calendar component
               23
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -5252,10 +5071,6 @@ exports[`Calendar component
               25
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -5311,6 +5126,10 @@ exports[`Calendar component
               30
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -5322,6 +5141,31 @@ exports[`Calendar component
               31
             </Text>
           </div>
+          <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
           <div
             className="Calendar-value Calendar-value--dummy"
             onClick={[Function]}
@@ -5365,7 +5209,7 @@ exports[`Calendar component
         onClick={[Function]}
       >
         <Heading>
-          May 2020
+          Mar 2020
         </Heading>
       </div>
       <div
@@ -5471,6 +5315,16 @@ exports[`Calendar component
             onMouseOver={[Function]}
           />
           <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
+            className="Calendar-value Calendar-value--dummy"
+            onClick={[Function]}
+            onMouseOver={[Function]}
+          />
+          <div
             className="Calendar-value"
             onClick={[Function]}
             onMouseOver={[Function]}
@@ -5503,6 +5357,10 @@ exports[`Calendar component
               3
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -5525,10 +5383,6 @@ exports[`Calendar component
               5
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -5584,6 +5438,10 @@ exports[`Calendar component
               10
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -5606,10 +5464,6 @@ exports[`Calendar component
               12
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -5665,6 +5519,10 @@ exports[`Calendar component
               17
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -5687,10 +5545,6 @@ exports[`Calendar component
               19
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -5746,6 +5600,10 @@ exports[`Calendar component
               24
             </Text>
           </div>
+        </div>
+        <div
+          className="Calendar-valueRow"
+        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -5768,10 +5626,6 @@ exports[`Calendar component
               26
             </Text>
           </div>
-        </div>
-        <div
-          className="Calendar-valueRow"
-        >
           <div
             className="Calendar-value"
             onClick={[Function]}
@@ -5827,16 +5681,6 @@ exports[`Calendar component
               31
             </Text>
           </div>
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
-          <div
-            className="Calendar-value Calendar-value--dummy"
-            onClick={[Function]}
-            onMouseOver={[Function]}
-          />
         </div>
       </div>
     </div>

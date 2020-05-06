@@ -98,23 +98,17 @@ export type CalendarProps = {
 } & SharedProps;
 
 export const Calendar = (props: CalendarProps) => {
-  const now = Date.now();
-  const {
-    year: nowYear,
-    month: nowMonth,
-  } = getDateInfo(now);
-
   const {
     monthsInView = 1,
     view: viewProp = 'date',
     firstDayOfWeek = 'sunday',
     date: dateProp,
-    rangePicker,
-    rangeLimit,
-    yearNav: yearNavProp = nowYear,
-    monthNav: monthNavProp = nowMonth,
     startDate: startDateProp,
     endDate: endDateProp,
+    rangePicker,
+    yearNav: yearNavProp = getDateInfo((rangePicker ? (endDateProp || startDateProp) : dateProp) || Date.now()).year,
+    monthNav: monthNavProp = getDateInfo((rangePicker ? (endDateProp || startDateProp) : dateProp) || Date.now()).month,
+    rangeLimit,
     disabledBefore,
     disabledAfter,
     onDateChange,
@@ -145,10 +139,10 @@ export const Calendar = (props: CalendarProps) => {
     month: undefined,
     date: undefined
   });
-  const [currDateState, setCurrDateState] = React.useState<Date | undefined>();
+  const [currDateState, setCurrDateState] = React.useState<Date | undefined>(dateProp);
   const [hoverDateState, setHoverDateState] = React.useState<Date | undefined>();
-  const [startDateState, setStartDateState] = React.useState<Date | undefined>();
-  const [endDateState, setEndDateState] = React.useState<Date | undefined>();
+  const [startDateState, setStartDateState] = React.useState<Date | undefined>(startDateProp);
+  const [endDateState, setEndDateState] = React.useState<Date | undefined>(endDateProp);
   const [yearBlockNav, setYearBlockNav] = React.useState<number>(getYearBlock(yearNavProp));
   const [yearNav, setYearNav] = React.useState<number>(yearNavProp);
   const [monthNav, setMonthNav] = React.useState<number>(monthNavProp);
@@ -160,32 +154,20 @@ export const Calendar = (props: CalendarProps) => {
   } = state;
 
   React.useEffect(() => {
-    if (dateProp) {
-      const { year, month, date } = getDateInfo(dateProp);
-      updateState(year, month, date);
-      const d = convertToDate(dateProp);
-      setCurrDateState(d);
-    } else {
-      setCurrDateState(undefined);
-    }
+    const { year, month, date } = getDateInfo(dateProp);
+    updateState(year, month, date);
+    const d = convertToDate(dateProp);
+    setCurrDateState(d);
   }, [dateProp]);
 
   React.useEffect(() => {
-    if (startDateProp) {
-      const d = convertToDate(startDateProp);
-      setStartDateState(d);
-    } else {
-      setStartDateState(undefined);
-    }
+    const d = convertToDate(startDateProp);
+    setStartDateState(d);
   }, [startDateProp]);
 
   React.useEffect(() => {
-    if (endDateProp) {
-      const d = convertToDate(endDateProp);
-      setEndDateState(d);
-    } else {
-      setEndDateState(undefined);
-    }
+    const d = convertToDate(endDateProp);
+    setEndDateState(d);
   }, [endDateProp]);
 
   React.useEffect(() => {
