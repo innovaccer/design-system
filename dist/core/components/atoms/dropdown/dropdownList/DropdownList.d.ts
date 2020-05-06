@@ -8,7 +8,9 @@ export interface Option {
     value: any;
     selected?: boolean;
 }
-export interface Options {
+export interface SubHeadingOption {
+    group: boolean;
+    label: string;
     items: Option[];
 }
 export interface Subheading {
@@ -29,12 +31,12 @@ export interface DropdownListProps {
     optionsWrap?: boolean;
     loadingOptions?: boolean;
     checkedValuesOffset?: number;
-    subheading?: Subheading;
     maxHeight?: number;
     style?: React.CSSProperties;
 }
 interface OptionsProps extends DropdownListProps {
     listOptions: Option[];
+    subheading?: Subheading;
     searchTerm: string;
     bottomOptionsSliced?: boolean;
     topOptionsSliced?: boolean;

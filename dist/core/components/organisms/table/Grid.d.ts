@@ -4,7 +4,6 @@ import { State, Props, Cache, Schema, GridActions, LoadingSchema } from './inter
 interface GridProps extends Props {
     totalPages: number;
     offset: number;
-    loadingMoreData?: boolean;
     onPageChange?: (pageNo: number) => void;
 }
 declare class Grid extends React.PureComponent<GridProps, State> {
@@ -66,6 +65,6 @@ declare class Grid extends React.PureComponent<GridProps, State> {
     getHeaderRef: (ref: React.RefObject<HTMLDivElement>) => void;
     getGridHeight: () => number;
     onPageChange: (pageNo: number) => void;
-    render(): {};
+    render(): JSX.Element;
 }
 export default Grid;

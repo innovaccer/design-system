@@ -882,12 +882,6 @@ var translateToDate = function translateToDate(format, val, validator) {
 };
 
 var Calendar = function Calendar(props) {
-  var now = Date.now();
-
-  var _getDateInfo = getDateInfo(now),
-      nowYear = _getDateInfo.year,
-      nowMonth = _getDateInfo.month;
-
   var _props$monthsInView = props.monthsInView,
       monthsInView = _props$monthsInView === void 0 ? 1 : _props$monthsInView,
       _props$view = props.view,
@@ -895,14 +889,14 @@ var Calendar = function Calendar(props) {
       _props$firstDayOfWeek = props.firstDayOfWeek,
       firstDayOfWeek = _props$firstDayOfWeek === void 0 ? 'sunday' : _props$firstDayOfWeek,
       dateProp = props.date,
-      rangePicker = props.rangePicker,
-      rangeLimit = props.rangeLimit,
-      _props$yearNav = props.yearNav,
-      yearNavProp = _props$yearNav === void 0 ? nowYear : _props$yearNav,
-      _props$monthNav = props.monthNav,
-      monthNavProp = _props$monthNav === void 0 ? nowMonth : _props$monthNav,
       startDateProp = props.startDate,
       endDateProp = props.endDate,
+      rangePicker = props.rangePicker,
+      _props$yearNav = props.yearNav,
+      yearNavProp = _props$yearNav === void 0 ? getDateInfo((rangePicker ? endDateProp || startDateProp : dateProp) || Date.now()).year : _props$yearNav,
+      _props$monthNav = props.monthNav,
+      monthNavProp = _props$monthNav === void 0 ? getDateInfo((rangePicker ? endDateProp || startDateProp : dateProp) || Date.now()).month : _props$monthNav,
+      rangeLimit = props.rangeLimit,
       disabledBefore = props.disabledBefore,
       disabledAfter = props.disabledAfter,
       onDateChange = props.onDateChange,
@@ -936,7 +930,7 @@ var Calendar = function Calendar(props) {
       state = _React$useState4[0],
       setState = _React$useState4[1];
 
-  var _React$useState5 = useState$2(),
+  var _React$useState5 = useState$2(dateProp),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       currDateState = _React$useState6[0],
       setCurrDateState = _React$useState6[1];
@@ -946,12 +940,12 @@ var Calendar = function Calendar(props) {
       hoverDateState = _React$useState8[0],
       setHoverDateState = _React$useState8[1];
 
-  var _React$useState9 = useState$2(),
+  var _React$useState9 = useState$2(startDateProp),
       _React$useState10 = _slicedToArray(_React$useState9, 2),
       startDateState = _React$useState10[0],
       setStartDateState = _React$useState10[1];
 
-  var _React$useState11 = useState$2(),
+  var _React$useState11 = useState$2(endDateProp),
       _React$useState12 = _slicedToArray(_React$useState11, 2),
       endDateState = _React$useState12[0],
       setEndDateState = _React$useState12[1];
@@ -975,34 +969,22 @@ var Calendar = function Calendar(props) {
       monthState = state.month,
       dateState = state.date;
   useEffect$2(function () {
-    if (dateProp) {
-      var _getDateInfo2 = getDateInfo(dateProp),
-          year = _getDateInfo2.year,
-          month = _getDateInfo2.month,
-          _date = _getDateInfo2.date;
+    var _getDateInfo = getDateInfo(dateProp),
+        year = _getDateInfo.year,
+        month = _getDateInfo.month,
+        date = _getDateInfo.date;
 
-      updateState(year, month, _date);
-      var d = convertToDate(dateProp);
-      setCurrDateState(d);
-    } else {
-      setCurrDateState(undefined);
-    }
+    updateState(year, month, date);
+    var d = convertToDate(dateProp);
+    setCurrDateState(d);
   }, [dateProp]);
   useEffect$2(function () {
-    if (startDateProp) {
-      var d = convertToDate(startDateProp);
-      setStartDateState(d);
-    } else {
-      setStartDateState(undefined);
-    }
+    var d = convertToDate(startDateProp);
+    setStartDateState(d);
   }, [startDateProp]);
   useEffect$2(function () {
-    if (endDateProp) {
-      var d = convertToDate(endDateProp);
-      setEndDateState(d);
-    } else {
-      setEndDateState(undefined);
-    }
+    var d = convertToDate(endDateProp);
+    setEndDateState(d);
   }, [endDateProp]);
   useEffect$2(function () {
     if (monthsInView === 1) setView(viewProp);else setView('date');
@@ -1017,19 +999,19 @@ var Calendar = function Calendar(props) {
           setHoverDateState(undefined);
           setStartDateState(currDateState);
         } else {
-          var _getDateInfo3 = getDateInfo(currDateState),
-              year = _getDateInfo3.year,
-              month = _getDateInfo3.month,
-              _date2 = _getDateInfo3.date;
+          var _getDateInfo2 = getDateInfo(currDateState),
+              year = _getDateInfo2.year,
+              month = _getDateInfo2.month,
+              _date = _getDateInfo2.date;
 
           if (startDateState) {
-            if (compareDate(startDateState, 'more', year, month, _date2)) {
+            if (compareDate(startDateState, 'more', year, month, _date)) {
               setStartDateState(currDateState);
             } else {
               setEndDateState(currDateState);
             }
           } else if (endDateState) {
-            if (compareDate(endDateState, 'less', year, month, _date2)) {
+            if (compareDate(endDateState, 'less', year, month, _date)) {
               setEndDateState(currDateState);
             } else {
               setStartDateState(currDateState);
@@ -1088,20 +1070,20 @@ var Calendar = function Calendar(props) {
 
   var getInRangeError = function getInRangeError() {
     if (rangePicker && rangeLimit) {
-      var _getDateInfo4 = getDateInfo(startDateState),
-          startYear = _getDateInfo4.year,
-          startMonth = _getDateInfo4.month,
-          _startDate = _getDateInfo4.date;
+      var _getDateInfo3 = getDateInfo(startDateState),
+          startYear = _getDateInfo3.year,
+          startMonth = _getDateInfo3.month,
+          _startDate = _getDateInfo3.date;
 
-      var _getDateInfo5 = getDateInfo(endDateState),
-          endYear = _getDateInfo5.year,
-          endMonth = _getDateInfo5.month,
-          _endDate = _getDateInfo5.date;
+      var _getDateInfo4 = getDateInfo(endDateState),
+          endYear = _getDateInfo4.year,
+          endMonth = _getDateInfo4.month,
+          _endDate = _getDateInfo4.date;
 
-      var _getDateInfo6 = getDateInfo(hoverDateState),
-          hoverYear = _getDateInfo6.year,
-          hoverMonth = _getDateInfo6.month,
-          hoverDate = _getDateInfo6.date;
+      var _getDateInfo5 = getDateInfo(hoverDateState),
+          hoverYear = _getDateInfo5.year,
+          hoverMonth = _getDateInfo5.month,
+          hoverDate = _getDateInfo5.date;
 
       var limitDate;
 
@@ -2945,7 +2927,7 @@ var DropdownList = function DropdownList(props) {
   var getOptionWrapperClass = function getOptionWrapperClass(optionIcon, optionValue, index) {
     var _classNames2;
 
-    var OptionWrapper = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Option-wrapper', true), _defineProperty(_classNames2, 'Option-wrapper--top', index === 0), _defineProperty(_classNames2, 'Option-wrapper--bottom', index + 1 === listOptions.length), _defineProperty(_classNames2, 'Option-wrapper--icon', optionIcon), _defineProperty(_classNames2, 'Option-wrapper--selected', selected[0] === optionValue), _classNames2));
+    var OptionWrapper = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Option-wrapper', true), _defineProperty(_classNames2, 'Option-wrapper--top', index === 0 && !subheading[0]), _defineProperty(_classNames2, 'Option-wrapper--bottom', index + 1 === listOptions.length), _defineProperty(_classNames2, 'Option-wrapper--icon', optionIcon), _defineProperty(_classNames2, 'Option-wrapper--selected', selected[0] === optionValue), _classNames2));
     return OptionWrapper;
   };
 
@@ -2968,8 +2950,13 @@ var DropdownList = function DropdownList(props) {
   };
 
   var onCancelOptions = function onCancelOptions() {
+    setCheckboxSelected([]);
+    setPreviousSelected([]);
+    setPreviousSelectedLabels([]);
+    setSelectedLabels([]);
     setButtonLabel(placeholder);
     setDropdownOpen(false);
+    if (onChange) onChange([]);
   };
 
   var onApplyOptions = function onApplyOptions() {
@@ -3227,70 +3214,80 @@ var Dropdown = function Dropdown(props) {
       onChange = props.onChange,
       rest = _objectWithoutProperties(props, ["limit", "selectAll", "onChange"]);
 
-  var _React$useState = useState$2(0),
+  var _React$useState = useState$2([]),
       _React$useState2 = _slicedToArray(_React$useState, 2),
-      topOffset = _React$useState2[0],
-      setTopOffset = _React$useState2[1];
+      dropdownOptions = _React$useState2[0],
+      setDropdownOptions = _React$useState2[1];
 
-  var _React$useState3 = useState$2(0),
+  var _React$useState3 = useState$2({}),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
-      bottomOffset = _React$useState4[0],
-      setBottomOffset = _React$useState4[1];
+      subheadingObj = _React$useState4[0],
+      setSubheadingObj = _React$useState4[1];
 
-  var _React$useState5 = useState$2([]),
+  var _React$useState5 = useState$2(0),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
-      options = _React$useState6[0],
-      setOptions = _React$useState6[1];
+      topOffset = _React$useState6[0],
+      setTopOffset = _React$useState6[1];
 
-  var _React$useState7 = useState$2(false),
+  var _React$useState7 = useState$2(0),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
-      topOptionsSliced = _React$useState8[0],
-      setTopOptionsSliced = _React$useState8[1];
+      bottomOffset = _React$useState8[0],
+      setBottomOffset = _React$useState8[1];
 
-  var _React$useState9 = useState$2(false),
+  var _React$useState9 = useState$2([]),
       _React$useState10 = _slicedToArray(_React$useState9, 2),
-      bottomOptionsSliced = _React$useState10[0],
-      setBottomOptionsSliced = _React$useState10[1];
+      options = _React$useState10[0],
+      setOptions = _React$useState10[1];
 
-  var _React$useState11 = useState$2(selectAll),
+  var _React$useState11 = useState$2(false),
       _React$useState12 = _slicedToArray(_React$useState11, 2),
-      selectedAll = _React$useState12[0],
-      setSelectedAll = _React$useState12[1];
+      topOptionsSliced = _React$useState12[0],
+      setTopOptionsSliced = _React$useState12[1];
 
-  var _React$useState13 = useState$2(''),
+  var _React$useState13 = useState$2(false),
       _React$useState14 = _slicedToArray(_React$useState13, 2),
-      searchTerm = _React$useState14[0],
-      setSearchTerm = _React$useState14[1];
+      bottomOptionsSliced = _React$useState14[0],
+      setBottomOptionsSliced = _React$useState14[1];
 
-  var _React$useState15 = useState$2(2 * limit),
+  var _React$useState15 = useState$2(selectAll),
       _React$useState16 = _slicedToArray(_React$useState15, 2),
-      stateLimit = _React$useState16[0],
-      setStateLimit = _React$useState16[1];
+      selectedAll = _React$useState16[0],
+      setSelectedAll = _React$useState16[1];
 
-  var _React$useState17 = useState$2(0),
+  var _React$useState17 = useState$2(''),
       _React$useState18 = _slicedToArray(_React$useState17, 2),
-      slicedOptionLength = _React$useState18[0],
-      setSlicedOptionLength = _React$useState18[1];
+      searchTerm = _React$useState18[0],
+      setSearchTerm = _React$useState18[1];
 
-  var length = props.options ? props.options.length : 0;
-
-  var _React$useState19 = useState$2(length),
+  var _React$useState19 = useState$2(2 * limit),
       _React$useState20 = _slicedToArray(_React$useState19, 2),
-      optionsLength = _React$useState20[0],
-      setOptionLength = _React$useState20[1];
+      stateLimit = _React$useState20[0],
+      setStateLimit = _React$useState20[1];
 
-  var _React$useState21 = useState$2({
+  var _React$useState21 = useState$2(0),
+      _React$useState22 = _slicedToArray(_React$useState21, 2),
+      slicedOptionLength = _React$useState22[0],
+      setSlicedOptionLength = _React$useState22[1];
+
+  var length = dropdownOptions ? dropdownOptions.length : 0;
+
+  var _React$useState23 = useState$2(length),
+      _React$useState24 = _slicedToArray(_React$useState23, 2),
+      optionsLength = _React$useState24[0],
+      setOptionLength = _React$useState24[1];
+
+  var _React$useState25 = useState$2({
     label: [],
     value: []
   }),
-      _React$useState22 = _slicedToArray(_React$useState21, 2),
-      selected = _React$useState22[0],
-      setSelected = _React$useState22[1];
+      _React$useState26 = _slicedToArray(_React$useState25, 2),
+      selected = _React$useState26[0],
+      setSelected = _React$useState26[1];
 
   var getSelectedFromOptions = function getSelectedFromOptions() {
     var selectedValues = [];
     var selectedLabels = [];
-    var optionsArray = props.options.slice();
+    var optionsArray = dropdownOptions.slice();
 
     var selectedFilter = function selectedFilter(option) {
       if (option.selected || selectAll && props.checkboxes) {
@@ -3308,7 +3305,7 @@ var Dropdown = function Dropdown(props) {
   };
 
   var getDropdownOptions = function getDropdownOptions(updatedOffset, optionsLimit, direction) {
-    getOptions(updatedOffset, optionsLimit, searchTerm, props.options).then(function (res) {
+    getOptions(updatedOffset, optionsLimit, searchTerm, dropdownOptions).then(function (res) {
       if (updatedOffset !== undefined && direction !== undefined) {
         var slicedOptions = res.slicedOptions;
         var slicedLength = limit - slicedOptions.length;
@@ -3328,12 +3325,35 @@ var Dropdown = function Dropdown(props) {
   }, [limit]);
   useEffect$2(function () {
     if (props.options.length > 0) {
+      var selectOptions = [];
+      var subheadingObject = {};
+      props.options.forEach(function (option) {
+        var _ref = option,
+            group = _ref.group,
+            label = _ref.label,
+            items = _ref.items;
+
+        if (group || items) {
+          subheadingObject = _objectSpread2(_objectSpread2({}, subheadingObject), {}, _defineProperty({}, selectOptions.length, label));
+          items.forEach(function (item) {
+            selectOptions.push(item);
+          });
+        } else {
+          selectOptions.push(option);
+        }
+      });
+      setDropdownOptions(selectOptions);
+      setSubheadingObj(subheadingObject);
+    }
+  }, [JSON.stringify(props.options)]);
+  useEffect$2(function () {
+    if (dropdownOptions.length > 0) {
       var selectedOptions = getSelectedFromOptions();
       setSelected(selectedOptions);
       setSelectedAll(selectAll);
       getDropdownOptions(0, limit, undefined);
     }
-  }, [JSON.stringify(props.options), selectAll, limit]);
+  }, [JSON.stringify(dropdownOptions), selectAll, limit]);
   useEffect$2(function () {
     getDropdownOptions(0, limit, undefined);
   }, [searchTerm]);
@@ -3388,8 +3408,8 @@ var Dropdown = function Dropdown(props) {
   };
 
   var onSelectAll = function onSelectAll(selectedAllOptions) {
-    if (props.options) {
-      var optionsCopy = props.options.slice();
+    if (dropdownOptions) {
+      var optionsCopy = dropdownOptions.slice();
       var selectedArray = selectedAllOptions ? getValuesFromSelectedObj(optionsCopy) : [];
       var selectedArrayLabel = selectedAllOptions ? getLabelsFromSelectedObj(optionsCopy) : [];
       setSelected({
@@ -3397,12 +3417,13 @@ var Dropdown = function Dropdown(props) {
         value: selectedArray
       });
       setSelectedAll(false);
-      if (onChange) onChange(selectedArray);
+      if (onChange && !props.showApplyButton) onChange(selectedArray);
     }
   };
 
   return /*#__PURE__*/createElement("div", null, /*#__PURE__*/createElement(DropdownList, _extends({
     listOptions: options,
+    subheading: subheadingObj,
     slicedOptionsLength: slicedOptionLength,
     selectAll: selectedAll,
     selected: selected,
@@ -3863,7 +3884,7 @@ var Cell = /*#__PURE__*/function (_React$PureComponent) {
 
       var Template = template;
       return /*#__PURE__*/createElement("div", {
-        className: "cell",
+        className: "TableGrid-cell",
         style: {
           width: width
         }
@@ -3902,7 +3923,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
         style: {
           height: headerHeight
         },
-        className: "row header"
+        className: "TableGrid-row TableGrid-row--header"
       }, schema.map(function (_ref, j) {
         var _ref$width = _ref.width,
             width = _ref$width === void 0 ? 100 : _ref$width,
@@ -3911,7 +3932,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
 
         var defautHeader = function defautHeader() {
           return /*#__PURE__*/createElement("div", {
-            className: "cell-wrapper"
+            className: "TableGrid-cellWrapper"
           }, /*#__PURE__*/createElement(Text, {
             weight: 'strong'
           }, displayName));
@@ -3919,7 +3940,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
 
         var HeaderComponent = !HeaderComp ? defautHeader : HeaderComp;
         return /*#__PURE__*/createElement("div", {
-          className: "cell",
+          className: "TableGrid-cell",
           key: j,
           style: {
             width: width
@@ -3947,19 +3968,19 @@ var Header = /*#__PURE__*/function (_React$Component) {
           syncHorizontalScroll = _this$props.syncHorizontalScroll,
           headerHeight = _this$props.headerHeight;
       return /*#__PURE__*/createElement("div", {
-        className: "grid-header hide-scroll-bar",
+        className: "TableGrid-header hide-scroll-bar",
         style: {
           height: headerHeight
         }
       }, leftWidth > 0 && /*#__PURE__*/createElement("div", {
-        className: "grid-header-left hide-scroll-bar",
+        className: "TableGrid-leftHeader hide-scroll-bar",
         style: {
           width: leftWidth
         }
       }, this.getHeader(leftSchema)), centerWidth > 0 && /*#__PURE__*/createElement("div", {
         ref: this.centerHeaderRef,
         onScroll: syncHorizontalScroll,
-        className: "grid-header-center hide-scroll-bar",
+        className: "TableGrid-centerHeader hide-scroll-bar",
         style: {
           width: "calc(100% - ".concat(leftWidth, "px)")
         }
@@ -4262,8 +4283,8 @@ var Grid = /*#__PURE__*/function (_React$PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "calulateRowHeightAndRender", function () {
-      var leftRows = document.querySelectorAll('.grid .grid-body .grid-left-body .row');
-      var centerRows = document.querySelectorAll('.grid .grid-body .grid-center-body .row');
+      var leftRows = document.querySelectorAll('.TableGrid-body--left .TableGrid-row');
+      var centerRows = document.querySelectorAll('.TableGrid-body--center .TableGrid-row');
 
       if (leftRows.length === 0 && _this.state.gridMeta.leftSchema.length === 0 && centerRows.length === 0 && _this.state.gridMeta.centerSchema.length === 0) {
         return;
@@ -4322,7 +4343,7 @@ var Grid = /*#__PURE__*/function (_React$PureComponent) {
       return Math.round((scrollTop - _this.calculatedRowTopPosition[_this.calculatedRowTopPosition.length - 1]) / _this.rowHeight) + _this.calculatedRowTopPosition.length;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "sync", throttle(75, false, function (scrollLeft, scrollTarget) {
+    _defineProperty(_assertThisInitialized(_this), "sync", throttle(25, false, function (scrollLeft, scrollTarget) {
       if (_this.centerGridRef.current && scrollTarget !== _this.centerGridRef.current) {
         _this.centerGridRef.current.scrollLeft = scrollLeft;
       }
@@ -4467,7 +4488,7 @@ var Grid = /*#__PURE__*/function (_React$PureComponent) {
           height: dynamicRowHeight ? _this.calculatedRowHeight[index] : _this.rowHeight,
           transform: "translateY(".concat(_this.getTopPosition(index), "px)")
         }, _this.getHiddenRowStyling(index)),
-        className: "row ".concat(row.className || ''),
+        className: "TableGrid-row ".concat(row.className || ''),
         key: index
       }, schema.map(function (_ref6, j) {
         var _ref6$width = _ref6.width,
@@ -4483,7 +4504,7 @@ var Grid = /*#__PURE__*/function (_React$PureComponent) {
 
         var defaultTemplate = function defaultTemplate(props) {
           return /*#__PURE__*/createElement("div", {
-            className: "cell-wrapper"
+            className: "TableGrid-cellWrapper"
           }, props[name] ? props[name] : props.rowIndex);
         };
 
@@ -4589,11 +4610,10 @@ var Grid = /*#__PURE__*/function (_React$PureComponent) {
     _defineProperty(_assertThisInitialized(_this), "getGridHeight", function () {
       var _this$props = _this.props,
           dynamicRowHeight = _this$props.dynamicRowHeight,
-          data = _this$props.data,
-          loadingMoreData = _this$props.loadingMoreData;
+          data = _this$props.data;
 
       if (!dynamicRowHeight) {
-        return data.length * _this.rowHeight + (loadingMoreData ? _this.rowHeight * 2 : 0);
+        return data.length * _this.rowHeight;
       }
 
       var total = 0;
@@ -4670,19 +4690,16 @@ var Grid = /*#__PURE__*/function (_React$PureComponent) {
           pagination = _this$props2.pagination,
           totalPages = _this$props2.totalPages,
           loading = _this$props2.loading,
-          loader = _this$props2.loader,
-          overlay = _this$props2.overlay,
-          showOverlay = _this$props2.showOverlay,
-          loadingMoreData = _this$props2.loadingMoreData,
           headerHeight = _this$props2.headerHeight,
-          className = _this$props2.className,
-          rest = _objectWithoutProperties(_this$props2, ["data", "schema", "loaderSchema", "loadMore", "buffer", "getGridActions", "dynamicRowHeight", "pagination", "totalPages", "loading", "loader", "overlay", "showOverlay", "loadingMoreData", "headerHeight", "className"]);
+          _this$props2$classNam = _this$props2.className,
+          className = _this$props2$classNam === void 0 ? '' : _this$props2$classNam,
+          rest = _objectWithoutProperties(_this$props2, ["data", "schema", "loaderSchema", "loadMore", "buffer", "getGridActions", "dynamicRowHeight", "pagination", "totalPages", "loading", "headerHeight", "className"]);
 
       var gridMeta = this.state.gridMeta;
       var visibleCount = this.getVisibleRowsCount();
 
       var girdRestProps = _objectSpread2({
-        className: "craft-smart-grid ".concat(className || '')
+        className: "TableGrid-wrapper ".concat(className)
       }, rest);
 
       if (visibleCount === -1) {
@@ -4693,10 +4710,6 @@ var Grid = /*#__PURE__*/function (_React$PureComponent) {
       }
 
       if (loading) {
-        if (loader) {
-          return loader;
-        }
-
         return /*#__PURE__*/createElement("div", _extends({}, girdRestProps, {
           ref: this.gridRef
         }), /*#__PURE__*/createElement(Loader, {
@@ -4705,12 +4718,6 @@ var Grid = /*#__PURE__*/function (_React$PureComponent) {
           rowHeight: this.rowHeight,
           className: "loader-wrapper"
         }));
-      }
-
-      if (showOverlay) {
-        return /*#__PURE__*/createElement("div", _extends({
-          ref: this.gridRef
-        }, girdRestProps), overlay);
       }
 
       var _this$getVirtualList = this.getVirtualList(this.state, this.props),
@@ -4725,11 +4732,6 @@ var Grid = /*#__PURE__*/function (_React$PureComponent) {
       }
 
       var gridHeight = this.getGridHeight();
-
-      if (dynamicRowHeight && loadingMoreData) {
-        gridHeight += this.rowHeight * 2;
-      }
-
       return /*#__PURE__*/createElement("div", girdRestProps, /*#__PURE__*/createElement(Header, {
         getRef: this.getHeaderRef,
         centerSchema: gridMeta.centerSchema,
@@ -4739,63 +4741,39 @@ var Grid = /*#__PURE__*/function (_React$PureComponent) {
         headerHeight: this.headerHeight,
         syncHorizontalScroll: this.syncHorizontalScroll
       }), /*#__PURE__*/createElement("div", {
-        className: "grid",
+        className: "TableGrid",
         ref: this.gridRef,
         onScroll: this.handleGridScroll
       }, /*#__PURE__*/createElement("div", {
         style: {
           height: gridHeight
         },
-        className: "grid-body"
+        className: "d-flex w-100"
       }, gridMeta.leftWidth > 0 && /*#__PURE__*/createElement("div", {
         style: {
           width: gridMeta.leftWidth
         },
-        className: "grid-left"
+        className: "TableGrid-left"
       }, /*#__PURE__*/createElement("div", {
-        className: "grid-left-body"
-      }, leftGrid, loadingMoreData && /*#__PURE__*/createElement(Loader, {
-        style: {
-          transform: "translateY(".concat(dynamicRowHeight ? gridHeight - this.rowHeight * 2 : this.getTopPosition(data.length), "px)")
-        },
-        schema: gridMeta.leftSchema,
-        loaderSchema: gridMeta.leftLoaderSchema,
-        className: "partial-loader",
-        rowHeight: this.rowHeight,
-        rows: 2
-      }))), gridMeta.centerWidth > 0 && /*#__PURE__*/createElement("div", {
+        className: "TableGrid-body--left"
+      }, leftGrid)), gridMeta.centerWidth > 0 && /*#__PURE__*/createElement("div", {
         style: {
           width: "calc(100% - ".concat(gridMeta.leftWidth, "px)")
         },
-        className: "grid-center"
+        className: "TableGrid-center"
       }, /*#__PURE__*/createElement("div", {
         ref: this.centerGridRef,
-        className: "grid-center-body hide-scroll-bar",
+        className: "TableGrid-body--center hide-scroll-bar",
         onScroll: this.syncHorizontalScroll
       }, /*#__PURE__*/createElement("div", {
         style: {
           minWidth: gridMeta.centerWidth
         },
-        className: "grid-center-body-inner"
-      }, centerGrid, loadingMoreData && /*#__PURE__*/createElement(Loader, {
-        schema: gridMeta.centerSchema,
-        loaderSchema: gridMeta.centerLoaderSchema,
-        style: {
-          transform: "translateY(".concat(dynamicRowHeight ? gridHeight - this.rowHeight * 2 : this.getTopPosition(data.length), "px)")
-        },
-        className: "partial-loader",
-        rowHeight: this.rowHeight,
-        rows: 2
-      })))))), pagination && /*#__PURE__*/createElement("div", {
-        className: "Table-paginationWrapper"
-      }, /*#__PURE__*/createElement(Pagination, {
-        type: 'jump',
-        totalPages: totalPages,
-        onPageChange: this.onPageChange
-      })), /*#__PURE__*/createElement("div", {
-        className: "grid-scroll"
+        className: "TableGrid-innerBody--center"
+      }, centerGrid))))), /*#__PURE__*/createElement("div", {
+        className: "TableGrid-scroll"
       }, /*#__PURE__*/createElement("div", {
-        className: "grid-scroll-left",
+        className: "TableGrid-leftScroll",
         style: {
           width: gridMeta.leftWidth
         }
@@ -4803,14 +4781,21 @@ var Grid = /*#__PURE__*/function (_React$PureComponent) {
         style: {
           width: "calc(100% - ".concat(gridMeta.leftWidth, "px)")
         },
-        className: "grid-scroll-center overflow-y-hidden",
+        className: "TableGrid-centerScroll",
         ref: this.centerScrollRef,
         onScroll: this.syncHorizontalScroll
       }, /*#__PURE__*/createElement("div", {
         style: {
-          width: gridMeta.centerWidth
+          width: gridMeta.centerWidth,
+          height: '100%'
         }
-      }))));
+      }))), pagination && /*#__PURE__*/createElement("div", {
+        className: "Table-paginationWrapper"
+      }, /*#__PURE__*/createElement(Pagination, {
+        type: 'jump',
+        totalPages: totalPages,
+        onPageChange: this.onPageChange
+      })));
     }
   }]);
 
@@ -4904,12 +4889,10 @@ var Table = /*#__PURE__*/function (_React$PureComponent) {
           headerHeight = _this$props.headerHeight,
           loaderSchema = _this$props.loaderSchema,
           pagination = _this$props.pagination;
-      var loadingMoreData = this.props.pagination ? false : this.props.loadingMoreData;
       return /*#__PURE__*/createElement(Grid, {
         style: style,
         loadMore: loadMore,
         loading: loading,
-        loadingMoreData: loadingMoreData,
         getGridActions: dynamicRowHeight ? getGridActions : undefined,
         buffer: buffer,
         dynamicRowHeight: dynamicRowHeight,

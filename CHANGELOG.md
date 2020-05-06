@@ -89,3 +89,16 @@
 * 47b32f5 fix: adds responsivness in RangePicker and removes rangeSeparator prop
 * 3433782 fix: adds custom tooltip in DonutChart
 * 0222fbd chore: updates urls from innovaccer to aregee
+
+-------------------
+ **v1.0.0-6**  (2020-05-06) 
+
+* 8c5d492 v1.0.0-6
+* 6096dd0 docs: improves styles integration guide
+* 610c641 fix: fixes initial render state of Calendar
+* cae1451 feat: adds example app docs
+* 981ea44 fix: fixes dropdown options prop
+* f70fbb8 chore: splits flex into flex and flex-basis to fix build issues for CRA
+* a2674e2 fix: refactors Table css and removes unnecessary props
+* 9dea69f chore: updates Calendar tests
+* 9ce4c48 chore: add acton to remove .npmrc created for publishing package

@@ -31,9 +31,6 @@ export interface Props {
     loadMore?: () => void;
     buffer?: number;
     loading?: boolean;
-    loader?: React.ReactNode;
-    showOverlay?: boolean;
-    overlay?: React.ReactNode;
     dynamicRowHeight?: boolean;
     pagination?: boolean;
     getGridActions?: (gridActions?: GridActions) => void;
