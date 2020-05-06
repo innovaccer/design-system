@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pills component 
+  appearance: "accent1", subtle: false
+ 1`] = `
+<span
+  className="Pills Badge--accent1"
+>
+  Pills
+</span>
+`;
+
+exports[`Pills component 
+  appearance: "accent1", subtle: true
+ 1`] = `
+<span
+  className="Pills Badge--subtle-accent1"
+>
+  Pills
+</span>
+`;
+
+exports[`Pills component 
+  appearance: "accent2", subtle: false
+ 1`] = `
+<span
+  className="Pills Badge--accent2"
+>
+  Pills
+</span>
+`;
+
+exports[`Pills component 
+  appearance: "accent2", subtle: true
+ 1`] = `
+<span
+  className="Pills Badge--subtle-accent2"
+>
+  Pills
+</span>
+`;
+
+exports[`Pills component 
+  appearance: "accent3", subtle: false
+ 1`] = `
+<span
+  className="Pills Badge--accent3"
+>
+  Pills
+</span>
+`;
+
+exports[`Pills component 
+  appearance: "accent3", subtle: true
+ 1`] = `
+<span
+  className="Pills Badge--subtle-accent3"
+>
+  Pills
+</span>
+`;
+
+exports[`Pills component 
+  appearance: "accent4", subtle: false
+ 1`] = `
+<span
+  className="Pills Badge--accent4"
+>
+  Pills
+</span>
+`;
+
+exports[`Pills component 
+  appearance: "accent4", subtle: true
+ 1`] = `
+<span
+  className="Pills Badge--subtle-accent4"
+>
+  Pills
+</span>
+`;
+
+exports[`Pills component 
+  appearance: "alert", subtle: false
+ 1`] = `
+<span
+  className="Pills Badge--alert"
+>
+  Pills
+</span>
+`;
+
+exports[`Pills component 
+  appearance: "alert", subtle: true
+ 1`] = `
+<span
+  className="Pills Badge--subtle-alert"
+>
+  Pills
+</span>
+`;
+
+exports[`Pills component 
+  appearance: "primary", subtle: false
+ 1`] = `
+<span
+  className="Pills Badge--primary"
+>
+  Pills
+</span>
+`;
+
+exports[`Pills component 
+  appearance: "primary", subtle: true
+ 1`] = `
+<span
+  className="Pills Badge--subtle-primary"
+>
+  Pills
+</span>
+`;
+
+exports[`Pills component 
+  appearance: "secondary", subtle: false
+ 1`] = `
+<span
+  className="Pills Badge--secondary"
+>
+  Pills
+</span>
+`;
+
+exports[`Pills component 
+  appearance: "secondary", subtle: true
+ 1`] = `
+<span
+  className="Pills Badge--subtle-secondary"
+>
+  Pills
+</span>
+`;
+
+exports[`Pills component 
+  appearance: "success", subtle: false
+ 1`] = `
+<span
+  className="Pills Badge--success"
+>
+  Pills
+</span>
+`;
+
+exports[`Pills component 
+  appearance: "success", subtle: true
+ 1`] = `
+<span
+  className="Pills Badge--subtle-success"
+>
+  Pills
+</span>
+`;
+
+exports[`Pills component 
+  appearance: "warning", subtle: false
+ 1`] = `
+<span
+  className="Pills Badge--warning"
+>
+  Pills
+</span>
+`;
+
+exports[`Pills component 
+  appearance: "warning", subtle: true
+ 1`] = `
+<span
+  className="Pills Badge--subtle-warning"
+>
+  Pills
+</span>
+`;
