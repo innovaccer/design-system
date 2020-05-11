@@ -88,6 +88,10 @@
     color: var(--inverse-light);
 }
 
+.Input-input:focus {
+    outline: 0;
+}
+
 .Input-input:disabled {
     background: var(--secondary-lightest);
 }
