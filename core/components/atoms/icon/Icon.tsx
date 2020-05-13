@@ -29,16 +29,16 @@ export interface IconProps {
    */
   onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   /**
-   * Array of helper classes
+   * Adds className to `Card` component
    */
-  helpers?: string[];
+  className?: string;
 }
 
 export const Icon = (props: IconProps) => {
   const {
     appearance = 'default',
     type = 'filled',
-    helpers = [],
+    className,
     name,
     size,
     onClick,
@@ -48,7 +48,7 @@ export const Icon = (props: IconProps) => {
     ['material-icons']: true,
     ['Icon']: true,
     [`Icon--${appearance}`]: appearance,
-    [`${helpers.join(' ')}`]: helpers,
+    [`${className}`]: className
   });
 
   const styles = {

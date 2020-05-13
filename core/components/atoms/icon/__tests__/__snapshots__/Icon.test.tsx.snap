@@ -4,7 +4,7 @@ exports[`Icon component
   name: "events", size: 50, appearance: "alert", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons Icon Icon--alert "
+  className="material-icons Icon Icon--alert"
   onClick={[Function]}
   style={
     Object {
@@ -21,7 +21,7 @@ exports[`Icon component
   name: "events", size: 50, appearance: "destructive", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons Icon Icon--destructive "
+  className="material-icons Icon Icon--destructive"
   onClick={[Function]}
   style={
     Object {
@@ -38,7 +38,7 @@ exports[`Icon component
   name: "events", size: 50, appearance: "disabled", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons Icon Icon--disabled "
+  className="material-icons Icon Icon--disabled"
   onClick={[Function]}
   style={
     Object {
@@ -55,7 +55,7 @@ exports[`Icon component
   name: "events", size: 50, appearance: "info", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons Icon Icon--info "
+  className="material-icons Icon Icon--info"
   onClick={[Function]}
   style={
     Object {
@@ -72,7 +72,7 @@ exports[`Icon component
   name: "events", size: 50, appearance: "subtle", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons Icon Icon--subtle "
+  className="material-icons Icon Icon--subtle"
   onClick={[Function]}
   style={
     Object {
@@ -89,7 +89,7 @@ exports[`Icon component
   name: "events", size: 50, appearance: "success", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons Icon Icon--success "
+  className="material-icons Icon Icon--success"
   onClick={[Function]}
   style={
     Object {
@@ -106,7 +106,7 @@ exports[`Icon component
   name: "events", size: 50, appearance: "warning", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons Icon Icon--warning "
+  className="material-icons Icon Icon--warning"
   onClick={[Function]}
   style={
     Object {
@@ -123,7 +123,7 @@ exports[`Icon component
   name: "events", size: 50, appearance: "white", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons Icon Icon--white "
+  className="material-icons Icon Icon--white"
   onClick={[Function]}
   style={
     Object {
@@ -140,7 +140,7 @@ exports[`Icon component
   name: "events", size: 50, type: "filled", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons Icon Icon--default "
+  className="material-icons Icon Icon--default"
   onClick={[Function]}
   style={
     Object {
@@ -157,7 +157,7 @@ exports[`Icon component
   name: "events", size: 50, type: "outline", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons Icon Icon--default "
+  className="material-icons Icon Icon--default"
   onClick={[Function]}
   style={
     Object {
@@ -174,7 +174,7 @@ exports[`Icon component
   name: "events", size: 50, type: "rounded", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons Icon Icon--default "
+  className="material-icons Icon Icon--default"
   onClick={[Function]}
   style={
     Object {
@@ -191,7 +191,7 @@ exports[`Icon component
   name: "events", size: 50, type: "sharp", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons Icon Icon--default "
+  className="material-icons Icon Icon--default"
   onClick={[Function]}
   style={
     Object {

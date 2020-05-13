@@ -487,7 +487,7 @@ const DropdownList = (props: OptionsProps) => {
 
     return (
       <div className={getOptionWrapperClass(optionIcon, value, index)} onClick={e => optionClickHandler(e, item)}>
-        {optionIcon && <div className={'Option-icon'}><Icon helpers={['mr-4']} name={optionIcon} /></div>}
+        {optionIcon && <div className={'Option-icon'}><Icon className="mr-4" name={optionIcon} /></div>}
         <div className={'Option-label'}>
           <div className={optionTextClass}>{label}</div>
           {subInfo && <div className={'Option-subinfo'}>{subInfo}</div>}

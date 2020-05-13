@@ -281,7 +281,7 @@ export const RangePicker = (props: RangePickerProps) => {
 
     const trigger = (
       <Row group={'2'} groupXS={'1'}>
-        <Column utilityClass="RangePicker-input RangePicker-input--startDate">
+        <Column className="RangePicker-input RangePicker-input--startDate">
           <InputMask
             {...startInputProps}
             mask={mask}
@@ -293,7 +293,7 @@ export const RangePicker = (props: RangePickerProps) => {
             error={startError}
           />
         </Column>
-        <Column utilityClass="RangePicker-input RangePicker-input--endDate">
+        <Column className="RangePicker-input RangePicker-input--endDate">
           <InputMask
             {...endInputProps}
             mask={mask}

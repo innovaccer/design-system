@@ -191,7 +191,7 @@ export const DonutChart = (props: DonutChartProps) => {
   // }, []);
 
   return (
-    <Row utilityClass="DonutChart">
+    <Row className="DonutChart">
       <Column {...columnOptions.chart}>
         <ResponsiveContainer>
           <PieChart>
@@ -213,7 +213,7 @@ export const DonutChart = (props: DonutChartProps) => {
         </ResponsiveContainer>
       </Column>
       {withLegends && (
-        <Column utilityClass="DonutChart-legends" {...columnOptions.legends}>
+        <Column className="DonutChart-legends" {...columnOptions.legends}>
           {data.map((d, i) => (
             <Legend key={i} label={`${d.name} - ${(+d.value).toLocaleString()}`} iconAppearance={getColor(i)} />
           ))}
