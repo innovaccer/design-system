@@ -30,8 +30,8 @@ declare class PopperWrapper extends React.Component<Props, IState> {
     private _timer?;
     constructor(props: Props);
     componentWillUnmount(): void;
-    handleMouseLeave: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-    handleMouseEnter: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+    handleMouseLeave: (event: React.MouseEvent<HTMLElement>) => void;
+    handleMouseEnter: (event: React.MouseEvent<HTMLElement>) => void;
     togglePopper: (type?: string | undefined) => void;
     doesNodeContainClick: (event: Event) => void;
     componentDidMount(): void;

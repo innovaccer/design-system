@@ -102,3 +102,10 @@
 * a2674e2 fix: refactors Table css and removes unnecessary props
 * 9dea69f chore: updates Calendar tests
 * 9ce4c48 chore: add acton to remove .npmrc created for publishing package
+
+-------------------
+ **v1.0.0-7**  (2020-05-14) 
+
+* 8f238f2 v1.0.0-7
+* 8eb9557 fix: fixes table template
+* c3627b6 fix: fixes Input focus css

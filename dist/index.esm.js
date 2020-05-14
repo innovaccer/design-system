@@ -4496,7 +4496,7 @@ var Grid = /*#__PURE__*/function (_React$PureComponent) {
             template = _ref6.template,
             get = _ref6.get,
             name = _ref6.name;
-        var defaultGet = row[name] ? function (rowObj) {
+        var defaultGet = row[name] !== undefined ? function (rowObj) {
           return _defineProperty({}, name, rowObj[name]);
         } : function () {
           return {};
@@ -4505,7 +4505,7 @@ var Grid = /*#__PURE__*/function (_React$PureComponent) {
         var defaultTemplate = function defaultTemplate(props) {
           return /*#__PURE__*/createElement("div", {
             className: "TableGrid-cellWrapper"
-          }, props[name] ? props[name] : props.rowIndex);
+          }, props[name] !== undefined ? props[name] : props.rowIndex);
         };
 
         var getObj = !get ? defaultGet : get;

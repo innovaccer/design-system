@@ -53,8 +53,8 @@ declare class Grid extends React.PureComponent<GridProps, State> {
     createRow: ({ index, row, schema, dynamicRowHeight, }: {
         index: number;
         rowHeight: number;
-        row: Record<string, any>;
-        schema: Schema[];
+        row: GridProps['data'][0];
+        schema: GridProps['schema'];
         dynamicRowHeight: boolean;
     }) => JSX.Element;
     getVirtualList: (state: State, props: GridProps) => {
