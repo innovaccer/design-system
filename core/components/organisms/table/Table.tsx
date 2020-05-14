@@ -1,107 +1,142 @@
 import * as React from 'react';
-import Grid from './Grid';
-import { Props, TableState } from './interfaces';
+import { Card, Heading } from '@/index';
+import { Cell, Column, Table as BPTable, Utils, SelectionModes } from "@blueprintjs/table";
+// import * as BPClasses from '@blueprintjs/table/src/common/classes';
+import "@blueprintjs/core/lib/css/blueprint.css";
+import "@blueprintjs/icons/lib/css/blueprint-icons.css";
+import '@blueprintjs/table/lib/css/table.css';
 
-export interface TableProps extends Props {
-  /**
-   * Number of records to be shown on a page in case of pagination
-   * @default 10
-   */
-  limit?: number;
-  /**
-   * Shows the loader when user is about to reach the end
-   */
-  loadingMoreData?: boolean;
+import ColumnHeaderCell from './ColumnHeaderCell'
+
+type Data = Record<string, any>;
+
+interface Schema {
+  name: string;
+  displayName: string;
+  width: number;
 }
 
-class Table extends React.PureComponent<TableProps, TableState> {
-  limit: number;
+export interface TableProps {
+  data: Data[];
+  schema: Schema[];
+  enableColumnResizing?: boolean;
+  enableColumnReordering?: boolean;
+  enableRowHeader?: boolean;
+}
 
+interface TableState {
+  schema: Schema[]
+}
+
+interface INameRenderer {
+  name: string;
+  index?: number;
+}
+
+const NameRenderer = (props: INameRenderer) => {
+  const {
+    name
+  } = props;
+
+  return(
+    <div className={`Table-headerCell`}>
+      <Heading>{name}</Heading>
+    </div>
+  )
+}
+
+export class Table extends React.Component<TableProps, TableState> {
   constructor(props: TableProps) {
     super(props);
-    this.limit = props.limit ? props.limit : 10;
 
     this.state = {
-      offset: 0,
-      data: this.getData(),
-      totalPages: this.calcTotalPages(),
-    };
-  }
-
-  calcTotalPages = () => {
-    let totalPages = Math.round(this.props.data.length / this.limit);
-    totalPages = (this.props.data.length / this.limit) <= totalPages ? totalPages : totalPages + 1;
-    return totalPages;
-  }
-
-  getData = () => {
-    if (!this.props.pagination || this.props.data.length === 0) {
-      return this.props.data;
-    }
-
-    const recordsCopy = this.props.data.slice();
-    const offset = 0;
-    const slicedData = recordsCopy.slice(offset, offset + this.limit);
-    return slicedData;
-  }
-
-  componentDidUpdate(prevProps: TableProps) {
-    if ((prevProps.pagination !== this.props.pagination) ||
-      (prevProps.limit !== this.props.limit) ||
-      (prevProps.data.length !== this.props.data.length)
-    ) {
-      this.limit = this.props.limit ? this.props.limit : 10;
-      this.setState({
-        offset: 0,
-        data: this.getData(),
-        totalPages: this.calcTotalPages(),
-      });
+      schema: props.schema
     }
   }
 
-  onPageChange = (pageNo: number) => {
-    const offset = (pageNo - 1) * this.limit;
-    const dataCopy = this.props.data.slice();
-    const data = dataCopy.slice(offset, offset + this.limit);
+  updateCellSchema = (index: number, schemaUpdate: Partial<Schema>) => {
+    const { schema } = this.state;
+
     this.setState({
-      offset,
-      data,
+      schema: [
+        ...schema.slice(0, index),
+        {
+          ...schema[index],
+          ...schemaUpdate
+        },
+        ...schema.slice(index + 1)
+      ]
+    })
+  }
+
+  onColumnWidthChanged = (index: number, size: number) => {
+    this.updateCellSchema(index, { width: size });
+  }
+
+  onColumnsReordered = (oldIndex: number, newIndex: number, length: number) => {
+    const { schema } = this.state;
+
+    this.setState({
+      schema: Utils.reorderArray(schema, oldIndex, newIndex, length)
     });
   }
 
   render() {
     const {
-      schema,
-      style,
-      loadMore,
-      loading,
-      getGridActions,
-      buffer,
-      dynamicRowHeight,
-      rowHeight,
-      headerHeight,
-      loaderSchema,
-      pagination,
+      data,
+      enableColumnReordering = true,
+      enableColumnResizing = true,
+      enableRowHeader = false
     } = this.props;
 
+    const {
+      schema
+    } = this.state;
+
+    const columnWidths = schema.map(s => s.width);
+
     return (
-      <Grid
-        style={style}
-        loadMore={loadMore}
-        loading={loading}
-        getGridActions={dynamicRowHeight ? getGridActions : undefined}
-        buffer={buffer}
-        dynamicRowHeight={dynamicRowHeight}
-        rowHeight={rowHeight}
-        headerHeight={headerHeight}
-        schema={schema}
-        loaderSchema={loaderSchema}
-        data={this.state.data}
-        offset={this.state.offset}
-        pagination={pagination}
-        totalPages={this.state.totalPages}
-        onPageChange={this.onPageChange}
-      />
+      <Card
+        shadow="light"
+      >
+        <BPTable
+          className="Table"
+          numRows={data.length}
+          columnWidths={columnWidths}
+          enableColumnResizing={enableColumnResizing}
+          onColumnWidthChanged={this.onColumnWidthChanged}
+          enableColumnReordering={enableColumnReordering}
+          onColumnsReordered={this.onColumnsReordered}
+          enableRowHeader={enableRowHeader}
+          // numFrozenColumns={1}
+          selectionModes={SelectionModes.ROWS_ONLY}
+        >
+          {schema.map(s => (
+            <Column
+              name={s.displayName}
+              cellRenderer={(rowIndex: number, columnIndex: number) => (
+                <Cell
+                  rowIndex={rowIndex}
+                  columnIndex={columnIndex}
+                  interactive={true}
+                  className="Table-cell"
+                >
+                  {data[rowIndex][s.name]}
+                </Cell>
+              )}
+              columnHeaderCellRenderer={(columnIndex: number) => (
+                <ColumnHeaderCell
+                  className="Table-headerCell"
+                  index={columnIndex}
+                  name={s.displayName}
+                  nameRenderer={(name: string, index?: number) => <NameRenderer index={index} name={name} />}
+                  menuIcon={"timeline-events"}
+                />
+              )}
+            />
+          ))}
+        </BPTable>
+      </Card>
     );
   }
 }

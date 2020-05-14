@@ -91,6 +91,7 @@
     "typescript-eslint-parser": "^22.0.0"
   },
   "dependencies": {
+    "@blueprintjs/table": "^3.8.5",
     "@types/classnames": "^2.2.9",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",

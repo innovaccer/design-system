@@ -25,7 +25,7 @@ export { RowProps } from './components/atoms/row';
 export { SpinnerProps } from './components/atoms/spinner';
 export { SubheadingProps } from './components/atoms/subheading';
 export { SwitchProps } from './components/atoms/switch';
-export { TableProps } from './components/organisms/table';
+export { TableProps } from './components/organisms/table/types';
 export { TextProps } from './components/atoms/text';
 export { ToastProps } from './components/atoms/toast';
 export { TooltipProps } from './components/atoms/tooltip';

@@ -32,7 +32,6 @@
   "exclude": [
     "dist",
     "build",
-    "node_modules",
     "__tests__",
     ".github"
   ]

@@ -1,143 +1,18 @@
-/* Table loader */
-
-.loader-wrapper {
-    overflow: hidden;
+/** Table **/
+.Table {
+    background: transparent;
+    box-shadow: none;
 }
 
-.loader-row {
+.bp3-table-quadrant {
+    background: transparent;
+}
+
+.bp3-table-column-headers {
+    background: transparent;
+}
+
+.Table-headerCell {
     display: flex;
     align-items: center;
-}
-
-.loader-row:not(:last-child) {
-    border-bottom: 1px solid #efefef;
-}
-
-.loader-column {
-    padding: 4px 8px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-}
-
-/* Table grid */
-
-.TableGrid-wrapper {
-    border: 1px solid #eee;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.TableGrid {
-    overflow-y: auto;
-    position: initial;
-}
-
-.TableGrid-left,
-.TableGrid-center {
-    flex-shrink: 0;
-    height: 100%;
-}
-
-.TableGrid-left {
-    position: relative;
-}
-
-.TableGrid-center {
-    width: 100%;
-}
-
-.TableGrid-body--center {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    overflow-x: auto;
-}
-
-.TableGrid-innerBody--center {
-    height: 100%;
-    position: relative;
-}
-
-.TableGrid-center .TableGrid-row {
-    flex-shrink: 0;
-}
-
-.TableGrid-cellWrapper {
-    padding: 8px 12px;
-}
-
-.TableGrid-cell {
-    flex-shrink: 0;
-}
-
-.TableGrid-cell:not(:last-child) {
-    border-right: 1px solid #efefef;
-}
-
-.TableGrid-row {
-    position: absolute;
-    display: flex;
-    border-bottom: 1px solid #efefef;
-}
-
-.TableGrid-row--header {
-    position: relative;
-}
-
-.TableGrid-left .TableGrid-row {
-    border-right: 1px solid #efefef;
-}
-
-.TableGrid-scroll {
-    display: flex;
-    background: #efefef;
-    flex-shrink: 0;
-    height: 12px;
-}
-
-.TableGrid-centerScroll {
-    overflow-x: scroll;
-    -ms-overflow-style: scrollbar;
-    height: 100%;
-}
-
-.TableGrid-header {
-    flex-shrink: 0;
-    display: flex;
-    border-bottom: 1px solid #efefef;
-}
-
-.TableGrid-leftHeader {
-    border-right: 1px solid #efefef;
-}
-
-.TableGrid-centerHeader {
-    overflow-x: auto;
-}
-
-.TableGrid-leftHeader,
-.TableGrid-centerHeader {
-    flex-shrink: 0;
-    overflow-y: hidden;
-}
-
-.TableGrid-scroll .TableGrid-scroll--center::-webkit-scrollbar {
-    -webkit-appearance: none;
-    height: 10px;
-}
-
-.TableGrid-scroll .TableGrid-scroll--center::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-.Table-paginationWrapper {
-  padding-top: var(--spacing);
-  padding-bottom: var(--spacing);
-  border-top: 1px solid #efefef;
-  display: flex;
-  justify-content: center;
 }
