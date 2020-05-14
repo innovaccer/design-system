@@ -1,26 +1,35 @@
 {
+  "version": "3.5.3",
   "compilerOptions": {
     "sourceMap": true,
-    "strict": true,
+    // "strict": true,
     "target": "es5",
     "jsx": "react",
     "module": "commonjs",
     "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
+    // "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noUnusedParameters": true,
     "noUnusedLocals": true,
-    "removeComments": true,
-    "strictNullChecks": true,
+    // "removeComments": true,
+    // "strictNullChecks": true,
     "skipLibCheck": true,
+    "pretty": true,
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "stripInternal": true,
     "esModuleInterop": true,
     "lib": [
+      "es5",
       "es6",
       "es7",
       "es2017",
-      "dom"
+      "dom",
+      "dom.iterable",
+      "es2015.collection",
+      "es2015.iterable"
     ],
     "baseUrl": "./",
     "paths": {
@@ -32,7 +41,7 @@
   "exclude": [
     "dist",
     "build",
-    "__tests__",
+    "core/**/**/**/__tests__",
     ".github"
   ]
 }

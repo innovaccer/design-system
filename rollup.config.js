@@ -18,7 +18,8 @@ function globals() {
     'classnames': 'classNames',
     'react-popper': 'reactPopper',
     'axios': 'axios',
-    'recharts': 'recharts'
+    'recharts': 'recharts',
+    '@blueprintjs': '@blueprintjs'
   };
 }
 

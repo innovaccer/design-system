@@ -6,7 +6,7 @@ import "@blueprintjs/core/lib/css/blueprint.css";
 import "@blueprintjs/icons/lib/css/blueprint-icons.css";
 import '@blueprintjs/table/lib/css/table.css';
 
-import ColumnHeaderCell from './ColumnHeaderCell'
+import { ColumnHeaderCell } from './ColumnHeaderCell'
 
 type Data = Record<string, any>;
 
@@ -21,7 +21,7 @@ export interface TableProps {
   schema: Schema[];
   enableColumnResizing?: boolean;
   enableColumnReordering?: boolean;
-  enableRowHeader?: boolean;
+  enableRowIndex?: boolean;
 }
 
 interface TableState {
@@ -38,7 +38,7 @@ const NameRenderer = (props: INameRenderer) => {
     name
   } = props;
 
-  return(
+  return (
     <div className={`Table-headerCell`}>
       <Heading>{name}</Heading>
     </div>
@@ -86,7 +86,7 @@ export class Table extends React.Component<TableProps, TableState> {
       data,
       enableColumnReordering = true,
       enableColumnResizing = true,
-      enableRowHeader = false
+      enableRowIndex = false
     } = this.props;
 
     const {
@@ -107,7 +107,7 @@ export class Table extends React.Component<TableProps, TableState> {
           onColumnWidthChanged={this.onColumnWidthChanged}
           enableColumnReordering={enableColumnReordering}
           onColumnsReordered={this.onColumnsReordered}
-          enableRowHeader={enableRowHeader}
+          enableRowHeader={enableRowIndex}
           // numFrozenColumns={1}
           selectionModes={SelectionModes.ROWS_ONLY}
         >
@@ -130,6 +130,7 @@ export class Table extends React.Component<TableProps, TableState> {
                   index={columnIndex}
                   name={s.displayName}
                   nameRenderer={(name: string, index?: number) => <NameRenderer index={index} name={name} />}
+                  menuRenderer={(index?: number) => <div key={index} />}
                   menuIcon={"timeline-events"}
                 />
               )}
