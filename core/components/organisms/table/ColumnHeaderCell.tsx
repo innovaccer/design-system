@@ -178,16 +178,20 @@ export class ColumnHeaderCell extends AbstractPureComponent2<IColumnHeaderCellPr
       return undefined;
     }
 
-    const classes = classNames(Classes.TABLE_TH_MENU_CONTAINER, CLASSNAME_EXCLUDED_FROM_TEXT_MEASUREMENT, {
-      // [Classes.TABLE_TH_MENU_OPEN]: this.state.isActive,
+    const classes = classNames(Classes.TABLE_TH_MENU_CONTAINER, CLASSNAME_EXCLUDED_FROM_TEXT_MEASUREMENT, 'Table-menuWrapper', {
+      [Classes.TABLE_TH_MENU_OPEN]: this.state.isActive,
     });
 
     return (
       <div className={classes}>
         {/* <div className={Classes.TABLE_TH_MENU_CONTAINER_BACKGROUND} /> */}
         <Popover
-          trigger={<Icon name={menuIcon} />}
-          onToggle={(open: boolean, type?: string) => { }}
+          trigger={<Icon name={menuIcon} size={18} />}
+          position="bottom-end"
+          open={this.state.isActive}
+          onToggle={(open: boolean, _type?: string) => {
+            this.setState({ isActive: open });
+          }}
         // className={Classes.TABLE_TH_MENU}
         // modifiers={{ preventOverflow: { boundariesElement: "window" } }}
         // onOpened={this.handlePopoverOpened}
@@ -199,6 +203,6 @@ export class ColumnHeaderCell extends AbstractPureComponent2<IColumnHeaderCellPr
     );
   }
 
-  private handlePopoverOpened = () => this.setState({ isActive: true });
-  private handlePopoverClosing = () => this.setState({ isActive: false });
+  // private handlePopoverOpened = () => this.setState({ isActive: true });
+  // private handlePopoverClosing = () => this.setState({ isActive: false });
 }

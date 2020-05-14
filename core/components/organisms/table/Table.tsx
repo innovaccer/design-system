@@ -1,17 +1,19 @@
 import * as React from 'react';
-import { Card, Heading } from '@/index';
+import { Card, Heading, Text, Icon } from '@/index';
 import { Cell, Column, Table as BPTable, Utils, SelectionModes } from "@blueprintjs/table";
 // import * as BPClasses from '@blueprintjs/table/src/common/classes';
 
 import { ColumnHeaderCell } from './ColumnHeaderCell'
 
-type Data = Record<string, any>;
+export type Data = Record<string, any>;
 
-interface Schema {
+export interface Schema {
   name: string;
   displayName: string;
   width: number;
   comparator?: (a: any, b: any) => number;
+  pinned?: boolean;
+  hidden?: boolean;
 }
 
 export interface TableProps {
@@ -19,19 +21,21 @@ export interface TableProps {
   schema: Schema[];
   enableColumnResizing?: boolean;
   enableColumnReordering?: boolean;
+  enableColumnMenu?: boolean;
   enableRowIndex?: boolean;
 }
 
 interface TableState {
-  schema: Schema[]
+  schema: Schema[];
+  data: Data[];
 }
 
-interface INameRenderer {
+interface NameRenderer {
   name: string;
   index?: number;
 }
 
-const NameRenderer = (props: INameRenderer) => {
+const NameRenderer = (props: NameRenderer) => {
   const {
     name
   } = props;
@@ -43,17 +47,113 @@ const NameRenderer = (props: INameRenderer) => {
   )
 }
 
+interface HeaderMenu {
+  index: number;
+  _this: Table;
+}
+
+function sortColumn(index: number, type: 'asc' | 'desc') {
+  const {
+    schema,
+    data
+  } = this.state;
+
+  let newData = data;
+  const { comparator } = schema[index];
+  if (comparator) {
+    newData = data.sort(comparator);
+    if (type === 'desc') newData.reverse();
+  }
+
+  this.setState({
+    data: newData
+  });
+}
+
+function pinColumn(index: number, type: 'left' | 'rigth') {
+  const {
+    schema
+  } = this.state;
+
+  const newCellSchema = {
+    ...schema[index],
+    pinned: type === 'left' ? true : false
+  }
+
+  this.updateCellSchema(index, newCellSchema);
+}
+
+function hideColumn(index: number, value: boolean) {
+  const {
+    schema
+  } = this.state;
+
+  const newCellSchema = {
+    ...schema[index],
+    hidden: value,
+  }
+
+  this.updateCellSchema(index, newCellSchema);
+}
+
+const HeaderMenu = (props: HeaderMenu) => {
+  const {
+    index,
+    _this
+  } = props;
+
+  const {
+    schema
+  } = _this.state;
+
+  return (
+    <div className="Table-menu">
+      <ul className="Table-menuList">
+        {schema[index].comparator && (
+          <>
+            <li className="Table-menuItem" onClick={() => sortColumn.call(_this, index, 'asc')}>
+              <Icon name="arrow_downward" />
+              <Text>Sort Ascending</Text>
+            </li>
+            <li className="Table-menuItem" onClick={() => sortColumn.call(_this, index, 'desc')}>
+              <Icon name="arrow_upward" />
+              <Text>Sort Descending</Text>
+            </li>
+          </>
+        )}
+        <li className="Table-menuItem" onClick={() => pinColumn.call(_this, index, 'left')}>
+          <Icon name="first_page" />
+          <Text>Pin Left</Text>
+        </li>
+        <li className="Table-menuItem" onClick={() => pinColumn.call(_this, index, 'right')}>
+          <Icon name="last_page" />
+          <Text>Pin Right</Text>
+        </li>
+        <li className="Table-menuItem" onClick={() => hideColumn.call(_this, index, true)}>
+          <Icon name="cancel" />
+          <Text>Hide Column</Text>
+        </li>
+      </ul>
+    </div>
+  );
+}
+
+const sortPinned = (a: Schema, b: Schema) => {
+  return a.pinned && b.pinned ? 0 : a.pinned ? -1 : 1;
+}
+
 export class Table extends React.Component<TableProps, TableState> {
   constructor(props: TableProps) {
     super(props);
 
     this.state = {
-      schema: props.schema
+      schema: props.schema,
+      data: props.data
     }
   }
 
   updateCellSchema = (index: number, schemaUpdate: Partial<Schema>) => {
-    const { schema } = this.state;
+    const schema = this.state.schema.filter(s => !s.hidden).sort(sortPinned);
 
     this.setState({
       schema: [
@@ -72,7 +172,7 @@ export class Table extends React.Component<TableProps, TableState> {
   }
 
   onColumnsReordered = (oldIndex: number, newIndex: number, length: number) => {
-    const { schema } = this.state;
+    const schema = this.state.schema.filter(s => !s.hidden).sort(sortPinned);
 
     this.setState({
       schema: Utils.reorderArray(schema, oldIndex, newIndex, length)
@@ -81,15 +181,17 @@ export class Table extends React.Component<TableProps, TableState> {
 
   render() {
     const {
-      data,
       enableColumnReordering = true,
       enableColumnResizing = true,
-      enableRowIndex = false
+      enableRowIndex = false,
+      enableColumnMenu = true
     } = this.props;
 
     const {
-      schema
+      data
     } = this.state;
+
+    const schema = this.state.schema.filter(s => !s.hidden).sort(sortPinned);
 
     const columnWidths = schema.map(s => s.width);
 
@@ -106,7 +208,7 @@ export class Table extends React.Component<TableProps, TableState> {
           enableColumnReordering={enableColumnReordering}
           onColumnsReordered={this.onColumnsReordered}
           enableRowHeader={enableRowIndex}
-          // numFrozenColumns={1}
+          numFrozenColumns={schema.filter(s => s.pinned).length}
           selectionModes={SelectionModes.ROWS_ONLY}
         >
           {schema.map(s => (
@@ -122,15 +224,20 @@ export class Table extends React.Component<TableProps, TableState> {
                   {data[rowIndex][s.name]}
                 </Cell>
               )}
-              columnHeaderCellRenderer={(columnIndex: number) => (
-                <ColumnHeaderCell
-                  className="Table-headerCell"
-                  index={columnIndex}
-                  name={s.displayName}
-                  nameRenderer={(name: string, index?: number) => <NameRenderer index={index} name={name} />}
-                  menuRenderer={(index?: number) => <div key={index} className="Table-menu" />}
-                />
-              )}
+              columnHeaderCellRenderer={(columnIndex: number) => {
+                const attr: Record<string, any> = {};
+                if (enableColumnMenu) attr.menuRenderer = (index?: number) => (<HeaderMenu index={index} _this={this} />)
+                return (
+                  <ColumnHeaderCell
+                    className="Table-headerCell"
+                    index={columnIndex}
+                    name={s.displayName}
+                    nameRenderer={(name: string, index?: number) => <NameRenderer index={index} name={name} />}
+                    {...attr}
+                  // menuRenderer={}
+                  />
+                );
+              }}
             />
           ))}
         </BPTable>

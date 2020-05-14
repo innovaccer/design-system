@@ -16,3 +16,33 @@
     display: flex;
     align-items: center;
 }
+
+.Table-menuWrapper {
+    opacity: unset;
+}
+
+.Table-menu {
+    padding: var(--spacing-m);
+}
+
+.Table-menuList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: var(--spacing-8);
+}
+
+.Table-menuItem {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: var(--spacing-s) 0;
+}
+
+.Table-menuItem .Icon {
+    margin-right: var(--spacing-m);
+}
+
+.PopperWrapper-trigger {
+    cursor: pointer;
+}
