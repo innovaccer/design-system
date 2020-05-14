@@ -19,7 +19,7 @@ function globals() {
     'react-popper': 'reactPopper',
     'axios': 'axios',
     'recharts': 'recharts',
-    '@blueprintjs': '@blueprintjs'
+    // '@blueprintjs': '@blueprintjs'
   };
 }
 
@@ -43,7 +43,7 @@ export default {
     commonjs(),
 
     // Compile TypeScript/JavaScript files
-    babel({ extensions, include: ['core/**/*'] }),
+    babel({ extensions, include: ['core/**/*', "node_modules/@blueprintjs"] }),
 
     json()
   ],

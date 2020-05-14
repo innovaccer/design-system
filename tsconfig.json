@@ -38,9 +38,14 @@
       ]
     }
   },
+  "include": [
+    "core/*",
+    "node_modules/@blueprintjs/*"
+  ],
   "exclude": [
     "dist",
     "build",
+    "node_modules",
     "core/**/**/**/__tests__",
     ".github"
   ]

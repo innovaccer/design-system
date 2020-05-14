@@ -2,9 +2,6 @@ import * as React from 'react';
 import { Card, Heading } from '@/index';
 import { Cell, Column, Table as BPTable, Utils, SelectionModes } from "@blueprintjs/table";
 // import * as BPClasses from '@blueprintjs/table/src/common/classes';
-import "@blueprintjs/core/lib/css/blueprint.css";
-import "@blueprintjs/icons/lib/css/blueprint-icons.css";
-import '@blueprintjs/table/lib/css/table.css';
 
 import { ColumnHeaderCell } from './ColumnHeaderCell'
 
@@ -14,6 +11,7 @@ interface Schema {
   name: string;
   displayName: string;
   width: number;
+  comparator?: (a: any, b: any) => number;
 }
 
 export interface TableProps {
@@ -130,8 +128,7 @@ export class Table extends React.Component<TableProps, TableState> {
                   index={columnIndex}
                   name={s.displayName}
                   nameRenderer={(name: string, index?: number) => <NameRenderer index={index} name={name} />}
-                  menuRenderer={(index?: number) => <div key={index} />}
-                  menuIcon={"timeline-events"}
+                  menuRenderer={(index?: number) => <div key={index} className="Table-menu" />}
                 />
               )}
             />

@@ -14,6 +14,7 @@ const sources = [
   './src/variables/*.css',
   materialIcons,
   './src/core/*.css',
+  './src/blueprint/*.css',
   './src/components/*.css',
   './src/utils/*.css',
 ];

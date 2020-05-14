@@ -22,10 +22,10 @@ module.exports = {
         forkTsCheckerWebpackPluginOptions: {
           colors: false, // disables built-in colors in logger messages
         },
-        include: [
-          path.resolve(__dirname, '../core'),
-          path.resolve(__dirname, '../node_modules/@blueprintjs')
-        ],
+        // include: [
+        //   path.resolve(__dirname, '../core'),
+        //   path.resolve(__dirname, '../node_modules/@blueprintjs')
+        // ],
       },
     },
     {
