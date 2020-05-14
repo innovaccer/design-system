@@ -384,11 +384,13 @@ class Grid extends React.PureComponent<GridProps, State> {
         key={index}
       >
         {schema.map(({ width = 100, template, get, name }, j) => {
-          const defaultGet = row[name] ? (rowObj: SimpleObject) => ({ [name]: rowObj[name] }) : () => ({});
+          const defaultGet = row[name] !== undefined ? (rowObj: SimpleObject) => (
+            { [name]: rowObj[name] }
+          ) : () => ({});
           const defaultTemplate = (props: SimpleObject) => {
             return (
               <div className="TableGrid-cellWrapper">
-                {props[name] ? props[name] : props.rowIndex}
+                {props[name] !== undefined ? props[name] : props.rowIndex}
               </div>
             );
           };
