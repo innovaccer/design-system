@@ -15,7 +15,7 @@ export const align = () => {
           return (
             <div key={ind} style={{ marginRight: '10%' }}>
               <Text weight="strong">{alignment.charAt(0).toUpperCase() + alignment.slice(1)}</Text> <br /><br />
-              <Dropdown dropdownAlign={alignment} options={storyOptions} />
+              <Dropdown dropdownAlign={alignment} options={storyOptions} menu={true} />
             </div>
           );
         })

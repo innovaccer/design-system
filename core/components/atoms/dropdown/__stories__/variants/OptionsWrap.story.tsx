@@ -12,7 +12,7 @@ export const optionsWrap = () => {
       {
         optionsWrapBoolean.map((wrap, ind) => {
           return (
-            <div key={ind} style={{ marginRight: '5%' }}>
+            <div key={ind} style={{ marginRight: '5%', width: '128px' }}>
               <Text weight="strong">{wrap ? 'Options Wrapped' : 'Options Trimmed'}</Text> <br /><br />
               <Dropdown optionsWrap={wrap} options={storyWrapOptions} placeholder={'Select'} />
             </div>

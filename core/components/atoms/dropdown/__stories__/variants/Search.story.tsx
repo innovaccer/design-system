@@ -13,7 +13,7 @@ export const search = () => {
       </div>
       <div style={{ marginRight: '5%' }}>
         <Text weight="strong">{'Loading'}</Text><br /><br />
-        <Dropdown search={true} placeholder={'Select'} options={storyOptions} loadingOptions={true}/>
+        <Dropdown search={true} placeholder={'Select'} options={storyOptions} loading={true}/>
       </div>
       <div>
         <Text weight="strong">{'No Result'}</Text><br /><br />

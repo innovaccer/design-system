@@ -8,9 +8,9 @@ export const getOptions = (offset: number, limit: number, searchTerm: string, op
   return new Promise(resolve => {
     resolve({
       offset,
-      slicedOptions: searchedOptions.slice(offset, offset + limit),
+      options: searchedOptions.slice(offset, offset + limit),
       length: searchedOptions.length,
-      options: searchedOptions,
+      totalRecords: options.length,
     });
   });
 };

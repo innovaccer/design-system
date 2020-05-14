@@ -5,13 +5,16 @@ import { storyOptions } from '../../utils/Options';
 
 // CSF format story
 export const sections = () => {
-  const options = [
-    {
-      group: true,
-      label: 'Group 1',
-      items: storyOptions,
-    }
-  ];
+  const options: any[] = [];
+
+  for (let i = 1; i <= 10; i++) {
+    options.push({
+      label: `Option ${i}`,
+      value: `Option ${i}`,
+      group: 'Group'
+    });
+  }
+
   return (
     <div style={{ display: 'flex', minHeight: '280px' }}>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginRight: '5%' }}>

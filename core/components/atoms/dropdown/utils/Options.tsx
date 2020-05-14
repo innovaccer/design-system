@@ -1,32 +1,27 @@
 export let dropdownOptions: any[] = [];
-export const group1: any[] = [];
-const group2: any[] = [];
+export const storyOptions: any[] = [];
+
+for (let i = 1; i <= 10; i++) {
+  storyOptions.push({
+    label: `Option ${i}`,
+    value: `Option ${i}`,
+  });
+}
 
 for (let i = 1; i <= 40; i++) {
-  group1.push({
+  dropdownOptions.push({
     label: `Option ${i}`,
     value: `Option ${i}`,
+    group: 'Group 1'
   });
 }
-
 for (let i = 41; i <= 50; i++) {
-  group2.push({
+  dropdownOptions.push({
     label: `Option ${i}`,
     value: `Option ${i}`,
+    group: 'Group 2'
   });
 }
-
-dropdownOptions.push({
-  group: true,
-  label: 'Group 1',
-  items: group1,
-});
-
-dropdownOptions.push({
-  group: true,
-  label: 'Group 2',
-  items: group2,
-});
 
 export const selectedStoryOptions: any[] = [];
 
@@ -47,8 +42,6 @@ for (let i = 1; i <= 10; i++) {
     selected: i === 2 || i === 7,
   });
 }
-
-export const storyOptions = group1.slice(0, 10);
 
 export const storyWrapOptions = [
   {

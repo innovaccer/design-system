@@ -3,7 +3,7 @@
 .Checkbox {
     display: flex;
     cursor: pointer;
-    vertical-align: middle;
+    align-items: center;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
