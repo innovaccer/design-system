@@ -125,6 +125,26 @@ export class ColumnHeaderCell extends AbstractPureComponent2<IColumnHeaderCellPr
     );
   }
 
+  private filterMenu() {
+    const { _this } = this.props;
+
+    return (
+      <Popover
+        trigger={<Icon name="filter_list" size={18} />}
+        position="bottom-end"
+        open={this.state.isActive}
+        onToggle={(open: boolean, _type?: string) => {
+          this.setState({ isActive: open });
+        }}
+      // className={Classes.TABLE_TH_MENU}
+      // modifiers={{ preventOverflow: { boundariesElement: "window" } }}
+      // onOpened={this.handlePopoverOpened}
+      // onClosing={this.handlePopoverClosing}
+      >
+      </Popover>
+    )
+  }
+
   private renderName() {
     const { index, loading, name = '', nameRenderer, reorderHandle } = this.props;
 
@@ -154,6 +174,7 @@ export class ColumnHeaderCell extends AbstractPureComponent2<IColumnHeaderCellPr
           {reorderHandle}
           {dropdownMenu}
           <div className={Classes.TABLE_COLUMN_NAME_TEXT}>{nameComponent}</div>
+          {/* {this.filterMenu()} */}
         </div>
       );
     }

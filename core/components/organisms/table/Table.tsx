@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Card, Heading, Text, Icon } from '@/index';
+import { DropdownProps } from '@/index.type';
 import { Cell, Column, Table as BPTable, Utils, SelectionModes } from "@blueprintjs/table";
 // import * as BPClasses from '@blueprintjs/table/src/common/classes';
 
@@ -14,6 +15,7 @@ export interface Schema {
   comparator?: (a: any, b: any) => number;
   pinned?: boolean;
   hidden?: boolean;
+  filterList?: DropdownProps['options'];
 }
 
 export interface TableProps {
@@ -70,30 +72,20 @@ function sortColumn(index: number, type: 'asc' | 'desc') {
   });
 }
 
-function pinColumn(index: number, type: 'left' | 'rigth') {
-  const {
-    schema
-  } = this.state;
-
-  const newCellSchema = {
-    ...schema[index],
+function pinColumn(index: number, type: 'left' | 'right') {
+  const schemaUpdate = {
     pinned: type === 'left' ? true : false
   }
 
-  this.updateCellSchema(index, newCellSchema);
+  this.updateCellSchema(index, schemaUpdate);
 }
 
 function hideColumn(index: number, value: boolean) {
-  const {
-    schema
-  } = this.state;
-
-  const newCellSchema = {
-    ...schema[index],
+  const schemaUpdate = {
     hidden: value,
   }
 
-  this.updateCellSchema(index, newCellSchema);
+  this.updateCellSchema(index, schemaUpdate);
 }
 
 const HeaderMenu = (props: HeaderMenu) => {
@@ -155,15 +147,17 @@ export class Table extends React.Component<TableProps, TableState> {
   updateCellSchema = (index: number, schemaUpdate: Partial<Schema>) => {
     const schema = this.state.schema.filter(s => !s.hidden).sort(sortPinned);
 
+    const newSchema = [
+      ...schema.slice(0, index),
+      {
+        ...schema[index],
+        ...schemaUpdate
+      },
+      ...schema.slice(index + 1)
+    ];
+
     this.setState({
-      schema: [
-        ...schema.slice(0, index),
-        {
-          ...schema[index],
-          ...schemaUpdate
-        },
-        ...schema.slice(index + 1)
-      ]
+      schema: newSchema
     })
   }
 
@@ -226,7 +220,7 @@ export class Table extends React.Component<TableProps, TableState> {
               )}
               columnHeaderCellRenderer={(columnIndex: number) => {
                 const attr: Record<string, any> = {};
-                if (enableColumnMenu) attr.menuRenderer = (index?: number) => (<HeaderMenu index={index} _this={this} />)
+                if (enableColumnMenu) attr.menuRenderer = (_index?: number) => (<HeaderMenu index={columnIndex} _this={this} />)
                 return (
                   <ColumnHeaderCell
                     className="Table-headerCell"
