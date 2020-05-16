@@ -9,6 +9,7 @@ export const all = () => {
     <Table
       schema={schema}
       data={data}
+      pageSize={15}
     />
   );
 }

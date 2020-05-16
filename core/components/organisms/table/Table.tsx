@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Card, Heading, Text, Icon, Dropdown } from '@/index';
-import { DropdownProps, PaginationProps } from '@/index.type';
+import { DropdownProps } from '@/index.type';
 import { Cell, Column, Table as BPTable, Utils, SelectionModes } from "@blueprintjs/table";
 // import * as BPClasses from '@blueprintjs/table/src/common/classes';
 
@@ -28,13 +28,15 @@ export interface TableProps {
   enableColumnMenu?: boolean;
   enableRowIndex?: boolean;
   withPagination?: boolean;
+  page?: number;
   pageSize?: number;
-  onPageChange?: PaginationProps["onPageChange"];
+  // onPageChange?: PaginationProps["onPageChange"];
 }
 
 interface TableState {
   schema: Schema[];
   data: Data[];
+  page: number;
 }
 
 interface NameRenderer {
@@ -155,7 +157,8 @@ export class Table extends React.Component<TableProps, TableState> {
 
     this.state = {
       schema: props.schema,
-      data: translateData(props.schema, props.data)
+      data: translateData(props.schema, props.data),
+      page: props.page || 1,
     }
   }
 
@@ -215,25 +218,30 @@ export class Table extends React.Component<TableProps, TableState> {
       enableRowIndex = false,
       enableColumnMenu = true,
       withPagination = true,
-      pageSize = 10,
-      onPageChange = (page: number) => console.log(page)
+      pageSize = 10
     } = this.props;
 
     const {
-      data
+      data,
+      page
     } = this.state;
 
     const schema = this.state.schema.filter(s => !s.hidden).sort(sortPinned);
 
     const columnWidths = schema.map(s => s.width);
 
+    const totalPages = Math.ceil(data.length / pageSize);
+    const numRows = withPagination ? data.length-((page-1)*pageSize) > pageSize ? pageSize : data.length-(page-1)*pageSize : data.length;
+
     return (
       <Card
         shadow="light"
       >
         <BPTable
+          key={page}
           className="Table"
-          numRows={data.length}
+          numRows={numRows}
+          // numRows={data.length}
           columnWidths={columnWidths}
           enableColumnResizing={enableColumnResizing}
           onColumnWidthChanged={this.onColumnWidthChanged}
@@ -246,16 +254,18 @@ export class Table extends React.Component<TableProps, TableState> {
           {schema.map(s => (
             <Column
               name={s.displayName}
-              cellRenderer={(rowIndex: number, columnIndex: number) => (
-                <Cell
-                  rowIndex={rowIndex}
-                  columnIndex={columnIndex}
-                  interactive={true}
-                  className="Table-cell"
-                >
-                  {data[rowIndex][s.name]}
-                </Cell>
-              )}
+              cellRenderer={(rowIndex: number, columnIndex: number) => {
+                return (
+                  <Cell
+                    rowIndex={rowIndex}
+                    columnIndex={columnIndex}
+                    interactive={true}
+                    className="Table-cell"
+                  >
+                    {withPagination ? data[(page - 1) * pageSize + rowIndex][s.name] : data[rowIndex][s.name]}
+                  </Cell>
+                );
+              }}
               columnHeaderCellRenderer={(columnIndex: number) => {
                 const attr: Record<string, any> = {};
                 if (enableColumnMenu) {
@@ -308,7 +318,16 @@ export class Table extends React.Component<TableProps, TableState> {
         </BPTable>
         {withPagination && (
           <div className="Table-pagination">
-            <Pagination type="jump" totalPages={Math.ceil(data.length / pageSize)} onPageChange={onPageChange} />
+            <Pagination
+              type="jump"
+              totalPages={totalPages}
+              onPageChange={(page: number) => {
+                // console.log(page);
+                this.setState({
+                  page: page
+                })
+              }}
+            />
           </div>
         )}
       </Card>
