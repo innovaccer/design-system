@@ -16,6 +16,7 @@ import * as Classes from "@blueprintjs/table/src/common/classes";
 import { LoadableContent } from "@blueprintjs/table/src/common/loadableContent";
 import { CLASSNAME_EXCLUDED_FROM_TEXT_MEASUREMENT } from "@blueprintjs/table/src/common/utils";
 import { HeaderCell, IHeaderCellProps } from "@blueprintjs/table/src/headers/headerCell";
+import Dropdown from '@/components/atoms/dropdown';
 
 export interface IColumnNameProps {
   /**
@@ -55,10 +56,16 @@ export interface IColumnHeaderCellProps extends IHeaderCellProps, IColumnNamePro
    * @default "more_vert"
    */
   menuIcon?: string;
+
+  /**
+   * Filter renderer
+   */
+  filterRenderer?: React.ReactNode;
 }
 
 export interface IColumnHeaderCellState {
-  isActive?: boolean;
+  menu?: boolean;
+  filter?: boolean
 }
 
 export function HorizontalCellDivider(): JSX.Element {
@@ -67,7 +74,7 @@ export function HorizontalCellDivider(): JSX.Element {
 
 export class ColumnHeaderCell extends AbstractPureComponent2<IColumnHeaderCellProps, IColumnHeaderCellState> {
   public static defaultProps: IColumnHeaderCellProps = {
-    isActive: false,
+    menu: false,
     menuIcon: "more_vert",
   };
 
@@ -88,7 +95,8 @@ export class ColumnHeaderCell extends AbstractPureComponent2<IColumnHeaderCellPr
   }
 
   public state = {
-    isActive: false,
+    menu: false,
+    filter: false,
   };
 
   public render() {
@@ -101,6 +109,7 @@ export class ColumnHeaderCell extends AbstractPureComponent2<IColumnHeaderCellPr
       // from IColumnNameProps
       name,
       nameRenderer,
+      menuRenderer,
 
       // from IHeaderProps
       ...spreadableProps
@@ -126,22 +135,21 @@ export class ColumnHeaderCell extends AbstractPureComponent2<IColumnHeaderCellPr
   }
 
   private filterMenu() {
-    const { _this } = this.props;
+    const { _this, filterRenderer } = this.props;
 
     return (
-      <Popover
-        trigger={<Icon name="filter_list" size={18} />}
-        position="bottom-end"
-        open={this.state.isActive}
-        onToggle={(open: boolean, _type?: string) => {
-          this.setState({ isActive: open });
-        }}
-      // className={Classes.TABLE_TH_MENU}
-      // modifiers={{ preventOverflow: { boundariesElement: "window" } }}
-      // onOpened={this.handlePopoverOpened}
-      // onClosing={this.handlePopoverClosing}
-      >
-      </Popover>
+      // <Popover
+      //   trigger={<Icon name="filter_list" size={18} />}
+      //   position="bottom-end"
+      //   open={this.state.filter}
+      //   onToggle={(open: boolean, _type?: string) => {
+      //     this.setState({ filter: open });
+      //   }}
+      // >
+      <>
+        {filterRenderer}
+      </>
+      // </Popover>
     )
   }
 
@@ -157,9 +165,11 @@ export class ColumnHeaderCell extends AbstractPureComponent2<IColumnHeaderCellPr
       </LoadableContent>
     );
 
+    const wrapperClass = classNames(Classes.TABLE_COLUMN_NAME, "TableHeader-nameWrapper");
+
     if (this.context.enableColumnInteractionBar) {
       return (
-        <div className={Classes.TABLE_COLUMN_NAME} title={name}>
+        <div className={wrapperClass} title={name}>
           <div className={Classes.TABLE_INTERACTION_BAR}>
             {reorderHandle}
             {dropdownMenu}
@@ -170,11 +180,11 @@ export class ColumnHeaderCell extends AbstractPureComponent2<IColumnHeaderCellPr
       );
     } else {
       return (
-        <div className={Classes.TABLE_COLUMN_NAME} title={name}>
+        <div className={wrapperClass} title={name}>
           {reorderHandle}
-          {dropdownMenu}
           <div className={Classes.TABLE_COLUMN_NAME_TEXT}>{nameComponent}</div>
-          {/* {this.filterMenu()} */}
+          {this.filterMenu()}
+          {dropdownMenu}
         </div>
       );
     }
@@ -200,30 +210,16 @@ export class ColumnHeaderCell extends AbstractPureComponent2<IColumnHeaderCellPr
     }
 
     const classes = classNames(Classes.TABLE_TH_MENU_CONTAINER, CLASSNAME_EXCLUDED_FROM_TEXT_MEASUREMENT, 'Table-menuWrapper', {
-      [Classes.TABLE_TH_MENU_OPEN]: this.state.isActive,
+      // [Classes.TABLE_TH_MENU_OPEN]: this.state.menu,
     });
 
     return (
       <div className={classes}>
-        {/* <div className={Classes.TABLE_TH_MENU_CONTAINER_BACKGROUND} /> */}
-        <Popover
-          trigger={<Icon name={menuIcon} size={18} />}
-          position="bottom-end"
-          open={this.state.isActive}
-          onToggle={(open: boolean, _type?: string) => {
-            this.setState({ isActive: open });
-          }}
-        // className={Classes.TABLE_TH_MENU}
-        // modifiers={{ preventOverflow: { boundariesElement: "window" } }}
-        // onOpened={this.handlePopoverOpened}
-        // onClosing={this.handlePopoverClosing}
-        >
-          {menuRenderer(index)}
-        </Popover>
+        {menuRenderer(index)}
       </div>
     );
   }
 
-  // private handlePopoverOpened = () => this.setState({ isActive: true });
-  // private handlePopoverClosing = () => this.setState({ isActive: false });
+  // private handlePopoverOpened = () => this.setState({ menu: true });
+  // private handlePopoverClosing = () => this.setState({ menu: false });
 }

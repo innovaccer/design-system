@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Card, Heading, Text, Icon } from '@/index';
-import { DropdownProps } from '@/index.type';
+import { Card, Heading, Text, Icon, Dropdown } from '@/index';
+import { DropdownProps, PaginationProps } from '@/index.type';
 import { Cell, Column, Table as BPTable, Utils, SelectionModes } from "@blueprintjs/table";
 // import * as BPClasses from '@blueprintjs/table/src/common/classes';
 
 import { ColumnHeaderCell } from './ColumnHeaderCell'
+import Pagination from '@/components/molecules/pagination';
 
 export type Data = Record<string, any>;
 
@@ -12,6 +13,7 @@ export interface Schema {
   name: string;
   displayName: string;
   width: number;
+  get?: (a: Data) => any;
   comparator?: (a: any, b: any) => number;
   pinned?: boolean;
   hidden?: boolean;
@@ -25,6 +27,9 @@ export interface TableProps {
   enableColumnReordering?: boolean;
   enableColumnMenu?: boolean;
   enableRowIndex?: boolean;
+  withPagination?: boolean;
+  pageSize?: number;
+  onPageChange?: PaginationProps["onPageChange"];
 }
 
 interface TableState {
@@ -43,9 +48,7 @@ const NameRenderer = (props: NameRenderer) => {
   } = props;
 
   return (
-    <div className={`Table-headerCell`}>
-      <Heading>{name}</Heading>
-    </div>
+    <Heading>{name}</Heading>
   )
 }
 
@@ -134,13 +137,25 @@ const sortPinned = (a: Schema, b: Schema) => {
   return a.pinned && b.pinned ? 0 : a.pinned ? -1 : 1;
 }
 
+function translateData(schema: Schema[], data: Data[]): Data[] {
+  const transSchema = schema.filter(s => s.get);
+  return data.map(d => {
+    const translatedData = transSchema.reduce((out, curr) => {
+      out[curr.name] = curr.get(d);
+      return out;
+    }, d);
+
+    return translatedData;
+  })
+}
+
 export class Table extends React.Component<TableProps, TableState> {
   constructor(props: TableProps) {
     super(props);
 
     this.state = {
       schema: props.schema,
-      data: props.data
+      data: translateData(props.schema, props.data)
     }
   }
 
@@ -173,12 +188,35 @@ export class Table extends React.Component<TableProps, TableState> {
     });
   }
 
+  onMenuChange = (index: number, selected: any) => {
+    switch (selected) {
+      case 'sortAsc':
+        sortColumn.call(this, index, 'asc');
+        break;
+      case 'sortDesc':
+        sortColumn.call(this, index, 'desc');
+        break;
+      case 'pinLeft':
+        pinColumn.call(this, index, 'left');
+        break;
+      case 'pinRight':
+        pinColumn.call(this, index, 'right');
+        break;
+      case 'hide':
+        hideColumn.call(this, index, true);
+        break;
+    }
+  }
+
   render() {
     const {
       enableColumnReordering = true,
       enableColumnResizing = true,
       enableRowIndex = false,
-      enableColumnMenu = true
+      enableColumnMenu = true,
+      withPagination = true,
+      pageSize = 10,
+      onPageChange = (page: number) => console.log(page)
     } = this.props;
 
     const {
@@ -220,7 +258,41 @@ export class Table extends React.Component<TableProps, TableState> {
               )}
               columnHeaderCellRenderer={(columnIndex: number) => {
                 const attr: Record<string, any> = {};
-                if (enableColumnMenu) attr.menuRenderer = (_index?: number) => (<HeaderMenu index={columnIndex} _this={this} />)
+                if (enableColumnMenu) {
+                  // attr.menuRenderer = (_index?: number) => (<HeaderMenu index={columnIndex} _this={this} />)
+                  attr.menuRenderer = (_index?: number) => {
+                    const sortOptions = [
+                      { label: "Sort Ascending", value: "sortAsc", icon: "arrow_downward" },
+                      { label: "Sort Descending", value: "sortDesc", icon: "arrow_upward" },
+                    ]
+                    let options = [
+                      { label: "Pin Left", value: "pinLeft", icon: "first_page" },
+                      { label: "Pin Right", value: "pinRight", icon: "last_page" },
+                      { label: "Hide Column", value: "hide", icon: "cancel" },
+                    ]
+                    if (s.comparator) options = [...sortOptions, ...options];
+                    return (
+                      <Dropdown
+                        key={s.name}
+                        options={options}
+                        dropdownAlign={"left"}
+                        onChange={(selected: any) => this.onMenuChange(columnIndex, selected)}
+                      />
+                    );
+                  }
+                }
+                if (s.filterList) {
+                  attr.filterRenderer = (
+                    <Dropdown
+                      key={s.name}
+                      checkboxes={true}
+                      options={s.filterList}
+                      icon="filter_list"
+                      dropdownAlign={"left"}
+                    // placeholder={"Filters"}
+                    />
+                  );
+                }
                 return (
                   <ColumnHeaderCell
                     className="Table-headerCell"
@@ -228,13 +300,17 @@ export class Table extends React.Component<TableProps, TableState> {
                     name={s.displayName}
                     nameRenderer={(name: string, index?: number) => <NameRenderer index={index} name={name} />}
                     {...attr}
-                  // menuRenderer={}
                   />
                 );
               }}
             />
           ))}
         </BPTable>
+        {withPagination && (
+          <div className="Table-pagination">
+            <Pagination type="jump" totalPages={Math.ceil(data.length / pageSize)} onPageChange={onPageChange} />
+          </div>
+        )}
       </Card>
     );
   }
