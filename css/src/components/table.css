@@ -81,3 +81,8 @@
     display: flex;
     justify-content: center;
 }
+
+.Table-nameRenderer {
+    display: flex;
+    align-items: center;
+}

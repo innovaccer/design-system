@@ -10474,6 +10474,11 @@ Licensed under the Apache License, Version 2.0.
     display: flex;
     justify-content: center;
 }
+
+.Table-nameRenderer {
+    display: flex;
+    align-items: center;
+}
 /* tabs */
 
 .TabsWrapper {

@@ -33,24 +33,38 @@ export interface TableProps {
   // onPageChange?: PaginationProps["onPageChange"];
 }
 
+interface StateSchema extends Schema {
+  sorted?: 'asc' | 'desc'
+}
+
 interface TableState {
-  schema: Schema[];
+  schema: StateSchema[];
   data: Data[];
   page: number;
 }
 
 interface NameRenderer {
-  name: string;
-  index?: number;
+  schema: StateSchema;
 }
 
 const NameRenderer = (props: NameRenderer) => {
   const {
-    name
+    schema
   } = props;
 
+  console.log(schema.sorted);
+
   return (
-    <Heading>{name}</Heading>
+    <div className="Table-nameRenderer">
+      <Heading>{schema.displayName}</Heading>
+      {schema.sorted ? schema.sorted === 'asc' ? (
+        <Icon name="expand_more" />
+      ) : (
+        <Icon name="expand_less" />
+      ) : (
+        <Icon name="unfold_more" />
+      )}
+    </div>
   )
 }
 
@@ -72,6 +86,9 @@ function sortColumn(index: number, type: 'asc' | 'desc') {
     if (type === 'desc') newData.reverse();
   }
 
+  this.updateCellSchema(index, {
+    sorted: type
+  })
   this.setState({
     data: newData
   });
@@ -308,7 +325,7 @@ export class Table extends React.Component<TableProps, TableState> {
                     className="Table-headerCell"
                     index={columnIndex}
                     name={s.displayName}
-                    nameRenderer={(name: string, index?: number) => <NameRenderer index={index} name={name} />}
+                    nameRenderer={(_name: string, _index?: number) => <NameRenderer schema={s} />}
                     {...attr}
                   />
                 );
