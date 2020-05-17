@@ -10,9 +10,13 @@ export interface CardProps {
    */
   shadow?: Shadow;
   /**
-   * Adds CSS to `card` component
+   * Adds CSS to `Card` component
    */
   style?: React.CSSProperties;
+  /**
+   * Adds className to `Card` component
+   */
+  className?: string;
   /**
    * Will be wrapped in a `Card` container
    */
@@ -23,12 +27,14 @@ export const Card = (props: CardProps) => {
   const {
     shadow = 'medium',
     children,
+    className,
     ...rest
   } = props;
 
   const classes = classNames({
     Card: true,
     [`Card--shadow-${shadow}`]: shadow,
+    [`${className}`]: className
   });
 
   return (

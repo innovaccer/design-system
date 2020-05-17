@@ -16,11 +16,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
@@ -38,11 +34,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
@@ -526,11 +518,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
@@ -548,11 +536,7 @@ exports[`Calendar component
         className="Calendar-headerIcon Calendar-headerIcon--disabled"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
@@ -1036,11 +1020,7 @@ exports[`Calendar component
         className="Calendar-headerIcon Calendar-headerIcon--disabled"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
@@ -1058,11 +1038,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
@@ -1546,11 +1522,7 @@ exports[`Calendar component
         className="Calendar-headerIcon Calendar-headerIcon--disabled"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
@@ -1568,11 +1540,7 @@ exports[`Calendar component
         className="Calendar-headerIcon Calendar-headerIcon--disabled"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
@@ -2056,11 +2024,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
@@ -2078,11 +2042,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
@@ -2566,11 +2526,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
@@ -2588,11 +2544,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
@@ -3115,11 +3067,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
@@ -3137,11 +3085,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
@@ -3625,11 +3569,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
@@ -3647,11 +3587,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
@@ -4135,11 +4071,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
@@ -4157,11 +4089,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
@@ -4645,11 +4573,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
@@ -4667,11 +4591,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
@@ -5194,11 +5114,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
@@ -5216,11 +5132,7 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          helpers={
-            Array [
-              "p-4",
-            ]
-          }
+          className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}

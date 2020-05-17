@@ -88,7 +88,7 @@ exports[`RangePicker component
       groupXS="1"
     >
       <Column
-        utilityClass="RangePicker-input RangePicker-input--startDate"
+        className="RangePicker-input RangePicker-input--startDate"
       >
         <ForwardRef
           error={false}
@@ -118,7 +118,7 @@ exports[`RangePicker component
         />
       </Column>
       <Column
-        utilityClass="RangePicker-input RangePicker-input--endDate"
+        className="RangePicker-input RangePicker-input--endDate"
       >
         <ForwardRef
           error={false}
@@ -170,7 +170,7 @@ exports[`RangePicker component
       groupXS="1"
     >
       <Column
-        utilityClass="RangePicker-input RangePicker-input--startDate"
+        className="RangePicker-input RangePicker-input--startDate"
       >
         <ForwardRef
           error={false}
@@ -200,7 +200,7 @@ exports[`RangePicker component
         />
       </Column>
       <Column
-        utilityClass="RangePicker-input RangePicker-input--endDate"
+        className="RangePicker-input RangePicker-input--endDate"
       >
         <ForwardRef
           error={false}
@@ -291,7 +291,7 @@ exports[`RangePicker component
       groupXS="1"
     >
       <Column
-        utilityClass="RangePicker-input RangePicker-input--startDate"
+        className="RangePicker-input RangePicker-input--startDate"
       >
         <ForwardRef
           error={false}
@@ -321,7 +321,7 @@ exports[`RangePicker component
         />
       </Column>
       <Column
-        utilityClass="RangePicker-input RangePicker-input--endDate"
+        className="RangePicker-input RangePicker-input--endDate"
       >
         <ForwardRef
           error={false}

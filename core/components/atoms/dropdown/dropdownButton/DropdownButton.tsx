@@ -73,7 +73,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
           {(inlineLabel && !icon) && (
             <div className={labelClass}> {inlineLabel.charAt(0).toUpperCase()}{inlineLabel.slice(1)} </div>
           )}
-          {(icon && !inlineLabel) && <Icon appearance={appearance} helpers={['mr-4']} name={icon} />}
+          {(icon && !inlineLabel) && <Icon appearance={appearance} className="mr-4" name={icon} />}
           <div className={'DropdownButton-text'}>{value && `${value.charAt(0).toUpperCase()}${value.slice(1)}`}</div>
         </div>
       )}

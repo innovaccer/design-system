@@ -389,7 +389,7 @@ export const Calendar = (props: CalendarProps) => {
         <Icon
           name={`arrow_${type === 'next' ? 'forward' : 'back'}`}
           size={16}
-          helpers={['p-4']}
+          className="p-4"
           onClick={navClickHandler}
         />
       </div>
