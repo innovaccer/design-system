@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Card, Heading, Text, Icon, Dropdown } from '@/index';
 import { DropdownProps } from '@/index.type';
-import { Cell, Column, Table as BPTable, Utils, SelectionModes, TableLoadingOption, IRegion } from "@blueprintjs/table";
+import { Cell, Column, Table as BPTable, Utils, SelectionModes, IRegion } from "@blueprintjs/table";
 // import * as BPClasses from '@blueprintjs/table/src/common/classes';
 
 import { ColumnHeaderCell } from './ColumnHeaderCell'
@@ -316,7 +316,7 @@ export class Table extends React.Component<TableProps, TableState> {
           key={page}
           className="Table"
           numRows={numRows}
-          loadingOptions={async && data.length ? [] : [TableLoadingOption.CELLS]}
+          // loadingOptions={async && data.length ? [] : [TableLoadingOption.CELLS]}
           // selectedRegions={[{rows: [0, 0]}]}
           onSelection={(selectedRegions: IRegion[]) => {console.log(selectedRegions)}}
           columnWidths={columnWidths}
@@ -326,7 +326,7 @@ export class Table extends React.Component<TableProps, TableState> {
           onColumnsReordered={this.onColumnsReordered}
           enableRowHeader={enableRowIndex}
           numFrozenColumns={schema.filter(s => s.pinned).length}
-          selectionModes={SelectionModes.ROWS_AND_CELLS}
+          selectionModes={SelectionModes.ROWS_ONLY}
         >
           {schema.map(s => (
             <Column
@@ -336,8 +336,10 @@ export class Table extends React.Component<TableProps, TableState> {
                 return (
                   <Cell
                     rowIndex={rowIndex}
+                    loading={!data[index]}
                     columnIndex={columnIndex}
                     interactive={true}
+                    truncated={false}
                     className="Table-cell"
                   >
                     {data[index] ? data[index][s.name] : ""}
@@ -362,6 +364,7 @@ export class Table extends React.Component<TableProps, TableState> {
                     return (
                       <Dropdown
                         key={s.name}
+                        menu={true}
                         options={options}
                         dropdownAlign={"left"}
                         onChange={(selected: any) => this.onMenuChange(columnIndex, selected)}
@@ -373,6 +376,7 @@ export class Table extends React.Component<TableProps, TableState> {
                   attr.filterRenderer = (
                     <Dropdown
                       key={s.name}
+                      menu={true}
                       checkboxes={true}
                       options={s.filterList}
                       icon="filter_list"

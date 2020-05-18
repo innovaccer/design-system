@@ -10417,6 +10417,7 @@ Licensed under the Apache License, Version 2.0.
 .Table-headerCell {
     display: flex;
     align-items: center;
+    background: white;
 }
 
 .Table-menuWrapper {
@@ -10468,6 +10469,13 @@ Licensed under the Apache License, Version 2.0.
 
 .Table-cell {
     box-shadow: none;
+    border-bottom: var(--border);
+    /* height: auto !important; */
+}
+
+.Table-cell > div {
+    display: flex;
+    flex-direction: column;
 }
 
 .Table-pagination {

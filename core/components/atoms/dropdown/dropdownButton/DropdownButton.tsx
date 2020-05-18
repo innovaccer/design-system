@@ -44,7 +44,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
 
   const buttonClass = classNames({
     ['Button']: true,
-    ['Button--basic']: true,
+    ['Button--transparent']: true,
     ['Button--square']: !children,
     ['DropdownButton']: true,
     [`DropdownButton--${size}`]: size,

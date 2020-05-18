@@ -24,6 +24,7 @@
 .Table-headerCell {
     display: flex;
     align-items: center;
+    background: white;
 }
 
 .Table-menuWrapper {
@@ -75,6 +76,13 @@
 
 .Table-cell {
     box-shadow: none;
+    border-bottom: var(--border);
+    /* height: auto !important; */
+}
+
+.Table-cell > div {
+    display: flex;
+    flex-direction: column;
 }
 
 .Table-pagination {
