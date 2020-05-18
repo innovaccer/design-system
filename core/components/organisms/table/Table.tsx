@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Card, Heading, Text, Icon, Dropdown } from '@/index';
 import { DropdownProps } from '@/index.type';
-import { Cell, Column, Table as BPTable, Utils, SelectionModes } from "@blueprintjs/table";
+import { Cell, Column, Table as BPTable, Utils, SelectionModes, TableLoadingOption, IRegion } from "@blueprintjs/table";
 // import * as BPClasses from '@blueprintjs/table/src/common/classes';
 
 import { ColumnHeaderCell } from './ColumnHeaderCell'
@@ -20,6 +20,12 @@ export interface Schema {
   filterList?: DropdownProps['options'];
 }
 
+type FetchDataProps = {
+  page: number,
+  pageSize: number,
+  filter?: any[]
+};
+
 export interface TableProps {
   data: Data[];
   schema: Schema[];
@@ -30,6 +36,11 @@ export interface TableProps {
   withPagination?: boolean;
   page?: number;
   pageSize?: number;
+  async?: boolean;
+  fetchData?: (val: FetchDataProps) => Promise<{
+    totalRecords: number,
+    data: Data[]
+  }>
   // onPageChange?: PaginationProps["onPageChange"];
 }
 
@@ -41,6 +52,7 @@ interface TableState {
   schema: StateSchema[];
   data: Data[];
   page: number;
+  totalPages?: number;
 }
 
 interface NameRenderer {
@@ -52,18 +64,16 @@ const NameRenderer = (props: NameRenderer) => {
     schema
   } = props;
 
-  console.log(schema.sorted);
-
   return (
     <div className="Table-nameRenderer">
       <Heading>{schema.displayName}</Heading>
       {schema.sorted ? schema.sorted === 'asc' ? (
         <Icon name="expand_more" />
       ) : (
-        <Icon name="expand_less" />
-      ) : (
-        <Icon name="unfold_more" />
-      )}
+          <Icon name="expand_less" />
+        ) : (
+          <Icon name="unfold_more" />
+        )}
     </div>
   )
 }
@@ -172,10 +182,50 @@ export class Table extends React.Component<TableProps, TableState> {
   constructor(props: TableProps) {
     super(props);
 
+    const {
+      schema,
+      data,
+      async,
+      page,
+    } = props;
+
     this.state = {
-      schema: props.schema,
-      data: translateData(props.schema, props.data),
-      page: props.page || 1,
+      schema: schema,
+      data: !async && translateData(schema, data),
+      page: page || 1,
+    }
+  }
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  componentDidUpdate(_prevProps: TableProps, prevState: TableState) {
+    if(prevState.page !== this.state.page) {
+      this.fetchData();
+    }
+  }
+
+  fetchData = () => {
+    const {
+      async,
+      pageSize,
+      fetchData
+    } = this.props;
+
+    const {
+      schema,
+      page
+    } = this.state;
+
+    if (async) {
+      fetchData({ page, pageSize })
+        .then(({totalRecords, data}) => {
+          this.setState({
+            data: translateData(schema, data),
+            totalPages: Math.ceil(totalRecords/pageSize)
+          })
+        });
     }
   }
 
@@ -235,20 +285,28 @@ export class Table extends React.Component<TableProps, TableState> {
       enableRowIndex = false,
       enableColumnMenu = true,
       withPagination = true,
-      pageSize = 10
+      pageSize = 10,
+      async
     } = this.props;
 
     const {
       data,
-      page
+      page,
     } = this.state;
 
     const schema = this.state.schema.filter(s => !s.hidden).sort(sortPinned);
 
     const columnWidths = schema.map(s => s.width);
 
-    const totalPages = Math.ceil(data.length / pageSize);
-    const numRows = withPagination ? data.length-((page-1)*pageSize) > pageSize ? pageSize : data.length-(page-1)*pageSize : data.length;
+    const totalPages = async ? this.state.totalPages || 1 : Math.ceil(data.length / pageSize);
+
+    const numRows = async ? 
+      pageSize
+      : withPagination ?
+        data.length - ((page - 1) * pageSize) > pageSize ?
+          pageSize
+          : data.length - (page - 1) * pageSize
+        : data.length;
 
     return (
       <Card
@@ -258,7 +316,9 @@ export class Table extends React.Component<TableProps, TableState> {
           key={page}
           className="Table"
           numRows={numRows}
-          // numRows={data.length}
+          loadingOptions={async && data.length ? [] : [TableLoadingOption.CELLS]}
+          // selectedRegions={[{rows: [0, 0]}]}
+          onSelection={(selectedRegions: IRegion[]) => {console.log(selectedRegions)}}
           columnWidths={columnWidths}
           enableColumnResizing={enableColumnResizing}
           onColumnWidthChanged={this.onColumnWidthChanged}
@@ -266,12 +326,13 @@ export class Table extends React.Component<TableProps, TableState> {
           onColumnsReordered={this.onColumnsReordered}
           enableRowHeader={enableRowIndex}
           numFrozenColumns={schema.filter(s => s.pinned).length}
-          selectionModes={SelectionModes.ROWS_ONLY}
+          selectionModes={SelectionModes.ROWS_AND_CELLS}
         >
           {schema.map(s => (
             <Column
               name={s.displayName}
               cellRenderer={(rowIndex: number, columnIndex: number) => {
+                const index = !async && withPagination ? (page - 1) * pageSize + rowIndex : rowIndex;
                 return (
                   <Cell
                     rowIndex={rowIndex}
@@ -279,7 +340,7 @@ export class Table extends React.Component<TableProps, TableState> {
                     interactive={true}
                     className="Table-cell"
                   >
-                    {withPagination ? data[(page - 1) * pageSize + rowIndex][s.name] : data[rowIndex][s.name]}
+                    {data[index] ? data[index][s.name] : ""}
                   </Cell>
                 );
               }}
