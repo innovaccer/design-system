@@ -4,7 +4,11 @@
     width: fit-content;
 }
 
-.Dropdown .Input {
+.Dropdown-placeholder .PopperWrapper-trigger {
+    width: 100%;
+}
+
+.Dropdown-input .Input {
     min-width: unset;
 }
 
@@ -35,8 +39,8 @@
 
 .Option-wrapper,
 .Option-loadingWrapper,
-.Dropdown .ListCheckbox-parentWrapper,
-.Dropdown .ListCheckbox-childWrapper {
+.Dropdown-wrapper .ListCheckbox-parentWrapper,
+.Dropdown-wrapper .ListCheckbox-childWrapper {
     display: flex;
     padding-top: 6px;
     padding-bottom: 6px;
@@ -45,25 +49,26 @@
 }
 
 .Option-wrapper:hover,
-.Dropdown .ListCheckbox-parentWrapper:hover,
-.Dropdown .ListCheckbox-childWrapper:hover {
+.Dropdown-wrapper .ListCheckbox-parentWrapper:hover,
+.Dropdown-wrapper .ListCheckbox-childWrapper:hover {
     background-color: var(--secondary-lightest);
     cursor: pointer;
 }
 
-.Dropdown .ListCheckbox-parentWrapper {
+.Dropdown-wrapper .ListCheckbox-parentWrapper,
+.Dropdown-wrapper .ListCheckbox-childWrapper--top {
     padding-top: 10px;
 }
 
-.Dropdown .ListCheckbox-childWrapper:last-child {
+.Dropdown-wrapper .ListCheckbox-childWrapper:last-child {
     padding-bottom: 10px;
 }
 
-.Dropdown .ListCheckbox-childWrapper .Checkbox {
+.Dropdown-wrapper .ListCheckbox-childWrapper .Checkbox {
     overflow: hidden;
 }
 
-.Dropdown-loaderWrapper {
+.Dropdown-wrapper-loaderWrapper {
     margin-top: var(--spacing-s);
     margin-bottom: var(--spacing-s);
 }
@@ -92,15 +97,19 @@
 }
 
 .Option-text,
-.Dropdown .ListCheckbox .Checkbox .Text {
+.Dropdown-wrapper .ListCheckbox .Checkbox .Text {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .Option-text--wrap,
-.Dropdown--wrap.Dropdown .ListCheckbox .Checkbox .Text {
+.Dropdown-wrapper--wrap.Dropdown-wrapper .ListCheckbox .Checkbox .Text {
     white-space: unset;
+}
+
+.Dropdown-wrapper--wrap.Dropdown-wrapper .ListCheckbox .Checkbox {
+    align-items: flex-start;
 }
 
 .Option-wrapper--icon {

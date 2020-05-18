@@ -1,5 +1,5 @@
 .DropdownButton {
-    width: 100%;
+    min-width: var(--spacing-7);
     justify-content: space-between;
     align-items: center;
     padding-top: unset;
@@ -7,6 +7,7 @@
 }
 
 .DropdownButton-wrapper {
+    width: 100%;
     display: flex;
     flex-direction: row;
     overflow: hidden;

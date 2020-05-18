@@ -12,6 +12,7 @@ export interface DropdownButtonProps {
    */
   size?: Size;
   disabled?: boolean;
+  menu?: boolean;
   icon?: string;
   inlineLabel?: string;
   placeholder?: string;
@@ -25,14 +26,21 @@ export interface DropdownButtonProps {
 const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>((props, ref) => {
   const {
     size = 'regular',
+    placeholder = 'Select',
+    menu = false,
     children,
     width,
-    placeholder,
     icon,
     disabled,
     inlineLabel,
     ...rest
   } = props;
+
+  const appearance = disabled ? 'disabled' : 'default';
+  const trimmedPlaceholder = placeholder.trim();
+  const value = children ? children : trimmedPlaceholder ? trimmedPlaceholder : 'Select';
+  const iconName = !menu ? 'keyboard_arrow_down' : icon ? icon : 'more_horiz';
+  const label = inlineLabel && inlineLabel.trim();
 
   const buttonClass = classNames({
     ['Button']: true,
@@ -41,9 +49,9 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
     ['DropdownButton']: true,
     [`DropdownButton--${size}`]: size,
     ['DropdownButton--icon']: icon,
-    ['DropdownButton--moreIcon']: !placeholder && !children,
-    ['DropdownButton--placeholder']: placeholder && !children,
-    ['DropdownButton--label']: inlineLabel,
+    ['DropdownButton--moreIcon']: menu,
+    ['DropdownButton--placeholder']: !children && !menu,
+    ['DropdownButton--label']: label,
   });
 
   const labelClass = classNames({
@@ -51,13 +59,8 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
   });
 
   const style = {
-    minWidth: width,
-    maxWidth: width,
+    width,
   };
-
-  const appearance = disabled ? 'disabled' : 'default';
-  const value = children ? children : placeholder;
-  const iconName = value ? 'keyboard_arrow_down' : 'more_horiz';
 
   return (
     <button
@@ -65,13 +68,13 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
       value={children}
       className={buttonClass}
       disabled={disabled}
-      style={!placeholder && !children ? {} : style}
+      style={menu ? {} : style}
       {...rest}
     >
-      {value && (
+      {!menu && (
         <div className="DropdownButton-wrapper">
-          {(inlineLabel && !icon) && (
-            <div className={labelClass}> {inlineLabel.charAt(0).toUpperCase()}{inlineLabel.slice(1)} </div>
+          {label && (
+            <div className={labelClass}> {label.trim().charAt(0).toUpperCase()}{label.trim().slice(1)} </div>
           )}
           {(icon && !inlineLabel) && <Icon appearance={appearance} className="mr-4" name={icon} />}
           <div className={'DropdownButton-text'}>{value && `${value.charAt(0).toUpperCase()}${value.slice(1)}`}</div>

@@ -1,5 +1,7 @@
 import * as React from 'react';
 import Checkbox from '@/components/atoms/checkbox';
+import PlaceholderParagraph from '@/components/atoms/placeholderParagraph';
+import classNames from 'classnames';
 
 export type Size = 'regular' | 'tiny';
 
@@ -15,6 +17,8 @@ export interface ListCheckboxProps {
   label?: string;
   showParentCheckbox?: boolean;
   checked?: boolean;
+  loadingMoreUp?: boolean;
+  loadingMoreDown?: boolean;
   list: CheckboxProps[];
   updatedSelectedArray?: boolean[];
   style?: React.CSSProperties;
@@ -97,6 +101,15 @@ export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>(
     }
   }, [props.checked]);
 
+  const getListCheckboxClass = (index: number) => {
+    const ListCheckboxClass = classNames({
+      ['ListCheckbox-childWrapper']: true,
+      ['ListCheckbox-childWrapper--top']: !showParentCheckbox && index === 0
+    });
+
+    return ListCheckboxClass;
+  };
+
   const handleChildChange = (checkedValue: boolean, index: number) => {
     const updateCheck = [...checked];
     updateCheck[index] = checkedValue;
@@ -140,6 +153,19 @@ export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>(
     }
   };
 
+  const renderLoading = () => {
+    const arr = Array(2).fill('Loading');
+    return (
+      arr.map((option, ind) => {
+        return (
+          <div className="Option-loadingWrapper" key={`${option}-${ind}`}>
+            <PlaceholderParagraph length={'large'} />
+          </div>
+        );
+      })
+    );
+  };
+
   return (
     <div className={'ListCheckbox'}>
       {
@@ -155,12 +181,13 @@ export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>(
         )
       }
       <div className={'ListCheckbox-scroller'} style={style} ref={ref}>
+        {props.loadingMoreUp && renderLoading()}
         {
           list.map((item, ind) => {
             const { label: childLabel, size, onChange: childOnChange } = item;
 
             return (
-              <div className={'ListCheckbox-childWrapper'} key={`checkbox-${ind}`}>
+              <div className={getListCheckboxClass(ind)} key={`checkbox-${ind}`}>
                 <Checkbox
                   label={childLabel}
                   checked={checked[ind]}
@@ -174,6 +201,7 @@ export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>(
             );
           })
         }
+        {props.loadingMoreDown && renderLoading()}
       </div>
     </div>
   );

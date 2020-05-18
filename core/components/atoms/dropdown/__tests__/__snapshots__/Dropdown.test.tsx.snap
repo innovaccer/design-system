@@ -1,101 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dropdown component 
-  checkboxes: true, options: [{"label":"Option 1","value":"Option 1","selected":false},{"label":"Option 2","value":"Option 2","selected":true},{"label":"Option 3","value":"Option 3","selected":false},{"label":"Option 4","value":"Option 4","selected":false},{"label":"Option 5","value":"Option 5","selected":false},{"label":"Option 6","value":"Option 6","selected":false},{"label":"Option 7","value":"Option 7","selected":true},{"label":"Option 8","value":"Option 8","selected":false},{"label":"Option 9","value":"Option 9","selected":false},{"label":"Option 10","value":"Option 10","selected":false}], placeholder: "Select", onChange: "[Function]"
- 1`] = `
-<div>
-  <DropdownList
-    bottomOptionsSliced={false}
-    checkboxes={true}
-    limit={10}
-    listOptions={Array []}
-    offset={0}
-    onChange={[Function]}
-    onScroll={[Function]}
-    onSearchChange={[Function]}
-    onSelectAll={[Function]}
-    options={
-      Array [
-        Object {
-          "label": "Option 1",
-          "selected": false,
-          "value": "Option 1",
-        },
-        Object {
-          "label": "Option 2",
-          "selected": true,
-          "value": "Option 2",
-        },
-        Object {
-          "label": "Option 3",
-          "selected": false,
-          "value": "Option 3",
-        },
-        Object {
-          "label": "Option 4",
-          "selected": false,
-          "value": "Option 4",
-        },
-        Object {
-          "label": "Option 5",
-          "selected": false,
-          "value": "Option 5",
-        },
-        Object {
-          "label": "Option 6",
-          "selected": false,
-          "value": "Option 6",
-        },
-        Object {
-          "label": "Option 7",
-          "selected": true,
-          "value": "Option 7",
-        },
-        Object {
-          "label": "Option 8",
-          "selected": false,
-          "value": "Option 8",
-        },
-        Object {
-          "label": "Option 9",
-          "selected": false,
-          "value": "Option 9",
-        },
-        Object {
-          "label": "Option 10",
-          "selected": false,
-          "value": "Option 10",
-        },
-      ]
-    }
-    optionsLength={0}
-    placeholder="Select"
-    searchTerm=""
-    selectAll={false}
-    selected={
-      Object {
-        "label": Array [],
-        "value": Array [],
-      }
-    }
-    setSearchTerm={[Function]}
-    slicedOptionsLength={0}
-    subheading={Object {}}
-    topOptionsSliced={false}
-  />
-</div>
-`;
-
-exports[`Dropdown component 
   checkboxes: true, selectAll: true, options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     checkboxes={true}
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -144,8 +61,9 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
     selectAll={true}
     selected={
@@ -156,7 +74,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -167,11 +84,14 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     checkboxes={true}
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -220,10 +140,10 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -233,7 +153,6 @@ exports[`Dropdown component
     setSearchTerm={[Function]}
     showApplyButton={false}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -244,11 +163,14 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     checkboxes={true}
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -297,10 +219,10 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -310,7 +232,6 @@ exports[`Dropdown component
     setSearchTerm={[Function]}
     showApplyButton={true}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -321,12 +242,15 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     disabled={false}
     icon="events"
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -375,10 +299,10 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -387,7 +311,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -398,12 +321,15 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     disabled={false}
     inlineLabel="Label"
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -452,10 +378,10 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -464,7 +390,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -475,12 +400,15 @@ exports[`Dropdown component
  2`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     disabled={false}
     inlineLabel="Label"
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -529,10 +457,10 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -541,7 +469,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -552,11 +479,14 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     disabled={false}
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -605,10 +535,10 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -617,7 +547,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -628,12 +557,15 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     disabled={true}
     icon="events"
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -682,10 +614,10 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -694,7 +626,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -705,12 +636,15 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     disabled={true}
     inlineLabel="Label"
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -759,10 +693,10 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -771,7 +705,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -782,12 +715,15 @@ exports[`Dropdown component
  2`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     disabled={true}
     inlineLabel="Label"
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -836,10 +772,10 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -848,7 +784,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -859,11 +794,14 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     disabled={true}
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -912,10 +850,10 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -924,7 +862,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -935,11 +872,14 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     dropdownAlign="left"
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -988,9 +928,9 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -999,7 +939,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1010,11 +949,14 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     dropdownAlign="right"
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -1063,9 +1005,9 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -1074,7 +1016,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1085,10 +1026,13 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -1143,10 +1087,10 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={1}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -1155,7 +1099,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1166,10 +1109,13 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -1193,10 +1139,10 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={3}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -1205,92 +1151,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
-    topOptionsSliced={false}
-  />
-</div>
-`;
-
-exports[`Dropdown component 
-  options: [{"label":"Option 1","value":"Option 1","selected":false},{"label":"Option 2","value":"Option 2","selected":true},{"label":"Option 3","value":"Option 3","selected":false},{"label":"Option 4","value":"Option 4","selected":false},{"label":"Option 5","value":"Option 5","selected":false},{"label":"Option 6","value":"Option 6","selected":false},{"label":"Option 7","value":"Option 7","selected":false},{"label":"Option 8","value":"Option 8","selected":false},{"label":"Option 9","value":"Option 9","selected":false},{"label":"Option 10","value":"Option 10","selected":false}], placeholder: "Select", onChange: "[Function]"
- 1`] = `
-<div>
-  <DropdownList
-    bottomOptionsSliced={false}
-    limit={10}
-    listOptions={Array []}
-    offset={0}
-    onChange={[Function]}
-    onScroll={[Function]}
-    onSearchChange={[Function]}
-    onSelectAll={[Function]}
-    options={
-      Array [
-        Object {
-          "label": "Option 1",
-          "selected": false,
-          "value": "Option 1",
-        },
-        Object {
-          "label": "Option 2",
-          "selected": true,
-          "value": "Option 2",
-        },
-        Object {
-          "label": "Option 3",
-          "selected": false,
-          "value": "Option 3",
-        },
-        Object {
-          "label": "Option 4",
-          "selected": false,
-          "value": "Option 4",
-        },
-        Object {
-          "label": "Option 5",
-          "selected": false,
-          "value": "Option 5",
-        },
-        Object {
-          "label": "Option 6",
-          "selected": false,
-          "value": "Option 6",
-        },
-        Object {
-          "label": "Option 7",
-          "selected": false,
-          "value": "Option 7",
-        },
-        Object {
-          "label": "Option 8",
-          "selected": false,
-          "value": "Option 8",
-        },
-        Object {
-          "label": "Option 9",
-          "selected": false,
-          "value": "Option 9",
-        },
-        Object {
-          "label": "Option 10",
-          "selected": false,
-          "value": "Option 10",
-        },
-      ]
-    }
-    optionsLength={0}
-    placeholder="Select"
-    searchTerm=""
-    selectAll={false}
-    selected={
-      Object {
-        "label": Array [],
-        "value": Array [],
-      }
-    }
-    setSearchTerm={[Function]}
-    slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1301,10 +1161,13 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -1328,10 +1191,10 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={3}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -1340,7 +1203,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1351,10 +1213,13 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -1403,9 +1268,9 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -1414,7 +1279,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1425,10 +1289,13 @@ exports[`Dropdown component
  2`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -1477,9 +1344,9 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -1488,7 +1355,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1499,10 +1365,13 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -1551,10 +1420,10 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -1563,7 +1432,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1574,10 +1442,13 @@ exports[`Dropdown component
  2`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -1626,10 +1497,10 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -1638,7 +1509,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1649,11 +1519,15 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
     loading={false}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    loadingOptions={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -1702,11 +1576,11 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     search={true}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -1715,7 +1589,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1726,11 +1599,15 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
     loading={true}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    loadingOptions={true}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -1779,11 +1656,11 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     search={true}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -1792,7 +1669,6 @@ exports[`Dropdown component
     }
     setSearchTerm={[Function]}
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1803,10 +1679,13 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -1855,10 +1734,10 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -1868,7 +1747,6 @@ exports[`Dropdown component
     setSearchTerm={[Function]}
     size="regular"
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>
@@ -1879,10 +1757,13 @@ exports[`Dropdown component
  1`] = `
 <div>
   <DropdownList
+    async={false}
     bottomOptionsSliced={false}
     limit={10}
     listOptions={Array []}
-    offset={0}
+    loadingMoreDown={false}
+    loadingMoreUp={false}
+    offset={-1}
     onChange={[Function]}
     onScroll={[Function]}
     onSearchChange={[Function]}
@@ -1931,10 +1812,10 @@ exports[`Dropdown component
         },
       ]
     }
-    optionsLength={0}
+    optionsLength={10}
     placeholder="Select"
+    renderOptionsFromTop={[Function]}
     searchTerm=""
-    selectAll={false}
     selected={
       Object {
         "label": Array [],
@@ -1944,7 +1825,6 @@ exports[`Dropdown component
     setSearchTerm={[Function]}
     size="tiny"
     slicedOptionsLength={0}
-    subheading={Object {}}
     topOptionsSliced={false}
   />
 </div>

@@ -5,16 +5,16 @@ import { storyOptions } from '../../../utils/Options';
 
 // CSF format story
 export const placeholder = () => {
-  const placeholderValues = ['', 'Select'];
+  const booleanValues = [true, false];
 
   return (
     <div style={{ display: 'flex', minHeight: '270px' }}>
       {
-        placeholderValues.map((state, ind) => {
+        booleanValues.map((menu, ind) => {
           return (
             <div style={{ marginRight: '5%' }} key={ind}>
-              <Text weight="strong">{state ? 'With Placeholder' : 'Without Placeholder'}</Text> <br /><br />
-              <Dropdown placeholder={state} options={storyOptions} />
+              <Text weight="strong">{!menu ? 'With Placeholder' : 'Without Placeholder'}</Text> <br /><br />
+              <Dropdown placeholder={'Select'} menu={menu} options={storyOptions} />
             </div>
           );
         })

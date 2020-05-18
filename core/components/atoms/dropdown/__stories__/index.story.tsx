@@ -20,6 +20,8 @@ export const all = () => {
 
   const disabled = boolean('disabled', false);
 
+  const menu = boolean('menu', false);
+
   const search = boolean('search', false);
 
   const checkboxes = boolean('checkboxes', false);
@@ -28,9 +30,9 @@ export const all = () => {
 
   const closeOnSelect = boolean('close on select', true);
 
-  const loadingOptions = boolean('loading', false);
+  const loading = boolean('loading', false);
 
-  const selectAll = boolean('select All', false);
+  const async = boolean('async', true);
 
   const icon = text('icon', '');
 
@@ -44,37 +46,57 @@ export const all = () => {
 
   const limit = number('limit', 10);
 
+  const getSearchedOptions = (options: any, searchTerm: string) => {
+    const result = options.filter((option: any) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
+    return result;
+  };
+
+  const loadMoreOptions = (offset: number, optionsLimit: number, searchTerm: string) => {
+    const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
+    return new Promise<any>(resolve => {
+      setTimeout(() => {
+        resolve({
+          offset,
+          options: searchedOptions.slice(offset, offset + optionsLimit),
+          length: searchedOptions.length,
+        });
+      }, 2000);
+    });
+  };
+
   const onChangeHandler = (selectedValues: any[]) => {
     return action(`selected values length: ${selectedValues}`)();
   };
 
-  const options = {
+  const props = {
     size,
     dropdownAlign,
     icon,
     placeholder,
     inlineLabel,
     disabled,
+    menu,
     closeOnSelect,
     search,
+    async,
     checkboxes,
     showApplyButton,
     checkedValuesOffset,
     maxHeight,
     limit,
-    selectAll,
-    loadingOptions,
+    loading,
+    loadMoreOptions,
     options: dropdownOptions,
     onChange: onChangeHandler,
     style: {
-      marginLeft: '128px',
+      marginLeft: '128px'
     }
   };
 
   return (
-    <div>
+    <div style={{ width: '150px' }}>
       <Dropdown
-        {...options}
+        {...props}
       />
     </div>
   );
