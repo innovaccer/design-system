@@ -1,0 +1,33 @@
+.StatusHints {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+}
+
+.StatusHints-icon {
+    border-radius: 50%;
+    height: var(--spacing);
+    width: var(--spacing);
+    margin-right: var(--spacing);
+}
+
+.StatusHints--alert {
+    background: var(--alert);
+}
+
+.StatusHints--success {
+    background: var(--success);
+}
+
+.StatusHints--warning {
+    background: var(--warning);
+}
+
+.StatusHints--info {
+    background: var(--primary);
+}
+
+.StatusHints--default {
+    background: var(--secondary);
+}

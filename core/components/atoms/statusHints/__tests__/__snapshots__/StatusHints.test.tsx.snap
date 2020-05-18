@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatusHints component 
+  appearance: "alert"
+ 1`] = `
+<div
+  className="StatusHints"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <span
+    className="StatusHints-icon StatusHints--alert"
+  />
+  <Text
+    weight="medium"
+  >
+    StatusHints
+  </Text>
+</div>
+`;
+
+exports[`StatusHints component 
+  appearance: "default"
+ 1`] = `
+<div
+  className="StatusHints"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <span
+    className="StatusHints-icon StatusHints--default"
+  />
+  <Text
+    weight="medium"
+  >
+    StatusHints
+  </Text>
+</div>
+`;
+
+exports[`StatusHints component 
+  appearance: "info"
+ 1`] = `
+<div
+  className="StatusHints"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <span
+    className="StatusHints-icon StatusHints--info"
+  />
+  <Text
+    weight="medium"
+  >
+    StatusHints
+  </Text>
+</div>
+`;
+
+exports[`StatusHints component 
+  appearance: "success"
+ 1`] = `
+<div
+  className="StatusHints"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <span
+    className="StatusHints-icon StatusHints--success"
+  />
+  <Text
+    weight="medium"
+  >
+    StatusHints
+  </Text>
+</div>
+`;
+
+exports[`StatusHints component 
+  appearance: "warning"
+ 1`] = `
+<div
+  className="StatusHints"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <span
+    className="StatusHints-icon StatusHints--warning"
+  />
+  <Text
+    weight="medium"
+  >
+    StatusHints
+  </Text>
+</div>
+`;
