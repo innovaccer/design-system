@@ -109,3 +109,12 @@
 * 8f238f2 v1.0.0-7
 * 8eb9557 fix: fixes table template
 * c3627b6 fix: fixes Input focus css
+
+-------------------
+ **v1.0.0-8**  (2020-05-19) 
+
+* 114e546 v1.0.0-8
+* 6a26fa4 feat: adds statusHints component
+* dfb34c5 fix: adds dropdown async support
+* d7eb6e3 fix: replaces utilityClass with className
+* 7565bd4 feat: adds pill component

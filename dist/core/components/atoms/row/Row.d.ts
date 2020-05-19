@@ -8,7 +8,7 @@ export interface RowProps {
     groupL?: RowColumns;
     groupXL?: RowColumns;
     children?: React.ReactNode;
-    utilityClass?: string;
+    className?: string;
 }
 export declare const Row: {
     (props: RowProps): JSX.Element;

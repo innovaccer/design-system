@@ -485,12 +485,11 @@ var Icon = function Icon(props) {
       appearance = _props$appearance === void 0 ? 'default' : _props$appearance,
       _props$type = props.type,
       type = _props$type === void 0 ? 'filled' : _props$type,
-      _props$helpers = props.helpers,
-      helpers = _props$helpers === void 0 ? [] : _props$helpers,
+      className = props.className,
       name = props.name,
       size = props.size,
       onClick = props.onClick;
-  var iconClass = classNames((_classNames = {}, _defineProperty(_classNames, 'material-icons', true), _defineProperty(_classNames, 'Icon', true), _defineProperty(_classNames, "Icon--".concat(appearance), appearance), _defineProperty(_classNames, "".concat(helpers.join(' ')), helpers), _classNames));
+  var iconClass = classNames((_classNames = {}, _defineProperty(_classNames, 'material-icons', true), _defineProperty(_classNames, 'Icon', true), _defineProperty(_classNames, "Icon--".concat(appearance), appearance), _defineProperty(_classNames, "".concat(className), className), _classNames));
   var styles = {
     fontSize: size ? "".concat(size, "px") : 'var(--font-size)',
     width: size ? "".concat(size, "px") : 'var(--font-size)'
@@ -549,14 +548,17 @@ var Button = function Button(props) {
 Button.displayName = 'Button';
 
 var Card = function Card(props) {
+  var _classNames;
+
   var _props$shadow = props.shadow,
       shadow = _props$shadow === void 0 ? 'medium' : _props$shadow,
       children = props.children,
-      rest = _objectWithoutProperties(props, ["shadow", "children"]);
+      className = props.className,
+      rest = _objectWithoutProperties(props, ["shadow", "children", "className"]);
 
-  var classes = classNames(_defineProperty({
+  var classes = classNames((_classNames = {
     Card: true
-  }, "Card--shadow-".concat(shadow), shadow));
+  }, _defineProperty(_classNames, "Card--shadow-".concat(shadow), shadow), _defineProperty(_classNames, "".concat(className), className), _classNames));
   return /*#__PURE__*/createElement("div", _extends({
     className: classes
   }, rest), children);
@@ -657,8 +659,8 @@ var Column = function Column(props) {
       sizeM = props.sizeM,
       sizeL = props.sizeL,
       sizeXL = props.sizeXL,
-      utilityClass = props.utilityClass;
-  var classes = classNames((_classNames = {}, _defineProperty(_classNames, 'Col', true), _defineProperty(_classNames, "Col--".concat(size), size), _defineProperty(_classNames, "Col--xs-".concat(sizeXS), sizeXS), _defineProperty(_classNames, "Col--s-".concat(sizeS), sizeS), _defineProperty(_classNames, "Col--m-".concat(sizeM), sizeM), _defineProperty(_classNames, "Col--l-".concat(sizeL), sizeL), _defineProperty(_classNames, "Col--xl-".concat(sizeXL), sizeXL), _defineProperty(_classNames, "".concat(utilityClass), utilityClass), _classNames));
+      className = props.className;
+  var classes = classNames((_classNames = {}, _defineProperty(_classNames, 'Col', true), _defineProperty(_classNames, "Col--".concat(size), size), _defineProperty(_classNames, "Col--xs-".concat(sizeXS), sizeXS), _defineProperty(_classNames, "Col--s-".concat(sizeS), sizeS), _defineProperty(_classNames, "Col--m-".concat(sizeM), sizeM), _defineProperty(_classNames, "Col--l-".concat(sizeL), sizeL), _defineProperty(_classNames, "Col--xl-".concat(sizeXL), sizeXL), _defineProperty(_classNames, "".concat(className), className), _classNames));
   return /*#__PURE__*/createElement("div", {
     className: classes
   }, props.children);
@@ -1205,7 +1207,7 @@ var Calendar = function Calendar(props) {
     }, /*#__PURE__*/createElement(Icon, {
       name: "arrow_".concat(type === 'next' ? 'forward' : 'back'),
       size: 16,
-      helpers: ['p-4'],
+      className: "p-4",
       onClick: navClickHandler
     }));
   };
@@ -2454,7 +2456,7 @@ var DonutChart = function DonutChart(props) {
   // }, []);
 
   return /*#__PURE__*/createElement(Row, {
-    utilityClass: "DonutChart"
+    className: "DonutChart"
   }, /*#__PURE__*/createElement(Column, columnOptions.chart, /*#__PURE__*/createElement(ResponsiveContainer, null, /*#__PURE__*/createElement(PieChart, null, /*#__PURE__*/createElement(Pie, {
     data: data,
     dataKey: "value",
@@ -2472,7 +2474,7 @@ var DonutChart = function DonutChart(props) {
     separator: ": ",
     content: /*#__PURE__*/createElement(ChartTooltip, null)
   })))), withLegends && /*#__PURE__*/createElement(Column, _extends({
-    utilityClass: "DonutChart-legends"
+    className: "DonutChart-legends"
   }, columnOptions.legends), data.map(function (d, i) {
     return /*#__PURE__*/createElement(Legend, {
       key: i,
@@ -2482,41 +2484,180 @@ var DonutChart = function DonutChart(props) {
   })));
 };
 
+/* eslint-disable no-undefined,no-param-reassign,no-shadow */
+
+/**
+ * Throttle execution of a function. Especially useful for rate limiting
+ * execution of handlers on events like resize and scroll.
+ *
+ * @param  {Number}    delay          A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
+ * @param  {Boolean}   [noTrailing]   Optional, defaults to false. If noTrailing is true, callback will only execute every `delay` milliseconds while the
+ *                                    throttled-function is being called. If noTrailing is false or unspecified, callback will be executed one final time
+ *                                    after the last throttled-function call. (After the throttled-function has not been called for `delay` milliseconds,
+ *                                    the internal counter is reset)
+ * @param  {Function}  callback       A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
+ *                                    to `callback` when the throttled-function is executed.
+ * @param  {Boolean}   [debounceMode] If `debounceMode` is true (at begin), schedule `clear` to execute after `delay` ms. If `debounceMode` is false (at end),
+ *                                    schedule `callback` to execute after `delay` ms.
+ *
+ * @return {Function}  A new, throttled, function.
+ */
+function throttle (delay, noTrailing, callback, debounceMode) {
+  /*
+   * After wrapper has stopped being called, this timeout ensures that
+   * `callback` is executed at the proper times in `throttle` and `end`
+   * debounce modes.
+   */
+  var timeoutID;
+  var cancelled = false; // Keep track of the last time `callback` was executed.
+
+  var lastExec = 0; // Function to clear existing timeout
+
+  function clearExistingTimeout() {
+    if (timeoutID) {
+      clearTimeout(timeoutID);
+    }
+  } // Function to cancel next exec
+
+
+  function cancel() {
+    clearExistingTimeout();
+    cancelled = true;
+  } // `noTrailing` defaults to falsy.
+
+
+  if (typeof noTrailing !== 'boolean') {
+    debounceMode = callback;
+    callback = noTrailing;
+    noTrailing = undefined;
+  }
+  /*
+   * The `wrapper` function encapsulates all of the throttling / debouncing
+   * functionality and when executed will limit the rate at which `callback`
+   * is executed.
+   */
+
+
+  function wrapper() {
+    var self = this;
+    var elapsed = Date.now() - lastExec;
+    var args = arguments;
+
+    if (cancelled) {
+      return;
+    } // Execute `callback` and update the `lastExec` timestamp.
+
+
+    function exec() {
+      lastExec = Date.now();
+      callback.apply(self, args);
+    }
+    /*
+     * If `debounceMode` is true (at begin) this is used to clear the flag
+     * to allow future `callback` executions.
+     */
+
+
+    function clear() {
+      timeoutID = undefined;
+    }
+
+    if (debounceMode && !timeoutID) {
+      /*
+       * Since `wrapper` is being called for the first time and
+       * `debounceMode` is true (at begin), execute `callback`.
+       */
+      exec();
+    }
+
+    clearExistingTimeout();
+
+    if (debounceMode === undefined && elapsed > delay) {
+      /*
+       * In throttle mode, if `delay` time has been exceeded, execute
+       * `callback`.
+       */
+      exec();
+    } else if (noTrailing !== true) {
+      /*
+       * In trailing throttle mode, since `delay` time has not been
+       * exceeded, schedule `callback` to execute `delay` ms after most
+       * recent execution.
+       *
+       * If `debounceMode` is true (at begin), schedule `clear` to execute
+       * after `delay` ms.
+       *
+       * If `debounceMode` is false (at end), schedule `callback` to
+       * execute after `delay` ms.
+       */
+      timeoutID = setTimeout(debounceMode ? clear : exec, debounceMode === undefined ? delay - elapsed : delay);
+    }
+  }
+
+  wrapper.cancel = cancel; // Return the wrapper function.
+
+  return wrapper;
+}
+
+/* eslint-disable no-undefined */
+/**
+ * Debounce execution of a function. Debouncing, unlike throttling,
+ * guarantees that a function is only executed a single time, either at the
+ * very beginning of a series of calls, or at the very end.
+ *
+ * @param  {Number}   delay         A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
+ * @param  {Boolean}  [atBegin]     Optional, defaults to false. If atBegin is false or unspecified, callback will only be executed `delay` milliseconds
+ *                                  after the last debounced-function call. If atBegin is true, callback will be executed only at the first debounced-function call.
+ *                                  (After the throttled-function has not been called for `delay` milliseconds, the internal counter is reset).
+ * @param  {Function} callback      A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
+ *                                  to `callback` when the debounced-function is executed.
+ *
+ * @return {Function} A new, debounced function.
+ */
+
+function debounce (delay, atBegin, callback) {
+  return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
+}
+
 var DropdownButton = forwardRef(function (props, ref) {
   var _classNames;
 
   var _props$size = props.size,
       size = _props$size === void 0 ? 'regular' : _props$size,
+      _props$placeholder = props.placeholder,
+      placeholder = _props$placeholder === void 0 ? 'Select' : _props$placeholder,
+      _props$menu = props.menu,
+      menu = _props$menu === void 0 ? false : _props$menu,
       children = props.children,
       width = props.width,
-      placeholder = props.placeholder,
       icon = props.icon,
       disabled = props.disabled,
       inlineLabel = props.inlineLabel,
-      rest = _objectWithoutProperties(props, ["size", "children", "width", "placeholder", "icon", "disabled", "inlineLabel"]);
+      rest = _objectWithoutProperties(props, ["size", "placeholder", "menu", "children", "width", "icon", "disabled", "inlineLabel"]);
 
-  var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--basic', true), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, 'DropdownButton', true), _defineProperty(_classNames, "DropdownButton--".concat(size), size), _defineProperty(_classNames, 'DropdownButton--icon', icon), _defineProperty(_classNames, 'DropdownButton--moreIcon', !placeholder && !children), _defineProperty(_classNames, 'DropdownButton--placeholder', placeholder && !children), _defineProperty(_classNames, 'DropdownButton--label', inlineLabel), _classNames));
+  var appearance = disabled ? 'disabled' : 'default';
+  var trimmedPlaceholder = placeholder.trim();
+  var value = children ? children : trimmedPlaceholder ? trimmedPlaceholder : 'Select';
+  var iconName = !menu ? 'keyboard_arrow_down' : icon ? icon : 'more_horiz';
+  var label = inlineLabel && inlineLabel.trim();
+  var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--basic', true), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, 'DropdownButton', true), _defineProperty(_classNames, "DropdownButton--".concat(size), size), _defineProperty(_classNames, 'DropdownButton--icon', icon), _defineProperty(_classNames, 'DropdownButton--moreIcon', menu), _defineProperty(_classNames, 'DropdownButton--placeholder', !children && !menu), _defineProperty(_classNames, 'DropdownButton--label', label), _classNames));
   var labelClass = classNames(_defineProperty({}, 'DropdownButton-label', true));
   var style = {
-    minWidth: width,
-    maxWidth: width
+    width: width
   };
-  var appearance = disabled ? 'disabled' : 'default';
-  var value = children ? children : placeholder;
-  var iconName = value ? 'keyboard_arrow_down' : 'more_horiz';
   return /*#__PURE__*/createElement("button", _extends({
     ref: ref,
     value: children,
     className: buttonClass,
     disabled: disabled,
-    style: !placeholder && !children ? {} : style
-  }, rest), value && /*#__PURE__*/createElement("div", {
+    style: menu ? {} : style
+  }, rest), !menu && /*#__PURE__*/createElement("div", {
     className: "DropdownButton-wrapper"
-  }, inlineLabel && !icon && /*#__PURE__*/createElement("div", {
+  }, label && /*#__PURE__*/createElement("div", {
     className: labelClass
-  }, " ", inlineLabel.charAt(0).toUpperCase(), inlineLabel.slice(1), " "), icon && !inlineLabel && /*#__PURE__*/createElement(Icon, {
+  }, " ", label.trim().charAt(0).toUpperCase(), label.trim().slice(1), " "), icon && !inlineLabel && /*#__PURE__*/createElement(Icon, {
     appearance: appearance,
-    helpers: ['mr-4'],
+    className: "mr-4",
     name: icon
   }), /*#__PURE__*/createElement("div", {
     className: 'DropdownButton-text'
@@ -2526,6 +2667,19 @@ var DropdownButton = forwardRef(function (props, ref) {
   }));
 });
 DropdownButton.displayName = 'DropdownButton';
+
+var PlaceholderParagraph = function PlaceholderParagraph(props) {
+  var _props$length = props.length,
+      length = _props$length === void 0 ? 'medium' : _props$length;
+  var classes = classNames(_defineProperty({
+    'Placeholder-paragraph': true,
+    'Placeholder--animation': true
+  }, "Placeholder-paragraph--".concat(length), length));
+  return /*#__PURE__*/createElement("div", {
+    className: classes
+  });
+};
+PlaceholderParagraph.displayName = 'PlaceholderParagraph';
 
 var ListCheckbox = forwardRef(function (props, ref) {
   var list = props.list,
@@ -2616,6 +2770,13 @@ var ListCheckbox = forwardRef(function (props, ref) {
     }
   }, [props.checked]);
 
+  var getListCheckboxClass = function getListCheckboxClass(index) {
+    var _classNames;
+
+    var ListCheckboxClass = classNames((_classNames = {}, _defineProperty(_classNames, 'ListCheckbox-childWrapper', true), _defineProperty(_classNames, 'ListCheckbox-childWrapper--top', !showParentCheckbox && index === 0), _classNames));
+    return ListCheckboxClass;
+  };
+
   var handleChildChange = function handleChildChange(checkedValue, index) {
     var updateCheck = _toConsumableArray(checked);
 
@@ -2665,6 +2826,18 @@ var ListCheckbox = forwardRef(function (props, ref) {
     }
   };
 
+  var renderLoading = function renderLoading() {
+    var arr = Array(2).fill('Loading');
+    return arr.map(function (option, ind) {
+      return /*#__PURE__*/createElement("div", {
+        className: "Option-loadingWrapper",
+        key: "".concat(option, "-").concat(ind)
+      }, /*#__PURE__*/createElement(PlaceholderParagraph, {
+        length: 'large'
+      }));
+    });
+  };
+
   return /*#__PURE__*/createElement("div", {
     className: 'ListCheckbox'
   }, showParentCheckbox && /*#__PURE__*/createElement("div", {
@@ -2678,12 +2851,12 @@ var ListCheckbox = forwardRef(function (props, ref) {
     className: 'ListCheckbox-scroller',
     style: style,
     ref: ref
-  }, list.map(function (item, ind) {
+  }, props.loadingMoreUp && renderLoading(), list.map(function (item, ind) {
     var childLabel = item.label,
         size = item.size,
         childOnChange = item.onChange;
     return /*#__PURE__*/createElement("div", {
-      className: 'ListCheckbox-childWrapper',
+      className: getListCheckboxClass(ind),
       key: "checkbox-".concat(ind)
     }, /*#__PURE__*/createElement(Checkbox, {
       label: childLabel,
@@ -2694,29 +2867,15 @@ var ListCheckbox = forwardRef(function (props, ref) {
         if (childOnChange) childOnChange(checked[ind]);
       }
     }));
-  })));
+  }), props.loadingMoreDown && renderLoading()));
 });
 ListCheckbox.displayName = 'ListCheckbox';
-
-var PlaceholderParagraph = function PlaceholderParagraph(props) {
-  var _props$length = props.length,
-      length = _props$length === void 0 ? 'medium' : _props$length;
-  var classes = classNames(_defineProperty({
-    'Placeholder-paragraph': true,
-    'Placeholder--animation': true
-  }, "Placeholder-paragraph--".concat(length), length));
-  return /*#__PURE__*/createElement("div", {
-    className: classes
-  });
-};
-PlaceholderParagraph.displayName = 'PlaceholderParagraph';
 
 var DropdownAlignMapping = {
   right: 'bottom-start',
   left: 'bottom-end'
 };
 var lastScrollTop = 0;
-
 var usePrevious = function usePrevious(value) {
   var ref = useRef();
   useEffect$2(function () {
@@ -2726,7 +2885,7 @@ var usePrevious = function usePrevious(value) {
 };
 
 var DropdownList = function DropdownList(props) {
-  var _classNames3, _classNames4;
+  var _classNames3, _classNames4, _classNames5;
 
   var _props$subheading = props.subheading,
       subheading = _props$subheading === void 0 ? {} : _props$subheading,
@@ -2747,10 +2906,13 @@ var DropdownList = function DropdownList(props) {
       _props$maxHeight = props.maxHeight,
       maxHeight = _props$maxHeight === void 0 ? 200 : _props$maxHeight,
       _props$bottomScrollOf = props.bottomScrollOffset,
-      bottomScrollOffset = _props$bottomScrollOf === void 0 ? 0 : _props$bottomScrollOf,
+      bottomScrollOffset = _props$bottomScrollOf === void 0 ? 64 : _props$bottomScrollOf,
+      menu = props.menu,
+      bufferedOption = props.bufferedOption,
       slicedOptionsLength = props.slicedOptionsLength,
       loadingOptions = props.loadingOptions,
-      selectAll = props.selectAll,
+      loadingMoreUp = props.loadingMoreUp,
+      loadingMoreDown = props.loadingMoreDown,
       placeholder = props.placeholder,
       searchTerm = props.searchTerm,
       limit = props.limit,
@@ -2767,8 +2929,10 @@ var DropdownList = function DropdownList(props) {
       onSearchChange = props.onSearchChange,
       onScroll = props.onScroll,
       onSelectAll = props.onSelectAll,
-      setSearchTerm = props.setSearchTerm;
+      setSearchTerm = props.setSearchTerm,
+      renderOptionsFromTop = props.renderOptionsFromTop;
   var dropdownRef = createRef();
+  var triggerRef = createRef();
 
   var _React$useState = useState$2([]),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -2790,10 +2954,10 @@ var DropdownList = function DropdownList(props) {
       dropdownOpen = _React$useState8[0],
       setDropdownOpen = _React$useState8[1];
 
-  var _React$useState9 = useState$2([]),
+  var _React$useState9 = useState$2(),
       _React$useState10 = _slicedToArray(_React$useState9, 2),
-      checkboxSelected = _React$useState10[0],
-      setCheckboxSelected = _React$useState10[1];
+      popoverStyle = _React$useState10[0],
+      setPopoverStyle = _React$useState10[1];
 
   var _React$useState11 = useState$2([]),
       _React$useState12 = _slicedToArray(_React$useState11, 2),
@@ -2810,8 +2974,9 @@ var DropdownList = function DropdownList(props) {
       optionsApplied = _React$useState16[0],
       setOptionsApplied = _React$useState16[1];
 
-  var prevSearchTerm = usePrevious(searchTerm);
-  var width = style && style.width ? style.width : '128px';
+  var prevDropdownOpen = usePrevious(dropdownOpen);
+  var prevListOptions = usePrevious(listOptions);
+  var width = style && style.width ? style.width : '100%';
 
   var setSelectButtonLabel = function setSelectButtonLabel() {
     var selectedArray = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
@@ -2834,10 +2999,16 @@ var DropdownList = function DropdownList(props) {
   };
 
   useEffect$2(function () {
-    if (prevSearchTerm === searchTerm) {
-      setSelected(checkboxSelected);
+    if (dropdownOpen) {
+      var _triggerRef$current;
+
+      var popperWrapperStyle = {
+        width: "".concat((_triggerRef$current = triggerRef.current) === null || _triggerRef$current === void 0 ? void 0 : _triggerRef$current.clientWidth, "px"),
+        minWidth: showApplyButton && checkboxes ? '176px' : '128px'
+      };
+      setPopoverStyle(popperWrapperStyle);
     }
-  }, [listOptions.length]);
+  }, [dropdownOpen, checkboxes, showApplyButton]);
   useEffect$2(function () {
     var _props$selected = props.selected,
         label = _props$selected.label,
@@ -2846,23 +3017,8 @@ var DropdownList = function DropdownList(props) {
     if (label && value) {
       var selectedLabelsCopy = selectedLabels.slice();
       var selectedValue = selected.slice();
-
-      if (value.length === optionsLength || selected.length === optionsLength) {
-        selectedLabelsCopy = label;
-        selectedValue = value;
-      } else if (JSON.stringify(label) !== JSON.stringify(selectedLabelsCopy)) {
-        selectedLabelsCopy = selectedLabelsCopy.concat(label);
-        selectedValue = selectedValue.concat(value);
-      }
-
-      if (showApplyButton && (value.length !== optionsLength || selectAll) && value.length > 0 && !searchTerm) {
-        var prevValuesCopy = value;
-        var prevLabelsCopy = label;
-        setPreviousSelected(prevValuesCopy);
-        setPreviousSelectedLabels(prevLabelsCopy);
-      }
-
-      setCheckboxSelected(selectedValue);
+      selectedLabelsCopy = label;
+      selectedValue = value;
       setSelected(selectedValue);
       setSelectButtonLabel(selectedLabelsCopy);
     }
@@ -2873,10 +3029,9 @@ var DropdownList = function DropdownList(props) {
       var element = document.querySelectorAll(className);
       var index = element.length - limit + slicedOptionsLength;
       var marker = element[index];
-      var updatedScrollTop = marker.offsetTop - maxHeight;
+      var updatedScrollTop = marker.offsetTop - maxHeight / 2;
       dropdownRef.current.scrollTop = updatedScrollTop;
       lastScrollTop = updatedScrollTop;
-      if (checkboxes) setSelected(checkboxSelected);
     }
   }, [props.bottomOptionsSliced]);
   useEffect$2(function () {
@@ -2885,42 +3040,34 @@ var DropdownList = function DropdownList(props) {
       var element = document.querySelectorAll(className);
       var index = limit - slicedOptionsLength;
       var marker = element[index];
-      dropdownRef.current.scrollTop = marker.offsetTop;
+      dropdownRef.current.scrollTop = marker.offsetTop - maxHeight / 2;
       lastScrollTop = marker.offsetTop;
-      if (checkboxes) setSelected(checkboxSelected);
     }
   }, [props.topOptionsSliced]);
-  useEffect$2(function () {
-    if (searchTerm || prevSearchTerm) {
-      setSelected(checkboxSelected);
-    }
-  }, [searchTerm]);
   var trigger = /*#__PURE__*/createElement(DropdownButton, {
     placeholder: placeholder,
     size: size,
     icon: icon,
     disabled: disabled,
     inlineLabel: inlineLabel,
-    width: width
+    width: width,
+    menu: menu,
+    ref: triggerRef
   }, buttonLabel);
 
-  var dropdownDivStyle = _objectSpread2({
-    minWidth: width,
-    maxWidth: width
+  var dropdownWrapperStyle = _objectSpread2({
+    width: width,
+    display: 'flex'
   }, style);
 
-  var popoverStyle = {
-    width: '100%',
-    minWidth: showApplyButton && checkboxes ? '176px' : width
-  };
   var dropdownStyle = {
     maxHeight: maxHeight,
     overflowY: 'auto',
     overflowX: 'hidden'
   };
 
-  var getDropdownClass = function getDropdownClass(index) {
-    var Dropdown = classNames(_defineProperty({}, 'Dropdown-border', subheading.hasOwnProperty(index) && index !== 0));
+  var getDropdownClass = function getDropdownClass(index, currentGroup, isGroup) {
+    var Dropdown = classNames(_defineProperty({}, 'Dropdown-border', currentGroup !== undefined && isGroup && index !== 0));
     return Dropdown;
   };
 
@@ -2931,16 +3078,18 @@ var DropdownList = function DropdownList(props) {
     return OptionWrapper;
   };
 
-  var dropdownClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Dropdown', true), _defineProperty(_classNames3, 'Dropdown--wrap', optionsWrap), _classNames3));
-  var optionTextClass = classNames((_classNames4 = {}, _defineProperty(_classNames4, 'Option-text', true), _defineProperty(_classNames4, 'Option-text--wrap', optionsWrap), _classNames4));
+  var dropdownClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Dropdown', true), _defineProperty(_classNames3, 'Dropdown-placeholder', !menu), _classNames3));
+  var dropdownWrapperClass = classNames((_classNames4 = {}, _defineProperty(_classNames4, 'Dropdown-wrapper', true), _defineProperty(_classNames4, 'Dropdown-wrapper--wrap', optionsWrap), _classNames4));
+  var optionTextClass = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'Option-text', true), _defineProperty(_classNames5, 'Option-text--wrap', optionsWrap), _classNames5));
 
   var onToggleDropdown = function onToggleDropdown() {
+    if (!dropdownOpen) {
+      renderOptionsFromTop();
+    }
+
     if (!disabled) setDropdownOpen(!dropdownOpen);
 
-    if (optionsApplied || !showApplyButton) {
-      setSelected(checkboxSelected);
-    } else {
-      setCheckboxSelected(previousSelected);
+    if (!(optionsApplied || !showApplyButton)) {
       setSelected(previousSelected);
       setSelectButtonLabel(previousSelectedLabels);
     }
@@ -2950,7 +3099,7 @@ var DropdownList = function DropdownList(props) {
   };
 
   var onCancelOptions = function onCancelOptions() {
-    setCheckboxSelected([]);
+    setSelected([]);
     setPreviousSelected([]);
     setPreviousSelectedLabels([]);
     setSelectedLabels([]);
@@ -2960,16 +3109,16 @@ var DropdownList = function DropdownList(props) {
   };
 
   var onApplyOptions = function onApplyOptions() {
-    setPreviousSelected(checkboxSelected);
+    setPreviousSelected(selected);
     setPreviousSelectedLabels(selectedLabels);
     setOptionsApplied(true);
     setDropdownOpen(false);
-    if (onChange) onChange(checkboxSelected);
+    if (onChange) onChange(selected);
   };
 
   var checkboxChangeHandler = function checkboxChangeHandler(selectedArray, selectedLabelsArray, parentChecked) {
     if (selectedArray.length === 0 || selectedArray.length === optionsLength || !parentChecked) {
-      setCheckboxSelected(selectedArray);
+      setSelected(selectedArray);
       setSelectButtonLabel(selectedLabelsArray);
     }
 
@@ -2986,7 +3135,6 @@ var DropdownList = function DropdownList(props) {
         label = item.label;
     setSelectedLabels([label]);
     setButtonLabel(label);
-    setCheckboxSelected([value]);
     setSelected([value]);
     setDropdownOpen(!closeOnSelect);
     if (onChange) onChange(value);
@@ -3009,15 +3157,19 @@ var DropdownList = function DropdownList(props) {
     var scrollTop = element.scrollTop;
 
     if (scrollTop <= lastScrollTop) {
-      if (scrollTop === 0) onScrollDropdown('up', scrollTop);
+      if (scrollTop <= bottomScrollOffset && !loadingMoreUp) onScrollDropdown('up', scrollTop);
     } else {
       var scrollContainerBottomPosition = Math.round(element.scrollTop + element.clientHeight);
       var scrollPosition = Math.round(element.scrollHeight - bottomScrollOffset);
-      if (scrollPosition === scrollContainerBottomPosition) onScrollDropdown('down', scrollTop);
+
+      if (scrollPosition <= scrollContainerBottomPosition && !loadingMoreDown) {
+        onScrollDropdown('down', scrollTop);
+      }
     }
   };
 
   var renderApplyButton = function renderApplyButton() {
+    var disable = JSON.stringify(previousSelectedLabels) === JSON.stringify(selected);
     return /*#__PURE__*/createElement("div", {
       className: 'Dropdown-buttonWrapper'
     }, /*#__PURE__*/createElement("div", {
@@ -3029,12 +3181,15 @@ var DropdownList = function DropdownList(props) {
       onClick: onCancelOptions
     }, " Cancel ")), /*#__PURE__*/createElement(Button, {
       appearance: 'primary',
+      disabled: disable,
       onClick: onApplyOptions
     }, " Apply "));
   };
 
   var renderSearch = function renderSearch() {
-    return /*#__PURE__*/createElement("div", null, /*#__PURE__*/createElement(Input, {
+    return /*#__PURE__*/createElement("div", {
+      className: 'Dropdown-input'
+    }, /*#__PURE__*/createElement(Input, {
       name: "search",
       icon: 'search',
       placeholder: 'Search..',
@@ -3043,32 +3198,31 @@ var DropdownList = function DropdownList(props) {
     }));
   };
 
-  var renderLoading = function renderLoading() {
-    var arr = Array(limit).fill('Loading');
-    return /*#__PURE__*/createElement("div", {
-      className: "Scroller-wrapper",
-      style: dropdownStyle
-    }, arr.map(function (option, ind) {
+  var renderLoading = function renderLoading(loadersLength) {
+    var arr = Array(loadersLength).fill('Loading');
+    return arr.map(function (option, ind) {
       return /*#__PURE__*/createElement("div", {
         className: "Option-loadingWrapper",
         key: "".concat(option, "-").concat(ind)
       }, /*#__PURE__*/createElement(PlaceholderParagraph, {
         length: 'large'
       }));
-    }));
+    });
   };
 
   var renderCheckboxes = function renderCheckboxes() {
     var list = [];
     var updatedChecked = [];
-    var parentChecked = checkboxSelected.length === optionsLength;
-    var showParentCheckbox = searchTerm === '';
+    var parentChecked = selected.length === optionsLength;
+    var showParentCheckbox = searchTerm === '' && !props.async;
+    var condition1 = JSON.stringify(prevDropdownOpen) !== JSON.stringify(dropdownOpen);
+    var condition2 = JSON.stringify(prevListOptions) !== JSON.stringify(listOptions);
     listOptions.forEach(function (option) {
       var label = option.label,
           value = option.value;
       var checkedValue = false;
 
-      if (selected && selected.length > 0) {
+      if ((condition1 || condition2) && selected && selected.length > 0) {
         var updatedVal = JSON.stringify(value);
         checkedValue = selected.findIndex(function (item) {
           return JSON.stringify(item) === updatedVal;
@@ -3086,6 +3240,8 @@ var DropdownList = function DropdownList(props) {
       label: 'Select All',
       onChange: checkboxChangeHandler,
       checked: parentChecked,
+      loadingMoreUp: loadingMoreUp,
+      loadingMoreDown: loadingMoreDown,
       list: list,
       updatedSelectedArray: updatedChecked,
       style: dropdownStyle,
@@ -3111,7 +3267,7 @@ var DropdownList = function DropdownList(props) {
     }, optionIcon && /*#__PURE__*/createElement("div", {
       className: 'Option-icon'
     }, /*#__PURE__*/createElement(Icon, {
-      helpers: ['mr-4'],
+      className: "mr-4",
       name: optionIcon
     })), /*#__PURE__*/createElement("div", {
       className: 'Option-label'
@@ -3126,7 +3282,10 @@ var DropdownList = function DropdownList(props) {
     if (loadingOptions) {
       return /*#__PURE__*/createElement("div", {
         className: 'Dropdown-loaderWrapper'
-      }, renderLoading());
+      }, /*#__PURE__*/createElement("div", {
+        className: "Scroller-wrapper",
+        style: dropdownStyle
+      }, renderLoading(limit)));
     }
 
     if (listOptions.length === 0) {
@@ -3140,32 +3299,35 @@ var DropdownList = function DropdownList(props) {
     }
 
     return /*#__PURE__*/createElement("div", {
-      className: 'Dropdown-wrapper'
+      className: dropdownWrapperClass
     }, checkboxes && renderCheckboxes(), !checkboxes && /*#__PURE__*/createElement("div", {
       className: "Scroller-wrapper",
       style: dropdownStyle,
       ref: dropdownRef
-    }, listOptions.map(function (option, index) {
+    }, loadingMoreUp && renderLoading(2), listOptions.map(function (option, index) {
+      var prevGroup = index > 0 ? listOptions[index - 1].group : bufferedOption ? bufferedOption.group : undefined;
+      var currentGroup = option.group;
+      var isGroup = prevGroup !== currentGroup;
       return /*#__PURE__*/createElement("div", {
-        className: getDropdownClass(index + offset),
+        className: getDropdownClass(index + offset, currentGroup, isGroup),
         key: index
-      }, subheading.hasOwnProperty(index + offset) && subheading[index + offset] && /*#__PURE__*/createElement("div", {
+      }, isGroup && currentGroup && /*#__PURE__*/createElement("div", {
         className: 'Dropdown-subinfo'
-      }, subheading[index + offset]), renderOptions(option, index));
-    })));
+      }, currentGroup), renderOptions(option, index));
+    }), loadingMoreDown && renderLoading(2)));
   };
 
   return /*#__PURE__*/createElement("div", {
     className: dropdownClass,
     onScroll: handleMenuScroll,
-    style: dropdownDivStyle
+    style: dropdownWrapperStyle
   }, /*#__PURE__*/createElement(Popover, {
     onToggle: onToggleDropdown,
     trigger: trigger,
     open: dropdownOpen,
     style: popoverStyle,
     position: DropdownAlignMapping[dropdownAlign],
-    appendToBody: false
+    appendToBody: true
   }, search && renderSearch(), renderDropdownSection(), showApplyButton && checkboxes && renderApplyButton()));
 };
 
@@ -3183,9 +3345,9 @@ var getOptions = function getOptions(offset, limit, searchTerm, options) {
   return new Promise(function (resolve) {
     resolve({
       offset: offset,
-      slicedOptions: searchedOptions.slice(offset, offset + limit),
+      options: searchedOptions.slice(offset, offset + limit),
       length: searchedOptions.length,
-      options: searchedOptions
+      totalRecords: options.length
     });
   });
 };
@@ -3209,163 +3371,153 @@ var getLabelsFromSelectedObj = function getLabelsFromSelectedObj(options) {
 var Dropdown = function Dropdown(props) {
   var _props$limit = props.limit,
       limit = _props$limit === void 0 ? 10 : _props$limit,
-      _props$selectAll = props.selectAll,
-      selectAll = _props$selectAll === void 0 ? false : _props$selectAll,
+      _props$async = props.async,
+      async = _props$async === void 0 ? false : _props$async,
       onChange = props.onChange,
-      rest = _objectWithoutProperties(props, ["limit", "selectAll", "onChange"]);
+      loadMoreOptions = props.loadMoreOptions,
+      rest = _objectWithoutProperties(props, ["limit", "async", "onChange", "loadMoreOptions"]);
 
-  var _React$useState = useState$2([]),
+  var _React$useState = useState$2(-1),
       _React$useState2 = _slicedToArray(_React$useState, 2),
-      dropdownOptions = _React$useState2[0],
-      setDropdownOptions = _React$useState2[1];
+      topOffset = _React$useState2[0],
+      setTopOffset = _React$useState2[1];
 
-  var _React$useState3 = useState$2({}),
+  var _React$useState3 = useState$2(-1),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
-      subheadingObj = _React$useState4[0],
-      setSubheadingObj = _React$useState4[1];
+      bottomOffset = _React$useState4[0],
+      setBottomOffset = _React$useState4[1];
 
-  var _React$useState5 = useState$2(0),
+  var _React$useState5 = useState$2([]),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
-      topOffset = _React$useState6[0],
-      setTopOffset = _React$useState6[1];
+      options = _React$useState6[0],
+      setOptions = _React$useState6[1];
 
-  var _React$useState7 = useState$2(0),
+  var _React$useState7 = useState$2(false),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
-      bottomOffset = _React$useState8[0],
-      setBottomOffset = _React$useState8[1];
+      topOptionsSliced = _React$useState8[0],
+      setTopOptionsSliced = _React$useState8[1];
 
-  var _React$useState9 = useState$2([]),
+  var _React$useState9 = useState$2(false),
       _React$useState10 = _slicedToArray(_React$useState9, 2),
-      options = _React$useState10[0],
-      setOptions = _React$useState10[1];
+      bottomOptionsSliced = _React$useState10[0],
+      setBottomOptionsSliced = _React$useState10[1];
 
-  var _React$useState11 = useState$2(false),
+  var _React$useState11 = useState$2(''),
       _React$useState12 = _slicedToArray(_React$useState11, 2),
-      topOptionsSliced = _React$useState12[0],
-      setTopOptionsSliced = _React$useState12[1];
+      searchTerm = _React$useState12[0],
+      setSearchTerm = _React$useState12[1];
 
-  var _React$useState13 = useState$2(false),
+  var _React$useState13 = useState$2(2 * limit),
       _React$useState14 = _slicedToArray(_React$useState13, 2),
-      bottomOptionsSliced = _React$useState14[0],
-      setBottomOptionsSliced = _React$useState14[1];
+      stateLimit = _React$useState14[0],
+      setStateLimit = _React$useState14[1];
 
-  var _React$useState15 = useState$2(selectAll),
+  var _React$useState15 = useState$2(0),
       _React$useState16 = _slicedToArray(_React$useState15, 2),
-      selectedAll = _React$useState16[0],
-      setSelectedAll = _React$useState16[1];
+      slicedOptionLength = _React$useState16[0],
+      setSlicedOptionLength = _React$useState16[1];
 
-  var _React$useState17 = useState$2(''),
+  var _React$useState17 = useState$2(false),
       _React$useState18 = _slicedToArray(_React$useState17, 2),
-      searchTerm = _React$useState18[0],
-      setSearchTerm = _React$useState18[1];
+      loadingMoreUp = _React$useState18[0],
+      setLoadingMoreUp = _React$useState18[1];
 
-  var _React$useState19 = useState$2(2 * limit),
+  var _React$useState19 = useState$2(false),
       _React$useState20 = _slicedToArray(_React$useState19, 2),
-      stateLimit = _React$useState20[0],
-      setStateLimit = _React$useState20[1];
+      loadingMoreDown = _React$useState20[0],
+      setLoadingMoreDown = _React$useState20[1];
 
-  var _React$useState21 = useState$2(0),
+  var _React$useState21 = useState$2(props.loading),
       _React$useState22 = _slicedToArray(_React$useState21, 2),
-      slicedOptionLength = _React$useState22[0],
-      setSlicedOptionLength = _React$useState22[1];
+      loading = _React$useState22[0],
+      setLoading = _React$useState22[1];
 
-  var length = dropdownOptions ? dropdownOptions.length : 0;
-
-  var _React$useState23 = useState$2(length),
+  var _React$useState23 = useState$2(props.options.length),
       _React$useState24 = _slicedToArray(_React$useState23, 2),
       optionsLength = _React$useState24[0],
       setOptionLength = _React$useState24[1];
 
-  var _React$useState25 = useState$2({
+  var _React$useState25 = useState$2(),
+      _React$useState26 = _slicedToArray(_React$useState25, 2),
+      bufferedOption = _React$useState26[0],
+      setBufferedOption = _React$useState26[1];
+
+  var _React$useState27 = useState$2({
     label: [],
     value: []
   }),
-      _React$useState26 = _slicedToArray(_React$useState25, 2),
-      selected = _React$useState26[0],
-      setSelected = _React$useState26[1];
+      _React$useState28 = _slicedToArray(_React$useState27, 2),
+      selected = _React$useState28[0],
+      setSelected = _React$useState28[1];
 
-  var getSelectedFromOptions = function getSelectedFromOptions() {
-    var selectedValues = [];
-    var selectedLabels = [];
-    var optionsArray = dropdownOptions.slice();
+  var debounceSearch = debounce(300, function (search) {
+    setSearchTerm(search);
+  });
 
-    var selectedFilter = function selectedFilter(option) {
-      if (option.selected || selectAll && props.checkboxes) {
-        selectedValues.push(option.value);
-        selectedLabels.push(option.label);
-      }
-    };
+  var getDropdownOptions = function getDropdownOptions(offset, optionsLimit, direction) {
+    var bufferedOptionPresent = direction === 'up' && !(offset < 0);
+    var updatedLimit = direction === 'up' ? offset < 0 ? optionsLimit : optionsLimit + 1 : optionsLimit;
+    var updatedOffset = direction === 'up' ? offset < 0 ? offset + 1 : offset : offset;
+    var getPaginatedOptions = async && (direction || searchTerm) ? loadMoreOptions : getOptions;
 
-    optionsArray.filter(selectedFilter);
-    var result = {
-      label: selectedLabels,
-      value: selectedValues
-    };
-    return result;
+    if (props.options.length < optionsLimit && async && loadMoreOptions) {
+      getPaginatedOptions = loadMoreOptions;
+    }
+
+    if (getPaginatedOptions) {
+      if (async && direction === 'up') setLoadingMoreUp(true);
+      if (async && direction === 'down') setLoadingMoreDown(true);
+      if (getPaginatedOptions === loadMoreOptions && !direction) setLoading(true);
+      getPaginatedOptions(updatedOffset, updatedLimit, searchTerm, props.options).then(function (res) {
+        if (async && direction === 'up') setLoadingMoreUp(false);
+        if (async && direction === 'down') setLoadingMoreDown(false);
+        if (getPaginatedOptions === loadMoreOptions && !direction) setLoading(false);
+
+        if (updatedOffset !== undefined && direction !== undefined) {
+          var slicedOptions = res.options,
+              length = res.length;
+          var len = limit - slicedOptions.length;
+          var slicedLength = bufferedOptionPresent ? len + 1 : len;
+          if (!searchTerm && optionsLength !== length) setOptionLength(length);
+          setSlicedOptionLength(slicedLength);
+          updateOptionsOnScroll(slicedOptions, updatedOffset, direction, slicedLength, bufferedOptionPresent);
+        } else {
+          setOptionLength(res.length);
+          setSlicedOptionLength(0);
+          setOptions(res.options);
+          setBottomOffset(res.offset);
+        }
+      });
+    }
   };
 
-  var getDropdownOptions = function getDropdownOptions(updatedOffset, optionsLimit, direction) {
-    getOptions(updatedOffset, optionsLimit, searchTerm, dropdownOptions).then(function (res) {
-      if (updatedOffset !== undefined && direction !== undefined) {
-        var slicedOptions = res.slicedOptions;
-        var slicedLength = limit - slicedOptions.length;
-        setSlicedOptionLength(slicedLength);
-        updateOptionsOnScroll(res, updatedOffset, direction, slicedLength);
-      } else {
-        setSlicedOptionLength(0);
-        setOptionLength(res.length);
-        setOptions(res.slicedOptions);
-        setBottomOffset(res.offset);
-      }
-    });
+  var renderOptionsFromTop = function renderOptionsFromTop() {
+    if (props.options.length > 0) {
+      var emptyBuffer = {
+        value: '',
+        label: ''
+      };
+      setBufferedOption(emptyBuffer);
+      getDropdownOptions(0, limit, undefined);
+      setTopOffset(0);
+      setBottomOffset(0);
+    }
   };
 
   useEffect$2(function () {
     setStateLimit(2 * limit);
   }, [limit]);
   useEffect$2(function () {
-    if (props.options.length > 0) {
-      var selectOptions = [];
-      var subheadingObject = {};
-      props.options.forEach(function (option) {
-        var _ref = option,
-            group = _ref.group,
-            label = _ref.label,
-            items = _ref.items;
-
-        if (group || items) {
-          subheadingObject = _objectSpread2(_objectSpread2({}, subheadingObject), {}, _defineProperty({}, selectOptions.length, label));
-          items.forEach(function (item) {
-            selectOptions.push(item);
-          });
-        } else {
-          selectOptions.push(option);
-        }
-      });
-      setDropdownOptions(selectOptions);
-      setSubheadingObj(subheadingObject);
-    }
-  }, [JSON.stringify(props.options)]);
-  useEffect$2(function () {
-    if (dropdownOptions.length > 0) {
-      var selectedOptions = getSelectedFromOptions();
-      setSelected(selectedOptions);
-      setSelectedAll(selectAll);
-      getDropdownOptions(0, limit, undefined);
-    }
-  }, [JSON.stringify(dropdownOptions), selectAll, limit]);
-  useEffect$2(function () {
-    getDropdownOptions(0, limit, undefined);
-  }, [searchTerm]);
+    renderOptionsFromTop();
+  }, [JSON.stringify(props.options), limit, searchTerm]);
 
   var onSearchChange = function onSearchChange(search) {
-    setSearchTerm(search);
+    debounceSearch(search);
   };
 
-  var updateOptionsOnScroll = function updateOptionsOnScroll(result, updatedOffset, direction, slicedLength) {
+  var updateOptionsOnScroll = function updateOptionsOnScroll(slicedOptions, updatedOffset, direction, slicedLength, bufferPresent) {
     if (bottomOptionsSliced) setBottomOptionsSliced(false);
     if (topOptionsSliced) setTopOptionsSliced(false);
-    var slicedOptions = result.slicedOptions;
     var updatedOptions = options.slice();
 
     if (direction === 'down') {
@@ -3373,23 +3525,30 @@ var Dropdown = function Dropdown(props) {
       var len = updatedOptions.length;
 
       if (len > stateLimit) {
+        var bufferOption = updatedOptions[len - stateLimit - 1];
         updatedOptions = updatedOptions.slice(len - stateLimit, len);
+        setBufferedOption(bufferOption);
         setTopOffset(updatedOffset - stateLimit + limit - slicedLength);
         setBottomOptionsSliced(true);
       }
 
       setBottomOffset(updatedOffset);
     } else {
-      updatedOptions = slicedOptions.concat(updatedOptions);
+      var _bufferOption = bufferPresent ? slicedOptions[0] : {};
+
+      var newOptions = bufferPresent ? slicedOptions.slice(1) : slicedOptions;
+      var newOffset = bufferPresent ? updatedOffset + 1 : updatedOffset;
+      updatedOptions = newOptions.concat(updatedOptions);
       var _len = updatedOptions.length;
 
       if (_len > stateLimit) {
         updatedOptions = updatedOptions.slice(0, stateLimit);
-        setBottomOffset(updatedOffset + stateLimit - limit);
+        setBottomOffset(newOffset + stateLimit - limit);
         setTopOptionsSliced(true);
       }
 
-      setTopOffset(updatedOffset);
+      setBufferedOption(_bufferOption);
+      setTopOffset(newOffset);
     }
 
     setOptions(updatedOptions);
@@ -3398,8 +3557,8 @@ var Dropdown = function Dropdown(props) {
   var OnScrollOptions = function OnScrollOptions(direction) {
     var condition = direction === 'down' ? bottomOffset + limit > optionsLength : topOffset - limit < 0;
     var optionsLimit = condition ? direction === 'down' ? optionsLength - bottomOffset : topOffset : limit;
-    var updatedOffset = direction === 'down' ? bottomOffset + optionsLimit : topOffset - optionsLimit;
-    var offsetInOptions = updatedOffset >= 0 && updatedOffset !== optionsLength && optionsLimit > 0;
+    var updatedOffset = direction === 'down' ? bottomOffset + optionsLimit : topOffset - optionsLimit - 1;
+    var offsetInOptions = updatedOffset >= -1 && optionsLimit > 0;
     if (offsetInOptions) getDropdownOptions(updatedOffset, optionsLimit, direction);
   };
 
@@ -3408,24 +3567,26 @@ var Dropdown = function Dropdown(props) {
   };
 
   var onSelectAll = function onSelectAll(selectedAllOptions) {
-    if (dropdownOptions) {
-      var optionsCopy = dropdownOptions.slice();
+    if (props.options) {
+      var optionsCopy = props.options.slice();
       var selectedArray = selectedAllOptions ? getValuesFromSelectedObj(optionsCopy) : [];
       var selectedArrayLabel = selectedAllOptions ? getLabelsFromSelectedObj(optionsCopy) : [];
       setSelected({
         label: selectedArrayLabel,
         value: selectedArray
       });
-      setSelectedAll(false);
       if (onChange && !props.showApplyButton) onChange(selectedArray);
     }
   };
 
   return /*#__PURE__*/createElement("div", null, /*#__PURE__*/createElement(DropdownList, _extends({
     listOptions: options,
-    subheading: subheadingObj,
+    bufferedOption: bufferedOption,
     slicedOptionsLength: slicedOptionLength,
-    selectAll: selectedAll,
+    loadingMoreUp: loadingMoreUp,
+    loadingMoreDown: loadingMoreDown,
+    loadingOptions: loading,
+    async: async,
     selected: selected,
     searchTerm: searchTerm,
     onScroll: OnScrollOptions,
@@ -3433,11 +3594,12 @@ var Dropdown = function Dropdown(props) {
     bottomOptionsSliced: bottomOptionsSliced,
     limit: limit,
     offset: topOffset,
-    optionsLength: length,
+    optionsLength: props.options.length,
     onSearchChange: onSearchChange,
     onChange: onChangeOptions,
     onSelectAll: onSelectAll,
-    setSearchTerm: onSearchChange
+    setSearchTerm: onSearchChange,
+    renderOptionsFromTop: renderOptionsFromTop
   }, rest)));
 };
 Dropdown.displayName = 'Dropdown';
@@ -3671,10 +3833,10 @@ var Row = function Row(props) {
       groupM = props.groupM,
       groupL = props.groupL,
       groupXL = props.groupXL,
-      utilityClass = props.utilityClass;
+      className = props.className;
   var classes = classNames((_classNames = {
     Row: true
-  }, _defineProperty(_classNames, "RowGroup--".concat(group), group), _defineProperty(_classNames, "RowGroup--xs-".concat(groupXS), groupXS), _defineProperty(_classNames, "RowGroup--s-".concat(groupS), groupS), _defineProperty(_classNames, "RowGroup--m-".concat(groupM), groupM), _defineProperty(_classNames, "RowGroup--l-".concat(groupL), groupL), _defineProperty(_classNames, "RowGroup--xl-".concat(groupXL), groupXL), _defineProperty(_classNames, "".concat(utilityClass), utilityClass), _classNames));
+  }, _defineProperty(_classNames, "RowGroup--".concat(group), group), _defineProperty(_classNames, "RowGroup--xs-".concat(groupXS), groupXS), _defineProperty(_classNames, "RowGroup--s-".concat(groupS), groupS), _defineProperty(_classNames, "RowGroup--m-".concat(groupM), groupM), _defineProperty(_classNames, "RowGroup--l-".concat(groupL), groupL), _defineProperty(_classNames, "RowGroup--xl-".concat(groupXL), groupXL), _defineProperty(_classNames, "".concat(className), className), _classNames));
   return /*#__PURE__*/createElement("div", {
     className: classes
   }, props.children);
@@ -3726,141 +3888,6 @@ var Switch = forwardRef(function (props, ref) {
   }));
 });
 Switch.displayName = 'Switch';
-
-/* eslint-disable no-undefined,no-param-reassign,no-shadow */
-
-/**
- * Throttle execution of a function. Especially useful for rate limiting
- * execution of handlers on events like resize and scroll.
- *
- * @param  {Number}    delay          A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
- * @param  {Boolean}   [noTrailing]   Optional, defaults to false. If noTrailing is true, callback will only execute every `delay` milliseconds while the
- *                                    throttled-function is being called. If noTrailing is false or unspecified, callback will be executed one final time
- *                                    after the last throttled-function call. (After the throttled-function has not been called for `delay` milliseconds,
- *                                    the internal counter is reset)
- * @param  {Function}  callback       A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
- *                                    to `callback` when the throttled-function is executed.
- * @param  {Boolean}   [debounceMode] If `debounceMode` is true (at begin), schedule `clear` to execute after `delay` ms. If `debounceMode` is false (at end),
- *                                    schedule `callback` to execute after `delay` ms.
- *
- * @return {Function}  A new, throttled, function.
- */
-function throttle (delay, noTrailing, callback, debounceMode) {
-  /*
-   * After wrapper has stopped being called, this timeout ensures that
-   * `callback` is executed at the proper times in `throttle` and `end`
-   * debounce modes.
-   */
-  var timeoutID;
-  var cancelled = false; // Keep track of the last time `callback` was executed.
-
-  var lastExec = 0; // Function to clear existing timeout
-
-  function clearExistingTimeout() {
-    if (timeoutID) {
-      clearTimeout(timeoutID);
-    }
-  } // Function to cancel next exec
-
-
-  function cancel() {
-    clearExistingTimeout();
-    cancelled = true;
-  } // `noTrailing` defaults to falsy.
-
-
-  if (typeof noTrailing !== 'boolean') {
-    debounceMode = callback;
-    callback = noTrailing;
-    noTrailing = undefined;
-  }
-  /*
-   * The `wrapper` function encapsulates all of the throttling / debouncing
-   * functionality and when executed will limit the rate at which `callback`
-   * is executed.
-   */
-
-
-  function wrapper() {
-    var self = this;
-    var elapsed = Date.now() - lastExec;
-    var args = arguments;
-
-    if (cancelled) {
-      return;
-    } // Execute `callback` and update the `lastExec` timestamp.
-
-
-    function exec() {
-      lastExec = Date.now();
-      callback.apply(self, args);
-    }
-    /*
-     * If `debounceMode` is true (at begin) this is used to clear the flag
-     * to allow future `callback` executions.
-     */
-
-
-    function clear() {
-      timeoutID = undefined;
-    }
-
-    if (debounceMode && !timeoutID) {
-      /*
-       * Since `wrapper` is being called for the first time and
-       * `debounceMode` is true (at begin), execute `callback`.
-       */
-      exec();
-    }
-
-    clearExistingTimeout();
-
-    if (debounceMode === undefined && elapsed > delay) {
-      /*
-       * In throttle mode, if `delay` time has been exceeded, execute
-       * `callback`.
-       */
-      exec();
-    } else if (noTrailing !== true) {
-      /*
-       * In trailing throttle mode, since `delay` time has not been
-       * exceeded, schedule `callback` to execute `delay` ms after most
-       * recent execution.
-       *
-       * If `debounceMode` is true (at begin), schedule `clear` to execute
-       * after `delay` ms.
-       *
-       * If `debounceMode` is false (at end), schedule `callback` to
-       * execute after `delay` ms.
-       */
-      timeoutID = setTimeout(debounceMode ? clear : exec, debounceMode === undefined ? delay - elapsed : delay);
-    }
-  }
-
-  wrapper.cancel = cancel; // Return the wrapper function.
-
-  return wrapper;
-}
-
-/* eslint-disable no-undefined */
-/**
- * Debounce execution of a function. Debouncing, unlike throttling,
- * guarantees that a function is only executed a single time, either at the
- * very beginning of a series of calls, or at the very end.
- *
- * @param  {Number}   delay         A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
- * @param  {Boolean}  [atBegin]     Optional, defaults to false. If atBegin is false or unspecified, callback will only be executed `delay` milliseconds
- *                                  after the last debounced-function call. If atBegin is true, callback will be executed only at the first debounced-function call.
- *                                  (After the throttled-function has not been called for `delay` milliseconds, the internal counter is reset).
- * @param  {Function} callback      A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
- *                                  to `callback` when the debounced-function is executed.
- *
- * @return {Function} A new, debounced function.
- */
-
-function debounce (delay, atBegin, callback) {
-  return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
-}
 
 var Cell = /*#__PURE__*/function (_React$PureComponent) {
   _inherits(Cell, _React$PureComponent);
@@ -5434,7 +5461,7 @@ var RangePicker = function RangePicker(props) {
       group: '2',
       groupXS: '1'
     }, /*#__PURE__*/createElement(Column, {
-      utilityClass: "RangePicker-input RangePicker-input--startDate"
+      className: "RangePicker-input RangePicker-input--startDate"
     }, /*#__PURE__*/createElement(InputMask, _extends({}, startInputProps, {
       mask: mask,
       value: startDate ? translateToString(inputFormat, startDate) : '',
@@ -5452,7 +5479,7 @@ var RangePicker = function RangePicker(props) {
       },
       error: startError
     }))), /*#__PURE__*/createElement(Column, {
-      utilityClass: "RangePicker-input RangePicker-input--endDate"
+      className: "RangePicker-input RangePicker-input--endDate"
     }, /*#__PURE__*/createElement(InputMask, _extends({}, endInputProps, {
       mask: mask,
       value: endDate ? translateToString(inputFormat, endDate) : '',

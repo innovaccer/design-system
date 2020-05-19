@@ -4,6 +4,7 @@ export declare type Size = 'tiny' | 'regular';
 export interface DropdownButtonProps {
     size?: Size;
     disabled?: boolean;
+    menu?: boolean;
     icon?: string;
     inlineLabel?: string;
     placeholder?: string;

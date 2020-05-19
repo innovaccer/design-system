@@ -7,7 +7,7 @@ export interface IconProps {
     type?: IconType;
     appearance?: Appearance;
     onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-    helpers?: string[];
+    className?: string;
 }
 export declare const Icon: {
     (props: IconProps): JSX.Element;

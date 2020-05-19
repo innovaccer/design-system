@@ -11,6 +11,8 @@ export interface ListCheckboxProps {
     label?: string;
     showParentCheckbox?: boolean;
     checked?: boolean;
+    loadingMoreUp?: boolean;
+    loadingMoreDown?: boolean;
     list: CheckboxProps[];
     updatedSelectedArray?: boolean[];
     style?: React.CSSProperties;

@@ -8,7 +8,7 @@ export interface ColumnProps {
     sizeL?: Columns;
     sizeXL?: Columns;
     children?: React.ReactNode;
-    utilityClass?: string;
+    className?: string;
 }
 export declare const Column: {
     (props: ColumnProps): JSX.Element;

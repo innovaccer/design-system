@@ -4,14 +4,10 @@ export declare type DropdownAlign = 'left' | 'right';
 export interface Option {
     icon?: string;
     subInfo?: string;
+    group?: string;
     label: string;
     value: any;
     selected?: boolean;
-}
-export interface SubHeadingOption {
-    group: boolean;
-    label: string;
-    items: Option[];
 }
 export interface Subheading {
     [key: number]: string;
@@ -23,24 +19,28 @@ export interface DropdownListProps {
     placeholder?: string;
     inlineLabel?: string;
     searchResultMessage?: string;
+    menu?: boolean;
     disabled?: boolean;
     search?: boolean;
     checkboxes?: boolean;
     closeOnSelect?: boolean;
     showApplyButton?: boolean;
     optionsWrap?: boolean;
-    loadingOptions?: boolean;
     checkedValuesOffset?: number;
     maxHeight?: number;
     style?: React.CSSProperties;
 }
 interface OptionsProps extends DropdownListProps {
     listOptions: Option[];
+    bufferedOption?: Option;
     subheading?: Subheading;
     searchTerm: string;
     bottomOptionsSliced?: boolean;
     topOptionsSliced?: boolean;
-    selectAll: boolean;
+    loadingMoreUp?: boolean;
+    loadingOptions?: boolean;
+    loadingMoreDown?: boolean;
+    async?: boolean;
     limit: number;
     slicedOptionsLength: number;
     offset: number;
@@ -52,7 +52,9 @@ interface OptionsProps extends DropdownListProps {
     onChange?: (selected: any[] | any) => void;
     onSelectAll?: (selectedAll: boolean) => void;
     setSearchTerm?: (searchTerm: string) => void;
+    renderOptionsFromTop: () => void;
 }
+export declare const usePrevious: (value: any) => undefined;
 declare const DropdownList: {
     (props: OptionsProps): JSX.Element;
     displayName: string;
