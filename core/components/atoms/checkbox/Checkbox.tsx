@@ -95,7 +95,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
   const IconSize = (size) === 'tiny' ? 8 : 16;
 
   return (
-    <div className={CheckboxClass}>
+    <div className={CheckboxClass} onClick={onChangeHandler}>
       <input
         type="checkbox"
         checked={checked}
@@ -105,10 +105,12 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
         value={value}
         className={'Checkbox-input'}
       />
-      <span onClick={onChangeHandler} className={CheckboxWrapper}>
+      <span className={CheckboxWrapper}>
         {(IconName) && <Icon name={IconName} size={IconSize} appearance={'white'} />}
       </span>
-      {label && <Text small={size === 'tiny'}>{label}</Text>}
+      {label && label.trim() && (
+        <div className={'Checkbox-text'}><Text small={size === 'tiny'}>{label.trim()}</Text></div>
+      )}
     </div>
   );
 });
