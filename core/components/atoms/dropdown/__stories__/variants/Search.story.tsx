@@ -17,7 +17,7 @@ export const search = () => {
       </div>
       <div>
         <Text weight="strong">{'No Result'}</Text><br /><br />
-        <Dropdown search={true} placeholder={'Select'} options={[]} searchResultMessage={'No Result Found'}/>
+        <Dropdown search={true} placeholder={'Select'} options={[]} searchResultMessage={'No result found'}/>
       </div>
     </div>
   );

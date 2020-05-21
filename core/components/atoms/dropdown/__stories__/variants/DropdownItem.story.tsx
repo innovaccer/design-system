@@ -19,7 +19,7 @@ export const itemStates = () => {
           <Dropdown options={iconItems} placeholder={'Select'} />
         }
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '128px' }}>
         <Text weight="strong">{'Checkboxes'}</Text><br />
         {
           <Dropdown options={storyOptions.slice(0, 3)} checkboxes={true} placeholder={'Select'} />

@@ -10,6 +10,8 @@ import classNames from 'classnames';
 
 type ReactMouseEvent = React.MouseEvent<HTMLDivElement, MouseEvent>;
 
+export type ButtonAppearance = 'basic' | 'transparent';
+
 export type Size = 'tiny' | 'regular';
 
 export type DropdownAlign = 'left' | 'right';
@@ -44,6 +46,11 @@ export interface DropdownListProps {
    */
   dropdownAlign?: DropdownAlign;
   /**
+   * Appearance of `Dropdown` trigger button
+   * @default "basic"
+   */
+  buttonAppearance?: ButtonAppearance;
+  /**
    * Material icon name
    */
   icon?: string;
@@ -57,9 +64,14 @@ export interface DropdownListProps {
   inlineLabel?: string;
   /**
    * Display message when there is no result
-   * @default "No Result Found"
+   * @default "No result found"
    */
   searchResultMessage?: string;
+  /**
+   * Parent Checkbox label
+   * @default "Select All"
+   */
+  parentCheckboxLabel?: string;
   /**
    * Determines if type of `dropdown` is a menu
    * @default false
@@ -150,9 +162,11 @@ const DropdownList = (props: OptionsProps) => {
     checkedValuesOffset = 2,
     closeOnSelect = true,
     optionsWrap = false,
-    searchResultMessage = 'No Result Found',
+    searchResultMessage = 'No result found',
+    parentCheckboxLabel = 'Select All',
     maxHeight = 200,
     bottomScrollOffset = 64,
+    buttonAppearance,
     menu,
     bufferedOption,
     slicedOptionsLength,
@@ -261,6 +275,7 @@ const DropdownList = (props: OptionsProps) => {
   const trigger = (
     <DropdownButton
       placeholder={placeholder}
+      appearance={buttonAppearance}
       size={size}
       icon={icon}
       disabled={disabled}
@@ -273,7 +288,7 @@ const DropdownList = (props: OptionsProps) => {
     </DropdownButton>
   );
 
-  const dropdownWrapperStyle = {
+  const dropdownWrapperStyle = menu ? style : {
     width,
     display: 'flex',
     ...style
@@ -308,6 +323,7 @@ const DropdownList = (props: OptionsProps) => {
   const dropdownClass = classNames({
     ['Dropdown']: true,
     ['Dropdown-placeholder']: !menu,
+    ['Dropdown-menu']: menu,
   });
 
   const dropdownWrapperClass = classNames({
@@ -334,13 +350,10 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const onCancelOptions = () => {
-    setSelected([]);
-    setPreviousSelected([]);
-    setPreviousSelectedLabels([]);
-    setSelectedLabels([]);
-    setButtonLabel(placeholder);
+    setSelected(previousSelected);
+    setSelectedLabels(previousSelectedLabels);
+    setSelectButtonLabel(previousSelectedLabels);
     setDropdownOpen(false);
-    if (onChange) onChange([]);
   };
 
   const onApplyOptions = () => {
@@ -371,6 +384,10 @@ const DropdownList = (props: OptionsProps) => {
     setSelected([value]);
     setDropdownOpen(!closeOnSelect);
     if (onChange) onChange(value);
+  };
+
+  const searchClearHandler = () => {
+    if (onSearchChange) onSearchChange('');
   };
 
   const searchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -417,9 +434,12 @@ const DropdownList = (props: OptionsProps) => {
         <Input
           name="search"
           icon={'search'}
+          value={searchTerm}
           placeholder={'Search..'}
           disabled={false}
+          clearButton={true}
           onChange={searchHandler}
+          onClear={searchClearHandler}
         />
       </div>
     );
@@ -445,6 +465,7 @@ const DropdownList = (props: OptionsProps) => {
     const showParentCheckbox = searchTerm === '' && !props.async;
     const condition1 = JSON.stringify(prevDropdownOpen) !== JSON.stringify(dropdownOpen);
     const condition2 = JSON.stringify(prevListOptions) !== JSON.stringify(listOptions);
+    const parentLabel = parentCheckboxLabel.trim() ? parentCheckboxLabel.trim() : 'Select All';
 
     listOptions.forEach(option => {
       const { label, value } = option;
@@ -460,7 +481,7 @@ const DropdownList = (props: OptionsProps) => {
 
     return (
       <ListCheckbox
-        label={'Select All'}
+        label={parentLabel}
         onChange={checkboxChangeHandler}
         checked={parentChecked}
         loadingMoreUp={loadingMoreUp}
@@ -482,7 +503,11 @@ const DropdownList = (props: OptionsProps) => {
 
     return (
       <div className={getOptionWrapperClass(optionIcon, value, index)} onClick={e => optionClickHandler(e, item)}>
-        {optionIcon && <div className={'Option-icon'}><Icon className="mr-4" name={optionIcon} /></div>}
+        {optionIcon && (
+          <div className={'Option-icon'}>
+            <Icon className="mr-4" name={optionIcon} appearance={selected[0] === value ? 'white' : 'default'} />
+          </div>
+        )}
         <div className={'Option-label'}>
           <div className={optionTextClass}>{label}</div>
           {subInfo && <div className={'Option-subinfo'}>{subInfo}</div>}

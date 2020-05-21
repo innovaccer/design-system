@@ -30,7 +30,7 @@ export const async = () => {
       {
         BooleanValue.map((value, ind) => {
           return (
-            <div key={ind} style={{ marginRight: '10%' }}>
+            <div key={ind} style={{ marginRight: '10%', width: '128px' }}>
               <Text weight="strong">{value ? 'With Async' : 'Without Async'}</Text> <br /><br />
               <Dropdown async={value} options={dropdownOptions} loadMoreOptions={loadMoreOptions}/>
             </div>
