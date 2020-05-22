@@ -2,9 +2,7 @@ import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import Button, { Size } from '../Button';
-import Text from '@/components/atoms/text';
 
-// CSF format story
 export const iconLeftSecondary = () => {
   const disabled = false;
   const expanded = false;
@@ -59,8 +57,6 @@ export const iconLeftSecondary = () => {
                   {children}
                 </Button>
               </div>
-              <br />
-              <Text weight="strong">{IconSize.charAt(0).toUpperCase() + IconSize.slice(1)}</Text>
             </div>
           );
         })

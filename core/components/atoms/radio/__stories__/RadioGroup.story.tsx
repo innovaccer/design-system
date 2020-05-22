@@ -1,17 +1,14 @@
 import * as React from 'react';
 import { select } from '@storybook/addon-knobs';
 import Radio from '../index';
-// import docPage from '@/utils/docPage';
 
-// CSF format story
-export const all = () => {
+export const radioGroup = () => {
 
   const size = select(
     'size',
     ['tiny', 'regular'],
     undefined
   );
-
   return (
     <div>
       <Radio
