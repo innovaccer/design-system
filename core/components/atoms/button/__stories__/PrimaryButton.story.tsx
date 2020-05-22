@@ -2,9 +2,7 @@ import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import Button, { Appearance } from '../Button';
-import Text from '@/components/atoms/text';
 
-// CSF format story
 export const primaryButton = () => {
   const disabled = false;
   const expanded = false;
@@ -35,7 +33,7 @@ export const primaryButton = () => {
                 onClick={action('button-clicked')}
                 onMouseEnter={action('mouse-enter')}
                 onMouseLeave={action('mouse-leave')}
-                appearance="primary"
+                appearance={appear}
                 size={'regular'}
                 expanded={expanded}
                 disabled={disabled}
@@ -43,8 +41,6 @@ export const primaryButton = () => {
               >
                 {children}
               </Button>
-              <br />
-              <Text weight="strong">Primary</Text>
             </div>
           );
         })

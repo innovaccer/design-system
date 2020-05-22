@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
-import Badge, { Appearance } from '../Badge';
+import Pills, { Appearance } from '../../pills';
 
-export const warning = () => {
+export const alert = () => {
   const subtle = false;
-  const children = text('children', 'Badge');
+  const children = text('children', 'Pills');
 
-  const appearances: Appearance[] = ['warning'];
+  const appearances: Appearance[] = ['alert'];
 
   const style = {
     display: 'flex',
@@ -22,12 +22,12 @@ export const warning = () => {
         appearances.map((appear, ind) => {
           return (
             <div key={ind} style={innerStyle}>
-              <Badge
+              <Pills
                 appearance={appear}
                 subtle={subtle}
               >
                 {children}
-              </Badge>
+              </Pills>
             </div>
           );
         })
@@ -37,12 +37,12 @@ export const warning = () => {
 };
 
 export default {
-  title: 'Atoms|Badge',
-  component: Badge,
+  title: 'Atoms|Pills',
+  component: Pills,
   parameters: {
     docs: {
       docPage: {
-        title: 'Badge'
+        title: 'Pills'
       }
     }
   }
