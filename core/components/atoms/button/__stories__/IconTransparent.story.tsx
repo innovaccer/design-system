@@ -2,9 +2,7 @@ import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import Button, { Size } from '../Button';
-import Text from '@/components/atoms/text';
 
-// CSF format story
 export const iconTransparent = () => {
   const disabled = false;
   const expanded = false;
@@ -42,7 +40,7 @@ export const iconTransparent = () => {
                   onClick={action('button-clicked')}
                   onMouseEnter={action('mouse-enter')}
                   onMouseLeave={action('mouse-leave')}
-                  appearance={'Transparent'}
+                  appearance={'transparent'}
                   size={IconSize}
                   expanded={expanded}
                   disabled={disabled}
@@ -52,8 +50,6 @@ export const iconTransparent = () => {
                   {''}
                 </Button>
               </div>
-              <br />
-              <Text weight="strong">{IconSize.charAt(0).toUpperCase() + IconSize.slice(1)}</Text>
             </div>
           );
         })

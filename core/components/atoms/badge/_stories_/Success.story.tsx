@@ -1,13 +1,9 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
 import Badge, { Appearance } from '../Badge';
-import Text from '@/components/atoms/text';
 
-// CSF format story
 export const success = () => {
   const subtle = false;
-  const weight = 'strong';
-
   const children = text('children', 'Badge');
 
   const appearances: Appearance[] = ['success'];
@@ -32,8 +28,6 @@ export const success = () => {
               >
                 {children}
               </Badge>
-              <br />
-              <Text weight={weight}>{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>
             </div>
           );
         })

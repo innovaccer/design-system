@@ -1,13 +1,9 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
 import Badge, { Appearance } from '../Badge';
-// import Text from '@/components/atoms/text';
 
-// CSF format story
 export const subtleAlert = () => {
   const ButtonSubtle = true;
-  // const weight = 'strong';
-
   const children = text('children', 'Badge');
 
   const appearances: Appearance[] = ['alert'];
@@ -32,7 +28,6 @@ export const subtleAlert = () => {
               >
                 {children}
               </Badge>
-
             </div>
           );
         })
