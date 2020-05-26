@@ -98,7 +98,9 @@ export const Toast = (props: ToastProps) => {
             {title}
           </Heading>
           <div onClick={onCloseHandler}>
-            <div className={iconClass('right')}><Icon name={'close'} size={16} /></div>
+            <div className={iconClass('right')}>
+              <Icon name={'close'} size={16} appearance={appearance !== 'warning' ? 'white' : 'default'} />
+            </div>
           </div>
         </div>
         {message && (
