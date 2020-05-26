@@ -33,7 +33,8 @@ export const Pagination = (props: PaginationProps) => {
     onPageChange
   } = props;
 
-  const [page, setPage] = React.useState(props.page ? props.page : 1);
+  const [page, setPage] = React.useState<number>(props.page ? props.page : 1);
+  const [init, setInit] = React.useState<boolean>(false);
 
   const wrapperClass = classNames({
     ['Pagination']: true,
@@ -52,7 +53,7 @@ export const Pagination = (props: PaginationProps) => {
   });
 
   React.useEffect(() => {
-    if (page) onPageChange(page);
+    if (init) onPageChange(page);
   }, [page]);
 
   const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -62,6 +63,18 @@ export const Pagination = (props: PaginationProps) => {
     if (!val || (val > 0 && val <= totalPages)) {
       setPage(val);
     }
+  };
+
+  const onClickHandler = (buttonType: 'prev' | 'next') => {
+    switch (buttonType) {
+      case 'prev':
+        if (page > 1) setPage(page - 1);
+        break;
+      case 'next':
+        if (page < totalPages) setPage(page + 1);
+        break;
+    }
+    setInit(true);
   };
 
   const buttonHelper: string[] = [];
@@ -80,7 +93,7 @@ export const Pagination = (props: PaginationProps) => {
         />
         <div className={['ml-4', ...buttonHelper].join(' ')}>
           <Button
-            onClick={() => (page > 1 && setPage(page - 1))}
+            onClick={() => onClickHandler('prev')}
             disabled={page === 1}
             size="large"
             icon="navigate_before"
@@ -103,7 +116,7 @@ export const Pagination = (props: PaginationProps) => {
       <div className={nextButtonWrapperClass}>
         <div className={['mr-4', ...buttonHelper].join(' ')}>
           <Button
-            onClick={() => (page < totalPages && setPage(page + 1))}
+            onClick={() => onClickHandler('next')}
             disabled={page === totalPages}
             size="large"
             icon="navigate_next"
