@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Heading from '@/components/atoms/heading';
+import { BreadcrumbProps } from './Breadcrumb';
 
 export interface BreadcrumbsWrapperProps {
   /**
@@ -9,7 +10,7 @@ export interface BreadcrumbsWrapperProps {
   /**
    * All `Breadcrumb` Component will be wrapped in a `list`
    */
-  children: React.ReactNode;
+  children: React.ReactElement<BreadcrumbProps> | React.ReactElement<BreadcrumbProps>[];
 }
 
 export const BreadcrumbsWrapper: React.FunctionComponent<BreadcrumbsWrapperProps> = props => {
