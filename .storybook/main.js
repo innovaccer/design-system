@@ -40,7 +40,13 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
         include: path.resolve(__dirname, '../')
       },
-       {
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader',
+        ],
+      },
+      {
         test: /\.woff($|\?)/,
         loader: 'file-loader?limit=65000&mimetype=application/font-woff&name=[name].[ext]'
       }, {

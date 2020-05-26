@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 
 import PlaceholderImage, { Size } from '@/components/atoms/placeholderImage';
+import { PlaceholderParagraphProps } from '@/components/atoms/placeholderParagraph';
 
 export interface PlaceholderProps {
   /**
@@ -24,7 +25,7 @@ export interface PlaceholderProps {
   /**
    * To be rendered in `Placeholder` wrapper
    */
-  children: React.ReactNode;
+  children?: React.ReactElement<PlaceholderParagraphProps> | React.ReactElement<PlaceholderParagraphProps>[];
 }
 
 export const Placeholder = (props: PlaceholderProps) => {
