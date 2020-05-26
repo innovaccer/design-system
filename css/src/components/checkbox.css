@@ -18,6 +18,9 @@
     margin: 0;
 }
 
+.Checkbox-text {
+    padding-left: var(--spacing);
+}
 
 /* Type: Unchecked  */
 
@@ -26,9 +29,9 @@
     left: 0;
     border: var(--border);
     border-radius: var(--spacing-s);
-    margin-right: var(--spacing);
     display: flex;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .Checkbox-wrapper--regular {
