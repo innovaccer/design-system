@@ -19,6 +19,7 @@
     border: var(--border);
     padding-right: var(--spacing-l);
     padding-left: var(--spacing-l);
+    background: var(--white);
 }
 
 .Input-wrapper--tiny {
@@ -82,6 +83,7 @@
     color: var(--night);
     padding: 0;
     border: none;
+    background: transparent;
 }
 
 .Input-input::placeholder {
@@ -90,10 +92,6 @@
 
 .Input-input:focus {
     outline: 0;
-}
-
-.Input-input:disabled {
-    background: var(--secondary-lightest);
 }
 
 .Input-input:disabled .Input-input::placeholder {
