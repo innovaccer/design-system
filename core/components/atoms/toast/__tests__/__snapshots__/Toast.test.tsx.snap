@@ -33,6 +33,7 @@ exports[`Toast component
           className="Toast-icon Toast-icon--right"
         >
           <Icon
+            appearance="white"
             name="close"
             size={16}
           />
@@ -67,6 +68,7 @@ exports[`Toast component
           className="Toast-icon Toast-icon--right"
         >
           <Icon
+            appearance="white"
             name="close"
             size={16}
           />
@@ -110,6 +112,7 @@ exports[`Toast component
           className="Toast-icon Toast-icon--right"
         >
           <Icon
+            appearance="white"
             name="close"
             size={16}
           />
@@ -153,6 +156,7 @@ exports[`Toast component
           className="Toast-icon Toast-icon--right"
         >
           <Icon
+            appearance="white"
             name="close"
             size={16}
           />
@@ -196,6 +200,7 @@ exports[`Toast component
           className="Toast-icon Toast-icon--right"
         >
           <Icon
+            appearance="default"
             name="close"
             size={16}
           />
@@ -239,6 +244,7 @@ exports[`Toast component
           className="Toast-icon Toast-icon--right"
         >
           <Icon
+            appearance="white"
             name="close"
             size={16}
           />
@@ -291,6 +297,7 @@ exports[`Toast component
           className="Toast-icon Toast-icon--right"
         >
           <Icon
+            appearance="white"
             name="close"
             size={16}
           />
@@ -344,6 +351,7 @@ exports[`Toast component
           className="Toast-icon Toast-icon--right"
         >
           <Icon
+            appearance="white"
             name="close"
             size={16}
           />
@@ -387,6 +395,7 @@ exports[`Toast component
           className="Toast-icon Toast-icon--right"
         >
           <Icon
+            appearance="white"
             name="close"
             size={16}
           />
@@ -449,6 +458,7 @@ exports[`Toast component
           className="Toast-icon Toast-icon--right"
         >
           <Icon
+            appearance="white"
             name="close"
             size={16}
           />
@@ -501,6 +511,7 @@ exports[`Toast component
           className="Toast-icon Toast-icon--right"
         >
           <Icon
+            appearance="white"
             name="close"
             size={16}
           />
@@ -563,6 +574,7 @@ exports[`Toast component
           className="Toast-icon Toast-icon--right"
         >
           <Icon
+            appearance="white"
             name="close"
             size={16}
           />
@@ -615,6 +627,7 @@ exports[`Toast component
           className="Toast-icon Toast-icon--right"
         >
           <Icon
+            appearance="white"
             name="close"
             size={16}
           />
@@ -677,6 +690,7 @@ exports[`Toast component
           className="Toast-icon Toast-icon--right"
         >
           <Icon
+            appearance="default"
             name="close"
             size={16}
           />
@@ -729,6 +743,7 @@ exports[`Toast component
           className="Toast-icon Toast-icon--right"
         >
           <Icon
+            appearance="default"
             name="close"
             size={16}
           />

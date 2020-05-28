@@ -14,6 +14,7 @@ const BooleanValue = [true, false];
 describe('DonutChart component', () => {
   const mapper: Record<string, any> = {
     radius: valueHelper(100, { required: true }),
+    data: valueHelper(data, { required: true })
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -22,7 +23,6 @@ describe('DonutChart component', () => {
     it(testMessageHelper(attr), () => {
       const tree = shallow(
         <DonutChart
-          data={data}
           {...attr}
         />
       );
@@ -36,6 +36,7 @@ describe('DonutChart component', () => {
 describe('DonutChart component', () => {
   const mapper: Record<string, any> = {
     donutWidth: valueHelper(50, { required: true }),
+    data: valueHelper(data, { required: true })
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -44,7 +45,6 @@ describe('DonutChart component', () => {
     it(testMessageHelper(attr), () => {
       const tree = shallow(
         <DonutChart
-          data={data}
           {...attr}
         />
       );
@@ -58,6 +58,7 @@ describe('DonutChart component', () => {
 describe('DonutChart component', () => {
   const mapper: Record<string, any> = {
     withLegends: valueHelper(BooleanValue, { required: true, iterate: true }),
+    data: valueHelper(data, { required: true })
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -66,7 +67,6 @@ describe('DonutChart component', () => {
     it(testMessageHelper(attr), () => {
       const tree = shallow(
         <DonutChart
-          data={data}
           {...attr}
         />
       );
@@ -80,6 +80,7 @@ describe('DonutChart component', () => {
 describe('DonutChart component', () => {
   const mapper: Record<string, any> = {
     withActiveSegment: valueHelper(BooleanValue, { required: true, iterate: true }),
+    data: valueHelper(data, { required: true })
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -88,7 +89,6 @@ describe('DonutChart component', () => {
     it(testMessageHelper(attr), () => {
       const tree = shallow(
         <DonutChart
-          data={data}
           {...attr}
         />
       );
@@ -102,6 +102,7 @@ describe('DonutChart component', () => {
 describe('DonutChart component', () => {
   const mapper: Record<string, any> = {
     withTooltip: valueHelper(BooleanValue, { required: true, iterate: true }),
+    data: valueHelper(data, { required: true })
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -110,7 +111,6 @@ describe('DonutChart component', () => {
     it(testMessageHelper(attr), () => {
       const tree = shallow(
         <DonutChart
-          data={data}
           {...attr}
         />
       );
@@ -124,6 +124,7 @@ describe('DonutChart component', () => {
 describe('DonutChart component', () => {
   const mapper: Record<string, any> = {
     withCenterText: valueHelper(BooleanValue, { required: true, iterate: true }),
+    data: valueHelper(data, { required: true })
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -132,7 +133,6 @@ describe('DonutChart component', () => {
     it(testMessageHelper(attr), () => {
       const tree = shallow(
         <DonutChart
-          data={data}
           {...attr}
         />
       );
