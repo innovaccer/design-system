@@ -6,6 +6,7 @@ import { storyOptions, subInfoItems, iconItems } from '../utils/Options';
 
 const size = ['tiny', 'regular'];
 const dropdownAlign = ['left', 'right'];
+const buttonAppearance = ['basic', 'transparent'];
 const BooleanValue = [true, false];
 const placeholderValue = ['Select'];
 const options = [subInfoItems, iconItems];
@@ -21,10 +22,29 @@ const FunctionValue = jest.fn();
 
 describe('Dropdown component', () => {
   const mapper: Record<string, any> = {
-    size: valueHelper(size, { required: true, iterate: true }),
+    triggerSize: valueHelper(size, { required: true, iterate: true }),
     placeholder: valueHelper(placeholderValue, { required: true, iterate: true }),
     options: valueHelper(storyOptions, { required: true }),
     onChange: valueHelper(FunctionValue, { required: true }),
+  };
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+
+    it(testMessageHelper(attr), () => {
+      const tree = shallow(
+        <Dropdown {...attr} />
+      );
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('Dropdown component', () => {
+  const mapper: Record<string, any> = {
+    options: valueHelper(storyOptions, { required: true }),
+    buttonAppearance: valueHelper(buttonAppearance, { required: true, iterate: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;

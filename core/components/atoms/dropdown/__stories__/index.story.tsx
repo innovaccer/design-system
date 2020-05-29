@@ -6,7 +6,7 @@ import { dropdownOptions } from '../utils/Options';
 
 // CSF format story
 export const all = () => {
-  const size = select(
+  const triggerSize = select(
     'size',
     ['tiny', 'regular'],
     undefined
@@ -38,7 +38,7 @@ export const all = () => {
 
   const loading = boolean('loading', false);
 
-  const async = boolean('async', true);
+  const bulk = boolean('bulk', true);
 
   const icon = text('icon', '');
 
@@ -59,17 +59,21 @@ export const all = () => {
     return result;
   };
 
-  const loadMoreOptions = (offset: number, optionsLimit: number, searchTerm: string) => {
+  const fetchOptions = (searchTerm: string, bulkLimit: number) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
     return new Promise<any>(resolve => {
       setTimeout(() => {
         resolve({
-          offset,
-          options: searchedOptions.slice(offset, offset + optionsLimit),
-          length: searchedOptions.length,
+          options: searchedOptions.slice(0, bulkLimit),
+          count: searchedOptions.length,
         });
-      }, 2000);
+      }, 1000);
     });
+  };
+
+  const onChangeTriggerLabel = (selectedLength: number, totalOptions?: number) => {
+    const optionsLength = totalOptions ? totalOptions : dropdownOptions.length;
+    return `${selectedLength} of ${optionsLength} are selected`;
   };
 
   const onChangeHandler = (selectedValues: any[]) => {
@@ -77,34 +81,35 @@ export const all = () => {
   };
 
   const props = {
-    size,
+    triggerSize,
     dropdownAlign,
     buttonAppearance,
     icon,
+    bulk,
     placeholder,
     inlineLabel,
     disabled,
     menu,
     closeOnSelect,
     search,
-    async,
     checkboxes,
     showApplyButton,
     checkedValuesOffset,
     maxHeight,
     limit,
     loading,
-    loadMoreOptions,
+    fetchOptions,
     parentCheckboxLabel,
+    onChangeTriggerLabel,
     options: dropdownOptions,
     onChange: onChangeHandler,
     style: {
-      marginLeft: '128px'
+      marginLeft: '128px',
     }
   };
 
   return (
-    <div style={{ width: '150px' }}>
+    <div style={{ width: '170px' }}>
       <Dropdown
         {...props}
       />

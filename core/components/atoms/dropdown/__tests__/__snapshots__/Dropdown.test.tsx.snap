@@ -4,74 +4,23 @@ exports[`Dropdown component
   checkboxes: true, selectAll: true, options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   checkboxes={true}
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
   selectAll={true}
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -81,73 +30,22 @@ exports[`Dropdown component
   checkboxes: true, showApplyButton: false, options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   checkboxes={true}
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   showApplyButton={false}
   slicedOptionsLength={0}
   topOptionsSliced={false}
@@ -158,73 +56,22 @@ exports[`Dropdown component
   checkboxes: true, showApplyButton: true, options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   checkboxes={true}
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   showApplyButton={true}
   slicedOptionsLength={0}
   topOptionsSliced={false}
@@ -235,74 +82,23 @@ exports[`Dropdown component
   disabled: false, placeholder: "Select", icon: "events", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   disabled={false}
   icon="events"
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -312,74 +108,23 @@ exports[`Dropdown component
   disabled: false, placeholder: "Select", inlineLabel: "Label", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   disabled={false}
   inlineLabel="Label"
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -389,74 +134,23 @@ exports[`Dropdown component
   disabled: false, placeholder: "Select", inlineLabel: "Label", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  2`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   disabled={false}
   inlineLabel="Label"
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -466,73 +160,22 @@ exports[`Dropdown component
   disabled: false, placeholder: "Select", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   disabled={false}
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -542,74 +185,23 @@ exports[`Dropdown component
   disabled: true, placeholder: "Select", icon: "events", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   disabled={true}
   icon="events"
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -619,74 +211,23 @@ exports[`Dropdown component
   disabled: true, placeholder: "Select", inlineLabel: "Label", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   disabled={true}
   inlineLabel="Label"
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -696,74 +237,23 @@ exports[`Dropdown component
   disabled: true, placeholder: "Select", inlineLabel: "Label", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  2`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   disabled={true}
   inlineLabel="Label"
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -773,73 +263,22 @@ exports[`Dropdown component
   disabled: true, placeholder: "Select", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   disabled={true}
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -849,72 +288,21 @@ exports[`Dropdown component
   dropdownAlign: "left", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   dropdownAlign="left"
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -924,72 +312,21 @@ exports[`Dropdown component
   dropdownAlign: "right", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   dropdownAlign="right"
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -999,78 +336,21 @@ exports[`Dropdown component
   options: [{"group":true,"label":"Group 1","items":[{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}]}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "group": true,
-        "items": Array [
-          Object {
-            "label": "Option 1",
-            "value": "Option 1",
-          },
-          Object {
-            "label": "Option 2",
-            "value": "Option 2",
-          },
-          Object {
-            "label": "Option 3",
-            "value": "Option 3",
-          },
-          Object {
-            "label": "Option 4",
-            "value": "Option 4",
-          },
-          Object {
-            "label": "Option 5",
-            "value": "Option 5",
-          },
-          Object {
-            "label": "Option 6",
-            "value": "Option 6",
-          },
-          Object {
-            "label": "Option 7",
-            "value": "Option 7",
-          },
-          Object {
-            "label": "Option 8",
-            "value": "Option 8",
-          },
-          Object {
-            "label": "Option 9",
-            "value": "Option 9",
-          },
-          Object {
-            "label": "Option 10",
-            "value": "Option 10",
-          },
-        ],
-        "label": "Group 1",
-      },
-    ]
-  }
   optionsLength={1}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -1080,47 +360,21 @@ exports[`Dropdown component
   options: [{"label":"Option 1","value":"Option 1","icon":"events"},{"label":"Option 2","value":"Option 2","icon":"events"},{"label":"Option 3","value":"Option 3","icon":"events"}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "icon": "events",
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-    ]
-  }
   optionsLength={3}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -1130,47 +384,69 @@ exports[`Dropdown component
   options: [{"label":"Option 1","value":"Option 1","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","subInfo":"subInfo"}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "subInfo": "subInfo",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "subInfo": "subInfo",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "subInfo": "subInfo",
-        "value": "Option 3",
-      },
-    ]
-  }
   optionsLength={3}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
+  slicedOptionsLength={0}
+  topOptionsSliced={false}
+/>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], buttonAppearance: "basic"
+ 1`] = `
+<DropdownList
+  bottomOptionsSliced={false}
+  buttonAppearance="basic"
+  limit={10}
+  listOptions={Array []}
+  offset={-1}
+  onChange={[Function]}
+  onRearrangeOptions={[Function]}
+  onScroll={[Function]}
+  onSearchChange={[Function]}
+  onSelectAll={[Function]}
+  optionsLength={10}
+  remainingOptions={0}
+  renderOptionsFromTop={[Function]}
+  searchInit={false}
+  searchTerm=""
+  slicedOptionsLength={0}
+  topOptionsSliced={false}
+/>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], buttonAppearance: "transparent"
+ 1`] = `
+<DropdownList
+  bottomOptionsSliced={false}
+  buttonAppearance="transparent"
+  limit={10}
+  listOptions={Array []}
+  offset={-1}
+  onChange={[Function]}
+  onRearrangeOptions={[Function]}
+  onScroll={[Function]}
+  onSearchChange={[Function]}
+  onSelectAll={[Function]}
+  optionsLength={10}
+  remainingOptions={0}
+  renderOptionsFromTop={[Function]}
+  searchInit={false}
+  searchTerm=""
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -1180,71 +456,20 @@ exports[`Dropdown component
   options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -1254,71 +479,20 @@ exports[`Dropdown component
   options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  2`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -1328,72 +502,21 @@ exports[`Dropdown component
   options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]", placeholder: "Select"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -1403,72 +526,21 @@ exports[`Dropdown component
   options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]", placeholder: "Select"
  2`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -1478,75 +550,24 @@ exports[`Dropdown component
   search: true, loading: false, options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   limit={10}
   listOptions={Array []}
   loading={false}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   loadingOptions={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
   search={true}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
@@ -1556,228 +577,75 @@ exports[`Dropdown component
   search: true, loading: true, options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], placeholder: "Select", onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   limit={10}
   listOptions={Array []}
   loading={true}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   loadingOptions={true}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
   search={true}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
   slicedOptionsLength={0}
   topOptionsSliced={false}
 />
 `;
 
 exports[`Dropdown component 
-  size: "regular", placeholder: "Select", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
+  triggerSize: "regular", placeholder: "Select", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
-  size="regular"
   slicedOptionsLength={0}
   topOptionsSliced={false}
+  triggerSize="regular"
 />
 `;
 
 exports[`Dropdown component 
-  size: "tiny", placeholder: "Select", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
+  triggerSize: "tiny", placeholder: "Select", options: [{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}], onChange: "[Function]"
  1`] = `
 <DropdownList
-  async={false}
   bottomOptionsSliced={false}
   limit={10}
   listOptions={Array []}
-  loadingMoreDown={false}
-  loadingMoreUp={false}
   offset={-1}
   onChange={[Function]}
+  onRearrangeOptions={[Function]}
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "label": "Option 1",
-        "value": "Option 1",
-      },
-      Object {
-        "label": "Option 2",
-        "value": "Option 2",
-      },
-      Object {
-        "label": "Option 3",
-        "value": "Option 3",
-      },
-      Object {
-        "label": "Option 4",
-        "value": "Option 4",
-      },
-      Object {
-        "label": "Option 5",
-        "value": "Option 5",
-      },
-      Object {
-        "label": "Option 6",
-        "value": "Option 6",
-      },
-      Object {
-        "label": "Option 7",
-        "value": "Option 7",
-      },
-      Object {
-        "label": "Option 8",
-        "value": "Option 8",
-      },
-      Object {
-        "label": "Option 9",
-        "value": "Option 9",
-      },
-      Object {
-        "label": "Option 10",
-        "value": "Option 10",
-      },
-    ]
-  }
   optionsLength={10}
   placeholder="Select"
+  remainingOptions={0}
   renderOptionsFromTop={[Function]}
+  searchInit={false}
   searchTerm=""
-  selected={
-    Object {
-      "label": Array [],
-      "value": Array [],
-    }
-  }
-  setSearchTerm={[Function]}
-  size="tiny"
   slicedOptionsLength={0}
   topOptionsSliced={false}
+  triggerSize="tiny"
 />
 `;

@@ -9,6 +9,14 @@ interface OptionType {
   slicedOptions: any[];
 }
 
+export const useIsMount = () => {
+  const isMountRef = React.useRef(true);
+  React.useEffect(() => {
+    isMountRef.current = false;
+  }, []);
+  return isMountRef.current;
+};
+
 export interface DropdownProps extends DropdownListProps {
   /**
    * Number of options to be added when scroller hits top/bottom
@@ -20,10 +28,12 @@ export interface DropdownProps extends DropdownListProps {
    */
   loading?: boolean;
   /**
-   * Load options from an API when user scrolls.
-   * @default false
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * if options in database are <= 50, `bulk` = false
+   * if options in database are > 50, `bulk` = true
+   * </pre>
    */
-  async?: boolean;
+  bulk?: boolean;
   /**
    * Options to render inside `Dropdown`
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
@@ -36,20 +46,24 @@ export interface DropdownProps extends DropdownListProps {
    * }
    * </pre>
    */
-  options: Option[];
+  options?: Option[];
   /**
-   * Callback function when user hits the top or bottom
+   * Label for selected options group
+   * @default "Selected Items"
+   */
+  selectedGroupLabel?: string;
+  /**
+   * Callback function when async is true
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * Promise object to be returned:
    * {
-   *    offset?: number
    *    options: Option[]
    *    length: number
    * }
    * </pre>
    *
    */
-  loadMoreOptions?: (offset: number, limit: number, searchTerm: string) => Promise<OptionType>;
+  fetchOptions?: (searchTerm: string, limit: number) => Promise<OptionType>;
   /**
    * Callback function called when user selects an option
    */
@@ -61,38 +75,67 @@ interface Selected {
   value: any[];
 }
 
+const asyncLimit = 50;
+
 export const Dropdown = (props: DropdownProps) => {
   const {
     limit = 10,
-    async = false,
+    options: dropdownItems = [],
+    selectedGroupLabel = 'Selected Items',
+    bulk,
     onChange,
-    loadMoreOptions,
+    fetchOptions,
     ...rest
   } = props;
 
   const [topOffset, setTopOffset] = React.useState(-1);
   const [bottomOffset, setBottomOffset] = React.useState(-1);
   const [options, setOptions] = React.useState<Option[]>([]);
+  const [dropdownOptions, setDropdownOptions] = React.useState(dropdownItems);
+  const [shuffledOptions, setShuffledOptions] = React.useState(dropdownItems);
   const [topOptionsSliced, setTopOptionsSliced] = React.useState(false);
   const [bottomOptionsSliced, setBottomOptionsSliced] = React.useState(false);
   const [searchTerm, setSearchTerm] = React.useState('');
   const [stateLimit, setStateLimit] = React.useState(2 * limit);
   const [slicedOptionLength, setSlicedOptionLength] = React.useState(0);
-  const [loadingMoreUp, setLoadingMoreUp] = React.useState(false);
-  const [loadingMoreDown, setLoadingMoreDown] = React.useState(false);
+  const [async, setAsync] = React.useState(bulk);
   const [loading, setLoading] = React.useState(props.loading);
-  const [optionsLength, setOptionLength] = React.useState(props.options.length);
+  const [optionsLength, setOptionsLength] = React.useState(dropdownItems.length);
   const [bufferedOption, setBufferedOption] = React.useState<Option>();
-  const [selected, setSelected] = React.useState<Selected>({
-    label: [],
-    value: [],
-  });
+  const [searchInit, setSearchInit] = React.useState(false);
+  const [selectedAll, setSelectedAll] = React.useState<Selected>();
 
-  const debounceSearch = React.useCallback(debounce(300, (search: string) => {
-    renderOptionsFromTop(search);
+  const isInitialRender = useIsMount();
+
+  const debounceSearch = React.useCallback(debounce(300, (search: string, updatedAsync?: boolean) => {
+    if (updatedAsync) {
+      const emptyBuffer: Option = { value: '', label: '' };
+      setBufferedOption(emptyBuffer);
+      getFilteredOptions(search);
+      setTopOffset(0);
+      setBottomOffset(0);
+    } else {
+      setLoading(false);
+      renderOptionsFromTop(search);
+    }
   }), []);
 
-  const getDropdownOptions = (
+  const getFilteredOptions = (search: string = '') => {
+    if (fetchOptions) {
+      fetchOptions(search, asyncLimit)
+        .then((res: any) => {
+          const { options: searchResult, count } = res;
+          const searchOptions = searchResult.slice(0, asyncLimit);
+          setLoading(false);
+          setDropdownOptions(searchOptions);
+          setShuffledOptions(searchOptions);
+          setOptionsLength(count);
+          setSearchInit(true);
+        });
+    }
+  };
+
+  const setVirtualization = (
     offset: number,
     optionsLimit: number,
     direction?: string,
@@ -102,62 +145,78 @@ export const Dropdown = (props: DropdownProps) => {
     const updatedLimit = direction === 'up' ? (offset < 0 ? optionsLimit : optionsLimit + 1) : optionsLimit;
     const updatedOffset = direction === 'up' ? (offset < 0 ? offset + 1 : offset) : offset;
 
-    let getPaginatedOptions = async && (direction || search) ? loadMoreOptions : getOptions;
-    if (props.options.length < optionsLimit && async && loadMoreOptions) {
-      getPaginatedOptions = loadMoreOptions;
-    }
-
-    if (getPaginatedOptions) {
-      if (async && direction === 'up') setLoadingMoreUp(true);
-      if (async && direction === 'down') setLoadingMoreDown(true);
-      if (getPaginatedOptions === loadMoreOptions && !direction) setLoading(true);
-
-      getPaginatedOptions(updatedOffset, updatedLimit, search, props.options).then((res: any) => {
-        if (async && direction === 'up') setLoadingMoreUp(false);
-        if (async && direction === 'down') setLoadingMoreDown(false);
-        if (getPaginatedOptions === loadMoreOptions && !direction) setLoading(false);
-
-        if (updatedOffset !== undefined && direction !== undefined) {
-          const { options: slicedOptions, length } = res;
-          const len = limit - slicedOptions.length;
-          const slicedLength = bufferedOptionPresent ? len + 1 : len;
-          if (!search && optionsLength !== length) setOptionLength(length);
-          setSlicedOptionLength(slicedLength);
-          updateOptionsOnScroll(slicedOptions, updatedOffset, direction, slicedLength, bufferedOptionPresent);
-        } else {
-          setOptionLength(res.length);
-          setSlicedOptionLength(0);
-          setOptions(res.options);
-          setBottomOffset(res.offset);
-        }
-      });
-    }
+    getOptions(updatedOffset, updatedLimit, search, dropdownOptions).then((res: any) => {
+      if (updatedOffset !== undefined && direction !== undefined) {
+        const { options: slicedOptions } = res;
+        const len = limit - slicedOptions.length;
+        const slicedLength = bufferedOptionPresent ? len + 1 : len;
+        setSlicedOptionLength(slicedLength);
+        updateOptionsOnScroll(slicedOptions, updatedOffset, direction, slicedLength, bufferedOptionPresent);
+      } else {
+        setSlicedOptionLength(0);
+        setOptions(res.options);
+        setBottomOffset(res.offset);
+        if (!async) setOptionsLength(res.length);
+      }
+    });
   };
 
   const renderOptionsFromTop = (search: string = searchTerm) => {
-    if (props.options.length > 0) {
+    if (!loading) {
       const emptyBuffer: Option = { value: '', label: '' };
       setBufferedOption(emptyBuffer);
-      getDropdownOptions(0, limit, undefined, search);
+      setVirtualization(0, limit, undefined, search);
       setTopOffset(0);
       setBottomOffset(0);
     }
   };
 
   React.useEffect(() => {
-    setStateLimit(2 * limit);
+    if (!isInitialRender) setStateLimit(2 * limit);
   }, [limit]);
 
   React.useEffect(() => {
-    renderOptionsFromTop();
-  }, [JSON.stringify(props.options), limit]);
+    if (!isInitialRender) setAsync(bulk);
+  }, [bulk]);
 
   React.useEffect(() => {
-    debounceSearch(searchTerm);
+    if (!isInitialRender) {
+      if (async) {
+        setLoading(true);
+        getFilteredOptions();
+      } else {
+        setDropdownOptions(dropdownItems);
+        setOptionsLength(dropdownItems.length);
+      }
+    }
+  }, [props.checkboxes]);
+
+  React.useEffect(() => {
+    const updatedAsync = bulk === undefined ? dropdownItems.length > 50 : async;
+    if (bulk === undefined) setAsync(updatedAsync);
+    if (updatedAsync) {
+      setLoading(true);
+      getFilteredOptions();
+    } else {
+      setDropdownOptions(dropdownItems);
+      setOptionsLength(dropdownItems.length);
+    }
+  }, [JSON.stringify(props.options)]);
+
+  React.useEffect(() => {
+    if (!isInitialRender) renderOptionsFromTop();
+  }, [JSON.stringify(dropdownOptions), limit]);
+
+  React.useEffect(() => {
+    if (!isInitialRender) {
+      debounceSearch(searchTerm, async);
+    }
   }, [searchTerm]);
 
   const onSearchChange = (search: string) => {
+    setLoading(true);
     setSearchTerm(search);
+    setSearchInit(false);
   };
 
   const updateOptionsOnScroll = (
@@ -199,15 +258,34 @@ export const Dropdown = (props: DropdownProps) => {
     setOptions(updatedOptions);
   };
 
+  const onRearrangeOptions = (selected: any[], selectedLabels: string[]) => {
+    const optionsCopy = shuffledOptions.slice();
+    const unselectedOptions = optionsCopy.filter(option => {
+      return selected.indexOf(option.value) === -1;
+    });
+    const selectedOptions = selected.map((option, i) => {
+      const selectedOption: Option = {
+        label: selectedLabels[i],
+        value: option,
+        group: selectedGroupLabel,
+        selectedGroup: true
+      };
+      return selectedOption;
+    });
+    const newOptions = selectedOptions.concat(unselectedOptions);
+    setDropdownOptions(newOptions);
+  };
+
   const OnScrollOptions = (direction: string) => {
     const condition = direction === 'down' ? (bottomOffset + limit > optionsLength) : (topOffset - limit < 0);
     const optionsLimit = condition ? (direction === 'down' ? optionsLength - bottomOffset : topOffset) : limit;
     const updatedOffset = direction === 'down' ? bottomOffset + optionsLimit : topOffset - optionsLimit - 1;
     const offsetInOptions = updatedOffset >= -1 && optionsLimit > 0;
-    if (offsetInOptions) getDropdownOptions(updatedOffset, optionsLimit, direction);
+    if (offsetInOptions) setVirtualization(updatedOffset, optionsLimit, direction);
   };
 
   const onChangeOptions = (selectedArray: any[]) => {
+    if (searchInit) setSearchInit(false);
     if (onChange) onChange(selectedArray);
   };
 
@@ -216,7 +294,7 @@ export const Dropdown = (props: DropdownProps) => {
       const optionsCopy = props.options.slice();
       const selectedArray = selectedAllOptions ? getValuesFromSelectedObj(optionsCopy) : [];
       const selectedArrayLabel = selectedAllOptions ? getLabelsFromSelectedObj(optionsCopy) : [];
-      setSelected({ label: selectedArrayLabel, value: selectedArray });
+      setSelectedAll({ label: selectedArrayLabel, value: selectedArray });
       if (onChange && !props.showApplyButton) onChange(selectedArray);
     }
   };
@@ -224,24 +302,24 @@ export const Dropdown = (props: DropdownProps) => {
   return (
     <DropdownList
       listOptions={options}
+      searchInit={searchInit}
       bufferedOption={bufferedOption}
       slicedOptionsLength={slicedOptionLength}
-      loadingMoreUp={loadingMoreUp}
-      loadingMoreDown={loadingMoreDown}
+      remainingOptions={optionsLength - dropdownOptions.length}
       loadingOptions={loading}
       async={async}
-      selected={selected}
+      selectedAll={selectedAll}
       searchTerm={searchTerm}
       onScroll={OnScrollOptions}
       topOptionsSliced={topOptionsSliced}
       bottomOptionsSliced={bottomOptionsSliced}
       limit={limit}
       offset={topOffset}
-      optionsLength={props.options.length}
+      optionsLength={dropdownItems.length}
       onSearchChange={onSearchChange}
       onChange={onChangeOptions}
       onSelectAll={onSelectAll}
-      setSearchTerm={onSearchChange}
+      onRearrangeOptions={onRearrangeOptions}
       renderOptionsFromTop={renderOptionsFromTop}
       {...rest}
     />

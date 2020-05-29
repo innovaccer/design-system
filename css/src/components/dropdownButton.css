@@ -4,6 +4,7 @@
     align-items: center;
     padding-top: unset;
     padding-bottom: unset;
+    text-transform: unset;
 }
 
 .DropdownButton-wrapper {

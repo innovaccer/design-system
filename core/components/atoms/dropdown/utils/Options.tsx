@@ -15,7 +15,7 @@ for (let i = 1; i <= 40; i++) {
     group: 'Group 1'
   });
 }
-for (let i = 41; i <= 50; i++) {
+for (let i = 41; i <= 100; i++) {
   dropdownOptions.push({
     label: `Option ${i}`,
     value: `Option ${i}`,

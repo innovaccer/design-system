@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Checkbox from '@/components/atoms/checkbox';
-import PlaceholderParagraph from '@/components/atoms/placeholderParagraph';
 import classNames from 'classnames';
 
 export type Size = 'regular' | 'tiny';
@@ -8,6 +7,8 @@ export type Size = 'regular' | 'tiny';
 export interface CheckboxProps {
   size?: Size;
   checked?: boolean;
+  group?: string;
+  selectedGroup?: boolean;
   label: string;
   value: any;
   onChange?: (checked: boolean) => void;
@@ -17,22 +18,30 @@ export interface ListCheckboxProps {
   label?: string;
   showParentCheckbox?: boolean;
   checked?: boolean;
-  loadingMoreUp?: boolean;
-  loadingMoreDown?: boolean;
+  bufferedOption?: CheckboxProps;
+  showGroups?: boolean;
   list: CheckboxProps[];
   updatedSelectedArray?: boolean[];
   style?: React.CSSProperties;
   selected?: any[];
   selectedLabels?: string[];
   optionsLength: number;
+  remainingOptions: number;
   onChange?: (childArray: number[], labels: string[], parent: boolean) => void;
   onUpdateSelected?: (selected: number[]) => void;
+  renderFooter: () => JSX.Element;
+  renderGroups: (group: string, selectedGroup?: boolean) => JSX.Element;
 }
 
 export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>((props, ref) => {
   const {
     list,
     showParentCheckbox = true,
+    remainingOptions,
+    renderFooter,
+    renderGroups,
+    showGroups,
+    bufferedOption,
     selected = [],
     selectedLabels = [],
     optionsLength,
@@ -104,7 +113,8 @@ export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>(
   const getListCheckboxClass = (index: number) => {
     const ListCheckboxClass = classNames({
       ['ListCheckbox-childWrapper']: true,
-      ['ListCheckbox-childWrapper--top']: !showParentCheckbox && index === 0
+      ['ListCheckbox-childWrapper--top']: !showParentCheckbox && index === 0 && !showGroups,
+      ['ListCheckbox-childWrapper--bottom']: index + 1 === list.length && !(showGroups && remainingOptions > 0)
     });
 
     return ListCheckboxClass;
@@ -153,19 +163,6 @@ export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>(
     }
   };
 
-  const renderLoading = () => {
-    const arr = Array(2).fill('Loading');
-    return (
-      arr.map((option, ind) => {
-        return (
-          <div className="Option-loadingWrapper" key={`${option}-${ind}`}>
-            <PlaceholderParagraph length={'large'} />
-          </div>
-        );
-      })
-    );
-  };
-
   return (
     <div className={'ListCheckbox'}>
       {
@@ -181,27 +178,32 @@ export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>(
         )
       }
       <div className={'ListCheckbox-scroller'} style={style} ref={ref}>
-        {props.loadingMoreUp && renderLoading()}
         {
           list.map((item, ind) => {
-            const { label: childLabel, size, onChange: childOnChange } = item;
+            const { label: childLabel, size, group, selectedGroup, onChange: childOnChange } = item;
+            const prevGroup = ind > 0 ?
+              list[ind - 1].group : bufferedOption ? bufferedOption.group : undefined;
+            const isGroup = showGroups && prevGroup !== group;
 
             return (
-              <div className={getListCheckboxClass(ind)} key={`checkbox-${ind}`}>
-                <Checkbox
-                  label={childLabel}
-                  checked={checked[ind]}
-                  size={size}
-                  onChange={c => {
-                    handleChildChange(c, ind);
-                    if (childOnChange) childOnChange(checked[ind]);
-                  }}
-                />
+              <div key={`checkbox-${ind}`}>
+                {isGroup && group && renderGroups(group, selectedGroup)}
+                <div className={getListCheckboxClass(ind)}>
+                  <Checkbox
+                    label={childLabel}
+                    checked={checked[ind]}
+                    size={size}
+                    onChange={c => {
+                      handleChildChange(c, ind);
+                      if (childOnChange) childOnChange(checked[ind]);
+                    }}
+                  />
+                </div>
               </div>
             );
           })
         }
-        {props.loadingMoreDown && renderLoading()}
+        {showGroups && remainingOptions > 0 && renderFooter()}
       </div>
     </div>
   );
