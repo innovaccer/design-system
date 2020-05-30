@@ -49,35 +49,35 @@
 }
 
 .Table--comfortable .Table-cell--header {
-    height: 40px;
+    min-height: 40px;
 }
 
 .Table--comfortable .Table-cell--body {
-    height: 54px;
+    min-height: 54px;
 }
 
 .Table--standard .Table-cell--header {
-    height: 40px;
+    min-height: 40px;
 }
 
 .Table--standard .Table-cell--body {
-    height: 40px;
+    min-height: 40px;
 }
 
 .Table--compressed .Table-cell--header {
-    height: 32px;
+    min-height: 32px;
 }
 
 .Table--compressed .Table-cell--body {
-    height: 32px;
+    min-height: 32px;
 }
 
 .Table--tight .Table-cell--header {
-    height: 24px;
+    min-height: 24px;
 }
 
 .Table--tight .Table-cell--body {
-    height: 24px;
+    min-height: 24px;
 }
 
 .Table-header {
@@ -114,10 +114,15 @@
 }
 
 .Table-row {
+    box-sizing: border-box;
     display: flex;
     flex: 1 0;
     /* outline: var(--border); */
     background: var(--white);
+}
+
+.TableBody-padding {
+    flex-shrink: 0;
 }
 
 .Table-row {

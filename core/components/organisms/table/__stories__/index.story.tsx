@@ -37,7 +37,7 @@ export const all = () => {
 
   const withPagination = boolean(
     'withPagination',
-    true
+    false
   );
 
   const paginationType = select(
