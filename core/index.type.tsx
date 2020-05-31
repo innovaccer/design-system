@@ -38,6 +38,7 @@ export { ModalDescriptionProps } from './components/molecules/modalDescription';
 export { PaginationProps } from './components/molecules/pagination';
 export { PlaceholderProps } from './components/molecules/placeholder';
 export { PlaceholderParagraphProps } from './components/atoms/placeholderParagraph';
+export { ProgressBarProps } from './components/atoms/progressBar';
 export { PopoverProps } from './components/molecules/popover';
 export { RangePickerProps } from './components/organisms/rangepicker';
 export { TabsWrapperProps, TabProps } from './components/molecules/tabs';

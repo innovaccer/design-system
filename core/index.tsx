@@ -19,6 +19,7 @@ export { ListCheckbox } from './components/atoms/listCheckbox';
 export { Message } from './components/atoms/message';
 export { OutsideClick } from './components/atoms/outsideClick';
 export { Paragraph } from './components/atoms/paragraph';
+export { ProgressBar } from './components/atoms/progressBar';
 export { Radio } from './components/atoms/radio';
 export { Row } from './components/atoms/row';
 export { Spinner } from './components/atoms/spinner';

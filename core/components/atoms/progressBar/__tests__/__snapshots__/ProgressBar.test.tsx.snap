@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar component 
+  value: 10
+ 1`] = `
+<div
+  className="ProgressBar"
+>
+  <div
+    className="ProgressBar-indicator"
+    style={
+      Object {
+        "width": "10%",
+      }
+    }
+  />
+</div>
+`;
