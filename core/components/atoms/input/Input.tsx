@@ -3,7 +3,7 @@ import classNames from 'classnames';
 // import { Size } from '@/components/atoms/button';
 import Label from '@/components/atoms/label';
 import Text from '@/components/atoms/text';
-import Tooltip from '@/components/atoms/tooltip';
+import Popover from '@/components/molecules/popover';
 import Icon from '@/components/atoms/icon';
 
 export type InputType = 'text' | 'password' | 'number';
@@ -75,7 +75,7 @@ export interface InputProps {
    */
   error?: boolean;
   /**
-   * Text to be rendered in info `Tooltip`
+   * Text to be rendered in info `Popover`
    * @default true
    */
   info?: string;
@@ -128,6 +128,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
 
   const disabled = propDisabled || !onChange;
 
+  const [open, setOpen] = React.useState(false);
+
   const classes = classNames({
     ['Input']: true,
   });
@@ -159,6 +161,20 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
     ['Input-icon']: true,
     ['Input-icon--error']: true
   });
+
+  const trigger = <div className={rightIconClass}><Icon name={'info'} size={sizeMapping[size]} /></div>;
+
+  const popoverStyle = {
+    padding: 'var(--spacing) var(--spacing-2)',
+    maxWidth: 'var(--spacing-7)',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    'white-space': 'nowrap',
+  };
+
+  const onToggleInfo = () => {
+    setOpen(!open);
+  };
 
   return (
     <div className={classes}>
@@ -197,9 +213,17 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
           disabled={disabled}
         />
         {((!value && !disabled) || (value && disabled)) && info && (
-          <Tooltip position="top" tooltip={info}>
-            <div className={rightIconClass}><Icon name={'info'} size={sizeMapping[size]} /></div>
-          </Tooltip>
+          <Popover
+            style={popoverStyle}
+            open={open}
+            position="top"
+            on={'hover'}
+            trigger={trigger}
+            dark={true}
+            onToggle={onToggleInfo}
+          >
+            {info}
+          </Popover>
         )}
         {(clearButton && value && !disabled) && (
           <div className={rightIconClass} onClick={e => onClear && onClear(e)}>
