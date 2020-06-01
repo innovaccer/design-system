@@ -36,7 +36,7 @@ export const basic = () => {
           placeholder="Placeholder"
           onChange={action('on-change')}
           clearButton={true}
-          info="sample info tooltip"
+          info="sample info popover"
         />
         <br />
         <Text weight="strong">Placeholder</Text>

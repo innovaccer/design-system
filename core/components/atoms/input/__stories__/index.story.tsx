@@ -64,7 +64,7 @@ export const all = () => {
 
   const info = text(
     'info',
-    'sample info tooltip'
+    'sample info popover'
   );
 
   const clearButton = boolean(
