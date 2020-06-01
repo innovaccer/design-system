@@ -13,11 +13,14 @@ export interface BackdropProps {
 
 const Backdrop = (props: BackdropProps) => {
   const [savedBodyOverflow, setBodyOverflow] = useState<string | null>(null);
-  const [backdropClasses, setClasses] = useState<string>('Backdrop');
-  const { open } = props;
+  const [open, setOpen] = React.useState<boolean>(props.open);
+  const [animate, setAnimate] = React.useState<boolean>(props.open);
 
   const classes = classNames({
-    Backdrop: true
+    Backdrop: true,
+    'Backdrop--open': open,
+    'Backdrop-animation--open': animate,
+    'Backdrop-animation--close': !animate
   });
 
   const disableBodyScroll = () => {
@@ -35,27 +38,26 @@ const Backdrop = (props: BackdropProps) => {
   };
 
   useEffect(() => {
-    if (open) {
+    if (props.open) {
       disableBodyScroll();
-      const newBackdropClasses = `${classes} Backdrop--open Backdrop-animation--open`;
-      setClasses(newBackdropClasses);
+      setOpen(true);
+      setAnimate(true);
     }
-    if (!open) {
-      const newBackdropClasses = `${classes} Backdrop--open Backdrop-animation--close`;
-      setClasses(newBackdropClasses);
+    if (!props.open) {
       setTimeout(() => {
-        setClasses(classes);
-      }, 110);
+        setOpen(false);
+      }, 120);
+      setAnimate(false);
     }
 
     return () => {
       enableBodyScroll();
     };
-  }, [open]);
+  }, [props.open]);
 
   const BackdropElement = ReactDOM.createPortal(
     (
-      <div className={backdropClasses} />
+      <div className={classes} />
     ),
     document.body
   );

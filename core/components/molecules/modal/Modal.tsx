@@ -38,35 +38,37 @@ export interface ModalProps {
 const Modal = (props: ModalProps) => {
   const {
     dimension = 'small',
-    open,
     children,
     onClose,
     backdrop
   } = props;
-  const [modalClasses, setClasses] = useState<string>('Modal');
+  const [open, setOpen] = useState<boolean>(props.open);
+  const [animate, setAnimate] = useState<boolean>(false);
 
   const classes = classNames({
     Modal: true,
     [`Modal--${dimension}`]: dimension,
+    'Modal--open': open,
+    'Modal-animation--open': animate,
+    'Modal-animation--close': !animate,
   });
 
   useEffect(() => {
-    if (open) {
-      const newModalClasses = `${classes} Modal--open Modal-animation--open`;
-      setClasses(newModalClasses);
+    if (props.open) {
+      setOpen(true);
+      setAnimate(true);
     }
-    if (!open) {
-      const newModalClasses = `${classes} Modal--open Modal-animation--close`;
-      setClasses(newModalClasses);
+    if (!props.open) {
       setTimeout(() => {
-        setClasses(classes);
-      }, 150);
+        setOpen(false);
+      }, 120);
+      setAnimate(false);
     }
-  }, [open]);
+  }, [props.open]);
 
   const ModalContainer = (
     <div className="Modal-container">
-      <div className={modalClasses}>
+      <div className={classes}>
         {children}
       </div>
     </div>
