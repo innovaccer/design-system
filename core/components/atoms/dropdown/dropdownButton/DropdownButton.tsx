@@ -2,6 +2,8 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Icon from '@/components/atoms/icon';
 
+type Appearance = 'basic' | 'primary' | 'success' | 'alert' | 'transparent';
+
 type ReactMouseEvent = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 
 export type Size = 'tiny' | 'regular';
@@ -11,6 +13,7 @@ export interface DropdownButtonProps {
    * @default "regular"
    */
   size?: Size;
+  appearance?: Appearance;
   disabled?: boolean;
   menu?: boolean;
   icon?: string;
@@ -26,6 +29,7 @@ export interface DropdownButtonProps {
 const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>((props, ref) => {
   const {
     size = 'regular',
+    appearance = 'basic',
     placeholder = 'Select',
     menu = false,
     children,
@@ -36,7 +40,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
     ...rest
   } = props;
 
-  const appearance = disabled ? 'disabled' : 'default';
+  const buttonDisabled = disabled ? 'disabled' : 'default';
   const trimmedPlaceholder = placeholder.trim();
   const value = children ? children : trimmedPlaceholder ? trimmedPlaceholder : 'Select';
   const iconName = !menu ? 'keyboard_arrow_down' : icon ? icon : 'more_horiz';
@@ -44,7 +48,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
 
   const buttonClass = classNames({
     ['Button']: true,
-    ['Button--basic']: true,
+    [`Button--${appearance}`]: appearance,
     ['Button--square']: !children,
     ['DropdownButton']: true,
     [`DropdownButton--${size}`]: size,
@@ -76,11 +80,11 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
           {label && (
             <div className={labelClass}> {label.trim().charAt(0).toUpperCase()}{label.trim().slice(1)} </div>
           )}
-          {(icon && !inlineLabel) && <Icon appearance={appearance} className="mr-4" name={icon} />}
+          {(icon && !inlineLabel) && <Icon appearance={buttonDisabled} className="mr-4" name={icon} />}
           <div className={'DropdownButton-text'}>{value && `${value.charAt(0).toUpperCase()}${value.slice(1)}`}</div>
         </div>
       )}
-      <Icon appearance={appearance} name={iconName} />
+      <Icon appearance={buttonDisabled} name={iconName} />
     </button>
   );
 });

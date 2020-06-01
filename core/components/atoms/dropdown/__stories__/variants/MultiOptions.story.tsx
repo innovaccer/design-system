@@ -5,19 +5,29 @@ import { storyOptions } from '../../utils/Options';
 
 // CSF format story
 export const multiOptions = () => {
+  const style = {
+    display: 'flex',
+    'flex-direction': 'column',
+    alignItems: 'center',
+    marginRight: '5%',
+    width: '150px'
+  };
+
   return (
     <div style={{ display: 'flex', minHeight: '300px' }}>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginRight: '5%' }}>
+      <div style={style}>
         <Text weight="strong">{'With Apply Button'}</Text><br />
-        {
-          <Dropdown maxHeight={150} checkboxes={true} showApplyButton={true} options={storyOptions} placeholder={'Select'} />
-        }
+        <Dropdown
+          maxHeight={150}
+          checkboxes={true}
+          showApplyButton={true}
+          options={storyOptions}
+          placeholder={'Select'}
+        />
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '150px' }}>
         <Text weight="strong">{'Without Apply Button'}</Text><br />
-        {
-          <Dropdown checkboxes={true} options={storyOptions} placeholder={'Select'} />
-        }
+        <Dropdown checkboxes={true} options={storyOptions} placeholder={'Select'} />
       </div>
     </div>
   );

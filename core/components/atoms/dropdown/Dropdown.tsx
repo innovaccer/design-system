@@ -88,16 +88,21 @@ export const Dropdown = (props: DropdownProps) => {
     value: [],
   });
 
-  const debounceSearch = debounce(300, (search: string) => {
-    setSearchTerm(search);
-  });
+  const debounceSearch = React.useCallback(debounce(300, (search: string) => {
+    renderOptionsFromTop(search);
+  }), []);
 
-  const getDropdownOptions = (offset: number, optionsLimit: number, direction: string | undefined) => {
+  const getDropdownOptions = (
+    offset: number,
+    optionsLimit: number,
+    direction?: string,
+    search: string = searchTerm
+  ) => {
     const bufferedOptionPresent = direction === 'up' && !(offset < 0);
     const updatedLimit = direction === 'up' ? (offset < 0 ? optionsLimit : optionsLimit + 1) : optionsLimit;
     const updatedOffset = direction === 'up' ? (offset < 0 ? offset + 1 : offset) : offset;
 
-    let getPaginatedOptions = async && (direction || searchTerm) ? loadMoreOptions : getOptions;
+    let getPaginatedOptions = async && (direction || search) ? loadMoreOptions : getOptions;
     if (props.options.length < optionsLimit && async && loadMoreOptions) {
       getPaginatedOptions = loadMoreOptions;
     }
@@ -107,7 +112,7 @@ export const Dropdown = (props: DropdownProps) => {
       if (async && direction === 'down') setLoadingMoreDown(true);
       if (getPaginatedOptions === loadMoreOptions && !direction) setLoading(true);
 
-      getPaginatedOptions(updatedOffset, updatedLimit, searchTerm, props.options).then((res: any) => {
+      getPaginatedOptions(updatedOffset, updatedLimit, search, props.options).then((res: any) => {
         if (async && direction === 'up') setLoadingMoreUp(false);
         if (async && direction === 'down') setLoadingMoreDown(false);
         if (getPaginatedOptions === loadMoreOptions && !direction) setLoading(false);
@@ -116,7 +121,7 @@ export const Dropdown = (props: DropdownProps) => {
           const { options: slicedOptions, length } = res;
           const len = limit - slicedOptions.length;
           const slicedLength = bufferedOptionPresent ? len + 1 : len;
-          if (!searchTerm && optionsLength !== length) setOptionLength(length);
+          if (!search && optionsLength !== length) setOptionLength(length);
           setSlicedOptionLength(slicedLength);
           updateOptionsOnScroll(slicedOptions, updatedOffset, direction, slicedLength, bufferedOptionPresent);
         } else {
@@ -129,11 +134,11 @@ export const Dropdown = (props: DropdownProps) => {
     }
   };
 
-  const renderOptionsFromTop = () => {
+  const renderOptionsFromTop = (search: string = searchTerm) => {
     if (props.options.length > 0) {
       const emptyBuffer: Option = { value: '', label: '' };
       setBufferedOption(emptyBuffer);
-      getDropdownOptions(0, limit, undefined);
+      getDropdownOptions(0, limit, undefined, search);
       setTopOffset(0);
       setBottomOffset(0);
     }
@@ -145,10 +150,14 @@ export const Dropdown = (props: DropdownProps) => {
 
   React.useEffect(() => {
     renderOptionsFromTop();
-  }, [JSON.stringify(props.options), limit, searchTerm]);
+  }, [JSON.stringify(props.options), limit]);
+
+  React.useEffect(() => {
+    debounceSearch(searchTerm);
+  }, [searchTerm]);
 
   const onSearchChange = (search: string) => {
-    debounceSearch(search);
+    setSearchTerm(search);
   };
 
   const updateOptionsOnScroll = (
@@ -213,31 +222,29 @@ export const Dropdown = (props: DropdownProps) => {
   };
 
   return (
-    <div>
-      <DropdownList
-        listOptions={options}
-        bufferedOption={bufferedOption}
-        slicedOptionsLength={slicedOptionLength}
-        loadingMoreUp={loadingMoreUp}
-        loadingMoreDown={loadingMoreDown}
-        loadingOptions={loading}
-        async={async}
-        selected={selected}
-        searchTerm={searchTerm}
-        onScroll={OnScrollOptions}
-        topOptionsSliced={topOptionsSliced}
-        bottomOptionsSliced={bottomOptionsSliced}
-        limit={limit}
-        offset={topOffset}
-        optionsLength={props.options.length}
-        onSearchChange={onSearchChange}
-        onChange={onChangeOptions}
-        onSelectAll={onSelectAll}
-        setSearchTerm={onSearchChange}
-        renderOptionsFromTop={renderOptionsFromTop}
-        {...rest}
-      />
-    </div>
+    <DropdownList
+      listOptions={options}
+      bufferedOption={bufferedOption}
+      slicedOptionsLength={slicedOptionLength}
+      loadingMoreUp={loadingMoreUp}
+      loadingMoreDown={loadingMoreDown}
+      loadingOptions={loading}
+      async={async}
+      selected={selected}
+      searchTerm={searchTerm}
+      onScroll={OnScrollOptions}
+      topOptionsSliced={topOptionsSliced}
+      bottomOptionsSliced={bottomOptionsSliced}
+      limit={limit}
+      offset={topOffset}
+      optionsLength={props.options.length}
+      onSearchChange={onSearchChange}
+      onChange={onChangeOptions}
+      onSelectAll={onSelectAll}
+      setSearchTerm={onSearchChange}
+      renderOptionsFromTop={renderOptionsFromTop}
+      {...rest}
+    />
   );
 };
 
