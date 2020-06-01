@@ -558,13 +558,13 @@ body {
 }
 
 .Backdrop-animation--open {
-  -webkit-animation: backdrop-open 300ms cubic-bezier(0.2, 0, 0.38, 0.9);
-          animation: backdrop-open 300ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  -webkit-animation: backdrop-open 120ms cubic-bezier(0, 0, 0.3, 1);
+          animation: backdrop-open 120ms cubic-bezier(0, 0, 0.3, 1);
 }
 
 .Backdrop-animation--close {
-  -webkit-animation: backdrop-close 110ms cubic-bezier(0.2, 0, 1, 0.9);
-          animation: backdrop-close 110ms cubic-bezier(0.2, 0, 1, 0.9);
+  -webkit-animation: backdrop-close 120ms cubic-bezier(0.4, 0.14, 1, 1);
+          animation: backdrop-close 120ms cubic-bezier(0.4, 0.14, 1, 1);
 }
 
 
@@ -1159,6 +1159,9 @@ body {
     margin: 0;
 }
 
+.Checkbox-text {
+    padding-left: var(--spacing);
+}
 
 /* Type: Unchecked  */
 
@@ -1167,9 +1170,9 @@ body {
     left: 0;
     border: var(--border);
     border-radius: var(--spacing-s);
-    margin-right: var(--spacing);
     display: flex;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .Checkbox-wrapper--regular {
@@ -1263,23 +1266,41 @@ body {
     width: fit-content;
 }
 
-.Dropdown-placeholder .PopperWrapper-trigger {
+.Dropdown--placeholder .PopperWrapper-trigger {
     width: 100%;
+}
+
+.Dropdown--menu {
+    min-width: unset;
+}
+
+.Dropdown-input {
+    border-bottom: var(--border);
 }
 
 .Dropdown-input .Input {
     min-width: unset;
 }
 
+.Dropdown-input .Input-wrapper,
+.Dropdown-input .Input-wrapper:focus-within {
+    border: unset;
+}
+
 .Dropdown-subinfo {
-    font-size: var(--spacing-l);
-    color: var(--inverse-light);
+    display: flex;
+    justify-content: space-between;
     margin-left: var(--spacing-l);
     margin-top: var(--spacing);
     margin-bottom: 6px;
 }
 
-.Dropdown-border {
+.Dropdown-clear {
+    cursor: pointer;
+    padding-right: var(--spacing);
+}
+
+.Dropdown--border {
     border-top: var(--spacing-xs) solid var(--secondary-light);
 }
 
@@ -1294,6 +1315,13 @@ body {
     padding-right: var(--spacing-l);
     padding-bottom: var(--spacing);
     border-top: var(--spacing-xs) solid var(--secondary-light);
+}
+
+.Dropdown-footer {
+    padding-left: var(--spacing-l);
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
+    box-sizing: border-box;
 }
 
 .Option-wrapper,
@@ -1319,7 +1347,7 @@ body {
     padding-top: 10px;
 }
 
-.Dropdown-wrapper .ListCheckbox-childWrapper:last-child {
+.Dropdown-wrapper .ListCheckbox-childWrapper--bottom {
     padding-bottom: 10px;
 }
 
@@ -1338,6 +1366,7 @@ body {
 
 .Option-wrapper--selected {
     background-color: var(--primary);
+    color: var(--white);
     pointer-events: none;
 }
 
@@ -1384,6 +1413,10 @@ body {
     color: var(--inverse-light);
 }
 
+.Option-wrapper--selected .Option-subinfo {
+    color: var(--white);
+}
+
 .Scroller-wrapper::-webkit-scrollbar,
 .ListCheckbox-scroller::-webkit-scrollbar {
     width: 10px;
@@ -1400,6 +1433,7 @@ body {
     align-items: center;
     padding-top: unset;
     padding-bottom: unset;
+    text-transform: unset;
 }
 
 .DropdownButton-wrapper {
@@ -1421,7 +1455,8 @@ body {
     padding-left: var(--spacing-l);
 }
 
-.DropdownButton:focus {
+.Button--basic:focus, 
+.Button--transparent:focus {
     background-color: var(--secondary-lighter);
 }
 
@@ -1554,6 +1589,7 @@ body {
     border: var(--border);
     padding-right: var(--spacing-l);
     padding-left: var(--spacing-l);
+    background: var(--white);
 }
 
 .Input-wrapper--tiny {
@@ -1617,10 +1653,7 @@ body {
     color: var(--night);
     padding: 0;
     border: none;
-}
-
-.Input-input::-webkit-input-placeholder {
-    color: var(--inverse-light);
+    background: transparent;
 }
 
 .Input-input::-moz-placeholder {
@@ -1641,14 +1674,6 @@ body {
 
 .Input-input:focus {
     outline: 0;
-}
-
-.Input-input:disabled {
-    background: var(--secondary-lightest);
-}
-
-.Input-input:disabled .Input-input::-webkit-input-placeholder {
-    color: var(--inverse-light);
 }
 
 .Input-input:disabled .Input-input::-moz-placeholder {
@@ -1715,6 +1740,7 @@ body {
 .Input-inlineLabel {
     margin-right: var(--spacing);
 }
+
 .Message {
     background: var(--white);
     border-radius: var(--spacing-m);
@@ -1837,13 +1863,13 @@ body {
 }
 
 .Modal-animation--open {
-  -webkit-animation: modal-open 300ms cubic-bezier(0.4, 0.14, 0.3, 1);
-          animation: modal-open 300ms cubic-bezier(0.4, 0.14, 0.3, 1);
+  -webkit-animation: modal-open 240ms cubic-bezier(0, 0, 0.3, 1);
+          animation: modal-open 240ms cubic-bezier(0, 0, 0.3, 1);
 }
 
 .Modal-animation--close {
-  -webkit-animation: modal-close 150ms cubic-bezier(0.4, 0.14, 0.3, 1);
-          animation: modal-close 150ms cubic-bezier(0.4, 0.14, 0.3, 1);
+  -webkit-animation: modal-close 120ms cubic-bezier(0.4, 0.14, 1, 1);
+          animation: modal-close 120ms cubic-bezier(0.4, 0.14, 1, 1);
 }
 
 .Modal-close-icon {

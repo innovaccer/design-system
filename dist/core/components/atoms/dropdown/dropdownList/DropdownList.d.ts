@@ -1,4 +1,5 @@
 import * as React from 'react';
+export declare type ButtonAppearance = 'basic' | 'transparent';
 export declare type Size = 'tiny' | 'regular';
 export declare type DropdownAlign = 'left' | 'right';
 export interface Option {
@@ -7,18 +8,18 @@ export interface Option {
     group?: string;
     label: string;
     value: any;
-    selected?: boolean;
-}
-export interface Subheading {
-    [key: number]: string;
+    selectedGroup?: boolean;
 }
 export interface DropdownListProps {
-    size?: Size;
+    triggerSize?: Size;
     dropdownAlign?: DropdownAlign;
+    buttonAppearance?: ButtonAppearance;
     icon?: string;
     placeholder?: string;
     inlineLabel?: string;
     searchResultMessage?: string;
+    parentCheckboxLabel?: string;
+    footerLabel?: string;
     menu?: boolean;
     disabled?: boolean;
     search?: boolean;
@@ -27,31 +28,33 @@ export interface DropdownListProps {
     showApplyButton?: boolean;
     optionsWrap?: boolean;
     checkedValuesOffset?: number;
+    totalOptions?: number;
     maxHeight?: number;
+    selected?: Option[];
     style?: React.CSSProperties;
+    onChangeTriggerLabel?: (selected: number, totalOptions?: number) => string;
 }
 interface OptionsProps extends DropdownListProps {
     listOptions: Option[];
     bufferedOption?: Option;
-    subheading?: Subheading;
     searchTerm: string;
     bottomOptionsSliced?: boolean;
     topOptionsSliced?: boolean;
-    loadingMoreUp?: boolean;
     loadingOptions?: boolean;
-    loadingMoreDown?: boolean;
+    searchInit?: boolean;
     async?: boolean;
     limit: number;
     slicedOptionsLength: number;
+    remainingOptions: number;
     offset: number;
     optionsLength: number;
     bottomScrollOffset?: number;
-    selected?: any;
+    selectedAll?: any;
     onSearchChange?: (searchText: string) => void;
     onScroll?: (direction: string) => void;
     onChange?: (selected: any[] | any) => void;
     onSelectAll?: (selectedAll: boolean) => void;
-    setSearchTerm?: (searchTerm: string) => void;
+    onRearrangeOptions?: (selected: any[], selectedLabels: string[]) => void;
     renderOptionsFromTop: () => void;
 }
 export declare const usePrevious: (value: any) => undefined;

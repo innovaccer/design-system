@@ -1,8 +1,10 @@
 import * as React from 'react';
+declare type Appearance = 'basic' | 'primary' | 'success' | 'alert' | 'transparent';
 declare type ReactMouseEvent = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 export declare type Size = 'tiny' | 'regular';
 export interface DropdownButtonProps {
     size?: Size;
+    appearance?: Appearance;
     disabled?: boolean;
     menu?: boolean;
     icon?: string;

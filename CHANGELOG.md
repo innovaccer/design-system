@@ -118,3 +118,21 @@
 * dfb34c5 fix: adds dropdown async support
 * d7eb6e3 fix: replaces utilityClass with className
 * 7565bd4 feat: adds pill component
+
+-------------------
+ **v1.0.0-9**  (2020-06-01) 
+
+* 66f52a3 v1.0.0-9
+* 70e7c08 feat: adds dropdown bulk selection
+* d5daf77 fix: adds default onToggle for Popover
+* 740678c fix: adds Modal subcomponents in build
+* d06284c fix: fixes animation of Modal and Backdrop
+* 141fabe fix: replaces tooltip with popover in input
+* 1b83ca9 fix: fixes donut chart tests
+* 6ab90e5 fix: fixes onPageChange being called on initial render of Pagination
+* 5c3b25c fix: fixes color of Close Button in Toast
+* 9ac52a2 fix: Input background fix
+* 03d78af fix: children type fix
+* 2a4e872 feat: adds common stories
+* f623097 fix: fixes dropdown search design and #37
+* c0d4a25 fix: fixes checkbox CSS

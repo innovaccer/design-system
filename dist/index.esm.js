@@ -1,4 +1,4 @@
-import { createElement, useEffect as useEffect$2, useState as useState$2, forwardRef, useRef, useImperativeHandle, Fragment, createRef, cloneElement, Component, Children, PureComponent } from 'react';
+import { createElement, useState as useState$3, useEffect as useEffect$3, forwardRef, useRef as useRef$1, useImperativeHandle, Fragment, createRef, Component, cloneElement, useCallback, Children, PureComponent } from 'react';
 import classNames from 'classnames';
 import { createPortal, findDOMNode } from 'react-dom';
 import { Manager, Reference, Popper } from 'react-popper';
@@ -208,7 +208,7 @@ function _possibleConstructorReturn(self, call) {
 function _createSuper(Derived) {
   var hasNativeReflectConstruct = _isNativeReflectConstruct();
 
-  return function () {
+  return function _createSuperInternal() {
     var Super = _getPrototypeOf(Derived),
         result;
 
@@ -311,8 +311,8 @@ var Avatar = function Avatar(props) {
 };
 Avatar.displayName = 'Avatar';
 
-var useEffect = useEffect$2,
-    useState = useState$2;
+var useEffect = useEffect$3,
+    useState = useState$3;
 
 var Backdrop = function Backdrop(props) {
   var _useState = useState(null),
@@ -320,14 +320,21 @@ var Backdrop = function Backdrop(props) {
       savedBodyOverflow = _useState2[0],
       setBodyOverflow = _useState2[1];
 
-  var _useState3 = useState('Backdrop'),
-      _useState4 = _slicedToArray(_useState3, 2),
-      backdropClasses = _useState4[0],
-      setClasses = _useState4[1];
+  var _React$useState = useState$3(props.open),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      open = _React$useState2[0],
+      setOpen = _React$useState2[1];
 
-  var open = props.open;
+  var _React$useState3 = useState$3(props.open),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      animate = _React$useState4[0],
+      setAnimate = _React$useState4[1];
+
   var classes = classNames({
-    Backdrop: true
+    Backdrop: true,
+    'Backdrop--open': open,
+    'Backdrop-animation--open': animate,
+    'Backdrop-animation--close': !animate
   });
 
   var disableBodyScroll = function disableBodyScroll() {
@@ -345,27 +352,25 @@ var Backdrop = function Backdrop(props) {
   };
 
   useEffect(function () {
-    if (open) {
+    if (props.open) {
       disableBodyScroll();
-      var newBackdropClasses = "".concat(classes, " Backdrop--open Backdrop-animation--open");
-      setClasses(newBackdropClasses);
+      setOpen(true);
+      setAnimate(true);
     }
 
-    if (!open) {
-      var _newBackdropClasses = "".concat(classes, " Backdrop--open Backdrop-animation--close");
-
-      setClasses(_newBackdropClasses);
+    if (!props.open) {
       setTimeout(function () {
-        setClasses(classes);
-      }, 110);
+        setOpen(false);
+      }, 120);
+      setAnimate(false);
     }
 
     return function () {
       enableBodyScroll();
     };
-  }, [open]);
-  var BackdropElement = createPortal( /*#__PURE__*/createElement("div", {
-    className: backdropClasses
+  }, [props.open]);
+  var BackdropElement = /*#__PURE__*/createPortal( /*#__PURE__*/createElement("div", {
+    className: classes
   }), document.body);
   return BackdropElement;
 };
@@ -397,7 +402,7 @@ var GenericText = function GenericText(_ref) {
       className = _ref.className,
       props = _objectWithoutProperties(_ref, ["children", "componentType", "className"]);
 
-  return createElement(componentType, _objectSpread2(_objectSpread2({}, props), {}, {
+  return /*#__PURE__*/createElement(componentType, _objectSpread2(_objectSpread2({}, props), {}, {
     className: className
   }), children);
 };
@@ -585,7 +590,7 @@ var Text = function Text(props) {
 };
 Text.displayName = 'Text';
 
-var Checkbox = forwardRef(function (props, forwardedRef) {
+var Checkbox = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
   var _classNames, _classNames2;
 
   var _props$size = props.size,
@@ -595,20 +600,20 @@ var Checkbox = forwardRef(function (props, forwardedRef) {
       onChange = props.onChange,
       name = props.name,
       value = props.value;
-  var ref = useRef(null);
+  var ref = useRef$1(null);
   useImperativeHandle(forwardedRef, function () {
     return ref.current;
   });
 
-  var _React$useState = useState$2(props.checked),
+  var _React$useState = useState$3(props.checked),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       checked = _React$useState2[0],
       setChecked = _React$useState2[1];
 
-  useEffect$2(function () {
+  useEffect$3(function () {
     setIndeterminate(props.indeterminate);
   }, [props.indeterminate]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     setChecked(props.checked);
   }, [props.checked]);
   var CheckboxClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Checkbox', true), _defineProperty(_classNames, 'Checkbox--disabled', disabled), _defineProperty(_classNames, "Checkbox--".concat(size), size), _classNames));
@@ -628,7 +633,8 @@ var Checkbox = forwardRef(function (props, forwardedRef) {
   var IconName = props.indeterminate ? 'remove' : checked ? 'check' : '';
   var IconSize = size === 'tiny' ? 8 : 16;
   return /*#__PURE__*/createElement("div", {
-    className: CheckboxClass
+    className: CheckboxClass,
+    onClick: onChangeHandler
   }, /*#__PURE__*/createElement("input", {
     type: "checkbox",
     checked: checked,
@@ -638,15 +644,16 @@ var Checkbox = forwardRef(function (props, forwardedRef) {
     value: value,
     className: 'Checkbox-input'
   }), /*#__PURE__*/createElement("span", {
-    onClick: onChangeHandler,
     className: CheckboxWrapper
   }, IconName && /*#__PURE__*/createElement(Icon, {
     name: IconName,
     size: IconSize,
     appearance: 'white'
-  })), label && /*#__PURE__*/createElement(Text, {
+  })), label && label.trim() && /*#__PURE__*/createElement("div", {
+    className: 'Checkbox-text'
+  }, /*#__PURE__*/createElement(Text, {
     small: size === 'tiny'
-  }, label));
+  }, label.trim())));
 });
 Checkbox.displayName = 'Checkbox';
 
@@ -918,12 +925,12 @@ var Calendar = function Calendar(props) {
       months = config.months,
       days = config.days;
 
-  var _React$useState = useState$2(monthsInView > 1 ? 'date' : viewProp),
+  var _React$useState = useState$3(monthsInView > 1 ? 'date' : viewProp),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       view = _React$useState2[0],
       setView = _React$useState2[1];
 
-  var _React$useState3 = useState$2({
+  var _React$useState3 = useState$3({
     year: undefined,
     month: undefined,
     date: undefined
@@ -932,37 +939,37 @@ var Calendar = function Calendar(props) {
       state = _React$useState4[0],
       setState = _React$useState4[1];
 
-  var _React$useState5 = useState$2(dateProp),
+  var _React$useState5 = useState$3(dateProp),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       currDateState = _React$useState6[0],
       setCurrDateState = _React$useState6[1];
 
-  var _React$useState7 = useState$2(),
+  var _React$useState7 = useState$3(),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
       hoverDateState = _React$useState8[0],
       setHoverDateState = _React$useState8[1];
 
-  var _React$useState9 = useState$2(startDateProp),
+  var _React$useState9 = useState$3(startDateProp),
       _React$useState10 = _slicedToArray(_React$useState9, 2),
       startDateState = _React$useState10[0],
       setStartDateState = _React$useState10[1];
 
-  var _React$useState11 = useState$2(endDateProp),
+  var _React$useState11 = useState$3(endDateProp),
       _React$useState12 = _slicedToArray(_React$useState11, 2),
       endDateState = _React$useState12[0],
       setEndDateState = _React$useState12[1];
 
-  var _React$useState13 = useState$2(getYearBlock(yearNavProp)),
+  var _React$useState13 = useState$3(getYearBlock(yearNavProp)),
       _React$useState14 = _slicedToArray(_React$useState13, 2),
       yearBlockNav = _React$useState14[0],
       setYearBlockNav = _React$useState14[1];
 
-  var _React$useState15 = useState$2(yearNavProp),
+  var _React$useState15 = useState$3(yearNavProp),
       _React$useState16 = _slicedToArray(_React$useState15, 2),
       yearNav = _React$useState16[0],
       setYearNav = _React$useState16[1];
 
-  var _React$useState17 = useState$2(monthNavProp),
+  var _React$useState17 = useState$3(monthNavProp),
       _React$useState18 = _slicedToArray(_React$useState17, 2),
       monthNav = _React$useState18[0],
       setMonthNav = _React$useState18[1];
@@ -970,7 +977,7 @@ var Calendar = function Calendar(props) {
   var yearState = state.year,
       monthState = state.month,
       dateState = state.date;
-  useEffect$2(function () {
+  useEffect$3(function () {
     var _getDateInfo = getDateInfo(dateProp),
         year = _getDateInfo.year,
         month = _getDateInfo.month,
@@ -980,18 +987,18 @@ var Calendar = function Calendar(props) {
     var d = convertToDate(dateProp);
     setCurrDateState(d);
   }, [dateProp]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     var d = convertToDate(startDateProp);
     setStartDateState(d);
   }, [startDateProp]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     var d = convertToDate(endDateProp);
     setEndDateState(d);
   }, [endDateProp]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     if (monthsInView === 1) setView(viewProp);else setView('date');
   }, [monthsInView, viewProp]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     if (currDateState) {
       if (onDateChange) onDateChange(currDateState);
 
@@ -1027,25 +1034,25 @@ var Calendar = function Calendar(props) {
       }
     }
   }, [currDateState]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     if (onRangeChange) onRangeChange(startDateState, endDateState);
   }, [startDateState, endDateState]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     if (yearState !== undefined && monthsInView < 2) {
       setYearBlockNav(getYearBlock(yearState));
       setYearNav(yearState);
     }
   }, [yearState]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     if (monthState !== undefined && monthsInView < 2) {
       setMonthNav(monthState);
     }
   }, [monthState]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     setYearNav(yearNavProp);
     setYearBlockNav(getYearBlock(yearNavProp));
   }, [yearNavProp]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     setMonthNav(monthNavProp);
   }, [monthNavProp]);
 
@@ -1577,8 +1584,8 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
       mouseLeaveDelay: 50,
       mouseEnterDelay: 0
     };
-    _this.triggerRef = createRef();
-    _this.popupRef = createRef();
+    _this.triggerRef = /*#__PURE__*/createRef();
+    _this.popupRef = /*#__PURE__*/createRef();
     return _this;
   }
 
@@ -1633,7 +1640,7 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
           return _this2.togglePopper('onClick');
         }
       };
-      var element = cloneElement( /*#__PURE__*/createElement("span", {
+      var element = /*#__PURE__*/cloneElement( /*#__PURE__*/createElement("span", {
         className: "d-inline-flex PopperWrapper-trigger"
       }, trigger), options);
       return element;
@@ -1652,7 +1659,7 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
         style: style,
         'data-placement': placement
       };
-      var element = cloneElement(children, options);
+      var element = /*#__PURE__*/cloneElement(children, options);
       return element;
     }
   }, {
@@ -1674,7 +1681,7 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
       }, function (_ref) {
         var ref = _ref.ref;
         return _this3.getTriggerElement(trigger, ref, on);
-      }), (open || this.state.open) && appendToBody && createPortal(
+      }), (open || this.state.open) && appendToBody && /*#__PURE__*/createPortal(
       /*#__PURE__*/
 
       /* tslint:disable:no-shadowed-variable */
@@ -1722,8 +1729,23 @@ var Popover = function Popover(props) {
       hoverable = props.hoverable,
       children = props.children,
       trigger = props.trigger,
-      open = props.open,
       onToggle = props.onToggle;
+
+  var _React$useState = useState$3(props.open || false),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      open = _React$useState2[0],
+      setOpen = _React$useState2[1];
+
+  useEffect$3(function () {
+    if (onToggle) {
+      if (props.open !== undefined) setOpen(props.open);
+    }
+  }, [props.open]);
+
+  var onToggleFn = function onToggleFn(newOpen) {
+    setOpen(newOpen);
+  };
+
   var classes = classNames(_defineProperty({
     Popover: true
   }, 'Popover--dark', dark));
@@ -1738,7 +1760,7 @@ var Popover = function Popover(props) {
     hoverable: hoverable,
     style: style,
     open: open,
-    onToggle: onToggle,
+    onToggle: onToggle || onToggleFn,
     placement: position
   };
   return /*#__PURE__*/createElement(PopperWrapper, _extends({}, popperOptions, {
@@ -1763,88 +1785,12 @@ var Label = function Label(props) {
 };
 Label.displayName = 'Label';
 
-/**
- * Tooltip is used to displays floating content in relation to a target when that target is hovered.
- *
- * Tooltips mostly appear either at the top or bottom of their target.
- * The preferred and default side is the bottom.
- *
- * For left navigation with only icons, show tooltip on the right.
- */
-var Tooltip = /*#__PURE__*/function (_React$Component) {
-  _inherits(Tooltip, _React$Component);
-
-  var _super = _createSuper(Tooltip);
-
-  function Tooltip(props) {
-    var _this;
-
-    _classCallCheck(this, Tooltip);
-
-    _this = _super.call(this, props);
-
-    _defineProperty(_assertThisInitialized(_this), "onToggle", function (open) {
-      _this.setState({
-        open: open
-      });
-    });
-
-    _this.state = {
-      position: {
-        top: 0,
-        left: 0
-      },
-      style: {},
-      open: false
-    };
-    return _this;
-  }
-
-  _createClass(Tooltip, [{
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      this.setState({
-        open: false
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this$props = this.props,
-          _this$props$appendToB = _this$props.appendToBody,
-          appendToBody = _this$props$appendToB === void 0 ? false : _this$props$appendToB,
-          _this$props$position = _this$props.position,
-          tooltip = _this$props.tooltip,
-          children = _this$props.children,
-          props = _objectWithoutProperties(_this$props, ["appendToBody", "position", "tooltip", "children"]);
-
-      var tooltipWrapper = /*#__PURE__*/createElement("div", _extends({
-        className: "Tooltip"
-      }, props, {
-        style: this.state.style
-      }), tooltip);
-      return /*#__PURE__*/createElement(PopperWrapper, {
-        trigger: children,
-        placement: this.props.position,
-        style: this.state.style,
-        appendToBody: appendToBody,
-        on: 'hover',
-        offset: 'Medium',
-        onToggle: this.onToggle,
-        open: this.state.open
-      }, tooltipWrapper);
-    }
-  }]);
-
-  return Tooltip;
-}(Component);
-
 var sizeMapping$1 = {
   tiny: 12,
   regular: 16,
   large: 20
 };
-var Input = forwardRef(function (props, ref) {
+var Input = /*#__PURE__*/forwardRef(function (props, ref) {
   var _classNames2, _classNames3, _classNames4, _classNames5, _classNames6;
 
   var _props$size = props.size,
@@ -1869,12 +1815,36 @@ var Input = forwardRef(function (props, ref) {
       onClear = props.onClear,
       _onBlur = props.onBlur;
   var disabled = propDisabled || !_onChange;
+
+  var _React$useState = useState$3(false),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      open = _React$useState2[0],
+      setOpen = _React$useState2[1];
+
   var classes = classNames(_defineProperty({}, 'Input', true));
   var inputWrapperClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Input-wrapper', true), _defineProperty(_classNames2, "Input-wrapper--".concat(size), size), _defineProperty(_classNames2, 'Input-wrapper--disabled', disabled), _defineProperty(_classNames2, 'Input-wrapper--error', error), _classNames2));
   var inputClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Input-input', true), _defineProperty(_classNames3, "Input-input--".concat(size), size), _classNames3));
   var leftIconClass = classNames((_classNames4 = {}, _defineProperty(_classNames4, 'Input-icon', true), _defineProperty(_classNames4, 'Input-icon--left', true), _defineProperty(_classNames4, 'Input-icon--disabled', !value), _classNames4));
   var rightIconClass = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'Input-icon', true), _defineProperty(_classNames5, 'Input-icon--right', true), _classNames5));
   var errorIconClass = classNames((_classNames6 = {}, _defineProperty(_classNames6, 'Input-icon', true), _defineProperty(_classNames6, 'Input-icon--error', true), _classNames6));
+  var trigger = /*#__PURE__*/createElement("div", {
+    className: rightIconClass
+  }, /*#__PURE__*/createElement(Icon, {
+    name: 'info',
+    size: sizeMapping$1[size]
+  }));
+  var popoverStyle = {
+    padding: 'var(--spacing) var(--spacing-2)',
+    maxWidth: 'var(--spacing-7)',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    'white-space': 'nowrap'
+  };
+
+  var onToggleInfo = function onToggleInfo() {
+    setOpen(!open);
+  };
+
   return /*#__PURE__*/createElement("div", {
     className: classes
   }, size !== 'tiny' && label && /*#__PURE__*/createElement("div", {
@@ -1909,15 +1879,15 @@ var Input = forwardRef(function (props, ref) {
     },
     required: required,
     disabled: disabled
-  }), (!value && !disabled || value && disabled) && info && /*#__PURE__*/createElement(Tooltip, {
+  }), (!value && !disabled || value && disabled) && info && /*#__PURE__*/createElement(Popover, {
+    style: popoverStyle,
+    open: open,
     position: "top",
-    tooltip: info
-  }, /*#__PURE__*/createElement("div", {
-    className: rightIconClass
-  }, /*#__PURE__*/createElement(Icon, {
-    name: 'info',
-    size: sizeMapping$1[size]
-  }))), clearButton && value && !disabled && /*#__PURE__*/createElement("div", {
+    on: 'hover',
+    trigger: trigger,
+    dark: true,
+    onToggle: onToggleInfo
+  }, info), clearButton && value && !disabled && /*#__PURE__*/createElement("div", {
     className: rightIconClass,
     onClick: function onClick(e) {
       return onClear && onClear(e);
@@ -1940,7 +1910,7 @@ var Input = forwardRef(function (props, ref) {
 });
 Input.displayName = 'Input';
 
-var InputMask = forwardRef(function (props, forwardRef) {
+var InputMask = /*#__PURE__*/forwardRef(function (props, forwardRef) {
   var maskProp = props.mask,
       valueProp = props.value,
       _props$placeholderCha = props.placeholderChar,
@@ -1954,29 +1924,29 @@ var InputMask = forwardRef(function (props, forwardRef) {
       caption = props.caption,
       rest = _objectWithoutProperties(props, ["mask", "value", "placeholderChar", "mask", "error", "onChange", "onBlur", "onClick", "onClear", "caption"]);
 
-  var _React$useState = useState$2(''),
+  var _React$useState = useState$3(''),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       value = _React$useState2[0],
       setValue = _React$useState2[1];
 
-  var _React$useState3 = useState$2(0),
+  var _React$useState3 = useState$3(0),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       caret = _React$useState4[0],
       setCaret = _React$useState4[1];
 
-  var ref = useRef(null);
+  var ref = useRef$1(null);
   var fixedMask = mask.filter(function (m) {
     return typeof m === 'string' && m.length === 1;
   });
-  useEffect$2(function () {
+  useEffect$3(function () {
     if (valueProp) {
       setValue(convertToMasked(valueProp));
     }
   }, [valueProp]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     setCaretPos(caret);
   }, [caret]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     if (ref.current) {
       var el = ref.current;
       el.addEventListener('keyup', function (e) {
@@ -2201,34 +2171,34 @@ var DatePicker = function DatePicker(props) {
       onDateChange = props.onDateChange,
       rest = _objectWithoutProperties(props, ["date", "open", "position", "inputFormat", "outputFormat", "inputProps", "mask", "validator", "withInput", "disabledBefore", "disabledAfter", "onDateChange"]);
 
-  var _React$useState = useState$2(false),
+  var _React$useState = useState$3(false),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       init = _React$useState2[0],
       setInit = _React$useState2[1];
 
-  var _React$useState3 = useState$2(),
+  var _React$useState3 = useState$3(),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       date = _React$useState4[0],
       setDate = _React$useState4[1];
 
-  var _React$useState5 = useState$2(false),
+  var _React$useState5 = useState$3(false),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       error = _React$useState6[0],
       setError = _React$useState6[1];
 
-  var _React$useState7 = useState$2(openProp),
+  var _React$useState7 = useState$3(openProp),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
       open = _React$useState8[0],
       setOpen = _React$useState8[1];
 
-  useEffect$2(function () {
+  useEffect$3(function () {
     var d = convertToDate(dateProp, inputFormat, validator);
     setDate(d);
   }, [dateProp]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     setOpen(openProp);
   }, [openProp]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     setError(!date);
 
     if (onDateChange) {
@@ -2431,7 +2401,7 @@ var DonutChart = function DonutChart(props) {
     }, "".concat((percent * 100).toFixed(0), "%"))));
   };
 
-  var _React$useState = useState$2(0),
+  var _React$useState = useState$3(0),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       activeIndex = _React$useState2[0],
       setActiveIndex = _React$useState2[1];
@@ -2619,11 +2589,13 @@ function debounce (delay, atBegin, callback) {
   return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
 }
 
-var DropdownButton = forwardRef(function (props, ref) {
+var DropdownButton = /*#__PURE__*/forwardRef(function (props, ref) {
   var _classNames;
 
   var _props$size = props.size,
       size = _props$size === void 0 ? 'regular' : _props$size,
+      _props$appearance = props.appearance,
+      appearance = _props$appearance === void 0 ? 'basic' : _props$appearance,
       _props$placeholder = props.placeholder,
       placeholder = _props$placeholder === void 0 ? 'Select' : _props$placeholder,
       _props$menu = props.menu,
@@ -2633,14 +2605,14 @@ var DropdownButton = forwardRef(function (props, ref) {
       icon = props.icon,
       disabled = props.disabled,
       inlineLabel = props.inlineLabel,
-      rest = _objectWithoutProperties(props, ["size", "placeholder", "menu", "children", "width", "icon", "disabled", "inlineLabel"]);
+      rest = _objectWithoutProperties(props, ["size", "appearance", "placeholder", "menu", "children", "width", "icon", "disabled", "inlineLabel"]);
 
-  var appearance = disabled ? 'disabled' : 'default';
+  var buttonDisabled = disabled ? 'disabled' : 'default';
   var trimmedPlaceholder = placeholder.trim();
   var value = children ? children : trimmedPlaceholder ? trimmedPlaceholder : 'Select';
   var iconName = !menu ? 'keyboard_arrow_down' : icon ? icon : 'more_horiz';
   var label = inlineLabel && inlineLabel.trim();
-  var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--basic', true), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, 'DropdownButton', true), _defineProperty(_classNames, "DropdownButton--".concat(size), size), _defineProperty(_classNames, 'DropdownButton--icon', icon), _defineProperty(_classNames, 'DropdownButton--moreIcon', menu), _defineProperty(_classNames, 'DropdownButton--placeholder', !children && !menu), _defineProperty(_classNames, 'DropdownButton--label', label), _classNames));
+  var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, "Button--".concat(appearance), appearance), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, 'DropdownButton', true), _defineProperty(_classNames, "DropdownButton--".concat(size), size), _defineProperty(_classNames, 'DropdownButton--icon', icon), _defineProperty(_classNames, 'DropdownButton--moreIcon', menu), _defineProperty(_classNames, 'DropdownButton--placeholder', !children && !menu), _defineProperty(_classNames, 'DropdownButton--label', label), _classNames));
   var labelClass = classNames(_defineProperty({}, 'DropdownButton-label', true));
   var style = {
     width: width
@@ -2656,35 +2628,27 @@ var DropdownButton = forwardRef(function (props, ref) {
   }, label && /*#__PURE__*/createElement("div", {
     className: labelClass
   }, " ", label.trim().charAt(0).toUpperCase(), label.trim().slice(1), " "), icon && !inlineLabel && /*#__PURE__*/createElement(Icon, {
-    appearance: appearance,
+    appearance: buttonDisabled,
     className: "mr-4",
     name: icon
   }), /*#__PURE__*/createElement("div", {
     className: 'DropdownButton-text'
   }, value && "".concat(value.charAt(0).toUpperCase()).concat(value.slice(1)))), /*#__PURE__*/createElement(Icon, {
-    appearance: appearance,
+    appearance: buttonDisabled,
     name: iconName
   }));
 });
 DropdownButton.displayName = 'DropdownButton';
 
-var PlaceholderParagraph = function PlaceholderParagraph(props) {
-  var _props$length = props.length,
-      length = _props$length === void 0 ? 'medium' : _props$length;
-  var classes = classNames(_defineProperty({
-    'Placeholder-paragraph': true,
-    'Placeholder--animation': true
-  }, "Placeholder-paragraph--".concat(length), length));
-  return /*#__PURE__*/createElement("div", {
-    className: classes
-  });
-};
-PlaceholderParagraph.displayName = 'PlaceholderParagraph';
-
-var ListCheckbox = forwardRef(function (props, ref) {
+var ListCheckbox = /*#__PURE__*/forwardRef(function (props, ref) {
   var list = props.list,
       _props$showParentChec = props.showParentCheckbox,
       showParentCheckbox = _props$showParentChec === void 0 ? true : _props$showParentChec,
+      remainingOptions = props.remainingOptions,
+      renderFooter = props.renderFooter,
+      renderGroups = props.renderGroups,
+      showGroups = props.showGroups,
+      bufferedOption = props.bufferedOption,
       _props$selected = props.selected,
       selected = _props$selected === void 0 ? [] : _props$selected,
       _props$selectedLabels = props.selectedLabels,
@@ -2731,38 +2695,38 @@ var ListCheckbox = forwardRef(function (props, ref) {
     return obj;
   };
 
-  var _React$useState = useState$2(calcParentStatus(selected)),
+  var _React$useState = useState$3(calcParentStatus(selected)),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       parentStatus = _React$useState2[0],
       setParentStatus = _React$useState2[1];
 
-  var _React$useState3 = useState$2(childArray),
+  var _React$useState3 = useState$3(childArray),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       checked = _React$useState4[0],
       setChecked = _React$useState4[1];
 
-  var _React$useState5 = useState$2(selectedLabels),
+  var _React$useState5 = useState$3(selectedLabels),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       selectedArrayLabels = _React$useState6[0],
       setSelectedArrayLabels = _React$useState6[1];
 
-  var _React$useState7 = useState$2(selected),
+  var _React$useState7 = useState$3(selected),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
       selectedArrayValues = _React$useState8[0],
       setSelectedArrayValues = _React$useState8[1];
 
-  useEffect$2(function () {
+  useEffect$3(function () {
     if (updatedSelectedArray && updatedSelectedArray.length > 0) {
       setChecked(updatedSelectedArray);
     }
   }, [JSON.stringify(updatedSelectedArray)]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     if (selected && selected.length > 0 && parentStatus.checked) {
       setSelectedArrayValues(selected);
       setSelectedArrayLabels(selectedLabels);
     }
   }, [JSON.stringify(selected)]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     if (props.checked !== undefined) {
       setParentStatus(_objectSpread2(_objectSpread2({}, parentStatus), {}, {
         checked: props.checked
@@ -2773,7 +2737,7 @@ var ListCheckbox = forwardRef(function (props, ref) {
   var getListCheckboxClass = function getListCheckboxClass(index) {
     var _classNames;
 
-    var ListCheckboxClass = classNames((_classNames = {}, _defineProperty(_classNames, 'ListCheckbox-childWrapper', true), _defineProperty(_classNames, 'ListCheckbox-childWrapper--top', !showParentCheckbox && index === 0), _classNames));
+    var ListCheckboxClass = classNames((_classNames = {}, _defineProperty(_classNames, 'ListCheckbox-childWrapper', true), _defineProperty(_classNames, 'ListCheckbox-childWrapper--top', !showParentCheckbox && index === 0 && !showGroups), _defineProperty(_classNames, 'ListCheckbox-childWrapper--bottom', index + 1 === list.length && !(showGroups && remainingOptions > 0)), _classNames));
     return ListCheckboxClass;
   };
 
@@ -2826,18 +2790,6 @@ var ListCheckbox = forwardRef(function (props, ref) {
     }
   };
 
-  var renderLoading = function renderLoading() {
-    var arr = Array(2).fill('Loading');
-    return arr.map(function (option, ind) {
-      return /*#__PURE__*/createElement("div", {
-        className: "Option-loadingWrapper",
-        key: "".concat(option, "-").concat(ind)
-      }, /*#__PURE__*/createElement(PlaceholderParagraph, {
-        length: 'large'
-      }));
-    });
-  };
-
   return /*#__PURE__*/createElement("div", {
     className: 'ListCheckbox'
   }, showParentCheckbox && /*#__PURE__*/createElement("div", {
@@ -2851,13 +2803,18 @@ var ListCheckbox = forwardRef(function (props, ref) {
     className: 'ListCheckbox-scroller',
     style: style,
     ref: ref
-  }, props.loadingMoreUp && renderLoading(), list.map(function (item, ind) {
+  }, list.map(function (item, ind) {
     var childLabel = item.label,
         size = item.size,
+        group = item.group,
+        selectedGroup = item.selectedGroup,
         childOnChange = item.onChange;
+    var prevGroup = ind > 0 ? list[ind - 1].group : bufferedOption ? bufferedOption.group : undefined;
+    var isGroup = showGroups && prevGroup !== group;
     return /*#__PURE__*/createElement("div", {
-      className: getListCheckboxClass(ind),
       key: "checkbox-".concat(ind)
+    }, isGroup && group && renderGroups(group, selectedGroup), /*#__PURE__*/createElement("div", {
+      className: getListCheckboxClass(ind)
     }, /*#__PURE__*/createElement(Checkbox, {
       label: childLabel,
       checked: checked[ind],
@@ -2866,10 +2823,23 @@ var ListCheckbox = forwardRef(function (props, ref) {
         handleChildChange(c, ind);
         if (childOnChange) childOnChange(checked[ind]);
       }
-    }));
-  }), props.loadingMoreDown && renderLoading()));
+    })));
+  }), showGroups && remainingOptions > 0 && renderFooter()));
 });
 ListCheckbox.displayName = 'ListCheckbox';
+
+var PlaceholderParagraph = function PlaceholderParagraph(props) {
+  var _props$length = props.length,
+      length = _props$length === void 0 ? 'medium' : _props$length;
+  var classes = classNames(_defineProperty({
+    'Placeholder-paragraph': true,
+    'Placeholder--animation': true
+  }, "Placeholder-paragraph--".concat(length), length));
+  return /*#__PURE__*/createElement("div", {
+    className: classes
+  });
+};
+PlaceholderParagraph.displayName = 'PlaceholderParagraph';
 
 var DropdownAlignMapping = {
   right: 'bottom-start',
@@ -2877,8 +2847,8 @@ var DropdownAlignMapping = {
 };
 var lastScrollTop = 0;
 var usePrevious = function usePrevious(value) {
-  var ref = useRef();
-  useEffect$2(function () {
+  var ref = useRef$1();
+  useEffect$3(function () {
     ref.current = value;
   }, [value]);
   return ref.current;
@@ -2887,12 +2857,10 @@ var usePrevious = function usePrevious(value) {
 var DropdownList = function DropdownList(props) {
   var _classNames3, _classNames4, _classNames5;
 
-  var _props$subheading = props.subheading,
-      subheading = _props$subheading === void 0 ? {} : _props$subheading,
-      _props$listOptions = props.listOptions,
+  var _props$listOptions = props.listOptions,
       listOptions = _props$listOptions === void 0 ? [] : _props$listOptions,
-      _props$size = props.size,
-      size = _props$size === void 0 ? 'regular' : _props$size,
+      _props$triggerSize = props.triggerSize,
+      triggerSize = _props$triggerSize === void 0 ? 'regular' : _props$triggerSize,
       _props$dropdownAlign = props.dropdownAlign,
       dropdownAlign = _props$dropdownAlign === void 0 ? 'right' : _props$dropdownAlign,
       _props$checkedValuesO = props.checkedValuesOffset,
@@ -2902,17 +2870,22 @@ var DropdownList = function DropdownList(props) {
       _props$optionsWrap = props.optionsWrap,
       optionsWrap = _props$optionsWrap === void 0 ? false : _props$optionsWrap,
       _props$searchResultMe = props.searchResultMessage,
-      searchResultMessage = _props$searchResultMe === void 0 ? 'No Result Found' : _props$searchResultMe,
+      searchResultMessage = _props$searchResultMe === void 0 ? 'No result found' : _props$searchResultMe,
+      _props$parentCheckbox = props.parentCheckboxLabel,
+      parentCheckboxLabel = _props$parentCheckbox === void 0 ? 'Select All' : _props$parentCheckbox,
+      _props$footerLabel = props.footerLabel,
+      footerLabel = _props$footerLabel === void 0 ? 'Search for more options' : _props$footerLabel,
       _props$maxHeight = props.maxHeight,
       maxHeight = _props$maxHeight === void 0 ? 200 : _props$maxHeight,
       _props$bottomScrollOf = props.bottomScrollOffset,
       bottomScrollOffset = _props$bottomScrollOf === void 0 ? 64 : _props$bottomScrollOf,
+      remainingOptions = props.remainingOptions,
+      buttonAppearance = props.buttonAppearance,
+      totalOptions = props.totalOptions,
       menu = props.menu,
       bufferedOption = props.bufferedOption,
       slicedOptionsLength = props.slicedOptionsLength,
       loadingOptions = props.loadingOptions,
-      loadingMoreUp = props.loadingMoreUp,
-      loadingMoreDown = props.loadingMoreDown,
       placeholder = props.placeholder,
       searchTerm = props.searchTerm,
       limit = props.limit,
@@ -2927,52 +2900,58 @@ var DropdownList = function DropdownList(props) {
       style = props.style,
       onChange = props.onChange,
       onSearchChange = props.onSearchChange,
+      onChangeTriggerLabel = props.onChangeTriggerLabel,
       onScroll = props.onScroll,
       onSelectAll = props.onSelectAll,
-      setSearchTerm = props.setSearchTerm,
+      onRearrangeOptions = props.onRearrangeOptions,
       renderOptionsFromTop = props.renderOptionsFromTop;
-  var dropdownRef = createRef();
-  var triggerRef = createRef();
+  var dropdownRef = /*#__PURE__*/createRef();
+  var triggerRef = /*#__PURE__*/createRef();
 
-  var _React$useState = useState$2([]),
+  var _React$useState = useState$3([]),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       selected = _React$useState2[0],
       setSelected = _React$useState2[1];
 
-  var _React$useState3 = useState$2([]),
+  var _React$useState3 = useState$3([]),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       selectedLabels = _React$useState4[0],
       setSelectedLabels = _React$useState4[1];
 
-  var _React$useState5 = useState$2(''),
+  var _React$useState5 = useState$3(''),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       buttonLabel = _React$useState6[0],
       setButtonLabel = _React$useState6[1];
 
-  var _React$useState7 = useState$2(),
+  var _React$useState7 = useState$3(),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
       dropdownOpen = _React$useState8[0],
       setDropdownOpen = _React$useState8[1];
 
-  var _React$useState9 = useState$2(),
+  var _React$useState9 = useState$3(),
       _React$useState10 = _slicedToArray(_React$useState9, 2),
       popoverStyle = _React$useState10[0],
       setPopoverStyle = _React$useState10[1];
 
-  var _React$useState11 = useState$2([]),
+  var _React$useState11 = useState$3([]),
       _React$useState12 = _slicedToArray(_React$useState11, 2),
       previousSelected = _React$useState12[0],
       setPreviousSelected = _React$useState12[1];
 
-  var _React$useState13 = useState$2([]),
+  var _React$useState13 = useState$3([]),
       _React$useState14 = _slicedToArray(_React$useState13, 2),
       previousSelectedLabels = _React$useState14[0],
       setPreviousSelectedLabels = _React$useState14[1];
 
-  var _React$useState15 = useState$2(false),
+  var _React$useState15 = useState$3(false),
       _React$useState16 = _slicedToArray(_React$useState15, 2),
       optionsApplied = _React$useState16[0],
       setOptionsApplied = _React$useState16[1];
+
+  var _React$useState17 = useState$3(false),
+      _React$useState18 = _slicedToArray(_React$useState17, 2),
+      loading = _React$useState18[0],
+      setLoading = _React$useState18[1];
 
   var prevDropdownOpen = usePrevious(dropdownOpen);
   var prevListOptions = usePrevious(listOptions);
@@ -2983,83 +2962,110 @@ var DropdownList = function DropdownList(props) {
     var selectedLength = selectedArray.length;
     var label = '';
 
-    if (selectedLength > checkedValuesOffset) {
-      var str = "".concat(selectedLength, " selected");
-      label = str;
-    } else {
+    if (selectedLength <= checkedValuesOffset) {
       var labelArray = [];
       selectedArray.forEach(function (selectedLabel) {
         labelArray.push(selectedLabel);
       });
       label = labelArray.join(', ');
+    } else {
+      label = onChangeTriggerLabel ? onChangeTriggerLabel(selectedLength, totalOptions) : "".concat(selectedLength, " selected");
     }
 
     setSelectedLabels(selectedArray);
     setButtonLabel(label);
   };
 
-  useEffect$2(function () {
+  useEffect$3(function () {
     if (dropdownOpen) {
-      var _triggerRef$current;
+      var _dropdownElement$pare;
 
+      var dropdownElement = triggerRef.current;
+      var popoverWidth = width !== '100%' ? width : "".concat(dropdownElement === null || dropdownElement === void 0 ? void 0 : (_dropdownElement$pare = dropdownElement.parentElement) === null || _dropdownElement$pare === void 0 ? void 0 : _dropdownElement$pare.clientWidth, "px");
       var popperWrapperStyle = {
-        width: "".concat((_triggerRef$current = triggerRef.current) === null || _triggerRef$current === void 0 ? void 0 : _triggerRef$current.clientWidth, "px"),
+        width: menu ? popoverWidth : "".concat(dropdownElement === null || dropdownElement === void 0 ? void 0 : dropdownElement.clientWidth, "px"),
         minWidth: showApplyButton && checkboxes ? '176px' : '128px'
       };
       setPopoverStyle(popperWrapperStyle);
     }
   }, [dropdownOpen, checkboxes, showApplyButton]);
-  useEffect$2(function () {
-    var _props$selected = props.selected,
-        label = _props$selected.label,
-        value = _props$selected.value;
+  useEffect$3(function () {
+    if (props.selected) {
+      var selectedValuesArray = selected.slice();
+      var selectedLabelsArray = selectedLabels.slice();
+      props.selected.forEach(function (selectedOption) {
+        var label = selectedOption.label,
+            value = selectedOption.value;
 
-    if (label && value) {
-      var selectedLabelsCopy = selectedLabels.slice();
-      var selectedValue = selected.slice();
-      selectedLabelsCopy = label;
-      selectedValue = value;
-      setSelected(selectedValue);
-      setSelectButtonLabel(selectedLabelsCopy);
+        if (!selectedValuesArray.includes(value)) {
+          selectedValuesArray = selectedValuesArray.concat(value);
+          selectedLabelsArray = selectedLabelsArray.concat(label);
+        }
+      });
+      setPreviousSelected(selectedValuesArray);
+      setPreviousSelectedLabels(selectedLabelsArray);
+      setSelected(selectedValuesArray);
+      setSelectButtonLabel(selectedLabelsArray);
     }
-  }, [props.selected]);
-  useEffect$2(function () {
+  }, [JSON.stringify(props.selected)]);
+  useEffect$3(function () {
+    if (props.selectedAll) {
+      var _props$selectedAll = props.selectedAll,
+          label = _props$selectedAll.label,
+          value = _props$selectedAll.value;
+
+      if (label && value) {
+        var selectedLabelsCopy = selectedLabels.slice();
+        var selectedValue = selected.slice();
+        selectedLabelsCopy = label;
+        selectedValue = value;
+        setSelected(selectedValue);
+        setSelectButtonLabel(selectedLabelsCopy);
+      }
+    }
+  }, [props.selectedAll]);
+  useEffect$3(function () {
     if (props.bottomOptionsSliced && dropdownRef.current) {
       var className = checkboxes ? '.ListCheckbox-childWrapper' : '.Option-wrapper';
       var element = document.querySelectorAll(className);
       var index = element.length - limit + slicedOptionsLength;
       var marker = element[index];
-      var updatedScrollTop = marker.offsetTop - maxHeight / 2;
+      var updatedScrollTop = marker.offsetTop - maxHeight;
       dropdownRef.current.scrollTop = updatedScrollTop;
       lastScrollTop = updatedScrollTop;
     }
   }, [props.bottomOptionsSliced]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     if (props.topOptionsSliced && dropdownRef.current) {
       var className = checkboxes ? '.ListCheckbox-childWrapper' : '.Option-wrapper';
       var element = document.querySelectorAll(className);
       var index = limit - slicedOptionsLength;
       var marker = element[index];
-      dropdownRef.current.scrollTop = marker.offsetTop - maxHeight / 2;
+      dropdownRef.current.scrollTop = marker.offsetTop;
       lastScrollTop = marker.offsetTop;
     }
   }, [props.topOptionsSliced]);
+  useEffect$3(function () {
+    var rearrangeCondition = dropdownOpen && props.async && checkboxes;
+    if (rearrangeCondition && onRearrangeOptions) onRearrangeOptions(selected, selectedLabels);
+  }, [dropdownOpen]);
+  useEffect$3(function () {
+    var rearrangeCondition = !searchTerm && props.searchInit && props.async && checkboxes;
+    if (rearrangeCondition && onRearrangeOptions) onRearrangeOptions(selected, selectedLabels);
+  }, [searchTerm, props.searchInit]);
   var trigger = /*#__PURE__*/createElement(DropdownButton, {
     placeholder: placeholder,
-    size: size,
+    appearance: buttonAppearance,
+    size: triggerSize,
     icon: icon,
     disabled: disabled,
     inlineLabel: inlineLabel,
     width: width,
-    menu: menu,
-    ref: triggerRef
+    menu: menu
   }, buttonLabel);
-
-  var dropdownWrapperStyle = _objectSpread2({
-    width: width,
-    display: 'flex'
+  var dropdownWrapperStyle = menu ? style : _objectSpread2({
+    width: width
   }, style);
-
   var dropdownStyle = {
     maxHeight: maxHeight,
     overflowY: 'auto',
@@ -3067,18 +3073,18 @@ var DropdownList = function DropdownList(props) {
   };
 
   var getDropdownClass = function getDropdownClass(index, currentGroup, isGroup) {
-    var Dropdown = classNames(_defineProperty({}, 'Dropdown-border', currentGroup !== undefined && isGroup && index !== 0));
+    var Dropdown = classNames(_defineProperty({}, 'Dropdown--border', currentGroup !== undefined && isGroup && index !== 0));
     return Dropdown;
   };
 
   var getOptionWrapperClass = function getOptionWrapperClass(optionIcon, optionValue, index) {
     var _classNames2;
 
-    var OptionWrapper = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Option-wrapper', true), _defineProperty(_classNames2, 'Option-wrapper--top', index === 0 && !subheading[0]), _defineProperty(_classNames2, 'Option-wrapper--bottom', index + 1 === listOptions.length), _defineProperty(_classNames2, 'Option-wrapper--icon', optionIcon), _defineProperty(_classNames2, 'Option-wrapper--selected', selected[0] === optionValue), _classNames2));
+    var OptionWrapper = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Option-wrapper', true), _defineProperty(_classNames2, 'Option-wrapper--top', index === 0), _defineProperty(_classNames2, 'Option-wrapper--bottom', index + 1 === listOptions.length && !(props.async && remainingOptions > 0)), _defineProperty(_classNames2, 'Option-wrapper--icon', optionIcon), _defineProperty(_classNames2, 'Option-wrapper--selected', selected[0] === optionValue), _classNames2));
     return OptionWrapper;
   };
 
-  var dropdownClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Dropdown', true), _defineProperty(_classNames3, 'Dropdown-placeholder', !menu), _classNames3));
+  var dropdownClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Dropdown', true), _defineProperty(_classNames3, 'Dropdown--placeholder', !menu), _defineProperty(_classNames3, 'Dropdown--menu', menu), _classNames3));
   var dropdownWrapperClass = classNames((_classNames4 = {}, _defineProperty(_classNames4, 'Dropdown-wrapper', true), _defineProperty(_classNames4, 'Dropdown-wrapper--wrap', optionsWrap), _classNames4));
   var optionTextClass = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'Option-text', true), _defineProperty(_classNames5, 'Option-text--wrap', optionsWrap), _classNames5));
 
@@ -3095,17 +3101,27 @@ var DropdownList = function DropdownList(props) {
     }
 
     setOptionsApplied(false);
-    if (search && setSearchTerm) setSearchTerm('');
+    if (search || props.async) searchClearHandler();
+  };
+
+  var debounceClear = debounce(400, function () {
+    if (onRearrangeOptions) onRearrangeOptions([], []);
+    setLoading(false);
+  });
+
+  var onClearOptions = function onClearOptions() {
+    setSelected([]);
+    setSelectButtonLabel([]);
+    setLoading(true);
+    debounceClear();
+    if (onChange && !showApplyButton) onChange([]);
   };
 
   var onCancelOptions = function onCancelOptions() {
-    setSelected([]);
-    setPreviousSelected([]);
-    setPreviousSelectedLabels([]);
-    setSelectedLabels([]);
-    setButtonLabel(placeholder);
+    setSelected(previousSelected);
+    setSelectedLabels(previousSelectedLabels);
+    setSelectButtonLabel(previousSelectedLabels);
     setDropdownOpen(false);
-    if (onChange) onChange([]);
   };
 
   var onApplyOptions = function onApplyOptions() {
@@ -3140,6 +3156,10 @@ var DropdownList = function DropdownList(props) {
     if (onChange) onChange(value);
   };
 
+  var searchClearHandler = function searchClearHandler() {
+    if (onSearchChange && searchTerm) onSearchChange('');
+  };
+
   var searchHandler = function searchHandler(event) {
     if (onSearchChange) onSearchChange(event.target.value);
   };
@@ -3157,15 +3177,36 @@ var DropdownList = function DropdownList(props) {
     var scrollTop = element.scrollTop;
 
     if (scrollTop <= lastScrollTop) {
-      if (scrollTop <= bottomScrollOffset && !loadingMoreUp) onScrollDropdown('up', scrollTop);
+      if (scrollTop <= bottomScrollOffset) onScrollDropdown('up', scrollTop);
     } else {
       var scrollContainerBottomPosition = Math.round(element.scrollTop + element.clientHeight);
       var scrollPosition = Math.round(element.scrollHeight - bottomScrollOffset);
 
-      if (scrollPosition <= scrollContainerBottomPosition && !loadingMoreDown) {
+      if (scrollPosition <= scrollContainerBottomPosition) {
         onScrollDropdown('down', scrollTop);
       }
     }
+  };
+
+  var renderFooter = function renderFooter() {
+    return /*#__PURE__*/createElement("div", {
+      className: 'Dropdown-footer'
+    }, /*#__PURE__*/createElement(Text, {
+      small: true,
+      appearance: 'subtle'
+    }, footerLabel));
+  };
+
+  var renderGroups = function renderGroups(group, selectedGroup) {
+    return /*#__PURE__*/createElement("div", {
+      className: 'Dropdown-subinfo'
+    }, /*#__PURE__*/createElement(Text, {
+      small: true,
+      appearance: 'subtle'
+    }, group), selectedGroup && /*#__PURE__*/createElement("div", {
+      onClick: onClearOptions,
+      className: 'Dropdown-clear'
+    }, /*#__PURE__*/createElement(Text, null, "Clear")));
   };
 
   var renderApplyButton = function renderApplyButton() {
@@ -3192,9 +3233,12 @@ var DropdownList = function DropdownList(props) {
     }, /*#__PURE__*/createElement(Input, {
       name: "search",
       icon: 'search',
+      value: searchTerm,
       placeholder: 'Search..',
       disabled: false,
-      onChange: searchHandler
+      clearButton: true,
+      onChange: searchHandler,
+      onClear: searchClearHandler
     }));
   };
 
@@ -3215,14 +3259,17 @@ var DropdownList = function DropdownList(props) {
     var updatedChecked = [];
     var parentChecked = selected.length === optionsLength;
     var showParentCheckbox = searchTerm === '' && !props.async;
-    var condition1 = JSON.stringify(prevDropdownOpen) !== JSON.stringify(dropdownOpen);
-    var condition2 = JSON.stringify(prevListOptions) !== JSON.stringify(listOptions);
+    var selectedCondition = prevDropdownOpen !== dropdownOpen || props.searchInit || prevListOptions !== listOptions;
+    var parentLabel = parentCheckboxLabel.trim() ? parentCheckboxLabel.trim() : 'Select All';
+    var showGroups = props.async;
     listOptions.forEach(function (option) {
       var label = option.label,
-          value = option.value;
+          value = option.value,
+          group = option.group,
+          selectedGroup = option.selectedGroup;
       var checkedValue = false;
 
-      if ((condition1 || condition2) && selected && selected.length > 0) {
+      if (selectedCondition && selected && selected.length > 0) {
         var updatedVal = JSON.stringify(value);
         checkedValue = selected.findIndex(function (item) {
           return JSON.stringify(item) === updatedVal;
@@ -3233,15 +3280,20 @@ var DropdownList = function DropdownList(props) {
       list.push({
         label: label,
         value: value,
+        group: group,
+        selectedGroup: selectedGroup,
         checked: checkedValue
       });
     });
     return /*#__PURE__*/createElement(ListCheckbox, {
-      label: 'Select All',
+      label: parentLabel,
       onChange: checkboxChangeHandler,
       checked: parentChecked,
-      loadingMoreUp: loadingMoreUp,
-      loadingMoreDown: loadingMoreDown,
+      renderFooter: renderFooter,
+      renderGroups: renderGroups,
+      remainingOptions: remainingOptions,
+      bufferedOption: bufferedOption,
+      showGroups: showGroups,
       list: list,
       updatedSelectedArray: updatedChecked,
       style: dropdownStyle,
@@ -3268,7 +3320,8 @@ var DropdownList = function DropdownList(props) {
       className: 'Option-icon'
     }, /*#__PURE__*/createElement(Icon, {
       className: "mr-4",
-      name: optionIcon
+      name: optionIcon,
+      appearance: selected[0] === value ? 'white' : 'default'
     })), /*#__PURE__*/createElement("div", {
       className: 'Option-label'
     }, /*#__PURE__*/createElement("div", {
@@ -3279,7 +3332,7 @@ var DropdownList = function DropdownList(props) {
   };
 
   var renderDropdownSection = function renderDropdownSection() {
-    if (loadingOptions) {
+    if (loadingOptions || loading) {
       return /*#__PURE__*/createElement("div", {
         className: 'Dropdown-loaderWrapper'
       }, /*#__PURE__*/createElement("div", {
@@ -3304,21 +3357,20 @@ var DropdownList = function DropdownList(props) {
       className: "Scroller-wrapper",
       style: dropdownStyle,
       ref: dropdownRef
-    }, loadingMoreUp && renderLoading(2), listOptions.map(function (option, index) {
+    }, listOptions.map(function (option, index) {
       var prevGroup = index > 0 ? listOptions[index - 1].group : bufferedOption ? bufferedOption.group : undefined;
       var currentGroup = option.group;
       var isGroup = prevGroup !== currentGroup;
       return /*#__PURE__*/createElement("div", {
         className: getDropdownClass(index + offset, currentGroup, isGroup),
         key: index
-      }, isGroup && currentGroup && /*#__PURE__*/createElement("div", {
-        className: 'Dropdown-subinfo'
-      }, currentGroup), renderOptions(option, index));
-    }), loadingMoreDown && renderLoading(2)));
+      }, isGroup && currentGroup && renderGroups(currentGroup), renderOptions(option, index));
+    }), props.async && remainingOptions > 0 && renderFooter()));
   };
 
   return /*#__PURE__*/createElement("div", {
     className: dropdownClass,
+    ref: triggerRef,
     onScroll: handleMenuScroll,
     style: dropdownWrapperStyle
   }, /*#__PURE__*/createElement(Popover, {
@@ -3328,7 +3380,7 @@ var DropdownList = function DropdownList(props) {
     style: popoverStyle,
     position: DropdownAlignMapping[dropdownAlign],
     appendToBody: true
-  }, search && renderSearch(), renderDropdownSection(), showApplyButton && checkboxes && renderApplyButton()));
+  }, (search || props.async) && renderSearch(), renderDropdownSection(), showApplyButton && checkboxes && renderApplyButton()));
 };
 
 DropdownList.displayName = 'DropdownList';
@@ -3368,151 +3420,218 @@ var getLabelsFromSelectedObj = function getLabelsFromSelectedObj(options) {
   return result;
 };
 
+var useIsMount = function useIsMount() {
+  var isMountRef = useRef$1(true);
+  useEffect$3(function () {
+    isMountRef.current = false;
+  }, []);
+  return isMountRef.current;
+};
+var asyncLimit = 50;
 var Dropdown = function Dropdown(props) {
   var _props$limit = props.limit,
       limit = _props$limit === void 0 ? 10 : _props$limit,
-      _props$async = props.async,
-      async = _props$async === void 0 ? false : _props$async,
+      _props$options = props.options,
+      dropdownItems = _props$options === void 0 ? [] : _props$options,
+      _props$selectedGroupL = props.selectedGroupLabel,
+      selectedGroupLabel = _props$selectedGroupL === void 0 ? 'Selected Items' : _props$selectedGroupL,
+      bulk = props.bulk,
       onChange = props.onChange,
-      loadMoreOptions = props.loadMoreOptions,
-      rest = _objectWithoutProperties(props, ["limit", "async", "onChange", "loadMoreOptions"]);
+      fetchOptions = props.fetchOptions,
+      rest = _objectWithoutProperties(props, ["limit", "options", "selectedGroupLabel", "bulk", "onChange", "fetchOptions"]);
 
-  var _React$useState = useState$2(-1),
+  var _React$useState = useState$3(-1),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       topOffset = _React$useState2[0],
       setTopOffset = _React$useState2[1];
 
-  var _React$useState3 = useState$2(-1),
+  var _React$useState3 = useState$3(-1),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       bottomOffset = _React$useState4[0],
       setBottomOffset = _React$useState4[1];
 
-  var _React$useState5 = useState$2([]),
+  var _React$useState5 = useState$3([]),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       options = _React$useState6[0],
       setOptions = _React$useState6[1];
 
-  var _React$useState7 = useState$2(false),
+  var _React$useState7 = useState$3(dropdownItems),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
-      topOptionsSliced = _React$useState8[0],
-      setTopOptionsSliced = _React$useState8[1];
+      dropdownOptions = _React$useState8[0],
+      setDropdownOptions = _React$useState8[1];
 
-  var _React$useState9 = useState$2(false),
+  var _React$useState9 = useState$3(dropdownItems),
       _React$useState10 = _slicedToArray(_React$useState9, 2),
-      bottomOptionsSliced = _React$useState10[0],
-      setBottomOptionsSliced = _React$useState10[1];
+      shuffledOptions = _React$useState10[0],
+      setShuffledOptions = _React$useState10[1];
 
-  var _React$useState11 = useState$2(''),
+  var _React$useState11 = useState$3(false),
       _React$useState12 = _slicedToArray(_React$useState11, 2),
-      searchTerm = _React$useState12[0],
-      setSearchTerm = _React$useState12[1];
+      topOptionsSliced = _React$useState12[0],
+      setTopOptionsSliced = _React$useState12[1];
 
-  var _React$useState13 = useState$2(2 * limit),
+  var _React$useState13 = useState$3(false),
       _React$useState14 = _slicedToArray(_React$useState13, 2),
-      stateLimit = _React$useState14[0],
-      setStateLimit = _React$useState14[1];
+      bottomOptionsSliced = _React$useState14[0],
+      setBottomOptionsSliced = _React$useState14[1];
 
-  var _React$useState15 = useState$2(0),
+  var _React$useState15 = useState$3(''),
       _React$useState16 = _slicedToArray(_React$useState15, 2),
-      slicedOptionLength = _React$useState16[0],
-      setSlicedOptionLength = _React$useState16[1];
+      searchTerm = _React$useState16[0],
+      setSearchTerm = _React$useState16[1];
 
-  var _React$useState17 = useState$2(false),
+  var _React$useState17 = useState$3(2 * limit),
       _React$useState18 = _slicedToArray(_React$useState17, 2),
-      loadingMoreUp = _React$useState18[0],
-      setLoadingMoreUp = _React$useState18[1];
+      stateLimit = _React$useState18[0],
+      setStateLimit = _React$useState18[1];
 
-  var _React$useState19 = useState$2(false),
+  var _React$useState19 = useState$3(0),
       _React$useState20 = _slicedToArray(_React$useState19, 2),
-      loadingMoreDown = _React$useState20[0],
-      setLoadingMoreDown = _React$useState20[1];
+      slicedOptionLength = _React$useState20[0],
+      setSlicedOptionLength = _React$useState20[1];
 
-  var _React$useState21 = useState$2(props.loading),
+  var _React$useState21 = useState$3(bulk),
       _React$useState22 = _slicedToArray(_React$useState21, 2),
-      loading = _React$useState22[0],
-      setLoading = _React$useState22[1];
+      async = _React$useState22[0],
+      setAsync = _React$useState22[1];
 
-  var _React$useState23 = useState$2(props.options.length),
+  var _React$useState23 = useState$3(props.loading),
       _React$useState24 = _slicedToArray(_React$useState23, 2),
-      optionsLength = _React$useState24[0],
-      setOptionLength = _React$useState24[1];
+      loading = _React$useState24[0],
+      setLoading = _React$useState24[1];
 
-  var _React$useState25 = useState$2(),
+  var _React$useState25 = useState$3(dropdownItems.length),
       _React$useState26 = _slicedToArray(_React$useState25, 2),
-      bufferedOption = _React$useState26[0],
-      setBufferedOption = _React$useState26[1];
+      optionsLength = _React$useState26[0],
+      setOptionsLength = _React$useState26[1];
 
-  var _React$useState27 = useState$2({
-    label: [],
-    value: []
-  }),
+  var _React$useState27 = useState$3(),
       _React$useState28 = _slicedToArray(_React$useState27, 2),
-      selected = _React$useState28[0],
-      setSelected = _React$useState28[1];
+      bufferedOption = _React$useState28[0],
+      setBufferedOption = _React$useState28[1];
 
-  var debounceSearch = debounce(300, function (search) {
-    setSearchTerm(search);
-  });
+  var _React$useState29 = useState$3(false),
+      _React$useState30 = _slicedToArray(_React$useState29, 2),
+      searchInit = _React$useState30[0],
+      setSearchInit = _React$useState30[1];
 
-  var getDropdownOptions = function getDropdownOptions(offset, optionsLimit, direction) {
-    var bufferedOptionPresent = direction === 'up' && !(offset < 0);
-    var updatedLimit = direction === 'up' ? offset < 0 ? optionsLimit : optionsLimit + 1 : optionsLimit;
-    var updatedOffset = direction === 'up' ? offset < 0 ? offset + 1 : offset : offset;
-    var getPaginatedOptions = async && (direction || searchTerm) ? loadMoreOptions : getOptions;
+  var _React$useState31 = useState$3(),
+      _React$useState32 = _slicedToArray(_React$useState31, 2),
+      selectedAll = _React$useState32[0],
+      setSelectedAll = _React$useState32[1];
 
-    if (props.options.length < optionsLimit && async && loadMoreOptions) {
-      getPaginatedOptions = loadMoreOptions;
-    }
-
-    if (getPaginatedOptions) {
-      if (async && direction === 'up') setLoadingMoreUp(true);
-      if (async && direction === 'down') setLoadingMoreDown(true);
-      if (getPaginatedOptions === loadMoreOptions && !direction) setLoading(true);
-      getPaginatedOptions(updatedOffset, updatedLimit, searchTerm, props.options).then(function (res) {
-        if (async && direction === 'up') setLoadingMoreUp(false);
-        if (async && direction === 'down') setLoadingMoreDown(false);
-        if (getPaginatedOptions === loadMoreOptions && !direction) setLoading(false);
-
-        if (updatedOffset !== undefined && direction !== undefined) {
-          var slicedOptions = res.options,
-              length = res.length;
-          var len = limit - slicedOptions.length;
-          var slicedLength = bufferedOptionPresent ? len + 1 : len;
-          if (!searchTerm && optionsLength !== length) setOptionLength(length);
-          setSlicedOptionLength(slicedLength);
-          updateOptionsOnScroll(slicedOptions, updatedOffset, direction, slicedLength, bufferedOptionPresent);
-        } else {
-          setOptionLength(res.length);
-          setSlicedOptionLength(0);
-          setOptions(res.options);
-          setBottomOffset(res.offset);
-        }
-      });
-    }
-  };
-
-  var renderOptionsFromTop = function renderOptionsFromTop() {
-    if (props.options.length > 0) {
+  var isInitialRender = useIsMount();
+  var debounceSearch = useCallback(debounce(300, function (search, updatedAsync) {
+    if (updatedAsync) {
       var emptyBuffer = {
         value: '',
         label: ''
       };
       setBufferedOption(emptyBuffer);
-      getDropdownOptions(0, limit, undefined);
+      getFilteredOptions(search);
+      setTopOffset(0);
+      setBottomOffset(0);
+    } else {
+      setLoading(false);
+      renderOptionsFromTop(search);
+    }
+  }), []);
+
+  var getFilteredOptions = function getFilteredOptions() {
+    var search = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+    if (fetchOptions) {
+      fetchOptions(search, asyncLimit).then(function (res) {
+        var searchResult = res.options,
+            count = res.count;
+        var searchOptions = searchResult.slice(0, asyncLimit);
+        setLoading(false);
+        setDropdownOptions(searchOptions);
+        setShuffledOptions(searchOptions);
+        setOptionsLength(count);
+        setSearchInit(true);
+      });
+    }
+  };
+
+  var setVirtualization = function setVirtualization(offset, optionsLimit, direction) {
+    var search = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : searchTerm;
+    var bufferedOptionPresent = direction === 'up' && !(offset < 0);
+    var updatedLimit = direction === 'up' ? offset < 0 ? optionsLimit : optionsLimit + 1 : optionsLimit;
+    var updatedOffset = direction === 'up' ? offset < 0 ? offset + 1 : offset : offset;
+    getOptions(updatedOffset, updatedLimit, search, dropdownOptions).then(function (res) {
+      if (updatedOffset !== undefined && direction !== undefined) {
+        var slicedOptions = res.options;
+        var len = limit - slicedOptions.length;
+        var slicedLength = bufferedOptionPresent ? len + 1 : len;
+        setSlicedOptionLength(slicedLength);
+        updateOptionsOnScroll(slicedOptions, updatedOffset, direction, slicedLength, bufferedOptionPresent);
+      } else {
+        setSlicedOptionLength(0);
+        setOptions(res.options);
+        setBottomOffset(res.offset);
+        if (!async) setOptionsLength(res.length);
+      }
+    });
+  };
+
+  var renderOptionsFromTop = function renderOptionsFromTop() {
+    var search = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : searchTerm;
+
+    if (!loading) {
+      var emptyBuffer = {
+        value: '',
+        label: ''
+      };
+      setBufferedOption(emptyBuffer);
+      setVirtualization(0, limit, undefined, search);
       setTopOffset(0);
       setBottomOffset(0);
     }
   };
 
-  useEffect$2(function () {
-    setStateLimit(2 * limit);
+  useEffect$3(function () {
+    if (!isInitialRender) setStateLimit(2 * limit);
   }, [limit]);
-  useEffect$2(function () {
-    renderOptionsFromTop();
-  }, [JSON.stringify(props.options), limit, searchTerm]);
+  useEffect$3(function () {
+    if (!isInitialRender) setAsync(bulk);
+  }, [bulk]);
+  useEffect$3(function () {
+    if (!isInitialRender) {
+      if (async) {
+        setLoading(true);
+        getFilteredOptions();
+      } else {
+        setDropdownOptions(dropdownItems);
+        setOptionsLength(dropdownItems.length);
+      }
+    }
+  }, [props.checkboxes]);
+  useEffect$3(function () {
+    var updatedAsync = bulk === undefined ? dropdownItems.length > 50 : async;
+    if (bulk === undefined) setAsync(updatedAsync);
+
+    if (updatedAsync) {
+      setLoading(true);
+      getFilteredOptions();
+    } else {
+      setDropdownOptions(dropdownItems);
+      setOptionsLength(dropdownItems.length);
+    }
+  }, [JSON.stringify(props.options)]);
+  useEffect$3(function () {
+    if (!isInitialRender) renderOptionsFromTop();
+  }, [JSON.stringify(dropdownOptions), limit]);
+  useEffect$3(function () {
+    if (!isInitialRender) {
+      debounceSearch(searchTerm, async);
+    }
+  }, [searchTerm]);
 
   var onSearchChange = function onSearchChange(search) {
-    debounceSearch(search);
+    setLoading(true);
+    setSearchTerm(search);
+    setSearchInit(false);
   };
 
   var updateOptionsOnScroll = function updateOptionsOnScroll(slicedOptions, updatedOffset, direction, slicedLength, bufferPresent) {
@@ -3554,15 +3673,34 @@ var Dropdown = function Dropdown(props) {
     setOptions(updatedOptions);
   };
 
+  var onRearrangeOptions = function onRearrangeOptions(selected, selectedLabels) {
+    var optionsCopy = shuffledOptions.slice();
+    var unselectedOptions = optionsCopy.filter(function (option) {
+      return selected.indexOf(option.value) === -1;
+    });
+    var selectedOptions = selected.map(function (option, i) {
+      var selectedOption = {
+        label: selectedLabels[i],
+        value: option,
+        group: selectedGroupLabel,
+        selectedGroup: true
+      };
+      return selectedOption;
+    });
+    var newOptions = selectedOptions.concat(unselectedOptions);
+    setDropdownOptions(newOptions);
+  };
+
   var OnScrollOptions = function OnScrollOptions(direction) {
     var condition = direction === 'down' ? bottomOffset + limit > optionsLength : topOffset - limit < 0;
     var optionsLimit = condition ? direction === 'down' ? optionsLength - bottomOffset : topOffset : limit;
     var updatedOffset = direction === 'down' ? bottomOffset + optionsLimit : topOffset - optionsLimit - 1;
     var offsetInOptions = updatedOffset >= -1 && optionsLimit > 0;
-    if (offsetInOptions) getDropdownOptions(updatedOffset, optionsLimit, direction);
+    if (offsetInOptions) setVirtualization(updatedOffset, optionsLimit, direction);
   };
 
   var onChangeOptions = function onChangeOptions(selectedArray) {
+    if (searchInit) setSearchInit(false);
     if (onChange) onChange(selectedArray);
   };
 
@@ -3571,7 +3709,7 @@ var Dropdown = function Dropdown(props) {
       var optionsCopy = props.options.slice();
       var selectedArray = selectedAllOptions ? getValuesFromSelectedObj(optionsCopy) : [];
       var selectedArrayLabel = selectedAllOptions ? getLabelsFromSelectedObj(optionsCopy) : [];
-      setSelected({
+      setSelectedAll({
         label: selectedArrayLabel,
         value: selectedArray
       });
@@ -3579,28 +3717,28 @@ var Dropdown = function Dropdown(props) {
     }
   };
 
-  return /*#__PURE__*/createElement("div", null, /*#__PURE__*/createElement(DropdownList, _extends({
+  return /*#__PURE__*/createElement(DropdownList, _extends({
     listOptions: options,
+    searchInit: searchInit,
     bufferedOption: bufferedOption,
     slicedOptionsLength: slicedOptionLength,
-    loadingMoreUp: loadingMoreUp,
-    loadingMoreDown: loadingMoreDown,
+    remainingOptions: optionsLength - dropdownOptions.length,
     loadingOptions: loading,
     async: async,
-    selected: selected,
+    selectedAll: selectedAll,
     searchTerm: searchTerm,
     onScroll: OnScrollOptions,
     topOptionsSliced: topOptionsSliced,
     bottomOptionsSliced: bottomOptionsSliced,
     limit: limit,
     offset: topOffset,
-    optionsLength: props.options.length,
+    optionsLength: dropdownItems.length,
     onSearchChange: onSearchChange,
     onChange: onChangeOptions,
     onSelectAll: onSelectAll,
-    setSearchTerm: onSearchChange,
+    onRearrangeOptions: onRearrangeOptions,
     renderOptionsFromTop: renderOptionsFromTop
-  }, rest)));
+  }, rest));
 };
 Dropdown.displayName = 'Dropdown';
 
@@ -3721,7 +3859,7 @@ var OutsideClick = /*#__PURE__*/function (_React$Component) {
       }
     });
 
-    _this.container = createRef();
+    _this.container = /*#__PURE__*/createRef();
     return _this;
   }
   /**
@@ -3755,7 +3893,7 @@ var OutsideClick = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var children = this.props.children;
-      return cloneElement(Children.only(children), {
+      return /*#__PURE__*/cloneElement(Children.only(children), {
         ref: this.container
       });
     }
@@ -3780,7 +3918,7 @@ var Paragraph = function Paragraph(props) {
 };
 Paragraph.displayName = 'Paragraph';
 
-var Radio = forwardRef(function (props, forwardedRef) {
+var Radio = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
   var _classNames, _classNames2, _classNames3;
 
   var _props$size = props.size,
@@ -3791,7 +3929,7 @@ var Radio = forwardRef(function (props, forwardedRef) {
       name = props.name,
       value = props.value,
       defaultChecked = props.defaultChecked;
-  var ref = useRef(null);
+  var ref = useRef$1(null);
   useImperativeHandle(forwardedRef, function () {
     return ref.current;
   });
@@ -3843,7 +3981,7 @@ var Row = function Row(props) {
 };
 Row.displayName = 'Row';
 
-var Switch = forwardRef(function (props, ref) {
+var Switch = /*#__PURE__*/forwardRef(function (props, ref) {
   var _classNames, _classNames2;
 
   var _props$size = props.size,
@@ -3855,12 +3993,12 @@ var Switch = forwardRef(function (props, ref) {
       name = props.name,
       value = props.value;
 
-  var _React$useState = useState$2(props.checked),
+  var _React$useState = useState$3(props.checked),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       checked = _React$useState2[0],
       setChecked = _React$useState2[1];
 
-  useEffect$2(function () {
+  useEffect$3(function () {
     var checkedValue = props.disabled ? checked : props.checked;
     setChecked(checkedValue);
   }, [props.checked, props.disabled]);
@@ -3941,7 +4079,7 @@ var Header = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call.apply(_super, [this].concat(args));
 
-    _defineProperty(_assertThisInitialized(_this), "centerHeaderRef", createRef());
+    _defineProperty(_assertThisInitialized(_this), "centerHeaderRef", /*#__PURE__*/createRef());
 
     _defineProperty(_assertThisInitialized(_this), "getHeader", function (schema) {
       var headerHeight = _this.props.headerHeight;
@@ -4154,16 +4292,21 @@ var Pagination = function Pagination(props) {
       totalPages = props.totalPages,
       onPageChange = props.onPageChange;
 
-  var _React$useState = useState$2(props.page ? props.page : 1),
+  var _React$useState = useState$3(props.page ? props.page : 1),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       page = _React$useState2[0],
       setPage = _React$useState2[1];
 
+  var _React$useState3 = useState$3(false),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      init = _React$useState4[0],
+      setInit = _React$useState4[1];
+
   var wrapperClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Pagination', true), _defineProperty(_classNames, "Pagination--".concat(type), type), _classNames));
   var nextButtonWrapperClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Pagination-buttonWrapper', true), _defineProperty(_classNames2, 'Pagination-buttonWrapper--next', true), _classNames2));
   var prevButtonWrapperClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Pagination-buttonWrapper', true), _defineProperty(_classNames3, 'Pagination-buttonWrapper--previous', true), _classNames3));
-  useEffect$2(function () {
-    if (page) onPageChange(page);
+  useEffect$3(function () {
+    if (init) onPageChange(page);
   }, [page]);
 
   var inputChangeHandler = function inputChangeHandler(e) {
@@ -4173,6 +4316,20 @@ var Pagination = function Pagination(props) {
     if (!val || val > 0 && val <= totalPages) {
       setPage(val);
     }
+  };
+
+  var onClickHandler = function onClickHandler(buttonType) {
+    switch (buttonType) {
+      case 'prev':
+        if (page > 1) setPage(page - 1);
+        break;
+
+      case 'next':
+        if (page < totalPages) setPage(page + 1);
+        break;
+    }
+
+    setInit(true);
   };
 
   var buttonHelper = [];
@@ -4193,7 +4350,7 @@ var Pagination = function Pagination(props) {
     className: ['ml-4'].concat(buttonHelper).join(' ')
   }, /*#__PURE__*/createElement(Button, {
     onClick: function onClick() {
-      return page > 1 && setPage(page - 1);
+      return onClickHandler('prev');
     },
     disabled: page === 1,
     size: "large",
@@ -4213,7 +4370,7 @@ var Pagination = function Pagination(props) {
     className: ['mr-4'].concat(buttonHelper).join(' ')
   }, /*#__PURE__*/createElement(Button, {
     onClick: function onClick() {
-      return page < totalPages && setPage(page + 1);
+      return onClickHandler('next');
     },
     disabled: page === totalPages,
     size: "large",
@@ -4247,13 +4404,13 @@ var Grid = /*#__PURE__*/function (_React$PureComponent) {
 
     _this = _super.call(this, _props);
 
-    _defineProperty(_assertThisInitialized(_this), "centerGridRef", createRef());
+    _defineProperty(_assertThisInitialized(_this), "centerGridRef", /*#__PURE__*/createRef());
 
-    _defineProperty(_assertThisInitialized(_this), "centerScrollRef", createRef());
+    _defineProperty(_assertThisInitialized(_this), "centerScrollRef", /*#__PURE__*/createRef());
 
-    _defineProperty(_assertThisInitialized(_this), "centerHeaderRef", createRef());
+    _defineProperty(_assertThisInitialized(_this), "centerHeaderRef", /*#__PURE__*/createRef());
 
-    _defineProperty(_assertThisInitialized(_this), "gridRef", createRef());
+    _defineProperty(_assertThisInitialized(_this), "gridRef", /*#__PURE__*/createRef());
 
     _defineProperty(_assertThisInitialized(_this), "calculatedRowHeight", []);
 
@@ -5012,7 +5169,8 @@ var Toast = function Toast(props) {
     className: iconClass('right')
   }, /*#__PURE__*/createElement(Icon, {
     name: 'close',
-    size: 16
+    size: 16,
+    appearance: appearance !== 'warning' ? 'white' : 'default'
   })))), message && /*#__PURE__*/createElement("div", {
     className: "Toast-message"
   }, /*#__PURE__*/createElement(Text, {
@@ -5030,51 +5188,131 @@ var Toast = function Toast(props) {
 };
 Toast.displayName = 'Toast';
 
-var useEffect$1 = useEffect$2,
-    useState$1 = useState$2;
+/**
+ * Tooltip is used to displays floating content in relation to a target when that target is hovered.
+ *
+ * Tooltips mostly appear either at the top or bottom of their target.
+ * The preferred and default side is the bottom.
+ *
+ * For left navigation with only icons, show tooltip on the right.
+ */
+var Tooltip = /*#__PURE__*/function (_React$Component) {
+  _inherits(Tooltip, _React$Component);
+
+  var _super = _createSuper(Tooltip);
+
+  function Tooltip(props) {
+    var _this;
+
+    _classCallCheck(this, Tooltip);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "onToggle", function (open) {
+      _this.setState({
+        open: open
+      });
+    });
+
+    _this.state = {
+      position: {
+        top: 0,
+        left: 0
+      },
+      style: {},
+      open: false
+    };
+    return _this;
+  }
+
+  _createClass(Tooltip, [{
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.setState({
+        open: false
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          _this$props$appendToB = _this$props.appendToBody,
+          appendToBody = _this$props$appendToB === void 0 ? false : _this$props$appendToB,
+          _this$props$position = _this$props.position,
+          tooltip = _this$props.tooltip,
+          children = _this$props.children,
+          props = _objectWithoutProperties(_this$props, ["appendToBody", "position", "tooltip", "children"]);
+
+      var tooltipWrapper = /*#__PURE__*/createElement("div", _extends({
+        className: "Tooltip"
+      }, props, {
+        style: this.state.style
+      }), tooltip);
+      return /*#__PURE__*/createElement(PopperWrapper, {
+        trigger: children,
+        placement: this.props.position,
+        style: this.state.style,
+        appendToBody: appendToBody,
+        on: 'hover',
+        offset: 'Medium',
+        onToggle: this.onToggle,
+        open: this.state.open
+      }, tooltipWrapper);
+    }
+  }]);
+
+  return Tooltip;
+}(Component);
+
+var useEffect$1 = useEffect$3,
+    useState$1 = useState$3;
 
 var Modal = function Modal(props) {
+  var _classNames;
+
   var _props$dimension = props.dimension,
       dimension = _props$dimension === void 0 ? 'small' : _props$dimension,
-      open = props.open,
       children = props.children,
       onClose = props.onClose,
       backdrop = props.backdrop;
 
-  var _useState = useState$1('Modal'),
+  var _useState = useState$1(props.open),
       _useState2 = _slicedToArray(_useState, 2),
-      modalClasses = _useState2[0],
-      setClasses = _useState2[1];
+      open = _useState2[0],
+      setOpen = _useState2[1];
 
-  var classes = classNames(_defineProperty({
+  var _useState3 = useState$1(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      animate = _useState4[0],
+      setAnimate = _useState4[1];
+
+  var classes = classNames((_classNames = {
     Modal: true
-  }, "Modal--".concat(dimension), dimension));
+  }, _defineProperty(_classNames, "Modal--".concat(dimension), dimension), _defineProperty(_classNames, 'Modal--open', open), _defineProperty(_classNames, 'Modal-animation--open', animate), _defineProperty(_classNames, 'Modal-animation--close', !animate), _classNames));
   useEffect$1(function () {
-    if (open) {
-      var newModalClasses = "".concat(classes, " Modal--open Modal-animation--open");
-      setClasses(newModalClasses);
+    if (props.open) {
+      setOpen(true);
+      setAnimate(true);
     }
 
-    if (!open) {
-      var _newModalClasses = "".concat(classes, " Modal--open Modal-animation--close");
-
-      setClasses(_newModalClasses);
+    if (!props.open) {
       setTimeout(function () {
-        setClasses(classes);
-      }, 150);
+        setOpen(false);
+      }, 120);
+      setAnimate(false);
     }
-  }, [open]);
+  }, [props.open]);
   var ModalContainer = /*#__PURE__*/createElement("div", {
     className: "Modal-container"
   }, /*#__PURE__*/createElement("div", {
-    className: modalClasses
+    className: classes
   }, children));
   var ModalWrapper = backdrop ? /*#__PURE__*/createElement(OutsideClick, {
     onOutsideClick: function onOutsideClick(event) {
       return onClose('OutsideClick', event);
     }
   }, ModalContainer) : ModalContainer;
-  var WrapperElement = createPortal(ModalWrapper, document.body);
+  var WrapperElement = /*#__PURE__*/createPortal(ModalWrapper, document.body);
   return /*#__PURE__*/createElement("div", null, WrapperElement, /*#__PURE__*/createElement(Backdrop, {
     open: open
   }));
@@ -5207,6 +5445,35 @@ var Dialog = function Dialog(props) {
 
 Dialog.displayName = 'Dialog';
 
+var useRef = useRef$1,
+    useEffect$2 = useEffect$3,
+    useState$2 = useState$3;
+var ModalBody = function ModalBody(props) {
+  var _useState = useState$2(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      scroll = _useState2[0],
+      setScroll = _useState2[1];
+
+  var ref = useRef(null);
+  var children = props.children;
+  useEffect$2(function () {
+    var scrollHeight = ref && ref.current ? ref.current.scrollHeight : 0;
+    var clientHeight = ref && ref.current ? ref.current.clientHeight : 0;
+
+    if (scrollHeight > clientHeight) {
+      setScroll(true);
+    }
+  }, [ref]);
+  var classes = classNames(_defineProperty({
+    'Modal-body': true
+  }, 'Modal-body--border', scroll));
+  return /*#__PURE__*/createElement("div", {
+    className: classes,
+    ref: ref
+  }, children);
+};
+ModalBody.displayName = 'ModalBody';
+
 var RangePicker = function RangePicker(props) {
   var startDateProp = props.startDate,
       endDateProp = props.endDate,
@@ -5244,64 +5511,64 @@ var RangePicker = function RangePicker(props) {
       rangeLimit = props.rangeLimit,
       rest = _objectWithoutProperties(props, ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "startInputProps", "endInputProps", "mask", "validator", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"]);
 
-  var _React$useState = useState$2(false),
+  var _React$useState = useState$3(false),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       init = _React$useState2[0],
       setInit = _React$useState2[1];
 
-  var _React$useState3 = useState$2(),
+  var _React$useState3 = useState$3(),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       startDate = _React$useState4[0],
       setStartDate = _React$useState4[1];
 
-  var _React$useState5 = useState$2(),
+  var _React$useState5 = useState$3(),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       endDate = _React$useState6[0],
       setEndDate = _React$useState6[1];
 
-  var _React$useState7 = useState$2(yearNavProp),
+  var _React$useState7 = useState$3(yearNavProp),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
       yearNav = _React$useState8[0],
       setYearNav = _React$useState8[1];
 
-  var _React$useState9 = useState$2(monthNavProp),
+  var _React$useState9 = useState$3(monthNavProp),
       _React$useState10 = _slicedToArray(_React$useState9, 2),
       monthNav = _React$useState10[0],
       setMonthNav = _React$useState10[1];
 
-  var _React$useState11 = useState$2(openProp),
+  var _React$useState11 = useState$3(openProp),
       _React$useState12 = _slicedToArray(_React$useState11, 2),
       open = _React$useState12[0],
       setOpen = _React$useState12[1];
 
-  var _React$useState13 = useState$2(false),
+  var _React$useState13 = useState$3(false),
       _React$useState14 = _slicedToArray(_React$useState13, 2),
       startError = _React$useState14[0],
       setStartError = _React$useState14[1];
 
-  var _React$useState15 = useState$2(false),
+  var _React$useState15 = useState$3(false),
       _React$useState16 = _slicedToArray(_React$useState15, 2),
       endError = _React$useState16[0],
       setEndError = _React$useState16[1];
 
-  useEffect$2(function () {
+  useEffect$3(function () {
     var d = startDateProp ? convertToDate(startDateProp, inputFormat, validator) : undefined;
     setStartDate(d);
   }, [startDateProp]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     var d = endDateProp ? convertToDate(endDateProp, inputFormat, validator) : undefined;
     setEndDate(d);
   }, [endDateProp]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     setYearNav(yearNavProp);
   }, [yearNavProp]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     setMonthNav(monthNavProp);
   }, [monthNavProp]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     setOpen(openProp);
   }, [openProp]);
-  useEffect$2(function () {
+  useEffect$3(function () {
     var sError = !startDate;
     var eError = !endDate;
 
@@ -5548,12 +5815,12 @@ var TabsWrapper = function TabsWrapper(props) {
       children = _props$children === void 0 ? [] : _props$children,
       onTabChange = props.onTabChange;
 
-  var _React$useState = useState$2(props.activeTab && props.activeTab < children.length ? props.activeTab : 0),
+  var _React$useState = useState$3(props.activeTab && props.activeTab < children.length ? props.activeTab : 0),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       activeTab = _React$useState2[0],
       setActiveTab = _React$useState2[1];
 
-  useEffect$2(function () {
+  useEffect$3(function () {
     setActiveTab(props.activeTab && props.activeTab < children.length ? props.activeTab : 0);
   }, [props.activeTab]);
   var wrapperClass = classNames(_defineProperty({}, 'TabsWrapper', true));
@@ -5592,4 +5859,4 @@ var Tab = function Tab(props) {
 };
 Tab.displayName = 'Tab';
 
-export { Avatar, Backdrop, Badge, Breadcrumb, BreadcrumbsWrapper, Button, Card, Checkbox, Column, DatePicker, Dialog, DonutChart, Dropdown, Heading, Icon, Input, Label, Legend, Link, ListCheckbox, Message, Modal, OutsideClick, Pagination, Paragraph, Placeholder, PlaceholderParagraph, Popover, Radio, RangePicker, Row, Spinner, Subheading, Switch, Tab, Table, TabsWrapper, Text, Toast, Tooltip };
+export { Avatar, Backdrop, Badge, Breadcrumb, BreadcrumbsWrapper, Button, Card, Checkbox, Column, DatePicker, Dialog, DonutChart, Dropdown, Heading, Icon, Input, Label, Legend, Link, ListCheckbox, Message, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, OutsideClick, Pagination, Paragraph, Placeholder, PlaceholderParagraph, Popover, Radio, RangePicker, Row, Spinner, Subheading, Switch, Tab, Table, TabsWrapper, Text, Toast, Tooltip };

@@ -12,7 +12,7 @@ export interface PopoverProps {
     on?: ActionType;
     open?: boolean;
     style?: React.CSSProperties;
-    onToggle: (open: boolean, type?: string) => void;
+    onToggle?: (open: boolean, type?: string) => void;
     children: React.ReactNode;
 }
 export declare const Popover: {
