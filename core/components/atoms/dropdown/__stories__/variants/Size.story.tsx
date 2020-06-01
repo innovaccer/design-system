@@ -15,7 +15,7 @@ export const size = () => {
           return (
             <div key={ind} style={{ marginRight: '5%' }}>
               <Text weight="strong">{dropdownSize.charAt(0).toUpperCase() + dropdownSize.slice(1)}</Text> <br /><br />
-              <Dropdown size={dropdownSize} options={storyOptions} placeholder={'Select'} />
+              <Dropdown triggerSize={dropdownSize} options={storyOptions} placeholder={'Select'} />
             </div>
           );
         })

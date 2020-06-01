@@ -13,7 +13,7 @@ export const align = () => {
       {
         dropdownAlignments.map((alignment, ind) => {
           return (
-            <div key={ind} style={{ marginRight: '20%' }}>
+            <div key={ind} style={{ marginRight: '20%', width: '200px' }}>
               <Text weight="strong">{alignment.charAt(0).toUpperCase() + alignment.slice(1)}</Text> <br /><br />
               <Dropdown dropdownAlign={alignment} options={storyOptions} menu={true} />
             </div>
