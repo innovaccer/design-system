@@ -54,7 +54,7 @@ export interface PopoverProps {
   /**
    * Callback after `Popover` is toggled
    */
-  onToggle: (open: boolean, type?: string) => void;
+  onToggle?: (open: boolean, type?: string) => void;
   /**
    * To be rendered in `Popover` component
    */
@@ -72,9 +72,19 @@ export const Popover = (props: PopoverProps) => {
     hoverable,
     children,
     trigger,
-    open,
     onToggle
   } = props;
+
+  const [open, setOpen] = React.useState<boolean>(props.open || false);
+  React.useEffect(() => {
+    if (onToggle) {
+      if (props.open !== undefined) setOpen(props.open);
+    }
+  }, [props.open]);
+
+  const onToggleFn: PopoverProps['onToggle'] = newOpen => {
+    setOpen(newOpen);
+  };
 
   const classes = classNames({
     Popover: true,
@@ -95,7 +105,7 @@ export const Popover = (props: PopoverProps) => {
     hoverable,
     style,
     open,
-    onToggle,
+    onToggle: onToggle || onToggleFn,
     placement: position
   };
 
