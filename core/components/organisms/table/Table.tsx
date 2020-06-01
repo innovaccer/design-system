@@ -1,8 +1,11 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Button, Checkbox, Dropdown, Icon, Heading, Pagination, Placeholder, PlaceholderParagraph } from '@/index';
+import { Pagination } from '@/index';
 import { IconProps, InputProps, DropdownProps, PaginationProps, StatusHintsProps } from '@/index.type';
-import TableCell, { TableCellProps } from './TableCell';
+import { TableCellProps } from './TableCell';
+import { TableHeader } from './TableHeader';
+import { TableBody } from './TableBody';
+import { sortColumn, pinColumn, hideColumn } from './utility';
 
 export type SortType = 'asc' | 'desc';
 export type Alignment = 'left' | 'right' | 'center';
@@ -112,44 +115,6 @@ export type CellSchema = {
 };
 
 export type Data = Record<string, any>;
-
-export interface TableHeaderProps {
-  /**
-   * Header Schema
-   */
-  schema: StateSchema[];
-  /**
-   * Show Table Header
-   */
-  show?: boolean;
-  /**
-   * Allows dragging of column
-   */
-  draggable?: boolean;
-  withCheckbox?: boolean;
-  _this: Table;
-}
-
-export interface TableBodyProps {
-  schema: StateSchema[];
-  data: StateData[];
-  withCheckbox?: boolean;
-  _this: Table;
-}
-
-export interface TableRowProps {
-  schema: StateSchema[];
-  data: StateData;
-  withCheckbox?: boolean;
-  _this: Table;
-  rowIndex: number;
-}
-
-export interface TableExtendRowProps {
-  _this: Table;
-  data: StateData;
-}
-
 export type TableSize = 'comfortable' | 'standard' | 'compressed' | 'tight';
 export type TableType = 'resource' | 'data';
 
@@ -267,645 +232,6 @@ export interface TableState {
     type: SortType
   }[];
 }
-
-export interface SharedCellProps {
-  _this: Table;
-  schema: StateSchema;
-}
-
-export type HeaderCellProps = SharedCellProps & {
-  colIndex: number;
-  draggable: boolean;
-};
-
-export type BodyCellProps = SharedCellProps & {
-  data: StateData;
-  rowIndex: number;
-  colIndex: number;
-  expandedState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
-};
-
-export type CellProps = (HeaderCellProps | BodyCellProps) & {
-  header?: boolean;
-};
-
-const resizeCol = (_this: Table, name: string, el: HTMLDivElement | null) => {
-  function resize(ev: MouseEvent) {
-    ev.preventDefault();
-    _this.updateCellSchema(name, {
-      // @ts-ignore
-      width: ev.pageX - el.getClientRects()[0].x
-    });
-  }
-
-  window.addEventListener('mousemove', resize);
-  window.addEventListener('mouseup', () => {
-    window.removeEventListener('mousemove', resize);
-  });
-};
-
-const reorderCol = (_this: Table, name: string, el: HTMLDivElement | null) => {
-  const from = name;
-  let to: string;
-
-  function reorder(ev: MouseEvent) {
-    ev.preventDefault();
-    const index = _this.state.schema.findIndex(s => s.name === name);
-    const cellType = _this.state.schema[index].pinned ? 'pinned' : 'main';
-    const columns = _this.tableRef.current!.querySelectorAll(`.Table--${cellType} .Table-header .Table-cell.Table-cell--header`);
-    if (el) {
-      columns.forEach(c => {
-        const { x, width } = c.getClientRects()[0];
-        if (c.contains(ev.target as Node)) {
-          const { x: currX } = el.getClientRects()[0];
-          // @ts-ignore
-          let left = c.offsetLeft;
-          if (currX < x) left += width;
-          _this.updateReorderHighlighter(left);
-          // @ts-ignore
-          to = c.dataset.name;
-        }
-      });
-    }
-  }
-
-  function stopReorder() {
-    window.removeEventListener('mousemove', reorder);
-    window.removeEventListener('mouseup', stopReorder);
-    _this.updateCellSchema(name, { selected: false });
-    _this.updateReorderHighlighter(undefined);
-    if (to && from !== to) _this.reorderSchema(from, to);
-  }
-
-  _this.updateCellSchema(name, { selected: true });
-  window.addEventListener('mousemove', reorder);
-  window.addEventListener('mouseup', stopReorder);
-};
-
-function sortColumn(this: Table, name: StateSchema['name'], type: 'asc' | 'desc') {
-  let {
-    sortingList
-  } = this.state;
-
-  const index = sortingList.findIndex(l => l.name === name);
-  if (index === -1) {
-    sortingList.push({ name, type });
-  } else {
-    sortingList = [
-      ...sortingList.slice(0, index),
-      ...sortingList.slice(index + 1),
-      { name, type }
-    ];
-  }
-
-  this.updateSortedList(sortingList);
-}
-
-function pinColumn(this: Table, name: StateSchema['name'], type: 'left' | 'right') {
-  const schemaUpdate = {
-    pinned: type === 'left' ? true : false
-  };
-
-  this.updateCellSchema(name, schemaUpdate);
-}
-
-function hideColumn(this: Table, name: StateSchema['name'], value: boolean) {
-  const schemaUpdate = {
-    hidden: value,
-  };
-
-  this.updateCellSchema(name, schemaUpdate);
-}
-
-const HeaderCell = (props: HeaderCellProps) => {
-  const {
-    _this,
-    schema,
-    draggable,
-  } = props;
-
-  const {
-    init,
-    loading,
-    sortingList,
-  } = _this.state;
-
-  const {
-    showMenu
-  } = _this;
-
-  const listIndex = sortingList.findIndex(l => l.name === schema.name);
-  const sorted = listIndex !== -1 ? sortingList[listIndex].type : null;
-
-  const el = React.createRef<HTMLDivElement>();
-
-  const sortOptions = [
-    { label: 'Sort Ascending', value: 'sortAsc', icon: 'arrow_downward' },
-    { label: 'Sort Descending', value: 'sortDesc', icon: 'arrow_upward' },
-  ];
-  let options = [
-    { label: 'Pin Left', value: 'pinLeft', icon: 'first_page' },
-    { label: 'Pin Right', value: 'pinRight', icon: 'last_page' },
-    { label: 'Hide Column', value: 'hide', icon: 'cancel' },
-  ];
-  if (schema.sortFn) options = [...sortOptions, ...options];
-
-  const classes = classNames({
-    'Table-headerCell': true,
-    'Table-headerCell--draggable': draggable
-  });
-
-  return (
-    <div
-      key={schema.name}
-      className={classes}
-      ref={el}
-    >
-      <div
-        className="Table-cellContent"
-        onMouseDown={() => {
-          if (draggable) reorderCol(_this, schema.name, el.current);
-        }}
-      >
-        {loading && !init ? (
-          <Placeholder style={{ flexGrow: 1 }}>
-            <PlaceholderParagraph length="medium" />
-          </Placeholder>
-        ) : (
-            <>
-              <Heading>{schema.displayName}</Heading>
-              {schema.sortFn && (
-                <div className="Table-sortingIcons">
-                  {sorted ? sorted === 'asc' ? (
-                    <Icon name="arrow_downward" />
-                  ) : (
-                      <Icon name="arrow_upward" />
-                    ) : (
-                      <Icon name="unfold_more" />
-                    )
-                  }
-                </div>
-              )}
-            </>
-          )
-        }
-      </div>
-      {schema.filters && (
-        <>
-          {loading && !init ? (
-            <Placeholder withImage={true} />
-          ) : (
-              <Dropdown
-                menu={true}
-                buttonAppearance={'transparent'}
-                showApplyButton={true}
-                checkboxes={true}
-                options={schema.filters}
-                icon={'filter_list'}
-                dropdownAlign={'left'}
-                onChange={(selected: any) => _this.onFilterChange(schema.name, selected)}
-              />
-            )
-          }
-        </>
-      )}
-      {showMenu && (
-        <>
-          {loading && !init ? (
-            <Placeholder withImage={true} />
-          ) : (
-              <Dropdown
-                key={schema.name}
-                menu={true}
-                buttonAppearance={'transparent'}
-                options={options}
-                dropdownAlign={'left'}
-                onChange={(selected: any) => _this.onMenuChange(schema.name, selected)}
-              />
-            )
-          }
-        </>
-      )}
-      {schema.resize && (
-        <span className="Table-cellResize" onMouseDown={() => resizeCol(_this, schema.name, el.current)} />
-      )}
-    </div>
-  );
-};
-
-const BodyCell = (props: BodyCellProps) => {
-  const {
-    _this,
-    data,
-    schema,
-    expandedState,
-    rowIndex,
-    colIndex
-  } = props;
-
-  const {
-    loading
-  } = _this.state;
-
-  const {
-    size
-  } = _this;
-
-  const {
-    statusMapper
-  } = _this.props;
-
-  const [expanded, setExpanded] = expandedState;
-
-  return (
-    <div className="Table-cellContent">
-      {colIndex === 0 && data._expanded && !schema.pinned && (
-        <Button
-          appearance={'transparent'}
-          icon={expanded ? 'expand_less' : 'expand_more'}
-          onClick={() => setExpanded(!expanded)}
-        />
-      )}
-      <TableCell
-        size={size}
-        rowIndex={rowIndex}
-        schema={schema}
-        data={data}
-        loading={loading}
-        statusMapper={statusMapper}
-      />
-    </div>
-  );
-};
-
-const Cell = (props: CellProps) => {
-  const {
-    _this,
-    header,
-    colIndex,
-    schema,
-    // @ts-ignore
-    expandedState,
-    // @ts-ignore
-    draggable,
-    // @ts-ignore
-    data,
-    // @ts-ignore
-    rowIndex,
-  } = props;
-
-  const {
-    withCheckbox
-  } = _this.props;
-
-  const cellClass = classNames({
-    'Table-cell': true,
-    'Table-cell--header': header,
-    'Table-cell--body': !header,
-    'Table-cell--withSeparator': header ? !(withCheckbox && colIndex === 0) : schema.separator,
-    'Table-cell--selected': schema.selected,
-  });
-
-  if (schema.hidden) return null;
-
-  return (
-    <div
-      className={cellClass}
-      data-name={schema.name}
-      style={{
-        width: schema.width
-      }}
-    >
-      {header ? (
-        <HeaderCell
-          _this={_this}
-          draggable={draggable}
-          colIndex={colIndex}
-          schema={schema}
-        />
-      ) : (
-          <BodyCell
-            _this={_this}
-            rowIndex={rowIndex}
-            colIndex={colIndex}
-            data={data}
-            schema={schema}
-            expandedState={expandedState}
-          />
-        )}
-    </div>
-  );
-};
-
-const TableExtendedRow = (props: TableExtendRowProps) => {
-  const {
-    _this,
-    data
-  } = props;
-
-  const {
-    schema: stateSchema
-  } = _this.state;
-
-  if (data._expanded) {
-    const showHeader = data._expanded.showHeader;
-    const schema = data._expanded.schema || stateSchema;
-    let tableData = data._expanded.data;
-    if (!tableData) {
-      const {
-        _uid,
-        _expanded,
-        ...rest
-      } = data;
-      tableData = [rest];
-    }
-
-    return (
-      <div className="Table-expandedRow">
-        <Table
-          key={'expanedRow'}
-          showHeader={showHeader}
-          data={tableData}
-          schema={schema}
-          totalRecords={tableData.length}
-        />
-      </div>
-    );
-  }
-  return null;
-};
-
-const TableRow = (props: TableRowProps) => {
-  const {
-    _this,
-    schema,
-    data,
-    withCheckbox,
-    rowIndex: rI
-  } = props;
-
-  const [expanded, setExpanded] = React.useState<boolean>(false);
-
-  const rowClasses = classNames(
-    'Table-row',
-    'Table-row--body',
-    {
-      'Table-row--selected': data._selected
-    }
-  );
-
-  const onClickHandler = () => {
-    const {
-      type
-    } = _this;
-
-    if (type === 'resource') {
-      const {
-        onRowClick,
-      } = _this.props;
-
-      if (onRowClick) {
-        onRowClick(data);
-      } else {
-        if (data._link) window.location = data._link;
-      }
-    }
-  };
-
-  const {
-    loading
-  } = _this.state;
-
-  return (
-    <>
-      <div className={rowClasses} onClick={onClickHandler}>
-        {withCheckbox && (
-          <div className="Table-cell Table-checkboxCell">
-            {loading ? (
-              <Placeholder withImage={true} />
-            ) : (
-                <Checkbox
-                  checked={data._selected}
-                  onChange={(checked: boolean) => {
-                    _this.onSelect(rI, checked);
-                  }}
-                />
-              )
-            }
-          </div>
-        )}
-        {schema.map((s, cI) => (
-          <Cell
-            key={rI * schema.length + cI}
-            _this={_this}
-            rowIndex={rI}
-            colIndex={cI}
-            schema={s}
-            data={data}
-            expandedState={[expanded, setExpanded]}
-          />
-        ))}
-      </div>
-      {expanded && (
-        <TableExtendedRow
-          _this={_this}
-          data={data}
-        />
-      )}
-    </>
-  );
-};
-
-const TableHeader = (props: TableHeaderProps) => {
-  const {
-    _this,
-    show = true,
-    draggable = false,
-    schema,
-    withCheckbox
-  } = props;
-
-  const {
-    page,
-    selectAll,
-    loading
-  } = _this.state;
-
-  if (show) {
-    return (
-      <div className="Table-header">
-        <div className="Table-row Table-row--header">
-          {withCheckbox && (
-            <div className="Table-cell Table-checkboxCell">
-              {loading ? (
-                <Placeholder withImage={true} />
-              ) : (
-                  <Checkbox
-                    {...selectAll}
-                    onChange={(checked: boolean) => _this.onSelectAll(page, checked)}
-                  />
-                )
-              }
-            </div>
-          )}
-          {schema.map((s, index) => (
-            <Cell
-              key={s.name}
-              _this={_this}
-              header={true}
-              draggable={draggable}
-              schema={s}
-              colIndex={index}
-            />
-          ))}
-        </div>
-      </div>
-    );
-  }
-  return null;
-};
-
-const TableBody = (props: TableBodyProps) => {
-  const {
-    _this,
-    schema,
-    data,
-    withCheckbox
-  } = props;
-
-  const {
-    size
-  } = _this;
-
-  const minRowHeight: Record<TableSize, number> = {
-    comfortable: 54,
-    standard: 40,
-    compressed: 32,
-    tight: 24
-  };
-
-  const [state, setState] = React.useState({
-    offset: 0,
-    avgRowHeight: minRowHeight[size],
-    inView: 20
-  });
-
-  const tableBodyRef = React.useRef<HTMLDivElement>(null);
-
-  const {
-    offset,
-    avgRowHeight,
-    inView
-  } = state;
-
-  const buffer = 30;
-
-  const {
-    pageSize
-  } = _this;
-
-  const {
-    totalRecords,
-    errorTemplate
-  } = _this.props;
-
-  const {
-    page,
-    loading,
-  } = _this.state;
-
-  if (!loading && data.length === 0) {
-    return errorTemplate ? errorTemplate() : <Heading>Couldn't fetch data</Heading>;
-  }
-
-  const totalPages = Math.ceil(totalRecords / pageSize);
-  const dummyRows = page === totalPages ? totalRecords - (page - 1) * pageSize : pageSize;
-  const rows = loading ? Array.from({ length: dummyRows }, () => ({})) : data.slice(offset, offset + buffer);
-
-  const onScrollHandler = () => {
-    if (tableBodyRef.current) {
-      const el = tableBodyRef.current;
-      const { scrollTop } = el;
-      const items = el.querySelectorAll('.Table-row');
-
-      const newScroll = Math.floor(scrollTop - (offset * avgRowHeight));
-      let newInView = 0;
-      let currScroll = 0;
-      let i = 0;
-      while (i < items.length && currScroll + items[i].clientHeight <= el.clientHeight) {
-        const rowHeight = items[i].clientHeight;
-        currScroll += rowHeight;
-        newInView++;
-        i++;
-      }
-
-      if (newScroll > 0) {
-        currScroll = newScroll;
-        let newOffset = offset;
-        let newAvgHeight = avgRowHeight;
-        i = 0;
-        while (i < items.length && currScroll >= items[i].clientHeight) {
-          const rowHeight = items[i].clientHeight;
-          currScroll -= rowHeight;
-          newAvgHeight = ((newOffset * newAvgHeight) + (rowHeight)) / (newOffset + 1);
-          newOffset++;
-          i++;
-        }
-
-        newOffset = newOffset < data.length - inView ? newOffset : data.length - inView - 1;
-        if (newOffset > offset) {
-          setState({
-            ...state,
-            inView: newInView,
-            offset: newOffset,
-            avgRowHeight: newAvgHeight,
-          });
-        }
-      } else {
-        if (avgRowHeight) {
-          const diff = Math.floor(newScroll / avgRowHeight) || -1;
-          const newOffset = offset + diff;
-          if (newOffset < offset) {
-            setState({
-              ...state,
-              inView: newInView,
-              offset: newOffset < 0 ? 0 : newOffset,
-            });
-          }
-        }
-      }
-    }
-  };
-
-  return (
-    <div className="Table-body" ref={tableBodyRef} onScroll={onScrollHandler}>
-      <div
-        className="TableBody-padding"
-        style={{
-          height: `${offset * avgRowHeight}px`
-        }}
-      />
-      {rows.map((d, rI) => {
-        return (
-          <TableRow
-            key={offset + rI}
-            _this={_this}
-            rowIndex={offset + rI}
-            data={d}
-            schema={schema}
-            withCheckbox={withCheckbox}
-          />
-        );
-      })}
-      <div
-        className="TableBody-padding"
-        style={{
-          height: `${(data.length - inView - offset - 1) * avgRowHeight}px`
-        }}
-      />
-    </div>
-  );
-};
 
 export class Table extends React.Component<TableProps, TableState> {
   type: TableType;
@@ -1102,13 +428,13 @@ export class Table extends React.Component<TableProps, TableState> {
     });
   }
 
-  syncScroll = (type: 'pinned' | 'main') => {
+  syncScroll = (renderType: 'pinned' | 'main') => {
     const pinnedTable = this.tableRef.current!.querySelector('.Table--pinned .Table-body');
     const mainTable = this.tableRef.current!.querySelector('.Table--main .Table-body');
 
     if (pinnedTable && mainTable) {
-      if (type === 'main') pinnedTable.scrollTop = mainTable.scrollTop;
-      if (type === 'pinned') mainTable.scrollTop = pinnedTable.scrollTop;
+      if (renderType === 'main') pinnedTable.scrollTop = mainTable.scrollTop;
+      if (renderType === 'pinned') mainTable.scrollTop = pinnedTable.scrollTop;
     }
   }
 
@@ -1163,23 +489,29 @@ export class Table extends React.Component<TableProps, TableState> {
     }
   }
 
-  render() {
+  renderTable(renderType: 'pinned' | 'main') {
     const {
-      schema,
-      data,
-      reorderHighlighter,
-      page,
-    } = this.state;
+      type,
+      size
+    } = this;
 
     const {
-      draggable,
       showHeader,
-      withPagination,
-      onPageChange,
+      draggable,
       withCheckbox,
-      size = 'comfortable',
-      totalRecords,
     } = this.props;
+
+    const {
+      schema,
+      data
+    } = this.state;
+
+    const classes = classNames({
+      Table: 'true',
+      [`Table--${renderType}`]: renderType,
+      [`Table--${type}`]: type,
+      [`Table--${size}`]: size,
+    });
 
     const pinnedSchema = schema.filter(s => s.pinned);
     const unpinnedSchema = schema.filter(s => !s.pinned);
@@ -1188,49 +520,49 @@ export class Table extends React.Component<TableProps, TableState> {
       ...unpinnedSchema
     ];
 
+    if (renderType === 'pinned' && pinnedSchema.length === 0) return null;
+
+    return (
+      < div
+        className={classes}
+        onScroll={() => this.syncScroll(renderType)}
+      >
+        <TableHeader
+          _this={this}
+          schema={renderType === 'pinned' ? pinnedSchema : mainSchema}
+          show={showHeader}
+          draggable={draggable}
+          withCheckbox={withCheckbox}
+        />
+        <TableBody
+          _this={this}
+          schema={renderType === 'pinned' ? pinnedSchema : mainSchema}
+          data={data}
+          withCheckbox={withCheckbox}
+        />
+      </div>
+    );
+  }
+
+  render() {
+    const {
+      reorderHighlighter,
+      page,
+    } = this.state;
+
+    const {
+      withPagination,
+      onPageChange,
+      totalRecords,
+    } = this.props;
+
     const totalPages = Math.ceil(totalRecords / this.pageSize);
 
     return (
       <div className="Table-container">
         <div className="Table-wrapper" ref={this.tableRef}>
-          {pinnedSchema.length > 0 && (
-            <div
-              className={`Table Table--pinned Table--${size} Table--${this.type}`}
-              onScroll={() => this.syncScroll('pinned')}
-            >
-              <TableHeader
-                _this={this}
-                schema={pinnedSchema}
-                show={showHeader}
-                draggable={draggable}
-                withCheckbox={withCheckbox}
-              />
-              <TableBody
-                _this={this}
-                schema={pinnedSchema}
-                data={data}
-                withCheckbox={withCheckbox}
-              />
-            </div>
-          )}
-          <div
-            className={`Table Table--main Table--${size} Table--${this.type}`}
-            onScroll={() => this.syncScroll('main')}
-          >
-            <TableHeader
-              _this={this}
-              schema={mainSchema}
-              show={showHeader}
-              draggable={draggable}
-              withCheckbox={withCheckbox}
-            />
-            <TableBody
-              _this={this}
-              schema={mainSchema}
-              data={data}
-              withCheckbox={withCheckbox}
-            />
-          </div>
+          {this.renderTable('pinned')}
+          {this.renderTable('main')}
           {reorderHighlighter && (
             <div
               className="Table-reorderHighlighter"
@@ -1240,22 +572,24 @@ export class Table extends React.Component<TableProps, TableState> {
             />
           )}
         </div>
-        {withPagination && (
-          <div className="Table-pagination">
-            <Pagination
-              page={page}
-              totalPages={totalPages}
-              type={this.paginationType}
-              onPageChange={(newPage: number) => {
-                if (onPageChange) onPageChange(newPage);
-                this.setState({
-                  page: newPage
-                });
-              }}
-            />
-          </div>
-        )}
-      </div>
+        {
+          withPagination && (
+            <div className="Table-pagination">
+              <Pagination
+                page={page}
+                totalPages={totalPages}
+                type={this.paginationType}
+                onPageChange={(newPage: number) => {
+                  if (onPageChange) onPageChange(newPage);
+                  this.setState({
+                    page: newPage
+                  });
+                }}
+              />
+            </div>
+          )
+        }
+      </div >
     );
   }
 }
