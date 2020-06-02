@@ -1,16 +1,12 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
-import Pills, { Appearance } from '../pills';
-import Text from '@/components/atoms/text';
+import Pills, { Appearance } from '../../pills';
 
-// CSF format story
-export const alert = () => {
-  const subtle = false;
-  const weight = 'strong';
-
+export const subtleWarning = () => {
+  const ButtonSubtle = true;
   const children = text('children', 'Pills');
 
-  const appearances: Appearance[] = ['alert'];
+  const appearances: Appearance[] = ['warning'];
 
   const style = {
     display: 'flex',
@@ -28,12 +24,10 @@ export const alert = () => {
             <div key={ind} style={innerStyle}>
               <Pills
                 appearance={appear}
-                subtle={subtle}
+                subtle={ButtonSubtle}
               >
                 {children}
               </Pills>
-              <br />
-              <Text weight={weight}>{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>
             </div>
           );
         })

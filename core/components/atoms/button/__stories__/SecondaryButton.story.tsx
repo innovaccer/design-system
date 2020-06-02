@@ -1,17 +1,11 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import Button, { Appearance } from '../Button';
-import Text from '@/components/atoms/text';
-
-// CSF format story
+import Button from '../Button';
 export const secondaryButton = () => {
   const disabled = false;
   const expanded = false;
   const loading = false;
-
-  //   const appearances: Appearance[] = ['success'];
-
   const children = text(
     'children',
     'Button'
@@ -20,11 +14,6 @@ export const secondaryButton = () => {
   const style = {
     display: 'flex',
   };
-
-  const innerStyle = {
-    marginRight: '5%',
-  };
-
   return (
     <div style={style}>
       <Button

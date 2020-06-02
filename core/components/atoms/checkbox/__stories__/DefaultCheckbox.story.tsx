@@ -2,9 +2,7 @@ import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
 import Checkbox from '../index';
 import { Size } from '../Checkbox';
-import Text from '@/components/atoms/text';
 
-// CSF format story
 export const defaultCheckbox = () => {
   const sizes: Size[] = ['regular'];
   const label = text(
@@ -38,8 +36,6 @@ export const defaultCheckbox = () => {
                   label={label}
                 />
               </div>
-              <br />
-              <Text weight="strong">{CheckboxSize.charAt(0).toUpperCase() + CheckboxSize.slice(1)}</Text>
             </div>
           );
         })
