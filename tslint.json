@@ -8,6 +8,7 @@
     "no-submodule-imports": false,
     "member-ordering": false,
     "ordered-imports": false,
+    "no-this-assignment": false,
     "no-implicit-dependencies": false,
     "no-increment-decrement": false,
     "no-namespace": false,
