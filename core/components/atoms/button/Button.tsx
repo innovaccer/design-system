@@ -87,9 +87,18 @@ export const Button = (props: ButtonProps) => {
     [`Button-icon--${iconAlign}`]: children && iconAlign
   });
 
+  const spinnerClass = classNames({
+    ['Button-spinner']: true,
+    [`Button-spinner--${iconAlign}`]: children && iconAlign
+  });
+
   return (
     <button className={buttonClass} disabled={disabled || loading} {...rest} >
-      {loading && <Spinner size="small" appearance={(appearance === 'basic' || appearance === 'transparent') ? 'secondary' : 'white'} />}
+      {loading && (
+        <span className={spinnerClass}>
+          <Spinner size="small" appearance={(appearance === 'basic' || appearance === 'transparent') ? 'secondary' : 'white'} />
+        </span>
+      )}
       {icon && !loading && (
         <div className={iconClass}>
           <Icon
