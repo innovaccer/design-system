@@ -1,143 +1,334 @@
-/* Table loader */
-
-.loader-wrapper {
-    overflow: hidden;
-}
-
-.loader-row {
-    display: flex;
-    align-items: center;
-}
-
-.loader-row:not(:last-child) {
-    border-bottom: 1px solid #efefef;
-}
-
-.loader-column {
-    padding: 4px 8px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-}
-
-/* Table grid */
-
-.TableGrid-wrapper {
-    border: 1px solid #eee;
+/** Table **/
+.Table-container {
     display: flex;
     flex-direction: column;
     height: 100%;
-}
-
-.TableGrid {
-    overflow-y: auto;
-    position: initial;
-}
-
-.TableGrid-left,
-.TableGrid-center {
-    flex-shrink: 0;
-    height: 100%;
-}
-
-.TableGrid-left {
-    position: relative;
-}
-
-.TableGrid-center {
-    width: 100%;
-}
-
-.TableGrid-body--center {
-    position: relative;
-    height: 100%;
-    width: 100%;
     overflow: hidden;
-    overflow-x: auto;
 }
 
-.TableGrid-innerBody--center {
+.Table-wrapper {
+    display: flex;
+    position: relative;
+    overflow: hidden;
     height: 100%;
-    position: relative;
 }
 
-.TableGrid-center .TableGrid-row {
-    flex-shrink: 0;
-}
-
-.TableGrid-cellWrapper {
-    padding: 8px 12px;
-}
-
-.TableGrid-cell {
-    flex-shrink: 0;
-}
-
-.TableGrid-cell:not(:last-child) {
-    border-right: 1px solid #efefef;
-}
-
-.TableGrid-row {
-    position: absolute;
+.Table {
     display: flex;
-    border-bottom: 1px solid #efefef;
-}
-
-.TableGrid-row--header {
-    position: relative;
-}
-
-.TableGrid-left .TableGrid-row {
-    border-right: 1px solid #efefef;
-}
-
-.TableGrid-scroll {
-    display: flex;
-    background: #efefef;
-    flex-shrink: 0;
-    height: 12px;
-}
-
-.TableGrid-centerScroll {
+    flex-direction: column;
+    /* flex-shrink: 0; */
     overflow-x: scroll;
-    -ms-overflow-style: scrollbar;
-    height: 100%;
-}
-
-.TableGrid-header {
-    flex-shrink: 0;
-    display: flex;
-    border-bottom: 1px solid #efefef;
-}
-
-.TableGrid-leftHeader {
-    border-right: 1px solid #efefef;
-}
-
-.TableGrid-centerHeader {
-    overflow-x: auto;
-}
-
-.TableGrid-leftHeader,
-.TableGrid-centerHeader {
-    flex-shrink: 0;
     overflow-y: hidden;
 }
 
-.TableGrid-scroll .TableGrid-scroll--center::-webkit-scrollbar {
-    -webkit-appearance: none;
-    height: 10px;
+.Table--resource .Table-body .Table-row:hover {
+    cursor: pointer;
+    background: var(--secondary-light);
 }
 
-.TableGrid-scroll .TableGrid-scroll--center::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.2);
+.Table--pinned {
+    position: absolute;
+    height: 100%;
+    z-index: 2;
+    overflow-x: hidden;
+    /* overflow: hidden; */
+    -ms-overflow-style: none;
+    border-right: 3px solid var(--secondary);
 }
 
-.Table-paginationWrapper {
-  padding-top: var(--spacing);
-  padding-bottom: var(--spacing);
-  border-top: 1px solid #efefef;
-  display: flex;
-  justify-content: center;
+.Table-pinned::-webkit-scrollbar {
+    display: none;
 }
+
+/* .Table--pinned .Table-cell {
+    background: var(--white);
+} */
+
+.Table--main {
+    flex-grow: 1;
+}
+
+.Table--comfortable .Table-cell--header {
+    min-height: 40px;
+}
+
+.Table--comfortable .Table-cell--body {
+    min-height: 54px;
+}
+
+.Table--standard .Table-cell--header {
+    min-height: 40px;
+}
+
+.Table--standard .Table-cell--body {
+    min-height: 40px;
+}
+
+.Table--compressed .Table-cell--header {
+    min-height: 32px;
+}
+
+.Table--compressed .Table-cell--body {
+    min-height: 32px;
+}
+
+.Table--tight .Table-cell--header {
+    min-height: 24px;
+}
+
+.Table--tight .Table-cell--body {
+    min-height: 24px;
+}
+
+.Table-header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.Table-headerCell {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    /* padding-left: var(--spacing-l); */
+}
+
+.Table-headerCell--draggable {
+    cursor: grab;
+}
+
+.Table-headerCell--draggable:active {
+    cursor: grabbing;
+}
+
+.Table-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: fit-content;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    /* margin-top: 30px; */
+}
+
+.Table-row {
+    box-sizing: border-box;
+    display: flex;
+    flex: 1 0;
+    /* outline: var(--border); */
+    background: var(--white);
+}
+
+.TableBody-padding {
+    flex-shrink: 0;
+}
+
+.Table-row {
+    min-width: fit-content;
+    border-bottom: var(--border);
+}
+
+.Table-row--body:last-child {
+    border-bottom: 0;
+}
+
+.Table-checkboxCell {
+    display: flex;
+    align-items: center;
+    padding-right: 0 !important;
+}
+
+.Table-row--selected {
+    background: var(--warning-lightest) !important;
+}
+
+/* .Table-row--header {
+    border-bottom: var(--border);
+} */
+
+.Table-cell {
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0 var(--spacing-l);
+}
+
+.Table-row--header .Table-cell {
+    padding-right: var(--spacing-m);
+}
+
+.Table-cell--withSeparator {
+    border-left: var(--border);
+}
+
+.Table-cell--selected {
+    background: var(--primary-lightest);
+}
+/* .Table-cell--header.Table-cell {
+    border-left: var(--border);
+} */
+.Table-cell--header.Table-cell:first-child {
+    border-left: none;
+}
+.Table--main .Table-cell--header.Table-cell:last-child {
+    border-right: var(--border);
+}
+.Table-cell--header.Table-cell--selected {
+    background: var(--primary-light);
+}
+
+.Table-sortingIcons {
+    display: flex;
+    align-items: center;
+    padding-left: var(--spacing-m);
+}
+
+.Table-cellReorder {
+    display: flex;
+    align-items: center;
+    cursor: grab;
+}
+
+.Table-cellReorder:active {
+    cursor: grabbing;
+}
+
+.Table-cellContent {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    height: 100%;
+    box-sizing: border-box;
+    /* padding: 0 var(--spacing-l); */
+}
+
+.Table-cellResize {
+    position: absolute;
+    right: 0;
+    width: var(--spacing-m);
+    cursor: ew-resize;
+    height: 100%;
+}
+
+.Table-cellSortIcon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.Table-cellSortIcon:hover {
+    background: var(--secondary);
+}
+
+.Table-cellResize:hover {
+    background: var(--primary);
+}
+
+.Table-reorderHighlighter {
+    position: absolute;
+    height: 100%;
+    border: 3px solid var(--primary-light);
+    z-index: 10;
+}
+
+.Table-pagination {
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing) 0;
+    border-top: var(--border);
+}
+
+.Table .Checkbox-wrapper {
+    margin-right: 0;
+}
+
+.Table .Avatar {
+    margin-left: 0;
+}
+
+.Table .Placeholder {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.Table .Placeholder-image {
+    flex-shrink: 0;
+}
+
+/** Table Cell **/
+.TableCell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .TableCell-wrapper {
+    display: flex;
+    height: auto;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    /* padding-left: var(--spacing-l);
+    padding-right: var(--spacing-l); */
+    box-sizing: border-box;
+  }
+  
+  .TableCell-seperator {
+    border-right: var(--border);
+  }
+  
+  .TableCell-status {
+    justify-content: flex-start;
+    /* padding-left: var(--spacing-l); */
+  }
+  
+  .TableCell-checkboxOnly {
+    align-items: flex-start;
+  }
+  
+  .TableCell-avatarOnly,
+  .TableCell-imageOnly {
+    /* padding-left: var(--spacing-m); */
+  }
+  
+  .TableCell-textwrapper {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+  
+  .TableCell-textwrapper--image {
+    margin-left: var(--spacing-m);
+  }
+  
+  .TableCell--left {
+    justify-content: flex-start;
+  }
+  
+  .TableCell--center {
+    justify-content: center;
+  }
+  
+  .TableCell--right {
+    justify-content: flex-end;
+  }
+
+  .TableCell-image {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: var(--spacing);
+  }
+
+  .Image {
+      z-index: 0;
+      height: 100%;
+      width: 100%;
+  }

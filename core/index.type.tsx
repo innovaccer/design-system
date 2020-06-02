@@ -23,9 +23,9 @@ export { ParagraphProps } from './components/atoms/paragraph';
 export { RadioProps } from './components/atoms/radio';
 export { RowProps } from './components/atoms/row';
 export { SpinnerProps } from './components/atoms/spinner';
+export { StatusHintsProps } from './components/atoms/statusHints';
 export { SubheadingProps } from './components/atoms/subheading';
 export { SwitchProps } from './components/atoms/switch';
-export { TableProps } from './components/organisms/table';
 export { TextProps } from './components/atoms/text';
 export { ToastProps } from './components/atoms/toast';
 export { TooltipProps } from './components/atoms/tooltip';
@@ -41,3 +41,4 @@ export { PlaceholderParagraphProps } from './components/atoms/placeholderParagra
 export { PopoverProps } from './components/molecules/popover';
 export { RangePickerProps } from './components/organisms/rangepicker';
 export { TabsWrapperProps, TabProps } from './components/molecules/tabs';
+export { TableProps } from './components/organisms/table';
