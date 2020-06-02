@@ -95,6 +95,10 @@ export interface InputProps {
    * Handler to be called when `Input` loses focus
    */
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  /**
+   * Handler to be called when `Input` gets focus
+   */
+  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }
 
 const sizeMapping = {
@@ -123,12 +127,11 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
     onChange,
     onClick,
     onClear,
-    onBlur
+    onBlur,
+    onFocus
   } = props;
 
   const disabled = propDisabled || !onChange;
-
-  const [open, setOpen] = React.useState(false);
 
   const classes = classNames({
     ['Input']: true,
@@ -166,14 +169,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
 
   const popoverStyle = {
     padding: 'var(--spacing) var(--spacing-2)',
-    maxWidth: 'var(--spacing-7)',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    'white-space': 'nowrap',
-  };
-
-  const onToggleInfo = () => {
-    setOpen(!open);
+    maxWidth: 'var(--spacing-9)',
+    overflow: 'hidden'
   };
 
   return (
@@ -199,28 +196,27 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
           </div>
         )}
         <input
+          ref={ref}
           name={name}
           type={type}
           placeholder={placeholder}
           className={inputClass}
-          ref={ref}
           value={value}
           autoComplete={autocomplete}
-          onChange={e => onChange && onChange(e)}
-          onBlur={e => onBlur && onBlur(e)}
-          onClick={e => onClick && onClick(e)}
           required={required}
           disabled={disabled}
+          onChange={onChange}
+          onBlur={onBlur}
+          onClick={onClick}
+          onFocus={onFocus}
         />
         {((!value && !disabled) || (value && disabled)) && info && (
           <Popover
             style={popoverStyle}
-            open={open}
             position="top"
             on={'hover'}
             trigger={trigger}
             dark={true}
-            onToggle={onToggleInfo}
           >
             {info}
           </Popover>
