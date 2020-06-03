@@ -136,3 +136,16 @@
 * 2a4e872 feat: adds common stories
 * f623097 fix: fixes dropdown search design and #37
 * c0d4a25 fix: fixes checkbox CSS
+
+-------------------
+ **v1.0.0-10**  (2020-06-03) 
+
+* b0ca52d v1.0.0-10
+* 03c0394 chore: updates urls from aregee to innovaccer
+* ef804d3 fix: adds onFocus in Input and minor fixes
+* eaceccc chore: refactors Table
+* 325e94c feat: adds virtual scroll in TableBody
+* f756ec1 feat: adds new Table
+* 3fea080 fix: fixes loading state with iconAlign:right of Button
+* 66c71cb feat: adds common stories
+* 0e1a1a1 chore: adds no-this-assignment: false in tslint

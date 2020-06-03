@@ -23,6 +23,7 @@ export interface InputProps {
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
     onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+    onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }
 export declare const Input: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement>>;
 export default Input;
