@@ -9,10 +9,10 @@ labels: "type: documentation"
 
   Useful Links:
   - Documentation: https://design.innovaccer.com
-  - Contributing: https://github.com/aregee/design-system/blob/master/CONTRIBUTING.md
+  - Contributing: https://github.com/innovaccer/design-system/blob/master/CONTRIBUTING.md
 
 
-  Before opening a new issue, please search existing issues: https://github.com/aregee/design-system/issues
+  Before opening a new issue, please search existing issues: https://github.com/innovaccer/design-system/issues
 -->
 
 ## Summary

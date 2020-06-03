@@ -102,7 +102,7 @@
     "throttle-debounce": "^2.1.0",
     "utility-types": "^3.10.0"
   },
-  "bugs": "https://github.com/aregee/design-system/issues",
+  "bugs": "https://github.com/innovaccer/design-system/issues",
   "homepage": "https://innovaccer.github.io/design-system",
   "keywords": [
     "React",
@@ -110,5 +110,5 @@
     "Typescript",
     "Innovaccer"
   ],
-  "repository": "github:aregee/design-system"
+  "repository": "github:innovaccer/design-system"
 }

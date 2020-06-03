@@ -28,7 +28,7 @@ jobs:
       
       - name: Check for release commit
         id: 'is_release_commit'
-        uses: /aregee/design-system/actions/check-release-commit@master
+        uses: /innovaccer/design-system/actions/check-release-commit@master
       
       - uses: actions/setup-node@v1
         if: steps.is_release_commit.outputs.result == 1

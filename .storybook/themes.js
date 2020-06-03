@@ -33,6 +33,6 @@ export const primary = create({
   inputBorderRadius: 4,
 
   brandTitle: `Innovaccer UI sandbox | v${packageJson.version}`,
-  brandUrl: 'https://github.com/aregee/design-system/',
+  brandUrl: 'https://github.com/innovaccer/design-system/',
   brandImage: 'https://innovaccer.com/static/image/site-logo/innovaccer-logo-black.svg',
 });

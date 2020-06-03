@@ -23,7 +23,7 @@ We welcome clear, detailed bug reports.
 **Bugs are considered features that are not working as described in
 documentation.**
 
-If you've found a bug, please file a report in our [issue tracker](https://github.com/aregee/design-system/issues).
+If you've found a bug, please file a report in our [issue tracker](https://github.com/innovaccer/design-system/issues).
 
 
 ### Issue Search

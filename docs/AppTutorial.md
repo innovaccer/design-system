@@ -9,7 +9,7 @@ Welcome! <br/>
 This tutorial will guide you in creating an awesome app with Innovaccer Design System. Here is a [preview](https://covid19-tracker.info/) of the app that we are going to build. This tutorial also has an accompanying [github repository](https://github.com/sandeshchoudhary/covid).
 
 ## Audience
-This tutorial is intended for people with all amounts of web development experience. If you want to jump straight to code, you may want to skip this tutorial and go to the [developer guidelines](https://github.com/aregee/design-system/blob/master/CONTRIBUTING.md) page.
+This tutorial is intended for people with all amounts of web development experience. If you want to jump straight to code, you may want to skip this tutorial and go to the [developer guidelines](https://github.com/innovaccer/design-system/blob/master/CONTRIBUTING.md) page.
 
 ## Prerequisites
 * Node JS
@@ -34,7 +34,7 @@ Next, you need to install Innovaccer design system in your project using the fol
 ```bash
 npm install @innovaccer/design-system
 ```
-Follow [developer guidelines](https://github.com/aregee/design-system/blob/master/README.md) to install style.
+Follow [developer guidelines](https://github.com/innovaccer/design-system/blob/master/README.md) to install style.
 
 ## <a name="COMPONENT_LIBRARY"></a>Installing component Library
 A preview of what you will build:
