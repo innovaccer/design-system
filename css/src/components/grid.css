@@ -1,0 +1,364 @@
+/** Grid **/
+.Grid-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.Grid-wrapper {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.Grid {
+    display: flex;
+    flex-direction: column;
+    /* flex-shrink: 0; */
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.Grid--resource .Grid-body .Grid-row:hover {
+    cursor: pointer;
+    background: var(--secondary-light);
+}
+
+.Grid--pinned {
+    position: absolute;
+    height: 100%;
+    z-index: 2;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    border-right: 3px solid var(--secondary);
+}
+
+.Grid-pinned::-webkit-scrollbar {
+    display: none;
+}
+
+.Grid--main {
+    flex-grow: 1;
+}
+
+.Grid--comfortable .Grid-cell--head {
+    min-height: 40px;
+}
+
+.Grid--comfortable .Grid-cell--body {
+    min-height: 54px;
+}
+
+.Grid--standard .Grid-cell--head {
+    min-height: 40px;
+}
+
+.Grid--standard .Grid-cell--body {
+    min-height: 40px;
+}
+
+.Grid--compressed .Grid-cell--head {
+    min-height: 32px;
+}
+
+.Grid--compressed .Grid-cell--body {
+    min-height: 32px;
+}
+
+.Grid--tight .Grid-cell--head {
+    min-height: 24px;
+}
+
+.Grid--tight .Grid-cell--body {
+    min-height: 24px;
+}
+
+.Grid-head {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.Grid-headCell {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Grid-headCell--draggable {
+    cursor: grab;
+}
+
+.Grid-headCell--draggable:active {
+    cursor: grabbing;
+}
+
+.Grid-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: fit-content;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.Grid-row {
+    box-sizing: border-box;
+    display: flex;
+    flex: 1 0;
+    background: var(--white);
+}
+
+.GridBody-padding {
+    flex-shrink: 0;
+}
+
+.Grid-row {
+    min-width: fit-content;
+    border-bottom: var(--border);
+}
+
+.Grid-row--body:last-child {
+    border-bottom: 0;
+}
+
+.Grid-checkboxCell {
+    display: flex;
+    align-items: center;
+    padding-right: 0 !important;
+}
+
+.Grid-row--selected {
+    background: var(--warning-lightest) !important;
+}
+
+.Grid-cell {
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0 var(--spacing-l);
+}
+
+.Grid-row--head .Grid-cell {
+    padding-right: var(--spacing-m);
+}
+
+.Grid-cell--withSeparator {
+    border-left: var(--border);
+}
+
+.Grid-cell--selected {
+    background: var(--primary-lightest);
+}
+
+.Grid-cell--head.Grid-cell:first-child {
+    border-left: none;
+}
+
+.Grid--main .Grid-cell--head.Grid-cell:last-child {
+    border-right: var(--border);
+}
+
+.Grid-cell--head.Grid-cell--selected {
+    background: var(--primary-light);
+}
+
+.Grid-sortingIcons {
+    display: flex;
+    align-items: center;
+    padding-left: var(--spacing-m);
+}
+
+.Grid-cellReorder {
+    display: flex;
+    align-items: center;
+    cursor: grab;
+}
+
+.Grid-cellReorder:active {
+    cursor: grabbing;
+}
+
+.Grid-cellContent {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.Grid-cellResize {
+    position: absolute;
+    right: 0;
+    width: var(--spacing-m);
+    cursor: ew-resize;
+    height: 100%;
+}
+
+.Grid-cellSortIcon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.Grid-cellSortIcon:hover {
+    background: var(--secondary);
+}
+
+.Grid-cellResize:hover {
+    background: var(--primary);
+}
+
+.Grid-reorderHighlighter {
+    position: absolute;
+    height: 100%;
+    border: 3px solid var(--primary-light);
+    z-index: 10;
+}
+
+.Grid-pagination {
+    display: flex;
+    justify-content: center;
+    background: var(--white);
+    padding: var(--spacing) 0;
+    border-top: var(--border);
+}
+
+.Grid .Checkbox-wrapper {
+    margin-right: 0;
+}
+
+.Grid .Avatar {
+    margin-left: 0;
+}
+
+.Grid .Placeholder {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.Grid .Placeholder-image {
+    flex-shrink: 0;
+}
+
+/** Grid Cell **/
+.GridCell {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.GridCell--align-left {
+    flex-direction: row;
+}
+
+.GridCell--align-right {
+    flex-direction: row-reverse;
+}
+
+.GridCell--align-center {
+    justify-content: center;
+}
+
+.GridCell--default {}
+.GridCell--metaList {}
+
+.GridCell--avatar .Avatar {
+    margin: 0;
+}
+
+.GridCell-metaListWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.GridCell-metaList {
+    display: flex;
+}
+
+.GridCell-metaList .Text {
+    display: flex;
+    align-items: center;
+}
+
+.GridCell-metaList .Text::before {
+    content: '';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--spacing-m);
+    height: var(--spacing-m);
+    border-radius: 50%;
+    background: var(--secondary);
+    margin: 0 var(--spacing);
+}
+
+.GridCell-metaList .Text:first-child::before {
+    display: none;
+}
+
+.GridCell--metaList ul li:first-child {
+    margin-left: 0;
+}
+
+/* .GridCell-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing);
+}
+
+.Image {
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+} */
+
+/** Header **/
+/** Table-header **/
+.Header {
+    padding: var(--spacing-l);
+    border-bottom: var(--border);
+}
+
+.Header-content {
+    display: flex;
+}
+
+.Header-search {
+    width: var(--spacing-9);
+    margin-bottom: var(--spacing);
+}
+
+.Header-label {
+    display: flex;
+    padding-top: var(--spacing);
+}
+
+.Header-label .Checkbox {
+    margin-right: var(--spacing);
+}
+
+.Header-filters {
+    display: flex;
+}
+
+.Header-filters .Dropdown {
+    margin: 0 var(--spacing-m);
+}
+
+.Header-filters .Dropdown:first-child {
+    margin-left: var(--spacing-l);
+}
+
+.Header-filters .Dropdown:last-child {
+    margin-right: 0;
+}
