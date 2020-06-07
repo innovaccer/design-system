@@ -47,6 +47,7 @@ export const GridBody = (props: GridBodyProps) => {
 
   const {
     loading,
+    withPagination,
     pageSize,
     totalRecords,
     errorTemplate
@@ -142,7 +143,7 @@ export const GridBody = (props: GridBodyProps) => {
       <div
         className="GridBody-padding"
         style={{
-          height: `${(data.length - inView - offset - 1) * avgRowHeight}px`
+          height: `${((withPagination ? pageSize : data.length) - inView - offset - 1) * avgRowHeight}px`
         }}
       />
     </div>

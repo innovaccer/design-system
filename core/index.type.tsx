@@ -43,3 +43,4 @@ export { PopoverProps } from './components/molecules/popover';
 export { RangePickerProps } from './components/organisms/rangepicker';
 export { TabsWrapperProps, TabProps } from './components/molecules/tabs';
 export { GridProps } from './components/organisms/grid';
+export { TableProps } from './components/organisms/table';
