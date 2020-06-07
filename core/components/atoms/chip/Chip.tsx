@@ -1,14 +1,18 @@
 import * as React from 'react';
 import GenericChip from '../_chip';
+import classNames from 'classnames';
 export type Type = 'Action' | 'Selection' | 'Input';
 export interface ChipProps {
   label: string;
   icon?: string;
   clearbutton?: boolean;
   disabled?: boolean;
+  selected?: boolean;
   type?: Type;
-  // onClear?: (e: React.MouseEvent<HTMLElement>) => void;
-  // onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
+  onClose?: (name: any) => void;
+  onClick?: (name: any) => void;
+
+  name?: string;
 }
 export const Chip = (props: ChipProps) => {
   const {
@@ -16,10 +20,41 @@ export const Chip = (props: ChipProps) => {
     icon,
     clearbutton,
     type,
-    disabled
+    disabled,
+    selected,
+    onClose,
+    onClick,
+
   } = props;
+  const onCloseHandler = () => {
+    if (onClose) onClose(name);
+  };
+  const onClickHandler = () => {
+    if (onClick) onClick(name);
+  };
+
+  const chipClass = classNames({
+    [`Chip--disabled--${type}`]: disabled,
+    [`Chip--${type}`]: type && !disabled,
+    Chip: true,
+    [`Chip--${type}--selected`]: selected && !disabled,
+
+  });
+  const clearButton = ((type === 'Action') ? false : clearbutton);
+  const select = (((type === 'Selection') && selected) ? true : false);
   return (
-    <GenericChip label={label} icon={icon} clearbutton={clearbutton} disabled={disabled} type={type} />
+    <div>
+      <GenericChip
+        label={label}
+        selected={select}
+        icon={icon}
+        clearbutton={clearButton}
+        disabled={disabled}
+        className={chipClass}
+        onClose={onCloseHandler}
+        onClick={onClickHandler}
+      />
+    </div>
   );
 };
 Chip.displayName = 'Chip';

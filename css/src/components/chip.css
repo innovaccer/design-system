@@ -1,74 +1,115 @@
 .Chip {
-	display: flex;
-	box-sizing: border-box;
-	border-radius: var( --spacing-l);
-	padding-right:var( --spacing) ;
-    padding-left: var( --spacing);
-	padding-top:var( --spacing-s);
-	padding-bottom:var( --spacing-s);
-    width: fit-content;
-	justify-content: space-between;
-	border-style: solid;
-	border-color:#D5D5D5;
-	border-width: var( --spacing-xs);
-	align-items: center;
-	flex-direction: row;
-    }
-.Chip-wrapper{
-	
-	display: flex;
-	align-items: center;
-	
+  display: flex;
+  box-sizing: border-box;
+  border-radius: var( --spacing-l);
+  padding-right: var( --spacing);
+  padding-left: var( --spacing);
+  padding-top: var( --spacing-s);
+  padding-bottom: var( --spacing-s);
+  width: fit-content;
+  justify-content: space-between;
+  border-style: solid;
+  border-width: var( --spacing-xs);
+  align-items: center;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.Chip-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .Chiplabel {
-	font-size: 14px; 
-color: #2F2F2F;  
-font-family: Nunito Sans; 
-font-weight: var(--font-weight-normal); 
-text-align: left; 
-line-height: 20px;
+  font-size: var(--font-size);
+  font-family: Nunito Sans;
+  text-align: left;
+  line-height: var(--font-height);
 }
-.Chip--disabled {
-	color: var(--text-disabled);
-  }
 
 .Chip-icon--left {
-	
-	padding-right: 4px;
-	display: flex;
-	align-items: center;
-	color: #2F2F2F;
+  padding-right: var( --spacing-m);
+  display: flex;
+  align-items: center;
+  color: var(--night);
 }
 
 .Chip-icon--right {
-
-	padding-left: 4px;
-	display: flex;
-	align-items: center;
-	color: #2F2F2F;
-}
-.Chip-wrapper--disabled {
-    background: var(--secondary-lighter);
-	color: var(--inverse-lightest);
+  padding-left: var( --spacing-m);
+  display: flex;
+  align-items: center;
+  color: var(--night-light);
 }
 
-
-.Chip--basic {
-	background: var(--secondary-light);
-	color: var(--inverse);
-}
-.Chip:hover {
-	background: #E5E5E5;
-	border-color: #D5D5D5;
-	border-style: solid;
+.Chip--Action {
+  background: var( --shadow-0);
+  border-color: var(--stone);
+  font-weight: var( --font-weight-normal);
 }
 
-.Chip:active {
-	background: #C5C5C5;
+.Chip--Action:hover {
+  background: var(--stone-light);
+  border-color: var(--stone);
 }
 
-.Chip:focus {
-	box-shadow: var(--shadow-spread) var(--secondary-shadow);
-	background:#ECECEC;
+.Chip--Action:focus {
+  background: var(--stone-lighter);
+}
+
+.Chip--Action:active {
+  background: var(--stone-dark);
+}
+
+.Chip--disabled--Action {
+  background: var(--shadow-0);
+  color: var(--night-lightest);
+  border-color: var(--stone-light);
+}
+
+.Chip--Selection {
+  background: var( --shadow-0);
+  border-color: var(--stone);
+  font-weight: var( --font-weight-normal);
+}
+
+.Chip--Selection:hover {
+  background: var(--stone-light);
+  border-color: var(--stone);
+}
+
+.Chip--Selection:focus {
+  background: var(--stone-lighter);
+}
+
+.Chip--Selection:active {
+  background: var(--stone-dark);
+}
+
+.Chip--Selection--selected {
+  background: var(--jal-lightest);
+  border-color: var(--jal-lighter);
+  color: var(--jal);
+  font-weight: var( --font-weight-medium);
+}
+
+.Chip--disabled--Selection {
+  background: var( --shadow-0);
+  color: var(--night-lightest);
+  border-color: var(--stone-light);
+}
+
+.Chip--Input {
+  background: var(--stone-light);
+  font-weight: var( --font-weight-normal);
+  border: 0px;
+}
+
+.Chip--Input:hover {
+  background: var(--stone-light);
+}
+
+.Chip--disabled--Input {
+  background: var(--stone-light);
+  color: var(--night-lightest);
+  border: 0px;
 }
