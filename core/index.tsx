@@ -42,4 +42,5 @@ export { Popover } from './components/molecules/popover';
 export { RangePicker } from './components/organisms/rangepicker';
 export { TabsWrapper, Tab } from './components/molecules/tabs';
 export { Grid } from './components/organisms/grid';
+export { List } from './components/organisms/list';
 export { Table } from './components/organisms/table';
