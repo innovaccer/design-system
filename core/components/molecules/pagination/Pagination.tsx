@@ -36,6 +36,10 @@ export const Pagination = (props: PaginationProps) => {
   const [page, setPage] = React.useState<number>(props.page ? props.page : 1);
   const [init, setInit] = React.useState<boolean>(false);
 
+  React.useEffect(() => {
+    if (props.page && props.page >= 1 && props.page <= totalPages) setPage(props.page);
+  }, [props.page]);
+
   const wrapperClass = classNames({
     ['Pagination']: true,
     [`Pagination--${type}`]: type,
@@ -53,7 +57,7 @@ export const Pagination = (props: PaginationProps) => {
   });
 
   React.useEffect(() => {
-    if (init) onPageChange(page);
+    if (init && page) onPageChange(page);
   }, [page]);
 
   const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -61,12 +65,20 @@ export const Pagination = (props: PaginationProps) => {
 
     const val = parseInt(e.target.value.trim(), 10);
     if (!val || (val > 0 && val <= totalPages)) {
+      if (!init) setInit(true);
       setPage(val);
     }
   };
 
-  const onClickHandler = (buttonType: 'prev' | 'next') => {
+  const onClickHandler = (buttonType: 'prev' | 'next' | 'first' | 'last') => {
+    setInit(true);
     switch (buttonType) {
+      case 'first':
+        setPage(1);
+        break;
+      case 'last':
+        setPage(totalPages);
+        break;
       case 'prev':
         if (page > 1) setPage(page - 1);
         break;
@@ -74,7 +86,6 @@ export const Pagination = (props: PaginationProps) => {
         if (page < totalPages) setPage(page + 1);
         break;
     }
-    setInit(true);
   };
 
   const buttonHelper: string[] = [];
@@ -85,7 +96,7 @@ export const Pagination = (props: PaginationProps) => {
     <div className={wrapperClass}>
       <div className={prevButtonWrapperClass}>
         <Button
-          onClick={() => setPage(1)}
+          onClick={() => onClickHandler('first')}
           disabled={page === 1}
           appearance="transparent"
           size="large"
@@ -123,7 +134,7 @@ export const Pagination = (props: PaginationProps) => {
           />
         </div>
         <Button
-          onClick={() => setPage(totalPages)}
+          onClick={() => onClickHandler('last')}
           disabled={page === totalPages}
           appearance="transparent"
           size="large"
