@@ -149,3 +149,15 @@
 * 3fea080 fix: fixes loading state with iconAlign:right of Button
 * 66c71cb feat: adds common stories
 * 0e1a1a1 chore: adds no-this-assignment: false in tslint
+
+-------------------
+ **v1.0.0-11**  (2020-06-08) 
+
+* aecd325 v1.0.0-11
+* 9c89832 fix: adds page useEffect in Pagination
+* 630075d fix: fixes css of Avatar
+* 50fb158 fix: fixes onClick of Icon
+* 663b57e feat: adds List
+* e6c4389 feat: adds Table
+* 9f840fc feat: removes data state and adds multiple utility for Grid
+* d7f869b feat: adds progressBar component

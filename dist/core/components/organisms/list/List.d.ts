@@ -7,20 +7,18 @@ interface SyncProps {
 interface AsyncProps {
     fetchData: fetchDataFn;
 }
-interface SharedTableProps {
+interface SharedListProps {
     type?: GridProps['type'];
     size?: GridProps['size'];
-    draggable?: boolean;
     withHeader?: boolean;
     withCheckbox?: GridProps['withCheckbox'];
-    showMenu?: GridProps['showMenu'];
     withPagination?: GridProps['withPagination'];
     paginationType?: GridProps['paginationType'];
     pageSize?: GridProps['pageSize'];
     loaderSchema?: GridProps['loaderSchema'];
 }
-declare type SyncTableProps = SyncProps & SharedTableProps;
-declare type AsyncTableProps = AsyncProps & SharedTableProps;
-export declare type TableProps = (AsyncTableProps | SyncTableProps);
-export declare const Table: (props: TableProps) => JSX.Element;
-export default Table;
+declare type SyncListProps = SyncProps & SharedListProps;
+declare type AsyncListProps = AsyncProps & SharedListProps;
+export declare type ListProps = (AsyncListProps | SyncListProps);
+export declare const List: (props: ListProps) => JSX.Element;
+export default List;

@@ -460,6 +460,18 @@ body {
     border-radius: var(--spacing-s);
     margin-right: var(--spacing);
 }
+.ProgressBar {
+  width: 100%;
+  border-radius: var(--spacing-m);
+  background: var(--secondary-lightest);
+}
+
+.ProgressBar-indicator {
+  height: var(--spacing);
+  background-color: var(--primary);
+  border-radius: var(--spacing-m);
+  transition: width 200ms;
+}
 /* badge */
 
 .Avatar {
@@ -473,6 +485,7 @@ body {
   text-transform: uppercase;
   border-radius: 50%;
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   align-items: center;
   font-weight: var(--font-weight-medium);
@@ -1504,6 +1517,379 @@ body {
     min-width: var(--spacing-xl);
 }
 
+/** Grid **/
+.Grid-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.Grid-wrapper {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.Grid {
+    display: flex;
+    flex-direction: column;
+    /* flex-shrink: 0; */
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.Grid--resource .Grid-body .Grid-row:hover {
+    cursor: pointer;
+    background: var(--secondary-light);
+}
+
+.Grid--pinned {
+    position: absolute;
+    height: 100%;
+    z-index: 2;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    border-right: 3px solid var(--secondary);
+}
+
+.Grid-pinned::-webkit-scrollbar {
+    display: none;
+}
+
+.Grid--main {
+    flex-grow: 1;
+}
+
+.Grid--comfortable .Grid-cell--head {
+    min-height: 40px;
+}
+
+.Grid--comfortable .Grid-cell--body {
+    min-height: 54px;
+}
+
+.Grid--standard .Grid-cell--head {
+    min-height: 40px;
+}
+
+.Grid--standard .Grid-cell--body {
+    min-height: 40px;
+}
+
+.Grid--compressed .Grid-cell--head {
+    min-height: 32px;
+}
+
+.Grid--compressed .Grid-cell--body {
+    min-height: 32px;
+}
+
+.Grid--tight .Grid-cell--head {
+    min-height: 24px;
+}
+
+.Grid--tight .Grid-cell--body {
+    min-height: 24px;
+}
+
+.Grid-head {
+    display: flex;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.Grid-headCell {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Grid-headCell--draggable {
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+.Grid-headCell--draggable:active {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+
+.Grid-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.Grid-row {
+    box-sizing: border-box;
+    display: flex;
+    flex: 1 0;
+    background: var(--white);
+}
+
+.GridBody-padding {
+    flex-shrink: 0;
+}
+
+.Grid-row {
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    border-bottom: var(--border);
+}
+
+.Grid-row--body:last-child {
+    border-bottom: 0;
+}
+
+.Grid-checkboxCell {
+    display: flex;
+    align-items: center;
+    padding-right: 0 !important;
+}
+
+.Grid-row--selected {
+    background: var(--warning-lightest) !important;
+}
+
+.Grid-cell {
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0 var(--spacing-l);
+}
+
+.Grid-row--head .Grid-cell {
+    padding-right: var(--spacing-m);
+}
+
+.Grid-cell--withSeparator {
+    border-left: var(--border);
+}
+
+.Grid-cell--selected {
+    background: var(--primary-lightest);
+}
+
+.Grid-cell--head.Grid-cell:first-child {
+    border-left: none;
+}
+
+.Grid--main .Grid-cell--head.Grid-cell:last-child {
+    border-right: var(--border);
+}
+
+.Grid-cell--head.Grid-cell--selected {
+    background: var(--primary-light);
+}
+
+.Grid-sortingIcons {
+    display: flex;
+    align-items: center;
+    padding-left: var(--spacing-m);
+}
+
+.Grid-cellReorder {
+    display: flex;
+    align-items: center;
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+.Grid-cellReorder:active {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+
+.Grid-cellContent {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.Grid-cellResize {
+    position: absolute;
+    right: 0;
+    width: var(--spacing-m);
+    cursor: ew-resize;
+    height: 100%;
+}
+
+.Grid-cellSortIcon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.Grid-cellSortIcon:hover {
+    background: var(--secondary);
+}
+
+.Grid-cellResize:hover {
+    background: var(--primary);
+}
+
+.Grid-reorderHighlighter {
+    position: absolute;
+    height: 100%;
+    border: 3px solid var(--primary-light);
+    z-index: 10;
+}
+
+.Grid-pagination {
+    display: flex;
+    justify-content: center;
+    background: var(--white);
+    padding: var(--spacing) 0;
+    border-top: var(--border);
+}
+
+.Grid .Checkbox-wrapper {
+    margin-right: 0;
+}
+
+.Grid .Avatar {
+    margin-left: 0;
+}
+
+.Grid .Placeholder {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.Grid .Placeholder-image {
+    flex-shrink: 0;
+}
+
+/** Grid Cell **/
+.GridCell {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.GridCell--align-left {
+    flex-direction: row;
+}
+
+.GridCell--align-right {
+    flex-direction: row-reverse;
+}
+
+.GridCell--align-center {
+    justify-content: center;
+}
+
+.GridCell--default {}
+.GridCell--metaList {}
+
+.GridCell--avatar .Avatar {
+    margin: 0;
+}
+
+.GridCell-metaListWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.GridCell-metaList {
+    display: flex;
+}
+
+.GridCell-metaList .Text {
+    display: flex;
+    align-items: center;
+}
+
+.GridCell-metaList .Text::before {
+    content: '';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--spacing-m);
+    height: var(--spacing-m);
+    border-radius: 50%;
+    background: var(--secondary);
+    margin: 0 var(--spacing);
+}
+
+.GridCell-metaList .Text:first-child::before {
+    display: none;
+}
+
+.GridCell--metaList ul li:first-child {
+    margin-left: 0;
+}
+
+/* .GridCell-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing);
+}
+
+.Image {
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+} */
+
+/** Header **/
+/** Table-header **/
+.Header {
+    padding: var(--spacing-l);
+    border-bottom: var(--border);
+}
+
+.Header-content {
+    display: flex;
+}
+
+.Header-search {
+    width: var(--spacing-9);
+    margin-bottom: var(--spacing);
+}
+
+.Header-label {
+    display: flex;
+    padding-top: var(--spacing);
+}
+
+.Header-label .Checkbox {
+    margin-right: var(--spacing);
+}
+
+.Header-filters {
+    display: flex;
+}
+
+.Header-filters .Dropdown {
+    margin: 0 var(--spacing-m);
+}
+
+.Header-filters .Dropdown:first-child {
+    margin-left: var(--spacing-l);
+}
+
+.Header-filters .Dropdown:last-child {
+    margin-right: 0;
+}
 /* Although the icons in the font can be scaled to any size, in accordance with material design icons guidelines, 
  * we recommend them to be shown in either 18, 24, 36 or 48px. The default being 24px. 
  * https://google.github.io/material-design-icons/
@@ -1743,6 +2129,16 @@ body {
     margin-right: var(--spacing);
 }
 
+.List {
+    display: flex;
+    flex-direction: column;
+    /* flex-grow: 0; */
+    height: 100%;
+}
+
+.List-grid {
+    overflow: hidden;
+}
 .Message {
     background: var(--white);
     border-radius: var(--spacing-m);
@@ -2066,7 +2462,7 @@ body {
 }
 
 .Placeholder {
-  display: block;
+  display: flex;
 }
 
 .Placeholder--withImage {
@@ -2481,349 +2877,16 @@ body {
 .Switch-wrapper--checkedDisabled.Switch-wrapper--warning {
     background-color: var(--warning-lighter);
 }
-/** Table **/
-.Table-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow: hidden;
-}
-
-.Table-wrapper {
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    height: 100%;
-}
-
 .Table {
     display: flex;
     flex-direction: column;
-    /* flex-shrink: 0; */
-    overflow-x: scroll;
-    overflow-y: hidden;
-}
-
-.Table--resource .Table-body .Table-row:hover {
-    cursor: pointer;
-    background: var(--secondary-light);
-}
-
-.Table--pinned {
-    position: absolute;
+    /* flex-grow: 0; */
     height: 100%;
-    z-index: 2;
-    overflow-x: hidden;
-    /* overflow: hidden; */
-    -ms-overflow-style: none;
-    border-right: 3px solid var(--secondary);
 }
 
-.Table-pinned::-webkit-scrollbar {
-    display: none;
-}
-
-/* .Table--pinned .Table-cell {
-    background: var(--white);
-} */
-
-.Table--main {
-    flex-grow: 1;
-}
-
-.Table--comfortable .Table-cell--header {
-    min-height: 40px;
-}
-
-.Table--comfortable .Table-cell--body {
-    min-height: 54px;
-}
-
-.Table--standard .Table-cell--header {
-    min-height: 40px;
-}
-
-.Table--standard .Table-cell--body {
-    min-height: 40px;
-}
-
-.Table--compressed .Table-cell--header {
-    min-height: 32px;
-}
-
-.Table--compressed .Table-cell--body {
-    min-height: 32px;
-}
-
-.Table--tight .Table-cell--header {
-    min-height: 24px;
-}
-
-.Table--tight .Table-cell--body {
-    min-height: 24px;
-}
-
-.Table-header {
-    display: flex;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-}
-
-.Table-headerCell {
-    display: flex;
-    height: 100%;
-    flex-direction: row;
-    align-items: center;
-    /* padding-left: var(--spacing-l); */
-}
-
-.Table-headerCell--draggable {
-    cursor: -webkit-grab;
-    cursor: grab;
-}
-
-.Table-headerCell--draggable:active {
-    cursor: -webkit-grabbing;
-    cursor: grabbing;
-}
-
-.Table-body {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-width: -webkit-fit-content;
-    min-width: -moz-fit-content;
-    min-width: fit-content;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    /* margin-top: 30px; */
-}
-
-.Table-row {
-    box-sizing: border-box;
-    display: flex;
-    flex: 1 0;
-    /* outline: var(--border); */
-    background: var(--white);
-}
-
-.TableBody-padding {
-    flex-shrink: 0;
-}
-
-.Table-row {
-    min-width: -webkit-fit-content;
-    min-width: -moz-fit-content;
-    min-width: fit-content;
-    border-bottom: var(--border);
-}
-
-.Table-row--body:last-child {
-    border-bottom: 0;
-}
-
-.Table-checkboxCell {
-    display: flex;
-    align-items: center;
-    padding-right: 0 !important;
-}
-
-.Table-row--selected {
-    background: var(--warning-lightest) !important;
-}
-
-/* .Table-row--header {
-    border-bottom: var(--border);
-} */
-
-.Table-cell {
-    position: relative;
-    flex-shrink: 0;
+.Table-grid {
     overflow: hidden;
-    box-sizing: border-box;
-    padding: 0 var(--spacing-l);
 }
-
-.Table-row--header .Table-cell {
-    padding-right: var(--spacing-m);
-}
-
-.Table-cell--withSeparator {
-    border-left: var(--border);
-}
-
-.Table-cell--selected {
-    background: var(--primary-lightest);
-}
-/* .Table-cell--header.Table-cell {
-    border-left: var(--border);
-} */
-.Table-cell--header.Table-cell:first-child {
-    border-left: none;
-}
-.Table--main .Table-cell--header.Table-cell:last-child {
-    border-right: var(--border);
-}
-.Table-cell--header.Table-cell--selected {
-    background: var(--primary-light);
-}
-
-.Table-sortingIcons {
-    display: flex;
-    align-items: center;
-    padding-left: var(--spacing-m);
-}
-
-.Table-cellReorder {
-    display: flex;
-    align-items: center;
-    cursor: -webkit-grab;
-    cursor: grab;
-}
-
-.Table-cellReorder:active {
-    cursor: -webkit-grabbing;
-    cursor: grabbing;
-}
-
-.Table-cellContent {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    height: 100%;
-    box-sizing: border-box;
-    /* padding: 0 var(--spacing-l); */
-}
-
-.Table-cellResize {
-    position: absolute;
-    right: 0;
-    width: var(--spacing-m);
-    cursor: ew-resize;
-    height: 100%;
-}
-
-.Table-cellSortIcon {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-.Table-cellSortIcon:hover {
-    background: var(--secondary);
-}
-
-.Table-cellResize:hover {
-    background: var(--primary);
-}
-
-.Table-reorderHighlighter {
-    position: absolute;
-    height: 100%;
-    border: 3px solid var(--primary-light);
-    z-index: 10;
-}
-
-.Table-pagination {
-    display: flex;
-    justify-content: center;
-    padding: var(--spacing) 0;
-    border-top: var(--border);
-}
-
-.Table .Checkbox-wrapper {
-    margin-right: 0;
-}
-
-.Table .Avatar {
-    margin-left: 0;
-}
-
-.Table .Placeholder {
-    display: flex;
-    flex-shrink: 0;
-}
-
-.Table .Placeholder-image {
-    flex-shrink: 0;
-}
-
-/** Table Cell **/
-.TableCell {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .TableCell-wrapper {
-    display: flex;
-    height: auto;
-    width: 100%;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-    /* padding-left: var(--spacing-l);
-    padding-right: var(--spacing-l); */
-    box-sizing: border-box;
-  }
-  
-  .TableCell-seperator {
-    border-right: var(--border);
-  }
-  
-  .TableCell-status {
-    justify-content: flex-start;
-    /* padding-left: var(--spacing-l); */
-  }
-  
-  .TableCell-checkboxOnly {
-    align-items: flex-start;
-  }
-  
-  .TableCell-avatarOnly,
-  .TableCell-imageOnly {
-    /* padding-left: var(--spacing-m); */
-  }
-  
-  .TableCell-textwrapper {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-  }
-  
-  .TableCell-textwrapper--image {
-    margin-left: var(--spacing-m);
-  }
-  
-  .TableCell--left {
-    justify-content: flex-start;
-  }
-  
-  .TableCell--center {
-    justify-content: center;
-  }
-  
-  .TableCell--right {
-    justify-content: flex-end;
-  }
-
-  .TableCell-image {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: var(--spacing);
-  }
-
-  .Image {
-      z-index: 0;
-      height: 100%;
-      width: 100%;
-  }
 /* tabs */
 
 .TabsWrapper {
