@@ -11,6 +11,11 @@ export const header = () => {
     true
   );
 
+  const showHeader = boolean(
+    'showHeader',
+    true
+  );
+
   const children = boolean(
     'children',
     false
@@ -21,6 +26,7 @@ export const header = () => {
       data={data}
       schema={schema}
       withSearch={withSearch}
+      showHeader={showHeader}
       totalRecords={50}
     >
       {children && <Button icon="events" />}

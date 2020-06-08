@@ -6,12 +6,13 @@ import { getSelectAll } from './utility';
 export interface HeaderProps {
   data: Data;
   schema: Schema;
+  totalRecords?: number;
   withCheckbox?: boolean;
   withSearch?: boolean;
+  showHead?: boolean;
   children?: React.ReactNode;
   updateData?: updateDataFn;
   onSelectAll?: onSelectAllFn;
-  totalRecords?: number;
 }
 
 export const Header = (props: HeaderProps) => {
@@ -19,6 +20,8 @@ export const Header = (props: HeaderProps) => {
     data,
     schema,
     withSearch,
+    showHead,
+    withCheckbox,
     children,
     updateData,
     totalRecords = 0,
@@ -62,8 +65,8 @@ export const Header = (props: HeaderProps) => {
 
   return (
     <div className="Header">
-      {withSearch && (
-        <div className="Header-content">
+      <div className="Header-content">
+        {withSearch && (
           <div className="Header-search">
             <Input
               name="GridHeader-search"
@@ -72,38 +75,40 @@ export const Header = (props: HeaderProps) => {
               onChange={onSearchChange}
             />
           </div>
-          {filterSchema.length > 0 && (
-            <div className="Header-filters">
-              {filterSchema.map(s => {
-                const {
-                  name,
-                  displayName,
-                  filters
-                } = s;
+        )}
+        {!showHead && filterSchema.length > 0 && (
+          <div className="Header-filters">
+            {filterSchema.map(s => {
+              const {
+                name,
+                displayName,
+                filters
+              } = s;
 
-                return (
-                  <Dropdown
-                    key={name}
-                    checkboxes={true}
-                    showApplyButton={true}
-                    inlineLabel={displayName}
-                    options={filters}
-                    onChange={selected => onFilterChange(name, selected)}
-                  />
-                );
-              })}
-            </div>
-          )}
+              return (
+                <Dropdown
+                  key={name}
+                  checkboxes={true}
+                  showApplyButton={true}
+                  inlineLabel={displayName}
+                  options={filters}
+                  onChange={selected => onFilterChange(name, selected)}
+                />
+              );
+            })}
+          </div>
+        )}
 
-          {children}
-        </div>
-      )}
+        {children}
+      </div>
 
       <div className="Header-label">
-        <Checkbox
-          {...getSelectAll(data)}
-          onChange={onSelectAll}
-        />
+        {withCheckbox && (
+          <Checkbox
+            {...getSelectAll(data)}
+            onChange={onSelectAll}
+          />
+        )}
         <Text small={true} weight={'medium'}>{`Showing ${totalRecords} items`}</Text>
       </div>
     </div>

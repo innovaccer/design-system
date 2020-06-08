@@ -1,0 +1,10 @@
+.Table {
+    display: flex;
+    flex-direction: column;
+    /* flex-grow: 0; */
+    height: 100%;
+}
+
+.Table-grid {
+    overflow: hidden;
+}

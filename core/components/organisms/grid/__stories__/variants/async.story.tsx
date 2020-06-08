@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Card, Grid } from '@/index';
+import { Card, Grid, Button } from '@/index';
 import { updateBatchData } from '../../utility';
 import { action } from '@storybook/addon-actions';
 import { onSelectFn, onSelectAllFn } from '../../Grid';
 import { fetchData } from '../_common_/fetchData';
 import loaderSchema from '../_common_/loaderSchema';
+import Header from '../../Header';
 
 export const async = () => {
   const [state, setState] = React.useState({
@@ -80,6 +81,15 @@ export const async = () => {
         height: '350px',
       }}
     >
+      {/* <Header
+        {...state}
+        updateData={updateData}
+        onSelectAll={onSelectAll}
+        withSearch={true}
+        showHeader={false}
+      >
+        <Button icon="events" />
+      </Header> */}
       <Grid
         {...state}
         loaderSchema={loaderSchema}

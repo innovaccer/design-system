@@ -347,7 +347,8 @@ export class Grid extends React.Component<GridProps, GridState> {
 
   updateSortingList = (sortingList: GridState['sortingList']) => {
     this.setState({
-      sortingList
+      sortingList,
+      page: 1,
     }, () => {
       this.updateRenderedData();
     });
@@ -379,6 +380,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     } = this.state;
 
     this.setState({
+      page: 1,
       filterList: {
         ...filterList,
         [name]: selected

@@ -8,7 +8,7 @@ export const fetchData: fetchDataFn = (options) => {
     page,
     pageSize,
     sortingList,
-    filterList = {}
+    filterList
   } = options;
 
   const filteredData = filterData(schema, data, filterList);

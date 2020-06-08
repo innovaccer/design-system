@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Grid, Data, onSelectFn, onSelectAllFn } from '../Grid';
+import { Grid, Data, onSelectFn, onSelectAllFn, FetchDataOptions } from '../Grid';
 import loaderSchema from './_common_/loaderSchema';
 import { number, boolean, select } from '@storybook/addon-knobs';
 import { Card } from '@/index';
@@ -7,10 +7,8 @@ import { action } from '@storybook/addon-actions';
 import { errorTemplate } from './_common_/errorTemplate';
 import data from './_common_/data';
 import schema from './_common_/schema';
-// const schema: Schema = require('./schema').default;
-// import { fetchData } from './fetchData';
 import { updateBatchData } from '../utility';
-import { transformData } from '../rowUtility';
+import { filterData, sortData, paginateData } from '../rowUtility';
 
 export const all = () => {
   const type = select(
@@ -96,14 +94,26 @@ export const all = () => {
     });
   };
 
-  const updateData = (options: Record<string, any>) => {
+  const updateData = (options: FetchDataOptions) => {
     setState({
       ...state,
       loading: true
     });
 
-    const totalRecords = data.length;
-    const renderedData = transformData(schema, data, options);
+    const {
+      page,
+      pageSize: pageSizeOp,
+      sortingList,
+      filterList
+    } = options;
+
+    const filteredData = filterData(schema, data, filterList);
+    const sortedData = sortData(schema, filteredData, sortingList);
+    let renderedData = sortedData;
+    const totalRecords = sortedData.length;
+    if (withPagination && page && pageSizeOp) {
+      renderedData = paginateData(renderedData, page, pageSizeOp);
+    }
 
     setState({
       ...state,

@@ -3,9 +3,10 @@ import { Header } from '../../Header';
 import { Button, Card, Grid } from '@/index';
 import data from '../_common_/data';
 import schema from '../_common_/schema';
-import { transformData, updateBatchData } from '../../utility';
+import { updateBatchData, filterData, sortData, paginateData } from '../../utility';
 import { action } from '@storybook/addon-actions';
-import { onSelectFn, onSelectAllFn } from '../../Grid';
+import { onSelectFn, onSelectAllFn, FetchDataOptions } from '../../Grid';
+import { withPagination } from './withPagination.story';
 
 export const withHeader = () => {
   const [state, setState] = React.useState({
@@ -43,14 +44,26 @@ export const withHeader = () => {
     });
   };
 
-  const updateData = (options: Record<string, any>) => {
+  const updateData = (options: FetchDataOptions) => {
     setState({
       ...state,
       loading: true
     });
 
-    const totalRecords = data.length;
-    const renderedData = transformData(schema, data, options);
+    const {
+      page,
+      pageSize,
+      sortingList,
+      filterList
+    } = options;
+
+    const filteredData = filterData(schema, data, filterList);
+    const sortedData = sortData(schema, filteredData, sortingList);
+    let renderedData = sortedData;
+    const totalRecords = sortedData.length;
+    if (withPagination && page && pageSize) {
+      renderedData = paginateData(renderedData, page, pageSize);
+    }
 
     setState({
       ...state,
@@ -66,9 +79,9 @@ export const withHeader = () => {
       <Header
         {...state}
         updateData={updateData}
-        onSelect={onSelect}
         onSelectAll={onSelectAll}
         withSearch={true}
+        showHeader={false}
       >
         <Button icon="events" />
       </Header>

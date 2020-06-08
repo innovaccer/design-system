@@ -57,22 +57,9 @@ export const sortData = (schema: Schema, data: Data, sortingList: FetchDataOptio
   return sortedData;
 };
 
-export const transformData = (schema: Schema, data: Data, options: FetchDataOptions): Data => {
-  const {
-    page,
-    pageSize,
-    sortingList,
-    filterList = {}
-  } = options;
-
-  const filteredData = filterData(schema, data, filterList);
-  const sortedData = sortData(schema, filteredData, sortingList);
-  if (page && pageSize) {
-    const start = (page - 1) * pageSize;
-    const end = start + pageSize;
-    const paginatedData = sortedData.slice(start, end);
-    return paginatedData;
-  }
-
-  return sortedData;
+export const paginateData = (data: Data, page: number, pageSize: number) => {
+  const start = (page - 1) * pageSize;
+  const end = start + pageSize;
+  const paginatedData = data.slice(start, end);
+  return paginatedData;
 };
