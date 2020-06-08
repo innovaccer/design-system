@@ -42,4 +42,4 @@ export { ProgressBarProps } from './components/atoms/progressBar';
 export { PopoverProps } from './components/molecules/popover';
 export { RangePickerProps } from './components/organisms/rangepicker';
 export { TabsWrapperProps, TabProps } from './components/molecules/tabs';
-export { TableProps } from './components/organisms/table';
+export { GridProps } from './components/organisms/grid';

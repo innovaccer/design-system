@@ -1,0 +1,31 @@
+import { Schema } from '../../Grid';
+// @ts-ignore
+import iconImg from './image.png';
+
+const schema: Schema = [
+  {
+    name: 'name',
+    displayName: 'Name',
+    width: 300,
+    resizable: true,
+    translate: a => ({
+      title: `${a.firstName} ${a.lastName}`,
+      firstName: a.firstName,
+      lastName: a.firstName
+    }),
+    cellType: 'AVATAR_WITH_TEXT',
+  },
+  {
+    name: 'gender',
+    displayName: 'Gender',
+    width: 200,
+    resizable: true,
+    cellType: 'STATUS_HINT',
+    translate: a => ({
+      title: a.gender,
+      statusAppearance: (a.gender === 'Female') ? 'alert' : 'success'
+    }),
+  },
+];
+
+export default schema;
