@@ -56,16 +56,11 @@ export const Icon = (props: IconProps) => {
     width: (size) ? `${size}px` : 'var(--font-size)',
   };
 
-  const onClickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault();
-    if (onClick) onClick(e);
-  };
-
   return (
     <i
       className={iconClass}
       style={styles}
-      onClick={onClickHandler}
+      onClick={onClick}
     >
       {`${name}_${type}`}
     </i>
