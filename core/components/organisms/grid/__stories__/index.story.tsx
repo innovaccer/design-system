@@ -35,7 +35,7 @@ export const all = () => {
 
   const draggable = boolean(
     'draggable',
-    false
+    true
   );
 
   const withPagination = boolean(

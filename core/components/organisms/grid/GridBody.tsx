@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { GridRow } from './GridRow';
-import { Data, Schema, GridSize } from './Grid';
+import { Data, Schema } from './Grid';
 import { Heading, Grid } from '@/index';
 
 export interface GridBodyProps {
@@ -8,6 +8,9 @@ export interface GridBodyProps {
   data: Data;
   withCheckbox?: boolean;
   _this: Grid;
+  offset: number;
+  inView: number;
+  avgRowHeight: number;
 }
 
 export const GridBody = (props: GridBodyProps) => {
@@ -15,33 +18,11 @@ export const GridBody = (props: GridBodyProps) => {
     _this,
     schema,
     data,
-    withCheckbox
-  } = props;
-
-  const {
-    size
-  } = _this.props;
-
-  const minRowHeight: Record<GridSize, number> = {
-    comfortable: 54,
-    standard: 40,
-    compressed: 32,
-    tight: 24
-  };
-
-  const [state, setState] = React.useState({
-    offset: 0,
-    avgRowHeight: minRowHeight[size],
-    inView: 20
-  });
-
-  const gridBodyRef = React.useRef<HTMLDivElement>(null);
-
-  const {
+    withCheckbox,
     offset,
-    avgRowHeight,
-    inView
-  } = state;
+    inView,
+    avgRowHeight
+  } = props;
 
   const buffer = 50;
 
@@ -65,63 +46,8 @@ export const GridBody = (props: GridBodyProps) => {
   const dummyRows = page === totalPages ? totalRecords - (page - 1) * pageSize : pageSize;
   const rows = loading ? Array.from({ length: dummyRows }, () => ({})) : data.slice(offset, offset + buffer);
 
-  const onScrollHandler = () => {
-    if (gridBodyRef.current) {
-      const el = gridBodyRef.current;
-      const { scrollTop } = el;
-      const items = el.querySelectorAll('.Grid-row');
-
-      const newScroll = Math.floor(scrollTop - (offset * avgRowHeight));
-      let newInView = 0;
-      let currScroll = 0;
-      let i = 0;
-      while (i < items.length && currScroll + items[i].clientHeight <= el.clientHeight) {
-        const rowHeight = items[i].clientHeight;
-        currScroll += rowHeight;
-        newInView++;
-        i++;
-      }
-
-      if (newScroll > 0) {
-        currScroll = newScroll;
-        let newOffset = offset;
-        let newAvgHeight = avgRowHeight;
-        i = 0;
-        while (i < items.length && currScroll >= items[i].clientHeight) {
-          const rowHeight = items[i].clientHeight;
-          currScroll -= rowHeight;
-          newAvgHeight = ((newOffset * newAvgHeight) + (rowHeight)) / (newOffset + 1);
-          newOffset++;
-          i++;
-        }
-
-        newOffset = newOffset < data.length - inView ? newOffset : data.length - inView - 1;
-        if (newOffset > offset) {
-          setState({
-            ...state,
-            inView: newInView,
-            offset: newOffset,
-            avgRowHeight: newAvgHeight,
-          });
-        }
-      } else {
-        if (avgRowHeight) {
-          const diff = Math.floor(newScroll / avgRowHeight) || -1;
-          const newOffset = offset + diff;
-          if (newOffset < offset) {
-            setState({
-              ...state,
-              inView: newInView,
-              offset: newOffset < 0 ? 0 : newOffset,
-            });
-          }
-        }
-      }
-    }
-  };
-
   return (
-    <div className="Grid-body" ref={gridBodyRef} onScroll={onScrollHandler}>
+    <div className="Grid-body">
       <div
         className="GridBody-padding"
         style={{
@@ -143,7 +69,7 @@ export const GridBody = (props: GridBodyProps) => {
       <div
         className="GridBody-padding"
         style={{
-          height: `${((withPagination ? pageSize : data.length) - inView - offset - 1) * avgRowHeight}px`
+          height: `${((withPagination ? dummyRows : data.length) - inView - offset - 1) * avgRowHeight}px`
         }}
       />
     </div>

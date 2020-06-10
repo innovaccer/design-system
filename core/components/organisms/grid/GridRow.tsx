@@ -59,35 +59,66 @@ export const GridRow = (props: GridRowProps) => {
     init
   } = _this.state;
 
+  const pinnedSchema = schema.filter(s => s.pinned);
+  const unpinnedSchema = schema.filter(s => !s.pinned);
+  // const mainSchema = [
+  //   ...pinnedSchema,
+  //   ...unpinnedSchema
+  // ];
+
+  const renderCheckbox = (show: boolean) => {
+    if (!show || !(withCheckbox && init)) return null;
+
+    return (
+      <div className="Grid-cell Grid-cell--body Grid-checkboxCell">
+        {loading ? (
+          <Placeholder withImage={true} />
+        ) : (
+            <Checkbox
+              checked={data._selected}
+              onChange={(checked: boolean) => {
+                _this.onSelect(rI, checked);
+              }}
+            />
+          )
+        }
+      </div>
+    );
+  };
+
   return (
     <>
       <div className={rowClasses} onClick={onClickHandler}>
-        {withCheckbox && init && (
-          <div className="Grid-cell Grid-checkboxCell">
-            {loading ? (
-              <Placeholder withImage={true} />
-            ) : (
-                <Checkbox
-                  checked={data._selected}
-                  onChange={(checked: boolean) => {
-                    _this.onSelect(rI, checked);
-                  }}
-                />
-              )
-            }
+        {!!pinnedSchema.length && (
+          <div className="Grid-cellGroup Grid-cellGroup--pinned">
+            {renderCheckbox(!!pinnedSchema.length)}
+            {pinnedSchema.map((s, cI) => (
+              <Cell
+                key={`${rI}-${cI}`}
+                _this={_this}
+                rowIndex={rI}
+                colIndex={cI}
+                schema={s}
+                data={data}
+                expandedState={[expanded, setExpanded]}
+              />
+            ))}
           </div>
         )}
-        {schema.map((s, cI) => (
-          <Cell
-            key={rI * schema.length + cI}
-            _this={_this}
-            rowIndex={rI}
-            colIndex={cI}
-            schema={s}
-            data={data}
-            expandedState={[expanded, setExpanded]}
-          />
-        ))}
+        <div className="Grid-cellGroup Grid-cellGroup--main">
+          {renderCheckbox(!pinnedSchema.length)}
+          {unpinnedSchema.map((s, cI) => (
+            <Cell
+              key={rI * schema.length + (pinnedSchema.length + cI)}
+              _this={_this}
+              rowIndex={rI}
+              colIndex={cI}
+              schema={s}
+              data={data}
+              expandedState={[expanded, setExpanded]}
+            />
+          ))}
+        </div>
       </div>
       {expanded && (
         <GridExtendedRow

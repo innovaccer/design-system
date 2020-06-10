@@ -1,11 +1,10 @@
 import * as React from 'react';
-import classNames from 'classnames';
 import { Pagination } from '@/index';
 import { CheckboxProps, DropdownProps, PaginationProps } from '@/index.type';
 import { GridCellProps } from './GridCell';
-import { GridHead } from './GridHead';
-import { GridBody } from './GridBody';
 import { sortColumn, pinColumn, hideColumn, getTotalPages, getSelectAll, moveToIndex } from './utility';
+import { debounce } from 'throttle-debounce';
+import { MainGrid } from './MainGrid';
 
 export type SortType = 'asc' | 'desc';
 export type Alignment = 'left' | 'right' | 'center';
@@ -37,7 +36,8 @@ export type onSelectFn = (rowIndex: number, selected: boolean) => void;
 export type onSelectAllFn = (selected: boolean) => void;
 export type onFilterChangeFn = (data: RowData, filters: Filter) => boolean;
 export type onRowClickFn = (data: RowData) => void;
-export type CellType = 'DEFAULT' |
+export type CellType =
+  'DEFAULT' |
   'WITH_META_LIST' |
   'AVATAR' |
   'AVATAR_WITH_TEXT' |
@@ -274,7 +274,7 @@ export class Grid extends React.Component<GridProps, GridState> {
 
   gridRef = React.createRef<HTMLDivElement>();
 
-  updateRenderedData = (options?: Partial<FetchDataOptions>) => {
+  updateRenderedData = debounce(100, (options?: Partial<FetchDataOptions>) => {
     const {
       pageSize,
       updateData,
@@ -303,7 +303,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     if (updateData) {
       updateData(opts);
     }
-  }
+  });
 
   updateRenderedSchema = (newSchema: Schema) => {
     this.setState({
@@ -333,11 +333,11 @@ export class Grid extends React.Component<GridProps, GridState> {
     this.updateRenderedSchema(newSchema);
   }
 
-  updateReorderHighlighter: updateReorderHighlighterFn = dim => {
+  updateReorderHighlighter: updateReorderHighlighterFn = debounce(50, dim => {
     this.setState({
       reorderHighlighter: dim
     });
-  }
+  });
 
   updateSelectAll: updateSelectAllFn = attr => {
     this.setState({
@@ -390,15 +390,15 @@ export class Grid extends React.Component<GridProps, GridState> {
     });
   }
 
-  syncScroll = (renderType: 'pinned' | 'main') => {
-    const pinnedGrid = this.gridRef.current!.querySelector('.Grid--pinned .Grid-body');
-    const mainGrid = this.gridRef.current!.querySelector('.Grid--main .Grid-body');
+  // syncScroll = (renderType: 'pinned' | 'main') => {
+  //   const pinnedGrid = this.gridRef.current!.querySelector('.Grid--pinned .Grid-body');
+  //   const mainGrid = this.gridRef.current!.querySelector('.Grid--main .Grid-body');
 
-    if (pinnedGrid && mainGrid) {
-      if (renderType === 'main') pinnedGrid.scrollTop = mainGrid.scrollTop;
-      if (renderType === 'pinned') mainGrid.scrollTop = pinnedGrid.scrollTop;
-    }
-  }
+  //   if (pinnedGrid && mainGrid) {
+  //     if (renderType === 'main') pinnedGrid.scrollTop = mainGrid.scrollTop;
+  //     if (renderType === 'pinned') mainGrid.scrollTop = pinnedGrid.scrollTop;
+  //   }
+  // }
 
   syncSelectAll = () => {
     const {
@@ -448,58 +448,138 @@ export class Grid extends React.Component<GridProps, GridState> {
     }
   }
 
-  renderGrid(renderType: 'pinned' | 'main') {
-    const {
-      type,
-      size,
-      showHead,
-      draggable,
-      withCheckbox,
-      data
-    } = this.props;
+  // renderGrid() {
+  //   const MainGrid = () => {
+  //     const {
+  //       type,
+  //       size,
+  //       showHead,
+  //       draggable,
+  //       withCheckbox,
+  //       data
+  //     } = this.props;
 
-    const {
-      schema,
-    } = this.state;
+  //     const {
+  //       schema,
+  //     } = this.state;
 
-    const classes = classNames({
-      Grid: 'true',
-      [`Grid--${renderType}`]: renderType,
-      [`Grid--${type}`]: type,
-      [`Grid--${size}`]: size,
-    });
+  //     const classes = classNames({
+  //       Grid: 'true',
+  //       [`Grid--${type}`]: type,
+  //       [`Grid--${size}`]: size,
+  //     });
 
-    const pinnedSchema = schema.filter(s => s.pinned);
-    const unpinnedSchema = schema.filter(s => !s.pinned);
-    const mainSchema = [
-      ...pinnedSchema,
-      ...unpinnedSchema
-    ];
+  //     const minRowHeight: Record<GridSize, number> = {
+  //       comfortable: 54,
+  //       standard: 40,
+  //       compressed: 32,
+  //       tight: 24
+  //     };
 
-    if (renderType === 'pinned' && pinnedSchema.length === 0) return null;
+  //     const [state, setState] = React.useState({
+  //       offset: 0,
+  //       avgRowHeight: minRowHeight[size],
+  //       inView: 20
+  //     });
 
-    return (
-      < div
-        className={classes}
-        onScroll={() => this.syncScroll(renderType)}
-      >
-        {showHead && (
-          <GridHead
-            _this={this}
-            schema={renderType === 'pinned' ? pinnedSchema : mainSchema}
-            draggable={draggable}
-            withCheckbox={withCheckbox}
-          />
-        )}
-        <GridBody
-          _this={this}
-          schema={renderType === 'pinned' ? pinnedSchema : mainSchema}
-          data={data}
-          withCheckbox={withCheckbox}
-        />
-      </div>
-    );
-  }
+  //     const {
+  //       offset,
+  //       avgRowHeight,
+  //       inView
+  //     } = state;
+
+  //     const onScrollHandler = () => {
+  //       if (this.gridRef && this.gridRef.current) {
+  //         const el = this.gridRef.current!.querySelector('.Grid');
+  //         if (el) {
+  //           const { scrollTop } = el;
+  //           const items = el.querySelectorAll('.Grid-body .Grid-row');
+
+  //           const newScroll = Math.floor(scrollTop - (offset * avgRowHeight));
+  //           let newInView = 0;
+  //           let currScroll = 0;
+  //           let i = 0;
+  //           while (i < items.length && currScroll + items[i].clientHeight <= el.clientHeight) {
+  //             const rowHeight = items[i].clientHeight;
+  //             currScroll += rowHeight;
+  //             newInView++;
+  //             i++;
+  //           }
+
+  //           if (newScroll > 0) {
+  //             currScroll = newScroll;
+  //             let newOffset = offset;
+  //             let newAvgHeight = avgRowHeight;
+  //             i = 0;
+  //             while (i < items.length && currScroll >= items[i].clientHeight) {
+  //               const rowHeight = items[i].clientHeight;
+  //               currScroll -= rowHeight;
+  //               newAvgHeight = ((newOffset * newAvgHeight) + (rowHeight)) / (newOffset + 1);
+  //               newOffset++;
+  //               i++;
+  //             }
+
+  //             newOffset = newOffset < data.length - inView ? newOffset : data.length - inView - 1;
+  //             if (newOffset > offset) {
+  //               setState({
+  //                 ...state,
+  //                 inView: newInView,
+  //                 offset: newOffset,
+  //                 avgRowHeight: newAvgHeight,
+  //               });
+  //             }
+  //           } else {
+  //             if (avgRowHeight) {
+  //               const diff = Math.floor(newScroll / avgRowHeight) || -1;
+  //               const newOffset = offset + diff;
+  //               if (newOffset < offset) {
+  //                 setState({
+  //                   ...state,
+  //                   inView: newInView,
+  //                   offset: newOffset < 0 ? 0 : newOffset,
+  //                 });
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //     };
+
+  //     // const [test, setTest] = React.useState(true);
+
+  //     // console.log(test);
+  //     // if (test) setTest(false);
+
+  //     return (
+  //       <div
+  //         className={classes}
+  //         onScroll={onScrollHandler}
+  //       >
+  //         {showHead && (
+  //           <GridHead
+  //             key={'GridHead'}
+  //             _this={this}
+  //             schema={schema}
+  //             draggable={draggable}
+  //             withCheckbox={withCheckbox}
+  //           />
+  //         )}
+  //         <GridBody
+  //           key={'GridBody'}
+  //           _this={this}
+  //           schema={schema}
+  //           data={data}
+  //           withCheckbox={withCheckbox}
+  //           offset={offset}
+  //           inView={inView}
+  //           avgRowHeight={avgRowHeight}
+  //         />
+  //       </div>
+  //     );
+  //   }
+
+  //   return <MainGrid key={'MainGrid'} />;
+  // }
 
   render() {
     const {
@@ -524,8 +604,10 @@ export class Grid extends React.Component<GridProps, GridState> {
     return (
       <div className="Grid-container">
         <div className="Grid-wrapper" ref={this.gridRef}>
-          {this.renderGrid('pinned')}
-          {this.renderGrid('main')}
+          <MainGrid
+            _this={this}
+          />
+          {/* {this.renderGrid()} */}
           {reorderHighlighter && (
             <div
               className="Grid-reorderHighlighter"

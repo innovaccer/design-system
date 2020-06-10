@@ -188,7 +188,7 @@ export const GridCell = (props: GridCellProps) => {
 
   if (schema.cellTemplate) return schema.cellTemplate(props);
 
-  const data = translateData(schema, props.data);
+  const data = !loading ? translateData(schema, props.data) : {};
 
   const {
     name,
