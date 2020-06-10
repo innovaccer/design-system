@@ -1,6 +1,4 @@
 .Pills {
-    margin-left: var(--spacing);
-	margin-right: var(--spacing);
 	/* 160px */
 	max-width: calc(var(--spacing-2) * 10);
 	/* truncate */
