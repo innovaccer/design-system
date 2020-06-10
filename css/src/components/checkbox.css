@@ -8,6 +8,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    line-height: initial;
 }
 
 .Checkbox .Checkbox-input {
