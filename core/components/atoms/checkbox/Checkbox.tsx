@@ -38,7 +38,7 @@ export interface CheckboxProps {
   /**
    * Callback function called when user the selects an option
    */
-  onChange?: (checked: boolean) => void;
+  onChange?: (checked: boolean, indeterminate?: boolean) => void;
 }
 
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props, forwardedRef) => {
@@ -85,10 +85,10 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
   };
 
   const onChangeHandler = () => {
-    const checkedValue = (props.indeterminate) ? true : !checked;
+    const checkedValue = (props.indeterminate) ? false : !checked;
     setChecked(checkedValue);
     setIndeterminate(false);
-    if (onChange) onChange(checkedValue);
+    if (onChange) onChange(checkedValue, false);
   };
 
   const IconName = (props.indeterminate) ? 'remove' : ((checked) ? 'check' : '');
