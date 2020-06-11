@@ -146,7 +146,7 @@ export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>(
     }
   };
 
-  const handleParentChange = (checkedValue: boolean) => {
+  const handleParentChange = (checkedValue: boolean, indeterminate: boolean = false) => {
     const updatedArray = [...childArray].fill(checkedValue);
     const optionsList = (selected && selected.length > 0) ? selectedArrayValues.slice() : getValuesFromList(list);
     const labelsList = (selected && selected.length > 0) ? selectedArrayLabels.slice() : getLabelsFromList(list);
@@ -155,9 +155,8 @@ export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>(
     setChecked(updatedArray);
     setSelectedArrayValues(selectedValues);
     setSelectedArrayLabels(selectedLabelsCopy);
-    if (checkedValue) {
-      setParentStatus({ checked: checkedValue, indeterminate: !checkedValue });
-    }
+    setParentStatus({ indeterminate, checked: checkedValue });
+
     if (onChange) {
       onChange(selectedValues, selectedLabelsCopy, true);
     }
