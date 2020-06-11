@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressRing component 
+  value: 30, size: "regular"
+ 1`] = `
+<svg
+  className="Ring Ring--regular"
+  viewBox="0 0 50 50"
+>
+  <circle
+    className="Ring-background"
+    cx={25}
+    cy={25}
+    fill="none"
+    r={20}
+    strokeDasharray="125.66370614359172 125.66370614359172"
+    strokeWidth="8"
+  />
+  <circle
+    className="Ring-indicator"
+    cx={25}
+    cy={25}
+    fill="none"
+    r={20}
+    strokeDasharray="125.66370614359172 125.66370614359172"
+    strokeDashoffset={87.96459430051421}
+    strokeWidth="8"
+  />
+</svg>
+`;
+
+exports[`ProgressRing component 
+  value: 30, size: "small"
+ 1`] = `
+<svg
+  className="Ring Ring--small"
+  viewBox="0 0 50 50"
+>
+  <circle
+    className="Ring-background"
+    cx={25}
+    cy={25}
+    fill="none"
+    r={20}
+    strokeDasharray="125.66370614359172 125.66370614359172"
+    strokeWidth="8"
+  />
+  <circle
+    className="Ring-indicator"
+    cx={25}
+    cy={25}
+    fill="none"
+    r={20}
+    strokeDasharray="125.66370614359172 125.66370614359172"
+    strokeDashoffset={87.96459430051421}
+    strokeWidth="8"
+  />
+</svg>
+`;

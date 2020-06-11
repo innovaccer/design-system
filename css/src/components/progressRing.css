@@ -1,0 +1,26 @@
+.Ring {
+  transform: rotate(-90deg);
+}
+
+.Ring--regular {
+  height: var(--spacing-3);
+  width: var(--spacing-3);
+}
+
+.Ring--small {
+  height: var(--spacing-2);
+  width: var(--spacing-2);
+}
+
+.Ring Circle {
+  fill: none;
+}
+
+.Ring-background {
+  stroke: var(--secondary-lightest);
+}
+
+.Ring-indicator {
+  stroke: var(--primary);
+  transition: stroke-dashOffset 200ms;
+}
