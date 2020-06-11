@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { RowData, ColumnSchema } from './Grid';
 import { Dropdown, Grid, Placeholder, PlaceholderParagraph, Heading, Icon, Button } from '@/index';
-import { reorderCol, resizableCol } from './utility';
+import { reorderCol, resizeCol } from './utility';
 import { GridCell } from './GridCell';
 
 interface SharedCellProps {
@@ -136,7 +136,12 @@ const HeaderCell = (props: HeaderCellProps) => {
         </>
       )}
       {schema.resizable && (
-        <span className="Grid-cellResize" onMouseDown={() => resizableCol(_this, schema.name, el.current)} />
+        <span
+          className="Grid-cellResize"
+          onMouseDown={() => {
+            resizeCol(_this, schema.name, el.current);
+          }}
+        />
       )}
     </div>
   );
@@ -169,6 +174,7 @@ const BodyCell = (props: BodyCellProps) => {
         />
       )}
       <GridCell
+        key={`${rowIndex}-${colIndex}`}
         rowIndex={rowIndex}
         size={size}
         schema={schema}
@@ -211,6 +217,7 @@ export const Cell = (props: CellProps) => {
 
   return (
     <div
+      key={`${rowIndex}-${colIndex}`}
       className={cellClass}
       data-name={schema.name}
       style={{

@@ -1,12 +1,15 @@
 import { Grid } from '@/index';
 import { ColumnSchema } from './Grid';
 
-export const resizableCol = (_this: Grid, name: string, el: HTMLDivElement | null) => {
+export const resizeCol = (_this: Grid, name: string, el: HTMLDivElement | null) => {
+  const elX = el?.getBoundingClientRect().x;
   function resizable(ev: MouseEvent) {
     ev.preventDefault();
-    _this.updateColumnSchema(name, {
-      width: ev.pageX - el!.getClientRects()[0].x
-    });
+    if (elX) {
+      _this.updateColumnSchema(name, {
+        width: ev.pageX - elX
+      });
+    }
   }
 
   window.addEventListener('mousemove', resizable);
@@ -23,16 +26,28 @@ export const reorderCol = (_this: Grid, name: string, el: HTMLDivElement | null)
     schema
   } = _this.state;
 
+  const getColumns = () => (
+    _this.gridRef.current!.querySelectorAll(`.Grid-cellGroup--${cellType} .Grid-cell.Grid-cell--head`)
+  );
+
+  const sI = schema.findIndex(s => s.name === name);
+  const cellType = schema[sI].pinned ? 'pinned' : 'main';
+  const cols = getColumns();
+  const colRect: any[] = [];
+  cols.forEach(c => {
+    colRect.push(c.getBoundingClientRect());
+  });
+  const currX = el?.getBoundingClientRect().x;
+
   function reorder(ev: MouseEvent) {
     ev.preventDefault();
-    const index = schema.findIndex(s => s.name === name);
-    const cellType = schema[index].pinned ? 'pinned' : 'main';
-    const columns = _this.gridRef.current!.querySelectorAll(`.Grid--${cellType} .Grid-head .Grid-cell.Grid-cell--head`);
+
     if (el) {
-      columns.forEach(c => {
-        const { x, width } = c.getClientRects()[0];
-        if (c.contains(ev.target as Node)) {
-          const { x: currX } = el.getClientRects()[0];
+      const columns = getColumns();
+      columns.forEach((c, index) => {
+        const { x, width } = colRect[index];
+
+        if (currX && c.contains(ev.target as Node)) {
           // @ts-ignore
           let left = c.offsetLeft;
           if (currX < x) left += width;
