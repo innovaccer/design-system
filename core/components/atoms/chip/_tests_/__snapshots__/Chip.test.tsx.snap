@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chip component 
+  type: "Action"
+ 1`] = `
+<div>
+  <Component
+    className="Chip--Action Chip"
+    clearbutton={false}
+    label="Selection"
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  />
+</div>
+`;
+
+exports[`Chip component 
+  type: "Action", disabled: false
+ 1`] = `
+<div>
+  <Component
+    className="Chip--Action Chip"
+    clearbutton={false}
+    disabled={false}
+    label="Selection"
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  />
+</div>
+`;
+
+exports[`Chip component 
+  type: "Action", disabled: true
+ 1`] = `
+<div>
+  <Component
+    className="Chip--disabled--Action Chip"
+    clearbutton={false}
+    disabled={true}
+    label="Selection"
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  />
+</div>
+`;
+
+exports[`Chip component 
+  type: "Input"
+ 1`] = `
+<div>
+  <Component
+    className="Chip--Input Chip"
+    label="Selection"
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  />
+</div>
+`;
+
+exports[`Chip component 
+  type: "Input", disabled: false
+ 1`] = `
+<div>
+  <Component
+    className="Chip--Input Chip"
+    disabled={false}
+    label="Selection"
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  />
+</div>
+`;
+
+exports[`Chip component 
+  type: "Input", disabled: true
+ 1`] = `
+<div>
+  <Component
+    className="Chip--disabled--Input Chip"
+    disabled={true}
+    label="Selection"
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  />
+</div>
+`;
+
+exports[`Chip component 
+  type: "Selection"
+ 1`] = `
+<div>
+  <Component
+    className="Chip--Selection Chip"
+    label="Selection"
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  />
+</div>
+`;
+
+exports[`Chip component 
+  type: "Selection", disabled: false
+ 1`] = `
+<div>
+  <Component
+    className="Chip--Selection Chip"
+    disabled={false}
+    label="Selection"
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  />
+</div>
+`;
+
+exports[`Chip component 
+  type: "Selection", disabled: true
+ 1`] = `
+<div>
+  <Component
+    className="Chip--disabled--Selection Chip"
+    disabled={true}
+    label="Selection"
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  />
+</div>
+`;
+
+exports[`Chip component 
+  type: "Selection", selected: false
+ 1`] = `
+<div>
+  <Component
+    className="Chip--Selection Chip"
+    label="Selection"
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={false}
+  />
+</div>
+`;
+
+exports[`Chip component 
+  type: "Selection", selected: true
+ 1`] = `
+<div>
+  <Component
+    className="Chip--Selection Chip Chip--Selection--selected"
+    label="Selection"
+    onClick={[Function]}
+    onClose={[Function]}
+    selected={true}
+  />
+</div>
+`;
