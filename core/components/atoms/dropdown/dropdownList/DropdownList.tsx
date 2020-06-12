@@ -12,7 +12,7 @@ import classNames from 'classnames';
 
 type ReactMouseEvent = React.MouseEvent<HTMLDivElement, MouseEvent>;
 
-export type ButtonAppearance = 'basic' | 'transparent';
+export type TriggerAppearance = 'basic' | 'transparent';
 
 export type Size = 'tiny' | 'regular';
 
@@ -47,7 +47,7 @@ export interface DropdownListProps {
    * Appearance of `Dropdown` trigger button
    * @default "basic"
    */
-  buttonAppearance?: ButtonAppearance;
+  buttonAppearance?: TriggerAppearance;
   /**
    * Material icon name
    */
@@ -124,9 +124,13 @@ export interface DropdownListProps {
    */
   selected?: Option[];
   /**
-   * Adds custom CSS to `Dropdown`
+   * Adds custom width to `Dropdown`
    */
-  style?: React.CSSProperties;
+  width?: number;
+  /**
+   * Adds max width to `Dropdown`
+   */
+  maxWidth?: number;
   /**
    * Callback function to change the label of trigger button when options are selected
    */
@@ -190,6 +194,7 @@ const DropdownList = (props: OptionsProps) => {
     placeholder,
     searchTerm,
     limit,
+    maxWidth,
     offset,
     optionsLength,
     showApplyButton,
@@ -198,7 +203,6 @@ const DropdownList = (props: OptionsProps) => {
     inlineLabel,
     checkboxes,
     search,
-    style,
     onChange,
     onSearchChange,
     onChangeTriggerLabel,
@@ -223,7 +227,7 @@ const DropdownList = (props: OptionsProps) => {
 
   const prevDropdownOpen = usePrevious(dropdownOpen);
   const prevListOptions = usePrevious(listOptions);
-  const width = (style && style.width) ? style.width : '100%';
+  const width = props.width ? props.width : '100%';
 
   const setSelectButtonLabel = (selectedArray: any[] = []) => {
     const selectedLength = selectedArray.length;
@@ -251,6 +255,7 @@ const DropdownList = (props: OptionsProps) => {
       const popperWrapperStyle = {
         width: menu ? popoverWidth : `${dropdownElement?.clientWidth}px`,
         minWidth: showApplyButton && checkboxes ? '176px' : '128px',
+        maxWidth: maxWidth ? maxWidth : '100%'
       };
       setPopoverStyle(popperWrapperStyle);
     }
@@ -332,15 +337,15 @@ const DropdownList = (props: OptionsProps) => {
       disabled={disabled}
       inlineLabel={inlineLabel}
       width={width}
+      maxWidth={maxWidth}
       menu={menu}
     >
       {buttonLabel}
     </DropdownButton>
   );
 
-  const dropdownWrapperStyle = menu ? style : {
+  const dropdownWrapperStyle = menu ? {} : {
     width,
-    ...style
   };
 
   const dropdownStyle: React.CSSProperties = {
