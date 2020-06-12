@@ -161,3 +161,18 @@
 * e6c4389 feat: adds Table
 * 9f840fc feat: removes data state and adds multiple utility for Grid
 * d7f869b feat: adds progressBar component
+
+-------------------
+ **v1.0.0-12**  (2020-06-12) 
+
+* a461974 v1.0.0-12
+* 9666732 fix: fixes dropdown bulk docs
+* 74c6497 fix: adds flex-grow in TabsWrapper
+* 0bf40b7 fix: fixes width of Message
+* f84171d fix: fixes shadow of Popover
+* 83e1f83 fix: adds missing callbacks in Table and List with general fixes
+* 12730b5 fix: fixes checkbox indeterminate toggle
+* 50bd895 feat: adds progress ring
+* 91c5f75 fix: fixes common issues in Grid
+* afe8d58 chore: adds line height in checkbox
+* 3bc52d1 chore: removes badges and pills default margin

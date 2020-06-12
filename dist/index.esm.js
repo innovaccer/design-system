@@ -678,10 +678,10 @@ var Checkbox = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
   };
 
   var onChangeHandler = function onChangeHandler() {
-    var checkedValue = props.indeterminate ? true : !checked;
+    var checkedValue = props.indeterminate ? false : !checked;
     setChecked(checkedValue);
     setIndeterminate(false);
-    if (onChange) onChange(checkedValue);
+    if (onChange) onChange(checkedValue, false);
   };
 
   var IconName = props.indeterminate ? 'remove' : checked ? 'check' : '';
@@ -2495,17 +2495,17 @@ var DonutChart = function DonutChart(props) {
  * Throttle execution of a function. Especially useful for rate limiting
  * execution of handlers on events like resize and scroll.
  *
- * @param  {Number}    delay          A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
- * @param  {Boolean}   [noTrailing]   Optional, defaults to false. If noTrailing is true, callback will only execute every `delay` milliseconds while the
+ * @param  {number}    delay -          A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
+ * @param  {boolean}   [noTrailing] -   Optional, defaults to false. If noTrailing is true, callback will only execute every `delay` milliseconds while the
  *                                    throttled-function is being called. If noTrailing is false or unspecified, callback will be executed one final time
  *                                    after the last throttled-function call. (After the throttled-function has not been called for `delay` milliseconds,
- *                                    the internal counter is reset)
- * @param  {Function}  callback       A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
+ *                                    the internal counter is reset).
+ * @param  {Function}  callback -       A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
  *                                    to `callback` when the throttled-function is executed.
- * @param  {Boolean}   [debounceMode] If `debounceMode` is true (at begin), schedule `clear` to execute after `delay` ms. If `debounceMode` is false (at end),
+ * @param  {boolean}   [debounceMode] - If `debounceMode` is true (at begin), schedule `clear` to execute after `delay` ms. If `debounceMode` is false (at end),
  *                                    schedule `callback` to execute after `delay` ms.
  *
- * @return {Function}  A new, throttled, function.
+ * @returns {Function}  A new, throttled, function.
  */
 function throttle (delay, noTrailing, callback, debounceMode) {
   /*
@@ -2544,9 +2544,12 @@ function throttle (delay, noTrailing, callback, debounceMode) {
 
 
   function wrapper() {
+    for (var _len = arguments.length, arguments_ = new Array(_len), _key = 0; _key < _len; _key++) {
+      arguments_[_key] = arguments[_key];
+    }
+
     var self = this;
     var elapsed = Date.now() - lastExec;
-    var args = arguments;
 
     if (cancelled) {
       return;
@@ -2555,7 +2558,7 @@ function throttle (delay, noTrailing, callback, debounceMode) {
 
     function exec() {
       lastExec = Date.now();
-      callback.apply(self, args);
+      callback.apply(self, arguments_);
     }
     /*
      * If `debounceMode` is true (at begin) this is used to clear the flag
@@ -2610,14 +2613,14 @@ function throttle (delay, noTrailing, callback, debounceMode) {
  * guarantees that a function is only executed a single time, either at the
  * very beginning of a series of calls, or at the very end.
  *
- * @param  {Number}   delay         A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
- * @param  {Boolean}  [atBegin]     Optional, defaults to false. If atBegin is false or unspecified, callback will only be executed `delay` milliseconds
+ * @param  {number}   delay -         A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
+ * @param  {boolean}  [atBegin] -     Optional, defaults to false. If atBegin is false or unspecified, callback will only be executed `delay` milliseconds
  *                                  after the last debounced-function call. If atBegin is true, callback will be executed only at the first debounced-function call.
  *                                  (After the throttled-function has not been called for `delay` milliseconds, the internal counter is reset).
- * @param  {Function} callback      A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
+ * @param  {Function} callback -      A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
  *                                  to `callback` when the debounced-function is executed.
  *
- * @return {Function} A new, debounced function.
+ * @returns {Function} A new, debounced function.
  */
 
 function debounce (delay, atBegin, callback) {
@@ -2637,10 +2640,11 @@ var DropdownButton = /*#__PURE__*/forwardRef(function (props, ref) {
       menu = _props$menu === void 0 ? false : _props$menu,
       children = props.children,
       width = props.width,
+      maxWidth = props.maxWidth,
       icon = props.icon,
       disabled = props.disabled,
       inlineLabel = props.inlineLabel,
-      rest = _objectWithoutProperties(props, ["size", "appearance", "placeholder", "menu", "children", "width", "icon", "disabled", "inlineLabel"]);
+      rest = _objectWithoutProperties(props, ["size", "appearance", "placeholder", "menu", "children", "width", "maxWidth", "icon", "disabled", "inlineLabel"]);
 
   var buttonDisabled = disabled ? 'disabled' : 'default';
   var trimmedPlaceholder = placeholder.trim();
@@ -2649,15 +2653,14 @@ var DropdownButton = /*#__PURE__*/forwardRef(function (props, ref) {
   var label = inlineLabel && inlineLabel.trim();
   var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, "Button--".concat(appearance), appearance), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, 'DropdownButton', true), _defineProperty(_classNames, "DropdownButton--".concat(size), size), _defineProperty(_classNames, 'DropdownButton--icon', icon), _defineProperty(_classNames, 'DropdownButton--moreIcon', menu), _defineProperty(_classNames, 'DropdownButton--placeholder', !children && !menu), _defineProperty(_classNames, 'DropdownButton--label', label), _classNames));
   var labelClass = classNames(_defineProperty({}, 'DropdownButton-label', true));
-  var style = {
-    width: width
-  };
   return /*#__PURE__*/createElement("button", _extends({
     ref: ref,
     value: children,
     className: buttonClass,
     disabled: disabled,
-    style: menu ? {} : style
+    style: {
+      maxWidth: maxWidth
+    }
   }, rest), !menu && /*#__PURE__*/createElement("div", {
     className: "DropdownButton-wrapper"
   }, label && /*#__PURE__*/createElement("div", {
@@ -2803,6 +2806,8 @@ var ListCheckbox = /*#__PURE__*/forwardRef(function (props, ref) {
   };
 
   var handleParentChange = function handleParentChange(checkedValue) {
+    var indeterminate = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
     var updatedArray = _toConsumableArray(childArray).fill(checkedValue);
 
     var optionsList = selected && selected.length > 0 ? selectedArrayValues.slice() : getValuesFromList(list);
@@ -2812,13 +2817,10 @@ var ListCheckbox = /*#__PURE__*/forwardRef(function (props, ref) {
     setChecked(updatedArray);
     setSelectedArrayValues(selectedValues);
     setSelectedArrayLabels(selectedLabelsCopy);
-
-    if (checkedValue) {
-      setParentStatus({
-        checked: checkedValue,
-        indeterminate: !checkedValue
-      });
-    }
+    setParentStatus({
+      indeterminate: indeterminate,
+      checked: checkedValue
+    });
 
     if (onChange) {
       onChange(selectedValues, selectedLabelsCopy, true);
@@ -2924,6 +2926,7 @@ var DropdownList = function DropdownList(props) {
       placeholder = props.placeholder,
       searchTerm = props.searchTerm,
       limit = props.limit,
+      maxWidth = props.maxWidth,
       offset = props.offset,
       optionsLength = props.optionsLength,
       showApplyButton = props.showApplyButton,
@@ -2932,7 +2935,6 @@ var DropdownList = function DropdownList(props) {
       inlineLabel = props.inlineLabel,
       checkboxes = props.checkboxes,
       search = props.search,
-      style = props.style,
       onChange = props.onChange,
       onSearchChange = props.onSearchChange,
       onChangeTriggerLabel = props.onChangeTriggerLabel,
@@ -2990,7 +2992,7 @@ var DropdownList = function DropdownList(props) {
 
   var prevDropdownOpen = usePrevious(dropdownOpen);
   var prevListOptions = usePrevious(listOptions);
-  var width = style && style.width ? style.width : '100%';
+  var width = props.width ? props.width : '100%';
 
   var setSelectButtonLabel = function setSelectButtonLabel() {
     var selectedArray = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
@@ -3019,7 +3021,8 @@ var DropdownList = function DropdownList(props) {
       var popoverWidth = width !== '100%' ? width : "".concat(dropdownElement === null || dropdownElement === void 0 ? void 0 : (_dropdownElement$pare = dropdownElement.parentElement) === null || _dropdownElement$pare === void 0 ? void 0 : _dropdownElement$pare.clientWidth, "px");
       var popperWrapperStyle = {
         width: menu ? popoverWidth : "".concat(dropdownElement === null || dropdownElement === void 0 ? void 0 : dropdownElement.clientWidth, "px"),
-        minWidth: showApplyButton && checkboxes ? '176px' : '128px'
+        minWidth: showApplyButton && checkboxes ? '176px' : '128px',
+        maxWidth: maxWidth ? maxWidth : '100%'
       };
       setPopoverStyle(popperWrapperStyle);
     }
@@ -3096,11 +3099,12 @@ var DropdownList = function DropdownList(props) {
     disabled: disabled,
     inlineLabel: inlineLabel,
     width: width,
+    maxWidth: maxWidth,
     menu: menu
   }, buttonLabel);
-  var dropdownWrapperStyle = menu ? style : _objectSpread2({
+  var dropdownWrapperStyle = menu ? {} : {
     width: width
-  }, style);
+  };
   var dropdownStyle = {
     maxHeight: maxHeight,
     overflowY: 'auto',
@@ -4654,6 +4658,49 @@ var Placeholder = function Placeholder(props) {
 };
 Placeholder.displayName = 'Placeholder';
 
+var useIsMount$2 = function useIsMount() {
+  var isMountRef = useRef$1(true);
+  useEffect$3(function () {
+    isMountRef.current = false;
+  }, []);
+  return isMountRef.current;
+};
+var ProgressRing = function ProgressRing(props) {
+  var _props$size = props.size,
+      size = _props$size === void 0 ? 'regular' : _props$size,
+      value = props.value,
+      onChange = props.onChange;
+  var isMount = useIsMount$2();
+  useEffect$3(function () {
+    if (onChange && !isMount) onChange(value);
+  }, [value]);
+  var radius = 20;
+  var circumference = 2 * Math.PI * radius;
+  var ProgressRingClass = classNames(_defineProperty({
+    Ring: true
+  }, "Ring--".concat(size), size));
+  var svgProps = {
+    viewBox: '0 0 50 50'
+  };
+  var circleProps = {
+    cx: 25,
+    cy: 25,
+    r: radius,
+    fill: 'none',
+    strokeWidth: '8',
+    strokeDasharray: "".concat(circumference, " ").concat(circumference)
+  };
+  return /*#__PURE__*/createElement("svg", _extends({
+    className: ProgressRingClass
+  }, svgProps), /*#__PURE__*/createElement("circle", _extends({
+    className: "Ring-background"
+  }, circleProps)), /*#__PURE__*/createElement("circle", _extends({
+    className: "Ring-indicator",
+    strokeDashoffset: circumference - value / 100 * circumference
+  }, circleProps)));
+};
+ProgressRing.displayName = 'ProgressRing';
+
 var RangePicker = function RangePicker(props) {
   var startDateProp = props.startDate,
       endDateProp = props.endDate,
@@ -5039,13 +5086,17 @@ var Tab = function Tab(props) {
 };
 Tab.displayName = 'Tab';
 
-var resizableCol = function resizableCol(_this, name, el) {
+var resizeCol = function resizeCol(_this, name, el) {
+  var elX = el === null || el === void 0 ? void 0 : el.getBoundingClientRect().x;
+
   function resizable(ev) {
     ev.preventDefault();
 
-    _this.updateColumnSchema(name, {
-      width: ev.pageX - el.getClientRects()[0].x
-    });
+    if (elX) {
+      _this.updateColumnSchema(name, {
+        width: ev.pageX - elX
+      });
+    }
   }
 
   window.addEventListener('mousemove', resizable);
@@ -5058,24 +5109,33 @@ var reorderCol = function reorderCol(_this, name, el) {
   var to;
   var schema = _this.state.schema;
 
+  var getColumns = function getColumns() {
+    return _this.gridRef.current.querySelectorAll(".Grid-cellGroup--".concat(cellType, " .Grid-cell.Grid-cell--head"));
+  };
+
+  var sI = schema.findIndex(function (s) {
+    return s.name === name;
+  });
+  var cellType = schema[sI].pinned ? 'pinned' : 'main';
+  var cols = getColumns();
+  var colRect = [];
+  cols.forEach(function (c) {
+    colRect.push(c.getBoundingClientRect());
+  });
+  var currX = el === null || el === void 0 ? void 0 : el.getBoundingClientRect().x;
+
   function reorder(ev) {
     ev.preventDefault();
-    var index = schema.findIndex(function (s) {
-      return s.name === name;
-    });
-    var cellType = schema[index].pinned ? 'pinned' : 'main';
-
-    var columns = _this.gridRef.current.querySelectorAll(".Grid--".concat(cellType, " .Grid-head .Grid-cell.Grid-cell--head"));
 
     if (el) {
-      columns.forEach(function (c) {
-        var _c$getClientRects$ = c.getClientRects()[0],
-            x = _c$getClientRects$.x,
-            width = _c$getClientRects$.width;
+      var columns = getColumns();
+      columns.forEach(function (c, index) {
+        var _colRect$index = colRect[index],
+            x = _colRect$index.x,
+            width = _colRect$index.width;
 
-        if (c.contains(ev.target)) {
-          var currX = el.getClientRects()[0].x; // @ts-ignore
-
+        if (currX && c.contains(ev.target)) {
+          // @ts-ignore
           var left = c.offsetLeft;
           if (currX < x) left += width;
 
@@ -5312,8 +5372,8 @@ var GridCell = function GridCell(props) {
   var size = props.size,
       schema = props.schema,
       loading = props.loading;
-  if (schema.cellTemplate) return schema.cellTemplate(props);
-  var data = translateData(schema, props.data);
+  if (schema.cellRenderer) return schema.cellRenderer(props);
+  var data = !loading ? translateData(schema, props.data) : {};
   var name = schema.name,
       _schema$cellType = schema.cellType,
       cellType = _schema$cellType === void 0 ? 'DEFAULT' : _schema$cellType,
@@ -5506,11 +5566,11 @@ var HeaderCell = function HeaderCell(props) {
   var options = [{
     label: 'Pin Left',
     value: 'pinLeft',
-    icon: 'first_page'
+    icon: 'skip_previous'
   }, {
     label: 'Pin Right',
     value: 'pinRight',
-    icon: 'last_page'
+    icon: 'skip_next'
   }, {
     label: 'Hide Column',
     value: 'hide',
@@ -5571,7 +5631,7 @@ var HeaderCell = function HeaderCell(props) {
   })), schema.resizable && /*#__PURE__*/createElement("span", {
     className: "Grid-cellResize",
     onMouseDown: function onMouseDown() {
-      return resizableCol(_this, schema.name, el.current);
+      resizeCol(_this, schema.name, el.current);
     }
   }));
 };
@@ -5600,7 +5660,9 @@ var BodyCell = function BodyCell(props) {
       return setExpanded(!expanded);
     }
   }), /*#__PURE__*/createElement(GridCell, {
+    key: "".concat(rowIndex, "-").concat(colIndex),
     rowIndex: rowIndex,
+    colIndex: colIndex,
     size: size,
     schema: schema,
     data: data,
@@ -5627,6 +5689,7 @@ var Cell = function Cell(props) {
   });
   if (schema.hidden) return null;
   return /*#__PURE__*/createElement("div", {
+    key: "".concat(rowIndex, "-").concat(colIndex),
     className: cellClass,
     "data-name": schema.name,
     style: {
@@ -5657,17 +5720,31 @@ var GridHead = function GridHead(props) {
   var _this$state = _this.state,
       init = _this$state.init,
       selectAll = _this$state.selectAll;
+  var pinnedSchema = schema.filter(function (s) {
+    return s.pinned;
+  });
+  var unpinnedSchema = schema.filter(function (s) {
+    return !s.pinned;
+  });
+
+  var renderCheckbox = function renderCheckbox(show) {
+    if (!show || !(withCheckbox && init)) return null;
+    return /*#__PURE__*/createElement("div", {
+      className: "Grid-cell Grid-cell--head Grid-checkboxCell"
+    }, loading ? /*#__PURE__*/createElement(Placeholder, {
+      withImage: true
+    }) : /*#__PURE__*/createElement(Checkbox, _extends({}, selectAll, {
+      onChange: _this.onSelectAll
+    })));
+  };
+
   return /*#__PURE__*/createElement("div", {
     className: "Grid-head"
   }, /*#__PURE__*/createElement("div", {
     className: "Grid-row Grid-row--head"
-  }, withCheckbox && init && /*#__PURE__*/createElement("div", {
-    className: "Grid-cell Grid-checkboxCell"
-  }, loading ? /*#__PURE__*/createElement(Placeholder, {
-    withImage: true
-  }) : /*#__PURE__*/createElement(Checkbox, _extends({}, selectAll, {
-    onChange: _this.onSelectAll
-  }))), schema.map(function (s, index) {
+  }, !!pinnedSchema.length && /*#__PURE__*/createElement("div", {
+    className: "Grid-cellGroup Grid-cellGroup--pinned"
+  }, renderCheckbox(!!pinnedSchema.length), pinnedSchema.map(function (s, index) {
     return /*#__PURE__*/createElement(Cell, {
       key: s.name,
       _this: _this,
@@ -5676,7 +5753,18 @@ var GridHead = function GridHead(props) {
       schema: s,
       colIndex: index
     });
-  })));
+  })), /*#__PURE__*/createElement("div", {
+    className: "Grid-cellGroup Grid-cellGroup--main"
+  }, renderCheckbox(!pinnedSchema.length), unpinnedSchema.map(function (s, index) {
+    return /*#__PURE__*/createElement(Cell, {
+      key: s.name,
+      _this: _this,
+      head: true,
+      draggable: draggable,
+      schema: s,
+      colIndex: index
+    });
+  }))));
 };
 
 var GridExtendedRow = function GridExtendedRow(props) {
@@ -5734,31 +5822,45 @@ var GridRow = function GridRow(props) {
       var onRowClick = _this.props.onRowClick;
 
       if (onRowClick) {
-        onRowClick(data);
-      } else {
-        // @ts-ignore
-        if (data._link) window.location = data._link;
+        onRowClick(data, rI);
       }
     }
   };
 
   var loading = _this.props.loading;
   var init = _this.state.init;
+  var pinnedSchema = schema.filter(function (s) {
+    return s.pinned;
+  });
+  var unpinnedSchema = schema.filter(function (s) {
+    return !s.pinned;
+  }); // const mainSchema = [
+  //   ...pinnedSchema,
+  //   ...unpinnedSchema
+  // ];
+
+  var renderCheckbox = function renderCheckbox(show) {
+    if (!show || !(withCheckbox && init)) return null;
+    return /*#__PURE__*/createElement("div", {
+      className: "Grid-cell Grid-cell--body Grid-checkboxCell"
+    }, loading ? /*#__PURE__*/createElement(Placeholder, {
+      withImage: true
+    }) : /*#__PURE__*/createElement(Checkbox, {
+      checked: data._selected,
+      onChange: function onChange(checked) {
+        _this.onSelect(rI, checked);
+      }
+    }));
+  };
+
   return /*#__PURE__*/createElement(Fragment, null, /*#__PURE__*/createElement("div", {
     className: rowClasses,
     onClick: onClickHandler
-  }, withCheckbox && init && /*#__PURE__*/createElement("div", {
-    className: "Grid-cell Grid-checkboxCell"
-  }, loading ? /*#__PURE__*/createElement(Placeholder, {
-    withImage: true
-  }) : /*#__PURE__*/createElement(Checkbox, {
-    checked: data._selected,
-    onChange: function onChange(checked) {
-      _this.onSelect(rI, checked);
-    }
-  })), schema.map(function (s, cI) {
+  }, !!pinnedSchema.length && /*#__PURE__*/createElement("div", {
+    className: "Grid-cellGroup Grid-cellGroup--pinned"
+  }, renderCheckbox(!!pinnedSchema.length), pinnedSchema.map(function (s, cI) {
     return /*#__PURE__*/createElement(Cell, {
-      key: rI * schema.length + cI,
+      key: "".concat(rI, "-").concat(cI),
       _this: _this,
       rowIndex: rI,
       colIndex: cI,
@@ -5766,7 +5868,19 @@ var GridRow = function GridRow(props) {
       data: data,
       expandedState: [expanded, setExpanded]
     });
-  })), expanded && /*#__PURE__*/createElement(GridExtendedRow, {
+  })), /*#__PURE__*/createElement("div", {
+    className: "Grid-cellGroup Grid-cellGroup--main"
+  }, renderCheckbox(!pinnedSchema.length), unpinnedSchema.map(function (s, cI) {
+    return /*#__PURE__*/createElement(Cell, {
+      key: rI * schema.length + (pinnedSchema.length + cI),
+      _this: _this,
+      rowIndex: rI,
+      colIndex: cI,
+      schema: s,
+      data: data,
+      expandedState: [expanded, setExpanded]
+    });
+  }))), expanded && /*#__PURE__*/createElement(GridExtendedRow, {
     _this: _this,
     data: data
   }));
@@ -5776,28 +5890,10 @@ var GridBody = function GridBody(props) {
   var _this = props._this,
       schema = props.schema,
       data = props.data,
-      withCheckbox = props.withCheckbox;
-  var size = _this.props.size;
-  var minRowHeight = {
-    comfortable: 54,
-    standard: 40,
-    compressed: 32,
-    tight: 24
-  };
-
-  var _React$useState = useState$3({
-    offset: 0,
-    avgRowHeight: minRowHeight[size],
-    inView: 20
-  }),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      state = _React$useState2[0],
-      setState = _React$useState2[1];
-
-  var gridBodyRef = useRef$1(null);
-  var offset = state.offset,
-      avgRowHeight = state.avgRowHeight,
-      inView = state.inView;
+      withCheckbox = props.withCheckbox,
+      offset = props.offset,
+      inView = props.inView,
+      avgRowHeight = props.avgRowHeight;
   var buffer = 50;
   var _this$props = _this.props,
       loading = _this$props.loading,
@@ -5818,68 +5914,8 @@ var GridBody = function GridBody(props) {
   }, function () {
     return {};
   }) : data.slice(offset, offset + buffer);
-
-  var onScrollHandler = function onScrollHandler() {
-    if (gridBodyRef.current) {
-      var el = gridBodyRef.current;
-      var scrollTop = el.scrollTop;
-      var items = el.querySelectorAll('.Grid-row');
-      var newScroll = Math.floor(scrollTop - offset * avgRowHeight);
-      var newInView = 0;
-      var currScroll = 0;
-      var i = 0;
-
-      while (i < items.length && currScroll + items[i].clientHeight <= el.clientHeight) {
-        var rowHeight = items[i].clientHeight;
-        currScroll += rowHeight;
-        newInView++;
-        i++;
-      }
-
-      if (newScroll > 0) {
-        currScroll = newScroll;
-        var newOffset = offset;
-        var newAvgHeight = avgRowHeight;
-        i = 0;
-
-        while (i < items.length && currScroll >= items[i].clientHeight) {
-          var _rowHeight = items[i].clientHeight;
-          currScroll -= _rowHeight;
-          newAvgHeight = (newOffset * newAvgHeight + _rowHeight) / (newOffset + 1);
-          newOffset++;
-          i++;
-        }
-
-        newOffset = newOffset < data.length - inView ? newOffset : data.length - inView - 1;
-
-        if (newOffset > offset) {
-          setState(_objectSpread2(_objectSpread2({}, state), {}, {
-            inView: newInView,
-            offset: newOffset,
-            avgRowHeight: newAvgHeight
-          }));
-        }
-      } else {
-        if (avgRowHeight) {
-          var diff = Math.floor(newScroll / avgRowHeight) || -1;
-
-          var _newOffset = offset + diff;
-
-          if (_newOffset < offset) {
-            setState(_objectSpread2(_objectSpread2({}, state), {}, {
-              inView: newInView,
-              offset: _newOffset < 0 ? 0 : _newOffset
-            }));
-          }
-        }
-      }
-    }
-  };
-
   return /*#__PURE__*/createElement("div", {
-    className: "Grid-body",
-    ref: gridBodyRef,
-    onScroll: onScrollHandler
+    className: "Grid-body"
   }, /*#__PURE__*/createElement("div", {
     className: "GridBody-padding",
     style: {
@@ -5897,8 +5933,124 @@ var GridBody = function GridBody(props) {
   }), /*#__PURE__*/createElement("div", {
     className: "GridBody-padding",
     style: {
-      height: "".concat(((withPagination ? pageSize : data.length) - inView - offset - 1) * avgRowHeight, "px")
+      height: "".concat(((withPagination ? dummyRows : data.length) - inView - offset - 1) * avgRowHeight, "px")
     }
+  }));
+};
+
+var MainGrid = function MainGrid(props) {
+  var _classNames;
+
+  var _this = props._this;
+  var _this$props = _this.props,
+      type = _this$props.type,
+      size = _this$props.size,
+      showHead = _this$props.showHead,
+      draggable = _this$props.draggable,
+      withCheckbox = _this$props.withCheckbox,
+      data = _this$props.data;
+  var schema = _this.state.schema;
+  var classes = classNames((_classNames = {
+    Grid: 'true'
+  }, _defineProperty(_classNames, "Grid--".concat(type), type), _defineProperty(_classNames, "Grid--".concat(size), size), _classNames));
+  var minRowHeight = {
+    comfortable: 54,
+    standard: 40,
+    compressed: 32,
+    tight: 24
+  };
+
+  var _React$useState = useState$3({
+    offset: 0,
+    avgRowHeight: minRowHeight[size],
+    inView: 20
+  }),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      state = _React$useState2[0],
+      setState = _React$useState2[1];
+
+  var offset = state.offset,
+      avgRowHeight = state.avgRowHeight,
+      inView = state.inView;
+
+  var onScrollHandler = function onScrollHandler() {
+    if (_this.gridRef && _this.gridRef.current) {
+      var el = _this.gridRef.current.querySelector('.Grid');
+
+      if (el) {
+        var scrollTop = el.scrollTop;
+        var items = el.querySelectorAll('.Grid-body .Grid-row');
+        var newScroll = Math.floor(scrollTop - offset * avgRowHeight);
+        var newInView = 0;
+        var currScroll = 0;
+        var i = 0;
+
+        while (i < items.length && currScroll + items[i].clientHeight <= el.clientHeight) {
+          var rowHeight = items[i].clientHeight;
+          currScroll += rowHeight;
+          newInView++;
+          i++;
+        }
+
+        if (newScroll > 0) {
+          currScroll = newScroll;
+          var newOffset = offset;
+          var newAvgHeight = avgRowHeight;
+          i = 0;
+
+          while (i < items.length && currScroll >= items[i].clientHeight) {
+            var _rowHeight = items[i].clientHeight;
+            currScroll -= _rowHeight;
+            newAvgHeight = (newOffset * newAvgHeight + _rowHeight) / (newOffset + 1);
+            newOffset++;
+            i++;
+          }
+
+          newOffset = newOffset < data.length - inView ? newOffset : data.length - inView - 1;
+
+          if (newOffset > offset) {
+            setState(_objectSpread2(_objectSpread2({}, state), {}, {
+              inView: newInView,
+              offset: newOffset,
+              avgRowHeight: newAvgHeight
+            }));
+          }
+        } else {
+          if (avgRowHeight) {
+            var diff = Math.floor(newScroll / avgRowHeight) || -1;
+
+            var _newOffset = offset + diff;
+
+            if (_newOffset < offset) {
+              setState(_objectSpread2(_objectSpread2({}, state), {}, {
+                inView: newInView,
+                offset: _newOffset < 0 ? 0 : _newOffset
+              }));
+            }
+          }
+        }
+      }
+    }
+  };
+
+  return /*#__PURE__*/createElement("div", {
+    className: classes,
+    onScroll: onScrollHandler
+  }, showHead && /*#__PURE__*/createElement(GridHead, {
+    key: 'GridHead',
+    _this: _this,
+    schema: schema,
+    draggable: draggable,
+    withCheckbox: withCheckbox
+  }), /*#__PURE__*/createElement(GridBody, {
+    key: 'GridBody',
+    _this: _this,
+    schema: schema,
+    data: data,
+    withCheckbox: withCheckbox,
+    offset: offset,
+    inView: inView,
+    avgRowHeight: avgRowHeight
   }));
 };
 
@@ -5916,7 +6068,7 @@ var Grid = /*#__PURE__*/function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_this), "gridRef", /*#__PURE__*/createRef());
 
-    _defineProperty(_assertThisInitialized(_this), "updateRenderedData", function (options) {
+    _defineProperty(_assertThisInitialized(_this), "updateRenderedData", debounce(100, function (options) {
       var _this$props = _this.props,
           pageSize = _this$props.pageSize,
           updateData = _this$props.updateData,
@@ -5941,7 +6093,7 @@ var Grid = /*#__PURE__*/function (_React$Component) {
       if (updateData) {
         updateData(opts);
       }
-    });
+    }));
 
     _defineProperty(_assertThisInitialized(_this), "updateRenderedSchema", function (newSchema) {
       _this.setState({
@@ -5972,11 +6124,11 @@ var Grid = /*#__PURE__*/function (_React$Component) {
       _this.updateRenderedSchema(newSchema);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "updateReorderHighlighter", function (dim) {
+    _defineProperty(_assertThisInitialized(_this), "updateReorderHighlighter", debounce(50, function (dim) {
       _this.setState({
         reorderHighlighter: dim
       });
-    });
+    }));
 
     _defineProperty(_assertThisInitialized(_this), "updateSelectAll", function (attr) {
       _this.setState({
@@ -6026,17 +6178,6 @@ var Grid = /*#__PURE__*/function (_React$Component) {
       }, function () {
         _this.updateRenderedData();
       });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "syncScroll", function (renderType) {
-      var pinnedGrid = _this.gridRef.current.querySelector('.Grid--pinned .Grid-body');
-
-      var mainGrid = _this.gridRef.current.querySelector('.Grid--main .Grid-body');
-
-      if (pinnedGrid && mainGrid) {
-        if (renderType === 'main') pinnedGrid.scrollTop = mainGrid.scrollTop;
-        if (renderType === 'pinned') mainGrid.scrollTop = pinnedGrid.scrollTop;
-      }
     });
 
     _defineProperty(_assertThisInitialized(_this), "syncSelectAll", function () {
@@ -6112,65 +6253,23 @@ var Grid = /*#__PURE__*/function (_React$Component) {
 
     }
   }, {
-    key: "renderGrid",
-    value: function renderGrid(renderType) {
-      var _classNames,
-          _this2 = this;
-
-      var _this$props3 = this.props,
-          type = _this$props3.type,
-          size = _this$props3.size,
-          showHead = _this$props3.showHead,
-          draggable = _this$props3.draggable,
-          withCheckbox = _this$props3.withCheckbox,
-          data = _this$props3.data;
-      var schema = this.state.schema;
-      var classes = classNames((_classNames = {
-        Grid: 'true'
-      }, _defineProperty(_classNames, "Grid--".concat(renderType), renderType), _defineProperty(_classNames, "Grid--".concat(type), type), _defineProperty(_classNames, "Grid--".concat(size), size), _classNames));
-      var pinnedSchema = schema.filter(function (s) {
-        return s.pinned;
-      });
-      var unpinnedSchema = schema.filter(function (s) {
-        return !s.pinned;
-      });
-      var mainSchema = [].concat(_toConsumableArray(pinnedSchema), _toConsumableArray(unpinnedSchema));
-      if (renderType === 'pinned' && pinnedSchema.length === 0) return null;
-      return /*#__PURE__*/createElement("div", {
-        className: classes,
-        onScroll: function onScroll() {
-          return _this2.syncScroll(renderType);
-        }
-      }, showHead && /*#__PURE__*/createElement(GridHead, {
-        _this: this,
-        schema: renderType === 'pinned' ? pinnedSchema : mainSchema,
-        draggable: draggable,
-        withCheckbox: withCheckbox
-      }), /*#__PURE__*/createElement(GridBody, {
-        _this: this,
-        schema: renderType === 'pinned' ? pinnedSchema : mainSchema,
-        data: data,
-        withCheckbox: withCheckbox
-      }));
-    }
-  }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
       var _this$state2 = this.state,
           init = _this$state2.init,
           schema = _this$state2.schema,
           reorderHighlighter = _this$state2.reorderHighlighter,
           page = _this$state2.page;
-      var _this$props4 = this.props,
-          loading = _this$props4.loading,
-          loaderSchema = _this$props4.loaderSchema,
-          withPagination = _this$props4.withPagination,
-          _onPageChange = _this$props4.onPageChange,
-          totalRecords = _this$props4.totalRecords,
-          pageSize = _this$props4.pageSize,
-          paginationType = _this$props4.paginationType;
+      var _this$props3 = this.props,
+          loading = _this$props3.loading,
+          loaderSchema = _this$props3.loaderSchema,
+          withPagination = _this$props3.withPagination,
+          _onPageChange = _this$props3.onPageChange,
+          totalRecords = _this$props3.totalRecords,
+          pageSize = _this$props3.pageSize,
+          paginationType = _this$props3.paginationType;
       if (!loading && !init && schema !== loaderSchema) this.setState({
         init: true
       });
@@ -6179,7 +6278,9 @@ var Grid = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/createElement("div", {
         className: "Grid-wrapper",
         ref: this.gridRef
-      }, this.renderGrid('pinned'), this.renderGrid('main'), reorderHighlighter && /*#__PURE__*/createElement("div", {
+      }, /*#__PURE__*/createElement(MainGrid, {
+        _this: this
+      }), reorderHighlighter && /*#__PURE__*/createElement("div", {
         className: "Grid-reorderHighlighter",
         style: {
           left: "".concat(reorderHighlighter, "px")
@@ -6193,7 +6294,7 @@ var Grid = /*#__PURE__*/function (_React$Component) {
         onPageChange: function onPageChange(newPage) {
           if (_onPageChange) _onPageChange(newPage);
 
-          _this3.setState({
+          _this2.setState({
             page: newPage
           });
         }
@@ -6236,7 +6337,9 @@ var Header = function Header(props) {
       updateData = props.updateData,
       _props$totalRecords = props.totalRecords,
       totalRecords = _props$totalRecords === void 0 ? 0 : _props$totalRecords,
-      onSelectAll = props.onSelectAll;
+      onSelectAll = props.onSelectAll,
+      _props$searchPlacehol = props.searchPlaceholder,
+      searchPlaceholder = _props$searchPlacehol === void 0 ? 'Search' : _props$searchPlacehol;
   var filterSchema = schema.filter(function (s) {
     return s.filters;
   }); // const sortingSchema = schema.filter(s => s.sortFn);
@@ -6257,7 +6360,23 @@ var Header = function Header(props) {
         searchTerm: value
       });
     }
-  };
+  }; // const onSortChange = (name: ColumnSchema['name'], filters: any[]) => {
+  //   const newFilterList = {
+  //     ...state.filterList,
+  //     [name]: filters
+  //   };
+  //   setState({
+  //     ...state,
+  //     filterList: newFilterList
+  //   });
+  //   if (updateData) {
+  //     updateData({
+  //       page: 1,
+  //       filterList: newFilterList
+  //     });
+  //   }
+  // };
+
 
   var onFilterChange = function onFilterChange(name, filters) {
     var newFilterList = _objectSpread2(_objectSpread2({}, state.filterList), {}, _defineProperty({}, name, filters));
@@ -6268,23 +6387,41 @@ var Header = function Header(props) {
 
     if (updateData) {
       updateData({
+        page: 1,
         filterList: newFilterList
       });
     }
-  };
+  }; // const onHideColumn = (selected: any[]) => {
+  //   const newSchema = schema.map(s => ({
+  //     ...s,
+  //     hidden: selected.findIndex(val => val === s.name) !== -1
+  //   }));
+  //   updateSchema(newSchema);
+  // }
+  // const columnOptions = schema.map(s => ({
+  //   label: s.displayName,
+  //   value: s.name
+  // }))
 
+
+  var selectedCount = data.filter(function (d) {
+    return d._selected;
+  }).length;
+  var label = withCheckbox && selectedCount ? "Selected ".concat(selectedCount, " items on this page") : "Showing ".concat(totalRecords, " items");
   return /*#__PURE__*/createElement("div", {
     className: "Header"
   }, /*#__PURE__*/createElement("div", {
-    className: "Header-content"
+    className: "Header-content Header-content--top"
   }, withSearch && /*#__PURE__*/createElement("div", {
     className: "Header-search"
   }, /*#__PURE__*/createElement(Input, {
     name: "GridHeader-search",
     icon: "search",
-    placeholder: "Search",
+    placeholder: searchPlaceholder,
     onChange: onSearchChange
-  })), !showHead && filterSchema.length > 0 && /*#__PURE__*/createElement("div", {
+  })), !showHead && /*#__PURE__*/createElement("div", {
+    className: "Header-dropdown"
+  }, !showHead && filterSchema.length > 0 && /*#__PURE__*/createElement("div", {
     className: "Header-filters"
   }, filterSchema.map(function (s) {
     var name = s.name,
@@ -6294,31 +6431,39 @@ var Header = function Header(props) {
       key: name,
       checkboxes: true,
       showApplyButton: true,
-      inlineLabel: displayName,
+      inlineLabel: displayName // icon={'filter_list'}
+      ,
       options: filters,
       onChange: function onChange(selected) {
         return onFilterChange(name, selected);
       }
     });
-  })), children), /*#__PURE__*/createElement("div", {
+  }))), /*#__PURE__*/createElement("div", {
+    className: "Header-actions"
+  }, children)), /*#__PURE__*/createElement("div", {
+    className: "Header-content Header-content--bottom"
+  }, /*#__PURE__*/createElement("div", {
     className: "Header-label"
   }, withCheckbox && /*#__PURE__*/createElement(Checkbox, _extends({}, getSelectAll(data), {
     onChange: onSelectAll
   })), /*#__PURE__*/createElement(Text, {
     small: true,
     weight: 'medium'
-  }, "Showing ".concat(totalRecords, " items"))));
+  }, label))));
 };
 
 var List = function List(props) {
   var type = props.type,
       size = props.size,
       withHeader = props.withHeader,
+      headerProps = props.headerProps,
       withCheckbox = props.withCheckbox,
       withPagination = props.withPagination,
       paginationType = props.paginationType,
       pageSize = props.pageSize,
       loaderSchema = props.loaderSchema,
+      onRowClick = props.onRowClick,
+      onSelectProp = props.onSelect,
       dataProp = props.data,
       schemaProp = props.schema,
       fetchData = props.fetchData;
@@ -6392,9 +6537,17 @@ var List = function List(props) {
   };
 
   var onSelect = function onSelect(rowIndex, selected) {
-    var newData = updateBatchData(state.data, [rowIndex], {
+    var indexes = [rowIndex];
+    var newData = updateBatchData(state.data, indexes, {
       _selected: selected
     });
+
+    if (onSelectProp) {
+      onSelectProp(indexes, selected, newData.filter(function (d) {
+        return d._selected;
+      }));
+    }
+
     setState(_objectSpread2(_objectSpread2({}, state), {}, {
       data: newData
     }));
@@ -6409,10 +6562,20 @@ var List = function List(props) {
     var newData = updateBatchData(state.data, indexes, {
       _selected: selected
     });
+
+    if (onSelectProp) {
+      onSelectProp(indexes, selected, newData.filter(function (d) {
+        return d._selected;
+      }));
+    }
+
     setState(_objectSpread2(_objectSpread2({}, state), {}, {
       data: newData
     }));
   };
+
+  var headerChildren = headerProps.children,
+      headerAttr = _objectWithoutProperties(headerProps, ["children"]);
 
   return /*#__PURE__*/createElement("div", {
     className: "List"
@@ -6420,13 +6583,10 @@ var List = function List(props) {
     className: "List-header"
   }, /*#__PURE__*/createElement(Header, _extends({}, state, {
     updateData: async ? updateAsyncData : updateSyncData,
-    withSearch: true,
     showHead: false,
     withCheckbox: withCheckbox,
     onSelectAll: onSelectAll
-  }), /*#__PURE__*/createElement(Button, {
-    icon: "events"
-  }))), /*#__PURE__*/createElement("div", {
+  }, headerAttr), headerChildren)), /*#__PURE__*/createElement("div", {
     className: "List-grid"
   }, /*#__PURE__*/createElement(Grid, _extends({}, state, {
     showHead: false,
@@ -6439,7 +6599,8 @@ var List = function List(props) {
     withPagination: withPagination,
     paginationType: paginationType,
     pageSize: pageSize,
-    loaderSchema: loaderSchema
+    loaderSchema: loaderSchema,
+    onRowClick: onRowClick
   }))));
 };
 
@@ -6452,11 +6613,14 @@ var Table = function Table(props) {
       size = props.size,
       draggable = props.draggable,
       withHeader = props.withHeader,
+      headerProps = props.headerProps,
       withCheckbox = props.withCheckbox,
       showMenu = props.showMenu,
       withPagination = props.withPagination,
       paginationType = props.paginationType,
       pageSize = props.pageSize,
+      onRowClick = props.onRowClick,
+      onSelectProp = props.onSelect,
       loaderSchema = props.loaderSchema,
       dataProp = props.data,
       schemaProp = props.schema,
@@ -6531,9 +6695,17 @@ var Table = function Table(props) {
   };
 
   var onSelect = function onSelect(rowIndex, selected) {
-    var newData = updateBatchData(state.data, [rowIndex], {
+    var indexes = [rowIndex];
+    var newData = updateBatchData(state.data, indexes, {
       _selected: selected
     });
+
+    if (onSelectProp) {
+      onSelectProp(indexes, selected, newData.filter(function (d) {
+        return d._selected;
+      }));
+    }
+
     setState(_objectSpread2(_objectSpread2({}, state), {}, {
       data: newData
     }));
@@ -6548,10 +6720,20 @@ var Table = function Table(props) {
     var newData = updateBatchData(state.data, indexes, {
       _selected: selected
     });
+
+    if (onSelectProp) {
+      onSelectProp(indexes, selected, newData.filter(function (d) {
+        return d._selected;
+      }));
+    }
+
     setState(_objectSpread2(_objectSpread2({}, state), {}, {
       data: newData
     }));
   };
+
+  var headerChildren = headerProps.children,
+      headerAttr = _objectWithoutProperties(headerProps, ["children"]);
 
   return /*#__PURE__*/createElement("div", {
     className: "Table"
@@ -6559,11 +6741,9 @@ var Table = function Table(props) {
     className: "Table-header"
   }, /*#__PURE__*/createElement(Header, _extends({}, state, {
     updateData: async ? updateAsyncData : updateSyncData,
-    withSearch: true,
-    showHead: true
-  }), /*#__PURE__*/createElement(Button, {
-    icon: "events"
-  }))), /*#__PURE__*/createElement("div", {
+    showHead: true,
+    withCheckbox: withCheckbox
+  }, headerAttr), headerChildren)), /*#__PURE__*/createElement("div", {
     className: "Table-grid"
   }, /*#__PURE__*/createElement(Grid, _extends({}, state, {
     updateData: async ? updateAsyncData : updateSyncData,
@@ -6577,8 +6757,9 @@ var Table = function Table(props) {
     withPagination: withPagination,
     paginationType: paginationType,
     pageSize: pageSize,
-    loaderSchema: loaderSchema
+    loaderSchema: loaderSchema,
+    onRowClick: onRowClick
   }))));
 };
 
-export { Avatar, Backdrop, Badge, Breadcrumb, BreadcrumbsWrapper, Button, Card, Checkbox, Column, DatePicker, Dialog, DonutChart, Dropdown, Grid, Heading, Icon, Input, Label, Legend, Link, List, ListCheckbox, Message, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, OutsideClick, Pagination, Paragraph, Placeholder, PlaceholderParagraph, Popover, ProgressBar, Radio, RangePicker, Row, Spinner, StatusHints, Subheading, Switch, Tab, Table, TabsWrapper, Text, Toast, Tooltip };
+export { Avatar, Backdrop, Badge, Breadcrumb, BreadcrumbsWrapper, Button, Card, Checkbox, Column, DatePicker, Dialog, DonutChart, Dropdown, Grid, Heading, Icon, Input, Label, Legend, Link, List, ListCheckbox, Message, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, OutsideClick, Pagination, Paragraph, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangePicker, Row, Spinner, StatusHints, Subheading, Switch, Tab, Table, TabsWrapper, Text, Toast, Tooltip };

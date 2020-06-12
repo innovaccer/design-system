@@ -1,5 +1,6 @@
 /// <reference types="react" />
-import { Data, Schema, GridProps, fetchDataFn } from '../grid';
+import { ExternalHeaderProps } from '../grid/Header';
+import { Data, Schema, GridProps, fetchDataFn, RowData } from '../grid';
 interface SyncProps {
     data: Data;
     schema: Schema;
@@ -11,11 +12,14 @@ interface SharedListProps {
     type?: GridProps['type'];
     size?: GridProps['size'];
     withHeader?: boolean;
+    headerProps?: ExternalHeaderProps;
     withCheckbox?: GridProps['withCheckbox'];
     withPagination?: GridProps['withPagination'];
     paginationType?: GridProps['paginationType'];
     pageSize?: GridProps['pageSize'];
     loaderSchema?: GridProps['loaderSchema'];
+    onRowClick?: GridProps['onRowClick'];
+    onSelect?: (rowIndex: number[], selected: boolean, allSelected: RowData[]) => void;
 }
 declare type SyncListProps = SyncProps & SharedListProps;
 declare type AsyncListProps = AsyncProps & SharedListProps;

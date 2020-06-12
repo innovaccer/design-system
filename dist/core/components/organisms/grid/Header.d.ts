@@ -1,13 +1,16 @@
 import * as React from 'react';
 import { updateDataFn, Schema, Data, onSelectAllFn } from './Grid';
-export interface HeaderProps {
+export interface ExternalHeaderProps {
+    children?: React.ReactNode;
+    withSearch?: boolean;
+    searchPlaceholder?: string;
+}
+export interface HeaderProps extends ExternalHeaderProps {
     data: Data;
     schema: Schema;
     totalRecords?: number;
     withCheckbox?: boolean;
-    withSearch?: boolean;
     showHead?: boolean;
-    children?: React.ReactNode;
     updateData?: updateDataFn;
     onSelectAll?: onSelectAllFn;
 }

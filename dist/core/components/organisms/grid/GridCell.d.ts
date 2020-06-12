@@ -18,6 +18,7 @@ export interface PartialCellProps {
 export interface GridCellProps extends PartialCellProps {
     size: GridSize;
     rowIndex: number;
+    colIndex: number;
 }
 export declare const GridCell: {
     (props: GridCellProps): JSX.Element | null;

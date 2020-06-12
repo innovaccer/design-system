@@ -27,7 +27,7 @@ export declare type reorderColFn = (from: string, to: string) => void;
 export declare type onSelectFn = (rowIndex: number, selected: boolean) => void;
 export declare type onSelectAllFn = (selected: boolean) => void;
 export declare type onFilterChangeFn = (data: RowData, filters: Filter) => boolean;
-export declare type onRowClickFn = (data: RowData) => void;
+export declare type onRowClickFn = (data: RowData, rowIndex?: number) => void;
 export declare type CellType = 'DEFAULT' | 'WITH_META_LIST' | 'AVATAR' | 'AVATAR_WITH_TEXT' | 'AVATAR_WITH_META_LIST' | 'IMAGE' | 'IMAGE_WITH_TEXT' | 'IMAGE_WITH_META_LIST' | 'STATUS_HINT' | 'ICON';
 export declare type ColumnSchema = {
     name: string;
@@ -42,7 +42,7 @@ export declare type ColumnSchema = {
     onFilterChange?: onFilterChangeFn;
     translate?: (data: RowData) => RowData;
     cellType?: CellType;
-    cellTemplate?: (props: GridCellProps) => React.ReactElement;
+    cellRenderer?: (props: GridCellProps) => React.ReactElement;
     align?: Alignment;
 };
 export declare type RowData = Record<string, any> & {
@@ -107,7 +107,7 @@ export declare class Grid extends React.Component<GridProps, GridState> {
     } | null;
     componentDidUpdate(prevProps: GridProps, prevState: GridState): void;
     gridRef: React.RefObject<HTMLDivElement>;
-    updateRenderedData: (options?: Partial<FetchDataOptions> | undefined) => void;
+    updateRenderedData: import("throttle-debounce").throttle<(options?: Partial<FetchDataOptions> | undefined) => void>;
     updateRenderedSchema: (newSchema: Schema) => void;
     updateColumnSchema: updateColumnSchemaFn;
     reorderCol: reorderColFn;
@@ -116,11 +116,9 @@ export declare class Grid extends React.Component<GridProps, GridState> {
     updateSortingList: (sortingList: GridState['sortingList']) => void;
     onMenuChange: (name: ColumnSchema['name'], selected: any) => void;
     onFilterChange: (name: ColumnSchema['name'], selected: any) => void;
-    syncScroll: (renderType: 'pinned' | 'main') => void;
     syncSelectAll: () => void;
     onSelect: onSelectFn;
     onSelectAll: CheckboxProps['onChange'];
-    renderGrid(renderType: 'pinned' | 'main'): JSX.Element | null;
     render(): JSX.Element;
 }
 export default Grid;

@@ -12,6 +12,7 @@ export interface DropdownButtonProps {
     placeholder?: string;
     children?: string;
     width?: React.ReactText;
+    maxWidth?: number;
     onClick?: ReactMouseEvent;
     onMouseEnter?: ReactMouseEvent;
     onMouseLeave?: ReactMouseEvent;

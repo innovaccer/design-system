@@ -1,5 +1,5 @@
-import * as React from 'react';
-export declare type ButtonAppearance = 'basic' | 'transparent';
+/// <reference types="react" />
+export declare type TriggerAppearance = 'basic' | 'transparent';
 export declare type Size = 'tiny' | 'regular';
 export declare type DropdownAlign = 'left' | 'right';
 export interface Option {
@@ -13,7 +13,7 @@ export interface Option {
 export interface DropdownListProps {
     triggerSize?: Size;
     dropdownAlign?: DropdownAlign;
-    buttonAppearance?: ButtonAppearance;
+    buttonAppearance?: TriggerAppearance;
     icon?: string;
     placeholder?: string;
     inlineLabel?: string;
@@ -31,7 +31,8 @@ export interface DropdownListProps {
     totalOptions?: number;
     maxHeight?: number;
     selected?: Option[];
-    style?: React.CSSProperties;
+    width?: number;
+    maxWidth?: number;
     onChangeTriggerLabel?: (selected: number, totalOptions?: number) => string;
 }
 interface OptionsProps extends DropdownListProps {
