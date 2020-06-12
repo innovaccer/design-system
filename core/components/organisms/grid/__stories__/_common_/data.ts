@@ -12,7 +12,6 @@ export default [
         //         { name: 'lastName', displayName: 'Last Name', width: 200 },
         //     ]
         // },
-        _link: '/test'
     },
     {
         firstName: 'Frazer',

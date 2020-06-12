@@ -151,7 +151,7 @@ export const all = () => {
         withCheckbox={withCheckbox}
         onSelect={onSelect}
         onSelectAll={onSelectAll}
-        onRowClick={(rowData: Data) => action(`on row click:- ${JSON.stringify(rowData)}`)()}
+        onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
       />
     </Card>
   );

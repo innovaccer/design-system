@@ -75,35 +75,35 @@ export const withHeader = () => {
   };
 
   return (
-    <div style={{ background: 'var(--secondary-lightest' }}>
+    <Card
+      shadow="light"
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: '350px',
+        overflow: 'hidden'
+      }}
+    >
       <Header
         {...state}
         updateData={updateData}
         onSelectAll={onSelectAll}
         withSearch={true}
-        showHeader={false}
+        showHead={false}
+        withCheckbox={true}
       >
         <Button icon="events" />
       </Header>
-      <Card
-        shadow="light"
-        style={{
-          height: '350px',
-        }}
-      >
-        <Grid
-          {...state}
-          updateData={updateData}
-          // withPagination={v}
-          // onPageChange={(page: number) => action(`on page change:- ${page}`)()}
-          withCheckbox={true}
-          onSelect={onSelect}
-          onSelectAll={onSelectAll}
-          showHead={false}
-          withPagination={true}
-        />
-      </Card>
-    </div>
+      <Grid
+        {...state}
+        updateData={updateData}
+        withCheckbox={true}
+        onSelect={onSelect}
+        onSelectAll={onSelectAll}
+        showHead={false}
+        withPagination={true}
+      />
+    </Card>
   );
 };
 

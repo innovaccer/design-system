@@ -35,7 +35,7 @@ export type reorderColFn = (from: string, to: string) => void;
 export type onSelectFn = (rowIndex: number, selected: boolean) => void;
 export type onSelectAllFn = (selected: boolean) => void;
 export type onFilterChangeFn = (data: RowData, filters: Filter) => boolean;
-export type onRowClickFn = (data: RowData) => void;
+export type onRowClickFn = (data: RowData, rowIndex?: number) => void;
 export type CellType =
   'DEFAULT' |
   'WITH_META_LIST' |
@@ -100,7 +100,7 @@ export type ColumnSchema = {
   /**
    * Custom cell renderer
    */
-  cellTemplate?: (props: GridCellProps) => React.ReactElement;
+  cellRenderer?: (props: GridCellProps) => React.ReactElement;
   /**
    * Alignment of column
    */
@@ -447,139 +447,6 @@ export class Grid extends React.Component<GridProps, GridState> {
       });
     }
   }
-
-  // renderGrid() {
-  //   const MainGrid = () => {
-  //     const {
-  //       type,
-  //       size,
-  //       showHead,
-  //       draggable,
-  //       withCheckbox,
-  //       data
-  //     } = this.props;
-
-  //     const {
-  //       schema,
-  //     } = this.state;
-
-  //     const classes = classNames({
-  //       Grid: 'true',
-  //       [`Grid--${type}`]: type,
-  //       [`Grid--${size}`]: size,
-  //     });
-
-  //     const minRowHeight: Record<GridSize, number> = {
-  //       comfortable: 54,
-  //       standard: 40,
-  //       compressed: 32,
-  //       tight: 24
-  //     };
-
-  //     const [state, setState] = React.useState({
-  //       offset: 0,
-  //       avgRowHeight: minRowHeight[size],
-  //       inView: 20
-  //     });
-
-  //     const {
-  //       offset,
-  //       avgRowHeight,
-  //       inView
-  //     } = state;
-
-  //     const onScrollHandler = () => {
-  //       if (this.gridRef && this.gridRef.current) {
-  //         const el = this.gridRef.current!.querySelector('.Grid');
-  //         if (el) {
-  //           const { scrollTop } = el;
-  //           const items = el.querySelectorAll('.Grid-body .Grid-row');
-
-  //           const newScroll = Math.floor(scrollTop - (offset * avgRowHeight));
-  //           let newInView = 0;
-  //           let currScroll = 0;
-  //           let i = 0;
-  //           while (i < items.length && currScroll + items[i].clientHeight <= el.clientHeight) {
-  //             const rowHeight = items[i].clientHeight;
-  //             currScroll += rowHeight;
-  //             newInView++;
-  //             i++;
-  //           }
-
-  //           if (newScroll > 0) {
-  //             currScroll = newScroll;
-  //             let newOffset = offset;
-  //             let newAvgHeight = avgRowHeight;
-  //             i = 0;
-  //             while (i < items.length && currScroll >= items[i].clientHeight) {
-  //               const rowHeight = items[i].clientHeight;
-  //               currScroll -= rowHeight;
-  //               newAvgHeight = ((newOffset * newAvgHeight) + (rowHeight)) / (newOffset + 1);
-  //               newOffset++;
-  //               i++;
-  //             }
-
-  //             newOffset = newOffset < data.length - inView ? newOffset : data.length - inView - 1;
-  //             if (newOffset > offset) {
-  //               setState({
-  //                 ...state,
-  //                 inView: newInView,
-  //                 offset: newOffset,
-  //                 avgRowHeight: newAvgHeight,
-  //               });
-  //             }
-  //           } else {
-  //             if (avgRowHeight) {
-  //               const diff = Math.floor(newScroll / avgRowHeight) || -1;
-  //               const newOffset = offset + diff;
-  //               if (newOffset < offset) {
-  //                 setState({
-  //                   ...state,
-  //                   inView: newInView,
-  //                   offset: newOffset < 0 ? 0 : newOffset,
-  //                 });
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     };
-
-  //     // const [test, setTest] = React.useState(true);
-
-  //     // console.log(test);
-  //     // if (test) setTest(false);
-
-  //     return (
-  //       <div
-  //         className={classes}
-  //         onScroll={onScrollHandler}
-  //       >
-  //         {showHead && (
-  //           <GridHead
-  //             key={'GridHead'}
-  //             _this={this}
-  //             schema={schema}
-  //             draggable={draggable}
-  //             withCheckbox={withCheckbox}
-  //           />
-  //         )}
-  //         <GridBody
-  //           key={'GridBody'}
-  //           _this={this}
-  //           schema={schema}
-  //           data={data}
-  //           withCheckbox={withCheckbox}
-  //           offset={offset}
-  //           inView={inView}
-  //           avgRowHeight={avgRowHeight}
-  //         />
-  //       </div>
-  //     );
-  //   }
-
-  //   return <MainGrid key={'MainGrid'} />;
-  // }
 
   render() {
     const {

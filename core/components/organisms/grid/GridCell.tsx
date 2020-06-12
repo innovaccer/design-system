@@ -72,6 +72,7 @@ export interface PartialCellProps {
 export interface GridCellProps extends PartialCellProps {
   size: GridSize;
   rowIndex: number;
+  colIndex: number;
 }
 
 type CellProps = {
@@ -186,7 +187,7 @@ export const GridCell = (props: GridCellProps) => {
     loading,
   } = props;
 
-  if (schema.cellTemplate) return schema.cellTemplate(props);
+  if (schema.cellRenderer) return schema.cellRenderer(props);
 
   const data = !loading ? translateData(schema, props.data) : {};
 

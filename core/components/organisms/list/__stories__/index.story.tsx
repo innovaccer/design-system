@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { Card } from '@/index';
+import { Card, Button } from '@/index';
 import List from '../List';
 import schema from '../../grid/__stories__/_common_/schema';
 import data from '../../grid/__stories__/_common_/data';
 import { boolean, select, number } from '@storybook/addon-knobs';
 import loaderSchema from '../../grid/__stories__/_common_/loaderSchema';
 import { fetchData } from '../../grid/__stories__/_common_/fetchData';
+import { action } from '@storybook/addon-actions';
 
 export const all = () => {
   const async = boolean(
@@ -83,15 +84,19 @@ export const all = () => {
       <List
         {...dataAttr}
         withHeader={withHeader}
+        headerProps={{
+          withSearch: true,
+          children: <Button icon="events" />
+        }}
         withCheckbox={withCheckbox}
-        showMenu={showMenu}
         type={type}
         size={size}
-        draggable={draggable}
         withPagination={withPagination}
         paginationType={paginationType}
         pageSize={pageSize}
         loaderSchema={loaderSchema}
+        onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
+        onSelect={(rowIndex, selected, selectedList) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)}`)()}
       />
     </Card>
   );

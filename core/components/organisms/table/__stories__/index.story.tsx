@@ -6,6 +6,8 @@ import data from '../../grid/__stories__/_common_/data';
 import { boolean, select, number } from '@storybook/addon-knobs';
 import loaderSchema from '../../grid/__stories__/_common_/loaderSchema';
 import { fetchData } from '../../grid/__stories__/_common_/fetchData';
+import Button from '@/components/atoms/button';
+import { action } from '@storybook/addon-actions';
 
 export const all = () => {
   const async = boolean(
@@ -32,7 +34,7 @@ export const all = () => {
 
   const withHeader = boolean(
     'withHeader',
-    false
+    true
   );
 
   const withCheckbox = boolean(
@@ -83,6 +85,10 @@ export const all = () => {
       <Table
         {...dataAttr}
         withHeader={withHeader}
+        headerProps={{
+          withSearch: true,
+          children: <Button icon="events" />
+        }}
         withCheckbox={withCheckbox}
         showMenu={showMenu}
         type={type}
@@ -92,6 +98,8 @@ export const all = () => {
         paginationType={paginationType}
         pageSize={pageSize}
         loaderSchema={loaderSchema}
+        onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
+        onSelect={(rowIndex, selected, selectedList) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)}`)()}
       />
     </Card>
   );

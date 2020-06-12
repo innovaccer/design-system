@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Header } from '../grid/Header';
-import { Button, Grid } from '@/index';
-import { Data, Schema, onSelectFn, onSelectAllFn, GridProps, FetchDataOptions, fetchDataFn } from '../grid';
+import { Header, ExternalHeaderProps } from '../grid/Header';
+import { Grid } from '@/index';
+import { Data, Schema, onSelectFn, onSelectAllFn, GridProps, FetchDataOptions, fetchDataFn, RowData } from '../grid';
 import { updateBatchData, filterData, sortData, paginateData } from '../grid/utility';
 
 interface SyncProps {
@@ -19,12 +19,15 @@ interface SharedTableProps {
   size?: GridProps['size'];
   draggable?: boolean;
   withHeader?: boolean;
+  headerProps?: ExternalHeaderProps;
   withCheckbox?: GridProps['withCheckbox'];
   showMenu?: GridProps['showMenu'];
   withPagination?: GridProps['withPagination'];
   paginationType?: GridProps['paginationType'];
   pageSize?: GridProps['pageSize'];
   loaderSchema?: GridProps['loaderSchema'];
+  onRowClick?: GridProps['onRowClick'];
+  onSelect?: (rowIndex: number[], selected: boolean, allSelected: RowData[]) => void;
 }
 
 // interface SyncTableProps extends SyncProps, SharedTableProps { };
@@ -47,11 +50,15 @@ export const Table = (props: TableProps) => {
     size,
     draggable,
     withHeader,
+    headerProps,
     withCheckbox,
     showMenu,
     withPagination,
     paginationType,
     pageSize,
+    onRowClick,
+    onSelect: onSelectProp,
+    // onSelect,
     loaderSchema,
     // @ts-ignore
     data: dataProp,
@@ -142,9 +149,14 @@ export const Table = (props: TableProps) => {
   };
 
   const onSelect: onSelectFn = (rowIndex, selected) => {
-    const newData = updateBatchData(state.data, [rowIndex], {
+    const indexes = [rowIndex];
+    const newData = updateBatchData(state.data, indexes, {
       _selected: selected
     });
+
+    if (onSelectProp) {
+      onSelectProp(indexes, selected, newData.filter(d => d._selected));
+    }
 
     setState({
       ...state,
@@ -159,11 +171,21 @@ export const Table = (props: TableProps) => {
       _selected: selected
     });
 
+    if (onSelectProp) {
+      onSelectProp(indexes, selected, newData.filter(d => d._selected));
+    }
+
     setState({
       ...state,
       data: newData
     });
   };
+
+  const {
+    // @ts-ignore
+    children: headerChildren,
+    ...headerAttr
+  } = headerProps;
 
   return (
     <div className="Table">
@@ -172,10 +194,11 @@ export const Table = (props: TableProps) => {
           <Header
             {...state}
             updateData={async ? updateAsyncData : updateSyncData}
-            withSearch={true}
             showHead={true}
+            withCheckbox={withCheckbox}
+            {...headerAttr}
           >
-            <Button icon="events" />
+            {headerChildren}
           </Header>
         </div>
       )}
@@ -194,6 +217,7 @@ export const Table = (props: TableProps) => {
           paginationType={paginationType}
           pageSize={pageSize}
           loaderSchema={loaderSchema}
+          onRowClick={onRowClick}
         />
       </div>
     </div>

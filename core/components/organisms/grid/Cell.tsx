@@ -53,8 +53,8 @@ const HeaderCell = (props: HeaderCellProps) => {
     { label: 'Sort Descending', value: 'sortDesc', icon: 'arrow_upward' },
   ];
   let options = [
-    { label: 'Pin Left', value: 'pinLeft', icon: 'first_page' },
-    { label: 'Pin Right', value: 'pinRight', icon: 'last_page' },
+    { label: 'Pin Left', value: 'pinLeft', icon: 'skip_previous' },
+    { label: 'Pin Right', value: 'pinRight', icon: 'skip_next' },
     { label: 'Hide Column', value: 'hide', icon: 'cancel' },
   ];
   if (schema.sortFn) options = [...sortOptions, ...options];
@@ -176,6 +176,7 @@ const BodyCell = (props: BodyCellProps) => {
       <GridCell
         key={`${rowIndex}-${colIndex}`}
         rowIndex={rowIndex}
+        colIndex={colIndex}
         size={size}
         schema={schema}
         data={data}
