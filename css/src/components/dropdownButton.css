@@ -1,5 +1,6 @@
 .DropdownButton {
     min-width: var(--spacing-7);
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     padding-top: unset;
@@ -26,8 +27,8 @@
     padding-left: var(--spacing-l);
 }
 
-.Button--basic:focus, 
-.Button--transparent:focus {
+.DropdownButton.Button--basic:focus, 
+.DropdownButton.Button--transparent:focus {
     background-color: var(--secondary-lighter);
 }
 

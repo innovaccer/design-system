@@ -103,13 +103,10 @@ export const all = () => {
     onChangeTriggerLabel,
     options: dropdownOptions,
     onChange: onChangeHandler,
-    style: {
-      marginLeft: '128px',
-    }
   };
 
   return (
-    <div style={{ width: '170px' }}>
+    <div style={{ width: '170px', marginLeft: '128px' }}>
       <Dropdown
         {...props}
       />

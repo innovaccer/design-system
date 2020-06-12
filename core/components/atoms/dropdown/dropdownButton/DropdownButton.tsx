@@ -21,6 +21,7 @@ export interface DropdownButtonProps {
   placeholder?: string;
   children?: string;
   width?: React.ReactText;
+  maxWidth?: number;
   onClick?: ReactMouseEvent;
   onMouseEnter?: ReactMouseEvent;
   onMouseLeave?: ReactMouseEvent;
@@ -34,6 +35,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
     menu = false,
     children,
     width,
+    maxWidth,
     icon,
     disabled,
     inlineLabel,
@@ -62,17 +64,13 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
     ['DropdownButton-label']: true,
   });
 
-  const style = {
-    width,
-  };
-
   return (
     <button
       ref={ref}
       value={children}
       className={buttonClass}
       disabled={disabled}
-      style={menu ? {} : style}
+      style={{ maxWidth }}
       {...rest}
     >
       {!menu && (
