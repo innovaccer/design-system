@@ -43,10 +43,7 @@ export const GridRow = (props: GridRowProps) => {
       } = _this.props;
 
       if (onRowClick) {
-        onRowClick(data);
-      } else {
-        // @ts-ignore
-        if (data._link) window.location = data._link;
+        onRowClick(data, rI);
       }
     }
   };

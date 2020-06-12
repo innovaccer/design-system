@@ -98,7 +98,7 @@ const schema: Schema = [
     width: 200,
     resizable: true,
     separator: true,
-    cellTemplate: (props: GridCellProps) => {
+    cellRenderer: (props: GridCellProps) => {
       const {
         loading
       } = props;

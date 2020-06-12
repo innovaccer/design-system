@@ -25,7 +25,24 @@
 
 .Grid--resource .Grid-body .Grid-row:hover .Grid-cell {
     cursor: pointer;
-    background: var(--secondary-light) !important;
+    background: var(--secondary-lightest);
+}
+
+.Grid--pinned {
+    position: absolute;
+    height: 100%;
+    z-index: 2;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    border-right: 3px solid var(--secondary);
+}
+
+.Grid-pinned::-webkit-scrollbar {
+    display: none;
+}
+
+.Grid--main {
+    flex-grow: 1;
 }
 
 .Grid--comfortable .Grid-cell--head {
@@ -350,6 +367,7 @@
 
 .Header-label {
     display: flex;
+    align-items: center;
     padding-top: var(--spacing);
 }
 
@@ -357,18 +375,23 @@
     margin-right: var(--spacing);
 }
 
+.Header-dropdown {
+    display: flex;
+    margin-left: var(--spacing-m);
+}
+
+.Header-dropdown .Dropdown {
+    margin: 0 var(--spacing-m);
+}
+
 .Header-filters {
     display: flex;
 }
 
-.Header-filters .Dropdown {
-    margin: 0 var(--spacing-m);
+.Header-sorting {
+    display: flex;
 }
 
-.Header-filters .Dropdown:first-child {
-    margin-left: var(--spacing-l);
-}
-
-.Header-filters .Dropdown:last-child {
-    margin-right: 0;
+.Header-content--bottom {
+    justify-content: space-between;
 }

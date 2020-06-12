@@ -1,11 +1,13 @@
 .List {
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     /* flex-grow: 0; */
     height: 100%;
 }
 
 .List-grid {
+    height: 100%;
     overflow: hidden;
     height: 100%;
 }

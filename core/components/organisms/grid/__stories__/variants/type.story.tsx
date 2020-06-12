@@ -36,6 +36,7 @@ export const type = () => {
               data={data}
               schema={schema}
               totalRecords={data.length}
+              onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
             />
           </Card>
         </div>

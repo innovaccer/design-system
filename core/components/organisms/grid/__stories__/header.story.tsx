@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Header from '../Header';
 import { Button } from '@/index';
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 import schema from './_common_/schema';
 import data from './_common_/data';
 
@@ -11,9 +11,9 @@ export const header = () => {
     true
   );
 
-  const showHeader = boolean(
-    'showHeader',
-    true
+  const showHead = boolean(
+    'showHead',
+    false
   );
 
   const children = boolean(
@@ -21,13 +21,25 @@ export const header = () => {
     false
   );
 
+  const withCheckbox = boolean(
+    'withCheckbox',
+    true
+  );
+
+  const searchPlaceholder = text(
+    'searchPlaceholer',
+    'Search'
+  );
+
   return (
     <Header
       data={data}
       schema={schema}
       withSearch={withSearch}
-      showHeader={showHeader}
+      showHead={showHead}
+      withCheckbox={withCheckbox}
       totalRecords={50}
+      searchPlaceholder={searchPlaceholder}
     >
       {children && <Button icon="events" />}
     </Header>

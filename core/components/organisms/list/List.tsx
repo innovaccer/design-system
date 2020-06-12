@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Header } from '../grid/Header';
-import { Button, Grid } from '@/index';
-import { Data, Schema, onSelectFn, onSelectAllFn, GridProps, FetchDataOptions, fetchDataFn } from '../grid';
+import { Header, ExternalHeaderProps } from '../grid/Header';
+import { Grid } from '@/index';
+import { Data, Schema, onSelectFn, onSelectAllFn, GridProps, FetchDataOptions, fetchDataFn, RowData } from '../grid';
 import { updateBatchData, filterData, sortData, paginateData } from '../grid/utility';
 
 interface SyncProps {
@@ -17,11 +17,14 @@ interface SharedListProps {
   type?: GridProps['type'];
   size?: GridProps['size'];
   withHeader?: boolean;
+  headerProps?: ExternalHeaderProps;
   withCheckbox?: GridProps['withCheckbox'];
   withPagination?: GridProps['withPagination'];
   paginationType?: GridProps['paginationType'];
   pageSize?: GridProps['pageSize'];
   loaderSchema?: GridProps['loaderSchema'];
+  onRowClick?: GridProps['onRowClick'];
+  onSelect?: (rowIndex: number[], selected: boolean, allSelected: RowData[]) => void;
 }
 
 type SyncListProps = SyncProps & SharedListProps;
@@ -34,11 +37,14 @@ export const List = (props: ListProps) => {
     type,
     size,
     withHeader,
+    headerProps,
     withCheckbox,
     withPagination,
     paginationType,
     pageSize,
     loaderSchema,
+    onRowClick,
+    onSelect: onSelectProp,
     // @ts-ignore
     data: dataProp,
     // @ts-ignore
@@ -128,9 +134,14 @@ export const List = (props: ListProps) => {
   };
 
   const onSelect: onSelectFn = (rowIndex, selected) => {
-    const newData = updateBatchData(state.data, [rowIndex], {
+    const indexes = [rowIndex];
+    const newData = updateBatchData(state.data, indexes, {
       _selected: selected
     });
+
+    if (onSelectProp) {
+      onSelectProp(indexes, selected, newData.filter(d => d._selected));
+    }
 
     setState({
       ...state,
@@ -140,16 +151,25 @@ export const List = (props: ListProps) => {
 
   const onSelectAll: onSelectAllFn = selected => {
     const indexes = Array.from({ length: state.data.length }, (_, i) => i);
-
     const newData = updateBatchData(state.data, indexes, {
       _selected: selected
     });
+
+    if (onSelectProp) {
+      onSelectProp(indexes, selected, newData.filter(d => d._selected));
+    }
 
     setState({
       ...state,
       data: newData
     });
   };
+
+  const {
+    // @ts-ignore
+    children: headerChildren,
+    ...headerAttr
+  } = headerProps;
 
   return (
     <div className="List">
@@ -158,12 +178,12 @@ export const List = (props: ListProps) => {
           <Header
             {...state}
             updateData={async ? updateAsyncData : updateSyncData}
-            withSearch={true}
             showHead={false}
             withCheckbox={withCheckbox}
             onSelectAll={onSelectAll}
+            {...headerAttr}
           >
-            <Button icon="events" />
+            {headerChildren}
           </Header>
         </div>
       )}
@@ -181,6 +201,7 @@ export const List = (props: ListProps) => {
           paginationType={paginationType}
           pageSize={pageSize}
           loaderSchema={loaderSchema}
+          onRowClick={onRowClick}
         />
       </div>
     </div>
