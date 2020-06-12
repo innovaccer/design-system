@@ -20,6 +20,7 @@ export const appearanceWithTitle = () => {
     'flex-direction': 'column',
     marginRight: '3%',
     marginBottom: '3%',
+    width: '300px'
   };
 
   const title = text(

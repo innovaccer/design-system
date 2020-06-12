@@ -11,7 +11,7 @@
     overflow: hidden;
     border-top: var(--border-s);
     min-height: var(--spacing-5);
-    width: 280px;
+    width: 100%;
     box-sizing: border-box;
   }
   
