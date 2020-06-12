@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Grid, Data, onSelectFn, onSelectAllFn, FetchDataOptions } from '../Grid';
+import { Grid, onSelectFn, onSelectAllFn, updateDataFn, updateSchemaFn } from '../Grid';
 import loaderSchema from './_common_/loaderSchema';
 import { number, boolean, select } from '@storybook/addon-knobs';
 import { Card } from '@/index';
@@ -94,7 +94,7 @@ export const all = () => {
     });
   };
 
-  const updateData = (options: FetchDataOptions) => {
+  const updateData: updateDataFn = options => {
     setState({
       ...state,
       loading: true
@@ -117,10 +117,17 @@ export const all = () => {
 
     setState({
       ...state,
-      schema,
       totalRecords,
+      schema: state.schema.length ? state.schema : schema,
       loading: false,
       data: renderedData,
+    });
+  };
+
+  const updateSchema: updateSchemaFn = newSchema => {
+    setState({
+      ...state,
+      schema: newSchema
     });
   };
 
@@ -138,6 +145,7 @@ export const all = () => {
         schema={state.schema}
         totalRecords={state.totalRecords}
         updateData={updateData}
+        updateSchema={updateSchema}
         loading={state.loading}
         loaderSchema={loaderSchema}
         errorTemplate={() => errorTemplate}

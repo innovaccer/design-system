@@ -26,6 +26,7 @@ export type fetchDataFn = (options: FetchDataOptions) => Promise<{
 }>;
 
 export type updateDataFn = (options: FetchDataOptions) => void;
+export type updateSchemaFn = (newSchema: Schema) => void;
 export type updateSelectAllFn = (attr: GridState['selectAll']) => void;
 export type updateColumnSchemaFn = (name: ColumnSchema['name'], schemaUpdate: Partial<ColumnSchema>) => void;
 export type updateRowDataFn = (rowIndexes: number[], dataUpdate: Partial<RowData>) => void;
@@ -136,7 +137,7 @@ export interface GridProps {
    * Schema used to render `loading` state
    * @default []
    */
-  loaderSchema?: Schema;
+  loaderSchema: Schema;
   /**
    * Schema used to render `data` object
    */
@@ -158,6 +159,10 @@ export interface GridProps {
    * Callback to be called to get the updated data
    */
   updateData?: updateDataFn;
+  /**
+   * Callback to be called to get the updated data
+   */
+  updateSchema?: updateSchemaFn;
   /**
    * Shows grid head
    */
@@ -208,8 +213,8 @@ export interface GridProps {
 
 export interface GridState {
   init: boolean;
-  prevSchema: Schema;
-  schema: Schema;
+  // prevSchema: Schema;
+  // schema: Schema;
   reorderHighlighter?: number;
   page: number;
   selectAll?: {
@@ -229,8 +234,8 @@ export class Grid extends React.Component<GridProps, GridState> {
 
     this.state = {
       init: false,
-      prevSchema: [],
-      schema: props.loading ? props.loaderSchema || [] : props.schema,
+      // prevSchema: [],
+      // schema: props.loading ? props.loaderSchema || [] : props.schema,
       page: 1,
       sortingList: [],
       filterList: {}
@@ -241,23 +246,13 @@ export class Grid extends React.Component<GridProps, GridState> {
 
   static defaultProps = {
     showHead: true,
-    // loaderSchema: [],
+    loaderSchema: [],
     type: 'data',
     size: 'comfortable',
     pageSize: 15,
     paginationType: 'jump',
-    loading: false
+    loading: false,
   };
-
-  static getDerivedStateFromProps(props: GridProps, state: GridState) {
-    if (props.schema !== state.prevSchema) {
-      return {
-        prevSchema: props.schema,
-        schema: props.data.length ? props.schema : props.loaderSchema || []
-      };
-    }
-    return null;
-  }
 
   componentDidUpdate(prevProps: GridProps, prevState: GridState) {
     if ((prevProps.withPagination !== this.props.withPagination) || (prevState.page !== this.state.page)) {
@@ -306,26 +301,32 @@ export class Grid extends React.Component<GridProps, GridState> {
   });
 
   updateRenderedSchema = (newSchema: Schema) => {
-    this.setState({
-      schema: newSchema
-    });
+    const {
+      updateSchema
+    } = this.props;
+
+    if (updateSchema) {
+      updateSchema(newSchema);
+    }
   }
 
   updateColumnSchema: updateColumnSchemaFn = (name, schemaUpdate) => {
-    const { schema } = this.state;
-    const ind = schema.findIndex(s => s.name === name);
-    schema[ind] = {
-      ...schema[ind],
+    const { schema } = this.props;
+    const newSchema = [...schema];
+
+    const ind = newSchema.findIndex(s => s.name === name);
+    newSchema[ind] = {
+      ...newSchema[ind],
       ...schemaUpdate
     };
 
-    this.updateRenderedSchema(schema);
+    this.updateRenderedSchema(newSchema);
   }
 
   reorderCol: reorderColFn = (from, to) => {
     const {
       schema
-    } = this.state;
+    } = this.props;
 
     const fromInd = schema.findIndex(s => s.name === from);
     const toInd = schema.findIndex(s => s.name === to);
@@ -390,16 +391,6 @@ export class Grid extends React.Component<GridProps, GridState> {
     });
   }
 
-  // syncScroll = (renderType: 'pinned' | 'main') => {
-  //   const pinnedGrid = this.gridRef.current!.querySelector('.Grid--pinned .Grid-body');
-  //   const mainGrid = this.gridRef.current!.querySelector('.Grid--main .Grid-body');
-
-  //   if (pinnedGrid && mainGrid) {
-  //     if (renderType === 'main') pinnedGrid.scrollTop = mainGrid.scrollTop;
-  //     if (renderType === 'pinned') mainGrid.scrollTop = pinnedGrid.scrollTop;
-  //   }
-  // }
-
   syncSelectAll = () => {
     const {
       withCheckbox,
@@ -451,7 +442,6 @@ export class Grid extends React.Component<GridProps, GridState> {
   render() {
     const {
       init,
-      schema,
       reorderHighlighter,
       page,
     } = this.state;
@@ -466,13 +456,21 @@ export class Grid extends React.Component<GridProps, GridState> {
       paginationType
     } = this.props;
 
-    if (!loading && !init && schema !== loaderSchema) this.setState({ init: true });
+    let { schema } = this.props;
+    if ((!schema || schema.length === 0) && !init) {
+      schema = loaderSchema;
+    }
+
+    if (!loading && !init && schema !== loaderSchema) {
+      this.setState({ init: true });
+    }
 
     return (
       <div className="Grid-container">
         <div className="Grid-wrapper" ref={this.gridRef}>
           <MainGrid
             _this={this}
+            schema={schema}
           />
           {/* {this.renderGrid()} */}
           {reorderHighlighter && (

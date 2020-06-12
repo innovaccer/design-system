@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Checkbox, Text, Input, Dropdown } from '@/index';
-import { updateDataFn, ColumnSchema, Schema, Data, onSelectAllFn } from './Grid';
+import { updateDataFn, updateSchemaFn, ColumnSchema, Schema, Data, onSelectAllFn } from './Grid';
 import { getSelectAll } from './utility';
 
 export interface ExternalHeaderProps {
@@ -16,6 +16,7 @@ export interface HeaderProps extends ExternalHeaderProps {
   withCheckbox?: boolean;
   showHead?: boolean;
   updateData?: updateDataFn;
+  updateSchema?: updateSchemaFn;
   onSelectAll?: onSelectAllFn;
 }
 
@@ -28,6 +29,7 @@ export const Header = (props: HeaderProps) => {
     withCheckbox,
     children,
     updateData,
+    updateSchema,
     totalRecords = 0,
     onSelectAll,
     searchPlaceholder = 'Search'
@@ -88,19 +90,20 @@ export const Header = (props: HeaderProps) => {
     }
   };
 
-  // const onHideColumn = (selected: any[]) => {
-  //   const newSchema = schema.map(s => ({
-  //     ...s,
-  //     hidden: selected.findIndex(val => val === s.name) !== -1
-  //   }));
+  const onHideColumn = (selected: any[]) => {
+    const newSchema = schema.map(s => ({
+      ...s,
+      hidden: selected.findIndex(val => val === s.name) === -1
+    }));
 
-  //   updateSchema(newSchema);
-  // }
+    if (updateSchema) updateSchema(newSchema);
+  };
 
-  // const columnOptions = schema.map(s => ({
-  //   label: s.displayName,
-  //   value: s.name
-  // }))
+  const columnOptions = schema.map(s => ({
+    label: s.displayName,
+    value: s.name,
+    selected: !s.hidden
+  }));
 
   const selectedCount = data.filter(d => d._selected).length;
   const label = withCheckbox && selectedCount ? `Selected ${selectedCount} items on this page` : `Showing ${totalRecords} items`;
@@ -182,20 +185,20 @@ export const Header = (props: HeaderProps) => {
           )}
           <Text small={true} weight={'medium'}>{label}</Text>
         </div>
-        {/* <div className="Header-hideColumns">
+        <div className="Header-hideColumns">
           <Dropdown
             triggerSize={'tiny'}
             buttonAppearance={'transparent'}
             checkboxes={true}
             showApplyButton={true}
-            selected={columnOptions}
+            selected={columnOptions.filter(o => o.selected)}
             options={columnOptions}
             checkedValuesOffset={0}
             totalOptions={columnOptions.length}
             onChangeTriggerLabel={(selected, totalOptions) => `Showing ${selected} of ${totalOptions} columns`}
-            // onChange={(selected) => onHideColumn(selected)}
+            onChange={selected => onHideColumn(selected)}
           />
-        </div> */}
+        </div>
       </div>
     </div>
   );

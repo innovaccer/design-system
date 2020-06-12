@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Card, Button } from '@/index';
+import { Card } from '@/index';
 import List from '../List';
 import schema from '../../grid/__stories__/_common_/schema';
 import data from '../../grid/__stories__/_common_/data';
@@ -26,11 +26,6 @@ export const all = () => {
     'comfortable'
   );
 
-  const draggable = boolean(
-    'draggable',
-    false
-  );
-
   const withHeader = boolean(
     'withHeader',
     false
@@ -38,11 +33,6 @@ export const all = () => {
 
   const withCheckbox = boolean(
     'withCheckbox',
-    false
-  );
-
-  const showMenu = boolean(
-    'showMenu',
     false
   );
 
@@ -86,7 +76,6 @@ export const all = () => {
         withHeader={withHeader}
         headerProps={{
           withSearch: true,
-          children: <Button icon="events" />
         }}
         withCheckbox={withCheckbox}
         type={type}
@@ -97,6 +86,7 @@ export const all = () => {
         loaderSchema={loaderSchema}
         onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
         onSelect={(rowIndex, selected, selectedList) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)}`)()}
+        onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
       />
     </Card>
   );

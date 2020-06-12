@@ -5,7 +5,7 @@ import data from '../_common_/data';
 import schema from '../_common_/schema';
 import { updateBatchData, filterData, sortData, paginateData } from '../../utility';
 import { action } from '@storybook/addon-actions';
-import { onSelectFn, onSelectAllFn, FetchDataOptions } from '../../Grid';
+import { onSelectFn, onSelectAllFn, FetchDataOptions, updateSchemaFn } from '../../Grid';
 import { withPagination } from './withPagination.story';
 
 export const withHeader = () => {
@@ -67,10 +67,17 @@ export const withHeader = () => {
 
     setState({
       ...state,
-      schema,
       totalRecords,
+      schema: state.schema.length ? state.schema : schema,
       loading: false,
       data: renderedData,
+    });
+  };
+
+  const updateSchema: updateSchemaFn = newSchema => {
+    setState({
+      ...state,
+      schema: newSchema
     });
   };
 
@@ -87,9 +94,10 @@ export const withHeader = () => {
       <Header
         {...state}
         updateData={updateData}
+        updateSchema={updateSchema}
         onSelectAll={onSelectAll}
         withSearch={true}
-        showHead={false}
+        showHead={true}
         withCheckbox={true}
       >
         <Button icon="events" />
@@ -97,10 +105,12 @@ export const withHeader = () => {
       <Grid
         {...state}
         updateData={updateData}
+        updateSchema={updateSchema}
         withCheckbox={true}
         onSelect={onSelect}
         onSelectAll={onSelectAll}
-        showHead={false}
+        showHead={true}
+        draggable={true}
         withPagination={true}
       />
     </Card>
