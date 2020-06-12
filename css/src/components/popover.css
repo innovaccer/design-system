@@ -3,7 +3,7 @@
   position: absolute;
   z-index: 999999;
   background: var(--white);
-  box-shadow: var(--shadow-m);
+  box-shadow: var(--shadow-l);
 }
 
 .Popover--dark {
