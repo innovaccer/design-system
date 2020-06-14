@@ -6,7 +6,6 @@ import data from '../../grid/__stories__/_common_/data';
 import { boolean, select, number } from '@storybook/addon-knobs';
 import loaderSchema from '../../grid/__stories__/_common_/loaderSchema';
 import { fetchData } from '../../grid/__stories__/_common_/fetchData';
-import Button from '@/components/atoms/button';
 import { action } from '@storybook/addon-actions';
 
 export const all = () => {
@@ -87,7 +86,6 @@ export const all = () => {
         withHeader={withHeader}
         headerProps={{
           withSearch: true,
-          children: <Button icon="events" />
         }}
         withCheckbox={withCheckbox}
         showMenu={showMenu}
@@ -100,6 +98,7 @@ export const all = () => {
         loaderSchema={loaderSchema}
         onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
         onSelect={(rowIndex, selected, selectedList) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)}`)()}
+        onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
       />
     </Card>
   );

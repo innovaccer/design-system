@@ -14,12 +14,12 @@ export const GridExtendedRow = (props: GridExtendedRowProps) => {
   } = props;
 
   const {
-    schema: stateSchema
-  } = _this.state;
+    schema: propSchema
+  } = _this.props;
 
   if (data._expanded) {
     const showHead = data._expanded.showHead;
-    const schema = data._expanded.schema || stateSchema;
+    const schema = data._expanded.schema || propSchema;
     let gridData = data._expanded.data;
     if (!gridData) {
       const {

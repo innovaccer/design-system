@@ -1,7 +1,17 @@
 import * as React from 'react';
 import { Header, ExternalHeaderProps } from '../grid/Header';
 import { Grid } from '@/index';
-import { Data, Schema, onSelectFn, onSelectAllFn, GridProps, FetchDataOptions, fetchDataFn, RowData } from '../grid';
+import {
+  Data,
+  Schema,
+  onSelectFn,
+  onSelectAllFn,
+  GridProps,
+  FetchDataOptions,
+  fetchDataFn,
+  RowData,
+  updateSchemaFn
+} from '../grid';
 import { updateBatchData, filterData, sortData, paginateData } from '../grid/utility';
 
 interface SyncProps {
@@ -25,6 +35,7 @@ interface SharedListProps {
   loaderSchema?: GridProps['loaderSchema'];
   onRowClick?: GridProps['onRowClick'];
   onSelect?: (rowIndex: number[], selected: boolean, allSelected: RowData[]) => void;
+  onPageChange?: GridProps['onPageChange'];
 }
 
 type SyncListProps = SyncProps & SharedListProps;
@@ -37,13 +48,14 @@ export const List = (props: ListProps) => {
     type,
     size,
     withHeader,
-    headerProps,
+    headerProps = {},
     withCheckbox,
     withPagination,
     paginationType,
     pageSize,
     loaderSchema,
     onRowClick,
+    onPageChange,
     onSelect: onSelectProp,
     // @ts-ignore
     data: dataProp,
@@ -101,8 +113,8 @@ export const List = (props: ListProps) => {
 
     setState({
       ...state,
-      schema,
       totalRecords,
+      schema: state.schema.length ? state.schema : schema,
       loading: false,
       data: renderedData,
     });
@@ -118,7 +130,7 @@ export const List = (props: ListProps) => {
       .then((res: any) => {
         setState({
           ...state,
-          schema: res.schema,
+          schema: state.schema.length ? state.schema : res.schema,
           data: res.data,
           totalRecords: res.totalRecords,
           loading: false,
@@ -135,18 +147,21 @@ export const List = (props: ListProps) => {
 
   const onSelect: onSelectFn = (rowIndex, selected) => {
     const indexes = [rowIndex];
-    const newData = updateBatchData(state.data, indexes, {
-      _selected: selected
-    });
+    let newData: Data = data;
+    if (rowIndex >= 0) {
+      newData = updateBatchData(state.data, indexes, {
+        _selected: selected
+      });
 
-    if (onSelectProp) {
-      onSelectProp(indexes, selected, newData.filter(d => d._selected));
+      setState({
+        ...state,
+        data: newData
+      });
     }
 
-    setState({
-      ...state,
-      data: newData
-    });
+    if (onSelectProp) {
+      onSelectProp(indexes, selected, rowIndex === -1 ? [] : newData.filter(d => d._selected));
+    }
   };
 
   const onSelectAll: onSelectAllFn = selected => {
@@ -165,6 +180,13 @@ export const List = (props: ListProps) => {
     });
   };
 
+  const updateSchema: updateSchemaFn = newSchema => {
+    setState({
+      ...state,
+      schema: newSchema
+    });
+  };
+
   const {
     // @ts-ignore
     children: headerChildren,
@@ -178,6 +200,7 @@ export const List = (props: ListProps) => {
           <Header
             {...state}
             updateData={async ? updateAsyncData : updateSyncData}
+            updateSchema={updateSchema}
             showHead={false}
             withCheckbox={withCheckbox}
             onSelectAll={onSelectAll}
@@ -192,6 +215,7 @@ export const List = (props: ListProps) => {
           {...state}
           showHead={false}
           updateData={async ? updateAsyncData : updateSyncData}
+          updateSchema={updateSchema}
           withCheckbox={withCheckbox}
           onSelect={onSelect}
           onSelectAll={onSelectAll}
@@ -202,6 +226,10 @@ export const List = (props: ListProps) => {
           pageSize={pageSize}
           loaderSchema={loaderSchema}
           onRowClick={onRowClick}
+          onPageChange={newPage => {
+            onSelect(-1, false);
+            if (onPageChange) onPageChange(newPage);
+          }}
         />
       </div>
     </div>

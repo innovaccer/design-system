@@ -1,16 +1,18 @@
 import * as React from 'react';
-import Grid, { GridSize } from './Grid';
+import Grid, { GridSize, Schema } from './Grid';
 import classNames from 'classnames';
 import { GridHead } from './GridHead';
 import { GridBody } from './GridBody';
 
 interface MainGridProps {
   _this: Grid;
+  schema: Schema;
 }
 
 export const MainGrid = (props: MainGridProps) => {
   const {
-    _this
+    _this,
+    schema
   } = props;
 
   const {
@@ -21,10 +23,6 @@ export const MainGrid = (props: MainGridProps) => {
     withCheckbox,
     data
   } = _this.props;
-
-  const {
-    schema,
-  } = _this.state;
 
   const classes = classNames({
     Grid: 'true',

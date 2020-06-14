@@ -24,7 +24,7 @@ export const reorderCol = (_this: Grid, name: string, el: HTMLDivElement | null)
 
   const {
     schema
-  } = _this.state;
+  } = _this.props;
 
   const getColumns = () => (
     _this.gridRef.current!.querySelectorAll(`.Grid-cellGroup--${cellType} .Grid-cell.Grid-cell--head`)
