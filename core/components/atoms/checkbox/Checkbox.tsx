@@ -84,7 +84,9 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     ref.current!.indeterminate = indeterminate;
   };
 
-  const onChangeHandler = () => {
+  const onChangeHandler = (e: React.MouseEvent) => {
+    e.stopPropagation();
+
     const checkedValue = (props.indeterminate) ? false : !checked;
     setChecked(checkedValue);
     setIndeterminate(false);
