@@ -30,14 +30,19 @@ export const loadingType = () => {
           return (
             <div style={style} key={ind}>
               <Text weight="strong">{labelMapping[type]}</Text><br />
-              <Dropdown options={storyOptions.slice(0, 5)} optionType={type as OptionType} bulk={false} loading={true}/>
+              <Dropdown
+                options={storyOptions.slice(0, 5)}
+                loadingType={type as OptionType}
+                bulk={false}
+                loading={true}
+              />
             </div>
           );
         })
       }
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '150px' }}>
         <Text weight="strong">{'Checkboxes'}</Text><br />
-        <Dropdown options={storyOptions.slice(0, 5)} checkboxes={true} bulk={false} loading={true}/>
+        <Dropdown options={storyOptions.slice(0, 5)} checkboxes={true} bulk={false} loading={true} />
       </div>
 
     </div>

@@ -7,6 +7,8 @@ const MetaOption = (props: OptionTypeProps) => {
     textClassName,
     onClick,
     optionData,
+    updateActiveOption,
+    index,
   } = props;
 
   const { label, subInfo } = optionData;
@@ -15,8 +17,12 @@ const MetaOption = (props: OptionTypeProps) => {
     if (onClick) onClick();
   };
 
+  const onUpdateActiveOption = () => {
+    if (updateActiveOption) updateActiveOption(index);
+  };
+
   return (
-    <div className={className} onClick={onClickHandler}>
+    <div className={className} onClick={onClickHandler} onMouseEnter={onUpdateActiveOption}>
       <div className={'Option-label'}>
         <div className={textClassName}>{label}</div>
         {subInfo && <div className={'Option-subinfo'}>{subInfo}</div>}

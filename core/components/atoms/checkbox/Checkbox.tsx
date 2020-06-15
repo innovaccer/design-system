@@ -36,6 +36,10 @@ export interface CheckboxProps {
    */
   value?: string;
   /**
+   * Specifies tab index of `Checkbox`
+   */
+  tabIndex?: number;
+  /**
    * Callback function called when user the selects an option
    */
   onChange?: (checked: boolean, indeterminate?: boolean) => void;
@@ -44,6 +48,7 @@ export interface CheckboxProps {
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props, forwardedRef) => {
   const {
     size = 'regular',
+    tabIndex = 0,
     label,
     disabled,
     onChange,
@@ -105,6 +110,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
         ref={ref}
         name={name}
         value={value}
+        tabIndex={tabIndex}
         className={'Checkbox-input'}
       />
       <span className={CheckboxWrapper}>

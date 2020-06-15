@@ -48,6 +48,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
     ['Button']: true,
     ['Button--basic']: true,
     ['Button--square']: !children,
+    ['DropdownTrigger']: true,
     ['DropdownButton']: true,
     [`DropdownButton--${size}`]: size,
     ['DropdownButton--icon']: icon,
@@ -67,6 +68,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
       className={buttonClass}
       disabled={disabled}
       style={{ maxWidth }}
+      tabIndex={0}
       {...rest}
     >
       {!menu && (

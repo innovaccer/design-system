@@ -1,5 +1,8 @@
 export let dropdownOptions: any[] = [];
 export const storyOptions: any[] = [];
+export const iconOptions: any[] = [];
+export const subInfoOptions: any[] = [];
+export const iconWithSubinfoOptions: any[] = [];
 
 for (let i = 1; i <= 10; i++) {
   storyOptions.push({
@@ -7,6 +10,36 @@ for (let i = 1; i <= 10; i++) {
     value: `Option ${i}`,
     icon: 'events',
     subInfo: 'subInfo'
+  });
+}
+
+for (let i = 1; i <= 10; i++) {
+  iconOptions.push({
+    label: `Option ${i}`,
+    value: `Option ${i}`,
+    icon: 'events',
+    subInfo: 'subInfo',
+    optionType: 'WITH_ICON'
+  });
+}
+
+for (let i = 1; i <= 10; i++) {
+  subInfoOptions.push({
+    label: `Option ${i}`,
+    value: `Option ${i}`,
+    icon: 'events',
+    subInfo: 'subInfo',
+    optionType: 'WITH_META'
+  });
+}
+
+for (let i = 1; i <= 10; i++) {
+  iconWithSubinfoOptions.push({
+    label: `Option ${i}`,
+    value: `Option ${i}`,
+    icon: 'events',
+    subInfo: 'subInfo',
+    optionType: 'ICON_WITH_META'
   });
 }
 

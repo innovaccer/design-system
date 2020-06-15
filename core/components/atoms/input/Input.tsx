@@ -80,6 +80,10 @@ export interface InputProps {
    */
   info?: string;
   /**
+   * Adds autoFocus
+   */
+  autoFocus?: boolean;
+  /**
    * Callback function when user clicks the clear button
    */
   onClear?: (e: React.MouseEvent<HTMLElement>) => void;
@@ -111,6 +115,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
   const {
     size = 'regular',
     clearButton = true,
+    autoFocus = false,
     disabled: propDisabled,
     name,
     type,
@@ -209,6 +214,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
           onBlur={onBlur}
           onClick={onClick}
           onFocus={onFocus}
+          autoFocus={autoFocus}
         />
         {((!value && !disabled) || (value && disabled)) && info && (
           <Popover

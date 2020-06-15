@@ -18,7 +18,7 @@ export const all = () => {
     undefined
   );
 
-  const optionType = select(
+  const loadingType = select(
     'option type',
     ['DEFAULT', 'WITH_ICON', 'WITH_META', 'ICON_WITH_META'],
     undefined,
@@ -98,7 +98,7 @@ export const all = () => {
     limit,
     loading,
     fetchOptions,
-    optionType,
+    loadingType,
     parentCheckboxLabel,
     onChangeTriggerLabel,
     options: dropdownOptions,
@@ -110,6 +110,7 @@ export const all = () => {
     <div style={{ width: '170px', marginLeft: '128px' }}>
       <Dropdown
         {...props}
+        optionsWrap={true}
       />
     </div>
   );

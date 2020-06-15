@@ -62,27 +62,23 @@
     box-sizing: border-box;
 }
 
-.Option,
-.Dropdown-wrapper .ListCheckbox-parentWrapper {
+.Option {
     display: flex;
 }
 
 .Option,
-.Option-loading,
-.Dropdown-wrapper .ListCheckbox-parentWrapper {
+.Option-loading {
     padding-top: 6px;
     padding-bottom: 6px;
     padding-left: var(--spacing-l);
     padding-right: var(--spacing-l);
 }
 
-.Option:hover,
-.Dropdown-wrapper .ListCheckbox-parentWrapper:hover {
+.Option--active {
     background-color: var(--secondary-lightest);
     cursor: pointer;
 }
 
-.Dropdown-wrapper .ListCheckbox-parentWrapper,
 .Option--top {
     padding-top: 10px;
 }
@@ -126,10 +122,6 @@
 .Option-text--wrap,
 .Dropdown-wrapper--wrap.Dropdown-wrapper .ListCheckbox .Checkbox .Text {
     white-space: unset;
-}
-
-.Dropdown-wrapper--wrap.Dropdown-wrapper .ListCheckbox .Checkbox {
-    align-items: flex-start;
 }
 
 .Option--icon {

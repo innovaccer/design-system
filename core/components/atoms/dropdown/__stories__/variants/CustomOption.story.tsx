@@ -20,7 +20,7 @@ export const cutsomOption = () => {
   const customOptionRenderer = (props: any) => {
     const { label, icon } = props.optionData;
     return (
-      <div style={optionStyle} onClick={props.onClick}>
+      <div style={optionStyle}>
         <Text>{label}</Text>
         <Icon name={props.selected ? 'done' : icon} />
       </div>
@@ -30,7 +30,7 @@ export const cutsomOption = () => {
   const customCheckboxRenderer = (props: any) => {
     const { label } = props.optionData;
     return (
-      <div style={optionStyle} onClick={props.onClick}>
+      <div style={optionStyle}>
         <Checkbox checked={props.selected} onChange={props.onChange} label={label} />
         {props.selected && <Icon name="done" />}
       </div>

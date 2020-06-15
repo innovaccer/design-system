@@ -270,6 +270,179 @@ exports[`Dropdown component
 `;
 
 exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"}], onChange: "[Function]"
+ 1`] = `
+<DropdownList
+  bottomOptionsSliced={false}
+  limit={10}
+  listOptions={Array []}
+  offset={-1}
+  onChange={[Function]}
+  onRearrangeOptions={[Function]}
+  onScroll={[Function]}
+  onSearchChange={[Function]}
+  onSelectAll={[Function]}
+  optionsLength={10}
+  remainingOptions={0}
+  renderOptionsFromTop={[Function]}
+  searchInit={false}
+  searchTerm=""
+  slicedOptionsLength={0}
+  topOptionsSliced={false}
+/>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"}], onChange: "[Function]"
+ 1`] = `
+<DropdownList
+  bottomOptionsSliced={false}
+  limit={10}
+  listOptions={Array []}
+  offset={-1}
+  onChange={[Function]}
+  onRearrangeOptions={[Function]}
+  onScroll={[Function]}
+  onSearchChange={[Function]}
+  onSelectAll={[Function]}
+  optionsLength={10}
+  remainingOptions={0}
+  renderOptionsFromTop={[Function]}
+  searchInit={false}
+  searchTerm=""
+  slicedOptionsLength={0}
+  topOptionsSliced={false}
+/>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo","optionType":"WITH_META"}], onChange: "[Function]"
+ 1`] = `
+<DropdownList
+  bottomOptionsSliced={false}
+  limit={10}
+  listOptions={Array []}
+  offset={-1}
+  onChange={[Function]}
+  onRearrangeOptions={[Function]}
+  onScroll={[Function]}
+  onSearchChange={[Function]}
+  onSelectAll={[Function]}
+  optionsLength={10}
+  remainingOptions={0}
+  renderOptionsFromTop={[Function]}
+  searchInit={false}
+  searchTerm=""
+  slicedOptionsLength={0}
+  topOptionsSliced={false}
+/>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], loadingType: "DEFAULT", loading: true, onChange: "[Function]"
+ 1`] = `
+<DropdownList
+  bottomOptionsSliced={false}
+  limit={10}
+  listOptions={Array []}
+  loading={true}
+  loadingOptions={true}
+  loadingType="DEFAULT"
+  offset={-1}
+  onChange={[Function]}
+  onRearrangeOptions={[Function]}
+  onScroll={[Function]}
+  onSearchChange={[Function]}
+  onSelectAll={[Function]}
+  optionsLength={10}
+  remainingOptions={0}
+  renderOptionsFromTop={[Function]}
+  searchInit={false}
+  searchTerm=""
+  slicedOptionsLength={0}
+  topOptionsSliced={false}
+/>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], loadingType: "ICON_WITH_META", loading: true, onChange: "[Function]"
+ 1`] = `
+<DropdownList
+  bottomOptionsSliced={false}
+  limit={10}
+  listOptions={Array []}
+  loading={true}
+  loadingOptions={true}
+  loadingType="ICON_WITH_META"
+  offset={-1}
+  onChange={[Function]}
+  onRearrangeOptions={[Function]}
+  onScroll={[Function]}
+  onSearchChange={[Function]}
+  onSelectAll={[Function]}
+  optionsLength={10}
+  remainingOptions={0}
+  renderOptionsFromTop={[Function]}
+  searchInit={false}
+  searchTerm=""
+  slicedOptionsLength={0}
+  topOptionsSliced={false}
+/>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], loadingType: "WITH_ICON", loading: true, onChange: "[Function]"
+ 1`] = `
+<DropdownList
+  bottomOptionsSliced={false}
+  limit={10}
+  listOptions={Array []}
+  loading={true}
+  loadingOptions={true}
+  loadingType="WITH_ICON"
+  offset={-1}
+  onChange={[Function]}
+  onRearrangeOptions={[Function]}
+  onScroll={[Function]}
+  onSearchChange={[Function]}
+  onSelectAll={[Function]}
+  optionsLength={10}
+  remainingOptions={0}
+  renderOptionsFromTop={[Function]}
+  searchInit={false}
+  searchTerm=""
+  slicedOptionsLength={0}
+  topOptionsSliced={false}
+/>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], loadingType: "WITH_META", loading: true, onChange: "[Function]"
+ 1`] = `
+<DropdownList
+  bottomOptionsSliced={false}
+  limit={10}
+  listOptions={Array []}
+  loading={true}
+  loadingOptions={true}
+  loadingType="WITH_META"
+  offset={-1}
+  onChange={[Function]}
+  onRearrangeOptions={[Function]}
+  onScroll={[Function]}
+  onSearchChange={[Function]}
+  onSelectAll={[Function]}
+  optionsLength={10}
+  remainingOptions={0}
+  renderOptionsFromTop={[Function]}
+  searchInit={false}
+  searchTerm=""
+  slicedOptionsLength={0}
+  topOptionsSliced={false}
+/>
+`;
+
+exports[`Dropdown component 
   options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], menu: false, onChange: "[Function]"
  1`] = `
 <DropdownList
@@ -318,33 +491,7 @@ exports[`Dropdown component
 `;
 
 exports[`Dropdown component 
-  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], optionTypes: "DEFAULT", loading: true, onChange: "[Function]"
- 1`] = `
-<DropdownList
-  bottomOptionsSliced={false}
-  limit={10}
-  listOptions={Array []}
-  loading={true}
-  loadingOptions={true}
-  offset={-1}
-  onChange={[Function]}
-  onRearrangeOptions={[Function]}
-  onScroll={[Function]}
-  onSearchChange={[Function]}
-  onSelectAll={[Function]}
-  optionTypes="DEFAULT"
-  optionsLength={10}
-  remainingOptions={0}
-  renderOptionsFromTop={[Function]}
-  searchInit={false}
-  searchTerm=""
-  slicedOptionsLength={0}
-  topOptionsSliced={false}
-/>
-`;
-
-exports[`Dropdown component 
-  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], optionTypes: "DEFAULT", onChange: "[Function]"
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
  1`] = `
 <DropdownList
   bottomOptionsSliced={false}
@@ -356,157 +503,6 @@ exports[`Dropdown component
   onScroll={[Function]}
   onSearchChange={[Function]}
   onSelectAll={[Function]}
-  optionTypes="DEFAULT"
-  optionsLength={10}
-  remainingOptions={0}
-  renderOptionsFromTop={[Function]}
-  searchInit={false}
-  searchTerm=""
-  slicedOptionsLength={0}
-  topOptionsSliced={false}
-/>
-`;
-
-exports[`Dropdown component 
-  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], optionTypes: "ICON_WITH_META", loading: true, onChange: "[Function]"
- 1`] = `
-<DropdownList
-  bottomOptionsSliced={false}
-  limit={10}
-  listOptions={Array []}
-  loading={true}
-  loadingOptions={true}
-  offset={-1}
-  onChange={[Function]}
-  onRearrangeOptions={[Function]}
-  onScroll={[Function]}
-  onSearchChange={[Function]}
-  onSelectAll={[Function]}
-  optionTypes="ICON_WITH_META"
-  optionsLength={10}
-  remainingOptions={0}
-  renderOptionsFromTop={[Function]}
-  searchInit={false}
-  searchTerm=""
-  slicedOptionsLength={0}
-  topOptionsSliced={false}
-/>
-`;
-
-exports[`Dropdown component 
-  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], optionTypes: "ICON_WITH_META", onChange: "[Function]"
- 1`] = `
-<DropdownList
-  bottomOptionsSliced={false}
-  limit={10}
-  listOptions={Array []}
-  offset={-1}
-  onChange={[Function]}
-  onRearrangeOptions={[Function]}
-  onScroll={[Function]}
-  onSearchChange={[Function]}
-  onSelectAll={[Function]}
-  optionTypes="ICON_WITH_META"
-  optionsLength={10}
-  remainingOptions={0}
-  renderOptionsFromTop={[Function]}
-  searchInit={false}
-  searchTerm=""
-  slicedOptionsLength={0}
-  topOptionsSliced={false}
-/>
-`;
-
-exports[`Dropdown component 
-  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], optionTypes: "WITH_ICON", loading: true, onChange: "[Function]"
- 1`] = `
-<DropdownList
-  bottomOptionsSliced={false}
-  limit={10}
-  listOptions={Array []}
-  loading={true}
-  loadingOptions={true}
-  offset={-1}
-  onChange={[Function]}
-  onRearrangeOptions={[Function]}
-  onScroll={[Function]}
-  onSearchChange={[Function]}
-  onSelectAll={[Function]}
-  optionTypes="WITH_ICON"
-  optionsLength={10}
-  remainingOptions={0}
-  renderOptionsFromTop={[Function]}
-  searchInit={false}
-  searchTerm=""
-  slicedOptionsLength={0}
-  topOptionsSliced={false}
-/>
-`;
-
-exports[`Dropdown component 
-  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], optionTypes: "WITH_ICON", onChange: "[Function]"
- 1`] = `
-<DropdownList
-  bottomOptionsSliced={false}
-  limit={10}
-  listOptions={Array []}
-  offset={-1}
-  onChange={[Function]}
-  onRearrangeOptions={[Function]}
-  onScroll={[Function]}
-  onSearchChange={[Function]}
-  onSelectAll={[Function]}
-  optionTypes="WITH_ICON"
-  optionsLength={10}
-  remainingOptions={0}
-  renderOptionsFromTop={[Function]}
-  searchInit={false}
-  searchTerm=""
-  slicedOptionsLength={0}
-  topOptionsSliced={false}
-/>
-`;
-
-exports[`Dropdown component 
-  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], optionTypes: "WITH_META", loading: true, onChange: "[Function]"
- 1`] = `
-<DropdownList
-  bottomOptionsSliced={false}
-  limit={10}
-  listOptions={Array []}
-  loading={true}
-  loadingOptions={true}
-  offset={-1}
-  onChange={[Function]}
-  onRearrangeOptions={[Function]}
-  onScroll={[Function]}
-  onSearchChange={[Function]}
-  onSelectAll={[Function]}
-  optionTypes="WITH_META"
-  optionsLength={10}
-  remainingOptions={0}
-  renderOptionsFromTop={[Function]}
-  searchInit={false}
-  searchTerm=""
-  slicedOptionsLength={0}
-  topOptionsSliced={false}
-/>
-`;
-
-exports[`Dropdown component 
-  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], optionTypes: "WITH_META", onChange: "[Function]"
- 1`] = `
-<DropdownList
-  bottomOptionsSliced={false}
-  limit={10}
-  listOptions={Array []}
-  offset={-1}
-  onChange={[Function]}
-  onRearrangeOptions={[Function]}
-  onScroll={[Function]}
-  onSearchChange={[Function]}
-  onSelectAll={[Function]}
-  optionTypes="WITH_META"
   optionsLength={10}
   remainingOptions={0}
   renderOptionsFromTop={[Function]}

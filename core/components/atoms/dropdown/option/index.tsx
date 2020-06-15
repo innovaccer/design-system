@@ -5,6 +5,7 @@ import DefaultOption from './DefaultOption';
 import MetaOption from './MetaOption';
 import IconOption from './IconOption';
 import IconWithMetaOption from './IconWithMetaOption';
+import { OptionType } from '../DropdownList';
 
 export interface OptionRendererProps {
   /**
@@ -18,6 +19,7 @@ interface OptionData {
   value: any;
   icon?: string;
   subInfo?: string;
+  optionType?: OptionType | 'WITH_CHECKBOX';
 }
 
 export interface OptionTypeProps {
@@ -25,8 +27,11 @@ export interface OptionTypeProps {
   textClassName: string;
   optionData: OptionData;
   selected: boolean;
+  active?: number;
+  index: number;
   onClick?: () => void;
   onChange?: (checked: boolean) => void;
+  updateActiveOption?: (index: number) => void;
 }
 
 interface OptionProps extends OptionRendererProps {
@@ -35,10 +40,12 @@ interface OptionProps extends OptionRendererProps {
   optionIsTop: boolean;
   optionIsBottom: boolean;
   optionsWrap?: boolean;
+  checkboxes?: boolean;
   index: number;
-  optionType: string;
+  active?: boolean;
   onClick?: () => void;
   onChange?: (checked: boolean) => void;
+  updateActiveOption?: (index: number) => void;
 }
 
 const OptionTypeMapping: { [key: string]: (props: OptionTypeProps) => JSX.Element } = {
@@ -57,16 +64,28 @@ const Option = (props: OptionProps) => {
     optionIsBottom,
     optionsWrap,
     onClick,
+    updateActiveOption,
     onChange,
-    optionType,
+    active,
+    index,
   } = props;
+
+  let {
+    optionType = 'DEFAULT'
+  } = optionData;
+  if (props.checkboxes) {
+    optionType = 'WITH_CHECKBOX';
+  }
+
+  const checkboxPresent = optionType === 'WITH_CHECKBOX';
 
   const className = classNames({
     ['Option']: true,
     ['Option-wrapper']: true,
     ['Option--top']: optionIsTop,
     ['Option--bottom']: optionIsBottom,
-    ['Option--selected']: selected && optionType !== 'WITH_CHECKBOX',
+    ['Option--active']: active,
+    ['Option--selected']: selected && !checkboxPresent,
   });
 
   const textClassName = classNames({
@@ -74,10 +93,26 @@ const Option = (props: OptionProps) => {
     ['Option-text--wrap']: optionsWrap,
   });
 
+  const onUpdateActiveOption = () => {
+    if (updateActiveOption) updateActiveOption(index);
+  };
+
   if (props.optionRenderer) {
     return (
-      <div className="Option-wrapper">
-        {props.optionRenderer(props)}
+      <div
+        className="Option-wrapper"
+        onMouseEnter={onUpdateActiveOption}
+        {...(!checkboxPresent && { onClick })}
+      >
+        {props.optionRenderer({
+          optionData,
+          selected,
+          optionIsTop,
+          optionIsBottom,
+          onChange,
+          active,
+          index,
+        })}
       </div>
     );
   }
@@ -90,8 +125,10 @@ const Option = (props: OptionProps) => {
       selected,
       onChange,
       onClick,
+      updateActiveOption,
       textClassName,
       className,
+      index,
     }
   );
 };
