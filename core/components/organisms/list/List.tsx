@@ -36,7 +36,7 @@ interface SharedListProps {
 type SyncListProps = SyncProps & SharedListProps;
 type AsyncListProps = AsyncProps & SharedListProps;
 
-export type ListProps = (AsyncListProps | SyncListProps);
+export type ListProps = (AsyncListProps & SyncListProps);
 
 export const List = (props: ListProps) => {
   return(

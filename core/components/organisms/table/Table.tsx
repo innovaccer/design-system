@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Header, ExternalHeaderProps, updateSearchTermFn } from '../grid/Header';
+import { Header, ExternalHeaderProps, updateSearchTermFn, HeaderProps } from '../grid/Header';
 import { Grid } from '@/index';
 import {
   Data,
@@ -15,6 +15,7 @@ import {
   updateFilterListFn
 } from '../grid';
 import { updateBatchData, filterData, sortData, paginateData, getSelectAll } from '../grid/utility';
+import { debounce } from 'throttle-debounce';
 
 interface SyncProps {
   data: Data;
@@ -50,7 +51,20 @@ interface SharedTableProps {
 type SyncTableProps = SyncProps & SharedTableProps;
 type AsyncTableProps = AsyncProps & SharedTableProps;
 
-export type TableProps = (AsyncTableProps | SyncTableProps);
+export type TableProps = (AsyncTableProps & SyncTableProps);
+
+interface TableState {
+  async: boolean;
+  data: GridProps['data'];
+  schema: GridProps['schema'];
+  sortingList: GridProps['sortingList'];
+  filterList: GridProps['filterList'];
+  page: GridProps['page'];
+  totalRecords: GridProps['totalRecords'];
+  loading: GridProps['loading'];
+  selectAll: GridProps['selectAll'];
+  searchTerm: HeaderProps['searchTerm'];
+}
 
 // export type ExtractType<T> = T extends SyncTableProps ? SyncTableProps : AsyncTableProps;
 
@@ -58,87 +72,88 @@ export type TableProps = (AsyncTableProps | SyncTableProps);
 
 // export function Table(props: SyncTableProps): React.ReactElement;
 // export function Table(props: AsyncTableProps): React.ReactElement;
-export const Table = (props: TableProps) => {
-  const {
-    showHead = true,
-    type,
-    size,
-    draggable,
-    withHeader,
-    headerProps = {},
-    withCheckbox,
-    showMenu,
-    withPagination,
-    paginationType,
-    pageSize = 15,
-    onRowClick,
-    onPageChange: onPageChangeProp,
-    onSelect: onSelectProp,
-    // onSelect,
-    loaderSchema,
-    // @ts-ignore
-    data: dataProp,
-    // @ts-ignore
-    schema: schemaProp,
-    // @ts-ignore
-    fetchData
-  } = props;
+export class Table extends React.Component<TableProps, TableState> {
+  constructor(props: TableProps) {
+    super(props);
 
-  const async = ('fetchData' in props);
+    const async = ('fetchData' in this.props);
 
-  const [state, setState] = React.useState({
-    data: dataProp || [],
-    schema: schemaProp || [],
-    sortingList: [],
-    filterList: {},
-    page: 1,
-    totalRecords: 0,
-    loading: true,
-    selectAll: getSelectAll([]),
-    searchTerm: '',
-  });
+    this.state = {
+      async,
+      // @ts-ignore
+      data: props.data || [],
+      // @ts-ignore
+      schema: props.schema || [],
+      sortingList: [],
+      filterList: {},
+      page: 1,
+      totalRecords: 0,
+      loading: true,
+      selectAll: getSelectAll([]),
+      searchTerm: '',
+    };
 
-  const {
-    page,
-    data,
-    schema,
-    sortingList,
-    filterList,
-    searchTerm
-  } = state;
+    this.updateData({});
+  }
 
-  React.useEffect(() => {
-    if (!async && (dataProp !== data || schemaProp !== schema)) {
-      setState({
-        loading: false,
-        page: 1,
-        schema: schemaProp,
-        data: dataProp,
-        totalRecords: dataProp.length,
-        sortingList: [],
-        filterList: {},
-        selectAll: getSelectAll([]),
-        searchTerm: ''
-      });
+  static defaultProps = {
+    showHead: true,
+    headerProps: {},
+    pageSize: 15
+  };
+
+  // static getDerivedStateFromProps()
+
+  componentDidUpdate(prevProps: TableProps, prevState: TableState) {
+    if (!this.state.async) {
+      if (prevProps.data !== this.props.data || prevProps.schema !== this.props.schema) {
+        this.setState({
+          loading: this.props.schema.length === 0,
+          page: 1,
+          schema: this.props.schema,
+          data: this.props.data,
+          totalRecords: this.props.data.length,
+          sortingList: [],
+          filterList: {},
+          selectAll: getSelectAll([]),
+          searchTerm: ''
+        });
+      }
     }
-  }, [dataProp, schemaProp]);
 
-  React.useEffect(() => {
-    updateData({
+    if (prevState.page !== this.state.page) {
+      this.onSelect(-1, false);
+
+      const { onPageChange } = this.props;
+      if (onPageChange) onPageChange(this.state.page);
+    }
+
+    if (prevState.page !== this.state.page
+      || prevState.filterList !== this.state.filterList
+      || prevState.sortingList !== this.state.sortingList
+      || prevState.searchTerm !== this.state.searchTerm) {
+      this.updateData({});
+    }
+  }
+
+  updateData = debounce(250, (options: FetchDataOptions) => {
+    const {
+      fetchData,
+      pageSize,
+      withPagination,
+      data: dataProp,
+    } = this.props;
+
+    const {
+      async,
+      page,
+      schema,
       sortingList,
       filterList,
       searchTerm
-    });
-  }, [sortingList, filterList, searchTerm]);
+    } = this.state;
 
-  React.useEffect(() => {
-    onSelect(-1, false);
-    if (onPageChangeProp) onPageChangeProp(page);
-  }, [page]);
-
-  function updateData(options: FetchDataOptions) {
-    setState({
-      ...state,
+    this.setState({
       loading: true,
       selectAll: getSelectAll([])
     });
@@ -148,24 +163,23 @@ export const Table = (props: TableProps) => {
       pageSize,
       sortingList,
       filterList,
+      searchTerm,
       ...options,
     };
 
     if (async) {
       fetchData(opts)
         .then((res: any) => {
-          setState({
-            ...state,
+          this.setState({
             selectAll: getSelectAll(res.data),
-            schema: state.schema.length ? state.schema : res.schema,
+            schema: this.state.schema.length ? this.state.schema : res.schema,
             data: res.data,
             totalRecords: res.totalRecords,
             loading: false,
           });
         })
         .catch(() => {
-          setState({
-            ...state,
+          this.setState({
             loading: false,
             data: []
           });
@@ -179,150 +193,174 @@ export const Table = (props: TableProps) => {
         renderedData = paginateData(renderedData, page, pageSize);
       }
 
-      setState({
-        ...state,
+      this.setState({
         totalRecords,
         selectAll: getSelectAll(renderedData),
-        schema: state.schema.length ? state.schema : schema,
-        loading: false,
+        schema: this.state.schema.length ? this.state.schema : schema,
+        loading: schema.length === 0,
         data: renderedData,
       });
     }
-  }
+  });
 
-  const onSelect: onSelectFn = (rowIndex, selected) => {
+  onSelect: onSelectFn = (rowIndex, selected) => {
+    const {
+      data
+    } = this.state;
+
+    const {
+      onSelect
+    } = this.props;
+
     const indexes = [rowIndex];
     let newData: Data = data;
     if (rowIndex >= 0) {
-      newData = updateBatchData(state.data, indexes, {
+      newData = updateBatchData(data, indexes, {
         _selected: selected
       });
 
-      setState({
-        ...state,
+      this.setState({
         data: newData,
         selectAll: getSelectAll(newData)
       });
     }
 
-    if (onSelectProp) {
-      onSelectProp(indexes, selected, rowIndex === -1 ? [] : newData.filter(d => d._selected));
+    if (onSelect) {
+      onSelect(indexes, selected, rowIndex === -1 ? [] : newData.filter(d => d._selected));
     }
-  };
+  }
 
-  const onSelectAll: onSelectAllFn = selected => {
-    const indexes = Array.from({ length: state.data.length }, (_, i) => i);
+  onSelectAll: onSelectAllFn = selected => {
+    const {
+      onSelect
+    } = this.props;
 
-    const newData = updateBatchData(state.data, indexes, {
+    const {
+      data
+    } = this.state;
+
+    const indexes = Array.from({ length: data.length }, (_, i) => i);
+
+    const newData = updateBatchData(data, indexes, {
       _selected: selected
     });
 
-    if (onSelectProp) {
-      onSelectProp(indexes, selected, newData.filter(d => d._selected));
+    if (onSelect) {
+      onSelect(indexes, selected, newData.filter(d => d._selected));
     }
 
-    setState({
-      ...state,
+    this.setState({
       data: newData,
       selectAll: getSelectAll(newData)
     });
-  };
+  }
 
-  const onPageChange: GridProps['onPageChange'] = newPage => {
-    setState({
-      ...state,
+  onPageChange: GridProps['onPageChange'] = newPage => {
+    this.setState({
       page: newPage
     });
-  };
+  }
 
-  const updateSchema: updateSchemaFn = newSchema => {
-    setState({
-      ...state,
+  updateSchema: updateSchemaFn = newSchema => {
+    this.setState({
       schema: newSchema
     });
-  };
+  }
 
-  const updateSortingList: updateSortingListFn = newSortingList => {
-    setState({
-      ...state,
+  updateSortingList: updateSortingListFn = newSortingList => {
+    this.setState({
       // @ts-ignore
       sortingList: [
         ...newSortingList
       ],
       page: 1,
     });
+  }
 
-    // updateData({
-    //   sortingList: newSortingList
-    // });
-  };
-
-  const updateFilterList: updateFilterListFn = newFilterList => {
-    setState({
-      ...state,
+  updateFilterList: updateFilterListFn = newFilterList => {
+    this.setState({
       filterList: newFilterList,
       page: 1,
     });
-  };
+  }
 
-  const updateSearchTerm: updateSearchTermFn = newSearchTerm => {
-    setState({
-      ...state,
+  updateSearchTerm: updateSearchTermFn = newSearchTerm => {
+    this.setState({
       searchTerm: newSearchTerm,
       page: 1
     });
-  };
+  }
 
-  const {
-    children: headerChildren,
-    ...headerAttr
-  } = headerProps;
+  render() {
+    const {
+      showHead,
+      type,
+      size,
+      draggable,
+      withHeader,
+      headerProps,
+      withCheckbox,
+      showMenu,
+      withPagination,
+      paginationType,
+      pageSize,
+      onRowClick,
+      // onPageChange: onPageChangeProp,
+      // onSelect,
+      loaderSchema,
+    } = this.props;
 
-  return (
-    <div className="Table">
-      {withHeader && (
-        <div className="Table-header">
-          <Header
-            {...state}
-            // updateData={updateData}
-            updateSchema={updateSchema}
-            // updateSortingList={updateSortingList}
-            updateFilterList={updateFilterList}
-            updateSearchTerm={updateSearchTerm}
-            showHead={showHead}
-            onSelectAll={onSelectAll}
+    const {
+      children: headerChildren,
+      ...headerAttr
+    } = headerProps as ExternalHeaderProps;
+
+    return (
+      <div className="Table">
+        {withHeader && (
+          <div className="Table-header">
+            <Header
+              {...this.state}
+              // updateData={updateData}
+              updateSchema={this.updateSchema}
+              // updateSortingList={updateSortingList}
+              updateFilterList={this.updateFilterList}
+              updateSearchTerm={this.updateSearchTerm}
+              showHead={showHead}
+              onSelectAll={this.onSelectAll}
+              withCheckbox={withCheckbox}
+              {...headerAttr}
+            >
+              {headerChildren}
+            </Header>
+          </div>
+        )}
+        <div className="Table-grid">
+          <Grid
+            {...this.state}
+            updateData={this.updateData}
+            updateSchema={this.updateSchema}
+            updateSortingList={this.updateSortingList}
+            updateFilterList={this.updateFilterList}
             withCheckbox={withCheckbox}
-            {...headerAttr}
-          >
-            {headerChildren}
-          </Header>
+            onSelect={this.onSelect}
+            onSelectAll={this.onSelectAll}
+            showMenu={showMenu}
+            showHead={showHead}
+            type={type}
+            size={size}
+            draggable={draggable}
+            withPagination={withPagination}
+            paginationType={paginationType}
+            pageSize={pageSize}
+            loaderSchema={loaderSchema}
+            onRowClick={onRowClick}
+            onPageChange={this.onPageChange}
+          />
         </div>
-      )}
-      <div className="Table-grid">
-        <Grid
-          {...state}
-          updateData={updateData}
-          updateSchema={updateSchema}
-          updateSortingList={updateSortingList}
-          updateFilterList={updateFilterList}
-          withCheckbox={withCheckbox}
-          onSelect={onSelect}
-          onSelectAll={onSelectAll}
-          showMenu={showMenu}
-          showHead={showHead}
-          type={type}
-          size={size}
-          draggable={draggable}
-          withPagination={withPagination}
-          paginationType={paginationType}
-          pageSize={pageSize}
-          loaderSchema={loaderSchema}
-          onRowClick={onRowClick}
-          onPageChange={onPageChange}
-        />
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Table;

@@ -38,7 +38,7 @@ export const Header = (props: HeaderProps) => {
     children,
     // updateData,
     updateSchema,
-    filterList,
+    filterList = {},
     updateFilterList,
     totalRecords = 0,
     onSelectAll,
@@ -184,6 +184,14 @@ export const Header = (props: HeaderProps) => {
                       showApplyButton={true}
                       inlineLabel={displayName}
                       // icon={'filter_list'}
+                      selected={
+                        filterList[s.name]
+                          ? filterList[s.name].map(f => ({
+                            value: f,
+                            label: s.filters?.find(sf => sf.value === f)!.label || ''
+                          }))
+                          : []
+                      }
                       options={filters}
                       onChange={selected => onFilterChange(name, selected)}
                     />
