@@ -1,20 +1,18 @@
 import * as React from 'react';
 import Checkbox from '@/components/atoms/checkbox';
-import classNames from 'classnames';
+import Option, { OptionRendererProps } from './option';
 
 export type Size = 'regular' | 'tiny';
 
 export interface CheckboxProps {
-  size?: Size;
   checked?: boolean;
   group?: string;
   selectedGroup?: boolean;
   label: string;
   value: any;
-  onChange?: (checked: boolean) => void;
 }
 
-export interface ListCheckboxProps {
+export interface ListCheckboxProps extends OptionRendererProps{
   label?: string;
   showParentCheckbox?: boolean;
   checked?: boolean;
@@ -46,6 +44,7 @@ export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>(
     selectedLabels = [],
     optionsLength,
     updatedSelectedArray,
+    optionRenderer,
     onChange,
     label,
     style,
@@ -110,16 +109,6 @@ export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>(
     }
   }, [props.checked]);
 
-  const getListCheckboxClass = (index: number) => {
-    const ListCheckboxClass = classNames({
-      ['ListCheckbox-childWrapper']: true,
-      ['ListCheckbox-childWrapper--top']: !showParentCheckbox && index === 0 && !showGroups,
-      ['ListCheckbox-childWrapper--bottom']: index + 1 === list.length && !(showGroups && remainingOptions > 0)
-    });
-
-    return ListCheckboxClass;
-  };
-
   const handleChildChange = (checkedValue: boolean, index: number) => {
     const updateCheck = [...checked];
     updateCheck[index] = checkedValue;
@@ -179,25 +168,29 @@ export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>(
       <div className={'ListCheckbox-scroller'} style={style} ref={ref}>
         {
           list.map((item, ind) => {
-            const { label: childLabel, size, group, selectedGroup, onChange: childOnChange } = item;
+            const { group, selectedGroup, value, label: childLabel } = item;
             const prevGroup = ind > 0 ?
               list[ind - 1].group : bufferedOption ? bufferedOption.group : undefined;
             const isGroup = showGroups && prevGroup !== group;
 
+            const top = !showParentCheckbox && ind === 0 && !showGroups;
+            const bottom = ind + 1 === list.length && !(showGroups && remainingOptions > 0);
+
             return (
               <div key={`checkbox-${ind}`}>
                 {isGroup && group && renderGroups(group, selectedGroup)}
-                <div className={getListCheckboxClass(ind)}>
-                  <Checkbox
-                    label={childLabel}
-                    checked={checked[ind]}
-                    size={size}
-                    onChange={c => {
-                      handleChildChange(c, ind);
-                      if (childOnChange) childOnChange(checked[ind]);
-                    }}
-                  />
-                </div>
+                <Option
+                  optionData={{ value, label: childLabel }}
+                  selected={checked[ind]}
+                  optionRenderer={optionRenderer}
+                  index={ind}
+                  optionIsTop={top}
+                  optionIsBottom={bottom}
+                  optionType={'WITH_CHECKBOX'}
+                  onChange={c => {
+                    handleChildChange(c, ind);
+                  }}
+                />
               </div>
             );
           })

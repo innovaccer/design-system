@@ -62,58 +62,52 @@
     box-sizing: border-box;
 }
 
-.Option-wrapper,
-.Option-loadingWrapper,
-.Dropdown-wrapper .ListCheckbox-parentWrapper,
-.Dropdown-wrapper .ListCheckbox-childWrapper {
+.Option,
+.Dropdown-wrapper .ListCheckbox-parentWrapper {
     display: flex;
+}
+
+.Option,
+.Option-loading,
+.Dropdown-wrapper .ListCheckbox-parentWrapper {
     padding-top: 6px;
     padding-bottom: 6px;
     padding-left: var(--spacing-l);
     padding-right: var(--spacing-l);
 }
 
-.Option-wrapper:hover,
-.Dropdown-wrapper .ListCheckbox-parentWrapper:hover,
-.Dropdown-wrapper .ListCheckbox-childWrapper:hover {
+.Option:hover,
+.Dropdown-wrapper .ListCheckbox-parentWrapper:hover {
     background-color: var(--secondary-lightest);
     cursor: pointer;
 }
 
 .Dropdown-wrapper .ListCheckbox-parentWrapper,
-.Dropdown-wrapper .ListCheckbox-childWrapper--top {
+.Option--top {
     padding-top: 10px;
 }
 
-.Dropdown-wrapper .ListCheckbox-childWrapper--bottom {
+.Option--bottom {
     padding-bottom: 10px;
 }
 
-.Dropdown-wrapper .ListCheckbox-childWrapper .Checkbox {
+.Dropdown-wrapper .Option .Checkbox {
     overflow: hidden;
 }
 
-.Dropdown-wrapper-loaderWrapper {
-    margin-top: var(--spacing-s);
-    margin-bottom: var(--spacing-s);
+.Dropdown-loading .Dropdown-scroller {
+    margin-top: var(--spacing-m);
+    margin-bottom: var(--spacing-m);
 }
 
-.Option-loadingWrapper {
+.Option-loading {
     pointer-events: none;
 }
 
-.Option-wrapper--selected {
+.Option--selected {
     background-color: var(--primary);
     color: var(--white);
     pointer-events: none;
-}
-
-.Option-wrapper--top {
-    padding-top: 10px;
-}
-
-.Option-wrapper--bottom {
-    padding-bottom: 10px;
 }
 
 .Option-label {
@@ -138,7 +132,7 @@
     align-items: flex-start;
 }
 
-.Option-wrapper--icon {
+.Option--icon {
     padding-left: var(--spacing);
 }
 
@@ -151,16 +145,16 @@
     color: var(--inverse-light);
 }
 
-.Option-wrapper--selected .Option-subinfo {
+.Option--selected .Option-subinfo {
     color: var(--white);
 }
 
-.Scroller-wrapper::-webkit-scrollbar,
+.Dropdown-scroller::-webkit-scrollbar,
 .ListCheckbox-scroller::-webkit-scrollbar {
     width: 10px;
 }
 
-.Scroller-wrapper::-webkit-scrollbar-thumb,
+.Dropdown-scroller::-webkit-scrollbar-thumb,
 .ListCheckbox-scroller::-webkit-scrollbar-thumb {
     background: var(--secondary);
     border-radius: 10px;

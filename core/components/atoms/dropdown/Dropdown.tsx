@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { debounce } from 'throttle-debounce';
-import DropdownList, { DropdownListProps, Option } from '@/components/atoms/dropdown/dropdownList';
-import { getOptions, getValuesFromSelectedObj, getLabelsFromSelectedObj } from './utils/utility';
+import DropdownList, { DropdownListProps, Option } from './DropdownList';
+import { getOptions, getValuesFromSelectedObj, getLabelsFromSelectedObj } from './utility';
 
 interface OptionType {
   offset: number;

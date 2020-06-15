@@ -106,7 +106,6 @@ const HeaderCell = (props: HeaderCellProps) => {
           ) : (
               <Dropdown
                 menu={true}
-                buttonAppearance={'transparent'}
                 showApplyButton={true}
                 checkboxes={true}
                 options={schema.filters}
@@ -126,7 +125,6 @@ const HeaderCell = (props: HeaderCellProps) => {
               <Dropdown
                 key={schema.name}
                 menu={true}
-                buttonAppearance={'transparent'}
                 options={options}
                 dropdownAlign={'left'}
                 onChange={(selected: any) => _this.onMenuChange(schema.name, selected)}

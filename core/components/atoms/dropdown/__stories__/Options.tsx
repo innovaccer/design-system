@@ -5,6 +5,8 @@ for (let i = 1; i <= 10; i++) {
   storyOptions.push({
     label: `Option ${i}`,
     value: `Option ${i}`,
+    icon: 'events',
+    subInfo: 'subInfo'
   });
 }
 
@@ -12,14 +14,18 @@ for (let i = 1; i <= 40; i++) {
   dropdownOptions.push({
     label: `Option ${i}`,
     value: `Option ${i}`,
-    group: 'Group 1'
+    group: 'Group 1',
+    icon: 'events',
+    subInfo: 'subInfo'
   });
 }
 for (let i = 41; i <= 100; i++) {
   dropdownOptions.push({
     label: `Option ${i}`,
     value: `Option ${i}`,
-    group: 'Group 2'
+    group: 'Group 2',
+    icon: 'events',
+    subInfo: 'subInfo'
   });
 }
 

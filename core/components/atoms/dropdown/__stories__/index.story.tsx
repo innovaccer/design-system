@@ -2,7 +2,7 @@ import * as React from 'react';
 import { select, text, boolean, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import Dropdown from '../Dropdown';
-import { dropdownOptions } from '../utils/Options';
+import { dropdownOptions } from './Options';
 
 // CSF format story
 export const all = () => {
@@ -18,10 +18,10 @@ export const all = () => {
     undefined
   );
 
-  const buttonAppearance = select(
-    'Button Appearance',
-    ['basic', 'transparent'],
-    undefined
+  const optionType = select(
+    'option type',
+    ['DEFAULT', 'WITH_ICON', 'WITH_META', 'ICON_WITH_META'],
+    undefined,
   );
 
   const disabled = boolean('disabled', false);
@@ -83,7 +83,6 @@ export const all = () => {
   const props = {
     triggerSize,
     dropdownAlign,
-    buttonAppearance,
     icon,
     bulk,
     placeholder,
@@ -99,10 +98,12 @@ export const all = () => {
     limit,
     loading,
     fetchOptions,
+    optionType,
     parentCheckboxLabel,
     onChangeTriggerLabel,
     options: dropdownOptions,
     onChange: onChangeHandler,
+    maxWidth: 170,
   };
 
   return (

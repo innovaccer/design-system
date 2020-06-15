@@ -15,7 +15,6 @@ export { Input } from './components/atoms/input';
 export { Label } from './components/atoms/label';
 export { Legend } from './components/atoms/legend';
 export { Link } from './components/atoms/link';
-export { ListCheckbox } from './components/atoms/listCheckbox';
 export { Message } from './components/atoms/message';
 export { OutsideClick } from './components/atoms/outsideClick';
 export { Paragraph } from './components/atoms/paragraph';
