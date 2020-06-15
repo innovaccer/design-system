@@ -52,7 +52,7 @@ const schema: Schema = [
     // separator: true,
     // pinned: true,
     // align: 'center',
-    sortFn: (a, b) => a.email.localeCompare(b.email),
+    sortFn: (a, b) => a.email.title.localeCompare(b.email.title),
     cellType: 'WITH_META_LIST'
     // image: iconImg,
   },

@@ -28,7 +28,7 @@ export const all = () => {
 
   const draggable = boolean(
     'draggable',
-    false
+    true
   );
 
   const withHeader = boolean(
@@ -38,12 +38,12 @@ export const all = () => {
 
   const withCheckbox = boolean(
     'withCheckbox',
-    false
+    true
   );
 
   const showMenu = boolean(
     'showMenu',
-    false
+    true
   );
 
   const withPagination = boolean(

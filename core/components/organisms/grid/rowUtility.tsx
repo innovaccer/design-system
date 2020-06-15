@@ -24,7 +24,7 @@ export function translateData(schema: ColumnSchema, data: RowData) {
       } : translatedData
     };
   }
-  if (typeof newData[schema.name] === 'string') newData[schema.name] = { title: newData[schema.name] };
+  if (typeof newData[schema.name] !== 'object') newData[schema.name] = { title: newData[schema.name] };
 
   return newData;
 }
@@ -47,11 +47,13 @@ export const filterData = (schema: Schema, data: Data, filterList: FetchDataOpti
 
 export const sortData = (schema: Schema, data: Data, sortingList: FetchDataOptions['sortingList']): Data => {
   const sortedData = data;
-  sortingList?.forEach((l: Record<string, any>) => {
+  sortingList?.forEach(l => {
     const sIndex = schema.findIndex(s => s.name === l.name);
     const { sortFn } = schema[sIndex];
-    sortedData.sort(sortFn);
-    if (l.type === 'desc') sortedData.reverse();
+    if (sortFn) {
+      sortedData.sort(sortFn);
+      if (l.type === 'desc') sortedData.reverse();
+    }
   });
 
   return sortedData;

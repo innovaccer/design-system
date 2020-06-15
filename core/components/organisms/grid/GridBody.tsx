@@ -29,17 +29,14 @@ export const GridBody = (props: GridBodyProps) => {
   const {
     loading,
     withPagination,
+    page,
     pageSize,
     totalRecords,
     errorTemplate
   } = _this.props;
 
-  const {
-    page,
-  } = _this.state;
-
   if (!loading && data.length === 0) {
-    return errorTemplate ? errorTemplate() : <Heading>Couldn't fetch data</Heading>;
+    return errorTemplate ? errorTemplate() : <Heading>No results found</Heading>;
   }
 
   const totalPages = Math.ceil(totalRecords / pageSize);

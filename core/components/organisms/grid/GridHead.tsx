@@ -25,12 +25,12 @@ export const GridHead = (props: GridHeadProps) => {
   } = props;
 
   const {
-    loading
+    loading,
+    selectAll,
   } = _this.props;
 
   const {
     init,
-    selectAll,
   } = _this.state;
 
   const pinnedSchema = schema.filter(s => s.pinned);

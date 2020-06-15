@@ -35,12 +35,13 @@ const HeaderCell = (props: HeaderCellProps) => {
 
   const {
     loading,
-    showMenu
+    showMenu,
+    sortingList,
+    filterList
   } = _this.props;
 
   const {
     init,
-    sortingList,
   } = _this.state;
 
   const listIndex = sortingList.findIndex(l => l.name === schema.name);
@@ -109,6 +110,14 @@ const HeaderCell = (props: HeaderCellProps) => {
                 buttonAppearance={'transparent'}
                 showApplyButton={true}
                 checkboxes={true}
+                selected={
+                  filterList[schema.name]
+                    ? filterList[schema.name].map(f => ({
+                      value: f,
+                      label: schema.filters?.find(s => s.value === f)!.label || ''
+                    }))
+                    : []
+                }
                 options={schema.filters}
                 icon={'filter_list'}
                 dropdownAlign={'left'}

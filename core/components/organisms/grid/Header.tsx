@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Checkbox, Text, Input, Dropdown } from '@/index';
-import { updateDataFn, updateSchemaFn, ColumnSchema, Schema, Data, onSelectAllFn } from './Grid';
-import { getSelectAll } from './utility';
+import { Checkbox, Text, Input, Dropdown, Placeholder, PlaceholderParagraph } from '@/index';
+import { updateSchemaFn, ColumnSchema, Schema, Data, onSelectAllFn, GridProps, updateFilterListFn } from './Grid';
 
 export interface ExternalHeaderProps {
   children?: React.ReactNode;
@@ -9,47 +8,64 @@ export interface ExternalHeaderProps {
   searchPlaceholder?: string;
 }
 
+export type updateSearchTermFn = (newSearchTerm: string) => void;
+
 export interface HeaderProps extends ExternalHeaderProps {
+  loading: boolean;
   data: Data;
   schema: Schema;
+  selectAll?: GridProps['selectAll'];
   totalRecords?: number;
   withCheckbox?: boolean;
   showHead?: boolean;
-  updateData?: updateDataFn;
+  // updateData?: updateDataFn;
   updateSchema?: updateSchemaFn;
+  filterList?: GridProps['filterList'];
+  updateFilterList?: updateFilterListFn;
   onSelectAll?: onSelectAllFn;
+  searchTerm?: string;
+  updateSearchTerm?: updateSearchTermFn;
 }
 
 export const Header = (props: HeaderProps) => {
   const {
+    loading,
     data,
     schema,
     withSearch,
     showHead,
     withCheckbox,
     children,
-    updateData,
+    // updateData,
     updateSchema,
+    filterList,
+    updateFilterList,
     totalRecords = 0,
     onSelectAll,
-    searchPlaceholder = 'Search'
+    searchPlaceholder = 'Search',
+    selectAll,
+    searchTerm,
+    updateSearchTerm
   } = props;
 
   const filterSchema = schema.filter(s => s.filters);
   // const sortingSchema = schema.filter(s => s.sortFn);
 
-  const [state, setState] = React.useState({
-    // sortingList: [],
-    filterList: {},
-  });
+  // const [state, setState] = React.useState({
+  //   // sortingList: [],
+  //   filterList: {},
+  // });
 
   const onSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    if (updateData) {
-      updateData({
-        searchTerm: value
-      });
+    if (updateSearchTerm) {
+      updateSearchTerm(value);
     }
+    // if (updateData) {
+    //   updateData({
+    //     searchTerm: value
+    //   });
+    // }
   };
 
   // const onSortChange = (name: ColumnSchema['name'], filters: any[]) => {
@@ -73,21 +89,25 @@ export const Header = (props: HeaderProps) => {
 
   const onFilterChange = (name: ColumnSchema['name'], filters: any[]) => {
     const newFilterList = {
-      ...state.filterList,
+      ...filterList,
       [name]: filters
     };
 
-    setState({
-      ...state,
-      filterList: newFilterList
-    });
-
-    if (updateData) {
-      updateData({
-        page: 1,
-        filterList: newFilterList
-      });
+    if (updateFilterList) {
+      updateFilterList(newFilterList);
     }
+
+    // setState({
+    //   ...state,
+    //   filterList: newFilterList
+    // });
+
+    // if (updateData) {
+    //   updateData({
+    //     page: 1,
+    //     filterList: newFilterList
+    //   });
+    // }
   };
 
   const onHideColumn = (selected: any[]) => {
@@ -118,6 +138,8 @@ export const Header = (props: HeaderProps) => {
               icon="search"
               placeholder={searchPlaceholder}
               onChange={onSearchChange}
+              value={searchTerm}
+              onClear={() => updateSearchTerm && updateSearchTerm('')}
             />
           </div>
         )}
@@ -177,13 +199,21 @@ export const Header = (props: HeaderProps) => {
       </div>
       <div className="Header-content Header-content--bottom">
         <div className="Header-label">
-          {withCheckbox && (
+          {!showHead && withCheckbox && !loading && (
             <Checkbox
-              {...getSelectAll(data)}
+              {...selectAll}
               onChange={onSelectAll}
             />
           )}
-          <Text small={true} weight={'medium'}>{label}</Text>
+          {loading ? (
+            <Placeholder style={{ display: 'flex', flexGrow: 1 }} withImage={!showHead && withCheckbox}>
+              <PlaceholderParagraph length={'small'} />
+            </Placeholder>
+          ) : (
+              <Text small={true} weight={'medium'}>{label}</Text>
+            )
+          }
+
         </div>
         <div className="Header-hideColumns">
           <Dropdown

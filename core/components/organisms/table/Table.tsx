@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Header, ExternalHeaderProps } from '../grid/Header';
+import { Header, ExternalHeaderProps, updateSearchTermFn } from '../grid/Header';
 import { Grid } from '@/index';
 import {
   Data,
@@ -10,9 +10,11 @@ import {
   FetchDataOptions,
   fetchDataFn,
   RowData,
-  updateSchemaFn
+  updateSchemaFn,
+  updateSortingListFn,
+  updateFilterListFn
 } from '../grid';
-import { updateBatchData, filterData, sortData, paginateData } from '../grid/utility';
+import { updateBatchData, filterData, sortData, paginateData, getSelectAll } from '../grid/utility';
 
 interface SyncProps {
   data: Data;
@@ -25,6 +27,7 @@ interface AsyncProps {
 }
 
 interface SharedTableProps {
+  showHead?: GridProps['showHead'];
   type?: GridProps['type'];
   size?: GridProps['size'];
   draggable?: boolean;
@@ -57,6 +60,7 @@ export type TableProps = (AsyncTableProps | SyncTableProps);
 // export function Table(props: AsyncTableProps): React.ReactElement;
 export const Table = (props: TableProps) => {
   const {
+    showHead = true,
     type,
     size,
     draggable,
@@ -66,9 +70,9 @@ export const Table = (props: TableProps) => {
     showMenu,
     withPagination,
     paginationType,
-    pageSize,
+    pageSize = 15,
     onRowClick,
-    onPageChange,
+    onPageChange: onPageChangeProp,
     onSelect: onSelectProp,
     // onSelect,
     loaderSchema,
@@ -85,80 +89,106 @@ export const Table = (props: TableProps) => {
   const [state, setState] = React.useState({
     data: dataProp || [],
     schema: schemaProp || [],
+    sortingList: [],
+    filterList: {},
+    page: 1,
     totalRecords: 0,
     loading: true,
+    selectAll: getSelectAll([]),
+    searchTerm: '',
   });
 
   const {
+    page,
     data,
-    schema
+    schema,
+    sortingList,
+    filterList,
+    searchTerm
   } = state;
 
   React.useEffect(() => {
     if (!async && (dataProp !== data || schemaProp !== schema)) {
       setState({
         loading: false,
+        page: 1,
         schema: schemaProp,
-        data: schemaProp,
-        totalRecords: dataProp.length
+        data: dataProp,
+        totalRecords: dataProp.length,
+        sortingList: [],
+        filterList: {},
+        selectAll: getSelectAll([]),
+        searchTerm: ''
       });
     }
   }, [dataProp, schemaProp]);
 
-  const updateSyncData = (options: FetchDataOptions) => {
-    setState({
-      ...state,
-      loading: true
-    });
-
-    const {
-      page,
-      pageSize: pageSizeOp,
+  React.useEffect(() => {
+    updateData({
       sortingList,
-      filterList
-    } = options;
+      filterList,
+      searchTerm
+    });
+  }, [sortingList, filterList, searchTerm]);
 
-    const filteredData = filterData(schema, dataProp, filterList);
-    const sortedData = sortData(schema, filteredData, sortingList);
-    let renderedData = sortedData;
-    const totalRecords = sortedData.length;
-    if (withPagination && page && pageSizeOp) {
-      renderedData = paginateData(renderedData, page, pageSizeOp);
-    }
+  React.useEffect(() => {
+    onSelect(-1, false);
+    if (onPageChangeProp) onPageChangeProp(page);
+  }, [page]);
 
+  function updateData(options: FetchDataOptions) {
     setState({
       ...state,
-      totalRecords,
-      schema: state.schema.length ? state.schema : schema,
-      loading: false,
-      data: renderedData,
-    });
-  };
-
-  const updateAsyncData = (options: FetchDataOptions) => {
-    setState({
-      ...state,
-      loading: true
+      loading: true,
+      selectAll: getSelectAll([])
     });
 
-    fetchData(options)
-      .then((res: any) => {
-        setState({
-          ...state,
-          schema: state.schema.length ? state.schema : res.schema,
-          data: res.data,
-          totalRecords: res.totalRecords,
-          loading: false,
+    const opts = {
+      page,
+      pageSize,
+      sortingList,
+      filterList,
+      ...options,
+    };
+
+    if (async) {
+      fetchData(opts)
+        .then((res: any) => {
+          setState({
+            ...state,
+            selectAll: getSelectAll(res.data),
+            schema: state.schema.length ? state.schema : res.schema,
+            data: res.data,
+            totalRecords: res.totalRecords,
+            loading: false,
+          });
+        })
+        .catch(() => {
+          setState({
+            ...state,
+            loading: false,
+            data: []
+          });
         });
-      })
-      .catch(() => {
-        setState({
-          ...state,
-          loading: false,
-          data: []
-        });
+    } else {
+      const filteredData = filterData(schema, dataProp, filterList);
+      const sortedData = sortData(schema, filteredData, sortingList);
+      let renderedData = sortedData;
+      const totalRecords = sortedData.length;
+      if (withPagination && page && pageSize) {
+        renderedData = paginateData(renderedData, page, pageSize);
+      }
+
+      setState({
+        ...state,
+        totalRecords,
+        selectAll: getSelectAll(renderedData),
+        schema: state.schema.length ? state.schema : schema,
+        loading: false,
+        data: renderedData,
       });
-  };
+    }
+  }
 
   const onSelect: onSelectFn = (rowIndex, selected) => {
     const indexes = [rowIndex];
@@ -170,7 +200,8 @@ export const Table = (props: TableProps) => {
 
       setState({
         ...state,
-        data: newData
+        data: newData,
+        selectAll: getSelectAll(newData)
       });
     }
 
@@ -192,7 +223,15 @@ export const Table = (props: TableProps) => {
 
     setState({
       ...state,
-      data: newData
+      data: newData,
+      selectAll: getSelectAll(newData)
+    });
+  };
+
+  const onPageChange: GridProps['onPageChange'] = newPage => {
+    setState({
+      ...state,
+      page: newPage
     });
   };
 
@@ -203,8 +242,38 @@ export const Table = (props: TableProps) => {
     });
   };
 
+  const updateSortingList: updateSortingListFn = newSortingList => {
+    setState({
+      ...state,
+      // @ts-ignore
+      sortingList: [
+        ...newSortingList
+      ],
+      page: 1,
+    });
+
+    // updateData({
+    //   sortingList: newSortingList
+    // });
+  };
+
+  const updateFilterList: updateFilterListFn = newFilterList => {
+    setState({
+      ...state,
+      filterList: newFilterList,
+      page: 1,
+    });
+  };
+
+  const updateSearchTerm: updateSearchTermFn = newSearchTerm => {
+    setState({
+      ...state,
+      searchTerm: newSearchTerm,
+      page: 1
+    });
+  };
+
   const {
-    // @ts-ignore
     children: headerChildren,
     ...headerAttr
   } = headerProps;
@@ -215,9 +284,13 @@ export const Table = (props: TableProps) => {
         <div className="Table-header">
           <Header
             {...state}
-            updateData={async ? updateAsyncData : updateSyncData}
+            // updateData={updateData}
             updateSchema={updateSchema}
-            showHead={true}
+            // updateSortingList={updateSortingList}
+            updateFilterList={updateFilterList}
+            updateSearchTerm={updateSearchTerm}
+            showHead={showHead}
+            onSelectAll={onSelectAll}
             withCheckbox={withCheckbox}
             {...headerAttr}
           >
@@ -228,12 +301,15 @@ export const Table = (props: TableProps) => {
       <div className="Table-grid">
         <Grid
           {...state}
-          updateData={async ? updateAsyncData : updateSyncData}
+          updateData={updateData}
           updateSchema={updateSchema}
+          updateSortingList={updateSortingList}
+          updateFilterList={updateFilterList}
           withCheckbox={withCheckbox}
           onSelect={onSelect}
           onSelectAll={onSelectAll}
           showMenu={showMenu}
+          showHead={showHead}
           type={type}
           size={size}
           draggable={draggable}
@@ -242,10 +318,7 @@ export const Table = (props: TableProps) => {
           pageSize={pageSize}
           loaderSchema={loaderSchema}
           onRowClick={onRowClick}
-          onPageChange={newPage => {
-            onSelect(-1, false);
-            if (onPageChange) onPageChange(newPage);
-          }}
+          onPageChange={onPageChange}
         />
       </div>
     </div>

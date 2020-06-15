@@ -53,6 +53,15 @@ export const withPagination = () => {
     });
   };
 
+  const onPageChange: GridProps['onPageChange'] = newPage => {
+    action(`on page change:- ${newPage}`)();
+
+    setState({
+      ...state,
+      page: newPage
+    });
+  };
+
   return (
     // @ts-ignore
     <div style={style}>
@@ -72,12 +81,10 @@ export const withPagination = () => {
             }}
           >
             <Grid
+              {...state}
               withPagination={true}
               paginationType={v}
-              onPageChange={(page: number) => action(`on page change:- ${page}`)()}
-              data={state.data}
-              schema={state.schema}
-              totalRecords={state.totalRecords}
+              onPageChange={onPageChange}
               updateData={updateData}
               loading={state.loading}
             />
