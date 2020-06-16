@@ -3,14 +3,15 @@ import { Header } from '../../Header';
 import { Button, Card, Grid } from '@/index';
 import data from '../_common_/data';
 import schema from '../_common_/schema';
-import { updateBatchData, filterData, sortData, paginateData } from '../../utility';
+import { updateBatchData, filterData, sortData, paginateData, getSelectAll } from '../../utility';
 import { action } from '@storybook/addon-actions';
-import { onSelectFn, onSelectAllFn, FetchDataOptions, updateSchemaFn } from '../../Grid';
+import { onSelectFn, onSelectAllFn, FetchDataOptions, updateSchemaFn, GridProps } from '../../Grid';
 import { withPagination } from './withPagination.story';
 
 export const withHeader = () => {
   const [state, setState] = React.useState({
     loading: true,
+    page: 1,
     data: [],
     schema: [],
     totalRecords: 0
@@ -25,7 +26,8 @@ export const withHeader = () => {
 
     setState({
       ...state,
-      data: newData
+      data: newData,
+      selectAll: getSelectAll(newData)
     });
   };
 
@@ -40,7 +42,17 @@ export const withHeader = () => {
 
     setState({
       ...state,
-      data: newData
+      data: newData,
+      selectAll: getSelectAll(newData)
+    });
+  };
+
+  const onPageChange: GridProps['onPageChange'] = newPage => {
+    action(`on page change:- ${newPage}`)();
+
+    setState({
+      ...state,
+      page: newPage
     });
   };
 
@@ -68,6 +80,7 @@ export const withHeader = () => {
     setState({
       ...state,
       totalRecords,
+      selectAll: getSelectAll([]),
       schema: state.schema.length ? state.schema : schema,
       loading: false,
       data: renderedData,
@@ -97,7 +110,7 @@ export const withHeader = () => {
         updateSchema={updateSchema}
         onSelectAll={onSelectAll}
         withSearch={true}
-        showHead={true}
+        showHead={false}
         withCheckbox={true}
       >
         <Button icon="events" />
@@ -109,9 +122,10 @@ export const withHeader = () => {
         withCheckbox={true}
         onSelect={onSelect}
         onSelectAll={onSelectAll}
-        showHead={true}
+        showHead={false}
         draggable={true}
         withPagination={true}
+        onPageChange={onPageChange}
       />
     </Card>
   );

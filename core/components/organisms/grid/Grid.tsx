@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Pagination } from '@/index';
 import { CheckboxProps, DropdownProps, PaginationProps } from '@/index.type';
 import { GridCellProps } from './GridCell';
-import { sortColumn, pinColumn, hideColumn, getTotalPages, getSelectAll, moveToIndex } from './utility';
+import { sortColumn, pinColumn, hideColumn, getTotalPages, moveToIndex } from './utility';
 import { debounce } from 'throttle-debounce';
 import { MainGrid } from './MainGrid';
 
@@ -14,8 +14,8 @@ export type Filter = any[];
 export interface FetchDataOptions {
   page?: number;
   pageSize?: number;
-  filterList?: GridState['filterList'];
-  sortingList?: GridState['sortingList'];
+  filterList?: GridProps['filterList'];
+  sortingList?: GridProps['sortingList'];
   searchTerm?: string;
 }
 
@@ -25,9 +25,11 @@ export type fetchDataFn = (options: FetchDataOptions) => Promise<{
   schema: Schema
 }>;
 
+export type updateSortingListFn = (newSortingList: GridProps['sortingList']) => void;
+export type updateFilterListFn = (newFilterList: GridProps['filterList']) => void;
 export type updateDataFn = (options: FetchDataOptions) => void;
 export type updateSchemaFn = (newSchema: Schema) => void;
-export type updateSelectAllFn = (attr: GridState['selectAll']) => void;
+export type updateSelectAllFn = (attr: GridProps['selectAll']) => void;
 export type updateColumnSchemaFn = (name: ColumnSchema['name'], schemaUpdate: Partial<ColumnSchema>) => void;
 export type updateRowDataFn = (rowIndexes: number[], dataUpdate: Partial<RowData>) => void;
 export type updateReorderHighlighterFn = (dim: GridState['reorderHighlighter']) => void;
@@ -180,6 +182,10 @@ export interface GridProps {
    */
   withPagination?: boolean;
   /**
+   * Current page
+   */
+  page: number;
+  /**
    * Number of rows on a page
    * @default 15
    */
@@ -209,6 +215,32 @@ export interface GridProps {
    * Error Template
    */
   errorTemplate?: () => React.ReactElement;
+  /**
+   * Sorting List
+   */
+  sortingList: {
+    name: ColumnSchema['name'],
+    type: SortType
+  }[];
+  /**
+   * update Sorting List Callback
+   */
+  updateSortingList?: updateSortingListFn;
+  /**
+   * Filter List
+   */
+  filterList: Record<ColumnSchema['name'], Filter>;
+  /**
+   * update Filter List Callback
+   */
+  updateFilterList?: updateFilterListFn;
+  /**
+   * Select All
+   */
+  selectAll?: {
+    checked: boolean,
+    indeterminate: boolean
+  };
 }
 
 export interface GridState {
@@ -216,16 +248,16 @@ export interface GridState {
   // prevSchema: Schema;
   // schema: Schema;
   reorderHighlighter?: number;
-  page: number;
-  selectAll?: {
-    checked: boolean,
-    indeterminate: boolean
-  };
-  sortingList: {
-    name: ColumnSchema['name'],
-    type: SortType
-  }[];
-  filterList: Record<ColumnSchema['name'], Filter>;
+  // page: number;
+  // selectAll?: {
+  //   checked: boolean,
+  //   indeterminate: boolean
+  // };
+  // sortingList: {
+  //   name: ColumnSchema['name'],
+  //   type: SortType
+  // }[];
+  // filterList: Record<ColumnSchema['name'], Filter>;
 }
 
 export class Grid extends React.Component<GridProps, GridState> {
@@ -234,11 +266,6 @@ export class Grid extends React.Component<GridProps, GridState> {
 
     this.state = {
       init: false,
-      // prevSchema: [],
-      // schema: props.loading ? props.loaderSchema || [] : props.schema,
-      page: 1,
-      sortingList: [],
-      filterList: {}
     };
 
     this.updateRenderedData();
@@ -249,21 +276,24 @@ export class Grid extends React.Component<GridProps, GridState> {
     loaderSchema: [],
     type: 'data',
     size: 'comfortable',
+    page: 1,
     pageSize: 15,
     paginationType: 'jump',
     loading: false,
+    sortingList: [],
+    filterList: {},
   };
 
-  componentDidUpdate(prevProps: GridProps, prevState: GridState) {
-    if ((prevProps.withPagination !== this.props.withPagination) || (prevState.page !== this.state.page)) {
+  componentDidUpdate(prevProps: GridProps, _prevState: GridState) {
+    if ((prevProps.withPagination !== this.props.withPagination) || (prevProps.page !== this.props.page)) {
       this.updateRenderedData();
     }
-    if (this.props.schema !== prevProps.schema) {
-      this.syncSelectAll();
-    }
-    if (this.props.data !== prevProps.data) {
-      this.syncSelectAll();
-    }
+    // if (this.props.schema !== prevProps.schema) {
+    //   this.syncSelectAll();
+    // }
+    // if (this.props.data !== prevProps.data) {
+    //   this.syncSelectAll();
+    // }
     // if (this.props.loading !== prevProps.loading) {}
   }
 
@@ -271,16 +301,13 @@ export class Grid extends React.Component<GridProps, GridState> {
 
   updateRenderedData = debounce(100, (options?: Partial<FetchDataOptions>) => {
     const {
+      page,
       pageSize,
       updateData,
-      withPagination
-    } = this.props;
-
-    const {
-      page,
+      withPagination,
       sortingList,
       filterList
-    } = this.state;
+    } = this.props;
 
     const opts = {
       ...options,
@@ -340,19 +367,30 @@ export class Grid extends React.Component<GridProps, GridState> {
     });
   });
 
-  updateSelectAll: updateSelectAllFn = attr => {
-    this.setState({
-      selectAll: attr
-    });
+  // updateSelectAll: updateSelectAllFn = attr => {
+  //   this.setState({
+  //     selectAll: attr
+  //   });
+  // }
+
+  updateSortingList = (sortingList: GridProps['sortingList']) => {
+    const {
+      updateSortingList
+    } = this.props;
+
+    if (updateSortingList) {
+      updateSortingList(sortingList);
+    }
   }
 
-  updateSortingList = (sortingList: GridState['sortingList']) => {
-    this.setState({
-      sortingList,
-      page: 1,
-    }, () => {
-      this.updateRenderedData();
-    });
+  updateFilterList = (filterList: GridProps['filterList']) => {
+    const {
+      updateFilterList
+    } = this.props;
+
+    if (updateFilterList) {
+      updateFilterList(filterList);
+    }
   }
 
   onMenuChange = (name: ColumnSchema['name'], selected: any) => {
@@ -378,41 +416,38 @@ export class Grid extends React.Component<GridProps, GridState> {
   onFilterChange = (name: ColumnSchema['name'], selected: any) => {
     const {
       filterList
-    } = this.state;
-
-    this.setState({
-      page: 1,
-      filterList: {
-        ...filterList,
-        [name]: selected
-      }
-    }, () => {
-      this.updateRenderedData();
-    });
-  }
-
-  syncSelectAll = () => {
-    const {
-      withCheckbox,
-      showHead
     } = this.props;
 
-    if (withCheckbox && showHead) {
-      const {
-        data
-      } = this.props;
+    const newFilterList = {
+      ...filterList,
+      [name]: selected
+    };
 
-      const {
-        indeterminate,
-        checked
-      } = getSelectAll(data);
-
-      this.updateSelectAll({
-        indeterminate,
-        checked
-      });
-    }
+    this.updateFilterList(newFilterList);
   }
+
+  // syncSelectAll = () => {
+  //   const {
+  //     withCheckbox,
+  //     showHead
+  //   } = this.props;
+
+  //   if (withCheckbox && showHead) {
+  //     const {
+  //       data
+  //     } = this.props;
+
+  //     const {
+  //       indeterminate,
+  //       checked
+  //     } = getSelectAll(data);
+
+  //     this.updateSelectAll({
+  //       indeterminate,
+  //       checked
+  //     });
+  //   }
+  // }
 
   onSelect: onSelectFn = (rowIndex, selected) => {
     const {
@@ -421,7 +456,7 @@ export class Grid extends React.Component<GridProps, GridState> {
 
     if (onSelect) {
       onSelect(rowIndex, selected);
-      this.syncSelectAll();
+      // this.syncSelectAll();
     }
   }
 
@@ -432,10 +467,10 @@ export class Grid extends React.Component<GridProps, GridState> {
 
     if (onSelectAll) {
       onSelectAll(selected);
-      this.updateSelectAll({
-        indeterminate: false,
-        checked: selected
-      });
+      // this.updateSelectAll({
+      //   indeterminate: false,
+      //   checked: selected
+      // });
     }
   }
 
@@ -443,13 +478,13 @@ export class Grid extends React.Component<GridProps, GridState> {
     const {
       init,
       reorderHighlighter,
-      page,
     } = this.state;
 
     const {
       loading,
       loaderSchema,
       withPagination,
+      page,
       onPageChange,
       totalRecords,
       pageSize,
@@ -490,9 +525,6 @@ export class Grid extends React.Component<GridProps, GridState> {
               type={paginationType}
               onPageChange={(newPage: number) => {
                 if (onPageChange) onPageChange(newPage);
-                this.setState({
-                  page: newPage
-                });
               }}
             />
           </div>

@@ -1,5 +1,14 @@
 import * as React from 'react';
-import { Grid, onSelectFn, onSelectAllFn, updateDataFn, updateSchemaFn } from '../Grid';
+import {
+  Grid,
+  onSelectFn,
+  onSelectAllFn,
+  updateDataFn,
+  updateSchemaFn,
+  GridProps,
+  updateSortingListFn,
+  updateFilterListFn
+} from '../Grid';
 import loaderSchema from './_common_/loaderSchema';
 import { number, boolean, select } from '@storybook/addon-knobs';
 import { Card } from '@/index';
@@ -7,7 +16,7 @@ import { action } from '@storybook/addon-actions';
 import { errorTemplate } from './_common_/errorTemplate';
 import data from './_common_/data';
 import schema from './_common_/schema';
-import { updateBatchData } from '../utility';
+import { updateBatchData, getSelectAll } from '../utility';
 import { filterData, sortData, paginateData } from '../rowUtility';
 
 export const all = () => {
@@ -63,7 +72,15 @@ export const all = () => {
     loading: true,
     data: [],
     schema: [],
-    totalRecords: 0
+    page: 1,
+    totalRecords: 0,
+    sortingList: [
+      { name: 'name', type: 'desc' }
+    ],
+    filterList: {
+      name: ['s-z']
+    },
+    selectAll: {}
   });
 
   const onSelect: onSelectFn = (rowIndex, selected) => {
@@ -75,7 +92,8 @@ export const all = () => {
 
     setState({
       ...state,
-      data: newData
+      data: newData,
+      selectAll: getSelectAll(newData)
     });
   };
 
@@ -90,7 +108,18 @@ export const all = () => {
 
     setState({
       ...state,
-      data: newData
+      data: newData,
+      selectAll: getSelectAll(newData)
+    });
+  };
+
+  const onPageChange: GridProps['onPageChange'] = newPage => {
+    action(`on page change:- ${newPage}`)();
+
+    setState({
+      ...state,
+      page: newPage,
+      // selectAll: getSelectAll([])
     });
   };
 
@@ -118,6 +147,7 @@ export const all = () => {
     setState({
       ...state,
       totalRecords,
+      selectAll: getSelectAll([]),
       schema: state.schema.length ? state.schema : schema,
       loading: false,
       data: renderedData,
@@ -131,6 +161,28 @@ export const all = () => {
     });
   };
 
+  const updateSortingList: updateSortingListFn = newSortingList => {
+    setState({
+      ...state,
+      sortingList: newSortingList,
+    });
+
+    updateData({
+      sortingList: newSortingList
+    });
+  };
+
+  const updateFilterList: updateFilterListFn = newFilterList => {
+    setState({
+      ...state,
+      filterList: newFilterList,
+    });
+
+    updateData({
+      filterList: newFilterList
+    });
+  };
+
   return (
     <Card
       shadow="light"
@@ -139,14 +191,14 @@ export const all = () => {
       }}
     >
       <Grid
+        {...state}
         type={type}
         size={size}
-        data={state.data}
-        schema={state.schema}
         totalRecords={state.totalRecords}
         updateData={updateData}
         updateSchema={updateSchema}
-        loading={state.loading}
+        updateSortingList={updateSortingList}
+        updateFilterList={updateFilterList}
         loaderSchema={loaderSchema}
         errorTemplate={() => errorTemplate}
         showHead={showHead}
@@ -155,7 +207,7 @@ export const all = () => {
         withPagination={withPagination}
         paginationType={paginationType}
         pageSize={withPagination ? pageSize : undefined}
-        onPageChange={(page: number) => action(`on page change:- ${page}`)()}
+        onPageChange={onPageChange}
         withCheckbox={withCheckbox}
         onSelect={onSelect}
         onSelectAll={onSelectAll}

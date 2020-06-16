@@ -2,16 +2,16 @@ import * as React from 'react';
 import { Card, Grid, Button } from '@/index';
 import { updateBatchData } from '../../utility';
 import { action } from '@storybook/addon-actions';
-import { onSelectFn, onSelectAllFn } from '../../Grid';
+import { onSelectFn, onSelectAllFn, GridProps } from '../../Grid';
 import { fetchData } from '../_common_/fetchData';
 import loaderSchema from '../_common_/loaderSchema';
-import Header from '../../Header';
 
 export const async = () => {
   const [state, setState] = React.useState({
     loading: true,
     data: [],
     schema: [],
+    page: 1,
     totalRecords: 0
   });
 
@@ -43,6 +43,15 @@ export const async = () => {
     });
   };
 
+  const onPageChange: GridProps['onPageChange'] = newPage => {
+    action(`on page change:- ${newPage}`)();
+
+    setState({
+      ...state,
+      page: newPage
+    });
+  };
+
   const updateData = (options: Record<string, any>) => {
     setState({
       ...state,
@@ -50,26 +59,20 @@ export const async = () => {
     });
 
     fetchData(options)
-      .then(res => {
-        const {
-          data,
-          schema,
-          totalRecords
-        } = res;
-
+      .then((res: any) => {
         setState({
           ...state,
-          data,
-          schema,
-          totalRecords,
-          loading: false
+          schema: state.schema.length ? state.schema : res.schema,
+          data: res.data,
+          totalRecords: res.totalRecords,
+          loading: false,
         });
       })
-      .catch(_ => {
+      .catch(() => {
         setState({
           ...state,
-          data: [],
-          loading: false
+          loading: false,
+          data: []
         });
       });
   };
@@ -81,15 +84,6 @@ export const async = () => {
         height: '350px',
       }}
     >
-      {/* <Header
-        {...state}
-        updateData={updateData}
-        onSelectAll={onSelectAll}
-        withSearch={true}
-        showHeader={false}
-      >
-        <Button icon="events" />
-      </Header> */}
       <Grid
         {...state}
         loaderSchema={loaderSchema}
@@ -98,6 +92,7 @@ export const async = () => {
         onSelect={onSelect}
         onSelectAll={onSelectAll}
         withPagination={true}
+        onPageChange={onPageChange}
       />
     </Card>
   );

@@ -75,7 +75,7 @@ export const reorderCol = (_this: Grid, name: string, el: HTMLDivElement | null)
 export function sortColumn(this: Grid, name: ColumnSchema['name'], type: 'asc' | 'desc') {
   let {
     sortingList
-  } = this.state;
+  } = this.props;
 
   const index = sortingList.findIndex(l => l.name === name);
   if (index === -1) {

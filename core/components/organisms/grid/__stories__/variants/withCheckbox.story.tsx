@@ -4,6 +4,8 @@ import schema from '../_common_/simpleSchema';
 import { Card, Heading, Grid } from '@/index';
 import { GridProps } from '@/index.type';
 import { action } from '@storybook/addon-actions';
+import { updateDataFn, FetchDataOptions, onSelectFn, onSelectAllFn } from '../../Grid';
+import { filterData, sortData, paginateData, updateBatchData } from '../../utility';
 
 // CSF format story
 export const withCheckbox = () => {
@@ -12,6 +14,81 @@ export const withCheckbox = () => {
   const style = {
     display: 'flex',
     flexWrap: 'wrap',
+  };
+
+  const [state, setState] = React.useState({
+    data,
+    schema,
+    page: 1,
+    totalRecords: 0,
+    loading: true,
+  });
+
+  const onSelect: onSelectFn = (rowIndex, selected) => {
+    action(`on select:- rowIndex:${rowIndex}, selected:${selected}`)();
+
+    const newData = updateBatchData(state.data, [rowIndex], {
+      _selected: selected
+    });
+
+    setState({
+      ...state,
+      data: newData
+    });
+  };
+
+  const onSelectAll: onSelectAllFn = selected => {
+    action(`on select all:- ${selected}`)();
+
+    const indexes = Array.from({ length: state.data.length }, (_, i) => i);
+
+    const newData = updateBatchData(state.data, indexes, {
+      _selected: selected
+    });
+
+    setState({
+      ...state,
+      data: newData
+    });
+  };
+
+  const onPageChange: GridProps['onPageChange'] = newPage => {
+    action(`on page change:- ${newPage}`)();
+
+    setState({
+      ...state,
+      page: newPage,
+    });
+  };
+
+  const updateData = (withPagination: boolean, options: FetchDataOptions) => {
+    setState({
+      ...state,
+      loading: true
+    });
+
+    const {
+      page,
+      pageSize: pageSizeOp,
+      sortingList,
+      filterList
+    } = options;
+
+    const filteredData = filterData(schema, data, filterList);
+    const sortedData = sortData(schema, filteredData, sortingList);
+    let renderedData = sortedData;
+    const totalRecords = sortedData.length;
+    if (withPagination && page && pageSizeOp) {
+      renderedData = paginateData(renderedData, page, pageSizeOp);
+    }
+
+    setState({
+      ...state,
+      totalRecords,
+      schema: state.schema.length ? state.schema : schema,
+      loading: false,
+      data: renderedData,
+    });
   };
 
   return (
@@ -33,14 +110,13 @@ export const withCheckbox = () => {
             }}
           >
             <Grid
-              data={data}
-              schema={schema}
-              totalRecords={data.length}
+              {...state}
+              updateData={options => updateData(v, options)}
               withCheckbox={true}
               withPagination={v}
-              onPageChange={(page: number) => action(`on page change:- ${page}`)()}
-              onSelect={(rowIndex, selected) => action(`on select:- rowIndex:${rowIndex}, selected:${selected}`)()}
-              onSelectAll={(page, selected) => action(`on select all:- page:${page}, selected:${selected}`)()}
+              onPageChange={onPageChange}
+              onSelect={onSelect}
+              onSelectAll={onSelectAll}
             />
           </Card>
         </div>
