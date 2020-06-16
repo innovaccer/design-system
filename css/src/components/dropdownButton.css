@@ -27,8 +27,7 @@
     padding-left: var(--spacing-l);
 }
 
-.DropdownButton.Button--basic:focus, 
-.DropdownButton.Button--transparent:focus {
+.DropdownButton:focus {
     background-color: var(--secondary-lighter);
 }
 

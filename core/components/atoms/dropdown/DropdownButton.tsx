@@ -2,8 +2,6 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Icon from '@/components/atoms/icon';
 
-type Appearance = 'basic' | 'primary' | 'success' | 'alert' | 'transparent';
-
 type ReactMouseEvent = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 
 export type Size = 'tiny' | 'regular';
@@ -13,7 +11,6 @@ export interface DropdownButtonProps {
    * @default "regular"
    */
   size?: Size;
-  appearance?: Appearance;
   disabled?: boolean;
   menu?: boolean;
   icon?: string;
@@ -30,7 +27,6 @@ export interface DropdownButtonProps {
 const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>((props, ref) => {
   const {
     size = 'regular',
-    appearance = 'basic',
     placeholder = 'Select',
     menu = false,
     children,
@@ -50,7 +46,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
 
   const buttonClass = classNames({
     ['Button']: true,
-    [`Button--${appearance}`]: appearance,
+    ['Button--basic']: true,
     ['Button--square']: !children,
     ['DropdownButton']: true,
     [`DropdownButton--${size}`]: size,

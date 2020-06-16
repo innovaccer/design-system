@@ -218,7 +218,6 @@ export const Header = (props: HeaderProps) => {
         <div className="Header-hideColumns">
           <Dropdown
             triggerSize={'tiny'}
-            buttonAppearance={'transparent'}
             checkboxes={true}
             showApplyButton={true}
             selected={columnOptions.filter(o => o.selected)}

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Dropdown from '../../Dropdown';
 import Text from '@/components/atoms/text';
-import { dropdownOptions } from '../../utils/Options';
+import { dropdownOptions } from '../Options';
 
 // CSF format story
 export const bulk = () => {

@@ -16,7 +16,6 @@ export { InputProps } from './components/atoms/input';
 export { LabelProps } from './components/atoms/label';
 export { LegendProps } from './components/atoms/legend';
 export { LinkProps } from './components/atoms/link';
-export { ListCheckboxProps } from './components/atoms/listCheckbox';
 export { MessageProps } from './components/atoms/message';
 export { OutsideClickProps } from './components/atoms/outsideClick';
 export { ParagraphProps } from './components/atoms/paragraph';

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Dropdown from '../../Dropdown';
-import { DropdownAlign } from '../../dropdownList';
+import { DropdownAlign } from '../../DropdownList';
 import Text from '@/components/atoms/text';
-import { storyOptions } from '../../utils/Options';
+import { storyOptions } from '../Options';
 
 // CSF format story
 export const align = () => {

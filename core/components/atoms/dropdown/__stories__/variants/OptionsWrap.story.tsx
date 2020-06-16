@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Dropdown from '../../Dropdown';
 import Text from '@/components/atoms/text';
-import { storyWrapOptions } from '../../utils/Options';
+import { storyWrapOptions } from '../Options';
 
 // CSF format story
 export const optionsWrap = () => {
