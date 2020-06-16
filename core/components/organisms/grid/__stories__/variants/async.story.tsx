@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Card, Grid, Button } from '@/index';
+import { Card, Grid } from '@/index';
 import { updateBatchData } from '../../utility';
 import { action } from '@storybook/addon-actions';
 import { onSelectFn, onSelectAllFn, GridProps } from '../../Grid';
