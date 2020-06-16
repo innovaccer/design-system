@@ -9,6 +9,7 @@ interface AsyncProps {
     fetchData: fetchDataFn;
 }
 interface SharedTableProps {
+    showHead?: GridProps['showHead'];
     type?: GridProps['type'];
     size?: GridProps['size'];
     draggable?: boolean;
@@ -22,6 +23,7 @@ interface SharedTableProps {
     loaderSchema?: GridProps['loaderSchema'];
     onRowClick?: GridProps['onRowClick'];
     onSelect?: (rowIndex: number[], selected: boolean, allSelected: RowData[]) => void;
+    onPageChange?: GridProps['onPageChange'];
 }
 declare type SyncTableProps = SyncProps & SharedTableProps;
 declare type AsyncTableProps = AsyncProps & SharedTableProps;

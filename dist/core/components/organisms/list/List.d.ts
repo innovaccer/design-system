@@ -20,6 +20,7 @@ interface SharedListProps {
     loaderSchema?: GridProps['loaderSchema'];
     onRowClick?: GridProps['onRowClick'];
     onSelect?: (rowIndex: number[], selected: boolean, allSelected: RowData[]) => void;
+    onPageChange?: GridProps['onPageChange'];
 }
 declare type SyncListProps = SyncProps & SharedListProps;
 declare type AsyncListProps = AsyncProps & SharedListProps;

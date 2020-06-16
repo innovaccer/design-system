@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { DropdownListProps, Option } from '@/components/atoms/dropdown/dropdownList';
+import { DropdownListProps, Option } from './DropdownList';
 interface OptionType {
     offset: number;
     length: number;

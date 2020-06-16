@@ -8,8 +8,8 @@ export declare type Filter = any[];
 export interface FetchDataOptions {
     page?: number;
     pageSize?: number;
-    filterList?: GridState['filterList'];
-    sortingList?: GridState['sortingList'];
+    filterList?: GridProps['filterList'];
+    sortingList?: GridProps['sortingList'];
     searchTerm?: string;
 }
 export declare type fetchDataFn = (options: FetchDataOptions) => Promise<{
@@ -17,8 +17,11 @@ export declare type fetchDataFn = (options: FetchDataOptions) => Promise<{
     data: Data;
     schema: Schema;
 }>;
+export declare type updateSortingListFn = (newSortingList: GridProps['sortingList']) => void;
+export declare type updateFilterListFn = (newFilterList: GridProps['filterList']) => void;
 export declare type updateDataFn = (options: FetchDataOptions) => void;
-export declare type updateSelectAllFn = (attr: GridState['selectAll']) => void;
+export declare type updateSchemaFn = (newSchema: Schema) => void;
+export declare type updateSelectAllFn = (attr: GridProps['selectAll']) => void;
 export declare type updateColumnSchemaFn = (name: ColumnSchema['name'], schemaUpdate: Partial<ColumnSchema>) => void;
 export declare type updateRowDataFn = (rowIndexes: number[], dataUpdate: Partial<RowData>) => void;
 export declare type updateReorderHighlighterFn = (dim: GridState['reorderHighlighter']) => void;
@@ -57,16 +60,18 @@ export interface GridProps {
     size: GridSize;
     type: GridType;
     onRowClick?: onRowClickFn;
-    loaderSchema?: Schema;
+    loaderSchema: Schema;
     schema: Schema;
     data: Data;
     totalRecords: number;
     loading: boolean;
     updateData?: updateDataFn;
+    updateSchema?: updateSchemaFn;
     showHead?: boolean;
     showMenu?: boolean;
     draggable?: boolean;
     withPagination?: boolean;
+    page: number;
     pageSize: number;
     paginationType: PaginationProps['type'];
     onPageChange?: PaginationProps['onPageChange'];
@@ -74,49 +79,47 @@ export interface GridProps {
     onSelect?: onSelectFn;
     onSelectAll?: onSelectAllFn;
     errorTemplate?: () => React.ReactElement;
-}
-export interface GridState {
-    init: boolean;
-    prevSchema: Schema;
-    schema: Schema;
-    reorderHighlighter?: number;
-    page: number;
-    selectAll?: {
-        checked: boolean;
-        indeterminate: boolean;
-    };
     sortingList: {
         name: ColumnSchema['name'];
         type: SortType;
     }[];
+    updateSortingList?: updateSortingListFn;
     filterList: Record<ColumnSchema['name'], Filter>;
+    updateFilterList?: updateFilterListFn;
+    selectAll?: {
+        checked: boolean;
+        indeterminate: boolean;
+    };
+}
+export interface GridState {
+    init: boolean;
+    reorderHighlighter?: number;
 }
 export declare class Grid extends React.Component<GridProps, GridState> {
     constructor(props: GridProps);
     static defaultProps: {
         showHead: boolean;
+        loaderSchema: never[];
         type: string;
         size: string;
+        page: number;
         pageSize: number;
         paginationType: string;
         loading: boolean;
+        sortingList: never[];
+        filterList: {};
     };
-    static getDerivedStateFromProps(props: GridProps, state: GridState): {
-        prevSchema: Schema;
-        schema: Schema;
-    } | null;
-    componentDidUpdate(prevProps: GridProps, prevState: GridState): void;
+    componentDidUpdate(prevProps: GridProps, _prevState: GridState): void;
     gridRef: React.RefObject<HTMLDivElement>;
     updateRenderedData: import("throttle-debounce").throttle<(options?: Partial<FetchDataOptions> | undefined) => void>;
     updateRenderedSchema: (newSchema: Schema) => void;
     updateColumnSchema: updateColumnSchemaFn;
     reorderCol: reorderColFn;
     updateReorderHighlighter: updateReorderHighlighterFn;
-    updateSelectAll: updateSelectAllFn;
-    updateSortingList: (sortingList: GridState['sortingList']) => void;
+    updateSortingList: (sortingList: GridProps['sortingList']) => void;
+    updateFilterList: (filterList: GridProps['filterList']) => void;
     onMenuChange: (name: ColumnSchema['name'], selected: any) => void;
     onFilterChange: (name: ColumnSchema['name'], selected: any) => void;
-    syncSelectAll: () => void;
     onSelect: onSelectFn;
     onSelectAll: CheckboxProps['onChange'];
     render(): JSX.Element;

@@ -176,3 +176,15 @@
 * 91c5f75 fix: fixes common issues in Grid
 * afe8d58 chore: adds line height in checkbox
 * 3bc52d1 chore: removes badges and pills default margin
+
+-------------------
+ **v1.0.0-13**  (2020-06-16) 
+
+* 21a6eb2 v1.0.0-13
+* 0e89a6a fix: fixes build
+* cb32596 fix: removes state from Grid and Header
+* 73d6a6c feat: adds loading types in dropdown
+* 3907cd1 feat: adds chips
+* 09eab68 feat: navigation
+* 3c360f2 fix: stops event propagation on checkbox click
+* bbbecd0 fix: removes schema state from Grid and add hide column dropdown
