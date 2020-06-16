@@ -9,7 +9,6 @@ import Text from '@/components/atoms/text';
 import Input from '@/components/atoms/input';
 import classNames from 'classnames';
 import Loading from './Loading';
-import { async } from '@/components/organisms/grid/__stories__/variants/async.story';
 
 export type Size = 'tiny' | 'regular';
 export type DropdownAlign = 'left' | 'right';
@@ -586,7 +585,7 @@ const DropdownList = (props: OptionsProps) => {
 
   const renderOptions = (item: Option, index: number) => {
     const top = index === 0;
-    const bottom = index + 1 === listOptions.length && !(async && remainingOptions > 0);
+    const bottom = index + 1 === listOptions.length && !(props.async && remainingOptions > 0);
 
     return (
       <Option
