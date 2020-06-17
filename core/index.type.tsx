@@ -45,3 +45,4 @@ export { TabsWrapperProps, TabProps } from './components/molecules/tabs';
 export { GridProps } from './components/organisms/grid';
 export { ListProps } from './components/organisms/list';
 export { TableProps } from './components/organisms/table';
+export { NavigationProps } from './components/organisms/navigation';
