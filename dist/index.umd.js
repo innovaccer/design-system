@@ -6928,6 +6928,197 @@
     }, props));
   };
 
+  var useState$3 = React.useState,
+      useEffect$3 = React.useEffect,
+      useRef$1 = React.useRef;
+  var Navigation = function Navigation(props) {
+    var _classNames3;
+
+    var _useState = useState$3({}),
+        _useState2 = _slicedToArray(_useState, 2),
+        menuState = _useState2[0],
+        setMenuState = _useState2[1];
+
+    var ref = useRef$1(null);
+
+    var _useState3 = useState$3(false),
+        _useState4 = _slicedToArray(_useState3, 2),
+        scroll = _useState4[0],
+        setScroll = _useState4[1];
+
+    var type = props.type,
+        _props$data = props.data,
+        data = _props$data === void 0 ? [] : _props$data,
+        _onClick = props.onClick,
+        active = props.active,
+        collapsed = props.collapsed,
+        onToggle = props.onToggle;
+
+    var isSubMenuActive = function isSubMenuActive(isActive, subMenu) {
+      if (!isActive || !subMenu || subMenu && subMenu.length === 0) {
+        return false;
+      }
+
+      var result = false;
+
+      var _iterator = _createForOfIteratorHelper(subMenu),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var item = _step.value;
+
+          if (item.id === active) {
+            result = true;
+            break;
+          }
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      return result;
+    };
+
+    var updateMenuState = function updateMenuState(id) {
+      var menuData = _objectSpread2({}, menuState);
+
+      menuData[id] = !menuData[id];
+      setMenuState(menuData);
+    };
+
+    useEffect$3(function () {
+      if (props.data && props.data.length > 0) {
+        props.data.filter(function (menu) {
+          return menu.subMenu && menu.subMenu.length > 0;
+        }).forEach(function (menu) {
+          if (isSubMenuActive(active, menu.subMenu)) {
+            updateMenuState(menu.id);
+          }
+        });
+      }
+
+      var scrollHeight = ref && ref.current ? ref.current.scrollHeight : 0;
+      var clientHeight = ref && ref.current ? ref.current.clientHeight : 0;
+
+      if (scrollHeight > clientHeight) {
+        setScroll(true);
+      }
+    }, [props.data, collapsed, ref]);
+    var classes = classNames(_defineProperty({
+      Navigation: true
+    }, "Navigation-".concat(type), type));
+    var footerClasses = classNames(_defineProperty({
+      'Navigation-vertical-footer': true
+    }, 'Navigation-vertical-footer--border', scroll));
+    var wrapperClasses = classNames((_classNames3 = {
+      Navigation: true
+    }, _defineProperty(_classNames3, "Navigation-wrapper-".concat(type), type), _defineProperty(_classNames3, 'Navigation--collapsed', collapsed), _classNames3));
+
+    var truncateName = function truncateName(name) {
+      var limit = 25;
+      return name.length > 25 ? name.slice(0, limit).concat('...') : name;
+    };
+
+    var getHorizontalMenu = function getHorizontalMenu(menuData) {
+      var list = menuData.map(function (item, index) {
+        var menuClasses = classNames(_defineProperty({
+          'Navigation-horizontal-menu': true
+        }, 'Navigation-horizontal-menu--active', active === item.id));
+        return /*#__PURE__*/React.createElement("div", {
+          key: index,
+          className: menuClasses,
+          onClick: function onClick() {
+            return !item.disabled && _onClick && _onClick(item.id);
+          }
+        }, item.icon && /*#__PURE__*/React.createElement(Icon, {
+          name: item.icon,
+          size: 16,
+          appearance: item.disabled ? 'disabled' : 'default'
+        }), /*#__PURE__*/React.createElement(Text, {
+          appearance: item.disabled ? 'subtle' : 'default'
+        }, truncateName(item.name)));
+      });
+      return list;
+    };
+
+    var getverticalMenu = function getverticalMenu() {
+      var list = data.map(function (item, index) {
+        var _classNames5;
+
+        var menuClasses = classNames((_classNames5 = {
+          'Navigation-vertical-menu-wrapper': true
+        }, _defineProperty(_classNames5, 'Navigation-vertical-menu--active', active === item.id || collapsed && item.subMenu && isSubMenuActive(active, item.subMenu)), _defineProperty(_classNames5, 'Navigation-vertical-menu-collapsed--active', active === item.id && collapsed || collapsed && item.subMenu && isSubMenuActive(active, item.subMenu)), _classNames5));
+        return /*#__PURE__*/React.createElement("div", {
+          className: "".concat(collapsed ? 'm-3' : 'mt-3 mb-3'),
+          key: index
+        }, /*#__PURE__*/React.createElement("div", {
+          className: menuClasses
+        }, /*#__PURE__*/React.createElement("div", {
+          className: "Navigation-vertical-menu ".concat(collapsed ? 'Navigation-vertical-menu--collapsed' : ''),
+          onClick: function onClick() {
+            return !item.disabled && _onClick && _onClick(item.id);
+          }
+        }, item.icon && /*#__PURE__*/React.createElement(Icon, {
+          name: item.icon,
+          size: 16,
+          appearance: item.disabled ? 'disabled' : 'default'
+        }), !collapsed && /*#__PURE__*/React.createElement(Text, {
+          appearance: item.disabled ? 'subtle' : 'default'
+        }, truncateName(item.name))), !collapsed && /*#__PURE__*/React.createElement("div", {
+          style: {
+            display: 'flex',
+            alignItems: 'center',
+            cursor: 'pointer'
+          }
+        }, item.subMenu && item.subMenu.length > 0 && /*#__PURE__*/React.createElement(Icon, {
+          onClick: function onClick() {
+            return updateMenuState(item.id);
+          },
+          name: menuState[item.id] ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
+          size: 16,
+          appearance: item.disabled ? 'disabled' : 'default'
+        }))), menuState[item.id] && item.subMenu && !collapsed && item.subMenu.map(function (menu, ind) {
+          return /*#__PURE__*/React.createElement("div", {
+            className: "Navigation-vertical-menu Navigation-vertical-submenu ".concat(collapsed ? 'Navigation-vertical-menu--collapsed' : '', " ").concat(menu.id === active ? 'Navigation-vertical-menu--active' : ''),
+            key: ind
+          }, /*#__PURE__*/React.createElement(Text, {
+            appearance: menu.disabled ? 'subtle' : 'default'
+          }, truncateName(menu.name)));
+        }));
+      });
+      return list;
+    };
+
+    var menus = type === 'horizontal' ? getHorizontalMenu(data) : getverticalMenu();
+    return /*#__PURE__*/React.createElement("div", {
+      className: wrapperClasses
+    }, /*#__PURE__*/React.createElement("div", {
+      className: classes,
+      ref: ref
+    }, menus), type === 'vertical' && /*#__PURE__*/React.createElement("div", {
+      className: footerClasses
+    }, /*#__PURE__*/React.createElement(Icon, {
+      name: "menu_open",
+      size: 16,
+      onClick: function onClick() {
+        return onToggle && onToggle(!collapsed);
+      }
+    })));
+  };
+  Navigation.defaultProps = {
+    type: 'horizontal',
+    onClick: function onClick() {
+      return null;
+    },
+    onToggle: function onToggle() {
+      return null;
+    },
+    collapsed: false
+  };
+
   exports.Avatar = Avatar;
   exports.Backdrop = Backdrop;
   exports.Badge = Badge;
@@ -6955,6 +7146,7 @@
   exports.ModalDescription = ModalDescription;
   exports.ModalFooter = ModalFooter;
   exports.ModalHeader = ModalHeader;
+  exports.Navigation = Navigation;
   exports.OutsideClick = OutsideClick;
   exports.Pagination = Pagination;
   exports.Paragraph = Paragraph;

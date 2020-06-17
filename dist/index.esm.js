@@ -1,4 +1,4 @@
-import React__default, { createElement, useState as useState$3, useEffect as useEffect$3, forwardRef, useRef as useRef$1, useImperativeHandle, Fragment, createRef, Component, cloneElement, useCallback, Children } from 'react';
+import React__default, { createElement, useState as useState$4, useEffect as useEffect$4, forwardRef, useRef as useRef$2, useImperativeHandle, Fragment, createRef, Component, cloneElement, useCallback, Children } from 'react';
 import classNames from 'classnames';
 import { createPortal, findDOMNode } from 'react-dom';
 import { Manager, Reference, Popper } from 'react-popper';
@@ -368,8 +368,8 @@ var Avatar = function Avatar(props) {
 };
 Avatar.displayName = 'Avatar';
 
-var useEffect = useEffect$3,
-    useState = useState$3;
+var useEffect = useEffect$4,
+    useState = useState$4;
 
 var Backdrop = function Backdrop(props) {
   var _useState = useState(null),
@@ -377,12 +377,12 @@ var Backdrop = function Backdrop(props) {
       savedBodyOverflow = _useState2[0],
       setBodyOverflow = _useState2[1];
 
-  var _React$useState = useState$3(props.open),
+  var _React$useState = useState$4(props.open),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       open = _React$useState2[0],
       setOpen = _React$useState2[1];
 
-  var _React$useState3 = useState$3(props.open),
+  var _React$useState3 = useState$4(props.open),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       animate = _React$useState4[0],
       setAnimate = _React$useState4[1];
@@ -654,20 +654,20 @@ var Checkbox = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
       onChange = props.onChange,
       name = props.name,
       value = props.value;
-  var ref = useRef$1(null);
+  var ref = useRef$2(null);
   useImperativeHandle(forwardedRef, function () {
     return ref.current;
   });
 
-  var _React$useState = useState$3(props.checked),
+  var _React$useState = useState$4(props.checked),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       checked = _React$useState2[0],
       setChecked = _React$useState2[1];
 
-  useEffect$3(function () {
+  useEffect$4(function () {
     setIndeterminate(props.indeterminate);
   }, [props.indeterminate]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     setChecked(props.checked);
   }, [props.checked]);
   var CheckboxClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Checkbox', true), _defineProperty(_classNames, 'Checkbox--disabled', disabled), _defineProperty(_classNames, "Checkbox--".concat(size), size), _classNames));
@@ -980,12 +980,12 @@ var Calendar = function Calendar(props) {
       months = config.months,
       days = config.days;
 
-  var _React$useState = useState$3(monthsInView > 1 ? 'date' : viewProp),
+  var _React$useState = useState$4(monthsInView > 1 ? 'date' : viewProp),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       view = _React$useState2[0],
       setView = _React$useState2[1];
 
-  var _React$useState3 = useState$3({
+  var _React$useState3 = useState$4({
     year: undefined,
     month: undefined,
     date: undefined
@@ -994,37 +994,37 @@ var Calendar = function Calendar(props) {
       state = _React$useState4[0],
       setState = _React$useState4[1];
 
-  var _React$useState5 = useState$3(dateProp),
+  var _React$useState5 = useState$4(dateProp),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       currDateState = _React$useState6[0],
       setCurrDateState = _React$useState6[1];
 
-  var _React$useState7 = useState$3(),
+  var _React$useState7 = useState$4(),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
       hoverDateState = _React$useState8[0],
       setHoverDateState = _React$useState8[1];
 
-  var _React$useState9 = useState$3(startDateProp),
+  var _React$useState9 = useState$4(startDateProp),
       _React$useState10 = _slicedToArray(_React$useState9, 2),
       startDateState = _React$useState10[0],
       setStartDateState = _React$useState10[1];
 
-  var _React$useState11 = useState$3(endDateProp),
+  var _React$useState11 = useState$4(endDateProp),
       _React$useState12 = _slicedToArray(_React$useState11, 2),
       endDateState = _React$useState12[0],
       setEndDateState = _React$useState12[1];
 
-  var _React$useState13 = useState$3(getYearBlock(yearNavProp)),
+  var _React$useState13 = useState$4(getYearBlock(yearNavProp)),
       _React$useState14 = _slicedToArray(_React$useState13, 2),
       yearBlockNav = _React$useState14[0],
       setYearBlockNav = _React$useState14[1];
 
-  var _React$useState15 = useState$3(yearNavProp),
+  var _React$useState15 = useState$4(yearNavProp),
       _React$useState16 = _slicedToArray(_React$useState15, 2),
       yearNav = _React$useState16[0],
       setYearNav = _React$useState16[1];
 
-  var _React$useState17 = useState$3(monthNavProp),
+  var _React$useState17 = useState$4(monthNavProp),
       _React$useState18 = _slicedToArray(_React$useState17, 2),
       monthNav = _React$useState18[0],
       setMonthNav = _React$useState18[1];
@@ -1032,7 +1032,7 @@ var Calendar = function Calendar(props) {
   var yearState = state.year,
       monthState = state.month,
       dateState = state.date;
-  useEffect$3(function () {
+  useEffect$4(function () {
     var _getDateInfo = getDateInfo(dateProp),
         year = _getDateInfo.year,
         month = _getDateInfo.month,
@@ -1042,18 +1042,18 @@ var Calendar = function Calendar(props) {
     var d = convertToDate(dateProp);
     setCurrDateState(d);
   }, [dateProp]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     var d = convertToDate(startDateProp);
     setStartDateState(d);
   }, [startDateProp]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     var d = convertToDate(endDateProp);
     setEndDateState(d);
   }, [endDateProp]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (monthsInView === 1) setView(viewProp);else setView('date');
   }, [monthsInView, viewProp]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (currDateState) {
       if (onDateChange) onDateChange(currDateState);
 
@@ -1089,25 +1089,25 @@ var Calendar = function Calendar(props) {
       }
     }
   }, [currDateState]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (onRangeChange) onRangeChange(startDateState, endDateState);
   }, [startDateState, endDateState]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (yearState !== undefined && monthsInView < 2) {
       setYearBlockNav(getYearBlock(yearState));
       setYearNav(yearState);
     }
   }, [yearState]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (monthState !== undefined && monthsInView < 2) {
       setMonthNav(monthState);
     }
   }, [monthState]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     setYearNav(yearNavProp);
     setYearBlockNav(getYearBlock(yearNavProp));
   }, [yearNavProp]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     setMonthNav(monthNavProp);
   }, [monthNavProp]);
 
@@ -1786,12 +1786,12 @@ var Popover = function Popover(props) {
       trigger = props.trigger,
       onToggle = props.onToggle;
 
-  var _React$useState = useState$3(props.open || false),
+  var _React$useState = useState$4(props.open || false),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       open = _React$useState2[0],
       setOpen = _React$useState2[1];
 
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (onToggle) {
       if (props.open !== undefined) setOpen(props.open);
     }
@@ -1960,29 +1960,29 @@ var InputMask = /*#__PURE__*/forwardRef(function (props, forwardRef) {
       caption = props.caption,
       rest = _objectWithoutProperties(props, ["mask", "value", "placeholderChar", "mask", "error", "onChange", "onBlur", "onClick", "onClear", "caption"]);
 
-  var _React$useState = useState$3(''),
+  var _React$useState = useState$4(''),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       value = _React$useState2[0],
       setValue = _React$useState2[1];
 
-  var _React$useState3 = useState$3(0),
+  var _React$useState3 = useState$4(0),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       caret = _React$useState4[0],
       setCaret = _React$useState4[1];
 
-  var ref = useRef$1(null);
+  var ref = useRef$2(null);
   var fixedMask = mask.filter(function (m) {
     return typeof m === 'string' && m.length === 1;
   });
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (valueProp) {
       setValue(convertToMasked(valueProp));
     }
   }, [valueProp]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     setCaretPos(caret);
   }, [caret]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (ref.current) {
       var el = ref.current;
       el.addEventListener('keyup', function (e) {
@@ -2207,34 +2207,34 @@ var DatePicker = function DatePicker(props) {
       onDateChange = props.onDateChange,
       rest = _objectWithoutProperties(props, ["date", "open", "position", "inputFormat", "outputFormat", "inputProps", "mask", "validator", "withInput", "disabledBefore", "disabledAfter", "onDateChange"]);
 
-  var _React$useState = useState$3(false),
+  var _React$useState = useState$4(false),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       init = _React$useState2[0],
       setInit = _React$useState2[1];
 
-  var _React$useState3 = useState$3(),
+  var _React$useState3 = useState$4(),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       date = _React$useState4[0],
       setDate = _React$useState4[1];
 
-  var _React$useState5 = useState$3(false),
+  var _React$useState5 = useState$4(false),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       error = _React$useState6[0],
       setError = _React$useState6[1];
 
-  var _React$useState7 = useState$3(openProp),
+  var _React$useState7 = useState$4(openProp),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
       open = _React$useState8[0],
       setOpen = _React$useState8[1];
 
-  useEffect$3(function () {
+  useEffect$4(function () {
     var d = convertToDate(dateProp, inputFormat, validator);
     setDate(d);
   }, [dateProp]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     setOpen(openProp);
   }, [openProp]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     setError(!date);
 
     if (onDateChange) {
@@ -2437,7 +2437,7 @@ var DonutChart = function DonutChart(props) {
     }, "".concat((percent * 100).toFixed(0), "%"))));
   };
 
-  var _React$useState = useState$3(0),
+  var _React$useState = useState$4(0),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       activeIndex = _React$useState2[0],
       setActiveIndex = _React$useState2[1];
@@ -2899,38 +2899,38 @@ var ListCheckbox = /*#__PURE__*/forwardRef(function (props, ref) {
     return obj;
   };
 
-  var _React$useState = useState$3(calcParentStatus(selected)),
+  var _React$useState = useState$4(calcParentStatus(selected)),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       parentStatus = _React$useState2[0],
       setParentStatus = _React$useState2[1];
 
-  var _React$useState3 = useState$3(childArray),
+  var _React$useState3 = useState$4(childArray),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       checked = _React$useState4[0],
       setChecked = _React$useState4[1];
 
-  var _React$useState5 = useState$3(selectedLabels),
+  var _React$useState5 = useState$4(selectedLabels),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       selectedArrayLabels = _React$useState6[0],
       setSelectedArrayLabels = _React$useState6[1];
 
-  var _React$useState7 = useState$3(selected),
+  var _React$useState7 = useState$4(selected),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
       selectedArrayValues = _React$useState8[0],
       setSelectedArrayValues = _React$useState8[1];
 
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (updatedSelectedArray && updatedSelectedArray.length > 0) {
       setChecked(updatedSelectedArray);
     }
   }, [JSON.stringify(updatedSelectedArray)]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (selected && selected.length > 0 && parentStatus.checked) {
       setSelectedArrayValues(selected);
       setSelectedArrayLabels(selectedLabels);
     }
   }, [JSON.stringify(selected)]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (props.checked !== undefined) {
       setParentStatus(_objectSpread2(_objectSpread2({}, parentStatus), {}, {
         checked: props.checked
@@ -3133,8 +3133,8 @@ var DropdownAlignMapping = {
 var lastScrollTop = 0;
 var bottomScrollOffset = 64;
 var usePrevious = function usePrevious(value) {
-  var ref = useRef$1();
-  useEffect$3(function () {
+  var ref = useRef$2();
+  useEffect$4(function () {
     ref.current = value;
   }, [value]);
   return ref.current;
@@ -3183,47 +3183,47 @@ var DropdownList = function DropdownList(props) {
   var dropdownRef = /*#__PURE__*/createRef();
   var triggerRef = /*#__PURE__*/createRef();
 
-  var _React$useState = useState$3([]),
+  var _React$useState = useState$4([]),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       selected = _React$useState2[0],
       setSelected = _React$useState2[1];
 
-  var _React$useState3 = useState$3([]),
+  var _React$useState3 = useState$4([]),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       selectedLabels = _React$useState4[0],
       setSelectedLabels = _React$useState4[1];
 
-  var _React$useState5 = useState$3(''),
+  var _React$useState5 = useState$4(''),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       buttonLabel = _React$useState6[0],
       setButtonLabel = _React$useState6[1];
 
-  var _React$useState7 = useState$3(),
+  var _React$useState7 = useState$4(),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
       dropdownOpen = _React$useState8[0],
       setDropdownOpen = _React$useState8[1];
 
-  var _React$useState9 = useState$3(),
+  var _React$useState9 = useState$4(),
       _React$useState10 = _slicedToArray(_React$useState9, 2),
       popoverStyle = _React$useState10[0],
       setPopoverStyle = _React$useState10[1];
 
-  var _React$useState11 = useState$3([]),
+  var _React$useState11 = useState$4([]),
       _React$useState12 = _slicedToArray(_React$useState11, 2),
       previousSelected = _React$useState12[0],
       setPreviousSelected = _React$useState12[1];
 
-  var _React$useState13 = useState$3([]),
+  var _React$useState13 = useState$4([]),
       _React$useState14 = _slicedToArray(_React$useState13, 2),
       previousSelectedLabels = _React$useState14[0],
       setPreviousSelectedLabels = _React$useState14[1];
 
-  var _React$useState15 = useState$3(false),
+  var _React$useState15 = useState$4(false),
       _React$useState16 = _slicedToArray(_React$useState15, 2),
       optionsApplied = _React$useState16[0],
       setOptionsApplied = _React$useState16[1];
 
-  var _React$useState17 = useState$3(false),
+  var _React$useState17 = useState$4(false),
       _React$useState18 = _slicedToArray(_React$useState17, 2),
       loading = _React$useState18[0],
       setLoading = _React$useState18[1];
@@ -3253,7 +3253,7 @@ var DropdownList = function DropdownList(props) {
     setButtonLabel(label);
   };
 
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (dropdownOpen) {
       var _dropdownElement$pare;
 
@@ -3267,7 +3267,7 @@ var DropdownList = function DropdownList(props) {
       setPopoverStyle(popperWrapperStyle);
     }
   }, [dropdownOpen, checkboxes, showApplyButton]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (props.selected) {
       var selectedValuesArray = selected.slice();
       var selectedLabelsArray = selectedLabels.slice();
@@ -3286,7 +3286,7 @@ var DropdownList = function DropdownList(props) {
       setSelectButtonLabel(selectedLabelsArray);
     }
   }, [JSON.stringify(props.selected)]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (props.selectedAll) {
       var _props$selectedAll = props.selectedAll,
           _label = _props$selectedAll.label,
@@ -3302,7 +3302,7 @@ var DropdownList = function DropdownList(props) {
       }
     }
   }, [props.selectedAll]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (props.bottomOptionsSliced && dropdownRef.current) {
       var className = '.Option-wrapper';
       var element = document.querySelectorAll(className);
@@ -3313,7 +3313,7 @@ var DropdownList = function DropdownList(props) {
       lastScrollTop = updatedScrollTop;
     }
   }, [props.bottomOptionsSliced]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (props.topOptionsSliced && dropdownRef.current) {
       var className = '.Option-wrapper';
       var element = document.querySelectorAll(className);
@@ -3323,11 +3323,11 @@ var DropdownList = function DropdownList(props) {
       lastScrollTop = marker.offsetTop;
     }
   }, [props.topOptionsSliced]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     var rearrangeCondition = dropdownOpen && props.async && checkboxes;
     if (rearrangeCondition && onRearrangeOptions) onRearrangeOptions(selected, selectedLabels);
   }, [dropdownOpen]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     var rearrangeCondition = !searchTerm && props.searchInit && props.async && checkboxes;
     if (rearrangeCondition && onRearrangeOptions) onRearrangeOptions(selected, selectedLabels);
   }, [searchTerm, props.searchInit]);
@@ -3693,8 +3693,8 @@ var getLabelsFromSelectedObj = function getLabelsFromSelectedObj(options) {
 };
 
 var useIsMount = function useIsMount() {
-  var isMountRef = useRef$1(true);
-  useEffect$3(function () {
+  var isMountRef = useRef$2(true);
+  useEffect$4(function () {
     isMountRef.current = false;
   }, []);
   return isMountRef.current;
@@ -3712,82 +3712,82 @@ var Dropdown = function Dropdown(props) {
       fetchOptions = props.fetchOptions,
       rest = _objectWithoutProperties(props, ["limit", "options", "selectedGroupLabel", "bulk", "onChange", "fetchOptions"]);
 
-  var _React$useState = useState$3(-1),
+  var _React$useState = useState$4(-1),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       topOffset = _React$useState2[0],
       setTopOffset = _React$useState2[1];
 
-  var _React$useState3 = useState$3(-1),
+  var _React$useState3 = useState$4(-1),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       bottomOffset = _React$useState4[0],
       setBottomOffset = _React$useState4[1];
 
-  var _React$useState5 = useState$3([]),
+  var _React$useState5 = useState$4([]),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       options = _React$useState6[0],
       setOptions = _React$useState6[1];
 
-  var _React$useState7 = useState$3(dropdownItems),
+  var _React$useState7 = useState$4(dropdownItems),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
       dropdownOptions = _React$useState8[0],
       setDropdownOptions = _React$useState8[1];
 
-  var _React$useState9 = useState$3(dropdownItems),
+  var _React$useState9 = useState$4(dropdownItems),
       _React$useState10 = _slicedToArray(_React$useState9, 2),
       shuffledOptions = _React$useState10[0],
       setShuffledOptions = _React$useState10[1];
 
-  var _React$useState11 = useState$3(false),
+  var _React$useState11 = useState$4(false),
       _React$useState12 = _slicedToArray(_React$useState11, 2),
       topOptionsSliced = _React$useState12[0],
       setTopOptionsSliced = _React$useState12[1];
 
-  var _React$useState13 = useState$3(false),
+  var _React$useState13 = useState$4(false),
       _React$useState14 = _slicedToArray(_React$useState13, 2),
       bottomOptionsSliced = _React$useState14[0],
       setBottomOptionsSliced = _React$useState14[1];
 
-  var _React$useState15 = useState$3(''),
+  var _React$useState15 = useState$4(''),
       _React$useState16 = _slicedToArray(_React$useState15, 2),
       searchTerm = _React$useState16[0],
       setSearchTerm = _React$useState16[1];
 
-  var _React$useState17 = useState$3(2 * limit),
+  var _React$useState17 = useState$4(2 * limit),
       _React$useState18 = _slicedToArray(_React$useState17, 2),
       stateLimit = _React$useState18[0],
       setStateLimit = _React$useState18[1];
 
-  var _React$useState19 = useState$3(0),
+  var _React$useState19 = useState$4(0),
       _React$useState20 = _slicedToArray(_React$useState19, 2),
       slicedOptionLength = _React$useState20[0],
       setSlicedOptionLength = _React$useState20[1];
 
-  var _React$useState21 = useState$3(bulk),
+  var _React$useState21 = useState$4(bulk),
       _React$useState22 = _slicedToArray(_React$useState21, 2),
       async = _React$useState22[0],
       setAsync = _React$useState22[1];
 
-  var _React$useState23 = useState$3(props.loading),
+  var _React$useState23 = useState$4(props.loading),
       _React$useState24 = _slicedToArray(_React$useState23, 2),
       loading = _React$useState24[0],
       setLoading = _React$useState24[1];
 
-  var _React$useState25 = useState$3(dropdownItems.length),
+  var _React$useState25 = useState$4(dropdownItems.length),
       _React$useState26 = _slicedToArray(_React$useState25, 2),
       optionsLength = _React$useState26[0],
       setOptionsLength = _React$useState26[1];
 
-  var _React$useState27 = useState$3(),
+  var _React$useState27 = useState$4(),
       _React$useState28 = _slicedToArray(_React$useState27, 2),
       bufferedOption = _React$useState28[0],
       setBufferedOption = _React$useState28[1];
 
-  var _React$useState29 = useState$3(false),
+  var _React$useState29 = useState$4(false),
       _React$useState30 = _slicedToArray(_React$useState29, 2),
       searchInit = _React$useState30[0],
       setSearchInit = _React$useState30[1];
 
-  var _React$useState31 = useState$3(),
+  var _React$useState31 = useState$4(),
       _React$useState32 = _slicedToArray(_React$useState31, 2),
       selectedAll = _React$useState32[0],
       setSelectedAll = _React$useState32[1];
@@ -3862,13 +3862,13 @@ var Dropdown = function Dropdown(props) {
     }
   };
 
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (!isInitialRender) setStateLimit(2 * limit);
   }, [limit]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (!isInitialRender) setAsync(bulk);
   }, [bulk]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (!isInitialRender) {
       if (async) {
         setLoading(true);
@@ -3879,7 +3879,7 @@ var Dropdown = function Dropdown(props) {
       }
     }
   }, [props.checkboxes]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     var updatedAsync = bulk === undefined ? dropdownItems.length > 50 : async;
     if (bulk === undefined) setAsync(updatedAsync);
 
@@ -3891,10 +3891,10 @@ var Dropdown = function Dropdown(props) {
       setOptionsLength(dropdownItems.length);
     }
   }, [JSON.stringify(props.options)]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (!isInitialRender) renderOptionsFromTop();
   }, [JSON.stringify(dropdownOptions), limit]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (!isInitialRender) {
       debounceSearch(searchTerm, async);
     }
@@ -4191,8 +4191,8 @@ var Paragraph = function Paragraph(props) {
 Paragraph.displayName = 'Paragraph';
 
 var useIsMount$1 = function useIsMount() {
-  var isMountRef = useRef$1(true);
-  useEffect$3(function () {
+  var isMountRef = useRef$2(true);
+  useEffect$4(function () {
     isMountRef.current = false;
   }, []);
   return isMountRef.current;
@@ -4201,7 +4201,7 @@ var ProgressBar = function ProgressBar(props) {
   var value = props.value,
       onChange = props.onChange;
   var isMount = useIsMount$1();
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (onChange && !isMount) onChange(value);
   }, [value]);
   var style = {
@@ -4230,7 +4230,7 @@ var Radio = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
       name = props.name,
       value = props.value,
       defaultChecked = props.defaultChecked;
-  var ref = useRef$1(null);
+  var ref = useRef$2(null);
   useImperativeHandle(forwardedRef, function () {
     return ref.current;
   });
@@ -4326,12 +4326,12 @@ var Switch = /*#__PURE__*/forwardRef(function (props, ref) {
       name = props.name,
       value = props.value;
 
-  var _React$useState = useState$3(props.checked),
+  var _React$useState = useState$4(props.checked),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       checked = _React$useState2[0],
       setChecked = _React$useState2[1];
 
-  useEffect$3(function () {
+  useEffect$4(function () {
     var checkedValue = props.disabled ? checked : props.checked;
     setChecked(checkedValue);
   }, [props.checked, props.disabled]);
@@ -4528,8 +4528,8 @@ var Tooltip = /*#__PURE__*/function (_React$Component) {
   return Tooltip;
 }(Component);
 
-var useEffect$1 = useEffect$3,
-    useState$1 = useState$3;
+var useEffect$1 = useEffect$4,
+    useState$1 = useState$4;
 
 var Modal = function Modal(props) {
   var _classNames;
@@ -4709,9 +4709,9 @@ var Dialog = function Dialog(props) {
 
 Dialog.displayName = 'Dialog';
 
-var useRef = useRef$1,
-    useEffect$2 = useEffect$3,
-    useState$2 = useState$3;
+var useRef = useRef$2,
+    useEffect$2 = useEffect$4,
+    useState$2 = useState$4;
 var ModalBody = function ModalBody(props) {
   var _useState = useState$2(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -4746,23 +4746,23 @@ var Pagination = function Pagination(props) {
       totalPages = props.totalPages,
       onPageChange = props.onPageChange;
 
-  var _React$useState = useState$3(props.page ? props.page : 1),
+  var _React$useState = useState$4(props.page ? props.page : 1),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       page = _React$useState2[0],
       setPage = _React$useState2[1];
 
-  var _React$useState3 = useState$3(false),
+  var _React$useState3 = useState$4(false),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       init = _React$useState4[0],
       setInit = _React$useState4[1];
 
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (props.page && props.page >= 1 && props.page <= totalPages) setPage(props.page);
   }, [props.page]);
   var wrapperClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Pagination', true), _defineProperty(_classNames, "Pagination--".concat(type), type), _classNames));
   var nextButtonWrapperClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Pagination-buttonWrapper', true), _defineProperty(_classNames2, 'Pagination-buttonWrapper--next', true), _classNames2));
   var prevButtonWrapperClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Pagination-buttonWrapper', true), _defineProperty(_classNames3, 'Pagination-buttonWrapper--previous', true), _classNames3));
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (init && page) onPageChange(page);
   }, [page]);
 
@@ -4854,8 +4854,8 @@ var Pagination = function Pagination(props) {
 Pagination.displayName = 'Pagination';
 
 var useIsMount$2 = function useIsMount() {
-  var isMountRef = useRef$1(true);
-  useEffect$3(function () {
+  var isMountRef = useRef$2(true);
+  useEffect$4(function () {
     isMountRef.current = false;
   }, []);
   return isMountRef.current;
@@ -4866,7 +4866,7 @@ var ProgressRing = function ProgressRing(props) {
       value = props.value,
       onChange = props.onChange;
   var isMount = useIsMount$2();
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (onChange && !isMount) onChange(value);
   }, [value]);
   var radius = 20;
@@ -4933,64 +4933,64 @@ var RangePicker = function RangePicker(props) {
       rangeLimit = props.rangeLimit,
       rest = _objectWithoutProperties(props, ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "startInputProps", "endInputProps", "mask", "validator", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"]);
 
-  var _React$useState = useState$3(false),
+  var _React$useState = useState$4(false),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       init = _React$useState2[0],
       setInit = _React$useState2[1];
 
-  var _React$useState3 = useState$3(),
+  var _React$useState3 = useState$4(),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       startDate = _React$useState4[0],
       setStartDate = _React$useState4[1];
 
-  var _React$useState5 = useState$3(),
+  var _React$useState5 = useState$4(),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       endDate = _React$useState6[0],
       setEndDate = _React$useState6[1];
 
-  var _React$useState7 = useState$3(yearNavProp),
+  var _React$useState7 = useState$4(yearNavProp),
       _React$useState8 = _slicedToArray(_React$useState7, 2),
       yearNav = _React$useState8[0],
       setYearNav = _React$useState8[1];
 
-  var _React$useState9 = useState$3(monthNavProp),
+  var _React$useState9 = useState$4(monthNavProp),
       _React$useState10 = _slicedToArray(_React$useState9, 2),
       monthNav = _React$useState10[0],
       setMonthNav = _React$useState10[1];
 
-  var _React$useState11 = useState$3(openProp),
+  var _React$useState11 = useState$4(openProp),
       _React$useState12 = _slicedToArray(_React$useState11, 2),
       open = _React$useState12[0],
       setOpen = _React$useState12[1];
 
-  var _React$useState13 = useState$3(false),
+  var _React$useState13 = useState$4(false),
       _React$useState14 = _slicedToArray(_React$useState13, 2),
       startError = _React$useState14[0],
       setStartError = _React$useState14[1];
 
-  var _React$useState15 = useState$3(false),
+  var _React$useState15 = useState$4(false),
       _React$useState16 = _slicedToArray(_React$useState15, 2),
       endError = _React$useState16[0],
       setEndError = _React$useState16[1];
 
-  useEffect$3(function () {
+  useEffect$4(function () {
     var d = startDateProp ? convertToDate(startDateProp, inputFormat, validator) : undefined;
     setStartDate(d);
   }, [startDateProp]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     var d = endDateProp ? convertToDate(endDateProp, inputFormat, validator) : undefined;
     setEndDate(d);
   }, [endDateProp]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     setYearNav(yearNavProp);
   }, [yearNavProp]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     setMonthNav(monthNavProp);
   }, [monthNavProp]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     setOpen(openProp);
   }, [openProp]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     var sError = !startDate;
     var eError = !endDate;
 
@@ -5237,12 +5237,12 @@ var TabsWrapper = function TabsWrapper(props) {
       children = _props$children === void 0 ? [] : _props$children,
       onTabChange = props.onTabChange;
 
-  var _React$useState = useState$3(props.activeTab && props.activeTab < children.length ? props.activeTab : 0),
+  var _React$useState = useState$4(props.activeTab && props.activeTab < children.length ? props.activeTab : 0),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       activeTab = _React$useState2[0],
       setActiveTab = _React$useState2[1];
 
-  useEffect$3(function () {
+  useEffect$4(function () {
     setActiveTab(props.activeTab && props.activeTab < children.length ? props.activeTab : 0);
   }, [props.activeTab]);
   var wrapperClass = classNames(_defineProperty({}, 'TabsWrapper', true));
@@ -6019,7 +6019,7 @@ var GridRow = function GridRow(props) {
       withCheckbox = props.withCheckbox,
       rI = props.rowIndex;
 
-  var _React$useState = useState$3(false),
+  var _React$useState = useState$4(false),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       expanded = _React$useState2[0],
       setExpanded = _React$useState2[1];
@@ -6173,7 +6173,7 @@ var MainGrid = function MainGrid(props) {
     tight: 24
   };
 
-  var _React$useState = useState$3({
+  var _React$useState = useState$4({
     offset: 0,
     avgRowHeight: minRowHeight[size],
     inView: 20
@@ -6704,7 +6704,7 @@ var Table = function Table(props) {
       fetchData = props.fetchData;
   var async = ('fetchData' in props);
 
-  var _React$useState = useState$3({
+  var _React$useState = useState$4({
     data: dataProp || [],
     schema: schemaProp || [],
     sortingList: [],
@@ -6725,7 +6725,7 @@ var Table = function Table(props) {
       sortingList = state.sortingList,
       filterList = state.filterList,
       searchTerm = state.searchTerm;
-  useEffect$3(function () {
+  useEffect$4(function () {
     if (!async && (dataProp !== data || schemaProp !== schema)) {
       setState({
         loading: false,
@@ -6740,14 +6740,14 @@ var Table = function Table(props) {
       });
     }
   }, [dataProp, schemaProp]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     updateData({
       sortingList: sortingList,
       filterList: filterList,
       searchTerm: searchTerm
     });
   }, [sortingList, filterList, searchTerm]);
-  useEffect$3(function () {
+  useEffect$4(function () {
     onSelect(-1, false);
     if (onPageChangeProp) onPageChangeProp(page);
   }, [page]);
@@ -6925,4 +6925,195 @@ var List = function List(props) {
   }, props));
 };
 
-export { Avatar, Backdrop, Badge, Breadcrumb, BreadcrumbsWrapper, Button, Card, Checkbox, Column, DatePicker, Dialog, DonutChart, Dropdown, Grid, Heading, Icon, Input, Label, Legend, Link, List, Message, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, OutsideClick, Pagination, Paragraph, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangePicker, Row, Spinner, StatusHints, Subheading, Switch, Tab, Table, TabsWrapper, Text, Toast, Tooltip };
+var useState$3 = useState$4,
+    useEffect$3 = useEffect$4,
+    useRef$1 = useRef$2;
+var Navigation = function Navigation(props) {
+  var _classNames3;
+
+  var _useState = useState$3({}),
+      _useState2 = _slicedToArray(_useState, 2),
+      menuState = _useState2[0],
+      setMenuState = _useState2[1];
+
+  var ref = useRef$1(null);
+
+  var _useState3 = useState$3(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      scroll = _useState4[0],
+      setScroll = _useState4[1];
+
+  var type = props.type,
+      _props$data = props.data,
+      data = _props$data === void 0 ? [] : _props$data,
+      _onClick = props.onClick,
+      active = props.active,
+      collapsed = props.collapsed,
+      onToggle = props.onToggle;
+
+  var isSubMenuActive = function isSubMenuActive(isActive, subMenu) {
+    if (!isActive || !subMenu || subMenu && subMenu.length === 0) {
+      return false;
+    }
+
+    var result = false;
+
+    var _iterator = _createForOfIteratorHelper(subMenu),
+        _step;
+
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var item = _step.value;
+
+        if (item.id === active) {
+          result = true;
+          break;
+        }
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+
+    return result;
+  };
+
+  var updateMenuState = function updateMenuState(id) {
+    var menuData = _objectSpread2({}, menuState);
+
+    menuData[id] = !menuData[id];
+    setMenuState(menuData);
+  };
+
+  useEffect$3(function () {
+    if (props.data && props.data.length > 0) {
+      props.data.filter(function (menu) {
+        return menu.subMenu && menu.subMenu.length > 0;
+      }).forEach(function (menu) {
+        if (isSubMenuActive(active, menu.subMenu)) {
+          updateMenuState(menu.id);
+        }
+      });
+    }
+
+    var scrollHeight = ref && ref.current ? ref.current.scrollHeight : 0;
+    var clientHeight = ref && ref.current ? ref.current.clientHeight : 0;
+
+    if (scrollHeight > clientHeight) {
+      setScroll(true);
+    }
+  }, [props.data, collapsed, ref]);
+  var classes = classNames(_defineProperty({
+    Navigation: true
+  }, "Navigation-".concat(type), type));
+  var footerClasses = classNames(_defineProperty({
+    'Navigation-vertical-footer': true
+  }, 'Navigation-vertical-footer--border', scroll));
+  var wrapperClasses = classNames((_classNames3 = {
+    Navigation: true
+  }, _defineProperty(_classNames3, "Navigation-wrapper-".concat(type), type), _defineProperty(_classNames3, 'Navigation--collapsed', collapsed), _classNames3));
+
+  var truncateName = function truncateName(name) {
+    var limit = 25;
+    return name.length > 25 ? name.slice(0, limit).concat('...') : name;
+  };
+
+  var getHorizontalMenu = function getHorizontalMenu(menuData) {
+    var list = menuData.map(function (item, index) {
+      var menuClasses = classNames(_defineProperty({
+        'Navigation-horizontal-menu': true
+      }, 'Navigation-horizontal-menu--active', active === item.id));
+      return /*#__PURE__*/createElement("div", {
+        key: index,
+        className: menuClasses,
+        onClick: function onClick() {
+          return !item.disabled && _onClick && _onClick(item.id);
+        }
+      }, item.icon && /*#__PURE__*/createElement(Icon, {
+        name: item.icon,
+        size: 16,
+        appearance: item.disabled ? 'disabled' : 'default'
+      }), /*#__PURE__*/createElement(Text, {
+        appearance: item.disabled ? 'subtle' : 'default'
+      }, truncateName(item.name)));
+    });
+    return list;
+  };
+
+  var getverticalMenu = function getverticalMenu() {
+    var list = data.map(function (item, index) {
+      var _classNames5;
+
+      var menuClasses = classNames((_classNames5 = {
+        'Navigation-vertical-menu-wrapper': true
+      }, _defineProperty(_classNames5, 'Navigation-vertical-menu--active', active === item.id || collapsed && item.subMenu && isSubMenuActive(active, item.subMenu)), _defineProperty(_classNames5, 'Navigation-vertical-menu-collapsed--active', active === item.id && collapsed || collapsed && item.subMenu && isSubMenuActive(active, item.subMenu)), _classNames5));
+      return /*#__PURE__*/createElement("div", {
+        className: "".concat(collapsed ? 'm-3' : 'mt-3 mb-3'),
+        key: index
+      }, /*#__PURE__*/createElement("div", {
+        className: menuClasses
+      }, /*#__PURE__*/createElement("div", {
+        className: "Navigation-vertical-menu ".concat(collapsed ? 'Navigation-vertical-menu--collapsed' : ''),
+        onClick: function onClick() {
+          return !item.disabled && _onClick && _onClick(item.id);
+        }
+      }, item.icon && /*#__PURE__*/createElement(Icon, {
+        name: item.icon,
+        size: 16,
+        appearance: item.disabled ? 'disabled' : 'default'
+      }), !collapsed && /*#__PURE__*/createElement(Text, {
+        appearance: item.disabled ? 'subtle' : 'default'
+      }, truncateName(item.name))), !collapsed && /*#__PURE__*/createElement("div", {
+        style: {
+          display: 'flex',
+          alignItems: 'center',
+          cursor: 'pointer'
+        }
+      }, item.subMenu && item.subMenu.length > 0 && /*#__PURE__*/createElement(Icon, {
+        onClick: function onClick() {
+          return updateMenuState(item.id);
+        },
+        name: menuState[item.id] ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
+        size: 16,
+        appearance: item.disabled ? 'disabled' : 'default'
+      }))), menuState[item.id] && item.subMenu && !collapsed && item.subMenu.map(function (menu, ind) {
+        return /*#__PURE__*/createElement("div", {
+          className: "Navigation-vertical-menu Navigation-vertical-submenu ".concat(collapsed ? 'Navigation-vertical-menu--collapsed' : '', " ").concat(menu.id === active ? 'Navigation-vertical-menu--active' : ''),
+          key: ind
+        }, /*#__PURE__*/createElement(Text, {
+          appearance: menu.disabled ? 'subtle' : 'default'
+        }, truncateName(menu.name)));
+      }));
+    });
+    return list;
+  };
+
+  var menus = type === 'horizontal' ? getHorizontalMenu(data) : getverticalMenu();
+  return /*#__PURE__*/createElement("div", {
+    className: wrapperClasses
+  }, /*#__PURE__*/createElement("div", {
+    className: classes,
+    ref: ref
+  }, menus), type === 'vertical' && /*#__PURE__*/createElement("div", {
+    className: footerClasses
+  }, /*#__PURE__*/createElement(Icon, {
+    name: "menu_open",
+    size: 16,
+    onClick: function onClick() {
+      return onToggle && onToggle(!collapsed);
+    }
+  })));
+};
+Navigation.defaultProps = {
+  type: 'horizontal',
+  onClick: function onClick() {
+    return null;
+  },
+  onToggle: function onToggle() {
+    return null;
+  },
+  collapsed: false
+};
+
+export { Avatar, Backdrop, Badge, Breadcrumb, BreadcrumbsWrapper, Button, Card, Checkbox, Column, DatePicker, Dialog, DonutChart, Dropdown, Grid, Heading, Icon, Input, Label, Legend, Link, List, Message, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, Pagination, Paragraph, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangePicker, Row, Spinner, StatusHints, Subheading, Switch, Tab, Table, TabsWrapper, Text, Toast, Tooltip };

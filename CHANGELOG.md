@@ -188,3 +188,9 @@
 * 09eab68 feat: navigation
 * 3c360f2 fix: stops event propagation on checkbox click
 * bbbecd0 fix: removes schema state from Grid and add hide column dropdown
+
+-------------------
+ **v1.0.0-14**  (2020-06-17) 
+
+* 21d02d3 v1.0.0-14
+* c425395 fix: adds navigation to build
