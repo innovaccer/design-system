@@ -1,33 +1,26 @@
 import * as React from 'react';
-import Chip, { ChipProps } from '../chip/Chip';
-
+import Chip, { ChipProps, Name } from '../chip/Chip';
 export interface ChipGroupProps {
-  onClose?: (name: any) => void;
-  onClick?: (name: any) => void;
+  onClose?: (name: Name) => void;
+  onClick?: (name: Name) => void;
   list: ChipProps[];
 }
 
 export const ChipGroup = (props: ChipGroupProps) => {
   const { list, onClick, onClose } = props;
-  const style = {
-    display: 'flex',
-    width: 'fit-content',
-    justifyContent: 'center',
-    margin: 0,
-    paddingTop: 8,
-    paddingBottom: 8,
-    alignitems: 'center',
-    paddingLeft: '5px',
-  };
 
-  const innerStyle = {
-    marginRight: '5px',
+  const onClickHandler = (name: Name) => {
+    if (onClick) onClick(name);
+
+  };
+  const onCloseHandler = (name: Name) => {
+    if (onClose) onClose(name);
   };
   return (
-    <div style={style}>
+    <>
       {list.map(({ label = '', icon, type, disabled, selected, clearbutton, name }, ind) => {
         return (
-          <div key={ind} style={innerStyle}>
+          <div key={ind} className="ChipGroup">
             <Chip
               name={name}
               label={label}
@@ -36,13 +29,13 @@ export const ChipGroup = (props: ChipGroupProps) => {
               disabled={disabled}
               clearbutton={clearbutton}
               type={type}
-              onClick={onClick}
-              onClose={onClose}
+              onClick={onClickHandler}
+              onClose={onCloseHandler}
             />
           </div>
         );
       })}
-    </div>
+    </>
   );
 };
 ChipGroup.displayName = 'ChipGroup';

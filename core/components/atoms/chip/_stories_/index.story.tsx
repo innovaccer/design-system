@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { select, boolean, text } from '@storybook/addon-knobs';
-import Chip from '../Chip';
+import Chip, { Name } from '../Chip';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 import { action } from '@storybook/addon-actions';
 
@@ -43,10 +43,10 @@ export const all = () => {
   if (type === 'input') {
     updateKnob('label', 'Input');
   }
-  const onCloseHandler = (name?: any) => {
+  const onCloseHandler = (name: Name) => {
     return action(`onClose: ${name}`)();
   };
-  const onClickHandler = (name?: any) => {
+  const onClickHandler = (name: Name) => {
     return action(`onClick: ${name}`)();
   };
   return (

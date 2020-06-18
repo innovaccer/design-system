@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Icon from '@/components/atoms/icon';
 import Text from '@/components/atoms/text';
+import { Name } from '../chip/Chip';
 export interface GenericChipProps {
 
   label: string;
@@ -10,9 +11,9 @@ export interface GenericChipProps {
   disabled?: boolean;
   selected?: boolean;
   className?: string;
-  onClose?: (name?: any) => void;
-  onClick?: (name?: any) => void;
-  name?: any;
+  onClose?: (name: Name) => void;
+  onClick?: (name: Name) => void;
+  name: Name;
 }
 export const GenericChip = (props: GenericChipProps) => {
   const {

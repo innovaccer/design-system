@@ -1,0 +1,4 @@
+.ChipGroup{
+    margin-right: var(--spacing-m);
+    display: inline-flex;
+}
