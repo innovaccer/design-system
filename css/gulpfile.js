@@ -6,8 +6,8 @@ const concat = require('gulp-concat');
 const postcssColorMod = require('postcss-color-mod-function');
 const cleaner = require('gulp-clean');
 
-const materialIcons = '../node_modules/material-design-icons/iconfont/material-icons.css';
-const materialFont = '../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.{ttf,woff,woff2,eot}';
+const materialIcons = './material-design-icons/iconfont/material-icons.css';
+const materialFont = './material-design-icons/iconfont/MaterialIcons-Regular.{ttf,woff,woff2,eot}';
 
 const sources = [
   './src/tokens/*.css',
