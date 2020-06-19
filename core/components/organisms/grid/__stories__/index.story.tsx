@@ -11,13 +11,14 @@ import {
 } from '../Grid';
 import loaderSchema from './_common_/loaderSchema';
 import { number, boolean, select } from '@storybook/addon-knobs';
-import { Card } from '@/index';
+import { Card, Button } from '@/index';
 import { action } from '@storybook/addon-actions';
 import { errorTemplate } from './_common_/errorTemplate';
 import data from './_common_/data';
 import schema from './_common_/schema';
 import { updateBatchData, getSelectAll } from '../utility';
 import { filterData, sortData, paginateData } from '../rowUtility';
+import Header from '../Header';
 
 export const all = () => {
   const type = select(
@@ -187,9 +188,25 @@ export const all = () => {
     <Card
       shadow="light"
       style={{
+        display: 'flex',
+        flexDirection: 'column',
         height: '350px',
+        overflow: 'hidden'
       }}
     >
+      <Header
+        {...state}
+        // updateData={updateData}
+        updateSchema={updateSchema}
+        // updateSortingList={updateSortingList}
+        updateFilterList={updateFilterList}
+        onSelectAll={onSelectAll}
+        withSearch={true}
+        showHead={showHead}
+        withCheckbox={true}
+      >
+        <Button icon="events" />
+      </Header>
       <Grid
         {...state}
         type={type}

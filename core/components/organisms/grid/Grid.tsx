@@ -268,7 +268,7 @@ export class Grid extends React.Component<GridProps, GridState> {
       init: false,
     };
 
-    this.updateRenderedData();
+    // this.updateRenderedData();
   }
 
   static defaultProps = {
@@ -288,13 +288,6 @@ export class Grid extends React.Component<GridProps, GridState> {
     if ((prevProps.withPagination !== this.props.withPagination) || (prevProps.page !== this.props.page)) {
       this.updateRenderedData();
     }
-    // if (this.props.schema !== prevProps.schema) {
-    //   this.syncSelectAll();
-    // }
-    // if (this.props.data !== prevProps.data) {
-    //   this.syncSelectAll();
-    // }
-    // if (this.props.loading !== prevProps.loading) {}
   }
 
   gridRef = React.createRef<HTMLDivElement>();
@@ -367,12 +360,6 @@ export class Grid extends React.Component<GridProps, GridState> {
     });
   });
 
-  // updateSelectAll: updateSelectAllFn = attr => {
-  //   this.setState({
-  //     selectAll: attr
-  //   });
-  // }
-
   updateSortingList = (sortingList: GridProps['sortingList']) => {
     const {
       updateSortingList
@@ -426,29 +413,6 @@ export class Grid extends React.Component<GridProps, GridState> {
     this.updateFilterList(newFilterList);
   }
 
-  // syncSelectAll = () => {
-  //   const {
-  //     withCheckbox,
-  //     showHead
-  //   } = this.props;
-
-  //   if (withCheckbox && showHead) {
-  //     const {
-  //       data
-  //     } = this.props;
-
-  //     const {
-  //       indeterminate,
-  //       checked
-  //     } = getSelectAll(data);
-
-  //     this.updateSelectAll({
-  //       indeterminate,
-  //       checked
-  //     });
-  //   }
-  // }
-
   onSelect: onSelectFn = (rowIndex, selected) => {
     const {
       onSelect
@@ -492,7 +456,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     } = this.props;
 
     let { schema } = this.props;
-    if ((!schema || schema.length === 0) && !init) {
+    if ((!schema || schema.length === 0) && !init && loading) {
       schema = loaderSchema;
     }
 
