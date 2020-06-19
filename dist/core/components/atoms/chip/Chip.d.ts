@@ -1,5 +1,6 @@
 /// <reference types="react" />
 export declare type Type = 'action' | 'selection' | 'input';
+export declare type Name = number | string;
 export interface ChipProps {
     label: string;
     icon?: string;
@@ -7,9 +8,9 @@ export interface ChipProps {
     disabled?: boolean;
     selected?: boolean;
     type?: Type;
-    onClose?: (name?: any) => void;
-    onClick?: (name?: any) => void;
-    name?: any;
+    onClose?: (name: Name) => void;
+    onClick?: (name: Name) => void;
+    name: Name;
 }
 export declare const Chip: {
     (props: ChipProps): JSX.Element;

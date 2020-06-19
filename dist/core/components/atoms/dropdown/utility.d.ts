@@ -3,3 +3,5 @@ export declare const getValuesFromSelectedObj: (selectedArray?: any[]) => any[];
 export declare const getIndexesFromSelectedObj: (selectedArray?: any[]) => number[];
 export declare const getValuesFromInd: (selectedArray: number[], options: any[]) => any[];
 export declare const getLabelsFromSelectedObj: (options: any[]) => string[];
+export declare const scrollTo: (element: Element, top: number) => void;
+export declare const scrollIntoView: (menuElement: HTMLDivElement | null, focusedElement: HTMLElement) => void;

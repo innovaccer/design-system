@@ -21,10 +21,12 @@ export interface ListCheckboxProps extends OptionRendererProps {
     selectedLabels?: string[];
     optionsLength: number;
     remainingOptions: number;
+    cursor: number;
     onChange?: (childArray: number[], labels: string[], parent: boolean) => void;
     onUpdateSelected?: (selected: number[]) => void;
     renderFooter: () => JSX.Element;
     renderGroups: (group: string, selectedGroup?: boolean) => JSX.Element;
+    updateActiveOption: (index: number, parentCheckbox?: boolean) => void;
 }
 export declare const ListCheckbox: React.ForwardRefExoticComponent<ListCheckboxProps & React.RefAttributes<HTMLDivElement>>;
 export default ListCheckbox;

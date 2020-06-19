@@ -572,7 +572,7 @@
     regular: 16,
     large: 20
   };
-  var Button = function Button(props) {
+  var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
     var _classNames, _classNames2, _classNames3;
 
     var _props$appearance = props.appearance,
@@ -581,19 +581,24 @@
         size = _props$size === void 0 ? 'regular' : _props$size,
         _props$iconAlign = props.iconAlign,
         iconAlign = _props$iconAlign === void 0 ? 'left' : _props$iconAlign,
+        _props$tabIndex = props.tabIndex,
+        tabIndex = _props$tabIndex === void 0 ? 0 : _props$tabIndex,
         children = props.children,
         icon = props.icon,
         expanded = props.expanded,
         loading = props.loading,
         disabled = props.disabled,
-        rest = _objectWithoutProperties(props, ["appearance", "size", "iconAlign", "children", "icon", "expanded", "loading", "disabled"]);
+        className = props.className,
+        rest = _objectWithoutProperties(props, ["appearance", "size", "iconAlign", "tabIndex", "children", "icon", "expanded", "loading", "disabled", "className"]);
 
-    var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--expanded', expanded), _defineProperty(_classNames, "Button--".concat(size), size), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, "Button--".concat(appearance), appearance), _defineProperty(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _classNames));
+    var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--expanded', expanded), _defineProperty(_classNames, "Button--".concat(size), size), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, "Button--".concat(appearance), appearance), _defineProperty(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _defineProperty(_classNames, "".concat(className), className), _classNames));
     var iconClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Button-icon', true), _defineProperty(_classNames2, "Button-icon--".concat(iconAlign), children && iconAlign), _classNames2));
     var spinnerClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Button-spinner', true), _defineProperty(_classNames3, "Button-spinner--".concat(iconAlign), children && iconAlign), _classNames3));
     return /*#__PURE__*/React.createElement("button", _extends({
+      ref: ref,
       className: buttonClass,
-      disabled: disabled || loading
+      disabled: disabled || loading,
+      tabIndex: tabIndex
     }, rest), loading && /*#__PURE__*/React.createElement("span", {
       className: spinnerClass
     }, /*#__PURE__*/React.createElement(Spinner, {
@@ -606,7 +611,7 @@
       appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? 'default' : 'white',
       size: sizeMapping[size]
     })), children && "".concat(children.charAt(0).toUpperCase()).concat(children.slice(1)));
-  };
+  });
   Button.displayName = 'Button';
 
   var Card = function Card(props) {
@@ -652,6 +657,8 @@
 
     var _props$size = props.size,
         size = _props$size === void 0 ? 'regular' : _props$size,
+        _props$tabIndex = props.tabIndex,
+        tabIndex = _props$tabIndex === void 0 ? 0 : _props$tabIndex,
         label = props.label,
         disabled = props.disabled,
         onChange = props.onChange,
@@ -700,6 +707,7 @@
       ref: ref,
       name: name,
       value: value,
+      tabIndex: tabIndex,
       className: 'Checkbox-input'
     }), /*#__PURE__*/React.createElement("span", {
       className: CheckboxWrapper
@@ -1855,6 +1863,8 @@
         size = _props$size === void 0 ? 'regular' : _props$size,
         _props$clearButton = props.clearButton,
         clearButton = _props$clearButton === void 0 ? true : _props$clearButton,
+        _props$autoFocus = props.autoFocus,
+        autoFocus = _props$autoFocus === void 0 ? false : _props$autoFocus,
         propDisabled = props.disabled,
         name = props.name,
         type = props.type,
@@ -1919,7 +1929,8 @@
       onChange: onChange,
       onBlur: onBlur,
       onClick: onClick,
-      onFocus: onFocus
+      onFocus: onFocus,
+      autoFocus: autoFocus
     }), (!value && !disabled || value && disabled) && info && /*#__PURE__*/React.createElement(Popover, {
       style: popoverStyle,
       position: "top",
@@ -2631,6 +2642,55 @@
     return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
   }
 
+  var getSearchedOptions = function getSearchedOptions(options, searchTerm) {
+    var result = options.filter(function (option) {
+      return option.label.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    return result;
+  };
+
+  var getOptions = function getOptions(offset, limit, searchTerm, options) {
+    var searchedOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
+    return new Promise(function (resolve) {
+      resolve({
+        offset: offset,
+        options: searchedOptions.slice(offset, offset + limit),
+        length: searchedOptions.length,
+        totalRecords: options.length
+      });
+    });
+  };
+  var getValuesFromSelectedObj = function getValuesFromSelectedObj() {
+    var selectedArray = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var selectedValues = [];
+    selectedArray.forEach(function (selectedObj) {
+      var value = selectedObj.value;
+      selectedValues.push(value);
+    });
+    return selectedValues;
+  };
+  var getLabelsFromSelectedObj = function getLabelsFromSelectedObj(options) {
+    var result = [];
+    options.forEach(function (option) {
+      result.push(option.label);
+    });
+    return result;
+  };
+  var scrollTo = function scrollTo(element, top) {
+    element.scrollTo(0, top);
+  };
+  var scrollIntoView = function scrollIntoView(menuElement, focusedElement) {
+    var menuRect = menuElement === null || menuElement === void 0 ? void 0 : menuElement.getBoundingClientRect();
+    var focusedRect = focusedElement.getBoundingClientRect();
+    var overscroll = focusedElement.offsetHeight;
+
+    if (focusedRect.bottom > menuRect.bottom && menuElement) {
+      scrollTo(menuElement, focusedElement.offsetTop - menuRect.height + overscroll);
+    } else if (focusedRect.top < menuRect.top && menuElement) {
+      scrollTo(menuElement, focusedElement.offsetTop - overscroll);
+    }
+  };
+
   var DropdownButton = /*#__PURE__*/React.forwardRef(function (props, ref) {
     var _classNames;
 
@@ -2653,7 +2713,7 @@
     var value = children ? children : trimmedPlaceholder ? trimmedPlaceholder : 'Select';
     var iconName = !menu ? 'keyboard_arrow_down' : icon ? icon : 'more_horiz';
     var label = inlineLabel && inlineLabel.trim();
-    var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--basic', true), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, 'DropdownButton', true), _defineProperty(_classNames, "DropdownButton--".concat(size), size), _defineProperty(_classNames, 'DropdownButton--icon', icon), _defineProperty(_classNames, 'DropdownButton--moreIcon', menu), _defineProperty(_classNames, 'DropdownButton--placeholder', !children && !menu), _defineProperty(_classNames, 'DropdownButton--label', label), _classNames));
+    var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--basic', true), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, 'DropdownTrigger', true), _defineProperty(_classNames, 'DropdownButton', true), _defineProperty(_classNames, "DropdownButton--".concat(size), size), _defineProperty(_classNames, 'DropdownButton--icon', icon), _defineProperty(_classNames, 'DropdownButton--moreIcon', menu), _defineProperty(_classNames, 'DropdownButton--placeholder', !children && !menu), _defineProperty(_classNames, 'DropdownButton--label', label), _classNames));
     var labelClass = classNames(_defineProperty({}, 'DropdownButton-label', true));
     return /*#__PURE__*/React.createElement("button", _extends({
       ref: ref,
@@ -2662,7 +2722,8 @@
       disabled: disabled,
       style: {
         maxWidth: maxWidth
-      }
+      },
+      tabIndex: 0
     }, rest), !menu && /*#__PURE__*/React.createElement("div", {
       className: "DropdownButton-wrapper"
     }, label && /*#__PURE__*/React.createElement("div", {
@@ -2684,19 +2745,27 @@
     var className = props.className,
         selected = props.selected,
         onChange = props.onChange,
-        optionData = props.optionData;
+        optionData = props.optionData,
+        index = props.index,
+        updateActiveOption = props.updateActiveOption;
     var label = optionData.label;
 
     var onChangeHandler = function onChangeHandler(checked) {
       if (onChange) onChange(checked);
     };
 
+    var onUpdateActiveOption = function onUpdateActiveOption() {
+      if (updateActiveOption) updateActiveOption(index);
+    };
+
     return /*#__PURE__*/React.createElement("div", {
-      className: className
+      className: className,
+      onMouseEnter: onUpdateActiveOption
     }, /*#__PURE__*/React.createElement(Checkbox, {
       label: label,
       checked: selected,
-      onChange: onChangeHandler
+      onChange: onChangeHandler,
+      tabIndex: -1
     }));
   };
 
@@ -2704,16 +2773,23 @@
     var className = props.className,
         textClassName = props.textClassName,
         onClick = props.onClick,
-        optionData = props.optionData;
+        optionData = props.optionData,
+        updateActiveOption = props.updateActiveOption,
+        index = props.index;
     var label = optionData.label;
 
     var onClickHandler = function onClickHandler() {
       if (onClick) onClick();
     };
 
+    var onUpdateActiveOption = function onUpdateActiveOption() {
+      if (updateActiveOption) updateActiveOption(index);
+    };
+
     return /*#__PURE__*/React.createElement("div", {
       className: className,
-      onClick: onClickHandler
+      onClick: onClickHandler,
+      onMouseEnter: onUpdateActiveOption
     }, /*#__PURE__*/React.createElement("div", {
       className: 'Option-label'
     }, /*#__PURE__*/React.createElement("div", {
@@ -2725,7 +2801,9 @@
     var className = props.className,
         textClassName = props.textClassName,
         onClick = props.onClick,
-        optionData = props.optionData;
+        optionData = props.optionData,
+        updateActiveOption = props.updateActiveOption,
+        index = props.index;
     var label = optionData.label,
         subInfo = optionData.subInfo;
 
@@ -2733,9 +2811,14 @@
       if (onClick) onClick();
     };
 
+    var onUpdateActiveOption = function onUpdateActiveOption() {
+      if (updateActiveOption) updateActiveOption(index);
+    };
+
     return /*#__PURE__*/React.createElement("div", {
       className: className,
-      onClick: onClickHandler
+      onClick: onClickHandler,
+      onMouseEnter: onUpdateActiveOption
     }, /*#__PURE__*/React.createElement("div", {
       className: 'Option-label'
     }, /*#__PURE__*/React.createElement("div", {
@@ -2752,7 +2835,9 @@
         textClassName = props.textClassName,
         selected = props.selected,
         onClick = props.onClick,
-        optionData = props.optionData;
+        optionData = props.optionData,
+        updateActiveOption = props.updateActiveOption,
+        index = props.index;
     var label = optionData.label,
         icon = optionData.icon;
     var OptionClass = classNames((_classNames = {}, _defineProperty(_classNames, "".concat(className), true), _defineProperty(_classNames, 'Option--icon', icon), _classNames));
@@ -2761,9 +2846,14 @@
       if (onClick) onClick();
     };
 
+    var onUpdateActiveOption = function onUpdateActiveOption() {
+      if (updateActiveOption) updateActiveOption(index);
+    };
+
     return /*#__PURE__*/React.createElement("div", {
       className: OptionClass,
-      onClick: onClickHandler
+      onClick: onClickHandler,
+      onMouseEnter: onUpdateActiveOption
     }, icon && /*#__PURE__*/React.createElement("div", {
       className: 'Option-icon'
     }, /*#__PURE__*/React.createElement(Icon, {
@@ -2784,7 +2874,9 @@
         textClassName = props.textClassName,
         selected = props.selected,
         onClick = props.onClick,
-        optionData = props.optionData;
+        optionData = props.optionData,
+        updateActiveOption = props.updateActiveOption,
+        index = props.index;
     var label = optionData.label,
         icon = optionData.icon,
         subInfo = optionData.subInfo;
@@ -2794,9 +2886,14 @@
       if (onClick) onClick();
     };
 
+    var onUpdateActiveOption = function onUpdateActiveOption() {
+      if (updateActiveOption) updateActiveOption(index);
+    };
+
     return /*#__PURE__*/React.createElement("div", {
       className: OptionClass,
-      onClick: onClickHandler
+      onClick: onClickHandler,
+      onMouseEnter: onUpdateActiveOption
     }, icon && /*#__PURE__*/React.createElement("div", {
       className: 'Option-icon'
     }, /*#__PURE__*/React.createElement(Icon, {
@@ -2824,15 +2921,40 @@
         optionIsBottom = props.optionIsBottom,
         optionsWrap = props.optionsWrap,
         onClick = props.onClick,
+        updateActiveOption = props.updateActiveOption,
         onChange = props.onChange,
-        optionType = props.optionType;
-    var className = classNames((_classNames = {}, _defineProperty(_classNames, 'Option', true), _defineProperty(_classNames, 'Option-wrapper', true), _defineProperty(_classNames, 'Option--top', optionIsTop), _defineProperty(_classNames, 'Option--bottom', optionIsBottom), _defineProperty(_classNames, 'Option--selected', selected && optionType !== 'WITH_CHECKBOX'), _classNames));
+        active = props.active,
+        index = props.index;
+    var _optionData$optionTyp = optionData.optionType,
+        optionType = _optionData$optionTyp === void 0 ? 'DEFAULT' : _optionData$optionTyp;
+
+    if (props.checkboxes) {
+      optionType = 'WITH_CHECKBOX';
+    }
+
+    var checkboxPresent = optionType === 'WITH_CHECKBOX';
+    var className = classNames((_classNames = {}, _defineProperty(_classNames, 'Option', true), _defineProperty(_classNames, 'Option-wrapper', true), _defineProperty(_classNames, 'Option--top', optionIsTop), _defineProperty(_classNames, 'Option--bottom', optionIsBottom), _defineProperty(_classNames, 'Option--active', active), _defineProperty(_classNames, 'Option--selected', selected && !checkboxPresent), _classNames));
     var textClassName = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Option-text', true), _defineProperty(_classNames2, 'Option-text--wrap', optionsWrap), _classNames2));
 
+    var onUpdateActiveOption = function onUpdateActiveOption() {
+      if (updateActiveOption) updateActiveOption(index);
+    };
+
     if (props.optionRenderer) {
-      return /*#__PURE__*/React.createElement("div", {
-        className: "Option-wrapper"
-      }, props.optionRenderer(props));
+      return /*#__PURE__*/React.createElement("div", _extends({
+        className: "Option-wrapper",
+        onMouseEnter: onUpdateActiveOption
+      }, !checkboxPresent && {
+        onClick: onClick
+      }), props.optionRenderer({
+        optionData: optionData,
+        selected: selected,
+        optionIsTop: optionIsTop,
+        optionIsBottom: optionIsBottom,
+        onChange: onChange,
+        active: active,
+        index: index
+      }));
     }
 
     var component = OptionTypeMapping[optionType];
@@ -2841,12 +2963,16 @@
       selected: selected,
       onChange: onChange,
       onClick: onClick,
+      updateActiveOption: updateActiveOption,
       textClassName: textClassName,
-      className: className
+      className: className,
+      index: index
     });
   };
 
   var ListCheckbox = /*#__PURE__*/React.forwardRef(function (props, ref) {
+    var _classNames;
+
     var list = props.list,
         _props$showParentChec = props.showParentCheckbox,
         showParentCheckbox = _props$showParentChec === void 0 ? true : _props$showParentChec,
@@ -2922,6 +3048,7 @@
         selectedArrayValues = _React$useState8[0],
         setSelectedArrayValues = _React$useState8[1];
 
+    var SelectAllClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Option', true), _defineProperty(_classNames, 'Option-wrapper', true), _defineProperty(_classNames, 'Option--top', true), _defineProperty(_classNames, 'Option--active', props.cursor === 0), _classNames));
     React.useEffect(function () {
       if (updatedSelectedArray && updatedSelectedArray.length > 0) {
         setChecked(updatedSelectedArray);
@@ -2989,15 +3116,21 @@
       }
     };
 
+    var onUpdateActiveOption = function onUpdateActiveOption() {
+      if (props.updateActiveOption) props.updateActiveOption(0, true);
+    };
+
     return /*#__PURE__*/React.createElement("div", {
       className: 'ListCheckbox'
     }, showParentCheckbox && /*#__PURE__*/React.createElement("div", {
-      className: 'ListCheckbox-parentWrapper'
+      className: SelectAllClass,
+      onMouseEnter: onUpdateActiveOption
     }, /*#__PURE__*/React.createElement(Checkbox, {
       label: label,
       onChange: handleParentChange,
       checked: parentStatus.checked,
-      indeterminate: parentStatus.indeterminate
+      indeterminate: parentStatus.indeterminate,
+      tabIndex: -1
     })), /*#__PURE__*/React.createElement("div", {
       className: 'ListCheckbox-scroller',
       style: style,
@@ -3011,6 +3144,7 @@
       var isGroup = showGroups && prevGroup !== group;
       var top = !showParentCheckbox && ind === 0 && !showGroups;
       var bottom = ind + 1 === list.length && !(showGroups && remainingOptions > 0);
+      var active = showParentCheckbox ? ind + 1 === props.cursor : ind === props.cursor;
       return /*#__PURE__*/React.createElement("div", {
         key: "checkbox-".concat(ind)
       }, isGroup && group && renderGroups(group, selectedGroup), /*#__PURE__*/React.createElement(Option, {
@@ -3018,12 +3152,14 @@
           value: value,
           label: childLabel
         },
+        active: active,
         selected: checked[ind],
         optionRenderer: optionRenderer,
         index: ind,
         optionIsTop: top,
         optionIsBottom: bottom,
-        optionType: 'WITH_CHECKBOX',
+        updateActiveOption: props.updateActiveOption,
+        checkboxes: true,
         onChange: function onChange(c) {
           handleChildChange(c, ind);
         }
@@ -3084,9 +3220,9 @@
   Placeholder.displayName = 'Placeholder';
 
   var Loading = function Loading(props) {
-    var optionType = props.optionType;
+    var loadingType = props.loadingType;
 
-    switch (optionType) {
+    switch (loadingType) {
       case 'DEFAULT':
         return /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
           length: 'large'
@@ -3176,15 +3312,19 @@
         onSelectAll = props.onSelectAll,
         onRearrangeOptions = props.onRearrangeOptions,
         optionRenderer = props.optionRenderer;
-    var _props$optionType = props.optionType,
-        optionType = _props$optionType === void 0 ? 'DEFAULT' : _props$optionType;
+    var _props$loadingType = props.loadingType,
+        loadingType = _props$loadingType === void 0 ? 'DEFAULT' : _props$loadingType;
 
     if (checkboxes) {
-      optionType = 'WITH_CHECKBOX';
+      loadingType = 'WITH_CHECKBOX';
     }
 
     var dropdownRef = /*#__PURE__*/React.createRef();
     var triggerRef = /*#__PURE__*/React.createRef();
+    var dropdownInputRef = /*#__PURE__*/React.createRef();
+    var dropdownTriggerRef = /*#__PURE__*/React.createRef();
+    var dropdownCancelButtonRef = /*#__PURE__*/React.createRef();
+    var dropdownApplyButtonRef = /*#__PURE__*/React.createRef();
 
     var _React$useState = React.useState([]),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -3230,6 +3370,11 @@
         _React$useState18 = _slicedToArray(_React$useState17, 2),
         loading = _React$useState18[0],
         setLoading = _React$useState18[1];
+
+    var _React$useState19 = React.useState(0),
+        _React$useState20 = _slicedToArray(_React$useState19, 2),
+        cursor = _React$useState20[0],
+        setCursor = _React$useState20[1];
 
     var prevDropdownOpen = usePrevious(dropdownOpen);
     var prevListOptions = usePrevious(listOptions);
@@ -3314,6 +3459,7 @@
         var updatedScrollTop = marker.offsetTop - maxHeight;
         dropdownRef.current.scrollTop = updatedScrollTop;
         lastScrollTop = updatedScrollTop;
+        setCursor(cursor - limit + props.slicedOptionsLength);
       }
     }, [props.bottomOptionsSliced]);
     React.useEffect(function () {
@@ -3324,6 +3470,7 @@
         var marker = element[index];
         dropdownRef.current.scrollTop = marker.offsetTop;
         lastScrollTop = marker.offsetTop;
+        setCursor(limit - props.slicedOptionsLength + 1);
       }
     }, [props.topOptionsSliced]);
     React.useEffect(function () {
@@ -3340,7 +3487,12 @@
         icon = props.icon,
         disabled = props.disabled,
         inlineLabel = props.inlineLabel;
-    var trigger = props.customTrigger ? props.customTrigger(buttonLabel) : /*#__PURE__*/React.createElement(DropdownButton, {
+    var CustomTrigger = props.customTrigger ? props.customTrigger(buttonLabel) : /*#__PURE__*/React.createElement(React.Fragment, null);
+    var NewCustomTrigger = /*#__PURE__*/React.cloneElement(CustomTrigger, {
+      tabindex: 0,
+      ref: dropdownTriggerRef
+    });
+    var trigger = props.customTrigger ? NewCustomTrigger : /*#__PURE__*/React.createElement(DropdownButton, {
       placeholder: placeholder,
       size: triggerSize,
       icon: icon,
@@ -3348,7 +3500,8 @@
       inlineLabel: inlineLabel,
       width: width,
       maxWidth: maxWidth,
-      menu: menu
+      menu: menu,
+      ref: dropdownTriggerRef
     }, buttonLabel);
     var dropdownWrapperStyle = menu ? {} : {
       width: width
@@ -3367,18 +3520,26 @@
     var dropdownClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Dropdown', true), _defineProperty(_classNames2, 'Dropdown--placeholder', !menu), _defineProperty(_classNames2, 'Dropdown--menu', menu), _classNames2));
     var dropdownWrapperClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Dropdown-wrapper', true), _defineProperty(_classNames3, 'Dropdown-wrapper--wrap', optionsWrap), _classNames3));
 
+    var closeDropdownPopper = function closeDropdownPopper(open) {
+      var _dropdownTriggerRef$c;
+
+      setDropdownOpen(open);
+      (_dropdownTriggerRef$c = dropdownTriggerRef.current) === null || _dropdownTriggerRef$c === void 0 ? void 0 : _dropdownTriggerRef$c.focus();
+    };
+
     var onToggleDropdown = function onToggleDropdown() {
       if (!dropdownOpen) {
         props.renderOptionsFromTop();
       }
 
-      if (!disabled) setDropdownOpen(!dropdownOpen);
+      if (!disabled) closeDropdownPopper(!dropdownOpen);
 
       if (!(optionsApplied || !showApplyButton)) {
         setSelected(previousSelected);
         setSelectButtonLabel(previousSelectedLabels);
       }
 
+      setCursor(0);
       setOptionsApplied(false);
       if (search || props.async) searchClearHandler();
     };
@@ -3400,14 +3561,14 @@
       setSelected(previousSelected);
       setSelectedLabels(previousSelectedLabels);
       setSelectButtonLabel(previousSelectedLabels);
-      setDropdownOpen(false);
+      closeDropdownPopper(false);
     };
 
     var onApplyOptions = function onApplyOptions() {
       setPreviousSelected(selected);
       setPreviousSelectedLabels(selectedLabels);
       setOptionsApplied(true);
-      setDropdownOpen(false);
+      closeDropdownPopper(false);
       if (onChange) onChange(selected);
     };
 
@@ -3430,7 +3591,7 @@
       setSelectedLabels([label]);
       setButtonLabel(label);
       setSelected([value]);
-      setDropdownOpen(!closeOnSelect);
+      closeDropdownPopper(!closeOnSelect);
       if (onChange) onChange(value);
     };
 
@@ -3466,6 +3627,11 @@
       }
     };
 
+    var updateActiveOption = function updateActiveOption(index, parentCheckbox) {
+      var updatedIndex = checkboxes && !props.async && !parentCheckbox ? index + 1 : index;
+      setCursor(updatedIndex);
+    };
+
     var renderFooter = function renderFooter() {
       var _props$footerLabel = props.footerLabel,
           footerLabel = _props$footerLabel === void 0 ? 'Search for more options' : _props$footerLabel;
@@ -3493,32 +3659,34 @@
       var disable = JSON.stringify(previousSelectedLabels) === JSON.stringify(selected);
       return /*#__PURE__*/React.createElement("div", {
         className: 'Dropdown-buttonWrapper'
-      }, /*#__PURE__*/React.createElement("div", {
-        style: {
-          marginRight: '8px'
-        }
       }, /*#__PURE__*/React.createElement(Button, {
+        ref: dropdownCancelButtonRef,
+        className: "mr-4",
         appearance: 'basic',
-        onClick: onCancelOptions
-      }, " Cancel ")), /*#__PURE__*/React.createElement(Button, {
+        onClick: onCancelOptions,
+        tabIndex: -1
+      }, "Cancel"), /*#__PURE__*/React.createElement(Button, {
+        ref: dropdownApplyButtonRef,
         appearance: 'primary',
         disabled: disable,
         onClick: onApplyOptions
-      }, " Apply "));
+      }, "Apply"));
     };
 
     var renderSearch = function renderSearch() {
       return /*#__PURE__*/React.createElement("div", {
         className: 'Dropdown-input'
       }, /*#__PURE__*/React.createElement(Input, {
-        name: "search",
+        name: "Dropdown-search",
         icon: 'search',
         value: searchTerm,
         placeholder: 'Search..',
         disabled: false,
         clearButton: true,
+        autoFocus: true,
         onChange: searchHandler,
-        onClear: searchClearHandler
+        onClear: searchClearHandler,
+        ref: dropdownInputRef
       }));
     };
 
@@ -3529,7 +3697,7 @@
           className: "Option-loading",
           key: "".concat(option, "-").concat(ind)
         }, /*#__PURE__*/React.createElement(Loading, {
-          optionType: optionType
+          loadingType: loadingType
         }));
       });
     };
@@ -3567,6 +3735,7 @@
       });
       return /*#__PURE__*/React.createElement(ListCheckbox, {
         label: parentLabel,
+        cursor: cursor,
         onChange: checkboxChangeHandler,
         checked: parentChecked,
         renderFooter: renderFooter,
@@ -3582,16 +3751,17 @@
         selectedLabels: selectedLabels,
         optionsLength: optionsLength,
         showParentCheckbox: showParentCheckbox,
-        optionRenderer: optionRenderer
+        optionRenderer: optionRenderer,
+        updateActiveOption: updateActiveOption
       });
     };
 
     var renderOptions = function renderOptions(item, index) {
+      var active = index === cursor;
       var top = index === 0;
       var bottom = index + 1 === listOptions.length && !(props.async && remainingOptions > 0);
       return /*#__PURE__*/React.createElement(Option, {
         optionData: item,
-        optionType: optionType,
         optionIsTop: top,
         optionIsBottom: bottom,
         optionsWrap: optionsWrap,
@@ -3600,7 +3770,9 @@
         onClick: function onClick() {
           return optionClickHandler(item);
         },
-        optionRenderer: optionRenderer
+        updateActiveOption: updateActiveOption,
+        optionRenderer: optionRenderer,
+        active: active
       });
     };
 
@@ -3643,11 +3815,84 @@
       }), props.async && remainingOptions > 0 && renderFooter()));
     };
 
+    var focusOption = function focusOption(direction, className) {
+      var updatedCursor = direction === 'down' ? cursor + 1 : cursor - 1;
+      var elements = document.querySelectorAll(className);
+      var element = elements[updatedCursor];
+      if (element) scrollIntoView(dropdownRef.current, element);
+      if (element !== undefined) setCursor(updatedCursor);
+    };
+
+    var onkeydown = function onkeydown(event) {
+      var _dropdownApplyButtonR;
+
+      var optionClass = optionRenderer ? '.Option-wrapper' : '.Option';
+
+      switch (event.key) {
+        case 'ArrowDown':
+          event.preventDefault();
+          dropdownOpen ? focusOption('down', optionClass) : onToggleDropdown();
+          break;
+
+        case 'ArrowUp':
+          event.preventDefault();
+          dropdownOpen ? focusOption('up', optionClass) : onToggleDropdown();
+          break;
+
+        case 'Enter':
+          var activeElement = document.activeElement;
+
+          if (dropdownOpen && (dropdownInputRef.current === activeElement || dropdownTriggerRef.current === activeElement)) {
+            event.preventDefault();
+            var className = checkboxes ? "".concat(optionClass, " .Checkbox") : optionClass;
+            var elements = document.querySelectorAll(className);
+            var element = elements[cursor];
+            if (element) element.click();
+          }
+
+          if (!dropdownOpen) onToggleDropdown();
+          break;
+
+        case 'Tab':
+          if (!showApplyButton && dropdownOpen) {
+            event.preventDefault();
+            onToggleDropdown();
+            return;
+          }
+
+          var currentElement = document.activeElement;
+          var disabledApplyButton = (_dropdownApplyButtonR = dropdownApplyButtonRef.current) === null || _dropdownApplyButtonR === void 0 ? void 0 : _dropdownApplyButtonR.disabled;
+
+          if ((currentElement === dropdownCancelButtonRef.current && disabledApplyButton || currentElement === dropdownApplyButtonRef.current) && dropdownOpen) {
+            event.preventDefault();
+            onToggleDropdown();
+            return;
+          }
+
+          if (showApplyButton && dropdownOpen) {
+            event.preventDefault();
+
+            if (currentElement === dropdownCancelButtonRef.current) {
+              var _dropdownApplyButtonR2;
+
+              (_dropdownApplyButtonR2 = dropdownApplyButtonRef.current) === null || _dropdownApplyButtonR2 === void 0 ? void 0 : _dropdownApplyButtonR2.focus();
+            } else {
+              var _dropdownCancelButton;
+
+              (_dropdownCancelButton = dropdownCancelButtonRef.current) === null || _dropdownCancelButton === void 0 ? void 0 : _dropdownCancelButton.focus();
+            }
+          }
+
+          break;
+      }
+    };
+
     return /*#__PURE__*/React.createElement("div", {
       className: dropdownClass,
       ref: triggerRef,
       onScroll: handleMenuScroll,
-      style: dropdownWrapperStyle
+      style: dropdownWrapperStyle,
+      onKeyDown: onkeydown
     }, /*#__PURE__*/React.createElement(Popover, {
       onToggle: onToggleDropdown,
       trigger: trigger,
@@ -3659,41 +3904,6 @@
   };
 
   DropdownList.displayName = 'DropdownList';
-
-  var getSearchedOptions = function getSearchedOptions(options, searchTerm) {
-    var result = options.filter(function (option) {
-      return option.label.toLowerCase().includes(searchTerm.toLowerCase());
-    });
-    return result;
-  };
-
-  var getOptions = function getOptions(offset, limit, searchTerm, options) {
-    var searchedOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
-    return new Promise(function (resolve) {
-      resolve({
-        offset: offset,
-        options: searchedOptions.slice(offset, offset + limit),
-        length: searchedOptions.length,
-        totalRecords: options.length
-      });
-    });
-  };
-  var getValuesFromSelectedObj = function getValuesFromSelectedObj() {
-    var selectedArray = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-    var selectedValues = [];
-    selectedArray.forEach(function (selectedObj) {
-      var value = selectedObj.value;
-      selectedValues.push(value);
-    });
-    return selectedValues;
-  };
-  var getLabelsFromSelectedObj = function getLabelsFromSelectedObj(options) {
-    var result = [];
-    options.forEach(function (option) {
-      result.push(option.label);
-    });
-    return result;
-  };
 
   var useIsMount = function useIsMount() {
     var isMountRef = React.useRef(true);
@@ -3755,45 +3965,40 @@
         searchTerm = _React$useState16[0],
         setSearchTerm = _React$useState16[1];
 
-    var _React$useState17 = React.useState(2 * limit),
+    var _React$useState17 = React.useState(0),
         _React$useState18 = _slicedToArray(_React$useState17, 2),
-        stateLimit = _React$useState18[0],
-        setStateLimit = _React$useState18[1];
+        slicedOptionLength = _React$useState18[0],
+        setSlicedOptionLength = _React$useState18[1];
 
-    var _React$useState19 = React.useState(0),
+    var _React$useState19 = React.useState(bulk),
         _React$useState20 = _slicedToArray(_React$useState19, 2),
-        slicedOptionLength = _React$useState20[0],
-        setSlicedOptionLength = _React$useState20[1];
+        async = _React$useState20[0],
+        setAsync = _React$useState20[1];
 
-    var _React$useState21 = React.useState(bulk),
+    var _React$useState21 = React.useState(props.loading),
         _React$useState22 = _slicedToArray(_React$useState21, 2),
-        async = _React$useState22[0],
-        setAsync = _React$useState22[1];
+        loading = _React$useState22[0],
+        setLoading = _React$useState22[1];
 
-    var _React$useState23 = React.useState(props.loading),
+    var _React$useState23 = React.useState(dropdownItems.length),
         _React$useState24 = _slicedToArray(_React$useState23, 2),
-        loading = _React$useState24[0],
-        setLoading = _React$useState24[1];
+        optionsLength = _React$useState24[0],
+        setOptionsLength = _React$useState24[1];
 
-    var _React$useState25 = React.useState(dropdownItems.length),
+    var _React$useState25 = React.useState(),
         _React$useState26 = _slicedToArray(_React$useState25, 2),
-        optionsLength = _React$useState26[0],
-        setOptionsLength = _React$useState26[1];
+        bufferedOption = _React$useState26[0],
+        setBufferedOption = _React$useState26[1];
 
-    var _React$useState27 = React.useState(),
+    var _React$useState27 = React.useState(false),
         _React$useState28 = _slicedToArray(_React$useState27, 2),
-        bufferedOption = _React$useState28[0],
-        setBufferedOption = _React$useState28[1];
+        searchInit = _React$useState28[0],
+        setSearchInit = _React$useState28[1];
 
-    var _React$useState29 = React.useState(false),
+    var _React$useState29 = React.useState(),
         _React$useState30 = _slicedToArray(_React$useState29, 2),
-        searchInit = _React$useState30[0],
-        setSearchInit = _React$useState30[1];
-
-    var _React$useState31 = React.useState(),
-        _React$useState32 = _slicedToArray(_React$useState31, 2),
-        selectedAll = _React$useState32[0],
-        setSelectedAll = _React$useState32[1];
+        selectedAll = _React$useState30[0],
+        setSelectedAll = _React$useState30[1];
 
     var isInitialRender = useIsMount();
     var debounceSearch = React.useCallback(debounce(300, function (search, updatedAsync) {
@@ -3866,9 +4071,6 @@
     };
 
     React.useEffect(function () {
-      if (!isInitialRender) setStateLimit(2 * limit);
-    }, [limit]);
-    React.useEffect(function () {
       if (!isInitialRender) setAsync(bulk);
     }, [bulk]);
     React.useEffect(function () {
@@ -3912,6 +4114,7 @@
     var updateOptionsOnScroll = function updateOptionsOnScroll(slicedOptions, updatedOffset, direction, slicedLength, bufferPresent) {
       if (bottomOptionsSliced) setBottomOptionsSliced(false);
       if (topOptionsSliced) setTopOptionsSliced(false);
+      var stateLimit = 2 * limit;
       var updatedOptions = options.slice();
 
       if (direction === 'down') {
@@ -6419,9 +6622,7 @@
 
       _this.state = {
         init: false
-      };
-
-      _this.updateRenderedData();
+      }; // this.updateRenderedData();
 
       return _this;
     }
@@ -6431,14 +6632,7 @@
       value: function componentDidUpdate(prevProps, _prevState) {
         if (prevProps.withPagination !== this.props.withPagination || prevProps.page !== this.props.page) {
           this.updateRenderedData();
-        } // if (this.props.schema !== prevProps.schema) {
-        //   this.syncSelectAll();
-        // }
-        // if (this.props.data !== prevProps.data) {
-        //   this.syncSelectAll();
-        // }
-        // if (this.props.loading !== prevProps.loading) {}
-
+        }
       }
     }, {
       key: "render",
@@ -6457,7 +6651,7 @@
             paginationType = _this$props2.paginationType;
         var schema = this.props.schema;
 
-        if ((!schema || schema.length === 0) && !init) {
+        if ((!schema || schema.length === 0) && !init && loading) {
           schema = loaderSchema;
         }
 
@@ -6518,7 +6712,8 @@
         withCheckbox = props.withCheckbox,
         children = props.children,
         updateSchema = props.updateSchema,
-        filterList = props.filterList,
+        _props$filterList = props.filterList,
+        filterList = _props$filterList === void 0 ? {} : _props$filterList,
         updateFilterList = props.updateFilterList,
         _props$totalRecords = props.totalRecords,
         totalRecords = _props$totalRecords === void 0 ? 0 : _props$totalRecords,
@@ -6634,6 +6829,16 @@
         showApplyButton: true,
         inlineLabel: displayName // icon={'filter_list'}
         ,
+        selected: filterList[s.name] ? filterList[s.name].map(function (f) {
+          var _s$filters;
+
+          return {
+            value: f,
+            label: ((_s$filters = s.filters) === null || _s$filters === void 0 ? void 0 : _s$filters.find(function (sf) {
+              return sf.value === f;
+            }).label) || ''
+          };
+        }) : [],
         options: filters,
         onChange: function onChange(selected) {
           return onFilterChange(name, selected);
@@ -6683,244 +6888,282 @@
   // export const Table = <T extends SyncTableProps, K extends AsyncTableProps>(props: T | K) => {
   // export function Table(props: SyncTableProps): React.ReactElement;
   // export function Table(props: AsyncTableProps): React.ReactElement;
-  var Table = function Table(props) {
-    var _props$showHead = props.showHead,
-        showHead = _props$showHead === void 0 ? true : _props$showHead,
-        type = props.type,
-        size = props.size,
-        draggable = props.draggable,
-        withHeader = props.withHeader,
-        _props$headerProps = props.headerProps,
-        headerProps = _props$headerProps === void 0 ? {} : _props$headerProps,
-        withCheckbox = props.withCheckbox,
-        showMenu = props.showMenu,
-        withPagination = props.withPagination,
-        paginationType = props.paginationType,
-        _props$pageSize = props.pageSize,
-        pageSize = _props$pageSize === void 0 ? 15 : _props$pageSize,
-        onRowClick = props.onRowClick,
-        onPageChangeProp = props.onPageChange,
-        onSelectProp = props.onSelect,
-        loaderSchema = props.loaderSchema,
-        dataProp = props.data,
-        schemaProp = props.schema,
-        fetchData = props.fetchData;
-    var async = ('fetchData' in props);
+  var Table = /*#__PURE__*/function (_React$Component) {
+    _inherits(Table, _React$Component);
 
-    var _React$useState = React.useState({
-      data: dataProp || [],
-      schema: schemaProp || [],
-      sortingList: [],
-      filterList: {},
-      page: 1,
-      totalRecords: 0,
-      loading: true,
-      selectAll: getSelectAll([]),
-      searchTerm: ''
-    }),
-        _React$useState2 = _slicedToArray(_React$useState, 2),
-        state = _React$useState2[0],
-        setState = _React$useState2[1];
+    var _super = _createSuper(Table);
 
-    var page = state.page,
-        data = state.data,
-        schema = state.schema,
-        sortingList = state.sortingList,
-        filterList = state.filterList,
-        searchTerm = state.searchTerm;
-    React.useEffect(function () {
-      if (!async && (dataProp !== data || schemaProp !== schema)) {
-        setState({
-          loading: false,
-          page: 1,
-          schema: schemaProp,
-          data: dataProp,
-          totalRecords: dataProp.length,
-          sortingList: [],
-          filterList: {},
-          selectAll: getSelectAll([]),
-          searchTerm: ''
+    function Table(props) {
+      var _this;
+
+      _classCallCheck(this, Table);
+
+      _this = _super.call(this, props);
+
+      _defineProperty(_assertThisInitialized(_this), "updateData", debounce(250, function (options) {
+        var _this$props = _this.props,
+            fetchData = _this$props.fetchData,
+            pageSize = _this$props.pageSize,
+            withPagination = _this$props.withPagination,
+            dataProp = _this$props.data;
+        var _this$state = _this.state,
+            async = _this$state.async,
+            page = _this$state.page,
+            schema = _this$state.schema,
+            sortingList = _this$state.sortingList,
+            filterList = _this$state.filterList,
+            searchTerm = _this$state.searchTerm;
+
+        _this.setState({
+          loading: true,
+          selectAll: getSelectAll([])
         });
-      }
-    }, [dataProp, schemaProp]);
-    React.useEffect(function () {
-      updateData({
-        sortingList: sortingList,
-        filterList: filterList,
-        searchTerm: searchTerm
-      });
-    }, [sortingList, filterList, searchTerm]);
-    React.useEffect(function () {
-      onSelect(-1, false);
-      if (onPageChangeProp) onPageChangeProp(page);
-    }, [page]);
 
-    function updateData(options) {
-      setState(_objectSpread2(_objectSpread2({}, state), {}, {
-        loading: true,
-        selectAll: getSelectAll([])
+        var opts = _objectSpread2({
+          page: page,
+          pageSize: pageSize,
+          sortingList: sortingList,
+          filterList: filterList,
+          searchTerm: searchTerm
+        }, options);
+
+        if (async) {
+          fetchData(opts).then(function (res) {
+            _this.setState({
+              selectAll: getSelectAll(res.data),
+              schema: _this.state.schema.length ? _this.state.schema : res.schema,
+              data: res.data,
+              totalRecords: res.totalRecords,
+              loading: false
+            });
+          })["catch"](function () {
+            _this.setState({
+              loading: false,
+              data: []
+            });
+          });
+        } else {
+          var filteredData = filterData(schema, dataProp, filterList);
+          var sortedData = sortData(schema, filteredData, sortingList);
+          var renderedData = sortedData;
+          var totalRecords = sortedData.length;
+
+          if (withPagination && page && pageSize) {
+            renderedData = paginateData(renderedData, page, pageSize);
+          }
+
+          _this.setState({
+            totalRecords: totalRecords,
+            selectAll: getSelectAll(renderedData),
+            schema: _this.state.schema.length ? _this.state.schema : schema,
+            loading: schema.length === 0,
+            data: renderedData
+          });
+        }
       }));
 
-      var opts = _objectSpread2({
-        page: page,
-        pageSize: pageSize,
-        sortingList: sortingList,
-        filterList: filterList
-      }, options);
+      _defineProperty(_assertThisInitialized(_this), "onSelect", function (rowIndex, selected) {
+        var data = _this.state.data;
+        var onSelect = _this.props.onSelect;
+        var indexes = [rowIndex];
+        var newData = data;
 
-      if (async) {
-        fetchData(opts).then(function (res) {
-          setState(_objectSpread2(_objectSpread2({}, state), {}, {
-            selectAll: getSelectAll(res.data),
-            schema: state.schema.length ? state.schema : res.schema,
-            data: res.data,
-            totalRecords: res.totalRecords,
-            loading: false
-          }));
-        })["catch"](function () {
-          setState(_objectSpread2(_objectSpread2({}, state), {}, {
-            loading: false,
-            data: []
-          }));
-        });
-      } else {
-        var filteredData = filterData(schema, dataProp, filterList);
-        var sortedData = sortData(schema, filteredData, sortingList);
-        var renderedData = sortedData;
-        var totalRecords = sortedData.length;
+        if (rowIndex >= 0) {
+          newData = updateBatchData(data, indexes, {
+            _selected: selected
+          });
 
-        if (withPagination && page && pageSize) {
-          renderedData = paginateData(renderedData, page, pageSize);
+          _this.setState({
+            data: newData,
+            selectAll: getSelectAll(newData)
+          });
         }
 
-        setState(_objectSpread2(_objectSpread2({}, state), {}, {
-          totalRecords: totalRecords,
-          selectAll: getSelectAll(renderedData),
-          schema: state.schema.length ? state.schema : schema,
-          loading: false,
-          data: renderedData
-        }));
-      }
-    }
+        if (onSelect) {
+          onSelect(indexes, selected, rowIndex === -1 ? [] : newData.filter(function (d) {
+            return d._selected;
+          }));
+        }
+      });
 
-    var onSelect = function onSelect(rowIndex, selected) {
-      var indexes = [rowIndex];
-      var newData = data;
-
-      if (rowIndex >= 0) {
-        newData = updateBatchData(state.data, indexes, {
+      _defineProperty(_assertThisInitialized(_this), "onSelectAll", function (selected) {
+        var onSelect = _this.props.onSelect;
+        var data = _this.state.data;
+        var indexes = Array.from({
+          length: data.length
+        }, function (_, i) {
+          return i;
+        });
+        var newData = updateBatchData(data, indexes, {
           _selected: selected
         });
-        setState(_objectSpread2(_objectSpread2({}, state), {}, {
+
+        if (onSelect) {
+          onSelect(indexes, selected, newData.filter(function (d) {
+            return d._selected;
+          }));
+        }
+
+        _this.setState({
           data: newData,
           selectAll: getSelectAll(newData)
-        }));
-      }
-
-      if (onSelectProp) {
-        onSelectProp(indexes, selected, rowIndex === -1 ? [] : newData.filter(function (d) {
-          return d._selected;
-        }));
-      }
-    };
-
-    var onSelectAll = function onSelectAll(selected) {
-      var indexes = Array.from({
-        length: state.data.length
-      }, function (_, i) {
-        return i;
-      });
-      var newData = updateBatchData(state.data, indexes, {
-        _selected: selected
+        });
       });
 
-      if (onSelectProp) {
-        onSelectProp(indexes, selected, newData.filter(function (d) {
-          return d._selected;
-        }));
-      }
+      _defineProperty(_assertThisInitialized(_this), "onPageChange", function (newPage) {
+        _this.setState({
+          page: newPage
+        });
+      });
 
-      setState(_objectSpread2(_objectSpread2({}, state), {}, {
-        data: newData,
-        selectAll: getSelectAll(newData)
-      }));
-    };
+      _defineProperty(_assertThisInitialized(_this), "updateSchema", function (newSchema) {
+        _this.setState({
+          schema: newSchema
+        });
+      });
 
-    var onPageChange = function onPageChange(newPage) {
-      setState(_objectSpread2(_objectSpread2({}, state), {}, {
-        page: newPage
-      }));
-    };
+      _defineProperty(_assertThisInitialized(_this), "updateSortingList", function (newSortingList) {
+        _this.setState({
+          // @ts-ignore
+          sortingList: _toConsumableArray(newSortingList),
+          page: 1
+        });
+      });
 
-    var updateSchema = function updateSchema(newSchema) {
-      setState(_objectSpread2(_objectSpread2({}, state), {}, {
-        schema: newSchema
-      }));
-    };
+      _defineProperty(_assertThisInitialized(_this), "updateFilterList", function (newFilterList) {
+        _this.setState({
+          filterList: newFilterList,
+          page: 1
+        });
+      });
 
-    var updateSortingList = function updateSortingList(newSortingList) {
-      setState(_objectSpread2(_objectSpread2({}, state), {}, {
+      _defineProperty(_assertThisInitialized(_this), "updateSearchTerm", function (newSearchTerm) {
+        _this.setState({
+          searchTerm: newSearchTerm,
+          page: 1
+        });
+      });
+
+      var _async = ('fetchData' in _this.props);
+
+      _this.state = {
+        async: _async,
         // @ts-ignore
-        sortingList: _toConsumableArray(newSortingList),
-        page: 1
-      })); // updateData({
-      //   sortingList: newSortingList
-      // });
-    };
+        data: props.data || [],
+        // @ts-ignore
+        schema: props.schema || [],
+        sortingList: [],
+        filterList: {},
+        page: 1,
+        totalRecords: 0,
+        loading: true,
+        selectAll: getSelectAll([]),
+        searchTerm: ''
+      };
 
-    var updateFilterList = function updateFilterList(newFilterList) {
-      setState(_objectSpread2(_objectSpread2({}, state), {}, {
-        filterList: newFilterList,
-        page: 1
-      }));
-    };
+      _this.updateData({});
 
-    var updateSearchTerm = function updateSearchTerm(newSearchTerm) {
-      setState(_objectSpread2(_objectSpread2({}, state), {}, {
-        searchTerm: newSearchTerm,
-        page: 1
-      }));
-    };
+      return _this;
+    }
 
-    var headerChildren = headerProps.children,
-        headerAttr = _objectWithoutProperties(headerProps, ["children"]);
+    _createClass(Table, [{
+      key: "componentDidUpdate",
+      // static getDerivedStateFromProps()
+      value: function componentDidUpdate(prevProps, prevState) {
+        if (!this.state.async) {
+          if (prevProps.data !== this.props.data || prevProps.schema !== this.props.schema) {
+            this.setState({
+              loading: this.props.schema.length === 0,
+              page: 1,
+              schema: this.props.schema,
+              data: this.props.data,
+              totalRecords: this.props.data.length,
+              sortingList: [],
+              filterList: {},
+              selectAll: getSelectAll([]),
+              searchTerm: ''
+            });
+          }
+        }
 
-    return /*#__PURE__*/React.createElement("div", {
-      className: "Table"
-    }, withHeader && /*#__PURE__*/React.createElement("div", {
-      className: "Table-header"
-    }, /*#__PURE__*/React.createElement(Header, _extends({}, state, {
-      // updateData={updateData}
-      updateSchema: updateSchema // updateSortingList={updateSortingList}
-      ,
-      updateFilterList: updateFilterList,
-      updateSearchTerm: updateSearchTerm,
-      showHead: showHead,
-      onSelectAll: onSelectAll,
-      withCheckbox: withCheckbox
-    }, headerAttr), headerChildren)), /*#__PURE__*/React.createElement("div", {
-      className: "Table-grid"
-    }, /*#__PURE__*/React.createElement(Grid, _extends({}, state, {
-      updateData: updateData,
-      updateSchema: updateSchema,
-      updateSortingList: updateSortingList,
-      updateFilterList: updateFilterList,
-      withCheckbox: withCheckbox,
-      onSelect: onSelect,
-      onSelectAll: onSelectAll,
-      showMenu: showMenu,
-      showHead: showHead,
-      type: type,
-      size: size,
-      draggable: draggable,
-      withPagination: withPagination,
-      paginationType: paginationType,
-      pageSize: pageSize,
-      loaderSchema: loaderSchema,
-      onRowClick: onRowClick,
-      onPageChange: onPageChange
-    }))));
-  };
+        if (prevState.page !== this.state.page) {
+          this.onSelect(-1, false);
+          var onPageChange = this.props.onPageChange;
+          if (onPageChange) onPageChange(this.state.page);
+        }
+
+        if (prevState.page !== this.state.page || prevState.filterList !== this.state.filterList || prevState.sortingList !== this.state.sortingList || prevState.searchTerm !== this.state.searchTerm) {
+          this.updateData({});
+        }
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this$props2 = this.props,
+            showHead = _this$props2.showHead,
+            type = _this$props2.type,
+            size = _this$props2.size,
+            draggable = _this$props2.draggable,
+            withHeader = _this$props2.withHeader,
+            headerProps = _this$props2.headerProps,
+            withCheckbox = _this$props2.withCheckbox,
+            showMenu = _this$props2.showMenu,
+            withPagination = _this$props2.withPagination,
+            paginationType = _this$props2.paginationType,
+            pageSize = _this$props2.pageSize,
+            onRowClick = _this$props2.onRowClick,
+            loaderSchema = _this$props2.loaderSchema;
+
+        var _ref = headerProps,
+            headerChildren = _ref.children,
+            headerAttr = _objectWithoutProperties(_ref, ["children"]);
+
+        return /*#__PURE__*/React.createElement("div", {
+          className: "Table"
+        }, withHeader && /*#__PURE__*/React.createElement("div", {
+          className: "Table-header"
+        }, /*#__PURE__*/React.createElement(Header, _extends({}, this.state, {
+          // updateData={updateData}
+          updateSchema: this.updateSchema // updateSortingList={updateSortingList}
+          ,
+          updateFilterList: this.updateFilterList,
+          updateSearchTerm: this.updateSearchTerm,
+          showHead: showHead,
+          onSelectAll: this.onSelectAll,
+          withCheckbox: withCheckbox
+        }, headerAttr), headerChildren)), /*#__PURE__*/React.createElement("div", {
+          className: "Table-grid"
+        }, /*#__PURE__*/React.createElement(Grid, _extends({}, this.state, {
+          updateData: this.updateData,
+          updateSchema: this.updateSchema,
+          updateSortingList: this.updateSortingList,
+          updateFilterList: this.updateFilterList,
+          withCheckbox: withCheckbox,
+          onSelect: this.onSelect,
+          onSelectAll: this.onSelectAll,
+          showMenu: showMenu,
+          showHead: showHead,
+          type: type,
+          size: size,
+          draggable: draggable,
+          withPagination: withPagination,
+          paginationType: paginationType,
+          pageSize: pageSize,
+          loaderSchema: loaderSchema,
+          onRowClick: onRowClick,
+          onPageChange: this.onPageChange
+        }))));
+      }
+    }]);
+
+    return Table;
+  }(React.Component);
+
+  _defineProperty(Table, "defaultProps", {
+    showHead: true,
+    headerProps: {},
+    pageSize: 15
+  });
 
   var List = function List(props) {
     return /*#__PURE__*/React.createElement(Table, _extends({

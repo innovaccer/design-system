@@ -12,13 +12,14 @@ export interface Option {
     group?: string;
     label: string;
     value: any;
+    optionType?: OptionType;
     selectedGroup?: boolean;
 }
 export interface DropdownListProps extends OptionRendererProps {
     triggerSize?: Size;
     dropdownAlign?: DropdownAlign;
     icon?: string;
-    optionType?: AllOptionType;
+    loadingType?: AllOptionType;
     placeholder?: string;
     inlineLabel?: string;
     searchResultMessage?: string;

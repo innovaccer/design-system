@@ -194,3 +194,13 @@
 
 * 21d02d3 v1.0.0-14
 * c425395 fix: adds navigation to build
+
+-------------------
+ **v1.0.0-15**  (2020-06-19) 
+
+* 7055329 v1.0.0-15
+* 9162cde feat: fixes chipGroup
+* 8a3cdec fix: Table and Grid fixes
+* 9ba4ddf feat: adds successStatusHints
+* 3e9b9fe feat(pageHeader): page header level 0
+* 8bf9e66 feat: adds dropdown key press support

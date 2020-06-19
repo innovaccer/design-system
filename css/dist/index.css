@@ -1361,6 +1361,11 @@ body {
     background: var(--stone-light);
     border: 0px;
   }
+
+.ChipGroup{
+    margin-right: var(--spacing-m);
+    display: inline-flex;
+}
 /* Donut Chart */
 
 .DonutChart {
@@ -1446,27 +1451,23 @@ body {
     box-sizing: border-box;
 }
 
-.Option,
-.Dropdown-wrapper .ListCheckbox-parentWrapper {
+.Option {
     display: flex;
 }
 
 .Option,
-.Option-loading,
-.Dropdown-wrapper .ListCheckbox-parentWrapper {
+.Option-loading {
     padding-top: 6px;
     padding-bottom: 6px;
     padding-left: var(--spacing-l);
     padding-right: var(--spacing-l);
 }
 
-.Option:hover,
-.Dropdown-wrapper .ListCheckbox-parentWrapper:hover {
+.Option--active {
     background-color: var(--secondary-lightest);
     cursor: pointer;
 }
 
-.Dropdown-wrapper .ListCheckbox-parentWrapper,
 .Option--top {
     padding-top: 10px;
 }
@@ -1510,10 +1511,6 @@ body {
 .Option-text--wrap,
 .Dropdown-wrapper--wrap.Dropdown-wrapper .ListCheckbox .Checkbox .Text {
     white-space: unset;
-}
-
-.Dropdown-wrapper--wrap.Dropdown-wrapper .ListCheckbox .Checkbox {
-    align-items: flex-start;
 }
 
 .Option--icon {
@@ -2589,6 +2586,27 @@ body {
 
 
 
+.PageHeader-wrapper {
+  border-bottom: var(--border);
+  padding: var(--spacing) var(--spacing-2);
+}
+
+.PageHeader-wrapper--withTabs {
+  padding-bottom: 0;
+}
+
+.PageHeader-wrapper--withTabs .TabsWrapper-header {
+  border-bottom: none;
+}
+
+.PageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
 /* pagination */
 
 .Pagination {
@@ -3156,6 +3174,7 @@ body {
     flex-direction: column;
     /* flex-grow: 0; */
     height: 100%;
+    width: 100%;
     z-index: 1;
 }
 
@@ -3163,6 +3182,7 @@ body {
     height: 100%;
     overflow: hidden;
     height: 100%;
+    z-index: 1;
 }
 /* tabs */
 

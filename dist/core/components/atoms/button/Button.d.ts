@@ -11,12 +11,11 @@ export interface ButtonProps {
     icon?: string;
     iconAlign?: Alignment;
     children?: string;
+    tabIndex?: number;
+    className?: string;
     onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     onMouseEnter?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
-export declare const Button: {
-    (props: ButtonProps): JSX.Element;
-    displayName: string;
-};
+export declare const Button: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
 export default Button;

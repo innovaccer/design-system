@@ -19,6 +19,7 @@ export interface InputProps {
     required?: boolean;
     error?: boolean;
     info?: string;
+    autoFocus?: boolean;
     onClear?: (e: React.MouseEvent<HTMLElement>) => void;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;

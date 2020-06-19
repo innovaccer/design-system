@@ -8,6 +8,7 @@ export interface CheckboxProps {
     label?: string;
     name?: string;
     value?: string;
+    tabIndex?: number;
     onChange?: (checked: boolean, indeterminate?: boolean) => void;
 }
 export declare const Checkbox: React.ForwardRefExoticComponent<CheckboxProps & React.RefAttributes<HTMLInputElement>>;

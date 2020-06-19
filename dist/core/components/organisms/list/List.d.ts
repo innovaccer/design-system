@@ -24,6 +24,6 @@ interface SharedListProps {
 }
 declare type SyncListProps = SyncProps & SharedListProps;
 declare type AsyncListProps = AsyncProps & SharedListProps;
-export declare type ListProps = (AsyncListProps | SyncListProps);
+export declare type ListProps = (AsyncListProps & SyncListProps);
 export declare const List: (props: ListProps) => JSX.Element;
 export default List;
