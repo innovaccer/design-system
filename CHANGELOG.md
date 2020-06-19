@@ -204,3 +204,9 @@
 * 9ba4ddf feat: adds successStatusHints
 * 3e9b9fe feat(pageHeader): page header level 0
 * 8bf9e66 feat: adds dropdown key press support
+
+-------------------
+ **v1.0.0-16**  (2020-06-19) 
+
+* 0d697e5 v1.0.0-16
+* 409f68f fix: replaces material icons from node_modules with loacl icons
