@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
-import Pills, { Appearance } from '../../pills';
+import Pills, { Appearance } from '..';
 
 export const alert = () => {
   const subtle = false;
