@@ -1,0 +1,20 @@
+.PageHeader-wrapper {
+  border-bottom: var(--border);
+  padding: var(--spacing) var(--spacing-2);
+}
+
+.PageHeader-wrapper--withTabs {
+  padding-bottom: 0;
+}
+
+.PageHeader-wrapper--withTabs .TabsWrapper-header {
+  border-bottom: none;
+}
+
+.PageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
