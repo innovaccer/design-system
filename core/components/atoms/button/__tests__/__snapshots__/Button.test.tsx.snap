@@ -6,6 +6,7 @@ exports[`Button component
 <button
   className="Button Button--regular Button--alert Button--iconAlign-left"
   disabled={true}
+  tabIndex={0}
 >
   Button
 </button>
@@ -16,6 +17,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--regular Button--alert Button--iconAlign-left"
+  tabIndex={0}
 >
   Button
 </button>
@@ -26,6 +28,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--expanded Button--regular Button--alert Button--iconAlign-left"
+  tabIndex={0}
 >
   Button
 </button>
@@ -37,11 +40,16 @@ exports[`Button component
 <button
   className="Button Button--regular Button--alert Button--iconAlign-left"
   disabled={true}
+  tabIndex={0}
 >
-  <Spinner
-    appearance="white"
-    size="small"
-  />
+  <span
+    className="Button-spinner Button-spinner--left"
+  >
+    <Spinner
+      appearance="white"
+      size="small"
+    />
+  </span>
   Button
 </button>
 `;
@@ -52,6 +60,7 @@ exports[`Button component
 <button
   className="Button Button--regular Button--basic Button--iconAlign-left"
   disabled={true}
+  tabIndex={0}
 >
   Button
 </button>
@@ -62,6 +71,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--regular Button--basic Button--iconAlign-left"
+  tabIndex={0}
 >
   Button
 </button>
@@ -72,6 +82,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--expanded Button--regular Button--basic Button--iconAlign-left"
+  tabIndex={0}
 >
   Button
 </button>
@@ -83,11 +94,16 @@ exports[`Button component
 <button
   className="Button Button--regular Button--basic Button--iconAlign-left"
   disabled={true}
+  tabIndex={0}
 >
-  <Spinner
-    appearance="secondary"
-    size="small"
-  />
+  <span
+    className="Button-spinner Button-spinner--left"
+  >
+    <Spinner
+      appearance="secondary"
+      size="small"
+    />
+  </span>
   Button
 </button>
 `;
@@ -98,6 +114,7 @@ exports[`Button component
 <button
   className="Button Button--regular Button--primary Button--iconAlign-left"
   disabled={true}
+  tabIndex={0}
 >
   Button
 </button>
@@ -108,6 +125,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--regular Button--primary Button--iconAlign-left"
+  tabIndex={0}
 >
   Button
 </button>
@@ -118,6 +136,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--expanded Button--regular Button--primary Button--iconAlign-left"
+  tabIndex={0}
 >
   Button
 </button>
@@ -129,11 +148,16 @@ exports[`Button component
 <button
   className="Button Button--regular Button--primary Button--iconAlign-left"
   disabled={true}
+  tabIndex={0}
 >
-  <Spinner
-    appearance="white"
-    size="small"
-  />
+  <span
+    className="Button-spinner Button-spinner--left"
+  >
+    <Spinner
+      appearance="white"
+      size="small"
+    />
+  </span>
   Button
 </button>
 `;
@@ -144,6 +168,7 @@ exports[`Button component
 <button
   className="Button Button--regular Button--success Button--iconAlign-left"
   disabled={true}
+  tabIndex={0}
 >
   Button
 </button>
@@ -154,6 +179,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--regular Button--success Button--iconAlign-left"
+  tabIndex={0}
 >
   Button
 </button>
@@ -164,6 +190,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--expanded Button--regular Button--success Button--iconAlign-left"
+  tabIndex={0}
 >
   Button
 </button>
@@ -175,11 +202,16 @@ exports[`Button component
 <button
   className="Button Button--regular Button--success Button--iconAlign-left"
   disabled={true}
+  tabIndex={0}
 >
-  <Spinner
-    appearance="white"
-    size="small"
-  />
+  <span
+    className="Button-spinner Button-spinner--left"
+  >
+    <Spinner
+      appearance="white"
+      size="small"
+    />
+  </span>
   Button
 </button>
 `;
@@ -190,6 +222,7 @@ exports[`Button component
 <button
   className="Button Button--regular Button--transparent Button--iconAlign-left"
   disabled={true}
+  tabIndex={0}
 >
   Button
 </button>
@@ -200,6 +233,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--regular Button--transparent Button--iconAlign-left"
+  tabIndex={0}
 >
   Button
 </button>
@@ -210,6 +244,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--expanded Button--regular Button--transparent Button--iconAlign-left"
+  tabIndex={0}
 >
   Button
 </button>
@@ -221,11 +256,16 @@ exports[`Button component
 <button
   className="Button Button--regular Button--transparent Button--iconAlign-left"
   disabled={true}
+  tabIndex={0}
 >
-  <Spinner
-    appearance="secondary"
-    size="small"
-  />
+  <span
+    className="Button-spinner Button-spinner--left"
+  >
+    <Spinner
+      appearance="secondary"
+      size="small"
+    />
+  </span>
   Button
 </button>
 `;
@@ -235,6 +275,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--large Button--basic Button--iconAlign-left"
+  tabIndex={0}
 >
   Button
 </button>
@@ -245,6 +286,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--large Button--basic Button--iconAlign-left"
+  tabIndex={0}
 >
   <div
     className="Button-icon Button-icon--left"
@@ -264,6 +306,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--large Button--basic Button--iconAlign-right"
+  tabIndex={0}
 >
   <div
     className="Button-icon Button-icon--right"
@@ -283,6 +326,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--regular Button--basic Button--iconAlign-left"
+  tabIndex={0}
 >
   Button
 </button>
@@ -293,6 +337,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--regular Button--basic Button--iconAlign-left"
+  tabIndex={0}
 >
   <div
     className="Button-icon Button-icon--left"
@@ -312,6 +357,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--regular Button--basic Button--iconAlign-right"
+  tabIndex={0}
 >
   <div
     className="Button-icon Button-icon--right"
@@ -331,6 +377,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--tiny Button--basic Button--iconAlign-left"
+  tabIndex={0}
 >
   Button
 </button>
@@ -341,6 +388,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--tiny Button--basic Button--iconAlign-left"
+  tabIndex={0}
 >
   <div
     className="Button-icon Button-icon--left"
@@ -360,6 +408,7 @@ exports[`Button component
  1`] = `
 <button
   className="Button Button--tiny Button--basic Button--iconAlign-right"
+  tabIndex={0}
 >
   <div
     className="Button-icon Button-icon--right"
@@ -380,11 +429,16 @@ exports[`Button component with no children
 <button
   className="Button Button--regular Button--square Button--alert"
   disabled={true}
+  tabIndex={0}
 >
-  <Spinner
-    appearance="white"
-    size="small"
-  />
+  <span
+    className="Button-spinner"
+  >
+    <Spinner
+      appearance="white"
+      size="small"
+    />
+  </span>
 </button>
 `;
 
@@ -394,11 +448,16 @@ exports[`Button component with no children
 <button
   className="Button Button--regular Button--square Button--basic"
   disabled={true}
+  tabIndex={0}
 >
-  <Spinner
-    appearance="secondary"
-    size="small"
-  />
+  <span
+    className="Button-spinner"
+  >
+    <Spinner
+      appearance="secondary"
+      size="small"
+    />
+  </span>
 </button>
 `;
 
@@ -408,11 +467,16 @@ exports[`Button component with no children
 <button
   className="Button Button--regular Button--square Button--primary"
   disabled={true}
+  tabIndex={0}
 >
-  <Spinner
-    appearance="white"
-    size="small"
-  />
+  <span
+    className="Button-spinner"
+  >
+    <Spinner
+      appearance="white"
+      size="small"
+    />
+  </span>
 </button>
 `;
 
@@ -422,11 +486,16 @@ exports[`Button component with no children
 <button
   className="Button Button--regular Button--square Button--success"
   disabled={true}
+  tabIndex={0}
 >
-  <Spinner
-    appearance="white"
-    size="small"
-  />
+  <span
+    className="Button-spinner"
+  >
+    <Spinner
+      appearance="white"
+      size="small"
+    />
+  </span>
 </button>
 `;
 
@@ -436,10 +505,15 @@ exports[`Button component with no children
 <button
   className="Button Button--regular Button--square Button--transparent"
   disabled={true}
+  tabIndex={0}
 >
-  <Spinner
-    appearance="secondary"
-    size="small"
-  />
+  <span
+    className="Button-spinner"
+  >
+    <Spinner
+      appearance="secondary"
+      size="small"
+    />
+  </span>
 </button>
 `;

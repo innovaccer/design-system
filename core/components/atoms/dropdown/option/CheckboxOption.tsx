@@ -8,6 +8,8 @@ const CheckboxOption = (props: OptionTypeProps) => {
     selected,
     onChange,
     optionData,
+    index,
+    updateActiveOption,
   } = props;
 
   const { label } = optionData;
@@ -16,12 +18,17 @@ const CheckboxOption = (props: OptionTypeProps) => {
     if (onChange) onChange(checked);
   };
 
+  const onUpdateActiveOption = () => {
+    if (updateActiveOption) updateActiveOption(index);
+  };
+
   return (
-    <div className={className}>
+    <div className={className} onMouseEnter={onUpdateActiveOption}>
       <Checkbox
         label={label}
         checked={selected}
         onChange={onChangeHandler}
+        tabIndex={-1}
       />
     </div>
   );

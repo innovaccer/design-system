@@ -11,14 +11,12 @@ export const customTrigger = () => {
 
   const customTriggerFunc = (label?: string) => {
     return (
-      <div style={{ width: '100%' }}>
-        <Input
-          type="text"
-          name="input"
-          value={label}
-          onChange={onChange}
-        />
-      </div>
+      <Input
+        type="text"
+        name="input"
+        value={label}
+        onChange={onChange}
+      />
     );
   };
 

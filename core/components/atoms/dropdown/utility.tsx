@@ -47,3 +47,25 @@ export const getLabelsFromSelectedObj = (options: any[]) => {
 
   return result;
 };
+
+export const scrollTo = (element: Element, top: number) => {
+  element.scrollTo(0, top);
+};
+
+export const scrollIntoView = (menuElement: HTMLDivElement | null, focusedElement: HTMLElement) => {
+  const menuRect = menuElement?.getBoundingClientRect();
+  const focusedRect = focusedElement.getBoundingClientRect();
+  const overscroll = focusedElement.offsetHeight;
+
+  if (focusedRect.bottom > menuRect!.bottom && menuElement) {
+    scrollTo(
+      menuElement,
+      focusedElement.offsetTop - menuRect!.height + overscroll
+    );
+  } else if (focusedRect.top < menuRect!.top && menuElement) {
+    scrollTo(
+      menuElement,
+      focusedElement.offsetTop - overscroll
+    );
+  }
+};

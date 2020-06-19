@@ -3,9 +3,9 @@ import PlaceholderParagraph from '@/components/atoms/placeholderParagraph';
 import Placeholder from '@/components/molecules/placeholder';
 
 const Loading = (props: any) => {
-  const { optionType } = props;
+  const { loadingType } = props;
 
-  switch (optionType) {
+  switch (loadingType) {
     case 'DEFAULT':
       return (
         <PlaceholderParagraph length={'large'} />

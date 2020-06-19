@@ -10,6 +10,8 @@ const IconOption = (props: OptionTypeProps) => {
     selected,
     onClick,
     optionData,
+    updateActiveOption,
+    index,
   } = props;
 
   const { label, icon } = optionData;
@@ -23,8 +25,12 @@ const IconOption = (props: OptionTypeProps) => {
     if (onClick) onClick();
   };
 
+  const onUpdateActiveOption = () => {
+    if (updateActiveOption) updateActiveOption(index);
+  };
+
   return (
-    <div className={OptionClass} onClick={onClickHandler}>
+    <div className={OptionClass} onClick={onClickHandler} onMouseEnter={onUpdateActiveOption}>
       {icon && (
         <div className={'Option-icon'}>
           <Icon className="mr-4" name={icon} appearance={selected ? 'white' : 'default'} />

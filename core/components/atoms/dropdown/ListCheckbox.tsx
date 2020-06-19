@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Checkbox from '@/components/atoms/checkbox';
+import classNames from 'classnames';
 import Option, { OptionRendererProps } from './option';
 
 export type Size = 'regular' | 'tiny';
@@ -12,7 +13,7 @@ export interface CheckboxProps {
   value: any;
 }
 
-export interface ListCheckboxProps extends OptionRendererProps{
+export interface ListCheckboxProps extends OptionRendererProps {
   label?: string;
   showParentCheckbox?: boolean;
   checked?: boolean;
@@ -25,10 +26,12 @@ export interface ListCheckboxProps extends OptionRendererProps{
   selectedLabels?: string[];
   optionsLength: number;
   remainingOptions: number;
+  cursor: number;
   onChange?: (childArray: number[], labels: string[], parent: boolean) => void;
   onUpdateSelected?: (selected: number[]) => void;
   renderFooter: () => JSX.Element;
   renderGroups: (group: string, selectedGroup?: boolean) => JSX.Element;
+  updateActiveOption: (index: number, parentCheckbox?: boolean) => void;
 }
 
 export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>((props, ref) => {
@@ -89,6 +92,13 @@ export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>(
   const [checked, setChecked] = React.useState(childArray);
   const [selectedArrayLabels, setSelectedArrayLabels] = React.useState<string[]>(selectedLabels);
   const [selectedArrayValues, setSelectedArrayValues] = React.useState(selected);
+
+  const SelectAllClass = classNames({
+    ['Option']: true,
+    ['Option-wrapper']: true,
+    ['Option--top']: true,
+    ['Option--active']: props.cursor === 0
+  });
 
   React.useEffect(() => {
     if (updatedSelectedArray && updatedSelectedArray.length > 0) {
@@ -151,16 +161,21 @@ export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>(
     }
   };
 
+  const onUpdateActiveOption = () => {
+    if (props.updateActiveOption) props.updateActiveOption(0, true);
+  };
+
   return (
     <div className={'ListCheckbox'}>
       {
         showParentCheckbox && (
-          <div className={'ListCheckbox-parentWrapper'}>
+          <div className={SelectAllClass} onMouseEnter={onUpdateActiveOption}>
             <Checkbox
               label={label}
               onChange={handleParentChange}
               checked={parentStatus.checked}
               indeterminate={parentStatus.indeterminate}
+              tabIndex={-1}
             />
           </div>
         )
@@ -175,18 +190,21 @@ export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>(
 
             const top = !showParentCheckbox && ind === 0 && !showGroups;
             const bottom = ind + 1 === list.length && !(showGroups && remainingOptions > 0);
+            const active = showParentCheckbox ? ind + 1 === props.cursor : ind === props.cursor;
 
             return (
               <div key={`checkbox-${ind}`}>
                 {isGroup && group && renderGroups(group, selectedGroup)}
                 <Option
                   optionData={{ value, label: childLabel }}
+                  active={active}
                   selected={checked[ind]}
                   optionRenderer={optionRenderer}
                   index={ind}
                   optionIsTop={top}
                   optionIsBottom={bottom}
-                  optionType={'WITH_CHECKBOX'}
+                  updateActiveOption={props.updateActiveOption}
+                  checkboxes={true}
                   onChange={c => {
                     handleChildChange(c, ind);
                   }}

@@ -10,12 +10,10 @@ exports[`Input component
     className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       placeholder="Placeholder"
     />
   </div>
@@ -40,12 +38,10 @@ exports[`Input component
       />
     </div>
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       placeholder="Placeholder"
     />
   </div>
@@ -62,12 +58,10 @@ exports[`Input component
     className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       placeholder="Placeholder"
       value="value"
     />
@@ -93,12 +87,10 @@ exports[`Input component
       />
     </div>
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       placeholder="Placeholder"
       value="value"
     />
@@ -116,12 +108,10 @@ exports[`Input component
     className="Input-wrapper Input-wrapper--large Input-wrapper--disabled"
   >
     <input
+      autoFocus={false}
       className="Input-input Input-input--large"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
     />
   </div>
 </div>
@@ -146,12 +136,10 @@ exports[`Input component
       </Text>
     </div>
     <input
+      autoFocus={false}
       className="Input-input Input-input--large"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       type="number"
     />
   </div>
@@ -168,12 +156,10 @@ exports[`Input component
     className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
     />
   </div>
 </div>
@@ -198,12 +184,10 @@ exports[`Input component
       </Text>
     </div>
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       type="number"
     />
   </div>
@@ -220,12 +204,10 @@ exports[`Input component
     className="Input-wrapper Input-wrapper--tiny Input-wrapper--disabled"
   >
     <input
+      autoFocus={false}
       className="Input-input Input-input--tiny"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
     />
   </div>
 </div>
@@ -250,12 +232,10 @@ exports[`Input component
       </Text>
     </div>
     <input
+      autoFocus={false}
       className="Input-input Input-input--tiny"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       type="number"
     />
   </div>
@@ -272,12 +252,10 @@ exports[`Input component
     className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       type="number"
     />
   </div>
@@ -294,12 +272,10 @@ exports[`Input component
     className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       type="password"
     />
   </div>
@@ -316,12 +292,10 @@ exports[`Input component
     className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       type="text"
     />
   </div>
@@ -338,12 +312,10 @@ exports[`Input component
     className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       value="value"
     />
   </div>
@@ -368,12 +340,10 @@ exports[`Input component
       />
     </div>
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       value="value"
     />
   </div>
@@ -390,12 +360,10 @@ exports[`Input component
     className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       value="value"
     />
   </div>
@@ -420,12 +388,10 @@ exports[`Input component
       />
     </div>
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       value="value"
     />
   </div>
@@ -442,12 +408,10 @@ exports[`Input component
     className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled Input-wrapper--error"
   >
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       value="value"
     />
   </div>
@@ -472,12 +436,10 @@ exports[`Input component
       />
     </div>
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       value="value"
     />
   </div>
@@ -502,12 +464,10 @@ exports[`Input component
     className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled Input-wrapper--error"
   >
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       required={true}
       value="value"
     />
@@ -552,12 +512,10 @@ exports[`Input component
     className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       required={true}
       value="value"
     />
@@ -583,12 +541,10 @@ exports[`Input component
     className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
   >
     <input
+      autoFocus={false}
       className="Input-input Input-input--regular"
       disabled={true}
       name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
       required={true}
       value="value"
     />

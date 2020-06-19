@@ -47,6 +47,14 @@ export interface ButtonProps {
    */
   children?: string;
   /**
+   * Specifies tab index of `Checkbox`
+   */
+  tabIndex?: number;
+  /**
+   * Adds className to `Card` component
+   */
+  className?: string;
+  /**
    * Handler to be called when `Button` is clicked
    */
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
@@ -60,16 +68,18 @@ const sizeMapping = {
   large: 20,
 };
 
-export const Button = (props: ButtonProps) => {
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const {
     appearance = 'basic',
     size = 'regular',
     iconAlign = 'left',
+    tabIndex = 0,
     children,
     icon,
     expanded,
     loading,
     disabled,
+    className,
     ...rest
   } = props;
 
@@ -80,6 +90,7 @@ export const Button = (props: ButtonProps) => {
     ['Button--square']: !children,
     [`Button--${appearance}`]: appearance,
     [`Button--iconAlign-${iconAlign}`]: children && iconAlign,
+    [`${className}`]: className
   });
 
   const iconClass = classNames({
@@ -93,7 +104,7 @@ export const Button = (props: ButtonProps) => {
   });
 
   return (
-    <button className={buttonClass} disabled={disabled || loading} {...rest} >
+    <button ref={ref} className={buttonClass} disabled={disabled || loading} tabIndex={tabIndex} {...rest} >
       {loading && (
         <span className={spinnerClass}>
           <Spinner size="small" appearance={(appearance === 'basic' || appearance === 'transparent') ? 'secondary' : 'white'} />
@@ -111,7 +122,7 @@ export const Button = (props: ButtonProps) => {
       {children && `${children.charAt(0).toUpperCase()}${children.slice(1)}`}
     </button>
   );
-};
+});
 
 Button.displayName = 'Button';
 

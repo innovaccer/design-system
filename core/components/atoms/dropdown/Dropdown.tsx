@@ -96,7 +96,6 @@ export const Dropdown = (props: DropdownProps) => {
   const [topOptionsSliced, setTopOptionsSliced] = React.useState(false);
   const [bottomOptionsSliced, setBottomOptionsSliced] = React.useState(false);
   const [searchTerm, setSearchTerm] = React.useState('');
-  const [stateLimit, setStateLimit] = React.useState(2 * limit);
   const [slicedOptionLength, setSlicedOptionLength] = React.useState(0);
   const [async, setAsync] = React.useState(bulk);
   const [loading, setLoading] = React.useState(props.loading);
@@ -172,10 +171,6 @@ export const Dropdown = (props: DropdownProps) => {
   };
 
   React.useEffect(() => {
-    if (!isInitialRender) setStateLimit(2 * limit);
-  }, [limit]);
-
-  React.useEffect(() => {
     if (!isInitialRender) setAsync(bulk);
   }, [bulk]);
 
@@ -228,7 +223,7 @@ export const Dropdown = (props: DropdownProps) => {
   ) => {
     if (bottomOptionsSliced) setBottomOptionsSliced(false);
     if (topOptionsSliced) setTopOptionsSliced(false);
-
+    const stateLimit = 2 * limit;
     let updatedOptions = options.slice();
     if (direction === 'down') {
       updatedOptions = updatedOptions.concat(slicedOptions);

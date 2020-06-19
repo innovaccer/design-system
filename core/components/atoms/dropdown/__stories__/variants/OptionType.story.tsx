@@ -1,14 +1,20 @@
 import * as React from 'react';
 import Dropdown from '../../Dropdown';
 import Text from '@/components/atoms/text';
-import { storyOptions } from '../Options';
-import { OptionType } from '../../DropdownList';
+import { storyOptions, iconOptions, subInfoOptions, iconWithSubinfoOptions  } from '../Options';
 
 const labelMapping: { [key: string]: string } = {
   ['DEFAULT']: 'Default',
   ['WITH_ICON']: 'Icon',
   ['WITH_META']: 'SubInfo',
   ['ICON_WITH_META']: 'Icon with SubInfo'
+};
+
+const optionsMapping: { [key: string]: any } = {
+  ['DEFAULT']: storyOptions,
+  ['WITH_ICON']: iconOptions,
+  ['WITH_META']: subInfoOptions,
+  ['ICON_WITH_META']: iconWithSubinfoOptions
 };
 
 // CSF format story
@@ -25,7 +31,7 @@ export const optionType = () => {
               style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginRight: '5%' }}
             >
               <Text weight="strong">{labelMapping[type]}</Text><br />
-              <Dropdown options={storyOptions.slice(0, 3)} optionType={type as OptionType} />
+              <Dropdown options={optionsMapping[type].slice(0, 3)} />
             </div>
           );
         })

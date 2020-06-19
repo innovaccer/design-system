@@ -7,6 +7,8 @@ const DefaultOption = (props: OptionTypeProps) => {
     textClassName,
     onClick,
     optionData,
+    updateActiveOption,
+    index,
   } = props;
 
   const { label } = optionData;
@@ -15,8 +17,12 @@ const DefaultOption = (props: OptionTypeProps) => {
     if (onClick) onClick();
   };
 
+  const onUpdateActiveOption = () => {
+    if (updateActiveOption) updateActiveOption(index);
+  };
+
   return (
-    <div className={className} onClick={onClickHandler}>
+    <div className={className} onClick={onClickHandler} onMouseEnter={onUpdateActiveOption}>
       <div className={'Option-label'}>
         <div className={textClassName}>{label}</div>
       </div>
