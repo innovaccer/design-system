@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
-import Chip from '../../Chip';
+import Chip, { Name } from '../../Chip';
 import { action } from '@storybook/addon-actions';
 const BooleanValue = [true, false];
 export const Input = () => {
@@ -12,10 +12,10 @@ export const Input = () => {
     'label',
     'Input'
   );
-  const onCloseHandler = (name?: any) => {
+  const onCloseHandler = (name: Name) => {
     return action(`onClose: ${name}`)();
   };
-  const onClickHandler = (name?: any) => {
+  const onClickHandler = (name: Name) => {
     return action(`onClick: ${name}`)();
   };
   const style = {
@@ -39,6 +39,7 @@ export const Input = () => {
                 type="input"
                 onClose={onCloseHandler}
                 onClick={onClickHandler}
+                name={name}
               />
             </div>
           );

@@ -2,7 +2,7 @@ import * as React from 'react';
 import GenericChip from '../_chip';
 import classNames from 'classnames';
 export type Type = 'action' | 'selection' | 'input';
-
+export type Name = number | string;
 export interface ChipProps {
   label: string;
   icon?: string;
@@ -10,9 +10,9 @@ export interface ChipProps {
   disabled?: boolean;
   selected?: boolean;
   type?: Type;
-  onClose?: (name?: any) => void;
-  onClick?: (name?: any) => void;
-  name?:any;
+  onClose?: (name: Name) => void;
+  onClick?: (name: Name) => void;
+  name: Name;
 }
 export const Chip = (props: ChipProps) => {
   const {
