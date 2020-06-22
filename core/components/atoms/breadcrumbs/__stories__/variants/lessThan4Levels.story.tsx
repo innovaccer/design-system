@@ -1,15 +1,9 @@
 import * as React from 'react';
-import Breadcrumbs from '../Breadcrumbs';
+import { Breadcrumbs } from '@/index';
 import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
 
 // CSF format story
-export const all = () => {
-  const lessThan4Levels = boolean(
-    'less than 4 levels',
-    true
-  );
-
+export const lessThan4Levels = () => {
   const list = [
     {
       label: 'Level 0',
@@ -27,16 +21,12 @@ export const all = () => {
       label: 'Level 3',
       link: '/level3'
     },
-    {
-      label: 'Level 4',
-      link: '/level4'
-    },
   ];
 
   return (
     <div style={{ background: 'var(--secondary-lightest)' }}>
       <Breadcrumbs
-        list={lessThan4Levels ? list.slice(0, 4) : list}
+        list={list}
         onClick={link => action(`on-click: ${link}`)()}
       />
     </div>
@@ -44,8 +34,6 @@ export const all = () => {
 };
 
 const customCode = `() => {
-  const lessThan4Levels = false;
-
   const list = [
     {
       label: 'Level 0',
@@ -62,17 +50,13 @@ const customCode = `() => {
     {
       label: 'Level 3',
       link: '/level3'
-    },
-    {
-      label: 'Level 4',
-      link: '/level4'
-    },
+    }
   ];
 
   return (
     <div style={{ background: 'var(--secondary-lightest)' }}>
       <Breadcrumbs
-        list={lessThan4Levels ? list.slice(0, 4) : list}
+        list={list}
         onClick={link => console.log(\`on-click: \${link}\`)}
       />
     </div>
@@ -80,7 +64,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Atoms|Breadcrumbs',
+  title: 'Atoms|Breadcrumbs/Variants',
   component: Breadcrumbs,
   parameters: {
     docs: {
