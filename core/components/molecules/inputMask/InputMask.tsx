@@ -115,10 +115,11 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
       const m = mask[i];
       if (typeof m === 'object') {
         if (it < rawValue.length && rawValue[it].match(m)) {
-          newVal += rawValue[it++];
+          newVal += rawValue[it];
         } else {
           newVal += placeholderChar;
         }
+        it++;
       } else {
         newVal += m;
         if (i >= caret && i <= newCaretPos && it < rawValue.length) {
@@ -166,7 +167,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
       {...rest}
       value={value}
       error={error}
-      caption={error ? 'Invalid Value' : caption}
+      caption={error ? caption || 'Invalid Value' : caption}
       onClick={onClickHandler}
       onChange={onChangeHandler}
       onClear={onClearHandler}
