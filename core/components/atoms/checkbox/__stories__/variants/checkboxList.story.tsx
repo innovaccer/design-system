@@ -2,7 +2,7 @@ import * as React from 'react';
 import Checkbox from '../../index';
 
 // CSF format story
-export const checkbox = () => {
+export const checkboxList = () => {
   const style = {
     display: 'flex',
     'flex-direction': 'column',
@@ -16,12 +16,15 @@ export const checkbox = () => {
   const [checked, setChecked] = React.useState(childArray);
   const [parentStatus, setParentStatus] = React.useState(parentObj);
 
-  const handleParentChange = (checkedValue: boolean) => {
+  const handleParentChange = (
+    checkedValue: boolean,
+    _name?: string,
+    _value?: string | number,
+    indeterminate: boolean = false
+  ) => {
     const updatedArray = [...childArray].fill(checkedValue);
     setChecked(updatedArray);
-    if (checkedValue) {
-      setParentStatus({ checked: checkedValue, indeterminate: !checkedValue });
-    }
+    setParentStatus({ indeterminate, checked: checkedValue });
   };
 
   const handleChildChange = (checkedValue: boolean, index: number) => {

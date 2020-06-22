@@ -145,7 +145,12 @@ export const ListCheckbox = React.forwardRef<HTMLDivElement, ListCheckboxProps>(
     }
   };
 
-  const handleParentChange = (checkedValue: boolean, indeterminate: boolean = false) => {
+  const handleParentChange = (
+    checkedValue: boolean,
+    _name?: string,
+    _value?: string | number,
+    indeterminate: boolean = false
+  ) => {
     const updatedArray = [...childArray].fill(checkedValue);
     const optionsList = (selected && selected.length > 0) ? selectedArrayValues.slice() : getValuesFromList(list);
     const labelsList = (selected && selected.length > 0) ? selectedArrayLabels.slice() : getLabelsFromList(list);

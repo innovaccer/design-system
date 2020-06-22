@@ -12,6 +12,10 @@ export interface CheckboxProps {
    */
   size?: Size;
   /**
+   * Default value of checked
+   */
+  defaultChecked?: boolean;
+  /**
    * Denotes Selection
    */
   checked?: boolean;
@@ -34,7 +38,7 @@ export interface CheckboxProps {
   /**
    * Value of the `Checkbox`
    */
-  value?: string;
+  value?: string | number;
   /**
    * Specifies tab index of `Checkbox`
    */
@@ -42,13 +46,14 @@ export interface CheckboxProps {
   /**
    * Callback function called when user the selects an option
    */
-  onChange?: (checked: boolean, indeterminate?: boolean) => void;
+  onChange?: (checked: boolean, name?: string, value?: string | number, indeterminate?: boolean) => void;
 }
 
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props, forwardedRef) => {
   const {
     size = 'regular',
     tabIndex = 0,
+    defaultChecked,
     label,
     disabled,
     onChange,
@@ -62,14 +67,16 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     return ref.current as HTMLInputElement;
   });
 
-  const [checked, setChecked] = React.useState(props.checked);
+  const [checked, setChecked] = React.useState(props.checked === undefined ? defaultChecked : props.checked);
 
   React.useEffect(() => {
     setIndeterminate(props.indeterminate);
   }, [props.indeterminate]);
 
   React.useEffect(() => {
-    setChecked(props.checked);
+    if (props.checked !== undefined) {
+      setChecked(props.checked);
+    }
   }, [props.checked]);
 
   const CheckboxClass = classNames({
@@ -93,9 +100,11 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     e.stopPropagation();
 
     const checkedValue = (props.indeterminate) ? false : !checked;
-    setChecked(checkedValue);
-    setIndeterminate(false);
-    if (onChange) onChange(checkedValue, false);
+    if (props.checked === undefined) {
+      setChecked(checkedValue);
+      setIndeterminate(false);
+    }
+    if (onChange) onChange(checkedValue, name, value, false);
   };
 
   const IconName = (props.indeterminate) ? 'remove' : ((checked) ? 'check' : '');
@@ -105,6 +114,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     <div className={CheckboxClass} onClick={onChangeHandler}>
       <input
         type="checkbox"
+        defaultChecked={defaultChecked}
         checked={checked}
         disabled={disabled}
         ref={ref}
