@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Caption component 
+  error: false
+ 1`] = `
+<div
+  className="Caption"
+>
+  <Text
+    appearance="subtle"
+    small={true}
+    weight="medium"
+  >
+    Caption
+  </Text>
+</div>
+`;
+
+exports[`Caption component 
+  error: true
+ 1`] = `
+<div
+  className="Caption"
+>
+  <Text
+    appearance="subtle"
+    small={true}
+    weight="medium"
+  >
+    Caption
+  </Text>
+</div>
+`;

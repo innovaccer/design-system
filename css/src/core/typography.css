@@ -133,6 +133,18 @@ body {
   margin-left: var(--spacing-m);
 }
 
+/* Caption */
+.Caption {
+  display: flex;
+  align-items: center;
+}
+
+.Caption-icon {
+  display: flex;
+  align-content: center;
+  margin-right: var(--spacing-m);
+}
+
 /* Subheading */
 .Subheading {
   margin: 0;
