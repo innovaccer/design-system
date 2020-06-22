@@ -16,7 +16,12 @@ export const multipleChoiceList = () => {
   const [checked, setChecked] = React.useState(childArray);
   const [parentStatus, setParentStatus] = React.useState(parentObj);
 
-  const handleParentChange = (checkedValue: boolean, indeterminate: boolean = false) => {
+  const handleParentChange = (
+    checkedValue: boolean,
+    _name?: string,
+    _value?: string | number,
+    indeterminate: boolean = false
+  ) => {
     const updatedArray = [...childArray].fill(checkedValue);
     setChecked(updatedArray);
     setParentStatus({ indeterminate, checked: checkedValue });

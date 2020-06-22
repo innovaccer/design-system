@@ -60,10 +60,13 @@
     background-color: var(--shadow-0);
 }
 
+.Checkbox--disabled {
+    pointer-events: none;
+}
+
 .Checkbox--disabled .Checkbox-wrapper {
     border: var(--spacing-xs) solid var(--secondary-light);
     background-color: var(--secondary-lightest);
-    pointer-events: none;
 }
 
 
@@ -97,5 +100,4 @@
 .Checkbox--disabled .Checkbox-wrapper--indeterminate {
     background-color: var(--primary-lighter);
     border: 0;
-    pointer-events: none;
 }

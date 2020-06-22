@@ -30,7 +30,7 @@ export const defaultCheckbox = () => {
             <div key={ind} style={outerStyles}>
               <div style={innerStyles}>
                 <Checkbox
-                  checked={true}
+                  defaultChecked={true}
                   disabled={false}
                   size={CheckboxSize}
                   label={label}
