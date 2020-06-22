@@ -17,6 +17,10 @@ export interface LabelProps {
    * @default false
    */
   required?: boolean;
+  /**
+   * Adds className to `Label` component
+   */
+  className?: string;
 }
 
 export const Label = (props: LabelProps) => {
@@ -24,20 +28,26 @@ export const Label = (props: LabelProps) => {
     required = false,
     disabled,
     children,
+    className,
     ...rest
   } = props;
 
+  const LabelClass = classNames({
+    Label: true,
+    [`${className}`]: className,
+  });
+
   const classes = classNames({
-    'Label-text': true,
+    'Label-label': true,
     'Label--disabled': disabled
   });
 
   return (
-    <div className="Label">
+    <div className={LabelClass}>
       <GenericText className={classes} componentType="label" {...rest}>
         {children}
       </GenericText>
-      {required && <span />}
+      {required && <span className="Label-requiredIndicator"/>}
     </div>
   );
 };

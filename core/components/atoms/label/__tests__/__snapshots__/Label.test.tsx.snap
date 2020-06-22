@@ -7,7 +7,7 @@ exports[`Label component
   className="Label"
 >
   <GenericText
-    className="Label-text"
+    className="Label-label"
     componentType="label"
   >
     Label
@@ -22,7 +22,7 @@ exports[`Label component
   className="Label"
 >
   <GenericText
-    className="Label-text"
+    className="Label-label"
     componentType="label"
   >
     Label
@@ -37,7 +37,7 @@ exports[`Label component
   className="Label"
 >
   <GenericText
-    className="Label-text"
+    className="Label-label"
     componentType="label"
   >
     Label
@@ -52,7 +52,7 @@ exports[`Label component
   className="Label"
 >
   <GenericText
-    className="Label-text"
+    className="Label-label"
     componentType="label"
   >
     Label
