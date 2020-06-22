@@ -18,7 +18,7 @@ export interface LabelProps {
    */
   required?: boolean;
   /**
-   * Adds className to `Label` component
+   * Adds className to `Label`
    */
   className?: string;
 }
@@ -34,7 +34,7 @@ export const Label = (props: LabelProps) => {
 
   const LabelClass = classNames({
     Label: true,
-    [`${className}`]: className,
+    [`${className}`]: className
   });
 
   const classes = classNames({

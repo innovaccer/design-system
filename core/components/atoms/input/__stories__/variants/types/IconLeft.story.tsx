@@ -26,7 +26,7 @@ export const iconLeft = () => {
           name="input"
           value="Value"
           onChange={action('on-change')}
-          clearButton={true}
+          onClear={action('on-clear')}
           icon={icon}
         />
         <br />
@@ -38,7 +38,7 @@ export const iconLeft = () => {
           value=""
           placeholder="Placeholder"
           onChange={action('on-change')}
-          clearButton={true}
+          onClear={action('on-clear')}
           info="sample info popover"
           icon={icon}
         />
@@ -50,7 +50,7 @@ export const iconLeft = () => {
           name="input"
           value="Value"
           onChange={action('on-change')}
-          clearButton={true}
+          onClear={action('on-clear')}
           error={true}
           icon={icon}
         />

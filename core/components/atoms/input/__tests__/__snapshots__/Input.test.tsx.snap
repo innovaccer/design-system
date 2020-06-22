@@ -4,19 +4,15 @@ exports[`Input component
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--regular Input--disabled"
 >
-  <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
-  >
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-      placeholder="Placeholder"
-    />
-  </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--regular"
+    disabled={true}
+    name="name"
+    placeholder="Placeholder"
+  />
 </div>
 `;
 
@@ -24,27 +20,23 @@ exports[`Input component
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", icon: "events"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--regular Input--disabled"
 >
   <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
+    className="Input-icon Input-icon--left Input-icon--disabled"
   >
-    <div
-      className="Input-icon Input-icon--left Input-icon--disabled"
-    >
-      <Icon
-        name="events"
-        size={16}
-      />
-    </div>
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-      placeholder="Placeholder"
+    <Icon
+      name="events"
+      size={16}
     />
   </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--regular"
+    disabled={true}
+    name="name"
+    placeholder="Placeholder"
+  />
 </div>
 `;
 
@@ -52,20 +44,16 @@ exports[`Input component
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", value: "value"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--regular Input--disabled"
 >
-  <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
-  >
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-      placeholder="Placeholder"
-      value="value"
-    />
-  </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--regular"
+    disabled={true}
+    name="name"
+    placeholder="Placeholder"
+    value="value"
+  />
 </div>
 `;
 
@@ -73,28 +61,24 @@ exports[`Input component
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", value: "value", icon: "events"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--regular Input--disabled"
 >
   <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
+    className="Input-icon Input-icon--left"
   >
-    <div
-      className="Input-icon Input-icon--left"
-    >
-      <Icon
-        name="events"
-        size={16}
-      />
-    </div>
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-      placeholder="Placeholder"
-      value="value"
+    <Icon
+      name="events"
+      size={16}
     />
   </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--regular"
+    disabled={true}
+    name="name"
+    placeholder="Placeholder"
+    value="value"
+  />
 </div>
 `;
 
@@ -102,18 +86,14 @@ exports[`Input component
   name: "name", size: "large", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--large Input--disabled"
 >
-  <div
-    className="Input-wrapper Input-wrapper--large Input-wrapper--disabled"
-  >
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--large"
-      disabled={true}
-      name="name"
-    />
-  </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--large"
+    disabled={true}
+    name="name"
+  />
 </div>
 `;
 
@@ -121,28 +101,24 @@ exports[`Input component
   name: "name", size: "large", type: "number", inlineLabel: "USD", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--large Input--disabled"
 >
   <div
-    className="Input-wrapper Input-wrapper--large Input-wrapper--disabled"
+    className="Input-inlineLabel"
   >
-    <div
-      className="Input-inlineLabel"
+    <Text
+      appearance="subtle"
     >
-      <Text
-        appearance="subtle"
-      >
-        USD
-      </Text>
-    </div>
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--large"
-      disabled={true}
-      name="name"
-      type="number"
-    />
+      USD
+    </Text>
   </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--large"
+    disabled={true}
+    name="name"
+    type="number"
+  />
 </div>
 `;
 
@@ -150,18 +126,14 @@ exports[`Input component
   name: "name", size: "regular", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--regular Input--disabled"
 >
-  <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
-  >
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-    />
-  </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--regular"
+    disabled={true}
+    name="name"
+  />
 </div>
 `;
 
@@ -169,28 +141,24 @@ exports[`Input component
   name: "name", size: "regular", type: "number", inlineLabel: "USD", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--regular Input--disabled"
 >
   <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
+    className="Input-inlineLabel"
   >
-    <div
-      className="Input-inlineLabel"
+    <Text
+      appearance="subtle"
     >
-      <Text
-        appearance="subtle"
-      >
-        USD
-      </Text>
-    </div>
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-      type="number"
-    />
+      USD
+    </Text>
   </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--regular"
+    disabled={true}
+    name="name"
+    type="number"
+  />
 </div>
 `;
 
@@ -198,18 +166,14 @@ exports[`Input component
   name: "name", size: "tiny", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--tiny Input--disabled"
 >
-  <div
-    className="Input-wrapper Input-wrapper--tiny Input-wrapper--disabled"
-  >
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--tiny"
-      disabled={true}
-      name="name"
-    />
-  </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--tiny"
+    disabled={true}
+    name="name"
+  />
 </div>
 `;
 
@@ -217,28 +181,24 @@ exports[`Input component
   name: "name", size: "tiny", type: "number", inlineLabel: "USD", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--tiny Input--disabled"
 >
   <div
-    className="Input-wrapper Input-wrapper--tiny Input-wrapper--disabled"
+    className="Input-inlineLabel"
   >
-    <div
-      className="Input-inlineLabel"
+    <Text
+      appearance="subtle"
     >
-      <Text
-        appearance="subtle"
-      >
-        USD
-      </Text>
-    </div>
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--tiny"
-      disabled={true}
-      name="name"
-      type="number"
-    />
+      USD
+    </Text>
   </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--tiny"
+    disabled={true}
+    name="name"
+    type="number"
+  />
 </div>
 `;
 
@@ -246,19 +206,15 @@ exports[`Input component
   name: "name", type: "number", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--regular Input--disabled"
 >
-  <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
-  >
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-      type="number"
-    />
-  </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--regular"
+    disabled={true}
+    name="name"
+    type="number"
+  />
 </div>
 `;
 
@@ -266,19 +222,15 @@ exports[`Input component
   name: "name", type: "password", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--regular Input--disabled"
 >
-  <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
-  >
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-      type="password"
-    />
-  </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--regular"
+    disabled={true}
+    name="name"
+    type="password"
+  />
 </div>
 `;
 
@@ -286,19 +238,15 @@ exports[`Input component
   name: "name", type: "text", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--regular Input--disabled"
 >
-  <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
-  >
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-      type="text"
-    />
-  </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--regular"
+    disabled={true}
+    name="name"
+    type="text"
+  />
 </div>
 `;
 
@@ -306,19 +254,15 @@ exports[`Input component
   name: "name", value: "value", disabled: true
  1`] = `
 <div
-  className="Input"
+  className="Input Input--regular Input--disabled"
 >
-  <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
-  >
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-      value="value"
-    />
-  </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--regular"
+    disabled={true}
+    name="name"
+    value="value"
+  />
 </div>
 `;
 
@@ -326,27 +270,23 @@ exports[`Input component
   name: "name", value: "value", disabled: true, icon: "events"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--regular Input--disabled"
 >
   <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
+    className="Input-icon Input-icon--left"
   >
-    <div
-      className="Input-icon Input-icon--left"
-    >
-      <Icon
-        name="events"
-        size={16}
-      />
-    </div>
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-      value="value"
+    <Icon
+      name="events"
+      size={16}
     />
   </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--regular"
+    disabled={true}
+    name="name"
+    value="value"
+  />
 </div>
 `;
 
@@ -354,19 +294,15 @@ exports[`Input component
   name: "name", value: "value", disabled: true, onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--regular Input--disabled"
 >
-  <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
-  >
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-      value="value"
-    />
-  </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--regular"
+    disabled={true}
+    name="name"
+    value="value"
+  />
 </div>
 `;
 
@@ -374,27 +310,23 @@ exports[`Input component
   name: "name", value: "value", disabled: true, onChangeHandler: "[Function]", icon: "events"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--regular Input--disabled"
 >
   <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
+    className="Input-icon Input-icon--left"
   >
-    <div
-      className="Input-icon Input-icon--left"
-    >
-      <Icon
-        name="events"
-        size={16}
-      />
-    </div>
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-      value="value"
+    <Icon
+      name="events"
+      size={16}
     />
   </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--regular"
+    disabled={true}
+    name="name"
+    value="value"
+  />
 </div>
 `;
 
@@ -402,19 +334,15 @@ exports[`Input component
   name: "name", value: "value", error: true, onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--regular Input--disabled Input--error"
 >
-  <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled Input-wrapper--error"
-  >
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-      value="value"
-    />
-  </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--regular"
+    disabled={true}
+    name="name"
+    value="value"
+  />
 </div>
 `;
 
@@ -422,143 +350,22 @@ exports[`Input component
   name: "name", value: "value", error: true, onChangeHandler: "[Function]", icon: "events"
  1`] = `
 <div
-  className="Input"
+  className="Input Input--regular Input--disabled Input--error"
 >
   <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled Input-wrapper--error"
+    className="Input-icon Input-icon--left"
   >
-    <div
-      className="Input-icon Input-icon--left"
-    >
-      <Icon
-        name="events"
-        size={16}
-      />
-    </div>
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-      value="value"
+    <Icon
+      name="events"
+      size={16}
     />
   </div>
-</div>
-`;
-
-exports[`Input component 
-  name: "name", value: "value", label: "value", required: true, caption: "value", error: true, onChangeHandler: "[Function]"
- 1`] = `
-<div
-  className="Input"
->
-  <div
-    className="Input-label"
-  >
-    <Label>
-      value
-    </Label>
-    <span />
-  </div>
-  <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled Input-wrapper--error"
-  >
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-      required={true}
-      value="value"
-    />
-  </div>
-  <div
-    className="Input-caption"
-  >
-    <div
-      className="Input-icon Input-icon--error"
-    >
-      <Icon
-        appearance="alert"
-        name="error"
-      />
-    </div>
-    <Text
-      appearance="destructive"
-      small={true}
-      weight="medium"
-    >
-      value
-    </Text>
-  </div>
-</div>
-`;
-
-exports[`Input component 
-  name: "name", value: "value", label: "value", required: true, onChangeHandler: "[Function]"
- 1`] = `
-<div
-  className="Input"
->
-  <div
-    className="Input-label"
-  >
-    <Label>
-      value
-    </Label>
-    <span />
-  </div>
-  <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
-  >
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-      required={true}
-      value="value"
-    />
-  </div>
-</div>
-`;
-
-exports[`Input component 
-  name: "name", value: "value", label: "value", required: true, onChangeHandler: "[Function]", caption: "Enter Full Name"
- 1`] = `
-<div
-  className="Input"
->
-  <div
-    className="Input-label"
-  >
-    <Label>
-      value
-    </Label>
-    <span />
-  </div>
-  <div
-    className="Input-wrapper Input-wrapper--regular Input-wrapper--disabled"
-  >
-    <input
-      autoFocus={false}
-      className="Input-input Input-input--regular"
-      disabled={true}
-      name="name"
-      required={true}
-      value="value"
-    />
-  </div>
-  <div
-    className="Input-caption"
-  >
-    <Text
-      appearance="subtle"
-      small={true}
-      weight="medium"
-    >
-      Enter Full Name
-    </Text>
-  </div>
+  <input
+    autoFocus={false}
+    className="Input-input Input-input--regular"
+    disabled={true}
+    name="name"
+    value="value"
+  />
 </div>
 `;

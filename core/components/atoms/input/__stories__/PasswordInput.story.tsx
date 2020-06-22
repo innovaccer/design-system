@@ -22,7 +22,7 @@ export const passwordInput = () => {
           value="Value"
           type="password"
           onChange={action('on-change')}
-          clearButton={true}
+          onClear={action('on-change')}
         />
       </div>
     </div>

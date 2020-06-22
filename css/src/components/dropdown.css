@@ -20,8 +20,8 @@
     min-width: unset;
 }
 
-.Dropdown-input .Input-wrapper,
-.Dropdown-input .Input-wrapper:focus-within {
+.Dropdown-input .Input,
+.Dropdown-input .Input:focus-within {
     border: unset;
 }
 

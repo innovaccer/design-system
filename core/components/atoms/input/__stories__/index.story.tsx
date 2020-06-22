@@ -42,11 +42,6 @@ export const all = () => {
     false
   );
 
-  const label = text(
-    'label',
-    ''
-  );
-
   const inlineLabel = text(
     'inlineLabel',
     ''
@@ -57,19 +52,9 @@ export const all = () => {
     false
   );
 
-  const caption = text(
-    'caption',
-    ''
-  );
-
   const info = text(
     'info',
     'sample info popover'
-  );
-
-  const clearButton = boolean(
-    'clearButton',
-    true
   );
 
   return (
@@ -83,15 +68,12 @@ export const all = () => {
         onClick={action('on-click')}
         onClear={action('on-clear')}
         placeholder={placeholder}
-        label={label}
         inlineLabel={inlineLabel}
         size={size}
         icon={icon}
         required={required}
         error={error}
-        caption={caption}
         info={info}
-        clearButton={clearButton}
       />
     </div>
   );

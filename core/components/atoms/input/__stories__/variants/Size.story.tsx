@@ -19,11 +19,6 @@ export const size = () => {
     'Placeholder'
   );
 
-  const label = text(
-    'label',
-    ''
-  );
-
   return (
     <div style={{ display: 'flex' }}>
       {
@@ -38,7 +33,6 @@ export const size = () => {
                   onClick={action('on-click')}
                   onClear={action('on-clear')}
                   placeholder={placeholder}
-                  label={label}
                   size={InputSize}
                 />
               </div>

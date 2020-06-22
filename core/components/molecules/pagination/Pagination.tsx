@@ -117,7 +117,6 @@ export const Pagination = (props: PaginationProps) => {
             name="page"
             type="number"
             size="large"
-            clearButton={false}
             onChange={inputChangeHandler}
             value={`${page}`}
           />

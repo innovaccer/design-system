@@ -43,10 +43,10 @@ export const all = () => {
     false
   );
 
-  const label = text(
-    'label',
-    ''
-  );
+  // const label = text(
+  //   'label',
+  //   ''
+  // );
 
   const inlineLabel = text(
     'inlineLabel',
@@ -68,11 +68,6 @@ export const all = () => {
     'sample info tooltip'
   );
 
-  const clearButton = boolean(
-    'clearButton',
-    true
-  );
-
   return (
     <div style={{ maxWidth: '300px' }}>
       <InputMask
@@ -85,7 +80,6 @@ export const all = () => {
         onBlur={action('on-blur')}
         onClear={action('on-clear')}
         placeholder={placeholder}
-        label={label}
         inlineLabel={inlineLabel}
         size={size}
         icon={icon}
@@ -93,7 +87,6 @@ export const all = () => {
         error={error}
         caption={caption}
         info={info}
-        clearButton={clearButton}
         mask={masks.date['mm/dd/yyyy']}
       />
     </div>

@@ -556,7 +556,6 @@ const DropdownList = (props: OptionsProps) => {
           value={searchTerm}
           placeholder={'Search..'}
           disabled={false}
-          clearButton={true}
           autoFocus={true}
           onChange={searchHandler}
           onClear={searchClearHandler}

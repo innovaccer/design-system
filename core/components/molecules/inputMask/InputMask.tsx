@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Input, { InputProps } from '@/components/atoms/input';
+import Caption from '@/components/atoms/caption';
 
 export type Mask = (string | RegExp)[];
 
@@ -16,6 +17,10 @@ export interface MaskProps {
    * @default "_"
    */
   placeholderChar?: string;
+  /**
+   * Adds caption to `input` on error
+   */
+  caption?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>, val?: string) => void;
   onBlur?: (e: React.ChangeEvent<HTMLInputElement>, val?: string) => void;
   onClear?: (e: React.MouseEvent<HTMLElement>) => void;
@@ -30,11 +35,11 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     placeholderChar = '_',
     mask,
     error,
+    caption,
     onChange,
     onBlur,
     onClick,
     onClear,
-    caption,
     ...rest
   } = props;
 
@@ -163,18 +168,24 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
   };
 
   return (
-    <Input
-      {...rest}
-      value={value}
-      error={error}
-      caption={error ? caption || 'Invalid Value' : caption}
-      onClick={onClickHandler}
-      onChange={onChangeHandler}
-      onClear={onClearHandler}
-      onBlur={onBlurHandler}
-      autocomplete={'off'}
-      ref={ref}
-    />
+    <div>
+      <Input
+        {...rest}
+        value={value}
+        error={error}
+        onClick={onClickHandler}
+        onChange={onChangeHandler}
+        onClear={onClearHandler}
+        onBlur={onBlurHandler}
+        autocomplete={'off'}
+        ref={ref}
+      />
+      {
+        error && (
+          <Caption className="mt-3" error={error}>{error ? caption || 'Invalid Value' : caption}</Caption>
+        )
+      }
+    </div>
   );
 });
 

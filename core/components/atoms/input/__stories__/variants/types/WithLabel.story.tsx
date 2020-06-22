@@ -2,6 +2,8 @@ import * as React from 'react';
 import Input from '../../../Input';
 import { action } from '@storybook/addon-actions';
 import Text from '@/components/atoms/text';
+import Label from '@/components/atoms/label';
+import Caption from '@/components/atoms/caption';
 
 // CSF format story
 export const withLabel = () => {
@@ -21,12 +23,12 @@ export const withLabel = () => {
     <div style={style}>
       <div style={innerStyle}>
         <div style={{ height: '72px' }}>
+          <Label className="mb-3" required={true}>Full Name</Label>
           <Input
             name="input"
             value="Value"
             onChange={action('on-change')}
-            clearButton={true}
-            label="Full Name"
+            onClear={action('on-clear')}
             required={true}
           />
         </div>
@@ -34,31 +36,31 @@ export const withLabel = () => {
         <Text weight="strong">No Caption</Text>
       </div>
       <div style={innerStyle}>
+      <Label className="mb-3" required={true}>Password</Label>
         <Input
           name="input"
           value="Value"
           type="password"
           onChange={action('on-change')}
-          clearButton={true}
-          label="Password"
+          onClear={action('on-clear')}
           required={true}
-          caption={'Pick a strong, unique password'}
         />
+        <Caption className="mt-3">Pick a strong, unique password</Caption>
         <br />
         <Text weight="strong">Caption Default</Text>
       </div>
       <div style={innerStyle}>
+      <Label className="mb-3" required={true}>Password</Label>
         <Input
           name="input"
           value="Value"
           type="password"
           onChange={action('on-change')}
-          clearButton={true}
-          label="Password"
+          onClear={action('on-clear')}
           required={true}
-          caption={'This is an error message'}
           error={true}
         />
+        <Caption className="mt-3" error={true}>Pick a strong, unique password</Caption>
         <br />
         <Text weight="strong">Caption Error</Text>
       </div>

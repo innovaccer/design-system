@@ -235,7 +235,6 @@ exports[`Pagination component
     className="Pagination-pageIndex"
   >
     <Input
-      clearButton={false}
       name="page"
       onChange={[Function]}
       size="large"
@@ -301,7 +300,6 @@ exports[`Pagination component
     className="Pagination-pageIndex"
   >
     <Input
-      clearButton={false}
       name="page"
       onChange={[Function]}
       size="large"
@@ -367,7 +365,6 @@ exports[`Pagination component
     className="Pagination-pageIndex"
   >
     <Input
-      clearButton={false}
       name="page"
       onChange={[Function]}
       size="large"
@@ -433,7 +430,6 @@ exports[`Pagination component
     className="Pagination-pageIndex"
   >
     <Input
-      clearButton={false}
       name="page"
       onChange={[Function]}
       size="large"

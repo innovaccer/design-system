@@ -6,12 +6,6 @@
 
 .Input {
     display: flex;
-    flex-direction: column;
-    min-width: var(--spacing-9);
-}
-
-.Input-wrapper {
-    display: flex;
     flex-direction: row;
     align-items: center;
     box-sizing: border-box;
@@ -20,56 +14,57 @@
     padding-right: var(--spacing-l);
     padding-left: var(--spacing-l);
     background: var(--white);
+    min-width: var(--spacing-9);
 }
 
-.Input-wrapper--tiny {
+.Input--tiny {
     height: var(--spacing-xl);
     padding-top: var(--spacing-m);
     padding-bottom: var(--spacing-m);
 }
 
-.Input-wrapper--regular {
+.Input--regular {
     height: var(--spacing-3);
     padding-top: var(--spacing);
     padding-bottom: var(--spacing);
 }
 
-.Input-wrapper--large {
+.Input--large {
     height: 40px;
 }
 
-.Input-wrapper--large .Input-input {
+.Input--large .Input-input {
     line-height: var(--font-height-m);
     font-size: var(--font-size-m);
 }
 
-.Input-wrapper:focus-within {
+.Input:focus-within {
     border: var(--spacing-xs) solid var(--primary);
 }
 
-.Input-wrapper:focus-within .Input-icon--left .Icon {
+.Input:focus-within .Input-icon--left .Icon {
     color: var(--primary);
 }
 
-.Input-wrapper--error:focus-within {
+.Input--error:focus-within {
     border: var(--spacing-xs) solid var(--alert);
     box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
-.Input-wrapper--error:focus-within .Input-icon--left .Icon {
+.Input--error:focus-within .Input-icon--left .Icon {
     color: var(--alert);
 }
 
-.Input-wrapper--disabled {
+.Input--disabled {
     background: var(--secondary-lightest);
     border-color: var(--secondary-light);
 }
 
-.Input-wrapper--disabled .Input-icon--left .Icon{
+.Input--disabled .Input-icon--left .Icon{
     color: var(--inverse-lightest);
 }
 
-.Input-wrapper--error {
+.Input--error {
     border: var(--spacing-xs) solid var(--alert);
 }
 
@@ -117,30 +112,6 @@
     cursor: pointer;
     margin-left: var(--spacing);
     color: var(--inverse-lightest);
-}
-
-.Input-icon--error {
-    margin-right: var(--spacing-m);
-    font-size: var(--font-size);
-}
-
-.Input-caption {
-    display: flex;
-    align-items: center;
-    margin-top: var(--spacing-m);
-}
-
-.Input-label {
-    display: flex;
-    margin-bottom: var(--spacing-m);
-}
-
-.Input-label span {
-    height: var(--spacing-m);
-    width: var(--spacing-m);
-    border-radius: 50%;
-    background: var(--alert);
-    margin-left: var(--spacing-m);
 }
 
 .Input-inlineLabel {
