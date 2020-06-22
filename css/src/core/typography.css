@@ -113,12 +113,24 @@ body {
 
 /* Label */
 .Label {
+  display: flex;
+}
+
+.Label-text {
   line-height: var(--font-height-s);
   font-weight: var(--font-weight-medium);
 }
 
 .Label--disabled {
   color: var(--text-disabled);
+}
+
+.Label span {
+  height: var(--spacing-m);
+  width: var(--spacing-m);
+  border-radius: 50%;
+  background: var(--alert);
+  margin-left: var(--spacing-m);
 }
 
 /* Subheading */

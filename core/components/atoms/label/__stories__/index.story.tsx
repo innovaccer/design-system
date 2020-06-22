@@ -5,8 +5,11 @@ import Label from '../index';
 // CSF format story
 export const all = () => {
   const disabled = boolean('disabled', false);
+  const required = boolean('required', false);
+
   const options = {
     disabled,
+    required,
   };
 
   return (

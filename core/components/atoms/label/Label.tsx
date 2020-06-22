@@ -14,25 +14,26 @@ export interface LabelProps {
   disabled?: boolean;
   /**
    * Shows the user that this field id required
+   * @default false
    */
   required?: boolean;
 }
 
 export const Label = (props: LabelProps) => {
   const {
+    required = false,
     disabled,
     children,
-    required,
     ...rest
   } = props;
 
   const classes = classNames({
-    Label: true,
+    'Label-text': true,
     'Label--disabled': disabled
   });
 
   return (
-    <div>
+    <div className="Label">
       <GenericText className={classes} componentType="label" {...rest}>
         {children}
       </GenericText>
