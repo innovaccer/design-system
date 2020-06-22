@@ -13,6 +13,7 @@ export { DropdownProps } from './components/atoms/dropdown';
 export { HeadingProps } from './components/atoms/heading';
 export { IconProps } from './components/atoms/icon';
 export { InputProps } from './components/atoms/input';
+export { InputMaskProps } from './components/molecules/inputMask';
 export { LabelProps } from './components/atoms/label';
 export { LegendProps } from './components/atoms/legend';
 export { LinkProps } from './components/atoms/link';

@@ -210,3 +210,12 @@
 
 * 0d697e5 v1.0.0-16
 * 409f68f fix: replaces material icons from node_modules with loacl icons
+
+-------------------
+ **v1.0.0-17**  (2020-06-22) 
+
+* 65a829e v1.0.0-17
+* 52a2e9d feat: adds controlled and uncontrolled checkbox support
+* f095a29 feat: adds textarea
+* 6505146 fix: adds InputMask in build
+* df5579d fix: fixes InputMask for unwanted values

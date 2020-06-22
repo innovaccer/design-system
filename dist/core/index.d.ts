@@ -12,6 +12,7 @@ export { Dropdown } from './components/atoms/dropdown';
 export { Heading } from './components/atoms/heading';
 export { Icon } from './components/atoms/icon';
 export { Input } from './components/atoms/input';
+export { InputMask } from './components/molecules/inputMask';
 export { Label } from './components/atoms/label';
 export { Legend } from './components/atoms/legend';
 export { Link } from './components/atoms/link';

@@ -656,6 +656,7 @@ var Checkbox = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
       size = _props$size === void 0 ? 'regular' : _props$size,
       _props$tabIndex = props.tabIndex,
       tabIndex = _props$tabIndex === void 0 ? 0 : _props$tabIndex,
+      defaultChecked = props.defaultChecked,
       label = props.label,
       disabled = props.disabled,
       onChange = props.onChange,
@@ -666,7 +667,7 @@ var Checkbox = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
     return ref.current;
   });
 
-  var _React$useState = useState$4(props.checked),
+  var _React$useState = useState$4(props.checked === undefined ? defaultChecked : props.checked),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       checked = _React$useState2[0],
       setChecked = _React$useState2[1];
@@ -675,7 +676,9 @@ var Checkbox = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
     setIndeterminate(props.indeterminate);
   }, [props.indeterminate]);
   useEffect$4(function () {
-    setChecked(props.checked);
+    if (props.checked !== undefined) {
+      setChecked(props.checked);
+    }
   }, [props.checked]);
   var CheckboxClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Checkbox', true), _defineProperty(_classNames, 'Checkbox--disabled', disabled), _defineProperty(_classNames, "Checkbox--".concat(size), size), _classNames));
   var CheckboxWrapper = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Checkbox-wrapper', true), _defineProperty(_classNames2, "Checkbox-wrapper--".concat(size), size), _defineProperty(_classNames2, 'Checkbox-wrapper--checked', checked), _defineProperty(_classNames2, 'Checkbox-wrapper--indeterminate', props.indeterminate), _classNames2));
@@ -687,9 +690,13 @@ var Checkbox = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
   var onChangeHandler = function onChangeHandler(e) {
     e.stopPropagation();
     var checkedValue = props.indeterminate ? false : !checked;
-    setChecked(checkedValue);
-    setIndeterminate(false);
-    if (onChange) onChange(checkedValue, false);
+
+    if (props.checked === undefined) {
+      setChecked(checkedValue);
+      setIndeterminate(false);
+    }
+
+    if (onChange) onChange(checkedValue, name, value, false);
   };
 
   var IconName = props.indeterminate ? 'remove' : checked ? 'check' : '';
@@ -699,6 +706,7 @@ var Checkbox = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
     onClick: onChangeHandler
   }, /*#__PURE__*/createElement("input", {
     type: "checkbox",
+    defaultChecked: defaultChecked,
     checked: checked,
     disabled: disabled,
     ref: ref,
@@ -2028,9 +2036,7 @@ var InputMask = /*#__PURE__*/forwardRef(function (props, forwardRef) {
         // el.focus();
         var p = Math.ceil(pos);
         el.setSelectionRange(p, p);
-      } // fail city, fortunately this never happens (as far as I've tested) :)
-      // el.focus();
-      // }
+      } // }
 
     }
   };
@@ -2061,10 +2067,12 @@ var InputMask = /*#__PURE__*/forwardRef(function (props, forwardRef) {
 
       if (_typeof(m) === 'object') {
         if (it < rawValue.length && rawValue[it].match(m)) {
-          newVal += rawValue[it++];
+          newVal += rawValue[it];
         } else {
           newVal += placeholderChar;
         }
+
+        it++;
       } else {
         newVal += m;
 
@@ -2108,7 +2116,7 @@ var InputMask = /*#__PURE__*/forwardRef(function (props, forwardRef) {
   return /*#__PURE__*/createElement(Input, _extends({}, rest, {
     value: value,
     error: error,
-    caption: error ? 'Invalid Value' : caption,
+    caption: error ? caption || 'Invalid Value' : caption,
     onClick: onClickHandler,
     onChange: onChangeHandler,
     onClear: onClearHandler,
@@ -3091,8 +3099,8 @@ var ListCheckbox = /*#__PURE__*/forwardRef(function (props, ref) {
     }
   };
 
-  var handleParentChange = function handleParentChange(checkedValue) {
-    var indeterminate = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+  var handleParentChange = function handleParentChange(checkedValue, _name, _value) {
+    var indeterminate = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
 
     var updatedArray = _toConsumableArray(childArray).fill(checkedValue);
 
@@ -7359,4 +7367,4 @@ Navigation.defaultProps = {
   collapsed: false
 };
 
-export { Avatar, Backdrop, Badge, Breadcrumb, BreadcrumbsWrapper, Button, Card, Checkbox, Column, DatePicker, Dialog, DonutChart, Dropdown, Grid, Heading, Icon, Input, Label, Legend, Link, List, Message, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, Pagination, Paragraph, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangePicker, Row, Spinner, StatusHints, Subheading, Switch, Tab, Table, TabsWrapper, Text, Toast, Tooltip };
+export { Avatar, Backdrop, Badge, Breadcrumb, BreadcrumbsWrapper, Button, Card, Checkbox, Column, DatePicker, Dialog, DonutChart, Dropdown, Grid, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, Pagination, Paragraph, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangePicker, Row, Spinner, StatusHints, Subheading, Switch, Tab, Table, TabsWrapper, Text, Toast, Tooltip };
