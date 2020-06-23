@@ -245,19 +245,7 @@ export interface GridProps {
 
 export interface GridState {
   init: boolean;
-  // prevSchema: Schema;
-  // schema: Schema;
   reorderHighlighter?: number;
-  // page: number;
-  // selectAll?: {
-  //   checked: boolean,
-  //   indeterminate: boolean
-  // };
-  // sortingList: {
-  //   name: ColumnSchema['name'],
-  //   type: SortType
-  // }[];
-  // filterList: Record<ColumnSchema['name'], Filter>;
 }
 
 export class Grid extends React.Component<GridProps, GridState> {
