@@ -28,6 +28,7 @@ export const fetchData: fetchDataFn = (options) => {
       }, 2000);
     });
   }
+
   return new Promise(resolve => {
     setTimeout(() => {
       resolve({

@@ -36,7 +36,7 @@ export type updateReorderHighlighterFn = (dim: GridState['reorderHighlighter']) 
 export type sortDataFn = (sortFn: SortFn, type: SortType) => void;
 export type reorderColFn = (from: string, to: string) => void;
 export type onSelectFn = (rowIndex: number, selected: boolean) => void;
-export type onSelectAllFn = (selected: boolean) => void;
+export type onSelectAllFn = (selected: boolean, selectAll?: boolean) => void;
 export type onFilterChangeFn = (data: RowData, filters: Filter) => boolean;
 export type onRowClickFn = (data: RowData, rowIndex?: number) => void;
 export type CellType =

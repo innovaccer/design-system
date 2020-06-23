@@ -41,7 +41,7 @@ interface SharedTableProps {
   pageSize?: GridProps['pageSize'];
   loaderSchema?: GridProps['loaderSchema'];
   onRowClick?: GridProps['onRowClick'];
-  onSelect?: (rowIndex: number[], selected: boolean, allSelected: RowData[]) => void;
+  onSelect?: (rowIndex: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean) => void;
   onPageChange?: GridProps['onPageChange'];
 }
 
@@ -122,7 +122,7 @@ export class Table extends React.Component<TableProps, TableState> {
     }
 
     if (prevState.page !== this.state.page) {
-      this.onSelect(-1, false);
+      // this.onSelect(-1, false);
 
       const { onPageChange } = this.props;
       if (onPageChange) onPageChange(this.state.page);
@@ -132,6 +132,7 @@ export class Table extends React.Component<TableProps, TableState> {
       || prevState.filterList !== this.state.filterList
       || prevState.sortingList !== this.state.sortingList
       || prevState.searchTerm !== this.state.searchTerm) {
+      this.onSelect(-1, false);
       this.updateData({});
     }
   }
@@ -166,6 +167,11 @@ export class Table extends React.Component<TableProps, TableState> {
       searchTerm,
       ...options,
     };
+
+    if (!this.props.withPagination) {
+      delete opts.page;
+      delete opts.pageSize;
+    }
 
     if (async) {
       fetchData(opts)
@@ -230,7 +236,7 @@ export class Table extends React.Component<TableProps, TableState> {
     }
   }
 
-  onSelectAll: onSelectAllFn = selected => {
+  onSelectAll: onSelectAllFn = (selected, selectAll) => {
     const {
       onSelect
     } = this.props;
@@ -246,7 +252,7 @@ export class Table extends React.Component<TableProps, TableState> {
     });
 
     if (onSelect) {
-      onSelect(indexes, selected, newData.filter(d => d._selected));
+      onSelect(indexes, selected, newData.filter(d => d._selected), selectAll);
     }
 
     this.setState({
@@ -329,6 +335,7 @@ export class Table extends React.Component<TableProps, TableState> {
               showHead={showHead}
               onSelectAll={this.onSelectAll}
               withCheckbox={withCheckbox}
+              withPagination={withPagination}
               {...headerAttr}
             >
               {headerChildren}

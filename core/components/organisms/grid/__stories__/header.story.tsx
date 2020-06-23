@@ -4,10 +4,18 @@ import { Button } from '@/index';
 import { boolean, text } from '@storybook/addon-knobs';
 import schema from './_common_/schema';
 import data from './_common_/data';
+import { getSelectAll, updateBatchData } from '../utility';
+import { onSelectAllFn } from '..';
+import { action } from '@storybook/addon-actions';
 
 export const header = () => {
   const withSearch = boolean(
     'withSearch',
+    true
+  );
+
+  const dynamicColumn = boolean(
+    'dynamicColumn',
     true
   );
 
@@ -21,6 +29,11 @@ export const header = () => {
     false
   );
 
+  const withPagination = boolean(
+    'withPagination',
+    true
+  );
+
   const withCheckbox = boolean(
     'withCheckbox',
     true
@@ -31,15 +44,40 @@ export const header = () => {
     'Search'
   );
 
+  const [state, setState] = React.useState({
+    data,
+    selectAll: getSelectAll(data)
+  });
+
+  const onSelectAll: onSelectAllFn = (selected, selectAll) => {
+    action(`on select all:- selected: ${selected}, selectAll: ${selectAll}`)();
+
+    const indexes = Array.from({ length: state.data.length }, (_, i) => i);
+
+    const newData = updateBatchData(state.data, indexes, {
+      _selected: selected
+    });
+
+    setState({
+      ...state,
+      data: newData,
+      selectAll: getSelectAll(newData)
+    });
+  };
+
   return (
     <Header
-      data={data}
+      {...state}
+      data={state.data.slice(0, 10)}
       schema={schema}
       withSearch={withSearch}
+      dynamicColumn={dynamicColumn}
       showHead={showHead}
+      withPagination={withPagination}
       withCheckbox={withCheckbox}
       totalRecords={50}
       searchPlaceholder={searchPlaceholder}
+      onSelectAll={onSelectAll}
     >
       {children && <Button icon="events" />}
     </Header>
