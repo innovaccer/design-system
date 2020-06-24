@@ -1,7 +1,7 @@
 export { Avatar } from './components/atoms/avatar';
 export { Backdrop } from './components/atoms/backdrop';
 export { Badge } from './components/atoms/badge';
-export { BreadcrumbsWrapper, Breadcrumb } from './components/atoms/breadcrumbs';
+export { Breadcrumbs } from './components/atoms/breadcrumbs';
 export { Button } from './components/atoms/button';
 export { Card } from './components/atoms/card';
 export { Checkbox } from './components/atoms/checkbox';

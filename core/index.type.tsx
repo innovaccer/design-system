@@ -2,7 +2,7 @@ export * from './index';
 export { AvatarProps } from './components/atoms/avatar';
 export { BackdropProps } from './components/atoms/backdrop';
 export { BadgeProps } from './components/atoms/badge';
-export { BreadcrumbsWrapperProps, BreadcrumbProps } from './components/atoms/breadcrumbs';
+export { BreadcrumbsProps } from './components/atoms/breadcrumbs';
 export { ButtonProps } from './components/atoms/button';
 export { CardProps } from './components/atoms/card';
 export { CheckboxProps } from './components/atoms/checkbox';
