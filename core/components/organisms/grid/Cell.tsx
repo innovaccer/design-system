@@ -217,8 +217,9 @@ export const Cell = (props: CellProps) => {
     'Grid-cell': true,
     'Grid-cell--head': head,
     'Grid-cell--body': !head,
-    'Grid-cell--withSeparator': head ? !(withCheckbox && colIndex === 0) : schema.separator,
-    // 'Grid-cell--selected': schema._selected,
+    'Grid-cell--separator': head ?
+      !(withCheckbox && colIndex === 0) && schema.separator?.head
+      : schema.separator?.body,
   });
 
   if (schema.hidden) return null;
