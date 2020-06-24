@@ -20,7 +20,8 @@ import { debounce } from 'throttle-debounce';
 interface SyncProps {
   data: Data;
   schema: Schema;
-  // loading: boolean;
+  loading?: boolean;
+  error?: boolean;
 }
 
 interface AsyncProps {
@@ -62,9 +63,10 @@ interface TableState {
   filterList: GridProps['filterList'];
   page: GridProps['page'];
   totalRecords: GridProps['totalRecords'];
-  loading: GridProps['loading'];
   selectAll: GridProps['selectAll'];
   searchTerm: HeaderProps['searchTerm'];
+  loading: GridProps['loading'];
+  error: GridProps['error'];
 }
 
 // export type ExtractType<T> = T extends SyncTableProps ? SyncTableProps : AsyncTableProps;
@@ -88,29 +90,33 @@ export class Table extends React.Component<TableProps, TableState> {
       sortingList: [],
       filterList: {},
       page: 1,
-      totalRecords: 0,
-      loading: true,
+      totalRecords: !async ? props.data.length : 0,
+      loading: !async ? props.loading || false : true,
+      error: !async ? props.error || false : false,
       selectAll: getSelectAll([]),
       searchTerm: '',
     };
 
-    this.updateData({});
+    if (async) this.updateData({});
   }
 
   static defaultProps = {
     showHead: true,
     saveSortHistory: true,
     headerProps: {},
-    pageSize: 15
+    pageSize: 15,
+    loading: false
   };
-
-  // static getDerivedStateFromProps()
 
   componentDidUpdate(prevProps: TableProps, prevState: TableState) {
     if (!this.state.async) {
-      if (prevProps.data !== this.props.data || prevProps.schema !== this.props.schema) {
+      if (prevProps.data !== this.props.data
+        || prevProps.schema !== this.props.schema
+        || prevProps.loading !== this.props.loading
+        || prevProps.error !== this.props.error) {
         this.setState({
-          loading: this.props.schema.length === 0,
+          loading: this.props.loading || false,
+          error: this.props.error || false,
           page: 1,
           schema: this.props.schema,
           data: this.props.data,
@@ -124,8 +130,6 @@ export class Table extends React.Component<TableProps, TableState> {
     }
 
     if (prevState.page !== this.state.page) {
-      // this.onSelect(-1, false);
-
       const { onPageChange } = this.props;
       if (onPageChange) onPageChange(this.state.page);
     }
@@ -135,7 +139,7 @@ export class Table extends React.Component<TableProps, TableState> {
       || prevState.sortingList !== this.state.sortingList
       || prevState.searchTerm !== this.state.searchTerm) {
       this.onSelect(-1, false);
-      this.updateData({});
+      if (!this.props.loading) this.updateData({});
     }
   }
 
@@ -156,11 +160,6 @@ export class Table extends React.Component<TableProps, TableState> {
       searchTerm
     } = this.state;
 
-    this.setState({
-      loading: true,
-      selectAll: getSelectAll([])
-    });
-
     const opts = {
       // ...options,
       page,
@@ -174,6 +173,10 @@ export class Table extends React.Component<TableProps, TableState> {
       delete opts.page;
       delete opts.pageSize;
     }
+
+    this.setState({
+      loading: true
+    });
 
     if (async) {
       fetchData(opts)
@@ -205,7 +208,7 @@ export class Table extends React.Component<TableProps, TableState> {
         totalRecords,
         selectAll: getSelectAll(renderedData),
         schema: this.state.schema.length ? this.state.schema : schema,
-        loading: schema.length === 0,
+        loading: false,
         data: renderedData,
       });
     }

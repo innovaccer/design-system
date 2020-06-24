@@ -1,4 +1,4 @@
-import { Data } from './Grid';
+import Grid, { Data, Schema } from './Grid';
 export * from './columnUtility';
 export * from './rowUtility';
 
@@ -38,4 +38,30 @@ export const getSelectAll = (data: Data) => {
     return { indeterminate, checked };
   }
   return { indeterminate: false, checked: false };
+};
+
+export const getInit = (_this: Grid): boolean => {
+  const {
+    schema
+  } = _this.props;
+
+  return (schema && !!schema.length);
+};
+
+export const getSchema = (_this: Grid): Schema => {
+  const {
+    loading,
+    loaderSchema
+  } = _this.props;
+
+  let {
+    schema,
+  } = _this.props;
+
+  const init = getInit(_this);
+  if (!init && loading) {
+    schema = loaderSchema;
+  }
+
+  return schema;
 };

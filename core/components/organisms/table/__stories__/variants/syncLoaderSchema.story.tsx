@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { Card, Grid } from '@/index';
-import loaderSchema from '../_common_/simpleLoaderSchema';
-import data from '../_common_/data';
-import schema from '../_common_/simpleSchema';
+import { Card } from '@/index';
+import Table from '../../Table';
+import loaderSchema from '../../../grid/__stories__/_common_/loaderSchema';
+import schema from '@/components/organisms/grid/__stories__/_common_/schema';
+import data from '@/components/organisms/grid/__stories__/_common_/data';
 import { boolean, number } from '@storybook/addon-knobs';
 
-// CSF format story
-export const withLoaderSchema = () => {
+export const syncLoaderSchema = () => {
   const loading = boolean(
     'loading',
     true
@@ -39,7 +39,7 @@ export const withLoaderSchema = () => {
 
   const applyData = boolean(
     'applyData',
-    true
+    false
   );
 
   return (
@@ -49,7 +49,7 @@ export const withLoaderSchema = () => {
         // overflow: 'hidden'
       }}
     >
-      <Grid
+      <Table
         loading={loading}
         error={error}
         pageSize={pageSize}
@@ -63,6 +63,6 @@ export const withLoaderSchema = () => {
 };
 
 export default {
-  title: 'Organisms|Grid/Variants',
-  component: Grid
+  title: 'Organisms|Table/Variants',
+  component: Table
 };

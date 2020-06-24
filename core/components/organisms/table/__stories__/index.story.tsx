@@ -14,6 +14,37 @@ export const all = () => {
     false
   );
 
+  let loading;
+  let error;
+  let applyData;
+  let applySchema;
+  const applyLoaderSchema = boolean(
+    'applyLoaderSchema',
+    true
+  );
+
+  if (!async) {
+    loading = boolean(
+      'loading',
+      false
+    );
+
+    error = boolean(
+      'error',
+      false
+    );
+
+    applySchema = boolean(
+      'applySchema',
+      true
+    );
+
+    applyData = boolean(
+      'applyData',
+      true
+    );
+  }
+
   const type = select(
     'type',
     ['resource', 'data'],
@@ -74,8 +105,10 @@ export const all = () => {
     };
   } else {
     dataAttr = {
-      schema,
-      data,
+      loading,
+      error,
+      schema: applySchema ? schema : [],
+      data: applyData ? data : [],
     };
   }
 
@@ -88,6 +121,8 @@ export const all = () => {
     >
       <Table
         {...dataAttr}
+        loading={loading}
+        error={error}
         withHeader={withHeader}
         headerProps={{
           withSearch: true,
@@ -100,7 +135,7 @@ export const all = () => {
         withPagination={withPagination}
         paginationType={paginationType}
         pageSize={pageSize}
-        loaderSchema={loaderSchema}
+        loaderSchema={applyLoaderSchema ? loaderSchema : undefined}
         onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
         onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
         onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}

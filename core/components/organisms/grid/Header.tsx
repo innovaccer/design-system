@@ -13,6 +13,7 @@ export type updateSearchTermFn = (newSearchTerm: string) => void;
 
 export interface HeaderProps extends ExternalHeaderProps {
   loading: boolean;
+  error: boolean;
   data: Data;
   schema: Schema;
   selectAll?: GridProps['selectAll'];
@@ -32,6 +33,7 @@ export interface HeaderProps extends ExternalHeaderProps {
 export const Header = (props: HeaderProps) => {
   const {
     loading,
+    error,
     data,
     schema,
     withSearch,
@@ -102,7 +104,7 @@ export const Header = (props: HeaderProps) => {
   const selectedCount = data.filter(d => d._selected).length;
   const label = withCheckbox && selectedCount ?
     selectAllRecords ? `Selected all ${totalRecords} items` : `Selected ${selectedCount} items on this page`
-    : `Showing ${totalRecords} items`;
+    : `Showing ${!error ? totalRecords : 0} items`;
 
   return (
     <div className="Header">
@@ -252,6 +254,11 @@ export const Header = (props: HeaderProps) => {
       </div>
     </div>
   );
+};
+
+Header.defaultProps = {
+  schema: [],
+  data: []
 };
 
 export default Header;

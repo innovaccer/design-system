@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Schema } from './Grid';
 import { Checkbox, Grid, Placeholder } from '@/index';
 import { Cell } from './Cell';
+import { getSchema } from './utility';
 
 export interface GridHeadProps {
   /**
@@ -20,7 +21,6 @@ export const GridHead = (props: GridHeadProps) => {
   const {
     _this,
     draggable = false,
-    schema,
     withCheckbox
   } = props;
 
@@ -29,15 +29,13 @@ export const GridHead = (props: GridHeadProps) => {
     selectAll,
   } = _this.props;
 
-  const {
-    init,
-  } = _this.state;
+  const schema = getSchema(_this);
 
   const pinnedSchema = schema.filter(s => s.pinned);
   const unpinnedSchema = schema.filter(s => !s.pinned);
 
   const renderCheckbox = (show: boolean) => {
-    if (!show || !(withCheckbox && init)) return null;
+    if (!show || !(withCheckbox)) return null;
     return (
       <div className="Grid-cell Grid-cell--head Grid-checkboxCell">
         {loading ? (
@@ -72,7 +70,7 @@ export const GridHead = (props: GridHeadProps) => {
           </div>
         )}
         <div className="Grid-cellGroup Grid-cellGroup--main">
-          {renderCheckbox(!pinnedSchema.length)}
+          {renderCheckbox(!pinnedSchema.length && !!unpinnedSchema.length)}
           {unpinnedSchema.map((s, index) => (
             <Cell
               key={s.name}

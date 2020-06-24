@@ -11,16 +11,41 @@ import {
 } from '../Grid';
 import loaderSchema from './_common_/loaderSchema';
 import { number, boolean, select } from '@storybook/addon-knobs';
-import { Card, Button } from '@/index';
+import { Card } from '@/index';
 import { action } from '@storybook/addon-actions';
 import { errorTemplate } from './_common_/errorTemplate';
 import data from './_common_/data';
 import schema from './_common_/schema';
 import { updateBatchData, getSelectAll } from '../utility';
 import { filterData, sortData, paginateData } from '../rowUtility';
-import Header from '../Header';
+// import Header from '../Header';
 
 export const all = () => {
+  const loading = boolean(
+    'loading',
+    false
+  );
+
+  const error = boolean(
+    'error',
+    false
+  );
+
+  // const loaderSchema = boolean(
+  //   'loaderSchema',
+  //   true
+  // );
+
+  // const schema = boolean(
+  //   'schema',
+  //   false
+  // );
+
+  // const data = boolean(
+  //   'data',
+  //   false
+  // );
+
   const type = select(
     'type',
     ['resource', 'data'],
@@ -194,7 +219,7 @@ export const all = () => {
         overflow: 'hidden'
       }}
     >
-      <Header
+      {/* <Header
         {...state}
         // updateData={updateData}
         updateSchema={updateSchema}
@@ -206,9 +231,11 @@ export const all = () => {
         withCheckbox={true}
       >
         <Button icon="events" />
-      </Header>
+      </Header> */}
       <Grid
         {...state}
+        loading={loading}
+        error={error}
         type={type}
         size={size}
         totalRecords={state.totalRecords}

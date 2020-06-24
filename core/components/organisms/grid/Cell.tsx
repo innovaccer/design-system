@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { RowData, ColumnSchema } from './Grid';
 import { Dropdown, Grid, Placeholder, PlaceholderParagraph, Heading, Icon, Button } from '@/index';
-import { reorderCol, resizeCol } from './utility';
+import { reorderCol, resizeCol, getInit } from './utility';
 import { GridCell } from './GridCell';
 import { DropdownProps } from '@/components/atoms/dropdown';
 
@@ -41,9 +41,7 @@ const HeaderCell = (props: HeaderCellProps) => {
     filterList
   } = _this.props;
 
-  const {
-    init,
-  } = _this.state;
+  const init = getInit(_this);
 
   const listIndex = sortingList.findIndex(l => l.name === schema.name);
   const sorted = listIndex !== -1 ? sortingList[listIndex].type : null;

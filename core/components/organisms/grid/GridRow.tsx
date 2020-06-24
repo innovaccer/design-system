@@ -52,19 +52,11 @@ export const GridRow = (props: GridRowProps) => {
     loading
   } = _this.props;
 
-  const {
-    init
-  } = _this.state;
-
   const pinnedSchema = schema.filter(s => s.pinned);
   const unpinnedSchema = schema.filter(s => !s.pinned);
-  // const mainSchema = [
-  //   ...pinnedSchema,
-  //   ...unpinnedSchema
-  // ];
 
   const renderCheckbox = (show: boolean) => {
-    if (!show || !(withCheckbox && init)) return null;
+    if (!show || !(withCheckbox)) return null;
 
     return (
       <div className="Grid-cell Grid-cell--body Grid-checkboxCell">
@@ -103,7 +95,7 @@ export const GridRow = (props: GridRowProps) => {
           </div>
         )}
         <div className="Grid-cellGroup Grid-cellGroup--main">
-          {renderCheckbox(!pinnedSchema.length)}
+          {renderCheckbox(!pinnedSchema.length && !!unpinnedSchema.length)}
           {unpinnedSchema.map((s, cI) => (
             <Cell
               key={rI * schema.length + (pinnedSchema.length + cI)}
