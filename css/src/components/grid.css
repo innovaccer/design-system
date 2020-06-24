@@ -23,7 +23,8 @@
     overflow-y: scroll;
 }
 
-.Grid--resource .Grid-body .Grid-row:hover .Grid-cell {
+.Grid--resource .Grid-body .Grid-row:hover,
+.Grid--resource .Grid-body .Grid-row:hover .Grid-cellGroup {
     cursor: pointer;
     background: var(--secondary-lightest);
 }
@@ -137,7 +138,8 @@
     padding-right: 0 !important;
 }
 
-.Grid-row--selected .Grid-cell {
+.Grid-row--selected,
+.Grid-row--selected .Grid-cellGroup {
     background: var(--warning-lightest) !important;
 }
 
@@ -146,18 +148,12 @@
     flex-shrink: 0;
     overflow: hidden;
     box-sizing: border-box;
-    background: var(--white);
     padding-left: var(--spacing-l);
 }
 
 .Grid-cell--body {
     padding-right: var(--spacing-l);
 }
-
-/* .Grid-cell--head:nth-child(2) {
-    position: sticky;
-    left: 0;
-} */
 
 .Grid-cell--head {
     padding-right: var(--spacing-m);
@@ -248,6 +244,7 @@
     box-sizing: border-box;
     position: sticky;
     left: 0;
+    background: var(--white);
 }
 
 .Grid-cellGroup--pinned {
