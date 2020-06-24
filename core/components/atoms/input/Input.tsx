@@ -1,7 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
 // import { Size } from '@/components/atoms/button';
-import Label from '@/components/atoms/label';
 import Text from '@/components/atoms/text';
 import Popover from '@/components/molecules/popover';
 import Icon from '@/components/atoms/icon';
@@ -24,6 +23,10 @@ export interface InputProps {
    */
   value?: string;
   /**
+   * Adds default value to `Input`
+   */
+  defaultValue?: string;
+  /**
    * Text to display when input is empty
    */
   placeholder?: string;
@@ -41,21 +44,9 @@ export interface InputProps {
    */
   icon?: string;
   /**
-   * Text to be displayed above `Input`
-   */
-  label?: string;
-  /**
    * Label to be displayed inside `Input`
    */
   inlineLabel?: string;
-  /**
-   * Text to be displayed below `Input`
-   */
-  caption?: string;
-  /**
-   * Shows the 'clear' icon if value is not empty
-   */
-  clearButton?: boolean;
   /**
    * Adds loader inside input when waiting for an action to complete
    */
@@ -114,16 +105,14 @@ const sizeMapping = {
 export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
     size = 'regular',
-    clearButton = true,
     autoFocus = false,
     disabled: propDisabled,
+    defaultValue,
     name,
     type,
     placeholder,
     value,
-    caption,
     icon,
-    label,
     inlineLabel,
     required,
     error,
@@ -140,13 +129,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
 
   const classes = classNames({
     ['Input']: true,
-  });
-
-  const inputWrapperClass = classNames({
-    ['Input-wrapper']: true,
-    [`Input-wrapper--${size}`]: size,
-    ['Input-wrapper--disabled']: disabled,
-    ['Input-wrapper--error']: error
+    [`Input--${size}`]: size,
+    ['Input--disabled']: disabled,
+    ['Input--error']: error
   });
 
   const inputClass = classNames({
@@ -165,11 +150,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
     ['Input-icon--right']: true
   });
 
-  const errorIconClass = classNames({
-    ['Input-icon']: true,
-    ['Input-icon--error']: true
-  });
-
   const trigger = <div className={rightIconClass}><Icon name={'info'} size={sizeMapping[size]} /></div>;
 
   const popoverStyle = {
@@ -180,72 +160,53 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
 
   return (
     <div className={classes}>
-      {size !== 'tiny' && label && (
-        <div className="Input-label">
-          <Label>{label}</Label>
-          {required && <span />}
+      {inlineLabel && (
+        <div className="Input-inlineLabel">
+          <Text appearance="subtle">{inlineLabel}</Text>
         </div>
       )}
-      <div className={inputWrapperClass}>
-        {inlineLabel && (
-          <div className="Input-inlineLabel">
-            <Text appearance="subtle">{inlineLabel}</Text>
-          </div>
-        )}
-        {size !== 'tiny' && icon && (
-          <div className={leftIconClass}>
-            <Icon
-              name={icon}
-              size={sizeMapping[size]}
-            />
-          </div>
-        )}
-        <input
-          ref={ref}
-          name={name}
-          type={type}
-          placeholder={placeholder}
-          className={inputClass}
-          value={value}
-          autoComplete={autocomplete}
-          required={required}
-          disabled={disabled}
-          onChange={onChange}
-          onBlur={onBlur}
-          onClick={onClick}
-          onFocus={onFocus}
-          autoFocus={autoFocus}
-        />
-        {((!value && !disabled) || (value && disabled)) && info && (
-          <Popover
-            style={popoverStyle}
-            position="top"
-            on={'hover'}
-            trigger={trigger}
-            dark={true}
-          >
-            {info}
-          </Popover>
-        )}
-        {(clearButton && value && !disabled) && (
-          <div className={rightIconClass} onClick={e => onClear && onClear(e)}>
-            <Icon name={'close'} size={sizeMapping[size]} />
-          </div>
-        )}
-      </div>
-      {
-        size !== 'tiny' && caption && (
-          <div className="Input-caption">
-            {error && (
-              <div className={errorIconClass}>
-                <Icon name={'error'} appearance={'alert'} />
-              </div>
-            )}
-            <Text appearance={error ? 'destructive' : 'subtle'} small={true} weight="medium">{`${caption}`}</Text>
-          </div>
-        )
-      }
-    </div >
+      {size !== 'tiny' && icon && (
+        <div className={leftIconClass}>
+          <Icon
+            name={icon}
+            size={sizeMapping[size]}
+          />
+        </div>
+      )}
+      <input
+        ref={ref}
+        name={name}
+        type={type}
+        defaultValue={defaultValue}
+        placeholder={placeholder}
+        className={inputClass}
+        value={value}
+        autoComplete={autocomplete}
+        required={required}
+        disabled={disabled}
+        onChange={onChange}
+        onBlur={onBlur}
+        onClick={onClick}
+        onFocus={onFocus}
+        autoFocus={autoFocus}
+      />
+      {((!value && !disabled) || (value && disabled)) && info && (
+        <Popover
+          style={popoverStyle}
+          position="top"
+          on={'hover'}
+          trigger={trigger}
+          dark={true}
+        >
+          {info}
+        </Popover>
+      )}
+      {(onClear && value && !disabled) && (
+        <div className={rightIconClass} onClick={e => onClear(e)}>
+          <Icon name={'close'} size={sizeMapping[size]} />
+        </div>
+      )}
+    </div>
   );
 });
 

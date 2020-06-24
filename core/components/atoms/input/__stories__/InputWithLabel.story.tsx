@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Input from '../Input';
+import Label from '@/components/atoms/label';
 import { action } from '@storybook/addon-actions';
 
 export const inputWithLabel = () => {
@@ -19,12 +20,11 @@ export const inputWithLabel = () => {
     <div style={style}>
       <div style={innerStyle}>
         <div style={{ height: '72px' }}>
+          <Label className="mb-3">Full Name</Label>
           <Input
             name="input"
             value="Value"
             onChange={action('on-change')}
-            clearButton={true}
-            label="Full Name"
             required={false}
           />
         </div>

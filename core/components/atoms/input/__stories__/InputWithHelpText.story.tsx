@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Input from '../Input';
+import Caption from '@/components/atoms/caption';
 import { action } from '@storybook/addon-actions';
 
 export const inputWithHelpText = () => {
@@ -23,9 +24,8 @@ export const inputWithHelpText = () => {
           value="Value"
           type="password"
           onChange={action('on-change')}
-          clearButton={true}
-          caption={'Pick a strong, unique password'}
         />
+        <Caption className="mt-3">Pick a strong, unique password</Caption>
       </div>
     </div>
   );

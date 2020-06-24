@@ -24,7 +24,7 @@ export const basic = () => {
           name="input"
           value="Value"
           onChange={action('on-change')}
-          clearButton={true}
+          onClear={action('on-clear')}
         />
         <br />
         <Text weight="strong">Default</Text>
@@ -35,7 +35,7 @@ export const basic = () => {
           value=""
           placeholder="Placeholder"
           onChange={action('on-change')}
-          clearButton={true}
+          onClear={action('on-clear')}
           info="sample info popover"
         />
         <br />
@@ -46,7 +46,7 @@ export const basic = () => {
           name="input"
           value="Value"
           onChange={action('on-change')}
-          clearButton={true}
+          onClear={action('on-clear')}
           error={true}
         />
         <br />

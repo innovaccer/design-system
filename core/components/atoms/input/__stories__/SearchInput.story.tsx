@@ -24,7 +24,7 @@ export const searchInput = () => {
           name="input"
           value="Value"
           onChange={action('on-change')}
-          clearButton={true}
+          onClear={action('on-clear')}
           icon={icon}
         />
       </div>
