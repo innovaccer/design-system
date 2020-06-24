@@ -16,6 +16,7 @@ export const MainGrid = (props: MainGridProps) => {
   } = props;
 
   const {
+    loading,
     type,
     size,
     showHead,
@@ -50,55 +51,57 @@ export const MainGrid = (props: MainGridProps) => {
   } = state;
 
   const onScrollHandler = () => {
-    if (_this.gridRef && _this.gridRef.current) {
-      const el = _this.gridRef.current!.querySelector('.Grid');
-      if (el) {
-        const { scrollTop } = el;
-        const items = el.querySelectorAll('.Grid-body .Grid-row');
+    if (!loading) {
+      if (_this.gridRef && _this.gridRef.current) {
+        const el = _this.gridRef.current!.querySelector('.Grid');
+        if (el) {
+          const { scrollTop } = el;
+          const items = el.querySelectorAll('.Grid-body .Grid-row');
 
-        const newScroll = Math.floor(scrollTop - (offset * avgRowHeight));
-        let newInView = 0;
-        let currScroll = 0;
-        let i = 0;
-        while (i < items.length && currScroll + items[i].clientHeight <= el.clientHeight) {
-          const rowHeight = items[i].clientHeight;
-          currScroll += rowHeight;
-          newInView++;
-          i++;
-        }
-
-        if (newScroll > 0) {
-          currScroll = newScroll;
-          let newOffset = offset;
-          let newAvgHeight = avgRowHeight;
-          i = 0;
-          while (i < items.length && currScroll >= items[i].clientHeight) {
+          const newScroll = Math.floor(scrollTop - (offset * avgRowHeight));
+          let newInView = 0;
+          let currScroll = 0;
+          let i = 0;
+          while (i < items.length && currScroll + items[i].clientHeight <= el.clientHeight) {
             const rowHeight = items[i].clientHeight;
-            currScroll -= rowHeight;
-            newAvgHeight = ((newOffset * newAvgHeight) + (rowHeight)) / (newOffset + 1);
-            newOffset++;
+            currScroll += rowHeight;
+            newInView++;
             i++;
           }
 
-          newOffset = newOffset < data.length - inView ? newOffset : data.length - inView - 1;
-          if (newOffset > offset) {
-            setState({
-              ...state,
-              inView: newInView,
-              offset: newOffset,
-              avgRowHeight: newAvgHeight,
-            });
-          }
-        } else {
-          if (avgRowHeight) {
-            const diff = Math.floor(newScroll / avgRowHeight) || -1;
-            const newOffset = offset + diff;
-            if (newOffset < offset) {
+          if (newScroll > 0) {
+            currScroll = newScroll;
+            let newOffset = offset;
+            let newAvgHeight = avgRowHeight;
+            i = 0;
+            while (i < items.length && currScroll >= items[i].clientHeight) {
+              const rowHeight = items[i].clientHeight;
+              currScroll -= rowHeight;
+              newAvgHeight = ((newOffset * newAvgHeight) + (rowHeight)) / (newOffset + 1);
+              newOffset++;
+              i++;
+            }
+
+            newOffset = newOffset < data.length - inView ? newOffset : data.length - inView - 1;
+            if (newOffset > offset) {
               setState({
                 ...state,
                 inView: newInView,
-                offset: newOffset < 0 ? 0 : newOffset,
+                offset: newOffset,
+                avgRowHeight: newAvgHeight,
               });
+            }
+          } else {
+            if (avgRowHeight) {
+              const diff = Math.floor(newScroll / avgRowHeight) || -1;
+              const newOffset = offset + diff;
+              if (newOffset < offset) {
+                setState({
+                  ...state,
+                  inView: newInView,
+                  offset: newOffset < 0 ? 0 : newOffset,
+                });
+              }
             }
           }
         }

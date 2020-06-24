@@ -28,6 +28,7 @@ export const GridBody = (props: GridBodyProps) => {
 
   const {
     loading,
+    error,
     withPagination,
     page,
     pageSize,
@@ -35,7 +36,7 @@ export const GridBody = (props: GridBodyProps) => {
     errorTemplate
   } = _this.props;
 
-  if (!loading && data.length === 0) {
+  if (error) {
     return errorTemplate ? errorTemplate() : <Heading>No results found</Heading>;
   }
 
@@ -45,12 +46,14 @@ export const GridBody = (props: GridBodyProps) => {
 
   return (
     <div className="Grid-body">
-      <div
-        className="GridBody-padding"
-        style={{
-          height: `${offset * avgRowHeight}px`
-        }}
-      />
+      {!loading && (
+        <div
+          className="GridBody-padding"
+          style={{
+            height: `${offset * avgRowHeight}px`
+          }}
+        />
+      )}
       {rows.map((d, rI) => {
         return (
           <GridRow
@@ -63,12 +66,14 @@ export const GridBody = (props: GridBodyProps) => {
           />
         );
       })}
-      <div
-        className="GridBody-padding"
-        style={{
-          height: `${((withPagination ? dummyRows : data.length) - inView - offset - 1) * avgRowHeight}px`
-        }}
-      />
+      {!loading && (
+        <div
+          className="GridBody-padding"
+          style={{
+            height: `${((withPagination ? dummyRows : data.length) - inView - offset - 1) * avgRowHeight}px`
+          }}
+        />
+      )}
     </div>
   );
 };

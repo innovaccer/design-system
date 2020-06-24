@@ -5,13 +5,14 @@ import {
   Schema,
   GridProps,
   fetchDataFn,
-  RowData,
 } from '../grid';
-import Table from '../table';
+import Table, { TableProps } from '../table';
 
 interface SyncProps {
   data: Data;
   schema: Schema;
+  loading?: boolean;
+  error?: boolean;
 }
 
 interface AsyncProps {
@@ -29,7 +30,7 @@ interface SharedListProps {
   pageSize?: GridProps['pageSize'];
   loaderSchema?: GridProps['loaderSchema'];
   onRowClick?: GridProps['onRowClick'];
-  onSelect?: (rowIndex: number[], selected: boolean, allSelected: RowData[]) => void;
+  onSelect?: TableProps['onSelect'];
   onPageChange?: GridProps['onPageChange'];
 }
 
