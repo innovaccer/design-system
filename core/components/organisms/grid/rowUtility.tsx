@@ -1,14 +1,15 @@
 import { RowData, Data, ColumnSchema, Schema, FetchDataOptions } from './Grid';
 
 export const updateBatchData = (data: Data, rowIndexes: number[], dataUpdate: Partial<RowData>): Data => {
+  const updatedData = [...data];
   for (const rowIndex of rowIndexes) {
-    data[rowIndex] = {
-      ...data[rowIndex],
+    updatedData[rowIndex] = {
+      ...updatedData[rowIndex],
       ...dataUpdate
     };
   }
 
-  return data;
+  return updatedData;
 };
 
 export function translateData(schema: ColumnSchema, data: RowData) {

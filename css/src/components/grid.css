@@ -357,6 +357,11 @@
     display: flex;
 }
 
+.Header-content--bottom {
+    align-items: center;
+    padding-top: var(--spacing);
+}
+
 .Header-search {
     width: var(--spacing-9);
     margin-bottom: var(--spacing);
@@ -366,7 +371,6 @@
     display: flex;
     flex-grow: 1;
     align-items: center;
-    padding-top: var(--spacing);
 }
 
 .Header-label .Checkbox {

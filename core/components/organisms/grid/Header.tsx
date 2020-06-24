@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { Checkbox, Text, Input, Dropdown, Placeholder, PlaceholderParagraph } from '@/index';
+import { Checkbox, Text, Input, Dropdown, Placeholder, PlaceholderParagraph, Button } from '@/index';
 import { updateSchemaFn, ColumnSchema, Schema, Data, onSelectAllFn, GridProps, updateFilterListFn } from './Grid';
-import Button from '@/components/atoms/button';
 
 export interface ExternalHeaderProps {
   children?: React.ReactNode;
   withSearch?: boolean;
   searchPlaceholder?: string;
+  dynamicColumn?: boolean;
 }
 
 export type updateSearchTermFn = (newSearchTerm: string) => void;
@@ -17,6 +17,7 @@ export interface HeaderProps extends ExternalHeaderProps {
   schema: Schema;
   selectAll?: GridProps['selectAll'];
   totalRecords?: number;
+  withPagination?: boolean;
   withCheckbox?: boolean;
   showHead?: boolean;
   // updateData?: updateDataFn;
@@ -35,6 +36,7 @@ export const Header = (props: HeaderProps) => {
     schema,
     withSearch,
     showHead,
+    withPagination,
     withCheckbox,
     children,
     // updateData,
@@ -46,8 +48,21 @@ export const Header = (props: HeaderProps) => {
     searchPlaceholder = 'Search',
     selectAll,
     searchTerm,
-    updateSearchTerm
+    updateSearchTerm,
+    dynamicColumn = true
   } = props;
+
+  const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    if (selectAll && selectAll.checked) {
+      if (onSelectAll) onSelectAll(true, selectAllRecords);
+    }
+  }, [selectAllRecords]);
+
+  React.useEffect(() => {
+    if (selectAll && !selectAll.checked) setSelectAllRecords(false);
+  }, [selectAll]);
 
   const filterSchema = schema.filter(s => s.filters);
 
@@ -85,7 +100,9 @@ export const Header = (props: HeaderProps) => {
   }));
 
   const selectedCount = data.filter(d => d._selected).length;
-  const label = withCheckbox && selectedCount ? `Selected ${selectedCount} items on this page` : `Showing ${totalRecords} items`;
+  const label = withCheckbox && selectedCount ?
+    selectAllRecords ? `Selected all ${totalRecords} items` : `Selected ${selectedCount} items on this page`
+    : `Showing ${totalRecords} items`;
 
   return (
     <div className="Header">
@@ -169,7 +186,9 @@ export const Header = (props: HeaderProps) => {
           {!showHead && withCheckbox && !loading && (
             <Checkbox
               {...selectAll}
-              onChange={onSelectAll}
+              onChange={selected => {
+                if (onSelectAll) onSelectAll(selected);
+              }}
             />
           )}
           {loading ? (
@@ -177,34 +196,59 @@ export const Header = (props: HeaderProps) => {
               <PlaceholderParagraph length={'small'} />
             </Placeholder>
           ) : (
-              <Text small={true} weight={'medium'}>{label}</Text>
+              <>
+                <Text small={true} weight={'medium'}>{label}</Text>
+                {withPagination && selectAll?.checked && (
+                  <div className="ml-4">
+                    {!selectAllRecords ? (
+                      <Button
+                        size="tiny"
+                        onClick={() => setSelectAllRecords(true)}
+                      >
+                        {`Select all ${totalRecords} items`}
+                      </Button>
+                    ) : (
+                        <Button
+                          size="tiny"
+                          onClick={() => setSelectAllRecords(false)}
+                        >
+                          Clear Selection
+                        </Button>
+                      )
+                    }
+
+                  </div>
+                )}
+              </>
             )
           }
 
         </div>
-        <div className="Header-hideColumns">
-          <Dropdown
-            triggerSize={'tiny'}
-            checkboxes={true}
-            showApplyButton={true}
-            selected={columnOptions.filter(o => o.selected)}
-            options={columnOptions}
-            checkedValuesOffset={0}
-            totalOptions={columnOptions.length}
-            customTrigger={triggerLabel => (
-              <Button
-                size="tiny"
-                appearance="transparent"
-                icon="keyboard_arrow_down_filled"
-                iconAlign="right"
-              >
-                {triggerLabel ? triggerLabel : `Showing 0 of ${columnOptions.length} columns`}
-              </Button>
-            )}
-            onChangeTriggerLabel={(selected, totalOptions) => `Showing ${selected} of ${totalOptions} columns`}
-            onChange={selected => onHideColumn(selected)}
-          />
-        </div>
+        {dynamicColumn && (
+          <div className="Header-hideColumns">
+            <Dropdown
+              triggerSize={'tiny'}
+              checkboxes={true}
+              showApplyButton={true}
+              selected={columnOptions.filter(o => o.selected)}
+              options={columnOptions}
+              checkedValuesOffset={0}
+              totalOptions={columnOptions.length}
+              customTrigger={triggerLabel => (
+                <Button
+                  size="tiny"
+                  appearance="transparent"
+                  icon="keyboard_arrow_down_filled"
+                  iconAlign="right"
+                >
+                  {triggerLabel ? triggerLabel : `Showing 0 of ${columnOptions.length} columns`}
+                </Button>
+              )}
+              onChangeTriggerLabel={(selected, totalOptions) => `Showing ${selected} of ${totalOptions} columns`}
+              onChange={selected => onHideColumn(selected)}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
