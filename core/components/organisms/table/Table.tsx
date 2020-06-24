@@ -14,7 +14,7 @@ import {
   updateSortingListFn,
   updateFilterListFn
 } from '../grid';
-import { updateBatchData, filterData, sortData, paginateData, getSelectAll } from '../grid/utility';
+import { updateBatchData, filterData, sortData, paginateData, getSelectAll, searchData } from '../grid/utility';
 import { debounce } from 'throttle-debounce';
 
 interface SyncProps {
@@ -22,6 +22,7 @@ interface SyncProps {
   schema: Schema;
   loading?: boolean;
   error?: boolean;
+  onSearch?: (data: RowData, searchTerm: string) => boolean;
 }
 
 interface AsyncProps {
@@ -149,6 +150,7 @@ export class Table extends React.Component<TableProps, TableState> {
       pageSize,
       withPagination,
       data: dataProp,
+      onSearch
     } = this.props;
 
     const {
@@ -157,7 +159,7 @@ export class Table extends React.Component<TableProps, TableState> {
       schema,
       sortingList,
       filterList,
-      searchTerm
+      searchTerm = ''
     } = this.state;
 
     const opts = {
@@ -197,7 +199,8 @@ export class Table extends React.Component<TableProps, TableState> {
         });
     } else {
       const filteredData = filterData(schema, dataProp, filterList);
-      const sortedData = sortData(schema, filteredData, sortingList);
+      const searchedData = searchData(filteredData, opts.searchTerm, onSearch);
+      const sortedData = sortData(schema, searchedData, sortingList);
       let renderedData = sortedData;
       const totalRecords = sortedData.length;
       if (withPagination && page && pageSize) {

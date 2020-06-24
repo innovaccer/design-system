@@ -1,4 +1,5 @@
 import { RowData, Data, ColumnSchema, Schema, FetchDataOptions } from './Grid';
+import { TableProps } from '@/index.type';
 
 export const updateBatchData = (data: Data, rowIndexes: number[], dataUpdate: Partial<RowData>): Data => {
   const updatedData = [...data];
@@ -60,9 +61,16 @@ export const sortData = (schema: Schema, data: Data, sortingList: FetchDataOptio
   return sortedData;
 };
 
-export const paginateData = (data: Data, page: number, pageSize: number) => {
+export const paginateData = (data: Data, page: number, pageSize: number): Data => {
   const start = (page - 1) * pageSize;
   const end = start + pageSize;
   const paginatedData = data.slice(start, end);
   return paginatedData;
+};
+
+export const searchData = (data: Data, searchTerm: string, onSearch: TableProps['onSearch']): Data => {
+  if (onSearch) {
+    return data.filter(d => onSearch(d, searchTerm));
+  }
+  return data;
 };
