@@ -3,21 +3,59 @@
 exports[`Label component 
   disabled: false
  1`] = `
-<GenericText
+<div
   className="Label"
-  componentType="label"
 >
-  Label
-</GenericText>
+  <GenericText
+    className="Label-text"
+    componentType="label"
+  >
+    Label
+  </GenericText>
+</div>
 `;
 
 exports[`Label component 
   disabled: true
  1`] = `
-<GenericText
+<div
   className="Label"
-  componentType="label"
 >
-  Label
-</GenericText>
+  <GenericText
+    className="Label-text"
+    componentType="label"
+  >
+    Label
+  </GenericText>
+</div>
+`;
+
+exports[`Label component 
+  required: false
+ 1`] = `
+<div
+  className="Label"
+>
+  <GenericText
+    className="Label-text"
+    componentType="label"
+  >
+    Label
+  </GenericText>
+</div>
+`;
+
+exports[`Label component 
+  required: true
+ 1`] = `
+<div
+  className="Label"
+>
+  <GenericText
+    className="Label-text"
+    componentType="label"
+  >
+    Label
+  </GenericText>
+</div>
 `;
