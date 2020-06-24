@@ -182,7 +182,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
       />
       {
         error && (
-          <Caption className="mt-3" error={error}>{error ? caption || 'Invalid Value' : caption}</Caption>
+          <Caption error={error}>{error ? caption || 'Invalid Value' : caption}</Caption>
         )
       }
     </div>
