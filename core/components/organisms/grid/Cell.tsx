@@ -4,6 +4,7 @@ import { RowData, ColumnSchema } from './Grid';
 import { Dropdown, Grid, Placeholder, PlaceholderParagraph, Heading, Icon, Button } from '@/index';
 import { reorderCol, resizeCol } from './utility';
 import { GridCell } from './GridCell';
+import { DropdownProps } from '@/components/atoms/dropdown';
 
 interface SharedCellProps {
   _this: Grid;
@@ -49,14 +50,14 @@ const HeaderCell = (props: HeaderCellProps) => {
 
   const el = React.createRef<HTMLDivElement>();
 
-  const sortOptions = [
-    { label: 'Sort Ascending', value: 'sortAsc', icon: 'arrow_downward' },
-    { label: 'Sort Descending', value: 'sortDesc', icon: 'arrow_upward' },
+  const sortOptions: DropdownProps['options'] = [
+    { label: 'Sort Ascending', value: 'sortAsc', icon: 'arrow_downward', optionType: 'WITH_ICON' },
+    { label: 'Sort Descending', value: 'sortDesc', icon: 'arrow_upward', optionType: 'WITH_ICON' },
   ];
-  let options = [
-    { label: 'Pin Left', value: 'pinLeft', icon: 'skip_previous' },
-    { label: 'Pin Right', value: 'pinRight', icon: 'skip_next' },
-    { label: 'Hide Column', value: 'hide', icon: 'cancel' },
+  let options: DropdownProps['options'] = [
+    { label: 'Pin Left', value: 'pinLeft', icon: 'skip_previous', optionType: 'WITH_ICON' },
+    { label: 'Pin Right', value: 'pinRight', icon: 'skip_next', optionType: 'WITH_ICON' },
+    { label: 'Hide Column', value: 'hide', icon: 'cancel', optionType: 'WITH_ICON' },
   ];
   if (schema.sortFn) options = [...sortOptions, ...options];
 
@@ -113,12 +114,17 @@ const HeaderCell = (props: HeaderCellProps) => {
                   filterList[schema.name]
                     ? filterList[schema.name].map(f => ({
                       value: f,
-                      label: schema.filters?.find(s => s.value === f)!.label || ''
+                      label: schema.filters?.find(s => s.value === f)!.label || '',
                     }))
                     : []
                 }
+                customTrigger={() => (
+                  <Button
+                    icon="filter_list"
+                    appearance="transparent"
+                  />
+                )}
                 options={schema.filters}
-                icon={'filter_list'}
                 dropdownAlign={'left'}
                 onChange={(selected: any) => _this.onFilterChange(schema.name, selected)}
               />
@@ -134,6 +140,12 @@ const HeaderCell = (props: HeaderCellProps) => {
               <Dropdown
                 key={schema.name}
                 menu={true}
+                customTrigger={() => (
+                  <Button
+                    icon="more_horiz_filled"
+                    appearance="transparent"
+                  />
+                )}
                 options={options}
                 dropdownAlign={'left'}
                 onChange={(selected: any) => _this.onMenuChange(schema.name, selected)}

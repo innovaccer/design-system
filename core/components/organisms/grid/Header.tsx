@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Checkbox, Text, Input, Dropdown, Placeholder, PlaceholderParagraph } from '@/index';
 import { updateSchemaFn, ColumnSchema, Schema, Data, onSelectAllFn, GridProps, updateFilterListFn } from './Grid';
+import Button from '@/components/atoms/button';
 
 export interface ExternalHeaderProps {
   children?: React.ReactNode;
@@ -49,43 +50,13 @@ export const Header = (props: HeaderProps) => {
   } = props;
 
   const filterSchema = schema.filter(s => s.filters);
-  // const sortingSchema = schema.filter(s => s.sortFn);
-
-  // const [state, setState] = React.useState({
-  //   // sortingList: [],
-  //   filterList: {},
-  // });
 
   const onSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (updateSearchTerm) {
       updateSearchTerm(value);
     }
-    // if (updateData) {
-    //   updateData({
-    //     searchTerm: value
-    //   });
-    // }
   };
-
-  // const onSortChange = (name: ColumnSchema['name'], filters: any[]) => {
-  //   const newFilterList = {
-  //     ...state.filterList,
-  //     [name]: filters
-  //   };
-
-  //   setState({
-  //     ...state,
-  //     filterList: newFilterList
-  //   });
-
-  //   if (updateData) {
-  //     updateData({
-  //       page: 1,
-  //       filterList: newFilterList
-  //     });
-  //   }
-  // };
 
   const onFilterChange = (name: ColumnSchema['name'], filters: any[]) => {
     const newFilterList = {
@@ -96,18 +67,6 @@ export const Header = (props: HeaderProps) => {
     if (updateFilterList) {
       updateFilterList(newFilterList);
     }
-
-    // setState({
-    //   ...state,
-    //   filterList: newFilterList
-    // });
-
-    // if (updateData) {
-    //   updateData({
-    //     page: 1,
-    //     filterList: newFilterList
-    //   });
-    // }
   };
 
   const onHideColumn = (selected: any[]) => {
@@ -232,6 +191,16 @@ export const Header = (props: HeaderProps) => {
             options={columnOptions}
             checkedValuesOffset={0}
             totalOptions={columnOptions.length}
+            customTrigger={triggerLabel => (
+              <Button
+                size="tiny"
+                appearance="transparent"
+                icon="keyboard_arrow_down_filled"
+                iconAlign="right"
+              >
+                {triggerLabel ? triggerLabel : `Showing 0 of ${columnOptions.length} columns`}
+              </Button>
+            )}
             onChangeTriggerLabel={(selected, totalOptions) => `Showing ${selected} of ${totalOptions} columns`}
             onChange={selected => onHideColumn(selected)}
           />
