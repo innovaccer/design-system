@@ -10,6 +10,10 @@ export type SortType = 'asc' | 'desc';
 export type Alignment = 'left' | 'right' | 'center';
 export type SortFn = (a: RowData, b: RowData) => -1 | 0 | 1;
 export type Filter = any[];
+export type Separator = {
+  body?: boolean,
+  head?: boolean
+};
 
 export interface FetchDataOptions {
   page?: number;
@@ -75,7 +79,7 @@ export type ColumnSchema = {
   /**
    * Show left separator
    */
-  separator?: boolean;
+  separator?: Separator;
   /**
    * Pinned to left
    */

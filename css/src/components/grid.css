@@ -159,7 +159,7 @@
     padding-right: var(--spacing-m);
 }
 
-.Grid-cell--withSeparator {
+.Grid-cell--separator {
     border-left: var(--border);
 }
 
@@ -171,9 +171,9 @@
     border-left: none;
 }
 
-.Grid .Grid-cellGroup--main .Grid-cell--head.Grid-cell:last-child {
+/* .Grid .Grid-cellGroup--main .Grid-cell--head.Grid-cell:last-child {
     border-right: var(--border);
-}
+} */
 
 .Grid-cell--head.Grid-cell--selected {
     background: var(--primary-light);

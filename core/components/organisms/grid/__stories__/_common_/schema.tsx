@@ -12,6 +12,9 @@ const schema: Schema = [
     width: 300,
     resizable: true,
     // pinned: true,
+    separator: {
+      head: true
+    },
     translate: a => ({
       title: `${a.firstName} ${a.lastName}`,
       firstName: a.firstName,
@@ -97,7 +100,10 @@ const schema: Schema = [
     displayName: 'Custom Cell',
     width: 200,
     resizable: true,
-    separator: true,
+    separator: {
+      head: true,
+      body: true
+    },
     cellRenderer: (props: GridCellProps) => {
       const {
         loading

@@ -32,7 +32,10 @@ const loaderSchema: GridProps['loaderSchema'] = [
     name: 'customCell',
     displayName: 'Custom Cell',
     width: 200,
-    separator: true,
+    separator: {
+      head: true,
+      body: true
+    },
   },
 ];
 
