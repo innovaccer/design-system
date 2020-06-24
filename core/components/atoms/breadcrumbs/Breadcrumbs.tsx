@@ -11,7 +11,7 @@ interface Breadcrumb {
 export interface BreadcrumbsProps {
   /**
    * List of `Breadcrumb` props
-   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * <pre className="DocPage-codeBlock">
    * Breadcrumb: {
    *    label: string;
    *    link: string;

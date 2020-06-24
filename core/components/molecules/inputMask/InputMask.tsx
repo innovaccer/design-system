@@ -7,7 +7,7 @@ export type Mask = (string | RegExp)[];
 export interface MaskProps {
   /**
    * Every value of Array represent either fixed char or regular expression for particular index
-   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * <pre className="DocPage-codeBlock">
    * Mask: (string | RegExp)[]
    * </pre>
    */

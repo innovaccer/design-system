@@ -35,7 +35,7 @@ export interface ToastProps {
   /**
    * Array for `ActionButton`**(maxLen: 2)**
    *
-   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * <pre className="DocPage-codeBlock">
    * Action: {
    *    label: string,
    *    onClick: (e: React.MouseEvent) => void
