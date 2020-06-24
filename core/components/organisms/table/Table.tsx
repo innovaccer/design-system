@@ -40,6 +40,7 @@ interface SharedTableProps {
   paginationType?: GridProps['paginationType'];
   pageSize?: GridProps['pageSize'];
   loaderSchema?: GridProps['loaderSchema'];
+  saveSortHistory?: boolean;
   onRowClick?: GridProps['onRowClick'];
   onSelect?: (rowIndex: number[], selected: boolean, allSelected: RowData[]) => void;
   onPageChange?: GridProps['onPageChange'];
@@ -98,6 +99,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
   static defaultProps = {
     showHead: true,
+    saveSortHistory: true,
     headerProps: {},
     pageSize: 15
   };
@@ -136,7 +138,7 @@ export class Table extends React.Component<TableProps, TableState> {
     }
   }
 
-  updateData = debounce(250, (options: FetchDataOptions) => {
+  updateData = debounce(250, (_options: FetchDataOptions) => {
     const {
       fetchData,
       pageSize,
@@ -159,12 +161,12 @@ export class Table extends React.Component<TableProps, TableState> {
     });
 
     const opts = {
+      // ...options,
       page,
       pageSize,
       sortingList,
       filterList,
       searchTerm,
-      ...options,
     };
 
     if (async) {
@@ -268,11 +270,12 @@ export class Table extends React.Component<TableProps, TableState> {
   }
 
   updateSortingList: updateSortingListFn = newSortingList => {
+    const {
+      saveSortHistory
+    } = this.props;
+
     this.setState({
-      // @ts-ignore
-      sortingList: [
-        ...newSortingList
-      ],
+      sortingList: saveSortHistory ? [...newSortingList] : newSortingList.slice(-1),
       page: 1,
     });
   }

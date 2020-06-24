@@ -11,7 +11,7 @@ import { action } from '@storybook/addon-actions';
 export const all = () => {
   const async = boolean(
     'async',
-    true
+    false
   );
 
   const type = select(
@@ -62,6 +62,11 @@ export const all = () => {
     12
   );
 
+  const saveSortHistory = boolean(
+    'saveSortHistory',
+    false
+  );
+
   let dataAttr = {};
   if (async) {
     dataAttr = {
@@ -99,6 +104,7 @@ export const all = () => {
         onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
         onSelect={(rowIndex, selected, selectedList) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)}`)()}
         onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
+        saveSortHistory={saveSortHistory}
       />
     </Card>
   );

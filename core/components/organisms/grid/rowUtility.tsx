@@ -46,7 +46,7 @@ export const filterData = (schema: Schema, data: Data, filterList: FetchDataOpti
 };
 
 export const sortData = (schema: Schema, data: Data, sortingList: FetchDataOptions['sortingList']): Data => {
-  const sortedData = data;
+  const sortedData = [...data];
   sortingList?.forEach(l => {
     const sIndex = schema.findIndex(s => s.name === l.name);
     const { sortFn } = schema[sIndex];
