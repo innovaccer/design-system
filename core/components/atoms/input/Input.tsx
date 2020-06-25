@@ -3,9 +3,9 @@ import classNames from 'classnames';
 // import { Size } from '@/components/atoms/button';
 import Text from '@/components/atoms/text';
 import Popover from '@/components/molecules/popover';
-import Icon from '@/components/atoms/icon';
+import Icon, { IconProps } from '@/components/atoms/icon';
 
-export type InputType = 'text' | 'password' | 'number';
+export type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
 export type AutoComplete = 'on' | 'off';
 export type Size = 'tiny' | 'regular' | 'large';
 
@@ -13,7 +13,7 @@ export interface InputProps {
   /**
    * Name of the `Input`
    */
-  name: string;
+  name?: string;
   /**
    * Type of text inside `Input`
    */
@@ -94,6 +94,10 @@ export interface InputProps {
    * Handler to be called when `Input` gets focus
    */
   onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  /**
+   * Custom Icon Component to be passed to Input to replace Clear Icon in the right
+   */
+  actionIcon?: React.ReactElement<IconProps>;
 }
 
 const sizeMapping = {
@@ -105,11 +109,10 @@ const sizeMapping = {
 export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
     size = 'regular',
-    autoFocus = false,
-    disabled: propDisabled,
+    type = 'text',
+    disabled,
     defaultValue,
     name,
-    type,
     placeholder,
     value,
     icon,
@@ -118,14 +121,14 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
     error,
     info,
     autocomplete,
+    autoFocus,
     onChange,
     onClick,
     onClear,
     onBlur,
-    onFocus
+    onFocus,
+    actionIcon
   } = props;
-
-  const disabled = propDisabled || !onChange;
 
   const classes = classNames({
     ['Input']: true,
@@ -190,22 +193,32 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
         onFocus={onFocus}
         autoFocus={autoFocus}
       />
-      {((!value && !disabled) || (value && disabled)) && info && (
-        <Popover
-          style={popoverStyle}
-          position="top"
-          on={'hover'}
-          trigger={trigger}
-          dark={true}
-        >
-          {info}
-        </Popover>
-      )}
-      {(onClear && value && !disabled) && (
-        <div className={rightIconClass} onClick={e => onClear(e)}>
-          <Icon name={'close'} size={sizeMapping[size]} />
-        </div>
-      )}
+      {(!value && !disabled) || (value && disabled) || (defaultValue && disabled)
+        ? (
+          info && (
+            <Popover
+              style={popoverStyle}
+              position="top"
+              on={'hover'}
+              trigger={trigger}
+              dark={true}
+            >
+              {info}
+            </Popover>
+          )
+        ) : (
+          actionIcon
+            ? (
+              actionIcon
+            ) : (
+              (onClear && value && !disabled) && (
+                <div className={rightIconClass} onClick={e => onClear(e)}>
+                  <Icon name={'close'} size={sizeMapping[size]} />
+                </div>
+              )
+            )
+        )
+      }
     </div>
   );
 });
