@@ -7,6 +7,7 @@ import { DocsContainer } from '@storybook/addon-docs/blocks';
 import { withA11y } from '@storybook/addon-a11y';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { docPage } from '@/utils/docPage';
+import './docPage.css';
 import '../css';
 
 // Option defaults:

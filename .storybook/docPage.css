@@ -1,0 +1,13 @@
+.DocPage {}
+
+.DocPage-editorTabs .TabsWrapper-header {
+  margin-left: var(--spacing-l)
+}
+
+.DocPage-codeBlock {
+  position: relative;
+  font-family: monospace;
+  font-size: 13px;
+  background: #f8f8f8;
+  margin-top: 8px;
+}

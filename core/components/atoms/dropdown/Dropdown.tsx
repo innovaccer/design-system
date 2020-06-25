@@ -28,7 +28,7 @@ export interface DropdownProps extends DropdownListProps {
    */
   loading?: boolean;
   /**
-   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * <pre className="DocPage-codeBlock">
    * if options in database are <= 50, `bulk` = false
    * if options in database are > 50, `bulk` = true
    * </pre>
@@ -36,7 +36,7 @@ export interface DropdownProps extends DropdownListProps {
   bulk?: boolean;
   /**
    * Options to render inside `Dropdown`
-   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * <pre className="DocPage-codeBlock">
    * Option: {
    *    icon?: string;
    *    subInfo?: string;
@@ -54,7 +54,7 @@ export interface DropdownProps extends DropdownListProps {
   selectedGroupLabel?: string;
   /**
    * Callback function when async is true
-   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * <pre className="DocPage-codeBlock">
    * Promise object to be returned:
    * {
    *    options: Option[]

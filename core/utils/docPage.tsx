@@ -62,7 +62,7 @@ const JSXtoStringOptions = {
 const copyCode = (val: string) => navigator.clipboard.writeText(val);
 
 const importsToStr = (imports: string[]): string =>
-`import { ${imports.join(', ')} } from '@innovaccer/design-system';`;
+  `import { ${imports.join(', ')} } from '@innovaccer/design-system';`;
 
 const CopyComp = props => {
   const { onClick } = props;
@@ -81,7 +81,7 @@ const CopyComp = props => {
 };
 
 const renderCodeBlock = (val: string) => (
-  <pre style={{ position: 'relative', fontFamily: 'monospace', fontSize: '13px', background: '#f8f8f8', margin: 0 }}>
+  <div style={{ position: 'relative' }}>
     <style>
       {`pre {
         margin: 0;
@@ -91,7 +91,7 @@ const renderCodeBlock = (val: string) => (
     <SyntaxHighlighter language="javascript" style={vs2015} showLineNumbers={true}>
       {val}
     </SyntaxHighlighter>
-  </pre>
+  </div>
 );
 
 const getStory = () => {
@@ -111,11 +111,20 @@ const StoryComp = props => {
   const imports = [sp.component, ...(sp.subcomponents ? Object.values(sp.subcomponents) : [])];
 
   const importString = `// ${importsToStr(imports.map(i => i.displayName))}`;
-  const jsx = customCode ? customCode : `${beautifyHTML(reactElementToJSXString(comp, JSXtoStringOptions), beautifyJSXOptions)}`;
+  const jsx = `${beautifyHTML(reactElementToJSXString(comp, JSXtoStringOptions), beautifyJSXOptions)}`;
   const html = beautifyHTML(renderToStaticMarkup(comp), beautifyHTMLOptions);
 
   const [activeTab, setActiveTab] = React.useState<number>(0);
-  const [jsxCode, setJsxCode] = React.useState<string>(`${importString}\n\n${jsx}`);
+  const code = `
+${importString}
+
+() => {
+  return(
+${jsx.split('\n').map(l => `    ${l}`).join('\n')}
+  );
+}
+  `;
+  const [jsxCode, setJsxCode] = React.useState<string>(customCode ? customCode : code);
   const [htmlCode, setHtmlCode] = React.useState<string>(`${html}`);
 
   const importScope = imports.reduce((out, curr) => {
@@ -145,28 +154,23 @@ const StoryComp = props => {
       }
     }, [live]);
 
-    return (
-      <></>
-    );
+    return null;
   });
 
   return (
-    <>
-      <Card
-        shadow="light"
-      >
-        <LiveProvider code={jsxCode} scope={{ ...DS, ...importScope }}>
-          <Preview
-            style={{
-              marginTop: '0px',
-              marginBottom: '0px'
-            }}
-            withSource="none"
-            withToolbar={true}
-          >
-            <LivePreview />
-          </Preview>
-          <TabsWrap />
+    <Card
+      shadow="light"
+    >
+      <LiveProvider code={jsxCode} scope={{ ...DS, ...importScope }}>
+        <Preview
+          className="my-0"
+          withSource="none"
+          withToolbar={true}
+        >
+          <LivePreview />
+        </Preview>
+        <TabsWrap />
+        <div className="DocPage-editorTabs">
           <TabsWrapper
             activeTab={activeTab}
             onTabChange={tab => setActiveTab(tab)}
@@ -187,9 +191,9 @@ const StoryComp = props => {
               {renderCodeBlock(htmlCode)}
             </Tab>
           </TabsWrapper>
-        </LiveProvider>
-      </Card>
-    </>
+        </div>
+      </LiveProvider>
+    </Card>
   );
 };
 
@@ -208,7 +212,7 @@ export const docPage = () => {
   const separatorIndex = title?.indexOf('|');
 
   return (
-    <>
+    <div className="DocPage">
       <Title>{title && separatorIndex !== -1 ? title.slice(separatorIndex + 1) : title}</Title>
       <br />
 
@@ -227,7 +231,7 @@ export const docPage = () => {
 
       <Heading>PropTable</Heading>
       <Props {...propsAttr} />
-    </>
+    </div>
   );
 };
 
