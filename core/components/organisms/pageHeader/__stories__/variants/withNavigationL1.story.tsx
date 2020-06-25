@@ -1,10 +1,16 @@
 import * as React from 'react';
 import PageHeader from '../..//PageHeader';
-import { Navigation, Button, Text } from '@/index';
+import { select, text } from '@storybook/addon-knobs';
+import { Navigation, Button, BreadcrumbsWrapper, Breadcrumb, Link, Badge, StatusHints, Text } from '@/index';
 import { action } from '@storybook/addon-actions';
-import { text } from '@storybook/addon-knobs';
 
 export const withNavigation = () => {
+  const type = select(
+    'type',
+    ['small', 'large'],
+    'large'
+  );
+
   const title = text(
     'title',
     'Page title'
@@ -28,16 +34,40 @@ export const withNavigation = () => {
   ];
 
   const options = {
+    type,
     title,
     navigation: <Navigation data={navigationData} onClick={action('menu-clicked')} active="menu_1" />,
     actions: (
       <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-        <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
         <Button appearance="primary">Primary</Button>
       </div>
+    ),
+    breadcrumb: (
+      <BreadcrumbsWrapper
+        heading=""
+      >
+        <Breadcrumb>
+          <div className="Breadcrumb-link">
+            <Link>Test</Link>
+          </div>
+        </Breadcrumb>
+        <Breadcrumb>
+          <div className="Breadcrumb-link">
+            <Link>Test Again</Link>
+          </div>
+        </Breadcrumb>
+      </BreadcrumbsWrapper>
+    ),
+    badge: (
+      <Badge appearance="secondary">Badge</Badge>
+    ),
+    status: (
+      <StatusHints appearance="alert">Alert</StatusHints>
+    ),
+    meta: (
+      <StatusHints appearance="default">Meta Data</StatusHints>
     )
   };
-
   return (
     <div style={{ width: '100%', padding: '16px', background: '#f4f4f4' }}>
       <PageHeader {...options} />
@@ -46,6 +76,6 @@ export const withNavigation = () => {
 };
 
 export default {
-  title: 'Organisms|PageHeader/Level 0/Variants',
+  title: 'Organisms|PageHeader/Level 1/Variants',
   component: PageHeader
 };

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PageHeader from '../../PageHeader';
-import { Button, Text, Tab, TabsWrapper, Badge } from '@/index';
+import { Button, BreadcrumbsWrapper, Breadcrumb, Link, Badge, StatusHints, Tab, TabsWrapper, Text } from '@/index';
 import { action } from '@storybook/addon-actions';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 import { number, text } from '@storybook/addon-knobs';
@@ -68,12 +68,35 @@ export const withTabs = () => {
     ),
     actions: (
       <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-        <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
         <Button appearance="primary">Primary</Button>
       </div>
+    ),
+    breadcrumb: (
+      <BreadcrumbsWrapper
+        heading=""
+      >
+        <Breadcrumb>
+          <div className="Breadcrumb-link">
+            <Link>Test</Link>
+          </div>
+        </Breadcrumb>
+        <Breadcrumb>
+          <div className="Breadcrumb-link">
+            <Link>Test Again</Link>
+          </div>
+        </Breadcrumb>
+      </BreadcrumbsWrapper>
+    ),
+    badge: (
+      <Badge appearance="secondary">Badge</Badge>
+    ),
+    status: (
+      <StatusHints appearance="alert">Alert</StatusHints>
+    ),
+    meta: (
+      <StatusHints appearance="default">Meta Data</StatusHints>
     )
   };
-
   return (
     <div style={{ width: '100%', padding: '16px', background: '#f4f4f4' }}>
       <PageHeader {...options} />
@@ -82,6 +105,6 @@ export const withTabs = () => {
 };
 
 export default {
-  title: 'Organisms|PageHeader/Level 0/Variants',
+  title: 'Organisms|PageHeader/Level 1/Variants',
   component: PageHeader
 };

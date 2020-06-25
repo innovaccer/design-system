@@ -17,4 +17,27 @@
   align-items: center;
 }
 
+.PageHeader-titleWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 
+.PageHeader-titleWrapper .Badge {
+  margin-left: var(--spacing-l);
+}
+
+.PageHeader-statusWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.PageHeader-statusWrapper .StatusHints {
+  margin-right: var(--spacing);
+}
+
+.PageHeader-navigationWrapper .Navigation-wrapper-horizontal{
+  display: inline-block;
+  margin-top: var(--spacing-l);
+}
