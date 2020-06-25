@@ -18,6 +18,15 @@ export const sync = () => {
         data={data}
         schema={schema}
         withHeader={true}
+        headerProps={{
+          withSearch: true
+        }}
+        onSearch={(d, searchTerm) => {
+          return (
+            d.firstName.toLowerCase().match(searchTerm.toLowerCase())
+            || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
+          );
+        }}
       />
     </Card>
   );
