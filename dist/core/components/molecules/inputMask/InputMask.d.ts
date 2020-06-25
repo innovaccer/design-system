@@ -4,6 +4,7 @@ export declare type Mask = (string | RegExp)[];
 export interface MaskProps {
     mask: Mask;
     placeholderChar?: string;
+    caption?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>, val?: string) => void;
     onBlur?: (e: React.ChangeEvent<HTMLInputElement>, val?: string) => void;
     onClear?: (e: React.MouseEvent<HTMLElement>) => void;

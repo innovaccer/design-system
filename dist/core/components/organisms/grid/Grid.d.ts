@@ -5,6 +5,10 @@ export declare type SortType = 'asc' | 'desc';
 export declare type Alignment = 'left' | 'right' | 'center';
 export declare type SortFn = (a: RowData, b: RowData) => -1 | 0 | 1;
 export declare type Filter = any[];
+export declare type Separator = {
+    body?: boolean;
+    head?: boolean;
+};
 export interface FetchDataOptions {
     page?: number;
     pageSize?: number;
@@ -28,7 +32,7 @@ export declare type updateReorderHighlighterFn = (dim: GridState['reorderHighlig
 export declare type sortDataFn = (sortFn: SortFn, type: SortType) => void;
 export declare type reorderColFn = (from: string, to: string) => void;
 export declare type onSelectFn = (rowIndex: number, selected: boolean) => void;
-export declare type onSelectAllFn = (selected: boolean) => void;
+export declare type onSelectAllFn = (selected: boolean, selectAll?: boolean) => void;
 export declare type onFilterChangeFn = (data: RowData, filters: Filter) => boolean;
 export declare type onRowClickFn = (data: RowData, rowIndex?: number) => void;
 export declare type CellType = 'DEFAULT' | 'WITH_META_LIST' | 'AVATAR' | 'AVATAR_WITH_TEXT' | 'AVATAR_WITH_META_LIST' | 'IMAGE' | 'IMAGE_WITH_TEXT' | 'IMAGE_WITH_META_LIST' | 'STATUS_HINT' | 'ICON';
@@ -38,7 +42,7 @@ export declare type ColumnSchema = {
     width: number;
     resizable?: boolean;
     sortFn?: SortFn;
-    separator?: boolean;
+    separator?: Separator;
     pinned?: boolean;
     hidden?: boolean;
     filters?: DropdownProps['options'];
@@ -65,6 +69,7 @@ export interface GridProps {
     data: Data;
     totalRecords: number;
     loading: boolean;
+    error: boolean;
     updateData?: updateDataFn;
     updateSchema?: updateSchemaFn;
     showHead?: boolean;
@@ -92,7 +97,6 @@ export interface GridProps {
     };
 }
 export interface GridState {
-    init: boolean;
     reorderHighlighter?: number;
 }
 export declare class Grid extends React.Component<GridProps, GridState> {
@@ -100,12 +104,15 @@ export declare class Grid extends React.Component<GridProps, GridState> {
     static defaultProps: {
         showHead: boolean;
         loaderSchema: never[];
+        schema: never[];
+        data: never[];
         type: string;
         size: string;
         page: number;
         pageSize: number;
         paginationType: string;
         loading: boolean;
+        error: boolean;
         sortingList: never[];
         filterList: {};
     };

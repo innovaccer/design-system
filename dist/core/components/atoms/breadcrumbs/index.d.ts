@@ -1,2 +1,2 @@
-export * from './BreadcrumbsWrapper';
-export * from './Breadcrumb';
+export { default } from './Breadcrumbs';
+export * from './Breadcrumbs';

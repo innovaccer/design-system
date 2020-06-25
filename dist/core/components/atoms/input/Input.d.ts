@@ -6,14 +6,12 @@ export interface InputProps {
     name: string;
     type?: InputType;
     value?: string;
+    defaultValue?: string;
     placeholder?: string;
     autocomplete?: AutoComplete;
     size?: Size;
     icon?: string;
-    label?: string;
     inlineLabel?: string;
-    caption?: string;
-    clearButton?: boolean;
     loading?: boolean;
     disabled?: boolean;
     required?: boolean;

@@ -219,3 +219,25 @@
 * f095a29 feat: adds textarea
 * 6505146 fix: adds InputMask in build
 * df5579d fix: fixes InputMask for unwanted values
+
+-------------------
+ **v1.0.0-18**  (2020-06-25) 
+
+* 0bef138 v1.0.0-18
+* b8ebe0b fix: adds functional template for JSX Tab
+* 4138cf6 chore(pageHeader): stories updated
+* 0644baf chore: adds caption css
+* f1e1423 fix(#99): adds onSearch for sync Table
+* 40201b4 feat(#103,#104): adds loading and error props for sync Table
+* 5f19949 chore: removes label and caption props from input
+* 726c702 fix(#95): adds SelectAll support in Header
+* d7c779c feat: adds required prop in label
+* b664eb3 feat: replaces Breadcrumb component with the new one
+* 7d49a89 feat(#98): updates separator prop of Schema in Grid
+* 41f49cf feat(#100): adds saveSortHistory prop in Table
+* 0d1b9b3 fix(#102): fixes Dropdown in Grid and Header
+* f62fa07 fix(#101): fixes row highlight of Grid
+* ba07fa4 feat(pageHeader): page header level 1
+* 24ceb25 feat: adds caption component
+* c704e67 feat: adds required prop in label
+* bb5d1f7 feat: adds label
