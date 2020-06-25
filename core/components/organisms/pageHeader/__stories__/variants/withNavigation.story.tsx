@@ -2,8 +2,14 @@ import * as React from 'react';
 import PageHeader from '../..//PageHeader';
 import { Navigation, Button, Text } from '@/index';
 import { action } from '@storybook/addon-actions';
+import { text } from '@storybook/addon-knobs';
 
 export const withNavigation = () => {
+  const title = text(
+    'title',
+    'Page title'
+  );
+
   const navigationData = [
     {
       id: 'menu_1',
@@ -22,7 +28,7 @@ export const withNavigation = () => {
   ];
 
   const options = {
-    title: 'Title',
+    title,
     navigation: <Navigation data={navigationData} onClick={action('menu-clicked')} active="menu_1" />,
     actions: (
       <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
@@ -40,6 +46,6 @@ export const withNavigation = () => {
 };
 
 export default {
-  title: 'Organisms|PageHeader/Level0/Variants',
+  title: 'Organisms|PageHeader/Level 0/Variants',
   component: PageHeader
 };

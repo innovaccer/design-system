@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PageHeader from '../..//PageHeader';
-import { select } from '@storybook/addon-knobs';
+import { select, text } from '@storybook/addon-knobs';
 import { Navigation, Button, BreadcrumbsWrapper, Breadcrumb, Link, Badge, StatusHints, Text } from '@/index';
 import { action } from '@storybook/addon-actions';
 
@@ -9,6 +9,11 @@ export const withNavigation = () => {
     'type',
     ['small', 'large'],
     'large'
+  );
+
+  const title = text(
+    'title',
+    'Page title'
   );
 
   const navigationData = [
@@ -30,7 +35,7 @@ export const withNavigation = () => {
 
   const options = {
     type,
-    title: 'Page title',
+    title,
     navigation: <Navigation data={navigationData} onClick={action('menu-clicked')} active="menu_1" />,
     actions: (
       <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
@@ -71,6 +76,6 @@ export const withNavigation = () => {
 };
 
 export default {
-  title: 'Organisms|PageHeader/Level1/Variants',
+  title: 'Organisms|PageHeader/Level 1/Variants',
   component: PageHeader
 };

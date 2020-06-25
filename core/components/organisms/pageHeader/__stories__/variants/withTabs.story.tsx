@@ -3,20 +3,26 @@ import PageHeader from '../../PageHeader';
 import { Button, Text, Tab, TabsWrapper, Badge } from '@/index';
 import { action } from '@storybook/addon-actions';
 import { updateKnob } from '@/utils/storybookEventEmitter';
-import { number } from '@storybook/addon-knobs';
+import { number, text } from '@storybook/addon-knobs';
 
 export const withTabs = () => {
   const activeTab = number(
     'activeTab',
     1
   );
+
+  const title = text(
+    'title',
+    'Page title'
+  );
+
   const onTabChangeHandler = (tabIndex: number) => {
     updateKnob('activeTab', tabIndex);
     return action(`tab-change: ${tabIndex}`)();
   };
 
   const options = {
-    title: 'Title',
+    title,
     tabs: (
       <TabsWrapper
         activeTab={activeTab}
@@ -76,6 +82,6 @@ export const withTabs = () => {
 };
 
 export default {
-  title: 'Organisms|PageHeader/Level0/Variants',
+  title: 'Organisms|PageHeader/Level 0/Variants',
   component: PageHeader
 };
