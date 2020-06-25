@@ -77,16 +77,7 @@
 }
 
 .Toast-actionButton {
-    box-sizing: border-box;
-    height: var(--spacing-xl);
-    border-radius: var(--spacing-m);
     color: var(--text-white);
-    cursor: pointer;
-
-    /* padding-top: var(--spacing);
-    padding-bottom: var(--spacing); */
-    padding-left: var(--spacing-m);
-    padding-right: var(--spacing-m);
     margin-right: var(--spacing);
 }
 
