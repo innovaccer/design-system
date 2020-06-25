@@ -162,7 +162,6 @@ export const Navigation = (props: NavigationProps) => {
             <Icon
               className="mr-3"
               name={menu.icon}
-              size={16}
               appearance={menu.disabled ? 'disabled' : 'default'}
             />
           )}
@@ -197,7 +196,6 @@ export const Navigation = (props: NavigationProps) => {
               <Icon
                 className={menuIconClasses}
                 name={menu.icon}
-                size={16}
                 appearance={menu.disabled ? 'disabled' : 'default'}
               />
             )}
@@ -210,7 +208,6 @@ export const Navigation = (props: NavigationProps) => {
                   <Icon
                     className="mx-4"
                     name={menuState[menu.name] ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
-                    size={16}
                     appearance={menu.disabled ? 'disabled' : 'default'}
                   />
                 )}

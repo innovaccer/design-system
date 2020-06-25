@@ -34,7 +34,7 @@ export const Caption = (props: CaptionProps) => {
     <div className={classes}>
       {error && (
         <div className={errorIconClass}>
-          <Icon name={'error'} appearance={'alert'}/>
+          <Icon size={14} name={'error'} appearance={'alert'}/>
         </div>
       )}
       <Text appearance={error ? 'destructive' : 'subtle'} small={true} weight="medium">{`${children}`}</Text>

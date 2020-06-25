@@ -31,14 +31,14 @@ export const ModalHeader = (props: ModalHeaderProps) => {
         className="Modal-close-icon"
         onClick={(event: React.MouseEvent<HTMLElement, MouseEvent>) => onClose('IconClick', event)}
       >
-        <Icon name={'close'} size={16}/>
+        <Icon name={'close'}/>
       </div>
     );
   };
 
   const getHeaderIcon = () => {
     return (
-      <div className="Modal-header-icon"><Icon name={icon} size={16}/></div>
+      <div className="Modal-header-icon"><Icon name={icon}/></div>
     );
   };
 

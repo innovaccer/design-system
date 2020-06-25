@@ -87,7 +87,7 @@ export const Toast = (props: ToastProps) => {
     <div className={wrapperClass}>
       {icon && (
         <div className={iconClass('left')}>
-          <Icon name={icon} size={16} appearance={appearance !== 'warning' ? 'white' : 'default'} />
+          <Icon name={icon} appearance={appearance !== 'warning' ? 'white' : 'default'} />
         </div>
       )}
       <div className="Toast-body">
@@ -99,7 +99,7 @@ export const Toast = (props: ToastProps) => {
           </Heading>
           <div onClick={onCloseHandler}>
             <div className={iconClass('right')}>
-              <Icon name={'close'} size={16} appearance={appearance !== 'warning' ? 'white' : 'default'} />
+              <Icon name={'close'} appearance={appearance !== 'warning' ? 'white' : 'default'} />
             </div>
           </div>
         </div>

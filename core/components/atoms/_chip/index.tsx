@@ -44,7 +44,6 @@ export const GenericChip = (props: GenericChipProps) => {
           <div className={iconClass('left')}>
             <Icon
               name={icon}
-              size={16}
               appearance={(disabled ? 'disabled' : (selected ? 'info' : 'default'))}
             />
           </div>
@@ -60,7 +59,6 @@ export const GenericChip = (props: GenericChipProps) => {
           <div className={iconClass('right')} onClick={onCloseHandler}>
             <Icon
               name="clear"
-              size={16}
               appearance={disabled ? 'disabled' : (selected ? 'info' : 'subtle')}
             />
           </div>
