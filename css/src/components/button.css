@@ -17,7 +17,6 @@
     padding-bottom: var(--spacing);
 
     text-align: center;
-    text-transform: capitalize;
     font-family: var(--font-family);
     font-weight: var(--font-weight-normal);
     font-size: var(--font-size);
