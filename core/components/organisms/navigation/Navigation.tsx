@@ -1,107 +1,172 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Text, Icon } from '@/index';
-const { useState, useEffect, useRef } = React;
+const { useState } = React;
 
 export type LayoutType = 'vertical' | 'horizontal';
 
-type Menu = {
-  id: string;
+export type Menu = {
   name: string;
+  label: string;
+  link?: string;
+  icon?: string;
   disabled?: boolean;
   subMenu?: Menu[];
-  icon?: string;
 };
 
+type ActiveMenu = ({ name: string } | { link: string }) & Partial<Menu>;
+
 export interface NavigationProps {
+  /**
+   * `Navigation` component type
+   */
   type?: LayoutType;
+  /**
+   * List of menus to be rendered
+   * <pre className="DocPage-codeBlock">
+   * Menu: {
+   *    name: string;
+   *    label: string;
+   *    link: string;
+   *    disabled?: boolean;
+   *    subMenu?: Menu[];
+   *    icon?: string;
+   * };
+   * </pre>
+   */
   data: Menu[];
-  onClick?: (id: string) => void;
-  active?: string;
-  collapsed?: boolean;
-  onToggle?: (collapsed: boolean) => void;
+  /**
+   * Sets menu as active
+   */
+  active?: ActiveMenu;
+  /**
+   * Callback to be called on Menu click**(only if it's not disabled)**
+   */
+  onClick?: (menu: Menu) => void;
+  /**
+   * Set expanded state of `Navigation`**(applicable only for type: `vertical`)**
+   */
+  expanded?: boolean;
+  /**
+   * Shows footer**(applicable only for type: `vertical`)**
+   */
+  footer?: boolean;
+  /**
+   * Callback to be called on Menu click**(only if it's not disabled)**
+   */
+  onToggle?: (expanded: boolean) => void;
+  /**
+   * Only one SubMenu visible at a time**(applicable only for type: `vertical`)**
+   */
+  autoCollapse: boolean;
 }
 
+/**
+ * ####NOTE: Navigation(vertical) sets first subMenu(if present) active if the Navigation is collapsed.
+ */
 export const Navigation = (props: NavigationProps) => {
-  const [menuState, setMenuState] = useState<any>({});
-  const ref = useRef<HTMLDivElement>(null);
-  const [scroll, setScroll] = useState(false);
-  const { type, data = [], onClick, active, collapsed, onToggle } = props;
+  const {
+    type,
+    data,
+    active,
+    onClick,
+    expanded,
+    onToggle,
+    footer,
+    autoCollapse
+  } = props;
 
-  const isSubMenuActive = (isActive: string | undefined, subMenu: Menu[] | undefined) => {
-    if (!isActive || !subMenu || (subMenu && subMenu.length === 0)) {
-      return false;
+  const [menuState, setMenuState] = useState<Record<string, boolean>>({});
+
+  React.useEffect(() => {
+    if (props.active) {
+      const currMenu = getMenu(props.active);
+      if (currMenu) updateMenuState(currMenu, true);
     }
+  }, [props.active]);
 
-    let result = false;
-
-    for (const item of subMenu) {
-      if (item.id === active) {
-        result = true;
-        break;
+  const getMenu = (menu: ActiveMenu): Menu | null => {
+    for (const m of data) {
+      if ((menu.name && m.name === menu.name) || (menu.link && m.link === menu.link)) {
+        return m;
+      }
+      if (m.subMenu) {
+        const activeMenu = m.subMenu.find(sm => (
+          (menu.name && sm.name === menu.name) || (menu.link && sm.link === menu.link)
+        ));
+        if (activeMenu) return activeMenu;
       }
     }
-
-    return result;
+    return null;
   };
 
-  const updateMenuState = (id: string) => {
-    const menuData = { ...menuState };
-    menuData[id] = !menuData[id];
-    setMenuState(menuData);
+  const updateMenuState = (menu: ActiveMenu, val?: boolean) => {
+    const currMenu = getMenu(menu);
+    if (currMenu) {
+      const nameSplit = currMenu.name.split('.');
+      if (nameSplit.length > 1 || currMenu.subMenu) {
+        const name = nameSplit[0];
+        if (autoCollapse) {
+          setMenuState({ [name]: val || !menuState[name] });
+        } else {
+          const menuData = { ...menuState };
+          menuData[name] = val !== undefined ? val : !menuData[name];
+          setMenuState(menuData);
+        }
+      } else {
+        if (autoCollapse) {
+          if (!expanded) setMenuState({});
+        }
+      }
+    }
   };
 
-  useEffect(() => {
-    if (props.data && props.data.length > 0) {
-      props.data
-        .filter(menu => {
-          return menu.subMenu && menu.subMenu.length > 0;
-        })
-        .forEach(menu => {
-          if (isSubMenuActive(active, menu.subMenu)) {
-            updateMenuState(menu.id);
-          }
-        });
+  const onClickHandler = (menu: Menu) => {
+    if (!menu.disabled) {
+      if (menu.subMenu) {
+        if (!expanded) {
+          if (onClick) onClick(menu.subMenu[0]);
+        } else {
+          updateMenuState(menu);
+        }
+      } else {
+        if (onClick) onClick(menu);
+      }
     }
-    const scrollHeight = ref && ref.current ? ref.current.scrollHeight : 0;
-    const clientHeight = ref && ref.current ? ref.current.clientHeight : 0;
-    if (scrollHeight > clientHeight) {
-      setScroll(true);
+  };
+
+  const isActive = (menu: Menu): boolean => {
+    if (active) {
+      const currMenu = getMenu(active);
+      return !!currMenu
+        && (currMenu === menu
+          || currMenu.name.split('.')[0] === menu.name
+          || currMenu.name === menu.name
+          || (!!currMenu.link && currMenu.link === menu.link)
+        );
     }
-  }, [props.data, collapsed, ref]);
-
-  const classes = classNames({
-    Navigation: true,
-    [`Navigation-${type}`]: type
-  });
-
-  const footerClasses = classNames({
-    'Navigation-vertical-footer': true,
-    ['Navigation-vertical-footer--border']: scroll
-  });
-
-  const wrapperClasses = classNames({
-    Navigation: true,
-    [`Navigation-wrapper-${type}`]: type,
-    ['Navigation--collapsed']: collapsed
-  });
-
-  const truncateName = (name: string) => {
-    const limit = 25;
-    return name.length > 25 ? name.slice(0, limit).concat('...') : name;
+    return false;
   };
 
   const getHorizontalMenu = (menuData: Menu[]) => {
-    const list = menuData.map((item, index) => {
+    const list = menuData.map((menu, index) => {
       const menuClasses = classNames({
-        'Navigation-horizontal-menu': true,
-        ['Navigation-horizontal-menu--active']: active === item.id
+        'Navigation-menu': true,
+        [`Navigation-menu--${type}`]: type,
+        ['Navigation-menu--active']: isActive(menu)
       });
 
       return (
-        <div key={index} className={menuClasses} onClick={() => !item.disabled && onClick && onClick(item.id)}>
-          {item.icon && <Icon name={item.icon} size={16} appearance={item.disabled ? 'disabled' : 'default'} />}
-          <Text appearance={item.disabled ? 'subtle' : 'default'}>{truncateName(item.name)}</Text>
+        <div key={index} className={menuClasses} onClick={() => onClickHandler(menu)}>
+          {menu.icon && (
+            <Icon
+              className="mr-3"
+              name={menu.icon}
+              size={16}
+              appearance={menu.disabled ? 'disabled' : 'default'}
+            />
+          )}
+          <Text appearance={menu.disabled ? 'subtle' : 'default'}>{menu.label}</Text>
         </div>
       );
     });
@@ -109,81 +174,120 @@ export const Navigation = (props: NavigationProps) => {
     return list;
   };
 
-  const getverticalMenu = () => {
-    const list = data.map((item, index) => {
+  const getVerticalMenu = () => {
+    const list = data.map((menu, index) => {
       const menuClasses = classNames({
-        'Navigation-vertical-menu-wrapper': true,
-        ['Navigation-vertical-menu--active']:
-          active === item.id || (collapsed && item.subMenu && isSubMenuActive(active, item.subMenu)),
-        ['Navigation-vertical-menu-collapsed--active']:
-          (active === item.id && collapsed) || (collapsed && item.subMenu && isSubMenuActive(active, item.subMenu))
+        'Navigation-menu': true,
+        [`Navigation-menu--${type}`]: type,
+        ['Navigation-menu--active']: expanded && !menuState[menu.name] && isActive(menu)
+      });
+
+      const menuIconClasses = classNames({
+        'Navigation-menuIcon': true,
+        'Navigation-menuIcon--active': !expanded && isActive(menu)
       });
 
       return (
-        <div className={`${collapsed ? 'm-3' : 'mt-3 mb-3'}`} key={index}>
-          <div className={menuClasses}>
-            <div
-              className={`Navigation-vertical-menu ${collapsed ? 'Navigation-vertical-menu--collapsed' : ''}`}
-              onClick={() => !item.disabled && onClick && onClick(item.id)}
-            >
-              {item.icon && <Icon name={item.icon} size={16} appearance={item.disabled ? 'disabled' : 'default'} />}
-              {!collapsed && <Text appearance={item.disabled ? 'subtle' : 'default'}>{truncateName(item.name)}</Text>}
-            </div>
-            {!collapsed && (
-              <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
-                {item.subMenu && item.subMenu.length > 0 && (
+        <div key={index}>
+          <div
+            className={menuClasses}
+            onClick={() => onClickHandler(menu)}
+          >
+            {menu.icon && (
+              <Icon
+                className={menuIconClasses}
+                name={menu.icon}
+                size={16}
+                appearance={menu.disabled ? 'disabled' : 'default'}
+              />
+            )}
+            {expanded && (
+              <>
+                <span className="Navigation-menuLabel">
+                  <Text appearance={menu.disabled ? 'subtle' : 'default'}>{menu.label}</Text>
+                </span>
+                {menu.subMenu && menu.subMenu.length > 0 && (
                   <Icon
-                    onClick={() => updateMenuState(item.id)}
-                    name={menuState[item.id] ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
+                    className="mx-4"
+                    name={menuState[menu.name] ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
                     size={16}
-                    appearance={item.disabled ? 'disabled' : 'default'}
+                    appearance={menu.disabled ? 'disabled' : 'default'}
                   />
                 )}
-              </div>
+              </>
             )}
           </div>
-          {menuState[item.id] &&
-            item.subMenu &&
-            !collapsed &&
-            item.subMenu.map((menu, ind) => {
-              return (
-                <div
-                  className={`Navigation-vertical-menu Navigation-vertical-submenu ${
-                    collapsed ? 'Navigation-vertical-menu--collapsed' : ''
-                  } ${menu.id === active ? 'Navigation-vertical-menu--active' : ''}`}
-                  key={ind}
-                >
-                  <Text appearance={menu.disabled ? 'subtle' : 'default'}>{truncateName(menu.name)}</Text>
-                </div>
-              );
-            })}
+          <div className="Navigation-subMenu">
+            {menuState[menu.name] &&
+              menu.subMenu &&
+              expanded &&
+              menu.subMenu.map((subMenu, ind) => {
+                const subMenuClasses = classNames(menuClasses, {
+                  ['Navigation-menu--subMenu']: type,
+                  ['Navigation-menu--active']: isActive(subMenu)
+                });
+
+                return (
+                  <div
+                    key={ind}
+                    className={subMenuClasses}
+                    onClick={() => onClickHandler(subMenu)}
+                  >
+                    <Text appearance={subMenu.disabled ? 'subtle' : 'default'}>{subMenu.label}</Text>
+                  </div>
+                );
+              })}
+          </div>
         </div>
       );
     });
-    return list;
+
+    const footerClasses = classNames({
+      'Navigation-footer': true,
+      ['Navigation-footer--border']: true
+    });
+
+    return (
+      <>
+        <div className="Navigation-body">
+          {list}
+        </div>
+        {footer && (
+          <div className={footerClasses}>
+            <Icon
+              className="Navigation-menuIcon Navigation-menuIcon--footer"
+              name="menu_open"
+              size={16}
+              onClick={() => onToggle && onToggle(!expanded)}
+            />
+          </div>
+        )}
+      </>
+    );
   };
 
-  const menus = type === 'horizontal' ? getHorizontalMenu(data) : getverticalMenu();
+  const classes = classNames({
+    ['Navigation']: true,
+    [`Navigation--${type}`]: type,
+    ['Navigation--collapsed']: !expanded
+  });
 
   return (
-    <div className={wrapperClasses}>
-      <div className={classes} ref={ref}>
-        {menus}
-      </div>
-      {type === 'vertical' && (
-        <div className={footerClasses}>
-          <Icon name="menu_open" size={16} onClick={() => onToggle && onToggle(!collapsed)} />
-        </div>
-      )}
+    <div className={classes}>
+      {type === 'horizontal'
+        ? getHorizontalMenu(data)
+        : getVerticalMenu()
+      }
     </div>
   );
 };
 
 Navigation.defaultProps = {
   type: 'horizontal',
-  onClick: () => null,
-  onToggle: () => null,
-  collapsed: false
+  data: [],
+  expanded: true,
+  footer: false,
+  autoCollapse: true
 };
 
 export default Navigation;
