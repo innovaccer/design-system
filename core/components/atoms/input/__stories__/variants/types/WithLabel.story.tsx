@@ -45,7 +45,7 @@ export const withLabel = () => {
           onClear={action('on-clear')}
           required={true}
         />
-        <Caption className="mt-3">Pick a strong, unique password</Caption>
+        <Caption>Pick a strong, unique password</Caption>
         <br />
         <Text weight="strong">Caption Default</Text>
       </div>
@@ -60,7 +60,7 @@ export const withLabel = () => {
           required={true}
           error={true}
         />
-        <Caption className="mt-3" error={true}>Pick a strong, unique password</Caption>
+        <Caption error={true}>Pick a strong, unique password</Caption>
         <br />
         <Text weight="strong">Caption Error</Text>
       </div>

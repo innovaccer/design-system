@@ -14,27 +14,20 @@ export interface CaptionProps {
    * @default false
    */
   error?: boolean;
-  /**
-   * Adds classname to `Caption` component
-   */
-  className?: string;
 }
 
 export const Caption = (props: CaptionProps) => {
   const {
     error = false,
     children,
-    className,
   } = props;
 
   const classes = classNames({
     Caption: true,
-    [`${className}`]: className
   });
 
   const errorIconClass = classNames({
     ['Caption-icon']: true,
-    ['Caption-icon--error']: true
   });
 
   return (

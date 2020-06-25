@@ -14,6 +14,7 @@ export { Icon } from './components/atoms/icon';
 export { Input } from './components/atoms/input';
 export { InputMask } from './components/molecules/inputMask';
 export { Label } from './components/atoms/label';
+export { Caption } from './components/atoms/caption';
 export { Legend } from './components/atoms/legend';
 export { Link } from './components/atoms/link';
 export { Message } from './components/atoms/message';
