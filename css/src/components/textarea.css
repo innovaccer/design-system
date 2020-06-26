@@ -1,13 +1,15 @@
-.TextArea-textArea::-ms-clear {
+/* Textarea */
+
+.Textarea-textarea::-ms-clear {
   display: none;
 }
 
-.TextArea {
+.Textarea {
   display: flex;
   flex-direction: column;
 }
 
-.TextArea-textArea {
+.Textarea-textarea {
   min-height: var(--spacing-3);
   width: 100%;
   display: block;
@@ -24,35 +26,35 @@
   padding-right: var(--spacing-l);
 }
 
-.TextArea-textArea::placeholder {
+.Textarea-textarea::placeholder {
   color: var(--inverse-light);
 }
 
-.TextArea-textArea:focus-within {
+.Textarea-textarea:focus-within {
   outline: none;
   border: var(--spacing-xs) solid var(--primary);
 }
 
-.TextArea-textArea:disabled {
+.Textarea-textarea:disabled {
   color: var(--inverse-light);
   background: var(--secondary-lightest);
   border-color: var(--secondary-light);
 }
 
-.TextArea-textArea--error {
+.Textarea-textarea--error {
   border: var(--spacing-xs) solid var(--alert);
 }
 
-.TextArea-textArea--error:focus-within {
+.Textarea-textarea--error:focus-within {
   border: var(--spacing-xs) solid var(--alert);
   box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
-.TextArea-textArea::-webkit-scrollbar {
+.Textarea-textarea::-webkit-scrollbar {
   width: var(--spacing-2);
 }
 
-.TextArea-textArea::-webkit-scrollbar-thumb {
+.Textarea-textarea::-webkit-scrollbar-thumb {
   border: var(--spacing-m) solid rgba(0, 0, 0, 0);
   background-clip: padding-box;
   border-radius: var(--spacing);

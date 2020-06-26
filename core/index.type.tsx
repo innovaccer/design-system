@@ -28,6 +28,7 @@ export { StatusHintsProps } from './components/atoms/statusHints';
 export { SubheadingProps } from './components/atoms/subheading';
 export { SwitchProps } from './components/atoms/switch';
 export { TextProps } from './components/atoms/text';
+export { TextareaProps } from './components/atoms/textarea';
 export { ToastProps } from './components/atoms/toast';
 export { TooltipProps } from './components/atoms/tooltip';
 export { DialogProps } from './components/molecules/dialog';

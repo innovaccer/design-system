@@ -1,25 +1,29 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-export interface TextAreaProps {
+export interface TextareaProps {
   /**
-   * Name of the `TextArea`
+   * Name of the `Textarea`
    */
-  name: string;
+  name?: string;
   /**
-   * Value of the `TextArea`
+   * Value of the `Textarea`
    */
   value?: string;
   /**
-   * Text to display when TextArea is empty
+   * Adds default value to `Input`
+   */
+  defaultValue?: string;
+  /**
+   * Text to display when Textarea is empty
    */
   placeholder?: string;
   /**
-   * Number of rows in `TextArea`
+   * Number of rows in `Textarea`
    */
   rows?: number;
   /**
-   * Disables the `TextArea`, making it unable to type
+   * Disables the `Textarea`, making it unable to type
    *
    * **set to `true` if onChange is not provided**
    */
@@ -33,30 +37,31 @@ export interface TextAreaProps {
    */
   error?: boolean;
   /**
-   * Callback function when `TextArea` text changes
+   * Callback function when `Textarea` text changes
    */
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   /**
-   * Handler to be called when `TextArea` is clicked
+   * Handler to be called when `Textarea` is clicked
    */
   onClick?: (e: React.MouseEvent<HTMLTextAreaElement>) => void;
   /**
-   * Handler to be called when `TextArea` loses focus
+   * Handler to be called when `Textarea` loses focus
    */
   onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
   /**
-   * Handler to be called when `TextArea` gets focus
+   * Handler to be called when `Textarea` gets focus
    */
   onFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
 }
 
-export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>((props, ref) => {
+export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
   const {
-    disabled: propDisabled,
+    disabled,
     rows,
     name,
     placeholder,
     value,
+    defaultValue,
     required,
     error,
     onChange,
@@ -65,15 +70,13 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>((pr
     onFocus
   } = props;
 
-  const disabled = propDisabled || !onChange;
-
   const classes = classNames({
-    ['TextArea']: true,
+    ['Textarea']: true,
   });
 
-  const TextAreaClass = classNames({
-    ['TextArea-textArea']: true,
-    ['TextArea-textArea--error']: error
+  const TextareaClass = classNames({
+    ['Textarea-textarea']: true,
+    ['Textarea-textarea--error']: error
   });
 
   return (
@@ -83,8 +86,9 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>((pr
         name={name}
         rows={rows}
         placeholder={placeholder}
-        className={TextAreaClass}
+        className={TextareaClass}
         value={value}
+        defaultValue={defaultValue}
         required={required}
         disabled={disabled}
         onChange={onChange}
@@ -96,6 +100,6 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>((pr
   );
 });
 
-TextArea.displayName = 'TextArea';
+Textarea.displayName = 'Textarea';
 
-export default TextArea;
+export default Textarea;

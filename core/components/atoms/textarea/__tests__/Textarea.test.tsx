@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
-import TextArea, { TextAreaProps as Props } from '../TextArea';
+import Textarea, { TextareaProps as Props } from '../Textarea';
 
 const nameValue = 'name';
 const BooleanValue = [true, false];
 const FunctionValue = jest.fn();
 
-describe('TextArea component', () => {
+describe('Textarea component', () => {
   const mapper: Record<string, any> = {
     name: valueHelper(nameValue, { required: true }),
     disabled: valueHelper(BooleanValue, { required: true, iterate: true }),
@@ -19,7 +19,7 @@ describe('TextArea component', () => {
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
-        <TextArea
+        <Textarea
           {...attr}
         />
       );
