@@ -33,7 +33,6 @@ export const loadingType = () => {
               <Dropdown
                 options={storyOptions.slice(0, 5)}
                 loadingType={type as OptionType}
-                bulk={false}
                 loading={true}
               />
             </div>
@@ -42,7 +41,7 @@ export const loadingType = () => {
       }
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '150px' }}>
         <Text weight="strong">{'Checkboxes'}</Text><br />
-        <Dropdown options={storyOptions.slice(0, 5)} checkboxes={true} bulk={false} loading={true} />
+        <Dropdown options={storyOptions.slice(0, 5)} checkboxes={true} loading={true} />
       </div>
 
     </div>

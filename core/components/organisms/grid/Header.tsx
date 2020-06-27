@@ -51,7 +51,7 @@ export const Header = (props: HeaderProps) => {
     selectAll,
     searchTerm,
     updateSearchTerm,
-    dynamicColumn = true
+    // dynamicColumn = true
   } = props;
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
@@ -161,15 +161,15 @@ export const Header = (props: HeaderProps) => {
                       checkboxes={true}
                       showApplyButton={true}
                       inlineLabel={displayName}
-                      // icon={'filter_list'}
-                      selected={
-                        filterList[s.name]
-                          ? filterList[s.name].map(f => ({
-                            value: f,
-                            label: s.filters?.find(sf => sf.value === f)!.label || ''
-                          }))
-                          : []
-                      }
+                      icon={'filter_list'}
+                      // selected={
+                      //   filterList[s.name]
+                      //     ? filterList[s.name].map(f => ({
+                      //       value: f,
+                      //       label: s.filters?.find(sf => sf.value === f)!.label || ''
+                      //     }))
+                      //     : []
+                      // }
                       options={filters}
                       onChange={selected => onFilterChange(name, selected)}
                     />
@@ -226,31 +226,19 @@ export const Header = (props: HeaderProps) => {
           }
 
         </div>
-        {dynamicColumn && (
-          <div className="Header-hideColumns">
-            <Dropdown
-              triggerSize={'tiny'}
-              checkboxes={true}
-              showApplyButton={true}
-              selected={columnOptions.filter(o => o.selected)}
-              options={columnOptions}
-              checkedValuesOffset={0}
-              totalOptions={columnOptions.length}
-              customTrigger={triggerLabel => (
-                <Button
-                  size="tiny"
-                  appearance="transparent"
-                  icon="keyboard_arrow_down_filled"
-                  iconAlign="right"
-                >
-                  {triggerLabel ? triggerLabel : `Showing 0 of ${columnOptions.length} columns`}
-                </Button>
-              )}
-              onChangeTriggerLabel={(selected, totalOptions) => `Showing ${selected} of ${totalOptions} columns`}
-              onChange={selected => onHideColumn(selected)}
-            />
-          </div>
-        )}
+        <div className="Header-hideColumns">
+          <Dropdown
+            triggerSize={'tiny'}
+            checkboxes={true}
+            showApplyButton={true}
+            // selected={columnOptions.filter(o => o.selected)}
+            options={columnOptions}
+            checkedValuesOffset={0}
+            totalOptions={columnOptions.length}
+            onChangeTriggerLabel={(selected, totalOptions) => `Showing ${selected} of ${totalOptions} columns`}
+            onChange={selected => onHideColumn(selected)}
+          />
+        </div>
       </div>
     </div>
   );

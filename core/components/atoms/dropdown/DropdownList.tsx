@@ -1,70 +1,49 @@
 import * as React from 'react';
-import { debounce } from 'throttle-debounce';
-import { scrollIntoView } from './utility';
+import { scrollIntoView, _isEqual } from './utility';
 import Popover, { Position } from '@/components/molecules/popover';
-import DropdownButton from './DropdownButton';
-import ListCheckbox from './ListCheckbox';
-import Option, { OptionRendererProps } from './option';
+import DropdownButton, { TriggerProps } from './DropdownButton';
+import Checkbox from '@/components/atoms/checkbox';
+import Option, { OptionRendererProps, OptionSchema } from './option';
 import Button from '@/components/atoms/button';
 import Text from '@/components/atoms/text';
 import Input from '@/components/atoms/input';
 import classNames from 'classnames';
 import Loading from './Loading';
 
-export type Size = 'tiny' | 'regular';
 export type DropdownAlign = 'left' | 'right';
-type ExternalOptionType =
+export type OptionType =
   'DEFAULT' |
   'WITH_ICON' |
   'WITH_META' |
   'ICON_WITH_META';
-
-type CheckboxOptionType = 'WITH_CHECKBOX';
-type AllOptionType = ExternalOptionType | CheckboxOptionType;
-export type OptionType = ExternalOptionType;
 
 const DropdownAlignMapping = {
   right: 'bottom-start' as Position,
   left: 'bottom-end' as Position
 };
 
-export interface Option {
-  icon?: string;
-  subInfo?: string;
-  group?: string;
+export interface Selected {
   label: string;
   value: any;
-  optionType?: OptionType;
-  selectedGroup?: boolean;
 }
 
-export interface DropdownListProps extends OptionRendererProps {
-  /**
-   * Size of `Dropdown` trigger button
-   * @default "regular"
-   */
-  triggerSize?: Size;
+export interface SelectAll {
+  indeterminate: boolean;
+  checked: boolean;
+}
+
+type ListProps = TriggerProps & OptionRendererProps;
+
+export interface DropdownListProps extends ListProps {
   /**
    * Aligns the `Dropdown` left/right
    * @default "right"
    */
   dropdownAlign?: DropdownAlign;
   /**
-   * Material icon name
+   * Type of loaders
    */
-  icon?: string;
-  /**
-   * Option Type
-   */
-  loadingType?: AllOptionType;
-  /**
-   * String to show when no options are selected
-   */
-  placeholder?: string;
-  /**
-   * Label inside `Dropdown button`
-   */
-  inlineLabel?: string;
+  loadingType?: OptionType;
   /**
    * Display message when there is no result
    * @default "No result found"
@@ -81,14 +60,10 @@ export interface DropdownListProps extends OptionRendererProps {
    */
   footerLabel?: string;
   /**
-   * Determines if type of `dropdown` is a menu
-   * @default false
+   * Label for selected options group
+   * @default "Selected Items"
    */
-  menu?: boolean;
-  /**
-   * Determines if `dropdown` is disabled
-   */
-  disabled?: boolean;
+  selectedGroupLabel?: string;
   /**
    * Determines if user can type to search for options
    */
@@ -98,11 +73,6 @@ export interface DropdownListProps extends OptionRendererProps {
    */
   checkboxes?: boolean;
   /**
-   * Determines if dropdown closes on select
-   * @default true
-   */
-  closeOnSelect?: boolean;
-  /**
    * Updates the value of selected array after apply button is clicked, applicable in case of multiple selections
    */
   showApplyButton?: boolean;
@@ -110,11 +80,6 @@ export interface DropdownListProps extends OptionRendererProps {
    * Wrap label to next line if it is too long
    */
   optionsWrap?: boolean;
-  /**
-   * Number of selected options to be shown on `Dropdown button`
-   * @default 2
-   */
-  checkedValuesOffset?: number;
   /**
    * Total Options in database
    */
@@ -125,21 +90,14 @@ export interface DropdownListProps extends OptionRendererProps {
    */
   maxHeight?: number;
   /**
-   * Pre-selected options
-   */
-  selected?: Option[];
-  /**
    * Adds custom width to `Dropdown`
    */
   width?: number;
   /**
-   * Adds max width to `Dropdown`
+   * Number of loaders to be shown when loading is true
+   * @default 10
    */
-  maxWidth?: number;
-  /**
-   * Callback function to change the label of trigger button when options are selected
-   */
-  onChangeTriggerLabel?: (selected: number, totalOptions?: number) => string;
+  loadersLength?: number;
   /**
    * Adds custom trigger
    */
@@ -147,31 +105,26 @@ export interface DropdownListProps extends OptionRendererProps {
 }
 
 interface OptionsProps extends DropdownListProps {
-  listOptions: Option[];
-  bufferedOption?: Option;
+  listOptions: OptionSchema[];
   searchTerm: string;
-  bottomOptionsSliced?: boolean;
-  topOptionsSliced?: boolean;
+  triggerLabel: string;
   loadingOptions?: boolean;
-  searchInit?: boolean;
+  dropdownOpen?: boolean;
   async?: boolean;
-  limit: number;
-  slicedOptionsLength: number;
   remainingOptions: number;
-  offset: number;
-  optionsLength: number;
-  bottomScrollOffset?: number;
-  selectedAll?: any;
+  selected: OptionSchema[];
+  tempSelected: OptionSchema[];
+  previousSelected: OptionSchema[];
+  selectAll: SelectAll;
+  applyOptions: () => void;
+  cancelOptions: () => void;
+  toggleDropdown: () => void;
+  onClearOptions: () => void;
+  onSelectAll: (selectedAll: boolean) => void;
   onSearchChange?: (searchText: string) => void;
-  onScroll?: (direction: string) => void;
-  onChange?: (selected: any[] | any) => void;
-  onSelectAll?: (selectedAll: boolean) => void;
-  onRearrangeOptions?: (selected: any[], selectedLabels: string[]) => void;
-  renderOptionsFromTop: () => void;
+  onOptionSelect: (selected: any[] | any) => void;
+  onSelect: (option: OptionSchema, checked: boolean) => void;
 }
-
-let lastScrollTop = 0;
-const bottomScrollOffset = 64;
 
 export const usePrevious = (value: any) => {
   const ref = React.useRef();
@@ -185,36 +138,26 @@ const DropdownList = (props: OptionsProps) => {
   const {
     listOptions = [],
     dropdownAlign = 'right',
-    closeOnSelect = true,
+    loadingType = 'DEFAULT',
     optionsWrap = false,
-    parentCheckboxLabel = 'Select All',
     maxHeight = 200,
+    selected,
+    tempSelected,
+    previousSelected,
     remainingOptions,
-    totalOptions,
+    dropdownOpen,
     menu,
-    bufferedOption,
-    loadingOptions,
     searchTerm,
-    limit,
     maxWidth,
-    optionsLength,
     showApplyButton,
     checkboxes,
     search,
-    onChange,
     onSearchChange,
-    onScroll,
-    onSelectAll,
-    onRearrangeOptions,
     optionRenderer,
+    applyOptions,
+    cancelOptions,
+    toggleDropdown,
   } = props;
-
-  let {
-    loadingType = 'DEFAULT'
-  } = props;
-  if (checkboxes) {
-    loadingType = 'WITH_CHECKBOX';
-  }
 
   const dropdownRef = React.createRef<HTMLDivElement>();
   const triggerRef = React.createRef<HTMLDivElement>();
@@ -223,39 +166,10 @@ const DropdownList = (props: OptionsProps) => {
   const dropdownCancelButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownApplyButtonRef = React.createRef<HTMLButtonElement>();
 
-  const [selected, setSelected] = React.useState<any[]>([]);
-  const [selectedLabels, setSelectedLabels] = React.useState<string[]>([]);
-  const [buttonLabel, setButtonLabel] = React.useState<string | undefined>('');
-  const [dropdownOpen, setDropdownOpen] = React.useState<boolean | undefined>();
   const [popoverStyle, setPopoverStyle] = React.useState<React.CSSProperties>();
-  const [previousSelected, setPreviousSelected] = React.useState<any[]>([]);
-  const [previousSelectedLabels, setPreviousSelectedLabels] = React.useState<any[]>([]);
-  const [optionsApplied, setOptionsApplied] = React.useState(false);
-  const [loading, setLoading] = React.useState(false);
   const [cursor, setCursor] = React.useState(0);
 
-  const prevDropdownOpen = usePrevious(dropdownOpen);
-  const prevListOptions = usePrevious(listOptions);
   const width = props.width ? props.width : '100%';
-
-  const setSelectButtonLabel = (selectedArray: any[] = []) => {
-    const { checkedValuesOffset = 2 } = props;
-    const selectedLength = selectedArray.length;
-    let label = '';
-
-    if (selectedLength <= checkedValuesOffset) {
-      const labelArray: string[] = [];
-      selectedArray.forEach(selectedLabel => {
-        labelArray.push(selectedLabel);
-      });
-      label = labelArray.join(', ');
-    } else {
-      label = props.onChangeTriggerLabel ?
-        props.onChangeTriggerLabel(selectedLength, totalOptions) : `${selectedLength} selected`;
-    }
-    setSelectedLabels(selectedArray);
-    setButtonLabel(label);
-  };
 
   React.useEffect(() => {
     if (dropdownOpen) {
@@ -265,106 +179,39 @@ const DropdownList = (props: OptionsProps) => {
       const popperWrapperStyle = {
         width: menu ? popoverWidth : `${dropdownElement?.clientWidth}px`,
         minWidth: showApplyButton && checkboxes ? '176px' : '128px',
-        maxWidth: maxWidth ? maxWidth : '100%'
+        maxWidth: maxWidth ? maxWidth : '100%',
       };
 
       setPopoverStyle(popperWrapperStyle);
     }
   }, [dropdownOpen, checkboxes, showApplyButton]);
 
-  React.useEffect(() => {
-    if (props.selected) {
-      let selectedValuesArray = selected.slice();
-      let selectedLabelsArray = selectedLabels.slice();
-      props.selected.forEach(selectedOption => {
-        const { label, value } = selectedOption;
-        if (!selectedValuesArray.includes(value)) {
-          selectedValuesArray = selectedValuesArray.concat(value);
-          selectedLabelsArray = selectedLabelsArray.concat(label);
-        }
-      });
-      setPreviousSelected(selectedValuesArray);
-      setPreviousSelectedLabels(selectedLabelsArray);
-      setSelected(selectedValuesArray);
-      setSelectButtonLabel(selectedLabelsArray);
-    }
-  }, [JSON.stringify(props.selected)]);
-
-  React.useEffect(() => {
-    if (props.selectedAll) {
-      const { label, value } = props.selectedAll;
-      if (label && value) {
-        let selectedLabelsCopy = selectedLabels.slice();
-        let selectedValue = selected.slice();
-        selectedLabelsCopy = label;
-        selectedValue = value;
-        setSelected(selectedValue);
-        setSelectButtonLabel(selectedLabelsCopy);
-      }
-    }
-  }, [props.selectedAll]);
-
-  React.useEffect(() => {
-    if (props.bottomOptionsSliced && dropdownRef.current) {
-      const className = '.Option-wrapper';
-      const element = document.querySelectorAll(className);
-      const index = element.length - limit + props.slicedOptionsLength;
-      const marker = element[index] as HTMLElement;
-      const updatedScrollTop = marker.offsetTop - (maxHeight);
-
-      dropdownRef.current.scrollTop = updatedScrollTop;
-      lastScrollTop = updatedScrollTop;
-      setCursor(cursor - limit + props.slicedOptionsLength);
-    }
-  }, [props.bottomOptionsSliced]);
-
-  React.useEffect(() => {
-    if (props.topOptionsSliced && dropdownRef.current) {
-      const className = '.Option-wrapper';
-      const element = document.querySelectorAll(className);
-      const index = limit - props.slicedOptionsLength;
-      const marker = element[index] as HTMLElement;
-
-      dropdownRef.current.scrollTop = marker.offsetTop;
-      lastScrollTop = marker.offsetTop;
-      setCursor(limit - props.slicedOptionsLength + 1);
-    }
-  }, [props.topOptionsSliced]);
-
-  React.useEffect(() => {
-    const rearrangeCondition = dropdownOpen && props.async && checkboxes;
-    if (rearrangeCondition && onRearrangeOptions) onRearrangeOptions(selected, selectedLabels);
-  }, [dropdownOpen]);
-
-  React.useEffect(() => {
-    const rearrangeCondition = !searchTerm && props.searchInit && props.async && checkboxes;
-    if (rearrangeCondition && onRearrangeOptions) onRearrangeOptions(selected, selectedLabels);
-  }, [searchTerm, props.searchInit]);
-
   const {
     triggerSize = 'regular',
     placeholder,
     icon,
+    error,
     disabled,
     inlineLabel,
+    triggerLabel
   } = props;
 
-  const CustomTrigger = props.customTrigger ? props.customTrigger(buttonLabel) : <></>;
+  const CustomTrigger = props.customTrigger ? props.customTrigger(triggerLabel ? triggerLabel : placeholder) : <></>;
   const NewCustomTrigger = React.cloneElement(CustomTrigger, { tabindex: 0, ref: dropdownTriggerRef });
 
   const trigger = props.customTrigger ? NewCustomTrigger : (
     <DropdownButton
       placeholder={placeholder}
-      size={triggerSize}
+      triggerSize={triggerSize}
       icon={icon}
       disabled={disabled}
       inlineLabel={inlineLabel}
-      width={width}
       maxWidth={maxWidth}
       menu={menu}
+      error={error}
       ref={dropdownTriggerRef}
     >
-      {buttonLabel}
+      {triggerLabel}
     </DropdownButton>
   );
 
@@ -378,9 +225,9 @@ const DropdownList = (props: OptionsProps) => {
     overflowX: 'hidden',
   };
 
-  const getDropdownClass = (index: number, currentGroup: string | undefined, isGroup: boolean) => {
+  const getDropdownClass = (index: number, isGroup: boolean) => {
     const Dropdown = classNames({
-      ['Dropdown--border']: currentGroup !== undefined && isGroup && index !== 0,
+      ['Dropdown--border']: isGroup && index !== 0,
     });
 
     return Dropdown;
@@ -397,72 +244,32 @@ const DropdownList = (props: OptionsProps) => {
     ['Dropdown-wrapper--wrap']: optionsWrap,
   });
 
-  const closeDropdownPopper = (open: boolean) => {
-    setDropdownOpen(open);
-    dropdownTriggerRef.current?.focus();
-  };
-
-  const onToggleDropdown = () => {
-    if (!dropdownOpen) {
-      props.renderOptionsFromTop();
-    }
-    if (!disabled) closeDropdownPopper(!dropdownOpen);
-    if (!(optionsApplied || !showApplyButton)) {
-      setSelected(previousSelected);
-      setSelectButtonLabel(previousSelectedLabels);
-    }
-    setCursor(0);
-    setOptionsApplied(false);
-    if (search || props.async) searchClearHandler();
-  };
-
-  const debounceClear = debounce(400, () => {
-    if (onRearrangeOptions) onRearrangeOptions([], []);
-    setLoading(false);
+  const SelectAllClass = classNames({
+    ['Option']: true,
+    ['Option-wrapper']: true,
+    ['Option--top']: true,
+    ['Option--active']: cursor === 0
   });
 
-  const onClearOptions = () => {
-    setSelected([]);
-    setSelectButtonLabel([]);
-    setLoading(true);
-    debounceClear();
-    if (onChange && !showApplyButton) onChange([]);
+  const onToggleDropdown = () => {
+    toggleDropdown();
+    if (!disabled) dropdownTriggerRef.current?.focus();
+    setCursor(0);
   };
 
   const onCancelOptions = () => {
-    setSelected(previousSelected);
-    setSelectedLabels(previousSelectedLabels);
-    setSelectButtonLabel(previousSelectedLabels);
-    closeDropdownPopper(false);
+    cancelOptions();
+    dropdownTriggerRef.current?.focus();
   };
 
   const onApplyOptions = () => {
-    setPreviousSelected(selected);
-    setPreviousSelectedLabels(selectedLabels);
-    setOptionsApplied(true);
-    closeDropdownPopper(false);
-    if (onChange) onChange(selected);
-  };
-
-  const checkboxChangeHandler = (selectedArray: number[], selectedLabelsArray: string[], parentChecked: boolean) => {
-    if ((selectedArray.length === 0 || selectedArray.length === optionsLength) || !parentChecked) {
-      setSelected(selectedArray);
-      setSelectButtonLabel(selectedLabelsArray);
-    }
-    if (parentChecked) {
-      if (onSelectAll) onSelectAll(selectedArray.length > 0);
-    } else {
-      if (onChange && !showApplyButton) onChange(selectedArray);
-    }
+    applyOptions();
+    dropdownTriggerRef.current?.focus();
   };
 
   const optionClickHandler = (item: any) => {
-    const { label, value } = item;
-    setSelectedLabels([label]);
-    setButtonLabel(label);
-    setSelected([value]);
-    closeDropdownPopper(!closeOnSelect);
-    if (onChange) onChange(value);
+    props.onOptionSelect(item);
+    dropdownTriggerRef.current?.focus();
   };
 
   const searchClearHandler = () => {
@@ -471,28 +278,6 @@ const DropdownList = (props: OptionsProps) => {
 
   const searchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (onSearchChange) onSearchChange(event.target.value);
-  };
-
-  const onScrollDropdown = (direction: string, scrollTop: number) => {
-    lastScrollTop = scrollTop;
-    if (onScroll) {
-      onScroll(direction);
-    }
-  };
-
-  const handleMenuScroll = (e: React.SyntheticEvent<HTMLDivElement>) => {
-    const element = e.target as HTMLDivElement;
-    const scrollTop = element.scrollTop;
-    if (scrollTop <= lastScrollTop) {
-      if (scrollTop <= bottomScrollOffset) onScrollDropdown('up', scrollTop);
-    } else {
-      const scrollContainerBottomPosition = Math.round(element.scrollTop + element.clientHeight);
-      const scrollPosition = Math.round(element.scrollHeight - (bottomScrollOffset));
-
-      if (scrollPosition <= scrollContainerBottomPosition) {
-        onScrollDropdown('down', scrollTop);
-      }
-    }
   };
 
   const updateActiveOption = (index: number, parentCheckbox?: boolean) => {
@@ -510,6 +295,7 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const renderGroups = (group: string, selectedGroup?: boolean) => {
+    const { onClearOptions } = props;
     return (
       <div className={'Dropdown-subinfo'}>
         <Text small={true} appearance={'subtle'}>{group}</Text>
@@ -523,7 +309,7 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const renderApplyButton = () => {
-    const disable = JSON.stringify(previousSelectedLabels) === JSON.stringify(selected);
+    const disable = _isEqual(previousSelected, tempSelected);
     return (
       <div className={'Dropdown-buttonWrapper'}>
         <Button
@@ -560,6 +346,7 @@ const DropdownList = (props: OptionsProps) => {
           onChange={searchHandler}
           onClear={searchClearHandler}
           ref={dropdownInputRef}
+          autocomplete={'off'}
         />
       </div>
     );
@@ -567,67 +354,45 @@ const DropdownList = (props: OptionsProps) => {
 
   const renderLoading = (loadersLength: number) => {
     const arr = Array(loadersLength).fill('Loading');
+    const type = checkboxes ? 'WITH_CHECKBOX' : loadingType;
     return (
       arr.map((option, ind) => {
         return (
           <div className="Option-loading" key={`${option}-${ind}`}>
-            <Loading loadingType={loadingType} />
+            <Loading loadingType={type} />
           </div>
         );
       })
     );
   };
 
-  const renderCheckboxes = () => {
-    const list: any[] = [];
-    const updatedChecked: boolean[] = [];
-    const parentChecked = selected.length === optionsLength;
-    const showParentCheckbox = searchTerm === '' && !props.async;
-    const selectedCondition = prevDropdownOpen !== dropdownOpen || props.searchInit || prevListOptions !== listOptions;
-    const parentLabel = parentCheckboxLabel.trim() ? parentCheckboxLabel.trim() : 'Select All';
-    const showGroups = props.async;
+  const renderSelectAll = () => {
+    const {
+      parentCheckboxLabel = 'Select All',
+      selectAll,
+      onSelectAll
+    } = props;
 
-    listOptions.forEach(option => {
-      const { label, value, group, selectedGroup } = option;
-      let checkedValue = false;
-
-      if (selectedCondition && selected && selected.length > 0) {
-        const updatedVal = JSON.stringify(value);
-        checkedValue = (selected.findIndex(item => JSON.stringify(item) === updatedVal) !== -1) ? true : false;
-        updatedChecked.push(checkedValue);
-      }
-      list.push({ label, value, group, selectedGroup, checked: checkedValue });
-    });
-
+    const label = parentCheckboxLabel.trim() ? parentCheckboxLabel.trim() : 'Select All';
     return (
-      <ListCheckbox
-        label={parentLabel}
-        cursor={cursor}
-        onChange={checkboxChangeHandler}
-        checked={parentChecked}
-        renderFooter={renderFooter}
-        renderGroups={renderGroups}
-        remainingOptions={remainingOptions}
-        bufferedOption={bufferedOption}
-        showGroups={showGroups}
-        list={list}
-        updatedSelectedArray={updatedChecked}
-        style={dropdownStyle}
-        ref={dropdownRef}
-        selected={selected}
-        selectedLabels={selectedLabels}
-        optionsLength={optionsLength}
-        showParentCheckbox={showParentCheckbox}
-        optionRenderer={optionRenderer}
-        updateActiveOption={updateActiveOption}
-      />
+      <div className={SelectAllClass} onMouseEnter={_e => updateActiveOption(0, true)}>
+        <Checkbox
+          label={label}
+          onChange={onSelectAll}
+          checked={selectAll.checked}
+          indeterminate={selectAll.indeterminate}
+          tabIndex={-1}
+        />
+      </div>
     );
   };
 
-  const renderOptions = (item: Option, index: number) => {
-    const active = index === cursor;
-    const top = index === 0;
-    const bottom = index + 1 === listOptions.length && !(props.async && remainingOptions > 0);
+  const renderOptions = (item: OptionSchema, index: number) => {
+    const selectAllPresent = checkboxes && remainingOptions === 0 && searchTerm === '';
+    const active = selectAllPresent ? index + 1 === cursor : index === cursor;
+    const top = index === 0 && !selectAllPresent;
+    const bottom = index + 1 === (listOptions.length + selected.length) && !(props.async && remainingOptions > 0);
+    const optionIsSelected = tempSelected.findIndex(option => option.value === item.value) !== -1;
 
     return (
       <Option
@@ -635,30 +400,35 @@ const DropdownList = (props: OptionsProps) => {
         optionIsTop={top}
         optionIsBottom={bottom}
         optionsWrap={optionsWrap}
-        selected={selected[0] === item.value}
+        selected={optionIsSelected}
         index={index}
         onClick={() => optionClickHandler(item)}
         updateActiveOption={updateActiveOption}
         optionRenderer={optionRenderer}
         active={active}
+        checkboxes={checkboxes}
+        menu={menu}
+        onChange={c => props.onSelect(item, c)}
+        optionType={props.optionType}
       />
     );
   };
 
   const renderDropdownSection = () => {
-    if (loadingOptions || loading) {
+    const { selectedGroupLabel = 'Selected Items', loadersLength = 10, loadingOptions } = props;
+    if (loadersLength && loadingOptions) {
       return (
         <div className={'Dropdown-loading'}>
           <div className="Dropdown-scroller" style={dropdownStyle}>
             {
-              renderLoading(limit)
+              renderLoading(loadersLength)
             }
           </div>
         </div>
       );
     }
 
-    if (listOptions.length === 0 && !(loading || loadingOptions)) {
+    if (listOptions.length === 0 && !loadingOptions) {
       const { searchResultMessage = 'No result found' } = props;
       return (
         <div className={'Dropdown-errorWrapper'}>
@@ -671,27 +441,32 @@ const DropdownList = (props: OptionsProps) => {
 
     return (
       <div className={dropdownWrapperClass}>
-        {checkboxes && renderCheckboxes()}
-        {!checkboxes && (
-          <div className="Dropdown-scroller" style={dropdownStyle} ref={dropdownRef}>
-            {
-              listOptions.map((option, index) => {
-                const prevGroup = index > 0 ?
-                  listOptions[index - 1].group : bufferedOption ? bufferedOption.group : undefined;
-                const currentGroup = option.group;
-                const isGroup = prevGroup !== currentGroup;
+        {checkboxes && remainingOptions === 0 && searchTerm === '' && renderSelectAll()}
+        <div className="Dropdown-scroller" style={dropdownStyle} ref={dropdownRef}>
+          {selected.length > 0 && renderGroups(selectedGroupLabel, true)}
+          {
+            selected.map((option, index) =>
+              renderOptions(option, index)
+            )
+          }
+          {
+            listOptions.map((option, index) => {
+              const prevGroup = index > 0 ?
+                listOptions[index - 1].group : selected.length ? selectedGroupLabel : undefined;
+              const currentGroup = option.group;
+              const isGroup = prevGroup !== currentGroup;
+              const updatedIndex = index + selected.length;
 
-                return (
-                  <div className={getDropdownClass(index + props.offset, currentGroup, isGroup)} key={index}>
-                    {isGroup && currentGroup && renderGroups(currentGroup)}
-                    {renderOptions(option, index)}
-                  </div>
-                );
-              })
-            }
-            {props.async && remainingOptions > 0 && renderFooter()}
-          </div>
-        )}
+              return (
+                <div className={getDropdownClass(updatedIndex, isGroup)} key={index}>
+                  {isGroup && currentGroup && renderGroups(currentGroup)}
+                  {renderOptions(option, updatedIndex)}
+                </div>
+              );
+            })
+          }
+          {props.async && remainingOptions > 0 && renderFooter()}
+        </div>
       </div>
     );
   };
@@ -774,7 +549,6 @@ const DropdownList = (props: OptionsProps) => {
     <div
       className={dropdownClass}
       ref={triggerRef}
-      onScroll={handleMenuScroll}
       style={dropdownWrapperStyle}
       onKeyDown={onkeydown}
     >

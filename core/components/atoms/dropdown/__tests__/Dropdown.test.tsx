@@ -19,17 +19,6 @@ for (let i = 1; i <= 10; i++) {
   });
 }
 
-const selected = [
-  {
-    label: 'Option 1',
-    value: 'Option 1',
-  },
-  {
-    label: 'Option 3',
-    value: 'Option 3',
-  }
-];
-
 const FunctionValue = jest.fn();
 
 describe('Dropdown component', () => {
@@ -259,26 +248,6 @@ describe('Dropdown component', () => {
     options: valueHelper(storyOptions, { required: true }),
     loadingType: valueHelper(loadingType, { required: true, iterate: true }),
     loading: valueHelper(true, { required: true }),
-    onChange: valueHelper(FunctionValue, { required: true }),
-  };
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const tree = shallow(
-        <Dropdown {...attr} />
-      );
-      expect(tree).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
-
-describe('Dropdown component', () => {
-  const mapper: Record<string, any> = {
-    options: valueHelper(storyOptions, { required: true }),
-    selected: valueHelper(selected, { required: true }),
     onChange: valueHelper(FunctionValue, { required: true }),
   };
   const testFunc = (props: Record<string, any>): void => {

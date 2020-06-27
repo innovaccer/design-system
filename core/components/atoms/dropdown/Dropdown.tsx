@@ -1,60 +1,23 @@
 import * as React from 'react';
 import { debounce } from 'throttle-debounce';
-import DropdownList, { DropdownListProps, Option } from './DropdownList';
-import { getOptions, getValuesFromSelectedObj, getLabelsFromSelectedObj } from './utility';
+import DropdownList, { DropdownListProps, SelectAll, Selected } from './DropdownList';
+import { OptionSchema as Option } from './option';
+import { getSearchedOptions, getSelectAll, _isEqual } from './utility';
 
-interface OptionType {
-  offset: number;
-  length: number;
-  slicedOptions: any[];
+type fetchOptionsFnc = (searchTerm: string) => Promise<{
+  count: number;
+  options: Option[];
+}>;
+
+interface SyncProps {
+  options?: Option[];
+  loading?: boolean;
 }
 
-export const useIsMount = () => {
-  const isMountRef = React.useRef(true);
-  React.useEffect(() => {
-    isMountRef.current = false;
-  }, []);
-  return isMountRef.current;
-};
-
-export interface DropdownProps extends DropdownListProps {
-  /**
-   * Number of options to be added when scroller hits top/bottom
-   * @default 10
-   */
-  limit?: number;
-  /**
-   * Shows loaders when waiting for options
-   */
-  loading?: boolean;
-  /**
-   * <pre className="DocPage-codeBlock">
-   * if options in database are <= 50, `bulk` = false
-   * if options in database are > 50, `bulk` = true
-   * </pre>
-   */
-  bulk?: boolean;
-  /**
-   * Options to render inside `Dropdown`
-   * <pre className="DocPage-codeBlock">
-   * Option: {
-   *    icon?: string;
-   *    subInfo?: string;
-   *    label: string;
-   *    value: any;
-   *    group?: string;
-   * }
-   * </pre>
-   */
-  options?: Option[];
-  /**
-   * Label for selected options group
-   * @default "Selected Items"
-   */
-  selectedGroupLabel?: string;
+interface AsyncProps {
   /**
    * Callback function when async is true
-   * <pre className="DocPage-codeBlock">
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * Promise object to be returned:
    * {
    *    options: Option[]
@@ -63,264 +26,433 @@ export interface DropdownProps extends DropdownListProps {
    * </pre>
    *
    */
-  fetchOptions?: (searchTerm: string, limit: number) => Promise<OptionType>;
+  fetchOptions?: fetchOptionsFnc;
+}
+
+interface SharedDropdownProps extends DropdownListProps {
+  /**
+   * Unique name of `dropdown`
+   */
+  name?: string | number;
+  /**
+   * Number of selected options to be shown on `Dropdown button`
+   * @default 2
+   */
+  checkedValuesOffset?: number;
+  /**
+   * Length of total options in Dropdown
+   */
+  totalOptions?: number;
+  /**
+   * Determines if dropdown closes on select
+   * @default true
+   */
+  closeOnSelect?: boolean;
+  /**
+   * Callback function to change the label of trigger button when options are selected
+   */
+  onChangeTriggerLabel?: (selected: number, totalOptions?: number) => string;
   /**
    * Callback function called when user selects an option
    */
-  onChange?: (selected: any[] | any) => void;
+  onChange?: (selected: any[] | any, name?: string | number) => void;
+  /**
+   * Callback function called when dropdown is closed
+   */
+  onClose?: (selected: any[], name?: string | number) => void;
 }
 
-interface Selected {
-  label: string[];
-  value: any[];
+type SyncDropdownProps = SyncProps & SharedDropdownProps;
+type AsyncDropdownProps = AsyncProps & SharedDropdownProps;
+
+export type DropdownProps = (AsyncDropdownProps & SyncDropdownProps);
+
+interface DropdownState {
+  async: boolean;
+  options: Option[];
+  loading?: boolean;
+  optionsApplied: boolean;
+  open?: boolean;
+  searchTerm: string;
+  optionsLength: number;
+  searchedOptionsLength: number;
+  triggerLabel: string;
+  selectAll: SelectAll;
+  selected: Option[];
+  tempSelected: Option[];
+  previousSelected: Option[];
 }
 
-const asyncLimit = 50;
+const bulk = 50;
 
-export const Dropdown = (props: DropdownProps) => {
-  const {
-    limit = 10,
-    options: dropdownItems = [],
-    selectedGroupLabel = 'Selected Items',
-    bulk,
-    onChange,
-    fetchOptions,
-    ...rest
-  } = props;
+export class Dropdown extends React.Component<DropdownProps, DropdownState> {
+  constructor(props: DropdownProps) {
+    super(props);
 
-  const [topOffset, setTopOffset] = React.useState(-1);
-  const [bottomOffset, setBottomOffset] = React.useState(-1);
-  const [options, setOptions] = React.useState<Option[]>([]);
-  const [dropdownOptions, setDropdownOptions] = React.useState(dropdownItems);
-  const [shuffledOptions, setShuffledOptions] = React.useState(dropdownItems);
-  const [topOptionsSliced, setTopOptionsSliced] = React.useState(false);
-  const [bottomOptionsSliced, setBottomOptionsSliced] = React.useState(false);
-  const [searchTerm, setSearchTerm] = React.useState('');
-  const [slicedOptionLength, setSlicedOptionLength] = React.useState(0);
-  const [async, setAsync] = React.useState(bulk);
-  const [loading, setLoading] = React.useState(props.loading);
-  const [optionsLength, setOptionsLength] = React.useState(dropdownItems.length);
-  const [bufferedOption, setBufferedOption] = React.useState<Option>();
-  const [searchInit, setSearchInit] = React.useState(false);
-  const [selectedAll, setSelectedAll] = React.useState<Selected>();
+    const {
+      totalOptions,
+      loading,
+      options = [],
+    } = props;
 
-  const isInitialRender = useIsMount();
+    const optionsLength = totalOptions ? totalOptions : options.length;
+    const async = 'fetchOptions' in this.props
+      || optionsLength > bulk;
 
-  const debounceSearch = React.useCallback(debounce(300, (search: string, updatedAsync?: boolean) => {
-    if (updatedAsync) {
-      const emptyBuffer: Option = { value: '', label: '' };
-      setBufferedOption(emptyBuffer);
-      getFilteredOptions(search);
-      setTopOffset(0);
-      setBottomOffset(0);
-    } else {
-      setLoading(false);
-      renderOptionsFromTop(search);
+    const selectedGroup = !async ? this.getSelectedOptions(options, true) : [];
+
+    this.state = {
+      async,
+      optionsLength,
+      searchedOptionsLength: optionsLength,
+      optionsApplied: false,
+      options: options || [],
+      loading: async ? true : loading,
+      searchTerm: '',
+      selected: [],
+      tempSelected: selectedGroup,
+      previousSelected: selectedGroup,
+      triggerLabel: this.updateTriggerLabel(selectedGroup, optionsLength),
+      selectAll: getSelectAll(selectedGroup, optionsLength)
+    };
+
+    if (async) this.updateOptions(true);
+  }
+
+  static defaultProps = {
+    closeOnSelect: true,
+    checkedValuesOffset: 2,
+  };
+
+  componentDidUpdate(prevProps: DropdownProps, prevState: DropdownState) {
+    if (!this.state.async) {
+      const { loading, options = [] } = this.props;
+      if (prevProps.loading !== loading || prevProps.options !== options) {
+        if (options.length > bulk) {
+          this.updateOptions(true, true);
+        } else {
+          const selectedGroup = this.getSelectedOptions(options, true);
+          this.setState({
+            ...this.state,
+            options,
+            loading,
+            tempSelected: selectedGroup,
+            previousSelected: selectedGroup,
+            optionsLength: options.length,
+            searchedOptionsLength: options.length,
+            triggerLabel: this.updateTriggerLabel(selectedGroup),
+            selectAll: getSelectAll(selectedGroup, this.state.optionsLength)
+          });
+        }
+      }
     }
-  }), []);
 
-  const getFilteredOptions = (search: string = '') => {
-    if (fetchOptions) {
-      fetchOptions(search, asyncLimit)
-        .then((res: any) => {
-          const { options: searchResult, count } = res;
-          const searchOptions = searchResult.slice(0, asyncLimit);
-          setLoading(false);
-          setDropdownOptions(searchOptions);
-          setShuffledOptions(searchOptions);
-          setOptionsLength(count);
-          setSearchInit(true);
+    if (prevState.searchTerm !== this.state.searchTerm) {
+      this.debounceSearch();
+    }
+  }
+
+  fetchOptionsFn = (searchTerm: string) => {
+    const { options } = this.props;
+    const filteredOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
+    return new Promise<any>(resolve => {
+      resolve({
+        options: filteredOptions,
+        count: filteredOptions.length,
+      });
+    });
+  }
+
+  getUnSelectedOptions = (options: Option[], init: boolean) => {
+    if (options.length) {
+      const unSelectedGroup = options.filter(option => (
+        init ? !option.selected : this.state.tempSelected.findIndex(item => item.value === option.value) === -1
+      ));
+
+      return unSelectedGroup;
+    }
+    return options;
+  }
+
+  getSelectedOptions = (options: Option[], init: boolean) => {
+    if (options.length) {
+      const selectedGroup = init ? options.filter(option => option.selected) : this.state.tempSelected;
+      return selectedGroup;
+    }
+    return [];
+  }
+
+  updateOptions = (init: boolean, async?: boolean) => {
+    const {
+      searchTerm,
+      tempSelected,
+      optionsLength,
+      previousSelected,
+    } = this.state;
+
+    const updatedAsync = async === undefined ? this.state.async : async;
+    const { fetchOptions, checkboxes } = this.props;
+    const fetchFn = fetchOptions ? fetchOptions : this.fetchOptionsFn;
+
+    fetchFn(searchTerm)
+      .then((res: any) => {
+        const { options, count } = res;
+
+        const unSelectedGroup = checkboxes && searchTerm === '' && updatedAsync ?
+          this.getUnSelectedOptions(options, init) : options;
+        const selectedGroup = searchTerm === '' && updatedAsync ?
+          this.getSelectedOptions(options, init) : [];
+
+        this.setState({
+          ...this.state,
+          loading: false,
+          async: updatedAsync,
+          searchedOptionsLength: count,
+          options: unSelectedGroup.slice(0, bulk),
+          selected: checkboxes ? selectedGroup : [],
+          optionsLength: searchTerm === '' ? count : optionsLength,
+          tempSelected: init ? selectedGroup : tempSelected,
+          previousSelected: init ? selectedGroup : previousSelected,
+          triggerLabel: this.updateTriggerLabel(init ? selectedGroup : tempSelected),
         });
-    }
-  };
+      });
+  }
 
-  const setVirtualization = (
-    offset: number,
-    optionsLimit: number,
-    direction?: string,
-    search: string = searchTerm
-  ) => {
-    const bufferedOptionPresent = direction === 'up' && !(offset < 0);
-    const updatedLimit = direction === 'up' ? (offset < 0 ? optionsLimit : optionsLimit + 1) : optionsLimit;
-    const updatedOffset = direction === 'up' ? (offset < 0 ? offset + 1 : offset) : offset;
-
-    getOptions(updatedOffset, updatedLimit, search, dropdownOptions).then((res: any) => {
-      if (updatedOffset !== undefined && direction !== undefined) {
-        const { options: slicedOptions } = res;
-        const len = limit - slicedOptions.length;
-        const slicedLength = bufferedOptionPresent ? len + 1 : len;
-        setSlicedOptionLength(slicedLength);
-        updateOptionsOnScroll(slicedOptions, updatedOffset, direction, slicedLength, bufferedOptionPresent);
-      } else {
-        setSlicedOptionLength(0);
-        setOptions(res.options);
-        setBottomOffset(res.offset);
-        if (!async) setOptionsLength(res.length);
-      }
+  updateSearchTerm = (search: string) => {
+    this.setState({
+      ...this.state,
+      loading: true,
+      searchTerm: search
     });
-  };
+  }
 
-  const renderOptionsFromTop = (search: string = searchTerm) => {
-    if (!loading) {
-      const emptyBuffer: Option = { value: '', label: '' };
-      setBufferedOption(emptyBuffer);
-      setVirtualization(0, limit, undefined, search);
-      setTopOffset(0);
-      setBottomOffset(0);
-    }
-  };
+  onOptionSelect = (selectedArray: Option) => {
+    const { onChange, closeOnSelect } = this.props;
+    const { label } = selectedArray;
 
-  React.useEffect(() => {
-    if (!isInitialRender) setAsync(bulk);
-  }, [bulk]);
+    this.setState({
+      ...this.state,
+      tempSelected: [selectedArray],
+      triggerLabel: label,
+      open: !closeOnSelect
+    });
+    if (onChange) onChange(selectedArray.value, name);
+  }
 
-  React.useEffect(() => {
-    if (!isInitialRender) {
-      if (async) {
-        setLoading(true);
-        getFilteredOptions();
-      } else {
-        setDropdownOptions(dropdownItems);
-        setOptionsLength(dropdownItems.length);
-      }
-    }
-  }, [props.checkboxes]);
+  updateTriggerLabel = (selectedArray: Selected[] = [], totalOptions?: number) => {
+    const selectedLength = selectedArray.length;
+    if (selectedLength === 0) return '';
 
-  React.useEffect(() => {
-    const updatedAsync = bulk === undefined ? dropdownItems.length > 50 : async;
-    if (bulk === undefined) setAsync(updatedAsync);
-    if (updatedAsync) {
-      setLoading(true);
-      getFilteredOptions();
+    const { checkedValuesOffset, onChangeTriggerLabel } = this.props;
+    const optionsLength = this.state ? this.state.optionsLength : totalOptions;
+    let label = '';
+
+    if (checkedValuesOffset !== undefined && selectedLength <= checkedValuesOffset) {
+      label = selectedArray.map(option => {
+        return option.label;
+      }).join(', ');
     } else {
-      setDropdownOptions(dropdownItems);
-      setOptionsLength(dropdownItems.length);
+      label = onChangeTriggerLabel ?
+        onChangeTriggerLabel(selectedLength, optionsLength) : `${selectedLength} selected`;
     }
-  }, [JSON.stringify(props.options)]);
+    return label;
+  }
 
-  React.useEffect(() => {
-    if (!isInitialRender) renderOptionsFromTop();
-  }, [JSON.stringify(dropdownOptions), limit]);
+  onSelect = (option: Option, checked: boolean) => {
+    const {
+      tempSelected,
+      optionsLength
+    } = this.state;
 
-  React.useEffect(() => {
-    if (!isInitialRender) {
-      debounceSearch(searchTerm, async);
+    const {
+      onChange,
+      showApplyButton,
+    } = this.props;
+
+    let selectedArray = tempSelected.slice();
+
+    if (!checked) {
+      const index = selectedArray.findIndex(item => item.value === option.value);
+      selectedArray.splice(index, 1);
     }
-  }, [searchTerm]);
 
-  const onSearchChange = (search: string) => {
-    setLoading(true);
-    setSearchTerm(search);
-    setSearchInit(false);
-  };
+    selectedArray = checked ? selectedArray.concat(option) : selectedArray;
 
-  const updateOptionsOnScroll = (
-    slicedOptions: any,
-    updatedOffset: number,
-    direction: string,
-    slicedLength: number,
-    bufferPresent: boolean
-  ) => {
-    if (bottomOptionsSliced) setBottomOptionsSliced(false);
-    if (topOptionsSliced) setTopOptionsSliced(false);
-    const stateLimit = 2 * limit;
-    let updatedOptions = options.slice();
-    if (direction === 'down') {
-      updatedOptions = updatedOptions.concat(slicedOptions);
-      const len = updatedOptions.length;
-      if (len > stateLimit) {
-        const bufferOption = updatedOptions[len - stateLimit - 1];
-        updatedOptions = updatedOptions.slice(len - stateLimit, len);
-        setBufferedOption(bufferOption);
-        setTopOffset(updatedOffset - stateLimit + limit - slicedLength);
-        setBottomOptionsSliced(true);
-      }
-      setBottomOffset(updatedOffset);
-    } else {
-      const bufferOption = bufferPresent ? slicedOptions[0] : {};
-      const newOptions = bufferPresent ? slicedOptions.slice(1) : slicedOptions;
-      const newOffset = bufferPresent ? updatedOffset + 1 : updatedOffset;
-      updatedOptions = newOptions.concat(updatedOptions);
-      const len = updatedOptions.length;
-      if (len > stateLimit) {
-        updatedOptions = updatedOptions.slice(0, stateLimit);
-        setBottomOffset(newOffset + stateLimit - limit);
-        setTopOptionsSliced(true);
-      }
-      setBufferedOption(bufferOption);
-      setTopOffset(newOffset);
-    }
-    setOptions(updatedOptions);
-  };
-
-  const onRearrangeOptions = (selected: any[], selectedLabels: string[]) => {
-    const optionsCopy = shuffledOptions.slice();
-    const unselectedOptions = optionsCopy.filter(option => {
-      return selected.indexOf(option.value) === -1;
+    this.setState({
+      ...this.state,
+      tempSelected: selectedArray,
+      triggerLabel: this.updateTriggerLabel(selectedArray),
+      selectAll: getSelectAll(selectedArray, optionsLength)
     });
-    const selectedOptions = selected.map((option, i) => {
-      const selectedOption: Option = {
-        label: selectedLabels[i],
-        value: option,
-        group: selectedGroupLabel,
-        selectedGroup: true
-      };
-      return selectedOption;
-    });
-    const newOptions = selectedOptions.concat(unselectedOptions);
-    setDropdownOptions(newOptions);
-  };
 
-  const OnScrollOptions = (direction: string) => {
-    const condition = direction === 'down' ? (bottomOffset + limit > optionsLength) : (topOffset - limit < 0);
-    const optionsLimit = condition ? (direction === 'down' ? optionsLength - bottomOffset : topOffset) : limit;
-    const updatedOffset = direction === 'down' ? bottomOffset + optionsLimit : topOffset - optionsLimit - 1;
-    const offsetInOptions = updatedOffset >= -1 && optionsLimit > 0;
-    if (offsetInOptions) setVirtualization(updatedOffset, optionsLimit, direction);
-  };
-
-  const onChangeOptions = (selectedArray: any[]) => {
-    if (searchInit) setSearchInit(false);
-    if (onChange) onChange(selectedArray);
-  };
-
-  const onSelectAll = (selectedAllOptions: boolean) => {
-    if (props.options) {
-      const optionsCopy = props.options.slice();
-      const selectedArray = selectedAllOptions ? getValuesFromSelectedObj(optionsCopy) : [];
-      const selectedArrayLabel = selectedAllOptions ? getLabelsFromSelectedObj(optionsCopy) : [];
-      setSelectedAll({ label: selectedArrayLabel, value: selectedArray });
-      if (onChange && !props.showApplyButton) onChange(selectedArray);
+    if (onChange && !showApplyButton) {
+      const values = selectedArray.map(item => item.value);
+      onChange(values, name);
     }
-  };
+  }
 
-  return (
-    <DropdownList
-      listOptions={options}
-      searchInit={searchInit}
-      bufferedOption={bufferedOption}
-      slicedOptionsLength={slicedOptionLength}
-      remainingOptions={optionsLength - dropdownOptions.length}
-      loadingOptions={loading}
-      async={async}
-      selectedAll={selectedAll}
-      searchTerm={searchTerm}
-      onScroll={OnScrollOptions}
-      topOptionsSliced={topOptionsSliced}
-      bottomOptionsSliced={bottomOptionsSliced}
-      limit={limit}
-      offset={topOffset}
-      optionsLength={dropdownItems.length}
-      onSearchChange={onSearchChange}
-      onChange={onChangeOptions}
-      onSelectAll={onSelectAll}
-      onRearrangeOptions={onRearrangeOptions}
-      renderOptionsFromTop={renderOptionsFromTop}
-      {...rest}
-    />
-  );
-};
+  onSelectAll = (checked: boolean) => {
+    const {
+      onChange,
+      showApplyButton
+    } = this.props;
 
-Dropdown.displayName = 'Dropdown';
+    const {
+      options,
+      optionsLength,
+    } = this.state;
+
+    const selectedArray = checked ? options : [];
+
+    this.setState({
+      ...this.state,
+      tempSelected: selectedArray,
+      triggerLabel: this.updateTriggerLabel(selectedArray),
+      selectAll: getSelectAll(selectedArray, optionsLength)
+    });
+
+    if (onChange && !showApplyButton) {
+      const values = selectedArray.map(option => option.value);
+      onChange(values, name);
+    }
+  }
+
+  debounceSearch = debounce(300, () => this.updateOptions(false));
+
+  onClearOptions = () => {
+    const { onChange, showApplyButton } = this.props;
+    this.setState({
+      selected: [],
+      tempSelected: [],
+      triggerLabel: '',
+      loading: true,
+    });
+    this.debounceSearch();
+    if (onChange && !showApplyButton) onChange([], name);
+  }
+
+  onCancelOptions = () => {
+    const { previousSelected, optionsLength, tempSelected } = this.state;
+    const label = this.updateTriggerLabel(previousSelected);
+    this.setState({
+      ...this.state,
+      tempSelected: previousSelected,
+      selectAll: getSelectAll(previousSelected, optionsLength),
+      triggerLabel: label,
+      open: false,
+    });
+    if (this.props.onClose) {
+      const values = tempSelected.map(option => option.value);
+      this.props.onClose(values, name);
+    }
+  }
+
+  onApplyOptions = () => {
+    const {
+      tempSelected,
+    } = this.state;
+
+    const { onChange, onClose } = this.props;
+
+    this.setState({
+      ...this.state,
+      previousSelected: tempSelected,
+      optionsApplied: true,
+      open: false,
+    });
+
+    const values = tempSelected.map(option => option.value);
+
+    if (onChange) {
+      onChange(values, name);
+    }
+    if (onClose) {
+      onClose(values, name);
+    }
+  }
+
+  onToggleDropdown = () => {
+    if (this.props.disabled) {
+      return;
+    }
+    const { showApplyButton, checkboxes, onClose, name } = this.props;
+    const {
+      triggerLabel,
+      optionsApplied,
+      previousSelected,
+      tempSelected,
+      optionsLength,
+      open,
+      async,
+      selected,
+      loading,
+      selectAll
+    } = this.state;
+
+    const applyClicked = checkboxes && showApplyButton && !optionsApplied;
+    const moveSelectedGroup = async && checkboxes && !_isEqual(selected, tempSelected);
+
+    this.setState({
+      ...this.state,
+      tempSelected: applyClicked ? previousSelected : tempSelected,
+      selectAll: applyClicked ? getSelectAll(previousSelected, optionsLength) : selectAll,
+      triggerLabel: applyClicked ? this.updateTriggerLabel(previousSelected) : triggerLabel,
+      open: !open,
+      optionsApplied: false,
+      loading: moveSelectedGroup || loading,
+      searchTerm: ''
+    });
+
+    if (moveSelectedGroup) this.updateOptions(false);
+    if (onClose && open) {
+      const values = tempSelected.map(option => option.value);
+      onClose(values, name);
+    }
+  }
+
+  render() {
+    const {
+      options,
+      async,
+      open,
+      searchTerm,
+      loading,
+      searchedOptionsLength,
+      tempSelected,
+      selectAll,
+      selected,
+      triggerLabel,
+      previousSelected
+    } = this.state;
+
+    const { loadersLength, ...rest } = this.props;
+    const remainingOptionsLen = searchedOptionsLength - options.length;
+
+    return (
+      <DropdownList
+        listOptions={options}
+        remainingOptions={remainingOptionsLen}
+        loadingOptions={loading}
+        async={async}
+        dropdownOpen={open}
+        searchTerm={searchTerm}
+        triggerLabel={triggerLabel}
+        tempSelected={tempSelected}
+        previousSelected={previousSelected}
+        selected={selected}
+        applyOptions={this.onApplyOptions}
+        cancelOptions={this.onCancelOptions}
+        toggleDropdown={this.onToggleDropdown}
+        onClearOptions={this.onClearOptions}
+        onSelect={this.onSelect}
+        selectAll={selectAll}
+        onSearchChange={this.updateSearchTerm}
+        onOptionSelect={this.onOptionSelect}
+        onSelectAll={this.onSelectAll}
+        {...rest}
+      />
+    );
+  }
+}
 
 export default Dropdown;

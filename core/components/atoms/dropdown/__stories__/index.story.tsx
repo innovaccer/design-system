@@ -7,22 +7,24 @@ import { dropdownOptions } from './Options';
 // CSF format story
 export const all = () => {
   const triggerSize = select(
-    'size',
-    ['tiny', 'regular'],
+    'Trigger size',
+    ['regular', 'tiny'],
     undefined
   );
 
   const dropdownAlign = select(
     'Dropdown Alignmnet',
-    ['left', 'right'],
+    ['right', 'left'],
     undefined
   );
 
   const loadingType = select(
-    'option type',
+    'loading type',
     ['DEFAULT', 'WITH_ICON', 'WITH_META', 'ICON_WITH_META'],
     undefined,
   );
+
+  const error = boolean('error', false);
 
   const disabled = boolean('disabled', false);
 
@@ -36,10 +38,6 @@ export const all = () => {
 
   const closeOnSelect = boolean('close on select', true);
 
-  const loading = boolean('loading', false);
-
-  const bulk = boolean('bulk', true);
-
   const icon = text('icon', '');
 
   const placeholder = text('placeholder', 'Select');
@@ -52,19 +50,19 @@ export const all = () => {
 
   const maxHeight = number('maximum height', 200);
 
-  const limit = number('limit', 10);
+  const loadersLength = number('Loaders Length', 10);
 
   const getSearchedOptions = (options: any, searchTerm: string) => {
     const result = options.filter((option: any) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
     return result;
   };
 
-  const fetchOptions = (searchTerm: string, bulkLimit: number) => {
+  const fetchOptions = (searchTerm: string) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
     return new Promise<any>(resolve => {
       setTimeout(() => {
         resolve({
-          options: searchedOptions.slice(0, bulkLimit),
+          options: searchedOptions,
           count: searchedOptions.length,
         });
       }, 1000);
@@ -80,11 +78,15 @@ export const all = () => {
     return action(`selected values length: ${selectedValues}`)();
   };
 
+  const onClose = (_selectedValues: any[]) => {
+    return action('dropdown closed')();
+  };
+
   const props = {
     triggerSize,
     dropdownAlign,
     icon,
-    bulk,
+    error,
     placeholder,
     inlineLabel,
     disabled,
@@ -95,8 +97,8 @@ export const all = () => {
     showApplyButton,
     checkedValuesOffset,
     maxHeight,
-    limit,
-    loading,
+    loadersLength,
+    onClose,
     fetchOptions,
     loadingType,
     parentCheckboxLabel,
@@ -106,8 +108,10 @@ export const all = () => {
     maxWidth: 170,
   };
 
+  const key = `checkbox${checkboxes} applyButton:${showApplyButton}`;
+
   return (
-    <div style={{ width: '170px', marginLeft: '128px' }}>
+    <div style={{ width: '170px', marginLeft: '128px' }} key={key}>
       <Dropdown
         {...props}
         optionsWrap={true}

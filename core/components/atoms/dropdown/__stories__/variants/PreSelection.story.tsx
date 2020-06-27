@@ -1,34 +1,23 @@
 import * as React from 'react';
 import Dropdown from '../../Dropdown';
 import Text from '@/components/atoms/text';
-import { dropdownOptions } from '../Options';
+import { preSelectedOptions } from '../Options';
 
 // CSF format story
 export const preSelection = () => {
   const BooleanValue = [true, false];
-
-  const selected = [
-    {
-      label: 'Option 1',
-      value: 'Option 1',
-    },
-    {
-      label: 'Option 3',
-      value: 'Option 3',
-    }
-  ];
 
   const getSearchedOptions = (options: any, searchTerm: string) => {
     const result = options.filter((option: any) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
     return result;
   };
 
-  const fetchOptions = (searchTerm: string, limit: number) => {
-    const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
+  const fetchOptions = (searchTerm: string) => {
+    const searchedOptions = searchTerm ? getSearchedOptions(preSelectedOptions, searchTerm) : preSelectedOptions;
     return new Promise<any>(resolve => {
       setTimeout(() => {
         resolve({
-          options: searchedOptions.slice(0, limit),
+          options: searchedOptions,
           count: searchedOptions.length,
         });
       }, 1000);
@@ -39,7 +28,7 @@ export const preSelection = () => {
     <div style={{ display: 'flex', minHeight: '280px' }}>
       {
         BooleanValue.map((value, ind) => {
-          const options = value ? dropdownOptions : dropdownOptions.slice(0, 50);
+          const options = value ? preSelectedOptions : preSelectedOptions.slice(0, 50);
 
           return (
             <div key={ind} style={{ marginRight: '10%', width: '170px' }}>
@@ -49,10 +38,8 @@ export const preSelection = () => {
               <br /><br />
               <Dropdown
                 checkboxes={true}
-                bulk={value}
                 options={options}
-                fetchOptions={fetchOptions}
-                selected={selected}
+                {...(value && { fetchOptions })}
               />
             </div>
           );
@@ -64,30 +51,14 @@ export const preSelection = () => {
 
 const customCode = `() => {
   const dropdownOptions = [];
-  for (let i = 1; i <= 40; i++) {
+  for (let i = 1; i <= 100; i++) {
     dropdownOptions.push({
       label: \`Option \${i}\`,
       value: \`Option \${i}\`,
-      group: 'Group 1'
+      selected: i === 2 || i === 3
     });
   }
-  for (let i = 41; i <= 100; i++) {
-    dropdownOptions.push({
-      label: \`Option \${i}\`,
-      value: \`Option \${i}\`,
-      group: 'Group 2'
-    });
-  }
-  const selected = [
-    {
-      label: 'Option 1',
-      value: 'Option 1',
-    },
-    {
-      label: 'Option 3',
-      value: 'Option 3',
-    }
-  ];
+
   const BooleanValue = [true, false];
 
   const getSearchedOptions = (options, searchTerm) => {
@@ -114,7 +85,7 @@ const customCode = `() => {
           return (
             <div key={ind} style={{ marginRight: '10%', width: '170px' }}>
               <Text weight="strong">{value ? 'Options > 50' : 'Options <= 50'}</Text> <br /><br />
-              <Dropdown checkboxes={true} bulk={value} options={options} fetchOptions={fetchOptions} selected={selected}/>
+              <Dropdown checkboxes={true} bulk={value} options={options} {...(value && { fetchOptions })} />
             </div>
           );
         })

@@ -28,6 +28,7 @@
 .Dropdown-subinfo {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-left: var(--spacing-l);
     margin-top: var(--spacing);
     margin-bottom: 6px;
@@ -141,13 +142,11 @@
     color: var(--white);
 }
 
-.Dropdown-scroller::-webkit-scrollbar,
-.ListCheckbox-scroller::-webkit-scrollbar {
-    width: 10px;
+.Dropdown-scroller::-webkit-scrollbar {
+    width: var(--spacing);
 }
 
-.Dropdown-scroller::-webkit-scrollbar-thumb,
-.ListCheckbox-scroller::-webkit-scrollbar-thumb {
+.Dropdown-scroller::-webkit-scrollbar-thumb {
     background: var(--secondary);
-    border-radius: 10px;
+    border-radius: var(--spacing-m);
 }

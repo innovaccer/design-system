@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Dropdown from '../../Dropdown';
-import { Size } from '../../DropdownList';
+import { Size } from '../../DropdownButton';
 import Text from '@/components/atoms/text';
 import { storyOptions } from '../Options';
 

@@ -14,21 +14,43 @@ export const sections = () => {
       group: 'Group'
     });
   }
+  const BooleanValue = [true, false];
+
+  const style = {
+    display: 'flex',
+    alignItems: 'center',
+    'flex-direction': 'column',
+  };
+
+  const innerStyle = {
+    display: 'flex',
+    'flex-direction': 'column',
+    alignItems: 'center',
+    marginRight: '20px',
+    width: '128px',
+  };
 
   return (
-    <div style={{ display: 'flex', minHeight: '280px' }}>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginRight: '5%' }}>
-        <Text weight="strong">{'With Sections'}</Text><br />
-        {
-          <Dropdown options={options} placeholder={'Select'} />
-        }
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Text weight="strong">{'Without Sections'}</Text> <br />
-        {
-          <Dropdown options={storyOptions} placeholder={'Select'} />
-        }
-      </div>
+    <div style={{ display: 'flex' }}>
+      {
+        BooleanValue.map((value, index) => {
+          return (
+            <div key={index} style={style}>
+              <div style={{ display: 'flex' }}>
+                <div style={innerStyle}>
+                  <Text weight="strong">{'With Sections'}</Text><br />
+                  <Dropdown options={options} checkboxes={value} />
+                </div>
+                <div style={innerStyle}>
+                  <Text weight="strong">{'Without Sections'}</Text> <br />
+                  <Dropdown options={storyOptions} checkboxes={value} />
+                </div>
+              </div> <br />
+              <Text weight="strong">{value ? ' Multi Select' : 'Single Select'}</Text>
+            </div>
+          );
+        })
+      }
     </div>
   );
 };
