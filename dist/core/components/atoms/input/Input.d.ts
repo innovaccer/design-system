@@ -1,9 +1,10 @@
 import * as React from 'react';
-export declare type InputType = 'text' | 'password' | 'number';
+import { IconProps } from '@/components/atoms/icon';
+export declare type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
 export declare type AutoComplete = 'on' | 'off';
 export declare type Size = 'tiny' | 'regular' | 'large';
 export interface InputProps {
-    name: string;
+    name?: string;
     type?: InputType;
     value?: string;
     defaultValue?: string;
@@ -23,6 +24,7 @@ export interface InputProps {
     onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
     onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
     onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+    actionIcon?: React.ReactElement<IconProps>;
 }
 export declare const Input: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement>>;
 export default Input;

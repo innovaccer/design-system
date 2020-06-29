@@ -1,4 +1,4 @@
-import React__default, { createElement, useState as useState$4, useEffect as useEffect$4, createRef, Component, cloneElement, forwardRef, useRef as useRef$2, useImperativeHandle, Fragment, useCallback, Children } from 'react';
+import React__default, { createElement, useState as useState$4, useEffect as useEffect$3, createRef, Component, cloneElement, forwardRef, useRef as useRef$1, useImperativeHandle, Fragment, Children } from 'react';
 import classNames from 'classnames';
 import { createPortal, findDOMNode } from 'react-dom';
 import { Manager, Reference, Popper } from 'react-popper';
@@ -368,7 +368,7 @@ var Avatar = function Avatar(props) {
 };
 Avatar.displayName = 'Avatar';
 
-var useEffect = useEffect$4,
+var useEffect = useEffect$3,
     useState = useState$4;
 
 var Backdrop = function Backdrop(props) {
@@ -596,33 +596,10 @@ var getSearchedOptions = function getSearchedOptions(options, searchTerm) {
   });
   return result;
 };
-
-var getOptions = function getOptions(offset, limit, searchTerm, options) {
-  var searchedOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
-  return new Promise(function (resolve) {
-    resolve({
-      offset: offset,
-      options: searchedOptions.slice(offset, offset + limit),
-      length: searchedOptions.length,
-      totalRecords: options.length
-    });
+var _isEqual = function _isEqual(arr1, arr2) {
+  return arr1.length === arr2.length && arr1.every(function (option, index) {
+    return option.value === arr2[index].value || option.label === arr2[index].label;
   });
-};
-var getValuesFromSelectedObj = function getValuesFromSelectedObj() {
-  var selectedArray = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  var selectedValues = [];
-  selectedArray.forEach(function (selectedObj) {
-    var value = selectedObj.value;
-    selectedValues.push(value);
-  });
-  return selectedValues;
-};
-var getLabelsFromSelectedObj = function getLabelsFromSelectedObj(options) {
-  var result = [];
-  options.forEach(function (option) {
-    result.push(option.label);
-  });
-  return result;
 };
 var scrollTo = function scrollTo(element, top) {
   element.scrollTo(0, top);
@@ -637,6 +614,22 @@ var scrollIntoView = function scrollIntoView(menuElement, focusedElement) {
   } else if (focusedRect.top < menuRect.top && menuElement) {
     scrollTo(menuElement, focusedElement.offsetTop - overscroll);
   }
+};
+var getSelectAll = function getSelectAll(selected, optionsLength) {
+  if (selected.length) {
+    var indeterminate = selected.length > 0 && selected.length !== optionsLength;
+    var checked = selected.length > 0 && selected.length === optionsLength;
+    var obj = {
+      checked: checked,
+      indeterminate: indeterminate
+    };
+    return obj;
+  }
+
+  return {
+    indeterminate: false,
+    checked: false
+  };
 };
 
 var Offsets;
@@ -827,7 +820,7 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
         }
       };
       var element = /*#__PURE__*/cloneElement( /*#__PURE__*/createElement("span", {
-        className: "d-inline-flex PopperWrapper-trigger"
+        className: "PopperWrapper-trigger"
       }, trigger), options);
       return element;
     }
@@ -922,7 +915,7 @@ var Popover = function Popover(props) {
       open = _React$useState2[0],
       setOpen = _React$useState2[1];
 
-  useEffect$4(function () {
+  useEffect$3(function () {
     if (onToggle) {
       if (props.open !== undefined) setOpen(props.open);
     }
@@ -958,18 +951,16 @@ Popover.displayName = 'Popover';
 var Icon = function Icon(props) {
   var _classNames;
 
-  var _props$appearance = props.appearance,
-      appearance = _props$appearance === void 0 ? 'default' : _props$appearance,
-      _props$type = props.type,
-      type = _props$type === void 0 ? 'filled' : _props$type,
+  var appearance = props.appearance,
+      type = props.type,
       className = props.className,
       name = props.name,
       size = props.size,
       onClick = props.onClick;
   var iconClass = classNames((_classNames = {}, _defineProperty(_classNames, 'material-icons', true), _defineProperty(_classNames, 'Icon', true), _defineProperty(_classNames, "Icon--".concat(appearance), appearance), _defineProperty(_classNames, "".concat(className), className), _classNames));
   var styles = {
-    fontSize: size ? "".concat(size, "px") : 'var(--font-size)',
-    width: size ? "".concat(size, "px") : 'var(--font-size)'
+    fontSize: "".concat(size, "px"),
+    width: "".concat(size, "px")
   };
   return /*#__PURE__*/createElement("i", {
     className: iconClass,
@@ -977,31 +968,36 @@ var Icon = function Icon(props) {
     onClick: onClick
   }, "".concat(name, "_").concat(type));
 };
+Icon.defaultProps = {
+  appearance: 'default',
+  type: 'filled',
+  size: 16
+};
 Icon.displayName = 'Icon';
 
 var DropdownButton = /*#__PURE__*/forwardRef(function (props, ref) {
   var _classNames;
 
-  var _props$size = props.size,
-      size = _props$size === void 0 ? 'regular' : _props$size,
+  var _props$triggerSize = props.triggerSize,
+      triggerSize = _props$triggerSize === void 0 ? 'regular' : _props$triggerSize,
       _props$placeholder = props.placeholder,
       placeholder = _props$placeholder === void 0 ? 'Select' : _props$placeholder,
       _props$menu = props.menu,
       menu = _props$menu === void 0 ? false : _props$menu,
       children = props.children,
-      width = props.width,
       maxWidth = props.maxWidth,
       icon = props.icon,
       disabled = props.disabled,
       inlineLabel = props.inlineLabel,
-      rest = _objectWithoutProperties(props, ["size", "placeholder", "menu", "children", "width", "maxWidth", "icon", "disabled", "inlineLabel"]);
+      error = props.error,
+      rest = _objectWithoutProperties(props, ["triggerSize", "placeholder", "menu", "children", "maxWidth", "icon", "disabled", "inlineLabel", "error"]);
 
   var buttonDisabled = disabled ? 'disabled' : 'default';
   var trimmedPlaceholder = placeholder.trim();
   var value = children ? children : trimmedPlaceholder ? trimmedPlaceholder : 'Select';
   var iconName = !menu ? 'keyboard_arrow_down' : icon ? icon : 'more_horiz';
   var label = inlineLabel && inlineLabel.trim();
-  var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--basic', true), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, 'DropdownTrigger', true), _defineProperty(_classNames, 'DropdownButton', true), _defineProperty(_classNames, "DropdownButton--".concat(size), size), _defineProperty(_classNames, 'DropdownButton--icon', icon), _defineProperty(_classNames, 'DropdownButton--moreIcon', menu), _defineProperty(_classNames, 'DropdownButton--placeholder', !children && !menu), _defineProperty(_classNames, 'DropdownButton--label', label), _classNames));
+  var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--basic', true), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, 'DropdownTrigger', true), _defineProperty(_classNames, 'DropdownButton', true), _defineProperty(_classNames, "DropdownButton--".concat(triggerSize), triggerSize), _defineProperty(_classNames, 'DropdownButton--icon', icon), _defineProperty(_classNames, 'DropdownButton--moreIcon', menu), _defineProperty(_classNames, 'DropdownButton--placeholder', !children && !menu), _defineProperty(_classNames, 'DropdownButton--label', label), _defineProperty(_classNames, 'DropdownButton--error', error), _classNames));
   var labelClass = classNames(_defineProperty({}, 'DropdownButton-label', true));
   return /*#__PURE__*/createElement("button", _extends({
     ref: ref,
@@ -1009,7 +1005,7 @@ var DropdownButton = /*#__PURE__*/forwardRef(function (props, ref) {
     className: buttonClass,
     disabled: disabled,
     style: {
-      maxWidth: maxWidth
+      maxWidth: maxWidth ? maxWidth : '100%'
     },
     tabIndex: 0
   }, rest), !menu && /*#__PURE__*/createElement("div", {
@@ -1074,7 +1070,7 @@ var Checkbox = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
       onChange = props.onChange,
       name = props.name,
       value = props.value;
-  var ref = useRef$2(null);
+  var ref = useRef$1(null);
   useImperativeHandle(forwardedRef, function () {
     return ref.current;
   });
@@ -1084,10 +1080,10 @@ var Checkbox = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
       checked = _React$useState2[0],
       setChecked = _React$useState2[1];
 
-  useEffect$4(function () {
+  useEffect$3(function () {
     setIndeterminate(props.indeterminate);
   }, [props.indeterminate]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     if (props.checked !== undefined) {
       setChecked(props.checked);
     }
@@ -1318,22 +1314,19 @@ var Option = function Option(props) {
       selected = props.selected,
       optionIsTop = props.optionIsTop,
       optionIsBottom = props.optionIsBottom,
-      optionsWrap = props.optionsWrap,
       onClick = props.onClick,
       updateActiveOption = props.updateActiveOption,
       onChange = props.onChange,
       active = props.active,
-      index = props.index;
-  var _optionData$optionTyp = optionData.optionType,
-      optionType = _optionData$optionTyp === void 0 ? 'DEFAULT' : _optionData$optionTyp;
+      index = props.index,
+      checkboxes = props.checkboxes;
 
-  if (props.checkboxes) {
-    optionType = 'WITH_CHECKBOX';
-  }
+  var _ref = optionData.optionType ? optionData : props,
+      _ref$optionType = _ref.optionType,
+      optionType = _ref$optionType === void 0 ? 'DEFAULT' : _ref$optionType;
 
-  var checkboxPresent = optionType === 'WITH_CHECKBOX';
-  var className = classNames((_classNames = {}, _defineProperty(_classNames, 'Option', true), _defineProperty(_classNames, 'Option-wrapper', true), _defineProperty(_classNames, 'Option--top', optionIsTop), _defineProperty(_classNames, 'Option--bottom', optionIsBottom), _defineProperty(_classNames, 'Option--active', active), _defineProperty(_classNames, 'Option--selected', selected && !checkboxPresent), _classNames));
-  var textClassName = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Option-text', true), _defineProperty(_classNames2, 'Option-text--wrap', optionsWrap), _classNames2));
+  var className = classNames((_classNames = {}, _defineProperty(_classNames, 'Option', true), _defineProperty(_classNames, 'Option-wrapper', true), _defineProperty(_classNames, 'Option--top', optionIsTop), _defineProperty(_classNames, 'Option--bottom', optionIsBottom), _defineProperty(_classNames, 'Option--active', active), _defineProperty(_classNames, 'Option--selected', selected && !checkboxes && !props.menu), _classNames));
+  var textClassName = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Option-text', true), _defineProperty(_classNames2, 'Option-text--wrap', props.optionsWrap), _classNames2));
 
   var onUpdateActiveOption = function onUpdateActiveOption() {
     if (updateActiveOption) updateActiveOption(index);
@@ -1343,7 +1336,7 @@ var Option = function Option(props) {
     return /*#__PURE__*/createElement("div", _extends({
       className: "Option-wrapper",
       onMouseEnter: onUpdateActiveOption
-    }, !checkboxPresent && {
+    }, !checkboxes && {
       onClick: onClick
     }), props.optionRenderer({
       optionData: optionData,
@@ -1356,7 +1349,8 @@ var Option = function Option(props) {
     }));
   }
 
-  var component = OptionTypeMapping[optionType];
+  var type = checkboxes ? 'WITH_CHECKBOX' : optionType;
+  var component = OptionTypeMapping[type];
   return component({
     optionData: optionData,
     selected: selected,
@@ -1368,204 +1362,6 @@ var Option = function Option(props) {
     index: index
   });
 };
-
-var ListCheckbox = /*#__PURE__*/forwardRef(function (props, ref) {
-  var _classNames;
-
-  var list = props.list,
-      _props$showParentChec = props.showParentCheckbox,
-      showParentCheckbox = _props$showParentChec === void 0 ? true : _props$showParentChec,
-      remainingOptions = props.remainingOptions,
-      renderFooter = props.renderFooter,
-      renderGroups = props.renderGroups,
-      showGroups = props.showGroups,
-      bufferedOption = props.bufferedOption,
-      _props$selected = props.selected,
-      selected = _props$selected === void 0 ? [] : _props$selected,
-      _props$selectedLabels = props.selectedLabels,
-      selectedLabels = _props$selectedLabels === void 0 ? [] : _props$selectedLabels,
-      optionsLength = props.optionsLength,
-      updatedSelectedArray = props.updatedSelectedArray,
-      optionRenderer = props.optionRenderer,
-      onChange = props.onChange,
-      label = props.label,
-      style = props.style;
-  var childArray = props.checked ? Array(list.length).fill(props.checked) : [];
-
-  if (!props.checked) {
-    list.map(function (item) {
-      var _item$checked = item.checked,
-          childChecked = _item$checked === void 0 ? false : _item$checked;
-      childArray.push(childChecked);
-    });
-  }
-
-  var getLabelsFromList = function getLabelsFromList(optionsList) {
-    var labels = [];
-    optionsList.forEach(function (option) {
-      labels.push(option.label);
-    });
-    return labels;
-  };
-
-  var getValuesFromList = function getValuesFromList(optionsList) {
-    var values = [];
-    optionsList.forEach(function (option) {
-      values.push(option.value);
-    });
-    return values;
-  };
-
-  var calcParentStatus = function calcParentStatus(selectedValues) {
-    var optionsListLength = selected && selected.length > 0 ? optionsLength : list.length;
-    var indeterminateTrue = selectedValues.length < optionsListLength && selectedValues.length > 0;
-    var checkedTrue = selectedValues.length === optionsListLength;
-    var obj = {
-      checked: props.checked ? props.checked : checkedTrue,
-      indeterminate: indeterminateTrue
-    };
-    return obj;
-  };
-
-  var _React$useState = useState$4(calcParentStatus(selected)),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      parentStatus = _React$useState2[0],
-      setParentStatus = _React$useState2[1];
-
-  var _React$useState3 = useState$4(childArray),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      checked = _React$useState4[0],
-      setChecked = _React$useState4[1];
-
-  var _React$useState5 = useState$4(selectedLabels),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      selectedArrayLabels = _React$useState6[0],
-      setSelectedArrayLabels = _React$useState6[1];
-
-  var _React$useState7 = useState$4(selected),
-      _React$useState8 = _slicedToArray(_React$useState7, 2),
-      selectedArrayValues = _React$useState8[0],
-      setSelectedArrayValues = _React$useState8[1];
-
-  var SelectAllClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Option', true), _defineProperty(_classNames, 'Option-wrapper', true), _defineProperty(_classNames, 'Option--top', true), _defineProperty(_classNames, 'Option--active', props.cursor === 0), _classNames));
-  useEffect$4(function () {
-    if (updatedSelectedArray && updatedSelectedArray.length > 0) {
-      setChecked(updatedSelectedArray);
-    }
-  }, [JSON.stringify(updatedSelectedArray)]);
-  useEffect$4(function () {
-    if (selected && selected.length > 0 && parentStatus.checked) {
-      setSelectedArrayValues(selected);
-      setSelectedArrayLabels(selectedLabels);
-    }
-  }, [JSON.stringify(selected)]);
-  useEffect$4(function () {
-    if (props.checked !== undefined) {
-      setParentStatus(_objectSpread2(_objectSpread2({}, parentStatus), {}, {
-        checked: props.checked
-      }));
-    }
-  }, [props.checked]);
-
-  var handleChildChange = function handleChildChange(checkedValue, index) {
-    var updateCheck = _toConsumableArray(checked);
-
-    updateCheck[index] = checkedValue;
-    var valueArray = selectedArrayValues.slice();
-    var labelsArray = selectedArrayLabels.slice();
-
-    if (!checkedValue) {
-      var ind = labelsArray.indexOf(list[index].label);
-      valueArray.splice(ind, 1);
-      labelsArray.splice(ind, 1);
-    }
-
-    var selectedLabelsCopy = checkedValue ? labelsArray.concat(list[index].label) : labelsArray;
-    var selectedValuesCopy = checkedValue ? valueArray.concat(list[index].value) : valueArray;
-    var obj = calcParentStatus(selectedValuesCopy);
-    setChecked(updateCheck);
-    setParentStatus(obj);
-    setSelectedArrayLabels(selectedLabelsCopy);
-    setSelectedArrayValues(selectedValuesCopy);
-
-    if (onChange) {
-      onChange(selectedValuesCopy, selectedLabelsCopy, false);
-    }
-  };
-
-  var handleParentChange = function handleParentChange(checkedValue, _name, _value) {
-    var indeterminate = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-
-    var updatedArray = _toConsumableArray(childArray).fill(checkedValue);
-
-    var optionsList = selected && selected.length > 0 ? selectedArrayValues.slice() : getValuesFromList(list);
-    var labelsList = selected && selected.length > 0 ? selectedArrayLabels.slice() : getLabelsFromList(list);
-    var selectedValues = checkedValue ? optionsList : [];
-    var selectedLabelsCopy = checkedValue ? labelsList : [];
-    setChecked(updatedArray);
-    setSelectedArrayValues(selectedValues);
-    setSelectedArrayLabels(selectedLabelsCopy);
-    setParentStatus({
-      indeterminate: indeterminate,
-      checked: checkedValue
-    });
-
-    if (onChange) {
-      onChange(selectedValues, selectedLabelsCopy, true);
-    }
-  };
-
-  var onUpdateActiveOption = function onUpdateActiveOption() {
-    if (props.updateActiveOption) props.updateActiveOption(0, true);
-  };
-
-  return /*#__PURE__*/createElement("div", {
-    className: 'ListCheckbox'
-  }, showParentCheckbox && /*#__PURE__*/createElement("div", {
-    className: SelectAllClass,
-    onMouseEnter: onUpdateActiveOption
-  }, /*#__PURE__*/createElement(Checkbox, {
-    label: label,
-    onChange: handleParentChange,
-    checked: parentStatus.checked,
-    indeterminate: parentStatus.indeterminate,
-    tabIndex: -1
-  })), /*#__PURE__*/createElement("div", {
-    className: 'ListCheckbox-scroller',
-    style: style,
-    ref: ref
-  }, list.map(function (item, ind) {
-    var group = item.group,
-        selectedGroup = item.selectedGroup,
-        value = item.value,
-        childLabel = item.label;
-    var prevGroup = ind > 0 ? list[ind - 1].group : bufferedOption ? bufferedOption.group : undefined;
-    var isGroup = showGroups && prevGroup !== group;
-    var top = !showParentCheckbox && ind === 0 && !showGroups;
-    var bottom = ind + 1 === list.length && !(showGroups && remainingOptions > 0);
-    var active = showParentCheckbox ? ind + 1 === props.cursor : ind === props.cursor;
-    return /*#__PURE__*/createElement("div", {
-      key: "checkbox-".concat(ind)
-    }, isGroup && group && renderGroups(group, selectedGroup), /*#__PURE__*/createElement(Option, {
-      optionData: {
-        value: value,
-        label: childLabel
-      },
-      active: active,
-      selected: checked[ind],
-      optionRenderer: optionRenderer,
-      index: ind,
-      optionIsTop: top,
-      optionIsBottom: bottom,
-      updateActiveOption: props.updateActiveOption,
-      checkboxes: true,
-      onChange: function onChange(c) {
-        handleChildChange(c, ind);
-      }
-    }));
-  }), showGroups && remainingOptions > 0 && renderFooter()));
-});
-ListCheckbox.displayName = 'ListCheckbox';
 
 var Spinner = function Spinner(props) {
   var _props$appearance = props.appearance,
@@ -1654,12 +1450,11 @@ var Input = /*#__PURE__*/forwardRef(function (props, ref) {
 
   var _props$size = props.size,
       size = _props$size === void 0 ? 'regular' : _props$size,
-      _props$autoFocus = props.autoFocus,
-      autoFocus = _props$autoFocus === void 0 ? false : _props$autoFocus,
-      propDisabled = props.disabled,
+      _props$type = props.type,
+      type = _props$type === void 0 ? 'text' : _props$type,
+      disabled = props.disabled,
       defaultValue = props.defaultValue,
       name = props.name,
-      type = props.type,
       placeholder = props.placeholder,
       value = props.value,
       icon = props.icon,
@@ -1668,12 +1463,13 @@ var Input = /*#__PURE__*/forwardRef(function (props, ref) {
       error = props.error,
       info = props.info,
       autocomplete = props.autocomplete,
+      autoFocus = props.autoFocus,
       onChange = props.onChange,
       onClick = props.onClick,
       onClear = props.onClear,
       onBlur = props.onBlur,
-      onFocus = props.onFocus;
-  var disabled = propDisabled || !onChange;
+      onFocus = props.onFocus,
+      actionIcon = props.actionIcon;
   var classes = classNames((_classNames = {}, _defineProperty(_classNames, 'Input', true), _defineProperty(_classNames, "Input--".concat(size), size), _defineProperty(_classNames, 'Input--disabled', disabled), _defineProperty(_classNames, 'Input--error', error), _classNames));
   var inputClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Input-input', true), _defineProperty(_classNames2, "Input-input--".concat(size), size), _classNames2));
   var leftIconClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Input-icon', true), _defineProperty(_classNames3, 'Input-icon--left', true), _defineProperty(_classNames3, 'Input-icon--disabled', !value), _classNames3));
@@ -1716,13 +1512,13 @@ var Input = /*#__PURE__*/forwardRef(function (props, ref) {
     onClick: onClick,
     onFocus: onFocus,
     autoFocus: autoFocus
-  }), (!value && !disabled || value && disabled) && info && /*#__PURE__*/createElement(Popover, {
+  }), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/createElement(Popover, {
     style: popoverStyle,
     position: "top",
     on: 'hover',
     trigger: trigger,
     dark: true
-  }, info), onClear && value && !disabled && /*#__PURE__*/createElement("div", {
+  }, info) : actionIcon ? actionIcon : onClear && value && !disabled && /*#__PURE__*/createElement("div", {
     className: rightIconClass,
     onClick: function onClick(e) {
       return onClear(e);
@@ -1835,56 +1631,36 @@ var DropdownAlignMapping = {
   right: 'bottom-start',
   left: 'bottom-end'
 };
-var lastScrollTop = 0;
-var bottomScrollOffset = 64;
-var usePrevious = function usePrevious(value) {
-  var ref = useRef$2();
-  useEffect$4(function () {
-    ref.current = value;
-  }, [value]);
-  return ref.current;
-};
 
 var DropdownList = function DropdownList(props) {
-  var _classNames2, _classNames3;
+  var _classNames2, _classNames3, _classNames4;
 
   var _props$listOptions = props.listOptions,
       listOptions = _props$listOptions === void 0 ? [] : _props$listOptions,
       _props$dropdownAlign = props.dropdownAlign,
       dropdownAlign = _props$dropdownAlign === void 0 ? 'right' : _props$dropdownAlign,
-      _props$closeOnSelect = props.closeOnSelect,
-      closeOnSelect = _props$closeOnSelect === void 0 ? true : _props$closeOnSelect,
+      _props$loadingType = props.loadingType,
+      loadingType = _props$loadingType === void 0 ? 'DEFAULT' : _props$loadingType,
       _props$optionsWrap = props.optionsWrap,
       optionsWrap = _props$optionsWrap === void 0 ? false : _props$optionsWrap,
-      _props$parentCheckbox = props.parentCheckboxLabel,
-      parentCheckboxLabel = _props$parentCheckbox === void 0 ? 'Select All' : _props$parentCheckbox,
       _props$maxHeight = props.maxHeight,
       maxHeight = _props$maxHeight === void 0 ? 200 : _props$maxHeight,
+      selected = props.selected,
+      tempSelected = props.tempSelected,
+      previousSelected = props.previousSelected,
       remainingOptions = props.remainingOptions,
-      totalOptions = props.totalOptions,
+      dropdownOpen = props.dropdownOpen,
       menu = props.menu,
-      bufferedOption = props.bufferedOption,
-      loadingOptions = props.loadingOptions,
       searchTerm = props.searchTerm,
-      limit = props.limit,
       maxWidth = props.maxWidth,
-      optionsLength = props.optionsLength,
       showApplyButton = props.showApplyButton,
       checkboxes = props.checkboxes,
       search = props.search,
-      onChange = props.onChange,
       onSearchChange = props.onSearchChange,
-      onScroll = props.onScroll,
-      onSelectAll = props.onSelectAll,
-      onRearrangeOptions = props.onRearrangeOptions,
-      optionRenderer = props.optionRenderer;
-  var _props$loadingType = props.loadingType,
-      loadingType = _props$loadingType === void 0 ? 'DEFAULT' : _props$loadingType;
-
-  if (checkboxes) {
-    loadingType = 'WITH_CHECKBOX';
-  }
-
+      optionRenderer = props.optionRenderer,
+      applyOptions = props.applyOptions,
+      cancelOptions = props.cancelOptions,
+      toggleDropdown = props.toggleDropdown;
   var dropdownRef = /*#__PURE__*/createRef();
   var triggerRef = /*#__PURE__*/createRef();
   var dropdownInputRef = /*#__PURE__*/createRef();
@@ -1892,82 +1668,18 @@ var DropdownList = function DropdownList(props) {
   var dropdownCancelButtonRef = /*#__PURE__*/createRef();
   var dropdownApplyButtonRef = /*#__PURE__*/createRef();
 
-  var _React$useState = useState$4([]),
+  var _React$useState = useState$4(),
       _React$useState2 = _slicedToArray(_React$useState, 2),
-      selected = _React$useState2[0],
-      setSelected = _React$useState2[1];
+      popoverStyle = _React$useState2[0],
+      setPopoverStyle = _React$useState2[1];
 
-  var _React$useState3 = useState$4([]),
+  var _React$useState3 = useState$4(0),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
-      selectedLabels = _React$useState4[0],
-      setSelectedLabels = _React$useState4[1];
+      cursor = _React$useState4[0],
+      setCursor = _React$useState4[1];
 
-  var _React$useState5 = useState$4(''),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      buttonLabel = _React$useState6[0],
-      setButtonLabel = _React$useState6[1];
-
-  var _React$useState7 = useState$4(),
-      _React$useState8 = _slicedToArray(_React$useState7, 2),
-      dropdownOpen = _React$useState8[0],
-      setDropdownOpen = _React$useState8[1];
-
-  var _React$useState9 = useState$4(),
-      _React$useState10 = _slicedToArray(_React$useState9, 2),
-      popoverStyle = _React$useState10[0],
-      setPopoverStyle = _React$useState10[1];
-
-  var _React$useState11 = useState$4([]),
-      _React$useState12 = _slicedToArray(_React$useState11, 2),
-      previousSelected = _React$useState12[0],
-      setPreviousSelected = _React$useState12[1];
-
-  var _React$useState13 = useState$4([]),
-      _React$useState14 = _slicedToArray(_React$useState13, 2),
-      previousSelectedLabels = _React$useState14[0],
-      setPreviousSelectedLabels = _React$useState14[1];
-
-  var _React$useState15 = useState$4(false),
-      _React$useState16 = _slicedToArray(_React$useState15, 2),
-      optionsApplied = _React$useState16[0],
-      setOptionsApplied = _React$useState16[1];
-
-  var _React$useState17 = useState$4(false),
-      _React$useState18 = _slicedToArray(_React$useState17, 2),
-      loading = _React$useState18[0],
-      setLoading = _React$useState18[1];
-
-  var _React$useState19 = useState$4(0),
-      _React$useState20 = _slicedToArray(_React$useState19, 2),
-      cursor = _React$useState20[0],
-      setCursor = _React$useState20[1];
-
-  var prevDropdownOpen = usePrevious(dropdownOpen);
-  var prevListOptions = usePrevious(listOptions);
   var width = props.width ? props.width : '100%';
-
-  var setSelectButtonLabel = function setSelectButtonLabel() {
-    var selectedArray = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-    var _props$checkedValuesO = props.checkedValuesOffset,
-        checkedValuesOffset = _props$checkedValuesO === void 0 ? 2 : _props$checkedValuesO;
-    var selectedLength = selectedArray.length;
-    var label = '';
-
-    if (selectedLength <= checkedValuesOffset) {
-      var labelArray = [];
-      selectedArray.forEach(function (selectedLabel) {
-        labelArray.push(selectedLabel);
-      });
-      label = labelArray.join(', ');
-    } else {
-      label = props.onChangeTriggerLabel ? props.onChangeTriggerLabel(selectedLength, totalOptions) : "".concat(selectedLength, " selected");
-    }
-
-    setSelectedLabels(selectedArray);
-    setButtonLabel(label);
-  };
-
-  useEffect$4(function () {
+  useEffect$3(function () {
     if (dropdownOpen) {
       var _dropdownElement$pare;
 
@@ -1981,94 +1693,30 @@ var DropdownList = function DropdownList(props) {
       setPopoverStyle(popperWrapperStyle);
     }
   }, [dropdownOpen, checkboxes, showApplyButton]);
-  useEffect$4(function () {
-    if (props.selected) {
-      var selectedValuesArray = selected.slice();
-      var selectedLabelsArray = selectedLabels.slice();
-      props.selected.forEach(function (selectedOption) {
-        var label = selectedOption.label,
-            value = selectedOption.value;
-
-        if (!selectedValuesArray.includes(value)) {
-          selectedValuesArray = selectedValuesArray.concat(value);
-          selectedLabelsArray = selectedLabelsArray.concat(label);
-        }
-      });
-      setPreviousSelected(selectedValuesArray);
-      setPreviousSelectedLabels(selectedLabelsArray);
-      setSelected(selectedValuesArray);
-      setSelectButtonLabel(selectedLabelsArray);
-    }
-  }, [JSON.stringify(props.selected)]);
-  useEffect$4(function () {
-    if (props.selectedAll) {
-      var _props$selectedAll = props.selectedAll,
-          _label = _props$selectedAll.label,
-          value = _props$selectedAll.value;
-
-      if (_label && value) {
-        var selectedLabelsCopy = selectedLabels.slice();
-        var selectedValue = selected.slice();
-        selectedLabelsCopy = _label;
-        selectedValue = value;
-        setSelected(selectedValue);
-        setSelectButtonLabel(selectedLabelsCopy);
-      }
-    }
-  }, [props.selectedAll]);
-  useEffect$4(function () {
-    if (props.bottomOptionsSliced && dropdownRef.current) {
-      var className = '.Option-wrapper';
-      var element = document.querySelectorAll(className);
-      var index = element.length - limit + props.slicedOptionsLength;
-      var marker = element[index];
-      var updatedScrollTop = marker.offsetTop - maxHeight;
-      dropdownRef.current.scrollTop = updatedScrollTop;
-      lastScrollTop = updatedScrollTop;
-      setCursor(cursor - limit + props.slicedOptionsLength);
-    }
-  }, [props.bottomOptionsSliced]);
-  useEffect$4(function () {
-    if (props.topOptionsSliced && dropdownRef.current) {
-      var className = '.Option-wrapper';
-      var element = document.querySelectorAll(className);
-      var index = limit - props.slicedOptionsLength;
-      var marker = element[index];
-      dropdownRef.current.scrollTop = marker.offsetTop;
-      lastScrollTop = marker.offsetTop;
-      setCursor(limit - props.slicedOptionsLength + 1);
-    }
-  }, [props.topOptionsSliced]);
-  useEffect$4(function () {
-    var rearrangeCondition = dropdownOpen && props.async && checkboxes;
-    if (rearrangeCondition && onRearrangeOptions) onRearrangeOptions(selected, selectedLabels);
-  }, [dropdownOpen]);
-  useEffect$4(function () {
-    var rearrangeCondition = !searchTerm && props.searchInit && props.async && checkboxes;
-    if (rearrangeCondition && onRearrangeOptions) onRearrangeOptions(selected, selectedLabels);
-  }, [searchTerm, props.searchInit]);
   var _props$triggerSize = props.triggerSize,
       triggerSize = _props$triggerSize === void 0 ? 'regular' : _props$triggerSize,
       placeholder = props.placeholder,
       icon = props.icon,
+      error = props.error,
       disabled = props.disabled,
-      inlineLabel = props.inlineLabel;
-  var CustomTrigger = props.customTrigger ? props.customTrigger(buttonLabel) : /*#__PURE__*/createElement(Fragment, null);
+      inlineLabel = props.inlineLabel,
+      triggerLabel = props.triggerLabel;
+  var CustomTrigger = props.customTrigger ? props.customTrigger(triggerLabel ? triggerLabel : placeholder) : /*#__PURE__*/createElement(Fragment, null);
   var NewCustomTrigger = /*#__PURE__*/cloneElement(CustomTrigger, {
     tabindex: 0,
     ref: dropdownTriggerRef
   });
   var trigger = props.customTrigger ? NewCustomTrigger : /*#__PURE__*/createElement(DropdownButton, {
     placeholder: placeholder,
-    size: triggerSize,
+    triggerSize: triggerSize,
     icon: icon,
     disabled: disabled,
     inlineLabel: inlineLabel,
-    width: width,
     maxWidth: maxWidth,
     menu: menu,
+    error: error,
     ref: dropdownTriggerRef
-  }, buttonLabel);
+  }, triggerLabel);
   var dropdownWrapperStyle = menu ? {} : {
     width: width
   };
@@ -2078,87 +1726,42 @@ var DropdownList = function DropdownList(props) {
     overflowX: 'hidden'
   };
 
-  var getDropdownClass = function getDropdownClass(index, currentGroup, isGroup) {
-    var Dropdown = classNames(_defineProperty({}, 'Dropdown--border', currentGroup !== undefined && isGroup && index !== 0));
+  var getDropdownClass = function getDropdownClass(index, isGroup) {
+    var Dropdown = classNames(_defineProperty({}, 'Dropdown--border', isGroup && index !== 0));
     return Dropdown;
   };
 
   var dropdownClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Dropdown', true), _defineProperty(_classNames2, 'Dropdown--placeholder', !menu), _defineProperty(_classNames2, 'Dropdown--menu', menu), _classNames2));
   var dropdownWrapperClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Dropdown-wrapper', true), _defineProperty(_classNames3, 'Dropdown-wrapper--wrap', optionsWrap), _classNames3));
-
-  var closeDropdownPopper = function closeDropdownPopper(open) {
-    var _dropdownTriggerRef$c;
-
-    setDropdownOpen(open);
-    (_dropdownTriggerRef$c = dropdownTriggerRef.current) === null || _dropdownTriggerRef$c === void 0 ? void 0 : _dropdownTriggerRef$c.focus();
-  };
+  var SelectAllClass = classNames((_classNames4 = {}, _defineProperty(_classNames4, 'Option', true), _defineProperty(_classNames4, 'Option-wrapper', true), _defineProperty(_classNames4, 'Option--top', true), _defineProperty(_classNames4, 'Option--active', cursor === 0), _classNames4));
 
   var onToggleDropdown = function onToggleDropdown() {
-    if (!dropdownOpen) {
-      props.renderOptionsFromTop();
-    }
+    var _dropdownTriggerRef$c;
 
-    if (!disabled) closeDropdownPopper(!dropdownOpen);
-
-    if (!(optionsApplied || !showApplyButton)) {
-      setSelected(previousSelected);
-      setSelectButtonLabel(previousSelectedLabels);
-    }
-
+    toggleDropdown();
+    if (!disabled) (_dropdownTriggerRef$c = dropdownTriggerRef.current) === null || _dropdownTriggerRef$c === void 0 ? void 0 : _dropdownTriggerRef$c.focus();
     setCursor(0);
-    setOptionsApplied(false);
-    if (search || props.async) searchClearHandler();
-  };
-
-  var debounceClear = debounce(400, function () {
-    if (onRearrangeOptions) onRearrangeOptions([], []);
-    setLoading(false);
-  });
-
-  var onClearOptions = function onClearOptions() {
-    setSelected([]);
-    setSelectButtonLabel([]);
-    setLoading(true);
-    debounceClear();
-    if (onChange && !showApplyButton) onChange([]);
   };
 
   var onCancelOptions = function onCancelOptions() {
-    setSelected(previousSelected);
-    setSelectedLabels(previousSelectedLabels);
-    setSelectButtonLabel(previousSelectedLabels);
-    closeDropdownPopper(false);
+    var _dropdownTriggerRef$c2;
+
+    cancelOptions();
+    (_dropdownTriggerRef$c2 = dropdownTriggerRef.current) === null || _dropdownTriggerRef$c2 === void 0 ? void 0 : _dropdownTriggerRef$c2.focus();
   };
 
   var onApplyOptions = function onApplyOptions() {
-    setPreviousSelected(selected);
-    setPreviousSelectedLabels(selectedLabels);
-    setOptionsApplied(true);
-    closeDropdownPopper(false);
-    if (onChange) onChange(selected);
-  };
+    var _dropdownTriggerRef$c3;
 
-  var checkboxChangeHandler = function checkboxChangeHandler(selectedArray, selectedLabelsArray, parentChecked) {
-    if (selectedArray.length === 0 || selectedArray.length === optionsLength || !parentChecked) {
-      setSelected(selectedArray);
-      setSelectButtonLabel(selectedLabelsArray);
-    }
-
-    if (parentChecked) {
-      if (onSelectAll) onSelectAll(selectedArray.length > 0);
-    } else {
-      if (onChange && !showApplyButton) onChange(selectedArray);
-    }
+    applyOptions();
+    (_dropdownTriggerRef$c3 = dropdownTriggerRef.current) === null || _dropdownTriggerRef$c3 === void 0 ? void 0 : _dropdownTriggerRef$c3.focus();
   };
 
   var optionClickHandler = function optionClickHandler(item) {
-    var label = item.label,
-        value = item.value;
-    setSelectedLabels([label]);
-    setButtonLabel(label);
-    setSelected([value]);
-    closeDropdownPopper(!closeOnSelect);
-    if (onChange) onChange(value);
+    var _dropdownTriggerRef$c4;
+
+    props.onOptionSelect(item);
+    (_dropdownTriggerRef$c4 = dropdownTriggerRef.current) === null || _dropdownTriggerRef$c4 === void 0 ? void 0 : _dropdownTriggerRef$c4.focus();
   };
 
   var searchClearHandler = function searchClearHandler() {
@@ -2167,30 +1770,6 @@ var DropdownList = function DropdownList(props) {
 
   var searchHandler = function searchHandler(event) {
     if (onSearchChange) onSearchChange(event.target.value);
-  };
-
-  var onScrollDropdown = function onScrollDropdown(direction, scrollTop) {
-    lastScrollTop = scrollTop;
-
-    if (onScroll) {
-      onScroll(direction);
-    }
-  };
-
-  var handleMenuScroll = function handleMenuScroll(e) {
-    var element = e.target;
-    var scrollTop = element.scrollTop;
-
-    if (scrollTop <= lastScrollTop) {
-      if (scrollTop <= bottomScrollOffset) onScrollDropdown('up', scrollTop);
-    } else {
-      var scrollContainerBottomPosition = Math.round(element.scrollTop + element.clientHeight);
-      var scrollPosition = Math.round(element.scrollHeight - bottomScrollOffset);
-
-      if (scrollPosition <= scrollContainerBottomPosition) {
-        onScrollDropdown('down', scrollTop);
-      }
-    }
   };
 
   var updateActiveOption = function updateActiveOption(index, parentCheckbox) {
@@ -2210,6 +1789,7 @@ var DropdownList = function DropdownList(props) {
   };
 
   var renderGroups = function renderGroups(group, selectedGroup) {
+    var onClearOptions = props.onClearOptions;
     return /*#__PURE__*/createElement("div", {
       className: 'Dropdown-subinfo'
     }, /*#__PURE__*/createElement(Text, {
@@ -2222,7 +1802,8 @@ var DropdownList = function DropdownList(props) {
   };
 
   var renderApplyButton = function renderApplyButton() {
-    var disable = JSON.stringify(previousSelectedLabels) === JSON.stringify(selected);
+    var disable = _isEqual(previousSelected, tempSelected);
+
     return /*#__PURE__*/createElement("div", {
       className: 'Dropdown-buttonWrapper'
     }, /*#__PURE__*/createElement(Button, {
@@ -2251,107 +1832,91 @@ var DropdownList = function DropdownList(props) {
       autoFocus: true,
       onChange: searchHandler,
       onClear: searchClearHandler,
-      ref: dropdownInputRef
+      ref: dropdownInputRef,
+      autocomplete: 'off'
     }));
   };
 
   var renderLoading = function renderLoading(loadersLength) {
     var arr = Array(loadersLength).fill('Loading');
+    var type = checkboxes ? 'WITH_CHECKBOX' : loadingType;
     return arr.map(function (option, ind) {
       return /*#__PURE__*/createElement("div", {
         className: "Option-loading",
         key: "".concat(option, "-").concat(ind)
       }, /*#__PURE__*/createElement(Loading, {
-        loadingType: loadingType
+        loadingType: type
       }));
     });
   };
 
-  var renderCheckboxes = function renderCheckboxes() {
-    var list = [];
-    var updatedChecked = [];
-    var parentChecked = selected.length === optionsLength;
-    var showParentCheckbox = searchTerm === '' && !props.async;
-    var selectedCondition = prevDropdownOpen !== dropdownOpen || props.searchInit || prevListOptions !== listOptions;
-    var parentLabel = parentCheckboxLabel.trim() ? parentCheckboxLabel.trim() : 'Select All';
-    var showGroups = props.async;
-    listOptions.forEach(function (option) {
-      var label = option.label,
-          value = option.value,
-          group = option.group,
-          selectedGroup = option.selectedGroup;
-      var checkedValue = false;
-
-      if (selectedCondition && selected && selected.length > 0) {
-        var updatedVal = JSON.stringify(value);
-        checkedValue = selected.findIndex(function (item) {
-          return JSON.stringify(item) === updatedVal;
-        }) !== -1 ? true : false;
-        updatedChecked.push(checkedValue);
+  var renderSelectAll = function renderSelectAll() {
+    var _props$parentCheckbox = props.parentCheckboxLabel,
+        parentCheckboxLabel = _props$parentCheckbox === void 0 ? 'Select All' : _props$parentCheckbox,
+        selectAll = props.selectAll,
+        onSelectAll = props.onSelectAll;
+    var label = parentCheckboxLabel.trim() ? parentCheckboxLabel.trim() : 'Select All';
+    return /*#__PURE__*/createElement("div", {
+      className: SelectAllClass,
+      onMouseEnter: function onMouseEnter(_e) {
+        return updateActiveOption(0, true);
       }
-
-      list.push({
-        label: label,
-        value: value,
-        group: group,
-        selectedGroup: selectedGroup,
-        checked: checkedValue
-      });
-    });
-    return /*#__PURE__*/createElement(ListCheckbox, {
-      label: parentLabel,
-      cursor: cursor,
-      onChange: checkboxChangeHandler,
-      checked: parentChecked,
-      renderFooter: renderFooter,
-      renderGroups: renderGroups,
-      remainingOptions: remainingOptions,
-      bufferedOption: bufferedOption,
-      showGroups: showGroups,
-      list: list,
-      updatedSelectedArray: updatedChecked,
-      style: dropdownStyle,
-      ref: dropdownRef,
-      selected: selected,
-      selectedLabels: selectedLabels,
-      optionsLength: optionsLength,
-      showParentCheckbox: showParentCheckbox,
-      optionRenderer: optionRenderer,
-      updateActiveOption: updateActiveOption
-    });
+    }, /*#__PURE__*/createElement(Checkbox, {
+      label: label,
+      onChange: onSelectAll,
+      checked: selectAll.checked,
+      indeterminate: selectAll.indeterminate,
+      tabIndex: -1
+    }));
   };
 
   var renderOptions = function renderOptions(item, index) {
-    var active = index === cursor;
-    var top = index === 0;
-    var bottom = index + 1 === listOptions.length && !(props.async && remainingOptions > 0);
+    var selectAllPresent = checkboxes && remainingOptions === 0 && searchTerm === '';
+    var active = selectAllPresent ? index + 1 === cursor : index === cursor;
+    var top = index === 0 && !selectAllPresent;
+    var bottom = index + 1 === listOptions.length + selected.length && !(props.async && remainingOptions > 0);
+    var optionIsSelected = tempSelected.findIndex(function (option) {
+      return option.value === item.value;
+    }) !== -1;
     return /*#__PURE__*/createElement(Option, {
       optionData: item,
       optionIsTop: top,
       optionIsBottom: bottom,
       optionsWrap: optionsWrap,
-      selected: selected[0] === item.value,
+      selected: optionIsSelected,
       index: index,
       onClick: function onClick() {
         return optionClickHandler(item);
       },
       updateActiveOption: updateActiveOption,
       optionRenderer: optionRenderer,
-      active: active
+      active: active,
+      checkboxes: checkboxes,
+      menu: menu,
+      onChange: function onChange(c) {
+        return props.onSelect(item, c);
+      },
+      optionType: props.optionType
     });
   };
 
   var renderDropdownSection = function renderDropdownSection() {
-    if (loadingOptions || loading) {
+    var _props$selectedGroupL = props.selectedGroupLabel,
+        selectedGroupLabel = _props$selectedGroupL === void 0 ? 'Selected Items' : _props$selectedGroupL,
+        _props$loadersLength = props.loadersLength,
+        loadersLength = _props$loadersLength === void 0 ? 10 : _props$loadersLength,
+        loadingOptions = props.loadingOptions;
+
+    if (loadersLength && loadingOptions) {
       return /*#__PURE__*/createElement("div", {
         className: 'Dropdown-loading'
       }, /*#__PURE__*/createElement("div", {
         className: "Dropdown-scroller",
         style: dropdownStyle
-      }, renderLoading(limit)));
+      }, renderLoading(loadersLength)));
     }
 
-    if (listOptions.length === 0 && !(loading || loadingOptions)) {
+    if (listOptions.length === 0 && !loadingOptions) {
       var _props$searchResultMe = props.searchResultMessage,
           searchResultMessage = _props$searchResultMe === void 0 ? 'No result found' : _props$searchResultMe;
       return /*#__PURE__*/createElement("div", {
@@ -2365,18 +1930,21 @@ var DropdownList = function DropdownList(props) {
 
     return /*#__PURE__*/createElement("div", {
       className: dropdownWrapperClass
-    }, checkboxes && renderCheckboxes(), !checkboxes && /*#__PURE__*/createElement("div", {
+    }, checkboxes && remainingOptions === 0 && searchTerm === '' && renderSelectAll(), /*#__PURE__*/createElement("div", {
       className: "Dropdown-scroller",
       style: dropdownStyle,
       ref: dropdownRef
-    }, listOptions.map(function (option, index) {
-      var prevGroup = index > 0 ? listOptions[index - 1].group : bufferedOption ? bufferedOption.group : undefined;
+    }, selected.length > 0 && renderGroups(selectedGroupLabel, true), selected.map(function (option, index) {
+      return renderOptions(option, index);
+    }), listOptions.map(function (option, index) {
+      var prevGroup = index > 0 ? listOptions[index - 1].group : selected.length ? selectedGroupLabel : undefined;
       var currentGroup = option.group;
       var isGroup = prevGroup !== currentGroup;
+      var updatedIndex = index + selected.length;
       return /*#__PURE__*/createElement("div", {
-        className: getDropdownClass(index + props.offset, currentGroup, isGroup),
+        className: getDropdownClass(updatedIndex, isGroup),
         key: index
-      }, isGroup && currentGroup && renderGroups(currentGroup), renderOptions(option, index));
+      }, isGroup && currentGroup && renderGroups(currentGroup), renderOptions(option, updatedIndex));
     }), props.async && remainingOptions > 0 && renderFooter()));
   };
 
@@ -2455,7 +2023,6 @@ var DropdownList = function DropdownList(props) {
   return /*#__PURE__*/createElement("div", {
     className: dropdownClass,
     ref: triggerRef,
-    onScroll: handleMenuScroll,
     style: dropdownWrapperStyle,
     onKeyDown: onkeydown
   }, /*#__PURE__*/createElement(Popover, {
@@ -2470,320 +2037,411 @@ var DropdownList = function DropdownList(props) {
 
 DropdownList.displayName = 'DropdownList';
 
-var useIsMount = function useIsMount() {
-  var isMountRef = useRef$2(true);
-  useEffect$4(function () {
-    isMountRef.current = false;
-  }, []);
-  return isMountRef.current;
-};
-var asyncLimit = 50;
-var Dropdown = function Dropdown(props) {
-  var _props$limit = props.limit,
-      limit = _props$limit === void 0 ? 10 : _props$limit,
-      _props$options = props.options,
-      dropdownItems = _props$options === void 0 ? [] : _props$options,
-      _props$selectedGroupL = props.selectedGroupLabel,
-      selectedGroupLabel = _props$selectedGroupL === void 0 ? 'Selected Items' : _props$selectedGroupL,
-      bulk = props.bulk,
-      onChange = props.onChange,
-      fetchOptions = props.fetchOptions,
-      rest = _objectWithoutProperties(props, ["limit", "options", "selectedGroupLabel", "bulk", "onChange", "fetchOptions"]);
+var bulk = 50;
+var Dropdown = /*#__PURE__*/function (_React$Component) {
+  _inherits(Dropdown, _React$Component);
 
-  var _React$useState = useState$4(-1),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      topOffset = _React$useState2[0],
-      setTopOffset = _React$useState2[1];
+  var _super = _createSuper(Dropdown);
 
-  var _React$useState3 = useState$4(-1),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      bottomOffset = _React$useState4[0],
-      setBottomOffset = _React$useState4[1];
+  function Dropdown(props) {
+    var _this;
 
-  var _React$useState5 = useState$4([]),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      options = _React$useState6[0],
-      setOptions = _React$useState6[1];
+    _classCallCheck(this, Dropdown);
 
-  var _React$useState7 = useState$4(dropdownItems),
-      _React$useState8 = _slicedToArray(_React$useState7, 2),
-      dropdownOptions = _React$useState8[0],
-      setDropdownOptions = _React$useState8[1];
+    _this = _super.call(this, props);
 
-  var _React$useState9 = useState$4(dropdownItems),
-      _React$useState10 = _slicedToArray(_React$useState9, 2),
-      shuffledOptions = _React$useState10[0],
-      setShuffledOptions = _React$useState10[1];
+    _defineProperty(_assertThisInitialized(_this), "fetchOptionsFn", function (searchTerm) {
+      var options = _this.props.options;
+      var filteredOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
+      return new Promise(function (resolve) {
+        resolve({
+          options: filteredOptions,
+          count: filteredOptions.length
+        });
+      });
+    });
 
-  var _React$useState11 = useState$4(false),
-      _React$useState12 = _slicedToArray(_React$useState11, 2),
-      topOptionsSliced = _React$useState12[0],
-      setTopOptionsSliced = _React$useState12[1];
+    _defineProperty(_assertThisInitialized(_this), "getUnSelectedOptions", function (options, init) {
+      if (options.length) {
+        var unSelectedGroup = options.filter(function (option) {
+          return init ? !option.selected : _this.state.tempSelected.findIndex(function (item) {
+            return item.value === option.value;
+          }) === -1;
+        });
+        return unSelectedGroup;
+      }
 
-  var _React$useState13 = useState$4(false),
-      _React$useState14 = _slicedToArray(_React$useState13, 2),
-      bottomOptionsSliced = _React$useState14[0],
-      setBottomOptionsSliced = _React$useState14[1];
+      return options;
+    });
 
-  var _React$useState15 = useState$4(''),
-      _React$useState16 = _slicedToArray(_React$useState15, 2),
-      searchTerm = _React$useState16[0],
-      setSearchTerm = _React$useState16[1];
+    _defineProperty(_assertThisInitialized(_this), "getSelectedOptions", function (options, init) {
+      if (options.length) {
+        var selectedGroup = init ? options.filter(function (option) {
+          return option.selected;
+        }) : _this.state.tempSelected;
+        return selectedGroup;
+      }
 
-  var _React$useState17 = useState$4(0),
-      _React$useState18 = _slicedToArray(_React$useState17, 2),
-      slicedOptionLength = _React$useState18[0],
-      setSlicedOptionLength = _React$useState18[1];
+      return [];
+    });
 
-  var _React$useState19 = useState$4(bulk),
-      _React$useState20 = _slicedToArray(_React$useState19, 2),
-      async = _React$useState20[0],
-      setAsync = _React$useState20[1];
-
-  var _React$useState21 = useState$4(props.loading),
-      _React$useState22 = _slicedToArray(_React$useState21, 2),
-      loading = _React$useState22[0],
-      setLoading = _React$useState22[1];
-
-  var _React$useState23 = useState$4(dropdownItems.length),
-      _React$useState24 = _slicedToArray(_React$useState23, 2),
-      optionsLength = _React$useState24[0],
-      setOptionsLength = _React$useState24[1];
-
-  var _React$useState25 = useState$4(),
-      _React$useState26 = _slicedToArray(_React$useState25, 2),
-      bufferedOption = _React$useState26[0],
-      setBufferedOption = _React$useState26[1];
-
-  var _React$useState27 = useState$4(false),
-      _React$useState28 = _slicedToArray(_React$useState27, 2),
-      searchInit = _React$useState28[0],
-      setSearchInit = _React$useState28[1];
-
-  var _React$useState29 = useState$4(),
-      _React$useState30 = _slicedToArray(_React$useState29, 2),
-      selectedAll = _React$useState30[0],
-      setSelectedAll = _React$useState30[1];
-
-  var isInitialRender = useIsMount();
-  var debounceSearch = useCallback(debounce(300, function (search, updatedAsync) {
-    if (updatedAsync) {
-      var emptyBuffer = {
-        value: '',
-        label: ''
-      };
-      setBufferedOption(emptyBuffer);
-      getFilteredOptions(search);
-      setTopOffset(0);
-      setBottomOffset(0);
-    } else {
-      setLoading(false);
-      renderOptionsFromTop(search);
-    }
-  }), []);
-
-  var getFilteredOptions = function getFilteredOptions() {
-    var search = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-
-    if (fetchOptions) {
-      fetchOptions(search, asyncLimit).then(function (res) {
-        var searchResult = res.options,
+    _defineProperty(_assertThisInitialized(_this), "updateOptions", function (init, async) {
+      var _this$state = _this.state,
+          searchTerm = _this$state.searchTerm,
+          tempSelected = _this$state.tempSelected,
+          optionsLength = _this$state.optionsLength,
+          previousSelected = _this$state.previousSelected;
+      var updatedAsync = async === undefined ? _this.state.async : async;
+      var _this$props = _this.props,
+          fetchOptions = _this$props.fetchOptions,
+          checkboxes = _this$props.checkboxes;
+      var fetchFn = fetchOptions ? fetchOptions : _this.fetchOptionsFn;
+      fetchFn(searchTerm).then(function (res) {
+        var options = res.options,
             count = res.count;
-        var searchOptions = searchResult.slice(0, asyncLimit);
-        setLoading(false);
-        setDropdownOptions(searchOptions);
-        setShuffledOptions(searchOptions);
-        setOptionsLength(count);
-        setSearchInit(true);
+        var unSelectedGroup = checkboxes && searchTerm === '' && updatedAsync ? _this.getUnSelectedOptions(options, init) : options;
+        var selectedGroup = searchTerm === '' && updatedAsync ? _this.getSelectedOptions(options, init) : [];
+
+        _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
+          loading: false,
+          async: updatedAsync,
+          searchedOptionsLength: count,
+          options: unSelectedGroup.slice(0, bulk),
+          selected: checkboxes ? selectedGroup : [],
+          optionsLength: searchTerm === '' ? count : optionsLength,
+          tempSelected: init ? selectedGroup : tempSelected,
+          previousSelected: init ? selectedGroup : previousSelected,
+          triggerLabel: _this.updateTriggerLabel(init ? selectedGroup : tempSelected)
+        }));
       });
-    }
-  };
+    });
 
-  var setVirtualization = function setVirtualization(offset, optionsLimit, direction) {
-    var search = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : searchTerm;
-    var bufferedOptionPresent = direction === 'up' && !(offset < 0);
-    var updatedLimit = direction === 'up' ? offset < 0 ? optionsLimit : optionsLimit + 1 : optionsLimit;
-    var updatedOffset = direction === 'up' ? offset < 0 ? offset + 1 : offset : offset;
-    getOptions(updatedOffset, updatedLimit, search, dropdownOptions).then(function (res) {
-      if (updatedOffset !== undefined && direction !== undefined) {
-        var slicedOptions = res.options;
-        var len = limit - slicedOptions.length;
-        var slicedLength = bufferedOptionPresent ? len + 1 : len;
-        setSlicedOptionLength(slicedLength);
-        updateOptionsOnScroll(slicedOptions, updatedOffset, direction, slicedLength, bufferedOptionPresent);
+    _defineProperty(_assertThisInitialized(_this), "updateSearchTerm", function (search) {
+      _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
+        loading: true,
+        searchTerm: search
+      }));
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onOptionSelect", function (selectedArray) {
+      var _this$props2 = _this.props,
+          onChange = _this$props2.onChange,
+          closeOnSelect = _this$props2.closeOnSelect;
+      var label = selectedArray.label;
+
+      _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
+        tempSelected: [selectedArray],
+        triggerLabel: label,
+        open: !closeOnSelect
+      }));
+
+      if (onChange) onChange(selectedArray.value, name);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "updateTriggerLabel", function () {
+      var selectedArray = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+      var totalOptions = arguments.length > 1 ? arguments[1] : undefined;
+      var selectedLength = selectedArray.length;
+      if (selectedLength === 0) return '';
+      var _this$props3 = _this.props,
+          checkedValuesOffset = _this$props3.checkedValuesOffset,
+          onChangeTriggerLabel = _this$props3.onChangeTriggerLabel;
+      var optionsLength = _this.state ? _this.state.optionsLength : totalOptions;
+      var label = '';
+
+      if (checkedValuesOffset !== undefined && selectedLength <= checkedValuesOffset) {
+        label = selectedArray.map(function (option) {
+          return option.label;
+        }).join(', ');
       } else {
-        setSlicedOptionLength(0);
-        setOptions(res.options);
-        setBottomOffset(res.offset);
-        if (!async) setOptionsLength(res.length);
+        label = onChangeTriggerLabel ? onChangeTriggerLabel(selectedLength, optionsLength) : "".concat(selectedLength, " selected");
+      }
+
+      return label;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onSelect", function (option, checked) {
+      var _this$state2 = _this.state,
+          tempSelected = _this$state2.tempSelected,
+          optionsLength = _this$state2.optionsLength;
+      var _this$props4 = _this.props,
+          onChange = _this$props4.onChange,
+          showApplyButton = _this$props4.showApplyButton;
+      var selectedArray = tempSelected.slice();
+
+      if (!checked) {
+        var index = selectedArray.findIndex(function (item) {
+          return item.value === option.value;
+        });
+        selectedArray.splice(index, 1);
+      }
+
+      selectedArray = checked ? selectedArray.concat(option) : selectedArray;
+
+      _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
+        tempSelected: selectedArray,
+        triggerLabel: _this.updateTriggerLabel(selectedArray),
+        selectAll: getSelectAll(selectedArray, optionsLength)
+      }));
+
+      if (onChange && !showApplyButton) {
+        var values = selectedArray.map(function (item) {
+          return item.value;
+        });
+        onChange(values, name);
       }
     });
-  };
 
-  var renderOptionsFromTop = function renderOptionsFromTop() {
-    var search = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : searchTerm;
+    _defineProperty(_assertThisInitialized(_this), "onSelectAll", function (checked) {
+      var _this$props5 = _this.props,
+          onChange = _this$props5.onChange,
+          showApplyButton = _this$props5.showApplyButton;
+      var _this$state3 = _this.state,
+          options = _this$state3.options,
+          optionsLength = _this$state3.optionsLength;
+      var selectedArray = checked ? options : [];
 
-    if (!loading) {
-      var emptyBuffer = {
-        value: '',
-        label: ''
-      };
-      setBufferedOption(emptyBuffer);
-      setVirtualization(0, limit, undefined, search);
-      setTopOffset(0);
-      setBottomOffset(0);
-    }
-  };
+      _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
+        tempSelected: selectedArray,
+        triggerLabel: _this.updateTriggerLabel(selectedArray),
+        selectAll: getSelectAll(selectedArray, optionsLength)
+      }));
 
-  useEffect$4(function () {
-    if (!isInitialRender) setAsync(bulk);
-  }, [bulk]);
-  useEffect$4(function () {
-    if (!isInitialRender) {
-      if (async) {
-        setLoading(true);
-        getFilteredOptions();
-      } else {
-        setDropdownOptions(dropdownItems);
-        setOptionsLength(dropdownItems.length);
+      if (onChange && !showApplyButton) {
+        var values = selectedArray.map(function (option) {
+          return option.value;
+        });
+        onChange(values, name);
       }
-    }
-  }, [props.checkboxes]);
-  useEffect$4(function () {
-    var updatedAsync = bulk === undefined ? dropdownItems.length > 50 : async;
-    if (bulk === undefined) setAsync(updatedAsync);
-
-    if (updatedAsync) {
-      setLoading(true);
-      getFilteredOptions();
-    } else {
-      setDropdownOptions(dropdownItems);
-      setOptionsLength(dropdownItems.length);
-    }
-  }, [JSON.stringify(props.options)]);
-  useEffect$4(function () {
-    if (!isInitialRender) renderOptionsFromTop();
-  }, [JSON.stringify(dropdownOptions), limit]);
-  useEffect$4(function () {
-    if (!isInitialRender) {
-      debounceSearch(searchTerm, async);
-    }
-  }, [searchTerm]);
-
-  var onSearchChange = function onSearchChange(search) {
-    setLoading(true);
-    setSearchTerm(search);
-    setSearchInit(false);
-  };
-
-  var updateOptionsOnScroll = function updateOptionsOnScroll(slicedOptions, updatedOffset, direction, slicedLength, bufferPresent) {
-    if (bottomOptionsSliced) setBottomOptionsSliced(false);
-    if (topOptionsSliced) setTopOptionsSliced(false);
-    var stateLimit = 2 * limit;
-    var updatedOptions = options.slice();
-
-    if (direction === 'down') {
-      updatedOptions = updatedOptions.concat(slicedOptions);
-      var len = updatedOptions.length;
-
-      if (len > stateLimit) {
-        var bufferOption = updatedOptions[len - stateLimit - 1];
-        updatedOptions = updatedOptions.slice(len - stateLimit, len);
-        setBufferedOption(bufferOption);
-        setTopOffset(updatedOffset - stateLimit + limit - slicedLength);
-        setBottomOptionsSliced(true);
-      }
-
-      setBottomOffset(updatedOffset);
-    } else {
-      var _bufferOption = bufferPresent ? slicedOptions[0] : {};
-
-      var newOptions = bufferPresent ? slicedOptions.slice(1) : slicedOptions;
-      var newOffset = bufferPresent ? updatedOffset + 1 : updatedOffset;
-      updatedOptions = newOptions.concat(updatedOptions);
-      var _len = updatedOptions.length;
-
-      if (_len > stateLimit) {
-        updatedOptions = updatedOptions.slice(0, stateLimit);
-        setBottomOffset(newOffset + stateLimit - limit);
-        setTopOptionsSliced(true);
-      }
-
-      setBufferedOption(_bufferOption);
-      setTopOffset(newOffset);
-    }
-
-    setOptions(updatedOptions);
-  };
-
-  var onRearrangeOptions = function onRearrangeOptions(selected, selectedLabels) {
-    var optionsCopy = shuffledOptions.slice();
-    var unselectedOptions = optionsCopy.filter(function (option) {
-      return selected.indexOf(option.value) === -1;
     });
-    var selectedOptions = selected.map(function (option, i) {
-      var selectedOption = {
-        label: selectedLabels[i],
-        value: option,
-        group: selectedGroupLabel,
-        selectedGroup: true
-      };
-      return selectedOption;
-    });
-    var newOptions = selectedOptions.concat(unselectedOptions);
-    setDropdownOptions(newOptions);
-  };
 
-  var OnScrollOptions = function OnScrollOptions(direction) {
-    var condition = direction === 'down' ? bottomOffset + limit > optionsLength : topOffset - limit < 0;
-    var optionsLimit = condition ? direction === 'down' ? optionsLength - bottomOffset : topOffset : limit;
-    var updatedOffset = direction === 'down' ? bottomOffset + optionsLimit : topOffset - optionsLimit - 1;
-    var offsetInOptions = updatedOffset >= -1 && optionsLimit > 0;
-    if (offsetInOptions) setVirtualization(updatedOffset, optionsLimit, direction);
-  };
+    _defineProperty(_assertThisInitialized(_this), "debounceSearch", debounce(300, function () {
+      return _this.updateOptions(false);
+    }));
 
-  var onChangeOptions = function onChangeOptions(selectedArray) {
-    if (searchInit) setSearchInit(false);
-    if (onChange) onChange(selectedArray);
-  };
+    _defineProperty(_assertThisInitialized(_this), "onClearOptions", function () {
+      var _this$props6 = _this.props,
+          onChange = _this$props6.onChange,
+          showApplyButton = _this$props6.showApplyButton;
 
-  var onSelectAll = function onSelectAll(selectedAllOptions) {
-    if (props.options) {
-      var optionsCopy = props.options.slice();
-      var selectedArray = selectedAllOptions ? getValuesFromSelectedObj(optionsCopy) : [];
-      var selectedArrayLabel = selectedAllOptions ? getLabelsFromSelectedObj(optionsCopy) : [];
-      setSelectedAll({
-        label: selectedArrayLabel,
-        value: selectedArray
+      _this.setState({
+        selected: [],
+        tempSelected: [],
+        triggerLabel: '',
+        loading: true
       });
-      if (onChange && !props.showApplyButton) onChange(selectedArray);
-    }
-  };
 
-  return /*#__PURE__*/createElement(DropdownList, _extends({
-    listOptions: options,
-    searchInit: searchInit,
-    bufferedOption: bufferedOption,
-    slicedOptionsLength: slicedOptionLength,
-    remainingOptions: optionsLength - dropdownOptions.length,
-    loadingOptions: loading,
-    async: async,
-    selectedAll: selectedAll,
-    searchTerm: searchTerm,
-    onScroll: OnScrollOptions,
-    topOptionsSliced: topOptionsSliced,
-    bottomOptionsSliced: bottomOptionsSliced,
-    limit: limit,
-    offset: topOffset,
-    optionsLength: dropdownItems.length,
-    onSearchChange: onSearchChange,
-    onChange: onChangeOptions,
-    onSelectAll: onSelectAll,
-    onRearrangeOptions: onRearrangeOptions,
-    renderOptionsFromTop: renderOptionsFromTop
-  }, rest));
-};
-Dropdown.displayName = 'Dropdown';
+      _this.debounceSearch();
+
+      if (onChange && !showApplyButton) onChange([], name);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onCancelOptions", function () {
+      var _this$state4 = _this.state,
+          previousSelected = _this$state4.previousSelected,
+          optionsLength = _this$state4.optionsLength,
+          tempSelected = _this$state4.tempSelected;
+
+      var label = _this.updateTriggerLabel(previousSelected);
+
+      _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
+        tempSelected: previousSelected,
+        selectAll: getSelectAll(previousSelected, optionsLength),
+        triggerLabel: label,
+        open: false
+      }));
+
+      if (_this.props.onClose) {
+        var values = tempSelected.map(function (option) {
+          return option.value;
+        });
+
+        _this.props.onClose(values, name);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onApplyOptions", function () {
+      var tempSelected = _this.state.tempSelected;
+      var _this$props7 = _this.props,
+          onChange = _this$props7.onChange,
+          onClose = _this$props7.onClose;
+
+      _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
+        previousSelected: tempSelected,
+        optionsApplied: true,
+        open: false
+      }));
+
+      var values = tempSelected.map(function (option) {
+        return option.value;
+      });
+
+      if (onChange) {
+        onChange(values, name);
+      }
+
+      if (onClose) {
+        onClose(values, name);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onToggleDropdown", function () {
+      if (_this.props.disabled) {
+        return;
+      }
+
+      var _this$props8 = _this.props,
+          showApplyButton = _this$props8.showApplyButton,
+          checkboxes = _this$props8.checkboxes,
+          onClose = _this$props8.onClose,
+          name = _this$props8.name;
+      var _this$state5 = _this.state,
+          triggerLabel = _this$state5.triggerLabel,
+          optionsApplied = _this$state5.optionsApplied,
+          previousSelected = _this$state5.previousSelected,
+          tempSelected = _this$state5.tempSelected,
+          optionsLength = _this$state5.optionsLength,
+          open = _this$state5.open,
+          async = _this$state5.async,
+          selected = _this$state5.selected,
+          loading = _this$state5.loading,
+          selectAll = _this$state5.selectAll;
+      var applyClicked = checkboxes && showApplyButton && !optionsApplied;
+      var moveSelectedGroup = async && checkboxes && !_isEqual(selected, tempSelected);
+
+      _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
+        tempSelected: applyClicked ? previousSelected : tempSelected,
+        selectAll: applyClicked ? getSelectAll(previousSelected, optionsLength) : selectAll,
+        triggerLabel: applyClicked ? _this.updateTriggerLabel(previousSelected) : triggerLabel,
+        open: !open,
+        optionsApplied: false,
+        loading: moveSelectedGroup || loading,
+        searchTerm: ''
+      }));
+
+      if (moveSelectedGroup) _this.updateOptions(false);
+
+      if (onClose && open) {
+        var values = tempSelected.map(function (option) {
+          return option.value;
+        });
+        onClose(values, name);
+      }
+    });
+
+    var _totalOptions = props.totalOptions,
+        _loading = props.loading,
+        _props$options = props.options,
+        _options = _props$options === void 0 ? [] : _props$options;
+
+    var _optionsLength = _totalOptions ? _totalOptions : _options.length;
+
+    var _async = 'fetchOptions' in _this.props || _optionsLength > bulk;
+
+    var _selectedGroup = !_async ? _this.getSelectedOptions(_options, true) : [];
+
+    _this.state = {
+      async: _async,
+      optionsLength: _optionsLength,
+      searchedOptionsLength: _optionsLength,
+      optionsApplied: false,
+      options: _options || [],
+      loading: _async ? true : _loading,
+      searchTerm: '',
+      selected: [],
+      tempSelected: _selectedGroup,
+      previousSelected: _selectedGroup,
+      triggerLabel: _this.updateTriggerLabel(_selectedGroup, _optionsLength),
+      selectAll: getSelectAll(_selectedGroup, _optionsLength)
+    };
+    if (_async) _this.updateOptions(true);
+    return _this;
+  }
+
+  _createClass(Dropdown, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (!this.state.async) {
+        var _this$props9 = this.props,
+            loading = _this$props9.loading,
+            _this$props9$options = _this$props9.options,
+            options = _this$props9$options === void 0 ? [] : _this$props9$options;
+
+        if (prevProps.loading !== loading || prevProps.options !== options) {
+          if (options.length > bulk) {
+            this.updateOptions(true, true);
+          } else {
+            var selectedGroup = this.getSelectedOptions(options, true);
+            this.setState(_objectSpread2(_objectSpread2({}, this.state), {}, {
+              options: options,
+              loading: loading,
+              tempSelected: selectedGroup,
+              previousSelected: selectedGroup,
+              optionsLength: options.length,
+              searchedOptionsLength: options.length,
+              triggerLabel: this.updateTriggerLabel(selectedGroup),
+              selectAll: getSelectAll(selectedGroup, this.state.optionsLength)
+            }));
+          }
+        }
+      }
+
+      if (prevState.searchTerm !== this.state.searchTerm) {
+        this.debounceSearch();
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$state6 = this.state,
+          options = _this$state6.options,
+          async = _this$state6.async,
+          open = _this$state6.open,
+          searchTerm = _this$state6.searchTerm,
+          loading = _this$state6.loading,
+          searchedOptionsLength = _this$state6.searchedOptionsLength,
+          tempSelected = _this$state6.tempSelected,
+          selectAll = _this$state6.selectAll,
+          selected = _this$state6.selected,
+          triggerLabel = _this$state6.triggerLabel,
+          previousSelected = _this$state6.previousSelected;
+
+      var _this$props10 = this.props,
+          loadersLength = _this$props10.loadersLength,
+          rest = _objectWithoutProperties(_this$props10, ["loadersLength"]);
+
+      var remainingOptionsLen = searchedOptionsLength - options.length;
+      return /*#__PURE__*/createElement(DropdownList, _extends({
+        listOptions: options,
+        remainingOptions: remainingOptionsLen,
+        loadingOptions: loading,
+        async: async,
+        dropdownOpen: open,
+        searchTerm: searchTerm,
+        triggerLabel: triggerLabel,
+        tempSelected: tempSelected,
+        previousSelected: previousSelected,
+        selected: selected,
+        applyOptions: this.onApplyOptions,
+        cancelOptions: this.onCancelOptions,
+        toggleDropdown: this.onToggleDropdown,
+        onClearOptions: this.onClearOptions,
+        onSelect: this.onSelect,
+        selectAll: selectAll,
+        onSearchChange: this.updateSearchTerm,
+        onOptionSelect: this.onOptionSelect,
+        onSelectAll: this.onSelectAll
+      }, rest));
+    }
+  }]);
+
+  return Dropdown;
+}(Component);
+
+_defineProperty(Dropdown, "defaultProps", {
+  closeOnSelect: true,
+  checkedValuesOffset: 2
+});
 
 var SubtleLink = function SubtleLink(props) {
   var onClick = props.onClick,
@@ -3227,7 +2885,7 @@ var Calendar = function Calendar(props) {
   var yearState = state.year,
       monthState = state.month,
       dateState = state.date;
-  useEffect$4(function () {
+  useEffect$3(function () {
     var _getDateInfo = getDateInfo(dateProp),
         year = _getDateInfo.year,
         month = _getDateInfo.month,
@@ -3237,18 +2895,18 @@ var Calendar = function Calendar(props) {
     var d = convertToDate(dateProp);
     setCurrDateState(d);
   }, [dateProp]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     var d = convertToDate(startDateProp);
     setStartDateState(d);
   }, [startDateProp]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     var d = convertToDate(endDateProp);
     setEndDateState(d);
   }, [endDateProp]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     if (monthsInView === 1) setView(viewProp);else setView('date');
   }, [monthsInView, viewProp]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     if (currDateState) {
       if (onDateChange) onDateChange(currDateState);
 
@@ -3284,25 +2942,25 @@ var Calendar = function Calendar(props) {
       }
     }
   }, [currDateState]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     if (onRangeChange) onRangeChange(startDateState, endDateState);
   }, [startDateState, endDateState]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     if (yearState !== undefined && monthsInView < 2) {
       setYearBlockNav(getYearBlock(yearState));
       setYearNav(yearState);
     }
   }, [yearState]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     if (monthState !== undefined && monthsInView < 2) {
       setMonthNav(monthState);
     }
   }, [monthState]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     setYearNav(yearNavProp);
     setYearBlockNav(getYearBlock(yearNavProp));
   }, [yearNavProp]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     setMonthNav(monthNavProp);
   }, [monthNavProp]);
 
@@ -3463,7 +3121,6 @@ var Calendar = function Calendar(props) {
       className: headerIconClass
     }, /*#__PURE__*/createElement(Icon, {
       name: "arrow_".concat(type === 'next' ? 'forward' : 'back'),
-      size: 16,
       className: "p-4",
       onClick: navClickHandler
     }));
@@ -3716,6 +3373,7 @@ var Caption = function Caption(props) {
   }, error && /*#__PURE__*/createElement("div", {
     className: errorIconClass
   }, /*#__PURE__*/createElement(Icon, {
+    size: 14,
     name: 'error',
     appearance: 'alert'
   })), /*#__PURE__*/createElement(Text, {
@@ -3750,19 +3408,19 @@ var InputMask = /*#__PURE__*/forwardRef(function (props, forwardRef) {
       caret = _React$useState4[0],
       setCaret = _React$useState4[1];
 
-  var ref = useRef$2(null);
+  var ref = useRef$1(null);
   var fixedMask = mask.filter(function (m) {
     return typeof m === 'string' && m.length === 1;
   });
-  useEffect$4(function () {
+  useEffect$3(function () {
     if (valueProp) {
       setValue(convertToMasked(valueProp));
     }
   }, [valueProp]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     setCaretPos(caret);
   }, [caret]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     if (ref.current) {
       var el = ref.current;
       el.addEventListener('keyup', function (e) {
@@ -4008,14 +3666,14 @@ var DatePicker = function DatePicker(props) {
       open = _React$useState8[0],
       setOpen = _React$useState8[1];
 
-  useEffect$4(function () {
+  useEffect$3(function () {
     var d = convertToDate(dateProp, inputFormat, validator);
     setDate(d);
   }, [dateProp]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     setOpen(openProp);
   }, [openProp]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     setError(!date);
 
     if (onDateChange) {
@@ -4372,7 +4030,6 @@ var Message = function Message(props) {
     className: MessageIcon
   }, /*#__PURE__*/createElement(Icon, {
     name: IconMapping[appearance],
-    size: 16,
     appearance: appearance
   })), /*#__PURE__*/createElement("div", null, title && /*#__PURE__*/createElement("div", {
     className: "Message-title"
@@ -4473,9 +4130,9 @@ var Paragraph = function Paragraph(props) {
 };
 Paragraph.displayName = 'Paragraph';
 
-var useIsMount$1 = function useIsMount() {
-  var isMountRef = useRef$2(true);
-  useEffect$4(function () {
+var useIsMount = function useIsMount() {
+  var isMountRef = useRef$1(true);
+  useEffect$3(function () {
     isMountRef.current = false;
   }, []);
   return isMountRef.current;
@@ -4483,8 +4140,8 @@ var useIsMount$1 = function useIsMount() {
 var ProgressBar = function ProgressBar(props) {
   var value = props.value,
       onChange = props.onChange;
-  var isMount = useIsMount$1();
-  useEffect$4(function () {
+  var isMount = useIsMount();
+  useEffect$3(function () {
     if (onChange && !isMount) onChange(value);
   }, [value]);
   var style = {
@@ -4513,7 +4170,7 @@ var Radio = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
       name = props.name,
       value = props.value,
       defaultChecked = props.defaultChecked;
-  var ref = useRef$2(null);
+  var ref = useRef$1(null);
   useImperativeHandle(forwardedRef, function () {
     return ref.current;
   });
@@ -4614,7 +4271,7 @@ var Switch = /*#__PURE__*/forwardRef(function (props, ref) {
       checked = _React$useState2[0],
       setChecked = _React$useState2[1];
 
-  useEffect$4(function () {
+  useEffect$3(function () {
     var checkedValue = props.disabled ? checked : props.checked;
     setChecked(checkedValue);
   }, [props.checked, props.disabled]);
@@ -4643,6 +4300,43 @@ var Switch = /*#__PURE__*/forwardRef(function (props, ref) {
 });
 Switch.displayName = 'Switch';
 
+var Textarea = /*#__PURE__*/forwardRef(function (props, ref) {
+  var _classNames2;
+
+  var disabled = props.disabled,
+      rows = props.rows,
+      name = props.name,
+      placeholder = props.placeholder,
+      value = props.value,
+      defaultValue = props.defaultValue,
+      required = props.required,
+      error = props.error,
+      onChange = props.onChange,
+      onClick = props.onClick,
+      onBlur = props.onBlur,
+      onFocus = props.onFocus;
+  var classes = classNames(_defineProperty({}, 'Textarea', true));
+  var TextareaClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Textarea-textarea', true), _defineProperty(_classNames2, 'Textarea-textarea--error', error), _classNames2));
+  return /*#__PURE__*/createElement("div", {
+    className: classes
+  }, /*#__PURE__*/createElement("textarea", {
+    ref: ref,
+    name: name,
+    rows: rows,
+    placeholder: placeholder,
+    className: TextareaClass,
+    value: value,
+    defaultValue: defaultValue,
+    required: required,
+    disabled: disabled,
+    onChange: onChange,
+    onBlur: onBlur,
+    onClick: onClick,
+    onFocus: onFocus
+  }));
+});
+Textarea.displayName = 'Textarea';
+
 var ActionButton = function ActionButton(props) {
   var _classNames;
 
@@ -4650,7 +4344,7 @@ var ActionButton = function ActionButton(props) {
       appearance = _props$appearance === void 0 ? 'default' : _props$appearance,
       label = props.label,
       onClick = props.onClick;
-  var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Toast-actionButton', true), _defineProperty(_classNames, "Toast-actionButton--".concat(appearance), appearance), _classNames));
+  var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--tiny', true), _defineProperty(_classNames, 'Toast-actionButton', true), _defineProperty(_classNames, "Toast-actionButton--".concat(appearance), appearance), _classNames));
 
   var onClickHandler = function onClickHandler(e) {
     e.preventDefault();
@@ -4702,7 +4396,6 @@ var Toast = function Toast(props) {
     className: iconClass('left')
   }, /*#__PURE__*/createElement(Icon, {
     name: icon,
-    size: 16,
     appearance: appearance !== 'warning' ? 'white' : 'default'
   })), /*#__PURE__*/createElement("div", {
     className: "Toast-body"
@@ -4716,7 +4409,6 @@ var Toast = function Toast(props) {
     className: iconClass('right')
   }, /*#__PURE__*/createElement(Icon, {
     name: 'close',
-    size: 16,
     appearance: appearance !== 'warning' ? 'white' : 'default'
   })))), message && /*#__PURE__*/createElement("div", {
     className: "Toast-message"
@@ -4811,7 +4503,7 @@ var Tooltip = /*#__PURE__*/function (_React$Component) {
   return Tooltip;
 }(Component);
 
-var useEffect$1 = useEffect$4,
+var useEffect$1 = useEffect$3,
     useState$1 = useState$4;
 
 var Modal = function Modal(props) {
@@ -4856,7 +4548,7 @@ var Modal = function Modal(props) {
   }, children));
   var ModalWrapper = backdrop ? /*#__PURE__*/createElement(OutsideClick, {
     onOutsideClick: function onOutsideClick(event) {
-      return onClose('OutsideClick', event);
+      return open && onClose('OutsideClick', event);
     }
   }, ModalContainer) : ModalContainer;
   var WrapperElement = /*#__PURE__*/createPortal(ModalWrapper, document.body);
@@ -4889,8 +4581,7 @@ var ModalHeader = function ModalHeader(props) {
         return onClose('IconClick', event);
       }
     }, /*#__PURE__*/createElement(Icon, {
-      name: 'close',
-      size: 16
+      name: 'close'
     }));
   };
 
@@ -4898,8 +4589,7 @@ var ModalHeader = function ModalHeader(props) {
     return /*#__PURE__*/createElement("div", {
       className: "Modal-header-icon"
     }, /*#__PURE__*/createElement(Icon, {
-      name: icon,
-      size: 16
+      name: icon
     }));
   };
 
@@ -4992,8 +4682,8 @@ var Dialog = function Dialog(props) {
 
 Dialog.displayName = 'Dialog';
 
-var useRef = useRef$2,
-    useEffect$2 = useEffect$4,
+var useRef = useRef$1,
+    useEffect$2 = useEffect$3,
     useState$2 = useState$4;
 var ModalBody = function ModalBody(props) {
   var _useState = useState$2(false),
@@ -5039,13 +4729,13 @@ var Pagination = function Pagination(props) {
       init = _React$useState4[0],
       setInit = _React$useState4[1];
 
-  useEffect$4(function () {
+  useEffect$3(function () {
     if (props.page && props.page >= 1 && props.page <= totalPages) setPage(props.page);
   }, [props.page]);
   var wrapperClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Pagination', true), _defineProperty(_classNames, "Pagination--".concat(type), type), _classNames));
   var nextButtonWrapperClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Pagination-buttonWrapper', true), _defineProperty(_classNames2, 'Pagination-buttonWrapper--next', true), _classNames2));
   var prevButtonWrapperClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Pagination-buttonWrapper', true), _defineProperty(_classNames3, 'Pagination-buttonWrapper--previous', true), _classNames3));
-  useEffect$4(function () {
+  useEffect$3(function () {
     if (init && page) onPageChange(page);
   }, [page]);
 
@@ -5135,9 +4825,9 @@ var Pagination = function Pagination(props) {
 };
 Pagination.displayName = 'Pagination';
 
-var useIsMount$2 = function useIsMount() {
-  var isMountRef = useRef$2(true);
-  useEffect$4(function () {
+var useIsMount$1 = function useIsMount() {
+  var isMountRef = useRef$1(true);
+  useEffect$3(function () {
     isMountRef.current = false;
   }, []);
   return isMountRef.current;
@@ -5147,8 +4837,8 @@ var ProgressRing = function ProgressRing(props) {
       size = _props$size === void 0 ? 'regular' : _props$size,
       value = props.value,
       onChange = props.onChange;
-  var isMount = useIsMount$2();
-  useEffect$4(function () {
+  var isMount = useIsMount$1();
+  useEffect$3(function () {
     if (onChange && !isMount) onChange(value);
   }, [value]);
   var radius = 20;
@@ -5255,24 +4945,24 @@ var RangePicker = function RangePicker(props) {
       endError = _React$useState16[0],
       setEndError = _React$useState16[1];
 
-  useEffect$4(function () {
+  useEffect$3(function () {
     var d = startDateProp ? convertToDate(startDateProp, inputFormat, validator) : undefined;
     setStartDate(d);
   }, [startDateProp]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     var d = endDateProp ? convertToDate(endDateProp, inputFormat, validator) : undefined;
     setEndDate(d);
   }, [endDateProp]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     setYearNav(yearNavProp);
   }, [yearNavProp]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     setMonthNav(monthNavProp);
   }, [monthNavProp]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     setOpen(openProp);
   }, [openProp]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     var sError = !startDate;
     var eError = !endDate;
 
@@ -5524,7 +5214,7 @@ var TabsWrapper = function TabsWrapper(props) {
       activeTab = _React$useState2[0],
       setActiveTab = _React$useState2[1];
 
-  useEffect$4(function () {
+  useEffect$3(function () {
     setActiveTab(props.activeTab && props.activeTab < children.length ? props.activeTab : 0);
   }, [props.activeTab]);
   var wrapperClass = classNames(_defineProperty({}, 'TabsWrapper', true));
@@ -5771,7 +5461,7 @@ var moveToIndex = function moveToIndex(arr, from, to) {
 var getTotalPages = function getTotalPages(totalRecords, pageSize) {
   return Math.ceil(totalRecords / pageSize);
 };
-var getSelectAll = function getSelectAll(data) {
+var getSelectAll$1 = function getSelectAll(data) {
   if (data.length) {
     var anyUnSelected = data.some(function (d) {
       return !d._selected;
@@ -6062,8 +5752,7 @@ var HeaderCell = function HeaderCell(props) {
   var _this$props = _this.props,
       loading = _this$props.loading,
       showMenu = _this$props.showMenu,
-      sortingList = _this$props.sortingList,
-      filterList = _this$props.filterList;
+      sortingList = _this$props.sortingList;
   var init = getInit(_this);
   var listIndex = sortingList.findIndex(function (l) {
     return l.name === schema.name;
@@ -6130,23 +5819,15 @@ var HeaderCell = function HeaderCell(props) {
   }) : /*#__PURE__*/createElement(Dropdown, {
     menu: true,
     showApplyButton: true,
-    checkboxes: true,
-    selected: filterList[schema.name] ? filterList[schema.name].map(function (f) {
-      var _schema$filters;
-
-      return {
-        value: f,
-        label: ((_schema$filters = schema.filters) === null || _schema$filters === void 0 ? void 0 : _schema$filters.find(function (s) {
-          return s.value === f;
-        }).label) || ''
-      };
-    }) : [],
-    customTrigger: function customTrigger() {
-      return /*#__PURE__*/createElement(Button, {
-        icon: "filter_list",
-        appearance: "transparent"
-      });
-    },
+    checkboxes: true // selected={
+    //   filterList[schema.name]
+    //     ? filterList[schema.name].map(f => ({
+    //       value: f,
+    //       label: schema.filters?.find(s => s.value === f)!.label || ''
+    //     }))
+    //     : []
+    // }
+    ,
     options: schema.filters,
     dropdownAlign: 'left',
     onChange: function onChange(selected) {
@@ -6837,21 +6518,19 @@ var Header = function Header(props) {
       searchPlaceholder = _props$searchPlacehol === void 0 ? 'Search' : _props$searchPlacehol,
       selectAll = props.selectAll,
       searchTerm = props.searchTerm,
-      updateSearchTerm = props.updateSearchTerm,
-      _props$dynamicColumn = props.dynamicColumn,
-      dynamicColumn = _props$dynamicColumn === void 0 ? true : _props$dynamicColumn;
+      updateSearchTerm = props.updateSearchTerm;
 
   var _React$useState = useState$4(false),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       selectAllRecords = _React$useState2[0],
       setSelectAllRecords = _React$useState2[1];
 
-  useEffect$4(function () {
+  useEffect$3(function () {
     if (selectAll && selectAll.checked) {
       if (onSelectAll) onSelectAll(true, selectAllRecords);
     }
   }, [selectAllRecords]);
-  useEffect$4(function () {
+  useEffect$3(function () {
     if (selectAll && !selectAll.checked) setSelectAllRecords(false);
   }, [selectAll]);
   var filterSchema = schema.filter(function (s) {
@@ -6923,18 +6602,16 @@ var Header = function Header(props) {
       key: name,
       checkboxes: true,
       showApplyButton: true,
-      inlineLabel: displayName // icon={'filter_list'}
+      inlineLabel: displayName,
+      icon: 'filter_list' // selected={
+      //   filterList[s.name]
+      //     ? filterList[s.name].map(f => ({
+      //       value: f,
+      //       label: s.filters?.find(sf => sf.value === f)!.label || ''
+      //     }))
+      //     : []
+      // }
       ,
-      selected: filterList[s.name] ? filterList[s.name].map(function (f) {
-        var _s$filters;
-
-        return {
-          value: f,
-          label: ((_s$filters = s.filters) === null || _s$filters === void 0 ? void 0 : _s$filters.find(function (sf) {
-            return sf.value === f;
-          }).label) || ''
-        };
-      }) : [],
       options: filters,
       onChange: function onChange(selected) {
         return onFilterChange(name, selected);
@@ -6973,26 +6650,16 @@ var Header = function Header(props) {
     onClick: function onClick() {
       return setSelectAllRecords(false);
     }
-  }, "Clear Selection")))), dynamicColumn && /*#__PURE__*/createElement("div", {
+  }, "Clear Selection")))), /*#__PURE__*/createElement("div", {
     className: "Header-hideColumns"
   }, /*#__PURE__*/createElement(Dropdown, {
     triggerSize: 'tiny',
     checkboxes: true,
-    showApplyButton: true,
-    selected: columnOptions.filter(function (o) {
-      return o.selected;
-    }),
+    showApplyButton: true // selected={columnOptions.filter(o => o.selected)}
+    ,
     options: columnOptions,
     checkedValuesOffset: 0,
     totalOptions: columnOptions.length,
-    customTrigger: function customTrigger(triggerLabel) {
-      return /*#__PURE__*/createElement(Button, {
-        size: "tiny",
-        appearance: "transparent",
-        icon: "keyboard_arrow_down_filled",
-        iconAlign: "right"
-      }, triggerLabel ? triggerLabel : "Showing 0 of ".concat(columnOptions.length, " columns"));
-    },
     onChangeTriggerLabel: function onChangeTriggerLabel(selected, totalOptions) {
       return "Showing ".concat(selected, " of ").concat(totalOptions, " columns");
     },
@@ -7058,7 +6725,7 @@ var Table = /*#__PURE__*/function (_React$Component) {
       if (async) {
         fetchData(opts).then(function (res) {
           _this.setState({
-            selectAll: getSelectAll(res.data),
+            selectAll: getSelectAll$1(res.data),
             schema: _this.state.schema.length ? _this.state.schema : res.schema,
             data: res.data,
             totalRecords: res.totalRecords,
@@ -7083,7 +6750,7 @@ var Table = /*#__PURE__*/function (_React$Component) {
 
         _this.setState({
           totalRecords: totalRecords,
-          selectAll: getSelectAll(renderedData),
+          selectAll: getSelectAll$1(renderedData),
           schema: _this.state.schema.length ? _this.state.schema : schema,
           loading: false,
           data: renderedData
@@ -7104,7 +6771,7 @@ var Table = /*#__PURE__*/function (_React$Component) {
 
         _this.setState({
           data: newData,
-          selectAll: getSelectAll(newData)
+          selectAll: getSelectAll$1(newData)
         });
       }
 
@@ -7135,7 +6802,7 @@ var Table = /*#__PURE__*/function (_React$Component) {
 
       _this.setState({
         data: newData,
-        selectAll: getSelectAll(newData)
+        selectAll: getSelectAll$1(newData)
       });
     });
 
@@ -7188,7 +6855,7 @@ var Table = /*#__PURE__*/function (_React$Component) {
       totalRecords: !_async ? props.data.length : 0,
       loading: !_async ? props.loading || false : true,
       error: !_async ? props.error || false : false,
-      selectAll: getSelectAll([]),
+      selectAll: getSelectAll$1([]),
       searchTerm: ''
     };
     if (_async) _this.updateData({});
@@ -7209,7 +6876,7 @@ var Table = /*#__PURE__*/function (_React$Component) {
             totalRecords: this.props.data.length,
             sortingList: [],
             filterList: {},
-            selectAll: getSelectAll([]),
+            selectAll: getSelectAll$1([]),
             searchTerm: ''
           });
         }
@@ -7303,49 +6970,52 @@ var List = function List(props) {
   }, props));
 };
 
-var useState$3 = useState$4,
-    useEffect$3 = useEffect$4,
-    useRef$1 = useRef$2;
+var useState$3 = useState$4;
+
+/**
+ * ####NOTE: Navigation(vertical) sets first subMenu(if present) active if the Navigation is collapsed.
+ */
 var Navigation = function Navigation(props) {
-  var _classNames3;
+  var _classNames5;
+
+  var type = props.type,
+      data = props.data,
+      active = props.active,
+      onClick = props.onClick,
+      expanded = props.expanded,
+      onToggle = props.onToggle,
+      footer = props.footer,
+      autoCollapse = props.autoCollapse;
 
   var _useState = useState$3({}),
       _useState2 = _slicedToArray(_useState, 2),
       menuState = _useState2[0],
       setMenuState = _useState2[1];
 
-  var ref = useRef$1(null);
-
-  var _useState3 = useState$3(false),
-      _useState4 = _slicedToArray(_useState3, 2),
-      scroll = _useState4[0],
-      setScroll = _useState4[1];
-
-  var type = props.type,
-      _props$data = props.data,
-      data = _props$data === void 0 ? [] : _props$data,
-      _onClick = props.onClick,
-      active = props.active,
-      collapsed = props.collapsed,
-      onToggle = props.onToggle;
-
-  var isSubMenuActive = function isSubMenuActive(isActive, subMenu) {
-    if (!isActive || !subMenu || subMenu && subMenu.length === 0) {
-      return false;
+  useEffect$3(function () {
+    if (props.active) {
+      var currMenu = getMenu(props.active);
+      if (currMenu) updateMenuState(currMenu, true);
     }
+  }, [props.active]);
 
-    var result = false;
-
-    var _iterator = _createForOfIteratorHelper(subMenu),
+  var getMenu = function getMenu(menu) {
+    var _iterator = _createForOfIteratorHelper(data),
         _step;
 
     try {
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var item = _step.value;
+        var m = _step.value;
 
-        if (item.id === active) {
-          result = true;
-          break;
+        if (menu.name && m.name === menu.name || menu.link && m.link === menu.link) {
+          return m;
+        }
+
+        if (m.subMenu) {
+          var activeMenu = m.subMenu.find(function (sm) {
+            return menu.name && sm.name === menu.name || menu.link && sm.link === menu.link;
+          });
+          if (activeMenu) return activeMenu;
         }
       }
     } catch (err) {
@@ -7354,144 +7024,198 @@ var Navigation = function Navigation(props) {
       _iterator.f();
     }
 
-    return result;
+    return null;
   };
 
-  var updateMenuState = function updateMenuState(id) {
-    var menuData = _objectSpread2({}, menuState);
+  var updateMenuState = function updateMenuState(menu, val) {
+    var currMenu = getMenu(menu);
 
-    menuData[id] = !menuData[id];
-    setMenuState(menuData);
-  };
+    if (currMenu) {
+      var nameSplit = currMenu.name.split('.');
 
-  useEffect$3(function () {
-    if (props.data && props.data.length > 0) {
-      props.data.filter(function (menu) {
-        return menu.subMenu && menu.subMenu.length > 0;
-      }).forEach(function (menu) {
-        if (isSubMenuActive(active, menu.subMenu)) {
-          updateMenuState(menu.id);
+      if (nameSplit.length > 1 || currMenu.subMenu) {
+        var name = nameSplit[0];
+
+        if (autoCollapse) {
+          setMenuState(_defineProperty({}, name, val || !menuState[name]));
+        } else {
+          var menuData = _objectSpread2({}, menuState);
+
+          menuData[name] = val !== undefined ? val : !menuData[name];
+          setMenuState(menuData);
         }
-      });
+      } else {
+        if (autoCollapse) {
+          if (!expanded) setMenuState({});
+        }
+      }
+    }
+  };
+
+  var onClickHandler = function onClickHandler(menu) {
+    if (!menu.disabled) {
+      if (menu.subMenu) {
+        if (!expanded) {
+          if (onClick) onClick(menu.subMenu[0]);
+        } else {
+          updateMenuState(menu);
+        }
+      } else {
+        if (onClick) onClick(menu);
+      }
+    }
+  };
+
+  var isActive = function isActive(menu) {
+    if (active) {
+      var currMenu = getMenu(active);
+      return !!currMenu && (currMenu === menu || currMenu.name.split('.')[0] === menu.name || currMenu.name === menu.name || !!currMenu.link && currMenu.link === menu.link);
     }
 
-    var scrollHeight = ref && ref.current ? ref.current.scrollHeight : 0;
-    var clientHeight = ref && ref.current ? ref.current.clientHeight : 0;
-
-    if (scrollHeight > clientHeight) {
-      setScroll(true);
-    }
-  }, [props.data, collapsed, ref]);
-  var classes = classNames(_defineProperty({
-    Navigation: true
-  }, "Navigation-".concat(type), type));
-  var footerClasses = classNames(_defineProperty({
-    'Navigation-vertical-footer': true
-  }, 'Navigation-vertical-footer--border', scroll));
-  var wrapperClasses = classNames((_classNames3 = {
-    Navigation: true
-  }, _defineProperty(_classNames3, "Navigation-wrapper-".concat(type), type), _defineProperty(_classNames3, 'Navigation--collapsed', collapsed), _classNames3));
-
-  var truncateName = function truncateName(name) {
-    var limit = 25;
-    return name.length > 25 ? name.slice(0, limit).concat('...') : name;
+    return false;
   };
 
   var getHorizontalMenu = function getHorizontalMenu(menuData) {
-    var list = menuData.map(function (item, index) {
-      var menuClasses = classNames(_defineProperty({
-        'Navigation-horizontal-menu': true
-      }, 'Navigation-horizontal-menu--active', active === item.id));
+    var list = menuData.map(function (menu, index) {
+      var _classNames;
+
+      var menuClasses = classNames((_classNames = {
+        'Navigation-menu': true
+      }, _defineProperty(_classNames, "Navigation-menu--".concat(type), type), _defineProperty(_classNames, 'Navigation-menu--active', isActive(menu)), _classNames));
       return /*#__PURE__*/createElement("div", {
         key: index,
         className: menuClasses,
         onClick: function onClick() {
-          return !item.disabled && _onClick && _onClick(item.id);
+          return onClickHandler(menu);
         }
-      }, item.icon && /*#__PURE__*/createElement(Icon, {
-        name: item.icon,
-        size: 16,
-        appearance: item.disabled ? 'disabled' : 'default'
+      }, menu.icon && /*#__PURE__*/createElement(Icon, {
+        className: "mr-3",
+        name: menu.icon,
+        appearance: menu.disabled ? 'disabled' : 'default'
       }), /*#__PURE__*/createElement(Text, {
-        appearance: item.disabled ? 'subtle' : 'default'
-      }, truncateName(item.name)));
+        appearance: menu.disabled ? 'subtle' : 'default'
+      }, menu.label));
     });
     return list;
   };
 
-  var getverticalMenu = function getverticalMenu() {
-    var list = data.map(function (item, index) {
-      var _classNames5;
+  var getVerticalMenu = function getVerticalMenu() {
+    var list = data.map(function (menu, index) {
+      var _classNames2;
 
-      var menuClasses = classNames((_classNames5 = {
-        'Navigation-vertical-menu-wrapper': true
-      }, _defineProperty(_classNames5, 'Navigation-vertical-menu--active', active === item.id || collapsed && item.subMenu && isSubMenuActive(active, item.subMenu)), _defineProperty(_classNames5, 'Navigation-vertical-menu-collapsed--active', active === item.id && collapsed || collapsed && item.subMenu && isSubMenuActive(active, item.subMenu)), _classNames5));
+      var menuClasses = classNames((_classNames2 = {
+        'Navigation-menu': true
+      }, _defineProperty(_classNames2, "Navigation-menu--".concat(type), type), _defineProperty(_classNames2, 'Navigation-menu--active', expanded && !menuState[menu.name] && isActive(menu)), _classNames2));
+      var menuIconClasses = classNames({
+        'Navigation-menuIcon': true,
+        'Navigation-menuIcon--active': !expanded && isActive(menu)
+      });
       return /*#__PURE__*/createElement("div", {
-        className: "".concat(collapsed ? 'm-3' : 'mt-3 mb-3'),
         key: index
       }, /*#__PURE__*/createElement("div", {
-        className: menuClasses
-      }, /*#__PURE__*/createElement("div", {
-        className: "Navigation-vertical-menu ".concat(collapsed ? 'Navigation-vertical-menu--collapsed' : ''),
+        className: menuClasses,
         onClick: function onClick() {
-          return !item.disabled && _onClick && _onClick(item.id);
+          return onClickHandler(menu);
         }
-      }, item.icon && /*#__PURE__*/createElement(Icon, {
-        name: item.icon,
-        size: 16,
-        appearance: item.disabled ? 'disabled' : 'default'
-      }), !collapsed && /*#__PURE__*/createElement(Text, {
-        appearance: item.disabled ? 'subtle' : 'default'
-      }, truncateName(item.name))), !collapsed && /*#__PURE__*/createElement("div", {
-        style: {
-          display: 'flex',
-          alignItems: 'center',
-          cursor: 'pointer'
-        }
-      }, item.subMenu && item.subMenu.length > 0 && /*#__PURE__*/createElement(Icon, {
-        onClick: function onClick() {
-          return updateMenuState(item.id);
-        },
-        name: menuState[item.id] ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
-        size: 16,
-        appearance: item.disabled ? 'disabled' : 'default'
-      }))), menuState[item.id] && item.subMenu && !collapsed && item.subMenu.map(function (menu, ind) {
+      }, menu.icon && /*#__PURE__*/createElement(Icon, {
+        className: menuIconClasses,
+        name: menu.icon,
+        appearance: menu.disabled ? 'disabled' : 'default'
+      }), expanded && /*#__PURE__*/createElement(Fragment, null, /*#__PURE__*/createElement("span", {
+        className: "Navigation-menuLabel"
+      }, /*#__PURE__*/createElement(Text, {
+        appearance: menu.disabled ? 'subtle' : 'default'
+      }, menu.label)), menu.subMenu && menu.subMenu.length > 0 && /*#__PURE__*/createElement(Icon, {
+        className: "mx-4",
+        name: menuState[menu.name] ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
+        appearance: menu.disabled ? 'disabled' : 'default'
+      }))), /*#__PURE__*/createElement("div", {
+        className: "Navigation-subMenu"
+      }, menuState[menu.name] && menu.subMenu && expanded && menu.subMenu.map(function (subMenu, ind) {
+        var _classNames3;
+
+        var subMenuClasses = classNames(menuClasses, (_classNames3 = {}, _defineProperty(_classNames3, 'Navigation-menu--subMenu', type), _defineProperty(_classNames3, 'Navigation-menu--active', isActive(subMenu)), _classNames3));
         return /*#__PURE__*/createElement("div", {
-          className: "Navigation-vertical-menu Navigation-vertical-submenu ".concat(collapsed ? 'Navigation-vertical-menu--collapsed' : '', " ").concat(menu.id === active ? 'Navigation-vertical-menu--active' : ''),
-          key: ind
+          key: ind,
+          className: subMenuClasses,
+          onClick: function onClick() {
+            return onClickHandler(subMenu);
+          }
         }, /*#__PURE__*/createElement(Text, {
-          appearance: menu.disabled ? 'subtle' : 'default'
-        }, truncateName(menu.name)));
-      }));
+          appearance: subMenu.disabled ? 'subtle' : 'default'
+        }, subMenu.label));
+      })));
     });
-    return list;
+    var footerClasses = classNames(_defineProperty({
+      'Navigation-footer': true
+    }, 'Navigation-footer--border', true));
+    return /*#__PURE__*/createElement(Fragment, null, /*#__PURE__*/createElement("div", {
+      className: "Navigation-body"
+    }, list), footer && /*#__PURE__*/createElement("div", {
+      className: footerClasses
+    }, /*#__PURE__*/createElement(Icon, {
+      className: "Navigation-menuIcon Navigation-menuIcon--footer",
+      name: "menu_open",
+      size: 16,
+      onClick: function onClick() {
+        return onToggle && onToggle(!expanded);
+      }
+    })));
   };
 
-  var menus = type === 'horizontal' ? getHorizontalMenu(data) : getverticalMenu();
+  var classes = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'Navigation', true), _defineProperty(_classNames5, "Navigation--".concat(type), type), _defineProperty(_classNames5, 'Navigation--collapsed', !expanded), _classNames5));
   return /*#__PURE__*/createElement("div", {
-    className: wrapperClasses
-  }, /*#__PURE__*/createElement("div", {
-    className: classes,
-    ref: ref
-  }, menus), type === 'vertical' && /*#__PURE__*/createElement("div", {
-    className: footerClasses
-  }, /*#__PURE__*/createElement(Icon, {
-    name: "menu_open",
-    size: 16,
-    onClick: function onClick() {
-      return onToggle && onToggle(!collapsed);
-    }
-  })));
+    className: classes
+  }, type === 'horizontal' ? getHorizontalMenu(data) : getVerticalMenu());
 };
 Navigation.defaultProps = {
   type: 'horizontal',
-  onClick: function onClick() {
-    return null;
-  },
-  onToggle: function onToggle() {
-    return null;
-  },
-  collapsed: false
+  data: [],
+  expanded: true,
+  footer: false,
+  autoCollapse: true
 };
 
-export { Avatar, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, Checkbox, Column, DatePicker, Dialog, DonutChart, Dropdown, Grid, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, Pagination, Paragraph, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangePicker, Row, Spinner, StatusHints, Subheading, Switch, Tab, Table, TabsWrapper, Text, Toast, Tooltip };
+var PageHeader = function PageHeader(props) {
+  var title = props.title,
+      navigation = props.navigation,
+      actions = props.actions,
+      tabs = props.tabs,
+      breadcrumb = props.breadcrumb,
+      badge = props.badge,
+      status = props.status,
+      meta = props.meta,
+      type = props.type;
+  var wrapperClasses = classNames(_defineProperty({
+    'PageHeader-wrapper': true
+  }, 'PageHeader-wrapper--withTabs', tabs));
+  var classes = classNames({
+    PageHeader: true
+  });
+  return /*#__PURE__*/createElement("div", {
+    className: wrapperClasses
+  }, breadcrumb && breadcrumb, /*#__PURE__*/createElement("div", {
+    className: classes
+  }, /*#__PURE__*/createElement("div", {
+    className: "PageHeader-titleWrapper"
+  }, /*#__PURE__*/createElement(Heading, {
+    size: "m"
+  }, title), badge), type === 'large' && navigation, actions), (status || meta) && /*#__PURE__*/createElement("div", {
+    className: "PageHeader-statusWrapper"
+  }, status, meta), type === 'small' && /*#__PURE__*/createElement("div", {
+    className: "PageHeader-navigationWrapper"
+  }, navigation), tabs && /*#__PURE__*/createElement("div", null, tabs));
+};
+PageHeader.defaultProps = {
+  title: '',
+  navigation: null,
+  actions: null,
+  tabs: null,
+  breadcrumb: null,
+  badge: null,
+  status: null,
+  meta: null,
+  type: 'large'
+};
+
+export { Avatar, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, Checkbox, Column, DatePicker, Dialog, DonutChart, Dropdown, Grid, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangePicker, Row, Spinner, StatusHints, Subheading, Switch, Tab, Table, TabsWrapper, Text, Textarea, Toast, Tooltip };

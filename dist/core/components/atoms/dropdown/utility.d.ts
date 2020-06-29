@@ -1,7 +1,8 @@
-export declare const getOptions: (offset: number, limit: number, searchTerm: string, options: any) => Promise<unknown>;
-export declare const getValuesFromSelectedObj: (selectedArray?: any[]) => any[];
-export declare const getIndexesFromSelectedObj: (selectedArray?: any[]) => number[];
-export declare const getValuesFromInd: (selectedArray: number[], options: any[]) => any[];
-export declare const getLabelsFromSelectedObj: (options: any[]) => string[];
+export declare const getSearchedOptions: (options: any, searchTerm: string) => any;
+export declare const _isEqual: (arr1: any[], arr2: any[]) => boolean;
 export declare const scrollTo: (element: Element, top: number) => void;
 export declare const scrollIntoView: (menuElement: HTMLDivElement | null, focusedElement: HTMLElement) => void;
+export declare const getSelectAll: (selected: any[], optionsLength: number) => {
+    checked: boolean;
+    indeterminate: boolean;
+};

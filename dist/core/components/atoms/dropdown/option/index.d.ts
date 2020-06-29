@@ -2,27 +2,29 @@ import * as React from 'react';
 import { OptionType } from '../DropdownList';
 export interface OptionRendererProps {
     optionRenderer?: (props: OptionProps) => React.ReactElement;
+    optionType?: OptionType;
 }
-interface OptionData {
+export interface OptionSchema {
     label: string;
     value: any;
     icon?: string;
     subInfo?: string;
-    optionType?: OptionType | 'WITH_CHECKBOX';
+    optionType?: OptionType;
+    selected?: boolean;
+    group?: string;
 }
 export interface OptionTypeProps {
     className: string;
     textClassName: string;
-    optionData: OptionData;
+    optionData: OptionSchema;
     selected: boolean;
-    active?: number;
     index: number;
     onClick?: () => void;
     onChange?: (checked: boolean) => void;
     updateActiveOption?: (index: number) => void;
 }
 interface OptionProps extends OptionRendererProps {
-    optionData: OptionData;
+    optionData: OptionSchema;
     selected: boolean;
     optionIsTop: boolean;
     optionIsBottom: boolean;
@@ -30,6 +32,7 @@ interface OptionProps extends OptionRendererProps {
     checkboxes?: boolean;
     index: number;
     active?: boolean;
+    menu?: boolean;
     onClick?: () => void;
     onChange?: (checked: boolean) => void;
     updateActiveOption?: (index: number) => void;

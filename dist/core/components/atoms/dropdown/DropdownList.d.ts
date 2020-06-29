@@ -1,68 +1,54 @@
 import * as React from 'react';
-import { OptionRendererProps } from './option';
-export declare type Size = 'tiny' | 'regular';
+import { TriggerProps } from './DropdownButton';
+import { OptionRendererProps, OptionSchema } from './option';
 export declare type DropdownAlign = 'left' | 'right';
-declare type ExternalOptionType = 'DEFAULT' | 'WITH_ICON' | 'WITH_META' | 'ICON_WITH_META';
-declare type CheckboxOptionType = 'WITH_CHECKBOX';
-declare type AllOptionType = ExternalOptionType | CheckboxOptionType;
-export declare type OptionType = ExternalOptionType;
-export interface Option {
-    icon?: string;
-    subInfo?: string;
-    group?: string;
+export declare type OptionType = 'DEFAULT' | 'WITH_ICON' | 'WITH_META' | 'ICON_WITH_META';
+export interface Selected {
     label: string;
     value: any;
-    optionType?: OptionType;
-    selectedGroup?: boolean;
 }
-export interface DropdownListProps extends OptionRendererProps {
-    triggerSize?: Size;
+export interface SelectAll {
+    indeterminate: boolean;
+    checked: boolean;
+}
+declare type ListProps = TriggerProps & OptionRendererProps;
+export interface DropdownListProps extends ListProps {
     dropdownAlign?: DropdownAlign;
-    icon?: string;
-    loadingType?: AllOptionType;
-    placeholder?: string;
-    inlineLabel?: string;
+    loadingType?: OptionType;
     searchResultMessage?: string;
     parentCheckboxLabel?: string;
     footerLabel?: string;
-    menu?: boolean;
-    disabled?: boolean;
+    selectedGroupLabel?: string;
     search?: boolean;
     checkboxes?: boolean;
-    closeOnSelect?: boolean;
     showApplyButton?: boolean;
     optionsWrap?: boolean;
-    checkedValuesOffset?: number;
     totalOptions?: number;
     maxHeight?: number;
-    selected?: Option[];
     width?: number;
-    maxWidth?: number;
-    onChangeTriggerLabel?: (selected: number, totalOptions?: number) => string;
+    loadersLength?: number;
     customTrigger?: (label?: string) => React.ReactElement;
 }
 interface OptionsProps extends DropdownListProps {
-    listOptions: Option[];
-    bufferedOption?: Option;
+    listOptions: OptionSchema[];
     searchTerm: string;
-    bottomOptionsSliced?: boolean;
-    topOptionsSliced?: boolean;
+    triggerLabel: string;
     loadingOptions?: boolean;
-    searchInit?: boolean;
+    dropdownOpen?: boolean;
     async?: boolean;
-    limit: number;
-    slicedOptionsLength: number;
     remainingOptions: number;
-    offset: number;
-    optionsLength: number;
-    bottomScrollOffset?: number;
-    selectedAll?: any;
+    selected: OptionSchema[];
+    tempSelected: OptionSchema[];
+    previousSelected: OptionSchema[];
+    selectAll: SelectAll;
+    applyOptions: () => void;
+    cancelOptions: () => void;
+    toggleDropdown: () => void;
+    onClearOptions: () => void;
+    onSelectAll: (selectedAll: boolean) => void;
     onSearchChange?: (searchText: string) => void;
-    onScroll?: (direction: string) => void;
-    onChange?: (selected: any[] | any) => void;
-    onSelectAll?: (selectedAll: boolean) => void;
-    onRearrangeOptions?: (selected: any[], selectedLabels: string[]) => void;
-    renderOptionsFromTop: () => void;
+    onOptionSelect: (selected: any[] | any) => void;
+    onSelect: (option: OptionSchema, checked: boolean) => void;
 }
 export declare const usePrevious: (value: any) => undefined;
 declare const DropdownList: {

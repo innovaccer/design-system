@@ -241,3 +241,19 @@
 * 24ceb25 feat: adds caption component
 * c704e67 feat: adds required prop in label
 * bb5d1f7 feat: adds label
+
+-------------------
+ **v1.0.0-19**  (2020-06-29) 
+
+* 69dbfc6 v1.0.0-19
+* a86f44c chore: pageHeader added for release
+* 3a421f8 feat: fixes Textarea api and adds in build
+* f64c802 fix: updates Icon default size to 16px and updates affected components
+* 5d23b06 feat: adds actionIcon in Input and type: 'email', 'tel', 'url'
+* b1c3202 fix(moda) backdrop outside click fixed
+* d801b0c fix: rewrites Navigation
+* a81bb9f fix: removes selected prop in dropdown
+* 5c467c0 chore: pageHeader stories updated
+* d8ebadf fix: adds flex-grow in PopperWrapper-trigger
+* 9c1c4df fix: fixes Toast action Button style
+* d1ce568 fix: removes text-transform in Button

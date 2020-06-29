@@ -1,19 +1,17 @@
 import * as React from 'react';
-declare type ReactMouseEvent = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 export declare type Size = 'tiny' | 'regular';
-export interface DropdownButtonProps {
-    size?: Size;
+export interface TriggerProps {
+    triggerSize?: Size;
+    icon?: string;
+    placeholder?: string;
+    inlineLabel?: string;
     disabled?: boolean;
     menu?: boolean;
-    icon?: string;
-    inlineLabel?: string;
-    placeholder?: string;
-    children?: string;
-    width?: React.ReactText;
+    error?: boolean;
     maxWidth?: number;
-    onClick?: ReactMouseEvent;
-    onMouseEnter?: ReactMouseEvent;
-    onMouseLeave?: ReactMouseEvent;
+}
+export interface DropdownButtonProps extends TriggerProps {
+    children?: string;
 }
 declare const DropdownButton: React.ForwardRefExoticComponent<DropdownButtonProps & React.RefAttributes<HTMLButtonElement>>;
 export default DropdownButton;

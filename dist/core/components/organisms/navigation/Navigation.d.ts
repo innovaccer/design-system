@@ -1,27 +1,36 @@
 /// <reference types="react" />
 export declare type LayoutType = 'vertical' | 'horizontal';
-declare type Menu = {
-    id: string;
+export declare type Menu = {
     name: string;
+    label: string;
+    link?: string;
+    icon?: string;
     disabled?: boolean;
     subMenu?: Menu[];
-    icon?: string;
 };
+declare type ActiveMenu = ({
+    name: string;
+} | {
+    link: string;
+}) & Partial<Menu>;
 export interface NavigationProps {
     type?: LayoutType;
     data: Menu[];
-    onClick?: (id: string) => void;
-    active?: string;
-    collapsed?: boolean;
-    onToggle?: (collapsed: boolean) => void;
+    active?: ActiveMenu;
+    onClick?: (menu: Menu) => void;
+    expanded?: boolean;
+    footer?: boolean;
+    onToggle?: (expanded: boolean) => void;
+    autoCollapse: boolean;
 }
 export declare const Navigation: {
     (props: NavigationProps): JSX.Element;
     defaultProps: {
         type: string;
-        onClick: () => null;
-        onToggle: () => null;
-        collapsed: boolean;
+        data: never[];
+        expanded: boolean;
+        footer: boolean;
+        autoCollapse: boolean;
     };
 };
 export default Navigation;
