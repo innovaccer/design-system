@@ -4,14 +4,13 @@ exports[`Input component
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--regular Input--disabled"
+  className="Input Input--regular"
 >
   <input
-    autoFocus={false}
     className="Input-input Input-input--regular"
-    disabled={true}
     name="name"
     placeholder="Placeholder"
+    type="text"
   />
 </div>
 `;
@@ -20,22 +19,23 @@ exports[`Input component
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", icon: "events"
  1`] = `
 <div
-  className="Input Input--regular Input--disabled"
+  className="Input Input--regular"
 >
   <div
     className="Input-icon Input-icon--left Input-icon--disabled"
   >
     <Icon
+      appearance="default"
       name="events"
       size={16}
+      type="filled"
     />
   </div>
   <input
-    autoFocus={false}
     className="Input-input Input-input--regular"
-    disabled={true}
     name="name"
     placeholder="Placeholder"
+    type="text"
   />
 </div>
 `;
@@ -44,14 +44,13 @@ exports[`Input component
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", value: "value"
  1`] = `
 <div
-  className="Input Input--regular Input--disabled"
+  className="Input Input--regular"
 >
   <input
-    autoFocus={false}
     className="Input-input Input-input--regular"
-    disabled={true}
     name="name"
     placeholder="Placeholder"
+    type="text"
     value="value"
   />
 </div>
@@ -61,22 +60,23 @@ exports[`Input component
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", value: "value", icon: "events"
  1`] = `
 <div
-  className="Input Input--regular Input--disabled"
+  className="Input Input--regular"
 >
   <div
     className="Input-icon Input-icon--left"
   >
     <Icon
+      appearance="default"
       name="events"
       size={16}
+      type="filled"
     />
   </div>
   <input
-    autoFocus={false}
     className="Input-input Input-input--regular"
-    disabled={true}
     name="name"
     placeholder="Placeholder"
+    type="text"
     value="value"
   />
 </div>
@@ -86,13 +86,12 @@ exports[`Input component
   name: "name", size: "large", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--large Input--disabled"
+  className="Input Input--large"
 >
   <input
-    autoFocus={false}
     className="Input-input Input-input--large"
-    disabled={true}
     name="name"
+    type="text"
   />
 </div>
 `;
@@ -101,7 +100,7 @@ exports[`Input component
   name: "name", size: "large", type: "number", inlineLabel: "USD", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--large Input--disabled"
+  className="Input Input--large"
 >
   <div
     className="Input-inlineLabel"
@@ -113,9 +112,7 @@ exports[`Input component
     </Text>
   </div>
   <input
-    autoFocus={false}
     className="Input-input Input-input--large"
-    disabled={true}
     name="name"
     type="number"
   />
@@ -126,13 +123,12 @@ exports[`Input component
   name: "name", size: "regular", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--regular Input--disabled"
+  className="Input Input--regular"
 >
   <input
-    autoFocus={false}
     className="Input-input Input-input--regular"
-    disabled={true}
     name="name"
+    type="text"
   />
 </div>
 `;
@@ -141,7 +137,7 @@ exports[`Input component
   name: "name", size: "regular", type: "number", inlineLabel: "USD", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--regular Input--disabled"
+  className="Input Input--regular"
 >
   <div
     className="Input-inlineLabel"
@@ -153,9 +149,7 @@ exports[`Input component
     </Text>
   </div>
   <input
-    autoFocus={false}
     className="Input-input Input-input--regular"
-    disabled={true}
     name="name"
     type="number"
   />
@@ -166,13 +160,12 @@ exports[`Input component
   name: "name", size: "tiny", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--tiny Input--disabled"
+  className="Input Input--tiny"
 >
   <input
-    autoFocus={false}
     className="Input-input Input-input--tiny"
-    disabled={true}
     name="name"
+    type="text"
   />
 </div>
 `;
@@ -181,7 +174,7 @@ exports[`Input component
   name: "name", size: "tiny", type: "number", inlineLabel: "USD", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--tiny Input--disabled"
+  className="Input Input--tiny"
 >
   <div
     className="Input-inlineLabel"
@@ -193,9 +186,7 @@ exports[`Input component
     </Text>
   </div>
   <input
-    autoFocus={false}
     className="Input-input Input-input--tiny"
-    disabled={true}
     name="name"
     type="number"
   />
@@ -206,12 +197,10 @@ exports[`Input component
   name: "name", type: "number", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--regular Input--disabled"
+  className="Input Input--regular"
 >
   <input
-    autoFocus={false}
     className="Input-input Input-input--regular"
-    disabled={true}
     name="name"
     type="number"
   />
@@ -222,12 +211,10 @@ exports[`Input component
   name: "name", type: "password", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--regular Input--disabled"
+  className="Input Input--regular"
 >
   <input
-    autoFocus={false}
     className="Input-input Input-input--regular"
-    disabled={true}
     name="name"
     type="password"
   />
@@ -238,12 +225,10 @@ exports[`Input component
   name: "name", type: "text", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--regular Input--disabled"
+  className="Input Input--regular"
 >
   <input
-    autoFocus={false}
     className="Input-input Input-input--regular"
-    disabled={true}
     name="name"
     type="text"
   />
@@ -257,10 +242,10 @@ exports[`Input component
   className="Input Input--regular Input--disabled"
 >
   <input
-    autoFocus={false}
     className="Input-input Input-input--regular"
     disabled={true}
     name="name"
+    type="text"
     value="value"
   />
 </div>
@@ -276,15 +261,17 @@ exports[`Input component
     className="Input-icon Input-icon--left"
   >
     <Icon
+      appearance="default"
       name="events"
       size={16}
+      type="filled"
     />
   </div>
   <input
-    autoFocus={false}
     className="Input-input Input-input--regular"
     disabled={true}
     name="name"
+    type="text"
     value="value"
   />
 </div>
@@ -297,10 +284,10 @@ exports[`Input component
   className="Input Input--regular Input--disabled"
 >
   <input
-    autoFocus={false}
     className="Input-input Input-input--regular"
     disabled={true}
     name="name"
+    type="text"
     value="value"
   />
 </div>
@@ -316,15 +303,17 @@ exports[`Input component
     className="Input-icon Input-icon--left"
   >
     <Icon
+      appearance="default"
       name="events"
       size={16}
+      type="filled"
     />
   </div>
   <input
-    autoFocus={false}
     className="Input-input Input-input--regular"
     disabled={true}
     name="name"
+    type="text"
     value="value"
   />
 </div>
@@ -334,13 +323,12 @@ exports[`Input component
   name: "name", value: "value", error: true, onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--regular Input--disabled Input--error"
+  className="Input Input--regular Input--error"
 >
   <input
-    autoFocus={false}
     className="Input-input Input-input--regular"
-    disabled={true}
     name="name"
+    type="text"
     value="value"
   />
 </div>
@@ -350,21 +338,22 @@ exports[`Input component
   name: "name", value: "value", error: true, onChangeHandler: "[Function]", icon: "events"
  1`] = `
 <div
-  className="Input Input--regular Input--disabled Input--error"
+  className="Input Input--regular Input--error"
 >
   <div
     className="Input-icon Input-icon--left"
   >
     <Icon
+      appearance="default"
       name="events"
       size={16}
+      type="filled"
     />
   </div>
   <input
-    autoFocus={false}
     className="Input-input Input-input--regular"
-    disabled={true}
     name="name"
+    type="text"
     value="value"
   />
 </div>
