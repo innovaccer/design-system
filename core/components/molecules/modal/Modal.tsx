@@ -75,7 +75,7 @@ const Modal = (props: ModalProps) => {
   );
 
   const ModalWrapper = backdrop ? (
-    <OutsideClick onOutsideClick={(event: Event) => onClose('OutsideClick', event)}>
+    <OutsideClick onOutsideClick={(event: Event) => open && onClose('OutsideClick', event)}>
       {ModalContainer}
     </OutsideClick>
   ) : ModalContainer;
