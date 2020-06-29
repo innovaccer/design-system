@@ -23,7 +23,7 @@ export const withLabel = () => {
     <div style={style}>
       <div style={innerStyle}>
         <div style={{ height: '72px' }}>
-          <Label className="mb-3" required={true}>Full Name</Label>
+          <Label withInput={true} required={true}>Full Name</Label>
           <Input
             name="input"
             value="Value"
@@ -36,7 +36,7 @@ export const withLabel = () => {
         <Text weight="strong">No Caption</Text>
       </div>
       <div style={innerStyle}>
-      <Label className="mb-3" required={true}>Password</Label>
+      <Label withInput={true} required={true}>Password</Label>
         <Input
           name="input"
           value="Value"
@@ -50,7 +50,7 @@ export const withLabel = () => {
         <Text weight="strong">Caption Default</Text>
       </div>
       <div style={innerStyle}>
-      <Label className="mb-3" required={true}>Password</Label>
+      <Label withInput={true} required={true}>Password</Label>
         <Input
           name="input"
           value="Value"
