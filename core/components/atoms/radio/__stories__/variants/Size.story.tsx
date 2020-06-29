@@ -1,16 +1,10 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
 import Radio, { Size } from '../../index';
 
 // CSF format story
 export const size = () => {
 
   const sizes: Size[] = ['tiny', 'regular'];
-
-  const label = text(
-    'label',
-    'Radio'
-  );
 
   const name = 'gender';
 
@@ -28,7 +22,7 @@ export const size = () => {
                 size={RadioSize}
                 label={RadioSize.charAt(0).toUpperCase() + RadioSize.slice(1)}
                 name={name}
-                value={label}
+                value={RadioSize}
               />
             </div>
           );

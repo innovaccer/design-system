@@ -12,6 +12,7 @@ exports[`Radio component
     <input
       className="Radio-input"
       disabled={false}
+      id="Options"
       name="Options"
       onChange={[Function]}
       type="radio"
@@ -21,11 +22,16 @@ exports[`Radio component
       className="Radio-wrapper Radio-wrapper--regular"
     />
   </div>
-  <Text
-    small={false}
+  <label
+    className="Radio-label"
+    htmlFor="Options"
   >
-    Radio
-  </Text>
+    <Text
+      small={false}
+    >
+      Radio
+    </Text>
+  </label>
 </div>
 `;
 
@@ -41,6 +47,7 @@ exports[`Radio component
     <input
       className="Radio-input"
       disabled={true}
+      id="Options"
       name="Options"
       onChange={[Function]}
       type="radio"
@@ -50,11 +57,16 @@ exports[`Radio component
       className="Radio-wrapper Radio-wrapper--regular"
     />
   </div>
-  <Text
-    small={false}
+  <label
+    className="Radio-label"
+    htmlFor="Options"
   >
-    Radio
-  </Text>
+    <Text
+      small={false}
+    >
+      Radio
+    </Text>
+  </label>
 </div>
 `;
 
@@ -69,6 +81,7 @@ exports[`Radio component
   >
     <input
       className="Radio-input"
+      id="Options"
       name="Options"
       onChange={[Function]}
       type="radio"
@@ -78,11 +91,16 @@ exports[`Radio component
       className="Radio-wrapper Radio-wrapper--regular"
     />
   </div>
-  <Text
-    small={false}
+  <label
+    className="Radio-label"
+    htmlFor="Options"
   >
-    Radio
-  </Text>
+    <Text
+      small={false}
+    >
+      Radio
+    </Text>
+  </label>
 </div>
 `;
 
@@ -97,6 +115,7 @@ exports[`Radio component
   >
     <input
       className="Radio-input"
+      id="Options"
       name="Options"
       onChange={[Function]}
       type="radio"
@@ -106,10 +125,15 @@ exports[`Radio component
       className="Radio-wrapper Radio-wrapper--tiny"
     />
   </div>
-  <Text
-    small={true}
+  <label
+    className="Radio-label"
+    htmlFor="Options"
   >
-    Radio
-  </Text>
+    <Text
+      small={true}
+    >
+      Radio
+    </Text>
+  </label>
 </div>
 `;
