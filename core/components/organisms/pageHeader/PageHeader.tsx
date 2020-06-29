@@ -5,14 +5,41 @@ import { Heading } from '@/index';
 export type HeaderType = 'small' | 'large';
 
 export interface PageHeaderProps {
+  /**
+   * Page title
+   */
   title: string;
+  /**
+   * Navigation component
+   */
   navigation?: React.ReactNode;
+  /**
+   * Actions composed of buttons and meta data
+   */
   actions?: React.ReactNode;
+  /**
+   * Tab component
+   */
   tabs?: React.ReactNode;
+  /**
+   * Breadcrumb component
+   */
   breadcrumb?: React.ReactNode;
+  /**
+   * Badge component
+   */
   badge?: React.ReactNode;
+  /**
+   * Status component
+   */
   status?: React.ReactNode;
+  /**
+   * Meta data composed of Text
+   */
   meta?: React.ReactNode;
+  /**
+   * Page header layout type
+   */
   type?: HeaderType;
 }
 
