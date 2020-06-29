@@ -20,6 +20,8 @@ const ActionButton: React.FunctionComponent<Props> = props => {
   } = props;
 
   const buttonClass = classNames({
+    ['Button']: true,
+    ['Button--tiny']: true,
     ['Toast-actionButton']: true,
     [`Toast-actionButton--${appearance}`]: appearance
   });
