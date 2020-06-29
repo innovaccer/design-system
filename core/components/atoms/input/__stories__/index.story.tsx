@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions';
 export const all = () => {
   const inputType = select(
     'type',
-    ['text', 'password', 'number'],
+    ['text', 'password', 'number', 'email', 'tel', 'url'],
     undefined
   );
 
