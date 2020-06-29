@@ -49,3 +49,4 @@ export { GridProps } from './components/organisms/grid';
 export { ListProps } from './components/organisms/list';
 export { TableProps } from './components/organisms/table';
 export { NavigationProps } from './components/organisms/navigation';
+export { PageHeaderProps } from './components/organisms/pageHeader';
