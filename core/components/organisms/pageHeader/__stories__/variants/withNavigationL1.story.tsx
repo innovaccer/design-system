@@ -47,7 +47,7 @@ export const withNavigation = () => {
   const options = {
     type,
     title,
-    navigation: <Navigation data={navigationData} onClick={action('menu-clicked')} active="menu_1" />,
+    navigation: <Navigation data={navigationData} onClick={action('menu-clicked')} active={{ name: 'menu_1' }} />,
     actions: (
       <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
         <Button appearance="primary">Primary</Button>
@@ -112,7 +112,7 @@ const customCode = `() => {
   const options = {
     type,
     title,
-    navigation: <Navigation data={navigationData} onClick={menu => console.log(menu)} active="menu_1" />,
+    navigation: <Navigation data={navigationData} onClick={menu => console.log(menu)} active={{ name: 'menu_1' }} />,
     actions: (
       <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
         <Button appearance="primary">Primary</Button>
