@@ -13,6 +13,7 @@ exports[`Message component
       appearance="alert"
       name="error"
       size={16}
+      type="filled"
     />
   </div>
   <div>
@@ -38,6 +39,7 @@ exports[`Message component
       appearance="alert"
       name="error"
       size={16}
+      type="filled"
     />
   </div>
   <div>
@@ -109,6 +111,7 @@ exports[`Message component
       appearance="info"
       name="info"
       size={16}
+      type="filled"
     />
   </div>
   <div>
@@ -134,6 +137,7 @@ exports[`Message component
       appearance="info"
       name="info"
       size={16}
+      type="filled"
     />
   </div>
   <div>
@@ -166,6 +170,7 @@ exports[`Message component
       appearance="success"
       name="check_circle"
       size={16}
+      type="filled"
     />
   </div>
   <div>
@@ -191,6 +196,7 @@ exports[`Message component
       appearance="success"
       name="check_circle"
       size={16}
+      type="filled"
     />
   </div>
   <div>
@@ -223,6 +229,7 @@ exports[`Message component
       appearance="warning"
       name="warning"
       size={16}
+      type="filled"
     />
   </div>
   <div>
@@ -248,6 +255,7 @@ exports[`Message component
       appearance="warning"
       name="warning"
       size={16}
+      type="filled"
     />
   </div>
   <div>
