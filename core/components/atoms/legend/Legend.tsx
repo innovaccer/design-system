@@ -6,7 +6,7 @@ export interface LegendProps {
   /**
    * Describes label of the `Legend`
    */
-  label: string;
+  children: string;
   /**
    * Color of Icon
    * @default "inverse"
@@ -18,7 +18,7 @@ export interface LegendProps {
   labelAppearance?: LabelAppearance;
   /**
    * Size of Icon
-   * @default 14
+   * @default 16
    */
   iconSize?: number;
   /**
@@ -26,25 +26,29 @@ export interface LegendProps {
    */
   labelWeight?: 'strong' | 'medium';
   /**
-   * Adds custom CSS to `Legend`
+   * Handler to be called when `Legend` is clicked
    */
-  style?: React.CSSProperties;
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  /**
+   * Handler to be called when mouse pointer enters `Legend`.
+   */
   onMouseEnter?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  /**
+   * Handler to be called when mouse pointer leaves `Legend`.
+   */
   onMouseLeave?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 export const Legend = (props: LegendProps) => {
   const {
     iconAppearance = 'inverse',
-    iconSize = 14,
+    iconSize = 16,
     labelAppearance,
-    label,
+    children,
     labelWeight,
     onMouseEnter,
     onMouseLeave,
     onClick,
-    style,
   } = props;
 
   const legendClass = classNames({
@@ -63,14 +67,13 @@ export const Legend = (props: LegendProps) => {
       onClick={e => onClick && onClick(e)}
       onMouseEnter={e => onMouseEnter && onMouseEnter(e)}
       onMouseLeave={e => onMouseLeave && onMouseLeave(e)}
-      style={style}
     >
       <span className="Legend-icon" style={styles} />
       <Text
         appearance={labelAppearance}
         weight={labelWeight}
       >
-        {label}
+        {children}
       </Text>
     </div>
   );

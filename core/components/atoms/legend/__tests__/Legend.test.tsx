@@ -30,7 +30,9 @@ describe('Legend component', () => {
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
-        <Legend {...attr} />
+        <Legend {...attr}>
+          {label}
+        </Legend>
       );
       expect(tree).toMatchSnapshot();
     });
@@ -50,7 +52,9 @@ describe('Legend component', () => {
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
-        <Legend {...attr} />
+        <Legend {...attr}>
+          {label}
+        </Legend>
       );
       expect(tree).toMatchSnapshot();
     });
@@ -70,7 +74,9 @@ describe('Legend component', () => {
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
-        <Legend {...attr} />
+        <Legend {...attr}>
+          {label}
+        </Legend>
       );
       expect(tree).toMatchSnapshot();
     });

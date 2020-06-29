@@ -4,7 +4,7 @@ import Legend from '../Legend';
 
 // CSF format story
 export const all = () => {
-  const label = text('label', 'Legend');
+  const children = text('children', 'Legend');
 
   const iconAppearance = text('Icon Appearance', 'inverse');
 
@@ -21,7 +21,6 @@ export const all = () => {
   const iconSize = number('iconSize', 14);
 
   const options = {
-    label,
     iconAppearance,
     labelAppearance,
     labelWeight,
@@ -32,7 +31,9 @@ export const all = () => {
     <div style={{ background: labelAppearance === 'white' ? 'black' : 'transparent' }}>
       <Legend
         {...options}
-      />
+      >
+        {children}
+      </Legend>
     </div>
   );
 };

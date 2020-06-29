@@ -14,8 +14,8 @@ exports[`Legend component
     style={
       Object {
         "background": "var(--accent1)",
-        "height": "14px",
-        "width": "14px",
+        "height": "16px",
+        "width": "16px",
       }
     }
   />
@@ -39,8 +39,8 @@ exports[`Legend component
     style={
       Object {
         "background": "var(--accent2)",
-        "height": "14px",
-        "width": "14px",
+        "height": "16px",
+        "width": "16px",
       }
     }
   />
@@ -64,8 +64,8 @@ exports[`Legend component
     style={
       Object {
         "background": "var(--accent3)",
-        "height": "14px",
-        "width": "14px",
+        "height": "16px",
+        "width": "16px",
       }
     }
   />
@@ -89,8 +89,8 @@ exports[`Legend component
     style={
       Object {
         "background": "var(--accent4)",
-        "height": "14px",
-        "width": "14px",
+        "height": "16px",
+        "width": "16px",
       }
     }
   />
@@ -114,8 +114,8 @@ exports[`Legend component
     style={
       Object {
         "background": "var(--alert)",
-        "height": "14px",
-        "width": "14px",
+        "height": "16px",
+        "width": "16px",
       }
     }
   />
@@ -139,8 +139,8 @@ exports[`Legend component
     style={
       Object {
         "background": "var(--inverse)",
-        "height": "14px",
-        "width": "14px",
+        "height": "16px",
+        "width": "16px",
       }
     }
   />
@@ -164,8 +164,8 @@ exports[`Legend component
     style={
       Object {
         "background": "var(--primary)",
-        "height": "14px",
-        "width": "14px",
+        "height": "16px",
+        "width": "16px",
       }
     }
   />
@@ -189,8 +189,8 @@ exports[`Legend component
     style={
       Object {
         "background": "var(--secondary)",
-        "height": "14px",
-        "width": "14px",
+        "height": "16px",
+        "width": "16px",
       }
     }
   />
@@ -214,8 +214,8 @@ exports[`Legend component
     style={
       Object {
         "background": "var(--success)",
-        "height": "14px",
-        "width": "14px",
+        "height": "16px",
+        "width": "16px",
       }
     }
   />
@@ -239,8 +239,8 @@ exports[`Legend component
     style={
       Object {
         "background": "var(--warning)",
-        "height": "14px",
-        "width": "14px",
+        "height": "16px",
+        "width": "16px",
       }
     }
   />
@@ -264,8 +264,8 @@ exports[`Legend component
     style={
       Object {
         "background": "var(--inverse)",
-        "height": "14px",
-        "width": "14px",
+        "height": "16px",
+        "width": "16px",
       }
     }
   />
@@ -291,8 +291,8 @@ exports[`Legend component
     style={
       Object {
         "background": "var(--inverse)",
-        "height": "14px",
-        "width": "14px",
+        "height": "16px",
+        "width": "16px",
       }
     }
   />
@@ -318,8 +318,8 @@ exports[`Legend component
     style={
       Object {
         "background": "var(--inverse)",
-        "height": "14px",
-        "width": "14px",
+        "height": "16px",
+        "width": "16px",
       }
     }
   />
@@ -345,8 +345,8 @@ exports[`Legend component
     style={
       Object {
         "background": "var(--inverse)",
-        "height": "14px",
-        "width": "14px",
+        "height": "16px",
+        "width": "16px",
       }
     }
   />
@@ -372,8 +372,8 @@ exports[`Legend component
     style={
       Object {
         "background": "var(--inverse)",
-        "height": "14px",
-        "width": "14px",
+        "height": "16px",
+        "width": "16px",
       }
     }
   />
@@ -399,8 +399,8 @@ exports[`Legend component
     style={
       Object {
         "background": "var(--inverse)",
-        "height": "14px",
-        "width": "14px",
+        "height": "16px",
+        "width": "16px",
       }
     }
   />
@@ -426,8 +426,8 @@ exports[`Legend component
     style={
       Object {
         "background": "var(--inverse)",
-        "height": "14px",
-        "width": "14px",
+        "height": "16px",
+        "width": "16px",
       }
     }
   />
