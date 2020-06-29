@@ -257,3 +257,10 @@
 * d8ebadf fix: adds flex-grow in PopperWrapper-trigger
 * 9c1c4df fix: fixes Toast action Button style
 * d1ce568 fix: removes text-transform in Button
+
+-------------------
+ **v1.0.0-20**  (2020-06-29) 
+
+* 7e5c39d v1.0.0-20
+* 416c50b chore(pageHeader): stories updated
+* 7ded885 feat: adds firstName, lastName prop in Avatar

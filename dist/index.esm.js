@@ -354,11 +354,17 @@ function _createForOfIteratorHelper(o, allowArrayLike) {
 }
 
 var initialsLength = 2;
+/**
+ * **NOTE: children will be rendered if both children and (firstName, lastName) are provided as prop.**
+ */
+
 var Avatar = function Avatar(props) {
   var _props$appearance = props.appearance,
       appearance = _props$appearance === void 0 ? 'primary' : _props$appearance,
-      children = props.children;
-  var initials = children.trim().slice(0, initialsLength);
+      children = props.children,
+      firstName = props.firstName,
+      lastName = props.lastName;
+  var initials = children ? children.trim().slice(0, initialsLength) : "".concat(firstName ? firstName.trim()[0] : '').concat(lastName ? lastName.trim()[0] : '');
   var classes = classNames(_defineProperty({
     Avatar: true
   }, "Avatar--".concat(appearance), appearance));
