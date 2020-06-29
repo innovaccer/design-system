@@ -158,7 +158,7 @@ class PopperWrapper extends React.Component<Props, IState> {
 
     const element = React.cloneElement(
       (
-        <span className="d-inline-flex PopperWrapper-trigger">
+        <span className="PopperWrapper-trigger">
           {trigger}
         </span>
       ),
