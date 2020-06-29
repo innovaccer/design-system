@@ -1,4 +1,15 @@
-.ChipGroup{
-    margin-right: var(--spacing-m);
+.ChipGroup {
     display: inline-flex;
+}
+
+.ChipGroup-item {
+    margin: 0 var(--spacing-m);
+}
+
+.ChipGroup-item:first-child {
+    margin-left: 0;
+}
+
+.ChipGroup-item:last-child {
+    margin-right: 0;
 }

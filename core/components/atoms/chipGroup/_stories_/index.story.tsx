@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Type, Name } from '../../chip/Chip';
+import { Type } from '../../chip/Chip';
 import { action } from '@storybook/addon-actions';
 import { ChipGroup } from '../ChipGroup';
 export const all = () => {
@@ -8,33 +8,27 @@ export const all = () => {
     [
       {
         label: 'Action', icon: 'assessment', disabled: false,
-        type: type[0], name: 1
+        type: type[0], name: '1'
       },
       {
-        label: 'Input', icon: 'assessment', clearbutton: true, disabled: false,
+        label: 'Input', icon: 'assessment', clearButton: true, disabled: false,
         type: type[1], name: '2'
       },
       {
-        label: 'Selection', icon: 'assessment', clearbutton: true, disabled: false,
+        label: 'Selection', icon: 'assessment', clearButton: true, disabled: false,
         type: type[2], selected: true, name: '3'
       },
       {
-        label: 'Selection', icon: 'assessment', clearbutton: true, disabled: false,
+        label: 'Selection', icon: 'assessment', clearButton: true, disabled: false,
         type: type[2], name: '4'
       }
     ];
-  const onClickHandler = (name: Name) => {
-    return action(`onClick: ${name}`)();
-  };
-  const onCloseHandler = (name: Name) => {
-    return action(`onClose: ${name}`)();
-  };
 
   return (
     <div>
       <ChipGroup
-        onClose={onCloseHandler}
-        onClick={onClickHandler}
+        onClose={action(`onClose: ${name}`)}
+        onClick={action(`onClick: ${name}`)}
         list={list}
       />
     </div>

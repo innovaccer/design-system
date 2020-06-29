@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
+import { Text } from '@/index';
 import Chip, { Name } from '../../Chip';
 import { action } from '@storybook/addon-actions';
 const BooleanValue = [true, false];
@@ -33,7 +34,7 @@ export const Selection = () => {
             <Chip
               icon={icon}
               label={label}
-              clearbutton={true}
+              clearButton={true}
               disabled={booleanvalue}
               type="selection"
               onClose={onCloseHandler}
@@ -41,6 +42,8 @@ export const Selection = () => {
               selected={false}
               name={name}
             />
+            <br />
+            <Text weight="strong">{`Disabled: ${booleanvalue}`}</Text>
           </div>
         );
       })}
@@ -48,14 +51,15 @@ export const Selection = () => {
         <Chip
           icon={icon}
           label={label}
-          clearbutton={true}
-          disabled={false}
+          clearButton={true}
           type="selection"
           onClose={onCloseHandler}
           onClick={onClickHandler}
           selected={true}
           name={name}
         />
+        <br />
+        <Text weight="strong">Selected: true</Text>
       </div>
     </div>
   );
