@@ -4,13 +4,39 @@ import classNames from 'classnames';
 export type Type = 'action' | 'selection' | 'input';
 export type Name = number | string;
 export interface ChipProps {
+  /**
+   * Label of chip
+   */
   label: string;
+  /**
+   * Type of material `Icon`
+   */
   icon?: string;
-  clearbutton?: boolean;
+  /**
+   * Shows the 'clear' icon if value is not empty
+   */
+  clearButton?: boolean;
+  /**
+   * Disables the Chip, making it unable to be pressed
+   */
   disabled?: boolean;
+
+  /**
+   * Select the chip
+   */
   selected?: boolean;
+  /**
+   * Type of chip
+   * @default "input"
+   */
   type?: Type;
+  /**
+   * Handler to be called when Chip is closed
+   */
   onClose?: (name: Name) => void;
+  /**
+   * Handler to be called when Chip is clicked
+   */
   onClick?: (name: Name) => void;
   name: Name;
 }
@@ -18,8 +44,8 @@ export const Chip = (props: ChipProps) => {
   const {
     label = '',
     icon,
-    clearbutton,
-    type,
+    clearButton,
+    type = 'input',
     disabled,
     selected,
     onClose,
@@ -41,7 +67,7 @@ export const Chip = (props: ChipProps) => {
     [`Chip-${type}--selected`]: selected && !disabled,
 
   });
-  const clearButton = ((type === 'action') ? false : clearbutton);
+  const clearbutton = ((type === 'action') ? false : clearButton);
   const select = (((type === 'selection') && selected) ? true : false);
   return (
     <div>
@@ -49,7 +75,7 @@ export const Chip = (props: ChipProps) => {
         label={label}
         selected={select}
         icon={icon}
-        clearbutton={clearButton}
+        clearButton={clearbutton}
         disabled={disabled}
         className={chipClass}
         onClose={onCloseHandler}

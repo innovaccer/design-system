@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { select, boolean, text } from '@storybook/addon-knobs';
-import Chip, { Name } from '../Chip';
+import Chip from '../Chip';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 import { action } from '@storybook/addon-actions';
 
@@ -8,20 +8,16 @@ export const all = () => {
 
   const type = select(
     'type', ['action', 'selection', 'input'],
-    'action'
+    'input'
   );
 
   const icon = text(
     'icon', 'assessment'
   );
-  const label = text(
-    'label',
-    'ChipLabel',
-  );
-  let clearbutton;
+  let clearButton;
   if (type !== 'action') {
-    clearbutton = boolean(
-      'clearbutton', true
+    clearButton = boolean(
+      'clearButton', true
     );
   }
 
@@ -43,22 +39,20 @@ export const all = () => {
   if (type === 'input') {
     updateKnob('label', 'Input');
   }
-  const onCloseHandler = (name: Name) => {
-    return action(`onClose: ${name}`)();
-  };
-  const onClickHandler = (name: Name) => {
-    return action(`onClick: ${name}`)();
-  };
+  const label = text(
+    'label',
+    'Input',
+  );
   return (
     <div>
       <Chip
         icon={icon}
         label={label}
-        clearbutton={clearbutton}
+        clearButton={clearButton}
         disabled={disabled}
         type={type}
-        onClose={onCloseHandler}
-        onClick={onClickHandler}
+        onClose={action(`onClose: ${name}`)}
+        onClick={action(`onClick: ${name}`)}
         selected={selected}
         name={name}
       />

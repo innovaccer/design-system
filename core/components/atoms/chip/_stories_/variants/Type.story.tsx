@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { boolean, text } from '@storybook/addon-knobs';
-import Chip, { Type, Name } from '../../Chip';
+import Chip, { Name } from '../../Chip';
 import { action } from '@storybook/addon-actions';
 import Text from '@/components/atoms/text';
 export const Types = () => {
-
-  const types: Type[] = ['action', 'selection', 'input'];
   const icon = text(
     'icon', 'assessment'
   );
@@ -13,8 +11,8 @@ export const Types = () => {
     'label',
     'ChipLabel',
   );
-  const clearbutton = boolean(
-    'clearbutton', true
+  const clearButton = boolean(
+    'clearButton', true
   );
   const disabled = false;
   const selected = false;
@@ -33,27 +31,53 @@ export const Types = () => {
   };
   return (
     <div style={style}>
-      {
-        types.map((type, ind) => {
-          return (
-            <div key={ind} style={innerStyle}>
-              <Chip
-                icon={icon}
-                label={label}
-                clearbutton={clearbutton}
-                disabled={disabled}
-                type={type}
-                onClose={onCloseHandler}
-                onClick={onClickHandler}
-                selected={selected}
-                name={name}
-              />
-              <br />
-              <Text weight="strong">{type.charAt(0).toUpperCase() + type.slice(1)}</Text>
-            </div>
-          );
-        })
-      }
+
+      <div style={innerStyle}>
+        <Chip
+          icon={icon}
+          label={label}
+          clearButton={clearButton}
+          disabled={disabled}
+          type="action"
+          onClose={onCloseHandler}
+          onClick={onClickHandler}
+          selected={selected}
+          name={name}
+        />
+        <br />
+        <Text weight="strong">{'action'.charAt(0).toUpperCase() + 'action'.slice(1)}</Text>
+      </div>
+      <div style={innerStyle}>
+        <Chip
+          icon={icon}
+          label={label}
+          clearButton={clearButton}
+          disabled={disabled}
+          type="input"
+          onClose={onCloseHandler}
+          onClick={onClickHandler}
+          selected={selected}
+          name={name}
+        />
+        <br />
+        <Text weight="strong">{'input'.charAt(0).toUpperCase() + 'input'.slice(1)}</Text>
+      </div>
+      <div style={innerStyle}>
+        <Chip
+          icon={icon}
+          label={label}
+          clearButton={clearButton}
+          disabled={disabled}
+          type="selection"
+          onClose={onCloseHandler}
+          onClick={onClickHandler}
+          selected={selected}
+          name={name}
+        />
+        <br />
+        <Text weight="strong">{'selection'.charAt(0).toUpperCase() + 'selection'.slice(1)}</Text>
+      </div>
+
     </div>
   );
 };

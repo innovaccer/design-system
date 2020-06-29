@@ -2,7 +2,6 @@ import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
 import Chip, { Name } from '../../Chip';
 import { action } from '@storybook/addon-actions';
-const BooleanValue = [true, false];
 export const Action = () => {
 
   const icon = text(
@@ -27,23 +26,30 @@ export const Action = () => {
   };
   return (
     <div style={style}>
-      {
-        BooleanValue.map((booleanvalue, ind) => {
-          return (
-            <div key={ind} style={innerStyle}>
-              <Chip
-                icon={icon}
-                label={label}
-                disabled={booleanvalue}
-                onClose={onCloseHandler}
-                onClick={onClickHandler}
-                type="action"
-                name={name}
-              />
-            </div>
-          );
-        })
-      }
+
+      <div style={innerStyle}>
+        <Chip
+          icon={icon}
+          label={label}
+          disabled={true}
+          onClose={onCloseHandler}
+          onClick={onClickHandler}
+          type="action"
+          name={name}
+        />
+      </div>
+
+      <div style={innerStyle}>
+        <Chip
+          icon={icon}
+          label={label}
+          disabled={false}
+          onClose={onCloseHandler}
+          onClick={onClickHandler}
+          type="action"
+          name={name}
+        />
+      </div>
     </div>
   );
 };

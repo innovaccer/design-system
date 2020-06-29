@@ -7,7 +7,7 @@ export interface GenericChipProps {
 
   label: string;
   icon?: string;
-  clearbutton?: boolean;
+  clearButton?: boolean;
   disabled?: boolean;
   selected?: boolean;
   className?: string;
@@ -19,7 +19,7 @@ export const GenericChip = (props: GenericChipProps) => {
   const {
     label = '',
     icon,
-    clearbutton,
+    clearButton,
     disabled,
     className,
     selected,
@@ -38,8 +38,8 @@ export const GenericChip = (props: GenericChipProps) => {
     if (onClick) onClick(name);
   };
   return (
-    <div className={className} onClick={onClickHandler}>
-      <div className="Chip-wrapper">
+    <div className={className} >
+      <div className="Chip-wrapper"onClick={onClickHandler} >
         {icon && (
           <div className={iconClass('left')}>
             <Icon
@@ -54,7 +54,7 @@ export const GenericChip = (props: GenericChipProps) => {
         </Text>
       </div>
       {(
-        clearbutton &&
+        clearButton &&
         (
           <div className={iconClass('right')} onClick={onCloseHandler}>
             <Icon
