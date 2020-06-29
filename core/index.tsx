@@ -28,6 +28,7 @@ export { Spinner } from './components/atoms/spinner';
 export { Subheading } from './components/atoms/subheading';
 export { Switch } from './components/atoms/switch';
 export { Text } from './components/atoms/text';
+export { Textarea } from './components/atoms/textarea';
 export { Toast } from './components/atoms/toast';
 export { Tooltip } from './components/atoms/tooltip';
 export { Dialog } from './components/molecules/dialog';

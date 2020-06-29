@@ -1,6 +1,5 @@
 import * as React from 'react';
-import TextArea from '../../TextArea';
-import Text from '@/components/atoms/text';
+import { Text, Textarea } from '@/index';
 import { action } from '@storybook/addon-actions';
 
 export const Disable = () => {
@@ -28,8 +27,8 @@ export const Disable = () => {
           <div style={innerStyle} key={ind}>
             <div style={innerStyle}>
               <div style={{ marginBottom: '20px', width: '230px' }}>
-                <TextArea
-                  name="TextArea"
+                <Textarea
+                  name="Textarea"
                   onChange={action('on-change')}
                   placeholder="Placeholder"
                   disabled={value}
@@ -44,13 +43,14 @@ export const Disable = () => {
     </div>
   );
 };
+
 export default {
-  title: 'Atoms|TextArea/Variants',
-  component: TextArea,
+  title: 'Atoms|Textarea/Variants',
+  component: Textarea,
   parameters: {
     docs: {
       docPage: {
-        title: 'TextArea'
+        title: 'Textarea'
       }
     }
   }

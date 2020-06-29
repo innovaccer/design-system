@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { text, boolean, number } from '@storybook/addon-knobs';
-import TextArea from '../TextArea';
+import { Textarea } from '@/index';
 import { action } from '@storybook/addon-actions';
 
 // CSF format story
@@ -29,8 +29,8 @@ export const all = () => {
 
   return (
     <div style={{ maxWidth: '300px' }}>
-      <TextArea
-        name="TextArea"
+      <Textarea
+        name="Textarea"
         value={value}
         disabled={disabled}
         onChange={action('on-change')}
@@ -44,6 +44,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|TextArea',
-  component: TextArea,
+  title: 'Atoms|Textarea',
+  component: Textarea,
 };
