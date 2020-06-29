@@ -1,52 +1,13 @@
-const getSearchedOptions = (options: any, searchTerm: string) => {
+export const getSearchedOptions = (options: any, searchTerm: string) => {
   const result = options.filter((option: any) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
   return result;
 };
 
-export const getOptions = (offset: number, limit: number, searchTerm: string, options: any) => {
-  const searchedOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
-  return new Promise(resolve => {
-    resolve({
-      offset,
-      options: searchedOptions.slice(offset, offset + limit),
-      length: searchedOptions.length,
-      totalRecords: options.length,
-    });
-  });
-};
-
-export const getValuesFromSelectedObj = (selectedArray: any[] = []) => {
-  const selectedValues: any[] = [];
-
-  selectedArray.forEach((selectedObj: any) => {
-    const { value } = selectedObj;
-    selectedValues.push(value);
-  });
-
-  return selectedValues;
-};
-
-export const getIndexesFromSelectedObj = (selectedArray: any[] = []) => {
-  return (Array.from(Array(selectedArray.length).keys()));
-};
-
-export const getValuesFromInd = (selectedArray: number[], options: any[]) => {
-  const result: any[] = [];
-  selectedArray.forEach(ind => {
-    result.push(options[ind].value);
-  });
-
-  return result;
-};
-
-export const getLabelsFromSelectedObj = (options: any[]) => {
-  const result: string[] = [];
-  options.forEach(option => {
-    result.push(option.label);
-  });
-
-  return result;
-};
+export const _isEqual = (arr1: any[], arr2: any[]) => (
+  (arr1.length === arr2.length) && arr1.every((option, index) => (
+    option.value === arr2[index].value || option.label === arr2[index].label
+  ))
+);
 
 export const scrollTo = (element: Element, top: number) => {
   element.scrollTo(0, top);
@@ -68,4 +29,14 @@ export const scrollIntoView = (menuElement: HTMLDivElement | null, focusedElemen
       focusedElement.offsetTop - overscroll
     );
   }
+};
+
+export const getSelectAll = (selected: any[], optionsLength: number) => {
+  if (selected.length) {
+    const indeterminate = selected.length > 0 && selected.length !== optionsLength;
+    const checked = selected.length > 0 && selected.length === optionsLength;
+    const obj = { checked, indeterminate };
+    return obj;
+  }
+  return { indeterminate: false, checked: false };
 };

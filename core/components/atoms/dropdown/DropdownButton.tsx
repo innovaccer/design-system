@@ -2,39 +2,60 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Icon from '@/components/atoms/icon';
 
-type ReactMouseEvent = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-
 export type Size = 'tiny' | 'regular';
 
-export interface DropdownButtonProps {
+export interface TriggerProps {
   /**
+   * Size of `Dropdown` trigger button
    * @default "regular"
    */
-  size?: Size;
-  disabled?: boolean;
-  menu?: boolean;
+  triggerSize?: Size;
+  /**
+   * Material icon name
+   */
   icon?: string;
-  inlineLabel?: string;
+  /**
+   * String to show when no options are selected
+   */
   placeholder?: string;
-  children?: string;
-  width?: React.ReactText;
+  /**
+   * Label inside `Dropdown button`
+   */
+  inlineLabel?: string;
+  /**
+   * Determines if `dropdown` is disabled
+   */
+  disabled?: boolean;
+  /**
+   * Determines if type of `dropdown` is a menu
+   * @default false
+   */
+  menu?: boolean;
+  /**
+   * Determines if `dropdown` has disabled
+   */
+  error?: boolean;
+  /**
+   * Adds max width to `Dropdown`
+   */
   maxWidth?: number;
-  onClick?: ReactMouseEvent;
-  onMouseEnter?: ReactMouseEvent;
-  onMouseLeave?: ReactMouseEvent;
+}
+
+export interface DropdownButtonProps extends TriggerProps {
+  children?: string;
 }
 
 const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>((props, ref) => {
   const {
-    size = 'regular',
+    triggerSize = 'regular',
     placeholder = 'Select',
     menu = false,
     children,
-    width,
     maxWidth,
     icon,
     disabled,
     inlineLabel,
+    error,
     ...rest
   } = props;
 
@@ -50,11 +71,12 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
     ['Button--square']: !children,
     ['DropdownTrigger']: true,
     ['DropdownButton']: true,
-    [`DropdownButton--${size}`]: size,
+    [`DropdownButton--${triggerSize}`]: triggerSize,
     ['DropdownButton--icon']: icon,
     ['DropdownButton--moreIcon']: menu,
     ['DropdownButton--placeholder']: !children && !menu,
     ['DropdownButton--label']: label,
+    ['DropdownButton--error']: error,
   });
 
   const labelClass = classNames({
@@ -67,7 +89,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
       value={children}
       className={buttonClass}
       disabled={disabled}
-      style={{ maxWidth }}
+      style={{ maxWidth: maxWidth ? maxWidth : '100%' }}
       tabIndex={0}
       {...rest}
     >

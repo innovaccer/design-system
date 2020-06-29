@@ -29,6 +29,7 @@ export const cutsomOption = () => {
 
   const customCheckboxRenderer = (props: any) => {
     const { label } = props.optionData;
+
     return (
       <div style={optionStyle}>
         <Checkbox checked={props.selected} onChange={props.onChange} label={label} />

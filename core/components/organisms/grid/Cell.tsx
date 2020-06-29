@@ -38,7 +38,7 @@ const HeaderCell = (props: HeaderCellProps) => {
     loading,
     showMenu,
     sortingList,
-    filterList
+    // filterList
   } = _this.props;
 
   const init = getInit(_this);
@@ -108,20 +108,14 @@ const HeaderCell = (props: HeaderCellProps) => {
                 menu={true}
                 showApplyButton={true}
                 checkboxes={true}
-                selected={
-                  filterList[schema.name]
-                    ? filterList[schema.name].map(f => ({
-                      value: f,
-                      label: schema.filters?.find(s => s.value === f)!.label || '',
-                    }))
-                    : []
-                }
-                customTrigger={() => (
-                  <Button
-                    icon="filter_list"
-                    appearance="transparent"
-                  />
-                )}
+                // selected={
+                //   filterList[schema.name]
+                //     ? filterList[schema.name].map(f => ({
+                //       value: f,
+                //       label: schema.filters?.find(s => s.value === f)!.label || ''
+                //     }))
+                //     : []
+                // }
                 options={schema.filters}
                 dropdownAlign={'left'}
                 onChange={(selected: any) => _this.onFilterChange(schema.name, selected)}
