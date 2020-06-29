@@ -50,7 +50,7 @@ export const Message: React.FunctionComponent<MessageProps> = props => {
     <div className={MessageClass}>
       {appearance !== 'default' && (
         <div className={MessageIcon}>
-          <Icon name={IconMapping[appearance]} size={16} appearance={appearance}/>
+          <Icon name={IconMapping[appearance]} appearance={appearance}/>
         </div>
       )}
       <div>

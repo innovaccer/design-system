@@ -36,8 +36,8 @@ export interface IconProps {
 
 export const Icon = (props: IconProps) => {
   const {
-    appearance = 'default',
-    type = 'filled',
+    appearance,
+    type,
     className,
     name,
     size,
@@ -52,8 +52,8 @@ export const Icon = (props: IconProps) => {
   });
 
   const styles = {
-    fontSize: (size) ? `${size}px` : 'var(--font-size)',
-    width: (size) ? `${size}px` : 'var(--font-size)',
+    fontSize: `${size}px`,
+    width: `${size}px`,
   };
 
   return (
@@ -65,6 +65,12 @@ export const Icon = (props: IconProps) => {
       {`${name}_${type}`}
     </i>
   );
+};
+
+Icon.defaultProps = {
+  appearance: 'default',
+  type: 'filled',
+  size: 16
 };
 
 Icon.displayName = 'Icon';
