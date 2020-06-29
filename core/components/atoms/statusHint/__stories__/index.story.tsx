@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { select, text } from '@storybook/addon-knobs';
-import StatusHints from '../StatusHints';
+import StatusHint from '../StatusHint';
 
 // CSF format story
 export const all = () => {
-  const children = text('children', 'Status Hints');
+  const children = text('children', 'Status Hint');
 
   const appearance = select(
     'Appearance',
@@ -18,16 +18,16 @@ export const all = () => {
 
   return (
     <div>
-      <StatusHints
+      <StatusHint
         {...options}
       >
         {children}
-      </StatusHints>
+      </StatusHint>
     </div>
   );
 };
 
 export default {
-  title: 'Atoms|StatusHints',
-  component: StatusHints
+  title: 'Atoms|StatusHint',
+  component: StatusHint
 };

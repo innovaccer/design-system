@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Avatar, Text, Placeholder, PlaceholderParagraph, Icon, StatusHints } from '@/index';
-import { StatusHintsProps } from '@/index.type';
+import { Avatar, Text, Placeholder, PlaceholderParagraph, Icon, StatusHint } from '@/index';
+import { StatusHintProps } from '@/index.type';
 import { ColumnSchema, RowData, GridSize } from './Grid';
 import { translateData } from './utility';
 
@@ -12,7 +12,7 @@ export interface CellData {
   image?: string;
   firstName?: string;
   lastName?: string;
-  statusAppearance?: StatusHintsProps['appearance'];
+  statusAppearance?: StatusHintProps['appearance'];
 }
 
 // export interface ImageProps {
@@ -168,11 +168,11 @@ const renderStatusHint = (props: CellProps) => {
 
   if (children) {
     return (
-      <StatusHints
+      <StatusHint
         appearance={statusAppearance}
       >
         {children}
-      </StatusHints>
+      </StatusHint>
     );
   }
 

@@ -23,7 +23,7 @@ export { Paragraph } from './components/atoms/paragraph';
 export { ProgressBar } from './components/atoms/progressBar';
 export { Radio } from './components/atoms/radio';
 export { Row } from './components/atoms/row';
-export { StatusHints } from './components/atoms/statusHints';
+export { StatusHint } from './components/atoms/statusHint';
 export { Spinner } from './components/atoms/spinner';
 export { Subheading } from './components/atoms/subheading';
 export { Switch } from './components/atoms/switch';

@@ -1,101 +1,101 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`StatusHints component 
+exports[`StatusHint component 
   appearance: "alert"
  1`] = `
 <div
-  className="StatusHints"
+  className="StatusHint"
   onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
   <span
-    className="StatusHints-icon StatusHints--alert"
+    className="StatusHint-icon StatusHint--alert"
   />
   <Text
     weight="medium"
   >
-    StatusHints
+    StatusHint
   </Text>
 </div>
 `;
 
-exports[`StatusHints component 
+exports[`StatusHint component 
   appearance: "default"
  1`] = `
 <div
-  className="StatusHints"
+  className="StatusHint"
   onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
   <span
-    className="StatusHints-icon StatusHints--default"
+    className="StatusHint-icon StatusHint--default"
   />
   <Text
     weight="medium"
   >
-    StatusHints
+    StatusHint
   </Text>
 </div>
 `;
 
-exports[`StatusHints component 
+exports[`StatusHint component 
   appearance: "info"
  1`] = `
 <div
-  className="StatusHints"
+  className="StatusHint"
   onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
   <span
-    className="StatusHints-icon StatusHints--info"
+    className="StatusHint-icon StatusHint--info"
   />
   <Text
     weight="medium"
   >
-    StatusHints
+    StatusHint
   </Text>
 </div>
 `;
 
-exports[`StatusHints component 
+exports[`StatusHint component 
   appearance: "success"
  1`] = `
 <div
-  className="StatusHints"
+  className="StatusHint"
   onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
   <span
-    className="StatusHints-icon StatusHints--success"
+    className="StatusHint-icon StatusHint--success"
   />
   <Text
     weight="medium"
   >
-    StatusHints
+    StatusHint
   </Text>
 </div>
 `;
 
-exports[`StatusHints component 
+exports[`StatusHint component 
   appearance: "warning"
  1`] = `
 <div
-  className="StatusHints"
+  className="StatusHint"
   onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
   <span
-    className="StatusHints-icon StatusHints--warning"
+    className="StatusHint-icon StatusHint--warning"
   />
   <Text
     weight="medium"
   >
-    StatusHints
+    StatusHint
   </Text>
 </div>
 `;
