@@ -3,37 +3,24 @@ import classNames from 'classnames';
 
 export interface ProgressBarProps {
   /**
-   * Sets the value on the `ProgressBar`.
+   * Specifies how much of the task that has been completed. Value should lie between 0 to max,
    */
   value: number;
   /**
-   * Event emitted when the `ProgressBar` value changes
+   * Describes how much work the task indicated by the `Progress Bar` requires
+   * @default 100
    */
-  onChange?: (value: number) => void;
+  max?: number;
 }
-
-export const useIsMount = () => {
-  const isMountRef = React.useRef(true);
-  React.useEffect(() => {
-    isMountRef.current = false;
-  }, []);
-  return isMountRef.current;
-};
 
 export const ProgressBar = (props: ProgressBarProps) => {
   const {
+    max = 100,
     value,
-    onChange,
   } = props;
 
-  const isMount = useIsMount();
-
-  React.useEffect(() => {
-    if (onChange && !isMount) onChange(value);
-  }, [value]);
-
   const style = {
-    width: `${value}%`,
+    width: value > 0 ? `${Math.min(value, max) * 100 / max}%` : '0',
   };
 
   const ProgressBarClass = classNames({
