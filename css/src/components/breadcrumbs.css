@@ -5,6 +5,19 @@
   align-items: center;
 }
 
+.Breadcrumbs-item {
+  display: flex;
+  align-items: center;
+}
+
+.Breadcrumbs-link {
+  margin: var(--spacing-m);
+}
+
+.Breadcrumbs-item:first-child .Breadcrumbs-link {
+  margin-left: 0;
+}
+
 .Breadcrumbs-itemSeparator {
   color: var(--inverse-light);
 }
@@ -17,7 +30,6 @@
 .SubtleLink {
   text-decoration: none;
   cursor: pointer;
-  margin: var(--spacing-m);
   font-size: var(--font-size-s);
   color: var(--inverse-light);
   font-weight: var(--font-weight-medium);
