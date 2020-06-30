@@ -8,6 +8,8 @@ exports[`Popover component
   closeOnBackdropClick={false}
   offset="Large"
   on="click"
+  onToggle={[Function]}
+  open={false}
   placement="bottom"
   style={
     Object {
@@ -47,6 +49,8 @@ exports[`Popover component
   closeOnBackdropClick={true}
   offset="Large"
   on="click"
+  onToggle={[Function]}
+  open={false}
   placement="bottom"
   style={
     Object {
@@ -86,6 +90,8 @@ exports[`Popover component
   closeOnBackdropClick={false}
   offset="Large"
   on="click"
+  onToggle={[Function]}
+  open={false}
   placement="bottom-end"
   style={
     Object {
@@ -125,6 +131,8 @@ exports[`Popover component
   closeOnBackdropClick={true}
   offset="Large"
   on="click"
+  onToggle={[Function]}
+  open={false}
   placement="bottom-end"
   style={
     Object {
@@ -164,6 +172,8 @@ exports[`Popover component
   closeOnBackdropClick={false}
   offset="Large"
   on="click"
+  onToggle={[Function]}
+  open={false}
   placement="bottom-start"
   style={
     Object {
@@ -203,6 +213,8 @@ exports[`Popover component
   closeOnBackdropClick={true}
   offset="Large"
   on="click"
+  onToggle={[Function]}
+  open={false}
   placement="bottom-start"
   style={
     Object {
@@ -242,6 +254,8 @@ exports[`Popover component
   closeOnBackdropClick={false}
   offset="Large"
   on="click"
+  onToggle={[Function]}
+  open={false}
   placement="top"
   style={
     Object {
@@ -281,6 +295,8 @@ exports[`Popover component
   closeOnBackdropClick={true}
   offset="Large"
   on="click"
+  onToggle={[Function]}
+  open={false}
   placement="top"
   style={
     Object {
@@ -320,6 +336,8 @@ exports[`Popover component
   closeOnBackdropClick={false}
   offset="Large"
   on="click"
+  onToggle={[Function]}
+  open={false}
   placement="top-end"
   style={
     Object {
@@ -359,6 +377,8 @@ exports[`Popover component
   closeOnBackdropClick={true}
   offset="Large"
   on="click"
+  onToggle={[Function]}
+  open={false}
   placement="top-end"
   style={
     Object {
@@ -398,6 +418,8 @@ exports[`Popover component
   closeOnBackdropClick={false}
   offset="Large"
   on="click"
+  onToggle={[Function]}
+  open={false}
   placement="top-start"
   style={
     Object {
@@ -437,6 +459,8 @@ exports[`Popover component
   closeOnBackdropClick={true}
   offset="Large"
   on="click"
+  onToggle={[Function]}
+  open={false}
   placement="top-start"
   style={
     Object {
@@ -476,6 +500,8 @@ exports[`Popover component
   closeOnBackdropClick={false}
   offset="Large"
   on="click"
+  onToggle={[Function]}
+  open={false}
   placement="bottom"
   style={
     Object {
@@ -515,6 +541,8 @@ exports[`Popover component
   closeOnBackdropClick={true}
   offset="Large"
   on="click"
+  onToggle={[Function]}
+  open={false}
   placement="bottom"
   style={
     Object {
@@ -554,6 +582,8 @@ exports[`Popover component
   closeOnBackdropClick={false}
   offset="Large"
   on="click"
+  onToggle={[Function]}
+  open={false}
   placement="bottom"
   style={
     Object {
@@ -593,6 +623,8 @@ exports[`Popover component
   closeOnBackdropClick={true}
   offset="Large"
   on="click"
+  onToggle={[Function]}
+  open={false}
   placement="bottom"
   style={
     Object {

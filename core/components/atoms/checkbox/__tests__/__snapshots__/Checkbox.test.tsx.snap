@@ -85,6 +85,7 @@ exports[`Checkbox component
       appearance="white"
       name="check"
       size={16}
+      type="filled"
     />
   </span>
   <div
@@ -122,6 +123,7 @@ exports[`Checkbox component
       appearance="white"
       name="check"
       size={16}
+      type="filled"
     />
   </span>
   <div
@@ -158,6 +160,7 @@ exports[`Checkbox component
       appearance="white"
       name="remove"
       size={16}
+      type="filled"
     />
   </span>
   <div
@@ -194,6 +197,7 @@ exports[`Checkbox component
       appearance="white"
       name="remove"
       size={16}
+      type="filled"
     />
   </span>
   <div
@@ -230,6 +234,7 @@ exports[`Checkbox component
       appearance="white"
       name="check"
       size={16}
+      type="filled"
     />
   </span>
   <div
@@ -266,6 +271,7 @@ exports[`Checkbox component
       appearance="white"
       name="check"
       size={8}
+      type="filled"
     />
   </span>
   <div

@@ -60,7 +60,7 @@ export const PageHeader = (props: PageHeaderProps) => {
       {breadcrumb && breadcrumb}
       <div className={classes}>
         <div className="PageHeader-titleWrapper">
-          <Heading size="m">{title}</Heading>
+          <Heading>{title}</Heading>
           {badge}
         </div>
         {type === 'large' && navigation}

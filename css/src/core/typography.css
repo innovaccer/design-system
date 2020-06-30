@@ -26,6 +26,11 @@ body {
   line-height: var(--font-height);
 }
 
+.Text--small {
+  font-size: var(--font-size-s);
+  line-height: var(--font-height-normal);
+}
+
 .Text--default {
   color: var(--text);
 }
@@ -54,18 +59,12 @@ body {
   color: var(--text-white);
 }
 
-.Text--small {
-  font-size: var(--font-size-s);
-  line-height: var(--font-height-normal);
-}
-
-.Text--label {
-  --font-height: var(--font-height-s);
-}
-
 /* Heading */
 .Heading {
   margin: 0;
+}
+
+.Heading--s {
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-m);
   line-height: var(--font-height-m);

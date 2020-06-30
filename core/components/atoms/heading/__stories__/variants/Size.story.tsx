@@ -5,7 +5,7 @@ import Text from '@/components/atoms/text';
 // CSF format story
 export const size = () => {
 
-  const sizes: Size[] = ['m', 'l', 'xl', 'xxl'];
+  const sizes: Size[] = ['s', 'm', 'l', 'xl', 'xxl'];
 
   const style = {
     display: 'flex',
@@ -22,15 +22,6 @@ export const size = () => {
 
   return (
     <div style={style}>
-      <div style={outerStyle}>
-        <div style={innerStyle}>
-          <Heading>
-            Heading
-          </Heading>
-        </div>
-        <br />
-        <Text weight="strong">Default</Text>
-      </div>
       {
         sizes.map((HeadingSize, ind) => {
           return (
