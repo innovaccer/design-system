@@ -56,17 +56,18 @@ export type RangePickerProps = {
   /**
    * Props to be used for Start date `InputMask`
    */
-  startInputProps?: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear'>;
+  startInputOptions?: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear'>;
   /**
    * Props to be used for Start date `InputMask`
    */
-  endInputProps?: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear'>;
+  endInputOptions?: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear'>;
   /**
    * custom Mask for the mentioned inputFormat
    */
   mask?: Mask;
   /**
    * custom Validator for the mentioned inputFormat and outputFormat
+   * `(format: string, val: string) => boolean`
    */
   validator?: Validator;
 } & SharedProps;
@@ -80,17 +81,21 @@ export const RangePicker = (props: RangePickerProps) => {
     open: openProp = false,
     inputFormat = 'mm/dd/yyyy',
     outputFormat = 'mm/dd/yyyy',
-    startInputProps = {
+    startInputOptions = {
       name: 'rangePicker-start',
       label: 'Start Date',
       placeholderChar: '_',
-      placeholder: inputFormat
+      placeholder: inputFormat,
+      required: false,
+      caption: ''
     },
-    endInputProps = {
+    endInputOptions = {
       name: 'rangePicker-end',
       label: 'End Date',
       placeholderChar: '_',
       placeholder: inputFormat,
+      required: false,
+      caption: ''
     },
     mask = masks.date[inputFormat],
     validator = validators.date,
@@ -135,8 +140,28 @@ export const RangePicker = (props: RangePickerProps) => {
   }, [openProp]);
 
   React.useEffect(() => {
-    let sError = !startDate;
-    let eError = !endDate;
+    let sError = false;
+    let eError = false;
+    if (init) {
+      const {
+        year: dbYear,
+        month: dbMonth,
+        date: dbDate
+      } = getDateInfo(disabledBefore);
+
+      const {
+        year: daYear,
+        month: daMonth,
+        date: daDate
+      } = getDateInfo(disabledAfter);
+
+      sError = !startDate ? true :
+        compareDate(startDate, 'less', dbYear, dbMonth, dbDate)
+        || compareDate(startDate, 'more', daYear, daMonth, daDate);
+      eError = !endDate ? true :
+        compareDate(endDate, 'less', dbYear, dbMonth, dbDate)
+        || compareDate(endDate, 'more', daYear, daMonth, daDate);
+    }
 
     const {
       year: eYear,
@@ -194,7 +219,9 @@ export const RangePicker = (props: RangePickerProps) => {
   };
 
   const onRangeChangeHandler = (sDate?: Date, eDate?: Date) => {
-    if (sDate && eDate) setInit(true);
+    if (sDate && eDate) {
+      if (!init) setInit(true);
+    }
     if (sDate) setStartDate(sDate);
     if (eDate) setEndDate(eDate);
   };
@@ -224,7 +251,7 @@ export const RangePicker = (props: RangePickerProps) => {
       setOpen(true);
 
       if (type === 'start') {
-        const placeholderChar = startInputProps.placeholderChar ? startInputProps.placeholderChar : '_';
+        const placeholderChar = startInputOptions.placeholderChar ? startInputOptions.placeholderChar : '_';
         if (val && !val.includes(placeholderChar)) {
           const d = translateToDate(inputFormat, val, validator);
           if (d) {
@@ -243,7 +270,7 @@ export const RangePicker = (props: RangePickerProps) => {
         }
       }
       if (type === 'end') {
-        const placeholderChar = endInputProps.placeholderChar ? endInputProps.placeholderChar : '_';
+        const placeholderChar = endInputOptions.placeholderChar ? endInputOptions.placeholderChar : '_';
         if (val && !val.includes(placeholderChar)) {
           const d = translateToDate(inputFormat, val, validator);
           if (d) setEndDate(d);
@@ -252,17 +279,19 @@ export const RangePicker = (props: RangePickerProps) => {
     };
 
     const onBlurHandler = (_e: React.ChangeEvent<HTMLInputElement>, val: string, type: string) => {
+      setInit(true);
       if (type === 'start') {
-        const placeholderChar = startInputProps.placeholderChar ? startInputProps.placeholderChar : '_';
+        const placeholderChar = startInputOptions.placeholderChar ? startInputOptions.placeholderChar : '_';
         if (!val || val.includes(placeholderChar)) setStartDate(undefined);
       }
       if (type === 'end') {
-        const placeholderChar = endInputProps.placeholderChar ? endInputProps.placeholderChar : '_';
+        const placeholderChar = endInputOptions.placeholderChar ? endInputOptions.placeholderChar : '_';
         if (!val || val.includes(placeholderChar)) setEndDate(undefined);
       }
     };
 
     const onClearHandler = (type: string) => {
+      setInit(true);
       if (type === 'start') {
         setStartDate(undefined);
         updateNav('end');
@@ -283,7 +312,7 @@ export const RangePicker = (props: RangePickerProps) => {
       <Row group={'2'} groupXS={'1'}>
         <Column className="RangePicker-input RangePicker-input--startDate">
           <InputMask
-            {...startInputProps}
+            {...startInputOptions}
             mask={mask}
             value={startDate ? translateToString(inputFormat, startDate) : ''}
             onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => onChangeHandler(e, val || '', 'start')}
@@ -291,11 +320,12 @@ export const RangePicker = (props: RangePickerProps) => {
             onClear={() => onClearHandler('start')}
             onClick={() => onClickHandler('start')}
             error={startError}
+            caption={startInputOptions.required && startError ? startInputOptions.caption || 'Invalid value' : ''}
           />
         </Column>
         <Column className="RangePicker-input RangePicker-input--endDate">
           <InputMask
-            {...endInputProps}
+            {...endInputOptions}
             mask={mask}
             value={endDate ? translateToString(inputFormat, endDate) : ''}
             onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => onChangeHandler(e, val || '', 'end')}
@@ -303,6 +333,7 @@ export const RangePicker = (props: RangePickerProps) => {
             onClear={() => onClearHandler('end')}
             onClick={() => onClickHandler('end')}
             error={endError}
+            caption={endInputOptions.required && endError ? endInputOptions.caption || 'Invalid value' : ''}
           />
         </Column>
       </Row>

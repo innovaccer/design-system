@@ -36,6 +36,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     mask,
     error,
     caption,
+    required,
     onChange,
     onBlur,
     onClick,
@@ -173,6 +174,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
         {...rest}
         value={value}
         error={error}
+        required={required}
         onClick={onClickHandler}
         onChange={onChangeHandler}
         onClear={onClearHandler}
@@ -180,8 +182,8 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
         autocomplete={'off'}
         ref={ref}
       />
-      <Caption error={error} withInput={true} hide={!error}>
-        {caption || 'Invalid Value'}
+      <Caption error={error} withInput={true}>
+        {caption}
       </Caption>
     </div>
   );

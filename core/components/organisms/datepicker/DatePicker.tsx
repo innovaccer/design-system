@@ -5,7 +5,7 @@ import Popover, { Position } from '@/components/molecules/popover';
 import InputMask, { Mask, InputMaskProps } from '@/components/molecules/inputMask';
 import masks from '@/components/molecules/inputMask/masks';
 import validators from '@/utils/validators';
-import { convertToDate, translateToDate, translateToString, Validator } from '../calendar/utility';
+import { convertToDate, translateToDate, translateToString, Validator, compareDate, getDateInfo } from '../calendar/utility';
 
 export type DatePickerProps = {
   /**
@@ -49,13 +49,14 @@ export type DatePickerProps = {
   /**
    * Props to be used for `InputMask`
    */
-  inputProps?: InputMaskProps;
+  inputOptions?: InputMaskProps;
   /**
    * custom Mask for the mentioned inputFormat
    */
   mask?: Mask;
   /**
    * custom Validator for the mentioned inputFormat and outputFormat
+   * `(format: string, val: string) => boolean`
    */
   validator?: Validator;
 } & SharedProps;
@@ -67,10 +68,12 @@ export const DatePicker = (props: DatePickerProps) => {
     position = 'bottom-start',
     inputFormat = 'mm/dd/yyyy',
     outputFormat = 'mm/dd/yyyy',
-    inputProps = {
+    inputOptions = {
       name: 'datepicker',
       placeholder: inputFormat,
-      placeholderChar: '_'
+      placeholderChar: '_',
+      required: false,
+      caption: ''
     },
     mask = masks.date[inputFormat],
     validator = validators.date,
@@ -96,10 +99,27 @@ export const DatePicker = (props: DatePickerProps) => {
   }, [openProp]);
 
   React.useEffect(() => {
-    setError(!date);
+    const {
+      year: dbYear,
+      month: dbMonth,
+      date: dbDate
+    } = getDateInfo(disabledBefore);
 
-    if (onDateChange) {
-      if (init && date) {
+    const {
+      year: daYear,
+      month: daMonth,
+      date: daDate
+    } = getDateInfo(disabledAfter);
+
+    const newError = !date
+      ? true
+      : compareDate(date, 'less', dbYear, dbMonth, dbDate)
+      || compareDate(date, 'more', daYear, daMonth, daDate);
+
+    setError(newError);
+
+    if (init && !newError && onDateChange) {
+      if (date) {
         const dVal = translateToString(outputFormat, date);
         onDateChange(date, dVal);
       }
@@ -123,6 +143,7 @@ export const DatePicker = (props: DatePickerProps) => {
     };
 
     const onBlurHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
+      setInit(true);
       const placeholderChar = '_';
       if (!val || val.includes(placeholderChar)) {
         setDate(undefined);
@@ -130,6 +151,7 @@ export const DatePicker = (props: DatePickerProps) => {
     };
 
     const onClearHandler = () => {
+      setInit(true);
       setDate(undefined);
     };
 
@@ -146,13 +168,14 @@ export const DatePicker = (props: DatePickerProps) => {
 
     const trigger = (
       <InputMask
-        {...inputProps}
-        error={error}
+        {...inputOptions}
+        error={inputOptions.required && error}
         mask={mask}
         value={date ? translateToString(inputFormat, date) : ''}
         onChange={onChangeHandler}
         onBlur={onBlurHandler}
         onClear={onClearHandler}
+        caption={inputOptions.required && error ? inputOptions.caption || 'Invalid value' : ''}
       />
     );
 
