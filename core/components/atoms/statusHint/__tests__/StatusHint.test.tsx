@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import StatusHints, { StatusHintsProps as IProps } from '../StatusHints';
+import StatusHint, { StatusHintProps as IProps } from '../StatusHint';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const label = 'StatusHints';
+const label = 'StatusHint';
 const appearance = ['default', 'alert', 'info', 'warning', 'success'];
 
-describe('StatusHints component', () => {
+describe('StatusHint component', () => {
   const mapper = {
     appearance: valueHelper(appearance, { required: true, iterate: true }),
   };
@@ -16,9 +16,9 @@ describe('StatusHints component', () => {
 
     it(testMessageHelper(attr), () => {
       const tree = shallow(
-        <StatusHints {...attr}>
+        <StatusHint {...attr}>
           {label}
-        </StatusHints>
+        </StatusHint>
       );
       expect(tree).toMatchSnapshot();
     });

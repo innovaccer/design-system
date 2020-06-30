@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PageHeader from '../..//PageHeader';
 import { select, text } from '@storybook/addon-knobs';
-import { Navigation, Button, Breadcrumbs, Badge, StatusHints } from '@/index';
+import { Navigation, Button, Breadcrumbs, Badge, StatusHint } from '@/index';
 import { action } from '@storybook/addon-actions';
 
 export const withNavigation = () => {
@@ -63,10 +63,10 @@ export const withNavigation = () => {
       <Badge appearance="secondary">Badge</Badge>
     ),
     status: (
-      <StatusHints appearance="alert">Alert</StatusHints>
+      <StatusHint appearance="alert">Alert</StatusHint>
     ),
     meta: (
-      <StatusHints appearance="default">Meta Data</StatusHints>
+      <StatusHint appearance="default">Meta Data</StatusHint>
     )
   };
   return (
@@ -128,10 +128,10 @@ const customCode = `() => {
       <Badge appearance="secondary">Badge</Badge>
     ),
     status: (
-      <StatusHints appearance="alert">Alert</StatusHints>
+      <StatusHint appearance="alert">Alert</StatusHint>
     ),
     meta: (
-      <StatusHints appearance="default">Meta Data</StatusHints>
+      <StatusHint appearance="default">Meta Data</StatusHint>
     )
   };
   return (

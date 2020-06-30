@@ -1,8 +1,14 @@
 import * as React from 'react';
-import StatusHints, { Appearance } from '../StatusHints';
-export const success = () => {
+import StatusHint, { Appearance } from '../../StatusHint';
+
+// CSF format story
+export const appearance = () => {
   const appearances: Appearance[] = [
-    'success'
+    'info',
+    'success',
+    'alert',
+    'warning',
+    'default',
   ];
 
   return (
@@ -11,11 +17,11 @@ export const success = () => {
         appearances.map((iconAppearance, i) => {
           return (
             <div key={i} style={{ marginBottom: '10px' }}>
-              <StatusHints
+              <StatusHint
                 appearance={iconAppearance}
               >
                 {iconAppearance.charAt(0).toUpperCase() + iconAppearance.slice(1)}
-              </StatusHints>
+              </StatusHint>
             </div>
           );
         })
@@ -25,12 +31,12 @@ export const success = () => {
 };
 
 export default {
-  title: 'Atoms|StatusHints',
-  component: StatusHints,
+  title: 'Atoms|StatusHint/Variants',
+  component: StatusHint,
   parameters: {
     docs: {
       docPage: {
-        title: 'StatusHints'
+        title: 'StatusHint'
       }
     }
   }

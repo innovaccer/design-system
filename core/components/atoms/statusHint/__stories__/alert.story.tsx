@@ -1,8 +1,8 @@
 import * as React from 'react';
-import StatusHints, { Appearance } from '../StatusHints';
-export const info = () => {
+import StatusHint, { Appearance } from '../StatusHint';
+export const alert = () => {
   const appearances: Appearance[] = [
-    'info'
+    'alert'
   ];
 
   return (
@@ -11,11 +11,11 @@ export const info = () => {
         appearances.map((iconAppearance, i) => {
           return (
             <div key={i} style={{ marginBottom: '10px' }}>
-              <StatusHints
+              <StatusHint
                 appearance={iconAppearance}
               >
                 {iconAppearance.charAt(0).toUpperCase() + iconAppearance.slice(1)}
-              </StatusHints>
+              </StatusHint>
             </div>
           );
         })
@@ -25,12 +25,12 @@ export const info = () => {
 };
 
 export default {
-  title: 'Atoms|StatusHints',
-  component: StatusHints,
+  title: 'Atoms|StatusHint',
+  component: StatusHint,
   parameters: {
     docs: {
       docPage: {
-        title: 'StatusHints'
+        title: 'StatusHint'
       }
     }
   }

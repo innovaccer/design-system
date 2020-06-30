@@ -1,33 +1,33 @@
-.StatusHints {
+.StatusHint {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: fit-content;
 }
 
-.StatusHints-icon {
+.StatusHint-icon {
     border-radius: 50%;
     height: var(--spacing);
     width: var(--spacing);
     margin-right: var(--spacing);
 }
 
-.StatusHints--alert {
+.StatusHint--alert {
     background: var(--alert);
 }
 
-.StatusHints--success {
+.StatusHint--success {
     background: var(--success);
 }
 
-.StatusHints--warning {
+.StatusHint--warning {
     background: var(--warning);
 }
 
-.StatusHints--info {
+.StatusHint--info {
     background: var(--primary);
 }
 
-.StatusHints--default {
+.StatusHint--default {
     background: var(--secondary);
 }

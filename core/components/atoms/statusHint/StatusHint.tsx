@@ -4,9 +4,9 @@ import classNames from 'classnames';
 
 export type Appearance = 'info' | 'alert' | 'warning' | 'success' | 'default';
 
-export interface StatusHintsProps {
+export interface StatusHintProps {
   /**
-   * Describes label of the `StatusHints`
+   * Describes label of the `Status Hint`
    */
   children: string;
   /**
@@ -15,47 +15,50 @@ export interface StatusHintsProps {
    */
   appearance?: Appearance;
   /**
-   * Adds custom CSS to `StatusHints`
+   * Handler to be called when `Status Hint` is clicked
    */
-  style?: React.CSSProperties;
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  /**
+   * Handler to be called when mouse pointer enters `Status Hint`.
+   */
   onMouseEnter?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  /**
+   * Handler to be called when mouse pointer leaves `Status Hint`.
+   */
   onMouseLeave?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-export const StatusHints = (props: StatusHintsProps) => {
+export const StatusHint = (props: StatusHintProps) => {
   const {
     appearance = 'default',
     children,
     onMouseEnter,
     onMouseLeave,
     onClick,
-    style,
   } = props;
 
-  const StatusHintsClass = classNames({
-    ['StatusHints']: true,
+  const StatusHintClass = classNames({
+    ['StatusHint']: true,
   });
 
-  const StatusHintsIconClass = classNames({
-    ['StatusHints-icon']: true,
-    [`StatusHints--${appearance}`]: appearance,
+  const StatusHintIconClass = classNames({
+    ['StatusHint-icon']: true,
+    [`StatusHint--${appearance}`]: appearance,
   });
 
   return (
     <div
-      className={StatusHintsClass}
+      className={StatusHintClass}
       onClick={e => onClick && onClick(e)}
       onMouseEnter={e => onMouseEnter && onMouseEnter(e)}
       onMouseLeave={e => onMouseLeave && onMouseLeave(e)}
-      style={style}
     >
-      <span className={StatusHintsIconClass} />
+      <span className={StatusHintIconClass} />
       <Text weight={'medium'}>{children}</Text>
     </div>
   );
 };
 
-StatusHints.displayName = 'StatusHints';
+StatusHint.displayName = 'StatusHint';
 
-export default StatusHints;
+export default StatusHint;
