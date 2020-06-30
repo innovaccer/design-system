@@ -4,6 +4,8 @@ import Text from '@/components/atoms/text';
 
 export type Size = 'regular' | 'tiny';
 
+type MouseEvent = React.ChangeEvent<HTMLInputElement>;
+
 export interface RadioProps {
   /**
    * Size of `Radio`
@@ -33,7 +35,7 @@ export interface RadioProps {
   /**
    * Callback function called when user the selects an option
    */
-  onChange?: (checked: boolean) => void;
+  onChange?: (event: MouseEvent) => void;
 }
 
 export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forwardedRef) => {
@@ -69,8 +71,8 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
     [`Radio-outerWrapper--${size}`]: size,
   });
 
-  const onChangeHandler = () => {
-    if (onChange) onChange(ref.current!.checked);
+  const onChangeHandler = (event: MouseEvent) => {
+    if (onChange) onChange(event);
   };
 
   return (
@@ -85,10 +87,15 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           value={value}
           onChange={onChangeHandler}
           className="Radio-input"
+          id={value}
         />
         <span className={RadioWrapper} />
       </div>
-      {label && <Text small={size === 'tiny'}>{label}</Text>}
+      {label && (
+        <label className="Radio-label" htmlFor={value}>
+          <Text small={size === 'tiny'}>{label}</Text>
+        </label>
+      )}
     </div>
   );
 });
