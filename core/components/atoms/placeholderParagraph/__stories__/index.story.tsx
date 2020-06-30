@@ -6,15 +6,20 @@ export const all = () => {
   const length = select(
     'length',
     ['small', 'medium', 'large'],
-    'small'
+    undefined
   );
 
-  const options = {
-    length
-  };
+  const size = select(
+    'size',
+    ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl'],
+    undefined
+  );
 
   return (
-    <PlaceholderParagraph {...options} />
+    <PlaceholderParagraph
+      size={size}
+      length={length}
+    />
   );
 };
 

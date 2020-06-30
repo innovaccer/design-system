@@ -12,24 +12,24 @@ export interface PlaceholderImageProps {
    * Specifies dimension of `Placeholder`
    * @default "small"
    */
-  imageSize?: Size;
+  size?: Size;
 }
 
 export const PlaceholderImage = (props: PlaceholderImageProps) => {
   const {
-    imageSize = 'small',
+    size = 'small',
     round,
   } = props;
 
   const classes = classNames({
-    'Placeholder-image': true,
+    PlaceholderImage: true,
     'Placeholder--animation': true,
-    ['Placeholder-image--round']: round,
-    [`Placeholder-image--${imageSize}`]: imageSize
+    ['PlaceholderImage--round']: round,
+    [`PlaceholderImage--${size}`]: size
   });
 
   return (
-    <div className={classes} />
+    <span className={classes} />
   );
 };
 

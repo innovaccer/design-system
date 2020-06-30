@@ -1,41 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Image placeholder component 
-  imagesize: "large"
- 1`] = `
-<div
-  className="Placeholder-image Placeholder--animation Placeholder-image--small"
-/>
-`;
-
-exports[`Image placeholder component 
-  imagesize: "medium"
- 1`] = `
-<div
-  className="Placeholder-image Placeholder--animation Placeholder-image--small"
-/>
-`;
-
-exports[`Image placeholder component 
-  imagesize: "small"
- 1`] = `
-<div
-  className="Placeholder-image Placeholder--animation Placeholder-image--small"
-/>
-`;
-
-exports[`Image placeholder component 
   round: false
  1`] = `
-<div
-  className="Placeholder-image Placeholder--animation Placeholder-image--small"
+<span
+  className="PlaceholderImage Placeholder--animation PlaceholderImage--small"
 />
 `;
 
 exports[`Image placeholder component 
   round: true
  1`] = `
-<div
-  className="Placeholder-image Placeholder--animation Placeholder-image--round Placeholder-image--small"
+<span
+  className="PlaceholderImage Placeholder--animation PlaceholderImage--round PlaceholderImage--small"
+/>
+`;
+
+exports[`Image placeholder component 
+  size: "large"
+ 1`] = `
+<span
+  className="PlaceholderImage Placeholder--animation PlaceholderImage--large"
+/>
+`;
+
+exports[`Image placeholder component 
+  size: "medium"
+ 1`] = `
+<span
+  className="PlaceholderImage Placeholder--animation PlaceholderImage--medium"
+/>
+`;
+
+exports[`Image placeholder component 
+  size: "small"
+ 1`] = `
+<span
+  className="PlaceholderImage Placeholder--animation PlaceholderImage--small"
 />
 `;
