@@ -67,7 +67,9 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
         list.map((item, index) => {
           return (
             <div key={index} className="Breadcrumbs-item">
-              {renderLink(item, onClick)}
+              <span className="Breadcrumbs-link">
+                {renderLink(item, onClick)}
+              </span>
               <span className="Breadcrumbs-itemSeparator">/</span>
             </div>
           );
@@ -75,7 +77,9 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
       ) : (
           <>
             <div className="Breadcrumbs-item">
-              {renderLink(list[0], onClick)}
+              <span className="Breadcrumbs-link">
+                {renderLink(list[0], onClick)}
+              </span>
               <span className="Breadcrumbs-itemSeparator">/</span>
             </div>
             <div className="Breadcrumbs-dropdown">
@@ -83,7 +87,9 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
               <span className="Breadcrumbs-itemSeparator">/</span>
             </div>
             <div className="Breadcrumbs-item">
-              {renderLink(list[list.length - 1], onClick)}
+              <span className="Breadcrumbs-link">
+                {renderLink(list[list.length - 1], onClick)}
+              </span>
               <span className="Breadcrumbs-itemSeparator">/</span>
             </div>
           </>
