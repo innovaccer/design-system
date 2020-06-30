@@ -26,6 +26,11 @@ body {
   line-height: var(--font-height);
 }
 
+.Text--small {
+  font-size: var(--font-size-s);
+  line-height: var(--font-height-normal);
+}
+
 .Text--default {
   color: var(--text);
 }
@@ -54,18 +59,12 @@ body {
   color: var(--text-white);
 }
 
-.Text--small {
-  font-size: var(--font-size-s);
-  line-height: var(--font-height-normal);
-}
-
-.Text--label {
-  --font-height: var(--font-height-s);
-}
-
 /* Heading */
 .Heading {
   margin: 0;
+}
+
+.Heading--s {
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-m);
   line-height: var(--font-height-m);
@@ -116,10 +115,6 @@ body {
   display: flex;
 }
 
-.Label--withInput {
-  margin-bottom: var(--spacing-m);
-}
-
 .Label-label {
   line-height: var(--font-height-s);
   font-weight: var(--font-weight-medium);
@@ -141,21 +136,14 @@ body {
 .Caption {
   display: flex;
   align-items: center;
-  box-sizing: border-box;
-}
-
-.Caption--withInput {
   margin-top: var(--spacing-m);
+  box-sizing: border-box;
 }
 
 .Caption-icon {
   display: flex;
   align-content: center;
   margin-right: var(--spacing-m);
-}
-
-.Caption--hidden {
-  visibility: hidden;
 }
 
 /* Subheading */

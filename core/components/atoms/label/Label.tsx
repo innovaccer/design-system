@@ -18,11 +18,6 @@ export interface LabelProps {
    */
   required?: boolean;
   /**
-   * Adds default bottom margin of 4px
-   * @default false
-   */
-  withInput?: boolean;
-  /**
    * Adds className to `Label`
    */
   className?: string;
@@ -31,7 +26,6 @@ export interface LabelProps {
 export const Label = (props: LabelProps) => {
   const {
     required = false,
-    withInput = false,
     disabled,
     children,
     className,
@@ -40,7 +34,6 @@ export const Label = (props: LabelProps) => {
 
   const LabelClass = classNames({
     Label: true,
-    ['Label--withInput']: withInput,
     [`${className}`]: className
   });
 

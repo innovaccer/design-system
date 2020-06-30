@@ -48,4 +48,3 @@ export { Grid } from './components/organisms/grid';
 export { List } from './components/organisms/list';
 export { Table } from './components/organisms/table';
 export { Navigation } from './components/organisms/navigation';
-export { PageHeader } from './components/organisms/pageHeader';

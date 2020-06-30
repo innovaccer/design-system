@@ -93,6 +93,7 @@ export const Toast = (props: ToastProps) => {
       <div className="Toast-body">
         <div className={titleClass}>
           <Heading
+            size="s"
             appearance={appearance !== 'warning' ? 'white' : 'default'}
           >
             {title}

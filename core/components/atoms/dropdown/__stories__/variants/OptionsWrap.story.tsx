@@ -5,49 +5,23 @@ import { storyWrapOptions } from '../Options';
 
 // CSF format story
 export const optionsWrap = () => {
+  const optionsWrapBoolean = [true, false];
 
   return (
     <div style={{ display: 'flex', minHeight: '240px' }}>
-      <div style={{ marginRight: '5%', width: '128px' }}>
-        <Text weight="strong">{'Options Trimmed'}</Text> <br /><br />
-        <Dropdown options={storyWrapOptions} placeholder={'Select'} />
-      </div>
-      <div style={{ marginRight: '5%', width: '128px' }}>
-        <Text weight="strong">{'Options Wrapped'}</Text> <br /><br />
-        <Dropdown options={storyWrapOptions} placeholder={'Select'} truncateOption={false} />
-      </div>
+      {
+        optionsWrapBoolean.map((wrap, ind) => {
+          return (
+            <div key={ind} style={{ marginRight: '5%', width: '128px' }}>
+              <Text weight="strong">{wrap ? 'Options Wrapped' : 'Options Trimmed'}</Text> <br /><br />
+              <Dropdown optionsWrap={wrap} options={storyWrapOptions} placeholder={'Select'} />
+            </div>
+          );
+        })
+      }
     </div>
   );
 };
-
-const customCode = `() => {
-  const storyWrapOptions = [
-    {
-      label: 'Design System Dropdown',
-      value: 'Design System Dropdown'
-    },
-    {
-      label: 'UI Kit Dropdown',
-      value: 'UI Kit Dropdown',
-    },
-    {
-      label: 'Innovaccer Analytics',
-      value: 'Innovaccer Analytics'
-    }
-  ];
-  return (
-    <div style={{ display: 'flex', minHeight: '240px' }}>
-      <div style={{ marginRight: '5%', width: '128px' }}>
-        <Text weight="strong">{'Options Trimmed'}</Text> <br /><br />
-        <Dropdown options={storyWrapOptions} placeholder={'Select'} />
-      </div>
-      <div style={{ marginRight: '5%', width: '128px' }}>
-        <Text weight="strong">{'Options Wrapped'}</Text> <br /><br />
-        <Dropdown options={storyWrapOptions} placeholder={'Select'} truncateOption={false} />
-      </div>
-    </div>
-  )
-}`;
 
 export default {
   title: 'Atoms|Dropdown/Variants',
@@ -55,7 +29,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
+        title: 'Dropdown'
       }
     }
   }

@@ -4,7 +4,7 @@ import Heading, { HeadingProps as Props } from '../Heading';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const appearance = ['default', 'subtle', 'disabled', 'white'];
-const size = ['default', 'm', 'l', 'xl', 'xxl'];
+const size = ['s', 'm', 'l', 'xl', 'xxl'];
 
 describe('Heading component', () => {
   const mapper = {

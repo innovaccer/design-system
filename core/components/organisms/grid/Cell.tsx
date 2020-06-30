@@ -64,13 +64,6 @@ const HeaderCell = (props: HeaderCellProps) => {
     'Grid-headCell--draggable': draggable
   });
 
-  const customTrigger = () => (
-    <Button
-      icon="more_horiz_filled"
-      appearance="transparent"
-    />
-  );
-
   return (
     <div
       key={schema.name}
@@ -89,7 +82,7 @@ const HeaderCell = (props: HeaderCellProps) => {
           </Placeholder>
         ) : (
             <>
-              <Heading>{schema.displayName}</Heading>
+              <Heading size="s">{schema.displayName}</Heading>
               {schema.sortFn && (
                 <div className="Grid-sortingIcons">
                   {sorted ? sorted === 'asc' ? (
@@ -124,7 +117,7 @@ const HeaderCell = (props: HeaderCellProps) => {
                 //     : []
                 // }
                 options={schema.filters}
-                align={'left'}
+                dropdownAlign={'left'}
                 onChange={(selected: any) => _this.onFilterChange(schema.name, selected)}
               />
             )
@@ -139,9 +132,14 @@ const HeaderCell = (props: HeaderCellProps) => {
               <Dropdown
                 key={schema.name}
                 menu={true}
-                triggerOptions={{ customTrigger }}
+                customTrigger={() => (
+                  <Button
+                    icon="more_horiz_filled"
+                    appearance="transparent"
+                  />
+                )}
                 options={options}
-                align={'left'}
+                dropdownAlign={'left'}
                 onChange={(selected: any) => _this.onMenuChange(schema.name, selected)}
               />
             )

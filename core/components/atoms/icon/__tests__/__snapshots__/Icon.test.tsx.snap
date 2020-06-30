@@ -5,7 +5,7 @@ exports[`Icon component
  1`] = `
 <i
   className="material-icons Icon Icon--alert"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   style={
     Object {
       "fontSize": "50px",
@@ -22,7 +22,7 @@ exports[`Icon component
  1`] = `
 <i
   className="material-icons Icon Icon--destructive"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   style={
     Object {
       "fontSize": "50px",
@@ -39,7 +39,7 @@ exports[`Icon component
  1`] = `
 <i
   className="material-icons Icon Icon--disabled"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   style={
     Object {
       "fontSize": "50px",
@@ -56,7 +56,7 @@ exports[`Icon component
  1`] = `
 <i
   className="material-icons Icon Icon--info"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   style={
     Object {
       "fontSize": "50px",
@@ -73,7 +73,7 @@ exports[`Icon component
  1`] = `
 <i
   className="material-icons Icon Icon--subtle"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   style={
     Object {
       "fontSize": "50px",
@@ -90,7 +90,7 @@ exports[`Icon component
  1`] = `
 <i
   className="material-icons Icon Icon--success"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   style={
     Object {
       "fontSize": "50px",
@@ -107,7 +107,7 @@ exports[`Icon component
  1`] = `
 <i
   className="material-icons Icon Icon--warning"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   style={
     Object {
       "fontSize": "50px",
@@ -124,7 +124,7 @@ exports[`Icon component
  1`] = `
 <i
   className="material-icons Icon Icon--white"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   style={
     Object {
       "fontSize": "50px",
@@ -141,7 +141,7 @@ exports[`Icon component
  1`] = `
 <i
   className="material-icons Icon Icon--default"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   style={
     Object {
       "fontSize": "50px",
@@ -158,7 +158,7 @@ exports[`Icon component
  1`] = `
 <i
   className="material-icons Icon Icon--default"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   style={
     Object {
       "fontSize": "50px",
@@ -175,7 +175,7 @@ exports[`Icon component
  1`] = `
 <i
   className="material-icons Icon Icon--default"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   style={
     Object {
       "fontSize": "50px",
@@ -192,7 +192,7 @@ exports[`Icon component
  1`] = `
 <i
   className="material-icons Icon Icon--default"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   style={
     Object {
       "fontSize": "50px",

@@ -5,13 +5,9 @@ import Caption from '../index';
 // CSF format story
 export const all = () => {
   const error = boolean('error', false);
-  const hide = boolean('hide', false);
-  const withInput = boolean('with input', false);
   const children = text('children', 'Caption');
   const options = {
     error,
-    hide,
-    withInput
   };
 
   return (

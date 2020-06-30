@@ -2,7 +2,7 @@ import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
 
-export type Size = 'default' | 'm' | 'l' | 'xl' | 'xxl';
+export type Size = 's' | 'm' | 'l' | 'xl' | 'xxl';
 
 export type Appearance = 'default' | 'subtle' | 'disabled' | 'white';
 
@@ -24,24 +24,24 @@ export interface HeadingProps {
 }
 
 const sizeMap = {
+  s: 'h5',
   m: 'h4',
   l: 'h3',
   xl: 'h2',
   xxl: 'h1',
-  default: 'h3'
 };
 
 export const Heading = (props: HeadingProps) => {
   const {
-    size = 'default',
-    appearance = 'default',
+    appearance,
+    size = 'm',
     children,
     ...rest
   } = props;
 
   const classes = classNames({
     Heading: true,
-    [`Heading--${size}`]: size !== 'default',
+    [`Heading--${size}`]: size,
     [`Heading--${appearance}`]: appearance
   });
 
@@ -50,6 +50,11 @@ export const Heading = (props: HeadingProps) => {
       {children}
     </GenericText>
   );
+};
+
+Heading.defaultProps = {
+  appearance: 'default',
+  size: 'm'
 };
 
 Heading.displayName = 'Heading';

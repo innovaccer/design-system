@@ -10,17 +10,6 @@ import { OptionType } from '../DropdownList';
 export interface OptionRendererProps {
   /**
    * Adds custom option
-   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
-   * OptionProps: {
-   *   optionData: Option;
-   *   selected: boolean;
-   *   optionIsTop: boolean;
-   *   optionIsBottom: boolean;
-   *   active?: boolean;
-   *   index: number;
-   *   onChange?: (checked: boolean) => void;
-   * }
-   * </pre>
    */
   optionRenderer?: (props: OptionProps) => React.ReactElement;
   /**
@@ -55,7 +44,7 @@ interface OptionProps extends OptionRendererProps {
   selected: boolean;
   optionIsTop: boolean;
   optionIsBottom: boolean;
-  truncateOption?: boolean;
+  optionsWrap?: boolean;
   checkboxes?: boolean;
   index: number;
   active?: boolean;
@@ -100,7 +89,7 @@ const Option = (props: OptionProps) => {
 
   const textClassName = classNames({
     ['Option-text']: true,
-    ['Option-text--wrap']: !props.truncateOption,
+    ['Option-text--wrap']: props.optionsWrap,
   });
 
   const onUpdateActiveOption = () => {
