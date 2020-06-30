@@ -9,7 +9,7 @@ export const success = () => {
     <div style={{ display: 'flex' }}>
       <div style={{ marginRight: '5%' }}>
         <Switch
-          checked={true}
+          defaultChecked={true}
           disabled={false}
           appearance="success"
         />
@@ -19,7 +19,7 @@ export const success = () => {
       <div>
         <Switch
           disabled={true}
-          checked={true}
+          defaultChecked={true}
           appearance="success"
         />
         <br />

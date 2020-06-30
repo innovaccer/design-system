@@ -15,7 +15,7 @@ export const size = () => {
             <div key={ind} style={{ marginRight: '5%' }}>
               <div style={{ height: '32px' }}>
                 <Switch
-                  checked={true}
+                  defaultChecked={true}
                   size={SwitchSize}
                 />
               </div>

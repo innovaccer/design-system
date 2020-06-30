@@ -9,7 +9,7 @@ export const all = () => {
 
   const size = select(
     'size',
-    ['tiny', 'regular', 'large'],
+    ['regular', 'large', 'tiny'],
     undefined
   );
 
@@ -29,7 +29,7 @@ export const all = () => {
     false
   );
 
-  const onChangeHandler = (checkedValue: boolean) => {
+  const onChangeHandler = (_event: any, checkedValue: boolean) => {
     updateKnob('checked', checkedValue);
     return action(`switch-change: ${checkedValue}`)();
   };

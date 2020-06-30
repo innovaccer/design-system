@@ -4,6 +4,8 @@ import classNames from 'classnames';
 export type Size = 'regular' | 'tiny' | 'large';
 export type Appearance = 'primary' | 'alert' | 'success' | 'warning';
 
+type MouseEvent = React.ChangeEvent<HTMLInputElement>;
+
 export interface SwitchProps {
   /**
    * Size of `Switch`
@@ -16,7 +18,11 @@ export interface SwitchProps {
    */
   appearance?: Appearance;
   /**
-   * Denotes Selection
+   * Default value of checked (Used in case of uncontrolled `Switch`)
+   */
+  defaultChecked?: boolean;
+  /**
+   * Denotes Selection (Used in case of controlled `Switch`)
    */
   checked?: boolean;
   /**
@@ -34,25 +40,25 @@ export interface SwitchProps {
   /**
    * Callback function called when `Switch` is toggled
    */
-  onChange?: (selected: boolean) => void;
+  onChange?: (event: MouseEvent, selected: boolean) => void;
 }
 
 export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, ref) => {
   const {
     size = 'regular',
     appearance = 'primary',
+    defaultChecked,
     disabled,
     onChange,
     name,
     value,
   } = props;
 
-  const [checked, setChecked] = React.useState(props.checked);
+  const [checked, setChecked] = React.useState(props.checked === undefined ? defaultChecked : props.checked);
 
   React.useEffect(() => {
-    const checkedValue = props.disabled ? checked : props.checked;
-    setChecked(checkedValue);
-  }, [props.checked, props.disabled]);
+    if (props.checked !== undefined) setChecked(props.checked);
+  }, [props.checked]);
 
   const SwitchClass = classNames({
     ['Switch']: true,
@@ -69,23 +75,25 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, re
     ['Switch-wrapper--checkedDisabled']: checked && disabled,
   });
 
-  const onChangeHandler = () => {
-    setChecked(!checked);
-    if (onChange) onChange(!checked);
+  const onChangeHandler = (event: MouseEvent) => {
+    if (props.checked === undefined) setChecked(!checked);
+    if (onChange) onChange(event, !checked);
   };
 
   return (
     <div className={SwitchClass}>
       <input
         type="checkbox"
+        defaultChecked={defaultChecked}
         disabled={disabled}
+        onChange={onChangeHandler}
         checked={checked}
         ref={ref}
         name={name}
         value={value}
         className="Switch-input"
       />
-      <span onClick={onChangeHandler} className={SwitchWrapper} />
+      <span className={SwitchWrapper} />
     </div>
   );
 });

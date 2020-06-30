@@ -10,11 +10,11 @@ exports[`Switch component
     checked={true}
     className="Switch-input"
     disabled={false}
+    onChange={[Function]}
     type="checkbox"
   />
   <span
     className="Switch-wrapper Switch-wrapper--regular Switch-wrapper--alert Switch-wrapper--checked"
-    onClick={[Function]}
   />
 </div>
 `;
@@ -29,11 +29,11 @@ exports[`Switch component
     checked={true}
     className="Switch-input"
     disabled={true}
+    onChange={[Function]}
     type="checkbox"
   />
   <span
     className="Switch-wrapper Switch-wrapper--disabled Switch-wrapper--regular Switch-wrapper--alert Switch-wrapper--checked Switch-wrapper--checkedDisabled"
-    onClick={[Function]}
   />
 </div>
 `;
@@ -48,11 +48,11 @@ exports[`Switch component
     checked={true}
     className="Switch-input"
     disabled={false}
+    onChange={[Function]}
     type="checkbox"
   />
   <span
     className="Switch-wrapper Switch-wrapper--regular Switch-wrapper--primary Switch-wrapper--checked"
-    onClick={[Function]}
   />
 </div>
 `;
@@ -67,11 +67,11 @@ exports[`Switch component
     checked={true}
     className="Switch-input"
     disabled={true}
+    onChange={[Function]}
     type="checkbox"
   />
   <span
     className="Switch-wrapper Switch-wrapper--disabled Switch-wrapper--regular Switch-wrapper--primary Switch-wrapper--checked Switch-wrapper--checkedDisabled"
-    onClick={[Function]}
   />
 </div>
 `;
@@ -86,11 +86,11 @@ exports[`Switch component
     checked={true}
     className="Switch-input"
     disabled={false}
+    onChange={[Function]}
     type="checkbox"
   />
   <span
     className="Switch-wrapper Switch-wrapper--regular Switch-wrapper--success Switch-wrapper--checked"
-    onClick={[Function]}
   />
 </div>
 `;
@@ -105,11 +105,11 @@ exports[`Switch component
     checked={true}
     className="Switch-input"
     disabled={true}
+    onChange={[Function]}
     type="checkbox"
   />
   <span
     className="Switch-wrapper Switch-wrapper--disabled Switch-wrapper--regular Switch-wrapper--success Switch-wrapper--checked Switch-wrapper--checkedDisabled"
-    onClick={[Function]}
   />
 </div>
 `;
@@ -124,11 +124,11 @@ exports[`Switch component
     checked={true}
     className="Switch-input"
     disabled={false}
+    onChange={[Function]}
     type="checkbox"
   />
   <span
     className="Switch-wrapper Switch-wrapper--regular Switch-wrapper--warning Switch-wrapper--checked"
-    onClick={[Function]}
   />
 </div>
 `;
@@ -143,11 +143,11 @@ exports[`Switch component
     checked={true}
     className="Switch-input"
     disabled={true}
+    onChange={[Function]}
     type="checkbox"
   />
   <span
     className="Switch-wrapper Switch-wrapper--disabled Switch-wrapper--regular Switch-wrapper--warning Switch-wrapper--checked Switch-wrapper--checkedDisabled"
-    onClick={[Function]}
   />
 </div>
 `;
@@ -161,11 +161,11 @@ exports[`Switch component
   <input
     checked={true}
     className="Switch-input"
+    onChange={[Function]}
     type="checkbox"
   />
   <span
     className="Switch-wrapper Switch-wrapper--regular Switch-wrapper--primary Switch-wrapper--checked"
-    onClick={[Function]}
   />
 </div>
 `;
@@ -179,11 +179,11 @@ exports[`Switch component
   <input
     checked={true}
     className="Switch-input"
+    onChange={[Function]}
     type="checkbox"
   />
   <span
     className="Switch-wrapper Switch-wrapper--regular Switch-wrapper--primary Switch-wrapper--checked"
-    onClick={[Function]}
   />
 </div>
 `;
@@ -197,11 +197,11 @@ exports[`Switch component
   <input
     checked={true}
     className="Switch-input"
+    onChange={[Function]}
     type="checkbox"
   />
   <span
     className="Switch-wrapper Switch-wrapper--tiny Switch-wrapper--primary Switch-wrapper--checked"
-    onClick={[Function]}
   />
 </div>
 `;

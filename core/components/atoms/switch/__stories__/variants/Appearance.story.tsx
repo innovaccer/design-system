@@ -14,7 +14,7 @@ export const appearance = () => {
           return (
             <div key={ind} style={{ marginRight: '5%' }}>
               <Switch
-                checked={true}
+                defaultChecked={true}
                 appearance={appear}
               />
               <br />

@@ -9,7 +9,7 @@ export const primary = () => {
     <div style={{ display: 'flex' }}>
       <div style={{ marginRight: '5%' }}>
         <Switch
-          checked={true}
+          defaultChecked={true}
           disabled={false}
         />
         <br />
@@ -18,7 +18,7 @@ export const primary = () => {
       <div>
         <Switch
           disabled={true}
-          checked={true}
+          defaultChecked={true}
         />
         <br />
         <Text weight="strong">Disabled</Text>
