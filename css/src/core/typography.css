@@ -116,6 +116,10 @@ body {
   display: flex;
 }
 
+.Label--withInput {
+  margin-bottom: var(--spacing-m);
+}
+
 .Label-label {
   line-height: var(--font-height-s);
   font-weight: var(--font-weight-medium);
