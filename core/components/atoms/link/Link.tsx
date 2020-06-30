@@ -17,7 +17,18 @@ export interface LinkProps {
    * Specifies where to open the navigated document
    */
   target?: LinkTarget;
+  /**
+   * The relationship of the linked URL as space-separated link types.
+   */
   rel?: string;
+  /**
+   * Prompts the user to save the linked URL instead of navigating to it. Can be used with or without a value
+   */
+  download?: string;
+  /**
+   * Hints at the human language of the linked URL
+   */
+  hreflang?: string;
   /**
    * Handler to be called when `Link` is clicked
    */

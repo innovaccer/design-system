@@ -422,7 +422,7 @@ export const Calendar = (props: CalendarProps) => {
 
     return (
       <div className={headerContentClass} onClick={onClickHandler}>
-        <Heading size="s">{headerContent}</Heading>
+        <Heading>{headerContent}</Heading>
       </div>
     );
   };

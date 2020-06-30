@@ -43,7 +43,7 @@ describe('Dropdown component', () => {
 
 describe('Dropdown component', () => {
   const mapper: Record<string, any> = {
-    dropdownAlign: valueHelper(dropdownAlign, { required: true, iterate: true }),
+    align: valueHelper(dropdownAlign, { required: true, iterate: true }),
     options: valueHelper(storyOptions, { required: true }),
     onChange: valueHelper(FunctionValue, { required: true }),
   };
@@ -225,7 +225,7 @@ describe('Dropdown component', () => {
 
 describe('Dropdown component', () => {
   const mapper: Record<string, any> = {
-    optionsWrap: valueHelper(BooleanValue, { required: true, iterate: true }),
+    truncateOptions: valueHelper(BooleanValue, { required: true, iterate: true }),
     options: valueHelper(storyWrapOptions, { required: true }),
     onChange: valueHelper(FunctionValue, { required: true }),
   };
@@ -246,7 +246,7 @@ describe('Dropdown component', () => {
 describe('Dropdown component', () => {
   const mapper: Record<string, any> = {
     options: valueHelper(storyOptions, { required: true }),
-    loadingType: valueHelper(loadingType, { required: true, iterate: true }),
+    optionType: valueHelper(loadingType, { required: true, iterate: true }),
     loading: valueHelper(true, { required: true }),
     onChange: valueHelper(FunctionValue, { required: true }),
   };

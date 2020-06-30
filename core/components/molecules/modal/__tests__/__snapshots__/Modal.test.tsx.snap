@@ -11,7 +11,7 @@ exports[`Modal component
       className="Modal-container"
     >
       <div
-        className="Modal Modal--large Modal--open Modal-animation--close"
+        className="Modal"
       >
         <ModalHeader
           heading="Heading"
@@ -39,7 +39,7 @@ exports[`Modal component
       className="Modal-container"
     >
       <div
-        className="Modal Modal--medium Modal--open Modal-animation--close"
+        className="Modal"
       >
         <ModalHeader
           heading="Heading"
@@ -67,7 +67,7 @@ exports[`Modal component
       className="Modal-container"
     >
       <div
-        className="Modal Modal--small Modal--open Modal-animation--close"
+        className="Modal"
       >
         <ModalHeader
           heading="Heading"
@@ -98,7 +98,7 @@ exports[`Modal component
         className="Modal-container"
       >
         <div
-          className="Modal Modal--large Modal--open Modal-animation--close"
+          className="Modal"
         >
           <ModalHeader
             heading="Heading"
@@ -130,7 +130,7 @@ exports[`Modal component
         className="Modal-container"
       >
         <div
-          className="Modal Modal--medium Modal--open Modal-animation--close"
+          className="Modal"
         >
           <ModalHeader
             heading="Heading"
@@ -162,7 +162,7 @@ exports[`Modal component
         className="Modal-container"
       >
         <div
-          className="Modal Modal--small Modal--open Modal-animation--close"
+          className="Modal"
         >
           <ModalHeader
             heading="Heading"

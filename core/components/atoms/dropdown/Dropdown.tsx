@@ -10,18 +10,37 @@ type fetchOptionsFnc = (searchTerm: string) => Promise<{
 }>;
 
 interface SyncProps {
+  /**
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * OptionSchema: {
+   *   label: string;
+   *   value: any;
+   *   icon?: string;
+   *   subInfo?: string;
+   *   optionType?: OptionType;
+   *   selected?: boolean;
+   *   group?: string;
+   * }
+   * </pre>
+   */
   options?: Option[];
+  /**
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * Adds loaders inside `Dropdown` when waiting for an action to complete.
+   * (Loading is internally handled when options are fetched from API.)
+   * </pre>
+   */
   loading?: boolean;
 }
 
 interface AsyncProps {
   /**
-   * Callback function when async is true
+   * Callback function to fetch options from API
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * Promise object to be returned:
    * {
    *    options: Option[]
-   *    length: number
+   *    count: number
    * }
    * </pre>
    *
@@ -29,29 +48,50 @@ interface AsyncProps {
   fetchOptions?: fetchOptionsFnc;
 }
 
+interface TriggerProps {
+  /**
+   * Number of selected options to be shown on `Dropdown trigger`
+   * @default 2
+   */
+  labelLimit?: number;
+  /**
+   * Callback function to change the label of trigger when options are selected
+   */
+  customLabel?: (selected: number, totalOptions?: number) => string;
+  /**
+   * Adds custom trigger
+   */
+  customTrigger?: (label: string) => React.ReactElement;
+}
+
 interface SharedDropdownProps extends DropdownListProps {
   /**
-   * Unique name of `dropdown`
+   * Unique name of `Dropdown`
    */
   name?: string | number;
   /**
-   * Number of selected options to be shown on `Dropdown button`
-   * @default 2
-   */
-  checkedValuesOffset?: number;
-  /**
-   * Length of total options in Dropdown
+   * Count of options in `Dropdown`
    */
   totalOptions?: number;
   /**
-   * Determines if dropdown closes on select
+   * Determines if dropdown closes on option selection (works in case of single select)
    * @default true
    */
   closeOnSelect?: boolean;
   /**
-   * Callback function to change the label of trigger button when options are selected
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * TriggerProps:
+   * {
+   *    // Number of selected options to be shown on `Dropdown trigger`
+   *    labelLimit?: number;
+   *    // Callback function to change the label of trigger when options are selected
+   *    customLabel?: (selected: number, totalOptions?: number) => string;
+   *    // Adds custom trigger
+   *    customTrigger?: (label: string) => React.ReactElement;
+   * }
+   * </pre>
    */
-  onChangeTriggerLabel?: (selected: number, totalOptions?: number) => string;
+  triggerOptions?: TriggerProps;
   /**
    * Callback function called when user selects an option
    */
@@ -65,7 +105,7 @@ interface SharedDropdownProps extends DropdownListProps {
 type SyncDropdownProps = SyncProps & SharedDropdownProps;
 type AsyncDropdownProps = AsyncProps & SharedDropdownProps;
 
-export type DropdownProps = (AsyncDropdownProps & SyncDropdownProps);
+export type DropdownProps = (SyncDropdownProps & AsyncDropdownProps);
 
 interface DropdownState {
   async: boolean;
@@ -120,14 +160,14 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
   }
 
   static defaultProps = {
+    triggerOptions: {},
     closeOnSelect: true,
-    checkedValuesOffset: 2,
   };
 
   componentDidUpdate(prevProps: DropdownProps, prevState: DropdownState) {
     if (!this.state.async) {
-      const { loading, options = [] } = this.props;
-      if (prevProps.loading !== loading || prevProps.options !== options) {
+      const { loading, fetchOptions, options = [] } = this.props;
+      if (prevProps.loading !== loading && !fetchOptions) {
         if (options.length > bulk) {
           this.updateOptions(true, true);
         } else {
@@ -190,17 +230,18 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       previousSelected,
     } = this.state;
 
-    const updatedAsync = async === undefined ? this.state.async : async;
+    let updatedAsync = async === undefined ? this.state.async : async;
     const { fetchOptions, checkboxes } = this.props;
     const fetchFn = fetchOptions ? fetchOptions : this.fetchOptionsFn;
 
     fetchFn(searchTerm)
       .then((res: any) => {
         const { options, count } = res;
+        updatedAsync = searchTerm === '' ? count > bulk : updatedAsync;
 
         const unSelectedGroup = checkboxes && searchTerm === '' && updatedAsync ?
           this.getUnSelectedOptions(options, init) : options;
-        const selectedGroup = searchTerm === '' && updatedAsync ?
+        const selectedGroup = searchTerm === '' ?
           this.getSelectedOptions(options, init) : [];
 
         this.setState({
@@ -209,7 +250,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
           async: updatedAsync,
           searchedOptionsLength: count,
           options: unSelectedGroup.slice(0, bulk),
-          selected: checkboxes ? selectedGroup : [],
+          selected: checkboxes && updatedAsync ? selectedGroup : [],
           optionsLength: searchTerm === '' ? count : optionsLength,
           tempSelected: init ? selectedGroup : tempSelected,
           previousSelected: init ? selectedGroup : previousSelected,
@@ -243,17 +284,18 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     const selectedLength = selectedArray.length;
     if (selectedLength === 0) return '';
 
-    const { checkedValuesOffset, onChangeTriggerLabel } = this.props;
+    const { triggerOptions = {} } = this.props;
+    const { customLabel, labelLimit = 2 } = triggerOptions;
     const optionsLength = this.state ? this.state.optionsLength : totalOptions;
     let label = '';
 
-    if (checkedValuesOffset !== undefined && selectedLength <= checkedValuesOffset) {
+    if (selectedLength <= labelLimit) {
       label = selectedArray.map(option => {
         return option.label;
       }).join(', ');
     } else {
-      label = onChangeTriggerLabel ?
-        onChangeTriggerLabel(selectedLength, optionsLength) : `${selectedLength} selected`;
+      label = customLabel ?
+        customLabel(selectedLength, optionsLength) : `${selectedLength} selected`;
     }
     return label;
   }
@@ -386,11 +428,12 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       async,
       selected,
       loading,
-      selectAll
+      selectAll,
+      searchTerm
     } = this.state;
 
     const applyClicked = checkboxes && showApplyButton && !optionsApplied;
-    const moveSelectedGroup = async && checkboxes && !_isEqual(selected, tempSelected);
+    const moveSelectedGroup = async && searchTerm === '' && checkboxes && !_isEqual(selected, tempSelected);
 
     this.setState({
       ...this.state,
@@ -399,8 +442,8 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       triggerLabel: applyClicked ? this.updateTriggerLabel(previousSelected) : triggerLabel,
       open: !open,
       optionsApplied: false,
-      loading: moveSelectedGroup || loading,
-      searchTerm: ''
+      loading: moveSelectedGroup || loading || searchTerm !== '',
+      searchTerm: '',
     });
 
     if (moveSelectedGroup) this.updateOptions(false);
@@ -425,7 +468,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       previousSelected
     } = this.state;
 
-    const { loadersLength, ...rest } = this.props;
+    const { triggerOptions = {}, ...rest } = this.props;
     const remainingOptionsLen = searchedOptionsLength - options.length;
 
     return (
@@ -449,6 +492,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
         onSearchChange={this.updateSearchTerm}
         onOptionSelect={this.onOptionSelect}
         onSelectAll={this.onSelectAll}
+        customTrigger={triggerOptions.customTrigger}
         {...rest}
       />
     );

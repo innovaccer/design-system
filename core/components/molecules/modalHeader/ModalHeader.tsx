@@ -49,7 +49,7 @@ export const ModalHeader = (props: ModalHeaderProps) => {
       <div className={classes}>
         {icon && getHeaderIcon()}
         <div>
-          <Heading>
+          <Heading size="m">
             {heading}
           </Heading>
         </div>

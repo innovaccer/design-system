@@ -15,15 +15,15 @@ export interface TriggerProps {
    */
   icon?: string;
   /**
-   * String to show when no options are selected
+   * String to show inside `Dropdown trigger` when no options are selected
    */
   placeholder?: string;
   /**
-   * Label inside `Dropdown button`
+   * Label inside `Dropdown trigger button`
    */
   inlineLabel?: string;
   /**
-   * Determines if `dropdown` is disabled
+   * Determines if `Dropdown` is disabled
    */
   disabled?: boolean;
   /**
@@ -32,7 +32,7 @@ export interface TriggerProps {
    */
   menu?: boolean;
   /**
-   * Determines if `dropdown` has disabled
+   * Determines if `Dropdown` has error
    */
   error?: boolean;
   /**

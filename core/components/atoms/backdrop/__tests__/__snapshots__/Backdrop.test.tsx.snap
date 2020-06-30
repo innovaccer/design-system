@@ -7,7 +7,7 @@ exports[`Backdrop component
   containerInfo={<body />}
 >
   <div
-    className="Backdrop Backdrop-animation--close"
+    className="Backdrop"
   />
 </Portal>
 `;
@@ -19,7 +19,7 @@ exports[`Backdrop component
   containerInfo={<body />}
 >
   <div
-    className="Backdrop Backdrop--open Backdrop-animation--open"
+    className="Backdrop"
   />
 </Portal>
 `;
