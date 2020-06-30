@@ -9,7 +9,7 @@ export const customTrigger = () => {
     e.preventDefault();
   };
 
-  const customTriggerRenderer = (label?: string) => {
+  const customTriggerFunc = (label: string) => {
     return (
       <Input
         type="text"
@@ -20,14 +20,10 @@ export const customTrigger = () => {
     );
   };
 
-  const triggerOptions = {
-    customTrigger: customTriggerRenderer
-  };
-
   return (
     <div style={{ display: 'flex', minHeight: '280px' }}>
       <div style={{ marginRight: '20%', width: '256px' }}>
-        <Dropdown options={storyOptions} triggerOptions={triggerOptions} />
+        <Dropdown options={storyOptions} triggerOptions={{ customTrigger: customTriggerFunc }} />
       </div>
     </div>
   );
