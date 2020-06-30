@@ -6,7 +6,7 @@ import ModalHeader from '@/components/molecules/modalHeader';
 import ModalDescription from '@/components/molecules/modalDescription';
 import ModalFooter from '@/components/molecules/modalFooter';
 import ModalBody from '@/components/molecules/modalBody';
-import Button from '@/components/atoms/button';
+import { Heading, Button } from '@/index';
 
 import { updateKnob } from '@/utils/storybookEventEmitter';
 
@@ -15,6 +15,7 @@ export const small = () => {
   const backdrop = boolean('backdrop', false);
 
   const onClose = () => {
+    action('on close triggered');
     updateKnob('open', false);
   };
 
@@ -43,18 +44,21 @@ export const small = () => {
   };
 
   return (
-    <Modal dimension="small" {...options}>
-      <ModalHeader {...modalHeaderOptions} />
-      <ModalBody>
-        <p>Modal Body</p>
-        <ModalDescription {...modalDescriptionOptions} />
-        <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
-      </ModalBody>
-      <ModalFooter>
-        <Button appearance="basic" onClick={action('Basic button click')}>Basic</Button>
-        <Button appearance="primary" onClick={action('Primary button click')}>Primary</Button>
-      </ModalFooter>
-    </Modal>
+    <div>
+      <Heading>Page background</Heading>
+      <Modal dimension="small" {...options}>
+        <ModalHeader {...modalHeaderOptions} />
+        <ModalBody>
+          <p>Modal Body</p>
+          <ModalDescription {...modalDescriptionOptions} />
+          <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
+        </ModalBody>
+        <ModalFooter>
+          <Button appearance="basic" onClick={action('Basic button click')}>Basic</Button>
+          <Button appearance="primary" onClick={action('Primary button click')}>Primary</Button>
+        </ModalFooter>
+      </Modal>
+    </div>
   );
 };
 

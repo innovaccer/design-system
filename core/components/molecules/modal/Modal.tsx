@@ -11,7 +11,7 @@ export interface ModalProps {
   /**
    * Callback for `Modal` close event
    */
-  onClose: (reason?: string, event?: Event) => void;
+  onClose: (event?: Event, reason?: string) => void;
   /**
    * Closes `Modal` on outside click
    */
@@ -75,7 +75,7 @@ const Modal = (props: ModalProps) => {
   );
 
   const ModalWrapper = backdrop ? (
-    <OutsideClick onOutsideClick={(event: Event) => open && onClose('OutsideClick', event)}>
+    <OutsideClick onOutsideClick={(event: Event) => open && onClose(event, 'OutsideClick')}>
       {ModalContainer}
     </OutsideClick>
   ) : ModalContainer;

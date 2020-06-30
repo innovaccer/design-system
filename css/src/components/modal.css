@@ -118,7 +118,7 @@
 }
 
 .Modal-body {
-  padding: var(--spacing-2);
+  padding: 0 var(--spacing-2);
   max-height: 480px;
   overflow-y: scroll;
 }
