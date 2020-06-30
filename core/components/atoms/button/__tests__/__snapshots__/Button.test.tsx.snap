@@ -295,7 +295,6 @@ exports[`Button component
       appearance="default"
       name="events"
       size={20}
-      type="filled"
     />
   </div>
   Button
@@ -316,7 +315,6 @@ exports[`Button component
       appearance="default"
       name="events"
       size={20}
-      type="filled"
     />
   </div>
   Button
@@ -348,7 +346,6 @@ exports[`Button component
       appearance="default"
       name="events"
       size={16}
-      type="filled"
     />
   </div>
   Button
@@ -369,7 +366,6 @@ exports[`Button component
       appearance="default"
       name="events"
       size={16}
-      type="filled"
     />
   </div>
   Button
@@ -401,7 +397,6 @@ exports[`Button component
       appearance="default"
       name="events"
       size={12}
-      type="filled"
     />
   </div>
   Button
@@ -422,7 +417,6 @@ exports[`Button component
       appearance="default"
       name="events"
       size={12}
-      type="filled"
     />
   </div>
   Button

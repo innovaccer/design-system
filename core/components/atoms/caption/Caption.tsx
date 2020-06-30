@@ -14,16 +14,30 @@ export interface CaptionProps {
    * @default false
    */
   error?: boolean;
+  /**
+   * Makes `Caption` component invisible
+   * @default false
+   */
+  hide?: boolean;
+  /**
+   * Adds default top margin
+   * @default false
+   */
+  withInput?: boolean;
 }
 
 export const Caption = (props: CaptionProps) => {
   const {
     error = false,
+    hide = false,
+    withInput = false,
     children,
   } = props;
 
   const classes = classNames({
     Caption: true,
+    ['Caption--hidden']: hide,
+    ['Caption--withInput']: withInput
   });
 
   const errorIconClass = classNames({

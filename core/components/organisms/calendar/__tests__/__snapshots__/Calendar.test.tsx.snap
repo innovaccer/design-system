@@ -16,22 +16,17 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
       <div
         className="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
         onClick={[Function]}
       >
-        <Heading
-          appearance="default"
-          size="s"
-        >
+        <Heading>
           Mar 2020
         </Heading>
       </div>
@@ -39,12 +34,10 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
     </div>
@@ -525,22 +518,17 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
       <div
         className="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
         onClick={[Function]}
       >
-        <Heading
-          appearance="default"
-          size="s"
-        >
+        <Heading>
           Mar 2020
         </Heading>
       </div>
@@ -548,12 +536,10 @@ exports[`Calendar component
         className="Calendar-headerIcon Calendar-headerIcon--disabled"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
     </div>
@@ -1034,22 +1020,17 @@ exports[`Calendar component
         className="Calendar-headerIcon Calendar-headerIcon--disabled"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
       <div
         className="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
         onClick={[Function]}
       >
-        <Heading
-          appearance="default"
-          size="s"
-        >
+        <Heading>
           Mar 2020
         </Heading>
       </div>
@@ -1057,12 +1038,10 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
     </div>
@@ -1543,22 +1522,17 @@ exports[`Calendar component
         className="Calendar-headerIcon Calendar-headerIcon--disabled"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
       <div
         className="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
         onClick={[Function]}
       >
-        <Heading
-          appearance="default"
-          size="s"
-        >
+        <Heading>
           Mar 2020
         </Heading>
       </div>
@@ -1566,12 +1540,10 @@ exports[`Calendar component
         className="Calendar-headerIcon Calendar-headerIcon--disabled"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
     </div>
@@ -2052,22 +2024,17 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
       <div
         className="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
         onClick={[Function]}
       >
-        <Heading
-          appearance="default"
-          size="s"
-        >
+        <Heading>
           Mar 2020
         </Heading>
       </div>
@@ -2075,12 +2042,10 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
     </div>
@@ -2561,22 +2526,17 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
       <div
         className="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
         onClick={[Function]}
       >
-        <Heading
-          appearance="default"
-          size="s"
-        >
+        <Heading>
           Mar 2020
         </Heading>
       </div>
@@ -2584,12 +2544,10 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
     </div>
@@ -3109,22 +3067,17 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
       <div
         className="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
         onClick={[Function]}
       >
-        <Heading
-          appearance="default"
-          size="s"
-        >
+        <Heading>
           Mar 2020
         </Heading>
       </div>
@@ -3132,12 +3085,10 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
     </div>
@@ -3618,22 +3569,17 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
       <div
         className="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
         onClick={[Function]}
       >
-        <Heading
-          appearance="default"
-          size="s"
-        >
+        <Heading>
           Mar 2020
         </Heading>
       </div>
@@ -3641,12 +3587,10 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
     </div>
@@ -4127,22 +4071,17 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
       <div
         className="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
         onClick={[Function]}
       >
-        <Heading
-          appearance="default"
-          size="s"
-        >
+        <Heading>
           Mar 2020
         </Heading>
       </div>
@@ -4150,12 +4089,10 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
     </div>
@@ -4636,22 +4573,17 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
       <div
         className="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
         onClick={[Function]}
       >
-        <Heading
-          appearance="default"
-          size="s"
-        >
+        <Heading>
           Mar 2020
         </Heading>
       </div>
@@ -4659,12 +4591,10 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
     </div>
@@ -5184,22 +5114,17 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_back"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
       <div
         className="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
         onClick={[Function]}
       >
-        <Heading
-          appearance="default"
-          size="s"
-        >
+        <Heading>
           Mar 2020
         </Heading>
       </div>
@@ -5207,12 +5132,10 @@ exports[`Calendar component
         className="Calendar-headerIcon"
       >
         <Icon
-          appearance="default"
           className="p-4"
           name="arrow_forward"
           onClick={[Function]}
           size={16}
-          type="filled"
         />
       </div>
     </div>

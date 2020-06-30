@@ -20,7 +20,7 @@ export const requiredInputWithLabel = () => {
     <div style={style}>
       <div style={innerStyle}>
         <div style={{ height: '72px' }}>
-        <Label required={true} className="mb-3">Full Name</Label>
+          <Label required={true} withInput={true}>Full Name</Label>
           <Input
             name="input"
             value="Value"

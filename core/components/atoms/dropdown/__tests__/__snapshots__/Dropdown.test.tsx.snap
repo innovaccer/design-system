@@ -1,6 +1,324 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dropdown component 
+  align: "left", options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
+ 1`] = `
+<DropdownList
+  align="left"
+  applyOptions={[Function]}
+  async={false}
+  cancelOptions={[Function]}
+  closeOnSelect={true}
+  listOptions={
+    Array [
+      Object {
+        "icon": "events",
+        "label": "Option 1",
+        "subInfo": "subInfo",
+        "value": "Option 1",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 2",
+        "subInfo": "subInfo",
+        "value": "Option 2",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 3",
+        "subInfo": "subInfo",
+        "value": "Option 3",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 4",
+        "subInfo": "subInfo",
+        "value": "Option 4",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 5",
+        "subInfo": "subInfo",
+        "value": "Option 5",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 6",
+        "subInfo": "subInfo",
+        "value": "Option 6",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 7",
+        "subInfo": "subInfo",
+        "value": "Option 7",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 8",
+        "subInfo": "subInfo",
+        "value": "Option 8",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 9",
+        "subInfo": "subInfo",
+        "value": "Option 9",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 10",
+        "subInfo": "subInfo",
+        "value": "Option 10",
+      },
+    ]
+  }
+  onChange={[MockFunction]}
+  onClearOptions={[Function]}
+  onOptionSelect={[Function]}
+  onSearchChange={[Function]}
+  onSelect={[Function]}
+  onSelectAll={[Function]}
+  options={
+    Array [
+      Object {
+        "icon": "events",
+        "label": "Option 1",
+        "subInfo": "subInfo",
+        "value": "Option 1",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 2",
+        "subInfo": "subInfo",
+        "value": "Option 2",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 3",
+        "subInfo": "subInfo",
+        "value": "Option 3",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 4",
+        "subInfo": "subInfo",
+        "value": "Option 4",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 5",
+        "subInfo": "subInfo",
+        "value": "Option 5",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 6",
+        "subInfo": "subInfo",
+        "value": "Option 6",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 7",
+        "subInfo": "subInfo",
+        "value": "Option 7",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 8",
+        "subInfo": "subInfo",
+        "value": "Option 8",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 9",
+        "subInfo": "subInfo",
+        "value": "Option 9",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 10",
+        "subInfo": "subInfo",
+        "value": "Option 10",
+      },
+    ]
+  }
+  previousSelected={Array []}
+  remainingOptions={0}
+  searchTerm=""
+  selectAll={
+    Object {
+      "checked": false,
+      "indeterminate": false,
+    }
+  }
+  selected={Array []}
+  tempSelected={Array []}
+  toggleDropdown={[Function]}
+  triggerLabel=""
+/>
+`;
+
+exports[`Dropdown component 
+  align: "right", options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
+ 1`] = `
+<DropdownList
+  align="right"
+  applyOptions={[Function]}
+  async={false}
+  cancelOptions={[Function]}
+  closeOnSelect={true}
+  listOptions={
+    Array [
+      Object {
+        "icon": "events",
+        "label": "Option 1",
+        "subInfo": "subInfo",
+        "value": "Option 1",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 2",
+        "subInfo": "subInfo",
+        "value": "Option 2",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 3",
+        "subInfo": "subInfo",
+        "value": "Option 3",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 4",
+        "subInfo": "subInfo",
+        "value": "Option 4",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 5",
+        "subInfo": "subInfo",
+        "value": "Option 5",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 6",
+        "subInfo": "subInfo",
+        "value": "Option 6",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 7",
+        "subInfo": "subInfo",
+        "value": "Option 7",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 8",
+        "subInfo": "subInfo",
+        "value": "Option 8",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 9",
+        "subInfo": "subInfo",
+        "value": "Option 9",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 10",
+        "subInfo": "subInfo",
+        "value": "Option 10",
+      },
+    ]
+  }
+  onChange={[MockFunction]}
+  onClearOptions={[Function]}
+  onOptionSelect={[Function]}
+  onSearchChange={[Function]}
+  onSelect={[Function]}
+  onSelectAll={[Function]}
+  options={
+    Array [
+      Object {
+        "icon": "events",
+        "label": "Option 1",
+        "subInfo": "subInfo",
+        "value": "Option 1",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 2",
+        "subInfo": "subInfo",
+        "value": "Option 2",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 3",
+        "subInfo": "subInfo",
+        "value": "Option 3",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 4",
+        "subInfo": "subInfo",
+        "value": "Option 4",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 5",
+        "subInfo": "subInfo",
+        "value": "Option 5",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 6",
+        "subInfo": "subInfo",
+        "value": "Option 6",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 7",
+        "subInfo": "subInfo",
+        "value": "Option 7",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 8",
+        "subInfo": "subInfo",
+        "value": "Option 8",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 9",
+        "subInfo": "subInfo",
+        "value": "Option 9",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 10",
+        "subInfo": "subInfo",
+        "value": "Option 10",
+      },
+    ]
+  }
+  previousSelected={Array []}
+  remainingOptions={0}
+  searchTerm=""
+  selectAll={
+    Object {
+      "checked": false,
+      "indeterminate": false,
+    }
+  }
+  selected={Array []}
+  tempSelected={Array []}
+  toggleDropdown={[Function]}
+  triggerLabel=""
+/>
+`;
+
+exports[`Dropdown component 
   checkboxes: true, showApplyButton: false, options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
  1`] = `
 <DropdownList
@@ -8,7 +326,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   checkboxes={true}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   listOptions={
     Array [
@@ -169,7 +486,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   checkboxes={true}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   listOptions={
     Array [
@@ -329,7 +645,6 @@ exports[`Dropdown component
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   disabled={false}
   icon="events"
@@ -490,7 +805,6 @@ exports[`Dropdown component
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   disabled={false}
   inlineLabel="Label"
@@ -651,7 +965,6 @@ exports[`Dropdown component
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   disabled={false}
   listOptions={
@@ -811,7 +1124,6 @@ exports[`Dropdown component
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   disabled={true}
   icon="events"
@@ -972,7 +1284,6 @@ exports[`Dropdown component
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   disabled={true}
   inlineLabel="Label"
@@ -1133,329 +1444,8 @@ exports[`Dropdown component
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   disabled={true}
-  listOptions={
-    Array [
-      Object {
-        "icon": "events",
-        "label": "Option 1",
-        "subInfo": "subInfo",
-        "value": "Option 1",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 2",
-        "subInfo": "subInfo",
-        "value": "Option 2",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 3",
-        "subInfo": "subInfo",
-        "value": "Option 3",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 4",
-        "subInfo": "subInfo",
-        "value": "Option 4",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 5",
-        "subInfo": "subInfo",
-        "value": "Option 5",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 6",
-        "subInfo": "subInfo",
-        "value": "Option 6",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 7",
-        "subInfo": "subInfo",
-        "value": "Option 7",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 8",
-        "subInfo": "subInfo",
-        "value": "Option 8",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 9",
-        "subInfo": "subInfo",
-        "value": "Option 9",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 10",
-        "subInfo": "subInfo",
-        "value": "Option 10",
-      },
-    ]
-  }
-  onChange={[MockFunction]}
-  onClearOptions={[Function]}
-  onOptionSelect={[Function]}
-  onSearchChange={[Function]}
-  onSelect={[Function]}
-  onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "icon": "events",
-        "label": "Option 1",
-        "subInfo": "subInfo",
-        "value": "Option 1",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 2",
-        "subInfo": "subInfo",
-        "value": "Option 2",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 3",
-        "subInfo": "subInfo",
-        "value": "Option 3",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 4",
-        "subInfo": "subInfo",
-        "value": "Option 4",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 5",
-        "subInfo": "subInfo",
-        "value": "Option 5",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 6",
-        "subInfo": "subInfo",
-        "value": "Option 6",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 7",
-        "subInfo": "subInfo",
-        "value": "Option 7",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 8",
-        "subInfo": "subInfo",
-        "value": "Option 8",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 9",
-        "subInfo": "subInfo",
-        "value": "Option 9",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 10",
-        "subInfo": "subInfo",
-        "value": "Option 10",
-      },
-    ]
-  }
-  previousSelected={Array []}
-  remainingOptions={0}
-  searchTerm=""
-  selectAll={
-    Object {
-      "checked": false,
-      "indeterminate": false,
-    }
-  }
-  selected={Array []}
-  tempSelected={Array []}
-  toggleDropdown={[Function]}
-  triggerLabel=""
-/>
-`;
-
-exports[`Dropdown component 
-  dropdownAlign: "left", options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
- 1`] = `
-<DropdownList
-  applyOptions={[Function]}
-  async={false}
-  cancelOptions={[Function]}
-  checkedValuesOffset={2}
-  closeOnSelect={true}
-  dropdownAlign="left"
-  listOptions={
-    Array [
-      Object {
-        "icon": "events",
-        "label": "Option 1",
-        "subInfo": "subInfo",
-        "value": "Option 1",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 2",
-        "subInfo": "subInfo",
-        "value": "Option 2",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 3",
-        "subInfo": "subInfo",
-        "value": "Option 3",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 4",
-        "subInfo": "subInfo",
-        "value": "Option 4",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 5",
-        "subInfo": "subInfo",
-        "value": "Option 5",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 6",
-        "subInfo": "subInfo",
-        "value": "Option 6",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 7",
-        "subInfo": "subInfo",
-        "value": "Option 7",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 8",
-        "subInfo": "subInfo",
-        "value": "Option 8",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 9",
-        "subInfo": "subInfo",
-        "value": "Option 9",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 10",
-        "subInfo": "subInfo",
-        "value": "Option 10",
-      },
-    ]
-  }
-  onChange={[MockFunction]}
-  onClearOptions={[Function]}
-  onOptionSelect={[Function]}
-  onSearchChange={[Function]}
-  onSelect={[Function]}
-  onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "icon": "events",
-        "label": "Option 1",
-        "subInfo": "subInfo",
-        "value": "Option 1",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 2",
-        "subInfo": "subInfo",
-        "value": "Option 2",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 3",
-        "subInfo": "subInfo",
-        "value": "Option 3",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 4",
-        "subInfo": "subInfo",
-        "value": "Option 4",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 5",
-        "subInfo": "subInfo",
-        "value": "Option 5",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 6",
-        "subInfo": "subInfo",
-        "value": "Option 6",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 7",
-        "subInfo": "subInfo",
-        "value": "Option 7",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 8",
-        "subInfo": "subInfo",
-        "value": "Option 8",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 9",
-        "subInfo": "subInfo",
-        "value": "Option 9",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 10",
-        "subInfo": "subInfo",
-        "value": "Option 10",
-      },
-    ]
-  }
-  previousSelected={Array []}
-  remainingOptions={0}
-  searchTerm=""
-  selectAll={
-    Object {
-      "checked": false,
-      "indeterminate": false,
-    }
-  }
-  selected={Array []}
-  tempSelected={Array []}
-  toggleDropdown={[Function]}
-  triggerLabel=""
-/>
-`;
-
-exports[`Dropdown component 
-  dropdownAlign: "right", options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
- 1`] = `
-<DropdownList
-  applyOptions={[Function]}
-  async={false}
-  cancelOptions={[Function]}
-  checkedValuesOffset={2}
-  closeOnSelect={true}
-  dropdownAlign="right"
   listOptions={
     Array [
       Object {
@@ -1613,7 +1603,6 @@ exports[`Dropdown component
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   listOptions={
     Array [
@@ -1752,7 +1741,6 @@ exports[`Dropdown component
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   listOptions={
     Array [
@@ -1931,7 +1919,6 @@ exports[`Dropdown component
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   listOptions={
     Array [
@@ -2110,7 +2097,6 @@ exports[`Dropdown component
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   listOptions={
     Array [
@@ -2261,654 +2247,6 @@ exports[`Dropdown component
         "icon": "events",
         "label": "Option 10",
         "optionType": "WITH_META",
-        "subInfo": "subInfo",
-        "value": "Option 10",
-      },
-    ]
-  }
-  previousSelected={Array []}
-  remainingOptions={0}
-  searchTerm=""
-  selectAll={
-    Object {
-      "checked": false,
-      "indeterminate": false,
-    }
-  }
-  selected={Array []}
-  tempSelected={Array []}
-  toggleDropdown={[Function]}
-  triggerLabel=""
-/>
-`;
-
-exports[`Dropdown component 
-  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], loadingType: "DEFAULT", loading: true, onChange: "[Function]"
- 1`] = `
-<DropdownList
-  applyOptions={[Function]}
-  async={false}
-  cancelOptions={[Function]}
-  checkedValuesOffset={2}
-  closeOnSelect={true}
-  listOptions={
-    Array [
-      Object {
-        "icon": "events",
-        "label": "Option 1",
-        "subInfo": "subInfo",
-        "value": "Option 1",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 2",
-        "subInfo": "subInfo",
-        "value": "Option 2",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 3",
-        "subInfo": "subInfo",
-        "value": "Option 3",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 4",
-        "subInfo": "subInfo",
-        "value": "Option 4",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 5",
-        "subInfo": "subInfo",
-        "value": "Option 5",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 6",
-        "subInfo": "subInfo",
-        "value": "Option 6",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 7",
-        "subInfo": "subInfo",
-        "value": "Option 7",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 8",
-        "subInfo": "subInfo",
-        "value": "Option 8",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 9",
-        "subInfo": "subInfo",
-        "value": "Option 9",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 10",
-        "subInfo": "subInfo",
-        "value": "Option 10",
-      },
-    ]
-  }
-  loading={true}
-  loadingOptions={true}
-  loadingType="DEFAULT"
-  onChange={[MockFunction]}
-  onClearOptions={[Function]}
-  onOptionSelect={[Function]}
-  onSearchChange={[Function]}
-  onSelect={[Function]}
-  onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "icon": "events",
-        "label": "Option 1",
-        "subInfo": "subInfo",
-        "value": "Option 1",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 2",
-        "subInfo": "subInfo",
-        "value": "Option 2",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 3",
-        "subInfo": "subInfo",
-        "value": "Option 3",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 4",
-        "subInfo": "subInfo",
-        "value": "Option 4",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 5",
-        "subInfo": "subInfo",
-        "value": "Option 5",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 6",
-        "subInfo": "subInfo",
-        "value": "Option 6",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 7",
-        "subInfo": "subInfo",
-        "value": "Option 7",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 8",
-        "subInfo": "subInfo",
-        "value": "Option 8",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 9",
-        "subInfo": "subInfo",
-        "value": "Option 9",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 10",
-        "subInfo": "subInfo",
-        "value": "Option 10",
-      },
-    ]
-  }
-  previousSelected={Array []}
-  remainingOptions={0}
-  searchTerm=""
-  selectAll={
-    Object {
-      "checked": false,
-      "indeterminate": false,
-    }
-  }
-  selected={Array []}
-  tempSelected={Array []}
-  toggleDropdown={[Function]}
-  triggerLabel=""
-/>
-`;
-
-exports[`Dropdown component 
-  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], loadingType: "ICON_WITH_META", loading: true, onChange: "[Function]"
- 1`] = `
-<DropdownList
-  applyOptions={[Function]}
-  async={false}
-  cancelOptions={[Function]}
-  checkedValuesOffset={2}
-  closeOnSelect={true}
-  listOptions={
-    Array [
-      Object {
-        "icon": "events",
-        "label": "Option 1",
-        "subInfo": "subInfo",
-        "value": "Option 1",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 2",
-        "subInfo": "subInfo",
-        "value": "Option 2",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 3",
-        "subInfo": "subInfo",
-        "value": "Option 3",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 4",
-        "subInfo": "subInfo",
-        "value": "Option 4",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 5",
-        "subInfo": "subInfo",
-        "value": "Option 5",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 6",
-        "subInfo": "subInfo",
-        "value": "Option 6",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 7",
-        "subInfo": "subInfo",
-        "value": "Option 7",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 8",
-        "subInfo": "subInfo",
-        "value": "Option 8",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 9",
-        "subInfo": "subInfo",
-        "value": "Option 9",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 10",
-        "subInfo": "subInfo",
-        "value": "Option 10",
-      },
-    ]
-  }
-  loading={true}
-  loadingOptions={true}
-  loadingType="ICON_WITH_META"
-  onChange={[MockFunction]}
-  onClearOptions={[Function]}
-  onOptionSelect={[Function]}
-  onSearchChange={[Function]}
-  onSelect={[Function]}
-  onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "icon": "events",
-        "label": "Option 1",
-        "subInfo": "subInfo",
-        "value": "Option 1",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 2",
-        "subInfo": "subInfo",
-        "value": "Option 2",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 3",
-        "subInfo": "subInfo",
-        "value": "Option 3",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 4",
-        "subInfo": "subInfo",
-        "value": "Option 4",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 5",
-        "subInfo": "subInfo",
-        "value": "Option 5",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 6",
-        "subInfo": "subInfo",
-        "value": "Option 6",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 7",
-        "subInfo": "subInfo",
-        "value": "Option 7",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 8",
-        "subInfo": "subInfo",
-        "value": "Option 8",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 9",
-        "subInfo": "subInfo",
-        "value": "Option 9",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 10",
-        "subInfo": "subInfo",
-        "value": "Option 10",
-      },
-    ]
-  }
-  previousSelected={Array []}
-  remainingOptions={0}
-  searchTerm=""
-  selectAll={
-    Object {
-      "checked": false,
-      "indeterminate": false,
-    }
-  }
-  selected={Array []}
-  tempSelected={Array []}
-  toggleDropdown={[Function]}
-  triggerLabel=""
-/>
-`;
-
-exports[`Dropdown component 
-  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], loadingType: "WITH_ICON", loading: true, onChange: "[Function]"
- 1`] = `
-<DropdownList
-  applyOptions={[Function]}
-  async={false}
-  cancelOptions={[Function]}
-  checkedValuesOffset={2}
-  closeOnSelect={true}
-  listOptions={
-    Array [
-      Object {
-        "icon": "events",
-        "label": "Option 1",
-        "subInfo": "subInfo",
-        "value": "Option 1",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 2",
-        "subInfo": "subInfo",
-        "value": "Option 2",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 3",
-        "subInfo": "subInfo",
-        "value": "Option 3",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 4",
-        "subInfo": "subInfo",
-        "value": "Option 4",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 5",
-        "subInfo": "subInfo",
-        "value": "Option 5",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 6",
-        "subInfo": "subInfo",
-        "value": "Option 6",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 7",
-        "subInfo": "subInfo",
-        "value": "Option 7",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 8",
-        "subInfo": "subInfo",
-        "value": "Option 8",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 9",
-        "subInfo": "subInfo",
-        "value": "Option 9",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 10",
-        "subInfo": "subInfo",
-        "value": "Option 10",
-      },
-    ]
-  }
-  loading={true}
-  loadingOptions={true}
-  loadingType="WITH_ICON"
-  onChange={[MockFunction]}
-  onClearOptions={[Function]}
-  onOptionSelect={[Function]}
-  onSearchChange={[Function]}
-  onSelect={[Function]}
-  onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "icon": "events",
-        "label": "Option 1",
-        "subInfo": "subInfo",
-        "value": "Option 1",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 2",
-        "subInfo": "subInfo",
-        "value": "Option 2",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 3",
-        "subInfo": "subInfo",
-        "value": "Option 3",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 4",
-        "subInfo": "subInfo",
-        "value": "Option 4",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 5",
-        "subInfo": "subInfo",
-        "value": "Option 5",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 6",
-        "subInfo": "subInfo",
-        "value": "Option 6",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 7",
-        "subInfo": "subInfo",
-        "value": "Option 7",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 8",
-        "subInfo": "subInfo",
-        "value": "Option 8",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 9",
-        "subInfo": "subInfo",
-        "value": "Option 9",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 10",
-        "subInfo": "subInfo",
-        "value": "Option 10",
-      },
-    ]
-  }
-  previousSelected={Array []}
-  remainingOptions={0}
-  searchTerm=""
-  selectAll={
-    Object {
-      "checked": false,
-      "indeterminate": false,
-    }
-  }
-  selected={Array []}
-  tempSelected={Array []}
-  toggleDropdown={[Function]}
-  triggerLabel=""
-/>
-`;
-
-exports[`Dropdown component 
-  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], loadingType: "WITH_META", loading: true, onChange: "[Function]"
- 1`] = `
-<DropdownList
-  applyOptions={[Function]}
-  async={false}
-  cancelOptions={[Function]}
-  checkedValuesOffset={2}
-  closeOnSelect={true}
-  listOptions={
-    Array [
-      Object {
-        "icon": "events",
-        "label": "Option 1",
-        "subInfo": "subInfo",
-        "value": "Option 1",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 2",
-        "subInfo": "subInfo",
-        "value": "Option 2",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 3",
-        "subInfo": "subInfo",
-        "value": "Option 3",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 4",
-        "subInfo": "subInfo",
-        "value": "Option 4",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 5",
-        "subInfo": "subInfo",
-        "value": "Option 5",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 6",
-        "subInfo": "subInfo",
-        "value": "Option 6",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 7",
-        "subInfo": "subInfo",
-        "value": "Option 7",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 8",
-        "subInfo": "subInfo",
-        "value": "Option 8",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 9",
-        "subInfo": "subInfo",
-        "value": "Option 9",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 10",
-        "subInfo": "subInfo",
-        "value": "Option 10",
-      },
-    ]
-  }
-  loading={true}
-  loadingOptions={true}
-  loadingType="WITH_META"
-  onChange={[MockFunction]}
-  onClearOptions={[Function]}
-  onOptionSelect={[Function]}
-  onSearchChange={[Function]}
-  onSelect={[Function]}
-  onSelectAll={[Function]}
-  options={
-    Array [
-      Object {
-        "icon": "events",
-        "label": "Option 1",
-        "subInfo": "subInfo",
-        "value": "Option 1",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 2",
-        "subInfo": "subInfo",
-        "value": "Option 2",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 3",
-        "subInfo": "subInfo",
-        "value": "Option 3",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 4",
-        "subInfo": "subInfo",
-        "value": "Option 4",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 5",
-        "subInfo": "subInfo",
-        "value": "Option 5",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 6",
-        "subInfo": "subInfo",
-        "value": "Option 6",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 7",
-        "subInfo": "subInfo",
-        "value": "Option 7",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 8",
-        "subInfo": "subInfo",
-        "value": "Option 8",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 9",
-        "subInfo": "subInfo",
-        "value": "Option 9",
-      },
-      Object {
-        "icon": "events",
-        "label": "Option 10",
         "subInfo": "subInfo",
         "value": "Option 10",
       },
@@ -2937,7 +2275,6 @@ exports[`Dropdown component
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   listOptions={
     Array [
@@ -3097,7 +2434,6 @@ exports[`Dropdown component
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   listOptions={
     Array [
@@ -3257,7 +2593,6 @@ exports[`Dropdown component
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   listOptions={
     Array [
@@ -3410,53 +2745,150 @@ exports[`Dropdown component
 `;
 
 exports[`Dropdown component 
-  optionsWrap: false, options: [{"label":"Design System Dropdown","value":"Design System Dropdown"},{"label":"UI Kit Dropdown","value":"UI Kit Dropdown"},{"label":"Innovaccer Analytics","value":"Innovaccer Analytics"}], onChange: "[Function]"
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], optionType: "DEFAULT", loading: true, onChange: "[Function]"
  1`] = `
 <DropdownList
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   listOptions={
     Array [
       Object {
-        "label": "Design System Dropdown",
-        "value": "Design System Dropdown",
+        "icon": "events",
+        "label": "Option 1",
+        "subInfo": "subInfo",
+        "value": "Option 1",
       },
       Object {
-        "label": "UI Kit Dropdown",
-        "value": "UI Kit Dropdown",
+        "icon": "events",
+        "label": "Option 2",
+        "subInfo": "subInfo",
+        "value": "Option 2",
       },
       Object {
-        "label": "Innovaccer Analytics",
-        "value": "Innovaccer Analytics",
+        "icon": "events",
+        "label": "Option 3",
+        "subInfo": "subInfo",
+        "value": "Option 3",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 4",
+        "subInfo": "subInfo",
+        "value": "Option 4",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 5",
+        "subInfo": "subInfo",
+        "value": "Option 5",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 6",
+        "subInfo": "subInfo",
+        "value": "Option 6",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 7",
+        "subInfo": "subInfo",
+        "value": "Option 7",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 8",
+        "subInfo": "subInfo",
+        "value": "Option 8",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 9",
+        "subInfo": "subInfo",
+        "value": "Option 9",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 10",
+        "subInfo": "subInfo",
+        "value": "Option 10",
       },
     ]
   }
+  loading={true}
+  loadingOptions={true}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
   onSearchChange={[Function]}
   onSelect={[Function]}
   onSelectAll={[Function]}
+  optionType="DEFAULT"
   options={
     Array [
       Object {
-        "label": "Design System Dropdown",
-        "value": "Design System Dropdown",
+        "icon": "events",
+        "label": "Option 1",
+        "subInfo": "subInfo",
+        "value": "Option 1",
       },
       Object {
-        "label": "UI Kit Dropdown",
-        "value": "UI Kit Dropdown",
+        "icon": "events",
+        "label": "Option 2",
+        "subInfo": "subInfo",
+        "value": "Option 2",
       },
       Object {
-        "label": "Innovaccer Analytics",
-        "value": "Innovaccer Analytics",
+        "icon": "events",
+        "label": "Option 3",
+        "subInfo": "subInfo",
+        "value": "Option 3",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 4",
+        "subInfo": "subInfo",
+        "value": "Option 4",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 5",
+        "subInfo": "subInfo",
+        "value": "Option 5",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 6",
+        "subInfo": "subInfo",
+        "value": "Option 6",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 7",
+        "subInfo": "subInfo",
+        "value": "Option 7",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 8",
+        "subInfo": "subInfo",
+        "value": "Option 8",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 9",
+        "subInfo": "subInfo",
+        "value": "Option 9",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 10",
+        "subInfo": "subInfo",
+        "value": "Option 10",
       },
     ]
   }
-  optionsWrap={false}
   previousSelected={Array []}
   remainingOptions={0}
   searchTerm=""
@@ -3474,53 +2906,472 @@ exports[`Dropdown component
 `;
 
 exports[`Dropdown component 
-  optionsWrap: true, options: [{"label":"Design System Dropdown","value":"Design System Dropdown"},{"label":"UI Kit Dropdown","value":"UI Kit Dropdown"},{"label":"Innovaccer Analytics","value":"Innovaccer Analytics"}], onChange: "[Function]"
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], optionType: "ICON_WITH_META", loading: true, onChange: "[Function]"
  1`] = `
 <DropdownList
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   listOptions={
     Array [
       Object {
-        "label": "Design System Dropdown",
-        "value": "Design System Dropdown",
+        "icon": "events",
+        "label": "Option 1",
+        "subInfo": "subInfo",
+        "value": "Option 1",
       },
       Object {
-        "label": "UI Kit Dropdown",
-        "value": "UI Kit Dropdown",
+        "icon": "events",
+        "label": "Option 2",
+        "subInfo": "subInfo",
+        "value": "Option 2",
       },
       Object {
-        "label": "Innovaccer Analytics",
-        "value": "Innovaccer Analytics",
+        "icon": "events",
+        "label": "Option 3",
+        "subInfo": "subInfo",
+        "value": "Option 3",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 4",
+        "subInfo": "subInfo",
+        "value": "Option 4",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 5",
+        "subInfo": "subInfo",
+        "value": "Option 5",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 6",
+        "subInfo": "subInfo",
+        "value": "Option 6",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 7",
+        "subInfo": "subInfo",
+        "value": "Option 7",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 8",
+        "subInfo": "subInfo",
+        "value": "Option 8",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 9",
+        "subInfo": "subInfo",
+        "value": "Option 9",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 10",
+        "subInfo": "subInfo",
+        "value": "Option 10",
       },
     ]
   }
+  loading={true}
+  loadingOptions={true}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
   onSearchChange={[Function]}
   onSelect={[Function]}
   onSelectAll={[Function]}
+  optionType="ICON_WITH_META"
   options={
     Array [
       Object {
-        "label": "Design System Dropdown",
-        "value": "Design System Dropdown",
+        "icon": "events",
+        "label": "Option 1",
+        "subInfo": "subInfo",
+        "value": "Option 1",
       },
       Object {
-        "label": "UI Kit Dropdown",
-        "value": "UI Kit Dropdown",
+        "icon": "events",
+        "label": "Option 2",
+        "subInfo": "subInfo",
+        "value": "Option 2",
       },
       Object {
-        "label": "Innovaccer Analytics",
-        "value": "Innovaccer Analytics",
+        "icon": "events",
+        "label": "Option 3",
+        "subInfo": "subInfo",
+        "value": "Option 3",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 4",
+        "subInfo": "subInfo",
+        "value": "Option 4",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 5",
+        "subInfo": "subInfo",
+        "value": "Option 5",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 6",
+        "subInfo": "subInfo",
+        "value": "Option 6",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 7",
+        "subInfo": "subInfo",
+        "value": "Option 7",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 8",
+        "subInfo": "subInfo",
+        "value": "Option 8",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 9",
+        "subInfo": "subInfo",
+        "value": "Option 9",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 10",
+        "subInfo": "subInfo",
+        "value": "Option 10",
       },
     ]
   }
-  optionsWrap={true}
+  previousSelected={Array []}
+  remainingOptions={0}
+  searchTerm=""
+  selectAll={
+    Object {
+      "checked": false,
+      "indeterminate": false,
+    }
+  }
+  selected={Array []}
+  tempSelected={Array []}
+  toggleDropdown={[Function]}
+  triggerLabel=""
+/>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], optionType: "WITH_ICON", loading: true, onChange: "[Function]"
+ 1`] = `
+<DropdownList
+  applyOptions={[Function]}
+  async={false}
+  cancelOptions={[Function]}
+  closeOnSelect={true}
+  listOptions={
+    Array [
+      Object {
+        "icon": "events",
+        "label": "Option 1",
+        "subInfo": "subInfo",
+        "value": "Option 1",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 2",
+        "subInfo": "subInfo",
+        "value": "Option 2",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 3",
+        "subInfo": "subInfo",
+        "value": "Option 3",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 4",
+        "subInfo": "subInfo",
+        "value": "Option 4",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 5",
+        "subInfo": "subInfo",
+        "value": "Option 5",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 6",
+        "subInfo": "subInfo",
+        "value": "Option 6",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 7",
+        "subInfo": "subInfo",
+        "value": "Option 7",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 8",
+        "subInfo": "subInfo",
+        "value": "Option 8",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 9",
+        "subInfo": "subInfo",
+        "value": "Option 9",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 10",
+        "subInfo": "subInfo",
+        "value": "Option 10",
+      },
+    ]
+  }
+  loading={true}
+  loadingOptions={true}
+  onChange={[MockFunction]}
+  onClearOptions={[Function]}
+  onOptionSelect={[Function]}
+  onSearchChange={[Function]}
+  onSelect={[Function]}
+  onSelectAll={[Function]}
+  optionType="WITH_ICON"
+  options={
+    Array [
+      Object {
+        "icon": "events",
+        "label": "Option 1",
+        "subInfo": "subInfo",
+        "value": "Option 1",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 2",
+        "subInfo": "subInfo",
+        "value": "Option 2",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 3",
+        "subInfo": "subInfo",
+        "value": "Option 3",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 4",
+        "subInfo": "subInfo",
+        "value": "Option 4",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 5",
+        "subInfo": "subInfo",
+        "value": "Option 5",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 6",
+        "subInfo": "subInfo",
+        "value": "Option 6",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 7",
+        "subInfo": "subInfo",
+        "value": "Option 7",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 8",
+        "subInfo": "subInfo",
+        "value": "Option 8",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 9",
+        "subInfo": "subInfo",
+        "value": "Option 9",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 10",
+        "subInfo": "subInfo",
+        "value": "Option 10",
+      },
+    ]
+  }
+  previousSelected={Array []}
+  remainingOptions={0}
+  searchTerm=""
+  selectAll={
+    Object {
+      "checked": false,
+      "indeterminate": false,
+    }
+  }
+  selected={Array []}
+  tempSelected={Array []}
+  toggleDropdown={[Function]}
+  triggerLabel=""
+/>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], optionType: "WITH_META", loading: true, onChange: "[Function]"
+ 1`] = `
+<DropdownList
+  applyOptions={[Function]}
+  async={false}
+  cancelOptions={[Function]}
+  closeOnSelect={true}
+  listOptions={
+    Array [
+      Object {
+        "icon": "events",
+        "label": "Option 1",
+        "subInfo": "subInfo",
+        "value": "Option 1",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 2",
+        "subInfo": "subInfo",
+        "value": "Option 2",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 3",
+        "subInfo": "subInfo",
+        "value": "Option 3",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 4",
+        "subInfo": "subInfo",
+        "value": "Option 4",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 5",
+        "subInfo": "subInfo",
+        "value": "Option 5",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 6",
+        "subInfo": "subInfo",
+        "value": "Option 6",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 7",
+        "subInfo": "subInfo",
+        "value": "Option 7",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 8",
+        "subInfo": "subInfo",
+        "value": "Option 8",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 9",
+        "subInfo": "subInfo",
+        "value": "Option 9",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 10",
+        "subInfo": "subInfo",
+        "value": "Option 10",
+      },
+    ]
+  }
+  loading={true}
+  loadingOptions={true}
+  onChange={[MockFunction]}
+  onClearOptions={[Function]}
+  onOptionSelect={[Function]}
+  onSearchChange={[Function]}
+  onSelect={[Function]}
+  onSelectAll={[Function]}
+  optionType="WITH_META"
+  options={
+    Array [
+      Object {
+        "icon": "events",
+        "label": "Option 1",
+        "subInfo": "subInfo",
+        "value": "Option 1",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 2",
+        "subInfo": "subInfo",
+        "value": "Option 2",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 3",
+        "subInfo": "subInfo",
+        "value": "Option 3",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 4",
+        "subInfo": "subInfo",
+        "value": "Option 4",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 5",
+        "subInfo": "subInfo",
+        "value": "Option 5",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 6",
+        "subInfo": "subInfo",
+        "value": "Option 6",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 7",
+        "subInfo": "subInfo",
+        "value": "Option 7",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 8",
+        "subInfo": "subInfo",
+        "value": "Option 8",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 9",
+        "subInfo": "subInfo",
+        "value": "Option 9",
+      },
+      Object {
+        "icon": "events",
+        "label": "Option 10",
+        "subInfo": "subInfo",
+        "value": "Option 10",
+      },
+    ]
+  }
   previousSelected={Array []}
   remainingOptions={0}
   searchTerm=""
@@ -3544,7 +3395,6 @@ exports[`Dropdown component
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   listOptions={
     Array [
@@ -3706,7 +3556,6 @@ exports[`Dropdown component
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   listOptions={
     Array [
@@ -3868,7 +3717,6 @@ exports[`Dropdown component
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   listOptions={
     Array [
@@ -4028,7 +3876,6 @@ exports[`Dropdown component
   applyOptions={[Function]}
   async={false}
   cancelOptions={[Function]}
-  checkedValuesOffset={2}
   closeOnSelect={true}
   listOptions={
     Array [
@@ -4178,5 +4025,131 @@ exports[`Dropdown component
   toggleDropdown={[Function]}
   triggerLabel=""
   triggerSize="tiny"
+/>
+`;
+
+exports[`Dropdown component 
+  truncateOptions: false, options: [{"label":"Design System Dropdown","value":"Design System Dropdown"},{"label":"UI Kit Dropdown","value":"UI Kit Dropdown"},{"label":"Innovaccer Analytics","value":"Innovaccer Analytics"}], onChange: "[Function]"
+ 1`] = `
+<DropdownList
+  applyOptions={[Function]}
+  async={false}
+  cancelOptions={[Function]}
+  closeOnSelect={true}
+  listOptions={
+    Array [
+      Object {
+        "label": "Design System Dropdown",
+        "value": "Design System Dropdown",
+      },
+      Object {
+        "label": "UI Kit Dropdown",
+        "value": "UI Kit Dropdown",
+      },
+      Object {
+        "label": "Innovaccer Analytics",
+        "value": "Innovaccer Analytics",
+      },
+    ]
+  }
+  onChange={[MockFunction]}
+  onClearOptions={[Function]}
+  onOptionSelect={[Function]}
+  onSearchChange={[Function]}
+  onSelect={[Function]}
+  onSelectAll={[Function]}
+  options={
+    Array [
+      Object {
+        "label": "Design System Dropdown",
+        "value": "Design System Dropdown",
+      },
+      Object {
+        "label": "UI Kit Dropdown",
+        "value": "UI Kit Dropdown",
+      },
+      Object {
+        "label": "Innovaccer Analytics",
+        "value": "Innovaccer Analytics",
+      },
+    ]
+  }
+  previousSelected={Array []}
+  remainingOptions={0}
+  searchTerm=""
+  selectAll={
+    Object {
+      "checked": false,
+      "indeterminate": false,
+    }
+  }
+  selected={Array []}
+  tempSelected={Array []}
+  toggleDropdown={[Function]}
+  triggerLabel=""
+  truncateOptions={false}
+/>
+`;
+
+exports[`Dropdown component 
+  truncateOptions: true, options: [{"label":"Design System Dropdown","value":"Design System Dropdown"},{"label":"UI Kit Dropdown","value":"UI Kit Dropdown"},{"label":"Innovaccer Analytics","value":"Innovaccer Analytics"}], onChange: "[Function]"
+ 1`] = `
+<DropdownList
+  applyOptions={[Function]}
+  async={false}
+  cancelOptions={[Function]}
+  closeOnSelect={true}
+  listOptions={
+    Array [
+      Object {
+        "label": "Design System Dropdown",
+        "value": "Design System Dropdown",
+      },
+      Object {
+        "label": "UI Kit Dropdown",
+        "value": "UI Kit Dropdown",
+      },
+      Object {
+        "label": "Innovaccer Analytics",
+        "value": "Innovaccer Analytics",
+      },
+    ]
+  }
+  onChange={[MockFunction]}
+  onClearOptions={[Function]}
+  onOptionSelect={[Function]}
+  onSearchChange={[Function]}
+  onSelect={[Function]}
+  onSelectAll={[Function]}
+  options={
+    Array [
+      Object {
+        "label": "Design System Dropdown",
+        "value": "Design System Dropdown",
+      },
+      Object {
+        "label": "UI Kit Dropdown",
+        "value": "UI Kit Dropdown",
+      },
+      Object {
+        "label": "Innovaccer Analytics",
+        "value": "Innovaccer Analytics",
+      },
+    ]
+  }
+  previousSelected={Array []}
+  remainingOptions={0}
+  searchTerm=""
+  selectAll={
+    Object {
+      "checked": false,
+      "indeterminate": false,
+    }
+  }
+  selected={Array []}
+  tempSelected={Array []}
+  toggleDropdown={[Function]}
+  triggerLabel=""
+  truncateOptions={true}
 />
 `;

@@ -20,7 +20,7 @@ export const inputWithLabel = () => {
     <div style={style}>
       <div style={innerStyle}>
         <div style={{ height: '72px' }}>
-          <Label className="mb-3">Full Name</Label>
+          <Label withInput={true}>Full Name</Label>
           <Input
             name="input"
             value="Value"
