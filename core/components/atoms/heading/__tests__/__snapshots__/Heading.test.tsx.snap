@@ -4,8 +4,8 @@ exports[`Heading component
   appearance: "default"
  1`] = `
 <GenericText
-  className="Heading Heading--default"
-  componentType="h3"
+  className="Heading Heading--m Heading--default"
+  componentType="h4"
 >
   Heading
 </GenericText>
@@ -15,8 +15,8 @@ exports[`Heading component
   appearance: "disabled"
  1`] = `
 <GenericText
-  className="Heading Heading--disabled"
-  componentType="h3"
+  className="Heading Heading--m Heading--disabled"
+  componentType="h4"
 >
   Heading
 </GenericText>
@@ -26,8 +26,8 @@ exports[`Heading component
   appearance: "subtle"
  1`] = `
 <GenericText
-  className="Heading Heading--subtle"
-  componentType="h3"
+  className="Heading Heading--m Heading--subtle"
+  componentType="h4"
 >
   Heading
 </GenericText>
@@ -37,19 +37,8 @@ exports[`Heading component
   appearance: "white"
  1`] = `
 <GenericText
-  className="Heading Heading--white"
-  componentType="h3"
->
-  Heading
-</GenericText>
-`;
-
-exports[`Heading component 
-  size: "default"
- 1`] = `
-<GenericText
-  className="Heading Heading--default"
-  componentType="h3"
+  className="Heading Heading--m Heading--white"
+  componentType="h4"
 >
   Heading
 </GenericText>
@@ -72,6 +61,17 @@ exports[`Heading component
 <GenericText
   className="Heading Heading--m Heading--default"
   componentType="h4"
+>
+  Heading
+</GenericText>
+`;
+
+exports[`Heading component 
+  size: "s"
+ 1`] = `
+<GenericText
+  className="Heading Heading--s Heading--default"
+  componentType="h5"
 >
   Heading
 </GenericText>

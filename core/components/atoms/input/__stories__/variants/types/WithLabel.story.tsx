@@ -23,7 +23,7 @@ export const withLabel = () => {
     <div style={style}>
       <div style={innerStyle}>
         <div style={{ height: '72px' }}>
-          <Label withInput={true} required={true}>Full Name</Label>
+          <Label className="mb-3" required={true}>Full Name</Label>
           <Input
             name="input"
             value="Value"
@@ -36,7 +36,7 @@ export const withLabel = () => {
         <Text weight="strong">No Caption</Text>
       </div>
       <div style={innerStyle}>
-      <Label withInput={true} required={true}>Password</Label>
+      <Label className="mb-3" required={true}>Password</Label>
         <Input
           name="input"
           value="Value"
@@ -45,12 +45,12 @@ export const withLabel = () => {
           onClear={action('on-clear')}
           required={true}
         />
-        <Caption withInput={true}>Pick a strong, unique password</Caption>
+        <Caption>Pick a strong, unique password</Caption>
         <br />
         <Text weight="strong">Caption Default</Text>
       </div>
       <div style={innerStyle}>
-      <Label withInput={true} required={true}>Password</Label>
+      <Label className="mb-3" required={true}>Password</Label>
         <Input
           name="input"
           value="Value"
@@ -60,7 +60,7 @@ export const withLabel = () => {
           required={true}
           error={true}
         />
-        <Caption error={true} withInput={true}>Pick a strong, unique password</Caption>
+        <Caption error={true}>Pick a strong, unique password</Caption>
         <br />
         <Text weight="strong">Caption Error</Text>
       </div>

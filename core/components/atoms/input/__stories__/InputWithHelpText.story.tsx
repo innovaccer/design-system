@@ -25,7 +25,7 @@ export const inputWithHelpText = () => {
           type="password"
           onChange={action('on-change')}
         />
-        <Caption withInput={true}>Pick a strong, unique password</Caption>
+        <Caption>Pick a strong, unique password</Caption>
       </div>
     </div>
   );

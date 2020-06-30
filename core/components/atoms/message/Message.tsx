@@ -54,7 +54,7 @@ export const Message: React.FunctionComponent<MessageProps> = props => {
         </div>
       )}
       <div>
-        {title && <div className="Message-title"><Heading>{title}</Heading></div>}
+        {title && <div className="Message-title"><Heading size="s">{title}</Heading></div>}
         <div className="Message-description">{children}</div>
       </div>
     </div>

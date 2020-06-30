@@ -11,6 +11,7 @@ exports[`ModalHeader component
   >
     <div>
       <Heading
+        appearance="default"
         size="m"
       />
     </div>
@@ -19,8 +20,10 @@ exports[`ModalHeader component
       onClick={[Function]}
     >
       <Icon
+        appearance="default"
         name="close"
         size={16}
+        type="filled"
       />
     </div>
   </div>
@@ -38,6 +41,7 @@ exports[`ModalHeader component
   >
     <div>
       <Heading
+        appearance="default"
         size="m"
       >
         events
@@ -48,8 +52,10 @@ exports[`ModalHeader component
       onClick={[Function]}
     >
       <Icon
+        appearance="default"
         name="close"
         size={16}
+        type="filled"
       />
     </div>
   </div>
@@ -67,6 +73,7 @@ exports[`ModalHeader component
   >
     <div>
       <Heading
+        appearance="default"
         size="m"
       >
         events
@@ -77,8 +84,10 @@ exports[`ModalHeader component
       onClick={[Function]}
     >
       <Icon
+        appearance="default"
         name="close"
         size={16}
+        type="filled"
       />
     </div>
   </div>
@@ -107,12 +116,15 @@ exports[`ModalHeader component
       className="Modal-header-icon"
     >
       <Icon
+        appearance="default"
         name="events"
         size={16}
+        type="filled"
       />
     </div>
     <div>
       <Heading
+        appearance="default"
         size="m"
       />
     </div>
@@ -121,8 +133,10 @@ exports[`ModalHeader component
       onClick={[Function]}
     >
       <Icon
+        appearance="default"
         name="close"
         size={16}
+        type="filled"
       />
     </div>
   </div>
@@ -142,12 +156,15 @@ exports[`ModalHeader component
       className="Modal-header-icon"
     >
       <Icon
+        appearance="default"
         name="events"
         size={16}
+        type="filled"
       />
     </div>
     <div>
       <Heading
+        appearance="default"
         size="m"
       >
         events
@@ -158,8 +175,10 @@ exports[`ModalHeader component
       onClick={[Function]}
     >
       <Icon
+        appearance="default"
         name="close"
         size={16}
+        type="filled"
       />
     </div>
   </div>
@@ -179,12 +198,15 @@ exports[`ModalHeader component
       className="Modal-header-icon"
     >
       <Icon
+        appearance="default"
         name="events"
         size={16}
+        type="filled"
       />
     </div>
     <div>
       <Heading
+        appearance="default"
         size="m"
       >
         events
@@ -195,8 +217,10 @@ exports[`ModalHeader component
       onClick={[Function]}
     >
       <Icon
+        appearance="default"
         name="close"
         size={16}
+        type="filled"
       />
     </div>
   </div>
@@ -225,12 +249,15 @@ exports[`ModalHeader component
       className="Modal-header-icon"
     >
       <Icon
+        appearance="default"
         name="events"
         size={16}
+        type="filled"
       />
     </div>
     <div>
       <Heading
+        appearance="default"
         size="m"
       />
     </div>
@@ -239,8 +266,10 @@ exports[`ModalHeader component
       onClick={[Function]}
     >
       <Icon
+        appearance="default"
         name="close"
         size={16}
+        type="filled"
       />
     </div>
   </div>
@@ -267,6 +296,7 @@ exports[`ModalHeader component
   >
     <div>
       <Heading
+        appearance="default"
         size="m"
       />
     </div>
@@ -275,8 +305,10 @@ exports[`ModalHeader component
       onClick={[Function]}
     >
       <Icon
+        appearance="default"
         name="close"
         size={16}
+        type="filled"
       />
     </div>
   </div>

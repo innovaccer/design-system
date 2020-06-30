@@ -46,7 +46,10 @@ exports[`Message component
     <div
       className="Message-title"
     >
-      <Heading>
+      <Heading
+        appearance="default"
+        size="s"
+      >
         Title goes here
       </Heading>
     </div>
@@ -85,7 +88,10 @@ exports[`Message component
     <div
       className="Message-title"
     >
-      <Heading>
+      <Heading
+        appearance="default"
+        size="s"
+      >
         Title goes here
       </Heading>
     </div>
@@ -144,7 +150,10 @@ exports[`Message component
     <div
       className="Message-title"
     >
-      <Heading>
+      <Heading
+        appearance="default"
+        size="s"
+      >
         Title goes here
       </Heading>
     </div>
@@ -203,7 +212,10 @@ exports[`Message component
     <div
       className="Message-title"
     >
-      <Heading>
+      <Heading
+        appearance="default"
+        size="s"
+      >
         Title goes here
       </Heading>
     </div>
@@ -262,7 +274,10 @@ exports[`Message component
     <div
       className="Message-title"
     >
-      <Heading>
+      <Heading
+        appearance="default"
+        size="s"
+      >
         Title goes here
       </Heading>
     </div>

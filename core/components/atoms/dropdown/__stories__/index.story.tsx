@@ -7,19 +7,19 @@ import { dropdownOptions } from './Options';
 // CSF format story
 export const all = () => {
   const triggerSize = select(
-    'trigger size',
+    'Trigger size',
     ['regular', 'tiny'],
     undefined
   );
 
-  const align = select(
-    'align',
+  const dropdownAlign = select(
+    'Dropdown Alignmnet',
     ['right', 'left'],
     undefined
   );
 
-  const optionType = select(
-    'option type',
+  const loadingType = select(
+    'loading type',
     ['DEFAULT', 'WITH_ICON', 'WITH_META', 'ICON_WITH_META'],
     undefined,
   );
@@ -42,15 +42,15 @@ export const all = () => {
 
   const placeholder = text('placeholder', 'Select');
 
-  const selectAllLabel = text('select all label', 'Select All');
+  const parentCheckboxLabel = text('parentCheckboxLabel', 'Select All');
 
   const inlineLabel = text('inline label', '');
 
-  const labelLimit = number('trigger label limit', 2);
+  const checkedValuesOffset = number('checked offset', 2);
 
   const maxHeight = number('maximum height', 200);
 
-  const loadersCount = number('Loaders Count', 10);
+  const loadersLength = number('Loaders Length', 10);
 
   const getSearchedOptions = (options: any, searchTerm: string) => {
     const result = options.filter((option: any) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -69,7 +69,7 @@ export const all = () => {
     });
   };
 
-  const customLabel = (selectedLength: number, totalOptions?: number) => {
+  const onChangeTriggerLabel = (selectedLength: number, totalOptions?: number) => {
     const optionsLength = totalOptions ? totalOptions : dropdownOptions.length;
     return `${selectedLength} of ${optionsLength} are selected`;
   };
@@ -78,13 +78,13 @@ export const all = () => {
     return action(`selected values length: ${selectedValues}`)();
   };
 
-  const onClose = (selectedValues: any[]) => {
-    return action(`dropdown closed with selected values: ${selectedValues}`)();
+  const onClose = (_selectedValues: any[]) => {
+    return action('dropdown closed')();
   };
 
   const props = {
     triggerSize,
-    align,
+    dropdownAlign,
     icon,
     error,
     placeholder,
@@ -95,13 +95,14 @@ export const all = () => {
     search,
     checkboxes,
     showApplyButton,
+    checkedValuesOffset,
     maxHeight,
-    loadersCount,
+    loadersLength,
     onClose,
     fetchOptions,
-    optionType,
-    selectAllLabel,
-    triggerOptions: { customLabel, labelLimit },
+    loadingType,
+    parentCheckboxLabel,
+    onChangeTriggerLabel,
     options: dropdownOptions,
     onChange: onChangeHandler,
     maxWidth: 170,
@@ -113,47 +114,22 @@ export const all = () => {
     <div style={{ width: '170px', marginLeft: '128px' }} key={key}>
       <Dropdown
         {...props}
+        optionsWrap={true}
       />
     </div>
   );
 };
 
 const customCode = `() => {
-  const dropdownOptions =  [];
-  for (let i = 1; i <= 100; i++) {
-    dropdownOptions.push({
-      label: \`Option \${i}\`,
-      value: \`Option \${i}\`,
-      group: i >= 1 && i <= 40 ? 'Group 1' : 'Group 2',
-      icon: 'events',
-      subInfo: 'subInfo',
-    });
-  }
-
-  const getSearchedOptions = (options, searchTerm) => {
-    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
-    return result;
-  };
-
-  const fetchOptions = (searchTerm) => {
-    const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
-    return new Promise(resolve => {
-      setTimeout(() => {
-        resolve({
-          options: searchedOptions,
-          count: searchedOptions.length,
-        });
-      }, 1000);
-    });
-  };
-
+  const options = [{label: 'Option1',value: 'Option1'},{label: 'Option2',value: 'Option2'},{label: 'Option3',value: 'Option3'},{label: 'Option4',value: 'Option4'},{label: 'Option5',value: 'Option5'},{label: 'Option6',value: 'Option6'},{label: 'Option7',value: 'Option7'},{label: 'Option8',value: 'Option8'},{label: 'Option9',value: 'Option9'},{label: 'Option10',value: 'Option10'}];
   return (
-    <div style={{ width: '170px', minHeight: '280px' }}>
+    <div style={{minHeight: '250px', width: '150px'}}>
       <Dropdown
-        fetchOptions={fetchOptions}
+        options={options}
+        placeholder={'Select'}
       />
     </div>
-  );
+  )
 }`;
 
 export default {

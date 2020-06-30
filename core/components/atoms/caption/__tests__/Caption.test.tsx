@@ -4,11 +4,11 @@ import Caption, { CaptionProps as Props } from '../Caption';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const BooleanValue = [true, false];
+const mapper = {
+  error: valueHelper(BooleanValue, { required: true, iterate: true })
+};
 
 describe('Caption component', () => {
-  const mapper = {
-    error: valueHelper(BooleanValue, { required: true, iterate: true })
-  };
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 

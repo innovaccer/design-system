@@ -12,34 +12,18 @@ export interface AvatarProps {
   /**
    * **Only first 2 characters are rendered**
    */
-  children?: string;
-  /**
-   * First Name
-   */
-  firstName?: string;
-  /**
-   * Last Name
-   */
-  lastName?: string;
+  children: string;
 }
 
 const initialsLength = 2;
 
-/**
- * **NOTE: children will be rendered if both children and (firstName, lastName) are provided as prop.**
- */
 export const Avatar = (props: AvatarProps) => {
   const {
     appearance = 'primary',
-    children,
-    firstName,
-    lastName
+    children
   } = props;
 
-  const initials = children
-    ? children.trim().slice(0, initialsLength)
-    : `${firstName ? firstName.trim()[0] : ''}${lastName ? lastName.trim()[0] : ''}`;
-
+  const initials = children.trim().slice(0, initialsLength);
   const classes = classNames({
     Avatar: true,
     [`Avatar--${appearance}`]: appearance,

@@ -13,17 +13,15 @@ export const all = () => {
 
   const title = text(
     'title',
-    'Design System'
+    'Outreach was not saved'
   );
-
-  const children = text('children', 'Design System is a library of reusable components');
 
   return (
     <Message
       appearance={appearance}
       title={title}
     >
-      {children}
+      Patient record has been updated with new records.
     </Message>
   );
 };

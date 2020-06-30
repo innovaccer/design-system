@@ -180,9 +180,11 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
         autocomplete={'off'}
         ref={ref}
       />
-      <Caption error={error} withInput={true} hide={!error}>
-        {caption || 'Invalid Value'}
-      </Caption>
+      {
+        error && (
+          <Caption error={error}>{error ? caption || 'Invalid Value' : caption}</Caption>
+        )
+      }
     </div>
   );
 });

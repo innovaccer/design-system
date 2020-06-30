@@ -233,11 +233,9 @@ export const Header = (props: HeaderProps) => {
             showApplyButton={true}
             // selected={columnOptions.filter(o => o.selected)}
             options={columnOptions}
-            triggerOptions={{
-              labelLimit: 0,
-              customLabel: (selected, totalOptions) => `Showing ${selected} of ${totalOptions} columns`
-            }}
+            checkedValuesOffset={0}
             totalOptions={columnOptions.length}
+            onChangeTriggerLabel={(selected, totalOptions) => `Showing ${selected} of ${totalOptions} columns`}
             onChange={selected => onHideColumn(selected)}
           />
         </div>

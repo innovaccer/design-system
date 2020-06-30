@@ -40,12 +40,10 @@ const renderDropdown = (list: BreadcrumbsProps['list'], onClick: BreadcrumbsProp
     value: item.link
   }));
 
-  const customTrigger = () => <Button size="tiny" appearance="transparent" icon="more_horiz_filled" />;
-
   return (
     <Dropdown
       triggerSize={'tiny'}
-      triggerOptions={{ customTrigger }}
+      customTrigger={() => <Button size="tiny" appearance="transparent" icon="more_horiz_filled" />}
       options={options}
       menu={true}
       onChange={selected => {
@@ -67,9 +65,7 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
         list.map((item, index) => {
           return (
             <div key={index} className="Breadcrumbs-item">
-              <span className="Breadcrumbs-link">
-                {renderLink(item, onClick)}
-              </span>
+              {renderLink(item, onClick)}
               <span className="Breadcrumbs-itemSeparator">/</span>
             </div>
           );
@@ -77,9 +73,7 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
       ) : (
           <>
             <div className="Breadcrumbs-item">
-              <span className="Breadcrumbs-link">
-                {renderLink(list[0], onClick)}
-              </span>
+              {renderLink(list[0], onClick)}
               <span className="Breadcrumbs-itemSeparator">/</span>
             </div>
             <div className="Breadcrumbs-dropdown">
@@ -87,9 +81,7 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
               <span className="Breadcrumbs-itemSeparator">/</span>
             </div>
             <div className="Breadcrumbs-item">
-              <span className="Breadcrumbs-link">
-                {renderLink(list[list.length - 1], onClick)}
-              </span>
+              {renderLink(list[list.length - 1], onClick)}
               <span className="Breadcrumbs-itemSeparator">/</span>
             </div>
           </>
