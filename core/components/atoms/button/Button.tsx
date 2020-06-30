@@ -58,7 +58,13 @@ export interface ButtonProps {
    * Handler to be called when `Button` is clicked
    */
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  /**
+   * Handler to be called when mouse pointer enters `Button`.
+   */
   onMouseEnter?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  /**
+   * Handler to be called when mouse pointer leaves `Button`.
+   */
   onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
