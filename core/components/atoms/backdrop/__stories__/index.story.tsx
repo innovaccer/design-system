@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { boolean } from '@storybook/addon-knobs';
 import Backdrop from '../Backdrop';
+import { Heading } from '@/index';
 
 export const all = () => {
   const open = boolean('open', true);
@@ -10,7 +11,10 @@ export const all = () => {
   };
 
   return (
-    <Backdrop {...options} />
+    <div style={{}}>
+      <Heading>Page background</Heading>
+      <Backdrop {...options} />
+    </div>
   );
 };
 
