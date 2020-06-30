@@ -35,14 +35,17 @@ interface SharedTableProps {
   size?: GridProps['size'];
   draggable?: boolean;
   withHeader?: boolean;
-  headerProps?: ExternalHeaderProps;
+  headerOptions?: ExternalHeaderProps;
   withCheckbox?: GridProps['withCheckbox'];
   showMenu?: GridProps['showMenu'];
   withPagination?: GridProps['withPagination'];
   paginationType?: GridProps['paginationType'];
   pageSize?: GridProps['pageSize'];
   loaderSchema?: GridProps['loaderSchema'];
-  saveSortHistory?: boolean;
+  multipleSorting?: boolean;
+  sortingList?: GridProps['sortingList'];
+  filterList?: GridProps['filterList'];
+  errorTemplate?: GridProps['errorTemplate'];
   onRowClick?: GridProps['onRowClick'];
   onSelect?: (rowIndex: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean) => void;
   onPageChange?: GridProps['onPageChange'];
@@ -85,12 +88,12 @@ export class Table extends React.Component<TableProps, TableState> {
     this.state = {
       async,
       // @ts-ignore
-      data: props.data || [],
+      data: [],
       // @ts-ignore
-      schema: props.schema || [],
-      sortingList: [],
-      filterList: {},
+      schema: !async ? props.schema : [],
       page: 1,
+      sortingList: props.sortingList || [],
+      filterList: props.filterList || {},
       totalRecords: !async ? props.data.length : 0,
       loading: !async ? props.loading || false : true,
       error: !async ? props.error || false : false,
@@ -98,30 +101,35 @@ export class Table extends React.Component<TableProps, TableState> {
       searchTerm: '',
     };
 
-    if (async) this.updateData({});
+    // if (async) this.updateData({});
+    this.updateData({});
   }
 
   static defaultProps = {
     showHead: true,
-    saveSortHistory: true,
-    headerProps: {},
+    multipleSorting: true,
+    headerOptions: {},
     pageSize: 15,
     loading: false
   };
 
   componentDidUpdate(prevProps: TableProps, prevState: TableState) {
     if (!this.state.async) {
-      if (prevProps.data !== this.props.data
-        || prevProps.schema !== this.props.schema
-        || prevProps.loading !== this.props.loading
+      if (prevProps.loading !== this.props.loading
         || prevProps.error !== this.props.error) {
+        const {
+          error,
+          loading,
+          schema,
+          data
+        } = this.props;
         this.setState({
-          loading: this.props.loading || false,
-          error: this.props.error || false,
+          loading: loading || false,
+          error: error || false,
           page: 1,
-          schema: this.props.schema,
-          data: this.props.data,
-          totalRecords: this.props.data.length,
+          schema: (!error && !loading) ? schema : [],
+          data: (!error && !loading) ? data : [],
+          totalRecords: (!error && !loading) ? data.length : 0,
           sortingList: [],
           filterList: {},
           selectAll: getSelectAll([]),
@@ -176,24 +184,26 @@ export class Table extends React.Component<TableProps, TableState> {
       delete opts.pageSize;
     }
 
-    this.setState({
-      loading: true
-    });
-
     if (async) {
+      this.setState({
+        loading: true
+      });
       fetchData(opts)
         .then((res: any) => {
+          const data = res.data;
           this.setState({
-            selectAll: getSelectAll(res.data),
+            data,
+            selectAll: getSelectAll(data),
             schema: this.state.schema.length ? this.state.schema : res.schema,
-            data: res.data,
-            totalRecords: res.totalRecords,
+            totalRecords: res.count,
             loading: false,
+            error: !data.length
           });
         })
         .catch(() => {
           this.setState({
             loading: false,
+            error: true,
             data: []
           });
         });
@@ -211,7 +221,6 @@ export class Table extends React.Component<TableProps, TableState> {
         totalRecords,
         selectAll: getSelectAll(renderedData),
         schema: this.state.schema.length ? this.state.schema : schema,
-        loading: false,
         data: renderedData,
       });
     }
@@ -283,11 +292,11 @@ export class Table extends React.Component<TableProps, TableState> {
 
   updateSortingList: updateSortingListFn = newSortingList => {
     const {
-      saveSortHistory
+      multipleSorting
     } = this.props;
 
     this.setState({
-      sortingList: saveSortHistory ? [...newSortingList] : newSortingList.slice(-1),
+      sortingList: multipleSorting ? [...newSortingList] : newSortingList.slice(-1),
       page: 1,
     });
   }
@@ -313,7 +322,7 @@ export class Table extends React.Component<TableProps, TableState> {
       size,
       draggable,
       withHeader,
-      headerProps,
+      headerOptions,
       withCheckbox,
       showMenu,
       withPagination,
@@ -323,12 +332,13 @@ export class Table extends React.Component<TableProps, TableState> {
       // onPageChange: onPageChangeProp,
       // onSelect,
       loaderSchema,
+      errorTemplate
     } = this.props;
 
     const {
       children: headerChildren,
       ...headerAttr
-    } = headerProps as ExternalHeaderProps;
+    } = headerOptions as ExternalHeaderProps;
 
     return (
       <div className="Table">
@@ -370,6 +380,7 @@ export class Table extends React.Component<TableProps, TableState> {
             paginationType={paginationType}
             pageSize={pageSize}
             loaderSchema={loaderSchema}
+            errorTemplate={errorTemplate}
             onRowClick={onRowClick}
             onPageChange={this.onPageChange}
           />

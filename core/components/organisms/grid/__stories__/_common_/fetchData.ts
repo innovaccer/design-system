@@ -22,7 +22,7 @@ export const fetchData: fetchDataFn = (options) => {
         const slicedData = sortedData.slice(start, end);
         resolve({
           schema,
-          totalRecords: sortedData.length,
+          count: sortedData.length,
           data: slicedData,
         });
       }, 2000);
@@ -33,7 +33,7 @@ export const fetchData: fetchDataFn = (options) => {
     setTimeout(() => {
       resolve({
         schema,
-        totalRecords: sortedData.length,
+        count: sortedData.length,
         data: sortedData,
       });
     }, 2000);

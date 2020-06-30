@@ -47,14 +47,19 @@ export const Header = (props: HeaderProps) => {
     updateFilterList,
     totalRecords = 0,
     onSelectAll,
-    searchPlaceholder = 'Search',
+    searchPlaceholder,
     selectAll,
     searchTerm,
     updateSearchTerm,
-    // dynamicColumn = true
+    dynamicColumn
   } = props;
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
+  const [flag, setFlag] = React.useState(true);
+
+  React.useEffect(() => {
+    setFlag(!flag);
+  }, [schema]);
 
   React.useEffect(() => {
     if (selectAll && selectAll.checked) {
@@ -155,6 +160,13 @@ export const Header = (props: HeaderProps) => {
                     filters
                   } = s;
 
+                  const filterOptions = filters
+                    ? filters.map(f => ({
+                      ...f,
+                      selected: filterList[name] && filterList[name].findIndex(fl => fl === f.value) !== -1
+                    }))
+                    : [];
+
                   return (
                     <Dropdown
                       key={name}
@@ -162,15 +174,7 @@ export const Header = (props: HeaderProps) => {
                       showApplyButton={true}
                       inlineLabel={displayName}
                       icon={'filter_list'}
-                      // selected={
-                      //   filterList[s.name]
-                      //     ? filterList[s.name].map(f => ({
-                      //       value: f,
-                      //       label: s.filters?.find(sf => sf.value === f)!.label || ''
-                      //     }))
-                      //     : []
-                      // }
-                      options={filters}
+                      options={filterOptions}
                       onChange={selected => onFilterChange(name, selected)}
                     />
                   );
@@ -218,29 +222,40 @@ export const Header = (props: HeaderProps) => {
                         </Button>
                       )
                     }
-
                   </div>
                 )}
               </>
             )
           }
-
         </div>
-        <div className="Header-hideColumns">
-          <Dropdown
-            triggerSize={'tiny'}
-            checkboxes={true}
-            showApplyButton={true}
-            // selected={columnOptions.filter(o => o.selected)}
-            options={columnOptions}
-            triggerOptions={{
-              labelLimit: 0,
-              customLabel: (selected, totalOptions) => `Showing ${selected} of ${totalOptions} columns`
-            }}
-            totalOptions={columnOptions.length}
-            onChange={selected => onHideColumn(selected)}
-          />
-        </div>
+        {dynamicColumn && (
+          <div className="Header-hideColumns">
+            <Dropdown
+              key={`${flag}`}
+              triggerSize={'tiny'}
+              checkboxes={true}
+              showApplyButton={true}
+              options={columnOptions}
+              totalOptions={columnOptions.length}
+              align={'left'}
+              triggerOptions={{
+                labelLimit: 0,
+                customLabel: (selected, totalOptions) => `Showing ${selected} of ${totalOptions} columns`,
+                customTrigger: triggerLabel => (
+                  <Button
+                    size="tiny"
+                    appearance="transparent"
+                    icon="keyboard_arrow_down_filled"
+                    iconAlign="right"
+                  >
+                    {triggerLabel ? triggerLabel : `Showing 0 of ${columnOptions.length} columns`}
+                  </Button>
+                )
+              }}
+              onChange={selected => onHideColumn(selected)}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
@@ -248,7 +263,9 @@ export const Header = (props: HeaderProps) => {
 
 Header.defaultProps = {
   schema: [],
-  data: []
+  data: [],
+  searchPlaceholder: 'Search',
+  dynamicColumn: true
 };
 
 export default Header;

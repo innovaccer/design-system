@@ -23,12 +23,16 @@ interface SharedListProps {
   type?: GridProps['type'];
   size?: GridProps['size'];
   withHeader?: boolean;
-  headerProps?: ExternalHeaderProps;
+  headerOptions?: ExternalHeaderProps;
   withCheckbox?: GridProps['withCheckbox'];
   withPagination?: GridProps['withPagination'];
   paginationType?: GridProps['paginationType'];
   pageSize?: GridProps['pageSize'];
   loaderSchema?: GridProps['loaderSchema'];
+  multipleSorting?: boolean;
+  sortingList?: GridProps['sortingList'];
+  filterList?: GridProps['filterList'];
+  errorTemplate?: GridProps['errorTemplate'];
   onRowClick?: GridProps['onRowClick'];
   onSelect?: TableProps['onSelect'];
   onPageChange?: GridProps['onPageChange'];

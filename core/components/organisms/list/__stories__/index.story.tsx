@@ -14,6 +14,37 @@ export const all = () => {
     true
   );
 
+  let loading;
+  let error;
+  let applyData;
+  let applySchema;
+  const applyLoaderSchema = boolean(
+    'applyLoaderSchema',
+    true
+  );
+
+  if (!async) {
+    loading = boolean(
+      'loading',
+      false
+    );
+
+    error = boolean(
+      'error',
+      false
+    );
+
+    applySchema = boolean(
+      'applySchema',
+      true
+    );
+
+    applyData = boolean(
+      'applyData',
+      true
+    );
+  }
+
   const type = select(
     'type',
     ['resource', 'data'],
@@ -52,6 +83,11 @@ export const all = () => {
     12
   );
 
+  const multipleSorting = boolean(
+    'multipleSorting',
+    false
+  );
+
   let dataAttr = {};
   if (async) {
     dataAttr = {
@@ -74,7 +110,7 @@ export const all = () => {
       <List
         {...dataAttr}
         withHeader={withHeader}
-        headerProps={{
+        headerOptions={{
           withSearch: true,
         }}
         withCheckbox={withCheckbox}
@@ -83,10 +119,17 @@ export const all = () => {
         withPagination={withPagination}
         paginationType={paginationType}
         pageSize={pageSize}
-        loaderSchema={loaderSchema}
+        loaderSchema={applyLoaderSchema ? loaderSchema : undefined}
         onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
         onSelect={(rowIndex, selected, selectedList) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)}`)()}
         onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
+        multipleSorting={multipleSorting}
+        sortingList={[
+          { name: 'name', type: 'desc' }
+        ]}
+        filterList={{
+          name: ['h-r', 's-z']
+        }}
       />
     </Card>
   );

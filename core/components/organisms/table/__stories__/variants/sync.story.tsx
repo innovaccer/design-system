@@ -4,6 +4,7 @@ import Table from '../../Table';
 import loaderSchema from '../../../grid/__stories__/_common_/loaderSchema';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
+import { action } from '@storybook/addon-actions';
 
 export const sync = () => {
   return (
@@ -18,7 +19,9 @@ export const sync = () => {
         data={data}
         schema={schema}
         withHeader={true}
-        headerProps={{
+        withCheckbox={true}
+        onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
+        headerOptions={{
           withSearch: true
         }}
         onSearch={(d, searchTerm) => {
