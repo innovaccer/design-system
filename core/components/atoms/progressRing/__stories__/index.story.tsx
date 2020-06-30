@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { number, select } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
 import ProgressRing from '../ProgressRing';
 
 // CSF format story
@@ -13,16 +12,13 @@ export const all = () => {
   );
 
   const value = number('value', 30);
-
-  const onChange = (completedValue: number) => {
-    return action(`selected values length: ${completedValue}`)();
-  };
+  const max = number('max', 100);
 
   return (
     <ProgressRing
       value={value}
       size={size}
-      onChange={onChange}
+      max={max}
     />
   );
 };

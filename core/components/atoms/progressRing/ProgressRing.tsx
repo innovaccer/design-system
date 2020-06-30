@@ -9,35 +9,21 @@ export interface ProgressRingProps {
    */
   size?: Size;
   /**
-   * Sets the value (0 - 100) on the `ProgressRing`.
+   * Specifies how much of the task that has been completed. Value should lie between 0 to max.
    */
   value: number;
   /**
-   * Event emitted when the `ProgressRing` value changes
+   * Describes how much work the task indicated by the `Progress Ring` requires.
    */
-  onChange?: (value: number) => void;
+  max?: number;
 }
-
-export const useIsMount = () => {
-  const isMountRef = React.useRef(true);
-  React.useEffect(() => {
-    isMountRef.current = false;
-  }, []);
-  return isMountRef.current;
-};
 
 export const ProgressRing = (props: ProgressRingProps) => {
   const {
     size = 'regular',
+    max = 100,
     value,
-    onChange,
   } = props;
-
-  const isMount = useIsMount();
-
-  React.useEffect(() => {
-    if (onChange && !isMount) onChange(value);
-  }, [value]);
 
   const radius = 20;
   const circumference = 2 * Math.PI * radius;
@@ -50,6 +36,8 @@ export const ProgressRing = (props: ProgressRingProps) => {
   const svgProps = {
     viewBox: '0 0 50 50'
   };
+
+  const updatedValue = value > 0 ? Math.min(value, max) * 100 / max : 0;
 
   const circleProps = {
     cx: 25,
@@ -65,7 +53,7 @@ export const ProgressRing = (props: ProgressRingProps) => {
       <circle className="Ring-background" {...circleProps} />
       <circle
         className="Ring-indicator"
-        strokeDashoffset={circumference - value / 100 * circumference}
+        strokeDashoffset={circumference - updatedValue / 100 * circumference}
         {...circleProps}
       />
     </svg>
