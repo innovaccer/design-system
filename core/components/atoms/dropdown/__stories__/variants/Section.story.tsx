@@ -28,6 +28,7 @@ export const sections = () => {
     alignItems: 'center',
     marginRight: '20px',
     width: '128px',
+    minHeight: '280px',
   };
 
   return (
@@ -36,6 +37,7 @@ export const sections = () => {
         BooleanValue.map((value, index) => {
           return (
             <div key={index} style={style}>
+              <Text weight="strong">{value ? ' Multi Select' : 'Single Select'}</Text><br />
               <div style={{ display: 'flex' }}>
                 <div style={innerStyle}>
                   <Text weight="strong">{'With Sections'}</Text><br />
@@ -46,7 +48,6 @@ export const sections = () => {
                   <Dropdown options={storyOptions} checkboxes={value} />
                 </div>
               </div> <br />
-              <Text weight="strong">{value ? ' Multi Select' : 'Single Select'}</Text>
             </div>
           );
         })

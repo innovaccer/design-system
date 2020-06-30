@@ -32,7 +32,7 @@ export const loadingType = () => {
               <Text weight="strong">{labelMapping[type]}</Text><br />
               <Dropdown
                 options={storyOptions.slice(0, 5)}
-                loadingType={type as OptionType}
+                optionType={type as OptionType}
                 loading={true}
               />
             </div>

@@ -40,10 +40,12 @@ const renderDropdown = (list: BreadcrumbsProps['list'], onClick: BreadcrumbsProp
     value: item.link
   }));
 
+  const customTrigger = () => <Button size="tiny" appearance="transparent" icon="more_horiz_filled" />;
+
   return (
     <Dropdown
       triggerSize={'tiny'}
-      customTrigger={() => <Button size="tiny" appearance="transparent" icon="more_horiz_filled" />}
+      triggerOptions={{ customTrigger }}
       options={options}
       menu={true}
       onChange={selected => {
