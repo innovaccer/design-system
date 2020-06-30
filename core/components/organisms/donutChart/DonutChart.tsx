@@ -215,7 +215,9 @@ export const DonutChart = (props: DonutChartProps) => {
       {withLegends && (
         <Column className="DonutChart-legends" {...columnOptions.legends}>
           {data.map((d, i) => (
-            <Legend key={i} label={`${d.name} - ${(+d.value).toLocaleString()}`} iconAppearance={getColor(i)} />
+            <Legend key={i} iconAppearance={getColor(i)}>
+              {`${d.name} - ${(+d.value).toLocaleString()}`}
+            </Legend>
           ))}
         </Column>
       )}

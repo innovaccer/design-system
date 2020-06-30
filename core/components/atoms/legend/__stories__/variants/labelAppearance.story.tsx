@@ -18,10 +18,11 @@ export const labelAppearance = () => {
           return (
             <div key={i} style={{ background: appearance === 'white' ? 'black' : 'transparent', ...style }}>
               <Legend
-                label={appearance.charAt(0).toUpperCase() + appearance.slice(1)}
                 labelAppearance={appearance}
                 iconAppearance={appearance === 'white' ? 'secondary' : 'inverse'}
-              />
+              >
+                {appearance.charAt(0).toUpperCase() + appearance.slice(1)}
+              </Legend>
             </div>
           );
         })

@@ -10,10 +10,10 @@ export const labelWeight = () => {
   return (
     <div style={style}>
       <div style={{ marginRight: '2%' }}>
-        <Legend label={'Strong'} labelWeight={'strong'} />
+        <Legend labelWeight={'strong'}>Strong</Legend>
       </div>
       <div>
-        <Legend label={'Medium'} labelWeight={'medium'} />
+        <Legend labelWeight={'medium'}>Medium</Legend>
       </div>
     </div>
 
