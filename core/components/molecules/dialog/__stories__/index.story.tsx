@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { boolean, select } from '@storybook/addon-knobs';
-
+import { Heading } from '@/index';
 import { action } from '@storybook/addon-actions';
 import Dialog from '../Dialog';
 import { updateKnob } from '@/utils/storybookEventEmitter';
@@ -46,7 +46,10 @@ export const all = () => {
   };
 
   return (
-    <Dialog {...options} />
+    <div>
+      <Heading>Page background</Heading>
+      <Dialog {...options} />
+    </div>
   );
 };
 

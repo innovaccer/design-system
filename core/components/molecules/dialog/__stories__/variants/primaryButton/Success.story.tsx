@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { boolean } from '@storybook/addon-knobs';
-
 import { action } from '@storybook/addon-actions';
 import Dialog from '../../../Dialog';
-
+import { Heading } from '@/index';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 
 export const success = () => {
@@ -27,7 +26,10 @@ export const success = () => {
   };
 
   return (
-    <Dialog primaryButtonAppearance="success" {...options} />
+    <div>
+      <Heading>Page background</Heading>
+      <Dialog primaryButtonAppearance="success" {...options} />
+    </div>
   );
 };
 
