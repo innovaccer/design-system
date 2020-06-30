@@ -8,6 +8,7 @@ import ModalFooter from '@/components/molecules/modalFooter';
 import ModalBody from '@/components/molecules/modalBody';
 import Button from '@/components/atoms/button';
 import { updateKnob } from '@/utils/storybookEventEmitter';
+import { Heading, Text } from '@/index';
 
 export const all = () => {
   const open = boolean('open', false);
@@ -20,6 +21,7 @@ export const all = () => {
 
   const onClose = () => {
     updateKnob('open', false);
+    action('on close triggered');
   };
 
   const options = {
@@ -48,18 +50,21 @@ export const all = () => {
   };
 
   return (
-    <Modal {...options}>
-      <ModalHeader {...modalHeaderOptions} />
-      <ModalBody>
-        <p>Modal Body</p>
-        <ModalDescription {...modalDescriptionOptions} />
-        <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
-      </ModalBody>
-      <ModalFooter>
-        <Button appearance="basic" onClick={action('Basic button click')}>Basic</Button>
-        <Button appearance="primary" onClick={action('Primary button click')}>Primary</Button>
-      </ModalFooter>
-    </Modal>
+    <div>
+      <Heading>Page background</Heading>
+      <Modal {...options}>
+        <ModalHeader {...modalHeaderOptions} />
+        <ModalBody>
+          <Text>Modal Body</Text>
+          <ModalDescription {...modalDescriptionOptions} />
+          <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
+        </ModalBody>
+        <ModalFooter>
+          <Button appearance="basic" onClick={action('Basic button click')}>Basic</Button>
+          <Button appearance="primary" onClick={action('Primary button click')}>Primary</Button>
+        </ModalFooter>
+      </Modal>
+    </div>
   );
 };
 

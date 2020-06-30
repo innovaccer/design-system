@@ -2,7 +2,7 @@ import * as React from 'react';
 import { boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import Dialog from '../../../Dialog';
-
+import { Heading } from '@/index';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 
 export const small = () => {
@@ -26,7 +26,10 @@ export const small = () => {
   };
 
   return (
-    <Dialog dimension="small" {...options} />
+    <div>
+      <Heading>Page background</Heading>
+      <Dialog dimension="small" {...options} />
+    </div>
   );
 };
 

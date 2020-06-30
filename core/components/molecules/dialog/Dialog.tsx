@@ -9,7 +9,7 @@ export interface DialogProps {
   /**
    * Callback for `Dialog` close event
    */
-  onClose: (reason?: string, event?: Event | React.MouseEvent<HTMLElement, MouseEvent>) => void;
+  onClose: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
   /**
    * closes `Dialog` on pressing escape key
    */

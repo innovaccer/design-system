@@ -7,7 +7,7 @@ import Icon from '@/components/atoms/icon';
 export interface ModalHeaderProps {
   icon?: string;
   heading?: string;
-  onClose: (reason?: string, event?: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+  onClose: (event?: React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
   subHeading?: string;
 }
 
@@ -29,7 +29,7 @@ export const ModalHeader = (props: ModalHeaderProps) => {
     return (
       <div
         className="Modal-close-icon"
-        onClick={(event: React.MouseEvent<HTMLElement, MouseEvent>) => onClose('IconClick', event)}
+        onClick={(event: React.MouseEvent<HTMLElement, MouseEvent>) => onClose(event, 'IconClick')}
       >
         <Icon name={'close'}/>
       </div>
