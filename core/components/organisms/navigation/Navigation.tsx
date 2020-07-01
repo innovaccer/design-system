@@ -27,7 +27,7 @@ export interface NavigationProps {
    * Menu: {
    *    name: string;
    *    label: string;
-   *    link: string;
+   *    link?: string;
    *    disabled?: boolean;
    *    subMenu?: Menu[];
    *    icon?: string;
