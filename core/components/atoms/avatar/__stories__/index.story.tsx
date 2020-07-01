@@ -10,9 +10,13 @@ export const all = () => {
     undefined
   );
 
-  const children = text('children', 'JD');
+  const children = text('children', '');
+  const firstName = text('firstName', 'John');
+  const lastName = text('lastName', 'Doe');
   const options = {
-    appearance
+    appearance,
+    firstName,
+    lastName
   };
 
   return (
