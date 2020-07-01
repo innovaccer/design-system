@@ -15,7 +15,7 @@ export const all = () => {
 
   const size = optionsKnob(
     'size',
-    { undefined, m: 'm', l: 'l', xl: 'xl', xxl: 'xxl' },
+    { s: 's', m: 'm', l: 'l', xl: 'xl', xxl: 'xxl' },
     undefined,
     {
       display: 'inline-radio'

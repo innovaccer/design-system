@@ -89,7 +89,7 @@ const HeaderCell = (props: HeaderCellProps) => {
           </Placeholder>
         ) : (
             <>
-              <Heading>{schema.displayName}</Heading>
+              <Heading size="s">{schema.displayName}</Heading>
               {schema.sortFn && (
                 <div className="Grid-sortingIcons">
                   {sorted ? sorted === 'asc' ? (

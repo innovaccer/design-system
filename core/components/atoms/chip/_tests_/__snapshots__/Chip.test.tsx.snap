@@ -6,8 +6,7 @@ exports[`Chip component
 <div>
   <Component
     className="Chip--Action Chip"
-    clearbutton={false}
-    label="Selection"
+    label=""
     onClick={[Function]}
     onClose={[Function]}
     selected={false}
@@ -21,9 +20,8 @@ exports[`Chip component
 <div>
   <Component
     className="Chip--Action Chip"
-    clearbutton={false}
     disabled={false}
-    label="Selection"
+    label=""
     onClick={[Function]}
     onClose={[Function]}
     selected={false}
@@ -36,10 +34,9 @@ exports[`Chip component
  1`] = `
 <div>
   <Component
-    className="Chip--disabled--Action Chip"
-    clearbutton={false}
+    className="Chip-Action--disabled Chip"
     disabled={true}
-    label="Selection"
+    label=""
     onClick={[Function]}
     onClose={[Function]}
     selected={false}
@@ -53,7 +50,7 @@ exports[`Chip component
 <div>
   <Component
     className="Chip--Input Chip"
-    label="Selection"
+    label=""
     onClick={[Function]}
     onClose={[Function]}
     selected={false}
@@ -68,7 +65,7 @@ exports[`Chip component
   <Component
     className="Chip--Input Chip"
     disabled={false}
-    label="Selection"
+    label=""
     onClick={[Function]}
     onClose={[Function]}
     selected={false}
@@ -81,9 +78,9 @@ exports[`Chip component
  1`] = `
 <div>
   <Component
-    className="Chip--disabled--Input Chip"
+    className="Chip-Input--disabled Chip"
     disabled={true}
-    label="Selection"
+    label=""
     onClick={[Function]}
     onClose={[Function]}
     selected={false}
@@ -97,7 +94,7 @@ exports[`Chip component
 <div>
   <Component
     className="Chip--Selection Chip"
-    label="Selection"
+    label=""
     onClick={[Function]}
     onClose={[Function]}
     selected={false}
@@ -112,7 +109,7 @@ exports[`Chip component
   <Component
     className="Chip--Selection Chip"
     disabled={false}
-    label="Selection"
+    label=""
     onClick={[Function]}
     onClose={[Function]}
     selected={false}
@@ -125,9 +122,9 @@ exports[`Chip component
  1`] = `
 <div>
   <Component
-    className="Chip--disabled--Selection Chip"
+    className="Chip-Selection--disabled Chip"
     disabled={true}
-    label="Selection"
+    label=""
     onClick={[Function]}
     onClose={[Function]}
     selected={false}
@@ -141,7 +138,7 @@ exports[`Chip component
 <div>
   <Component
     className="Chip--Selection Chip"
-    label="Selection"
+    label=""
     onClick={[Function]}
     onClose={[Function]}
     selected={false}
@@ -154,11 +151,11 @@ exports[`Chip component
  1`] = `
 <div>
   <Component
-    className="Chip--Selection Chip Chip--Selection--selected"
-    label="Selection"
+    className="Chip--Selection Chip Chip-Selection--selected"
+    label=""
     onClick={[Function]}
     onClose={[Function]}
-    selected={true}
+    selected={false}
   />
 </div>
 `;
