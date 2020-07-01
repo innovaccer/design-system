@@ -11,7 +11,7 @@ import { action } from '@storybook/addon-actions';
 export const all = () => {
   const async = boolean(
     'async',
-    false
+    true
   );
 
   let loading;
@@ -93,8 +93,8 @@ export const all = () => {
     12
   );
 
-  const saveSortHistory = boolean(
-    'saveSortHistory',
+  const multipleSorting = boolean(
+    'multipleSorting',
     false
   );
 
@@ -124,7 +124,7 @@ export const all = () => {
         loading={loading}
         error={error}
         withHeader={withHeader}
-        headerProps={{
+        headerOptions={{
           withSearch: true,
         }}
         withCheckbox={withCheckbox}
@@ -139,7 +139,13 @@ export const all = () => {
         onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
         onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
         onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
-        saveSortHistory={saveSortHistory}
+        multipleSorting={multipleSorting}
+        sortingList={[
+          { name: 'name', type: 'desc' }
+        ]}
+        filterList={{
+          name: ['h-r', 's-z']
+        }}
       />
     </Card>
   );

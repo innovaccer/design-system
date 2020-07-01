@@ -38,7 +38,7 @@ const HeaderCell = (props: HeaderCellProps) => {
     loading,
     showMenu,
     sortingList,
-    // filterList
+    filterList
   } = _this.props;
 
   const init = getInit(_this);
@@ -64,12 +64,12 @@ const HeaderCell = (props: HeaderCellProps) => {
     'Grid-headCell--draggable': draggable
   });
 
-  const customTrigger = () => (
-    <Button
-      icon="more_horiz_filled"
-      appearance="transparent"
-    />
-  );
+  const filterOptions = schema.filters
+    ? schema.filters.map(f => ({
+      ...f,
+      selected: filterList[schema.name] && filterList[schema.name].findIndex(fl => fl === f.value) !== -1
+    }))
+    : [];
 
   return (
     <div
@@ -115,15 +115,15 @@ const HeaderCell = (props: HeaderCellProps) => {
                 menu={true}
                 showApplyButton={true}
                 checkboxes={true}
-                // selected={
-                //   filterList[schema.name]
-                //     ? filterList[schema.name].map(f => ({
-                //       value: f,
-                //       label: schema.filters?.find(s => s.value === f)!.label || ''
-                //     }))
-                //     : []
-                // }
-                options={schema.filters}
+                triggerOptions={{
+                  customTrigger: () => (
+                    <Button
+                      icon="filter_list"
+                      appearance="transparent"
+                    />
+                  )
+                }}
+                options={filterOptions}
                 align={'left'}
                 onChange={(selected: any) => _this.onFilterChange(schema.name, selected)}
               />
@@ -139,7 +139,14 @@ const HeaderCell = (props: HeaderCellProps) => {
               <Dropdown
                 key={schema.name}
                 menu={true}
-                triggerOptions={{ customTrigger }}
+                triggerOptions={{
+                  customTrigger: () => (
+                    <Button
+                      icon="more_vert_filled"
+                      appearance="transparent"
+                    />
+                  )
+                }}
                 options={options}
                 align={'left'}
                 onChange={(selected: any) => _this.onMenuChange(schema.name, selected)}
@@ -223,9 +230,7 @@ export const Cell = (props: CellProps) => {
     'Grid-cell': true,
     'Grid-cell--head': head,
     'Grid-cell--body': !head,
-    'Grid-cell--separator': head ?
-      !(withCheckbox && colIndex === 0) && schema.separator?.head
-      : schema.separator?.body,
+    'Grid-cell--separator': !(withCheckbox && colIndex === 0) && schema.separator,
   });
 
   if (schema.hidden) return null;
