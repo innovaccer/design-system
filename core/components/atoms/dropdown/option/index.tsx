@@ -7,6 +7,8 @@ import IconOption from './IconOption';
 import IconWithMetaOption from './IconWithMetaOption';
 import { OptionType } from '../DropdownList';
 
+export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
+
 export interface OptionRendererProps {
   /**
    * Adds custom option
@@ -46,7 +48,7 @@ export interface OptionTypeProps {
   selected: boolean;
   index: number;
   onClick?: () => void;
-  onChange?: (checked: boolean) => void;
+  onChange?: (event: ChangeEvent) => void;
   updateActiveOption?: (index: number) => void;
 }
 
@@ -59,7 +61,7 @@ interface OptionProps extends OptionRendererProps {
   active?: boolean;
   menu?: boolean;
   onClick?: () => void;
-  onChange?: (checked: boolean) => void;
+  onChange?: (event: ChangeEvent) => void;
   updateActiveOption?: (index: number) => void;
 }
 
@@ -88,6 +90,7 @@ const Option = (props: OptionProps) => {
   const className = classNames({
     ['Option']: true,
     ['Option-wrapper']: true,
+    ['Option--withCheckbox']: checkboxes,
     ['Option--active']: active,
     ['Option--selected']: selected && !checkboxes && !props.menu,
   });

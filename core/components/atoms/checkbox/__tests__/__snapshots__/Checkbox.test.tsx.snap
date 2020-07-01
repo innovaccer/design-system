@@ -5,29 +5,35 @@ exports[`Checkbox component
  1`] = `
 <div
   className="Checkbox Checkbox--regular"
-  onClick={[Function]}
 >
-  <input
-    checked={false}
-    className="Checkbox-input"
-    disabled={false}
-    name="Checkbox"
-    tabIndex={0}
-    type="checkbox"
-    value="Checkbox"
-  />
-  <span
-    className="Checkbox-wrapper Checkbox-wrapper--regular"
-  />
   <div
-    className="Checkbox-text"
+    className="Checkbox-outerWrapper"
+  >
+    <input
+      checked={false}
+      className="Checkbox-input"
+      disabled={false}
+      id="Checkbox"
+      name="Checkbox"
+      onChange={[Function]}
+      tabIndex={0}
+      type="checkbox"
+      value="Checkbox"
+    />
+    <span
+      className="Checkbox-wrapper Checkbox-wrapper--regular"
+    />
+  </div>
+  <label
+    className="Checkbox-label Checkbox-label--regular"
+    htmlFor="Checkbox"
   >
     <Text
       small={false}
     >
       Checkbox
     </Text>
-  </div>
+  </label>
 </div>
 `;
 
@@ -36,29 +42,35 @@ exports[`Checkbox component
  1`] = `
 <div
   className="Checkbox Checkbox--disabled Checkbox--regular"
-  onClick={[Function]}
 >
-  <input
-    checked={false}
-    className="Checkbox-input"
-    disabled={true}
-    name="Checkbox"
-    tabIndex={0}
-    type="checkbox"
-    value="Checkbox"
-  />
-  <span
-    className="Checkbox-wrapper Checkbox-wrapper--regular"
-  />
   <div
-    className="Checkbox-text"
+    className="Checkbox-outerWrapper"
+  >
+    <input
+      checked={false}
+      className="Checkbox-input"
+      disabled={true}
+      id="Checkbox"
+      name="Checkbox"
+      onChange={[Function]}
+      tabIndex={0}
+      type="checkbox"
+      value="Checkbox"
+    />
+    <span
+      className="Checkbox-wrapper Checkbox-wrapper--regular"
+    />
+  </div>
+  <label
+    className="Checkbox-label Checkbox-label--regular"
+    htmlFor="Checkbox"
   >
     <Text
       small={false}
     >
       Checkbox
     </Text>
-  </div>
+  </label>
 </div>
 `;
 
@@ -67,36 +79,42 @@ exports[`Checkbox component
  1`] = `
 <div
   className="Checkbox Checkbox--regular"
-  onClick={[Function]}
 >
-  <input
-    checked={true}
-    className="Checkbox-input"
-    disabled={false}
-    name="Checkbox"
-    tabIndex={0}
-    type="checkbox"
-    value="Checkbox"
-  />
-  <span
-    className="Checkbox-wrapper Checkbox-wrapper--regular Checkbox-wrapper--checked"
-  >
-    <Icon
-      appearance="white"
-      name="check"
-      size={16}
-      type="filled"
-    />
-  </span>
   <div
-    className="Checkbox-text"
+    className="Checkbox-outerWrapper"
+  >
+    <input
+      checked={true}
+      className="Checkbox-input Checkbox-input--checked"
+      disabled={false}
+      id="Checkbox"
+      name="Checkbox"
+      onChange={[Function]}
+      tabIndex={0}
+      type="checkbox"
+      value="Checkbox"
+    />
+    <span
+      className="Checkbox-wrapper Checkbox-wrapper--regular"
+    >
+      <Icon
+        appearance="white"
+        name="check"
+        size={16}
+        type="filled"
+      />
+    </span>
+  </div>
+  <label
+    className="Checkbox-label Checkbox-label--regular"
+    htmlFor="Checkbox"
   >
     <Text
       small={false}
     >
       Checkbox
     </Text>
-  </div>
+  </label>
 </div>
 `;
 
@@ -105,36 +123,42 @@ exports[`Checkbox component
  1`] = `
 <div
   className="Checkbox Checkbox--disabled Checkbox--regular"
-  onClick={[Function]}
 >
-  <input
-    checked={true}
-    className="Checkbox-input"
-    disabled={true}
-    name="Checkbox"
-    tabIndex={0}
-    type="checkbox"
-    value="Checkbox"
-  />
-  <span
-    className="Checkbox-wrapper Checkbox-wrapper--regular Checkbox-wrapper--checked"
-  >
-    <Icon
-      appearance="white"
-      name="check"
-      size={16}
-      type="filled"
-    />
-  </span>
   <div
-    className="Checkbox-text"
+    className="Checkbox-outerWrapper"
+  >
+    <input
+      checked={true}
+      className="Checkbox-input Checkbox-input--checked"
+      disabled={true}
+      id="Checkbox"
+      name="Checkbox"
+      onChange={[Function]}
+      tabIndex={0}
+      type="checkbox"
+      value="Checkbox"
+    />
+    <span
+      className="Checkbox-wrapper Checkbox-wrapper--regular"
+    >
+      <Icon
+        appearance="white"
+        name="check"
+        size={16}
+        type="filled"
+      />
+    </span>
+  </div>
+  <label
+    className="Checkbox-label Checkbox-label--regular"
+    htmlFor="Checkbox"
   >
     <Text
       small={false}
     >
       Checkbox
     </Text>
-  </div>
+  </label>
 </div>
 `;
 
@@ -143,35 +167,41 @@ exports[`Checkbox component
  1`] = `
 <div
   className="Checkbox Checkbox--regular"
-  onClick={[Function]}
 >
-  <input
-    className="Checkbox-input"
-    disabled={false}
-    name="Checkbox"
-    tabIndex={0}
-    type="checkbox"
-    value="Checkbox"
-  />
-  <span
-    className="Checkbox-wrapper Checkbox-wrapper--regular Checkbox-wrapper--indeterminate"
-  >
-    <Icon
-      appearance="white"
-      name="remove"
-      size={16}
-      type="filled"
-    />
-  </span>
   <div
-    className="Checkbox-text"
+    className="Checkbox-outerWrapper"
+  >
+    <input
+      className="Checkbox-input Checkbox-input--indeterminate"
+      disabled={false}
+      id="Checkbox"
+      name="Checkbox"
+      onChange={[Function]}
+      tabIndex={0}
+      type="checkbox"
+      value="Checkbox"
+    />
+    <span
+      className="Checkbox-wrapper Checkbox-wrapper--regular"
+    >
+      <Icon
+        appearance="white"
+        name="remove"
+        size={16}
+        type="filled"
+      />
+    </span>
+  </div>
+  <label
+    className="Checkbox-label Checkbox-label--regular"
+    htmlFor="Checkbox"
   >
     <Text
       small={false}
     >
       Checkbox
     </Text>
-  </div>
+  </label>
 </div>
 `;
 
@@ -180,35 +210,41 @@ exports[`Checkbox component
  1`] = `
 <div
   className="Checkbox Checkbox--disabled Checkbox--regular"
-  onClick={[Function]}
 >
-  <input
-    className="Checkbox-input"
-    disabled={true}
-    name="Checkbox"
-    tabIndex={0}
-    type="checkbox"
-    value="Checkbox"
-  />
-  <span
-    className="Checkbox-wrapper Checkbox-wrapper--regular Checkbox-wrapper--indeterminate"
-  >
-    <Icon
-      appearance="white"
-      name="remove"
-      size={16}
-      type="filled"
-    />
-  </span>
   <div
-    className="Checkbox-text"
+    className="Checkbox-outerWrapper"
+  >
+    <input
+      className="Checkbox-input Checkbox-input--indeterminate"
+      disabled={true}
+      id="Checkbox"
+      name="Checkbox"
+      onChange={[Function]}
+      tabIndex={0}
+      type="checkbox"
+      value="Checkbox"
+    />
+    <span
+      className="Checkbox-wrapper Checkbox-wrapper--regular"
+    >
+      <Icon
+        appearance="white"
+        name="remove"
+        size={16}
+        type="filled"
+      />
+    </span>
+  </div>
+  <label
+    className="Checkbox-label Checkbox-label--regular"
+    htmlFor="Checkbox"
   >
     <Text
       small={false}
     >
       Checkbox
     </Text>
-  </div>
+  </label>
 </div>
 `;
 
@@ -217,35 +253,41 @@ exports[`Checkbox component
  1`] = `
 <div
   className="Checkbox Checkbox--regular"
-  onClick={[Function]}
 >
-  <input
-    checked={true}
-    className="Checkbox-input"
-    name="Checkbox"
-    tabIndex={0}
-    type="checkbox"
-    value="Checkbox"
-  />
-  <span
-    className="Checkbox-wrapper Checkbox-wrapper--regular Checkbox-wrapper--checked"
-  >
-    <Icon
-      appearance="white"
-      name="check"
-      size={16}
-      type="filled"
-    />
-  </span>
   <div
-    className="Checkbox-text"
+    className="Checkbox-outerWrapper"
+  >
+    <input
+      checked={true}
+      className="Checkbox-input Checkbox-input--checked"
+      id="Checkbox"
+      name="Checkbox"
+      onChange={[Function]}
+      tabIndex={0}
+      type="checkbox"
+      value="Checkbox"
+    />
+    <span
+      className="Checkbox-wrapper Checkbox-wrapper--regular"
+    >
+      <Icon
+        appearance="white"
+        name="check"
+        size={16}
+        type="filled"
+      />
+    </span>
+  </div>
+  <label
+    className="Checkbox-label Checkbox-label--regular"
+    htmlFor="Checkbox"
   >
     <Text
       small={false}
     >
       Checkbox
     </Text>
-  </div>
+  </label>
 </div>
 `;
 
@@ -254,34 +296,40 @@ exports[`Checkbox component
  1`] = `
 <div
   className="Checkbox Checkbox--tiny"
-  onClick={[Function]}
 >
-  <input
-    checked={true}
-    className="Checkbox-input"
-    name="Checkbox"
-    tabIndex={0}
-    type="checkbox"
-    value="Checkbox"
-  />
-  <span
-    className="Checkbox-wrapper Checkbox-wrapper--tiny Checkbox-wrapper--checked"
-  >
-    <Icon
-      appearance="white"
-      name="check"
-      size={8}
-      type="filled"
-    />
-  </span>
   <div
-    className="Checkbox-text"
+    className="Checkbox-outerWrapper"
+  >
+    <input
+      checked={true}
+      className="Checkbox-input Checkbox-input--checked"
+      id="Checkbox"
+      name="Checkbox"
+      onChange={[Function]}
+      tabIndex={0}
+      type="checkbox"
+      value="Checkbox"
+    />
+    <span
+      className="Checkbox-wrapper Checkbox-wrapper--tiny"
+    >
+      <Icon
+        appearance="white"
+        name="check"
+        size={8}
+        type="filled"
+      />
+    </span>
+  </div>
+  <label
+    className="Checkbox-label Checkbox-label--tiny"
+    htmlFor="Checkbox"
   >
     <Text
       small={true}
     >
       Checkbox
     </Text>
-  </div>
+  </label>
 </div>
 `;

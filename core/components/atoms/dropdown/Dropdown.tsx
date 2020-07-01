@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { debounce } from 'throttle-debounce';
-import DropdownList, { DropdownListProps, SelectAll, Selected } from './DropdownList';
+import DropdownList, { DropdownListProps, SelectAll, Selected, ChangeEvent } from './DropdownList';
 import { OptionSchema as Option } from './option';
 import { getSearchedOptions, getSelectAll, _isEqual } from './utility';
 
@@ -331,7 +331,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     }
   }
 
-  onSelectAll = (checked: boolean) => {
+  onSelectAll = (event: ChangeEvent) => {
     const {
       onChange,
       showApplyButton
@@ -342,7 +342,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       optionsLength,
     } = this.state;
 
-    const selectedArray = checked ? options : [];
+    const selectedArray = event.target.checked ? options : [];
 
     this.setState({
       ...this.state,
@@ -372,7 +372,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
   }
 
   onCancelOptions = () => {
-    const { previousSelected, optionsLength, tempSelected } = this.state;
+    const { previousSelected, optionsLength } = this.state;
     const label = this.updateTriggerLabel(previousSelected);
     this.setState({
       ...this.state,
@@ -382,7 +382,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       open: false,
     });
     if (this.props.onClose) {
-      const values = tempSelected.map(option => option.value);
+      const values = previousSelected.map(option => option.value);
       this.props.onClose(values, name);
     }
   }
@@ -446,7 +446,8 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
     if (moveSelectedGroup) this.updateOptions(false);
     if (onClose && open) {
-      const values = tempSelected.map(option => option.value);
+      const arr = applyClicked ? previousSelected : tempSelected;
+      const values = arr.map(option => option.value);
       onClose(values, name);
     }
   }

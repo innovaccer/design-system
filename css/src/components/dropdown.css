@@ -1,7 +1,10 @@
 .Dropdown {
     position: relative;
-    display: flex;
     width: fit-content;
+}
+
+.Dropdown .PopperWrapper-trigger {
+    width: 100%;
 }
 
 .Dropdown-wrapper {
@@ -34,11 +37,6 @@
 .Dropdown-section--withClear {
     margin-top: var(--spacing-m);
     margin-bottom: var(--spacing-s);
-}
-
-.Dropdown-clear {
-    cursor: pointer;
-    padding-right: var(--spacing);
 }
 
 .Dropdown--border {
@@ -77,13 +75,21 @@
     padding-right: var(--spacing-l);
 }
 
+.Option--withCheckbox {
+    padding-top: var(--spacing-m);
+    padding-bottom: var(--spacing-m);
+}
+
 .Option--active {
     background-color: var(--secondary-lightest);
     cursor: pointer;
 }
 
 .Dropdown-wrapper .Option .Checkbox {
-    overflow: hidden;
+    width: 100%;
+    width: fill-available;
+    width: -moz-available;
+    width: -webkit-fill-available;
 }
 
 .Option-loading {
@@ -100,6 +106,11 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+}
+
+.Dropdown-wrapper .Checkbox .Checkbox-label {
+    display: flex;
+    overflow: hidden;
 }
 
 .Option-text,
