@@ -25,7 +25,7 @@ export interface PopoverProps {
    */
   trigger: React.ReactElement<any>;
   /**
-   * Holds `Popover` on hove
+   * Holds `Popover` on hover
    */
   hoverable?: boolean;
   /**

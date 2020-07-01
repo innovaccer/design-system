@@ -11,8 +11,8 @@ import { updateKnob } from '@/utils/storybookEventEmitter';
 
 // CSF format story
 export const all = () => {
-  const activeTab = number(
-    'activeTab',
+  const active = number(
+    'active',
     1
   );
 
@@ -20,18 +20,18 @@ export const all = () => {
     return classNames({
       ['material-icons']: true,
       ['Tab-icon']: true,
-      ['Tab-icon--active']: activeTab === tabIndex
+      ['Tab-icon--active']: active === tabIndex
     });
   };
 
   const onTabChangeHandler = (tabIndex: number) => {
-    updateKnob('activeTab', tabIndex);
+    updateKnob('active', tabIndex);
     return action(`tab-change: ${tabIndex}`)();
   };
 
   return (
     <TabsWrapper
-      activeTab={activeTab}
+      active={active}
       onTabChange={onTabChangeHandler}
     >
       <Tab
@@ -40,7 +40,7 @@ export const all = () => {
             <div className="Tab-count">
               <Badge appearance="secondary">2</Badge>
             </div>
-            <Text appearance={activeTab !== 0 ? 'subtle' : undefined}>Tab(Recommended)</Text>
+            <Text appearance={active !== 0 ? 'subtle' : undefined}>Tab(Recommended)</Text>
           </>
         )}
       >
@@ -52,7 +52,7 @@ export const all = () => {
         label={(
           <>
             <i className={tabIconClass(1)}>call_received</i>
-            <Text appearance={activeTab !== 1 ? 'subtle' : undefined}>All</Text>
+            <Text appearance={active !== 1 ? 'subtle' : undefined}>All</Text>
           </>
         )}
       >
@@ -63,7 +63,7 @@ export const all = () => {
       <Tab
         label={(
           <>
-            <Text appearance={activeTab !== 2 ? 'subtle' : undefined}>Extras</Text>
+            <Text appearance={active !== 2 ? 'subtle' : undefined}>Extras</Text>
           </>
         )}
       >

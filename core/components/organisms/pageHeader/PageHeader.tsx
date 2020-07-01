@@ -10,31 +10,31 @@ export interface PageHeaderProps {
    */
   title: string;
   /**
-   * Navigation component
+   * `Navigation` component
    */
   navigation?: React.ReactNode;
   /**
-   * Actions composed of buttons and meta data
+   * Actions composed of `Button` and meta data
    */
   actions?: React.ReactNode;
   /**
-   * Tab component
+   * `Tab` component
    */
   tabs?: React.ReactNode;
   /**
-   * Breadcrumb component
+   * `Breadcrumb` component
    */
-  breadcrumb?: React.ReactNode;
+  breadcrumbs?: React.ReactNode;
   /**
-   * Badge component
+   * `Badge` component
    */
   badge?: React.ReactNode;
   /**
-   * Status component
+   * `Status` component
    */
   status?: React.ReactNode;
   /**
-   * Meta data composed of Text
+   * Meta data composed of `Text`
    */
   meta?: React.ReactNode;
   /**
@@ -44,7 +44,7 @@ export interface PageHeaderProps {
 }
 
 export const PageHeader = (props: PageHeaderProps) => {
-  const { title, navigation, actions, tabs, breadcrumb, badge, status, meta, type } = props;
+  const { title, navigation, actions, tabs, breadcrumbs, badge, status, meta, type } = props;
 
   const wrapperClasses = classNames({
     'PageHeader-wrapper': true,
@@ -57,7 +57,7 @@ export const PageHeader = (props: PageHeaderProps) => {
 
   return (
     <div className={wrapperClasses}>
-      {breadcrumb && breadcrumb}
+      {breadcrumbs && breadcrumbs}
       <div className={classes}>
         <div className="PageHeader-titleWrapper">
           <Heading size="m">{title}</Heading>
@@ -84,7 +84,7 @@ PageHeader.defaultProps = {
   navigation: null,
   actions: null,
   tabs: null,
-  breadcrumb: null,
+  breadcrumbs: null,
   badge: null,
   status: null,
   meta: null,

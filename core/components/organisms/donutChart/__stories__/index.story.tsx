@@ -36,8 +36,8 @@ export const all = () => {
     0
   );
 
-  const donutWidth = number(
-    'donutWidth',
+  const width = number(
+    'width',
     0
   );
 
@@ -60,7 +60,7 @@ export const all = () => {
       <DonutChart
         data={data}
         radius={radius}
-        donutWidth={donutWidth || undefined}
+        width={width || undefined}
         colors={colors.length ? colors : undefined}
         colorOfTotalCount={colorOfTotalCount}
         withLegends={withLegends}

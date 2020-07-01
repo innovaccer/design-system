@@ -56,12 +56,12 @@ export interface DonutChartProps {
    * Percent w.r.t. radius
    * @default 20
    */
-  donutWidth?: number;
+  width?: number;
 }
 
 export const DonutChart = (props: DonutChartProps) => {
   const {
-    donutWidth = 20,
+    width = 20,
     colors = ['primary', 'secondary', 'success', 'warning', 'alert'],
     withCenterText = true,
     colorOfTotalCount = 'success',
@@ -181,7 +181,7 @@ export const DonutChart = (props: DonutChartProps) => {
   };
 
   const oRadius = withActiveSegment ? (radius ? .7 * radius : '70%') : radius || '100%';
-  const iRadius = withActiveSegment ? (radius ? (100 - donutWidth) / 100 * (oRadius as number) : `${(100 - donutWidth) / 100 * 70}%`) : (radius ? (100 - donutWidth) / 100 * radius : `${(100 - donutWidth)}%`);
+  const iRadius = withActiveSegment ? (radius ? (100 - width) / 100 * (oRadius as number) : `${(100 - width) / 100 * 70}%`) : (radius ? (100 - width) / 100 * radius : `${(100 - width)}%`);
   // const tooltipPayload = data.reduce((out: Data[], curr) => {
   //   out.push({
   //     name: curr.name,

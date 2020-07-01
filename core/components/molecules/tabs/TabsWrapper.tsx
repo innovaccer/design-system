@@ -6,7 +6,7 @@ export interface TabsWrapperProps {
   /**
    * Index of desired selected `Tab`
    */
-  activeTab?: number;
+  active?: number;
   /**
    * `Tab` Component will be wrapped in `TabsWrapper` container
    */
@@ -23,17 +23,17 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
     onTabChange
   } = props;
 
-  const [activeTab, setActiveTab] = React.useState(props.activeTab && props.activeTab < children.length
-    ? props.activeTab
+  const [active, setActiveTab] = React.useState(props.active && props.active < children.length
+    ? props.active
     : 0);
 
   React.useEffect(() => {
     setActiveTab(
-      props.activeTab && props.activeTab < children.length
-      ? props.activeTab
+      props.active && props.active < children.length
+      ? props.active
       : 0
     );
-  }, [props.activeTab]);
+  }, [props.active]);
 
   const wrapperClass = classNames({
     ['TabsWrapper']: true,
@@ -48,7 +48,7 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
     children.map((child, index) => {
       const tabHeaderClass = classNames({
         ['Tab']: true,
-        ['Tab--active']: activeTab === index
+        ['Tab--active']: active === index
       });
 
       const { label } = child.props;
@@ -66,7 +66,7 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
         {TabsHeader}
       </div>
       <div className="TabsWrapper-content">
-        {children[activeTab]}
+        {children[active]}
       </div>
     </div>
   );
