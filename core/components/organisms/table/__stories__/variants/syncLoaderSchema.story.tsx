@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { Card } from '@/index';
-import Table from '../../Table';
 import loaderSchema from '../../../grid/__stories__/_common_/loaderSchema';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import { boolean, number } from '@storybook/addon-knobs';
+import { Card, Grid, Table } from '@/index';
 
 export const syncLoaderSchema = () => {
   const loading = boolean(
@@ -64,5 +63,6 @@ export const syncLoaderSchema = () => {
 
 export default {
   title: 'Organisms|Table/Variants',
-  component: Table
+  component: Table,
+  subcomponents: { Grid },
 };
