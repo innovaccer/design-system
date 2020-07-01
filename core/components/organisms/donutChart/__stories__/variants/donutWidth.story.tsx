@@ -18,7 +18,7 @@ export const donutWidth = () => {
     >
       <DonutChart
         data={data}
-        donutWidth={50}
+        width={50}
       />
     </div>
   );
