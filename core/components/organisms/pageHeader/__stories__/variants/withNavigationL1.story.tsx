@@ -53,7 +53,7 @@ export const withNavigation = () => {
         <Button appearance="primary">Primary</Button>
       </div>
     ),
-    breadcrumb: (
+    breadcrumbs: (
       <Breadcrumbs
         list={breadcrumbData}
         onClick={link => action(`on-click: ${link}`)}
@@ -118,7 +118,7 @@ const customCode = `() => {
         <Button appearance="primary">Primary</Button>
       </div>
     ),
-    breadcrumb: (
+    breadcrumbs: (
       <Breadcrumbs
         list={breadcrumbData}
         onClick={link => console.log(link)}

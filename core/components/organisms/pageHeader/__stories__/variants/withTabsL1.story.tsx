@@ -6,8 +6,8 @@ import { updateKnob } from '@/utils/storybookEventEmitter';
 import { number, text } from '@storybook/addon-knobs';
 
 export const withTabs = () => {
-  const activeTab = number(
-    'activeTab',
+  const active = number(
+    'active',
     1
   );
 
@@ -17,7 +17,7 @@ export const withTabs = () => {
   );
 
   const onTabChangeHandler = (tabIndex: number) => {
-    updateKnob('activeTab', tabIndex);
+    updateKnob('active', tabIndex);
     return action(`tab-change: ${tabIndex}`)();
   };
 
@@ -36,7 +36,7 @@ export const withTabs = () => {
     title,
     tabs: (
       <TabsWrapper
-        activeTab={activeTab}
+        active={active}
         onTabChange={onTabChangeHandler}
       >
         <Tab
@@ -45,7 +45,7 @@ export const withTabs = () => {
               <div className="Tab-count">
                 <Badge appearance="secondary">2</Badge>
               </div>
-              <Text appearance={activeTab !== 0 ? 'subtle' : undefined}>Tab 1</Text>
+              <Text appearance={active !== 0 ? 'subtle' : undefined}>Tab 1</Text>
             </>
           )}
         >
@@ -57,7 +57,7 @@ export const withTabs = () => {
               <div className="Tab-count">
                 <Badge appearance="secondary">12</Badge>
               </div>
-              <Text appearance={activeTab !== 1 ? 'subtle' : undefined}>Tab 2</Text>
+              <Text appearance={active !== 1 ? 'subtle' : undefined}>Tab 2</Text>
             </>
           )}
         >
@@ -69,7 +69,7 @@ export const withTabs = () => {
               <div className="Tab-count">
                 <Badge appearance="secondary">5</Badge>
               </div>
-              <Text appearance={activeTab !== 2 ? 'subtle' : undefined}>Tab 3</Text>
+              <Text appearance={active !== 2 ? 'subtle' : undefined}>Tab 3</Text>
             </>
           )}
         >
@@ -82,7 +82,7 @@ export const withTabs = () => {
         <Button appearance="primary">Primary</Button>
       </div>
     ),
-    breadcrumb: (
+    breadcrumbs: (
       <Breadcrumbs
         list={breadcrumbData}
         onClick={link => action(`on-click: ${link}`)}
@@ -175,7 +175,7 @@ const customCode = `() => {
         <Button appearance="primary">Primary</Button>
       </div>
     ),
-    breadcrumb: (
+    breadcrumbs: (
       <Breadcrumbs
         list={breadcrumbData}
         onClick={link => console.log(link)}
