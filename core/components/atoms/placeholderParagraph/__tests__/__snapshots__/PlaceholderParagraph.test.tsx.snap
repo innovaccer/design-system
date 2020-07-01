@@ -4,22 +4,34 @@ exports[`Image placeholder component
   length: "large"
  1`] = `
 <div
-  className="Placeholder-paragraph Placeholder--animation Placeholder-paragraph--large"
-/>
+  className="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-large"
+>
+  <span
+    className="Placeholder--animation PlaceholderParagraph"
+  />
+</div>
 `;
 
 exports[`Image placeholder component 
   length: "medium"
  1`] = `
 <div
-  className="Placeholder-paragraph Placeholder--animation Placeholder-paragraph--medium"
-/>
+  className="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-medium"
+>
+  <span
+    className="Placeholder--animation PlaceholderParagraph"
+  />
+</div>
 `;
 
 exports[`Image placeholder component 
   length: "small"
  1`] = `
 <div
-  className="Placeholder-paragraph Placeholder--animation Placeholder-paragraph--small"
-/>
+  className="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-small"
+>
+  <span
+    className="Placeholder--animation PlaceholderParagraph"
+  />
+</div>
 `;

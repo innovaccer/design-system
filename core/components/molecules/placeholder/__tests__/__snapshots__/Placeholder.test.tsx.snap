@@ -5,23 +5,9 @@ exports[`Placeholder component
  1`] = `
 <div
   className="Placeholder"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
 >
   <div
-    className="ml-4 w-100"
+    className="Placeholder-paragraph"
   >
     <PlaceholderParagraph
       length="small"
@@ -34,27 +20,17 @@ exports[`Placeholder component
   withImage: true, imageSize: "large", style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <div
-  className="Placeholder Placeholder--withImage"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
+  className="Placeholder"
 >
-  <PlaceholderImage
-    imageSize="large"
-  />
   <div
-    className="ml-4 w-100"
+    className="Placeholder-image"
+  >
+    <PlaceholderImage
+      size="large"
+    />
+  </div>
+  <div
+    className="Placeholder-paragraph"
   >
     <PlaceholderParagraph
       length="small"
@@ -67,27 +43,17 @@ exports[`Placeholder component
   withImage: true, imageSize: "medium", style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <div
-  className="Placeholder Placeholder--withImage"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
+  className="Placeholder"
 >
-  <PlaceholderImage
-    imageSize="medium"
-  />
   <div
-    className="ml-4 w-100"
+    className="Placeholder-image"
+  >
+    <PlaceholderImage
+      size="medium"
+    />
+  </div>
+  <div
+    className="Placeholder-paragraph"
   >
     <PlaceholderParagraph
       length="small"
@@ -100,27 +66,17 @@ exports[`Placeholder component
   withImage: true, imageSize: "small", style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <div
-  className="Placeholder Placeholder--withImage"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
+  className="Placeholder"
 >
-  <PlaceholderImage
-    imageSize="small"
-  />
   <div
-    className="ml-4 w-100"
+    className="Placeholder-image"
+  >
+    <PlaceholderImage
+      size="small"
+    />
+  </div>
+  <div
+    className="Placeholder-paragraph"
   >
     <PlaceholderParagraph
       length="small"
@@ -133,28 +89,18 @@ exports[`Placeholder component
   withImage: true, round: false, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <div
-  className="Placeholder Placeholder--withImage"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
+  className="Placeholder"
 >
-  <PlaceholderImage
-    imageSize="small"
-    round={false}
-  />
   <div
-    className="ml-4 w-100"
+    className="Placeholder-image"
+  >
+    <PlaceholderImage
+      round={false}
+      size="small"
+    />
+  </div>
+  <div
+    className="Placeholder-paragraph"
   >
     <PlaceholderParagraph
       length="small"
@@ -167,28 +113,18 @@ exports[`Placeholder component
   withImage: true, round: true, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <div
-  className="Placeholder Placeholder--withImage"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
+  className="Placeholder"
 >
-  <PlaceholderImage
-    imageSize="small"
-    round={true}
-  />
   <div
-    className="ml-4 w-100"
+    className="Placeholder-image"
+  >
+    <PlaceholderImage
+      round={true}
+      size="small"
+    />
+  </div>
+  <div
+    className="Placeholder-paragraph"
   >
     <PlaceholderParagraph
       length="small"
@@ -201,27 +137,17 @@ exports[`Placeholder component
   withImage: true, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <div
-  className="Placeholder Placeholder--withImage"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
+  className="Placeholder"
 >
-  <PlaceholderImage
-    imageSize="small"
-  />
   <div
-    className="ml-4 w-100"
+    className="Placeholder-image"
+  >
+    <PlaceholderImage
+      size="small"
+    />
+  </div>
+  <div
+    className="Placeholder-paragraph"
   >
     <PlaceholderParagraph
       length="small"

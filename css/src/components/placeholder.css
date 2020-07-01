@@ -21,6 +21,7 @@
 
 .Placeholder {
   display: flex;
+  align-items: center;
 }
 
 .Placeholder--withImage {
@@ -28,48 +29,126 @@
   justify-content: flex-start;
 }
 
+.Placeholder-image {
+  margin-right: var(--spacing);
+}
+
 .Placeholder-paragraph {
-  height: 16px;
-  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0;
 }
 
-.Placeholder-paragraph:last-child {
-  margin-bottom: 0;
+.PlaceholderParagraph {
+  display: flex;
+  flex: 1 0;
+  height: var(--font-size);
 }
 
-.Placeholder-paragraph--small {
+.PlaceholderParagraph-wrapper {
+  display: flex;
+  align-items: center;
+  height: var(--font-height);
+}
+
+.PlaceholderParagraph-wrapper--length-small {
   width: 33%;
 }
 
-.Placeholder-paragraph--medium {
-  width: 60%;
+.PlaceholderParagraph-wrapper--length-medium {
+  width: 66%;
 }
 
-.Placeholder-paragraph--large {
+.PlaceholderParagraph-wrapper--length-large {
   width: 100%;
 }
 
-.Placeholder-image {
-  width: 16px;
-  height: 16px;
-  display: inline-block;
+.PlaceholderParagraph-wrapper--size-xxs {
+  height: var(--font-height-s);
 }
 
-.Placeholder-image--small {
+.PlaceholderParagraph-wrapper--size-xs {
+  height: var(--font-height-m);
+}
+
+.PlaceholderParagraph-wrapper--size-s {
+  height: var(--font-height-s);
+}
+
+.PlaceholderParagraph-wrapper--size-m {
+  height: var(--font-height-m);
+}
+
+.PlaceholderParagraph-wrapper--size-l {
+  height: var(--font-height-l);
+}
+
+.PlaceholderParagraph-wrapper--size-xl {
+  height: var(--font-height-xl);
+}
+
+.PlaceholderParagraph-wrapper--size-xxl {
+  height: var(--font-height-xxl);
+}
+
+.PlaceholderParagraph-wrapper--size-xxxl {
+  height: var(--font-height-xxl);
+}
+
+.PlaceholderParagraph--xxs {
+  height: var(--font-size-s);
+}
+
+.PlaceholderParagraph--xs {
+  height: var(--font-size-s);
+}
+
+.PlaceholderParagraph--s {
+  height: var(--font-size);
+}
+
+.PlaceholderParagraph--m {
+  height: var(--font-size-m);
+}
+
+.PlaceholderParagraph--l {
+  height: var(--font-size-l);
+}
+
+.PlaceholderParagraph--xl {
+  height: var(--font-size-xl);
+}
+
+.PlaceholderParagraph--xxl {
+  height: var(--font-size-xxl);
+}
+
+.PlaceholderParagraph--xxxl {
+  height: var(--font-size-xxxl);
+}
+
+.PlaceholderImage {
+  display: flex;
+  flex: 1 0;
   width: 16px;
   height: 16px;
 }
 
-.Placeholder-image--medium {
+.PlaceholderImage--small {
+  width: 16px;
+  height: 16px;
+}
+
+.PlaceholderImage--medium {
   width: 32px;
   height: 32px;
 }
 
-.Placeholder-image--large {
+.PlaceholderImage--large {
   width: 48px;
   height: 48px;
 }
 
-.Placeholder-image--round {
+.PlaceholderImage--round {
   border-radius: 50%;
 }

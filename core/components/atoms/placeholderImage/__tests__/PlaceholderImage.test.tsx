@@ -29,7 +29,7 @@ describe('Image placeholder component', () => {
 
 describe('Image placeholder component', () => {
   const mapper = {
-    imagesize: valueHelper(size, { required: true, iterate: true }),
+    size: valueHelper(size, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {

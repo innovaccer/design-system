@@ -7,19 +7,17 @@ import Text from '@/components/atoms/text';
 export const imageShape = () => {
   return (
     <div style={{ display: 'flex' }}>
-      <div style={{ display: 'flex', marginRight: '5%' }}>
+      <div style={{ width: '200px', marginRight: '5%' }}>
         <Placeholder withImage={true} round={true}>
           <PlaceholderParagraph length="large" />
-          <br />
-          <Text weight="strong">Round</Text>
         </Placeholder>
+        <Text weight="strong">Round</Text>
       </div>
-      <div>
+      <div style={{ width: '200px' }}>
         <Placeholder withImage={true}>
           <PlaceholderParagraph length="large" />
-          <br />
-          <Text weight="strong">Square</Text>
         </Placeholder>
+        <Text weight="strong">Square</Text>
       </div>
     </div>
   );

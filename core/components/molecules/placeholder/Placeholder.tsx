@@ -1,5 +1,4 @@
 import * as React from 'react';
-import classNames from 'classnames';
 
 import PlaceholderImage, { Size } from '@/components/atoms/placeholderImage';
 import { PlaceholderParagraphProps } from '@/components/atoms/placeholderParagraph';
@@ -17,7 +16,7 @@ export interface PlaceholderProps {
    * Specifies dimension of `Placeholder`
    * @default "small"
    */
-  imageSize?:  Size;
+  imageSize?: Size;
   /**
    * Adds CSS
    */
@@ -30,28 +29,29 @@ export interface PlaceholderProps {
 
 export const Placeholder = (props: PlaceholderProps) => {
   const {
-    imageSize = 'small',
+    imageSize,
     withImage,
     round,
     children,
-    ...rest
   } = props;
 
-  const classes = classNames({
-    Placeholder: true,
-    ['Placeholder--withImage']: withImage,
-  });
-
   return (
-    <div className={classes} {...rest}>
+    <div className="Placeholder">
       {withImage && (
-        <PlaceholderImage round={round} imageSize={imageSize} />
+        <div className="Placeholder-image">
+          <PlaceholderImage round={round} size={imageSize} />
+        </div>
       )}
-      <div className="ml-4 w-100">
+      <div className="Placeholder-paragraph">
         {children}
       </div>
     </div>
   );
+};
+
+Placeholder.defaultProps = {
+  withImage: true,
+  imageSize: 'small',
 };
 
 Placeholder.displayName = 'Placeholder';

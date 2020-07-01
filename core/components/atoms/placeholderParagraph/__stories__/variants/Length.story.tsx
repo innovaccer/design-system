@@ -1,18 +1,18 @@
 import * as React from 'react';
-import PlaceholderParagraph, { Size } from '../../PlaceholderParagraph';
+import PlaceholderParagraph, { Length } from '../../PlaceholderParagraph';
 import Text from '@/components/atoms/text';
 
-export const size = () => {
-  const sizes: Size[] = ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl'];
+export const length = () => {
+  const lengths: Length[] = ['small', 'medium', 'large'];
 
   return (
     <div>
       {
-        sizes.map((s, ind) => {
+        lengths.map((len, ind) => {
           return (
             <div key={ind} style={{ marginBottom: '20px' }}>
-              <PlaceholderParagraph size={s} />
-              <Text weight="strong">{s}</Text>
+              <PlaceholderParagraph length={len} />
+              <Text weight="strong">{len.charAt(0).toUpperCase() + len.slice(1)}</Text>
             </div>
           );
         })
