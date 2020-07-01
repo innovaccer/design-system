@@ -9,15 +9,15 @@ export const search = () => {
     <div style={{ display: 'flex', minHeight: '300px' }}>
       <div style={{ marginRight: '5%' }}>
         <Text weight="strong">{'Search'}</Text><br /><br />
-        <Dropdown search={true} placeholder={'Select'} options={storyOptions} />
+        <Dropdown withSearch={true} placeholder={'Select'} options={storyOptions} />
       </div>
       <div style={{ marginRight: '5%' }}>
         <Text weight="strong">{'Loading'}</Text><br /><br />
-        <Dropdown search={true} placeholder={'Select'} options={storyOptions} loading={true}/>
+        <Dropdown withSearch={true} placeholder={'Select'} options={storyOptions} loading={true}/>
       </div>
       <div>
         <Text weight="strong">{'No Result'}</Text><br /><br />
-        <Dropdown search={true} placeholder={'Select'} options={[]} noResultMessage={'No result found'}/>
+        <Dropdown withSearch={true} placeholder={'Select'} options={[]} noResultMessage={'No result found'}/>
       </div>
     </div>
   );

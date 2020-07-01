@@ -41,7 +41,7 @@ export const loadingType = () => {
       }
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '150px' }}>
         <Text weight="strong">{'Checkboxes'}</Text><br />
-        <Dropdown options={storyOptions.slice(0, 5)} checkboxes={true} loading={true} />
+        <Dropdown options={storyOptions.slice(0, 5)} withCheckbox={true} loading={true} />
       </div>
 
     </div>

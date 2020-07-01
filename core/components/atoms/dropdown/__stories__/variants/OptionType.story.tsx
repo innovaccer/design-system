@@ -38,7 +38,7 @@ export const optionType = () => {
       }
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '128px' }}>
         <Text weight="strong">{'Checkboxes'}</Text><br />
-        <Dropdown options={storyOptions.slice(0, 3)} checkboxes={true} />
+        <Dropdown options={storyOptions.slice(0, 3)} withCheckbox={true} />
       </div>
 
     </div>

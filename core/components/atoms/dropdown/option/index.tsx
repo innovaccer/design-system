@@ -53,8 +53,6 @@ export interface OptionTypeProps {
 interface OptionProps extends OptionRendererProps {
   optionData: OptionSchema;
   selected: boolean;
-  optionIsTop: boolean;
-  optionIsBottom: boolean;
   truncateOption?: boolean;
   checkboxes?: boolean;
   index: number;
@@ -77,8 +75,6 @@ const Option = (props: OptionProps) => {
   const {
     optionData,
     selected,
-    optionIsTop,
-    optionIsBottom,
     onClick,
     updateActiveOption,
     onChange,
@@ -92,8 +88,6 @@ const Option = (props: OptionProps) => {
   const className = classNames({
     ['Option']: true,
     ['Option-wrapper']: true,
-    ['Option--top']: optionIsTop,
-    ['Option--bottom']: optionIsBottom,
     ['Option--active']: active,
     ['Option--selected']: selected && !checkboxes && !props.menu,
   });
@@ -117,8 +111,6 @@ const Option = (props: OptionProps) => {
         {props.optionRenderer({
           optionData,
           selected,
-          optionIsTop,
-          optionIsBottom,
           onChange,
           active,
           index,
