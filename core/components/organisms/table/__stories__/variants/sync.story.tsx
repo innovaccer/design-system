@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { Card } from '@/index';
-import Table from '../../Table';
 import loaderSchema from '../../../grid/__stories__/_common_/loaderSchema';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import { action } from '@storybook/addon-actions';
+import { Card, Grid, Table } from '@/index';
 
 export const sync = () => {
   return (
@@ -37,5 +36,6 @@ export const sync = () => {
 
 export default {
   title: 'Organisms|Table/Variants',
-  component: Table
+  component: Table,
+  subcomponents: { Grid },
 };

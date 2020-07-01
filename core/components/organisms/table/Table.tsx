@@ -18,36 +18,209 @@ import { updateBatchData, filterData, sortData, paginateData, getSelectAll, sear
 import { debounce } from 'throttle-debounce';
 
 interface SyncProps {
+  /**
+   * <pre className="DocPage-codeBlock">
+   *    Data: RowData[]
+   *
+   *    RowData: Record<string, any> & {
+   *      _selected?: boolean
+   *    }
+   *
+   *    `_selected`  Denotes row selection
+   * </pre>
+   */
   data: Data;
+  /**
+   * <pre className="DocPage-codeBlock">
+   *    Schema: ColumnSchema[]
+   *
+   *    ColumnSchema: {
+   *        name: string;
+   *        displayName: string;
+   *        width: number;
+   *        resizable?: boolean;
+   *        sortFn?: (a: RowData, b: RowData) => -1 | 0 | 1;
+   *        separator?: boolean;
+   *        pinned?: boolean;
+   *        hidden?: boolean;
+   *        filters?: DropdownProps['options'];
+   *        onFilterChange?: (data: RowData, filters: Filter) => boolean;
+   *        translate?: (data: RowData) => RowData,
+   *        cellType?: CellType;
+   *        cellRenderer?: (props: GridCellProps) => React.ReactElement;
+   *        align?: Alignment;
+   *    }
+   *
+   *    CellType: 'DEFAULT' | 'WITH\_META\_LIST' | 'AVATAR' | 'AVATAR\_WITH\_TEXT'
+   * | 'AVATAR\_WITH\_META\_LIST' | 'IMAGE' | 'IMAGE\_WITH\_TEXT' | 'IMAGE\_WITH\_META\_LIST'
+   * | 'STATUS\_HINT' | 'ICON'`
+   *
+   *    GridCellProps: {
+   *        size: GridSize;
+   *        rowIndex: number;
+   *        colIndex: number;
+   *        data: RowData;
+   *        schema: ColumnSchema;
+   *        loading: boolean;
+   *    }
+   * </pre>
+   *
+   * | Name | Description | Default |
+   * | --- | --- | --- |
+   * | name | key of the value in `RowData` | |
+   * | displayName | Column Head Label | |
+   * | width | Width of the column(in px) | |
+   * | resizable | Denotes if column is resizable | |
+   * | sortFn | Sorting Function to be passed(in case of async) | |
+   * | separator | Shows Left separator | |
+   * | pinned | Pin column | |
+   * | hidden | Denotes if column is hidden | |
+   * | filters | Filter options for the column | |
+   * | onFilterChange | Callback to be called on Filter Change | |
+   * | translate | Translate Cell Data | |
+   * | cellType | Cell Type | 'DEFAULT' |
+   * | cellRenderer | Custom Cell Renderer | |
+   * | align | Align cell content | |
+   */
   schema: Schema;
+  /**
+   * Set for loading state of Table(in case of sync)
+   */
   loading?: boolean;
+  /**
+   * Set for error state of Table(in case of sync)
+   */
   error?: boolean;
+  /**
+   * Callback to be called on searchTerm change(in case of sync)
+   */
   onSearch?: (data: RowData, searchTerm: string) => boolean;
 }
 
 interface AsyncProps {
+  /**
+   * Callback to be called in case of async `Table`
+   *
+   * <pre className="DocPage-codeBlock">
+   * fetchDataFn: (options: FetchDataOptions) => Promise<{
+   *      count: number,
+   *      data: Data,
+   *      schema: Schema
+   * }>;
+   *
+   * FetchDataOptions: {
+   *      page?: number;
+   *      pageSize?: number;
+   *      filterList?: TableProps['sortingList'];
+   *      sortingList?: TableProps['filterList'];
+   *      searchTerm?: string;
+   *  }
+   * </pre>
+   */
   fetchData: fetchDataFn;
 }
 
 interface SharedTableProps {
+  /**
+   * Controls Table Head display
+   */
   showHead?: GridProps['showHead'];
+  /**
+   * Type of Table
+   *
+   * **Need `onRowClick` for 'resource' Table**
+   */
   type?: GridProps['type'];
+  /**
+   * Table cell size
+   */
   size?: GridProps['size'];
+  /**
+   * Allow Column reordering
+   */
   draggable?: boolean;
+  /**
+   * Set to use `Header`
+   */
   withHeader?: boolean;
+  /**
+   * Options to be passed if using `withHeader: true`
+   *
+   * <pre className="DocPage-codeBlock">
+   * ExternalHeaderProps: {
+   *    children?: React.ReactNode;
+   *    withSearch?: boolean;
+   *    searchPlaceholder?: string;
+   *    dynamicColumn?: boolean;
+   * }
+   * </pre>
+   *
+   * | Name | Description | Default |
+   * | --- | --- | --- |
+   * | children | Header actions to be rendered | |
+   * | withSearch | Set to use Search Input | |
+   * | searchPlaceholder | Placeholder of Search Input | "Search" |
+   * | dynamicColumn | Set to use Column controlling dropdown | true |
+   *
+   */
   headerOptions?: ExternalHeaderProps;
+  /**
+   * Set for Row checkboxes
+   */
   withCheckbox?: GridProps['withCheckbox'];
+  /**
+   * Set for Menu on Table Head Cell
+   */
   showMenu?: GridProps['showMenu'];
+  /**
+   * Set for `Pagination` component in `Table`
+   */
   withPagination?: GridProps['withPagination'];
+  /**
+   * `Pagination` component type
+   */
   paginationType?: GridProps['paginationType'];
+  /**
+   * Number of rows to be rendered on a page
+   */
   pageSize?: GridProps['pageSize'];
+  /**
+   * Schema to be used for loading state
+   */
   loaderSchema?: GridProps['loaderSchema'];
+  /**
+   * Set to allow multiple column sorting
+   */
   multipleSorting?: boolean;
+  /**
+   * Initial sortingList passed to `Table`
+   */
   sortingList?: GridProps['sortingList'];
+  /**
+   * Initial filterList passed to `Table`
+   */
   filterList?: GridProps['filterList'];
+  /**
+   * Template to be rendered when error: true
+   */
   errorTemplate?: GridProps['errorTemplate'];
+  /**
+   * Callback to be called when a row is clicked in case of Table type: "resource"
+   *
+   * `onRowClickFn: (data: RowData, rowIndexes?: number) => void`
+   */
   onRowClick?: GridProps['onRowClick'];
-  onSelect?: (rowIndex: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean) => void;
+  /**
+   * Callback to be called when a row is selected
+   * @param rowIndexes - Updated rowIndexes
+   * @param selected - Updated selected value
+   * @param allSelected - List of selected data in the `Table`
+   * @param selectAll - Denotes selection of all records in `Table`
+   */
+  onSelect?: (rowIndexes: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean) => void;
+  /**
+   * Callback to be called on page change in case of withPagination: true
+   */
   onPageChange?: GridProps['onPageChange'];
 }
 
@@ -79,6 +252,15 @@ interface TableState {
 
 // export function Table(props: SyncTableProps): React.ReactElement;
 // export function Table(props: AsyncTableProps): React.ReactElement;
+
+/**
+ * ###Note:
+ * 1. Table props types:
+ *  - async: fetchData
+ *  - sync: data, schema, error, loading, onSearch
+ * 2. Sync Table:
+ *  - Manually toggle loading/error state to update data, schema.
+ */
 export class Table extends React.Component<TableProps, TableState> {
   constructor(props: TableProps) {
     super(props);
@@ -110,7 +292,8 @@ export class Table extends React.Component<TableProps, TableState> {
     multipleSorting: true,
     headerOptions: {},
     pageSize: 15,
-    loading: false
+    loading: false,
+    draggable: true
   };
 
   componentDidUpdate(prevProps: TableProps, prevState: TableState) {
@@ -226,7 +409,7 @@ export class Table extends React.Component<TableProps, TableState> {
     }
   });
 
-  onSelect: onSelectFn = (rowIndex, selected) => {
+  onSelect: onSelectFn = (rowIndexes, selected) => {
     const {
       data
     } = this.state;
@@ -235,9 +418,9 @@ export class Table extends React.Component<TableProps, TableState> {
       onSelect
     } = this.props;
 
-    const indexes = [rowIndex];
+    const indexes = [rowIndexes];
     let newData: Data = data;
-    if (rowIndex >= 0) {
+    if (rowIndexes >= 0) {
       newData = updateBatchData(data, indexes, {
         _selected: selected
       });
@@ -249,7 +432,7 @@ export class Table extends React.Component<TableProps, TableState> {
     }
 
     if (onSelect) {
-      onSelect(indexes, selected, rowIndex === -1 ? [] : newData.filter(d => d._selected));
+      onSelect(indexes, selected, rowIndexes === -1 ? [] : newData.filter(d => d._selected));
     }
   }
 

@@ -42,7 +42,7 @@ export const Avatar = (props: AvatarProps) => {
 
   const classes = classNames({
     Avatar: true,
-    [`Avatar--${appearance}`]: appearance,
+    [`Avatar--${appearance}`]: appearance
   });
 
   return (

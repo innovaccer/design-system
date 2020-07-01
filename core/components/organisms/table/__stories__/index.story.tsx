@@ -1,17 +1,16 @@
 import * as React from 'react';
-import { Card } from '@/index';
-import Table from '../Table';
 import schema from '../../grid/__stories__/_common_/schema';
 import data from '../../grid/__stories__/_common_/data';
 import { boolean, select, number } from '@storybook/addon-knobs';
 import loaderSchema from '../../grid/__stories__/_common_/loaderSchema';
 import { fetchData } from '../../grid/__stories__/_common_/fetchData';
 import { action } from '@storybook/addon-actions';
+import { Card, Grid, Table } from '@/index';
 
 export const all = () => {
   const async = boolean(
     'async',
-    true
+    false
   );
 
   let loading;
@@ -153,5 +152,6 @@ export const all = () => {
 
 export default {
   title: 'Organisms|Table',
-  component: Table
+  component: Table,
+  subcomponents: { Grid },
 };

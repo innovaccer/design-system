@@ -53,7 +53,7 @@ export type CellType =
 
 export type ColumnSchema = {
   /**
-   * Key value of `data` object(to be used as default value of Cell)
+   * Key value of `Data` object
    */
   name: string;
   /**
@@ -65,7 +65,7 @@ export type ColumnSchema = {
    */
   width: number;
   /**
-   * Show left separator
+   * Denotes if column is resizable
    */
   resizable?: boolean;
   /**
@@ -111,7 +111,6 @@ export type ColumnSchema = {
 };
 
 export type RowData = Record<string, any> & {
-  _link?: string,
   _selected?: boolean
 };
 
