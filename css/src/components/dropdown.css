@@ -1,15 +1,7 @@
 .Dropdown {
     position: relative;
-    min-width: var(--spacing-7);
+    display: flex;
     width: fit-content;
-}
-
-.Dropdown--placeholder .PopperWrapper-trigger {
-    width: 100%;
-}
-
-.Dropdown--menu {
-    min-width: unset;
 }
 
 .Dropdown-input {

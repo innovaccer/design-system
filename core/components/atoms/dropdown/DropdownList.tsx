@@ -87,9 +87,9 @@ export interface DropdownListProps extends ListProps {
    */
   maxHeight?: number;
   /**
-   * Adds custom width to `Dropdown`
+   * Adds custom width to `Dropdown Trigger` and `Dropdown Popper` (Min-width is 128px)
    */
-  triggerWidth?: number;
+  width?: number;
   /**
    * Number of loaders to be shown when loading is true
    * @default 10
@@ -135,6 +135,7 @@ const DropdownList = (props: OptionsProps) => {
     optionType = 'DEFAULT',
     truncateOption = true,
     maxHeight = 200,
+    customTrigger,
     selected,
     tempSelected,
     previousSelected,
@@ -163,22 +164,22 @@ const DropdownList = (props: OptionsProps) => {
   const [popoverStyle, setPopoverStyle] = React.useState<React.CSSProperties>();
   const [cursor, setCursor] = React.useState(0);
 
-  const width = props.triggerWidth ? props.triggerWidth : '100%';
+  const width = props.width ? props.width : menu || customTrigger ? 'fit-content' : '100%';
 
   React.useEffect(() => {
     if (dropdownOpen) {
       const dropdownElement = triggerRef.current;
-      const popoverWidth = width !== '100%' ? width : `${dropdownElement?.parentElement?.clientWidth}px`;
+      const popoverWidth = props.width ? props.width : `${dropdownElement?.parentElement?.clientWidth}px`;
 
       const popperWrapperStyle = {
-        width: menu ? popoverWidth : `${dropdownElement?.clientWidth}px`,
+        width: menu || customTrigger ? popoverWidth : `${dropdownElement?.clientWidth}px`,
         minWidth: showApplyButton && checkboxes ? '176px' : '128px',
         maxWidth: maxWidth ? maxWidth : '100%',
       };
 
       setPopoverStyle(popperWrapperStyle);
     }
-  }, [dropdownOpen, checkboxes, showApplyButton]);
+  }, [dropdownOpen]);
 
   const {
     triggerSize = 'regular',
@@ -190,10 +191,10 @@ const DropdownList = (props: OptionsProps) => {
     triggerLabel
   } = props;
 
-  const CustomTrigger = props.customTrigger ? props.customTrigger(triggerLabel ? triggerLabel : placeholder) : <></>;
+  const CustomTrigger = customTrigger ? customTrigger(triggerLabel ? triggerLabel : placeholder) : <></>;
   const NewCustomTrigger = React.cloneElement(CustomTrigger, { tabindex: 0, ref: dropdownTriggerRef });
 
-  const trigger = props.customTrigger ? NewCustomTrigger : (
+  const trigger = customTrigger ? NewCustomTrigger : (
     <DropdownButton
       placeholder={placeholder}
       triggerSize={triggerSize}
@@ -208,10 +209,6 @@ const DropdownList = (props: OptionsProps) => {
       {triggerLabel}
     </DropdownButton>
   );
-
-  const dropdownWrapperStyle = menu ? {} : {
-    width,
-  };
 
   const dropdownStyle: React.CSSProperties = {
     maxHeight,
@@ -229,8 +226,6 @@ const DropdownList = (props: OptionsProps) => {
 
   const dropdownClass = classNames({
     ['Dropdown']: true,
-    ['Dropdown--placeholder']: !menu,
-    ['Dropdown--menu']: menu,
   });
 
   const dropdownWrapperClass = classNames({
@@ -512,14 +507,10 @@ const DropdownList = (props: OptionsProps) => {
 
         if (
           ((currentElement === dropdownCancelButtonRef.current
-            &&
-            disabledApplyButton
+            && disabledApplyButton
           )
-            ||
-            currentElement === dropdownApplyButtonRef.current
-          )
-          &&
-          dropdownOpen
+            || currentElement === dropdownApplyButtonRef.current
+          ) && dropdownOpen
         ) {
           event.preventDefault();
           onToggleDropdown();
@@ -545,7 +536,7 @@ const DropdownList = (props: OptionsProps) => {
     <div
       className={dropdownClass}
       ref={triggerRef}
-      style={dropdownWrapperStyle}
+      style={{ width }}
       onKeyDown={onkeydown}
     >
       <Popover
