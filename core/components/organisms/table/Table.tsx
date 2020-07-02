@@ -300,19 +300,13 @@ export class Table extends React.Component<TableProps, TableState> {
     if (!this.state.async) {
       if (prevProps.loading !== this.props.loading
         || prevProps.error !== this.props.error) {
-        const {
-          error,
-          loading,
-          schema,
-          data
-        } = this.props;
         this.setState({
-          loading: loading || false,
-          error: error || false,
+          loading: this.props.loading || false,
+          error: this.props.error || false,
           page: 1,
-          schema: (!error && !loading) ? schema : [],
-          data: (!error && !loading) ? data : [],
-          totalRecords: (!error && !loading) ? data.length : 0,
+          schema: this.props.schema || [],
+          data: this.props.data || [],
+          totalRecords: this.props.data.length || 0,
           sortingList: [],
           filterList: {},
           selectAll: getSelectAll([]),

@@ -28,12 +28,12 @@ export const syncLoaderSchema = () => {
 
   const applyLoaderSchema = boolean(
     'applyLoaderSchema',
-    false
+    true
   );
 
   const applySchema = boolean(
     'applySchema',
-    true
+    false
   );
 
   const applyData = boolean(
