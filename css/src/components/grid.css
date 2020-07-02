@@ -112,7 +112,8 @@
 .Grid-row {
     box-sizing: border-box;
     display: flex;
-    flex: 1 0;
+    flex-grow: 1;
+    flex-shrink: 0;
     background: var(--white);
 }
 
@@ -242,12 +243,12 @@
 .Grid-cellGroup {
     display: flex;
     box-sizing: border-box;
-    position: sticky;
-    left: 0;
     background: var(--white);
 }
 
 .Grid-cellGroup--pinned {
+    position: sticky;
+    left: 0;
     z-index: 1;
     border-right: 3px solid var(--secondary);
 }
