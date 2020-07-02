@@ -57,7 +57,7 @@ export interface PartialCellProps {
 
 //   if (loading) {
 //     return (
-//       <Placeholder withImage={true} imageSize={'medium'} round={true} />
+//       <Placeholder imageSize={'medium'} round={true} />
 //     );
 //   }
 
@@ -207,7 +207,7 @@ export const GridCell = (props: GridCellProps) => {
     case 'DEFAULT':
       if (loading) {
         return (
-          <Placeholder style={{ flexGrow: 1 }}>
+          <Placeholder withImage={false}>
             <PlaceholderParagraph length="medium" />
           </Placeholder>
         );
@@ -221,9 +221,9 @@ export const GridCell = (props: GridCellProps) => {
     case 'WITH_META_LIST':
       if (loading) {
         return (
-          <Placeholder style={{ flexGrow: 1 }}>
+          <Placeholder withImage={false}>
             <PlaceholderParagraph length="medium" />
-            <PlaceholderParagraph length="large" />
+            <PlaceholderParagraph length="large" size="xxs" />
           </Placeholder>
         );
       }
@@ -239,7 +239,7 @@ export const GridCell = (props: GridCellProps) => {
     case 'AVATAR':
       if (loading) {
         return (
-          <Placeholder withImage={true} imageSize={'medium'} round={true} />
+          <Placeholder imageSize={'medium'} round={true} />
         );
       }
       return (
@@ -251,7 +251,7 @@ export const GridCell = (props: GridCellProps) => {
     case 'AVATAR_WITH_TEXT':
       if (loading) {
         return (
-          <Placeholder style={{ flexGrow: 1 }} withImage={true} imageSize={'medium'} round={true}>
+          <Placeholder style={{ flexGrow: 1 }} imageSize={'medium'} round={true}>
             <PlaceholderParagraph length="medium" />
           </Placeholder>
         );
@@ -266,7 +266,7 @@ export const GridCell = (props: GridCellProps) => {
     case 'AVATAR_WITH_META_LIST':
       if (loading) {
         return (
-          <Placeholder style={{ flexGrow: 1 }} withImage={true} imageSize={'medium'} round={true}>
+          <Placeholder style={{ flexGrow: 1 }} imageSize={'medium'} round={true}>
             <PlaceholderParagraph length="medium" />
             <PlaceholderParagraph length="large" />
           </Placeholder>
@@ -285,7 +285,7 @@ export const GridCell = (props: GridCellProps) => {
     case 'ICON':
       if (loading) {
         return (
-          <Placeholder withImage={true} imageSize={'small'} round={true} />
+          <Placeholder imageSize={'small'} round={true} />
         );
       }
       return (
@@ -297,7 +297,7 @@ export const GridCell = (props: GridCellProps) => {
     case 'STATUS_HINT':
       if (loading) {
         return (
-          <Placeholder style={{ flexGrow: 1 }} withImage={true} imageSize={'small'} round={true}>
+          <Placeholder style={{ flexGrow: 1 }} imageSize={'small'} round={true}>
             <PlaceholderParagraph length="medium" />
           </Placeholder>
         );
