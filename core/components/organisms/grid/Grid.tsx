@@ -7,6 +7,7 @@ import { debounce } from 'throttle-debounce';
 import { MainGrid } from './MainGrid';
 
 export type SortType = 'asc' | 'desc';
+export type Pinned = 'left' | 'right';
 export type Alignment = 'left' | 'right' | 'center';
 export type SortFn = (a: RowData, b: RowData) => -1 | 0 | 1;
 export type Filter = any[];
@@ -77,9 +78,9 @@ export type ColumnSchema = {
    */
   separator?: boolean;
   /**
-   * Pinned to left
+   * Pinned
    */
-  pinned?: boolean;
+  pinned?: Pinned;
   /**
    * Hidden
    */

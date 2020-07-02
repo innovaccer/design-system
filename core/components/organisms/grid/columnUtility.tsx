@@ -1,5 +1,5 @@
 import { Grid } from '@/index';
-import { ColumnSchema } from './Grid';
+import { ColumnSchema, Pinned } from './Grid';
 
 export const resizeCol = (_this: Grid, name: string, el: HTMLDivElement | null) => {
   const elX = el?.getBoundingClientRect().x;
@@ -91,9 +91,9 @@ export function sortColumn(this: Grid, name: ColumnSchema['name'], type: 'asc' |
   this.updateSortingList(sortingList);
 }
 
-export function pinColumn(this: Grid, name: ColumnSchema['name'], type: 'left' | 'right') {
+export function pinColumn(this: Grid, name: ColumnSchema['name'], type: Pinned) {
   const schemaUpdate = {
-    pinned: type === 'left' ? true : false
+    pinned: type === 'left' ? 'left' as Pinned : undefined
   };
 
   this.updateColumnSchema(name, schemaUpdate);

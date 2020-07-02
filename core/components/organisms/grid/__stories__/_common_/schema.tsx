@@ -11,7 +11,7 @@ const schema: Schema = [
     displayName: 'Name',
     width: 300,
     resizable: true,
-    // pinned: true,
+    // pinned: 'left',
     separator: true,
     translate: a => ({
       title: `${a.firstName} ${a.lastName}`,
@@ -51,7 +51,7 @@ const schema: Schema = [
     width: 350,
     resizable: true,
     // separator: true,
-    // pinned: true,
+    // pinned: 'left',
     // align: 'center',
     sortFn: (a, b) => a.email.title.localeCompare(b.email.title),
     cellType: 'WITH_META_LIST'

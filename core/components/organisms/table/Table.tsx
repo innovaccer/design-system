@@ -41,7 +41,7 @@ interface SyncProps {
    *        resizable?: boolean;
    *        sortFn?: (a: RowData, b: RowData) => -1 | 0 | 1;
    *        separator?: boolean;
-   *        pinned?: boolean;
+   *        pinned?: 'left' | 'right';
    *        hidden?: boolean;
    *        filters?: DropdownProps['options'];
    *        onFilterChange?: (data: RowData, filters: Filter) => boolean;
