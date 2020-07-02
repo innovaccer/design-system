@@ -126,12 +126,9 @@ const renderAvatar = (props: CellProps) => {
   const { firstName, lastName } = cellData;
 
   if (firstName && lastName) {
-    const appearance = 'primary';
     const children = `${firstName}${lastName}`;
     return (
-      <Avatar
-        appearance={appearance}
-      >
+      <Avatar>
         {children}
       </Avatar>
     );
@@ -251,8 +248,10 @@ export const GridCell = (props: GridCellProps) => {
     case 'AVATAR_WITH_TEXT':
       if (loading) {
         return (
-          <Placeholder style={{ flexGrow: 1 }} imageSize={'medium'} round={true}>
-            <PlaceholderParagraph length="medium" />
+          <Placeholder imageSize={'medium'} round={true}>
+            <span style={{ marginLeft: 'var(--spacing-m)' }}>
+              <PlaceholderParagraph length="medium" />
+            </span>
           </Placeholder>
         );
       }
@@ -267,8 +266,10 @@ export const GridCell = (props: GridCellProps) => {
       if (loading) {
         return (
           <Placeholder style={{ flexGrow: 1 }} imageSize={'medium'} round={true}>
-            <PlaceholderParagraph length="medium" />
-            <PlaceholderParagraph length="large" />
+            <span style={{ marginLeft: 'var(--spacing-m)' }}>
+              <PlaceholderParagraph length="medium" />
+              <PlaceholderParagraph length="large" />
+            </span>
           </Placeholder>
         );
       }

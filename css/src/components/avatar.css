@@ -34,7 +34,7 @@
 }
 
 .Avatar--warning .Heading {
-  color: #745006;
+  color: var(--haldi-darkest);
 }
 
 .Avatar--accent1 {
