@@ -61,7 +61,7 @@ export const GridRow = (props: GridRowProps) => {
     return (
       <div className="Grid-cell Grid-cell--body Grid-checkboxCell">
         {loading ? (
-          <Placeholder withImage={true} />
+          <Placeholder />
         ) : (
             <Checkbox
               checked={data._selected}

@@ -84,7 +84,7 @@ const HeaderCell = (props: HeaderCellProps) => {
         }}
       >
         {loading && !init ? (
-          <Placeholder style={{ flexGrow: 1 }}>
+          <Placeholder withImage={false}>
             <PlaceholderParagraph length="medium" />
           </Placeholder>
         ) : (
@@ -109,7 +109,9 @@ const HeaderCell = (props: HeaderCellProps) => {
       {schema.filters && (
         <>
           {loading && !init ? (
-            <Placeholder withImage={true} />
+            <span>
+              <Placeholder />
+            </span>
           ) : (
               <Dropdown
                 menu={true}
@@ -134,7 +136,9 @@ const HeaderCell = (props: HeaderCellProps) => {
       {showMenu && (
         <>
           {loading && !init ? (
-            <Placeholder withImage={true} />
+            <span>
+              <Placeholder />
+            </span>
           ) : (
               <Dropdown
                 key={schema.name}

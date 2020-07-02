@@ -39,7 +39,7 @@ export const GridHead = (props: GridHeadProps) => {
     return (
       <div className="Grid-cell Grid-cell--head Grid-checkboxCell">
         {loading ? (
-          <Placeholder withImage={true} />
+          <Placeholder />
         ) : (
             <Checkbox
               {...selectAll}
