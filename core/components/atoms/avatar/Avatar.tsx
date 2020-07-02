@@ -1,5 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { Heading } from '@/index';
 
 export type Appearance = 'primary' | 'alert' | 'warning' | 'success' | 'accent1' | 'accent2' | 'accent3' | 'accent4';
 
@@ -57,7 +58,9 @@ export const Avatar = (props: AvatarProps) => {
   });
 
   return (
-    <span className={classes}>{initials}</span>
+    <span className={classes}>
+      <Heading size="s" appearance={appearance === 'warning' ? 'default' : 'white'}>{initials}</Heading>
+    </span>
   );
 };
 

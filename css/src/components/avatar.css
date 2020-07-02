@@ -1,57 +1,54 @@
 /* badge */
 
 .Avatar {
-  width: 32px;
-  height: 32px;
-  margin-left: var(--spacing);
-  margin-right: var(--spacing);
-  overflow: hidden;
-  font-size: var(--font-size-m);
-  line-height: var(--font-height-m);
-  text-transform: uppercase;
-  border-radius: 50%;
   display: flex;
+  flex-grow: 0;
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  text-transform: uppercase;
+  border-radius: 50%;
+}
+
+.Avatar .Heading {
   font-weight: var(--font-weight-medium);
 }
 
 .Avatar--primary {
   background: var(--primary);
-  color: var(--white);
 }
 
 .Avatar--success {
   background: var(--success-light);
-  color: var(--white);
 }
 
 .Avatar--alert {
   background: var(--alert-light);
-  color: var(--white);
 }
 
 .Avatar--warning {
   background: var(--warning-light);
 }
 
+.Avatar--warning .Heading {
+  color: #745006;
+}
+
 .Avatar--accent1 {
   background: var(--accent1-light);
-  color: var(--white);
 }
 
 .Avatar--accent2 {
   background: var(--accent2-light);
-  color: var(--white);
 }
 
 .Avatar--accent3 {
   background: var(--accent3-light);
-  color: var(--white);
 }
 
 .Avatar--accent4 {
   background: var(--accent4-light);
-  color: var(--white);
 }
