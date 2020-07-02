@@ -63,11 +63,11 @@ export interface DropdownListProps extends ListProps {
   /**
    * Determines if user can type to search for options (Always true for options count > 50)
    */
-  search?: boolean;
+  withSearch?: boolean;
   /**
    * Determines if user can select more than one items
    */
-  checkboxes?: boolean;
+  withCheckbox?: boolean;
   /**
    * Updates the value of selected array after apply button is clicked, applicable in case of multiple selections
    */
@@ -145,8 +145,8 @@ const DropdownList = (props: OptionsProps) => {
     searchTerm,
     maxWidth,
     showApplyButton,
-    checkboxes,
-    search,
+    withCheckbox,
+    withSearch,
     onSearchChange,
     optionRenderer,
     applyOptions,
@@ -173,7 +173,7 @@ const DropdownList = (props: OptionsProps) => {
 
       const popperWrapperStyle = {
         width: menu || customTrigger ? popoverWidth : `${dropdownElement?.clientWidth}px`,
-        minWidth: showApplyButton && checkboxes ? '176px' : '128px',
+        minWidth: showApplyButton && withCheckbox ? '176px' : '128px',
         maxWidth: maxWidth ? maxWidth : '100%',
       };
 
@@ -224,6 +224,13 @@ const DropdownList = (props: OptionsProps) => {
     return Dropdown;
   };
 
+  const getDropdownSectionClass = (showClearButton?: boolean) => {
+    return classNames({
+      ['Dropdown-section']: true,
+      ['Dropdown-section--withClear']: showClearButton
+    });
+  };
+
   const dropdownClass = classNames({
     ['Dropdown']: true,
   });
@@ -236,7 +243,6 @@ const DropdownList = (props: OptionsProps) => {
   const SelectAllClass = classNames({
     ['Option']: true,
     ['Option-wrapper']: true,
-    ['Option--top']: true,
     ['Option--active']: cursor === 0
   });
 
@@ -272,7 +278,7 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const updateActiveOption = (index: number, parentCheckbox?: boolean) => {
-    const updatedIndex = checkboxes && !props.async && !parentCheckbox ? index + 1 : index;
+    const updatedIndex = withCheckbox && !props.async && !parentCheckbox ? index + 1 : index;
     setCursor(updatedIndex);
   };
 
@@ -288,12 +294,10 @@ const DropdownList = (props: OptionsProps) => {
   const renderGroups = (group: string, selectedGroup?: boolean) => {
     const { onClearOptions } = props;
     return (
-      <div className={'Dropdown-subinfo'}>
+      <div className={getDropdownSectionClass(selectedGroup)}>
         <Text small={true} appearance={'subtle'}>{group}</Text>
         {selectedGroup && (
-          <div onClick={onClearOptions} className={'Dropdown-clear'}>
-            <Text>Clear</Text>
-          </div>
+          <Button onClick={onClearOptions} appearance="transparent" size="tiny">Clear</Button>
         )}
       </div>
     );
@@ -345,7 +349,7 @@ const DropdownList = (props: OptionsProps) => {
 
   const renderLoading = (loadersLength: number) => {
     const arr = Array(loadersLength).fill('Loading');
-    const type = checkboxes ? 'WITH_CHECKBOX' : optionType;
+    const type = withCheckbox ? 'WITH_CHECKBOX' : optionType;
     return (
       arr.map((option, ind) => {
         return (
@@ -379,17 +383,13 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const renderOptions = (item: OptionSchema, index: number) => {
-    const selectAllPresent = checkboxes && remainingOptions === 0 && searchTerm === '';
+    const selectAllPresent = withCheckbox && remainingOptions === 0 && searchTerm === '';
     const active = selectAllPresent ? index + 1 === cursor : index === cursor;
-    const top = index === 0 && !selectAllPresent;
-    const bottom = index + 1 === (listOptions.length + selected.length) && !(props.async && remainingOptions > 0);
     const optionIsSelected = tempSelected.findIndex(option => option.value === item.value) !== -1;
 
     return (
       <Option
         optionData={item}
-        optionIsTop={top}
-        optionIsBottom={bottom}
         truncateOption={truncateOption}
         selected={optionIsSelected}
         index={index}
@@ -397,7 +397,7 @@ const DropdownList = (props: OptionsProps) => {
         updateActiveOption={updateActiveOption}
         optionRenderer={optionRenderer}
         active={active}
-        checkboxes={checkboxes}
+        checkboxes={withCheckbox}
         menu={menu}
         onChange={c => props.onSelect(item, c)}
         optionType={props.optionType}
@@ -410,7 +410,7 @@ const DropdownList = (props: OptionsProps) => {
     if (loadersCount && loadingOptions) {
       return (
         <div className={'Dropdown-loading'}>
-          <div className="Dropdown-scroller" style={dropdownStyle}>
+          <div className="Dropdown-wrapper" style={dropdownStyle}>
             {
               renderLoading(loadersCount)
             }
@@ -431,33 +431,31 @@ const DropdownList = (props: OptionsProps) => {
     }
 
     return (
-      <div className={dropdownWrapperClass}>
-        {checkboxes && remainingOptions === 0 && searchTerm === '' && renderSelectAll()}
-        <div className="Dropdown-scroller" style={dropdownStyle} ref={dropdownRef}>
-          {selected.length > 0 && renderGroups(selectedSectionLabel, true)}
-          {
-            selected.map((option, index) =>
-              renderOptions(option, index)
-            )
-          }
-          {
-            listOptions.map((option, index) => {
-              const prevGroup = index > 0 ?
-                listOptions[index - 1].group : selected.length ? selectedSectionLabel : undefined;
-              const currentGroup = option.group;
-              const isGroup = prevGroup !== currentGroup;
-              const updatedIndex = index + selected.length;
+      <div className={dropdownWrapperClass} style={dropdownStyle} ref={dropdownRef}>
+        {withCheckbox && remainingOptions === 0 && searchTerm === '' && renderSelectAll()}
+        {selected.length > 0 && renderGroups(selectedSectionLabel, true)}
+        {
+          selected.map((option, index) =>
+            renderOptions(option, index)
+          )
+        }
+        {
+          listOptions.map((option, index) => {
+            const prevGroup = index > 0 ?
+              listOptions[index - 1].group : selected.length ? selectedSectionLabel : undefined;
+            const currentGroup = option.group;
+            const isGroup = prevGroup !== currentGroup;
+            const updatedIndex = index + selected.length;
 
-              return (
-                <div className={getDropdownClass(updatedIndex, isGroup)} key={index}>
-                  {isGroup && currentGroup && renderGroups(currentGroup)}
-                  {renderOptions(option, updatedIndex)}
-                </div>
-              );
-            })
-          }
-          {props.async && remainingOptions > 0 && renderFooter()}
-        </div>
+            return (
+              <div className={getDropdownClass(updatedIndex, isGroup)} key={index}>
+                {isGroup && currentGroup && renderGroups(currentGroup)}
+                {renderOptions(option, updatedIndex)}
+              </div>
+            );
+          })
+        }
+        {props.async && remainingOptions > 0 && renderFooter()}
       </div>
     );
   };
@@ -488,7 +486,7 @@ const DropdownList = (props: OptionsProps) => {
           (dropdownInputRef.current === activeElement || dropdownTriggerRef.current === activeElement)
         ) {
           event.preventDefault();
-          const className = checkboxes ? `${optionClass} .Checkbox` : optionClass;
+          const className = withCheckbox ? `${optionClass} .Checkbox` : optionClass;
           const elements = document.querySelectorAll(className);
           const element = elements[cursor] as HTMLElement;
           if (element) element.click();
@@ -547,9 +545,9 @@ const DropdownList = (props: OptionsProps) => {
         position={alignmentMapping[align]}
         appendToBody={true}
       >
-        {(search || props.async) && renderSearch()}
+        {(withSearch || props.async) && renderSearch()}
         {renderDropdownSection()}
-        {showApplyButton && checkboxes && renderApplyButton()}
+        {showApplyButton && withCheckbox && renderApplyButton()}
       </Popover >
     </div>
   );

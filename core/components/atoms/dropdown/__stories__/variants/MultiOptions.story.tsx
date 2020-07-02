@@ -18,8 +18,8 @@ export const multiOptions = () => {
       <div style={style}>
         <Text weight="strong">{'With Apply Button'}</Text><br />
         <Dropdown
-          maxHeight={150}
-          checkboxes={true}
+          maxHeight={180}
+          withCheckbox={true}
           showApplyButton={true}
           options={storyOptions}
           placeholder={'Select'}
@@ -27,7 +27,7 @@ export const multiOptions = () => {
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '150px' }}>
         <Text weight="strong">{'Without Apply Button'}</Text><br />
-        <Dropdown checkboxes={true} options={storyOptions} placeholder={'Select'} />
+        <Dropdown withCheckbox={true} options={storyOptions} placeholder={'Select'} />
       </div>
     </div>
   );

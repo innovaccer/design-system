@@ -114,7 +114,7 @@ const HeaderCell = (props: HeaderCellProps) => {
               <Dropdown
                 menu={true}
                 showApplyButton={true}
-                checkboxes={true}
+                withCheckbox={true}
                 triggerOptions={{
                   customTrigger: () => (
                     <Button

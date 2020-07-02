@@ -30,9 +30,9 @@ export const all = () => {
 
   const menu = boolean('menu', false);
 
-  const search = boolean('search', false);
+  const withSearch = boolean('withSearch', false);
 
-  const checkboxes = boolean('checkboxes', false);
+  const withCheckbox = boolean('withCheckbox', false);
 
   const showApplyButton = boolean('show apply button', false);
 
@@ -92,8 +92,8 @@ export const all = () => {
     disabled,
     menu,
     closeOnSelect,
-    search,
-    checkboxes,
+    withSearch,
+    withCheckbox,
     showApplyButton,
     maxHeight,
     loadersCount,
@@ -107,7 +107,7 @@ export const all = () => {
     maxWidth: 170,
   };
 
-  const key = `checkbox${checkboxes} applyButton:${showApplyButton}`;
+  const key = `checkbox${withCheckbox} applyButton:${showApplyButton}`;
 
   return (
     <div style={{ width: '170px', marginLeft: '128px' }} key={key}>

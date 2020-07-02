@@ -41,11 +41,11 @@ export const sections = () => {
               <div style={{ display: 'flex' }}>
                 <div style={innerStyle}>
                   <Text weight="strong">{'With Sections'}</Text><br />
-                  <Dropdown options={options} checkboxes={value} />
+                  <Dropdown options={options} withCheckbox={value} />
                 </div>
                 <div style={innerStyle}>
                   <Text weight="strong">{'Without Sections'}</Text> <br />
-                  <Dropdown options={storyOptions} checkboxes={value} />
+                  <Dropdown options={storyOptions} withCheckbox={value} />
                 </div>
               </div> <br />
             </div>

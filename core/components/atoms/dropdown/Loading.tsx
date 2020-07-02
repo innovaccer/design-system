@@ -18,7 +18,7 @@ const Loading = (props: any) => {
       );
     case 'WITH_META':
       return (
-        <Placeholder>
+        <Placeholder withImage={false}>
           <PlaceholderParagraph length="large" />
           <PlaceholderParagraph length="medium" />
         </Placeholder>

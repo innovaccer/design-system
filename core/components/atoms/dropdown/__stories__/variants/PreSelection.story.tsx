@@ -37,7 +37,7 @@ export const preSelection = () => {
               </Text>
               <br /><br />
               <Dropdown
-                checkboxes={true}
+                withCheckbox={true}
                 options={options}
                 {...(value && { fetchOptions })}
               />
@@ -85,7 +85,7 @@ const customCode = `() => {
           return (
             <div key={ind} style={{ marginRight: '10%', width: '170px' }}>
               <Text weight="strong">{value ? 'Options > 50' : 'Options <= 50'}</Text> <br /><br />
-              <Dropdown checkboxes={true} bulk={value} options={options} {...(value && { fetchOptions })} />
+              <Dropdown withCheckbox={true} bulk={value} options={options} {...(value && { fetchOptions })} />
             </div>
           );
         })

@@ -46,7 +46,7 @@ export const cutsomOption = () => {
       </div>
       <div style={{ marginRight: '20%', width: '200px' }}>
         <Text weight="strong">With Checkbox</Text> <br /><br />
-        <Dropdown options={storyOptions} optionRenderer={customCheckboxRenderer} checkboxes={true} />
+        <Dropdown options={storyOptions} optionRenderer={customCheckboxRenderer} withCheckbox={true} />
       </div>
     </div>
   );
@@ -100,7 +100,7 @@ const customCode = `() => {
       </div>
       <div style={{ marginRight: '20%', width: '200px' }}>
         <Text weight="strong">With Checkbox</Text> <br /><br />
-        <Dropdown options={storyOptions} optionRenderer={customCheckboxRenderer} checkboxes={true} />
+        <Dropdown options={storyOptions} optionRenderer={customCheckboxRenderer} withCheckbox={true} />
       </div>
     </div>
   );

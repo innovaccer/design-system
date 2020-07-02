@@ -36,14 +36,12 @@ interface SyncProps {
 interface AsyncProps {
   /**
    * Callback function to fetch options from API
-   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
-   * Promise object to be returned:
-   * {
-   *    options: Option[]
-   *    count: number
-   * }
+   * <pre className="DocPage-codeBlock">
+   * fetchOptionsFnc: (searchTerm: string) => Promise<{
+   *      count: number,
+   *      option: Option[],
+   * }>;
    * </pre>
-   *
    */
   fetchOptions?: fetchOptionsFnc;
 }
@@ -231,7 +229,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     } = this.state;
 
     let updatedAsync = async === undefined ? this.state.async : async;
-    const { fetchOptions, checkboxes } = this.props;
+    const { fetchOptions, withCheckbox } = this.props;
     const fetchFn = fetchOptions ? fetchOptions : this.fetchOptionsFn;
 
     fetchFn(searchTerm)
@@ -239,7 +237,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
         const { options, count } = res;
         updatedAsync = searchTerm === '' ? count > bulk : updatedAsync;
 
-        const unSelectedGroup = checkboxes && searchTerm === '' && updatedAsync ?
+        const unSelectedGroup = withCheckbox && searchTerm === '' && updatedAsync ?
           this.getUnSelectedOptions(options, init) : options;
         const selectedGroup = searchTerm === '' ?
           this.getSelectedOptions(options, init) : [];
@@ -250,7 +248,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
           async: updatedAsync,
           searchedOptionsLength: count,
           options: unSelectedGroup.slice(0, bulk),
-          selected: checkboxes && updatedAsync ? selectedGroup : [],
+          selected: withCheckbox && updatedAsync ? selectedGroup : [],
           optionsLength: searchTerm === '' ? count : optionsLength,
           tempSelected: init ? selectedGroup : tempSelected,
           previousSelected: init ? selectedGroup : previousSelected,
@@ -417,7 +415,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     if (this.props.disabled) {
       return;
     }
-    const { showApplyButton, checkboxes, onClose, name } = this.props;
+    const { showApplyButton, withCheckbox, onClose, name } = this.props;
     const {
       triggerLabel,
       optionsApplied,
@@ -432,8 +430,8 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       searchTerm
     } = this.state;
 
-    const applyClicked = checkboxes && showApplyButton && !optionsApplied;
-    const moveSelectedGroup = async && searchTerm === '' && checkboxes && !_isEqual(selected, tempSelected);
+    const applyClicked = withCheckbox && showApplyButton && !optionsApplied;
+    const moveSelectedGroup = async && searchTerm === '' && withCheckbox && !_isEqual(selected, tempSelected);
 
     this.setState({
       ...this.state,

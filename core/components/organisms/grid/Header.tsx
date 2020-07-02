@@ -170,7 +170,7 @@ export const Header = (props: HeaderProps) => {
                   return (
                     <Dropdown
                       key={name}
-                      checkboxes={true}
+                      withCheckbox={true}
                       showApplyButton={true}
                       inlineLabel={displayName}
                       icon={'filter_list'}
@@ -233,7 +233,7 @@ export const Header = (props: HeaderProps) => {
             <Dropdown
               key={`${flag}`}
               triggerSize={'tiny'}
-              checkboxes={true}
+              withCheckbox={true}
               showApplyButton={true}
               options={columnOptions}
               totalOptions={columnOptions.length}
