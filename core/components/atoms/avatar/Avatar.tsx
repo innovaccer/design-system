@@ -30,7 +30,6 @@ const initialsLength = 2;
  */
 export const Avatar = (props: AvatarProps) => {
   const {
-    appearance = 'primary',
     children,
     firstName,
     lastName
@@ -39,6 +38,18 @@ export const Avatar = (props: AvatarProps) => {
   const initials = children
     ? children.trim().slice(0, initialsLength)
     : `${firstName ? firstName.trim()[0] : ''}${lastName ? lastName.trim()[0] : ''}`;
+
+  const colors = [
+    'primary',
+    'alert',
+    'warning',
+    'success',
+    'accent1',
+    'accent2',
+    'accent3',
+    'accent4'
+  ];
+  const appearance = props.appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8];
 
   const classes = classNames({
     Avatar: true,
