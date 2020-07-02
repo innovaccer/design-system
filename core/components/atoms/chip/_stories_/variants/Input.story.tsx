@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
+import { Text } from '@/index';
 import Chip, { Name } from '../../Chip';
 import { action } from '@storybook/addon-actions';
 const BooleanValue = [true, false];
@@ -34,13 +35,15 @@ export const Input = () => {
               <Chip
                 icon={icon}
                 label={label}
-                clearbutton={true}
+                clearButton={true}
                 disabled={booleanvalue}
                 type="input"
                 onClose={onCloseHandler}
                 onClick={onClickHandler}
                 name={name}
               />
+              <br />
+              <Text weight="strong">{`Disabled: ${booleanvalue}`}</Text>
             </div>
           );
         })

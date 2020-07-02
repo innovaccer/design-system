@@ -13,8 +13,8 @@ export const Types = () => {
     'label',
     'ChipLabel',
   );
-  const clearbutton = boolean(
-    'clearbutton', true
+  const clearButton = boolean(
+    'clearButton', true
   );
   const disabled = false;
   const selected = false;
@@ -40,7 +40,7 @@ export const Types = () => {
               <Chip
                 icon={icon}
                 label={label}
-                clearbutton={clearbutton}
+                clearButton={clearButton}
                 disabled={disabled}
                 type={type}
                 onClose={onCloseHandler}
