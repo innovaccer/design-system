@@ -8,7 +8,7 @@ import Checkbox from '../Checkbox';
 export const all = () => {
   const size = select(
     'size',
-    ['tiny', 'regular'],
+    ['regular', 'tiny'],
     undefined
   );
 
@@ -32,10 +32,10 @@ export const all = () => {
     false
   );
 
-  const onChangeHandler = (checkedValue: boolean) => {
-    updateKnob('checked', checkedValue);
-    updateKnob('indeterminate', false);
-    return action(`onChange: ${checkedValue}`)();
+  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    updateKnob('checked', event.target.checked);
+    updateKnob('indeterminate', event.target.indeterminate);
+    return action(`onChange: ${event.target.checked}`)();
   };
 
   return (

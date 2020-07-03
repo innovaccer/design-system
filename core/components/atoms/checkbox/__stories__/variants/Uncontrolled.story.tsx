@@ -4,8 +4,8 @@ import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const uncontrolledCheckbox = () => {
-  const handleParentChange = (checkedValue: boolean) => {
-    return action(`onChange: ${checkedValue}`)();
+  const handleParentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    return action(`onChange: ${event.target.checked}`)();
   };
 
   return (

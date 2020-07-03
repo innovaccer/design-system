@@ -5,6 +5,8 @@ import Icon from '@/components/atoms/icon';
 
 export type Size = 'regular' | 'tiny';
 
+type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
+
 export interface CheckboxProps {
   /**
    * Size of the `Checkbox`
@@ -12,11 +14,11 @@ export interface CheckboxProps {
    */
   size?: Size;
   /**
-   * Default value of checked
+   * Default value of checked (Used in case of uncontrolled `Checkbox`)
    */
   defaultChecked?: boolean;
   /**
-   * Denotes Selection
+   * Denotes Selection (Used in case of controlled `Checkbox`)
    */
   checked?: boolean;
   /**
@@ -46,7 +48,7 @@ export interface CheckboxProps {
   /**
    * Callback function called when user the selects an option
    */
-  onChange?: (checked: boolean, name?: string, value?: string | number, indeterminate?: boolean) => void;
+  onChange?: (event: ChangeEvent) => void;
 }
 
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props, forwardedRef) => {
@@ -85,49 +87,65 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     [`Checkbox--${size}`]: size,
   });
 
+  const CheckboxOuterWrapper = classNames({
+    ['Checkbox-outerWrapper']: true,
+  });
+
+  const CheckboxTextClass = classNames({
+    ['Checkbox-label']: true,
+    [`Checkbox-label--${size}`]: size
+  });
+
+  const CheckboxInputWrapper = classNames({
+    ['Checkbox-input']: true,
+    ['Checkbox-input--checked']: checked,
+    ['Checkbox-input--indeterminate']: props.indeterminate
+  });
+
   const CheckboxWrapper = classNames({
     ['Checkbox-wrapper']: true,
     [`Checkbox-wrapper--${size}`]: size,
-    ['Checkbox-wrapper--checked']: checked,
-    ['Checkbox-wrapper--indeterminate']: props.indeterminate,
   });
 
   const setIndeterminate = (indeterminate: any) => {
     ref.current!.indeterminate = indeterminate;
   };
 
-  const onChangeHandler = (e: React.MouseEvent) => {
-    e.stopPropagation();
-
-    const checkedValue = (props.indeterminate) ? false : !checked;
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (props.checked === undefined) {
-      setChecked(checkedValue);
-      setIndeterminate(false);
+      setChecked(e.target.checked);
+      setIndeterminate(e.target.indeterminate);
     }
-    if (onChange) onChange(checkedValue, name, value, false);
+    if (onChange) onChange(e);
   };
 
   const IconName = (props.indeterminate) ? 'remove' : ((checked) ? 'check' : '');
   const IconSize = (size) === 'tiny' ? 8 : 16;
 
   return (
-    <div className={CheckboxClass} onClick={onChangeHandler}>
-      <input
-        type="checkbox"
-        defaultChecked={defaultChecked}
-        checked={checked}
-        disabled={disabled}
-        ref={ref}
-        name={name}
-        value={value}
-        tabIndex={tabIndex}
-        className={'Checkbox-input'}
-      />
-      <span className={CheckboxWrapper}>
-        {(IconName) && <Icon name={IconName} size={IconSize} appearance={'white'} />}
-      </span>
+    <div className={CheckboxClass}>
+      <div className={CheckboxOuterWrapper}>
+        <input
+          type="checkbox"
+          defaultChecked={defaultChecked}
+          onChange={onChangeHandler}
+          checked={checked}
+          disabled={disabled}
+          ref={ref}
+          name={name}
+          value={value}
+          className={CheckboxInputWrapper}
+          tabIndex={tabIndex}
+          id={label}
+        />
+        <span className={CheckboxWrapper}>
+          {(IconName) && <Icon name={IconName} size={IconSize} appearance={'white'} />}
+        </span>
+      </div>
       {label && label.trim() && (
-        <div className={'Checkbox-text'}><Text small={size === 'tiny'}>{label.trim()}</Text></div>
+        <label htmlFor={label} className={CheckboxTextClass}>
+          <Text small={size === 'tiny'}>{label.trim()}</Text>
+        </label>
       )}
     </div>
   );

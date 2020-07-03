@@ -10,6 +10,7 @@ import Input from '@/components/atoms/input';
 import classNames from 'classnames';
 import Loading from './Loading';
 
+export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 export type DropdownAlign = 'left' | 'right';
 export type OptionType =
   'DEFAULT' |
@@ -114,7 +115,7 @@ interface OptionsProps extends DropdownListProps {
   cancelOptions: () => void;
   toggleDropdown: () => void;
   onClearOptions: () => void;
-  onSelectAll: (selectedAll: boolean) => void;
+  onSelectAll: (event: ChangeEvent) => void;
   onSearchChange?: (searchText: string) => void;
   onOptionSelect: (selected: any[] | any) => void;
   onSelect: (option: OptionSchema, checked: boolean) => void;
@@ -242,6 +243,7 @@ const DropdownList = (props: OptionsProps) => {
 
   const SelectAllClass = classNames({
     ['Option']: true,
+    ['Option--withCheckbox']: true,
     ['Option-wrapper']: true,
     ['Option--active']: cursor === 0
   });
@@ -393,13 +395,13 @@ const DropdownList = (props: OptionsProps) => {
         truncateOption={truncateOption}
         selected={optionIsSelected}
         index={index}
-        onClick={() => optionClickHandler(item)}
         updateActiveOption={updateActiveOption}
         optionRenderer={optionRenderer}
         active={active}
         checkboxes={withCheckbox}
         menu={menu}
-        onChange={c => props.onSelect(item, c)}
+        onClick={() => optionClickHandler(item)}
+        onChange={e => props.onSelect(item, e.target.checked)}
         optionType={props.optionType}
       />
     );
@@ -486,7 +488,7 @@ const DropdownList = (props: OptionsProps) => {
           (dropdownInputRef.current === activeElement || dropdownTriggerRef.current === activeElement)
         ) {
           event.preventDefault();
-          const className = withCheckbox ? `${optionClass} .Checkbox` : optionClass;
+          const className = withCheckbox ? `${optionClass} .Checkbox-input` : optionClass;
           const elements = document.querySelectorAll(className);
           const element = elements[cursor] as HTMLElement;
           if (element) element.click();

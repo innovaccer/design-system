@@ -422,13 +422,13 @@ export class Grid extends React.Component<GridProps, GridState> {
     }
   }
 
-  onSelectAll: CheckboxProps['onChange'] = selected => {
+  onSelectAll: CheckboxProps['onChange'] = (event: React.ChangeEvent<HTMLInputElement>) => {
     const {
       onSelectAll,
     } = this.props;
 
     if (onSelectAll) {
-      onSelectAll(selected);
+      onSelectAll(event.target.checked);
       // this.updateSelectAll({
       //   indeterminate: false,
       //   checked: selected

@@ -7,7 +7,6 @@ export const multipleChoiceList = () => {
     display: 'flex',
     'flex-direction': 'column',
     paddingLeft: '25px',
-    paddingTop: '5px',
   };
   const parentObj = { checked: false, indeterminate: false };
   const labels = ['InConnect', 'InGraph', 'InReport'];
@@ -16,20 +15,15 @@ export const multipleChoiceList = () => {
   const [checked, setChecked] = React.useState(childArray);
   const [parentStatus, setParentStatus] = React.useState(parentObj);
 
-  const handleParentChange = (
-    checkedValue: boolean,
-    _name?: string,
-    _value?: string | number,
-    indeterminate: boolean = false
-  ) => {
-    const updatedArray = [...childArray].fill(checkedValue);
+  const handleParentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const updatedArray = [...childArray].fill(event.target.checked);
     setChecked(updatedArray);
-    setParentStatus({ indeterminate, checked: checkedValue });
+    setParentStatus({ indeterminate: event.target.indeterminate, checked: event.target.checked });
   };
 
-  const handleChildChange = (checkedValue: boolean, index: number) => {
+  const handleChildChange = (event: React.ChangeEvent<HTMLInputElement>, index: number) => {
     const updateCheck = [...checked];
-    updateCheck[index] = checkedValue;
+    updateCheck[index] = event.target.checked;
     const totalCount = labels.length;
     const countT = updateCheck.filter(Boolean).length;
     const status = countT < totalCount;
@@ -73,17 +67,15 @@ const customCode = `() => {
   const [checked, setChecked] = React.useState(childArray);
   const [parentStatus, setParentStatus] = React.useState({ checked: false, indeterminate: false });
 
-  const handleParentChange = (checkedValue) => {
-    const updatedArray = [...childArray].fill(checkedValue);
+  const handleParentChange = (event) => {
+    const updatedArray = [...childArray].fill(event.target.checked);
     setChecked(updatedArray);
-    if (checkedValue) {
-      setParentStatus({ checked: checkedValue, indeterminate: !checkedValue });
-    }
+    setParentStatus({ checked: event.target.checked, indeterminate: event.target.indeterminate });
   };
 
-  const handleChildChange = (checkedValue, index) => {
+  const handleChildChange = (event, index) => {
     const updateCheck = [...checked];
-    updateCheck[index] = checkedValue;
+    updateCheck[index] = event.target.checked;
     const totalCount = labels.length;
     const countT = updateCheck.filter(Boolean).length;
     const status = countT < totalCount;
@@ -105,7 +97,6 @@ const customCode = `() => {
           display: 'flex',
           'flex-direction': 'column',
           paddingLeft: '25px',
-          paddingTop: '5px'
         }}>
         {
           labels.map((label, ind) => {

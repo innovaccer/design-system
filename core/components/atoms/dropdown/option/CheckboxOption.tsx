@@ -14,8 +14,8 @@ const CheckboxOption = (props: OptionTypeProps) => {
 
   const { label } = optionData;
 
-  const onChangeHandler = (checked: boolean) => {
-    if (onChange) onChange(checked);
+  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (onChange) onChange(event);
   };
 
   const onUpdateActiveOption = () => {

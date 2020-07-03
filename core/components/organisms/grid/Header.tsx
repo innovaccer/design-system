@@ -192,8 +192,8 @@ export const Header = (props: HeaderProps) => {
           {!showHead && withCheckbox && !loading && (
             <Checkbox
               {...selectAll}
-              onChange={selected => {
-                if (onSelectAll) onSelectAll(selected);
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                if (onSelectAll) onSelectAll(event.target.checked);
               }}
             />
           )}

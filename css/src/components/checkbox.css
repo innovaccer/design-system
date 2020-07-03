@@ -9,18 +9,36 @@
     -ms-user-select: none;
     user-select: none;
     line-height: initial;
+    box-sizing: border-box;
 }
 
-.Checkbox .Checkbox-input {
+.Checkbox-input {
+    position: absolute;
+    z-index: 2;
     opacity: 0;
     cursor: pointer;
-    height: 0;
-    width: 0;
+    height: 100%;
+    width: 100%;
     margin: 0;
 }
 
-.Checkbox-text {
+.Checkbox-label {
     padding-left: var(--spacing);
+    cursor: pointer;
+}
+
+.Checkbox-label--regular {
+    margin-top: var(--spacing-s);
+    margin-bottom: var(--spacing-s);
+}
+
+.Checkbox-label--tiny {
+    margin-top: var(--spacing-m);
+    margin-bottom: var(--spacing-m);
+}
+
+.Checkbox-outerWrapper {
+    position: relative;
 }
 
 /* Type: Unchecked  */
@@ -32,7 +50,7 @@
     border-radius: var(--spacing-s);
     display: flex;
     align-items: center;
-    box-sizing: border-box;
+    box-sizing: border-box;   
 }
 
 .Checkbox-wrapper--regular {
@@ -45,19 +63,22 @@
     min-width: var(--spacing);
 }
 
-.Checkbox-wrapper:hover {
+.Checkbox-input:focus {
+    outline: 0;
+}
+
+.Checkbox-input:focus~.Checkbox-wrapper {
+    box-shadow: var(--shadow-spread) var(--secondary-shadow);
+}
+
+.Checkbox-input:hover~.Checkbox-wrapper {
     border: var(--spacing-xs) solid var(--inverse-lightest);
     background-color: var(--shadow-0);
 }
 
-.Checkbox-wrapper:active {
+.Checkbox-input:active~.Checkbox-wrapper {
     border: var(--spacing-xs) solid var(--inverse-lightest);
     background-color: var(--secondary-light);
-}
-
-.Checkbox-wrapper:focus {
-    border: var(--border);
-    background-color: var(--shadow-0);
 }
 
 .Checkbox--disabled {
@@ -69,35 +90,35 @@
     background-color: var(--secondary-lightest);
 }
 
-
 /* Type: checked && Type: indeterminate  */
 
-.Checkbox-wrapper--checked,
-.Checkbox-wrapper--indeterminate {
+.Checkbox-input--checked~.Checkbox-wrapper,
+.Checkbox-input--indeterminate~.Checkbox-wrapper {
     background-color: var(--primary);
     border: 0;
 }
 
-.Checkbox-wrapper--checked:hover,
-.Checkbox-wrapper--indeterminate:hover {
+.Checkbox-input--checked:focus~.Checkbox-wrapper,
+.Checkbox-input--indeterminate:focus~.Checkbox-wrapper {
+    box-shadow: var(--shadow-spread) var(--primary-shadow);
+    background-color: var(--primary);
+    border: 0;
+}
+
+.Checkbox-input--checked:hover~.Checkbox-wrapper,
+.Checkbox-input--indeterminate:hover~.Checkbox-wrapper {
     background-color: var(--primary-dark);
     border: 0;
 }
 
-.Checkbox-wrapper--checked:active,
-.Checkbox-wrapper--indeterminate:active {
+.Checkbox-input--checked:active~.Checkbox-wrapper,
+.Checkbox-input--indeterminate:active~.Checkbox-wrapper {
     background-color: var(--primary-darker);
     border: 0;
 }
 
-.Checkbox-wrapper--checked:focus,
-.Checkbox-wrapper--indeterminate:focus {
-    background-color: var(--primary);
-    border: 0;
-}
-
-.Checkbox--disabled .Checkbox-wrapper--checked,
-.Checkbox--disabled .Checkbox-wrapper--indeterminate {
+.Checkbox--disabled .Checkbox-input--checked~.Checkbox-wrapper,
+.Checkbox--disabled .Checkbox-input--indeterminate~.Checkbox-wrapper {
     background-color: var(--primary-lighter);
     border: 0;
 }
