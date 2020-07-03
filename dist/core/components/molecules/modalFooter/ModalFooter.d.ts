@@ -1,5 +1,6 @@
 import * as React from 'react';
-export interface ModalFooterProps {
+import { BaseProps } from '@/utils/types';
+export interface ModalFooterProps extends BaseProps {
     children: React.ReactElement[];
 }
 export declare const ModalFooter: {

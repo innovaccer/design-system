@@ -1,6 +1,7 @@
 /// <reference types="react" />
+import { BaseProps } from '@/utils/types';
 export declare type Size = 'small' | 'medium' | 'large';
-export interface PlaceholderImageProps {
+export interface PlaceholderImageProps extends BaseProps {
     round?: boolean;
     size?: Size;
 }

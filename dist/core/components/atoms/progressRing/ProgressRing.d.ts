@@ -1,6 +1,7 @@
 /// <reference types="react" />
+import { BaseProps } from '@/utils/types';
 export declare type Size = 'small' | 'regular';
-export interface ProgressRingProps {
+export interface ProgressRingProps extends BaseProps {
     size?: Size;
     value: number;
     max?: number;

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ExternalHeaderProps, updateSearchTermFn, HeaderProps } from '../grid/Header';
 import { Data, Schema, onSelectFn, onSelectAllFn, GridProps, FetchDataOptions, fetchDataFn, RowData, updateSchemaFn, updateSortingListFn, updateFilterListFn } from '../grid';
+import { BaseProps } from '@/utils/types';
 interface SyncProps {
     data: Data;
     schema: Schema;
@@ -11,7 +12,7 @@ interface SyncProps {
 interface AsyncProps {
     fetchData: fetchDataFn;
 }
-interface SharedTableProps {
+interface SharedTableProps extends BaseProps {
     showHead?: GridProps['showHead'];
     type?: GridProps['type'];
     size?: GridProps['size'];

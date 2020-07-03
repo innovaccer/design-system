@@ -20,6 +20,7 @@ export interface OptionTypeProps {
     optionData: OptionSchema;
     selected: boolean;
     index: number;
+    menu?: boolean;
     onClick?: () => void;
     onChange?: (event: ChangeEvent) => void;
     updateActiveOption?: (index: number) => void;

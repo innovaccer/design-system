@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { IconProps } from '@/components/atoms/icon';
+import { BaseProps } from '@/utils/types';
 export declare type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
 export declare type AutoComplete = 'on' | 'off';
 export declare type Size = 'tiny' | 'regular' | 'large';
-export interface InputProps {
+export interface InputProps extends BaseProps {
     name?: string;
     type?: InputType;
     value?: string;

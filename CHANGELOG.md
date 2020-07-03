@@ -316,3 +316,10 @@
 * cbefdbd chore: adds children knob in message
 * aa93900 fix: fixes margin-left for first Breadcrumbs item
 * 6dcd99d chore: renames dropdown props
+
+-------------------
+ **v1.0.0-22**  (2020-07-03) 
+
+* 67fefdf v1.0.0-22
+* 21f1365 fix: fixes option icon CSS in dropdown
+* 963043f feat(#123): adds base props

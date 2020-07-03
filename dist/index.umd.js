@@ -356,6 +356,14 @@
     };
   }
 
+  var baseProps = ['className', 'data-test'];
+  var extractBaseProps = function extractBaseProps(props) {
+    var basePropsObj = baseProps.reduce(function (acc, curr) {
+      return props[curr] ? _objectSpread2(_objectSpread2({}, acc), {}, _defineProperty({}, curr, props[curr])) : _objectSpread2({}, acc);
+    }, {});
+    return basePropsObj;
+  };
+
   var initialsLength = 2;
   /**
    * **NOTE: children will be rendered if both children and (firstName, lastName) are provided as prop.**
@@ -364,18 +372,21 @@
   var Avatar = function Avatar(props) {
     var children = props.children,
         firstName = props.firstName,
-        lastName = props.lastName;
+        lastName = props.lastName,
+        className = props.className,
+        appearance = props.appearance;
+    var baseProps = extractBaseProps(props);
     var initials = children ? children.trim().slice(0, initialsLength) : "".concat(firstName ? firstName.trim()[0] : '').concat(lastName ? lastName.trim()[0] : '');
     var colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
-    var appearance = props.appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8];
+    var AvatarAppearance = appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8];
     var classes = classNames(_defineProperty({
       Avatar: true
-    }, "Avatar--".concat(appearance), appearance));
-    return /*#__PURE__*/React.createElement("span", {
+    }, "Avatar--".concat(AvatarAppearance), AvatarAppearance), className);
+    return /*#__PURE__*/React.createElement("span", _extends({}, baseProps, {
       className: classes
-    }, /*#__PURE__*/React.createElement(Heading, {
+    }), /*#__PURE__*/React.createElement(Heading, {
       size: "s",
-      appearance: appearance === 'warning' ? 'default' : 'white'
+      appearance: AvatarAppearance === 'warning' ? 'default' : 'white'
     }, initials));
   };
   Avatar.displayName = 'Avatar';
@@ -384,6 +395,9 @@
       useState = React.useState;
 
   var Backdrop = function Backdrop(props) {
+    var className = props.className;
+    var baseProps = extractBaseProps(props);
+
     var _useState = useState(null),
         _useState2 = _slicedToArray(_useState, 2),
         savedBodyOverflow = _useState2[0],
@@ -404,7 +418,7 @@
       'Backdrop--open': open,
       'Backdrop-animation--open': animate,
       'Backdrop-animation--close': !animate
-    });
+    }, className);
 
     var disableBodyScroll = function disableBodyScroll() {
       if (savedBodyOverflow) {
@@ -438,9 +452,9 @@
         enableBodyScroll();
       };
     }, [props.open]);
-    var BackdropElement = /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement("div", {
+    var BackdropElement = /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes
-    }), document.body);
+    })), document.body);
     return BackdropElement;
   };
 
@@ -453,14 +467,14 @@
         appearance = _props$appearance === void 0 ? 'secondary' : _props$appearance,
         children = props.children,
         subtle = props.subtle,
-        rest = _objectWithoutProperties(props, ["appearance", "children", "subtle"]);
-
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var classes = classNames((_classNames = {
       Badge: true
-    }, _defineProperty(_classNames, "Badge--".concat(appearance), appearance && !subtle), _defineProperty(_classNames, "Badge--subtle-".concat(appearance), subtle), _classNames));
-    return /*#__PURE__*/React.createElement("span", _extends({
+    }, _defineProperty(_classNames, "Badge--".concat(appearance), appearance && !subtle), _defineProperty(_classNames, "Badge--subtle-".concat(appearance), subtle), _classNames), className);
+    return /*#__PURE__*/React.createElement("span", _extends({}, baseProps, {
       className: classes
-    }, rest), children);
+    }), children);
   };
   Badge.displayName = 'Badge';
 
@@ -920,7 +934,8 @@
         hoverable = props.hoverable,
         children = props.children,
         trigger = props.trigger,
-        onToggle = props.onToggle;
+        onToggle = props.onToggle,
+        className = props.className;
 
     var _React$useState = React.useState(props.open || false),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -939,7 +954,7 @@
 
     var classes = classNames(_defineProperty({
       Popover: true
-    }, 'Popover--dark', dark));
+    }, 'Popover--dark', dark), className);
     var PopoverWrapper = /*#__PURE__*/React.createElement("div", {
       className: classes
     }, children);
@@ -969,16 +984,17 @@
         name = props.name,
         size = props.size,
         onClick = props.onClick;
+    var baseProps = extractBaseProps(props);
     var iconClass = classNames((_classNames = {}, _defineProperty(_classNames, 'material-icons', true), _defineProperty(_classNames, 'Icon', true), _defineProperty(_classNames, "Icon--".concat(appearance), appearance), _defineProperty(_classNames, "".concat(className), className), _classNames));
     var styles = {
       fontSize: "".concat(size, "px"),
       width: "".concat(size, "px")
     };
-    return /*#__PURE__*/React.createElement("i", {
+    return /*#__PURE__*/React.createElement("i", _extends({}, baseProps, {
       className: iconClass,
       style: styles,
       onClick: onClick
-    }, "".concat(name, "_").concat(type));
+    }), "".concat(name, "_").concat(type));
   };
   Icon.defaultProps = {
     appearance: 'default',
@@ -1057,15 +1073,15 @@
         children = props.children,
         weight = props.weight,
         small = props.small,
-        rest = _objectWithoutProperties(props, ["appearance", "children", "weight", "small"]);
-
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var classes = classNames((_classNames = {
       Text: true
-    }, _defineProperty(_classNames, "Text--".concat(appearance), appearance), _defineProperty(_classNames, "Text--".concat(weight), weight), _defineProperty(_classNames, 'Text--small', small), _classNames));
-    return /*#__PURE__*/React.createElement(GenericText, _extends({
+    }, _defineProperty(_classNames, "Text--".concat(appearance), appearance), _defineProperty(_classNames, "Text--".concat(weight), weight), _defineProperty(_classNames, 'Text--small', small), _classNames), className);
+    return /*#__PURE__*/React.createElement(GenericText, _extends({}, baseProps, {
       className: classes,
       componentType: "span"
-    }, rest), children);
+    }), children);
   };
   Text.displayName = 'Text';
 
@@ -1077,12 +1093,15 @@
         _props$tabIndex = props.tabIndex,
         tabIndex = _props$tabIndex === void 0 ? 0 : _props$tabIndex,
         defaultChecked = props.defaultChecked,
+        indeterminate = props.indeterminate,
         label = props.label,
         disabled = props.disabled,
         onChange = props.onChange,
         name = props.name,
-        value = props.value;
+        value = props.value,
+        className = props.className;
     var ref = React.useRef(null);
+    var baseProps = extractBaseProps(props);
     React.useImperativeHandle(forwardedRef, function () {
       return ref.current;
     });
@@ -1093,21 +1112,21 @@
         setChecked = _React$useState2[1];
 
     React.useEffect(function () {
-      setIndeterminate(props.indeterminate);
-    }, [props.indeterminate]);
+      setIndeterminate(indeterminate);
+    }, [indeterminate]);
     React.useEffect(function () {
       if (props.checked !== undefined) {
         setChecked(props.checked);
       }
     }, [props.checked]);
-    var CheckboxClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Checkbox', true), _defineProperty(_classNames, 'Checkbox--disabled', disabled), _defineProperty(_classNames, "Checkbox--".concat(size), size), _classNames));
+    var CheckboxClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Checkbox', true), _defineProperty(_classNames, 'Checkbox--disabled', disabled), _defineProperty(_classNames, "Checkbox--".concat(size), size), _classNames), className);
     var CheckboxOuterWrapper = classNames(_defineProperty({}, 'Checkbox-outerWrapper', true));
     var CheckboxTextClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Checkbox-label', true), _defineProperty(_classNames3, "Checkbox-label--".concat(size), size), _classNames3));
     var CheckboxInputWrapper = classNames((_classNames4 = {}, _defineProperty(_classNames4, 'Checkbox-input', true), _defineProperty(_classNames4, 'Checkbox-input--checked', checked), _defineProperty(_classNames4, 'Checkbox-input--indeterminate', props.indeterminate), _classNames4));
     var CheckboxWrapper = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'Checkbox-wrapper', true), _defineProperty(_classNames5, "Checkbox-wrapper--".concat(size), size), _classNames5));
 
-    var setIndeterminate = function setIndeterminate(indeterminate) {
-      ref.current.indeterminate = indeterminate;
+    var setIndeterminate = function setIndeterminate(indeterminateValue) {
+      ref.current.indeterminate = indeterminateValue;
     };
 
     var onChangeHandler = function onChangeHandler(e) {
@@ -1119,13 +1138,13 @@
       if (onChange) onChange(e);
     };
 
-    var IconName = props.indeterminate ? 'remove' : checked ? 'check' : '';
+    var IconName = indeterminate ? 'remove' : checked ? 'check' : '';
     var IconSize = size === 'tiny' ? 8 : 16;
     return /*#__PURE__*/React.createElement("div", {
       className: CheckboxClass
     }, /*#__PURE__*/React.createElement("div", {
       className: CheckboxOuterWrapper
-    }, /*#__PURE__*/React.createElement("input", {
+    }, /*#__PURE__*/React.createElement("input", _extends({}, baseProps, {
       type: "checkbox",
       defaultChecked: defaultChecked,
       onChange: onChangeHandler,
@@ -1137,7 +1156,7 @@
       className: CheckboxInputWrapper,
       tabIndex: tabIndex,
       id: label
-    }), /*#__PURE__*/React.createElement("span", {
+    })), /*#__PURE__*/React.createElement("span", {
       className: CheckboxWrapper
     }, IconName && /*#__PURE__*/React.createElement(Icon, {
       name: IconName,
@@ -1248,7 +1267,8 @@
         onClick = props.onClick,
         optionData = props.optionData,
         updateActiveOption = props.updateActiveOption,
-        index = props.index;
+        index = props.index,
+        menu = props.menu;
     var label = optionData.label,
         icon = optionData.icon;
     var OptionClass = classNames((_classNames = {}, _defineProperty(_classNames, "".concat(className), true), _defineProperty(_classNames, 'Option--icon', icon), _classNames));
@@ -1268,7 +1288,7 @@
     }, icon && /*#__PURE__*/React.createElement(Icon, {
       className: "Option-icon mr-4",
       name: icon,
-      appearance: selected ? 'white' : 'default'
+      appearance: selected && !menu ? 'white' : 'default'
     }), /*#__PURE__*/React.createElement("div", {
       className: 'Option-label'
     }, /*#__PURE__*/React.createElement("div", {
@@ -1285,7 +1305,8 @@
         onClick = props.onClick,
         optionData = props.optionData,
         updateActiveOption = props.updateActiveOption,
-        index = props.index;
+        index = props.index,
+        menu = props.menu;
     var label = optionData.label,
         icon = optionData.icon,
         subInfo = optionData.subInfo;
@@ -1306,7 +1327,7 @@
     }, icon && /*#__PURE__*/React.createElement(Icon, {
       className: "Option-icon mr-4",
       name: icon,
-      appearance: selected ? 'white' : 'default'
+      appearance: selected && !menu ? 'white' : 'default'
     }), /*#__PURE__*/React.createElement("div", {
       className: 'Option-label'
     }, /*#__PURE__*/React.createElement("div", {
@@ -1329,13 +1350,14 @@
         onChange = props.onChange,
         active = props.active,
         index = props.index,
-        checkboxes = props.checkboxes;
+        checkboxes = props.checkboxes,
+        menu = props.menu;
 
     var _ref = optionData.optionType ? optionData : props,
         _ref$optionType = _ref.optionType,
         optionType = _ref$optionType === void 0 ? 'DEFAULT' : _ref$optionType;
 
-    var className = classNames((_classNames = {}, _defineProperty(_classNames, 'Option', true), _defineProperty(_classNames, 'Option-wrapper', true), _defineProperty(_classNames, 'Option--withCheckbox', checkboxes), _defineProperty(_classNames, 'Option--active', active), _defineProperty(_classNames, 'Option--selected', selected && !checkboxes && !props.menu), _classNames));
+    var className = classNames((_classNames = {}, _defineProperty(_classNames, 'Option', true), _defineProperty(_classNames, 'Option-wrapper', true), _defineProperty(_classNames, 'Option--withCheckbox', checkboxes), _defineProperty(_classNames, 'Option--active', active), _defineProperty(_classNames, 'Option--selected', selected && !checkboxes && !menu), _classNames));
     var textClassName = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Option-text', true), _defineProperty(_classNames2, 'Option-text--wrap', !props.truncateOption), _classNames2));
 
     var onUpdateActiveOption = function onUpdateActiveOption() {
@@ -1361,6 +1383,7 @@
     var component = OptionTypeMapping[type];
     return component({
       optionData: optionData,
+      menu: menu,
       selected: selected,
       onChange: onChange,
       onClick: onClick,
@@ -1375,10 +1398,12 @@
     var _props$appearance = props.appearance,
         appearance = _props$appearance === void 0 ? 'primary' : _props$appearance,
         _props$size = props.size,
-        size = _props$size === void 0 ? 'medium' : _props$size;
+        size = _props$size === void 0 ? 'medium' : _props$size,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var wrapperClasses = classNames(_defineProperty({
       Spinner: true
-    }, "Spinner--".concat(size), size));
+    }, "Spinner--".concat(size), size), className);
     var circleClasses = classNames(_defineProperty({
       Circle: true
     }, "Circle--".concat(appearance), appearance));
@@ -1393,7 +1418,7 @@
       strokeMiterlimit: '10',
       strokeWidth: '4'
     };
-    return /*#__PURE__*/React.createElement("svg", _extends({
+    return /*#__PURE__*/React.createElement("svg", _extends({}, baseProps, {
       className: wrapperClasses
     }, svgProps), /*#__PURE__*/React.createElement("circle", _extends({
       className: circleClasses
@@ -1477,8 +1502,10 @@
         onClear = props.onClear,
         onBlur = props.onBlur,
         onFocus = props.onFocus,
-        actionIcon = props.actionIcon;
-    var classes = classNames((_classNames = {}, _defineProperty(_classNames, 'Input', true), _defineProperty(_classNames, "Input--".concat(size), size), _defineProperty(_classNames, 'Input--disabled', disabled), _defineProperty(_classNames, 'Input--error', error), _classNames));
+        actionIcon = props.actionIcon,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
+    var classes = classNames((_classNames = {}, _defineProperty(_classNames, 'Input', true), _defineProperty(_classNames, "Input--".concat(size), size), _defineProperty(_classNames, 'Input--disabled', disabled), _defineProperty(_classNames, 'Input--error', error), _classNames), className);
     var inputClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Input-input', true), _defineProperty(_classNames2, "Input-input--".concat(size), size), _classNames2));
     var leftIconClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Input-icon', true), _defineProperty(_classNames3, 'Input-icon--left', true), _defineProperty(_classNames3, 'Input-icon--disabled', !value), _classNames3));
     var rightIconClass = classNames((_classNames4 = {}, _defineProperty(_classNames4, 'Input-icon', true), _defineProperty(_classNames4, 'Input-icon--right', true), _classNames4));
@@ -1504,7 +1531,7 @@
     }, /*#__PURE__*/React.createElement(Icon, {
       name: icon,
       size: sizeMapping$1[size]
-    })), /*#__PURE__*/React.createElement("input", {
+    })), /*#__PURE__*/React.createElement("input", _extends({}, baseProps, {
       ref: ref,
       name: name,
       type: type,
@@ -1520,7 +1547,7 @@
       onClick: onClick,
       onFocus: onFocus,
       autoFocus: autoFocus
-    }), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/React.createElement(Popover, {
+    })), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/React.createElement(Popover, {
       style: popoverStyle,
       position: "top",
       on: 'hover',
@@ -1542,17 +1569,19 @@
     var _classNames2;
 
     var length = props.length,
-        size = props.size;
+        size = props.size,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var classes = classNames(_defineProperty({
       'Placeholder--animation': true,
       PlaceholderParagraph: true
     }, "PlaceholderParagraph--".concat(size), size));
     var wrapperClass = classNames((_classNames2 = {
       'PlaceholderParagraph-wrapper': true
-    }, _defineProperty(_classNames2, "PlaceholderParagraph-wrapper--length-".concat(length), length), _defineProperty(_classNames2, "PlaceholderParagraph-wrapper--size-".concat(size), size), _classNames2));
-    return /*#__PURE__*/React.createElement("div", {
+    }, _defineProperty(_classNames2, "PlaceholderParagraph-wrapper--length-".concat(length), length), _defineProperty(_classNames2, "PlaceholderParagraph-wrapper--size-".concat(size), size), _classNames2), className);
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: wrapperClass
-    }, /*#__PURE__*/React.createElement("span", {
+    }), /*#__PURE__*/React.createElement("span", {
       className: classes
     }));
   };
@@ -1566,14 +1595,16 @@
 
     var _props$size = props.size,
         size = _props$size === void 0 ? 'small' : _props$size,
-        round = props.round;
+        round = props.round,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var classes = classNames((_classNames = {
       PlaceholderImage: true,
       'Placeholder--animation': true
-    }, _defineProperty(_classNames, 'PlaceholderImage--round', round), _defineProperty(_classNames, "PlaceholderImage--".concat(size), size), _classNames));
-    return /*#__PURE__*/React.createElement("span", {
+    }, _defineProperty(_classNames, 'PlaceholderImage--round', round), _defineProperty(_classNames, "PlaceholderImage--".concat(size), size), _classNames), className);
+    return /*#__PURE__*/React.createElement("span", _extends({}, baseProps, {
       className: classes
-    });
+    }));
   };
   PlaceholderImage.displayName = 'PlaceholderImage';
 
@@ -1581,13 +1612,16 @@
     var imageSize = props.imageSize,
         withImage = props.withImage,
         round = props.round,
-        children = props.children;
+        children = props.children,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var paragraphClasses = classNames(_defineProperty({
       'Placeholder-paragraph': true
     }, 'Placeholder-paragraph--withImage', withImage));
-    return /*#__PURE__*/React.createElement("div", {
-      className: "Placeholder"
-    }, withImage && /*#__PURE__*/React.createElement(PlaceholderImage, {
+    var classes = classNames(_defineProperty({}, 'Placeholder', true), className);
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
+      className: classes
+    }), withImage && /*#__PURE__*/React.createElement(PlaceholderImage, {
       round: round,
       size: imageSize
     }), children && /*#__PURE__*/React.createElement("div", {
@@ -1684,7 +1718,9 @@
         optionRenderer = props.optionRenderer,
         applyOptions = props.applyOptions,
         cancelOptions = props.cancelOptions,
-        toggleDropdown = props.toggleDropdown;
+        toggleDropdown = props.toggleDropdown,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var dropdownRef = /*#__PURE__*/React.createRef();
     var triggerRef = /*#__PURE__*/React.createRef();
     var dropdownInputRef = /*#__PURE__*/React.createRef();
@@ -1759,7 +1795,7 @@
       return classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Dropdown-section', true), _defineProperty(_classNames2, 'Dropdown-section--withClear', showClearButton), _classNames2));
     };
 
-    var dropdownClass = classNames(_defineProperty({}, 'Dropdown', true));
+    var dropdownClass = classNames(_defineProperty({}, 'Dropdown', true), className);
     var dropdownWrapperClass = classNames((_classNames4 = {}, _defineProperty(_classNames4, 'Dropdown-wrapper', true), _defineProperty(_classNames4, 'Dropdown-wrapper--wrap', !truncateOption), _classNames4));
     var SelectAllClass = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'Option', true), _defineProperty(_classNames5, 'Option--withCheckbox', true), _defineProperty(_classNames5, 'Option-wrapper', true), _defineProperty(_classNames5, 'Option--active', cursor === 0), _classNames5));
 
@@ -1973,9 +2009,9 @@
       }), props.async && remainingOptions > 0 && renderFooter());
     };
 
-    var focusOption = function focusOption(direction, className) {
+    var focusOption = function focusOption(direction, classes) {
       var updatedCursor = direction === 'down' ? cursor + 1 : cursor - 1;
-      var elements = document.querySelectorAll(className);
+      var elements = document.querySelectorAll(classes);
       var element = elements[updatedCursor];
       if (element) scrollIntoView(dropdownRef.current, element);
       if (element !== undefined) setCursor(updatedCursor);
@@ -2002,8 +2038,8 @@
 
           if (dropdownOpen && (dropdownInputRef.current === activeElement || dropdownTriggerRef.current === activeElement)) {
             event.preventDefault();
-            var className = withCheckbox ? "".concat(optionClass, " .Checkbox-input") : optionClass;
-            var elements = document.querySelectorAll(className);
+            var classes = withCheckbox ? "".concat(optionClass, " .Checkbox-input") : optionClass;
+            var elements = document.querySelectorAll(classes);
             var element = elements[cursor];
             if (element) element.click();
           }
@@ -2045,14 +2081,14 @@
       }
     };
 
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: dropdownClass,
       ref: triggerRef,
       style: {
         width: width
       },
       onKeyDown: onkeydown
-    }, /*#__PURE__*/React.createElement(Popover, {
+    }), /*#__PURE__*/React.createElement(Popover, {
       onToggle: onToggleDropdown,
       trigger: trigger,
       open: dropdownOpen,
@@ -2534,10 +2570,13 @@
 
   var Breadcrumbs = function Breadcrumbs(props) {
     var list = props.list,
-        onClick = props.onClick;
-    return /*#__PURE__*/React.createElement("div", {
-      className: "Breadcrumbs"
-    }, list.length <= 4 ? list.map(function (item, index) {
+        onClick = props.onClick,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
+    var BreadcrumbClass = classNames(_defineProperty({}, 'Breadcrumbs', true), className);
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
+      className: BreadcrumbClass
+    }), list.length <= 4 ? list.map(function (item, index) {
       return /*#__PURE__*/React.createElement("div", {
         key: index,
         className: "Breadcrumbs-item"
@@ -2577,9 +2616,9 @@
     var classes = classNames((_classNames = {
       Card: true
     }, _defineProperty(_classNames, "Card--shadow-".concat(shadow), shadow), _defineProperty(_classNames, "".concat(className), className), _classNames));
-    return /*#__PURE__*/React.createElement("div", _extends({
+    return /*#__PURE__*/React.createElement("div", _extends({}, rest, {
       className: classes
-    }, rest), children);
+    }), children);
   };
   Card.displayName = 'Card';
 
@@ -2592,11 +2631,13 @@
         sizeM = props.sizeM,
         sizeL = props.sizeL,
         sizeXL = props.sizeXL,
-        className = props.className;
+        className = props.className,
+        children = props.children;
+    var baseProps = extractBaseProps(props);
     var classes = classNames((_classNames = {}, _defineProperty(_classNames, 'Col', true), _defineProperty(_classNames, "Col--".concat(size), size), _defineProperty(_classNames, "Col--xs-".concat(sizeXS), sizeXS), _defineProperty(_classNames, "Col--s-".concat(sizeS), sizeS), _defineProperty(_classNames, "Col--m-".concat(sizeM), sizeM), _defineProperty(_classNames, "Col--l-".concat(sizeL), sizeL), _defineProperty(_classNames, "Col--xl-".concat(sizeXL), sizeXL), _defineProperty(_classNames, "".concat(className), className), _classNames));
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes
-    }, props.children);
+    }), children);
   };
   Column.displayName = 'Column';
 
@@ -2614,15 +2655,15 @@
         _props$size = props.size,
         size = _props$size === void 0 ? 'm' : _props$size,
         children = props.children,
-        rest = _objectWithoutProperties(props, ["appearance", "size", "children"]);
-
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var classes = classNames((_classNames = {
       Heading: true
-    }, _defineProperty(_classNames, "Heading--".concat(size), size), _defineProperty(_classNames, "Heading--".concat(appearance), appearance), _classNames));
-    return /*#__PURE__*/React.createElement(GenericText, _extends({
+    }, _defineProperty(_classNames, "Heading--".concat(size), size), _defineProperty(_classNames, "Heading--".concat(appearance), appearance), _classNames), className);
+    return /*#__PURE__*/React.createElement(GenericText, _extends({}, baseProps, {
       className: classes,
       componentType: sizeMap[size]
-    }, rest), children);
+    }), children);
   };
   Heading.defaultProps = {
     appearance: 'default',
@@ -2634,15 +2675,15 @@
     var _props$appearance = props.appearance,
         appearance = _props$appearance === void 0 ? 'default' : _props$appearance,
         children = props.children,
-        rest = _objectWithoutProperties(props, ["appearance", "children"]);
-
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var classes = classNames(_defineProperty({
       Subheading: true
-    }, "Subheading--".concat(appearance), appearance));
-    return /*#__PURE__*/React.createElement(GenericText, _extends({
+    }, "Subheading--".concat(appearance), appearance), className);
+    return /*#__PURE__*/React.createElement(GenericText, _extends({}, baseProps, {
       className: classes,
       componentType: 'h4'
-    }, rest), children);
+    }), children);
   };
   Subheading.displayName = 'Subheading';
 
@@ -2865,7 +2906,9 @@
         disabledBefore = props.disabledBefore,
         disabledAfter = props.disabledAfter,
         onDateChange = props.onDateChange,
-        onRangeChange = props.onRangeChange;
+        onRangeChange = props.onRangeChange,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var _props$jumpView = props.jumpView,
         jumpView = _props$jumpView === void 0 ? true : _props$jumpView;
 
@@ -3384,16 +3427,16 @@
     var renderCalendar = function renderCalendar(index) {
       var _classNames;
 
-      var wrapperClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Calendar', true), _defineProperty(_classNames, "Calendar--".concat(view), view), _classNames));
+      var wrapperClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Calendar', true), _defineProperty(_classNames, "Calendar--".concat(view), view), _classNames), className);
       var headerClass = classNames({
         'Calendar-header': true
       });
       var bodyClass = classNames({
         'Calendar-body': true
       });
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
         className: wrapperClass
-      }, /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React.createElement("div", {
         className: headerClass
       }, index === 0 && renderJumpButton('prev'), renderHeaderContent(index), index === monthsInView - 1 && renderJumpButton('next')), /*#__PURE__*/React.createElement("div", {
         className: bodyClass
@@ -3419,14 +3462,16 @@
         hide = _props$hide === void 0 ? false : _props$hide,
         _props$withInput = props.withInput,
         withInput = _props$withInput === void 0 ? false : _props$withInput,
-        children = props.children;
+        children = props.children,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var classes = classNames((_classNames = {
       Caption: true
-    }, _defineProperty(_classNames, 'Caption--hidden', hide), _defineProperty(_classNames, 'Caption--withInput', withInput), _classNames));
+    }, _defineProperty(_classNames, 'Caption--hidden', hide), _defineProperty(_classNames, 'Caption--withInput', withInput), _classNames), className);
     var errorIconClass = classNames(_defineProperty({}, 'Caption-icon', true));
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes
-    }, error && /*#__PURE__*/React.createElement("div", {
+    }), error && /*#__PURE__*/React.createElement("div", {
       className: errorIconClass
     }, /*#__PURE__*/React.createElement(Icon, {
       size: 14,
@@ -3453,7 +3498,8 @@
         onBlur = props.onBlur,
         onClick = props.onClick,
         onClear = props.onClear,
-        rest = _objectWithoutProperties(props, ["mask", "value", "placeholderChar", "mask", "error", "caption", "required", "onChange", "onBlur", "onClick", "onClear"]);
+        className = props.className,
+        rest = _objectWithoutProperties(props, ["mask", "value", "placeholderChar", "mask", "error", "caption", "required", "onChange", "onBlur", "onClick", "onClear", "className"]);
 
     var _React$useState = React.useState(''),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -3589,7 +3635,9 @@
       if (onClear) onClear(e);
     };
 
-    return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Input, _extends({}, rest, {
+    return /*#__PURE__*/React.createElement("div", {
+      className: className
+    }, /*#__PURE__*/React.createElement(Input, _extends({}, rest, {
       value: value,
       error: error,
       required: required,
@@ -3844,7 +3892,9 @@
         radius = props.radius,
         withLegends = props.withLegends,
         withTooltip = props.withTooltip,
-        withActiveSegment = props.withActiveSegment;
+        withActiveSegment = props.withActiveSegment,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var columnOptions = {
       chart: {
         size: withLegends ? '9' : '12',
@@ -3975,9 +4025,10 @@
     //   return out;
     // }, []);
 
-    return /*#__PURE__*/React.createElement(Row, {
-      className: "DonutChart"
-    }, /*#__PURE__*/React.createElement(Column, columnOptions.chart, /*#__PURE__*/React.createElement(recharts.ResponsiveContainer, null, /*#__PURE__*/React.createElement(recharts.PieChart, null, /*#__PURE__*/React.createElement(recharts.Pie, {
+    var classes = classNames(_defineProperty({}, 'DonutChart', true), className);
+    return /*#__PURE__*/React.createElement(Row, _extends({}, baseProps, {
+      className: classes
+    }), /*#__PURE__*/React.createElement(Column, columnOptions.chart, /*#__PURE__*/React.createElement(recharts.ResponsiveContainer, null, /*#__PURE__*/React.createElement(recharts.PieChart, null, /*#__PURE__*/React.createElement(recharts.Pie, {
       data: data,
       dataKey: "value",
       activeIndex: activeIndex,
@@ -4012,9 +4063,8 @@
         withInput = _props$withInput === void 0 ? false : _props$withInput,
         disabled = props.disabled,
         children = props.children,
-        className = props.className,
-        rest = _objectWithoutProperties(props, ["required", "withInput", "disabled", "children", "className"]);
-
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var LabelClass = classNames((_classNames = {
       Label: true
     }, _defineProperty(_classNames, 'Label--withInput', withInput), _defineProperty(_classNames, "".concat(className), className), _classNames));
@@ -4022,12 +4072,12 @@
       'Label-label': true,
       'Label--disabled': disabled
     });
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: LabelClass
-    }, /*#__PURE__*/React.createElement(GenericText, _extends({
+    }), /*#__PURE__*/React.createElement(GenericText, {
       className: classes,
       componentType: "label"
-    }, rest), children), required && /*#__PURE__*/React.createElement("span", {
+    }, children), required && /*#__PURE__*/React.createElement("span", {
       className: "Label-requiredIndicator"
     }));
   };
@@ -4043,14 +4093,16 @@
         labelWeight = props.labelWeight,
         _onMouseEnter = props.onMouseEnter,
         _onMouseLeave = props.onMouseLeave,
-        _onClick = props.onClick;
-    var legendClass = classNames(_defineProperty({}, 'Legend', true));
+        _onClick = props.onClick,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
+    var legendClass = classNames(_defineProperty({}, 'Legend', true), className);
     var styles = {
       background: "var(--".concat(iconAppearance, ")"),
       height: "".concat(iconSize, "px"),
       width: "".concat(iconSize, "px")
     };
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: legendClass,
       onClick: function onClick(e) {
         return _onClick && _onClick(e);
@@ -4061,7 +4113,7 @@
       onMouseLeave: function onMouseLeave(e) {
         return _onMouseLeave && _onMouseLeave(e);
       }
-    }, /*#__PURE__*/React.createElement("span", {
+    }), /*#__PURE__*/React.createElement("span", {
       className: "Legend-icon",
       style: styles
     }), /*#__PURE__*/React.createElement(Text, {
@@ -4073,11 +4125,12 @@
 
   var Link = function Link(props) {
     var children = props.children,
-        rest = _objectWithoutProperties(props, ["children"]);
+        className = props.className,
+        rest = _objectWithoutProperties(props, ["children", "className"]);
 
     var classes = classNames({
       Link: true
-    });
+    }, className);
     return /*#__PURE__*/React.createElement(GenericText, _extends({
       className: classes,
       componentType: "a"
@@ -4097,12 +4150,14 @@
     var _props$appearance = props.appearance,
         appearance = _props$appearance === void 0 ? 'default' : _props$appearance,
         title = props.title,
-        children = props.children;
-    var MessageClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Message', true), _defineProperty(_classNames, "Message--".concat(appearance), appearance), _classNames));
+        children = props.children,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
+    var MessageClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Message', true), _defineProperty(_classNames, "Message--".concat(appearance), appearance), _classNames), className);
     var MessageIcon = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Message-icon', true), _defineProperty(_classNames2, "Message-icon--".concat(appearance), appearance), _defineProperty(_classNames2, 'Message-icon--withTitle', title), _classNames2));
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: MessageClass
-    }, appearance !== 'default' && /*#__PURE__*/React.createElement("div", {
+    }), appearance !== 'default' && /*#__PURE__*/React.createElement("div", {
       className: MessageIcon
     }, /*#__PURE__*/React.createElement(Icon, {
       name: IconMapping[appearance],
@@ -4196,31 +4251,33 @@
     var _props$appearance = props.appearance,
         appearance = _props$appearance === void 0 ? 'default' : _props$appearance,
         children = props.children,
-        rest = _objectWithoutProperties(props, ["appearance", "children"]);
-
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var classes = classNames(_defineProperty({
       Text: true
-    }, "Text--".concat(appearance), appearance));
-    return /*#__PURE__*/React.createElement(GenericText, _extends({
+    }, "Text--".concat(appearance), appearance), className);
+    return /*#__PURE__*/React.createElement(GenericText, _extends({}, baseProps, {
       className: classes,
       componentType: "p"
-    }, rest), children);
+    }), children);
   };
   Paragraph.displayName = 'Paragraph';
 
   var ProgressBar = function ProgressBar(props) {
     var _props$max = props.max,
         max = _props$max === void 0 ? 100 : _props$max,
-        value = props.value;
+        value = props.value,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var style = {
       width: value > 0 ? "".concat(Math.min(value, max) * 100 / max, "%") : '0'
     };
     var ProgressBarClass = classNames({
       ProgressBar: true
-    });
-    return /*#__PURE__*/React.createElement("div", {
+    }, className);
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: ProgressBarClass
-    }, /*#__PURE__*/React.createElement("div", {
+    }), /*#__PURE__*/React.createElement("div", {
       className: 'ProgressBar-indicator',
       style: style
     }));
@@ -4237,12 +4294,14 @@
         onChange = props.onChange,
         name = props.name,
         value = props.value,
-        defaultChecked = props.defaultChecked;
+        defaultChecked = props.defaultChecked,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var ref = React.useRef(null);
     React.useImperativeHandle(forwardedRef, function () {
       return ref.current;
     });
-    var RadioClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Radio', true), _defineProperty(_classNames, 'Radio--disabled', disabled), _defineProperty(_classNames, "Radio--".concat(size), size), _classNames));
+    var RadioClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Radio', true), _defineProperty(_classNames, 'Radio--disabled', disabled), _defineProperty(_classNames, "Radio--".concat(size), size), _classNames), className);
     var RadioWrapper = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Radio-wrapper', true), _defineProperty(_classNames2, "Radio-wrapper--".concat(size), size), _classNames2));
     var RadioOuterWrapper = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Radio-outerWrapper', true), _defineProperty(_classNames3, "Radio-outerWrapper--".concat(size), size), _classNames3));
 
@@ -4254,7 +4313,7 @@
       className: RadioClass
     }, /*#__PURE__*/React.createElement("div", {
       className: RadioOuterWrapper
-    }, /*#__PURE__*/React.createElement("input", {
+    }, /*#__PURE__*/React.createElement("input", _extends({}, baseProps, {
       type: "radio",
       disabled: disabled,
       defaultChecked: defaultChecked,
@@ -4264,7 +4323,7 @@
       onChange: onChangeHandler,
       className: "Radio-input",
       id: value
-    }), /*#__PURE__*/React.createElement("span", {
+    })), /*#__PURE__*/React.createElement("span", {
       className: RadioWrapper
     })), label && /*#__PURE__*/React.createElement("label", {
       className: "Radio-label",
@@ -4284,13 +4343,15 @@
         groupM = props.groupM,
         groupL = props.groupL,
         groupXL = props.groupXL,
-        className = props.className;
+        className = props.className,
+        children = props.children;
+    var baseProps = extractBaseProps(props);
     var classes = classNames((_classNames = {
       Row: true
     }, _defineProperty(_classNames, "RowGroup--".concat(group), group), _defineProperty(_classNames, "RowGroup--xs-".concat(groupXS), groupXS), _defineProperty(_classNames, "RowGroup--s-".concat(groupS), groupS), _defineProperty(_classNames, "RowGroup--m-".concat(groupM), groupM), _defineProperty(_classNames, "RowGroup--l-".concat(groupL), groupL), _defineProperty(_classNames, "RowGroup--xl-".concat(groupXL), groupXL), _defineProperty(_classNames, "".concat(className), className), _classNames));
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes
-    }, props.children);
+    }), children);
   };
   Row.displayName = 'Row';
 
@@ -4302,10 +4363,12 @@
         children = props.children,
         _onMouseEnter = props.onMouseEnter,
         _onMouseLeave = props.onMouseLeave,
-        _onClick = props.onClick;
-    var StatusHintClass = classNames(_defineProperty({}, 'StatusHint', true));
+        _onClick = props.onClick,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
+    var StatusHintClass = classNames(_defineProperty({}, 'StatusHint', true), className);
     var StatusHintIconClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'StatusHint-icon', true), _defineProperty(_classNames2, "StatusHint--".concat(appearance), appearance), _classNames2));
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: StatusHintClass,
       onClick: function onClick(e) {
         return _onClick && _onClick(e);
@@ -4316,7 +4379,7 @@
       onMouseLeave: function onMouseLeave(e) {
         return _onMouseLeave && _onMouseLeave(e);
       }
-    }, /*#__PURE__*/React.createElement("span", {
+    }), /*#__PURE__*/React.createElement("span", {
       className: StatusHintIconClass
     }), /*#__PURE__*/React.createElement(Text, {
       weight: 'medium'
@@ -4335,7 +4398,9 @@
         disabled = props.disabled,
         onChange = props.onChange,
         name = props.name,
-        value = props.value;
+        value = props.value,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
 
     var _React$useState = React.useState(props.checked === undefined ? defaultChecked : props.checked),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -4345,7 +4410,7 @@
     React.useEffect(function () {
       if (props.checked !== undefined) setChecked(props.checked);
     }, [props.checked]);
-    var SwitchClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Switch', true), _defineProperty(_classNames, 'Switch--disabled', disabled), _defineProperty(_classNames, "Switch--".concat(size), size), _classNames));
+    var SwitchClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Switch', true), _defineProperty(_classNames, 'Switch--disabled', disabled), _defineProperty(_classNames, "Switch--".concat(size), size), _classNames), className);
     var SwitchWrapper = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Switch-wrapper', true), _defineProperty(_classNames2, 'Switch-wrapper--disabled', disabled), _defineProperty(_classNames2, "Switch-wrapper--".concat(size), size), _defineProperty(_classNames2, "Switch-wrapper--".concat(appearance), appearance), _defineProperty(_classNames2, 'Switch-wrapper--checked', checked), _defineProperty(_classNames2, 'Switch-wrapper--checkedDisabled', checked && disabled), _classNames2));
 
     var onChangeHandler = function onChangeHandler(event) {
@@ -4355,7 +4420,7 @@
 
     return /*#__PURE__*/React.createElement("div", {
       className: SwitchClass
-    }, /*#__PURE__*/React.createElement("input", {
+    }, /*#__PURE__*/React.createElement("input", _extends({}, baseProps, {
       type: "checkbox",
       defaultChecked: defaultChecked,
       disabled: disabled,
@@ -4365,7 +4430,7 @@
       name: name,
       value: value,
       className: "Switch-input"
-    }), /*#__PURE__*/React.createElement("span", {
+    })), /*#__PURE__*/React.createElement("span", {
       className: SwitchWrapper
     }));
   });
@@ -4385,12 +4450,14 @@
         onChange = props.onChange,
         onClick = props.onClick,
         onBlur = props.onBlur,
-        onFocus = props.onFocus;
-    var classes = classNames(_defineProperty({}, 'Textarea', true));
+        onFocus = props.onFocus,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
+    var classes = classNames(_defineProperty({}, 'Textarea', true), className);
     var TextareaClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Textarea-textarea', true), _defineProperty(_classNames2, 'Textarea-textarea--error', error), _classNames2));
     return /*#__PURE__*/React.createElement("div", {
       className: classes
-    }, /*#__PURE__*/React.createElement("textarea", {
+    }, /*#__PURE__*/React.createElement("textarea", _extends({}, baseProps, {
       ref: ref,
       name: name,
       rows: rows,
@@ -4404,7 +4471,7 @@
       onBlur: onBlur,
       onClick: onClick,
       onFocus: onFocus
-    }));
+    })));
   });
   Textarea.displayName = 'Textarea';
 
@@ -4440,8 +4507,10 @@
         title = props.title,
         message = props.message,
         actions = props.actions,
-        onClose = props.onClose;
-    var wrapperClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Toast', true), _defineProperty(_classNames, "Toast--".concat(appearance), appearance), _classNames));
+        onClose = props.onClose,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
+    var wrapperClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Toast', true), _defineProperty(_classNames, "Toast--".concat(appearance), appearance), _classNames), className);
     var IconMapping = {
       info: 'info',
       success: 'check_circle',
@@ -4461,9 +4530,9 @@
       if (onClose) onClose();
     };
 
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: wrapperClass
-    }, icon && /*#__PURE__*/React.createElement("div", {
+    }), icon && /*#__PURE__*/React.createElement("div", {
       className: iconClass('left')
     }, /*#__PURE__*/React.createElement(Icon, {
       name: icon,
@@ -4552,10 +4621,12 @@
             _this$props$position = _this$props.position,
             tooltip = _this$props.tooltip,
             children = _this$props.children,
-            props = _objectWithoutProperties(_this$props, ["appendToBody", "position", "tooltip", "children"]);
+            className = _this$props.className,
+            props = _objectWithoutProperties(_this$props, ["appendToBody", "position", "tooltip", "children", "className"]);
 
+        var classes = classNames(_defineProperty({}, 'Tooltip', true), className);
         var tooltipWrapper = /*#__PURE__*/React.createElement("div", _extends({
-          className: "Tooltip"
+          className: classes
         }, props, {
           style: this.state.style
         }), tooltip);
@@ -4585,7 +4656,8 @@
         dimension = _props$dimension === void 0 ? 'small' : _props$dimension,
         children = props.children,
         onClose = props.onClose,
-        backdrop = props.backdrop;
+        backdrop = props.backdrop,
+        className = props.className;
 
     var _useState = useState$1(props.open),
         _useState2 = _slicedToArray(_useState, 2),
@@ -4599,7 +4671,8 @@
 
     var classes = classNames((_classNames = {
       Modal: true
-    }, _defineProperty(_classNames, "Modal--".concat(dimension), dimension), _defineProperty(_classNames, 'Modal--open', open), _defineProperty(_classNames, 'Modal-animation--open', animate), _defineProperty(_classNames, 'Modal-animation--close', !animate), _classNames));
+    }, _defineProperty(_classNames, "Modal--".concat(dimension), dimension), _defineProperty(_classNames, 'Modal--open', open), _defineProperty(_classNames, 'Modal-animation--open', animate), _defineProperty(_classNames, 'Modal-animation--close', !animate), _classNames), className);
+    var baseProps = extractBaseProps(props);
     useEffect$1(function () {
       if (props.open) {
         setOpen(true);
@@ -4615,9 +4688,9 @@
     }, [props.open]);
     var ModalContainer = /*#__PURE__*/React.createElement("div", {
       className: "Modal-container"
-    }, /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes
-    }, children));
+    }), children));
     var ModalWrapper = backdrop ? /*#__PURE__*/React.createElement(OutsideClick, {
       onOutsideClick: function onOutsideClick(event) {
         return open && onClose(event, 'OutsideClick');
@@ -4632,15 +4705,17 @@
   Modal.displayName = 'Modal';
 
   var ModalHeader = function ModalHeader(props) {
-    var _props$heading = props.heading,
+    var className = props.className,
+        _props$heading = props.heading,
         heading = _props$heading === void 0 ? '' : _props$heading,
         _props$icon = props.icon,
         icon = _props$icon === void 0 ? '' : _props$icon,
         _props$subHeading = props.subHeading,
         subHeading = _props$subHeading === void 0 ? '' : _props$subHeading;
+    var baseProps = extractBaseProps(props);
     var classes = classNames({
       'Modal-header': true
-    });
+    }, className);
     var subheaderClasses = classNames(_defineProperty({
       'Modal-header-subheader': true
     }, 'Modal-header-subheader--withIcon', icon));
@@ -4668,9 +4743,9 @@
     var closeButton = getCloseButton();
     return /*#__PURE__*/React.createElement("div", {
       className: "Modal-header-wrapper"
-    }, /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes
-    }, icon && getHeaderIcon(), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Heading, null, heading)), closeButton), subHeading && /*#__PURE__*/React.createElement("div", {
+    }), icon && getHeaderIcon(), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Heading, null, heading)), closeButton), subHeading && /*#__PURE__*/React.createElement("div", {
       className: subheaderClasses
     }, /*#__PURE__*/React.createElement(Text, {
       appearance: "subtle"
@@ -4684,26 +4759,30 @@
         _props$description = props.description,
         description = _props$description === void 0 ? '' : _props$description,
         _props$removePadding = props.removePadding,
-        removePadding = _props$removePadding === void 0 ? false : _props$removePadding;
+        removePadding = _props$removePadding === void 0 ? false : _props$removePadding,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var classes = classNames(_defineProperty({
       'Modal-description': true
-    }, 'pl-6 pr-6', !removePadding));
-    return /*#__PURE__*/React.createElement("div", {
+    }, 'pl-6 pr-6', !removePadding), className);
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes
-    }, title && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Text, {
+    }), title && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Text, {
       weight: "strong"
     }, title)), description && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Text, null, description)));
   };
   ModalDescription.displayName = 'ModalDescription';
 
   var ModalFooter = function ModalFooter(props) {
-    var children = props.children;
+    var children = props.children,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var classes = classNames({
       'Modal-footer': true
-    });
-    return /*#__PURE__*/React.createElement("div", {
+    }, className);
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes
-    }, children);
+    }), children);
   };
   ModalFooter.displayName = 'ModalFooter';
 
@@ -4727,6 +4806,7 @@
         primaryButtonCallback = props.primaryButtonCallback,
         secondaryButtonLabel = props.secondaryButtonLabel,
         secondaryButtonCallback = props.secondaryButtonCallback;
+    var baseProps = extractBaseProps(props);
     var modalOptions = {
       open: open,
       onClose: onClose,
@@ -4741,7 +4821,7 @@
       title: title,
       description: description
     };
-    return /*#__PURE__*/React.createElement(Modal, modalOptions, /*#__PURE__*/React.createElement(ModalHeader, modalHeaderOptions), /*#__PURE__*/React.createElement(ModalDescription, modalDescriptionOptions), /*#__PURE__*/React.createElement(ModalFooter, null, /*#__PURE__*/React.createElement(Button, {
+    return /*#__PURE__*/React.createElement(Modal, _extends({}, baseProps, modalOptions), /*#__PURE__*/React.createElement(ModalHeader, modalHeaderOptions), /*#__PURE__*/React.createElement(ModalDescription, modalDescriptionOptions), /*#__PURE__*/React.createElement(ModalFooter, null, /*#__PURE__*/React.createElement(Button, {
       appearance: secondaryButtonAppearance,
       onClick: secondaryButtonCallback
     }, secondaryButtonLabel), /*#__PURE__*/React.createElement(Button, {
@@ -4762,7 +4842,9 @@
         setScroll = _useState2[1];
 
     var ref = useRef(null);
-    var children = props.children;
+    var children = props.children,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     useEffect$2(function () {
       var scrollHeight = ref && ref.current ? ref.current.scrollHeight : 0;
       var clientHeight = ref && ref.current ? ref.current.clientHeight : 0;
@@ -4773,11 +4855,11 @@
     }, [ref]);
     var classes = classNames(_defineProperty({
       'Modal-body': true
-    }, 'Modal-body--border', scroll));
-    return /*#__PURE__*/React.createElement("div", {
+    }, 'Modal-body--border', scroll), className);
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes,
       ref: ref
-    }, children);
+    }), children);
   };
   ModalBody.displayName = 'ModalBody';
 
@@ -4787,7 +4869,9 @@
     var _props$type = props.type,
         type = _props$type === void 0 ? 'basic' : _props$type,
         totalPages = props.totalPages,
-        onPageChange = props.onPageChange;
+        onPageChange = props.onPageChange,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
 
     var _React$useState = React.useState(props.page ? props.page : 1),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -4802,7 +4886,7 @@
     React.useEffect(function () {
       if (props.page && props.page >= 1 && props.page <= totalPages) setPage(props.page);
     }, [props.page]);
-    var wrapperClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Pagination', true), _defineProperty(_classNames, "Pagination--".concat(type), type), _classNames));
+    var wrapperClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Pagination', true), _defineProperty(_classNames, "Pagination--".concat(type), type), _classNames), className);
     var nextButtonWrapperClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Pagination-buttonWrapper', true), _defineProperty(_classNames2, 'Pagination-buttonWrapper--next', true), _classNames2));
     var prevButtonWrapperClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Pagination-buttonWrapper', true), _defineProperty(_classNames3, 'Pagination-buttonWrapper--previous', true), _classNames3));
     React.useEffect(function () {
@@ -4843,9 +4927,9 @@
 
     var buttonHelper = [];
     if (type === 'basic') buttonHelper.push('mx-3');else buttonHelper.push('mx-4');
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: wrapperClass
-    }, /*#__PURE__*/React.createElement("div", {
+    }), /*#__PURE__*/React.createElement("div", {
       className: prevButtonWrapperClass
     }, /*#__PURE__*/React.createElement(Button, {
       onClick: function onClick() {
@@ -4900,12 +4984,14 @@
         size = _props$size === void 0 ? 'regular' : _props$size,
         _props$max = props.max,
         max = _props$max === void 0 ? 100 : _props$max,
-        value = props.value;
+        value = props.value,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var radius = 20;
     var circumference = 2 * Math.PI * radius;
     var ProgressRingClass = classNames(_defineProperty({
       Ring: true
-    }, "Ring--".concat(size), size));
+    }, "Ring--".concat(size), size), className);
     var svgProps = {
       viewBox: '0 0 50 50'
     };
@@ -4918,7 +5004,7 @@
       strokeWidth: '8',
       strokeDasharray: "".concat(circumference, " ").concat(circumference)
     };
-    return /*#__PURE__*/React.createElement("svg", _extends({
+    return /*#__PURE__*/React.createElement("svg", _extends({}, baseProps, {
       className: ProgressRingClass
     }, svgProps), /*#__PURE__*/React.createElement("circle", _extends({
       className: "Ring-background"
@@ -5296,7 +5382,9 @@
   var TabsWrapper = function TabsWrapper(props) {
     var _props$children = props.children,
         children = _props$children === void 0 ? [] : _props$children,
-        onTabChange = props.onTabChange;
+        onTabChange = props.onTabChange,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
 
     var _React$useState = React.useState(props.active && props.active < children.length ? props.active : 0),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -5306,7 +5394,7 @@
     React.useEffect(function () {
       setActiveTab(props.active && props.active < children.length ? props.active : 0);
     }, [props.active]);
-    var wrapperClass = classNames(_defineProperty({}, 'TabsWrapper', true));
+    var wrapperClass = classNames(_defineProperty({}, 'TabsWrapper', true), className);
 
     var tabClickHandler = function tabClickHandler(tabIndex) {
       setActiveTab(tabIndex);
@@ -5326,9 +5414,9 @@
         }
       }, label);
     });
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: wrapperClass
-    }, /*#__PURE__*/React.createElement("div", {
+    }), /*#__PURE__*/React.createElement("div", {
       className: "TabsWrapper-header"
     }, TabsHeader), /*#__PURE__*/React.createElement("div", {
       className: "TabsWrapper-content"
@@ -5754,9 +5842,6 @@
       case 'AVATAR_WITH_META_LIST':
         if (loading) {
           return /*#__PURE__*/React.createElement(Placeholder, {
-            style: {
-              flexGrow: 1
-            },
             imageSize: 'medium',
             round: true
           }, /*#__PURE__*/React.createElement("span", {
@@ -5803,9 +5888,6 @@
       case 'STATUS_HINT':
         if (loading) {
           return /*#__PURE__*/React.createElement(Placeholder, {
-            style: {
-              flexGrow: 1
-            },
             imageSize: 'small',
             round: true
           }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
@@ -6242,7 +6324,9 @@
     var _classNames;
 
     var _this = props._this,
-        schema = props.schema;
+        schema = props.schema,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var _this$props = _this.props,
         loading = _this$props.loading,
         type = _this$props.type,
@@ -6253,7 +6337,7 @@
         data = _this$props.data;
     var classes = classNames((_classNames = {
       Grid: 'true'
-    }, _defineProperty(_classNames, "Grid--".concat(type), type), _defineProperty(_classNames, "Grid--".concat(size), size), _classNames));
+    }, _defineProperty(_classNames, "Grid--".concat(type), type), _defineProperty(_classNames, "Grid--".concat(size), size), _classNames), className);
     var minRowHeight = {
       comfortable: 54,
       standard: 40,
@@ -6336,10 +6420,10 @@
       }
     };
 
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes,
       onScroll: onScrollHandler
-    }, showHead && /*#__PURE__*/React.createElement(GridHead, {
+    }), showHead && /*#__PURE__*/React.createElement(GridHead, {
       key: 'GridHead',
       _this: _this,
       schema: schema,
@@ -6529,6 +6613,7 @@
             totalRecords = _this$props2.totalRecords,
             pageSize = _this$props2.pageSize,
             paginationType = _this$props2.paginationType;
+        var baseProps = extractBaseProps(this.props);
         var schema = getSchema(this); // let { schema } = this.props;
         // if ((!schema || schema.length === 0) && loading) {
         //   schema = loaderSchema;
@@ -6539,10 +6624,10 @@
         }, /*#__PURE__*/React.createElement("div", {
           className: "Grid-wrapper",
           ref: this.gridRef
-        }, /*#__PURE__*/React.createElement(MainGrid, {
+        }, /*#__PURE__*/React.createElement(MainGrid, _extends({}, baseProps, {
           _this: this,
           schema: schema
-        }), reorderHighlighter && /*#__PURE__*/React.createElement("div", {
+        })), reorderHighlighter && /*#__PURE__*/React.createElement("div", {
           className: "Grid-reorderHighlighter",
           style: {
             left: "".concat(reorderHighlighter, "px")
@@ -6717,10 +6802,6 @@
         if (onSelectAll) onSelectAll(event.target.checked);
       }
     })), loading ? /*#__PURE__*/React.createElement(Placeholder, {
-      style: {
-        display: 'flex',
-        flexGrow: 1
-      },
       withImage: !showHead && withCheckbox
     }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
       length: 'small'
@@ -7025,15 +7106,18 @@
             pageSize = _this$props2.pageSize,
             onRowClick = _this$props2.onRowClick,
             loaderSchema = _this$props2.loaderSchema,
-            errorTemplate = _this$props2.errorTemplate;
+            errorTemplate = _this$props2.errorTemplate,
+            className = _this$props2.className;
+        var baseProps = extractBaseProps(this.props);
 
         var _ref = headerOptions,
             headerChildren = _ref.children,
             headerAttr = _objectWithoutProperties(_ref, ["children"]);
 
-        return /*#__PURE__*/React.createElement("div", {
-          className: "Table"
-        }, withHeader && /*#__PURE__*/React.createElement("div", {
+        var classes = className ? " ".concat(className) : '';
+        return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
+          className: "Table".concat(classes)
+        }), withHeader && /*#__PURE__*/React.createElement("div", {
           className: "Table-header"
         }, /*#__PURE__*/React.createElement(Header, _extends({}, this.state, {
           // updateData={updateData}
@@ -7104,7 +7188,9 @@
         expanded = props.expanded,
         onToggle = props.onToggle,
         footer = props.footer,
-        autoCollapse = props.autoCollapse;
+        autoCollapse = props.autoCollapse,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
 
     var _useState = useState$3({}),
         _useState2 = _slicedToArray(_useState, 2),
@@ -7282,10 +7368,10 @@
       })));
     };
 
-    var classes = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'Navigation', true), _defineProperty(_classNames5, "Navigation--".concat(type), type), _defineProperty(_classNames5, 'Navigation--collapsed', !expanded), _classNames5));
-    return /*#__PURE__*/React.createElement("div", {
+    var classes = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'Navigation', true), _defineProperty(_classNames5, "Navigation--".concat(type), type), _defineProperty(_classNames5, 'Navigation--collapsed', !expanded), _classNames5), className);
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes
-    }, type === 'horizontal' ? getHorizontalMenu(data) : getVerticalMenu());
+    }), type === 'horizontal' ? getHorizontalMenu(data) : getVerticalMenu());
   };
   Navigation.defaultProps = {
     type: 'horizontal',
@@ -7304,16 +7390,18 @@
         badge = props.badge,
         status = props.status,
         meta = props.meta,
-        type = props.type;
+        type = props.type,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var wrapperClasses = classNames(_defineProperty({
       'PageHeader-wrapper': true
-    }, 'PageHeader-wrapper--withTabs', tabs));
+    }, 'PageHeader-wrapper--withTabs', tabs), className);
     var classes = classNames({
       PageHeader: true
     });
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: wrapperClasses
-    }, breadcrumbs && breadcrumbs, /*#__PURE__*/React.createElement("div", {
+    }), breadcrumbs && breadcrumbs, /*#__PURE__*/React.createElement("div", {
       className: classes
     }, /*#__PURE__*/React.createElement("div", {
       className: "PageHeader-titleWrapper"

@@ -1,9 +1,10 @@
 /// <reference types="react" />
+import { BaseProps } from '@/utils/types';
 export interface Data {
     name: string;
     value: any;
 }
-export interface DonutChartProps {
+export interface DonutChartProps extends BaseProps {
     data: Data[];
     withLegends?: boolean;
     withTooltip?: boolean;

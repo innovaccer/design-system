@@ -1,10 +1,10 @@
 import * as React from 'react';
-export interface LabelProps {
+import { BaseProps } from '@/utils/types';
+export interface LabelProps extends BaseProps {
     children: React.ReactNode;
     disabled?: boolean;
     required?: boolean;
     withInput?: boolean;
-    className?: string;
 }
 export declare const Label: {
     (props: LabelProps): JSX.Element;

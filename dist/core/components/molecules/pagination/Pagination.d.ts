@@ -1,6 +1,7 @@
 /// <reference types="react" />
+import { BaseProps } from '@/utils/types';
 export declare type PaginationType = 'basic' | 'jump';
-export interface PaginationProps {
+export interface PaginationProps extends BaseProps {
     type?: PaginationType;
     totalPages: number;
     page?: number;

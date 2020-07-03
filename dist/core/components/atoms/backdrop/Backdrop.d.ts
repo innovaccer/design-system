@@ -1,5 +1,6 @@
 import * as React from 'react';
-export interface BackdropProps {
+import { BaseProps } from '@/utils/types';
+export interface BackdropProps extends BaseProps {
     open: boolean;
 }
 declare const Backdrop: {

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { CheckboxProps, DropdownProps, PaginationProps } from '@/index.type';
 import { GridCellProps } from './GridCell';
+import { BaseProps } from '@/utils/types';
 export declare type SortType = 'asc' | 'desc';
 export declare type Pinned = 'left' | 'right';
 export declare type Alignment = 'left' | 'right' | 'center';
@@ -56,7 +57,7 @@ export declare type GridSize = 'comfortable' | 'standard' | 'compressed' | 'tigh
 export declare type GridType = 'resource' | 'data';
 export declare type Data = RowData[];
 export declare type Schema = ColumnSchema[];
-export interface GridProps {
+export interface GridProps extends BaseProps {
     size: GridSize;
     type: GridType;
     onRowClick?: onRowClickFn;

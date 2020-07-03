@@ -1,12 +1,12 @@
 /// <reference types="react" />
 import { Name } from '../chip/Chip';
-export interface GenericChipProps {
+import { BaseProps } from '@/utils/types';
+export interface GenericChipProps extends BaseProps {
     label: string;
     icon?: string;
     clearButton?: boolean;
     disabled?: boolean;
     selected?: boolean;
-    className?: string;
     onClose?: (name: Name) => void;
     onClick?: (name: Name) => void;
     name: Name;

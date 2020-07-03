@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { InputProps } from '@/components/atoms/input';
+import { BaseProps } from '@/utils/types';
 export declare type Mask = (string | RegExp)[];
-export interface MaskProps {
+export interface MaskProps extends BaseProps {
     mask: Mask;
     placeholderChar?: string;
     caption?: string;

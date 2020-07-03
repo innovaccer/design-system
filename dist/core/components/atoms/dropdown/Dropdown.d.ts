@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { DropdownListProps, SelectAll, Selected, ChangeEvent } from './DropdownList';
 import { OptionSchema as Option } from './option';
+import { BaseProps } from '@/utils/types';
 declare type fetchOptionsFnc = (searchTerm: string) => Promise<{
     count: number;
     options: Option[];
@@ -17,7 +18,7 @@ interface TriggerProps {
     customLabel?: (selected: number, totalOptions?: number) => string;
     customTrigger?: (label: string) => React.ReactElement;
 }
-interface SharedDropdownProps extends DropdownListProps {
+interface SharedDropdownProps extends DropdownListProps, BaseProps {
     name?: string | number;
     totalOptions?: number;
     closeOnSelect?: boolean;

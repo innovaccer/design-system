@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { BaseProps } from '@/utils/types';
 export declare type Dimension = 'small' | 'medium' | 'large';
-export interface ModalProps {
+export interface ModalProps extends BaseProps {
     onClose: (event?: Event, reason?: string) => void;
     backdrop?: boolean;
     closeOnEscape?: boolean;

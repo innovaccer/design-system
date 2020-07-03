@@ -2,6 +2,7 @@
 import { ExternalHeaderProps } from '../grid/Header';
 import { Data, Schema, GridProps, fetchDataFn } from '../grid';
 import { TableProps } from '../table';
+import { BaseProps } from '@/utils/types';
 interface SyncProps {
     data: Data;
     schema: Schema;
@@ -11,7 +12,7 @@ interface SyncProps {
 interface AsyncProps {
     fetchData: fetchDataFn;
 }
-interface SharedListProps {
+interface SharedListProps extends BaseProps {
     type?: GridProps['type'];
     size?: GridProps['size'];
     withHeader?: boolean;

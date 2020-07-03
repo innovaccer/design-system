@@ -1,6 +1,7 @@
 /// <reference types="react" />
+import { BaseProps } from '@/utils/types';
 export declare type Appearance = 'primary' | 'alert' | 'warning' | 'success' | 'accent1' | 'accent2' | 'accent3' | 'accent4';
-export interface AvatarProps {
+export interface AvatarProps extends BaseProps {
     appearance?: Appearance;
     children?: string;
     firstName?: string;

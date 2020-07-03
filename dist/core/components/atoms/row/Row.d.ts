@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { BaseProps } from '@/utils/types';
 declare type RowColumns = '1' | '2' | '3' | '4' | '5' | '6';
-export interface RowProps {
+export interface RowProps extends BaseProps {
     group?: RowColumns;
     groupXS?: RowColumns;
     groupS?: RowColumns;

@@ -1,5 +1,6 @@
 import * as React from 'react';
-export interface ModalBodyProps {
+import { BaseProps } from '@/utils/types';
+export interface ModalBodyProps extends BaseProps {
     children: React.ReactNode;
 }
 export declare const ModalBody: {

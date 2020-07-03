@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Dimension } from '@/components/molecules/modal';
 import { Appearance } from '@/components/atoms/button';
-export interface DialogProps {
+import { BaseProps } from '@/utils/types';
+export interface DialogProps extends BaseProps {
     onClose: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
     closeOnEscape?: boolean;
     dimension?: Dimension;

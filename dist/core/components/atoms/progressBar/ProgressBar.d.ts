@@ -1,5 +1,6 @@
 /// <reference types="react" />
-export interface ProgressBarProps {
+import { BaseProps } from '@/utils/types';
+export interface ProgressBarProps extends BaseProps {
     value: number;
     max?: number;
 }

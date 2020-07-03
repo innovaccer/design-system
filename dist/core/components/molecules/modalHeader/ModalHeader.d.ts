@@ -1,5 +1,6 @@
 import * as React from 'react';
-export interface ModalHeaderProps {
+import { BaseProps } from '@/utils/types';
+export interface ModalHeaderProps extends BaseProps {
     icon?: string;
     heading?: string;
     onClose: (event?: React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;

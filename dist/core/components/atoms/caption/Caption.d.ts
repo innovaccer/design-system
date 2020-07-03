@@ -1,5 +1,6 @@
 import * as React from 'react';
-export interface CaptionProps {
+import { BaseProps } from '@/utils/types';
+export interface CaptionProps extends BaseProps {
     children: React.ReactNode;
     error?: boolean;
     hide?: boolean;

@@ -1,8 +1,9 @@
 import * as React from 'react';
+import { BaseProps } from '@/utils/types';
 export declare type Appearance = 'basic' | 'primary' | 'success' | 'alert' | 'transparent';
 export declare type Size = 'tiny' | 'regular' | 'large';
 export declare type Alignment = 'left' | 'right';
-export interface ButtonProps {
+export interface ButtonProps extends BaseProps {
     size?: Size;
     appearance?: Appearance;
     disabled?: boolean;
@@ -12,7 +13,6 @@ export interface ButtonProps {
     iconAlign?: Alignment;
     children?: string;
     tabIndex?: number;
-    className?: string;
     onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     onMouseEnter?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;

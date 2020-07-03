@@ -1,4 +1,5 @@
 /// <reference types="react" />
+import { BaseProps } from '@/utils/types';
 export declare type LayoutType = 'vertical' | 'horizontal';
 export declare type Menu = {
     name: string;
@@ -13,7 +14,7 @@ declare type ActiveMenu = ({
 } | {
     link: string;
 }) & Partial<Menu>;
-export interface NavigationProps {
+export interface NavigationProps extends BaseProps {
     type?: LayoutType;
     data: Menu[];
     active?: ActiveMenu;

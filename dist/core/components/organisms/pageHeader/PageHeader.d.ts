@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { BaseProps } from '@/utils/types';
 export declare type HeaderType = 'small' | 'large';
-export interface PageHeaderProps {
+export interface PageHeaderProps extends BaseProps {
     title: string;
     navigation?: React.ReactNode;
     actions?: React.ReactNode;

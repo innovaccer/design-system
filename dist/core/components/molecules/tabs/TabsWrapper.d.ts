@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { TabProps } from './Tab';
-export interface TabsWrapperProps {
+import { BaseProps } from '@/utils/types';
+export interface TabsWrapperProps extends BaseProps {
     active?: number;
     children: React.FunctionComponentElement<TabProps>[];
     onTabChange?: (tabIndex: number) => void;
