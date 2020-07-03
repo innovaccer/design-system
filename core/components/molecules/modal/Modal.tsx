@@ -4,10 +4,11 @@ import classNames from 'classnames';
 const { useEffect, useState } = React;
 import Backdrop from '@/components/atoms/backdrop';
 import OutsideClick from '@/components/atoms/outsideClick';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Dimension = 'small' | 'medium' | 'large';
 
-export interface ModalProps {
+export interface ModalProps extends BaseProps {
   /**
    * Callback for `Modal` close event
    */
@@ -40,7 +41,8 @@ const Modal = (props: ModalProps) => {
     dimension = 'small',
     children,
     onClose,
-    backdrop
+    backdrop,
+    className
   } = props;
   const [open, setOpen] = useState<boolean>(props.open);
   const [animate, setAnimate] = useState<boolean>(false);
@@ -51,7 +53,9 @@ const Modal = (props: ModalProps) => {
     'Modal--open': open,
     'Modal-animation--open': animate,
     'Modal-animation--close': !animate,
-  });
+  }, className);
+
+  const baseProps = extractBaseProps(props);
 
   useEffect(() => {
     if (props.open) {
@@ -68,7 +72,7 @@ const Modal = (props: ModalProps) => {
 
   const ModalContainer = (
     <div className="Modal-container">
-      <div className={classes}>
+      <div {...baseProps} className={classes}>
         {children}
       </div>
     </div>

@@ -1,10 +1,11 @@
 import * as React from 'react';
 import Input, { InputProps } from '@/components/atoms/input';
 import Caption from '@/components/atoms/caption';
+import { BaseProps } from '@/utils/types';
 
 export type Mask = (string | RegExp)[];
 
-export interface MaskProps {
+export interface MaskProps extends BaseProps {
   /**
    * Every value of Array represent either fixed char or regular expression for particular index
    * <pre className="DocPage-codeBlock">
@@ -41,6 +42,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     onBlur,
     onClick,
     onClear,
+    className,
     ...rest
   } = props;
 
@@ -169,7 +171,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
   };
 
   return (
-    <div>
+    <div className={className}>
       <Input
         {...rest}
         value={value}

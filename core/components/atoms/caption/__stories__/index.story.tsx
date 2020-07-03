@@ -15,7 +15,7 @@ export const all = () => {
   };
 
   return (
-    <Caption {...options}>
+    <Caption {...options} >
       {children}
     </Caption>
   );

@@ -2,6 +2,7 @@ import * as React from 'react';
 import Spinner from '@/components/atoms/spinner';
 import Icon from '@/components/atoms/icon';
 import classNames from 'classnames';
+import { BaseProps } from '@/utils/types';
 
 export type Appearance = 'basic' | 'primary' | 'success' | 'alert' | 'transparent';
 
@@ -9,7 +10,7 @@ export type Size = 'tiny' | 'regular' | 'large';
 
 export type Alignment = 'left' | 'right';
 
-export interface ButtonProps {
+export interface ButtonProps extends BaseProps {
   /**
    * The size of `Button`
    * @default "regular"
@@ -47,13 +48,9 @@ export interface ButtonProps {
    */
   children?: string;
   /**
-   * Specifies tab index of `Checkbox`
+   * Specifies tab index of `Button`
    */
   tabIndex?: number;
-  /**
-   * Adds className to `Card` component
-   */
-  className?: string;
   /**
    * Handler to be called when `Button` is clicked
    */

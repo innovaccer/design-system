@@ -1,9 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 type Columns = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'auto';
 
-export interface ColumnProps {
+export interface ColumnProps extends BaseProps {
   size?: Columns;
   sizeXS?: Columns;
   sizeS?: Columns;
@@ -22,8 +23,11 @@ export const Column = (props: ColumnProps) => {
     sizeM,
     sizeL,
     sizeXL,
-    className
+    className,
+    children
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     ['Col']: true,
@@ -36,7 +40,7 @@ export const Column = (props: ColumnProps) => {
     [`${className}`]: className
   });
 
-  return <div className={classes}>{props.children}</div>;
+  return <div {...baseProps} className={classes}>{children}</div>;
 };
 
 Column.displayName = 'Column';

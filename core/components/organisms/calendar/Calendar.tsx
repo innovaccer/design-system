@@ -4,6 +4,7 @@ import Icon from '@/components/atoms/icon';
 import Heading from '@/components/atoms/heading';
 import Subheading from '@/components/atoms/subheading';
 import Text from '@/components/atoms/text';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 import config from './config';
 import { Day, View, State } from './types';
@@ -18,7 +19,7 @@ import {
   convertToDate
 } from './utility';
 
-export interface SharedProps {
+export interface SharedProps extends BaseProps {
   /**
    * Number of months rendered in view
    * @default 1
@@ -113,7 +114,10 @@ export const Calendar = (props: CalendarProps) => {
     disabledAfter,
     onDateChange,
     onRangeChange,
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   let {
     jumpView = true
@@ -621,7 +625,7 @@ export const Calendar = (props: CalendarProps) => {
     const wrapperClass = classNames({
       ['Calendar']: true,
       [`Calendar--${view}`]: view
-    });
+    }, className);
 
     const headerClass = classNames({
       'Calendar-header': true
@@ -632,7 +636,7 @@ export const Calendar = (props: CalendarProps) => {
     });
 
     return (
-      <div className={wrapperClass}>
+      <div {...baseProps} className={wrapperClass}>
         <div className={headerClass}>
           {index === 0 &&
             renderJumpButton('prev')

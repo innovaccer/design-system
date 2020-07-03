@@ -7,6 +7,7 @@ import {
   fetchDataFn,
 } from '../grid';
 import Table, { TableProps } from '../table';
+import { BaseProps } from '@/utils/types';
 
 interface SyncProps {
   data: Data;
@@ -19,7 +20,7 @@ interface AsyncProps {
   fetchData: fetchDataFn;
 }
 
-interface SharedListProps {
+interface SharedListProps extends BaseProps {
   type?: GridProps['type'];
   size?: GridProps['size'];
   withHeader?: boolean;
@@ -44,7 +45,7 @@ type AsyncListProps = AsyncProps & SharedListProps;
 export type ListProps = (AsyncListProps & SyncListProps);
 
 export const List = (props: ListProps) => {
-  return(
+  return (
     <Table
       showHead={false}
       {...props}

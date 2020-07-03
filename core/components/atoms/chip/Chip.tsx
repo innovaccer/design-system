@@ -1,9 +1,12 @@
 import * as React from 'react';
 import GenericChip from '../_chip';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
+
 export type Type = 'action' | 'selection' | 'input';
 export type Name = number | string;
-export interface ChipProps {
+
+export interface ChipProps extends BaseProps {
   /**
    * Label of chip
    */
@@ -20,7 +23,6 @@ export interface ChipProps {
    * Disables the Chip, making it unable to be pressed
    */
   disabled?: boolean;
-
   /**
    * Select the chip
    */
@@ -51,7 +53,10 @@ export const Chip = (props: ChipProps) => {
     onClose,
     onClick,
     name,
+    className,
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const onCloseHandler = () => {
     if (!disabled && onClose) onClose(name);
@@ -61,17 +66,19 @@ export const Chip = (props: ChipProps) => {
   };
 
   const chipClass = classNames({
+    Chip: true,
     [`Chip-${type}--disabled`]: disabled,
     [`Chip--${type}`]: type && !disabled,
-    Chip: true,
     [`Chip-${type}--selected`]: selected && !disabled,
+  }, className);
 
-  });
   const clearbutton = ((type === 'action') ? false : clearButton);
   const select = (((type === 'selection') && selected) ? true : false);
+
   return (
     <div>
       <GenericChip
+        {...baseProps}
         label={label}
         selected={select}
         icon={icon}

@@ -1,19 +1,21 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export interface ModalFooterProps {
+export interface ModalFooterProps extends BaseProps {
   children: React.ReactElement[];
 }
 
 export const ModalFooter = (props: ModalFooterProps) => {
-  const { children } = props;
+  const { children, className } = props;
+  const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     'Modal-footer': true
-  });
+  }, className);
 
   return (
-    <div className={classes}>
+    <div {...baseProps} className={classes}>
       {children}
     </div>
   );

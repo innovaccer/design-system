@@ -1,8 +1,9 @@
 import * as React from 'react';
 import Text, { Appearance as LabelAppearance, } from '@/components/atoms/text';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export interface LegendProps {
+export interface LegendProps extends BaseProps {
   /**
    * Describes label of the `Legend`
    */
@@ -49,11 +50,14 @@ export const Legend = (props: LegendProps) => {
     onMouseEnter,
     onMouseLeave,
     onClick,
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const legendClass = classNames({
     ['Legend']: true,
-  });
+  }, className);
 
   const styles = {
     background: `var(--${iconAppearance})`,
@@ -63,6 +67,7 @@ export const Legend = (props: LegendProps) => {
 
   return (
     <div
+      {...baseProps}
       className={legendClass}
       onClick={e => onClick && onClick(e)}
       onMouseEnter={e => onMouseEnter && onMouseEnter(e)}

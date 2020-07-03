@@ -18,7 +18,7 @@ export const all = () => {
   };
 
   return (
-    <Placeholder {...options}>
+    <Placeholder {...options} >
       <PlaceholderParagraph length="small" />
       <PlaceholderParagraph length="medium" />
     </Placeholder>

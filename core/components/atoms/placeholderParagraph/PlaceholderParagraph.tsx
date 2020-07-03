@@ -1,10 +1,11 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Length = 'small' | 'medium' | 'large';
 export type Size = 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
 
-export interface PlaceholderParagraphProps {
+export interface PlaceholderParagraphProps extends BaseProps {
   /**
    * Length of `Placeholder`
    * @default "medium"
@@ -37,8 +38,11 @@ export interface PlaceholderParagraphProps {
 export const PlaceholderParagraph = (props: PlaceholderParagraphProps) => {
   const {
     length,
-    size
+    size,
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     'Placeholder--animation': true,
@@ -50,10 +54,10 @@ export const PlaceholderParagraph = (props: PlaceholderParagraphProps) => {
     'PlaceholderParagraph-wrapper': true,
     [`PlaceholderParagraph-wrapper--length-${length}`]: length,
     [`PlaceholderParagraph-wrapper--size-${size}`]: size,
-  });
+  }, className);
 
   return (
-    <div className={wrapperClass}>
+    <div {...baseProps} className={wrapperClass}>
       <span className={classes} />
     </div>
   );

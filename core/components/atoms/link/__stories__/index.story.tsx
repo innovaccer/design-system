@@ -14,7 +14,7 @@ export const all = () => {
   };
 
   return (
-    <Link {...options} onClick={action('link click')}>
+    <Link {...options} onClick={action('link click')} >
       Click this link.
     </Link>
   );

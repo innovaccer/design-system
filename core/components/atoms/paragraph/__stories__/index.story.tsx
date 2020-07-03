@@ -18,7 +18,7 @@ export const all = () => {
 
   return (
     <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>
-      <Paragraph {...options}>
+      <Paragraph {...options} >
         Paragraph <b>component</b> have different varients, look for options in knobs tab.
       </Paragraph>
     </div>

@@ -1,16 +1,19 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 const { useRef, useEffect, useState } = React;
 
-export interface ModalBodyProps {
+export interface ModalBodyProps extends BaseProps {
   children: React.ReactNode;
 }
 
 export const ModalBody = (props: ModalBodyProps) => {
   const [scroll, setScroll] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const { children } = props;
+  const { children, className } = props;
+
+  const baseProps = extractBaseProps(props);
 
   useEffect(() => {
     const scrollHeight = ref && ref.current ? ref.current.scrollHeight : 0;
@@ -23,10 +26,10 @@ export const ModalBody = (props: ModalBodyProps) => {
   const classes = classNames({
     'Modal-body': true,
     ['Modal-body--border']: scroll
-  });
+  }, className);
 
   return (
-    <div className={classes} ref={ref}>
+    <div {...baseProps} className={classes} ref={ref}>
       {children}
     </div>
   );

@@ -1,8 +1,9 @@
 import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export interface LabelProps {
+export interface LabelProps extends BaseProps {
   /**
    * Text to be rendered
    * @type {React.ReactNode}
@@ -22,10 +23,6 @@ export interface LabelProps {
    * @default false
    */
   withInput?: boolean;
-  /**
-   * Adds className to `Label`
-   */
-  className?: string;
 }
 
 export const Label = (props: LabelProps) => {
@@ -34,9 +31,10 @@ export const Label = (props: LabelProps) => {
     withInput = false,
     disabled,
     children,
-    className,
-    ...rest
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const LabelClass = classNames({
     Label: true,
@@ -50,11 +48,11 @@ export const Label = (props: LabelProps) => {
   });
 
   return (
-    <div className={LabelClass}>
-      <GenericText className={classes} componentType="label" {...rest}>
+    <div {...baseProps} className={LabelClass}>
+      <GenericText className={classes} componentType="label">
         {children}
       </GenericText>
-      {required && <span className="Label-requiredIndicator"/>}
+      {required && <span className="Label-requiredIndicator" />}
     </div>
   );
 };

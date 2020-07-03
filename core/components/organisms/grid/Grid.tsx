@@ -5,6 +5,7 @@ import { GridCellProps } from './GridCell';
 import { sortColumn, pinColumn, hideColumn, getTotalPages, moveToIndex, getSchema } from './utility';
 import { debounce } from 'throttle-debounce';
 import { MainGrid } from './MainGrid';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type SortType = 'asc' | 'desc';
 export type Pinned = 'left' | 'right';
@@ -120,7 +121,7 @@ export type GridType = 'resource' | 'data';
 export type Data = RowData[];
 export type Schema = ColumnSchema[];
 
-export interface GridProps {
+export interface GridProps extends BaseProps {
   /**
    * Controls spacing of `Grid`
    * @default "comfortable"
@@ -447,8 +448,10 @@ export class Grid extends React.Component<GridProps, GridState> {
       onPageChange,
       totalRecords,
       pageSize,
-      paginationType
+      paginationType,
     } = this.props;
+
+    const baseProps = extractBaseProps(this.props);
 
     const schema = getSchema(this);
 
@@ -461,6 +464,7 @@ export class Grid extends React.Component<GridProps, GridState> {
       <div className="Grid-container">
         <div className="Grid-wrapper" ref={this.gridRef}>
           <MainGrid
+            {...baseProps}
             _this={this}
             schema={schema}
           />

@@ -4,6 +4,7 @@ import Heading from '@/components/atoms/heading';
 import Text from '@/components/atoms/text';
 import Icon from '@/components/atoms/icon';
 import ActionButton from './ActionButton';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Appearance = 'default' | 'info' | 'success' | 'alert' | 'warning';
 
@@ -18,7 +19,7 @@ export type Action = {
   onClick: (e: React.MouseEvent) => void
 };
 
-export interface ToastProps {
+export interface ToastProps extends BaseProps {
   /**
    * Title of `Toast`
    */
@@ -53,12 +54,15 @@ export const Toast = (props: ToastProps) => {
     message,
     actions,
     onClose,
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const wrapperClass = classNames({
     ['Toast']: true,
     [`Toast--${appearance}`]: appearance,
-  });
+  }, className);
 
   const IconMapping: Record<string, any> = {
     info: 'info',
@@ -84,7 +88,7 @@ export const Toast = (props: ToastProps) => {
   };
 
   return (
-    <div className={wrapperClass}>
+    <div {...baseProps} className={wrapperClass}>
       {icon && (
         <div className={iconClass('left')}>
           <Icon name={icon} appearance={appearance !== 'warning' ? 'white' : 'default'} />

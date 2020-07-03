@@ -3,18 +3,19 @@ import classNames from 'classnames';
 import Icon from '@/components/atoms/icon';
 import Text from '@/components/atoms/text';
 import { Name } from '../chip/Chip';
-export interface GenericChipProps {
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
+export interface GenericChipProps extends BaseProps {
   label: string;
   icon?: string;
   clearButton?: boolean;
   disabled?: boolean;
   selected?: boolean;
-  className?: string;
   onClose?: (name: Name) => void;
   onClick?: (name: Name) => void;
   name: Name;
 }
+
 export const GenericChip = (props: GenericChipProps) => {
   const {
     label = '',
@@ -27,19 +28,25 @@ export const GenericChip = (props: GenericChipProps) => {
     onClick,
     name,
   } = props;
+
+  const baseProps = extractBaseProps(props);
+
   const iconClass = (align: string) => classNames({
     ['Chip-icon']: true,
     [`Chip-icon--${align}`]: align,
   });
+
   const onCloseHandler = () => {
     if (onClose) onClose(name);
   };
+
   const onClickHandler = () => {
     if (onClick) onClick(name);
   };
+
   return (
-    <div className={className} >
-      <div className="Chip-wrapper"onClick={onClickHandler} >
+    <div {...baseProps} className={className} >
+      <div className="Chip-wrapper" onClick={onClickHandler} >
         {icon && (
           <div className={iconClass('left')}>
             <Icon

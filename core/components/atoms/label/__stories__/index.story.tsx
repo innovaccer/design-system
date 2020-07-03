@@ -13,7 +13,7 @@ export const all = () => {
   };
 
   return (
-    <Label {...options}>
+    <Label {...options} >
       Label
     </Label>
   );

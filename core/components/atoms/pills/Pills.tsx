@@ -1,9 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Appearance = 'primary' | 'secondary' | 'alert' | 'warning' | 'success' | 'accent1' | 'accent2' | 'accent3' | 'accent4';
 
-export interface PillsProps {
+export interface PillsProps extends BaseProps {
   /**
    * Color of the `Pills`
    * @default "secondary"
@@ -24,17 +25,19 @@ export const Pills = (props: PillsProps) => {
     appearance = 'secondary',
     children,
     subtle,
-    ...rest
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     Pills: true,
     [`Badge--${appearance}`]: appearance && !subtle,
     [`Badge--subtle-${appearance}`]: subtle
-  });
+  }, className);
 
   return (
-    <span className={classes} {...rest}>
+    <span {...baseProps} className={classes}>
       {children}
     </span>
   );

@@ -2,8 +2,9 @@ import * as React from 'react';
 import Text from '@/components/atoms/text';
 import Icon from '@/components/atoms/icon';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export interface CaptionProps {
+export interface CaptionProps extends BaseProps {
   /**
    * Text to be rendered
    * @type {React.ReactNode}
@@ -32,20 +33,23 @@ export const Caption = (props: CaptionProps) => {
     hide = false,
     withInput = false,
     children,
+    className,
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     Caption: true,
     ['Caption--hidden']: hide,
     ['Caption--withInput']: withInput
-  });
+  }, className);
 
   const errorIconClass = classNames({
     ['Caption-icon']: true,
   });
 
   return (
-    <div className={classes}>
+    <div {...baseProps} className={classes}>
       {error && (
         <div className={errorIconClass}>
           <Icon size={14} name={'error'} appearance={'alert'}/>

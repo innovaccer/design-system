@@ -1,10 +1,11 @@
 import * as React from 'react';
 import Text from '@/components/atoms/text';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Appearance = 'info' | 'alert' | 'warning' | 'success' | 'default';
 
-export interface StatusHintProps {
+export interface StatusHintProps extends BaseProps {
   /**
    * Describes label of the `Status Hint`
    */
@@ -35,11 +36,14 @@ export const StatusHint = (props: StatusHintProps) => {
     onMouseEnter,
     onMouseLeave,
     onClick,
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const StatusHintClass = classNames({
     ['StatusHint']: true,
-  });
+  }, className);
 
   const StatusHintIconClass = classNames({
     ['StatusHint-icon']: true,
@@ -48,6 +52,7 @@ export const StatusHint = (props: StatusHintProps) => {
 
   return (
     <div
+      {...baseProps}
       className={StatusHintClass}
       onClick={e => onClick && onClick(e)}
       onMouseEnter={e => onMouseEnter && onMouseEnter(e)}

@@ -1,7 +1,9 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { Row, Column, Legend } from '@/index';
 import { ColumnProps } from '@/index.type';
 import { colorToHex } from '@/utils';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 import {
   ResponsiveContainer,
   PieChart,
@@ -16,7 +18,7 @@ export interface Data {
   value: any;
 }
 
-export interface DonutChartProps {
+export interface DonutChartProps extends BaseProps {
   /**
    * Data object
    */
@@ -69,8 +71,11 @@ export const DonutChart = (props: DonutChartProps) => {
     radius,
     withLegends,
     withTooltip,
-    withActiveSegment
+    withActiveSegment,
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const columnOptions: Record<string, ColumnProps> = {
     chart: {
@@ -190,8 +195,12 @@ export const DonutChart = (props: DonutChartProps) => {
   //   return out;
   // }, []);
 
+  const classes = classNames({
+    ['DonutChart']: true
+  }, className);
+
   return (
-    <Row className="DonutChart">
+    <Row {...baseProps} className={classes}>
       <Column {...columnOptions.chart}>
         <ResponsiveContainer>
           <PieChart>

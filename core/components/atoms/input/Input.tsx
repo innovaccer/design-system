@@ -4,12 +4,13 @@ import classNames from 'classnames';
 import Text from '@/components/atoms/text';
 import Popover from '@/components/molecules/popover';
 import Icon, { IconProps } from '@/components/atoms/icon';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
 export type AutoComplete = 'on' | 'off';
 export type Size = 'tiny' | 'regular' | 'large';
 
-export interface InputProps {
+export interface InputProps extends BaseProps {
   /**
    * Name of the `Input`
    */
@@ -127,15 +128,18 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
     onClear,
     onBlur,
     onFocus,
-    actionIcon
+    actionIcon,
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     ['Input']: true,
     [`Input--${size}`]: size,
     ['Input--disabled']: disabled,
     ['Input--error']: error
-  });
+  }, className);
 
   const inputClass = classNames({
     ['Input-input']: true,
@@ -177,6 +181,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
         </div>
       )}
       <input
+        {...baseProps}
         ref={ref}
         name={name}
         type={type}

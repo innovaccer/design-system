@@ -3,8 +3,9 @@ import Grid, { GridSize, Schema } from './Grid';
 import classNames from 'classnames';
 import { GridHead } from './GridHead';
 import { GridBody } from './GridBody';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
-interface MainGridProps {
+interface MainGridProps extends BaseProps {
   _this: Grid;
   schema: Schema;
 }
@@ -12,8 +13,11 @@ interface MainGridProps {
 export const MainGrid = (props: MainGridProps) => {
   const {
     _this,
-    schema
+    schema,
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const {
     loading,
@@ -29,7 +33,7 @@ export const MainGrid = (props: MainGridProps) => {
     Grid: 'true',
     [`Grid--${type}`]: type,
     [`Grid--${size}`]: size,
-  });
+  }, className);
 
   const minRowHeight: Record<GridSize, number> = {
     comfortable: 54,
@@ -111,6 +115,7 @@ export const MainGrid = (props: MainGridProps) => {
 
   return (
     <div
+      {...baseProps}
       className={classes}
       onScroll={onScrollHandler}
     >

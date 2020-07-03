@@ -1,10 +1,11 @@
 import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled';
 
-export interface TextProps {
+export interface TextProps extends BaseProps {
   /**
    * Text to be rendered
    * @type {string}
@@ -31,21 +32,23 @@ export const Text = (props: TextProps) => {
     children,
     weight,
     small,
-    ...rest
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     Text: true,
     [`Text--${appearance}`]: appearance,
     [`Text--${weight}`]: weight,
     ['Text--small']: small,
-  });
+  }, className);
 
   return (
     <GenericText
+      {...baseProps}
       className={classes}
       componentType="span"
-      {...rest}
     >
       {children}
     </GenericText>

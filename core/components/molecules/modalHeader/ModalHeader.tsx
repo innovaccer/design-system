@@ -1,10 +1,11 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 import Heading from '@/components/atoms/heading';
 import Text from '@/components/atoms/text';
 import Icon from '@/components/atoms/icon';
 
-export interface ModalHeaderProps {
+export interface ModalHeaderProps extends BaseProps {
   icon?: string;
   heading?: string;
   onClose: (event?: React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
@@ -12,11 +13,12 @@ export interface ModalHeaderProps {
 }
 
 export const ModalHeader = (props: ModalHeaderProps) => {
-  const { heading = '', icon = '', subHeading = '' } = props;
+  const { className, heading = '', icon = '', subHeading = '' } = props;
+  const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     'Modal-header': true
-  });
+  }, className);
 
   const subheaderClasses = classNames({
     'Modal-header-subheader': true,
@@ -46,7 +48,7 @@ export const ModalHeader = (props: ModalHeaderProps) => {
 
   return (
     <div className="Modal-header-wrapper">
-      <div className={classes}>
+      <div {...baseProps} className={classes}>
         {icon && getHeaderIcon()}
         <div>
           <Heading>

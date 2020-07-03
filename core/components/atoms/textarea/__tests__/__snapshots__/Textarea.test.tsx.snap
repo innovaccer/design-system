@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Textarea component 
+  name: "name", disabled: false, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Textarea"
+>
+  <textarea
+    className="Textarea-textarea"
+    disabled={false}
+    name="name"
+    onChange={[MockFunction]}
+  />
+</div>
+`;
+
+exports[`Textarea component 
+  name: "name", disabled: true, onChange: "[Function]"
+ 1`] = `
+<div
+  className="Textarea"
+>
+  <textarea
+    className="Textarea-textarea"
+    disabled={true}
+    name="name"
+    onChange={[MockFunction]}
+  />
+</div>
+`;

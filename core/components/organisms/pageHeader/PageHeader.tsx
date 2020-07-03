@@ -1,10 +1,11 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Heading } from '@/index';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type HeaderType = 'small' | 'large';
 
-export interface PageHeaderProps {
+export interface PageHeaderProps extends BaseProps {
   /**
    * Page title
    */
@@ -44,19 +45,20 @@ export interface PageHeaderProps {
 }
 
 export const PageHeader = (props: PageHeaderProps) => {
-  const { title, navigation, actions, tabs, breadcrumbs, badge, status, meta, type } = props;
+  const { title, navigation, actions, tabs, breadcrumbs, badge, status, meta, type, className } = props;
+  const baseProps = extractBaseProps(props);
 
   const wrapperClasses = classNames({
     'PageHeader-wrapper': true,
     ['PageHeader-wrapper--withTabs']: tabs
-  });
+  }, className);
 
   const classes = classNames({
     PageHeader: true
   });
 
   return (
-    <div className={wrapperClasses}>
+    <div {...baseProps} className={wrapperClasses}>
       {breadcrumbs && breadcrumbs}
       <div className={classes}>
         <div className="PageHeader-titleWrapper">

@@ -1,8 +1,9 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { TabProps } from './Tab';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export interface TabsWrapperProps {
+export interface TabsWrapperProps extends BaseProps {
   /**
    * Index of desired selected `Tab`
    */
@@ -20,8 +21,11 @@ export interface TabsWrapperProps {
 export const TabsWrapper = (props: TabsWrapperProps) => {
   const {
     children = [],
-    onTabChange
+    onTabChange,
+    className,
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const [active, setActiveTab] = React.useState(props.active && props.active < children.length
     ? props.active
@@ -37,7 +41,7 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
 
   const wrapperClass = classNames({
     ['TabsWrapper']: true,
-  });
+  }, className);
 
   const tabClickHandler = (tabIndex: number) => {
     setActiveTab(tabIndex);
@@ -61,7 +65,7 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
   );
 
   return (
-    <div className={wrapperClass}>
+    <div {...baseProps} className={wrapperClass}>
       <div className="TabsWrapper-header">
         {TabsHeader}
       </div>
