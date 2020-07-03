@@ -258,7 +258,7 @@
 }
 
 .Grid .Avatar {
-    margin-left: 0;
+    margin-right: var(--spacing-l);
 }
 
 .Grid .Placeholder {

@@ -41,14 +41,14 @@ export const Avatar = (props: AvatarProps) => {
     : `${firstName ? firstName.trim()[0] : ''}${lastName ? lastName.trim()[0] : ''}`;
 
   const colors = [
+    'accent4',
     'primary',
-    'alert',
-    'warning',
-    'success',
-    'accent1',
-    'accent2',
     'accent3',
-    'accent4'
+    'alert',
+    'accent2',
+    'warning',
+    'accent1',
+    'success',
   ];
   const appearance = props.appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8];
 
