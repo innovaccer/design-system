@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Icon from '@/components/atoms/icon';
 import Heading from '@/components/atoms/heading';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Appearance = 'default' | 'alert' | 'info' | 'success' | 'warning';
 const IconMapping = {
@@ -11,7 +12,7 @@ const IconMapping = {
   alert: 'error',
 };
 
-export interface MessageProps {
+export interface MessageProps extends BaseProps {
   /**
    * Color of `Message`
    * @default "default"
@@ -33,12 +34,15 @@ export const Message: React.FunctionComponent<MessageProps> = props => {
     appearance = 'default',
     title,
     children,
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const MessageClass = classNames({
     ['Message']: true,
     [`Message--${appearance}`]: appearance,
-  });
+  }, className);
 
   const MessageIcon = classNames({
     ['Message-icon']: true,
@@ -47,7 +51,7 @@ export const Message: React.FunctionComponent<MessageProps> = props => {
   });
 
   return (
-    <div className={MessageClass}>
+    <div {...baseProps} className={MessageClass}>
       {appearance !== 'default' && (
         <div className={MessageIcon}>
           <Icon name={IconMapping[appearance]} appearance={appearance}/>

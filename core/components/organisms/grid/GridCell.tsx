@@ -260,7 +260,7 @@ export const GridCell = (props: GridCellProps) => {
     case 'AVATAR_WITH_META_LIST':
       if (loading) {
         return (
-          <Placeholder style={{ flexGrow: 1 }} imageSize={'medium'} round={true}>
+          <Placeholder imageSize={'medium'} round={true}>
             <span style={{ marginLeft: 'var(--spacing-m)' }}>
               <PlaceholderParagraph length="medium" />
               <PlaceholderParagraph length="large" />
@@ -293,7 +293,7 @@ export const GridCell = (props: GridCellProps) => {
     case 'STATUS_HINT':
       if (loading) {
         return (
-          <Placeholder style={{ flexGrow: 1 }} imageSize={'small'} round={true}>
+          <Placeholder imageSize={'small'} round={true}>
             <PlaceholderParagraph length="medium" />
           </Placeholder>
         );

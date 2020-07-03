@@ -198,7 +198,7 @@ export const Header = (props: HeaderProps) => {
             />
           )}
           {loading ? (
-            <Placeholder style={{ display: 'flex', flexGrow: 1 }} withImage={!showHead && withCheckbox}>
+            <Placeholder withImage={!showHead && withCheckbox}>
               <PlaceholderParagraph length={'small'} />
             </Placeholder>
           ) : (

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export interface TextareaProps {
+export interface TextareaProps extends BaseProps {
   /**
    * Name of the `Textarea`
    */
@@ -67,12 +68,15 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
     onChange,
     onClick,
     onBlur,
-    onFocus
+    onFocus,
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     ['Textarea']: true,
-  });
+  }, className);
 
   const TextareaClass = classNames({
     ['Textarea-textarea']: true,
@@ -82,6 +86,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
   return (
     <div className={classes}>
       <textarea
+        {...baseProps}
         ref={ref}
         name={name}
         rows={rows}

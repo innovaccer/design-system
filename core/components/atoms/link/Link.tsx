@@ -1,10 +1,11 @@
 import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
+import { BaseProps } from '@/utils/types';
 
 export type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
 
-export interface LinkProps {
+export interface LinkProps extends BaseProps {
   /**
    * HTML ID of `Link`
    */
@@ -43,12 +44,13 @@ export interface LinkProps {
 export const Link: React.FunctionComponent<LinkProps> = props => {
   const {
     children,
+    className,
     ...rest
   } = props;
 
   const classes = classNames({
     Link: true,
-  });
+  }, className);
 
   return (
     <GenericText className={classes} componentType="a" {...rest}>

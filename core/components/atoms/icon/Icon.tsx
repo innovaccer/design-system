@@ -1,11 +1,12 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Appearance = 'default' | 'destructive' | 'white' | 'subtle' | 'disabled' | 'info' | 'alert' | 'warning' | 'success';
 
 export type IconType = 'filled' | 'outline' | 'rounded' | 'sharp';
 
-export interface IconProps {
+export interface IconProps extends BaseProps {
   /**
    * Material icon name
    */
@@ -28,10 +29,6 @@ export interface IconProps {
    * Handler to be called when icon is clicked
    */
   onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-  /**
-   * Adds className to `Card` component
-   */
-  className?: string;
 }
 
 export const Icon = (props: IconProps) => {
@@ -41,8 +38,10 @@ export const Icon = (props: IconProps) => {
     className,
     name,
     size,
-    onClick,
+    onClick
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const iconClass = classNames({
     ['material-icons']: true,
@@ -58,6 +57,7 @@ export const Icon = (props: IconProps) => {
 
   return (
     <i
+      {...baseProps}
       className={iconClass}
       style={styles}
       onClick={onClick}

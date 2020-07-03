@@ -1,10 +1,11 @@
 import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Appearance = 'default' | 'subtle' | 'disabled' | 'white';
 
-export interface SubheadingProps {
+export interface SubheadingProps extends BaseProps {
   /**
    * Text to be rendered
    * @type {string}
@@ -21,16 +22,18 @@ export const Subheading = (props: SubheadingProps) => {
   const {
     appearance = 'default',
     children,
-    ...rest
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     Subheading: true,
     [`Subheading--${appearance}`]: appearance
-  });
+  }, className);
 
   return (
-    <GenericText className={classes} componentType={'h4'} {...rest}>
+    <GenericText {...baseProps} className={classes} componentType={'h4'}>
       {children}
     </GenericText>
   );

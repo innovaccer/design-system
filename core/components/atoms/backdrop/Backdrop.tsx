@@ -1,10 +1,11 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 const { useEffect, useState } = React;
 
-export interface BackdropProps {
+export interface BackdropProps extends BaseProps {
   /**
    * Handles open/close state
    */
@@ -12,6 +13,12 @@ export interface BackdropProps {
 }
 
 const Backdrop = (props: BackdropProps) => {
+  const {
+    className,
+  } = props;
+
+  const baseProps = extractBaseProps(props);
+
   const [savedBodyOverflow, setBodyOverflow] = useState<string | null>(null);
   const [open, setOpen] = React.useState<boolean>(props.open);
   const [animate, setAnimate] = React.useState<boolean>(props.open);
@@ -21,7 +28,7 @@ const Backdrop = (props: BackdropProps) => {
     'Backdrop--open': open,
     'Backdrop-animation--open': animate,
     'Backdrop-animation--close': !animate
-  });
+  }, className);
 
   const disableBodyScroll = () => {
     if (savedBodyOverflow) {
@@ -57,7 +64,7 @@ const Backdrop = (props: BackdropProps) => {
 
   const BackdropElement = ReactDOM.createPortal(
     (
-      <div className={classes} />
+      <div {...baseProps} className={classes} />
     ),
     document.body
   );

@@ -37,7 +37,7 @@ export const all = () => {
   const children = getChildren(shadow);
 
   return (
-    <Card shadow={shadow} style={styles}>
+    <Card shadow={shadow} style={styles} >
       {children}
     </Card>
   );

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Omit } from 'utility-types';
 import { PopperWrapper } from '@/utils';
+import classNames from 'classnames';
 
 export type PositionType = 'top' | 'bottom' | 'left' | 'right';
 type DivProps = Omit<JSX.IntrinsicElements['div'], 'ref'>;
@@ -71,12 +72,17 @@ export class Tooltip extends React.Component<TooltipProps, IState> {
       position = 'bottom',
       tooltip,
       children,
+      className,
       ...props
     } = this.props;
 
+    const classes = classNames({
+      ['Tooltip']: true
+    }, className);
+
     const tooltipWrapper = (
       <div
-        className="Tooltip"
+        className={classes}
         {...props}
         style={this.state.style}
       >

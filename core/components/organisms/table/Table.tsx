@@ -15,6 +15,7 @@ import {
   updateFilterListFn
 } from '../grid';
 import { updateBatchData, filterData, sortData, paginateData, getSelectAll, searchData } from '../grid/utility';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 import { debounce } from 'throttle-debounce';
 
 interface SyncProps {
@@ -120,7 +121,7 @@ interface AsyncProps {
   fetchData: fetchDataFn;
 }
 
-interface SharedTableProps {
+interface SharedTableProps extends BaseProps {
   /**
    * Controls Table Head display
    */
@@ -509,16 +510,21 @@ export class Table extends React.Component<TableProps, TableState> {
       // onPageChange: onPageChangeProp,
       // onSelect,
       loaderSchema,
-      errorTemplate
+      errorTemplate,
+      className,
     } = this.props;
+
+    const baseProps = extractBaseProps(this.props);
 
     const {
       children: headerChildren,
       ...headerAttr
     } = headerOptions as ExternalHeaderProps;
 
+    const classes = className ? ` ${className}` : '';
+
     return (
-      <div className="Table">
+      <div {...baseProps} className={`Table${classes}`}>
         {withHeader && (
           <div className="Table-header">
             <Header

@@ -1,11 +1,12 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { PopperWrapper } from '@/utils';
+import { BaseProps } from '@/utils/types';
 
 export type Position = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end';
 type ActionType = 'click' | 'hover';
 
-export interface PopoverProps {
+export interface PopoverProps extends BaseProps {
   /**
    *  Position to place the `trigger`
    * @default "bottom"
@@ -72,7 +73,8 @@ export const Popover = (props: PopoverProps) => {
     hoverable,
     children,
     trigger,
-    onToggle
+    onToggle,
+    className,
   } = props;
 
   const [open, setOpen] = React.useState<boolean>(props.open || false);
@@ -89,7 +91,7 @@ export const Popover = (props: PopoverProps) => {
   const classes = classNames({
     Popover: true,
     ['Popover--dark']: dark
-  });
+  }, className);
 
   const PopoverWrapper = (
     <div className={classes} >

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export interface ProgressBarProps {
+export interface ProgressBarProps extends BaseProps {
   /**
    * Specifies how much of the task that has been completed. Value should lie between 0 to max,
    */
@@ -17,7 +18,10 @@ export const ProgressBar = (props: ProgressBarProps) => {
   const {
     max = 100,
     value,
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const style = {
     width: value > 0 ? `${Math.min(value, max) * 100 / max}%` : '0',
@@ -25,10 +29,10 @@ export const ProgressBar = (props: ProgressBarProps) => {
 
   const ProgressBarClass = classNames({
     ProgressBar: true,
-  });
+  }, className);
 
   return (
-    <div className={ProgressBarClass}>
+    <div {...baseProps} className={ProgressBarClass}>
       <div className={'ProgressBar-indicator'} style={style} />
     </div>
   );

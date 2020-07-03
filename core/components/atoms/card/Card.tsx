@@ -1,9 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { BaseProps } from '@/utils/types';
 
 export type Shadow = 'light' | 'medium' | 'dark';
 
-export interface CardProps {
+export interface CardProps extends BaseProps {
   /**
    * Shadow of the `Card`
    * @default "medium"
@@ -13,10 +14,6 @@ export interface CardProps {
    * Adds CSS to `Card` component
    */
   style?: React.CSSProperties;
-  /**
-   * Adds className to `Card` component
-   */
-  className?: string;
   /**
    * Will be wrapped in a `Card` container
    */
@@ -38,7 +35,7 @@ export const Card = (props: CardProps) => {
   });
 
   return (
-    <div className={classes} {...rest}>
+    <div {...rest} className={classes}>
       {children}
     </div>
   );

@@ -2,12 +2,13 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Text from '@/components/atoms/text';
 import Icon from '@/components/atoms/icon';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Size = 'regular' | 'tiny';
 
 type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 
-export interface CheckboxProps {
+export interface CheckboxProps extends BaseProps {
   /**
    * Size of the `Checkbox`
    * @default "regular"
@@ -56,14 +57,18 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     size = 'regular',
     tabIndex = 0,
     defaultChecked,
+    indeterminate,
     label,
     disabled,
     onChange,
     name,
     value,
+    className,
   } = props;
 
   const ref = React.useRef<HTMLInputElement>(null);
+
+  const baseProps = extractBaseProps(props);
 
   React.useImperativeHandle(forwardedRef, (): HTMLInputElement => {
     return ref.current as HTMLInputElement;
@@ -72,8 +77,8 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
   const [checked, setChecked] = React.useState(props.checked === undefined ? defaultChecked : props.checked);
 
   React.useEffect(() => {
-    setIndeterminate(props.indeterminate);
-  }, [props.indeterminate]);
+    setIndeterminate(indeterminate);
+  }, [indeterminate]);
 
   React.useEffect(() => {
     if (props.checked !== undefined) {
@@ -85,7 +90,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     ['Checkbox']: true,
     ['Checkbox--disabled']: disabled,
     [`Checkbox--${size}`]: size,
-  });
+  }, className);
 
   const CheckboxOuterWrapper = classNames({
     ['Checkbox-outerWrapper']: true,
@@ -107,8 +112,8 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     [`Checkbox-wrapper--${size}`]: size,
   });
 
-  const setIndeterminate = (indeterminate: any) => {
-    ref.current!.indeterminate = indeterminate;
+  const setIndeterminate = (indeterminateValue: any) => {
+    ref.current!.indeterminate = indeterminateValue;
   };
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -119,13 +124,14 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     if (onChange) onChange(e);
   };
 
-  const IconName = (props.indeterminate) ? 'remove' : ((checked) ? 'check' : '');
+  const IconName = (indeterminate) ? 'remove' : ((checked) ? 'check' : '');
   const IconSize = (size) === 'tiny' ? 8 : 16;
 
   return (
     <div className={CheckboxClass}>
       <div className={CheckboxOuterWrapper}>
         <input
+          {...baseProps}
           type="checkbox"
           defaultChecked={defaultChecked}
           onChange={onChangeHandler}

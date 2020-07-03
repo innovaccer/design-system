@@ -2,12 +2,13 @@ import * as React from 'react';
 import Button from '@/components/atoms/button';
 import Text from '@/components/atoms/text';
 import Input from '@/components/atoms/input';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 import classNames from 'classnames';
 
 export type PaginationType = 'basic' | 'jump';
 
-export interface PaginationProps {
+export interface PaginationProps extends BaseProps {
   /**
    * @default "basic"
    */
@@ -30,8 +31,11 @@ export const Pagination = (props: PaginationProps) => {
   const {
     type = 'basic',
     totalPages,
-    onPageChange
+    onPageChange,
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const [page, setPage] = React.useState<number>(props.page ? props.page : 1);
   const [init, setInit] = React.useState<boolean>(false);
@@ -43,7 +47,7 @@ export const Pagination = (props: PaginationProps) => {
   const wrapperClass = classNames({
     ['Pagination']: true,
     [`Pagination--${type}`]: type,
-  });
+  }, className);
 
   const nextButtonWrapperClass = classNames({
     ['Pagination-buttonWrapper']: true,
@@ -93,7 +97,7 @@ export const Pagination = (props: PaginationProps) => {
   else buttonHelper.push('mx-4');
 
   return (
-    <div className={wrapperClass}>
+    <div {...baseProps} className={wrapperClass}>
       <div className={prevButtonWrapperClass}>
         <Button
           onClick={() => onClickHandler('first')}

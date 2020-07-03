@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Text, Icon } from '@/index';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 const { useState } = React;
 
 export type LayoutType = 'vertical' | 'horizontal';
@@ -16,7 +17,7 @@ export type Menu = {
 
 type ActiveMenu = ({ name: string } | { link: string }) & Partial<Menu>;
 
-export interface NavigationProps {
+export interface NavigationProps extends BaseProps {
   /**
    * `Navigation` component type
    */
@@ -73,9 +74,11 @@ export const Navigation = (props: NavigationProps) => {
     expanded,
     onToggle,
     footer,
-    autoCollapse
+    autoCollapse,
+    className
   } = props;
 
+  const baseProps = extractBaseProps(props);
   const [menuState, setMenuState] = useState<Record<string, boolean>>({});
 
   React.useEffect(() => {
@@ -267,10 +270,10 @@ export const Navigation = (props: NavigationProps) => {
     ['Navigation']: true,
     [`Navigation--${type}`]: type,
     ['Navigation--collapsed']: !expanded
-  });
+  }, className);
 
   return (
-    <div className={classes}>
+    <div {...baseProps} className={classes}>
       {type === 'horizontal'
         ? getHorizontalMenu(data)
         : getVerticalMenu()

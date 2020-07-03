@@ -9,6 +9,7 @@ import Text from '@/components/atoms/text';
 import Input from '@/components/atoms/input';
 import classNames from 'classnames';
 import Loading from './Loading';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 export type DropdownAlign = 'left' | 'right';
@@ -98,7 +99,7 @@ export interface DropdownListProps extends ListProps {
   loadersCount?: number;
 }
 
-interface OptionsProps extends DropdownListProps {
+interface OptionsProps extends DropdownListProps, BaseProps {
   listOptions: OptionSchema[];
   searchTerm: string;
   triggerLabel: string;
@@ -153,7 +154,10 @@ const DropdownList = (props: OptionsProps) => {
     applyOptions,
     cancelOptions,
     toggleDropdown,
+    className,
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const dropdownRef = React.createRef<HTMLDivElement>();
   const triggerRef = React.createRef<HTMLDivElement>();
@@ -234,7 +238,7 @@ const DropdownList = (props: OptionsProps) => {
 
   const dropdownClass = classNames({
     ['Dropdown']: true,
-  });
+  }, className);
 
   const dropdownWrapperClass = classNames({
     ['Dropdown-wrapper']: true,
@@ -462,9 +466,9 @@ const DropdownList = (props: OptionsProps) => {
     );
   };
 
-  const focusOption = (direction: string, className: string) => {
+  const focusOption = (direction: string, classes: string) => {
     const updatedCursor = direction === 'down' ? cursor + 1 : cursor - 1;
-    const elements = document.querySelectorAll(className);
+    const elements = document.querySelectorAll(classes);
     const element: HTMLElement = elements[updatedCursor] as HTMLElement;
     if (element) scrollIntoView(dropdownRef.current, element);
     if (element !== undefined) setCursor(updatedCursor);
@@ -488,8 +492,8 @@ const DropdownList = (props: OptionsProps) => {
           (dropdownInputRef.current === activeElement || dropdownTriggerRef.current === activeElement)
         ) {
           event.preventDefault();
-          const className = withCheckbox ? `${optionClass} .Checkbox-input` : optionClass;
-          const elements = document.querySelectorAll(className);
+          const classes = withCheckbox ? `${optionClass} .Checkbox-input` : optionClass;
+          const elements = document.querySelectorAll(classes);
           const element = elements[cursor] as HTMLElement;
           if (element) element.click();
         }
@@ -534,6 +538,7 @@ const DropdownList = (props: OptionsProps) => {
 
   return (
     <div
+      {...baseProps}
       className={dropdownClass}
       ref={triggerRef}
       style={{ width }}

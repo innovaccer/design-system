@@ -1,10 +1,10 @@
 import * as React from 'react';
-
+import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 import PlaceholderImage, { Size } from '@/components/atoms/placeholderImage';
 import { PlaceholderParagraphProps } from '@/components/atoms/placeholderParagraph';
-import classNames from 'classnames';
 
-export interface PlaceholderProps {
+export interface PlaceholderProps extends BaseProps {
   /**
    * Shows `Placeholder` along with image
    */
@@ -19,10 +19,6 @@ export interface PlaceholderProps {
    */
   imageSize?: Size;
   /**
-   * Adds CSS
-   */
-  style?: React.CSSProperties;
-  /**
    * To be rendered in `Placeholder` wrapper
    */
   children?: React.ReactElement<PlaceholderParagraphProps> | React.ReactElement<PlaceholderParagraphProps>[];
@@ -34,15 +30,22 @@ export const Placeholder = (props: PlaceholderProps) => {
     withImage,
     round,
     children,
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const paragraphClasses = classNames({
     'Placeholder-paragraph': true,
     ['Placeholder-paragraph--withImage']: withImage
   });
 
+  const classes = classNames({
+    ['Placeholder']: true,
+  }, className);
+
   return (
-    <div className="Placeholder">
+    <div {...baseProps} className={classes}>
       {withImage && (
         <PlaceholderImage round={round} size={imageSize} />
       )}

@@ -1,15 +1,16 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Appearance = 'primary' | 'secondary' | 'white';
 export type Size = 'small' | 'medium' | 'large';
 
-export interface SpinnerProps {
+export interface SpinnerProps extends BaseProps {
   /**
    * Color of `Spinner`
    * @default "primary"
    */
-  appearance?:  Appearance;
+  appearance?: Appearance;
   /**
    * Size of `Spinner`
    * @default "medium"
@@ -20,13 +21,16 @@ export interface SpinnerProps {
 export const Spinner = (props: SpinnerProps) => {
   const {
     appearance = 'primary',
-    size = 'medium'
+    size = 'medium',
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const wrapperClasses = classNames({
     Spinner: true,
     [`Spinner--${size}`]: size,
-  });
+  }, className);
   const circleClasses = classNames({
     Circle: true,
     [`Circle--${appearance}`]: appearance,
@@ -45,7 +49,7 @@ export const Spinner = (props: SpinnerProps) => {
   };
 
   return (
-    <svg className={wrapperClasses} {...svgProps}>
+    <svg {...baseProps} className={wrapperClasses} {...svgProps}>
       <circle className={circleClasses} {...circleProps} />
     </svg>
   );

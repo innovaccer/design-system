@@ -4,8 +4,9 @@ import ModalHeader from '@/components/molecules/modalHeader';
 import ModalDescription from '@/components/molecules/modalDescription';
 import ModalFooter from '@/components/molecules/modalFooter';
 import Button, { Appearance } from '@/components/atoms/button';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export interface DialogProps {
+export interface DialogProps extends BaseProps {
   /**
    * Callback for `Dialog` close event
    */
@@ -78,7 +79,10 @@ const Dialog = (props: DialogProps) => {
     primaryButtonLabel,
     primaryButtonCallback,
     secondaryButtonLabel,
-    secondaryButtonCallback } = props;
+    secondaryButtonCallback,
+  } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const modalOptions = {
     open,
@@ -98,7 +102,7 @@ const Dialog = (props: DialogProps) => {
   };
 
   return (
-    <Modal {...modalOptions} >
+    <Modal {...baseProps} {...modalOptions}>
       <ModalHeader {...modalHeaderOptions} />
       <ModalDescription {...modalDescriptionOptions} />
       <ModalFooter>

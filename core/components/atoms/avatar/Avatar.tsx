@@ -1,10 +1,11 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Heading } from '@/index';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Appearance = 'primary' | 'alert' | 'warning' | 'success' | 'accent1' | 'accent2' | 'accent3' | 'accent4';
 
-export interface AvatarProps {
+export interface AvatarProps extends BaseProps {
   /**
    * Color of the `Avatar`
    * @default "primary"
@@ -33,8 +34,12 @@ export const Avatar = (props: AvatarProps) => {
   const {
     children,
     firstName,
-    lastName
+    lastName,
+    className,
+    appearance,
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const initials = children
     ? children.trim().slice(0, initialsLength)
@@ -50,16 +55,16 @@ export const Avatar = (props: AvatarProps) => {
     'accent1',
     'success',
   ];
-  const appearance = props.appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8];
+  const AvatarAppearance = appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8];
 
   const classes = classNames({
     Avatar: true,
-    [`Avatar--${appearance}`]: appearance
-  });
+    [`Avatar--${AvatarAppearance}`]: AvatarAppearance
+  }, className);
 
   return (
-    <span className={classes}>
-      <Heading size="s" appearance={appearance === 'warning' ? 'default' : 'white'}>{initials}</Heading>
+    <span {...baseProps} className={classes}>
+      <Heading size="s" appearance={AvatarAppearance === 'warning' ? 'default' : 'white'}>{initials}</Heading>
     </span>
   );
 };

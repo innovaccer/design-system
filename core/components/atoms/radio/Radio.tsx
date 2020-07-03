@@ -1,12 +1,13 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import Text from '@/components/atoms/text';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Size = 'regular' | 'tiny';
 
 type MouseEvent = React.ChangeEvent<HTMLInputElement>;
 
-export interface RadioProps {
+export interface RadioProps extends BaseProps {
   /**
    * Size of `Radio`
    * @default "regular"
@@ -47,7 +48,10 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
     name,
     value,
     defaultChecked,
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const ref = React.useRef<HTMLInputElement>(null);
 
@@ -59,7 +63,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
     ['Radio']: true,
     ['Radio--disabled']: disabled,
     [`Radio--${size}`]: size,
-  });
+  }, className);
 
   const RadioWrapper = classNames({
     ['Radio-wrapper']: true,
@@ -79,6 +83,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
     <div className={RadioClass}>
       <div className={RadioOuterWrapper}>
         <input
+          {...baseProps}
           type="radio"
           disabled={disabled}
           defaultChecked={defaultChecked}

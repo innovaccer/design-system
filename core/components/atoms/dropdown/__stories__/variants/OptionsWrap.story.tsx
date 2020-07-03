@@ -10,11 +10,11 @@ export const optionsWrap = () => {
     <div style={{ display: 'flex', minHeight: '240px' }}>
       <div style={{ marginRight: '5%', width: '128px' }}>
         <Text weight="strong">{'Options Trimmed'}</Text> <br /><br />
-        <Dropdown options={storyWrapOptions} placeholder={'Select'} withCheckbox={true}/>
+        <Dropdown options={storyWrapOptions} placeholder={'Select'} />
       </div>
       <div style={{ marginRight: '5%', width: '128px' }}>
         <Text weight="strong">{'Options Wrapped'}</Text> <br /><br />
-        <Dropdown options={storyWrapOptions} placeholder={'Select'} truncateOption={false} withCheckbox={true}/>
+        <Dropdown options={storyWrapOptions} placeholder={'Select'} truncateOption={false} />
       </div>
     </div>
   );

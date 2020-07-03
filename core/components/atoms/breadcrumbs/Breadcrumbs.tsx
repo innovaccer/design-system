@@ -1,14 +1,16 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import Dropdown from '../dropdown';
 import { Button } from '@/index';
 import { SubtleLink } from './SubtleLink';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 interface Breadcrumb {
   label: string;
   link: string;
 }
 
-export interface BreadcrumbsProps {
+export interface BreadcrumbsProps extends BaseProps {
   /**
    * List of `Breadcrumb` props
    * <pre className="DocPage-codeBlock">
@@ -58,11 +60,18 @@ const renderDropdown = (list: BreadcrumbsProps['list'], onClick: BreadcrumbsProp
 export const Breadcrumbs = (props: BreadcrumbsProps) => {
   const {
     list,
-    onClick
+    onClick,
+    className,
   } = props;
 
+  const baseProps = extractBaseProps(props);
+
+  const BreadcrumbClass = classNames({
+    ['Breadcrumbs']: true
+  }, className);
+
   return (
-    <div className="Breadcrumbs">
+    <div {...baseProps} className={BreadcrumbClass}>
       {list.length <= 4 ? (
         list.map((item, index) => {
           return (

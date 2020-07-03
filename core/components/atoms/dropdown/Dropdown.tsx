@@ -3,6 +3,7 @@ import { debounce } from 'throttle-debounce';
 import DropdownList, { DropdownListProps, SelectAll, Selected, ChangeEvent } from './DropdownList';
 import { OptionSchema as Option } from './option';
 import { getSearchedOptions, getSelectAll, _isEqual } from './utility';
+import { BaseProps } from '@/utils/types';
 
 type fetchOptionsFnc = (searchTerm: string) => Promise<{
   count: number;
@@ -62,7 +63,7 @@ interface TriggerProps {
   customTrigger?: (label: string) => React.ReactElement;
 }
 
-interface SharedDropdownProps extends DropdownListProps {
+interface SharedDropdownProps extends DropdownListProps, BaseProps {
   /**
    * Unique name of `Dropdown`
    */

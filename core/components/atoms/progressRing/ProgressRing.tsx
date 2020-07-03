@@ -1,9 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Size = 'small' | 'regular';
 
-export interface ProgressRingProps {
+export interface ProgressRingProps extends BaseProps {
   /**
    * Size of `Progress Ring`
    */
@@ -23,7 +24,10 @@ export const ProgressRing = (props: ProgressRingProps) => {
     size = 'regular',
     max = 100,
     value,
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const radius = 20;
   const circumference = 2 * Math.PI * radius;
@@ -31,7 +35,7 @@ export const ProgressRing = (props: ProgressRingProps) => {
   const ProgressRingClass = classNames({
     Ring: true,
     [`Ring--${size}`]: size,
-  });
+  }, className);
 
   const svgProps = {
     viewBox: '0 0 50 50'
@@ -49,7 +53,7 @@ export const ProgressRing = (props: ProgressRingProps) => {
   };
 
   return (
-    <svg className={ProgressRingClass} {...svgProps}>
+    <svg {...baseProps} className={ProgressRingClass} {...svgProps}>
       <circle className="Ring-background" {...circleProps} />
       <circle
         className="Ring-indicator"

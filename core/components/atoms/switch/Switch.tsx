@@ -1,12 +1,13 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Size = 'regular' | 'tiny' | 'large';
 export type Appearance = 'primary' | 'alert' | 'success' | 'warning';
 
 type MouseEvent = React.ChangeEvent<HTMLInputElement>;
 
-export interface SwitchProps {
+export interface SwitchProps extends BaseProps {
   /**
    * Size of `Switch`
    * @default "regular"
@@ -52,7 +53,10 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, re
     onChange,
     name,
     value,
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const [checked, setChecked] = React.useState(props.checked === undefined ? defaultChecked : props.checked);
 
@@ -64,7 +68,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, re
     ['Switch']: true,
     ['Switch--disabled']: disabled,
     [`Switch--${size}`]: size,
-  });
+  }, className);
 
   const SwitchWrapper = classNames({
     ['Switch-wrapper']: true,
@@ -83,6 +87,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, re
   return (
     <div className={SwitchClass}>
       <input
+        {...baseProps}
         type="checkbox"
         defaultChecked={defaultChecked}
         disabled={disabled}
