@@ -31,19 +31,19 @@
   justify-content: flex-start;
 }
 
-.Placeholder-image {
-  margin-right: var(--spacing);
-}
-
 .Placeholder-paragraph {
   display: flex;
   flex-direction: column;
   flex: 1 0;
 }
 
+.Placeholder-paragraph--withImage {
+  margin-left: var(--spacing);
+}
+
 .PlaceholderParagraph {
   display: flex;
-  flex: 1 0;
+  flex-grow: 1;
   height: var(--font-size);
 }
 
@@ -131,7 +131,7 @@
 
 .PlaceholderImage {
   display: flex;
-  flex: 1 0;
+  flex-shrink: 0;
   width: 16px;
   height: 16px;
 }

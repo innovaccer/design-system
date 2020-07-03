@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import PlaceholderImage, { Size } from '@/components/atoms/placeholderImage';
 import { PlaceholderParagraphProps } from '@/components/atoms/placeholderParagraph';
+import classNames from 'classnames';
 
 export interface PlaceholderProps {
   /**
@@ -35,14 +36,17 @@ export const Placeholder = (props: PlaceholderProps) => {
     children,
   } = props;
 
+  const paragraphClasses = classNames({
+    'Placeholder-paragraph': true,
+    ['Placeholder-paragraph--withImage']: withImage
+  });
+
   return (
     <div className="Placeholder">
       {withImage && (
-        <div className="Placeholder-image">
-          <PlaceholderImage round={round} size={imageSize} />
-        </div>
+        <PlaceholderImage round={round} size={imageSize} />
       )}
-      <div className="Placeholder-paragraph">
+      <div className={paragraphClasses}>
         {children}
       </div>
     </div>
