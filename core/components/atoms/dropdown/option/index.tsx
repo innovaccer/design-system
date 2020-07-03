@@ -47,6 +47,7 @@ export interface OptionTypeProps {
   optionData: OptionSchema;
   selected: boolean;
   index: number;
+  menu?: boolean;
   onClick?: () => void;
   onChange?: (event: ChangeEvent) => void;
   updateActiveOption?: (index: number) => void;
@@ -83,6 +84,7 @@ const Option = (props: OptionProps) => {
     active,
     index,
     checkboxes,
+    menu
   } = props;
 
   const { optionType = 'DEFAULT' } = optionData.optionType ? optionData : props;
@@ -92,7 +94,7 @@ const Option = (props: OptionProps) => {
     ['Option-wrapper']: true,
     ['Option--withCheckbox']: checkboxes,
     ['Option--active']: active,
-    ['Option--selected']: selected && !checkboxes && !props.menu,
+    ['Option--selected']: selected && !checkboxes && !menu,
   });
 
   const textClassName = classNames({
@@ -127,6 +129,7 @@ const Option = (props: OptionProps) => {
   return component(
     {
       optionData,
+      menu,
       selected,
       onChange,
       onClick,
