@@ -64,7 +64,7 @@ export const GridRow = (props: GridRowProps) => {
           <Placeholder />
         ) : (
             <Checkbox
-              checked={data._selected}
+              checked={!!data._selected}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 _this.onSelect(rI, event.target.checked);
               }}

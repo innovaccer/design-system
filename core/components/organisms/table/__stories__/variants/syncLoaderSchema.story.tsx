@@ -56,6 +56,11 @@ export const syncLoaderSchema = () => {
         loaderSchema={applyLoaderSchema ? loaderSchema : []}
         data={applyData ? data : []}
         schema={applySchema ? schema : []}
+        showMenu={true}
+        withHeader={true}
+        headerOptions={{
+          withSearch: true
+        }}
       />
     </Card>
   );
