@@ -16,7 +16,7 @@ const schema: Schema = [
     translate: a => ({
       title: `${a.firstName} ${a.lastName}`,
       firstName: a.firstName,
-      lastName: a.firstName
+      lastName: a.lastName
     }),
     filters: [
       { label: 'A-G', value: 'a-g' },

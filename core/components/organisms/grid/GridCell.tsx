@@ -125,14 +125,9 @@ const renderAvatar = (props: CellProps) => {
 
   const { firstName, lastName } = cellData;
 
-  if (firstName && lastName) {
-    const children = `${firstName}${lastName}`;
-    return (
-      <Avatar>
-        {children}
-      </Avatar>
-    );
-  }
+  return (
+    <Avatar firstName={firstName} lastName={lastName} />
+  );
 
   return null;
 };

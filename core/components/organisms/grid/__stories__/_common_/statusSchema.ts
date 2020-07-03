@@ -11,7 +11,7 @@ const schema: Schema = [
     translate: a => ({
       title: `${a.firstName} ${a.lastName}`,
       firstName: a.firstName,
-      lastName: a.firstName
+      lastName: a.lastName
     }),
     cellType: 'AVATAR_WITH_TEXT',
   },
