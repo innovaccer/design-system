@@ -20,7 +20,7 @@ const Loading = (props: any) => {
       return (
         <Placeholder withImage={false}>
           <PlaceholderParagraph length="large" />
-          <PlaceholderParagraph length="medium" />
+          <PlaceholderParagraph length="medium" size="xxs" />
         </Placeholder>
       );
     case 'WITH_CHECKBOX':
@@ -33,7 +33,7 @@ const Loading = (props: any) => {
       return (
         <Placeholder withImage={true} round={true} imageSize={'medium'}>
           <PlaceholderParagraph length="large" />
-          <PlaceholderParagraph length="medium" />
+          <PlaceholderParagraph length="medium" size="xxs" />
         </Placeholder>
       );
   }

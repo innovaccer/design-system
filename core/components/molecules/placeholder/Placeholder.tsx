@@ -46,9 +46,11 @@ export const Placeholder = (props: PlaceholderProps) => {
       {withImage && (
         <PlaceholderImage round={round} size={imageSize} />
       )}
-      <div className={paragraphClasses}>
-        {children}
-      </div>
+      {children && (
+        <div className={paragraphClasses}>
+          {children}
+        </div>
+      )}
     </div>
   );
 };

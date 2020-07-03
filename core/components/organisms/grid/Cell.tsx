@@ -136,7 +136,7 @@ const HeaderCell = (props: HeaderCellProps) => {
       {showMenu && (
         <>
           {loading && !init ? (
-            <span>
+            <span className="ml-4">
               <Placeholder />
             </span>
           ) : (
