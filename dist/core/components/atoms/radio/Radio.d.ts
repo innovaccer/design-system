@@ -1,5 +1,6 @@
 import * as React from 'react';
 export declare type Size = 'regular' | 'tiny';
+declare type MouseEvent = React.ChangeEvent<HTMLInputElement>;
 export interface RadioProps {
     size?: Size;
     disabled?: boolean;
@@ -7,7 +8,7 @@ export interface RadioProps {
     name: string;
     value: string;
     defaultChecked?: boolean;
-    onChange?: (checked: boolean) => void;
+    onChange?: (event: MouseEvent) => void;
 }
 export declare const Radio: React.ForwardRefExoticComponent<RadioProps & React.RefAttributes<HTMLInputElement>>;
 export default Radio;

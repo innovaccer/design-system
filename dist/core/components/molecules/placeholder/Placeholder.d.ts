@@ -10,6 +10,10 @@ export interface PlaceholderProps {
 }
 export declare const Placeholder: {
     (props: PlaceholderProps): JSX.Element;
+    defaultProps: {
+        withImage: boolean;
+        imageSize: string;
+    };
     displayName: string;
 };
 export default Placeholder;

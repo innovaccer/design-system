@@ -1,9 +1,8 @@
 /// <reference types="react" />
 export interface ProgressBarProps {
     value: number;
-    onChange?: (value: number) => void;
+    max?: number;
 }
-export declare const useIsMount: () => boolean;
 export declare const ProgressBar: {
     (props: ProgressBarProps): JSX.Element;
     displayName: string;

@@ -12,7 +12,7 @@ export declare type DatePickerProps = {
     position?: Position;
     inputFormat?: DateFormat;
     outputFormat?: DateFormat;
-    inputProps?: InputMaskProps;
+    inputOptions?: InputMaskProps;
     mask?: Mask;
     validator?: Validator;
 } & SharedProps;

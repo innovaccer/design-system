@@ -1,7 +1,7 @@
 import * as React from 'react';
 export declare type Dimension = 'small' | 'medium' | 'large';
 export interface ModalProps {
-    onClose: (reason?: string, event?: Event) => void;
+    onClose: (event?: Event, reason?: string) => void;
     backdrop?: boolean;
     closeOnEscape?: boolean;
     dimension?: Dimension;

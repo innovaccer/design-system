@@ -5,6 +5,8 @@ export interface LinkProps {
     href?: string;
     target?: LinkTarget;
     rel?: string;
+    download?: string;
+    hreflang?: string;
     onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
     children?: React.ReactNode;
 }

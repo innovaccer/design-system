@@ -2,13 +2,10 @@ import * as React from 'react';
 import { CheckboxProps, DropdownProps, PaginationProps } from '@/index.type';
 import { GridCellProps } from './GridCell';
 export declare type SortType = 'asc' | 'desc';
+export declare type Pinned = 'left' | 'right';
 export declare type Alignment = 'left' | 'right' | 'center';
 export declare type SortFn = (a: RowData, b: RowData) => -1 | 0 | 1;
 export declare type Filter = any[];
-export declare type Separator = {
-    body?: boolean;
-    head?: boolean;
-};
 export interface FetchDataOptions {
     page?: number;
     pageSize?: number;
@@ -17,7 +14,7 @@ export interface FetchDataOptions {
     searchTerm?: string;
 }
 export declare type fetchDataFn = (options: FetchDataOptions) => Promise<{
-    totalRecords: number;
+    count: number;
     data: Data;
     schema: Schema;
 }>;
@@ -42,8 +39,8 @@ export declare type ColumnSchema = {
     width: number;
     resizable?: boolean;
     sortFn?: SortFn;
-    separator?: Separator;
-    pinned?: boolean;
+    separator?: boolean;
+    pinned?: Pinned;
     hidden?: boolean;
     filters?: DropdownProps['options'];
     onFilterChange?: onFilterChangeFn;
@@ -53,7 +50,6 @@ export declare type ColumnSchema = {
     align?: Alignment;
 };
 export declare type RowData = Record<string, any> & {
-    _link?: string;
     _selected?: boolean;
 };
 export declare type GridSize = 'comfortable' | 'standard' | 'compressed' | 'tight';

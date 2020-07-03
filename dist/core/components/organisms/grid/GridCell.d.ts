@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { StatusHintsProps } from '@/index.type';
+import { StatusHintProps } from '@/index.type';
 import { ColumnSchema, RowData, GridSize } from './Grid';
 export interface CellData {
     title: string;
@@ -8,7 +8,7 @@ export interface CellData {
     image?: string;
     firstName?: string;
     lastName?: string;
-    statusAppearance?: StatusHintsProps['appearance'];
+    statusAppearance?: StatusHintProps['appearance'];
 }
 export interface PartialCellProps {
     data: RowData;

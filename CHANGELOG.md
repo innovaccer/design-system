@@ -264,3 +264,55 @@
 * 7e5c39d v1.0.0-20
 * 416c50b chore(pageHeader): stories updated
 * 7ded885 feat: adds firstName, lastName prop in Avatar
+
+-------------------
+ **v1.0.0-21**  (2020-07-03) 
+
+* ea593b7 v1.0.0-21
+* 72e905f fix: fixes extra margin of Placeholder
+* 693bad4 fix: fixes selected row in Grid
+* 49b67d2 feat: adds event in checkbox onChange callback
+* 484de9f fix: fixes css of placeholder
+* 519e3f4 fix: updates Grid with updated Avatar
+* 4e73820 feat: renames checkboxes and search props in dropdown
+* c7b8da4 fix: fixes chip
+* cd7d075 fix: updates semantics of Avatar
+* 38ea29e feat: updates pinned prop in Schema of Grid
+* 6efc19e fix: fixes css of Grid
+* b1f3458 fix: fixes Placeholder in grid
+* e81d09e fix: adds default color algorithm
+* 67f1081 fix: adds flex-shrink in Radio
+* 73c5d87 fix: adds flex-grow in Placeholder
+* 4a58b7d chore: adds missing knobs in Avatar
+* 3878db8 fix: sync Table fix
+* 1a99cf0 chore: adds PropTable desc for Table
+* f18e600 chore(pageHeader): stories updated
+* 3ce4d3e chore(pageHeader): breadcrumb prop changed to breadcrumbs
+* 23d2de2 chore(navigation): props desc updated
+* 6bdb37e chore(donutChart): donutWidth prop changed to width
+* e810ba3 chore(tabs): activeTab prop changed to active
+* 9907da5 chore(popover): props updated
+* bf54bdc feat: updates DatePicker/RangePicker api
+* cde8422 fix: fixes dropdown wrapper CSS
+* ee95113 feat: adds size in PlaceholderParagraph
+* 83b158d feat: adds size: s in Heading
+* 4d1680d Revert "feat: adds size: s in Heading"
+* dea7e23 feat: updates Table api
+* 7480527 chore: removes TextArea.d.ts from git
+* 75f9292 feat: adds size: s in Heading
+* d1c606d feat: adds event argument in radio onChange callback
+* 18fab37 feat: adds controlled and uncontrolled switch support
+* d62964c feat: rename statusHints and removes style props
+* d53f655 chore(backdrop): stories updated
+* 26f7738 chore(dailog): stories updated
+* 427af26 chore(modal): stories updated
+* 21b75e6 feat: replaces label with children in legend
+* 8924d10 chore: adds description of props in button
+* 1efcd5a feat: adds max prop in progress ring
+* 2803f23 feat: adds max prop in ProgressBar
+* 4a6f2d6 feat: adds withInput prop in label
+* a223ef3 feat: adds hide and withInput props in caption
+* b35421f feat: adds download, hreflang in Link
+* cbefdbd chore: adds children knob in message
+* aa93900 fix: fixes margin-left for first Breadcrumbs item
+* 6dcd99d chore: renames dropdown props

@@ -3,7 +3,7 @@ import { Name } from '../chip/Chip';
 export interface GenericChipProps {
     label: string;
     icon?: string;
-    clearbutton?: boolean;
+    clearButton?: boolean;
     disabled?: boolean;
     selected?: boolean;
     className?: string;

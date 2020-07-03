@@ -1,5 +1,6 @@
 import * as React from 'react';
 export declare type Size = 'regular' | 'tiny';
+declare type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 export interface CheckboxProps {
     size?: Size;
     defaultChecked?: boolean;
@@ -10,7 +11,7 @@ export interface CheckboxProps {
     name?: string;
     value?: string | number;
     tabIndex?: number;
-    onChange?: (checked: boolean, name?: string, value?: string | number, indeterminate?: boolean) => void;
+    onChange?: (event: ChangeEvent) => void;
 }
 export declare const Checkbox: React.ForwardRefExoticComponent<CheckboxProps & React.RefAttributes<HTMLInputElement>>;
 export default Checkbox;

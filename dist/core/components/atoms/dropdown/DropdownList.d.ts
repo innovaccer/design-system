@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { TriggerProps } from './DropdownButton';
 import { OptionRendererProps, OptionSchema } from './option';
+export declare type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 export declare type DropdownAlign = 'left' | 'right';
 export declare type OptionType = 'DEFAULT' | 'WITH_ICON' | 'WITH_META' | 'ICON_WITH_META';
 export interface Selected {
@@ -13,21 +14,19 @@ export interface SelectAll {
 }
 declare type ListProps = TriggerProps & OptionRendererProps;
 export interface DropdownListProps extends ListProps {
-    dropdownAlign?: DropdownAlign;
-    loadingType?: OptionType;
-    searchResultMessage?: string;
-    parentCheckboxLabel?: string;
+    align?: DropdownAlign;
+    noResultMessage?: string;
+    selectAllLabel?: string;
     footerLabel?: string;
-    selectedGroupLabel?: string;
-    search?: boolean;
-    checkboxes?: boolean;
+    selectedSectionLabel?: string;
+    withSearch?: boolean;
+    withCheckbox?: boolean;
     showApplyButton?: boolean;
-    optionsWrap?: boolean;
+    truncateOption?: boolean;
     totalOptions?: number;
     maxHeight?: number;
     width?: number;
-    loadersLength?: number;
-    customTrigger?: (label?: string) => React.ReactElement;
+    loadersCount?: number;
 }
 interface OptionsProps extends DropdownListProps {
     listOptions: OptionSchema[];
@@ -41,11 +40,12 @@ interface OptionsProps extends DropdownListProps {
     tempSelected: OptionSchema[];
     previousSelected: OptionSchema[];
     selectAll: SelectAll;
+    customTrigger?: (label: string) => React.ReactElement;
     applyOptions: () => void;
     cancelOptions: () => void;
     toggleDropdown: () => void;
     onClearOptions: () => void;
-    onSelectAll: (selectedAll: boolean) => void;
+    onSelectAll: (event: ChangeEvent) => void;
     onSearchChange?: (searchText: string) => void;
     onOptionSelect: (selected: any[] | any) => void;
     onSelect: (option: OptionSchema, checked: boolean) => void;

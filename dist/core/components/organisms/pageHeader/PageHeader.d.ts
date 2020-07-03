@@ -5,7 +5,7 @@ export interface PageHeaderProps {
     navigation?: React.ReactNode;
     actions?: React.ReactNode;
     tabs?: React.ReactNode;
-    breadcrumb?: React.ReactNode;
+    breadcrumbs?: React.ReactNode;
     badge?: React.ReactNode;
     status?: React.ReactNode;
     meta?: React.ReactNode;
@@ -18,7 +18,7 @@ export declare const PageHeader: {
         navigation: null;
         actions: null;
         tabs: null;
-        breadcrumb: null;
+        breadcrumbs: null;
         badge: null;
         status: null;
         meta: null;

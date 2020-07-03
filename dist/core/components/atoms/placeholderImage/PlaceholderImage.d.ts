@@ -2,7 +2,7 @@
 export declare type Size = 'small' | 'medium' | 'large';
 export interface PlaceholderImageProps {
     round?: boolean;
-    imageSize?: Size;
+    size?: Size;
 }
 export declare const PlaceholderImage: {
     (props: PlaceholderImageProps): JSX.Element;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DropdownListProps, SelectAll, Selected } from './DropdownList';
+import { DropdownListProps, SelectAll, Selected, ChangeEvent } from './DropdownList';
 import { OptionSchema as Option } from './option';
 declare type fetchOptionsFnc = (searchTerm: string) => Promise<{
     count: number;
@@ -12,18 +12,22 @@ interface SyncProps {
 interface AsyncProps {
     fetchOptions?: fetchOptionsFnc;
 }
+interface TriggerProps {
+    labelLimit?: number;
+    customLabel?: (selected: number, totalOptions?: number) => string;
+    customTrigger?: (label: string) => React.ReactElement;
+}
 interface SharedDropdownProps extends DropdownListProps {
     name?: string | number;
-    checkedValuesOffset?: number;
     totalOptions?: number;
     closeOnSelect?: boolean;
-    onChangeTriggerLabel?: (selected: number, totalOptions?: number) => string;
+    triggerOptions?: TriggerProps;
     onChange?: (selected: any[] | any, name?: string | number) => void;
     onClose?: (selected: any[], name?: string | number) => void;
 }
 declare type SyncDropdownProps = SyncProps & SharedDropdownProps;
 declare type AsyncDropdownProps = AsyncProps & SharedDropdownProps;
-export declare type DropdownProps = (AsyncDropdownProps & SyncDropdownProps);
+export declare type DropdownProps = (SyncDropdownProps & AsyncDropdownProps);
 interface DropdownState {
     async: boolean;
     options: Option[];
@@ -42,8 +46,8 @@ interface DropdownState {
 export declare class Dropdown extends React.Component<DropdownProps, DropdownState> {
     constructor(props: DropdownProps);
     static defaultProps: {
+        triggerOptions: {};
         closeOnSelect: boolean;
-        checkedValuesOffset: number;
     };
     componentDidUpdate(prevProps: DropdownProps, prevState: DropdownState): void;
     fetchOptionsFn: (searchTerm: string) => Promise<any>;
@@ -54,7 +58,7 @@ export declare class Dropdown extends React.Component<DropdownProps, DropdownSta
     onOptionSelect: (selectedArray: Option) => void;
     updateTriggerLabel: (selectedArray?: Selected[], totalOptions?: number | undefined) => string;
     onSelect: (option: Option, checked: boolean) => void;
-    onSelectAll: (checked: boolean) => void;
+    onSelectAll: (event: ChangeEvent) => void;
     debounceSearch: import("throttle-debounce").throttle<() => void>;
     onClearOptions: () => void;
     onCancelOptions: () => void;

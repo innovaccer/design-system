@@ -12,7 +12,7 @@ export interface DonutChartProps {
     withCenterText: boolean;
     colorOfTotalCount?: string;
     radius?: number;
-    donutWidth?: number;
+    width?: number;
 }
 export declare const DonutChart: (props: DonutChartProps) => JSX.Element;
 export default DonutChart;

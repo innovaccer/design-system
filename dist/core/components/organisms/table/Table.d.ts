@@ -17,16 +17,19 @@ interface SharedTableProps {
     size?: GridProps['size'];
     draggable?: boolean;
     withHeader?: boolean;
-    headerProps?: ExternalHeaderProps;
+    headerOptions?: ExternalHeaderProps;
     withCheckbox?: GridProps['withCheckbox'];
     showMenu?: GridProps['showMenu'];
     withPagination?: GridProps['withPagination'];
     paginationType?: GridProps['paginationType'];
     pageSize?: GridProps['pageSize'];
     loaderSchema?: GridProps['loaderSchema'];
-    saveSortHistory?: boolean;
+    multipleSorting?: boolean;
+    sortingList?: GridProps['sortingList'];
+    filterList?: GridProps['filterList'];
+    errorTemplate?: GridProps['errorTemplate'];
     onRowClick?: GridProps['onRowClick'];
-    onSelect?: (rowIndex: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean) => void;
+    onSelect?: (rowIndexes: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean) => void;
     onPageChange?: GridProps['onPageChange'];
 }
 declare type SyncTableProps = SyncProps & SharedTableProps;
@@ -49,10 +52,11 @@ export declare class Table extends React.Component<TableProps, TableState> {
     constructor(props: TableProps);
     static defaultProps: {
         showHead: boolean;
-        saveSortHistory: boolean;
-        headerProps: {};
+        multipleSorting: boolean;
+        headerOptions: {};
         pageSize: number;
         loading: boolean;
+        draggable: boolean;
     };
     componentDidUpdate(prevProps: TableProps, prevState: TableState): void;
     updateData: import("throttle-debounce").throttle<(_options: FetchDataOptions) => void>;

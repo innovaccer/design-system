@@ -29,6 +29,8 @@ export declare const Header: {
     defaultProps: {
         schema: never[];
         data: never[];
+        searchPlaceholder: string;
+        dynamicColumn: boolean;
     };
 };
 export default Header;

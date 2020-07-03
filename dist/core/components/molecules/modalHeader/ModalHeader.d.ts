@@ -2,7 +2,7 @@ import * as React from 'react';
 export interface ModalHeaderProps {
     icon?: string;
     heading?: string;
-    onClose: (reason?: string, event?: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+    onClose: (event?: React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
     subHeading?: string;
 }
 export declare const ModalHeader: {

@@ -4,7 +4,7 @@ export declare type Name = number | string;
 export interface ChipProps {
     label: string;
     icon?: string;
-    clearbutton?: boolean;
+    clearButton?: boolean;
     disabled?: boolean;
     selected?: boolean;
     type?: Type;

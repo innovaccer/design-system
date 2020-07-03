@@ -3,6 +3,7 @@ export interface LabelProps {
     children: React.ReactNode;
     disabled?: boolean;
     required?: boolean;
+    withInput?: boolean;
     className?: string;
 }
 export declare const Label: {
