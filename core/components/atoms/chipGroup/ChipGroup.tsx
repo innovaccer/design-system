@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Chip, { ChipProps, Name } from '../chip/Chip';
+import Chip, { ChipProps } from '../chip/Chip';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
@@ -7,11 +7,11 @@ export interface ChipGroupProps extends BaseProps {
   /**
    * Handler to be called when Chip is closed
    */
-  onClose?: (name: Name) => void;
+  onClose?: (item: ChipProps) => void;
   /**
    * Handler to be called when Chip is clicked
    */
-  onClick?: (name: Name) => void;
+  onClick?: (item: ChipProps) => void;
   /**
    * List of chips
    */
@@ -23,12 +23,12 @@ export const ChipGroup = (props: ChipGroupProps) => {
   const { list, onClick, onClose, className } = props;
   const baseProps = extractBaseProps(props);
 
-  const onClickHandler = (name: Name) => {
-    if (onClick) onClick(name);
+  const onClickHandler = (item: ChipProps) => {
+    if (onClick) onClick(item);
 
   };
-  const onCloseHandler = (name: Name) => {
-    if (onClose) onClose(name);
+  const onCloseHandler = (item: ChipProps) => {
+    if (onClose) onClose(item);
   };
 
   const ChipGroupClass = classNames({
@@ -37,7 +37,8 @@ export const ChipGroup = (props: ChipGroupProps) => {
 
   return (
     <div {...baseProps} className={ChipGroupClass}>
-      {list.map(({ label = '', icon, type, disabled, selected, clearButton, name }, ind) => {
+      {list.map((item, ind) => {
+        const { label = '', icon, type, disabled, selected, clearButton, name } = item;
         return (
           <span key={ind} className="ChipGroup-item">
             <Chip
@@ -48,8 +49,8 @@ export const ChipGroup = (props: ChipGroupProps) => {
               disabled={disabled}
               clearButton={clearButton}
               type={type}
-              onClick={onClickHandler}
-              onClose={onCloseHandler}
+              onClick={() => onClickHandler(item)}
+              onClose={() => onCloseHandler(item)}
             />
           </span>
         );

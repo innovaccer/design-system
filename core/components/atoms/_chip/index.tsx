@@ -11,8 +11,8 @@ export interface GenericChipProps extends BaseProps {
   clearButton?: boolean;
   disabled?: boolean;
   selected?: boolean;
-  onClose?: (name: Name) => void;
-  onClick?: (name: Name) => void;
+  onClose?: () => void;
+  onClick?: () => void;
   name: Name;
 }
 
@@ -26,7 +26,6 @@ export const GenericChip = (props: GenericChipProps) => {
     selected,
     onClose,
     onClick,
-    name,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -36,41 +35,36 @@ export const GenericChip = (props: GenericChipProps) => {
     [`Chip-icon--${align}`]: align,
   });
 
-  const onCloseHandler = () => {
-    if (onClose) onClose(name);
+  const onCloseHandler = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (onClose) onClose();
   };
 
   const onClickHandler = () => {
-    if (onClick) onClick(name);
+    if (onClick) onClick();
   };
 
   return (
-    <div {...baseProps} className={className} >
-      <div className="Chip-wrapper" onClick={onClickHandler} >
-        {icon && (
-          <div className={iconClass('left')}>
-            <Icon
-              name={icon}
-              appearance={(disabled ? 'disabled' : (selected ? 'info' : 'default'))}
-            />
-          </div>
-        )}
-        <Text
-          appearance={(disabled ? 'disabled' : 'default')}
-        >{label}
-        </Text>
-      </div>
-      {(
-        clearButton &&
-        (
-          <div className={iconClass('right')} onClick={onCloseHandler}>
-            <Icon
-              name="clear"
-              appearance={disabled ? 'disabled' : (selected ? 'info' : 'subtle')}
-            />
-          </div>
-        )
-
+    <div {...baseProps} className={`Chip-wrapper ${className}`} onClick={onClickHandler} >
+      {icon && (
+        <Icon
+          name={icon}
+          appearance={(disabled ? 'disabled' : (selected ? 'info' : 'default'))}
+          className={iconClass('left')}
+        />
+      )}
+      <Text
+        appearance={(disabled ? 'disabled' : 'default')}
+      >
+        {label}
+      </Text>
+      {clearButton && (
+        <Icon
+          name="clear"
+          appearance={disabled ? 'disabled' : (selected ? 'info' : 'subtle')}
+          className={iconClass('right')}
+          onClick={onCloseHandler}
+        />
       )}
     </div>
   );

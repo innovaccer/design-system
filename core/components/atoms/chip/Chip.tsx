@@ -76,20 +76,18 @@ export const Chip = (props: ChipProps) => {
   const select = (((type === 'selection') && selected) ? true : false);
 
   return (
-    <div>
-      <GenericChip
-        {...baseProps}
-        label={label}
-        selected={select}
-        icon={icon}
-        clearButton={clearbutton}
-        disabled={disabled}
-        className={chipClass}
-        onClose={onCloseHandler}
-        onClick={onClickHandler}
-        name={name}
-      />
-    </div>
+    <GenericChip
+      {...baseProps}
+      label={label}
+      selected={select}
+      icon={icon}
+      clearButton={clearbutton}
+      disabled={disabled}
+      className={chipClass}
+      onClose={onCloseHandler}
+      onClick={onClickHandler}
+      name={name}
+    />
   );
 };
 Chip.displayName = 'Chip';

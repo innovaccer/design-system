@@ -25,14 +25,11 @@ export const all = () => {
     ];
 
   return (
-    <div>
-      <ChipGroup
-        onClose={action(`onClose: ${name}`)}
-        onClick={action(`onClick: ${name}`)}
-        list={list}
-      />
-    </div>
-
+    <ChipGroup
+      onClose={action(`onClose: ${name}`)}
+      onClick={action(`onClick: ${name}`)}
+      list={list}
+    />
   );
 };
 export default {
