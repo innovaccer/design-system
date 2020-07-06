@@ -20,11 +20,11 @@ export interface InputProps extends BaseProps {
    */
   type?: InputType;
   /**
-   * Value of the `Input`
+   * Value of the `Input` (Used in case of controlled `Input`)
    */
   value?: string;
   /**
-   * Adds default value to `Input`
+   * Adds default value to `Input` (Used in case of uncontrolled `Input`)
    */
   defaultValue?: string;
   /**
@@ -48,10 +48,6 @@ export interface InputProps extends BaseProps {
    * Label to be displayed inside `Input`
    */
   inlineLabel?: string;
-  /**
-   * Adds loader inside input when waiting for an action to complete
-   */
-  loading?: boolean;
   /**
    * Disables the `Input`, making it unable to type
    *
@@ -107,6 +103,11 @@ const sizeMapping = {
   large: 20,
 };
 
+/**
+ * ######Input has two types:
+ *  - [Controlled Input](https://reactjs.org/docs/forms.html#controlled-components)
+ *  - [Uncontrolled Input](https://reactjs.org/docs/uncontrolled-components.html)
+ */
 export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
     size = 'regular',
