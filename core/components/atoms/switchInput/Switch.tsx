@@ -44,6 +44,11 @@ export interface SwitchProps extends BaseProps {
   onChange?: (event: MouseEvent, selected: boolean) => void;
 }
 
+/**
+ * ######Switch has two types:
+ *  - [Controlled Switch](https://reactjs.org/docs/forms.html#controlled-components)
+ *  - [Uncontrolled Switch](https://reactjs.org/docs/uncontrolled-components.html)
+ */
 export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, ref) => {
   const {
     size = 'regular',
