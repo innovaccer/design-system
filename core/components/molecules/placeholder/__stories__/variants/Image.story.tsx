@@ -8,10 +8,10 @@ export const image = () => {
   return (
     <div style={{ display: 'flex' }}>
       <div style={{ width: '200px', marginRight: '5%' }}>
-        <Placeholder withImage={true}>
+        <Placeholder withImage={false}>
           <PlaceholderParagraph length="large" />
         </Placeholder>
-        <Text weight="strong">With Image</Text>
+        <Text weight="strong">Without Image</Text>
       </div>
       <div style={{ width: '200px' }}>
         <Placeholder withImage={false}>

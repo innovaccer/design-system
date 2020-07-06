@@ -21,7 +21,7 @@ export const all = () => {
 
   const onClose = () => {
     updateKnob('open', false);
-    action('on close triggered');
+    action('on close triggered')();
   };
 
   const options = {

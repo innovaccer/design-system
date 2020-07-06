@@ -4,14 +4,14 @@ import PlaceholderImage from '../PlaceholderImage';
 
 export const all = () => {
   const round = boolean('round', false);
-  const imageSize = select(
-    'imageSize',
+  const size = select(
+    'size',
     ['small', 'medium', 'large'],
     'small'
   );
 
   const options = {
-    round, imageSize
+    round, size
   };
 
   return (
