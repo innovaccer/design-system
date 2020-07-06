@@ -40,19 +40,17 @@ export const all = () => {
     );
   }
   return (
-    <div>
-      <Chip
-        icon={icon}
-        label={label}
-        clearButton={clearButton}
-        disabled={disabled}
-        type={type}
-        onClose={action(`onClose: ${name}`)}
-        onClick={action(`onClick: ${name}`)}
-        selected={selected}
-        name={name}
-      />
-    </div>
+    <Chip
+      icon={icon}
+      label={label}
+      clearButton={clearButton}
+      disabled={disabled}
+      type={type}
+      onClose={action(`onClose: ${name}`)}
+      onClick={action(`onClick: ${name}`)}
+      selected={selected}
+      name={'chip'}
+    />
   );
 };
 export default {
