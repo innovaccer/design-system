@@ -44,6 +44,9 @@ export interface ToastProps extends BaseProps {
    * </pre>
    */
   actions?: Action[];
+  /**
+   * Callback for `Toast` close event
+   */
   onClose?: () => void;
 }
 
