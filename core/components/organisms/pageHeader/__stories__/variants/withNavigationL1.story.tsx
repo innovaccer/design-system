@@ -5,10 +5,10 @@ import { Navigation, Button, Breadcrumbs, Badge, StatusHint } from '@/index';
 import { action } from '@storybook/addon-actions';
 
 export const withNavigation = () => {
-  const type = select(
-    'type',
-    ['small', 'large'],
-    'large'
+  const navigationPosition = select(
+    'navigationPosition',
+    ['center', 'bottom'],
+    'center'
   );
 
   const title = text(
@@ -45,7 +45,7 @@ export const withNavigation = () => {
   ];
 
   const options = {
-    type,
+    navigationPosition,
     title,
     navigation: <Navigation data={navigationData} onClick={action('menu-clicked')} active={{ name: 'menu_1' }} />,
     actions: (
@@ -77,7 +77,7 @@ export const withNavigation = () => {
 };
 
 const customCode = `() => {
-  const type = 'large';
+  const navigationPosition = 'center';
 
   const title = 'Page title';
 
@@ -110,7 +110,7 @@ const customCode = `() => {
   ];
 
   const options = {
-    type,
+    navigationPosition,
     title,
     navigation: <Navigation data={navigationData} onClick={menu => console.log(menu)} active={{ name: 'menu_1' }} />,
     actions: (

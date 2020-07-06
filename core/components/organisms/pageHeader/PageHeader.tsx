@@ -1,9 +1,9 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Heading } from '@/index';
+import { Heading, Row, Column } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export type HeaderType = 'small' | 'large';
+export type navigationPositionType = 'center' | 'bottom';
 
 export interface PageHeaderProps extends BaseProps {
   /**
@@ -41,11 +41,11 @@ export interface PageHeaderProps extends BaseProps {
   /**
    * Page header layout type
    */
-  type?: HeaderType;
+  navigationPosition?: navigationPositionType;
 }
 
 export const PageHeader = (props: PageHeaderProps) => {
-  const { title, navigation, actions, tabs, breadcrumbs, badge, status, meta, type, className } = props;
+  const { title, navigation, actions, tabs, breadcrumbs, badge, status, meta, navigationPosition, className } = props;
   const baseProps = extractBaseProps(props);
 
   const wrapperClasses = classNames({
@@ -61,12 +61,22 @@ export const PageHeader = (props: PageHeaderProps) => {
     <div {...baseProps} className={wrapperClasses}>
       {breadcrumbs && breadcrumbs}
       <div className={classes}>
-        <div className="PageHeader-titleWrapper">
-          <Heading>{title}</Heading>
-          {badge}
-        </div>
-        {type === 'large' && navigation}
-        {actions}
+        <Row>
+          <Column size="4" sizeXL="4" sizeM="4">
+            <div className="PageHeader-titleWrapper">
+              <Heading className="PageHeader-title">{title}</Heading>
+              {badge}
+          </div>
+          </Column>
+          <Column size="4" sizeXL="4" sizeM="4">
+            <div className="PageHeader-navigationWrapper">
+              {(!breadcrumbs || navigationPosition === 'center') && navigation}
+            </div>
+          </Column>
+          <Column size="4" sizeXL="4" sizeM="4">
+            {actions}
+          </Column>
+        </Row>
       </div>
       {(status || meta) && (
         <div className="PageHeader-statusWrapper">
@@ -74,7 +84,7 @@ export const PageHeader = (props: PageHeaderProps) => {
           {meta}
         </div>
       )}
-      {type === 'small' && (
+      {breadcrumbs && navigationPosition === 'bottom' && (
         <div className="PageHeader-navigationWrapper">{navigation}</div>)}
       {tabs && <div>{tabs}</div>}
     </div>
@@ -90,7 +100,7 @@ PageHeader.defaultProps = {
   badge: null,
   status: null,
   meta: null,
-  type: 'large'
+  navigationPosition: 'center'
 };
 
 export default PageHeader;
