@@ -69,7 +69,6 @@ export const Icon = (props: IconProps) => {
 
 Icon.defaultProps = {
   appearance: 'default',
-  type: 'filled',
   size: 16
 };
 
