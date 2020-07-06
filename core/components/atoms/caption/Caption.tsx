@@ -21,7 +21,7 @@ export interface CaptionProps extends BaseProps {
    */
   hide?: boolean;
   /**
-   * Adds default top margin
+   * Adds default top margin of 4px
    * @default false
    */
   withInput?: boolean;
