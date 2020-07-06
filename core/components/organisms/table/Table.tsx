@@ -129,7 +129,7 @@ interface SharedTableProps extends BaseProps {
   /**
    * Type of Table
    *
-   * **Need `onRowClick` for 'resource' Table**
+   * **Requires `onRowClick` for 'resource' Table**
    */
   type?: GridProps['type'];
   /**
@@ -170,7 +170,7 @@ interface SharedTableProps extends BaseProps {
    */
   withCheckbox?: GridProps['withCheckbox'];
   /**
-   * Set for Menu on Table Head Cell
+   * Set for visibility of Menu on Table Head Cell
    */
   showMenu?: GridProps['showMenu'];
   /**
@@ -289,6 +289,7 @@ export class Table extends React.Component<TableProps, TableState> {
   }
 
   static defaultProps = {
+    type: 'data',
     showHead: true,
     multipleSorting: true,
     headerOptions: {},

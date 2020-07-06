@@ -37,7 +37,7 @@ export const GridRow = (props: GridRowProps) => {
       type
     } = _this.props;
 
-    if (type === 'resource') {
+    if (type === 'resource' && !loading) {
       const {
         onRowClick,
       } = _this.props;
@@ -59,7 +59,7 @@ export const GridRow = (props: GridRowProps) => {
     if (!show || !(withCheckbox)) return null;
 
     return (
-      <div className="Grid-cell Grid-cell--body Grid-checkboxCell">
+      <div className="Grid-cell Grid-cell--body Grid-checkboxCell" onClick={e => e.stopPropagation()}>
         {loading ? (
           <Placeholder />
         ) : (

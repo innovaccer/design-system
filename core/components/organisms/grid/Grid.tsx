@@ -291,7 +291,7 @@ export class Grid extends React.Component<GridProps, GridState> {
 
   gridRef = React.createRef<HTMLDivElement>();
 
-  updateRenderedData = debounce(100, (options?: Partial<FetchDataOptions>) => {
+  updateRenderedData = debounce(300, (options?: Partial<FetchDataOptions>) => {
     const {
       page,
       pageSize,

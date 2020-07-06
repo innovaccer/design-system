@@ -123,6 +123,7 @@ export const Header = (props: HeaderProps) => {
               onChange={onSearchChange}
               value={searchTerm}
               onClear={() => updateSearchTerm && updateSearchTerm('')}
+              disabled={loading}
             />
           </div>
         )}

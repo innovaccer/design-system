@@ -137,6 +137,7 @@
     align-items: center;
     z-index: 1;
     padding-right: 0 !important;
+    overflow: visible !important;
 }
 
 .Grid-row--selected,

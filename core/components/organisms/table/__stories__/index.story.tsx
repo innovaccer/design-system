@@ -10,7 +10,7 @@ import { Card, Grid, Table } from '@/index';
 export const all = () => {
   const async = boolean(
     'async',
-    false
+    true
   );
 
   let loading;
@@ -154,4 +154,13 @@ export default {
   title: 'Organisms|Table',
   component: Table,
   subcomponents: { Grid },
+  parameters: {
+    docs: {
+      docPage: {
+        props: {
+          exclude: ['showHead']
+        }
+      }
+    }
+  }
 };
