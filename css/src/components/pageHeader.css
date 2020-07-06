@@ -12,9 +12,13 @@
 }
 
 .PageHeader {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
+}
+
+.PageHeader .Row {
+  width: 100%;
 }
 
 .PageHeader-titleWrapper {
@@ -37,7 +41,19 @@
   margin-right: var(--spacing);
 }
 
-.PageHeader-navigationWrapper .Navigation-wrapper-horizontal{
-  display: inline-block;
+.PageHeader-navigationWrapper {
+  display: flex;
   margin-top: var(--spacing-l);
+}
+
+.PageHeader .PageHeader-navigationWrapper {
+  justify-content: center;
+  align-items: center;
+  margin-top: 0 !important;
+}
+
+.PageHeader-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
