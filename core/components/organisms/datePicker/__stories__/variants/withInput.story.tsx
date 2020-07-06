@@ -1,20 +1,13 @@
 import * as React from 'react';
 import { boolean, select, date, number } from '@storybook/addon-knobs';
-import DatePicker from '@/components/organisms/datepicker';
-import Card from '@/components/atoms/card';
-import InputMask from '@/components/molecules/inputMask';
+import { DatePicker, InputMask } from '@/index';
 import { action } from '@storybook/addon-actions';
 
 // CSF format story
-export const all = () => {
-  const withInput = boolean(
-    'withInput',
-    false
-  );
-
-  const open = boolean(
-    'open',
-    false
+export const withInput = () => {
+  const dateValue = date(
+    'date',
+    undefined
   );
 
   const inputFormat = select(
@@ -26,11 +19,6 @@ export const all = () => {
   const outputFormat = select(
     'outputFormat',
     ['mm/dd/yyyy', 'dd/mm/yyyy', 'yyyy-mm-dd', 'mm-dd-yyyy', 'dd-mm-yyyy', 'yyyy-mm-dd'],
-    undefined
-  );
-
-  const dateValue = date(
-    'date',
     undefined
   );
 
@@ -77,46 +65,23 @@ export const all = () => {
   if (yearNav !== -1) attr.yearNav = yearNav;
   if (monthNav !== -1) attr.monthNav = monthNav;
 
-  if (withInput) {
-    return (
-      <DatePicker
-        withInput={withInput}
-        open={open}
-        inputFormat={inputFormat}
-        outputFormat={outputFormat}
-        jumpView={jumpView}
-        date={dateValue}
-        onDateChange={(currDate?: Date) => action(`on date change : ${currDate}`)()}
-        view={view}
-        firstDayOfWeek={firstDayOfWeek}
-        {...attr}
-      />
-    );
-  }
   return (
-    <Card
-      shadow="light"
-      style={{
-        maxWidth: '330px'
-      }}
-    >
-      <DatePicker
-        withInput={withInput}
-        inputFormat={inputFormat}
-        outputFormat={outputFormat}
-        jumpView={jumpView}
-        date={dateValue}
-        onDateChange={(currDate?: Date) => action(`on date change : ${currDate}`)()}
-        view={view}
-        firstDayOfWeek={firstDayOfWeek}
-        {...attr}
-      />
-    </Card>
+    <DatePicker
+      withInput={true}
+      inputFormat={inputFormat}
+      outputFormat={outputFormat}
+      jumpView={jumpView}
+      date={dateValue}
+      onDateChange={(currDate?: Date, currValue?: string) => action(`on date change : ${currDate} --- ${currValue}`)()}
+      view={view}
+      firstDayOfWeek={firstDayOfWeek}
+      {...attr}
+    />
   );
 };
 
 export default {
-  title: 'Organisms|Datepicker',
+  title: 'Organisms|DatePicker/Variants',
   component: DatePicker,
   subcomponents: { InputMask }
 };

@@ -6,7 +6,7 @@ export { Button } from './components/atoms/button';
 export { Card } from './components/atoms/card';
 export { Checkbox } from './components/atoms/checkbox';
 export { Column } from './components/atoms/column';
-export { DatePicker } from './components/organisms/datepicker';
+export { DatePicker } from './components/organisms/datePicker';
 export { DonutChart } from './components/organisms/donutChart';
 export { Dropdown } from './components/atoms/dropdown';
 export { Heading } from './components/atoms/heading';
