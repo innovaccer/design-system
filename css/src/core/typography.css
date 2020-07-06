@@ -112,7 +112,7 @@ body {
 
 /* Label */
 .Label {
-  display: flex;
+  display: inline-flex;
 }
 
 .Label--withInput {
