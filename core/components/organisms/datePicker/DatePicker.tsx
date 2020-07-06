@@ -32,7 +32,7 @@ export type DatePickerProps = {
    */
   open?: boolean;
   /**
-   * Position of `DatePicker` w.r.t. `InputMask`
+   * Position of `DatePicker` with respect to `InputMask`
    * @default "bottom-start"
    */
   position?: Position;
