@@ -1,5 +1,11 @@
 export type BaseProps = {
+  /**
+   * Adds custom class
+   */
   className?: string,
+  /**
+   * Stores custom testing data private to the component.
+   */
   'data-test'?: string,
 };
 
