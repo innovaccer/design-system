@@ -12,7 +12,6 @@
 
 .Radio-outerWrapper {
     position: relative;
-    margin-right: var(--spacing);
     flex-shrink: 0;
 }
 
@@ -37,6 +36,7 @@
 }
 
 .Radio-label {
+    padding-left: var(--spacing);
     cursor: pointer;
 }
 
