@@ -23,6 +23,16 @@ interface SyncProps {
    *   group?: string;
    * }
    * </pre>
+   *
+   * OptionType: 'DEFAULT' | 'WITH\_ICON' | 'WITH\_META' | 'ICON\_WITH\_META'
+   *
+   * | Name | Description | Default |
+   * | --- | --- | --- |
+   * | label | Describes Label of the option | |
+   * | value | Value of option | |
+   * | icon | Name of icon inside option | |
+   * | selected | Denotes default selection of option | |
+   * | group | Defines group to which the option belongs | |
    */
   options?: Option[];
   /**
@@ -43,6 +53,7 @@ interface AsyncProps {
    *      option: Option[],
    * }>;
    * </pre>
+   *
    */
   fetchOptions?: fetchOptionsFunction;
 }
@@ -81,13 +92,16 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * TriggerProps:
    * {
-   *    // Number of selected options to be shown on `Dropdown trigger`
    *    labelLimit?: number;
-   *    // Callback function to change the label of trigger when options are selected
    *    customLabel?: (selected: number, totalOptions?: number) => string;
-   *    // Adds custom trigger
    *    customTrigger?: (label: string) => React.ReactElement;
    * }
+   *
+   * | Name | Description | Default |
+   * | --- | --- | --- |
+   * | labelLimit | Number of selected options to be shown on `Dropdown trigger` | 2 |
+   * | customLabel | Callback function to change the label of trigger when options are selected | |
+   * | customTrigger | Adds custom trigger | |
    * </pre>
    */
   triggerOptions?: TriggerProps;
