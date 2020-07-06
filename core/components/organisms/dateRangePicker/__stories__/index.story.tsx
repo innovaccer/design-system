@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { boolean, select, date, number } from '@storybook/addon-knobs';
-import RangePicker from '@/components/organisms/rangepicker';
-import InputMask from '@/components/molecules/inputMask';
-import Card from '@/components/atoms/card';
+import { DateRangePicker, InputMask, Card } from '@/index';
 import { action } from '@storybook/addon-actions';
 
 // CSF format story
@@ -95,7 +93,7 @@ export const all = () => {
 
   if (withInput) {
     return (
-      <RangePicker
+      <DateRangePicker
         withInput={withInput}
         open={open}
         monthsInView={monthsInView}
@@ -118,7 +116,7 @@ export const all = () => {
         maxWidth: `${monthsInView * 330}px`
       }}
     >
-      <RangePicker
+      <DateRangePicker
         withInput={withInput}
         monthsInView={monthsInView}
         jumpView={jumpView}
@@ -134,7 +132,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Organisms|RangePicker',
-  component: RangePicker,
+  title: 'Organisms|DateRangePicker',
+  component: DateRangePicker,
   subcomponents: { InputMask }
 };

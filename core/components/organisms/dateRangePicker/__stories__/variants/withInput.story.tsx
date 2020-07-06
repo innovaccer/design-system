@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { boolean, select, date, number } from '@storybook/addon-knobs';
-import RangePicker from '@/components/organisms/rangepicker';
-import InputMask from '@/components/molecules/inputMask';
+import { DateRangePicker, InputMask } from '@/index';
 import { action } from '@storybook/addon-actions';
 
 // CSF format story
@@ -72,7 +71,7 @@ export const withInput = () => {
   if (monthNav !== -1) attr.monthNav = monthNav;
 
   return (
-    <RangePicker
+    <DateRangePicker
       withInput={true}
       startDate={startDate}
       endDate={endDate}
@@ -88,7 +87,7 @@ export const withInput = () => {
 };
 
 export default {
-  title: 'Organisms|RangePicker/Variants',
-  component: RangePicker,
+  title: 'Organisms|DateRangePicker/Variants',
+  component: DateRangePicker,
   subcomponents: { InputMask }
 };

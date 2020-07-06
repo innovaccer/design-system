@@ -1,7 +1,6 @@
 import * as React from 'react';
-import RangePicker from '@/components/organisms/rangepicker';
 import { View } from '@/components/organisms/calendar/types';
-import Card from '@/components/atoms/card';
+import { DateRangePicker, Card } from '@/index';
 
 // CSF format story
 export const view = () => {
@@ -23,7 +22,7 @@ export const view = () => {
             alignSelf: 'flex-start'
           }}
         >
-          <RangePicker
+          <DateRangePicker
             startDate={new Date(2020, 2, 3)}
             endDate={new Date(2020, 2, 11)}
             view={v}
@@ -37,12 +36,12 @@ export const view = () => {
 };
 
 export default {
-  title: 'Organisms|RangePicker/Variants',
-  component: RangePicker,
+  title: 'Organisms|DateRangePicker/Variants',
+  component: DateRangePicker,
   parameters: {
     docs: {
       docPage: {
-        title: 'RangePicker'
+        title: 'DateRangePicker'
       }
     }
   }
