@@ -9,6 +9,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -145,6 +150,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -168,6 +174,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -304,6 +315,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -327,6 +339,11 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   checkboxes={true}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -463,6 +480,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -487,6 +505,11 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   checkboxes={true}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -623,6 +646,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -648,6 +672,11 @@ exports[`Dropdown component
   closeOnSelect={true}
   disabled={false}
   icon="events"
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -784,6 +813,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -808,6 +838,11 @@ exports[`Dropdown component
   closeOnSelect={true}
   disabled={false}
   inlineLabel="Label"
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -944,6 +979,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -967,6 +1003,11 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   closeOnSelect={true}
   disabled={false}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -1103,6 +1144,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -1127,6 +1169,11 @@ exports[`Dropdown component
   closeOnSelect={true}
   disabled={true}
   icon="events"
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -1263,6 +1310,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -1287,6 +1335,11 @@ exports[`Dropdown component
   closeOnSelect={true}
   disabled={true}
   inlineLabel="Label"
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -1423,6 +1476,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -1446,6 +1500,11 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   closeOnSelect={true}
   disabled={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -1582,6 +1641,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -1604,6 +1664,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -1720,6 +1785,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -1742,6 +1808,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -1898,6 +1969,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -1920,6 +1992,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -2076,6 +2153,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -2098,6 +2176,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -2254,6 +2337,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -2276,6 +2360,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -2413,6 +2502,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -2435,6 +2525,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -2572,6 +2667,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -2594,6 +2690,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -2730,6 +2831,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -2752,6 +2854,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -2891,6 +2998,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -2913,6 +3021,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -3052,6 +3165,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -3074,6 +3188,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -3213,6 +3332,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -3235,6 +3355,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -3374,6 +3499,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -3396,6 +3522,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -3535,6 +3666,7 @@ exports[`Dropdown component
   previousSelected={Array []}
   remainingOptions={0}
   search={true}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -3557,6 +3689,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -3696,6 +3833,7 @@ exports[`Dropdown component
   previousSelected={Array []}
   remainingOptions={0}
   search={true}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -3718,6 +3856,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -3854,6 +3997,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -3877,6 +4021,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -4013,6 +4162,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -4036,6 +4186,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -4076,6 +4231,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
@@ -4099,6 +4255,11 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  inputRef={
+    Object {
+      "current": null,
+    }
+  }
   listOptions={
     Array [
       Object {
@@ -4139,6 +4300,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchInit={false}
   searchTerm=""
   selectAll={
     Object {
