@@ -1,7 +1,6 @@
 import * as React from 'react';
-import DatePicker from '@/components/organisms/datepicker';
 import { View } from '@/components/organisms/calendar/types';
-import Card from '@/components/atoms/card';
+import { DatePicker, Card } from '@/index';
 
 // CSF format story
 export const view = () => {
@@ -34,7 +33,7 @@ export const view = () => {
 };
 
 export default {
-  title: 'Organisms|Datepicker/Variants',
+  title: 'Organisms|DatePicker/Variants',
   component: DatePicker,
   parameters: {
     docs: {
