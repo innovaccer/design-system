@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import Card, { CardProps as Props } from '../Card';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const Shadow = ['light', 'medium', 'dark'];
+const Shadow = ['none', 'light', 'medium', 'dark'];
 const Style = [{
   width: valueHelper('150px', { required: true }),
   height: valueHelper('150px', { required: true })

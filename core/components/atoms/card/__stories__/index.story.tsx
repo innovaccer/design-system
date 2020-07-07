@@ -6,7 +6,7 @@ import Card from '../Card';
 export const all = () => {
   const shadow = select(
     'shadow',
-    ['light', 'medium', 'dark'],
+    ['none', 'light', 'medium', 'dark'],
     undefined
   );
 
