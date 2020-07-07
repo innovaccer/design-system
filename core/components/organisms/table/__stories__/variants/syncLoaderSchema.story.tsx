@@ -70,4 +70,13 @@ export default {
   title: 'Organisms|Table/Variants',
   component: Table,
   subcomponents: { Grid },
+  parameters: {
+    docs: {
+      docPage: {
+        props: {
+          exclude: ['showHead']
+        }
+      }
+    }
+  }
 };
