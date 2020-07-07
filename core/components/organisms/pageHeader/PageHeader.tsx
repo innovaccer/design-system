@@ -23,7 +23,7 @@ export interface PageHeaderProps extends BaseProps {
    */
   tabs?: React.ReactNode;
   /**
-   * `Breadcrumb` component
+   * `Breadcrumbs` component
    */
   breadcrumbs?: React.ReactNode;
   /**
