@@ -26,7 +26,7 @@ export { RowProps } from './components/atoms/row';
 export { SpinnerProps } from './components/atoms/spinner';
 export { StatusHintProps } from './components/atoms/statusHint';
 export { SubheadingProps } from './components/atoms/subheading';
-export { SwitchProps } from './components/atoms/switch';
+export { SwitchProps } from './components/atoms/switchInput';
 export { TextProps } from './components/atoms/text';
 export { TextareaProps } from './components/atoms/textarea';
 export { ToastProps } from './components/atoms/toast';
