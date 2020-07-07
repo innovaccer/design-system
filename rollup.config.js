@@ -4,6 +4,30 @@ import babel from 'rollup-plugin-babel';
 import alias from '@rollup/plugin-alias';
 import json from '@rollup/plugin-json';
 import path from 'path';
+import packageJSON from './package.json';
+
+const banner = () => {
+
+  const {
+    version,
+    name,
+    license,
+    homepage,
+  } = packageJSON;
+
+  const banner = `
+  /**
+   * Generated on: ${Date.now()} 
+   *      Package: ${name}
+   *      Version: v${version}
+   *      License: ${license}
+   *         Docs: ${homepage}
+   */
+
+    `;
+  return banner;
+
+}
 
 const extensions = [
   '.js', '.jsx', '.ts', '.tsx',
@@ -51,6 +75,7 @@ export default {
     file: `dist/index.${format}.js`,
     format,
     name: 'inno',
-    globals: globals()
+    globals: globals(),
+    banner: banner(),
   }))
 };
