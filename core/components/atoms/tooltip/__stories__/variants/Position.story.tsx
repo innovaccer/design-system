@@ -15,7 +15,7 @@ export const position = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap' }} className="pb-6">
       {
         positions.map((pos, ind) => {
           return (
