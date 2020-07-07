@@ -1,3 +1,13 @@
+
+  /**
+   * Generated on: 1594122356884 
+   *      Package: @innovaccer/design-system
+   *      Version: v1.0.0-24
+   *      License: MIT
+   *         Docs: https://innovaccer.github.io/design-system
+   */
+
+    
 import React__default, { createElement, useState as useState$4, useEffect as useEffect$3, createRef, Component, cloneElement, forwardRef, useRef as useRef$1, useImperativeHandle, Fragment, Children } from 'react';
 import classNames from 'classnames';
 import { createPortal, findDOMNode } from 'react-dom';
@@ -2641,8 +2651,7 @@ var Breadcrumbs = function Breadcrumbs(props) {
 var Card = function Card(props) {
   var _classNames;
 
-  var _props$shadow = props.shadow,
-      shadow = _props$shadow === void 0 ? 'medium' : _props$shadow,
+  var shadow = props.shadow,
       children = props.children,
       className = props.className,
       rest = _objectWithoutProperties(props, ["shadow", "children", "className"]);
@@ -2653,6 +2662,9 @@ var Card = function Card(props) {
   return /*#__PURE__*/createElement("div", _extends({}, rest, {
     className: classes
   }), children);
+};
+Card.defaultProps = {
+  shadow: 'medium'
 };
 Card.displayName = 'Card';
 

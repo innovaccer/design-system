@@ -2102,12 +2102,12 @@ body {
 
 .Header-content--bottom {
     align-items: center;
-    padding-top: var(--spacing);
+    justify-content: space-between;
 }
 
 .Header-search {
     width: var(--spacing-9);
-    margin-bottom: var(--spacing);
+    margin-bottom: var(--spacing-2);
 }
 
 .Header-label {
@@ -2123,6 +2123,7 @@ body {
 .Header-dropdown {
     display: flex;
     margin-left: var(--spacing-m);
+    margin-bottom: var(--spacing-2);
 }
 
 .Header-dropdown .Dropdown {
@@ -2137,8 +2138,8 @@ body {
     display: flex;
 }
 
-.Header-content--bottom {
-    justify-content: space-between;
+.Header-actions {
+    margin-bottom: var(--spacing-2);
 }
 /* Although the icons in the font can be scaled to any size, in accordance with material design icons guidelines, 
  * we recommend them to be shown in either 18, 24, 36 or 48px. The default being 24px. 

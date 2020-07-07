@@ -1,3 +1,13 @@
+
+  /**
+   * Generated on: 1594122356884 
+   *      Package: @innovaccer/design-system
+   *      Version: v1.0.0-24
+   *      License: MIT
+   *         Docs: https://innovaccer.github.io/design-system
+   */
+
+    
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('classnames'), require('react-dom'), require('react-popper'), require('recharts')) :
   typeof define === 'function' && define.amd ? define(['exports', 'react', 'classnames', 'react-dom', 'react-popper', 'recharts'], factory) :
@@ -2644,8 +2654,7 @@
   var Card = function Card(props) {
     var _classNames;
 
-    var _props$shadow = props.shadow,
-        shadow = _props$shadow === void 0 ? 'medium' : _props$shadow,
+    var shadow = props.shadow,
         children = props.children,
         className = props.className,
         rest = _objectWithoutProperties(props, ["shadow", "children", "className"]);
@@ -2656,6 +2665,9 @@
     return /*#__PURE__*/React.createElement("div", _extends({}, rest, {
       className: classes
     }), children);
+  };
+  Card.defaultProps = {
+    shadow: 'medium'
   };
   Card.displayName = 'Card';
 

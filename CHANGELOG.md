@@ -356,3 +356,11 @@
 * 09b9936 chore: adds baseProps description
 * 481222b chore(pageHeader): title overflow ellipses added
 * e46a164 feat: updates onClick/onClose of ChipGroups
+
+-------------------
+ **v1.0.0-24**  (2020-07-07) 
+
+* 809f057 v1.0.0-24
+* cafb41d fix: adds shadow: none in Card
+* 2d3637f fix: fixes extra margin in Header
+* b46f34b chore: adds bundle banner in rollup config
