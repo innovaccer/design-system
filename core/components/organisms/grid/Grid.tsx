@@ -10,7 +10,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 export type SortType = 'asc' | 'desc';
 export type Pinned = 'left' | 'right';
 export type Alignment = 'left' | 'right' | 'center';
-export type SortFn = (a: RowData, b: RowData) => -1 | 0 | 1;
+export type Comparator = (a: RowData, b: RowData) => -1 | 0 | 1;
 export type Filter = any[];
 
 export interface FetchDataOptions {
@@ -35,7 +35,7 @@ export type updateSelectAllFn = (attr: GridProps['selectAll']) => void;
 export type updateColumnSchemaFn = (name: ColumnSchema['name'], schemaUpdate: Partial<ColumnSchema>) => void;
 export type updateRowDataFn = (rowIndexes: number[], dataUpdate: Partial<RowData>) => void;
 export type updateReorderHighlighterFn = (dim: GridState['reorderHighlighter']) => void;
-export type sortDataFn = (sortFn: SortFn, type: SortType) => void;
+export type sortDataFn = (comparator: Comparator, type: SortType) => void;
 export type reorderColFn = (from: string, to: string) => void;
 export type onSelectFn = (rowIndex: number, selected: boolean) => void;
 export type onSelectAllFn = (selected: boolean, selectAll?: boolean) => void;
@@ -71,9 +71,13 @@ export type ColumnSchema = {
    */
   resizable?: boolean;
   /**
+   * Enable sorting of the column
+   */
+  sorting?: boolean;
+  /**
    * Sorting Function
    */
-  sortFn?: SortFn;
+  comparator?: Comparator;
   /**
    * Show left separator
    */

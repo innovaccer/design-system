@@ -1,4 +1,4 @@
-import { RowData, Data, ColumnSchema, Schema, FetchDataOptions } from './Grid';
+import { RowData, Data, ColumnSchema, Schema, FetchDataOptions, Comparator } from './Grid';
 import { TableProps } from '@/index.type';
 
 export const updateBatchData = (data: Data, rowIndexes: number[], dataUpdate: Partial<RowData>): Data => {
@@ -51,9 +51,18 @@ export const sortData = (schema: Schema, data: Data, sortingList: FetchDataOptio
   const sortedData = [...data];
   sortingList?.forEach(l => {
     const sIndex = schema.findIndex(s => s.name === l.name);
-    const { sortFn } = schema[sIndex];
-    if (sortFn) {
-      sortedData.sort(sortFn);
+    if (sIndex !== -1) {
+      const defaultComparator: Comparator = (a, b) => {
+        const aData = translateData(schema[sIndex], a);
+        const bData = translateData(schema[sIndex], b);
+        return aData[l.name].title.localeCompare(bData[l.name].title);
+      };
+
+      const {
+        comparator = defaultComparator
+      } = schema[sIndex];
+
+      sortedData.sort(comparator);
       if (l.type === 'desc') sortedData.reverse();
     }
   });

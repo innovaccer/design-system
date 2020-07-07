@@ -41,9 +41,15 @@ const HeaderCell = (props: HeaderCellProps) => {
     filterList
   } = _this.props;
 
+  const {
+    sorting = true,
+    name,
+    filters
+  } = schema;
+
   const init = getInit(_this);
 
-  const listIndex = sortingList.findIndex(l => l.name === schema.name);
+  const listIndex = sortingList.findIndex(l => l.name === name);
   const sorted = listIndex !== -1 ? sortingList[listIndex].type : null;
 
   const el = React.createRef<HTMLDivElement>();
@@ -57,30 +63,30 @@ const HeaderCell = (props: HeaderCellProps) => {
     { label: 'Pin Right', value: 'pinRight', icon: 'skip_next', optionType: 'WITH_ICON' },
     { label: 'Hide Column', value: 'hide', icon: 'cancel', optionType: 'WITH_ICON' },
   ];
-  if (schema.sortFn) options = [...sortOptions, ...options];
+  if (sorting) options = [...sortOptions, ...options];
 
   const classes = classNames({
     'Grid-headCell': true,
     'Grid-headCell--draggable': draggable
   });
 
-  const filterOptions = schema.filters
-    ? schema.filters.map(f => ({
+  const filterOptions = filters
+    ? filters.map(f => ({
       ...f,
-      selected: filterList[schema.name] && filterList[schema.name].findIndex(fl => fl === f.value) !== -1
+      selected: filterList[name] && filterList[name].findIndex(fl => fl === f.value) !== -1
     }))
     : [];
 
   return (
     <div
-      key={schema.name}
+      key={name}
       className={classes}
       ref={el}
     >
       <div
         className="Grid-cellContent"
         onMouseDown={() => {
-          if (draggable) reorderCol(_this, schema.name, el.current);
+          if (draggable) reorderCol(_this, name, el.current);
         }}
       >
         {loading && !init ? (
@@ -90,7 +96,7 @@ const HeaderCell = (props: HeaderCellProps) => {
         ) : (
             <>
               <Heading size="s">{schema.displayName}</Heading>
-              {schema.sortFn && (
+              {sorting && (
                 <div className="Grid-sortingIcons">
                   {sorted ? sorted === 'asc' ? (
                     <Icon name="arrow_downward" />
@@ -106,7 +112,7 @@ const HeaderCell = (props: HeaderCellProps) => {
           )
         }
       </div>
-      {schema.filters && (
+      {filters && (
         <>
           {loading && !init ? (
             <span>
@@ -127,7 +133,7 @@ const HeaderCell = (props: HeaderCellProps) => {
                 }}
                 options={filterOptions}
                 align={'left'}
-                onChange={(selected: any) => _this.onFilterChange(schema.name, selected)}
+                onChange={(selected: any) => _this.onFilterChange(name, selected)}
               />
             )
           }
@@ -141,7 +147,7 @@ const HeaderCell = (props: HeaderCellProps) => {
             </span>
           ) : (
               <Dropdown
-                key={schema.name}
+                key={name}
                 menu={true}
                 triggerOptions={{
                   customTrigger: () => (
@@ -153,7 +159,7 @@ const HeaderCell = (props: HeaderCellProps) => {
                 }}
                 options={options}
                 align={'left'}
-                onChange={(selected: any) => _this.onMenuChange(schema.name, selected)}
+                onChange={(selected: any) => _this.onMenuChange(name, selected)}
               />
             )
           }
@@ -163,7 +169,7 @@ const HeaderCell = (props: HeaderCellProps) => {
         <span
           className="Grid-cellResize"
           onMouseDown={() => {
-            resizeCol(_this, schema.name, el.current);
+            resizeCol(_this, name, el.current);
           }}
         />
       )}
@@ -243,7 +249,7 @@ export const Cell = (props: CellProps) => {
     <div
       key={`${rowIndex}-${colIndex}`}
       className={cellClass}
-      data-name={schema.name}
+      data-name={name}
       style={{
         width: schema.width
       }}

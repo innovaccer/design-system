@@ -23,9 +23,9 @@ const schema: Schema = [
       { label: 'H-R', value: 'h-r' },
       { label: 'S-Z', value: 's-z' },
     ],
-    sortFn: (a, b) => (
-      a.lastName.localeCompare(b.lastName) && a.firstName.localeCompare(b.firstName)
-    ),
+    // comparator: (a, b) => (
+    //   a.lastName.localeCompare(b.lastName) && a.firstName.localeCompare(b.firstName)
+    // ),
     onFilterChange: (a, filters) => {
       for (const filter of filters) {
         switch (filter) {
@@ -50,10 +50,11 @@ const schema: Schema = [
     displayName: 'Email',
     width: 350,
     resizable: true,
+    sorting: false,
     // separator: true,
     // pinned: 'left',
     // align: 'center',
-    sortFn: (a, b) => a.email.title.localeCompare(b.email.title),
+    // comparator: (a, b) => a.email.title.localeCompare(b.email.title),
     cellType: 'WITH_META_LIST'
     // image: iconImg,
   },
@@ -63,7 +64,7 @@ const schema: Schema = [
     width: 200,
     resizable: true,
     // separator: true,
-    sortFn: (a, b) => a.gender.localeCompare(b.gender),
+    comparator: (a, b) => a.gender.localeCompare(b.gender),
     cellType: 'STATUS_HINT',
     translate: a => ({
       title: a.gender,
