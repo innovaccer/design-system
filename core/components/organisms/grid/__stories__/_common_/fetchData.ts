@@ -1,9 +1,9 @@
-import { fetchDataFn, Schema } from '../../Grid';
+import { fetchDataFunction, Schema } from '../../Grid';
 import data from './data';
 const schema: Schema = require('./schema').default;
 import { filterData, sortData } from '../../utility';
 
-export const fetchData: fetchDataFn = (options) => {
+export const fetchData: fetchDataFunction = (options) => {
   const {
     page,
     pageSize,

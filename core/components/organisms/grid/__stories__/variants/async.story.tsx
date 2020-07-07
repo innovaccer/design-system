@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Card, Grid } from '@/index';
 import { updateBatchData } from '../../utility';
 import { action } from '@storybook/addon-actions';
-import { onSelectFn, onSelectAllFn, GridProps } from '../../Grid';
+import { onSelectFunction, onSelectAllFunction, GridProps } from '../../Grid';
 import { fetchData } from '../_common_/fetchData';
 import loaderSchema from '../_common_/loaderSchema';
 
@@ -15,7 +15,7 @@ export const async = () => {
     totalRecords: 0
   });
 
-  const onSelect: onSelectFn = (rowIndex, selected) => {
+  const onSelect: onSelectFunction = (rowIndex, selected) => {
     action(`on select:- rowIndex:${rowIndex}, selected:${selected}`)();
 
     const newData = updateBatchData(state.data, [rowIndex], {
@@ -28,7 +28,7 @@ export const async = () => {
     });
   };
 
-  const onSelectAll: onSelectAllFn = selected => {
+  const onSelectAll: onSelectAllFunction = selected => {
     action(`on select all:- ${selected}`)();
 
     const indexes = Array.from({ length: state.data.length }, (_, i) => i);

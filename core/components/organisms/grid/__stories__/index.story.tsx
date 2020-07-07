@@ -1,13 +1,13 @@
 import * as React from 'react';
 import {
   Grid,
-  onSelectFn,
-  onSelectAllFn,
-  updateDataFn,
-  updateSchemaFn,
+  onSelectFunction,
+  onSelectAllFunction,
+  updateDataFunction,
+  updateSchemaFunction,
   GridProps,
-  updateSortingListFn,
-  updateFilterListFn
+  updateSortingListFunction,
+  updateFilterListFunction
 } from '../Grid';
 import loaderSchema from './_common_/loaderSchema';
 import { number, boolean, select } from '@storybook/addon-knobs';
@@ -109,7 +109,7 @@ export const all = () => {
     selectAll: {}
   });
 
-  const onSelect: onSelectFn = (rowIndex, selected) => {
+  const onSelect: onSelectFunction = (rowIndex, selected) => {
     action(`on select:- rowIndex:${rowIndex}, selected:${selected}`)();
 
     const newData = updateBatchData(state.data, [rowIndex], {
@@ -123,7 +123,7 @@ export const all = () => {
     });
   };
 
-  const onSelectAll: onSelectAllFn = selected => {
+  const onSelectAll: onSelectAllFunction = selected => {
     action(`on select all:- ${selected}`)();
 
     const indexes = Array.from({ length: state.data.length }, (_, i) => i);
@@ -149,7 +149,7 @@ export const all = () => {
     });
   };
 
-  const updateData: updateDataFn = options => {
+  const updateData: updateDataFunction = options => {
     setState({
       ...state,
       loading: true
@@ -180,14 +180,14 @@ export const all = () => {
     });
   };
 
-  const updateSchema: updateSchemaFn = newSchema => {
+  const updateSchema: updateSchemaFunction = newSchema => {
     setState({
       ...state,
       schema: newSchema
     });
   };
 
-  const updateSortingList: updateSortingListFn = newSortingList => {
+  const updateSortingList: updateSortingListFunction = newSortingList => {
     setState({
       ...state,
       sortingList: newSortingList,
@@ -198,7 +198,7 @@ export const all = () => {
     });
   };
 
-  const updateFilterList: updateFilterListFn = newFilterList => {
+  const updateFilterList: updateFilterListFunction = newFilterList => {
     setState({
       ...state,
       filterList: newFilterList,

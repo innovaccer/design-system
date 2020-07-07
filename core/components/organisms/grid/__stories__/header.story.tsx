@@ -5,7 +5,7 @@ import { boolean, text } from '@storybook/addon-knobs';
 import schema from './_common_/schema';
 import data from './_common_/data';
 import { getSelectAll, updateBatchData } from '../utility';
-import { onSelectAllFn } from '..';
+import { onSelectAllFunction } from '..';
 import { action } from '@storybook/addon-actions';
 
 export const header = () => {
@@ -49,7 +49,7 @@ export const header = () => {
     selectAll: getSelectAll(data)
   });
 
-  const onSelectAll: onSelectAllFn = (selected, selectAll) => {
+  const onSelectAll: onSelectAllFunction = (selected, selectAll) => {
     action(`on select all:- selected: ${selected}, selectAll: ${selectAll}`)();
 
     const indexes = Array.from({ length: state.data.length }, (_, i) => i);

@@ -84,7 +84,7 @@ export const Popover = (props: PopoverProps) => {
     }
   }, [props.open]);
 
-  const onToggleFn: PopoverProps['onToggle'] = newOpen => {
+  const onToggleFunction: PopoverProps['onToggle'] = newOpen => {
     setOpen(newOpen);
   };
 
@@ -107,7 +107,7 @@ export const Popover = (props: PopoverProps) => {
     hoverable,
     style,
     open,
-    onToggle: onToggle || onToggleFn,
+    onToggle: onToggle || onToggleFunction,
     placement: position
   };
 

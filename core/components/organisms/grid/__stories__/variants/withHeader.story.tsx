@@ -5,7 +5,7 @@ import data from '../_common_/data';
 import schema from '../_common_/schema';
 import { updateBatchData, filterData, sortData, paginateData, getSelectAll } from '../../utility';
 import { action } from '@storybook/addon-actions';
-import { onSelectFn, onSelectAllFn, FetchDataOptions, updateSchemaFn, GridProps } from '../../Grid';
+import { onSelectFunction, onSelectAllFunction, FetchDataOptions, updateSchemaFunction, GridProps } from '../../Grid';
 import { withPagination } from './withPagination.story';
 
 export const withHeader = () => {
@@ -17,7 +17,7 @@ export const withHeader = () => {
     totalRecords: 0
   });
 
-  const onSelect: onSelectFn = (rowIndex, selected) => {
+  const onSelect: onSelectFunction = (rowIndex, selected) => {
     action(`on select:- rowIndex:${rowIndex}, selected:${selected}`)();
 
     const newData = updateBatchData(state.data, [rowIndex], {
@@ -31,7 +31,7 @@ export const withHeader = () => {
     });
   };
 
-  const onSelectAll: onSelectAllFn = selected => {
+  const onSelectAll: onSelectAllFunction = selected => {
     action(`on select all:- ${selected}`)();
 
     const indexes = Array.from({ length: state.data.length }, (_, i) => i);
@@ -87,7 +87,7 @@ export const withHeader = () => {
     });
   };
 
-  const updateSchema: updateSchemaFn = newSchema => {
+  const updateSchema: updateSchemaFunction = newSchema => {
     setState({
       ...state,
       schema: newSchema
