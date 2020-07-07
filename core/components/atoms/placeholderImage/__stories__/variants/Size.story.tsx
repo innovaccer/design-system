@@ -5,7 +5,7 @@ import Text from '@/components/atoms/text';
 
 export const size = () => {
   const round = boolean('round', false);
-  const imageSizes: Size[] = ['small', 'medium', 'large'];
+  const sizes: Size[] = ['small', 'medium', 'large'];
   const options = {
     round
   };
@@ -13,11 +13,11 @@ export const size = () => {
   return (
     <div style={{ display: 'flex' }}>
       {
-        imageSizes.map((PlaceholderSize, ind) => {
+        sizes.map((PlaceholderSize, ind) => {
           return (
             <div key={ind} style={{ marginRight: '3%' }}>
               <div style={{ height: '50px' }}>
-                <PlaceholderImage imageSize={PlaceholderSize} {...options} />
+                <PlaceholderImage size={PlaceholderSize} {...options} />
               </div>
               <br />
               <Text weight="strong">{PlaceholderSize.charAt(0).toUpperCase() + PlaceholderSize.slice(1)}</Text>
