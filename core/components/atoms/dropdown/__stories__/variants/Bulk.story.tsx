@@ -32,7 +32,7 @@ export const bulk = () => {
           return (
             <div key={ind} style={{ marginRight: '10%', width: '170px' }}>
               <Text weight="strong">{value ? 'Options > 50' : 'Options <= 50'}</Text> <br /><br />
-              <Dropdown withCheckbox={true} options={options} {...(value && { fetchOptions })}/>
+              <Dropdown withSearch={true} withCheckbox={true} options={options} {...(value && { fetchOptions })}/>
             </div>
           );
         })

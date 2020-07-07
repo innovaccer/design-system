@@ -16,8 +16,6 @@ export interface OptionRendererProps {
    * OptionProps: {
    *   optionData: Option;
    *   selected: boolean;
-   *   optionIsTop: boolean;
-   *   optionIsBottom: boolean;
    *   active?: boolean;
    *   index: number;
    *   onChange?: (checked: boolean) => void;

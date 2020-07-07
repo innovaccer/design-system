@@ -15,6 +15,7 @@ export interface ProgressRingProps extends BaseProps {
   value: number;
   /**
    * Describes how much work the task indicated by the `Progress Ring` requires.
+   * @default 100
    */
   max?: number;
 }

@@ -104,6 +104,7 @@ interface OptionsProps extends DropdownListProps, BaseProps {
   searchTerm: string;
   triggerLabel: string;
   loadingOptions?: boolean;
+  searchInit?: boolean;
   dropdownOpen?: boolean;
   async?: boolean;
   remainingOptions: number;
@@ -111,6 +112,7 @@ interface OptionsProps extends DropdownListProps, BaseProps {
   tempSelected: OptionSchema[];
   previousSelected: OptionSchema[];
   selectAll: SelectAll;
+  inputRef: React.RefObject<HTMLInputElement>;
   customTrigger?: (label: string) => React.ReactElement;
   applyOptions: () => void;
   cancelOptions: () => void;
@@ -133,6 +135,7 @@ export const usePrevious = (value: any) => {
 const DropdownList = (props: OptionsProps) => {
   const {
     listOptions = [],
+    inputRef,
     align = 'right',
     optionType = 'DEFAULT',
     truncateOption = true,
@@ -161,7 +164,6 @@ const DropdownList = (props: OptionsProps) => {
 
   const dropdownRef = React.createRef<HTMLDivElement>();
   const triggerRef = React.createRef<HTMLDivElement>();
-  const dropdownInputRef = React.createRef<HTMLInputElement>();
   const dropdownTriggerRef = React.createRef<HTMLButtonElement>();
   const dropdownCancelButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownApplyButtonRef = React.createRef<HTMLButtonElement>();
@@ -335,6 +337,8 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const renderSearch = () => {
+    const { loadingOptions, searchInit } = props;
+    const disable = loadingOptions && !searchInit;
     return (
       <div className={'Dropdown-input'}>
         <Input
@@ -342,11 +346,11 @@ const DropdownList = (props: OptionsProps) => {
           icon={'search'}
           value={searchTerm}
           placeholder={'Search..'}
-          disabled={false}
+          disabled={disable}
           autoFocus={true}
           onChange={searchHandler}
           onClear={searchClearHandler}
-          ref={dropdownInputRef}
+          ref={inputRef}
           autocomplete={'off'}
         />
       </div>
@@ -489,7 +493,7 @@ const DropdownList = (props: OptionsProps) => {
         const activeElement = document.activeElement;
         if (
           dropdownOpen &&
-          (dropdownInputRef.current === activeElement || dropdownTriggerRef.current === activeElement)
+          (inputRef.current === activeElement || dropdownTriggerRef.current === activeElement)
         ) {
           event.preventDefault();
           const classes = withCheckbox ? `${optionClass} .Checkbox-input` : optionClass;

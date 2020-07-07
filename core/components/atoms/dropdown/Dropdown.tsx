@@ -23,6 +23,16 @@ interface SyncProps {
    *   group?: string;
    * }
    * </pre>
+   *
+   * OptionType: 'DEFAULT' | 'WITH\_ICON' | 'WITH\_META' | 'ICON\_WITH\_META'
+   *
+   * | Name | Description | Default |
+   * | --- | --- | --- |
+   * | label | Describes Label of the option | |
+   * | value | Value of option | |
+   * | icon | Name of icon inside option | |
+   * | selected | Denotes default selection of option | |
+   * | group | Defines group to which the option belongs | |
    */
   options?: Option[];
   /**
@@ -43,6 +53,7 @@ interface AsyncProps {
    *      option: Option[],
    * }>;
    * </pre>
+   *
    */
   fetchOptions?: fetchOptionsFunction;
 }
@@ -81,13 +92,16 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * TriggerProps:
    * {
-   *    // Number of selected options to be shown on `Dropdown trigger`
    *    labelLimit?: number;
-   *    // Callback function to change the label of trigger when options are selected
    *    customLabel?: (selected: number, totalOptions?: number) => string;
-   *    // Adds custom trigger
    *    customTrigger?: (label: string) => React.ReactElement;
    * }
+   *
+   * | Name | Description | Default |
+   * | --- | --- | --- |
+   * | labelLimit | Number of selected options to be shown on `Dropdown trigger` | 2 |
+   * | customLabel | Callback function to change the label of trigger when options are selected | |
+   * | customTrigger | Adds custom trigger | |
    * </pre>
    */
   triggerOptions?: TriggerProps;
@@ -104,10 +118,13 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
 type SyncDropdownProps = SyncProps & SharedDropdownProps;
 type AsyncDropdownProps = AsyncProps & SharedDropdownProps;
 
+const inputRef = React.createRef<HTMLInputElement>();
+
 export type DropdownProps = (SyncDropdownProps & AsyncDropdownProps);
 
 interface DropdownState {
   async: boolean;
+  searchInit: boolean;
   options: Option[];
   loading?: boolean;
   optionsApplied: boolean;
@@ -143,6 +160,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     this.state = {
       async,
       optionsLength,
+      searchInit: false,
       searchedOptionsLength: optionsLength,
       optionsApplied: false,
       options: options || [],
@@ -165,7 +183,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
   componentDidUpdate(prevProps: DropdownProps, prevState: DropdownState) {
     if (!this.state.async) {
-      const { loading, fetchOptions, options = [] } = this.props;
+      const { loading, fetchOptions, options = [], withSearch } = this.props;
       if (prevProps.loading !== loading && !fetchOptions) {
         if (options.length > bulk) {
           this.updateOptions(true, true);
@@ -182,6 +200,8 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
             triggerLabel: this.updateTriggerLabel(selectedGroup),
             selectAll: getSelectAll(selectedGroup, this.state.optionsLength)
           });
+
+          if (withSearch) inputRef.current?.focus();
         }
       }
     }
@@ -230,7 +250,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     } = this.state;
 
     let updatedAsync = async === undefined ? this.state.async : async;
-    const { fetchOptions, withCheckbox } = this.props;
+    const { fetchOptions, withCheckbox, withSearch } = this.props;
     const fetchFunction = fetchOptions ? fetchOptions : this.fetchOptionsFunction;
 
     fetchFunction(searchTerm)
@@ -255,6 +275,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
           previousSelected: init ? selectedGroup : previousSelected,
           triggerLabel: this.updateTriggerLabel(init ? selectedGroup : tempSelected),
         });
+        if (updatedAsync || withSearch) inputRef.current?.focus();
       });
   }
 
@@ -262,6 +283,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     this.setState({
       ...this.state,
       loading: true,
+      searchInit: true,
       searchTerm: search
     });
   }
@@ -358,7 +380,15 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     }
   }
 
-  debounceSearch = debounce(300, () => this.updateOptions(false));
+  debounceSearch = debounce(300, () => {
+    this.setState({
+      searchInit: false,
+    }, () => {
+      this.updateOptions(false);
+    });
+  });
+
+  debounceClear = debounce(100, () => this.updateOptions(false));
 
   onClearOptions = () => {
     const { onChange, showApplyButton } = this.props;
@@ -368,7 +398,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       triggerLabel: '',
       loading: true,
     });
-    this.debounceSearch();
+    this.debounceClear();
     if (onChange && !showApplyButton) onChange([], name);
   }
 
@@ -442,7 +472,8 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       open: !open,
       optionsApplied: false,
       loading: moveSelectedGroup || loading || searchTerm !== '',
-      searchTerm: '',
+      searchInit: searchTerm !== '',
+      searchTerm: ''
     });
 
     if (moveSelectedGroup) this.updateOptions(false);
@@ -459,6 +490,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       async,
       open,
       searchTerm,
+      searchInit,
       loading,
       searchedOptionsLength,
       tempSelected,
@@ -474,9 +506,11 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     return (
       <DropdownList
         listOptions={options}
+        inputRef={inputRef}
         remainingOptions={remainingOptionsLen}
         loadingOptions={loading}
         async={async}
+        searchInit={searchInit}
         dropdownOpen={open}
         searchTerm={searchTerm}
         triggerLabel={triggerLabel}
