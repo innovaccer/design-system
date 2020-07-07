@@ -1,18 +1,18 @@
 import * as React from 'react';
-import { Header, ExternalHeaderProps, updateSearchTermFn, HeaderProps } from '../grid/Header';
+import { Header, ExternalHeaderProps, updateSearchTermFunction, HeaderProps } from '../grid/Header';
 import { Grid } from '@/index';
 import {
   Data,
   Schema,
-  onSelectFn,
-  onSelectAllFn,
+  onSelectFunction,
+  onSelectAllFunction,
   GridProps,
   FetchDataOptions,
-  fetchDataFn,
+  fetchDataFunction,
   RowData,
-  updateSchemaFn,
-  updateSortingListFn,
-  updateFilterListFn
+  updateSchemaFunction,
+  updateSortingListFunction,
+  updateFilterListFunction
 } from '../grid';
 import { updateBatchData, filterData, sortData, paginateData, getSelectAll, searchData } from '../grid/utility';
 import { BaseProps, extractBaseProps } from '@/utils/types';
@@ -40,7 +40,7 @@ interface SyncProps {
    *        displayName: string;
    *        width: number;
    *        resizable?: boolean;
-   *        sortFn?: (a: RowData, b: RowData) => -1 | 0 | 1;
+   *        sortFunction?: (a: RowData, b: RowData) => -1 | 0 | 1;
    *        separator?: boolean;
    *        pinned?: 'left' | 'right';
    *        hidden?: boolean;
@@ -72,7 +72,7 @@ interface SyncProps {
    * | displayName | Column Head Label | |
    * | width | Width of the column(in px) | |
    * | resizable | Denotes if column is resizable | |
-   * | sortFn | Sorting Function to be passed(in case of async) | |
+   * | sortFunction | Sorting Function to be passed(in case of async) | |
    * | separator | Shows Left separator | |
    * | pinned | Pin column | |
    * | hidden | Denotes if column is hidden | |
@@ -103,7 +103,7 @@ interface AsyncProps {
    * Callback to be called in case of async `Table`
    *
    * <pre className="DocPage-codeBlock">
-   * fetchDataFn: (options: FetchDataOptions) => Promise<{
+   * fetchDataFunction: (options: FetchDataOptions) => Promise<{
    *      count: number,
    *      data: Data,
    *      schema: Schema
@@ -118,7 +118,7 @@ interface AsyncProps {
    *  }
    * </pre>
    */
-  fetchData: fetchDataFn;
+  fetchData: fetchDataFunction;
 }
 
 interface SharedTableProps extends BaseProps {
@@ -208,7 +208,7 @@ interface SharedTableProps extends BaseProps {
   /**
    * Callback to be called when a row is clicked in case of Table type: "resource"
    *
-   * `onRowClickFn: (data: RowData, rowIndexes?: number) => void`
+   * `onRowClickFunction: (data: RowData, rowIndexes?: number) => void`
    */
   onRowClick?: GridProps['onRowClick'];
   /**
@@ -405,7 +405,7 @@ export class Table extends React.Component<TableProps, TableState> {
     }
   });
 
-  onSelect: onSelectFn = (rowIndexes, selected) => {
+  onSelect: onSelectFunction = (rowIndexes, selected) => {
     const {
       data
     } = this.state;
@@ -432,7 +432,7 @@ export class Table extends React.Component<TableProps, TableState> {
     }
   }
 
-  onSelectAll: onSelectAllFn = (selected, selectAll) => {
+  onSelectAll: onSelectAllFunction = (selected, selectAll) => {
     const {
       onSelect
     } = this.props;
@@ -463,13 +463,13 @@ export class Table extends React.Component<TableProps, TableState> {
     });
   }
 
-  updateSchema: updateSchemaFn = newSchema => {
+  updateSchema: updateSchemaFunction = newSchema => {
     this.setState({
       schema: newSchema
     });
   }
 
-  updateSortingList: updateSortingListFn = newSortingList => {
+  updateSortingList: updateSortingListFunction = newSortingList => {
     const {
       multipleSorting
     } = this.props;
@@ -480,14 +480,14 @@ export class Table extends React.Component<TableProps, TableState> {
     });
   }
 
-  updateFilterList: updateFilterListFn = newFilterList => {
+  updateFilterList: updateFilterListFunction = newFilterList => {
     this.setState({
       filterList: newFilterList,
       page: 1,
     });
   }
 
-  updateSearchTerm: updateSearchTermFn = newSearchTerm => {
+  updateSearchTerm: updateSearchTermFunction = newSearchTerm => {
     this.setState({
       searchTerm: newSearchTerm,
       page: 1

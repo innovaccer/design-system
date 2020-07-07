@@ -1,6 +1,14 @@
 import * as React from 'react';
 import { Checkbox, Text, Input, Dropdown, Placeholder, PlaceholderParagraph, Button } from '@/index';
-import { updateSchemaFn, ColumnSchema, Schema, Data, onSelectAllFn, GridProps, updateFilterListFn } from './Grid';
+import {
+  updateSchemaFunction,
+  ColumnSchema,
+  Schema,
+  Data,
+  onSelectAllFunction,
+  GridProps,
+  updateFilterListFunction
+} from './Grid';
 
 export interface ExternalHeaderProps {
   children?: React.ReactNode;
@@ -9,7 +17,7 @@ export interface ExternalHeaderProps {
   dynamicColumn?: boolean;
 }
 
-export type updateSearchTermFn = (newSearchTerm: string) => void;
+export type updateSearchTermFunction = (newSearchTerm: string) => void;
 
 export interface HeaderProps extends ExternalHeaderProps {
   loading: boolean;
@@ -21,13 +29,13 @@ export interface HeaderProps extends ExternalHeaderProps {
   withPagination?: boolean;
   withCheckbox?: boolean;
   showHead?: boolean;
-  // updateData?: updateDataFn;
-  updateSchema?: updateSchemaFn;
+  // updateData?: updateDataFunction;
+  updateSchema?: updateSchemaFunction;
   filterList?: GridProps['filterList'];
-  updateFilterList?: updateFilterListFn;
-  onSelectAll?: onSelectAllFn;
+  updateFilterList?: updateFilterListFunction;
+  onSelectAll?: onSelectAllFunction;
   searchTerm?: string;
-  updateSearchTerm?: updateSearchTermFn;
+  updateSearchTerm?: updateSearchTermFunction;
 }
 
 export const Header = (props: HeaderProps) => {

@@ -4,7 +4,7 @@ import {
   Data,
   Schema,
   GridProps,
-  fetchDataFn,
+  fetchDataFunction,
 } from '../grid';
 import Table, { TableProps } from '../table';
 import { BaseProps } from '@/utils/types';
@@ -17,7 +17,7 @@ interface SyncProps {
 }
 
 interface AsyncProps {
-  fetchData: fetchDataFn;
+  fetchData: fetchDataFunction;
 }
 
 interface SharedListProps extends BaseProps {

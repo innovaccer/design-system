@@ -5,7 +5,7 @@ import { OptionSchema as Option } from './option';
 import { getSearchedOptions, getSelectAll, _isEqual } from './utility';
 import { BaseProps } from '@/utils/types';
 
-type fetchOptionsFnc = (searchTerm: string) => Promise<{
+type fetchOptionsFunction = (searchTerm: string) => Promise<{
   count: number;
   options: Option[];
 }>;
@@ -38,13 +38,13 @@ interface AsyncProps {
   /**
    * Callback function to fetch options from API
    * <pre className="DocPage-codeBlock">
-   * fetchOptionsFnc: (searchTerm: string) => Promise<{
+   * fetchOptionsFunction: (searchTerm: string) => Promise<{
    *      count: number,
    *      option: Option[],
    * }>;
    * </pre>
    */
-  fetchOptions?: fetchOptionsFnc;
+  fetchOptions?: fetchOptionsFunction;
 }
 
 interface TriggerProps {
@@ -191,7 +191,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     }
   }
 
-  fetchOptionsFn = (searchTerm: string) => {
+  fetchOptionsFunction = (searchTerm: string) => {
     const { options } = this.props;
     const filteredOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
     return new Promise<any>(resolve => {
@@ -231,9 +231,9 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
     let updatedAsync = async === undefined ? this.state.async : async;
     const { fetchOptions, withCheckbox } = this.props;
-    const fetchFn = fetchOptions ? fetchOptions : this.fetchOptionsFn;
+    const fetchFunction = fetchOptions ? fetchOptions : this.fetchOptionsFunction;
 
-    fetchFn(searchTerm)
+    fetchFunction(searchTerm)
       .then((res: any) => {
         const { options, count } = res;
         updatedAsync = searchTerm === '' ? count > bulk : updatedAsync;

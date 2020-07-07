@@ -21,26 +21,26 @@ export interface FetchDataOptions {
   searchTerm?: string;
 }
 
-export type fetchDataFn = (options: FetchDataOptions) => Promise<{
+export type fetchDataFunction = (options: FetchDataOptions) => Promise<{
   count: number,
   data: Data,
   schema: Schema
 }>;
 
-export type updateSortingListFn = (newSortingList: GridProps['sortingList']) => void;
-export type updateFilterListFn = (newFilterList: GridProps['filterList']) => void;
-export type updateDataFn = (options: FetchDataOptions) => void;
-export type updateSchemaFn = (newSchema: Schema) => void;
-export type updateSelectAllFn = (attr: GridProps['selectAll']) => void;
-export type updateColumnSchemaFn = (name: ColumnSchema['name'], schemaUpdate: Partial<ColumnSchema>) => void;
-export type updateRowDataFn = (rowIndexes: number[], dataUpdate: Partial<RowData>) => void;
-export type updateReorderHighlighterFn = (dim: GridState['reorderHighlighter']) => void;
-export type sortDataFn = (comparator: Comparator, type: SortType) => void;
-export type reorderColFn = (from: string, to: string) => void;
-export type onSelectFn = (rowIndex: number, selected: boolean) => void;
-export type onSelectAllFn = (selected: boolean, selectAll?: boolean) => void;
-export type onFilterChangeFn = (data: RowData, filters: Filter) => boolean;
-export type onRowClickFn = (data: RowData, rowIndex?: number) => void;
+export type updateSortingListFunction = (newSortingList: GridProps['sortingList']) => void;
+export type updateFilterListFunction = (newFilterList: GridProps['filterList']) => void;
+export type updateDataFunction = (options: FetchDataOptions) => void;
+export type updateSchemaFunction = (newSchema: Schema) => void;
+export type updateSelectAllFunction = (attr: GridProps['selectAll']) => void;
+export type updateColumnSchemaFunction = (name: ColumnSchema['name'], schemaUpdate: Partial<ColumnSchema>) => void;
+export type updateRowDataFunction = (rowIndexes: number[], dataUpdate: Partial<RowData>) => void;
+export type updateReorderHighlighterFunction = (dim: GridState['reorderHighlighter']) => void;
+export type sortDataFunction = (comparator: Comparator, type: SortType) => void;
+export type reorderColFunction = (from: string, to: string) => void;
+export type onSelectFunction = (rowIndex: number, selected: boolean) => void;
+export type onSelectAllFunction = (selected: boolean, selectAll?: boolean) => void;
+export type onFilterChangeFunction = (data: RowData, filters: Filter) => boolean;
+export type onRowClickFunction = (data: RowData, rowIndex?: number) => void;
 export type CellType =
   'DEFAULT' |
   'WITH_META_LIST' |
@@ -97,7 +97,7 @@ export type ColumnSchema = {
   /**
    * Callback onFilterChange
    */
-  onFilterChange?: onFilterChangeFn;
+  onFilterChange?: onFilterChangeFunction;
   /**
    * Translate cell data
    */
@@ -139,7 +139,7 @@ export interface GridProps extends BaseProps {
   /**
    * Callback on Row click in case of `Resource Grid`
    */
-  onRowClick?: onRowClickFn;
+  onRowClick?: onRowClickFunction;
   /**
    * Schema used to render `loading` state
    * @default []
@@ -169,11 +169,11 @@ export interface GridProps extends BaseProps {
   /**
    * Callback to be called to get the updated data
    */
-  updateData?: updateDataFn;
+  updateData?: updateDataFunction;
   /**
    * Callback to be called to get the updated data
    */
-  updateSchema?: updateSchemaFn;
+  updateSchema?: updateSchemaFunction;
   /**
    * Shows grid head
    */
@@ -215,11 +215,11 @@ export interface GridProps extends BaseProps {
   /**
    * Callback on row select
    */
-  onSelect?: onSelectFn;
+  onSelect?: onSelectFunction;
   /**
    * Callback on column head select
    */
-  onSelectAll?: onSelectAllFn;
+  onSelectAll?: onSelectAllFunction;
   /**
    * Error Template
    */
@@ -234,7 +234,7 @@ export interface GridProps extends BaseProps {
   /**
    * update Sorting List Callback
    */
-  updateSortingList?: updateSortingListFn;
+  updateSortingList?: updateSortingListFunction;
   /**
    * Filter List
    */
@@ -242,7 +242,7 @@ export interface GridProps extends BaseProps {
   /**
    * update Filter List Callback
    */
-  updateFilterList?: updateFilterListFn;
+  updateFilterList?: updateFilterListFunction;
   /**
    * Select All
    */
@@ -333,7 +333,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     }
   }
 
-  updateColumnSchema: updateColumnSchemaFn = (name, schemaUpdate) => {
+  updateColumnSchema: updateColumnSchemaFunction = (name, schemaUpdate) => {
     const { schema } = this.props;
     const newSchema = [...schema];
 
@@ -346,7 +346,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     this.updateRenderedSchema(newSchema);
   }
 
-  reorderCol: reorderColFn = (from, to) => {
+  reorderCol: reorderColFunction = (from, to) => {
     const {
       schema
     } = this.props;
@@ -357,7 +357,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     this.updateRenderedSchema(newSchema);
   }
 
-  updateReorderHighlighter: updateReorderHighlighterFn = debounce(50, dim => {
+  updateReorderHighlighter: updateReorderHighlighterFunction = debounce(50, dim => {
     this.setState({
       reorderHighlighter: dim
     });
@@ -416,7 +416,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     this.updateFilterList(newFilterList);
   }
 
-  onSelect: onSelectFn = (rowIndex, selected) => {
+  onSelect: onSelectFunction = (rowIndex, selected) => {
     const {
       onSelect
     } = this.props;

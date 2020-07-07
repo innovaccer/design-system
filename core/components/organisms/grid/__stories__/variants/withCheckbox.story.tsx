@@ -4,7 +4,7 @@ import schema from '../_common_/simpleSchema';
 import { Card, Heading, Grid } from '@/index';
 import { GridProps } from '@/index.type';
 import { action } from '@storybook/addon-actions';
-import { updateDataFn, FetchDataOptions, onSelectFn, onSelectAllFn } from '../../Grid';
+import { updateDataFunction, FetchDataOptions, onSelectFunction, onSelectAllFunction } from '../../Grid';
 import { filterData, sortData, paginateData, updateBatchData } from '../../utility';
 
 // CSF format story
@@ -24,7 +24,7 @@ export const withCheckbox = () => {
     loading: true,
   });
 
-  const onSelect: onSelectFn = (rowIndex, selected) => {
+  const onSelect: onSelectFunction = (rowIndex, selected) => {
     action(`on select:- rowIndex:${rowIndex}, selected:${selected}`)();
 
     const newData = updateBatchData(state.data, [rowIndex], {
@@ -37,7 +37,7 @@ export const withCheckbox = () => {
     });
   };
 
-  const onSelectAll: onSelectAllFn = selected => {
+  const onSelectAll: onSelectAllFunction = selected => {
     action(`on select all:- ${selected}`)();
 
     const indexes = Array.from({ length: state.data.length }, (_, i) => i);
