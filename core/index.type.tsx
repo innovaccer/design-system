@@ -43,7 +43,7 @@ export { PlaceholderParagraphProps } from './components/atoms/placeholderParagra
 export { ProgressBarProps } from './components/atoms/progressBar';
 export { PopoverProps } from './components/molecules/popover';
 export { ProgressRingProps } from './components/atoms/progressRing';
-export { RangePickerProps } from './components/organisms/rangepicker';
+export { DateRangePickerProps } from './components/organisms/dateRangePicker';
 export { TabsWrapperProps, TabProps } from './components/molecules/tabs';
 export { GridProps } from './components/organisms/grid';
 export { ListProps } from './components/organisms/list';

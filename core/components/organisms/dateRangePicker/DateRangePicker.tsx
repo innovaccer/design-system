@@ -8,7 +8,7 @@ import validators from '@/utils/validators';
 import { getDateInfo, convertToDate, compareDate, translateToString, translateToDate, Validator } from '../calendar/utility';
 import { Row, Column } from '@/index';
 
-export type RangePickerProps = {
+export type DateRangePickerProps = {
   /**
    * @argument startDate Start Date object
    * @argument endDate End Date object
@@ -17,11 +17,11 @@ export type RangePickerProps = {
    */
   onRangeChange?: (startDate: Date, endDate: Date, startValue?: string, endValue?: string) => void;
   /**
-   * Start date of `RangePicker`
+   * Start date of `DateRangePicker`
    */
   startDate?: DateType;
   /**
-   * End date of `RangePicker`
+   * End date of `DateRangePicker`
    */
   endDate?: DateType;
   /**
@@ -40,7 +40,7 @@ export type RangePickerProps = {
    */
   open?: boolean;
   /**
-   * Position of `RangePicker` w.r.t. `InputMask`
+   * Position of `DateRangePicker` w.r.t. `InputMask`
    */
   position?: Position;
   /**
@@ -72,7 +72,7 @@ export type RangePickerProps = {
   validator?: Validator;
 } & SharedProps;
 
-export const RangePicker = (props: RangePickerProps) => {
+export const DateRangePicker = (props: DateRangePickerProps) => {
   const {
     startDate: startDateProp,
     endDate: endDateProp,
@@ -82,7 +82,7 @@ export const RangePicker = (props: RangePickerProps) => {
     inputFormat = 'mm/dd/yyyy',
     outputFormat = 'mm/dd/yyyy',
     startInputOptions = {
-      name: 'rangePicker-start',
+      name: 'dateDateRangePicker-start',
       label: 'Start Date',
       placeholderChar: '_',
       placeholder: inputFormat,
@@ -90,7 +90,7 @@ export const RangePicker = (props: RangePickerProps) => {
       caption: ''
     },
     endInputOptions = {
-      name: 'rangePicker-end',
+      name: 'dateDateRangePicker-end',
       label: 'End Date',
       placeholderChar: '_',
       placeholder: inputFormat,
@@ -310,7 +310,7 @@ export const RangePicker = (props: RangePickerProps) => {
 
     const trigger = (
       <Row group={'2'} groupXS={'1'}>
-        <Column className="RangePicker-input RangePicker-input--startDate">
+        <Column className="DateRangePicker-input DateRangePicker-input--startDate">
           <InputMask
             {...startInputOptions}
             mask={mask}
@@ -323,7 +323,7 @@ export const RangePicker = (props: RangePickerProps) => {
             caption={startInputOptions.required && startError ? startInputOptions.caption || 'Invalid value' : ''}
           />
         </Column>
-        <Column className="RangePicker-input RangePicker-input--endDate">
+        <Column className="DateRangePicker-input DateRangePicker-input--endDate">
           <InputMask
             {...endInputOptions}
             mask={mask}
@@ -389,6 +389,6 @@ export const RangePicker = (props: RangePickerProps) => {
   );
 };
 
-RangePicker.displayName = 'RangePicker';
+DateRangePicker.displayName = 'DateRangePicker';
 
-export default RangePicker;
+export default DateRangePicker;

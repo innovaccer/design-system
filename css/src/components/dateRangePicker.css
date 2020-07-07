@@ -1,25 +1,25 @@
-.RangePicker {
+.DateRangePicker {
 
 }
 
-.RangePicker-input {
+.DateRangePicker-input {
     box-sizing: border-box;
 }
 
-.RangePicker-input--startDate {
+.DateRangePicker-input--startDate {
     padding-right: var(--spacing-m);
 }
 
-.RangePicker-input--endDate {
+.DateRangePicker-input--endDate {
     padding-left: var(--spacing-m);
 }
 
 @media (max-width: 576px) {
-    .RangePicker-input {
+    .DateRangePicker-input {
         padding: 0;
     }
 
-    .RangePicker-input--endDate {
+    .DateRangePicker-input--endDate {
         padding-top: var(--spacing);
     }
 }

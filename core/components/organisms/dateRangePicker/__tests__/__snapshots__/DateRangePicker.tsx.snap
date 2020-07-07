@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RangePicker component 
+exports[`DateRangePicker component 
   
  1`] = `
 <Calendar
@@ -9,7 +9,7 @@ exports[`RangePicker component
 />
 `;
 
-exports[`RangePicker component 
+exports[`DateRangePicker component 
   monthsInView: 1
  1`] = `
 <Calendar
@@ -19,7 +19,7 @@ exports[`RangePicker component
 />
 `;
 
-exports[`RangePicker component 
+exports[`DateRangePicker component 
   monthsInView: 1
  2`] = `
 <Calendar
@@ -31,7 +31,7 @@ exports[`RangePicker component
 />
 `;
 
-exports[`RangePicker component 
+exports[`DateRangePicker component 
   monthsInView: 2
  1`] = `
 <Calendar
@@ -41,7 +41,7 @@ exports[`RangePicker component
 />
 `;
 
-exports[`RangePicker component 
+exports[`DateRangePicker component 
   monthsInView: 2
  2`] = `
 <Calendar
@@ -53,7 +53,7 @@ exports[`RangePicker component
 />
 `;
 
-exports[`RangePicker component 
+exports[`DateRangePicker component 
   monthsInView: 3
  1`] = `
 <Calendar
@@ -63,7 +63,7 @@ exports[`RangePicker component
 />
 `;
 
-exports[`RangePicker component 
+exports[`DateRangePicker component 
   monthsInView: 3
  2`] = `
 <Calendar
@@ -75,7 +75,7 @@ exports[`RangePicker component
 />
 `;
 
-exports[`RangePicker component 
+exports[`DateRangePicker component 
   open: false
  1`] = `
 <Popover
@@ -88,9 +88,10 @@ exports[`RangePicker component
       groupXS="1"
     >
       <Column
-        className="RangePicker-input RangePicker-input--startDate"
+        className="DateRangePicker-input DateRangePicker-input--startDate"
       >
         <ForwardRef
+          caption=""
           error={false}
           label="Start Date"
           mask={
@@ -107,20 +108,22 @@ exports[`RangePicker component
               /\\\\d/,
             ]
           }
-          name="rangePicker-start"
+          name="dateDateRangePicker-start"
           onBlur={[Function]}
           onChange={[Function]}
           onClear={[Function]}
           onClick={[Function]}
           placeholder="mm/dd/yyyy"
           placeholderChar="_"
+          required={false}
           value=""
         />
       </Column>
       <Column
-        className="RangePicker-input RangePicker-input--endDate"
+        className="DateRangePicker-input DateRangePicker-input--endDate"
       >
         <ForwardRef
+          caption=""
           error={false}
           label="End Date"
           mask={
@@ -137,13 +140,14 @@ exports[`RangePicker component
               /\\\\d/,
             ]
           }
-          name="rangePicker-end"
+          name="dateDateRangePicker-end"
           onBlur={[Function]}
           onChange={[Function]}
           onClear={[Function]}
           onClick={[Function]}
           placeholder="mm/dd/yyyy"
           placeholderChar="_"
+          required={false}
           value=""
         />
       </Column>
@@ -157,7 +161,7 @@ exports[`RangePicker component
 </Popover>
 `;
 
-exports[`RangePicker component 
+exports[`DateRangePicker component 
   open: true
  1`] = `
 <Popover
@@ -170,9 +174,10 @@ exports[`RangePicker component
       groupXS="1"
     >
       <Column
-        className="RangePicker-input RangePicker-input--startDate"
+        className="DateRangePicker-input DateRangePicker-input--startDate"
       >
         <ForwardRef
+          caption=""
           error={false}
           label="Start Date"
           mask={
@@ -189,20 +194,22 @@ exports[`RangePicker component
               /\\\\d/,
             ]
           }
-          name="rangePicker-start"
+          name="dateDateRangePicker-start"
           onBlur={[Function]}
           onChange={[Function]}
           onClear={[Function]}
           onClick={[Function]}
           placeholder="mm/dd/yyyy"
           placeholderChar="_"
+          required={false}
           value=""
         />
       </Column>
       <Column
-        className="RangePicker-input RangePicker-input--endDate"
+        className="DateRangePicker-input DateRangePicker-input--endDate"
       >
         <ForwardRef
+          caption=""
           error={false}
           label="End Date"
           mask={
@@ -219,13 +226,14 @@ exports[`RangePicker component
               /\\\\d/,
             ]
           }
-          name="rangePicker-end"
+          name="dateDateRangePicker-end"
           onBlur={[Function]}
           onChange={[Function]}
           onClear={[Function]}
           onClick={[Function]}
           placeholder="mm/dd/yyyy"
           placeholderChar="_"
+          required={false}
           value=""
         />
       </Column>
@@ -239,7 +247,7 @@ exports[`RangePicker component
 </Popover>
 `;
 
-exports[`RangePicker component 
+exports[`DateRangePicker component 
   view: "date"
  1`] = `
 <Calendar
@@ -249,7 +257,7 @@ exports[`RangePicker component
 />
 `;
 
-exports[`RangePicker component 
+exports[`DateRangePicker component 
   view: "month"
  1`] = `
 <Calendar
@@ -259,7 +267,7 @@ exports[`RangePicker component
 />
 `;
 
-exports[`RangePicker component 
+exports[`DateRangePicker component 
   view: "year"
  1`] = `
 <Calendar
@@ -269,7 +277,7 @@ exports[`RangePicker component
 />
 `;
 
-exports[`RangePicker component 
+exports[`DateRangePicker component 
   withInput: false
  1`] = `
 <Calendar
@@ -278,7 +286,7 @@ exports[`RangePicker component
 />
 `;
 
-exports[`RangePicker component 
+exports[`DateRangePicker component 
   withInput: true
  1`] = `
 <Popover
@@ -291,9 +299,10 @@ exports[`RangePicker component
       groupXS="1"
     >
       <Column
-        className="RangePicker-input RangePicker-input--startDate"
+        className="DateRangePicker-input DateRangePicker-input--startDate"
       >
         <ForwardRef
+          caption=""
           error={false}
           label="Start Date"
           mask={
@@ -310,20 +319,22 @@ exports[`RangePicker component
               /\\\\d/,
             ]
           }
-          name="rangePicker-start"
+          name="dateDateRangePicker-start"
           onBlur={[Function]}
           onChange={[Function]}
           onClear={[Function]}
           onClick={[Function]}
           placeholder="mm/dd/yyyy"
           placeholderChar="_"
+          required={false}
           value=""
         />
       </Column>
       <Column
-        className="RangePicker-input RangePicker-input--endDate"
+        className="DateRangePicker-input DateRangePicker-input--endDate"
       >
         <ForwardRef
+          caption=""
           error={false}
           label="End Date"
           mask={
@@ -340,13 +351,14 @@ exports[`RangePicker component
               /\\\\d/,
             ]
           }
-          name="rangePicker-end"
+          name="dateDateRangePicker-end"
           onBlur={[Function]}
           onChange={[Function]}
           onClear={[Function]}
           onClick={[Function]}
           placeholder="mm/dd/yyyy"
           placeholderChar="_"
+          required={false}
           value=""
         />
       </Column>
