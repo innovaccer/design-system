@@ -26,7 +26,7 @@ export { Row } from './components/atoms/row';
 export { StatusHint } from './components/atoms/statusHint';
 export { Spinner } from './components/atoms/spinner';
 export { Subheading } from './components/atoms/subheading';
-export { Switch } from './components/atoms/switch';
+export { Switch } from './components/atoms/switchInput';
 export { Text } from './components/atoms/text';
 export { Textarea } from './components/atoms/textarea';
 export { Toast } from './components/atoms/toast';
