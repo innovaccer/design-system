@@ -91,7 +91,7 @@ export const vertical = () => {
     <div style={{ height: 'calc(80vh)', background: 'var(--secondary-lightest)' }}>
       <Navigation
         type="vertical"
-        data={data}
+        menus={data}
         expanded={expanded}
         autoCollapse={autoCollapse}
         footer={footer}
@@ -183,7 +183,7 @@ const customCode = `() => {
     <div style={{ height: 'calc(80vh)', background: 'var(--secondary-lightest)' }}>
       <Navigation
         type="vertical"
-        data={data}
+        menus={data}
         expanded={expanded}
         footer={true}
         onToggle={(val) => setExpanded(val)}

@@ -42,7 +42,7 @@ export const horizontal = () => {
         }}
       >
         <Navigation
-          data={data}
+          menus={data}
           active={active}
           onClick={onClickHandler}
         />
@@ -89,7 +89,7 @@ const customCode = `() => {
         }}
       >
         <Navigation
-          data={data}
+          menus={data}
           active={active}
           onClick={onClickHandler}
         />

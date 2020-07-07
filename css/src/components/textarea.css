@@ -21,9 +21,7 @@
   border-radius: var(--spacing-m);
   border: var(--border);
   color: var(--inverse);
-  padding-top: var(--spacing);
-  padding-left: var(--spacing-l);
-  padding-right: var(--spacing-l);
+  padding: var(--spacing) var(--spacing-l);
 }
 
 .Textarea-textarea::placeholder {

@@ -24,13 +24,16 @@ export interface DialogProps extends BaseProps {
    * Handles open/close
    */
   open: boolean;
+  /**
+   * Dialog heading
+   */
   heading?: string;
   /**
    * Material icon name
    */
   icon?: string;
   /**
-   * Dialog's header title
+   * Dialog's description title
    */
   title?: string;
   /**
@@ -86,8 +89,8 @@ const Dialog = (props: DialogProps) => {
 
   const modalOptions = {
     open,
-    onClose,
-    dimension
+    dimension,
+    backdropClose: onClose
   };
 
   const modalHeaderOptions = {

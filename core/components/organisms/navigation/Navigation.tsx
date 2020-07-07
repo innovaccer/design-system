@@ -34,8 +34,17 @@ export interface NavigationProps extends BaseProps {
    *    icon?: string;
    * };
    * </pre>
+   *
+   * | Name | Description | Default |
+   * | --- | --- | --- |
+   * | name | Menu name | |
+   * | label | Menu display name | |
+   * | link | Menu link | |
+   * | disabled | Set menu as disabled | false |
+   * | subMenu | Menu submenus of type `Menu[]` | |
+   * | icon | Menu icon | |
    */
-  data: Menu[];
+  menus: Menu[];
   /**
    * Sets menu as active
    */
@@ -68,7 +77,7 @@ export interface NavigationProps extends BaseProps {
 export const Navigation = (props: NavigationProps) => {
   const {
     type,
-    data,
+    menus,
     active,
     onClick,
     expanded,
@@ -89,7 +98,7 @@ export const Navigation = (props: NavigationProps) => {
   }, [props.active]);
 
   const getMenu = (menu: ActiveMenu): Menu | null => {
-    for (const m of data) {
+    for (const m of menus) {
       if ((menu.name && m.name === menu.name) || (menu.link && m.link === menu.link)) {
         return m;
       }
@@ -177,7 +186,7 @@ export const Navigation = (props: NavigationProps) => {
   };
 
   const getVerticalMenu = () => {
-    const list = data.map((menu, index) => {
+    const list = menus.map((menu, index) => {
       const menuClasses = classNames({
         'Navigation-menu': true,
         [`Navigation-menu--${type}`]: type,
@@ -275,7 +284,7 @@ export const Navigation = (props: NavigationProps) => {
   return (
     <div {...baseProps} className={classes}>
       {type === 'horizontal'
-        ? getHorizontalMenu(data)
+        ? getHorizontalMenu(menus)
         : getVerticalMenu()
       }
     </div>
@@ -284,7 +293,7 @@ export const Navigation = (props: NavigationProps) => {
 
 Navigation.defaultProps = {
   type: 'horizontal',
-  data: [],
+  menus: [],
   expanded: true,
   footer: false,
   autoCollapse: true

@@ -21,6 +21,7 @@ export interface TextareaProps extends BaseProps {
   placeholder?: string;
   /**
    * Number of rows in `Textarea`
+   * @default 3
    */
   rows?: number;
   /**
@@ -104,6 +105,10 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
     </div >
   );
 });
+
+Textarea.defaultProps = {
+  rows: 3
+};
 
 Textarea.displayName = 'Textarea';
 

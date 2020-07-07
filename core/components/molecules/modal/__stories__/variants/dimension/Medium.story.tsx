@@ -6,7 +6,7 @@ import ModalHeader from '@/components/molecules/modalHeader';
 import ModalDescription from '@/components/molecules/modalDescription';
 import ModalFooter from '@/components/molecules/modalFooter';
 import ModalBody from '@/components/molecules/modalBody';
-import { Heading, Button } from '@/index';
+import { Button, PageHeader, Navigation, Text } from '@/index';
 
 import { updateKnob } from '@/utils/storybookEventEmitter';
 
@@ -21,8 +21,8 @@ export const medium = () => {
 
   const options = {
     open,
-    onClose,
     backdrop,
+    backdropClose: onClose
   };
 
   const modalHeaderOptions = {
@@ -43,9 +43,37 @@ export const medium = () => {
     removePadding: true
   };
 
+  const navigationData = [
+    {
+      name: 'menu_1',
+      label: 'Menu 1',
+      icon: 'event',
+    },
+    {
+      name: 'menu_2',
+      label: 'Menu 2'
+    },
+    {
+      name: 'menu_3',
+      label: 'Menu 3',
+      disabled: true
+    }
+  ];
+
+  const pageHeaderOptions = {
+    title: 'Page Title',
+    navigation: <Navigation menus={navigationData} onClick={action('menu-clicked')} active={{ name: 'menu_1' }} />,
+    actions: (
+      <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+        <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
+        <Button appearance="primary" onClick={action('Page header primary button click')}>Primary</Button>
+      </div>
+    )
+  };
+
   return (
     <div>
-      <Heading>Page background</Heading>
+      <PageHeader {...pageHeaderOptions} />
       <Modal dimension="medium" {...options}>
         <ModalHeader {...modalHeaderOptions} />
         <ModalBody>

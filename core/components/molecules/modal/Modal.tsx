@@ -10,9 +10,9 @@ export type Dimension = 'small' | 'medium' | 'large';
 
 export interface ModalProps extends BaseProps {
   /**
-   * Callback for `Modal` close event
+   * Callback for `Modal` close event on backdrop click
    */
-  onClose: (event?: Event, reason?: string) => void;
+  backdropClose: (event?: Event, reason?: string) => void;
   /**
    * Closes `Modal` on outside click
    */
@@ -40,7 +40,7 @@ const Modal = (props: ModalProps) => {
   const {
     dimension = 'small',
     children,
-    onClose,
+    backdropClose,
     backdrop,
     className
   } = props;
@@ -79,7 +79,7 @@ const Modal = (props: ModalProps) => {
   );
 
   const ModalWrapper = backdrop ? (
-    <OutsideClick onOutsideClick={(event: Event) => open && onClose(event, 'OutsideClick')}>
+    <OutsideClick onOutsideClick={(event: Event) => open && backdropClose(event, 'OutsideClick')}>
       {ModalContainer}
     </OutsideClick>
   ) : ModalContainer;
