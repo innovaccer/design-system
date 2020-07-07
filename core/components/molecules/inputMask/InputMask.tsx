@@ -184,7 +184,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
         autocomplete={'off'}
         ref={ref}
       />
-      <Caption error={error} withInput={true}>
+      <Caption error={error} withInput={true} hide={!caption}>
         {caption}
       </Caption>
     </div>
