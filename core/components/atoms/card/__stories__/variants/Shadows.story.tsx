@@ -17,7 +17,7 @@ export const shadow = () => {
     'flex-direction': 'row',
   };
 
-  const shadows: Shadow[] = ['light', 'medium', 'dark'];
+  const shadows: Shadow[] = ['none', 'light', 'medium', 'dark'];
 
   return (
     <div style={outerStyles}>
@@ -25,7 +25,7 @@ export const shadow = () => {
         shadows.map((CardShadow, ind) => {
           return (
             <Card key={ind} shadow={CardShadow} style={styles}>
-              {CardShadow.charAt(0).toUpperCase() + CardShadow.slice(1)} Card
+              {CardShadow.charAt(0).toUpperCase() + CardShadow.slice(1)}
             </Card>
           );
         })

@@ -2,12 +2,11 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
 
-export type Shadow = 'light' | 'medium' | 'dark';
+export type Shadow = 'none' | 'light' | 'medium' | 'dark';
 
 export interface CardProps extends BaseProps {
   /**
    * Shadow of the `Card`
-   * @default "medium"
    */
   shadow?: Shadow;
   /**
@@ -22,7 +21,7 @@ export interface CardProps extends BaseProps {
 
 export const Card = (props: CardProps) => {
   const {
-    shadow = 'medium',
+    shadow,
     children,
     className,
     ...rest
@@ -39,6 +38,10 @@ export const Card = (props: CardProps) => {
       {children}
     </div>
   );
+};
+
+Card.defaultProps = {
+  shadow: 'medium'
 };
 
 Card.displayName = 'Card';
