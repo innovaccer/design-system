@@ -408,7 +408,7 @@ body {
 
 /* Label */
 .Label {
-  display: flex;
+  display: inline-flex;
 }
 
 .Label--withInput {
@@ -1447,6 +1447,31 @@ body {
 .ChipGroup-item:last-child {
     margin-right: 0;
 }
+.DateRangePicker {
+
+}
+
+.DateRangePicker-input {
+    box-sizing: border-box;
+}
+
+.DateRangePicker-input--startDate {
+    padding-right: var(--spacing-m);
+}
+
+.DateRangePicker-input--endDate {
+    padding-left: var(--spacing-m);
+}
+
+@media (max-width: 576px) {
+    .DateRangePicker-input {
+        padding: 0;
+    }
+
+    .DateRangePicker-input--endDate {
+        padding-top: var(--spacing);
+    }
+}
 /* Donut Chart */
 
 .DonutChart {
@@ -1850,6 +1875,7 @@ body {
     align-items: center;
     z-index: 1;
     padding-right: 0 !important;
+    overflow: visible !important;
 }
 
 .Grid-row--selected,
@@ -2654,9 +2680,13 @@ body {
 }
 
 .PageHeader {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
+}
+
+.PageHeader .Row {
+  width: 100%;
 }
 
 .PageHeader-titleWrapper {
@@ -2679,9 +2709,21 @@ body {
   margin-right: var(--spacing);
 }
 
-.PageHeader-navigationWrapper .Navigation-wrapper-horizontal{
-  display: inline-block;
+.PageHeader-navigationWrapper {
+  display: flex;
   margin-top: var(--spacing-l);
+}
+
+.PageHeader .PageHeader-navigationWrapper {
+  justify-content: center;
+  align-items: center;
+  margin-top: 0 !important;
+}
+
+.PageHeader-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* pagination */
@@ -2991,7 +3033,6 @@ body {
 
 .Radio-outerWrapper {
     position: relative;
-    margin-right: var(--spacing);
     flex-shrink: 0;
 }
 
@@ -3016,6 +3057,7 @@ body {
 }
 
 .Radio-label {
+    padding-left: var(--spacing);
     cursor: pointer;
 }
 
@@ -3081,31 +3123,6 @@ body {
     background: var(--primary-lighter);
 }
 
-.RangePicker {
-
-}
-
-.RangePicker-input {
-    box-sizing: border-box;
-}
-
-.RangePicker-input--startDate {
-    padding-right: var(--spacing-m);
-}
-
-.RangePicker-input--endDate {
-    padding-left: var(--spacing-m);
-}
-
-@media (max-width: 576px) {
-    .RangePicker-input {
-        padding: 0;
-    }
-
-    .RangePicker-input--endDate {
-        padding-top: var(--spacing);
-    }
-}
 @-webkit-keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -3114,6 +3131,7 @@ body {
     transform: rotate(360deg);
   }
 }
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -3435,9 +3453,7 @@ body {
   border-radius: var(--spacing-m);
   border: var(--border);
   color: var(--inverse);
-  padding-top: var(--spacing);
-  padding-left: var(--spacing-l);
-  padding-right: var(--spacing-l);
+  padding: var(--spacing) var(--spacing-l);
 }
 
 .Textarea-textarea::-moz-placeholder {

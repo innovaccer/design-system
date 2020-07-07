@@ -948,7 +948,7 @@
       }
     }, [props.open]);
 
-    var onToggleFn = function onToggleFn(newOpen) {
+    var onToggleFunction = function onToggleFunction(newOpen) {
       setOpen(newOpen);
     };
 
@@ -966,7 +966,7 @@
       hoverable: hoverable,
       style: style,
       open: open,
-      onToggle: onToggle || onToggleFn,
+      onToggle: onToggle || onToggleFunction,
       placement: position
     };
     return /*#__PURE__*/React.createElement(PopperWrapper, _extends({}, popperOptions, {
@@ -998,7 +998,6 @@
   };
   Icon.defaultProps = {
     appearance: 'default',
-    type: 'filled',
     size: 16
   };
   Icon.displayName = 'Icon';
@@ -1085,6 +1084,11 @@
   };
   Text.displayName = 'Text';
 
+  /**
+   * ######Checkbox has two types:
+   *  - [Controlled Checkbox](https://reactjs.org/docs/forms.html#controlled-components)
+   *  - [Uncontrolled Checkbox](https://reactjs.org/docs/uncontrolled-components.html)
+   */
   var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     var _classNames, _classNames3, _classNames4, _classNames5;
 
@@ -1478,6 +1482,12 @@
     regular: 16,
     large: 20
   };
+  /**
+   * ######Input has two types:
+   *  - [Controlled Input](https://reactjs.org/docs/forms.html#controlled-components)
+   *  - [Uncontrolled Input](https://reactjs.org/docs/uncontrolled-components.html)
+   */
+
   var Input = /*#__PURE__*/React.forwardRef(function (props, ref) {
     var _classNames, _classNames2, _classNames3, _classNames4;
 
@@ -1694,6 +1704,7 @@
 
     var _props$listOptions = props.listOptions,
         listOptions = _props$listOptions === void 0 ? [] : _props$listOptions,
+        inputRef = props.inputRef,
         _props$align = props.align,
         align = _props$align === void 0 ? 'right' : _props$align,
         _props$optionType = props.optionType,
@@ -1723,7 +1734,6 @@
     var baseProps = extractBaseProps(props);
     var dropdownRef = /*#__PURE__*/React.createRef();
     var triggerRef = /*#__PURE__*/React.createRef();
-    var dropdownInputRef = /*#__PURE__*/React.createRef();
     var dropdownTriggerRef = /*#__PURE__*/React.createRef();
     var dropdownCancelButtonRef = /*#__PURE__*/React.createRef();
     var dropdownApplyButtonRef = /*#__PURE__*/React.createRef();
@@ -1888,6 +1898,9 @@
     };
 
     var renderSearch = function renderSearch() {
+      var loadingOptions = props.loadingOptions,
+          searchInit = props.searchInit;
+      var disable = loadingOptions && !searchInit;
       return /*#__PURE__*/React.createElement("div", {
         className: 'Dropdown-input'
       }, /*#__PURE__*/React.createElement(Input, {
@@ -1895,11 +1908,11 @@
         icon: 'search',
         value: searchTerm,
         placeholder: 'Search..',
-        disabled: false,
+        disabled: disable,
         autoFocus: true,
         onChange: searchHandler,
         onClear: searchClearHandler,
-        ref: dropdownInputRef,
+        ref: inputRef,
         autocomplete: 'off'
       }));
     };
@@ -2036,7 +2049,7 @@
         case 'Enter':
           var activeElement = document.activeElement;
 
-          if (dropdownOpen && (dropdownInputRef.current === activeElement || dropdownTriggerRef.current === activeElement)) {
+          if (dropdownOpen && (inputRef.current === activeElement || dropdownTriggerRef.current === activeElement)) {
             event.preventDefault();
             var classes = withCheckbox ? "".concat(optionClass, " .Checkbox-input") : optionClass;
             var elements = document.querySelectorAll(classes);
@@ -2100,6 +2113,7 @@
 
   DropdownList.displayName = 'DropdownList';
 
+  var inputRef = /*#__PURE__*/React.createRef();
   var bulk = 50;
   var Dropdown = /*#__PURE__*/function (_React$Component) {
     _inherits(Dropdown, _React$Component);
@@ -2113,7 +2127,7 @@
 
       _this = _super.call(this, props);
 
-      _defineProperty(_assertThisInitialized(_this), "fetchOptionsFn", function (searchTerm) {
+      _defineProperty(_assertThisInitialized(_this), "fetchOptionsFunction", function (searchTerm) {
         var options = _this.props.options;
         var filteredOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
         return new Promise(function (resolve) {
@@ -2157,9 +2171,12 @@
         var updatedAsync = async === undefined ? _this.state.async : async;
         var _this$props = _this.props,
             fetchOptions = _this$props.fetchOptions,
-            withCheckbox = _this$props.withCheckbox;
-        var fetchFn = fetchOptions ? fetchOptions : _this.fetchOptionsFn;
-        fetchFn(searchTerm).then(function (res) {
+            withCheckbox = _this$props.withCheckbox,
+            withSearch = _this$props.withSearch;
+        var fetchFunction = fetchOptions ? fetchOptions : _this.fetchOptionsFunction;
+        fetchFunction(searchTerm).then(function (res) {
+          var _inputRef$current;
+
           var options = res.options,
               count = res.count;
           updatedAsync = searchTerm === '' ? count > bulk : updatedAsync;
@@ -2177,12 +2194,15 @@
             previousSelected: init ? selectedGroup : previousSelected,
             triggerLabel: _this.updateTriggerLabel(init ? selectedGroup : tempSelected)
           }));
+
+          if (updatedAsync || withSearch) (_inputRef$current = inputRef.current) === null || _inputRef$current === void 0 ? void 0 : _inputRef$current.focus();
         });
       });
 
       _defineProperty(_assertThisInitialized(_this), "updateSearchTerm", function (search) {
         _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
           loading: true,
+          searchInit: true,
           searchTerm: search
         }));
       });
@@ -2282,6 +2302,14 @@
       });
 
       _defineProperty(_assertThisInitialized(_this), "debounceSearch", debounce(300, function () {
+        _this.setState({
+          searchInit: false
+        }, function () {
+          _this.updateOptions(false);
+        });
+      }));
+
+      _defineProperty(_assertThisInitialized(_this), "debounceClear", debounce(100, function () {
         return _this.updateOptions(false);
       }));
 
@@ -2297,7 +2325,7 @@
           loading: true
         });
 
-        _this.debounceSearch();
+        _this.debounceClear();
 
         if (onChange && !showApplyButton) onChange([], name);
       });
@@ -2382,6 +2410,7 @@
           open: !open,
           optionsApplied: false,
           loading: moveSelectedGroup || loading || searchTerm !== '',
+          searchInit: searchTerm !== '',
           searchTerm: ''
         }));
 
@@ -2410,6 +2439,7 @@
       _this.state = {
         async: _async,
         optionsLength: _optionsLength,
+        searchInit: false,
         searchedOptionsLength: _optionsLength,
         optionsApplied: false,
         options: _options || [],
@@ -2433,12 +2463,15 @@
               loading = _this$props8.loading,
               fetchOptions = _this$props8.fetchOptions,
               _this$props8$options = _this$props8.options,
-              options = _this$props8$options === void 0 ? [] : _this$props8$options;
+              options = _this$props8$options === void 0 ? [] : _this$props8$options,
+              withSearch = _this$props8.withSearch;
 
           if (prevProps.loading !== loading && !fetchOptions) {
             if (options.length > bulk) {
               this.updateOptions(true, true);
             } else {
+              var _inputRef$current2;
+
               var selectedGroup = this.getSelectedOptions(options, true);
               this.setState(_objectSpread2(_objectSpread2({}, this.state), {}, {
                 options: options,
@@ -2450,6 +2483,7 @@
                 triggerLabel: this.updateTriggerLabel(selectedGroup),
                 selectAll: getSelectAll(selectedGroup, this.state.optionsLength)
               }));
+              if (withSearch) (_inputRef$current2 = inputRef.current) === null || _inputRef$current2 === void 0 ? void 0 : _inputRef$current2.focus();
             }
           }
         }
@@ -2466,6 +2500,7 @@
             async = _this$state6.async,
             open = _this$state6.open,
             searchTerm = _this$state6.searchTerm,
+            searchInit = _this$state6.searchInit,
             loading = _this$state6.loading,
             searchedOptionsLength = _this$state6.searchedOptionsLength,
             tempSelected = _this$state6.tempSelected,
@@ -2482,9 +2517,11 @@
         var remainingOptionsLen = searchedOptionsLength - options.length;
         return /*#__PURE__*/React.createElement(DropdownList, _extends({
           listOptions: options,
+          inputRef: inputRef,
           remainingOptions: remainingOptionsLen,
           loadingOptions: loading,
           async: async,
+          searchInit: searchInit,
           dropdownOpen: open,
           searchTerm: searchTerm,
           triggerLabel: triggerLabel,
@@ -3649,7 +3686,8 @@
       ref: ref
     })), /*#__PURE__*/React.createElement(Caption, {
       error: error,
-      withInput: true
+      withInput: true,
+      hide: !caption
     }, caption));
   });
 
@@ -4387,6 +4425,11 @@
   };
   StatusHint.displayName = 'StatusHint';
 
+  /**
+   * ######Switch has two types:
+   *  - [Controlled Switch](https://reactjs.org/docs/forms.html#controlled-components)
+   *  - [Uncontrolled Switch](https://reactjs.org/docs/uncontrolled-components.html)
+   */
   var Switch = /*#__PURE__*/React.forwardRef(function (props, ref) {
     var _classNames, _classNames2;
 
@@ -4473,6 +4516,9 @@
       onFocus: onFocus
     })));
   });
+  Textarea.defaultProps = {
+    rows: 3
+  };
   Textarea.displayName = 'Textarea';
 
   var ActionButton = function ActionButton(props) {
@@ -4655,7 +4701,7 @@
     var _props$dimension = props.dimension,
         dimension = _props$dimension === void 0 ? 'small' : _props$dimension,
         children = props.children,
-        onClose = props.onClose,
+        backdropClose = props.backdropClose,
         backdrop = props.backdrop,
         className = props.className;
 
@@ -4693,7 +4739,7 @@
     }), children));
     var ModalWrapper = backdrop ? /*#__PURE__*/React.createElement(OutsideClick, {
       onOutsideClick: function onOutsideClick(event) {
-        return open && onClose(event, 'OutsideClick');
+        return open && backdropClose(event, 'OutsideClick');
       }
     }, ModalContainer) : ModalContainer;
     var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(ModalWrapper, document.body);
@@ -4809,8 +4855,8 @@
     var baseProps = extractBaseProps(props);
     var modalOptions = {
       open: open,
-      onClose: onClose,
-      dimension: dimension
+      dimension: dimension,
+      backdropClose: onClose
     };
     var modalHeaderOptions = {
       onClose: onClose,
@@ -5015,7 +5061,7 @@
   };
   ProgressRing.displayName = 'ProgressRing';
 
-  var RangePicker = function RangePicker(props) {
+  var DateRangePicker = function DateRangePicker(props) {
     var startDateProp = props.startDate,
         endDateProp = props.endDate,
         yearNavProp = props.yearNav,
@@ -5028,7 +5074,7 @@
         outputFormat = _props$outputFormat === void 0 ? 'mm/dd/yyyy' : _props$outputFormat,
         _props$startInputOpti = props.startInputOptions,
         startInputOptions = _props$startInputOpti === void 0 ? {
-      name: 'rangePicker-start',
+      name: 'dateDateRangePicker-start',
       label: 'Start Date',
       placeholderChar: '_',
       placeholder: inputFormat,
@@ -5037,7 +5083,7 @@
     } : _props$startInputOpti,
         _props$endInputOption = props.endInputOptions,
         endInputOptions = _props$endInputOption === void 0 ? {
-      name: 'rangePicker-end',
+      name: 'dateDateRangePicker-end',
       label: 'End Date',
       placeholderChar: '_',
       placeholder: inputFormat,
@@ -5295,7 +5341,7 @@
         group: '2',
         groupXS: '1'
       }, /*#__PURE__*/React.createElement(Column, {
-        className: "RangePicker-input RangePicker-input--startDate"
+        className: "DateRangePicker-input DateRangePicker-input--startDate"
       }, /*#__PURE__*/React.createElement(InputMask, _extends({}, startInputOptions, {
         mask: mask,
         value: startDate ? translateToString(inputFormat, startDate) : '',
@@ -5314,7 +5360,7 @@
         error: startError,
         caption: startInputOptions.required && startError ? startInputOptions.caption || 'Invalid value' : ''
       }))), /*#__PURE__*/React.createElement(Column, {
-        className: "RangePicker-input RangePicker-input--endDate"
+        className: "DateRangePicker-input DateRangePicker-input--endDate"
       }, /*#__PURE__*/React.createElement(InputMask, _extends({}, endInputOptions, {
         mask: mask,
         value: endDate ? translateToString(inputFormat, endDate) : '',
@@ -5377,7 +5423,7 @@
       rangeLimit: rangeLimit
     }));
   };
-  RangePicker.displayName = 'RangePicker';
+  DateRangePicker.displayName = 'DateRangePicker';
 
   var TabsWrapper = function TabsWrapper(props) {
     var _props$children = props.children,
@@ -5598,10 +5644,17 @@
       var sIndex = schema.findIndex(function (s) {
         return s.name === l.name;
       });
-      var sortFn = schema[sIndex].sortFn;
 
-      if (sortFn) {
-        sortedData.sort(sortFn);
+      if (sIndex !== -1) {
+        var defaultComparator = function defaultComparator(a, b) {
+          var aData = translateData(schema[sIndex], a);
+          var bData = translateData(schema[sIndex], b);
+          return aData[l.name].title.localeCompare(bData[l.name].title);
+        };
+
+        var _schema$sIndex$compar = schema[sIndex].comparator,
+            comparator = _schema$sIndex$compar === void 0 ? defaultComparator : _schema$sIndex$compar;
+        sortedData.sort(comparator);
         if (l.type === 'desc') sortedData.reverse();
       }
     });
@@ -5916,9 +5969,13 @@
         showMenu = _this$props.showMenu,
         sortingList = _this$props.sortingList,
         filterList = _this$props.filterList;
+    var _schema$sorting = schema.sorting,
+        sorting = _schema$sorting === void 0 ? true : _schema$sorting,
+        name = schema.name,
+        filters = schema.filters;
     var init = getInit(_this);
     var listIndex = sortingList.findIndex(function (l) {
-      return l.name === schema.name;
+      return l.name === name;
     });
     var sorted = listIndex !== -1 ? sortingList[listIndex].type : null;
     var el = /*#__PURE__*/React.createRef();
@@ -5949,26 +6006,26 @@
       icon: 'cancel',
       optionType: 'WITH_ICON'
     }];
-    if (schema.sortFn) options = [].concat(sortOptions, _toConsumableArray(options));
+    if (sorting) options = [].concat(sortOptions, _toConsumableArray(options));
     var classes = classNames({
       'Grid-headCell': true,
       'Grid-headCell--draggable': draggable
     });
-    var filterOptions = schema.filters ? schema.filters.map(function (f) {
+    var filterOptions = filters ? filters.map(function (f) {
       return _objectSpread2(_objectSpread2({}, f), {}, {
-        selected: filterList[schema.name] && filterList[schema.name].findIndex(function (fl) {
+        selected: filterList[name] && filterList[name].findIndex(function (fl) {
           return fl === f.value;
         }) !== -1
       });
     }) : [];
     return /*#__PURE__*/React.createElement("div", {
-      key: schema.name,
+      key: name,
       className: classes,
       ref: el
     }, /*#__PURE__*/React.createElement("div", {
       className: "Grid-cellContent",
       onMouseDown: function onMouseDown() {
-        if (draggable) reorderCol(_this, schema.name, el.current);
+        if (draggable) reorderCol(_this, name, el.current);
       }
     }, loading && !init ? /*#__PURE__*/React.createElement(Placeholder, {
       withImage: false
@@ -5976,7 +6033,7 @@
       length: "medium"
     })) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Heading, {
       size: "s"
-    }, schema.displayName), schema.sortFn && /*#__PURE__*/React.createElement("div", {
+    }, schema.displayName), sorting && /*#__PURE__*/React.createElement("div", {
       className: "Grid-sortingIcons"
     }, sorted ? sorted === 'asc' ? /*#__PURE__*/React.createElement(Icon, {
       name: "arrow_downward"
@@ -5984,7 +6041,7 @@
       name: "arrow_upward"
     }) : /*#__PURE__*/React.createElement(Icon, {
       name: "unfold_more"
-    })))), schema.filters && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !init ? /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement(Placeholder, null)) : /*#__PURE__*/React.createElement(Dropdown, {
+    })))), filters && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !init ? /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement(Placeholder, null)) : /*#__PURE__*/React.createElement(Dropdown, {
       menu: true,
       showApplyButton: true,
       withCheckbox: true,
@@ -5999,12 +6056,12 @@
       options: filterOptions,
       align: 'left',
       onChange: function onChange(selected) {
-        return _this.onFilterChange(schema.name, selected);
+        return _this.onFilterChange(name, selected);
       }
     })), showMenu && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !init ? /*#__PURE__*/React.createElement("span", {
       className: "ml-4"
     }, /*#__PURE__*/React.createElement(Placeholder, null)) : /*#__PURE__*/React.createElement(Dropdown, {
-      key: schema.name,
+      key: name,
       menu: true,
       triggerOptions: {
         customTrigger: function customTrigger() {
@@ -6017,12 +6074,12 @@
       options: options,
       align: 'left',
       onChange: function onChange(selected) {
-        return _this.onMenuChange(schema.name, selected);
+        return _this.onMenuChange(name, selected);
       }
     })), schema.resizable && /*#__PURE__*/React.createElement("span", {
       className: "Grid-cellResize",
       onMouseDown: function onMouseDown() {
-        resizeCol(_this, schema.name, el.current);
+        resizeCol(_this, name, el.current);
       }
     }));
   };
@@ -6081,7 +6138,7 @@
     return /*#__PURE__*/React.createElement("div", {
       key: "".concat(rowIndex, "-").concat(colIndex),
       className: cellClass,
-      "data-name": schema.name,
+      "data-name": name,
       style: {
         width: schema.width
       }
@@ -6205,7 +6262,7 @@
     var onClickHandler = function onClickHandler() {
       var type = _this.props.type;
 
-      if (type === 'resource') {
+      if (type === 'resource' && !loading) {
         var onRowClick = _this.props.onRowClick;
 
         if (onRowClick) {
@@ -6225,7 +6282,10 @@
     var renderCheckbox = function renderCheckbox(show) {
       if (!show || !withCheckbox) return null;
       return /*#__PURE__*/React.createElement("div", {
-        className: "Grid-cell Grid-cell--body Grid-checkboxCell"
+        className: "Grid-cell Grid-cell--body Grid-checkboxCell",
+        onClick: function onClick(e) {
+          return e.stopPropagation();
+        }
       }, loading ? /*#__PURE__*/React.createElement(Placeholder, null) : /*#__PURE__*/React.createElement(Checkbox, {
         checked: !!data._selected,
         onChange: function onChange(event) {
@@ -6455,7 +6515,7 @@
 
       _defineProperty(_assertThisInitialized(_this), "gridRef", /*#__PURE__*/React.createRef());
 
-      _defineProperty(_assertThisInitialized(_this), "updateRenderedData", debounce(100, function (options) {
+      _defineProperty(_assertThisInitialized(_this), "updateRenderedData", debounce(300, function (options) {
         var _this$props = _this.props,
             page = _this$props.page,
             pageSize = _this$props.pageSize,
@@ -6764,7 +6824,8 @@
       value: searchTerm,
       onClear: function onClear() {
         return updateSearchTerm && updateSearchTerm('');
-      }
+      },
+      disabled: loading
     })), !showHead && /*#__PURE__*/React.createElement("div", {
       className: "Header-dropdown"
     }, !showHead && filterSchema.length > 0 && /*#__PURE__*/React.createElement("div", {
@@ -7159,6 +7220,7 @@
   }(React.Component);
 
   _defineProperty(Table, "defaultProps", {
+    type: 'data',
     showHead: true,
     multipleSorting: true,
     headerOptions: {},
@@ -7182,7 +7244,7 @@
     var _classNames5;
 
     var type = props.type,
-        data = props.data,
+        menus = props.menus,
         active = props.active,
         onClick = props.onClick,
         expanded = props.expanded,
@@ -7205,7 +7267,7 @@
     }, [props.active]);
 
     var getMenu = function getMenu(menu) {
-      var _iterator = _createForOfIteratorHelper(data),
+      var _iterator = _createForOfIteratorHelper(menus),
           _step;
 
       try {
@@ -7305,7 +7367,7 @@
     };
 
     var getVerticalMenu = function getVerticalMenu() {
-      var list = data.map(function (menu, index) {
+      var list = menus.map(function (menu, index) {
         var _classNames2;
 
         var menuClasses = classNames((_classNames2 = {
@@ -7371,11 +7433,11 @@
     var classes = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'Navigation', true), _defineProperty(_classNames5, "Navigation--".concat(type), type), _defineProperty(_classNames5, 'Navigation--collapsed', !expanded), _classNames5), className);
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes
-    }), type === 'horizontal' ? getHorizontalMenu(data) : getVerticalMenu());
+    }), type === 'horizontal' ? getHorizontalMenu(menus) : getVerticalMenu());
   };
   Navigation.defaultProps = {
     type: 'horizontal',
-    data: [],
+    menus: [],
     expanded: true,
     footer: false,
     autoCollapse: true
@@ -7390,7 +7452,7 @@
         badge = props.badge,
         status = props.status,
         meta = props.meta,
-        type = props.type,
+        navigationPosition = props.navigationPosition,
         className = props.className;
     var baseProps = extractBaseProps(props);
     var wrapperClasses = classNames(_defineProperty({
@@ -7403,11 +7465,27 @@
       className: wrapperClasses
     }), breadcrumbs && breadcrumbs, /*#__PURE__*/React.createElement("div", {
       className: classes
+    }, /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, {
+      size: "4",
+      sizeXL: "4",
+      sizeM: "4"
     }, /*#__PURE__*/React.createElement("div", {
       className: "PageHeader-titleWrapper"
-    }, /*#__PURE__*/React.createElement(Heading, null, title), badge), type === 'large' && navigation, actions), (status || meta) && /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement(Heading, {
+      className: "PageHeader-title"
+    }, title), badge)), /*#__PURE__*/React.createElement(Column, {
+      size: "4",
+      sizeXL: "4",
+      sizeM: "4"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "PageHeader-navigationWrapper"
+    }, (!breadcrumbs || navigationPosition === 'center') && navigation)), /*#__PURE__*/React.createElement(Column, {
+      size: "4",
+      sizeXL: "4",
+      sizeM: "4"
+    }, actions))), (status || meta) && /*#__PURE__*/React.createElement("div", {
       className: "PageHeader-statusWrapper"
-    }, status, meta), type === 'small' && /*#__PURE__*/React.createElement("div", {
+    }, status, meta), breadcrumbs && navigationPosition === 'bottom' && /*#__PURE__*/React.createElement("div", {
       className: "PageHeader-navigationWrapper"
     }, navigation), tabs && /*#__PURE__*/React.createElement("div", null, tabs));
   };
@@ -7420,7 +7498,7 @@
     badge: null,
     status: null,
     meta: null,
-    type: 'large'
+    navigationPosition: 'center'
   };
 
   exports.Avatar = Avatar;
@@ -7433,6 +7511,7 @@
   exports.Checkbox = Checkbox;
   exports.Column = Column;
   exports.DatePicker = DatePicker;
+  exports.DateRangePicker = DateRangePicker;
   exports.Dialog = Dialog;
   exports.DonutChart = DonutChart;
   exports.Dropdown = Dropdown;
@@ -7462,7 +7541,6 @@
   exports.ProgressBar = ProgressBar;
   exports.ProgressRing = ProgressRing;
   exports.Radio = Radio;
-  exports.RangePicker = RangePicker;
   exports.Row = Row;
   exports.Spinner = Spinner;
   exports.StatusHint = StatusHint;

@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { updateSchemaFn, Schema, Data, onSelectAllFn, GridProps, updateFilterListFn } from './Grid';
+import { updateSchemaFunction, Schema, Data, onSelectAllFunction, GridProps, updateFilterListFunction } from './Grid';
 export interface ExternalHeaderProps {
     children?: React.ReactNode;
     withSearch?: boolean;
     searchPlaceholder?: string;
     dynamicColumn?: boolean;
 }
-export declare type updateSearchTermFn = (newSearchTerm: string) => void;
+export declare type updateSearchTermFunction = (newSearchTerm: string) => void;
 export interface HeaderProps extends ExternalHeaderProps {
     loading: boolean;
     error: boolean;
@@ -17,12 +17,12 @@ export interface HeaderProps extends ExternalHeaderProps {
     withPagination?: boolean;
     withCheckbox?: boolean;
     showHead?: boolean;
-    updateSchema?: updateSchemaFn;
+    updateSchema?: updateSchemaFunction;
     filterList?: GridProps['filterList'];
-    updateFilterList?: updateFilterListFn;
-    onSelectAll?: onSelectAllFn;
+    updateFilterList?: updateFilterListFunction;
+    onSelectAll?: onSelectAllFunction;
     searchTerm?: string;
-    updateSearchTerm?: updateSearchTermFn;
+    updateSearchTerm?: updateSearchTermFunction;
 }
 export declare const Header: {
     (props: HeaderProps): JSX.Element;

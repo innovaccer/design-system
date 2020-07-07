@@ -323,3 +323,36 @@
 * 67fefdf v1.0.0-22
 * 21f1365 fix: fixes option icon CSS in dropdown
 * 963043f feat(#123): adds base props
+
+-------------------
+ **v1.0.0-23**  (2020-07-07) 
+
+* 810f3da v1.0.0-23
+* eeb2690 docs: adds nested docs table in dropdown
+* 9a9b857 docs: adds onClose description in toast
+* ff92de9 chore: adds inline-flex in label
+* f8706ff chore: adds withInput description in caption
+* 01d0139 chore: updates datePicker docs
+* 547cbb3 chore: removes radio span margin
+* 8c84ec8 chore: adds default value of max in progress ring
+* b4a12e6 chore: adds checkbox and switch description
+* f0b7dd0 chore: adds input defaultValue description
+* 99a3ce0 fix: adds dropdown input disable state on loading
+* 44b927b chore: renames types Fn => Function
+* b96ea58 chore: adds storybook build action in github actions for merge request
+* 1d5a110 fix: renames directory switch to switchInput
+* 2ce7059 feat: adds sorting attr in Schema and renames sortFn => comparator
+* eaa7cf1 chore: modal/backdrop/dialog story updated & modal onClose replaced with backdropClose
+* 6bf95f0 chore(tooltip): story updated
+* e660a02 chore(navigation): data attribute replaced with menus
+* 5446152 chore(pageHeader): props description updated
+* b53cd96 chore(textarea): default props and padding updated
+* 21899b2 chore: renames datepicker directory to datePicker
+* 2e8e2c3 feat: renames RangePicker => DateRangePicker
+* ced0312 fix: general fixes in Grid
+* e0768e4 fix: Caption being rendered when undefined for InputMask
+* 197ea5c chore: stories fix
+* db7ad9a feat: removes default of type attr in Icon
+* 09b9936 chore: adds baseProps description
+* 481222b chore(pageHeader): title overflow ellipses added
+* e46a164 feat: updates onClick/onClose of ChipGroups

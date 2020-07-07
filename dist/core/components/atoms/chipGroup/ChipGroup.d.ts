@@ -1,9 +1,9 @@
 /// <reference types="react" />
-import { ChipProps, Name } from '../chip/Chip';
+import { ChipProps } from '../chip/Chip';
 import { BaseProps } from '@/utils/types';
 export interface ChipGroupProps extends BaseProps {
-    onClose?: (name: Name) => void;
-    onClick?: (name: Name) => void;
+    onClose?: (item: ChipProps) => void;
+    onClick?: (item: ChipProps) => void;
     list: ChipProps[];
 }
 export declare const ChipGroup: {

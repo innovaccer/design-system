@@ -16,7 +16,7 @@ declare type ActiveMenu = ({
 }) & Partial<Menu>;
 export interface NavigationProps extends BaseProps {
     type?: LayoutType;
-    data: Menu[];
+    menus: Menu[];
     active?: ActiveMenu;
     onClick?: (menu: Menu) => void;
     expanded?: boolean;
@@ -28,7 +28,7 @@ export declare const Navigation: {
     (props: NavigationProps): JSX.Element;
     defaultProps: {
         type: string;
-        data: never[];
+        menus: never[];
         expanded: boolean;
         footer: boolean;
         autoCollapse: boolean;

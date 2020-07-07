@@ -14,7 +14,6 @@ export interface InputProps extends BaseProps {
     size?: Size;
     icon?: string;
     inlineLabel?: string;
-    loading?: boolean;
     disabled?: boolean;
     required?: boolean;
     error?: boolean;

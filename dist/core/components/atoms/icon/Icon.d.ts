@@ -13,7 +13,6 @@ export declare const Icon: {
     (props: IconProps): JSX.Element;
     defaultProps: {
         appearance: string;
-        type: string;
         size: number;
     };
     displayName: string;

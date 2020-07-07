@@ -2,7 +2,7 @@ import * as React from 'react';
 import { DropdownListProps, SelectAll, Selected, ChangeEvent } from './DropdownList';
 import { OptionSchema as Option } from './option';
 import { BaseProps } from '@/utils/types';
-declare type fetchOptionsFnc = (searchTerm: string) => Promise<{
+declare type fetchOptionsFunction = (searchTerm: string) => Promise<{
     count: number;
     options: Option[];
 }>;
@@ -11,7 +11,7 @@ interface SyncProps {
     loading?: boolean;
 }
 interface AsyncProps {
-    fetchOptions?: fetchOptionsFnc;
+    fetchOptions?: fetchOptionsFunction;
 }
 interface TriggerProps {
     labelLimit?: number;
@@ -31,6 +31,7 @@ declare type AsyncDropdownProps = AsyncProps & SharedDropdownProps;
 export declare type DropdownProps = (SyncDropdownProps & AsyncDropdownProps);
 interface DropdownState {
     async: boolean;
+    searchInit: boolean;
     options: Option[];
     loading?: boolean;
     optionsApplied: boolean;
@@ -51,7 +52,7 @@ export declare class Dropdown extends React.Component<DropdownProps, DropdownSta
         closeOnSelect: boolean;
     };
     componentDidUpdate(prevProps: DropdownProps, prevState: DropdownState): void;
-    fetchOptionsFn: (searchTerm: string) => Promise<any>;
+    fetchOptionsFunction: (searchTerm: string) => Promise<any>;
     getUnSelectedOptions: (options: Option[], init: boolean) => Option[];
     getSelectedOptions: (options: Option[], init: boolean) => Option[];
     updateOptions: (init: boolean, async?: boolean | undefined) => void;
@@ -61,6 +62,7 @@ export declare class Dropdown extends React.Component<DropdownProps, DropdownSta
     onSelect: (option: Option, checked: boolean) => void;
     onSelectAll: (event: ChangeEvent) => void;
     debounceSearch: import("throttle-debounce").throttle<() => void>;
+    debounceClear: import("throttle-debounce").throttle<() => void>;
     onClearOptions: () => void;
     onCancelOptions: () => void;
     onApplyOptions: () => void;

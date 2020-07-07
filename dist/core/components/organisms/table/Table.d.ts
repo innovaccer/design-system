@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { ExternalHeaderProps, updateSearchTermFn, HeaderProps } from '../grid/Header';
-import { Data, Schema, onSelectFn, onSelectAllFn, GridProps, FetchDataOptions, fetchDataFn, RowData, updateSchemaFn, updateSortingListFn, updateFilterListFn } from '../grid';
+import { ExternalHeaderProps, updateSearchTermFunction, HeaderProps } from '../grid/Header';
+import { Data, Schema, onSelectFunction, onSelectAllFunction, GridProps, FetchDataOptions, fetchDataFunction, RowData, updateSchemaFunction, updateSortingListFunction, updateFilterListFunction } from '../grid';
 import { BaseProps } from '@/utils/types';
 interface SyncProps {
     data: Data;
@@ -10,7 +10,7 @@ interface SyncProps {
     onSearch?: (data: RowData, searchTerm: string) => boolean;
 }
 interface AsyncProps {
-    fetchData: fetchDataFn;
+    fetchData: fetchDataFunction;
 }
 interface SharedTableProps extends BaseProps {
     showHead?: GridProps['showHead'];
@@ -52,6 +52,7 @@ interface TableState {
 export declare class Table extends React.Component<TableProps, TableState> {
     constructor(props: TableProps);
     static defaultProps: {
+        type: string;
         showHead: boolean;
         multipleSorting: boolean;
         headerOptions: {};
@@ -61,13 +62,13 @@ export declare class Table extends React.Component<TableProps, TableState> {
     };
     componentDidUpdate(prevProps: TableProps, prevState: TableState): void;
     updateData: import("throttle-debounce").throttle<(_options: FetchDataOptions) => void>;
-    onSelect: onSelectFn;
-    onSelectAll: onSelectAllFn;
+    onSelect: onSelectFunction;
+    onSelectAll: onSelectAllFunction;
     onPageChange: GridProps['onPageChange'];
-    updateSchema: updateSchemaFn;
-    updateSortingList: updateSortingListFn;
-    updateFilterList: updateFilterListFn;
-    updateSearchTerm: updateSearchTermFn;
+    updateSchema: updateSchemaFunction;
+    updateSortingList: updateSortingListFunction;
+    updateFilterList: updateFilterListFunction;
+    updateSearchTerm: updateSearchTermFunction;
     render(): JSX.Element;
 }
 export default Table;

@@ -34,6 +34,7 @@ interface OptionsProps extends DropdownListProps, BaseProps {
     searchTerm: string;
     triggerLabel: string;
     loadingOptions?: boolean;
+    searchInit?: boolean;
     dropdownOpen?: boolean;
     async?: boolean;
     remainingOptions: number;
@@ -41,6 +42,7 @@ interface OptionsProps extends DropdownListProps, BaseProps {
     tempSelected: OptionSchema[];
     previousSelected: OptionSchema[];
     selectAll: SelectAll;
+    inputRef: React.RefObject<HTMLInputElement>;
     customTrigger?: (label: string) => React.ReactElement;
     applyOptions: () => void;
     cancelOptions: () => void;

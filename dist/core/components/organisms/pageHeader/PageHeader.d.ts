@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BaseProps } from '@/utils/types';
-export declare type HeaderType = 'small' | 'large';
+export declare type navigationPositionType = 'center' | 'bottom';
 export interface PageHeaderProps extends BaseProps {
     title: string;
     navigation?: React.ReactNode;
@@ -10,7 +10,7 @@ export interface PageHeaderProps extends BaseProps {
     badge?: React.ReactNode;
     status?: React.ReactNode;
     meta?: React.ReactNode;
-    type?: HeaderType;
+    navigationPosition?: navigationPositionType;
 }
 export declare const PageHeader: {
     (props: PageHeaderProps): JSX.Element;
@@ -23,7 +23,7 @@ export declare const PageHeader: {
         badge: null;
         status: null;
         meta: null;
-        type: string;
+        navigationPosition: string;
     };
 };
 export default PageHeader;

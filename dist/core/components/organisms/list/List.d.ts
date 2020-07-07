@@ -1,6 +1,6 @@
 /// <reference types="react" />
 import { ExternalHeaderProps } from '../grid/Header';
-import { Data, Schema, GridProps, fetchDataFn } from '../grid';
+import { Data, Schema, GridProps, fetchDataFunction } from '../grid';
 import { TableProps } from '../table';
 import { BaseProps } from '@/utils/types';
 interface SyncProps {
@@ -10,7 +10,7 @@ interface SyncProps {
     error?: boolean;
 }
 interface AsyncProps {
-    fetchData: fetchDataFn;
+    fetchData: fetchDataFunction;
 }
 interface SharedListProps extends BaseProps {
     type?: GridProps['type'];

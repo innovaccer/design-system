@@ -7,8 +7,8 @@ export interface GenericChipProps extends BaseProps {
     clearButton?: boolean;
     disabled?: boolean;
     selected?: boolean;
-    onClose?: (name: Name) => void;
-    onClick?: (name: Name) => void;
+    onClose?: () => void;
+    onClick?: () => void;
     name: Name;
 }
 export declare const GenericChip: (props: GenericChipProps) => JSX.Element;

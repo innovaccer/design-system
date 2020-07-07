@@ -5,7 +5,7 @@ import { BaseProps } from '@/utils/types';
 export declare type SortType = 'asc' | 'desc';
 export declare type Pinned = 'left' | 'right';
 export declare type Alignment = 'left' | 'right' | 'center';
-export declare type SortFn = (a: RowData, b: RowData) => -1 | 0 | 1;
+export declare type Comparator = (a: RowData, b: RowData) => -1 | 0 | 1;
 export declare type Filter = any[];
 export interface FetchDataOptions {
     page?: number;
@@ -14,37 +14,38 @@ export interface FetchDataOptions {
     sortingList?: GridProps['sortingList'];
     searchTerm?: string;
 }
-export declare type fetchDataFn = (options: FetchDataOptions) => Promise<{
+export declare type fetchDataFunction = (options: FetchDataOptions) => Promise<{
     count: number;
     data: Data;
     schema: Schema;
 }>;
-export declare type updateSortingListFn = (newSortingList: GridProps['sortingList']) => void;
-export declare type updateFilterListFn = (newFilterList: GridProps['filterList']) => void;
-export declare type updateDataFn = (options: FetchDataOptions) => void;
-export declare type updateSchemaFn = (newSchema: Schema) => void;
-export declare type updateSelectAllFn = (attr: GridProps['selectAll']) => void;
-export declare type updateColumnSchemaFn = (name: ColumnSchema['name'], schemaUpdate: Partial<ColumnSchema>) => void;
-export declare type updateRowDataFn = (rowIndexes: number[], dataUpdate: Partial<RowData>) => void;
-export declare type updateReorderHighlighterFn = (dim: GridState['reorderHighlighter']) => void;
-export declare type sortDataFn = (sortFn: SortFn, type: SortType) => void;
-export declare type reorderColFn = (from: string, to: string) => void;
-export declare type onSelectFn = (rowIndex: number, selected: boolean) => void;
-export declare type onSelectAllFn = (selected: boolean, selectAll?: boolean) => void;
-export declare type onFilterChangeFn = (data: RowData, filters: Filter) => boolean;
-export declare type onRowClickFn = (data: RowData, rowIndex?: number) => void;
+export declare type updateSortingListFunction = (newSortingList: GridProps['sortingList']) => void;
+export declare type updateFilterListFunction = (newFilterList: GridProps['filterList']) => void;
+export declare type updateDataFunction = (options: FetchDataOptions) => void;
+export declare type updateSchemaFunction = (newSchema: Schema) => void;
+export declare type updateSelectAllFunction = (attr: GridProps['selectAll']) => void;
+export declare type updateColumnSchemaFunction = (name: ColumnSchema['name'], schemaUpdate: Partial<ColumnSchema>) => void;
+export declare type updateRowDataFunction = (rowIndexes: number[], dataUpdate: Partial<RowData>) => void;
+export declare type updateReorderHighlighterFunction = (dim: GridState['reorderHighlighter']) => void;
+export declare type sortDataFunction = (comparator: Comparator, type: SortType) => void;
+export declare type reorderColFunction = (from: string, to: string) => void;
+export declare type onSelectFunction = (rowIndex: number, selected: boolean) => void;
+export declare type onSelectAllFunction = (selected: boolean, selectAll?: boolean) => void;
+export declare type onFilterChangeFunction = (data: RowData, filters: Filter) => boolean;
+export declare type onRowClickFunction = (data: RowData, rowIndex?: number) => void;
 export declare type CellType = 'DEFAULT' | 'WITH_META_LIST' | 'AVATAR' | 'AVATAR_WITH_TEXT' | 'AVATAR_WITH_META_LIST' | 'IMAGE' | 'IMAGE_WITH_TEXT' | 'IMAGE_WITH_META_LIST' | 'STATUS_HINT' | 'ICON';
 export declare type ColumnSchema = {
     name: string;
     displayName: string;
     width: number;
     resizable?: boolean;
-    sortFn?: SortFn;
+    sorting?: boolean;
+    comparator?: Comparator;
     separator?: boolean;
     pinned?: Pinned;
     hidden?: boolean;
     filters?: DropdownProps['options'];
-    onFilterChange?: onFilterChangeFn;
+    onFilterChange?: onFilterChangeFunction;
     translate?: (data: RowData) => RowData;
     cellType?: CellType;
     cellRenderer?: (props: GridCellProps) => React.ReactElement;
@@ -60,15 +61,15 @@ export declare type Schema = ColumnSchema[];
 export interface GridProps extends BaseProps {
     size: GridSize;
     type: GridType;
-    onRowClick?: onRowClickFn;
+    onRowClick?: onRowClickFunction;
     loaderSchema: Schema;
     schema: Schema;
     data: Data;
     totalRecords: number;
     loading: boolean;
     error: boolean;
-    updateData?: updateDataFn;
-    updateSchema?: updateSchemaFn;
+    updateData?: updateDataFunction;
+    updateSchema?: updateSchemaFunction;
     showHead?: boolean;
     showMenu?: boolean;
     draggable?: boolean;
@@ -78,16 +79,16 @@ export interface GridProps extends BaseProps {
     paginationType: PaginationProps['type'];
     onPageChange?: PaginationProps['onPageChange'];
     withCheckbox?: boolean;
-    onSelect?: onSelectFn;
-    onSelectAll?: onSelectAllFn;
+    onSelect?: onSelectFunction;
+    onSelectAll?: onSelectAllFunction;
     errorTemplate?: () => React.ReactElement;
     sortingList: {
         name: ColumnSchema['name'];
         type: SortType;
     }[];
-    updateSortingList?: updateSortingListFn;
+    updateSortingList?: updateSortingListFunction;
     filterList: Record<ColumnSchema['name'], Filter>;
-    updateFilterList?: updateFilterListFn;
+    updateFilterList?: updateFilterListFunction;
     selectAll?: {
         checked: boolean;
         indeterminate: boolean;
@@ -117,14 +118,14 @@ export declare class Grid extends React.Component<GridProps, GridState> {
     gridRef: React.RefObject<HTMLDivElement>;
     updateRenderedData: import("throttle-debounce").throttle<(options?: Partial<FetchDataOptions> | undefined) => void>;
     updateRenderedSchema: (newSchema: Schema) => void;
-    updateColumnSchema: updateColumnSchemaFn;
-    reorderCol: reorderColFn;
-    updateReorderHighlighter: updateReorderHighlighterFn;
+    updateColumnSchema: updateColumnSchemaFunction;
+    reorderCol: reorderColFunction;
+    updateReorderHighlighter: updateReorderHighlighterFunction;
     updateSortingList: (sortingList: GridProps['sortingList']) => void;
     updateFilterList: (filterList: GridProps['filterList']) => void;
     onMenuChange: (name: ColumnSchema['name'], selected: any) => void;
     onFilterChange: (name: ColumnSchema['name'], selected: any) => void;
-    onSelect: onSelectFn;
+    onSelect: onSelectFunction;
     onSelectAll: CheckboxProps['onChange'];
     render(): JSX.Element;
 }
