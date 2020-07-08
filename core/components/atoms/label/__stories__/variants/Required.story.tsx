@@ -3,15 +3,9 @@ import Label from '../../index';
 
 // CSF format story
 export const required = () => {
-
-  const styles = {
-    marginRight: '2%',
-    marginBottom: '30px'
-  };
-
   return (
     <div>
-      <div style={styles}>
+      <div className="mr-5 mb-8">
         <Label>
           Not Required
         </Label>

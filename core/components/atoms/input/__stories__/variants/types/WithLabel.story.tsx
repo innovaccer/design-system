@@ -7,21 +7,9 @@ import Caption from '@/components/atoms/caption';
 
 // CSF format story
 export const withLabel = () => {
-
-  const style = {
-    display: 'flex',
-    'flex-wrap': 'wrap',
-  };
-
-  const innerStyle = {
-    maxWidth: '300px',
-    marginRight: '5%',
-    marginBottom: '20px',
-  };
-
   return (
-    <div style={style}>
-      <div style={innerStyle}>
+    <div className="Row">
+      <div  className="mr-9 mb-8 w-25">
         <div style={{ height: '72px' }}>
           <Label withInput={true} required={true}>Full Name</Label>
           <Input
@@ -35,7 +23,7 @@ export const withLabel = () => {
         <br />
         <Text weight="strong">No Caption</Text>
       </div>
-      <div style={innerStyle}>
+      <div  className="mr-9 mb-8 w-25">
       <Label withInput={true} required={true}>Password</Label>
         <Input
           name="input"
@@ -49,7 +37,7 @@ export const withLabel = () => {
         <br />
         <Text weight="strong">Caption Default</Text>
       </div>
-      <div style={innerStyle}>
+      <div  className="mr-9 mb-8 w-25">
       <Label withInput={true} required={true}>Password</Label>
         <Input
           name="input"

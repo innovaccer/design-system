@@ -3,14 +3,9 @@ import Caption from '../../index';
 
 // CSF format story
 export const error = () => {
-
-  const styles = {
-    marginBottom: '30px'
-  };
-
   return (
     <div>
-      <div style={styles}>
+      <div className="mb-8">
         <Caption>
           Without Error
         </Caption>

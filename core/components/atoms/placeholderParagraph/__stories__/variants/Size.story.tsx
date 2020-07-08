@@ -10,7 +10,7 @@ export const size = () => {
       {
         sizes.map((s, ind) => {
           return (
-            <div key={ind} style={{ marginBottom: '20px' }}>
+            <div key={ind} className="mb-7">
               <PlaceholderParagraph size={s} />
               <Text weight="strong">{s}</Text>
             </div>

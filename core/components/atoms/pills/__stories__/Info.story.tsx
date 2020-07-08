@@ -1,38 +1,17 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
-import Pills, { Appearance } from '../Pills';
+import Pills from '../Pills';
 
 export const info = () => {
   const subtle = false;
   const children = text('children', 'Pills');
-
-  const appearances: Appearance[] = ['primary'];
-
-  const style = {
-    display: 'flex',
-  };
-
-  const innerStyle = {
-    marginRight: '5%',
-  };
-
   return (
-    <div style={style}>
-      {
-        appearances.map((appear, ind) => {
-          return (
-            <div key={ind} style={innerStyle}>
-              <Pills
-                appearance={appear}
-                subtle={subtle}
-              >
-                {children}
-              </Pills>
-            </div>
-          );
-        })
-      }
-    </div>
+    <Pills
+      appearance="primary"
+      subtle={subtle}
+    >
+      {children}
+    </Pills>
   );
 };
 

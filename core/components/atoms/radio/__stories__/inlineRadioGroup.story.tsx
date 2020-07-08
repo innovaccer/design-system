@@ -9,13 +9,10 @@ export const inlineRadioGroup = () => {
     ['tiny', 'regular'],
     undefined
   );
-  const style = {
-    display: 'flex',
-  };
 
   return (
-    <div style={style}>
-      <div style={{ marginRight: '5%' }}>
+    <div className="d-flex">
+      <div className="mr-9 ">
         <Radio
           size={size}
           label={'Option 1'}
@@ -23,7 +20,7 @@ export const inlineRadioGroup = () => {
           value={'Option 1'}
         />
       </div>
-      <div style={{ marginRight: '5%' }}>
+      <div className="mr-9 ">
         <Radio
           size={size}
           label={'Option 2'}
@@ -32,7 +29,7 @@ export const inlineRadioGroup = () => {
           defaultChecked={true}
         />
       </div>
-      <div style={{ marginRight: '5%' }}>
+      <div className="mr-9 ">
         <Radio
           size={size}
           label={'Option 3'}

@@ -10,25 +10,19 @@ export const secondaryButton = () => {
     'children',
     'Button'
   );
-
-  const style = {
-    display: 'flex',
-  };
   return (
-    <div style={style}>
-      <Button
-        onClick={action('button-clicked')}
-        onMouseEnter={action('mouse-enter')}
-        onMouseLeave={action('mouse-leave')}
-        appearance="basic"
-        size={'regular'}
-        expanded={expanded}
-        disabled={disabled}
-        loading={loading}
-      >
-        {children}
-      </Button>
-    </div>
+    <Button
+      onClick={action('button-clicked')}
+      onMouseEnter={action('mouse-enter')}
+      onMouseLeave={action('mouse-leave')}
+      appearance="basic"
+      size="regular"
+      expanded={expanded}
+      disabled={disabled}
+      loading={loading}
+    >
+      {children}
+    </Button>
   );
 };
 

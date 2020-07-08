@@ -7,20 +7,10 @@ import Text from '@/components/atoms/text';
 export const appearanceWithTitle = () => {
 
   const appearances: Appearance[] = ['default', 'alert', 'info', 'success', 'warning'];
-
-  const style = {
-    display: 'flex',
-    'flex-direction': 'row',
-    'flex-wrap': 'wrap',
-  };
-
   const innerStyle = {
     display: 'flex',
     'align-items': 'center',
     'flex-direction': 'column',
-    marginRight: '3%',
-    marginBottom: '3%',
-    width: '300px'
   };
 
   const title = text(
@@ -29,11 +19,11 @@ export const appearanceWithTitle = () => {
   );
 
   return (
-    <div style={style}>
+    <div className="Row">
       {
         appearances.map((appear, ind) => {
           return (
-            <div key={ind} style={innerStyle}>
+            <div key={ind} style={innerStyle} className="mr-7 mb-7 w-25 d-flex">
               <Message appearance={appear} title={title}>
                 Patient record has been updated with new records.
               </Message>

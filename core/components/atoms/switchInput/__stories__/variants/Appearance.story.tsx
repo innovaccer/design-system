@@ -8,11 +8,11 @@ export const appearance = () => {
   const appearances: Appearance[] = ['primary', 'alert', 'success', 'warning'];
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div className="d-flex">
       {
         appearances.map((appear, ind) => {
           return (
-            <div key={ind} style={{ marginRight: '5%' }}>
+            <div key={ind} className="mr-9">
               <Switch
                 defaultChecked={true}
                 appearance={appear}

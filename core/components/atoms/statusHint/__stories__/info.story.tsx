@@ -1,26 +1,12 @@
 import * as React from 'react';
-import StatusHint, { Appearance } from '../StatusHint';
+import StatusHint from '../StatusHint';
 export const info = () => {
-  const appearances: Appearance[] = [
-    'info'
-  ];
-
   return (
-    <div>
-      {
-        appearances.map((iconAppearance, i) => {
-          return (
-            <div key={i} style={{ marginBottom: '10px' }}>
-              <StatusHint
-                appearance={iconAppearance}
-              >
-                {iconAppearance.charAt(0).toUpperCase() + iconAppearance.slice(1)}
-              </StatusHint>
-            </div>
-          );
-        })
-      }
-    </div>
+    <StatusHint
+      appearance="info"
+    >
+      {'info'.charAt(0).toUpperCase() + 'info'.slice(1)}
+    </StatusHint>
   );
 };
 

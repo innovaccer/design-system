@@ -26,7 +26,6 @@ export const all = () => {
     labelWeight,
     iconSize,
   };
-
   return (
     <div style={{ background: labelAppearance === 'white' ? 'black' : 'transparent' }}>
       <Legend
@@ -37,8 +36,21 @@ export const all = () => {
     </div>
   );
 };
-
+const customCode = `() => {
+  return(
+    <Legend iconAppearance="inverse" iconSize={14}>
+    Legend
+  </Legend>
+    );
+}`;
 export default {
   title: 'Atoms|Legend',
-  component: Legend
+  component: Legend,
+  parameters: {
+    docs: {
+      docPage: {
+        customCode
+      }
+    }
+  }
 };

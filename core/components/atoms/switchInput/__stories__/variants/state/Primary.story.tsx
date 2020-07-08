@@ -6,8 +6,8 @@ import Text from '@/components/atoms/text';
 export const primary = () => {
 
   return (
-    <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: '5%' }}>
+    <div className="d-flex">
+      <div className="mr-9">
         <Switch
           defaultChecked={true}
           disabled={false}

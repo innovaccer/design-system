@@ -7,17 +7,12 @@ export const size = () => {
   const sizes: Size[] = ['tiny', 'regular'];
 
   const name = 'gender';
-
-  const style = {
-    display: 'flex',
-  };
-
   return (
-    <div style={style}>
+    <div className="d-flex">
       {
         sizes.map((RadioSize, ind) => {
           return (
-            <div key={ind} style={{ marginRight: '5%' }}>
+            <div key={ind} className="mr-9">
               <Radio
                 size={RadioSize}
                 label={RadioSize.charAt(0).toUpperCase() + RadioSize.slice(1)}

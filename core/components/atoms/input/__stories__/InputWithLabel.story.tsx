@@ -4,22 +4,10 @@ import Label from '@/components/atoms/label';
 import { action } from '@storybook/addon-actions';
 
 export const inputWithLabel = () => {
-
-  const style = {
-    display: 'flex',
-    'flex-wrap': 'wrap',
-  };
-
-  const innerStyle = {
-    maxWidth: '300px',
-    marginRight: '5%',
-    marginBottom: '20px',
-  };
-
   return (
-    <div style={style}>
-      <div style={innerStyle}>
-        <div style={{ height: '72px' }}>
+    <div className="Row">
+      <div  className="mr-9 mb-8 w-25">
+        <div >
           <Label withInput={true}>Full Name</Label>
           <Input
             name="input"

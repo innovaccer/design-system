@@ -17,20 +17,12 @@ export const appearance = () => {
     'Button'
   );
 
-  const style = {
-    display: 'flex',
-  };
-
-  const innerStyle = {
-    marginRight: '5%',
-  };
-
   return (
-    <div style={style}>
+    <div className="d-flex">
       {
         appearances.map((appear, ind) => {
           return (
-            <div key={ind} style={innerStyle}>
+            <div key={ind} className="mr-9">
               <Button
                 onClick={action('button-clicked')}
                 onMouseEnter={action('mouse-enter')}

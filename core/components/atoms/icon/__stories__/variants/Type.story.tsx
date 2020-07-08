@@ -8,17 +8,12 @@ export const type = () => {
   const types: IconType[] = ['filled', 'outline', 'rounded', 'sharp'];
 
   const name = text('Name', 'info');
-
-  const style = {
-    display: 'flex',
-  };
-
   return (
-    <div style={style}>
+    <div className="d-flex">
       {
         types.map((IconShape, ind) => {
           return (
-            <div key={ind} style={{ marginRight: '2%' }}>
+            <div key={ind} className="mr-9">
               <div>
                 <Icon
                   type={IconShape}

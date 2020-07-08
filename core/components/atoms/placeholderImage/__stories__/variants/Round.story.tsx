@@ -6,8 +6,8 @@ export const round = () => {
   const size = 'medium';
 
   return (
-    <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: '2%' }}>
+    <div className="d-flex">
+      <div className="mr-6">
         <PlaceholderImage size={size} round={false} />
         <br />
         <Text weight="strong">Square</Text>

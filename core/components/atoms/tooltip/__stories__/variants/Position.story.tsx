@@ -15,11 +15,11 @@ export const position = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap' }} className="pb-6">
+    <div className="pb-6 Row">
       {
         positions.map((pos, ind) => {
           return (
-            <div key={ind} style={{ marginTop: '30px', marginRight: '180px' }}>
+            <div key={ind} className="mr-13 mt-8">
               <Tooltip position={pos} {...options} >
                 <div
                   ref={buttonRef => {

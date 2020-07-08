@@ -12,20 +12,12 @@ export const appearance = () => {
 
   const appearances: Appearance[] = ['primary', 'secondary', 'alert', 'warning', 'success', 'accent1', 'accent2', 'accent3', 'accent4'];
 
-  const style = {
-    display: 'flex',
-  };
-
-  const innerStyle = {
-    marginRight: '5%',
-  };
-
   return (
-    <div style={style}>
+    <div className="d-flex">
       {
         appearances.map((appear, ind) => {
           return (
-            <div key={ind} style={innerStyle}>
+            <div key={ind} className="mr-9">
               <Badge
                 appearance={appear}
                 subtle={subtle}

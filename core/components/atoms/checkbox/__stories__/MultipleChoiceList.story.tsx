@@ -94,10 +94,8 @@ const customCode = `() => {
         value={'Innovaccer'}
       />
       <div style={{
-          display: 'flex',
           'flex-direction': 'column',
-          paddingLeft: '25px',
-        }}>
+        }} className="d-flex pl-7">
         {
           labels.map((label, ind) => {
             return (

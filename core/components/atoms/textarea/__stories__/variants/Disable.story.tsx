@@ -4,29 +4,22 @@ import { action } from '@storybook/addon-actions';
 
 export const Disable = () => {
 
-  const style = {
-    display: 'flex',
-    'flex-wrap': 'wrap',
-  };
-
   const innerStyle = {
     display: 'flex',
     'flex-direction': 'column',
     alignItems: 'center',
     maxWidth: '300px',
-    marginRight: '5%',
-    marginBottom: '20px',
   };
 
   const BooleanValue = [true, false];
 
   return (
-    <div style={style}>
+    <div className="Row">
       {
         BooleanValue.map((value, ind) => (
-          <div style={innerStyle} key={ind}>
-            <div style={innerStyle}>
-              <div style={{ marginBottom: '20px', width: '230px' }}>
+          <div style={innerStyle} className="mr-9 mb-5"  key={ind}>
+            <div style={innerStyle} className="mr-9 mb-5">
+              <div className="w-100 mb-6">
                 <Textarea
                   name="Textarea"
                   onChange={action('on-change')}

@@ -3,20 +3,15 @@ import Text from '../../index';
 
 // CSF format story
 export const weight = () => {
-  const style = {
-    display: 'flex',
-  };
-
   return (
-    <div style={style}>
-      <div style={{ marginRight: '2%' }}>
+    <div className="d-flex">
+      <div className="mr-6">
         <Text weight="strong">Strong</Text>
       </div>
       <div>
         <Text weight="medium">Medium</Text>
       </div>
     </div>
-
   );
 };
 

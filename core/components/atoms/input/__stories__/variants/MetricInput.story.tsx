@@ -8,7 +8,7 @@ export const metricInput = () => {
 
   return (
     <div>
-      <div style={{ width: '20px' }}>
+      <div className="w-25">
         <Input
           name="input"
           type="number"
@@ -19,7 +19,7 @@ export const metricInput = () => {
         <Text weight="strong">Regular</Text>
       </div>
       <br />
-      <div style={{ width: '20px' }}>
+      <div className="w-25">
         <Input
           name="input"
           type="number"

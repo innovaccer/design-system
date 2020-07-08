@@ -6,20 +6,12 @@ import Text from '@/components/atoms/text';
 export const appearance = () => {
   const appearances: Appearance[] = ['default', 'subtle', 'disabled', 'white'];
 
-  const style = {
-    display: 'flex',
-  };
-
-  const innerStyle = {
-    marginRight: '2%',
-  };
-
   return (
-    <div style={style}>
+    <div className="d-flex">
       {
         appearances.map((appear, ind) => {
           return (
-            <div key={ind} style={innerStyle}>
+            <div key={ind} className="mr-6">
               <div style={{ background: appear === 'white' ? 'black' : 'transparent' }}>
                 <Subheading appearance={appear}>
                   Subheading

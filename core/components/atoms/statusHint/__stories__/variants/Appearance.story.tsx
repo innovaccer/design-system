@@ -16,7 +16,7 @@ export const appearance = () => {
       {
         appearances.map((iconAppearance, i) => {
           return (
-            <div key={i} style={{ marginBottom: '10px' }}>
+            <div key={i} className="mb-4">
               <StatusHint
                 appearance={iconAppearance}
               >

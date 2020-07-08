@@ -7,26 +7,13 @@ export const size = () => {
 
   const sizes: Size[] = ['s', 'm', 'l', 'xl', 'xxl'];
 
-  const style = {
-    display: 'flex',
-    'flex-direction': 'row',
-  };
-
-  const outerStyle = {
-    marginRight: '4%',
-  };
-
-  const innerStyle = {
-    height: '50px',
-  };
-
   return (
-    <div style={style}>
+    <div className="Row">
       {
         sizes.map((HeadingSize, ind) => {
           return (
-            <div key={ind} style={outerStyle}>
-              <div style={innerStyle}>
+            <div key={ind} className="mr-7">
+              <div className="h-50">
                 <Heading size={HeadingSize}>
                   Heading
                 </Heading>

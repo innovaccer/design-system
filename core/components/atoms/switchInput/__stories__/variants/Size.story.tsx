@@ -8,12 +8,12 @@ export const size = () => {
   const sizes: Size[] = ['tiny', 'regular', 'large'];
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div className="d-flex">
       {
         sizes.map((SwitchSize, ind) => {
           return (
-            <div key={ind} style={{ marginRight: '5%' }}>
-              <div style={{ height: '32px' }}>
+            <div key={ind} className="mr-9">
+              <div  className="h-50">
                 <Switch
                   defaultChecked={true}
                   size={SwitchSize}

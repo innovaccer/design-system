@@ -24,19 +24,12 @@ export const Types = () => {
   const onClickHandler = (name: Name) => {
     return action(`onClick: ${name}`)();
   };
-  const style = {
-    display: 'flex',
-  };
-
-  const innerStyle = {
-    marginRight: '5%',
-  };
   return (
-    <div style={style}>
+    <div className="d-flex">
       {
         types.map((type, ind) => {
           return (
-            <div key={ind} style={innerStyle}>
+            <div key={ind} className="mr-9">
               <Chip
                 icon={icon}
                 label={label}

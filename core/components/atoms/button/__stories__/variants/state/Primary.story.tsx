@@ -16,18 +16,11 @@ export const primary = () => {
   );
 
   const style = {
-    display: 'flex',
     justifyContent: 'space-between',
-    width: '40%',
   };
-
-  const innerStyle = {
-    marginRight: '5%',
-  };
-
   return (
-    <div style={style}>
-      <div style={innerStyle}>
+    <div className="d-flex w-25" style={style}>
+      <div className="mr-9">
         <Button
           onClick={action('button-clicked')}
           onMouseEnter={action('mouse-enter')}
@@ -43,7 +36,7 @@ export const primary = () => {
         <br />
         <Text weight="strong">Default</Text>
       </div>
-      <div style={innerStyle}>
+      <div className="mr-9">
         <Button
           onClick={action('button-clicked')}
           onMouseEnter={action('mouse-enter')}
@@ -59,7 +52,7 @@ export const primary = () => {
         <br />
         <Text weight="strong">Disabled</Text>
       </div>
-      <div style={innerStyle}>
+      <div className="mr-9">
         <Button
           onClick={action('button-clicked')}
           onMouseEnter={action('mouse-enter')}
@@ -75,7 +68,7 @@ export const primary = () => {
         <br />
         <Text weight="strong">Loading</Text>
       </div>
-      <div style={innerStyle}>
+      <div className="mr-9">
         <Button
           onClick={action('button-clicked')}
           onMouseEnter={action('mouse-enter')}

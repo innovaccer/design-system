@@ -6,22 +6,13 @@ import Text from '@/components/atoms/text';
 export const size = () => {
 
   const sizes: Size[] = ['small', 'regular'];
-
-  const style = {
-    display: 'flex',
-  };
-
-  const innerStyle = {
-    height: '50px',
-  };
-
   return (
-    <div style={style}>
+    <div className="d-flex">
       {
         sizes.map((ProgressRingSize, ind) => {
           return (
-            <div key={ind} style={{ marginRight: '4%' }}>
-              <div style={innerStyle}>
+            <div key={ind} className="mr-6">
+              <div className="h-50">
                 <ProgressRing size={ProgressRingSize} value={30}/>
               </div>
               <Text weight="strong">{ProgressRingSize.charAt(0).toUpperCase() + ProgressRingSize.slice(1)}</Text>

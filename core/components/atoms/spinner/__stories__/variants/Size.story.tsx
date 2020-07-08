@@ -6,22 +6,13 @@ import Text from '@/components/atoms/text';
 export const size = () => {
 
   const sizes: Size[] = ['small', 'medium', 'large'];
-
-  const style = {
-    display: 'flex',
-  };
-
-  const innerStyle = {
-    height: '50px',
-  };
-
   return (
-    <div style={style}>
+    <div className="d-flex">
       {
         sizes.map((SpinnerSize, ind) => {
           return (
-            <div key={ind} style={{ marginRight: '4%' }}>
-              <div style={innerStyle}>
+            <div key={ind} className="mr-8">
+              <div className="h-75">
                 <Spinner size={SpinnerSize} />
               </div>
               <Text weight="strong">{SpinnerSize.charAt(0).toUpperCase() + SpinnerSize.slice(1)}</Text>

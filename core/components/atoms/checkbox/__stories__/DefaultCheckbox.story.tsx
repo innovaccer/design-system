@@ -1,47 +1,19 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
 import Checkbox from '../index';
-import { Size } from '../Checkbox';
 
 export const defaultCheckbox = () => {
-  const sizes: Size[] = ['regular'];
   const label = text(
     'label',
     'Checkbox'
   );
-
-  const styles = {
-    display: 'flex',
-  };
-
-  const outerStyles = {
-    marginRight: '2%',
-  };
-
-  const innerStyles = {
-    height: '20px',
-  };
-
   return (
-    <div style={styles}>
-      {
-        sizes.map((CheckboxSize, ind) => {
-          return (
-            <div key={ind} style={outerStyles}>
-              <div style={innerStyles}>
-                <Checkbox
-                  defaultChecked={true}
-                  disabled={false}
-                  size={CheckboxSize}
-                  label={label}
-                />
-              </div>
-            </div>
-          );
-        })
-      }
-    </div>
-
+    <Checkbox
+      defaultChecked={true}
+      disabled={false}
+      size="regular"
+      label={label}
+    />
   );
 };
 

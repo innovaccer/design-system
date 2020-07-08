@@ -10,7 +10,7 @@ export const length = () => {
       {
         lengths.map((len, ind) => {
           return (
-            <div key={ind} style={{ marginBottom: '20px' }}>
+            <div key={ind} className="mb-7">
               <PlaceholderParagraph length={len} />
               <Text weight="strong">{len.charAt(0).toUpperCase() + len.slice(1)}</Text>
             </div>

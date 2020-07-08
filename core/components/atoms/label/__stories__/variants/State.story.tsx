@@ -3,18 +3,9 @@ import Label from '../../index';
 
 // CSF format story
 export const state = () => {
-
-  const styles = {
-    marginRight: '2%',
-  };
-
-  const outerStyles = {
-    display: 'flex',
-  };
-
   return (
-    <div style={outerStyles}>
-      <div style={styles}>
+    <div className="d-flex">
+      <div  className="mr-5">
         <Label>
           Enabled Label
         </Label>
