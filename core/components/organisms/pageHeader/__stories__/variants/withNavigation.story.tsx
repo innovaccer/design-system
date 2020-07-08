@@ -29,7 +29,7 @@ export const withNavigation = () => {
 
   const options = {
     title,
-    navigation: <Navigation data={navigationData} onClick={action('menu-clicked')} active={{ name: 'menu_1' }} />,
+    navigation: <Navigation menus={navigationData} onClick={action('menu-clicked')} active={{ name: 'menu_1' }} />,
     actions: (
       <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
         <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
@@ -67,7 +67,7 @@ const customCode = `() => {
 
   const options = {
     title,
-    navigation: <Navigation data={navigationData} onClick={(menu) => console.log(menu)} active={{ name: 'menu_1' }} />,
+    navigation: <Navigation menus={navigationData} onClick={(menu) => console.log(menu)} active={{ name: 'menu_1' }} />,
     actions: (
       <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
         <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
