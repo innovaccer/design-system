@@ -14,7 +14,7 @@ export const placeholder = () => {
           return (
             <div style={{ marginRight: '5%' }} key={ind}>
               <Text weight="strong">{!menu ? 'With Placeholder' : 'Without Placeholder'}</Text> <br /><br />
-              <Dropdown placeholder={'Select'} menu={menu} options={storyOptions} />
+              <Dropdown menu={menu} options={storyOptions} />
             </div>
           );
         })
@@ -23,13 +23,38 @@ export const placeholder = () => {
   );
 };
 
+const customCode = `() => {
+  const storyOptions = [];
+  for (let i = 1; i <= 10; i++) {
+    storyOptions.push({
+      label: \`Option \${i}\`,
+      value: \`Option \${i}\`,
+      icon: 'events',
+      subInfo: 'subInfo'
+    });
+  }
+
+  return (
+    <div className='d-flex' style={{ minHeight: '270px' }}>
+      <div className='mr-8'>
+        <Text weight="strong">Without Placeholder</Text> <br /><br />
+        <Dropdown menu={true} options={storyOptions} />
+      </div>
+      <div className='mr-8'>
+        <Text weight="strong">With Placeholder</Text> <br /><br />
+        <Dropdown menu={false} options={storyOptions} />
+      </div>
+    </div>
+  )
+}`;
+
 export default {
   title: 'Atoms|Dropdown/Variants/Button',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
-        title: 'Dropdown'
+        customCode
       }
     }
   }

@@ -210,16 +210,19 @@ export const all = () => {
   };
 
   return (
-    <Card
-      shadow="light"
+    <div
+      className="d-flex"
       style={{
-        display: 'flex',
         flexDirection: 'column',
         height: '350px',
         overflow: 'hidden'
       }}
     >
-      {/* <Header
+      <Card
+        shadow="light"
+        className="h-100"
+      >
+        {/* <Header
         {...state}
         // updateData={updateData}
         updateSchema={updateSchema}
@@ -232,32 +235,33 @@ export const all = () => {
       >
         <Button icon="events" />
       </Header> */}
-      <Grid
-        {...state}
-        loading={loading}
-        error={error}
-        type={type}
-        size={size}
-        totalRecords={state.totalRecords}
-        updateData={updateData}
-        updateSchema={updateSchema}
-        updateSortingList={updateSortingList}
-        updateFilterList={updateFilterList}
-        loaderSchema={loaderSchema}
-        errorTemplate={() => errorTemplate}
-        showHead={showHead}
-        showMenu={showMenu}
-        draggable={draggable}
-        withPagination={withPagination}
-        paginationType={paginationType}
-        pageSize={withPagination ? pageSize : undefined}
-        onPageChange={onPageChange}
-        withCheckbox={withCheckbox}
-        onSelect={onSelect}
-        onSelectAll={onSelectAll}
-        onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
-      />
-    </Card>
+        <Grid
+          {...state}
+          loading={loading}
+          error={error}
+          type={type}
+          size={size}
+          totalRecords={state.totalRecords}
+          updateData={updateData}
+          updateSchema={updateSchema}
+          updateSortingList={updateSortingList}
+          updateFilterList={updateFilterList}
+          loaderSchema={loaderSchema}
+          errorTemplate={() => errorTemplate}
+          showHead={showHead}
+          showMenu={showMenu}
+          draggable={draggable}
+          withPagination={withPagination}
+          paginationType={paginationType}
+          pageSize={withPagination ? pageSize : undefined}
+          onPageChange={onPageChange}
+          withCheckbox={withCheckbox}
+          onSelect={onSelect}
+          onSelectAll={onSelectAll}
+          onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
+        />
+      </Card>
+    </div>
   );
 };
 

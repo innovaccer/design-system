@@ -5,19 +5,23 @@ import { errorTemplate } from '../_common_/errorTemplate';
 // CSF format story
 export const withErrorTemplate = () => {
   return (
-    <Card
-      shadow="light"
+    <div
       style={{
         height: '350px',
       }}
     >
-      <Grid
-        data={[]}
-        schema={[]}
-        totalRecords={0}
-        errorTemplate={() => errorTemplate}
-      />
-    </Card>
+      <Card
+        shadow="light"
+        className="h-100"
+      >
+        <Grid
+          data={[]}
+          schema={[]}
+          totalRecords={0}
+          errorTemplate={() => errorTemplate}
+        />
+      </Card>
+    </div>
   );
 };
 

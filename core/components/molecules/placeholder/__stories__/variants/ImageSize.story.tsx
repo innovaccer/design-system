@@ -8,11 +8,11 @@ export const imageSize = () => {
   const sizes: Size[] = ['small', 'medium', 'large'];
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div className="d-flex">
       {
         sizes.map((size, ind) => {
           return (
-            <div key={ind} style={{ marginRight: '5%', width: '200px' }}>
+            <div key={ind} className="w-25 mr-8">
               <Placeholder imageSize={size} withImage={true}>
                 <PlaceholderParagraph length="large" />
               </Placeholder>

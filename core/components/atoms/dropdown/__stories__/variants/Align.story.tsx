@@ -24,12 +24,38 @@ export const align = () => {
   );
 };
 
+const customCode = `() => {
+  const storyOptions = [];
+  for (let i = 1; i <= 10; i++) {
+    storyOptions.push({
+      label: \`Option \${i}\`,
+      value: \`Option \${i}\`,
+      icon: 'events',
+      subInfo: 'subInfo'
+    });
+  }
+
+  return (
+    <div className='d-flex' style={{ minHeight: '280px' }}>
+      <div className='mr-12'>
+        <Text weight="strong">Right</Text> <br /><br />
+        <Dropdown menu={true} options={storyOptions} align='right'/>
+      </div>
+      <div>
+        <Text weight="strong">Left</Text> <br /><br />
+        <Dropdown menu={true} options={storyOptions} align='left'/>
+      </div>
+    </div>
+  )
+}`;
+
 export default {
   title: 'Atoms|Dropdown/Variants',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
+        customCode,
         title: 'Dropdown'
       }
     }

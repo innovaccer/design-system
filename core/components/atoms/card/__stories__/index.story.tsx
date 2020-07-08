@@ -10,14 +10,6 @@ export const all = () => {
     undefined
   );
 
-  const styles = {
-    height: '150px',
-    width: '150px',
-    alignItems: 'center',
-    justifyContent: 'center',
-    display: 'flex'
-  };
-
   const getChildren = (shadowType: any) => {
     switch (shadowType) {
       case 'light':
@@ -37,9 +29,11 @@ export const all = () => {
   const children = getChildren(shadow);
 
   return (
-    <Card shadow={shadow} style={styles} >
-      {children}
-    </Card>
+    <div className="w-25" style={{ height: '150px' }}>
+      <Card shadow={shadow} className="h-100 w-100" >
+        {children}
+      </Card>
+    </div>
   );
 };
 

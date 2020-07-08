@@ -110,24 +110,23 @@ export const all = () => {
     );
   }
   return (
-    <Card
-      shadow="light"
-      style={{
-        maxWidth: `${monthsInView * 330}px`
-      }}
-    >
-      <DateRangePicker
-        withInput={withInput}
-        monthsInView={monthsInView}
-        jumpView={jumpView}
-        startDate={startDate}
-        endDate={endDate}
-        onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) => action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()}
-        view={view}
-        firstDayOfWeek={firstDayOfWeek}
-        {...attr}
-      />
-    </Card>
+    <div style={{ maxWidth: `${monthsInView * 330}px` }}>
+      <Card
+        shadow="light"
+      >
+        <DateRangePicker
+          withInput={withInput}
+          monthsInView={monthsInView}
+          jumpView={jumpView}
+          startDate={startDate}
+          endDate={endDate}
+          onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) => action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()}
+          view={view}
+          firstDayOfWeek={firstDayOfWeek}
+          {...attr}
+        />
+      </Card>
+    </div>
   );
 };
 

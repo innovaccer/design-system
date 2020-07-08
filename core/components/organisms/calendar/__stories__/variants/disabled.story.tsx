@@ -8,73 +8,57 @@ import Heading from '@/components/atoms/heading';
 export const disabled = () => {
   const view: View[] = ['year', 'month', 'date'];
 
-  const style = {
-    display: 'flex',
-  };
-
   return (
     <>
       <Heading>disabledBefore</Heading>
-      <div style={style}>
+      <div className="d-flex">
         {view.map((v, index) => (
-          <Card
-            key={index}
-            shadow="light"
-            style={{
-              marginRight: '50px',
-              maxWidth: '330px',
-              alignSelf: 'flex-start'
-            }}
-          >
-            <Calendar
-              date={new Date(2020, 2, 15)}
-              disabledBefore={new Date(2020, 2, 10)}
-              view={v}
-            />
-          </Card>
+          <div className="mr-8" style={{ maxWidth: '330px' }} key={index}>
+            <Card
+              shadow="light"
+            >
+              <Calendar
+                date={new Date(2020, 2, 15)}
+                disabledBefore={new Date(2020, 2, 10)}
+                view={v}
+              />
+            </Card>
+          </div>
         ))}
       </div>
 
       <Heading>disabledAfter</Heading>
-      <div style={style}>
+      <div className="d-flex">
         {view.map((v, index) => (
-          <Card
-            key={index}
-            shadow="light"
-            style={{
-              marginRight: '50px',
-              maxWidth: '330px',
-              alignSelf: 'flex-start'
-            }}
-          >
-            <Calendar
-              date={new Date(2020, 2, 15)}
-              disabledAfter={new Date(2020, 2, 20)}
-              view={v}
-            />
-          </Card>
+          <div className="mr-8" key={index} style={{ maxWidth: '330px' }}>
+            <Card
+              shadow="light"
+            >
+              <Calendar
+                date={new Date(2020, 2, 15)}
+                disabledAfter={new Date(2020, 2, 20)}
+                view={v}
+              />
+            </Card>
+          </div>
         ))}
       </div>
 
       <Heading>disabledBefore and disabledAfter</Heading>
-      <div style={style}>
+      <div className="d-flex">
         {view.map((v, index) => (
-          <Card
-            key={index}
-            shadow="light"
-            style={{
-              marginRight: '50px',
-              maxWidth: '330px',
-              alignSelf: 'flex-start'
-            }}
-          >
-            <Calendar
-              date={new Date(2020, 2, 15)}
-              disabledBefore={new Date(2020, 2, 10)}
-              disabledAfter={new Date(2020, 2, 20)}
-              view={v}
-            />
-          </Card>
+          <div className="mr-8" key={index} style={{ maxWidth: '330px' }}>
+            <Card
+              shadow="light"
+            >
+              <Calendar
+                date={new Date(2020, 2, 15)}
+                disabledBefore={new Date(2020, 2, 10)}
+                disabledAfter={new Date(2020, 2, 20)}
+                view={v}
+              />
+            </Card>
+          </div>
         ))}
       </div>
     </>

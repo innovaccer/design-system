@@ -24,12 +24,40 @@ export const size = () => {
   );
 };
 
+const customCode =  `() => {
+  const storyOptions = [];
+  for (let i = 1; i <= 10; i++) {
+    storyOptions.push({
+      label: \`Option \${i}\`,
+      value: \`Option \${i}\`,
+      icon: 'events',
+      subInfo: 'subInfo'
+    });
+  }
+
+  const disabled = [true, false];
+
+  return (
+    <div className='d-flex' style={{ minHeight: '270px' }}>
+      <div className='mr-8'>
+        <Text weight="strong">Tiny</Text> <br /><br />
+        <Dropdown triggerSize={'tiny'} options={storyOptions} />
+      </div>
+      <div className='mr-8'>
+        <Text weight="strong">Regular</Text> <br /><br />
+        <Dropdown triggerSize={'regular'} options={storyOptions} />
+      </div>
+    </div>
+  );
+}`;
+
 export default {
   title: 'Atoms|Dropdown/Variants',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
+        customCode,
         title: 'Dropdown'
       }
     }

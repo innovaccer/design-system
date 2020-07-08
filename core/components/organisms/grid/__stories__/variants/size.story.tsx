@@ -25,18 +25,22 @@ export const size = () => {
           }}
         >
           <Heading>{v}</Heading>
-          <Card
-            shadow="light"
+          <div
             style={{
               height: '350px',
             }}
           >
-            <Grid
-              size={v}
-              data={data}
-              schema={schema}
-            />
-          </Card>
+            <Card
+              shadow="light"
+              className="h-100"
+            >
+              <Grid
+                size={v}
+                data={data}
+                schema={schema}
+              />
+            </Card>
+          </div>
         </div>
       ))}
     </div>

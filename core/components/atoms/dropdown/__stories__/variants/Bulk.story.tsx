@@ -32,7 +32,7 @@ export const bulk = () => {
           return (
             <div key={ind} style={{ marginRight: '10%', width: '170px' }}>
               <Text weight="strong">{value ? 'Options > 50' : 'Options <= 50'}</Text> <br /><br />
-              <Dropdown withSearch={true} withCheckbox={true} options={options} {...(value && { fetchOptions })}/>
+              <Dropdown withSearch={true} withCheckbox={true} options={options} {...(value && { fetchOptions })} />
             </div>
           );
         })
@@ -76,18 +76,15 @@ const customCode = `() => {
     });
   };
   return (
-    <div style={{ display: 'flex', minHeight: '300px' }}>
-      {
-        BooleanValue.map((value, ind) => {
-          const options = value ? dropdownOptions : dropdownOptions.slice(0, 50);
-          return (
-            <div key={ind} style={{ marginRight: '10%', width: '170px' }}>
-              <Text weight="strong">{value ? 'Options > 50' : 'Options <= 50'}</Text> <br /><br />
-              <Dropdown withCheckbox={true} bulk={value} options={options} {...(value && { fetchOptions })}/>
-            </div>
-          );
-        })
-      }
+    <div className='d-flex' style={{ minHeight: '300px' }}>
+      <div className='mr-10 w-25'>
+        <Text weight="strong">{'Options > 50'}</Text> <br /><br />
+        <Dropdown withCheckbox={true} fetchOptions={fetchOptions}/>
+      </div>
+      <div className='mr-10 w-25'>
+        <Text weight="strong">{'Options <= 50'}</Text> <br /><br />
+        <Dropdown withCheckbox={true} options={dropdownOptions.slice(0, 50)} />
+      </div>
     </div>
   )
 }`;

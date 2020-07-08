@@ -69,7 +69,7 @@ export const all = () => {
   );
 
   return (
-    <div style={{ maxWidth: '300px' }}>
+    <div className="w-25">
       <InputMask
         name="input"
         type={inputType}

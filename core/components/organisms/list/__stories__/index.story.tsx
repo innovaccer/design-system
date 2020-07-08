@@ -101,37 +101,39 @@ export const all = () => {
   }
 
   return (
-    <Card
+    <div
       style={{
         height: '350px',
         // overflow: 'hidden'
       }}
     >
-      <List
-        {...dataAttr}
-        withHeader={withHeader}
-        headerOptions={{
-          withSearch: true,
-        }}
-        withCheckbox={withCheckbox}
-        type={type}
-        size={size}
-        withPagination={withPagination}
-        paginationType={paginationType}
-        pageSize={pageSize}
-        loaderSchema={applyLoaderSchema ? loaderSchema : undefined}
-        onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
-        onSelect={(rowIndex, selected, selectedList) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)}`)()}
-        onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
-        multipleSorting={multipleSorting}
-        sortingList={[
-          { name: 'name', type: 'desc' }
-        ]}
-        filterList={{
-          name: ['h-r', 's-z']
-        }}
-      />
-    </Card>
+      <Card className="h-100">
+        <List
+          {...dataAttr}
+          withHeader={withHeader}
+          headerOptions={{
+            withSearch: true,
+          }}
+          withCheckbox={withCheckbox}
+          type={type}
+          size={size}
+          withPagination={withPagination}
+          paginationType={paginationType}
+          pageSize={pageSize}
+          loaderSchema={applyLoaderSchema ? loaderSchema : undefined}
+          onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
+          onSelect={(rowIndex, selected, selectedList) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)}`)()}
+          onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
+          multipleSorting={multipleSorting}
+          sortingList={[
+            { name: 'name', type: 'desc' }
+          ]}
+          filterList={{
+            name: ['h-r', 's-z']
+          }}
+        />
+      </Card>
+    </div>
   );
 };
 

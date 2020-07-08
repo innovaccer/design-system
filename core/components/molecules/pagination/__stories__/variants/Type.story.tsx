@@ -18,10 +18,6 @@ export const type = () => {
     50
   );
 
-  const style = {
-    display: 'flex',
-  };
-
   const innerStyle = {
     display: 'flex',
     'flex-direction': 'column',
@@ -29,19 +25,18 @@ export const type = () => {
   };
 
   return (
-    <div style={style}>
+    <div className="d-flex">
       {
         paginationTypes.map((displayType, ind) => {
           return (
             <div key={ind} style={innerStyle}>
+              <Text weight="strong">{displayType}</Text><br />
               <Pagination
                 type={displayType}
                 page={page}
                 totalPages={totalPages}
                 onPageChange={pageNo => action(`No-change-action: ${pageNo}`)()}
               />
-              <br />
-              <Text weight="strong">{displayType}</Text>
             </div>
           );
         })

@@ -93,12 +93,12 @@ const customCode = `() => {
   };
 
   return (
-    <div style={{ display: 'flex', minHeight: '300px' }}>
-      <div style={{ marginRight: '20%', width: '200px' }}>
+    <div className='d-flex' style={{ minHeight: '300px' }}>
+      <div className='mr-10 w-25'>
         <Text weight="strong">Without Checkbox</Text> <br /><br />
         <Dropdown options={storyOptions} optionRenderer={customOptionRenderer} />
       </div>
-      <div style={{ marginRight: '20%', width: '200px' }}>
+      <div className='mr-10 w-25'>
         <Text weight="strong">With Checkbox</Text> <br /><br />
         <Dropdown options={storyOptions} optionRenderer={customCheckboxRenderer} withCheckbox={true} />
       </div>

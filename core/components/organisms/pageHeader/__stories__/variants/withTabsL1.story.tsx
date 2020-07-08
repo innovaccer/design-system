@@ -99,7 +99,7 @@ export const withTabs = () => {
     )
   };
   return (
-    <div style={{ width: '100%', padding: '16px', background: '#f4f4f4' }}>
+    <div className="w-100 p-6" style={{ background: '#f4f4f4' }}>
       <PageHeader {...options} />
     </div>
   );
@@ -192,7 +192,7 @@ const customCode = `() => {
     )
   };
   return (
-    <div style={{ width: '100%', padding: '16px', background: '#f4f4f4' }}>
+    <div className="w-100 p-6" style={{ background: '#f4f4f4' }}>
       <PageHeader {...options} />
     </div>
   );

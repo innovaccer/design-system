@@ -25,18 +25,22 @@ export const showHead = () => {
           }}
         >
           <Heading>{`showHead: ${v}`}</Heading>
-          <Card
-            shadow="light"
+          <div
             style={{
               height: '350px',
             }}
           >
-            <Grid
-              showHead={v}
-              data={data}
-              schema={schema}
-            />
-          </Card>
+            <Card
+              shadow="light"
+              className="h-100"
+            >
+              <Grid
+                showHead={v}
+                data={data}
+                schema={schema}
+              />
+            </Card>
+          </div>
         </div>
       ))}
     </div>

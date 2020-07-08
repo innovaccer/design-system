@@ -7,30 +7,32 @@ import { Card, Grid, Table } from '@/index';
 
 export const sync = () => {
   return (
-    <Card
+    <div
       style={{
         height: '350px',
         // overflow: 'hidden'
       }}
     >
-      <Table
-        loaderSchema={loaderSchema}
-        data={data}
-        schema={schema}
-        withHeader={true}
-        withCheckbox={true}
-        onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
-        headerOptions={{
-          withSearch: true
-        }}
-        onSearch={(d, searchTerm) => {
-          return (
-            d.firstName.toLowerCase().match(searchTerm.toLowerCase())
-            || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
-          );
-        }}
-      />
-    </Card>
+      <Card className="h-100">
+        <Table
+          loaderSchema={loaderSchema}
+          data={data}
+          schema={schema}
+          withHeader={true}
+          withCheckbox={true}
+          onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
+          headerOptions={{
+            withSearch: true
+          }}
+          onSearch={(d, searchTerm) => {
+            return (
+              d.firstName.toLowerCase().match(searchTerm.toLowerCase())
+              || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
+            );
+          }}
+        />
+      </Card>
+    </div>
   );
 };
 

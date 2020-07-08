@@ -22,13 +22,14 @@ export const optionType = () => {
   const optionTypes = ['DEFAULT', 'WITH_ICON', 'WITH_META', 'ICON_WITH_META'];
 
   return (
-    <div style={{ display: 'flex', minHeight: '240px' }}>
+    <div className="d-flex" style={{ minHeight: '240px' }}>
       {
         optionTypes.map((type, ind) => {
           return (
             <div
+              className="d-flex mr-9"
               key={ind}
-              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginRight: '5%' }}
+              style={{ flexDirection: 'column' }}
             >
               <Text weight="strong">{labelMapping[type]}</Text><br />
               <Dropdown options={optionsMapping[type].slice(0, 3)} />
@@ -36,7 +37,7 @@ export const optionType = () => {
           );
         })
       }
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '128px' }}>
+      <div className="d-flex" style={{ flexDirection: 'column', width: '128px' }}>
         <Text weight="strong">{'Checkboxes'}</Text><br />
         <Dropdown options={storyOptions.slice(0, 3)} withCheckbox={true} />
       </div>

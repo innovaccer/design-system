@@ -112,41 +112,43 @@ export const all = () => {
   }
 
   return (
-    <Card
+    <div
       style={{
         height: '350px',
         // overflow: 'hidden'
       }}
     >
-      <Table
-        {...dataAttr}
-        loading={loading}
-        error={error}
-        withHeader={withHeader}
-        headerOptions={{
-          withSearch: true,
-        }}
-        withCheckbox={withCheckbox}
-        showMenu={showMenu}
-        type={type}
-        size={size}
-        draggable={draggable}
-        withPagination={withPagination}
-        paginationType={paginationType}
-        pageSize={pageSize}
-        loaderSchema={applyLoaderSchema ? loaderSchema : undefined}
-        onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
-        onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
-        onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
-        multipleSorting={multipleSorting}
-        sortingList={[
-          { name: 'name', type: 'desc' }
-        ]}
-        filterList={{
-          name: ['h-r', 's-z']
-        }}
-      />
-    </Card>
+      <Card className="h-100">
+        <Table
+          {...dataAttr}
+          loading={loading}
+          error={error}
+          withHeader={withHeader}
+          headerOptions={{
+            withSearch: true,
+          }}
+          withCheckbox={withCheckbox}
+          showMenu={showMenu}
+          type={type}
+          size={size}
+          draggable={draggable}
+          withPagination={withPagination}
+          paginationType={paginationType}
+          pageSize={pageSize}
+          loaderSchema={applyLoaderSchema ? loaderSchema : undefined}
+          onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
+          onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
+          onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
+          multipleSorting={multipleSorting}
+          sortingList={[
+            { name: 'name', type: 'desc' }
+          ]}
+          filterList={{
+            name: ['h-r', 's-z']
+          }}
+        />
+      </Card>
+    </div>
   );
 };
 

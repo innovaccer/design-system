@@ -6,27 +6,25 @@ import { DatePicker, Card } from '@/index';
 export const view = () => {
   const values: View[] = ['year', 'month', 'date'];
 
-  const style = {
-    display: 'flex',
-  };
-
   return (
-    <div style={style}>
+    <div className="d-flex">
       {values.map((v, index) => (
-        <Card
+        <div
           key={index}
-          shadow="light"
+          className="mr-9"
           style={{
-            marginRight: '50px',
             maxWidth: '330px',
-            alignSelf: 'flex-start'
           }}
         >
-          <DatePicker
-            date={new Date(2020, 2, 1)}
-            view={v}
-          />
-        </Card>
+          <Card
+            shadow="light"
+          >
+            <DatePicker
+              date={new Date(2020, 2, 1)}
+              view={v}
+            />
+          </Card>
+        </div>
       ))}
     </div>
   );

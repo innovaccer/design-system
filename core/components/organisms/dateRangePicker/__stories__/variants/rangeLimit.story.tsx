@@ -4,19 +4,11 @@ import Card from '@/components/atoms/card';
 
 // CSF format story
 export const rangeLimit = () => {
-  const style = {
-    display: 'flex',
-  };
 
   return (
-    <div style={style}>
+    <div className="d-flex mr-9" style={{ maxWidth: '330px' }}>
       <Card
         shadow="light"
-        style={{
-          marginRight: '50px',
-          maxWidth: '330px',
-          alignSelf: 'flex-start'
-        }}
       >
         <DateRangePicker
           startDate={new Date(2020, 2, 3)}

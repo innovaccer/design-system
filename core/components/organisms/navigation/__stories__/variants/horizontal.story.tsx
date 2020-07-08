@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Card, Navigation } from '@/index';
+import { Navigation } from '@/index';
 import { action } from '@storybook/addon-actions';
 import { Menu } from '../../Navigation';
 
@@ -32,7 +32,7 @@ export const horizontal = () => {
   };
 
   return (
-    <Card style={{ height: '200px', background: 'var(--secondary-lightest' }}>
+    <div style={{ height: '200px', background: 'var(--secondary-lightest)' }}>
       <div
         style={{
           background: 'white',
@@ -47,7 +47,7 @@ export const horizontal = () => {
           onClick={onClickHandler}
         />
       </div>
-    </Card >
+    </div>
   );
 };
 
@@ -79,13 +79,13 @@ const customCode = `() => {
   };
 
   return (
-    <Card style={{ height: '200px', background: 'var(--secondary-lightest' }}>
+    <div style={{ height: '200px', background: 'var(--secondary-lightest)' }}>
       <div
         style={{
-          background: 'white',
-          padding: 'var(--spacing-m)',
-          borderTop: 'var(--border)',
-          borderBottom: 'var(--border)'
+            background: 'white',
+            padding: 'var(--spacing-m)',
+            borderTop: 'var(--border)',
+            borderBottom: 'var(--border)'
         }}
       >
         <Navigation
@@ -94,7 +94,7 @@ const customCode = `() => {
           onClick={onClickHandler}
         />
       </div>
-    </Card >
+  </div>
   );
 }`;
 

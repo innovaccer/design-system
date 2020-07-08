@@ -33,12 +33,38 @@ export const multiOptions = () => {
   );
 };
 
+const customCode = `() => {
+  const storyOptions = [];
+  for (let i = 1; i <= 10; i++) {
+    storyOptions.push({
+      label: \`Option \${i}\`,
+      value: \`Option \${i}\`,
+      icon: 'events',
+      subInfo: 'subInfo'
+    });
+  }
+
+  return (
+    <div className='d-flex' style={{ minHeight: '340px' }}>
+      <div className='mr-10' style={{ width: '150px' }}>
+      <Text weight="strong">{'With Apply Button'}</Text> <br /><br />
+        <Dropdown withCheckbox={true} showApplyButton={true} options={storyOptions} />
+      </div>
+      <div>
+        <Text weight="strong">{'Without Apply Button'}</Text> <br /><br />
+        <Dropdown withCheckbox={true} options={storyOptions} />
+      </div>
+    </div>
+  )
+}`;
+
 export default {
   title: 'Atoms|Dropdown/Variants',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
+        customCode,
         title: 'Dropdown'
       }
     }
