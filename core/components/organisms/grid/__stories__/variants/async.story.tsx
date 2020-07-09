@@ -78,23 +78,27 @@ export const async = () => {
   };
 
   return (
-    <Card
-      shadow="light"
+    <div
       style={{
         height: '350px',
       }}
     >
-      <Grid
-        {...state}
-        loaderSchema={loaderSchema}
-        updateData={updateData}
-        withCheckbox={true}
-        onSelect={onSelect}
-        onSelectAll={onSelectAll}
-        withPagination={true}
-        onPageChange={onPageChange}
-      />
-    </Card>
+      <Card
+        shadow="light"
+        className="h-100"
+      >
+        <Grid
+          {...state}
+          loaderSchema={loaderSchema}
+          updateData={updateData}
+          withCheckbox={true}
+          onSelect={onSelect}
+          onSelectAll={onSelectAll}
+          withPagination={true}
+          onPageChange={onPageChange}
+        />
+      </Card>
+    </div>
   );
 };
 

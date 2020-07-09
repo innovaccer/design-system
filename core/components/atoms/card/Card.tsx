@@ -10,10 +10,6 @@ export interface CardProps extends BaseProps {
    */
   shadow?: Shadow;
   /**
-   * Adds CSS to `Card` component
-   */
-  style?: React.CSSProperties;
-  /**
    * Will be wrapped in a `Card` container
    */
   children: React.ReactNode;

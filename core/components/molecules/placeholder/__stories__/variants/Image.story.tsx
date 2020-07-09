@@ -6,14 +6,14 @@ import Text from '@/components/atoms/text';
 
 export const image = () => {
   return (
-    <div style={{ display: 'flex' }}>
-      <div style={{ width: '200px', marginRight: '5%' }}>
-        <Placeholder withImage={false}>
+    <div className="d-flex">
+      <div className="w-25 mr-8">
+        <Placeholder withImage={true}>
           <PlaceholderParagraph length="large" />
         </Placeholder>
-        <Text weight="strong">Without Image</Text>
+        <Text weight="strong">With Image</Text>
       </div>
-      <div style={{ width: '200px' }}>
+      <div className="w-25">
         <Placeholder withImage={false}>
           <PlaceholderParagraph length="large" />
         </Placeholder>
@@ -23,8 +23,32 @@ export const image = () => {
   );
 };
 
+const customCode = `() => (
+  <div className='d-flex'>
+      <div className='w-25 mr-8'>
+        <Placeholder withImage={true}>
+          <PlaceholderParagraph length="large" />
+        </Placeholder>
+        <Text weight="strong">With Image</Text>
+      </div>
+      <div className='w-25'>
+        <Placeholder withImage={false}>
+          <PlaceholderParagraph length="large" />
+        </Placeholder>
+        <Text weight="strong">Without Image</Text>
+      </div>
+    </div>
+)`;
+
 export default {
   title: 'Molecules|Loaders/Placeholder/Variants',
   component: Placeholder,
-  subcomponents: { PlaceholderImage, PlaceholderParagraph }
+  subcomponents: { PlaceholderImage, PlaceholderParagraph },
+  parameters: {
+    docs: {
+      docPage: {
+        customCode
+      }
+    }
+  }
 };

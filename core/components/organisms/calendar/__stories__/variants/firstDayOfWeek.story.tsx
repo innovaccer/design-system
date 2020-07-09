@@ -8,29 +8,23 @@ export const firstDayOfWeek = () => {
   const values: Day[] = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
   const style = {
-    display: 'flex',
     flexWrap: 'wrap'
   };
 
   return (
     // @ts-ignore
-    <div style={style}>
+    <div className="d-flex" style={style}>
       {values.map((v, index) => (
-        <Card
-          key={index}
-          shadow="light"
-          style={{
-            marginRight: '50px',
-            maxWidth: '330px',
-            alignSelf: 'flex-start',
-            marginTop: '20px'
-          }}
-        >
-          <Calendar
-            date={new Date(2020, 2, 1)}
-            firstDayOfWeek={v}
-          />
-        </Card>
+        <div className="mr-9 mt-5" key={index} style={{ maxWidth: '330px' }}>
+          <Card
+            shadow="light"
+          >
+            <Calendar
+              date={new Date(2020, 2, 1)}
+              firstDayOfWeek={v}
+            />
+          </Card>
+        </div>
       ))}
     </div>
   );

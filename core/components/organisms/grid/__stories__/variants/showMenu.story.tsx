@@ -25,18 +25,22 @@ export const showMenu = () => {
           }}
         >
           <Heading>{`showMenu: ${v}`}</Heading>
-          <Card
-            shadow="light"
+          <div
             style={{
               height: '350px',
             }}
           >
-            <Grid
-              showMenu={v}
-              data={data}
-              schema={schema}
-            />
-          </Card>
+            <Card
+              shadow="light"
+              className="h-100"
+            >
+              <Grid
+                showMenu={v}
+                data={data}
+                schema={schema}
+              />
+            </Card>
+          </div>
         </div>
       ))}
     </div>

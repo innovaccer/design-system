@@ -148,7 +148,7 @@ const customCode = `() => {
   };
 
   return (
-    <div style={{ width: '170px', minHeight: '280px' }}>
+    <div className='w-25' style={{ minHeight: '280px' }}>
       <Dropdown
         fetchOptions={fetchOptions}
       />

@@ -43,22 +43,26 @@ export const withLoaderSchema = () => {
   );
 
   return (
-    <Card
+    <div
       style={{
         height: '350px',
         // overflow: 'hidden'
       }}
     >
-      <Grid
-        loading={loading}
-        error={error}
-        pageSize={pageSize}
-        withCheckbox={withCheckbox}
-        loaderSchema={applyLoaderSchema ? loaderSchema : []}
-        data={applyData ? data : []}
-        schema={applySchema ? schema : []}
-      />
-    </Card>
+      <Card
+        className="h-100"
+      >
+        <Grid
+          loading={loading}
+          error={error}
+          pageSize={pageSize}
+          withCheckbox={withCheckbox}
+          loaderSchema={applyLoaderSchema ? loaderSchema : []}
+          data={applyData ? data : []}
+          schema={applySchema ? schema : []}
+        />
+      </Card>
+    </div>
   );
 };
 

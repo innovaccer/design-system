@@ -99,8 +99,8 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
    *
    * | Name | Description | Default |
    * | --- | --- | --- |
-   * | labelLimit | Number of selected options to be shown on `Dropdown trigger` | 2 |
-   * | customLabel | Callback function to change the label of trigger when options are selected | |
+   * | labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |
+   * | customLabel | Callback function to change <br/>the label of trigger when options are selected | |
    * | customTrigger | Adds custom trigger | |
    * </pre>
    */

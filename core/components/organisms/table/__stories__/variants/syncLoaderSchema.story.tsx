@@ -42,27 +42,29 @@ export const syncLoaderSchema = () => {
   );
 
   return (
-    <Card
+    <div
       style={{
         height: '350px',
         // overflow: 'hidden'
       }}
     >
-      <Table
-        loading={loading}
-        error={error}
-        pageSize={pageSize}
-        withCheckbox={withCheckbox}
-        loaderSchema={applyLoaderSchema ? loaderSchema : []}
-        data={applyData ? data : []}
-        schema={applySchema ? schema : []}
-        showMenu={true}
-        withHeader={true}
-        headerOptions={{
-          withSearch: true
-        }}
-      />
-    </Card>
+      <Card className="h-100">
+        <Table
+          loading={loading}
+          error={error}
+          pageSize={pageSize}
+          withCheckbox={withCheckbox}
+          loaderSchema={applyLoaderSchema ? loaderSchema : []}
+          data={applyData ? data : []}
+          schema={applySchema ? schema : []}
+          showMenu={true}
+          withHeader={true}
+          headerOptions={{
+            withSearch: true
+          }}
+        />
+      </Card>
+    </div>
   );
 };
 

@@ -48,13 +48,51 @@ export const loadingType = () => {
   );
 };
 
+const customCode = `() => {
+  const storyOptions = [];
+  for (let i = 1; i <= 10; i++) {
+    storyOptions.push({
+      label: \`Option \${i}\`,
+      value: \`Option \${i}\`,
+      icon: 'events',
+      subInfo: 'subInfo'
+    });
+  }
+
+  return (
+    <div className='d-flex' style={{ minHeight: '270px' }}>
+      <div className='mr-8'>
+        <Text weight="strong">Default</Text><br /><br />
+        <Dropdown options={storyOptions} optionType={'DEFAULT'} loading={true} />
+      </div>
+      <div className='mr-8'>
+        <Text weight="strong">Icon</Text><br /><br />
+        <Dropdown options={storyOptions} optionType={'WITH_ICON'} loading={true} />
+      </div>
+      <div className='mr-8'>
+        <Text weight="strong">SubInfo</Text><br /><br />
+        <Dropdown options={storyOptions} optionType={'WITH_META'} loading={true} />
+      </div>
+      <div className='mr-8'>
+        <Text weight="strong">Icon with subInfo</Text><br /><br />
+        <Dropdown options={storyOptions} optionType={'ICON_WITH_META'} loading={true} />
+      </div>
+      <div className='mr-8'>
+        <Text weight="strong">{'Checkboxes'}</Text><br /><br />
+        <Dropdown options={storyOptions} withCheckbox={true} loading={true} />
+      </div>
+    </div>
+  )
+}`;
+
 export default {
   title: 'Atoms|Dropdown/Variants',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
-        title: 'Dropdown'
+        customCode,
+        title: 'Dropdown',
       }
     }
   }

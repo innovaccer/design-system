@@ -3,30 +3,18 @@ import Card, { Shadow } from '../../Card';
 
 // CSF format story
 export const shadow = () => {
-  const styles = {
-    height: '150px',
-    width: '150px',
-    alignItems: 'center',
-    justifyContent: 'center',
-    display: 'flex',
-    marginRight: '3%',
-  };
-
-  const outerStyles = {
-    display: 'flex',
-    'flex-direction': 'row',
-  };
-
   const shadows: Shadow[] = ['none', 'light', 'medium', 'dark'];
 
   return (
-    <div style={outerStyles}>
+    <div className="d-flex">
       {
         shadows.map((CardShadow, ind) => {
           return (
-            <Card key={ind} shadow={CardShadow} style={styles}>
-              {CardShadow.charAt(0).toUpperCase() + CardShadow.slice(1)}
-            </Card>
+            <div className="w-25 mr-8" style={{ height: '150px' }} key={ind}>
+              <Card shadow={CardShadow} className="h-100 w-100">
+                {CardShadow.charAt(0).toUpperCase() + CardShadow.slice(1)}
+              </Card>
+            </div>
           );
         })
       }

@@ -103,22 +103,26 @@ export const withCheckbox = () => {
           }}
         >
           <Heading>{`withPagination: ${v}`}</Heading>
-          <Card
-            shadow="light"
+          <div
             style={{
               height: '350px',
             }}
           >
-            <Grid
-              {...state}
-              updateData={options => updateData(v, options)}
-              withCheckbox={true}
-              withPagination={v}
-              onPageChange={onPageChange}
-              onSelect={onSelect}
-              onSelectAll={onSelectAll}
-            />
-          </Card>
+            <Card
+              shadow="light"
+              className="h-100"
+            >
+              <Grid
+                {...state}
+                updateData={options => updateData(v, options)}
+                withCheckbox={true}
+                withPagination={v}
+                onPageChange={onPageChange}
+                onSelect={onSelect}
+                onSelectAll={onSelectAll}
+              />
+            </Card>
+          </div>
         </div>
       ))}
     </div>

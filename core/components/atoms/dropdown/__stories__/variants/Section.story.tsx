@@ -17,7 +17,6 @@ export const sections = () => {
   const BooleanValue = [true, false];
 
   const style = {
-    display: 'flex',
     alignItems: 'center',
     'flex-direction': 'column',
   };
@@ -32,13 +31,13 @@ export const sections = () => {
   };
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div className="d-flex">
       {
         BooleanValue.map((value, index) => {
           return (
-            <div key={index} style={style}>
+            <div key={index} className="d-flex" style={style}>
               <Text weight="strong">{value ? ' Multi Select' : 'Single Select'}</Text><br />
-              <div style={{ display: 'flex' }}>
+              <div className="d-flex">
                 <div style={innerStyle}>
                   <Text weight="strong">{'With Sections'}</Text><br />
                   <Dropdown options={options} withCheckbox={value} />

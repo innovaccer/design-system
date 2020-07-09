@@ -4,11 +4,7 @@ import Label from '@/components/atoms/label';
 // CSF format story
 export const USPhoneNumber = () => {
   return (
-    <div
-      style={{
-        maxWidth: '300px'
-      }}
-    >
+    <div className="w-25">
       <Label className="mb-3">Work Phone</Label>
       <InputMask
         mask={['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}

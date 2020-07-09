@@ -25,20 +25,24 @@ export const type = () => {
           }}
         >
           <Heading>{v}</Heading>
-          <Card
-            shadow="light"
+          <div
             style={{
               height: '350px',
             }}
           >
-            <Grid
-              type={v}
-              data={data}
-              schema={schema}
-              totalRecords={data.length}
-              onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
-            />
-          </Card>
+            <Card
+              shadow="light"
+              className="h-100"
+            >
+              <Grid
+                type={v}
+                data={data}
+                schema={schema}
+                totalRecords={data.length}
+                onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
+              />
+            </Card>
+          </div>
         </div>
       ))}
     </div>

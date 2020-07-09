@@ -57,8 +57,8 @@ const customCode = `() => {
   };
 
   return (
-    <div style={{ display: 'flex', minHeight: '250px' }}>
-      <div style={{ marginRight: '20%', width: '256px' }}>
+    <div className='d-flex' style={{ minHeight: '250px' }}>
+      <div className='mr-10'style={{ width: '256px' }}>
         <Dropdown options={storyOptions} customTrigger={customTriggerFunc} />
       </div>
     </div>

@@ -74,21 +74,26 @@ export const withPagination = () => {
           }}
         >
           <Heading>{`paginationType: ${v}`}</Heading>
-          <Card
-            shadow="light"
+          <div
             style={{
               height: '350px',
+              // overflow: 'hidden'
             }}
           >
-            <Grid
-              {...state}
-              withPagination={true}
-              paginationType={v}
-              onPageChange={onPageChange}
-              updateData={updateData}
-              loading={state.loading}
-            />
-          </Card>
+            <Card
+              shadow="light"
+              className="h-100"
+            >
+              <Grid
+                {...state}
+                withPagination={true}
+                paginationType={v}
+                onPageChange={onPageChange}
+                updateData={updateData}
+                loading={state.loading}
+              />
+            </Card>
+          </div>
         </div>
       ))}
     </div>

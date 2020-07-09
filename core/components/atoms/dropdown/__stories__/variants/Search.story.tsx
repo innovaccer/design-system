@@ -6,18 +6,18 @@ import { storyOptions } from '../Options';
 // CSF format story
 export const search = () => {
   return (
-    <div style={{ display: 'flex', minHeight: '300px' }}>
-      <div style={{ marginRight: '5%' }}>
+    <div className="d-flex" style={{ minHeight: '300px' }}>
+      <div className="mr-9">
         <Text weight="strong">{'Search'}</Text><br /><br />
-        <Dropdown withSearch={true} placeholder={'Select'} options={storyOptions} />
+        <Dropdown withSearch={true} options={storyOptions} />
       </div>
-      <div style={{ marginRight: '5%' }}>
+      <div className="mr-9">
         <Text weight="strong">{'Loading'}</Text><br /><br />
-        <Dropdown withSearch={true} placeholder={'Select'} options={storyOptions} loading={true}/>
+        <Dropdown withSearch={true} loading={true}/>
       </div>
       <div>
         <Text weight="strong">{'No Result'}</Text><br /><br />
-        <Dropdown withSearch={true} placeholder={'Select'} options={[]} noResultMessage={'No result found'}/>
+        <Dropdown withSearch={true} noResultMessage={'No result found'}/>
       </div>
     </div>
   );

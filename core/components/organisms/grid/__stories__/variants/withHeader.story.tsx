@@ -95,8 +95,7 @@ export const withHeader = () => {
   };
 
   return (
-    <Card
-      shadow="light"
+    <div
       style={{
         display: 'flex',
         flexDirection: 'column',
@@ -104,30 +103,35 @@ export const withHeader = () => {
         overflow: 'hidden'
       }}
     >
-      <Header
-        {...state}
-        updateData={updateData}
-        updateSchema={updateSchema}
-        onSelectAll={onSelectAll}
-        withSearch={true}
-        showHead={false}
-        withCheckbox={true}
+      <Card
+        shadow="light"
+        className="h-100"
       >
-        <Button icon="events" />
-      </Header>
-      <Grid
-        {...state}
-        updateData={updateData}
-        updateSchema={updateSchema}
-        withCheckbox={true}
-        onSelect={onSelect}
-        onSelectAll={onSelectAll}
-        showHead={false}
-        draggable={true}
-        withPagination={true}
-        onPageChange={onPageChange}
-      />
-    </Card>
+        <Header
+          {...state}
+          updateData={updateData}
+          updateSchema={updateSchema}
+          onSelectAll={onSelectAll}
+          withSearch={true}
+          showHead={false}
+          withCheckbox={true}
+        >
+          <Button icon="events" />
+        </Header>
+        <Grid
+          {...state}
+          updateData={updateData}
+          updateSchema={updateSchema}
+          withCheckbox={true}
+          onSelect={onSelect}
+          onSelectAll={onSelectAll}
+          showHead={false}
+          draggable={true}
+          withPagination={true}
+          onPageChange={onPageChange}
+        />
+      </Card>
+    </div>
   );
 };
 

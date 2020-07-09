@@ -6,19 +6,23 @@ import schema from '../_common_/statusSchema';
 // CSF format story
 export const statusMapper = () => {
   return (
-    <Card
-      shadow="light"
+    <div
       style={{
         height: '350px',
       }}
     >
-      <Grid
-        data={data}
-        schema={schema}
-        totalRecords={data.length}
-        statusMapper={(val: string) => val === 'female' ? 'alert' : 'success'}
-      />
-    </Card>
+      <Card
+        shadow="light"
+        className="h-100"
+      >
+        <Grid
+          data={data}
+          schema={schema}
+          totalRecords={data.length}
+          statusMapper={(val: string) => val === 'female' ? 'alert' : 'success'}
+        />
+      </Card>
+    </div >
   );
 };
 

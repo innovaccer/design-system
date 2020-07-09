@@ -8,9 +8,9 @@ export const state = () => {
   const disabled = [true, false];
 
   return (
-    <div style={{ display: 'flex', minHeight: '270px' }}>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginRight: '5%' }}>
-        <div style={{ display: 'flex' }}>
+    <div className="d-flex" style={{ minHeight: '270px' }}>
+      <div className="d-flex mr-8" style={{ flexDirection: 'column', alignItems: 'center' }}>
+        <div className="d-flex">
           {
             disabled.map((buttonState, ind) => {
               return (
@@ -25,12 +25,12 @@ export const state = () => {
         <br />
         <Text weight="strong">{'Icon'}</Text>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <div style={{ display: 'flex' }}>
+      <div className="d-flex" style={{ flexDirection: 'column', alignItems: 'center' }}>
+        <div className="d-flex">
           {
             disabled.map((buttonState, ind) => {
               return (
-                <div style={{ marginRight: '5%' }} key={ind}>
+                <div className="mr-8" key={ind}>
                   <Text weight="strong">{buttonState ? 'Disabled' : 'Enabled'}</Text> <br /><br />
                   <Dropdown
                     inlineLabel={'label'}
@@ -50,13 +50,48 @@ export const state = () => {
   );
 };
 
+const customCode =  `() => {
+  const storyOptions = [];
+  for (let i = 1; i <= 10; i++) {
+    storyOptions.push({
+      label: \`Option \${i}\`,
+      value: \`Option \${i}\`,
+      icon: 'events',
+      subInfo: 'subInfo'
+    });
+  }
+
+  const disabled = [true, false];
+
+  return (
+    <div className='d-flex' style={{ minHeight: '270px' }}>
+      <div className='mr-8'>
+        <Text weight="strong">Icon Disabled</Text> <br /><br />
+        <Dropdown icon={'events'} disabled={true} options={storyOptions} />
+      </div>
+      <div className='mr-8'>
+        <Text weight="strong">Icon Enabled</Text> <br /><br />
+        <Dropdown icon={'events'} disabled={false} options={storyOptions} />
+      </div>
+      <div className='mr-8'>
+        <Text weight="strong">Label Disabled</Text> <br /><br />
+        <Dropdown inlineLabel={'label'} disabled={true} options={storyOptions} />
+      </div>
+      <div className='mr-8'>
+        <Text weight="strong">Label Enabled</Text> <br /><br />
+        <Dropdown inlineLabel={'label'} disabled={false} options={storyOptions} />
+      </div>
+    </div>
+  );
+}`;
+
 export default {
   title: 'Atoms|Dropdown/Variants/Button',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
-        title: 'Dropdown'
+        customCode
       }
     }
   }
