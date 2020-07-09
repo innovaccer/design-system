@@ -309,8 +309,8 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     };
 
     const trigger = (
-      <Row group={'2'} groupXS={'1'}>
-        <Column className="DateRangePicker-input DateRangePicker-input--startDate">
+      <Row>
+        <Column size={'6'} sizeXS={'12'} className="DateRangePicker-input DateRangePicker-input--startDate">
           <InputMask
             {...startInputOptions}
             mask={mask}
@@ -323,7 +323,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
             caption={startInputOptions.required && startError ? startInputOptions.caption || 'Invalid value' : ''}
           />
         </Column>
-        <Column className="DateRangePicker-input DateRangePicker-input--endDate">
+        <Column size={'6'} sizeXS={'12'} className="DateRangePicker-input DateRangePicker-input--endDate">
           <InputMask
             {...endInputOptions}
             mask={mask}

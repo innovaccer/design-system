@@ -5,11 +5,29 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 type Columns = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'auto';
 
 export interface ColumnProps extends BaseProps {
+  /**
+   * Default size of Column
+   */
   size?: Columns;
+  /**
+   * Size of Column if the viewport is between 0 to 575 pixels wide.
+   */
   sizeXS?: Columns;
+  /**
+   * Size of Column if the viewport is between 576 and 767 pixels wide.
+   */
   sizeS?: Columns;
+  /**
+   * Size of Column if the viewport is between 768 and 991 pixels wide.
+   */
   sizeM?: Columns;
+  /**
+   * Size of Column if the viewport is between 992 and 1199 pixels wide.
+   */
   sizeL?: Columns;
+  /**
+   * Size of Column if the viewport is 1200 pixels wide or wider.
+   */
   sizeXL?: Columns;
   children?: React.ReactNode;
   className?: string;

@@ -1,47 +1,12 @@
 .Row {
   display: flex;
+  flex-grow: 1;
   flex-wrap: wrap;
 }
 
 .Col {
   position: relative;
   width: 100%;
-}
-
-.RowGroup--1 > .Col {
-  flex: 0 0;
-	flex-basis: calc((100% / 1));
-  max-width: calc((100% / 1));
-}
-
-.RowGroup--2 > .Col {
-  flex: 0 0;
-	flex-basis: calc((100% / 2));
-  max-width: calc((100% / 2));
-}
-
-.RowGroup--3 > .Col {
-  flex: 0 0;
-	flex-basis: calc((100% / 3));
-  max-width: calc((100% / 3));
-}
-
-.RowGroup--4 > .Col {
-  flex: 0 0;
-	flex-basis: calc((100% / 4));
-  max-width: calc((100% / 4));
-}
-
-.RowGroup--5 > .Col {
-  flex: 0 0;
-	flex-basis: calc((100% / 5));
-  max-width: calc((100% / 5));
-}
-
-.RowGroup--6 > .Col {
-  flex: 0 0;
-	flex-basis: calc((100% / 6));
-  max-width: calc((100% / 6));
 }
 
 .Col--auto {
@@ -123,42 +88,6 @@
 
 /* if the viewport is between 0 to 575 pixels wide. */
 @media (max-width: 575px) {
-  .RowGroup--xs-1 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 1));
-    max-width: calc((100% / 1));
-  }
-
-  .RowGroup--xs-2 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 2));
-    max-width: calc((100% / 2));
-  }
-
-  .RowGroup--xs-3 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 3));
-    max-width: calc((100% / 3));
-  }
-
-  .RowGroup--xs-4 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 4));
-    max-width: calc((100% / 4));
-  }
-
-  .RowGroup--xs-5 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 5));
-    max-width: calc((100% / 5));
-  }
-
-  .RowGroup--xs-6 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 6));
-    max-width: calc((100% / 6));
-  }
-
   .Col--xs {
     flex-basis: 0;
     flex-grow: 1;
@@ -245,43 +174,7 @@
 
 /* if the viewport is between 576 and 767 pixels wide. */
 @media (min-width: 576px) and (max-width: 767px) {
-  .RowGroup--s-1 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 1));
-    max-width: calc((100% / 1));
-  }
-
-  .RowGroup--s-2 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 2));
-    max-width: calc((100% / 2));
-  }
-
-  .RowGroup--s-3 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 3));
-    max-width: calc((100% / 3));
-  }
-
-  .RowGroup--s-4 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 4));
-    max-width: calc((100% / 4));
-  }
-
-  .RowGroup--s-5 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 5));
-    max-width: calc((100% / 5));
-  }
-
-  .RowGroup--s-6 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 6));
-    max-width: calc((100% / 6));
-  }
-
-  .Col--s-auto {
+ .Col--s-auto {
     flex: 0 0 auto;
     width: auto;
     max-width: 100%;
@@ -361,42 +254,6 @@
 
 /* if the viewport is between 768 and 991 pixels wide. */
 @media (min-width: 768px) and (max-width: 991px) {
-  .RowGroup--m-1 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 1));
-    max-width: calc((100% / 1));
-  }
-
-  .RowGroup--m-2 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 2));
-    max-width: calc((100% / 2));
-  }
-
-  .RowGroup--m-3 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 3));
-    max-width: calc((100% / 3));
-  }
-
-  .RowGroup--m-4 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 4));
-    max-width: calc((100% / 4));
-  }
-
-  .RowGroup--m-5 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 5));
-    max-width: calc((100% / 5));
-  }
-
-  .RowGroup--m-6 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 6));
-    max-width: calc((100% / 6));
-  }
-
   .Col--m-auto {
     flex: 0 0 auto;
     width: auto;
@@ -477,42 +334,6 @@
 
 /* if the viewport is between 992 and 1199 pixels wide. */
 @media (min-width: 992px) and (max-width: 1199px) {
-  .RowGroup--l-1 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 1));
-    max-width: calc((100% / 1));
-  }
-
-  .RowGroup--l-2 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 2));
-    max-width: calc((100% / 2));
-  }
-
-  .RowGroup--l-3 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 3));
-    max-width: calc((100% / 3));
-  }
-
-  .RowGroup--l-4 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 4));
-    max-width: calc((100% / 4));
-  }
-
-  .RowGroup--l-5 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 5));
-    max-width: calc((100% / 5));
-  }
-
-  .RowGroup--l-6 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 6));
-    max-width: calc((100% / 6));
-  }
-
   .Col--l-auto {
     flex: 0 0 auto;
     width: auto;
@@ -593,42 +414,6 @@
 
 /* if the viewport is 1200 pixels wide or wider. */
 @media (min-width: 1200px) {
-  .RowGroup--xl-1 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 1));
-    max-width: calc((100% / 1));
-  }
-
-  .RowGroup--xl-2 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 2));
-    max-width: calc((100% / 2));
-  }
-
-  .RowGroup--xl-3 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 3));
-    max-width: calc((100% / 3));
-  }
-
-  .RowGroup--xl-4 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 4));
-    max-width: calc((100% / 4));
-  }
-
-  .RowGroup--xl-5 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 5));
-    max-width: calc((100% / 5));
-  }
-
-  .RowGroup--xl-6 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 6));
-    max-width: calc((100% / 6));
-  }
-
   .Col--xl-auto {
     flex: 0 0 auto;
     width: auto;

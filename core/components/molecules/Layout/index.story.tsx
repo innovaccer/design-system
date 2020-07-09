@@ -4,53 +4,6 @@ import Row from '@/components/atoms/row';
 import Column from '@/components/atoms/column';
 import { optionsKnob } from '@storybook/addon-knobs';
 
-// CSF format story
-export const RowGroup = () => {
-  const group = optionsKnob('group', { 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6' }, undefined, {
-    display: 'inline-radio'
-  });
-  const groupXS = optionsKnob('groupXS', { 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6' }, undefined, {
-    display: 'inline-radio'
-  });
-  const groupS = optionsKnob('groupS', { 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6' }, undefined, {
-    display: 'inline-radio'
-  });
-  const groupM = optionsKnob('groupM', { 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6' }, undefined, {
-    display: 'inline-radio'
-  });
-  const groupL = optionsKnob('groupL', { 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6' }, undefined, {
-    display: 'inline-radio'
-  });
-  const groupXL = optionsKnob('groupXL', { 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6' }, undefined, {
-    display: 'inline-radio'
-  });
-
-  const rowOptions = {
-    group,
-    groupXL,
-    groupL,
-    groupM,
-    groupS,
-    groupXS
-  };
-  return (
-    <Row {...rowOptions}>
-      <Column>1</Column>
-      <Column>2</Column>
-      <Column>3</Column>
-      <Column>4</Column>
-      <Column>5</Column>
-      <Column>6</Column>
-      <Column>7</Column>
-      <Column>8</Column>
-      <Column>9</Column>
-      <Column>10</Column>
-      <Column>11</Column>
-      <Column>12</Column>
-    </Row>
-  );
-};
-
 export const ColumnSize = () => {
   const size = optionsKnob(
     'size',

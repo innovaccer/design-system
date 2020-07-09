@@ -1,21 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Row component should match the snapshot with RowColumns 1`] = `
-<div
-  className="Row RowGroup--2"
->
-  Row
-</div>
-`;
-
-exports[`Row component should match the snapshot with rowColumnsSM 1`] = `
-<div
-  className="Row RowGroup--s-2"
->
-  Row
-</div>
-`;
-
 exports[`Row component should match the snapshot without RowColumns 1`] = `
 <div
   className="Row"
