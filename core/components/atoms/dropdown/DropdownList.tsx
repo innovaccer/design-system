@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { scrollIntoView, _isEqual } from './utility';
-import Popover, { Position } from '@/components/molecules/popover';
+import Popover, { Position, CustomStyle } from '@/components/molecules/popover';
 import DropdownButton, { TriggerProps } from './DropdownButton';
 import Checkbox from '@/components/atoms/checkbox';
 import Option, { OptionRendererProps, OptionSchema } from './option';
@@ -168,7 +168,7 @@ const DropdownList = (props: OptionsProps) => {
   const dropdownCancelButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownApplyButtonRef = React.createRef<HTMLButtonElement>();
 
-  const [popoverStyle, setPopoverStyle] = React.useState<React.CSSProperties>();
+  const [popoverStyle, setPopoverStyle] = React.useState<CustomStyle>();
   const [cursor, setCursor] = React.useState(0);
 
   const width = props.width ? props.width : menu || customTrigger ? 'fit-content' : '100%';
@@ -552,7 +552,7 @@ const DropdownList = (props: OptionsProps) => {
         onToggle={onToggleDropdown}
         trigger={trigger}
         open={dropdownOpen}
-        style={popoverStyle}
+        customStyle={popoverStyle}
         position={alignmentMapping[align]}
         appendToBody={true}
       >

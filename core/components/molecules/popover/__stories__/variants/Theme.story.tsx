@@ -20,26 +20,29 @@ export const theme = () => {
     closeOnBackdropClick,
     hoverable,
     onToggle,
-    style: {
+    customStyle: {
       height: '100px',
       width: '200px',
-      padding: '16px'
     },
     open: true
   };
 
   return (
-    <div style={{ display: 'flex' }}>
-      <div style={{ marginRight: '40%', marginBottom: '120px' }}>
+    <div className="d-flex">
+      <div className="mb-11" style={{ marginRight: '40%' }}>
         <Popover trigger={triggerDark} dark={true} {...options}>
-          <p>Popup</p>
-          <Button appearance="primary" onClick={action('button clicked inside popover')}>Click</Button>
+          <div className="mx-6 my-6">
+            <p>Popup</p>
+            <Button appearance="primary" onClick={action('button clicked inside popover')}>Click</Button>
+          </div>
         </Popover>
       </div>
       <div>
         <Popover trigger={trigger} dark={false} {...options}>
-          <p>Popup</p>
-          <Button appearance="primary" onClick={action('button clicked inside popover')}>Click</Button>
+          <div className="mx-6 my-6">
+            <p>Popup</p>
+            <Button appearance="primary" onClick={action('button clicked inside popover')}>Click</Button>
+          </div>
         </Popover>
       </div>
     </div>

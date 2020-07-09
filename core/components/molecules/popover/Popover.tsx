@@ -6,6 +6,15 @@ import { BaseProps } from '@/utils/types';
 export type Position = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end';
 type ActionType = 'click' | 'hover';
 
+export interface CustomStyle {
+  height?: number | string;
+  minHeight?: number | string;
+  maxHeight?: number | string;
+  width?: number | string;
+  minWidth?: number | string;
+  maxWidth?: number | string;
+}
+
 export interface PopoverProps extends BaseProps {
   /**
    *  Position to place the `trigger`
@@ -48,10 +57,20 @@ export interface PopoverProps extends BaseProps {
    */
   open?: boolean;
   /**
-   * Adds CSS to `Popover` element
+   * Adds custom CSS to `Popover` element
+   * <pre className="DocPage-codeBlock>
+   * CustomStyle {
+   *  height?: number | string;
+   *  width?: number | string;
+   *  minWidth?: number | string;
+   *  minHeight?: number | string;
+   *  maxHeight?: number | string;
+   *  maxWidth?: number | string;
+   * }
+   * </pre>
    * @default {}
    */
-  style?: React.CSSProperties;
+  customStyle?: CustomStyle;
   /**
    * Callback after `Popover` is toggled
    */
@@ -68,7 +87,7 @@ export const Popover = (props: PopoverProps) => {
     closeOnBackdropClick = true,
     appendToBody = true,
     on = 'click',
-    style = {},
+    customStyle = {},
     dark,
     hoverable,
     children,
@@ -105,8 +124,8 @@ export const Popover = (props: PopoverProps) => {
     closeOnBackdropClick,
     on,
     hoverable,
-    style,
     open,
+    style: customStyle,
     onToggle: onToggle || onToggleFunction,
     placement: position
   };

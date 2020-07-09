@@ -161,9 +161,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
   const trigger = <div className={rightIconClass}><Icon name={'info'} size={sizeMapping[size]} /></div>;
 
   const popoverStyle = {
-    padding: 'var(--spacing) var(--spacing-2)',
     maxWidth: 'var(--spacing-9)',
-    overflow: 'hidden'
   };
 
   return (
@@ -203,13 +201,15 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
         ? (
           info && (
             <Popover
-              style={popoverStyle}
+              customStyle={popoverStyle}
               position="top"
               on={'hover'}
               trigger={trigger}
               dark={true}
             >
-              {info}
+              <div className="Input-popperWrapper">
+                {info}
+              </div>
             </Popover>
           )
         ) : (
