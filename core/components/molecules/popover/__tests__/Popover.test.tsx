@@ -19,7 +19,7 @@ describe('Popover component', () => {
     trigger: valueHelper(ReactElementValue, { required: true }),
     dark: valueHelper(BooleanValue, { required: true, iterate: true }),
     closeOnBackdropClick: valueHelper(BooleanValue, { required: true, iterate: true }),
-    style: valueHelper(Style, { required: true }),
+    customStyle: valueHelper(Style, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -46,7 +46,7 @@ describe('Popover component', () => {
     verticalOffset: valueHelper(NumberValue, { required: true }),
     trigger: valueHelper(ReactElementValue, { required: true }),
     closeOnBackdropClick: valueHelper(BooleanValue, { required: true, iterate: true }),
-    style: valueHelper(Style, { required: true }),
+    customStyle: valueHelper(Style, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {

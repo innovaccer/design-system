@@ -28,7 +28,6 @@ exports[`Input component
       appearance="default"
       name="events"
       size={16}
-      type="filled"
     />
   </div>
   <input
@@ -69,7 +68,6 @@ exports[`Input component
       appearance="default"
       name="events"
       size={16}
-      type="filled"
     />
   </div>
   <input
@@ -264,7 +262,6 @@ exports[`Input component
       appearance="default"
       name="events"
       size={16}
-      type="filled"
     />
   </div>
   <input
@@ -306,7 +303,6 @@ exports[`Input component
       appearance="default"
       name="events"
       size={16}
-      type="filled"
     />
   </div>
   <input
@@ -347,7 +343,6 @@ exports[`Input component
       appearance="default"
       name="events"
       size={16}
-      type="filled"
     />
   </div>
   <input

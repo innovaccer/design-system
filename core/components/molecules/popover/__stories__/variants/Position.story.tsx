@@ -28,10 +28,9 @@ export const position = () => {
     closeOnBackdropClick,
     hoverable,
     onToggle,
-    style: {
-      height: '50px',
+    customStyle: {
+      height: '100px',
       width: '150px',
-      padding: '16px'
     },
     open: true
   };
@@ -46,16 +45,21 @@ export const position = () => {
       {
         positions.map((pos, ind) => {
           return (
-            <div key={ind} style={{ marginTop: '80px', marginRight: '20%', marginBottom: ind >= 3 ? '55px' : '0px' }} >
+            <div
+              key={ind}
+              className={ind < 3 ? 'mt-11 mr-13' : 'mt-5 mb-11 mr-13'}
+            >
               <Popover trigger={trigger[ind]} position={pos} {...options}>
-                <p>Popup</p>
-                <Button appearance="primary" onClick={action('button clicked inside popover')}>Click</Button>
+                <div className="mx-6 my-6">
+                  <p>Popup</p>
+                  <Button appearance="primary" onClick={action('button clicked inside popover')}>Click</Button>
+                </div>
               </Popover>
             </div>
           );
         })
       }
-    </div>
+    </div >
 
   );
 };

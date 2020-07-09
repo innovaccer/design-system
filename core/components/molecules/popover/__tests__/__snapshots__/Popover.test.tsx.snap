@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Popover component 
-  position: "bottom", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  position: "bottom", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <PopperWrapper
   appendToBody={true}
@@ -42,7 +42,7 @@ exports[`Popover component
 `;
 
 exports[`Popover component 
-  position: "bottom", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  position: "bottom", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <PopperWrapper
   appendToBody={true}
@@ -83,7 +83,7 @@ exports[`Popover component
 `;
 
 exports[`Popover component 
-  position: "bottom-end", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  position: "bottom-end", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <PopperWrapper
   appendToBody={true}
@@ -124,7 +124,7 @@ exports[`Popover component
 `;
 
 exports[`Popover component 
-  position: "bottom-end", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  position: "bottom-end", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <PopperWrapper
   appendToBody={true}
@@ -165,7 +165,7 @@ exports[`Popover component
 `;
 
 exports[`Popover component 
-  position: "bottom-start", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  position: "bottom-start", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <PopperWrapper
   appendToBody={true}
@@ -206,7 +206,7 @@ exports[`Popover component
 `;
 
 exports[`Popover component 
-  position: "bottom-start", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  position: "bottom-start", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <PopperWrapper
   appendToBody={true}
@@ -247,7 +247,7 @@ exports[`Popover component
 `;
 
 exports[`Popover component 
-  position: "top", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  position: "top", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <PopperWrapper
   appendToBody={true}
@@ -288,7 +288,7 @@ exports[`Popover component
 `;
 
 exports[`Popover component 
-  position: "top", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  position: "top", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <PopperWrapper
   appendToBody={true}
@@ -329,7 +329,7 @@ exports[`Popover component
 `;
 
 exports[`Popover component 
-  position: "top-end", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  position: "top-end", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <PopperWrapper
   appendToBody={true}
@@ -370,7 +370,7 @@ exports[`Popover component
 `;
 
 exports[`Popover component 
-  position: "top-end", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  position: "top-end", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <PopperWrapper
   appendToBody={true}
@@ -411,7 +411,7 @@ exports[`Popover component
 `;
 
 exports[`Popover component 
-  position: "top-start", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  position: "top-start", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <PopperWrapper
   appendToBody={true}
@@ -452,7 +452,7 @@ exports[`Popover component
 `;
 
 exports[`Popover component 
-  position: "top-start", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  position: "top-start", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <PopperWrapper
   appendToBody={true}
@@ -493,7 +493,7 @@ exports[`Popover component
 `;
 
 exports[`Popover component 
-  verticalOffset: 10, trigger: "[ReactNode]", dark: false, closeOnBackdropClick: false, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  verticalOffset: 10, trigger: "[ReactNode]", dark: false, closeOnBackdropClick: false, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <PopperWrapper
   appendToBody={true}
@@ -534,7 +534,7 @@ exports[`Popover component
 `;
 
 exports[`Popover component 
-  verticalOffset: 10, trigger: "[ReactNode]", dark: false, closeOnBackdropClick: true, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  verticalOffset: 10, trigger: "[ReactNode]", dark: false, closeOnBackdropClick: true, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <PopperWrapper
   appendToBody={true}
@@ -575,7 +575,7 @@ exports[`Popover component
 `;
 
 exports[`Popover component 
-  verticalOffset: 10, trigger: "[ReactNode]", dark: true, closeOnBackdropClick: false, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  verticalOffset: 10, trigger: "[ReactNode]", dark: true, closeOnBackdropClick: false, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <PopperWrapper
   appendToBody={true}
@@ -616,7 +616,7 @@ exports[`Popover component
 `;
 
 exports[`Popover component 
-  verticalOffset: 10, trigger: "[ReactNode]", dark: true, closeOnBackdropClick: true, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  verticalOffset: 10, trigger: "[ReactNode]", dark: true, closeOnBackdropClick: true, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
  1`] = `
 <PopperWrapper
   appendToBody={true}

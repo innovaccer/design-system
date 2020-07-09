@@ -43,17 +43,18 @@ export const all = () => {
     hoverable,
     open,
     onToggle,
-    style: {
+    customStyle: {
       height: '100px',
       width: '200px',
-      padding: '16px'
     }
   };
 
   return (
     <Popover {...options}>
-      <p>Popup</p>
-      <Button appearance="primary" onClick={action('button clicked inside popover')}>Click</Button>
+      <div className="mx-6 my-6">
+        <p>Popup</p>
+        <Button appearance="primary" onClick={action('button clicked inside popover')}>Click</Button>
+      </div>
     </Popover>
   );
 };
@@ -61,19 +62,24 @@ export const all = () => {
 const customCode = `() => {
   const [open, setOpen] = React.useState(false);
   return(
-    <Popover closeOnBackdropClick on="click" open={open} onToggle={function (open) { setOpen(open); }} position="bottom-start" style={{
-        height: '100px',
-        padding: '16px',
-        width: '200px'
-      }} trigger={<Button appearance="basic">Open Popup</Button>}
+    <div className='mb-11'>
+      <Popover closeOnBackdropClick on="click" open={open} onToggle={function (open) { setOpen(open); }} position="bottom-start"
+        customStyle={{
+          height: '100px',
+          width: '200px'
+        }}
+        trigger={<Button appearance="basic">Open Popup</Button>}
       >
-      <p>
-        Popup
-      </p>
-      <Button appearance="primary">
-        Click
-      </Button>
-    </Popover>
+        <div className='mx-6 my-6'>
+          <p>
+            Popup
+          </p>
+          <Button appearance="primary">
+            Click
+          </Button>
+        </div>
+      </Popover>
+    </div>
   );
 }`;
 
