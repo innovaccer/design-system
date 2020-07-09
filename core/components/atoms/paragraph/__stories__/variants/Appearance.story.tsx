@@ -5,20 +5,11 @@ import Text from '@/components/atoms/text';
 // CSF format story
 export const appearance = () => {
   const appearances: Appearance[] = ['default', 'white', 'destructive', 'subtle', 'disabled'];
-
-  const style = {
-    display: 'flex',
-  };
-
-  const outerStyle = {
-    marginRight: '2%',
-  };
-
   return (
-    <div style={style}>
+    <div className="d-flex">
       {appearances.map((appear, ind) => {
         return (
-          <div key={ind} style={outerStyle}>
+          <div key={ind} className="mr-6">
             <div style={{ background: appear === 'white' ? 'black' : 'transparent' }}>
               <Paragraph appearance={appear}>
                 Paragraph

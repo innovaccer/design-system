@@ -4,23 +4,12 @@ import Toast, { Appearance } from '../../Toast';
 // CSF format story
 export const appearance = () => {
   const appearances: Appearance[] = ['default', 'info', 'success', 'alert', 'warning'];
-
-  const style = {
-    display: 'flex',
-    'flex-wrap': 'wrap',
-  };
-
-  const innerStyle = {
-    marginRight: '3%',
-    marginBottom: '20px',
-  };
-
   return (
-    <div style={style}>
+    <div className="d-flex">
       {
         appearances.map((appear, ind) => {
           return (
-            <div key={ind} style={innerStyle}>
+            <div key={ind} className="mr-5 mb-8">
               <Toast
                 appearance={appear}
                 title={appear.charAt(0).toUpperCase() + appear.slice(1)}

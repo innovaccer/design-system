@@ -3,23 +3,10 @@ import Input from '../Input';
 import { action } from '@storybook/addon-actions';
 
 export const searchInput = () => {
-
   const icon = 'search';
-
-  const style = {
-    display: 'flex',
-    'flex-wrap': 'wrap',
-  };
-
-  const innerStyle = {
-    maxWidth: '300px',
-    marginRight: '5%',
-    marginBottom: '20px',
-  };
-
   return (
-    <div style={style}>
-      <div style={innerStyle}>
+    <div className="Row">
+      <div className="mr-9 mb-8 w-25">
         <Input
           name="input"
           value="Value"

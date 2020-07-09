@@ -21,16 +21,6 @@ export const toastWithAction = () => {
     ''
   );
 
-  const style = {
-    display: 'flex',
-    'flex-wrap': 'wrap',
-  };
-
-  const innerStyle = {
-    marginRight: '3%',
-    marginBottom: '20px',
-  };
-
   const props: Record<string, any> = {
     actions: [],
   };
@@ -49,11 +39,11 @@ export const toastWithAction = () => {
   }
 
   return (
-    <div style={style}>
+    <div className="d-flex">
       {
         appearances.map((appearance, ind) => {
           return (
-            <div key={ind} style={innerStyle}>
+            <div key={ind} className="mr-5 mb-8">
               <Toast
                 appearance={appearance}
                 title={appearance.charAt(0).toUpperCase() + appearance.slice(1)}

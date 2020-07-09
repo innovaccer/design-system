@@ -13,14 +13,12 @@ export const controlledCheckbox = () => {
   };
 
   return (
-    <div>
       <Checkbox
         checked={checked}
         label={'Innovaccer'}
         onChange={handleParentChange}
         value={'Innovaccer'}
       />
-    </div>
   );
 };
 
@@ -35,14 +33,12 @@ const customCode = `() => {
   };
 
   return (
-    <div>
       <Checkbox
         checked={checked}
         label={'Innovaccer'}
         onChange={handleParentChange}
         value={'Innovaccer'}
       />
-    </div>
   );
 }`;
 

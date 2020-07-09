@@ -5,23 +5,10 @@ import Text from '@/components/atoms/text';
 
 // CSF format story
 export const iconLeft = () => {
-
   const icon = 'search';
-
-  const style = {
-    display: 'flex',
-    'flex-wrap': 'wrap',
-  };
-
-  const innerStyle = {
-    maxWidth: '300px',
-    marginRight: '5%',
-    marginBottom: '20px',
-  };
-
   return (
-    <div style={style}>
-      <div style={innerStyle}>
+    <div className="Row">
+      <div  className="mr-9 mb-8 w-25">
         <Input
           name="input"
           value="Value"
@@ -32,7 +19,7 @@ export const iconLeft = () => {
         <br />
         <Text weight="strong">Default</Text>
       </div>
-      <div style={innerStyle}>
+      <div  className="mr-9 mb-8 w-25">
         <Input
           name="input"
           value=""
@@ -45,7 +32,7 @@ export const iconLeft = () => {
         <br />
         <Text weight="strong">Placeholder</Text>
       </div>
-      <div style={innerStyle}>
+      <div  className="mr-9 mb-8 w-25">
         <Input
           name="input"
           value="Value"
@@ -57,7 +44,7 @@ export const iconLeft = () => {
         <br />
         <Text weight="strong">Error</Text>
       </div>
-      <div style={innerStyle}>
+      <div  className="mr-9 mb-8 w-25">
         <Input
           name="input"
           value="Value"
@@ -68,7 +55,7 @@ export const iconLeft = () => {
         <br />
         <Text weight="strong">Disabled</Text>
       </div>
-      <div style={innerStyle}>
+      <div  className="mr-9 mb-8 w-25">
         <Input
           name="input"
           value="Value"

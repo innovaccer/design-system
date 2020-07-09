@@ -11,26 +11,13 @@ export const size = () => {
     'label',
     'Checkbox'
   );
-
-  const styles = {
-    display: 'flex',
-  };
-
-  const outerStyles = {
-    marginRight: '2%',
-  };
-
-  const innerStyles = {
-    height: '20px',
-  };
-
   return (
-    <div style={styles}>
+    <div className="d-flex">
       {
         sizes.map((CheckboxSize, ind) => {
           return (
-            <div key={ind} style={outerStyles}>
-              <div style={innerStyles}>
+            <div key={ind} className="mr-5">
+              <div className="h-50">
                 <Checkbox
                   checked={true}
                   disabled={false}

@@ -20,12 +20,12 @@ export const size = () => {
   );
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div className="d-flex">
       {
         sizes.map((InputSize, ind) => {
           return (
-            <div key={ind} style={{ maxWidth: '300px', marginRight: '5%' }}>
-              <div style={{ height: '40px' }}>
+            <div key={ind} className="mr-9 w-25">
+              <div className="h-50">
                 <Input
                   name="input"
                   value={value}

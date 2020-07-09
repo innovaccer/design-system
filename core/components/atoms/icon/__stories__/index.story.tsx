@@ -33,8 +33,20 @@ export const all = () => {
     </div >
   );
 };
+const customCode = `() => {
+  return(
+    <Icon size={50} name='events'/>
+    );
+}`;
 
 export default {
   title: 'Atoms|Icon',
-  component: Icon
+  component: Icon,
+  parameters: {
+    docs: {
+      docPage: {
+        customCode
+      }
+    }
+  }
 };

@@ -1,38 +1,18 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
-import Badge, { Appearance } from '../Badge';
+import Badge from '../Badge';
 
 export const subtleAlert = () => {
   const ButtonSubtle = true;
   const children = text('children', 'Badge');
-
-  const appearances: Appearance[] = ['alert'];
-
-  const style = {
-    display: 'flex',
-  };
-
-  const innerStyle = {
-    marginRight: '5%',
-  };
-
   return (
-    <div style={style}>
-      {
-        appearances.map((appear, ind) => {
-          return (
-            <div key={ind} style={innerStyle}>
-              <Badge
-                appearance={appear}
-                subtle={ButtonSubtle}
-              >
-                {children}
-              </Badge>
-            </div>
-          );
-        })
-      }
-    </div>
+    <Badge
+      appearance="alert"
+      subtle={ButtonSubtle}
+    >
+      {children}
+    </Badge>
+
   );
 };
 

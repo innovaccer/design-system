@@ -6,22 +6,12 @@ import Text from '@/components/atoms/text';
 export const appearance = () => {
 
   const appearances: Appearance[] = ['default', 'subtle', 'disabled', 'white'];
-
-  const style = {
-    display: 'flex',
-    'flex-direction': 'row',
-  };
-
-  const outerStyle = {
-    marginRight: '4%',
-  };
-
   return (
-    <div style={style}>
+    <div className="Row">
       {
         appearances.map((appear, ind) => {
           return (
-            <div key={ind} style={outerStyle}>
+            <div key={ind} className="mr-7">
               <div style={{ background: appear === 'white' ? 'black' : 'transparent' }}>
                 <Heading appearance={appear}>
                   Heading

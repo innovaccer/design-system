@@ -17,24 +17,12 @@ export const expanded = () => {
     'Button'
   );
 
-  const style = {
-    display: 'flex',
-    'flex-direction': 'row',
-    'flex-wrap': 'wrap',
-  };
-
-  const innerStyle = {
-    width: '45%',
-    marginRight: '5%',
-    marginBottom: '10px',
-  };
-
   return (
-    <div style={style}>
+    <div className="Row">
       {
         appearances.map((appear, ind) => {
           return (
-            <div key={ind} style={innerStyle}>
+            <div key={ind} className="mr-9 mb-4 w-50">
               <Button
                 onClick={action('button-clicked')}
                 onMouseEnter={action('mouse-enter')}

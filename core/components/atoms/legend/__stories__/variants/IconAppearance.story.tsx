@@ -21,7 +21,7 @@ export const iconAppearance = () => {
       {
         appearances.map((appearance, i) => {
           return (
-            <div key={i} style={{ marginBottom: '10px' }}>
+            <div key={i} className="mb-4">
               <Legend iconAppearance={appearance}>
                 {appearance.charAt(0).toUpperCase() + appearance.slice(1)}
               </Legend>

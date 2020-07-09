@@ -11,11 +11,11 @@ export const size = () => {
   };
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div className="d-flex">
       {
         sizes.map((PlaceholderSize, ind) => {
           return (
-            <div key={ind} style={{ marginRight: '3%' }}>
+            <div key={ind} className="mr-7">
               <div style={{ height: '50px' }}>
                 <PlaceholderImage size={PlaceholderSize} {...options} />
               </div>

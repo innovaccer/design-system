@@ -3,13 +3,9 @@ import Legend from '../../index';
 
 // CSF format story
 export const labelWeight = () => {
-  const style = {
-    display: 'flex',
-  };
-
   return (
-    <div style={style}>
-      <div style={{ marginRight: '2%' }}>
+    <div className="d-flex">
+      <div className="mr-5">
         <Legend labelWeight={'strong'}>Strong</Legend>
       </div>
       <div>

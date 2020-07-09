@@ -4,15 +4,11 @@ import Radio from '../../index';
 // CSF format story
 export const state = () => {
 
-  const style = {
-    display: 'flex',
-  };
-
   const name = 'state';
 
   return (
-    <div style={style}>
-      <div style={{ marginRight: '5%' }}>
+    <div className="d-flex">
+      <div className="mr-9">
         <Radio
           label={'Disabled'}
           name={name}

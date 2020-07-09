@@ -6,17 +6,12 @@ import Text from '@/components/atoms/text';
 export const appearance = () => {
 
   const appearances: Appearance[] = ['primary', 'secondary', 'white'];
-
-  const style = {
-    display: 'flex',
-  };
-
   return (
-    <div style={style}>
+    <div className="d-flex">
       {
         appearances.map((appear, ind) => {
           return (
-            <div key={ind} style={{ marginRight: '4%' }}>
+            <div key={ind} className="mr-8">
               <div style={{ background: appear === 'white' ? 'black' : 'transparent' }}>
                 <Spinner appearance={appear} />
               </div>

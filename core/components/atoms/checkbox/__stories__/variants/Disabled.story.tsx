@@ -10,18 +10,9 @@ export const disabled = () => {
     'label',
     'Checkbox'
   );
-
-  const styles = {
-    display: 'flex',
-  };
-
-  const innerStyle = {
-    marginRight: '2%',
-  };
-
   return (
-    <div style={styles}>
-      <div style={innerStyle}>
+    <div className="d-flex">
+      <div className="mr-5">
         <Checkbox
           checked={true}
           disabled={true}
@@ -30,7 +21,7 @@ export const disabled = () => {
         <br />
         <Text weight="strong">Checked</Text>
       </div>
-      <div style={innerStyle}>
+      <div className="mr-5">
         <Checkbox
           checked={false}
           disabled={true}
@@ -39,7 +30,7 @@ export const disabled = () => {
         <br />
         <Text weight="strong">Unchecked</Text>
       </div>
-      <div style={innerStyle}>
+      <div className="mr-5">
         <Checkbox
           indeterminate={true}
           disabled={true}

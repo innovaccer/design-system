@@ -3,13 +3,9 @@ import Text from '../../index';
 
 // CSF format story
 export const size = () => {
-  const style = {
-    display: 'flex',
-  };
-
   return (
-    <div style={style}>
-      <div style={{ marginRight: '2%' }}>
+    <div className="d-flex">
+      <div className="mr-6">
         <Text small={true}>Small</Text>
       </div>
       <div>

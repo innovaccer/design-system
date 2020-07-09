@@ -8,7 +8,7 @@ export const all = () => {
   const max = number('max', 100);
 
   return (
-    <div style={{ width: '400px' }}>
+    <div className="w-50">
       <ProgressBar
         value={value}
         max={max}

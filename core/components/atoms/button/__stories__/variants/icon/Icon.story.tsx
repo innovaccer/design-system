@@ -16,28 +16,13 @@ export const icon = () => {
     'icon',
     'refresh'
   );
-
-  const style = {
-    display: 'flex',
-    justifyContent: 'space-between',
-    width: '25%',
-  };
-
-  const outerStyle = {
-    marginRight: '5%',
-  };
-
-  const innerStyle = {
-    height: '40px',
-  };
-
   return (
-    <div style={style}>
+    <div className="d-flex w-25">
       {
         sizes.map((IconSize, ind) => {
           return (
-            <div key={ind} style={outerStyle}>
-              <div style={innerStyle}>
+            <div key={ind} className="mr-5">
+              <div className="h-50">
                 <Button
                   onClick={action('button-clicked')}
                   onMouseEnter={action('mouse-enter')}

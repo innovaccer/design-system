@@ -7,7 +7,7 @@ export const inputWithNumber = () => {
 
   return (
     <div>
-      <div style={{ width: '20px' }}>
+      <div className="w-25">
         <Input
           name="input"
           type="number"

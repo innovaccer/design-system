@@ -17,17 +17,12 @@ export const appearance = () => {
   ];
 
   const name = text('Name', 'events');
-
-  const style = {
-    display: 'flex',
-  };
-
   return (
-    <div style={style}>
+    <div className="d-flex">
       {
         appearances.map((appear, ind) => {
           return (
-            <div key={ind} style={{ marginRight: '2%' }}>
+            <div key={ind} className="mr-9">
               <div style={{ background: appear === 'white' ? 'black' : 'transparent' }}>
                 <Icon
                   appearance={appear}

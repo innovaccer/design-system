@@ -9,13 +9,9 @@ export const radioGroupWithOthersField = () => {
     ['tiny', 'regular'],
     undefined
   );
-  const style = {
-    display: 'flex',
-  };
-
   return (
-    <div style={style}>
-    <div style={{ marginRight: '5%' }}>
+    <div className="d-flex">
+    <div className="mr-9 ">
     <div>
       <Radio
         size={size}
