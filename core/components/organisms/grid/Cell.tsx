@@ -35,6 +35,7 @@ const HeaderCell = (props: HeaderCellProps) => {
   } = props;
 
   const {
+    schema: schemaProp,
     loading,
     showMenu,
     sortingList,
@@ -47,7 +48,7 @@ const HeaderCell = (props: HeaderCellProps) => {
     filters
   } = schema;
 
-  const init = getInit(_this);
+  const init = getInit(schemaProp);
 
   const listIndex = sortingList.findIndex(l => l.name === name);
   const sorted = listIndex !== -1 ? sortingList[listIndex].type : null;
@@ -249,7 +250,7 @@ export const Cell = (props: CellProps) => {
     <div
       key={`${rowIndex}-${colIndex}`}
       className={cellClass}
-      data-name={name}
+      data-name={schema.name}
       style={{
         width: schema.width
       }}

@@ -77,7 +77,7 @@ export const paginateData = (data: Data, page: number, pageSize: number): Data =
   return paginatedData;
 };
 
-export const searchData = (data: Data, searchTerm: string, onSearch: TableProps['onSearch']): Data => {
+export const searchData = (data: Data, searchTerm: string = '', onSearch: TableProps['onSearch']): Data => {
   if (onSearch) {
     return data.filter(d => onSearch(d, searchTerm));
   }

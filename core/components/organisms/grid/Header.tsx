@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Checkbox, Text, Input, Dropdown, Placeholder, PlaceholderParagraph, Button } from '@/index';
+import { Checkbox, Label, Input, Dropdown, Placeholder, PlaceholderParagraph, Button } from '@/index';
 import {
   updateSchemaFunction,
   ColumnSchema,
@@ -9,6 +9,7 @@ import {
   GridProps,
   updateFilterListFunction
 } from './Grid';
+import { getInit } from './utility';
 
 export interface ExternalHeaderProps {
   children?: React.ReactNode;
@@ -131,7 +132,7 @@ export const Header = (props: HeaderProps) => {
               onChange={onSearchChange}
               value={searchTerm}
               onClear={() => updateSearchTerm && updateSearchTerm('')}
-              disabled={loading}
+              disabled={loading && !getInit(schema)}
             />
           </div>
         )}
@@ -210,11 +211,11 @@ export const Header = (props: HeaderProps) => {
           )}
           {loading ? (
             <Placeholder withImage={!showHead && withCheckbox}>
-              <PlaceholderParagraph length={'small'} />
+              <PlaceholderParagraph length={'small'} size={'s'} />
             </Placeholder>
           ) : (
               <>
-                <Text small={true} weight={'medium'}>{label}</Text>
+                <Label>{label}</Label>
                 {withPagination && selectAll?.checked && (
                   <div className="ml-4">
                     {!selectAllRecords ? (
