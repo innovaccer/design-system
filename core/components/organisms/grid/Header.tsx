@@ -192,9 +192,11 @@ export const Header = (props: HeaderProps) => {
             )}
           </div>
         )}
-        <div className="Header-actions">
-          {children}
-        </div>
+        {children && (
+          <div className="Header-actions">
+            {children}
+          </div>
+        )}
       </div>
       <div className="Header-content Header-content--bottom">
         <div className="Header-label">
