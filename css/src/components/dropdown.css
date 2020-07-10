@@ -51,7 +51,7 @@
     display: flex;
     justify-content: flex-end;
     padding-top: var(--spacing);
-    padding-right: var(--spacing-l);
+    padding-right: var(--spacing);
     padding-bottom: var(--spacing);
     border-top: var(--spacing-xs) solid var(--secondary-light);
 }

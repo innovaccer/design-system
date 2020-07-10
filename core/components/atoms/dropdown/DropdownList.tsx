@@ -320,6 +320,7 @@ const DropdownList = (props: OptionsProps) => {
           className="mr-4"
           appearance={'basic'}
           onClick={onCancelOptions}
+          size={'tiny'}
           tabIndex={-1}
         >
           Cancel
@@ -328,6 +329,7 @@ const DropdownList = (props: OptionsProps) => {
           ref={dropdownApplyButtonRef}
           appearance={'primary'}
           disabled={disable}
+          size={'tiny'}
           onClick={onApplyOptions}
         >
           Apply
