@@ -102,7 +102,8 @@ const getStory = () => {
 
 const StoryComp = props => {
   const {
-    customCode
+    customCode,
+    noStory
   } = props;
 
   const { story, storyId } = getStory();
@@ -112,7 +113,7 @@ const StoryComp = props => {
 
   const importString = `// ${importsToStr(imports.map(i => i.displayName))}`;
   const jsx = `${beautifyHTML(reactElementToJSXString(comp, JSXtoStringOptions), beautifyJSXOptions)}`;
-  const html = beautifyHTML(renderToStaticMarkup(comp), beautifyHTMLOptions);
+  const html = !noStory ? beautifyHTML(renderToStaticMarkup(comp), beautifyHTMLOptions) : '';
 
   const [activeTab, setActiveTab] = React.useState<number>(0);
   const code = `
@@ -131,6 +132,17 @@ ${jsx.split('\n').map(l => `    ${l}`).join('\n')}
     out[curr.displayName] = curr;
     return out;
   }, {});
+
+  const renderHTMLTab = () => {
+    if (!noStory) {
+      return (
+        <Tab label={'HTML'}>
+          {renderCodeBlock(htmlCode)}
+        </Tab>
+      );
+    }
+    return <></>;
+  };
 
   const TabsWrap = withLive(({ live }) => {
     const {
@@ -187,9 +199,7 @@ ${jsx.split('\n').map(l => `    ${l}`).join('\n')}
                 <LiveError />
               </div>
             </Tab>
-            <Tab label={'HTML'}>
-              {renderCodeBlock(htmlCode)}
-            </Tab>
+            {renderHTMLTab()}
           </TabsWrapper>
         </div>
       </LiveProvider>
@@ -221,13 +231,9 @@ export const docPage = () => {
       </Description>
       <br />
 
-      {!noStory && (
-        <>
-          <Heading>Story</Heading>
-          <StoryComp key={storyId} customCode={customCode} />
-          <br />
-        </>
-      )}
+      <Heading>Story</Heading>
+      <StoryComp key={storyId} customCode={customCode} noStory={noStory} />
+      <br />
 
       <Heading>PropTable</Heading>
       <Props {...propsAttr} />
