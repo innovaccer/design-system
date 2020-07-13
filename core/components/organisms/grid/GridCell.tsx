@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Avatar, Text, Placeholder, PlaceholderParagraph, Icon, StatusHint } from '@/index';
+import { Avatar, Text, Placeholder, PlaceholderParagraph, Icon, StatusHint, Tooltip } from '@/index';
 import { StatusHintProps } from '@/index.type';
 import { ColumnSchema, RowData, GridSize } from './Grid';
 import { translateData } from './utility';
@@ -76,18 +76,26 @@ export interface GridCellProps extends PartialCellProps {
 }
 
 type CellProps = {
-  loading?: boolean;
+  tooltip?: boolean;
   cellData: CellData;
 };
 
 const renderTitle = (props: CellProps) => {
   const {
+    tooltip,
     cellData
   } = props;
 
   const children = cellData.title;
 
   if (children) {
+    if (tooltip) {
+      return (
+        <Tooltip tooltip={children} position={'top-start'}>
+          <Text>{children}</Text>
+        </Tooltip>
+      );
+    }
     return (
       <Text>{children}</Text>
     );
@@ -187,6 +195,7 @@ export const GridCell = (props: GridCellProps) => {
     name,
     cellType = 'DEFAULT',
     align = 'left',
+    tooltip
   } = schema;
 
   const cellData = data[name];
@@ -206,7 +215,7 @@ export const GridCell = (props: GridCellProps) => {
       }
       return (
         <div className={`${cellClass} GridCell--align-${align} GridCell--default`} >
-          {renderTitle({ loading, cellData })}
+          {renderTitle({ tooltip, cellData })}
         </div>
       );
 
@@ -222,8 +231,8 @@ export const GridCell = (props: GridCellProps) => {
       return (
         <div className={`${cellClass} GridCell--align-${align} GridCell--metaList`} >
           <div className="GridCell-metaListWrapper">
-            {renderTitle({ loading, cellData })}
-            {renderMetaList({ loading, cellData })}
+            {renderTitle({ tooltip, cellData })}
+            {renderMetaList({ cellData })}
           </div>
         </div>
       );
@@ -236,7 +245,7 @@ export const GridCell = (props: GridCellProps) => {
       }
       return (
         <div className={`${cellClass} GridCell--avatar`} >
-          {size !== 'tight' && renderAvatar({ loading, cellData })}
+          {size !== 'tight' && renderAvatar({ cellData })}
         </div>
       );
 
@@ -252,8 +261,8 @@ export const GridCell = (props: GridCellProps) => {
       }
       return (
         <div className={`${cellClass} GridCell--avatarWithText`} >
-          {size !== 'tight' && renderAvatar({ loading, cellData })}
-          {renderTitle({ loading, cellData })}
+          {size !== 'tight' && renderAvatar({ cellData })}
+          {renderTitle({ tooltip, cellData })}
         </div>
       );
 
@@ -270,10 +279,10 @@ export const GridCell = (props: GridCellProps) => {
       }
       return (
         <div className={`${cellClass} GridCell--avatarWithText`} >
-          {size !== 'tight' && renderAvatar({ loading, cellData })}
+          {size !== 'tight' && renderAvatar({ cellData })}
           <div className="GridCell-metaListWrapper">
-            {renderTitle({ loading, cellData })}
-            {renderMetaList({ loading, cellData })}
+            {renderTitle({ tooltip, cellData })}
+            {renderMetaList({ cellData })}
           </div>
         </div>
       );
@@ -286,7 +295,7 @@ export const GridCell = (props: GridCellProps) => {
       }
       return (
         <div className={`${cellClass} GridCell--align-${align} GridCell--icon`} >
-          {renderIcon({ loading, cellData })}
+          {renderIcon({ cellData })}
         </div>
       );
 
@@ -300,7 +309,7 @@ export const GridCell = (props: GridCellProps) => {
       }
       return (
         <div className={`${cellClass} GridCell--align-${align} GridCell--statusHint`} >
-          {renderStatusHint({ loading, cellData })}
+          {renderStatusHint({ cellData })}
         </div>
       );
   }

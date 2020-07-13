@@ -11,6 +11,7 @@ const schema: Schema = [
     displayName: 'Name',
     width: 300,
     resizable: true,
+    tooltip: true,
     // pinned: 'left',
     separator: true,
     translate: a => ({
