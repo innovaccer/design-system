@@ -40,13 +40,7 @@ export const getSelectAll = (data: Data) => {
   return { indeterminate: false, checked: false };
 };
 
-export const getInit = (_this: Grid): boolean => {
-  const {
-    schema
-  } = _this.props;
-
-  return (schema && !!schema.length);
-};
+export const getInit = (schema: Schema): boolean => (schema && !!schema.length);
 
 export const getSchema = (_this: Grid): Schema => {
   const {
@@ -58,7 +52,7 @@ export const getSchema = (_this: Grid): Schema => {
     schema,
   } = _this.props;
 
-  const init = getInit(_this);
+  const init = getInit(schema);
   if (!init && loading) {
     schema = loaderSchema;
   }

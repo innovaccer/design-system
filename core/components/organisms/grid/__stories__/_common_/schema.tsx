@@ -99,7 +99,7 @@ const schema: Schema = [
     displayName: 'Custom Cell',
     width: 200,
     resizable: true,
-    separator: true,
+    // separator: true,
     cellRenderer: (props: GridCellProps) => {
       const {
         loading
