@@ -1,15 +1,11 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
 import Avatar from '../Avatar';
 
-export const defaultAvatar = () => {
-  const children = text('children', 'JD');
-  return (
+export const defaultAvatar = () => (
     <Avatar appearance="primary">
-      {children}
+      {'JD'}
     </Avatar>
   );
-};
 
 export default {
   title: 'Atoms|Avatar',

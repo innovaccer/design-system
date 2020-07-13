@@ -1,14 +1,12 @@
 import * as React from 'react';
 import StatusHint from '../StatusHint';
-
-export const defaultStatusHint = () => (
+export const ongoing = () => (
     <StatusHint
-      appearance="default"
+      appearance="warning"
     >
-      {'Default'}
+      {'Ongoing'}
     </StatusHint>
   );
-
 export default {
   title: 'Atoms|StatusHint',
   component: StatusHint,

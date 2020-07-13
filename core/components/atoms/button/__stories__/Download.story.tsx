@@ -1,17 +1,17 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const iconLeftSecondary = () => (
+export const download = () => (
     <Button
       appearance="basic"
       size="regular"
       expanded={false}
       disabled={false}
       loading={false}
-      icon={'refresh'}
-      iconAlign={'left'}
+      icon="get_app"
+      iconAlign="left"
     >
-      {'Button'}
+      Download
     </Button>
   );
 

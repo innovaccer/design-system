@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
 import { Text } from '@/index';
-import Chip, { Name } from '../../Chip';
+import Chip from '../../Chip';
 import { action } from '@storybook/addon-actions';
 const BooleanValue = [true, false];
 export const Selection = () => {
@@ -13,12 +13,6 @@ export const Selection = () => {
     'label',
     'Selection'
   );
-  const onCloseHandler = (name: Name) => {
-    return action(`onClose: ${name}`)();
-  };
-  const onClickHandler = (name: Name) => {
-    return action(`onClick: ${name}`)();
-  };
   return (
     <div className="d-flex">
       {BooleanValue.map((booleanvalue, ind) => {
@@ -30,10 +24,10 @@ export const Selection = () => {
               clearButton={true}
               disabled={booleanvalue}
               type="selection"
-              onClose={onCloseHandler}
-              onClick={onClickHandler}
+              onClose={action(`onClose: ${name}`)}
+              onClick={action(`onClick: ${name}`)}
               selected={false}
-              name={name}
+              name={'chip'}
             />
             <br />
             <Text weight="strong">{`Disabled: ${booleanvalue}`}</Text>
@@ -46,10 +40,10 @@ export const Selection = () => {
           label={label}
           clearButton={true}
           type="selection"
-          onClose={onCloseHandler}
-          onClick={onClickHandler}
+          onClose={action(`onClose: ${name}`)}
+          onClick={action(`onClick: ${name}`)}
           selected={true}
-          name={name}
+          name={'chip'}
         />
         <br />
         <Text weight="strong">Selected: true</Text>

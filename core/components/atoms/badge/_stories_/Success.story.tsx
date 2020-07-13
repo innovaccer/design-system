@@ -1,19 +1,14 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
 import Badge from '../Badge';
 
-export const success = () => {
-  const subtle = false;
-  const children = text('children', 'Badge');
-  return (
+export const success = () => (
     <Badge
       appearance="success"
-      subtle={subtle}
+      subtle={false}
     >
-      {children}
+      {'Badge'}
     </Badge>
   );
-};
 
 export default {
   title: 'Atoms|Badge',

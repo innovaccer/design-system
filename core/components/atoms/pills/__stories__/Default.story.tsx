@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Pills from '../../pills';
 
-export const defaultPill = () => (
+export const defaultpill = () => (
   <Pills
     appearance="secondary"
     subtle={false}

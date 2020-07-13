@@ -1,17 +1,16 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const iconLeftSecondary = () => (
+export const menuHorizontal = () => (
     <Button
-      appearance="basic"
+      appearance={'transparent'}
       size="regular"
       expanded={false}
       disabled={false}
       loading={false}
-      icon={'refresh'}
-      iconAlign={'left'}
+      icon="more_horiz"
     >
-      {'Button'}
+      {''}
     </Button>
   );
 
