@@ -4,7 +4,7 @@ exports[`Tooltip component
   position: "bottom", tooltip: "Sample string"
  1`] = `
 <PopperWrapper
-  appendToBody={false}
+  appendToBody={true}
   offset="Medium"
   on="hover"
   onToggle={[Function]}
@@ -27,15 +27,15 @@ exports[`Tooltip component
 `;
 
 exports[`Tooltip component 
-  position: "left", tooltip: "Sample string"
+  position: "bottom-end", tooltip: "Sample string"
  1`] = `
 <PopperWrapper
-  appendToBody={false}
+  appendToBody={true}
   offset="Medium"
   on="hover"
   onToggle={[Function]}
   open={false}
-  placement="left"
+  placement="bottom-end"
   style={Object {}}
   trigger={
     <Button>
@@ -53,15 +53,15 @@ exports[`Tooltip component
 `;
 
 exports[`Tooltip component 
-  position: "right", tooltip: "Sample string"
+  position: "bottom-start", tooltip: "Sample string"
  1`] = `
 <PopperWrapper
-  appendToBody={false}
+  appendToBody={true}
   offset="Medium"
   on="hover"
   onToggle={[Function]}
   open={false}
-  placement="right"
+  placement="bottom-start"
   style={Object {}}
   trigger={
     <Button>
@@ -82,12 +82,64 @@ exports[`Tooltip component
   position: "top", tooltip: "Sample string"
  1`] = `
 <PopperWrapper
-  appendToBody={false}
+  appendToBody={true}
   offset="Medium"
   on="hover"
   onToggle={[Function]}
   open={false}
   placement="top"
+  style={Object {}}
+  trigger={
+    <Button>
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  position: "top-end", tooltip: "Sample string"
+ 1`] = `
+<PopperWrapper
+  appendToBody={true}
+  offset="Medium"
+  on="hover"
+  onToggle={[Function]}
+  open={false}
+  placement="top-end"
+  style={Object {}}
+  trigger={
+    <Button>
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  position: "top-start", tooltip: "Sample string"
+ 1`] = `
+<PopperWrapper
+  appendToBody={true}
+  offset="Medium"
+  on="hover"
+  onToggle={[Function]}
+  open={false}
+  placement="top-start"
   style={Object {}}
   trigger={
     <Button>
