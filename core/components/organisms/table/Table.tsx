@@ -130,14 +130,17 @@ interface SharedTableProps extends BaseProps {
    * Type of Table
    *
    * **Requires `onRowClick` for 'resource' Table**
+   * @default "data"
    */
   type?: GridProps['type'];
   /**
    * Table cell size
+   * @default "comfortable"
    */
   size?: GridProps['size'];
   /**
    * Allow Column reordering
+   * @default true
    */
   draggable?: boolean;
   /**
@@ -171,6 +174,7 @@ interface SharedTableProps extends BaseProps {
   withCheckbox?: GridProps['withCheckbox'];
   /**
    * Set for visibility of Menu on Table Head Cell
+   * @default true
    */
   showMenu?: GridProps['showMenu'];
   /**
@@ -183,6 +187,9 @@ interface SharedTableProps extends BaseProps {
   paginationType?: GridProps['paginationType'];
   /**
    * Number of rows to be rendered on a page
+   *
+   * **Also used to control number of rows to be rendered while loading: true**
+   * @default 15
    */
   pageSize?: GridProps['pageSize'];
   /**
@@ -191,18 +198,26 @@ interface SharedTableProps extends BaseProps {
   loaderSchema?: GridProps['loaderSchema'];
   /**
    * Set to allow multiple column sorting
+   * @default true
    */
   multipleSorting?: boolean;
   /**
    * Initial sortingList passed to `Table`
+   * <pre className="DocPage-codeBlock">
+   * SortType: 'asc' | 'desc'
+   * </pre>
    */
   sortingList?: GridProps['sortingList'];
   /**
    * Initial filterList passed to `Table`
+   * <pre className="DocPage-codeBlock">
+   * Filter: Array of selected values passed in dropdown
+   * `any[]`
+   * </pre>
    */
   filterList?: GridProps['filterList'];
   /**
-   * Template to be rendered when error: true
+   * Template to be rendered when **error: true**
    */
   errorTemplate?: GridProps['errorTemplate'];
   /**
@@ -228,8 +243,8 @@ interface SharedTableProps extends BaseProps {
 // interface SyncTableProps extends SyncProps, SharedTableProps { };
 // interface AsyncTableProps extends AsyncProps, SharedTableProps { };
 
-type SyncTableProps = SyncProps & SharedTableProps;
-type AsyncTableProps = AsyncProps & SharedTableProps;
+export type SyncTableProps = SyncProps & SharedTableProps;
+export type AsyncTableProps = AsyncProps & SharedTableProps;
 
 export type TableProps = (AsyncTableProps & SyncTableProps);
 
@@ -262,6 +277,7 @@ interface TableState {
  * 2. Sync Table:
  *  - Manually toggle loading/error state to update data, schema.
  */
+
 export class Table extends React.Component<TableProps, TableState> {
   constructor(props: TableProps) {
     super(props);
@@ -290,7 +306,9 @@ export class Table extends React.Component<TableProps, TableState> {
 
   static defaultProps = {
     type: 'data',
+    size: 'comfortable',
     showHead: true,
+    showMenu: true,
     multipleSorting: true,
     headerOptions: {},
     pageSize: 15,

@@ -1,11 +1,12 @@
 import * as React from 'react';
-import schema from '../../grid/__stories__/_common_/schema';
-import data from '../../grid/__stories__/_common_/data';
+import schema from '@/components/organisms/grid/__stories__/_common_/schema';
+import data from '@/components/organisms/grid/__stories__/_common_/data';
 import { boolean, select, number } from '@storybook/addon-knobs';
-import loaderSchema from '../../grid/__stories__/_common_/loaderSchema';
-import { fetchData } from '../../grid/__stories__/_common_/fetchData';
+import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
+import { fetchData } from '@/components/organisms/grid/__stories__/_common_/fetchData';
 import { action } from '@storybook/addon-actions';
-import { Card, Grid, Table } from '@/index';
+import { Card, Table } from '@/index';
+import { AsyncTable, SyncTable } from './_common_/types';
 
 export const all = () => {
   const async = boolean(
@@ -120,6 +121,7 @@ export const all = () => {
     >
       <Card className="h-100">
         <Table
+          key={`${async}`}
           {...dataAttr}
           loading={loading}
           error={error}
@@ -155,11 +157,11 @@ export const all = () => {
 export default {
   title: 'Organisms|Table',
   component: Table,
-  subcomponents: { Grid },
   parameters: {
     docs: {
       docPage: {
         props: {
+          components: { AsyncTable, SyncTable },
           exclude: ['showHead']
         }
       }
