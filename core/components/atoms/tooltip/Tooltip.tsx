@@ -3,7 +3,7 @@ import { Omit } from 'utility-types';
 import { PopperWrapper } from '@/utils';
 import classNames from 'classnames';
 
-export type PositionType = 'top' | 'bottom' | 'left' | 'right';
+export type PositionType = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end';
 type DivProps = Omit<JSX.IntrinsicElements['div'], 'ref'>;
 
 export interface TooltipProps extends DivProps {
@@ -68,7 +68,7 @@ export class Tooltip extends React.Component<TooltipProps, IState> {
 
   public render() {
     const {
-      appendToBody = false,
+      appendToBody = true,
       position = 'bottom',
       tooltip,
       children,

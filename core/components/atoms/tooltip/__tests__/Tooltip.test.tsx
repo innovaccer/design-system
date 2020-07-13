@@ -4,7 +4,7 @@ import Tooltip, { TooltipProps as Props } from '../Tooltip';
 import Button from '@/components/atoms/button';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const Position = ['top', 'bottom', 'left', 'right'];
+const Position = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end'];
 const StringValue = 'Sample string';
 
 const mapper = {
