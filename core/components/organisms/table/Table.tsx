@@ -156,6 +156,7 @@ interface SharedTableProps extends BaseProps {
    *    withSearch?: boolean;
    *    searchPlaceholder?: string;
    *    dynamicColumn?: boolean;
+   *    allowSelectAll?: boolean;
    * }
    * </pre>
    *
@@ -165,6 +166,7 @@ interface SharedTableProps extends BaseProps {
    * | withSearch | Set to use Search Input | |
    * | searchPlaceholder | Placeholder of Search Input | "Search" |
    * | dynamicColumn | Set to use Column controlling dropdown | true |
+   * | allowSelectAll | Set to show Select All button | |
    *
    */
   headerOptions?: ExternalHeaderProps;

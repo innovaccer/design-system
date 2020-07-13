@@ -16,6 +16,7 @@ export interface ExternalHeaderProps {
   withSearch?: boolean;
   searchPlaceholder?: string;
   dynamicColumn?: boolean;
+  allowSelectAll?: boolean;
 }
 
 export type updateSearchTermFunction = (newSearchTerm: string) => void;
@@ -60,7 +61,8 @@ export const Header = (props: HeaderProps) => {
     selectAll,
     searchTerm,
     updateSearchTerm,
-    dynamicColumn
+    dynamicColumn,
+    allowSelectAll
   } = props;
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
@@ -216,7 +218,7 @@ export const Header = (props: HeaderProps) => {
           ) : (
               <>
                 <Label>{label}</Label>
-                {withPagination && selectAll?.checked && (
+                {withPagination && selectAll?.checked && allowSelectAll && (
                   <div className="ml-4">
                     {!selectAllRecords ? (
                       <Button
