@@ -1,14 +1,12 @@
 .Tooltip {
   color: var(--white);
+  max-width: var(--spacing-9);
   padding: var(--spacing) var(--spacing-2);
   border-radius: var(--spacing-m);
   position: absolute;
   z-index: 999999;
   background: var(--inverse);
-  max-width: var(--spacing-7);
-	/* truncate */
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
