@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BaseProps } from '@/utils/types';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Shadow = 'none' | 'light' | 'medium' | 'dark';
 
@@ -20,8 +20,9 @@ export const Card = (props: CardProps) => {
     shadow,
     children,
     className,
-    ...rest
   } = props;
+
+  const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     Card: true,
@@ -30,7 +31,7 @@ export const Card = (props: CardProps) => {
   });
 
   return (
-    <div {...rest} className={classes}>
+    <div {...baseProps} className={classes}>
       {children}
     </div>
   );
