@@ -6,7 +6,12 @@ exports[`Avatar component
 <span
   className="Avatar Avatar--accent1"
 >
-  JD
+  <Text
+    appearance="white"
+    weight="medium"
+  >
+    JD
+  </Text>
 </span>
 `;
 
@@ -16,7 +21,12 @@ exports[`Avatar component
 <span
   className="Avatar Avatar--accent2"
 >
-  JD
+  <Text
+    appearance="white"
+    weight="medium"
+  >
+    JD
+  </Text>
 </span>
 `;
 
@@ -26,7 +36,12 @@ exports[`Avatar component
 <span
   className="Avatar Avatar--accent3"
 >
-  JD
+  <Text
+    appearance="white"
+    weight="medium"
+  >
+    JD
+  </Text>
 </span>
 `;
 
@@ -36,7 +51,12 @@ exports[`Avatar component
 <span
   className="Avatar Avatar--accent4"
 >
-  JD
+  <Text
+    appearance="white"
+    weight="medium"
+  >
+    JD
+  </Text>
 </span>
 `;
 
@@ -46,7 +66,12 @@ exports[`Avatar component
 <span
   className="Avatar Avatar--alert"
 >
-  JD
+  <Text
+    appearance="white"
+    weight="medium"
+  >
+    JD
+  </Text>
 </span>
 `;
 
@@ -56,7 +81,12 @@ exports[`Avatar component
 <span
   className="Avatar Avatar--primary"
 >
-  JD
+  <Text
+    appearance="white"
+    weight="medium"
+  >
+    JD
+  </Text>
 </span>
 `;
 
@@ -66,7 +96,12 @@ exports[`Avatar component
 <span
   className="Avatar Avatar--success"
 >
-  JD
+  <Text
+    appearance="white"
+    weight="medium"
+  >
+    JD
+  </Text>
 </span>
 `;
 
@@ -76,6 +111,11 @@ exports[`Avatar component
 <span
   className="Avatar Avatar--warning"
 >
-  JD
+  <Text
+    appearance="default"
+    weight="medium"
+  >
+    JD
+  </Text>
 </span>
 `;
