@@ -233,15 +233,11 @@ export const Cell = (props: CellProps) => {
     rowIndex,
   } = props;
 
-  const {
-    withCheckbox
-  } = _this.props;
-
   const cellClass = classNames({
     'Grid-cell': true,
     'Grid-cell--head': head,
     'Grid-cell--body': !head,
-    'Grid-cell--separator': !(withCheckbox && colIndex === 0) && schema.separator,
+    'Grid-cell--separator': colIndex !== 0 && schema.separator,
   });
 
   if (schema.hidden) return null;
