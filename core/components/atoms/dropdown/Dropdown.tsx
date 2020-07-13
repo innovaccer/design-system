@@ -141,6 +141,15 @@ interface DropdownState {
 
 const bulk = 50;
 
+/**
+ * ###Note:
+ * 1. Dropdown props types:
+ *  - async: fetchOptions
+ *  - sync: options, loading
+ * 2. Sync Dropdown:
+ *  - Manually toggle loading state to update options.
+ */
+
 export class Dropdown extends React.Component<DropdownProps, DropdownState> {
   constructor(props: DropdownProps) {
     super(props);
