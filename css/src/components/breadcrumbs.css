@@ -41,7 +41,7 @@
 }
 
 .SubtleLink:hover {
-  text-decoration: underline;
+  border-bottom: var(--spacing-xs) solid var(--inverse-light);
 }
 
 .SubtleLink:active {
