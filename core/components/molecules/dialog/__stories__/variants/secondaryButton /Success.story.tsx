@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { boolean } from '@storybook/addon-knobs';
+import { Paragraph } from '@/index';
 import { action } from '@storybook/addon-actions';
 import Dialog from '../../../Dialog';
-import { Button, PageHeader, Navigation, Text } from '@/index';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 
 export const success = () => {
@@ -25,41 +25,53 @@ export const success = () => {
     secondaryButtonCallback: action('secondary click')
   };
 
-  const navigationData = [
-    {
-      name: 'menu_1',
-      label: 'Menu 1',
-      icon: 'event',
-    },
-    {
-      name: 'menu_2',
-      label: 'Menu 2'
-    },
-    {
-      name: 'menu_3',
-      label: 'Menu 3',
-      disabled: true
-    }
-  ];
-
-  const pageHeaderOptions = {
-    title: 'Page Title',
-    navigation: <Navigation menus={navigationData} onClick={action('menu-clicked')} active={{ name: 'menu_1' }} />,
-    actions: (
-      <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-        <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
-        <Button appearance="primary" onClick={action('Page header primary button click')}>Primary</Button>
-      </div>
-    )
-  };
-
   return (
     <div>
-      <PageHeader {...pageHeaderOptions} />
+      <Paragraph>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />
+        Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
+        Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
+      </Paragraph>
       <Dialog secondaryButtonAppearance="success" {...options} />
     </div>
   );
 };
+
+const customCode = `() => {
+  const [open, setOpen] = React.useState(true);
+
+  const onClose = () => {
+    setOpen(!open);
+  };
+
+  const options = {
+    open,
+    onClose,
+    icon: 'pan_tool',
+    heading: 'Heading',
+    title: 'Description Title',
+    description: 'Adding a subheading clearly indicates the hierarchy of the information.',
+    secondaryButtonAppearance: 'success',
+    primaryButtonLabel: 'Primary',
+    secondaryButtonLabel: 'Secondary',
+  };
+
+  return (
+    <div>
+      <Paragraph>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br />
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br />
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br />
+      </Paragraph>
+      <Dialog {...options} />
+    </div>
+  );
+}`;
 
 export default {
   title: 'Molecules|Dialog/Variants/SecondaryButton',
@@ -67,8 +79,9 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        customCode,
         title: 'Dialog',
-        noStory: true
+        noStory: true,
       },
     }
   }

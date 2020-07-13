@@ -6,7 +6,7 @@ import ModalHeader from '@/components/molecules/modalHeader';
 import ModalDescription from '@/components/molecules/modalDescription';
 import ModalFooter from '@/components/molecules/modalFooter';
 import ModalBody from '@/components/molecules/modalBody';
-import { Button, PageHeader, Navigation, Text } from '@/index';
+import { Button, Paragraph } from '@/index';
 
 import { updateKnob } from '@/utils/storybookEventEmitter';
 
@@ -43,37 +43,17 @@ export const small = () => {
     removePadding: true
   };
 
-  const navigationData = [
-    {
-      name: 'menu_1',
-      label: 'Menu 1',
-      icon: 'event',
-    },
-    {
-      name: 'menu_2',
-      label: 'Menu 2'
-    },
-    {
-      name: 'menu_3',
-      label: 'Menu 3',
-      disabled: true
-    }
-  ];
-
-  const pageHeaderOptions = {
-    title: 'Page Title',
-    navigation: <Navigation menus={navigationData} onClick={action('menu-clicked')} active={{ name: 'menu_1' }} />,
-    actions: (
-      <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-        <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
-        <Button appearance="primary" onClick={action('Page header primary button click')}>Primary</Button>
-      </div>
-    )
-  };
-
   return (
     <div>
-      <PageHeader {...pageHeaderOptions} />
+      <Paragraph>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />
+        Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
+        Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
+      </Paragraph>
       <Modal dimension="small" {...options}>
         <ModalHeader {...modalHeaderOptions} />
         <ModalBody>
@@ -90,14 +70,69 @@ export const small = () => {
   );
 };
 
+const customCode = `() => {
+  const [open, setOpen] = React.useState(true);
+
+  const onClose = () => {
+    setOpen(!open);
+  };
+
+  const options = {
+    open,
+    backdropClose: onClose
+  };
+
+  const modalHeaderOptions = {
+    onClose,
+    icon: 'pan_tool',
+    heading: 'Heading',
+    subHeading: 'Subheading'
+  };
+
+  const modalDescriptionOptions = {
+    title: 'Description Title',
+    description: 'Adding a subheading clearly indicates the hierarchy of the information.',
+    removePadding: true
+  };
+
+  const modalDescriptionOptionsWithoutTitle = {
+    description: 'Card Sections include supporting text like an article summary or a restaurant description.',
+    removePadding: true
+  };
+
+  return (
+    <div>
+      <Paragraph>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br/>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br/>
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br/>
+      </Paragraph>
+      <Modal dimension="small" {...options}>
+        <ModalHeader {...modalHeaderOptions} />
+        <ModalBody>
+          <Text>Modal Body</Text>
+          <ModalDescription {...modalDescriptionOptions} />
+          <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
+        </ModalBody>
+        <ModalFooter>
+          <Button appearance="basic">Basic</Button>
+          <Button appearance="primary">Primary</Button>
+        </ModalFooter>
+      </Modal>
+    </div>
+  );
+}`;
+
 export default {
   title: 'Molecules|Modal/Variants/Dimesion',
   component: Modal,
   parameters: {
     docs: {
       docPage: {
+        customCode,
         title: 'Modal',
-        noStory: true
+        noStory: true,
       }
     }
   }
