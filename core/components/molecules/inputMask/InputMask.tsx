@@ -2,6 +2,7 @@ import * as React from 'react';
 import Input, { InputProps } from '@/components/atoms/input';
 import Caption from '@/components/atoms/caption';
 import { BaseProps } from '@/utils/types';
+import classNames from 'classnames';
 
 export type Mask = (string | RegExp)[];
 
@@ -170,8 +171,12 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     if (onClear) onClear(e);
   };
 
+  const classes = classNames({
+    'd-flex flex-column flex-grow-1': true,
+  }, className);
+
   return (
-    <div className={className}>
+    <div className={classes}>
       <Input
         {...rest}
         value={value}

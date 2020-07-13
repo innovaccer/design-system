@@ -71,18 +71,20 @@ export const withInput = () => {
   if (monthNav !== -1) attr.monthNav = monthNav;
 
   return (
-    <DateRangePicker
-      withInput={true}
-      startDate={startDate}
-      endDate={endDate}
-      inputFormat={inputFormat}
-      outputFormat={outputFormat}
-      jumpView={jumpView}
-      onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) => action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()}
-      view={view}
-      firstDayOfWeek={firstDayOfWeek}
-      {...attr}
-    />
+    <div className="w-50">
+      <DateRangePicker
+        withInput={true}
+        startDate={startDate}
+        endDate={endDate}
+        inputFormat={inputFormat}
+        outputFormat={outputFormat}
+        jumpView={jumpView}
+        onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) => action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()}
+        view={view}
+        firstDayOfWeek={firstDayOfWeek}
+        {...attr}
+      />
+    </div>
   );
 };
 
