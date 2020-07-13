@@ -1,34 +1,34 @@
 import * as React from 'react';
-import loaderSchema from '../../../grid/__stories__/_common_/loaderSchema';
+import { Card, Table } from '@/index';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import { action } from '@storybook/addon-actions';
-import { Card, Grid, Table } from '@/index';
+import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
 
-export const sync = () => {
+export const withHeader = () => {
   return (
     <div
       style={{
         height: '350px',
-        // overflow: 'hidden'
       }}
     >
-      <Card className="h-100">
+      <Card
+        shadow="light"
+        className="h-100"
+      >
         <Table
-          loaderSchema={loaderSchema}
           data={data}
           schema={schema}
           withHeader={true}
           withCheckbox={true}
+          showHead={false}
+          draggable={true}
+          withPagination={true}
           onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
+          onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
+          withHeader={true}
           headerOptions={{
             withSearch: true
-          }}
-          onSearch={(d, searchTerm) => {
-            return (
-              d.firstName.toLowerCase().match(searchTerm.toLowerCase())
-              || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
-            );
           }}
         />
       </Card>
@@ -37,16 +37,5 @@ export const sync = () => {
 };
 
 export default {
-  title: 'Organisms|Table/Variants',
-  component: Table,
-  subcomponents: { Grid },
-  parameters: {
-    docs: {
-      docPage: {
-        props: {
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+  title: 'Organisms|Table/Variants'
 };

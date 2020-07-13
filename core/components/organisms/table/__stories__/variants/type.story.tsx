@@ -1,8 +1,10 @@
 import * as React from 'react';
-import data from '../_common_/data';
-import schema from '../_common_/simpleSchema';
-import { Card, Heading, Grid } from '@/index';
-import { GridType } from '../../Grid';
+import data from '@/components/organisms/grid/__stories__/_common_/data';
+import schema from '@/components/organisms/grid/__stories__/_common_/simpleSchema';
+import { Card, Heading, Table } from '@/index';
+import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
+import { action } from '@storybook/addon-actions';
+import { GridType } from '@/components/organisms/grid';
 
 // CSF format story
 export const type = () => {
@@ -34,11 +36,10 @@ export const type = () => {
               shadow="light"
               className="h-100"
             >
-              <Grid
+              <Table
                 type={v}
                 data={data}
                 schema={schema}
-                totalRecords={data.length}
                 onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
               />
             </Card>
@@ -50,6 +51,16 @@ export const type = () => {
 };
 
 export default {
-  title: 'Organisms|Grid/Variants',
-  component: Grid
+  title: 'Organisms|Table/Variants',
+  component: Table,
+  parameters: {
+    docs: {
+      docPage: {
+        props: {
+          components: { AsyncTable, SyncTable },
+          exclude: ['showHead']
+        }
+      }
+    }
+  }
 };

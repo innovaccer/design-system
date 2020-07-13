@@ -1,9 +1,10 @@
 import * as React from 'react';
-import loaderSchema from '../../../grid/__stories__/_common_/loaderSchema';
+import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import { boolean, number } from '@storybook/addon-knobs';
-import { Card, Grid, Table } from '@/index';
+import { Card, Table } from '@/index';
+import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
 
 export const syncLoaderSchema = () => {
   const loading = boolean(
@@ -71,11 +72,11 @@ export const syncLoaderSchema = () => {
 export default {
   title: 'Organisms|Table/Variants',
   component: Table,
-  subcomponents: { Grid },
   parameters: {
     docs: {
       docPage: {
         props: {
+          components: { AsyncTable, SyncTable },
           exclude: ['showHead']
         }
       }

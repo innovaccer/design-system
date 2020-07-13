@@ -1,12 +1,13 @@
 import * as React from 'react';
-import data from '../_common_/data';
-import schema from '../_common_/simpleSchema';
-import { Card, Heading, Grid } from '@/index';
-import { GridProps } from '@/index.type';
+import { Card, Heading, Table } from '@/index';
+import { TableProps } from '@/index.type';
+import data from '@/components/organisms/grid/__stories__/_common_/data';
+import schema from '@/components/organisms/grid/__stories__/_common_/schema';
+import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
 
 // CSF format story
 export const showHead = () => {
-  const values: GridProps['showHead'][] = [true, false];
+  const values: TableProps['showHead'][] = [true, false];
 
   const style = {
     display: 'flex',
@@ -34,7 +35,7 @@ export const showHead = () => {
               shadow="light"
               className="h-100"
             >
-              <Grid
+              <Table
                 showHead={v}
                 data={data}
                 schema={schema}
@@ -48,6 +49,16 @@ export const showHead = () => {
 };
 
 export default {
-  title: 'Organisms|Grid/Variants',
-  component: Grid
+  title: 'Organisms|Table/Variants',
+  component: Table,
+  parameters: {
+    docs: {
+      docPage: {
+        props: {
+          components: { AsyncTable, SyncTable },
+          exclude: ['showHead']
+        }
+      }
+    }
+  }
 };
