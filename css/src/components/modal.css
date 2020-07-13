@@ -38,7 +38,7 @@
   min-height: 200px;
   box-shadow: var(--shadow-m);
   background-color: var(--white);
-  border-radius: var(--spacing-m);
+  border-radius: var(--spacing);
   overflow: auto;
   display: none;
   visibility: hidden;
@@ -85,6 +85,7 @@
 }
 
 .Modal-header-subheader {
+  padding-top: var(--spacing-s);
   padding-left: var(--spacing-2);
 }
 
@@ -103,7 +104,8 @@
 }
 
 .Modal-description {
-  padding: var(--spacing-2) 0;
+  padding-top: var(--spacing-l);
+  padding-bottom: var(--spacing-2);
 }
 
 .Modal-footer {
@@ -111,6 +113,10 @@
   display: flex;
   justify-content: flex-end;
   flex-grow: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .Modal-footer > * {
@@ -121,9 +127,21 @@
   padding: 0 var(--spacing-2);
   max-height: 480px;
   overflow-y: scroll;
+  margin-bottom: var(--spacing-5);
 }
 
 .Modal-body--border {
   border-top: var(--border);
   border-bottom: var(--border);
+}
+
+.Modal-body::-webkit-scrollbar {
+  width: var(--spacing-2);
+}
+
+.Modal-body::-webkit-scrollbar-thumb {
+  border: var(--spacing-m) solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: var(--spacing);
+  background-color: var(--secondary);
 }
