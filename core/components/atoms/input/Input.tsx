@@ -1,9 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
-// import { Size } from '@/components/atoms/button';
-import Text from '@/components/atoms/text';
-import Popover from '@/components/molecules/popover';
-import Icon, { IconProps } from '@/components/atoms/icon';
+import { Tooltip, Icon, Text } from '@/index';
+import { IconProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
@@ -160,10 +158,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
 
   const trigger = <div className={rightIconClass}><Icon name={'info'} size={sizeMapping[size]} /></div>;
 
-  const popoverStyle = {
-    maxWidth: 'var(--spacing-9)',
-  };
-
   return (
     <div className={classes}>
       {inlineLabel && (
@@ -200,17 +194,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
       {(!value && !disabled) || (value && disabled) || (defaultValue && disabled)
         ? (
           info && (
-            <Popover
-              customStyle={popoverStyle}
+            <Tooltip
               position="top"
-              on={'hover'}
-              trigger={trigger}
-              dark={true}
+              tooltip={info}
             >
-              <div className="Input-popperWrapper">
-                {info}
-              </div>
-            </Popover>
+              {trigger}
+            </Tooltip>
           )
         ) : (
           actionIcon

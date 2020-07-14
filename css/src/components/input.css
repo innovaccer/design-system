@@ -82,12 +82,6 @@
     background: transparent;
 }
 
-.Input-popperWrapper {
-    max-width: 100%;
-    padding: var(--spacing) var(--spacing-2);
-    overflow: hidden;
-}
-
 .Input-input::placeholder {
     color: var(--inverse-light);
 }
