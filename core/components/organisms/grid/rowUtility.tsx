@@ -1,5 +1,4 @@
 import { RowData, Data, ColumnSchema, Schema, FetchDataOptions, Comparator } from './Grid';
-import { TableProps } from '@/index.type';
 
 export const updateBatchData = (data: Data, rowIndexes: number[], dataUpdate: Partial<RowData>): Data => {
   const updatedData = [...data];
@@ -75,11 +74,4 @@ export const paginateData = (data: Data = [], page: number, pageSize: number): D
   const end = start + pageSize;
   const paginatedData = data.slice(start, end);
   return paginatedData;
-};
-
-export const searchData = (data: Data = [], searchTerm: string = '', onSearch: TableProps['onSearch']): Data => {
-  if (onSearch) {
-    return data.filter(d => onSearch(d, searchTerm));
-  }
-  return data;
 };

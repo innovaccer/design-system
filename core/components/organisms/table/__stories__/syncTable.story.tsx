@@ -23,8 +23,8 @@ export const syncTable = () => {
         headerOptions={{
           withSearch: true
         }}
-        onSearch={(d, searchTerm) => {
-          return (
+        onSearch={(currData, searchTerm) => {
+          return currData.filter(d =>
             d.firstName.toLowerCase().match(searchTerm.toLowerCase())
             || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
           );
@@ -154,8 +154,8 @@ const customCode = `
         headerOptions={{
           withSearch: true
         }}
-        onSearch={(d, searchTerm) => {
-          return (
+        onSearch={(currData, searchTerm) => {
+          return currData.filter(d =>
             d.firstName.toLowerCase().match(searchTerm.toLowerCase())
             || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
           );
@@ -164,7 +164,7 @@ const customCode = `
         onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select: - rowIndex: \${ rowIndex } selected: \${ selected } selectedList: \${ JSON.stringify(selectedList) } selectAll: \${ selectAll } \`)}
         withPagination={true}
         pageSize={5}
-        onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)()}
+        onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)}
       />
     </Card>
   );
