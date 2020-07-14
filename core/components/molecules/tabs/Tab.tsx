@@ -6,6 +6,10 @@ export interface TabProps {
    */
   label: React.ReactNode;
   /**
+   * Set if disabled
+   */
+  disabled?: boolean;
+  /**
    * To be rendered in `Tab` component
    */
   children: React.ReactNode;
