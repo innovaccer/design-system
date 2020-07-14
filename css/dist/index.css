@@ -771,7 +771,7 @@ body {
 }
 
 .SubtleLink:hover {
-  text-decoration: underline;
+  border-bottom: var(--spacing-xs) solid var(--inverse-light);
 }
 
 .SubtleLink:active {
@@ -1498,10 +1498,6 @@ body {
     width: fit-content;
 }
 
-.Dropdown .PopperWrapper-trigger {
-    width: 100%;
-}
-
 .Dropdown-wrapper {
     margin-top: var(--spacing-m);
     margin-bottom: var(--spacing-m);
@@ -1546,7 +1542,7 @@ body {
     display: flex;
     justify-content: flex-end;
     padding-top: var(--spacing);
-    padding-right: var(--spacing-l);
+    padding-right: var(--spacing);
     padding-bottom: var(--spacing);
     border-top: var(--spacing-xs) solid var(--secondary-light);
 }
@@ -2217,7 +2213,7 @@ body {
 
 .Input {
     display: flex;
-    flex-grow: 0;
+    flex-grow: 1;
     flex-direction: row;
     align-items: center;
     box-sizing: border-box;
@@ -2478,7 +2474,7 @@ body {
   min-height: 200px;
   box-shadow: var(--shadow-m);
   background-color: var(--white);
-  border-radius: var(--spacing-m);
+  border-radius: var(--spacing);
   overflow: auto;
   display: none;
   visibility: hidden;
@@ -2527,6 +2523,7 @@ body {
 }
 
 .Modal-header-subheader {
+  padding-top: var(--spacing-s);
   padding-left: var(--spacing-2);
 }
 
@@ -2545,7 +2542,8 @@ body {
 }
 
 .Modal-description {
-  padding: var(--spacing-2) 0;
+  padding-top: var(--spacing-l);
+  padding-bottom: var(--spacing-2);
 }
 
 .Modal-footer {
@@ -2553,6 +2551,10 @@ body {
   display: flex;
   justify-content: flex-end;
   flex-grow: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .Modal-footer > * {
@@ -2563,11 +2565,23 @@ body {
   padding: 0 var(--spacing-2);
   max-height: 480px;
   overflow-y: scroll;
+  margin-bottom: var(--spacing-5);
 }
 
 .Modal-body--border {
   border-top: var(--border);
   border-bottom: var(--border);
+}
+
+.Modal-body::-webkit-scrollbar {
+  width: var(--spacing-2);
+}
+
+.Modal-body::-webkit-scrollbar-thumb {
+  border: var(--spacing-m) solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: var(--spacing);
+  background-color: var(--secondary);
 }
 /* Navigation */
 
@@ -3398,7 +3412,7 @@ body {
     margin-right: var(--spacing-l);
 }
 
-.Tab:nth-child(1) {
+.Tab:first-child {
     margin-left: 0;
 }
 
@@ -3409,6 +3423,10 @@ body {
 .Tab--active, .Tab:hover {
     margin-bottom: -1px;
     border-bottom: var(--spacing-s) solid var(--primary);
+}
+
+.Tab--disabled {
+    pointer-events: none;
 }
 
 .Tab-count {
@@ -3656,19 +3674,71 @@ body {
 }
 .Tooltip {
   color: var(--white);
+  max-width: var(--spacing-9);
   padding: var(--spacing) var(--spacing-2);
   border-radius: var(--spacing-m);
   position: absolute;
   z-index: 999999;
   background: var(--inverse);
-  max-width: var(--spacing-7);
-	/* truncate */
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 
+.align-baseline {
+  vertical-align: baseline !important;
+}
+
+.align-top {
+  vertical-align: top !important;
+}
+
+.align-middle {
+  vertical-align: middle !important;
+}
+
+.align-bottom {
+  vertical-align: bottom !important;
+}
+
+.align-text-bottom {
+  vertical-align: text-bottom !important;
+}
+
+.align-text-top {
+  vertical-align: text-top !important;
+}
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary) !important;
+}
+
+.bg-success {
+  background-color: var(--success) !important;
+}
+
+.bg-warning {
+  background-color: var(--warning) !important;
+}
+
+.bg-danger {
+  background-color: var(--alert) !important;
+}
+
+.bg-light {
+  background-color: var(--white) !important;
+}
+
+.bg-dark {
+  background-color: var(--inverse) !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
 .d-none {
   display: none !important;
 }
@@ -3704,50 +3774,186 @@ body {
 .d-inline-flex {
   display: inline-flex !important;
 }
+.flex-fill {
+  flex: 1 1 auto !important;
+}
+
+.flex-row {
+  flex-direction: row !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse !important;
+}
+
+.flex-column-reverse {
+  flex-direction: column-reverse !important;
+}
+
+.flex-grow-0 {
+  flex-grow: 0 !important;
+}
+
+.flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0 !important;
+}
+
+.flex-shrink-1 {
+  flex-shrink: 1 !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap !important;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse !important;
+}
+
+.justify-content-start {
+  justify-content: flex-start !important;
+}
+
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.justify-content-around {
+  justify-content: space-around !important;
+}
+
+.justify-content-evenly {
+  justify-content: space-evenly !important;
+}
+
+.align-items-start {
+  align-items: flex-start !important;
+}
+
+.align-items-end {
+  align-items: flex-end !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.align-items-baseline {
+  align-items: baseline !important;
+}
+
+.align-items-stretch {
+  align-items: stretch !important;
+}
+
+.align-content-start {
+  align-content: flex-start !important;
+}
+
+.align-content-end {
+  align-content: flex-end !important;
+}
+
+.align-content-center {
+  align-content: center !important;
+}
+
+.align-content-between {
+  align-content: space-between !important;
+}
+
+.align-content-around {
+  align-content: space-around !important;
+}
+
+.align-content-stretch {
+  align-content: stretch !important;
+}
+
+.align-self-auto {
+  align-self: auto !important;
+}
+
+.align-self-start {
+  align-self: flex-start !important;
+}
+
+.align-self-end {
+  align-self: flex-end !important;
+}
+
+.align-self-center {
+  align-self: center !important;
+}
+
+.align-self-baseline {
+  align-self: baseline !important;
+}
+
+.align-self-stretch {
+  align-self: stretch !important;
+}
+
+.order-first {
+  order: -1 !important;
+}
+
+.order-0 {
+  order: 0 !important;
+}
+
+.order-1 {
+  order: 1 !important;
+}
+
+.order-2 {
+  order: 2 !important;
+}
+
+.order-3 {
+  order: 3 !important;
+}
+
+.order-4 {
+  order: 4 !important;
+}
+
+.order-5 {
+  order: 5 !important;
+}
+
+.order-last {
+  order: 6 !important;
+}
 .Row {
   display: flex;
+  flex-grow: 1;
   flex-wrap: wrap;
 }
 
 .Col {
   position: relative;
   width: 100%;
-}
-
-.RowGroup--1 > .Col {
-  flex: 0 0;
-	flex-basis: calc((100% / 1));
-  max-width: calc((100% / 1));
-}
-
-.RowGroup--2 > .Col {
-  flex: 0 0;
-	flex-basis: calc((100% / 2));
-  max-width: calc((100% / 2));
-}
-
-.RowGroup--3 > .Col {
-  flex: 0 0;
-	flex-basis: calc((100% / 3));
-  max-width: calc((100% / 3));
-}
-
-.RowGroup--4 > .Col {
-  flex: 0 0;
-	flex-basis: calc((100% / 4));
-  max-width: calc((100% / 4));
-}
-
-.RowGroup--5 > .Col {
-  flex: 0 0;
-	flex-basis: calc((100% / 5));
-  max-width: calc((100% / 5));
-}
-
-.RowGroup--6 > .Col {
-  flex: 0 0;
-	flex-basis: calc((100% / 6));
-  max-width: calc((100% / 6));
 }
 
 .Col--auto {
@@ -3829,42 +4035,6 @@ body {
 
 /* if the viewport is between 0 to 575 pixels wide. */
 @media (max-width: 575px) {
-  .RowGroup--xs-1 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 1));
-    max-width: calc((100% / 1));
-  }
-
-  .RowGroup--xs-2 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 2));
-    max-width: calc((100% / 2));
-  }
-
-  .RowGroup--xs-3 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 3));
-    max-width: calc((100% / 3));
-  }
-
-  .RowGroup--xs-4 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 4));
-    max-width: calc((100% / 4));
-  }
-
-  .RowGroup--xs-5 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 5));
-    max-width: calc((100% / 5));
-  }
-
-  .RowGroup--xs-6 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 6));
-    max-width: calc((100% / 6));
-  }
-
   .Col--xs {
     flex-basis: 0;
     flex-grow: 1;
@@ -3951,43 +4121,7 @@ body {
 
 /* if the viewport is between 576 and 767 pixels wide. */
 @media (min-width: 576px) and (max-width: 767px) {
-  .RowGroup--s-1 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 1));
-    max-width: calc((100% / 1));
-  }
-
-  .RowGroup--s-2 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 2));
-    max-width: calc((100% / 2));
-  }
-
-  .RowGroup--s-3 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 3));
-    max-width: calc((100% / 3));
-  }
-
-  .RowGroup--s-4 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 4));
-    max-width: calc((100% / 4));
-  }
-
-  .RowGroup--s-5 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 5));
-    max-width: calc((100% / 5));
-  }
-
-  .RowGroup--s-6 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 6));
-    max-width: calc((100% / 6));
-  }
-
-  .Col--s-auto {
+ .Col--s-auto {
     flex: 0 0 auto;
     width: auto;
     max-width: 100%;
@@ -4067,42 +4201,6 @@ body {
 
 /* if the viewport is between 768 and 991 pixels wide. */
 @media (min-width: 768px) and (max-width: 991px) {
-  .RowGroup--m-1 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 1));
-    max-width: calc((100% / 1));
-  }
-
-  .RowGroup--m-2 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 2));
-    max-width: calc((100% / 2));
-  }
-
-  .RowGroup--m-3 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 3));
-    max-width: calc((100% / 3));
-  }
-
-  .RowGroup--m-4 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 4));
-    max-width: calc((100% / 4));
-  }
-
-  .RowGroup--m-5 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 5));
-    max-width: calc((100% / 5));
-  }
-
-  .RowGroup--m-6 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 6));
-    max-width: calc((100% / 6));
-  }
-
   .Col--m-auto {
     flex: 0 0 auto;
     width: auto;
@@ -4183,42 +4281,6 @@ body {
 
 /* if the viewport is between 992 and 1199 pixels wide. */
 @media (min-width: 992px) and (max-width: 1199px) {
-  .RowGroup--l-1 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 1));
-    max-width: calc((100% / 1));
-  }
-
-  .RowGroup--l-2 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 2));
-    max-width: calc((100% / 2));
-  }
-
-  .RowGroup--l-3 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 3));
-    max-width: calc((100% / 3));
-  }
-
-  .RowGroup--l-4 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 4));
-    max-width: calc((100% / 4));
-  }
-
-  .RowGroup--l-5 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 5));
-    max-width: calc((100% / 5));
-  }
-
-  .RowGroup--l-6 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 6));
-    max-width: calc((100% / 6));
-  }
-
   .Col--l-auto {
     flex: 0 0 auto;
     width: auto;
@@ -4299,42 +4361,6 @@ body {
 
 /* if the viewport is 1200 pixels wide or wider. */
 @media (min-width: 1200px) {
-  .RowGroup--xl-1 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 1));
-    max-width: calc((100% / 1));
-  }
-
-  .RowGroup--xl-2 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 2));
-    max-width: calc((100% / 2));
-  }
-
-  .RowGroup--xl-3 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 3));
-    max-width: calc((100% / 3));
-  }
-
-  .RowGroup--xl-4 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 4));
-    max-width: calc((100% / 4));
-  }
-
-  .RowGroup--xl-5 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 5));
-    max-width: calc((100% / 5));
-  }
-
-  .RowGroup--xl-6 > .Col {
-    flex: 0 0;
-		flex-basis: calc((100% / 6));
-    max-width: calc((100% / 6));
-  }
-
   .Col--xl-auto {
     flex: 0 0 auto;
     width: auto;
@@ -4413,6 +4439,33 @@ body {
   }
 }
 
+.overflow-auto {
+  overflow: auto !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+.position-static {
+  position: static !important;
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.position-absolute {
+  position: absolute !important;
+}
+
+.position-fixed {
+  position: fixed !important;
+}
+
+.position-sticky {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+}
 .w-25 {
   width: 25% !important;
 }

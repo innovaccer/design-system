@@ -50,6 +50,7 @@ export declare type ColumnSchema = {
     cellType?: CellType;
     cellRenderer?: (props: GridCellProps) => React.ReactElement;
     align?: Alignment;
+    tooltip?: boolean;
 };
 export declare type RowData = Record<string, any> & {
     _selected?: boolean;

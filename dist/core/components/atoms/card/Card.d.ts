@@ -3,7 +3,6 @@ import { BaseProps } from '@/utils/types';
 export declare type Shadow = 'none' | 'light' | 'medium' | 'dark';
 export interface CardProps extends BaseProps {
     shadow?: Shadow;
-    style?: React.CSSProperties;
     children: React.ReactNode;
 }
 export declare const Card: {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IconProps } from '@/components/atoms/icon';
+import { IconProps } from '@/index.type';
 import { BaseProps } from '@/utils/types';
 export declare type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
 export declare type AutoComplete = 'on' | 'off';

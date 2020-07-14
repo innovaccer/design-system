@@ -5,6 +5,7 @@ export interface ExternalHeaderProps {
     withSearch?: boolean;
     searchPlaceholder?: string;
     dynamicColumn?: boolean;
+    allowSelectAll?: boolean;
 }
 export declare type updateSearchTermFunction = (newSearchTerm: string) => void;
 export interface HeaderProps extends ExternalHeaderProps {

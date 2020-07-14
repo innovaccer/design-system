@@ -1,5 +1,4 @@
 /// <reference types="react" />
-export declare const RowGroup: () => JSX.Element;
 export declare const ColumnSize: () => JSX.Element;
 declare const _default: {
     title: string;

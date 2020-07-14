@@ -3,14 +3,14 @@ import { ExternalHeaderProps, updateSearchTermFunction, HeaderProps } from '../g
 import { Data, Schema, onSelectFunction, onSelectAllFunction, GridProps, FetchDataOptions, fetchDataFunction, RowData, updateSchemaFunction, updateSortingListFunction, updateFilterListFunction } from '../grid';
 import { BaseProps } from '@/utils/types';
 interface SyncProps {
-    data: Data;
-    schema: Schema;
+    data?: Data;
+    schema?: Schema;
     loading?: boolean;
     error?: boolean;
-    onSearch?: (data: RowData, searchTerm: string) => boolean;
+    onSearch?: (data: Data, searchTerm: string) => Data;
 }
 interface AsyncProps {
-    fetchData: fetchDataFunction;
+    fetchData?: fetchDataFunction;
 }
 interface SharedTableProps extends BaseProps {
     showHead?: GridProps['showHead'];
@@ -33,8 +33,8 @@ interface SharedTableProps extends BaseProps {
     onSelect?: (rowIndexes: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean) => void;
     onPageChange?: GridProps['onPageChange'];
 }
-declare type SyncTableProps = SyncProps & SharedTableProps;
-declare type AsyncTableProps = AsyncProps & SharedTableProps;
+export declare type SyncTableProps = SyncProps & SharedTableProps;
+export declare type AsyncTableProps = AsyncProps & SharedTableProps;
 export declare type TableProps = (AsyncTableProps & SyncTableProps);
 interface TableState {
     async: boolean;
@@ -53,7 +53,9 @@ export declare class Table extends React.Component<TableProps, TableState> {
     constructor(props: TableProps);
     static defaultProps: {
         type: string;
+        size: string;
         showHead: boolean;
+        showMenu: boolean;
         multipleSorting: boolean;
         headerOptions: {};
         pageSize: number;

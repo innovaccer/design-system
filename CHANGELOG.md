@@ -364,3 +364,37 @@
 * cafb41d fix: adds shadow: none in Card
 * 2d3637f fix: fixes extra margin in Header
 * b46f34b chore: adds bundle banner in rollup config
+
+-------------------
+ **v1.0.0-25**  (2020-07-14) 
+
+* 95f6230 v1.0.0-25
+* 9348d4a feat: adds triggerClass prop in Popover
+* d153d63 fix: replaces Popover with Tooltip in Input
+* 65f2ab9 fix: updates onSearch in Table and onSelect is now called on init
+* a7b7eaa feat: adds disabled prop in Tab
+* 536c251 feat: adds Chip and ChipGroup in build
+* 250dbf3 fix: fixes modal css
+* 6599c50 feat(#96): adds tooltip in Grid Schema
+* b713336 feat: adds allowSelectAll prop in ExternalHeaderProps
+* 4c000cd fix: updates data, schema, fetchData as optional props
+* 6d47fd1 fix: css fixes for InputMask and PopperWrapper
+* 6d77adf docs: updates dropdown docs
+* d96ec95 fix: fixes default appendToBody in Tooltip
+* 3b158da chore: replaces rest with baseProps in cards
+* 0e4d99b chore: replaces text underline with bottom border in breadcrumbs
+* de8dabb fix: fixes tooltip CSS
+* 421a243 fix: replaces Heading with Text in Avatar
+* ffa8331 chore: updates stories of Table
+* 20e92a1 fix: fixes separator for first column in Grid
+* 6383377 v1.0.0-25
+* 8bc107b fix: fixes dropdown footer buttons size
+* 6c632dd docs: fixes modal and dialog docs tab
+* fa134b7 fix: general fixes in Table
+* 5a7e11b fix: fixes extra margin in Header
+* a09615f feat: adds utility classes
+* 00cc981 feat: removes groups from Row
+* 81e2ed4 feat: replaces style prop with customStyle in popover
+* 1ef7761 chore: removes wrapper from stories
+* 0897fd4 fix: fixes commonStories
+* 203340f chore(pageHeader): stories updated

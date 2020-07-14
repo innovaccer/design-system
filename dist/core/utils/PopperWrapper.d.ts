@@ -8,6 +8,7 @@ declare enum Offsets {
 }
 interface Props {
     trigger: React.ReactElement<any>;
+    triggerClass?: string;
     placement: PositionType;
     children: React.ReactElement<any>;
     style: React.CSSProperties;

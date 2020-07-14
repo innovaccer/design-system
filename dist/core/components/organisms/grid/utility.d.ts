@@ -7,5 +7,5 @@ export declare const getSelectAll: (data: Data) => {
     indeterminate: boolean;
     checked: boolean;
 };
-export declare const getInit: (_this: Grid) => boolean;
+export declare const getInit: (schema: Schema) => boolean;
 export declare const getSchema: (_this: Grid) => Schema;

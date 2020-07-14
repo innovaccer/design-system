@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1594122356884 
+   * Generated on: 1594742196623 
    *      Package: @innovaccer/design-system
-   *      Version: v1.0.0-24
+   *      Version: v1.0.0-25
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -394,8 +394,8 @@
     }, "Avatar--".concat(AvatarAppearance), AvatarAppearance), className);
     return /*#__PURE__*/React.createElement("span", _extends({}, baseProps, {
       className: classes
-    }), /*#__PURE__*/React.createElement(Heading, {
-      size: "s",
+    }), /*#__PURE__*/React.createElement(Text, {
+      weight: "medium",
       appearance: AvatarAppearance === 'warning' ? 'default' : 'white'
     }, initials));
   };
@@ -855,8 +855,10 @@
             return _this2.togglePopper('onClick');
           }
         };
+        var triggerClass = this.props.triggerClass;
+        var classes = classNames('PopperWrapper-trigger', triggerClass);
         var element = /*#__PURE__*/React.cloneElement( /*#__PURE__*/React.createElement("span", {
-          className: "PopperWrapper-trigger"
+          className: classes
         }, trigger), options);
         return element;
       }
@@ -938,12 +940,13 @@
         appendToBody = _props$appendToBody === void 0 ? true : _props$appendToBody,
         _props$on = props.on,
         on = _props$on === void 0 ? 'click' : _props$on,
-        _props$style = props.style,
-        style = _props$style === void 0 ? {} : _props$style,
+        _props$customStyle = props.customStyle,
+        customStyle = _props$customStyle === void 0 ? {} : _props$customStyle,
         dark = props.dark,
         hoverable = props.hoverable,
         children = props.children,
         trigger = props.trigger,
+        triggerClass = props.triggerClass,
         onToggle = props.onToggle,
         className = props.className;
 
@@ -970,12 +973,13 @@
     }, children);
     var popperOptions = {
       trigger: trigger,
+      triggerClass: triggerClass,
       appendToBody: appendToBody,
       closeOnBackdropClick: closeOnBackdropClick,
       on: on,
       hoverable: hoverable,
-      style: style,
       open: open,
+      style: customStyle,
       onToggle: onToggle || onToggleFunction,
       placement: position
     };
@@ -1535,11 +1539,6 @@
       name: 'info',
       size: sizeMapping$1[size]
     }));
-    var popoverStyle = {
-      padding: 'var(--spacing) var(--spacing-2)',
-      maxWidth: 'var(--spacing-9)',
-      overflow: 'hidden'
-    };
     return /*#__PURE__*/React.createElement("div", {
       className: classes
     }, inlineLabel && /*#__PURE__*/React.createElement("div", {
@@ -1567,13 +1566,10 @@
       onClick: onClick,
       onFocus: onFocus,
       autoFocus: autoFocus
-    })), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/React.createElement(Popover, {
-      style: popoverStyle,
+    })), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/React.createElement(Tooltip, {
       position: "top",
-      on: 'hover',
-      trigger: trigger,
-      dark: true
-    }, info) : actionIcon ? actionIcon : onClear && value && !disabled && /*#__PURE__*/React.createElement("div", {
+      tooltip: info
+    }, trigger) : actionIcon ? actionIcon : onClear && value && !disabled && /*#__PURE__*/React.createElement("div", {
       className: rightIconClass,
       onClick: function onClick(e) {
         return onClear(e);
@@ -1898,11 +1894,13 @@
         className: "mr-4",
         appearance: 'basic',
         onClick: onCancelOptions,
+        size: 'tiny',
         tabIndex: -1
       }, "Cancel"), /*#__PURE__*/React.createElement(Button, {
         ref: dropdownApplyButtonRef,
         appearance: 'primary',
         disabled: disable,
+        size: 'tiny',
         onClick: onApplyOptions
       }, "Apply"));
     };
@@ -2114,8 +2112,9 @@
     }), /*#__PURE__*/React.createElement(Popover, {
       onToggle: onToggleDropdown,
       trigger: trigger,
+      triggerClass: "w-100",
       open: dropdownOpen,
-      style: popoverStyle,
+      customStyle: popoverStyle,
       position: alignmentMapping[align],
       appendToBody: true
     }, (withSearch || props.async) && renderSearch(), renderDropdownSection(), showApplyButton && withCheckbox && renderApplyButton()));
@@ -2125,6 +2124,15 @@
 
   var inputRef = /*#__PURE__*/React.createRef();
   var bulk = 50;
+  /**
+   * ###Note:
+   * 1. Dropdown props types:
+   *  - async: fetchOptions
+   *  - sync: options, loading
+   * 2. Sync Dropdown:
+   *  - Manually toggle loading state to update options.
+   */
+
   var Dropdown = /*#__PURE__*/function (_React$Component) {
     _inherits(Dropdown, _React$Component);
 
@@ -2656,13 +2664,12 @@
 
     var shadow = props.shadow,
         children = props.children,
-        className = props.className,
-        rest = _objectWithoutProperties(props, ["shadow", "children", "className"]);
-
+        className = props.className;
+    var baseProps = extractBaseProps(props);
     var classes = classNames((_classNames = {
       Card: true
     }, _defineProperty(_classNames, "Card--shadow-".concat(shadow), shadow), _defineProperty(_classNames, "".concat(className), className), _classNames));
-    return /*#__PURE__*/React.createElement("div", _extends({}, rest, {
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes
     }), children);
   };
@@ -2670,6 +2677,143 @@
     shadow: 'medium'
   };
   Card.displayName = 'Card';
+
+  var GenericChip = function GenericChip(props) {
+    var _props$label = props.label,
+        label = _props$label === void 0 ? '' : _props$label,
+        icon = props.icon,
+        clearButton = props.clearButton,
+        disabled = props.disabled,
+        className = props.className,
+        selected = props.selected,
+        onClose = props.onClose,
+        onClick = props.onClick;
+    var baseProps = extractBaseProps(props);
+
+    var iconClass = function iconClass(align) {
+      var _classNames;
+
+      return classNames((_classNames = {}, _defineProperty(_classNames, 'Chip-icon', true), _defineProperty(_classNames, "Chip-icon--".concat(align), align), _classNames));
+    };
+
+    var onCloseHandler = function onCloseHandler(e) {
+      e.stopPropagation();
+      if (onClose) onClose();
+    };
+
+    var onClickHandler = function onClickHandler() {
+      if (onClick) onClick();
+    };
+
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
+      className: "Chip-wrapper ".concat(className),
+      onClick: onClickHandler
+    }), icon && /*#__PURE__*/React.createElement(Icon, {
+      name: icon,
+      appearance: disabled ? 'disabled' : selected ? 'info' : 'default',
+      className: iconClass('left')
+    }), /*#__PURE__*/React.createElement(Text, {
+      appearance: disabled ? 'disabled' : 'default'
+    }, label), clearButton && /*#__PURE__*/React.createElement(Icon, {
+      name: "clear",
+      appearance: disabled ? 'disabled' : selected ? 'info' : 'subtle',
+      className: iconClass('right'),
+      onClick: onCloseHandler
+    }));
+  };
+
+  var Chip = function Chip(props) {
+    var _classNames;
+
+    var _props$label = props.label,
+        label = _props$label === void 0 ? '' : _props$label,
+        icon = props.icon,
+        clearButton = props.clearButton,
+        _props$type = props.type,
+        type = _props$type === void 0 ? 'input' : _props$type,
+        disabled = props.disabled,
+        selected = props.selected,
+        onClose = props.onClose,
+        onClick = props.onClick,
+        name = props.name,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
+
+    var onCloseHandler = function onCloseHandler() {
+      if (!disabled && onClose) onClose(name);
+    };
+
+    var onClickHandler = function onClickHandler() {
+      if (!disabled && onClick) onClick(name);
+    };
+
+    var chipClass = classNames((_classNames = {
+      Chip: true
+    }, _defineProperty(_classNames, "Chip-".concat(type, "--disabled"), disabled), _defineProperty(_classNames, "Chip--".concat(type), type && !disabled), _defineProperty(_classNames, "Chip-".concat(type, "--selected"), selected && !disabled), _classNames), className);
+    var clearbutton = type === 'action' ? false : clearButton;
+    var select = type === 'selection' && selected ? true : false;
+    return /*#__PURE__*/React.createElement(GenericChip, _extends({}, baseProps, {
+      label: label,
+      selected: select,
+      icon: icon,
+      clearButton: clearbutton,
+      disabled: disabled,
+      className: chipClass,
+      onClose: onCloseHandler,
+      onClick: onClickHandler,
+      name: name
+    }));
+  };
+  Chip.displayName = 'Chip';
+
+  var ChipGroup = function ChipGroup(props) {
+    var list = props.list,
+        onClick = props.onClick,
+        onClose = props.onClose,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
+
+    var onClickHandler = function onClickHandler(item) {
+      if (onClick) onClick(item);
+    };
+
+    var onCloseHandler = function onCloseHandler(item) {
+      if (onClose) onClose(item);
+    };
+
+    var ChipGroupClass = classNames(_defineProperty({}, 'ChipGroup', true), className);
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
+      className: ChipGroupClass
+    }), list.map(function (item, ind) {
+      var _item$label = item.label,
+          label = _item$label === void 0 ? '' : _item$label,
+          icon = item.icon,
+          type = item.type,
+          disabled = item.disabled,
+          selected = item.selected,
+          clearButton = item.clearButton,
+          name = item.name;
+      return /*#__PURE__*/React.createElement("span", {
+        key: ind,
+        className: "ChipGroup-item"
+      }, /*#__PURE__*/React.createElement(Chip, {
+        name: name,
+        label: label,
+        selected: selected,
+        icon: icon,
+        disabled: disabled,
+        clearButton: clearButton,
+        type: type,
+        onClick: function onClick() {
+          return onClickHandler(item);
+        },
+        onClose: function onClose() {
+          return onCloseHandler(item);
+        }
+      }));
+    }));
+  };
+  ChipGroup.displayName = 'ChipGroup';
 
   var Column = function Column(props) {
     var _classNames;
@@ -3684,8 +3828,11 @@
       if (onClear) onClear(e);
     };
 
+    var classes = classNames({
+      'd-flex flex-column flex-grow-1': true
+    }, className);
     return /*#__PURE__*/React.createElement("div", {
-      className: className
+      className: classes
     }, /*#__PURE__*/React.createElement(Input, _extends({}, rest, {
       value: value,
       error: error,
@@ -3908,6 +4055,7 @@
       }));
       return /*#__PURE__*/React.createElement(Popover, {
         trigger: trigger,
+        triggerClass: "w-100",
         position: position,
         appendToBody: true,
         open: open,
@@ -4385,20 +4533,12 @@
   Radio.displayName = 'Radio';
 
   var Row = function Row(props) {
-    var _classNames;
-
-    var group = props.group,
-        groupXS = props.groupXS,
-        groupS = props.groupS,
-        groupM = props.groupM,
-        groupL = props.groupL,
-        groupXL = props.groupXL,
-        className = props.className,
+    var className = props.className,
         children = props.children;
     var baseProps = extractBaseProps(props);
-    var classes = classNames((_classNames = {
+    var classes = classNames(_defineProperty({
       Row: true
-    }, _defineProperty(_classNames, "RowGroup--".concat(group), group), _defineProperty(_classNames, "RowGroup--xs-".concat(groupXS), groupXS), _defineProperty(_classNames, "RowGroup--s-".concat(groupS), groupS), _defineProperty(_classNames, "RowGroup--m-".concat(groupM), groupM), _defineProperty(_classNames, "RowGroup--l-".concat(groupL), groupL), _defineProperty(_classNames, "RowGroup--xl-".concat(groupXL), groupXL), _defineProperty(_classNames, "".concat(className), className), _classNames));
+    }, "".concat(className), className));
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes
     }), children);
@@ -4675,7 +4815,7 @@
       value: function render() {
         var _this$props = this.props,
             _this$props$appendToB = _this$props.appendToBody,
-            appendToBody = _this$props$appendToB === void 0 ? false : _this$props$appendToB,
+            appendToBody = _this$props$appendToB === void 0 ? true : _this$props$appendToB,
             _this$props$position = _this$props.position,
             tooltip = _this$props.tooltip,
             children = _this$props.children,
@@ -5349,10 +5489,9 @@
         }
       };
 
-      var trigger = /*#__PURE__*/React.createElement(Row, {
-        group: '2',
-        groupXS: '1'
-      }, /*#__PURE__*/React.createElement(Column, {
+      var trigger = /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, {
+        size: '6',
+        sizeXS: '12',
         className: "DateRangePicker-input DateRangePicker-input--startDate"
       }, /*#__PURE__*/React.createElement(InputMask, _extends({}, startInputOptions, {
         mask: mask,
@@ -5372,6 +5511,8 @@
         error: startError,
         caption: startInputOptions.required && startError ? startInputOptions.caption || 'Invalid value' : ''
       }))), /*#__PURE__*/React.createElement(Column, {
+        size: '6',
+        sizeXS: '12',
         className: "DateRangePicker-input DateRangePicker-input--endDate"
       }, /*#__PURE__*/React.createElement(InputMask, _extends({}, endInputOptions, {
         mask: mask,
@@ -5406,6 +5547,7 @@
 
       return /*#__PURE__*/React.createElement(Popover, {
         trigger: trigger,
+        triggerClass: "w-100",
         position: position,
         appendToBody: true,
         open: open,
@@ -5462,13 +5604,15 @@
     var TabsHeader = children.map(function (child, index) {
       var _classNames2;
 
-      var tabHeaderClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Tab', true), _defineProperty(_classNames2, 'Tab--active', active === index), _classNames2));
-      var label = child.props.label;
+      var _child$props = child.props,
+          label = _child$props.label,
+          disabled = _child$props.disabled;
+      var tabHeaderClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Tab', true), _defineProperty(_classNames2, 'Tab--disabled', disabled), _defineProperty(_classNames2, 'Tab--active', !disabled && active === index), _classNames2));
       return /*#__PURE__*/React.createElement("div", {
         key: index,
         className: tabHeaderClass,
         onClick: function onClick() {
-          return tabClickHandler(index);
+          return !disabled && tabClickHandler(index);
         }
       }, label);
     });
@@ -5628,7 +5772,10 @@
     };
     return newData;
   }
-  var filterData = function filterData(schema, data, filterList) {
+  var filterData = function filterData() {
+    var schema = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+    var filterList = arguments.length > 2 ? arguments[2] : undefined;
     var filteredData = data;
 
     if (filterList) {
@@ -5649,7 +5796,11 @@
 
     return filteredData;
   };
-  var sortData = function sortData(schema, data, sortingList) {
+  var sortData = function sortData() {
+    var schema = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+    var sortingList = arguments.length > 2 ? arguments[2] : undefined;
+
     var sortedData = _toConsumableArray(data);
 
     sortingList === null || sortingList === void 0 ? void 0 : sortingList.forEach(function (l) {
@@ -5672,20 +5823,14 @@
     });
     return sortedData;
   };
-  var paginateData = function paginateData(data, page, pageSize) {
+  var paginateData = function paginateData() {
+    var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var page = arguments.length > 1 ? arguments[1] : undefined;
+    var pageSize = arguments.length > 2 ? arguments[2] : undefined;
     var start = (page - 1) * pageSize;
     var end = start + pageSize;
     var paginatedData = data.slice(start, end);
     return paginatedData;
-  };
-  var searchData = function searchData(data, searchTerm, onSearch) {
-    if (onSearch) {
-      return data.filter(function (d) {
-        return onSearch(d, searchTerm);
-      });
-    }
-
-    return data;
   };
 
   var moveToIndex = function moveToIndex(arr, from, to) {
@@ -5724,8 +5869,7 @@
       checked: false
     };
   };
-  var getInit = function getInit(_this) {
-    var schema = _this.props.schema;
+  var getInit = function getInit(schema) {
     return schema && !!schema.length;
   };
   var getSchema = function getSchema(_this) {
@@ -5733,7 +5877,7 @@
         loading = _this$props.loading,
         loaderSchema = _this$props.loaderSchema;
     var schema = _this.props.schema;
-    var init = getInit(_this);
+    var init = getInit(schema);
 
     if (!init && loading) {
       schema = loaderSchema;
@@ -5743,10 +5887,18 @@
   };
 
   var renderTitle = function renderTitle(props) {
-    var cellData = props.cellData;
+    var tooltip = props.tooltip,
+        cellData = props.cellData;
     var children = cellData.title;
 
     if (children) {
+      if (tooltip) {
+        return /*#__PURE__*/React.createElement(Tooltip, {
+          tooltip: children,
+          position: 'top-start'
+        }, /*#__PURE__*/React.createElement(Text, null, children));
+      }
+
       return /*#__PURE__*/React.createElement(Text, null, children);
     }
 
@@ -5820,7 +5972,8 @@
         _schema$cellType = schema.cellType,
         cellType = _schema$cellType === void 0 ? 'DEFAULT' : _schema$cellType,
         _schema$align = schema.align,
-        align = _schema$align === void 0 ? 'left' : _schema$align;
+        align = _schema$align === void 0 ? 'left' : _schema$align,
+        tooltip = schema.tooltip;
     var cellData = data[name];
     var cellClass = classNames(_defineProperty({}, 'GridCell', true));
 
@@ -5837,7 +5990,7 @@
         return /*#__PURE__*/React.createElement("div", {
           className: "".concat(cellClass, " GridCell--align-").concat(align, " GridCell--default")
         }, renderTitle({
-          loading: loading,
+          tooltip: tooltip,
           cellData: cellData
         }));
 
@@ -5858,10 +6011,9 @@
         }, /*#__PURE__*/React.createElement("div", {
           className: "GridCell-metaListWrapper"
         }, renderTitle({
-          loading: loading,
+          tooltip: tooltip,
           cellData: cellData
         }), renderMetaList({
-          loading: loading,
           cellData: cellData
         })));
 
@@ -5876,7 +6028,6 @@
         return /*#__PURE__*/React.createElement("div", {
           className: "".concat(cellClass, " GridCell--avatar")
         }, size !== 'tight' && renderAvatar({
-          loading: loading,
           cellData: cellData
         }));
 
@@ -5897,10 +6048,9 @@
         return /*#__PURE__*/React.createElement("div", {
           className: "".concat(cellClass, " GridCell--avatarWithText")
         }, size !== 'tight' && renderAvatar({
-          loading: loading,
           cellData: cellData
         }), renderTitle({
-          loading: loading,
+          tooltip: tooltip,
           cellData: cellData
         }));
 
@@ -5923,15 +6073,13 @@
         return /*#__PURE__*/React.createElement("div", {
           className: "".concat(cellClass, " GridCell--avatarWithText")
         }, size !== 'tight' && renderAvatar({
-          loading: loading,
           cellData: cellData
         }), /*#__PURE__*/React.createElement("div", {
           className: "GridCell-metaListWrapper"
         }, renderTitle({
-          loading: loading,
+          tooltip: tooltip,
           cellData: cellData
         }), renderMetaList({
-          loading: loading,
           cellData: cellData
         })));
 
@@ -5946,7 +6094,6 @@
         return /*#__PURE__*/React.createElement("div", {
           className: "".concat(cellClass, " GridCell--align-").concat(align, " GridCell--icon")
         }, renderIcon({
-          loading: loading,
           cellData: cellData
         }));
 
@@ -5963,7 +6110,6 @@
         return /*#__PURE__*/React.createElement("div", {
           className: "".concat(cellClass, " GridCell--align-").concat(align, " GridCell--statusHint")
         }, renderStatusHint({
-          loading: loading,
           cellData: cellData
         }));
     }
@@ -5977,6 +6123,7 @@
         schema = props.schema,
         draggable = props.draggable;
     var _this$props = _this.props,
+        schemaProp = _this$props.schema,
         loading = _this$props.loading,
         showMenu = _this$props.showMenu,
         sortingList = _this$props.sortingList,
@@ -5985,7 +6132,7 @@
         sorting = _schema$sorting === void 0 ? true : _schema$sorting,
         name = schema.name,
         filters = schema.filters;
-    var init = getInit(_this);
+    var init = getInit(schemaProp);
     var listIndex = sortingList.findIndex(function (l) {
       return l.name === name;
     });
@@ -6139,18 +6286,17 @@
         draggable = props.draggable,
         data = props.data,
         rowIndex = props.rowIndex;
-    var withCheckbox = _this.props.withCheckbox;
     var cellClass = classNames({
       'Grid-cell': true,
       'Grid-cell--head': head,
       'Grid-cell--body': !head,
-      'Grid-cell--separator': !(withCheckbox && colIndex === 0) && schema.separator
+      'Grid-cell--separator': colIndex !== 0 && schema.separator
     });
     if (schema.hidden) return null;
     return /*#__PURE__*/React.createElement("div", {
       key: "".concat(rowIndex, "-").concat(colIndex),
       className: cellClass,
-      "data-name": name,
+      "data-name": schema.name,
       style: {
         width: schema.width
       }
@@ -6757,7 +6903,8 @@
         selectAll = props.selectAll,
         searchTerm = props.searchTerm,
         updateSearchTerm = props.updateSearchTerm,
-        dynamicColumn = props.dynamicColumn;
+        dynamicColumn = props.dynamicColumn,
+        allowSelectAll = props.allowSelectAll;
 
     var _React$useState = React.useState(false),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -6837,7 +6984,7 @@
       onClear: function onClear() {
         return updateSearchTerm && updateSearchTerm('');
       },
-      disabled: loading
+      disabled: loading && !getInit(schema)
     })), !showHead && /*#__PURE__*/React.createElement("div", {
       className: "Header-dropdown"
     }, !showHead && filterSchema.length > 0 && /*#__PURE__*/React.createElement("div", {
@@ -6864,7 +7011,7 @@
           return onFilterChange(name, selected);
         }
       });
-    }))), /*#__PURE__*/React.createElement("div", {
+    }))), children && /*#__PURE__*/React.createElement("div", {
       className: "Header-actions"
     }, children)), /*#__PURE__*/React.createElement("div", {
       className: "Header-content Header-content--bottom"
@@ -6877,11 +7024,9 @@
     })), loading ? /*#__PURE__*/React.createElement(Placeholder, {
       withImage: !showHead && withCheckbox
     }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
-      length: 'small'
-    })) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
-      small: true,
-      weight: 'medium'
-    }, label), withPagination && (selectAll === null || selectAll === void 0 ? void 0 : selectAll.checked) && /*#__PURE__*/React.createElement("div", {
+      length: 'small',
+      size: 's'
+    })) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Label, null, label), withPagination && (selectAll === null || selectAll === void 0 ? void 0 : selectAll.checked) && allowSelectAll && /*#__PURE__*/React.createElement("div", {
       className: "ml-4"
     }, !selectAllRecords ? /*#__PURE__*/React.createElement(Button, {
       size: "tiny",
@@ -6955,6 +7100,8 @@
       _this = _super.call(this, props);
 
       _defineProperty(_assertThisInitialized(_this), "updateData", debounce(250, function (_options) {
+        _this.onSelect(-1, false);
+
         var _this$props = _this.props,
             fetchData = _this$props.fetchData,
             pageSize = _this$props.pageSize,
@@ -6967,8 +7114,7 @@
             schema = _this$state.schema,
             sortingList = _this$state.sortingList,
             filterList = _this$state.filterList,
-            _this$state$searchTer = _this$state.searchTerm,
-            searchTerm = _this$state$searchTer === void 0 ? '' : _this$state$searchTer;
+            searchTerm = _this$state.searchTerm;
         var opts = {
           // ...options,
           page: page,
@@ -6988,27 +7134,29 @@
             loading: true
           });
 
-          fetchData(opts).then(function (res) {
-            var data = res.data;
+          if (fetchData) {
+            fetchData(opts).then(function (res) {
+              var data = res.data;
 
-            _this.setState({
-              data: data,
-              selectAll: getSelectAll$1(data),
-              schema: _this.state.schema.length ? _this.state.schema : res.schema,
-              totalRecords: res.count,
-              loading: false,
-              error: !data.length
+              _this.setState({
+                data: data,
+                selectAll: getSelectAll$1(data),
+                schema: _this.state.schema.length ? _this.state.schema : res.schema,
+                totalRecords: res.count,
+                loading: false,
+                error: !data.length
+              });
+            })["catch"](function () {
+              _this.setState({
+                loading: false,
+                error: true,
+                data: []
+              });
             });
-          })["catch"](function () {
-            _this.setState({
-              loading: false,
-              error: true,
-              data: []
-            });
-          });
+          }
         } else {
           var filteredData = filterData(schema, dataProp, filterList);
-          var searchedData = searchData(filteredData, opts.searchTerm, onSearch);
+          var searchedData = onSearch && opts.searchTerm !== undefined ? onSearch(filteredData, opts.searchTerm) : filteredData;
           var sortedData = sortData(schema, searchedData, sortingList);
           var renderedData = sortedData;
           var totalRecords = sortedData.length;
@@ -7111,20 +7259,22 @@
 
       var _async = ('fetchData' in _this.props);
 
+      var _data = props.data || [];
+
+      var _schema = props.schema || [];
+
       _this.state = {
         async: _async,
-        // @ts-ignore
-        data: [],
-        // @ts-ignore
-        schema: !_async ? props.schema : [],
+        data: !_async ? _data : [],
+        schema: !_async ? _schema : [],
         page: 1,
         sortingList: props.sortingList || [],
         filterList: props.filterList || {},
-        totalRecords: !_async ? props.data.length : 0,
+        totalRecords: !_async ? _data.length : 0,
         loading: !_async ? props.loading || false : true,
         error: !_async ? props.error || false : false,
         selectAll: getSelectAll$1([]),
-        searchTerm: ''
+        searchTerm: undefined
       }; // if (async) this.updateData({});
 
       _this.updateData({});
@@ -7137,17 +7287,19 @@
       value: function componentDidUpdate(prevProps, prevState) {
         if (!this.state.async) {
           if (prevProps.loading !== this.props.loading || prevProps.error !== this.props.error) {
+            var _data2 = this.props.data || [];
+
             this.setState({
+              data: _data2,
               loading: this.props.loading || false,
               error: this.props.error || false,
               page: 1,
               schema: this.props.schema || [],
-              data: this.props.data || [],
-              totalRecords: this.props.data.length || 0,
+              totalRecords: _data2.length || 0,
               sortingList: [],
               filterList: {},
               selectAll: getSelectAll$1([]),
-              searchTerm: ''
+              searchTerm: undefined
             });
           }
         }
@@ -7158,7 +7310,6 @@
         }
 
         if (prevState.page !== this.state.page || prevState.filterList !== this.state.filterList || prevState.sortingList !== this.state.sortingList || prevState.searchTerm !== this.state.searchTerm) {
-          this.onSelect(-1, false);
           if (!this.props.loading) this.updateData({});
         }
       }
@@ -7233,7 +7384,9 @@
 
   _defineProperty(Table, "defaultProps", {
     type: 'data',
+    size: 'comfortable',
     showHead: true,
+    showMenu: true,
     multipleSorting: true,
     headerOptions: {},
     pageSize: 15,
@@ -7521,6 +7674,8 @@
   exports.Caption = Caption;
   exports.Card = Card;
   exports.Checkbox = Checkbox;
+  exports.Chip = Chip;
+  exports.ChipGroup = ChipGroup;
   exports.Column = Column;
   exports.DatePicker = DatePicker;
   exports.DateRangePicker = DateRangePicker;
