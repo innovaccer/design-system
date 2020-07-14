@@ -66,6 +66,7 @@ export const all = () => {
             <Text appearance={active !== 2 ? 'subtle' : undefined}>Extras</Text>
           </>
         )}
+        disabled={true}
       >
         <div>
           Third Tab

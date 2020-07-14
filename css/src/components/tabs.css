@@ -26,7 +26,7 @@
     margin-right: var(--spacing-l);
 }
 
-.Tab:nth-child(1) {
+.Tab:first-child {
     margin-left: 0;
 }
 
@@ -37,6 +37,10 @@
 .Tab--active, .Tab:hover {
     margin-bottom: -1px;
     border-bottom: var(--spacing-s) solid var(--primary);
+}
+
+.Tab--disabled {
+    pointer-events: none;
 }
 
 .Tab-count {

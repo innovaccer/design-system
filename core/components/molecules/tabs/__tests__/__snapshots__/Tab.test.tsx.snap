@@ -5,3 +5,9 @@ exports[`Tab component with Label 1`] = `
   Tab
 </Fragment>
 `;
+
+exports[`Tab component with Label and disabled 1`] = `
+<Fragment>
+  Tab
+</Fragment>
+`;

@@ -50,14 +50,16 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
 
   const TabsHeader = (
     children.map((child, index) => {
+      const { label, disabled } = child.props;
+
       const tabHeaderClass = classNames({
         ['Tab']: true,
-        ['Tab--active']: active === index
+        ['Tab--disabled']: disabled,
+        ['Tab--active']: !disabled && active === index,
       });
 
-      const { label } = child.props;
       return (
-        <div key={index} className={tabHeaderClass} onClick={() => tabClickHandler(index)}>
+        <div key={index} className={tabHeaderClass} onClick={() => !disabled && tabClickHandler(index)}>
           {label}
         </div>
       );
