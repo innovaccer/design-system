@@ -5,7 +5,7 @@ import Button from '../../../button';
 
 // CSF format story
 export const position = () => {
-  const positions: PositionType[] = ['top', 'bottom', 'left', 'right'];
+  const positions: PositionType[] = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right'];
   const appendToBody = boolean('appendToBody', false);
   const tooltip = text('tooltip', 'An awesome tooltip');
 

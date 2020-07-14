@@ -3,7 +3,15 @@ import { Omit } from 'utility-types';
 import { PopperWrapper } from '@/utils';
 import classNames from 'classnames';
 
-export type PositionType = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end';
+export type PositionType =
+  'top'
+  | 'top-start'
+  | 'top-end'
+  | 'bottom'
+  | 'bottom-start'
+  | 'bottom-end'
+  | 'left'
+  | 'right';
 type DivProps = Omit<JSX.IntrinsicElements['div'], 'ref'>;
 
 export interface TooltipProps extends DivProps {

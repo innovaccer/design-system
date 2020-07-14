@@ -7,10 +7,10 @@ import Button from '../../button';
 export const all = () => {
   const position = select(
     'position',
-    ['top', 'bottom', 'left', 'right'],
+    ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right'],
     'bottom'
   );
-  const appendToBody = boolean('appendToBody', false);
+  const appendToBody = boolean('appendToBody', true);
   const tooltip = text('tooltip', 'An awesome tooltip');
 
   const options = {

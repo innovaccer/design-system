@@ -79,6 +79,10 @@ export interface PopoverProps extends BaseProps {
    * To be rendered in `Popover` component
    */
   children: React.ReactNode;
+  /**
+   * Classes to be added to PopperWrapper trigger
+   */
+  triggerClass?: string;
 }
 
 export const Popover = (props: PopoverProps) => {
@@ -92,6 +96,7 @@ export const Popover = (props: PopoverProps) => {
     hoverable,
     children,
     trigger,
+    triggerClass,
     onToggle,
     className,
   } = props;
@@ -120,6 +125,7 @@ export const Popover = (props: PopoverProps) => {
 
   const popperOptions = {
     trigger,
+    triggerClass,
     appendToBody,
     closeOnBackdropClick,
     on,

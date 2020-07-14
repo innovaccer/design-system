@@ -353,6 +353,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
     return (
       <Popover
         trigger={trigger}
+        triggerClass="w-100"
         position={position}
         appendToBody={true}
         open={open}

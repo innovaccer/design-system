@@ -553,6 +553,7 @@ const DropdownList = (props: OptionsProps) => {
       <Popover
         onToggle={onToggleDropdown}
         trigger={trigger}
+        triggerClass="w-100"
         open={dropdownOpen}
         customStyle={popoverStyle}
         position={alignmentMapping[align]}

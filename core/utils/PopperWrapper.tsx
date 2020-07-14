@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Manager, Reference, Popper } from 'react-popper';
+import classNames from 'classnames';
 
 type PositionType =
   | 'auto-start'
@@ -30,6 +31,7 @@ enum Offsets {
 
 interface Props {
   trigger: React.ReactElement<any>;
+  triggerClass?: string;
   placement: PositionType;
   children: React.ReactElement<any>;
   style: React.CSSProperties;
@@ -144,21 +146,26 @@ class PopperWrapper extends React.Component<Props, IState> {
   }
 
   public getTriggerElement(trigger: React.ReactElement<any>, ref: React.Ref<any>, on: actionType) {
-    const options =
-      on === 'hover'
-        ? {
-          ref,
-          onMouseEnter: this.handleMouseEnter,
-          onMouseLeave: this.handleMouseLeave
-        }
-        : {
-          ref,
-          onClick: () => this.togglePopper('onClick')
-        };
+    const options = on === 'hover'
+      ? {
+        ref,
+        onMouseEnter: this.handleMouseEnter,
+        onMouseLeave: this.handleMouseLeave
+      }
+      : {
+        ref,
+        onClick: () => this.togglePopper('onClick')
+      };
+
+    const {
+      triggerClass
+    } = this.props;
+
+    const classes = classNames('PopperWrapper-trigger', triggerClass);
 
     const element = React.cloneElement(
       (
-        <span className="PopperWrapper-trigger">
+        <span className={classes}>
           {trigger}
         </span>
       ),
@@ -174,17 +181,18 @@ class PopperWrapper extends React.Component<Props, IState> {
     placement: string,
     style: React.CSSProperties
   ) {
-    const options = this.props.on === 'hover' ? {
-      ref,
-      style,
-      onMouseEnter: this.handleMouseEnter,
-      onMouseLeave: this.handleMouseLeave,
-      'data-placement': placement
-    } : {
-      ref,
-      style,
-      'data-placement': placement
-    };
+    const options = this.props.on === 'hover'
+      ? {
+        ref,
+        style,
+        onMouseEnter: this.handleMouseEnter,
+        onMouseLeave: this.handleMouseLeave,
+        'data-placement': placement
+      } : {
+        ref,
+        style,
+        'data-placement': placement
+      };
 
     const element = React.cloneElement(children, options);
     return element;

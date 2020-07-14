@@ -182,6 +182,7 @@ export const DatePicker = (props: DatePickerProps) => {
     return (
       <Popover
         trigger={trigger}
+        triggerClass="w-100"
         position={position}
         appendToBody={true}
         open={open}
