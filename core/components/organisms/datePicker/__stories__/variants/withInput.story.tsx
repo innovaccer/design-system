@@ -66,17 +66,21 @@ export const withInput = () => {
   if (monthNav !== -1) attr.monthNav = monthNav;
 
   return (
-    <DatePicker
-      withInput={true}
-      inputFormat={inputFormat}
-      outputFormat={outputFormat}
-      jumpView={jumpView}
-      date={dateValue}
-      onDateChange={(currDate?: Date, currValue?: string) => action(`on date change : ${currDate} --- ${currValue}`)()}
-      view={view}
-      firstDayOfWeek={firstDayOfWeek}
-      {...attr}
-    />
+    <div className="w-25">
+      <DatePicker
+        withInput={true}
+        inputFormat={inputFormat}
+        outputFormat={outputFormat}
+        jumpView={jumpView}
+        date={dateValue}
+        onDateChange={(currDate?: Date, currValue?: string) => {
+          action(`on date change : ${currDate} --- ${currValue}`)();
+        }}
+        view={view}
+        firstDayOfWeek={firstDayOfWeek}
+        {...attr}
+      />
+    </div>
   );
 };
 

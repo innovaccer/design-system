@@ -3,10 +3,6 @@
     width: fit-content;
 }
 
-.Dropdown .PopperWrapper-trigger {
-    width: 100%;
-}
-
 .Dropdown-wrapper {
     margin-top: var(--spacing-m);
     margin-bottom: var(--spacing-m);
