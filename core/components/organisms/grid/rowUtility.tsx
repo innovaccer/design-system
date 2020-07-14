@@ -31,7 +31,7 @@ export function translateData(schema: ColumnSchema, data: RowData) {
   return newData;
 }
 
-export const filterData = (schema: Schema, data: Data, filterList: FetchDataOptions['filterList']): Data => {
+export const filterData = (schema: Schema = [], data: Data = [], filterList: FetchDataOptions['filterList']): Data => {
   let filteredData = data;
   if (filterList) {
     Object.keys(filterList).forEach(schemaName => {
@@ -47,7 +47,7 @@ export const filterData = (schema: Schema, data: Data, filterList: FetchDataOpti
   return filteredData;
 };
 
-export const sortData = (schema: Schema, data: Data, sortingList: FetchDataOptions['sortingList']): Data => {
+export const sortData = (schema: Schema = [], data: Data = [], sortingList: FetchDataOptions['sortingList']): Data => {
   const sortedData = [...data];
   sortingList?.forEach(l => {
     const sIndex = schema.findIndex(s => s.name === l.name);
@@ -70,14 +70,14 @@ export const sortData = (schema: Schema, data: Data, sortingList: FetchDataOptio
   return sortedData;
 };
 
-export const paginateData = (data: Data, page: number, pageSize: number): Data => {
+export const paginateData = (data: Data = [], page: number, pageSize: number): Data => {
   const start = (page - 1) * pageSize;
   const end = start + pageSize;
   const paginatedData = data.slice(start, end);
   return paginatedData;
 };
 
-export const searchData = (data: Data, searchTerm: string = '', onSearch: TableProps['onSearch']): Data => {
+export const searchData = (data: Data = [], searchTerm: string = '', onSearch: TableProps['onSearch']): Data => {
   if (onSearch) {
     return data.filter(d => onSearch(d, searchTerm));
   }

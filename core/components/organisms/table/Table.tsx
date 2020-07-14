@@ -30,7 +30,7 @@ interface SyncProps {
    *    `_selected`  Denotes row selection
    * </pre>
    */
-  data: Data;
+  data?: Data;
   /**
    * <pre className="DocPage-codeBlock">
    *    Schema: ColumnSchema[]
@@ -84,7 +84,7 @@ interface SyncProps {
    * | cellRenderer | Custom Cell Renderer | |
    * | align | Align cell content | |
    */
-  schema: Schema;
+  schema?: Schema;
   /**
    * Set for loading state of Table(in case of sync)
    */
@@ -119,7 +119,7 @@ interface AsyncProps {
    *  }
    * </pre>
    */
-  fetchData: fetchDataFunction;
+  fetchData?: fetchDataFunction;
 }
 
 interface SharedTableProps extends BaseProps {
@@ -284,17 +284,17 @@ export class Table extends React.Component<TableProps, TableState> {
     super(props);
 
     const async = ('fetchData' in this.props);
+    const data = props.data || [];
+    const schema = props.schema || [];
 
     this.state = {
       async,
-      // @ts-ignore
-      data: [],
-      // @ts-ignore
-      schema: !async ? props.schema : [],
+      data: !async ? data : [],
+      schema: !async ? schema : [],
       page: 1,
       sortingList: props.sortingList || [],
       filterList: props.filterList || {},
-      totalRecords: !async ? props.data.length : 0,
+      totalRecords: !async ? data.length : 0,
       loading: !async ? props.loading || false : true,
       error: !async ? props.error || false : false,
       selectAll: getSelectAll([]),
@@ -321,13 +321,14 @@ export class Table extends React.Component<TableProps, TableState> {
     if (!this.state.async) {
       if (prevProps.loading !== this.props.loading
         || prevProps.error !== this.props.error) {
+        const data = this.props.data || [];
         this.setState({
+          data,
           loading: this.props.loading || false,
           error: this.props.error || false,
           page: 1,
           schema: this.props.schema || [],
-          data: this.props.data || [],
-          totalRecords: this.props.data.length || 0,
+          totalRecords: data.length || 0,
           sortingList: [],
           filterList: {},
           selectAll: getSelectAll([]),
@@ -386,25 +387,27 @@ export class Table extends React.Component<TableProps, TableState> {
       this.setState({
         loading: true
       });
-      fetchData(opts)
-        .then((res: any) => {
-          const data = res.data;
-          this.setState({
-            data,
-            selectAll: getSelectAll(data),
-            schema: this.state.schema.length ? this.state.schema : res.schema,
-            totalRecords: res.count,
-            loading: false,
-            error: !data.length
+      if (fetchData) {
+        fetchData(opts)
+          .then((res: any) => {
+            const data = res.data;
+            this.setState({
+              data,
+              selectAll: getSelectAll(data),
+              schema: this.state.schema.length ? this.state.schema : res.schema,
+              totalRecords: res.count,
+              loading: false,
+              error: !data.length
+            });
+          })
+          .catch(() => {
+            this.setState({
+              loading: false,
+              error: true,
+              data: []
+            });
           });
-        })
-        .catch(() => {
-          this.setState({
-            loading: false,
-            error: true,
-            data: []
-          });
-        });
+      }
     } else {
       const filteredData = filterData(schema, dataProp, filterList);
       const searchedData = searchData(filteredData, opts.searchTerm, onSearch);
