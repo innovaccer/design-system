@@ -14,7 +14,7 @@ import {
   updateSortingListFunction,
   updateFilterListFunction
 } from '../grid';
-import { updateBatchData, filterData, sortData, paginateData, getSelectAll, searchData } from '../grid/utility';
+import { updateBatchData, filterData, sortData, paginateData, getSelectAll } from '../grid/utility';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { debounce } from 'throttle-debounce';
 
@@ -96,7 +96,7 @@ interface SyncProps {
   /**
    * Callback to be called on searchTerm change(in case of sync)
    */
-  onSearch?: (data: RowData, searchTerm: string) => boolean;
+  onSearch?: (data: Data, searchTerm: string) => Data;
 }
 
 interface AsyncProps {
@@ -300,7 +300,7 @@ export class Table extends React.Component<TableProps, TableState> {
       loading: !async ? props.loading || false : true,
       error: !async ? props.error || false : false,
       selectAll: getSelectAll([]),
-      searchTerm: '',
+      searchTerm: undefined,
     };
 
     // if (async) this.updateData({});
@@ -334,7 +334,7 @@ export class Table extends React.Component<TableProps, TableState> {
           sortingList: [],
           filterList: {},
           selectAll: getSelectAll([]),
-          searchTerm: ''
+          searchTerm: undefined
         });
       }
     }
@@ -348,12 +348,13 @@ export class Table extends React.Component<TableProps, TableState> {
       || prevState.filterList !== this.state.filterList
       || prevState.sortingList !== this.state.sortingList
       || prevState.searchTerm !== this.state.searchTerm) {
-      this.onSelect(-1, false);
       if (!this.props.loading) this.updateData({});
     }
   }
 
   updateData = debounce(250, (_options: FetchDataOptions) => {
+    this.onSelect(-1, false);
+
     const {
       fetchData,
       pageSize,
@@ -368,7 +369,7 @@ export class Table extends React.Component<TableProps, TableState> {
       schema,
       sortingList,
       filterList,
-      searchTerm = ''
+      searchTerm
     } = this.state;
 
     const opts = {
@@ -412,7 +413,9 @@ export class Table extends React.Component<TableProps, TableState> {
       }
     } else {
       const filteredData = filterData(schema, dataProp, filterList);
-      const searchedData = searchData(filteredData, opts.searchTerm, onSearch);
+      const searchedData = onSearch && opts.searchTerm !== undefined
+        ? onSearch(filteredData, opts.searchTerm)
+        : filteredData;
       const sortedData = sortData(schema, searchedData, sortingList);
       let renderedData = sortedData;
       const totalRecords = sortedData.length;

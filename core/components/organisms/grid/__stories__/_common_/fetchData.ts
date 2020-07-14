@@ -1,7 +1,7 @@
 import { fetchDataFunction, Schema, RowData } from '../../Grid';
 import data from './data';
 const schema: Schema = require('./schema').default;
-import { filterData, sortData, searchData } from '../../utility';
+import { filterData, sortData } from '../../utility';
 
 export const fetchData: fetchDataFunction = (options) => {
   const {
@@ -12,7 +12,7 @@ export const fetchData: fetchDataFunction = (options) => {
     searchTerm
   } = options;
 
-  const onSearch = (d: RowData, searchTerm: string) => {
+  const onSearch = (d: RowData, searchTerm: string = '') => {
     return (
       d.firstName.toLowerCase().match(searchTerm.toLowerCase())
       || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
@@ -22,7 +22,7 @@ export const fetchData: fetchDataFunction = (options) => {
   }
 
   const filteredData = filterData(schema, data, filterList);
-  const searchedData = searchData(filteredData, searchTerm, onSearch);
+  const searchedData = filteredData.filter(d => onSearch(d, searchTerm));
   const sortedData = sortData(schema, searchedData, sortingList);
 
   if (page && pageSize) {

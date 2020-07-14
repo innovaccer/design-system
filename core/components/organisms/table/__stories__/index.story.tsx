@@ -11,7 +11,7 @@ import { AsyncTable, SyncTable } from './_common_/types';
 export const all = () => {
   const async = boolean(
     'async',
-    true
+    false
   );
 
   let loading;
@@ -141,6 +141,10 @@ export const all = () => {
           onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
           onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
           onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
+          onSearch={(currData, searchTerm) => {
+            action(`on-search:- currData: ${JSON.stringify(currData)}, searchTerm: ${searchTerm}`)();
+            return currData;
+          }}
           multipleSorting={multipleSorting}
           sortingList={[
             { name: 'name', type: 'desc' }
