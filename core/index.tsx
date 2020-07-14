@@ -4,6 +4,8 @@ export { Badge } from './components/atoms/badge';
 export { Breadcrumbs } from './components/atoms/breadcrumbs';
 export { Button } from './components/atoms/button';
 export { Card } from './components/atoms/card';
+export { Chip } from './components/atoms/chip';
+export { ChipGroup } from './components/atoms/chipGroup';
 export { Checkbox } from './components/atoms/checkbox';
 export { Column } from './components/atoms/column';
 export { DatePicker } from './components/organisms/datePicker';
