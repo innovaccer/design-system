@@ -74,6 +74,7 @@ interface SyncProps {
    * | resizable | Denotes if column is resizable | |
    * | sortFunction | Sorting Function to be passed(in case of async) | |
    * | separator | Shows Left separator | |
+   * | tooltip | Shows tooltip on hover | |
    * | pinned | Pin column | |
    * | hidden | Denotes if column is hidden | |
    * | filters | Filter options for the column | |

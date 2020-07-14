@@ -114,6 +114,10 @@ export type ColumnSchema = {
    * Alignment of column
    */
   align?: Alignment;
+  /**
+   * Show tooltip on hover
+   */
+  tooltip?: boolean;
 };
 
 export type RowData = Record<string, any> & {

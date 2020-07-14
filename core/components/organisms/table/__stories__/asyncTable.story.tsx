@@ -94,6 +94,7 @@ const customCode = `
       width: 300,
       resizable: true,
       separator: true,
+      tooltip: true,
       translate: a => ({
         title: \`\${a.firstName} \${a.lastName}\`,
         firstName: a.firstName,
