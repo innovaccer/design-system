@@ -1,22 +1,21 @@
 import * as React from 'react';
 import Input from '../Input';
+import Label from '@/components/atoms/label';
+import Icon from '@/components/atoms/icon';
 import { action } from '@storybook/addon-actions';
-export const passwordInput = () => {
 
-  return (
-    <div className="Row">
-      <div className="mr-9 mb-8 w-25">
-        <Input
-          name="input"
-          value="Value"
-          type="password"
-          onChange={action('on-change')}
-          onClear={action('on-change')}
-        />
-      </div>
-    </div>
-  );
-};
+export const passwordInput = () => (
+  <>
+    <Label withInput={true}>Password</Label>
+    <Input
+      name="input"
+      value="Value"
+      type="password"
+      actionIcon={<Icon name="visibility_off" />}
+      onChange={action('on-change')}
+    />
+  </>
+);
 
 export default {
   title: 'Atoms|Input',

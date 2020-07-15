@@ -1,22 +1,22 @@
 import * as React from 'react';
-import Pills from '..';
+import Badge from '../Badge';
 
-export const alert = () => (
-  <Pills
+export const solidAlert = () => (
+  <Badge
     appearance="alert"
     subtle={false}
   >
-    {'Pills'}
-  </Pills>
+    {'Failed'}
+  </Badge>
 );
 
 export default {
-  title: 'Atoms|Pills',
-  component: Pills,
+  title: 'Atoms|Badge',
+  component: Badge,
   parameters: {
     docs: {
       docPage: {
-        title: 'Pills'
+        title: 'Badge'
       }
     }
   }

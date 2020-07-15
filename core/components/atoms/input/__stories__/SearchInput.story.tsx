@@ -2,22 +2,14 @@ import * as React from 'react';
 import Input from '../Input';
 import { action } from '@storybook/addon-actions';
 
-export const searchInput = () => {
-  const icon = 'search';
-  return (
-    <div className="Row">
-      <div className="mr-9 mb-8 w-25">
-        <Input
-          name="input"
-          value="Value"
-          onChange={action('on-change')}
-          onClear={action('on-clear')}
-          icon={icon}
-        />
-      </div>
-    </div>
-  );
-};
+export const searchInput = () => (
+  <Input
+    name="input"
+    placeholder="Search"
+    onChange={action('on-change')}
+    icon={'search'}
+  />
+);
 
 export default {
   title: 'Atoms|Input',
