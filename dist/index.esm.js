@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1594742196623 
+   * Generated on: 1594816511894 
    *      Package: @innovaccer/design-system
-   *      Version: v1.0.0-25
+   *      Version: v1.0.0-26
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -4574,6 +4574,24 @@ var StatusHint = function StatusHint(props) {
 };
 StatusHint.displayName = 'StatusHint';
 
+var Pills = function Pills(props) {
+  var _classNames;
+
+  var _props$appearance = props.appearance,
+      appearance = _props$appearance === void 0 ? 'secondary' : _props$appearance,
+      children = props.children,
+      subtle = props.subtle,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+  var classes = classNames((_classNames = {
+    Pills: true
+  }, _defineProperty(_classNames, "Badge--".concat(appearance), appearance && !subtle), _defineProperty(_classNames, "Badge--subtle-".concat(appearance), subtle), _classNames), className);
+  return /*#__PURE__*/createElement("span", _extends({}, baseProps, {
+    className: classes
+  }), children);
+};
+Pills.displayName = 'Pills';
+
 /**
  * ######Switch has two types:
  *  - [Controlled Switch](https://reactjs.org/docs/forms.html#controlled-components)
@@ -7663,4 +7681,4 @@ PageHeader.defaultProps = {
   navigationPosition: 'center'
 };
 
-export { Avatar, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, Checkbox, Chip, ChipGroup, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, Grid, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, Row, Spinner, StatusHint, Subheading, Switch, Tab, Table, TabsWrapper, Text, Textarea, Toast, Tooltip };
+export { Avatar, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, Checkbox, Chip, ChipGroup, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, Grid, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, Row, Spinner, StatusHint, Subheading, Switch, Tab, Table, TabsWrapper, Text, Textarea, Toast, Tooltip };

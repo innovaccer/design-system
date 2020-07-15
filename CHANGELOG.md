@@ -398,3 +398,10 @@
 * 1ef7761 chore: removes wrapper from stories
 * 0897fd4 fix: fixes commonStories
 * 203340f chore(pageHeader): stories updated
+
+-------------------
+ **v1.0.0-26**  (2020-07-15) 
+
+* 6f9188c v1.0.0-26
+* 845ebca build: adds pills in build
+* fbd58de css-markdown

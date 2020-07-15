@@ -27,6 +27,7 @@ export { RadioProps } from './components/atoms/radio';
 export { RowProps } from './components/atoms/row';
 export { SpinnerProps } from './components/atoms/spinner';
 export { StatusHintProps } from './components/atoms/statusHint';
+export { PillsProps } from './components/atoms/pills';
 export { SubheadingProps } from './components/atoms/subheading';
 export { SwitchProps } from './components/atoms/switchInput';
 export { TextProps } from './components/atoms/text';
