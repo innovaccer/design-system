@@ -26,6 +26,7 @@ export { ProgressBar } from './components/atoms/progressBar';
 export { Radio } from './components/atoms/radio';
 export { Row } from './components/atoms/row';
 export { StatusHint } from './components/atoms/statusHint';
+export { Pills } from './components/atoms/pills';
 export { Spinner } from './components/atoms/spinner';
 export { Subheading } from './components/atoms/subheading';
 export { Switch } from './components/atoms/switchInput';
