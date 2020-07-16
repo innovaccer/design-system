@@ -47,9 +47,6 @@ export type CellType =
   'AVATAR' |
   'AVATAR_WITH_TEXT' |
   'AVATAR_WITH_META_LIST' |
-  'IMAGE' |
-  'IMAGE_WITH_TEXT' |
-  'IMAGE_WITH_META_LIST' |
   'STATUS_HINT' |
   'ICON';
 

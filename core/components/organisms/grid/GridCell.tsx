@@ -131,11 +131,18 @@ const renderAvatar = (props: CellProps) => {
     cellData
   } = props;
 
-  const { firstName, lastName } = cellData;
+  const { firstName, lastName, title } = cellData;
 
-  return (
-    <Avatar firstName={firstName} lastName={lastName} />
-  );
+  if (firstName || lastName) {
+    return (
+      <Avatar firstName={firstName} lastName={lastName} />
+    );
+  }
+  if (title) {
+    return (
+      <Avatar>{title}</Avatar>
+    );
+  }
 
   return null;
 };
@@ -161,7 +168,7 @@ const renderStatusHint = (props: CellProps) => {
   } = props;
 
   const {
-    statusAppearance = 'default'
+    statusAppearance
   } = cellData;
 
   const children = cellData.title;
