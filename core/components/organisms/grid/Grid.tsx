@@ -6,6 +6,7 @@ import { sortColumn, pinColumn, hideColumn, getTotalPages, moveToIndex, getSchem
 import { debounce } from 'throttle-debounce';
 import { MainGrid } from './MainGrid';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { NestedRowProps } from './GridNestedRow';
 
 export type SortType = 'asc' | 'desc';
 export type Pinned = 'left' | 'right';
@@ -109,7 +110,7 @@ export type ColumnSchema = {
   /**
    * Custom cell renderer
    */
-  cellRenderer?: (props: GridCellProps) => React.ReactElement;
+  cellRenderer?: React.FC<GridCellProps>;
   /**
    * Alignment of column
    */
@@ -191,6 +192,14 @@ export interface GridProps extends BaseProps {
    */
   draggable?: boolean;
   /**
+   * Allows nested rows
+   */
+  nestedRows?: boolean;
+  /**
+   * Renderer to be used for nested rows
+   */
+  nestedRowRenderer?: React.FC<NestedRowProps>;
+  /**
    * Shows pagination component
    */
   withPagination?: boolean;
@@ -227,7 +236,7 @@ export interface GridProps extends BaseProps {
   /**
    * Error Template
    */
-  errorTemplate?: () => React.ReactElement;
+  errorTemplate?: React.FC;
   /**
    * Sorting List
    */

@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Checkbox, Grid, Placeholder } from '@/index';
 import { RowData, Schema } from './Grid';
-import { GridExtendedRow } from './GridExtendedRow';
+import { GridNestedRow } from './GridNestedRow';
 import { Cell } from './Cell';
 
 export interface GridRowProps {
@@ -49,7 +49,8 @@ export const GridRow = (props: GridRowProps) => {
   };
 
   const {
-    loading
+    loading,
+    nestedRows
   } = _this.props;
 
   const pinnedSchema = schema.filter(s => s.pinned);
@@ -101,7 +102,7 @@ export const GridRow = (props: GridRowProps) => {
               key={rI * schema.length + (pinnedSchema.length + cI)}
               _this={_this}
               rowIndex={rI}
-              colIndex={cI}
+              colIndex={pinnedSchema.length + cI}
               schema={s}
               data={data}
               expandedState={[expanded, setExpanded]}
@@ -109,10 +110,11 @@ export const GridRow = (props: GridRowProps) => {
           ))}
         </div>
       </div>
-      {expanded && (
-        <GridExtendedRow
+      {nestedRows && expanded && (
+        <GridNestedRow
           _this={_this}
           data={data}
+          rowIndex={rI}
         />
       )}
     </>

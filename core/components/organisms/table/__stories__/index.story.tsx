@@ -5,8 +5,11 @@ import { boolean, select, number } from '@storybook/addon-knobs';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 import { fetchData } from '@/components/organisms/grid/__stories__/_common_/fetchData';
 import { action } from '@storybook/addon-actions';
-import { Card, Table } from '@/index';
+import { Card, Table, List } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
+import { NestedRowProps } from '../../grid/GridNestedRow';
+import { nestedRowRenderer } from '../../grid/__stories__/_common_/nestedRowRenderer';
+import { errorTemplate } from '../../grid/__stories__/_common_/errorTemplate';
 
 export const all = () => {
   const async = boolean(
@@ -62,6 +65,11 @@ export const all = () => {
     true
   );
 
+  const nestedRows = boolean(
+    'nestedRows',
+    false
+  );
+
   const withHeader = boolean(
     'withHeader',
     true
@@ -69,7 +77,7 @@ export const all = () => {
 
   const withCheckbox = boolean(
     'withCheckbox',
-    true
+    false
   );
 
   const showMenu = boolean(
@@ -79,7 +87,7 @@ export const all = () => {
 
   const withPagination = boolean(
     'withPagination',
-    true
+    false
   );
 
   const paginationType = select(
@@ -116,7 +124,6 @@ export const all = () => {
     <div
       style={{
         height: '350px',
-        // overflow: 'hidden'
       }}
     >
       <Card className="h-100">
@@ -125,6 +132,7 @@ export const all = () => {
           {...dataAttr}
           loading={loading}
           error={error}
+          errorTemplate={errorTemplate}
           withHeader={withHeader}
           headerOptions={{
             withSearch: true,
@@ -134,6 +142,8 @@ export const all = () => {
           type={type}
           size={size}
           draggable={draggable}
+          nestedRows={nestedRows}
+          nestedRowRenderer={nestedRowRenderer}
           withPagination={withPagination}
           paginationType={paginationType}
           pageSize={pageSize}

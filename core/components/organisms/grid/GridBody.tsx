@@ -33,11 +33,11 @@ export const GridBody = (props: GridBodyProps) => {
     page,
     pageSize,
     totalRecords,
-    errorTemplate
+    errorTemplate,
   } = _this.props;
 
   if (error) {
-    return errorTemplate ? errorTemplate() : <Heading>No results found</Heading>;
+    return errorTemplate ? errorTemplate({}) : <Heading>No results found</Heading>;
   }
 
   const totalPages = Math.ceil(totalRecords / pageSize);

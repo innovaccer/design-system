@@ -1,38 +1,30 @@
 import * as React from 'react';
-import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
-import data from '@/components/organisms/grid/__stories__/_common_/data';
-import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import { Card, Table } from '@/index';
-import { AsyncTable, SyncTable } from './_common_/types';
+import { nestedRowRenderer } from '@/components/organisms/grid/__stories__/_common_/nestedRowRenderer';
+import schema from '@/components/organisms/grid/__stories__/_common_/schema';
+import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
+import data from '@/components/organisms/grid/__stories__/_common_/data';
 import { action } from '@storybook/addon-actions';
 
-export const syncTable = () => {
+// CSF format story
+export const nestedRows = () => {
   return (
     <div
       style={{
         height: '350px',
       }}
     >
-      <Card className="h-100">
+      <Card
+        shadow="light"
+        className="h-100"
+      >
         <Table
-          loaderSchema={loaderSchema}
-          data={data}
           schema={schema}
-          withHeader={true}
-          withCheckbox={true}
-          onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
-          headerOptions={{
-            withSearch: true
-          }}
-          onSearch={(currData, searchTerm) => {
-            return currData.filter(d =>
-              d.firstName.toLowerCase().match(searchTerm.toLowerCase())
-              || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
-            );
-          }}
-          withPagination={true}
-          pageSize={5}
-          onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
+          data={data}
+          nestedRows={true}
+          nestedRowRenderer={nestedRowRenderer}
+          type={'resource'}
+          onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
         />
       </Card>
     </div>
@@ -140,7 +132,21 @@ const customCode = `
     },
   ];
 
-  const loaderSchema = ${JSON.stringify(loaderSchema, null, 4)};
+  const nestedRowRenderer = (props) => {
+    const {
+      schema,
+      data,
+      loading
+    } = props;
+
+    return (
+      <List
+        loading={loading}
+        schema={schema}
+        data={[data]}
+      />
+    );
+  }
 
   return (
     <div
@@ -150,24 +156,10 @@ const customCode = `
     >
       <Card className="h-100">
         <Table
-          loaderSchema={loaderSchema}
           data={data}
           schema={schema}
-          withHeader={true}
-          headerOptions={{
-            withSearch: true
-          }}
-          onSearch={(currData, searchTerm) => {
-            return currData.filter(d =>
-              d.firstName.toLowerCase().match(searchTerm.toLowerCase())
-              || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
-            );
-          }}
-          withCheckbox={true}
-          onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select: - rowIndex: \${ rowIndex } selected: \${ selected } selectedList: \${ JSON.stringify(selectedList) } selectAll: \${ selectAll } \`)}
-          withPagination={true}
-          pageSize={5}
-          onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)}
+          nestedRows={true}
+          nestedRowRenderer={nestedRowRenderer}
         />
       </Card>
     </div>
@@ -176,7 +168,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Organisms|Table',
+  title: 'Organisms|Table/Variants',
   component: Table,
   parameters: {
     docs: {
