@@ -3,22 +3,17 @@ import Input from '../Input';
 import { action } from '@storybook/addon-actions';
 
 // CSF format story
-export const inputWithNumber = () => {
-
-  return (
-    <div>
-      <div className="w-25">
-        <Input
-          name="input"
-          type="number"
-          size="regular"
-          onChange={action('on-change')}
-          value="0"
-        />
-      </div>
-    </div>
-  );
-};
+export const inputWithNumber = () => (
+  <div className="w-25">
+    <Input
+      name="input"
+      type="number"
+      size="regular"
+      onChange={action('on-change')}
+      value="10"
+    />
+  </div>
+);
 
 export default {
   title: 'Atoms|Input',

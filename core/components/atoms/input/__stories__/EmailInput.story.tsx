@@ -3,14 +3,13 @@ import Input from '../Input';
 import Label from '@/components/atoms/label';
 import { action } from '@storybook/addon-actions';
 
-export const requiredInputWithLabel = () => (
+export const emailInput = () => (
   <>
-    <Label required={true} withInput={true}>First Name</Label>
+    <Label withInput={true}>Email</Label>
     <Input
       name="input"
-      value="Joy"
+      value="joylawson@gmail.com"
       onChange={action('on-change')}
-      required={true}
     />
   </>
 );
