@@ -16,7 +16,9 @@ interface SharedTableProps extends BaseProps {
     showHead?: GridProps['showHead'];
     type?: GridProps['type'];
     size?: GridProps['size'];
-    draggable?: boolean;
+    draggable?: GridProps['draggable'];
+    nestedRows?: GridProps['nestedRows'];
+    nestedRowRenderer?: GridProps['nestedRowRenderer'];
     withHeader?: boolean;
     headerOptions?: ExternalHeaderProps;
     withCheckbox?: GridProps['withCheckbox'];

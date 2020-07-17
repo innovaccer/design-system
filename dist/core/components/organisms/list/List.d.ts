@@ -4,17 +4,19 @@ import { Data, Schema, GridProps, fetchDataFunction } from '../grid';
 import { TableProps } from '../table';
 import { BaseProps } from '@/utils/types';
 interface SyncProps {
-    data: Data;
-    schema: Schema;
+    data?: Data;
+    schema?: Schema;
     loading?: boolean;
     error?: boolean;
 }
 interface AsyncProps {
-    fetchData: fetchDataFunction;
+    fetchData?: fetchDataFunction;
 }
 interface SharedListProps extends BaseProps {
     type?: GridProps['type'];
     size?: GridProps['size'];
+    nestedRows?: GridProps['nestedRows'];
+    nestedRowRenderer?: GridProps['nestedRowRenderer'];
     withHeader?: boolean;
     headerOptions?: ExternalHeaderProps;
     withCheckbox?: GridProps['withCheckbox'];

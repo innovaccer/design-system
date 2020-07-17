@@ -2,6 +2,7 @@ import * as React from 'react';
 import { CheckboxProps, DropdownProps, PaginationProps } from '@/index.type';
 import { GridCellProps } from './GridCell';
 import { BaseProps } from '@/utils/types';
+import { NestedRowProps } from './GridNestedRow';
 export declare type SortType = 'asc' | 'desc';
 export declare type Pinned = 'left' | 'right';
 export declare type Alignment = 'left' | 'right' | 'center';
@@ -33,7 +34,7 @@ export declare type onSelectFunction = (rowIndex: number, selected: boolean) => 
 export declare type onSelectAllFunction = (selected: boolean, selectAll?: boolean) => void;
 export declare type onFilterChangeFunction = (data: RowData, filters: Filter) => boolean;
 export declare type onRowClickFunction = (data: RowData, rowIndex?: number) => void;
-export declare type CellType = 'DEFAULT' | 'WITH_META_LIST' | 'AVATAR' | 'AVATAR_WITH_TEXT' | 'AVATAR_WITH_META_LIST' | 'IMAGE' | 'IMAGE_WITH_TEXT' | 'IMAGE_WITH_META_LIST' | 'STATUS_HINT' | 'ICON';
+export declare type CellType = 'DEFAULT' | 'WITH_META_LIST' | 'AVATAR' | 'AVATAR_WITH_TEXT' | 'AVATAR_WITH_META_LIST' | 'STATUS_HINT' | 'ICON';
 export declare type ColumnSchema = {
     name: string;
     displayName: string;
@@ -48,7 +49,7 @@ export declare type ColumnSchema = {
     onFilterChange?: onFilterChangeFunction;
     translate?: (data: RowData) => RowData;
     cellType?: CellType;
-    cellRenderer?: (props: GridCellProps) => React.ReactElement;
+    cellRenderer?: React.FC<GridCellProps>;
     align?: Alignment;
     tooltip?: boolean;
 };
@@ -74,6 +75,8 @@ export interface GridProps extends BaseProps {
     showHead?: boolean;
     showMenu?: boolean;
     draggable?: boolean;
+    nestedRows?: boolean;
+    nestedRowRenderer?: React.FC<NestedRowProps>;
     withPagination?: boolean;
     page: number;
     pageSize: number;
@@ -82,7 +85,7 @@ export interface GridProps extends BaseProps {
     withCheckbox?: boolean;
     onSelect?: onSelectFunction;
     onSelectAll?: onSelectAllFunction;
-    errorTemplate?: () => React.ReactElement;
+    errorTemplate?: React.FC;
     sortingList: {
         name: ColumnSchema['name'];
         type: SortType;

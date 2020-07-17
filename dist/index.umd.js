@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1594816511894 
+   * Generated on: 1594974134073 
    *      Package: @innovaccer/design-system
-   *      Version: v1.0.0-26
+   *      Version: v1.0.0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -5945,11 +5945,21 @@
   var renderAvatar = function renderAvatar(props) {
     var cellData = props.cellData;
     var firstName = cellData.firstName,
-        lastName = cellData.lastName;
-    return /*#__PURE__*/React.createElement(Avatar, {
-      firstName: firstName,
-      lastName: lastName
-    });
+        lastName = cellData.lastName,
+        title = cellData.title;
+
+    if (firstName || lastName) {
+      return /*#__PURE__*/React.createElement(Avatar, {
+        firstName: firstName,
+        lastName: lastName
+      });
+    }
+
+    if (title) {
+      return /*#__PURE__*/React.createElement(Avatar, null, title);
+    }
+
+    return null;
   };
 
   var renderIcon = function renderIcon(props) {
@@ -5967,8 +5977,7 @@
 
   var renderStatusHint = function renderStatusHint(props) {
     var cellData = props.cellData;
-    var _cellData$statusAppea = cellData.statusAppearance,
-        statusAppearance = _cellData$statusAppea === void 0 ? 'default' : _cellData$statusAppea;
+    var statusAppearance = cellData.statusAppearance;
     var children = cellData.title;
 
     if (children) {
@@ -6270,7 +6279,8 @@
         colIndex = props.colIndex;
     var _this$props2 = _this.props,
         size = _this$props2.size,
-        loading = _this$props2.loading;
+        loading = _this$props2.loading,
+        nestedRows = _this$props2.nestedRows;
 
     var _expandedState = _slicedToArray(expandedState, 2),
         expanded = _expandedState[0],
@@ -6278,11 +6288,13 @@
 
     return /*#__PURE__*/React.createElement("div", {
       className: "Grid-cellContent"
-    }, colIndex === 0 && data._expanded && !schema.pinned && /*#__PURE__*/React.createElement(Button, {
-      appearance: 'transparent',
-      icon: expanded ? 'expand_less' : 'expand_more',
-      onClick: function onClick() {
-        return setExpanded(!expanded);
+    }, colIndex === 0 && nestedRows && /*#__PURE__*/React.createElement(Icon, {
+      className: "Grid-nestedRowTrigger",
+      name: expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
+      size: 20,
+      onClick: function onClick(e) {
+        e.stopPropagation();
+        setExpanded(!expanded);
       }
     }), /*#__PURE__*/React.createElement(GridCell, {
       key: "".concat(rowIndex, "-").concat(colIndex),
@@ -6304,11 +6316,13 @@
         draggable = props.draggable,
         data = props.data,
         rowIndex = props.rowIndex;
+    var nestedRows = _this.props.nestedRows;
     var cellClass = classNames({
       'Grid-cell': true,
       'Grid-cell--head': head,
       'Grid-cell--body': !head,
-      'Grid-cell--separator': colIndex !== 0 && schema.separator
+      'Grid-cell--separator': colIndex !== 0 && schema.separator,
+      'Grid-cell--nestedRow': !head && colIndex === 0 && nestedRows
     });
     if (schema.hidden) return null;
     return /*#__PURE__*/React.createElement("div", {
@@ -6387,34 +6401,50 @@
     }))));
   };
 
-  var GridExtendedRow = function GridExtendedRow(props) {
+  // import * as React from 'react';
+  var GridNestedRow = function GridNestedRow(props) {
     var _this = props._this,
-        data = props.data;
-    var propSchema = _this.props.schema;
-
-    if (data._expanded) {
-      var showHead = data._expanded.showHead;
-      var schema = data._expanded.schema || propSchema;
-      var gridData = data._expanded.data;
-
-      if (!gridData) {
-        var _uid = data._uid,
-            _expanded = data._expanded,
-            rest = _objectWithoutProperties(data, ["_uid", "_expanded"]);
-
-        gridData = [rest];
-      }
-
-      return /*#__PURE__*/React.createElement("div", {
-        className: "Grid-expandedRow"
-      }, /*#__PURE__*/React.createElement(Grid, {
-        key: 'expanedRow',
-        showHead: showHead,
-        data: gridData,
-        schema: schema,
-        totalRecords: gridData.length
-      }));
-    }
+        data = props.data,
+        rowIndex = props.rowIndex;
+    var _this$props = _this.props,
+        schema = _this$props.schema,
+        loading = _this$props.loading,
+        nestedRowRenderer = _this$props.nestedRowRenderer;
+    if (nestedRowRenderer) return nestedRowRenderer({
+      data: data,
+      schema: schema,
+      loading: loading,
+      rowIndex: rowIndex
+    }); // return (
+    //   <Text>{JSON.stringify(data)}</Text>
+    // )
+    // const {
+    //   schema: propSchema
+    // } = _this.props;
+    // if (data._expanded) {
+    //   const showHead = data._expanded.showHead;
+    //   const schema = data._expanded.schema || propSchema;
+    //   let gridData = data._expanded.data;
+    //   if (!gridData) {
+    //     const {
+    //       _uid,
+    //       _expanded,
+    //       ...rest
+    //     } = data;
+    //     gridData = [rest];
+    //   }
+    //   return (
+    //     <div className="Grid-expandedRow">
+    //       <Grid
+    //         key={'expanedRow'}
+    //         showHead={showHead}
+    //         data={gridData}
+    //         schema={schema}
+    //         totalRecords={gridData.length}
+    //       />
+    //     </div>
+    //   );
+    // }
 
     return null;
   };
@@ -6447,7 +6477,9 @@
       }
     };
 
-    var loading = _this.props.loading;
+    var _this$props = _this.props,
+        loading = _this$props.loading,
+        nestedRows = _this$props.nestedRows;
     var pinnedSchema = schema.filter(function (s) {
       return s.pinned;
     });
@@ -6492,14 +6524,15 @@
         key: rI * schema.length + (pinnedSchema.length + cI),
         _this: _this,
         rowIndex: rI,
-        colIndex: cI,
+        colIndex: pinnedSchema.length + cI,
         schema: s,
         data: data,
         expandedState: [expanded, setExpanded]
       });
-    }))), expanded && /*#__PURE__*/React.createElement(GridExtendedRow, {
+    }))), nestedRows && expanded && /*#__PURE__*/React.createElement(GridNestedRow, {
       _this: _this,
-      data: data
+      data: data,
+      rowIndex: rI
     }));
   };
 
@@ -6522,7 +6555,7 @@
         errorTemplate = _this$props.errorTemplate;
 
     if (error) {
-      return errorTemplate ? errorTemplate() : /*#__PURE__*/React.createElement(Heading, null, "No results found");
+      return errorTemplate ? errorTemplate({}) : /*#__PURE__*/React.createElement(Heading, null, "No results found");
     }
 
     var totalPages = Math.ceil(totalRecords / pageSize);
@@ -7339,6 +7372,8 @@
             type = _this$props2.type,
             size = _this$props2.size,
             draggable = _this$props2.draggable,
+            nestedRows = _this$props2.nestedRows,
+            nestedRowRenderer = _this$props2.nestedRowRenderer,
             withHeader = _this$props2.withHeader,
             headerOptions = _this$props2.headerOptions,
             withCheckbox = _this$props2.withCheckbox,
@@ -7386,6 +7421,8 @@
           type: type,
           size: size,
           draggable: draggable,
+          nestedRows: nestedRows,
+          nestedRowRenderer: nestedRowRenderer,
           withPagination: withPagination,
           paginationType: paginationType,
           pageSize: pageSize,

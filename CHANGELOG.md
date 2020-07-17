@@ -405,3 +405,12 @@
 * 6f9188c v1.0.0-26
 * 845ebca build: adds pills in build
 * fbd58de css-markdown
+
+-------------------
+ **v1.0.0**  (2020-07-17) 
+
+* 49561de v1.0.0
+* 9e71359 chore: adds CellType desc in Table
+* a0da932 feat: adds nested rows support in Grid
+* 640c070 feat:adds commonStories
+* d1a4253 feat: adds example stories

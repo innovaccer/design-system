@@ -10,5 +10,5 @@ export interface GridBodyProps {
     inView: number;
     avgRowHeight: number;
 }
-export declare const GridBody: (props: GridBodyProps) => JSX.Element;
+export declare const GridBody: (props: GridBodyProps) => JSX.Element | null;
 export default GridBody;
