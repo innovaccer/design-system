@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const submit = () => (
+export const submitButton = () => (
   <Button
     appearance="primary"
     size="regular"

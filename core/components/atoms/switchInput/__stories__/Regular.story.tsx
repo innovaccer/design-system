@@ -9,6 +9,7 @@ export const regular = () => (
     appearance="primary"
   />
 );
+
 export default {
   title: 'Atoms|Switch',
   component: Switch,

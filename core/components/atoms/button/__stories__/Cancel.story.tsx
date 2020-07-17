@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const cancel = () => (
+export const cancelButton = () => (
   <Button
     appearance="basic"
     size="regular"

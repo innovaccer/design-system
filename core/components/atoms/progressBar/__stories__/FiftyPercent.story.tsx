@@ -3,11 +3,11 @@ import ProgressBar from '../ProgressBar';
 
 // CSF format story
 export const fiftyPercent = () => (
-      <ProgressBar
-        value={Number(50)}
-        max={Number(100)}
-      />
-  );
+  <ProgressBar
+    value={50}
+    max={100}
+  />
+);
 
 export default {
   title: 'Atoms|ProgressBar',
