@@ -40,7 +40,8 @@ interface SyncProps {
    *        displayName: string;
    *        width: number;
    *        resizable?: boolean;
-   *        sortFunction?: (a: RowData, b: RowData) => -1 | 0 | 1;
+   *        sorting?: boolean;
+   *        comparator?: (a: RowData, b: RowData) => -1 | 0 | 1;
    *        separator?: boolean;
    *        pinned?: 'left' | 'right';
    *        hidden?: boolean;
@@ -48,7 +49,7 @@ interface SyncProps {
    *        onFilterChange?: (data: RowData, filters: Filter) => boolean;
    *        translate?: (data: RowData) => RowData,
    *        cellType?: CellType;
-   *        cellRenderer?: (props: GridCellProps) => React.ReactElement;
+   *        cellRenderer?: React.FC<GridCellProps>t;
    *        align?: Alignment;
    *    }
    *
@@ -72,7 +73,8 @@ interface SyncProps {
    * | displayName | Column Head Label | |
    * | width | Width of the column(in px) | |
    * | resizable | Denotes if column is resizable | |
-   * | sortFunction | Sorting Function to be passed(in case of async) | |
+   * | sorting | Enables sorting in column | true |
+   * | comparator | Sorting Function to be passed(in case of async) | |
    * | separator | Shows Left separator | |
    * | tooltip | Shows tooltip on hover | |
    * | pinned | Pin column | |
@@ -143,7 +145,23 @@ interface SharedTableProps extends BaseProps {
    * Allow Column reordering
    * @default true
    */
-  draggable?: boolean;
+  draggable?: GridProps['draggable'];
+  /**
+   * Allow nested rows
+   */
+  nestedRows?: GridProps['nestedRows'];
+  /**
+   * Renderer to be used for nested rows
+   * <pre className="DocPage-codeBlock">
+   * NestedRowProps: {
+   *    rowIndex: number;
+   *    data: RowData;
+   *    schema: GridProps['schema'];
+   *    loading?: boolean;
+   * }
+   * </pre>
+   */
+  nestedRowRenderer?: GridProps['nestedRowRenderer'];
   /**
    * Set to use `Header`
    */
@@ -527,6 +545,8 @@ export class Table extends React.Component<TableProps, TableState> {
       type,
       size,
       draggable,
+      nestedRows,
+      nestedRowRenderer,
       withHeader,
       headerOptions,
       withCheckbox,
@@ -539,7 +559,7 @@ export class Table extends React.Component<TableProps, TableState> {
       // onSelect,
       loaderSchema,
       errorTemplate,
-      className,
+      className
     } = this.props;
 
     const baseProps = extractBaseProps(this.props);
@@ -587,6 +607,8 @@ export class Table extends React.Component<TableProps, TableState> {
             type={type}
             size={size}
             draggable={draggable}
+            nestedRows={nestedRows}
+            nestedRowRenderer={nestedRowRenderer}
             withPagination={withPagination}
             paginationType={paginationType}
             pageSize={pageSize}

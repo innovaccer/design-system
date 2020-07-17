@@ -140,6 +140,11 @@
     overflow: visible !important;
 }
 
+.Grid-nestedRowTrigger {
+    margin-right: var(--spacing-l);
+    cursor: pointer;
+}
+
 .Grid-row--selected,
 .Grid-row--selected .Grid-cellGroup {
     background: var(--warning-lightest) !important;
@@ -167,6 +172,10 @@
 
 .Grid-cell--selected {
     background: var(--primary-lightest);
+}
+
+.Grid-cell--nestedRow {
+    padding-left: var(--spacing);
 }
 
 .Grid-cell--head.Grid-cell:first-child {

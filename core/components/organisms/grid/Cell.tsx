@@ -191,17 +191,22 @@ const BodyCell = (props: BodyCellProps) => {
   const {
     size,
     loading,
+    nestedRows
   } = _this.props;
 
   const [expanded, setExpanded] = expandedState;
 
   return (
     <div className="Grid-cellContent">
-      {colIndex === 0 && data._expanded && !schema.pinned && (
-        <Button
-          appearance={'transparent'}
-          icon={expanded ? 'expand_less' : 'expand_more'}
-          onClick={() => setExpanded(!expanded)}
+      {colIndex === 0 && nestedRows && (
+        <Icon
+          className="Grid-nestedRowTrigger"
+          name={expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
+          size={20}
+          onClick={e => {
+            e.stopPropagation();
+            setExpanded(!expanded);
+          }}
         />
       )}
       <GridCell
@@ -233,11 +238,16 @@ export const Cell = (props: CellProps) => {
     rowIndex,
   } = props;
 
+  const {
+    nestedRows
+  } = _this.props;
+
   const cellClass = classNames({
     'Grid-cell': true,
     'Grid-cell--head': head,
     'Grid-cell--body': !head,
     'Grid-cell--separator': colIndex !== 0 && schema.separator,
+    'Grid-cell--nestedRow': !head && colIndex === 0 && nestedRows
   });
 
   if (schema.hidden) return null;

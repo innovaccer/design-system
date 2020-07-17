@@ -8,25 +8,27 @@ import { action } from '@storybook/addon-actions';
 
 export const asyncTable = () => {
   return (
-    <Card
+    <div
       style={{
         height: '350px',
       }}
     >
-      <Table
-        loaderSchema={loaderSchema}
-        fetchData={fetchData}
-        withHeader={true}
-        withCheckbox={true}
-        onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
-        headerOptions={{
-          withSearch: true
-        }}
-        withPagination={true}
-        pageSize={5}
-        onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
-      />
-    </Card>
+      <Card className="h-100">
+        <Table
+          loaderSchema={loaderSchema}
+          fetchData={fetchData}
+          withHeader={true}
+          withCheckbox={true}
+          onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
+          headerOptions={{
+            withSearch: true
+          }}
+          withPagination={true}
+          pageSize={5}
+          onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
+        />
+      </Card>
+    </div>
   );
 };
 
@@ -76,13 +78,6 @@ const customCode = `
     const end = start + pageSize;
     const paginatedData = data.slice(start, end);
     return paginatedData;
-  };
-
-  const searchData = (data, searchTerm, onSearch) => {
-    if (onSearch) {
-      return data.filter(d => onSearch(d, searchTerm));
-    }
-    return data;
   };
 
   const data = ${JSON.stringify(data.slice(0, 10), null, 4)};
@@ -193,7 +188,7 @@ const customCode = `
       searchTerm
     } = options;
 
-    const onSearch = (d, searchTerm) => {
+    const onSearch = (d, searchTerm = '') => {
       return (
         d.firstName.toLowerCase().match(searchTerm.toLowerCase())
         || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
@@ -203,7 +198,7 @@ const customCode = `
     }
 
     const filteredData = filterData(schema, data, filterList);
-    const searchedData = searchData(filteredData, searchTerm, onSearch);
+    const searchedData = filteredData.filter(d => onSearch(d, searchTerm));
     const sortedData = sortData(schema, searchedData, sortingList);
 
     if (page && pageSize) {
@@ -235,25 +230,27 @@ const customCode = `
   const loaderSchema = ${JSON.stringify(loaderSchema, null, 4)};
 
   return (
-    <Card
+    <div
       style={{
         height: '350px',
       }}
     >
-      <Table
-        loaderSchema={loaderSchema}
-        fetchData={fetchData}
-        withHeader={true}
-        headerOptions={{
-          withSearch: true
-        }}
-        withCheckbox={true}
-        onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select: - rowIndex: \${ rowIndex } selected: \${ selected } selectedList: \${ JSON.stringify(selectedList) } selectAll: \${ selectAll } \`)}
-        withPagination={true}
-        pageSize={5}
-        onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)()}
-      />
-    </Card>
+      <Card className="h-100">
+        <Table
+          loaderSchema={loaderSchema}
+          fetchData={fetchData}
+          withHeader={true}
+          headerOptions={{
+            withSearch: true
+          }}
+          withCheckbox={true}
+          onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select: - rowIndex: \${ rowIndex } selected: \${ selected } selectedList: \${ JSON.stringify(selectedList) } selectAll: \${ selectAll } \`)}
+          withPagination={true}
+          pageSize={5}
+          onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)()}
+        />
+      </Card>
+    </div>
   );
 };
 `;
