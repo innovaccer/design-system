@@ -49,7 +49,7 @@ interface SyncProps {
    *        onFilterChange?: (data: RowData, filters: Filter) => boolean;
    *        translate?: (data: RowData) => RowData,
    *        cellType?: CellType;
-   *        cellRenderer?: React.FC<GridCellProps>t;
+   *        cellRenderer?: React.FunctionComponent\<GridCellProps\>;
    *        align?: Alignment;
    *    }
    *
@@ -67,11 +67,11 @@ interface SyncProps {
    *
    * | CellType | CellData |
    * | --- | --- |
-   * | DEFAULT | `string \| { title: string }` |
-   * | WITH\_META\_LIST | `{ title: string, metaList: string }` |
+   * | DEFAULT | `string | { title: string }` |
+   * | WITH\_META\_LIST | `{ title: string, metaList: string[] }` |
    * | AVATAR | { firstName?: string, lastName?: string, title?: string } |
    * | AVATAR\_WITH\_TEXT | { firstName?: string, lastName?: string, title: string } |
-   * | AVATAR\_WITH\_META\_LIST | { firstName?: string, lastName?: string, title: string, metaList: string } |
+   * | AVATAR\_WITH\_META\_LIST | { firstName?: string, lastName?: string, title: string, metaList: string[] } |
    * | ICON | `{ icon: string }` |
    * | STATUS_HINT | `{ title: string, statusAppearance: string }` |
    * </pre>
@@ -223,7 +223,7 @@ interface SharedTableProps extends BaseProps {
    */
   pageSize?: GridProps['pageSize'];
   /**
-   * Schema to be used for loading state
+   * Schema to be used for loading state **only when `schema: undefined`**
    */
   loaderSchema?: GridProps['loaderSchema'];
   /**
