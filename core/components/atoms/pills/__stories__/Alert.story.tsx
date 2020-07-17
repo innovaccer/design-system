@@ -2,13 +2,13 @@ import * as React from 'react';
 import Pills from '..';
 
 export const alert = () => (
-  <Pills
-    appearance="alert"
-    subtle={false}
-  >
-    {'Pills'}
-  </Pills>
-);
+    <Pills
+      appearance="alert"
+      subtle={false}
+    >
+      {'Pills'}
+    </Pills>
+  );
 
 export default {
   title: 'Atoms|Pills',

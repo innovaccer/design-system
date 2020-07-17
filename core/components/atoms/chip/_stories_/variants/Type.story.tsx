@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { boolean, text } from '@storybook/addon-knobs';
-import Chip, { Type, Name } from '../../Chip';
+import Chip, { Type } from '../../Chip';
 import { action } from '@storybook/addon-actions';
 import Text from '@/components/atoms/text';
 export const Types = () => {
@@ -18,12 +18,6 @@ export const Types = () => {
   );
   const disabled = false;
   const selected = false;
-  const onCloseHandler = (name: Name) => {
-    return action(`onClose: ${name}`)();
-  };
-  const onClickHandler = (name: Name) => {
-    return action(`onClick: ${name}`)();
-  };
   return (
     <div className="d-flex">
       {
@@ -36,10 +30,10 @@ export const Types = () => {
                 clearButton={clearButton}
                 disabled={disabled}
                 type={type}
-                onClose={onCloseHandler}
-                onClick={onClickHandler}
+                onClose={action(`onClose: ${name}`)}
+                onClick={action(`onClick: ${name}`)}
                 selected={selected}
-                name={name}
+                name={'chip'}
               />
               <br />
               <Text weight="strong">{type.charAt(0).toUpperCase() + type.slice(1)}</Text>

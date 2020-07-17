@@ -1,19 +1,14 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
 import Pills from '../../pills';
 
-export const subtleWarning = () => {
-  const ButtonSubtle = true;
-  const children = text('children', 'Pills');
-  return (
+export const subtleWarning = () => (
     <Pills
       appearance="warning"
-      subtle={ButtonSubtle}
+      subtle={true}
     >
-      {children}
+      {'Pills'}
     </Pills>
   );
-};
 
 export default {
   title: 'Atoms|Pills',
