@@ -54,8 +54,7 @@ interface SyncProps {
    *    }
    *
    *    CellType: 'DEFAULT' | 'WITH\_META\_LIST' | 'AVATAR' | 'AVATAR\_WITH\_TEXT'
-   * | 'AVATAR\_WITH\_META\_LIST' | 'IMAGE' | 'IMAGE\_WITH\_TEXT' | 'IMAGE\_WITH\_META\_LIST'
-   * | 'STATUS\_HINT' | 'ICON'`
+   * | 'AVATAR\_WITH\_META\_LIST' | 'STATUS\_HINT' | 'ICON'`
    *
    *    GridCellProps: {
    *        size: GridSize;
@@ -65,6 +64,16 @@ interface SyncProps {
    *        schema: ColumnSchema;
    *        loading: boolean;
    *    }
+   *
+   * | CellType | CellData |
+   * | --- | --- |
+   * | DEFAULT | `string \| { title: string }` |
+   * | WITH\_META\_LIST | `{ title: string, metaList: string }` |
+   * | AVATAR | { firstName?: string, lastName?: string, title?: string } |
+   * | AVATAR\_WITH\_TEXT | { firstName?: string, lastName?: string, title: string } |
+   * | AVATAR\_WITH\_META\_LIST | { firstName?: string, lastName?: string, title: string, metaList: string } |
+   * | ICON | `{ icon: string }` |
+   * | STATUS_HINT | `{ title: string, statusAppearance: string }` |
    * </pre>
    *
    * | Name | Description | Default |
