@@ -1,0 +1,11 @@
+.AvatarGroup-item {
+    border-radius:50%;
+    border: var(--spacing-m	) solid white;
+    margin-left:calc(var(--spacing-2)*-1);
+}
+.customStyle {
+  max-width: var(--spacing-9);
+  padding: var(--spacing) var(--spacing-2);
+  border-radius: var(--spacing-m);
+  background: var(--inverse);
+}
