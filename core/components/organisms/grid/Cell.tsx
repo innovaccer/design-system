@@ -56,13 +56,17 @@ const HeaderCell = (props: HeaderCellProps) => {
   const el = React.createRef<HTMLDivElement>();
 
   const sortOptions: DropdownProps['options'] = [
-    { label: 'Sort Ascending', value: 'sortAsc', icon: 'arrow_downward', optionType: 'WITH_ICON' },
-    { label: 'Sort Descending', value: 'sortDesc', icon: 'arrow_upward', optionType: 'WITH_ICON' },
+    { label: 'Sort Ascending', value: 'sortAsc', icon: 'arrow_downward' },
+    { label: 'Sort Descending', value: 'sortDesc', icon: 'arrow_upward' },
   ];
+  const unsortOption = { label: 'Unsort', value: 'unsort', icon: 'unfold_more' };
+  if (sorted === 'asc') sortOptions[0] = unsortOption;
+  if (sorted === 'desc') sortOptions[1] = unsortOption;
+
   let options: DropdownProps['options'] = [
-    { label: 'Pin Left', value: 'pinLeft', icon: 'skip_previous', optionType: 'WITH_ICON' },
-    { label: 'Pin Right', value: 'pinRight', icon: 'skip_next', optionType: 'WITH_ICON' },
-    { label: 'Hide Column', value: 'hide', icon: 'cancel', optionType: 'WITH_ICON' },
+    { label: 'Pin Left', value: 'pinLeft', icon: 'skip_previous' },
+    { label: 'Pin Right', value: 'pinRight', icon: 'skip_next' },
+    { label: 'Hide Column', value: 'hide', icon: 'cancel' },
   ];
   if (sorting) options = [...sortOptions, ...options];
 
@@ -86,6 +90,13 @@ const HeaderCell = (props: HeaderCellProps) => {
     >
       <div
         className="Grid-cellContent"
+        onClick={() => {
+          if (!loading && sorting) {
+            if (sorted === 'asc') _this.onMenuChange(name, 'sortDesc');
+            if (sorted === 'desc') _this.onMenuChange(name, 'unsort');
+            if (!sorted) _this.onMenuChange(name, 'sortAsc');
+          }
+        }}
         onMouseDown={() => {
           if (draggable) reorderCol(_this, name, el.current);
         }}
@@ -148,8 +159,9 @@ const HeaderCell = (props: HeaderCellProps) => {
             </span>
           ) : (
               <Dropdown
-                key={name}
+                key={`${name}-${sorted}`}
                 menu={true}
+                optionType="WITH_ICON"
                 triggerOptions={{
                   customTrigger: () => (
                     <Button
