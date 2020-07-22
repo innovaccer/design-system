@@ -8,7 +8,7 @@ import { MainGrid } from './MainGrid';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { NestedRowProps } from './GridNestedRow';
 
-export type SortType = 'asc' | 'desc';
+export type SortType = 'asc' | 'desc' | 'unsort';
 export type Pinned = 'left' | 'right';
 export type Alignment = 'left' | 'right' | 'center';
 export type Comparator = (a: RowData, b: RowData) => -1 | 0 | 1;
@@ -400,6 +400,9 @@ export class Grid extends React.Component<GridProps, GridState> {
         break;
       case 'sortDesc':
         sortColumn.call(this, name, 'desc');
+        break;
+      case 'unsort':
+        sortColumn.call(this, name, 'unsort');
         break;
       case 'pinLeft':
         pinColumn.call(this, name, 'left');

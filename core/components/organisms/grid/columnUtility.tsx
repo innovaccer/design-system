@@ -1,5 +1,5 @@
 import { Grid } from '@/index';
-import { ColumnSchema, Pinned } from './Grid';
+import { ColumnSchema, Pinned, SortType } from './Grid';
 
 export const resizeCol = (_this: Grid, name: string, el: HTMLDivElement | null) => {
   const elX = el?.getBoundingClientRect().x;
@@ -72,21 +72,20 @@ export const reorderCol = (_this: Grid, name: string, el: HTMLDivElement | null)
   window.addEventListener('mouseup', stopReorder);
 };
 
-export function sortColumn(this: Grid, name: ColumnSchema['name'], type: 'asc' | 'desc') {
+export function sortColumn(this: Grid, name: ColumnSchema['name'], type: SortType) {
   let {
     sortingList
   } = this.props;
 
   const index = sortingList.findIndex(l => l.name === name);
-  if (index === -1) {
-    sortingList.push({ name, type });
-  } else {
+  if (index !== -1) {
     sortingList = [
       ...sortingList.slice(0, index),
       ...sortingList.slice(index + 1),
-      { name, type }
     ];
   }
+
+  if (type !== 'unsort') sortingList.push({ name, type });
 
   this.updateSortingList(sortingList);
 }
