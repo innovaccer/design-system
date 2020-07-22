@@ -233,7 +233,7 @@ export interface GridProps extends BaseProps {
   /**
    * Error Template
    */
-  errorTemplate?: React.FC;
+  errorTemplate?: React.FunctionComponent;
   /**
    * Sorting List
    */
