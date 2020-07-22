@@ -38,6 +38,15 @@
     border-right: 3px solid var(--secondary);
 }
 
+.Grid::-webkit-scrollbar {
+    width: var(--spacing);
+}
+
+.Grid::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: var(--spacing-m);
+}
+
 .Grid-pinned::-webkit-scrollbar {
     display: none;
 }

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Chip from '../Chip';
+
 export const actionChip = () => (
   <Chip
     label="First Name"

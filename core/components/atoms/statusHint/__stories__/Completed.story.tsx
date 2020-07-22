@@ -1,12 +1,14 @@
 import * as React from 'react';
 import StatusHint from '../StatusHint';
+
 export const completed = () => (
-    <StatusHint
-      appearance="success"
-    >
-      {'Completed'}
-    </StatusHint>
-  );
+  <StatusHint
+    appearance="success"
+  >
+    {'Completed'}
+  </StatusHint>
+);
+
 export default {
   title: 'Atoms|StatusHint',
   component: StatusHint,

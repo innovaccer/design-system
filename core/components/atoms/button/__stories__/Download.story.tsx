@@ -1,19 +1,19 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const download = () => (
-    <Button
-      appearance="basic"
-      size="regular"
-      expanded={false}
-      disabled={false}
-      loading={false}
-      icon="get_app"
-      iconAlign="left"
-    >
-      Download
-    </Button>
-  );
+export const downloadButton = () => (
+  <Button
+    appearance="basic"
+    size="regular"
+    expanded={false}
+    disabled={false}
+    loading={false}
+    icon="get_app"
+    iconAlign="left"
+  >
+    Download
+  </Button>
+);
 
 export default {
   title: 'Atoms|Button',

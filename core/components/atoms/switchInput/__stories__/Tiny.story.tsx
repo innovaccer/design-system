@@ -9,6 +9,7 @@ export const tiny = () => (
     appearance="primary"
   />
 );
+
 export default {
   title: 'Atoms|Switch',
   component: Switch,
