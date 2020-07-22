@@ -27,6 +27,7 @@
 }
 
 .Pagination-pageIndex .Input {
+    flex-grow: 0;
     min-width: var(--spacing-3);
     width: var(--spacing-5);
     margin-right: var(--spacing);
