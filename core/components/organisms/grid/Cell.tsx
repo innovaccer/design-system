@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { RowData, ColumnSchema } from './Grid';
 import { Dropdown, Grid, Placeholder, PlaceholderParagraph, Heading, Icon, Button } from '@/index';
-import { reorderCol, resizeCol, getInit } from './utility';
+import { resizeCol, getInit } from './utility';
 import { GridCell } from './GridCell';
 import { DropdownProps } from '@/components/atoms/dropdown';
 
@@ -25,6 +25,7 @@ type BodyCellProps = SharedCellProps & {
 
 export type CellProps = (HeaderCellProps | BodyCellProps) & {
   head?: boolean;
+  firstCell: boolean;
 };
 
 const HeaderCell = (props: HeaderCellProps) => {
@@ -45,7 +46,8 @@ const HeaderCell = (props: HeaderCellProps) => {
   const {
     sorting = true,
     name,
-    filters
+    filters,
+    pinned
   } = schema;
 
   const init = getInit(schemaProp);
@@ -59,14 +61,24 @@ const HeaderCell = (props: HeaderCellProps) => {
     { label: 'Sort Ascending', value: 'sortAsc', icon: 'arrow_downward' },
     { label: 'Sort Descending', value: 'sortDesc', icon: 'arrow_upward' },
   ];
+  const pinOptions: DropdownProps['options'] = [
+    { label: 'Pin Left', value: 'pinLeft', icon: 'skip_previous' },
+    { label: 'Pin Right', value: 'pinRight', icon: 'skip_next' },
+  ];
+  const unpinOption = { label: 'Unpin', value: 'unpin', icon: 'replay' };
+  if (pinned === 'left') pinOptions[0] = unpinOption;
+  if (pinned === 'right') pinOptions[1] = unpinOption;
+
+  const hideOptions: DropdownProps['options'] = [
+    { label: 'Hide Column', value: 'hide', icon: 'cancel' },
+  ];
   const unsortOption = { label: 'Unsort', value: 'unsort', icon: 'unfold_more' };
   if (sorted === 'asc') sortOptions[0] = unsortOption;
   if (sorted === 'desc') sortOptions[1] = unsortOption;
 
   let options: DropdownProps['options'] = [
-    { label: 'Pin Left', value: 'pinLeft', icon: 'skip_previous' },
-    { label: 'Pin Right', value: 'pinRight', icon: 'skip_next' },
-    { label: 'Hide Column', value: 'hide', icon: 'cancel' },
+    ...pinOptions,
+    ...hideOptions
   ];
   if (sorting) options = [...sortOptions, ...options];
 
@@ -96,9 +108,6 @@ const HeaderCell = (props: HeaderCellProps) => {
             if (sorted === 'desc') _this.onMenuChange(name, 'unsort');
             if (!sorted) _this.onMenuChange(name, 'sortAsc');
           }
-        }}
-        onMouseDown={() => {
-          if (draggable) reorderCol(_this, name, el.current);
         }}
       >
         {loading && !init ? (
@@ -159,7 +168,7 @@ const HeaderCell = (props: HeaderCellProps) => {
             </span>
           ) : (
               <Dropdown
-                key={`${name}-${sorted}`}
+                key={`${name}-${sorted}-${pinned}`}
                 menu={true}
                 optionType="WITH_ICON"
                 triggerOptions={{
@@ -239,6 +248,7 @@ export const Cell = (props: CellProps) => {
     _this,
     head,
     colIndex,
+    firstCell,
     schema,
     // @ts-ignore
     expandedState,
@@ -258,7 +268,7 @@ export const Cell = (props: CellProps) => {
     'Grid-cell': true,
     'Grid-cell--head': head,
     'Grid-cell--body': !head,
-    'Grid-cell--separator': colIndex !== 0 && schema.separator,
+    'Grid-cell--separator': !firstCell && schema.separator,
     'Grid-cell--nestedRow': !head && colIndex === 0 && nestedRows
   });
 
@@ -268,7 +278,24 @@ export const Cell = (props: CellProps) => {
     <div
       key={`${rowIndex}-${colIndex}`}
       className={cellClass}
-      data-name={schema.name}
+      draggable={true}
+      onDragStart={e => {
+        e.dataTransfer.setData('name', schema.name);
+        if (schema.pinned) e.dataTransfer.setData('type', schema.pinned);
+      }}
+      onDragOver={e => e.preventDefault()}
+      onDrop={e => {
+        const from = {
+          name: e.dataTransfer.getData('name'),
+          type: e.dataTransfer.getData('type')
+        };
+        const to = {
+          name: schema.name,
+          type: schema.pinned || ''
+        };
+
+        if (from.type === to.type) _this.reorderCol(from.name, to.name);
+      }}
       style={{
         width: schema.width
       }}

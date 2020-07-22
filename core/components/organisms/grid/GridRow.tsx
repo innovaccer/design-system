@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Checkbox, Grid, Placeholder } from '@/index';
-import { RowData, Schema } from './Grid';
+import { RowData, Schema, Pinned } from './Grid';
 import { GridNestedRow } from './GridNestedRow';
 import { Cell } from './Cell';
 
@@ -53,8 +53,10 @@ export const GridRow = (props: GridRowProps) => {
     nestedRows
   } = _this.props;
 
-  const pinnedSchema = schema.filter(s => s.pinned);
-  const unpinnedSchema = schema.filter(s => !s.pinned);
+  const pinnedSchema = schema.filter(s => !s.hidden && s.pinned);
+  const leftPinnedSchema = pinnedSchema.filter(s => !s.hidden && s.pinned === 'left');
+  const rightPinnedSchema = pinnedSchema.filter(s => !s.hidden && s.pinned === 'right');
+  const unpinnedSchema = schema.filter(s => !s.hidden && !s.pinned);
 
   const renderCheckbox = (show: boolean) => {
     if (!show || !(withCheckbox)) return null;
@@ -76,39 +78,48 @@ export const GridRow = (props: GridRowProps) => {
     );
   };
 
-  return (
-    <>
-      <div className={rowClasses} onClick={onClickHandler}>
-        {!!pinnedSchema.length && (
-          <div className="Grid-cellGroup Grid-cellGroup--pinned">
-            {renderCheckbox(!!pinnedSchema.length)}
-            {pinnedSchema.map((s, cI) => (
+  const renderSchema = (currSchema: Schema, shouldRenderCheckbox: boolean, pinned?: Pinned) => {
+    if (currSchema.length) {
+      const classes = classNames({
+        'Grid-cellGroup': true,
+        'Grid-cellGroup--pinned': pinned,
+        [`Grid-cellGroup--pinned-${pinned}`]: pinned,
+        'Grid-cellGroup--main': !pinned
+      });
+
+      return (
+        <div className={classes}>
+          {renderCheckbox(shouldRenderCheckbox)}
+          {currSchema.map((s, index) => {
+            let cI = pinned === 'left' ? index : leftPinnedSchema.length + index;
+            if (pinned === 'right') cI += unpinnedSchema.length;
+
+            return (
               <Cell
                 key={`${rI}-${cI}`}
                 _this={_this}
                 rowIndex={rI}
                 colIndex={cI}
+                firstCell={!index}
                 schema={s}
                 data={data}
                 expandedState={[expanded, setExpanded]}
               />
-            ))}
-          </div>
-        )}
-        <div className="Grid-cellGroup Grid-cellGroup--main">
-          {renderCheckbox(!pinnedSchema.length && !!unpinnedSchema.length)}
-          {unpinnedSchema.map((s, cI) => (
-            <Cell
-              key={rI * schema.length + (pinnedSchema.length + cI)}
-              _this={_this}
-              rowIndex={rI}
-              colIndex={pinnedSchema.length + cI}
-              schema={s}
-              data={data}
-              expandedState={[expanded, setExpanded]}
-            />
-          ))}
+            );
+          })}
         </div>
+      );
+    }
+
+    return null;
+  };
+
+  return (
+    <>
+      <div className={rowClasses} onClick={onClickHandler}>
+        {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
+        {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
+        {renderSchema(rightPinnedSchema, false, 'right')}
       </div>
       {nestedRows && expanded && (
         <GridNestedRow

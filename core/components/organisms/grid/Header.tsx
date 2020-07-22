@@ -111,7 +111,13 @@ export const Header = (props: HeaderProps) => {
     if (updateSchema) updateSchema(newSchema);
   };
 
-  const columnOptions = schema.map(s => ({
+  const pinnedSchema = schema.filter(s => s.pinned);
+  const leftPinnedSchema = pinnedSchema.filter(s => s.pinned === 'left');
+  const rightPinnedSchema = pinnedSchema.filter(s => s.pinned === 'right');
+  const unpinnedSchema = schema.filter(s => !s.pinned);
+  const renderedSchema = [...leftPinnedSchema, ...unpinnedSchema, ...rightPinnedSchema];
+
+  const columnOptions = renderedSchema.map(s => ({
     label: s.displayName,
     value: s.name,
     selected: !s.hidden

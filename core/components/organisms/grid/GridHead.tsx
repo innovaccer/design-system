@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { Schema } from './Grid';
+import { Schema, Pinned } from './Grid';
 import { Checkbox, Grid, Placeholder } from '@/index';
 import { Cell } from './Cell';
 import { getSchema } from './utility';
+import classNames from 'classnames';
 
 export interface GridHeadProps {
   /**
@@ -31,8 +32,10 @@ export const GridHead = (props: GridHeadProps) => {
 
   const schema = getSchema(_this);
 
-  const pinnedSchema = schema.filter(s => s.pinned);
-  const unpinnedSchema = schema.filter(s => !s.pinned);
+  const pinnedSchema = schema.filter(s => !s.hidden && s.pinned);
+  const leftPinnedSchema = pinnedSchema.filter(s => !s.hidden && s.pinned === 'left');
+  const rightPinnedSchema = pinnedSchema.filter(s => !s.hidden && s.pinned === 'right');
+  const unpinnedSchema = schema.filter(s => !s.hidden && !s.pinned);
 
   const renderCheckbox = (show: boolean) => {
     if (!show || !(withCheckbox)) return null;
@@ -51,37 +54,47 @@ export const GridHead = (props: GridHeadProps) => {
     );
   };
 
-  return (
-    <div className="Grid-head">
-      <div className="Grid-row Grid-row--head">
-        {!!pinnedSchema.length && (
-          <div className="Grid-cellGroup Grid-cellGroup--pinned">
-            {renderCheckbox(!!pinnedSchema.length)}
-            {pinnedSchema.map((s, index) => (
+  const renderSchema = (currSchema: Schema, shouldRenderCheckbox: boolean, pinned?: Pinned) => {
+    if (currSchema.length) {
+      const classes = classNames({
+        'Grid-cellGroup': true,
+        'Grid-cellGroup--pinned': pinned,
+        [`Grid-cellGroup--pinned-${pinned}`]: pinned,
+        'Grid-cellGroup--main': !pinned
+      });
+
+      return (
+        <div className={classes}>
+          {renderCheckbox(shouldRenderCheckbox)}
+          {currSchema.map((s, index) => {
+            let cI = pinned === 'left' ? index : leftPinnedSchema.length + index;
+            if (pinned === 'right') cI += unpinnedSchema.length;
+
+            return (
               <Cell
                 key={s.name}
                 _this={_this}
                 head={true}
                 draggable={draggable}
                 schema={s}
-                colIndex={index}
+                colIndex={cI}
+                firstCell={!index}
               />
-            ))}
-          </div>
-        )}
-        <div className="Grid-cellGroup Grid-cellGroup--main">
-          {renderCheckbox(!pinnedSchema.length && !!unpinnedSchema.length)}
-          {unpinnedSchema.map((s, index) => (
-            <Cell
-              key={s.name}
-              _this={_this}
-              head={true}
-              draggable={draggable}
-              schema={s}
-              colIndex={index}
-            />
-          ))}
+            );
+          })}
         </div>
+      );
+    }
+
+    return null;
+  };
+
+  return (
+    <div className="Grid-head">
+      <div className="Grid-row Grid-row--head">
+        {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
+        {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
+        {renderSchema(rightPinnedSchema, false, 'right')}
       </div>
     </div>
   );
