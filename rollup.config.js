@@ -5,6 +5,7 @@ import alias from '@rollup/plugin-alias';
 import json from '@rollup/plugin-json';
 import path from 'path';
 import packageJSON from './package.json';
+import typescript from '@rollup/plugin-typescript';
 
 const banner = () => {
 
@@ -46,7 +47,7 @@ function globals() {
   };
 }
 
-export default {
+export default [{
   input: './core/index.tsx',
 
   // Specify here external modules which you don't want to include in your bundle (for instance: 'lodash', 'moment' etc.)
@@ -59,6 +60,7 @@ export default {
         { find: '@', replacement: path.resolve('./core') },
       ]
     }),
+    
     // Allows node_modules resolution
     resolve({ extensions }),
 
@@ -74,8 +76,42 @@ export default {
   output: formats.map(format => ({
     file: `dist/index.${format}.js`,
     format,
-    name: 'inno',
+    name: `inno-${format}`,
     globals: globals(),
     banner: banner(),
   }))
-};
+}, {
+  input: './core/index.tsx',
+
+  external: ['react', 'react-dom', 'classnames', 'react-popper', 'axios', 'recharts'],
+
+  plugins: [
+    alias({
+      entries: [
+        { find: '@', replacement: path.resolve('./core') },
+      ]
+    }),
+    
+    // Allows node_modules resolution
+    resolve({ extensions }),
+    
+    typescript({
+      typescript: require('ttypescript'),
+      tsconfig: path.resolve(__dirname, './tsconfig.type.json'),
+    }),
+
+    // Allow bundling cjs modules. Rollup doesn't understand cjs
+    commonjs(),
+
+    // Compile TypeScript/JavaScript files
+    babel({ extensions, include: ['core/**/*'] }),
+  ],
+
+  output: {
+    dir: 'dist',
+    format: 'umd',
+    name: `inno`,
+    globals: globals(),
+    banner: banner(),
+  }
+}];
