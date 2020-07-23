@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import Avatar, { AvatarProps as Props } from '../Avatar';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -26,4 +27,13 @@ describe('Avatar component', () => {
   };
 
   testHelper(mapper, testFunc);
+});
+
+describe('Avatar component', () => {
+
+  it('renders initials', () => {
+    const { getByTestId } = render(<Avatar firstName="Design" lastName="System" />);
+    expect(getByTestId('DesignSystem-Avatar').textContent).toMatch('DS');
+  });
+
 });

@@ -8,6 +8,7 @@ exports[`Avatar component
 >
   <Text
     appearance="white"
+    data-test="DesignSystem-Avatar"
     weight="medium"
   >
     JD
@@ -23,6 +24,7 @@ exports[`Avatar component
 >
   <Text
     appearance="white"
+    data-test="DesignSystem-Avatar"
     weight="medium"
   >
     JD
@@ -38,6 +40,7 @@ exports[`Avatar component
 >
   <Text
     appearance="white"
+    data-test="DesignSystem-Avatar"
     weight="medium"
   >
     JD
@@ -53,6 +56,7 @@ exports[`Avatar component
 >
   <Text
     appearance="white"
+    data-test="DesignSystem-Avatar"
     weight="medium"
   >
     JD
@@ -68,6 +72,7 @@ exports[`Avatar component
 >
   <Text
     appearance="white"
+    data-test="DesignSystem-Avatar"
     weight="medium"
   >
     JD
@@ -83,6 +88,7 @@ exports[`Avatar component
 >
   <Text
     appearance="white"
+    data-test="DesignSystem-Avatar"
     weight="medium"
   >
     JD
@@ -98,6 +104,7 @@ exports[`Avatar component
 >
   <Text
     appearance="white"
+    data-test="DesignSystem-Avatar"
     weight="medium"
   >
     JD
@@ -113,6 +120,7 @@ exports[`Avatar component
 >
   <Text
     appearance="default"
+    data-test="DesignSystem-Avatar"
     weight="medium"
   >
     JD
