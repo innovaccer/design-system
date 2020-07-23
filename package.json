@@ -23,9 +23,9 @@
     "build-css": "gulp --gulpfile css/gulpfile.js build",
     "clean-css": "gulp --gulpfile css/gulpfile.js clean",
     "watch-css": "gulp --gulpfile css/gulpfile.js build && gulp --gulpfile css/gulpfile.js watch",
-    "build-js": "rollup -c",
+    "build-js": "rm -rf dist/.lib && rollup -c",
     "build-type": "rm -rf .lib && tsc -b tsconfig.type.json",
-    "build": "npm run build-css && npm run build-js && npm run build-type",
+    "build": "npm run build-css && npm run build-js",
     "version": "./scripts/version.sh"
   },
   "author": "Innovaccer",
@@ -40,6 +40,7 @@
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-json": "^4.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
+    "@rollup/plugin-typescript": "^5.0.2",
     "@storybook/addon-a11y": "^5.3.1",
     "@storybook/addon-actions": "^5.2.8",
     "@storybook/addon-docs": "^5.2.8",
@@ -87,8 +88,10 @@
     "tslint-config-airbnb": "^5.11.2",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.1.0",
+    "ttypescript": "^1.5.10",
     "typescript": "^3.7.4",
-    "typescript-eslint-parser": "^22.0.0"
+    "typescript-eslint-parser": "^22.0.0",
+    "typescript-transform-paths": "^1.1.14"
   },
   "dependencies": {
     "@types/classnames": "^2.2.9",
