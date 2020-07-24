@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Omit } from 'utility-types';
 import { PopperWrapper } from '@/utils';
-import classNames from 'classnames';
 
 export type PositionType =
   'top'
@@ -33,14 +32,13 @@ export interface TooltipProps extends DivProps {
    * @default true
    */
   appendToBody?: boolean;
+  /**
+   * Classes to be added to PopperWrapper trigger
+   */
+  triggerClass?: string;
 }
 
 interface IState {
-  position: {
-    top: number;
-    left: number;
-  };
-  style: React.CSSProperties;
   open: boolean;
 }
 
@@ -57,11 +55,6 @@ export class Tooltip extends React.Component<TooltipProps, IState> {
     super(props);
 
     this.state = {
-      position: {
-        top: 0,
-        left: 0,
-      },
-      style: {},
       open: false
     };
   }
@@ -81,18 +74,14 @@ export class Tooltip extends React.Component<TooltipProps, IState> {
       tooltip,
       children,
       className,
+      triggerClass,
       ...props
     } = this.props;
 
-    const classes = classNames({
-      ['Tooltip']: true
-    }, className);
-
     const tooltipWrapper = (
       <div
-        className={classes}
+        className="Tooltip"
         {...props}
-        style={this.state.style}
       >
         {tooltip}
       </div>
@@ -102,12 +91,12 @@ export class Tooltip extends React.Component<TooltipProps, IState> {
       <PopperWrapper
         trigger={children}
         placement={this.props.position}
-        style={this.state.style}
         appendToBody={appendToBody}
         on={'hover'}
         offset={'Medium'}
         onToggle={this.onToggle}
         open={this.state.open}
+        triggerClass={triggerClass}
       >
         {tooltipWrapper}
       </PopperWrapper>
