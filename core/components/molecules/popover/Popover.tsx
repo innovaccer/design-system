@@ -80,7 +80,7 @@ export interface PopoverProps extends BaseProps {
    */
   children: React.ReactNode;
   /**
-   * Classes to be added to PopperWrapper trigger
+   * Class to be added to PopperWrapper trigger
    */
   triggerClass?: string;
 }

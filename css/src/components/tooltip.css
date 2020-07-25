@@ -8,5 +8,7 @@
   background: var(--inverse);
   overflow: hidden;
   box-sizing: border-box;
+  word-break: break-word;
+  hyphens: auto;
 }
 
