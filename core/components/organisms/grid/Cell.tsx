@@ -116,7 +116,7 @@ const HeaderCell = (props: HeaderCellProps) => {
           </Placeholder>
         ) : (
             <>
-              <Heading size="s">{schema.displayName}</Heading>
+              <Heading size="s" className="ellipsis--noWrap">{schema.displayName}</Heading>
               {sorting && (
                 <div className="Grid-sortingIcons">
                   {sorted ? sorted === 'asc' ? (

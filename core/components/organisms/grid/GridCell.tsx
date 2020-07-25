@@ -91,13 +91,13 @@ const renderTitle = (props: CellProps) => {
   if (children) {
     if (tooltip) {
       return (
-        <Tooltip tooltip={children} position={'top-start'}>
-          <Text>{children}</Text>
+        <Tooltip tooltip={children} position={'top-start'} triggerClass="overflow-hidden">
+          <Text className="w-100 ellipsis">{children}</Text>
         </Tooltip>
       );
     }
     return (
-      <Text>{children}</Text>
+      <Text className="w-100 ellipsis">{children}</Text>
     );
   }
 
@@ -117,7 +117,7 @@ const renderMetaList = (props: CellProps) => {
     return (
       <div className="GridCell-metaList">
         {metaList.map((list, index) => (
-          <Text key={index} appearance={'subtle'} small={true}>{list}</Text>
+          <Text key={index} className="ellipsis" appearance={'subtle'} small={true}>{list}</Text>
         ))}
       </div>
     );
@@ -135,7 +135,7 @@ const renderAvatar = (props: CellProps) => {
 
   if (firstName || lastName) {
     return (
-      <Avatar firstName={firstName} lastName={lastName} />
+      <Avatar className="mr-5" firstName={firstName} lastName={lastName} />
     );
   }
   if (title) {
@@ -237,10 +237,8 @@ export const GridCell = (props: GridCellProps) => {
       }
       return (
         <div className={`${cellClass} GridCell--align-${align} GridCell--metaList`} >
-          <div className="GridCell-metaListWrapper">
-            {renderTitle({ tooltip, cellData })}
-            {renderMetaList({ cellData })}
-          </div>
+          {renderTitle({ tooltip, cellData })}
+          {renderMetaList({ cellData })}
         </div>
       );
 

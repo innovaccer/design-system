@@ -218,6 +218,7 @@
     flex-grow: 1;
     height: 100%;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .Grid-cellResize {
@@ -281,19 +282,6 @@
     margin-right: 0;
 }
 
-.Grid .Avatar {
-    margin-right: var(--spacing-l);
-}
-
-.Grid .Placeholder {
-    display: flex;
-    flex-shrink: 0;
-}
-
-.Grid .Placeholder-image {
-    flex-shrink: 0;
-}
-
 /** Grid Cell **/
 .GridCell {
     display: flex;
@@ -301,6 +289,7 @@
     height: 100%;
     width: 100%;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .GridCell--align-left {
@@ -316,7 +305,12 @@
 }
 
 .GridCell--default {}
-.GridCell--metaList {}
+.GridCell--metaList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
 
 .GridCell--avatar .Avatar {
     margin: 0;
@@ -326,6 +320,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow: hidden;
 }
 
 .GridCell-metaList {
