@@ -64,7 +64,13 @@ export const Avatar = (props: AvatarProps) => {
 
   return (
     <span {...baseProps} className={classes}>
-      <Text weight="medium" appearance={AvatarAppearance === 'warning' ? 'default' : 'white'}>{initials}</Text>
+      <Text
+        data-test="DesignSystem-Avatar"
+        weight="medium"
+        appearance={AvatarAppearance === 'warning' ? 'default' : 'white'}
+      >
+        {initials}
+      </Text>
     </span>
   );
 };

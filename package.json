@@ -10,7 +10,7 @@
   },
   "scripts": {
     "chromatic": "chromatic",
-    "test": "jest",
+    "test": "jest --coverage",
     "test:ci": "jest --onlyChanged",
     "start": "start-storybook -p 5000",
     "dev": "concurrently --kill-others \"npm run watch-css\" \"npm run start\"",
@@ -50,6 +50,8 @@
     "@storybook/preset-typescript": "^1.2.0",
     "@storybook/react": "^5.2.8",
     "@storybook/storybook-deployer": "^2.8.5",
+    "@testing-library/jest-dom": "^5.11.1",
+    "@testing-library/react": "^10.4.7",
     "@types/enzyme": "^3.10.4",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^24.0.24",
