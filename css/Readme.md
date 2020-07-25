@@ -394,7 +394,8 @@ Width and height utilities includes support for 25%, 50%, 75%, and 100% by defau
 | ----- | ---------- |
 | hide-scroll-bar::-webkit-scrollbar | height: 0px;<br> <br>background: transparent;<br> |
 | hide-scroll-bar | -ms-overflow-style: none;<br>scrollbar-width: none;<br> |
-| ellipsis | white-space: nowrap;<br>overflow: hidden;<br>text-overflow: ellipsis;<br> |
+| ellipsis | overflow: hidden;<br>text-overflow: ellipsis;<br> |
+| ellipsis--noWrap | white-space: nowrap;<br>overflow: hidden;<br>text-overflow: ellipsis;<br> |
 
 
 ## SHADOW

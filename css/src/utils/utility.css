@@ -12,6 +12,11 @@
 }
 
 .ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ellipsis--noWrap {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
