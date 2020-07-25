@@ -9,7 +9,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { NestedRowProps } from './GridNestedRow';
 
 export type SortType = 'asc' | 'desc' | 'unsort';
-export type Pinned = 'left' | 'right';
+export type Pinned = 'left' | 'right' | 'unpin';
 export type Alignment = 'left' | 'right' | 'center';
 export type Comparator = (a: RowData, b: RowData) => -1 | 0 | 1;
 export type Filter = any[];
@@ -35,7 +35,6 @@ export type updateSchemaFunction = (newSchema: Schema) => void;
 export type updateSelectAllFunction = (attr: GridProps['selectAll']) => void;
 export type updateColumnSchemaFunction = (name: ColumnSchema['name'], schemaUpdate: Partial<ColumnSchema>) => void;
 export type updateRowDataFunction = (rowIndexes: number[], dataUpdate: Partial<RowData>) => void;
-export type updateReorderHighlighterFunction = (dim: GridState['reorderHighlighter']) => void;
 export type sortDataFunction = (comparator: Comparator, type: SortType) => void;
 export type reorderColFunction = (from: string, to: string) => void;
 export type onSelectFunction = (rowIndex: number, selected: boolean) => void;
@@ -262,13 +261,7 @@ export interface GridProps extends BaseProps {
   };
 }
 
-export interface GridState {
-  // prevSchema: Schema;
-  // schema: Schema;
-  reorderHighlighter?: number;
-}
-
-export class Grid extends React.Component<GridProps, GridState> {
+export class Grid extends React.Component<GridProps> {
   constructor(props: GridProps) {
     super(props);
 
@@ -293,7 +286,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     filterList: {},
   };
 
-  componentDidUpdate(prevProps: GridProps, _prevState: GridState) {
+  componentDidUpdate(prevProps: GridProps) {
     if ((prevProps.withPagination !== this.props.withPagination) || (prevProps.page !== this.props.page)) {
       // this.updateRenderedData();
     }
@@ -367,12 +360,6 @@ export class Grid extends React.Component<GridProps, GridState> {
     this.updateRenderedSchema(newSchema);
   }
 
-  updateReorderHighlighter: updateReorderHighlighterFunction = debounce(50, dim => {
-    this.setState({
-      reorderHighlighter: dim
-    });
-  });
-
   updateSortingList = (sortingList: GridProps['sortingList']) => {
     const {
       updateSortingList
@@ -410,6 +397,9 @@ export class Grid extends React.Component<GridProps, GridState> {
       case 'pinRight':
         pinColumn.call(this, name, 'right');
         break;
+      case 'unpin':
+        pinColumn.call(this, name, 'unpin');
+        break;
       case 'hide':
         hideColumn.call(this, name, true);
         break;
@@ -436,7 +426,6 @@ export class Grid extends React.Component<GridProps, GridState> {
 
     if (onSelect) {
       onSelect(rowIndex, selected);
-      // this.syncSelectAll();
     }
   }
 
@@ -447,18 +436,10 @@ export class Grid extends React.Component<GridProps, GridState> {
 
     if (onSelectAll) {
       onSelectAll(event.target.checked);
-      // this.updateSelectAll({
-      //   indeterminate: false,
-      //   checked: selected
-      // });
     }
   }
 
   render() {
-    const {
-      reorderHighlighter,
-    } = this.state;
-
     const {
       withPagination,
       page,
@@ -472,11 +453,6 @@ export class Grid extends React.Component<GridProps, GridState> {
 
     const schema = getSchema(this);
 
-    // let { schema } = this.props;
-    // if ((!schema || schema.length === 0) && loading) {
-    //   schema = loaderSchema;
-    // }
-
     return (
       <div className="Grid-container">
         <div className="Grid-wrapper" ref={this.gridRef}>
@@ -485,14 +461,6 @@ export class Grid extends React.Component<GridProps, GridState> {
             _this={this}
             schema={schema}
           />
-          {reorderHighlighter && (
-            <div
-              className="Grid-reorderHighlighter"
-              style={{
-                left: `${reorderHighlighter}px`
-              }}
-            />
-          )}
         </div>
         {withPagination && (
           <div className="Grid-pagination">
