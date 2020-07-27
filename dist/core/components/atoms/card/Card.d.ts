@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from '@/utils/types';
+import { BaseProps } from "../../../utils/types";
 export declare type Shadow = 'none' | 'light' | 'medium' | 'dark';
 export interface CardProps extends BaseProps {
     shadow?: Shadow;

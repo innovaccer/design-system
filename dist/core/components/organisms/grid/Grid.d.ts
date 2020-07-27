@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { CheckboxProps, DropdownProps, PaginationProps } from '@/index.type';
-import { GridCellProps } from './GridCell';
-import { BaseProps } from '@/utils/types';
-import { NestedRowProps } from './GridNestedRow';
-export declare type SortType = 'asc' | 'desc';
-export declare type Pinned = 'left' | 'right';
+import { CheckboxProps, DropdownProps, PaginationProps } from "../../../index.type";
+import { GridCellProps } from "./GridCell";
+import { BaseProps } from "../../../utils/types";
+import { NestedRowProps } from "./GridNestedRow";
+export declare type SortType = 'asc' | 'desc' | 'unsort';
+export declare type Pinned = 'left' | 'right' | 'unpin';
 export declare type Alignment = 'left' | 'right' | 'center';
 export declare type Comparator = (a: RowData, b: RowData) => -1 | 0 | 1;
 export declare type Filter = any[];
@@ -27,7 +27,6 @@ export declare type updateSchemaFunction = (newSchema: Schema) => void;
 export declare type updateSelectAllFunction = (attr: GridProps['selectAll']) => void;
 export declare type updateColumnSchemaFunction = (name: ColumnSchema['name'], schemaUpdate: Partial<ColumnSchema>) => void;
 export declare type updateRowDataFunction = (rowIndexes: number[], dataUpdate: Partial<RowData>) => void;
-export declare type updateReorderHighlighterFunction = (dim: GridState['reorderHighlighter']) => void;
 export declare type sortDataFunction = (comparator: Comparator, type: SortType) => void;
 export declare type reorderColFunction = (from: string, to: string) => void;
 export declare type onSelectFunction = (rowIndex: number, selected: boolean) => void;
@@ -85,7 +84,7 @@ export interface GridProps extends BaseProps {
     withCheckbox?: boolean;
     onSelect?: onSelectFunction;
     onSelectAll?: onSelectAllFunction;
-    errorTemplate?: React.FC;
+    errorTemplate?: React.FunctionComponent;
     sortingList: {
         name: ColumnSchema['name'];
         type: SortType;
@@ -98,10 +97,7 @@ export interface GridProps extends BaseProps {
         indeterminate: boolean;
     };
 }
-export interface GridState {
-    reorderHighlighter?: number;
-}
-export declare class Grid extends React.Component<GridProps, GridState> {
+export declare class Grid extends React.Component<GridProps> {
     constructor(props: GridProps);
     static defaultProps: {
         showHead: boolean;
@@ -118,13 +114,12 @@ export declare class Grid extends React.Component<GridProps, GridState> {
         sortingList: never[];
         filterList: {};
     };
-    componentDidUpdate(prevProps: GridProps, _prevState: GridState): void;
+    componentDidUpdate(prevProps: GridProps): void;
     gridRef: React.RefObject<HTMLDivElement>;
     updateRenderedData: import("throttle-debounce").throttle<(options?: Partial<FetchDataOptions> | undefined) => void>;
     updateRenderedSchema: (newSchema: Schema) => void;
     updateColumnSchema: updateColumnSchemaFunction;
     reorderCol: reorderColFunction;
-    updateReorderHighlighter: updateReorderHighlighterFunction;
     updateSortingList: (sortingList: GridProps['sortingList']) => void;
     updateFilterList: (filterList: GridProps['filterList']) => void;
     onMenuChange: (name: ColumnSchema['name'], selected: any) => void;

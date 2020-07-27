@@ -1,2 +1,2 @@
-export { default } from './OutsideClick';
-export * from './OutsideClick';
+export { default } from "./OutsideClick";
+export * from "./OutsideClick";

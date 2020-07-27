@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { TriggerProps } from './DropdownButton';
-import { OptionRendererProps, OptionSchema } from './option';
-import { BaseProps } from '@/utils/types';
+import { TriggerProps } from "./DropdownButton";
+import { OptionRendererProps, OptionSchema } from "./option";
+import { BaseProps } from "../../../utils/types";
 export declare type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 export declare type DropdownAlign = 'left' | 'right';
 export declare type OptionType = 'DEFAULT' | 'WITH_ICON' | 'WITH_META' | 'ICON_WITH_META';

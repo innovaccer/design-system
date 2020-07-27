@@ -1,2 +1,2 @@
-export { default } from './Paragraph';
-export * from './Paragraph';
+export { default } from "./Paragraph";
+export * from "./Paragraph";

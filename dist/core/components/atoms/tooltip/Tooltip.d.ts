@@ -7,13 +7,9 @@ export interface TooltipProps extends DivProps {
     children: React.ReactElement<any>;
     position?: PositionType;
     appendToBody?: boolean;
+    triggerClass?: string;
 }
 interface IState {
-    position: {
-        top: number;
-        left: number;
-    };
-    style: React.CSSProperties;
     open: boolean;
 }
 export declare class Tooltip extends React.Component<TooltipProps, IState> {

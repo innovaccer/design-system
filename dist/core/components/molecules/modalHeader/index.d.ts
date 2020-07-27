@@ -1,2 +1,2 @@
-export { default } from './ModalHeader';
-export * from './ModalHeader';
+export { default } from "./ModalHeader";
+export * from "./ModalHeader";

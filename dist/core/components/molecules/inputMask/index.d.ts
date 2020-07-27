@@ -1,2 +1,2 @@
-export { default } from './InputMask';
-export * from './InputMask';
+export { default } from "./InputMask";
+export * from "./InputMask";

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from '@/utils/types';
+import { BaseProps } from "../../../utils/types";
 export declare type Dimension = 'small' | 'medium' | 'large';
 export interface ModalProps extends BaseProps {
     backdropClose: (event?: Event, reason?: string) => void;

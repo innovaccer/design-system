@@ -1,6 +1,6 @@
 /// <reference types="react" />
-import { StatusHintProps } from '@/index.type';
-import { ColumnSchema, RowData, GridSize } from './Grid';
+import { StatusHintProps } from "../../../index.type";
+import { ColumnSchema, RowData, GridSize } from "./Grid";
 export interface CellData {
     title: string;
     metaList?: string[];

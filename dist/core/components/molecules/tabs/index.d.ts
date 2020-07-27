@@ -1,2 +1,2 @@
-export * from './TabsWrapper';
-export * from './Tab';
+export * from "./TabsWrapper";
+export * from "./Tab";

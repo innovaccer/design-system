@@ -1,6 +1,6 @@
 /// <reference types="react" />
-import { ChipProps } from '../chip/Chip';
-import { BaseProps } from '@/utils/types';
+import { ChipProps } from "../chip/Chip";
+import { BaseProps } from "../../../utils/types";
 export interface ChipGroupProps extends BaseProps {
     onClose?: (item: ChipProps) => void;
     onClick?: (item: ChipProps) => void;

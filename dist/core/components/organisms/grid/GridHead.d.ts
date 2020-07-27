@@ -1,6 +1,6 @@
 /// <reference types="react" />
-import { Schema } from './Grid';
-import { Grid } from '@/index';
+import { Schema } from "./Grid";
+import { Grid } from "../../../index";
 export interface GridHeadProps {
     schema: Schema;
     draggable?: boolean;

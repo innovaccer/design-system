@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from '@/utils/types';
+import { BaseProps } from "../../../utils/types";
 export interface LabelProps extends BaseProps {
     children: React.ReactNode;
     disabled?: boolean;

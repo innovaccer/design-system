@@ -414,3 +414,20 @@
 * a0da932 feat: adds nested rows support in Grid
 * 640c070 feat:adds commonStories
 * d1a4253 feat: adds example stories
+
+-------------------
+ **v1.1.0-0**  (2020-07-27) 
+
+* 0be3804 v1.1.0-0
+* 51d9736 fix(Grid): adds ellipsis in Grid Cell
+* b5cfc67 feat(Tooltip): adds triggerClass prop
+* cbb40d7 fix(Pagination): fixes Input style for small screen size
+* 3ec95c5 feat(utility): updates ellipsis class
+* 5434af2 chore: adds custom scrollbar in table
+* 95fc00a feat(Avatar): adds unit tests
+* ed8a2a4 feat(tests): adds react testing library configurations
+* f7a30a2 fix(Grid): fixes Pin Right
+* e4750cd feat(Grid): adds sorting toggle on Grid Head click #232
+* 0066a55 feat: adds rollup/plugin-typescript for build
+* 6ee3170 chore: typo fixes in Table docPage
+* e2ba146 feat: adds spinner and buttonGroup example stories

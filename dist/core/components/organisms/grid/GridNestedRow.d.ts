@@ -1,7 +1,7 @@
 /// <reference types="react" />
-import { Grid } from '@/index';
-import { GridProps } from '@/index.type';
-import { RowData } from './Grid';
+import { Grid } from "../../../index";
+import { GridProps } from "../../../index.type";
+import { RowData } from "./Grid";
 export interface GridNestedRowProps {
     _this: Grid;
     data: RowData;

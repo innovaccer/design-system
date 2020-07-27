@@ -1746,10 +1746,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    /* flex-shrink: 0; */
-    overflow-x: scroll;
-    /* overflow-y: hidden; */
-    overflow-y: scroll;
+    overflow: auto;
 }
 
 .Grid--resource .Grid-body .Grid-row:hover,
@@ -1765,6 +1762,16 @@ body {
     overflow-x: hidden;
     -ms-overflow-style: none;
     border-right: 3px solid var(--secondary);
+}
+
+.Grid::-webkit-scrollbar {
+    height: var(--spacing-l);
+    width: var(--spacing-l);
+}
+
+.Grid::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: var(--spacing);
 }
 
 .Grid-pinned::-webkit-scrollbar {
@@ -1948,6 +1955,7 @@ body {
     flex-grow: 1;
     height: 100%;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .Grid-cellResize {
@@ -1995,26 +2003,21 @@ body {
 .Grid-cellGroup--pinned {
     position: -webkit-sticky;
     position: sticky;
-    left: 0;
     z-index: 1;
+}
+
+.Grid-cellGroup--pinned-left {
+    left: 0;
     border-right: 3px solid var(--secondary);
+}
+
+.Grid-cellGroup--pinned-right {
+    right: 0;
+    border-left: 3px solid var(--secondary);
 }
 
 .Grid .Checkbox-wrapper {
     margin-right: 0;
-}
-
-.Grid .Avatar {
-    margin-right: var(--spacing-l);
-}
-
-.Grid .Placeholder {
-    display: flex;
-    flex-shrink: 0;
-}
-
-.Grid .Placeholder-image {
-    flex-shrink: 0;
 }
 
 /** Grid Cell **/
@@ -2024,6 +2027,7 @@ body {
     height: 100%;
     width: 100%;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .GridCell--align-left {
@@ -2039,7 +2043,12 @@ body {
 }
 
 .GridCell--default {}
-.GridCell--metaList {}
+.GridCell--metaList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
 
 .GridCell--avatar .Avatar {
     margin: 0;
@@ -2049,6 +2058,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow: hidden;
 }
 
 .GridCell-metaList {
@@ -2779,6 +2789,7 @@ body {
 }
 
 .Pagination-pageIndex .Input {
+    flex-grow: 0;
     min-width: var(--spacing-3);
     width: var(--spacing-5);
     margin-right: var(--spacing);
@@ -3691,8 +3702,11 @@ body {
   background: var(--inverse);
   overflow: hidden;
   box-sizing: border-box;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
-
 
 .align-baseline {
   vertical-align: baseline !important;
@@ -5512,6 +5526,11 @@ body {
 }
 
 .ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ellipsis--noWrap {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

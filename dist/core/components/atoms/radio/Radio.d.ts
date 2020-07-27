@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from '@/utils/types';
+import { BaseProps } from "../../../utils/types";
 export declare type Size = 'regular' | 'tiny';
 declare type MouseEvent = React.ChangeEvent<HTMLInputElement>;
 export interface RadioProps extends BaseProps {

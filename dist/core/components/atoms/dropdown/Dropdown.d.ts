@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { DropdownListProps, SelectAll, Selected, ChangeEvent } from './DropdownList';
-import { OptionSchema as Option } from './option';
-import { BaseProps } from '@/utils/types';
+import { DropdownListProps, SelectAll, Selected, ChangeEvent } from "./DropdownList";
+import { OptionSchema as Option } from "./option";
+import { BaseProps } from "../../../utils/types";
 declare type fetchOptionsFunction = (searchTerm: string) => Promise<{
     count: number;
     options: Option[];

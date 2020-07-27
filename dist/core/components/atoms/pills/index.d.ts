@@ -1,2 +1,2 @@
-export { default } from './Pills';
-export * from './Pills';
+export { default } from "./Pills";
+export * from "./Pills";

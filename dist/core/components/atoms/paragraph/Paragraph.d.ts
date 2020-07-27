@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from '@/utils/types';
+import { BaseProps } from "../../../utils/types";
 export declare type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled';
 export interface ParagraphProps extends BaseProps {
     children: React.ReactNode;

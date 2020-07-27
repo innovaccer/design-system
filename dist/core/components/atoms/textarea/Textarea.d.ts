@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from '@/utils/types';
+import { BaseProps } from "../../../utils/types";
 export interface TextareaProps extends BaseProps {
     name?: string;
     value?: string;

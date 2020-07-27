@@ -1,4 +1,4 @@
-import { DateObject, DateType, Day } from './types';
+import { DateObject, DateType, Day } from "./types";
 declare type Operator = 'less' | 'more' | 'equal';
 export declare type Validator = (format: string, val: string) => boolean;
 export declare const getIndexOfDay: (day: Day) => number;

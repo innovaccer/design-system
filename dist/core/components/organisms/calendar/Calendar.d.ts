@@ -1,6 +1,6 @@
 /// <reference types="react" />
-import { BaseProps } from '@/utils/types';
-import { Day, View } from './types';
+import { BaseProps } from "../../../utils/types";
+import { Day, View } from "./types";
 export interface SharedProps extends BaseProps {
     monthsInView?: number;
     jumpView?: boolean;

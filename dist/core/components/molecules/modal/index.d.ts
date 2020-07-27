@@ -1,2 +1,2 @@
-export { default, default as Modal } from './Modal';
-export * from './Modal';
+export { default, default as Modal } from "./Modal";
+export * from "./Modal";

@@ -1,9 +1,9 @@
 /// <reference types="react" />
-import { SharedProps } from '../calendar/Calendar';
-import { DateType, DateFormat } from '../calendar/types';
-import { Position } from '@/components/molecules/popover';
-import { Mask, InputMaskProps } from '@/components/molecules/inputMask';
-import { Validator } from '../calendar/utility';
+import { SharedProps } from "../calendar/Calendar";
+import { DateType, DateFormat } from "../calendar/types";
+import { Position } from "../../molecules/popover";
+import { Mask, InputMaskProps } from "../../molecules/inputMask";
+import { Validator } from "../calendar/utility";
 export declare type DateRangePickerProps = {
     onRangeChange?: (startDate: Date, endDate: Date, startValue?: string, endValue?: string) => void;
     startDate?: DateType;

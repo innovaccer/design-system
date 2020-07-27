@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { OptionType } from '../DropdownList';
+import { OptionType } from "../DropdownList";
 export declare type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 export interface OptionRendererProps {
     optionRenderer?: (props: OptionProps) => React.ReactElement;

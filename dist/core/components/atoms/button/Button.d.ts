@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from '@/utils/types';
+import { BaseProps } from "../../../utils/types";
 export declare type Appearance = 'basic' | 'primary' | 'success' | 'alert' | 'transparent';
 export declare type Size = 'tiny' | 'regular' | 'large';
 export declare type Alignment = 'left' | 'right';

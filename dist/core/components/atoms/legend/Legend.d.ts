@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Appearance as LabelAppearance } from '@/components/atoms/text';
-import { BaseProps } from '@/utils/types';
+import { Appearance as LabelAppearance } from "../text";
+import { BaseProps } from "../../../utils/types";
 export interface LegendProps extends BaseProps {
     children: string;
     iconAppearance?: string;

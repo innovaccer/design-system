@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { TabProps } from './Tab';
-import { BaseProps } from '@/utils/types';
+import { TabProps } from "./Tab";
+import { BaseProps } from "../../../utils/types";
 export interface TabsWrapperProps extends BaseProps {
     active?: number;
     children: React.FunctionComponentElement<TabProps>[];

@@ -1,6 +1,6 @@
 /// <reference types="react" />
-import { Data, Schema } from './Grid';
-import { Grid } from '@/index';
+import { Data, Schema } from "./Grid";
+import { Grid } from "../../../index";
 export interface GridBodyProps {
     schema: Schema;
     data: Data;

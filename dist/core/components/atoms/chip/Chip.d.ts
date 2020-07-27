@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { BaseProps } from '@/utils/types';
+import { BaseProps } from "../../../utils/types";
 export declare type Type = 'action' | 'selection' | 'input';
 export declare type Name = number | string;
 export interface ChipProps extends BaseProps {

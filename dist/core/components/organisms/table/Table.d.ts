@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { ExternalHeaderProps, updateSearchTermFunction, HeaderProps } from '../grid/Header';
-import { Data, Schema, onSelectFunction, onSelectAllFunction, GridProps, FetchDataOptions, fetchDataFunction, RowData, updateSchemaFunction, updateSortingListFunction, updateFilterListFunction } from '../grid';
-import { BaseProps } from '@/utils/types';
+import { ExternalHeaderProps, updateSearchTermFunction, HeaderProps } from "../grid/Header";
+import { Data, Schema, onSelectFunction, onSelectAllFunction, GridProps, FetchDataOptions, fetchDataFunction, RowData, updateSchemaFunction, updateSortingListFunction, updateFilterListFunction } from "../grid";
+import { BaseProps } from "../../../utils/types";
 interface SyncProps {
     data?: Data;
     schema?: Schema;

@@ -11,7 +11,7 @@ interface Props {
     triggerClass?: string;
     placement: PositionType;
     children: React.ReactElement<any>;
-    style: React.CSSProperties;
+    style?: React.CSSProperties;
     appendToBody: boolean;
     on?: actionType;
     offset: keyof typeof Offsets;

@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1594974134073 
+   * Generated on: 1595833170649 
    *      Package: @innovaccer/design-system
-   *      Version: v1.0.0
+   *      Version: v1.1.0-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -11,7 +11,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('classnames'), require('react-dom'), require('react-popper'), require('recharts')) :
   typeof define === 'function' && define.amd ? define(['exports', 'react', 'classnames', 'react-dom', 'react-popper', 'recharts'], factory) :
-  (global = global || self, factory(global.inno = {}, global.React, global.classNames, global.ReactDOM, global.reactPopper, global.recharts));
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['inno-umd'] = {}, global.React, global.classNames, global.ReactDOM, global.reactPopper, global.recharts));
 }(this, (function (exports, React, classNames, ReactDOM, reactPopper, recharts) { 'use strict';
 
   var React__default = 'default' in React ? React['default'] : React;
@@ -395,6 +395,7 @@
     return /*#__PURE__*/React.createElement("span", _extends({}, baseProps, {
       className: classes
     }), /*#__PURE__*/React.createElement(Text, {
+      "data-test": "DesignSystem-Avatar",
       weight: "medium",
       appearance: AvatarAppearance === 'warning' ? 'default' : 'white'
     }, initials));
@@ -4811,11 +4812,6 @@
       });
 
       _this.state = {
-        position: {
-          top: 0,
-          left: 0
-        },
-        style: {},
         open: false
       };
       return _this;
@@ -4838,23 +4834,21 @@
             tooltip = _this$props.tooltip,
             children = _this$props.children,
             className = _this$props.className,
-            props = _objectWithoutProperties(_this$props, ["appendToBody", "position", "tooltip", "children", "className"]);
+            triggerClass = _this$props.triggerClass,
+            props = _objectWithoutProperties(_this$props, ["appendToBody", "position", "tooltip", "children", "className", "triggerClass"]);
 
-        var classes = classNames(_defineProperty({}, 'Tooltip', true), className);
         var tooltipWrapper = /*#__PURE__*/React.createElement("div", _extends({
-          className: classes
-        }, props, {
-          style: this.state.style
-        }), tooltip);
+          className: "Tooltip"
+        }, props), tooltip);
         return /*#__PURE__*/React.createElement(PopperWrapper, {
           trigger: children,
           placement: this.props.position,
-          style: this.state.style,
           appendToBody: appendToBody,
           on: 'hover',
           offset: 'Medium',
           onToggle: this.onToggle,
-          open: this.state.open
+          open: this.state.open,
+          triggerClass: triggerClass
         }, tooltipWrapper);
       }
     }]);
@@ -5668,86 +5662,25 @@
       window.removeEventListener('mousemove', resizable);
     });
   };
-  var reorderCol = function reorderCol(_this, name, el) {
-    var from = name;
-    var to;
-    var schema = _this.props.schema;
-
-    var getColumns = function getColumns() {
-      return _this.gridRef.current.querySelectorAll(".Grid-cellGroup--".concat(cellType, " .Grid-cell.Grid-cell--head"));
-    };
-
-    var sI = schema.findIndex(function (s) {
-      return s.name === name;
-    });
-    var cellType = schema[sI].pinned ? 'pinned' : 'main';
-    var cols = getColumns();
-    var colRect = [];
-    cols.forEach(function (c) {
-      colRect.push(c.getBoundingClientRect());
-    });
-    var currX = el === null || el === void 0 ? void 0 : el.getBoundingClientRect().x;
-
-    function reorder(ev) {
-      ev.preventDefault();
-
-      if (el) {
-        var columns = getColumns();
-        columns.forEach(function (c, index) {
-          var _colRect$index = colRect[index],
-              x = _colRect$index.x,
-              width = _colRect$index.width;
-
-          if (currX && c.contains(ev.target)) {
-            // @ts-ignore
-            var left = c.offsetLeft;
-            if (currX < x) left += width;
-
-            _this.updateReorderHighlighter(left); // @ts-ignore
-
-
-            to = c.dataset.name;
-          }
-        });
-      }
-    }
-
-    function stopReorder() {
-      window.removeEventListener('mousemove', reorder);
-      window.removeEventListener('mouseup', stopReorder); // _this.updateColumnSchema(name, { _selected: false });
-
-      _this.updateReorderHighlighter(undefined);
-
-      if (to && from !== to) _this.reorderCol(from, to);
-    } // _this.updateColumnSchema(name, { _selected: true });
-
-
-    window.addEventListener('mousemove', reorder);
-    window.addEventListener('mouseup', stopReorder);
-  };
   function sortColumn(name, type) {
     var sortingList = this.props.sortingList;
     var index = sortingList.findIndex(function (l) {
       return l.name === name;
     });
 
-    if (index === -1) {
-      sortingList.push({
-        name: name,
-        type: type
-      });
-    } else {
-      sortingList = [].concat(_toConsumableArray(sortingList.slice(0, index)), _toConsumableArray(sortingList.slice(index + 1)), [{
-        name: name,
-        type: type
-      }]);
+    if (index !== -1) {
+      sortingList = [].concat(_toConsumableArray(sortingList.slice(0, index)), _toConsumableArray(sortingList.slice(index + 1)));
     }
 
+    if (type !== 'unsort') sortingList.push({
+      name: name,
+      type: type
+    });
     this.updateSortingList(sortingList);
   }
   function pinColumn(name, type) {
     var schemaUpdate = {
-      pinned: type === 'left' ? 'left' : undefined
+      pinned: type !== 'unpin' ? type : undefined
     };
     this.updateColumnSchema(name, schemaUpdate);
   }
@@ -5913,11 +5846,16 @@
       if (tooltip) {
         return /*#__PURE__*/React.createElement(Tooltip, {
           tooltip: children,
-          position: 'top-start'
-        }, /*#__PURE__*/React.createElement(Text, null, children));
+          position: 'top-start',
+          triggerClass: "overflow-hidden"
+        }, /*#__PURE__*/React.createElement(Text, {
+          className: "w-100 ellipsis"
+        }, children));
       }
 
-      return /*#__PURE__*/React.createElement(Text, null, children);
+      return /*#__PURE__*/React.createElement(Text, {
+        className: "w-100 ellipsis"
+      }, children);
     }
 
     return null;
@@ -5933,6 +5871,7 @@
       }, metaList.map(function (list, index) {
         return /*#__PURE__*/React.createElement(Text, {
           key: index,
+          className: "ellipsis",
           appearance: 'subtle',
           small: true
         }, list);
@@ -5950,6 +5889,7 @@
 
     if (firstName || lastName) {
       return /*#__PURE__*/React.createElement(Avatar, {
+        className: "mr-5",
         firstName: firstName,
         lastName: lastName
       });
@@ -6035,14 +5975,12 @@
 
         return /*#__PURE__*/React.createElement("div", {
           className: "".concat(cellClass, " GridCell--align-").concat(align, " GridCell--metaList")
-        }, /*#__PURE__*/React.createElement("div", {
-          className: "GridCell-metaListWrapper"
         }, renderTitle({
           tooltip: tooltip,
           cellData: cellData
         }), renderMetaList({
           cellData: cellData
-        })));
+        }));
 
       case 'AVATAR':
         if (loading) {
@@ -6158,7 +6096,8 @@
     var _schema$sorting = schema.sorting,
         sorting = _schema$sorting === void 0 ? true : _schema$sorting,
         name = schema.name,
-        filters = schema.filters;
+        filters = schema.filters,
+        pinned = schema.pinned;
     var init = getInit(schemaProp);
     var listIndex = sortingList.findIndex(function (l) {
       return l.name === name;
@@ -6168,30 +6107,41 @@
     var sortOptions = [{
       label: 'Sort Ascending',
       value: 'sortAsc',
-      icon: 'arrow_downward',
-      optionType: 'WITH_ICON'
+      icon: 'arrow_downward'
     }, {
       label: 'Sort Descending',
       value: 'sortDesc',
-      icon: 'arrow_upward',
-      optionType: 'WITH_ICON'
+      icon: 'arrow_upward'
     }];
-    var options = [{
+    var pinOptions = [{
       label: 'Pin Left',
       value: 'pinLeft',
-      icon: 'skip_previous',
-      optionType: 'WITH_ICON'
+      icon: 'skip_previous'
     }, {
       label: 'Pin Right',
       value: 'pinRight',
-      icon: 'skip_next',
-      optionType: 'WITH_ICON'
-    }, {
+      icon: 'skip_next'
+    }];
+    var unpinOption = {
+      label: 'Unpin',
+      value: 'unpin',
+      icon: 'replay'
+    };
+    if (pinned === 'left') pinOptions[0] = unpinOption;
+    if (pinned === 'right') pinOptions[1] = unpinOption;
+    var hideOptions = [{
       label: 'Hide Column',
       value: 'hide',
-      icon: 'cancel',
-      optionType: 'WITH_ICON'
+      icon: 'cancel'
     }];
+    var unsortOption = {
+      label: 'Unsort',
+      value: 'unsort',
+      icon: 'unfold_more'
+    };
+    if (sorted === 'asc') sortOptions[0] = unsortOption;
+    if (sorted === 'desc') sortOptions[1] = unsortOption;
+    var options = [].concat(pinOptions, hideOptions);
     if (sorting) options = [].concat(sortOptions, _toConsumableArray(options));
     var classes = classNames({
       'Grid-headCell': true,
@@ -6210,15 +6160,20 @@
       ref: el
     }, /*#__PURE__*/React.createElement("div", {
       className: "Grid-cellContent",
-      onMouseDown: function onMouseDown() {
-        if (draggable) reorderCol(_this, name, el.current);
+      onClick: function onClick() {
+        if (!loading && sorting) {
+          if (sorted === 'asc') _this.onMenuChange(name, 'sortDesc');
+          if (sorted === 'desc') _this.onMenuChange(name, 'unsort');
+          if (!sorted) _this.onMenuChange(name, 'sortAsc');
+        }
       }
     }, loading && !init ? /*#__PURE__*/React.createElement(Placeholder, {
       withImage: false
     }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
       length: "medium"
     })) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Heading, {
-      size: "s"
+      size: "s",
+      className: "ellipsis--noWrap"
     }, schema.displayName), sorting && /*#__PURE__*/React.createElement("div", {
       className: "Grid-sortingIcons"
     }, sorted ? sorted === 'asc' ? /*#__PURE__*/React.createElement(Icon, {
@@ -6247,8 +6202,9 @@
     })), showMenu && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !init ? /*#__PURE__*/React.createElement("span", {
       className: "ml-4"
     }, /*#__PURE__*/React.createElement(Placeholder, null)) : /*#__PURE__*/React.createElement(Dropdown, {
-      key: name,
+      key: "".concat(name, "-").concat(sorted, "-").concat(pinned),
       menu: true,
+      optionType: "WITH_ICON",
       triggerOptions: {
         customTrigger: function customTrigger() {
           return /*#__PURE__*/React.createElement(Button, {
@@ -6311,6 +6267,7 @@
     var _this = props._this,
         head = props.head,
         colIndex = props.colIndex,
+        firstCell = props.firstCell,
         schema = props.schema,
         expandedState = props.expandedState,
         draggable = props.draggable,
@@ -6321,14 +6278,32 @@
       'Grid-cell': true,
       'Grid-cell--head': head,
       'Grid-cell--body': !head,
-      'Grid-cell--separator': colIndex !== 0 && schema.separator,
+      'Grid-cell--separator': !firstCell && schema.separator,
       'Grid-cell--nestedRow': !head && colIndex === 0 && nestedRows
     });
     if (schema.hidden) return null;
     return /*#__PURE__*/React.createElement("div", {
       key: "".concat(rowIndex, "-").concat(colIndex),
       className: cellClass,
-      "data-name": schema.name,
+      draggable: true,
+      onDragStart: function onDragStart(e) {
+        e.dataTransfer.setData('name', schema.name);
+        if (schema.pinned) e.dataTransfer.setData('type', schema.pinned);
+      },
+      onDragOver: function onDragOver(e) {
+        return e.preventDefault();
+      },
+      onDrop: function onDrop(e) {
+        var from = {
+          name: e.dataTransfer.getData('name'),
+          type: e.dataTransfer.getData('type')
+        };
+        var to = {
+          name: schema.name,
+          type: schema.pinned || ''
+        };
+        if (from.type === to.type) _this.reorderCol(from.name, to.name);
+      },
       style: {
         width: schema.width
       }
@@ -6357,10 +6332,16 @@
         selectAll = _this$props.selectAll;
     var schema = getSchema(_this);
     var pinnedSchema = schema.filter(function (s) {
-      return s.pinned;
+      return !s.hidden && s.pinned;
+    });
+    var leftPinnedSchema = pinnedSchema.filter(function (s) {
+      return !s.hidden && s.pinned === 'left';
+    });
+    var rightPinnedSchema = pinnedSchema.filter(function (s) {
+      return !s.hidden && s.pinned === 'right';
     });
     var unpinnedSchema = schema.filter(function (s) {
-      return !s.pinned;
+      return !s.hidden && !s.pinned;
     });
 
     var renderCheckbox = function renderCheckbox(show) {
@@ -6372,33 +6353,39 @@
       })));
     };
 
+    var renderSchema = function renderSchema(currSchema, shouldRenderCheckbox, pinned) {
+      if (currSchema.length) {
+        var _classNames;
+
+        var classes = classNames((_classNames = {
+          'Grid-cellGroup': true,
+          'Grid-cellGroup--pinned': pinned
+        }, _defineProperty(_classNames, "Grid-cellGroup--pinned-".concat(pinned), pinned), _defineProperty(_classNames, 'Grid-cellGroup--main', !pinned), _classNames));
+        return /*#__PURE__*/React.createElement("div", {
+          className: classes
+        }, renderCheckbox(shouldRenderCheckbox), currSchema.map(function (s, index) {
+          var cI = pinned === 'left' ? index : leftPinnedSchema.length + index;
+          if (pinned === 'right') cI += unpinnedSchema.length;
+          return /*#__PURE__*/React.createElement(Cell, {
+            key: s.name,
+            _this: _this,
+            head: true,
+            draggable: draggable,
+            schema: s,
+            colIndex: cI,
+            firstCell: !index
+          });
+        }));
+      }
+
+      return null;
+    };
+
     return /*#__PURE__*/React.createElement("div", {
       className: "Grid-head"
     }, /*#__PURE__*/React.createElement("div", {
       className: "Grid-row Grid-row--head"
-    }, !!pinnedSchema.length && /*#__PURE__*/React.createElement("div", {
-      className: "Grid-cellGroup Grid-cellGroup--pinned"
-    }, renderCheckbox(!!pinnedSchema.length), pinnedSchema.map(function (s, index) {
-      return /*#__PURE__*/React.createElement(Cell, {
-        key: s.name,
-        _this: _this,
-        head: true,
-        draggable: draggable,
-        schema: s,
-        colIndex: index
-      });
-    })), /*#__PURE__*/React.createElement("div", {
-      className: "Grid-cellGroup Grid-cellGroup--main"
-    }, renderCheckbox(!pinnedSchema.length && !!unpinnedSchema.length), unpinnedSchema.map(function (s, index) {
-      return /*#__PURE__*/React.createElement(Cell, {
-        key: s.name,
-        _this: _this,
-        head: true,
-        draggable: draggable,
-        schema: s,
-        colIndex: index
-      });
-    }))));
+    }, renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left'), renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length), renderSchema(rightPinnedSchema, false, 'right')));
   };
 
   // import * as React from 'react';
@@ -6481,10 +6468,16 @@
         loading = _this$props.loading,
         nestedRows = _this$props.nestedRows;
     var pinnedSchema = schema.filter(function (s) {
-      return s.pinned;
+      return !s.hidden && s.pinned;
+    });
+    var leftPinnedSchema = pinnedSchema.filter(function (s) {
+      return !s.hidden && s.pinned === 'left';
+    });
+    var rightPinnedSchema = pinnedSchema.filter(function (s) {
+      return !s.hidden && s.pinned === 'right';
     });
     var unpinnedSchema = schema.filter(function (s) {
-      return !s.pinned;
+      return !s.hidden && !s.pinned;
     });
 
     var renderCheckbox = function renderCheckbox(show) {
@@ -6502,34 +6495,39 @@
       }));
     };
 
+    var renderSchema = function renderSchema(currSchema, shouldRenderCheckbox, pinned) {
+      if (currSchema.length) {
+        var _classNames;
+
+        var classes = classNames((_classNames = {
+          'Grid-cellGroup': true,
+          'Grid-cellGroup--pinned': pinned
+        }, _defineProperty(_classNames, "Grid-cellGroup--pinned-".concat(pinned), pinned), _defineProperty(_classNames, 'Grid-cellGroup--main', !pinned), _classNames));
+        return /*#__PURE__*/React.createElement("div", {
+          className: classes
+        }, renderCheckbox(shouldRenderCheckbox), currSchema.map(function (s, index) {
+          var cI = pinned === 'left' ? index : leftPinnedSchema.length + index;
+          if (pinned === 'right') cI += unpinnedSchema.length;
+          return /*#__PURE__*/React.createElement(Cell, {
+            key: "".concat(rI, "-").concat(cI),
+            _this: _this,
+            rowIndex: rI,
+            colIndex: cI,
+            firstCell: !index,
+            schema: s,
+            data: data,
+            expandedState: [expanded, setExpanded]
+          });
+        }));
+      }
+
+      return null;
+    };
+
     return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
       className: rowClasses,
       onClick: onClickHandler
-    }, !!pinnedSchema.length && /*#__PURE__*/React.createElement("div", {
-      className: "Grid-cellGroup Grid-cellGroup--pinned"
-    }, renderCheckbox(!!pinnedSchema.length), pinnedSchema.map(function (s, cI) {
-      return /*#__PURE__*/React.createElement(Cell, {
-        key: "".concat(rI, "-").concat(cI),
-        _this: _this,
-        rowIndex: rI,
-        colIndex: cI,
-        schema: s,
-        data: data,
-        expandedState: [expanded, setExpanded]
-      });
-    })), /*#__PURE__*/React.createElement("div", {
-      className: "Grid-cellGroup Grid-cellGroup--main"
-    }, renderCheckbox(!pinnedSchema.length && !!unpinnedSchema.length), unpinnedSchema.map(function (s, cI) {
-      return /*#__PURE__*/React.createElement(Cell, {
-        key: rI * schema.length + (pinnedSchema.length + cI),
-        _this: _this,
-        rowIndex: rI,
-        colIndex: pinnedSchema.length + cI,
-        schema: s,
-        data: data,
-        expandedState: [expanded, setExpanded]
-      });
-    }))), nestedRows && expanded && /*#__PURE__*/React.createElement(GridNestedRow, {
+    }, renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left'), renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length), renderSchema(rightPinnedSchema, false, 'right')), nestedRows && expanded && /*#__PURE__*/React.createElement(GridNestedRow, {
       _this: _this,
       data: data,
       rowIndex: rI
@@ -6784,12 +6782,6 @@
         _this.updateRenderedSchema(newSchema);
       });
 
-      _defineProperty(_assertThisInitialized(_this), "updateReorderHighlighter", debounce(50, function (dim) {
-        _this.setState({
-          reorderHighlighter: dim
-        });
-      }));
-
       _defineProperty(_assertThisInitialized(_this), "updateSortingList", function (sortingList) {
         var updateSortingList = _this.props.updateSortingList;
 
@@ -6816,12 +6808,20 @@
             sortColumn.call(_assertThisInitialized(_this), name, 'desc');
             break;
 
+          case 'unsort':
+            sortColumn.call(_assertThisInitialized(_this), name, 'unsort');
+            break;
+
           case 'pinLeft':
             pinColumn.call(_assertThisInitialized(_this), name, 'left');
             break;
 
           case 'pinRight':
             pinColumn.call(_assertThisInitialized(_this), name, 'right');
+            break;
+
+          case 'unpin':
+            pinColumn.call(_assertThisInitialized(_this), name, 'unpin');
             break;
 
           case 'hide':
@@ -6842,7 +6842,7 @@
         var onSelect = _this.props.onSelect;
 
         if (onSelect) {
-          onSelect(rowIndex, selected); // this.syncSelectAll();
+          onSelect(rowIndex, selected);
         }
       });
 
@@ -6850,10 +6850,7 @@
         var onSelectAll = _this.props.onSelectAll;
 
         if (onSelectAll) {
-          onSelectAll(event.target.checked); // this.updateSelectAll({
-          //   indeterminate: false,
-          //   checked: selected
-          // });
+          onSelectAll(event.target.checked);
         }
       });
 
@@ -6864,7 +6861,7 @@
 
     _createClass(Grid, [{
       key: "componentDidUpdate",
-      value: function componentDidUpdate(prevProps, _prevState) {
+      value: function componentDidUpdate(prevProps) {
         if (prevProps.withPagination !== this.props.withPagination || prevProps.page !== this.props.page) ;
 
         if (prevProps.loading !== this.props.loading) {
@@ -6874,7 +6871,6 @@
     }, {
       key: "render",
       value: function render() {
-        var reorderHighlighter = this.state.reorderHighlighter;
         var _this$props2 = this.props,
             withPagination = _this$props2.withPagination,
             page = _this$props2.page,
@@ -6883,11 +6879,7 @@
             pageSize = _this$props2.pageSize,
             paginationType = _this$props2.paginationType;
         var baseProps = extractBaseProps(this.props);
-        var schema = getSchema(this); // let { schema } = this.props;
-        // if ((!schema || schema.length === 0) && loading) {
-        //   schema = loaderSchema;
-        // }
-
+        var schema = getSchema(this);
         return /*#__PURE__*/React.createElement("div", {
           className: "Grid-container"
         }, /*#__PURE__*/React.createElement("div", {
@@ -6896,12 +6888,7 @@
         }, /*#__PURE__*/React.createElement(MainGrid, _extends({}, baseProps, {
           _this: this,
           schema: schema
-        })), reorderHighlighter && /*#__PURE__*/React.createElement("div", {
-          className: "Grid-reorderHighlighter",
-          style: {
-            left: "".concat(reorderHighlighter, "px")
-          }
-        })), withPagination && /*#__PURE__*/React.createElement("div", {
+        }))), withPagination && /*#__PURE__*/React.createElement("div", {
           className: "Grid-pagination"
         }, /*#__PURE__*/React.createElement(Pagination, {
           page: page,
@@ -7009,7 +6996,20 @@
       if (updateSchema) updateSchema(newSchema);
     };
 
-    var columnOptions = schema.map(function (s) {
+    var pinnedSchema = schema.filter(function (s) {
+      return s.pinned;
+    });
+    var leftPinnedSchema = pinnedSchema.filter(function (s) {
+      return s.pinned === 'left';
+    });
+    var rightPinnedSchema = pinnedSchema.filter(function (s) {
+      return s.pinned === 'right';
+    });
+    var unpinnedSchema = schema.filter(function (s) {
+      return !s.pinned;
+    });
+    var renderedSchema = [].concat(_toConsumableArray(leftPinnedSchema), _toConsumableArray(unpinnedSchema), _toConsumableArray(rightPinnedSchema));
+    var columnOptions = renderedSchema.map(function (s) {
       return {
         label: s.displayName,
         value: s.name,

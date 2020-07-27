@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from '@/utils/types';
+import { BaseProps } from "../../../utils/types";
 export declare type navigationPositionType = 'center' | 'bottom';
 export interface PageHeaderProps extends BaseProps {
     title: string;

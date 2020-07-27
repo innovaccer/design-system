@@ -1,2 +1,2 @@
-export { default } from './PlaceholderParagraph';
-export * from './PlaceholderParagraph';
+export { default } from "./PlaceholderParagraph";
+export * from "./PlaceholderParagraph";

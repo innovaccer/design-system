@@ -1,2 +1,2 @@
-export { default } from './ChipGroup';
-export * from './ChipGroup';
+export { default } from "./ChipGroup";
+export * from "./ChipGroup";

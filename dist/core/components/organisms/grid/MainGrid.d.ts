@@ -1,6 +1,6 @@
 /// <reference types="react" />
-import Grid, { Schema } from './Grid';
-import { BaseProps } from '@/utils/types';
+import Grid, { Schema } from "./Grid";
+import { BaseProps } from "../../../utils/types";
 interface MainGridProps extends BaseProps {
     _this: Grid;
     schema: Schema;

@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { BaseProps } from '@/utils/types';
+import { BaseProps } from "../../../utils/types";
 export declare type LayoutType = 'vertical' | 'horizontal';
 export declare type Menu = {
     name: string;

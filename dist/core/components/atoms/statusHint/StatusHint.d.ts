@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BaseProps } from '@/utils/types';
+import { BaseProps } from "../../../utils/types";
 export declare type Appearance = 'info' | 'alert' | 'warning' | 'success' | 'default';
 export interface StatusHintProps extends BaseProps {
     children: string;

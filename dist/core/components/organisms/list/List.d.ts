@@ -1,8 +1,8 @@
 /// <reference types="react" />
-import { ExternalHeaderProps } from '../grid/Header';
-import { Data, Schema, GridProps, fetchDataFunction } from '../grid';
-import { TableProps } from '../table';
-import { BaseProps } from '@/utils/types';
+import { ExternalHeaderProps } from "../grid/Header";
+import { Data, Schema, GridProps, fetchDataFunction } from "../grid";
+import { TableProps } from "../table";
+import { BaseProps } from "../../../utils/types";
 interface SyncProps {
     data?: Data;
     schema?: Schema;

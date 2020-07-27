@@ -1,2 +1,2 @@
-export { default } from './ModalFooter';
-export * from './ModalFooter';
+export { default } from "./ModalFooter";
+export * from "./ModalFooter";

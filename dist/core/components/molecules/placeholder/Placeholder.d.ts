@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { BaseProps } from '@/utils/types';
-import { Size } from '@/components/atoms/placeholderImage';
-import { PlaceholderParagraphProps } from '@/components/atoms/placeholderParagraph';
+import { BaseProps } from "../../../utils/types";
+import { Size } from "../../atoms/placeholderImage";
+import { PlaceholderParagraphProps } from "../../atoms/placeholderParagraph";
 export interface PlaceholderProps extends BaseProps {
     withImage?: boolean;
     round?: boolean;

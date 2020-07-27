@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { RowData, ColumnSchema } from './Grid';
-import { Grid } from '@/index';
+import { RowData, ColumnSchema } from "./Grid";
+import { Grid } from "../../../index";
 interface SharedCellProps {
     _this: Grid;
     schema: ColumnSchema;
@@ -17,6 +17,7 @@ declare type BodyCellProps = SharedCellProps & {
 };
 export declare type CellProps = (HeaderCellProps | BodyCellProps) & {
     head?: boolean;
+    firstCell: boolean;
 };
 export declare const Cell: (props: CellProps) => JSX.Element | null;
 export default Cell;

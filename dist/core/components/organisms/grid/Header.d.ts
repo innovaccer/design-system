@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { updateSchemaFunction, Schema, Data, onSelectAllFunction, GridProps, updateFilterListFunction } from './Grid';
+import { updateSchemaFunction, Schema, Data, onSelectAllFunction, GridProps, updateFilterListFunction } from "./Grid";
 export interface ExternalHeaderProps {
     children?: React.ReactNode;
     withSearch?: boolean;

@@ -1,6 +1,6 @@
 /// <reference types="react" />
-import { Grid } from '@/index';
-import { RowData, Schema } from './Grid';
+import { Grid } from "../../../index";
+import { RowData, Schema } from "./Grid";
 export interface GridRowProps {
     schema: Schema;
     data: RowData;
