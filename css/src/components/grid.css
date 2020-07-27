@@ -36,12 +36,13 @@
 }
 
 .Grid::-webkit-scrollbar {
-    width: var(--spacing);
+    height: var(--spacing-l);
+    width: var(--spacing-l);
 }
 
 .Grid::-webkit-scrollbar-thumb {
     background: var(--secondary);
-    border-radius: var(--spacing-m);
+    border-radius: var(--spacing);
 }
 
 .Grid-pinned::-webkit-scrollbar {
