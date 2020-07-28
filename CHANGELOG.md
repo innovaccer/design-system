@@ -431,3 +431,10 @@
 * 0066a55 feat: adds rollup/plugin-typescript for build
 * 6ee3170 chore: typo fixes in Table docPage
 * e2ba146 feat: adds spinner and buttonGroup example stories
+
+-------------------
+ **v1.1.0-1**  (2020-07-28) 
+
+* aedaf64 v1.1.0-1
+* 12e1b83 chore: removes git ignored files
+* 3d7b890 chore(Layout): updates calc in styles
