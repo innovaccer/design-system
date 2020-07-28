@@ -21,6 +21,7 @@ export { CaptionProps } from './components/atoms/caption';
 export { LegendProps } from './components/atoms/legend';
 export { LinkProps } from './components/atoms/link';
 export { MessageProps } from './components/atoms/message';
+export { MetaListProps } from './components/atoms/metaList';
 export { OutsideClickProps } from './components/atoms/outsideClick';
 export { ParagraphProps } from './components/atoms/paragraph';
 export { RadioProps } from './components/atoms/radio';
