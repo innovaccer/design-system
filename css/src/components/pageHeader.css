@@ -1,6 +1,8 @@
 .PageHeader-wrapper {
-  border-bottom: var(--border);
   padding: var(--spacing) var(--spacing-2);
+}
+.PageHeader-wrapper--separator{
+  border-bottom: var(--border);
 }
 
 .PageHeader-wrapper--withTabs {
@@ -9,12 +11,6 @@
 
 .PageHeader-wrapper--withTabs .TabsWrapper-header {
   border-bottom: none;
-}
-
-.PageHeader {
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
 }
 
 .PageHeader .Row {

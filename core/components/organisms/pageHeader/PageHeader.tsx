@@ -42,14 +42,32 @@ export interface PageHeaderProps extends BaseProps {
    * Page header layout type
    */
   navigationPosition?: navigationPositionType;
+  /**
+   * provides a border at bottom
+   * @default true;
+   */
+  seperator?: boolean;
 }
 
 export const PageHeader = (props: PageHeaderProps) => {
-  const { title, navigation, actions, tabs, breadcrumbs, badge, status, meta, navigationPosition, className } = props;
+  const {
+    title,
+    navigation,
+    actions,
+    tabs,
+    breadcrumbs,
+    badge,
+    seperator,
+    status,
+    meta,
+    navigationPosition,
+    className
+  } = props;
   const baseProps = extractBaseProps(props);
 
   const wrapperClasses = classNames({
     'PageHeader-wrapper': true,
+    ['PageHeader-wrapper--separator']: seperator,
     ['PageHeader-wrapper--withTabs']: tabs
   }, className);
 
@@ -66,7 +84,7 @@ export const PageHeader = (props: PageHeaderProps) => {
             <div className="PageHeader-titleWrapper">
               <Heading className="PageHeader-title">{title}</Heading>
               {badge}
-          </div>
+            </div>
           </Column>
           <Column size="4" sizeXL="4" sizeM="4">
             <div className="PageHeader-navigationWrapper">
