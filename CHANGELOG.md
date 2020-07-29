@@ -438,3 +438,9 @@
 * aedaf64 v1.1.0-1
 * 12e1b83 chore: removes git ignored files
 * 3d7b890 chore(Layout): updates calc in styles
+
+-------------------
+ **v1.1.0-2**  (2020-07-29) 
+
+* d891a34 v1.1.0-2
+* 5dcd528 chore: downgrades js-beautify version to 1.10.3 to resolve mkdirp version conflicts
