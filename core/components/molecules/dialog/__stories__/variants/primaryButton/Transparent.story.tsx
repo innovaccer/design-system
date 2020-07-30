@@ -81,7 +81,7 @@ export default {
       docPage: {
         customCode,
         title: 'Dialog',
-        noStory: true,
+        noHtml: true,
       },
     }
   }

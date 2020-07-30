@@ -45,7 +45,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-        noStory: true,
+        noHtml: true,
       }
     }
   }

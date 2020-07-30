@@ -103,6 +103,7 @@ const getStory = () => {
 const StoryComp = props => {
   const {
     customCode,
+    noHtml,
     noStory
   } = props;
 
@@ -113,7 +114,7 @@ const StoryComp = props => {
 
   const importString = `// ${importsToStr(imports.map(i => i.displayName))}`;
   const jsx = `${beautifyHTML(reactElementToJSXString(comp, JSXtoStringOptions), beautifyJSXOptions)}`;
-  const html = !noStory ? beautifyHTML(renderToStaticMarkup(comp), beautifyHTMLOptions) : '';
+  const html = !noHtml ? beautifyHTML(renderToStaticMarkup(comp), beautifyHTMLOptions) : '';
 
   const [activeTab, setActiveTab] = React.useState<number>(0);
   const code = `
@@ -134,7 +135,7 @@ ${jsx.split('\n').map(l => `    ${l}`).join('\n')}
   }, {});
 
   const renderHTMLTab = () => {
-    if (!noStory) {
+    if (!noHtml) {
       return (
         <Tab label={'HTML'}>
           {renderCodeBlock(htmlCode)}
@@ -168,43 +169,45 @@ ${jsx.split('\n').map(l => `    ${l}`).join('\n')}
 
     return null;
   });
-
-  return (
-    <Card
-      shadow="light"
-    >
-      <LiveProvider code={jsxCode} scope={{ ...DS, ...importScope }}>
-        <Preview
-          className="my-0"
-          withSource="none"
-          withToolbar={true}
-        >
-          <LivePreview />
-        </Preview>
-        <TabsWrap />
-        <div className="DocPage-editorTabs">
-          <TabsWrapper
-            activeTab={activeTab}
-            onTabChange={tab => setActiveTab(tab)}
+  if (!noStory) {
+    return (
+      <Card
+        shadow="light"
+      >
+        <LiveProvider code={jsxCode} scope={{ ...DS, ...importScope }}>
+          <Preview
+            className="my-0"
+            withSource="none"
+            withToolbar={true}
           >
-            <Tab label={'React'}>
-              <div style={{ position: 'relative' }}>
-                <CopyComp
-                  onClick={() => {
-                    const editor = document.querySelector('.npm__react-simple-code-editor__textarea');
-                    if (editor) copyCode(editor.value);
-                  }}
-                />
-                <LiveEditor theme={vsDark} />
-                <LiveError />
-              </div>
-            </Tab>
-            {renderHTMLTab()}
-          </TabsWrapper>
-        </div>
-      </LiveProvider>
-    </Card>
-  );
+            <LivePreview />
+          </Preview>
+          <TabsWrap />
+          <div className="DocPage-editorTabs">
+            <TabsWrapper
+              activeTab={activeTab}
+              onTabChange={tab => setActiveTab(tab)}
+            >
+              <Tab label={'React'}>
+                <div style={{ position: 'relative' }}>
+                  <CopyComp
+                    onClick={() => {
+                      const editor = document.querySelector('.npm__react-simple-code-editor__textarea');
+                      if (editor) copyCode(editor.value);
+                    }}
+                  />
+                  <LiveEditor theme={vsDark} />
+                  <LiveError />
+                </div>
+              </Tab>
+              {renderHTMLTab()}
+            </TabsWrapper>
+          </div>
+        </LiveProvider>
+      </Card>
+    );
+  }
+  return null;
 };
 
 export const docPage = () => {
@@ -216,6 +219,7 @@ export const docPage = () => {
     description,
     props: propsAttr,
     customCode,
+    noHtml,
     noStory
   } = sp.docs.docPage;
 
@@ -231,8 +235,8 @@ export const docPage = () => {
       </Description>
       <br />
 
-      <Heading>Story</Heading>
-      <StoryComp key={storyId} customCode={customCode} noStory={noStory} />
+      {!noStory && (<Heading>Story</Heading>)}
+      <StoryComp key={storyId} customCode={customCode} noHtml={noHtml} noStory={noStory} />
       <br />
 
       <Heading>PropTable</Heading>

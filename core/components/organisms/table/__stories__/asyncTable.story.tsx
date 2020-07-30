@@ -264,7 +264,7 @@ export default {
         customCode,
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead']
+          exclude: ['showHead'],
         },
       }
     }

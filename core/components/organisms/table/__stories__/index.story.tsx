@@ -176,8 +176,9 @@ export default {
       docPage: {
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead']
-        }
+          exclude: ['showHead'],
+        },
+        noStory: true,
       }
     }
   }
