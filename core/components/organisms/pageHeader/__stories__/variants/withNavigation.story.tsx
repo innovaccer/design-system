@@ -50,17 +50,17 @@ const customCode = `() => {
 
   const navigationData = [
     {
-      id: 'menu_1',
-      name: 'Menu 1',
-      icon: 'event'
+      name: 'menu_1',
+      label: 'Menu 1',
+      icon: 'event',
     },
     {
-      id: 'menu_2',
-      name: 'Menu 2'
+      name: 'menu_2',
+      label: 'Menu 2'
     },
     {
-      id: 'menu_3',
-      name: 'Menu 3',
+      name: 'menu_3',
+      label: 'Menu 3',
       disabled: true
     }
   ];
