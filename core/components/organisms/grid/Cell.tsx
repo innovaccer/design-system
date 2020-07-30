@@ -278,7 +278,7 @@ export const Cell = (props: CellProps) => {
     <div
       key={`${rowIndex}-${colIndex}`}
       className={cellClass}
-      draggable={true}
+      draggable={head && draggable}
       onDragStart={e => {
         e.dataTransfer.setData('name', schema.name);
         if (schema.pinned) e.dataTransfer.setData('type', schema.pinned);
