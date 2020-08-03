@@ -180,7 +180,6 @@ const DropdownList = (props: OptionsProps) => {
 
       const popperWrapperStyle = {
         width: menu || customTrigger ? popoverWidth : `${dropdownElement?.clientWidth}px`,
-        minWidth: showApplyButton && withCheckbox ? '176px' : '128px',
         maxWidth: maxWidth ? maxWidth : '100%',
       };
 

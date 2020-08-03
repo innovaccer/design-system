@@ -12,7 +12,7 @@ export const disabled = () => {
       {
         disabledStates.map((state, ind) => {
           return (
-            <div key={ind} style={{ marginRight: '5%' }}>
+            <div className="w-25" key={ind} style={{ marginRight: '5%' }}>
               <Text weight="strong">{state ? 'Disabled' : 'Enabled'}</Text> <br /><br />
               <Dropdown disabled={state} options={storyOptions} placeholder={'Select'} />
             </div>
@@ -36,11 +36,11 @@ const customCode = `() => {
 
   return (
     <div className='d-flex' style={{ minHeight: '270px' }}>
-      <div className='mr-8'>
+      <div className='mr-8 w-25'>
         <Text weight="strong">Disabled</Text> <br /><br />
         <Dropdown disabled={true} options={storyOptions} />
       </div>
-      <div className='mr-8'>
+      <div className='mr-8 w-25'>
         <Text weight="strong">Enabled</Text> <br /><br />
         <Dropdown disabled={false} options={storyOptions} />
       </div>

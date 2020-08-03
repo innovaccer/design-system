@@ -37,11 +37,11 @@ const customCode = `() => {
 
   return (
     <div className='d-flex' style={{ minHeight: '280px' }}>
-      <div className='mr-12'>
+      <div className='mr-12' style={{width: '200px'}}>
         <Text weight="strong">Right</Text> <br /><br />
         <Dropdown menu={true} options={storyOptions} align='right'/>
       </div>
-      <div>
+      <div style={{width: '200px'}}>
         <Text weight="strong">Left</Text> <br /><br />
         <Dropdown menu={true} options={storyOptions} align='left'/>
       </div>

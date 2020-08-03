@@ -9,15 +9,15 @@ export const search = () => {
     <div className="d-flex" style={{ minHeight: '300px' }}>
       <div className="mr-9">
         <Text weight="strong">{'Search'}</Text><br /><br />
-        <Dropdown withSearch={true} options={storyOptions} />
+        <Dropdown withSearch={true} options={storyOptions} width={128} />
       </div>
       <div className="mr-9">
         <Text weight="strong">{'Loading'}</Text><br /><br />
-        <Dropdown withSearch={true} loading={true}/>
+        <Dropdown withSearch={true} loading={true} width={128} />
       </div>
       <div>
         <Text weight="strong">{'No Result'}</Text><br /><br />
-        <Dropdown withSearch={true} noResultMessage={'No result found'}/>
+        <Dropdown withSearch={true} noResultMessage={'No result found'} width={128} />
       </div>
     </div>
   );
