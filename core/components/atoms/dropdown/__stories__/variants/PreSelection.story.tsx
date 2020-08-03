@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Dropdown from '../../Dropdown';
 import Text from '@/components/atoms/text';
+import { Uncontrolled, Controlled } from '../_common_/types';
 import { preSelectedOptions } from '../Options';
 
 // CSF format story
@@ -97,7 +98,11 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
+        customCode,
+        props: {
+          components: { Uncontrolled, Controlled },
+          exclude: ['showHead']
+        }
       }
     }
   }

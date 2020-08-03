@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Dropdown from '../Dropdown';
 import Label from '@/components/atoms/label';
+import { Uncontrolled, Controlled } from './_common_/types';
 
 const options = [
   {
@@ -34,7 +35,11 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Dropdown'
+        title: 'Dropdown',
+        props: {
+          components: { Uncontrolled, Controlled },
+          exclude: ['showHead']
+        }
       }
     }
   }

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Dropdown from '../../Dropdown';
 import { DropdownAlign } from '../../DropdownList';
+import { Uncontrolled, Controlled } from '../_common_/types';
 import Text from '@/components/atoms/text';
 import { storyOptions } from '../Options';
 
@@ -9,12 +10,15 @@ export const align = () => {
   const dropdownAlignments: DropdownAlign[] = ['right', 'left'];
 
   return (
-    <div style={{ display: 'flex',  minHeight: '280px' }}>
+    <div style={{ display: 'flex', minHeight: '280px' }}>
       {
         dropdownAlignments.map((alignment, ind) => {
           return (
             <div key={ind} style={{ marginRight: '20%', width: '200px' }}>
-              <Text weight="strong">{alignment.charAt(0).toUpperCase() + alignment.slice(1)}</Text> <br /><br />
+              <Text weight="strong">
+                {`Towards ${alignment.charAt(0).toUpperCase() + alignment.slice(1)}`}
+              </Text>
+              <br /><br />
               <Dropdown align={alignment} options={storyOptions} menu={true} />
             </div>
           );
@@ -38,11 +42,11 @@ const customCode = `() => {
   return (
     <div className='d-flex' style={{ minHeight: '280px' }}>
       <div className='mr-12' style={{width: '200px'}}>
-        <Text weight="strong">Right</Text> <br /><br />
+        <Text weight="strong">Towards Right</Text> <br /><br />
         <Dropdown menu={true} options={storyOptions} align='right'/>
       </div>
       <div style={{width: '200px'}}>
-        <Text weight="strong">Left</Text> <br /><br />
+        <Text weight="strong">Towards Left</Text> <br /><br />
         <Dropdown menu={true} options={storyOptions} align='left'/>
       </div>
     </div>
@@ -56,7 +60,11 @@ export default {
     docs: {
       docPage: {
         customCode,
-        title: 'Dropdown'
+        title: 'Dropdown',
+        props: {
+          components: { Uncontrolled, Controlled },
+          exclude: ['showHead']
+        }
       }
     }
   }

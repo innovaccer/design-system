@@ -2,13 +2,62 @@ import * as React from 'react';
 import { debounce } from 'throttle-debounce';
 import DropdownList, { DropdownListProps, SelectAll, Selected, ChangeEvent } from './DropdownList';
 import { OptionSchema as Option } from './option';
-import { getSearchedOptions, getSelectAll, _isEqual } from './utility';
+import {
+  getSearchedOptions,
+  getSelectAll,
+  _isEqual,
+  _isControlled,
+  _showSelectedItems,
+  _isOpenControlled
+} from './utility';
 import { BaseProps } from '@/utils/types';
 
 type fetchOptionsFunction = (searchTerm: string) => Promise<{
   count: number;
   options: Option[];
 }>;
+
+export type EventType =
+  'select-option' |
+  'deselect-option' |
+  'select-all' |
+  'deselect-all' |
+  'clear-all' |
+  'apply-selected' |
+  'cancel-selected';
+
+interface ControlledProps {
+  /**
+   * Array of selected options <br/>
+   *  **Denotes `Controlled Dropdown`**
+   */
+  selected?: Option[];
+  /**
+   * Callback function to handle different event types in controlled dropdown <br/>
+   * **Only works if `selected` is not undefined**
+   *
+   * | EventType | options | recentSelected |
+   * | --- | --- | --- |
+   * | 'select-option' | Selected Option | undefined |
+   * | 'deselect-option' | Unselected Option | undefined |
+   * | 'select-all' | undefined | undefined |
+   * | 'deselect-all' | undefined | undefined |
+   * | 'clear-all' | undefined | undefined |
+   * | 'apply-selected' | Array of previously selected options | Array of recently selected options |
+   * | 'cancel-selected' | Array of previously selected options | Array of recently selected options |
+   */
+  onUpdate?: (type: EventType, options?: Option | Option[], recentSelected?: Option[]) => void;
+  /**
+   * Determines if the `Dropdown Popover` is open <br/>
+   * **Only works if `selected` is not undefined**
+   */
+  open?: boolean;
+  /**
+   * Callback called after `Dropdown Popover` is toggled <br/>
+   * **Only works if `selected` is not undefined**
+   */
+  onPopperToggle?: (open: boolean, type?: string) => void;
+}
 
 interface SyncProps {
   /**
@@ -31,7 +80,7 @@ interface SyncProps {
    * | label | Describes Label of the option | |
    * | value | Value of option | |
    * | icon | Name of icon inside option | |
-   * | selected | Denotes default selection of option | |
+   * | selected | Denotes default selection of option <br/>(works in case of uncontrolled component) | |
    * | group | Defines group to which the option belongs | |
    */
   options?: Option[];
@@ -110,7 +159,9 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
    */
   onChange?: (selected: any[] | any, name?: string | number) => void;
   /**
-   * Callback function called when dropdown is closed
+   * Callback function called when dropdown is closed <br/>
+   * **It doesn't work in case of `controlled dropdown` if `onPopperToggle` callback**
+   * **is passed because close event can be handled through `onPopperToggle`.**
    */
   onClose?: (selected: any[], name?: string | number) => void;
 }
@@ -120,7 +171,10 @@ type AsyncDropdownProps = AsyncProps & SharedDropdownProps;
 
 const inputRef = React.createRef<HTMLInputElement>();
 
-export type DropdownProps = (SyncDropdownProps & AsyncDropdownProps);
+export type UncontrolledDropdownProps = (SyncDropdownProps & AsyncDropdownProps);
+export type ControlledDropdownProps = (ControlledProps & SyncDropdownProps & AsyncDropdownProps);
+
+export type DropdownProps = (ControlledDropdownProps & UncontrolledDropdownProps);
 
 interface DropdownState {
   async: boolean;
@@ -147,7 +201,7 @@ const bulk = 50;
  *  - async: fetchOptions
  *  - sync: options, loading
  * 2. Sync Dropdown:
- *  - Manually toggle loading state to update options.
+ *  - Manually toggle loading state to update options (Options <= 50).
  */
 
 export class Dropdown extends React.Component<DropdownProps, DropdownState> {
@@ -156,7 +210,10 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
     const {
       totalOptions,
-      loading,
+      withCheckbox,
+      loading = false,
+      open = false,
+      selected = [],
       options = [],
     } = props;
 
@@ -169,15 +226,16 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     this.state = {
       async,
       optionsLength,
+      open,
       searchInit: false,
       searchedOptionsLength: optionsLength,
       optionsApplied: false,
       options: options || [],
       loading: async ? true : loading,
       searchTerm: '',
-      selected: [],
       tempSelected: selectedGroup,
       previousSelected: selectedGroup,
+      selected: _showSelectedItems(async, '', withCheckbox) ? selected : [],
       triggerLabel: this.updateTriggerLabel(selectedGroup, optionsLength),
       selectAll: getSelectAll(selectedGroup, optionsLength)
     };
@@ -215,6 +273,20 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       }
     }
 
+    if (this.props.selected !== undefined
+      && prevProps.selected !== this.props.selected
+      && prevProps.loading === this.props.loading
+    ) {
+      this.updateSelectedOptions(this.props.selected, true);
+    }
+
+    if (prevProps.open !== this.props.open
+      || prevState.open !== this.state.open
+    ) {
+      if (_isOpenControlled(this.props.open, this.props.selected) && this.props.open === this.state.open) return;
+      this.updateOnPopperToggle();
+    }
+
     if (prevState.searchTerm !== this.state.searchTerm) {
       this.debounceSearch();
     }
@@ -233,8 +305,16 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
   getUnSelectedOptions = (options: Option[], init: boolean) => {
     if (options.length) {
+      if (!init) {
+        return options.filter(option => (
+          this.state.tempSelected.findIndex(item => item.value === option.value) === -1
+        ));
+      }
+
+      const { selected = [] } = this.props;
       const unSelectedGroup = options.filter(option => (
-        init ? !option.selected : this.state.tempSelected.findIndex(item => item.value === option.value) === -1
+        _isControlled(this.props.selected) ?
+          selected.findIndex(item => item.value === option.value) === -1 : !option.selected
       ));
 
       return unSelectedGroup;
@@ -243,8 +323,11 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
   }
 
   getSelectedOptions = (options: Option[], init: boolean) => {
+    const { selected = [] } = this.props;
     if (options.length) {
-      const selectedGroup = init ? options.filter(option => option.selected) : this.state.tempSelected;
+      if (!init) return this.state.tempSelected;
+
+      const selectedGroup = _isControlled(this.props.selected) ? selected : options.filter(option => option.selected);
       return selectedGroup;
     }
     return [];
@@ -253,8 +336,8 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
   updateOptions = (init: boolean, async?: boolean) => {
     const {
       searchTerm,
+      selectAll,
       tempSelected,
-      optionsLength,
       previousSelected,
     } = this.state;
 
@@ -267,22 +350,24 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
         const { options, count } = res;
         updatedAsync = searchTerm === '' ? count > bulk : updatedAsync;
 
-        const unSelectedGroup = withCheckbox && searchTerm === '' && updatedAsync ?
+        const unSelectedGroup = _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ?
           this.getUnSelectedOptions(options, init) : options;
         const selectedGroup = searchTerm === '' ?
           this.getSelectedOptions(options, init) : [];
+        const optionsLength = searchTerm === '' ? count : this.state.optionsLength;
 
         this.setState({
           ...this.state,
+          optionsLength,
           loading: false,
           async: updatedAsync,
           searchedOptionsLength: count,
           options: unSelectedGroup.slice(0, bulk),
-          selected: withCheckbox && updatedAsync ? selectedGroup : [],
-          optionsLength: searchTerm === '' ? count : optionsLength,
           tempSelected: init ? selectedGroup : tempSelected,
           previousSelected: init ? selectedGroup : previousSelected,
+          selected: _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? selectedGroup : [],
           triggerLabel: this.updateTriggerLabel(init ? selectedGroup : tempSelected),
+          selectAll: !updatedAsync && init ? getSelectAll(selectedGroup, optionsLength) : selectAll
         });
         if (updatedAsync || withSearch) inputRef.current?.focus();
       });
@@ -297,17 +382,53 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     });
   }
 
-  onOptionSelect = (selectedArray: Option) => {
-    const { onChange, closeOnSelect } = this.props;
-    const { label } = selectedArray;
+  updateOnPopperToggle = () => {
+    const {
+      withCheckbox,
+      showApplyButton,
+      selected = []
+    } = this.props;
 
-    this.setState({
-      ...this.state,
-      tempSelected: [selectedArray],
-      triggerLabel: label,
-      open: !closeOnSelect
-    });
-    if (onChange) onChange(selectedArray.value, name);
+    const {
+      previousSelected,
+      tempSelected,
+      optionsLength,
+      async,
+      loading,
+      searchTerm
+    } = this.state;
+
+    const popperIsOpen = _isOpenControlled(this.props.open, this.props.selected) ? this.props.open : this.state.open;
+
+    if (withCheckbox && showApplyButton) {
+      const temporarySelected = _isControlled(this.props.selected) ? selected : previousSelected;
+
+      this.setState({
+        tempSelected: temporarySelected,
+        selectAll: getSelectAll(temporarySelected, optionsLength),
+        triggerLabel: this.updateTriggerLabel(temporarySelected),
+      });
+    }
+
+    if (_isOpenControlled(this.props.open, this.props.selected)) {
+      this.setState({
+        open: popperIsOpen,
+      });
+    }
+
+    if (popperIsOpen) {
+      const moveSelectedGroup =
+        _showSelectedItems(async, searchTerm, withCheckbox) &&
+        !_isEqual(this.state.selected, tempSelected);
+
+      this.setState({
+        loading: moveSelectedGroup || loading || searchTerm !== '',
+        searchInit: searchTerm !== '',
+        searchTerm: ''
+      });
+
+      if (moveSelectedGroup) this.updateOptions(false);
+    }
   }
 
   updateTriggerLabel = (selectedArray: Selected[] = [], totalOptions?: number) => {
@@ -330,16 +451,73 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     return label;
   }
 
-  onSelect = (option: Option, checked: boolean) => {
+  updateSelectedOptions = (selectedArray: Option[], isControlled?: boolean) => {
     const {
-      tempSelected,
-      optionsLength
+      optionsLength,
+      previousSelected,
+      selected,
+      loading,
+      open,
     } = this.state;
 
     const {
       onChange,
+      withCheckbox,
       showApplyButton,
+      closeOnSelect,
     } = this.props;
+
+    const isClearClicked = selectedArray.length === 0 && selected.length > 0;
+    const updatePreviousSelected = withCheckbox && showApplyButton && isControlled;
+
+    this.setState({
+      ...this.state,
+      tempSelected: selectedArray,
+      triggerLabel: this.updateTriggerLabel(selectedArray),
+      selectAll: getSelectAll(selectedArray, optionsLength),
+      open: _isOpenControlled(this.props.open, this.props.selected) || withCheckbox ? open : !closeOnSelect,
+      previousSelected: updatePreviousSelected ? selectedArray : previousSelected,
+      selected: isClearClicked ? selectedArray : selected,
+      loading: isClearClicked ? true : loading
+    });
+
+    if (isClearClicked) this.debounceClear();
+
+    if (onChange && (!showApplyButton || isControlled)) {
+      const values = selectedArray.map(item => item.value);
+      onChange(values, name);
+    }
+  }
+
+  onOptionSelect = (option: Option) => {
+    const {
+      onUpdate,
+      selected,
+    } = this.props;
+
+    if (_isControlled(selected)) {
+      if (onUpdate) onUpdate('select-option', option);
+      return;
+    }
+
+    this.updateSelectedOptions([option]);
+  }
+
+  onSelect = (option: Option, checked: boolean) => {
+    const {
+      onUpdate,
+      selected,
+      showApplyButton
+    } = this.props;
+
+    if (_isControlled(selected) && !showApplyButton) {
+      if (onUpdate) onUpdate(checked ? 'select-option' : 'deselect-option', option);
+      return;
+    }
+
+    const {
+      tempSelected,
+    } = this.state;
 
     let selectedArray = tempSelected.slice();
 
@@ -350,43 +528,24 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
     selectedArray = checked ? selectedArray.concat(option) : selectedArray;
 
-    this.setState({
-      ...this.state,
-      tempSelected: selectedArray,
-      triggerLabel: this.updateTriggerLabel(selectedArray),
-      selectAll: getSelectAll(selectedArray, optionsLength)
-    });
-
-    if (onChange && !showApplyButton) {
-      const values = selectedArray.map(item => item.value);
-      onChange(values, name);
-    }
+    this.updateSelectedOptions(selectedArray);
   }
 
   onSelectAll = (event: ChangeEvent) => {
     const {
-      onChange,
+      onUpdate,
+      selected,
       showApplyButton
     } = this.props;
 
-    const {
-      options,
-      optionsLength,
-    } = this.state;
-
-    const selectedArray = event.target.checked ? options : [];
-
-    this.setState({
-      ...this.state,
-      tempSelected: selectedArray,
-      triggerLabel: this.updateTriggerLabel(selectedArray),
-      selectAll: getSelectAll(selectedArray, optionsLength)
-    });
-
-    if (onChange && !showApplyButton) {
-      const values = selectedArray.map(option => option.value);
-      onChange(values, name);
+    if (_isControlled(selected) && !showApplyButton) {
+      if (onUpdate) onUpdate(event.target.checked ? 'select-all' : 'deselect-all');
+      return;
     }
+
+    const selectedArray = event.target.checked ? this.state.options : [];
+
+    this.updateSelectedOptions(selectedArray);
   }
 
   debounceSearch = debounce(300, () => {
@@ -397,10 +556,16 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     });
   });
 
-  debounceClear = debounce(100, () => this.updateOptions(false));
+  debounceClear = debounce(250, () => this.updateOptions(false));
 
   onClearOptions = () => {
-    const { onChange, showApplyButton } = this.props;
+    const { selected, onUpdate, showApplyButton, onChange } = this.props;
+
+    if (_isControlled(selected) && !showApplyButton) {
+      if (onUpdate) onUpdate('clear-all');
+      return;
+    }
+
     this.setState({
       selected: [],
       tempSelected: [],
@@ -412,7 +577,14 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
   }
 
   onCancelOptions = () => {
-    const { previousSelected, optionsLength } = this.state;
+    const { previousSelected, tempSelected, optionsLength } = this.state;
+    const { selected, onUpdate } = this.props;
+
+    if (_isControlled(selected)) {
+      if (onUpdate) onUpdate('cancel-selected', previousSelected, tempSelected);
+      return;
+    }
+
     const label = this.updateTriggerLabel(previousSelected);
     this.setState({
       ...this.state,
@@ -421,6 +593,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       triggerLabel: label,
       open: false,
     });
+
     if (this.props.onClose) {
       const values = previousSelected.map(option => option.value);
       this.props.onClose(values, name);
@@ -430,9 +603,15 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
   onApplyOptions = () => {
     const {
       tempSelected,
+      previousSelected,
     } = this.state;
 
-    const { onChange, onClose } = this.props;
+    const { onChange, onClose, selected, onUpdate } = this.props;
+
+    if (_isControlled(selected)) {
+      if (onUpdate) onUpdate('apply-selected', previousSelected, tempSelected);
+      return;
+    }
 
     this.setState({
       ...this.state,
@@ -451,46 +630,32 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     }
   }
 
-  onToggleDropdown = () => {
+  onToggleDropdown = (updatedOpen: boolean, type?: string) => {
+    // open && close blocks
     if (this.props.disabled) {
       return;
     }
-    const { showApplyButton, withCheckbox, onClose, name } = this.props;
-    const {
-      triggerLabel,
-      optionsApplied,
-      previousSelected,
-      tempSelected,
-      optionsLength,
-      open,
-      async,
-      selected,
-      loading,
-      selectAll,
-      searchTerm
-    } = this.state;
 
-    const applyClicked = withCheckbox && showApplyButton && !optionsApplied;
-    const moveSelectedGroup = async && searchTerm === '' && withCheckbox && !_isEqual(selected, tempSelected);
+    const { showApplyButton, withCheckbox, onClose, name, onPopperToggle } = this.props;
+
+    if (onPopperToggle && _isOpenControlled(this.props.open, this.props.selected)) {
+      onPopperToggle(updatedOpen, type);
+      return;
+    }
+
+    const isPopperOpen = _isOpenControlled(this.props.open, this.props.selected) ? this.state.open : updatedOpen;
+    const isCloseEvent = type === 'outsideClick' || (type === 'onClick' && !isPopperOpen);
 
     this.setState({
-      ...this.state,
-      tempSelected: applyClicked ? previousSelected : tempSelected,
-      selectAll: applyClicked ? getSelectAll(previousSelected, optionsLength) : selectAll,
-      triggerLabel: applyClicked ? this.updateTriggerLabel(previousSelected) : triggerLabel,
-      open: !open,
-      optionsApplied: false,
-      loading: moveSelectedGroup || loading || searchTerm !== '',
-      searchInit: searchTerm !== '',
-      searchTerm: ''
+      open: isPopperOpen,
     });
 
-    if (moveSelectedGroup) this.updateOptions(false);
-    if (onClose && open) {
-      const arr = applyClicked ? previousSelected : tempSelected;
+    if (onClose && isCloseEvent) {
+      const arr = withCheckbox && showApplyButton ? this.state.previousSelected : this.state.tempSelected;
       const values = arr.map(option => option.value);
       onClose(values, name);
     }
+
   }
 
   render() {
@@ -504,12 +669,11 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       searchedOptionsLength,
       tempSelected,
       selectAll,
-      selected,
       triggerLabel,
       previousSelected
     } = this.state;
 
-    const { triggerOptions = {}, ...rest } = this.props;
+    const { triggerOptions = {}, selected, ...rest } = this.props;
     const remainingOptionsLen = searchedOptionsLength - options.length;
 
     return (
@@ -525,7 +689,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
         triggerLabel={triggerLabel}
         tempSelected={tempSelected}
         previousSelected={previousSelected}
-        selected={selected}
+        selected={this.state.selected}
         applyOptions={this.onApplyOptions}
         cancelOptions={this.onCancelOptions}
         toggleDropdown={this.onToggleDropdown}

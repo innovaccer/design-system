@@ -2,6 +2,7 @@ import * as React from 'react';
 import Dropdown from '../../Dropdown';
 import Text from '@/components/atoms/text';
 import { storyOptions } from '../Options';
+import { Uncontrolled, Controlled } from '../_common_/types';
 
 // CSF format story
 export const disabled = () => {
@@ -55,6 +56,10 @@ export default {
     docs: {
       docPage: {
         customCode,
+        props: {
+          components: { Uncontrolled, Controlled },
+          exclude: ['showHead']
+        },
         title: 'Dropdown'
       }
     }

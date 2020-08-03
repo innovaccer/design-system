@@ -2,6 +2,7 @@ import * as React from 'react';
 import Dropdown from '../../Dropdown';
 import Text from '@/components/atoms/text';
 import { storyOptions } from '../Options';
+import { Uncontrolled, Controlled } from '../_common_/types';
 
 // CSF format story
 export const search = () => {
@@ -29,7 +30,11 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Dropdown'
+        title: 'Dropdown',
+        props: {
+          components: { Uncontrolled, Controlled },
+          exclude: ['showHead']
+        }
       }
     }
   }

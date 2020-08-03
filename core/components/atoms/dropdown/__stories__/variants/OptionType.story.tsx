@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Dropdown from '../../Dropdown';
 import Text from '@/components/atoms/text';
+import { Uncontrolled, Controlled } from '../_common_/types';
 import { storyOptions, iconOptions, subInfoOptions, iconWithSubinfoOptions  } from '../Options';
 
 const labelMapping: { [key: string]: string } = {
@@ -52,7 +53,11 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Dropdown'
+        title: 'Dropdown',
+        props: {
+          components: { Uncontrolled, Controlled },
+          exclude: ['showHead']
+        }
       }
     }
   }

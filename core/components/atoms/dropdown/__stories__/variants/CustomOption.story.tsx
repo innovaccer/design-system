@@ -3,6 +3,7 @@ import Dropdown from '../../Dropdown';
 import Text from '@/components/atoms/text';
 import Icon from '@/components/atoms/icon';
 import Checkbox from '@/components/atoms/checkbox';
+import { Uncontrolled, Controlled } from '../_common_/types';
 import { storyOptions } from '../Options';
 
 // CSF format story
@@ -113,6 +114,10 @@ export default {
     docs: {
       docPage: {
         customCode,
+        props: {
+          components: { Uncontrolled, Controlled },
+          exclude: ['showHead']
+        },
         description: 'In case of custom option with checkbox, developer needs to pass checked and onChange props to checkbox component like in the example below for the indeterminate state and other functionalities to work. ',
       }
     }
