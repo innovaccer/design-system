@@ -60,9 +60,19 @@ export type ColumnSchema = {
    */
   displayName: string;
   /**
-   * Width of the column(in px)
+   * width of the column(px)
    */
-  width: number;
+  width?: React.ReactText;
+  /**
+   * min-width of the column(px)
+   * @default 100
+   */
+  minWidth?: React.ReactText;
+  /**
+   * max-width of the column(px/%)
+   * @default 800
+   */
+  maxWidth?: React.ReactText;
   /**
    * Denotes if column is resizable
    */

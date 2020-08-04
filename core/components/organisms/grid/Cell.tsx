@@ -5,6 +5,7 @@ import { Dropdown, Grid, Placeholder, PlaceholderParagraph, Heading, Icon, Butto
 import { resizeCol, getInit } from './utility';
 import { GridCell } from './GridCell';
 import { DropdownProps } from '@/components/atoms/dropdown';
+import { getCellSize } from './columnUtility';
 
 interface SharedCellProps {
   _this: Grid;
@@ -264,15 +265,29 @@ export const Cell = (props: CellProps) => {
     nestedRows
   } = _this.props;
 
+  const {
+    name,
+    separator,
+    hidden,
+    pinned,
+    cellType = 'DEFAULT'
+  } = schema;
+
+  const {
+    width,
+    minWidth = 100,
+    maxWidth = 800
+  } = getCellSize(cellType);
+
   const cellClass = classNames({
     'Grid-cell': true,
     'Grid-cell--head': head,
     'Grid-cell--body': !head,
-    'Grid-cell--separator': !firstCell && schema.separator,
+    'Grid-cell--separator': !firstCell && separator,
     'Grid-cell--nestedRow': !head && colIndex === 0 && nestedRows
   });
 
-  if (schema.hidden) return null;
+  if (hidden) return null;
 
   return (
     <div
@@ -280,8 +295,8 @@ export const Cell = (props: CellProps) => {
       className={cellClass}
       draggable={head && draggable}
       onDragStart={e => {
-        e.dataTransfer.setData('name', schema.name);
-        if (schema.pinned) e.dataTransfer.setData('type', schema.pinned);
+        e.dataTransfer.setData('name', name);
+        if (pinned) e.dataTransfer.setData('type', pinned);
       }}
       onDragOver={e => e.preventDefault()}
       onDrop={e => {
@@ -290,14 +305,16 @@ export const Cell = (props: CellProps) => {
           type: e.dataTransfer.getData('type')
         };
         const to = {
-          name: schema.name,
-          type: schema.pinned || ''
+          name,
+          type: pinned || ''
         };
 
         if (from.type === to.type) _this.reorderCol(from.name, to.name);
       }}
       style={{
-        width: schema.width
+        width: schema.width || width,
+        minWidth: schema.minWidth || minWidth,
+        maxWidth: schema.maxWidth || maxWidth
       }}
     >
       {head ? (

@@ -145,16 +145,6 @@
     flex-shrink: 0;
 }
 
-.Grid-checkboxCell {
-    /* position: sticky !important;
-    left: 0; */
-    display: flex;
-    align-items: center;
-    z-index: 1;
-    padding-right: 0 !important;
-    /* overflow: visible !important; */
-}
-
 .Grid-nestedRowTrigger {
     margin-right: var(--spacing-l);
     cursor: pointer;
@@ -167,7 +157,6 @@
 
 .Grid-cell {
     position: relative;
-    flex-shrink: 0;
     overflow: hidden;
     box-sizing: border-box;
     padding-left: var(--spacing-l);
@@ -203,6 +192,16 @@
 
 .Grid-cell--head.Grid-cell--selected {
     background: var(--primary-light);
+}
+
+.Grid-cell--checkbox {
+    width: unset;
+    min-width: unset;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    padding-right: 0 !important;
+    overflow: visible !important;
 }
 
 .Grid-sortingIcons {

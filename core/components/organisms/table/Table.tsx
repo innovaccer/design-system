@@ -39,7 +39,9 @@ interface SyncProps {
    *    ColumnSchema: {
    *        name: string;
    *        displayName: string;
-   *        width: number;
+   *        width?: number;
+   *        minWidth?: number;
+   *        maxWidth?: number;
    *        resizable?: boolean;
    *        sorting?: boolean;
    *        comparator?: (a: RowData, b: RowData) => -1 | 0 | 1;
@@ -54,9 +56,6 @@ interface SyncProps {
    *        align?: Alignment;
    *    }
    *
-   *    CellType: 'DEFAULT' | 'WITH\_META\_LIST' | 'AVATAR' | 'AVATAR\_WITH\_TEXT'
-   * | 'AVATAR\_WITH\_META\_LIST' | 'STATUS\_HINT' | 'ICON'`
-   *
    *    GridCellProps: {
    *        size: GridSize;
    *        rowIndex: number;
@@ -66,22 +65,24 @@ interface SyncProps {
    *        loading: boolean;
    *    }
    *
-   * | CellType | CellData |
-   * | --- | --- |
-   * | DEFAULT | `string | { title: string }` |
-   * | WITH\_META\_LIST | `{ title: string, metaList: string[] }` |
-   * | AVATAR | { firstName?: string, lastName?: string, title?: string } |
-   * | AVATAR\_WITH\_TEXT | { firstName?: string, lastName?: string, title: string } |
-   * | AVATAR\_WITH\_META\_LIST | { firstName?: string, lastName?: string, title: string, metaList: string[] } |
-   * | ICON | `{ icon: string }` |
-   * | STATUS_HINT | `{ title: string, statusAppearance: string }` |
+   * | CellType | CellData | Default Width |
+   * | --- | --- | --- |
+   * | DEFAULT | string \| { title: string } | { width: 200 } |
+   * | WITH\_META\_LIST | { title: string, metaList: string[] } | { width: 200 } |
+   * | AVATAR | { firstName?: string, lastName?: string, title?: string } | { width: 50, minWidth: 50 } |
+   * | AVATAR\_WITH\_TEXT | { firstName?: string, lastName?: string, title: string } | { width: 250 } |
+   * | AVATAR\_WITH\_META\_LIST | { firstName?: string, lastName?: string, title: string, metaList: string[] } | { width: 250 } |
+   * | ICON | { icon: string } | { width: 50, minWidth: 50 } |
+   * | STATUS_HINT | { title: string, statusAppearance: string } | { width: 100 } |
    * </pre>
    *
    * | Name | Description | Default |
    * | --- | --- | --- |
    * | name | key of the value in `RowData` | |
    * | displayName | Column Head Label | |
-   * | width | Width of the column(in px) | |
+   * | width | width of the column(in px) | |
+   * | minWidth | min-width of the column(in px) | 100 |
+   * | maxWidth | max-width of the column(in px) | 800 |
    * | resizable | Denotes if column is resizable | |
    * | sorting | Enables sorting in column | true |
    * | comparator | Sorting Function to be passed(in case of async) | |
@@ -94,7 +95,7 @@ interface SyncProps {
    * | translate | Translate Cell Data | |
    * | cellType | Cell Type | 'DEFAULT' |
    * | cellRenderer | Custom Cell Renderer | |
-   * | align | Align cell content<br>**Align applicable only for following cellTypes:<br>DEFAULT, AVATAR, ICON, STATUS_HINT** | |
+   * | align | Align cell content<br>**Align applicable only for following cellTypes:<br>DEFAULT, AVATAR, ICON, STATUS_HINT** | "left" |
    */
   /* tslint:enable */
   schema?: Schema;
@@ -345,13 +346,16 @@ export class Table extends React.Component<TableProps, TableState> {
     if (!this.state.async) {
       if (prevProps.loading !== this.props.loading
         || prevProps.error !== this.props.error) {
-        const data = this.props.data || [];
+        const {
+          data = [],
+          schema = []
+        } = this.props;
         this.setState({
           data,
+          schema,
           loading: this.props.loading || false,
           error: this.props.error || false,
           page: 1,
-          schema: this.props.schema || [],
           totalRecords: data.length || 0,
           sortingList: [],
           filterList: {},
@@ -388,7 +392,6 @@ export class Table extends React.Component<TableProps, TableState> {
     const {
       async,
       page,
-      schema,
       sortingList,
       filterList,
       searchTerm
@@ -416,10 +419,11 @@ export class Table extends React.Component<TableProps, TableState> {
         fetchData(opts)
           .then((res: any) => {
             const data = res.data;
+            const schema = this.state.schema.length ? this.state.schema : res.schema;
             this.setState({
               data,
+              schema,
               selectAll: getSelectAll(data),
-              schema: this.state.schema.length ? this.state.schema : res.schema,
               totalRecords: res.count,
               loading: false,
               error: !data.length
@@ -434,6 +438,10 @@ export class Table extends React.Component<TableProps, TableState> {
           });
       }
     } else {
+      const {
+        schema
+      } = this.state;
+
       const filteredData = filterData(schema, dataProp, filterList);
       const searchedData = onSearch && opts.searchTerm !== undefined
         ? onSearch(filteredData, opts.searchTerm)
@@ -445,10 +453,12 @@ export class Table extends React.Component<TableProps, TableState> {
         renderedData = paginateData(renderedData, page, pageSize);
       }
 
+      const renderedSchema = this.state.schema.length ? this.state.schema : schema;
+
       this.setState({
         totalRecords,
         selectAll: getSelectAll(renderedData),
-        schema: this.state.schema.length ? this.state.schema : schema,
+        schema: renderedSchema,
         data: renderedData,
       });
     }
