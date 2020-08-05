@@ -10,7 +10,7 @@ export interface SubheadingProps extends BaseProps {
    * Text to be rendered
    * @type {string}
    */
-  children: string;
+  children: React.ReactText;
   /**
    * Color of `Subheading`
    * @default "default"

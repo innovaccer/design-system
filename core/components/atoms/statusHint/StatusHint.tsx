@@ -9,7 +9,7 @@ export interface StatusHintProps extends BaseProps {
   /**
    * Describes label of the `Status Hint`
    */
-  children: string;
+  children: React.ReactText;
   /**
    * Color of Icon
    * @default "inverse"

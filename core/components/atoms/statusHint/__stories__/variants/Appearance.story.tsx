@@ -20,7 +20,7 @@ export const appearance = () => {
               <StatusHint
                 appearance={iconAppearance}
               >
-                {iconAppearance.charAt(0).toUpperCase() + iconAppearance.slice(1)}
+                {iconAppearance}
               </StatusHint>
             </div>
           );

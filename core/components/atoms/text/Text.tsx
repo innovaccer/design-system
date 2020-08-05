@@ -10,7 +10,7 @@ export interface TextProps extends BaseProps {
    * Text to be rendered
    * @type {string}
    */
-  children: string;
+  children: React.ReactText;
   /**
    * Denotes weight of `Text`
    */
