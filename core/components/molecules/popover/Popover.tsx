@@ -73,6 +73,8 @@ export interface PopoverProps extends BaseProps {
   customStyle?: CustomStyle;
   /**
    * Callback after `Popover` is toggled
+   *
+   * type: 'onMouseLeave' | 'onMouseEnter' | 'outsideClick' | 'onClick';
    */
   onToggle?: (open: boolean, type?: string) => void;
   /**
