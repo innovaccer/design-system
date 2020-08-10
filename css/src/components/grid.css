@@ -152,7 +152,7 @@
     align-items: center;
     z-index: 1;
     padding-right: 0 !important;
-    overflow: visible !important;
+    /* overflow: visible !important; */
 }
 
 .Grid-nestedRowTrigger {
@@ -295,22 +295,26 @@
 .GridCell {
     display: flex;
     align-items: center;
-    height: 100%;
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
 }
 
 .GridCell--align-left {
-    flex-direction: row;
+    /* flex-direction: row; */
+    justify-content: flex-start;
+    text-align: left;
 }
 
 .GridCell--align-right {
-    flex-direction: row-reverse;
+    /* flex-direction: row-reverse; */
+    justify-content: flex-end;
+    text-align: right;
 }
 
 .GridCell--align-center {
     justify-content: center;
+    text-align: center;
 }
 
 .GridCell--default {}

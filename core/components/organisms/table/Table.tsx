@@ -31,6 +31,7 @@ interface SyncProps {
    * </pre>
    */
   data?: Data;
+  /* tslint:disable */
   /**
    * <pre className="DocPage-codeBlock">
    *    Schema: ColumnSchema[]
@@ -93,8 +94,9 @@ interface SyncProps {
    * | translate | Translate Cell Data | |
    * | cellType | Cell Type | 'DEFAULT' |
    * | cellRenderer | Custom Cell Renderer | |
-   * | align | Align cell content | |
+   * | align | Align cell content<br>**Align applicable only for following cellTypes:<br>DEFAULT, AVATAR, ICON, STATUS_HINT** | |
    */
+  /* tslint:enable */
   schema?: Schema;
   /**
    * Set for loading state of Table(in case of sync)
