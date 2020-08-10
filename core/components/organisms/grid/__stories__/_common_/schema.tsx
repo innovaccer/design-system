@@ -9,7 +9,8 @@ const schema: Schema = [
   {
     name: 'name',
     displayName: 'Name',
-    width: 300,
+    // width: '40%',
+    // width: 300,
     resizable: true,
     tooltip: true,
     // pinned: 'left',
@@ -62,7 +63,7 @@ const schema: Schema = [
   {
     name: 'gender',
     displayName: 'Gender',
-    width: 200,
+    width: 180,
     resizable: true,
     // separator: true,
     comparator: (a, b) => a.gender.localeCompare(b.gender),
@@ -107,10 +108,8 @@ const schema: Schema = [
         loading
       } = props;
 
-      if (loading) return <></>;
-
       return (
-        <Button appearance={'primary'}>Button</Button>
+        <Button loading={loading} appearance={'primary'}>Button</Button>
       );
     }
     // status: "success"

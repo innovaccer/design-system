@@ -40,7 +40,7 @@ export const GridHead = (props: GridHeadProps) => {
   const renderCheckbox = (show: boolean) => {
     if (!show || !(withCheckbox)) return null;
     return (
-      <div className="Grid-cell Grid-cell--head Grid-checkboxCell">
+      <div className="Grid-cell Grid-cell--head Grid-cell--checkbox">
         {loading ? (
           <Placeholder />
         ) : (
