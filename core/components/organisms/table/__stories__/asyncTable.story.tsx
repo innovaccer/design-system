@@ -34,6 +34,24 @@ export const asyncTable = () => {
 
 const customCode = `
 () => {
+  const translateData = (schema, data) => {
+    let newData = data;
+
+    if (schema.translate) {
+      const translatedData = schema.translate(data);
+      newData = {
+        ...newData,
+        [schema.name]: typeof translatedData === 'object' ? {
+          ...newData[schema.name],
+          ...translatedData
+        } : translatedData
+      };
+    }
+    if (typeof newData[schema.name] !== 'object') newData[schema.name] = { title: newData[schema.name] };
+
+    return newData;
+  }
+
   const filterData = (schema, data, filterList) => {
     let filteredData = data;
     if (filterList) {
