@@ -63,23 +63,23 @@ const customCode = `() => {
     <div className='d-flex' style={{ minHeight: '270px' }}>
       <div className='mr-8'>
         <Text weight="strong">Default</Text><br /><br />
-        <Dropdown options={storyOptions} optionType={'DEFAULT'} loading={true} />
+        <Dropdown options={storyOptions} optionType={'DEFAULT'} loading={true} width={150}/>
       </div>
       <div className='mr-8'>
         <Text weight="strong">Icon</Text><br /><br />
-        <Dropdown options={storyOptions} optionType={'WITH_ICON'} loading={true} />
+        <Dropdown options={storyOptions} optionType={'WITH_ICON'} loading={true} width={150}/>
       </div>
       <div className='mr-8'>
         <Text weight="strong">SubInfo</Text><br /><br />
-        <Dropdown options={storyOptions} optionType={'WITH_META'} loading={true} />
+        <Dropdown options={storyOptions} optionType={'WITH_META'} loading={true} width={150}/>
       </div>
       <div className='mr-8'>
         <Text weight="strong">Icon with subInfo</Text><br /><br />
-        <Dropdown options={storyOptions} optionType={'ICON_WITH_META'} loading={true} />
+        <Dropdown options={storyOptions} optionType={'ICON_WITH_META'} loading={true} width={150}/>
       </div>
       <div className='mr-8'>
         <Text weight="strong">{'Checkboxes'}</Text><br /><br />
-        <Dropdown options={storyOptions} withCheckbox={true} loading={true} />
+        <Dropdown options={storyOptions} withCheckbox={true} loading={true} width={150}/>
       </div>
     </div>
   )

@@ -32,7 +32,7 @@ export const optionType = () => {
               style={{ flexDirection: 'column' }}
             >
               <Text weight="strong">{labelMapping[type]}</Text><br />
-              <Dropdown options={optionsMapping[type].slice(0, 3)} />
+              <Dropdown options={optionsMapping[type].slice(0, 3)} width={128}/>
             </div>
           );
         })
