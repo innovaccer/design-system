@@ -116,25 +116,33 @@
     /* overflow-y: scroll; */
 }
 
+.Grid-rowWrapper {
+    display: inline-flex;
+    flex-direction: column;
+    min-width: fit-content;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
 .Grid-row {
-    box-sizing: border-box;
     display: flex;
     flex-grow: 1;
     flex-shrink: 0;
+    box-sizing: border-box;
     background: var(--white);
+    border-bottom: var(--border);
+}
+
+.Grid-row--body {
+    border-color: var(--secondary-lightest);
+}
+
+.Grid-rowWrapper:last-child .Grid-row--body {
+    border-bottom: 0;
 }
 
 .GridBody-padding {
     flex-shrink: 0;
-}
-
-.Grid-row {
-    min-width: fit-content;
-    border-bottom: var(--border);
-}
-
-.Grid-row--body:last-child {
-    border-bottom: 0;
 }
 
 .Grid-checkboxCell {

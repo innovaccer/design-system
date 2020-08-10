@@ -22,6 +22,7 @@ export const GridRow = (props: GridRowProps) => {
     rowIndex: rI
   } = props;
 
+  const rowRef = React.useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = React.useState<boolean>(false);
 
   const rowClasses = classNames(
@@ -115,20 +116,26 @@ export const GridRow = (props: GridRowProps) => {
   };
 
   return (
-    <>
-      <div className={rowClasses} onClick={onClickHandler}>
+    <div className="Grid-rowWrapper">
+      <div className={rowClasses} onClick={onClickHandler} ref={rowRef}>
         {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
         {renderSchema(rightPinnedSchema, false, 'right')}
       </div>
       {nestedRows && expanded && (
-        <GridNestedRow
-          _this={_this}
-          data={data}
-          rowIndex={rI}
-        />
+        <div
+          style={{
+            width: rowRef.current ? rowRef.current.clientWidth : 0
+          }}
+        >
+          <GridNestedRow
+            _this={_this}
+            data={data}
+            rowIndex={rI}
+          />
+        </div>
       )}
-    </>
+    </div>
   );
 };
 
