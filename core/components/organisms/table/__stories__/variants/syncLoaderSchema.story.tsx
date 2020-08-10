@@ -78,7 +78,8 @@ export default {
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead']
-        }
+        },
+        noStory: true
       }
     }
   }

@@ -132,7 +132,7 @@ export default {
       docPage: {
         customCode,
         title: 'Modal',
-        noStory: true,
+        noHtml: true,
       }
     }
   }

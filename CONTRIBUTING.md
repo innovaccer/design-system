@@ -116,7 +116,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        noStory: true, // If you don't want to include Story in docPage
+        noHtml: true, // If you don't want to include Html in docPage
+        noStory:true, // If you don't want to include Story in docPage
         title: 'Avatar', // Custom title
         description: 'Dummy description', // Custom description
         customCode: '() => <Avatar>JD</Avatar>' // Custom code for live code editor
