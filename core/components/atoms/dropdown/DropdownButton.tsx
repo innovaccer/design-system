@@ -42,7 +42,7 @@ export interface TriggerProps {
 }
 
 export interface DropdownButtonProps extends TriggerProps {
-  children?: string;
+  children?: React.ReactText;
 }
 
 const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>((props, ref) => {
@@ -99,7 +99,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
             <div className={labelClass}> {label.trim().charAt(0).toUpperCase()}{label.trim().slice(1)} </div>
           )}
           {(icon && !inlineLabel) && <Icon appearance={buttonDisabled} className="mr-4" name={icon} />}
-          <div className={'DropdownButton-text'}>{value && `${value.charAt(0).toUpperCase()}${value.slice(1)}`}</div>
+          <div className={'DropdownButton-text'}>{value && `${value}`}</div>
         </div>
       )}
       <Icon appearance={buttonDisabled} name={iconName} />

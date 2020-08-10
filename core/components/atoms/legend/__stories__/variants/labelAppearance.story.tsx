@@ -15,7 +15,7 @@ export const labelAppearance = () => {
                 labelAppearance={appearance}
                 iconAppearance={appearance === 'white' ? 'secondary' : 'inverse'}
               >
-                {appearance.charAt(0).toUpperCase() + appearance.slice(1)}
+                {appearance}
               </Legend>
             </div>
           );

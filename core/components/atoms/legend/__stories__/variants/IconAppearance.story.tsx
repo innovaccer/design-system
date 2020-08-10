@@ -23,7 +23,7 @@ export const iconAppearance = () => {
           return (
             <div key={i} className="mb-4">
               <Legend iconAppearance={appearance}>
-                {appearance.charAt(0).toUpperCase() + appearance.slice(1)}
+                {appearance}
               </Legend>
             </div>
           );

@@ -7,7 +7,7 @@ export interface LegendProps extends BaseProps {
   /**
    * Describes label of the `Legend`
    */
-  children: string;
+  children: React.ReactText;
   /**
    * Color of Icon
    * @default "inverse"

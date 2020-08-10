@@ -46,7 +46,7 @@ export interface ButtonProps extends BaseProps {
   /**
    * Text to be added inside `Button`
    */
-  children?: string;
+  children?: React.ReactText;
   /**
    * Specifies tab index of `Button`
    */
@@ -122,7 +122,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
           />
         </div>
       )}
-      {children && `${children.charAt(0).toUpperCase()}${children.slice(1)}`}
+      {children}
     </button>
   );
 });

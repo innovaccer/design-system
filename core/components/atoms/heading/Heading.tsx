@@ -11,7 +11,7 @@ export interface HeadingProps extends BaseProps {
   /**
    * Text to be rendered
    */
-  children: string;
+  children: React.ReactText;
   /**
    * Color of `Heading`
    * @default "default"
