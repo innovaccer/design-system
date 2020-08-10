@@ -450,7 +450,6 @@ export class Grid extends React.Component<GridProps> {
     } = this.props;
 
     const baseProps = extractBaseProps(this.props);
-
     const schema = getSchema(this);
 
     return (

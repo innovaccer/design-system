@@ -14,7 +14,7 @@ import {
   updateSortingListFunction,
   updateFilterListFunction
 } from '../grid';
-import { updateBatchData, filterData, sortData, paginateData, getSelectAll } from '../grid/utility';
+import { updateBatchData, filterData, sortData, paginateData, getSelectAll, getTotalPages } from '../grid/utility';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { debounce } from 'throttle-debounce';
 
@@ -208,7 +208,7 @@ interface SharedTableProps extends BaseProps {
    */
   showMenu?: GridProps['showMenu'];
   /**
-   * Set for `Pagination` component in `Table`
+   * Set for `Pagination` component in `Table`(**Not applied if pageSize >= totalRecords**)
    */
   withPagination?: GridProps['withPagination'];
   /**
@@ -270,13 +270,23 @@ interface SharedTableProps extends BaseProps {
   onPageChange?: GridProps['onPageChange'];
 }
 
-// interface SyncTableProps extends SyncProps, SharedTableProps { };
-// interface AsyncTableProps extends AsyncProps, SharedTableProps { };
+const defaultProps = {
+  type: 'data',
+  size: 'comfortable',
+  showHead: true,
+  showMenu: true,
+  multipleSorting: true,
+  headerOptions: {},
+  pageSize: 15,
+  loading: false,
+  draggable: true
+};
+type DefaultProps = Readonly<typeof defaultProps>;
 
 export type SyncTableProps = SyncProps & SharedTableProps;
 export type AsyncTableProps = AsyncProps & SharedTableProps;
 
-export type TableProps = (AsyncTableProps & SyncTableProps);
+export type TableProps = (AsyncTableProps & SyncTableProps) & DefaultProps;
 
 interface TableState {
   async: boolean;
@@ -291,13 +301,6 @@ interface TableState {
   loading: GridProps['loading'];
   error: GridProps['error'];
 }
-
-// export type ExtractType<T> = T extends SyncTableProps ? SyncTableProps : AsyncTableProps;
-
-// export const Table = <T extends SyncTableProps, K extends AsyncTableProps>(props: T | K) => {
-
-// export function Table(props: SyncTableProps): React.ReactElement;
-// export function Table(props: AsyncTableProps): React.ReactElement;
 
 /**
  * ###Note:
@@ -334,17 +337,7 @@ export class Table extends React.Component<TableProps, TableState> {
     this.updateData({});
   }
 
-  static defaultProps = {
-    type: 'data',
-    size: 'comfortable',
-    showHead: true,
-    showMenu: true,
-    multipleSorting: true,
-    headerOptions: {},
-    pageSize: 15,
-    loading: false,
-    draggable: true
-  };
+  static defaultProps = defaultProps;
 
   componentDidUpdate(prevProps: TableProps, prevState: TableState) {
     if (!this.state.async) {
@@ -580,6 +573,11 @@ export class Table extends React.Component<TableProps, TableState> {
 
     const classes = className ? ` ${className}` : '';
 
+    const {
+      totalRecords,
+    } = this.state;
+    const totalPages = getTotalPages(totalRecords, pageSize);
+
     return (
       <div {...baseProps} className={`Table${classes}`}>
         {withHeader && (
@@ -618,7 +616,7 @@ export class Table extends React.Component<TableProps, TableState> {
             draggable={draggable}
             nestedRows={nestedRows}
             nestedRowRenderer={nestedRowRenderer}
-            withPagination={withPagination}
+            withPagination={withPagination && totalPages > 1}
             paginationType={paginationType}
             pageSize={pageSize}
             loaderSchema={loaderSchema}
