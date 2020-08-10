@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Text from '@/components/atoms/text';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { useId } from 'react-id-generator';
 
 export type Size = 'regular' | 'tiny';
 
@@ -78,7 +79,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
   const onChangeHandler = (event: MouseEvent) => {
     if (onChange) onChange(event);
   };
-
+  const [htmlId] = useId();
   return (
     <div className={RadioClass}>
       <div className={RadioOuterWrapper}>
@@ -92,7 +93,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           value={value}
           onChange={onChangeHandler}
           className="Radio-input"
-          id={value}
+          id={htmlId}
         />
         <span className={RadioWrapper} />
       </div>

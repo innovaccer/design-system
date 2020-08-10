@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import Text from '@/components/atoms/text';
 import Icon from '@/components/atoms/icon';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { useId } from 'react-id-generator';
 
 export type Size = 'regular' | 'tiny';
 
@@ -131,7 +132,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
 
   const IconName = (indeterminate) ? 'remove' : ((checked) ? 'check' : '');
   const IconSize = (size) === 'tiny' ? 8 : 16;
-
+  const [htmlId] = useId();
   return (
     <div className={CheckboxClass}>
       <div className={CheckboxOuterWrapper}>
@@ -147,7 +148,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
           value={value}
           className={CheckboxInputWrapper}
           tabIndex={tabIndex}
-          id={label}
+          id={htmlId}
         />
         <span className={CheckboxWrapper}>
           {(IconName) && <Icon name={IconName} size={IconSize} appearance={'white'} />}
