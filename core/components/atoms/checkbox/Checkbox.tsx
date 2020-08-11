@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Text from '@/components/atoms/text';
 import Icon from '@/components/atoms/icon';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-
+import uidGenerator from '@/utils/uidGenerator';
 export type Size = 'regular' | 'tiny';
 
 type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
@@ -128,7 +128,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     }
     if (onChange) onChange(e);
   };
-
+  const id = `${name}-${label}-${uidGenerator()}`;
   const IconName = (indeterminate) ? 'remove' : ((checked) ? 'check' : '');
   const IconSize = (size) === 'tiny' ? 8 : 16;
 
@@ -147,14 +147,14 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
           value={value}
           className={CheckboxInputWrapper}
           tabIndex={tabIndex}
-          id={label}
+          id={id}
         />
         <span className={CheckboxWrapper}>
           {(IconName) && <Icon name={IconName} size={IconSize} appearance={'white'} />}
         </span>
       </div>
       {label && label.trim() && (
-        <label htmlFor={label} className={CheckboxTextClass}>
+        <label htmlFor={id} className={CheckboxTextClass}>
           <Text small={size === 'tiny'}>{label.trim()}</Text>
         </label>
       )}
