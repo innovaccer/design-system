@@ -210,7 +210,13 @@ class PopperWrapper extends React.Component<Props, IState> {
           ReactDOM.createPortal(
             (
               /* tslint:disable:no-shadowed-variable */
-              <Popper placement={placement} innerRef={this.popupRef}>
+              <Popper
+                placement={placement}
+                innerRef={this.popupRef}
+                modifiers={{
+                  preventOverflow: { boundariesElement: document.body }
+                }}
+              >
                 {({ ref, style, placement }) => {
                   const newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
                   return this.getChildrenElement(children, ref, placement, newStyle);
