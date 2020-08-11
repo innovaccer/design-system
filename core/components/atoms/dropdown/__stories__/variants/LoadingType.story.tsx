@@ -3,6 +3,7 @@ import Dropdown from '../../Dropdown';
 import Text from '@/components/atoms/text';
 import { storyOptions } from '../Options';
 import { OptionType } from '../../DropdownList';
+import { Uncontrolled, Controlled } from '../_common_/types';
 
 const labelMapping: { [key: string]: string } = {
   ['DEFAULT']: 'Default',
@@ -93,6 +94,10 @@ export default {
       docPage: {
         customCode,
         title: 'Dropdown',
+        props: {
+          components: { Uncontrolled, Controlled },
+          exclude: ['showHead']
+        }
       }
     }
   }

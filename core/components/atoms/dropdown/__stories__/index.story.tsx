@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { select, text, boolean, number } from '@storybook/addon-knobs';
+import { Uncontrolled, Controlled } from './_common_/types';
 import { action } from '@storybook/addon-actions';
 import Dropdown from '../Dropdown';
 import { dropdownOptions } from './Options';
@@ -107,7 +108,7 @@ export const all = () => {
     maxWidth: 170,
   };
 
-  const key = `checkbox${withCheckbox} applyButton:${showApplyButton}`;
+  const key = `checkbox${withCheckbox} applyButton:${showApplyButton} search:${withSearch}`;
 
   return (
     <div style={{ width: '170px', marginLeft: '128px' }} key={key}>
@@ -162,7 +163,11 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
+        customCode,
+        props: {
+          components: { Uncontrolled, Controlled },
+          exclude: ['showHead']
+        }
       }
     }
   }

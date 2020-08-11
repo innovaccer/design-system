@@ -3,6 +3,7 @@ import Dropdown from '../../Dropdown';
 import { Size } from '../../DropdownButton';
 import Text from '@/components/atoms/text';
 import { storyOptions } from '../Options';
+import { Uncontrolled, Controlled } from '../_common_/types';
 
 // CSF format story
 export const size = () => {
@@ -58,7 +59,11 @@ export default {
     docs: {
       docPage: {
         customCode,
-        title: 'Dropdown'
+        title: 'Dropdown',
+        props: {
+          components: { Uncontrolled, Controlled },
+          exclude: ['showHead']
+        }
       }
     }
   }

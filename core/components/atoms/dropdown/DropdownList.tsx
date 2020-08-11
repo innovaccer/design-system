@@ -116,7 +116,7 @@ interface OptionsProps extends DropdownListProps, BaseProps {
   customTrigger?: (label: string) => React.ReactElement;
   applyOptions: () => void;
   cancelOptions: () => void;
-  toggleDropdown: () => void;
+  toggleDropdown: (open: boolean, type?: string) => void;
   onClearOptions: () => void;
   onSelectAll: (event: ChangeEvent) => void;
   onSearchChange?: (searchText: string) => void;
@@ -253,8 +253,8 @@ const DropdownList = (props: OptionsProps) => {
     ['Option--active']: cursor === 0
   });
 
-  const onToggleDropdown = () => {
-    toggleDropdown();
+  const onToggleDropdown = (open: boolean, type?: string) => {
+    toggleDropdown(open, type);
     if (!disabled) dropdownTriggerRef.current?.focus();
     setCursor(0);
   };
@@ -484,11 +484,11 @@ const DropdownList = (props: OptionsProps) => {
     switch (event.key) {
       case 'ArrowDown':
         event.preventDefault();
-        dropdownOpen ? focusOption('down', optionClass) : onToggleDropdown();
+        dropdownOpen ? focusOption('down', optionClass) : onToggleDropdown(!dropdownOpen);
         break;
       case 'ArrowUp':
         event.preventDefault();
-        dropdownOpen ? focusOption('up', optionClass) : onToggleDropdown();
+        dropdownOpen ? focusOption('up', optionClass) : onToggleDropdown(!dropdownOpen);
         break;
       case 'Enter':
         const activeElement = document.activeElement;
@@ -502,12 +502,12 @@ const DropdownList = (props: OptionsProps) => {
           const element = elements[cursor] as HTMLElement;
           if (element) element.click();
         }
-        if (!dropdownOpen) onToggleDropdown();
+        if (!dropdownOpen) onToggleDropdown(!dropdownOpen);
         break;
       case 'Tab':
         if (!showApplyButton && dropdownOpen) {
           event.preventDefault();
-          onToggleDropdown();
+          onToggleDropdown(false, 'onClick');
           return;
         }
 
@@ -522,7 +522,7 @@ const DropdownList = (props: OptionsProps) => {
           ) && dropdownOpen
         ) {
           event.preventDefault();
-          onToggleDropdown();
+          onToggleDropdown(false, 'onClick');
           return;
         }
 

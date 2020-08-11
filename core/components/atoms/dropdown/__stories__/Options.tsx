@@ -58,7 +58,7 @@ for (let i = 1; i <= 40; i++) {
     value: `Option ${i}`,
     group: 'Group 1',
     icon: 'events',
-    subInfo: 'subInfo',
+    subInfo: 'subInfo'
   });
 }
 for (let i = 41; i <= 100; i++) {

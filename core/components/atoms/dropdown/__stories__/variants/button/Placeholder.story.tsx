@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Dropdown from '../../../Dropdown';
 import Text from '@/components/atoms/text';
+import { Uncontrolled, Controlled } from '../../_common_/types';
 import { storyOptions } from '../../Options';
 
 // CSF format story
@@ -49,12 +50,16 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Atoms|Dropdown/Variants/Button',
+  title: 'Atoms|Dropdown/Variants/Trigger',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
-        customCode
+        customCode,
+        props: {
+          components: { Uncontrolled, Controlled },
+          exclude: ['showHead']
+        }
       }
     }
   }

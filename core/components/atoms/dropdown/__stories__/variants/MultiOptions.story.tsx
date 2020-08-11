@@ -1,7 +1,9 @@
 import * as React from 'react';
 import Dropdown from '../../Dropdown';
+import { action } from '@storybook/addon-actions';
 import Text from '@/components/atoms/text';
 import { storyOptions } from '../Options';
+import { Uncontrolled, Controlled } from '../_common_/types';
 
 // CSF format story
 export const multiOptions = () => {
@@ -11,6 +13,14 @@ export const multiOptions = () => {
     alignItems: 'center',
     marginRight: '5%',
     width: '150px'
+  };
+
+  const onClose = (options: any) => {
+    return action(`dropdown closed with selected values: ${options}`)();
+  };
+
+  const onChangeHandler = (selectedValues: any[]) => {
+    return action(`selected values length: ${selectedValues}`)();
   };
 
   return (
@@ -23,11 +33,19 @@ export const multiOptions = () => {
           showApplyButton={true}
           options={storyOptions}
           placeholder={'Select'}
+          onChange={onChangeHandler}
+          onClose={onClose}
         />
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '150px' }}>
         <Text weight="strong">{'Without Apply Button'}</Text><br />
-        <Dropdown withCheckbox={true} options={storyOptions} placeholder={'Select'} />
+        <Dropdown
+          withCheckbox={true}
+          options={storyOptions}
+          placeholder={'Select'}
+          onChange={onChangeHandler}
+          onClose={onClose}
+        />
       </div>
     </div>
   );
@@ -44,15 +62,45 @@ const customCode = `() => {
     });
   }
 
+  const style = {
+    display: 'flex',
+    'flex-direction': 'column',
+    alignItems: 'center',
+    marginRight: '5%',
+    width: '150px'
+  };
+
+  const onClose = (options) => {
+    console.log(options);
+  };
+
+  const onChangeHandler = (selectedValues) => {
+    console.log(selectedValues);
+  };
+
   return (
-    <div className='d-flex' style={{ minHeight: '340px' }}>
-      <div className='mr-10' style={{ width: '150px' }}>
-      <Text weight="strong">{'With Apply Button'}</Text> <br /><br />
-        <Dropdown withCheckbox={true} showApplyButton={true} options={storyOptions} />
+    <div style={{ display: 'flex', minHeight: '300px' }}>
+      <div style={style}>
+        <Text weight="strong">{'With Apply Button'}</Text><br />
+        <Dropdown
+          maxHeight={180}
+          withCheckbox={true}
+          showApplyButton={true}
+          options={storyOptions}
+          placeholder={'Select'}
+          onChange={onChangeHandler}
+          onClose={onClose}
+        />
       </div>
-      <div>
-        <Text weight="strong">{'Without Apply Button'}</Text> <br /><br />
-        <Dropdown withCheckbox={true} options={storyOptions} />
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '150px' }}>
+        <Text weight="strong">{'Without Apply Button'}</Text><br />
+        <Dropdown
+          withCheckbox={true}
+          options={storyOptions}
+          placeholder={'Select'}
+          onChange={onChangeHandler}
+          onClose={onClose}
+        />
       </div>
     </div>
   )
@@ -65,7 +113,11 @@ export default {
     docs: {
       docPage: {
         customCode,
-        title: 'Dropdown'
+        title: 'Dropdown',
+        props: {
+          components: { Uncontrolled, Controlled },
+          exclude: ['showHead']
+        }
       }
     }
   }

@@ -2,6 +2,7 @@ import * as React from 'react';
 import Dropdown from '../../Dropdown';
 import Text from '@/components/atoms/text';
 import { storyWrapOptions } from '../Options';
+import { Uncontrolled, Controlled } from '../_common_/types';
 
 // CSF format story
 export const optionsWrap = () => {
@@ -55,7 +56,11 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
+        customCode,
+        props: {
+          components: { Uncontrolled, Controlled },
+          exclude: ['showHead']
+        }
       }
     }
   }
