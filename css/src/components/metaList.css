@@ -1,0 +1,46 @@
+.Meta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    font-size: var(--font-size);
+}
+
+.MetaList-seperator {
+    border-radius: 50%;
+    height: var(--spacing-m);
+    width: var(--spacing-m);
+    margin-left: var(--spacing);
+    background: var(--inverse-lightest);
+}
+.MetaList-separator--left{
+    margin-right: var(--spacing-m);
+}
+.Meta-icon{
+    padding-right: var( --spacing-m);
+    display: flex;
+    align-items: center;
+}
+.MetaList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    font-size: var(--font-size);
+}
+.MetaList-item {
+    margin: 0 var(--spacing-m);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    font-size: var(--font-size);
+}
+
+.MetaList-item:first-child {
+    margin-left: 0;
+}
+
+.MetaList-item:last-child {
+    margin-right: 0;
+}
