@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BaseProps } from "../../../utils/types";
 export declare type Appearance = 'info' | 'alert' | 'warning' | 'success' | 'default';
 export interface StatusHintProps extends BaseProps {
-    children: string;
+    children: React.ReactText;
     appearance?: Appearance;
     onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
     onMouseEnter?: (e: React.MouseEvent<HTMLDivElement>) => void;

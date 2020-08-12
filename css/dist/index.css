@@ -1649,7 +1649,6 @@ body {
     border-radius: var(--spacing-m);
 }
 .DropdownButton {
-    min-width: var(--spacing-7);
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -1848,37 +1847,35 @@ body {
     /* overflow-y: scroll; */
 }
 
+.Grid-rowWrapper {
+    display: inline-flex;
+    flex-direction: column;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
 .Grid-row {
-    box-sizing: border-box;
     display: flex;
     flex-grow: 1;
     flex-shrink: 0;
+    box-sizing: border-box;
     background: var(--white);
+    border-bottom: var(--border);
+}
+
+.Grid-row--body {
+    border-color: var(--secondary-lightest);
+}
+
+.Grid-rowWrapper:last-child .Grid-row--body {
+    border-bottom: 0;
 }
 
 .GridBody-padding {
     flex-shrink: 0;
-}
-
-.Grid-row {
-    min-width: -webkit-fit-content;
-    min-width: -moz-fit-content;
-    min-width: fit-content;
-    border-bottom: var(--border);
-}
-
-.Grid-row--body:last-child {
-    border-bottom: 0;
-}
-
-.Grid-checkboxCell {
-    /* position: sticky !important;
-    left: 0; */
-    display: flex;
-    align-items: center;
-    z-index: 1;
-    padding-right: 0 !important;
-    overflow: visible !important;
 }
 
 .Grid-nestedRowTrigger {
@@ -1893,7 +1890,6 @@ body {
 
 .Grid-cell {
     position: relative;
-    flex-shrink: 0;
     overflow: hidden;
     box-sizing: border-box;
     padding-left: var(--spacing-l);
@@ -1929,6 +1925,16 @@ body {
 
 .Grid-cell--head.Grid-cell--selected {
     background: var(--primary-light);
+}
+
+.Grid-cell--checkbox {
+    width: unset;
+    min-width: unset;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    padding-right: 0 !important;
+    overflow: visible !important;
 }
 
 .Grid-sortingIcons {
@@ -2024,22 +2030,26 @@ body {
 .GridCell {
     display: flex;
     align-items: center;
-    height: 100%;
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
 }
 
 .GridCell--align-left {
-    flex-direction: row;
+    /* flex-direction: row; */
+    justify-content: flex-start;
+    text-align: left;
 }
 
 .GridCell--align-right {
-    flex-direction: row-reverse;
+    /* flex-direction: row-reverse; */
+    justify-content: flex-end;
+    text-align: right;
 }
 
 .GridCell--align-center {
     justify-content: center;
+    text-align: center;
 }
 
 .GridCell--default {}
@@ -2583,7 +2593,7 @@ body {
 .Modal-body {
   padding: 0 var(--spacing-2);
   max-height: 480px;
-  overflow-y: scroll;
+  overflow-y: auto;
   margin-bottom: var(--spacing-5);
 }
 
@@ -2626,7 +2636,7 @@ body {
 
 .Navigation-body {
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   padding-right: var(--spacing);
 }

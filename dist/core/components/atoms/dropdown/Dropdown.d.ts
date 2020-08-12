@@ -6,6 +6,13 @@ declare type fetchOptionsFunction = (searchTerm: string) => Promise<{
     count: number;
     options: Option[];
 }>;
+export declare type EventType = 'select-option' | 'deselect-option' | 'select-all' | 'deselect-all' | 'clear-all' | 'apply-selected' | 'cancel-selected';
+interface ControlledProps {
+    selected?: Option[];
+    onUpdate?: (type: EventType, options?: Option | Option[], recentSelected?: Option[]) => void;
+    open?: boolean;
+    onPopperToggle?: (open: boolean, type?: string) => void;
+}
 interface SyncProps {
     options?: Option[];
     loading?: boolean;
@@ -28,7 +35,9 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
 }
 declare type SyncDropdownProps = SyncProps & SharedDropdownProps;
 declare type AsyncDropdownProps = AsyncProps & SharedDropdownProps;
-export declare type DropdownProps = (SyncDropdownProps & AsyncDropdownProps);
+export declare type UncontrolledDropdownProps = (SyncDropdownProps & AsyncDropdownProps);
+export declare type ControlledDropdownProps = (ControlledProps & SyncDropdownProps & AsyncDropdownProps);
+export declare type DropdownProps = (ControlledDropdownProps & UncontrolledDropdownProps);
 interface DropdownState {
     async: boolean;
     searchInit: boolean;
@@ -57,8 +66,10 @@ export declare class Dropdown extends React.Component<DropdownProps, DropdownSta
     getSelectedOptions: (options: Option[], init: boolean) => Option[];
     updateOptions: (init: boolean, async?: boolean | undefined) => void;
     updateSearchTerm: (search: string) => void;
-    onOptionSelect: (selectedArray: Option) => void;
+    updateOnPopperToggle: () => void;
     updateTriggerLabel: (selectedArray?: Selected[], totalOptions?: number | undefined) => string;
+    updateSelectedOptions: (selectedArray: Option[], isControlled?: boolean | undefined) => void;
+    onOptionSelect: (option: Option) => void;
     onSelect: (option: Option, checked: boolean) => void;
     onSelectAll: (event: ChangeEvent) => void;
     debounceSearch: import("throttle-debounce").throttle<() => void>;
@@ -66,7 +77,7 @@ export declare class Dropdown extends React.Component<DropdownProps, DropdownSta
     onClearOptions: () => void;
     onCancelOptions: () => void;
     onApplyOptions: () => void;
-    onToggleDropdown: () => void;
+    onToggleDropdown: (updatedOpen: boolean, type?: string | undefined) => void;
     render(): JSX.Element;
 }
 export default Dropdown;

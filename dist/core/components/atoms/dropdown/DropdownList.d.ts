@@ -46,7 +46,7 @@ interface OptionsProps extends DropdownListProps, BaseProps {
     customTrigger?: (label: string) => React.ReactElement;
     applyOptions: () => void;
     cancelOptions: () => void;
-    toggleDropdown: () => void;
+    toggleDropdown: (open: boolean, type?: string) => void;
     onClearOptions: () => void;
     onSelectAll: (event: ChangeEvent) => void;
     onSearchChange?: (searchText: string) => void;

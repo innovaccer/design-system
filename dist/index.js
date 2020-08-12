@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1596006886219 
+   * Generated on: 1597231903725 
    *      Package: @innovaccer/design-system
-   *      Version: v1.1.0-2
+   *      Version: v1.1.0-3
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -345,6 +345,15 @@
       return arr1.length === arr2.length && arr1.every(function (option, index) {
         return option.value === arr2[index].value || option.label === arr2[index].label;
       });
+    };
+    var _isControlled = function _isControlled(selected) {
+      return selected !== undefined;
+    };
+    var _isOpenControlled = function _isOpenControlled(open, selected) {
+      return open !== undefined && selected !== undefined;
+    };
+    var _showSelectedItems = function _showSelectedItems(bulk, searchTerm, withCheckbox) {
+      return bulk && withCheckbox && searchTerm === '';
     };
     var scrollTo = function scrollTo(element, top) {
       element.scrollTo(0, top);
@@ -748,7 +757,7 @@
         name: icon
       }), /*#__PURE__*/React.createElement("div", {
         className: 'DropdownButton-text'
-      }, value && "" + value.charAt(0).toUpperCase() + value.slice(1))), /*#__PURE__*/React.createElement(Icon, {
+      }, value && "" + value)), /*#__PURE__*/React.createElement(Icon, {
         appearance: buttonDisabled,
         name: iconName
       }));
@@ -786,6 +795,17 @@
       }), children);
     };
     Text.displayName = 'Text';
+
+    var uidGenerator = function uidGenerator() {
+      var dt = new Date().getTime();
+      var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = (dt + Math.random() * 16) % 16 | 0;
+        dt = Math.floor(dt / 16);
+        var s = (c === 'x' ? r : r & 0x3 | 0x8).toString(16);
+        return s;
+      });
+      return uuid;
+    };
 
     var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
       var _a, _b, _c, _d, _e;
@@ -839,6 +859,7 @@
         if (onChange) onChange(e);
       };
 
+      var id = name + "-" + label + "-" + uidGenerator();
       var IconName = indeterminate ? 'remove' : checked ? 'check' : '';
       var IconSize = size === 'tiny' ? 8 : 16;
       return /*#__PURE__*/React.createElement("div", {
@@ -856,7 +877,7 @@
         value: value,
         className: CheckboxInputWrapper,
         tabIndex: tabIndex,
-        id: label
+        id: id
       })), /*#__PURE__*/React.createElement("span", {
         className: CheckboxWrapper
       }, IconName && /*#__PURE__*/React.createElement(Icon, {
@@ -864,7 +885,7 @@
         size: IconSize,
         appearance: 'white'
       }))), label && label.trim() && /*#__PURE__*/React.createElement("label", {
-        htmlFor: label,
+        htmlFor: id,
         className: CheckboxTextClass
       }, /*#__PURE__*/React.createElement(Text, {
         small: size === 'tiny'
@@ -1169,7 +1190,7 @@
         name: icon,
         appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? 'default' : 'white',
         size: sizeMapping[size]
-      })), children && "" + children.charAt(0).toUpperCase() + children.slice(1));
+      })), children);
     });
     Button.displayName = 'Button';
 
@@ -1439,7 +1460,6 @@
           var popoverWidth = props.width ? props.width : ((_a = dropdownElement === null || dropdownElement === void 0 ? void 0 : dropdownElement.parentElement) === null || _a === void 0 ? void 0 : _a.clientWidth) + "px";
           var popperWrapperStyle = {
             width: menu || customTrigger ? popoverWidth : (dropdownElement === null || dropdownElement === void 0 ? void 0 : dropdownElement.clientWidth) + "px",
-            minWidth: showApplyButton && withCheckbox ? '176px' : '128px',
             maxWidth: maxWidth ? maxWidth : '100%'
           };
           setPopoverStyle(popperWrapperStyle);
@@ -1493,10 +1513,10 @@
       var dropdownWrapperClass = classNames((_b = {}, _b['Dropdown-wrapper'] = true, _b['Dropdown-wrapper--wrap'] = !truncateOption, _b));
       var SelectAllClass = classNames((_c = {}, _c['Option'] = true, _c['Option--withCheckbox'] = true, _c['Option-wrapper'] = true, _c['Option--active'] = cursor === 0, _c));
 
-      var onToggleDropdown = function onToggleDropdown() {
+      var onToggleDropdown = function onToggleDropdown(open, type) {
         var _a;
 
-        toggleDropdown();
+        toggleDropdown(open, type);
         if (!disabled) (_a = dropdownTriggerRef.current) === null || _a === void 0 ? void 0 : _a.focus();
         setCursor(0);
       };
@@ -1724,12 +1744,12 @@
         switch (event.key) {
           case 'ArrowDown':
             event.preventDefault();
-            dropdownOpen ? focusOption('down', optionClass) : onToggleDropdown();
+            dropdownOpen ? focusOption('down', optionClass) : onToggleDropdown(!dropdownOpen);
             break;
 
           case 'ArrowUp':
             event.preventDefault();
-            dropdownOpen ? focusOption('up', optionClass) : onToggleDropdown();
+            dropdownOpen ? focusOption('up', optionClass) : onToggleDropdown(!dropdownOpen);
             break;
 
           case 'Enter':
@@ -1743,13 +1763,13 @@
               if (element) element.click();
             }
 
-            if (!dropdownOpen) onToggleDropdown();
+            if (!dropdownOpen) onToggleDropdown(!dropdownOpen);
             break;
 
           case 'Tab':
             if (!showApplyButton && dropdownOpen) {
               event.preventDefault();
-              onToggleDropdown();
+              onToggleDropdown(false, 'onClick');
               return;
             }
 
@@ -1758,7 +1778,7 @@
 
             if ((currentElement === dropdownCancelButtonRef.current && disabledApplyButton || currentElement === dropdownApplyButtonRef.current) && dropdownOpen) {
               event.preventDefault();
-              onToggleDropdown();
+              onToggleDropdown(false, 'onClick');
               return;
             }
 
@@ -1818,10 +1838,20 @@
 
         _this.getUnSelectedOptions = function (options, init) {
           if (options.length) {
+            if (!init) {
+              return options.filter(function (option) {
+                return _this.state.tempSelected.findIndex(function (item) {
+                  return item.value === option.value;
+                }) === -1;
+              });
+            }
+
+            var _a = _this.props.selected,
+                selected_1 = _a === void 0 ? [] : _a;
             var unSelectedGroup = options.filter(function (option) {
-              return init ? !option.selected : _this.state.tempSelected.findIndex(function (item) {
+              return _isControlled(_this.props.selected) ? selected_1.findIndex(function (item) {
                 return item.value === option.value;
-              }) === -1;
+              }) === -1 : !option.selected;
             });
             return unSelectedGroup;
           }
@@ -1830,10 +1860,14 @@
         };
 
         _this.getSelectedOptions = function (options, init) {
+          var _a = _this.props.selected,
+              selected = _a === void 0 ? [] : _a;
+
           if (options.length) {
-            var selectedGroup = init ? options.filter(function (option) {
+            if (!init) return _this.state.tempSelected;
+            var selectedGroup = _isControlled(_this.props.selected) ? selected : options.filter(function (option) {
               return option.selected;
-            }) : _this.state.tempSelected;
+            });
             return selectedGroup;
           }
 
@@ -1843,8 +1877,8 @@
         _this.updateOptions = function (init, async) {
           var _a = _this.state,
               searchTerm = _a.searchTerm,
+              selectAll = _a.selectAll,
               tempSelected = _a.tempSelected,
-              optionsLength = _a.optionsLength,
               previousSelected = _a.previousSelected;
           var updatedAsync = async === undefined ? _this.state.async : async;
           var _b = _this.props,
@@ -1858,19 +1892,21 @@
             var options = res.options,
                 count = res.count;
             updatedAsync = searchTerm === '' ? count > bulk : updatedAsync;
-            var unSelectedGroup = withCheckbox && searchTerm === '' && updatedAsync ? _this.getUnSelectedOptions(options, init) : options;
+            var unSelectedGroup = _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? _this.getUnSelectedOptions(options, init) : options;
             var selectedGroup = searchTerm === '' ? _this.getSelectedOptions(options, init) : [];
+            var optionsLength = searchTerm === '' ? count : _this.state.optionsLength;
 
             _this.setState(__assign(__assign({}, _this.state), {
+              optionsLength: optionsLength,
               loading: false,
               async: updatedAsync,
               searchedOptionsLength: count,
               options: unSelectedGroup.slice(0, bulk),
-              selected: withCheckbox && updatedAsync ? selectedGroup : [],
-              optionsLength: searchTerm === '' ? count : optionsLength,
               tempSelected: init ? selectedGroup : tempSelected,
               previousSelected: init ? selectedGroup : previousSelected,
-              triggerLabel: _this.updateTriggerLabel(init ? selectedGroup : tempSelected)
+              selected: _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? selectedGroup : [],
+              triggerLabel: _this.updateTriggerLabel(init ? selectedGroup : tempSelected),
+              selectAll: !updatedAsync && init ? getSelectAll(selectedGroup, optionsLength) : selectAll
             }));
 
             if (updatedAsync || withSearch) (_a = inputRef.current) === null || _a === void 0 ? void 0 : _a.focus();
@@ -1885,19 +1921,48 @@
           }));
         };
 
-        _this.onOptionSelect = function (selectedArray) {
+        _this.updateOnPopperToggle = function () {
           var _a = _this.props,
-              onChange = _a.onChange,
-              closeOnSelect = _a.closeOnSelect;
-          var label = selectedArray.label;
+              withCheckbox = _a.withCheckbox,
+              showApplyButton = _a.showApplyButton,
+              _b = _a.selected,
+              selected = _b === void 0 ? [] : _b;
+          var _c = _this.state,
+              previousSelected = _c.previousSelected,
+              tempSelected = _c.tempSelected,
+              optionsLength = _c.optionsLength,
+              async = _c.async,
+              loading = _c.loading,
+              searchTerm = _c.searchTerm;
+          var popperIsOpen = _isOpenControlled(_this.props.open, _this.props.selected) ? _this.props.open : _this.state.open;
 
-          _this.setState(__assign(__assign({}, _this.state), {
-            tempSelected: [selectedArray],
-            triggerLabel: label,
-            open: !closeOnSelect
-          }));
+          if (withCheckbox && showApplyButton) {
+            var temporarySelected = _isControlled(_this.props.selected) ? selected : previousSelected;
 
-          if (onChange) onChange(selectedArray.value, name);
+            _this.setState({
+              tempSelected: temporarySelected,
+              selectAll: getSelectAll(temporarySelected, optionsLength),
+              triggerLabel: _this.updateTriggerLabel(temporarySelected)
+            });
+          }
+
+          if (_isOpenControlled(_this.props.open, _this.props.selected)) {
+            _this.setState({
+              open: popperIsOpen
+            });
+          }
+
+          if (popperIsOpen) {
+            var moveSelectedGroup = _showSelectedItems(async, searchTerm, withCheckbox) && !_isEqual(_this.state.selected, tempSelected);
+
+            _this.setState({
+              loading: moveSelectedGroup || loading || searchTerm !== '',
+              searchInit: searchTerm !== '',
+              searchTerm: ''
+            });
+
+            if (moveSelectedGroup) _this.updateOptions(false);
+          }
         };
 
         _this.updateTriggerLabel = function (selectedArray, totalOptions) {
@@ -1926,13 +1991,66 @@
           return label;
         };
 
-        _this.onSelect = function (option, checked) {
+        _this.updateSelectedOptions = function (selectedArray, isControlled) {
           var _a = _this.state,
-              tempSelected = _a.tempSelected,
-              optionsLength = _a.optionsLength;
+              optionsLength = _a.optionsLength,
+              previousSelected = _a.previousSelected,
+              selected = _a.selected,
+              loading = _a.loading,
+              open = _a.open;
           var _b = _this.props,
               onChange = _b.onChange,
-              showApplyButton = _b.showApplyButton;
+              withCheckbox = _b.withCheckbox,
+              showApplyButton = _b.showApplyButton,
+              closeOnSelect = _b.closeOnSelect;
+          var isClearClicked = selectedArray.length === 0 && selected.length > 0;
+          var updatePreviousSelected = withCheckbox && showApplyButton && isControlled;
+
+          _this.setState(__assign(__assign({}, _this.state), {
+            tempSelected: selectedArray,
+            triggerLabel: _this.updateTriggerLabel(selectedArray),
+            selectAll: getSelectAll(selectedArray, optionsLength),
+            open: _isOpenControlled(_this.props.open, _this.props.selected) || withCheckbox ? open : !closeOnSelect,
+            previousSelected: updatePreviousSelected ? selectedArray : previousSelected,
+            selected: isClearClicked ? selectedArray : selected,
+            loading: isClearClicked ? true : loading
+          }));
+
+          if (isClearClicked) _this.debounceClear();
+
+          if (onChange && (!showApplyButton || isControlled)) {
+            var values = selectedArray.map(function (item) {
+              return item.value;
+            });
+            onChange(values, name);
+          }
+        };
+
+        _this.onOptionSelect = function (option) {
+          var _a = _this.props,
+              onUpdate = _a.onUpdate,
+              selected = _a.selected;
+
+          if (_isControlled(selected)) {
+            if (onUpdate) onUpdate('select-option', option);
+            return;
+          }
+
+          _this.updateSelectedOptions([option]);
+        };
+
+        _this.onSelect = function (option, checked) {
+          var _a = _this.props,
+              onUpdate = _a.onUpdate,
+              selected = _a.selected,
+              showApplyButton = _a.showApplyButton;
+
+          if (_isControlled(selected) && !showApplyButton) {
+            if (onUpdate) onUpdate(checked ? 'select-option' : 'deselect-option', option);
+            return;
+          }
+
+          var tempSelected = _this.state.tempSelected;
           var selectedArray = tempSelected.slice();
 
           if (!checked) {
@@ -1944,41 +2062,23 @@
 
           selectedArray = checked ? selectedArray.concat(option) : selectedArray;
 
-          _this.setState(__assign(__assign({}, _this.state), {
-            tempSelected: selectedArray,
-            triggerLabel: _this.updateTriggerLabel(selectedArray),
-            selectAll: getSelectAll(selectedArray, optionsLength)
-          }));
-
-          if (onChange && !showApplyButton) {
-            var values = selectedArray.map(function (item) {
-              return item.value;
-            });
-            onChange(values, name);
-          }
+          _this.updateSelectedOptions(selectedArray);
         };
 
         _this.onSelectAll = function (event) {
           var _a = _this.props,
-              onChange = _a.onChange,
+              onUpdate = _a.onUpdate,
+              selected = _a.selected,
               showApplyButton = _a.showApplyButton;
-          var _b = _this.state,
-              options = _b.options,
-              optionsLength = _b.optionsLength;
-          var selectedArray = event.target.checked ? options : [];
 
-          _this.setState(__assign(__assign({}, _this.state), {
-            tempSelected: selectedArray,
-            triggerLabel: _this.updateTriggerLabel(selectedArray),
-            selectAll: getSelectAll(selectedArray, optionsLength)
-          }));
-
-          if (onChange && !showApplyButton) {
-            var values = selectedArray.map(function (option) {
-              return option.value;
-            });
-            onChange(values, name);
+          if (_isControlled(selected) && !showApplyButton) {
+            if (onUpdate) onUpdate(event.target.checked ? 'select-all' : 'deselect-all');
+            return;
           }
+
+          var selectedArray = event.target.checked ? _this.state.options : [];
+
+          _this.updateSelectedOptions(selectedArray);
         };
 
         _this.debounceSearch = debounce(300, function () {
@@ -1988,14 +2088,21 @@
             _this.updateOptions(false);
           });
         });
-        _this.debounceClear = debounce(100, function () {
+        _this.debounceClear = debounce(250, function () {
           return _this.updateOptions(false);
         });
 
         _this.onClearOptions = function () {
           var _a = _this.props,
-              onChange = _a.onChange,
-              showApplyButton = _a.showApplyButton;
+              selected = _a.selected,
+              onUpdate = _a.onUpdate,
+              showApplyButton = _a.showApplyButton,
+              onChange = _a.onChange;
+
+          if (_isControlled(selected) && !showApplyButton) {
+            if (onUpdate) onUpdate('clear-all');
+            return;
+          }
 
           _this.setState({
             selected: [],
@@ -2012,7 +2119,16 @@
         _this.onCancelOptions = function () {
           var _a = _this.state,
               previousSelected = _a.previousSelected,
+              tempSelected = _a.tempSelected,
               optionsLength = _a.optionsLength;
+          var _b = _this.props,
+              selected = _b.selected,
+              onUpdate = _b.onUpdate;
+
+          if (_isControlled(selected)) {
+            if (onUpdate) onUpdate('cancel-selected', previousSelected, tempSelected);
+            return;
+          }
 
           var label = _this.updateTriggerLabel(previousSelected);
 
@@ -2033,10 +2149,19 @@
         };
 
         _this.onApplyOptions = function () {
-          var tempSelected = _this.state.tempSelected;
-          var _a = _this.props,
-              onChange = _a.onChange,
-              onClose = _a.onClose;
+          var _a = _this.state,
+              tempSelected = _a.tempSelected,
+              previousSelected = _a.previousSelected;
+          var _b = _this.props,
+              onChange = _b.onChange,
+              onClose = _b.onClose,
+              selected = _b.selected,
+              onUpdate = _b.onUpdate;
+
+          if (_isControlled(selected)) {
+            if (onUpdate) onUpdate('apply-selected', previousSelected, tempSelected);
+            return;
+          }
 
           _this.setState(__assign(__assign({}, _this.state), {
             previousSelected: tempSelected,
@@ -2057,7 +2182,7 @@
           }
         };
 
-        _this.onToggleDropdown = function () {
+        _this.onToggleDropdown = function (updatedOpen, type) {
           if (_this.props.disabled) {
             return;
           }
@@ -2066,37 +2191,23 @@
               showApplyButton = _a.showApplyButton,
               withCheckbox = _a.withCheckbox,
               onClose = _a.onClose,
-              name = _a.name;
-          var _b = _this.state,
-              triggerLabel = _b.triggerLabel,
-              optionsApplied = _b.optionsApplied,
-              previousSelected = _b.previousSelected,
-              tempSelected = _b.tempSelected,
-              optionsLength = _b.optionsLength,
-              open = _b.open,
-              async = _b.async,
-              selected = _b.selected,
-              loading = _b.loading,
-              selectAll = _b.selectAll,
-              searchTerm = _b.searchTerm;
-          var applyClicked = withCheckbox && showApplyButton && !optionsApplied;
-          var moveSelectedGroup = async && searchTerm === '' && withCheckbox && !_isEqual(selected, tempSelected);
+              name = _a.name,
+              onPopperToggle = _a.onPopperToggle;
 
-          _this.setState(__assign(__assign({}, _this.state), {
-            tempSelected: applyClicked ? previousSelected : tempSelected,
-            selectAll: applyClicked ? getSelectAll(previousSelected, optionsLength) : selectAll,
-            triggerLabel: applyClicked ? _this.updateTriggerLabel(previousSelected) : triggerLabel,
-            open: !open,
-            optionsApplied: false,
-            loading: moveSelectedGroup || loading || searchTerm !== '',
-            searchInit: searchTerm !== '',
-            searchTerm: ''
-          }));
+          if (onPopperToggle && _isOpenControlled(_this.props.open, _this.props.selected)) {
+            onPopperToggle(updatedOpen, type);
+            return;
+          }
 
-          if (moveSelectedGroup) _this.updateOptions(false);
+          var isPopperOpen = _isOpenControlled(_this.props.open, _this.props.selected) ? _this.state.open : updatedOpen;
+          var isCloseEvent = type === 'outsideClick' || type === 'onClick' && !isPopperOpen;
 
-          if (onClose && open) {
-            var arr = applyClicked ? previousSelected : tempSelected;
+          _this.setState({
+            open: isPopperOpen
+          });
+
+          if (onClose && isCloseEvent) {
+            var arr = withCheckbox && showApplyButton ? _this.state.previousSelected : _this.state.tempSelected;
             var values = arr.map(function (option) {
               return option.value;
             });
@@ -2105,24 +2216,31 @@
         };
 
         var totalOptions = props.totalOptions,
-            loading = props.loading,
-            _a = props.options,
-            options = _a === void 0 ? [] : _a;
+            withCheckbox = props.withCheckbox,
+            _a = props.loading,
+            loading = _a === void 0 ? false : _a,
+            _b = props.open,
+            open = _b === void 0 ? false : _b,
+            _c = props.selected,
+            selected = _c === void 0 ? [] : _c,
+            _d = props.options,
+            options = _d === void 0 ? [] : _d;
         var optionsLength = totalOptions ? totalOptions : options.length;
         var async = 'fetchOptions' in _this.props || optionsLength > bulk;
         var selectedGroup = !async ? _this.getSelectedOptions(options, true) : [];
         _this.state = {
           async: async,
           optionsLength: optionsLength,
+          open: open,
           searchInit: false,
           searchedOptionsLength: optionsLength,
           optionsApplied: false,
           options: options || [],
           loading: async ? true : loading,
           searchTerm: '',
-          selected: [],
           tempSelected: selectedGroup,
           previousSelected: selectedGroup,
+          selected: _showSelectedItems(async, '', withCheckbox) ? selected : [],
           triggerLabel: _this.updateTriggerLabel(selectedGroup, optionsLength),
           selectAll: getSelectAll(selectedGroup, optionsLength)
         };
@@ -2161,6 +2279,15 @@
           }
         }
 
+        if (this.props.selected !== undefined && prevProps.selected !== this.props.selected && prevProps.loading === this.props.loading) {
+          this.updateSelectedOptions(this.props.selected, true);
+        }
+
+        if (prevProps.open !== this.props.open || prevState.open !== this.state.open) {
+          if (_isOpenControlled(this.props.open, this.props.selected) && this.props.open === this.state.open) return;
+          this.updateOnPopperToggle();
+        }
+
         if (prevState.searchTerm !== this.state.searchTerm) {
           this.debounceSearch();
         }
@@ -2177,14 +2304,14 @@
             searchedOptionsLength = _a.searchedOptionsLength,
             tempSelected = _a.tempSelected,
             selectAll = _a.selectAll,
-            selected = _a.selected,
             triggerLabel = _a.triggerLabel,
             previousSelected = _a.previousSelected;
 
         var _b = this.props,
             _c = _b.triggerOptions,
             triggerOptions = _c === void 0 ? {} : _c,
-            rest = __rest(_b, ["triggerOptions"]);
+            selected = _b.selected,
+            rest = __rest(_b, ["triggerOptions", "selected"]);
 
         var remainingOptionsLen = searchedOptionsLength - options.length;
         return /*#__PURE__*/React.createElement(DropdownList, __assign({
@@ -2199,7 +2326,7 @@
           triggerLabel: triggerLabel,
           tempSelected: tempSelected,
           previousSelected: previousSelected,
-          selected: selected,
+          selected: this.state.selected,
           applyOptions: this.onApplyOptions,
           cancelOptions: this.onCancelOptions,
           toggleDropdown: this.onToggleDropdown,
@@ -4123,6 +4250,7 @@
         if (onChange) onChange(event);
       };
 
+      var id = name + "-" + label + "-" + uidGenerator();
       return /*#__PURE__*/React.createElement("div", {
         className: RadioClass
       }, /*#__PURE__*/React.createElement("div", {
@@ -4136,12 +4264,12 @@
         value: value,
         onChange: onChangeHandler,
         className: "Radio-input",
-        id: value
+        id: id
       })), /*#__PURE__*/React.createElement("span", {
         className: RadioWrapper
       })), label && /*#__PURE__*/React.createElement("label", {
         className: "Radio-label",
-        htmlFor: value
+        htmlFor: id
       }, /*#__PURE__*/React.createElement(Text, {
         small: size === 'tiny'
       }, label)));
@@ -5277,6 +5405,34 @@
       };
       this.updateColumnSchema(name, schemaUpdate);
     }
+    function getCellSize(cellType) {
+      var sizes = {
+        AVATAR: {
+          width: 50,
+          minWidth: 50
+        },
+        AVATAR_WITH_TEXT: {
+          width: 250
+        },
+        AVATAR_WITH_META_LIST: {
+          width: 250
+        },
+        ICON: {
+          width: 50,
+          minWidth: 50
+        },
+        STATUS_HINT: {
+          width: 100
+        },
+        WITH_META_LIST: {
+          width: 200
+        },
+        DEFAULT: {
+          width: 200
+        }
+      };
+      return sizes[cellType];
+    }
 
     var updateBatchData = function updateBatchData(data, rowIndexes, dataUpdate) {
       var updatedData = __spreadArrays(data);
@@ -5437,7 +5593,7 @@
           return /*#__PURE__*/React.createElement(Tooltip, {
             tooltip: children,
             position: 'top-start',
-            triggerClass: "overflow-hidden"
+            triggerClass: "w-100 overflow-hidden"
           }, /*#__PURE__*/React.createElement(Text, {
             className: "w-100 ellipsis"
           }, children));
@@ -5486,7 +5642,9 @@
       }
 
       if (title) {
-        return /*#__PURE__*/React.createElement(Avatar, null, title);
+        return /*#__PURE__*/React.createElement(Avatar, {
+          className: "mr-5"
+        }, title);
       }
 
       return null;
@@ -5538,52 +5696,41 @@
 
       switch (cellType) {
         case 'DEFAULT':
-          if (loading) {
-            return /*#__PURE__*/React.createElement(Placeholder, {
-              withImage: false
-            }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
-              length: "medium"
-            }));
-          }
-
           return /*#__PURE__*/React.createElement("div", {
             className: cellClass + " GridCell--align-" + align + " GridCell--default"
-          }, renderTitle({
+          }, loading ? /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+            length: "medium"
+          }) : renderTitle({
             tooltip: tooltip,
             cellData: cellData
           }));
 
         case 'WITH_META_LIST':
-          if (loading) {
-            return /*#__PURE__*/React.createElement(Placeholder, {
-              withImage: false
-            }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
-              length: "medium"
-            }), /*#__PURE__*/React.createElement(PlaceholderParagraph, {
-              length: "large",
-              size: "xxs"
-            }));
-          }
-
           return /*#__PURE__*/React.createElement("div", {
-            className: cellClass + " GridCell--align-" + align + " GridCell--metaList"
-          }, renderTitle({
+            className: cellClass + " GridCell--metaList"
+          }, loading ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+            length: "medium"
+          }), /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+            length: "large",
+            size: "xxs"
+          })) : /*#__PURE__*/React.createElement(React.Fragment, null, renderTitle({
             tooltip: tooltip,
             cellData: cellData
           }), renderMetaList({
             cellData: cellData
-          }));
+          })));
 
         case 'AVATAR':
           if (loading) {
             return /*#__PURE__*/React.createElement(Placeholder, {
+              className: "GridCell--align-" + align,
               imageSize: 'medium',
               round: true
             });
           }
 
           return /*#__PURE__*/React.createElement("div", {
-            className: cellClass + " GridCell--avatar"
+            className: cellClass + " GridCell--align-" + align + " GridCell--avatar"
           }, size !== 'tight' && renderAvatar({
             cellData: cellData
           }));
@@ -5593,13 +5740,10 @@
             return /*#__PURE__*/React.createElement(Placeholder, {
               imageSize: 'medium',
               round: true
-            }, /*#__PURE__*/React.createElement("span", {
-              style: {
-                marginLeft: 'var(--spacing-m)'
-              }
             }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+              className: "ml-3",
               length: "medium"
-            })));
+            }));
           }
 
           return /*#__PURE__*/React.createElement("div", {
@@ -5616,15 +5760,13 @@
             return /*#__PURE__*/React.createElement(Placeholder, {
               imageSize: 'medium',
               round: true
-            }, /*#__PURE__*/React.createElement("span", {
-              style: {
-                marginLeft: 'var(--spacing-m)'
-              }
             }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+              className: "ml-3",
               length: "medium"
             }), /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+              className: "ml-3",
               length: "large"
-            })));
+            }));
           }
 
           return /*#__PURE__*/React.createElement("div", {
@@ -5643,6 +5785,7 @@
         case 'ICON':
           if (loading) {
             return /*#__PURE__*/React.createElement(Placeholder, {
+              className: "GridCell--align-" + align,
               imageSize: 'small',
               round: true
             });
@@ -5655,18 +5798,15 @@
           }));
 
         case 'STATUS_HINT':
-          if (loading) {
-            return /*#__PURE__*/React.createElement(Placeholder, {
-              imageSize: 'small',
-              round: true
-            }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
-              length: "medium"
-            }));
-          }
-
           return /*#__PURE__*/React.createElement("div", {
             className: cellClass + " GridCell--align-" + align + " GridCell--statusHint"
-          }, renderStatusHint({
+          }, loading ? /*#__PURE__*/React.createElement(Placeholder, {
+            className: "w-75 flex-grow-0",
+            imageSize: 'small',
+            round: true
+          }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+            length: "large"
+          })) : renderStatusHint({
             cellData: cellData
           }));
       }
@@ -5865,21 +6005,35 @@
           data = props.data,
           rowIndex = props.rowIndex;
       var nestedRows = _this.props.nestedRows;
+      var name = schema.name,
+          separator = schema.separator,
+          hidden = schema.hidden,
+          pinned = schema.pinned,
+          _a = schema.cellType,
+          cellType = _a === void 0 ? 'DEFAULT' : _a;
+
+      var _b = getCellSize(cellType),
+          width = _b.width,
+          _c = _b.minWidth,
+          minWidth = _c === void 0 ? 100 : _c,
+          _d = _b.maxWidth,
+          maxWidth = _d === void 0 ? 800 : _d;
+
       var cellClass = classNames({
         'Grid-cell': true,
         'Grid-cell--head': head,
         'Grid-cell--body': !head,
-        'Grid-cell--separator': !firstCell && schema.separator,
+        'Grid-cell--separator': !firstCell && separator,
         'Grid-cell--nestedRow': !head && colIndex === 0 && nestedRows
       });
-      if (schema.hidden) return null;
+      if (hidden) return null;
       return /*#__PURE__*/React.createElement("div", {
         key: rowIndex + "-" + colIndex,
         className: cellClass,
-        draggable: true,
+        draggable: head && draggable,
         onDragStart: function onDragStart(e) {
-          e.dataTransfer.setData('name', schema.name);
-          if (schema.pinned) e.dataTransfer.setData('type', schema.pinned);
+          e.dataTransfer.setData('name', name);
+          if (pinned) e.dataTransfer.setData('type', pinned);
         },
         onDragOver: function onDragOver(e) {
           return e.preventDefault();
@@ -5890,13 +6044,15 @@
             type: e.dataTransfer.getData('type')
           };
           var to = {
-            name: schema.name,
-            type: schema.pinned || ''
+            name: name,
+            type: pinned || ''
           };
           if (from.type === to.type) _this.reorderCol(from.name, to.name);
         },
         style: {
-          width: schema.width
+          width: schema.width || width,
+          minWidth: schema.minWidth || minWidth,
+          maxWidth: schema.maxWidth || maxWidth
         }
       }, head ? /*#__PURE__*/React.createElement(HeaderCell, {
         _this: _this,
@@ -5938,7 +6094,7 @@
       var renderCheckbox = function renderCheckbox(show) {
         if (!show || !withCheckbox) return null;
         return /*#__PURE__*/React.createElement("div", {
-          className: "Grid-cell Grid-cell--head Grid-checkboxCell"
+          className: "Grid-cell Grid-cell--head Grid-cell--checkbox"
         }, loading ? /*#__PURE__*/React.createElement(Placeholder, null) : /*#__PURE__*/React.createElement(Checkbox, __assign({}, selectAll, {
           onChange: _this.onSelectAll
         })));
@@ -6002,6 +6158,7 @@
           data = props.data,
           withCheckbox = props.withCheckbox,
           rI = props.rowIndex;
+      var rowRef = React.useRef(null);
 
       var _a = React.useState(false),
           expanded = _a[0],
@@ -6042,7 +6199,7 @@
       var renderCheckbox = function renderCheckbox(show) {
         if (!show || !withCheckbox) return null;
         return /*#__PURE__*/React.createElement("div", {
-          className: "Grid-cell Grid-cell--body Grid-checkboxCell",
+          className: "Grid-cell Grid-cell--body Grid-cell--checkbox",
           onClick: function onClick(e) {
             return e.stopPropagation();
           }
@@ -6083,14 +6240,21 @@
         return null;
       };
 
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React.createElement("div", {
+        className: "Grid-rowWrapper"
+      }, /*#__PURE__*/React.createElement("div", {
         className: rowClasses,
-        onClick: onClickHandler
-      }, renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left'), renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length), renderSchema(rightPinnedSchema, false, 'right')), nestedRows && expanded && /*#__PURE__*/React.createElement(GridNestedRow, {
+        onClick: onClickHandler,
+        ref: rowRef
+      }, renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left'), renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length), renderSchema(rightPinnedSchema, false, 'right')), nestedRows && expanded && /*#__PURE__*/React.createElement("div", {
+        style: {
+          width: rowRef.current ? rowRef.current.clientWidth : 0
+        }
+      }, /*#__PURE__*/React.createElement(GridNestedRow, {
         _this: _this,
         data: data,
         rowIndex: rI
-      }));
+      })));
     };
 
     var GridBody = function GridBody(props) {
@@ -6673,6 +6837,18 @@
       dynamicColumn: true
     };
 
+    var defaultProps = {
+      type: 'data',
+      size: 'comfortable',
+      showHead: true,
+      showMenu: true,
+      multipleSorting: true,
+      headerOptions: {},
+      pageSize: 15,
+      loading: false,
+      draggable: true
+    };
+
     var Table = function (_super) {
       __extends(Table, _super);
 
@@ -6691,7 +6867,6 @@
           var _b = _this.state,
               async = _b.async,
               page = _b.page,
-              schema = _b.schema,
               sortingList = _b.sortingList,
               filterList = _b.filterList,
               searchTerm = _b.searchTerm;
@@ -6716,11 +6891,12 @@
             if (fetchData) {
               fetchData(opts).then(function (res) {
                 var data = res.data;
+                var schema = _this.state.schema.length ? _this.state.schema : res.schema;
 
                 _this.setState({
                   data: data,
+                  schema: schema,
                   selectAll: getSelectAll$1(data),
-                  schema: _this.state.schema.length ? _this.state.schema : res.schema,
                   totalRecords: res.count,
                   loading: false,
                   error: !data.length
@@ -6734,6 +6910,7 @@
               });
             }
           } else {
+            var schema = _this.state.schema;
             var filteredData = filterData(schema, dataProp, filterList);
             var searchedData = onSearch && opts.searchTerm !== undefined ? onSearch(filteredData, opts.searchTerm) : filteredData;
             var sortedData = sortData(schema, searchedData, sortingList);
@@ -6744,10 +6921,12 @@
               renderedData = paginateData(renderedData, page, pageSize);
             }
 
+            var renderedSchema = _this.state.schema.length ? _this.state.schema : schema;
+
             _this.setState({
               totalRecords: totalRecords,
               selectAll: getSelectAll$1(renderedData),
-              schema: _this.state.schema.length ? _this.state.schema : schema,
+              schema: renderedSchema,
               data: renderedData
             });
           }
@@ -6861,13 +7040,17 @@
       Table.prototype.componentDidUpdate = function (prevProps, prevState) {
         if (!this.state.async) {
           if (prevProps.loading !== this.props.loading || prevProps.error !== this.props.error) {
-            var data = this.props.data || [];
+            var _a = this.props,
+                _b = _a.data,
+                data = _b === void 0 ? [] : _b,
+                _c = _a.schema,
+                schema = _c === void 0 ? [] : _c;
             this.setState({
               data: data,
+              schema: schema,
               loading: this.props.loading || false,
               error: this.props.error || false,
               page: 1,
-              schema: this.props.schema || [],
               totalRecords: data.length || 0,
               sortingList: [],
               filterList: {},
@@ -6913,6 +7096,8 @@
             headerAttr = __rest(_b, ["children"]);
 
         var classes = className ? " " + className : '';
+        var totalRecords = this.state.totalRecords;
+        var totalPages = getTotalPages(totalRecords, pageSize);
         return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
           className: "Table" + classes
         }), withHeader && /*#__PURE__*/React.createElement("div", {
@@ -6942,7 +7127,7 @@
           draggable: draggable,
           nestedRows: nestedRows,
           nestedRowRenderer: nestedRowRenderer,
-          withPagination: withPagination,
+          withPagination: withPagination && totalPages > 1,
           paginationType: paginationType,
           pageSize: pageSize,
           loaderSchema: loaderSchema,
@@ -6952,17 +7137,7 @@
         }))));
       };
 
-      Table.defaultProps = {
-        type: 'data',
-        size: 'comfortable',
-        showHead: true,
-        showMenu: true,
-        multipleSorting: true,
-        headerOptions: {},
-        pageSize: 15,
-        loading: false,
-        draggable: true
-      };
+      Table.defaultProps = defaultProps;
       return Table;
     }(React.Component);
 

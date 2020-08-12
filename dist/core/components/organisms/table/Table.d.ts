@@ -35,9 +35,21 @@ interface SharedTableProps extends BaseProps {
     onSelect?: (rowIndexes: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean) => void;
     onPageChange?: GridProps['onPageChange'];
 }
+declare const defaultProps: {
+    type: string;
+    size: string;
+    showHead: boolean;
+    showMenu: boolean;
+    multipleSorting: boolean;
+    headerOptions: {};
+    pageSize: number;
+    loading: boolean;
+    draggable: boolean;
+};
+declare type DefaultProps = Readonly<typeof defaultProps>;
 export declare type SyncTableProps = SyncProps & SharedTableProps;
 export declare type AsyncTableProps = AsyncProps & SharedTableProps;
-export declare type TableProps = (AsyncTableProps & SyncTableProps);
+export declare type TableProps = (AsyncTableProps & SyncTableProps) & DefaultProps;
 interface TableState {
     async: boolean;
     data: GridProps['data'];

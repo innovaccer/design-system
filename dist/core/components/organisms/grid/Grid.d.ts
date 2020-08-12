@@ -37,7 +37,9 @@ export declare type CellType = 'DEFAULT' | 'WITH_META_LIST' | 'AVATAR' | 'AVATAR
 export declare type ColumnSchema = {
     name: string;
     displayName: string;
-    width: number;
+    width?: React.ReactText;
+    minWidth?: React.ReactText;
+    maxWidth?: React.ReactText;
     resizable?: boolean;
     sorting?: boolean;
     comparator?: Comparator;

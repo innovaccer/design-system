@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1596006885863 
+   * Generated on: 1597231903303 
    *      Package: @innovaccer/design-system
-   *      Version: v1.1.0-2
+   *      Version: v1.1.0-3
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -635,6 +635,15 @@ var _isEqual = function _isEqual(arr1, arr2) {
     return option.value === arr2[index].value || option.label === arr2[index].label;
   });
 };
+var _isControlled = function _isControlled(selected) {
+  return selected !== undefined;
+};
+var _isOpenControlled = function _isOpenControlled(open, selected) {
+  return open !== undefined && selected !== undefined;
+};
+var _showSelectedItems = function _showSelectedItems(bulk, searchTerm, withCheckbox) {
+  return bulk && withCheckbox && searchTerm === '';
+};
 var scrollTo = function scrollTo(element, top) {
   element.scrollTo(0, top);
 };
@@ -1057,7 +1066,7 @@ var DropdownButton = /*#__PURE__*/forwardRef(function (props, ref) {
     name: icon
   }), /*#__PURE__*/createElement("div", {
     className: 'DropdownButton-text'
-  }, value && "".concat(value.charAt(0).toUpperCase()).concat(value.slice(1)))), /*#__PURE__*/createElement(Icon, {
+  }, value && "".concat(value))), /*#__PURE__*/createElement(Icon, {
     appearance: buttonDisabled,
     name: iconName
   }));
@@ -1095,6 +1104,17 @@ var Text = function Text(props) {
   }), children);
 };
 Text.displayName = 'Text';
+
+var uidGenerator = function uidGenerator() {
+  var dt = new Date().getTime();
+  var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    var r = (dt + Math.random() * 16) % 16 | 0;
+    dt = Math.floor(dt / 16);
+    var s = (c === 'x' ? r : r & 0x3 | 0x8).toString(16);
+    return s;
+  });
+  return uuid;
+};
 
 /**
  * ######Checkbox has two types:
@@ -1154,6 +1174,7 @@ var Checkbox = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
     if (onChange) onChange(e);
   };
 
+  var id = "".concat(name, "-").concat(label, "-").concat(uidGenerator());
   var IconName = indeterminate ? 'remove' : checked ? 'check' : '';
   var IconSize = size === 'tiny' ? 8 : 16;
   return /*#__PURE__*/createElement("div", {
@@ -1171,7 +1192,7 @@ var Checkbox = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
     value: value,
     className: CheckboxInputWrapper,
     tabIndex: tabIndex,
-    id: label
+    id: id
   })), /*#__PURE__*/createElement("span", {
     className: CheckboxWrapper
   }, IconName && /*#__PURE__*/createElement(Icon, {
@@ -1179,7 +1200,7 @@ var Checkbox = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
     size: IconSize,
     appearance: 'white'
   }))), label && label.trim() && /*#__PURE__*/createElement("label", {
-    htmlFor: label,
+    htmlFor: id,
     className: CheckboxTextClass
   }, /*#__PURE__*/createElement(Text, {
     small: size === 'tiny'
@@ -1485,7 +1506,7 @@ var Button = /*#__PURE__*/forwardRef(function (props, ref) {
     name: icon,
     appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? 'default' : 'white',
     size: sizeMapping[size]
-  })), children && "".concat(children.charAt(0).toUpperCase()).concat(children.slice(1)));
+  })), children);
 });
 Button.displayName = 'Button';
 
@@ -1761,7 +1782,6 @@ var DropdownList = function DropdownList(props) {
       var popoverWidth = props.width ? props.width : "".concat(dropdownElement === null || dropdownElement === void 0 ? void 0 : (_dropdownElement$pare = dropdownElement.parentElement) === null || _dropdownElement$pare === void 0 ? void 0 : _dropdownElement$pare.clientWidth, "px");
       var popperWrapperStyle = {
         width: menu || customTrigger ? popoverWidth : "".concat(dropdownElement === null || dropdownElement === void 0 ? void 0 : dropdownElement.clientWidth, "px"),
-        minWidth: showApplyButton && withCheckbox ? '176px' : '128px',
         maxWidth: maxWidth ? maxWidth : '100%'
       };
       setPopoverStyle(popperWrapperStyle);
@@ -1813,10 +1833,10 @@ var DropdownList = function DropdownList(props) {
   var dropdownWrapperClass = classNames((_classNames4 = {}, _defineProperty(_classNames4, 'Dropdown-wrapper', true), _defineProperty(_classNames4, 'Dropdown-wrapper--wrap', !truncateOption), _classNames4));
   var SelectAllClass = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'Option', true), _defineProperty(_classNames5, 'Option--withCheckbox', true), _defineProperty(_classNames5, 'Option-wrapper', true), _defineProperty(_classNames5, 'Option--active', cursor === 0), _classNames5));
 
-  var onToggleDropdown = function onToggleDropdown() {
+  var onToggleDropdown = function onToggleDropdown(open, type) {
     var _dropdownTriggerRef$c;
 
-    toggleDropdown();
+    toggleDropdown(open, type);
     if (!disabled) (_dropdownTriggerRef$c = dropdownTriggerRef.current) === null || _dropdownTriggerRef$c === void 0 ? void 0 : _dropdownTriggerRef$c.focus();
     setCursor(0);
   };
@@ -2044,12 +2064,12 @@ var DropdownList = function DropdownList(props) {
     switch (event.key) {
       case 'ArrowDown':
         event.preventDefault();
-        dropdownOpen ? focusOption('down', optionClass) : onToggleDropdown();
+        dropdownOpen ? focusOption('down', optionClass) : onToggleDropdown(!dropdownOpen);
         break;
 
       case 'ArrowUp':
         event.preventDefault();
-        dropdownOpen ? focusOption('up', optionClass) : onToggleDropdown();
+        dropdownOpen ? focusOption('up', optionClass) : onToggleDropdown(!dropdownOpen);
         break;
 
       case 'Enter':
@@ -2063,13 +2083,13 @@ var DropdownList = function DropdownList(props) {
           if (element) element.click();
         }
 
-        if (!dropdownOpen) onToggleDropdown();
+        if (!dropdownOpen) onToggleDropdown(!dropdownOpen);
         break;
 
       case 'Tab':
         if (!showApplyButton && dropdownOpen) {
           event.preventDefault();
-          onToggleDropdown();
+          onToggleDropdown(false, 'onClick');
           return;
         }
 
@@ -2078,7 +2098,7 @@ var DropdownList = function DropdownList(props) {
 
         if ((currentElement === dropdownCancelButtonRef.current && disabledApplyButton || currentElement === dropdownApplyButtonRef.current) && dropdownOpen) {
           event.preventDefault();
-          onToggleDropdown();
+          onToggleDropdown(false, 'onClick');
           return;
         }
 
@@ -2128,7 +2148,7 @@ var bulk = 50;
  *  - async: fetchOptions
  *  - sync: options, loading
  * 2. Sync Dropdown:
- *  - Manually toggle loading state to update options.
+ *  - Manually toggle loading state to update options (Options <= 50).
  */
 
 var Dropdown = /*#__PURE__*/function (_React$Component) {
@@ -2156,10 +2176,21 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_this), "getUnSelectedOptions", function (options, init) {
       if (options.length) {
+        if (!init) {
+          return options.filter(function (option) {
+            return _this.state.tempSelected.findIndex(function (item) {
+              return item.value === option.value;
+            }) === -1;
+          });
+        }
+
+        var _this$props$selected = _this.props.selected,
+            _selected2 = _this$props$selected === void 0 ? [] : _this$props$selected;
+
         var unSelectedGroup = options.filter(function (option) {
-          return init ? !option.selected : _this.state.tempSelected.findIndex(function (item) {
+          return _isControlled(_this.props.selected) ? _selected2.findIndex(function (item) {
             return item.value === option.value;
-          }) === -1;
+          }) === -1 : !option.selected;
         });
         return unSelectedGroup;
       }
@@ -2168,10 +2199,14 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "getSelectedOptions", function (options, init) {
+      var _this$props$selected2 = _this.props.selected,
+          selected = _this$props$selected2 === void 0 ? [] : _this$props$selected2;
+
       if (options.length) {
-        var selectedGroup = init ? options.filter(function (option) {
+        if (!init) return _this.state.tempSelected;
+        var selectedGroup = _isControlled(_this.props.selected) ? selected : options.filter(function (option) {
           return option.selected;
-        }) : _this.state.tempSelected;
+        });
         return selectedGroup;
       }
 
@@ -2181,8 +2216,8 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
     _defineProperty(_assertThisInitialized(_this), "updateOptions", function (init, async) {
       var _this$state = _this.state,
           searchTerm = _this$state.searchTerm,
+          selectAll = _this$state.selectAll,
           tempSelected = _this$state.tempSelected,
-          optionsLength = _this$state.optionsLength,
           previousSelected = _this$state.previousSelected;
       var updatedAsync = async === undefined ? _this.state.async : async;
       var _this$props = _this.props,
@@ -2196,19 +2231,21 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
         var options = res.options,
             count = res.count;
         updatedAsync = searchTerm === '' ? count > bulk : updatedAsync;
-        var unSelectedGroup = withCheckbox && searchTerm === '' && updatedAsync ? _this.getUnSelectedOptions(options, init) : options;
+        var unSelectedGroup = _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? _this.getUnSelectedOptions(options, init) : options;
         var selectedGroup = searchTerm === '' ? _this.getSelectedOptions(options, init) : [];
+        var optionsLength = searchTerm === '' ? count : _this.state.optionsLength;
 
         _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
+          optionsLength: optionsLength,
           loading: false,
           async: updatedAsync,
           searchedOptionsLength: count,
           options: unSelectedGroup.slice(0, bulk),
-          selected: withCheckbox && updatedAsync ? selectedGroup : [],
-          optionsLength: searchTerm === '' ? count : optionsLength,
           tempSelected: init ? selectedGroup : tempSelected,
           previousSelected: init ? selectedGroup : previousSelected,
-          triggerLabel: _this.updateTriggerLabel(init ? selectedGroup : tempSelected)
+          selected: _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? selectedGroup : [],
+          triggerLabel: _this.updateTriggerLabel(init ? selectedGroup : tempSelected),
+          selectAll: !updatedAsync && init ? getSelectAll(selectedGroup, optionsLength) : selectAll
         }));
 
         if (updatedAsync || withSearch) (_inputRef$current = inputRef.current) === null || _inputRef$current === void 0 ? void 0 : _inputRef$current.focus();
@@ -2223,19 +2260,48 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
       }));
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onOptionSelect", function (selectedArray) {
+    _defineProperty(_assertThisInitialized(_this), "updateOnPopperToggle", function () {
       var _this$props2 = _this.props,
-          onChange = _this$props2.onChange,
-          closeOnSelect = _this$props2.closeOnSelect;
-      var label = selectedArray.label;
+          withCheckbox = _this$props2.withCheckbox,
+          showApplyButton = _this$props2.showApplyButton,
+          _this$props2$selected = _this$props2.selected,
+          selected = _this$props2$selected === void 0 ? [] : _this$props2$selected;
+      var _this$state2 = _this.state,
+          previousSelected = _this$state2.previousSelected,
+          tempSelected = _this$state2.tempSelected,
+          optionsLength = _this$state2.optionsLength,
+          async = _this$state2.async,
+          loading = _this$state2.loading,
+          searchTerm = _this$state2.searchTerm;
+      var popperIsOpen = _isOpenControlled(_this.props.open, _this.props.selected) ? _this.props.open : _this.state.open;
 
-      _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
-        tempSelected: [selectedArray],
-        triggerLabel: label,
-        open: !closeOnSelect
-      }));
+      if (withCheckbox && showApplyButton) {
+        var temporarySelected = _isControlled(_this.props.selected) ? selected : previousSelected;
 
-      if (onChange) onChange(selectedArray.value, name);
+        _this.setState({
+          tempSelected: temporarySelected,
+          selectAll: getSelectAll(temporarySelected, optionsLength),
+          triggerLabel: _this.updateTriggerLabel(temporarySelected)
+        });
+      }
+
+      if (_isOpenControlled(_this.props.open, _this.props.selected)) {
+        _this.setState({
+          open: popperIsOpen
+        });
+      }
+
+      if (popperIsOpen) {
+        var moveSelectedGroup = _showSelectedItems(async, searchTerm, withCheckbox) && !_isEqual(_this.state.selected, tempSelected);
+
+        _this.setState({
+          loading: moveSelectedGroup || loading || searchTerm !== '',
+          searchInit: searchTerm !== '',
+          searchTerm: ''
+        });
+
+        if (moveSelectedGroup) _this.updateOptions(false);
+      }
     });
 
     _defineProperty(_assertThisInitialized(_this), "updateTriggerLabel", function () {
@@ -2262,13 +2328,66 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
       return label;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onSelect", function (option, checked) {
-      var _this$state2 = _this.state,
-          tempSelected = _this$state2.tempSelected,
-          optionsLength = _this$state2.optionsLength;
+    _defineProperty(_assertThisInitialized(_this), "updateSelectedOptions", function (selectedArray, isControlled) {
+      var _this$state3 = _this.state,
+          optionsLength = _this$state3.optionsLength,
+          previousSelected = _this$state3.previousSelected,
+          selected = _this$state3.selected,
+          loading = _this$state3.loading,
+          open = _this$state3.open;
       var _this$props3 = _this.props,
           onChange = _this$props3.onChange,
-          showApplyButton = _this$props3.showApplyButton;
+          withCheckbox = _this$props3.withCheckbox,
+          showApplyButton = _this$props3.showApplyButton,
+          closeOnSelect = _this$props3.closeOnSelect;
+      var isClearClicked = selectedArray.length === 0 && selected.length > 0;
+      var updatePreviousSelected = withCheckbox && showApplyButton && isControlled;
+
+      _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
+        tempSelected: selectedArray,
+        triggerLabel: _this.updateTriggerLabel(selectedArray),
+        selectAll: getSelectAll(selectedArray, optionsLength),
+        open: _isOpenControlled(_this.props.open, _this.props.selected) || withCheckbox ? open : !closeOnSelect,
+        previousSelected: updatePreviousSelected ? selectedArray : previousSelected,
+        selected: isClearClicked ? selectedArray : selected,
+        loading: isClearClicked ? true : loading
+      }));
+
+      if (isClearClicked) _this.debounceClear();
+
+      if (onChange && (!showApplyButton || isControlled)) {
+        var values = selectedArray.map(function (item) {
+          return item.value;
+        });
+        onChange(values, name);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onOptionSelect", function (option) {
+      var _this$props4 = _this.props,
+          onUpdate = _this$props4.onUpdate,
+          selected = _this$props4.selected;
+
+      if (_isControlled(selected)) {
+        if (onUpdate) onUpdate('select-option', option);
+        return;
+      }
+
+      _this.updateSelectedOptions([option]);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onSelect", function (option, checked) {
+      var _this$props5 = _this.props,
+          onUpdate = _this$props5.onUpdate,
+          selected = _this$props5.selected,
+          showApplyButton = _this$props5.showApplyButton;
+
+      if (_isControlled(selected) && !showApplyButton) {
+        if (onUpdate) onUpdate(checked ? 'select-option' : 'deselect-option', option);
+        return;
+      }
+
+      var tempSelected = _this.state.tempSelected;
       var selectedArray = tempSelected.slice();
 
       if (!checked) {
@@ -2280,41 +2399,23 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
 
       selectedArray = checked ? selectedArray.concat(option) : selectedArray;
 
-      _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
-        tempSelected: selectedArray,
-        triggerLabel: _this.updateTriggerLabel(selectedArray),
-        selectAll: getSelectAll(selectedArray, optionsLength)
-      }));
-
-      if (onChange && !showApplyButton) {
-        var values = selectedArray.map(function (item) {
-          return item.value;
-        });
-        onChange(values, name);
-      }
+      _this.updateSelectedOptions(selectedArray);
     });
 
     _defineProperty(_assertThisInitialized(_this), "onSelectAll", function (event) {
-      var _this$props4 = _this.props,
-          onChange = _this$props4.onChange,
-          showApplyButton = _this$props4.showApplyButton;
-      var _this$state3 = _this.state,
-          options = _this$state3.options,
-          optionsLength = _this$state3.optionsLength;
-      var selectedArray = event.target.checked ? options : [];
+      var _this$props6 = _this.props,
+          onUpdate = _this$props6.onUpdate,
+          selected = _this$props6.selected,
+          showApplyButton = _this$props6.showApplyButton;
 
-      _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
-        tempSelected: selectedArray,
-        triggerLabel: _this.updateTriggerLabel(selectedArray),
-        selectAll: getSelectAll(selectedArray, optionsLength)
-      }));
-
-      if (onChange && !showApplyButton) {
-        var values = selectedArray.map(function (option) {
-          return option.value;
-        });
-        onChange(values, name);
+      if (_isControlled(selected) && !showApplyButton) {
+        if (onUpdate) onUpdate(event.target.checked ? 'select-all' : 'deselect-all');
+        return;
       }
+
+      var selectedArray = event.target.checked ? _this.state.options : [];
+
+      _this.updateSelectedOptions(selectedArray);
     });
 
     _defineProperty(_assertThisInitialized(_this), "debounceSearch", debounce(300, function () {
@@ -2325,14 +2426,21 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
       });
     }));
 
-    _defineProperty(_assertThisInitialized(_this), "debounceClear", debounce(100, function () {
+    _defineProperty(_assertThisInitialized(_this), "debounceClear", debounce(250, function () {
       return _this.updateOptions(false);
     }));
 
     _defineProperty(_assertThisInitialized(_this), "onClearOptions", function () {
-      var _this$props5 = _this.props,
-          onChange = _this$props5.onChange,
-          showApplyButton = _this$props5.showApplyButton;
+      var _this$props7 = _this.props,
+          selected = _this$props7.selected,
+          onUpdate = _this$props7.onUpdate,
+          showApplyButton = _this$props7.showApplyButton,
+          onChange = _this$props7.onChange;
+
+      if (_isControlled(selected) && !showApplyButton) {
+        if (onUpdate) onUpdate('clear-all');
+        return;
+      }
 
       _this.setState({
         selected: [],
@@ -2349,7 +2457,16 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
     _defineProperty(_assertThisInitialized(_this), "onCancelOptions", function () {
       var _this$state4 = _this.state,
           previousSelected = _this$state4.previousSelected,
+          tempSelected = _this$state4.tempSelected,
           optionsLength = _this$state4.optionsLength;
+      var _this$props8 = _this.props,
+          selected = _this$props8.selected,
+          onUpdate = _this$props8.onUpdate;
+
+      if (_isControlled(selected)) {
+        if (onUpdate) onUpdate('cancel-selected', previousSelected, tempSelected);
+        return;
+      }
 
       var label = _this.updateTriggerLabel(previousSelected);
 
@@ -2370,10 +2487,19 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "onApplyOptions", function () {
-      var tempSelected = _this.state.tempSelected;
-      var _this$props6 = _this.props,
-          onChange = _this$props6.onChange,
-          onClose = _this$props6.onClose;
+      var _this$state5 = _this.state,
+          tempSelected = _this$state5.tempSelected,
+          previousSelected = _this$state5.previousSelected;
+      var _this$props9 = _this.props,
+          onChange = _this$props9.onChange,
+          onClose = _this$props9.onClose,
+          selected = _this$props9.selected,
+          onUpdate = _this$props9.onUpdate;
+
+      if (_isControlled(selected)) {
+        if (onUpdate) onUpdate('apply-selected', previousSelected, tempSelected);
+        return;
+      }
 
       _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
         previousSelected: tempSelected,
@@ -2394,46 +2520,33 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onToggleDropdown", function () {
+    _defineProperty(_assertThisInitialized(_this), "onToggleDropdown", function (updatedOpen, type) {
+      // open && close blocks
       if (_this.props.disabled) {
         return;
       }
 
-      var _this$props7 = _this.props,
-          showApplyButton = _this$props7.showApplyButton,
-          withCheckbox = _this$props7.withCheckbox,
-          onClose = _this$props7.onClose,
-          name = _this$props7.name;
-      var _this$state5 = _this.state,
-          triggerLabel = _this$state5.triggerLabel,
-          optionsApplied = _this$state5.optionsApplied,
-          previousSelected = _this$state5.previousSelected,
-          tempSelected = _this$state5.tempSelected,
-          optionsLength = _this$state5.optionsLength,
-          open = _this$state5.open,
-          async = _this$state5.async,
-          selected = _this$state5.selected,
-          loading = _this$state5.loading,
-          selectAll = _this$state5.selectAll,
-          searchTerm = _this$state5.searchTerm;
-      var applyClicked = withCheckbox && showApplyButton && !optionsApplied;
-      var moveSelectedGroup = async && searchTerm === '' && withCheckbox && !_isEqual(selected, tempSelected);
+      var _this$props10 = _this.props,
+          showApplyButton = _this$props10.showApplyButton,
+          withCheckbox = _this$props10.withCheckbox,
+          onClose = _this$props10.onClose,
+          name = _this$props10.name,
+          onPopperToggle = _this$props10.onPopperToggle;
 
-      _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
-        tempSelected: applyClicked ? previousSelected : tempSelected,
-        selectAll: applyClicked ? getSelectAll(previousSelected, optionsLength) : selectAll,
-        triggerLabel: applyClicked ? _this.updateTriggerLabel(previousSelected) : triggerLabel,
-        open: !open,
-        optionsApplied: false,
-        loading: moveSelectedGroup || loading || searchTerm !== '',
-        searchInit: searchTerm !== '',
-        searchTerm: ''
-      }));
+      if (onPopperToggle && _isOpenControlled(_this.props.open, _this.props.selected)) {
+        onPopperToggle(updatedOpen, type);
+        return;
+      }
 
-      if (moveSelectedGroup) _this.updateOptions(false);
+      var isPopperOpen = _isOpenControlled(_this.props.open, _this.props.selected) ? _this.state.open : updatedOpen;
+      var isCloseEvent = type === 'outsideClick' || type === 'onClick' && !isPopperOpen;
 
-      if (onClose && open) {
-        var arr = applyClicked ? previousSelected : tempSelected;
+      _this.setState({
+        open: isPopperOpen
+      });
+
+      if (onClose && isCloseEvent) {
+        var arr = withCheckbox && showApplyButton ? _this.state.previousSelected : _this.state.tempSelected;
         var values = arr.map(function (option) {
           return option.value;
         });
@@ -2442,7 +2555,13 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
     });
 
     var _totalOptions = props.totalOptions,
-        _loading = props.loading,
+        _withCheckbox = props.withCheckbox,
+        _props$loading = props.loading,
+        _loading = _props$loading === void 0 ? false : _props$loading,
+        _props$open = props.open,
+        _open = _props$open === void 0 ? false : _props$open,
+        _props$selected = props.selected,
+        _selected = _props$selected === void 0 ? [] : _props$selected,
         _props$options = props.options,
         _options = _props$options === void 0 ? [] : _props$options;
 
@@ -2455,15 +2574,16 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       async: _async,
       optionsLength: _optionsLength,
+      open: _open,
       searchInit: false,
       searchedOptionsLength: _optionsLength,
       optionsApplied: false,
       options: _options || [],
       loading: _async ? true : _loading,
       searchTerm: '',
-      selected: [],
       tempSelected: _selectedGroup,
       previousSelected: _selectedGroup,
+      selected: _showSelectedItems(_async, '', _withCheckbox) ? _selected : [],
       triggerLabel: _this.updateTriggerLabel(_selectedGroup, _optionsLength),
       selectAll: getSelectAll(_selectedGroup, _optionsLength)
     };
@@ -2475,33 +2595,42 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
       if (!this.state.async) {
-        var _this$props8 = this.props,
-            loading = _this$props8.loading,
-            fetchOptions = _this$props8.fetchOptions,
-            _this$props8$options = _this$props8.options,
-            options = _this$props8$options === void 0 ? [] : _this$props8$options,
-            withSearch = _this$props8.withSearch;
+        var _this$props11 = this.props,
+            loading = _this$props11.loading,
+            fetchOptions = _this$props11.fetchOptions,
+            _this$props11$options = _this$props11.options,
+            _options2 = _this$props11$options === void 0 ? [] : _this$props11$options,
+            withSearch = _this$props11.withSearch;
 
         if (prevProps.loading !== loading && !fetchOptions) {
-          if (options.length > bulk) {
+          if (_options2.length > bulk) {
             this.updateOptions(true, true);
           } else {
             var _inputRef$current2;
 
-            var selectedGroup = this.getSelectedOptions(options, true);
+            var selectedGroup = this.getSelectedOptions(_options2, true);
             this.setState(_objectSpread2(_objectSpread2({}, this.state), {}, {
-              options: options,
+              options: _options2,
               loading: loading,
               tempSelected: selectedGroup,
               previousSelected: selectedGroup,
-              optionsLength: options.length,
-              searchedOptionsLength: options.length,
+              optionsLength: _options2.length,
+              searchedOptionsLength: _options2.length,
               triggerLabel: this.updateTriggerLabel(selectedGroup),
               selectAll: getSelectAll(selectedGroup, this.state.optionsLength)
             }));
             if (withSearch) (_inputRef$current2 = inputRef.current) === null || _inputRef$current2 === void 0 ? void 0 : _inputRef$current2.focus();
           }
         }
+      }
+
+      if (this.props.selected !== undefined && prevProps.selected !== this.props.selected && prevProps.loading === this.props.loading) {
+        this.updateSelectedOptions(this.props.selected, true);
+      }
+
+      if (prevProps.open !== this.props.open || prevState.open !== this.state.open) {
+        if (_isOpenControlled(this.props.open, this.props.selected) && this.props.open === this.state.open) return;
+        this.updateOnPopperToggle();
       }
 
       if (prevState.searchTerm !== this.state.searchTerm) {
@@ -2521,14 +2650,14 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
           searchedOptionsLength = _this$state6.searchedOptionsLength,
           tempSelected = _this$state6.tempSelected,
           selectAll = _this$state6.selectAll,
-          selected = _this$state6.selected,
           triggerLabel = _this$state6.triggerLabel,
           previousSelected = _this$state6.previousSelected;
 
-      var _this$props9 = this.props,
-          _this$props9$triggerO = _this$props9.triggerOptions,
-          triggerOptions = _this$props9$triggerO === void 0 ? {} : _this$props9$triggerO,
-          rest = _objectWithoutProperties(_this$props9, ["triggerOptions"]);
+      var _this$props12 = this.props,
+          _this$props12$trigger = _this$props12.triggerOptions,
+          triggerOptions = _this$props12$trigger === void 0 ? {} : _this$props12$trigger,
+          selected = _this$props12.selected,
+          rest = _objectWithoutProperties(_this$props12, ["triggerOptions", "selected"]);
 
       var remainingOptionsLen = searchedOptionsLength - options.length;
       return /*#__PURE__*/createElement(DropdownList, _extends({
@@ -2543,7 +2672,7 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
         triggerLabel: triggerLabel,
         tempSelected: tempSelected,
         previousSelected: previousSelected,
-        selected: selected,
+        selected: this.state.selected,
         applyOptions: this.onApplyOptions,
         cancelOptions: this.onCancelOptions,
         toggleDropdown: this.onToggleDropdown,
@@ -4505,6 +4634,7 @@ var Radio = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
     if (onChange) onChange(event);
   };
 
+  var id = "".concat(name, "-").concat(label, "-").concat(uidGenerator());
   return /*#__PURE__*/createElement("div", {
     className: RadioClass
   }, /*#__PURE__*/createElement("div", {
@@ -4518,12 +4648,12 @@ var Radio = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
     value: value,
     onChange: onChangeHandler,
     className: "Radio-input",
-    id: value
+    id: id
   })), /*#__PURE__*/createElement("span", {
     className: RadioWrapper
   })), label && /*#__PURE__*/createElement("label", {
     className: "Radio-label",
-    htmlFor: value
+    htmlFor: id
   }, /*#__PURE__*/createElement(Text, {
     small: size === 'tiny'
   }, label)));
@@ -5687,6 +5817,34 @@ function hideColumn(name, value) {
   };
   this.updateColumnSchema(name, schemaUpdate);
 }
+function getCellSize(cellType) {
+  var sizes = {
+    AVATAR: {
+      width: 50,
+      minWidth: 50
+    },
+    AVATAR_WITH_TEXT: {
+      width: 250
+    },
+    AVATAR_WITH_META_LIST: {
+      width: 250
+    },
+    ICON: {
+      width: 50,
+      minWidth: 50
+    },
+    STATUS_HINT: {
+      width: 100
+    },
+    WITH_META_LIST: {
+      width: 200
+    },
+    DEFAULT: {
+      width: 200
+    }
+  };
+  return sizes[cellType];
+}
 
 var updateBatchData = function updateBatchData(data, rowIndexes, dataUpdate) {
   var updatedData = _toConsumableArray(data);
@@ -5844,7 +6002,7 @@ var renderTitle = function renderTitle(props) {
       return /*#__PURE__*/createElement(Tooltip, {
         tooltip: children,
         position: 'top-start',
-        triggerClass: "overflow-hidden"
+        triggerClass: "w-100 overflow-hidden"
       }, /*#__PURE__*/createElement(Text, {
         className: "w-100 ellipsis"
       }, children));
@@ -5893,7 +6051,9 @@ var renderAvatar = function renderAvatar(props) {
   }
 
   if (title) {
-    return /*#__PURE__*/createElement(Avatar, null, title);
+    return /*#__PURE__*/createElement(Avatar, {
+      className: "mr-5"
+    }, title);
   }
 
   return null;
@@ -5943,52 +6103,41 @@ var GridCell = function GridCell(props) {
 
   switch (cellType) {
     case 'DEFAULT':
-      if (loading) {
-        return /*#__PURE__*/createElement(Placeholder, {
-          withImage: false
-        }, /*#__PURE__*/createElement(PlaceholderParagraph, {
-          length: "medium"
-        }));
-      }
-
       return /*#__PURE__*/createElement("div", {
         className: "".concat(cellClass, " GridCell--align-").concat(align, " GridCell--default")
-      }, renderTitle({
+      }, loading ? /*#__PURE__*/createElement(PlaceholderParagraph, {
+        length: "medium"
+      }) : renderTitle({
         tooltip: tooltip,
         cellData: cellData
       }));
 
     case 'WITH_META_LIST':
-      if (loading) {
-        return /*#__PURE__*/createElement(Placeholder, {
-          withImage: false
-        }, /*#__PURE__*/createElement(PlaceholderParagraph, {
-          length: "medium"
-        }), /*#__PURE__*/createElement(PlaceholderParagraph, {
-          length: "large",
-          size: "xxs"
-        }));
-      }
-
       return /*#__PURE__*/createElement("div", {
-        className: "".concat(cellClass, " GridCell--align-").concat(align, " GridCell--metaList")
-      }, renderTitle({
+        className: "".concat(cellClass, " GridCell--metaList")
+      }, loading ? /*#__PURE__*/createElement(Fragment, null, /*#__PURE__*/createElement(PlaceholderParagraph, {
+        length: "medium"
+      }), /*#__PURE__*/createElement(PlaceholderParagraph, {
+        length: "large",
+        size: "xxs"
+      })) : /*#__PURE__*/createElement(Fragment, null, renderTitle({
         tooltip: tooltip,
         cellData: cellData
       }), renderMetaList({
         cellData: cellData
-      }));
+      })));
 
     case 'AVATAR':
       if (loading) {
         return /*#__PURE__*/createElement(Placeholder, {
+          className: "GridCell--align-".concat(align),
           imageSize: 'medium',
           round: true
         });
       }
 
       return /*#__PURE__*/createElement("div", {
-        className: "".concat(cellClass, " GridCell--avatar")
+        className: "".concat(cellClass, " GridCell--align-").concat(align, " GridCell--avatar")
       }, size !== 'tight' && renderAvatar({
         cellData: cellData
       }));
@@ -5998,13 +6147,10 @@ var GridCell = function GridCell(props) {
         return /*#__PURE__*/createElement(Placeholder, {
           imageSize: 'medium',
           round: true
-        }, /*#__PURE__*/createElement("span", {
-          style: {
-            marginLeft: 'var(--spacing-m)'
-          }
         }, /*#__PURE__*/createElement(PlaceholderParagraph, {
+          className: "ml-3",
           length: "medium"
-        })));
+        }));
       }
 
       return /*#__PURE__*/createElement("div", {
@@ -6021,15 +6167,13 @@ var GridCell = function GridCell(props) {
         return /*#__PURE__*/createElement(Placeholder, {
           imageSize: 'medium',
           round: true
-        }, /*#__PURE__*/createElement("span", {
-          style: {
-            marginLeft: 'var(--spacing-m)'
-          }
         }, /*#__PURE__*/createElement(PlaceholderParagraph, {
+          className: "ml-3",
           length: "medium"
         }), /*#__PURE__*/createElement(PlaceholderParagraph, {
+          className: "ml-3",
           length: "large"
-        })));
+        }));
       }
 
       return /*#__PURE__*/createElement("div", {
@@ -6048,6 +6192,7 @@ var GridCell = function GridCell(props) {
     case 'ICON':
       if (loading) {
         return /*#__PURE__*/createElement(Placeholder, {
+          className: "GridCell--align-".concat(align),
           imageSize: 'small',
           round: true
         });
@@ -6060,18 +6205,15 @@ var GridCell = function GridCell(props) {
       }));
 
     case 'STATUS_HINT':
-      if (loading) {
-        return /*#__PURE__*/createElement(Placeholder, {
-          imageSize: 'small',
-          round: true
-        }, /*#__PURE__*/createElement(PlaceholderParagraph, {
-          length: "medium"
-        }));
-      }
-
       return /*#__PURE__*/createElement("div", {
         className: "".concat(cellClass, " GridCell--align-").concat(align, " GridCell--statusHint")
-      }, renderStatusHint({
+      }, loading ? /*#__PURE__*/createElement(Placeholder, {
+        className: "w-75 flex-grow-0",
+        imageSize: 'small',
+        round: true
+      }, /*#__PURE__*/createElement(PlaceholderParagraph, {
+        length: "large"
+      })) : renderStatusHint({
         cellData: cellData
       }));
   }
@@ -6271,21 +6413,35 @@ var Cell = function Cell(props) {
       data = props.data,
       rowIndex = props.rowIndex;
   var nestedRows = _this.props.nestedRows;
+  var name = schema.name,
+      separator = schema.separator,
+      hidden = schema.hidden,
+      pinned = schema.pinned,
+      _schema$cellType = schema.cellType,
+      cellType = _schema$cellType === void 0 ? 'DEFAULT' : _schema$cellType;
+
+  var _getCellSize = getCellSize(cellType),
+      width = _getCellSize.width,
+      _getCellSize$minWidth = _getCellSize.minWidth,
+      minWidth = _getCellSize$minWidth === void 0 ? 100 : _getCellSize$minWidth,
+      _getCellSize$maxWidth = _getCellSize.maxWidth,
+      maxWidth = _getCellSize$maxWidth === void 0 ? 800 : _getCellSize$maxWidth;
+
   var cellClass = classNames({
     'Grid-cell': true,
     'Grid-cell--head': head,
     'Grid-cell--body': !head,
-    'Grid-cell--separator': !firstCell && schema.separator,
+    'Grid-cell--separator': !firstCell && separator,
     'Grid-cell--nestedRow': !head && colIndex === 0 && nestedRows
   });
-  if (schema.hidden) return null;
+  if (hidden) return null;
   return /*#__PURE__*/createElement("div", {
     key: "".concat(rowIndex, "-").concat(colIndex),
     className: cellClass,
-    draggable: true,
+    draggable: head && draggable,
     onDragStart: function onDragStart(e) {
-      e.dataTransfer.setData('name', schema.name);
-      if (schema.pinned) e.dataTransfer.setData('type', schema.pinned);
+      e.dataTransfer.setData('name', name);
+      if (pinned) e.dataTransfer.setData('type', pinned);
     },
     onDragOver: function onDragOver(e) {
       return e.preventDefault();
@@ -6296,13 +6452,15 @@ var Cell = function Cell(props) {
         type: e.dataTransfer.getData('type')
       };
       var to = {
-        name: schema.name,
-        type: schema.pinned || ''
+        name: name,
+        type: pinned || ''
       };
       if (from.type === to.type) _this.reorderCol(from.name, to.name);
     },
     style: {
-      width: schema.width
+      width: schema.width || width,
+      minWidth: schema.minWidth || minWidth,
+      maxWidth: schema.maxWidth || maxWidth
     }
   }, head ? /*#__PURE__*/createElement(HeaderCell, {
     _this: _this,
@@ -6344,7 +6502,7 @@ var GridHead = function GridHead(props) {
   var renderCheckbox = function renderCheckbox(show) {
     if (!show || !withCheckbox) return null;
     return /*#__PURE__*/createElement("div", {
-      className: "Grid-cell Grid-cell--head Grid-checkboxCell"
+      className: "Grid-cell Grid-cell--head Grid-cell--checkbox"
     }, loading ? /*#__PURE__*/createElement(Placeholder, null) : /*#__PURE__*/createElement(Checkbox, _extends({}, selectAll, {
       onChange: _this.onSelectAll
     })));
@@ -6439,6 +6597,7 @@ var GridRow = function GridRow(props) {
       data = props.data,
       withCheckbox = props.withCheckbox,
       rI = props.rowIndex;
+  var rowRef = useRef$1(null);
 
   var _React$useState = useState$4(false),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -6480,7 +6639,7 @@ var GridRow = function GridRow(props) {
   var renderCheckbox = function renderCheckbox(show) {
     if (!show || !withCheckbox) return null;
     return /*#__PURE__*/createElement("div", {
-      className: "Grid-cell Grid-cell--body Grid-checkboxCell",
+      className: "Grid-cell Grid-cell--body Grid-cell--checkbox",
       onClick: function onClick(e) {
         return e.stopPropagation();
       }
@@ -6521,14 +6680,21 @@ var GridRow = function GridRow(props) {
     return null;
   };
 
-  return /*#__PURE__*/createElement(Fragment, null, /*#__PURE__*/createElement("div", {
+  return /*#__PURE__*/createElement("div", {
+    className: "Grid-rowWrapper"
+  }, /*#__PURE__*/createElement("div", {
     className: rowClasses,
-    onClick: onClickHandler
-  }, renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left'), renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length), renderSchema(rightPinnedSchema, false, 'right')), nestedRows && expanded && /*#__PURE__*/createElement(GridNestedRow, {
+    onClick: onClickHandler,
+    ref: rowRef
+  }, renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left'), renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length), renderSchema(rightPinnedSchema, false, 'right')), nestedRows && expanded && /*#__PURE__*/createElement("div", {
+    style: {
+      width: rowRef.current ? rowRef.current.clientWidth : 0
+    }
+  }, /*#__PURE__*/createElement(GridNestedRow, {
     _this: _this,
     data: data,
     rowIndex: rI
-  }));
+  })));
 };
 
 var GridBody = function GridBody(props) {
@@ -7122,10 +7288,17 @@ Header.defaultProps = {
   dynamicColumn: true
 };
 
-// export type ExtractType<T> = T extends SyncTableProps ? SyncTableProps : AsyncTableProps;
-// export const Table = <T extends SyncTableProps, K extends AsyncTableProps>(props: T | K) => {
-// export function Table(props: SyncTableProps): React.ReactElement;
-// export function Table(props: AsyncTableProps): React.ReactElement;
+var defaultProps = {
+  type: 'data',
+  size: 'comfortable',
+  showHead: true,
+  showMenu: true,
+  multipleSorting: true,
+  headerOptions: {},
+  pageSize: 15,
+  loading: false,
+  draggable: true
+};
 
 /**
  * ###Note:
@@ -7159,7 +7332,6 @@ var Table = /*#__PURE__*/function (_React$Component) {
       var _this$state = _this.state,
           async = _this$state.async,
           page = _this$state.page,
-          schema = _this$state.schema,
           sortingList = _this$state.sortingList,
           filterList = _this$state.filterList,
           searchTerm = _this$state.searchTerm;
@@ -7185,11 +7357,12 @@ var Table = /*#__PURE__*/function (_React$Component) {
         if (fetchData) {
           fetchData(opts).then(function (res) {
             var data = res.data;
+            var schema = _this.state.schema.length ? _this.state.schema : res.schema;
 
             _this.setState({
               data: data,
+              schema: schema,
               selectAll: getSelectAll$1(data),
-              schema: _this.state.schema.length ? _this.state.schema : res.schema,
               totalRecords: res.count,
               loading: false,
               error: !data.length
@@ -7203,6 +7376,7 @@ var Table = /*#__PURE__*/function (_React$Component) {
           });
         }
       } else {
+        var schema = _this.state.schema;
         var filteredData = filterData(schema, dataProp, filterList);
         var searchedData = onSearch && opts.searchTerm !== undefined ? onSearch(filteredData, opts.searchTerm) : filteredData;
         var sortedData = sortData(schema, searchedData, sortingList);
@@ -7213,10 +7387,12 @@ var Table = /*#__PURE__*/function (_React$Component) {
           renderedData = paginateData(renderedData, page, pageSize);
         }
 
+        var renderedSchema = _this.state.schema.length ? _this.state.schema : schema;
+
         _this.setState({
           totalRecords: totalRecords,
           selectAll: getSelectAll$1(renderedData),
-          schema: _this.state.schema.length ? _this.state.schema : schema,
+          schema: renderedSchema,
           data: renderedData
         });
       }
@@ -7335,14 +7511,18 @@ var Table = /*#__PURE__*/function (_React$Component) {
     value: function componentDidUpdate(prevProps, prevState) {
       if (!this.state.async) {
         if (prevProps.loading !== this.props.loading || prevProps.error !== this.props.error) {
-          var _data2 = this.props.data || [];
+          var _this$props2 = this.props,
+              _this$props2$data = _this$props2.data,
+              _data2 = _this$props2$data === void 0 ? [] : _this$props2$data,
+              _this$props2$schema = _this$props2.schema,
+              schema = _this$props2$schema === void 0 ? [] : _this$props2$schema;
 
           this.setState({
             data: _data2,
+            schema: schema,
             loading: this.props.loading || false,
             error: this.props.error || false,
             page: 1,
-            schema: this.props.schema || [],
             totalRecords: _data2.length || 0,
             sortingList: [],
             filterList: {},
@@ -7364,24 +7544,24 @@ var Table = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this$props2 = this.props,
-          showHead = _this$props2.showHead,
-          type = _this$props2.type,
-          size = _this$props2.size,
-          draggable = _this$props2.draggable,
-          nestedRows = _this$props2.nestedRows,
-          nestedRowRenderer = _this$props2.nestedRowRenderer,
-          withHeader = _this$props2.withHeader,
-          headerOptions = _this$props2.headerOptions,
-          withCheckbox = _this$props2.withCheckbox,
-          showMenu = _this$props2.showMenu,
-          withPagination = _this$props2.withPagination,
-          paginationType = _this$props2.paginationType,
-          pageSize = _this$props2.pageSize,
-          onRowClick = _this$props2.onRowClick,
-          loaderSchema = _this$props2.loaderSchema,
-          errorTemplate = _this$props2.errorTemplate,
-          className = _this$props2.className;
+      var _this$props3 = this.props,
+          showHead = _this$props3.showHead,
+          type = _this$props3.type,
+          size = _this$props3.size,
+          draggable = _this$props3.draggable,
+          nestedRows = _this$props3.nestedRows,
+          nestedRowRenderer = _this$props3.nestedRowRenderer,
+          withHeader = _this$props3.withHeader,
+          headerOptions = _this$props3.headerOptions,
+          withCheckbox = _this$props3.withCheckbox,
+          showMenu = _this$props3.showMenu,
+          withPagination = _this$props3.withPagination,
+          paginationType = _this$props3.paginationType,
+          pageSize = _this$props3.pageSize,
+          onRowClick = _this$props3.onRowClick,
+          loaderSchema = _this$props3.loaderSchema,
+          errorTemplate = _this$props3.errorTemplate,
+          className = _this$props3.className;
       var baseProps = extractBaseProps(this.props);
 
       var _ref = headerOptions,
@@ -7389,6 +7569,8 @@ var Table = /*#__PURE__*/function (_React$Component) {
           headerAttr = _objectWithoutProperties(_ref, ["children"]);
 
       var classes = className ? " ".concat(className) : '';
+      var totalRecords = this.state.totalRecords;
+      var totalPages = getTotalPages(totalRecords, pageSize);
       return /*#__PURE__*/createElement("div", _extends({}, baseProps, {
         className: "Table".concat(classes)
       }), withHeader && /*#__PURE__*/createElement("div", {
@@ -7420,7 +7602,7 @@ var Table = /*#__PURE__*/function (_React$Component) {
         draggable: draggable,
         nestedRows: nestedRows,
         nestedRowRenderer: nestedRowRenderer,
-        withPagination: withPagination,
+        withPagination: withPagination && totalPages > 1,
         paginationType: paginationType,
         pageSize: pageSize,
         loaderSchema: loaderSchema,
@@ -7434,17 +7616,7 @@ var Table = /*#__PURE__*/function (_React$Component) {
   return Table;
 }(Component);
 
-_defineProperty(Table, "defaultProps", {
-  type: 'data',
-  size: 'comfortable',
-  showHead: true,
-  showMenu: true,
-  multipleSorting: true,
-  headerOptions: {},
-  pageSize: 15,
-  loading: false,
-  draggable: true
-});
+_defineProperty(Table, "defaultProps", defaultProps);
 
 var List = function List(props) {
   return /*#__PURE__*/createElement(Table, _extends({

@@ -1,8 +1,8 @@
-/// <reference types="react" />
+import * as React from 'react';
 import { BaseProps } from "../../../utils/types";
 export declare type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled';
 export interface TextProps extends BaseProps {
-    children: string;
+    children: React.ReactText;
     weight?: 'strong' | 'medium';
     small?: boolean;
     appearance?: Appearance;

@@ -444,3 +444,27 @@
 
 * d891a34 v1.1.0-2
 * 5dcd528 chore: downgrades js-beautify version to 1.10.3 to resolve mkdirp version conflicts
+
+-------------------
+ **v1.1.0-3**  (2020-08-12) 
+
+* a8c1fdd v1.1.0-3
+* fb9b757 chore: updates github action
+* 4a1814c v1.1.0-3
+* e0c823b fix(Radio,Checkbox): fixes label onclick
+* ff4a98e v1.1.0-3
+* e32683f feat(dropdown): adds controlled component support
+* 816797d docs(input):adds controlled input Story
+* f5570ac fix:changes the type of children to ReactText
+* 9781e51 feat(Grid): adds minWidth, maxWidth and default width value in Schema
+* e1f71d6 chore(popover):adds description for onToggle
+* 6391b98 fix(Grid): fixes alignment of GridCell
+* 56267c9 chore(docPage): adds noHtml and noStory support
+* 7604f75 fix(dropdown): removes minWidth #239
+* a15dac6 fix(Modal):fixes overflow
+* 949af77 chore(PageHeader): fixes stories
+* 6214ef9 fix(Navigation):fixes overflow
+* b20e762 fix(Grid): fixes nestedRow horizontal scroll
+* 1e311af fix(Grid): fixes draggable configuration
+* 5bc76a3 fix(Grid): hides Pagination dynamically when pageSize >= totalRecords
+* d6e4ee6 chore(Table): updates asyncTable story

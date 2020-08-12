@@ -11,7 +11,7 @@ export interface ButtonProps extends BaseProps {
     loading?: boolean;
     icon?: string;
     iconAlign?: Alignment;
-    children?: string;
+    children?: React.ReactText;
     tabIndex?: number;
     onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     onMouseEnter?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
