@@ -12,3 +12,31 @@
   margin-top: 8px;
   white-space: break-spaces;
 }
+
+.Utilities-example {
+  padding:var(--spacing-xl);
+  margin-right: 0;
+  margin-left: 0;
+  border-width:var(--spacing-s) ;
+  font-size:var(--font-size-m);
+  background-color: var(--inverse-lightest);
+}
+.Utilities-text--color{
+  color: var(--secondary);
+}
+.width-color{
+  background-color: var(--inverse-lightest);
+}
+.height-color{
+  background-color: var(--inverse-lightest);
+}
+.height{
+  height: 100px;
+  background-color:  var(--secondary);;
+}
+.Utilities-overflow{
+  background-color:var(--inverse-lightest);
+  width: 200px;
+  height: 100px;
+  border: var(--spacing-xs) dotted black;
+}
