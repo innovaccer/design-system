@@ -60,11 +60,11 @@ export type ColumnSchema = {
    */
   displayName: string;
   /**
-   * width of the column(px)
+   * width of the column(px/%)
    */
   width?: React.ReactText;
   /**
-   * min-width of the column(px)
+   * min-width of the column(px/%)
    * @default 100
    */
   minWidth?: React.ReactText;

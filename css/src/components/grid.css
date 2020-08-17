@@ -182,7 +182,7 @@
     padding-left: var(--spacing);
 }
 
-.Grid-cell--head.Grid-cell:first-child {
+.Grid-cell--head.Grid-cell:first-of-type {
     border-left: none;
 }
 

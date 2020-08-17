@@ -47,7 +47,7 @@ const customCode = `
     {
       name: 'name',
       displayName: 'Name',
-      width: 300,
+      width: '40%',
       resizable: true,
       separator: true,
       tooltip: true,

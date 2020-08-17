@@ -5,7 +5,7 @@ import { Dropdown, Grid, Placeholder, PlaceholderParagraph, Heading, Icon, Butto
 import { resizeCol, getInit } from './utility';
 import { GridCell } from './GridCell';
 import { DropdownProps } from '@/components/atoms/dropdown';
-import { getCellSize } from './columnUtility';
+import { getCellSize, getWidth } from './columnUtility';
 
 interface SharedCellProps {
   _this: Grid;
@@ -312,9 +312,9 @@ export const Cell = (props: CellProps) => {
         if (from.type === to.type) _this.reorderCol(from.name, to.name);
       }}
       style={{
-        width: schema.width || width,
-        minWidth: schema.minWidth || minWidth,
-        maxWidth: schema.maxWidth || maxWidth
+        width: getWidth.call(_this, schema.width || width),
+        minWidth: getWidth.call(_this, schema.minWidth || minWidth),
+        maxWidth: getWidth.call(_this, schema.maxWidth || maxWidth)
       }}
     >
       {head ? (

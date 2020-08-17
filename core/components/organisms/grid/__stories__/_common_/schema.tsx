@@ -9,8 +9,7 @@ const schema: Schema = [
   {
     name: 'name',
     displayName: 'Name',
-    // width: '40%',
-    // width: 300,
+    width: '40%',
     resizable: true,
     tooltip: true,
     // pinned: 'left',
@@ -50,7 +49,7 @@ const schema: Schema = [
   {
     name: 'email',
     displayName: 'Email',
-    width: 350,
+    width: 250,
     resizable: true,
     sorting: false,
     // separator: true,
