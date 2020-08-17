@@ -111,6 +111,11 @@ export const all = () => {
     false
   );
 
+  const separator = boolean(
+    'separator',
+    false
+  );
+
   let dataAttr = {};
   if (async) {
     dataAttr = {
@@ -147,6 +152,7 @@ export const all = () => {
           type={type}
           size={size}
           headCellTooltip={headCellTooltip}
+          separator={separator}
           draggable={draggable}
           nestedRows={nestedRows}
           nestedRowRenderer={nestedRowRenderer}

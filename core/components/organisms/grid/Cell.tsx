@@ -276,12 +276,12 @@ export const Cell = (props: CellProps) => {
   } = props;
 
   const {
+    separator,
     nestedRows
   } = _this.props;
 
   const {
     name,
-    separator,
     hidden,
     pinned,
     cellType = 'DEFAULT'
@@ -297,7 +297,7 @@ export const Cell = (props: CellProps) => {
     'Grid-cell': true,
     'Grid-cell--head': head,
     'Grid-cell--body': !head,
-    'Grid-cell--separator': !firstCell && separator,
+    'Grid-cell--separator': !firstCell && (schema.separator !== undefined ? schema.separator : separator),
     'Grid-cell--nestedRow': !head && colIndex === 0 && nestedRows
   });
 
