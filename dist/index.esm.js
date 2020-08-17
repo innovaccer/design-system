@@ -1,14 +1,14 @@
 
   /**
-   * Generated on: 1597231903303 
+   * Generated on: 1597664354476 
    *      Package: @innovaccer/design-system
-   *      Version: v1.1.0-3
+   *      Version: v1.1.0-4
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
 
     
-import React__default, { createElement, useState as useState$4, useEffect as useEffect$3, createRef, Component, cloneElement, forwardRef, useRef as useRef$1, useImperativeHandle, Fragment, Children } from 'react';
+import React, { createElement, useState as useState$4, useEffect as useEffect$3, createRef, Component, cloneElement, forwardRef, useRef as useRef$1, useImperativeHandle, Fragment, Children } from 'react';
 import classNames from 'classnames';
 import { createPortal, findDOMNode } from 'react-dom';
 import { Manager, Reference, Popper } from 'react-popper';
@@ -911,7 +911,12 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
       /* tslint:disable:no-shadowed-variable */
       createElement(Popper, {
         placement: placement,
-        innerRef: this.popupRef
+        innerRef: this.popupRef,
+        modifiers: {
+          preventOverflow: {
+            boundariesElement: document.body
+          }
+        }
       }, function (_ref2) {
         var ref = _ref2.ref,
             style = _ref2.style,
@@ -1674,43 +1679,43 @@ var Loading = function Loading(props) {
 
   switch (loadingType) {
     case 'DEFAULT':
-      return /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+      return /*#__PURE__*/React.createElement(PlaceholderParagraph, {
         length: 'large'
       });
 
     case 'WITH_ICON':
-      return /*#__PURE__*/React__default.createElement(Placeholder, {
+      return /*#__PURE__*/React.createElement(Placeholder, {
         withImage: true,
         round: true
-      }, /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+      }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
         length: "large"
       }));
 
     case 'WITH_META':
-      return /*#__PURE__*/React__default.createElement(Placeholder, {
+      return /*#__PURE__*/React.createElement(Placeholder, {
         withImage: false
-      }, /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+      }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
         length: "large"
-      }), /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+      }), /*#__PURE__*/React.createElement(PlaceholderParagraph, {
         length: "medium",
         size: "xxs"
       }));
 
     case 'WITH_CHECKBOX':
-      return /*#__PURE__*/React__default.createElement(Placeholder, {
+      return /*#__PURE__*/React.createElement(Placeholder, {
         withImage: true
-      }, /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+      }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
         length: "large"
       }));
 
     case 'ICON_WITH_META':
-      return /*#__PURE__*/React__default.createElement(Placeholder, {
+      return /*#__PURE__*/React.createElement(Placeholder, {
         withImage: true,
         round: true,
         imageSize: 'medium'
-      }, /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+      }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
         length: "large"
-      }), /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+      }), /*#__PURE__*/React.createElement(PlaceholderParagraph, {
         length: "medium",
         size: "xxs"
       }));
@@ -2328,7 +2333,7 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
       return label;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "updateSelectedOptions", function (selectedArray, isControlled) {
+    _defineProperty(_assertThisInitialized(_this), "updateSelectedOptions", function (selectedArray, isSingleSelect, isControlled) {
       var _this$state3 = _this.state,
           optionsLength = _this$state3.optionsLength,
           previousSelected = _this$state3.previousSelected,
@@ -2359,7 +2364,8 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
         var values = selectedArray.map(function (item) {
           return item.value;
         });
-        onChange(values, name);
+        var selectedValues = isSingleSelect ? values[0] : values;
+        onChange(selectedValues, name);
       }
     });
 
@@ -2373,7 +2379,7 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
         return;
       }
 
-      _this.updateSelectedOptions([option]);
+      _this.updateSelectedOptions([option], true);
     });
 
     _defineProperty(_assertThisInitialized(_this), "onSelect", function (option, checked) {
@@ -2399,7 +2405,7 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
 
       selectedArray = checked ? selectedArray.concat(option) : selectedArray;
 
-      _this.updateSelectedOptions(selectedArray);
+      _this.updateSelectedOptions(selectedArray, false);
     });
 
     _defineProperty(_assertThisInitialized(_this), "onSelectAll", function (event) {
@@ -2415,7 +2421,7 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
 
       var selectedArray = event.target.checked ? _this.state.options : [];
 
-      _this.updateSelectedOptions(selectedArray);
+      _this.updateSelectedOptions(selectedArray, false);
     });
 
     _defineProperty(_assertThisInitialized(_this), "debounceSearch", debounce(300, function () {
@@ -2521,7 +2527,6 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "onToggleDropdown", function (updatedOpen, type) {
-      // open && close blocks
       if (_this.props.disabled) {
         return;
       }
@@ -2625,7 +2630,8 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
       }
 
       if (this.props.selected !== undefined && prevProps.selected !== this.props.selected && prevProps.loading === this.props.loading) {
-        this.updateSelectedOptions(this.props.selected, true);
+        var isSingleSelect = !this.props.withCheckbox;
+        this.updateSelectedOptions(this.props.selected, isSingleSelect, true);
       }
 
       if (prevProps.open !== this.props.open || prevState.open !== this.state.open) {
@@ -4496,6 +4502,48 @@ var Message = function Message(props) {
   }, children)));
 };
 Message.displayName = 'Message';
+
+var Meta = function Meta(props) {
+  var label = props.label,
+      icon = props.icon;
+  var baseProps = extractBaseProps(props);
+  return /*#__PURE__*/createElement("span", _extends({}, baseProps, {
+    className: 'Meta'
+  }), icon && /*#__PURE__*/createElement(Icon, {
+    name: icon,
+    appearance: "disabled",
+    className: 'Meta-icon'
+  }), /*#__PURE__*/createElement(Text, {
+    appearance: "subtle"
+  }, label));
+};
+Meta.displayName = 'Meta';
+
+var MetaList = function MetaList(props) {
+  var list = props.list,
+      seperator = props.seperator;
+  var baseProps = extractBaseProps(props);
+  return /*#__PURE__*/createElement("div", _extends({}, baseProps, {
+    className: 'MetaList'
+  }), seperator && /*#__PURE__*/createElement("span", {
+    className: 'MetaList-seperator MetaList-separator--left'
+  }), list.map(function (item, ind) {
+    var _item$label = item.label,
+        label = _item$label === void 0 ? '' : _item$label,
+        icon = item.icon;
+    var rightSeperator = ind === list.length - 1 ? false : true;
+    return /*#__PURE__*/createElement("span", {
+      key: ind,
+      className: "MetaList-item"
+    }, /*#__PURE__*/createElement(Meta, {
+      label: label,
+      icon: icon
+    }), rightSeperator && /*#__PURE__*/createElement("span", {
+      className: 'MetaList-seperator'
+    }));
+  }));
+};
+MetaList.displayName = 'MetaList';
 
 /**
  * Handle click outside component
@@ -7890,4 +7938,4 @@ PageHeader.defaultProps = {
   navigationPosition: 'center'
 };
 
-export { Avatar, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, Checkbox, Chip, ChipGroup, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, Grid, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, Row, Spinner, StatusHint, Subheading, Switch, Tab, Table, TabsWrapper, Text, Textarea, Toast, Tooltip };
+export { Avatar, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, Checkbox, Chip, ChipGroup, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, Grid, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, Row, Spinner, StatusHint, Subheading, Switch, Tab, Table, TabsWrapper, Text, Textarea, Toast, Tooltip };

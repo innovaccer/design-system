@@ -468,3 +468,12 @@
 * 1e311af fix(Grid): fixes draggable configuration
 * 5bc76a3 fix(Grid): hides Pagination dynamically when pageSize >= totalRecords
 * d6e4ee6 chore(Table): updates asyncTable story
+
+-------------------
+ **v1.1.0-4**  (2020-08-17) 
+
+* 6b3577d v1.1.0-4
+* 33f2fc6 fix(dropdown): fixes onChange callback in case of single select
+* 903abb2 chore: adds CSS Utilities stories
+* dc1908e feat: adds metaList
+* 2d7b580 fix(PopperWrapper): fixes popover overflow #249

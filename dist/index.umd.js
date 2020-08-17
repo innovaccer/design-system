@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1597231903303 
+   * Generated on: 1597664354476 
    *      Package: @innovaccer/design-system
-   *      Version: v1.1.0-3
+   *      Version: v1.1.0-4
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -14,8 +14,10 @@
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['inno-umd'] = {}, global.React, global.classNames, global.ReactDOM, global.reactPopper, global.recharts));
 }(this, (function (exports, React, classNames, ReactDOM, reactPopper, recharts) { 'use strict';
 
-  var React__default = 'default' in React ? React['default'] : React;
-  classNames = classNames && Object.prototype.hasOwnProperty.call(classNames, 'default') ? classNames['default'] : classNames;
+  function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+  var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+  var classNames__default = /*#__PURE__*/_interopDefaultLegacy(classNames);
 
   function _typeof(obj) {
     "@babel/helpers - typeof";
@@ -389,7 +391,7 @@
     var initials = children ? children.trim().slice(0, initialsLength) : "".concat(firstName ? firstName.trim()[0] : '').concat(lastName ? lastName.trim()[0] : '');
     var colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
     var AvatarAppearance = appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8];
-    var classes = classNames(_defineProperty({
+    var classes = classNames__default['default'](_defineProperty({
       Avatar: true
     }, "Avatar--".concat(AvatarAppearance), AvatarAppearance), className);
     return /*#__PURE__*/React.createElement("span", _extends({}, baseProps, {
@@ -424,7 +426,7 @@
         animate = _React$useState4[0],
         setAnimate = _React$useState4[1];
 
-    var classes = classNames({
+    var classes = classNames__default['default']({
       Backdrop: true,
       'Backdrop--open': open,
       'Backdrop-animation--open': animate,
@@ -480,7 +482,7 @@
         subtle = props.subtle,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var classes = classNames((_classNames = {
+    var classes = classNames__default['default']((_classNames = {
       Badge: true
     }, _defineProperty(_classNames, "Badge--".concat(appearance), appearance && !subtle), _defineProperty(_classNames, "Badge--subtle-".concat(appearance), subtle), _classNames), className);
     return /*#__PURE__*/React.createElement("span", _extends({}, baseProps, {
@@ -866,7 +868,7 @@
           }
         };
         var triggerClass = this.props.triggerClass;
-        var classes = classNames('PopperWrapper-trigger', triggerClass);
+        var classes = classNames__default['default']('PopperWrapper-trigger', triggerClass);
         var element = /*#__PURE__*/React.cloneElement( /*#__PURE__*/React.createElement("span", {
           className: classes
         }, trigger), options);
@@ -914,7 +916,12 @@
         /* tslint:disable:no-shadowed-variable */
         React.createElement(reactPopper.Popper, {
           placement: placement,
-          innerRef: this.popupRef
+          innerRef: this.popupRef,
+          modifiers: {
+            preventOverflow: {
+              boundariesElement: document.body
+            }
+          }
         }, function (_ref2) {
           var ref = _ref2.ref,
               style = _ref2.style,
@@ -975,7 +982,7 @@
       setOpen(newOpen);
     };
 
-    var classes = classNames(_defineProperty({
+    var classes = classNames__default['default'](_defineProperty({
       Popover: true
     }, 'Popover--dark', dark), className);
     var PopoverWrapper = /*#__PURE__*/React.createElement("div", {
@@ -1009,7 +1016,7 @@
         size = props.size,
         onClick = props.onClick;
     var baseProps = extractBaseProps(props);
-    var iconClass = classNames((_classNames = {}, _defineProperty(_classNames, 'material-icons', true), _defineProperty(_classNames, 'Icon', true), _defineProperty(_classNames, "Icon--".concat(appearance), appearance), _defineProperty(_classNames, "".concat(className), className), _classNames));
+    var iconClass = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'material-icons', true), _defineProperty(_classNames, 'Icon', true), _defineProperty(_classNames, "Icon--".concat(appearance), appearance), _defineProperty(_classNames, "".concat(className), className), _classNames));
     var styles = {
       fontSize: "".concat(size, "px"),
       width: "".concat(size, "px")
@@ -1048,8 +1055,8 @@
     var value = children ? children : trimmedPlaceholder ? trimmedPlaceholder : 'Select';
     var iconName = !menu ? 'keyboard_arrow_down' : icon ? icon : 'more_horiz';
     var label = inlineLabel && inlineLabel.trim();
-    var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--basic', true), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, 'DropdownTrigger', true), _defineProperty(_classNames, 'DropdownButton', true), _defineProperty(_classNames, "DropdownButton--".concat(triggerSize), triggerSize), _defineProperty(_classNames, 'DropdownButton--icon', icon), _defineProperty(_classNames, 'DropdownButton--moreIcon', menu), _defineProperty(_classNames, 'DropdownButton--placeholder', !children && !menu), _defineProperty(_classNames, 'DropdownButton--label', label), _defineProperty(_classNames, 'DropdownButton--error', error), _classNames));
-    var labelClass = classNames(_defineProperty({}, 'DropdownButton-label', true));
+    var buttonClass = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--basic', true), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, 'DropdownTrigger', true), _defineProperty(_classNames, 'DropdownButton', true), _defineProperty(_classNames, "DropdownButton--".concat(triggerSize), triggerSize), _defineProperty(_classNames, 'DropdownButton--icon', icon), _defineProperty(_classNames, 'DropdownButton--moreIcon', menu), _defineProperty(_classNames, 'DropdownButton--placeholder', !children && !menu), _defineProperty(_classNames, 'DropdownButton--label', label), _defineProperty(_classNames, 'DropdownButton--error', error), _classNames));
+    var labelClass = classNames__default['default'](_defineProperty({}, 'DropdownButton-label', true));
     return /*#__PURE__*/React.createElement("button", _extends({
       ref: ref,
       value: children,
@@ -1098,7 +1105,7 @@
         small = props.small,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var classes = classNames((_classNames = {
+    var classes = classNames__default['default']((_classNames = {
       Text: true
     }, _defineProperty(_classNames, "Text--".concat(appearance), appearance), _defineProperty(_classNames, "Text--".concat(weight), weight), _defineProperty(_classNames, 'Text--small', small), _classNames), className);
     return /*#__PURE__*/React.createElement(GenericText, _extends({}, baseProps, {
@@ -1158,11 +1165,11 @@
         setChecked(props.checked);
       }
     }, [props.checked]);
-    var CheckboxClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Checkbox', true), _defineProperty(_classNames, 'Checkbox--disabled', disabled), _defineProperty(_classNames, "Checkbox--".concat(size), size), _classNames), className);
-    var CheckboxOuterWrapper = classNames(_defineProperty({}, 'Checkbox-outerWrapper', true));
-    var CheckboxTextClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Checkbox-label', true), _defineProperty(_classNames3, "Checkbox-label--".concat(size), size), _classNames3));
-    var CheckboxInputWrapper = classNames((_classNames4 = {}, _defineProperty(_classNames4, 'Checkbox-input', true), _defineProperty(_classNames4, 'Checkbox-input--checked', checked), _defineProperty(_classNames4, 'Checkbox-input--indeterminate', props.indeterminate), _classNames4));
-    var CheckboxWrapper = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'Checkbox-wrapper', true), _defineProperty(_classNames5, "Checkbox-wrapper--".concat(size), size), _classNames5));
+    var CheckboxClass = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Checkbox', true), _defineProperty(_classNames, 'Checkbox--disabled', disabled), _defineProperty(_classNames, "Checkbox--".concat(size), size), _classNames), className);
+    var CheckboxOuterWrapper = classNames__default['default'](_defineProperty({}, 'Checkbox-outerWrapper', true));
+    var CheckboxTextClass = classNames__default['default']((_classNames3 = {}, _defineProperty(_classNames3, 'Checkbox-label', true), _defineProperty(_classNames3, "Checkbox-label--".concat(size), size), _classNames3));
+    var CheckboxInputWrapper = classNames__default['default']((_classNames4 = {}, _defineProperty(_classNames4, 'Checkbox-input', true), _defineProperty(_classNames4, 'Checkbox-input--checked', checked), _defineProperty(_classNames4, 'Checkbox-input--indeterminate', props.indeterminate), _classNames4));
+    var CheckboxWrapper = classNames__default['default']((_classNames5 = {}, _defineProperty(_classNames5, 'Checkbox-wrapper', true), _defineProperty(_classNames5, "Checkbox-wrapper--".concat(size), size), _classNames5));
 
     var setIndeterminate = function setIndeterminate(indeterminateValue) {
       ref.current.indeterminate = indeterminateValue;
@@ -1311,7 +1318,7 @@
         menu = props.menu;
     var label = optionData.label,
         icon = optionData.icon;
-    var OptionClass = classNames((_classNames = {}, _defineProperty(_classNames, "".concat(className), true), _defineProperty(_classNames, 'Option--icon', icon), _classNames));
+    var OptionClass = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, "".concat(className), true), _defineProperty(_classNames, 'Option--icon', icon), _classNames));
 
     var onClickHandler = function onClickHandler() {
       if (onClick) onClick();
@@ -1350,7 +1357,7 @@
     var label = optionData.label,
         icon = optionData.icon,
         subInfo = optionData.subInfo;
-    var OptionClass = classNames((_classNames = {}, _defineProperty(_classNames, "".concat(className), true), _defineProperty(_classNames, 'Option--icon', icon), _classNames));
+    var OptionClass = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, "".concat(className), true), _defineProperty(_classNames, 'Option--icon', icon), _classNames));
 
     var onClickHandler = function onClickHandler() {
       if (onClick) onClick();
@@ -1397,8 +1404,8 @@
         _ref$optionType = _ref.optionType,
         optionType = _ref$optionType === void 0 ? 'DEFAULT' : _ref$optionType;
 
-    var className = classNames((_classNames = {}, _defineProperty(_classNames, 'Option', true), _defineProperty(_classNames, 'Option-wrapper', true), _defineProperty(_classNames, 'Option--withCheckbox', checkboxes), _defineProperty(_classNames, 'Option--active', active), _defineProperty(_classNames, 'Option--selected', selected && !checkboxes && !menu), _classNames));
-    var textClassName = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Option-text', true), _defineProperty(_classNames2, 'Option-text--wrap', !props.truncateOption), _classNames2));
+    var className = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Option', true), _defineProperty(_classNames, 'Option-wrapper', true), _defineProperty(_classNames, 'Option--withCheckbox', checkboxes), _defineProperty(_classNames, 'Option--active', active), _defineProperty(_classNames, 'Option--selected', selected && !checkboxes && !menu), _classNames));
+    var textClassName = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'Option-text', true), _defineProperty(_classNames2, 'Option-text--wrap', !props.truncateOption), _classNames2));
 
     var onUpdateActiveOption = function onUpdateActiveOption() {
       if (updateActiveOption) updateActiveOption(index);
@@ -1441,10 +1448,10 @@
         size = _props$size === void 0 ? 'medium' : _props$size,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var wrapperClasses = classNames(_defineProperty({
+    var wrapperClasses = classNames__default['default'](_defineProperty({
       Spinner: true
     }, "Spinner--".concat(size), size), className);
-    var circleClasses = classNames(_defineProperty({
+    var circleClasses = classNames__default['default'](_defineProperty({
       Circle: true
     }, "Circle--".concat(appearance), appearance));
     var svgProps = {
@@ -1490,9 +1497,9 @@
         className = props.className,
         rest = _objectWithoutProperties(props, ["appearance", "size", "iconAlign", "tabIndex", "children", "icon", "expanded", "loading", "disabled", "className"]);
 
-    var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--expanded', expanded), _defineProperty(_classNames, "Button--".concat(size), size), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, "Button--".concat(appearance), appearance), _defineProperty(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _defineProperty(_classNames, "".concat(className), className), _classNames));
-    var iconClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Button-icon', true), _defineProperty(_classNames2, "Button-icon--".concat(iconAlign), children && iconAlign), _classNames2));
-    var spinnerClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Button-spinner', true), _defineProperty(_classNames3, "Button-spinner--".concat(iconAlign), children && iconAlign), _classNames3));
+    var buttonClass = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--expanded', expanded), _defineProperty(_classNames, "Button--".concat(size), size), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, "Button--".concat(appearance), appearance), _defineProperty(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _defineProperty(_classNames, "".concat(className), className), _classNames));
+    var iconClass = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'Button-icon', true), _defineProperty(_classNames2, "Button-icon--".concat(iconAlign), children && iconAlign), _classNames2));
+    var spinnerClass = classNames__default['default']((_classNames3 = {}, _defineProperty(_classNames3, 'Button-spinner', true), _defineProperty(_classNames3, "Button-spinner--".concat(iconAlign), children && iconAlign), _classNames3));
     return /*#__PURE__*/React.createElement("button", _extends({
       ref: ref,
       className: buttonClass,
@@ -1551,10 +1558,10 @@
         actionIcon = props.actionIcon,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var classes = classNames((_classNames = {}, _defineProperty(_classNames, 'Input', true), _defineProperty(_classNames, "Input--".concat(size), size), _defineProperty(_classNames, 'Input--disabled', disabled), _defineProperty(_classNames, 'Input--error', error), _classNames), className);
-    var inputClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Input-input', true), _defineProperty(_classNames2, "Input-input--".concat(size), size), _classNames2));
-    var leftIconClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Input-icon', true), _defineProperty(_classNames3, 'Input-icon--left', true), _defineProperty(_classNames3, 'Input-icon--disabled', !value), _classNames3));
-    var rightIconClass = classNames((_classNames4 = {}, _defineProperty(_classNames4, 'Input-icon', true), _defineProperty(_classNames4, 'Input-icon--right', true), _classNames4));
+    var classes = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Input', true), _defineProperty(_classNames, "Input--".concat(size), size), _defineProperty(_classNames, 'Input--disabled', disabled), _defineProperty(_classNames, 'Input--error', error), _classNames), className);
+    var inputClass = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'Input-input', true), _defineProperty(_classNames2, "Input-input--".concat(size), size), _classNames2));
+    var leftIconClass = classNames__default['default']((_classNames3 = {}, _defineProperty(_classNames3, 'Input-icon', true), _defineProperty(_classNames3, 'Input-icon--left', true), _defineProperty(_classNames3, 'Input-icon--disabled', !value), _classNames3));
+    var rightIconClass = classNames__default['default']((_classNames4 = {}, _defineProperty(_classNames4, 'Input-icon', true), _defineProperty(_classNames4, 'Input-icon--right', true), _classNames4));
     var trigger = /*#__PURE__*/React.createElement("div", {
       className: rightIconClass
     }, /*#__PURE__*/React.createElement(Icon, {
@@ -1610,11 +1617,11 @@
         size = props.size,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var classes = classNames(_defineProperty({
+    var classes = classNames__default['default'](_defineProperty({
       'Placeholder--animation': true,
       PlaceholderParagraph: true
     }, "PlaceholderParagraph--".concat(size), size));
-    var wrapperClass = classNames((_classNames2 = {
+    var wrapperClass = classNames__default['default']((_classNames2 = {
       'PlaceholderParagraph-wrapper': true
     }, _defineProperty(_classNames2, "PlaceholderParagraph-wrapper--length-".concat(length), length), _defineProperty(_classNames2, "PlaceholderParagraph-wrapper--size-".concat(size), size), _classNames2), className);
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
@@ -1636,7 +1643,7 @@
         round = props.round,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var classes = classNames((_classNames = {
+    var classes = classNames__default['default']((_classNames = {
       PlaceholderImage: true,
       'Placeholder--animation': true
     }, _defineProperty(_classNames, 'PlaceholderImage--round', round), _defineProperty(_classNames, "PlaceholderImage--".concat(size), size), _classNames), className);
@@ -1653,10 +1660,10 @@
         children = props.children,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var paragraphClasses = classNames(_defineProperty({
+    var paragraphClasses = classNames__default['default'](_defineProperty({
       'Placeholder-paragraph': true
     }, 'Placeholder-paragraph--withImage', withImage));
-    var classes = classNames(_defineProperty({}, 'Placeholder', true), className);
+    var classes = classNames__default['default'](_defineProperty({}, 'Placeholder', true), className);
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes
     }), withImage && /*#__PURE__*/React.createElement(PlaceholderImage, {
@@ -1677,43 +1684,43 @@
 
     switch (loadingType) {
       case 'DEFAULT':
-        return /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+        return /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
           length: 'large'
         });
 
       case 'WITH_ICON':
-        return /*#__PURE__*/React__default.createElement(Placeholder, {
+        return /*#__PURE__*/React__default['default'].createElement(Placeholder, {
           withImage: true,
           round: true
-        }, /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+        }, /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
           length: "large"
         }));
 
       case 'WITH_META':
-        return /*#__PURE__*/React__default.createElement(Placeholder, {
+        return /*#__PURE__*/React__default['default'].createElement(Placeholder, {
           withImage: false
-        }, /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+        }, /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
           length: "large"
-        }), /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+        }), /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
           length: "medium",
           size: "xxs"
         }));
 
       case 'WITH_CHECKBOX':
-        return /*#__PURE__*/React__default.createElement(Placeholder, {
+        return /*#__PURE__*/React__default['default'].createElement(Placeholder, {
           withImage: true
-        }, /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+        }, /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
           length: "large"
         }));
 
       case 'ICON_WITH_META':
-        return /*#__PURE__*/React__default.createElement(Placeholder, {
+        return /*#__PURE__*/React__default['default'].createElement(Placeholder, {
           withImage: true,
           round: true,
           imageSize: 'medium'
-        }, /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+        }, /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
           length: "large"
-        }), /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+        }), /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
           length: "medium",
           size: "xxs"
         }));
@@ -1822,19 +1829,19 @@
     };
 
     var getDropdownClass = function getDropdownClass(index, isGroup) {
-      var Dropdown = classNames(_defineProperty({}, 'Dropdown--border', isGroup && index !== 0));
+      var Dropdown = classNames__default['default'](_defineProperty({}, 'Dropdown--border', isGroup && index !== 0));
       return Dropdown;
     };
 
     var getDropdownSectionClass = function getDropdownSectionClass(showClearButton) {
       var _classNames2;
 
-      return classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Dropdown-section', true), _defineProperty(_classNames2, 'Dropdown-section--withClear', showClearButton), _classNames2));
+      return classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'Dropdown-section', true), _defineProperty(_classNames2, 'Dropdown-section--withClear', showClearButton), _classNames2));
     };
 
-    var dropdownClass = classNames(_defineProperty({}, 'Dropdown', true), className);
-    var dropdownWrapperClass = classNames((_classNames4 = {}, _defineProperty(_classNames4, 'Dropdown-wrapper', true), _defineProperty(_classNames4, 'Dropdown-wrapper--wrap', !truncateOption), _classNames4));
-    var SelectAllClass = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'Option', true), _defineProperty(_classNames5, 'Option--withCheckbox', true), _defineProperty(_classNames5, 'Option-wrapper', true), _defineProperty(_classNames5, 'Option--active', cursor === 0), _classNames5));
+    var dropdownClass = classNames__default['default'](_defineProperty({}, 'Dropdown', true), className);
+    var dropdownWrapperClass = classNames__default['default']((_classNames4 = {}, _defineProperty(_classNames4, 'Dropdown-wrapper', true), _defineProperty(_classNames4, 'Dropdown-wrapper--wrap', !truncateOption), _classNames4));
+    var SelectAllClass = classNames__default['default']((_classNames5 = {}, _defineProperty(_classNames5, 'Option', true), _defineProperty(_classNames5, 'Option--withCheckbox', true), _defineProperty(_classNames5, 'Option-wrapper', true), _defineProperty(_classNames5, 'Option--active', cursor === 0), _classNames5));
 
     var onToggleDropdown = function onToggleDropdown(open, type) {
       var _dropdownTriggerRef$c;
@@ -2331,7 +2338,7 @@
         return label;
       });
 
-      _defineProperty(_assertThisInitialized(_this), "updateSelectedOptions", function (selectedArray, isControlled) {
+      _defineProperty(_assertThisInitialized(_this), "updateSelectedOptions", function (selectedArray, isSingleSelect, isControlled) {
         var _this$state3 = _this.state,
             optionsLength = _this$state3.optionsLength,
             previousSelected = _this$state3.previousSelected,
@@ -2362,7 +2369,8 @@
           var values = selectedArray.map(function (item) {
             return item.value;
           });
-          onChange(values, name);
+          var selectedValues = isSingleSelect ? values[0] : values;
+          onChange(selectedValues, name);
         }
       });
 
@@ -2376,7 +2384,7 @@
           return;
         }
 
-        _this.updateSelectedOptions([option]);
+        _this.updateSelectedOptions([option], true);
       });
 
       _defineProperty(_assertThisInitialized(_this), "onSelect", function (option, checked) {
@@ -2402,7 +2410,7 @@
 
         selectedArray = checked ? selectedArray.concat(option) : selectedArray;
 
-        _this.updateSelectedOptions(selectedArray);
+        _this.updateSelectedOptions(selectedArray, false);
       });
 
       _defineProperty(_assertThisInitialized(_this), "onSelectAll", function (event) {
@@ -2418,7 +2426,7 @@
 
         var selectedArray = event.target.checked ? _this.state.options : [];
 
-        _this.updateSelectedOptions(selectedArray);
+        _this.updateSelectedOptions(selectedArray, false);
       });
 
       _defineProperty(_assertThisInitialized(_this), "debounceSearch", debounce(300, function () {
@@ -2524,7 +2532,6 @@
       });
 
       _defineProperty(_assertThisInitialized(_this), "onToggleDropdown", function (updatedOpen, type) {
-        // open && close blocks
         if (_this.props.disabled) {
           return;
         }
@@ -2628,7 +2635,8 @@
         }
 
         if (this.props.selected !== undefined && prevProps.selected !== this.props.selected && prevProps.loading === this.props.loading) {
-          this.updateSelectedOptions(this.props.selected, true);
+          var isSingleSelect = !this.props.withCheckbox;
+          this.updateSelectedOptions(this.props.selected, isSingleSelect, true);
         }
 
         if (prevProps.open !== this.props.open || prevState.open !== this.state.open) {
@@ -2758,7 +2766,7 @@
         onClick = props.onClick,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var BreadcrumbClass = classNames(_defineProperty({}, 'Breadcrumbs', true), className);
+    var BreadcrumbClass = classNames__default['default'](_defineProperty({}, 'Breadcrumbs', true), className);
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: BreadcrumbClass
     }), list.length <= 4 ? list.map(function (item, index) {
@@ -2796,7 +2804,7 @@
         children = props.children,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var classes = classNames((_classNames = {
+    var classes = classNames__default['default']((_classNames = {
       Card: true
     }, _defineProperty(_classNames, "Card--shadow-".concat(shadow), shadow), _defineProperty(_classNames, "".concat(className), className), _classNames));
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
@@ -2823,7 +2831,7 @@
     var iconClass = function iconClass(align) {
       var _classNames;
 
-      return classNames((_classNames = {}, _defineProperty(_classNames, 'Chip-icon', true), _defineProperty(_classNames, "Chip-icon--".concat(align), align), _classNames));
+      return classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Chip-icon', true), _defineProperty(_classNames, "Chip-icon--".concat(align), align), _classNames));
     };
 
     var onCloseHandler = function onCloseHandler(e) {
@@ -2877,7 +2885,7 @@
       if (!disabled && onClick) onClick(name);
     };
 
-    var chipClass = classNames((_classNames = {
+    var chipClass = classNames__default['default']((_classNames = {
       Chip: true
     }, _defineProperty(_classNames, "Chip-".concat(type, "--disabled"), disabled), _defineProperty(_classNames, "Chip--".concat(type), type && !disabled), _defineProperty(_classNames, "Chip-".concat(type, "--selected"), selected && !disabled), _classNames), className);
     var clearbutton = type === 'action' ? false : clearButton;
@@ -2911,7 +2919,7 @@
       if (onClose) onClose(item);
     };
 
-    var ChipGroupClass = classNames(_defineProperty({}, 'ChipGroup', true), className);
+    var ChipGroupClass = classNames__default['default'](_defineProperty({}, 'ChipGroup', true), className);
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: ChipGroupClass
     }), list.map(function (item, ind) {
@@ -2957,7 +2965,7 @@
         className = props.className,
         children = props.children;
     var baseProps = extractBaseProps(props);
-    var classes = classNames((_classNames = {}, _defineProperty(_classNames, 'Col', true), _defineProperty(_classNames, "Col--".concat(size), size), _defineProperty(_classNames, "Col--xs-".concat(sizeXS), sizeXS), _defineProperty(_classNames, "Col--s-".concat(sizeS), sizeS), _defineProperty(_classNames, "Col--m-".concat(sizeM), sizeM), _defineProperty(_classNames, "Col--l-".concat(sizeL), sizeL), _defineProperty(_classNames, "Col--xl-".concat(sizeXL), sizeXL), _defineProperty(_classNames, "".concat(className), className), _classNames));
+    var classes = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Col', true), _defineProperty(_classNames, "Col--".concat(size), size), _defineProperty(_classNames, "Col--xs-".concat(sizeXS), sizeXS), _defineProperty(_classNames, "Col--s-".concat(sizeS), sizeS), _defineProperty(_classNames, "Col--m-".concat(sizeM), sizeM), _defineProperty(_classNames, "Col--l-".concat(sizeL), sizeL), _defineProperty(_classNames, "Col--xl-".concat(sizeXL), sizeXL), _defineProperty(_classNames, "".concat(className), className), _classNames));
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes
     }), children);
@@ -2980,7 +2988,7 @@
         children = props.children,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var classes = classNames((_classNames = {
+    var classes = classNames__default['default']((_classNames = {
       Heading: true
     }, _defineProperty(_classNames, "Heading--".concat(size), size), _defineProperty(_classNames, "Heading--".concat(appearance), appearance), _classNames), className);
     return /*#__PURE__*/React.createElement(GenericText, _extends({}, baseProps, {
@@ -3000,7 +3008,7 @@
         children = props.children,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var classes = classNames(_defineProperty({
+    var classes = classNames__default['default'](_defineProperty({
       Subheading: true
     }, "Subheading--".concat(appearance), appearance), className);
     return /*#__PURE__*/React.createElement(GenericText, _extends({}, baseProps, {
@@ -3527,7 +3535,7 @@
           break;
       }
 
-      var headerIconClass = classNames({
+      var headerIconClass = classNames__default['default']({
         'Calendar-headerIcon': true,
         'Calendar-headerIcon--disabled': disabled
       });
@@ -3545,7 +3553,7 @@
           yearNavVal = _getNavDateInfo2.year,
           monthNavVal = _getNavDateInfo2.month;
 
-      var headerContentClass = classNames({
+      var headerContentClass = classNames__default['default']({
         'Calendar-headerContent': true,
         'Calendar-headerContent--noIcon-left': index === monthsInView - 1,
         'Calendar-headerContent--noIcon-right': index === 0
@@ -3586,7 +3594,7 @@
           var year = yearBlockNav + offset;
           var disabled = compareDate(disabledBefore, 'more', year) || compareDate(disabledAfter, 'less', year);
           var active = !disabled && !rangePicker && yearNav === year;
-          var valueClass = classNames({
+          var valueClass = classNames__default['default']({
             'Calendar-value': true,
             'Calendar-value--active': active,
             'Calendar-value--disabled': disabled
@@ -3616,7 +3624,7 @@
           var month = monthsInRow * row + col;
           var disabled = compareDate(disabledBefore, 'more', yearNav, month) || compareDate(disabledAfter, 'less', yearNav, month);
           var active = !disabled && yearState === yearNav && monthNav === month;
-          var valueClass = classNames({
+          var valueClass = classNames__default['default']({
             'Calendar-value': true,
             'Calendar-value--active': active,
             'Calendar-value--dummy': disabled
@@ -3652,7 +3660,7 @@
       return Array.from({
         length: 7
       }, function (_x, day) {
-        var valueClass = classNames({
+        var valueClass = classNames__default['default']({
           'Calendar-value': true,
           'Calendar-value--dummy': true
         });
@@ -3724,7 +3732,7 @@
             }
           }
 
-          var valueClass = classNames({
+          var valueClass = classNames__default['default']({
             'Calendar-value': true,
             'Calendar-value--active': active,
             'Calendar-value--dummy': dummy || disabled,
@@ -3750,11 +3758,11 @@
     var renderCalendar = function renderCalendar(index) {
       var _classNames;
 
-      var wrapperClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Calendar', true), _defineProperty(_classNames, "Calendar--".concat(view), view), _classNames), className);
-      var headerClass = classNames({
+      var wrapperClass = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Calendar', true), _defineProperty(_classNames, "Calendar--".concat(view), view), _classNames), className);
+      var headerClass = classNames__default['default']({
         'Calendar-header': true
       });
-      var bodyClass = classNames({
+      var bodyClass = classNames__default['default']({
         'Calendar-body': true
       });
       return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
@@ -3788,10 +3796,10 @@
         children = props.children,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var classes = classNames((_classNames = {
+    var classes = classNames__default['default']((_classNames = {
       Caption: true
     }, _defineProperty(_classNames, 'Caption--hidden', hide), _defineProperty(_classNames, 'Caption--withInput', withInput), _classNames), className);
-    var errorIconClass = classNames(_defineProperty({}, 'Caption-icon', true));
+    var errorIconClass = classNames__default['default'](_defineProperty({}, 'Caption-icon', true));
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes
     }), error && /*#__PURE__*/React.createElement("div", {
@@ -3958,7 +3966,7 @@
       if (onClear) onClear(e);
     };
 
-    var classes = classNames({
+    var classes = classNames__default['default']({
       'd-flex flex-column flex-grow-1': true
     }, className);
     return /*#__PURE__*/React.createElement("div", {
@@ -4353,7 +4361,7 @@
     //   return out;
     // }, []);
 
-    var classes = classNames(_defineProperty({}, 'DonutChart', true), className);
+    var classes = classNames__default['default'](_defineProperty({}, 'DonutChart', true), className);
     return /*#__PURE__*/React.createElement(Row, _extends({}, baseProps, {
       className: classes
     }), /*#__PURE__*/React.createElement(Column, columnOptions.chart, /*#__PURE__*/React.createElement(recharts.ResponsiveContainer, null, /*#__PURE__*/React.createElement(recharts.PieChart, null, /*#__PURE__*/React.createElement(recharts.Pie, {
@@ -4393,10 +4401,10 @@
         children = props.children,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var LabelClass = classNames((_classNames = {
+    var LabelClass = classNames__default['default']((_classNames = {
       Label: true
     }, _defineProperty(_classNames, 'Label--withInput', withInput), _defineProperty(_classNames, "".concat(className), className), _classNames));
-    var classes = classNames({
+    var classes = classNames__default['default']({
       'Label-label': true,
       'Label--disabled': disabled
     });
@@ -4424,7 +4432,7 @@
         _onClick = props.onClick,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var legendClass = classNames(_defineProperty({}, 'Legend', true), className);
+    var legendClass = classNames__default['default'](_defineProperty({}, 'Legend', true), className);
     var styles = {
       background: "var(--".concat(iconAppearance, ")"),
       height: "".concat(iconSize, "px"),
@@ -4456,7 +4464,7 @@
         className = props.className,
         rest = _objectWithoutProperties(props, ["children", "className"]);
 
-    var classes = classNames({
+    var classes = classNames__default['default']({
       Link: true
     }, className);
     return /*#__PURE__*/React.createElement(GenericText, _extends({
@@ -4481,8 +4489,8 @@
         children = props.children,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var MessageClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Message', true), _defineProperty(_classNames, "Message--".concat(appearance), appearance), _classNames), className);
-    var MessageIcon = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Message-icon', true), _defineProperty(_classNames2, "Message-icon--".concat(appearance), appearance), _defineProperty(_classNames2, 'Message-icon--withTitle', title), _classNames2));
+    var MessageClass = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Message', true), _defineProperty(_classNames, "Message--".concat(appearance), appearance), _classNames), className);
+    var MessageIcon = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'Message-icon', true), _defineProperty(_classNames2, "Message-icon--".concat(appearance), appearance), _defineProperty(_classNames2, 'Message-icon--withTitle', title), _classNames2));
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: MessageClass
     }), appearance !== 'default' && /*#__PURE__*/React.createElement("div", {
@@ -4499,6 +4507,48 @@
     }, children)));
   };
   Message.displayName = 'Message';
+
+  var Meta = function Meta(props) {
+    var label = props.label,
+        icon = props.icon;
+    var baseProps = extractBaseProps(props);
+    return /*#__PURE__*/React.createElement("span", _extends({}, baseProps, {
+      className: 'Meta'
+    }), icon && /*#__PURE__*/React.createElement(Icon, {
+      name: icon,
+      appearance: "disabled",
+      className: 'Meta-icon'
+    }), /*#__PURE__*/React.createElement(Text, {
+      appearance: "subtle"
+    }, label));
+  };
+  Meta.displayName = 'Meta';
+
+  var MetaList = function MetaList(props) {
+    var list = props.list,
+        seperator = props.seperator;
+    var baseProps = extractBaseProps(props);
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
+      className: 'MetaList'
+    }), seperator && /*#__PURE__*/React.createElement("span", {
+      className: 'MetaList-seperator MetaList-separator--left'
+    }), list.map(function (item, ind) {
+      var _item$label = item.label,
+          label = _item$label === void 0 ? '' : _item$label,
+          icon = item.icon;
+      var rightSeperator = ind === list.length - 1 ? false : true;
+      return /*#__PURE__*/React.createElement("span", {
+        key: ind,
+        className: "MetaList-item"
+      }, /*#__PURE__*/React.createElement(Meta, {
+        label: label,
+        icon: icon
+      }), rightSeperator && /*#__PURE__*/React.createElement("span", {
+        className: 'MetaList-seperator'
+      }));
+    }));
+  };
+  MetaList.displayName = 'MetaList';
 
   /**
    * Handle click outside component
@@ -4581,7 +4631,7 @@
         children = props.children,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var classes = classNames(_defineProperty({
+    var classes = classNames__default['default'](_defineProperty({
       Text: true
     }, "Text--".concat(appearance), appearance), className);
     return /*#__PURE__*/React.createElement(GenericText, _extends({}, baseProps, {
@@ -4600,7 +4650,7 @@
     var style = {
       width: value > 0 ? "".concat(Math.min(value, max) * 100 / max, "%") : '0'
     };
-    var ProgressBarClass = classNames({
+    var ProgressBarClass = classNames__default['default']({
       ProgressBar: true
     }, className);
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
@@ -4629,9 +4679,9 @@
     React.useImperativeHandle(forwardedRef, function () {
       return ref.current;
     });
-    var RadioClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Radio', true), _defineProperty(_classNames, 'Radio--disabled', disabled), _defineProperty(_classNames, "Radio--".concat(size), size), _classNames), className);
-    var RadioWrapper = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Radio-wrapper', true), _defineProperty(_classNames2, "Radio-wrapper--".concat(size), size), _classNames2));
-    var RadioOuterWrapper = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Radio-outerWrapper', true), _defineProperty(_classNames3, "Radio-outerWrapper--".concat(size), size), _classNames3));
+    var RadioClass = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Radio', true), _defineProperty(_classNames, 'Radio--disabled', disabled), _defineProperty(_classNames, "Radio--".concat(size), size), _classNames), className);
+    var RadioWrapper = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'Radio-wrapper', true), _defineProperty(_classNames2, "Radio-wrapper--".concat(size), size), _classNames2));
+    var RadioOuterWrapper = classNames__default['default']((_classNames3 = {}, _defineProperty(_classNames3, 'Radio-outerWrapper', true), _defineProperty(_classNames3, "Radio-outerWrapper--".concat(size), size), _classNames3));
 
     var onChangeHandler = function onChangeHandler(event) {
       if (onChange) onChange(event);
@@ -4667,7 +4717,7 @@
     var className = props.className,
         children = props.children;
     var baseProps = extractBaseProps(props);
-    var classes = classNames(_defineProperty({
+    var classes = classNames__default['default'](_defineProperty({
       Row: true
     }, "".concat(className), className));
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
@@ -4687,8 +4737,8 @@
         _onClick = props.onClick,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var StatusHintClass = classNames(_defineProperty({}, 'StatusHint', true), className);
-    var StatusHintIconClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'StatusHint-icon', true), _defineProperty(_classNames2, "StatusHint--".concat(appearance), appearance), _classNames2));
+    var StatusHintClass = classNames__default['default'](_defineProperty({}, 'StatusHint', true), className);
+    var StatusHintIconClass = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'StatusHint-icon', true), _defineProperty(_classNames2, "StatusHint--".concat(appearance), appearance), _classNames2));
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: StatusHintClass,
       onClick: function onClick(e) {
@@ -4717,7 +4767,7 @@
         subtle = props.subtle,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var classes = classNames((_classNames = {
+    var classes = classNames__default['default']((_classNames = {
       Pills: true
     }, _defineProperty(_classNames, "Badge--".concat(appearance), appearance && !subtle), _defineProperty(_classNames, "Badge--subtle-".concat(appearance), subtle), _classNames), className);
     return /*#__PURE__*/React.createElement("span", _extends({}, baseProps, {
@@ -4754,8 +4804,8 @@
     React.useEffect(function () {
       if (props.checked !== undefined) setChecked(props.checked);
     }, [props.checked]);
-    var SwitchClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Switch', true), _defineProperty(_classNames, 'Switch--disabled', disabled), _defineProperty(_classNames, "Switch--".concat(size), size), _classNames), className);
-    var SwitchWrapper = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Switch-wrapper', true), _defineProperty(_classNames2, 'Switch-wrapper--disabled', disabled), _defineProperty(_classNames2, "Switch-wrapper--".concat(size), size), _defineProperty(_classNames2, "Switch-wrapper--".concat(appearance), appearance), _defineProperty(_classNames2, 'Switch-wrapper--checked', checked), _defineProperty(_classNames2, 'Switch-wrapper--checkedDisabled', checked && disabled), _classNames2));
+    var SwitchClass = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Switch', true), _defineProperty(_classNames, 'Switch--disabled', disabled), _defineProperty(_classNames, "Switch--".concat(size), size), _classNames), className);
+    var SwitchWrapper = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'Switch-wrapper', true), _defineProperty(_classNames2, 'Switch-wrapper--disabled', disabled), _defineProperty(_classNames2, "Switch-wrapper--".concat(size), size), _defineProperty(_classNames2, "Switch-wrapper--".concat(appearance), appearance), _defineProperty(_classNames2, 'Switch-wrapper--checked', checked), _defineProperty(_classNames2, 'Switch-wrapper--checkedDisabled', checked && disabled), _classNames2));
 
     var onChangeHandler = function onChangeHandler(event) {
       if (props.checked === undefined) setChecked(!checked);
@@ -4797,8 +4847,8 @@
         onFocus = props.onFocus,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var classes = classNames(_defineProperty({}, 'Textarea', true), className);
-    var TextareaClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Textarea-textarea', true), _defineProperty(_classNames2, 'Textarea-textarea--error', error), _classNames2));
+    var classes = classNames__default['default'](_defineProperty({}, 'Textarea', true), className);
+    var TextareaClass = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'Textarea-textarea', true), _defineProperty(_classNames2, 'Textarea-textarea--error', error), _classNames2));
     return /*#__PURE__*/React.createElement("div", {
       className: classes
     }, /*#__PURE__*/React.createElement("textarea", _extends({}, baseProps, {
@@ -4829,7 +4879,7 @@
         appearance = _props$appearance === void 0 ? 'default' : _props$appearance,
         label = props.label,
         onClick = props.onClick;
-    var buttonClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--tiny', true), _defineProperty(_classNames, 'Toast-actionButton', true), _defineProperty(_classNames, "Toast-actionButton--".concat(appearance), appearance), _classNames));
+    var buttonClass = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--tiny', true), _defineProperty(_classNames, 'Toast-actionButton', true), _defineProperty(_classNames, "Toast-actionButton--".concat(appearance), appearance), _classNames));
 
     var onClickHandler = function onClickHandler(e) {
       e.preventDefault();
@@ -4857,7 +4907,7 @@
         onClose = props.onClose,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var wrapperClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Toast', true), _defineProperty(_classNames, "Toast--".concat(appearance), appearance), _classNames), className);
+    var wrapperClass = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Toast', true), _defineProperty(_classNames, "Toast--".concat(appearance), appearance), _classNames), className);
     var IconMapping = {
       info: 'info',
       success: 'check_circle',
@@ -4865,12 +4915,12 @@
       warning: 'info'
     };
     var icon = IconMapping[appearance];
-    var titleClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Toast-title', true), _defineProperty(_classNames2, 'Toast-title--withMessage', message), _classNames2));
+    var titleClass = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'Toast-title', true), _defineProperty(_classNames2, 'Toast-title--withMessage', message), _classNames2));
 
     var iconClass = function iconClass(align) {
       var _classNames3;
 
-      return classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Toast-icon', true), _defineProperty(_classNames3, "Toast-icon--".concat(align), align), _classNames3));
+      return classNames__default['default']((_classNames3 = {}, _defineProperty(_classNames3, 'Toast-icon', true), _defineProperty(_classNames3, "Toast-icon--".concat(align), align), _classNames3));
     };
 
     var onCloseHandler = function onCloseHandler() {
@@ -5009,7 +5059,7 @@
         animate = _useState4[0],
         setAnimate = _useState4[1];
 
-    var classes = classNames((_classNames = {
+    var classes = classNames__default['default']((_classNames = {
       Modal: true
     }, _defineProperty(_classNames, "Modal--".concat(dimension), dimension), _defineProperty(_classNames, 'Modal--open', open), _defineProperty(_classNames, 'Modal-animation--open', animate), _defineProperty(_classNames, 'Modal-animation--close', !animate), _classNames), className);
     var baseProps = extractBaseProps(props);
@@ -5053,10 +5103,10 @@
         _props$subHeading = props.subHeading,
         subHeading = _props$subHeading === void 0 ? '' : _props$subHeading;
     var baseProps = extractBaseProps(props);
-    var classes = classNames({
+    var classes = classNames__default['default']({
       'Modal-header': true
     }, className);
-    var subheaderClasses = classNames(_defineProperty({
+    var subheaderClasses = classNames__default['default'](_defineProperty({
       'Modal-header-subheader': true
     }, 'Modal-header-subheader--withIcon', icon));
 
@@ -5102,7 +5152,7 @@
         removePadding = _props$removePadding === void 0 ? false : _props$removePadding,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var classes = classNames(_defineProperty({
+    var classes = classNames__default['default'](_defineProperty({
       'Modal-description': true
     }, 'pl-6 pr-6', !removePadding), className);
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
@@ -5117,7 +5167,7 @@
     var children = props.children,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var classes = classNames({
+    var classes = classNames__default['default']({
       'Modal-footer': true
     }, className);
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
@@ -5193,7 +5243,7 @@
         setScroll(true);
       }
     }, [ref]);
-    var classes = classNames(_defineProperty({
+    var classes = classNames__default['default'](_defineProperty({
       'Modal-body': true
     }, 'Modal-body--border', scroll), className);
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
@@ -5226,9 +5276,9 @@
     React.useEffect(function () {
       if (props.page && props.page >= 1 && props.page <= totalPages) setPage(props.page);
     }, [props.page]);
-    var wrapperClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Pagination', true), _defineProperty(_classNames, "Pagination--".concat(type), type), _classNames), className);
-    var nextButtonWrapperClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Pagination-buttonWrapper', true), _defineProperty(_classNames2, 'Pagination-buttonWrapper--next', true), _classNames2));
-    var prevButtonWrapperClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Pagination-buttonWrapper', true), _defineProperty(_classNames3, 'Pagination-buttonWrapper--previous', true), _classNames3));
+    var wrapperClass = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Pagination', true), _defineProperty(_classNames, "Pagination--".concat(type), type), _classNames), className);
+    var nextButtonWrapperClass = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'Pagination-buttonWrapper', true), _defineProperty(_classNames2, 'Pagination-buttonWrapper--next', true), _classNames2));
+    var prevButtonWrapperClass = classNames__default['default']((_classNames3 = {}, _defineProperty(_classNames3, 'Pagination-buttonWrapper', true), _defineProperty(_classNames3, 'Pagination-buttonWrapper--previous', true), _classNames3));
     React.useEffect(function () {
       if (init && page) onPageChange(page);
     }, [page]);
@@ -5329,7 +5379,7 @@
     var baseProps = extractBaseProps(props);
     var radius = 20;
     var circumference = 2 * Math.PI * radius;
-    var ProgressRingClass = classNames(_defineProperty({
+    var ProgressRingClass = classNames__default['default'](_defineProperty({
       Ring: true
     }, "Ring--".concat(size), size), className);
     var svgProps = {
@@ -5736,7 +5786,7 @@
     React.useEffect(function () {
       setActiveTab(props.active && props.active < children.length ? props.active : 0);
     }, [props.active]);
-    var wrapperClass = classNames(_defineProperty({}, 'TabsWrapper', true), className);
+    var wrapperClass = classNames__default['default'](_defineProperty({}, 'TabsWrapper', true), className);
 
     var tabClickHandler = function tabClickHandler(tabIndex) {
       setActiveTab(tabIndex);
@@ -5749,7 +5799,7 @@
       var _child$props = child.props,
           label = _child$props.label,
           disabled = _child$props.disabled;
-      var tabHeaderClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Tab', true), _defineProperty(_classNames2, 'Tab--disabled', disabled), _defineProperty(_classNames2, 'Tab--active', !disabled && active === index), _classNames2));
+      var tabHeaderClass = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'Tab', true), _defineProperty(_classNames2, 'Tab--disabled', disabled), _defineProperty(_classNames2, 'Tab--active', !disabled && active === index), _classNames2));
       return /*#__PURE__*/React.createElement("div", {
         key: index,
         className: tabHeaderClass,
@@ -6102,7 +6152,7 @@
         align = _schema$align === void 0 ? 'left' : _schema$align,
         tooltip = schema.tooltip;
     var cellData = data[name];
-    var cellClass = classNames(_defineProperty({}, 'GridCell', true));
+    var cellClass = classNames__default['default'](_defineProperty({}, 'GridCell', true));
 
     switch (cellType) {
       case 'DEFAULT':
@@ -6285,7 +6335,7 @@
     if (sorted === 'desc') sortOptions[1] = unsortOption;
     var options = [].concat(pinOptions, hideOptions);
     if (sorting) options = [].concat(sortOptions, _toConsumableArray(options));
-    var classes = classNames({
+    var classes = classNames__default['default']({
       'Grid-headCell': true,
       'Grid-headCell--draggable': draggable
     });
@@ -6430,7 +6480,7 @@
         _getCellSize$maxWidth = _getCellSize.maxWidth,
         maxWidth = _getCellSize$maxWidth === void 0 ? 800 : _getCellSize$maxWidth;
 
-    var cellClass = classNames({
+    var cellClass = classNames__default['default']({
       'Grid-cell': true,
       'Grid-cell--head': head,
       'Grid-cell--body': !head,
@@ -6515,7 +6565,7 @@
       if (currSchema.length) {
         var _classNames;
 
-        var classes = classNames((_classNames = {
+        var classes = classNames__default['default']((_classNames = {
           'Grid-cellGroup': true,
           'Grid-cellGroup--pinned': pinned
         }, _defineProperty(_classNames, "Grid-cellGroup--pinned-".concat(pinned), pinned), _defineProperty(_classNames, 'Grid-cellGroup--main', !pinned), _classNames));
@@ -6607,7 +6657,7 @@
         expanded = _React$useState2[0],
         setExpanded = _React$useState2[1];
 
-    var rowClasses = classNames('Grid-row', 'Grid-row--body', {
+    var rowClasses = classNames__default['default']('Grid-row', 'Grid-row--body', {
       'Grid-row--selected': data._selected
     });
 
@@ -6658,7 +6708,7 @@
       if (currSchema.length) {
         var _classNames;
 
-        var classes = classNames((_classNames = {
+        var classes = classNames__default['default']((_classNames = {
           'Grid-cellGroup': true,
           'Grid-cellGroup--pinned': pinned
         }, _defineProperty(_classNames, "Grid-cellGroup--pinned-".concat(pinned), pinned), _defineProperty(_classNames, 'Grid-cellGroup--main', !pinned), _classNames));
@@ -6768,7 +6818,7 @@
         draggable = _this$props.draggable,
         withCheckbox = _this$props.withCheckbox,
         data = _this$props.data;
-    var classes = classNames((_classNames = {
+    var classes = classNames__default['default']((_classNames = {
       Grid: 'true'
     }, _defineProperty(_classNames, "Grid--".concat(type), type), _defineProperty(_classNames, "Grid--".concat(size), size), _classNames), className);
     var minRowHeight = {
@@ -7738,7 +7788,7 @@
       var list = menuData.map(function (menu, index) {
         var _classNames;
 
-        var menuClasses = classNames((_classNames = {
+        var menuClasses = classNames__default['default']((_classNames = {
           'Navigation-menu': true
         }, _defineProperty(_classNames, "Navigation-menu--".concat(type), type), _defineProperty(_classNames, 'Navigation-menu--active', isActive(menu)), _classNames));
         return /*#__PURE__*/React.createElement("div", {
@@ -7762,10 +7812,10 @@
       var list = menus.map(function (menu, index) {
         var _classNames2;
 
-        var menuClasses = classNames((_classNames2 = {
+        var menuClasses = classNames__default['default']((_classNames2 = {
           'Navigation-menu': true
         }, _defineProperty(_classNames2, "Navigation-menu--".concat(type), type), _defineProperty(_classNames2, 'Navigation-menu--active', expanded && !menuState[menu.name] && isActive(menu)), _classNames2));
-        var menuIconClasses = classNames({
+        var menuIconClasses = classNames__default['default']({
           'Navigation-menuIcon': true,
           'Navigation-menuIcon--active': !expanded && isActive(menu)
         });
@@ -7793,7 +7843,7 @@
         }, menuState[menu.name] && menu.subMenu && expanded && menu.subMenu.map(function (subMenu, ind) {
           var _classNames3;
 
-          var subMenuClasses = classNames(menuClasses, (_classNames3 = {}, _defineProperty(_classNames3, 'Navigation-menu--subMenu', type), _defineProperty(_classNames3, 'Navigation-menu--active', isActive(subMenu)), _classNames3));
+          var subMenuClasses = classNames__default['default'](menuClasses, (_classNames3 = {}, _defineProperty(_classNames3, 'Navigation-menu--subMenu', type), _defineProperty(_classNames3, 'Navigation-menu--active', isActive(subMenu)), _classNames3));
           return /*#__PURE__*/React.createElement("div", {
             key: ind,
             className: subMenuClasses,
@@ -7805,7 +7855,7 @@
           }, subMenu.label));
         })));
       });
-      var footerClasses = classNames(_defineProperty({
+      var footerClasses = classNames__default['default'](_defineProperty({
         'Navigation-footer': true
       }, 'Navigation-footer--border', true));
       return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
@@ -7822,7 +7872,7 @@
       })));
     };
 
-    var classes = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'Navigation', true), _defineProperty(_classNames5, "Navigation--".concat(type), type), _defineProperty(_classNames5, 'Navigation--collapsed', !expanded), _classNames5), className);
+    var classes = classNames__default['default']((_classNames5 = {}, _defineProperty(_classNames5, 'Navigation', true), _defineProperty(_classNames5, "Navigation--".concat(type), type), _defineProperty(_classNames5, 'Navigation--collapsed', !expanded), _classNames5), className);
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: classes
     }), type === 'horizontal' ? getHorizontalMenu(menus) : getVerticalMenu());
@@ -7847,10 +7897,10 @@
         navigationPosition = props.navigationPosition,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var wrapperClasses = classNames(_defineProperty({
+    var wrapperClasses = classNames__default['default'](_defineProperty({
       'PageHeader-wrapper': true
     }, 'PageHeader-wrapper--withTabs', tabs), className);
-    var classes = classNames({
+    var classes = classNames__default['default']({
       PageHeader: true
     });
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
@@ -7919,6 +7969,7 @@
   exports.Link = Link;
   exports.List = List;
   exports.Message = Message;
+  exports.MetaList = MetaList;
   exports.Modal = Modal;
   exports.ModalBody = ModalBody;
   exports.ModalDescription = ModalDescription;

@@ -68,7 +68,7 @@ export declare class Dropdown extends React.Component<DropdownProps, DropdownSta
     updateSearchTerm: (search: string) => void;
     updateOnPopperToggle: () => void;
     updateTriggerLabel: (selectedArray?: Selected[], totalOptions?: number | undefined) => string;
-    updateSelectedOptions: (selectedArray: Option[], isControlled?: boolean | undefined) => void;
+    updateSelectedOptions: (selectedArray: Option[], isSingleSelect: boolean, isControlled?: boolean | undefined) => void;
     onOptionSelect: (option: Option) => void;
     onSelect: (option: Option, checked: boolean) => void;
     onSelectAll: (event: ChangeEvent) => void;

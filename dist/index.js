@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1597231903725 
+   * Generated on: 1597664354825 
    *      Package: @innovaccer/design-system
-   *      Version: v1.1.0-3
+   *      Version: v1.1.0-4
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -14,8 +14,10 @@
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.inno = {}, global.React, global.classNames, global.ReactDOM, global.reactPopper, global.recharts));
 }(this, (function (exports, React, classNames, ReactDOM, reactPopper, recharts) { 'use strict';
 
-    var React__default = 'default' in React ? React['default'] : React;
-    classNames = classNames && Object.prototype.hasOwnProperty.call(classNames, 'default') ? classNames['default'] : classNames;
+    function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+    var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+    var classNames__default = /*#__PURE__*/_interopDefaultLegacy(classNames);
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation.
@@ -100,7 +102,7 @@
       var initials = children ? children.trim().slice(0, initialsLength) : "" + (firstName ? firstName.trim()[0] : '') + (lastName ? lastName.trim()[0] : '');
       var colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
       var AvatarAppearance = appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8];
-      var classes = classNames((_a = {
+      var classes = classNames__default['default']((_a = {
         Avatar: true
       }, _a["Avatar--" + AvatarAppearance] = AvatarAppearance, _a), className);
       return /*#__PURE__*/React.createElement("span", __assign({}, baseProps, {
@@ -132,7 +134,7 @@
           animate = _c[0],
           setAnimate = _c[1];
 
-      var classes = classNames({
+      var classes = classNames__default['default']({
         Backdrop: true,
         'Backdrop--open': open,
         'Backdrop-animation--open': animate,
@@ -188,7 +190,7 @@
           subtle = props.subtle,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames((_a = {
+      var classes = classNames__default['default']((_a = {
         Badge: true
       }, _a["Badge--" + appearance] = appearance && !subtle, _a["Badge--subtle-" + appearance] = subtle, _a), className);
       return /*#__PURE__*/React.createElement("span", __assign({}, baseProps, {
@@ -560,7 +562,7 @@
           }
         };
         var triggerClass = this.props.triggerClass;
-        var classes = classNames('PopperWrapper-trigger', triggerClass);
+        var classes = classNames__default['default']('PopperWrapper-trigger', triggerClass);
         var element = /*#__PURE__*/React.cloneElement( /*#__PURE__*/React.createElement("span", {
           className: classes
         }, trigger), options);
@@ -602,7 +604,12 @@
           return _this.getTriggerElement(trigger, ref, on);
         }), (open || this.state.open) && appendToBody && /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement(reactPopper.Popper, {
           placement: placement,
-          innerRef: this.popupRef
+          innerRef: this.popupRef,
+          modifiers: {
+            preventOverflow: {
+              boundariesElement: document.body
+            }
+          }
         }, function (_a) {
           var ref = _a.ref,
               style = _a.style,
@@ -663,7 +670,7 @@
         setOpen(newOpen);
       };
 
-      var classes = classNames((_a = {
+      var classes = classNames__default['default']((_a = {
         Popover: true
       }, _a['Popover--dark'] = dark, _a), className);
       var PopoverWrapper = /*#__PURE__*/React.createElement("div", {
@@ -697,7 +704,7 @@
           size = props.size,
           onClick = props.onClick;
       var baseProps = extractBaseProps(props);
-      var iconClass = classNames((_a = {}, _a['material-icons'] = true, _a['Icon'] = true, _a["Icon--" + appearance] = appearance, _a["" + className] = className, _a));
+      var iconClass = classNames__default['default']((_a = {}, _a['material-icons'] = true, _a['Icon'] = true, _a["Icon--" + appearance] = appearance, _a["" + className] = className, _a));
       var styles = {
         fontSize: size + "px",
         width: size + "px"
@@ -736,8 +743,8 @@
       var value = children ? children : trimmedPlaceholder ? trimmedPlaceholder : 'Select';
       var iconName = !menu ? 'keyboard_arrow_down' : icon ? icon : 'more_horiz';
       var label = inlineLabel && inlineLabel.trim();
-      var buttonClass = classNames((_a = {}, _a['Button'] = true, _a['Button--basic'] = true, _a['Button--square'] = !children, _a['DropdownTrigger'] = true, _a['DropdownButton'] = true, _a["DropdownButton--" + triggerSize] = triggerSize, _a['DropdownButton--icon'] = icon, _a['DropdownButton--moreIcon'] = menu, _a['DropdownButton--placeholder'] = !children && !menu, _a['DropdownButton--label'] = label, _a['DropdownButton--error'] = error, _a));
-      var labelClass = classNames((_b = {}, _b['DropdownButton-label'] = true, _b));
+      var buttonClass = classNames__default['default']((_a = {}, _a['Button'] = true, _a['Button--basic'] = true, _a['Button--square'] = !children, _a['DropdownTrigger'] = true, _a['DropdownButton'] = true, _a["DropdownButton--" + triggerSize] = triggerSize, _a['DropdownButton--icon'] = icon, _a['DropdownButton--moreIcon'] = menu, _a['DropdownButton--placeholder'] = !children && !menu, _a['DropdownButton--label'] = label, _a['DropdownButton--error'] = error, _a));
+      var labelClass = classNames__default['default']((_b = {}, _b['DropdownButton-label'] = true, _b));
       return /*#__PURE__*/React.createElement("button", __assign({
         ref: ref,
         value: children,
@@ -786,7 +793,7 @@
           small = props.small,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames((_a = {
+      var classes = classNames__default['default']((_a = {
         Text: true
       }, _a["Text--" + appearance] = appearance, _a["Text--" + weight] = weight, _a['Text--small'] = small, _a), className);
       return /*#__PURE__*/React.createElement(GenericText, __assign({}, baseProps, {
@@ -840,11 +847,11 @@
           setChecked(props.checked);
         }
       }, [props.checked]);
-      var CheckboxClass = classNames((_a = {}, _a['Checkbox'] = true, _a['Checkbox--disabled'] = disabled, _a["Checkbox--" + size] = size, _a), className);
-      var CheckboxOuterWrapper = classNames((_b = {}, _b['Checkbox-outerWrapper'] = true, _b));
-      var CheckboxTextClass = classNames((_c = {}, _c['Checkbox-label'] = true, _c["Checkbox-label--" + size] = size, _c));
-      var CheckboxInputWrapper = classNames((_d = {}, _d['Checkbox-input'] = true, _d['Checkbox-input--checked'] = checked, _d['Checkbox-input--indeterminate'] = props.indeterminate, _d));
-      var CheckboxWrapper = classNames((_e = {}, _e['Checkbox-wrapper'] = true, _e["Checkbox-wrapper--" + size] = size, _e));
+      var CheckboxClass = classNames__default['default']((_a = {}, _a['Checkbox'] = true, _a['Checkbox--disabled'] = disabled, _a["Checkbox--" + size] = size, _a), className);
+      var CheckboxOuterWrapper = classNames__default['default']((_b = {}, _b['Checkbox-outerWrapper'] = true, _b));
+      var CheckboxTextClass = classNames__default['default']((_c = {}, _c['Checkbox-label'] = true, _c["Checkbox-label--" + size] = size, _c));
+      var CheckboxInputWrapper = classNames__default['default']((_d = {}, _d['Checkbox-input'] = true, _d['Checkbox-input--checked'] = checked, _d['Checkbox-input--indeterminate'] = props.indeterminate, _d));
+      var CheckboxWrapper = classNames__default['default']((_e = {}, _e['Checkbox-wrapper'] = true, _e["Checkbox-wrapper--" + size] = size, _e));
 
       var setIndeterminate = function setIndeterminate(indeterminateValue) {
         ref.current.indeterminate = indeterminateValue;
@@ -993,7 +1000,7 @@
           menu = props.menu;
       var label = optionData.label,
           icon = optionData.icon;
-      var OptionClass = classNames((_a = {}, _a["" + className] = true, _a['Option--icon'] = icon, _a));
+      var OptionClass = classNames__default['default']((_a = {}, _a["" + className] = true, _a['Option--icon'] = icon, _a));
 
       var onClickHandler = function onClickHandler() {
         if (onClick) onClick();
@@ -1032,7 +1039,7 @@
       var label = optionData.label,
           icon = optionData.icon,
           subInfo = optionData.subInfo;
-      var OptionClass = classNames((_a = {}, _a["" + className] = true, _a['Option--icon'] = icon, _a));
+      var OptionClass = classNames__default['default']((_a = {}, _a["" + className] = true, _a['Option--icon'] = icon, _a));
 
       var onClickHandler = function onClickHandler() {
         if (onClick) onClick();
@@ -1076,8 +1083,8 @@
           menu = props.menu;
       var _c = (optionData.optionType ? optionData : props).optionType,
           optionType = _c === void 0 ? 'DEFAULT' : _c;
-      var className = classNames((_a = {}, _a['Option'] = true, _a['Option-wrapper'] = true, _a['Option--withCheckbox'] = checkboxes, _a['Option--active'] = active, _a['Option--selected'] = selected && !checkboxes && !menu, _a));
-      var textClassName = classNames((_b = {}, _b['Option-text'] = true, _b['Option-text--wrap'] = !props.truncateOption, _b));
+      var className = classNames__default['default']((_a = {}, _a['Option'] = true, _a['Option-wrapper'] = true, _a['Option--withCheckbox'] = checkboxes, _a['Option--active'] = active, _a['Option--selected'] = selected && !checkboxes && !menu, _a));
+      var textClassName = classNames__default['default']((_b = {}, _b['Option-text'] = true, _b['Option-text--wrap'] = !props.truncateOption, _b));
 
       var onUpdateActiveOption = function onUpdateActiveOption() {
         if (updateActiveOption) updateActiveOption(index);
@@ -1122,10 +1129,10 @@
           size = _d === void 0 ? 'medium' : _d,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var wrapperClasses = classNames((_a = {
+      var wrapperClasses = classNames__default['default']((_a = {
         Spinner: true
       }, _a["Spinner--" + size] = size, _a), className);
-      var circleClasses = classNames((_b = {
+      var circleClasses = classNames__default['default']((_b = {
         Circle: true
       }, _b["Circle--" + appearance] = appearance, _b));
       var svgProps = {
@@ -1171,9 +1178,9 @@
           className = props.className,
           rest = __rest(props, ["appearance", "size", "iconAlign", "tabIndex", "children", "icon", "expanded", "loading", "disabled", "className"]);
 
-      var buttonClass = classNames((_a = {}, _a['Button'] = true, _a['Button--expanded'] = expanded, _a["Button--" + size] = size, _a['Button--square'] = !children, _a["Button--" + appearance] = appearance, _a["Button--iconAlign-" + iconAlign] = children && iconAlign, _a["" + className] = className, _a));
-      var iconClass = classNames((_b = {}, _b['Button-icon'] = true, _b["Button-icon--" + iconAlign] = children && iconAlign, _b));
-      var spinnerClass = classNames((_c = {}, _c['Button-spinner'] = true, _c["Button-spinner--" + iconAlign] = children && iconAlign, _c));
+      var buttonClass = classNames__default['default']((_a = {}, _a['Button'] = true, _a['Button--expanded'] = expanded, _a["Button--" + size] = size, _a['Button--square'] = !children, _a["Button--" + appearance] = appearance, _a["Button--iconAlign-" + iconAlign] = children && iconAlign, _a["" + className] = className, _a));
+      var iconClass = classNames__default['default']((_b = {}, _b['Button-icon'] = true, _b["Button-icon--" + iconAlign] = children && iconAlign, _b));
+      var spinnerClass = classNames__default['default']((_c = {}, _c['Button-spinner'] = true, _c["Button-spinner--" + iconAlign] = children && iconAlign, _c));
       return /*#__PURE__*/React.createElement("button", __assign({
         ref: ref,
         className: buttonClass,
@@ -1226,10 +1233,10 @@
           actionIcon = props.actionIcon,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames((_a = {}, _a['Input'] = true, _a["Input--" + size] = size, _a['Input--disabled'] = disabled, _a['Input--error'] = error, _a), className);
-      var inputClass = classNames((_b = {}, _b['Input-input'] = true, _b["Input-input--" + size] = size, _b));
-      var leftIconClass = classNames((_c = {}, _c['Input-icon'] = true, _c['Input-icon--left'] = true, _c['Input-icon--disabled'] = !value, _c));
-      var rightIconClass = classNames((_d = {}, _d['Input-icon'] = true, _d['Input-icon--right'] = true, _d));
+      var classes = classNames__default['default']((_a = {}, _a['Input'] = true, _a["Input--" + size] = size, _a['Input--disabled'] = disabled, _a['Input--error'] = error, _a), className);
+      var inputClass = classNames__default['default']((_b = {}, _b['Input-input'] = true, _b["Input-input--" + size] = size, _b));
+      var leftIconClass = classNames__default['default']((_c = {}, _c['Input-icon'] = true, _c['Input-icon--left'] = true, _c['Input-icon--disabled'] = !value, _c));
+      var rightIconClass = classNames__default['default']((_d = {}, _d['Input-icon'] = true, _d['Input-icon--right'] = true, _d));
       var trigger = /*#__PURE__*/React.createElement("div", {
         className: rightIconClass
       }, /*#__PURE__*/React.createElement(Icon, {
@@ -1285,11 +1292,11 @@
           size = props.size,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames((_a = {
+      var classes = classNames__default['default']((_a = {
         'Placeholder--animation': true,
         PlaceholderParagraph: true
       }, _a["PlaceholderParagraph--" + size] = size, _a));
-      var wrapperClass = classNames((_b = {
+      var wrapperClass = classNames__default['default']((_b = {
         'PlaceholderParagraph-wrapper': true
       }, _b["PlaceholderParagraph-wrapper--length-" + length] = length, _b["PlaceholderParagraph-wrapper--size-" + size] = size, _b), className);
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
@@ -1311,7 +1318,7 @@
           round = props.round,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames((_a = {
+      var classes = classNames__default['default']((_a = {
         PlaceholderImage: true,
         'Placeholder--animation': true
       }, _a['PlaceholderImage--round'] = round, _a["PlaceholderImage--" + size] = size, _a), className);
@@ -1330,10 +1337,10 @@
           children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var paragraphClasses = classNames((_a = {
+      var paragraphClasses = classNames__default['default']((_a = {
         'Placeholder-paragraph': true
       }, _a['Placeholder-paragraph--withImage'] = withImage, _a));
-      var classes = classNames((_b = {}, _b['Placeholder'] = true, _b), className);
+      var classes = classNames__default['default']((_b = {}, _b['Placeholder'] = true, _b), className);
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
         className: classes
       }), withImage && /*#__PURE__*/React.createElement(PlaceholderImage, {
@@ -1354,43 +1361,43 @@
 
       switch (loadingType) {
         case 'DEFAULT':
-          return /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+          return /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
             length: 'large'
           });
 
         case 'WITH_ICON':
-          return /*#__PURE__*/React__default.createElement(Placeholder, {
+          return /*#__PURE__*/React__default['default'].createElement(Placeholder, {
             withImage: true,
             round: true
-          }, /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+          }, /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
             length: "large"
           }));
 
         case 'WITH_META':
-          return /*#__PURE__*/React__default.createElement(Placeholder, {
+          return /*#__PURE__*/React__default['default'].createElement(Placeholder, {
             withImage: false
-          }, /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+          }, /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
             length: "large"
-          }), /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+          }), /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
             length: "medium",
             size: "xxs"
           }));
 
         case 'WITH_CHECKBOX':
-          return /*#__PURE__*/React__default.createElement(Placeholder, {
+          return /*#__PURE__*/React__default['default'].createElement(Placeholder, {
             withImage: true
-          }, /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+          }, /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
             length: "large"
           }));
 
         case 'ICON_WITH_META':
-          return /*#__PURE__*/React__default.createElement(Placeholder, {
+          return /*#__PURE__*/React__default['default'].createElement(Placeholder, {
             withImage: true,
             round: true,
             imageSize: 'medium'
-          }, /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+          }, /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
             length: "large"
-          }), /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+          }), /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
             length: "medium",
             size: "xxs"
           }));
@@ -1499,19 +1506,19 @@
       var getDropdownClass = function getDropdownClass(index, isGroup) {
         var _a;
 
-        var Dropdown = classNames((_a = {}, _a['Dropdown--border'] = isGroup && index !== 0, _a));
+        var Dropdown = classNames__default['default']((_a = {}, _a['Dropdown--border'] = isGroup && index !== 0, _a));
         return Dropdown;
       };
 
       var getDropdownSectionClass = function getDropdownSectionClass(showClearButton) {
         var _a;
 
-        return classNames((_a = {}, _a['Dropdown-section'] = true, _a['Dropdown-section--withClear'] = showClearButton, _a));
+        return classNames__default['default']((_a = {}, _a['Dropdown-section'] = true, _a['Dropdown-section--withClear'] = showClearButton, _a));
       };
 
-      var dropdownClass = classNames((_a = {}, _a['Dropdown'] = true, _a), className);
-      var dropdownWrapperClass = classNames((_b = {}, _b['Dropdown-wrapper'] = true, _b['Dropdown-wrapper--wrap'] = !truncateOption, _b));
-      var SelectAllClass = classNames((_c = {}, _c['Option'] = true, _c['Option--withCheckbox'] = true, _c['Option-wrapper'] = true, _c['Option--active'] = cursor === 0, _c));
+      var dropdownClass = classNames__default['default']((_a = {}, _a['Dropdown'] = true, _a), className);
+      var dropdownWrapperClass = classNames__default['default']((_b = {}, _b['Dropdown-wrapper'] = true, _b['Dropdown-wrapper--wrap'] = !truncateOption, _b));
+      var SelectAllClass = classNames__default['default']((_c = {}, _c['Option'] = true, _c['Option--withCheckbox'] = true, _c['Option-wrapper'] = true, _c['Option--active'] = cursor === 0, _c));
 
       var onToggleDropdown = function onToggleDropdown(open, type) {
         var _a;
@@ -1991,7 +1998,7 @@
           return label;
         };
 
-        _this.updateSelectedOptions = function (selectedArray, isControlled) {
+        _this.updateSelectedOptions = function (selectedArray, isSingleSelect, isControlled) {
           var _a = _this.state,
               optionsLength = _a.optionsLength,
               previousSelected = _a.previousSelected,
@@ -2022,7 +2029,8 @@
             var values = selectedArray.map(function (item) {
               return item.value;
             });
-            onChange(values, name);
+            var selectedValues = isSingleSelect ? values[0] : values;
+            onChange(selectedValues, name);
           }
         };
 
@@ -2036,7 +2044,7 @@
             return;
           }
 
-          _this.updateSelectedOptions([option]);
+          _this.updateSelectedOptions([option], true);
         };
 
         _this.onSelect = function (option, checked) {
@@ -2062,7 +2070,7 @@
 
           selectedArray = checked ? selectedArray.concat(option) : selectedArray;
 
-          _this.updateSelectedOptions(selectedArray);
+          _this.updateSelectedOptions(selectedArray, false);
         };
 
         _this.onSelectAll = function (event) {
@@ -2078,7 +2086,7 @@
 
           var selectedArray = event.target.checked ? _this.state.options : [];
 
-          _this.updateSelectedOptions(selectedArray);
+          _this.updateSelectedOptions(selectedArray, false);
         };
 
         _this.debounceSearch = debounce(300, function () {
@@ -2280,7 +2288,8 @@
         }
 
         if (this.props.selected !== undefined && prevProps.selected !== this.props.selected && prevProps.loading === this.props.loading) {
-          this.updateSelectedOptions(this.props.selected, true);
+          var isSingleSelect = !this.props.withCheckbox;
+          this.updateSelectedOptions(this.props.selected, isSingleSelect, true);
         }
 
         if (prevProps.open !== this.props.open || prevState.open !== this.state.open) {
@@ -2409,7 +2418,7 @@
           onClick = props.onClick,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var BreadcrumbClass = classNames((_a = {}, _a['Breadcrumbs'] = true, _a), className);
+      var BreadcrumbClass = classNames__default['default']((_a = {}, _a['Breadcrumbs'] = true, _a), className);
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
         className: BreadcrumbClass
       }), list.length <= 4 ? list.map(function (item, index) {
@@ -2447,7 +2456,7 @@
           children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames((_a = {
+      var classes = classNames__default['default']((_a = {
         Card: true
       }, _a["Card--shadow-" + shadow] = shadow, _a["" + className] = className, _a));
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
@@ -2474,7 +2483,7 @@
       var iconClass = function iconClass(align) {
         var _a;
 
-        return classNames((_a = {}, _a['Chip-icon'] = true, _a["Chip-icon--" + align] = align, _a));
+        return classNames__default['default']((_a = {}, _a['Chip-icon'] = true, _a["Chip-icon--" + align] = align, _a));
       };
 
       var onCloseHandler = function onCloseHandler(e) {
@@ -2528,7 +2537,7 @@
         if (!disabled && onClick) onClick(name);
       };
 
-      var chipClass = classNames((_a = {
+      var chipClass = classNames__default['default']((_a = {
         Chip: true
       }, _a["Chip-" + type + "--disabled"] = disabled, _a["Chip--" + type] = type && !disabled, _a["Chip-" + type + "--selected"] = selected && !disabled, _a), className);
       var clearbutton = type === 'action' ? false : clearButton;
@@ -2564,7 +2573,7 @@
         if (onClose) onClose(item);
       };
 
-      var ChipGroupClass = classNames((_a = {}, _a['ChipGroup'] = true, _a), className);
+      var ChipGroupClass = classNames__default['default']((_a = {}, _a['ChipGroup'] = true, _a), className);
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
         className: ChipGroupClass
       }), list.map(function (item, ind) {
@@ -2610,7 +2619,7 @@
           className = props.className,
           children = props.children;
       var baseProps = extractBaseProps(props);
-      var classes = classNames((_a = {}, _a['Col'] = true, _a["Col--" + size] = size, _a["Col--xs-" + sizeXS] = sizeXS, _a["Col--s-" + sizeS] = sizeS, _a["Col--m-" + sizeM] = sizeM, _a["Col--l-" + sizeL] = sizeL, _a["Col--xl-" + sizeXL] = sizeXL, _a["" + className] = className, _a));
+      var classes = classNames__default['default']((_a = {}, _a['Col'] = true, _a["Col--" + size] = size, _a["Col--xs-" + sizeXS] = sizeXS, _a["Col--s-" + sizeS] = sizeS, _a["Col--m-" + sizeM] = sizeM, _a["Col--l-" + sizeL] = sizeL, _a["Col--xl-" + sizeXL] = sizeXL, _a["" + className] = className, _a));
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
         className: classes
       }), children);
@@ -2633,7 +2642,7 @@
           children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames((_a = {
+      var classes = classNames__default['default']((_a = {
         Heading: true
       }, _a["Heading--" + size] = size, _a["Heading--" + appearance] = appearance, _a), className);
       return /*#__PURE__*/React.createElement(GenericText, __assign({}, baseProps, {
@@ -2655,7 +2664,7 @@
           children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames((_a = {
+      var classes = classNames__default['default']((_a = {
         Subheading: true
       }, _a["Subheading--" + appearance] = appearance, _a), className);
       return /*#__PURE__*/React.createElement(GenericText, __assign({}, baseProps, {
@@ -3172,7 +3181,7 @@
             break;
         }
 
-        var headerIconClass = classNames({
+        var headerIconClass = classNames__default['default']({
           'Calendar-headerIcon': true,
           'Calendar-headerIcon--disabled': disabled
         });
@@ -3190,7 +3199,7 @@
             yearNavVal = _a.year,
             monthNavVal = _a.month;
 
-        var headerContentClass = classNames({
+        var headerContentClass = classNames__default['default']({
           'Calendar-headerContent': true,
           'Calendar-headerContent--noIcon-left': index === monthsInView - 1,
           'Calendar-headerContent--noIcon-right': index === 0
@@ -3231,7 +3240,7 @@
             var year = yearBlockNav + offset;
             var disabled = compareDate(disabledBefore, 'more', year) || compareDate(disabledAfter, 'less', year);
             var active = !disabled && !rangePicker && yearNav === year;
-            var valueClass = classNames({
+            var valueClass = classNames__default['default']({
               'Calendar-value': true,
               'Calendar-value--active': active,
               'Calendar-value--disabled': disabled
@@ -3261,7 +3270,7 @@
             var month = monthsInRow * row + col;
             var disabled = compareDate(disabledBefore, 'more', yearNav, month) || compareDate(disabledAfter, 'less', yearNav, month);
             var active = !disabled && yearState === yearNav && monthNav === month;
-            var valueClass = classNames({
+            var valueClass = classNames__default['default']({
               'Calendar-value': true,
               'Calendar-value--active': active,
               'Calendar-value--dummy': disabled
@@ -3297,7 +3306,7 @@
         return Array.from({
           length: 7
         }, function (_x, day) {
-          var valueClass = classNames({
+          var valueClass = classNames__default['default']({
             'Calendar-value': true,
             'Calendar-value--dummy': true
           });
@@ -3369,7 +3378,7 @@
               }
             }
 
-            var valueClass = classNames({
+            var valueClass = classNames__default['default']({
               'Calendar-value': true,
               'Calendar-value--active': active,
               'Calendar-value--dummy': dummy || disabled,
@@ -3395,11 +3404,11 @@
       var renderCalendar = function renderCalendar(index) {
         var _a;
 
-        var wrapperClass = classNames((_a = {}, _a['Calendar'] = true, _a["Calendar--" + view] = view, _a), className);
-        var headerClass = classNames({
+        var wrapperClass = classNames__default['default']((_a = {}, _a['Calendar'] = true, _a["Calendar--" + view] = view, _a), className);
+        var headerClass = classNames__default['default']({
           'Calendar-header': true
         });
-        var bodyClass = classNames({
+        var bodyClass = classNames__default['default']({
           'Calendar-body': true
         });
         return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
@@ -3449,10 +3458,10 @@
           children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames((_a = {
+      var classes = classNames__default['default']((_a = {
         Caption: true
       }, _a['Caption--hidden'] = hide, _a['Caption--withInput'] = withInput, _a), className);
-      var errorIconClass = classNames((_b = {}, _b['Caption-icon'] = true, _b));
+      var errorIconClass = classNames__default['default']((_b = {}, _b['Caption-icon'] = true, _b));
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
         className: classes
       }), error && /*#__PURE__*/React.createElement("div", {
@@ -3614,7 +3623,7 @@
         if (onClear) onClear(e);
       };
 
-      var classes = classNames({
+      var classes = classNames__default['default']({
         'd-flex flex-column flex-grow-1': true
       }, className);
       return /*#__PURE__*/React.createElement("div", {
@@ -3996,7 +4005,7 @@
 
       var oRadius = withActiveSegment ? radius ? .7 * radius : '70%' : radius || '100%';
       var iRadius = withActiveSegment ? radius ? (100 - width) / 100 * oRadius : (100 - width) / 100 * 70 + "%" : radius ? (100 - width) / 100 * radius : 100 - width + "%";
-      var classes = classNames((_a = {}, _a['DonutChart'] = true, _a), className);
+      var classes = classNames__default['default']((_a = {}, _a['DonutChart'] = true, _a), className);
       return /*#__PURE__*/React.createElement(Row, __assign({}, baseProps, {
         className: classes
       }), /*#__PURE__*/React.createElement(Column, __assign({}, columnOptions.chart), /*#__PURE__*/React.createElement(recharts.ResponsiveContainer, null, /*#__PURE__*/React.createElement(recharts.PieChart, null, /*#__PURE__*/React.createElement(recharts.Pie, {
@@ -4036,10 +4045,10 @@
           children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var LabelClass = classNames((_a = {
+      var LabelClass = classNames__default['default']((_a = {
         Label: true
       }, _a['Label--withInput'] = withInput, _a["" + className] = className, _a));
-      var classes = classNames({
+      var classes = classNames__default['default']({
         'Label-label': true,
         'Label--disabled': disabled
       });
@@ -4069,7 +4078,7 @@
           _onClick = props.onClick,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var legendClass = classNames((_a = {}, _a['Legend'] = true, _a), className);
+      var legendClass = classNames__default['default']((_a = {}, _a['Legend'] = true, _a), className);
       var styles = {
         background: "var(--" + iconAppearance + ")",
         height: iconSize + "px",
@@ -4101,7 +4110,7 @@
           className = props.className,
           rest = __rest(props, ["children", "className"]);
 
-      var classes = classNames({
+      var classes = classNames__default['default']({
         Link: true
       }, className);
       return /*#__PURE__*/React.createElement(GenericText, __assign({
@@ -4126,8 +4135,8 @@
           children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var MessageClass = classNames((_a = {}, _a['Message'] = true, _a["Message--" + appearance] = appearance, _a), className);
-      var MessageIcon = classNames((_b = {}, _b['Message-icon'] = true, _b["Message-icon--" + appearance] = appearance, _b['Message-icon--withTitle'] = title, _b));
+      var MessageClass = classNames__default['default']((_a = {}, _a['Message'] = true, _a["Message--" + appearance] = appearance, _a), className);
+      var MessageIcon = classNames__default['default']((_b = {}, _b['Message-icon'] = true, _b["Message-icon--" + appearance] = appearance, _b['Message-icon--withTitle'] = title, _b));
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
         className: MessageClass
       }), appearance !== 'default' && /*#__PURE__*/React.createElement("div", {
@@ -4144,6 +4153,48 @@
       }, children)));
     };
     Message.displayName = 'Message';
+
+    var Meta = function Meta(props) {
+      var label = props.label,
+          icon = props.icon;
+      var baseProps = extractBaseProps(props);
+      return /*#__PURE__*/React.createElement("span", __assign({}, baseProps, {
+        className: 'Meta'
+      }), icon && /*#__PURE__*/React.createElement(Icon, {
+        name: icon,
+        appearance: "disabled",
+        className: 'Meta-icon'
+      }), /*#__PURE__*/React.createElement(Text, {
+        appearance: "subtle"
+      }, label));
+    };
+    Meta.displayName = 'Meta';
+
+    var MetaList = function MetaList(props) {
+      var list = props.list,
+          seperator = props.seperator;
+      var baseProps = extractBaseProps(props);
+      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+        className: 'MetaList'
+      }), seperator && /*#__PURE__*/React.createElement("span", {
+        className: 'MetaList-seperator MetaList-separator--left'
+      }), list.map(function (item, ind) {
+        var _a = item.label,
+            label = _a === void 0 ? '' : _a,
+            icon = item.icon;
+        var rightSeperator = ind === list.length - 1 ? false : true;
+        return /*#__PURE__*/React.createElement("span", {
+          key: ind,
+          className: "MetaList-item"
+        }, /*#__PURE__*/React.createElement(Meta, {
+          label: label,
+          icon: icon
+        }), rightSeperator && /*#__PURE__*/React.createElement("span", {
+          className: 'MetaList-seperator'
+        }));
+      }));
+    };
+    MetaList.displayName = 'MetaList';
 
     var OutsideClick = function (_super) {
       __extends(OutsideClick, _super);
@@ -4194,7 +4245,7 @@
           children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames((_a = {
+      var classes = classNames__default['default']((_a = {
         Text: true
       }, _a["Text--" + appearance] = appearance, _a), className);
       return /*#__PURE__*/React.createElement(GenericText, __assign({}, baseProps, {
@@ -4213,7 +4264,7 @@
       var style = {
         width: value > 0 ? Math.min(value, max) * 100 / max + "%" : '0'
       };
-      var ProgressBarClass = classNames({
+      var ProgressBarClass = classNames__default['default']({
         ProgressBar: true
       }, className);
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
@@ -4242,9 +4293,9 @@
       React.useImperativeHandle(forwardedRef, function () {
         return ref.current;
       });
-      var RadioClass = classNames((_a = {}, _a['Radio'] = true, _a['Radio--disabled'] = disabled, _a["Radio--" + size] = size, _a), className);
-      var RadioWrapper = classNames((_b = {}, _b['Radio-wrapper'] = true, _b["Radio-wrapper--" + size] = size, _b));
-      var RadioOuterWrapper = classNames((_c = {}, _c['Radio-outerWrapper'] = true, _c["Radio-outerWrapper--" + size] = size, _c));
+      var RadioClass = classNames__default['default']((_a = {}, _a['Radio'] = true, _a['Radio--disabled'] = disabled, _a["Radio--" + size] = size, _a), className);
+      var RadioWrapper = classNames__default['default']((_b = {}, _b['Radio-wrapper'] = true, _b["Radio-wrapper--" + size] = size, _b));
+      var RadioOuterWrapper = classNames__default['default']((_c = {}, _c['Radio-outerWrapper'] = true, _c["Radio-outerWrapper--" + size] = size, _c));
 
       var onChangeHandler = function onChangeHandler(event) {
         if (onChange) onChange(event);
@@ -4282,7 +4333,7 @@
       var className = props.className,
           children = props.children;
       var baseProps = extractBaseProps(props);
-      var classes = classNames((_a = {
+      var classes = classNames__default['default']((_a = {
         Row: true
       }, _a["" + className] = className, _a));
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
@@ -4302,8 +4353,8 @@
           _onClick = props.onClick,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var StatusHintClass = classNames((_a = {}, _a['StatusHint'] = true, _a), className);
-      var StatusHintIconClass = classNames((_b = {}, _b['StatusHint-icon'] = true, _b["StatusHint--" + appearance] = appearance, _b));
+      var StatusHintClass = classNames__default['default']((_a = {}, _a['StatusHint'] = true, _a), className);
+      var StatusHintIconClass = classNames__default['default']((_b = {}, _b['StatusHint-icon'] = true, _b["StatusHint--" + appearance] = appearance, _b));
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
         className: StatusHintClass,
         onClick: function onClick(e) {
@@ -4332,7 +4383,7 @@
           subtle = props.subtle,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames((_a = {
+      var classes = classNames__default['default']((_a = {
         Pills: true
       }, _a["Badge--" + appearance] = appearance && !subtle, _a["Badge--subtle-" + appearance] = subtle, _a), className);
       return /*#__PURE__*/React.createElement("span", __assign({}, baseProps, {
@@ -4363,8 +4414,8 @@
       React.useEffect(function () {
         if (props.checked !== undefined) setChecked(props.checked);
       }, [props.checked]);
-      var SwitchClass = classNames((_a = {}, _a['Switch'] = true, _a['Switch--disabled'] = disabled, _a["Switch--" + size] = size, _a), className);
-      var SwitchWrapper = classNames((_b = {}, _b['Switch-wrapper'] = true, _b['Switch-wrapper--disabled'] = disabled, _b["Switch-wrapper--" + size] = size, _b["Switch-wrapper--" + appearance] = appearance, _b['Switch-wrapper--checked'] = checked, _b['Switch-wrapper--checkedDisabled'] = checked && disabled, _b));
+      var SwitchClass = classNames__default['default']((_a = {}, _a['Switch'] = true, _a['Switch--disabled'] = disabled, _a["Switch--" + size] = size, _a), className);
+      var SwitchWrapper = classNames__default['default']((_b = {}, _b['Switch-wrapper'] = true, _b['Switch-wrapper--disabled'] = disabled, _b["Switch-wrapper--" + size] = size, _b["Switch-wrapper--" + appearance] = appearance, _b['Switch-wrapper--checked'] = checked, _b['Switch-wrapper--checkedDisabled'] = checked && disabled, _b));
 
       var onChangeHandler = function onChangeHandler(event) {
         if (props.checked === undefined) setChecked(!checked);
@@ -4406,8 +4457,8 @@
           onFocus = props.onFocus,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames((_a = {}, _a['Textarea'] = true, _a), className);
-      var TextareaClass = classNames((_b = {}, _b['Textarea-textarea'] = true, _b['Textarea-textarea--error'] = error, _b));
+      var classes = classNames__default['default']((_a = {}, _a['Textarea'] = true, _a), className);
+      var TextareaClass = classNames__default['default']((_b = {}, _b['Textarea-textarea'] = true, _b['Textarea-textarea--error'] = error, _b));
       return /*#__PURE__*/React.createElement("div", {
         className: classes
       }, /*#__PURE__*/React.createElement("textarea", __assign({}, baseProps, {
@@ -4438,7 +4489,7 @@
           appearance = _b === void 0 ? 'default' : _b,
           label = props.label,
           onClick = props.onClick;
-      var buttonClass = classNames((_a = {}, _a['Button'] = true, _a['Button--tiny'] = true, _a['Toast-actionButton'] = true, _a["Toast-actionButton--" + appearance] = appearance, _a));
+      var buttonClass = classNames__default['default']((_a = {}, _a['Button'] = true, _a['Button--tiny'] = true, _a['Toast-actionButton'] = true, _a["Toast-actionButton--" + appearance] = appearance, _a));
 
       var onClickHandler = function onClickHandler(e) {
         e.preventDefault();
@@ -4466,7 +4517,7 @@
           onClose = props.onClose,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var wrapperClass = classNames((_a = {}, _a['Toast'] = true, _a["Toast--" + appearance] = appearance, _a), className);
+      var wrapperClass = classNames__default['default']((_a = {}, _a['Toast'] = true, _a["Toast--" + appearance] = appearance, _a), className);
       var IconMapping = {
         info: 'info',
         success: 'check_circle',
@@ -4474,12 +4525,12 @@
         warning: 'info'
       };
       var icon = IconMapping[appearance];
-      var titleClass = classNames((_b = {}, _b['Toast-title'] = true, _b['Toast-title--withMessage'] = message, _b));
+      var titleClass = classNames__default['default']((_b = {}, _b['Toast-title'] = true, _b['Toast-title--withMessage'] = message, _b));
 
       var iconClass = function iconClass(align) {
         var _a;
 
-        return classNames((_a = {}, _a['Toast-icon'] = true, _a["Toast-icon--" + align] = align, _a));
+        return classNames__default['default']((_a = {}, _a['Toast-icon'] = true, _a["Toast-icon--" + align] = align, _a));
       };
 
       var onCloseHandler = function onCloseHandler() {
@@ -4598,7 +4649,7 @@
           animate = _d[0],
           setAnimate = _d[1];
 
-      var classes = classNames((_a = {
+      var classes = classNames__default['default']((_a = {
         Modal: true
       }, _a["Modal--" + dimension] = dimension, _a['Modal--open'] = open, _a['Modal-animation--open'] = animate, _a['Modal-animation--close'] = !animate, _a), className);
       var baseProps = extractBaseProps(props);
@@ -4644,10 +4695,10 @@
           _d = props.subHeading,
           subHeading = _d === void 0 ? '' : _d;
       var baseProps = extractBaseProps(props);
-      var classes = classNames({
+      var classes = classNames__default['default']({
         'Modal-header': true
       }, className);
-      var subheaderClasses = classNames((_a = {
+      var subheaderClasses = classNames__default['default']((_a = {
         'Modal-header-subheader': true
       }, _a['Modal-header-subheader--withIcon'] = icon, _a));
 
@@ -4695,7 +4746,7 @@
           removePadding = _d === void 0 ? false : _d,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames((_a = {
+      var classes = classNames__default['default']((_a = {
         'Modal-description': true
       }, _a['pl-6 pr-6'] = !removePadding, _a), className);
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
@@ -4710,7 +4761,7 @@
       var children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames({
+      var classes = classNames__default['default']({
         'Modal-footer': true
       }, className);
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
@@ -4787,7 +4838,7 @@
           setScroll(true);
         }
       }, [ref]);
-      var classes = classNames((_a = {
+      var classes = classNames__default['default']((_a = {
         'Modal-body': true
       }, _a['Modal-body--border'] = scroll, _a), className);
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
@@ -4818,9 +4869,9 @@
       React.useEffect(function () {
         if (props.page && props.page >= 1 && props.page <= totalPages) setPage(props.page);
       }, [props.page]);
-      var wrapperClass = classNames((_a = {}, _a['Pagination'] = true, _a["Pagination--" + type] = type, _a), className);
-      var nextButtonWrapperClass = classNames((_b = {}, _b['Pagination-buttonWrapper'] = true, _b['Pagination-buttonWrapper--next'] = true, _b));
-      var prevButtonWrapperClass = classNames((_c = {}, _c['Pagination-buttonWrapper'] = true, _c['Pagination-buttonWrapper--previous'] = true, _c));
+      var wrapperClass = classNames__default['default']((_a = {}, _a['Pagination'] = true, _a["Pagination--" + type] = type, _a), className);
+      var nextButtonWrapperClass = classNames__default['default']((_b = {}, _b['Pagination-buttonWrapper'] = true, _b['Pagination-buttonWrapper--next'] = true, _b));
+      var prevButtonWrapperClass = classNames__default['default']((_c = {}, _c['Pagination-buttonWrapper'] = true, _c['Pagination-buttonWrapper--previous'] = true, _c));
       React.useEffect(function () {
         if (init && page) onPageChange(page);
       }, [page]);
@@ -4923,7 +4974,7 @@
       var baseProps = extractBaseProps(props);
       var radius = 20;
       var circumference = 2 * Math.PI * radius;
-      var ProgressRingClass = classNames((_a = {
+      var ProgressRingClass = classNames__default['default']((_a = {
         Ring: true
       }, _a["Ring--" + size] = size, _a), className);
       var svgProps = {
@@ -5321,7 +5372,7 @@
       React.useEffect(function () {
         setActiveTab(props.active && props.active < children.length ? props.active : 0);
       }, [props.active]);
-      var wrapperClass = classNames((_a = {}, _a['TabsWrapper'] = true, _a), className);
+      var wrapperClass = classNames__default['default']((_a = {}, _a['TabsWrapper'] = true, _a), className);
 
       var tabClickHandler = function tabClickHandler(tabIndex) {
         setActiveTab(tabIndex);
@@ -5334,7 +5385,7 @@
         var _b = child.props,
             label = _b.label,
             disabled = _b.disabled;
-        var tabHeaderClass = classNames((_a = {}, _a['Tab'] = true, _a['Tab--disabled'] = disabled, _a['Tab--active'] = !disabled && active === index, _a));
+        var tabHeaderClass = classNames__default['default']((_a = {}, _a['Tab'] = true, _a['Tab--disabled'] = disabled, _a['Tab--active'] = !disabled && active === index, _a));
         return /*#__PURE__*/React.createElement("div", {
           key: index,
           className: tabHeaderClass,
@@ -5692,7 +5743,7 @@
           align = _c === void 0 ? 'left' : _c,
           tooltip = schema.tooltip;
       var cellData = data[name];
-      var cellClass = classNames((_a = {}, _a['GridCell'] = true, _a));
+      var cellClass = classNames__default['default']((_a = {}, _a['GridCell'] = true, _a));
 
       switch (cellType) {
         case 'DEFAULT':
@@ -5877,7 +5928,7 @@
       var options = __spreadArrays(pinOptions, hideOptions);
 
       if (sorting) options = __spreadArrays(sortOptions, options);
-      var classes = classNames({
+      var classes = classNames__default['default']({
         'Grid-headCell': true,
         'Grid-headCell--draggable': draggable
       });
@@ -6019,7 +6070,7 @@
           _d = _b.maxWidth,
           maxWidth = _d === void 0 ? 800 : _d;
 
-      var cellClass = classNames({
+      var cellClass = classNames__default['default']({
         'Grid-cell': true,
         'Grid-cell--head': head,
         'Grid-cell--body': !head,
@@ -6104,7 +6155,7 @@
         var _a;
 
         if (currSchema.length) {
-          var classes = classNames((_a = {
+          var classes = classNames__default['default']((_a = {
             'Grid-cellGroup': true,
             'Grid-cellGroup--pinned': pinned
           }, _a["Grid-cellGroup--pinned-" + pinned] = pinned, _a['Grid-cellGroup--main'] = !pinned, _a));
@@ -6164,7 +6215,7 @@
           expanded = _a[0],
           setExpanded = _a[1];
 
-      var rowClasses = classNames('Grid-row', 'Grid-row--body', {
+      var rowClasses = classNames__default['default']('Grid-row', 'Grid-row--body', {
         'Grid-row--selected': data._selected
       });
 
@@ -6215,7 +6266,7 @@
         var _a;
 
         if (currSchema.length) {
-          var classes = classNames((_a = {
+          var classes = classNames__default['default']((_a = {
             'Grid-cellGroup': true,
             'Grid-cellGroup--pinned': pinned
           }, _a["Grid-cellGroup--pinned-" + pinned] = pinned, _a['Grid-cellGroup--main'] = !pinned, _a));
@@ -6325,7 +6376,7 @@
           draggable = _b.draggable,
           withCheckbox = _b.withCheckbox,
           data = _b.data;
-      var classes = classNames((_a = {
+      var classes = classNames__default['default']((_a = {
         Grid: 'true'
       }, _a["Grid--" + type] = type, _a["Grid--" + size] = size, _a), className);
       var minRowHeight = {
@@ -7246,7 +7297,7 @@
         var list = menuData.map(function (menu, index) {
           var _a;
 
-          var menuClasses = classNames((_a = {
+          var menuClasses = classNames__default['default']((_a = {
             'Navigation-menu': true
           }, _a["Navigation-menu--" + type] = type, _a['Navigation-menu--active'] = isActive(menu), _a));
           return /*#__PURE__*/React.createElement("div", {
@@ -7272,10 +7323,10 @@
         var list = menus.map(function (menu, index) {
           var _a;
 
-          var menuClasses = classNames((_a = {
+          var menuClasses = classNames__default['default']((_a = {
             'Navigation-menu': true
           }, _a["Navigation-menu--" + type] = type, _a['Navigation-menu--active'] = expanded && !menuState[menu.name] && isActive(menu), _a));
-          var menuIconClasses = classNames({
+          var menuIconClasses = classNames__default['default']({
             'Navigation-menuIcon': true,
             'Navigation-menuIcon--active': !expanded && isActive(menu)
           });
@@ -7303,7 +7354,7 @@
           }, menuState[menu.name] && menu.subMenu && expanded && menu.subMenu.map(function (subMenu, ind) {
             var _a;
 
-            var subMenuClasses = classNames(menuClasses, (_a = {}, _a['Navigation-menu--subMenu'] = type, _a['Navigation-menu--active'] = isActive(subMenu), _a));
+            var subMenuClasses = classNames__default['default'](menuClasses, (_a = {}, _a['Navigation-menu--subMenu'] = type, _a['Navigation-menu--active'] = isActive(subMenu), _a));
             return /*#__PURE__*/React.createElement("div", {
               key: ind,
               className: subMenuClasses,
@@ -7315,7 +7366,7 @@
             }, subMenu.label));
           })));
         });
-        var footerClasses = classNames((_a = {
+        var footerClasses = classNames__default['default']((_a = {
           'Navigation-footer': true
         }, _a['Navigation-footer--border'] = true, _a));
         return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
@@ -7332,7 +7383,7 @@
         })));
       };
 
-      var classes = classNames((_a = {}, _a['Navigation'] = true, _a["Navigation--" + type] = type, _a['Navigation--collapsed'] = !expanded, _a), className);
+      var classes = classNames__default['default']((_a = {}, _a['Navigation'] = true, _a["Navigation--" + type] = type, _a['Navigation--collapsed'] = !expanded, _a), className);
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
         className: classes
       }), type === 'horizontal' ? getHorizontalMenu(menus) : getVerticalMenu());
@@ -7359,10 +7410,10 @@
           navigationPosition = props.navigationPosition,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var wrapperClasses = classNames((_a = {
+      var wrapperClasses = classNames__default['default']((_a = {
         'PageHeader-wrapper': true
       }, _a['PageHeader-wrapper--withTabs'] = tabs, _a), className);
-      var classes = classNames({
+      var classes = classNames__default['default']({
         PageHeader: true
       });
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
@@ -7431,6 +7482,7 @@
     exports.Link = Link;
     exports.List = List;
     exports.Message = Message;
+    exports.MetaList = MetaList;
     exports.Modal = Modal;
     exports.ModalBody = ModalBody;
     exports.ModalDescription = ModalDescription;
