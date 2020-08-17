@@ -73,7 +73,7 @@ export const all = () => {
       <InputMask
         name="input"
         type={inputType}
-        value={value}
+        defaultValue={value}
         disabled={disabled}
         onChange={action('on-change')}
         onClick={action('on-click')}

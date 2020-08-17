@@ -26,14 +26,17 @@ export interface MaskProps extends BaseProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>, val?: string) => void;
   onBlur?: (e: React.ChangeEvent<HTMLInputElement>, val?: string) => void;
   onClear?: (e: React.MouseEvent<HTMLElement>) => void;
+
 }
 
-export type InputMaskProps = InputProps & MaskProps;
-
+export type InputMaskProps = Omit<InputProps, 'value'> & MaskProps;
+/**
+ * InputMask works as uncontrolled component
+ */
 export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, forwardRef) => {
   const {
     mask: maskProp,
-    value: valueProp,
+    defaultValue,
     placeholderChar = '_',
     mask,
     error,
@@ -47,17 +50,17 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     ...rest
   } = props;
 
-  const [value, setValue] = React.useState<string>('');
+  const [value, setValue] = React.useState<string>(defaultValue || '');
   const [caret, setCaret] = React.useState<number>(0);
   const ref = React.useRef<HTMLInputElement>(null);
 
   const fixedMask = mask.filter(m => typeof m === 'string' && m.length === 1);
 
   React.useEffect(() => {
-    if (valueProp) {
-      setValue(convertToMasked(valueProp));
+    if (defaultValue) {
+      setValue(convertToMasked(defaultValue));
     }
-  }, [valueProp]);
+  }, [defaultValue]);
 
   React.useEffect(() => {
     setCaretPos(caret);

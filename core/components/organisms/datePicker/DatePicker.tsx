@@ -171,7 +171,7 @@ export const DatePicker = (props: DatePickerProps) => {
         {...inputOptions}
         error={inputOptions.required && error}
         mask={mask}
-        value={date ? translateToString(inputFormat, date) : ''}
+        defaultValue={date ? translateToString(inputFormat, date) : ''}
         onChange={onChangeHandler}
         onBlur={onBlurHandler}
         onClear={onClearHandler}

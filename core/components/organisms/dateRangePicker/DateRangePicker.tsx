@@ -314,7 +314,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
           <InputMask
             {...startInputOptions}
             mask={mask}
-            value={startDate ? translateToString(inputFormat, startDate) : ''}
+            defaultValue={startDate ? translateToString(inputFormat, startDate) : ''}
             onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => onChangeHandler(e, val || '', 'start')}
             onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => onBlurHandler(e, val || '', 'start')}
             onClear={() => onClearHandler('start')}
@@ -327,7 +327,7 @@ export const DateRangePicker = (props: DateRangePickerProps) => {
           <InputMask
             {...endInputOptions}
             mask={mask}
-            value={endDate ? translateToString(inputFormat, endDate) : ''}
+            defaultValue={endDate ? translateToString(inputFormat, endDate) : ''}
             onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => onChangeHandler(e, val || '', 'end')}
             onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => onBlurHandler(e, val || '', 'end')}
             onClear={() => onClearHandler('end')}
