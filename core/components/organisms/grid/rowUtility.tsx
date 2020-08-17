@@ -13,17 +13,14 @@ export const updateBatchData = (data: Data, rowIndexes: number[], dataUpdate: Pa
 };
 
 export function translateData(schema: ColumnSchema, data: RowData) {
-  let newData = data;
+  const newData = { ...data };
 
   if (schema.translate) {
     const translatedData = schema.translate(data);
-    newData = {
-      ...newData,
-      [schema.name]: typeof translatedData === 'object' ? {
-        ...newData[schema.name],
-        ...translatedData
-      } : translatedData
-    };
+    newData[schema.name] = (translatedData !== null && typeof translatedData === 'object') ? {
+      ...newData[schema.name],
+      ...translatedData
+    } : translatedData;
   }
   if (typeof newData[schema.name] !== 'object') newData[schema.name] = { title: newData[schema.name] };
 
