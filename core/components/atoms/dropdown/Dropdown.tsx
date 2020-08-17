@@ -277,7 +277,8 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       && prevProps.selected !== this.props.selected
       && prevProps.loading === this.props.loading
     ) {
-      this.updateSelectedOptions(this.props.selected, true);
+      const isSingleSelect = !this.props.withCheckbox;
+      this.updateSelectedOptions(this.props.selected, isSingleSelect, true);
     }
 
     if (prevProps.open !== this.props.open
@@ -451,7 +452,11 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     return label;
   }
 
-  updateSelectedOptions = (selectedArray: Option[], isControlled?: boolean) => {
+  updateSelectedOptions = (
+    selectedArray: Option[],
+    isSingleSelect: boolean,
+    isControlled?: boolean,
+  ) => {
     const {
       optionsLength,
       previousSelected,
@@ -485,7 +490,8 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
     if (onChange && (!showApplyButton || isControlled)) {
       const values = selectedArray.map(item => item.value);
-      onChange(values, name);
+      const selectedValues = isSingleSelect ? values[0] : values;
+      onChange(selectedValues, name);
     }
   }
 
@@ -500,7 +506,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       return;
     }
 
-    this.updateSelectedOptions([option]);
+    this.updateSelectedOptions([option], true);
   }
 
   onSelect = (option: Option, checked: boolean) => {
@@ -528,7 +534,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
     selectedArray = checked ? selectedArray.concat(option) : selectedArray;
 
-    this.updateSelectedOptions(selectedArray);
+    this.updateSelectedOptions(selectedArray, false);
   }
 
   onSelectAll = (event: ChangeEvent) => {
@@ -545,7 +551,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
     const selectedArray = event.target.checked ? this.state.options : [];
 
-    this.updateSelectedOptions(selectedArray);
+    this.updateSelectedOptions(selectedArray, false);
   }
 
   debounceSearch = debounce(300, () => {
@@ -631,7 +637,6 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
   }
 
   onToggleDropdown = (updatedOpen: boolean, type?: string) => {
-    // open && close blocks
     if (this.props.disabled) {
       return;
     }
