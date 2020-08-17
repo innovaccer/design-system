@@ -106,6 +106,11 @@ export const all = () => {
     false
   );
 
+  const headCellTooltip = boolean(
+    'headCellTooltip',
+    false
+  );
+
   let dataAttr = {};
   if (async) {
     dataAttr = {
@@ -141,6 +146,7 @@ export const all = () => {
           showMenu={showMenu}
           type={type}
           size={size}
+          headCellTooltip={headCellTooltip}
           draggable={draggable}
           nestedRows={nestedRows}
           nestedRowRenderer={nestedRowRenderer}

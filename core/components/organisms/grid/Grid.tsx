@@ -269,6 +269,10 @@ export interface GridProps extends BaseProps {
     checked: boolean,
     indeterminate: boolean
   };
+  /**
+   * Shows tooltip on Head Cell hover
+   */
+  headCellTooltip?: boolean;
 }
 
 export class Grid extends React.Component<GridProps> {

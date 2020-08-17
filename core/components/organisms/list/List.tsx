@@ -39,6 +39,7 @@ interface SharedListProps extends BaseProps {
   onRowClick?: GridProps['onRowClick'];
   onSelect?: TableProps['onSelect'];
   onPageChange?: GridProps['onPageChange'];
+  headCellTooltip?: boolean;
 }
 
 type SyncListProps = SyncProps & SharedListProps;

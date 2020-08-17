@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { RowData, ColumnSchema } from './Grid';
-import { Dropdown, Grid, Placeholder, PlaceholderParagraph, Heading, Icon, Button } from '@/index';
+import { Dropdown, Grid, Placeholder, PlaceholderParagraph, Text, Icon, Button, Tooltip } from '@/index';
 import { resizeCol, getInit } from './utility';
 import { GridCell } from './GridCell';
 import { DropdownProps } from '@/components/atoms/dropdown';
@@ -41,7 +41,8 @@ const HeaderCell = (props: HeaderCellProps) => {
     loading,
     showMenu,
     sortingList,
-    filterList
+    filterList,
+    headCellTooltip
   } = _this.props;
 
   const {
@@ -95,6 +96,24 @@ const HeaderCell = (props: HeaderCellProps) => {
     }))
     : [];
 
+  const renderLabel = () => (
+    <>
+      <Text weight="strong" className="ellipsis--noWrap">{schema.displayName}</Text>
+      {sorting && (
+        <div className="Grid-sortingIcons">
+          {sorted ? sorted === 'asc' ? (
+            <Icon name="arrow_downward" />
+          ) : (
+              <Icon name="arrow_upward" />
+            ) : (
+              <Icon name="unfold_more" />
+            )
+          }
+        </div>
+      )}
+    </>
+  );
+
   return (
     <div
       key={name}
@@ -117,19 +136,14 @@ const HeaderCell = (props: HeaderCellProps) => {
           </Placeholder>
         ) : (
             <>
-              <Heading size="s" className="ellipsis--noWrap">{schema.displayName}</Heading>
-              {sorting && (
-                <div className="Grid-sortingIcons">
-                  {sorted ? sorted === 'asc' ? (
-                    <Icon name="arrow_downward" />
-                  ) : (
-                      <Icon name="arrow_upward" />
-                    ) : (
-                      <Icon name="unfold_more" />
-                    )
-                  }
-                </div>
-              )}
+              {headCellTooltip ? (
+                <Tooltip position="top-start" triggerClass="w-100 overflow-hidden" tooltip={schema.displayName}>
+                  {renderLabel()}
+                </Tooltip>
+              ) : (
+                  renderLabel()
+                )
+              }
             </>
           )
         }
