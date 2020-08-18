@@ -26,7 +26,7 @@
   flex-direction: row;
   justify-content: center;
   width: 100vw;
-  z-index: 99999999;
+  z-index: 1500;
   top: 0;
 }
 
