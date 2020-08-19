@@ -8,6 +8,7 @@ exports[`Backdrop component
 >
   <div
     className="Backdrop Backdrop-animation--close"
+    data-test="DesignSystem-Backdrop"
   />
 </Portal>
 `;
@@ -20,6 +21,7 @@ exports[`Backdrop component
 >
   <div
     className="Backdrop Backdrop--open Backdrop-animation--open"
+    data-test="DesignSystem-Backdrop"
   />
 </Portal>
 `;

@@ -5,6 +5,7 @@ exports[`Badge component
  1`] = `
 <span
   className="Badge Badge--accent1"
+  data-test="DesignSystem-Badge"
 >
   Badge
 </span>
@@ -15,6 +16,7 @@ exports[`Badge component
  1`] = `
 <span
   className="Badge Badge--subtle-accent1"
+  data-test="DesignSystem-Badge"
 >
   Badge
 </span>
@@ -25,6 +27,7 @@ exports[`Badge component
  1`] = `
 <span
   className="Badge Badge--accent2"
+  data-test="DesignSystem-Badge"
 >
   Badge
 </span>
@@ -35,6 +38,7 @@ exports[`Badge component
  1`] = `
 <span
   className="Badge Badge--subtle-accent2"
+  data-test="DesignSystem-Badge"
 >
   Badge
 </span>
@@ -45,6 +49,7 @@ exports[`Badge component
  1`] = `
 <span
   className="Badge Badge--accent3"
+  data-test="DesignSystem-Badge"
 >
   Badge
 </span>
@@ -55,6 +60,7 @@ exports[`Badge component
  1`] = `
 <span
   className="Badge Badge--subtle-accent3"
+  data-test="DesignSystem-Badge"
 >
   Badge
 </span>
@@ -65,6 +71,7 @@ exports[`Badge component
  1`] = `
 <span
   className="Badge Badge--accent4"
+  data-test="DesignSystem-Badge"
 >
   Badge
 </span>
@@ -75,6 +82,7 @@ exports[`Badge component
  1`] = `
 <span
   className="Badge Badge--subtle-accent4"
+  data-test="DesignSystem-Badge"
 >
   Badge
 </span>
@@ -85,6 +93,7 @@ exports[`Badge component
  1`] = `
 <span
   className="Badge Badge--alert"
+  data-test="DesignSystem-Badge"
 >
   Badge
 </span>
@@ -95,6 +104,7 @@ exports[`Badge component
  1`] = `
 <span
   className="Badge Badge--subtle-alert"
+  data-test="DesignSystem-Badge"
 >
   Badge
 </span>
@@ -105,6 +115,7 @@ exports[`Badge component
  1`] = `
 <span
   className="Badge Badge--primary"
+  data-test="DesignSystem-Badge"
 >
   Badge
 </span>
@@ -115,26 +126,7 @@ exports[`Badge component
  1`] = `
 <span
   className="Badge Badge--subtle-primary"
->
-  Badge
-</span>
-`;
-
-exports[`Badge component 
-  appearance: "secondary", subtle: false
- 1`] = `
-<span
-  className="Badge Badge--secondary"
->
-  Badge
-</span>
-`;
-
-exports[`Badge component 
-  appearance: "secondary", subtle: true
- 1`] = `
-<span
-  className="Badge Badge--subtle-secondary"
+  data-test="DesignSystem-Badge"
 >
   Badge
 </span>
@@ -145,6 +137,7 @@ exports[`Badge component
  1`] = `
 <span
   className="Badge Badge--success"
+  data-test="DesignSystem-Badge"
 >
   Badge
 </span>
@@ -155,6 +148,7 @@ exports[`Badge component
  1`] = `
 <span
   className="Badge Badge--subtle-success"
+  data-test="DesignSystem-Badge"
 >
   Badge
 </span>
@@ -165,6 +159,7 @@ exports[`Badge component
  1`] = `
 <span
   className="Badge Badge--warning"
+  data-test="DesignSystem-Badge"
 >
   Badge
 </span>
@@ -175,6 +170,7 @@ exports[`Badge component
  1`] = `
 <span
   className="Badge Badge--subtle-warning"
+  data-test="DesignSystem-Badge"
 >
   Badge
 </span>

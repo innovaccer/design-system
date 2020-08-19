@@ -5,6 +5,7 @@ exports[`ProgressRing component
  1`] = `
 <svg
   className="Ring Ring--regular"
+  data-test="DesignSystem-ProgressRing"
   viewBox="0 0 50 50"
 >
   <circle
@@ -20,6 +21,7 @@ exports[`ProgressRing component
     className="Ring-indicator"
     cx={25}
     cy={25}
+    data-test="DesignSystem-ProgressRing--Circle"
     fill="none"
     r={20}
     strokeDasharray="125.66370614359172 125.66370614359172"
@@ -34,6 +36,7 @@ exports[`ProgressRing component
  1`] = `
 <svg
   className="Ring Ring--small"
+  data-test="DesignSystem-ProgressRing"
   viewBox="0 0 50 50"
 >
   <circle
@@ -49,6 +52,7 @@ exports[`ProgressRing component
     className="Ring-indicator"
     cx={25}
     cy={25}
+    data-test="DesignSystem-ProgressRing--Circle"
     fill="none"
     r={20}
     strokeDasharray="125.66370614359172 125.66370614359172"

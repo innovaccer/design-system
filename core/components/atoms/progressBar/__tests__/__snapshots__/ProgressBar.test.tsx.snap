@@ -5,6 +5,7 @@ exports[`ProgressBar component
  1`] = `
 <div
   className="ProgressBar"
+  data-test="DesignSystem-ProgressBar"
 >
   <div
     className="ProgressBar-indicator"

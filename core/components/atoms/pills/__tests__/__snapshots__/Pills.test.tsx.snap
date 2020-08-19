@@ -5,6 +5,7 @@ exports[`Pills component
  1`] = `
 <span
   className="Pills Badge--accent1"
+  data-test="DesignSystem-Pills"
 >
   Pills
 </span>
@@ -15,6 +16,7 @@ exports[`Pills component
  1`] = `
 <span
   className="Pills Badge--subtle-accent1"
+  data-test="DesignSystem-Pills"
 >
   Pills
 </span>
@@ -25,6 +27,7 @@ exports[`Pills component
  1`] = `
 <span
   className="Pills Badge--accent2"
+  data-test="DesignSystem-Pills"
 >
   Pills
 </span>
@@ -35,6 +38,7 @@ exports[`Pills component
  1`] = `
 <span
   className="Pills Badge--subtle-accent2"
+  data-test="DesignSystem-Pills"
 >
   Pills
 </span>
@@ -45,6 +49,7 @@ exports[`Pills component
  1`] = `
 <span
   className="Pills Badge--accent3"
+  data-test="DesignSystem-Pills"
 >
   Pills
 </span>
@@ -55,6 +60,7 @@ exports[`Pills component
  1`] = `
 <span
   className="Pills Badge--subtle-accent3"
+  data-test="DesignSystem-Pills"
 >
   Pills
 </span>
@@ -65,6 +71,7 @@ exports[`Pills component
  1`] = `
 <span
   className="Pills Badge--accent4"
+  data-test="DesignSystem-Pills"
 >
   Pills
 </span>
@@ -75,6 +82,7 @@ exports[`Pills component
  1`] = `
 <span
   className="Pills Badge--subtle-accent4"
+  data-test="DesignSystem-Pills"
 >
   Pills
 </span>
@@ -85,6 +93,7 @@ exports[`Pills component
  1`] = `
 <span
   className="Pills Badge--alert"
+  data-test="DesignSystem-Pills"
 >
   Pills
 </span>
@@ -95,6 +104,7 @@ exports[`Pills component
  1`] = `
 <span
   className="Pills Badge--subtle-alert"
+  data-test="DesignSystem-Pills"
 >
   Pills
 </span>
@@ -105,6 +115,7 @@ exports[`Pills component
  1`] = `
 <span
   className="Pills Badge--primary"
+  data-test="DesignSystem-Pills"
 >
   Pills
 </span>
@@ -115,26 +126,7 @@ exports[`Pills component
  1`] = `
 <span
   className="Pills Badge--subtle-primary"
->
-  Pills
-</span>
-`;
-
-exports[`Pills component 
-  appearance: "secondary", subtle: false
- 1`] = `
-<span
-  className="Pills Badge--secondary"
->
-  Pills
-</span>
-`;
-
-exports[`Pills component 
-  appearance: "secondary", subtle: true
- 1`] = `
-<span
-  className="Pills Badge--subtle-secondary"
+  data-test="DesignSystem-Pills"
 >
   Pills
 </span>
@@ -145,6 +137,7 @@ exports[`Pills component
  1`] = `
 <span
   className="Pills Badge--success"
+  data-test="DesignSystem-Pills"
 >
   Pills
 </span>
@@ -155,6 +148,7 @@ exports[`Pills component
  1`] = `
 <span
   className="Pills Badge--subtle-success"
+  data-test="DesignSystem-Pills"
 >
   Pills
 </span>
@@ -165,6 +159,7 @@ exports[`Pills component
  1`] = `
 <span
   className="Pills Badge--warning"
+  data-test="DesignSystem-Pills"
 >
   Pills
 </span>
@@ -175,6 +170,7 @@ exports[`Pills component
  1`] = `
 <span
   className="Pills Badge--subtle-warning"
+  data-test="DesignSystem-Pills"
 >
   Pills
 </span>

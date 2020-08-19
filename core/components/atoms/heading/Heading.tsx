@@ -49,7 +49,7 @@ export const Heading = (props: HeadingProps) => {
   }, className);
 
   return (
-    <GenericText {...baseProps} className={classes} componentType={sizeMap[size]}>
+    <GenericText data-test="DesignSystem-Heading" {...baseProps} className={classes} componentType={sizeMap[size]}>
       {children}
     </GenericText>
   );

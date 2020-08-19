@@ -64,7 +64,7 @@ const Backdrop = (props: BackdropProps) => {
 
   const BackdropElement = ReactDOM.createPortal(
     (
-      <div {...baseProps} className={classes} />
+      <div data-test="DesignSystem-Backdrop" {...baseProps} className={classes}  />
     ),
     document.body
   );

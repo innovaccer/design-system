@@ -1,55 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Text component 
-  children: "Sample String", appearance: "default"
+  children: "Sample String", appearances: "default"
  1`] = `
 <GenericText
   className="Text Text--default"
   componentType="span"
+  data-test="DesignSystem-Text"
 >
   Sample String
 </GenericText>
 `;
 
 exports[`Text component 
-  children: "Sample String", appearance: "destructive"
+  children: "Sample String", appearances: "destructive"
  1`] = `
 <GenericText
-  className="Text Text--destructive"
+  className="Text Text--default"
   componentType="span"
+  data-test="DesignSystem-Text"
 >
   Sample String
 </GenericText>
 `;
 
 exports[`Text component 
-  children: "Sample String", appearance: "disabled"
+  children: "Sample String", appearances: "disabled"
  1`] = `
 <GenericText
-  className="Text Text--disabled"
+  className="Text Text--default"
   componentType="span"
+  data-test="DesignSystem-Text"
 >
   Sample String
 </GenericText>
 `;
 
 exports[`Text component 
-  children: "Sample String", appearance: "subtle"
+  children: "Sample String", appearances: "subtle"
  1`] = `
 <GenericText
-  className="Text Text--subtle"
+  className="Text Text--default"
   componentType="span"
+  data-test="DesignSystem-Text"
 >
   Sample String
 </GenericText>
 `;
 
 exports[`Text component 
-  children: "Sample String", appearance: "white"
+  children: "Sample String", appearances: "white"
  1`] = `
 <GenericText
-  className="Text Text--white"
+  className="Text Text--default"
   componentType="span"
+  data-test="DesignSystem-Text"
 >
   Sample String
 </GenericText>
@@ -61,6 +66,7 @@ exports[`Text component
 <GenericText
   className="Text Text--default"
   componentType="span"
+  data-test="DesignSystem-Text"
 >
   Sample String
 </GenericText>
@@ -72,6 +78,7 @@ exports[`Text component
 <GenericText
   className="Text Text--default Text--small"
   componentType="span"
+  data-test="DesignSystem-Text"
 >
   Sample String
 </GenericText>
@@ -83,6 +90,7 @@ exports[`Text component
 <GenericText
   className="Text Text--default Text--medium"
   componentType="span"
+  data-test="DesignSystem-Text"
 >
   Sample String
 </GenericText>
@@ -94,6 +102,7 @@ exports[`Text component
 <GenericText
   className="Text Text--default Text--strong"
   componentType="span"
+  data-test="DesignSystem-Text"
 >
   Sample String
 </GenericText>

@@ -3,6 +3,7 @@
 exports[`Row component should match the snapshot without RowColumns 1`] = `
 <div
   className="Row"
+  data-test="DesignSystem-Row"
 >
   Row
 </div>

@@ -5,10 +5,10 @@ exports[`Avatar component
  1`] = `
 <span
   className="Avatar Avatar--accent1"
+  data-test="DesignSystem-Avatar"
 >
   <Text
     appearance="white"
-    data-test="DesignSystem-Avatar"
     weight="medium"
   >
     JD
@@ -21,10 +21,10 @@ exports[`Avatar component
  1`] = `
 <span
   className="Avatar Avatar--accent2"
+  data-test="DesignSystem-Avatar"
 >
   <Text
     appearance="white"
-    data-test="DesignSystem-Avatar"
     weight="medium"
   >
     JD
@@ -37,10 +37,10 @@ exports[`Avatar component
  1`] = `
 <span
   className="Avatar Avatar--accent3"
+  data-test="DesignSystem-Avatar"
 >
   <Text
     appearance="white"
-    data-test="DesignSystem-Avatar"
     weight="medium"
   >
     JD
@@ -53,10 +53,10 @@ exports[`Avatar component
  1`] = `
 <span
   className="Avatar Avatar--accent4"
+  data-test="DesignSystem-Avatar"
 >
   <Text
     appearance="white"
-    data-test="DesignSystem-Avatar"
     weight="medium"
   >
     JD
@@ -69,10 +69,10 @@ exports[`Avatar component
  1`] = `
 <span
   className="Avatar Avatar--alert"
+  data-test="DesignSystem-Avatar"
 >
   <Text
     appearance="white"
-    data-test="DesignSystem-Avatar"
     weight="medium"
   >
     JD
@@ -85,10 +85,10 @@ exports[`Avatar component
  1`] = `
 <span
   className="Avatar Avatar--primary"
+  data-test="DesignSystem-Avatar"
 >
   <Text
     appearance="white"
-    data-test="DesignSystem-Avatar"
     weight="medium"
   >
     JD
@@ -101,10 +101,10 @@ exports[`Avatar component
  1`] = `
 <span
   className="Avatar Avatar--success"
+  data-test="DesignSystem-Avatar"
 >
   <Text
     appearance="white"
-    data-test="DesignSystem-Avatar"
     weight="medium"
   >
     JD
@@ -117,10 +117,10 @@ exports[`Avatar component
  1`] = `
 <span
   className="Avatar Avatar--warning"
+  data-test="DesignSystem-Avatar"
 >
   <Text
     appearance="default"
-    data-test="DesignSystem-Avatar"
     weight="medium"
   >
     JD

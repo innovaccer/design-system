@@ -5,6 +5,7 @@ exports[`Label component
  1`] = `
 <div
   className="Label"
+  data-test="DesignSystem-Label"
 >
   <GenericText
     className="Label-label"
@@ -20,6 +21,7 @@ exports[`Label component
  1`] = `
 <div
   className="Label"
+  data-test="DesignSystem-Label"
 >
   <GenericText
     className="Label-label"
@@ -35,6 +37,7 @@ exports[`Label component
  1`] = `
 <div
   className="Label"
+  data-test="DesignSystem-Label"
 >
   <GenericText
     className="Label-label"
@@ -50,6 +53,7 @@ exports[`Label component
  1`] = `
 <div
   className="Label"
+  data-test="DesignSystem-Label"
 >
   <GenericText
     className="Label-label"

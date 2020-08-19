@@ -52,14 +52,15 @@ export const StatusHint = (props: StatusHintProps) => {
 
   return (
     <div
+      data-test="DesignSystem-StatusHint"
       {...baseProps}
       className={StatusHintClass}
       onClick={e => onClick && onClick(e)}
       onMouseEnter={e => onMouseEnter && onMouseEnter(e)}
       onMouseLeave={e => onMouseLeave && onMouseLeave(e)}
     >
-      <span className={StatusHintIconClass} />
-      <Text weight={'medium'}>{children}</Text>
+      <span data-test="DesignSystem-StatusHint--Icon" className={StatusHintIconClass} />
+      <Text data-test="DesignSystem-StatusHint--Text" weight={'medium'}>{children}</Text>
     </div>
   );
 };

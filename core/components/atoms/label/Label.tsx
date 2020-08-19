@@ -48,11 +48,11 @@ export const Label = (props: LabelProps) => {
   });
 
   return (
-    <div {...baseProps} className={LabelClass}>
+    <div data-test="DesignSystem-Label" {...baseProps} className={LabelClass}>
       <GenericText className={classes} componentType="label">
         {children}
       </GenericText>
-      {required && <span className="Label-requiredIndicator" />}
+      {required && <span className="Label-requiredIndicator" data-test="DesignSystem-Label--RequiredIndicator"/>}
     </div>
   );
 };

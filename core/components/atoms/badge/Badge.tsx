@@ -37,7 +37,7 @@ export const Badge = (props: BadgeProps) => {
   }, className);
 
   return (
-    <span {...baseProps} className={classes}>
+    <span data-test="DesignSystem-Badge" {...baseProps} className={classes} >
       {children}
     </span>
   );
