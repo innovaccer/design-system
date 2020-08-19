@@ -271,6 +271,10 @@ interface SharedTableProps extends BaseProps {
    * Callback to be called on page change in case of withPagination: true
    */
   onPageChange?: GridProps['onPageChange'];
+  /**
+   * Shows tooltip on Head Cell hover
+   */
+  headCellTooltip?: boolean;
 }
 
 const defaultProps = {
@@ -558,6 +562,7 @@ export class Table extends React.Component<TableProps, TableState> {
       showHead,
       type,
       size,
+      headCellTooltip,
       draggable,
       nestedRows,
       nestedRowRenderer,
@@ -625,6 +630,7 @@ export class Table extends React.Component<TableProps, TableState> {
             showHead={showHead}
             type={type}
             size={size}
+            headCellTooltip={headCellTooltip}
             draggable={draggable}
             nestedRows={nestedRows}
             nestedRowRenderer={nestedRowRenderer}

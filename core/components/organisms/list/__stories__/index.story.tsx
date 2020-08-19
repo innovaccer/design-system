@@ -88,6 +88,11 @@ export const all = () => {
     false
   );
 
+  const headCellTooltip = boolean(
+    'headCellTooltip',
+    false
+  );
+
   let dataAttr = {};
   if (async) {
     dataAttr = {
@@ -117,6 +122,7 @@ export const all = () => {
           withCheckbox={withCheckbox}
           type={type}
           size={size}
+          headCellTooltip={headCellTooltip}
           withPagination={withPagination}
           paginationType={paginationType}
           pageSize={pageSize}
