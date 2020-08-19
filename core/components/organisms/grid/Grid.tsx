@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { Pagination } from '@/index';
-import { CheckboxProps, DropdownProps, PaginationProps } from '@/index.type';
+import { CheckboxProps, DropdownProps } from '@/index.type';
 import { GridCellProps } from './GridCell';
-import { sortColumn, pinColumn, hideColumn, getTotalPages, moveToIndex, getSchema } from './utility';
+import { sortColumn, pinColumn, hideColumn, moveToIndex, getSchema } from './utility';
 import { debounce } from 'throttle-debounce';
 import { MainGrid } from './MainGrid';
 import { BaseProps, extractBaseProps } from '@/utils/types';
@@ -219,15 +218,6 @@ export interface GridProps extends BaseProps {
    */
   pageSize: number;
   /**
-   * Pagination Type
-   * @default "jump"
-   */
-  paginationType: PaginationProps['type'];
-  /**
-   * On Page Change callback
-   */
-  onPageChange?: PaginationProps['onPageChange'];
-  /**
    * Shows checkbox in the left most column
    */
   withCheckbox?: boolean;
@@ -293,7 +283,6 @@ export class Grid extends React.Component<GridProps> {
     size: 'comfortable',
     page: 1,
     pageSize: 0,
-    paginationType: 'jump',
     loading: false,
     error: false,
     sortingList: [],
@@ -454,40 +443,17 @@ export class Grid extends React.Component<GridProps> {
   }
 
   render() {
-    const {
-      withPagination,
-      page,
-      onPageChange,
-      totalRecords,
-      pageSize,
-      paginationType,
-    } = this.props;
-
     const baseProps = extractBaseProps(this.props);
     const schema = getSchema(this);
 
     return (
-      <div className="Grid-container">
-        <div className="Grid-wrapper" ref={this.gridRef}>
-          <MainGrid
-            {...baseProps}
-            _this={this}
-            schema={schema}
-          />
-        </div>
-        {withPagination && (
-          <div className="Grid-pagination">
-            <Pagination
-              page={page}
-              totalPages={getTotalPages(totalRecords, pageSize)}
-              type={paginationType}
-              onPageChange={(newPage: number) => {
-                if (onPageChange) onPageChange(newPage);
-              }}
-            />
-          </div>
-        )}
-      </div >
+      <div className="Grid-wrapper" ref={this.gridRef}>
+        <MainGrid
+          {...baseProps}
+          _this={this}
+          schema={schema}
+        />
+      </div>
     );
   }
 }

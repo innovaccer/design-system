@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Header, ExternalHeaderProps, updateSearchTermFunction, HeaderProps } from '../grid/Header';
-import { Grid } from '@/index';
+import { Grid, Pagination } from '@/index';
 import {
   Data,
   Schema,
@@ -17,6 +17,7 @@ import {
 import { updateBatchData, filterData, sortData, paginateData, getSelectAll, getTotalPages } from '../grid/utility';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { debounce } from 'throttle-debounce';
+import { PaginationProps } from '@/components/molecules/pagination';
 
 interface SyncProps {
   /**
@@ -217,7 +218,7 @@ interface SharedTableProps extends BaseProps {
   /**
    * `Pagination` component type
    */
-  paginationType?: GridProps['paginationType'];
+  paginationType?: PaginationProps['type'];
   /**
    * Number of rows to be rendered on a page
    *
@@ -270,7 +271,7 @@ interface SharedTableProps extends BaseProps {
   /**
    * Callback to be called on page change in case of withPagination: true
    */
-  onPageChange?: GridProps['onPageChange'];
+  onPageChange?: PaginationProps['onPageChange'];
   /**
    * Shows tooltip on Head Cell hover
    */
@@ -284,6 +285,7 @@ const defaultProps = {
   showMenu: true,
   multipleSorting: true,
   headerOptions: {},
+  paginationType: 'jump',
   pageSize: 15,
   loading: false,
   draggable: true
@@ -520,7 +522,7 @@ export class Table extends React.Component<TableProps, TableState> {
     });
   }
 
-  onPageChange: GridProps['onPageChange'] = newPage => {
+  onPageChange: PaginationProps['onPageChange'] = newPage => {
     this.setState({
       page: newPage
     });
@@ -635,14 +637,22 @@ export class Table extends React.Component<TableProps, TableState> {
             nestedRows={nestedRows}
             nestedRowRenderer={nestedRowRenderer}
             withPagination={withPagination && totalPages > 1}
-            paginationType={paginationType}
             pageSize={pageSize}
             loaderSchema={loaderSchema}
             errorTemplate={errorTemplate}
             onRowClick={onRowClick}
-            onPageChange={this.onPageChange}
           />
         </div>
+        {withPagination && (
+          <div className="Table-pagination">
+            <Pagination
+              page={this.state.page}
+              totalPages={getTotalPages(totalRecords, pageSize)}
+              type={paginationType}
+              onPageChange={this.onPageChange}
+            />
+          </div>
+        )}
       </div>
     );
   }

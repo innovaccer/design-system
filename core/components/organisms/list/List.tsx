@@ -3,7 +3,6 @@ import { ExternalHeaderProps } from '../grid/Header';
 import {
   Data,
   Schema,
-  GridProps,
   fetchDataFunction,
 } from '../grid';
 import Table, { TableProps } from '../table';
@@ -21,25 +20,25 @@ interface AsyncProps {
 }
 
 interface SharedListProps extends BaseProps {
-  type?: GridProps['type'];
-  size?: GridProps['size'];
-  nestedRows?: GridProps['nestedRows'];
-  nestedRowRenderer?: GridProps['nestedRowRenderer'];
+  type?: TableProps['type'];
+  size?: TableProps['size'];
+  nestedRows?: TableProps['nestedRows'];
+  nestedRowRenderer?: TableProps['nestedRowRenderer'];
   withHeader?: boolean;
   headerOptions?: ExternalHeaderProps;
-  withCheckbox?: GridProps['withCheckbox'];
-  withPagination?: GridProps['withPagination'];
-  paginationType?: GridProps['paginationType'];
-  pageSize?: GridProps['pageSize'];
-  loaderSchema?: GridProps['loaderSchema'];
+  withCheckbox?: TableProps['withCheckbox'];
+  withPagination?: TableProps['withPagination'];
+  paginationType?: TableProps['paginationType'];
+  pageSize?: TableProps['pageSize'];
+  loaderSchema?: TableProps['loaderSchema'];
   multipleSorting?: boolean;
-  sortingList?: GridProps['sortingList'];
-  filterList?: GridProps['filterList'];
-  errorTemplate?: GridProps['errorTemplate'];
-  onRowClick?: GridProps['onRowClick'];
+  sortingList?: TableProps['sortingList'];
+  filterList?: TableProps['filterList'];
+  errorTemplate?: TableProps['errorTemplate'];
+  onRowClick?: TableProps['onRowClick'];
   onSelect?: TableProps['onSelect'];
-  onPageChange?: GridProps['onPageChange'];
-  headCellTooltip?: boolean;
+  onPageChange?: TableProps['onPageChange'];
+  headCellTooltip?: TableProps['headCellTooltip'];
 }
 
 type SyncListProps = SyncProps & SharedListProps;
