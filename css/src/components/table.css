@@ -14,3 +14,11 @@
     height: 100%;
     z-index: 1;
 }
+
+.Table-pagination {
+    display: flex;
+    justify-content: center;
+    background: var(--white);
+    padding: var(--spacing) 0;
+    border-top: var(--border);
+}
