@@ -46,6 +46,7 @@ interface Props {
 
 interface IState {
   open: boolean;
+  zIndex?: number;
   mouseLeaveDelay: number;
   mouseEnterDelay: number;
 }
@@ -134,15 +135,37 @@ class PopperWrapper extends React.Component<Props, IState> {
     }
   }
 
-  public componentDidUpdate() {
+  public componentDidUpdate(prevProps: Props) {
     const { on = 'click', closeOnBackdropClick = true } = this.props;
     const { open } = this.props;
+
+    if (prevProps.open !== this.props.open && this.props.open) {
+      const triggerElement = this.findDOMNode(this.triggerRef);
+      const zIndex = this.getZIndexForLayer(triggerElement);
+
+      this.setState({
+        zIndex: zIndex === undefined ? zIndex : zIndex + 1
+      });
+    }
 
     if (on === 'click' && open && closeOnBackdropClick) {
       document.addEventListener('mousedown', this.doesNodeContainClick);
     } else if (on === 'click' && !open && closeOnBackdropClick) {
       document.removeEventListener('mousedown', this.doesNodeContainClick);
     }
+  }
+
+  public getZIndexForLayer(node: HTMLElement | null) {
+    if (node === null) {
+      return;
+    }
+
+    const layerNode = node.closest('[data-layer]') || document.body;
+    const zIndex =
+      layerNode === document.body
+        ? 'auto'
+        : parseInt(window.getComputedStyle(layerNode).zIndex || '0', 10);
+    return zIndex === 'auto' || isNaN(zIndex) ? undefined : zIndex;
   }
 
   public getTriggerElement(trigger: React.ReactElement<any>, ref: React.Ref<any>, on: actionType) {
@@ -219,7 +242,7 @@ class PopperWrapper extends React.Component<Props, IState> {
               >
                 {({ ref, style, placement }) => {
                   const newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
-                  return this.getChildrenElement(children, ref, placement, newStyle);
+                  return this.getChildrenElement(children, ref, placement, { ...newStyle, zIndex: this.state.zIndex });
                 }}
               </Popper>
             ),
@@ -229,7 +252,7 @@ class PopperWrapper extends React.Component<Props, IState> {
           <Popper placement={placement} innerRef={this.popupRef}>
             {({ ref, style, placement }) => {
               const newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
-              return this.getChildrenElement(children, ref, placement, newStyle);
+              return this.getChildrenElement(children, ref, placement, { ...newStyle, zIndex: this.state.zIndex });
             }}
           </Popper>
         )}

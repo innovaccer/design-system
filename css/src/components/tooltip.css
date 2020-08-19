@@ -4,7 +4,7 @@
   padding: var(--spacing) var(--spacing-2);
   border-radius: var(--spacing-m);
   position: absolute;
-  z-index: 999999;
+  z-index: 500;
   background: var(--inverse);
   overflow: hidden;
   box-sizing: border-box;

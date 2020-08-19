@@ -17,7 +17,7 @@
   top: 0;
   display: none;
   align-items: center;
-  z-index: 999999;
+  z-index: 1000;
   overflow: auto;
   flex-direction: column;
   justify-content: center;
