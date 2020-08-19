@@ -39,9 +39,9 @@ interface SyncProps {
    *    ColumnSchema: {
    *        name: string;
    *        displayName: string;
-   *        width?: number;
-   *        minWidth?: number;
-   *        maxWidth?: number;
+   *        width?: React.ReactText;
+   *        minWidth?: React.ReactText;
+   *        maxWidth?: React.ReactText;
    *        resizable?: boolean;
    *        sorting?: boolean;
    *        comparator?: (a: RowData, b: RowData) => -1 | 0 | 1;
