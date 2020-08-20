@@ -275,7 +275,13 @@ interface SharedTableProps extends BaseProps {
   /**
    * Shows tooltip on Head Cell hover
    */
-  headCellTooltip?: boolean;
+  headCellTooltip?: GridProps['headCellTooltip'];
+  /**
+   * Shows left separator to all columns
+   *
+   * **Can be override by Column Schema**
+   */
+  separator?: GridProps['headCellTooltip'];
 }
 
 const defaultProps = {
@@ -565,6 +571,7 @@ export class Table extends React.Component<TableProps, TableState> {
       type,
       size,
       headCellTooltip,
+      separator,
       draggable,
       nestedRows,
       nestedRowRenderer,
@@ -633,6 +640,7 @@ export class Table extends React.Component<TableProps, TableState> {
             type={type}
             size={size}
             headCellTooltip={headCellTooltip}
+            separator={separator}
             draggable={draggable}
             nestedRows={nestedRows}
             nestedRowRenderer={nestedRowRenderer}

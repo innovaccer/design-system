@@ -263,6 +263,12 @@ export interface GridProps extends BaseProps {
    * Shows tooltip on Head Cell hover
    */
   headCellTooltip?: boolean;
+  /**
+   * Shows left separator to all columns
+   *
+   * **Can be override by Column Schema**
+   */
+  separator?: boolean;
 }
 
 export class Grid extends React.Component<GridProps> {
