@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PageHeader from '../..//PageHeader';
-import { select, text } from '@storybook/addon-knobs';
+import { select, text, boolean } from '@storybook/addon-knobs';
 import { Navigation, Button, Breadcrumbs, Badge, StatusHint } from '@/index';
 import { action } from '@storybook/addon-actions';
 
@@ -10,7 +10,7 @@ export const withNavigation = () => {
     ['center', 'bottom'],
     'center'
   );
-
+  const seperator = boolean('seperator', true);
   const title = text(
     'title',
     'Page title'
@@ -47,6 +47,7 @@ export const withNavigation = () => {
   const options = {
     navigationPosition,
     title,
+    seperator,
     navigation: <Navigation menus={navigationData} onClick={action('menu-clicked')} active={{ name: 'menu_1' }} />,
     actions: (
       <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>

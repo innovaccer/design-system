@@ -3,14 +3,14 @@ import PageHeader from '../../PageHeader';
 import { Button, Breadcrumbs, Badge, StatusHint, Tab, TabsWrapper, Text } from '@/index';
 import { action } from '@storybook/addon-actions';
 import { updateKnob } from '@/utils/storybookEventEmitter';
-import { number, text } from '@storybook/addon-knobs';
+import { number, text, boolean } from '@storybook/addon-knobs';
 
 export const withTabs = () => {
   const active = number(
     'active',
     1
   );
-
+  const seperator = boolean('seperator', true);
   const title = text(
     'title',
     'Page title'
@@ -34,6 +34,7 @@ export const withTabs = () => {
 
   const options = {
     title,
+    seperator,
     tabs: (
       <TabsWrapper
         active={active}

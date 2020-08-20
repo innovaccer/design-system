@@ -2,7 +2,7 @@ import * as React from 'react';
 import PageHeader from '../..//PageHeader';
 import { Navigation, Button, Text } from '@/index';
 import { action } from '@storybook/addon-actions';
-import { text } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 
 export const withNavigation = () => {
   const title = text(
@@ -26,9 +26,11 @@ export const withNavigation = () => {
       disabled: true
     }
   ];
+  const seperator = boolean('seperator', true);
 
   const options = {
     title,
+    seperator,
     navigation: <Navigation menus={navigationData} onClick={action('menu-clicked')} active={{ name: 'menu_1' }} />,
     actions: (
       <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
