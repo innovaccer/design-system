@@ -110,7 +110,7 @@ const StoryComp = props => {
   const { story, storyId } = getStory();
   const comp = story.getOriginal()();
   const sp = story.parameters;
-  const imports = [sp.component, ...(sp.subcomponents ? Object.values(sp.subcomponents) : [])];
+  const imports = [sp.component ? sp.component : {}, ...(sp.subcomponents ? Object.values(sp.subcomponents) : [])];
 
   const importString = `// ${importsToStr(imports.map(i => i.displayName))}`;
   const jsx = `${beautifyHTML(reactElementToJSXString(comp, JSXtoStringOptions), beautifyJSXOptions)}`;
@@ -129,10 +129,7 @@ ${jsx.split('\n').map(l => `    ${l}`).join('\n')}
   const [jsxCode, setJsxCode] = React.useState<string>(customCode ? customCode : code);
   const [htmlCode, setHtmlCode] = React.useState<string>(`${html}`);
 
-  const importScope = imports.reduce((out, curr) => {
-    out[curr.displayName] = curr;
-    return out;
-  }, {});
+  const importScope = props.imports;
 
   const renderHTMLTab = () => {
     if (!noHtml) {
@@ -220,7 +217,9 @@ export const docPage = () => {
     props: propsAttr,
     customCode,
     noHtml,
-    noStory
+    noStory,
+    noProps,
+    imports
   } = sp.docs.docPage;
 
   const separatorIndex = title?.indexOf('|');
@@ -236,11 +235,15 @@ export const docPage = () => {
       <br />
 
       {!noStory && (<Heading>Story</Heading>)}
-      <StoryComp key={storyId} customCode={customCode} noHtml={noHtml} noStory={noStory} />
+      <StoryComp key={storyId} customCode={customCode} noHtml={noHtml} noStory={noStory} imports={imports} />
       <br />
 
-      <Heading>PropTable</Heading>
-      <Props {...propsAttr} />
+      {!noProps && (
+        <>
+          <Heading>PropTable</Heading>
+          <Props {...propsAttr} />
+        </>
+      )}
     </div>
   );
 };

@@ -1,0 +1,57 @@
+.Table-container {
+  display: flex;
+  height: 100%;
+  /* overflow: hidden; */
+}
+
+.Table-filters {
+  box-sizing: border-box;
+  display: flex;
+  flex-shrink: 0;
+  /* background: var(--secondary); */
+}
+
+.Table-filters--vertical {
+  flex-direction: column;
+  height: 100%;
+  width: var(--spacing-9);
+  padding: 0 var(--spacing-l);
+}
+
+.Table-filtersHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Table-filtersCloseIcon {
+  cursor: pointer;
+}
+
+.Table-filters--vertical .Table-filter {
+  padding: var(--spacing) 0;
+}
+
+.Table-filters--vertical .Table-filter:first-of-type {
+  padding-top: var(--spacing-l);
+}
+
+.Table-filters--vertical .Table-filter:last-of-type {
+  padding-bottom: var(--spacing-l);
+}
+
+.Table-filters--horizontal .Table-filter {
+  padding: 0 var(--spacing-m);
+}
+
+.Table-filters--horizontal .Table-filter:first-of-type {
+  padding-left: 0;
+}
+
+.Table-filters--horizontal .Table-filter:last-of-type {
+  padding-right: 0;
+}
+
+.Table-filter .Input {
+  min-width: unset;
+}
