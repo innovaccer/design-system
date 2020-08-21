@@ -326,6 +326,7 @@ export const Cell = (props: CellProps) => {
         if (from.type === to.type) _this.reorderCol(from.name, to.name);
       }}
       style={{
+        visibility: _this.gridRef.current === null ? 'hidden' : 'visible',
         width: getWidth.call(_this, schema.width || width),
         minWidth: getWidth.call(_this, schema.minWidth || minWidth),
         maxWidth: getWidth.call(_this, schema.maxWidth || maxWidth)
