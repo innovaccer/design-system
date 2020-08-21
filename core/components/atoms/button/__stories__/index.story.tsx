@@ -5,6 +5,12 @@ import Button from '../Button';
 
 // CSF format story
 export const all = () => {
+  const type = select(
+    'type',
+    ['button', 'submit', 'reset'],
+    undefined
+  );
+
   const appearance = select(
     'appearance',
     ['basic', 'primary', 'success', 'alert', 'transparent'],
@@ -53,6 +59,7 @@ export const all = () => {
       onClick={action('button-clicked')}
       onMouseEnter={action('mouse-enter')}
       onMouseLeave={action('mouse-leave')}
+      type={type}
       appearance={appearance}
       size={size}
       expanded={expanded}

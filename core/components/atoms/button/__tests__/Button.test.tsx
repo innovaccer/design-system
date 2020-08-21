@@ -4,10 +4,34 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 import Button, { ButtonProps as Props } from '../Button';
 
 const BooleanValue = [true, false];
+const buttonType = ['button', 'submit', 'reset'];
 const icon = 'events';
 const iconAlign = ['left', 'right'];
 const size = ['tiny', 'regular', 'large'];
 const appearance = ['basic', 'primary', 'success', 'alert', 'transparent'];
+
+describe('Button component', () => {
+  const mapper: Record<string, any> = {
+    type: valueHelper(buttonType, { required: true, iterate: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+
+    it(testMessageHelper(attr), () => {
+      const tree = shallow(
+        <Button
+          {...attr}
+        >
+          Button
+        </Button >
+      );
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
 
 describe('Button component', () => {
   const mapper: Record<string, any> = {
