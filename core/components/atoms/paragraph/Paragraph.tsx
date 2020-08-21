@@ -5,7 +5,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled';
 
-export interface ParagraphProps extends BaseProps{
+export interface ParagraphProps extends BaseProps {
   /**
    * Text to be rendered
    * @type {React.ReactNode}
@@ -15,7 +15,7 @@ export interface ParagraphProps extends BaseProps{
    * Color of `Paragraph`
    * @default "default"
    */
-  appearance?: Appearance ;
+  appearance?: Appearance;
 }
 
 export const Paragraph: React.FunctionComponent<ParagraphProps> = props => {
@@ -33,7 +33,7 @@ export const Paragraph: React.FunctionComponent<ParagraphProps> = props => {
   }, className);
 
   return (
-    <GenericText {...baseProps} className={classes} componentType="p">
+    <GenericText data-test="DesignSystem-Paragraph" {...baseProps} className={classes} componentType="p">
       {children}
     </GenericText>
   );

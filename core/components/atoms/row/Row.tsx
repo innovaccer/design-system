@@ -14,7 +14,7 @@ export const Row = (props: RowProps) => {
     Row: true,
     [`${className}`]: className
   });
-  return <div {...baseProps} className={classes}>{children}</div>;
+  return <div data-test="DesignSystem-Row"{...baseProps} className={classes}>{children}</div>;
 };
 
 Row.displayName = 'Row';

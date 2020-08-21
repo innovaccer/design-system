@@ -51,15 +51,18 @@ export const Message: React.FunctionComponent<MessageProps> = props => {
   });
 
   return (
-    <div {...baseProps} className={MessageClass}>
+    <div data-test="DesignSystem-Message"{...baseProps} className={MessageClass}>
       {appearance !== 'default' && (
-        <div className={MessageIcon}>
-          <Icon name={IconMapping[appearance]} appearance={appearance}/>
+        <div className={MessageIcon} data-test="DesignSystem-Message--Icon">
+          <Icon name={IconMapping[appearance]} appearance={appearance} />
         </div>
       )}
-      <div>
-        {title && <div className="Message-title"><Heading size="s">{title}</Heading></div>}
-        <div className="Message-description">{children}</div>
+      <div data-test="DesignSystem-Message--Title">
+        {title && (
+          <div className="Message-title">
+            <Heading size="s">{title}</Heading></div>
+        )}
+        <div data-test="DesignSystem-Message--Description" className="Message-description">{children}</div>
       </div>
     </div>
   );

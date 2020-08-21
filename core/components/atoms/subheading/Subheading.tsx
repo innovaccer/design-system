@@ -33,7 +33,7 @@ export const Subheading = (props: SubheadingProps) => {
   }, className);
 
   return (
-    <GenericText {...baseProps} className={classes} componentType={'h4'}>
+    <GenericText data-test="DesignSystem-Subheading"{...baseProps} className={classes} componentType={'h4'}>
       {children}
     </GenericText>
   );

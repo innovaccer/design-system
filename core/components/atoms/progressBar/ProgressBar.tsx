@@ -32,7 +32,7 @@ export const ProgressBar = (props: ProgressBarProps) => {
   }, className);
 
   return (
-    <div {...baseProps} className={ProgressBarClass}>
+    <div data-test="DesignSystem-ProgressBar" {...baseProps} className={ProgressBarClass}>
       <div className={'ProgressBar-indicator'} style={style} />
     </div>
   );

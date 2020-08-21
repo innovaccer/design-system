@@ -54,12 +54,13 @@ export const ProgressRing = (props: ProgressRingProps) => {
   };
 
   return (
-    <svg {...baseProps} className={ProgressRingClass} {...svgProps}>
+    <svg data-test="DesignSystem-ProgressRing" {...baseProps} className={ProgressRingClass} {...svgProps}>
       <circle className="Ring-background" {...circleProps} />
       <circle
         className="Ring-indicator"
         strokeDashoffset={circumference - updatedValue / 100 * circumference}
         {...circleProps}
+        data-test="DesignSystem-ProgressRing--Circle"
       />
     </svg>
   );

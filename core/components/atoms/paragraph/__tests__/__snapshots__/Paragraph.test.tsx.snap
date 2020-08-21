@@ -6,6 +6,7 @@ exports[`Paragraph component
 <GenericText
   className="Text Text--default"
   componentType="p"
+  data-test="DesignSystem-Paragraph"
 >
   Sample string
 </GenericText>
@@ -17,6 +18,7 @@ exports[`Paragraph component
 <GenericText
   className="Text Text--destructive"
   componentType="p"
+  data-test="DesignSystem-Paragraph"
 >
   Sample string
 </GenericText>
@@ -28,6 +30,7 @@ exports[`Paragraph component
 <GenericText
   className="Text Text--disabled"
   componentType="p"
+  data-test="DesignSystem-Paragraph"
 >
   Sample string
 </GenericText>
@@ -39,6 +42,7 @@ exports[`Paragraph component
 <GenericText
   className="Text Text--subtle"
   componentType="p"
+  data-test="DesignSystem-Paragraph"
 >
   Sample string
 </GenericText>
@@ -50,6 +54,7 @@ exports[`Paragraph component
 <GenericText
   className="Text Text--white"
   componentType="p"
+  data-test="DesignSystem-Paragraph"
 >
   Sample string
 </GenericText>

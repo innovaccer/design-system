@@ -5,14 +5,17 @@ exports[`StatusHint component
  1`] = `
 <div
   className="StatusHint"
+  data-test="DesignSystem-StatusHint"
   onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
   <span
     className="StatusHint-icon StatusHint--alert"
+    data-test="DesignSystem-StatusHint--Icon"
   />
   <Text
+    data-test="DesignSystem-StatusHint--Text"
     weight="medium"
   >
     StatusHint
@@ -25,14 +28,17 @@ exports[`StatusHint component
  1`] = `
 <div
   className="StatusHint"
+  data-test="DesignSystem-StatusHint"
   onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
   <span
     className="StatusHint-icon StatusHint--default"
+    data-test="DesignSystem-StatusHint--Icon"
   />
   <Text
+    data-test="DesignSystem-StatusHint--Text"
     weight="medium"
   >
     StatusHint
@@ -45,14 +51,17 @@ exports[`StatusHint component
  1`] = `
 <div
   className="StatusHint"
+  data-test="DesignSystem-StatusHint"
   onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
   <span
     className="StatusHint-icon StatusHint--info"
+    data-test="DesignSystem-StatusHint--Icon"
   />
   <Text
+    data-test="DesignSystem-StatusHint--Text"
     weight="medium"
   >
     StatusHint
@@ -65,14 +74,17 @@ exports[`StatusHint component
  1`] = `
 <div
   className="StatusHint"
+  data-test="DesignSystem-StatusHint"
   onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
   <span
     className="StatusHint-icon StatusHint--success"
+    data-test="DesignSystem-StatusHint--Icon"
   />
   <Text
+    data-test="DesignSystem-StatusHint--Text"
     weight="medium"
   >
     StatusHint
@@ -85,14 +97,17 @@ exports[`StatusHint component
  1`] = `
 <div
   className="StatusHint"
+  data-test="DesignSystem-StatusHint"
   onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
   <span
     className="StatusHint-icon StatusHint--warning"
+    data-test="DesignSystem-StatusHint--Icon"
   />
   <Text
+    data-test="DesignSystem-StatusHint--Text"
     weight="medium"
   >
     StatusHint

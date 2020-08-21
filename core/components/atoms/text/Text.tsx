@@ -46,6 +46,7 @@ export const Text = (props: TextProps) => {
 
   return (
     <GenericText
+      data-test="DesignSystem-Text"
       {...baseProps}
       className={classes}
       componentType="span"
