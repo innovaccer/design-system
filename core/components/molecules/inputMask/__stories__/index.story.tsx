@@ -16,6 +16,10 @@ export const all = () => {
     'value',
     ''
   );
+  const defaultvalue = text(
+    'defaultvalue',
+    ''
+  );
 
   const size = select(
     'size',
@@ -74,6 +78,7 @@ export const all = () => {
         name="input"
         type={inputType}
         value={value}
+        defaultValue={defaultvalue}
         disabled={disabled}
         onChange={action('on-change')}
         onClick={action('on-click')}
