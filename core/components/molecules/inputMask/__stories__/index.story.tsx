@@ -16,8 +16,8 @@ export const all = () => {
     'value',
     ''
   );
-  const defaultvalue = text(
-    'defaultvalue',
+  const defaultValue = text(
+    'defaultValue',
     ''
   );
 
@@ -78,7 +78,7 @@ export const all = () => {
         name="input"
         type={inputType}
         value={value}
-        defaultValue={defaultvalue}
+        defaultValue={defaultValue}
         disabled={disabled}
         onChange={action('on-change')}
         onClick={action('on-click')}

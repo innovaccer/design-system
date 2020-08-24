@@ -28,15 +28,18 @@ export interface MaskProps extends BaseProps {
   onClear?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 export type InputMaskProps = InputProps & MaskProps;
+
 /**
- * InputMask works as uncontrolled component
+ * It works as Uncontrolled Input
+ *
+ * **Updated value can be passed**
  */
 export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, forwardRef) => {
   const {
     mask: maskProp,
     value: valueProp,
-    defaultValue,
     placeholderChar = '_',
+    defaultValue,
     mask,
     error,
     caption,
@@ -58,6 +61,12 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
   React.useEffect(() => {
     setCaretPos(caret);
   }, [caret]);
+
+  React.useEffect(() => {
+    if (ref.current && valueProp) {
+      setValue(convertToMasked(valueProp));
+    }
+  }, [valueProp]);
 
   React.useEffect(() => {
     if (ref.current) {
