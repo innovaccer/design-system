@@ -1,0 +1,874 @@
+import * as React from 'react';
+import { debounce } from 'throttle-debounce';
+import data from '@/components/organisms/grid/__stories__/_common_/data';
+import './style.css';
+
+export const tableWithHeader = () => {
+  return (<></>);
+};
+
+const customCode = `/*
+import * as React from 'react';
+import { debounce } from 'throttle-debounce';
+import {
+  Card,
+  Button,
+  Label,
+  Grid,
+  Placeholder,
+  PlaceholderParagraph,
+  Dropdown,
+  Input,
+  Checkbox,
+  Subheading,
+  Icon,
+  Pagination,
+  DatePicker,
+} from '@innovaccer/design-system';
+import './style.css';
+
+// styles.css
+.Table-container {
+  display: flex;
+  height: 100%;
+}
+
+.Table-filters {
+  box-sizing: border-box;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.Table-filters--vertical {
+  flex-direction: column;
+  height: 100%;
+  width: var(--spacing-9);
+  padding: 0 var(--spacing-l);
+}
+
+.Table-filtersHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Table-filtersCloseIcon {
+  cursor: pointer;
+}
+
+.Table-filters--vertical .Table-filter {
+  padding: var(--spacing) 0;
+}
+
+.Table-filters--vertical .Table-filter:first-of-type {
+  padding-top: var(--spacing-l);
+}
+
+.Table-filters--vertical .Table-filter:last-of-type {
+  padding-bottom: var(--spacing-l);
+}
+
+.Table-filters--horizontal .Table-filter {
+  padding: 0 var(--spacing-m);
+}
+
+.Table-filters--horizontal .Table-filter:first-of-type {
+  padding-left: 0;
+}
+
+.Table-filters--horizontal .Table-filter:last-of-type {
+  padding-right: 0;
+}
+
+.Table-filter .Input {
+  min-width: unset;
+}
+*/
+
+() => {
+  const getSelectAll = (data) => {
+    if (data.length) {
+      const anyUnSelected = data.some(d => !d._selected);
+      const allUnSelected = data.every(d => !d._selected);
+  
+      const indeterminate = data.length >= 0 && anyUnSelected && !allUnSelected;
+      const checked = !indeterminate && !allUnSelected;
+  
+      return { indeterminate, checked };
+    }
+    return { indeterminate: false, checked: false };
+  };
+  
+  const getTotalPages = (totalRecords, pageSize) => Math.ceil(totalRecords / pageSize);
+  
+  const getInit = schema => (schema && !!schema.length);
+  
+  const updateBatchData = (data, rowIndexes, dataUpdate) => {
+    const updatedData = [...data];
+    for (const rowIndex of rowIndexes) {
+      updatedData[rowIndex] = {
+        ...updatedData[rowIndex],
+        ...dataUpdate
+      };
+    }
+  
+    return updatedData;
+  };
+  
+  const Header = (props) => {
+    const {
+      loading,
+      error,
+      data,
+      schema,
+      showHead,
+      withPagination,
+      withCheckbox,
+      updateSchema,
+      filterList = {},
+      updateFilterList,
+      totalRecords = 0,
+      onSelectAll,
+      searchPlaceholder,
+      selectAll,
+      searchTerm,
+      updateSearchTerm,
+      allowSelectAll,
+      updateShowVerticalFilters
+    } = props;
+  
+    const [selectAllRecords, setSelectAllRecords] = React.useState(false);
+    const [flag, setFlag] = React.useState(true);
+  
+    React.useEffect(() => {
+      setFlag(!flag);
+    }, [schema]);
+  
+    React.useEffect(() => {
+      if (selectAll && selectAll.checked) {
+        if (onSelectAll) onSelectAll(true, selectAllRecords);
+      }
+    }, [selectAllRecords]);
+  
+    React.useEffect(() => {
+      if (selectAll && !selectAll.checked) setSelectAllRecords(false);
+    }, [selectAll]);
+  
+    const filterSchema = schema.filter(s => s.filters);
+  
+    const onSearchChange = e => {
+      const value = e.target.value;
+      if (updateSearchTerm) {
+        updateSearchTerm(value);
+      }
+    };
+  
+    const onFilterChange = (name, filters) => {
+      const newFilterList = {
+        ...filterList,
+        [name]: filters
+      };
+  
+      if (updateFilterList) {
+        updateFilterList(newFilterList);
+      }
+    };
+  
+    const onHideColumn = (selected) => {
+      const newSchema = schema.map(s => ({
+        ...s,
+        hidden: selected.findIndex(val => val === s.name) === -1
+      }));
+  
+      if (updateSchema) updateSchema(newSchema);
+    };
+  
+    const pinnedSchema = schema.filter(s => s.pinned);
+    const leftPinnedSchema = pinnedSchema.filter(s => s.pinned === 'left');
+    const rightPinnedSchema = pinnedSchema.filter(s => s.pinned === 'right');
+    const unpinnedSchema = schema.filter(s => !s.pinned);
+    const renderedSchema = [...leftPinnedSchema, ...unpinnedSchema, ...rightPinnedSchema];
+  
+    const columnOptions = renderedSchema.map(s => ({
+      label: s.displayName,
+      value: s.name,
+      selected: !s.hidden
+    }));
+  
+    const selectedCount = data.filter(d => d._selected).length;
+    const label = withCheckbox && selectedCount ?
+      selectAllRecords ? \`Selected all \${totalRecords} items\` : \`Selected \${selectedCount} items on this page\`
+      : \`Showing \${!error ? totalRecords : 0} items\`;
+  
+    return (
+      <div className="Header">
+        <div className="Header-content Header-content--top">
+          <div className="Header-search">
+            <Input
+              name="GridHeader-search"
+              icon="search"
+              placeholder={searchPlaceholder}
+              onChange={onSearchChange}
+              value={searchTerm}
+              onClear={() => updateSearchTerm && updateSearchTerm('')}
+              disabled={loading && !getInit(schema)}
+            />
+          </div>
+          <div className="Header-dropdown">
+            <div className="Table-filters Table-filters--horizontal">
+              <div className="Table-filter">
+                <Dropdown
+                  key="name"
+                  disabled={loading}
+                  withCheckbox={true}
+                  showApplyButton={true}
+                  inlineLabel={"Name"}
+                  options={[
+                    { label: 'A-G', value: 'a-g', selected: true },
+                    { label: 'H-R', value: 'h-r', selected: true },
+                    { label: 'S-Z', value: 's-z', selected: true },
+                  ]}
+                  onChange={selected => onFilterChange("name", selected)}
+                />
+              </div>
+              <div className="Table-filter">
+                <Button
+                  icon="add"
+                  onClick={() => updateShowVerticalFilters(true)}
+                >
+                  More Filters
+                </Button>
+              </div>
+            </div>
+          </div>
+          <div className="Header-actions">
+          </div>
+        </div>
+        <div className="Header-content Header-content--bottom">
+          <div className="Header-label">
+            {showHead && !loading && (
+              <Checkbox
+                {...selectAll}
+                onChange={event => {
+                  if (onSelectAll) onSelectAll(event.target.checked);
+                }}
+              />
+            )}
+            {loading ? (
+              <Placeholder withImage={!showHead && withCheckbox}>
+                <PlaceholderParagraph length={'small'} size={'s'} />
+              </Placeholder>
+            ) : (
+                <>
+                  <Label>{label}</Label>
+                  {withPagination && selectAll.checked && allowSelectAll && (
+                    <div className="ml-4">
+                      {!selectAllRecords ? (
+                        <Button
+                          size="tiny"
+                          onClick={() => setSelectAllRecords(true)}
+                        >
+                          {\`Select all \totalRecords} items\`}
+                        </Button>
+                      ) : (
+                          <Button
+                            size="tiny"
+                            onClick={() => setSelectAllRecords(false)}
+                          >
+                            Clear Selection
+                          </Button>
+                        )
+                      }
+                    </div>
+                  )}
+                </>
+              )
+            }
+          </div>
+          <div className="Header-hideColumns">
+            <Dropdown
+              key={\`\${flag}\`}
+              triggerSize={'tiny'}
+              withCheckbox={true}
+              showApplyButton={true}
+              options={columnOptions}
+              totalOptions={columnOptions.length}
+              align={'left'}
+              triggerOptions={{
+                labelLimit: 0,
+                customLabel: (selected, totalOptions) => \`Showing \${selected} of \${totalOptions} columns\`,
+                customTrigger: triggerLabel => (
+                  <Button
+                    size="tiny"
+                    appearance="transparent"
+                    icon="keyboard_arrow_down_filled"
+                    iconAlign="right"
+                  >
+                    {triggerLabel ? triggerLabel : \`Showing 0 of \${columnOptions.length} columns\`}
+                  </Button>
+                )
+              }}
+              onChange={selected => onHideColumn(selected)}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  };
+  
+  Header.defaultProps = {
+    schema: [],
+    data: [],
+    searchPlaceholder: 'Search',
+    dynamicColumn: true
+  };
+  
+  class Table extends React.Component {
+    constructor(props) {
+      super(props);
+  
+      this.state = {
+        data: [],
+        schema: [],
+        page: 1,
+        totalRecords: 0,
+        sortingList: props.sortingList || [],
+        filterList: props.filterList || {},
+        loading: true,
+        error: false,
+        selectAll: getSelectAll([]),
+        searchTerm: undefined,
+        showVerticalFilters: props.showVerticalFilters,
+      };
+  
+      this.pageSize = 3;
+  
+      this.updateData();
+    }
+  
+    componentDidUpdate(_prevProps, prevState) {
+      if (prevState.page !== this.state.page) {
+        const { onPageChange } = this.props;
+        if (onPageChange) onPageChange(this.state.page);
+      }
+  
+      if (prevState.page !== this.state.page
+        || prevState.filterList !== this.state.filterList
+        || prevState.sortingList !== this.state.sortingList
+        || prevState.searchTerm !== this.state.searchTerm) {
+        if (!this.props.loading) this.updateData({});
+      }
+    }
+  
+    updateData() {
+      debounce(250, () => {
+        this.onSelect(-1, false);
+    
+        const {
+          fetchData,
+        } = this.props;
+    
+        const {
+          page,
+          sortingList,
+          filterList,
+          searchTerm
+        } = this.state;
+    
+        const {
+          pageSize
+        } = this;
+    
+        const opts = {
+          page,
+          pageSize,
+          sortingList,
+          filterList,
+          searchTerm,
+        };
+    
+        this.setState({
+          loading: true
+        });
+        if (fetchData) {
+          fetchData(opts)
+            .then((res) => {
+              const data = res.data;
+              const schema = this.state.schema.length ? this.state.schema : res.schema;
+              this.setState({
+                data,
+                schema,
+                selectAll: getSelectAll(data),
+                totalRecords: res.count,
+                loading: false,
+                error: !data.length
+              });
+            })
+            .catch(() => {
+              this.setState({
+                loading: false,
+                error: true,
+                data: []
+              });
+            });
+        }
+      })();
+    }
+  
+    onSelect(rowIndexes, selected) {
+      const {
+        data
+      } = this.state;
+  
+      const {
+        onSelect
+      } = this.props;
+  
+      const indexes = [rowIndexes];
+      let newData = data;
+      if (rowIndexes >= 0) {
+        newData = updateBatchData(data, indexes, {
+          _selected: selected
+        });
+  
+        this.setState({
+          data: newData,
+          selectAll: getSelectAll(newData)
+        });
+      }
+  
+      if (onSelect) {
+        onSelect(indexes, selected, rowIndexes === -1 ? [] : newData.filter(d => d._selected));
+      }
+    }
+  
+    onSelectAll(selected, selectAll) {
+      const {
+        onSelect
+      } = this.props;
+  
+      const {
+        data
+      } = this.state;
+  
+      const indexes = Array.from({ length: data.length }, (_, i) => i);
+  
+      const newData = updateBatchData(data, indexes, {
+        _selected: selected
+      });
+  
+      if (onSelect) {
+        onSelect(indexes, selected, newData.filter(d => d._selected), selectAll);
+      }
+  
+      this.setState({
+        data: newData,
+        selectAll: getSelectAll(newData)
+      });
+    }
+  
+    onPageChange(newPage) {
+      this.setState({
+        page: newPage
+      });
+    }
+  
+    onFilterChange(name, selected) {
+      const {
+        filterList
+      } = this.props;
+  
+      const newFilterList = {
+        ...filterList,
+        [name]: selected
+      };
+  
+      this.updateFilterList(newFilterList);
+    }
+  
+    updateShowVerticalFilters(val) {
+      this.setState({
+        showVerticalFilters: val
+      });
+    }
+  
+    updateSchema(newSchema) {
+      this.setState({
+        schema: newSchema
+      });
+    }
+  
+    updateSortingList(newSortingList) {
+      const {
+        multipleSorting
+      } = this.props;
+  
+      this.setState({
+        sortingList: multipleSorting ? [...newSortingList] : newSortingList.slice(-1),
+        page: 1,
+      });
+    }
+  
+    updateFilterList(newFilterList) {
+      this.setState({
+        filterList: newFilterList,
+        page: 1,
+      });
+    }
+  
+    updateSearchTerm(newSearchTerm) {
+      this.setState({
+        searchTerm: newSearchTerm,
+        page: 1
+      });
+    }
+  
+    render() {
+      const {
+        loaderSchema,
+      } = this.props;
+  
+      const withCheckbox = true;
+      const withPagination = true;
+      const {
+        pageSize
+      } = this;
+  
+      const {
+        totalRecords,
+        showVerticalFilters,
+        loading
+      } = this.state;
+      const totalPages = getTotalPages(totalRecords, pageSize);
+  
+      return (
+        <div className="Table-container">
+          <div style={{ width: showVerticalFilters ? 'calc(100% - var(--spacing-9))' : '100%' }}>
+            <Card className="Table">
+              <div className="Table-header">
+                <Header
+                  {...this.state}
+                  updateSchema={this.updateSchema.bind(this)}
+                  updateFilterList={this.updateFilterList.bind(this)}
+                  updateSearchTerm={this.updateSearchTerm.bind(this)}
+                  updateShowVerticalFilters={this.updateShowVerticalFilters.bind(this)}
+                  onSelectAll={this.onSelectAll.bind(this)}
+                  withCheckbox={withCheckbox}
+                  withPagination={withPagination}
+                />
+              </div>
+              <div className="Table-grid">
+                <Grid
+                  {...this.state}
+                  updateData={this.updateData.bind(this)}
+                  updateSchema={this.updateSchema.bind(this)}
+                  updateSortingList={this.updateSortingList.bind(this)}
+                  updateFilterList={this.updateFilterList.bind(this)}
+                  withCheckbox={withCheckbox}
+                  onSelect={this.onSelect.bind(this)}
+                  onSelectAll={this.onSelectAll.bind(this)}
+                  showMenu={true}
+                  type="data"
+                  size="comfortable"
+                  draggable={true}
+                  withPagination={withPagination && totalPages > 1}
+                  pageSize={pageSize}
+                  loaderSchema={loaderSchema}
+                />
+              </div>
+              {withPagination && (
+                <div className="Table-pagination">
+                  <Pagination
+                    page={this.state.page}
+                    totalPages={getTotalPages(totalRecords, pageSize)}
+                    type="jump"
+                    onPageChange={this.onPageChange.bind(this)}
+                  />
+                </div>
+              )}
+            </Card>
+          </div>
+          {showVerticalFilters && (
+            <div className="Table-filters Table-filters--vertical">
+              <div className="Table-filtersHeading">
+                <Subheading>Filters</Subheading>
+                <Icon name="close" className="Table-filtersCloseIcon" onClick={() => this.setState({ showVerticalFilters: false })} />
+              </div>
+              <div>
+                <div className="Table-filter">
+                  <Dropdown
+                    key="gender"
+                    disabled={loading}
+                    withCheckbox={true}
+                    showApplyButton={true}
+                    inlineLabel={"Gender"}
+                    options={[
+                      { label: 'Male', value: 'male', selected: true },
+                      { label: 'Female', value: 'female', selected: true },
+                    ]}
+                    onChange={selected => this.onFilterChange("gender", selected)}
+                  />
+                </div>
+                <div className="Table-filter">
+                  <DatePicker
+                    withInput={true}
+                    inputOptions={{
+                      inlineLabel: "Date",
+                      placeholder: "mm/dd/yyyy",
+                      disabled: loading
+                    }}
+                    onDateChange={(_date, dateStr) => this.onFilterChange("date", dateStr)}
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    }
+  }
+
+  const translateData = (schema, data) => {
+    let newData = data;
+
+    if (schema.translate) {
+      const translatedData = schema.translate(data);
+      newData = {
+        ...newData,
+        [schema.name]: typeof translatedData === 'object' ? {
+          ...newData[schema.name],
+          ...translatedData
+        } : translatedData
+      };
+    }
+    if (typeof newData[schema.name] !== 'object') newData[schema.name] = { title: newData[schema.name] };
+
+    return newData;
+  }
+
+  const onFilterChange = {
+    "name": (a, filters) => {
+      for (const filter of filters) {
+        switch (filter) {
+          case 'a-g':
+            if (a.firstName[0].toLowerCase() >= 'a' && a.firstName[0].toLowerCase() <= 'g') return true;
+            break;
+          case 'h-r':
+            if (a.firstName[0].toLowerCase() >= 'h' && a.firstName[0].toLowerCase() <= 'r') return true;
+            break;
+          case 's-z':
+            if (a.firstName[0].toLowerCase() >= 's' && a.firstName[0].toLowerCase() <= 'z') return true;
+            break;
+        }
+      }
+      return false;
+    },
+    "gender": (a, filters) => {
+      for (const filter of filters) {
+        if (a.gender.toLowerCase() === filter) return true;
+      }
+      return false;
+    }
+  };
+
+  const filterData = (data, filterList) => {
+    let filteredData = data;
+    if (filterList) {
+      Object.keys(filterList).forEach(name => {
+        const filters = filterList[name];
+        const onChange = onFilterChange[name];
+        if (onChange) {
+          filteredData = filteredData.filter(d => onChange(d, filters));
+        }
+      });
+    }
+
+    return filteredData;
+  };
+
+  const sortData = (schema, data, sortingList) => {
+    const sortedData = [...data];
+    sortingList.forEach(l => {
+      const sIndex = schema.findIndex(s => s.name === l.name);
+      if (sIndex !== -1) {
+        const defaultComparator = (a, b) => {
+          const aData = translateData(schema[sIndex], a);
+          const bData = translateData(schema[sIndex], b);
+          return aData[l.name].title.localeCompare(bData[l.name].title);
+        };
+
+        const {
+          comparator = defaultComparator
+        } = schema[sIndex];
+
+        sortedData.sort(comparator);
+        if (l.type === 'desc') sortedData.reverse();
+      }
+    });
+
+    return sortedData;
+  };
+
+  const paginateData = (data, page, pageSize) => {
+    const start = (page - 1) * pageSize;
+    const end = start + pageSize;
+    const paginatedData = data.slice(start, end);
+    return paginatedData;
+  };
+
+  const data = ${JSON.stringify(data.slice(0, 10), null, 4)};
+
+  const schema = [
+    {
+      name: 'name',
+      displayName: 'Name',
+      width: 300,
+      resizable: true,
+      separator: true,
+      tooltip: true,
+      translate: a => ({
+        title: \`\${a.firstName} \${a.lastName}\`,
+        firstName: a.firstName,
+        lastName: a.lastName
+      }),
+      cellType: 'AVATAR_WITH_TEXT',
+    },
+    {
+      name: 'email',
+      displayName: 'Email',
+      width: 350,
+      resizable: true,
+      sorting: false,
+      cellType: 'WITH_META_LIST'
+    },
+    {
+      name: 'gender',
+      displayName: 'Gender',
+      width: 200,
+      resizable: true,
+      comparator: (a, b) => a.gender.localeCompare(b.gender),
+      cellType: 'STATUS_HINT',
+      translate: a => ({
+        title: a.gender,
+        statusAppearance: (a.gender === 'Female') ? 'alert' : 'success'
+      }),
+    },
+    {
+      name: 'icon',
+      displayName: 'Icon',
+      width: 100,
+      resizable: true,
+      align: 'center',
+      cellType: 'ICON',
+      translate: _ => ({
+        icon: 'events'
+      })
+    },
+    {
+      name: 'customCell',
+      displayName: 'Custom Cell',
+      width: 200,
+      resizable: true,
+      separator: true,
+      cellRenderer: (props) => {
+        const {
+          loading
+        } = props;
+
+        if (loading) return <></>;
+
+        return (
+          <Button appearance={'primary'}>Button</Button>
+        );
+      }
+    },
+  ];
+
+  const fetchData = (options) => {
+    const {
+      page,
+      pageSize,
+      sortingList,
+      filterList,
+      searchTerm
+    } = options;
+
+    const onSearch = (d, searchTerm = '') => {
+      return (
+        d.firstName.toLowerCase().match(searchTerm.toLowerCase())
+        || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
+      );
+
+      return true;
+    }
+
+    const filteredData = filterData(data, filterList);
+    const searchedData = filteredData.filter(d => onSearch(d, searchTerm));
+    const sortedData = sortData(schema, searchedData, sortingList);
+
+    if (page && pageSize) {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          const start = (page - 1) * pageSize;
+          const end = start + pageSize;
+          const slicedData = sortedData.slice(start, end);
+          resolve({
+            schema,
+            count: sortedData.length,
+            data: slicedData,
+          });
+        }, 2000);
+      });
+    }
+
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve({
+          schema,
+          count: sortedData.length,
+          data: sortedData,
+        });
+      }, 2000);
+    });
+  }
+
+  const loaderSchema = schema.filter(s => {
+    const { name, displayName, width, separator, cellType, cellRenderer } = s;
+    return {
+      name, displayName, width, separator, cellType, cellRenderer
+    };
+  });
+
+  return (
+    <div
+      style={{
+        height: '350px',
+        background: 'var(--secondary-lightest)'
+      }}
+    >
+      <Table
+        loaderSchema={loaderSchema}
+        fetchData={fetchData}
+      />
+    </div>
+  );
+}`
+
+export default {
+  title: 'Organisms|Grid/Patterns',
+  // component: Grid,
+  parameters: {
+    docs: {
+      docPage: {
+        customCode,
+        imports: {
+          debounce: debounce
+        },
+        props: {
+          exclude: ['showHead'],
+        },
+        noProps: true
+      }
+    }
+  }
+};

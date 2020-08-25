@@ -134,4 +134,4 @@ addDecorator(withA11y);
 addDecorator(CenterDecorator);
 addDecorator(withInfo(infoOptions));
 
-configure(require.context('../core/components', true, /\.story\.(js|tsx)$/), module);
+configure(require.context('../core/components', true, /\.story\.(jsx|tsx)$/), module);
