@@ -7,8 +7,3 @@ export type DateObject = {
   date: number
 };
 export type DateType = number | Date | string;
-export type State = {
-  year?: number,
-  month?: number,
-  date?: number
-};
