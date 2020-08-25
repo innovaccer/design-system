@@ -17,11 +17,10 @@ const options = [
 
 // CSF format story
 export const gender = () => (
-  <div className="mb-10">
+  <div className="mb-10 w-25">
     <Label withInput={true}>Gender</Label>
     <Dropdown
       options={options}
-      width={170}
     />
   </div>
 );

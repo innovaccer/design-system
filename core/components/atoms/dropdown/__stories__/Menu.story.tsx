@@ -15,11 +15,12 @@ const options = [
 
 // CSF format story
 export const menu = () => (
-  <div className="ml-11 mb-10" style={{ width: '128px' }}>
+  <div className="ml-11 mb-10">
     <Dropdown
       options={options}
       menu={true}
       align="left"
+      maxWidth={130}
     />
   </div>
 );

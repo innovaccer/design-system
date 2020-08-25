@@ -62,14 +62,6 @@ const customCode = `() => {
     });
   }
 
-  const style = {
-    display: 'flex',
-    'flex-direction': 'column',
-    alignItems: 'center',
-    marginRight: '5%',
-    width: '150px'
-  };
-
   const onClose = (options) => {
     console.log(options);
   };
@@ -79,9 +71,9 @@ const customCode = `() => {
   };
 
   return (
-    <div style={{ display: 'flex', minHeight: '300px' }}>
-      <div style={style}>
-        <Text weight="strong">{'With Apply Button'}</Text><br />
+    <div className='d-flex'>
+      <div className='mr-9 w-25'>
+        <Text weight="strong">{'With Apply Button'}</Text><br /><br />
         <Dropdown
           maxHeight={180}
           withCheckbox={true}
@@ -92,8 +84,8 @@ const customCode = `() => {
           onClose={onClose}
         />
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '150px' }}>
-        <Text weight="strong">{'Without Apply Button'}</Text><br />
+      <div className='mr-9 w-25'>
+        <Text weight="strong">{'Without Apply Button'}</Text><br /><br />
         <Dropdown
           withCheckbox={true}
           options={storyOptions}

@@ -17,33 +17,19 @@ export const sections = () => {
   }
   const BooleanValue = [true, false];
 
-  const style = {
-    alignItems: 'center',
-    'flex-direction': 'column',
-  };
-
-  const innerStyle = {
-    display: 'flex',
-    'flex-direction': 'column',
-    alignItems: 'center',
-    marginRight: '20px',
-    width: '128px',
-    minHeight: '280px',
-  };
-
   return (
     <div className="d-flex">
       {
         BooleanValue.map((value, index) => {
           return (
-            <div key={index} className="d-flex" style={style}>
+            <div key={index} className="d-flex flex-column align-items-center">
               <Text weight="strong">{value ? ' Multi Select' : 'Single Select'}</Text><br />
               <div className="d-flex">
-                <div style={innerStyle}>
+                <div className="d-flex flex-column align-items-center mr-7" style={{ width: '128px' }}>
                   <Text weight="strong">{'With Sections'}</Text><br />
                   <Dropdown options={options} withCheckbox={value} />
                 </div>
-                <div style={innerStyle}>
+                <div className="d-flex flex-column align-items-center mr-7" style={{ width: '128px' }}>
                   <Text weight="strong">{'Without Sections'}</Text> <br />
                   <Dropdown options={storyOptions} withCheckbox={value} />
                 </div>

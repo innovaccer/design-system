@@ -10,13 +10,13 @@ export const size = () => {
   const sizes: Size[] = ['tiny', 'regular'];
 
   return (
-    <div style={{ display: 'flex', minHeight: '270px' }}>
+    <div className="d-flex">
       {
         sizes.map((dropdownSize, ind) => {
           return (
-            <div key={ind} style={{ marginRight: '5%' }}>
+            <div key={ind} className="mr-8 w-25">
               <Text weight="strong">{dropdownSize.charAt(0).toUpperCase() + dropdownSize.slice(1)}</Text> <br /><br />
-              <Dropdown triggerSize={dropdownSize} options={storyOptions} placeholder={'Select'} width={128} />
+              <Dropdown triggerSize={dropdownSize} options={storyOptions} placeholder={'Select'} />
             </div>
           );
         })
@@ -39,14 +39,14 @@ const customCode = `() => {
   const disabled = [true, false];
 
   return (
-    <div className='d-flex' style={{ minHeight: '270px' }}>
-      <div className='mr-8'>
+    <div className='d-flex'>
+      <div className='mr-8 w-25'>
         <Text weight="strong">Tiny</Text> <br /><br />
-        <Dropdown triggerSize={'tiny'} options={storyOptions} width={128}/>
+        <Dropdown triggerSize={'tiny'} options={storyOptions} />
       </div>
-      <div className='mr-8'>
+      <div className='mr-8 w-25'>
         <Text weight="strong">Regular</Text> <br /><br />
-        <Dropdown triggerSize={'regular'} options={storyOptions} width={128}/>
+        <Dropdown triggerSize={'regular'} options={storyOptions}/>
       </div>
     </div>
   );

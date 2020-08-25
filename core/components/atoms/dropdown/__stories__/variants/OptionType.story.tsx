@@ -23,22 +23,21 @@ export const optionType = () => {
   const optionTypes = ['DEFAULT', 'WITH_ICON', 'WITH_META', 'ICON_WITH_META'];
 
   return (
-    <div className="d-flex" style={{ minHeight: '240px' }}>
+    <div className="d-flex">
       {
         optionTypes.map((type, ind) => {
           return (
             <div
-              className="d-flex mr-9"
+              className="d-flex flex-column mr-9 w-25"
               key={ind}
-              style={{ flexDirection: 'column' }}
             >
               <Text weight="strong">{labelMapping[type]}</Text><br />
-              <Dropdown options={optionsMapping[type].slice(0, 3)} width={128}/>
+              <Dropdown options={optionsMapping[type].slice(0, 3)}/>
             </div>
           );
         })
       }
-      <div className="d-flex" style={{ flexDirection: 'column', width: '128px' }}>
+      <div className="d-flex flex-column w-25" >
         <Text weight="strong">{'Checkboxes'}</Text><br />
         <Dropdown options={storyOptions.slice(0, 3)} withCheckbox={true} />
       </div>

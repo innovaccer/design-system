@@ -7,18 +7,18 @@ import { Uncontrolled, Controlled } from '../_common_/types';
 // CSF format story
 export const search = () => {
   return (
-    <div className="d-flex" style={{ minHeight: '300px' }}>
-      <div className="mr-9">
+    <div className="d-flex">
+      <div className="mr-9 w-25">
         <Text weight="strong">{'Search'}</Text><br /><br />
-        <Dropdown withSearch={true} options={storyOptions} width={128} />
+        <Dropdown withSearch={true} options={storyOptions} />
       </div>
-      <div className="mr-9">
+      <div className="mr-9 w-25">
         <Text weight="strong">{'Loading'}</Text><br /><br />
-        <Dropdown withSearch={true} loading={true} width={128} />
+        <Dropdown withSearch={true} loading={true} />
       </div>
-      <div>
+      <div className="mr-9 w-25">
         <Text weight="strong">{'No Result'}</Text><br /><br />
-        <Dropdown withSearch={true} noResultMessage={'No result found'} width={128} />
+        <Dropdown withSearch={true} noResultMessage={'No result found'} />
       </div>
     </div>
   );

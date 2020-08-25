@@ -36,7 +36,7 @@ const customCode = `() => {
   }
 
   return (
-    <div className='d-flex' style={{ minHeight: '270px' }}>
+    <div className='d-flex'>
       <div className='mr-8 w-25'>
         <Text weight="strong">Disabled</Text> <br /><br />
         <Dropdown disabled={true} options={storyOptions} />

@@ -89,9 +89,17 @@ export interface DropdownListProps extends ListProps {
    */
   maxHeight?: number;
   /**
-   * Adds custom width to `Dropdown Trigger` and `Dropdown Popper` (Min-width is 128px)
+   * Adds custom width to `Dropdown Popper`
    */
   width?: number;
+  /**
+   * Adds maximum width to `Dropdown Popper`
+   */
+  maxWidth?: number;
+  /**
+   * Adds minimum width to `Dropdown Popper`
+   */
+  minWidth?: number;
   /**
    * Number of loaders to be shown when loading is true
    * @default 10
@@ -148,7 +156,6 @@ const DropdownList = (props: OptionsProps) => {
     dropdownOpen,
     menu,
     searchTerm,
-    maxWidth,
     showApplyButton,
     withCheckbox,
     withSearch,
@@ -171,15 +178,15 @@ const DropdownList = (props: OptionsProps) => {
   const [popoverStyle, setPopoverStyle] = React.useState<CustomStyle>();
   const [cursor, setCursor] = React.useState(0);
 
-  const width = props.width ? props.width : menu || customTrigger ? 'fit-content' : '100%';
-
   React.useEffect(() => {
     if (dropdownOpen) {
-      const dropdownElement = triggerRef.current;
-      const popoverWidth = props.width ? props.width : `${dropdownElement?.parentElement?.clientWidth}px`;
+      const { width, minWidth, maxWidth } = props;
+      const popperWidth = triggerRef.current?.clientWidth;
+      const popperMinWidth = showApplyButton ? 176 : menu ? 128 : popperWidth;
 
       const popperWrapperStyle = {
-        width: menu || customTrigger ? popoverWidth : `${dropdownElement?.clientWidth}px`,
+        width: width ? width : popperWidth,
+        minWidth: minWidth ? minWidth : popperMinWidth,
         maxWidth: maxWidth ? maxWidth : '100%',
       };
 
@@ -207,7 +214,6 @@ const DropdownList = (props: OptionsProps) => {
       icon={icon}
       disabled={disabled}
       inlineLabel={inlineLabel}
-      maxWidth={maxWidth}
       menu={menu}
       error={error}
       ref={dropdownTriggerRef}
@@ -546,13 +552,12 @@ const DropdownList = (props: OptionsProps) => {
       {...baseProps}
       className={dropdownClass}
       ref={triggerRef}
-      style={{ width }}
       onKeyDown={onkeydown}
     >
       <Popover
         onToggle={onToggleDropdown}
         trigger={trigger}
-        triggerClass="w-100"
+        triggerClass={!menu ? 'w-100' : ''}
         open={dropdownOpen}
         customStyle={popoverStyle}
         position={alignmentMapping[align]}

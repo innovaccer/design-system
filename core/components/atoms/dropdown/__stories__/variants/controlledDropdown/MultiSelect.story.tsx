@@ -184,7 +184,7 @@ const customCode = `() => {
 
   return (
     <div className='d-flex'>
-      <div className="w-25 mb-13">
+      <div className="w-25">
         <Text weight="strong">{'Options > 50'}</Text><br /><br />
         <Dropdown
           fetchOptions={fetchOptions}
@@ -194,7 +194,7 @@ const customCode = `() => {
           withCheckbox={true}
         />
       </div>
-      <div className="w-25 mb-13 ml-5">
+      <div className="w-25 ml-5">
         <Text weight="strong">{'Options <= 50'}</Text><br /><br />
         <Dropdown
           options={dropdownOptions.slice(0, 50)}

@@ -20,11 +20,10 @@ const options = [
 
 // CSF format story
 export const statusWithLabel = () => (
-  <div className="mb-11">
+  <div className="mb-11 w-25">
     <Dropdown
       options={options}
       inlineLabel="Status"
-      width={170}
     />
   </div>
 );

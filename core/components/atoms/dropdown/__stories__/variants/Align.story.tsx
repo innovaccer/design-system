@@ -14,7 +14,7 @@ export const align = () => {
       {
         dropdownAlignments.map((alignment, ind) => {
           return (
-            <div key={ind} style={{ marginRight: '20%', width: '200px' }}>
+            <div key={ind} style={{ marginRight: '20%' }}>
               <Text weight="strong">
                 {`Towards ${alignment.charAt(0).toUpperCase() + alignment.slice(1)}`}
               </Text>
@@ -40,12 +40,12 @@ const customCode = `() => {
   }
 
   return (
-    <div className='d-flex' style={{ minHeight: '280px' }}>
-      <div className='mr-12' style={{width: '200px'}}>
+    <div className='d-flex'>
+      <div className='mr-12'>
         <Text weight="strong">Towards Right</Text> <br /><br />
         <Dropdown menu={true} options={storyOptions} align='right'/>
       </div>
-      <div style={{width: '200px'}}>
+      <div>
         <Text weight="strong">Towards Left</Text> <br /><br />
         <Dropdown menu={true} options={storyOptions} align='left'/>
       </div>

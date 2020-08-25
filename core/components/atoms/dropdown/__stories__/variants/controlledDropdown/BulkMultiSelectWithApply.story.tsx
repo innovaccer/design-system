@@ -122,7 +122,7 @@ const customCode = `() => {
   };
 
   return (
-    <div className="w-25 mb-14">
+    <div className="w-25">
       <Text weight="strong">{'Options > 50'}</Text><br /><br />
       <Dropdown
         fetchOptions={fetchOptions}
