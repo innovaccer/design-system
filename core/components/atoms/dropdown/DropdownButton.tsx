@@ -86,6 +86,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
   return (
     <button
       ref={ref}
+      type="button"
       value={children}
       className={buttonClass}
       disabled={disabled}

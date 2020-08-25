@@ -4,13 +4,16 @@ import Icon from '@/components/atoms/icon';
 import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
 
+export type ButtonType = 'button' | 'submit' | 'reset';
 export type Appearance = 'basic' | 'primary' | 'success' | 'alert' | 'transparent';
-
 export type Size = 'tiny' | 'regular' | 'large';
-
 export type Alignment = 'left' | 'right';
 
 export interface ButtonProps extends BaseProps {
+  /**
+   * Type of `Button`
+   */
+  type?: ButtonType;
   /**
    * The size of `Button`
    * @default "regular"
@@ -65,7 +68,7 @@ export interface ButtonProps extends BaseProps {
   onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-const sizeMapping = {
+const sizeMapping: Record<Size, number> = {
   tiny: 12,
   regular: 16,
   large: 20,
@@ -73,10 +76,11 @@ const sizeMapping = {
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const {
-    appearance = 'basic',
     size = 'regular',
-    iconAlign = 'left',
-    tabIndex = 0,
+    appearance,
+    iconAlign,
+    tabIndex,
+    type,
     children,
     icon,
     expanded,
@@ -107,7 +111,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   });
 
   return (
-    <button ref={ref} className={buttonClass} disabled={disabled || loading} tabIndex={tabIndex} {...rest} >
+    <button ref={ref} type={type} className={buttonClass} disabled={disabled || loading} tabIndex={tabIndex} {...rest} >
       {loading && (
         <span className={spinnerClass}>
           <Spinner size="small" appearance={(appearance === 'basic' || appearance === 'transparent') ? 'secondary' : 'white'} />
@@ -128,5 +132,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
 });
 
 Button.displayName = 'Button';
+Button.defaultProps = {
+  appearance: 'basic',
+  size: 'regular',
+  iconAlign: 'left',
+  tabIndex: 0
+};
 
 export default Button;
