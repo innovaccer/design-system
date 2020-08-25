@@ -31,6 +31,16 @@ body {
   line-height: var(--font-height-normal);
 }
 
+.Text--regular {
+  font-size: var(--font-size);
+  line-height: var(--font-height);
+}
+
+.Text--large {
+  font-size: var(--font-size-m);
+  line-height: var(--font-height-m);
+}
+
 .Text--default {
   color: var(--text);
 }
@@ -47,16 +57,24 @@ body {
   color: var(--text-destructive);
 }
 
+.Text--white {
+  color: var(--text-white);
+}
+
+.Text--success {
+  color: var(--text-success);
+}
+
+.Text--link {
+  color: var(--text-link);
+}
+
 .Text--medium {
   font-weight: var(--font-weight-medium);
 }
 
 .Text--strong {
   font-weight: var(--font-weight-bold);
-}
-
-.Text--white {
-  color: var(--text-white);
 }
 
 /* Heading */

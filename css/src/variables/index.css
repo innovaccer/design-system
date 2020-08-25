@@ -89,6 +89,8 @@
   --text-disabled: var(--inverse-lightest);
   --text-destructive: var(--alert);
   --text-white: var(--white);
+  --text-success: var(--success);
+  --text-link: var(--primary);
 
   /* spacing */
   --spacing-xs: 1px;

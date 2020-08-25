@@ -3,12 +3,12 @@ import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled';
+export type Size = 'small' | 'regular' | 'large';
+export type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled' | 'success' | 'link';
 
 export interface TextProps extends BaseProps {
   /**
    * Text to be rendered
-   * @type {string}
    */
   children: React.ReactText;
   /**
@@ -16,19 +16,23 @@ export interface TextProps extends BaseProps {
    */
   weight?: 'strong' | 'medium';
   /**
-   * Changes size of `Text`
+   * Changes size of `Text`**[SOON\_TO\_BE\_DEPRECATED]**
    */
   small?: boolean;
   /**
    * Color of `Text`
-   * @default "default"
    */
   appearance?: Appearance;
+  /**
+   * Size of `Text`
+   */
+  size?: Size;
 }
 
 export const Text = (props: TextProps) => {
   const {
-    appearance = 'default',
+    appearance,
+    size,
     children,
     weight,
     small,
@@ -41,7 +45,9 @@ export const Text = (props: TextProps) => {
     Text: true,
     [`Text--${appearance}`]: appearance,
     [`Text--${weight}`]: weight,
-    ['Text--small']: small,
+    [`Text--${size}`]: size,
+    /* SOON_TO_BE_DEPRECATED */
+    ['Text--small']: size === 'small' || small,
   }, className);
 
   return (
@@ -57,5 +63,9 @@ export const Text = (props: TextProps) => {
 };
 
 Text.displayName = 'Text';
+Text.defaultProps = {
+  appearance: 'default',
+  size: 'regular'
+};
 
 export default Text;
