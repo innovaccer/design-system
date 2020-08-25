@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CheckboxProps, DropdownProps, PaginationProps } from "../../../index.type";
+import { CheckboxProps, DropdownProps } from "../../../index.type";
 import { GridCellProps } from "./GridCell";
 import { BaseProps } from "../../../utils/types";
 import { NestedRowProps } from "./GridNestedRow";
@@ -81,8 +81,6 @@ export interface GridProps extends BaseProps {
     withPagination?: boolean;
     page: number;
     pageSize: number;
-    paginationType: PaginationProps['type'];
-    onPageChange?: PaginationProps['onPageChange'];
     withCheckbox?: boolean;
     onSelect?: onSelectFunction;
     onSelectAll?: onSelectAllFunction;
@@ -98,6 +96,8 @@ export interface GridProps extends BaseProps {
         checked: boolean;
         indeterminate: boolean;
     };
+    headCellTooltip?: boolean;
+    separator?: boolean;
 }
 export declare class Grid extends React.Component<GridProps> {
     constructor(props: GridProps);
@@ -110,7 +110,6 @@ export declare class Grid extends React.Component<GridProps> {
         size: string;
         page: number;
         pageSize: number;
-        paginationType: string;
         loading: boolean;
         error: boolean;
         sortingList: never[];

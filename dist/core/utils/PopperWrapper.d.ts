@@ -22,6 +22,7 @@ interface Props {
 }
 interface IState {
     open: boolean;
+    zIndex?: number;
     mouseLeaveDelay: number;
     mouseEnterDelay: number;
 }
@@ -36,7 +37,8 @@ declare class PopperWrapper extends React.Component<Props, IState> {
     togglePopper: (type?: string | undefined) => void;
     doesNodeContainClick: (event: Event) => void;
     componentDidMount(): void;
-    componentDidUpdate(): void;
+    componentDidUpdate(prevProps: Props): void;
+    getZIndexForLayer(node: HTMLElement | null): number | undefined;
     getTriggerElement(trigger: React.ReactElement<any>, ref: React.Ref<any>, on: actionType): React.FunctionComponentElement<any>;
     getChildrenElement(children: React.ReactElement<any>, ref: React.Ref<any>, placement: string, style: React.CSSProperties): React.ReactElement<any, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)> | null) | (new (props: any) => React.Component<any, any, any>)>;
     render(): JSX.Element;

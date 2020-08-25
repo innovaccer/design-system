@@ -27,6 +27,8 @@ export { ParagraphProps } from "./components/atoms/paragraph";
 export { RadioProps } from "./components/atoms/radio";
 export { RowProps } from "./components/atoms/row";
 export { SpinnerProps } from "./components/atoms/spinner";
+export { SliderProps } from "./components/atoms/slider";
+export { RangeSliderProps } from "./components/atoms/rangeSlider";
 export { StatusHintProps } from "./components/atoms/statusHint";
 export { PillsProps } from "./components/atoms/pills";
 export { SubheadingProps } from "./components/atoms/subheading";

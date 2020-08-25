@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1597664354825 
+   * Generated on: 1598368793238 
    *      Package: @innovaccer/design-system
-   *      Version: v1.1.0-4
+   *      Version: v1.1.0-5
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -105,10 +105,11 @@
       var classes = classNames__default['default']((_a = {
         Avatar: true
       }, _a["Avatar--" + AvatarAppearance] = AvatarAppearance, _a), className);
-      return /*#__PURE__*/React.createElement("span", __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement("span", __assign({
+        "data-test": "DesignSystem-Avatar"
+      }, baseProps, {
         className: classes
       }), /*#__PURE__*/React.createElement(Text, {
-        "data-test": "DesignSystem-Avatar",
         weight: "medium",
         appearance: AvatarAppearance === 'warning' ? 'default' : 'white'
       }, initials));
@@ -173,7 +174,9 @@
           enableBodyScroll();
         };
       }, [props.open]);
-      var BackdropElement = /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      var BackdropElement = /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-Backdrop"
+      }, baseProps, {
         className: classes
       })), document.body);
       return BackdropElement;
@@ -193,7 +196,9 @@
       var classes = classNames__default['default']((_a = {
         Badge: true
       }, _a["Badge--" + appearance] = appearance && !subtle, _a["Badge--subtle-" + appearance] = subtle, _a), className);
-      return /*#__PURE__*/React.createElement("span", __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement("span", __assign({
+        "data-test": "DesignSystem-Badge"
+      }, baseProps, {
         className: classes
       }), children);
     };
@@ -533,7 +538,7 @@
         }
       };
 
-      PopperWrapper.prototype.componentDidUpdate = function () {
+      PopperWrapper.prototype.componentDidUpdate = function (prevProps) {
         var _a = this.props,
             _b = _a.on,
             on = _b === void 0 ? 'click' : _b,
@@ -541,11 +546,29 @@
             closeOnBackdropClick = _c === void 0 ? true : _c;
         var open = this.props.open;
 
+        if (prevProps.open !== this.props.open && this.props.open) {
+          var triggerElement = this.findDOMNode(this.triggerRef);
+          var zIndex = this.getZIndexForLayer(triggerElement);
+          this.setState({
+            zIndex: zIndex === undefined ? zIndex : zIndex + 1
+          });
+        }
+
         if (on === 'click' && open && closeOnBackdropClick) {
           document.addEventListener('mousedown', this.doesNodeContainClick);
         } else if (on === 'click' && !open && closeOnBackdropClick) {
           document.removeEventListener('mousedown', this.doesNodeContainClick);
         }
+      };
+
+      PopperWrapper.prototype.getZIndexForLayer = function (node) {
+        if (node === null) {
+          return;
+        }
+
+        var layerNode = node.closest('[data-layer]') || document.body;
+        var zIndex = layerNode === document.body ? 'auto' : parseInt(window.getComputedStyle(layerNode).zIndex || '0', 10);
+        return zIndex === 'auto' || isNaN(zIndex) ? undefined : zIndex;
       };
 
       PopperWrapper.prototype.getTriggerElement = function (trigger, ref, on) {
@@ -615,7 +638,9 @@
               style = _a.style,
               placement = _a.placement;
           var newStyle = offset ? _this.getUpdatedStyle(style, placement, offset) : style;
-          return _this.getChildrenElement(children, ref, placement, newStyle);
+          return _this.getChildrenElement(children, ref, placement, __assign(__assign({}, newStyle), {
+            zIndex: _this.state.zIndex
+          }));
         }), document.body), (open || this.state.open) && !appendToBody && /*#__PURE__*/React.createElement(reactPopper.Popper, {
           placement: placement,
           innerRef: this.popupRef
@@ -624,7 +649,9 @@
               style = _a.style,
               placement = _a.placement;
           var newStyle = offset ? _this.getUpdatedStyle(style, placement, offset) : style;
-          return _this.getChildrenElement(children, ref, placement, newStyle);
+          return _this.getChildrenElement(children, ref, placement, __assign(__assign({}, newStyle), {
+            zIndex: _this.state.zIndex
+          }));
         }));
       };
 
@@ -674,7 +701,8 @@
         Popover: true
       }, _a['Popover--dark'] = dark, _a), className);
       var PopoverWrapper = /*#__PURE__*/React.createElement("div", {
-        className: classes
+        className: classes,
+        "data-layer": true
       }, children);
       var popperOptions = {
         trigger: trigger,
@@ -747,6 +775,7 @@
       var labelClass = classNames__default['default']((_b = {}, _b['DropdownButton-label'] = true, _b));
       return /*#__PURE__*/React.createElement("button", __assign({
         ref: ref,
+        type: "button",
         value: children,
         className: buttonClass,
         disabled: disabled,
@@ -796,7 +825,9 @@
       var classes = classNames__default['default']((_a = {
         Text: true
       }, _a["Text--" + appearance] = appearance, _a["Text--" + weight] = weight, _a['Text--small'] = small, _a), className);
-      return /*#__PURE__*/React.createElement(GenericText, __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement(GenericText, __assign({
+        "data-test": "DesignSystem-Text"
+      }, baseProps, {
         className: classes,
         componentType: "span"
       }), children);
@@ -1162,27 +1193,26 @@
     var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
       var _a, _b, _c;
 
-      var _d = props.appearance,
-          appearance = _d === void 0 ? 'basic' : _d,
-          _e = props.size,
-          size = _e === void 0 ? 'regular' : _e,
-          _f = props.iconAlign,
-          iconAlign = _f === void 0 ? 'left' : _f,
-          _g = props.tabIndex,
-          tabIndex = _g === void 0 ? 0 : _g,
+      var _d = props.size,
+          size = _d === void 0 ? 'regular' : _d,
+          appearance = props.appearance,
+          iconAlign = props.iconAlign,
+          tabIndex = props.tabIndex,
+          type = props.type,
           children = props.children,
           icon = props.icon,
           expanded = props.expanded,
           loading = props.loading,
           disabled = props.disabled,
           className = props.className,
-          rest = __rest(props, ["appearance", "size", "iconAlign", "tabIndex", "children", "icon", "expanded", "loading", "disabled", "className"]);
+          rest = __rest(props, ["size", "appearance", "iconAlign", "tabIndex", "type", "children", "icon", "expanded", "loading", "disabled", "className"]);
 
       var buttonClass = classNames__default['default']((_a = {}, _a['Button'] = true, _a['Button--expanded'] = expanded, _a["Button--" + size] = size, _a['Button--square'] = !children, _a["Button--" + appearance] = appearance, _a["Button--iconAlign-" + iconAlign] = children && iconAlign, _a["" + className] = className, _a));
       var iconClass = classNames__default['default']((_b = {}, _b['Button-icon'] = true, _b["Button-icon--" + iconAlign] = children && iconAlign, _b));
       var spinnerClass = classNames__default['default']((_c = {}, _c['Button-spinner'] = true, _c["Button-spinner--" + iconAlign] = children && iconAlign, _c));
       return /*#__PURE__*/React.createElement("button", __assign({
         ref: ref,
+        type: type,
         className: buttonClass,
         disabled: disabled || loading,
         tabIndex: tabIndex
@@ -1200,6 +1230,12 @@
       })), children);
     });
     Button.displayName = 'Button';
+    Button.defaultProps = {
+      appearance: 'basic',
+      size: 'regular',
+      iconAlign: 'left',
+      tabIndex: 0
+    };
 
     var sizeMapping$1 = {
       tiny: 12,
@@ -2645,7 +2681,9 @@
       var classes = classNames__default['default']((_a = {
         Heading: true
       }, _a["Heading--" + size] = size, _a["Heading--" + appearance] = appearance, _a), className);
-      return /*#__PURE__*/React.createElement(GenericText, __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement(GenericText, __assign({
+        "data-test": "DesignSystem-Heading"
+      }, baseProps, {
         className: classes,
         componentType: sizeMap[size]
       }), children);
@@ -2667,7 +2705,9 @@
       var classes = classNames__default['default']((_a = {
         Subheading: true
       }, _a["Subheading--" + appearance] = appearance, _a), className);
-      return /*#__PURE__*/React.createElement(GenericText, __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement(GenericText, __assign({
+        "data-test": "DesignSystem-Subheading"
+      }, baseProps, {
         className: classes,
         componentType: 'h4'
       }), children);
@@ -3483,6 +3523,7 @@
           valueProp = props.value,
           _a = props.placeholderChar,
           placeholderChar = _a === void 0 ? '_' : _a,
+          defaultValue = props.defaultValue,
           mask = props.mask,
           error = props.error,
           caption = props.caption,
@@ -3492,9 +3533,9 @@
           onClick = props.onClick,
           onClear = props.onClear,
           className = props.className,
-          rest = __rest(props, ["mask", "value", "placeholderChar", "mask", "error", "caption", "required", "onChange", "onBlur", "onClick", "onClear", "className"]);
+          rest = __rest(props, ["mask", "value", "placeholderChar", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onClick", "onClear", "className"]);
 
-      var _b = React.useState(''),
+      var _b = React.useState(defaultValue || valueProp || ''),
           value = _b[0],
           setValue = _b[1];
 
@@ -3507,13 +3548,13 @@
         return typeof m === 'string' && m.length === 1;
       });
       React.useEffect(function () {
-        if (valueProp) {
+        setCaretPos(caret);
+      }, [caret]);
+      React.useEffect(function () {
+        if (ref.current && valueProp) {
           setValue(convertToMasked(valueProp));
         }
       }, [valueProp]);
-      React.useEffect(function () {
-        setCaretPos(caret);
-      }, [caret]);
       React.useEffect(function () {
         if (ref.current) {
           var el = ref.current;
@@ -4052,13 +4093,16 @@
         'Label-label': true,
         'Label--disabled': disabled
       });
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-Label"
+      }, baseProps, {
         className: LabelClass
       }), /*#__PURE__*/React.createElement(GenericText, {
         className: classes,
         componentType: "label"
       }, children), required && /*#__PURE__*/React.createElement("span", {
-        className: "Label-requiredIndicator"
+        className: "Label-requiredIndicator",
+        "data-test": "DesignSystem-Label--RequiredIndicator"
       }));
     };
     Label.displayName = 'Label';
@@ -4137,18 +4181,24 @@
       var baseProps = extractBaseProps(props);
       var MessageClass = classNames__default['default']((_a = {}, _a['Message'] = true, _a["Message--" + appearance] = appearance, _a), className);
       var MessageIcon = classNames__default['default']((_b = {}, _b['Message-icon'] = true, _b["Message-icon--" + appearance] = appearance, _b['Message-icon--withTitle'] = title, _b));
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-Message"
+      }, baseProps, {
         className: MessageClass
       }), appearance !== 'default' && /*#__PURE__*/React.createElement("div", {
-        className: MessageIcon
+        className: MessageIcon,
+        "data-test": "DesignSystem-Message--Icon"
       }, /*#__PURE__*/React.createElement(Icon, {
         name: IconMapping[appearance],
         appearance: appearance
-      })), /*#__PURE__*/React.createElement("div", null, title && /*#__PURE__*/React.createElement("div", {
+      })), /*#__PURE__*/React.createElement("div", {
+        "data-test": "DesignSystem-Message--Title"
+      }, title && /*#__PURE__*/React.createElement("div", {
         className: "Message-title"
       }, /*#__PURE__*/React.createElement(Heading, {
         size: "s"
       }, title)), /*#__PURE__*/React.createElement("div", {
+        "data-test": "DesignSystem-Message--Description",
         className: "Message-description"
       }, children)));
     };
@@ -4248,7 +4298,9 @@
       var classes = classNames__default['default']((_a = {
         Text: true
       }, _a["Text--" + appearance] = appearance, _a), className);
-      return /*#__PURE__*/React.createElement(GenericText, __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement(GenericText, __assign({
+        "data-test": "DesignSystem-Paragraph"
+      }, baseProps, {
         className: classes,
         componentType: "p"
       }), children);
@@ -4267,7 +4319,9 @@
       var ProgressBarClass = classNames__default['default']({
         ProgressBar: true
       }, className);
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-ProgressBar"
+      }, baseProps, {
         className: ProgressBarClass
       }), /*#__PURE__*/React.createElement("div", {
         className: 'ProgressBar-indicator',
@@ -4336,7 +4390,9 @@
       var classes = classNames__default['default']((_a = {
         Row: true
       }, _a["" + className] = className, _a));
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-Row"
+      }, baseProps, {
         className: classes
       }), children);
     };
@@ -4355,7 +4411,9 @@
       var baseProps = extractBaseProps(props);
       var StatusHintClass = classNames__default['default']((_a = {}, _a['StatusHint'] = true, _a), className);
       var StatusHintIconClass = classNames__default['default']((_b = {}, _b['StatusHint-icon'] = true, _b["StatusHint--" + appearance] = appearance, _b));
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-StatusHint"
+      }, baseProps, {
         className: StatusHintClass,
         onClick: function onClick(e) {
           return _onClick && _onClick(e);
@@ -4367,8 +4425,10 @@
           return _onMouseLeave && _onMouseLeave(e);
         }
       }), /*#__PURE__*/React.createElement("span", {
+        "data-test": "DesignSystem-StatusHint--Icon",
         className: StatusHintIconClass
       }), /*#__PURE__*/React.createElement(Text, {
+        "data-test": "DesignSystem-StatusHint--Text",
         weight: 'medium'
       }, children));
     };
@@ -4386,11 +4446,724 @@
       var classes = classNames__default['default']((_a = {
         Pills: true
       }, _a["Badge--" + appearance] = appearance && !subtle, _a["Badge--subtle-" + appearance] = subtle, _a), className);
-      return /*#__PURE__*/React.createElement("span", __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement("span", __assign({
+        "data-test": "DesignSystem-Pills"
+      }, baseProps, {
         className: classes
       }), children);
     };
     Pills.displayName = 'Pills';
+
+    var ARROW_LEFT = 37;
+    var ARROW_RIGHT = 39;
+
+    var formatPercentage = function formatPercentage(ratio) {
+      return (ratio * 100).toFixed(2) + "%";
+    };
+    var countDecimalPlaces = function countDecimalPlaces(value) {
+      if (!isFinite(value)) return 0;
+
+      if (Math.floor(value) !== value) {
+        var valueArray = value.toString().split('.');
+        return valueArray[1].length || 0;
+      }
+
+      return 0;
+    };
+    var approxEqual = function approxEqual(a, b) {
+      var tolerance = 0.00001;
+      return Math.abs(a - b) <= tolerance;
+    };
+    var clamp = function clamp(value, min, max) {
+      if (value == null) {
+        return value;
+      }
+
+      return Math.min(Math.max(value, min), max);
+    };
+    var arraysEqual = function arraysEqual(oldValues, newValues) {
+      if (oldValues.length !== oldValues.length) return;
+      return newValues.every(function (value, index) {
+        return value === oldValues[index];
+      });
+    };
+    function argMin(values, argFn) {
+      if (values.length === 0) {
+        return undefined;
+      }
+
+      var minValue = values[0];
+      var minArg = argFn(minValue);
+
+      for (var index = 1; index < values.length; index++) {
+        var value = values[index];
+        var arg = argFn(value);
+
+        if (arg < minArg) {
+          minValue = value;
+          minArg = arg;
+        }
+      }
+
+      return minValue;
+    }
+    function fillValues(values, startIndex, endIndex, fillValue) {
+      var inc = startIndex < endIndex ? 1 : -1;
+
+      for (var index = startIndex; index !== endIndex + inc; index += inc) {
+        values[index] = fillValue;
+      }
+    }
+    function isElementOfType(element, _ComponentType) {
+      return element != null && element.type != null;
+    }
+
+    var Handle = function (_super) {
+      __extends(Handle, _super);
+
+      function Handle() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+
+        _this.state = {
+          isMoving: false
+        };
+        _this.handleElement = null;
+        _this.refHandlers = {
+          handle: function handle(el) {
+            return _this.handleElement = el;
+          }
+        };
+
+        _this.mouseEventClientOffset = function (event) {
+          return event.clientX;
+        };
+
+        _this.clientToValue = function (clientPixel) {
+          var _a = _this.props,
+              stepSize = _a.stepSize,
+              tickSize = _a.tickSize,
+              value = _a.value;
+
+          if (_this.handleElement == null) {
+            return value;
+          }
+
+          var clientPixelNormalized = clientPixel;
+
+          var _b = _this.getHandleMidpointAndOffset(_this.handleElement),
+              handleMidpoint = _b.handleMidpoint,
+              handleOffset = _b.handleOffset;
+
+          var handleCenterPixel = handleMidpoint + handleOffset;
+          var pixelDelta = clientPixelNormalized - handleCenterPixel;
+
+          if (isNaN(pixelDelta)) {
+            return value;
+          }
+
+          return value + Math.round(pixelDelta / (tickSize * stepSize)) * stepSize;
+        };
+
+        _this.changeValue = function (newValue, callback) {
+          if (callback === void 0) {
+            callback = _this.props.onChange;
+          }
+
+          var updatedValue = clamp(newValue, _this.props.min, _this.props.max);
+
+          if (!isNaN(updatedValue) && _this.props.value !== updatedValue) {
+            if (callback) callback(updatedValue);
+          }
+
+          return updatedValue;
+        };
+
+        _this.endHandleMovement = function (event) {
+          var clientPixel = _this.mouseEventClientOffset(event);
+
+          var onRelease = _this.props.onRelease;
+
+          _this.removeDocumentEventListeners();
+
+          _this.setState({
+            isMoving: false
+          });
+
+          var finalValue = _this.changeValue(_this.clientToValue(clientPixel));
+
+          if (onRelease) onRelease(finalValue);
+        };
+
+        _this.continueHandleMovement = function (event) {
+          var clientPixel = _this.mouseEventClientOffset(event);
+
+          if (_this.state.isMoving && !_this.props.disabled) {
+            var value = _this.clientToValue(clientPixel);
+
+            _this.changeValue(value);
+          }
+        };
+
+        _this.beginHandleMovement = function (event) {
+          if (_this.props.disabled) return;
+          document.addEventListener('mousemove', _this.continueHandleMovement);
+          document.addEventListener('mouseup', _this.endHandleMovement);
+
+          _this.setState({
+            isMoving: true
+          });
+
+          var value = _this.clientToValue(event.clientX);
+
+          _this.changeValue(value);
+        };
+
+        _this.handleKeyDown = function (event) {
+          if (_this.props.disabled) return;
+          var _a = _this.props,
+              stepSize = _a.stepSize,
+              value = _a.value;
+          var which = event.which;
+
+          if (which === ARROW_LEFT) {
+            _this.changeValue(value - stepSize);
+
+            event.preventDefault();
+          } else if (which === ARROW_RIGHT) {
+            _this.changeValue(value + stepSize);
+
+            event.preventDefault();
+          }
+        };
+
+        _this.handleKeyUp = function (event) {
+          if (_this.props.disabled) return;
+
+          if ([ARROW_LEFT, ARROW_RIGHT].indexOf(event.which) >= 0) {
+            var onRelease = _this.props.onRelease;
+            if (onRelease) onRelease(_this.props.value);
+          }
+        };
+
+        _this.getHandleMidpointAndOffset = function (handleElement, useOppositeDimension) {
+          if (useOppositeDimension === void 0) {
+            useOppositeDimension = false;
+          }
+
+          if (handleElement == null) {
+            return {
+              handleMidpoint: 0,
+              handleOffset: 0
+            };
+          }
+
+          var handleRect = handleElement.getBoundingClientRect();
+          var sizeKey = useOppositeDimension ? 'height' : 'width';
+          var handleOffset = handleRect.left;
+          return {
+            handleOffset: handleOffset,
+            handleMidpoint: handleRect[sizeKey] / 2
+          };
+        };
+
+        _this.removeDocumentEventListeners = function () {
+          document.removeEventListener('mousemove', _this.continueHandleMovement);
+          document.removeEventListener('mouseup', _this.endHandleMovement);
+        };
+
+        return _this;
+      }
+
+      Handle.prototype.componentWillUnmount = function () {
+        this.removeDocumentEventListeners();
+      };
+
+      Handle.prototype.componentDidUpdate = function (_prevProps, prevState) {
+        if (prevState.isMoving !== this.state.isMoving) {
+          if (this.handleElement) this.handleElement.focus();
+        }
+      };
+
+      Handle.prototype.render = function () {
+        var _a;
+
+        var _b = this.props,
+            min = _b.min,
+            tickSizeRatio = _b.tickSizeRatio,
+            value = _b.value,
+            disabled = _b.disabled,
+            label = _b.label;
+        var handleMidpoint = this.getHandleMidpointAndOffset(this.handleElement, true).handleMidpoint;
+        var offsetRatio = (value - min) * tickSizeRatio;
+        var offsetCalc = "calc(" + formatPercentage(offsetRatio) + " - " + handleMidpoint + "px)";
+        var style = {
+          left: offsetCalc
+        };
+        var className = classNames__default['default']((_a = {}, _a['Slider-handle'] = true, _a['Slider-handle--disabled'] = disabled, _a['Slider-handle--active'] = this.state.isMoving, _a));
+        return /*#__PURE__*/React.createElement("div", {
+          className: className,
+          onMouseDown: this.beginHandleMovement,
+          onKeyDown: this.handleKeyDown,
+          onKeyUp: this.handleKeyUp,
+          ref: this.refHandlers.handle,
+          style: style,
+          tabIndex: 1
+        }, !this.state.isMoving && /*#__PURE__*/React.createElement(Tooltip, {
+          tooltip: label,
+          position: "top",
+          triggerClass: 'Slider-tooltip'
+        }, /*#__PURE__*/React.createElement("span", {
+          className: "h-100 w-100"
+        })));
+      };
+
+      return Handle;
+    }(React.Component);
+
+    var defaultProps = {
+      disabled: false,
+      labelStepSize: 1,
+      max: 10,
+      min: 0,
+      stepSize: 1
+    };
+
+    var MultiSliderHandle = function MultiSliderHandle() {
+      return null;
+    };
+
+    var MultiSlider = function (_super) {
+      __extends(MultiSlider, _super);
+
+      function MultiSlider(props) {
+        var _this = _super.call(this, props) || this;
+
+        _this.handleElements = [];
+        _this.trackElement = null;
+
+        _this.getLabelPrecision = function (_a) {
+          var labelPrecision = _a.labelPrecision,
+              stepSize = _a.stepSize;
+          return labelPrecision == null ? countDecimalPlaces(stepSize) : labelPrecision;
+        };
+
+        _this.getOffsetRatio = function (value) {
+          return clamp((value - _this.props.min) * _this.state.tickSizeRatio, 0, 1);
+        };
+
+        _this.addHandleRef = function (ref) {
+          if (ref != null) {
+            _this.handleElements.push(ref);
+          }
+        };
+
+        _this.getHandleValues = function (props) {
+          var maybeHandles = React.Children.map(props.children, function (child) {
+            return isElementOfType(child) ? child.props : null;
+          });
+          var handles = maybeHandles != null ? maybeHandles : [];
+          handles = handles.filter(function (handle) {
+            return handle !== null;
+          });
+          handles.sort(function (left, right) {
+            return left.value - right.value;
+          });
+          return handles;
+        };
+
+        _this.updateTickSize = function () {
+          if (_this.trackElement != null) {
+            var trackSize = _this.trackElement.clientWidth;
+            var tickSizeRatio = 1 / (_this.props.max - _this.props.min);
+            var tickSize = trackSize * tickSizeRatio;
+
+            _this.setState({
+              tickSize: tickSize,
+              tickSizeRatio: tickSizeRatio
+            });
+          }
+        };
+
+        _this.getTrackFill = function (start, end) {
+          if (start.fillAfter !== undefined) {
+            return start.fillAfter;
+          }
+
+          if (end !== undefined && end.fillBefore !== undefined) {
+            return end.fillBefore;
+          }
+
+          return false;
+        };
+
+        _this.maybeHandleTrackClick = function (event) {
+          var target = event.target;
+          var canHandleTrackEvent = !_this.props.disabled && target.closest('.Slider-handle') == null;
+
+          if (canHandleTrackEvent) {
+            var foundHandle = _this.nearestHandleForValue(_this.handleElements, function (handle) {
+              return handle.mouseEventClientOffset(event);
+            });
+
+            if (foundHandle) {
+              foundHandle.beginHandleMovement(event);
+            }
+          }
+        };
+
+        _this.getLockedHandleIndex = function (startIndex, endIndex) {
+          var inc = startIndex < endIndex ? 1 : -1;
+
+          for (var index = startIndex + inc; index !== endIndex + inc; index += inc) {
+            return index;
+          }
+
+          return -1;
+        };
+
+        _this.getNewHandleValues = function (newValue, oldIndex) {
+          var handleProps = _this.getHandleValues(_this.props);
+
+          var oldValues = handleProps.map(function (handle) {
+            return handle.value;
+          });
+          var newValues = oldValues.slice();
+          newValues[oldIndex] = newValue;
+          if (newValues.length > 1) newValues.sort(function (left, right) {
+            return left - right;
+          });
+          var newIndex = newValues.indexOf(newValue);
+
+          var lockIndex = _this.getLockedHandleIndex(oldIndex, newIndex);
+
+          if (lockIndex === -1) {
+            fillValues(newValues, oldIndex, newIndex, newValue);
+          } else {
+            var lockValue = oldValues[lockIndex];
+            fillValues(oldValues, oldIndex, lockIndex, lockValue);
+            return oldValues;
+          }
+
+          return newValues;
+        };
+
+        _this.onReleaseHandler = function (newValue, index) {
+          var onRangeRelease = _this.props.onRangeRelease;
+
+          var handleProps = _this.getHandleValues(_this.props);
+
+          var newValues = _this.getNewHandleValues(newValue, index);
+
+          if (onRangeRelease) {
+            var range = newValues;
+            onRangeRelease(range);
+          }
+
+          handleProps.forEach(function (handle, i) {
+            if (handle.onRelease) handle.onRelease(newValues[i]);
+          });
+        };
+
+        _this.onChangeHandler = function (newValue, index) {
+          var onRangeChange = _this.props.onRangeChange;
+
+          var handleProps = _this.getHandleValues(_this.props);
+
+          var oldValues = handleProps.map(function (handle) {
+            return handle.value;
+          });
+
+          var newValues = _this.getNewHandleValues(newValue, index);
+
+          if (!arraysEqual(newValues, oldValues)) {
+            if (onRangeChange) {
+              var range = newValues;
+              onRangeChange(range);
+            }
+
+            handleProps.forEach(function (handle, i) {
+              if (handle.onChange) handle.onChange(newValues[i]);
+            });
+          }
+        };
+
+        _this.renderHandles = function () {
+          var _a = _this.props,
+              disabled = _a.disabled,
+              max = _a.max,
+              min = _a.min,
+              stepSize = _a.stepSize;
+
+          var handleProps = _this.getHandleValues(_this.props);
+
+          if (handleProps.length === 0) {
+            return null;
+          }
+
+          return handleProps.map(function (_a, index) {
+            var value = _a.value;
+            return /*#__PURE__*/React.createElement(Handle, {
+              disabled: disabled,
+              key: index + "-" + handleProps.length,
+              max: max,
+              min: min,
+              onRelease: function onRelease(newValue) {
+                return _this.onReleaseHandler(newValue, index);
+              },
+              onChange: function onChange(newValue) {
+                return _this.onChangeHandler(newValue, index);
+              },
+              label: value.toFixed(_this.state.labelPrecision),
+              ref: _this.addHandleRef,
+              stepSize: stepSize,
+              tickSize: _this.state.tickSize,
+              tickSizeRatio: _this.state.tickSizeRatio,
+              value: value
+            });
+          });
+        };
+
+        _this.formatLabel = function (value) {
+          var labelRenderer = _this.props.labelRenderer;
+
+          if (typeof labelRenderer === 'function') {
+            return labelRenderer(value);
+          }
+
+          return value.toFixed(_this.state.labelPrecision);
+        };
+
+        _this.renderLabels = function () {
+          var _a = _this.props,
+              labelStepSize = _a.labelStepSize,
+              max = _a.max,
+              min = _a.min,
+              labelRenderer = _a.labelRenderer,
+              disabled = _a.disabled;
+          var labels = [];
+          var stepSizeRatio = _this.state.tickSizeRatio * labelStepSize;
+
+          var handles = _this.getHandleValues(_this.props);
+
+          var activeLabels = handles.map(function (handle) {
+            return handle.value.toFixed(_this.state.labelPrecision);
+          });
+
+          for (var i = min, offsetRatio = 0; i < max || approxEqual(i, max); i += labelStepSize, offsetRatio += stepSizeRatio) {
+            var offsetPercentage = formatPercentage(offsetRatio);
+            var style = {
+              left: offsetPercentage
+            };
+            var active = !disabled && activeLabels.indexOf(i.toFixed(_this.state.labelPrecision)) !== -1;
+            labels.push( /*#__PURE__*/React.createElement("div", {
+              className: 'Slider-label',
+              key: i,
+              style: style
+            }, /*#__PURE__*/React.createElement("span", {
+              className: 'Slider-ticks'
+            }), labelRenderer !== false && /*#__PURE__*/React.createElement(Text, {
+              small: true,
+              appearance: active ? 'default' : 'disabled'
+            }, _this.formatLabel(i))));
+          }
+
+          return labels;
+        };
+
+        _this.renderTrackFill = function (index, start, end) {
+          var _a;
+
+          var _b = [_this.getOffsetRatio(start.value), _this.getOffsetRatio(end.value)].sort(function (left, right) {
+            return left - right;
+          }),
+              startRatio = _b[0],
+              endRatio = _b[1];
+
+          var startOffset = Number((startRatio * 100).toFixed(2));
+          var endOffset = Number(((1 - endRatio) * 100).toFixed(2));
+          var width = 100 - endOffset - startOffset + "%";
+          var orientationStyle = {
+            width: width
+          };
+
+          var style = __assign({}, orientationStyle);
+
+          var fillTrack = _this.getTrackFill(start, end);
+
+          var classes = classNames__default['default']((_a = {}, _a['Slider-progress'] = true, _a['Slider-progress--disabled'] = _this.props.disabled, _a['Slider-progress--inRange'] = fillTrack, _a['Slider-progress--inRangeDisabled'] = fillTrack && _this.props.disabled, _a));
+          return /*#__PURE__*/React.createElement("div", {
+            key: "track-" + index,
+            className: classes,
+            style: style
+          });
+        };
+
+        _this.renderTracks = function () {
+          var trackStops = _this.getHandleValues(_this.props);
+
+          trackStops.push({
+            value: _this.props.max
+          });
+          var previous = {
+            value: _this.props.min || 0
+          };
+          var handles = [];
+          trackStops.forEach(function (track, index) {
+            var current = track;
+            handles.push(_this.renderTrackFill(index, previous, current));
+            previous = current;
+          });
+          return handles;
+        };
+
+        _this.state = {
+          labelPrecision: _this.getLabelPrecision(_this.props),
+          tickSize: 0,
+          tickSizeRatio: 0
+        };
+        return _this;
+      }
+
+      MultiSlider.prototype.getDerivedStateFromProps = function (props) {
+        return {
+          labelPrecision: this.getLabelPrecision(props)
+        };
+      };
+
+      MultiSlider.prototype.getSnapshotBeforeUpdate = function (prevProps) {
+        var prevHandleProps = this.getHandleValues(prevProps);
+        var newHandleProps = this.getHandleValues(this.props);
+
+        if (newHandleProps.length !== prevHandleProps.length) {
+          this.handleElements = [];
+        }
+
+        return null;
+      };
+
+      MultiSlider.prototype.componentDidMount = function () {
+        this.updateTickSize();
+      };
+
+      MultiSlider.prototype.nearestHandleForValue = function (handles, getOffset) {
+        return argMin(handles, function (handle) {
+          var offset = getOffset(handle);
+          var offsetValue = handle.clientToValue(offset);
+          var handleValue = handle.props.value;
+          return Math.abs(offsetValue - handleValue);
+        });
+      };
+
+      MultiSlider.prototype.render = function () {
+        var _a, _b;
+
+        var _this = this;
+
+        var _c = this.props,
+            label = _c.label,
+            className = _c.className;
+        var baseProps = extractBaseProps(this.props);
+        var SliderClass = classNames__default['default']((_a = {}, _a['Slider'] = true, _a), className);
+        var WrapperClass = classNames__default['default']((_b = {}, _b['Slider-wrapper'] = true, _b['Slider-wrapper--disabled'] = this.props.disabled, _b));
+        return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+          className: SliderClass
+        }), label && /*#__PURE__*/React.createElement(Label, {
+          withInput: true
+        }, label), /*#__PURE__*/React.createElement("div", {
+          className: WrapperClass,
+          onMouseDown: this.maybeHandleTrackClick
+        }, /*#__PURE__*/React.createElement("div", {
+          className: "Slider-track",
+          ref: function ref(_ref) {
+            return _this.trackElement = _ref;
+          }
+        }, this.renderTracks()), /*#__PURE__*/React.createElement("div", {
+          className: "Slider-axis'"
+        }, this.renderLabels()), this.renderHandles()));
+      };
+
+      MultiSlider.defaultProps = defaultProps;
+      MultiSlider.Handle = MultiSliderHandle;
+      return MultiSlider;
+    }(React.Component);
+
+    var Slider = function Slider(props) {
+      var valueProp = props.value,
+          _a = props.defaultValue,
+          defaultValue = _a === void 0 ? 0 : _a,
+          onRelease = props.onRelease,
+          onChange = props.onChange,
+          rest = __rest(props, ["value", "defaultValue", "onRelease", "onChange"]);
+
+      var _b = React.useState(valueProp === undefined ? defaultValue : valueProp),
+          value = _b[0],
+          setValue = _b[1];
+
+      React.useEffect(function () {
+        if (valueProp !== undefined) {
+          setValue(valueProp);
+        }
+      }, [valueProp]);
+
+      var onChangeHandler = function onChangeHandler(newValue) {
+        if (valueProp === undefined) {
+          setValue(newValue);
+        }
+
+        if (onChange) onChange(newValue);
+      };
+
+      return /*#__PURE__*/React.createElement(MultiSlider, __assign({}, rest), /*#__PURE__*/React.createElement(MultiSlider.Handle, {
+        value: value,
+        onChange: onChangeHandler,
+        onRelease: onRelease,
+        fillBefore: true
+      }));
+    };
+
+    var RangeIndex;
+
+    (function (RangeIndex) {
+      RangeIndex[RangeIndex["START"] = 0] = "START";
+      RangeIndex[RangeIndex["END"] = 1] = "END";
+    })(RangeIndex || (RangeIndex = {}));
+
+    var RangeSlider = function RangeSlider(props) {
+      var valueProp = props.value,
+          _a = props.defaultValue,
+          defaultValue = _a === void 0 ? [0, 10] : _a,
+          onChange = props.onChange,
+          onRelease = props.onRelease,
+          rest = __rest(props, ["value", "defaultValue", "onChange", "onRelease"]);
+
+      var _b = React.useState(valueProp === undefined ? defaultValue : valueProp),
+          value = _b[0],
+          setValue = _b[1];
+
+      React.useEffect(function () {
+        if (valueProp !== undefined) {
+          setValue(valueProp);
+        }
+      }, [valueProp]);
+
+      var onChangeHandler = function onChangeHandler(range) {
+        if (valueProp === undefined) {
+          setValue(range);
+        }
+
+        if (onChange) onChange(range);
+      };
+
+      return /*#__PURE__*/React.createElement(MultiSlider, __assign({
+        onRangeChange: onChangeHandler,
+        onRangeRelease: onRelease
+      }, rest), /*#__PURE__*/React.createElement(MultiSlider.Handle, {
+        value: value[RangeIndex.START],
+        fillAfter: true
+      }), /*#__PURE__*/React.createElement(MultiSlider.Handle, {
+        value: value[RangeIndex.END]
+      }));
+    };
 
     var Switch = /*#__PURE__*/React.forwardRef(function (props, ref) {
       var _a, _b;
@@ -4628,61 +5401,112 @@
       return Tooltip;
     }(React.Component);
 
-    var useEffect$1 = React.useEffect,
-        useState$1 = React.useState;
+    var Modal = function (_super) {
+      __extends(Modal, _super);
 
-    var Modal = function Modal(props) {
-      var _a;
+      function Modal(props) {
+        var _this = _super.call(this, props) || this;
 
-      var _b = props.dimension,
-          dimension = _b === void 0 ? 'small' : _b,
-          children = props.children,
-          backdropClose = props.backdropClose,
-          backdrop = props.backdrop,
-          className = props.className;
+        _this.modalRef = /*#__PURE__*/React.createRef();
 
-      var _c = useState$1(props.open),
-          open = _c[0],
-          setOpen = _c[1];
+        _this.getUpdatedZIndex = function () {
+          if (_this.element === null) return;
 
-      var _d = useState$1(false),
-          animate = _d[0],
-          setAnimate = _d[1];
+          var elements = _this.element.querySelectorAll('.Modal-container');
 
-      var classes = classNames__default['default']((_a = {
-        Modal: true
-      }, _a["Modal--" + dimension] = dimension, _a['Modal--open'] = open, _a['Modal-animation--open'] = animate, _a['Modal-animation--close'] = !animate, _a), className);
-      var baseProps = extractBaseProps(props);
-      useEffect$1(function () {
-        if (props.open) {
-          setOpen(true);
-          setAnimate(true);
+          if (elements.length <= 1) return;
+          var siblings = Array.from(elements).filter(function (el) {
+            return el !== _this.modalRef.current;
+          });
+          var zIndex = -1;
+          siblings.forEach(function (element) {
+            if (element.classList.contains('Modal-container--open')) {
+              var prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
+              zIndex = Math.max(zIndex, prevZIndex + 10);
+            }
+          });
+          return zIndex > 0 ? zIndex : undefined;
+        };
+
+        var element = document.querySelector('.Modal-wrapper');
+
+        if (element === null) {
+          element = document.createElement('div');
+          element.classList.add('Modal-wrapper');
+          document.body.appendChild(element);
         }
 
-        if (!props.open) {
-          setTimeout(function () {
-            setOpen(false);
-          }, 120);
-          setAnimate(false);
-        }
-      }, [props.open]);
-      var ModalContainer = /*#__PURE__*/React.createElement("div", {
-        className: "Modal-container"
-      }, /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
-        className: classes
-      }), children));
-      var ModalWrapper = backdrop ? /*#__PURE__*/React.createElement(OutsideClick, {
-        onOutsideClick: function onOutsideClick(event) {
-          return open && backdropClose(event, 'OutsideClick');
-        }
-      }, ModalContainer) : ModalContainer;
-      var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(ModalWrapper, document.body);
-      return /*#__PURE__*/React.createElement("div", null, WrapperElement, /*#__PURE__*/React.createElement(Backdrop, {
-        open: open
-      }));
-    };
+        _this.element = element;
+        _this.state = {
+          open: props.open,
+          animate: props.open
+        };
+        return _this;
+      }
 
-    Modal.displayName = 'Modal';
+      Modal.prototype.componentDidUpdate = function (prevProps) {
+        var _this = this;
+
+        if (prevProps.open !== this.props.open) {
+          if (this.props.open) {
+            var zIndex = this.getUpdatedZIndex();
+            this.setState({
+              zIndex: zIndex,
+              open: true,
+              animate: true
+            });
+          } else {
+            this.setState({
+              animate: false
+            });
+            setTimeout(function () {
+              _this.setState({
+                open: false
+              });
+            }, 120);
+          }
+        }
+      };
+
+      Modal.prototype.render = function () {
+        var _a, _b;
+
+        var _c = this.state,
+            animate = _c.animate,
+            open = _c.open,
+            zIndex = _c.zIndex;
+        var _d = this.props,
+            className = _d.className,
+            dimension = _d.dimension,
+            backdropClose = _d.backdropClose;
+        var classes = classNames__default['default']((_a = {
+          Modal: true
+        }, _a["Modal--" + dimension] = dimension, _a['Modal--open'] = open, _a['Modal-animation--open'] = animate, _a['Modal-animation--close'] = !animate, _a), className);
+        var ContainerClass = classNames__default['default']((_b = {}, _b['Modal-container'] = true, _b['Modal-container--open'] = open, _b));
+        var baseProps = extractBaseProps(this.props);
+        var ModalContainer = /*#__PURE__*/React.createElement("div", {
+          className: ContainerClass,
+          "data-layer": true,
+          style: {
+            zIndex: zIndex
+          },
+          ref: this.modalRef
+        }, /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+          className: classes
+        }), this.props.children));
+        var ModalWrapper = this.props.backdrop ? /*#__PURE__*/React.createElement(OutsideClick, {
+          onOutsideClick: function onOutsideClick(event) {
+            return open && backdropClose(event, 'OutsideClick');
+          }
+        }, ModalContainer) : ModalContainer;
+        var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(ModalWrapper, this.element);
+        return /*#__PURE__*/React.createElement("div", null, WrapperElement, /*#__PURE__*/React.createElement(Backdrop, {
+          open: this.state.open
+        }));
+      };
+
+      return Modal;
+    }(React.Component);
 
     var ModalHeader = function ModalHeader(props) {
       var _a;
@@ -4817,12 +5641,12 @@
     Dialog.displayName = 'Dialog';
 
     var useRef = React.useRef,
-        useEffect$2 = React.useEffect,
-        useState$2 = React.useState;
+        useEffect$1 = React.useEffect,
+        useState$1 = React.useState;
     var ModalBody = function ModalBody(props) {
       var _a;
 
-      var _b = useState$2(false),
+      var _b = useState$1(false),
           scroll = _b[0],
           setScroll = _b[1];
 
@@ -4830,7 +5654,7 @@
       var children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      useEffect$2(function () {
+      useEffect$1(function () {
         var scrollHeight = ref && ref.current ? ref.current.scrollHeight : 0;
         var clientHeight = ref && ref.current ? ref.current.clientHeight : 0;
 
@@ -4989,14 +5813,18 @@
         strokeWidth: '8',
         strokeDasharray: circumference + " " + circumference
       };
-      return /*#__PURE__*/React.createElement("svg", __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement("svg", __assign({
+        "data-test": "DesignSystem-ProgressRing"
+      }, baseProps, {
         className: ProgressRingClass
       }, svgProps), /*#__PURE__*/React.createElement("circle", __assign({
         className: "Ring-background"
       }, circleProps)), /*#__PURE__*/React.createElement("circle", __assign({
         className: "Ring-indicator",
         strokeDashoffset: circumference - updatedValue / 100 * circumference
-      }, circleProps)));
+      }, circleProps, {
+        "data-test": "DesignSystem-ProgressRing--Circle"
+      })));
     };
     ProgressRing.displayName = 'ProgressRing';
 
@@ -5456,6 +6284,20 @@
       };
       this.updateColumnSchema(name, schemaUpdate);
     }
+    function getWidth(width) {
+      if (this.gridRef.current) {
+        if (typeof width === 'number') return width;
+
+        if (width.charAt(width.length - 1) === '%') {
+          var withCheckbox = this.props.withCheckbox;
+          var checkboxWidth = withCheckbox ? document.querySelector('.Grid-cell--checkbox').clientWidth : 0;
+          var gridWidth = this.gridRef.current.clientWidth - checkboxWidth;
+          return gridWidth * (+width.slice(0, -1) / 100);
+        }
+      }
+
+      return 0;
+    }
     function getCellSize(cellType) {
       var sizes = {
         AVATAR: {
@@ -5496,13 +6338,11 @@
       return updatedData;
     };
     function translateData(schema, data) {
-      var _a;
-
-      var newData = data;
+      var newData = __assign({}, data);
 
       if (schema.translate) {
         var translatedData = schema.translate(data);
-        newData = __assign(__assign({}, newData), (_a = {}, _a[schema.name] = _typeof(translatedData) === 'object' ? __assign(__assign({}, newData[schema.name]), translatedData) : translatedData, _a));
+        newData[schema.name] = translatedData !== null && _typeof(translatedData) === 'object' ? __assign(__assign({}, newData[schema.name]), translatedData) : translatedData;
       }
 
       if (_typeof(newData[schema.name]) !== 'object') newData[schema.name] = {
@@ -5875,7 +6715,8 @@
           loading = _a.loading,
           showMenu = _a.showMenu,
           sortingList = _a.sortingList,
-          filterList = _a.filterList;
+          filterList = _a.filterList,
+          headCellTooltip = _a.headCellTooltip;
       var _b = schema.sorting,
           sorting = _b === void 0 ? true : _b,
           name = schema.name,
@@ -5939,6 +6780,22 @@
           }) !== -1
         });
       }) : [];
+
+      var renderLabel = function renderLabel() {
+        return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
+          weight: "strong",
+          className: "ellipsis--noWrap"
+        }, schema.displayName), sorting && /*#__PURE__*/React.createElement("div", {
+          className: "Grid-sortingIcons"
+        }, sorted ? sorted === 'asc' ? /*#__PURE__*/React.createElement(Icon, {
+          name: "arrow_downward"
+        }) : /*#__PURE__*/React.createElement(Icon, {
+          name: "arrow_upward"
+        }) : /*#__PURE__*/React.createElement(Icon, {
+          name: "unfold_more"
+        })));
+      };
+
       return /*#__PURE__*/React.createElement("div", {
         key: name,
         className: classes,
@@ -5956,18 +6813,11 @@
         withImage: false
       }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
         length: "medium"
-      })) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Heading, {
-        size: "s",
-        className: "ellipsis--noWrap"
-      }, schema.displayName), sorting && /*#__PURE__*/React.createElement("div", {
-        className: "Grid-sortingIcons"
-      }, sorted ? sorted === 'asc' ? /*#__PURE__*/React.createElement(Icon, {
-        name: "arrow_downward"
-      }) : /*#__PURE__*/React.createElement(Icon, {
-        name: "arrow_upward"
-      }) : /*#__PURE__*/React.createElement(Icon, {
-        name: "unfold_more"
-      })))), filters && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !init ? /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement(Placeholder, null)) : /*#__PURE__*/React.createElement(Dropdown, {
+      })) : /*#__PURE__*/React.createElement(React.Fragment, null, headCellTooltip ? /*#__PURE__*/React.createElement(Tooltip, {
+        position: "top-start",
+        triggerClass: "w-100 overflow-hidden",
+        tooltip: schema.displayName
+      }, renderLabel()) : renderLabel())), filters && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !init ? /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement(Placeholder, null)) : /*#__PURE__*/React.createElement(Dropdown, {
         menu: true,
         showApplyButton: true,
         withCheckbox: true,
@@ -6055,26 +6905,27 @@
           draggable = props.draggable,
           data = props.data,
           rowIndex = props.rowIndex;
-      var nestedRows = _this.props.nestedRows;
+      var _a = _this.props,
+          separator = _a.separator,
+          nestedRows = _a.nestedRows;
       var name = schema.name,
-          separator = schema.separator,
           hidden = schema.hidden,
           pinned = schema.pinned,
-          _a = schema.cellType,
-          cellType = _a === void 0 ? 'DEFAULT' : _a;
+          _b = schema.cellType,
+          cellType = _b === void 0 ? 'DEFAULT' : _b;
 
-      var _b = getCellSize(cellType),
-          width = _b.width,
-          _c = _b.minWidth,
-          minWidth = _c === void 0 ? 100 : _c,
-          _d = _b.maxWidth,
-          maxWidth = _d === void 0 ? 800 : _d;
+      var _c = getCellSize(cellType),
+          width = _c.width,
+          _d = _c.minWidth,
+          minWidth = _d === void 0 ? 100 : _d,
+          _e = _c.maxWidth,
+          maxWidth = _e === void 0 ? 800 : _e;
 
       var cellClass = classNames__default['default']({
         'Grid-cell': true,
         'Grid-cell--head': head,
         'Grid-cell--body': !head,
-        'Grid-cell--separator': !firstCell && separator,
+        'Grid-cell--separator': !firstCell && (schema.separator !== undefined ? schema.separator : separator),
         'Grid-cell--nestedRow': !head && colIndex === 0 && nestedRows
       });
       if (hidden) return null;
@@ -6101,9 +6952,10 @@
           if (from.type === to.type) _this.reorderCol(from.name, to.name);
         },
         style: {
-          width: schema.width || width,
-          minWidth: schema.minWidth || minWidth,
-          maxWidth: schema.maxWidth || maxWidth
+          visibility: _this.gridRef.current === null ? 'hidden' : 'visible',
+          width: getWidth.call(_this, schema.width || width),
+          minWidth: getWidth.call(_this, schema.minWidth || minWidth),
+          maxWidth: getWidth.call(_this, schema.maxWidth || maxWidth)
         }
       }, head ? /*#__PURE__*/React.createElement(HeaderCell, {
         _this: _this,
@@ -6634,32 +7486,14 @@
       };
 
       Grid.prototype.render = function () {
-        var _a = this.props,
-            withPagination = _a.withPagination,
-            page = _a.page,
-            _onPageChange = _a.onPageChange,
-            totalRecords = _a.totalRecords,
-            pageSize = _a.pageSize,
-            paginationType = _a.paginationType;
         var baseProps = extractBaseProps(this.props);
         var schema = getSchema(this);
         return /*#__PURE__*/React.createElement("div", {
-          className: "Grid-container"
-        }, /*#__PURE__*/React.createElement("div", {
           className: "Grid-wrapper",
           ref: this.gridRef
         }, /*#__PURE__*/React.createElement(MainGrid, __assign({}, baseProps, {
           _this: this,
           schema: schema
-        }))), withPagination && /*#__PURE__*/React.createElement("div", {
-          className: "Grid-pagination"
-        }, /*#__PURE__*/React.createElement(Pagination, {
-          page: page,
-          totalPages: getTotalPages(totalRecords, pageSize),
-          type: paginationType,
-          onPageChange: function onPageChange(newPage) {
-            if (_onPageChange) _onPageChange(newPage);
-          }
         })));
       };
 
@@ -6672,7 +7506,6 @@
         size: 'comfortable',
         page: 1,
         pageSize: 0,
-        paginationType: 'jump',
         loading: false,
         error: false,
         sortingList: [],
@@ -6888,13 +7721,14 @@
       dynamicColumn: true
     };
 
-    var defaultProps = {
+    var defaultProps$1 = {
       type: 'data',
       size: 'comfortable',
       showHead: true,
       showMenu: true,
       multipleSorting: true,
       headerOptions: {},
+      paginationType: 'jump',
       pageSize: 15,
       loading: false,
       draggable: true
@@ -7126,6 +7960,8 @@
             showHead = _a.showHead,
             type = _a.type,
             size = _a.size,
+            headCellTooltip = _a.headCellTooltip,
+            separator = _a.separator,
             draggable = _a.draggable,
             nestedRows = _a.nestedRows,
             nestedRowRenderer = _a.nestedRowRenderer,
@@ -7175,20 +8011,27 @@
           showHead: showHead,
           type: type,
           size: size,
+          headCellTooltip: headCellTooltip,
+          separator: separator,
           draggable: draggable,
           nestedRows: nestedRows,
           nestedRowRenderer: nestedRowRenderer,
           withPagination: withPagination && totalPages > 1,
-          paginationType: paginationType,
           pageSize: pageSize,
           loaderSchema: loaderSchema,
           errorTemplate: errorTemplate,
-          onRowClick: onRowClick,
+          onRowClick: onRowClick
+        }))), withPagination && /*#__PURE__*/React.createElement("div", {
+          className: "Table-pagination"
+        }, /*#__PURE__*/React.createElement(Pagination, {
+          page: this.state.page,
+          totalPages: getTotalPages(totalRecords, pageSize),
+          type: paginationType,
           onPageChange: this.onPageChange
-        }))));
+        })));
       };
 
-      Table.defaultProps = defaultProps;
+      Table.defaultProps = defaultProps$1;
       return Table;
     }(React.Component);
 
@@ -7198,7 +8041,7 @@
       }, props));
     };
 
-    var useState$3 = React.useState;
+    var useState$2 = React.useState;
     var Navigation = function Navigation(props) {
       var _a;
 
@@ -7213,7 +8056,7 @@
           className = props.className;
       var baseProps = extractBaseProps(props);
 
-      var _b = useState$3({}),
+      var _b = useState$2({}),
           menuState = _b[0],
           setMenuState = _b[1];
 
@@ -7405,6 +8248,7 @@
           tabs = props.tabs,
           breadcrumbs = props.breadcrumbs,
           badge = props.badge,
+          seperator = props.seperator,
           status = props.status,
           meta = props.meta,
           navigationPosition = props.navigationPosition,
@@ -7412,7 +8256,7 @@
       var baseProps = extractBaseProps(props);
       var wrapperClasses = classNames__default['default']((_a = {
         'PageHeader-wrapper': true
-      }, _a['PageHeader-wrapper--withTabs'] = tabs, _a), className);
+      }, _a['PageHeader-wrapper--separator'] = seperator, _a['PageHeader-wrapper--withTabs'] = tabs, _a), className);
       var classes = classNames__default['default']({
         PageHeader: true
       });
@@ -7500,7 +8344,9 @@
     exports.ProgressBar = ProgressBar;
     exports.ProgressRing = ProgressRing;
     exports.Radio = Radio;
+    exports.RangeSlider = RangeSlider;
     exports.Row = Row;
+    exports.Slider = Slider;
     exports.Spinner = Spinner;
     exports.StatusHint = StatusHint;
     exports.Subheading = Subheading;

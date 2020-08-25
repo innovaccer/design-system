@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1597664354476 
+   * Generated on: 1598368792860 
    *      Package: @innovaccer/design-system
-   *      Version: v1.1.0-4
+   *      Version: v1.1.0-5
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -394,10 +394,11 @@
     var classes = classNames__default['default'](_defineProperty({
       Avatar: true
     }, "Avatar--".concat(AvatarAppearance), AvatarAppearance), className);
-    return /*#__PURE__*/React.createElement("span", _extends({}, baseProps, {
+    return /*#__PURE__*/React.createElement("span", _extends({
+      "data-test": "DesignSystem-Avatar"
+    }, baseProps, {
       className: classes
     }), /*#__PURE__*/React.createElement(Text, {
-      "data-test": "DesignSystem-Avatar",
       weight: "medium",
       appearance: AvatarAppearance === 'warning' ? 'default' : 'white'
     }, initials));
@@ -465,7 +466,9 @@
         enableBodyScroll();
       };
     }, [props.open]);
-    var BackdropElement = /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
+    var BackdropElement = /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement("div", _extends({
+      "data-test": "DesignSystem-Backdrop"
+    }, baseProps, {
       className: classes
     })), document.body);
     return BackdropElement;
@@ -485,7 +488,9 @@
     var classes = classNames__default['default']((_classNames = {
       Badge: true
     }, _defineProperty(_classNames, "Badge--".concat(appearance), appearance && !subtle), _defineProperty(_classNames, "Badge--subtle-".concat(appearance), subtle), _classNames), className);
-    return /*#__PURE__*/React.createElement("span", _extends({}, baseProps, {
+    return /*#__PURE__*/React.createElement("span", _extends({
+      "data-test": "DesignSystem-Badge"
+    }, baseProps, {
       className: classes
     }), children);
   };
@@ -838,7 +843,7 @@
       }
     }, {
       key: "componentDidUpdate",
-      value: function componentDidUpdate() {
+      value: function componentDidUpdate(prevProps) {
         var _this$props5 = this.props,
             _this$props5$on = _this$props5.on,
             on = _this$props5$on === void 0 ? 'click' : _this$props5$on,
@@ -846,11 +851,30 @@
             closeOnBackdropClick = _this$props5$closeOnB === void 0 ? true : _this$props5$closeOnB;
         var open = this.props.open;
 
+        if (prevProps.open !== this.props.open && this.props.open) {
+          var triggerElement = this.findDOMNode(this.triggerRef);
+          var zIndex = this.getZIndexForLayer(triggerElement);
+          this.setState({
+            zIndex: zIndex === undefined ? zIndex : zIndex + 1
+          });
+        }
+
         if (on === 'click' && open && closeOnBackdropClick) {
           document.addEventListener('mousedown', this.doesNodeContainClick);
         } else if (on === 'click' && !open && closeOnBackdropClick) {
           document.removeEventListener('mousedown', this.doesNodeContainClick);
         }
+      }
+    }, {
+      key: "getZIndexForLayer",
+      value: function getZIndexForLayer(node) {
+        if (node === null) {
+          return;
+        }
+
+        var layerNode = node.closest('[data-layer]') || document.body;
+        var zIndex = layerNode === document.body ? 'auto' : parseInt(window.getComputedStyle(layerNode).zIndex || '0', 10);
+        return zIndex === 'auto' || isNaN(zIndex) ? undefined : zIndex;
       }
     }, {
       key: "getTriggerElement",
@@ -927,7 +951,9 @@
               style = _ref2.style,
               placement = _ref2.placement;
           var newStyle = offset ? _this3.getUpdatedStyle(style, placement, offset) : style;
-          return _this3.getChildrenElement(children, ref, placement, newStyle);
+          return _this3.getChildrenElement(children, ref, placement, _objectSpread2(_objectSpread2({}, newStyle), {}, {
+            zIndex: _this3.state.zIndex
+          }));
         }), document.body), (open || this.state.open) && !appendToBody && /*#__PURE__*/React.createElement(reactPopper.Popper, {
           placement: placement,
           innerRef: this.popupRef
@@ -936,7 +962,9 @@
               style = _ref3.style,
               placement = _ref3.placement;
           var newStyle = offset ? _this3.getUpdatedStyle(style, placement, offset) : style;
-          return _this3.getChildrenElement(children, ref, placement, newStyle);
+          return _this3.getChildrenElement(children, ref, placement, _objectSpread2(_objectSpread2({}, newStyle), {}, {
+            zIndex: _this3.state.zIndex
+          }));
         }));
       }
     }]);
@@ -986,7 +1014,8 @@
       Popover: true
     }, 'Popover--dark', dark), className);
     var PopoverWrapper = /*#__PURE__*/React.createElement("div", {
-      className: classes
+      className: classes,
+      "data-layer": true
     }, children);
     var popperOptions = {
       trigger: trigger,
@@ -1059,6 +1088,7 @@
     var labelClass = classNames__default['default'](_defineProperty({}, 'DropdownButton-label', true));
     return /*#__PURE__*/React.createElement("button", _extends({
       ref: ref,
+      type: "button",
       value: children,
       className: buttonClass,
       disabled: disabled,
@@ -1108,7 +1138,9 @@
     var classes = classNames__default['default']((_classNames = {
       Text: true
     }, _defineProperty(_classNames, "Text--".concat(appearance), appearance), _defineProperty(_classNames, "Text--".concat(weight), weight), _defineProperty(_classNames, 'Text--small', small), _classNames), className);
-    return /*#__PURE__*/React.createElement(GenericText, _extends({}, baseProps, {
+    return /*#__PURE__*/React.createElement(GenericText, _extends({
+      "data-test": "DesignSystem-Text"
+    }, baseProps, {
       className: classes,
       componentType: "span"
     }), children);
@@ -1481,27 +1513,26 @@
   var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
     var _classNames, _classNames2, _classNames3;
 
-    var _props$appearance = props.appearance,
-        appearance = _props$appearance === void 0 ? 'basic' : _props$appearance,
-        _props$size = props.size,
+    var _props$size = props.size,
         size = _props$size === void 0 ? 'regular' : _props$size,
-        _props$iconAlign = props.iconAlign,
-        iconAlign = _props$iconAlign === void 0 ? 'left' : _props$iconAlign,
-        _props$tabIndex = props.tabIndex,
-        tabIndex = _props$tabIndex === void 0 ? 0 : _props$tabIndex,
+        appearance = props.appearance,
+        iconAlign = props.iconAlign,
+        tabIndex = props.tabIndex,
+        type = props.type,
         children = props.children,
         icon = props.icon,
         expanded = props.expanded,
         loading = props.loading,
         disabled = props.disabled,
         className = props.className,
-        rest = _objectWithoutProperties(props, ["appearance", "size", "iconAlign", "tabIndex", "children", "icon", "expanded", "loading", "disabled", "className"]);
+        rest = _objectWithoutProperties(props, ["size", "appearance", "iconAlign", "tabIndex", "type", "children", "icon", "expanded", "loading", "disabled", "className"]);
 
     var buttonClass = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--expanded', expanded), _defineProperty(_classNames, "Button--".concat(size), size), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, "Button--".concat(appearance), appearance), _defineProperty(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _defineProperty(_classNames, "".concat(className), className), _classNames));
     var iconClass = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'Button-icon', true), _defineProperty(_classNames2, "Button-icon--".concat(iconAlign), children && iconAlign), _classNames2));
     var spinnerClass = classNames__default['default']((_classNames3 = {}, _defineProperty(_classNames3, 'Button-spinner', true), _defineProperty(_classNames3, "Button-spinner--".concat(iconAlign), children && iconAlign), _classNames3));
     return /*#__PURE__*/React.createElement("button", _extends({
       ref: ref,
+      type: type,
       className: buttonClass,
       disabled: disabled || loading,
       tabIndex: tabIndex
@@ -1519,6 +1550,12 @@
     })), children);
   });
   Button.displayName = 'Button';
+  Button.defaultProps = {
+    appearance: 'basic',
+    size: 'regular',
+    iconAlign: 'left',
+    tabIndex: 0
+  };
 
   var sizeMapping$1 = {
     tiny: 12,
@@ -2991,7 +3028,9 @@
     var classes = classNames__default['default']((_classNames = {
       Heading: true
     }, _defineProperty(_classNames, "Heading--".concat(size), size), _defineProperty(_classNames, "Heading--".concat(appearance), appearance), _classNames), className);
-    return /*#__PURE__*/React.createElement(GenericText, _extends({}, baseProps, {
+    return /*#__PURE__*/React.createElement(GenericText, _extends({
+      "data-test": "DesignSystem-Heading"
+    }, baseProps, {
       className: classes,
       componentType: sizeMap[size]
     }), children);
@@ -3011,7 +3050,9 @@
     var classes = classNames__default['default'](_defineProperty({
       Subheading: true
     }, "Subheading--".concat(appearance), appearance), className);
-    return /*#__PURE__*/React.createElement(GenericText, _extends({}, baseProps, {
+    return /*#__PURE__*/React.createElement(GenericText, _extends({
+      "data-test": "DesignSystem-Subheading"
+    }, baseProps, {
       className: classes,
       componentType: 'h4'
     }), children);
@@ -3816,11 +3857,17 @@
   };
   Caption.displayName = 'Caption';
 
+  /**
+   * It works as Uncontrolled Input
+   *
+   * **Updated value can be passed**
+   */
   var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
     var maskProp = props.mask,
         valueProp = props.value,
         _props$placeholderCha = props.placeholderChar,
         placeholderChar = _props$placeholderCha === void 0 ? '_' : _props$placeholderCha,
+        defaultValue = props.defaultValue,
         mask = props.mask,
         error = props.error,
         caption = props.caption,
@@ -3830,9 +3877,9 @@
         onClick = props.onClick,
         onClear = props.onClear,
         className = props.className,
-        rest = _objectWithoutProperties(props, ["mask", "value", "placeholderChar", "mask", "error", "caption", "required", "onChange", "onBlur", "onClick", "onClear", "className"]);
+        rest = _objectWithoutProperties(props, ["mask", "value", "placeholderChar", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onClick", "onClear", "className"]);
 
-    var _React$useState = React.useState(''),
+    var _React$useState = React.useState(defaultValue || valueProp || ''),
         _React$useState2 = _slicedToArray(_React$useState, 2),
         value = _React$useState2[0],
         setValue = _React$useState2[1];
@@ -3847,13 +3894,13 @@
       return typeof m === 'string' && m.length === 1;
     });
     React.useEffect(function () {
-      if (valueProp) {
+      setCaretPos(caret);
+    }, [caret]);
+    React.useEffect(function () {
+      if (ref.current && valueProp) {
         setValue(convertToMasked(valueProp));
       }
     }, [valueProp]);
-    React.useEffect(function () {
-      setCaretPos(caret);
-    }, [caret]);
     React.useEffect(function () {
       if (ref.current) {
         var el = ref.current;
@@ -4408,13 +4455,16 @@
       'Label-label': true,
       'Label--disabled': disabled
     });
-    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
+    return /*#__PURE__*/React.createElement("div", _extends({
+      "data-test": "DesignSystem-Label"
+    }, baseProps, {
       className: LabelClass
     }), /*#__PURE__*/React.createElement(GenericText, {
       className: classes,
       componentType: "label"
     }, children), required && /*#__PURE__*/React.createElement("span", {
-      className: "Label-requiredIndicator"
+      className: "Label-requiredIndicator",
+      "data-test": "DesignSystem-Label--RequiredIndicator"
     }));
   };
   Label.displayName = 'Label';
@@ -4491,18 +4541,24 @@
     var baseProps = extractBaseProps(props);
     var MessageClass = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Message', true), _defineProperty(_classNames, "Message--".concat(appearance), appearance), _classNames), className);
     var MessageIcon = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'Message-icon', true), _defineProperty(_classNames2, "Message-icon--".concat(appearance), appearance), _defineProperty(_classNames2, 'Message-icon--withTitle', title), _classNames2));
-    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
+    return /*#__PURE__*/React.createElement("div", _extends({
+      "data-test": "DesignSystem-Message"
+    }, baseProps, {
       className: MessageClass
     }), appearance !== 'default' && /*#__PURE__*/React.createElement("div", {
-      className: MessageIcon
+      className: MessageIcon,
+      "data-test": "DesignSystem-Message--Icon"
     }, /*#__PURE__*/React.createElement(Icon, {
       name: IconMapping[appearance],
       appearance: appearance
-    })), /*#__PURE__*/React.createElement("div", null, title && /*#__PURE__*/React.createElement("div", {
+    })), /*#__PURE__*/React.createElement("div", {
+      "data-test": "DesignSystem-Message--Title"
+    }, title && /*#__PURE__*/React.createElement("div", {
       className: "Message-title"
     }, /*#__PURE__*/React.createElement(Heading, {
       size: "s"
     }, title)), /*#__PURE__*/React.createElement("div", {
+      "data-test": "DesignSystem-Message--Description",
       className: "Message-description"
     }, children)));
   };
@@ -4634,7 +4690,9 @@
     var classes = classNames__default['default'](_defineProperty({
       Text: true
     }, "Text--".concat(appearance), appearance), className);
-    return /*#__PURE__*/React.createElement(GenericText, _extends({}, baseProps, {
+    return /*#__PURE__*/React.createElement(GenericText, _extends({
+      "data-test": "DesignSystem-Paragraph"
+    }, baseProps, {
       className: classes,
       componentType: "p"
     }), children);
@@ -4653,7 +4711,9 @@
     var ProgressBarClass = classNames__default['default']({
       ProgressBar: true
     }, className);
-    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
+    return /*#__PURE__*/React.createElement("div", _extends({
+      "data-test": "DesignSystem-ProgressBar"
+    }, baseProps, {
       className: ProgressBarClass
     }), /*#__PURE__*/React.createElement("div", {
       className: 'ProgressBar-indicator',
@@ -4720,7 +4780,9 @@
     var classes = classNames__default['default'](_defineProperty({
       Row: true
     }, "".concat(className), className));
-    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
+    return /*#__PURE__*/React.createElement("div", _extends({
+      "data-test": "DesignSystem-Row"
+    }, baseProps, {
       className: classes
     }), children);
   };
@@ -4739,7 +4801,9 @@
     var baseProps = extractBaseProps(props);
     var StatusHintClass = classNames__default['default'](_defineProperty({}, 'StatusHint', true), className);
     var StatusHintIconClass = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'StatusHint-icon', true), _defineProperty(_classNames2, "StatusHint--".concat(appearance), appearance), _classNames2));
-    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
+    return /*#__PURE__*/React.createElement("div", _extends({
+      "data-test": "DesignSystem-StatusHint"
+    }, baseProps, {
       className: StatusHintClass,
       onClick: function onClick(e) {
         return _onClick && _onClick(e);
@@ -4751,8 +4815,10 @@
         return _onMouseLeave && _onMouseLeave(e);
       }
     }), /*#__PURE__*/React.createElement("span", {
+      "data-test": "DesignSystem-StatusHint--Icon",
       className: StatusHintIconClass
     }), /*#__PURE__*/React.createElement(Text, {
+      "data-test": "DesignSystem-StatusHint--Text",
       weight: 'medium'
     }, children));
   };
@@ -4770,11 +4836,761 @@
     var classes = classNames__default['default']((_classNames = {
       Pills: true
     }, _defineProperty(_classNames, "Badge--".concat(appearance), appearance && !subtle), _defineProperty(_classNames, "Badge--subtle-".concat(appearance), subtle), _classNames), className);
-    return /*#__PURE__*/React.createElement("span", _extends({}, baseProps, {
+    return /*#__PURE__*/React.createElement("span", _extends({
+      "data-test": "DesignSystem-Pills"
+    }, baseProps, {
       className: classes
     }), children);
   };
   Pills.displayName = 'Pills';
+
+  var ARROW_LEFT = 37;
+  var ARROW_RIGHT = 39;
+
+  var formatPercentage = function formatPercentage(ratio) {
+    return "".concat((ratio * 100).toFixed(2), "%");
+  };
+  var countDecimalPlaces = function countDecimalPlaces(value) {
+    if (!isFinite(value)) return 0;
+
+    if (Math.floor(value) !== value) {
+      var valueArray = value.toString().split('.');
+      return valueArray[1].length || 0;
+    }
+
+    return 0;
+  };
+  var approxEqual = function approxEqual(a, b) {
+    var tolerance = 0.00001;
+    return Math.abs(a - b) <= tolerance;
+  };
+  var clamp = function clamp(value, min, max) {
+    if (value == null) {
+      return value;
+    }
+
+    return Math.min(Math.max(value, min), max);
+  };
+  var arraysEqual = function arraysEqual(oldValues, newValues) {
+    if (oldValues.length !== oldValues.length) return;
+    return newValues.every(function (value, index) {
+      return value === oldValues[index];
+    });
+  };
+  function argMin(values, argFn) {
+    if (values.length === 0) {
+      return undefined;
+    }
+
+    var minValue = values[0];
+    var minArg = argFn(minValue);
+
+    for (var index = 1; index < values.length; index++) {
+      var _value = values[index];
+      var arg = argFn(_value);
+
+      if (arg < minArg) {
+        minValue = _value;
+        minArg = arg;
+      }
+    }
+
+    return minValue;
+  }
+  function fillValues(values, startIndex, endIndex, fillValue) {
+    var inc = startIndex < endIndex ? 1 : -1;
+
+    for (var index = startIndex; index !== endIndex + inc; index += inc) {
+      values[index] = fillValue;
+    }
+  }
+  function isElementOfType(element, _ComponentType) {
+    return element != null && element.type != null;
+  }
+
+  var Handle = /*#__PURE__*/function (_React$Component) {
+    _inherits(Handle, _React$Component);
+
+    var _super = _createSuper(Handle);
+
+    function Handle() {
+      var _this;
+
+      _classCallCheck(this, Handle);
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = _super.call.apply(_super, [this].concat(args));
+
+      _defineProperty(_assertThisInitialized(_this), "state", {
+        isMoving: false
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "handleElement", null);
+
+      _defineProperty(_assertThisInitialized(_this), "refHandlers", {
+        handle: function handle(el) {
+          return _this.handleElement = el;
+        }
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "mouseEventClientOffset", function (event) {
+        return event.clientX;
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "clientToValue", function (clientPixel) {
+        var _this$props = _this.props,
+            stepSize = _this$props.stepSize,
+            tickSize = _this$props.tickSize,
+            value = _this$props.value;
+
+        if (_this.handleElement == null) {
+          return value;
+        }
+
+        var clientPixelNormalized = clientPixel;
+
+        var _this$getHandleMidpoi = _this.getHandleMidpointAndOffset(_this.handleElement),
+            handleMidpoint = _this$getHandleMidpoi.handleMidpoint,
+            handleOffset = _this$getHandleMidpoi.handleOffset;
+
+        var handleCenterPixel = handleMidpoint + handleOffset;
+        var pixelDelta = clientPixelNormalized - handleCenterPixel;
+
+        if (isNaN(pixelDelta)) {
+          return value;
+        }
+
+        return value + Math.round(pixelDelta / (tickSize * stepSize)) * stepSize;
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "changeValue", function (newValue) {
+        var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _this.props.onChange;
+        var updatedValue = clamp(newValue, _this.props.min, _this.props.max);
+
+        if (!isNaN(updatedValue) && _this.props.value !== updatedValue) {
+          if (callback) callback(updatedValue);
+        }
+
+        return updatedValue;
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "endHandleMovement", function (event) {
+        var clientPixel = _this.mouseEventClientOffset(event);
+
+        var onRelease = _this.props.onRelease;
+
+        _this.removeDocumentEventListeners();
+
+        _this.setState({
+          isMoving: false
+        });
+
+        var finalValue = _this.changeValue(_this.clientToValue(clientPixel));
+
+        if (onRelease) onRelease(finalValue);
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "continueHandleMovement", function (event) {
+        var clientPixel = _this.mouseEventClientOffset(event);
+
+        if (_this.state.isMoving && !_this.props.disabled) {
+          var value = _this.clientToValue(clientPixel);
+
+          _this.changeValue(value);
+        }
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "beginHandleMovement", function (event) {
+        if (_this.props.disabled) return;
+        document.addEventListener('mousemove', _this.continueHandleMovement);
+        document.addEventListener('mouseup', _this.endHandleMovement);
+
+        _this.setState({
+          isMoving: true
+        });
+
+        var value = _this.clientToValue(event.clientX);
+
+        _this.changeValue(value);
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "handleKeyDown", function (event) {
+        if (_this.props.disabled) return;
+        var _this$props2 = _this.props,
+            stepSize = _this$props2.stepSize,
+            value = _this$props2.value;
+        var which = event.which;
+
+        if (which === ARROW_LEFT) {
+          _this.changeValue(value - stepSize);
+
+          event.preventDefault();
+        } else if (which === ARROW_RIGHT) {
+          _this.changeValue(value + stepSize);
+
+          event.preventDefault();
+        }
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "handleKeyUp", function (event) {
+        if (_this.props.disabled) return;
+
+        if ([ARROW_LEFT, ARROW_RIGHT].indexOf(event.which) >= 0) {
+          var onRelease = _this.props.onRelease;
+          if (onRelease) onRelease(_this.props.value);
+        }
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "getHandleMidpointAndOffset", function (handleElement) {
+        var useOppositeDimension = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+        if (handleElement == null) {
+          return {
+            handleMidpoint: 0,
+            handleOffset: 0
+          };
+        }
+
+        var handleRect = handleElement.getBoundingClientRect();
+        var sizeKey = useOppositeDimension ? 'height' : 'width';
+        var handleOffset = handleRect.left;
+        return {
+          handleOffset: handleOffset,
+          handleMidpoint: handleRect[sizeKey] / 2
+        };
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "removeDocumentEventListeners", function () {
+        document.removeEventListener('mousemove', _this.continueHandleMovement);
+        document.removeEventListener('mouseup', _this.endHandleMovement);
+      });
+
+      return _this;
+    }
+
+    _createClass(Handle, [{
+      key: "componentWillUnmount",
+      value: function componentWillUnmount() {
+        this.removeDocumentEventListeners();
+      }
+    }, {
+      key: "componentDidUpdate",
+      value: function componentDidUpdate(_prevProps, prevState) {
+        if (prevState.isMoving !== this.state.isMoving) {
+          if (this.handleElement) this.handleElement.focus();
+        }
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _classNames;
+
+        var _this$props3 = this.props,
+            min = _this$props3.min,
+            tickSizeRatio = _this$props3.tickSizeRatio,
+            value = _this$props3.value,
+            disabled = _this$props3.disabled,
+            label = _this$props3.label;
+
+        var _this$getHandleMidpoi2 = this.getHandleMidpointAndOffset(this.handleElement, true),
+            handleMidpoint = _this$getHandleMidpoi2.handleMidpoint;
+
+        var offsetRatio = (value - min) * tickSizeRatio;
+        var offsetCalc = "calc(".concat(formatPercentage(offsetRatio), " - ").concat(handleMidpoint, "px)");
+        var style = {
+          left: offsetCalc
+        };
+        var className = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Slider-handle', true), _defineProperty(_classNames, 'Slider-handle--disabled', disabled), _defineProperty(_classNames, 'Slider-handle--active', this.state.isMoving), _classNames));
+        return /*#__PURE__*/React.createElement("div", {
+          className: className,
+          onMouseDown: this.beginHandleMovement,
+          onKeyDown: this.handleKeyDown,
+          onKeyUp: this.handleKeyUp,
+          ref: this.refHandlers.handle,
+          style: style,
+          tabIndex: 1
+        }, !this.state.isMoving && /*#__PURE__*/React.createElement(Tooltip, {
+          tooltip: label,
+          position: "top",
+          triggerClass: 'Slider-tooltip'
+        }, /*#__PURE__*/React.createElement("span", {
+          className: "h-100 w-100"
+        })));
+      }
+    }]);
+
+    return Handle;
+  }(React.Component);
+
+  var defaultProps = {
+    disabled: false,
+    labelStepSize: 1,
+    max: 10,
+    min: 0,
+    stepSize: 1
+  };
+
+  var MultiSliderHandle = function MultiSliderHandle() {
+    return null;
+  };
+
+  var MultiSlider = /*#__PURE__*/function (_React$Component) {
+    _inherits(MultiSlider, _React$Component);
+
+    var _super = _createSuper(MultiSlider);
+
+    function MultiSlider(_props) {
+      var _this;
+
+      _classCallCheck(this, MultiSlider);
+
+      _this = _super.call(this, _props);
+
+      _defineProperty(_assertThisInitialized(_this), "handleElements", []);
+
+      _defineProperty(_assertThisInitialized(_this), "trackElement", null);
+
+      _defineProperty(_assertThisInitialized(_this), "getLabelPrecision", function (_ref) {
+        var labelPrecision = _ref.labelPrecision,
+            stepSize = _ref.stepSize;
+        return labelPrecision == null ? countDecimalPlaces(stepSize) : labelPrecision;
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "getOffsetRatio", function (value) {
+        return clamp((value - _this.props.min) * _this.state.tickSizeRatio, 0, 1);
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "addHandleRef", function (ref) {
+        if (ref != null) {
+          _this.handleElements.push(ref);
+        }
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "getHandleValues", function (props) {
+        var maybeHandles = React.Children.map(props.children, function (child) {
+          return isElementOfType(child) ? child.props : null;
+        });
+        var handles = maybeHandles != null ? maybeHandles : [];
+        handles = handles.filter(function (handle) {
+          return handle !== null;
+        });
+        handles.sort(function (left, right) {
+          return left.value - right.value;
+        });
+        return handles;
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "updateTickSize", function () {
+        if (_this.trackElement != null) {
+          var trackSize = _this.trackElement.clientWidth;
+          var tickSizeRatio = 1 / (_this.props.max - _this.props.min);
+          var tickSize = trackSize * tickSizeRatio;
+
+          _this.setState({
+            tickSize: tickSize,
+            tickSizeRatio: tickSizeRatio
+          });
+        }
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "getTrackFill", function (start, end) {
+        if (start.fillAfter !== undefined) {
+          return start.fillAfter;
+        }
+
+        if (end !== undefined && end.fillBefore !== undefined) {
+          return end.fillBefore;
+        }
+
+        return false;
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "maybeHandleTrackClick", function (event) {
+        var target = event.target;
+        var canHandleTrackEvent = !_this.props.disabled && target.closest('.Slider-handle') == null;
+
+        if (canHandleTrackEvent) {
+          var foundHandle = _this.nearestHandleForValue(_this.handleElements, function (handle) {
+            return handle.mouseEventClientOffset(event);
+          });
+
+          if (foundHandle) {
+            foundHandle.beginHandleMovement(event);
+          }
+        }
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "getLockedHandleIndex", function (startIndex, endIndex) {
+        var inc = startIndex < endIndex ? 1 : -1;
+
+        for (var index = startIndex + inc; index !== endIndex + inc; index += inc) {
+          return index;
+        }
+
+        return -1;
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "getNewHandleValues", function (newValue, oldIndex) {
+        var handleProps = _this.getHandleValues(_this.props);
+
+        var oldValues = handleProps.map(function (handle) {
+          return handle.value;
+        });
+        var newValues = oldValues.slice();
+        newValues[oldIndex] = newValue;
+        if (newValues.length > 1) newValues.sort(function (left, right) {
+          return left - right;
+        });
+        var newIndex = newValues.indexOf(newValue);
+
+        var lockIndex = _this.getLockedHandleIndex(oldIndex, newIndex);
+
+        if (lockIndex === -1) {
+          fillValues(newValues, oldIndex, newIndex, newValue);
+        } else {
+          var lockValue = oldValues[lockIndex];
+          fillValues(oldValues, oldIndex, lockIndex, lockValue);
+          return oldValues;
+        }
+
+        return newValues;
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "onReleaseHandler", function (newValue, index) {
+        var onRangeRelease = _this.props.onRangeRelease;
+
+        var handleProps = _this.getHandleValues(_this.props);
+
+        var newValues = _this.getNewHandleValues(newValue, index); // Range Slider callback
+
+
+        if (onRangeRelease) {
+          var range = newValues;
+          onRangeRelease(range);
+        } // Slider callback
+
+
+        handleProps.forEach(function (handle, i) {
+          if (handle.onRelease) handle.onRelease(newValues[i]);
+        });
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "onChangeHandler", function (newValue, index) {
+        var onRangeChange = _this.props.onRangeChange;
+
+        var handleProps = _this.getHandleValues(_this.props);
+
+        var oldValues = handleProps.map(function (handle) {
+          return handle.value;
+        });
+
+        var newValues = _this.getNewHandleValues(newValue, index);
+
+        if (!arraysEqual(newValues, oldValues)) {
+          // Range Slider Callback
+          if (onRangeChange) {
+            var range = newValues;
+            onRangeChange(range);
+          } // Slider callback
+
+
+          handleProps.forEach(function (handle, i) {
+            if (handle.onChange) handle.onChange(newValues[i]);
+          });
+        }
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "renderHandles", function () {
+        var _this$props = _this.props,
+            disabled = _this$props.disabled,
+            max = _this$props.max,
+            min = _this$props.min,
+            stepSize = _this$props.stepSize;
+
+        var handleProps = _this.getHandleValues(_this.props);
+
+        if (handleProps.length === 0) {
+          return null;
+        }
+
+        return handleProps.map(function (_ref2, index) {
+          var value = _ref2.value;
+          return /*#__PURE__*/React.createElement(Handle, {
+            disabled: disabled,
+            key: "".concat(index, "-").concat(handleProps.length),
+            max: max,
+            min: min,
+            onRelease: function onRelease(newValue) {
+              return _this.onReleaseHandler(newValue, index);
+            },
+            onChange: function onChange(newValue) {
+              return _this.onChangeHandler(newValue, index);
+            },
+            label: value.toFixed(_this.state.labelPrecision),
+            ref: _this.addHandleRef,
+            stepSize: stepSize,
+            tickSize: _this.state.tickSize,
+            tickSizeRatio: _this.state.tickSizeRatio,
+            value: value
+          });
+        });
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "formatLabel", function (value) {
+        var labelRenderer = _this.props.labelRenderer;
+
+        if (typeof labelRenderer === 'function') {
+          return labelRenderer(value);
+        }
+
+        return value.toFixed(_this.state.labelPrecision);
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "renderLabels", function () {
+        var _this$props2 = _this.props,
+            labelStepSize = _this$props2.labelStepSize,
+            max = _this$props2.max,
+            min = _this$props2.min,
+            labelRenderer = _this$props2.labelRenderer,
+            disabled = _this$props2.disabled;
+        var labels = [];
+        var stepSizeRatio = _this.state.tickSizeRatio * labelStepSize;
+
+        var handles = _this.getHandleValues(_this.props);
+
+        var activeLabels = handles.map(function (handle) {
+          return handle.value.toFixed(_this.state.labelPrecision);
+        });
+
+        for (var i = min, offsetRatio = 0; i < max || approxEqual(i, max); i += labelStepSize, offsetRatio += stepSizeRatio) {
+          var offsetPercentage = formatPercentage(offsetRatio);
+          var style = {
+            left: offsetPercentage
+          };
+          var active = !disabled && activeLabels.indexOf(i.toFixed(_this.state.labelPrecision)) !== -1;
+          labels.push( /*#__PURE__*/React.createElement("div", {
+            className: 'Slider-label',
+            key: i,
+            style: style
+          }, /*#__PURE__*/React.createElement("span", {
+            className: 'Slider-ticks'
+          }), labelRenderer !== false && /*#__PURE__*/React.createElement(Text, {
+            small: true,
+            appearance: active ? 'default' : 'disabled'
+          }, _this.formatLabel(i))));
+        }
+
+        return labels;
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "renderTrackFill", function (index, start, end) {
+        var _classNames;
+
+        var _sort = [_this.getOffsetRatio(start.value), _this.getOffsetRatio(end.value)].sort(function (left, right) {
+          return left - right;
+        }),
+            _sort2 = _slicedToArray(_sort, 2),
+            startRatio = _sort2[0],
+            endRatio = _sort2[1];
+
+        var startOffset = Number((startRatio * 100).toFixed(2));
+        var endOffset = Number(((1 - endRatio) * 100).toFixed(2));
+        var width = "".concat(100 - endOffset - startOffset, "%");
+        var orientationStyle = {
+          width: width
+        };
+
+        var style = _objectSpread2({}, orientationStyle);
+
+        var fillTrack = _this.getTrackFill(start, end);
+
+        var classes = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Slider-progress', true), _defineProperty(_classNames, 'Slider-progress--disabled', _this.props.disabled), _defineProperty(_classNames, 'Slider-progress--inRange', fillTrack), _defineProperty(_classNames, 'Slider-progress--inRangeDisabled', fillTrack && _this.props.disabled), _classNames));
+        return /*#__PURE__*/React.createElement("div", {
+          key: "track-".concat(index),
+          className: classes,
+          style: style
+        });
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "renderTracks", function () {
+        var trackStops = _this.getHandleValues(_this.props);
+
+        trackStops.push({
+          value: _this.props.max
+        });
+        var previous = {
+          value: _this.props.min || 0
+        };
+        var handles = [];
+        trackStops.forEach(function (track, index) {
+          var current = track;
+          handles.push(_this.renderTrackFill(index, previous, current));
+          previous = current;
+        });
+        return handles;
+      });
+
+      _this.state = {
+        labelPrecision: _this.getLabelPrecision(_this.props),
+        tickSize: 0,
+        tickSizeRatio: 0
+      };
+      return _this;
+    }
+
+    _createClass(MultiSlider, [{
+      key: "getDerivedStateFromProps",
+      value: function getDerivedStateFromProps(props) {
+        return {
+          labelPrecision: this.getLabelPrecision(props)
+        };
+      }
+    }, {
+      key: "getSnapshotBeforeUpdate",
+      value: function getSnapshotBeforeUpdate(prevProps) {
+        var prevHandleProps = this.getHandleValues(prevProps);
+        var newHandleProps = this.getHandleValues(this.props);
+
+        if (newHandleProps.length !== prevHandleProps.length) {
+          this.handleElements = [];
+        }
+
+        return null;
+      }
+    }, {
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        this.updateTickSize();
+      }
+    }, {
+      key: "nearestHandleForValue",
+      value: function nearestHandleForValue(handles, getOffset) {
+        return argMin(handles, function (handle) {
+          var offset = getOffset(handle);
+          var offsetValue = handle.clientToValue(offset);
+          var handleValue = handle.props.value;
+          return Math.abs(offsetValue - handleValue);
+        });
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _classNames3,
+            _this2 = this;
+
+        var _this$props3 = this.props,
+            label = _this$props3.label,
+            className = _this$props3.className;
+        var baseProps = extractBaseProps(this.props);
+        var SliderClass = classNames__default['default'](_defineProperty({}, 'Slider', true), className);
+        var WrapperClass = classNames__default['default']((_classNames3 = {}, _defineProperty(_classNames3, 'Slider-wrapper', true), _defineProperty(_classNames3, 'Slider-wrapper--disabled', this.props.disabled), _classNames3));
+        return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
+          className: SliderClass
+        }), label && /*#__PURE__*/React.createElement(Label, {
+          withInput: true
+        }, label), /*#__PURE__*/React.createElement("div", {
+          className: WrapperClass,
+          onMouseDown: this.maybeHandleTrackClick
+        }, /*#__PURE__*/React.createElement("div", {
+          className: "Slider-track",
+          ref: function ref(_ref3) {
+            return _this2.trackElement = _ref3;
+          }
+        }, this.renderTracks()), /*#__PURE__*/React.createElement("div", {
+          className: "Slider-axis'"
+        }, this.renderLabels()), this.renderHandles()));
+      }
+    }]);
+
+    return MultiSlider;
+  }(React.Component);
+
+  _defineProperty(MultiSlider, "defaultProps", defaultProps);
+
+  _defineProperty(MultiSlider, "Handle", MultiSliderHandle);
+
+  var Slider = function Slider(props) {
+    var valueProp = props.value,
+        _props$defaultValue = props.defaultValue,
+        defaultValue = _props$defaultValue === void 0 ? 0 : _props$defaultValue,
+        onRelease = props.onRelease,
+        onChange = props.onChange,
+        rest = _objectWithoutProperties(props, ["value", "defaultValue", "onRelease", "onChange"]);
+
+    var _React$useState = React.useState(valueProp === undefined ? defaultValue : valueProp),
+        _React$useState2 = _slicedToArray(_React$useState, 2),
+        value = _React$useState2[0],
+        setValue = _React$useState2[1];
+
+    React.useEffect(function () {
+      if (valueProp !== undefined) {
+        setValue(valueProp);
+      }
+    }, [valueProp]);
+
+    var onChangeHandler = function onChangeHandler(newValue) {
+      if (valueProp === undefined) {
+        setValue(newValue);
+      }
+
+      if (onChange) onChange(newValue);
+    };
+
+    return /*#__PURE__*/React.createElement(MultiSlider, rest, /*#__PURE__*/React.createElement(MultiSlider.Handle, {
+      value: value,
+      onChange: onChangeHandler,
+      onRelease: onRelease,
+      fillBefore: true
+    }));
+  };
+
+  var RangeIndex;
+
+  (function (RangeIndex) {
+    RangeIndex[RangeIndex["START"] = 0] = "START";
+    RangeIndex[RangeIndex["END"] = 1] = "END";
+  })(RangeIndex || (RangeIndex = {}));
+
+  var RangeSlider = function RangeSlider(props) {
+    var valueProp = props.value,
+        _props$defaultValue = props.defaultValue,
+        defaultValue = _props$defaultValue === void 0 ? [0, 10] : _props$defaultValue,
+        onChange = props.onChange,
+        onRelease = props.onRelease,
+        rest = _objectWithoutProperties(props, ["value", "defaultValue", "onChange", "onRelease"]);
+
+    var _React$useState = React.useState(valueProp === undefined ? defaultValue : valueProp),
+        _React$useState2 = _slicedToArray(_React$useState, 2),
+        value = _React$useState2[0],
+        setValue = _React$useState2[1];
+
+    React.useEffect(function () {
+      if (valueProp !== undefined) {
+        setValue(valueProp);
+      }
+    }, [valueProp]);
+
+    var onChangeHandler = function onChangeHandler(range) {
+      if (valueProp === undefined) {
+        setValue(range);
+      }
+
+      if (onChange) onChange(range);
+    };
+
+    return /*#__PURE__*/React.createElement(MultiSlider, _extends({
+      onRangeChange: onChangeHandler,
+      onRangeRelease: onRelease
+    }, rest), /*#__PURE__*/React.createElement(MultiSlider.Handle, {
+      value: value[RangeIndex.START],
+      fillAfter: true
+    }), /*#__PURE__*/React.createElement(MultiSlider.Handle, {
+      value: value[RangeIndex.END]
+    }));
+  };
 
   /**
    * ######Switch has two types:
@@ -5036,63 +5852,126 @@
     return Tooltip;
   }(React.Component);
 
-  var useEffect$1 = React.useEffect,
-      useState$1 = React.useState;
+  var Modal = /*#__PURE__*/function (_React$Component) {
+    _inherits(Modal, _React$Component);
 
-  var Modal = function Modal(props) {
-    var _classNames;
+    var _super = _createSuper(Modal);
 
-    var _props$dimension = props.dimension,
-        dimension = _props$dimension === void 0 ? 'small' : _props$dimension,
-        children = props.children,
-        backdropClose = props.backdropClose,
-        backdrop = props.backdrop,
-        className = props.className;
+    function Modal(props) {
+      var _this;
 
-    var _useState = useState$1(props.open),
-        _useState2 = _slicedToArray(_useState, 2),
-        open = _useState2[0],
-        setOpen = _useState2[1];
+      _classCallCheck(this, Modal);
 
-    var _useState3 = useState$1(false),
-        _useState4 = _slicedToArray(_useState3, 2),
-        animate = _useState4[0],
-        setAnimate = _useState4[1];
+      _this = _super.call(this, props);
 
-    var classes = classNames__default['default']((_classNames = {
-      Modal: true
-    }, _defineProperty(_classNames, "Modal--".concat(dimension), dimension), _defineProperty(_classNames, 'Modal--open', open), _defineProperty(_classNames, 'Modal-animation--open', animate), _defineProperty(_classNames, 'Modal-animation--close', !animate), _classNames), className);
-    var baseProps = extractBaseProps(props);
-    useEffect$1(function () {
-      if (props.open) {
-        setOpen(true);
-        setAnimate(true);
+      _defineProperty(_assertThisInitialized(_this), "modalRef", /*#__PURE__*/React.createRef());
+
+      _defineProperty(_assertThisInitialized(_this), "element", void 0);
+
+      _defineProperty(_assertThisInitialized(_this), "getUpdatedZIndex", function () {
+        if (_this.element === null) return;
+
+        var elements = _this.element.querySelectorAll('.Modal-container');
+
+        if (elements.length <= 1) return;
+        var siblings = Array.from(elements).filter(function (el) {
+          return el !== _this.modalRef.current;
+        });
+        var zIndex = -1;
+        siblings.forEach(function (element) {
+          if (element.classList.contains('Modal-container--open')) {
+            var prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
+            zIndex = Math.max(zIndex, prevZIndex + 10);
+          }
+        });
+        return zIndex > 0 ? zIndex : undefined;
+      });
+
+      var _element = document.querySelector('.Modal-wrapper');
+
+      if (_element === null) {
+        _element = document.createElement('div');
+
+        _element.classList.add('Modal-wrapper');
+
+        document.body.appendChild(_element);
       }
 
-      if (!props.open) {
-        setTimeout(function () {
-          setOpen(false);
-        }, 120);
-        setAnimate(false);
-      }
-    }, [props.open]);
-    var ModalContainer = /*#__PURE__*/React.createElement("div", {
-      className: "Modal-container"
-    }, /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
-      className: classes
-    }), children));
-    var ModalWrapper = backdrop ? /*#__PURE__*/React.createElement(OutsideClick, {
-      onOutsideClick: function onOutsideClick(event) {
-        return open && backdropClose(event, 'OutsideClick');
-      }
-    }, ModalContainer) : ModalContainer;
-    var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(ModalWrapper, document.body);
-    return /*#__PURE__*/React.createElement("div", null, WrapperElement, /*#__PURE__*/React.createElement(Backdrop, {
-      open: open
-    }));
-  };
+      _this.element = _element;
+      _this.state = {
+        open: props.open,
+        animate: props.open
+      };
+      return _this;
+    }
 
-  Modal.displayName = 'Modal';
+    _createClass(Modal, [{
+      key: "componentDidUpdate",
+      value: function componentDidUpdate(prevProps) {
+        var _this2 = this;
+
+        if (prevProps.open !== this.props.open) {
+          if (this.props.open) {
+            var zIndex = this.getUpdatedZIndex();
+            this.setState({
+              zIndex: zIndex,
+              open: true,
+              animate: true
+            });
+          } else {
+            this.setState({
+              animate: false
+            });
+            setTimeout(function () {
+              _this2.setState({
+                open: false
+              });
+            }, 120);
+          }
+        }
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _classNames, _classNames2;
+
+        var _this$state = this.state,
+            animate = _this$state.animate,
+            open = _this$state.open,
+            zIndex = _this$state.zIndex;
+        var _this$props = this.props,
+            className = _this$props.className,
+            dimension = _this$props.dimension,
+            backdropClose = _this$props.backdropClose;
+        var classes = classNames__default['default']((_classNames = {
+          Modal: true
+        }, _defineProperty(_classNames, "Modal--".concat(dimension), dimension), _defineProperty(_classNames, 'Modal--open', open), _defineProperty(_classNames, 'Modal-animation--open', animate), _defineProperty(_classNames, 'Modal-animation--close', !animate), _classNames), className);
+        var ContainerClass = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'Modal-container', true), _defineProperty(_classNames2, 'Modal-container--open', open), _classNames2));
+        var baseProps = extractBaseProps(this.props);
+        var ModalContainer = /*#__PURE__*/React.createElement("div", {
+          className: ContainerClass,
+          "data-layer": true,
+          style: {
+            zIndex: zIndex
+          },
+          ref: this.modalRef
+        }, /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
+          className: classes
+        }), this.props.children));
+        var ModalWrapper = this.props.backdrop ? /*#__PURE__*/React.createElement(OutsideClick, {
+          onOutsideClick: function onOutsideClick(event) {
+            return open && backdropClose(event, 'OutsideClick');
+          }
+        }, ModalContainer) : ModalContainer;
+        var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(ModalWrapper, this.element);
+        return /*#__PURE__*/React.createElement("div", null, WrapperElement, /*#__PURE__*/React.createElement(Backdrop, {
+          open: this.state.open
+        }));
+      }
+    }]);
+
+    return Modal;
+  }(React.Component);
 
   var ModalHeader = function ModalHeader(props) {
     var className = props.className,
@@ -5223,10 +6102,10 @@
   Dialog.displayName = 'Dialog';
 
   var useRef = React.useRef,
-      useEffect$2 = React.useEffect,
-      useState$2 = React.useState;
+      useEffect$1 = React.useEffect,
+      useState$1 = React.useState;
   var ModalBody = function ModalBody(props) {
-    var _useState = useState$2(false),
+    var _useState = useState$1(false),
         _useState2 = _slicedToArray(_useState, 2),
         scroll = _useState2[0],
         setScroll = _useState2[1];
@@ -5235,7 +6114,7 @@
     var children = props.children,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    useEffect$2(function () {
+    useEffect$1(function () {
       var scrollHeight = ref && ref.current ? ref.current.scrollHeight : 0;
       var clientHeight = ref && ref.current ? ref.current.clientHeight : 0;
 
@@ -5394,14 +6273,18 @@
       strokeWidth: '8',
       strokeDasharray: "".concat(circumference, " ").concat(circumference)
     };
-    return /*#__PURE__*/React.createElement("svg", _extends({}, baseProps, {
+    return /*#__PURE__*/React.createElement("svg", _extends({
+      "data-test": "DesignSystem-ProgressRing"
+    }, baseProps, {
       className: ProgressRingClass
     }, svgProps), /*#__PURE__*/React.createElement("circle", _extends({
       className: "Ring-background"
     }, circleProps)), /*#__PURE__*/React.createElement("circle", _extends({
       className: "Ring-indicator",
       strokeDashoffset: circumference - updatedValue / 100 * circumference
-    }, circleProps)));
+    }, circleProps, {
+      "data-test": "DesignSystem-ProgressRing--Circle"
+    })));
   };
   ProgressRing.displayName = 'ProgressRing';
 
@@ -5870,6 +6753,20 @@
     };
     this.updateColumnSchema(name, schemaUpdate);
   }
+  function getWidth(width) {
+    if (this.gridRef.current) {
+      if (typeof width === 'number') return width;
+
+      if (width.charAt(width.length - 1) === '%') {
+        var withCheckbox = this.props.withCheckbox;
+        var checkboxWidth = withCheckbox ? document.querySelector('.Grid-cell--checkbox').clientWidth : 0;
+        var gridWidth = this.gridRef.current.clientWidth - checkboxWidth;
+        return gridWidth * (+width.slice(0, -1) / 100);
+      }
+    }
+
+    return 0;
+  }
   function getCellSize(cellType) {
     var sizes = {
       AVATAR: {
@@ -5919,11 +6816,11 @@
     return updatedData;
   };
   function translateData(schema, data) {
-    var newData = data;
+    var newData = _objectSpread2({}, data);
 
     if (schema.translate) {
       var translatedData = schema.translate(data);
-      newData = _objectSpread2(_objectSpread2({}, newData), {}, _defineProperty({}, schema.name, _typeof(translatedData) === 'object' ? _objectSpread2(_objectSpread2({}, newData[schema.name]), translatedData) : translatedData));
+      newData[schema.name] = translatedData !== null && _typeof(translatedData) === 'object' ? _objectSpread2(_objectSpread2({}, newData[schema.name]), translatedData) : translatedData;
     }
 
     if (_typeof(newData[schema.name]) !== 'object') newData[schema.name] = {
@@ -6284,7 +7181,8 @@
         loading = _this$props.loading,
         showMenu = _this$props.showMenu,
         sortingList = _this$props.sortingList,
-        filterList = _this$props.filterList;
+        filterList = _this$props.filterList,
+        headCellTooltip = _this$props.headCellTooltip;
     var _schema$sorting = schema.sorting,
         sorting = _schema$sorting === void 0 ? true : _schema$sorting,
         name = schema.name,
@@ -6346,6 +7244,22 @@
         }) !== -1
       });
     }) : [];
+
+    var renderLabel = function renderLabel() {
+      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
+        weight: "strong",
+        className: "ellipsis--noWrap"
+      }, schema.displayName), sorting && /*#__PURE__*/React.createElement("div", {
+        className: "Grid-sortingIcons"
+      }, sorted ? sorted === 'asc' ? /*#__PURE__*/React.createElement(Icon, {
+        name: "arrow_downward"
+      }) : /*#__PURE__*/React.createElement(Icon, {
+        name: "arrow_upward"
+      }) : /*#__PURE__*/React.createElement(Icon, {
+        name: "unfold_more"
+      })));
+    };
+
     return /*#__PURE__*/React.createElement("div", {
       key: name,
       className: classes,
@@ -6363,18 +7277,11 @@
       withImage: false
     }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
       length: "medium"
-    })) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Heading, {
-      size: "s",
-      className: "ellipsis--noWrap"
-    }, schema.displayName), sorting && /*#__PURE__*/React.createElement("div", {
-      className: "Grid-sortingIcons"
-    }, sorted ? sorted === 'asc' ? /*#__PURE__*/React.createElement(Icon, {
-      name: "arrow_downward"
-    }) : /*#__PURE__*/React.createElement(Icon, {
-      name: "arrow_upward"
-    }) : /*#__PURE__*/React.createElement(Icon, {
-      name: "unfold_more"
-    })))), filters && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !init ? /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement(Placeholder, null)) : /*#__PURE__*/React.createElement(Dropdown, {
+    })) : /*#__PURE__*/React.createElement(React.Fragment, null, headCellTooltip ? /*#__PURE__*/React.createElement(Tooltip, {
+      position: "top-start",
+      triggerClass: "w-100 overflow-hidden",
+      tooltip: schema.displayName
+    }, renderLabel()) : renderLabel())), filters && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !init ? /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement(Placeholder, null)) : /*#__PURE__*/React.createElement(Dropdown, {
       menu: true,
       showApplyButton: true,
       withCheckbox: true,
@@ -6465,9 +7372,10 @@
         draggable = props.draggable,
         data = props.data,
         rowIndex = props.rowIndex;
-    var nestedRows = _this.props.nestedRows;
+    var _this$props3 = _this.props,
+        separator = _this$props3.separator,
+        nestedRows = _this$props3.nestedRows;
     var name = schema.name,
-        separator = schema.separator,
         hidden = schema.hidden,
         pinned = schema.pinned,
         _schema$cellType = schema.cellType,
@@ -6484,7 +7392,7 @@
       'Grid-cell': true,
       'Grid-cell--head': head,
       'Grid-cell--body': !head,
-      'Grid-cell--separator': !firstCell && separator,
+      'Grid-cell--separator': !firstCell && (schema.separator !== undefined ? schema.separator : separator),
       'Grid-cell--nestedRow': !head && colIndex === 0 && nestedRows
     });
     if (hidden) return null;
@@ -6511,9 +7419,10 @@
         if (from.type === to.type) _this.reorderCol(from.name, to.name);
       },
       style: {
-        width: schema.width || width,
-        minWidth: schema.minWidth || minWidth,
-        maxWidth: schema.maxWidth || maxWidth
+        visibility: _this.gridRef.current === null ? 'hidden' : 'visible',
+        width: getWidth.call(_this, schema.width || width),
+        minWidth: getWidth.call(_this, schema.minWidth || minWidth),
+        maxWidth: getWidth.call(_this, schema.maxWidth || maxWidth)
       }
     }, head ? /*#__PURE__*/React.createElement(HeaderCell, {
       _this: _this,
@@ -7087,32 +7996,14 @@
     }, {
       key: "render",
       value: function render() {
-        var _this$props2 = this.props,
-            withPagination = _this$props2.withPagination,
-            page = _this$props2.page,
-            _onPageChange = _this$props2.onPageChange,
-            totalRecords = _this$props2.totalRecords,
-            pageSize = _this$props2.pageSize,
-            paginationType = _this$props2.paginationType;
         var baseProps = extractBaseProps(this.props);
         var schema = getSchema(this);
         return /*#__PURE__*/React.createElement("div", {
-          className: "Grid-container"
-        }, /*#__PURE__*/React.createElement("div", {
           className: "Grid-wrapper",
           ref: this.gridRef
         }, /*#__PURE__*/React.createElement(MainGrid, _extends({}, baseProps, {
           _this: this,
           schema: schema
-        }))), withPagination && /*#__PURE__*/React.createElement("div", {
-          className: "Grid-pagination"
-        }, /*#__PURE__*/React.createElement(Pagination, {
-          page: page,
-          totalPages: getTotalPages(totalRecords, pageSize),
-          type: paginationType,
-          onPageChange: function onPageChange(newPage) {
-            if (_onPageChange) _onPageChange(newPage);
-          }
         })));
       }
     }]);
@@ -7129,7 +8020,6 @@
     size: 'comfortable',
     page: 1,
     pageSize: 0,
-    paginationType: 'jump',
     loading: false,
     error: false,
     sortingList: [],
@@ -7341,13 +8231,14 @@
     dynamicColumn: true
   };
 
-  var defaultProps = {
+  var defaultProps$1 = {
     type: 'data',
     size: 'comfortable',
     showHead: true,
     showMenu: true,
     multipleSorting: true,
     headerOptions: {},
+    paginationType: 'jump',
     pageSize: 15,
     loading: false,
     draggable: true
@@ -7601,6 +8492,8 @@
             showHead = _this$props3.showHead,
             type = _this$props3.type,
             size = _this$props3.size,
+            headCellTooltip = _this$props3.headCellTooltip,
+            separator = _this$props3.separator,
             draggable = _this$props3.draggable,
             nestedRows = _this$props3.nestedRows,
             nestedRowRenderer = _this$props3.nestedRowRenderer,
@@ -7652,24 +8545,31 @@
           showHead: showHead,
           type: type,
           size: size,
+          headCellTooltip: headCellTooltip,
+          separator: separator,
           draggable: draggable,
           nestedRows: nestedRows,
           nestedRowRenderer: nestedRowRenderer,
           withPagination: withPagination && totalPages > 1,
-          paginationType: paginationType,
           pageSize: pageSize,
           loaderSchema: loaderSchema,
           errorTemplate: errorTemplate,
-          onRowClick: onRowClick,
+          onRowClick: onRowClick
+        }))), withPagination && /*#__PURE__*/React.createElement("div", {
+          className: "Table-pagination"
+        }, /*#__PURE__*/React.createElement(Pagination, {
+          page: this.state.page,
+          totalPages: getTotalPages(totalRecords, pageSize),
+          type: paginationType,
           onPageChange: this.onPageChange
-        }))));
+        })));
       }
     }]);
 
     return Table;
   }(React.Component);
 
-  _defineProperty(Table, "defaultProps", defaultProps);
+  _defineProperty(Table, "defaultProps", defaultProps$1);
 
   var List = function List(props) {
     return /*#__PURE__*/React.createElement(Table, _extends({
@@ -7677,7 +8577,7 @@
     }, props));
   };
 
-  var useState$3 = React.useState;
+  var useState$2 = React.useState;
 
   /**
    * ####NOTE: Navigation(vertical) sets first subMenu(if present) active if the Navigation is collapsed.
@@ -7696,7 +8596,7 @@
         className = props.className;
     var baseProps = extractBaseProps(props);
 
-    var _useState = useState$3({}),
+    var _useState = useState$2({}),
         _useState2 = _slicedToArray(_useState, 2),
         menuState = _useState2[0],
         setMenuState = _useState2[1];
@@ -7886,20 +8786,23 @@
   };
 
   var PageHeader = function PageHeader(props) {
+    var _classNames;
+
     var title = props.title,
         navigation = props.navigation,
         actions = props.actions,
         tabs = props.tabs,
         breadcrumbs = props.breadcrumbs,
         badge = props.badge,
+        seperator = props.seperator,
         status = props.status,
         meta = props.meta,
         navigationPosition = props.navigationPosition,
         className = props.className;
     var baseProps = extractBaseProps(props);
-    var wrapperClasses = classNames__default['default'](_defineProperty({
+    var wrapperClasses = classNames__default['default']((_classNames = {
       'PageHeader-wrapper': true
-    }, 'PageHeader-wrapper--withTabs', tabs), className);
+    }, _defineProperty(_classNames, 'PageHeader-wrapper--separator', seperator), _defineProperty(_classNames, 'PageHeader-wrapper--withTabs', tabs), _classNames), className);
     var classes = classNames__default['default']({
       PageHeader: true
     });
@@ -7987,7 +8890,9 @@
   exports.ProgressBar = ProgressBar;
   exports.ProgressRing = ProgressRing;
   exports.Radio = Radio;
+  exports.RangeSlider = RangeSlider;
   exports.Row = Row;
+  exports.Slider = Slider;
   exports.Spinner = Spinner;
   exports.StatusHint = StatusHint;
   exports.Subheading = Subheading;

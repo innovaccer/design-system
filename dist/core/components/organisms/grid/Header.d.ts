@@ -9,12 +9,12 @@ export interface ExternalHeaderProps {
 }
 export declare type updateSearchTermFunction = (newSearchTerm: string) => void;
 export interface HeaderProps extends ExternalHeaderProps {
-    loading: boolean;
-    error: boolean;
+    loading?: boolean;
+    error?: boolean;
     data: Data;
     schema: Schema;
     selectAll?: GridProps['selectAll'];
-    totalRecords?: number;
+    totalRecords: number;
     withPagination?: boolean;
     withCheckbox?: boolean;
     showHead?: boolean;

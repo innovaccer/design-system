@@ -2,6 +2,7 @@ import * as React from 'react';
 import { ExternalHeaderProps, updateSearchTermFunction, HeaderProps } from "../grid/Header";
 import { Data, Schema, onSelectFunction, onSelectAllFunction, GridProps, FetchDataOptions, fetchDataFunction, RowData, updateSchemaFunction, updateSortingListFunction, updateFilterListFunction } from "../grid";
 import { BaseProps } from "../../../utils/types";
+import { PaginationProps } from "../../molecules/pagination";
 interface SyncProps {
     data?: Data;
     schema?: Schema;
@@ -24,7 +25,7 @@ interface SharedTableProps extends BaseProps {
     withCheckbox?: GridProps['withCheckbox'];
     showMenu?: GridProps['showMenu'];
     withPagination?: GridProps['withPagination'];
-    paginationType?: GridProps['paginationType'];
+    paginationType?: PaginationProps['type'];
     pageSize?: GridProps['pageSize'];
     loaderSchema?: GridProps['loaderSchema'];
     multipleSorting?: boolean;
@@ -33,7 +34,9 @@ interface SharedTableProps extends BaseProps {
     errorTemplate?: GridProps['errorTemplate'];
     onRowClick?: GridProps['onRowClick'];
     onSelect?: (rowIndexes: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean) => void;
-    onPageChange?: GridProps['onPageChange'];
+    onPageChange?: PaginationProps['onPageChange'];
+    headCellTooltip?: GridProps['headCellTooltip'];
+    separator?: GridProps['headCellTooltip'];
 }
 declare const defaultProps: {
     type: string;
@@ -42,6 +45,7 @@ declare const defaultProps: {
     showMenu: boolean;
     multipleSorting: boolean;
     headerOptions: {};
+    paginationType: string;
     pageSize: number;
     loading: boolean;
     draggable: boolean;
@@ -72,6 +76,7 @@ export declare class Table extends React.Component<TableProps, TableState> {
         showMenu: boolean;
         multipleSorting: boolean;
         headerOptions: {};
+        paginationType: string;
         pageSize: number;
         loading: boolean;
         draggable: boolean;
@@ -80,7 +85,7 @@ export declare class Table extends React.Component<TableProps, TableState> {
     updateData: import("throttle-debounce").throttle<(_options: FetchDataOptions) => void>;
     onSelect: onSelectFunction;
     onSelectAll: onSelectAllFunction;
-    onPageChange: GridProps['onPageChange'];
+    onPageChange: PaginationProps['onPageChange'];
     updateSchema: updateSchemaFunction;
     updateSortingList: updateSortingListFunction;
     updateFilterList: updateFilterListFunction;

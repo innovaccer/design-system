@@ -9,8 +9,17 @@ export interface ModalProps extends BaseProps {
     open: boolean;
     children?: React.ReactNode;
 }
-declare const Modal: {
-    (props: ModalProps): JSX.Element;
-    displayName: string;
-};
+interface ModalState {
+    open: boolean;
+    animate: boolean;
+    zIndex?: number;
+}
+declare class Modal extends React.Component<ModalProps, ModalState> {
+    modalRef: React.RefObject<HTMLDivElement>;
+    element: Element;
+    constructor(props: ModalProps);
+    componentDidUpdate(prevProps: ModalProps): void;
+    getUpdatedZIndex: () => number | undefined;
+    render(): JSX.Element;
+}
 export default Modal;

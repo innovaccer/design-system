@@ -29,6 +29,8 @@ export { Row } from "./components/atoms/row";
 export { StatusHint } from "./components/atoms/statusHint";
 export { Pills } from "./components/atoms/pills";
 export { Spinner } from "./components/atoms/spinner";
+export { Slider } from "./components/atoms/slider";
+export { RangeSlider } from "./components/atoms/rangeSlider";
 export { Subheading } from "./components/atoms/subheading";
 export { Switch } from "./components/atoms/switchInput";
 export { Text } from "./components/atoms/text";

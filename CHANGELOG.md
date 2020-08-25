@@ -477,3 +477,23 @@
 * 903abb2 chore: adds CSS Utilities stories
 * dc1908e feat: adds metaList
 * 2d7b580 fix(PopperWrapper): fixes popover overflow #249
+
+-------------------
+ **v1.1.0-5**  (2020-08-25) 
+
+* 3506171 v1.1.0-5
+* 3fa730f fix(InputMask): fixes defaultValue
+* 7584eef feat(Button): adds type prop
+* e526574 fix(Inputmask): fixes defaultValue prop -m #250
+* 3a7b0bd feat(slider): adds slider component
+* 8afac37 feat(Grid): add patterns
+* 38aedad fix(Grid): hides initial abrupt render
+* 5881a57 feat:adds unit Testing
+* 9598aac feat(Grid): adds separator prop
+* 64f9097 chore(Grid): moves Pagination out of Grid to Table
+* c73e71b fix(layering): fixes z-index in popperWrapper and modal
+* 5b3d41c fix(storybook): fixes height of canvas
+* f362227 feat(Grid): adds column width percent support
+* 447d9b5 fix(Grid): fixes data mutation in translateData utility
+* b13ba22 feat(Grid): adds headCellTooltip prop
+* 6cb317a feat(PageHeader): adds separator prop for border-bottom
