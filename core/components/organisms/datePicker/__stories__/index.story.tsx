@@ -15,6 +15,11 @@ export const all = () => {
     false
   );
 
+  const closeOnSelect = boolean(
+    'closeOnSelect',
+    true
+  );
+
   const inputFormat = select(
     'inputFormat',
     ['mm/dd/yyyy', 'dd/mm/yyyy', 'yyyy-mm-dd', 'mm-dd-yyyy', 'dd-mm-yyyy', 'yyyy-mm-dd'],
@@ -79,6 +84,7 @@ export const all = () => {
     return (
       <DatePicker
         withInput={withInput}
+        closeOnSelect={closeOnSelect}
         open={open}
         inputFormat={inputFormat}
         outputFormat={outputFormat}
