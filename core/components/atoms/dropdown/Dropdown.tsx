@@ -34,6 +34,7 @@ interface ControlledProps {
   selected?: Option[];
   /**
    * Callback function to handle different event types in controlled dropdown <br/>
+   * **Event type here refers to `clicking on option` / `clicking on Clear, Cancel or Apply button`** <br/>
    * **Only works if `selected` is not undefined**
    *
    * | EventType | options | recentSelected |
@@ -155,7 +156,10 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
    */
   triggerOptions?: TriggerProps;
   /**
-   * Callback function called when user selects an option
+   * Callback function called when selected options are updated. <br/>
+   * **In case of uncontrolled dropdown, it is called when user `clicks on option` /**
+   * **`clicks on Clear,or Apply button` while in case of controlled dropdown,**
+   * **it is called when selected options are updated**
    */
   onChange?: (selected: any[] | any, name?: string | number) => void;
   /**
@@ -202,6 +206,12 @@ const bulk = 50;
  *  - sync: options, loading
  * 2. Sync Dropdown:
  *  - Manually toggle loading state to update options (Options <= 50).
+ * 3. Callback Functions
+ *  - Controlled Dropdown:
+ *    * onUpdate: Called when user `clicks on option` / `clicks on Clear, Cancel or Apply button`.
+ *    * onChange: Called when selected options are updated.
+ *  - Uncontrolled Dropdown:
+ *    * onChange: Called when user `clicks on option` / `clicks on Clear, or Apply button`.
  */
 
 export class Dropdown extends React.Component<DropdownProps, DropdownState> {
