@@ -146,17 +146,14 @@ interface SharedTableProps extends BaseProps {
    * Type of Table
    *
    * **Requires `onRowClick` for 'resource' Table**
-   * @default "data"
    */
   type?: GridProps['type'];
   /**
    * Table cell size
-   * @default "comfortable"
    */
   size?: GridProps['size'];
   /**
    * Allow Column reordering
-   * @default true
    */
   draggable?: GridProps['draggable'];
   /**
@@ -223,7 +220,6 @@ interface SharedTableProps extends BaseProps {
    * Number of rows to be rendered on a page
    *
    * **Also used to control number of rows to be rendered while loading: true**
-   * @default 15
    */
   pageSize?: GridProps['pageSize'];
   /**
@@ -232,7 +228,6 @@ interface SharedTableProps extends BaseProps {
   loaderSchema?: GridProps['loaderSchema'];
   /**
    * Set to allow multiple column sorting
-   * @default true
    */
   multipleSorting?: boolean;
   /**
@@ -286,7 +281,7 @@ interface SharedTableProps extends BaseProps {
 
 const defaultProps = {
   type: 'data',
-  size: 'comfortable',
+  size: 'standard',
   showHead: true,
   showMenu: true,
   multipleSorting: true,
