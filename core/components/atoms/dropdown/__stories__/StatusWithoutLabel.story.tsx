@@ -19,11 +19,10 @@ const options = [
 
 // CSF format story
 export const statusWithoutLabel = () => (
-  <div className="mb-11">
+  <div className="mb-11 w-25">
     <Dropdown
       options={options}
       placeholder="All Categories"
-      width={170}
     />
   </div>
 );

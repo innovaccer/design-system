@@ -1,6 +1,6 @@
 .Dropdown {
+    width: 100%;
     position: relative;
-    width: fit-content;
 }
 
 .Dropdown-wrapper {

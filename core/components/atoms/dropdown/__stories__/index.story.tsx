@@ -105,7 +105,6 @@ export const all = () => {
     triggerOptions: { customLabel, labelLimit },
     options: dropdownOptions,
     onChange: onChangeHandler,
-    maxWidth: 170,
   };
 
   const key = `checkbox${withCheckbox} applyButton:${showApplyButton} search:${withSearch}`;

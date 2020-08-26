@@ -101,7 +101,7 @@ const customCode = `() => {
   }
 
   return (
-    <div className="w-25 mb-13">
+    <div className="w-25">
       <Dropdown
         fetchOptions={fetchOptions}
         onUpdate={onUpdate}

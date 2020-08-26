@@ -20,11 +20,10 @@ const options = [
 
 // CSF format story
 export const languages = () => (
-  <div className="mb-11">
+  <div className="mb-11 w-25">
     <Label withInput={true}>Select Language</Label>
     <Dropdown
       options={options}
-      width={170}
     />
   </div>
 );

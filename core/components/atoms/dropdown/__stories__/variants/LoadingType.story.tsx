@@ -61,26 +61,26 @@ const customCode = `() => {
   }
 
   return (
-    <div className='d-flex' style={{ minHeight: '270px' }}>
-      <div className='mr-8'>
+    <div className='d-flex'>
+      <div className='mr-8 w-25'>
         <Text weight="strong">Default</Text><br /><br />
-        <Dropdown options={storyOptions} optionType={'DEFAULT'} loading={true} width={150}/>
+        <Dropdown options={storyOptions} optionType={'DEFAULT'} loading={true}/>
       </div>
-      <div className='mr-8'>
+      <div className='mr-8 w-25'>
         <Text weight="strong">Icon</Text><br /><br />
-        <Dropdown options={storyOptions} optionType={'WITH_ICON'} loading={true} width={150}/>
+        <Dropdown options={storyOptions} optionType={'WITH_ICON'} loading={true}/>
       </div>
-      <div className='mr-8'>
+      <div className='mr-8 w-25'>
         <Text weight="strong">SubInfo</Text><br /><br />
-        <Dropdown options={storyOptions} optionType={'WITH_META'} loading={true} width={150}/>
+        <Dropdown options={storyOptions} optionType={'WITH_META'} loading={true}/>
       </div>
-      <div className='mr-8'>
+      <div className='mr-8 w-25'>
         <Text weight="strong">Icon with subInfo</Text><br /><br />
-        <Dropdown options={storyOptions} optionType={'ICON_WITH_META'} loading={true} width={150}/>
+        <Dropdown options={storyOptions} optionType={'ICON_WITH_META'} loading={true}/>
       </div>
-      <div className='mr-8'>
+      <div className='mr-8 w-25'>
         <Text weight="strong">{'Checkboxes'}</Text><br /><br />
-        <Dropdown options={storyOptions} withCheckbox={true} loading={true} width={150}/>
+        <Dropdown options={storyOptions} withCheckbox={true} loading={true}/>
       </div>
     </div>
   )

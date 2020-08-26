@@ -37,7 +37,7 @@ const customCode = `() => {
     }
   ];
   return (
-    <div className='d-flex' style={{ minHeight: '240px' }}>
+    <div className='d-flex'>
       <div className='mr-9' style={{ width: '128px' }}>
         <Text weight="strong">{'Options Trimmed'}</Text> <br /><br />
         <Dropdown options={storyWrapOptions} placeholder={'Select'} />

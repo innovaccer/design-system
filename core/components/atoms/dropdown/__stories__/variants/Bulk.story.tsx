@@ -77,7 +77,7 @@ const customCode = `() => {
     });
   };
   return (
-    <div className='d-flex' style={{ minHeight: '300px' }}>
+    <div className='d-flex'>
       <div className='mr-10 w-25'>
         <Text weight="strong">{'Options > 50'}</Text> <br /><br />
         <Dropdown withCheckbox={true} fetchOptions={fetchOptions}/>

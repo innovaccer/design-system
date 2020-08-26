@@ -65,20 +65,20 @@ const customCode =  `() => {
   const disabled = [true, false];
 
   return (
-    <div className='d-flex' style={{ minHeight: '270px' }}>
-      <div className='mr-8'>
+    <div className='d-flex'>
+      <div className='mr-8 w-25'>
         <Text weight="strong">Icon Disabled</Text> <br /><br />
         <Dropdown icon={'events'} disabled={true} options={storyOptions} />
       </div>
-      <div className='mr-8'>
+      <div className='mr-8 w-25'>
         <Text weight="strong">Icon Enabled</Text> <br /><br />
         <Dropdown icon={'events'} disabled={false} options={storyOptions} />
       </div>
-      <div className='mr-8'>
+      <div className='mr-8 w-25'>
         <Text weight="strong">Label Disabled</Text> <br /><br />
         <Dropdown inlineLabel={'label'} disabled={true} options={storyOptions} />
       </div>
-      <div className='mr-8'>
+      <div className='mr-8 w-25'>
         <Text weight="strong">Label Enabled</Text> <br /><br />
         <Dropdown inlineLabel={'label'} disabled={false} options={storyOptions} />
       </div>

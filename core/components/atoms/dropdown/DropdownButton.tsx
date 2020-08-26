@@ -35,10 +35,6 @@ export interface TriggerProps {
    * Determines if `Dropdown` has error
    */
   error?: boolean;
-  /**
-   * Adds max width to `Dropdown`
-   */
-  maxWidth?: number;
 }
 
 export interface DropdownButtonProps extends TriggerProps {
@@ -51,7 +47,6 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
     placeholder = 'Select',
     menu = false,
     children,
-    maxWidth,
     icon,
     disabled,
     inlineLabel,
@@ -68,12 +63,11 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
   const buttonClass = classNames({
     ['Button']: true,
     ['Button--basic']: true,
-    ['Button--square']: !children,
+    ['Button--square']: menu,
     ['DropdownTrigger']: true,
     ['DropdownButton']: true,
     [`DropdownButton--${triggerSize}`]: triggerSize,
     ['DropdownButton--icon']: icon,
-    ['DropdownButton--moreIcon']: menu,
     ['DropdownButton--placeholder']: !children && !menu,
     ['DropdownButton--label']: label,
     ['DropdownButton--error']: error,
@@ -90,7 +84,6 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
       value={children}
       className={buttonClass}
       disabled={disabled}
-      style={{ maxWidth: maxWidth ? maxWidth : '100%' }}
       tabIndex={0}
       {...rest}
     >

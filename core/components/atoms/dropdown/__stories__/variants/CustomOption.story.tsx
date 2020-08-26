@@ -94,7 +94,7 @@ const customCode = `() => {
   };
 
   return (
-    <div className='d-flex' style={{ minHeight: '300px' }}>
+    <div className='d-flex'>
       <div className='mr-10 w-25'>
         <Text weight="strong">Without Checkbox</Text> <br /><br />
         <Dropdown options={storyOptions} optionRenderer={customOptionRenderer} />

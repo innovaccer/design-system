@@ -26,6 +26,16 @@
     padding-left: var(--spacing-l);
 }
 
+.DropdownButton--tiny.Button--square {
+    padding-left: var(--spacing-m);
+    padding-right: var(--spacing-m);
+}
+
+.DropdownButton--regular.Button--square {
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+}
+
 .DropdownButton:focus {
     background-color: var(--secondary-lighter);
 }
@@ -60,18 +70,4 @@
 
 .DropdownButton--label {
     color: var(--inverse);
-}
-
-.DropdownButton--moreIcon {
-    padding-right: unset;
-    padding-left: unset;
-    justify-content: center;
-}
-
-.DropdownButton--moreIcon.DropdownButton--regular {
-    min-width: var(--spacing-3);
-}
-
-.DropdownButton--moreIcon.DropdownButton--tiny {
-    min-width: var(--spacing-xl);
 }
