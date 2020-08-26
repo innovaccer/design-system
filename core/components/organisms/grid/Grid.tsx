@@ -138,12 +138,10 @@ export type Schema = ColumnSchema[];
 export interface GridProps extends BaseProps {
   /**
    * Controls spacing of `Grid`
-   * @default "comfortable"
    */
   size: GridSize;
   /**
    * Grid type
-   * @default "data"
    */
   type: GridType;
   /**
@@ -152,7 +150,6 @@ export interface GridProps extends BaseProps {
   onRowClick?: onRowClickFunction;
   /**
    * Schema used to render `loading` state
-   * @default []
    */
   loaderSchema: Schema;
   /**
@@ -169,7 +166,6 @@ export interface GridProps extends BaseProps {
   totalRecords: number;
   /**
    * Loading state of Grid
-   * @default false
    */
   loading: boolean;
   /**
@@ -214,7 +210,6 @@ export interface GridProps extends BaseProps {
   page: number;
   /**
    * Number of rows on a page
-   * @default 15
    */
   pageSize: number;
   /**
@@ -286,7 +281,7 @@ export class Grid extends React.Component<GridProps> {
     schema: [],
     data: [],
     type: 'data',
-    size: 'comfortable',
+    size: 'standard',
     page: 1,
     pageSize: 0,
     loading: false,

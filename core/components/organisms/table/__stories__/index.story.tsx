@@ -5,9 +5,8 @@ import { boolean, select, number } from '@storybook/addon-knobs';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 import { fetchData } from '@/components/organisms/grid/__stories__/_common_/fetchData';
 import { action } from '@storybook/addon-actions';
-import { Card, Table, List } from '@/index';
+import { Card, Table } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
-import { NestedRowProps } from '../../grid/GridNestedRow';
 import { nestedRowRenderer } from '../../grid/__stories__/_common_/nestedRowRenderer';
 import { errorTemplate } from '../../grid/__stories__/_common_/errorTemplate';
 

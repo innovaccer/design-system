@@ -1,4 +1,5 @@
 /** Grid **/
+
 /* .Grid-container {
     display: flex;
     flex-direction: column;
@@ -21,8 +22,7 @@
     background: var(--white);
 }
 
-.Grid--resource .Grid-body .Grid-row:hover,
-.Grid--resource .Grid-body .Grid-row:hover .Grid-cellGroup {
+.Grid--resource .Grid-body .Grid-row:hover, .Grid--resource .Grid-body .Grid-row:hover .Grid-cellGroup {
     cursor: pointer;
     background: var(--secondary-lightest);
 }
@@ -60,7 +60,8 @@
 }
 
 .Grid--comfortable .Grid-cell--body {
-    min-height: 54px;
+    padding-top: var(--spacing-l);
+    padding-bottom: var(--spacing-l);
 }
 
 .Grid--standard .Grid-cell--head {
@@ -68,23 +69,26 @@
 }
 
 .Grid--standard .Grid-cell--body {
-    min-height: 40px;
+    padding-top: var(--spacing-l);
+    padding-bottom: var(--spacing-l);
 }
 
 .Grid--compressed .Grid-cell--head {
-    min-height: 32px;
+    min-height: 40px;
 }
 
 .Grid--compressed .Grid-cell--body {
-    min-height: 32px;
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
 }
 
 .Grid--tight .Grid-cell--head {
-    min-height: 24px;
+    min-height: var(--spacing-3);
 }
 
 .Grid--tight .Grid-cell--body {
-    min-height: 24px;
+    padding-top: var(--spacing-m);
+    padding-bottom: var(--spacing-m);
 }
 
 .Grid-head {
@@ -152,8 +156,7 @@
     cursor: pointer;
 }
 
-.Grid-row--selected,
-.Grid-row--selected .Grid-cellGroup {
+.Grid-row--selected, .Grid-row--selected .Grid-cellGroup {
     background: var(--warning-lightest) !important;
 }
 
@@ -162,6 +165,7 @@
     overflow: hidden;
     box-sizing: border-box;
     padding-left: var(--spacing-l);
+    padding-right: var(--spacing-l);
 }
 
 .Grid-cell--body {
@@ -244,6 +248,7 @@
     align-items: center;
     cursor: pointer;
 }
+
 .Grid-cellSortIcon:hover {
     background: var(--secondary);
 }
@@ -285,6 +290,7 @@
 }
 
 /** Grid Cell **/
+
 .GridCell {
     display: flex;
     align-items: center;
@@ -311,6 +317,7 @@
 }
 
 .GridCell--default {}
+
 .GridCell--metaList {
     display: flex;
     flex-direction: column;
@@ -373,7 +380,9 @@
 } */
 
 /** Header **/
+
 /** Table-header **/
+
 .Header {
     background: var(--white);
     padding: var(--spacing-l);
