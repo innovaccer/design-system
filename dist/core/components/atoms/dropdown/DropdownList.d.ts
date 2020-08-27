@@ -27,6 +27,8 @@ export interface DropdownListProps extends ListProps {
     totalOptions?: number;
     maxHeight?: number;
     width?: number;
+    maxWidth?: number;
+    minWidth?: number;
     loadersCount?: number;
 }
 interface OptionsProps extends DropdownListProps, BaseProps {

@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1598368792860 
+   * Generated on: 1598535829293 
    *      Package: @innovaccer/design-system
-   *      Version: v1.1.0-5
+   *      Version: v1.1.0-6
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -1072,19 +1072,18 @@
         _props$menu = props.menu,
         menu = _props$menu === void 0 ? false : _props$menu,
         children = props.children,
-        maxWidth = props.maxWidth,
         icon = props.icon,
         disabled = props.disabled,
         inlineLabel = props.inlineLabel,
         error = props.error,
-        rest = _objectWithoutProperties(props, ["triggerSize", "placeholder", "menu", "children", "maxWidth", "icon", "disabled", "inlineLabel", "error"]);
+        rest = _objectWithoutProperties(props, ["triggerSize", "placeholder", "menu", "children", "icon", "disabled", "inlineLabel", "error"]);
 
     var buttonDisabled = disabled ? 'disabled' : 'default';
     var trimmedPlaceholder = placeholder.trim();
     var value = children ? children : trimmedPlaceholder ? trimmedPlaceholder : 'Select';
     var iconName = !menu ? 'keyboard_arrow_down' : icon ? icon : 'more_horiz';
     var label = inlineLabel && inlineLabel.trim();
-    var buttonClass = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--basic', true), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, 'DropdownTrigger', true), _defineProperty(_classNames, 'DropdownButton', true), _defineProperty(_classNames, "DropdownButton--".concat(triggerSize), triggerSize), _defineProperty(_classNames, 'DropdownButton--icon', icon), _defineProperty(_classNames, 'DropdownButton--moreIcon', menu), _defineProperty(_classNames, 'DropdownButton--placeholder', !children && !menu), _defineProperty(_classNames, 'DropdownButton--label', label), _defineProperty(_classNames, 'DropdownButton--error', error), _classNames));
+    var buttonClass = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--basic', true), _defineProperty(_classNames, 'Button--square', menu), _defineProperty(_classNames, 'DropdownTrigger', true), _defineProperty(_classNames, 'DropdownButton', true), _defineProperty(_classNames, "DropdownButton--".concat(triggerSize), triggerSize), _defineProperty(_classNames, 'DropdownButton--icon', icon), _defineProperty(_classNames, 'DropdownButton--placeholder', !children && !menu), _defineProperty(_classNames, 'DropdownButton--label', label), _defineProperty(_classNames, 'DropdownButton--error', error), _classNames));
     var labelClass = classNames__default['default'](_defineProperty({}, 'DropdownButton-label', true));
     return /*#__PURE__*/React.createElement("button", _extends({
       ref: ref,
@@ -1092,9 +1091,6 @@
       value: children,
       className: buttonClass,
       disabled: disabled,
-      style: {
-        maxWidth: maxWidth ? maxWidth : '100%'
-      },
       tabIndex: 0
     }, rest), !menu && /*#__PURE__*/React.createElement("div", {
       className: "DropdownButton-wrapper"
@@ -1793,7 +1789,6 @@
         dropdownOpen = props.dropdownOpen,
         menu = props.menu,
         searchTerm = props.searchTerm,
-        maxWidth = props.maxWidth,
         showApplyButton = props.showApplyButton,
         withCheckbox = props.withCheckbox,
         withSearch = props.withSearch,
@@ -1820,15 +1815,18 @@
         cursor = _React$useState4[0],
         setCursor = _React$useState4[1];
 
-    var width = props.width ? props.width : menu || customTrigger ? 'fit-content' : '100%';
     React.useEffect(function () {
       if (dropdownOpen) {
-        var _dropdownElement$pare;
+        var _triggerRef$current;
 
-        var dropdownElement = triggerRef.current;
-        var popoverWidth = props.width ? props.width : "".concat(dropdownElement === null || dropdownElement === void 0 ? void 0 : (_dropdownElement$pare = dropdownElement.parentElement) === null || _dropdownElement$pare === void 0 ? void 0 : _dropdownElement$pare.clientWidth, "px");
+        var width = props.width,
+            minWidth = props.minWidth,
+            maxWidth = props.maxWidth;
+        var popperWidth = (_triggerRef$current = triggerRef.current) === null || _triggerRef$current === void 0 ? void 0 : _triggerRef$current.clientWidth;
+        var popperMinWidth = showApplyButton ? 176 : menu ? 128 : popperWidth;
         var popperWrapperStyle = {
-          width: menu || customTrigger ? popoverWidth : "".concat(dropdownElement === null || dropdownElement === void 0 ? void 0 : dropdownElement.clientWidth, "px"),
+          width: width ? width : popperWidth,
+          minWidth: minWidth ? minWidth : popperMinWidth,
           maxWidth: maxWidth ? maxWidth : '100%'
         };
         setPopoverStyle(popperWrapperStyle);
@@ -1854,7 +1852,6 @@
       icon: icon,
       disabled: disabled,
       inlineLabel: inlineLabel,
-      maxWidth: maxWidth,
       menu: menu,
       error: error,
       ref: dropdownTriggerRef
@@ -2170,14 +2167,11 @@
     return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
       className: dropdownClass,
       ref: triggerRef,
-      style: {
-        width: width
-      },
       onKeyDown: onkeydown
     }), /*#__PURE__*/React.createElement(Popover, {
       onToggle: onToggleDropdown,
       trigger: trigger,
-      triggerClass: "w-100",
+      triggerClass: !menu ? 'w-100' : '',
       open: dropdownOpen,
       customStyle: popoverStyle,
       position: alignmentMapping[align],
@@ -2196,6 +2190,12 @@
    *  - sync: options, loading
    * 2. Sync Dropdown:
    *  - Manually toggle loading state to update options (Options <= 50).
+   * 3. Callback Functions
+   *  - Controlled Dropdown:
+   *    * onUpdate: Called when user `clicks on option` / `clicks on Clear, Cancel or Apply button`.
+   *    * onChange: Called when selected options are updated.
+   *  - Uncontrolled Dropdown:
+   *    * onChange: Called when user `clicks on option` / `clicks on Clear, or Apply button`.
    */
 
   var Dropdown = /*#__PURE__*/function (_React$Component) {
@@ -8017,7 +8017,7 @@
     schema: [],
     data: [],
     type: 'data',
-    size: 'comfortable',
+    size: 'standard',
     page: 1,
     pageSize: 0,
     loading: false,
@@ -8233,7 +8233,7 @@
 
   var defaultProps$1 = {
     type: 'data',
-    size: 'comfortable',
+    size: 'standard',
     showHead: true,
     showMenu: true,
     multipleSorting: true,
@@ -8555,7 +8555,7 @@
           loaderSchema: loaderSchema,
           errorTemplate: errorTemplate,
           onRowClick: onRowClick
-        }))), withPagination && /*#__PURE__*/React.createElement("div", {
+        }))), withPagination && totalPages > 1 && /*#__PURE__*/React.createElement("div", {
           className: "Table-pagination"
         }, /*#__PURE__*/React.createElement(Pagination, {
           page: this.state.page,

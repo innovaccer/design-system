@@ -1492,10 +1492,8 @@ body {
     background: var(--inverse);
 }
 .Dropdown {
+    width: 100%;
     position: relative;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
 }
 
 .Dropdown-wrapper {
@@ -1676,6 +1674,16 @@ body {
     padding-left: var(--spacing-l);
 }
 
+.DropdownButton--tiny.Button--square {
+    padding-left: var(--spacing-m);
+    padding-right: var(--spacing-m);
+}
+
+.DropdownButton--regular.Button--square {
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+}
+
 .DropdownButton:focus {
     background-color: var(--secondary-lighter);
 }
@@ -1712,21 +1720,8 @@ body {
     color: var(--inverse);
 }
 
-.DropdownButton--moreIcon {
-    padding-right: unset;
-    padding-left: unset;
-    justify-content: center;
-}
-
-.DropdownButton--moreIcon.DropdownButton--regular {
-    min-width: var(--spacing-3);
-}
-
-.DropdownButton--moreIcon.DropdownButton--tiny {
-    min-width: var(--spacing-xl);
-}
-
 /** Grid **/
+
 /* .Grid-container {
     display: flex;
     flex-direction: column;
@@ -1749,8 +1744,7 @@ body {
     background: var(--white);
 }
 
-.Grid--resource .Grid-body .Grid-row:hover,
-.Grid--resource .Grid-body .Grid-row:hover .Grid-cellGroup {
+.Grid--resource .Grid-body .Grid-row:hover, .Grid--resource .Grid-body .Grid-row:hover .Grid-cellGroup {
     cursor: pointer;
     background: var(--secondary-lightest);
 }
@@ -1788,7 +1782,8 @@ body {
 }
 
 .Grid--comfortable .Grid-cell--body {
-    min-height: 54px;
+    padding-top: var(--spacing-l);
+    padding-bottom: var(--spacing-l);
 }
 
 .Grid--standard .Grid-cell--head {
@@ -1796,23 +1791,26 @@ body {
 }
 
 .Grid--standard .Grid-cell--body {
-    min-height: 40px;
+    padding-top: var(--spacing-l);
+    padding-bottom: var(--spacing-l);
 }
 
 .Grid--compressed .Grid-cell--head {
-    min-height: 32px;
+    min-height: 40px;
 }
 
 .Grid--compressed .Grid-cell--body {
-    min-height: 32px;
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
 }
 
 .Grid--tight .Grid-cell--head {
-    min-height: 24px;
+    min-height: var(--spacing-3);
 }
 
 .Grid--tight .Grid-cell--body {
-    min-height: 24px;
+    padding-top: var(--spacing-m);
+    padding-bottom: var(--spacing-m);
 }
 
 .Grid-head {
@@ -1885,8 +1883,7 @@ body {
     cursor: pointer;
 }
 
-.Grid-row--selected,
-.Grid-row--selected .Grid-cellGroup {
+.Grid-row--selected, .Grid-row--selected .Grid-cellGroup {
     background: var(--warning-lightest) !important;
 }
 
@@ -1895,6 +1892,7 @@ body {
     overflow: hidden;
     box-sizing: border-box;
     padding-left: var(--spacing-l);
+    padding-right: var(--spacing-l);
 }
 
 .Grid-cell--body {
@@ -1979,6 +1977,7 @@ body {
     align-items: center;
     cursor: pointer;
 }
+
 .Grid-cellSortIcon:hover {
     background: var(--secondary);
 }
@@ -2021,6 +2020,7 @@ body {
 }
 
 /** Grid Cell **/
+
 .GridCell {
     display: flex;
     align-items: center;
@@ -2047,6 +2047,7 @@ body {
 }
 
 .GridCell--default {}
+
 .GridCell--metaList {
     display: flex;
     flex-direction: column;
@@ -2109,7 +2110,9 @@ body {
 } */
 
 /** Header **/
+
 /** Table-header **/
+
 .Header {
     background: var(--white);
     padding: var(--spacing-l);

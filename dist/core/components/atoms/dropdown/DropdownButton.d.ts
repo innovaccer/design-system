@@ -8,7 +8,6 @@ export interface TriggerProps {
     disabled?: boolean;
     menu?: boolean;
     error?: boolean;
-    maxWidth?: number;
 }
 export interface DropdownButtonProps extends TriggerProps {
     children?: React.ReactText;
