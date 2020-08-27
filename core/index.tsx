@@ -48,6 +48,7 @@ export { Placeholder } from './components/molecules/placeholder';
 export { PlaceholderParagraph } from './components/atoms/placeholderParagraph';
 export { ProgressRing } from './components/atoms/progressRing';
 export { Popover } from './components/molecules/popover';
+export { Stepper } from './components/molecules/stepper';
 export { DateRangePicker } from './components/organisms/dateRangePicker';
 export { TabsWrapper, Tab } from './components/molecules/tabs';
 export { Grid } from './components/organisms/grid';
