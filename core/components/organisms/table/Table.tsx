@@ -651,7 +651,7 @@ export class Table extends React.Component<TableProps, TableState> {
             onRowClick={onRowClick}
           />
         </div>
-        {withPagination && (
+        {withPagination && (totalPages > 1) && (
           <div className="Table-pagination">
             <Pagination
               page={this.state.page}
