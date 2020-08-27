@@ -576,7 +576,7 @@ import './style.css';
                   loaderSchema={loaderSchema}
                 />
               </div>
-              {withPagination && (
+              {withPagination && (totalPages > 1) && (
                 <div className="Table-pagination">
                   <Pagination
                     page={this.state.page}
