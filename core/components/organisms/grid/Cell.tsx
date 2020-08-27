@@ -155,22 +155,25 @@ const HeaderCell = (props: HeaderCellProps) => {
               <Placeholder />
             </span>
           ) : (
-              <Dropdown
-                menu={true}
-                showApplyButton={true}
-                withCheckbox={true}
-                triggerOptions={{
-                  customTrigger: () => (
-                    <Button
-                      icon="filter_list"
-                      appearance="transparent"
-                    />
-                  )
-                }}
-                options={filterOptions}
-                align={'left'}
-                onChange={(selected: any) => _this.onFilterChange(name, selected)}
-              />
+              <div>
+                <Dropdown
+                  menu={true}
+                  showApplyButton={true}
+                  withCheckbox={true}
+                  triggerOptions={{
+                    customTrigger: () => (
+                      <Button
+                        icon="filter_list"
+                        appearance="transparent"
+                      />
+                    )
+                  }}
+                  options={filterOptions}
+                  align={'left'}
+                  onChange={(selected: any) => _this.onFilterChange(name, selected)}
+                  minWidth={176}
+                />
+              </div>
             )
           }
         </>
@@ -182,22 +185,25 @@ const HeaderCell = (props: HeaderCellProps) => {
               <Placeholder />
             </span>
           ) : (
-              <Dropdown
-                key={`${name}-${sorted}-${pinned}`}
-                menu={true}
-                optionType="WITH_ICON"
-                triggerOptions={{
-                  customTrigger: () => (
-                    <Button
-                      icon="more_vert_filled"
-                      appearance="transparent"
-                    />
-                  )
-                }}
-                options={options}
-                align={'left'}
-                onChange={(selected: any) => _this.onMenuChange(name, selected)}
-              />
+              <div>
+                <Dropdown
+                  key={`${name}-${sorted}-${pinned}`}
+                  menu={true}
+                  optionType="WITH_ICON"
+                  triggerOptions={{
+                    customTrigger: () => (
+                      <Button
+                        icon="more_vert_filled"
+                        appearance="transparent"
+                      />
+                    )
+                  }}
+                  options={options}
+                  align={'left'}
+                  onChange={(selected: any) => _this.onMenuChange(name, selected)}
+                  minWidth={176}
+                />
+              </div>
             )
           }
         </>
