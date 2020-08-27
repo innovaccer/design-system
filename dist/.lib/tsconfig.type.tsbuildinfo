@@ -902,7 +902,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/Cell.tsx": {
-        "version": "6b7a5fe7e807ed5f74d57d9778b82bb5d904484ca817249e5961835ca2ef031e",
+        "version": "e97969f6d9c5a9d0bb2e10aea67c8a121c6b8bb003f0b0d705ae9318b39c7f27",
         "signature": "1007b9e91a5db78ae9433020058f3a9afdf6d6026be0de01fd43582600fb1aec",
         "affectsGlobalScope": false
       },

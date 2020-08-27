@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1598535829293 
+   * Generated on: 1598548084120 
    *      Package: @innovaccer/design-system
-   *      Version: v1.1.0-6
+   *      Version: v1.1.0-7
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -7276,7 +7276,7 @@ var HeaderCell = function HeaderCell(props) {
     position: "top-start",
     triggerClass: "w-100 overflow-hidden",
     tooltip: schema.displayName
-  }, renderLabel()) : renderLabel())), filters && /*#__PURE__*/createElement(Fragment, null, loading && !init ? /*#__PURE__*/createElement("span", null, /*#__PURE__*/createElement(Placeholder, null)) : /*#__PURE__*/createElement(Dropdown, {
+  }, renderLabel()) : renderLabel())), filters && /*#__PURE__*/createElement(Fragment, null, loading && !init ? /*#__PURE__*/createElement("span", null, /*#__PURE__*/createElement(Placeholder, null)) : /*#__PURE__*/createElement("div", null, /*#__PURE__*/createElement(Dropdown, {
     menu: true,
     showApplyButton: true,
     withCheckbox: true,
@@ -7292,10 +7292,11 @@ var HeaderCell = function HeaderCell(props) {
     align: 'left',
     onChange: function onChange(selected) {
       return _this.onFilterChange(name, selected);
-    }
-  })), showMenu && /*#__PURE__*/createElement(Fragment, null, loading && !init ? /*#__PURE__*/createElement("span", {
+    },
+    minWidth: 176
+  }))), showMenu && /*#__PURE__*/createElement(Fragment, null, loading && !init ? /*#__PURE__*/createElement("span", {
     className: "ml-4"
-  }, /*#__PURE__*/createElement(Placeholder, null)) : /*#__PURE__*/createElement(Dropdown, {
+  }, /*#__PURE__*/createElement(Placeholder, null)) : /*#__PURE__*/createElement("div", null, /*#__PURE__*/createElement(Dropdown, {
     key: "".concat(name, "-").concat(sorted, "-").concat(pinned),
     menu: true,
     optionType: "WITH_ICON",
@@ -7311,8 +7312,9 @@ var HeaderCell = function HeaderCell(props) {
     align: 'left',
     onChange: function onChange(selected) {
       return _this.onMenuChange(name, selected);
-    }
-  })), schema.resizable && /*#__PURE__*/createElement("span", {
+    },
+    minWidth: 176
+  }))), schema.resizable && /*#__PURE__*/createElement("span", {
     className: "Grid-cellResize",
     onMouseDown: function onMouseDown() {
       resizeCol(_this, name, el.current);
