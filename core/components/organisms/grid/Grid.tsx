@@ -266,11 +266,17 @@ export interface GridProps extends BaseProps {
   separator?: boolean;
 }
 
-export class Grid extends React.Component<GridProps> {
+interface GridState {
+  init: boolean;
+}
+
+export class Grid extends React.Component<GridProps, GridState> {
   constructor(props: GridProps) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      init: false
+    };
 
     // this.updateRenderedData();
   }
@@ -296,11 +302,11 @@ export class Grid extends React.Component<GridProps> {
     }
 
     if (prevProps.loading !== this.props.loading) {
-      this.gridRef.current!.querySelector('.Grid')!.scrollTop = 0;
+      this.gridRef!.querySelector('.Grid')!.scrollTop = 0;
     }
   }
 
-  gridRef = React.createRef<HTMLDivElement>();
+  gridRef: HTMLDivElement | null = null;
 
   updateRenderedData = debounce(300, (options?: Partial<FetchDataOptions>) => {
     const {
@@ -448,7 +454,17 @@ export class Grid extends React.Component<GridProps> {
     const schema = getSchema(this);
 
     return (
-      <div className="Grid-wrapper" ref={this.gridRef}>
+      <div
+        className="Grid-wrapper"
+        ref={el => {
+          this.gridRef = el;
+          if (el && !this.state.init) {
+            this.setState({
+              init: true
+            });
+          }
+        }}
+      >
         <MainGrid
           {...baseProps}
           _this={this}

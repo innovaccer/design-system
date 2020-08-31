@@ -343,7 +343,6 @@ export class Table extends React.Component<TableProps, TableState> {
       searchTerm: undefined,
     };
 
-    // if (async) this.updateData({});
     this.updateData({});
   }
 
