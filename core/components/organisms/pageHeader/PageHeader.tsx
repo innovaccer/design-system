@@ -5,7 +5,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type navigationPositionType = 'center' | 'bottom';
 
-export interface PageHeaderProps extends BaseProps {
+export interface CompProps extends BaseProps {
   /**
    * Page title
    */
@@ -46,8 +46,24 @@ export interface PageHeaderProps extends BaseProps {
    * provides a border at bottom
    * @default true;
    */
-  seperator?: boolean;
+  separator?: boolean;
 }
+
+const defaultProps = {
+  title: '',
+  navigation: null,
+  actions: null,
+  tabs: null,
+  breadcrumbs: null,
+  badge: null,
+  status: null,
+  meta: null,
+  navigationPosition: 'center',
+  separator: true
+};
+type DefaultProps = Readonly<typeof defaultProps>;
+
+export type PageHeaderProps = CompProps & DefaultProps;
 
 export const PageHeader = (props: PageHeaderProps) => {
   const {
@@ -57,7 +73,7 @@ export const PageHeader = (props: PageHeaderProps) => {
     tabs,
     breadcrumbs,
     badge,
-    seperator,
+    separator,
     status,
     meta,
     navigationPosition,
@@ -67,7 +83,7 @@ export const PageHeader = (props: PageHeaderProps) => {
 
   const wrapperClasses = classNames({
     'PageHeader-wrapper': true,
-    ['PageHeader-wrapper--separator']: seperator,
+    ['PageHeader-wrapper--separator']: separator,
     ['PageHeader-wrapper--withTabs']: tabs
   }, className);
 
@@ -109,16 +125,6 @@ export const PageHeader = (props: PageHeaderProps) => {
   );
 };
 
-PageHeader.defaultProps = {
-  title: '',
-  navigation: null,
-  actions: null,
-  tabs: null,
-  breadcrumbs: null,
-  badge: null,
-  status: null,
-  meta: null,
-  navigationPosition: 'center'
-};
+PageHeader.defaultProps = defaultProps;
 
 export default PageHeader;
