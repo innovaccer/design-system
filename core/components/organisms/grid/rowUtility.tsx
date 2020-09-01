@@ -22,7 +22,9 @@ export function translateData(schema: ColumnSchema, data: RowData) {
       ...translatedData
     } : translatedData;
   }
-  if (typeof newData[schema.name] !== 'object') newData[schema.name] = { title: newData[schema.name] };
+  if (newData[schema.name] === null || typeof newData[schema.name] !== 'object') {
+    newData[schema.name] = { title: newData[schema.name] };
+  }
 
   return newData;
 }
