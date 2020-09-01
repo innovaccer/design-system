@@ -26,7 +26,8 @@ export const MainGrid = (props: MainGridProps) => {
     showHead,
     draggable,
     withCheckbox,
-    data
+    data,
+    page
   } = _this.props;
 
   const classes = classNames({
@@ -36,17 +37,23 @@ export const MainGrid = (props: MainGridProps) => {
   }, className);
 
   const minRowHeight: Record<GridSize, number> = {
-    comfortable: 54,
+    comfortable: 40,
     standard: 40,
     compressed: 32,
     tight: 24
   };
 
-  const [state, setState] = React.useState({
+  const initialState = {
     offset: 0,
     avgRowHeight: minRowHeight[size],
     inView: 20
-  });
+  };
+
+  const [state, setState] = React.useState(initialState);
+
+  React.useEffect(() => {
+    setState(initialState);
+  }, [page]);
 
   const {
     offset,
