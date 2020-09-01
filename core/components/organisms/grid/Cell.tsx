@@ -287,6 +287,10 @@ export const Cell = (props: CellProps) => {
   } = _this.props;
 
   const {
+    init
+  } = _this.state;
+
+  const {
     name,
     hidden,
     pinned,
@@ -332,7 +336,7 @@ export const Cell = (props: CellProps) => {
         if (from.type === to.type) _this.reorderCol(from.name, to.name);
       }}
       style={{
-        visibility: _this.gridRef.current === null ? 'hidden' : 'visible',
+        visibility: !init ? 'hidden' : 'visible',
         width: getWidth.call(_this, schema.width || width),
         minWidth: getWidth.call(_this, schema.minWidth || minWidth),
         maxWidth: getWidth.call(_this, schema.maxWidth || maxWidth)

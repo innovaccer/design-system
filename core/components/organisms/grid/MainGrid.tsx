@@ -63,8 +63,8 @@ export const MainGrid = (props: MainGridProps) => {
 
   const onScrollHandler = () => {
     if (!loading) {
-      if (_this.gridRef && _this.gridRef.current) {
-        const el = _this.gridRef.current!.querySelector('.Grid');
+      if (_this.gridRef && _this.gridRef) {
+        const el = _this.gridRef!.querySelector('.Grid');
         if (el) {
           const { scrollTop } = el;
           const items = el.querySelectorAll('.Grid-body .Grid-row');
