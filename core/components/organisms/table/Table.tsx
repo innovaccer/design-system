@@ -102,10 +102,12 @@ interface SyncProps {
   schema?: Schema;
   /**
    * Set for loading state of Table(in case of sync)
+   * @default false
    */
   loading?: boolean;
   /**
    * Set for error state of Table(in case of sync)
+   * @default false
    */
   error?: boolean;
   /**
@@ -146,14 +148,17 @@ interface SharedTableProps extends BaseProps {
    * Type of Table
    *
    * **Requires `onRowClick` for 'resource' Table**
+   * @default "data"
    */
   type?: GridProps['type'];
   /**
    * Table cell size
+   * @default "standard"
    */
   size?: GridProps['size'];
   /**
    * Allow Column reordering
+   * @default true
    */
   draggable?: GridProps['draggable'];
   /**
@@ -205,21 +210,28 @@ interface SharedTableProps extends BaseProps {
   withCheckbox?: GridProps['withCheckbox'];
   /**
    * Set for visibility of Menu on Table Head Cell
-   * @default true
    */
   showMenu?: GridProps['showMenu'];
   /**
    * Set for `Pagination` component in `Table`(**Not applied if pageSize >= totalRecords**)
+   * @default true
    */
   withPagination?: GridProps['withPagination'];
   /**
+   * Initial page passed to `Table`
+   * @default 1
+   */
+  page?: PaginationProps['page'];
+  /**
    * `Pagination` component type
+   * @default "jump"
    */
   paginationType?: PaginationProps['type'];
   /**
    * Number of rows to be rendered on a page
    *
    * **Also used to control number of rows to be rendered while loading: true**
+   * @default 15
    */
   pageSize?: GridProps['pageSize'];
   /**
@@ -228,6 +240,7 @@ interface SharedTableProps extends BaseProps {
   loaderSchema?: GridProps['loaderSchema'];
   /**
    * Set to allow multiple column sorting
+   * @default true
    */
   multipleSorting?: boolean;
   /**
@@ -235,6 +248,7 @@ interface SharedTableProps extends BaseProps {
    * <pre className="DocPage-codeBlock">
    * SortType: 'asc' | 'desc'
    * </pre>
+   * @default []
    */
   sortingList?: GridProps['sortingList'];
   /**
@@ -243,6 +257,7 @@ interface SharedTableProps extends BaseProps {
    * Filter: Array of selected values passed in dropdown
    * `any[]`
    * </pre>
+   * @default {}
    */
   filterList?: GridProps['filterList'];
   /**
@@ -287,16 +302,17 @@ const defaultProps = {
   multipleSorting: true,
   headerOptions: {},
   paginationType: 'jump',
+  page: 1,
   pageSize: 15,
   loading: false,
   draggable: true
 };
 type DefaultProps = Readonly<typeof defaultProps>;
 
-export type SyncTableProps = SyncProps & SharedTableProps;
-export type AsyncTableProps = AsyncProps & SharedTableProps;
+export type SyncTableProps = SyncProps & SharedTableProps & DefaultProps;
+export type AsyncTableProps = AsyncProps & SharedTableProps & DefaultProps;
 
-export type TableProps = (AsyncTableProps & SyncTableProps) & DefaultProps;
+export type TableProps = (AsyncTableProps & SyncTableProps);
 
 interface TableState {
   async: boolean;
@@ -333,7 +349,7 @@ export class Table extends React.Component<TableProps, TableState> {
       async,
       data: !async ? data : [],
       schema: !async ? schema : [],
-      page: 1,
+      page: props.page,
       sortingList: props.sortingList || [],
       filterList: props.filterList || {},
       totalRecords: !async ? data.length : 0,

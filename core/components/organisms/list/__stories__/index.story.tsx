@@ -72,6 +72,11 @@ export const all = () => {
     true
   );
 
+  const page = number(
+    'page',
+    1
+  );
+
   const paginationType = select(
     'paginationType',
     ['basic', 'jump'],
@@ -131,6 +136,7 @@ export const all = () => {
           separator={separator}
           withPagination={withPagination}
           paginationType={paginationType}
+          page={page}
           pageSize={pageSize}
           loaderSchema={applyLoaderSchema ? loaderSchema : undefined}
           onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}

@@ -89,6 +89,11 @@ export const all = () => {
     false
   );
 
+  const page = number(
+    'page',
+    1
+  );
+
   const paginationType = select(
     'paginationType',
     ['basic', 'jump'],
@@ -156,6 +161,7 @@ export const all = () => {
           nestedRows={nestedRows}
           nestedRowRenderer={nestedRowRenderer}
           withPagination={withPagination}
+          page={page}
           paginationType={paginationType}
           pageSize={pageSize}
           loaderSchema={applyLoaderSchema ? loaderSchema : undefined}
