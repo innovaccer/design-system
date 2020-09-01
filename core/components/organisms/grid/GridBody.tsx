@@ -36,12 +36,12 @@ export const GridBody = (props: GridBodyProps) => {
     errorTemplate,
   } = _this.props;
 
-  if (error) {
+  if (!loading && error) {
     return errorTemplate ? errorTemplate({}) : <Heading>No results found</Heading>;
   }
 
   const totalPages = Math.ceil(totalRecords / pageSize);
-  const dummyRows = page === totalPages ? totalRecords - (page - 1) * pageSize : pageSize;
+  const dummyRows = withPagination && page === totalPages ? totalRecords - (page - 1) * pageSize : pageSize;
   const rows = loading ? Array.from({ length: dummyRows }, () => ({})) : data.slice(offset, offset + buffer);
 
   return (
