@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AvatarGroup component 
+  list: [{"firstName":"John","lastName":"Doe"},{"firstName":"Steven","lastName":"Packton"},{"firstName":"Nancy","lastName":"Wheeler"},{"firstName":"Monica","lastName":"Geller"},{"firstName":"Arya","lastName":"Stark"},{"firstName":"Rachel","lastName":"Green"}]
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="AvatarGroup d-inline-flex"
+        data-test="DesignSystem-AvatarGroup"
+      >
+        <div
+          class="AvatarGroup-item"
+          data-test="DesignSystem-AvatarGroup--Avatar"
+          style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
+        >
+          <span
+            class="PopperWrapper-trigger"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--success"
+              data-test="DesignSystem-Avatar"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+        <div
+          class="AvatarGroup-item"
+          data-test="DesignSystem-AvatarGroup--Avatar"
+          style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
+        >
+          <span
+            class="PopperWrapper-trigger"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--primary"
+              data-test="DesignSystem-Avatar"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
+                data-test="DesignSystem-Text"
+              >
+                SP
+              </span>
+            </span>
+          </span>
+        </div>
+        <span
+          class="PopperWrapper-trigger"
+        >
+          <div
+            data-test="DesignSystem-AvatarGroup--TriggerAvatar"
+            style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
+              data-test="DesignSystem-Avatar"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--secondary"
+                data-test="DesignSystem-Text"
+              >
+                +4
+              </span>
+            </span>
+          </div>
+        </span>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="AvatarGroup d-inline-flex"
+      data-test="DesignSystem-AvatarGroup"
+    >
+      <div
+        class="AvatarGroup-item"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
+      >
+        <span
+          class="PopperWrapper-trigger"
+        >
+          <span
+            class="Avatar Avatar--regular Avatar--success"
+            data-test="DesignSystem-Avatar"
+          >
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
+          </span>
+        </span>
+      </div>
+      <div
+        class="AvatarGroup-item"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
+      >
+        <span
+          class="PopperWrapper-trigger"
+        >
+          <span
+            class="Avatar Avatar--regular Avatar--primary"
+            data-test="DesignSystem-Avatar"
+          >
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
+              data-test="DesignSystem-Text"
+            >
+              SP
+            </span>
+          </span>
+        </span>
+      </div>
+      <span
+        class="PopperWrapper-trigger"
+      >
+        <div
+          data-test="DesignSystem-AvatarGroup--TriggerAvatar"
+          style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
+        >
+          <span
+            class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
+            data-test="DesignSystem-Avatar"
+          >
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--secondary"
+              data-test="DesignSystem-Text"
+            >
+              +4
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

@@ -4,7 +4,7 @@ import { PopperWrapper } from '@/utils';
 import { BaseProps } from '@/utils/types';
 
 export type Position = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end';
-type ActionType = 'click' | 'hover';
+export type ActionType = 'click' | 'hover';
 
 export interface CustomStyle {
   height?: number | string;
