@@ -25,6 +25,7 @@ interface SharedTableProps extends BaseProps {
     withCheckbox?: GridProps['withCheckbox'];
     showMenu?: GridProps['showMenu'];
     withPagination?: GridProps['withPagination'];
+    page?: PaginationProps['page'];
     paginationType?: PaginationProps['type'];
     pageSize?: GridProps['pageSize'];
     loaderSchema?: GridProps['loaderSchema'];
@@ -46,14 +47,15 @@ declare const defaultProps: {
     multipleSorting: boolean;
     headerOptions: {};
     paginationType: string;
+    page: number;
     pageSize: number;
     loading: boolean;
     draggable: boolean;
 };
 declare type DefaultProps = Readonly<typeof defaultProps>;
-export declare type SyncTableProps = SyncProps & SharedTableProps;
-export declare type AsyncTableProps = AsyncProps & SharedTableProps;
-export declare type TableProps = (AsyncTableProps & SyncTableProps) & DefaultProps;
+export declare type SyncTableProps = SyncProps & SharedTableProps & DefaultProps;
+export declare type AsyncTableProps = AsyncProps & SharedTableProps & DefaultProps;
+export declare type TableProps = (AsyncTableProps & SyncTableProps);
 interface TableState {
     async: boolean;
     data: GridProps['data'];
@@ -77,6 +79,7 @@ export declare class Table extends React.Component<TableProps, TableState> {
         multipleSorting: boolean;
         headerOptions: {};
         paginationType: string;
+        page: number;
         pageSize: number;
         loading: boolean;
         draggable: boolean;

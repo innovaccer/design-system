@@ -33,6 +33,7 @@ interface SharedListProps extends BaseProps {
     onPageChange?: TableProps['onPageChange'];
     headCellTooltip?: TableProps['headCellTooltip'];
     separator?: TableProps['separator'];
+    page?: TableProps['page'];
 }
 declare type SyncListProps = SyncProps & SharedListProps;
 declare type AsyncListProps = AsyncProps & SharedListProps;

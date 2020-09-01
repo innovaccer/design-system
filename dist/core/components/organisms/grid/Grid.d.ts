@@ -99,7 +99,10 @@ export interface GridProps extends BaseProps {
     headCellTooltip?: boolean;
     separator?: boolean;
 }
-export declare class Grid extends React.Component<GridProps> {
+interface GridState {
+    init: boolean;
+}
+export declare class Grid extends React.Component<GridProps, GridState> {
     constructor(props: GridProps);
     static defaultProps: {
         showHead: boolean;
@@ -116,7 +119,7 @@ export declare class Grid extends React.Component<GridProps> {
         filterList: {};
     };
     componentDidUpdate(prevProps: GridProps): void;
-    gridRef: React.RefObject<HTMLDivElement>;
+    gridRef: HTMLDivElement | null;
     updateRenderedData: import("throttle-debounce").throttle<(options?: Partial<FetchDataOptions> | undefined) => void>;
     updateRenderedSchema: (newSchema: Schema) => void;
     updateColumnSchema: updateColumnSchemaFunction;

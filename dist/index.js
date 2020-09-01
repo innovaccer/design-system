@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1598548084491 
+   * Generated on: 1598973946364 
    *      Package: @innovaccer/design-system
-   *      Version: v1.1.0-7
+   *      Version: v1.1.0-8
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -6279,15 +6279,13 @@
       this.updateColumnSchema(name, schemaUpdate);
     }
     function getWidth(width) {
-      if (this.gridRef.current) {
-        if (typeof width === 'number') return width;
+      if (typeof width === 'number') return width;
 
-        if (width.charAt(width.length - 1) === '%') {
-          var withCheckbox = this.props.withCheckbox;
-          var checkboxWidth = withCheckbox ? document.querySelector('.Grid-cell--checkbox').clientWidth : 0;
-          var gridWidth = this.gridRef.current.clientWidth - checkboxWidth;
-          return gridWidth * (+width.slice(0, -1) / 100);
-        }
+      if (width.charAt(width.length - 1) === '%' && this.state.init) {
+        var withCheckbox = this.props.withCheckbox;
+        var checkboxWidth = withCheckbox ? this.gridRef.querySelector('.Grid-cell--checkbox').clientWidth : 0;
+        var gridWidth = this.gridRef.clientWidth - checkboxWidth;
+        return gridWidth * (+width.slice(0, -1) / 100);
       }
 
       return 0;
@@ -6295,27 +6293,25 @@
     function getCellSize(cellType) {
       var sizes = {
         AVATAR: {
-          width: 50,
-          minWidth: 50
+          width: 48
         },
         AVATAR_WITH_TEXT: {
-          width: 250
+          width: 256
         },
         AVATAR_WITH_META_LIST: {
-          width: 250
+          width: 256
         },
         ICON: {
-          width: 50,
-          minWidth: 50
+          width: 48
         },
         STATUS_HINT: {
-          width: 100
+          width: 96
         },
         WITH_META_LIST: {
-          width: 200
+          width: 176
         },
         DEFAULT: {
-          width: 200
+          width: 176
         }
       };
       return sizes[cellType];
@@ -6339,9 +6335,12 @@
         newData[schema.name] = translatedData !== null && _typeof(translatedData) === 'object' ? __assign(__assign({}, newData[schema.name]), translatedData) : translatedData;
       }
 
-      if (_typeof(newData[schema.name]) !== 'object') newData[schema.name] = {
-        title: newData[schema.name]
-      };
+      if (newData[schema.name] === null || _typeof(newData[schema.name]) !== 'object') {
+        newData[schema.name] = {
+          title: newData[schema.name]
+        };
+      }
+
       return newData;
     }
     var filterData = function filterData(schema, data, filterList) {
@@ -6904,6 +6903,7 @@
       var _a = _this.props,
           separator = _a.separator,
           nestedRows = _a.nestedRows;
+      var init = _this.state.init;
       var name = schema.name,
           hidden = schema.hidden,
           pinned = schema.pinned,
@@ -6913,7 +6913,7 @@
       var _c = getCellSize(cellType),
           width = _c.width,
           _d = _c.minWidth,
-          minWidth = _d === void 0 ? 100 : _d,
+          minWidth = _d === void 0 ? 48 : _d,
           _e = _c.maxWidth,
           maxWidth = _e === void 0 ? 800 : _e;
 
@@ -6948,7 +6948,7 @@
           if (from.type === to.type) _this.reorderCol(from.name, to.name);
         },
         style: {
-          visibility: _this.gridRef.current === null ? 'hidden' : 'visible',
+          visibility: !init ? 'hidden' : 'visible',
           width: getWidth.call(_this, schema.width || width),
           minWidth: getWidth.call(_this, schema.minWidth || minWidth),
           maxWidth: getWidth.call(_this, schema.maxWidth || maxWidth)
@@ -7174,12 +7174,12 @@
           totalRecords = _a.totalRecords,
           errorTemplate = _a.errorTemplate;
 
-      if (error) {
+      if (!loading && error) {
         return errorTemplate ? errorTemplate({}) : /*#__PURE__*/React.createElement(Heading, null, "No results found");
       }
 
       var totalPages = Math.ceil(totalRecords / pageSize);
-      var dummyRows = page === totalPages ? totalRecords - (page - 1) * pageSize : pageSize;
+      var dummyRows = withPagination && page === totalPages ? totalRecords - (page - 1) * pageSize : pageSize;
       var rows = loading ? Array.from({
         length: dummyRows
       }, function () {
@@ -7223,33 +7223,38 @@
           showHead = _b.showHead,
           draggable = _b.draggable,
           withCheckbox = _b.withCheckbox,
-          data = _b.data;
+          data = _b.data,
+          page = _b.page;
       var classes = classNames__default['default']((_a = {
         Grid: 'true'
       }, _a["Grid--" + type] = type, _a["Grid--" + size] = size, _a), className);
       var minRowHeight = {
-        comfortable: 54,
+        comfortable: 40,
         standard: 40,
         compressed: 32,
         tight: 24
       };
-
-      var _c = React.useState({
+      var initialState = {
         offset: 0,
         avgRowHeight: minRowHeight[size],
         inView: 20
-      }),
+      };
+
+      var _c = React.useState(initialState),
           state = _c[0],
           setState = _c[1];
 
+      React.useEffect(function () {
+        setState(initialState);
+      }, [page]);
       var offset = state.offset,
           avgRowHeight = state.avgRowHeight,
           inView = state.inView;
 
       var onScrollHandler = function onScrollHandler() {
         if (!loading) {
-          if (_this.gridRef && _this.gridRef.current) {
-            var el = _this.gridRef.current.querySelector('.Grid');
+          if (_this.gridRef && _this.gridRef) {
+            var el = _this.gridRef.querySelector('.Grid');
 
             if (el) {
               var scrollTop = el.scrollTop;
@@ -7334,7 +7339,7 @@
       function Grid(props) {
         var _this_1 = _super.call(this, props) || this;
 
-        _this_1.gridRef = /*#__PURE__*/React.createRef();
+        _this_1.gridRef = null;
         _this_1.updateRenderedData = debounce(300, function (options) {
           var _a = _this_1.props,
               page = _a.page,
@@ -7469,7 +7474,9 @@
           }
         };
 
-        _this_1.state = {};
+        _this_1.state = {
+          init: false
+        };
         return _this_1;
       }
 
@@ -7477,16 +7484,26 @@
         if (prevProps.withPagination !== this.props.withPagination || prevProps.page !== this.props.page) ;
 
         if (prevProps.loading !== this.props.loading) {
-          this.gridRef.current.querySelector('.Grid').scrollTop = 0;
+          this.gridRef.querySelector('.Grid').scrollTop = 0;
         }
       };
 
       Grid.prototype.render = function () {
+        var _this_1 = this;
+
         var baseProps = extractBaseProps(this.props);
         var schema = getSchema(this);
         return /*#__PURE__*/React.createElement("div", {
           className: "Grid-wrapper",
-          ref: this.gridRef
+          ref: function ref(el) {
+            _this_1.gridRef = el;
+
+            if (el && !_this_1.state.init) {
+              _this_1.setState({
+                init: true
+              });
+            }
+          }
         }, /*#__PURE__*/React.createElement(MainGrid, __assign({}, baseProps, {
           _this: this,
           schema: schema
@@ -7725,6 +7742,7 @@
       multipleSorting: true,
       headerOptions: {},
       paginationType: 'jump',
+      page: 1,
       pageSize: 15,
       loading: false,
       draggable: true
@@ -7903,7 +7921,7 @@
           async: async,
           data: !async ? data : [],
           schema: !async ? schema : [],
-          page: 1,
+          page: props.page,
           sortingList: props.sortingList || [],
           filterList: props.filterList || {},
           totalRecords: !async ? data.length : 0,
@@ -8235,6 +8253,18 @@
       autoCollapse: true
     };
 
+    var defaultProps$2 = {
+      title: '',
+      navigation: null,
+      actions: null,
+      tabs: null,
+      breadcrumbs: null,
+      badge: null,
+      status: null,
+      meta: null,
+      navigationPosition: 'center',
+      separator: true
+    };
     var PageHeader = function PageHeader(props) {
       var _a;
 
@@ -8244,7 +8274,7 @@
           tabs = props.tabs,
           breadcrumbs = props.breadcrumbs,
           badge = props.badge,
-          seperator = props.seperator,
+          separator = props.separator,
           status = props.status,
           meta = props.meta,
           navigationPosition = props.navigationPosition,
@@ -8252,7 +8282,7 @@
       var baseProps = extractBaseProps(props);
       var wrapperClasses = classNames__default['default']((_a = {
         'PageHeader-wrapper': true
-      }, _a['PageHeader-wrapper--separator'] = seperator, _a['PageHeader-wrapper--withTabs'] = tabs, _a), className);
+      }, _a['PageHeader-wrapper--separator'] = separator, _a['PageHeader-wrapper--withTabs'] = tabs, _a), className);
       var classes = classNames__default['default']({
         PageHeader: true
       });
@@ -8284,17 +8314,7 @@
         className: "PageHeader-navigationWrapper"
       }, navigation), tabs && /*#__PURE__*/React.createElement("div", null, tabs));
     };
-    PageHeader.defaultProps = {
-      title: '',
-      navigation: null,
-      actions: null,
-      tabs: null,
-      breadcrumbs: null,
-      badge: null,
-      status: null,
-      meta: null,
-      navigationPosition: 'center'
-    };
+    PageHeader.defaultProps = defaultProps$2;
 
     exports.Avatar = Avatar;
     exports.Backdrop = Backdrop;
