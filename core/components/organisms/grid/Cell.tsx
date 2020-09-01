@@ -295,7 +295,7 @@ export const Cell = (props: CellProps) => {
 
   const {
     width,
-    minWidth = 100,
+    minWidth = 48,
     maxWidth = 800
   } = getCellSize(cellType);
 

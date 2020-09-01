@@ -71,27 +71,25 @@ export function getWidth(this: Grid, width: React.ReactText) {
 export function getCellSize(cellType: CellType) {
   const sizes: Record<CellType, any> = {
     AVATAR: {
-      width: 50,
-      minWidth: 50
+      width: 48,
     },
     AVATAR_WITH_TEXT: {
-      width: 250,
+      width: 256,
     },
     AVATAR_WITH_META_LIST: {
-      width: 250,
+      width: 256,
     },
     ICON: {
-      width: 50,
-      minWidth: 50
+      width: 48,
     },
     STATUS_HINT: {
-      width: 100,
+      width: 96,
     },
     WITH_META_LIST: {
-      width: 200,
+      width: 176,
     },
     DEFAULT: {
-      width: 200,
+      width: 176,
     },
   };
 
