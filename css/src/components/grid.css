@@ -162,7 +162,6 @@
 
 .Grid-cell {
     position: relative;
-    overflow: hidden;
     box-sizing: border-box;
     padding-left: var(--spacing-l);
     padding-right: var(--spacing-l);
@@ -232,7 +231,6 @@
     flex-grow: 1;
     height: 100%;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 .Grid-cellResize {
@@ -296,7 +294,6 @@
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 .GridCell--align-left {
