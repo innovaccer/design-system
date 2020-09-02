@@ -1899,6 +1899,7 @@ body {
 }
 
 .Grid-cell--head {
+    overflow: hidden;
     padding-right: var(--spacing-m);
 }
 
@@ -1960,6 +1961,10 @@ body {
     flex-grow: 1;
     height: 100%;
     box-sizing: border-box;
+}
+
+.Grid-cell--head .Grid-cellContent {
+    overflow: hidden;
 }
 
 .Grid-cellResize {
@@ -2050,6 +2055,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    overflow: hidden;
 }
 
 .GridCell--avatar .Avatar {

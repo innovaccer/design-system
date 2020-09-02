@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1598973946364 
+   * Generated on: 1599027111259 
    *      Package: @innovaccer/design-system
-   *      Version: v1.1.0-8
+   *      Version: v1.1.0-9
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -6293,7 +6293,7 @@
     function getCellSize(cellType) {
       var sizes = {
         AVATAR: {
-          width: 48
+          minWidth: 48
         },
         AVATAR_WITH_TEXT: {
           width: 256
@@ -6302,7 +6302,7 @@
           width: 256
         },
         ICON: {
-          width: 48
+          minWdth: 48
         },
         STATUS_HINT: {
           width: 96
@@ -6913,7 +6913,7 @@
       var _c = getCellSize(cellType),
           width = _c.width,
           _d = _c.minWidth,
-          minWidth = _d === void 0 ? 48 : _d,
+          minWidth = _d === void 0 ? 96 : _d,
           _e = _c.maxWidth,
           maxWidth = _e === void 0 ? 800 : _e;
 
