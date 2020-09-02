@@ -977,8 +977,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/pageHeader/PageHeader.tsx": {
-        "version": "67d1822b64bbc0a1fcd316fd29c8cfa89670332d6081c5eb788af3f90589ed3a",
-        "signature": "3149724d585b16446ef7f0a11d36e7e96bdd5f66f7302d8612465135288eb515",
+        "version": "a81d996007a9514c90e48d61541d59688a16c78ccc7f083fed6d788b637ecbf3",
+        "signature": "1c9bbc6d8ca6101fe09c3ea820b6c50f77f1e10b5a92b06f4b90c33d2d0b505d",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/pageHeader/index.tsx": {

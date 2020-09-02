@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1599027110883 
+   * Generated on: 1599054866787 
    *      Package: @innovaccer/design-system
-   *      Version: v1.1.0-9
+   *      Version: v1.1.0-10
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -8805,18 +8805,6 @@
     autoCollapse: true
   };
 
-  var defaultProps$2 = {
-    title: '',
-    navigation: null,
-    actions: null,
-    tabs: null,
-    breadcrumbs: null,
-    badge: null,
-    status: null,
-    meta: null,
-    navigationPosition: 'center',
-    separator: true
-  };
   var PageHeader = function PageHeader(props) {
     var _classNames;
 
@@ -8866,7 +8854,18 @@
       className: "PageHeader-navigationWrapper"
     }, navigation), tabs && /*#__PURE__*/React.createElement("div", null, tabs));
   };
-  PageHeader.defaultProps = defaultProps$2;
+  PageHeader.defaultProps = {
+    title: '',
+    navigation: null,
+    actions: null,
+    tabs: null,
+    breadcrumbs: null,
+    badge: null,
+    status: null,
+    meta: null,
+    navigationPosition: 'center',
+    separator: true
+  };
 
   exports.Avatar = Avatar;
   exports.Backdrop = Backdrop;

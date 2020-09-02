@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { BaseProps } from "../../../utils/types";
 export declare type navigationPositionType = 'center' | 'bottom';
-export interface CompProps extends BaseProps {
+export interface PageHeaderProps extends BaseProps {
     title: string;
     navigation?: React.ReactNode;
     actions?: React.ReactNode;
@@ -13,20 +13,6 @@ export interface CompProps extends BaseProps {
     navigationPosition?: navigationPositionType;
     separator?: boolean;
 }
-declare const defaultProps: {
-    title: string;
-    navigation: null;
-    actions: null;
-    tabs: null;
-    breadcrumbs: null;
-    badge: null;
-    status: null;
-    meta: null;
-    navigationPosition: string;
-    separator: boolean;
-};
-declare type DefaultProps = Readonly<typeof defaultProps>;
-export declare type PageHeaderProps = CompProps & DefaultProps;
 export declare const PageHeader: {
     (props: PageHeaderProps): JSX.Element;
     defaultProps: {

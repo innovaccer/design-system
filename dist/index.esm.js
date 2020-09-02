@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1599027110883 
+   * Generated on: 1599054866787 
    *      Package: @innovaccer/design-system
-   *      Version: v1.1.0-9
+   *      Version: v1.1.0-10
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -8800,18 +8800,6 @@ Navigation.defaultProps = {
   autoCollapse: true
 };
 
-var defaultProps$2 = {
-  title: '',
-  navigation: null,
-  actions: null,
-  tabs: null,
-  breadcrumbs: null,
-  badge: null,
-  status: null,
-  meta: null,
-  navigationPosition: 'center',
-  separator: true
-};
 var PageHeader = function PageHeader(props) {
   var _classNames;
 
@@ -8861,6 +8849,17 @@ var PageHeader = function PageHeader(props) {
     className: "PageHeader-navigationWrapper"
   }, navigation), tabs && /*#__PURE__*/createElement("div", null, tabs));
 };
-PageHeader.defaultProps = defaultProps$2;
+PageHeader.defaultProps = {
+  title: '',
+  navigation: null,
+  actions: null,
+  tabs: null,
+  breadcrumbs: null,
+  badge: null,
+  status: null,
+  meta: null,
+  navigationPosition: 'center',
+  separator: true
+};
 
 export { Avatar, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, Checkbox, Chip, ChipGroup, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, Grid, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Slider, Spinner, StatusHint, Subheading, Switch, Tab, Table, TabsWrapper, Text, Textarea, Toast, Tooltip };
