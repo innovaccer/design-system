@@ -5,7 +5,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type navigationPositionType = 'center' | 'bottom';
 
-export interface CompProps extends BaseProps {
+export interface PageHeaderProps extends BaseProps {
   /**
    * Page title
    */
@@ -48,22 +48,6 @@ export interface CompProps extends BaseProps {
    */
   separator?: boolean;
 }
-
-const defaultProps = {
-  title: '',
-  navigation: null,
-  actions: null,
-  tabs: null,
-  breadcrumbs: null,
-  badge: null,
-  status: null,
-  meta: null,
-  navigationPosition: 'center',
-  separator: true
-};
-type DefaultProps = Readonly<typeof defaultProps>;
-
-export type PageHeaderProps = CompProps & DefaultProps;
 
 export const PageHeader = (props: PageHeaderProps) => {
   const {
@@ -125,6 +109,17 @@ export const PageHeader = (props: PageHeaderProps) => {
   );
 };
 
-PageHeader.defaultProps = defaultProps;
+PageHeader.defaultProps = {
+  title: '',
+  navigation: null,
+  actions: null,
+  tabs: null,
+  breadcrumbs: null,
+  badge: null,
+  status: null,
+  meta: null,
+  navigationPosition: 'center',
+  separator: true
+};
 
 export default PageHeader;
