@@ -7,7 +7,6 @@ import {
   onSelectFunction,
   onSelectAllFunction,
   GridProps,
-  FetchDataOptions,
   fetchDataFunction,
   RowData,
   updateSchemaFunction,
@@ -359,7 +358,7 @@ export class Table extends React.Component<TableProps, TableState> {
       searchTerm: undefined,
     };
 
-    this.updateData({});
+    this.updateData();
   }
 
   static defaultProps = defaultProps;
@@ -396,13 +395,25 @@ export class Table extends React.Component<TableProps, TableState> {
       || prevState.filterList !== this.state.filterList
       || prevState.sortingList !== this.state.sortingList
       || prevState.searchTerm !== this.state.searchTerm) {
-      if (!this.props.loading) this.updateData({});
+      if (!this.props.loading) this.updateData();
     }
   }
 
-  updateData = debounce(250, (_options: FetchDataOptions) => {
-    this.onSelect(-1, false);
+  updateData = () => {
+    const {
+      async
+    } = this.state;
 
+    if (async) {
+      this.setState({
+        loading: true
+      });
+    }
+
+    this.debounceUpdate();
+  }
+
+  debounceUpdate = debounce(250, () => {
     const {
       fetchData,
       pageSize,
@@ -419,8 +430,9 @@ export class Table extends React.Component<TableProps, TableState> {
       searchTerm
     } = this.state;
 
+    this.onSelect(-1, false);
+
     const opts = {
-      // ...options,
       page,
       pageSize,
       sortingList,
@@ -434,9 +446,6 @@ export class Table extends React.Component<TableProps, TableState> {
     }
 
     if (async) {
-      this.setState({
-        loading: true
-      });
       if (fetchData) {
         fetchData(opts)
           .then((res: any) => {

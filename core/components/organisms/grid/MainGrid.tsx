@@ -53,6 +53,8 @@ export const MainGrid = (props: MainGridProps) => {
 
   React.useEffect(() => {
     setState(initialState);
+    const el = _this.gridRef!.querySelector('.Grid');
+    if (el) el.scrollTop = 0;
   }, [page]);
 
   const {

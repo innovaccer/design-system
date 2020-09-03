@@ -43,6 +43,8 @@ export const GridBody = (props: GridBodyProps) => {
   const totalPages = Math.ceil(totalRecords / pageSize);
   const dummyRows = withPagination && page === totalPages ? totalRecords - (page - 1) * pageSize : pageSize;
   const rows = loading ? Array.from({ length: dummyRows }, () => ({})) : data.slice(offset, offset + buffer);
+  const topPadding = Math.max(0, offset * avgRowHeight);
+  const bottomPadding = Math.max(0, ((withPagination ? dummyRows : data.length) - inView - offset - 1) * avgRowHeight);
 
   return (
     <div className="Grid-body">
@@ -50,7 +52,7 @@ export const GridBody = (props: GridBodyProps) => {
         <div
           className="GridBody-padding"
           style={{
-            height: `${offset * avgRowHeight}px`
+            height: topPadding
           }}
         />
       )}
@@ -70,7 +72,7 @@ export const GridBody = (props: GridBodyProps) => {
         <div
           className="GridBody-padding"
           style={{
-            height: `${((withPagination ? dummyRows : data.length) - inView - offset - 1) * avgRowHeight}px`
+            height: bottomPadding
           }}
         />
       )}
