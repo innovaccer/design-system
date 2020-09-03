@@ -1,6 +1,6 @@
 
 -------------------
- **v1.1.0-10**  (2020-09-02) 
+ **v1.1.0**  (2020-09-03) 
 
-* 84e8189 v1.1.0-10
-* 8a5704d fix(PageHeader): fixes conflicting types due to defaultProps
+* ec5c977 v1.1.0
+* 714f6f5 fix(Grid): fixes extra white-space on fast scroll

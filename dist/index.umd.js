@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1599054866787 
+   * Generated on: 1599116498062 
    *      Package: @innovaccer/design-system
-   *      Version: v1.1.0-10
+   *      Version: v1.1.0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -7690,12 +7690,14 @@
     }, function () {
       return {};
     }) : data.slice(offset, offset + buffer);
+    var topPadding = Math.max(0, offset * avgRowHeight);
+    var bottomPadding = Math.max(0, ((withPagination ? dummyRows : data.length) - inView - offset - 1) * avgRowHeight);
     return /*#__PURE__*/React.createElement("div", {
       className: "Grid-body"
     }, !loading && /*#__PURE__*/React.createElement("div", {
       className: "GridBody-padding",
       style: {
-        height: "".concat(offset * avgRowHeight, "px")
+        height: topPadding
       }
     }), rows.map(function (d, rI) {
       return /*#__PURE__*/React.createElement(GridRow, {
@@ -7709,7 +7711,7 @@
     }), !loading && /*#__PURE__*/React.createElement("div", {
       className: "GridBody-padding",
       style: {
-        height: "".concat(((withPagination ? dummyRows : data.length) - inView - offset - 1) * avgRowHeight, "px")
+        height: bottomPadding
       }
     }));
   };
@@ -7752,6 +7754,10 @@
 
     React.useEffect(function () {
       setState(initialState);
+
+      var el = _this.gridRef.querySelector('.Grid');
+
+      if (el) el.scrollTop = 0;
     }, [page]);
     var offset = state.offset,
         avgRowHeight = state.avgRowHeight,
@@ -8284,9 +8290,19 @@
 
       _this = _super.call(this, props);
 
-      _defineProperty(_assertThisInitialized(_this), "updateData", debounce(250, function (_options) {
-        _this.onSelect(-1, false);
+      _defineProperty(_assertThisInitialized(_this), "updateData", function () {
+        var async = _this.state.async;
 
+        if (async) {
+          _this.setState({
+            loading: true
+          });
+        }
+
+        _this.debounceUpdate();
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "debounceUpdate", debounce(250, function () {
         var _this$props = _this.props,
             fetchData = _this$props.fetchData,
             pageSize = _this$props.pageSize,
@@ -8299,8 +8315,10 @@
             sortingList = _this$state.sortingList,
             filterList = _this$state.filterList,
             searchTerm = _this$state.searchTerm;
+
+        _this.onSelect(-1, false);
+
         var opts = {
-          // ...options,
           page: page,
           pageSize: pageSize,
           sortingList: sortingList,
@@ -8314,10 +8332,6 @@
         }
 
         if (async) {
-          _this.setState({
-            loading: true
-          });
-
           if (fetchData) {
             fetchData(opts).then(function (res) {
               var data = res.data;
@@ -8465,7 +8479,7 @@
         searchTerm: undefined
       };
 
-      _this.updateData({});
+      _this.updateData();
 
       return _this;
     }
@@ -8502,7 +8516,7 @@
         }
 
         if (prevState.page !== this.state.page || prevState.filterList !== this.state.filterList || prevState.sortingList !== this.state.sortingList || prevState.searchTerm !== this.state.searchTerm) {
-          if (!this.props.loading) this.updateData({});
+          if (!this.props.loading) this.updateData();
         }
       }
     }, {

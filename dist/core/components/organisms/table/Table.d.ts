@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ExternalHeaderProps, updateSearchTermFunction, HeaderProps } from "../grid/Header";
-import { Data, Schema, onSelectFunction, onSelectAllFunction, GridProps, FetchDataOptions, fetchDataFunction, RowData, updateSchemaFunction, updateSortingListFunction, updateFilterListFunction } from "../grid";
+import { Data, Schema, onSelectFunction, onSelectAllFunction, GridProps, fetchDataFunction, RowData, updateSchemaFunction, updateSortingListFunction, updateFilterListFunction } from "../grid";
 import { BaseProps } from "../../../utils/types";
 import { PaginationProps } from "../../molecules/pagination";
 interface SyncProps {
@@ -85,7 +85,8 @@ export declare class Table extends React.Component<TableProps, TableState> {
         draggable: boolean;
     };
     componentDidUpdate(prevProps: TableProps, prevState: TableState): void;
-    updateData: import("throttle-debounce").throttle<(_options: FetchDataOptions) => void>;
+    updateData: () => void;
+    debounceUpdate: import("throttle-debounce").throttle<() => void>;
     onSelect: onSelectFunction;
     onSelectAll: onSelectAllFunction;
     onPageChange: PaginationProps['onPageChange'];
