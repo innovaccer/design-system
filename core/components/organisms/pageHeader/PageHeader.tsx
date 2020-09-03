@@ -15,6 +15,10 @@ export interface PageHeaderProps extends BaseProps {
    */
   navigation?: React.ReactNode;
   /**
+   * `Stepper` component
+   */
+  stepper?: React.ReactNode;
+  /**
    * Actions composed of `Button` and meta data
    */
   actions?: React.ReactNode;
@@ -53,6 +57,7 @@ export const PageHeader = (props: PageHeaderProps) => {
   const {
     title,
     navigation,
+    stepper,
     actions,
     tabs,
     breadcrumbs,
@@ -75,6 +80,10 @@ export const PageHeader = (props: PageHeaderProps) => {
     PageHeader: true
   });
 
+  const renderCenter = () => {
+    return navigation ? navigation : stepper;
+  };
+
   return (
     <div {...baseProps} className={wrapperClasses}>
       {breadcrumbs && breadcrumbs}
@@ -88,7 +97,7 @@ export const PageHeader = (props: PageHeaderProps) => {
           </Column>
           <Column size="4" sizeXL="4" sizeM="4">
             <div className="PageHeader-navigationWrapper">
-              {(!breadcrumbs || navigationPosition === 'center') && navigation}
+              {(!breadcrumbs || navigationPosition === 'center') && renderCenter()}
             </div>
           </Column>
           <Column size="4" sizeXL="4" sizeM="4">
@@ -103,7 +112,7 @@ export const PageHeader = (props: PageHeaderProps) => {
         </div>
       )}
       {breadcrumbs && navigationPosition === 'bottom' && (
-        <div className="PageHeader-navigationWrapper">{navigation}</div>)}
+        <div className="PageHeader-navigationWrapper">{renderCenter()}</div>)}
       {tabs && <div>{tabs}</div>}
     </div>
   );

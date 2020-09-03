@@ -8,19 +8,19 @@ export interface StepProp {
   value?: React.ReactText;
 }
 
-export interface CompProps extends BaseProps {
+export interface StepperProps extends BaseProps {
   /**
    * Set the active step (zero based index).
    *
    * Set to -1 to disable all the steps.
    */
-  active?: number;
+  active: number;
   /**
    * Set the completed steps (zero based index).
    *
    * **Number of completed steps <= completed index**
    */
-  completed?: number;
+  completed: number;
   /**
    * <pre className="docPage-codeBlock">
    * StepProp {
@@ -46,15 +46,6 @@ export interface CompProps extends BaseProps {
     value?: React.ReactText
   ) => void;
 }
-
-const defaultProps = {
-  completed: -1,
-  active: 0,
-};
-
-type DefaultProps = Readonly<typeof defaultProps>;
-
-export type StepperProps = CompProps & DefaultProps;
 
 export const Stepper = (props: StepperProps) => {
   const {
@@ -109,6 +100,10 @@ export const Stepper = (props: StepperProps) => {
   );
 };
 
-Stepper.defaultProps = defaultProps;
+Stepper.defaultProps = {
+  completed: -1,
+  active: 0,
+  steps: []
+};
 
 export default Stepper;
