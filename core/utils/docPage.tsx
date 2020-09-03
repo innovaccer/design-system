@@ -142,30 +142,28 @@ ${jsx.split('\n').map(l => `    ${l}`).join('\n')}
     return <></>;
   };
 
-  const TabsWrap = withLive(({ live }) => {
+  const TabsWrap = withLive(({ live, currentTab }) => {
     const {
       error,
       element: Element,
     } = live;
 
     React.useEffect(() => {
-      if (!error) {
-        const editor = document.querySelector('.npm__react-simple-code-editor__textarea');
-
-        if (editor) {
-          const jsxValue = editor.value;
-          setJsxCode(jsxValue);
-
-          try {
-            const htmlValue = beautifyHTML(renderToStaticMarkup(<Element />), beautifyHTMLOptions);
-            setHtmlCode(htmlValue);
-          } catch (e) { }
-        }
+      if (!error && currentTab === 1) {
+        try {
+          const htmlValue = beautifyHTML(renderToStaticMarkup(<Element />), beautifyHTMLOptions);
+          setHtmlCode(htmlValue);
+        } catch (e) { }
       }
-    }, [live]);
+    }, [currentTab]);
 
     return null;
   });
+
+  const onChangeCode = updatedCode => {
+    setJsxCode(updatedCode);
+  };
+
   if (!noStory) {
     return (
       <Card
@@ -179,7 +177,8 @@ ${jsx.split('\n').map(l => `    ${l}`).join('\n')}
           >
             <LivePreview />
           </Preview>
-          <TabsWrap />
+
+          <TabsWrap activeTab={activeTab} />
           <div className="DocPage-editorTabs">
             <TabsWrapper
               activeTab={activeTab}
@@ -193,7 +192,7 @@ ${jsx.split('\n').map(l => `    ${l}`).join('\n')}
                       if (editor) copyCode(editor.value);
                     }}
                   />
-                  <LiveEditor theme={vsDark} />
+                  <LiveEditor theme={vsDark} onChange={onChangeCode} />
                   <LiveError />
                 </div>
               </Tab>
