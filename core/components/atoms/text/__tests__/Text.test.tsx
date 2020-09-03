@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Text, { TextProps as Props, Appearance } from '../Text';
+import Text, { TextProps as Props, Appearance, Size } from '../Text';
 import { render } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { _isEqual } from '../../dropdown/utility';
 
-const appearances: Appearance[] = ['default', 'white', 'destructive', 'disabled', 'subtle'];
+const sizes: Size[] = ['small', 'regular', 'large'];
+const appearances: Appearance[] = ['default', 'white', 'destructive', 'disabled', 'subtle', 'success', 'link'];
 const weight = ['strong', 'medium'];
 const BooleanValue = [true, false];
 const StringValue = 'Sample String';
@@ -13,7 +14,29 @@ const StringValue = 'Sample String';
 describe('Text component', () => {
   const mapper = {
     children: valueHelper(StringValue, { required: true }),
-    appearances: valueHelper(appearances, { required: true, iterate: true }),
+    size: valueHelper(sizes, { required: true, iterate: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+
+    it(testMessageHelper(attr), () => {
+      const tree = shallow(
+        <Text
+          {...attr}
+        />
+      );
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('Text component', () => {
+  const mapper = {
+    children: valueHelper(StringValue, { required: true }),
+    appearance: valueHelper(appearances, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
