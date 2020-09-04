@@ -296,16 +296,6 @@ export class Grid extends React.Component<GridProps, GridState> {
     filterList: {},
   };
 
-  componentDidUpdate(prevProps: GridProps) {
-    if ((prevProps.withPagination !== this.props.withPagination) || (prevProps.page !== this.props.page)) {
-      // this.updateRenderedData();
-    }
-
-    if (prevProps.loading !== this.props.loading) {
-      this.gridRef!.querySelector('.Grid')!.scrollTop = 0;
-    }
-  }
-
   gridRef: HTMLDivElement | null = null;
 
   updateRenderedData = debounce(300, (options?: Partial<FetchDataOptions>) => {
