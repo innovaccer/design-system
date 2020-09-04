@@ -21,13 +21,13 @@ export const MainGrid = (props: MainGridProps) => {
 
   const {
     loading,
+    error,
     type,
     size,
     showHead,
     draggable,
     withCheckbox,
-    data,
-    page
+    data
   } = _this.props;
 
   const classes = classNames({
@@ -55,7 +55,7 @@ export const MainGrid = (props: MainGridProps) => {
     setState(initialState);
     const el = _this.gridRef!.querySelector('.Grid');
     if (el) el.scrollTop = 0;
-  }, [page]);
+  }, [loading, error]);
 
   const {
     offset,
