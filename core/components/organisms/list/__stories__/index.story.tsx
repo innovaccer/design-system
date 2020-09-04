@@ -7,6 +7,7 @@ import { boolean, select, number } from '@storybook/addon-knobs';
 import loaderSchema from '../../grid/__stories__/_common_/loaderSchema';
 import { fetchData } from '../../grid/__stories__/_common_/fetchData';
 import { action } from '@storybook/addon-actions';
+import { SyncList, AsyncList } from './_common_/types';
 
 export const all = () => {
   const async = boolean(
@@ -132,7 +133,6 @@ export const all = () => {
           withCheckbox={withCheckbox}
           type={type}
           size={size}
-          headCellTooltip={headCellTooltip}
           separator={separator}
           withPagination={withPagination}
           paginationType={paginationType}
@@ -157,5 +157,16 @@ export const all = () => {
 
 export default {
   title: 'Organisms|List',
-  component: List
+  component: List,
+  parameters: {
+    docs: {
+      docPage: {
+        noStory: true,
+        props: {
+          components: { AsyncList, SyncList },
+          exclude: ['showHead'],
+        },
+      }
+    }
+  }
 };

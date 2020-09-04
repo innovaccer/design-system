@@ -64,7 +64,7 @@ export type ColumnSchema = {
   width?: React.ReactText;
   /**
    * min-width of the column(px/%)
-   * @default 100
+   * @default 96
    */
   minWidth?: React.ReactText;
   /**
@@ -277,8 +277,6 @@ export class Grid extends React.Component<GridProps, GridState> {
     this.state = {
       init: false
     };
-
-    // this.updateRenderedData();
   }
 
   static defaultProps = {
@@ -289,7 +287,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     type: 'data',
     size: 'standard',
     page: 1,
-    pageSize: 0,
+    pageSize: 15,
     loading: false,
     error: false,
     sortingList: [],
