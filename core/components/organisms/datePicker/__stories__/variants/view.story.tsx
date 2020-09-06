@@ -13,7 +13,7 @@ export const view = () => {
           key={index}
           className="mr-9"
           style={{
-            maxWidth: '330px',
+            maxWidth: '310px',
           }}
         >
           <Card

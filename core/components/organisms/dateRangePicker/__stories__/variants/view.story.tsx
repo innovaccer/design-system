@@ -9,7 +9,7 @@ export const view = () => {
   return (
     <div className="d-flex">
       {values.map((v, index) => (
-        <div className="mr-9" style={{ maxWidth: '330px' }} key={index}>
+        <div className="mr-9" style={{ maxWidth: '310px' }} key={index}>
           <Card
             shadow="light"
           >

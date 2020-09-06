@@ -6,7 +6,7 @@ import Card from '@/components/atoms/card';
 export const rangeLimit = () => {
 
   return (
-    <div className="d-flex mr-9" style={{ maxWidth: '330px' }}>
+    <div className="d-flex mr-9" style={{ maxWidth: '310px' }}>
       <Card
         shadow="light"
       >
