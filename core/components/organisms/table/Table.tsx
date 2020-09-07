@@ -3,7 +3,6 @@ import { Header, ExternalHeaderProps, updateSearchTermFunction, HeaderProps } fr
 import { Grid, Pagination } from '@/index';
 import {
   Data,
-  Schema,
   onSelectFunction,
   onSelectAllFunction,
   GridProps,
@@ -30,7 +29,7 @@ interface SyncProps {
    *    `_selected`  Denotes row selection
    * </pre>
    */
-  data?: Data;
+  data: GridProps['data'];
   /* tslint:disable */
   /**
    * <pre className="DocPage-codeBlock">
@@ -98,17 +97,17 @@ interface SyncProps {
    * | align | Align cell content<br>**Align applicable only for following cellTypes:<br>DEFAULT, AVATAR, ICON, STATUS_HINT** | "left" |
    */
   /* tslint:enable */
-  schema?: Schema;
+  schema: GridProps['schema'];
   /**
    * Set for loading state of Table(in case of sync)
    * @default false
    */
-  loading?: boolean;
+  loading: GridProps['loading'];
   /**
    * Set for error state of Table(in case of sync)
    * @default false
    */
-  error?: boolean;
+  error: GridProps['error'];
   /**
    * Callback to be called on searchTerm change(in case of sync)
    */
@@ -142,24 +141,24 @@ interface SharedTableProps extends BaseProps {
   /**
    * Controls Table Head display
    */
-  showHead?: GridProps['showHead'];
+  showHead: GridProps['showHead'];
   /**
    * Type of Table
    *
    * **Requires `onRowClick` for 'resource' Table**
    * @default "data"
    */
-  type?: GridProps['type'];
+  type: GridProps['type'];
   /**
    * Table cell size
    * @default "standard"
    */
-  size?: GridProps['size'];
+  size: GridProps['size'];
   /**
    * Allow Column reordering
    * @default true
    */
-  draggable?: GridProps['draggable'];
+  draggable: GridProps['draggable'];
   /**
    * Allow nested rows
    */
@@ -171,7 +170,7 @@ interface SharedTableProps extends BaseProps {
    *    rowIndex: number;
    *    data: RowData;
    *    schema: GridProps['schema'];
-   *    loading?: boolean;
+   *    loading: boolean;
    * }
    * </pre>
    */
@@ -215,33 +214,33 @@ interface SharedTableProps extends BaseProps {
    * Set for `Pagination` component in `Table`(**Not applied if pageSize >= totalRecords**)
    * @default true
    */
-  withPagination?: GridProps['withPagination'];
+  withPagination: GridProps['withPagination'];
   /**
    * Initial page passed to `Table`
    * @default 1
    */
-  page?: PaginationProps['page'];
+  page: GridProps['page'];
   /**
    * `Pagination` component type
    * @default "jump"
    */
-  paginationType?: PaginationProps['type'];
+  paginationType: PaginationProps['type'];
   /**
    * Number of rows to be rendered on a page
    *
    * **Also used to control number of rows to be rendered while loading: true**
    * @default 15
    */
-  pageSize?: GridProps['pageSize'];
+  pageSize: GridProps['pageSize'];
   /**
    * Schema to be used for loading state **only when `schema: undefined`**
    */
-  loaderSchema?: GridProps['loaderSchema'];
+  loaderSchema: GridProps['loaderSchema'];
   /**
    * Set to allow multiple column sorting
    * @default true
    */
-  multipleSorting?: boolean;
+  multipleSorting: boolean;
   /**
    * Initial sortingList passed to `Table`
    * <pre className="DocPage-codeBlock">
@@ -249,7 +248,7 @@ interface SharedTableProps extends BaseProps {
    * </pre>
    * @default []
    */
-  sortingList?: GridProps['sortingList'];
+  sortingList: GridProps['sortingList'];
   /**
    * Initial filterList passed to `Table`
    * <pre className="DocPage-codeBlock">
@@ -258,7 +257,7 @@ interface SharedTableProps extends BaseProps {
    * </pre>
    * @default {}
    */
-  filterList?: GridProps['filterList'];
+  filterList: GridProps['filterList'];
   /**
    * Template to be rendered when **error: true**
    */
@@ -293,24 +292,8 @@ interface SharedTableProps extends BaseProps {
   separator?: GridProps['headCellTooltip'];
 }
 
-const defaultProps = {
-  type: 'data',
-  size: 'standard',
-  showHead: true,
-  showMenu: true,
-  multipleSorting: true,
-  headerOptions: {},
-  paginationType: 'jump',
-  page: 1,
-  pageSize: 15,
-  loading: false,
-  draggable: true
-};
-type DefaultProps = Readonly<typeof defaultProps>;
-
-export type SyncTableProps = SyncProps & SharedTableProps & DefaultProps;
-export type AsyncTableProps = AsyncProps & SharedTableProps & DefaultProps;
-
+export type SyncTableProps = SyncProps & SharedTableProps;
+export type AsyncTableProps = AsyncProps & SharedTableProps;
 export type TableProps = (AsyncTableProps & SyncTableProps);
 
 interface TableState {
@@ -327,6 +310,27 @@ interface TableState {
   error: GridProps['error'];
 }
 
+export const defaultProps = {
+  type: 'data',
+  size: 'standard',
+  showHead: true,
+  showMenu: true,
+  multipleSorting: true,
+  headerOptions: {},
+  withPagination: true,
+  paginationType: 'jump',
+  page: 1,
+  pageSize: 15,
+  draggable: true,
+  data: [],
+  schema: [],
+  loading: false,
+  error: false,
+  loaderSchema: [],
+  sortingList: [],
+  filterList: {}
+};
+
 /**
  * ###Note:
  * 1. Table props types:
@@ -337,6 +341,8 @@ interface TableState {
  */
 
 export class Table extends React.Component<TableProps, TableState> {
+  static defaultProps = defaultProps;
+
   constructor(props: TableProps) {
     super(props);
 
@@ -360,8 +366,6 @@ export class Table extends React.Component<TableProps, TableState> {
 
     this.updateData();
   }
-
-  static defaultProps = defaultProps;
 
   componentDidUpdate(prevProps: TableProps, prevState: TableState) {
     if (!this.state.async) {

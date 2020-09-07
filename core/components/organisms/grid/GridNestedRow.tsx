@@ -13,7 +13,7 @@ export interface NestedRowProps {
   rowIndex: number;
   data: RowData;
   schema: GridProps['schema'];
-  loading?: boolean;
+  loading: GridProps['loading'];
 }
 
 export const GridNestedRow = (props: GridNestedRowProps) => {
