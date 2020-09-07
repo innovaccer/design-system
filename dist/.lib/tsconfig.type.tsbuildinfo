@@ -181,19 +181,59 @@
         "signature": "d8b12eb5890e6cdabe56a3bcc38be4436cf4f65d3e33f12e81e3caf60f000b99",
         "affectsGlobalScope": false
       },
-      "../../core/components/atoms/avatar/Avatar.tsx": {
-        "version": "927c23f422472b267779a5a888df967012e840be733c605cb1de29a1b30d94d6",
-        "signature": "4d0dc687ca1445c417d48569bff219a7e35f04a71833c3ccb5d437bcc51e135b",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/atoms/avatar/index.tsx": {
-        "version": "b321acf1e84b839eb4cb660bba3192d8f3c5b8387e6eda646a87d27a0ca3d6e0",
-        "signature": "2625c60e362d6cb9d5676fc3d3f6948cedc95bec9865b597e25f61e684c11fb1",
+      "../../core/utils/positionHelper.ts": {
+        "version": "111bf7fb670648d58c2fd1a68a72273c062dad4fff0ce230e6870b9f58470dde",
+        "signature": "85627b8e9684f42c68291e337438d79177d4f5971d84ad1249ef9bc20cf2b966",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/react-dom/index.d.ts": {
         "version": "8483a29c17f7feb768a1f4333cf12ccf1e7341bd89dadcf407e012d5315228d0",
         "signature": "8483a29c17f7feb768a1f4333cf12ccf1e7341bd89dadcf407e012d5315228d0",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/popper.js/index.d.ts": {
+        "version": "1873db8f2261ba4f248bde3e5bb4c79b1fdc990315054e9604fce8f41ddd1587",
+        "signature": "1873db8f2261ba4f248bde3e5bb4c79b1fdc990315054e9604fce8f41ddd1587",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/react-popper/typings/react-popper.d.ts": {
+        "version": "1369cd82395b56a4d7875c9818e529156590597f5c2a17f373d56899b041b0fe",
+        "signature": "1369cd82395b56a4d7875c9818e529156590597f5c2a17f373d56899b041b0fe",
+        "affectsGlobalScope": false
+      },
+      "../../core/utils/PopperWrapper.tsx": {
+        "version": "40e3c60e51cf848e9040191e2509fdb8843ce38086c5b9d84aa83a2a6b359882",
+        "signature": "ff603412264b7541e8212f7e82d8d230c0abe9143b943ee43711a2238f13d3ac",
+        "affectsGlobalScope": false
+      },
+      "../../core/utils/css.ts": {
+        "version": "c61ffa4f2600befae5f5fb6654f41ea15ad061f6e3c429b7c3c1f2c571ca3e9a",
+        "signature": "6e0c7d47c7fc8fdd5b11186cfb595099643d345d006575db6dccd11f60187459",
+        "affectsGlobalScope": false
+      },
+      "../../core/utils/index.tsx": {
+        "version": "a8830a9ce7c15dc6f8bb0e6eb63eaac6f2f8bf0cceee813bd32b81cfcaa61a40",
+        "signature": "d852f2ce2749ebafd737ffd3a4b336dc22ffb0b68919eaba5285b497d7c84672",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/popover/Popover.tsx": {
+        "version": "35074fa8850af2a0c065a5f791d7a2877806593b7e136461d7391934149ecd72",
+        "signature": "ca47417f63e1e545841a29ab32ad68af35bcb7ea80a1e79eccfbdfa702f6bbcd",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/popover/index.tsx": {
+        "version": "fbac8950acae50625c10fb96b8bcaab31363456c6c7a50a500276c203ca4c9b4",
+        "signature": "6b1afce3bd60aa952e59b86650e0c7571f7662bbd199b2fd95dfe189c8a65743",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/avatarGroup/AvatarGroup.tsx": {
+        "version": "06c35484f1ae7decc8b8a4fc0737bba24046d06c5eb1c99e2453dd27c0555c94",
+        "signature": "c4a44532f24c508c9a6c1dd166f80b170a2e16340f9288d7936cd1c31d017151",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/avatarGroup/index.tsx": {
+        "version": "751e5ff71233b152cd8453df95cf8776db810b7bf050bd40feb4dbbc2d8cddeb",
+        "signature": "b46bc98b2c0ea41b95ae333dbae15aefe5f2db3c942a38e6ae7c1efa6fdd97a4",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/backdrop/Backdrop.tsx": {
@@ -227,8 +267,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/text/Text.tsx": {
-        "version": "bd4784d1ce094aa7b5d70f2572c6f999ccd5d7366bfeee97642f7ba3db06391f",
-        "signature": "7b1b2709e318533b17426d3e1545c4e6f085eec9474e89566b3101859f97b445",
+        "version": "468d95070726bed04f6f268c83e0fcb6b918148d7ce1e4192a3ac63ddfd73eea",
+        "signature": "40d9029237986525a89acb14555a533bde1344fa1f9369fea8d2fc5007ab5991",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/text/index.tsx": {
@@ -296,46 +336,6 @@
         "signature": "84973d71046a23fe7188f4ad9dc2da08e8777bd2a055edb9c4f84b68e332ca1f",
         "affectsGlobalScope": false
       },
-      "../../core/utils/positionHelper.ts": {
-        "version": "111bf7fb670648d58c2fd1a68a72273c062dad4fff0ce230e6870b9f58470dde",
-        "signature": "85627b8e9684f42c68291e337438d79177d4f5971d84ad1249ef9bc20cf2b966",
-        "affectsGlobalScope": false
-      },
-      "../../node_modules/popper.js/index.d.ts": {
-        "version": "1873db8f2261ba4f248bde3e5bb4c79b1fdc990315054e9604fce8f41ddd1587",
-        "signature": "1873db8f2261ba4f248bde3e5bb4c79b1fdc990315054e9604fce8f41ddd1587",
-        "affectsGlobalScope": false
-      },
-      "../../node_modules/react-popper/typings/react-popper.d.ts": {
-        "version": "1369cd82395b56a4d7875c9818e529156590597f5c2a17f373d56899b041b0fe",
-        "signature": "1369cd82395b56a4d7875c9818e529156590597f5c2a17f373d56899b041b0fe",
-        "affectsGlobalScope": false
-      },
-      "../../core/utils/PopperWrapper.tsx": {
-        "version": "40e3c60e51cf848e9040191e2509fdb8843ce38086c5b9d84aa83a2a6b359882",
-        "signature": "ff603412264b7541e8212f7e82d8d230c0abe9143b943ee43711a2238f13d3ac",
-        "affectsGlobalScope": false
-      },
-      "../../core/utils/css.ts": {
-        "version": "c61ffa4f2600befae5f5fb6654f41ea15ad061f6e3c429b7c3c1f2c571ca3e9a",
-        "signature": "6e0c7d47c7fc8fdd5b11186cfb595099643d345d006575db6dccd11f60187459",
-        "affectsGlobalScope": false
-      },
-      "../../core/utils/index.tsx": {
-        "version": "a8830a9ce7c15dc6f8bb0e6eb63eaac6f2f8bf0cceee813bd32b81cfcaa61a40",
-        "signature": "d852f2ce2749ebafd737ffd3a4b336dc22ffb0b68919eaba5285b497d7c84672",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/molecules/popover/Popover.tsx": {
-        "version": "c3813823e7b719ed8272f2b52e87cf138cc51ffdbfc6002a57021530f1d143e3",
-        "signature": "6a9ecffa3b21c606f5718faa2bf01e571414b1a6322cb27e1addf7c9f25d46a9",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/molecules/popover/index.tsx": {
-        "version": "fbac8950acae50625c10fb96b8bcaab31363456c6c7a50a500276c203ca4c9b4",
-        "signature": "6b1afce3bd60aa952e59b86650e0c7571f7662bbd199b2fd95dfe189c8a65743",
-        "affectsGlobalScope": false
-      },
       "../../core/components/atoms/dropdown/DropdownButton.tsx": {
         "version": "43a76de44d7be672f1a0a35034b6bb6a38bb8604fefe989730f91ea099c5b8b8",
         "signature": "66f00d38a576afebdd991a6b0ca52504b5634a2cfa6d8f1031c95a5439988323",
@@ -359,6 +359,81 @@
       "../../core/components/atoms/button/index.tsx": {
         "version": "32e3812ac101093c4a61dfe0b973ee6024654fc968a4674db56ae7e14f632eeb",
         "signature": "dd7307efa66bcc152cc7525fe72c1d9670fd4ad47251ad21d372e7f9c5a4d0a4",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/input/Input.tsx": {
+        "version": "4cdb95649e92dbbeb2a5f0d2764b25344d13cb0fac50d5585b721909bd4a7869",
+        "signature": "b03587c5b7cb8b073622b788a750a1bc71e868a1381e11dcc2c5ea1c2946b9f9",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/input/index.tsx": {
+        "version": "700d98da331e8240c0399af62962d99cd212da34ced31c147e314825b7631d18",
+        "signature": "a2d5b6c211cca07de6f10aea9a25e15eb904e51448e1405f8988543cf57af62f",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/placeholderParagraph/PlaceholderParagraph.tsx": {
+        "version": "ee4c29656369cab53ef4d052d78feb2c5560cce85bcda97c2c6436814009dc1c",
+        "signature": "36b7ad2f4b31d7384c371e47868481813491d59b4f6d70c9a180e91ee0e5ad31",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/placeholderParagraph/index.tsx": {
+        "version": "c3f3675a698ad1bc55b2ffb0945f298e60a86529e319356d63d9863c73739959",
+        "signature": "2a85a349f7be0dd8956084f85b0ab29bfdef1a40e8dd8fb320f7e7c56b95fea6",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/placeholderImage/PlaceholderImage.tsx": {
+        "version": "bd0761408943a7816e4bd2d7dad2f20012f07bc77b4d33a619f82700a5acc10e",
+        "signature": "c66efd3f08e601cae6615a3566e08c58f689304efabb3114cb16025b22ae396f",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/placeholderImage/index.tsx": {
+        "version": "fe09f40b8996b6b2f030b31a2e456c986c5d5be1fbbf761aeb72e072ad1c1250",
+        "signature": "bd89743408da8fba2fc6165a6678b1a8590265f7bb56c330360450f813652ed6",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/placeholder/Placeholder.tsx": {
+        "version": "eaf28df02f0570a5f5b53088d3234fac14588fa226329eff689b843a08ab208d",
+        "signature": "d96e3bc780c1ef8a5f545aed78d5eddac01e85cfa8589408a730775982425bc7",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/placeholder/index.tsx": {
+        "version": "40df0d20a656b32ab443acb77562e6a1835c3753366758410b395ef7d121914d",
+        "signature": "1aed5a0f379a98c1bd002332e4f290f11352320cd49c5e0b76b8edf4138df163",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/dropdown/Loading.tsx": {
+        "version": "413a2190957d4fe2dca685b44b2f819d1ca327274a9f0cc37b21ae863fbc385f",
+        "signature": "2beda8d295663091d84fbbf401967f049fafcf8cf0e447ef110a50d6653aa5c4",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/dropdown/DropdownList.tsx": {
+        "version": "32914a3d251dabaac9cfaa9193dac7b99372a3c0191ec21b17849ed849ecb006",
+        "signature": "5bcd9927dfa85393e2247bfb0eb7d7f43ca52828c7997e446e3ec67a60a4d7fa",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/dropdown/Dropdown.tsx": {
+        "version": "a60b4a6bd43a4e894e2c5d5d2c53b9bec3b69a5c5e000a69de412e4184f53b07",
+        "signature": "916f99d47c53248c71fe0f41d8007d6dc88a0214e9e508efc7d197e78ca7d163",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/dropdown/index.tsx": {
+        "version": "e358c7c3fe588e1f640f3d12d250d96a01b0a11f7c641d937761fc51a19db0f2",
+        "signature": "40f70594c27bbf52364c559154aa64ecba00179ec4a548df2b751e72542f6497",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/breadcrumbs/SubtleLink.tsx": {
+        "version": "0023763cec8b4f5770661aec08ae71e19b0daaf574e46b814eeb6cc1994a5a7d",
+        "signature": "6095ffa0ac818ea1e70ca6b4dc9d1f091cd329c28f802c8302a51972b286c6b6",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/breadcrumbs/Breadcrumbs.tsx": {
+        "version": "7d654a6b172e825f1afb7dbc2a5114fba269887eb5ab0573c3a02629ebac888d",
+        "signature": "12e14de0d0faffaa8116f249b085919df0dacb2cf459c1827f7999ac9356df21",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/breadcrumbs/index.tsx": {
+        "version": "441e9381e5a700e20f23ad3a48654d40a916262769a72ee7edfb2d7af1e94f69",
+        "signature": "5c4896c9bae5a0964ae919eebe1b6855a59275c982530257c41fa46a18398347",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/card/Card.tsx": {
@@ -432,8 +507,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/calendar/types.ts": {
-        "version": "e2724c4f87aae43d3429f60ebe7e964ea54f76b16560c6d93deba2e3aeba1b7e",
-        "signature": "1317dd97d00f9467acd44bd57b9d322699153644b98582459f17607bb1da769d",
+        "version": "e3451273cab8c971e44a15d15193830657267e7184fc1f6c6aed78c927787597",
+        "signature": "c77b3cfb479b4c47702be89c93009869098ce6de404dd3b45c4e25c7bbfe8f97",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/calendar/utility.ts": {
@@ -442,8 +517,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/calendar/Calendar.tsx": {
-        "version": "ef0b38a8e097c9c33e5818294a3210048d82781c16e94f596bcd83ebb58ebadc",
-        "signature": "6efed71a7732b51dec2adc7a6c356ac56c4a59ba30bf05f16527742847539c4f",
+        "version": "7109bca2b2612fb9dbde85fdbe6050d8dc0f7de7327813c9007b27444b61bde6",
+        "signature": "2e8b80776b4809cb8d2833ded3a1e238feed5897eb82743556c1e7b4d3409942",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/caption/Caption.tsx": {
@@ -457,7 +532,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/inputMask/InputMask.tsx": {
-        "version": "4ddb8bf5c7a0955604732d974d13d5a418798f97fa1a1cdd0f7ddda7812679c1",
+        "version": "3f756ac86be2d739ec83cf0d81bca63eee468b705a80c282f0886b5a83d384a6",
         "signature": "35e0f7b35b8c53fcf49e42ddf20fac80d10ff0a82a441ca27f81196d1738540e",
         "affectsGlobalScope": false
       },
@@ -477,8 +552,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/datePicker/DatePicker.tsx": {
-        "version": "0b51a78e70f076078f3d9500a22a202409597251b705f7807d092a19e0f3beb4",
-        "signature": "2fa075695a75a7bd625c1c0d7db1a7d82334c283725174e096595e75f74fa108",
+        "version": "52a20bf3cb7fe39fcb75477a370d29ded5a3ecae4e4b77843fe73aaf027aeeb2",
+        "signature": "b403ce7781406f04c6601b09f10d2672e39eebd8fb6e6547854561d6b158faba",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/datePicker/index.tsx": {
@@ -497,8 +572,8 @@
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/recharts/index.d.ts": {
-        "version": "912abba7f461335eec5fcf553d9338f88e29760ab1d6284cc2e2ef43a6ab98fd",
-        "signature": "912abba7f461335eec5fcf553d9338f88e29760ab1d6284cc2e2ef43a6ab98fd",
+        "version": "4a30b13b66504aabf7850c12658939b6a6dd4ff14dc9756a543e4113ad5ffd46",
+        "signature": "4a30b13b66504aabf7850c12658939b6a6dd4ff14dc9756a543e4113ad5ffd46",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/donutChart/DonutChart.tsx": {
@@ -806,36 +881,6 @@
         "signature": "141145c1b46a0b904c586b14ae34ca3d7498b10c83448eb63d7d470e8b12ddb3",
         "affectsGlobalScope": false
       },
-      "../../core/components/atoms/placeholderImage/PlaceholderImage.tsx": {
-        "version": "bd0761408943a7816e4bd2d7dad2f20012f07bc77b4d33a619f82700a5acc10e",
-        "signature": "c66efd3f08e601cae6615a3566e08c58f689304efabb3114cb16025b22ae396f",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/atoms/placeholderImage/index.tsx": {
-        "version": "fe09f40b8996b6b2f030b31a2e456c986c5d5be1fbbf761aeb72e072ad1c1250",
-        "signature": "bd89743408da8fba2fc6165a6678b1a8590265f7bb56c330360450f813652ed6",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/atoms/placeholderParagraph/PlaceholderParagraph.tsx": {
-        "version": "ee4c29656369cab53ef4d052d78feb2c5560cce85bcda97c2c6436814009dc1c",
-        "signature": "36b7ad2f4b31d7384c371e47868481813491d59b4f6d70c9a180e91ee0e5ad31",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/atoms/placeholderParagraph/index.tsx": {
-        "version": "c3f3675a698ad1bc55b2ffb0945f298e60a86529e319356d63d9863c73739959",
-        "signature": "2a85a349f7be0dd8956084f85b0ab29bfdef1a40e8dd8fb320f7e7c56b95fea6",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/molecules/placeholder/Placeholder.tsx": {
-        "version": "eaf28df02f0570a5f5b53088d3234fac14588fa226329eff689b843a08ab208d",
-        "signature": "d96e3bc780c1ef8a5f545aed78d5eddac01e85cfa8589408a730775982425bc7",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/molecules/placeholder/index.tsx": {
-        "version": "40df0d20a656b32ab443acb77562e6a1835c3753366758410b395ef7d121914d",
-        "signature": "1aed5a0f379a98c1bd002332e4f290f11352320cd49c5e0b76b8edf4138df163",
-        "affectsGlobalScope": false
-      },
       "../../core/components/atoms/progressBar/ProgressBar.tsx": {
         "version": "752b37108d00d605c941cae61aaa49896ad115ef5b3e62db45b8318bb65071cd",
         "signature": "d96215f464d1b8057ff9039bf6766078aa92e964859344262b5a09a57871c550",
@@ -856,9 +901,24 @@
         "signature": "44a796033057099552650526d43208c45e7ba18c1bcf56c75381900e2f10da4c",
         "affectsGlobalScope": false
       },
+      "../../core/components/molecules/stepper/Step.tsx": {
+        "version": "513efafc852c767134624a8c25ab7c0b54368849fc4a5f34a38e3e7ec5240740",
+        "signature": "272441305427b4d5b85edaff2df6af465c28fda2ff78e005056745a7e4f342dd",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/stepper/Stepper.tsx": {
+        "version": "021cfcac861476d9bfafc77ce9996b73a185b431130e54d5847f4cfd55649a9d",
+        "signature": "0b49ca09503c2c210186ff82737998706548ac4ba89f3fe949dd936d1cbedc8c",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/stepper/index.tsx": {
+        "version": "112b6d31200f1e6b7059b57773bb0c68e56731a0e3d220f426a7cacd44272881",
+        "signature": "3963c8b4d4d381139a5195bc0975bff5476331b049ae38198a50d80848517fe5",
+        "affectsGlobalScope": false
+      },
       "../../core/components/organisms/dateRangePicker/DateRangePicker.tsx": {
-        "version": "66db74be0d9316efe5930018de51b4c488dde5d73c7daa89d919222cf7c5f3b4",
-        "signature": "e0c2b9d15c1cc815b7d872302bb3070d3e387e333d64fea46ebdff85ba57a122",
+        "version": "8231e15cc33d04fedc8ce0e78e0ad3650ed34887ab424f3035753daa8d53669c",
+        "signature": "edb8e9f692884b1453472869cad56c14144d10fd4eb5e9d51720b8e33c50fd9a",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/dateRangePicker/index.tsx": {
@@ -912,8 +972,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/GridNestedRow.tsx": {
-        "version": "96f93090dae6af6650d55d7fc4f6ca7ae07f5279fca082f782515cc8f6a02798",
-        "signature": "c1585e0fe6f0a1a90aab3cd680b16fb5c9d44b098c760cb9ba8ca8e064932700",
+        "version": "020fca7d1781a873bb902ad1122055159d192b36c4cb17667ab6e88ddd128988",
+        "signature": "a4df78800ab9c9f7417b51982b836379ae67774855b319fec187ef3fcf4e3f6f",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/GridRow.tsx": {
@@ -927,13 +987,13 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/MainGrid.tsx": {
-        "version": "889ce279f87e372867900833ee8a66e91ed1248d48da7bbdf1be22e3284ea080",
+        "version": "5ff2b5a135ef384cc5685e7723988bc1be3b71441910c4dc18d74b7e73ac8625",
         "signature": "71c4d00e433d75d9ec98eb37990428e7196f4625dac1cae3cfefcc7bdeb6f3e0",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/Grid.tsx": {
-        "version": "499af7dedcb57b8b07f8e52a595803b8264a3b2e2bad418501a560a4d8bbbfe7",
-        "signature": "f7f9cb84b806375cc4970961f9304890865198cfed31252d3efd2679891b3408",
+        "version": "3a56a713c0b6ce5b1a18ccde0c40cf8e62f18d3c79897e935cb7d9792a4d27f3",
+        "signature": "645cab9477b22f7ebf22bbe83604b3d6aa3d7cf683217335614316030a6d5e4a",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/index.tsx": {
@@ -947,8 +1007,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/table/Table.tsx": {
-        "version": "c4083e28f1a7a89c905cd9bb3bb852784521ad946f9b27ab1cc47f15f47c6ac3",
-        "signature": "08757e4edfd206e9facadab1c121c56c8a01f379a980317c16da569b95732514",
+        "version": "e864816df06366349b6b336f92ff986ced608239660fc4afa754e0ff2a0fec2e",
+        "signature": "38da7e575756603cae8a0d82e6fab01e3605fed14b109984973698b70d6feb3b",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/table/index.tsx": {
@@ -957,8 +1017,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/list/List.tsx": {
-        "version": "2c893ed654372414beb87ee9d06c832df9109d42ed4ee89bdc30593142cb8717",
-        "signature": "96cddf27746a9d954d96afca23d211d077c1d2ee9b27d3ff5b167f1a69dece9d",
+        "version": "d69d62863cd14fd408614a6b85b2ac7b5a2a79a2849e629fce868f1e0469da31",
+        "signature": "07e04c9c58f90568bc13e776315b019efe9cf5312fb72ca6afb89c2fd902d2e2",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/list/index.tsx": {
@@ -977,8 +1037,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/pageHeader/PageHeader.tsx": {
-        "version": "a81d996007a9514c90e48d61541d59688a16c78ccc7f083fed6d788b637ecbf3",
-        "signature": "1c9bbc6d8ca6101fe09c3ea820b6c50f77f1e10b5a92b06f4b90c33d2d0b505d",
+        "version": "731b7154a5d13009087b553c56472059173669b9a2a89e5ddb07d39bf58ba26f",
+        "signature": "bfaffe3f8ebdd04f5f3259e172cd218309967f920a9fe971d21d2b5af4b6d6c1",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/pageHeader/index.tsx": {
@@ -987,58 +1047,23 @@
         "affectsGlobalScope": false
       },
       "../../core/index.type.tsx": {
-        "version": "1a5ed1fe17e532dcc8b5ef56e8b104dcbc29bd41c479237209844816c1041616",
-        "signature": "d7e4d0064c5b7f0f48e300b272358f95a7c57a6af9874c8f114b19f9df505fc5",
+        "version": "927ff8dd20e437a991649e5b4db6e4706ca46995546169289f91214336cc53c0",
+        "signature": "fb3e95669f2a4033c010732cb5cdc351fbb6e6f6c965ccd3b3e66283156dc57b",
         "affectsGlobalScope": false
       },
-      "../../core/components/atoms/input/Input.tsx": {
-        "version": "a17a487e1fa1cda09007b81e2373d23e4e7ce3055d9880ea15890fabb123025a",
-        "signature": "0c7aa9bfeed4ca731d05c205f18ab1ae726731ae1e56e6ee69fa50c0e70329a4",
+      "../../core/components/atoms/avatar/Avatar.tsx": {
+        "version": "e6f44520da32daf1ee07f06911fc121c9e82ce167b4bd9fefd8ee7cfa4a64744",
+        "signature": "891f8ae2e827219b9a8cf67a6392e67368f19f9f89a7ee07907c130167446aa5",
         "affectsGlobalScope": false
       },
-      "../../core/components/atoms/input/index.tsx": {
-        "version": "700d98da331e8240c0399af62962d99cd212da34ced31c147e314825b7631d18",
-        "signature": "a2d5b6c211cca07de6f10aea9a25e15eb904e51448e1405f8988543cf57af62f",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/atoms/dropdown/Loading.tsx": {
-        "version": "413a2190957d4fe2dca685b44b2f819d1ca327274a9f0cc37b21ae863fbc385f",
-        "signature": "2beda8d295663091d84fbbf401967f049fafcf8cf0e447ef110a50d6653aa5c4",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/atoms/dropdown/DropdownList.tsx": {
-        "version": "66e1d8e0a24b08f69c034780c055be895600f826c56bb8428a32287d0f6de6a8",
-        "signature": "5bcd9927dfa85393e2247bfb0eb7d7f43ca52828c7997e446e3ec67a60a4d7fa",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/atoms/dropdown/Dropdown.tsx": {
-        "version": "a60b4a6bd43a4e894e2c5d5d2c53b9bec3b69a5c5e000a69de412e4184f53b07",
-        "signature": "916f99d47c53248c71fe0f41d8007d6dc88a0214e9e508efc7d197e78ca7d163",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/atoms/dropdown/index.tsx": {
-        "version": "e358c7c3fe588e1f640f3d12d250d96a01b0a11f7c641d937761fc51a19db0f2",
-        "signature": "40f70594c27bbf52364c559154aa64ecba00179ec4a548df2b751e72542f6497",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/atoms/breadcrumbs/SubtleLink.tsx": {
-        "version": "0023763cec8b4f5770661aec08ae71e19b0daaf574e46b814eeb6cc1994a5a7d",
-        "signature": "6095ffa0ac818ea1e70ca6b4dc9d1f091cd329c28f802c8302a51972b286c6b6",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/atoms/breadcrumbs/Breadcrumbs.tsx": {
-        "version": "7d654a6b172e825f1afb7dbc2a5114fba269887eb5ab0573c3a02629ebac888d",
-        "signature": "12e14de0d0faffaa8116f249b085919df0dacb2cf459c1827f7999ac9356df21",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/atoms/breadcrumbs/index.tsx": {
-        "version": "441e9381e5a700e20f23ad3a48654d40a916262769a72ee7edfb2d7af1e94f69",
-        "signature": "5c4896c9bae5a0964ae919eebe1b6855a59275c982530257c41fa46a18398347",
+      "../../core/components/atoms/avatar/index.tsx": {
+        "version": "b321acf1e84b839eb4cb660bba3192d8f3c5b8387e6eda646a87d27a0ca3d6e0",
+        "signature": "2625c60e362d6cb9d5676fc3d3f6948cedc95bec9865b597e25f61e684c11fb1",
         "affectsGlobalScope": false
       },
       "../../core/index.tsx": {
-        "version": "2d1147f781644a687a8d63b5e073f23f1d299d728cf0b547c4493c7768a8400b",
-        "signature": "1f489ec65f5b5b3894db5dbb1cda554fd0a4e02102fd18e1557c71b1584e6583",
+        "version": "16da5650758d4c555df3f4f3579d3b7d09a969e8772f909c22967e44c22ded3b",
+        "signature": "bf0de2c75c640a706f2245cb7d975c834d53b38024700f84767b963bfb475efc",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/badge/_stories_/SolidAlert.story.tsx": {
@@ -1452,8 +1477,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/ts3.1/crypto.d.ts": {
-        "version": "bc99370962c617000b3f66ba97426142bf49daa5467c081c64a57ad7bc6bcc14",
-        "signature": "bc99370962c617000b3f66ba97426142bf49daa5467c081c64a57ad7bc6bcc14",
+        "version": "c5cc5f3a1a963e05947bb1c823d06c3758e0d352c9a97afddc3fd5a6d5c955cd",
+        "signature": "c5cc5f3a1a963e05947bb1c823d06c3758e0d352c9a97afddc3fd5a6d5c955cd",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/ts3.1/dgram.d.ts": {
@@ -1786,6 +1811,26 @@
         "signature": "313a8ccc22f76fbf5246fb685e69030308d134aeef681a3e9122e464b7e2acf5",
         "affectsGlobalScope": false
       },
+      "../../core/components/patterns/forms/CreatePassword.story.tsx": {
+        "version": "986ab10abed2547510ef577a8d6d2f762bd56452290db51e2c0b13f6b5405fa8",
+        "signature": "8cad14e714466c98b5e9a0c34c5f22c06a0b437e3190d8c028e9a4b3545f200f",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/patterns/forms/InlineForm.story.tsx": {
+        "version": "f155931b8796455d885ed1e52abef0ab3785f1dd713b8bf2d912356d9e872053",
+        "signature": "4fad764a0b125dea30676cb66b5e673030964c0b9d865bb155005d9a57edbebc",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/patterns/forms/TimePeriodForm.story.tsx": {
+        "version": "5800cc862f0c60a64cfb7acfce36862dd404a9eb690c080e202a9d656b277280",
+        "signature": "e84ca33eef0b9635ae17a2a5399d092af82f5d90eb5f18be61ce19542280e303",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/patterns/forms/index.story.tsx": {
+        "version": "2d8f0328aa4c6f3779942920a1fe918a49062ce5303564f6a733c65d716c3cb5",
+        "signature": "10e1a99d2966c1392d621f6d4728718cf39ea70c0e205c9aba4420f76523c5df",
+        "affectsGlobalScope": false
+      },
       "../../node_modules/@types/react-dom/server/index.d.ts": {
         "version": "53cea979e3bea1c13b6c88496a6dcfd130f5cbcd36c697dabfc71d5033508164",
         "signature": "53cea979e3bea1c13b6c88496a6dcfd130f5cbcd36c697dabfc71d5033508164",
@@ -1812,7 +1857,7 @@
         "affectsGlobalScope": false
       },
       "../../core/utils/docPage.tsx": {
-        "version": "9491c7957c7c1e26d78d633c000501d025bae1451be7297fea31922eba755403",
+        "version": "68fa6e1a506933d6466564daddb3e0782b447a165dce8caca39264a7d57d9165",
         "signature": "d793df693e1f566f2a7fd586a5ba76f93009c359e9795372d49bb1dafa1d2c00",
         "affectsGlobalScope": false
       },
@@ -2062,7 +2107,7 @@
         "affectsGlobalScope": true
       },
       "../../scripts/setupTest.ts": {
-        "version": "f05b90232570f785caeebaad76459421457b076dee421aff705c872af03af7ce",
+        "version": "aa9c814560ccd52f640639954d114cce303a285bbfe77659e89231316fb82a04",
         "signature": "a46d66851af2c056e805fdd574bf5ec3adb1181c43c5e41f0a1c592e338afe64",
         "affectsGlobalScope": false
       },
@@ -2231,7 +2276,7 @@
         "signature": "d558a0fe921ebcc88d3212c2c42108abf9f0d694d67ebdeba37d7728c044f579",
         "affectsGlobalScope": false
       },
-      "../../node_modules/source-map/source-map.d.ts": {
+      "../../node_modules/@types/uglify-js/node_modules/source-map/source-map.d.ts": {
         "version": "2887592574fcdfd087647c539dcb0fbe5af2521270dad4a37f9d17c16190d579",
         "signature": "2887592574fcdfd087647c539dcb0fbe5af2521270dad4a37f9d17c16190d579",
         "affectsGlobalScope": false
@@ -2239,6 +2284,11 @@
       "../../node_modules/@types/uglify-js/index.d.ts": {
         "version": "dbef1822091af2c0ee24d2be8222502dc1160473ea0b4709ba5f3856cec93537",
         "signature": "dbef1822091af2c0ee24d2be8222502dc1160473ea0b4709ba5f3856cec93537",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@types/webpack/node_modules/source-map/source-map.d.ts": {
+        "version": "2887592574fcdfd087647c539dcb0fbe5af2521270dad4a37f9d17c16190d579",
+        "signature": "2887592574fcdfd087647c539dcb0fbe5af2521270dad4a37f9d17c16190d579",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/webpack-sources/node_modules/source-map/source-map.d.ts": {
@@ -2906,6 +2956,33 @@
           "*",
           "*",
           "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
           "*"
         ]
       },
@@ -2959,6 +3036,7 @@
       ],
       "../../core/components/atoms/avatar/Avatar.tsx": [
         "../../core/index.tsx",
+        "../../core/index.type.tsx",
         "../../core/utils/types.tsx",
         "../../node_modules/@types/classnames/index.d.ts",
         "../../node_modules/@types/graceful-fs/index.d.ts",
@@ -2972,6 +3050,31 @@
       ],
       "../../core/components/atoms/avatar/index.tsx": [
         "../../core/components/atoms/avatar/Avatar.tsx",
+        "../../node_modules/@types/graceful-fs/index.d.ts",
+        "../../node_modules/@types/node/ts3.1/fs.d.ts",
+        "../../node_modules/@types/node/ts3.1/process.d.ts",
+        "../../node_modules/@types/node/ts3.1/util.d.ts",
+        "../../node_modules/@types/node/ts3.4/fs.d.ts",
+        "../../node_modules/@types/node/ts3.4/process.d.ts",
+        "../../node_modules/@types/node/ts3.4/util.d.ts"
+      ],
+      "../../core/components/atoms/avatarGroup/AvatarGroup.tsx": [
+        "../../core/components/atoms/avatar/index.tsx",
+        "../../core/components/molecules/popover/index.tsx",
+        "../../core/index.tsx",
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/classnames/index.d.ts",
+        "../../node_modules/@types/graceful-fs/index.d.ts",
+        "../../node_modules/@types/node/ts3.1/fs.d.ts",
+        "../../node_modules/@types/node/ts3.1/process.d.ts",
+        "../../node_modules/@types/node/ts3.1/util.d.ts",
+        "../../node_modules/@types/node/ts3.4/fs.d.ts",
+        "../../node_modules/@types/node/ts3.4/process.d.ts",
+        "../../node_modules/@types/node/ts3.4/util.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/atoms/avatarGroup/index.tsx": [
+        "../../core/components/atoms/avatarGroup/AvatarGroup.tsx",
         "../../node_modules/@types/graceful-fs/index.d.ts",
         "../../node_modules/@types/node/ts3.1/fs.d.ts",
         "../../node_modules/@types/node/ts3.1/process.d.ts",
@@ -4734,6 +4837,41 @@
         "../../node_modules/@types/node/ts3.4/process.d.ts",
         "../../node_modules/@types/node/ts3.4/util.d.ts"
       ],
+      "../../core/components/molecules/stepper/Step.tsx": [
+        "../../core/index.tsx",
+        "../../node_modules/@types/classnames/index.d.ts",
+        "../../node_modules/@types/graceful-fs/index.d.ts",
+        "../../node_modules/@types/node/ts3.1/fs.d.ts",
+        "../../node_modules/@types/node/ts3.1/process.d.ts",
+        "../../node_modules/@types/node/ts3.1/util.d.ts",
+        "../../node_modules/@types/node/ts3.4/fs.d.ts",
+        "../../node_modules/@types/node/ts3.4/process.d.ts",
+        "../../node_modules/@types/node/ts3.4/util.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/molecules/stepper/Stepper.tsx": [
+        "../../core/components/molecules/stepper/Step.tsx",
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/classnames/index.d.ts",
+        "../../node_modules/@types/graceful-fs/index.d.ts",
+        "../../node_modules/@types/node/ts3.1/fs.d.ts",
+        "../../node_modules/@types/node/ts3.1/process.d.ts",
+        "../../node_modules/@types/node/ts3.1/util.d.ts",
+        "../../node_modules/@types/node/ts3.4/fs.d.ts",
+        "../../node_modules/@types/node/ts3.4/process.d.ts",
+        "../../node_modules/@types/node/ts3.4/util.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/molecules/stepper/index.tsx": [
+        "../../core/components/molecules/stepper/Stepper.tsx",
+        "../../node_modules/@types/graceful-fs/index.d.ts",
+        "../../node_modules/@types/node/ts3.1/fs.d.ts",
+        "../../node_modules/@types/node/ts3.1/process.d.ts",
+        "../../node_modules/@types/node/ts3.1/util.d.ts",
+        "../../node_modules/@types/node/ts3.4/fs.d.ts",
+        "../../node_modules/@types/node/ts3.4/process.d.ts",
+        "../../node_modules/@types/node/ts3.4/util.d.ts"
+      ],
       "../../core/components/molecules/tabs/Tab.tsx": [
         "../../node_modules/@types/graceful-fs/index.d.ts",
         "../../node_modules/@types/node/ts3.1/fs.d.ts",
@@ -5085,10 +5223,9 @@
         "../../node_modules/@types/node/ts3.4/util.d.ts"
       ],
       "../../core/components/organisms/list/List.tsx": [
-        "../../core/components/organisms/grid/Header.tsx",
-        "../../core/components/organisms/grid/index.tsx",
         "../../core/components/organisms/table/index.tsx",
-        "../../core/utils/types.tsx",
+        "../../core/index.tsx",
+        "../../core/index.type.tsx",
         "../../node_modules/@types/graceful-fs/index.d.ts",
         "../../node_modules/@types/node/ts3.1/fs.d.ts",
         "../../node_modules/@types/node/ts3.1/process.d.ts",
@@ -5181,8 +5318,51 @@
         "../../node_modules/@types/node/ts3.4/process.d.ts",
         "../../node_modules/@types/node/ts3.4/util.d.ts"
       ],
+      "../../core/components/patterns/forms/CreatePassword.story.tsx": [
+        "../../core/index.tsx",
+        "../../node_modules/@types/graceful-fs/index.d.ts",
+        "../../node_modules/@types/node/ts3.1/fs.d.ts",
+        "../../node_modules/@types/node/ts3.1/process.d.ts",
+        "../../node_modules/@types/node/ts3.1/util.d.ts",
+        "../../node_modules/@types/node/ts3.4/fs.d.ts",
+        "../../node_modules/@types/node/ts3.4/process.d.ts",
+        "../../node_modules/@types/node/ts3.4/util.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/patterns/forms/InlineForm.story.tsx": [
+        "../../node_modules/@types/graceful-fs/index.d.ts",
+        "../../node_modules/@types/node/ts3.1/fs.d.ts",
+        "../../node_modules/@types/node/ts3.1/process.d.ts",
+        "../../node_modules/@types/node/ts3.1/util.d.ts",
+        "../../node_modules/@types/node/ts3.4/fs.d.ts",
+        "../../node_modules/@types/node/ts3.4/process.d.ts",
+        "../../node_modules/@types/node/ts3.4/util.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/patterns/forms/TimePeriodForm.story.tsx": [
+        "../../node_modules/@types/graceful-fs/index.d.ts",
+        "../../node_modules/@types/node/ts3.1/fs.d.ts",
+        "../../node_modules/@types/node/ts3.1/process.d.ts",
+        "../../node_modules/@types/node/ts3.1/util.d.ts",
+        "../../node_modules/@types/node/ts3.4/fs.d.ts",
+        "../../node_modules/@types/node/ts3.4/process.d.ts",
+        "../../node_modules/@types/node/ts3.4/util.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/patterns/forms/index.story.tsx": [
+        "../../core/index.tsx",
+        "../../node_modules/@types/graceful-fs/index.d.ts",
+        "../../node_modules/@types/node/ts3.1/fs.d.ts",
+        "../../node_modules/@types/node/ts3.1/process.d.ts",
+        "../../node_modules/@types/node/ts3.1/util.d.ts",
+        "../../node_modules/@types/node/ts3.4/fs.d.ts",
+        "../../node_modules/@types/node/ts3.4/process.d.ts",
+        "../../node_modules/@types/node/ts3.4/util.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
       "../../core/index.tsx": [
         "../../core/components/atoms/avatar/index.tsx",
+        "../../core/components/atoms/avatarGroup/index.tsx",
         "../../core/components/atoms/backdrop/index.tsx",
         "../../core/components/atoms/badge/index.tsx",
         "../../core/components/atoms/breadcrumbs/index.tsx",
@@ -5230,6 +5410,7 @@
         "../../core/components/molecules/pagination/index.tsx",
         "../../core/components/molecules/placeholder/index.tsx",
         "../../core/components/molecules/popover/index.tsx",
+        "../../core/components/molecules/stepper/index.tsx",
         "../../core/components/molecules/tabs/index.tsx",
         "../../core/components/organisms/datePicker/index.tsx",
         "../../core/components/organisms/dateRangePicker/index.tsx",
@@ -5249,6 +5430,7 @@
       ],
       "../../core/index.type.tsx": [
         "../../core/components/atoms/avatar/index.tsx",
+        "../../core/components/atoms/avatarGroup/index.tsx",
         "../../core/components/atoms/backdrop/index.tsx",
         "../../core/components/atoms/badge/index.tsx",
         "../../core/components/atoms/breadcrumbs/index.tsx",
@@ -5296,6 +5478,7 @@
         "../../core/components/molecules/pagination/index.tsx",
         "../../core/components/molecules/placeholder/index.tsx",
         "../../core/components/molecules/popover/index.tsx",
+        "../../core/components/molecules/stepper/index.tsx",
         "../../core/components/molecules/tabs/index.tsx",
         "../../core/components/organisms/datePicker/index.tsx",
         "../../core/components/organisms/dateRangePicker/index.tsx",
@@ -7585,7 +7768,16 @@
         "../../node_modules/@types/node/ts3.4/fs.d.ts",
         "../../node_modules/@types/node/ts3.4/process.d.ts",
         "../../node_modules/@types/node/ts3.4/util.d.ts",
-        "../../node_modules/source-map/source-map.d.ts"
+        "../../node_modules/@types/uglify-js/node_modules/source-map/source-map.d.ts"
+      ],
+      "../../node_modules/@types/uglify-js/node_modules/source-map/source-map.d.ts": [
+        "../../node_modules/@types/graceful-fs/index.d.ts",
+        "../../node_modules/@types/node/ts3.1/fs.d.ts",
+        "../../node_modules/@types/node/ts3.1/process.d.ts",
+        "../../node_modules/@types/node/ts3.1/util.d.ts",
+        "../../node_modules/@types/node/ts3.4/fs.d.ts",
+        "../../node_modules/@types/node/ts3.4/process.d.ts",
+        "../../node_modules/@types/node/ts3.4/util.d.ts"
       ],
       "../../node_modules/@types/unist/index.d.ts": [
         "../../node_modules/@types/graceful-fs/index.d.ts",
@@ -7640,8 +7832,17 @@
         "../../node_modules/@types/node/ts3.4/util.d.ts",
         "../../node_modules/@types/tapable/index.d.ts",
         "../../node_modules/@types/uglify-js/index.d.ts",
-        "../../node_modules/@types/webpack-sources/index.d.ts",
-        "../../node_modules/source-map/source-map.d.ts"
+        "../../node_modules/@types/uglify-js/node_modules/source-map/source-map.d.ts",
+        "../../node_modules/@types/webpack-sources/index.d.ts"
+      ],
+      "../../node_modules/@types/webpack/node_modules/source-map/source-map.d.ts": [
+        "../../node_modules/@types/graceful-fs/index.d.ts",
+        "../../node_modules/@types/node/ts3.1/fs.d.ts",
+        "../../node_modules/@types/node/ts3.1/process.d.ts",
+        "../../node_modules/@types/node/ts3.1/util.d.ts",
+        "../../node_modules/@types/node/ts3.4/fs.d.ts",
+        "../../node_modules/@types/node/ts3.4/process.d.ts",
+        "../../node_modules/@types/node/ts3.4/util.d.ts"
       ],
       "../../node_modules/@types/yargs-parser/index.d.ts": [
         "../../node_modules/@types/graceful-fs/index.d.ts",
@@ -7762,15 +7963,6 @@
         "../../node_modules/@types/node/ts3.4/util.d.ts",
         "../../node_modules/@types/react/index.d.ts",
         "../../node_modules/popper.js/index.d.ts"
-      ],
-      "../../node_modules/source-map/source-map.d.ts": [
-        "../../node_modules/@types/graceful-fs/index.d.ts",
-        "../../node_modules/@types/node/ts3.1/fs.d.ts",
-        "../../node_modules/@types/node/ts3.1/process.d.ts",
-        "../../node_modules/@types/node/ts3.1/util.d.ts",
-        "../../node_modules/@types/node/ts3.4/fs.d.ts",
-        "../../node_modules/@types/node/ts3.4/process.d.ts",
-        "../../node_modules/@types/node/ts3.4/util.d.ts"
       ],
       "../../node_modules/tslib/tslib.d.ts": [
         "../../node_modules/@types/graceful-fs/index.d.ts",
@@ -10252,7 +10444,16 @@
         "../../node_modules/@types/node/ts3.4/fs.d.ts",
         "../../node_modules/@types/node/ts3.4/process.d.ts",
         "../../node_modules/@types/node/ts3.4/util.d.ts",
-        "../../node_modules/source-map/source-map.d.ts"
+        "../../node_modules/@types/uglify-js/node_modules/source-map/source-map.d.ts"
+      ],
+      "../../node_modules/@types/uglify-js/node_modules/source-map/source-map.d.ts": [
+        "../../node_modules/@types/graceful-fs/index.d.ts",
+        "../../node_modules/@types/node/ts3.1/fs.d.ts",
+        "../../node_modules/@types/node/ts3.1/process.d.ts",
+        "../../node_modules/@types/node/ts3.1/util.d.ts",
+        "../../node_modules/@types/node/ts3.4/fs.d.ts",
+        "../../node_modules/@types/node/ts3.4/process.d.ts",
+        "../../node_modules/@types/node/ts3.4/util.d.ts"
       ],
       "../../node_modules/@types/unist/index.d.ts": [
         "../../node_modules/@types/graceful-fs/index.d.ts",
@@ -10307,8 +10508,17 @@
         "../../node_modules/@types/node/ts3.4/util.d.ts",
         "../../node_modules/@types/tapable/index.d.ts",
         "../../node_modules/@types/uglify-js/index.d.ts",
-        "../../node_modules/@types/webpack-sources/index.d.ts",
-        "../../node_modules/source-map/source-map.d.ts"
+        "../../node_modules/@types/uglify-js/node_modules/source-map/source-map.d.ts",
+        "../../node_modules/@types/webpack-sources/index.d.ts"
+      ],
+      "../../node_modules/@types/webpack/node_modules/source-map/source-map.d.ts": [
+        "../../node_modules/@types/graceful-fs/index.d.ts",
+        "../../node_modules/@types/node/ts3.1/fs.d.ts",
+        "../../node_modules/@types/node/ts3.1/process.d.ts",
+        "../../node_modules/@types/node/ts3.1/util.d.ts",
+        "../../node_modules/@types/node/ts3.4/fs.d.ts",
+        "../../node_modules/@types/node/ts3.4/process.d.ts",
+        "../../node_modules/@types/node/ts3.4/util.d.ts"
       ],
       "../../node_modules/@types/yargs-parser/index.d.ts": [
         "../../node_modules/@types/graceful-fs/index.d.ts",
@@ -10429,15 +10639,6 @@
         "../../node_modules/@types/node/ts3.4/util.d.ts",
         "../../node_modules/@types/react/index.d.ts",
         "../../node_modules/popper.js/index.d.ts"
-      ],
-      "../../node_modules/source-map/source-map.d.ts": [
-        "../../node_modules/@types/graceful-fs/index.d.ts",
-        "../../node_modules/@types/node/ts3.1/fs.d.ts",
-        "../../node_modules/@types/node/ts3.1/process.d.ts",
-        "../../node_modules/@types/node/ts3.1/util.d.ts",
-        "../../node_modules/@types/node/ts3.4/fs.d.ts",
-        "../../node_modules/@types/node/ts3.4/process.d.ts",
-        "../../node_modules/@types/node/ts3.4/util.d.ts"
       ],
       "../../node_modules/tslib/tslib.d.ts": [
         "../../node_modules/@types/graceful-fs/index.d.ts",
@@ -10757,6 +10958,8 @@
       "../../core/components/atoms/_text/index.tsx",
       "../../core/components/atoms/avatar/Avatar.tsx",
       "../../core/components/atoms/avatar/index.tsx",
+      "../../core/components/atoms/avatarGroup/AvatarGroup.tsx",
+      "../../core/components/atoms/avatarGroup/index.tsx",
       "../../core/components/atoms/backdrop/Backdrop.tsx",
       "../../core/components/atoms/backdrop/index.tsx",
       "../../core/components/atoms/badge/Badge.tsx",
@@ -10906,6 +11109,9 @@
       "../../core/components/molecules/placeholder/index.tsx",
       "../../core/components/molecules/popover/Popover.tsx",
       "../../core/components/molecules/popover/index.tsx",
+      "../../core/components/molecules/stepper/Step.tsx",
+      "../../core/components/molecules/stepper/Stepper.tsx",
+      "../../core/components/molecules/stepper/index.tsx",
       "../../core/components/molecules/tabs/Tab.tsx",
       "../../core/components/molecules/tabs/TabsWrapper.tsx",
       "../../core/components/molecules/tabs/index.tsx",
@@ -10941,6 +11147,10 @@
       "../../core/components/organisms/pageHeader/index.tsx",
       "../../core/components/organisms/table/Table.tsx",
       "../../core/components/organisms/table/index.tsx",
+      "../../core/components/patterns/forms/CreatePassword.story.tsx",
+      "../../core/components/patterns/forms/InlineForm.story.tsx",
+      "../../core/components/patterns/forms/TimePeriodForm.story.tsx",
+      "../../core/components/patterns/forms/index.story.tsx",
       "../../core/index.tsx",
       "../../core/index.type.tsx",
       "../../core/utils/Keys.ts",
@@ -11154,11 +11364,13 @@
       "../../node_modules/@types/testing-library__jest-dom/index.d.ts",
       "../../node_modules/@types/throttle-debounce/index.d.ts",
       "../../node_modules/@types/uglify-js/index.d.ts",
+      "../../node_modules/@types/uglify-js/node_modules/source-map/source-map.d.ts",
       "../../node_modules/@types/unist/index.d.ts",
       "../../node_modules/@types/webpack-env/index.d.ts",
       "../../node_modules/@types/webpack-sources/index.d.ts",
       "../../node_modules/@types/webpack-sources/node_modules/source-map/source-map.d.ts",
       "../../node_modules/@types/webpack/index.d.ts",
+      "../../node_modules/@types/webpack/node_modules/source-map/source-map.d.ts",
       "../../node_modules/@types/yargs-parser/index.d.ts",
       "../../node_modules/@types/yargs/index.d.ts",
       "../../node_modules/csstype/index.d.ts",
@@ -11171,7 +11383,6 @@
       "../../node_modules/react-element-to-jsx-string/index.d.ts",
       "../../node_modules/react-live/typings/react-live.d.ts",
       "../../node_modules/react-popper/typings/react-popper.d.ts",
-      "../../node_modules/source-map/source-map.d.ts",
       "../../node_modules/tslib/tslib.d.ts",
       "../../node_modules/typescript/lib/lib.dom.d.ts",
       "../../node_modules/typescript/lib/lib.es2015.collection.d.ts",

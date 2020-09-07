@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { BaseProps } from "../../../utils/types";
 export declare type Position = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end';
-declare type ActionType = 'click' | 'hover';
+export declare type ActionType = 'click' | 'hover';
 export interface CustomStyle {
     height?: number | string;
     minHeight?: number | string;

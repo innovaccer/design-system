@@ -4,6 +4,7 @@ export declare type navigationPositionType = 'center' | 'bottom';
 export interface PageHeaderProps extends BaseProps {
     title: string;
     navigation?: React.ReactNode;
+    stepper?: React.ReactNode;
     actions?: React.ReactNode;
     tabs?: React.ReactNode;
     breadcrumbs?: React.ReactNode;

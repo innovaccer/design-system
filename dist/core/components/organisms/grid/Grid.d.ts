@@ -118,7 +118,6 @@ export declare class Grid extends React.Component<GridProps, GridState> {
         sortingList: never[];
         filterList: {};
     };
-    componentDidUpdate(prevProps: GridProps): void;
     gridRef: HTMLDivElement | null;
     updateRenderedData: import("throttle-debounce").throttle<(options?: Partial<FetchDataOptions> | undefined) => void>;
     updateRenderedSchema: (newSchema: Schema) => void;

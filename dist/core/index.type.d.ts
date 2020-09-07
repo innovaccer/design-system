@@ -1,5 +1,6 @@
 export * from "./index";
 export { AvatarProps } from "./components/atoms/avatar";
+export { AvatarGroupProps } from "./components/atoms/avatarGroup";
 export { BackdropProps } from "./components/atoms/backdrop";
 export { BadgeProps } from "./components/atoms/badge";
 export { BreadcrumbsProps } from "./components/atoms/breadcrumbs";
@@ -49,6 +50,7 @@ export { PlaceholderParagraphProps } from "./components/atoms/placeholderParagra
 export { ProgressBarProps } from "./components/atoms/progressBar";
 export { PopoverProps } from "./components/molecules/popover";
 export { ProgressRingProps } from "./components/atoms/progressRing";
+export { StepperProps } from "./components/molecules/stepper";
 export { DateRangePickerProps } from "./components/organisms/dateRangePicker";
 export { TabsWrapperProps, TabProps } from "./components/molecules/tabs";
 export { GridProps } from "./components/organisms/grid";

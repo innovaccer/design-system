@@ -11,7 +11,7 @@ export interface NestedRowProps {
     rowIndex: number;
     data: RowData;
     schema: GridProps['schema'];
-    loading?: boolean;
+    loading: GridProps['loading'];
 }
 export declare const GridNestedRow: (props: GridNestedRowProps) => import("react").ReactElement<any, any> | null;
 export default GridNestedRow;

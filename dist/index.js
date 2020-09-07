@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1599116498423 
+   * Generated on: 1599476766772 
    *      Package: @innovaccer/design-system
-   *      Version: v1.1.0
+   *      Version: v1.2.0-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -91,307 +91,65 @@
 
     var initialsLength = 2;
     var Avatar = function Avatar(props) {
-      var _a;
+      var _a, _b, _c;
 
-      var children = props.children,
+      var withTooltip = props.withTooltip,
+          tooltipPosition = props.tooltipPosition,
+          size = props.size,
+          children = props.children,
           firstName = props.firstName,
           lastName = props.lastName,
           className = props.className,
           appearance = props.appearance;
       var baseProps = extractBaseProps(props);
       var initials = children ? children.trim().slice(0, initialsLength) : "" + (firstName ? firstName.trim()[0] : '') + (lastName ? lastName.trim()[0] : '');
-      var colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
-      var AvatarAppearance = appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8];
+      var tooltip = children || (firstName || '') + " " + (lastName || '') || '';
+      var DefaultAppearance = 'secondary';
+      var colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success', 'secondary'];
+      var AvatarAppearance = appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 9] || DefaultAppearance;
       var classes = classNames__default['default']((_a = {
         Avatar: true
-      }, _a["Avatar--" + AvatarAppearance] = AvatarAppearance, _a), className);
-      return /*#__PURE__*/React.createElement("span", __assign({
-        "data-test": "DesignSystem-Avatar"
-      }, baseProps, {
-        className: classes
-      }), /*#__PURE__*/React.createElement(Text, {
-        weight: "medium",
-        appearance: AvatarAppearance === 'warning' ? 'default' : 'white'
-      }, initials));
+      }, _a["Avatar--" + size] = size, _a["Avatar--" + AvatarAppearance] = AvatarAppearance, _a['Avatar--disabled'] = !initials || !withTooltip, _a), className);
+      var ContentClass = classNames__default['default']((_b = {}, _b["Avatar-content--" + size] = size, _b["Avatar-content--" + AvatarAppearance] = AvatarAppearance, _b));
+      var IconClass = classNames__default['default']((_c = {}, _c["Avatar-content--" + AvatarAppearance] = AvatarAppearance, _c));
+
+      var renderAvatar = function renderAvatar() {
+        return /*#__PURE__*/React.createElement("span", __assign({
+          "data-test": "DesignSystem-Avatar"
+        }, baseProps, {
+          className: classes
+        }), initials && /*#__PURE__*/React.createElement(Text, {
+          weight: "medium",
+          appearance: 'white',
+          className: ContentClass
+        }, initials), !initials && /*#__PURE__*/React.createElement(Icon, {
+          "data-test": "DesignSystem-AvatarIcon",
+          name: "person",
+          size: size === 'regular' ? 16 : 12,
+          appearance: 'white',
+          className: IconClass
+        }));
+      };
+
+      var renderTooltip = function renderTooltip() {
+        if (withTooltip && initials) {
+          return /*#__PURE__*/React.createElement(Tooltip, {
+            tooltip: tooltip,
+            position: tooltipPosition
+          }, renderAvatar());
+        }
+
+        return renderAvatar();
+      };
+
+      return renderTooltip();
+    };
+    Avatar.defaultProps = {
+      tooltipPosition: 'bottom',
+      withTooltip: true,
+      size: 'regular'
     };
     Avatar.displayName = 'Avatar';
-
-    var useEffect = React.useEffect,
-        useState = React.useState;
-
-    var Backdrop = function Backdrop(props) {
-      var className = props.className;
-      var baseProps = extractBaseProps(props);
-
-      var _a = useState(null),
-          savedBodyOverflow = _a[0],
-          setBodyOverflow = _a[1];
-
-      var _b = React.useState(props.open),
-          open = _b[0],
-          setOpen = _b[1];
-
-      var _c = React.useState(props.open),
-          animate = _c[0],
-          setAnimate = _c[1];
-
-      var classes = classNames__default['default']({
-        Backdrop: true,
-        'Backdrop--open': open,
-        'Backdrop-animation--open': animate,
-        'Backdrop-animation--close': !animate
-      }, className);
-
-      var disableBodyScroll = function disableBodyScroll() {
-        if (savedBodyOverflow) {
-          return;
-        }
-
-        setBodyOverflow(document.body.style.overflow);
-        document.body.style.overflow = 'hidden';
-      };
-
-      var enableBodyScroll = function enableBodyScroll() {
-        document.body.style.overflow = savedBodyOverflow || 'auto';
-        setBodyOverflow(null);
-      };
-
-      useEffect(function () {
-        if (props.open) {
-          disableBodyScroll();
-          setOpen(true);
-          setAnimate(true);
-        }
-
-        if (!props.open) {
-          setTimeout(function () {
-            setOpen(false);
-          }, 120);
-          setAnimate(false);
-        }
-
-        return function () {
-          enableBodyScroll();
-        };
-      }, [props.open]);
-      var BackdropElement = /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement("div", __assign({
-        "data-test": "DesignSystem-Backdrop"
-      }, baseProps, {
-        className: classes
-      })), document.body);
-      return BackdropElement;
-    };
-
-    Backdrop.displayName = 'Backdrop';
-
-    var Badge = function Badge(props) {
-      var _a;
-
-      var _b = props.appearance,
-          appearance = _b === void 0 ? 'secondary' : _b,
-          children = props.children,
-          subtle = props.subtle,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {
-        Badge: true
-      }, _a["Badge--" + appearance] = appearance && !subtle, _a["Badge--subtle-" + appearance] = subtle, _a), className);
-      return /*#__PURE__*/React.createElement("span", __assign({
-        "data-test": "DesignSystem-Badge"
-      }, baseProps, {
-        className: classes
-      }), children);
-    };
-    Badge.displayName = 'Badge';
-
-    /* eslint-disable no-undefined,no-param-reassign,no-shadow */
-
-    /**
-     * Throttle execution of a function. Especially useful for rate limiting
-     * execution of handlers on events like resize and scroll.
-     *
-     * @param  {number}    delay -          A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
-     * @param  {boolean}   [noTrailing] -   Optional, defaults to false. If noTrailing is true, callback will only execute every `delay` milliseconds while the
-     *                                    throttled-function is being called. If noTrailing is false or unspecified, callback will be executed one final time
-     *                                    after the last throttled-function call. (After the throttled-function has not been called for `delay` milliseconds,
-     *                                    the internal counter is reset).
-     * @param  {Function}  callback -       A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
-     *                                    to `callback` when the throttled-function is executed.
-     * @param  {boolean}   [debounceMode] - If `debounceMode` is true (at begin), schedule `clear` to execute after `delay` ms. If `debounceMode` is false (at end),
-     *                                    schedule `callback` to execute after `delay` ms.
-     *
-     * @returns {Function}  A new, throttled, function.
-     */
-    function throttle (delay, noTrailing, callback, debounceMode) {
-      /*
-       * After wrapper has stopped being called, this timeout ensures that
-       * `callback` is executed at the proper times in `throttle` and `end`
-       * debounce modes.
-       */
-      var timeoutID;
-      var cancelled = false; // Keep track of the last time `callback` was executed.
-
-      var lastExec = 0; // Function to clear existing timeout
-
-      function clearExistingTimeout() {
-        if (timeoutID) {
-          clearTimeout(timeoutID);
-        }
-      } // Function to cancel next exec
-
-
-      function cancel() {
-        clearExistingTimeout();
-        cancelled = true;
-      } // `noTrailing` defaults to falsy.
-
-
-      if (typeof noTrailing !== 'boolean') {
-        debounceMode = callback;
-        callback = noTrailing;
-        noTrailing = undefined;
-      }
-      /*
-       * The `wrapper` function encapsulates all of the throttling / debouncing
-       * functionality and when executed will limit the rate at which `callback`
-       * is executed.
-       */
-
-
-      function wrapper() {
-        for (var _len = arguments.length, arguments_ = new Array(_len), _key = 0; _key < _len; _key++) {
-          arguments_[_key] = arguments[_key];
-        }
-
-        var self = this;
-        var elapsed = Date.now() - lastExec;
-
-        if (cancelled) {
-          return;
-        } // Execute `callback` and update the `lastExec` timestamp.
-
-
-        function exec() {
-          lastExec = Date.now();
-          callback.apply(self, arguments_);
-        }
-        /*
-         * If `debounceMode` is true (at begin) this is used to clear the flag
-         * to allow future `callback` executions.
-         */
-
-
-        function clear() {
-          timeoutID = undefined;
-        }
-
-        if (debounceMode && !timeoutID) {
-          /*
-           * Since `wrapper` is being called for the first time and
-           * `debounceMode` is true (at begin), execute `callback`.
-           */
-          exec();
-        }
-
-        clearExistingTimeout();
-
-        if (debounceMode === undefined && elapsed > delay) {
-          /*
-           * In throttle mode, if `delay` time has been exceeded, execute
-           * `callback`.
-           */
-          exec();
-        } else if (noTrailing !== true) {
-          /*
-           * In trailing throttle mode, since `delay` time has not been
-           * exceeded, schedule `callback` to execute `delay` ms after most
-           * recent execution.
-           *
-           * If `debounceMode` is true (at begin), schedule `clear` to execute
-           * after `delay` ms.
-           *
-           * If `debounceMode` is false (at end), schedule `callback` to
-           * execute after `delay` ms.
-           */
-          timeoutID = setTimeout(debounceMode ? clear : exec, debounceMode === undefined ? delay - elapsed : delay);
-        }
-      }
-
-      wrapper.cancel = cancel; // Return the wrapper function.
-
-      return wrapper;
-    }
-
-    /* eslint-disable no-undefined */
-    /**
-     * Debounce execution of a function. Debouncing, unlike throttling,
-     * guarantees that a function is only executed a single time, either at the
-     * very beginning of a series of calls, or at the very end.
-     *
-     * @param  {number}   delay -         A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
-     * @param  {boolean}  [atBegin] -     Optional, defaults to false. If atBegin is false or unspecified, callback will only be executed `delay` milliseconds
-     *                                  after the last debounced-function call. If atBegin is true, callback will be executed only at the first debounced-function call.
-     *                                  (After the throttled-function has not been called for `delay` milliseconds, the internal counter is reset).
-     * @param  {Function} callback -      A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
-     *                                  to `callback` when the debounced-function is executed.
-     *
-     * @returns {Function} A new, debounced function.
-     */
-
-    function debounce (delay, atBegin, callback) {
-      return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
-    }
-
-    var getSearchedOptions = function getSearchedOptions(options, searchTerm) {
-      var result = options.filter(function (option) {
-        return option.label.toLowerCase().includes(searchTerm.toLowerCase());
-      });
-      return result;
-    };
-    var _isEqual = function _isEqual(arr1, arr2) {
-      return arr1.length === arr2.length && arr1.every(function (option, index) {
-        return option.value === arr2[index].value || option.label === arr2[index].label;
-      });
-    };
-    var _isControlled = function _isControlled(selected) {
-      return selected !== undefined;
-    };
-    var _isOpenControlled = function _isOpenControlled(open, selected) {
-      return open !== undefined && selected !== undefined;
-    };
-    var _showSelectedItems = function _showSelectedItems(bulk, searchTerm, withCheckbox) {
-      return bulk && withCheckbox && searchTerm === '';
-    };
-    var scrollTo = function scrollTo(element, top) {
-      element.scrollTo(0, top);
-    };
-    var scrollIntoView = function scrollIntoView(menuElement, focusedElement) {
-      var menuRect = menuElement === null || menuElement === void 0 ? void 0 : menuElement.getBoundingClientRect();
-      var focusedRect = focusedElement.getBoundingClientRect();
-      var overscroll = focusedElement.offsetHeight;
-
-      if (focusedRect.bottom > menuRect.bottom && menuElement) {
-        scrollTo(menuElement, focusedElement.offsetTop - menuRect.height + overscroll);
-      } else if (focusedRect.top < menuRect.top && menuElement) {
-        scrollTo(menuElement, focusedElement.offsetTop - overscroll);
-      }
-    };
-    var getSelectAll = function getSelectAll(selected, optionsLength) {
-      if (selected.length) {
-        var indeterminate = selected.length > 0 && selected.length !== optionsLength;
-        var checked = selected.length > 0 && selected.length === optionsLength;
-        var obj = {
-          checked: checked,
-          indeterminate: indeterminate
-        };
-        return obj;
-      }
-
-      return {
-        indeterminate: false,
-        checked: false
-      };
-    };
 
     var Offsets;
 
@@ -722,6 +480,396 @@
     };
     Popover.displayName = 'Popover';
 
+    var AvatarGroup = function AvatarGroup(props) {
+      var _a, _b;
+
+      var max = props.max,
+          borderColor = props.borderColor,
+          popoverOptions = props.popoverOptions,
+          tooltipPosition = props.tooltipPosition,
+          list = props.list,
+          className = props.className;
+      var popperRenderer = popoverOptions.popperRenderer,
+          _c = popoverOptions.maxHeight,
+          maxHeight = _c === void 0 ? 150 : _c,
+          _d = popoverOptions.position,
+          position = _d === void 0 ? 'bottom' : _d,
+          _e = popoverOptions.on,
+          on = _e === void 0 ? 'hover' : _e,
+          _f = popoverOptions.dark,
+          dark = _f === void 0 ? true : _f,
+          _g = popoverOptions.appendToBody,
+          appendToBody = _g === void 0 ? true : _g,
+          _h = popoverOptions.popperClassName,
+          popperClassName = _h === void 0 ? '' : _h;
+      var baseProps = extractBaseProps(props);
+      var extraAvatars = list.length > max ? list.length - max : 0;
+      var style = {
+        borderRadius: '50%',
+        backgroundColor: "" + borderColor,
+        border: "var(--spacing-xs) solid " + borderColor,
+        boxShadow: "0 0 0 var(--spacing-xs) " + borderColor
+      };
+      var AvatarGroupClass = classNames__default['default']((_a = {}, _a['AvatarGroup'] = true, _a), className);
+      var popperClass = classNames__default['default']((_b = {}, _b['AvatarGroup-Popper'] = true, _b), popperClassName);
+      var trigger = /*#__PURE__*/React.createElement("div", {
+        "data-test": "DesignSystem-AvatarGroup--TriggerAvatar",
+        style: style
+      }, /*#__PURE__*/React.createElement(Avatar, {
+        appearance: "secondary",
+        firstName: "+",
+        lastName: "" + extraAvatars,
+        withTooltip: false
+      }));
+
+      var renderPopper = function renderPopper() {
+        var extraAvatarsList = list.slice(max, list.length);
+
+        if (popperRenderer && typeof renderPopper === 'function') {
+          return popperRenderer(extraAvatarsList);
+        }
+
+        return /*#__PURE__*/React.createElement("div", {
+          className: "py-6 pr-4 pl-6"
+        }, /*#__PURE__*/React.createElement("div", {
+          className: "AvatarGroup-TextWrapper",
+          style: {
+            maxHeight: maxHeight
+          }
+        }, extraAvatarsList.map(function (item, ind) {
+          var _a = item.firstName,
+              firstName = _a === void 0 ? '' : _a,
+              _b = item.lastName,
+              lastName = _b === void 0 ? '' : _b;
+          var name = firstName + " " + lastName;
+          return /*#__PURE__*/React.createElement(Text, {
+            key: ind,
+            appearance: dark ? 'white' : 'default',
+            className: ind < extraAvatars - 1 ? 'mb-5' : '',
+            "data-test": "DesignSystem-AvatarGroup--Text"
+          }, name);
+        })));
+      };
+
+      var renderAvatars = function renderAvatars() {
+        var avatars = list.slice(0, max).map(function (item, index) {
+          var appearance = item.appearance,
+              firstName = item.firstName,
+              lastName = item.lastName;
+          return /*#__PURE__*/React.createElement("div", {
+            "data-test": "DesignSystem-AvatarGroup--Avatar",
+            className: "AvatarGroup-item",
+            style: style,
+            key: index
+          }, /*#__PURE__*/React.createElement(Avatar, {
+            appearance: appearance,
+            firstName: firstName,
+            lastName: lastName,
+            withTooltip: true,
+            tooltipPosition: tooltipPosition
+          }));
+        });
+        return avatars;
+      };
+
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-AvatarGroup"
+      }, baseProps, {
+        className: AvatarGroupClass + " d-inline-flex"
+      }), renderAvatars(), list.length - max > 0 && /*#__PURE__*/React.createElement(Popover, {
+        on: on,
+        dark: dark,
+        trigger: trigger,
+        position: position,
+        appendToBody: appendToBody,
+        className: popperClass
+      }, renderPopper()));
+    };
+    AvatarGroup.defaultProps = {
+      max: 2,
+      borderColor: 'var(--white)',
+      tooltipPosition: 'bottom',
+      popoverOptions: {}
+    };
+    AvatarGroup.displayName = 'AvatarGroup';
+
+    var useEffect = React.useEffect,
+        useState = React.useState;
+
+    var Backdrop = function Backdrop(props) {
+      var className = props.className;
+      var baseProps = extractBaseProps(props);
+
+      var _a = useState(null),
+          savedBodyOverflow = _a[0],
+          setBodyOverflow = _a[1];
+
+      var _b = React.useState(props.open),
+          open = _b[0],
+          setOpen = _b[1];
+
+      var _c = React.useState(props.open),
+          animate = _c[0],
+          setAnimate = _c[1];
+
+      var classes = classNames__default['default']({
+        Backdrop: true,
+        'Backdrop--open': open,
+        'Backdrop-animation--open': animate,
+        'Backdrop-animation--close': !animate
+      }, className);
+
+      var disableBodyScroll = function disableBodyScroll() {
+        if (savedBodyOverflow) {
+          return;
+        }
+
+        setBodyOverflow(document.body.style.overflow);
+        document.body.style.overflow = 'hidden';
+      };
+
+      var enableBodyScroll = function enableBodyScroll() {
+        document.body.style.overflow = savedBodyOverflow || 'auto';
+        setBodyOverflow(null);
+      };
+
+      useEffect(function () {
+        if (props.open) {
+          disableBodyScroll();
+          setOpen(true);
+          setAnimate(true);
+        }
+
+        if (!props.open) {
+          setTimeout(function () {
+            setOpen(false);
+          }, 120);
+          setAnimate(false);
+        }
+
+        return function () {
+          enableBodyScroll();
+        };
+      }, [props.open]);
+      var BackdropElement = /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-Backdrop"
+      }, baseProps, {
+        className: classes
+      })), document.body);
+      return BackdropElement;
+    };
+
+    Backdrop.displayName = 'Backdrop';
+
+    var Badge = function Badge(props) {
+      var _a;
+
+      var _b = props.appearance,
+          appearance = _b === void 0 ? 'secondary' : _b,
+          children = props.children,
+          subtle = props.subtle,
+          className = props.className;
+      var baseProps = extractBaseProps(props);
+      var classes = classNames__default['default']((_a = {
+        Badge: true
+      }, _a["Badge--" + appearance] = appearance && !subtle, _a["Badge--subtle-" + appearance] = subtle, _a), className);
+      return /*#__PURE__*/React.createElement("span", __assign({
+        "data-test": "DesignSystem-Badge"
+      }, baseProps, {
+        className: classes
+      }), children);
+    };
+    Badge.displayName = 'Badge';
+
+    /* eslint-disable no-undefined,no-param-reassign,no-shadow */
+
+    /**
+     * Throttle execution of a function. Especially useful for rate limiting
+     * execution of handlers on events like resize and scroll.
+     *
+     * @param  {number}    delay -          A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
+     * @param  {boolean}   [noTrailing] -   Optional, defaults to false. If noTrailing is true, callback will only execute every `delay` milliseconds while the
+     *                                    throttled-function is being called. If noTrailing is false or unspecified, callback will be executed one final time
+     *                                    after the last throttled-function call. (After the throttled-function has not been called for `delay` milliseconds,
+     *                                    the internal counter is reset).
+     * @param  {Function}  callback -       A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
+     *                                    to `callback` when the throttled-function is executed.
+     * @param  {boolean}   [debounceMode] - If `debounceMode` is true (at begin), schedule `clear` to execute after `delay` ms. If `debounceMode` is false (at end),
+     *                                    schedule `callback` to execute after `delay` ms.
+     *
+     * @returns {Function}  A new, throttled, function.
+     */
+    function throttle (delay, noTrailing, callback, debounceMode) {
+      /*
+       * After wrapper has stopped being called, this timeout ensures that
+       * `callback` is executed at the proper times in `throttle` and `end`
+       * debounce modes.
+       */
+      var timeoutID;
+      var cancelled = false; // Keep track of the last time `callback` was executed.
+
+      var lastExec = 0; // Function to clear existing timeout
+
+      function clearExistingTimeout() {
+        if (timeoutID) {
+          clearTimeout(timeoutID);
+        }
+      } // Function to cancel next exec
+
+
+      function cancel() {
+        clearExistingTimeout();
+        cancelled = true;
+      } // `noTrailing` defaults to falsy.
+
+
+      if (typeof noTrailing !== 'boolean') {
+        debounceMode = callback;
+        callback = noTrailing;
+        noTrailing = undefined;
+      }
+      /*
+       * The `wrapper` function encapsulates all of the throttling / debouncing
+       * functionality and when executed will limit the rate at which `callback`
+       * is executed.
+       */
+
+
+      function wrapper() {
+        for (var _len = arguments.length, arguments_ = new Array(_len), _key = 0; _key < _len; _key++) {
+          arguments_[_key] = arguments[_key];
+        }
+
+        var self = this;
+        var elapsed = Date.now() - lastExec;
+
+        if (cancelled) {
+          return;
+        } // Execute `callback` and update the `lastExec` timestamp.
+
+
+        function exec() {
+          lastExec = Date.now();
+          callback.apply(self, arguments_);
+        }
+        /*
+         * If `debounceMode` is true (at begin) this is used to clear the flag
+         * to allow future `callback` executions.
+         */
+
+
+        function clear() {
+          timeoutID = undefined;
+        }
+
+        if (debounceMode && !timeoutID) {
+          /*
+           * Since `wrapper` is being called for the first time and
+           * `debounceMode` is true (at begin), execute `callback`.
+           */
+          exec();
+        }
+
+        clearExistingTimeout();
+
+        if (debounceMode === undefined && elapsed > delay) {
+          /*
+           * In throttle mode, if `delay` time has been exceeded, execute
+           * `callback`.
+           */
+          exec();
+        } else if (noTrailing !== true) {
+          /*
+           * In trailing throttle mode, since `delay` time has not been
+           * exceeded, schedule `callback` to execute `delay` ms after most
+           * recent execution.
+           *
+           * If `debounceMode` is true (at begin), schedule `clear` to execute
+           * after `delay` ms.
+           *
+           * If `debounceMode` is false (at end), schedule `callback` to
+           * execute after `delay` ms.
+           */
+          timeoutID = setTimeout(debounceMode ? clear : exec, debounceMode === undefined ? delay - elapsed : delay);
+        }
+      }
+
+      wrapper.cancel = cancel; // Return the wrapper function.
+
+      return wrapper;
+    }
+
+    /* eslint-disable no-undefined */
+    /**
+     * Debounce execution of a function. Debouncing, unlike throttling,
+     * guarantees that a function is only executed a single time, either at the
+     * very beginning of a series of calls, or at the very end.
+     *
+     * @param  {number}   delay -         A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
+     * @param  {boolean}  [atBegin] -     Optional, defaults to false. If atBegin is false or unspecified, callback will only be executed `delay` milliseconds
+     *                                  after the last debounced-function call. If atBegin is true, callback will be executed only at the first debounced-function call.
+     *                                  (After the throttled-function has not been called for `delay` milliseconds, the internal counter is reset).
+     * @param  {Function} callback -      A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
+     *                                  to `callback` when the debounced-function is executed.
+     *
+     * @returns {Function} A new, debounced function.
+     */
+
+    function debounce (delay, atBegin, callback) {
+      return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
+    }
+
+    var getSearchedOptions = function getSearchedOptions(options, searchTerm) {
+      var result = options.filter(function (option) {
+        return option.label.toLowerCase().includes(searchTerm.toLowerCase());
+      });
+      return result;
+    };
+    var _isEqual = function _isEqual(arr1, arr2) {
+      return arr1.length === arr2.length && arr1.every(function (option, index) {
+        return option.value === arr2[index].value || option.label === arr2[index].label;
+      });
+    };
+    var _isControlled = function _isControlled(selected) {
+      return selected !== undefined;
+    };
+    var _isOpenControlled = function _isOpenControlled(open, selected) {
+      return open !== undefined && selected !== undefined;
+    };
+    var _showSelectedItems = function _showSelectedItems(bulk, searchTerm, withCheckbox) {
+      return bulk && withCheckbox && searchTerm === '';
+    };
+    var scrollTo = function scrollTo(element, top) {
+      element.scrollTo(0, top);
+    };
+    var scrollIntoView = function scrollIntoView(menuElement, focusedElement) {
+      var menuRect = menuElement === null || menuElement === void 0 ? void 0 : menuElement.getBoundingClientRect();
+      var focusedRect = focusedElement.getBoundingClientRect();
+      var overscroll = focusedElement.offsetHeight;
+
+      if (focusedRect.bottom > menuRect.bottom && menuElement) {
+        scrollTo(menuElement, focusedElement.offsetTop - menuRect.height + overscroll);
+      } else if (focusedRect.top < menuRect.top && menuElement) {
+        scrollTo(menuElement, focusedElement.offsetTop - overscroll);
+      }
+    };
+    var getSelectAll = function getSelectAll(selected, optionsLength) {
+      if (selected.length) {
+        var indeterminate = selected.length > 0 && selected.length !== optionsLength;
+        var checked = selected.length > 0 && selected.length === optionsLength;
+        var obj = {
+          checked: checked,
+          indeterminate: indeterminate
+        };
+        return obj;
+      }
+
+      return {
+        indeterminate: false,
+        checked: false
+      };
+    };
+
     var Icon = function Icon(props) {
       var _a;
 
@@ -811,8 +959,8 @@
     var Text = function Text(props) {
       var _a;
 
-      var _b = props.appearance,
-          appearance = _b === void 0 ? 'default' : _b,
+      var appearance = props.appearance,
+          size = props.size,
           children = props.children,
           weight = props.weight,
           small = props.small,
@@ -820,7 +968,7 @@
       var baseProps = extractBaseProps(props);
       var classes = classNames__default['default']((_a = {
         Text: true
-      }, _a["Text--" + appearance] = appearance, _a["Text--" + weight] = weight, _a['Text--small'] = small, _a), className);
+      }, _a["Text--" + appearance] = appearance, _a["Text--" + weight] = weight, _a["Text--" + size] = size, _a['Text--small'] = size === 'small' || small, _a), className);
       return /*#__PURE__*/React.createElement(GenericText, __assign({
         "data-test": "DesignSystem-Text"
       }, baseProps, {
@@ -829,6 +977,10 @@
       }), children);
     };
     Text.displayName = 'Text';
+    Text.defaultProps = {
+      appearance: 'default',
+      size: 'regular'
+    };
 
     var uidGenerator = function uidGenerator() {
       var dt = new Date().getTime();
@@ -1244,8 +1396,7 @@
       var _e = props.size,
           size = _e === void 0 ? 'regular' : _e,
           _f = props.type,
-          type = _f === void 0 ? 'text' : _f,
-          disabled = props.disabled,
+          readonly = props.readonly,
           defaultValue = props.defaultValue,
           name = props.name,
           placeholder = props.placeholder,
@@ -1255,15 +1406,18 @@
           required = props.required,
           error = props.error,
           info = props.info,
-          autocomplete = props.autocomplete,
-          autoFocus = props.autoFocus,
           onChange = props.onChange,
           onClick = props.onClick,
           onClear = props.onClear,
           onBlur = props.onBlur,
           onFocus = props.onFocus,
           actionIcon = props.actionIcon,
-          className = props.className;
+          className = props.className,
+          autocomplete = props.autocomplete,
+          rest = __rest(props, ["size", "type", "readonly", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autocomplete"]);
+
+      var autoComplete = props.autoComplete || autocomplete;
+      var disabled = props.disabled || readonly;
       var baseProps = extractBaseProps(props);
       var classes = classNames__default['default']((_a = {}, _a['Input'] = true, _a["Input--" + size] = size, _a['Input--disabled'] = disabled, _a['Input--error'] = error, _a), className);
       var inputClass = classNames__default['default']((_b = {}, _b['Input-input'] = true, _b["Input-input--" + size] = size, _b));
@@ -1286,22 +1440,20 @@
       }, /*#__PURE__*/React.createElement(Icon, {
         name: icon,
         size: sizeMapping$1[size]
-      })), /*#__PURE__*/React.createElement("input", __assign({}, baseProps, {
+      })), /*#__PURE__*/React.createElement("input", __assign({}, baseProps, rest, {
         ref: ref,
         name: name,
-        type: type,
         defaultValue: defaultValue,
         placeholder: placeholder,
         className: inputClass,
         value: value,
-        autoComplete: autocomplete,
         required: required,
+        autoComplete: autoComplete,
         disabled: disabled,
         onChange: onChange,
         onBlur: onBlur,
         onClick: onClick,
-        onFocus: onFocus,
-        autoFocus: autoFocus
+        onFocus: onFocus
       })), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/React.createElement(Tooltip, {
         position: "top",
         tooltip: info
@@ -1659,7 +1811,7 @@
           onChange: searchHandler,
           onClear: searchClearHandler,
           ref: inputRef,
-          autocomplete: 'off'
+          autoComplete: 'off'
         }));
       };
 
@@ -2907,562 +3059,740 @@
       }
     };
 
-    var Calendar = function Calendar(props) {
-      var _a = props.monthsInView,
-          monthsInView = _a === void 0 ? 1 : _a,
-          _b = props.view,
-          viewProp = _b === void 0 ? 'date' : _b,
-          _c = props.firstDayOfWeek,
-          firstDayOfWeek = _c === void 0 ? 'sunday' : _c,
-          dateProp = props.date,
-          startDateProp = props.startDate,
-          endDateProp = props.endDate,
-          rangePicker = props.rangePicker,
-          _d = props.yearNav,
-          yearNavProp = _d === void 0 ? getDateInfo((rangePicker ? endDateProp || startDateProp : dateProp) || Date.now()).year : _d,
-          _e = props.monthNav,
-          monthNavProp = _e === void 0 ? getDateInfo((rangePicker ? endDateProp || startDateProp : dateProp) || Date.now()).month : _e,
-          rangeLimit = props.rangeLimit,
-          disabledBefore = props.disabledBefore,
-          disabledAfter = props.disabledAfter,
-          onDateChange = props.onDateChange,
-          onRangeChange = props.onRangeChange,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
-      var _f = props.jumpView,
-          jumpView = _f === void 0 ? true : _f;
+    var defaultProps = {
+      monthsInView: 1,
+      view: 'date',
+      firstDayOfWeek: 'sunday'
+    };
 
-      if (jumpView) {
-        if (monthsInView > 1) jumpView = false;
-      }
+    var Calendar = function (_super) {
+      __extends(Calendar, _super);
 
-      var yearBlockRange = config.yearBlockRange,
-          yearsInRow = config.yearsInRow,
-          monthBlock = config.monthBlock,
-          monthsInRow = config.monthsInRow,
-          daysInRow = config.daysInRow,
-          months = config.months,
-          days = config.days;
+      function Calendar(props) {
+        var _this = _super.call(this, props) || this;
 
-      var _g = React.useState(monthsInView > 1 ? 'date' : viewProp),
-          view = _g[0],
-          setView = _g[1];
-
-      var _h = React.useState({
-        year: undefined,
-        month: undefined,
-        date: undefined
-      }),
-          state = _h[0],
-          setState = _h[1];
-
-      var _j = React.useState(dateProp),
-          currDateState = _j[0],
-          setCurrDateState = _j[1];
-
-      var _k = React.useState(),
-          hoverDateState = _k[0],
-          setHoverDateState = _k[1];
-
-      var _l = React.useState(startDateProp),
-          startDateState = _l[0],
-          setStartDateState = _l[1];
-
-      var _m = React.useState(endDateProp),
-          endDateState = _m[0],
-          setEndDateState = _m[1];
-
-      var _o = React.useState(getYearBlock(yearNavProp)),
-          yearBlockNav = _o[0],
-          setYearBlockNav = _o[1];
-
-      var _p = React.useState(yearNavProp),
-          yearNav = _p[0],
-          setYearNav = _p[1];
-
-      var _q = React.useState(monthNavProp),
-          monthNav = _q[0],
-          setMonthNav = _q[1];
-
-      var yearState = state.year,
-          monthState = state.month,
-          dateState = state.date;
-      React.useEffect(function () {
-        var _a = getDateInfo(dateProp),
-            year = _a.year,
-            month = _a.month,
-            date = _a.date;
-
-        updateState(year, month, date);
-        var d = convertToDate(dateProp);
-        setCurrDateState(d);
-      }, [dateProp]);
-      React.useEffect(function () {
-        var d = convertToDate(startDateProp);
-        setStartDateState(d);
-      }, [startDateProp]);
-      React.useEffect(function () {
-        var d = convertToDate(endDateProp);
-        setEndDateState(d);
-      }, [endDateProp]);
-      React.useEffect(function () {
-        if (monthsInView === 1) setView(viewProp);else setView('date');
-      }, [monthsInView, viewProp]);
-      React.useEffect(function () {
-        if (currDateState) {
-          if (onDateChange) onDateChange(currDateState);
-
-          if (rangePicker) {
-            if (startDateState && endDateState) {
-              setEndDateState(undefined);
-              setHoverDateState(undefined);
-              setStartDateState(currDateState);
-            } else {
-              var _a = getDateInfo(currDateState),
-                  year = _a.year,
-                  month = _a.month,
-                  date = _a.date;
-
-              if (startDateState) {
-                if (compareDate(startDateState, 'more', year, month, date)) {
-                  setStartDateState(currDateState);
-                } else {
-                  setEndDateState(currDateState);
-                }
-              } else if (endDateState) {
-                if (compareDate(endDateState, 'less', year, month, date)) {
-                  setEndDateState(currDateState);
-                } else {
-                  setStartDateState(currDateState);
-                }
-              } else {
-                setStartDateState(currDateState);
-              }
-            }
-          } else {
-            setStartDateState(currDateState);
-          }
-        }
-      }, [currDateState]);
-      React.useEffect(function () {
-        if (onRangeChange) onRangeChange(startDateState, endDateState);
-      }, [startDateState, endDateState]);
-      React.useEffect(function () {
-        if (yearState !== undefined && monthsInView < 2) {
-          setYearBlockNav(getYearBlock(yearState));
-          setYearNav(yearState);
-        }
-      }, [yearState]);
-      React.useEffect(function () {
-        if (monthState !== undefined && monthsInView < 2) {
-          setMonthNav(monthState);
-        }
-      }, [monthState]);
-      React.useEffect(function () {
-        setYearNav(yearNavProp);
-        setYearBlockNav(getYearBlock(yearNavProp));
-      }, [yearNavProp]);
-      React.useEffect(function () {
-        setMonthNav(monthNavProp);
-      }, [monthNavProp]);
-
-      var getDateValue = function getDateValue(year, month, date) {
-        var d = new Date(year, month, date);
-
-        if (compareDate(disabledBefore, 'more', year, month, date) || compareDate(disabledAfter, 'less', year, month, date)) {
-          return undefined;
-        }
-
-        return d;
-      };
-
-      var getNavDateInfo = function getNavDateInfo(index) {
-        var yearBlock = yearBlockNav;
-        var month = (monthNav + index) % monthBlock;
-        var year = yearNav + (index !== 0 && month < monthNav ? 1 : 0);
-        return {
-          yearBlock: yearBlock,
-          year: year,
-          month: month
+        _this.updateState = function (year, month, date) {
+          _this.setState({
+            year: year,
+            month: month,
+            date: date
+          });
         };
-      };
 
-      var getInRangeError = function getInRangeError() {
-        if (rangePicker && rangeLimit) {
-          var _a = getDateInfo(startDateState),
-              startYear = _a.year,
-              startMonth = _a.month,
-              startDate = _a.date;
+        _this.getDateValue = function (year, month, date) {
+          var _a = _this.props,
+              disabledBefore = _a.disabledBefore,
+              disabledAfter = _a.disabledAfter;
+          var d = new Date(year, month, date);
 
-          var _b = getDateInfo(endDateState),
-              endYear = _b.year,
-              endMonth = _b.month,
-              endDate = _b.date;
-
-          var _c = getDateInfo(hoverDateState),
-              hoverYear = _c.year,
-              hoverMonth = _c.month,
-              hoverDate = _c.date;
-
-          var limitDate = void 0;
-
-          if (startDateState) {
-            limitDate = new Date(startDateState);
-            limitDate.setDate(startDate + rangeLimit);
-            return compareDate(limitDate, 'less', hoverYear, hoverMonth, hoverDate + 1) || compareDate(limitDate, 'less', endYear, endMonth, endDate + 1);
+          if (compareDate(disabledBefore, 'more', year, month, date) || compareDate(disabledAfter, 'less', year, month, date)) {
+            return undefined;
           }
 
-          if (endDateState) {
-            limitDate = new Date(endDateState);
-            limitDate.setDate(endDate - rangeLimit);
-            return compareDate(limitDate, 'more', hoverYear, hoverMonth, hoverDate - 1) || compareDate(limitDate, 'more', startYear, startMonth, startDate - 1);
+          return d;
+        };
+
+        _this.getNavDateInfo = function (index) {
+          var _a = _this.state,
+              yearBlockNav = _a.yearBlockNav,
+              yearNav = _a.yearNav,
+              monthNav = _a.monthNav;
+          var monthBlock = config.monthBlock;
+          var yearBlock = yearBlockNav;
+          var month = (monthNav + index) % monthBlock;
+          var year = yearNav + (index !== 0 && month < monthNav ? 1 : 0);
+          return {
+            yearBlock: yearBlock,
+            year: year,
+            month: month
+          };
+        };
+
+        _this.getInRangeError = function () {
+          var _a = _this.props,
+              rangePicker = _a.rangePicker,
+              rangeLimit = _a.rangeLimit;
+          var _b = _this.state,
+              startDateState = _b.startDate,
+              endDateState = _b.endDate,
+              hoverDateState = _b.hoverDate;
+
+          if (rangePicker && rangeLimit) {
+            var _c = getDateInfo(startDateState),
+                startYear = _c.year,
+                startMonth = _c.month,
+                startDate = _c.date;
+
+            var _d = getDateInfo(endDateState),
+                endYear = _d.year,
+                endMonth = _d.month,
+                endDate = _d.date;
+
+            var _e = getDateInfo(hoverDateState),
+                hoverYear = _e.year,
+                hoverMonth = _e.month,
+                hoverDate = _e.date;
+
+            var limitDate = void 0;
+
+            if (startDateState) {
+              limitDate = new Date(startDateState);
+              limitDate.setDate(startDate + rangeLimit);
+              return compareDate(limitDate, 'less', hoverYear, hoverMonth, hoverDate + 1) || compareDate(limitDate, 'less', endYear, endMonth, endDate + 1);
+            }
+
+            if (endDateState) {
+              limitDate = new Date(endDateState);
+              limitDate.setDate(endDate - rangeLimit);
+              return compareDate(limitDate, 'more', hoverYear, hoverMonth, hoverDate - 1) || compareDate(limitDate, 'more', startYear, startMonth, startDate - 1);
+            }
           }
-        }
 
-        return false;
-      };
+          return false;
+        };
 
-      var updateState = function updateState(year, month, date) {
-        setState({
-          year: year,
-          month: month,
-          date: date
-        });
-      };
+        _this.selectYear = function (year) {
+          _this.updateState(year);
 
-      var selectYear = function selectYear(year) {
-        updateState(year);
-        setView('month');
-      };
+          _this.setState({
+            view: 'month'
+          });
+        };
 
-      var selectMonth = function selectMonth(month) {
-        updateState(yearNav, month);
-        setView('date');
-      };
+        _this.selectMonth = function (month) {
+          _this.updateState(_this.state.yearNav, month);
 
-      var selectDate = function selectDate(index, date) {
-        var _a = getNavDateInfo(index),
-            yearNavVal = _a.year,
-            monthNavVal = _a.month;
+          _this.setState({
+            view: 'date'
+          });
+        };
 
-        updateState(yearNavVal, monthNavVal, date);
-        var d = getDateValue(yearNavVal, monthNavVal, date);
-        setCurrDateState(d);
-      };
+        _this.selectDate = function (index, date) {
+          var _a = _this.getNavDateInfo(index),
+              yearNavVal = _a.year,
+              monthNavVal = _a.month;
 
-      var renderJumpButton = function renderJumpButton(type) {
-        var navClickHandler = function navClickHandler() {
+          _this.updateState(yearNavVal, monthNavVal, date);
+
+          var d = _this.getDateValue(yearNavVal, monthNavVal, date);
+
+          _this.setState({
+            currDate: d
+          });
+        };
+
+        _this.navClickHandler = function (type) {
+          var _a = _this.state,
+              view = _a.view,
+              yearBlockNav = _a.yearBlockNav,
+              yearNav = _a.yearNav,
+              monthNav = _a.monthNav;
+          var yearBlockRange = config.yearBlockRange,
+              monthBlock = config.monthBlock;
+
           switch (view) {
             case 'year':
-              if (type === 'prev') setYearBlockNav(yearBlockNav - yearBlockRange);
-              if (type === 'next') setYearBlockNav(yearBlockNav + yearBlockRange);
+              if (type === 'prev') _this.setState({
+                yearBlockNav: yearBlockNav - yearBlockRange
+              });
+              if (type === 'next') _this.setState({
+                yearBlockNav: yearBlockNav + yearBlockRange
+              });
               break;
 
             case 'month':
-              if (type === 'prev') setYearNav(yearNav - 1);
-              if (type === 'next') setYearNav(yearNav + 1);
+              if (type === 'prev') _this.setState({
+                yearNav: yearNav - 1
+              });
+              if (type === 'next') _this.setState({
+                yearNav: yearNav + 1
+              });
               break;
 
             case 'date':
               if (type === 'prev') {
-                if (monthNav === 0) setYearNav(yearNav - 1);
-                setMonthNav((monthBlock + monthNav - 1) % monthBlock);
+                if (monthNav === 0) _this.setState({
+                  yearNav: yearNav - 1
+                });
+
+                _this.setState({
+                  monthNav: (monthBlock + monthNav - 1) % monthBlock
+                });
               }
 
               if (type === 'next') {
-                if (monthNav === monthBlock - 1) setYearNav(yearNav + 1);
-                setMonthNav((monthNav + 1) % monthBlock);
+                if (monthNav === monthBlock - 1) _this.setState({
+                  yearNav: yearNav + 1
+                });
+
+                _this.setState({
+                  monthNav: (monthNav + 1) % monthBlock
+                });
               }
 
               break;
           }
         };
 
-        var disabled = false;
+        _this.renderJumpButton = function (type) {
+          var _a = _this.props,
+              disabledBefore = _a.disabledBefore,
+              disabledAfter = _a.disabledAfter;
+          var _b = _this.state,
+              view = _b.view,
+              yearBlockNav = _b.yearBlockNav,
+              yearNav = _b.yearNav,
+              monthNav = _b.monthNav;
+          var disabled = false;
 
-        switch (view) {
-          case 'year':
-            if (type === 'prev') {
-              disabled = compareDecade(disabledBefore, 'more', yearBlockNav) || compareDecade(disabledBefore, 'equal', yearBlockNav);
+          switch (view) {
+            case 'year':
+              if (type === 'prev') {
+                disabled = compareDecade(disabledBefore, 'more', yearBlockNav) || compareDecade(disabledBefore, 'equal', yearBlockNav);
+              }
+
+              if (type === 'next') {
+                disabled = compareDecade(disabledAfter, 'less', yearBlockNav) || compareDecade(disabledAfter, 'equal', yearBlockNav);
+              }
+
+              break;
+
+            case 'month':
+              if (type === 'prev') {
+                disabled = compareDate(disabledBefore, 'more', yearNav - 1);
+              }
+
+              if (type === 'next') {
+                disabled = compareDate(disabledAfter, 'less', yearNav + 1);
+              }
+
+              break;
+
+            case 'date':
+              if (type === 'prev') {
+                disabled = compareDate(disabledBefore, 'more', yearNav, monthNav - 1);
+              }
+
+              if (type === 'next') {
+                disabled = compareDate(disabledAfter, 'less', yearNav, monthNav + 1);
+              }
+
+              break;
+          }
+
+          var headerIconClass = classNames__default['default']({
+            'Calendar-headerIcon': true,
+            'Calendar-headerIcon--disabled': disabled
+          });
+          return /*#__PURE__*/React.createElement(Icon, {
+            name: "arrow_" + (type === 'next' ? 'forward' : 'back'),
+            className: headerIconClass,
+            onClick: function onClick() {
+              return _this.navClickHandler(type);
             }
+          });
+        };
 
-            if (type === 'next') {
-              disabled = compareDecade(disabledAfter, 'less', yearBlockNav) || compareDecade(disabledAfter, 'equal', yearBlockNav);
+        _this.renderHeaderContent = function (index) {
+          var monthsInView = _this.props.monthsInView;
+          var _a = _this.state,
+              view = _a.view,
+              yearBlockNav = _a.yearBlockNav;
+          var yearBlockRange = config.yearBlockRange,
+              months = config.months;
+          var _b = _this.props.jumpView,
+              jumpView = _b === void 0 ? true : _b;
+
+          if (jumpView) {
+            if (monthsInView > 1) jumpView = false;
+          }
+
+          var _c = _this.getNavDateInfo(index),
+              yearNavVal = _c.year,
+              monthNavVal = _c.month;
+
+          var headerContentClass = classNames__default['default']({
+            'Calendar-headerContent': true,
+            'Calendar-headerContent--noIcon-left': index === monthsInView - 1,
+            'Calendar-headerContent--noIcon-right': index === 0
+          });
+          var headerContent = '';
+
+          var onClickHandler = function onClickHandler() {
+            if (jumpView) {
+              if (view === 'year') _this.setState({
+                view: 'date'
+              });
+              if (view === 'month') _this.setState({
+                view: 'year'
+              });
+              if (view === 'date') _this.setState({
+                view: 'month'
+              });
             }
+          };
 
-            break;
+          if (view === 'year') headerContent = yearBlockNav + " - " + (yearBlockNav + (yearBlockRange - 1));
+          if (view === 'month') headerContent = "" + yearNavVal;
+          if (view === 'date') headerContent = months[monthNavVal] + " " + yearNavVal;
+          return /*#__PURE__*/React.createElement("div", {
+            className: headerContentClass,
+            onClick: onClickHandler
+          }, /*#__PURE__*/React.createElement(Heading, {
+            size: "s"
+          }, headerContent));
+        };
 
-          case 'month':
-            if (type === 'prev') {
-              disabled = compareDate(disabledBefore, 'more', yearNav - 1);
+        _this.renderBodyYear = function () {
+          var yearBlockRange = config.yearBlockRange,
+              yearsInRow = config.yearsInRow;
+          var _a = _this.props,
+              rangePicker = _a.rangePicker,
+              disabledBefore = _a.disabledBefore,
+              disabledAfter = _a.disabledAfter;
+          var _b = _this.state,
+              yearBlockNav = _b.yearBlockNav,
+              yearNav = _b.yearNav;
+          var noOfRows = Math.ceil(yearBlockRange / yearsInRow);
+          return Array.from({
+            length: noOfRows
+          }, function (_y, row) {
+            return /*#__PURE__*/React.createElement("div", {
+              className: "Calendar-valueRow"
+            }, Array.from({
+              length: yearsInRow
+            }, function (_x, col) {
+              var offset = yearsInRow * row + col;
+              if (offset === yearBlockNav) return undefined;
+              var year = yearBlockNav + offset;
+              var disabled = compareDate(disabledBefore, 'more', year) || compareDate(disabledAfter, 'less', year);
+              var active = !disabled && !rangePicker && yearNav === year;
+              var valueClass = classNames__default['default']({
+                'Calendar-value': true,
+                'Calendar-value--active': active,
+                'Calendar-value--disabled': disabled
+              });
+              return /*#__PURE__*/React.createElement("div", {
+                className: valueClass,
+                onClick: function onClick() {
+                  return _this.selectYear(year);
+                }
+              }, /*#__PURE__*/React.createElement(Text, {
+                appearance: active ? 'white' : disabled ? 'disabled' : 'default'
+              }, "" + year));
+            }));
+          });
+        };
+
+        _this.renderBodyMonth = function () {
+          var monthBlock = config.monthBlock,
+              monthsInRow = config.monthsInRow,
+              months = config.months;
+          var _a = _this.props,
+              disabledBefore = _a.disabledBefore,
+              disabledAfter = _a.disabledAfter;
+          var _b = _this.state,
+              yearNav = _b.yearNav,
+              monthNav = _b.monthNav,
+              year = _b.year;
+          var noOfRows = Math.ceil(monthBlock / monthsInRow);
+          return Array.from({
+            length: noOfRows
+          }, function (_y, row) {
+            return /*#__PURE__*/React.createElement("div", {
+              className: "Calendar-valueRow"
+            }, Array.from({
+              length: monthsInRow
+            }, function (_x, col) {
+              var month = monthsInRow * row + col;
+              var disabled = compareDate(disabledBefore, 'more', yearNav, month) || compareDate(disabledAfter, 'less', yearNav, month);
+              var active = !disabled && year === yearNav && monthNav === month;
+              var valueClass = classNames__default['default']({
+                'Calendar-value': true,
+                'Calendar-value--active': active,
+                'Calendar-value--dummy': disabled
+              });
+              return /*#__PURE__*/React.createElement("div", {
+                className: valueClass,
+                onClick: function onClick() {
+                  return _this.selectMonth(month);
+                }
+              }, /*#__PURE__*/React.createElement(Text, {
+                appearance: active ? 'white' : disabled ? 'disabled' : 'default'
+              }, months[month]));
+            }));
+          });
+        };
+
+        _this.renderBodyDate = function (index) {
+          var daysInRow = config.daysInRow,
+              days = config.days;
+          var _a = _this.props,
+              rangePicker = _a.rangePicker,
+              firstDayOfWeek = _a.firstDayOfWeek;
+
+          var onMouseLeaveHandler = function onMouseLeaveHandler() {
+            if (rangePicker) {
+              _this.setState({
+                hoverDate: undefined
+              });
             }
+          };
 
-            if (type === 'next') {
-              disabled = compareDate(disabledAfter, 'less', yearNav + 1);
+          return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+            className: "Calendar-dayValues"
+          }, Array.from({
+            length: 7
+          }, function (_x, day) {
+            var valueClass = classNames__default['default']({
+              'Calendar-value': true,
+              'Calendar-value--dummy': true
+            });
+            var dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
+            return /*#__PURE__*/React.createElement(Subheading, {
+              className: valueClass,
+              appearance: "disabled"
+            }, days[dayValue]);
+          })), /*#__PURE__*/React.createElement("div", {
+            className: "Calendar-dateValues",
+            onMouseLeave: onMouseLeaveHandler
+          }, _this.renderDateValues(index)));
+        };
+
+        _this.renderDateValues = function (index) {
+          var daysInRow = config.daysInRow;
+          var _a = _this.props,
+              rangePicker = _a.rangePicker,
+              firstDayOfWeek = _a.firstDayOfWeek,
+              disabledBefore = _a.disabledBefore,
+              disabledAfter = _a.disabledAfter;
+          var _b = _this.state,
+              startDate = _b.startDate,
+              endDate = _b.endDate,
+              hoverDate = _b.hoverDate;
+          var _c = _this.state,
+              yearState = _c.year,
+              monthState = _c.month,
+              dateState = _c.date;
+
+          var _d = _this.getNavDateInfo(index),
+              yearNavVal = _d.year,
+              monthNavVal = _d.month;
+
+          var dayRange = getDaysInMonth(yearNavVal, monthNavVal);
+          var dayDiff = getFirstDayOfMonth(yearNavVal, monthNavVal) - getIndexOfDay(firstDayOfWeek);
+          var dummyDays = (dayDiff + daysInRow) % daysInRow;
+          var noOfRows = Math.ceil((dayRange + dummyDays) / daysInRow);
+
+          var inRangeError = _this.getInRangeError();
+
+          var onClickHandler = function onClickHandler(date) {
+            if (rangePicker) {
+              if (startDate && endDate) {
+                _this.selectDate(index, date);
+              } else {
+                if (!inRangeError) _this.selectDate(index, date);
+              }
+            } else {
+              _this.selectDate(index, date);
             }
+          };
 
-            break;
+          var onMouseOverHandler = function onMouseOverHandler(date) {
+            if (rangePicker) {
+              var d = _this.getDateValue(yearNavVal, monthNavVal, date);
 
-          case 'date':
-            if (type === 'prev') {
-              disabled = compareDate(disabledBefore, 'more', yearNav, monthNav - 1);
+              if (!(startDate && endDate)) {
+                _this.setState({
+                  hoverDate: d
+                });
+              }
             }
+          };
 
-            if (type === 'next') {
-              disabled = compareDate(disabledAfter, 'less', yearNav, monthNav + 1);
-            }
+          return Array.from({
+            length: noOfRows
+          }, function (_y, row) {
+            return /*#__PURE__*/React.createElement(React.Fragment, null, dummyDays < daysInRow && /*#__PURE__*/React.createElement("div", {
+              className: "Calendar-valueRow"
+            }, Array.from({
+              length: daysInRow
+            }, function (_x, col) {
+              var date = daysInRow * row + col - dummyDays + 1;
+              var dummy = date <= 0 || date > dayRange;
+              var disabled = !dummy && (compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) || compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date));
+              var active = !disabled && yearState === yearNavVal && monthState === monthNavVal && dateState === date;
+              var startActive = false;
+              var endActive = false;
+              var inRange = false;
+              var inRangeLast = false;
 
-            break;
+              if (rangePicker) {
+                startActive = compareDate(startDate, 'equal', yearNavVal, monthNavVal, date);
+                endActive = compareDate(endDate, 'equal', yearNavVal, monthNavVal, date);
+                inRangeLast = compareDate(hoverDate, 'equal', yearNavVal, monthNavVal, date);
+                active = !disabled && (startActive || endActive);
+
+                if (startDate && endDate) {
+                  inRange = !disabled && (compareDate(startDate, 'less', yearNavVal, monthNavVal, date) || startActive) && (compareDate(endDate, 'more', yearNavVal, monthNavVal, date) || endActive);
+                } else if (startDate) {
+                  inRange = !disabled && (compareDate(hoverDate, 'more', yearNavVal, monthNavVal, date) || inRangeLast) && compareDate(startDate, 'less', yearNavVal, monthNavVal, date);
+                } else if (endDate) {
+                  inRange = !disabled && (compareDate(hoverDate, 'less', yearNavVal, monthNavVal, date) || inRangeLast) && compareDate(endDate, 'more', yearNavVal, monthNavVal, date);
+                }
+              }
+
+              var wrapperClass = classNames__default['default']({
+                'Calendar-valueWrapper': true,
+                'Calendar-valueWrapper--start': startActive || inRangeLast && endDate,
+                'Calendar-valueWrapper--end': endActive || inRangeLast && startDate,
+                'Calendar-valueWrapper--inRange': inRange || rangePicker && active,
+                'Calendar-valueWrapper--inRange-error': inRange && inRangeError
+              });
+              var valueClass = classNames__default['default']({
+                'Calendar-value': true,
+                'Calendar-value--active': active,
+                'Calendar-value--dummy': dummy || disabled,
+                'Calendar-value--disabled': disabled
+              });
+              return /*#__PURE__*/React.createElement("div", {
+                className: wrapperClass
+              }, /*#__PURE__*/React.createElement("span", {
+                className: valueClass,
+                onClick: function onClick() {
+                  return onClickHandler(date);
+                },
+                onMouseOver: function onMouseOver() {
+                  return onMouseOverHandler(date);
+                }
+              }, !dummy && /*#__PURE__*/React.createElement(Text, {
+                appearance: active ? 'white' : disabled ? 'disabled' : 'default'
+              }, "" + date)));
+            })));
+          });
+        };
+
+        _this.renderCalendar = function (index) {
+          var _a;
+
+          var monthsInView = _this.props.monthsInView;
+          var view = _this.state.view;
+          var wrapperClass = classNames__default['default']((_a = {}, _a['Calendar'] = true, _a["Calendar--" + view] = view, _a));
+          var headerClass = classNames__default['default']({
+            'Calendar-header': true
+          });
+          var bodyClass = classNames__default['default']({
+            'Calendar-body': true
+          });
+          return /*#__PURE__*/React.createElement("div", {
+            className: wrapperClass
+          }, /*#__PURE__*/React.createElement("div", {
+            className: headerClass
+          }, index === 0 && _this.renderJumpButton('prev'), _this.renderHeaderContent(index), index === monthsInView - 1 && _this.renderJumpButton('next')), /*#__PURE__*/React.createElement("div", {
+            className: bodyClass
+          }, view === 'year' && _this.renderBodyYear(), view === 'month' && _this.renderBodyMonth(), view === 'date' && _this.renderBodyDate(index)));
+        };
+
+        var _a = _this.props,
+            rangePicker = _a.rangePicker,
+            startDate = _a.startDate,
+            endDate = _a.endDate,
+            monthsInView = _a.monthsInView,
+            view = _a.view;
+        var currDate = rangePicker ? endDate || startDate : props.date;
+        var yearNav = props.yearNav || getDateInfo(currDate || Date.now()).year;
+        var monthNav = props.monthNav || getDateInfo(currDate || Date.now()).month;
+
+        var _b = getDateInfo(currDate),
+            year = _b.year,
+            month = _b.month,
+            date = _b.date;
+
+        _this.state = {
+          currDate: currDate,
+          startDate: startDate,
+          endDate: endDate,
+          yearNav: yearNav,
+          monthNav: monthNav,
+          year: year,
+          month: month,
+          date: date,
+          view: monthsInView > 1 ? 'date' : view,
+          yearBlockNav: getYearBlock(yearNav)
+        };
+        return _this;
+      }
+
+      Calendar.prototype.componentDidUpdate = function (prevProps, prevState) {
+        var monthsInView = this.props.monthsInView;
+
+        if (prevProps.date !== this.props.date) {
+          var _a = getDateInfo(this.props.date),
+              year = _a.year,
+              month = _a.month,
+              date = _a.date;
+
+          this.updateState(year, month, date);
+          var d = convertToDate(this.props.date);
+          this.setState({
+            currDate: d
+          });
         }
 
-        var headerIconClass = classNames__default['default']({
-          'Calendar-headerIcon': true,
-          'Calendar-headerIcon--disabled': disabled
-        });
-        return /*#__PURE__*/React.createElement("div", {
-          className: headerIconClass
-        }, /*#__PURE__*/React.createElement(Icon, {
-          name: "arrow_" + (type === 'next' ? 'forward' : 'back'),
-          className: "p-4",
-          onClick: navClickHandler
+        if (prevProps.startDate !== this.props.startDate) {
+          var d = convertToDate(this.props.startDate);
+          this.setState({
+            startDate: d
+          });
+        }
+
+        if (prevProps.endDate !== this.props.endDate) {
+          var d = convertToDate(this.props.endDate);
+          this.setState({
+            endDate: d
+          });
+        }
+
+        if (prevProps.view !== this.props.view) {
+          if (this.props.monthsInView === 1) {
+            this.setState({
+              view: this.props.view
+            });
+          }
+        }
+
+        if (prevProps.yearNav !== this.props.yearNav) {
+          var yearNav = this.props.yearNav;
+
+          if (yearNav) {
+            this.setState({
+              yearNav: yearNav,
+              yearBlockNav: getYearBlock(yearNav)
+            });
+          }
+        }
+
+        if (prevProps.monthNav !== this.props.monthNav) {
+          var monthNav = this.props.monthNav;
+
+          if (monthNav) {
+            this.setState({
+              monthNav: monthNav
+            });
+          }
+        }
+
+        if (prevState.currDate !== this.state.currDate) {
+          var _b = this.props,
+              rangePicker = _b.rangePicker,
+              onDateChange = _b.onDateChange;
+          var _c = this.state,
+              currDate = _c.currDate,
+              startDate = _c.startDate,
+              endDate = _c.endDate;
+
+          if (currDate) {
+            if (onDateChange) onDateChange(currDate);
+
+            if (rangePicker) {
+              this.setState({
+                hoverDate: undefined
+              });
+
+              if (startDate && endDate) {
+                this.setState({
+                  startDate: currDate,
+                  endDate: undefined
+                });
+              } else {
+                var _d = getDateInfo(currDate),
+                    year = _d.year,
+                    month = _d.month,
+                    date = _d.date;
+
+                if (startDate) {
+                  if (compareDate(startDate, 'more', year, month, date)) {
+                    this.setState({
+                      startDate: currDate
+                    });
+                  } else {
+                    this.setState({
+                      endDate: currDate
+                    });
+                  }
+                } else if (endDate) {
+                  if (compareDate(endDate, 'less', year, month, date)) {
+                    this.setState({
+                      endDate: currDate
+                    });
+                  } else {
+                    this.setState({
+                      startDate: currDate
+                    });
+                  }
+                } else {
+                  this.setState({
+                    startDate: currDate
+                  });
+                }
+              }
+            } else {
+              this.setState({
+                startDate: currDate
+              });
+            }
+          }
+        }
+
+        if (prevState.startDate !== this.state.startDate || prevState.endDate !== this.state.endDate) {
+          var onRangeChange = this.props.onRangeChange;
+          var _e = this.state,
+              startDate = _e.startDate,
+              endDate = _e.endDate;
+          if (onRangeChange) onRangeChange(startDate, endDate);
+        }
+
+        if (prevState.year !== this.state.year) {
+          var year = this.state.year;
+
+          if (year !== undefined && monthsInView === 1) {
+            this.setState({
+              year: year,
+              yearBlockNav: getYearBlock(year)
+            });
+          }
+        }
+
+        if (prevState.month !== this.state.month) {
+          var month = this.state.month;
+
+          if (month !== undefined && monthsInView === 1) {
+            this.setState({
+              monthNav: month
+            });
+          }
+        }
+      };
+
+      Calendar.prototype.render = function () {
+        var _this = this;
+
+        var _a = this.props,
+            monthsInView = _a.monthsInView,
+            className = _a.className;
+        var baseProps = extractBaseProps(this.props);
+        return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+          className: "Calendar-wrapper " + className
+        }), Array.from({
+          length: monthsInView
+        }, function (_x, index) {
+          return _this.renderCalendar(index);
         }));
       };
 
-      var renderHeaderContent = function renderHeaderContent(index) {
-        var _a = getNavDateInfo(index),
-            yearNavVal = _a.year,
-            monthNavVal = _a.month;
-
-        var headerContentClass = classNames__default['default']({
-          'Calendar-headerContent': true,
-          'Calendar-headerContent--noIcon-left': index === monthsInView - 1,
-          'Calendar-headerContent--noIcon-right': index === 0
-        });
-        var headerContent = '';
-
-        var onClickHandler = function onClickHandler() {
-          if (jumpView) {
-            if (view === 'year') setView('date');
-            if (view === 'month') setView('year');
-            if (view === 'date') setView('month');
-          }
-        };
-
-        if (view === 'year') headerContent = yearBlockNav + " - " + (yearBlockNav + (yearBlockRange - 1));
-        if (view === 'month') headerContent = "" + yearNavVal;
-        if (view === 'date') headerContent = months[monthNavVal] + " " + yearNavVal;
-        return /*#__PURE__*/React.createElement("div", {
-          className: headerContentClass,
-          onClick: onClickHandler
-        }, /*#__PURE__*/React.createElement(Heading, {
-          size: "s"
-        }, headerContent));
-      };
-
-      var renderBodyYear = function renderBodyYear() {
-        var noOfRows = Math.ceil(yearBlockRange / yearsInRow);
-        return Array.from({
-          length: noOfRows
-        }, function (_y, row) {
-          return /*#__PURE__*/React.createElement("div", {
-            className: "Calendar-valueRow"
-          }, Array.from({
-            length: yearsInRow
-          }, function (_x, col) {
-            var offset = yearsInRow * row + col;
-            if (offset === yearBlockNav) return undefined;
-            var year = yearBlockNav + offset;
-            var disabled = compareDate(disabledBefore, 'more', year) || compareDate(disabledAfter, 'less', year);
-            var active = !disabled && !rangePicker && yearNav === year;
-            var valueClass = classNames__default['default']({
-              'Calendar-value': true,
-              'Calendar-value--active': active,
-              'Calendar-value--disabled': disabled
-            });
-            return /*#__PURE__*/React.createElement("div", {
-              className: valueClass,
-              onClick: function onClick() {
-                return selectYear(year);
-              }
-            }, /*#__PURE__*/React.createElement(Text, {
-              appearance: active ? 'white' : disabled ? 'disabled' : 'default'
-            }, "" + year));
-          }));
-        });
-      };
-
-      var renderBodyMonth = function renderBodyMonth() {
-        var noOfRows = Math.ceil(monthBlock / monthsInRow);
-        return Array.from({
-          length: noOfRows
-        }, function (_y, row) {
-          return /*#__PURE__*/React.createElement("div", {
-            className: "Calendar-valueRow"
-          }, Array.from({
-            length: monthsInRow
-          }, function (_x, col) {
-            var month = monthsInRow * row + col;
-            var disabled = compareDate(disabledBefore, 'more', yearNav, month) || compareDate(disabledAfter, 'less', yearNav, month);
-            var active = !disabled && yearState === yearNav && monthNav === month;
-            var valueClass = classNames__default['default']({
-              'Calendar-value': true,
-              'Calendar-value--active': active,
-              'Calendar-value--dummy': disabled
-            });
-            return /*#__PURE__*/React.createElement("div", {
-              className: valueClass,
-              onClick: function onClick() {
-                return selectMonth(month);
-              }
-            }, /*#__PURE__*/React.createElement(Text, {
-              appearance: active ? 'white' : disabled ? 'disabled' : 'default'
-            }, months[month]));
-          }));
-        });
-      };
-
-      var renderBodyDate = function renderBodyDate(index) {
-        var onMouseLeaveHandler = function onMouseLeaveHandler() {
-          if (rangePicker) {
-            setHoverDateState(undefined);
-          }
-        };
-
-        return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-          className: "Calendar-dayValues"
-        }, renderDayValues()), /*#__PURE__*/React.createElement("div", {
-          className: "Calendar-dateValues",
-          onMouseLeave: onMouseLeaveHandler
-        }, renderDateValues(index)));
-      };
-
-      var renderDayValues = function renderDayValues() {
-        return Array.from({
-          length: 7
-        }, function (_x, day) {
-          var valueClass = classNames__default['default']({
-            'Calendar-value': true,
-            'Calendar-value--dummy': true
-          });
-          var dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
-          return /*#__PURE__*/React.createElement("div", {
-            className: valueClass
-          }, /*#__PURE__*/React.createElement(Subheading, {
-            appearance: "disabled"
-          }, days[dayValue]));
-        });
-      };
-
-      var renderDateValues = function renderDateValues(index) {
-        var _a = getNavDateInfo(index),
-            yearNavVal = _a.year,
-            monthNavVal = _a.month;
-
-        var dayRange = getDaysInMonth(yearNavVal, monthNavVal);
-        var dayDiff = getFirstDayOfMonth(yearNavVal, monthNavVal) - getIndexOfDay(firstDayOfWeek);
-        var dummyDays = (dayDiff + daysInRow) % daysInRow;
-        var noOfRows = Math.ceil((dayRange + dummyDays) / daysInRow);
-        var inRangeError = getInRangeError();
-
-        var onClickHandler = function onClickHandler(date) {
-          if (rangePicker) {
-            if (startDateState && endDateState) {
-              selectDate(index, date);
-            } else {
-              if (!inRangeError) selectDate(index, date);
-            }
-          } else {
-            selectDate(index, date);
-          }
-        };
-
-        var onMouseOverHandler = function onMouseOverHandler(date) {
-          if (rangePicker) {
-            var d = getDateValue(yearNavVal, monthNavVal, date);
-
-            if (!(startDateState && endDateState)) {
-              setHoverDateState(d);
-            }
-          }
-        };
-
-        return Array.from({
-          length: noOfRows
-        }, function (_y, row) {
-          return /*#__PURE__*/React.createElement(React.Fragment, null, dummyDays < daysInRow && /*#__PURE__*/React.createElement("div", {
-            className: "Calendar-valueRow"
-          }, Array.from({
-            length: daysInRow
-          }, function (_x, col) {
-            var date = daysInRow * row + col - dummyDays + 1;
-            var dummy = date <= 0 || date > dayRange;
-            var disabled = !dummy && (compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) || compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date));
-            var active = !disabled && yearState === yearNavVal && monthState === monthNavVal && dateState === date;
-            var inRange = false;
-
-            if (rangePicker) {
-              active = !disabled && (compareDate(startDateState, 'equal', yearNavVal, monthNavVal, date) || compareDate(endDateState, 'equal', yearNavVal, monthNavVal, date));
-
-              if (startDateState && endDateState) {
-                inRange = !disabled && compareDate(startDateState, 'less', yearNavVal, monthNavVal, date) && compareDate(endDateState, 'more', yearNavVal, monthNavVal, date);
-              } else if (startDateState) {
-                inRange = !disabled && (compareDate(hoverDateState, 'more', yearNavVal, monthNavVal, date) || compareDate(hoverDateState, 'equal', yearNavVal, monthNavVal, date)) && compareDate(startDateState, 'less', yearNavVal, monthNavVal, date);
-              } else if (endDateState) {
-                inRange = !disabled && (compareDate(hoverDateState, 'less', yearNavVal, monthNavVal, date) || compareDate(hoverDateState, 'equal', yearNavVal, monthNavVal, date)) && compareDate(endDateState, 'more', yearNavVal, monthNavVal, date);
-              }
-            }
-
-            var valueClass = classNames__default['default']({
-              'Calendar-value': true,
-              'Calendar-value--active': active,
-              'Calendar-value--dummy': dummy || disabled,
-              'Calendar-value--disabled': disabled,
-              'Calendar-value--inRange': inRange,
-              'Calendar-value--inRange-error': inRange && inRangeError
-            });
-            return /*#__PURE__*/React.createElement("div", {
-              className: valueClass,
-              onClick: function onClick() {
-                return onClickHandler(date);
-              },
-              onMouseOver: function onMouseOver() {
-                return onMouseOverHandler(date);
-              }
-            }, !dummy && /*#__PURE__*/React.createElement(Text, {
-              appearance: active ? 'white' : disabled ? 'disabled' : 'default'
-            }, "" + date));
-          })));
-        });
-      };
-
-      var renderCalendar = function renderCalendar(index) {
-        var _a;
-
-        var wrapperClass = classNames__default['default']((_a = {}, _a['Calendar'] = true, _a["Calendar--" + view] = view, _a), className);
-        var headerClass = classNames__default['default']({
-          'Calendar-header': true
-        });
-        var bodyClass = classNames__default['default']({
-          'Calendar-body': true
-        });
-        return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
-          className: wrapperClass
-        }), /*#__PURE__*/React.createElement("div", {
-          className: headerClass
-        }, index === 0 && renderJumpButton('prev'), renderHeaderContent(index), index === monthsInView - 1 && renderJumpButton('next')), /*#__PURE__*/React.createElement("div", {
-          className: bodyClass
-        }, view === 'year' && renderBodyYear(), view === 'month' && renderBodyMonth(), view === 'date' && renderBodyDate(index)));
-      };
-
-      return /*#__PURE__*/React.createElement("div", {
-        className: "Calendar-wrapper"
-      }, Array.from({
-        length: monthsInView
-      }, function (_x, index) {
-        return renderCalendar(index);
-      }));
-    };
-    Calendar.displayName = 'Calendar';
+      Calendar.defaultProps = defaultProps;
+      return Calendar;
+    }(React.Component);
 
     function _typeof(obj) {
       "@babel/helpers - typeof";
@@ -3671,7 +4001,7 @@
         onChange: onChangeHandler,
         onClear: onClearHandler,
         onBlur: onBlurHandler,
-        autocomplete: 'off',
+        autoComplete: 'off',
         ref: ref
       })), /*#__PURE__*/React.createElement(Caption, {
         error: error,
@@ -3751,154 +4081,218 @@
       date: dateValidator
     };
 
-    var DatePicker = function DatePicker(props) {
-      var dateProp = props.date,
-          _a = props.open,
-          openProp = _a === void 0 ? false : _a,
-          _b = props.position,
-          position = _b === void 0 ? 'bottom-start' : _b,
-          _c = props.inputFormat,
-          inputFormat = _c === void 0 ? 'mm/dd/yyyy' : _c,
-          _d = props.outputFormat,
-          outputFormat = _d === void 0 ? 'mm/dd/yyyy' : _d,
-          _f = props.inputOptions,
-          inputOptions = _f === void 0 ? {
-        name: 'datepicker',
-        placeholder: inputFormat,
-        placeholderChar: '_',
-        required: false,
-        caption: ''
-      } : _f,
-          _g = props.mask,
-          mask = _g === void 0 ? e.date[inputFormat] : _g,
-          _h = props.validator,
-          validator = _h === void 0 ? e$1.date : _h,
-          withInput = props.withInput,
-          disabledBefore = props.disabledBefore,
-          disabledAfter = props.disabledAfter,
-          onDateChange = props.onDateChange,
-          rest = __rest(props, ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "mask", "validator", "withInput", "disabledBefore", "disabledAfter", "onDateChange"]);
+    var defaultProps$1 = {
+      position: 'bottom-start',
+      inputFormat: 'mm/dd/yyyy',
+      outputFormat: 'mm/dd/yyyy',
+      validator: e$1.date,
+      inputOptions: {},
+      closeOnSelect: true
+    };
 
-      var _j = React.useState(false),
-          init = _j[0],
-          setInit = _j[1];
+    var DatePicker = function (_super) {
+      __extends(DatePicker, _super);
 
-      var _k = React.useState(),
-          date = _k[0],
-          setDate = _k[1];
+      function DatePicker(props) {
+        var _this = _super.call(this, props) || this;
 
-      var _l = React.useState(false),
-          error = _l[0],
-          setError = _l[1];
+        _this.getError = function (date) {
+          var _a = _this.props,
+              disabledBefore = _a.disabledBefore,
+              disabledAfter = _a.disabledAfter;
 
-      var _m = React.useState(openProp),
-          open = _m[0],
-          setOpen = _m[1];
+          var _b = getDateInfo(disabledBefore),
+              dbYear = _b.year,
+              dbMonth = _b.month,
+              dbDate = _b.date;
 
-      React.useEffect(function () {
-        var d = convertToDate(dateProp, inputFormat, validator);
-        setDate(d);
-      }, [dateProp]);
-      React.useEffect(function () {
-        setOpen(openProp);
-      }, [openProp]);
-      React.useEffect(function () {
-        var _a = getDateInfo(disabledBefore),
-            dbYear = _a.year,
-            dbMonth = _a.month,
-            dbDate = _a.date;
+          var _c = getDateInfo(disabledAfter),
+              daYear = _c.year,
+              daMonth = _c.month,
+              daDate = _c.date;
 
-        var _b = getDateInfo(disabledAfter),
-            daYear = _b.year,
-            daMonth = _b.month,
-            daDate = _b.date;
+          return !date ? true : compareDate(date, 'less', dbYear, dbMonth, dbDate) || compareDate(date, 'more', daYear, daMonth, daDate);
+        };
 
-        var newError = !date ? true : compareDate(date, 'less', dbYear, dbMonth, dbDate) || compareDate(date, 'more', daYear, daMonth, daDate);
-        setError(newError);
+        _this.onDateChangeHandler = function (d) {
+          _this.setState({
+            date: d
+          });
 
-        if (init && !newError && onDateChange) {
-          if (date) {
-            var dVal = translateToString(outputFormat, date);
-            onDateChange(date, dVal);
-          }
-        }
-      }, [date]);
+          var closeOnSelect = _this.props.closeOnSelect;
+          if (closeOnSelect) _this.setState({
+            open: false
+          });
+        };
 
-      var onDateChangeHandler = function onDateChangeHandler(d) {
-        setInit(true);
-        if (d) setDate(d);
-      };
+        _this.onChangeHandler = function (_e, val) {
+          var _a = _this.props,
+              inputFormat = _a.inputFormat,
+              validator = _a.validator;
 
-      if (withInput) {
-        var onChangeHandler = function onChangeHandler(_e, val) {
-          setOpen(true);
-          setInit(true);
+          _this.setState({
+            open: true
+          });
+
           var placeholderChar = '_';
 
           if (val && !val.includes(placeholderChar)) {
             var d = translateToDate(inputFormat, val, validator);
-            if (d) setDate(d);
+
+            _this.setState({
+              date: d
+            });
           }
         };
 
-        var onBlurHandler = function onBlurHandler(_e, val) {
-          setInit(true);
+        _this.onBlurHandler = function (_e, val) {
           var placeholderChar = '_';
 
           if (!val || val.includes(placeholderChar)) {
-            setDate(undefined);
+            _this.setState({
+              date: undefined
+            });
           }
         };
 
-        var onClearHandler = function onClearHandler() {
-          setInit(true);
-          setDate(undefined);
+        _this.onClearHandler = function () {
+          _this.setState({
+            date: undefined
+          });
         };
 
-        var onToggleHandler = function onToggleHandler(o, type) {
+        _this.onToggleHandler = function (o, type) {
           switch (type) {
             case 'outsideClick':
-              setOpen(o);
+              _this.setState({
+                open: o
+              });
+
               break;
 
             case 'onClick':
-              setOpen(true);
+              _this.setState({
+                open: true
+              });
+
               break;
           }
         };
 
-        var trigger = /*#__PURE__*/React.createElement(InputMask, __assign({}, inputOptions, {
-          error: inputOptions.required && error,
-          mask: mask,
-          value: date ? translateToString(inputFormat, date) : '',
-          onChange: onChangeHandler,
-          onBlur: onBlurHandler,
-          onClear: onClearHandler,
-          caption: inputOptions.required && error ? inputOptions.caption || 'Invalid value' : ''
-        }));
-        return /*#__PURE__*/React.createElement(Popover, {
-          trigger: trigger,
-          triggerClass: "w-100",
-          position: position,
-          appendToBody: true,
-          open: open,
-          onToggle: onToggleHandler
-        }, /*#__PURE__*/React.createElement(Calendar, __assign({}, rest, {
+        var inputFormat = props.inputFormat,
+            validator = props.validator;
+        var date = convertToDate(props.date, inputFormat, validator);
+        _this.state = {
+          date: date,
+          open: props.open || false,
+          error: _this.getError(date)
+        };
+        return _this;
+      }
+
+      DatePicker.prototype.componentDidUpdate = function (prevProps, prevState) {
+        if (prevProps.date !== this.props.date) {
+          var _a = this.props,
+              inputFormat = _a.inputFormat,
+              validator = _a.validator;
+          var d = convertToDate(this.props.date, inputFormat, validator);
+          this.setState({
+            date: d
+          });
+        }
+
+        if (prevProps.open !== this.props.open) {
+          this.setState({
+            open: this.props.open || false
+          });
+        }
+
+        if (prevState.date !== this.state.date) {
+          var _b = this.props,
+              onDateChange = _b.onDateChange,
+              outputFormat = _b.outputFormat;
+          var date = this.state.date;
+          var newError = this.getError(date);
+          this.setState({
+            error: newError
+          });
+
+          if (!newError && onDateChange) {
+            if (date) {
+              var dVal = translateToString(outputFormat, date);
+              onDateChange(date, dVal);
+            }
+          }
+        }
+      };
+
+      DatePicker.prototype.renderCalendar = function () {
+        var _a = this.props,
+            dateProp = _a.date,
+            open = _a.open,
+            position = _a.position,
+            inputFormat = _a.inputFormat,
+            outputFormat = _a.outputFormat,
+            inputOptions = _a.inputOptions,
+            mask = _a.mask,
+            validator = _a.validator,
+            withInput = _a.withInput,
+            disabledBefore = _a.disabledBefore,
+            disabledAfter = _a.disabledAfter,
+            onDateChange = _a.onDateChange,
+            closeOnSelect = _a.closeOnSelect,
+            rest = __rest(_a, ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "mask", "validator", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect"]);
+
+        var date = this.state.date;
+        return /*#__PURE__*/React.createElement(Calendar, __assign({}, rest, {
           date: convertToDate(date, inputFormat, validator),
           disabledBefore: convertToDate(disabledBefore, inputFormat, validator),
           disabledAfter: convertToDate(disabledAfter, inputFormat, validator),
-          onDateChange: onDateChangeHandler
-        })));
-      }
+          onDateChange: this.onDateChangeHandler
+        }));
+      };
 
-      return /*#__PURE__*/React.createElement(Calendar, __assign({}, rest, {
-        date: convertToDate(date, inputFormat, validator),
-        disabledBefore: convertToDate(disabledBefore, inputFormat, validator),
-        disabledAfter: convertToDate(disabledAfter, inputFormat, validator),
-        onDateChange: onDateChangeHandler
-      }));
-    };
-    DatePicker.displayName = 'DatePicker';
+      DatePicker.prototype.render = function () {
+        var _a = this.props,
+            position = _a.position,
+            inputFormat = _a.inputFormat,
+            inputOptions = _a.inputOptions,
+            _b = _a.mask,
+            mask = _b === void 0 ? e.date[inputFormat] : _b,
+            withInput = _a.withInput;
+        var _c = this.state,
+            date = _c.date,
+            error = _c.error,
+            open = _c.open;
+
+        if (withInput) {
+          var trigger = /*#__PURE__*/React.createElement(InputMask, __assign({
+            placeholder: inputFormat
+          }, inputOptions, {
+            error: inputOptions.required && error,
+            mask: mask,
+            value: date ? translateToString(inputFormat, date) : '',
+            onChange: this.onChangeHandler,
+            onBlur: this.onBlurHandler,
+            onClear: this.onClearHandler,
+            caption: inputOptions.required && error ? inputOptions.caption || 'Invalid value' : ''
+          }));
+          return /*#__PURE__*/React.createElement(Popover, {
+            trigger: trigger,
+            triggerClass: "w-100",
+            position: position,
+            appendToBody: true,
+            open: open,
+            onToggle: this.onToggleHandler
+          }, this.renderCalendar());
+        }
+
+        return this.renderCalendar();
+      };
+
+      DatePicker.defaultProps = defaultProps$1;
+      return DatePicker;
+    }(React.Component);
 
     var DonutChart = function DonutChart(props) {
       var _a;
@@ -4714,7 +5108,7 @@
       return Handle;
     }(React.Component);
 
-    var defaultProps = {
+    var defaultProps$2 = {
       disabled: false,
       labelStepSize: 1,
       max: 10,
@@ -5076,7 +5470,7 @@
         }, this.renderLabels()), this.renderHandles()));
       };
 
-      MultiSlider.defaultProps = defaultProps;
+      MultiSlider.defaultProps = defaultProps$2;
       MultiSlider.Handle = MultiSliderHandle;
       return MultiSlider;
     }(React.Component);
@@ -5822,222 +6216,246 @@
     };
     ProgressRing.displayName = 'ProgressRing';
 
-    var DateRangePicker = function DateRangePicker(props) {
-      var startDateProp = props.startDate,
-          endDateProp = props.endDate,
-          yearNavProp = props.yearNav,
-          monthNavProp = props.monthNav,
-          _a = props.open,
-          openProp = _a === void 0 ? false : _a,
-          _b = props.inputFormat,
-          inputFormat = _b === void 0 ? 'mm/dd/yyyy' : _b,
-          _c = props.outputFormat,
-          outputFormat = _c === void 0 ? 'mm/dd/yyyy' : _c,
-          _d = props.startInputOptions,
-          startInputOptions = _d === void 0 ? {
-        name: 'dateDateRangePicker-start',
-        label: 'Start Date',
-        placeholderChar: '_',
-        placeholder: inputFormat,
-        required: false,
-        caption: ''
-      } : _d,
-          _f = props.endInputOptions,
-          endInputOptions = _f === void 0 ? {
-        name: 'dateDateRangePicker-end',
-        label: 'End Date',
-        placeholderChar: '_',
-        placeholder: inputFormat,
-        required: false,
-        caption: ''
-      } : _f,
-          _g = props.mask,
-          mask = _g === void 0 ? e.date[inputFormat] : _g,
-          _h = props.validator,
-          validator = _h === void 0 ? e$1.date : _h,
-          withInput = props.withInput,
-          position = props.position,
-          disabledBefore = props.disabledBefore,
-          disabledAfter = props.disabledAfter,
-          onRangeChange = props.onRangeChange,
-          rangeLimit = props.rangeLimit,
-          rest = __rest(props, ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "startInputOptions", "endInputOptions", "mask", "validator", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"]);
+    var Step = function Step(props) {
+      var _a;
 
-      var _j = React.useState(false),
-          init = _j[0],
-          setInit = _j[1];
+      var label = props.label,
+          value = props.value,
+          disabled = props.disabled,
+          active = props.active,
+          completed = props.completed,
+          onChange = props.onChange;
+      var StepClass = classNames__default['default']((_a = {}, _a['Step'] = true, _a['Step--active'] = active, _a['Step--disabled'] = disabled, _a));
 
-      var _k = React.useState(),
-          startDate = _k[0],
-          setStartDate = _k[1];
+      var onClickHandle = function onClickHandle() {
+        if (disabled) return;
+        if (onChange) onChange(label, value);
+      };
 
-      var _l = React.useState(),
-          endDate = _l[0],
-          setEndDate = _l[1];
+      var iconAppearance = completed ? 'info' : disabled ? 'disabled' : 'default';
+      return /*#__PURE__*/React.createElement("div", {
+        "data-test": "DesignSystem-Step",
+        className: StepClass,
+        onClick: onClickHandle
+      }, /*#__PURE__*/React.createElement(Icon, {
+        "data-test": "DesignSystem-StepIcon",
+        name: completed ? 'check_circle' : 'radio_button_unchecked',
+        appearance: iconAppearance,
+        className: "mr-3 my-4"
+      }), label && /*#__PURE__*/React.createElement(Text, {
+        weight: "medium",
+        appearance: disabled ? 'disabled' : 'default'
+      }, label));
+    };
+    Step.displayName = 'Step';
 
-      var _m = React.useState(yearNavProp),
-          yearNav = _m[0],
-          setYearNav = _m[1];
+    var Stepper = function Stepper(props) {
+      var _a;
 
-      var _o = React.useState(monthNavProp),
-          monthNav = _o[0],
-          setMonthNav = _o[1];
+      var steps = props.steps,
+          active = props.active,
+          completed = props.completed,
+          onChange = props.onChange,
+          className = props.className;
+      var baseProps = extractBaseProps(props);
 
-      var _p = React.useState(openProp),
-          open = _p[0],
-          setOpen = _p[1];
+      var onChangeHandler = function onChangeHandler(index, stepLabel, stepValue) {
+        if (onChange) onChange(index, completed, stepLabel, stepValue);
+      };
 
-      var _q = React.useState(false),
-          startError = _q[0],
-          setStartError = _q[1];
+      var StepperClass = classNames__default['default']((_a = {}, _a['Stepper'] = true, _a), className);
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-Stepper"
+      }, baseProps, {
+        className: StepperClass
+      }), steps.map(function (step, index) {
+        var label = step.label,
+            value = step.value;
+        var activeStep = active === index;
+        var completedStep = completed >= index;
+        var disabled = completed + 1 < index;
+        return /*#__PURE__*/React.createElement(Step, {
+          key: index,
+          label: label,
+          value: value,
+          active: activeStep,
+          completed: completedStep,
+          disabled: disabled,
+          onChange: function onChange(steplabel, stepvalue) {
+            return onChangeHandler(index, steplabel, stepvalue);
+          }
+        });
+      }));
+    };
+    Stepper.defaultProps = {
+      completed: -1,
+      active: 0,
+      steps: []
+    };
 
-      var _r = React.useState(false),
-          endError = _r[0],
-          setEndError = _r[1];
+    var defaultProps$3 = {
+      position: 'bottom-start',
+      inputFormat: 'mm/dd/yyyy',
+      outputFormat: 'mm/dd/yyyy',
+      validator: e$1.date,
+      startInputOptions: {
+        label: 'Start Date'
+      },
+      endInputOptions: {
+        label: 'End Date'
+      }
+    };
 
-      React.useEffect(function () {
-        var d = startDateProp ? convertToDate(startDateProp, inputFormat, validator) : undefined;
-        setStartDate(d);
-      }, [startDateProp]);
-      React.useEffect(function () {
-        var d = endDateProp ? convertToDate(endDateProp, inputFormat, validator) : undefined;
-        setEndDate(d);
-      }, [endDateProp]);
-      React.useEffect(function () {
-        setYearNav(yearNavProp);
-      }, [yearNavProp]);
-      React.useEffect(function () {
-        setMonthNav(monthNavProp);
-      }, [monthNavProp]);
-      React.useEffect(function () {
-        setOpen(openProp);
-      }, [openProp]);
-      React.useEffect(function () {
-        var sError = false;
-        var eError = false;
+    var DateRangePicker = function (_super) {
+      __extends(DateRangePicker, _super);
 
-        if (init) {
-          var _a = getDateInfo(disabledBefore),
-              dbYear = _a.year,
-              dbMonth = _a.month,
-              dbDate = _a.date;
+      function DateRangePicker(props) {
+        var _this = _super.call(this, props) || this;
 
-          var _b = getDateInfo(disabledAfter),
-              daYear = _b.year,
-              daMonth = _b.month,
-              daDate = _b.date;
+        _this.getErrors = function (startDate, endDate) {
+          var isError = function isError(date) {
+            var _a = _this.props,
+                disabledBefore = _a.disabledBefore,
+                disabledAfter = _a.disabledAfter;
 
-          sError = !startDate ? true : compareDate(startDate, 'less', dbYear, dbMonth, dbDate) || compareDate(startDate, 'more', daYear, daMonth, daDate);
-          eError = !endDate ? true : compareDate(endDate, 'less', dbYear, dbMonth, dbDate) || compareDate(endDate, 'more', daYear, daMonth, daDate);
-        }
+            var _b = getDateInfo(disabledBefore),
+                dbYear = _b.year,
+                dbMonth = _b.month,
+                dbDate = _b.date;
 
-        var _c = getDateInfo(endDate),
-            eYear = _c.year,
-            eMonth = _c.month,
-            eDate = _c.date;
+            var _c = getDateInfo(disabledAfter),
+                daYear = _c.year,
+                daMonth = _c.month,
+                daDate = _c.date;
 
-        if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
-          sError = true;
-          eError = true;
-        }
+            return !date ? true : compareDate(date, 'less', dbYear, dbMonth, dbDate) || compareDate(date, 'more', daYear, daMonth, daDate);
+          };
 
-        setStartError(sError);
-        setEndError(eError);
+          var startError = isError(startDate);
+          var endError = isError(endDate);
 
-        if (onRangeChange) {
-          if (startDate && endDate) {
-            var inRangeError = getInRangeError();
+          var _a = getDateInfo(endDate),
+              eYear = _a.year,
+              eMonth = _a.month,
+              eDate = _a.date;
 
-            if (init && !inRangeError && !sError && !eError) {
-              var sValue = translateToString(outputFormat, startDate);
-              var eValue = translateToString(outputFormat, endDate);
-              onRangeChange(startDate, endDate, sValue, eValue);
+          if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
+            startError = true;
+            endError = true;
+          }
+
+          return {
+            startError: startError,
+            endError: endError
+          };
+        };
+
+        _this.getInRangeError = function () {
+          var rangeLimit = _this.props.rangeLimit;
+
+          if (rangeLimit) {
+            var _a = _this.state,
+                startDate = _a.startDate,
+                endDate = _a.endDate;
+
+            var _b = getDateInfo(startDate),
+                sYear = _b.year,
+                sMonth = _b.month,
+                sDate = _b.date;
+
+            var _c = getDateInfo(endDate),
+                eYear = _c.year,
+                eMonth = _c.month,
+                eDate = _c.date;
+
+            var limitDate = void 0;
+
+            if (startDate) {
+              limitDate = new Date(startDate);
+              limitDate.setDate(sDate + rangeLimit);
+              return compareDate(limitDate, 'less', eYear, eMonth, eDate + 1);
+            }
+
+            if (endDate) {
+              limitDate = new Date(endDate);
+              limitDate.setDate(eDate - rangeLimit);
+              return compareDate(limitDate, 'more', sYear, sMonth, sDate - 1);
             }
           }
-        }
-      }, [startDate, endDate]);
 
-      var getInRangeError = function getInRangeError() {
-        if (rangeLimit) {
-          var _a = getDateInfo(startDate),
-              sYear = _a.year,
-              sMonth = _a.month,
-              sDate = _a.date;
+          return false;
+        };
 
-          var _b = getDateInfo(endDate),
-              eYear = _b.year,
-              eMonth = _b.month,
-              eDate = _b.date;
+        _this.onRangeChangeHandler = function (sDate, eDate) {
+          _this.setState({
+            startDate: sDate,
+            endDate: eDate
+          });
+        };
 
-          var limitDate = void 0;
+        _this.updateNav = function (type) {
+          var _a = _this.state,
+              startDate = _a.startDate,
+              endDate = _a.endDate;
 
-          if (startDate) {
-            limitDate = new Date(startDate);
-            limitDate.setDate(sDate + rangeLimit);
-            return compareDate(limitDate, 'less', eYear, eMonth, eDate + 1);
-          }
-
-          if (endDate) {
-            limitDate = new Date(endDate);
-            limitDate.setDate(eDate - rangeLimit);
-            return compareDate(limitDate, 'more', sYear, sMonth, sDate - 1);
-          }
-        }
-
-        return false;
-      };
-
-      var onRangeChangeHandler = function onRangeChangeHandler(sDate, eDate) {
-        if (sDate && eDate) {
-          if (!init) setInit(true);
-        }
-
-        if (sDate) setStartDate(sDate);
-        if (eDate) setEndDate(eDate);
-      };
-
-      if (withInput) {
-        var updateNav_1 = function updateNav_1(type) {
           if (type === 'start') {
-            var _a = getDateInfo(startDate),
-                year = _a.year,
-                month = _a.month;
-
-            setYearNav(year);
-            setMonthNav(month);
-          }
-
-          if (type === 'end') {
-            var _b = getDateInfo(endDate),
+            var _b = getDateInfo(startDate),
                 year = _b.year,
                 month = _b.month;
 
-            setYearNav(year);
-            setMonthNav(month);
+            _this.setState({
+              yearNav: year,
+              monthNav: month
+            });
+          }
+
+          if (type === 'end') {
+            var _c = getDateInfo(endDate),
+                year = _c.year,
+                month = _c.month;
+
+            _this.setState({
+              yearNav: year,
+              monthNav: month
+            });
           }
         };
 
-        var onChangeHandler_1 = function onChangeHandler_1(_e, val, type) {
-          setInit(true);
-          setOpen(true);
+        _this.onChangeHandler = function (_e, val, type) {
+          var _a = _this.props,
+              startInputOptions = _a.startInputOptions,
+              endInputOptions = _a.endInputOptions,
+              inputFormat = _a.inputFormat,
+              validator = _a.validator;
+          var _b = _this.state,
+              startDate = _b.startDate,
+              endDate = _b.endDate;
+
+          _this.setState({
+            open: true
+          });
 
           if (type === 'start') {
-            var placeholderChar = startInputOptions.placeholderChar ? startInputOptions.placeholderChar : '_';
+            var placeholderChar = startInputOptions.placeholderChar || '_';
 
             if (val && !val.includes(placeholderChar)) {
               var d = translateToDate(inputFormat, val, validator);
 
               if (d) {
-                setStartDate(d);
+                _this.setState({
+                  startDate: d
+                });
 
                 if (endDate) {
-                  var _a = getDateInfo(endDate),
-                      eYear = _a.year,
-                      eMonth = _a.month,
-                      eDate = _a.date;
+                  var _c = getDateInfo(endDate),
+                      eYear = _c.year,
+                      eMonth = _c.month,
+                      eDate = _c.date;
 
                   if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
-                    setEndDate(undefined);
+                    _this.setState({
+                      endDate: undefined
+                    });
                   }
                 }
               }
@@ -6049,134 +6467,282 @@
 
             if (val && !val.includes(placeholderChar)) {
               var d = translateToDate(inputFormat, val, validator);
-              if (d) setEndDate(d);
+              if (d) _this.setState({
+                endDate: d
+              });
             }
           }
         };
 
-        var onBlurHandler_1 = function onBlurHandler_1(_e, val, type) {
-          setInit(true);
+        _this.onBlurHandler = function (_e, val, type) {
+          var _a = _this.props,
+              startInputOptions = _a.startInputOptions,
+              endInputOptions = _a.endInputOptions;
 
           if (type === 'start') {
-            var placeholderChar = startInputOptions.placeholderChar ? startInputOptions.placeholderChar : '_';
-            if (!val || val.includes(placeholderChar)) setStartDate(undefined);
+            var placeholderChar = startInputOptions.placeholderChar || '_';
+            if (!val || val.includes(placeholderChar)) _this.setState({
+              startDate: undefined
+            });
           }
 
           if (type === 'end') {
-            var placeholderChar = endInputOptions.placeholderChar ? endInputOptions.placeholderChar : '_';
-            if (!val || val.includes(placeholderChar)) setEndDate(undefined);
+            var placeholderChar = endInputOptions.placeholderChar || '_';
+            if (!val || val.includes(placeholderChar)) _this.setState({
+              endDate: undefined
+            });
           }
         };
 
-        var onClearHandler_1 = function onClearHandler_1(type) {
-          setInit(true);
-
+        _this.onClearHandler = function (type) {
           if (type === 'start') {
-            setStartDate(undefined);
-            updateNav_1('end');
+            _this.setState({
+              startDate: undefined
+            });
+
+            _this.updateNav('end');
           }
 
           if (type === 'end') {
-            setEndDate(undefined);
-            updateNav_1('start');
+            _this.setState({
+              endDate: undefined
+            });
+
+            _this.updateNav('start');
           }
         };
 
-        var onClickHandler_1 = function onClickHandler_1(type) {
+        _this.onClickHandler = function (type) {
           if (!open) {
-            updateNav_1(type);
+            _this.updateNav(type);
           }
         };
 
-        var trigger = /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, {
-          size: '6',
-          sizeXS: '12',
-          className: "DateRangePicker-input DateRangePicker-input--startDate"
-        }, /*#__PURE__*/React.createElement(InputMask, __assign({}, startInputOptions, {
-          mask: mask,
-          value: startDate ? translateToString(inputFormat, startDate) : '',
-          onChange: function onChange(e, val) {
-            return onChangeHandler_1(e, val || '', 'start');
-          },
-          onBlur: function onBlur(e, val) {
-            return onBlurHandler_1(e, val || '', 'start');
-          },
-          onClear: function onClear() {
-            return onClearHandler_1('start');
-          },
-          onClick: function onClick() {
-            return onClickHandler_1('start');
-          },
-          error: startError,
-          caption: startInputOptions.required && startError ? startInputOptions.caption || 'Invalid value' : ''
-        }))), /*#__PURE__*/React.createElement(Column, {
-          size: '6',
-          sizeXS: '12',
-          className: "DateRangePicker-input DateRangePicker-input--endDate"
-        }, /*#__PURE__*/React.createElement(InputMask, __assign({}, endInputOptions, {
-          mask: mask,
-          value: endDate ? translateToString(inputFormat, endDate) : '',
-          onChange: function onChange(e, val) {
-            return onChangeHandler_1(e, val || '', 'end');
-          },
-          onBlur: function onBlur(e, val) {
-            return onBlurHandler_1(e, val || '', 'end');
-          },
-          onClear: function onClear() {
-            return onClearHandler_1('end');
-          },
-          onClick: function onClick() {
-            return onClickHandler_1('end');
-          },
-          error: endError,
-          caption: endInputOptions.required && endError ? endInputOptions.caption || 'Invalid value' : ''
-        }))));
-
-        var onToggleHandler = function onToggleHandler(o, type) {
+        _this.onToggleHandler = function (o, type) {
           switch (type) {
             case 'outsideClick':
-              setOpen(o);
+              _this.setState({
+                open: o
+              });
+
               break;
 
             case 'onClick':
-              setOpen(true);
+              _this.setState({
+                open: true
+              });
+
               break;
           }
         };
 
-        return /*#__PURE__*/React.createElement(Popover, {
-          trigger: trigger,
-          triggerClass: "w-100",
-          position: position,
-          appendToBody: true,
-          open: open,
-          onToggle: onToggleHandler
-        }, /*#__PURE__*/React.createElement(Calendar, __assign({}, rest, {
+        var inputFormat = props.inputFormat,
+            validator = props.validator;
+        var startDate = convertToDate(props.startDate, inputFormat, validator);
+        var endDate = convertToDate(props.endDate, inputFormat, validator);
+        _this.state = __assign({
+          startDate: startDate,
+          endDate: endDate,
+          open: props.open || false,
+          yearNav: props.yearNav,
+          monthNav: props.monthNav
+        }, _this.getErrors(startDate, endDate));
+        return _this;
+      }
+
+      DateRangePicker.prototype.componentDidUpdate = function (prevProps, prevState) {
+        if (prevProps.startDate !== this.props.startDate) {
+          var _a = this.props,
+              inputFormat = _a.inputFormat,
+              validator = _a.validator;
+          var d = convertToDate(this.props.startDate, inputFormat, validator);
+          this.setState({
+            startDate: d
+          });
+        }
+
+        if (prevProps.endDate !== this.props.endDate) {
+          var _b = this.props,
+              inputFormat = _b.inputFormat,
+              validator = _b.validator;
+          var d = convertToDate(this.props.endDate, inputFormat, validator);
+          this.setState({
+            endDate: d
+          });
+        }
+
+        if (prevProps.open !== this.props.open) {
+          this.setState({
+            open: this.props.open || false
+          });
+        }
+
+        if (prevProps.yearNav !== this.props.yearNav) {
+          this.setState({
+            yearNav: this.props.yearNav
+          });
+        }
+
+        if (prevProps.monthNav !== this.props.monthNav) {
+          this.setState({
+            monthNav: this.props.monthNav
+          });
+        }
+
+        if (prevState.startDate !== this.state.startDate || prevState.endDate !== this.state.endDate) {
+          var _c = this.props,
+              onRangeChange = _c.onRangeChange,
+              outputFormat = _c.outputFormat;
+          var _d = this.state,
+              startDate = _d.startDate,
+              endDate = _d.endDate;
+
+          var _f = this.getErrors(startDate, endDate),
+              startError = _f.startError,
+              endError = _f.endError;
+
+          this.setState({
+            startError: startError,
+            endError: endError
+          });
+
+          if (onRangeChange) {
+            if (startDate && endDate) {
+              var inRangeError = this.getInRangeError();
+
+              if (!inRangeError && !startError && !endError) {
+                var sValue = translateToString(outputFormat, startDate);
+                var eValue = translateToString(outputFormat, endDate);
+                onRangeChange(startDate, endDate, sValue, eValue);
+              }
+            }
+          }
+        }
+      };
+
+      DateRangePicker.prototype.renderCalendar = function () {
+        var _a = this.props,
+            startDateProp = _a.startDate,
+            endDateProp = _a.endDate,
+            yearNavProp = _a.yearNav,
+            monthNavProp = _a.monthNav,
+            open = _a.open,
+            inputFormat = _a.inputFormat,
+            outputFormat = _a.outputFormat,
+            startInputOptions = _a.startInputOptions,
+            endInputOptions = _a.endInputOptions,
+            mask = _a.mask,
+            validator = _a.validator,
+            withInput = _a.withInput,
+            position = _a.position,
+            disabledBefore = _a.disabledBefore,
+            disabledAfter = _a.disabledAfter,
+            onRangeChange = _a.onRangeChange,
+            rangeLimit = _a.rangeLimit,
+            rest = __rest(_a, ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "startInputOptions", "endInputOptions", "mask", "validator", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"]);
+
+        var _b = this.state,
+            startDate = _b.startDate,
+            endDate = _b.endDate,
+            yearNav = _b.yearNav,
+            monthNav = _b.monthNav;
+        return /*#__PURE__*/React.createElement(Calendar, __assign({}, rest, {
           rangePicker: true,
           startDate: convertToDate(startDate, inputFormat, validator),
           endDate: convertToDate(endDate, inputFormat, validator),
           disabledBefore: convertToDate(disabledBefore, inputFormat, validator),
           disabledAfter: convertToDate(disabledAfter, inputFormat, validator),
-          onRangeChange: onRangeChangeHandler,
+          onRangeChange: this.onRangeChangeHandler,
           yearNav: yearNav,
           monthNav: monthNav,
           rangeLimit: rangeLimit
-        })));
-      }
+        }));
+      };
 
-      return /*#__PURE__*/React.createElement(Calendar, __assign({}, rest, {
-        rangePicker: true,
-        startDate: convertToDate(startDate, inputFormat, validator),
-        endDate: convertToDate(endDate, inputFormat, validator),
-        disabledBefore: convertToDate(disabledBefore, inputFormat, validator),
-        disabledAfter: convertToDate(disabledAfter, inputFormat, validator),
-        onRangeChange: onRangeChangeHandler,
-        yearNav: yearNav,
-        monthNav: monthNav,
-        rangeLimit: rangeLimit
-      }));
-    };
-    DateRangePicker.displayName = 'DateRangePicker';
+      DateRangePicker.prototype.render = function () {
+        var _this = this;
+
+        var _a = this.props,
+            withInput = _a.withInput,
+            startInputOptions = _a.startInputOptions,
+            endInputOptions = _a.endInputOptions,
+            inputFormat = _a.inputFormat,
+            _b = _a.mask,
+            mask = _b === void 0 ? e.date[inputFormat] : _b,
+            position = _a.position;
+        var _c = this.state,
+            startDate = _c.startDate,
+            endDate = _c.endDate,
+            startError = _c.startError,
+            endError = _c.endError,
+            open = _c.open;
+
+        if (withInput) {
+          var trigger = /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, {
+            size: '6',
+            sizeXS: '12',
+            className: "DateRangePicker-input DateRangePicker-input--startDate"
+          }, startInputOptions.label && /*#__PURE__*/React.createElement(Label, {
+            required: startInputOptions.required,
+            withInput: true
+          }, startInputOptions.label), /*#__PURE__*/React.createElement(InputMask, __assign({}, startInputOptions, {
+            mask: mask,
+            value: startDate ? translateToString(inputFormat, startDate) : '',
+            onChange: function onChange(e, val) {
+              _this.onChangeHandler(e, val || '', 'start');
+            },
+            onBlur: function onBlur(e, val) {
+              _this.onBlurHandler(e, val || '', 'start');
+            },
+            onClear: function onClear() {
+              return _this.onClearHandler('start');
+            },
+            onClick: function onClick() {
+              return _this.onClickHandler('start');
+            },
+            error: startError,
+            caption: startInputOptions.required && startError ? startInputOptions.caption || 'Invalid value' : ''
+          }))), /*#__PURE__*/React.createElement(Column, {
+            size: '6',
+            sizeXS: '12',
+            className: "DateRangePicker-input DateRangePicker-input--endDate"
+          }, endInputOptions.label && /*#__PURE__*/React.createElement(Label, {
+            required: endInputOptions.required,
+            withInput: true
+          }, endInputOptions.label), /*#__PURE__*/React.createElement(InputMask, __assign({}, endInputOptions, {
+            mask: mask,
+            value: endDate ? translateToString(inputFormat, endDate) : '',
+            onChange: function onChange(e, val) {
+              _this.onChangeHandler(e, val || '', 'end');
+            },
+            onBlur: function onBlur(e, val) {
+              _this.onBlurHandler(e, val || '', 'end');
+            },
+            onClear: function onClear() {
+              return _this.onClearHandler('end');
+            },
+            onClick: function onClick() {
+              return _this.onClickHandler('end');
+            },
+            error: endError,
+            caption: endInputOptions.required && endError ? endInputOptions.caption || 'Invalid value' : ''
+          }))));
+          return /*#__PURE__*/React.createElement(Popover, {
+            trigger: trigger,
+            triggerClass: "w-100",
+            position: position,
+            appendToBody: true,
+            open: open,
+            onToggle: this.onToggleHandler
+          }, this.renderCalendar());
+        }
+
+        return this.renderCalendar();
+      };
+
+      DateRangePicker.defaultProps = defaultProps$3;
+      return DateRangePicker;
+    }(React.Component);
 
     var TabsWrapper = function TabsWrapper(props) {
       var _a;
@@ -7220,13 +7786,13 @@
       var baseProps = extractBaseProps(props);
       var _b = _this.props,
           loading = _b.loading,
+          error = _b.error,
           type = _b.type,
           size = _b.size,
           showHead = _b.showHead,
           draggable = _b.draggable,
           withCheckbox = _b.withCheckbox,
-          data = _b.data,
-          page = _b.page;
+          data = _b.data;
       var classes = classNames__default['default']((_a = {
         Grid: 'true'
       }, _a["Grid--" + type] = type, _a["Grid--" + size] = size, _a), className);
@@ -7252,7 +7818,7 @@
         var el = _this.gridRef.querySelector('.Grid');
 
         if (el) el.scrollTop = 0;
-      }, [page]);
+      }, [loading, error]);
       var offset = state.offset,
           avgRowHeight = state.avgRowHeight,
           inView = state.inView;
@@ -7486,14 +8052,6 @@
         return _this_1;
       }
 
-      Grid.prototype.componentDidUpdate = function (prevProps) {
-        if (prevProps.withPagination !== this.props.withPagination || prevProps.page !== this.props.page) ;
-
-        if (prevProps.loading !== this.props.loading) {
-          this.gridRef.querySelector('.Grid').scrollTop = 0;
-        }
-      };
-
       Grid.prototype.render = function () {
         var _this_1 = this;
 
@@ -7524,7 +8082,7 @@
         type: 'data',
         size: 'standard',
         page: 1,
-        pageSize: 0,
+        pageSize: 15,
         loading: false,
         error: false,
         sortingList: [],
@@ -7740,18 +8298,25 @@
       dynamicColumn: true
     };
 
-    var defaultProps$1 = {
+    var defaultProps$4 = {
       type: 'data',
       size: 'standard',
       showHead: true,
       showMenu: true,
       multipleSorting: true,
       headerOptions: {},
+      withPagination: true,
       paginationType: 'jump',
       page: 1,
       pageSize: 15,
+      draggable: true,
+      data: [],
+      schema: [],
       loading: false,
-      draggable: true
+      error: false,
+      loaderSchema: [],
+      sortingList: [],
+      filterList: {}
     };
 
     var Table = function (_super) {
@@ -8060,15 +8625,16 @@
         })));
       };
 
-      Table.defaultProps = defaultProps$1;
+      Table.defaultProps = defaultProps$4;
       return Table;
     }(React.Component);
 
     var List = function List(props) {
-      return /*#__PURE__*/React.createElement(Table, __assign({
+      return /*#__PURE__*/React.createElement(Table, __assign({}, props, {
         showHead: false
-      }, props));
+      }));
     };
+    List.defaultProps = defaultProps$4;
 
     var useState$2 = React.useState;
     var Navigation = function Navigation(props) {
@@ -8273,6 +8839,7 @@
 
       var title = props.title,
           navigation = props.navigation,
+          stepper = props.stepper,
           actions = props.actions,
           tabs = props.tabs,
           breadcrumbs = props.breadcrumbs,
@@ -8289,6 +8856,11 @@
       var classes = classNames__default['default']({
         PageHeader: true
       });
+
+      var renderCenter = function renderCenter() {
+        return navigation ? navigation : stepper;
+      };
+
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
         className: wrapperClasses
       }), breadcrumbs && breadcrumbs, /*#__PURE__*/React.createElement("div", {
@@ -8307,7 +8879,7 @@
         sizeM: "4"
       }, /*#__PURE__*/React.createElement("div", {
         className: "PageHeader-navigationWrapper"
-      }, (!breadcrumbs || navigationPosition === 'center') && navigation)), /*#__PURE__*/React.createElement(Column, {
+      }, (!breadcrumbs || navigationPosition === 'center') && renderCenter())), /*#__PURE__*/React.createElement(Column, {
         size: "4",
         sizeXL: "4",
         sizeM: "4"
@@ -8315,7 +8887,7 @@
         className: "PageHeader-statusWrapper"
       }, status, meta), breadcrumbs && navigationPosition === 'bottom' && /*#__PURE__*/React.createElement("div", {
         className: "PageHeader-navigationWrapper"
-      }, navigation), tabs && /*#__PURE__*/React.createElement("div", null, tabs));
+      }, renderCenter()), tabs && /*#__PURE__*/React.createElement("div", null, tabs));
     };
     PageHeader.defaultProps = {
       title: '',
@@ -8331,6 +8903,7 @@
     };
 
     exports.Avatar = Avatar;
+    exports.AvatarGroup = AvatarGroup;
     exports.Backdrop = Backdrop;
     exports.Badge = Badge;
     exports.Breadcrumbs = Breadcrumbs;
@@ -8379,6 +8952,7 @@
     exports.Slider = Slider;
     exports.Spinner = Spinner;
     exports.StatusHint = StatusHint;
+    exports.Stepper = Stepper;
     exports.Subheading = Subheading;
     exports.Switch = Switch;
     exports.Tab = Tab;
