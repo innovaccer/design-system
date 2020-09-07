@@ -191,7 +191,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
         onChange={onChangeHandler}
         onClear={onClearHandler}
         onBlur={onBlurHandler}
-        autocomplete={'off'}
+        autoComplete={'off'}
         ref={ref}
       />
       <Caption error={error} withInput={true} hide={!caption}>

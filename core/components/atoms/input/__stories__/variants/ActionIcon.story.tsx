@@ -34,7 +34,10 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
+        customCode,
+        props: {
+          exclude: ['autocomplete']
+        }
       }
     }
   }

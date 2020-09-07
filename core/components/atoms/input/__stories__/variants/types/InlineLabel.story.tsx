@@ -42,7 +42,10 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Input'
+        title: 'Input',
+        props: {
+          exclude: ['autocomplete']
+        }
       }
     }
   }

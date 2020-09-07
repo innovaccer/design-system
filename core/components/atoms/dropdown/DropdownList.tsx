@@ -358,7 +358,7 @@ const DropdownList = (props: OptionsProps) => {
           onChange={searchHandler}
           onClear={searchClearHandler}
           ref={inputRef}
-          autocomplete={'off'}
+          autoComplete={'off'}
         />
       </div>
     );

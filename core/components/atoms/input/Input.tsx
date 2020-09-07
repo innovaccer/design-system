@@ -30,10 +30,6 @@ export interface InputProps extends BaseProps {
    */
   placeholder?: string;
   /**
-   * Specifies whether `input field should have autocomplete enabled
-   */
-  autocomplete?: AutoComplete;
-  /**
    * Size of the `Input`
    * @default "regular"
    */
@@ -48,14 +44,52 @@ export interface InputProps extends BaseProps {
   inlineLabel?: string;
   /**
    * Disables the `Input`, making it unable to type
-   *
-   * **set to `true` if onChange is not provided**
    */
   disabled?: boolean;
   /**
    * Shows the user that this field id required
    */
   required?: boolean;
+  /**
+   * Adds autoFocus
+   */
+  autoFocus?: boolean;
+  /**
+   * Specifies whether `input field should have autocomplete enabled **(SOON TO BE DEPRECATED)**
+   */
+  autocomplete?: AutoComplete;
+  /**
+   * Specifies whether `input field should have autocomplete enabled
+   */
+  autoComplete?: AutoComplete;
+  /**
+   * Same behaviour as `disabled` prop
+   */
+  readonly?: boolean;
+  /**
+   * Valid for number it defines the most negative value in the range of permitted values.
+   */
+  min?: number;
+  /**
+   * Valid for text, url, tel, email, and password, it defines the maximum number of characters
+   * (as UTF-16 code units) the user can enter into the field.
+   */
+  max?: number;
+  /**
+   * Valid for text, url, tel, email, and password, it defines the minimum number of characters
+   * (as UTF-16 code units) the user can enter into the entry field.
+   */
+  minLength?: number;
+  /**
+   * Valid for text, url, tel, email, and password, it defines the maximum number of characters
+   * (as UTF-16 code units) the user can enter into the field.
+   */
+  maxLength?: number;
+  /**
+   * The pattern attribute, when specified, is a regular expression that the input's value
+   * must match in order for the value to pass constraint validation.
+   */
+  pattern?: string;
   /**
    * Shows error state in case of failed validation
    */
@@ -65,10 +99,6 @@ export interface InputProps extends BaseProps {
    * @default true
    */
   info?: string;
-  /**
-   * Adds autoFocus
-   */
-  autoFocus?: boolean;
   /**
    * Callback function when user clicks the clear button
    */
@@ -110,7 +140,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
   const {
     size = 'regular',
     type = 'text',
-    disabled,
+    readonly,
     defaultValue,
     name,
     placeholder,
@@ -120,16 +150,19 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
     required,
     error,
     info,
-    autocomplete,
-    autoFocus,
     onChange,
     onClick,
     onClear,
     onBlur,
     onFocus,
     actionIcon,
-    className
+    className,
+    autocomplete,
+    ...rest
   } = props;
+
+  const autoComplete = props.autoComplete || autocomplete;
+  const disabled = props.disabled || readonly;
 
   const baseProps = extractBaseProps(props);
 
@@ -175,21 +208,20 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
       )}
       <input
         {...baseProps}
+        {...rest}
         ref={ref}
         name={name}
-        type={type}
         defaultValue={defaultValue}
         placeholder={placeholder}
         className={inputClass}
         value={value}
-        autoComplete={autocomplete}
         required={required}
+        autoComplete={autoComplete}
         disabled={disabled}
         onChange={onChange}
         onBlur={onBlur}
         onClick={onClick}
         onFocus={onFocus}
-        autoFocus={autoFocus}
       />
       {(!value && !disabled) || (value && disabled) || (defaultValue && disabled)
         ? (

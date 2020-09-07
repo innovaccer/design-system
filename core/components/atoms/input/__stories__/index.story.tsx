@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { select, text, boolean } from '@storybook/addon-knobs';
+import { select, text, boolean, number } from '@storybook/addon-knobs';
 import Input from '../Input';
 import { action } from '@storybook/addon-actions';
 
@@ -32,6 +32,11 @@ export const all = () => {
     false
   );
 
+  const readonly = boolean(
+    'readonly',
+    false
+  );
+
   const icon = text(
     'icon',
     ''
@@ -57,6 +62,31 @@ export const all = () => {
     'sample info popover'
   );
 
+  const pattern = text(
+    'pattern',
+    ''
+  );
+
+  const min = number(
+    'min',
+    1
+  );
+
+  const max = number(
+    'max',
+    30
+  );
+
+  const minLength = number(
+    'minLength',
+    1
+  );
+
+  const maxLength = number(
+    'maxLength',
+    30
+  );
+
   return (
     <div className="w-25">
       <Input
@@ -64,6 +94,7 @@ export const all = () => {
         type={inputType}
         value={value}
         disabled={disabled}
+        readonly={readonly}
         onChange={action('on-change')}
         onClick={action('on-click')}
         onClear={action('on-clear')}
@@ -74,6 +105,11 @@ export const all = () => {
         required={required}
         error={error}
         info={info}
+        pattern={pattern}
+        min={min}
+        max={max}
+        minLength={minLength}
+        maxLength={maxLength}
       />
     </div>
   );
@@ -82,4 +118,14 @@ export const all = () => {
 export default {
   title: 'Atoms|Input',
   component: Input,
+  parameters: {
+    docs: {
+      docPage: {
+        title: 'Input',
+        props: {
+          exclude: ['autocomplete']
+        }
+      }
+    }
+  }
 };
