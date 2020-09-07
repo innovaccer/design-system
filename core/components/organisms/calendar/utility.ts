@@ -139,7 +139,7 @@ export const translateToString = (format: string, d: Date): string => {
   const val = f.reduce((out, curr, i) => {
     switch (curr) {
       case 'mm':
-        out += (month < 10 && '0') + (month + 1);
+        out += (month < 9 && '0') + (month + 1);
         break;
       case 'yyyy':
         out += year;
