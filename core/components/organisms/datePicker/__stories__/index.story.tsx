@@ -98,27 +98,22 @@ export const all = () => {
     );
   }
   return (
-    <div
-      style={{
-        maxWidth: '310px'
-      }}
+    <Card
+      className="d-inline-flex"
+      shadow="light"
     >
-      <Card
-        shadow="light"
-      >
-        <DatePicker
-          withInput={withInput}
-          inputFormat={inputFormat}
-          outputFormat={outputFormat}
-          jumpView={jumpView}
-          date={dateValue}
-          onDateChange={(currDate?: Date) => action(`on date change : ${currDate}`)()}
-          view={view}
-          firstDayOfWeek={firstDayOfWeek}
-          {...attr}
-        />
-      </Card>
-    </div>
+      <DatePicker
+        withInput={withInput}
+        inputFormat={inputFormat}
+        outputFormat={outputFormat}
+        jumpView={jumpView}
+        date={dateValue}
+        onDateChange={(currDate?: Date) => action(`on date change : ${currDate}`)()}
+        view={view}
+        firstDayOfWeek={firstDayOfWeek}
+        {...attr}
+      />
+    </Card>
   );
 };
 

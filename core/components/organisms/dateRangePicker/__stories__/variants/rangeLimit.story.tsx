@@ -6,8 +6,9 @@ import Card from '@/components/atoms/card';
 export const rangeLimit = () => {
 
   return (
-    <div className="d-flex mr-9" style={{ maxWidth: '310px' }}>
+    <div className="d-flex mr-9">
       <Card
+        className="d-inline-flex"
         shadow="light"
       >
         <DateRangePicker
