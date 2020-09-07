@@ -59,6 +59,10 @@ type CompProps = {
    * `(format: string, val: string) => boolean`
    */
   validator?: Validator;
+  /**
+   * Close Popover on date selection
+   */
+  closeOnSelect?: boolean;
 } & SharedProps;
 
 const defaultProps = {
@@ -66,7 +70,8 @@ const defaultProps = {
   inputFormat: 'mm/dd/yyyy',
   outputFormat: 'mm/dd/yyyy',
   validator: validators.date,
-  inputOptions: {}
+  inputOptions: {},
+  closeOnSelect: true
 };
 
 type DefaultProps = Readonly<typeof defaultProps>;
@@ -165,6 +170,12 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
   onDateChangeHandler = (d?: Date) => {
     this.setState({ date: d });
+
+    const {
+      closeOnSelect
+    } = this.props;
+
+    if (closeOnSelect) this.setState({ open: false });
   }
 
   onChangeHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
@@ -222,6 +233,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       disabledBefore,
       disabledAfter,
       onDateChange,
+      closeOnSelect,
       ...rest
     } = this.props;
 

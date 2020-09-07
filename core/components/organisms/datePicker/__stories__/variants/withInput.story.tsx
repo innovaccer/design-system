@@ -59,6 +59,11 @@ export const withInput = () => {
     -1
   );
 
+  const closeOnSelect = boolean(
+    'closeOnSelect',
+    true
+  );
+
   const attr: Record<string, any> = {};
   if (disabledBefore) attr.disabledBefore = disabledBefore;
   if (disabledAfter) attr.disabledAfter = disabledAfter;
@@ -69,6 +74,7 @@ export const withInput = () => {
     <div className="w-25">
       <DatePicker
         withInput={true}
+        closeOnSelect={closeOnSelect}
         inputFormat={inputFormat}
         outputFormat={outputFormat}
         jumpView={jumpView}
