@@ -82,7 +82,7 @@ export const all = () => {
   if (monthNav !== -1) attr.monthNav = monthNav;
 
   return (
-    <div style={{ maxWidth: `${monthsInView * 330}px` }}>
+    <div style={{ maxWidth: `${monthsInView * 310}px` }}>
       <Card
         shadow="light"
       >

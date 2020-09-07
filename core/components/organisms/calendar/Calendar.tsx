@@ -222,11 +222,13 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       if (currDate) {
         if (onDateChange) onDateChange(currDate);
         if (rangePicker) {
+          this.setState({
+            hoverDate: undefined
+          });
           if (startDate && endDate) {
             this.setState({
               startDate: currDate,
-              endDate: undefined,
-              hoverDate: undefined
+              endDate: undefined
             });
           } else {
             const {
@@ -497,13 +499,11 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     });
 
     return (
-      <div className={headerIconClass}>
-        <Icon
-          name={`arrow_${type === 'next' ? 'forward' : 'back'}`}
-          className="p-4"
-          onClick={() => this.navClickHandler(type)}
-        />
-      </div>
+      <Icon
+        name={`arrow_${type === 'next' ? 'forward' : 'back'}`}
+        className={headerIconClass}
+        onClick={() => this.navClickHandler(type)}
+      />
     );
   }
 
@@ -679,9 +679,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             const dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
 
             return (
-              <div className={valueClass}>
-                <Subheading appearance="disabled">{days[dayValue]}</Subheading>
-              </div>
+              <Subheading className={valueClass} appearance="disabled">{days[dayValue]}</Subheading>
             );
           })}
         </div>
@@ -763,51 +761,61 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                   || compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date)
                 );
               let active = !disabled && yearState === yearNavVal && monthState === monthNavVal && dateState === date;
+              let startActive = false;
+              let endActive = false;
               let inRange = false;
+              let inRangeLast = false;
               if (rangePicker) {
-                active = !disabled
-                  && (
-                    compareDate(startDate, 'equal', yearNavVal, monthNavVal, date)
-                    || compareDate(endDate, 'equal', yearNavVal, monthNavVal, date)
-                  );
+                startActive = compareDate(startDate, 'equal', yearNavVal, monthNavVal, date);
+                endActive = compareDate(endDate, 'equal', yearNavVal, monthNavVal, date);
+                inRangeLast = compareDate(hoverDate, 'equal', yearNavVal, monthNavVal, date);
+                active = !disabled && (startActive || endActive);
                 if (startDate && endDate) {
                   inRange = !disabled
-                    && compareDate(startDate, 'less', yearNavVal, monthNavVal, date)
-                    && compareDate(endDate, 'more', yearNavVal, monthNavVal, date);
+                    && (compareDate(startDate, 'less', yearNavVal, monthNavVal, date) || startActive)
+                    && (compareDate(endDate, 'more', yearNavVal, monthNavVal, date) || endActive);
                 } else if (startDate) {
                   inRange = !disabled
                     && (
                       compareDate(hoverDate, 'more', yearNavVal, monthNavVal, date)
-                      || compareDate(hoverDate, 'equal', yearNavVal, monthNavVal, date)
+                      || inRangeLast
                     )
                     && compareDate(startDate, 'less', yearNavVal, monthNavVal, date);
                 } else if (endDate) {
                   inRange = !disabled
                     && (
                       compareDate(hoverDate, 'less', yearNavVal, monthNavVal, date)
-                      || compareDate(hoverDate, 'equal', yearNavVal, monthNavVal, date)
+                      || inRangeLast
                     )
                     && compareDate(endDate, 'more', yearNavVal, monthNavVal, date);
                 }
               }
+
+              const wrapperClass = classNames({
+                'Calendar-valueWrapper': true,
+                'Calendar-valueWrapper--start': startActive || (inRangeLast && endDate),
+                'Calendar-valueWrapper--end': endActive || (inRangeLast && startDate),
+                'Calendar-valueWrapper--inRange': inRange || (rangePicker && active),
+                'Calendar-valueWrapper--inRange-error': inRange && inRangeError,
+              });
 
               const valueClass = classNames({
                 'Calendar-value': true,
                 'Calendar-value--active': active,
                 'Calendar-value--dummy': dummy || disabled,
                 'Calendar-value--disabled': disabled,
-                'Calendar-value--inRange': inRange,
-                'Calendar-value--inRange-error': inRange && inRangeError,
               });
               return (
-                <div
-                  className={valueClass}
-                  onClick={() => onClickHandler(date)}
-                  onMouseOver={() => onMouseOverHandler(date)}
-                >
-                  {!dummy && (
-                    <Text appearance={active ? 'white' : disabled ? 'disabled' : 'default'}>{`${date}`}</Text>
-                  )}
+                <div className={wrapperClass}>
+                  <span
+                    className={valueClass}
+                    onClick={() => onClickHandler(date)}
+                    onMouseOver={() => onMouseOverHandler(date)}
+                  >
+                    {!dummy && (
+                      <Text appearance={active ? 'white' : disabled ? 'disabled' : 'default'}>{`${date}`}</Text>
+                    )}
+                  </span>
                 </div>
               );
             })}

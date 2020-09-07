@@ -13,7 +13,7 @@ export const disabled = () => {
       <Heading>disabledBefore</Heading>
       <div className="d-flex">
         {view.map((v, index) => (
-          <div className="mr-8" style={{ maxWidth: '330px' }} key={index}>
+          <div className="mr-8" style={{ maxWidth: '310px' }} key={index}>
             <Card
               shadow="light"
             >
@@ -30,7 +30,7 @@ export const disabled = () => {
       <Heading>disabledAfter</Heading>
       <div className="d-flex">
         {view.map((v, index) => (
-          <div className="mr-8" key={index} style={{ maxWidth: '330px' }}>
+          <div className="mr-8" key={index} style={{ maxWidth: '310px' }}>
             <Card
               shadow="light"
             >
@@ -47,7 +47,7 @@ export const disabled = () => {
       <Heading>disabledBefore and disabledAfter</Heading>
       <div className="d-flex">
         {view.map((v, index) => (
-          <div className="mr-8" key={index} style={{ maxWidth: '330px' }}>
+          <div className="mr-8" key={index} style={{ maxWidth: '310px' }}>
             <Card
               shadow="light"
             >

@@ -100,7 +100,7 @@ export const all = () => {
   return (
     <div
       style={{
-        maxWidth: '330px'
+        maxWidth: '310px'
       }}
     >
       <Card
