@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Text, Tooltip, Icon } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { TooltipProps } from '@/index.type';
 
 export type Appearance =
   'primary' |
@@ -38,6 +39,10 @@ export interface AvatarProps extends BaseProps {
    */
   withTooltip: boolean;
   /**
+   * Position to place the tooltip
+   */
+  tooltipPosition: TooltipProps['position'];
+  /**
    * Determines size of `Avatar`
    */
   size: Size;
@@ -48,6 +53,7 @@ const initialsLength = 2;
 export const Avatar = (props: AvatarProps) => {
   const {
     withTooltip,
+    tooltipPosition,
     size,
     children,
     firstName,
@@ -126,7 +132,7 @@ export const Avatar = (props: AvatarProps) => {
   const renderTooltip = () => {
     if (withTooltip && initials) {
       return (
-        <Tooltip tooltip={tooltip}>
+        <Tooltip tooltip={tooltip} position={tooltipPosition}>
           {renderAvatar()}
         </Tooltip>
       );
@@ -139,6 +145,7 @@ export const Avatar = (props: AvatarProps) => {
 };
 
 Avatar.defaultProps = {
+  tooltipPosition: 'bottom',
   withTooltip: true,
   size: 'regular'
 };

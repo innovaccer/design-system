@@ -1,5 +1,6 @@
 export * from './index';
 export { AvatarProps } from './components/atoms/avatar';
+export { AvatarGroupProps } from './components/atoms/avatarGroup';
 export { BackdropProps } from './components/atoms/backdrop';
 export { BadgeProps } from './components/atoms/badge';
 export { BreadcrumbsProps } from './components/atoms/breadcrumbs';

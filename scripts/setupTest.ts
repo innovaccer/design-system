@@ -10,3 +10,13 @@ Enzyme.configure({ adapter: new EnzymeAdapter() });
 const { configure } = ReactTestingLibrary;
 
 configure({ testIdAttribute: 'data-test' });
+
+document.createRange = () => ({
+  setStart: () => {},
+  setEnd: () => {},
+  // @ts-ignore
+  commonAncestorContainer: {
+    nodeName: "BODY",
+    ownerDocument: document,
+  },
+});

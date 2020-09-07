@@ -1,4 +1,5 @@
 export { Avatar } from './components/atoms/avatar';
+export { AvatarGroup } from './components/atoms/avatarGroup';
 export { Backdrop } from './components/atoms/backdrop';
 export { Badge } from './components/atoms/badge';
 export { Breadcrumbs } from './components/atoms/breadcrumbs';
