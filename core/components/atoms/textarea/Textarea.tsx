@@ -87,6 +87,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
   return (
     <div className={classes}>
       <textarea
+        data-test="DesignSystem-Textarea"
         {...baseProps}
         ref={ref}
         name={name}
