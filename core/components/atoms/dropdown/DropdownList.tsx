@@ -253,10 +253,8 @@ const DropdownList = (props: OptionsProps) => {
   });
 
   const SelectAllClass = classNames({
-    ['Option']: true,
-    ['Option--withCheckbox']: true,
-    ['Option-wrapper']: true,
-    ['Option--active']: cursor === 0
+    ['OptionWrapper']: true,
+    ['OptionWrapper--active']: cursor === 0,
   });
 
   const onToggleDropdown = (open: boolean, type?: string) => {
@@ -299,7 +297,7 @@ const DropdownList = (props: OptionsProps) => {
     const { footerLabel = 'Search for more options' } = props;
     return (
       <div className={'Dropdown-footer'}>
-        <Text small={true} appearance={'subtle'}>{footerLabel}</Text>
+        <Text size="small" appearance={'subtle'}>{footerLabel}</Text>
       </div>
     );
   };
@@ -308,7 +306,7 @@ const DropdownList = (props: OptionsProps) => {
     const { onClearOptions } = props;
     return (
       <div className={getDropdownSectionClass(selectedGroup)}>
-        <Text small={true} appearance={'subtle'}>{group}</Text>
+        <Text size="small" appearance={'subtle'}>{group}</Text>
         {selectedGroup && (
           <Button onClick={onClearOptions} appearance="transparent" size="tiny">Clear</Button>
         )}
@@ -347,7 +345,7 @@ const DropdownList = (props: OptionsProps) => {
     const { loadingOptions, searchInit } = props;
     const disable = loadingOptions && !searchInit;
     return (
-      <div className={'Dropdown-input'}>
+      <div className={'Dropdown-inputWrapper'}>
         <Input
           name="Dropdown-search"
           icon={'search'}
@@ -359,6 +357,7 @@ const DropdownList = (props: OptionsProps) => {
           onClear={searchClearHandler}
           ref={inputRef}
           autoComplete={'off'}
+          className="Dropdown-input"
         />
       </div>
     );
@@ -394,6 +393,7 @@ const DropdownList = (props: OptionsProps) => {
           checked={selectAll.checked}
           indeterminate={selectAll.indeterminate}
           tabIndex={-1}
+          className="OptionCheckbox"
         />
       </div>
     );
@@ -486,7 +486,7 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const onkeydown = (event: any) => {
-    const optionClass = optionRenderer ? '.Option-wrapper' : '.Option';
+    const optionClass = '.OptionWrapper';
     switch (event.key) {
       case 'ArrowDown':
         event.preventDefault();

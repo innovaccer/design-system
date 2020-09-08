@@ -29,6 +29,7 @@ const CheckboxOption = (props: OptionTypeProps) => {
         checked={selected}
         onChange={onChangeHandler}
         tabIndex={-1}
+        className="OptionCheckbox"
       />
     </div>
   );
