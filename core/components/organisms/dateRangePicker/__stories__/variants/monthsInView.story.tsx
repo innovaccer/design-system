@@ -14,6 +14,7 @@ export const monthsInView = () => {
       {Array.from([1, 2, 3], x => (
         <div className="mt-5" style={{ alignSelf: 'flex-start' }}>
           <Card
+            className="d-inline-flex"
             shadow="light"
           >
             <DateRangePicker

@@ -9,14 +9,9 @@ export const view = () => {
   return (
     <div className="d-flex">
       {values.map((v, index) => (
-        <div
-          key={index}
-          className="mr-9"
-          style={{
-            maxWidth: '310px',
-          }}
-        >
+        <div key={index} className="mr-9">
           <Card
+            className="d-inline-flex"
             shadow="light"
           >
             <DatePicker

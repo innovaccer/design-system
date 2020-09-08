@@ -17,7 +17,7 @@ export const all = () => {
 
   const monthsInView = number(
     'monthsInView',
-    1
+    withInput ? 2 : 1
   );
 
   const inputFormat = select(
@@ -110,23 +110,22 @@ export const all = () => {
     );
   }
   return (
-    <div style={{ maxWidth: `${monthsInView * 330}px` }}>
-      <Card
-        shadow="light"
-      >
-        <DateRangePicker
-          withInput={withInput}
-          monthsInView={monthsInView}
-          jumpView={jumpView}
-          startDate={startDate}
-          endDate={endDate}
-          onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) => action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()}
-          view={view}
-          firstDayOfWeek={firstDayOfWeek}
-          {...attr}
-        />
-      </Card>
-    </div>
+    <Card
+      className="d-inline-flex"
+      shadow="light"
+    >
+      <DateRangePicker
+        withInput={withInput}
+        monthsInView={monthsInView}
+        jumpView={jumpView}
+        startDate={startDate}
+        endDate={endDate}
+        onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) => action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()}
+        view={view}
+        firstDayOfWeek={firstDayOfWeek}
+        {...attr}
+      />
+    </Card>
   );
 };
 

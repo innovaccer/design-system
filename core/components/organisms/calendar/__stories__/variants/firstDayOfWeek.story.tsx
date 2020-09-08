@@ -15,8 +15,9 @@ export const firstDayOfWeek = () => {
     // @ts-ignore
     <div className="d-flex" style={style}>
       {values.map((v, index) => (
-        <div className="mr-9 mt-5" key={index} style={{ maxWidth: '310px' }}>
+        <div className="mr-9 mt-5" key={index}>
           <Card
+            className="d-inline-flex"
             shadow="light"
           >
             <Calendar

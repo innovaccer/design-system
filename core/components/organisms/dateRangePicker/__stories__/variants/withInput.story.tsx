@@ -5,6 +5,11 @@ import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const withInput = () => {
+  const monthsInView = number(
+    'monthsInView',
+    2
+  );
+
   const startDate = date(
     'startDate',
     undefined
@@ -82,6 +87,7 @@ export const withInput = () => {
         onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) => action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()}
         view={view}
         firstDayOfWeek={firstDayOfWeek}
+        monthsInView={monthsInView}
         {...attr}
       />
     </div>

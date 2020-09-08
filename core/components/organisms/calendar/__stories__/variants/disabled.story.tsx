@@ -13,8 +13,9 @@ export const disabled = () => {
       <Heading>disabledBefore</Heading>
       <div className="d-flex">
         {view.map((v, index) => (
-          <div className="mr-8" style={{ maxWidth: '310px' }} key={index}>
+          <div className="mr-8" key={index}>
             <Card
+              className="d-inline-flex"
               shadow="light"
             >
               <Calendar
@@ -30,8 +31,9 @@ export const disabled = () => {
       <Heading>disabledAfter</Heading>
       <div className="d-flex">
         {view.map((v, index) => (
-          <div className="mr-8" key={index} style={{ maxWidth: '310px' }}>
+          <div className="mr-8" key={index}>
             <Card
+              className="d-inline-flex"
               shadow="light"
             >
               <Calendar
@@ -47,8 +49,9 @@ export const disabled = () => {
       <Heading>disabledBefore and disabledAfter</Heading>
       <div className="d-flex">
         {view.map((v, index) => (
-          <div className="mr-8" key={index} style={{ maxWidth: '310px' }}>
+          <div className="mr-8" key={index}>
             <Card
+              className="d-inline-flex"
               shadow="light"
             >
               <Calendar

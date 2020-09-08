@@ -66,6 +66,8 @@ type CompProps = {
 } & SharedProps;
 
 const defaultProps = {
+  view: 'date',
+  firstDayOfWeek: 'sunday',
   position: 'bottom-start',
   inputFormat: 'mm/dd/yyyy',
   outputFormat: 'mm/dd/yyyy',
@@ -270,6 +272,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     if (withInput) {
       const trigger = (
         <InputMask
+          icon="events"
           placeholder={inputFormat}
           {...inputOptions}
           error={inputOptions.required && error}

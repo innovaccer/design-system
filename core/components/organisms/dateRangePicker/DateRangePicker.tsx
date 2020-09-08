@@ -73,7 +73,9 @@ type CompProps = {
 } & SharedProps;
 
 const defaultProps = {
-  position: 'bottom-start',
+  view: 'date',
+  firstDayOfWeek: 'sunday',
+  position: 'bottom',
   inputFormat: 'mm/dd/yyyy',
   outputFormat: 'mm/dd/yyyy',
   validator: validators.date,
@@ -100,6 +102,7 @@ interface DateRangePickerState {
 
 export class DateRangePicker extends React.Component<DateRangePickerProps, DateRangePickerState> {
   static defaultProps = defaultProps;
+  monthsInView: number;
 
   constructor(props: DateRangePickerProps) {
     super(props);
@@ -120,6 +123,8 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       monthNav: props.monthNav,
       ...this.getErrors(startDate, endDate)
     };
+
+    this.monthsInView = props.monthsInView || (props.withInput ? 2 : 1);
   }
 
   componentDidUpdate(prevProps: DateRangePickerProps, prevState: DateRangePickerState) {
@@ -431,6 +436,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     return (
       <Calendar
         {...rest}
+        monthsInView={this.monthsInView}
         rangePicker={true}
         startDate={convertToDate(startDate, inputFormat, validator)}
         endDate={convertToDate(endDate, inputFormat, validator)}
@@ -472,6 +478,8 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
               </Label>
             )}
             <InputMask
+              icon="events"
+              placeholder={inputFormat}
               {...startInputOptions}
               mask={mask}
               value={startDate ? translateToString(inputFormat, startDate) : ''}
@@ -483,7 +491,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
               }}
               onClear={() => this.onClearHandler('start')}
               onClick={() => this.onClickHandler('start')}
-              error={startError}
+              error={startInputOptions.required && startError}
               caption={startInputOptions.required && startError ? startInputOptions.caption || 'Invalid value' : ''}
             />
           </Column>
@@ -494,6 +502,8 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
               </Label>
             )}
             <InputMask
+              icon="events"
+              placeholder={inputFormat}
               {...endInputOptions}
               mask={mask}
               value={endDate ? translateToString(inputFormat, endDate) : ''}
@@ -505,7 +515,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
               }}
               onClear={() => this.onClearHandler('end')}
               onClick={() => this.onClickHandler('end')}
-              error={endError}
+              error={endInputOptions.required && endError}
               caption={endInputOptions.required && endError ? endInputOptions.caption || 'Invalid value' : ''}
             />
           </Column>

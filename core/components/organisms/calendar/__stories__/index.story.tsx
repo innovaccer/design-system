@@ -82,25 +82,24 @@ export const all = () => {
   if (monthNav !== -1) attr.monthNav = monthNav;
 
   return (
-    <div style={{ maxWidth: `${monthsInView * 310}px` }}>
-      <Card
-        shadow="light"
-      >
-        <Calendar
-          monthsInView={monthsInView}
-          rangePicker={rangePicker}
-          jumpView={jumpView}
-          date={convertToDate(dateValue)}
-          startDate={convertToDate(startDate)}
-          endDate={convertToDate(endDate)}
-          onDateChange={(currDate?: Date) => action(`on date change : ${currDate}`)()}
-          onRangeChange={(sDate?: Date, eDate?: Date) => action(`on range change: ${sDate} - ${eDate}`)()}
-          view={view}
-          firstDayOfWeek={firstDayOfWeek}
-          {...attr}
-        />
-      </Card>
-    </div>
+    <Card
+      className="d-inline-flex"
+      shadow="light"
+    >
+      <Calendar
+        monthsInView={monthsInView}
+        rangePicker={rangePicker}
+        jumpView={jumpView}
+        date={convertToDate(dateValue)}
+        startDate={convertToDate(startDate)}
+        endDate={convertToDate(endDate)}
+        onDateChange={(currDate?: Date) => action(`on date change : ${currDate}`)()}
+        onRangeChange={(sDate?: Date, eDate?: Date) => action(`on range change: ${sDate} - ${eDate}`)()}
+        view={view}
+        firstDayOfWeek={firstDayOfWeek}
+        {...attr}
+      />
+    </Card>
   );
 };
 
