@@ -14,6 +14,11 @@ configure({ testIdAttribute: 'data-test' });
 document.createRange = () => ({
   setStart: () => {},
   setEnd: () => {},
+  createContextualFragment: (str) => {
+    var temp = document.createElement('template');
+    temp.innerHTML = str;
+    return temp.content;
+  },
   // @ts-ignore
   commonAncestorContainer: {
     nodeName: "BODY",
