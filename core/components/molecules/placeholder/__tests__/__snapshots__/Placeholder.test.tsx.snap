@@ -1,157 +1,189 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Placeholder component 
-  withImage: false, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  imageSize: "large"
  1`] = `
-<div
-  className="Placeholder"
->
+<DocumentFragment>
   <div
-    className="Placeholder-paragraph"
+    class="Placeholder"
+    data-test="DesignSystem-Placeholder"
   >
-    <PlaceholderParagraph
-      length="small"
+    <span
+      class="PlaceholderImage Placeholder--animation PlaceholderImage--large"
+      data-test="DesignSystem-Placeholder--Image"
     />
+    <div
+      class="Placeholder-paragraph Placeholder-paragraph--withImage"
+      data-test="DesignSystem-Placeholder--Paragraph"
+    >
+      <div
+        class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-small"
+      >
+        <span
+          class="Placeholder--animation PlaceholderParagraph"
+        />
+      </div>
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Placeholder component 
-  withImage: true, imageSize: "large", style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  imageSize: "medium"
  1`] = `
-<div
-  className="Placeholder"
->
+<DocumentFragment>
   <div
-    className="Placeholder-image"
+    class="Placeholder"
+    data-test="DesignSystem-Placeholder"
   >
-    <PlaceholderImage
-      size="large"
+    <span
+      class="PlaceholderImage Placeholder--animation PlaceholderImage--medium"
+      data-test="DesignSystem-Placeholder--Image"
     />
+    <div
+      class="Placeholder-paragraph Placeholder-paragraph--withImage"
+      data-test="DesignSystem-Placeholder--Paragraph"
+    >
+      <div
+        class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-small"
+      >
+        <span
+          class="Placeholder--animation PlaceholderParagraph"
+        />
+      </div>
+    </div>
   </div>
-  <div
-    className="Placeholder-paragraph"
-  >
-    <PlaceholderParagraph
-      length="small"
-    />
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Placeholder component 
-  withImage: true, imageSize: "medium", style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  imageSize: "small"
  1`] = `
-<div
-  className="Placeholder"
->
+<DocumentFragment>
   <div
-    className="Placeholder-image"
+    class="Placeholder"
+    data-test="DesignSystem-Placeholder"
   >
-    <PlaceholderImage
-      size="medium"
+    <span
+      class="PlaceholderImage Placeholder--animation PlaceholderImage--small"
+      data-test="DesignSystem-Placeholder--Image"
     />
+    <div
+      class="Placeholder-paragraph Placeholder-paragraph--withImage"
+      data-test="DesignSystem-Placeholder--Paragraph"
+    >
+      <div
+        class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-small"
+      >
+        <span
+          class="Placeholder--animation PlaceholderParagraph"
+        />
+      </div>
+    </div>
   </div>
-  <div
-    className="Placeholder-paragraph"
-  >
-    <PlaceholderParagraph
-      length="small"
-    />
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Placeholder component 
-  withImage: true, imageSize: "small", style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  round: false, withImage: false
  1`] = `
-<div
-  className="Placeholder"
->
+<DocumentFragment>
   <div
-    className="Placeholder-image"
+    class="Placeholder"
+    data-test="DesignSystem-Placeholder"
   >
-    <PlaceholderImage
-      size="small"
-    />
+    <div
+      class="Placeholder-paragraph"
+      data-test="DesignSystem-Placeholder--Paragraph"
+    >
+      <div
+        class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-small"
+      >
+        <span
+          class="Placeholder--animation PlaceholderParagraph"
+        />
+      </div>
+    </div>
   </div>
-  <div
-    className="Placeholder-paragraph"
-  >
-    <PlaceholderParagraph
-      length="small"
-    />
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Placeholder component 
-  withImage: true, round: false, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  round: false, withImage: true
  1`] = `
-<div
-  className="Placeholder"
->
+<DocumentFragment>
   <div
-    className="Placeholder-image"
+    class="Placeholder"
+    data-test="DesignSystem-Placeholder"
   >
-    <PlaceholderImage
-      round={false}
-      size="small"
+    <span
+      class="PlaceholderImage Placeholder--animation PlaceholderImage--small"
+      data-test="DesignSystem-Placeholder--Image"
     />
+    <div
+      class="Placeholder-paragraph Placeholder-paragraph--withImage"
+      data-test="DesignSystem-Placeholder--Paragraph"
+    >
+      <div
+        class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-small"
+      >
+        <span
+          class="Placeholder--animation PlaceholderParagraph"
+        />
+      </div>
+    </div>
   </div>
-  <div
-    className="Placeholder-paragraph"
-  >
-    <PlaceholderParagraph
-      length="small"
-    />
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Placeholder component 
-  withImage: true, round: true, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  round: true, withImage: false
  1`] = `
-<div
-  className="Placeholder"
->
+<DocumentFragment>
   <div
-    className="Placeholder-image"
+    class="Placeholder"
+    data-test="DesignSystem-Placeholder"
   >
-    <PlaceholderImage
-      round={true}
-      size="small"
-    />
+    <div
+      class="Placeholder-paragraph"
+      data-test="DesignSystem-Placeholder--Paragraph"
+    >
+      <div
+        class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-small"
+      >
+        <span
+          class="Placeholder--animation PlaceholderParagraph"
+        />
+      </div>
+    </div>
   </div>
-  <div
-    className="Placeholder-paragraph"
-  >
-    <PlaceholderParagraph
-      length="small"
-    />
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Placeholder component 
-  withImage: true, style: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  round: true, withImage: true
  1`] = `
-<div
-  className="Placeholder"
->
+<DocumentFragment>
   <div
-    className="Placeholder-image"
+    class="Placeholder"
+    data-test="DesignSystem-Placeholder"
   >
-    <PlaceholderImage
-      size="small"
+    <span
+      class="PlaceholderImage Placeholder--animation PlaceholderImage--round PlaceholderImage--small"
+      data-test="DesignSystem-Placeholder--Image"
     />
+    <div
+      class="Placeholder-paragraph Placeholder-paragraph--withImage"
+      data-test="DesignSystem-Placeholder--Paragraph"
+    >
+      <div
+        class="PlaceholderParagraph-wrapper PlaceholderParagraph-wrapper--length-small"
+      >
+        <span
+          class="Placeholder--animation PlaceholderParagraph"
+        />
+      </div>
+    </div>
   </div>
-  <div
-    className="Placeholder-paragraph"
-  >
-    <PlaceholderParagraph
-      length="small"
-    />
-  </div>
-</div>
+</DocumentFragment>
 `;

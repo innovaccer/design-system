@@ -1,55 +1,28 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import Placeholder, { PlaceholderProps as Props } from '../Placeholder';
-import PlaceholderParagraph from '@/components/atoms/placeholderParagraph';
+import { PlaceholderParagraph } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const style = {
-  width: valueHelper('150px', { required: true }),
-  height: valueHelper('150px', { required: true })
-};
-const size = ['small', 'medium', 'large'];
+const sizes = ['small', 'medium', 'large'];
 const BooleanValue = [true, false];
 
 describe('Placeholder component', () => {
   const mapper = {
-    withImage: valueHelper(BooleanValue, { required: true, iterate: true }),
-    style: valueHelper(style, { required: true }),
-  };
-
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const tree = shallow(
-        <Placeholder {...attr}>
-          <PlaceholderParagraph length="small" />
-        </Placeholder>
-      );
-      expect(tree).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
-
-describe('Placeholder component', () => {
-  const mapper = {
-    withImage: valueHelper(true, { required: true }),
     round: valueHelper(BooleanValue, { required: true, iterate: true }),
-    style: valueHelper(style, { required: true }),
+    withImage: valueHelper(BooleanValue, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { asFragment } = render(
         <Placeholder {...attr}>
           <PlaceholderParagraph length="small" />
         </Placeholder>
       );
-      expect(tree).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
   };
 
@@ -58,23 +31,63 @@ describe('Placeholder component', () => {
 
 describe('Placeholder component', () => {
   const mapper = {
-    withImage: valueHelper(true, { required: true }),
-    imageSize: valueHelper(size, { required: true, iterate: true }),
-    style: valueHelper(style, { required: true }),
+    imageSize: valueHelper(sizes, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { asFragment } = render(
         <Placeholder {...attr}>
           <PlaceholderParagraph length="small" />
         </Placeholder>
       );
-      expect(tree).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
   };
 
   testHelper(mapper, testFunc);
+});
+
+describe('Placeholder component', () => {
+
+  it('renders children without image', () => {
+    const { getAllByTestId } = render(
+      <Placeholder withImage={false}>
+        <PlaceholderParagraph length="small" data-test="Placeholder-Paragraph" />
+        <PlaceholderParagraph length="medium" data-test="Placeholder-Paragraph" />
+      </Placeholder>
+    );
+
+    expect(getAllByTestId('Placeholder-Paragraph')).toHaveLength(2);
+  });
+
+  it('placeholder component with prop: withImage', () => {
+    const withImageClass = 'Placeholder-paragraph--withImage';
+
+    const { getByTestId } = render(
+      <Placeholder withImage={true}>
+        <PlaceholderParagraph length="small" />
+      </Placeholder>
+    );
+
+    expect(getByTestId('DesignSystem-Placeholder--Image')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Placeholder--Paragraph')).toHaveClass(withImageClass);
+  });
+
+});
+
+describe('Placeholder Component with overwrite class', () => {
+  const className = 'DS-Placeholder';
+
+  it('overwrite Placeholder class', () => {
+    const { getByTestId } = render(
+      <Placeholder className={className}>
+        <PlaceholderParagraph length="small" />
+      </Placeholder>
+    );
+    expect(getByTestId('DesignSystem-Placeholder')).toHaveClass(className);
+  });
+
 });
