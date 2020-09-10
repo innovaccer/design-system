@@ -6,10 +6,13 @@ export const size = () => {
   return (
     <div className="d-flex">
       <div className="mr-6">
-        <Text small={true}>Small</Text>
+        <Text size="small">Small</Text>
+      </div>
+      <div className="mr-6">
+        <Text size="regular">Regular</Text>
       </div>
       <div>
-        <Text small={false}>Large</Text>
+        <Text size="large">Large</Text>
       </div>
     </div>
 
