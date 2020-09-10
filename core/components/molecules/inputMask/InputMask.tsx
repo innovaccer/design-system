@@ -16,15 +16,20 @@ export interface MaskProps extends BaseProps {
   mask: Mask;
   /**
    * Character to be used for empty value at particular index in `Mask`
-   * @default "_"
    */
   placeholderChar?: string;
   /**
    * Adds caption to `input` on error
    */
   caption?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>, val?: string) => void;
-  onBlur?: (e: React.ChangeEvent<HTMLInputElement>, val?: string) => void;
+  /**
+   * <br/>**Second argument will be the masked value**
+   */
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>, maskedVal: string) => void;
+  /**
+   * <br/>**Second argument will be the masked value**
+   */
+  onBlur?: (e: React.ChangeEvent<HTMLInputElement>, maskedVal: string) => void;
   onClear?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 export type InputMaskProps = InputProps & MaskProps;
@@ -38,7 +43,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
   const {
     mask: maskProp,
     value: valueProp,
-    placeholderChar = '_',
+    placeholderChar,
     defaultValue,
     mask,
     error,
@@ -200,5 +205,8 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     </div>
   );
 });
+InputMask.defaultProps = {
+  placeholderChar: '_'
+};
 
 export default InputMask;
