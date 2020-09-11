@@ -79,13 +79,12 @@ export const Avatar = (props: AvatarProps) => {
     'accent2',
     'warning',
     'accent1',
-    'success',
-    'secondary',
+    'success'
   ];
 
   const AvatarAppearance =
     appearance ||
-    colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 9] ||
+    colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] ||
     DefaultAppearance;
 
   const classes = classNames({
