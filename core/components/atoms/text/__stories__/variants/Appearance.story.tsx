@@ -3,7 +3,7 @@ import Text, { Appearance } from '../../index';
 
 // CSF format story
 export const appearance = () => {
-  const appearances: Appearance[] = ['default', 'white', 'destructive', 'subtle', 'disabled'];
+  const appearances: Appearance[] = ['default', 'white', 'destructive', 'subtle', 'disabled', 'success', 'link'];
   return (
     <div className="d-flex">
       {
