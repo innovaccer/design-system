@@ -163,6 +163,8 @@ const customCode = `
               || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
             );
           }}
+          withCheckbox={true}
+          onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select:- rowIndex: \${rowIndex} selected: \${selected} selectedList: \${JSON.stringify(selectedList)} selectAll: \${selectAll}\`)}
           withPagination={true}
           pageSize={5}
           onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)}

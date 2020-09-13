@@ -226,8 +226,9 @@ export interface GridProps extends BaseProps {
   onSelectAll?: onSelectAllFunction;
   /**
    * Error Template
+   * **Functional Component will be deprecated soon**
    */
-  errorTemplate?: React.FunctionComponent;
+  errorTemplate?: React.FunctionComponent | React.ReactNode;
   /**
    * Sorting List
    */

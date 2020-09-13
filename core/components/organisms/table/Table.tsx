@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Header, ExternalHeaderProps, updateSearchTermFunction, HeaderProps } from '../grid/Header';
-import { Grid, Pagination } from '@/index';
+import { Grid, Pagination, Heading } from '@/index';
 import {
   Data,
   onSelectFunction,
@@ -16,6 +16,10 @@ import { updateBatchData, filterData, sortData, paginateData, getSelectAll, getT
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { debounce } from 'throttle-debounce';
 import { PaginationProps } from '@/components/molecules/pagination';
+
+export interface ErrorTemplateProps {
+  errorType?: TableProps['errorType'];
+}
 
 interface SyncProps {
   /**
@@ -84,7 +88,7 @@ interface SyncProps {
    * | maxWidth | max-width of the column(in px) | 800 |
    * | resizable | Denotes if column is resizable | |
    * | sorting | Enables sorting in column | true |
-   * | comparator | Sorting Function to be passed(in case of async) | |
+   * | comparator | Sorting Function to be passed(in case of sync) | |
    * | separator | Shows Left separator | |
    * | tooltip | Shows tooltip on hover | |
    * | pinned | Pin column | |
@@ -108,6 +112,10 @@ interface SyncProps {
    * @default false
    */
   error: GridProps['error'];
+  /**
+   * Error type to be passed to errorTemplate props
+   */
+  errorType?: string;
   /**
    * Callback to be called on searchTerm change(in case of sync)
    */
@@ -260,8 +268,13 @@ interface SharedTableProps extends BaseProps {
   filterList: GridProps['filterList'];
   /**
    * Template to be rendered when **error: true**
+   * <pre className="DocPage-codeBlock">
+   * ErrorTemplateProps: {
+   *    errorType: TableProps['errorType']
+   * }
+   * </pre>
    */
-  errorTemplate?: GridProps['errorTemplate'];
+  errorTemplate?: React.FunctionComponent<ErrorTemplateProps>;
   /**
    * Callback to be called when a row is clicked in case of Table type: "resource"
    *
@@ -298,17 +311,31 @@ export type TableProps = (AsyncTableProps & SyncTableProps);
 
 interface TableState {
   async: boolean;
-  data: GridProps['data'];
-  schema: GridProps['schema'];
-  sortingList: GridProps['sortingList'];
-  filterList: GridProps['filterList'];
-  page: GridProps['page'];
+  data: TableProps['data'];
+  schema: TableProps['schema'];
+  sortingList: TableProps['sortingList'];
+  filterList: TableProps['filterList'];
+  page: TableProps['page'];
   totalRecords: GridProps['totalRecords'];
   selectAll: GridProps['selectAll'];
   searchTerm: HeaderProps['searchTerm'];
-  loading: GridProps['loading'];
-  error: GridProps['error'];
+  loading: TableProps['loading'];
+  error: TableProps['error'];
+  errorType?: TableProps['errorType'];
 }
+
+const defaultErrorTemplate = (props: ErrorTemplateProps) => {
+  const { errorType = 'DEFAULT' } = props;
+
+  const errorMessages: Record<string, string> = {
+    FAILED_TO_FETCH: 'Failed to fetch data',
+    NO_RECORDS_FOUND: 'No results found',
+    DEFAULT: 'No results found'
+  };
+  return (
+    <Heading>{errorMessages[errorType]}</Heading>
+  );
+};
 
 export const defaultProps = {
   type: 'data',
@@ -328,16 +355,34 @@ export const defaultProps = {
   error: false,
   loaderSchema: [],
   sortingList: [],
-  filterList: {}
+  filterList: {},
+  errorTemplate: defaultErrorTemplate
 };
 
 /**
  * ###Note:
- * 1. Table props types:
- *  - async: fetchData
- *  - sync: data, schema, error, loading, onSearch
- * 2. Sync Table:
+ * 1. Sync Table:
  *  - Manually toggle loading/error state to update data, schema.
+ * 2. Async Table:
+ *  - fetchData return:
+ *    - Promise resolve with no records:
+ *      error: true, errorType: 'NO\_RECORDS\_FOUND'
+ *    - Promise reject:
+ *      error: true, errorType: 'FAILED\_TO\_FETCH'
+ * 3. Default errorTemplate:
+ * <pre class="DocPage-codeBlock">
+ * (props) => {
+ *      const { errorType = 'DEFAULT' } = props;
+ *      const errorMessages = {
+ *        'FAILED\_TO\_FETCH': 'Failed to fetch data',
+ *        'NO\_RECORDS\_FOUND': 'No results found',
+ *        'DEFAULT': 'No results found'
+ *      }
+ *      return(
+ *        \<Heading>{errorMessages[errorType]}\</Heading>
+ *      );
+ * }
+ * </pre>
  */
 
 export class Table extends React.Component<TableProps, TableState> {
@@ -360,6 +405,7 @@ export class Table extends React.Component<TableProps, TableState> {
       totalRecords: !async ? data.length : 0,
       loading: !async ? props.loading || false : true,
       error: !async ? props.error || false : false,
+      errorType: props.errorType,
       selectAll: getSelectAll([]),
       searchTerm: undefined,
     };
@@ -380,6 +426,7 @@ export class Table extends React.Component<TableProps, TableState> {
           schema,
           loading: this.props.loading || false,
           error: this.props.error || false,
+          errorType: this.props.errorType,
           page: 1,
           totalRecords: data.length || 0,
           sortingList: [],
@@ -399,7 +446,18 @@ export class Table extends React.Component<TableProps, TableState> {
       || prevState.filterList !== this.state.filterList
       || prevState.sortingList !== this.state.sortingList
       || prevState.searchTerm !== this.state.searchTerm) {
-      if (!this.props.loading) this.updateData();
+      if (!this.props.loading) {
+        // let errorType = "";
+        // let errorCount = 0;
+        // if(prevState.page !== this.state.page) errorType = "ON_PAGE_CHANGE", errorCount++;
+        // if(prevState.filterList !== this.state.filterList) errorType = "ON_FILTER_CHANGE", errorCount++;
+        // if(prevState.sortingList !== this.state.sortingList) errorType = "ON_SORTING_CHANGE", errorCount++;
+        // if(prevState.searchTerm !== this.state.searchTerm) errorType = "ON_SEARCH_CHANGE", errorCount++;
+        // this.setState({
+        //   errorType: errorCount > 1 ? "FAILED_TO_FETCH" : errorType
+        // });
+        this.updateData();
+      }
     }
   }
 
@@ -461,14 +519,15 @@ export class Table extends React.Component<TableProps, TableState> {
               selectAll: getSelectAll(data),
               totalRecords: res.count,
               loading: false,
-              error: !data.length
+              error: !data.length,
+              errorType: 'NO_RECORDS_FOUND'
             });
           })
           .catch(() => {
             this.setState({
               loading: false,
               error: true,
-              data: []
+              errorType: 'FAILED_TO_FETCH'
             });
           });
       }
@@ -606,8 +665,6 @@ export class Table extends React.Component<TableProps, TableState> {
       paginationType,
       pageSize,
       onRowClick,
-      // onPageChange: onPageChangeProp,
-      // onSelect,
       loaderSchema,
       errorTemplate,
       className
@@ -670,7 +727,7 @@ export class Table extends React.Component<TableProps, TableState> {
             withPagination={withPagination && totalPages > 1}
             pageSize={pageSize}
             loaderSchema={loaderSchema}
-            errorTemplate={errorTemplate}
+            errorTemplate={errorTemplate && errorTemplate({ errorType: this.state.errorType })}
             onRowClick={onRowClick}
           />
         </div>
