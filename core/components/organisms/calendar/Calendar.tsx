@@ -400,12 +400,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
   selectDate = (index: number, date: number) => {
     const {
-      year: yearNavVal,
-      month: monthNavVal
+      year,
+      month
     } = this.getNavDateInfo(index);
 
-    this.updateState(yearNavVal, monthNavVal, date);
-    const d = this.getDateValue(yearNavVal, monthNavVal, date);
+    this.updateState(year, month, date);
+    const d = this.getDateValue(year, month, date);
     this.setState({
       currDate: d
     });
@@ -542,21 +542,35 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     });
 
     let headerContent = '';
-    const onClickHandler = () => {
+    const onClickHandler = (currView: View) => {
       if (jumpView) {
-        if (view === 'year') this.setState({ view: 'date' });
-        if (view === 'month') this.setState({ view: 'year' });
-        if (view === 'date') this.setState({ view: 'month' });
+        if (currView === 'year') this.setState({ view: 'date' });
+        if (currView === 'month') this.setState({ view: 'year' });
+        if (currView === 'date') this.setState({ view: 'month' });
       }
     };
 
     if (view === 'year') headerContent = `${yearBlockNav} - ${yearBlockNav + (yearBlockRange - 1)}`;
     if (view === 'month') headerContent = `${yearNavVal}`;
-    if (view === 'date') headerContent = `${months[monthNavVal]} ${yearNavVal}`;
 
     return (
-      <div className={headerContentClass} onClick={onClickHandler}>
-        <Heading size="s">{headerContent}</Heading>
+      <div className={headerContentClass}>
+        {view !== 'date' && (
+          <span onClick={() => onClickHandler(view)}>
+            <Heading size="s">{headerContent}</Heading>
+          </span>
+        )}
+        {view === 'date' && (
+          <>
+            <span onClick={() => onClickHandler(view)}>
+              <Heading size="s">{months[monthNavVal]}</Heading>
+            </span>
+            &nbsp;
+            <span onClick={() => onClickHandler('month')}>
+              <Heading size="s">{yearNavVal}</Heading>
+            </span>
+          </>
+        )}
       </div>
     );
   }
@@ -588,7 +602,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
           const year = yearBlockNav + offset;
           const disabled = compareDate(disabledBefore, 'more', year) || compareDate(disabledAfter, 'less', year);
-          const active = !disabled && !rangePicker && yearNav === year;
+          const active = !disabled && !rangePicker && yearNav === year && year === this.state.year;
 
           const valueClass = classNames({
             'Calendar-value': true,
