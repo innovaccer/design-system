@@ -7,7 +7,6 @@ const config = {
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   modulePaths: ['core'],
-  collectCoverageFrom: ['core/**/*.{ts,tsx}', '!**/dist/**/*'],
   setupFilesAfterEnv: ['./scripts/setupTest.ts'],
   transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
   snapshotSerializers: ['enzyme-to-json/serializer'],
@@ -15,6 +14,12 @@ const config = {
   collectCoverage: true,
   coverageReporters: ['json', 'lcov', 'text', 'text-summary', 'html'],
   verbose: true,
+  collectCoverageFrom: [
+    'core/**/*.{ts,tsx}',
+    '!**/dist/**/*',
+    '!core/**/*.story.tsx',
+    '!core/**/__stories__/**'
+  ],
   globals: {
     window: true
   },

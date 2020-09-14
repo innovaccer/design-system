@@ -45,12 +45,12 @@ export const Placeholder = (props: PlaceholderProps) => {
   }, className);
 
   return (
-    <div {...baseProps} className={classes}>
+    <div data-test="DesignSystem-Placeholder" {...baseProps} className={classes}>
       {withImage && (
-        <PlaceholderImage round={round} size={imageSize} />
+        <PlaceholderImage round={round} size={imageSize} data-test="DesignSystem-Placeholder--Image"/>
       )}
       {children && (
-        <div className={paragraphClasses}>
+        <div className={paragraphClasses} data-test="DesignSystem-Placeholder--Paragraph">
           {children}
         </div>
       )}
