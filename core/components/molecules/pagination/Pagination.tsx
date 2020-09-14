@@ -98,7 +98,7 @@ export const Pagination = (props: PaginationProps) => {
   else buttonHelper.push('mx-4');
 
   return (
-    <div {...baseProps} className={wrapperClass}>
+    <div data-test="DesignSystem-Pagination" {...baseProps} className={wrapperClass}>
       <div className={prevButtonWrapperClass}>
         <Button
           onClick={() => onClickHandler('first')}
@@ -106,13 +106,15 @@ export const Pagination = (props: PaginationProps) => {
           appearance="transparent"
           size="large"
           icon="first_page"
+          data-test="DesignSystem-Pagination--FirstButton"
         />
-        <div className={['ml-4', ...buttonHelper].join(' ')}>
+        <div data-test="DesignSystem-Pagination--Prev" className={['ml-4', ...buttonHelper].join(' ')}>
           <Button
             onClick={() => onClickHandler('prev')}
             disabled={page <= 1}
             size="large"
             icon="navigate_before"
+            data-test="DesignSystem-Pagination--PrevButton"
           />
         </div>
       </div>
@@ -124,6 +126,7 @@ export const Pagination = (props: PaginationProps) => {
             size="large"
             onChange={inputChangeHandler}
             value={`${page === 0 ? '' : page}`}
+            data-test="DesignSystem-Pagination--Input"
           />
           <Text>{` of ${totalPages} pages`}</Text>
         </div>
@@ -135,6 +138,7 @@ export const Pagination = (props: PaginationProps) => {
             disabled={page >= totalPages}
             size="large"
             icon="navigate_next"
+            data-test="DesignSystem-Pagination--NextButton"
           />
         </div>
         <Button
@@ -143,6 +147,7 @@ export const Pagination = (props: PaginationProps) => {
           appearance="transparent"
           size="large"
           icon="last_page"
+          data-test="DesignSystem-Pagination--LastButton"
         />
       </div>
     </div >
