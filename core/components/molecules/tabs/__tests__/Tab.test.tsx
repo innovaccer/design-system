@@ -1,19 +1,48 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
-import Tab from '../Tab';
+import { render } from '@testing-library/react';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
+import { Tab, Text } from '@/index';
+import { TabProps as Props } from '@/index.type';
+
+const BooleanValue = [true, false];
+const Label = <Text>Tab(Recommended)</Text>;
 
 describe('Tab component', () => {
-  it('with Label', () => {
-    const tree = shallow(
-      <Tab label={<></>}>Tab</Tab>
+  const mapper = {
+    label: valueHelper(Label, { required: true }),
+    disabled: valueHelper(BooleanValue, { required: true, iterate: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+
+    it(testMessageHelper(attr), () => {
+      const { asFragment } = render(
+        <Tab {...attr}>
+          <div>
+            Tab
+          </div>
+        </Tab>
+      );
+      expect(asFragment()).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('Tab component', () => {
+
+  it('renders children', () => {
+    const { getByTestId } = render(
+      <Tab label={Label}>
+        <div data-test="DS-Tab">
+          Tab
+        </div>
+      </Tab>
     );
-    expect(tree).toMatchSnapshot();
+
+    expect(getByTestId('DS-Tab')).toBeInTheDocument();
   });
 
-  it('with Label and disabled', () => {
-    const tree = shallow(
-      <Tab label={<></>} disabled={true}>Tab</Tab>
-    );
-    expect(tree).toMatchSnapshot();
-  });
 });
