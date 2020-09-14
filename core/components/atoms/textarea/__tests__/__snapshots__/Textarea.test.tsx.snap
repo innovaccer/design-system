@@ -1,31 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Textarea component 
-  name: "name", disabled: false, onChange: "[Function]"
+  name: "Textarea", placeholder: "Write something..", disabled: false, onChange: "[Function]", value: "Design System"
  1`] = `
-<div
-  className="Textarea"
->
-  <textarea
-    className="Textarea-textarea"
-    disabled={false}
-    name="name"
-    onChange={[MockFunction]}
-  />
-</div>
+<DocumentFragment>
+  <div
+    class="Textarea"
+  >
+    <textarea
+      class="Textarea-textarea"
+      data-test="DesignSystem-Textarea"
+      name="Textarea"
+      placeholder="Write something.."
+      rows="3"
+    >
+      Design System
+    </textarea>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Textarea component 
-  name: "name", disabled: true, onChange: "[Function]"
+  name: "Textarea", placeholder: "Write something..", disabled: true, onChange: "[Function]", value: "Design System"
  1`] = `
-<div
-  className="Textarea"
->
-  <textarea
-    className="Textarea-textarea"
-    disabled={true}
-    name="name"
-    onChange={[MockFunction]}
-  />
-</div>
+<DocumentFragment>
+  <div
+    class="Textarea"
+  >
+    <textarea
+      class="Textarea-textarea"
+      data-test="DesignSystem-Textarea"
+      disabled=""
+      name="Textarea"
+      placeholder="Write something.."
+      rows="3"
+    >
+      Design System
+    </textarea>
+  </div>
+</DocumentFragment>
 `;
