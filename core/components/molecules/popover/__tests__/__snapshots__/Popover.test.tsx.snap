@@ -1,721 +1,209 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Popover component 
-  position: "bottom", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  appendToBody: false, trigger: "[ReactNode]", customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}, open: true, verticalOffset: 10, onToggle: "[Function]", dark: false
  1`] = `
-<PopperWrapper
-  appendToBody={true}
-  closeOnBackdropClick={false}
-  offset="Large"
-  on="click"
-  onToggle={[Function]}
-  open={false}
-  placement="bottom"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
-  trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
+<DocumentFragment>
+  <span
+    class="PopperWrapper-trigger"
+  >
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DS-PopoverTrigger"
+      tabindex="0"
     >
       Open Popup
-    </Button>
-  }
->
+    </button>
+  </span>
   <div
-    className="Popover"
-    data-layer={true}
+    class="Popover"
+    data-layer="true"
+    data-test="DesignSystem-Popover"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
   >
     Popover
   </div>
-</PopperWrapper>
+</DocumentFragment>
 `;
 
 exports[`Popover component 
-  position: "bottom", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  appendToBody: false, trigger: "[ReactNode]", customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}, open: true, verticalOffset: 10, onToggle: "[Function]", dark: true
  1`] = `
-<PopperWrapper
-  appendToBody={true}
-  closeOnBackdropClick={true}
-  offset="Large"
-  on="click"
-  onToggle={[Function]}
-  open={false}
-  placement="bottom"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
-  trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
+<DocumentFragment>
+  <span
+    class="PopperWrapper-trigger"
+  >
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DS-PopoverTrigger"
+      tabindex="0"
     >
       Open Popup
-    </Button>
-  }
->
+    </button>
+  </span>
   <div
-    className="Popover"
-    data-layer={true}
+    class="Popover Popover--dark"
+    data-layer="true"
+    data-test="DesignSystem-Popover"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
   >
     Popover
   </div>
-</PopperWrapper>
+</DocumentFragment>
 `;
 
 exports[`Popover component 
-  position: "bottom-end", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  appendToBody: false, trigger: "[ReactNode]", customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}, open: true, verticalOffset: 10, onToggle: "[Function]", position: "bottom"
  1`] = `
-<PopperWrapper
-  appendToBody={true}
-  closeOnBackdropClick={false}
-  offset="Large"
-  on="click"
-  onToggle={[Function]}
-  open={false}
-  placement="bottom-end"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
-  trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
+<DocumentFragment>
+  <span
+    class="PopperWrapper-trigger"
+  >
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DS-PopoverTrigger"
+      tabindex="0"
     >
       Open Popup
-    </Button>
-  }
->
+    </button>
+  </span>
   <div
-    className="Popover"
-    data-layer={true}
+    class="Popover"
+    data-layer="true"
+    data-test="DesignSystem-Popover"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
   >
     Popover
   </div>
-</PopperWrapper>
+</DocumentFragment>
 `;
 
 exports[`Popover component 
-  position: "bottom-end", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  appendToBody: false, trigger: "[ReactNode]", customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}, open: true, verticalOffset: 10, onToggle: "[Function]", position: "bottom-end"
  1`] = `
-<PopperWrapper
-  appendToBody={true}
-  closeOnBackdropClick={true}
-  offset="Large"
-  on="click"
-  onToggle={[Function]}
-  open={false}
-  placement="bottom-end"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
-  trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
+<DocumentFragment>
+  <span
+    class="PopperWrapper-trigger"
+  >
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DS-PopoverTrigger"
+      tabindex="0"
     >
       Open Popup
-    </Button>
-  }
->
+    </button>
+  </span>
   <div
-    className="Popover"
-    data-layer={true}
+    class="Popover"
+    data-layer="true"
+    data-test="DesignSystem-Popover"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
   >
     Popover
   </div>
-</PopperWrapper>
+</DocumentFragment>
 `;
 
 exports[`Popover component 
-  position: "bottom-start", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  appendToBody: false, trigger: "[ReactNode]", customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}, open: true, verticalOffset: 10, onToggle: "[Function]", position: "bottom-start"
  1`] = `
-<PopperWrapper
-  appendToBody={true}
-  closeOnBackdropClick={false}
-  offset="Large"
-  on="click"
-  onToggle={[Function]}
-  open={false}
-  placement="bottom-start"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
-  trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
+<DocumentFragment>
+  <span
+    class="PopperWrapper-trigger"
+  >
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DS-PopoverTrigger"
+      tabindex="0"
     >
       Open Popup
-    </Button>
-  }
->
+    </button>
+  </span>
   <div
-    className="Popover"
-    data-layer={true}
+    class="Popover"
+    data-layer="true"
+    data-test="DesignSystem-Popover"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
   >
     Popover
   </div>
-</PopperWrapper>
+</DocumentFragment>
 `;
 
 exports[`Popover component 
-  position: "bottom-start", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  appendToBody: false, trigger: "[ReactNode]", customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}, open: true, verticalOffset: 10, onToggle: "[Function]", position: "top"
  1`] = `
-<PopperWrapper
-  appendToBody={true}
-  closeOnBackdropClick={true}
-  offset="Large"
-  on="click"
-  onToggle={[Function]}
-  open={false}
-  placement="bottom-start"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
-  trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
+<DocumentFragment>
+  <span
+    class="PopperWrapper-trigger"
+  >
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DS-PopoverTrigger"
+      tabindex="0"
     >
       Open Popup
-    </Button>
-  }
->
+    </button>
+  </span>
   <div
-    className="Popover"
-    data-layer={true}
+    class="Popover"
+    data-layer="true"
+    data-test="DesignSystem-Popover"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
   >
     Popover
   </div>
-</PopperWrapper>
+</DocumentFragment>
 `;
 
 exports[`Popover component 
-  position: "top", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  appendToBody: false, trigger: "[ReactNode]", customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}, open: true, verticalOffset: 10, onToggle: "[Function]", position: "top-end"
  1`] = `
-<PopperWrapper
-  appendToBody={true}
-  closeOnBackdropClick={false}
-  offset="Large"
-  on="click"
-  onToggle={[Function]}
-  open={false}
-  placement="top"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
-  trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
+<DocumentFragment>
+  <span
+    class="PopperWrapper-trigger"
+  >
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DS-PopoverTrigger"
+      tabindex="0"
     >
       Open Popup
-    </Button>
-  }
->
+    </button>
+  </span>
   <div
-    className="Popover"
-    data-layer={true}
+    class="Popover"
+    data-layer="true"
+    data-test="DesignSystem-Popover"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
   >
     Popover
   </div>
-</PopperWrapper>
+</DocumentFragment>
 `;
 
 exports[`Popover component 
-  position: "top", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
+  appendToBody: false, trigger: "[ReactNode]", customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}, open: true, verticalOffset: 10, onToggle: "[Function]", position: "top-start"
  1`] = `
-<PopperWrapper
-  appendToBody={true}
-  closeOnBackdropClick={true}
-  offset="Large"
-  on="click"
-  onToggle={[Function]}
-  open={false}
-  placement="top"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
-  trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
+<DocumentFragment>
+  <span
+    class="PopperWrapper-trigger"
+  >
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DS-PopoverTrigger"
+      tabindex="0"
     >
       Open Popup
-    </Button>
-  }
->
+    </button>
+  </span>
   <div
-    className="Popover"
-    data-layer={true}
+    class="Popover"
+    data-layer="true"
+    data-test="DesignSystem-Popover"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
   >
     Popover
   </div>
-</PopperWrapper>
-`;
-
-exports[`Popover component 
-  position: "top-end", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
- 1`] = `
-<PopperWrapper
-  appendToBody={true}
-  closeOnBackdropClick={false}
-  offset="Large"
-  on="click"
-  onToggle={[Function]}
-  open={false}
-  placement="top-end"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
-  trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
-    >
-      Open Popup
-    </Button>
-  }
->
-  <div
-    className="Popover"
-    data-layer={true}
-  >
-    Popover
-  </div>
-</PopperWrapper>
-`;
-
-exports[`Popover component 
-  position: "top-end", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
- 1`] = `
-<PopperWrapper
-  appendToBody={true}
-  closeOnBackdropClick={true}
-  offset="Large"
-  on="click"
-  onToggle={[Function]}
-  open={false}
-  placement="top-end"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
-  trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
-    >
-      Open Popup
-    </Button>
-  }
->
-  <div
-    className="Popover"
-    data-layer={true}
-  >
-    Popover
-  </div>
-</PopperWrapper>
-`;
-
-exports[`Popover component 
-  position: "top-start", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: false, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
- 1`] = `
-<PopperWrapper
-  appendToBody={true}
-  closeOnBackdropClick={false}
-  offset="Large"
-  on="click"
-  onToggle={[Function]}
-  open={false}
-  placement="top-start"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
-  trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
-    >
-      Open Popup
-    </Button>
-  }
->
-  <div
-    className="Popover"
-    data-layer={true}
-  >
-    Popover
-  </div>
-</PopperWrapper>
-`;
-
-exports[`Popover component 
-  position: "top-start", verticalOffset: 10, trigger: "[ReactNode]", closeOnBackdropClick: true, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
- 1`] = `
-<PopperWrapper
-  appendToBody={true}
-  closeOnBackdropClick={true}
-  offset="Large"
-  on="click"
-  onToggle={[Function]}
-  open={false}
-  placement="top-start"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
-  trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
-    >
-      Open Popup
-    </Button>
-  }
->
-  <div
-    className="Popover"
-    data-layer={true}
-  >
-    Popover
-  </div>
-</PopperWrapper>
-`;
-
-exports[`Popover component 
-  verticalOffset: 10, trigger: "[ReactNode]", dark: false, closeOnBackdropClick: false, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
- 1`] = `
-<PopperWrapper
-  appendToBody={true}
-  closeOnBackdropClick={false}
-  offset="Large"
-  on="click"
-  onToggle={[Function]}
-  open={false}
-  placement="bottom"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
-  trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
-    >
-      Open Popup
-    </Button>
-  }
->
-  <div
-    className="Popover"
-    data-layer={true}
-  >
-    Popover
-  </div>
-</PopperWrapper>
-`;
-
-exports[`Popover component 
-  verticalOffset: 10, trigger: "[ReactNode]", dark: false, closeOnBackdropClick: true, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
- 1`] = `
-<PopperWrapper
-  appendToBody={true}
-  closeOnBackdropClick={true}
-  offset="Large"
-  on="click"
-  onToggle={[Function]}
-  open={false}
-  placement="bottom"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
-  trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
-    >
-      Open Popup
-    </Button>
-  }
->
-  <div
-    className="Popover"
-    data-layer={true}
-  >
-    Popover
-  </div>
-</PopperWrapper>
-`;
-
-exports[`Popover component 
-  verticalOffset: 10, trigger: "[ReactNode]", dark: true, closeOnBackdropClick: false, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
- 1`] = `
-<PopperWrapper
-  appendToBody={true}
-  closeOnBackdropClick={false}
-  offset="Large"
-  on="click"
-  onToggle={[Function]}
-  open={false}
-  placement="bottom"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
-  trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
-    >
-      Open Popup
-    </Button>
-  }
->
-  <div
-    className="Popover Popover--dark"
-    data-layer={true}
-  >
-    Popover
-  </div>
-</PopperWrapper>
-`;
-
-exports[`Popover component 
-  verticalOffset: 10, trigger: "[ReactNode]", dark: true, closeOnBackdropClick: true, customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}
- 1`] = `
-<PopperWrapper
-  appendToBody={true}
-  closeOnBackdropClick={true}
-  offset="Large"
-  on="click"
-  onToggle={[Function]}
-  open={false}
-  placement="bottom"
-  style={
-    Object {
-      "height": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-      "width": Object {
-        "iterate": undefined,
-        "required": true,
-        "value": "150px",
-      },
-    }
-  }
-  trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
-    >
-      Open Popup
-    </Button>
-  }
->
-  <div
-    className="Popover Popover--dark"
-    data-layer={true}
-  >
-    Popover
-  </div>
-</PopperWrapper>
+</DocumentFragment>
 `;
