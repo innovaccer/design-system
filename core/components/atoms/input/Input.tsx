@@ -15,6 +15,7 @@ export interface InputProps extends BaseProps {
   name?: string;
   /**
    * Type of text inside `Input`
+   * @default "text"
    */
   type?: InputType;
   /**
@@ -168,6 +169,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
 
   const classes = classNames({
     ['Input']: true,
+    ['Input--minWidth']: type !== 'number',
     [`Input--${size}`]: size,
     ['Input--disabled']: disabled,
     ['Input--error']: error
@@ -211,6 +213,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
         {...rest}
         ref={ref}
         name={name}
+        type={type}
         defaultValue={defaultValue}
         placeholder={placeholder}
         className={inputClass}

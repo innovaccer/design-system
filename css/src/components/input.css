@@ -15,6 +15,9 @@
     padding-right: var(--spacing-l);
     padding-left: var(--spacing-l);
     background: var(--white);
+}
+
+.Input--minWidth {
     min-width: var(--spacing-9);
 }
 
