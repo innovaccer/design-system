@@ -87,12 +87,16 @@ const Option = (props: OptionProps) => {
 
   const { optionType = 'DEFAULT' } = optionData.optionType ? optionData : props;
 
-  const className = classNames({
+  const OptionClassName = classNames({
     ['Option']: true,
-    ['Option-wrapper']: true,
-    ['Option--withCheckbox']: checkboxes,
+    ['OptionWrapper']: true,
     ['Option--active']: active,
-    ['Option--selected']: selected && !checkboxes && !menu,
+    ['Option--selected']: selected && !menu,
+  });
+
+  const CheckboxClassName = classNames({
+    ['OptionWrapper']: true,
+    ['OptionWrapper--active']: active,
   });
 
   const textClassName = classNames({
@@ -107,7 +111,7 @@ const Option = (props: OptionProps) => {
   if (props.optionRenderer) {
     return (
       <div
-        className="Option-wrapper"
+        className="OptionWrapper"
         onMouseEnter={onUpdateActiveOption}
         {...(!checkboxes && { onClick })}
       >
@@ -133,8 +137,8 @@ const Option = (props: OptionProps) => {
       onClick,
       updateActiveOption,
       textClassName,
-      className,
       index,
+      className: checkboxes ? CheckboxClassName : OptionClassName,
     }
   );
 };
