@@ -13,17 +13,22 @@ exports[`Pagination component
       appearance="transparent"
       disabled={true}
       icon="first_page"
+      iconAlign="left"
       onClick={[Function]}
       size="large"
+      tabIndex={0}
     />
     <div
       className="ml-4 mx-3"
     >
       <Button
+        appearance="basic"
         disabled={true}
         icon="navigate_before"
+        iconAlign="left"
         onClick={[Function]}
         size="large"
+        tabIndex={0}
       />
     </div>
   </div>
@@ -34,18 +39,23 @@ exports[`Pagination component
       className="mr-4 mx-3"
     >
       <Button
+        appearance="basic"
         disabled={false}
         icon="navigate_next"
+        iconAlign="left"
         onClick={[Function]}
         size="large"
+        tabIndex={0}
       />
     </div>
     <Button
       appearance="transparent"
       disabled={false}
       icon="last_page"
+      iconAlign="left"
       onClick={[Function]}
       size="large"
+      tabIndex={0}
     />
   </div>
 </div>
@@ -64,17 +74,22 @@ exports[`Pagination component
       appearance="transparent"
       disabled={false}
       icon="first_page"
+      iconAlign="left"
       onClick={[Function]}
       size="large"
+      tabIndex={0}
     />
     <div
       className="ml-4 mx-3"
     >
       <Button
+        appearance="basic"
         disabled={false}
         icon="navigate_before"
+        iconAlign="left"
         onClick={[Function]}
         size="large"
+        tabIndex={0}
       />
     </div>
   </div>
@@ -85,18 +100,23 @@ exports[`Pagination component
       className="mr-4 mx-3"
     >
       <Button
+        appearance="basic"
         disabled={false}
         icon="navigate_next"
+        iconAlign="left"
         onClick={[Function]}
         size="large"
+        tabIndex={0}
       />
     </div>
     <Button
       appearance="transparent"
       disabled={false}
       icon="last_page"
+      iconAlign="left"
       onClick={[Function]}
       size="large"
+      tabIndex={0}
     />
   </div>
 </div>
@@ -115,17 +135,22 @@ exports[`Pagination component
       appearance="transparent"
       disabled={false}
       icon="first_page"
+      iconAlign="left"
       onClick={[Function]}
       size="large"
+      tabIndex={0}
     />
     <div
       className="ml-4 mx-3"
     >
       <Button
+        appearance="basic"
         disabled={false}
         icon="navigate_before"
+        iconAlign="left"
         onClick={[Function]}
         size="large"
+        tabIndex={0}
       />
     </div>
   </div>
@@ -136,18 +161,23 @@ exports[`Pagination component
       className="mr-4 mx-3"
     >
       <Button
+        appearance="basic"
         disabled={true}
         icon="navigate_next"
+        iconAlign="left"
         onClick={[Function]}
         size="large"
+        tabIndex={0}
       />
     </div>
     <Button
       appearance="transparent"
       disabled={true}
       icon="last_page"
+      iconAlign="left"
       onClick={[Function]}
       size="large"
+      tabIndex={0}
     />
   </div>
 </div>
@@ -166,17 +196,22 @@ exports[`Pagination component
       appearance="transparent"
       disabled={false}
       icon="first_page"
+      iconAlign="left"
       onClick={[Function]}
       size="large"
+      tabIndex={0}
     />
     <div
       className="ml-4 mx-3"
     >
       <Button
+        appearance="basic"
         disabled={false}
         icon="navigate_before"
+        iconAlign="left"
         onClick={[Function]}
         size="large"
+        tabIndex={0}
       />
     </div>
   </div>
@@ -187,18 +222,23 @@ exports[`Pagination component
       className="mr-4 mx-3"
     >
       <Button
+        appearance="basic"
         disabled={false}
         icon="navigate_next"
+        iconAlign="left"
         onClick={[Function]}
         size="large"
+        tabIndex={0}
       />
     </div>
     <Button
       appearance="transparent"
       disabled={false}
       icon="last_page"
+      iconAlign="left"
       onClick={[Function]}
       size="large"
+      tabIndex={0}
     />
   </div>
 </div>
@@ -217,17 +257,22 @@ exports[`Pagination component
       appearance="transparent"
       disabled={true}
       icon="first_page"
+      iconAlign="left"
       onClick={[Function]}
       size="large"
+      tabIndex={0}
     />
     <div
       className="ml-4 mx-4"
     >
       <Button
+        appearance="basic"
         disabled={true}
         icon="navigate_before"
+        iconAlign="left"
         onClick={[Function]}
         size="large"
+        tabIndex={0}
       />
     </div>
   </div>
@@ -241,7 +286,10 @@ exports[`Pagination component
       type="number"
       value="1"
     />
-    <Text>
+    <Text
+      appearance="default"
+      size="regular"
+    >
        of 10 pages
     </Text>
   </div>
@@ -252,18 +300,23 @@ exports[`Pagination component
       className="mr-4 mx-4"
     >
       <Button
+        appearance="basic"
         disabled={false}
         icon="navigate_next"
+        iconAlign="left"
         onClick={[Function]}
         size="large"
+        tabIndex={0}
       />
     </div>
     <Button
       appearance="transparent"
       disabled={false}
       icon="last_page"
+      iconAlign="left"
       onClick={[Function]}
       size="large"
+      tabIndex={0}
     />
   </div>
 </div>
@@ -282,17 +335,22 @@ exports[`Pagination component
       appearance="transparent"
       disabled={false}
       icon="first_page"
+      iconAlign="left"
       onClick={[Function]}
       size="large"
+      tabIndex={0}
     />
     <div
       className="ml-4 mx-4"
     >
       <Button
+        appearance="basic"
         disabled={false}
         icon="navigate_before"
+        iconAlign="left"
         onClick={[Function]}
         size="large"
+        tabIndex={0}
       />
     </div>
   </div>
@@ -306,7 +364,10 @@ exports[`Pagination component
       type="number"
       value="5"
     />
-    <Text>
+    <Text
+      appearance="default"
+      size="regular"
+    >
        of 10 pages
     </Text>
   </div>
@@ -317,18 +378,23 @@ exports[`Pagination component
       className="mr-4 mx-4"
     >
       <Button
+        appearance="basic"
         disabled={false}
         icon="navigate_next"
+        iconAlign="left"
         onClick={[Function]}
         size="large"
+        tabIndex={0}
       />
     </div>
     <Button
       appearance="transparent"
       disabled={false}
       icon="last_page"
+      iconAlign="left"
       onClick={[Function]}
       size="large"
+      tabIndex={0}
     />
   </div>
 </div>
@@ -347,17 +413,22 @@ exports[`Pagination component
       appearance="transparent"
       disabled={false}
       icon="first_page"
+      iconAlign="left"
       onClick={[Function]}
       size="large"
+      tabIndex={0}
     />
     <div
       className="ml-4 mx-4"
     >
       <Button
+        appearance="basic"
         disabled={false}
         icon="navigate_before"
+        iconAlign="left"
         onClick={[Function]}
         size="large"
+        tabIndex={0}
       />
     </div>
   </div>
@@ -371,7 +442,10 @@ exports[`Pagination component
       type="number"
       value="10"
     />
-    <Text>
+    <Text
+      appearance="default"
+      size="regular"
+    >
        of 10 pages
     </Text>
   </div>
@@ -382,18 +456,23 @@ exports[`Pagination component
       className="mr-4 mx-4"
     >
       <Button
+        appearance="basic"
         disabled={true}
         icon="navigate_next"
+        iconAlign="left"
         onClick={[Function]}
         size="large"
+        tabIndex={0}
       />
     </div>
     <Button
       appearance="transparent"
       disabled={true}
       icon="last_page"
+      iconAlign="left"
       onClick={[Function]}
       size="large"
+      tabIndex={0}
     />
   </div>
 </div>
@@ -412,17 +491,22 @@ exports[`Pagination component
       appearance="transparent"
       disabled={false}
       icon="first_page"
+      iconAlign="left"
       onClick={[Function]}
       size="large"
+      tabIndex={0}
     />
     <div
       className="ml-4 mx-4"
     >
       <Button
+        appearance="basic"
         disabled={false}
         icon="navigate_before"
+        iconAlign="left"
         onClick={[Function]}
         size="large"
+        tabIndex={0}
       />
     </div>
   </div>
@@ -436,7 +520,10 @@ exports[`Pagination component
       type="number"
       value="15"
     />
-    <Text>
+    <Text
+      appearance="default"
+      size="regular"
+    >
        of 10 pages
     </Text>
   </div>
@@ -447,18 +534,23 @@ exports[`Pagination component
       className="mr-4 mx-4"
     >
       <Button
+        appearance="basic"
         disabled={false}
         icon="navigate_next"
+        iconAlign="left"
         onClick={[Function]}
         size="large"
+        tabIndex={0}
       />
     </div>
     <Button
       appearance="transparent"
       disabled={false}
       icon="last_page"
+      iconAlign="left"
       onClick={[Function]}
       size="large"
+      tabIndex={0}
     />
   </div>
 </div>

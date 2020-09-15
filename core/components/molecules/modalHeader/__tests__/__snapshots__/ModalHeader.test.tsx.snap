@@ -23,7 +23,6 @@ exports[`ModalHeader component
         appearance="default"
         name="close"
         size={16}
-        type="filled"
       />
     </div>
   </div>
@@ -55,7 +54,6 @@ exports[`ModalHeader component
         appearance="default"
         name="close"
         size={16}
-        type="filled"
       />
     </div>
   </div>
@@ -87,7 +85,6 @@ exports[`ModalHeader component
         appearance="default"
         name="close"
         size={16}
-        type="filled"
       />
     </div>
   </div>
@@ -96,6 +93,7 @@ exports[`ModalHeader component
   >
     <Text
       appearance="subtle"
+      size="regular"
     >
       events
     </Text>
@@ -119,7 +117,6 @@ exports[`ModalHeader component
         appearance="default"
         name="events"
         size={16}
-        type="filled"
       />
     </div>
     <div>
@@ -136,7 +133,6 @@ exports[`ModalHeader component
         appearance="default"
         name="close"
         size={16}
-        type="filled"
       />
     </div>
   </div>
@@ -159,7 +155,6 @@ exports[`ModalHeader component
         appearance="default"
         name="events"
         size={16}
-        type="filled"
       />
     </div>
     <div>
@@ -178,7 +173,6 @@ exports[`ModalHeader component
         appearance="default"
         name="close"
         size={16}
-        type="filled"
       />
     </div>
   </div>
@@ -201,7 +195,6 @@ exports[`ModalHeader component
         appearance="default"
         name="events"
         size={16}
-        type="filled"
       />
     </div>
     <div>
@@ -220,7 +213,6 @@ exports[`ModalHeader component
         appearance="default"
         name="close"
         size={16}
-        type="filled"
       />
     </div>
   </div>
@@ -229,6 +221,7 @@ exports[`ModalHeader component
   >
     <Text
       appearance="subtle"
+      size="regular"
     >
       events
     </Text>
@@ -252,7 +245,6 @@ exports[`ModalHeader component
         appearance="default"
         name="events"
         size={16}
-        type="filled"
       />
     </div>
     <div>
@@ -269,7 +261,6 @@ exports[`ModalHeader component
         appearance="default"
         name="close"
         size={16}
-        type="filled"
       />
     </div>
   </div>
@@ -278,6 +269,7 @@ exports[`ModalHeader component
   >
     <Text
       appearance="subtle"
+      size="regular"
     >
       events
     </Text>
@@ -308,7 +300,6 @@ exports[`ModalHeader component
         appearance="default"
         name="close"
         size={16}
-        type="filled"
       />
     </div>
   </div>
@@ -317,6 +308,7 @@ exports[`ModalHeader component
   >
     <Text
       appearance="subtle"
+      size="regular"
     >
       events
     </Text>

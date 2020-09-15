@@ -12,7 +12,7 @@ exports[`Radio component
     <input
       className="Radio-input"
       disabled={false}
-      id="Options"
+      id="Options-Radio-22944b01-212f-4be0-bce6-f897cc6a7b8e"
       name="Options"
       onChange={[Function]}
       type="radio"
@@ -24,9 +24,11 @@ exports[`Radio component
   </div>
   <label
     className="Radio-label"
-    htmlFor="Options"
+    htmlFor="Options-Radio-22944b01-212f-4be0-bce6-f897cc6a7b8e"
   >
     <Text
+      appearance="default"
+      size="regular"
       small={false}
     >
       Radio
@@ -47,7 +49,7 @@ exports[`Radio component
     <input
       className="Radio-input"
       disabled={true}
-      id="Options"
+      id="Options-Radio-f6b3da77-f326-4797-bed2-263d1d1eddf1"
       name="Options"
       onChange={[Function]}
       type="radio"
@@ -59,9 +61,11 @@ exports[`Radio component
   </div>
   <label
     className="Radio-label"
-    htmlFor="Options"
+    htmlFor="Options-Radio-f6b3da77-f326-4797-bed2-263d1d1eddf1"
   >
     <Text
+      appearance="default"
+      size="regular"
       small={false}
     >
       Radio
@@ -81,7 +85,7 @@ exports[`Radio component
   >
     <input
       className="Radio-input"
-      id="Options"
+      id="Options-Radio-6fc4519e-1d31-4b7b-9a35-4d382b2762b3"
       name="Options"
       onChange={[Function]}
       type="radio"
@@ -93,9 +97,11 @@ exports[`Radio component
   </div>
   <label
     className="Radio-label"
-    htmlFor="Options"
+    htmlFor="Options-Radio-6fc4519e-1d31-4b7b-9a35-4d382b2762b3"
   >
     <Text
+      appearance="default"
+      size="regular"
       small={false}
     >
       Radio
@@ -115,7 +121,7 @@ exports[`Radio component
   >
     <input
       className="Radio-input"
-      id="Options"
+      id="Options-Radio-2cffa2de-1f8d-4a6f-aaa2-cb2492dc9e7c"
       name="Options"
       onChange={[Function]}
       type="radio"
@@ -127,9 +133,11 @@ exports[`Radio component
   </div>
   <label
     className="Radio-label"
-    htmlFor="Options"
+    htmlFor="Options-Radio-2cffa2de-1f8d-4a6f-aaa2-cb2492dc9e7c"
   >
     <Text
+      appearance="default"
+      size="regular"
       small={true}
     >
       Radio

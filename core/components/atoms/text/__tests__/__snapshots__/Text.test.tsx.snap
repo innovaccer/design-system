@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Text component 
-  children: "Sample String", appearances: "default"
+  children: "Sample String", appearance: "default"
  1`] = `
 <GenericText
-  className="Text Text--default"
+  className="Text Text--default Text--regular"
   componentType="span"
   data-test="DesignSystem-Text"
 >
@@ -13,10 +13,10 @@ exports[`Text component
 `;
 
 exports[`Text component 
-  children: "Sample String", appearances: "destructive"
+  children: "Sample String", appearance: "destructive"
  1`] = `
 <GenericText
-  className="Text Text--default"
+  className="Text Text--destructive Text--regular"
   componentType="span"
   data-test="DesignSystem-Text"
 >
@@ -25,10 +25,10 @@ exports[`Text component
 `;
 
 exports[`Text component 
-  children: "Sample String", appearances: "disabled"
+  children: "Sample String", appearance: "disabled"
  1`] = `
 <GenericText
-  className="Text Text--default"
+  className="Text Text--disabled Text--regular"
   componentType="span"
   data-test="DesignSystem-Text"
 >
@@ -37,10 +37,10 @@ exports[`Text component
 `;
 
 exports[`Text component 
-  children: "Sample String", appearances: "subtle"
+  children: "Sample String", appearance: "link"
  1`] = `
 <GenericText
-  className="Text Text--default"
+  className="Text Text--link Text--regular"
   componentType="span"
   data-test="DesignSystem-Text"
 >
@@ -49,10 +49,10 @@ exports[`Text component
 `;
 
 exports[`Text component 
-  children: "Sample String", appearances: "white"
+  children: "Sample String", appearance: "subtle"
  1`] = `
 <GenericText
-  className="Text Text--default"
+  className="Text Text--subtle Text--regular"
   componentType="span"
   data-test="DesignSystem-Text"
 >
@@ -61,10 +61,10 @@ exports[`Text component
 `;
 
 exports[`Text component 
-  children: "Sample String", small: false
+  children: "Sample String", appearance: "success"
  1`] = `
 <GenericText
-  className="Text Text--default"
+  className="Text Text--success Text--regular"
   componentType="span"
   data-test="DesignSystem-Text"
 >
@@ -73,7 +73,43 @@ exports[`Text component
 `;
 
 exports[`Text component 
-  children: "Sample String", small: true
+  children: "Sample String", appearance: "white"
+ 1`] = `
+<GenericText
+  className="Text Text--white Text--regular"
+  componentType="span"
+  data-test="DesignSystem-Text"
+>
+  Sample String
+</GenericText>
+`;
+
+exports[`Text component 
+  children: "Sample String", size: "large"
+ 1`] = `
+<GenericText
+  className="Text Text--default Text--large"
+  componentType="span"
+  data-test="DesignSystem-Text"
+>
+  Sample String
+</GenericText>
+`;
+
+exports[`Text component 
+  children: "Sample String", size: "regular"
+ 1`] = `
+<GenericText
+  className="Text Text--default Text--regular"
+  componentType="span"
+  data-test="DesignSystem-Text"
+>
+  Sample String
+</GenericText>
+`;
+
+exports[`Text component 
+  children: "Sample String", size: "small"
  1`] = `
 <GenericText
   className="Text Text--default Text--small"
@@ -85,10 +121,34 @@ exports[`Text component
 `;
 
 exports[`Text component 
+  children: "Sample String", small: false
+ 1`] = `
+<GenericText
+  className="Text Text--default Text--regular"
+  componentType="span"
+  data-test="DesignSystem-Text"
+>
+  Sample String
+</GenericText>
+`;
+
+exports[`Text component 
+  children: "Sample String", small: true
+ 1`] = `
+<GenericText
+  className="Text Text--default Text--regular Text--small"
+  componentType="span"
+  data-test="DesignSystem-Text"
+>
+  Sample String
+</GenericText>
+`;
+
+exports[`Text component 
   children: "Sample String", weight: "medium"
  1`] = `
 <GenericText
-  className="Text Text--default Text--medium"
+  className="Text Text--default Text--medium Text--regular"
   componentType="span"
   data-test="DesignSystem-Text"
 >
@@ -100,7 +160,7 @@ exports[`Text component
   children: "Sample String", weight: "strong"
  1`] = `
 <GenericText
-  className="Text Text--default Text--strong"
+  className="Text Text--default Text--strong Text--regular"
   componentType="span"
   data-test="DesignSystem-Text"
 >

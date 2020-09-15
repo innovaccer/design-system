@@ -28,6 +28,9 @@ exports[`Popover component
   trigger={
     <Button
       appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
     >
       Open Popup
     </Button>
@@ -35,6 +38,7 @@ exports[`Popover component
 >
   <div
     className="Popover"
+    data-layer={true}
   >
     Popover
   </div>
@@ -69,6 +73,9 @@ exports[`Popover component
   trigger={
     <Button
       appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
     >
       Open Popup
     </Button>
@@ -76,6 +83,7 @@ exports[`Popover component
 >
   <div
     className="Popover"
+    data-layer={true}
   >
     Popover
   </div>
@@ -110,6 +118,9 @@ exports[`Popover component
   trigger={
     <Button
       appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
     >
       Open Popup
     </Button>
@@ -117,6 +128,7 @@ exports[`Popover component
 >
   <div
     className="Popover"
+    data-layer={true}
   >
     Popover
   </div>
@@ -151,6 +163,9 @@ exports[`Popover component
   trigger={
     <Button
       appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
     >
       Open Popup
     </Button>
@@ -158,6 +173,7 @@ exports[`Popover component
 >
   <div
     className="Popover"
+    data-layer={true}
   >
     Popover
   </div>
@@ -192,6 +208,9 @@ exports[`Popover component
   trigger={
     <Button
       appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
     >
       Open Popup
     </Button>
@@ -199,6 +218,7 @@ exports[`Popover component
 >
   <div
     className="Popover"
+    data-layer={true}
   >
     Popover
   </div>
@@ -233,6 +253,9 @@ exports[`Popover component
   trigger={
     <Button
       appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
     >
       Open Popup
     </Button>
@@ -240,6 +263,7 @@ exports[`Popover component
 >
   <div
     className="Popover"
+    data-layer={true}
   >
     Popover
   </div>
@@ -274,6 +298,9 @@ exports[`Popover component
   trigger={
     <Button
       appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
     >
       Open Popup
     </Button>
@@ -281,6 +308,7 @@ exports[`Popover component
 >
   <div
     className="Popover"
+    data-layer={true}
   >
     Popover
   </div>
@@ -315,6 +343,9 @@ exports[`Popover component
   trigger={
     <Button
       appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
     >
       Open Popup
     </Button>
@@ -322,6 +353,7 @@ exports[`Popover component
 >
   <div
     className="Popover"
+    data-layer={true}
   >
     Popover
   </div>
@@ -356,6 +388,9 @@ exports[`Popover component
   trigger={
     <Button
       appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
     >
       Open Popup
     </Button>
@@ -363,6 +398,7 @@ exports[`Popover component
 >
   <div
     className="Popover"
+    data-layer={true}
   >
     Popover
   </div>
@@ -397,6 +433,9 @@ exports[`Popover component
   trigger={
     <Button
       appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
     >
       Open Popup
     </Button>
@@ -404,6 +443,7 @@ exports[`Popover component
 >
   <div
     className="Popover"
+    data-layer={true}
   >
     Popover
   </div>
@@ -438,6 +478,9 @@ exports[`Popover component
   trigger={
     <Button
       appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
     >
       Open Popup
     </Button>
@@ -445,6 +488,7 @@ exports[`Popover component
 >
   <div
     className="Popover"
+    data-layer={true}
   >
     Popover
   </div>
@@ -479,6 +523,9 @@ exports[`Popover component
   trigger={
     <Button
       appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
     >
       Open Popup
     </Button>
@@ -486,6 +533,7 @@ exports[`Popover component
 >
   <div
     className="Popover"
+    data-layer={true}
   >
     Popover
   </div>
@@ -520,6 +568,9 @@ exports[`Popover component
   trigger={
     <Button
       appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
     >
       Open Popup
     </Button>
@@ -527,6 +578,7 @@ exports[`Popover component
 >
   <div
     className="Popover"
+    data-layer={true}
   >
     Popover
   </div>
@@ -561,6 +613,9 @@ exports[`Popover component
   trigger={
     <Button
       appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
     >
       Open Popup
     </Button>
@@ -568,6 +623,7 @@ exports[`Popover component
 >
   <div
     className="Popover"
+    data-layer={true}
   >
     Popover
   </div>
@@ -602,6 +658,9 @@ exports[`Popover component
   trigger={
     <Button
       appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
     >
       Open Popup
     </Button>
@@ -609,6 +668,7 @@ exports[`Popover component
 >
   <div
     className="Popover Popover--dark"
+    data-layer={true}
   >
     Popover
   </div>
@@ -643,6 +703,9 @@ exports[`Popover component
   trigger={
     <Button
       appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
     >
       Open Popup
     </Button>
@@ -650,6 +713,7 @@ exports[`Popover component
 >
   <div
     className="Popover Popover--dark"
+    data-layer={true}
   >
     Popover
   </div>

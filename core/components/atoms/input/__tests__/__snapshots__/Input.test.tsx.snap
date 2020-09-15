@@ -4,11 +4,12 @@ exports[`Input component
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--regular"
+  className="Input Input--minWidth Input--regular"
 >
   <input
     className="Input-input Input-input--regular"
     name="name"
+    onChangeHandler={[MockFunction]}
     placeholder="Placeholder"
     type="text"
   />
@@ -19,7 +20,7 @@ exports[`Input component
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", icon: "events"
  1`] = `
 <div
-  className="Input Input--regular"
+  className="Input Input--minWidth Input--regular"
 >
   <div
     className="Input-icon Input-icon--left Input-icon--disabled"
@@ -33,6 +34,7 @@ exports[`Input component
   <input
     className="Input-input Input-input--regular"
     name="name"
+    onChangeHandler={[MockFunction]}
     placeholder="Placeholder"
     type="text"
   />
@@ -43,11 +45,12 @@ exports[`Input component
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", value: "value"
  1`] = `
 <div
-  className="Input Input--regular"
+  className="Input Input--minWidth Input--regular"
 >
   <input
     className="Input-input Input-input--regular"
     name="name"
+    onChangeHandler={[MockFunction]}
     placeholder="Placeholder"
     type="text"
     value="value"
@@ -59,7 +62,7 @@ exports[`Input component
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", value: "value", icon: "events"
  1`] = `
 <div
-  className="Input Input--regular"
+  className="Input Input--minWidth Input--regular"
 >
   <div
     className="Input-icon Input-icon--left"
@@ -73,6 +76,7 @@ exports[`Input component
   <input
     className="Input-input Input-input--regular"
     name="name"
+    onChangeHandler={[MockFunction]}
     placeholder="Placeholder"
     type="text"
     value="value"
@@ -84,11 +88,12 @@ exports[`Input component
   name: "name", size: "large", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--large"
+  className="Input Input--minWidth Input--large"
 >
   <input
     className="Input-input Input-input--large"
     name="name"
+    onChangeHandler={[MockFunction]}
     type="text"
   />
 </div>
@@ -105,6 +110,7 @@ exports[`Input component
   >
     <Text
       appearance="subtle"
+      size="regular"
     >
       USD
     </Text>
@@ -112,6 +118,7 @@ exports[`Input component
   <input
     className="Input-input Input-input--large"
     name="name"
+    onChangeHandler={[MockFunction]}
     type="number"
   />
 </div>
@@ -121,11 +128,12 @@ exports[`Input component
   name: "name", size: "regular", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--regular"
+  className="Input Input--minWidth Input--regular"
 >
   <input
     className="Input-input Input-input--regular"
     name="name"
+    onChangeHandler={[MockFunction]}
     type="text"
   />
 </div>
@@ -142,6 +150,7 @@ exports[`Input component
   >
     <Text
       appearance="subtle"
+      size="regular"
     >
       USD
     </Text>
@@ -149,6 +158,7 @@ exports[`Input component
   <input
     className="Input-input Input-input--regular"
     name="name"
+    onChangeHandler={[MockFunction]}
     type="number"
   />
 </div>
@@ -158,11 +168,12 @@ exports[`Input component
   name: "name", size: "tiny", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--tiny"
+  className="Input Input--minWidth Input--tiny"
 >
   <input
     className="Input-input Input-input--tiny"
     name="name"
+    onChangeHandler={[MockFunction]}
     type="text"
   />
 </div>
@@ -179,6 +190,7 @@ exports[`Input component
   >
     <Text
       appearance="subtle"
+      size="regular"
     >
       USD
     </Text>
@@ -186,6 +198,7 @@ exports[`Input component
   <input
     className="Input-input Input-input--tiny"
     name="name"
+    onChangeHandler={[MockFunction]}
     type="number"
   />
 </div>
@@ -200,6 +213,7 @@ exports[`Input component
   <input
     className="Input-input Input-input--regular"
     name="name"
+    onChangeHandler={[MockFunction]}
     type="number"
   />
 </div>
@@ -209,11 +223,12 @@ exports[`Input component
   name: "name", type: "password", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--regular"
+  className="Input Input--minWidth Input--regular"
 >
   <input
     className="Input-input Input-input--regular"
     name="name"
+    onChangeHandler={[MockFunction]}
     type="password"
   />
 </div>
@@ -223,11 +238,12 @@ exports[`Input component
   name: "name", type: "text", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--regular"
+  className="Input Input--minWidth Input--regular"
 >
   <input
     className="Input-input Input-input--regular"
     name="name"
+    onChangeHandler={[MockFunction]}
     type="text"
   />
 </div>
@@ -237,7 +253,7 @@ exports[`Input component
   name: "name", value: "value", disabled: true
  1`] = `
 <div
-  className="Input Input--regular Input--disabled"
+  className="Input Input--minWidth Input--regular Input--disabled"
 >
   <input
     className="Input-input Input-input--regular"
@@ -253,7 +269,7 @@ exports[`Input component
   name: "name", value: "value", disabled: true, icon: "events"
  1`] = `
 <div
-  className="Input Input--regular Input--disabled"
+  className="Input Input--minWidth Input--regular Input--disabled"
 >
   <div
     className="Input-icon Input-icon--left"
@@ -278,12 +294,13 @@ exports[`Input component
   name: "name", value: "value", disabled: true, onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--regular Input--disabled"
+  className="Input Input--minWidth Input--regular Input--disabled"
 >
   <input
     className="Input-input Input-input--regular"
     disabled={true}
     name="name"
+    onChangeHandler={[MockFunction]}
     type="text"
     value="value"
   />
@@ -294,7 +311,7 @@ exports[`Input component
   name: "name", value: "value", disabled: true, onChangeHandler: "[Function]", icon: "events"
  1`] = `
 <div
-  className="Input Input--regular Input--disabled"
+  className="Input Input--minWidth Input--regular Input--disabled"
 >
   <div
     className="Input-icon Input-icon--left"
@@ -309,6 +326,7 @@ exports[`Input component
     className="Input-input Input-input--regular"
     disabled={true}
     name="name"
+    onChangeHandler={[MockFunction]}
     type="text"
     value="value"
   />
@@ -319,11 +337,12 @@ exports[`Input component
   name: "name", value: "value", error: true, onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--regular Input--error"
+  className="Input Input--minWidth Input--regular Input--error"
 >
   <input
     className="Input-input Input-input--regular"
     name="name"
+    onChangeHandler={[MockFunction]}
     type="text"
     value="value"
   />
@@ -334,7 +353,7 @@ exports[`Input component
   name: "name", value: "value", error: true, onChangeHandler: "[Function]", icon: "events"
  1`] = `
 <div
-  className="Input Input--regular Input--error"
+  className="Input Input--minWidth Input--regular Input--error"
 >
   <div
     className="Input-icon Input-icon--left"
@@ -348,6 +367,7 @@ exports[`Input component
   <input
     className="Input-input Input-input--regular"
     name="name"
+    onChangeHandler={[MockFunction]}
     type="text"
     value="value"
   />

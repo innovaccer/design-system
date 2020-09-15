@@ -771,11 +771,11 @@ Object {
         class="PopperWrapper-trigger"
       >
         <span
-          class="Avatar Avatar--regular Avatar--success"
+          class="Avatar Avatar--regular Avatar--accent1"
           data-test="DesignSystem-Avatar"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
             data-test="DesignSystem-Text"
           >
             JD
@@ -789,11 +789,11 @@ Object {
       class="PopperWrapper-trigger"
     >
       <span
-        class="Avatar Avatar--regular Avatar--success"
+        class="Avatar Avatar--regular Avatar--accent1"
         data-test="DesignSystem-Avatar"
       >
         <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
           data-test="DesignSystem-Text"
         >
           JD
@@ -866,11 +866,11 @@ Object {
         class="PopperWrapper-trigger"
       >
         <span
-          class="Avatar Avatar--tiny Avatar--success"
+          class="Avatar Avatar--tiny Avatar--accent1"
           data-test="DesignSystem-Avatar"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--success"
+            class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
             data-test="DesignSystem-Text"
           >
             JD
@@ -884,11 +884,11 @@ Object {
       class="PopperWrapper-trigger"
     >
       <span
-        class="Avatar Avatar--tiny Avatar--success"
+        class="Avatar Avatar--tiny Avatar--accent1"
         data-test="DesignSystem-Avatar"
       >
         <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--success"
+          class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
           data-test="DesignSystem-Text"
         >
           JD

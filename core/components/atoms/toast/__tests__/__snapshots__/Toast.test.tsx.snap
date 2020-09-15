@@ -13,7 +13,6 @@ exports[`Toast component
       appearance="white"
       name="info"
       size={16}
-      type="filled"
     />
   </div>
   <div
@@ -38,7 +37,6 @@ exports[`Toast component
             appearance="white"
             name="close"
             size={16}
-            type="filled"
           />
         </div>
       </div>
@@ -75,7 +73,6 @@ exports[`Toast component
             appearance="white"
             name="close"
             size={16}
-            type="filled"
           />
         </div>
       </div>
@@ -97,7 +94,6 @@ exports[`Toast component
       appearance="white"
       name="info"
       size={16}
-      type="filled"
     />
   </div>
   <div
@@ -122,7 +118,6 @@ exports[`Toast component
             appearance="white"
             name="close"
             size={16}
-            type="filled"
           />
         </div>
       </div>
@@ -144,7 +139,6 @@ exports[`Toast component
       appearance="white"
       name="check_circle"
       size={16}
-      type="filled"
     />
   </div>
   <div
@@ -169,7 +163,6 @@ exports[`Toast component
             appearance="white"
             name="close"
             size={16}
-            type="filled"
           />
         </div>
       </div>
@@ -191,7 +184,6 @@ exports[`Toast component
       appearance="default"
       name="info"
       size={16}
-      type="filled"
     />
   </div>
   <div
@@ -216,7 +208,6 @@ exports[`Toast component
             appearance="default"
             name="close"
             size={16}
-            type="filled"
           />
         </div>
       </div>
@@ -238,7 +229,6 @@ exports[`Toast component
       appearance="white"
       name="info"
       size={16}
-      type="filled"
     />
   </div>
   <div
@@ -263,7 +253,6 @@ exports[`Toast component
             appearance="white"
             name="close"
             size={16}
-            type="filled"
           />
         </div>
       </div>
@@ -273,6 +262,7 @@ exports[`Toast component
     >
       <Text
         appearance="white"
+        size="regular"
       >
         Sample string
       </Text>
@@ -294,7 +284,6 @@ exports[`Toast component
       appearance="white"
       name="info"
       size={16}
-      type="filled"
     />
   </div>
   <div
@@ -319,7 +308,6 @@ exports[`Toast component
             appearance="white"
             name="close"
             size={16}
-            type="filled"
           />
         </div>
       </div>
@@ -329,6 +317,7 @@ exports[`Toast component
     >
       <Text
         appearance="white"
+        size="regular"
       >
         Sample string
       </Text>
@@ -375,7 +364,6 @@ exports[`Toast component
             appearance="white"
             name="close"
             size={16}
-            type="filled"
           />
         </div>
       </div>
@@ -385,6 +373,7 @@ exports[`Toast component
     >
       <Text
         appearance="white"
+        size="regular"
       >
         Sample string
       </Text>
@@ -421,7 +410,6 @@ exports[`Toast component
             appearance="white"
             name="close"
             size={16}
-            type="filled"
           />
         </div>
       </div>
@@ -431,6 +419,7 @@ exports[`Toast component
     >
       <Text
         appearance="white"
+        size="regular"
       >
         Sample string
       </Text>
@@ -462,7 +451,6 @@ exports[`Toast component
       appearance="white"
       name="info"
       size={16}
-      type="filled"
     />
   </div>
   <div
@@ -487,7 +475,6 @@ exports[`Toast component
             appearance="white"
             name="close"
             size={16}
-            type="filled"
           />
         </div>
       </div>
@@ -497,6 +484,7 @@ exports[`Toast component
     >
       <Text
         appearance="white"
+        size="regular"
       >
         Sample string
       </Text>
@@ -518,7 +506,6 @@ exports[`Toast component
       appearance="white"
       name="info"
       size={16}
-      type="filled"
     />
   </div>
   <div
@@ -543,7 +530,6 @@ exports[`Toast component
             appearance="white"
             name="close"
             size={16}
-            type="filled"
           />
         </div>
       </div>
@@ -553,6 +539,7 @@ exports[`Toast component
     >
       <Text
         appearance="white"
+        size="regular"
       >
         Sample string
       </Text>
@@ -584,7 +571,6 @@ exports[`Toast component
       appearance="white"
       name="check_circle"
       size={16}
-      type="filled"
     />
   </div>
   <div
@@ -609,7 +595,6 @@ exports[`Toast component
             appearance="white"
             name="close"
             size={16}
-            type="filled"
           />
         </div>
       </div>
@@ -619,6 +604,7 @@ exports[`Toast component
     >
       <Text
         appearance="white"
+        size="regular"
       >
         Sample string
       </Text>
@@ -640,7 +626,6 @@ exports[`Toast component
       appearance="white"
       name="check_circle"
       size={16}
-      type="filled"
     />
   </div>
   <div
@@ -665,7 +650,6 @@ exports[`Toast component
             appearance="white"
             name="close"
             size={16}
-            type="filled"
           />
         </div>
       </div>
@@ -675,6 +659,7 @@ exports[`Toast component
     >
       <Text
         appearance="white"
+        size="regular"
       >
         Sample string
       </Text>
@@ -706,7 +691,6 @@ exports[`Toast component
       appearance="default"
       name="info"
       size={16}
-      type="filled"
     />
   </div>
   <div
@@ -731,7 +715,6 @@ exports[`Toast component
             appearance="default"
             name="close"
             size={16}
-            type="filled"
           />
         </div>
       </div>
@@ -741,6 +724,7 @@ exports[`Toast component
     >
       <Text
         appearance="default"
+        size="regular"
       >
         Sample string
       </Text>
@@ -762,7 +746,6 @@ exports[`Toast component
       appearance="default"
       name="info"
       size={16}
-      type="filled"
     />
   </div>
   <div
@@ -787,7 +770,6 @@ exports[`Toast component
             appearance="default"
             name="close"
             size={16}
-            type="filled"
           />
         </div>
       </div>
@@ -797,6 +779,7 @@ exports[`Toast component
     >
       <Text
         appearance="default"
+        size="regular"
       >
         Sample string
       </Text>

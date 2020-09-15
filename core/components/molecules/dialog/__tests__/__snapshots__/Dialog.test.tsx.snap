@@ -4,8 +4,8 @@ exports[`Dialog component
   onClose: "[Function]", dimension: "large", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]"
  1`] = `
 <Modal
+  backdropClose={[MockFunction]}
   dimension="large"
-  onClose={[MockFunction]}
   open={true}
 >
   <ModalHeader
@@ -20,13 +20,19 @@ exports[`Dialog component
   <ModalFooter>
     <Button
       appearance="basic"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
     <Button
       appearance="primary"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
@@ -38,8 +44,8 @@ exports[`Dialog component
   onClose: "[Function]", dimension: "medium", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]"
  1`] = `
 <Modal
+  backdropClose={[MockFunction]}
   dimension="medium"
-  onClose={[MockFunction]}
   open={true}
 >
   <ModalHeader
@@ -54,13 +60,19 @@ exports[`Dialog component
   <ModalFooter>
     <Button
       appearance="basic"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
     <Button
       appearance="primary"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
@@ -72,8 +84,8 @@ exports[`Dialog component
   onClose: "[Function]", dimension: "small", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]"
  1`] = `
 <Modal
+  backdropClose={[MockFunction]}
   dimension="small"
-  onClose={[MockFunction]}
   open={true}
 >
   <ModalHeader
@@ -88,13 +100,19 @@ exports[`Dialog component
   <ModalFooter>
     <Button
       appearance="basic"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
     <Button
       appearance="primary"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
@@ -106,8 +124,8 @@ exports[`Dialog component
   onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonAppearance: "alert", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]"
  1`] = `
 <Modal
+  backdropClose={[MockFunction]}
   dimension="small"
-  onClose={[MockFunction]}
   open={true}
 >
   <ModalHeader
@@ -122,13 +140,19 @@ exports[`Dialog component
   <ModalFooter>
     <Button
       appearance="basic"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
     <Button
       appearance="alert"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
@@ -140,8 +164,8 @@ exports[`Dialog component
   onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonAppearance: "basic", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]"
  1`] = `
 <Modal
+  backdropClose={[MockFunction]}
   dimension="small"
-  onClose={[MockFunction]}
   open={true}
 >
   <ModalHeader
@@ -156,13 +180,19 @@ exports[`Dialog component
   <ModalFooter>
     <Button
       appearance="basic"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
     <Button
       appearance="basic"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
@@ -174,8 +204,8 @@ exports[`Dialog component
   onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonAppearance: "primary", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]"
  1`] = `
 <Modal
+  backdropClose={[MockFunction]}
   dimension="small"
-  onClose={[MockFunction]}
   open={true}
 >
   <ModalHeader
@@ -190,13 +220,19 @@ exports[`Dialog component
   <ModalFooter>
     <Button
       appearance="basic"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
     <Button
       appearance="primary"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
@@ -208,8 +244,8 @@ exports[`Dialog component
   onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonAppearance: "success", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]"
  1`] = `
 <Modal
+  backdropClose={[MockFunction]}
   dimension="small"
-  onClose={[MockFunction]}
   open={true}
 >
   <ModalHeader
@@ -224,13 +260,19 @@ exports[`Dialog component
   <ModalFooter>
     <Button
       appearance="basic"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
     <Button
       appearance="success"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
@@ -242,8 +284,8 @@ exports[`Dialog component
   onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonAppearance: "transparent", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]"
  1`] = `
 <Modal
+  backdropClose={[MockFunction]}
   dimension="small"
-  onClose={[MockFunction]}
   open={true}
 >
   <ModalHeader
@@ -258,13 +300,19 @@ exports[`Dialog component
   <ModalFooter>
     <Button
       appearance="basic"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
     <Button
       appearance="transparent"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
@@ -276,8 +324,8 @@ exports[`Dialog component
   onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]", secondaryButtonAppearance: "alert"
  1`] = `
 <Modal
+  backdropClose={[MockFunction]}
   dimension="small"
-  onClose={[MockFunction]}
   open={true}
 >
   <ModalHeader
@@ -292,13 +340,19 @@ exports[`Dialog component
   <ModalFooter>
     <Button
       appearance="alert"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
     <Button
       appearance="primary"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
@@ -310,8 +364,8 @@ exports[`Dialog component
   onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]", secondaryButtonAppearance: "basic"
  1`] = `
 <Modal
+  backdropClose={[MockFunction]}
   dimension="small"
-  onClose={[MockFunction]}
   open={true}
 >
   <ModalHeader
@@ -326,13 +380,19 @@ exports[`Dialog component
   <ModalFooter>
     <Button
       appearance="basic"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
     <Button
       appearance="primary"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
@@ -344,8 +404,8 @@ exports[`Dialog component
   onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]", secondaryButtonAppearance: "primary"
  1`] = `
 <Modal
+  backdropClose={[MockFunction]}
   dimension="small"
-  onClose={[MockFunction]}
   open={true}
 >
   <ModalHeader
@@ -360,13 +420,19 @@ exports[`Dialog component
   <ModalFooter>
     <Button
       appearance="primary"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
     <Button
       appearance="primary"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
@@ -378,8 +444,8 @@ exports[`Dialog component
   onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]", secondaryButtonAppearance: "success"
  1`] = `
 <Modal
+  backdropClose={[MockFunction]}
   dimension="small"
-  onClose={[MockFunction]}
   open={true}
 >
   <ModalHeader
@@ -394,13 +460,19 @@ exports[`Dialog component
   <ModalFooter>
     <Button
       appearance="success"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
     <Button
       appearance="primary"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
@@ -412,8 +484,8 @@ exports[`Dialog component
   onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]", secondaryButtonAppearance: "transparent"
  1`] = `
 <Modal
+  backdropClose={[MockFunction]}
   dimension="small"
-  onClose={[MockFunction]}
   open={true}
 >
   <ModalHeader
@@ -428,13 +500,19 @@ exports[`Dialog component
   <ModalFooter>
     <Button
       appearance="transparent"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>
     <Button
       appearance="primary"
+      iconAlign="left"
       onClick={[MockFunction]}
+      size="regular"
+      tabIndex={0}
     >
       Sample String
     </Button>

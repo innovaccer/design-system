@@ -10,7 +10,8 @@ exports[`DatePicker component
   position="bottom-start"
   trigger={
     <ForwardRef
-      error={false}
+      caption=""
+      icon="events"
       mask={
         Array [
           /\\\\d/,
@@ -25,18 +26,22 @@ exports[`DatePicker component
           /\\\\d/,
         ]
       }
-      name="datepicker"
       onBlur={[Function]}
       onChange={[Function]}
       onClear={[Function]}
       placeholder="mm/dd/yyyy"
       placeholderChar="_"
-      value=""
+      value="03/01/2020"
     />
   }
+  triggerClass="w-100"
 >
   <Calendar
+    date={2020-02-29T18:30:00.000Z}
+    firstDayOfWeek="sunday"
+    monthsInView={1}
     onDateChange={[Function]}
+    view="date"
   />
 </Popover>
 `;
@@ -51,7 +56,8 @@ exports[`DatePicker component
   position="bottom-start"
   trigger={
     <ForwardRef
-      error={false}
+      caption=""
+      icon="events"
       mask={
         Array [
           /\\\\d/,
@@ -66,18 +72,22 @@ exports[`DatePicker component
           /\\\\d/,
         ]
       }
-      name="datepicker"
       onBlur={[Function]}
       onChange={[Function]}
       onClear={[Function]}
       placeholder="mm/dd/yyyy"
       placeholderChar="_"
-      value=""
+      value="03/01/2020"
     />
   }
+  triggerClass="w-100"
 >
   <Calendar
+    date={2020-02-29T18:30:00.000Z}
+    firstDayOfWeek="sunday"
+    monthsInView={1}
     onDateChange={[Function]}
+    view="date"
   />
 </Popover>
 `;
@@ -86,6 +96,9 @@ exports[`DatePicker component
   view: "date"
  1`] = `
 <Calendar
+  date={2020-02-29T18:30:00.000Z}
+  firstDayOfWeek="sunday"
+  monthsInView={1}
   onDateChange={[Function]}
   view="date"
 />
@@ -95,6 +108,9 @@ exports[`DatePicker component
   view: "month"
  1`] = `
 <Calendar
+  date={2020-02-29T18:30:00.000Z}
+  firstDayOfWeek="sunday"
+  monthsInView={1}
   onDateChange={[Function]}
   view="month"
 />
@@ -104,6 +120,9 @@ exports[`DatePicker component
   view: "year"
  1`] = `
 <Calendar
+  date={2020-02-29T18:30:00.000Z}
+  firstDayOfWeek="sunday"
+  monthsInView={1}
   onDateChange={[Function]}
   view="year"
 />
@@ -113,7 +132,11 @@ exports[`DatePicker component
   withInput: false
  1`] = `
 <Calendar
+  date={2020-02-29T18:30:00.000Z}
+  firstDayOfWeek="sunday"
+  monthsInView={1}
   onDateChange={[Function]}
+  view="date"
 />
 `;
 
@@ -127,7 +150,8 @@ exports[`DatePicker component
   position="bottom-start"
   trigger={
     <ForwardRef
-      error={false}
+      caption=""
+      icon="events"
       mask={
         Array [
           /\\\\d/,
@@ -142,18 +166,22 @@ exports[`DatePicker component
           /\\\\d/,
         ]
       }
-      name="datepicker"
       onBlur={[Function]}
       onChange={[Function]}
       onClear={[Function]}
       placeholder="mm/dd/yyyy"
       placeholderChar="_"
-      value=""
+      value="03/01/2020"
     />
   }
+  triggerClass="w-100"
 >
   <Calendar
+    date={2020-02-29T18:30:00.000Z}
+    firstDayOfWeek="sunday"
+    monthsInView={1}
     onDateChange={[Function]}
+    view="date"
   />
 </Popover>
 `;
