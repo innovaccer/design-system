@@ -25,6 +25,7 @@ export declare const List: {
         loaderSchema: never[];
         sortingList: never[];
         filterList: {};
+        errorTemplate: (props: import("../table").ErrorTemplateProps) => JSX.Element;
     };
 };
 export default List;

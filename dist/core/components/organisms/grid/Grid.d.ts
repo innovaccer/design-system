@@ -84,7 +84,7 @@ export interface GridProps extends BaseProps {
     withCheckbox?: boolean;
     onSelect?: onSelectFunction;
     onSelectAll?: onSelectAllFunction;
-    errorTemplate?: React.FunctionComponent;
+    errorTemplate?: React.FunctionComponent | React.ReactNode;
     sortingList: {
         name: ColumnSchema['name'];
         type: SortType;

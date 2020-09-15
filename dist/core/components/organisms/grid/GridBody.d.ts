@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { Data, Schema } from "./Grid";
 import { Grid } from "../../../index";
 export interface GridBodyProps {
@@ -10,5 +9,5 @@ export interface GridBodyProps {
     inView: number;
     avgRowHeight: number;
 }
-export declare const GridBody: (props: GridBodyProps) => JSX.Element | null;
+export declare const GridBody: (props: GridBodyProps) => any;
 export default GridBody;

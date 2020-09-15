@@ -6,8 +6,8 @@ export interface MaskProps extends BaseProps {
     mask: Mask;
     placeholderChar?: string;
     caption?: string;
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>, val?: string) => void;
-    onBlur?: (e: React.ChangeEvent<HTMLInputElement>, val?: string) => void;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>, maskedVal: string) => void;
+    onBlur?: (e: React.ChangeEvent<HTMLInputElement>, maskedVal: string) => void;
     onClear?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 export declare type InputMaskProps = InputProps & MaskProps;

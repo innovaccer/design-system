@@ -18,6 +18,8 @@ declare type CompProps = {
     closeOnSelect?: boolean;
 } & SharedProps;
 declare const defaultProps: {
+    view: string;
+    firstDayOfWeek: string;
     position: string;
     inputFormat: string;
     outputFormat: string;
@@ -34,6 +36,8 @@ interface DatePickerState {
 }
 export declare class DatePicker extends React.Component<DatePickerProps, DatePickerState> {
     static defaultProps: {
+        view: string;
+        firstDayOfWeek: string;
         position: string;
         inputFormat: string;
         outputFormat: string;

@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1599476766413 
+   * Generated on: 1600157467377 
    *      Package: @innovaccer/design-system
-   *      Version: v1.2.0-0
+   *      Version: v1.2.0-1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -387,8 +387,8 @@ var Avatar = function Avatar(props) {
   var initials = children ? children.trim().slice(0, initialsLength) : "".concat(firstName ? firstName.trim()[0] : '').concat(lastName ? lastName.trim()[0] : '');
   var tooltip = children || "".concat(firstName || '', " ").concat(lastName || '') || '';
   var DefaultAppearance = 'secondary';
-  var colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success', 'secondary'];
-  var AvatarAppearance = appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 9] || DefaultAppearance;
+  var colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
+  var AvatarAppearance = appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
   var classes = classNames((_classNames = {
     Avatar: true
   }, _defineProperty(_classNames, "Avatar--".concat(size), size), _defineProperty(_classNames, "Avatar--".concat(AvatarAppearance), AvatarAppearance), _defineProperty(_classNames, 'Avatar--disabled', !initials || !withTooltip), _classNames), className);
@@ -1413,7 +1413,8 @@ var CheckboxOption = function CheckboxOption(props) {
     label: label,
     checked: selected,
     onChange: onChangeHandler,
-    tabIndex: -1
+    tabIndex: -1,
+    className: "OptionCheckbox"
   }));
 };
 
@@ -1559,7 +1560,7 @@ var _OptionTypeMapping;
 var OptionTypeMapping = (_OptionTypeMapping = {}, _defineProperty(_OptionTypeMapping, 'DEFAULT', DefaultOption), _defineProperty(_OptionTypeMapping, 'WITH_ICON', IconOption), _defineProperty(_OptionTypeMapping, 'WITH_META', MetaOption), _defineProperty(_OptionTypeMapping, 'WITH_CHECKBOX', CheckboxOption), _defineProperty(_OptionTypeMapping, 'ICON_WITH_META', IconWithMetaOption), _OptionTypeMapping);
 
 var Option = function Option(props) {
-  var _classNames, _classNames2;
+  var _classNames, _classNames2, _classNames3;
 
   var optionData = props.optionData,
       selected = props.selected,
@@ -1575,8 +1576,9 @@ var Option = function Option(props) {
       _ref$optionType = _ref.optionType,
       optionType = _ref$optionType === void 0 ? 'DEFAULT' : _ref$optionType;
 
-  var className = classNames((_classNames = {}, _defineProperty(_classNames, 'Option', true), _defineProperty(_classNames, 'Option-wrapper', true), _defineProperty(_classNames, 'Option--withCheckbox', checkboxes), _defineProperty(_classNames, 'Option--active', active), _defineProperty(_classNames, 'Option--selected', selected && !checkboxes && !menu), _classNames));
-  var textClassName = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Option-text', true), _defineProperty(_classNames2, 'Option-text--wrap', !props.truncateOption), _classNames2));
+  var OptionClassName = classNames((_classNames = {}, _defineProperty(_classNames, 'Option', true), _defineProperty(_classNames, 'OptionWrapper', true), _defineProperty(_classNames, 'Option--active', active), _defineProperty(_classNames, 'Option--selected', selected && !menu), _classNames));
+  var CheckboxClassName = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'OptionWrapper', true), _defineProperty(_classNames2, 'OptionWrapper--active', active), _classNames2));
+  var textClassName = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Option-text', true), _defineProperty(_classNames3, 'Option-text--wrap', !props.truncateOption), _classNames3));
 
   var onUpdateActiveOption = function onUpdateActiveOption() {
     if (updateActiveOption) updateActiveOption(index);
@@ -1584,7 +1586,7 @@ var Option = function Option(props) {
 
   if (props.optionRenderer) {
     return /*#__PURE__*/createElement("div", _extends({
-      className: "Option-wrapper",
+      className: "OptionWrapper",
       onMouseEnter: onUpdateActiveOption
     }, !checkboxes && {
       onClick: onClick
@@ -1607,8 +1609,8 @@ var Option = function Option(props) {
     onClick: onClick,
     updateActiveOption: updateActiveOption,
     textClassName: textClassName,
-    className: className,
-    index: index
+    index: index,
+    className: checkboxes ? CheckboxClassName : OptionClassName
   });
 };
 
@@ -1713,6 +1715,7 @@ var Input = /*#__PURE__*/forwardRef(function (props, ref) {
   var _props$size = props.size,
       size = _props$size === void 0 ? 'regular' : _props$size,
       _props$type = props.type,
+      type = _props$type === void 0 ? 'text' : _props$type,
       readonly = props.readonly,
       defaultValue = props.defaultValue,
       name = props.name,
@@ -1736,7 +1739,7 @@ var Input = /*#__PURE__*/forwardRef(function (props, ref) {
   var autoComplete = props.autoComplete || autocomplete;
   var disabled = props.disabled || readonly;
   var baseProps = extractBaseProps(props);
-  var classes = classNames((_classNames = {}, _defineProperty(_classNames, 'Input', true), _defineProperty(_classNames, "Input--".concat(size), size), _defineProperty(_classNames, 'Input--disabled', disabled), _defineProperty(_classNames, 'Input--error', error), _classNames), className);
+  var classes = classNames((_classNames = {}, _defineProperty(_classNames, 'Input', true), _defineProperty(_classNames, 'Input--minWidth', type !== 'number'), _defineProperty(_classNames, "Input--".concat(size), size), _defineProperty(_classNames, 'Input--disabled', disabled), _defineProperty(_classNames, 'Input--error', error), _classNames), className);
   var inputClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Input-input', true), _defineProperty(_classNames2, "Input-input--".concat(size), size), _classNames2));
   var leftIconClass = classNames((_classNames3 = {}, _defineProperty(_classNames3, 'Input-icon', true), _defineProperty(_classNames3, 'Input-icon--left', true), _defineProperty(_classNames3, 'Input-icon--disabled', !value), _classNames3));
   var rightIconClass = classNames((_classNames4 = {}, _defineProperty(_classNames4, 'Input-icon', true), _defineProperty(_classNames4, 'Input-icon--right', true), _classNames4));
@@ -1760,6 +1763,7 @@ var Input = /*#__PURE__*/forwardRef(function (props, ref) {
   })), /*#__PURE__*/createElement("input", _extends({}, baseProps, rest, {
     ref: ref,
     name: name,
+    type: type,
     defaultValue: defaultValue,
     placeholder: placeholder,
     className: inputClass,
@@ -1840,13 +1844,17 @@ var Placeholder = function Placeholder(props) {
     'Placeholder-paragraph': true
   }, 'Placeholder-paragraph--withImage', withImage));
   var classes = classNames(_defineProperty({}, 'Placeholder', true), className);
-  return /*#__PURE__*/createElement("div", _extends({}, baseProps, {
+  return /*#__PURE__*/createElement("div", _extends({
+    "data-test": "DesignSystem-Placeholder"
+  }, baseProps, {
     className: classes
   }), withImage && /*#__PURE__*/createElement(PlaceholderImage, {
     round: round,
-    size: imageSize
+    size: imageSize,
+    "data-test": "DesignSystem-Placeholder--Image"
   }), children && /*#__PURE__*/createElement("div", {
-    className: paragraphClasses
+    className: paragraphClasses,
+    "data-test": "DesignSystem-Placeholder--Paragraph"
   }, children));
 };
 Placeholder.defaultProps = {
@@ -2018,7 +2026,7 @@ var DropdownList = function DropdownList(props) {
 
   var dropdownClass = classNames(_defineProperty({}, 'Dropdown', true), className);
   var dropdownWrapperClass = classNames((_classNames4 = {}, _defineProperty(_classNames4, 'Dropdown-wrapper', true), _defineProperty(_classNames4, 'Dropdown-wrapper--wrap', !truncateOption), _classNames4));
-  var SelectAllClass = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'Option', true), _defineProperty(_classNames5, 'Option--withCheckbox', true), _defineProperty(_classNames5, 'Option-wrapper', true), _defineProperty(_classNames5, 'Option--active', cursor === 0), _classNames5));
+  var SelectAllClass = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'OptionWrapper', true), _defineProperty(_classNames5, 'OptionWrapper--active', cursor === 0), _classNames5));
 
   var onToggleDropdown = function onToggleDropdown(open, type) {
     var _dropdownTriggerRef$c;
@@ -2070,7 +2078,7 @@ var DropdownList = function DropdownList(props) {
     return /*#__PURE__*/createElement("div", {
       className: 'Dropdown-footer'
     }, /*#__PURE__*/createElement(Text, {
-      small: true,
+      size: "small",
       appearance: 'subtle'
     }, footerLabel));
   };
@@ -2080,7 +2088,7 @@ var DropdownList = function DropdownList(props) {
     return /*#__PURE__*/createElement("div", {
       className: getDropdownSectionClass(selectedGroup)
     }, /*#__PURE__*/createElement(Text, {
-      small: true,
+      size: "small",
       appearance: 'subtle'
     }, group), selectedGroup && /*#__PURE__*/createElement(Button, {
       onClick: onClearOptions,
@@ -2115,7 +2123,7 @@ var DropdownList = function DropdownList(props) {
         searchInit = props.searchInit;
     var disable = loadingOptions && !searchInit;
     return /*#__PURE__*/createElement("div", {
-      className: 'Dropdown-input'
+      className: 'Dropdown-inputWrapper'
     }, /*#__PURE__*/createElement(Input, {
       name: "Dropdown-search",
       icon: 'search',
@@ -2126,7 +2134,8 @@ var DropdownList = function DropdownList(props) {
       onChange: searchHandler,
       onClear: searchClearHandler,
       ref: inputRef,
-      autoComplete: 'off'
+      autoComplete: 'off',
+      className: "Dropdown-input"
     }));
   };
 
@@ -2159,7 +2168,8 @@ var DropdownList = function DropdownList(props) {
       onChange: onSelectAll,
       checked: selectAll.checked,
       indeterminate: selectAll.indeterminate,
-      tabIndex: -1
+      tabIndex: -1,
+      className: "OptionCheckbox"
     }));
   };
 
@@ -2246,7 +2256,7 @@ var DropdownList = function DropdownList(props) {
   var onkeydown = function onkeydown(event) {
     var _dropdownApplyButtonR;
 
-    var optionClass = optionRenderer ? '.Option-wrapper' : '.Option';
+    var optionClass = '.OptionWrapper';
 
     switch (event.key) {
       case 'ArrowDown':
@@ -3350,7 +3360,7 @@ var translateToString = function translateToString(format, d) {
   var val = f.reduce(function (out, curr, i) {
     switch (curr) {
       case 'mm':
-        out += (month < 10 && '0') + (month + 1);
+        out += (month < 9 && '0') + (month + 1);
         break;
 
       case 'yyyy':
@@ -3517,12 +3527,12 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_this), "selectDate", function (index, date) {
       var _this$getNavDateInfo = _this.getNavDateInfo(index),
-          yearNavVal = _this$getNavDateInfo.year,
-          monthNavVal = _this$getNavDateInfo.month;
+          year = _this$getNavDateInfo.year,
+          month = _this$getNavDateInfo.month;
 
-      _this.updateState(yearNavVal, monthNavVal, date);
+      _this.updateState(year, month, date);
 
-      var d = _this.getDateValue(yearNavVal, monthNavVal, date);
+      var d = _this.getDateValue(year, month, date);
 
       _this.setState({
         currDate: d
@@ -3666,15 +3676,15 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       });
       var headerContent = '';
 
-      var onClickHandler = function onClickHandler() {
+      var onClickHandler = function onClickHandler(currView) {
         if (jumpView) {
-          if (view === 'year') _this.setState({
+          if (currView === 'year') _this.setState({
             view: 'date'
           });
-          if (view === 'month') _this.setState({
+          if (currView === 'month') _this.setState({
             view: 'year'
           });
-          if (view === 'date') _this.setState({
+          if (currView === 'date') _this.setState({
             view: 'month'
           });
         }
@@ -3682,13 +3692,27 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
 
       if (view === 'year') headerContent = "".concat(yearBlockNav, " - ").concat(yearBlockNav + (yearBlockRange - 1));
       if (view === 'month') headerContent = "".concat(yearNavVal);
-      if (view === 'date') headerContent = "".concat(months[monthNavVal], " ").concat(yearNavVal);
       return /*#__PURE__*/createElement("div", {
-        className: headerContentClass,
-        onClick: onClickHandler
+        className: headerContentClass
+      }, view !== 'date' && /*#__PURE__*/createElement("span", {
+        onClick: function onClick() {
+          return onClickHandler(view);
+        }
       }, /*#__PURE__*/createElement(Heading, {
         size: "s"
-      }, headerContent));
+      }, headerContent)), view === 'date' && /*#__PURE__*/createElement(Fragment, null, /*#__PURE__*/createElement("span", {
+        onClick: function onClick() {
+          return onClickHandler(view);
+        }
+      }, /*#__PURE__*/createElement(Heading, {
+        size: "s"
+      }, months[monthNavVal])), "\xA0", /*#__PURE__*/createElement("span", {
+        onClick: function onClick() {
+          return onClickHandler('month');
+        }
+      }, /*#__PURE__*/createElement(Heading, {
+        size: "s"
+      }, yearNavVal))));
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderBodyYear", function () {
@@ -3714,7 +3738,7 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           if (offset === yearBlockNav) return undefined;
           var year = yearBlockNav + offset;
           var disabled = compareDate(disabledBefore, 'more', year) || compareDate(disabledAfter, 'less', year);
-          var active = !disabled && !rangePicker && yearNav === year;
+          var active = !disabled && !rangePicker && yearNav === year && year === _this.state.year;
           var valueClass = classNames({
             'Calendar-value': true,
             'Calendar-value--active': active,
@@ -4191,8 +4215,7 @@ Caption.displayName = 'Caption';
 var InputMask = /*#__PURE__*/forwardRef(function (props, forwardRef) {
   var maskProp = props.mask,
       valueProp = props.value,
-      _props$placeholderCha = props.placeholderChar,
-      placeholderChar = _props$placeholderCha === void 0 ? '_' : _props$placeholderCha,
+      placeholderChar = props.placeholderChar,
       defaultValue = props.defaultValue,
       mask = props.mask,
       error = props.error,
@@ -4360,6 +4383,9 @@ var InputMask = /*#__PURE__*/forwardRef(function (props, forwardRef) {
     hide: !caption
   }, caption));
 });
+InputMask.defaultProps = {
+  placeholderChar: '_'
+};
 
 var dateMask = {
   'dd/mm/yyyy': [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
@@ -4436,6 +4462,8 @@ var e$1 = {
 };
 
 var defaultProps$1 = {
+  view: 'date',
+  firstDayOfWeek: 'sunday',
   position: 'bottom-start',
   inputFormat: 'mm/dd/yyyy',
   outputFormat: 'mm/dd/yyyy',
@@ -4632,6 +4660,7 @@ var DatePicker = /*#__PURE__*/function (_React$Component) {
 
       if (withInput) {
         var trigger = /*#__PURE__*/createElement(InputMask, _extends({
+          icon: "events",
           placeholder: inputFormat
         }, inputOptions, {
           error: inputOptions.required && error,
@@ -6066,7 +6095,9 @@ var Textarea = /*#__PURE__*/forwardRef(function (props, ref) {
   var TextareaClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Textarea-textarea', true), _defineProperty(_classNames2, 'Textarea-textarea--error', error), _classNames2));
   return /*#__PURE__*/createElement("div", {
     className: classes
-  }, /*#__PURE__*/createElement("textarea", _extends({}, baseProps, {
+  }, /*#__PURE__*/createElement("textarea", _extends({
+    "data-test": "DesignSystem-Textarea"
+  }, baseProps, {
     ref: ref,
     name: name,
     rows: rows,
@@ -6763,7 +6794,9 @@ Stepper.defaultProps = {
 };
 
 var defaultProps$3 = {
-  position: 'bottom-start',
+  view: 'date',
+  firstDayOfWeek: 'sunday',
+  position: 'bottom',
   inputFormat: 'mm/dd/yyyy',
   outputFormat: 'mm/dd/yyyy',
   validator: e$1.date,
@@ -6785,6 +6818,8 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, DateRangePicker);
 
     _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "monthsInView", void 0);
 
     _defineProperty(_assertThisInitialized(_this), "getErrors", function (startDate, endDate) {
       var isError = function isError(date) {
@@ -7026,6 +7061,7 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
       yearNav: props.yearNav,
       monthNav: props.monthNav
     }, _this.getErrors(_startDate, _endDate));
+    _this.monthsInView = props.monthsInView || (props.withInput ? 2 : 1);
     return _this;
   }
 
@@ -7131,6 +7167,7 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
           yearNav = _this$state5.yearNav,
           monthNav = _this$state5.monthNav;
       return /*#__PURE__*/createElement(Calendar, _extends({}, rest, {
+        monthsInView: this.monthsInView,
         rangePicker: true,
         startDate: convertToDate(startDate, inputFormat, validator),
         endDate: convertToDate(endDate, inputFormat, validator),
@@ -7170,7 +7207,10 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
         }, startInputOptions.label && /*#__PURE__*/createElement(Label, {
           required: startInputOptions.required,
           withInput: true
-        }, startInputOptions.label), /*#__PURE__*/createElement(InputMask, _extends({}, startInputOptions, {
+        }, startInputOptions.label), /*#__PURE__*/createElement(InputMask, _extends({
+          icon: "events",
+          placeholder: inputFormat
+        }, startInputOptions, {
           mask: mask,
           value: startDate ? translateToString(inputFormat, startDate) : '',
           onChange: function onChange(e, val) {
@@ -7185,7 +7225,7 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
           onClick: function onClick() {
             return _this2.onClickHandler('start');
           },
-          error: startError,
+          error: startInputOptions.required && startError,
           caption: startInputOptions.required && startError ? startInputOptions.caption || 'Invalid value' : ''
         }))), /*#__PURE__*/createElement(Column, {
           size: '6',
@@ -7194,7 +7234,10 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
         }, endInputOptions.label && /*#__PURE__*/createElement(Label, {
           required: endInputOptions.required,
           withInput: true
-        }, endInputOptions.label), /*#__PURE__*/createElement(InputMask, _extends({}, endInputOptions, {
+        }, endInputOptions.label), /*#__PURE__*/createElement(InputMask, _extends({
+          icon: "events",
+          placeholder: inputFormat
+        }, endInputOptions, {
           mask: mask,
           value: endDate ? translateToString(inputFormat, endDate) : '',
           onChange: function onChange(e, val) {
@@ -7209,7 +7252,7 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
           onClick: function onClick() {
             return _this2.onClickHandler('end');
           },
-          error: endError,
+          error: endInputOptions.required && endError,
           caption: endInputOptions.required && endError ? endInputOptions.caption || 'Invalid value' : ''
         }))));
         return /*#__PURE__*/createElement(Popover, {
@@ -8257,7 +8300,7 @@ var GridBody = function GridBody(props) {
       errorTemplate = _this$props.errorTemplate;
 
   if (!loading && error) {
-    return errorTemplate ? errorTemplate({}) : /*#__PURE__*/createElement(Heading, null, "No results found");
+    return errorTemplate ? typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate : /*#__PURE__*/createElement(Heading, null, "No results found");
   }
 
   var totalPages = Math.ceil(totalRecords / pageSize);
@@ -8823,6 +8866,17 @@ Header.defaultProps = {
   dynamicColumn: true
 };
 
+var defaultErrorTemplate = function defaultErrorTemplate(props) {
+  var _props$errorType = props.errorType,
+      errorType = _props$errorType === void 0 ? 'DEFAULT' : _props$errorType;
+  var errorMessages = {
+    FAILED_TO_FETCH: 'Failed to fetch data',
+    NO_RECORDS_FOUND: 'No results found',
+    DEFAULT: 'No results found'
+  };
+  return /*#__PURE__*/createElement(Heading, null, errorMessages[errorType]);
+};
+
 var defaultProps$4 = {
   type: 'data',
   size: 'standard',
@@ -8841,15 +8895,33 @@ var defaultProps$4 = {
   error: false,
   loaderSchema: [],
   sortingList: [],
-  filterList: {}
+  filterList: {},
+  errorTemplate: defaultErrorTemplate
 };
 /**
  * ###Note:
- * 1. Table props types:
- *  - async: fetchData
- *  - sync: data, schema, error, loading, onSearch
- * 2. Sync Table:
+ * 1. Sync Table:
  *  - Manually toggle loading/error state to update data, schema.
+ * 2. Async Table:
+ *  - fetchData return:
+ *    - Promise resolve with no records:
+ *      error: true, errorType: 'NO\_RECORDS\_FOUND'
+ *    - Promise reject:
+ *      error: true, errorType: 'FAILED\_TO\_FETCH'
+ * 3. Default errorTemplate:
+ * <pre class="DocPage-codeBlock">
+ * (props) => {
+ *      const { errorType = 'DEFAULT' } = props;
+ *      const errorMessages = {
+ *        'FAILED\_TO\_FETCH': 'Failed to fetch data',
+ *        'NO\_RECORDS\_FOUND': 'No results found',
+ *        'DEFAULT': 'No results found'
+ *      }
+ *      return(
+ *        \<Heading>{errorMessages[errorType]}\</Heading>
+ *      );
+ * }
+ * </pre>
  */
 
 var Table = /*#__PURE__*/function (_React$Component) {
@@ -8917,13 +8989,14 @@ var Table = /*#__PURE__*/function (_React$Component) {
               selectAll: getSelectAll$1(data),
               totalRecords: res.count,
               loading: false,
-              error: !data.length
+              error: !data.length,
+              errorType: 'NO_RECORDS_FOUND'
             });
           })["catch"](function () {
             _this.setState({
               loading: false,
               error: true,
-              data: []
+              errorType: 'FAILED_TO_FETCH'
             });
           });
         }
@@ -9049,6 +9122,7 @@ var Table = /*#__PURE__*/function (_React$Component) {
       totalRecords: !_async ? _data.length : 0,
       loading: !_async ? props.loading || false : true,
       error: !_async ? props.error || false : false,
+      errorType: props.errorType,
       selectAll: getSelectAll$1([]),
       searchTerm: undefined
     };
@@ -9074,6 +9148,7 @@ var Table = /*#__PURE__*/function (_React$Component) {
             schema: schema,
             loading: this.props.loading || false,
             error: this.props.error || false,
+            errorType: this.props.errorType,
             page: 1,
             totalRecords: _data2.length || 0,
             sortingList: [],
@@ -9090,7 +9165,18 @@ var Table = /*#__PURE__*/function (_React$Component) {
       }
 
       if (prevState.page !== this.state.page || prevState.filterList !== this.state.filterList || prevState.sortingList !== this.state.sortingList || prevState.searchTerm !== this.state.searchTerm) {
-        if (!this.props.loading) this.updateData();
+        if (!this.props.loading) {
+          // let errorType = "";
+          // let errorCount = 0;
+          // if(prevState.page !== this.state.page) errorType = "ON_PAGE_CHANGE", errorCount++;
+          // if(prevState.filterList !== this.state.filterList) errorType = "ON_FILTER_CHANGE", errorCount++;
+          // if(prevState.sortingList !== this.state.sortingList) errorType = "ON_SORTING_CHANGE", errorCount++;
+          // if(prevState.searchTerm !== this.state.searchTerm) errorType = "ON_SEARCH_CHANGE", errorCount++;
+          // this.setState({
+          //   errorType: errorCount > 1 ? "FAILED_TO_FETCH" : errorType
+          // });
+          this.updateData();
+        }
       }
     }
   }, {
@@ -9161,7 +9247,9 @@ var Table = /*#__PURE__*/function (_React$Component) {
         withPagination: withPagination && totalPages > 1,
         pageSize: pageSize,
         loaderSchema: loaderSchema,
-        errorTemplate: errorTemplate,
+        errorTemplate: errorTemplate && errorTemplate({
+          errorType: this.state.errorType
+        }),
         onRowClick: onRowClick
       }))), withPagination && totalPages > 1 && /*#__PURE__*/createElement("div", {
         className: "Table-pagination"

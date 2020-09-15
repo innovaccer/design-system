@@ -3,11 +3,15 @@ import { ExternalHeaderProps, updateSearchTermFunction, HeaderProps } from "../g
 import { Data, onSelectFunction, onSelectAllFunction, GridProps, fetchDataFunction, RowData, updateSchemaFunction, updateSortingListFunction, updateFilterListFunction } from "../grid";
 import { BaseProps } from "../../../utils/types";
 import { PaginationProps } from "../../molecules/pagination";
+export interface ErrorTemplateProps {
+    errorType?: TableProps['errorType'];
+}
 interface SyncProps {
     data: GridProps['data'];
     schema: GridProps['schema'];
     loading: GridProps['loading'];
     error: GridProps['error'];
+    errorType?: string;
     onSearch?: (data: Data, searchTerm: string) => Data;
 }
 interface AsyncProps {
@@ -32,7 +36,7 @@ interface SharedTableProps extends BaseProps {
     multipleSorting: boolean;
     sortingList: GridProps['sortingList'];
     filterList: GridProps['filterList'];
-    errorTemplate?: GridProps['errorTemplate'];
+    errorTemplate?: React.FunctionComponent<ErrorTemplateProps>;
     onRowClick?: GridProps['onRowClick'];
     onSelect?: (rowIndexes: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean) => void;
     onPageChange?: PaginationProps['onPageChange'];
@@ -44,16 +48,17 @@ export declare type AsyncTableProps = AsyncProps & SharedTableProps;
 export declare type TableProps = (AsyncTableProps & SyncTableProps);
 interface TableState {
     async: boolean;
-    data: GridProps['data'];
-    schema: GridProps['schema'];
-    sortingList: GridProps['sortingList'];
-    filterList: GridProps['filterList'];
-    page: GridProps['page'];
+    data: TableProps['data'];
+    schema: TableProps['schema'];
+    sortingList: TableProps['sortingList'];
+    filterList: TableProps['filterList'];
+    page: TableProps['page'];
     totalRecords: GridProps['totalRecords'];
     selectAll: GridProps['selectAll'];
     searchTerm: HeaderProps['searchTerm'];
-    loading: GridProps['loading'];
-    error: GridProps['error'];
+    loading: TableProps['loading'];
+    error: TableProps['error'];
+    errorType?: TableProps['errorType'];
 }
 export declare const defaultProps: {
     type: string;
@@ -74,6 +79,7 @@ export declare const defaultProps: {
     loaderSchema: never[];
     sortingList: never[];
     filterList: {};
+    errorTemplate: (props: ErrorTemplateProps) => JSX.Element;
 };
 export declare class Table extends React.Component<TableProps, TableState> {
     static defaultProps: {
@@ -95,6 +101,7 @@ export declare class Table extends React.Component<TableProps, TableState> {
         loaderSchema: never[];
         sortingList: never[];
         filterList: {};
+        errorTemplate: (props: ErrorTemplateProps) => JSX.Element;
     };
     constructor(props: TableProps);
     componentDidUpdate(prevProps: TableProps, prevState: TableState): void;

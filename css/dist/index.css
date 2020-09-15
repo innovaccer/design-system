@@ -1328,7 +1328,7 @@ body {
 /* badge */
 
 .Checkbox {
-    display: flex;
+    display: inline-flex;
     cursor: pointer;
     align-items: center;
     -webkit-user-select: none;
@@ -1627,17 +1627,17 @@ body {
     margin-bottom: var(--spacing-m);
 }
 
-.Dropdown-input {
+.Dropdown-inputWrapper {
     border-bottom: var(--border);
 }
 
-.Dropdown-input .Input {
-    min-width: unset;
+.Dropdown-input {
+    min-width: unset !important;
 }
 
-.Dropdown-input .Input,
-.Dropdown-input .Input:focus-within {
-    border: unset;
+.Dropdown-input,
+.Dropdown-input:focus-within {
+    border: unset !important;
 }
 
 .Dropdown-section {
@@ -1690,21 +1690,17 @@ body {
     padding-right: var(--spacing-l);
 }
 
-.Option--withCheckbox {
+.OptionCheckbox {
+    width: 100%;
+    padding-left: var(--spacing-l);
     padding-top: var(--spacing-m);
     padding-bottom: var(--spacing-m);
 }
 
-.Option--active {
+.Option--active,
+.OptionWrapper--active {
     background-color: var(--secondary-lightest);
     cursor: pointer;
-}
-
-.Dropdown-wrapper .Option .Checkbox {
-    width: 100%;
-    width: fill-available;
-    width: -moz-available;
-    width: -webkit-fill-available;
 }
 
 .Option-loading {
@@ -1723,20 +1719,22 @@ body {
     flex-direction: column;
 }
 
-.Dropdown-wrapper .Checkbox .Checkbox-label {
+.OptionCheckbox .Checkbox-label {
+    padding-right: var(--spacing-l);
+    width: 100%;
     display: flex;
     overflow: hidden;
 }
 
 .Option-text,
-.Dropdown-wrapper .Checkbox .Text {
+.OptionCheckbox .Text {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .Option-text--wrap,
-.Dropdown-wrapper--wrap.Dropdown-wrapper .Checkbox .Text {
+.Dropdown-wrapper--wrap .OptionCheckbox .Text {
     white-space: unset;
 }
 
@@ -2192,6 +2190,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -2378,6 +2377,9 @@ body {
     padding-right: var(--spacing-l);
     padding-left: var(--spacing-l);
     background: var(--white);
+}
+
+.Input--minWidth {
     min-width: var(--spacing-9);
 }
 

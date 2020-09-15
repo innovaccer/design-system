@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1599476766772 
+   * Generated on: 1600157467709 
    *      Package: @innovaccer/design-system
-   *      Version: v1.2.0-0
+   *      Version: v1.2.0-1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -105,8 +105,8 @@
       var initials = children ? children.trim().slice(0, initialsLength) : "" + (firstName ? firstName.trim()[0] : '') + (lastName ? lastName.trim()[0] : '');
       var tooltip = children || (firstName || '') + " " + (lastName || '') || '';
       var DefaultAppearance = 'secondary';
-      var colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success', 'secondary'];
-      var AvatarAppearance = appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 9] || DefaultAppearance;
+      var colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
+      var AvatarAppearance = appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
       var classes = classNames__default['default']((_a = {
         Avatar: true
       }, _a["Avatar--" + size] = size, _a["Avatar--" + AvatarAppearance] = AvatarAppearance, _a['Avatar--disabled'] = !initials || !withTooltip, _a), className);
@@ -1103,7 +1103,8 @@
         label: label,
         checked: selected,
         onChange: onChangeHandler,
-        tabIndex: -1
+        tabIndex: -1,
+        className: "OptionCheckbox"
       }));
     };
 
@@ -1249,7 +1250,7 @@
     var OptionTypeMapping = (_a = {}, _a['DEFAULT'] = DefaultOption, _a['WITH_ICON'] = IconOption, _a['WITH_META'] = MetaOption, _a['WITH_CHECKBOX'] = CheckboxOption, _a['ICON_WITH_META'] = IconWithMetaOption, _a);
 
     var Option = function Option(props) {
-      var _a, _b;
+      var _a, _b, _c;
 
       var optionData = props.optionData,
           selected = props.selected,
@@ -1260,10 +1261,11 @@
           index = props.index,
           checkboxes = props.checkboxes,
           menu = props.menu;
-      var _c = (optionData.optionType ? optionData : props).optionType,
-          optionType = _c === void 0 ? 'DEFAULT' : _c;
-      var className = classNames__default['default']((_a = {}, _a['Option'] = true, _a['Option-wrapper'] = true, _a['Option--withCheckbox'] = checkboxes, _a['Option--active'] = active, _a['Option--selected'] = selected && !checkboxes && !menu, _a));
-      var textClassName = classNames__default['default']((_b = {}, _b['Option-text'] = true, _b['Option-text--wrap'] = !props.truncateOption, _b));
+      var _d = (optionData.optionType ? optionData : props).optionType,
+          optionType = _d === void 0 ? 'DEFAULT' : _d;
+      var OptionClassName = classNames__default['default']((_a = {}, _a['Option'] = true, _a['OptionWrapper'] = true, _a['Option--active'] = active, _a['Option--selected'] = selected && !menu, _a));
+      var CheckboxClassName = classNames__default['default']((_b = {}, _b['OptionWrapper'] = true, _b['OptionWrapper--active'] = active, _b));
+      var textClassName = classNames__default['default']((_c = {}, _c['Option-text'] = true, _c['Option-text--wrap'] = !props.truncateOption, _c));
 
       var onUpdateActiveOption = function onUpdateActiveOption() {
         if (updateActiveOption) updateActiveOption(index);
@@ -1271,7 +1273,7 @@
 
       if (props.optionRenderer) {
         return /*#__PURE__*/React.createElement("div", __assign({
-          className: "Option-wrapper",
+          className: "OptionWrapper",
           onMouseEnter: onUpdateActiveOption
         }, !checkboxes && {
           onClick: onClick
@@ -1294,8 +1296,8 @@
         onClick: onClick,
         updateActiveOption: updateActiveOption,
         textClassName: textClassName,
-        className: className,
-        index: index
+        index: index,
+        className: checkboxes ? CheckboxClassName : OptionClassName
       });
     };
 
@@ -1396,6 +1398,7 @@
       var _e = props.size,
           size = _e === void 0 ? 'regular' : _e,
           _f = props.type,
+          type = _f === void 0 ? 'text' : _f,
           readonly = props.readonly,
           defaultValue = props.defaultValue,
           name = props.name,
@@ -1419,7 +1422,7 @@
       var autoComplete = props.autoComplete || autocomplete;
       var disabled = props.disabled || readonly;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {}, _a['Input'] = true, _a["Input--" + size] = size, _a['Input--disabled'] = disabled, _a['Input--error'] = error, _a), className);
+      var classes = classNames__default['default']((_a = {}, _a['Input'] = true, _a['Input--minWidth'] = type !== 'number', _a["Input--" + size] = size, _a['Input--disabled'] = disabled, _a['Input--error'] = error, _a), className);
       var inputClass = classNames__default['default']((_b = {}, _b['Input-input'] = true, _b["Input-input--" + size] = size, _b));
       var leftIconClass = classNames__default['default']((_c = {}, _c['Input-icon'] = true, _c['Input-icon--left'] = true, _c['Input-icon--disabled'] = !value, _c));
       var rightIconClass = classNames__default['default']((_d = {}, _d['Input-icon'] = true, _d['Input-icon--right'] = true, _d));
@@ -1443,6 +1446,7 @@
       })), /*#__PURE__*/React.createElement("input", __assign({}, baseProps, rest, {
         ref: ref,
         name: name,
+        type: type,
         defaultValue: defaultValue,
         placeholder: placeholder,
         className: inputClass,
@@ -1525,13 +1529,17 @@
         'Placeholder-paragraph': true
       }, _a['Placeholder-paragraph--withImage'] = withImage, _a));
       var classes = classNames__default['default']((_b = {}, _b['Placeholder'] = true, _b), className);
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-Placeholder"
+      }, baseProps, {
         className: classes
       }), withImage && /*#__PURE__*/React.createElement(PlaceholderImage, {
         round: round,
-        size: imageSize
+        size: imageSize,
+        "data-test": "DesignSystem-Placeholder--Image"
       }), children && /*#__PURE__*/React.createElement("div", {
-        className: paragraphClasses
+        className: paragraphClasses,
+        "data-test": "DesignSystem-Placeholder--Paragraph"
       }, children));
     };
     Placeholder.defaultProps = {
@@ -1703,7 +1711,7 @@
 
       var dropdownClass = classNames__default['default']((_a = {}, _a['Dropdown'] = true, _a), className);
       var dropdownWrapperClass = classNames__default['default']((_b = {}, _b['Dropdown-wrapper'] = true, _b['Dropdown-wrapper--wrap'] = !truncateOption, _b));
-      var SelectAllClass = classNames__default['default']((_c = {}, _c['Option'] = true, _c['Option--withCheckbox'] = true, _c['Option-wrapper'] = true, _c['Option--active'] = cursor === 0, _c));
+      var SelectAllClass = classNames__default['default']((_c = {}, _c['OptionWrapper'] = true, _c['OptionWrapper--active'] = cursor === 0, _c));
 
       var onToggleDropdown = function onToggleDropdown(open, type) {
         var _a;
@@ -1755,7 +1763,7 @@
         return /*#__PURE__*/React.createElement("div", {
           className: 'Dropdown-footer'
         }, /*#__PURE__*/React.createElement(Text, {
-          small: true,
+          size: "small",
           appearance: 'subtle'
         }, footerLabel));
       };
@@ -1765,7 +1773,7 @@
         return /*#__PURE__*/React.createElement("div", {
           className: getDropdownSectionClass(selectedGroup)
         }, /*#__PURE__*/React.createElement(Text, {
-          small: true,
+          size: "small",
           appearance: 'subtle'
         }, group), selectedGroup && /*#__PURE__*/React.createElement(Button, {
           onClick: onClearOptions,
@@ -1800,7 +1808,7 @@
             searchInit = props.searchInit;
         var disable = loadingOptions && !searchInit;
         return /*#__PURE__*/React.createElement("div", {
-          className: 'Dropdown-input'
+          className: 'Dropdown-inputWrapper'
         }, /*#__PURE__*/React.createElement(Input, {
           name: "Dropdown-search",
           icon: 'search',
@@ -1811,7 +1819,8 @@
           onChange: searchHandler,
           onClear: searchClearHandler,
           ref: inputRef,
-          autoComplete: 'off'
+          autoComplete: 'off',
+          className: "Dropdown-input"
         }));
       };
 
@@ -1844,7 +1853,8 @@
           onChange: onSelectAll,
           checked: selectAll.checked,
           indeterminate: selectAll.indeterminate,
-          tabIndex: -1
+          tabIndex: -1,
+          className: "OptionCheckbox"
         }));
       };
 
@@ -1931,7 +1941,7 @@
       var onkeydown = function onkeydown(event) {
         var _a, _b, _c;
 
-        var optionClass = optionRenderer ? '.Option-wrapper' : '.Option';
+        var optionClass = '.OptionWrapper';
 
         switch (event.key) {
           case 'ArrowDown':
@@ -3007,7 +3017,7 @@
       var val = f.reduce(function (out, curr, i) {
         switch (curr) {
           case 'mm':
-            out += (month < 10 && '0') + (month + 1);
+            out += (month < 9 && '0') + (month + 1);
             break;
 
           case 'yyyy':
@@ -3169,12 +3179,12 @@
 
         _this.selectDate = function (index, date) {
           var _a = _this.getNavDateInfo(index),
-              yearNavVal = _a.year,
-              monthNavVal = _a.month;
+              year = _a.year,
+              month = _a.month;
 
-          _this.updateState(yearNavVal, monthNavVal, date);
+          _this.updateState(year, month, date);
 
-          var d = _this.getDateValue(yearNavVal, monthNavVal, date);
+          var d = _this.getDateValue(year, month, date);
 
           _this.setState({
             currDate: d
@@ -3318,15 +3328,15 @@
           });
           var headerContent = '';
 
-          var onClickHandler = function onClickHandler() {
+          var onClickHandler = function onClickHandler(currView) {
             if (jumpView) {
-              if (view === 'year') _this.setState({
+              if (currView === 'year') _this.setState({
                 view: 'date'
               });
-              if (view === 'month') _this.setState({
+              if (currView === 'month') _this.setState({
                 view: 'year'
               });
-              if (view === 'date') _this.setState({
+              if (currView === 'date') _this.setState({
                 view: 'month'
               });
             }
@@ -3334,13 +3344,27 @@
 
           if (view === 'year') headerContent = yearBlockNav + " - " + (yearBlockNav + (yearBlockRange - 1));
           if (view === 'month') headerContent = "" + yearNavVal;
-          if (view === 'date') headerContent = months[monthNavVal] + " " + yearNavVal;
           return /*#__PURE__*/React.createElement("div", {
-            className: headerContentClass,
-            onClick: onClickHandler
+            className: headerContentClass
+          }, view !== 'date' && /*#__PURE__*/React.createElement("span", {
+            onClick: function onClick() {
+              return onClickHandler(view);
+            }
           }, /*#__PURE__*/React.createElement(Heading, {
             size: "s"
-          }, headerContent));
+          }, headerContent)), view === 'date' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+            onClick: function onClick() {
+              return onClickHandler(view);
+            }
+          }, /*#__PURE__*/React.createElement(Heading, {
+            size: "s"
+          }, months[monthNavVal])), "\xA0", /*#__PURE__*/React.createElement("span", {
+            onClick: function onClick() {
+              return onClickHandler('month');
+            }
+          }, /*#__PURE__*/React.createElement(Heading, {
+            size: "s"
+          }, yearNavVal))));
         };
 
         _this.renderBodyYear = function () {
@@ -3366,7 +3390,7 @@
               if (offset === yearBlockNav) return undefined;
               var year = yearBlockNav + offset;
               var disabled = compareDate(disabledBefore, 'more', year) || compareDate(disabledAfter, 'less', year);
-              var active = !disabled && !rangePicker && yearNav === year;
+              var active = !disabled && !rangePicker && yearNav === year && year === _this.state.year;
               var valueClass = classNames__default['default']({
                 'Calendar-value': true,
                 'Calendar-value--active': active,
@@ -3845,8 +3869,7 @@
     var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
       var maskProp = props.mask,
           valueProp = props.value,
-          _a = props.placeholderChar,
-          placeholderChar = _a === void 0 ? '_' : _a,
+          placeholderChar = props.placeholderChar,
           defaultValue = props.defaultValue,
           mask = props.mask,
           error = props.error,
@@ -3859,13 +3882,13 @@
           className = props.className,
           rest = __rest(props, ["mask", "value", "placeholderChar", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onClick", "onClear", "className"]);
 
-      var _b = React.useState(defaultValue || valueProp || ''),
-          value = _b[0],
-          setValue = _b[1];
+      var _a = React.useState(defaultValue || valueProp || ''),
+          value = _a[0],
+          setValue = _a[1];
 
-      var _c = React.useState(0),
-          caret = _c[0],
-          setCaret = _c[1];
+      var _b = React.useState(0),
+          caret = _b[0],
+          setCaret = _b[1];
 
       var ref = React.useRef(null);
       var fixedMask = mask.filter(function (m) {
@@ -4009,6 +4032,9 @@
         hide: !caption
       }, caption));
     });
+    InputMask.defaultProps = {
+      placeholderChar: '_'
+    };
 
     var dateMask = {
       'dd/mm/yyyy': [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
@@ -4082,6 +4108,8 @@
     };
 
     var defaultProps$1 = {
+      view: 'date',
+      firstDayOfWeek: 'sunday',
       position: 'bottom-start',
       inputFormat: 'mm/dd/yyyy',
       outputFormat: 'mm/dd/yyyy',
@@ -4267,6 +4295,7 @@
 
         if (withInput) {
           var trigger = /*#__PURE__*/React.createElement(InputMask, __assign({
+            icon: "events",
             placeholder: inputFormat
           }, inputOptions, {
             error: inputOptions.required && error,
@@ -5622,7 +5651,9 @@
       var TextareaClass = classNames__default['default']((_b = {}, _b['Textarea-textarea'] = true, _b['Textarea-textarea--error'] = error, _b));
       return /*#__PURE__*/React.createElement("div", {
         className: classes
-      }, /*#__PURE__*/React.createElement("textarea", __assign({}, baseProps, {
+      }, /*#__PURE__*/React.createElement("textarea", __assign({
+        "data-test": "DesignSystem-Textarea"
+      }, baseProps, {
         ref: ref,
         name: name,
         rows: rows,
@@ -6294,7 +6325,9 @@
     };
 
     var defaultProps$3 = {
-      position: 'bottom-start',
+      view: 'date',
+      firstDayOfWeek: 'sunday',
+      position: 'bottom',
       inputFormat: 'mm/dd/yyyy',
       outputFormat: 'mm/dd/yyyy',
       validator: e$1.date,
@@ -6547,6 +6580,7 @@
           yearNav: props.yearNav,
           monthNav: props.monthNav
         }, _this.getErrors(startDate, endDate));
+        _this.monthsInView = props.monthsInView || (props.withInput ? 2 : 1);
         return _this;
       }
 
@@ -6647,6 +6681,7 @@
             yearNav = _b.yearNav,
             monthNav = _b.monthNav;
         return /*#__PURE__*/React.createElement(Calendar, __assign({}, rest, {
+          monthsInView: this.monthsInView,
           rangePicker: true,
           startDate: convertToDate(startDate, inputFormat, validator),
           endDate: convertToDate(endDate, inputFormat, validator),
@@ -6685,7 +6720,10 @@
           }, startInputOptions.label && /*#__PURE__*/React.createElement(Label, {
             required: startInputOptions.required,
             withInput: true
-          }, startInputOptions.label), /*#__PURE__*/React.createElement(InputMask, __assign({}, startInputOptions, {
+          }, startInputOptions.label), /*#__PURE__*/React.createElement(InputMask, __assign({
+            icon: "events",
+            placeholder: inputFormat
+          }, startInputOptions, {
             mask: mask,
             value: startDate ? translateToString(inputFormat, startDate) : '',
             onChange: function onChange(e, val) {
@@ -6700,7 +6738,7 @@
             onClick: function onClick() {
               return _this.onClickHandler('start');
             },
-            error: startError,
+            error: startInputOptions.required && startError,
             caption: startInputOptions.required && startError ? startInputOptions.caption || 'Invalid value' : ''
           }))), /*#__PURE__*/React.createElement(Column, {
             size: '6',
@@ -6709,7 +6747,10 @@
           }, endInputOptions.label && /*#__PURE__*/React.createElement(Label, {
             required: endInputOptions.required,
             withInput: true
-          }, endInputOptions.label), /*#__PURE__*/React.createElement(InputMask, __assign({}, endInputOptions, {
+          }, endInputOptions.label), /*#__PURE__*/React.createElement(InputMask, __assign({
+            icon: "events",
+            placeholder: inputFormat
+          }, endInputOptions, {
             mask: mask,
             value: endDate ? translateToString(inputFormat, endDate) : '',
             onChange: function onChange(e, val) {
@@ -6724,7 +6765,7 @@
             onClick: function onClick() {
               return _this.onClickHandler('end');
             },
-            error: endError,
+            error: endInputOptions.required && endError,
             caption: endInputOptions.required && endError ? endInputOptions.caption || 'Invalid value' : ''
           }))));
           return /*#__PURE__*/React.createElement(Popover, {
@@ -7741,7 +7782,7 @@
           errorTemplate = _a.errorTemplate;
 
       if (!loading && error) {
-        return errorTemplate ? errorTemplate({}) : /*#__PURE__*/React.createElement(Heading, null, "No results found");
+        return errorTemplate ? typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate : /*#__PURE__*/React.createElement(Heading, null, "No results found");
       }
 
       var totalPages = Math.ceil(totalRecords / pageSize);
@@ -8298,6 +8339,17 @@
       dynamicColumn: true
     };
 
+    var defaultErrorTemplate = function defaultErrorTemplate(props) {
+      var _a = props.errorType,
+          errorType = _a === void 0 ? 'DEFAULT' : _a;
+      var errorMessages = {
+        FAILED_TO_FETCH: 'Failed to fetch data',
+        NO_RECORDS_FOUND: 'No results found',
+        DEFAULT: 'No results found'
+      };
+      return /*#__PURE__*/React.createElement(Heading, null, errorMessages[errorType]);
+    };
+
     var defaultProps$4 = {
       type: 'data',
       size: 'standard',
@@ -8316,7 +8368,8 @@
       error: false,
       loaderSchema: [],
       sortingList: [],
-      filterList: {}
+      filterList: {},
+      errorTemplate: defaultErrorTemplate
     };
 
     var Table = function (_super) {
@@ -8378,13 +8431,14 @@
                   selectAll: getSelectAll$1(data),
                   totalRecords: res.count,
                   loading: false,
-                  error: !data.length
+                  error: !data.length,
+                  errorType: 'NO_RECORDS_FOUND'
                 });
               })["catch"](function () {
                 _this.setState({
                   loading: false,
                   error: true,
-                  data: []
+                  errorType: 'FAILED_TO_FETCH'
                 });
               });
             }
@@ -8507,6 +8561,7 @@
           totalRecords: !async ? data.length : 0,
           loading: !async ? props.loading || false : true,
           error: !async ? props.error || false : false,
+          errorType: props.errorType,
           selectAll: getSelectAll$1([]),
           searchTerm: undefined
         };
@@ -8529,6 +8584,7 @@
               schema: schema,
               loading: this.props.loading || false,
               error: this.props.error || false,
+              errorType: this.props.errorType,
               page: 1,
               totalRecords: data.length || 0,
               sortingList: [],
@@ -8545,7 +8601,9 @@
         }
 
         if (prevState.page !== this.state.page || prevState.filterList !== this.state.filterList || prevState.sortingList !== this.state.sortingList || prevState.searchTerm !== this.state.searchTerm) {
-          if (!this.props.loading) this.updateData();
+          if (!this.props.loading) {
+            this.updateData();
+          }
         }
       };
 
@@ -8613,7 +8671,9 @@
           withPagination: withPagination && totalPages > 1,
           pageSize: pageSize,
           loaderSchema: loaderSchema,
-          errorTemplate: errorTemplate,
+          errorTemplate: errorTemplate && errorTemplate({
+            errorType: this.state.errorType
+          }),
           onRowClick: onRowClick
         }))), withPagination && totalPages > 1 && /*#__PURE__*/React.createElement("div", {
           className: "Table-pagination"

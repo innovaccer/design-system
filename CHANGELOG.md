@@ -1,22 +1,20 @@
 
 -------------------
- **v1.2.0-0**  (2020-09-07) 
+ **v1.2.0-1**  (2020-09-15) 
 
-* bbf197e v1.2.0-0
-* de1d5ee fix(Calendar): fixes style as per design
-* c0ea446 feat(DatePicker): adds closeOnSelect
-* d8056e6 feat(AvatarGroup): adds component
-* 117be11 chore(Grid): fixes defaultProps
-* 25111af feat(Input): adds HTML attributes
-* 26997e0 feat(forms): adds inline and time period form
-* d3ea003 fix(forms): fixes forms
-* 9453109 fix(Grid): fixes extra white-space on sorting on first page
-* acac028 feat(Avatar): adds fallback icon and size prop
-* 245bd8d feat(pageHeader): adds stepper component in pageHeader
-* 30c4f17 feat(forms): adds login and create password forms
-* 8489b1d fix(docs): fixes radio and checkbox docsPage
-* 4d61700 feat(stepper): adds stepper component
-* d405688 feat(Text): adds more appearances and size
-* cd21242 refactor(DateRangePicker): moves from Functional to Class component
-* 57e6023 refactor(DatePicker): moves from Functional to Class component
-* a035878 refactor(Calendar): moves from Functional to Class component
+* 48f6535 v1.2.0-1
+* c80b361 fix(Input): fixes missing type and min-width for type: 'number'
+* a8df31a fix(Dropdown): fixes multi-select row click
+* b55f080 chore(storybook): adds Grid story
+* 2699122 feat(Table): adds errorType prop
+* d65ca44 fix(Calendar): fixes Header onClick
+* 3718565 test(textarea): adds unit tests and removes duplicate snapshot file
+* c464a4e test(Placeholder): adds unit tests
+* c304e4a fix(Avatar): removes secondary appearance from default coloring algo
+* 8a1bf44 fix(Grid): fixes style of cellType AVATAR_WITH_META_LIST
+* b076757 docs(InputMask): updates desc of onChange
+* 838fd3d chore(Text): adds missing variants in story
+* 24c6325 test: fixes jest configuration
+* 3612e40 fix(Checbox): adds inline-flex to checkbox CSS
+* 97cb2e6 fix(DatePicker, DateRangePicker): updates default values
+* 97e34b9 fix(Calendar): fixes date selection in October

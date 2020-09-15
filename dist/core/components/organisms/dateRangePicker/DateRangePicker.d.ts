@@ -20,6 +20,8 @@ declare type CompProps = {
     validator?: Validator;
 } & SharedProps;
 declare const defaultProps: {
+    view: string;
+    firstDayOfWeek: string;
     position: string;
     inputFormat: string;
     outputFormat: string;
@@ -44,6 +46,8 @@ interface DateRangePickerState {
 }
 export declare class DateRangePicker extends React.Component<DateRangePickerProps, DateRangePickerState> {
     static defaultProps: {
+        view: string;
+        firstDayOfWeek: string;
         position: string;
         inputFormat: string;
         outputFormat: string;
@@ -55,6 +59,7 @@ export declare class DateRangePicker extends React.Component<DateRangePickerProp
             label: string;
         };
     };
+    monthsInView: number;
     constructor(props: DateRangePickerProps);
     componentDidUpdate(prevProps: DateRangePickerProps, prevState: DateRangePickerState): void;
     getErrors: (startDate?: Date | undefined, endDate?: Date | undefined) => {
