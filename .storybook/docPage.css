@@ -11,11 +11,11 @@ html, body {
 
 .DocPage-codeBlock {
   position: relative;
-  font-family: monospace;
-  font-size: 13px;
-  background: #f8f8f8;
-  margin-top: 8px;
-  white-space: break-spaces;
+  font-family: monospace !important;
+  font-size: 13px !important;
+  background: #f8f8f8 !important;
+  margin-top: 8px !important;
+  white-space: break-spaces !important;
 }
 
 .Utilities-example {
