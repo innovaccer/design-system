@@ -1,208 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalDescription component 
-  
- 1`] = `
-<div
-  className="Modal-description pl-6 pr-6"
-/>
-`;
-
-exports[`ModalDescription component 
-  description: "Sample String"
- 1`] = `
-<div
-  className="Modal-description pl-6 pr-6"
->
-  <div>
-    <Text
-      appearance="default"
-      size="regular"
-    >
-      Sample String
-    </Text>
-  </div>
-</div>
-`;
-
-exports[`ModalDescription component 
-  description: "Sample String", removePadding: false
- 1`] = `
-<div
-  className="Modal-description pl-6 pr-6"
->
-  <div>
-    <Text
-      appearance="default"
-      size="regular"
-    >
-      Sample String
-    </Text>
-  </div>
-</div>
-`;
-
-exports[`ModalDescription component 
-  description: "Sample String", removePadding: true
- 1`] = `
-<div
-  className="Modal-description"
->
-  <div>
-    <Text
-      appearance="default"
-      size="regular"
-    >
-      Sample String
-    </Text>
-  </div>
-</div>
-`;
-
-exports[`ModalDescription component 
-  removePadding: false
- 1`] = `
-<div
-  className="Modal-description pl-6 pr-6"
-/>
-`;
-
-exports[`ModalDescription component 
-  removePadding: true
- 1`] = `
-<div
-  className="Modal-description"
-/>
-`;
-
-exports[`ModalDescription component 
-  title: "Sample String"
- 1`] = `
-<div
-  className="Modal-description pl-6 pr-6"
->
-  <div>
-    <Text
-      appearance="default"
-      size="regular"
-      weight="strong"
-    >
-      Sample String
-    </Text>
-  </div>
-</div>
-`;
-
-exports[`ModalDescription component 
-  title: "Sample String", description: "Sample String"
- 1`] = `
-<div
-  className="Modal-description pl-6 pr-6"
->
-  <div>
-    <Text
-      appearance="default"
-      size="regular"
-      weight="strong"
-    >
-      Sample String
-    </Text>
-  </div>
-  <div>
-    <Text
-      appearance="default"
-      size="regular"
-    >
-      Sample String
-    </Text>
-  </div>
-</div>
-`;
-
-exports[`ModalDescription component 
   title: "Sample String", description: "Sample String", removePadding: false
  1`] = `
-<div
-  className="Modal-description pl-6 pr-6"
->
-  <div>
-    <Text
-      appearance="default"
-      size="regular"
-      weight="strong"
-    >
-      Sample String
-    </Text>
+<DocumentFragment>
+  <div
+    class="Modal-description pl-6 pr-6"
+    data-test="DesignSystem-ModalDescription"
+  >
+    <div>
+      <span
+        class="Text Text--default Text--strong Text--regular"
+        data-test="DesignSystem-ModalDescription--Title"
+      >
+        Sample String
+      </span>
+    </div>
+    <div>
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-ModalDescription--Description"
+      >
+        Sample String
+      </span>
+    </div>
   </div>
-  <div>
-    <Text
-      appearance="default"
-      size="regular"
-    >
-      Sample String
-    </Text>
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ModalDescription component 
   title: "Sample String", description: "Sample String", removePadding: true
  1`] = `
-<div
-  className="Modal-description"
->
-  <div>
-    <Text
-      appearance="default"
-      size="regular"
-      weight="strong"
-    >
-      Sample String
-    </Text>
+<DocumentFragment>
+  <div
+    class="Modal-description"
+    data-test="DesignSystem-ModalDescription"
+  >
+    <div>
+      <span
+        class="Text Text--default Text--strong Text--regular"
+        data-test="DesignSystem-ModalDescription--Title"
+      >
+        Sample String
+      </span>
+    </div>
+    <div>
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-ModalDescription--Description"
+      >
+        Sample String
+      </span>
+    </div>
   </div>
-  <div>
-    <Text
-      appearance="default"
-      size="regular"
-    >
-      Sample String
-    </Text>
-  </div>
-</div>
-`;
-
-exports[`ModalDescription component 
-  title: "Sample String", removePadding: false
- 1`] = `
-<div
-  className="Modal-description pl-6 pr-6"
->
-  <div>
-    <Text
-      appearance="default"
-      size="regular"
-      weight="strong"
-    >
-      Sample String
-    </Text>
-  </div>
-</div>
-`;
-
-exports[`ModalDescription component 
-  title: "Sample String", removePadding: true
- 1`] = `
-<div
-  className="Modal-description"
->
-  <div>
-    <Text
-      appearance="default"
-      size="regular"
-      weight="strong"
-    >
-      Sample String
-    </Text>
-  </div>
-</div>
+</DocumentFragment>
 `;

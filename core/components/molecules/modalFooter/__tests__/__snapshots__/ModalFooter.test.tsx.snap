@@ -1,26 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ModalFooter component should match the snapshot when Modal Footer is with two action buttons 1`] = `
-<div
-  className="Modal-footer"
->
-  <Button
-    appearance="basic"
-    iconAlign="left"
-    onClick={[Function]}
-    size="regular"
-    tabIndex={0}
+exports[`ModalFooter component 
+  
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="Modal-footer"
+    data-test="DesignSystem-ModalFooter"
   >
-    Basic
-  </Button>
-  <Button
-    appearance="primary"
-    iconAlign="left"
-    onClick={[Function]}
-    size="regular"
-    tabIndex={0}
-  >
-    Primary
-  </Button>
-</div>
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      tabindex="0"
+    >
+      Basic
+    </button>
+    <button
+      class="Button Button--regular Button--primary Button--iconAlign-left"
+      tabindex="0"
+    >
+      Primary
+    </button>
+  </div>
+</DocumentFragment>
 `;

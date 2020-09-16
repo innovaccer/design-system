@@ -1,15 +1,15 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import ModalDescription, { ModalDescriptionProps as Props } from '../ModalDescription';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const BooleanValue = [true, false];
-const StringValue = ['Sample String'];
+const StringValue = 'Sample String';
 
 const Mapper = {
-  title: valueHelper(StringValue, { iterate: true }),
-  description: valueHelper(StringValue, { iterate: true }),
-  removePadding: valueHelper(BooleanValue, { iterate: true }),
+  title: valueHelper(StringValue, { required: true }),
+  description: valueHelper(StringValue, { required: true }),
+  removePadding: valueHelper(BooleanValue, { iterate: true, required: true }),
 };
 
 describe('ModalDescription component', () => {
@@ -17,15 +17,60 @@ describe('ModalDescription component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { asFragment } = render(
         <ModalDescription
           {...attr}
         />
       );
 
-      expect(tree).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
   };
 
   testHelper(Mapper, testFunc);
+});
+
+describe('ModalDescription component with props', () => {
+
+  it('renders default props', () => {
+    const { getByTestId, queryByTestId } = render(<ModalDescription />);
+
+    expect(getByTestId('DesignSystem-ModalDescription')).toHaveClass('pl-6 pr-6');
+    expect(queryByTestId('DesignSystem-ModalDescription--Title')).not.toBeInTheDocument();
+    expect(queryByTestId('DesignSystem-ModalDescription--Description')).not.toBeInTheDocument();
+
+  });
+
+  it('ModalDescription with prop: title', () => {
+    const { getByTestId } = render(<ModalDescription title={StringValue}/>);
+
+    expect(getByTestId('DesignSystem-ModalDescription--Title').textContent).toMatch(StringValue);
+
+  });
+
+  it('ModalDescription with prop: description', () => {
+    const { getByTestId } = render(<ModalDescription description={StringValue}/>);
+
+    expect(getByTestId('DesignSystem-ModalDescription--Description').textContent).toMatch(StringValue);
+
+  });
+
+  it('ModalDescription with prop: removePadding', () => {
+    const { getByTestId } = render(<ModalDescription removePadding={true}/>);
+
+    expect(getByTestId('DesignSystem-ModalDescription')).not.toHaveClass('pl-6 pr-6');
+
+  });
+
+});
+
+describe('ModalDescription with overwrite class', () => {
+  const className = 'DS-ModalDescription';
+
+  it('overwrite ModalDescription class', () => {
+    const { getByTestId } = render(<ModalDescription className={className}/>);
+
+    expect(getByTestId('DesignSystem-ModalDescription')).toHaveClass(className);
+  });
+
 });

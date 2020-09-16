@@ -16,8 +16,10 @@ export const ModalBody = (props: ModalBodyProps) => {
   const baseProps = extractBaseProps(props);
 
   useEffect(() => {
+
     const scrollHeight = ref && ref.current ? ref.current.scrollHeight : 0;
     const clientHeight = ref && ref.current ? ref.current.clientHeight : 0;
+
     if (scrollHeight > clientHeight) {
       setScroll(true);
     }
@@ -29,7 +31,7 @@ export const ModalBody = (props: ModalBodyProps) => {
   }, className);
 
   return (
-    <div {...baseProps} className={classes} ref={ref}>
+    <div data-test="DesignSystem-ModalBody" {...baseProps} className={classes} ref={ref}>
       {children}
     </div>
   );

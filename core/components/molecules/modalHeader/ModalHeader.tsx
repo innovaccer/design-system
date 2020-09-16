@@ -31,16 +31,22 @@ export const ModalHeader = (props: ModalHeaderProps) => {
     return (
       <div
         className="Modal-close-icon"
+        data-test="DesignSystem-ModalHeader--CloseIcon"
         onClick={(event: React.MouseEvent<HTMLElement, MouseEvent>) => onClose(event, 'IconClick')}
       >
-        <Icon name={'close'}/>
+        <Icon name={'close'} />
       </div>
     );
   };
 
   const getHeaderIcon = () => {
     return (
-      <div className="Modal-header-icon"><Icon name={icon}/></div>
+      <div
+        className="Modal-header-icon"
+        data-test="DesignSystem-ModalHeader--Icon"
+      >
+        <Icon name={icon} />
+      </div>
     );
   };
 
@@ -48,7 +54,7 @@ export const ModalHeader = (props: ModalHeaderProps) => {
 
   return (
     <div className="Modal-header-wrapper">
-      <div {...baseProps} className={classes}>
+      <div data-test="DesignSystem-ModalHeader" {...baseProps} className={classes}>
         {icon && getHeaderIcon()}
         <div>
           <Heading>
@@ -58,7 +64,7 @@ export const ModalHeader = (props: ModalHeaderProps) => {
         {closeButton}
       </div>
       {subHeading && (
-        <div className={subheaderClasses}>
+        <div className={subheaderClasses} data-test="DesignSystem-ModalHeader--Subheading">
           <Text appearance="subtle">
             {subHeading}
           </Text>

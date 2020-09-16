@@ -1,317 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalHeader component 
-  onClose: "[Function]"
+  icon: "events", heading: "Modal header", onClose: "[Function]", subHeading: "Modal subheading"
  1`] = `
-<div
-  className="Modal-header-wrapper"
->
+<DocumentFragment>
   <div
-    className="Modal-header"
+    class="Modal-header-wrapper"
   >
-    <div>
-      <Heading
-        appearance="default"
-        size="m"
-      />
-    </div>
     <div
-      className="Modal-close-icon"
-      onClick={[Function]}
+      class="Modal-header"
+      data-test="DesignSystem-ModalHeader"
     >
-      <Icon
-        appearance="default"
-        name="close"
-        size={16}
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`ModalHeader component 
-  onClose: "[Function]", heading: "events"
- 1`] = `
-<div
-  className="Modal-header-wrapper"
->
-  <div
-    className="Modal-header"
-  >
-    <div>
-      <Heading
-        appearance="default"
-        size="m"
+      <div
+        class="Modal-header-icon"
+        data-test="DesignSystem-ModalHeader--Icon"
       >
-        events
-      </Heading>
-    </div>
-    <div
-      className="Modal-close-icon"
-      onClick={[Function]}
-    >
-      <Icon
-        appearance="default"
-        name="close"
-        size={16}
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`ModalHeader component 
-  onClose: "[Function]", heading: "events", subHeading: "events"
- 1`] = `
-<div
-  className="Modal-header-wrapper"
->
-  <div
-    className="Modal-header"
-  >
-    <div>
-      <Heading
-        appearance="default"
-        size="m"
+        <i
+          class="material-icons Icon Icon--default"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_undefined
+        </i>
+      </div>
+      <div>
+        <h4
+          class="Heading Heading--m Heading--default"
+          data-test="DesignSystem-Heading"
+        >
+          Modal header
+        </h4>
+      </div>
+      <div
+        class="Modal-close-icon"
+        data-test="DesignSystem-ModalHeader--CloseIcon"
       >
-        events
-      </Heading>
+        <i
+          class="material-icons Icon Icon--default"
+          style="font-size: 16px; width: 16px;"
+        >
+          close_undefined
+        </i>
+      </div>
     </div>
     <div
-      className="Modal-close-icon"
-      onClick={[Function]}
+      class="Modal-header-subheader Modal-header-subheader--withIcon"
+      data-test="DesignSystem-ModalHeader--Subheading"
     >
-      <Icon
-        appearance="default"
-        name="close"
-        size={16}
-      />
-    </div>
-  </div>
-  <div
-    className="Modal-header-subheader"
-  >
-    <Text
-      appearance="subtle"
-      size="regular"
-    >
-      events
-    </Text>
-  </div>
-</div>
-`;
-
-exports[`ModalHeader component 
-  onClose: "[Function]", icon: "events"
- 1`] = `
-<div
-  className="Modal-header-wrapper"
->
-  <div
-    className="Modal-header"
-  >
-    <div
-      className="Modal-header-icon"
-    >
-      <Icon
-        appearance="default"
-        name="events"
-        size={16}
-      />
-    </div>
-    <div>
-      <Heading
-        appearance="default"
-        size="m"
-      />
-    </div>
-    <div
-      className="Modal-close-icon"
-      onClick={[Function]}
-    >
-      <Icon
-        appearance="default"
-        name="close"
-        size={16}
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`ModalHeader component 
-  onClose: "[Function]", icon: "events", heading: "events"
- 1`] = `
-<div
-  className="Modal-header-wrapper"
->
-  <div
-    className="Modal-header"
-  >
-    <div
-      className="Modal-header-icon"
-    >
-      <Icon
-        appearance="default"
-        name="events"
-        size={16}
-      />
-    </div>
-    <div>
-      <Heading
-        appearance="default"
-        size="m"
+      <span
+        class="Text Text--subtle Text--regular"
+        data-test="DesignSystem-Text"
       >
-        events
-      </Heading>
-    </div>
-    <div
-      className="Modal-close-icon"
-      onClick={[Function]}
-    >
-      <Icon
-        appearance="default"
-        name="close"
-        size={16}
-      />
+        Modal subheading
+      </span>
     </div>
   </div>
-</div>
-`;
-
-exports[`ModalHeader component 
-  onClose: "[Function]", icon: "events", heading: "events", subHeading: "events"
- 1`] = `
-<div
-  className="Modal-header-wrapper"
->
-  <div
-    className="Modal-header"
-  >
-    <div
-      className="Modal-header-icon"
-    >
-      <Icon
-        appearance="default"
-        name="events"
-        size={16}
-      />
-    </div>
-    <div>
-      <Heading
-        appearance="default"
-        size="m"
-      >
-        events
-      </Heading>
-    </div>
-    <div
-      className="Modal-close-icon"
-      onClick={[Function]}
-    >
-      <Icon
-        appearance="default"
-        name="close"
-        size={16}
-      />
-    </div>
-  </div>
-  <div
-    className="Modal-header-subheader Modal-header-subheader--withIcon"
-  >
-    <Text
-      appearance="subtle"
-      size="regular"
-    >
-      events
-    </Text>
-  </div>
-</div>
-`;
-
-exports[`ModalHeader component 
-  onClose: "[Function]", icon: "events", subHeading: "events"
- 1`] = `
-<div
-  className="Modal-header-wrapper"
->
-  <div
-    className="Modal-header"
-  >
-    <div
-      className="Modal-header-icon"
-    >
-      <Icon
-        appearance="default"
-        name="events"
-        size={16}
-      />
-    </div>
-    <div>
-      <Heading
-        appearance="default"
-        size="m"
-      />
-    </div>
-    <div
-      className="Modal-close-icon"
-      onClick={[Function]}
-    >
-      <Icon
-        appearance="default"
-        name="close"
-        size={16}
-      />
-    </div>
-  </div>
-  <div
-    className="Modal-header-subheader Modal-header-subheader--withIcon"
-  >
-    <Text
-      appearance="subtle"
-      size="regular"
-    >
-      events
-    </Text>
-  </div>
-</div>
-`;
-
-exports[`ModalHeader component 
-  onClose: "[Function]", subHeading: "events"
- 1`] = `
-<div
-  className="Modal-header-wrapper"
->
-  <div
-    className="Modal-header"
-  >
-    <div>
-      <Heading
-        appearance="default"
-        size="m"
-      />
-    </div>
-    <div
-      className="Modal-close-icon"
-      onClick={[Function]}
-    >
-      <Icon
-        appearance="default"
-        name="close"
-        size={16}
-      />
-    </div>
-  </div>
-  <div
-    className="Modal-header-subheader"
-  >
-    <Text
-      appearance="subtle"
-      size="regular"
-    >
-      events
-    </Text>
-  </div>
-</div>
+</DocumentFragment>
 `;

@@ -1,29 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ModalBody component should match the snapshot for Modal Body with scroll 1`] = `
-<div
-  className="Modal-body"
->
+exports[`ModalBody component 
+  
+ 1`] = `
+<DocumentFragment>
   <div
-    style={
-      Object {
-        "height": "500px",
-      }
-    }
+    class="Modal-body"
+    data-test="DesignSystem-ModalBody"
   >
-    <p>
-      Modal Body
-    </p>
+    <div>
+      <p>
+        Modal Body
+      </p>
+    </div>
   </div>
-</div>
-`;
-
-exports[`ModalBody component should match the snapshot for Modal Body without scroll 1`] = `
-<div
-  className="Modal-body"
->
-  <p>
-    Modal Body
-  </p>
-</div>
+</DocumentFragment>
 `;
