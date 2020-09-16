@@ -15,7 +15,7 @@ export const ModalFooter = (props: ModalFooterProps) => {
   }, className);
 
   return (
-    <div {...baseProps} className={classes}>
+    <div data-test="DesignSystem-ModalFooter" {...baseProps} className={classes}>
       {children}
     </div>
   );

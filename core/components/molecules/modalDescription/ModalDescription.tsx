@@ -19,17 +19,17 @@ export const ModalDescription = (props: ModalDescriptionProps) => {
   }, className);
 
   return (
-    <div {...baseProps} className={classes}>
+    <div data-test="DesignSystem-ModalDescription" {...baseProps} className={classes}>
       {title && (
         <div>
-          <Text weight="strong">
+          <Text weight="strong" data-test="DesignSystem-ModalDescription--Title">
             {title}
           </Text>
         </div>
       )}
       {description && (
         <div>
-          <Text>
+          <Text data-test="DesignSystem-ModalDescription--Description">
             {description}
           </Text>
         </div>

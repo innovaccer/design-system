@@ -106,7 +106,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
   render() {
     const { animate, open, zIndex } = this.state;
-    const { className, dimension, backdropClose } = this.props;
+    const { className, backdropClose, dimension } = this.props;
 
     const classes = classNames({
       Modal: true,
@@ -125,19 +125,23 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
     const ModalContainer = (
       <div
+        data-test="DesignSystem-ModalContainer"
         className={ContainerClass}
         data-layer={true}
         style={{ zIndex }}
         ref={this.modalRef}
       >
-        <div {...baseProps} className={classes}>
+        <div data-test="DesignSystem-Modal" {...baseProps} className={classes}>
           {this.props.children}
         </div>
       </div>
     );
 
     const ModalWrapper = this.props.backdrop ? (
-      <OutsideClick onOutsideClick={(event: Event) => open && backdropClose(event, 'OutsideClick')}>
+      <OutsideClick
+        data-test="DesignSystem-Modal--OutsideClick"
+        onOutsideClick={(event: Event) => open && backdropClose(event, 'OutsideClick')}
+      >
         {ModalContainer}
       </OutsideClick>
     ) : ModalContainer;
