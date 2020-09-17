@@ -19,7 +19,10 @@ exports[`Legend component
       }
     }
   />
-  <Text>
+  <Text
+    appearance="default"
+    size="regular"
+  >
     Legend
   </Text>
 </div>
@@ -44,7 +47,10 @@ exports[`Legend component
       }
     }
   />
-  <Text>
+  <Text
+    appearance="default"
+    size="regular"
+  >
     Legend
   </Text>
 </div>
@@ -69,7 +75,10 @@ exports[`Legend component
       }
     }
   />
-  <Text>
+  <Text
+    appearance="default"
+    size="regular"
+  >
     Legend
   </Text>
 </div>
@@ -94,7 +103,10 @@ exports[`Legend component
       }
     }
   />
-  <Text>
+  <Text
+    appearance="default"
+    size="regular"
+  >
     Legend
   </Text>
 </div>
@@ -119,7 +131,10 @@ exports[`Legend component
       }
     }
   />
-  <Text>
+  <Text
+    appearance="default"
+    size="regular"
+  >
     Legend
   </Text>
 </div>
@@ -144,7 +159,10 @@ exports[`Legend component
       }
     }
   />
-  <Text>
+  <Text
+    appearance="default"
+    size="regular"
+  >
     Legend
   </Text>
 </div>
@@ -169,7 +187,10 @@ exports[`Legend component
       }
     }
   />
-  <Text>
+  <Text
+    appearance="default"
+    size="regular"
+  >
     Legend
   </Text>
 </div>
@@ -194,7 +215,10 @@ exports[`Legend component
       }
     }
   />
-  <Text>
+  <Text
+    appearance="default"
+    size="regular"
+  >
     Legend
   </Text>
 </div>
@@ -219,7 +243,10 @@ exports[`Legend component
       }
     }
   />
-  <Text>
+  <Text
+    appearance="default"
+    size="regular"
+  >
     Legend
   </Text>
 </div>
@@ -244,7 +271,10 @@ exports[`Legend component
       }
     }
   />
-  <Text>
+  <Text
+    appearance="default"
+    size="regular"
+  >
     Legend
   </Text>
 </div>
@@ -271,6 +301,7 @@ exports[`Legend component
   />
   <Text
     appearance="default"
+    size="regular"
   >
     Legend
   </Text>
@@ -298,6 +329,7 @@ exports[`Legend component
   />
   <Text
     appearance="destructive"
+    size="regular"
   >
     Legend
   </Text>
@@ -325,6 +357,7 @@ exports[`Legend component
   />
   <Text
     appearance="disabled"
+    size="regular"
   >
     Legend
   </Text>
@@ -352,6 +385,7 @@ exports[`Legend component
   />
   <Text
     appearance="subtle"
+    size="regular"
   >
     Legend
   </Text>
@@ -379,6 +413,7 @@ exports[`Legend component
   />
   <Text
     appearance="white"
+    size="regular"
   >
     Legend
   </Text>
@@ -405,6 +440,8 @@ exports[`Legend component
     }
   />
   <Text
+    appearance="default"
+    size="regular"
     weight="medium"
   >
     Legend
@@ -432,6 +469,8 @@ exports[`Legend component
     }
   />
   <Text
+    appearance="default"
+    size="regular"
     weight="strong"
   >
     Legend

@@ -5,12 +5,6 @@ exports[`Card component
  1`] = `
 <div
   className="Card Card--shadow-dark"
-  style={
-    Object {
-      "height": "150px",
-      "width": "150px",
-    }
-  }
 >
   <span>
     Hello
@@ -23,12 +17,6 @@ exports[`Card component
  1`] = `
 <div
   className="Card Card--shadow-light"
-  style={
-    Object {
-      "height": "150px",
-      "width": "150px",
-    }
-  }
 >
   <span>
     Hello
@@ -41,12 +29,6 @@ exports[`Card component
  1`] = `
 <div
   className="Card Card--shadow-medium"
-  style={
-    Object {
-      "height": "150px",
-      "width": "150px",
-    }
-  }
 >
   <span>
     Hello
@@ -59,12 +41,6 @@ exports[`Card component
  1`] = `
 <div
   className="Card Card--shadow-none"
-  style={
-    Object {
-      "height": "150px",
-      "width": "150px",
-    }
-  }
 >
   <span>
     Hello

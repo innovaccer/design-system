@@ -20,11 +20,11 @@ Object {
             class="PopperWrapper-trigger"
           >
             <span
-              class="Avatar Avatar--regular Avatar--success"
+              class="Avatar Avatar--regular Avatar--accent1"
               data-test="DesignSystem-Avatar"
             >
               <span
-                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
                 data-test="DesignSystem-Text"
               >
                 JD
@@ -41,11 +41,11 @@ Object {
             class="PopperWrapper-trigger"
           >
             <span
-              class="Avatar Avatar--regular Avatar--primary"
+              class="Avatar Avatar--regular Avatar--alert"
               data-test="DesignSystem-Avatar"
             >
               <span
-                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
                 data-test="DesignSystem-Text"
               >
                 SP
@@ -90,11 +90,11 @@ Object {
           class="PopperWrapper-trigger"
         >
           <span
-            class="Avatar Avatar--regular Avatar--success"
+            class="Avatar Avatar--regular Avatar--accent1"
             data-test="DesignSystem-Avatar"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
               data-test="DesignSystem-Text"
             >
               JD
@@ -111,11 +111,11 @@ Object {
           class="PopperWrapper-trigger"
         >
           <span
-            class="Avatar Avatar--regular Avatar--primary"
+            class="Avatar Avatar--regular Avatar--alert"
             data-test="DesignSystem-Avatar"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
               data-test="DesignSystem-Text"
             >
               SP

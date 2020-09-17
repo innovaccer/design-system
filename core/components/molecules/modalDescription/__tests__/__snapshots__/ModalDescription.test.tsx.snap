@@ -15,7 +15,10 @@ exports[`ModalDescription component
   className="Modal-description pl-6 pr-6"
 >
   <div>
-    <Text>
+    <Text
+      appearance="default"
+      size="regular"
+    >
       Sample String
     </Text>
   </div>
@@ -29,7 +32,10 @@ exports[`ModalDescription component
   className="Modal-description pl-6 pr-6"
 >
   <div>
-    <Text>
+    <Text
+      appearance="default"
+      size="regular"
+    >
       Sample String
     </Text>
   </div>
@@ -43,7 +49,10 @@ exports[`ModalDescription component
   className="Modal-description"
 >
   <div>
-    <Text>
+    <Text
+      appearance="default"
+      size="regular"
+    >
       Sample String
     </Text>
   </div>
@@ -74,6 +83,8 @@ exports[`ModalDescription component
 >
   <div>
     <Text
+      appearance="default"
+      size="regular"
       weight="strong"
     >
       Sample String
@@ -90,13 +101,18 @@ exports[`ModalDescription component
 >
   <div>
     <Text
+      appearance="default"
+      size="regular"
       weight="strong"
     >
       Sample String
     </Text>
   </div>
   <div>
-    <Text>
+    <Text
+      appearance="default"
+      size="regular"
+    >
       Sample String
     </Text>
   </div>
@@ -111,13 +127,18 @@ exports[`ModalDescription component
 >
   <div>
     <Text
+      appearance="default"
+      size="regular"
       weight="strong"
     >
       Sample String
     </Text>
   </div>
   <div>
-    <Text>
+    <Text
+      appearance="default"
+      size="regular"
+    >
       Sample String
     </Text>
   </div>
@@ -132,13 +153,18 @@ exports[`ModalDescription component
 >
   <div>
     <Text
+      appearance="default"
+      size="regular"
       weight="strong"
     >
       Sample String
     </Text>
   </div>
   <div>
-    <Text>
+    <Text
+      appearance="default"
+      size="regular"
+    >
       Sample String
     </Text>
   </div>
@@ -153,6 +179,8 @@ exports[`ModalDescription component
 >
   <div>
     <Text
+      appearance="default"
+      size="regular"
       weight="strong"
     >
       Sample String
@@ -169,6 +197,8 @@ exports[`ModalDescription component
 >
   <div>
     <Text
+      appearance="default"
+      size="regular"
       weight="strong"
     >
       Sample String

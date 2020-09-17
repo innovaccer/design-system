@@ -6,13 +6,19 @@ exports[`ModalFooter component should match the snapshot when Modal Footer is wi
 >
   <Button
     appearance="basic"
+    iconAlign="left"
     onClick={[Function]}
+    size="regular"
+    tabIndex={0}
   >
     Basic
   </Button>
   <Button
     appearance="primary"
+    iconAlign="left"
     onClick={[Function]}
+    size="regular"
+    tabIndex={0}
   >
     Primary
   </Button>

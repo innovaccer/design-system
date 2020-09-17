@@ -15,7 +15,9 @@ exports[`StatusHint component
     data-test="DesignSystem-StatusHint--Icon"
   />
   <Text
+    appearance="default"
     data-test="DesignSystem-StatusHint--Text"
+    size="regular"
     weight="medium"
   >
     StatusHint
@@ -38,7 +40,9 @@ exports[`StatusHint component
     data-test="DesignSystem-StatusHint--Icon"
   />
   <Text
+    appearance="default"
     data-test="DesignSystem-StatusHint--Text"
+    size="regular"
     weight="medium"
   >
     StatusHint
@@ -61,7 +65,9 @@ exports[`StatusHint component
     data-test="DesignSystem-StatusHint--Icon"
   />
   <Text
+    appearance="default"
     data-test="DesignSystem-StatusHint--Text"
+    size="regular"
     weight="medium"
   >
     StatusHint
@@ -84,7 +90,9 @@ exports[`StatusHint component
     data-test="DesignSystem-StatusHint--Icon"
   />
   <Text
+    appearance="default"
     data-test="DesignSystem-StatusHint--Text"
+    size="regular"
     weight="medium"
   >
     StatusHint
@@ -107,7 +115,9 @@ exports[`StatusHint component
     data-test="DesignSystem-StatusHint--Icon"
   />
   <Text
+    appearance="default"
     data-test="DesignSystem-StatusHint--Text"
+    size="regular"
     weight="medium"
   >
     StatusHint

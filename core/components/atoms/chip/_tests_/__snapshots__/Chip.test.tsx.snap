@@ -3,159 +3,137 @@
 exports[`Chip component 
   type: "Action"
  1`] = `
-<div>
-  <Component
-    className="Chip--Action Chip"
-    label=""
-    onClick={[Function]}
-    onClose={[Function]}
-    selected={false}
-  />
-</div>
+<Component
+  className="Chip Chip--Action"
+  label=""
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
 `;
 
 exports[`Chip component 
   type: "Action", disabled: false
  1`] = `
-<div>
-  <Component
-    className="Chip--Action Chip"
-    disabled={false}
-    label=""
-    onClick={[Function]}
-    onClose={[Function]}
-    selected={false}
-  />
-</div>
+<Component
+  className="Chip Chip--Action"
+  disabled={false}
+  label=""
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
 `;
 
 exports[`Chip component 
   type: "Action", disabled: true
  1`] = `
-<div>
-  <Component
-    className="Chip-Action--disabled Chip"
-    disabled={true}
-    label=""
-    onClick={[Function]}
-    onClose={[Function]}
-    selected={false}
-  />
-</div>
+<Component
+  className="Chip Chip-Action--disabled"
+  disabled={true}
+  label=""
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
 `;
 
 exports[`Chip component 
   type: "Input"
  1`] = `
-<div>
-  <Component
-    className="Chip--Input Chip"
-    label=""
-    onClick={[Function]}
-    onClose={[Function]}
-    selected={false}
-  />
-</div>
+<Component
+  className="Chip Chip--Input"
+  label=""
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
 `;
 
 exports[`Chip component 
   type: "Input", disabled: false
  1`] = `
-<div>
-  <Component
-    className="Chip--Input Chip"
-    disabled={false}
-    label=""
-    onClick={[Function]}
-    onClose={[Function]}
-    selected={false}
-  />
-</div>
+<Component
+  className="Chip Chip--Input"
+  disabled={false}
+  label=""
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
 `;
 
 exports[`Chip component 
   type: "Input", disabled: true
  1`] = `
-<div>
-  <Component
-    className="Chip-Input--disabled Chip"
-    disabled={true}
-    label=""
-    onClick={[Function]}
-    onClose={[Function]}
-    selected={false}
-  />
-</div>
+<Component
+  className="Chip Chip-Input--disabled"
+  disabled={true}
+  label=""
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
 `;
 
 exports[`Chip component 
   type: "Selection"
  1`] = `
-<div>
-  <Component
-    className="Chip--Selection Chip"
-    label=""
-    onClick={[Function]}
-    onClose={[Function]}
-    selected={false}
-  />
-</div>
+<Component
+  className="Chip Chip--Selection"
+  label=""
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
 `;
 
 exports[`Chip component 
   type: "Selection", disabled: false
  1`] = `
-<div>
-  <Component
-    className="Chip--Selection Chip"
-    disabled={false}
-    label=""
-    onClick={[Function]}
-    onClose={[Function]}
-    selected={false}
-  />
-</div>
+<Component
+  className="Chip Chip--Selection"
+  disabled={false}
+  label=""
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
 `;
 
 exports[`Chip component 
   type: "Selection", disabled: true
  1`] = `
-<div>
-  <Component
-    className="Chip-Selection--disabled Chip"
-    disabled={true}
-    label=""
-    onClick={[Function]}
-    onClose={[Function]}
-    selected={false}
-  />
-</div>
+<Component
+  className="Chip Chip-Selection--disabled"
+  disabled={true}
+  label=""
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
 `;
 
 exports[`Chip component 
   type: "Selection", selected: false
  1`] = `
-<div>
-  <Component
-    className="Chip--Selection Chip"
-    label=""
-    onClick={[Function]}
-    onClose={[Function]}
-    selected={false}
-  />
-</div>
+<Component
+  className="Chip Chip--Selection"
+  label=""
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
 `;
 
 exports[`Chip component 
   type: "Selection", selected: true
  1`] = `
-<div>
-  <Component
-    className="Chip--Selection Chip Chip-Selection--selected"
-    label=""
-    onClick={[Function]}
-    onClose={[Function]}
-    selected={false}
-  />
-</div>
+<Component
+  className="Chip Chip--Selection Chip-Selection--selected"
+  label=""
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
 `;

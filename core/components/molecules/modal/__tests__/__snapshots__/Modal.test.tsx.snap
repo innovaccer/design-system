@@ -5,13 +5,23 @@ exports[`Modal component
  1`] = `
 <div>
   <Portal
-    containerInfo={<body />}
+    containerInfo={
+      <div
+        class="Modal-wrapper"
+      />
+    }
   >
     <div
-      className="Modal-container"
+      className="Modal-container Modal-container--open"
+      data-layer={true}
+      style={
+        Object {
+          "zIndex": undefined,
+        }
+      }
     >
       <div
-        className="Modal Modal--large Modal--open Modal-animation--close"
+        className="Modal Modal--large Modal--open Modal-animation--open"
       >
         <ModalHeader
           heading="Heading"
@@ -33,13 +43,23 @@ exports[`Modal component
  1`] = `
 <div>
   <Portal
-    containerInfo={<body />}
+    containerInfo={
+      <div
+        class="Modal-wrapper"
+      />
+    }
   >
     <div
-      className="Modal-container"
+      className="Modal-container Modal-container--open"
+      data-layer={true}
+      style={
+        Object {
+          "zIndex": undefined,
+        }
+      }
     >
       <div
-        className="Modal Modal--medium Modal--open Modal-animation--close"
+        className="Modal Modal--medium Modal--open Modal-animation--open"
       >
         <ModalHeader
           heading="Heading"
@@ -61,13 +81,23 @@ exports[`Modal component
  1`] = `
 <div>
   <Portal
-    containerInfo={<body />}
+    containerInfo={
+      <div
+        class="Modal-wrapper"
+      />
+    }
   >
     <div
-      className="Modal-container"
+      className="Modal-container Modal-container--open"
+      data-layer={true}
+      style={
+        Object {
+          "zIndex": undefined,
+        }
+      }
     >
       <div
-        className="Modal Modal--small Modal--open Modal-animation--close"
+        className="Modal Modal--small Modal--open Modal-animation--open"
       >
         <ModalHeader
           heading="Heading"
@@ -89,16 +119,26 @@ exports[`Modal component
  1`] = `
 <div>
   <Portal
-    containerInfo={<body />}
+    containerInfo={
+      <div
+        class="Modal-wrapper"
+      />
+    }
   >
     <OutsideClick
       onOutsideClick={[Function]}
     >
       <div
-        className="Modal-container"
+        className="Modal-container Modal-container--open"
+        data-layer={true}
+        style={
+          Object {
+            "zIndex": undefined,
+          }
+        }
       >
         <div
-          className="Modal Modal--large Modal--open Modal-animation--close"
+          className="Modal Modal--large Modal--open Modal-animation--open"
         >
           <ModalHeader
             heading="Heading"
@@ -121,16 +161,26 @@ exports[`Modal component
  1`] = `
 <div>
   <Portal
-    containerInfo={<body />}
+    containerInfo={
+      <div
+        class="Modal-wrapper"
+      />
+    }
   >
     <OutsideClick
       onOutsideClick={[Function]}
     >
       <div
-        className="Modal-container"
+        className="Modal-container Modal-container--open"
+        data-layer={true}
+        style={
+          Object {
+            "zIndex": undefined,
+          }
+        }
       >
         <div
-          className="Modal Modal--medium Modal--open Modal-animation--close"
+          className="Modal Modal--medium Modal--open Modal-animation--open"
         >
           <ModalHeader
             heading="Heading"
@@ -153,16 +203,26 @@ exports[`Modal component
  1`] = `
 <div>
   <Portal
-    containerInfo={<body />}
+    containerInfo={
+      <div
+        class="Modal-wrapper"
+      />
+    }
   >
     <OutsideClick
       onOutsideClick={[Function]}
     >
       <div
-        className="Modal-container"
+        className="Modal-container Modal-container--open"
+        data-layer={true}
+        style={
+          Object {
+            "zIndex": undefined,
+          }
+        }
       >
         <div
-          className="Modal Modal--small Modal--open Modal-animation--close"
+          className="Modal Modal--small Modal--open Modal-animation--open"
         >
           <ModalHeader
             heading="Heading"

@@ -10,16 +10,19 @@ exports[`Tooltip component
   onToggle={[Function]}
   open={false}
   placement="bottom"
-  style={Object {}}
   trigger={
-    <Button>
+    <Button
+      appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
+    >
       Button
     </Button>
   }
 >
   <div
     className="Tooltip"
-    style={Object {}}
   >
     Sample string
   </div>
@@ -36,16 +39,19 @@ exports[`Tooltip component
   onToggle={[Function]}
   open={false}
   placement="bottom-end"
-  style={Object {}}
   trigger={
-    <Button>
+    <Button
+      appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
+    >
       Button
     </Button>
   }
 >
   <div
     className="Tooltip"
-    style={Object {}}
   >
     Sample string
   </div>
@@ -62,16 +68,77 @@ exports[`Tooltip component
   onToggle={[Function]}
   open={false}
   placement="bottom-start"
-  style={Object {}}
   trigger={
-    <Button>
+    <Button
+      appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
+    >
       Button
     </Button>
   }
 >
   <div
     className="Tooltip"
-    style={Object {}}
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  position: "left", tooltip: "Sample string"
+ 1`] = `
+<PopperWrapper
+  appendToBody={true}
+  offset="Medium"
+  on="hover"
+  onToggle={[Function]}
+  open={false}
+  placement="left"
+  trigger={
+    <Button
+      appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
+    >
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
+  >
+    Sample string
+  </div>
+</PopperWrapper>
+`;
+
+exports[`Tooltip component 
+  position: "right", tooltip: "Sample string"
+ 1`] = `
+<PopperWrapper
+  appendToBody={true}
+  offset="Medium"
+  on="hover"
+  onToggle={[Function]}
+  open={false}
+  placement="right"
+  trigger={
+    <Button
+      appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
+    >
+      Button
+    </Button>
+  }
+>
+  <div
+    className="Tooltip"
   >
     Sample string
   </div>
@@ -88,16 +155,19 @@ exports[`Tooltip component
   onToggle={[Function]}
   open={false}
   placement="top"
-  style={Object {}}
   trigger={
-    <Button>
+    <Button
+      appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
+    >
       Button
     </Button>
   }
 >
   <div
     className="Tooltip"
-    style={Object {}}
   >
     Sample string
   </div>
@@ -114,16 +184,19 @@ exports[`Tooltip component
   onToggle={[Function]}
   open={false}
   placement="top-end"
-  style={Object {}}
   trigger={
-    <Button>
+    <Button
+      appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
+    >
       Button
     </Button>
   }
 >
   <div
     className="Tooltip"
-    style={Object {}}
   >
     Sample string
   </div>
@@ -140,16 +213,19 @@ exports[`Tooltip component
   onToggle={[Function]}
   open={false}
   placement="top-start"
-  style={Object {}}
   trigger={
-    <Button>
+    <Button
+      appearance="basic"
+      iconAlign="left"
+      size="regular"
+      tabIndex={0}
+    >
       Button
     </Button>
   }
 >
   <div
     className="Tooltip"
-    style={Object {}}
   >
     Sample string
   </div>

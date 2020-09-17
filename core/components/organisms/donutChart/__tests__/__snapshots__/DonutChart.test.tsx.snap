@@ -70,7 +70,7 @@ exports[`DonutChart component
           endAngle={360}
           fill="#808080"
           hide={false}
-          innerRadius="50%"
+          innerRadius="80%"
           isAnimationActive={true}
           labelLine={true}
           legendType="rect"

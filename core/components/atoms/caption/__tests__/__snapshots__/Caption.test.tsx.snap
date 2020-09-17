@@ -8,6 +8,7 @@ exports[`Caption component
 >
   <Text
     appearance="subtle"
+    size="regular"
     small={true}
     weight="medium"
   >
@@ -24,6 +25,7 @@ exports[`Caption component
 >
   <Text
     appearance="subtle"
+    size="regular"
     small={true}
     weight="medium"
   >
