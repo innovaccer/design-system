@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1600157467377 
+   * Generated on: 1600326959164 
    *      Package: @innovaccer/design-system
-   *      Version: v1.2.0-1
+   *      Version: v1.2.0-2
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -8357,6 +8357,7 @@
         draggable = _this$props.draggable,
         withCheckbox = _this$props.withCheckbox,
         data = _this$props.data;
+    var init = _this.state.init;
     var classes = classNames__default['default']((_classNames = {
       Grid: 'true'
     }, _defineProperty(_classNames, "Grid--".concat(type), type), _defineProperty(_classNames, "Grid--".concat(size), size), _classNames), className);
@@ -8377,6 +8378,15 @@
         state = _React$useState2[0],
         setState = _React$useState2[1];
 
+    React.useEffect(function () {
+      if (init) {
+        setState({
+          offset: offset,
+          avgRowHeight: avgRowHeight,
+          inView: _this.gridRef.scrollHeight / avgRowHeight
+        });
+      }
+    }, [init]);
     React.useEffect(function () {
       setState(initialState);
 
@@ -8942,13 +8952,9 @@
       _this = _super.call(this, props);
 
       _defineProperty(_assertThisInitialized(_this), "updateData", function () {
-        var async = _this.state.async;
-
-        if (async) {
-          _this.setState({
-            loading: true
-          });
-        }
+        _this.setState({
+          loading: true
+        });
 
         _this.debounceUpdate();
       });
@@ -9021,6 +9027,9 @@
 
           _this.setState({
             totalRecords: totalRecords,
+            loading: false,
+            error: !renderedData.length,
+            errorType: 'NO_RECORDS_FOUND',
             selectAll: getSelectAll$1(renderedData),
             schema: renderedSchema,
             data: renderedData
@@ -9122,11 +9131,11 @@
         data: !_async ? _data : [],
         schema: !_async ? _schema : [],
         page: props.page,
-        sortingList: props.sortingList || [],
-        filterList: props.filterList || {},
+        sortingList: props.sortingList,
+        filterList: props.filterList,
         totalRecords: !_async ? _data.length : 0,
-        loading: !_async ? props.loading || false : true,
-        error: !_async ? props.error || false : false,
+        loading: !_async ? props.loading : true,
+        error: !_async ? props.error : false,
         errorType: props.errorType,
         selectAll: getSelectAll$1([]),
         searchTerm: undefined
@@ -9156,10 +9165,7 @@
               errorType: this.props.errorType,
               page: 1,
               totalRecords: _data2.length || 0,
-              sortingList: [],
-              filterList: {},
-              selectAll: getSelectAll$1([]),
-              searchTerm: undefined
+              selectAll: getSelectAll$1([])
             });
           }
         }
@@ -9256,7 +9262,7 @@
             errorType: this.state.errorType
           }),
           onRowClick: onRowClick
-        }))), withPagination && totalPages > 1 && /*#__PURE__*/React.createElement("div", {
+        }))), withPagination && !this.state.loading && !this.state.error && totalPages > 1 && /*#__PURE__*/React.createElement("div", {
           className: "Table-pagination"
         }, /*#__PURE__*/React.createElement(Pagination, {
           page: this.state.page,
