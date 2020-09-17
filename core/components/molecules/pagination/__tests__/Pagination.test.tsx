@@ -3,8 +3,8 @@ import { shallow } from 'enzyme';
 import Pagination, { PaginationProps as Props } from '../Pagination';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const pageNumber = [1, 5, 10, 15];
-const totalPages = 50;
+const pageNumber = [-1, 0, 1, 5, 10, 11];
+const totalPages = 10;
 const paginationType = ['basic', 'jump'];
 const FunctionValue = jest.fn();
 
