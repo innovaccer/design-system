@@ -400,11 +400,11 @@ export class Table extends React.Component<TableProps, TableState> {
       data: !async ? data : [],
       schema: !async ? schema : [],
       page: props.page,
-      sortingList: props.sortingList || [],
-      filterList: props.filterList || {},
+      sortingList: props.sortingList,
+      filterList: props.filterList,
       totalRecords: !async ? data.length : 0,
-      loading: !async ? props.loading || false : true,
-      error: !async ? props.error || false : false,
+      loading: !async ? props.loading : true,
+      error: !async ? props.error : false,
       errorType: props.errorType,
       selectAll: getSelectAll([]),
       searchTerm: undefined,
@@ -429,10 +429,7 @@ export class Table extends React.Component<TableProps, TableState> {
           errorType: this.props.errorType,
           page: 1,
           totalRecords: data.length || 0,
-          sortingList: [],
-          filterList: {},
-          selectAll: getSelectAll([]),
-          searchTerm: undefined
+          selectAll: getSelectAll([])
         });
       }
     }
@@ -462,15 +459,9 @@ export class Table extends React.Component<TableProps, TableState> {
   }
 
   updateData = () => {
-    const {
-      async
-    } = this.state;
-
-    if (async) {
-      this.setState({
-        loading: true
-      });
-    }
+    this.setState({
+      loading: true
+    });
 
     this.debounceUpdate();
   }
@@ -551,6 +542,9 @@ export class Table extends React.Component<TableProps, TableState> {
 
       this.setState({
         totalRecords,
+        loading: false,
+        error: !renderedData.length,
+        errorType: 'NO_RECORDS_FOUND',
         selectAll: getSelectAll(renderedData),
         schema: renderedSchema,
         data: renderedData,
@@ -731,7 +725,7 @@ export class Table extends React.Component<TableProps, TableState> {
             onRowClick={onRowClick}
           />
         </div>
-        {withPagination && (totalPages > 1) && (
+        {withPagination && (!this.state.loading && !this.state.error && totalPages > 1) && (
           <div className="Table-pagination">
             <Pagination
               page={this.state.page}
