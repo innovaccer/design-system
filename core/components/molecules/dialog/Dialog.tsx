@@ -105,12 +105,24 @@ const Dialog = (props: DialogProps) => {
   };
 
   return (
-    <Modal {...baseProps} {...modalOptions}>
+    <Modal data-test="DesignSystem-Dialog" {...baseProps} {...modalOptions}>
       <ModalHeader {...modalHeaderOptions} />
       <ModalDescription {...modalDescriptionOptions} />
       <ModalFooter>
-        <Button appearance={secondaryButtonAppearance} onClick={secondaryButtonCallback}>{secondaryButtonLabel}</Button>
-        <Button appearance={primaryButtonAppearance} onClick={primaryButtonCallback}>{primaryButtonLabel}</Button>
+        <Button
+          data-test="DesignSystem-Dialog--SecondaryButton"
+          appearance={secondaryButtonAppearance}
+          onClick={secondaryButtonCallback}
+        >
+          {secondaryButtonLabel}
+        </Button>
+        <Button
+          data-test="DesignSystem-Dialog--PrimaryButton"
+          appearance={primaryButtonAppearance}
+          onClick={primaryButtonCallback}
+        >
+          {primaryButtonLabel}
+        </Button>
       </ModalFooter>
     </Modal>
   );

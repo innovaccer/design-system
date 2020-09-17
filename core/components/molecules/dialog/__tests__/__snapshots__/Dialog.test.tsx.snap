@@ -1,521 +1,1366 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dialog component 
-  onClose: "[Function]", dimension: "large", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]"
+  onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", closeOnBackdrop: "[Function]", primaryButtonLabel: "Sample String", secondaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", primaryButtonAppearance: "alert"
  1`] = `
-<Modal
-  backdropClose={[MockFunction]}
-  dimension="large"
-  open={true}
+<body
+  style="overflow: hidden;"
 >
-  <ModalHeader
-    heading="Sample String"
-    icon="Sample String"
-    onClose={[MockFunction]}
-  />
-  <ModalDescription
-    description="Sample String"
-    title="Sample String"
-  />
-  <ModalFooter>
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
+  <div
+    class="Modal-wrapper"
+  >
+    <div
+      class="Modal-container Modal-container--open"
+      data-layer="true"
     >
-      Sample String
-    </Button>
-    <Button
-      appearance="primary"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
-    >
-      Sample String
-    </Button>
-  </ModalFooter>
-</Modal>
+      <div
+        class="Modal Modal--small Modal--open Modal-animation--open"
+        data-test="DesignSystem-Dialog"
+      >
+        <div
+          class="Modal-header-wrapper"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Modal-header-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                Sample String_undefined
+              </i>
+            </div>
+            <div>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+            </div>
+            <div
+              class="Modal-close-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                close_undefined
+              </i>
+            </div>
+          </div>
+          
+        </div>
+        <div
+          class="Modal-description pl-6 pr-6"
+        >
+          <div>
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+          <div>
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+        </div>
+        <div
+          class="Modal-footer"
+        >
+          <button
+            class="Button Button--regular Button--basic Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--SecondaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+          <button
+            class="Button Button--regular Button--alert Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--PrimaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div />
+  </div>
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
 `;
 
 exports[`Dialog component 
-  onClose: "[Function]", dimension: "medium", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]"
+  onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", closeOnBackdrop: "[Function]", primaryButtonLabel: "Sample String", secondaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", primaryButtonAppearance: "basic"
  1`] = `
-<Modal
-  backdropClose={[MockFunction]}
-  dimension="medium"
-  open={true}
+<body
+  style="overflow: hidden;"
 >
-  <ModalHeader
-    heading="Sample String"
-    icon="Sample String"
-    onClose={[MockFunction]}
-  />
-  <ModalDescription
-    description="Sample String"
-    title="Sample String"
-  />
-  <ModalFooter>
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
+  <div>
+    <div />
+  </div>
+  <div
+    class="Modal-wrapper"
+  >
+    <div
+      class="Modal-container Modal-container--open"
+      data-layer="true"
     >
-      Sample String
-    </Button>
-    <Button
-      appearance="primary"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
-    >
-      Sample String
-    </Button>
-  </ModalFooter>
-</Modal>
+      <div
+        class="Modal Modal--small Modal--open Modal-animation--open"
+        data-test="DesignSystem-Dialog"
+      >
+        <div
+          class="Modal-header-wrapper"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Modal-header-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                Sample String_undefined
+              </i>
+            </div>
+            <div>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+            </div>
+            <div
+              class="Modal-close-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                close_undefined
+              </i>
+            </div>
+          </div>
+          
+        </div>
+        <div
+          class="Modal-description pl-6 pr-6"
+        >
+          <div>
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+          <div>
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+        </div>
+        <div
+          class="Modal-footer"
+        >
+          <button
+            class="Button Button--regular Button--basic Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--SecondaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+          <button
+            class="Button Button--regular Button--basic Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--PrimaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
 `;
 
 exports[`Dialog component 
-  onClose: "[Function]", dimension: "small", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]"
+  onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", closeOnBackdrop: "[Function]", primaryButtonLabel: "Sample String", secondaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", primaryButtonAppearance: "primary"
  1`] = `
-<Modal
-  backdropClose={[MockFunction]}
-  dimension="small"
-  open={true}
+<body
+  style="overflow: hidden;"
 >
-  <ModalHeader
-    heading="Sample String"
-    icon="Sample String"
-    onClose={[MockFunction]}
-  />
-  <ModalDescription
-    description="Sample String"
-    title="Sample String"
-  />
-  <ModalFooter>
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
+  <div
+    class="Modal-wrapper"
+  >
+    <div
+      class="Modal-container Modal-container--open"
+      data-layer="true"
     >
-      Sample String
-    </Button>
-    <Button
-      appearance="primary"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
-    >
-      Sample String
-    </Button>
-  </ModalFooter>
-</Modal>
+      <div
+        class="Modal Modal--small Modal--open Modal-animation--open"
+        data-test="DesignSystem-Dialog"
+      >
+        <div
+          class="Modal-header-wrapper"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Modal-header-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                Sample String_undefined
+              </i>
+            </div>
+            <div>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+            </div>
+            <div
+              class="Modal-close-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                close_undefined
+              </i>
+            </div>
+          </div>
+          
+        </div>
+        <div
+          class="Modal-description pl-6 pr-6"
+        >
+          <div>
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+          <div>
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+        </div>
+        <div
+          class="Modal-footer"
+        >
+          <button
+            class="Button Button--regular Button--basic Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--SecondaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+          <button
+            class="Button Button--regular Button--primary Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--PrimaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div />
+  </div>
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
 `;
 
 exports[`Dialog component 
-  onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonAppearance: "alert", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]"
+  onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", closeOnBackdrop: "[Function]", primaryButtonLabel: "Sample String", secondaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", primaryButtonAppearance: "success"
  1`] = `
-<Modal
-  backdropClose={[MockFunction]}
-  dimension="small"
-  open={true}
+<body
+  style="overflow: hidden;"
 >
-  <ModalHeader
-    heading="Sample String"
-    icon="Sample String"
-    onClose={[MockFunction]}
-  />
-  <ModalDescription
-    description="Sample String"
-    title="Sample String"
-  />
-  <ModalFooter>
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
+  <div
+    class="Modal-wrapper"
+  >
+    <div
+      class="Modal-container Modal-container--open"
+      data-layer="true"
     >
-      Sample String
-    </Button>
-    <Button
-      appearance="alert"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
-    >
-      Sample String
-    </Button>
-  </ModalFooter>
-</Modal>
+      <div
+        class="Modal Modal--small Modal--open Modal-animation--open"
+        data-test="DesignSystem-Dialog"
+      >
+        <div
+          class="Modal-header-wrapper"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Modal-header-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                Sample String_undefined
+              </i>
+            </div>
+            <div>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+            </div>
+            <div
+              class="Modal-close-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                close_undefined
+              </i>
+            </div>
+          </div>
+          
+        </div>
+        <div
+          class="Modal-description pl-6 pr-6"
+        >
+          <div>
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+          <div>
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+        </div>
+        <div
+          class="Modal-footer"
+        >
+          <button
+            class="Button Button--regular Button--basic Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--SecondaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+          <button
+            class="Button Button--regular Button--success Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--PrimaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div />
+  </div>
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
 `;
 
 exports[`Dialog component 
-  onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonAppearance: "basic", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]"
+  onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", closeOnBackdrop: "[Function]", primaryButtonLabel: "Sample String", secondaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", primaryButtonAppearance: "transparent"
  1`] = `
-<Modal
-  backdropClose={[MockFunction]}
-  dimension="small"
-  open={true}
+<body
+  style="overflow: hidden;"
 >
-  <ModalHeader
-    heading="Sample String"
-    icon="Sample String"
-    onClose={[MockFunction]}
-  />
-  <ModalDescription
-    description="Sample String"
-    title="Sample String"
-  />
-  <ModalFooter>
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
+  <div
+    class="Modal-wrapper"
+  >
+    <div
+      class="Modal-container Modal-container--open"
+      data-layer="true"
     >
-      Sample String
-    </Button>
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
-    >
-      Sample String
-    </Button>
-  </ModalFooter>
-</Modal>
+      <div
+        class="Modal Modal--small Modal--open Modal-animation--open"
+        data-test="DesignSystem-Dialog"
+      >
+        <div
+          class="Modal-header-wrapper"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Modal-header-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                Sample String_undefined
+              </i>
+            </div>
+            <div>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+            </div>
+            <div
+              class="Modal-close-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                close_undefined
+              </i>
+            </div>
+          </div>
+          
+        </div>
+        <div
+          class="Modal-description pl-6 pr-6"
+        >
+          <div>
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+          <div>
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+        </div>
+        <div
+          class="Modal-footer"
+        >
+          <button
+            class="Button Button--regular Button--basic Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--SecondaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+          <button
+            class="Button Button--regular Button--transparent Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--PrimaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div />
+  </div>
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
 `;
 
 exports[`Dialog component 
-  onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonAppearance: "primary", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]"
+  open: true, icon: "Sample String", title: "Sample String", heading: "Sample String", onClose: "[Function]", description: "Sample String", primaryButtonLabel: "Sample String", secondaryButtonLabel: "Sample String", dimension: "large"
  1`] = `
-<Modal
-  backdropClose={[MockFunction]}
-  dimension="small"
-  open={true}
+<body
+  style="overflow: hidden;"
 >
-  <ModalHeader
-    heading="Sample String"
-    icon="Sample String"
-    onClose={[MockFunction]}
-  />
-  <ModalDescription
-    description="Sample String"
-    title="Sample String"
-  />
-  <ModalFooter>
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
+  <div
+    class="Modal-wrapper"
+  >
+    <div
+      class="Modal-container Modal-container--open"
+      data-layer="true"
     >
-      Sample String
-    </Button>
-    <Button
-      appearance="primary"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
-    >
-      Sample String
-    </Button>
-  </ModalFooter>
-</Modal>
+      <div
+        class="Modal Modal--large Modal--open Modal-animation--open"
+        data-test="DesignSystem-Dialog"
+      >
+        <div
+          class="Modal-header-wrapper"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Modal-header-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                Sample String_undefined
+              </i>
+            </div>
+            <div>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+            </div>
+            <div
+              class="Modal-close-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                close_undefined
+              </i>
+            </div>
+          </div>
+          
+        </div>
+        <div
+          class="Modal-description pl-6 pr-6"
+        >
+          <div>
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+          <div>
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+        </div>
+        <div
+          class="Modal-footer"
+        >
+          <button
+            class="Button Button--regular Button--basic Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--SecondaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+          <button
+            class="Button Button--regular Button--primary Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--PrimaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div />
+  </div>
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
 `;
 
 exports[`Dialog component 
-  onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonAppearance: "success", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]"
+  open: true, icon: "Sample String", title: "Sample String", heading: "Sample String", onClose: "[Function]", description: "Sample String", primaryButtonLabel: "Sample String", secondaryButtonLabel: "Sample String", dimension: "medium"
  1`] = `
-<Modal
-  backdropClose={[MockFunction]}
-  dimension="small"
-  open={true}
+<body
+  style="overflow: hidden;"
 >
-  <ModalHeader
-    heading="Sample String"
-    icon="Sample String"
-    onClose={[MockFunction]}
-  />
-  <ModalDescription
-    description="Sample String"
-    title="Sample String"
-  />
-  <ModalFooter>
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
+  <div
+    class="Modal-wrapper"
+  >
+    <div
+      class="Modal-container Modal-container--open"
+      data-layer="true"
     >
-      Sample String
-    </Button>
-    <Button
-      appearance="success"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
-    >
-      Sample String
-    </Button>
-  </ModalFooter>
-</Modal>
+      <div
+        class="Modal Modal--medium Modal--open Modal-animation--open"
+        data-test="DesignSystem-Dialog"
+      >
+        <div
+          class="Modal-header-wrapper"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Modal-header-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                Sample String_undefined
+              </i>
+            </div>
+            <div>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+            </div>
+            <div
+              class="Modal-close-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                close_undefined
+              </i>
+            </div>
+          </div>
+          
+        </div>
+        <div
+          class="Modal-description pl-6 pr-6"
+        >
+          <div>
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+          <div>
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+        </div>
+        <div
+          class="Modal-footer"
+        >
+          <button
+            class="Button Button--regular Button--basic Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--SecondaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+          <button
+            class="Button Button--regular Button--primary Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--PrimaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div />
+  </div>
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
 `;
 
 exports[`Dialog component 
-  onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonAppearance: "transparent", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]"
+  open: true, icon: "Sample String", title: "Sample String", heading: "Sample String", onClose: "[Function]", description: "Sample String", primaryButtonLabel: "Sample String", secondaryButtonLabel: "Sample String", dimension: "small"
  1`] = `
-<Modal
-  backdropClose={[MockFunction]}
-  dimension="small"
-  open={true}
+<body
+  style="overflow: hidden;"
 >
-  <ModalHeader
-    heading="Sample String"
-    icon="Sample String"
-    onClose={[MockFunction]}
-  />
-  <ModalDescription
-    description="Sample String"
-    title="Sample String"
-  />
-  <ModalFooter>
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
+  <div
+    class="Modal-wrapper"
+  >
+    <div
+      class="Modal-container Modal-container--open"
+      data-layer="true"
     >
-      Sample String
-    </Button>
-    <Button
-      appearance="transparent"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
-    >
-      Sample String
-    </Button>
-  </ModalFooter>
-</Modal>
+      <div
+        class="Modal Modal--small Modal--open Modal-animation--open"
+        data-test="DesignSystem-Dialog"
+      >
+        <div
+          class="Modal-header-wrapper"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Modal-header-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                Sample String_undefined
+              </i>
+            </div>
+            <div>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+            </div>
+            <div
+              class="Modal-close-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                close_undefined
+              </i>
+            </div>
+          </div>
+          
+        </div>
+        <div
+          class="Modal-description pl-6 pr-6"
+        >
+          <div>
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+          <div>
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+        </div>
+        <div
+          class="Modal-footer"
+        >
+          <button
+            class="Button Button--regular Button--basic Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--SecondaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+          <button
+            class="Button Button--regular Button--primary Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--PrimaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div />
+  </div>
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
 `;
 
 exports[`Dialog component 
-  onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]", secondaryButtonAppearance: "alert"
+  open: true, icon: "Sample String", title: "Sample String", heading: "Sample String", onClose: "[Function]", description: "Sample String", primaryButtonLabel: "Sample String", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]", secondaryButtonAppearance: "alert"
  1`] = `
-<Modal
-  backdropClose={[MockFunction]}
-  dimension="small"
-  open={true}
+<body
+  style="overflow: hidden;"
 >
-  <ModalHeader
-    heading="Sample String"
-    icon="Sample String"
-    onClose={[MockFunction]}
-  />
-  <ModalDescription
-    description="Sample String"
-    title="Sample String"
-  />
-  <ModalFooter>
-    <Button
-      appearance="alert"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
+  <div
+    class="Modal-wrapper"
+  >
+    <div
+      class="Modal-container Modal-container--open"
+      data-layer="true"
     >
-      Sample String
-    </Button>
-    <Button
-      appearance="primary"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
-    >
-      Sample String
-    </Button>
-  </ModalFooter>
-</Modal>
+      <div
+        class="Modal Modal--small Modal--open Modal-animation--open"
+        data-test="DesignSystem-Dialog"
+      >
+        <div
+          class="Modal-header-wrapper"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Modal-header-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                Sample String_undefined
+              </i>
+            </div>
+            <div>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+            </div>
+            <div
+              class="Modal-close-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                close_undefined
+              </i>
+            </div>
+          </div>
+          
+        </div>
+        <div
+          class="Modal-description pl-6 pr-6"
+        >
+          <div>
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+          <div>
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+        </div>
+        <div
+          class="Modal-footer"
+        >
+          <button
+            class="Button Button--regular Button--alert Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--SecondaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+          <button
+            class="Button Button--regular Button--primary Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--PrimaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div />
+  </div>
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
 `;
 
 exports[`Dialog component 
-  onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]", secondaryButtonAppearance: "basic"
+  open: true, icon: "Sample String", title: "Sample String", heading: "Sample String", onClose: "[Function]", description: "Sample String", primaryButtonLabel: "Sample String", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]", secondaryButtonAppearance: "basic"
  1`] = `
-<Modal
-  backdropClose={[MockFunction]}
-  dimension="small"
-  open={true}
+<body
+  style="overflow: hidden;"
 >
-  <ModalHeader
-    heading="Sample String"
-    icon="Sample String"
-    onClose={[MockFunction]}
-  />
-  <ModalDescription
-    description="Sample String"
-    title="Sample String"
-  />
-  <ModalFooter>
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
+  <div
+    class="Modal-wrapper"
+  >
+    <div
+      class="Modal-container Modal-container--open"
+      data-layer="true"
     >
-      Sample String
-    </Button>
-    <Button
-      appearance="primary"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
-    >
-      Sample String
-    </Button>
-  </ModalFooter>
-</Modal>
+      <div
+        class="Modal Modal--small Modal--open Modal-animation--open"
+        data-test="DesignSystem-Dialog"
+      >
+        <div
+          class="Modal-header-wrapper"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Modal-header-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                Sample String_undefined
+              </i>
+            </div>
+            <div>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+            </div>
+            <div
+              class="Modal-close-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                close_undefined
+              </i>
+            </div>
+          </div>
+          
+        </div>
+        <div
+          class="Modal-description pl-6 pr-6"
+        >
+          <div>
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+          <div>
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+        </div>
+        <div
+          class="Modal-footer"
+        >
+          <button
+            class="Button Button--regular Button--basic Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--SecondaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+          <button
+            class="Button Button--regular Button--primary Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--PrimaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div />
+  </div>
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
 `;
 
 exports[`Dialog component 
-  onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]", secondaryButtonAppearance: "primary"
+  open: true, icon: "Sample String", title: "Sample String", heading: "Sample String", onClose: "[Function]", description: "Sample String", primaryButtonLabel: "Sample String", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]", secondaryButtonAppearance: "primary"
  1`] = `
-<Modal
-  backdropClose={[MockFunction]}
-  dimension="small"
-  open={true}
+<body
+  style="overflow: hidden;"
 >
-  <ModalHeader
-    heading="Sample String"
-    icon="Sample String"
-    onClose={[MockFunction]}
-  />
-  <ModalDescription
-    description="Sample String"
-    title="Sample String"
-  />
-  <ModalFooter>
-    <Button
-      appearance="primary"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
+  <div
+    class="Modal-wrapper"
+  >
+    <div
+      class="Modal-container Modal-container--open"
+      data-layer="true"
     >
-      Sample String
-    </Button>
-    <Button
-      appearance="primary"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
-    >
-      Sample String
-    </Button>
-  </ModalFooter>
-</Modal>
+      <div
+        class="Modal Modal--small Modal--open Modal-animation--open"
+        data-test="DesignSystem-Dialog"
+      >
+        <div
+          class="Modal-header-wrapper"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Modal-header-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                Sample String_undefined
+              </i>
+            </div>
+            <div>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+            </div>
+            <div
+              class="Modal-close-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                close_undefined
+              </i>
+            </div>
+          </div>
+          
+        </div>
+        <div
+          class="Modal-description pl-6 pr-6"
+        >
+          <div>
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+          <div>
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+        </div>
+        <div
+          class="Modal-footer"
+        >
+          <button
+            class="Button Button--regular Button--primary Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--SecondaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+          <button
+            class="Button Button--regular Button--primary Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--PrimaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div />
+  </div>
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
 `;
 
 exports[`Dialog component 
-  onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]", secondaryButtonAppearance: "success"
+  open: true, icon: "Sample String", title: "Sample String", heading: "Sample String", onClose: "[Function]", description: "Sample String", primaryButtonLabel: "Sample String", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]", secondaryButtonAppearance: "success"
  1`] = `
-<Modal
-  backdropClose={[MockFunction]}
-  dimension="small"
-  open={true}
+<body
+  style="overflow: hidden;"
 >
-  <ModalHeader
-    heading="Sample String"
-    icon="Sample String"
-    onClose={[MockFunction]}
-  />
-  <ModalDescription
-    description="Sample String"
-    title="Sample String"
-  />
-  <ModalFooter>
-    <Button
-      appearance="success"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
+  <div
+    class="Modal-wrapper"
+  >
+    <div
+      class="Modal-container Modal-container--open"
+      data-layer="true"
     >
-      Sample String
-    </Button>
-    <Button
-      appearance="primary"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
-    >
-      Sample String
-    </Button>
-  </ModalFooter>
-</Modal>
+      <div
+        class="Modal Modal--small Modal--open Modal-animation--open"
+        data-test="DesignSystem-Dialog"
+      >
+        <div
+          class="Modal-header-wrapper"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Modal-header-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                Sample String_undefined
+              </i>
+            </div>
+            <div>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+            </div>
+            <div
+              class="Modal-close-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                close_undefined
+              </i>
+            </div>
+          </div>
+          
+        </div>
+        <div
+          class="Modal-description pl-6 pr-6"
+        >
+          <div>
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+          <div>
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+        </div>
+        <div
+          class="Modal-footer"
+        >
+          <button
+            class="Button Button--regular Button--success Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--SecondaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+          <button
+            class="Button Button--regular Button--primary Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--PrimaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div />
+  </div>
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
 `;
 
 exports[`Dialog component 
-  onClose: "[Function]", open: true, heading: "Sample String", icon: "Sample String", title: "Sample String", description: "Sample String", primaryButtonLabel: "Sample String", primaryButtonCallback: "[Function]", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]", secondaryButtonAppearance: "transparent"
+  open: true, icon: "Sample String", title: "Sample String", heading: "Sample String", onClose: "[Function]", description: "Sample String", primaryButtonLabel: "Sample String", secondaryButtonLabel: "Sample String", secondaryButtonCallback: "[Function]", secondaryButtonAppearance: "transparent"
  1`] = `
-<Modal
-  backdropClose={[MockFunction]}
-  dimension="small"
-  open={true}
+<body
+  style="overflow: hidden;"
 >
-  <ModalHeader
-    heading="Sample String"
-    icon="Sample String"
-    onClose={[MockFunction]}
-  />
-  <ModalDescription
-    description="Sample String"
-    title="Sample String"
-  />
-  <ModalFooter>
-    <Button
-      appearance="transparent"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
+  <div
+    class="Modal-wrapper"
+  >
+    <div
+      class="Modal-container Modal-container--open"
+      data-layer="true"
     >
-      Sample String
-    </Button>
-    <Button
-      appearance="primary"
-      iconAlign="left"
-      onClick={[MockFunction]}
-      size="regular"
-      tabIndex={0}
-    >
-      Sample String
-    </Button>
-  </ModalFooter>
-</Modal>
+      <div
+        class="Modal Modal--small Modal--open Modal-animation--open"
+        data-test="DesignSystem-Dialog"
+      >
+        <div
+          class="Modal-header-wrapper"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Modal-header-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                Sample String_undefined
+              </i>
+            </div>
+            <div>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+            </div>
+            <div
+              class="Modal-close-icon"
+            >
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                close_undefined
+              </i>
+            </div>
+          </div>
+          
+        </div>
+        <div
+          class="Modal-description pl-6 pr-6"
+        >
+          <div>
+            <span
+              class="Text Text--default Text--strong Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+          <div>
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Sample String
+            </span>
+          </div>
+        </div>
+        <div
+          class="Modal-footer"
+        >
+          <button
+            class="Button Button--regular Button--transparent Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--SecondaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+          <button
+            class="Button Button--regular Button--primary Button--iconAlign-left"
+            data-test="DesignSystem-Dialog--PrimaryButton"
+            tabindex="0"
+          >
+            Sample String
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div />
+  </div>
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
 `;
