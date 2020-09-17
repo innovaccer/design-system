@@ -30,6 +30,10 @@ export const MainGrid = (props: MainGridProps) => {
     data
   } = _this.props;
 
+  const {
+    init
+  } = _this.state;
+
   const classes = classNames({
     Grid: 'true',
     [`Grid--${type}`]: type,
@@ -50,6 +54,16 @@ export const MainGrid = (props: MainGridProps) => {
   };
 
   const [state, setState] = React.useState(initialState);
+
+  React.useEffect(() => {
+    if (init) {
+      setState({
+        offset,
+        avgRowHeight,
+        inView: _this.gridRef!.scrollHeight / avgRowHeight
+      });
+    }
+  }, [init]);
 
   React.useEffect(() => {
     setState(initialState);
