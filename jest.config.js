@@ -15,10 +15,12 @@ const config = {
   coverageReporters: ['json', 'lcov', 'text', 'text-summary', 'html'],
   verbose: true,
   collectCoverageFrom: [
-    'core/**/*.{ts,tsx}',
+    '!core/utils/**',
     '!**/dist/**/*',
-    '!core/**/*.story.tsx',
-    '!core/**/__stories__/**'
+    '!**/*.story.tsx',
+    '!core/**/__stories__/**',
+    'core/**/*.{ts,tsx}',
+    'core/utils/PopperWrapper.tsx',
   ],
   globals: {
     window: true
