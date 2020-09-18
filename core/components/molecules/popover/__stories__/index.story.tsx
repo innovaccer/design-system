@@ -14,7 +14,7 @@ export const all = () => {
 
   const position = select(
     'position',
-    ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end'],
+    ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right'],
     'bottom-start'
   );
   const on = select(

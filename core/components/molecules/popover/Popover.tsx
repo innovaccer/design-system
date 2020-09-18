@@ -3,7 +3,15 @@ import classNames from 'classnames';
 import { PopperWrapper } from '@/utils';
 import { BaseProps } from '@/utils/types';
 
-export type Position = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end';
+export type Position = 'top' |
+'top-start' |
+'top-end' |
+'bottom' |
+'bottom-start' |
+'bottom-end'|
+'left' |
+'right';
+
 export type ActionType = 'click' | 'hover';
 
 export interface CustomStyle {
