@@ -68,7 +68,7 @@ export const Pagination = (props: PaginationProps) => {
   const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
 
-    const val = parseInt(e.target.value.trim(), 10);
+    const val = +e.target.value.trim();
     if (val >= 0 && val <= totalPages) {
       if (!init) setInit(true);
       setPage(val);
