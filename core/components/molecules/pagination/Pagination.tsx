@@ -10,9 +10,9 @@ export type PaginationType = 'basic' | 'jump';
 
 export interface PaginationProps extends BaseProps {
   /**
-   * @default "basic"
+   * `Pagination` component type
    */
-  type?: PaginationType;
+  type: PaginationType;
   /**
    * Total number of pages
    */
@@ -20,7 +20,7 @@ export interface PaginationProps extends BaseProps {
   /**
    * Current page
    */
-  page?: number;
+  page: number;
   /**
    *  Callback when page is changed
    */
@@ -29,7 +29,7 @@ export interface PaginationProps extends BaseProps {
 
 export const Pagination = (props: PaginationProps) => {
   const {
-    type = 'basic',
+    type,
     totalPages,
     onPageChange,
     className
@@ -37,11 +37,11 @@ export const Pagination = (props: PaginationProps) => {
 
   const baseProps = extractBaseProps(props);
 
-  const [page, setPage] = React.useState<number>(props.page ? props.page : 1);
+  const [page, setPage] = React.useState<number>(props.page);
   const [init, setInit] = React.useState<boolean>(false);
 
   React.useEffect(() => {
-    if (props.page && props.page >= 1 && props.page <= totalPages) setPage(props.page);
+    setPage(props.page);
   }, [props.page]);
 
   const wrapperClass = classNames({
@@ -51,8 +51,7 @@ export const Pagination = (props: PaginationProps) => {
 
   const nextButtonWrapperClass = classNames({
     ['Pagination-buttonWrapper']: true,
-    ['Pagination-buttonWrapper--next']: true,
-
+    ['Pagination-buttonWrapper--next']: true
   });
 
   const prevButtonWrapperClass = classNames({
@@ -61,14 +60,16 @@ export const Pagination = (props: PaginationProps) => {
   });
 
   React.useEffect(() => {
-    if (init && page) onPageChange(page);
+    if (init) {
+      if (page >= 1 && page <= totalPages) onPageChange(page);
+    }
   }, [page]);
 
   const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
 
     const val = parseInt(e.target.value.trim(), 10);
-    if (!val || (val > 0 && val <= totalPages)) {
+    if (val >= 0 && val <= totalPages) {
       if (!init) setInit(true);
       setPage(val);
     }
@@ -101,7 +102,7 @@ export const Pagination = (props: PaginationProps) => {
       <div className={prevButtonWrapperClass}>
         <Button
           onClick={() => onClickHandler('first')}
-          disabled={page === 1}
+          disabled={page <= 1}
           appearance="transparent"
           size="large"
           icon="first_page"
@@ -109,7 +110,7 @@ export const Pagination = (props: PaginationProps) => {
         <div className={['ml-4', ...buttonHelper].join(' ')}>
           <Button
             onClick={() => onClickHandler('prev')}
-            disabled={page === 1}
+            disabled={page <= 1}
             size="large"
             icon="navigate_before"
           />
@@ -122,7 +123,7 @@ export const Pagination = (props: PaginationProps) => {
             type="number"
             size="large"
             onChange={inputChangeHandler}
-            value={`${page}`}
+            value={`${page === 0 ? '' : page}`}
           />
           <Text>{` of ${totalPages} pages`}</Text>
         </div>
@@ -131,14 +132,14 @@ export const Pagination = (props: PaginationProps) => {
         <div className={['mr-4', ...buttonHelper].join(' ')}>
           <Button
             onClick={() => onClickHandler('next')}
-            disabled={page === totalPages}
+            disabled={page >= totalPages}
             size="large"
             icon="navigate_next"
           />
         </div>
         <Button
           onClick={() => onClickHandler('last')}
-          disabled={page === totalPages}
+          disabled={page >= totalPages}
           appearance="transparent"
           size="large"
           icon="last_page"
@@ -149,5 +150,10 @@ export const Pagination = (props: PaginationProps) => {
 };
 
 Pagination.displayName = 'Pagination';
+Pagination.defaultProps = {
+  type: 'basic',
+  page: 1,
+  totalPages: 1
+};
 
 export default Pagination;
