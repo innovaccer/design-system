@@ -1,0 +1,11 @@
+.EditableDropdown {
+  width: 100%;
+}
+
+.EditableDropdown-default {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: var(--spacing-3);
+  padding-left: var(--spacing-l);
+}
