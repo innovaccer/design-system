@@ -22,23 +22,26 @@ const steps = [
   }
 ];
 
+const FunctionValue = jest.fn();
+
 describe('Stepper component', () => {
   const mapper = {
     steps: valueHelper(steps, { required: true }),
     active: valueHelper(1, { required: true }),
     completed: valueHelper(0, { required: true }),
+    onChange: valueHelper(FunctionValue, { required: true })
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = render(
+      const { asFragment } = render(
         <Stepper
           {...attr}
         />
       );
-      expect(tree).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
   };
 
