@@ -5,7 +5,16 @@ import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const position = () => {
-  const positions: Position[] = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end'];
+  const positions: Position[] = [
+    'top',
+    'top-start',
+    'top-end',
+    'bottom',
+    'bottom-start',
+    'bottom-end',
+    'left',
+    'right'
+  ];
   const appendToBody = false;
   const hoverable = false;
   const closeOnBackdropClick = true;
