@@ -1,97 +1,89 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TabsWrapper component 
-  activeTab: 0, onTabChange: "[Function]", children: "[ReactNode]"
+  activeTab: 0, onTabChange: "[Function]"
  1`] = `
-<div
-  className="TabsWrapper"
->
+<DocumentFragment>
   <div
-    className="TabsWrapper-header"
+    class="TabsWrapper"
+    data-test="DesignSystem-TabsWrapper"
   >
     <div
-      className="Tab Tab--active"
-      key="0"
-      onClick={[Function]}
-    />
+      class="TabsWrapper-header"
+    >
+      <div
+        class="Tab Tab--active"
+        data-test="DesignSystem-Tabs--Header"
+      >
+        <span
+          class="Text Text--default Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          Tab(Recommended)
+        </span>
+      </div>
+      <div
+        class="Tab Tab--disabled"
+        data-test="DesignSystem-Tabs--Header"
+      >
+        <span
+          class="Text Text--default Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          Tab(Recommended)
+        </span>
+      </div>
+    </div>
     <div
-      className="Tab"
-      key="1"
-      onClick={[Function]}
-    />
-  </div>
-  <div
-    className="TabsWrapper-content"
-  >
-    <Tab
-      label={<React.Fragment />}
+      class="TabsWrapper-content"
+      data-test="DesignSystem-Tabs--Content"
     >
       Tab 1
-    </Tab>
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`TabsWrapper component 
-  activeTab: 1, onTabChange: "[Function]", children: "[ReactNode]"
+  activeTab: 1, onTabChange: "[Function]"
  1`] = `
-<div
-  className="TabsWrapper"
->
+<DocumentFragment>
   <div
-    className="TabsWrapper-header"
+    class="TabsWrapper"
+    data-test="DesignSystem-TabsWrapper"
   >
     <div
-      className="Tab Tab--active"
-      key="0"
-      onClick={[Function]}
-    />
+      class="TabsWrapper-header"
+    >
+      <div
+        class="Tab Tab--active"
+        data-test="DesignSystem-Tabs--Header"
+      >
+        <span
+          class="Text Text--default Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          Tab(Recommended)
+        </span>
+      </div>
+      <div
+        class="Tab Tab--disabled"
+        data-test="DesignSystem-Tabs--Header"
+      >
+        <span
+          class="Text Text--default Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          Tab(Recommended)
+        </span>
+      </div>
+    </div>
     <div
-      className="Tab"
-      key="1"
-      onClick={[Function]}
-    />
-  </div>
-  <div
-    className="TabsWrapper-content"
-  >
-    <Tab
-      label={<React.Fragment />}
+      class="TabsWrapper-content"
+      data-test="DesignSystem-Tabs--Content"
     >
       Tab 1
-    </Tab>
+    </div>
   </div>
-</div>
-`;
-
-exports[`TabsWrapper component 
-  activeTab: 2, onTabChange: "[Function]", children: "[ReactNode]"
- 1`] = `
-<div
-  className="TabsWrapper"
->
-  <div
-    className="TabsWrapper-header"
-  >
-    <div
-      className="Tab Tab--active"
-      key="0"
-      onClick={[Function]}
-    />
-    <div
-      className="Tab"
-      key="1"
-      onClick={[Function]}
-    />
-  </div>
-  <div
-    className="TabsWrapper-content"
-  >
-    <Tab
-      label={<React.Fragment />}
-    >
-      Tab 1
-    </Tab>
-  </div>
-</div>
+</DocumentFragment>
 `;

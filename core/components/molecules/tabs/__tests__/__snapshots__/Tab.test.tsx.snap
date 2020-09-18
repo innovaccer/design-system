@@ -1,13 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tab component with Label 1`] = `
-<Fragment>
-  Tab
-</Fragment>
+exports[`Tab component 
+  label: "[ReactNode]", disabled: false
+ 1`] = `
+<DocumentFragment>
+  <div>
+    Tab
+  </div>
+</DocumentFragment>
 `;
 
-exports[`Tab component with Label and disabled 1`] = `
-<Fragment>
-  Tab
-</Fragment>
+exports[`Tab component 
+  label: "[ReactNode]", disabled: true
+ 1`] = `
+<DocumentFragment>
+  <div>
+    Tab
+  </div>
+</DocumentFragment>
 `;

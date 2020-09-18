@@ -1,40 +1,123 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
-import Tab from '../Tab';
-import TabsWrapper, { TabsWrapperProps as Props } from '../TabsWrapper';
+import { Tab, TabsWrapper, Text } from '@/index';
+import { TabsWrapperProps as Props } from '@/index.type';
 
-const TabValue = [0, 1, 2];
+const TabValue = [0, 1];
 const FunctionValue = jest.fn();
-const ReactNodeValue = (
-  <>
-    <Tab label={<></>}>Tab 1</Tab>
-    <Tab label={<></>}>Tab 2</Tab>
-  </>
-);
-
-const Mapper: Record<string, any> = {
-  activeTab: valueHelper(TabValue, { required: true, iterate: true }),
-  onTabChange: valueHelper(FunctionValue, { required: true }),
-  children: valueHelper(ReactNodeValue, { required: true }),
-};
+const Label = <Text>Tab(Recommended)</Text>;
 
 describe('TabsWrapper component', () => {
+  const Mapper: Record<string, any> = {
+    activeTab: valueHelper(TabValue, { required: true, iterate: true }),
+    onTabChange: valueHelper(FunctionValue, { required: true }),
+  };
+
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { asFragment } = render(
         <TabsWrapper
           {...attr}
         >
-          <Tab label={<></>}>Tab 1</Tab>
-          <Tab label={<></>}>Tab 2</Tab>
+          <Tab label={Label}>Tab 1</Tab>
+          <Tab label={Label} disabled={true}>Tab 2</Tab>
         </TabsWrapper>
       );
-      expect(tree).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
   };
 
   testHelper(Mapper, testFunc);
+});
+
+describe('TabsWrapper component', () => {
+
+  it('renders active tab and children', () => {
+    const activeTab = 1;
+    const activeTabContent = 'Tab 2';
+
+    const { getByTestId, getAllByTestId } = render(
+      <TabsWrapper active={activeTab} onTabChange={FunctionValue}>
+        <Tab label={<></>}>Tab 1</Tab>
+        <Tab label={<></>}>Tab 2</Tab>
+      </TabsWrapper>
+    );
+
+    expect(getByTestId('DesignSystem-Tabs--Content').textContent).toMatch(activeTabContent);
+    expect(getAllByTestId('DesignSystem-Tabs--Header')[activeTab]).toHaveClass('Tab--active');
+  });
+
+  it('renders default tab as 0', () => {
+    const defaultTab = 0;
+    const defaultTabContent = 'Tab 1';
+
+    const { getByTestId, getAllByTestId } = render(
+      <TabsWrapper onTabChange={FunctionValue}>
+        <Tab label={<></>}>Tab 1</Tab>
+        <Tab label={<></>}>Tab 2</Tab>
+      </TabsWrapper>
+    );
+
+    expect(getByTestId('DesignSystem-Tabs--Content').textContent).toMatch(defaultTabContent);
+    expect(getAllByTestId('DesignSystem-Tabs--Header')[defaultTab]).toHaveClass('Tab--active');
+  });
+
+  it('default tab is 0 if activeTab > total tabs length', () => {
+    const activeTab = 3;
+    const activeTabContent = 'Tab 1';
+    const defaultActiveTab = 0;
+
+    const { getByTestId, getAllByTestId } = render(
+      <TabsWrapper active={activeTab} onTabChange={FunctionValue}>
+        <Tab label={<></>}>Tab 1</Tab>
+        <Tab label={<></>}>Tab 2</Tab>
+      </TabsWrapper>
+    );
+
+    expect(getByTestId('DesignSystem-Tabs--Content').textContent).toMatch(activeTabContent);
+    expect(getAllByTestId('DesignSystem-Tabs--Header')[defaultActiveTab]).toHaveClass('Tab--active');
+  });
+
+  it('renders disabled tab', () => {
+    const activeTab = 1;
+    const disabledTab = 1;
+
+    const { getAllByTestId } = render(
+      <TabsWrapper active={activeTab} onTabChange={FunctionValue}>
+        <Tab label={<></>}>Tab 1</Tab>
+        <Tab label={<></>} disabled={true}>Tab 2</Tab>
+      </TabsWrapper>
+    );
+
+    expect(getAllByTestId('DesignSystem-Tabs--Header')[activeTab]).not.toHaveClass('Tab--active');
+    expect(getAllByTestId('DesignSystem-Tabs--Header')[disabledTab]).toHaveClass('Tab--disabled');
+  });
+
+});
+
+describe('TabsWrapper component with prop: onTabChange', () => {
+  const tabs = (tab: number) => (
+    <TabsWrapper active={tab} onTabChange={FunctionValue}>
+      <Tab label={<div>Label 1</div>}>Tab 1</Tab>
+      <Tab label={<div data-test="DS-TabLabel">Label 2</div>}>Tab 2</Tab>
+    </TabsWrapper>
+  );
+
+  it('TabsWrapper component with onTabChange callback', () => {
+    const activeTab = 0;
+    const clickedTab = 1;
+
+    const { getByTestId, getAllByTestId, rerender } = render(tabs(activeTab));
+
+    const tab = getByTestId('DS-TabLabel');
+    fireEvent.click(tab);
+
+    expect(FunctionValue).toHaveBeenCalledWith(clickedTab);
+    rerender(tabs(clickedTab));
+    expect(getAllByTestId('DesignSystem-Tabs--Header')[clickedTab]).toHaveClass('Tab--active');
+  });
+
 });

@@ -34,8 +34,8 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
   React.useEffect(() => {
     setActiveTab(
       props.active && props.active < children.length
-      ? props.active
-      : 0
+        ? props.active
+        : 0
     );
   }, [props.active]);
 
@@ -59,7 +59,12 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
       });
 
       return (
-        <div key={index} className={tabHeaderClass} onClick={() => !disabled && tabClickHandler(index)}>
+        <div
+          data-test="DesignSystem-Tabs--Header"
+          key={index}
+          className={tabHeaderClass}
+          onClick={() => !disabled && tabClickHandler(index)}
+        >
           {label}
         </div>
       );
@@ -67,11 +72,11 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
   );
 
   return (
-    <div {...baseProps} className={wrapperClass}>
+    <div data-test="DesignSystem-TabsWrapper" {...baseProps} className={wrapperClass}>
       <div className="TabsWrapper-header">
         {TabsHeader}
       </div>
-      <div className="TabsWrapper-content">
+      <div className="TabsWrapper-content" data-test="DesignSystem-Tabs--Content">
         {children[active]}
       </div>
     </div>
