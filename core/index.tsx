@@ -19,6 +19,7 @@ export { InputMask } from './components/molecules/inputMask';
 export { Label } from './components/atoms/label';
 export { Caption } from './components/atoms/caption';
 export { Legend } from './components/atoms/legend';
+export { EditableDropdown } from './components/molecules/editableDropdown';
 export { Link } from './components/atoms/link';
 export { Message } from './components/atoms/message';
 export { MetaList } from './components/atoms/metaList';

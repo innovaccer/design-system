@@ -8,6 +8,7 @@ import IconWithMetaOption from './IconWithMetaOption';
 import { OptionType } from '../DropdownList';
 
 export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
+export type ClickEvent = React.MouseEvent<HTMLDivElement>;
 
 export interface OptionRendererProps {
   /**
@@ -42,13 +43,13 @@ export interface OptionSchema {
 export interface OptionTypeProps {
   className: string;
   textClassName: string;
+  dataTest?: string;
   optionData: OptionSchema;
   selected: boolean;
-  index: number;
   menu?: boolean;
-  onClick?: () => void;
-  onChange?: (event: ChangeEvent) => void;
-  updateActiveOption?: (index: number) => void;
+  onUpdateActiveOption: () => void;
+  onClickHandler?: (event: ClickEvent) => void;
+  onChangeHandler?: (event: ChangeEvent) => void;
 }
 
 interface OptionProps extends OptionRendererProps {
@@ -108,6 +109,16 @@ const Option = (props: OptionProps) => {
     if (updateActiveOption) updateActiveOption(index);
   };
 
+  const onClickHandler = (e: ClickEvent) => {
+    e.stopPropagation();
+    if (onClick) onClick();
+  };
+
+  const onChangeHandler = (e: ChangeEvent) => {
+    e.stopPropagation();
+    if (onChange) onChange(e);
+  };
+
   if (props.optionRenderer) {
     return (
       <div
@@ -130,14 +141,14 @@ const Option = (props: OptionProps) => {
 
   return component(
     {
-      optionData,
       menu,
       selected,
-      onChange,
-      onClick,
-      updateActiveOption,
+      optionData,
       textClassName,
-      index,
+      onClickHandler,
+      onChangeHandler,
+      onUpdateActiveOption,
+      dataTest: `DesignSystem-DropdownOption--${type}`,
       className: checkboxes ? CheckboxClassName : OptionClassName,
     }
   );

@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditableDropdown component 
+  placeholer: "Select Option", dropdownOptions: {"options":[{"label":"Option 1","value":"Option 1"},{"label":"Option 2","value":"Option 2"},{"label":"Option 3","value":"Option 3"},{"label":"Option 4","value":"Option 4"},{"label":"Option 5","value":"Option 5"},{"label":"Option 6","value":"Option 6"},{"label":"Option 7","value":"Option 7"},{"label":"Option 8","value":"Option 8"},{"label":"Option 9","value":"Option 9"},{"label":"Option 10","value":"Option 10"}],"optionType":"DEFAULT","onChange":"[Function]"}
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="EditableDropdown"
+    data-test="DesignSystem-EditableDropdown"
+  >
+    <div
+      class="Editable"
+      data-test="DesignSystem-Editable"
+    >
+      <div
+        data-test="DesignSystem-EditableWrapper"
+      >
+        <div
+          class="Dropdown d-none"
+          data-test="DesignSystem-EditableDropdown--Dropdown"
+        >
+          <span
+            class="PopperWrapper-trigger w-100"
+          >
+            <button
+              class="Button Button--basic DropdownTrigger DropdownButton DropdownButton--regular DropdownButton--placeholder"
+              data-test="DesignSystem-DropdownTrigger"
+              tabindex="0"
+              type="button"
+              value=""
+            >
+              <div
+                class="DropdownButton-wrapper"
+              >
+                <div
+                  class="DropdownButton-text"
+                >
+                  Select
+                </div>
+              </div>
+              <i
+                class="material-icons Icon Icon--default"
+                style="font-size: 16px; width: 16px;"
+              >
+                keyboard_arrow_down_undefined
+              </i>
+            </button>
+          </span>
+        </div>
+        <div
+          class="EditableDropdown-default"
+          data-test="DesignSystem-EditableDropdown--Default"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

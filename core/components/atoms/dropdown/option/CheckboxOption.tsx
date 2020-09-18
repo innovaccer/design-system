@@ -6,24 +6,20 @@ const CheckboxOption = (props: OptionTypeProps) => {
   const {
     className,
     selected,
-    onChange,
     optionData,
-    index,
-    updateActiveOption,
+    onChangeHandler,
+    onUpdateActiveOption,
+    dataTest,
   } = props;
 
   const { label } = optionData;
 
-  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (onChange) onChange(event);
-  };
-
-  const onUpdateActiveOption = () => {
-    if (updateActiveOption) updateActiveOption(index);
-  };
-
   return (
-    <div className={className} onMouseEnter={onUpdateActiveOption}>
+    <div
+      className={className}
+      onMouseEnter={onUpdateActiveOption}
+      data-test={dataTest}
+    >
       <Checkbox
         label={label}
         checked={selected}
