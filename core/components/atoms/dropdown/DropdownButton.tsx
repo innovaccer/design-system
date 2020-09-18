@@ -85,6 +85,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
       className={buttonClass}
       disabled={disabled}
       tabIndex={0}
+      data-test="DesignSystem-DropdownTrigger"
       {...rest}
     >
       {!menu && (

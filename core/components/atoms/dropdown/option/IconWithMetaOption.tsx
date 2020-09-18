@@ -8,11 +8,11 @@ const IconWithMetaOption = (props: OptionTypeProps) => {
     className,
     textClassName,
     selected,
-    onClick,
+    onClickHandler,
     optionData,
-    updateActiveOption,
-    index,
-    menu
+    onUpdateActiveOption,
+    menu,
+    dataTest,
   } = props;
 
   const { label, icon, subInfo } = optionData;
@@ -22,16 +22,13 @@ const IconWithMetaOption = (props: OptionTypeProps) => {
     ['Option--icon']: icon,
   });
 
-  const onClickHandler = () => {
-    if (onClick) onClick();
-  };
-
-  const onUpdateActiveOption = () => {
-    if (updateActiveOption) updateActiveOption(index);
-  };
-
   return (
-    <div className={OptionClass} onClick={onClickHandler} onMouseEnter={onUpdateActiveOption}>
+    <div
+      className={OptionClass}
+      onClick={onClickHandler}
+      onMouseEnter={onUpdateActiveOption}
+      data-test={dataTest}
+    >
       {icon && (
         <Icon className="Option-icon mr-4" name={icon} appearance={selected && !menu ? 'white' : 'default'} />
       )}

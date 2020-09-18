@@ -156,6 +156,10 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
    */
   triggerOptions?: TriggerProps;
   /**
+   * Callback to get the updated label of `Dropdown trigger`
+   */
+  getLabel?: (label: string) => void;
+  /**
    * Callback function called when selected options are updated. <br/>
    * **In case of uncontrolled dropdown, it is called when user `clicks on option` /**
    * **`clicks on Clear,or Apply button` while in case of controlled dropdown,**
@@ -446,7 +450,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     const selectedLength = selectedArray.length;
     if (selectedLength === 0) return '';
 
-    const { triggerOptions = {} } = this.props;
+    const { triggerOptions = {}, getLabel } = this.props;
     const { customLabel, labelLimit = 2 } = triggerOptions;
     const optionsLength = this.state ? this.state.optionsLength : totalOptions;
     let label = '';
@@ -459,6 +463,8 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       label = customLabel ?
         customLabel(selectedLength, optionsLength) : `${selectedLength} selected`;
     }
+
+    if (getLabel) getLabel(label);
     return label;
   }
 
