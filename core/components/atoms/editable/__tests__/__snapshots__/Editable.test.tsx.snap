@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Editable component 
+  editing: true, onChange: "[Function]"
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="Editable"
+    data-test="DesignSystem-Editable"
+  >
+    <div
+      data-test="DesignSystem-EditableWrapper"
+    >
+      <div>
+        First Name
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
