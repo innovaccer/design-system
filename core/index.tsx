@@ -47,6 +47,7 @@ export { ModalBody } from './components/molecules/modalBody';
 export { ModalDescription } from './components/molecules/modalDescription';
 export { Pagination } from './components/molecules/pagination';
 export { Placeholder } from './components/molecules/placeholder';
+export { EditableInput } from './components/molecules/editableInput';
 export { PlaceholderParagraph } from './components/atoms/placeholderParagraph';
 export { ProgressRing } from './components/atoms/progressRing';
 export { Popover } from './components/molecules/popover';

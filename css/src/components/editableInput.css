@@ -1,0 +1,47 @@
+.EditableInput {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.EditableInput-actions {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--spacing-m);
+  width: 100%;
+}
+
+.EditableInput-actions--regular {
+  top: var(--spacing-3);
+}
+
+.EditableInput-actions--tiny {
+  top: var(--spacing-xl);
+}
+
+.EditableInput-default {
+  border: var(--spacing-xs) solid transparent;
+  box-sizing: border-box;
+  white-space: nowrap;
+  padding-left: var(--spacing-l);
+  padding-right: var(--spacing-l);
+  display: flex;
+  align-items: center;
+}
+
+.EditableInput-default--regular {
+  min-width: var(--spacing-9);
+  height: var(--spacing-3);
+}
+
+.EditableInput-default--tiny {
+  min-width: var(--spacing-6);
+  height: var(--spacing-xl);
+}
+
+.EditableInput-Input--tiny {
+  min-width: var(--spacing-6) !important;
+  width: 100%;
+}

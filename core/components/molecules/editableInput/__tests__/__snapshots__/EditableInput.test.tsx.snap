@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditableInput component 
+  placeholer: "String Value", disableSaveAction: true, size: "regular", error: true, errorMessage: "String Value"
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="EditableInput"
+    data-test="DesignSystem-EditableInput"
+  >
+    <div
+      class="Editable"
+      data-test="DesignSystem-Editable"
+    >
+      <div
+        data-test="DesignSystem-EditableWrapper"
+      >
+        <div
+          class="EditableInput-default EditableInput-default--regular"
+          data-test="DesignSystem-EditableInput--Default"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`EditableInput component 
+  placeholer: "String Value", disableSaveAction: true, size: "tiny", error: true, errorMessage: "String Value"
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="EditableInput"
+    data-test="DesignSystem-EditableInput"
+  >
+    <div
+      class="Editable"
+      data-test="DesignSystem-Editable"
+    >
+      <div
+        data-test="DesignSystem-EditableWrapper"
+      >
+        <div
+          class="EditableInput-default EditableInput-default--tiny"
+          data-test="DesignSystem-EditableInput--Default"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
