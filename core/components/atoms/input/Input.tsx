@@ -194,7 +194,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
   const trigger = <div className={rightIconClass}><Icon name={'info'} size={sizeMapping[size]} /></div>;
 
   return (
-    <div className={classes}>
+    <div data-test="DesignSystem-InputWrapper" className={classes}>
       {inlineLabel && (
         <div className="Input-inlineLabel">
           <Text appearance="subtle">{inlineLabel}</Text>
@@ -209,6 +209,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
         </div>
       )}
       <input
+        data-test="DesignSystem-Input"
         {...baseProps}
         {...rest}
         ref={ref}

@@ -42,8 +42,15 @@
     font-size: var(--font-size-m);
 }
 
+.Input:hover {
+    background: var(--secondary-lightest);
+    border-color: var(--secondary-lightest);
+    cursor: pointer;
+}
+
 .Input:focus-within {
-    border: var(--spacing-xs) solid var(--primary);
+    background: var(--white);
+    border-color: var(--primary);
 }
 
 .Input:focus-within .Input-icon--left .Icon {
@@ -51,7 +58,7 @@
 }
 
 .Input--error:focus-within {
-    border: var(--spacing-xs) solid var(--alert);
+    border-color: var(--alert);
     box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
@@ -62,14 +69,17 @@
 .Input--disabled {
     background: var(--secondary-lightest);
     border-color: var(--secondary-light);
+    pointer-events: none;
 }
 
 .Input--disabled .Input-icon--left .Icon{
     color: var(--inverse-lightest);
 }
 
-.Input--error {
-    border: var(--spacing-xs) solid var(--alert);
+.Input--error,
+.Input--error:hover {
+    background: var(--white);
+    border-color: var(--alert);
 }
 
 .Input-input {
