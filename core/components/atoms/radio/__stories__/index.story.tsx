@@ -22,6 +22,16 @@ export const all = () => {
     false
   );
 
+  const defaultChecked = boolean(
+    'defaultChecked',
+    false
+  );
+
+  const checked = boolean(
+    'checked',
+    undefined
+  );
+
   const name = 'gender';
 
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,6 +46,8 @@ export const all = () => {
         label={label}
         name={name}
         value={label}
+        defaultChecked={defaultChecked}
+        checked={checked}
         onChange={onChangeHandler}
       />
     </div>

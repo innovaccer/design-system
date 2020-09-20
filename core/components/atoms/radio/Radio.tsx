@@ -31,9 +31,13 @@ export interface RadioProps extends BaseProps {
    */
   value: string;
   /**
-   * Denotes Selection
+   * Denotes initial selection in case of Uncontrolled `Radio`
    */
   defaultChecked?: boolean;
+  /**
+   * Denotes selection in case of Controlled `Radio`
+   */
+  checked?: boolean;
   /**
    * Callback function called when user the selects an option
    */
@@ -48,6 +52,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
     onChange,
     name,
     value,
+    checked,
     defaultChecked,
     className
   } = props;
@@ -76,10 +81,6 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
     [`Radio-outerWrapper--${size}`]: size,
   });
 
-  const onChangeHandler = (event: MouseEvent) => {
-    if (onChange) onChange(event);
-  };
-
   const id = `${name}-${label}-${uidGenerator()}`;
   return (
     <div className={RadioClass}>
@@ -88,11 +89,12 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           {...baseProps}
           type="radio"
           disabled={disabled}
+          checked={checked}
           defaultChecked={defaultChecked}
           ref={ref}
           name={name}
           value={value}
-          onChange={onChangeHandler}
+          onChange={onChange}
           className="Radio-input"
           id={id}
         />
