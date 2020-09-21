@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import Radio from '../../Radio';
 
 // CSF format story
-export const RadioGroup = () => {
+export const UncontrolledRadioGroup = () => {
 
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     return action(`onChange: ${event.target.value}: ${event.target.checked}`)();
