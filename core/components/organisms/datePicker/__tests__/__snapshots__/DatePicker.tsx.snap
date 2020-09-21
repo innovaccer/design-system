@@ -5,11 +5,14 @@ exports[`DatePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  closeOnBackdropClick={true}
+  customStyle={Object {}}
+  on="click"
   onToggle={[Function]}
   open={false}
   position="bottom-start"
   trigger={
-    <ForwardRef
+    <InputMask
       caption=""
       icon="events"
       mask={
@@ -30,7 +33,6 @@ exports[`DatePicker component
       onChange={[Function]}
       onClear={[Function]}
       placeholder="mm/dd/yyyy"
-      placeholderChar="_"
       value="03/01/2020"
     />
   }
@@ -51,11 +53,14 @@ exports[`DatePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  closeOnBackdropClick={true}
+  customStyle={Object {}}
+  on="click"
   onToggle={[Function]}
   open={true}
   position="bottom-start"
   trigger={
-    <ForwardRef
+    <InputMask
       caption=""
       icon="events"
       mask={
@@ -76,7 +81,6 @@ exports[`DatePicker component
       onChange={[Function]}
       onClear={[Function]}
       placeholder="mm/dd/yyyy"
-      placeholderChar="_"
       value="03/01/2020"
     />
   }
@@ -145,11 +149,14 @@ exports[`DatePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  closeOnBackdropClick={true}
+  customStyle={Object {}}
+  on="click"
   onToggle={[Function]}
   open={false}
   position="bottom-start"
   trigger={
-    <ForwardRef
+    <InputMask
       caption=""
       icon="events"
       mask={
@@ -170,7 +177,6 @@ exports[`DatePicker component
       onChange={[Function]}
       onClear={[Function]}
       placeholder="mm/dd/yyyy"
-      placeholderChar="_"
       value="03/01/2020"
     />
   }

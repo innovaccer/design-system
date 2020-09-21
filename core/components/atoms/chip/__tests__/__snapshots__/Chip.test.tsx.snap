@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chip component 
+  type: "Action"
+ 1`] = `
+<GenericChip
+  className="Chip Chip--Action"
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
+`;
+
+exports[`Chip component 
+  type: "Action", disabled: false
+ 1`] = `
+<GenericChip
+  className="Chip Chip--Action"
+  disabled={false}
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
+`;
+
+exports[`Chip component 
+  type: "Action", disabled: true
+ 1`] = `
+<GenericChip
+  className="Chip Chip-Action--disabled"
+  disabled={true}
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
+`;
+
+exports[`Chip component 
+  type: "Input"
+ 1`] = `
+<GenericChip
+  className="Chip Chip--Input"
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
+`;
+
+exports[`Chip component 
+  type: "Input", disabled: false
+ 1`] = `
+<GenericChip
+  className="Chip Chip--Input"
+  disabled={false}
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
+`;
+
+exports[`Chip component 
+  type: "Input", disabled: true
+ 1`] = `
+<GenericChip
+  className="Chip Chip-Input--disabled"
+  disabled={true}
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
+`;
+
+exports[`Chip component 
+  type: "Selection"
+ 1`] = `
+<GenericChip
+  className="Chip Chip--Selection"
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
+`;
+
+exports[`Chip component 
+  type: "Selection", disabled: false
+ 1`] = `
+<GenericChip
+  className="Chip Chip--Selection"
+  disabled={false}
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
+`;
+
+exports[`Chip component 
+  type: "Selection", disabled: true
+ 1`] = `
+<GenericChip
+  className="Chip Chip-Selection--disabled"
+  disabled={true}
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
+`;
+
+exports[`Chip component 
+  type: "Selection", selected: false
+ 1`] = `
+<GenericChip
+  className="Chip Chip--Selection"
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
+`;
+
+exports[`Chip component 
+  type: "Selection", selected: true
+ 1`] = `
+<GenericChip
+  className="Chip Chip--Selection Chip-Selection--selected"
+  onClick={[Function]}
+  onClose={[Function]}
+  selected={false}
+/>
+`;

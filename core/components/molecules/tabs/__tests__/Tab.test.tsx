@@ -32,7 +32,6 @@ describe('Tab component', () => {
 });
 
 describe('Tab component', () => {
-
   it('renders children', () => {
     const { getByTestId } = render(
       <Tab label={Label}>
@@ -45,4 +44,11 @@ describe('Tab component', () => {
     expect(getByTestId('DS-Tab')).toBeInTheDocument();
   });
 
+  it('renders without children', () => {
+    const { asFragment } = render(
+      <Tab label={Label} />
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

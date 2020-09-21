@@ -845,24 +845,28 @@ exports[`DonutChart component
   >
     <Legend
       iconAppearance="primary"
+      iconSize={16}
       key="0"
     >
       Group A - 400
     </Legend>
     <Legend
       iconAppearance="secondary"
+      iconSize={16}
       key="1"
     >
       Group B - 300
     </Legend>
     <Legend
       iconAppearance="success"
+      iconSize={16}
       key="2"
     >
       Group C - 300
     </Legend>
     <Legend
       iconAppearance="warning"
+      iconSize={16}
       key="3"
     >
       Group D - 200

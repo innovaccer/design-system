@@ -27,7 +27,7 @@ export const ModalHeader = (props: ModalHeaderProps) => {
 
   return (
     <div className="Modal-header-wrapper">
-      <div {...baseProps} className={classes}>
+      <div data-test="DesignSystem-ModalHeader" {...baseProps} className={classes}>
         {icon && (
           <Icon
             className="Modal-header-icon"

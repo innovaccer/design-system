@@ -6,7 +6,6 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 
 const FunctionValue = jest.fn();
 const dimension = ['small', 'medium', 'large'];
-const BooleanValue = [true, false];
 
 const modalHeaderOptions = {
   onClose: () => null,
@@ -16,9 +15,7 @@ const modalHeaderOptions = {
 };
 
 const mapper = {
-  backdropClose: valueHelper(FunctionValue, { required: true }),
-  onClose: valueHelper(FunctionValue, { required: true }),
-  backdrop: valueHelper(BooleanValue, { required: true, iterate: true }),
+  backdropClose: valueHelper([FunctionValue], { iterate: true }),
   dimension: valueHelper(dimension, { required: true, iterate: true }),
   open: valueHelper(true, { required: true }),
 };
@@ -63,11 +60,11 @@ describe('Modal component with props', () => {
     expect(getByTestId('DS-ModalFooter')).toBeInTheDocument();
   });
 
-  it('renders with prop: backdropClose and backdrop', () => {
+  it('renders with prop: backdropClose', () => {
     const { getByTestId } = render(
       <>
         <div data-test="DS-OutsideClick">Outside Click</div>
-        <Modal backdropClose={FunctionValue} open={true} backdrop={true} />
+        <Modal backdropClose={FunctionValue} open={true} />
       </>
     );
 

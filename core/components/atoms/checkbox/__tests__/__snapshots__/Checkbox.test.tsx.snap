@@ -13,7 +13,7 @@ exports[`Checkbox component
       checked={false}
       className="Checkbox-input"
       disabled={false}
-      id="Checkbox-Checkbox-49b6659d-26e1-41a6-8854-c94c1c2769a3"
+      id="Checkbox-Checkbox-5643dd3b-9699-4e3f-af2d-dad38b0af5e5"
       name="Checkbox"
       onChange={[Function]}
       tabIndex={0}
@@ -26,12 +26,11 @@ exports[`Checkbox component
   </div>
   <label
     className="Checkbox-label Checkbox-label--regular"
-    htmlFor="Checkbox-Checkbox-49b6659d-26e1-41a6-8854-c94c1c2769a3"
+    htmlFor="Checkbox-Checkbox-5643dd3b-9699-4e3f-af2d-dad38b0af5e5"
   >
     <Text
       appearance="default"
       size="regular"
-      small={false}
     >
       Checkbox
     </Text>
@@ -52,7 +51,7 @@ exports[`Checkbox component
       checked={false}
       className="Checkbox-input"
       disabled={true}
-      id="Checkbox-Checkbox-268da096-ae49-4149-8369-197429a61dcb"
+      id="Checkbox-Checkbox-b387ff1f-1dde-4e4a-84af-a16c9eb27432"
       name="Checkbox"
       onChange={[Function]}
       tabIndex={0}
@@ -65,12 +64,11 @@ exports[`Checkbox component
   </div>
   <label
     className="Checkbox-label Checkbox-label--regular"
-    htmlFor="Checkbox-Checkbox-268da096-ae49-4149-8369-197429a61dcb"
+    htmlFor="Checkbox-Checkbox-b387ff1f-1dde-4e4a-84af-a16c9eb27432"
   >
     <Text
       appearance="default"
       size="regular"
-      small={false}
     >
       Checkbox
     </Text>
@@ -91,7 +89,7 @@ exports[`Checkbox component
       checked={true}
       className="Checkbox-input Checkbox-input--checked"
       disabled={false}
-      id="Checkbox-Checkbox-7a325cfe-6180-470a-bb47-18f5fd9ef16f"
+      id="Checkbox-Checkbox-9afdabc0-0af5-43ca-9d88-84202a35b5e8"
       name="Checkbox"
       onChange={[Function]}
       tabIndex={0}
@@ -110,12 +108,11 @@ exports[`Checkbox component
   </div>
   <label
     className="Checkbox-label Checkbox-label--regular"
-    htmlFor="Checkbox-Checkbox-7a325cfe-6180-470a-bb47-18f5fd9ef16f"
+    htmlFor="Checkbox-Checkbox-9afdabc0-0af5-43ca-9d88-84202a35b5e8"
   >
     <Text
       appearance="default"
       size="regular"
-      small={false}
     >
       Checkbox
     </Text>
@@ -136,7 +133,7 @@ exports[`Checkbox component
       checked={true}
       className="Checkbox-input Checkbox-input--checked"
       disabled={true}
-      id="Checkbox-Checkbox-a3195ade-bc30-438b-b202-e45520bc771e"
+      id="Checkbox-Checkbox-7c1bd1b3-0f89-4c03-9027-8db5159d3bfa"
       name="Checkbox"
       onChange={[Function]}
       tabIndex={0}
@@ -155,12 +152,11 @@ exports[`Checkbox component
   </div>
   <label
     className="Checkbox-label Checkbox-label--regular"
-    htmlFor="Checkbox-Checkbox-a3195ade-bc30-438b-b202-e45520bc771e"
+    htmlFor="Checkbox-Checkbox-7c1bd1b3-0f89-4c03-9027-8db5159d3bfa"
   >
     <Text
       appearance="default"
       size="regular"
-      small={false}
     >
       Checkbox
     </Text>
@@ -180,7 +176,7 @@ exports[`Checkbox component
     <input
       className="Checkbox-input Checkbox-input--indeterminate"
       disabled={false}
-      id="Checkbox-Checkbox-a6b36b32-8ee5-4676-815c-37d97b083896"
+      id="Checkbox-Checkbox-def7b868-ed0d-4407-9769-cdbdbafa0b01"
       name="Checkbox"
       onChange={[Function]}
       tabIndex={0}
@@ -199,12 +195,11 @@ exports[`Checkbox component
   </div>
   <label
     className="Checkbox-label Checkbox-label--regular"
-    htmlFor="Checkbox-Checkbox-a6b36b32-8ee5-4676-815c-37d97b083896"
+    htmlFor="Checkbox-Checkbox-def7b868-ed0d-4407-9769-cdbdbafa0b01"
   >
     <Text
       appearance="default"
       size="regular"
-      small={false}
     >
       Checkbox
     </Text>
@@ -224,7 +219,7 @@ exports[`Checkbox component
     <input
       className="Checkbox-input Checkbox-input--indeterminate"
       disabled={true}
-      id="Checkbox-Checkbox-43983ce0-4c6d-4918-839f-fc6968277d53"
+      id="Checkbox-Checkbox-6add4d90-a5f2-41c9-86a5-dbe9a6f97505"
       name="Checkbox"
       onChange={[Function]}
       tabIndex={0}
@@ -243,12 +238,11 @@ exports[`Checkbox component
   </div>
   <label
     className="Checkbox-label Checkbox-label--regular"
-    htmlFor="Checkbox-Checkbox-43983ce0-4c6d-4918-839f-fc6968277d53"
+    htmlFor="Checkbox-Checkbox-6add4d90-a5f2-41c9-86a5-dbe9a6f97505"
   >
     <Text
       appearance="default"
       size="regular"
-      small={false}
     >
       Checkbox
     </Text>
@@ -268,7 +262,7 @@ exports[`Checkbox component
     <input
       checked={true}
       className="Checkbox-input Checkbox-input--checked"
-      id="Checkbox-Checkbox-2dc0e47f-8929-45b5-8e15-acb646535f7b"
+      id="Checkbox-Checkbox-20d23cd3-796e-4a73-a7a3-970390fc0c8e"
       name="Checkbox"
       onChange={[Function]}
       tabIndex={0}
@@ -287,12 +281,11 @@ exports[`Checkbox component
   </div>
   <label
     className="Checkbox-label Checkbox-label--regular"
-    htmlFor="Checkbox-Checkbox-2dc0e47f-8929-45b5-8e15-acb646535f7b"
+    htmlFor="Checkbox-Checkbox-20d23cd3-796e-4a73-a7a3-970390fc0c8e"
   >
     <Text
       appearance="default"
       size="regular"
-      small={false}
     >
       Checkbox
     </Text>
@@ -312,7 +305,7 @@ exports[`Checkbox component
     <input
       checked={true}
       className="Checkbox-input Checkbox-input--checked"
-      id="Checkbox-Checkbox-ffc49bbe-73c6-4b2b-be3d-0fae76072948"
+      id="Checkbox-Checkbox-1fb1c964-fe1e-4092-b096-71615ca3f382"
       name="Checkbox"
       onChange={[Function]}
       tabIndex={0}
@@ -331,12 +324,11 @@ exports[`Checkbox component
   </div>
   <label
     className="Checkbox-label Checkbox-label--tiny"
-    htmlFor="Checkbox-Checkbox-ffc49bbe-73c6-4b2b-be3d-0fae76072948"
+    htmlFor="Checkbox-Checkbox-1fb1c964-fe1e-4092-b096-71615ca3f382"
   >
     <Text
       appearance="default"
-      size="regular"
-      small={true}
+      size="small"
     >
       Checkbox
     </Text>

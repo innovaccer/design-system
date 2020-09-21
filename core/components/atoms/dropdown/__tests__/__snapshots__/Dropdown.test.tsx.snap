@@ -9,7 +9,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -79,7 +78,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -176,7 +174,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -246,7 +243,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -343,7 +339,6 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   checkboxes={true}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -413,7 +408,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -511,7 +505,6 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   checkboxes={true}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -581,7 +574,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -679,7 +671,6 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   closeOnSelect={true}
   disabled={false}
-  dropdownOpen={false}
   icon="events"
   inputRef={
     Object {
@@ -750,7 +741,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -847,7 +837,6 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   closeOnSelect={true}
   disabled={false}
-  dropdownOpen={false}
   inlineLabel="Label"
   inputRef={
     Object {
@@ -918,7 +907,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -1015,7 +1003,6 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   closeOnSelect={true}
   disabled={false}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -1085,7 +1072,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -1182,7 +1168,6 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   closeOnSelect={true}
   disabled={true}
-  dropdownOpen={false}
   icon="events"
   inputRef={
     Object {
@@ -1253,7 +1238,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -1350,7 +1334,6 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   closeOnSelect={true}
   disabled={true}
-  dropdownOpen={false}
   inlineLabel="Label"
   inputRef={
     Object {
@@ -1421,7 +1404,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -1518,7 +1500,6 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   closeOnSelect={true}
   disabled={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -1588,7 +1569,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -1684,7 +1664,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -1744,7 +1723,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -1830,7 +1808,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -1910,7 +1887,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -2016,7 +1992,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -2096,7 +2071,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -2202,7 +2176,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -2282,7 +2255,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -2388,7 +2360,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -2458,7 +2429,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   menu={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
@@ -2555,7 +2525,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -2625,7 +2594,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   menu={true}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
@@ -2722,7 +2690,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -2792,7 +2759,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -2888,7 +2854,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -3056,7 +3021,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -3224,7 +3188,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -3392,7 +3355,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -3560,7 +3522,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -3728,7 +3689,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -3896,7 +3856,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -3966,7 +3925,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -4063,7 +4021,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -4133,7 +4090,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -4230,7 +4186,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -4252,7 +4207,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}
@@ -4301,7 +4255,6 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
-  dropdownOpen={false}
   inputRef={
     Object {
       "current": null,
@@ -4323,7 +4276,6 @@ exports[`Dropdown component
       },
     ]
   }
-  loadingOptions={false}
   onChange={[MockFunction]}
   onClearOptions={[Function]}
   onOptionSelect={[Function]}

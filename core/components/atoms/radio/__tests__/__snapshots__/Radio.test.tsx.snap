@@ -12,9 +12,9 @@ exports[`Radio component
     <input
       className="Radio-input"
       disabled={false}
-      id="Options-Radio-22944b01-212f-4be0-bce6-f897cc6a7b8e"
+      id="Options-Radio-1f2abfce-6b31-41bc-9340-bab350f51525"
       name="Options"
-      onChange={[Function]}
+      onChange={[MockFunction]}
       type="radio"
       value="Options"
     />
@@ -24,12 +24,11 @@ exports[`Radio component
   </div>
   <label
     className="Radio-label"
-    htmlFor="Options-Radio-22944b01-212f-4be0-bce6-f897cc6a7b8e"
+    htmlFor="Options-Radio-1f2abfce-6b31-41bc-9340-bab350f51525"
   >
     <Text
       appearance="default"
       size="regular"
-      small={false}
     >
       Radio
     </Text>
@@ -49,9 +48,9 @@ exports[`Radio component
     <input
       className="Radio-input"
       disabled={true}
-      id="Options-Radio-f6b3da77-f326-4797-bed2-263d1d1eddf1"
+      id="Options-Radio-437b37e7-af32-4da2-8dee-1be015ed1e6b"
       name="Options"
-      onChange={[Function]}
+      onChange={[MockFunction]}
       type="radio"
       value="Options"
     />
@@ -61,12 +60,11 @@ exports[`Radio component
   </div>
   <label
     className="Radio-label"
-    htmlFor="Options-Radio-f6b3da77-f326-4797-bed2-263d1d1eddf1"
+    htmlFor="Options-Radio-437b37e7-af32-4da2-8dee-1be015ed1e6b"
   >
     <Text
       appearance="default"
       size="regular"
-      small={false}
     >
       Radio
     </Text>
@@ -85,9 +83,9 @@ exports[`Radio component
   >
     <input
       className="Radio-input"
-      id="Options-Radio-6fc4519e-1d31-4b7b-9a35-4d382b2762b3"
+      id="Options-Radio-c9eb4b97-c402-4f2d-a9a9-db0974fddcab"
       name="Options"
-      onChange={[Function]}
+      onChange={[MockFunction]}
       type="radio"
       value="Options"
     />
@@ -97,12 +95,11 @@ exports[`Radio component
   </div>
   <label
     className="Radio-label"
-    htmlFor="Options-Radio-6fc4519e-1d31-4b7b-9a35-4d382b2762b3"
+    htmlFor="Options-Radio-c9eb4b97-c402-4f2d-a9a9-db0974fddcab"
   >
     <Text
       appearance="default"
       size="regular"
-      small={false}
     >
       Radio
     </Text>
@@ -121,9 +118,9 @@ exports[`Radio component
   >
     <input
       className="Radio-input"
-      id="Options-Radio-2cffa2de-1f8d-4a6f-aaa2-cb2492dc9e7c"
+      id="Options-Radio-3bd260c1-d3e6-4868-a661-d8514cf42165"
       name="Options"
-      onChange={[Function]}
+      onChange={[MockFunction]}
       type="radio"
       value="Options"
     />
@@ -133,12 +130,11 @@ exports[`Radio component
   </div>
   <label
     className="Radio-label"
-    htmlFor="Options-Radio-2cffa2de-1f8d-4a6f-aaa2-cb2492dc9e7c"
+    htmlFor="Options-Radio-3bd260c1-d3e6-4868-a661-d8514cf42165"
   >
     <Text
       appearance="default"
-      size="regular"
-      small={true}
+      size="small"
     >
       Radio
     </Text>
