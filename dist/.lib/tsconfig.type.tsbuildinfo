@@ -217,8 +217,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/popover/Popover.tsx": {
-        "version": "35074fa8850af2a0c065a5f791d7a2877806593b7e136461d7391934149ecd72",
-        "signature": "ca47417f63e1e545841a29ab32ad68af35bcb7ea80a1e79eccfbdfa702f6bbcd",
+        "version": "b39130cb7eb36ff20ec2e03f278df67dfff3efee3bfdf10b58c708f7fe4f64ed",
+        "signature": "9a82caa8feb599083231dc61c227632c7c5cf06041a52e4d9eb273ff455706fd",
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/popover/index.tsx": {
@@ -302,33 +302,33 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/dropdown/option/CheckboxOption.tsx": {
-        "version": "7eed0d49ec674bc095e611d2a3bba9fbc4df1d238090cd3bbc7284ade5625f4b",
+        "version": "4a3e7393be00712a55a785d1260bbaa0462f4fcc82b2bddf015a441f2a0f7271",
         "signature": "97c858b912ac11b76ced3413ffb57880eedb235651b63997066fe1da1f4c2759",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/dropdown/option/DefaultOption.tsx": {
-        "version": "ab43ffca95a6418a9606c7f17127d463dfb33d86cbbbd200c6b922e4e56e3879",
+        "version": "92f695fb7744433eb84f713094e9142e7f8ed28adda1554b5db2619a8696988f",
         "signature": "9649cb50fc7075bc9fce99cc6ce742fc24e33cfdd26e27e1e5e9ea5d98a656c0",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/dropdown/option/MetaOption.tsx": {
-        "version": "664ae14041e8a119cc2c13f964765f90cab1a9f7c5b795f41f85e5679104d351",
+        "version": "c74359f217c0482c00171871a128aacb1aba8ef7522ae294c681f2c91fee0c3f",
         "signature": "e596aec849f57e76e1fc59d38d80532c48ddbc55771cf07a43a3aaec566ec3b2",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/dropdown/option/IconOption.tsx": {
-        "version": "109ec1cc4f836fd1f62dd37ebd6e3c68b8d841ecb8c19a90927c8676dbfce4d0",
+        "version": "75cdc46bfd395f71f7ab3c82f81bbc3be995f6b220b2259f2c02955932c270f2",
         "signature": "77a8fd97dd4236d097455a9e964bb6aecb44aeb92f98054d9ac8b7a8fb730a14",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/dropdown/option/IconWithMetaOption.tsx": {
-        "version": "e6a3313a91db8007069b504dbc7ed88eb06e6ee6313f50d0f18e0a2c65964708",
+        "version": "4562dfb02983aac29836e998ad7c48dded4276f5ae2fffbbf1445b123e38138e",
         "signature": "484575e263930bde0a875ce457917656a91cd82831711d60979615cd17e2e11d",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/dropdown/option/index.tsx": {
-        "version": "a5feb21befd4ed4df33e2e10ade55b354451922bfb3c5ae9c641ce53f99228f7",
-        "signature": "dc49c7845bd50c5081329b927b7a576726817a9eb41bb2628950dff0c2555d61",
+        "version": "4d9940178529f37fe86d8d7043ce1a55cb40aa2e90d2fc002cfbd5d3c34e556f",
+        "signature": "7a8756501d2d38b841d2d22e735e7656a8a84bf6800e270b1ff25fba138bd070",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/dropdown/utility.tsx": {
@@ -337,7 +337,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/dropdown/DropdownButton.tsx": {
-        "version": "43a76de44d7be672f1a0a35034b6bb6a38bb8604fefe989730f91ea099c5b8b8",
+        "version": "de04b127514ffea26dfc63ed983d5b291588fd7059d9486609ee529477ea31e9",
         "signature": "66f00d38a576afebdd991a6b0ca52504b5634a2cfa6d8f1031c95a5439988323",
         "affectsGlobalScope": false
       },
@@ -362,7 +362,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/input/Input.tsx": {
-        "version": "e65e4af45ecfd356c31ea89bc201e982c1adf9ea5c3812ca35c50d89e7786c59",
+        "version": "f260f089fe4c835d0c2cbe90e4b2d21428aeb3f8d13133c161b4f4baaa3c0aef",
         "signature": "b03587c5b7cb8b073622b788a750a1bc71e868a1381e11dcc2c5ea1c2946b9f9",
         "affectsGlobalScope": false
       },
@@ -412,8 +412,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/dropdown/Dropdown.tsx": {
-        "version": "a60b4a6bd43a4e894e2c5d5d2c53b9bec3b69a5c5e000a69de412e4184f53b07",
-        "signature": "916f99d47c53248c71fe0f41d8007d6dc88a0214e9e508efc7d197e78ca7d163",
+        "version": "d2614141503daf20323f29e6f0f4c44aacc2ea5549ad7998a9e65325ca6f9e6d",
+        "signature": "756b834f00dacce235a7bd3f649025d0a47ea5c34bc37abd9addc444bf98a08e",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/dropdown/index.tsx": {
@@ -596,6 +596,26 @@
         "signature": "b7f0a457b39057fbb3c585025224ac95e2b060e5f3bd27215e7b29b3d8bb9bc6",
         "affectsGlobalScope": false
       },
+      "../../core/components/atoms/editable/Editable.tsx": {
+        "version": "faccd59eaa781e7eaf429080bb73a45df61d9962ce51bc3f5f46279e6a3d2f71",
+        "signature": "04e3b3fabd6ed0e11fcdafe0312506c9defec830b29b568f5f97d4ec4faf649c",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/editable/index.tsx": {
+        "version": "818bcdbaf3ca12134c885888e2085bab791287ebedc18aeec6740a85f16d4a84",
+        "signature": "ad25b53254b9757265867636581e4ca65c80e3f086c9cbb2eb9717ad1fc28be9",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/editableDropdown/EditableDropdown.tsx": {
+        "version": "2b4ab9e069a4f34939a1782a50f3df72d0401c899f4f2e551b37dbeee697ef75",
+        "signature": "a0c8bcd2ac55aff285230722731fa892be003dc79a8a01fc8310f7c41ef21088",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/editableDropdown/index.tsx": {
+        "version": "ff05b7c57a3f73272f5824ccc61cf4f6ebff6dcb21ad5636b14a3d869ffad7b6",
+        "signature": "1daea99843654eadac48b48465c86809f4de757ae46e4c82939bde1d94d0e517",
+        "affectsGlobalScope": false
+      },
       "../../core/components/atoms/legend/Legend.tsx": {
         "version": "2be59e5b2554dfbb127f16789657b1f397bd9edd91825ccb7fb0cfb463bfb156",
         "signature": "c3c6b37046a2b4e66b86baf7526557c75d221e18416f6edbbcf0e050cc99cc8f",
@@ -662,8 +682,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/radio/Radio.tsx": {
-        "version": "16e9d65ee6a77c6db637489fab90cb90695ce4b3e1308c81a6ed48ba2e5fe7ce",
-        "signature": "6229bc24a1f9af7a5daed0d1efb1cea3c756b9c06c1bfda96cdf79a085e2e26c",
+        "version": "fe320e28032d6c4e5006e82eafbd103608fc1845bbb1a693f4e1e841ff95b92e",
+        "signature": "fc5869d678cbd67463f7ce5e3d9752e5fddae3e4cc3597baa0217ef51a2ef70f",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/radio/index.tsx": {
@@ -872,8 +892,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/pagination/Pagination.tsx": {
-        "version": "0c435ca9fc9e0839bbf2203cb6d2727c4e4ce9e4af32ccd03bcf0df59eba9961",
-        "signature": "54f67daa85a33b4b45262dd713300ce8eee0d530baf401f34da5cc525b28c035",
+        "version": "bc5efa91eb97509eaf149015366dbca4d4f2869a514b668dcc8ba3a8014891a4",
+        "signature": "f53f7f35b3468ae56e259341d99b91af7152258d7448c83d78aa85f6b9d913b1",
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/pagination/index.tsx": {
@@ -889,6 +909,16 @@
       "../../core/components/atoms/progressBar/index.tsx": {
         "version": "8ee905db7f45be6664ba0052ebf19b7a67cfbd17ef7c7a3a318f4804061005ef",
         "signature": "993e1d28ff46aa8e1ff0337f205cb32b4b2faea6075582f616393d065ce3f1b9",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/editableInput/EditableInput.tsx": {
+        "version": "9d3f15f43bbe0457e3b7458aab85aedb101fbd18c0abcc7db24c442261bf1131",
+        "signature": "e82f413467242e9d09fedd4eb0e510506b419d37a8b3559ae5bb387574af4893",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/editableInput/index.tsx": {
+        "version": "e872fa9bdedf0e1995eac532e1137e1bd5b6bbef902615e132df85cb5f00245c",
+        "signature": "c0efb6c7835aa7e80248128b4883abd63e23c01f4f3496a56ad01fb27f42fc98",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/progressRing/ProgressRing.tsx": {
@@ -932,7 +962,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/tabs/TabsWrapper.tsx": {
-        "version": "a50df656ebbcba10a01656e5fd864302e2b57b5e23137f6df0362eed794b37a5",
+        "version": "a57142a1b9e5d944dd4640dbf52623a8a242b767fb7b0a0216bf17afc1a26395",
         "signature": "c38d22a244eeb3f8f3f033c50be86f23815a2494e318b4f8b516b206df904cd0",
         "affectsGlobalScope": false
       },
@@ -1047,12 +1077,12 @@
         "affectsGlobalScope": false
       },
       "../../core/index.type.tsx": {
-        "version": "927ff8dd20e437a991649e5b4db6e4706ca46995546169289f91214336cc53c0",
-        "signature": "fb3e95669f2a4033c010732cb5cdc351fbb6e6f6c965ccd3b3e66283156dc57b",
+        "version": "33345411995e3831ab51a2a215c523859505b0cafd1b8df7b6360187929a6c42",
+        "signature": "73db630b250f65bafd88aac8503bd823b0dca675d180656fb203b602ff7cfda6",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/avatar/Avatar.tsx": {
-        "version": "cba1692823481653178b146f7cfc4f318719ce54c00807c4febe682416a4ebc5",
+        "version": "aef07ebb98722ce574e19c59fd02ae3e20ee84bdbb63c2b777d31d4b546d43b3",
         "signature": "891f8ae2e827219b9a8cf67a6392e67368f19f9f89a7ee07907c130167446aa5",
         "affectsGlobalScope": false
       },
@@ -1062,8 +1092,8 @@
         "affectsGlobalScope": false
       },
       "../../core/index.tsx": {
-        "version": "16da5650758d4c555df3f4f3579d3b7d09a969e8772f909c22967e44c22ded3b",
-        "signature": "bf0de2c75c640a706f2245cb7d975c834d53b38024700f84767b963bfb475efc",
+        "version": "f0942b2826df7e9074bf2f3fe3b9334dae26e7582f7ac940b39f3837b3fde9d3",
+        "signature": "cc05513823eb957a8947346acb7f361f5fc04e2ee5ad096cdfab9c32a98d3fd9",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/badge/_stories_/SolidAlert.story.tsx": {
@@ -1457,8 +1487,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/child_process.d.ts": {
-        "version": "714e21572208da98a16594de5e42ee54dbbebca7e69e956d2dac010564378c45",
-        "signature": "714e21572208da98a16594de5e42ee54dbbebca7e69e956d2dac010564378c45",
+        "version": "1fc4b0908c44f39b1f2e5a728d472670a0ea0970d2c6b5691c88167fe541ff82",
+        "signature": "1fc4b0908c44f39b1f2e5a728d472670a0ea0970d2c6b5691c88167fe541ff82",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/cluster.d.ts": {
@@ -1477,8 +1507,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/crypto.d.ts": {
-        "version": "f55050ab6bac28fdb7ac69871662e90ea6bce02d45a8a4ac627461908486cac3",
-        "signature": "f55050ab6bac28fdb7ac69871662e90ea6bce02d45a8a4ac627461908486cac3",
+        "version": "dab288a3d92e6a3323566256ba56987b78b100341866fa3cc245c9cd2fd55706",
+        "signature": "dab288a3d92e6a3323566256ba56987b78b100341866fa3cc245c9cd2fd55706",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/dgram.d.ts": {
@@ -1512,8 +1542,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/http.d.ts": {
-        "version": "27534007150d3d80f12fe48dc815b32bf9b92a7de058b52bfc21a256e9d18966",
-        "signature": "27534007150d3d80f12fe48dc815b32bf9b92a7de058b52bfc21a256e9d18966",
+        "version": "d0280b7e9e5a11bfd381c8ffbb12bb1007ab2967e06d8af114f4140444abb631",
+        "signature": "d0280b7e9e5a11bfd381c8ffbb12bb1007ab2967e06d8af114f4140444abb631",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/http2.d.ts": {
@@ -1672,8 +1702,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/index.d.ts": {
-        "version": "6cf3c2cb86046d1dc3bb5c1bdaf3a7f37bd0d777c43285d1bd12f1d52923dd91",
-        "signature": "6cf3c2cb86046d1dc3bb5c1bdaf3a7f37bd0d777c43285d1bd12f1d52923dd91",
+        "version": "35cbbc58882d2c158032d7f24ba8953d7e1caeb8cb98918d85819496109f55d2",
+        "signature": "35cbbc58882d2c158032d7f24ba8953d7e1caeb8cb98918d85819496109f55d2",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/cheerio/index.d.ts": {
@@ -2282,8 +2312,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/webpack-env/index.d.ts": {
-        "version": "1db2b55f2381ed9558f93cbf4068096d72e1c8d59bb3a66aafa0fc11c1f17530",
-        "signature": "1db2b55f2381ed9558f93cbf4068096d72e1c8d59bb3a66aafa0fc11c1f17530",
+        "version": "9575baefb3597b2bf1514d36839d36ab8404dfcb5ad4b1a322165a96fbd618e7",
+        "signature": "9575baefb3597b2bf1514d36839d36ab8404dfcb5ad4b1a322165a96fbd618e7",
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/yargs-parser/index.d.ts": {
@@ -2326,6 +2356,24 @@
           "core/*"
         ],
         "*": [
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
           "*",
           "*",
           "*",
@@ -3288,6 +3336,14 @@
       "../../core/components/atoms/dropdown/utility.tsx": [
         "../../core/components/atoms/dropdown/option/index.tsx"
       ],
+      "../../core/components/atoms/editable/Editable.tsx": [
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/classnames/index.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/atoms/editable/index.tsx": [
+        "../../core/components/atoms/editable/Editable.tsx"
+      ],
       "../../core/components/atoms/heading/Heading.tsx": [
         "../../core/components/atoms/_text/index.tsx",
         "../../core/utils/types.tsx",
@@ -3633,6 +3689,28 @@
       ],
       "../../core/components/molecules/dialog/index.tsx": [
         "../../core/components/molecules/dialog/Dialog.tsx"
+      ],
+      "../../core/components/molecules/editableDropdown/EditableDropdown.tsx": [
+        "../../core/components/atoms/editable/index.tsx",
+        "../../core/index.tsx",
+        "../../core/index.type.tsx",
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/classnames/index.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/molecules/editableDropdown/index.tsx": [
+        "../../core/components/molecules/editableDropdown/EditableDropdown.tsx"
+      ],
+      "../../core/components/molecules/editableInput/EditableInput.tsx": [
+        "../../core/components/atoms/editable/index.tsx",
+        "../../core/index.tsx",
+        "../../core/index.type.tsx",
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/classnames/index.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/molecules/editableInput/index.tsx": [
+        "../../core/components/molecules/editableInput/EditableInput.tsx"
       ],
       "../../core/components/molecules/inputMask/InputMask.tsx": [
         "../../core/components/atoms/caption/index.tsx",
@@ -3991,6 +4069,8 @@
         "../../core/components/atoms/toast/index.tsx",
         "../../core/components/atoms/tooltip/index.tsx",
         "../../core/components/molecules/dialog/index.tsx",
+        "../../core/components/molecules/editableDropdown/index.tsx",
+        "../../core/components/molecules/editableInput/index.tsx",
         "../../core/components/molecules/inputMask/index.tsx",
         "../../core/components/molecules/modal/index.tsx",
         "../../core/components/molecules/modalBody/index.tsx",
@@ -4052,6 +4132,8 @@
         "../../core/components/atoms/toast/index.tsx",
         "../../core/components/atoms/tooltip/index.tsx",
         "../../core/components/molecules/dialog/index.tsx",
+        "../../core/components/molecules/editableDropdown/index.tsx",
+        "../../core/components/molecules/editableInput/index.tsx",
         "../../core/components/molecules/inputMask/index.tsx",
         "../../core/components/molecules/modal/index.tsx",
         "../../core/components/molecules/modalBody/index.tsx",
@@ -5569,6 +5651,8 @@
       "../../core/components/atoms/dropdown/option/MetaOption.tsx",
       "../../core/components/atoms/dropdown/option/index.tsx",
       "../../core/components/atoms/dropdown/utility.tsx",
+      "../../core/components/atoms/editable/Editable.tsx",
+      "../../core/components/atoms/editable/index.tsx",
       "../../core/components/atoms/heading/Heading.tsx",
       "../../core/components/atoms/heading/index.tsx",
       "../../core/components/atoms/icon/Icon.tsx",
@@ -5646,6 +5730,10 @@
       "../../core/components/molecules/buttonGroup/SplitButton.story.tsx",
       "../../core/components/molecules/dialog/Dialog.tsx",
       "../../core/components/molecules/dialog/index.tsx",
+      "../../core/components/molecules/editableDropdown/EditableDropdown.tsx",
+      "../../core/components/molecules/editableDropdown/index.tsx",
+      "../../core/components/molecules/editableInput/EditableInput.tsx",
+      "../../core/components/molecules/editableInput/index.tsx",
       "../../core/components/molecules/inputMask/InputMask.tsx",
       "../../core/components/molecules/inputMask/index.tsx",
       "../../core/components/molecules/inputMask/masks.ts",

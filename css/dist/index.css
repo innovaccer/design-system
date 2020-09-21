@@ -1844,6 +1844,64 @@ body {
     color: var(--inverse);
 }
 
+.EditableDropdown {
+  width: 100%;
+}
+
+.EditableDropdown-default {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: var(--spacing-3);
+  padding-left: var(--spacing-l);
+}
+.EditableInput {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.EditableInput-actions {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--spacing-m);
+  width: 100%;
+}
+
+.EditableInput-actions--regular {
+  top: var(--spacing-3);
+}
+
+.EditableInput-actions--tiny {
+  top: var(--spacing-xl);
+}
+
+.EditableInput-default {
+  border: var(--spacing-xs) solid transparent;
+  box-sizing: border-box;
+  white-space: nowrap;
+  padding-left: var(--spacing-l);
+  padding-right: var(--spacing-l);
+  display: flex;
+  align-items: center;
+}
+
+.EditableInput-default--regular {
+  min-width: var(--spacing-9);
+  height: var(--spacing-3);
+}
+
+.EditableInput-default--tiny {
+  min-width: var(--spacing-6);
+  height: var(--spacing-xl);
+}
+
+.EditableInput-Input--tiny {
+  min-width: var(--spacing-6) !important;
+  width: 100%;
+}
 /** Grid **/
 
 /* .Grid-container {
@@ -2404,8 +2462,15 @@ body {
     font-size: var(--font-size-m);
 }
 
+.Input:hover {
+    background: var(--secondary-lightest);
+    border-color: var(--secondary-lightest);
+    cursor: pointer;
+}
+
 .Input:focus-within {
-    border: var(--spacing-xs) solid var(--primary);
+    background: var(--white);
+    border-color: var(--primary);
 }
 
 .Input:focus-within .Input-icon--left .Icon {
@@ -2413,7 +2478,7 @@ body {
 }
 
 .Input--error:focus-within {
-    border: var(--spacing-xs) solid var(--alert);
+    border-color: var(--alert);
     box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
@@ -2424,14 +2489,17 @@ body {
 .Input--disabled {
     background: var(--secondary-lightest);
     border-color: var(--secondary-light);
+    pointer-events: none;
 }
 
 .Input--disabled .Input-icon--left .Icon{
     color: var(--inverse-lightest);
 }
 
-.Input--error {
-    border: var(--spacing-xs) solid var(--alert);
+.Input--error,
+.Input--error:hover {
+    background: var(--white);
+    border-color: var(--alert);
 }
 
 .Input-input {

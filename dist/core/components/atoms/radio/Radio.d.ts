@@ -9,6 +9,7 @@ export interface RadioProps extends BaseProps {
     name: string;
     value: string;
     defaultChecked?: boolean;
+    checked?: boolean;
     onChange?: (event: MouseEvent) => void;
 }
 export declare const Radio: React.ForwardRefExoticComponent<RadioProps & React.RefAttributes<HTMLInputElement>>;

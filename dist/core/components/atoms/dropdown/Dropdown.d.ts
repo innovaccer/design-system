@@ -30,6 +30,7 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
     totalOptions?: number;
     closeOnSelect?: boolean;
     triggerOptions?: TriggerProps;
+    getLabel?: (label: string) => void;
     onChange?: (selected: any[] | any, name?: string | number) => void;
     onClose?: (selected: any[], name?: string | number) => void;
 }

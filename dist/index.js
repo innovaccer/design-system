@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1600326959542 
+   * Generated on: 1600674692580 
    *      Package: @innovaccer/design-system
-   *      Version: v1.2.0-2
+   *      Version: v1.2.0-3
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -135,7 +135,8 @@
         if (withTooltip && initials) {
           return /*#__PURE__*/React.createElement(Tooltip, {
             tooltip: tooltip,
-            position: tooltipPosition
+            position: tooltipPosition,
+            triggerClass: 'flex-grow-0'
           }, renderAvatar());
         }
 
@@ -459,6 +460,7 @@
         Popover: true
       }, _a['Popover--dark'] = dark, _a), className);
       var PopoverWrapper = /*#__PURE__*/React.createElement("div", {
+        "data-test": "DesignSystem-Popover",
         className: classes,
         "data-layer": true
       }, children);
@@ -926,7 +928,8 @@
         value: children,
         className: buttonClass,
         disabled: disabled,
-        tabIndex: 0
+        tabIndex: 0,
+        "data-test": "DesignSystem-DropdownTrigger"
       }, rest), !menu && /*#__PURE__*/React.createElement("div", {
         className: "DropdownButton-wrapper"
       }, label && /*#__PURE__*/React.createElement("div", {
@@ -1082,23 +1085,15 @@
     var CheckboxOption = function CheckboxOption(props) {
       var className = props.className,
           selected = props.selected,
-          onChange = props.onChange,
           optionData = props.optionData,
-          index = props.index,
-          updateActiveOption = props.updateActiveOption;
+          onChangeHandler = props.onChangeHandler,
+          onUpdateActiveOption = props.onUpdateActiveOption,
+          dataTest = props.dataTest;
       var label = optionData.label;
-
-      var onChangeHandler = function onChangeHandler(event) {
-        if (onChange) onChange(event);
-      };
-
-      var onUpdateActiveOption = function onUpdateActiveOption() {
-        if (updateActiveOption) updateActiveOption(index);
-      };
-
       return /*#__PURE__*/React.createElement("div", {
         className: className,
-        onMouseEnter: onUpdateActiveOption
+        onMouseEnter: onUpdateActiveOption,
+        "data-test": dataTest
       }, /*#__PURE__*/React.createElement(Checkbox, {
         label: label,
         checked: selected,
@@ -1111,24 +1106,16 @@
     var DefaultOption = function DefaultOption(props) {
       var className = props.className,
           textClassName = props.textClassName,
-          onClick = props.onClick,
+          onClickHandler = props.onClickHandler,
           optionData = props.optionData,
-          updateActiveOption = props.updateActiveOption,
-          index = props.index;
+          onUpdateActiveOption = props.onUpdateActiveOption,
+          dataTest = props.dataTest;
       var label = optionData.label;
-
-      var onClickHandler = function onClickHandler() {
-        if (onClick) onClick();
-      };
-
-      var onUpdateActiveOption = function onUpdateActiveOption() {
-        if (updateActiveOption) updateActiveOption(index);
-      };
-
       return /*#__PURE__*/React.createElement("div", {
         className: className,
         onClick: onClickHandler,
-        onMouseEnter: onUpdateActiveOption
+        onMouseEnter: onUpdateActiveOption,
+        "data-test": dataTest
       }, /*#__PURE__*/React.createElement("div", {
         className: 'Option-label'
       }, /*#__PURE__*/React.createElement("div", {
@@ -1139,25 +1126,17 @@
     var MetaOption = function MetaOption(props) {
       var className = props.className,
           textClassName = props.textClassName,
-          onClick = props.onClick,
+          onClickHandler = props.onClickHandler,
           optionData = props.optionData,
-          updateActiveOption = props.updateActiveOption,
-          index = props.index;
+          onUpdateActiveOption = props.onUpdateActiveOption,
+          dataTest = props.dataTest;
       var label = optionData.label,
           subInfo = optionData.subInfo;
-
-      var onClickHandler = function onClickHandler() {
-        if (onClick) onClick();
-      };
-
-      var onUpdateActiveOption = function onUpdateActiveOption() {
-        if (updateActiveOption) updateActiveOption(index);
-      };
-
       return /*#__PURE__*/React.createElement("div", {
         className: className,
         onClick: onClickHandler,
-        onMouseEnter: onUpdateActiveOption
+        onMouseEnter: onUpdateActiveOption,
+        "data-test": dataTest
       }, /*#__PURE__*/React.createElement("div", {
         className: 'Option-label'
       }, /*#__PURE__*/React.createElement("div", {
@@ -1173,27 +1152,19 @@
       var className = props.className,
           textClassName = props.textClassName,
           selected = props.selected,
-          onClick = props.onClick,
+          onClickHandler = props.onClickHandler,
           optionData = props.optionData,
-          updateActiveOption = props.updateActiveOption,
-          index = props.index,
-          menu = props.menu;
+          onUpdateActiveOption = props.onUpdateActiveOption,
+          menu = props.menu,
+          dataTest = props.dataTest;
       var label = optionData.label,
           icon = optionData.icon;
       var OptionClass = classNames__default['default']((_a = {}, _a["" + className] = true, _a['Option--icon'] = icon, _a));
-
-      var onClickHandler = function onClickHandler() {
-        if (onClick) onClick();
-      };
-
-      var onUpdateActiveOption = function onUpdateActiveOption() {
-        if (updateActiveOption) updateActiveOption(index);
-      };
-
       return /*#__PURE__*/React.createElement("div", {
         className: OptionClass,
         onClick: onClickHandler,
-        onMouseEnter: onUpdateActiveOption
+        onMouseEnter: onUpdateActiveOption,
+        "data-test": dataTest
       }, icon && /*#__PURE__*/React.createElement(Icon, {
         className: "Option-icon mr-4",
         name: icon,
@@ -1211,28 +1182,20 @@
       var className = props.className,
           textClassName = props.textClassName,
           selected = props.selected,
-          onClick = props.onClick,
+          onClickHandler = props.onClickHandler,
           optionData = props.optionData,
-          updateActiveOption = props.updateActiveOption,
-          index = props.index,
-          menu = props.menu;
+          onUpdateActiveOption = props.onUpdateActiveOption,
+          menu = props.menu,
+          dataTest = props.dataTest;
       var label = optionData.label,
           icon = optionData.icon,
           subInfo = optionData.subInfo;
       var OptionClass = classNames__default['default']((_a = {}, _a["" + className] = true, _a['Option--icon'] = icon, _a));
-
-      var onClickHandler = function onClickHandler() {
-        if (onClick) onClick();
-      };
-
-      var onUpdateActiveOption = function onUpdateActiveOption() {
-        if (updateActiveOption) updateActiveOption(index);
-      };
-
       return /*#__PURE__*/React.createElement("div", {
         className: OptionClass,
         onClick: onClickHandler,
-        onMouseEnter: onUpdateActiveOption
+        onMouseEnter: onUpdateActiveOption,
+        "data-test": dataTest
       }, icon && /*#__PURE__*/React.createElement(Icon, {
         className: "Option-icon mr-4",
         name: icon,
@@ -1271,6 +1234,16 @@
         if (updateActiveOption) updateActiveOption(index);
       };
 
+      var onClickHandler = function onClickHandler(e) {
+        e.stopPropagation();
+        if (onClick) onClick();
+      };
+
+      var onChangeHandler = function onChangeHandler(e) {
+        e.stopPropagation();
+        if (onChange) onChange(e);
+      };
+
       if (props.optionRenderer) {
         return /*#__PURE__*/React.createElement("div", __assign({
           className: "OptionWrapper",
@@ -1289,14 +1262,14 @@
       var type = checkboxes ? 'WITH_CHECKBOX' : optionType;
       var component = OptionTypeMapping[type];
       return component({
-        optionData: optionData,
         menu: menu,
         selected: selected,
-        onChange: onChange,
-        onClick: onClick,
-        updateActiveOption: updateActiveOption,
+        optionData: optionData,
         textClassName: textClassName,
-        index: index,
+        onClickHandler: onClickHandler,
+        onChangeHandler: onChangeHandler,
+        onUpdateActiveOption: onUpdateActiveOption,
+        dataTest: "DesignSystem-DropdownOption--" + type,
         className: checkboxes ? CheckboxClassName : OptionClassName
       });
     };
@@ -1433,6 +1406,7 @@
         size: sizeMapping$1[size]
       }));
       return /*#__PURE__*/React.createElement("div", {
+        "data-test": "DesignSystem-InputWrapper",
         className: classes
       }, inlineLabel && /*#__PURE__*/React.createElement("div", {
         className: "Input-inlineLabel"
@@ -1443,7 +1417,9 @@
       }, /*#__PURE__*/React.createElement(Icon, {
         name: icon,
         size: sizeMapping$1[size]
-      })), /*#__PURE__*/React.createElement("input", __assign({}, baseProps, rest, {
+      })), /*#__PURE__*/React.createElement("input", __assign({
+        "data-test": "DesignSystem-Input"
+      }, baseProps, rest, {
         ref: ref,
         name: name,
         type: type,
@@ -2171,11 +2147,13 @@
 
           var selectedLength = selectedArray.length;
           if (selectedLength === 0) return '';
-          var _a = _this.props.triggerOptions,
-              triggerOptions = _a === void 0 ? {} : _a;
+          var _a = _this.props,
+              _b = _a.triggerOptions,
+              triggerOptions = _b === void 0 ? {} : _b,
+              getLabel = _a.getLabel;
           var customLabel = triggerOptions.customLabel,
-              _b = triggerOptions.labelLimit,
-              labelLimit = _b === void 0 ? 2 : _b;
+              _c = triggerOptions.labelLimit,
+              labelLimit = _c === void 0 ? 2 : _c;
           var optionsLength = _this.state ? _this.state.optionsLength : totalOptions;
           var label = '';
 
@@ -2187,6 +2165,7 @@
             label = customLabel ? customLabel(selectedLength, optionsLength) : selectedLength + " selected";
           }
 
+          if (getLabel) getLabel(label);
           return label;
         };
 
@@ -4566,6 +4545,109 @@
     };
     Legend.displayName = 'Legend';
 
+    var Editable = function Editable(props) {
+      var _a;
+
+      var className = props.className,
+          onChange = props.onChange,
+          editing = props.editing,
+          children = props.children;
+      var baseProps = extractBaseProps(props);
+      var EditableClass = classNames__default['default']((_a = {}, _a['Editable'] = true, _a), className);
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-Editable"
+      }, baseProps, {
+        className: EditableClass
+      }), /*#__PURE__*/React.createElement("div", {
+        "data-test": "DesignSystem-EditableWrapper",
+        onClick: function onClick() {
+          return onChange('edit');
+        },
+        onMouseEnter: function onMouseEnter() {
+          return !editing && onChange('hover');
+        },
+        onMouseLeave: function onMouseLeave() {
+          return !editing && onChange('default');
+        }
+      }, children));
+    };
+    Editable.displayName = 'Editable';
+
+    var EditableDropdown = function EditableDropdown(props) {
+      var _a, _b, _c;
+
+      var placeholder = props.placeholder,
+          dropdownOptions = props.dropdownOptions,
+          className = props.className;
+
+      var onDropdownChange = dropdownOptions.onChange,
+          rest = __rest(dropdownOptions, ["onChange"]);
+
+      var _d = React.useState(placeholder),
+          label = _d[0],
+          setLabel = _d[1];
+
+      var _e = React.useState(false),
+          editing = _e[0],
+          setEditing = _e[1];
+
+      var _f = React.useState(false),
+          showComponent = _f[0],
+          setShowComponent = _f[1];
+
+      var CompClass = classNames__default['default']((_a = {}, _a['EditableDropdown'] = true, _a), className);
+      var DefaultCompClass = classNames__default['default']((_b = {}, _b['EditableDropdown-default'] = true, _b['d-none'] = showComponent, _b));
+      var EditableDropdownClass = classNames__default['default']((_c = {}, _c['d-none'] = !showComponent, _c));
+      var baseProps = extractBaseProps(props);
+
+      var getLabel = function getLabel(updatedLabel) {
+        setLabel(updatedLabel);
+      };
+
+      var onChangeHandler = function onChangeHandler(eventType) {
+        switch (eventType) {
+          case 'edit':
+            setEditing(true);
+
+          case 'hover':
+            setShowComponent(true);
+            return;
+
+          case 'default':
+            setShowComponent(false);
+            return;
+        }
+      };
+
+      var onChange = function onChange(value) {
+        setEditing(false);
+        setShowComponent(false);
+        if (onDropdownChange) onDropdownChange(value);
+      };
+
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-EditableDropdown"
+      }, baseProps, {
+        className: CompClass
+      }), /*#__PURE__*/React.createElement(Editable, {
+        onChange: onChangeHandler,
+        editing: editing
+      }, /*#__PURE__*/React.createElement(Dropdown, __assign({
+        placeholder: placeholder,
+        onChange: onChange,
+        getLabel: getLabel,
+        className: EditableDropdownClass,
+        "data-test": "DesignSystem-EditableDropdown--Dropdown"
+      }, rest)), /*#__PURE__*/React.createElement("div", {
+        className: DefaultCompClass,
+        "data-test": "DesignSystem-EditableDropdown--Default"
+      }, label || placeholder)));
+    };
+    EditableDropdown.defaultProps = {
+      placeholder: '',
+      dropdownOptions: {}
+    };
+
     var Link = function Link(props) {
       var children = props.children,
           className = props.className,
@@ -4757,6 +4839,7 @@
           onChange = props.onChange,
           name = props.name,
           value = props.value,
+          checked = props.checked,
           defaultChecked = props.defaultChecked,
           className = props.className;
       var baseProps = extractBaseProps(props);
@@ -4767,11 +4850,6 @@
       var RadioClass = classNames__default['default']((_a = {}, _a['Radio'] = true, _a['Radio--disabled'] = disabled, _a["Radio--" + size] = size, _a), className);
       var RadioWrapper = classNames__default['default']((_b = {}, _b['Radio-wrapper'] = true, _b["Radio-wrapper--" + size] = size, _b));
       var RadioOuterWrapper = classNames__default['default']((_c = {}, _c['Radio-outerWrapper'] = true, _c["Radio-outerWrapper--" + size] = size, _c));
-
-      var onChangeHandler = function onChangeHandler(event) {
-        if (onChange) onChange(event);
-      };
-
       var id = name + "-" + label + "-" + uidGenerator();
       return /*#__PURE__*/React.createElement("div", {
         className: RadioClass
@@ -4780,11 +4858,12 @@
       }, /*#__PURE__*/React.createElement("input", __assign({}, baseProps, {
         type: "radio",
         disabled: disabled,
+        checked: checked,
         defaultChecked: defaultChecked,
         ref: ref,
         name: name,
         value: value,
-        onChange: onChangeHandler,
+        onChange: onChange,
         className: "Radio-input",
         id: id
       })), /*#__PURE__*/React.createElement("span", {
@@ -6094,36 +6173,37 @@
     var Pagination = function Pagination(props) {
       var _a, _b, _c;
 
-      var _d = props.type,
-          type = _d === void 0 ? 'basic' : _d,
+      var type = props.type,
           totalPages = props.totalPages,
           onPageChange = props.onPageChange,
           className = props.className;
       var baseProps = extractBaseProps(props);
 
-      var _e = React.useState(props.page ? props.page : 1),
-          page = _e[0],
-          setPage = _e[1];
+      var _d = React.useState(props.page),
+          page = _d[0],
+          setPage = _d[1];
 
-      var _f = React.useState(false),
-          init = _f[0],
-          setInit = _f[1];
+      var _e = React.useState(false),
+          init = _e[0],
+          setInit = _e[1];
 
       React.useEffect(function () {
-        if (props.page && props.page >= 1 && props.page <= totalPages) setPage(props.page);
+        setPage(props.page);
       }, [props.page]);
       var wrapperClass = classNames__default['default']((_a = {}, _a['Pagination'] = true, _a["Pagination--" + type] = type, _a), className);
       var nextButtonWrapperClass = classNames__default['default']((_b = {}, _b['Pagination-buttonWrapper'] = true, _b['Pagination-buttonWrapper--next'] = true, _b));
       var prevButtonWrapperClass = classNames__default['default']((_c = {}, _c['Pagination-buttonWrapper'] = true, _c['Pagination-buttonWrapper--previous'] = true, _c));
       React.useEffect(function () {
-        if (init && page) onPageChange(page);
+        if (init) {
+          if (page >= 1 && page <= totalPages) onPageChange(page);
+        }
       }, [page]);
 
       var inputChangeHandler = function inputChangeHandler(e) {
         e.preventDefault();
-        var val = parseInt(e.target.value.trim(), 10);
+        var val = +e.target.value.trim();
 
-        if (!val || val > 0 && val <= totalPages) {
+        if (val >= 0 && val <= totalPages) {
           if (!init) setInit(true);
           setPage(val);
         }
@@ -6161,7 +6241,7 @@
         onClick: function onClick() {
           return onClickHandler('first');
         },
-        disabled: page === 1,
+        disabled: page <= 1,
         appearance: "transparent",
         size: "large",
         icon: "first_page"
@@ -6171,7 +6251,7 @@
         onClick: function onClick() {
           return onClickHandler('prev');
         },
-        disabled: page === 1,
+        disabled: page <= 1,
         size: "large",
         icon: "navigate_before"
       }))), type === 'jump' && /*#__PURE__*/React.createElement("div", {
@@ -6181,7 +6261,7 @@
         type: "number",
         size: "large",
         onChange: inputChangeHandler,
-        value: "" + page
+        value: "" + (page === 0 ? '' : page)
       }), /*#__PURE__*/React.createElement(Text, null, " of " + totalPages + " pages")), /*#__PURE__*/React.createElement("div", {
         className: nextButtonWrapperClass
       }, /*#__PURE__*/React.createElement("div", {
@@ -6190,20 +6270,163 @@
         onClick: function onClick() {
           return onClickHandler('next');
         },
-        disabled: page === totalPages,
+        disabled: page >= totalPages,
         size: "large",
         icon: "navigate_next"
       })), /*#__PURE__*/React.createElement(Button, {
         onClick: function onClick() {
           return onClickHandler('last');
         },
-        disabled: page === totalPages,
+        disabled: page >= totalPages,
         appearance: "transparent",
         size: "large",
         icon: "last_page"
       })));
     };
     Pagination.displayName = 'Pagination';
+    Pagination.defaultProps = {
+      type: 'basic',
+      page: 1,
+      totalPages: 1
+    };
+
+    var EditableInput = function EditableInput(props) {
+      var _a, _b, _c, _d;
+
+      var value = props.value,
+          error = props.error,
+          size = props.size,
+          errorMessage = props.errorMessage,
+          placeholder = props.placeholder,
+          inputOptions = props.inputOptions,
+          disableSaveAction = props.disableSaveAction,
+          onChange = props.onChange,
+          className = props.className;
+
+      var onInputChange = inputOptions.onChange,
+          rest = __rest(inputOptions, ["onChange"]);
+
+      var _e = React.useState(value),
+          inputValue = _e[0],
+          setInputValue = _e[1];
+
+      var _f = React.useState(false),
+          editing = _f[0],
+          setEditing = _f[1];
+
+      var _g = React.useState(false),
+          showComponent = _g[0],
+          setShowComponent = _g[1];
+
+      var inputRef = /*#__PURE__*/React.createRef();
+      var baseProps = extractBaseProps(props);
+      var EditableInputClass = classNames__default['default']((_a = {}, _a['EditableInput'] = true, _a), className);
+      var EditableDefaultClass = classNames__default['default']((_b = {}, _b['EditableInput-default'] = true, _b["EditableInput-default--" + size] = size, _b));
+      var InputClass = classNames__default['default']((_c = {}, _c['EditableInput-Input--tiny'] = size === 'tiny', _c));
+      var ActionClass = classNames__default['default']((_d = {}, _d['EditableInput-actions'] = true, _d["EditableInput-actions--" + size] = size, _d));
+      React.useEffect(function () {
+        setDefaultComponent();
+      }, [value]);
+
+      var setDefaultComponent = function setDefaultComponent() {
+        setInputValue(value);
+        setEditing(false);
+        setShowComponent(false);
+      };
+
+      var onSaveChanges = function onSaveChanges() {
+        if (onChange) onChange(inputValue);
+      };
+
+      var onInputChangeHandler = function onInputChangeHandler(e) {
+        setInputValue(e.target.value);
+        if (onInputChange) onInputChange(e);
+      };
+
+      var onChangeHandler = function onChangeHandler(eventType) {
+        var _a;
+
+        switch (eventType) {
+          case 'edit':
+            (_a = inputRef.current) === null || _a === void 0 ? void 0 : _a.focus();
+            setEditing(true);
+
+          case 'hover':
+            setShowComponent(true);
+            return;
+
+          case 'default':
+            setShowComponent(false);
+        }
+      };
+
+      var inputComponent = /*#__PURE__*/React.createElement(Input, __assign({
+        defaultValue: inputValue,
+        placeholder: placeholder,
+        className: InputClass,
+        autoFocus: editing,
+        size: size,
+        onChange: onInputChangeHandler,
+        error: error && editing,
+        ref: inputRef,
+        "data-test": "DesignSystem-EditableInput--Input"
+      }, rest));
+
+      var renderChildren = function renderChildren() {
+        if (showComponent) {
+          return error && errorMessage && editing ? /*#__PURE__*/React.createElement(Popover, {
+            trigger: inputComponent,
+            position: "right",
+            className: "px-6 py-6 d-flex align-items-center",
+            on: "hover"
+          }, /*#__PURE__*/React.createElement(Icon, {
+            name: "error",
+            appearance: 'alert',
+            className: "mr-4"
+          }), /*#__PURE__*/React.createElement(Text, {
+            "data-test": "DesignSystem-EditableInput--ErrorPopper",
+            appearance: "destructive",
+            weight: "medium"
+          }, errorMessage)) : inputComponent;
+        }
+
+        return /*#__PURE__*/React.createElement("div", {
+          className: EditableDefaultClass,
+          "data-test": "DesignSystem-EditableInput--Default"
+        }, value || placeholder);
+      };
+
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-EditableInput"
+      }, baseProps, {
+        className: EditableInputClass
+      }), /*#__PURE__*/React.createElement(Editable, {
+        onChange: onChangeHandler,
+        editing: editing
+      }, renderChildren()), editing && /*#__PURE__*/React.createElement("div", {
+        className: ActionClass,
+        "data-test": "DesignSystem-EditableInput--Actions"
+      }, /*#__PURE__*/React.createElement(Button, {
+        icon: "clear",
+        className: "mr-3",
+        size: "tiny",
+        onClick: setDefaultComponent,
+        "data-test": "DesignSystem-EditableInput--Discard"
+      }), /*#__PURE__*/React.createElement(Button, {
+        icon: "check",
+        appearance: "primary",
+        size: "tiny",
+        disabled: disableSaveAction,
+        onClick: onSaveChanges,
+        "data-test": "DesignSystem-EditableInput--Save"
+      })));
+    };
+    EditableInput.defaultProps = {
+      size: 'regular',
+      placeholder: '',
+      value: '',
+      inputOptions: {}
+    };
 
     var ProgressRing = function ProgressRing(props) {
       var _a;
@@ -6816,6 +7039,7 @@
             disabled = _b.disabled;
         var tabHeaderClass = classNames__default['default']((_a = {}, _a['Tab'] = true, _a['Tab--disabled'] = disabled, _a['Tab--active'] = !disabled && active === index, _a));
         return /*#__PURE__*/React.createElement("div", {
+          "data-test": "DesignSystem-Tabs--Header",
           key: index,
           className: tabHeaderClass,
           onClick: function onClick() {
@@ -6823,12 +7047,15 @@
           }
         }, label);
       });
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-TabsWrapper"
+      }, baseProps, {
         className: wrapperClass
       }), /*#__PURE__*/React.createElement("div", {
         className: "TabsWrapper-header"
       }, TabsHeader), /*#__PURE__*/React.createElement("div", {
-        className: "TabsWrapper-content"
+        className: "TabsWrapper-content",
+        "data-test": "DesignSystem-Tabs--Content"
       }, children[active]));
     };
     TabsWrapper.displayName = 'TabsWrapper';
@@ -8985,6 +9212,8 @@
     exports.Dialog = Dialog;
     exports.DonutChart = DonutChart;
     exports.Dropdown = Dropdown;
+    exports.EditableDropdown = EditableDropdown;
+    exports.EditableInput = EditableInput;
     exports.Grid = Grid;
     exports.Heading = Heading;
     exports.Icon = Icon;

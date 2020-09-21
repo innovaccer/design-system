@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { OptionType } from "../DropdownList";
 export declare type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
+export declare type ClickEvent = React.MouseEvent<HTMLDivElement>;
 export interface OptionRendererProps {
     optionRenderer?: (props: OptionProps) => React.ReactElement;
     optionType?: OptionType;
@@ -17,13 +18,13 @@ export interface OptionSchema {
 export interface OptionTypeProps {
     className: string;
     textClassName: string;
+    dataTest?: string;
     optionData: OptionSchema;
     selected: boolean;
-    index: number;
     menu?: boolean;
-    onClick?: () => void;
-    onChange?: (event: ChangeEvent) => void;
-    updateActiveOption?: (index: number) => void;
+    onUpdateActiveOption: () => void;
+    onClickHandler?: (event: ClickEvent) => void;
+    onChangeHandler?: (event: ChangeEvent) => void;
 }
 interface OptionProps extends OptionRendererProps {
     optionData: OptionSchema;
