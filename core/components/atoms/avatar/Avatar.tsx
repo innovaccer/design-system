@@ -131,7 +131,7 @@ export const Avatar = (props: AvatarProps) => {
   const renderTooltip = () => {
     if (withTooltip && initials) {
       return (
-        <Tooltip tooltip={tooltip} position={tooltipPosition}>
+        <Tooltip tooltip={tooltip} position={tooltipPosition} triggerClass={'flex-grow-0'}>
           {renderAvatar()}
         </Tooltip>
       );
