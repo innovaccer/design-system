@@ -52,6 +52,7 @@ export interface ButtonProps extends BaseProps {
   children?: React.ReactText;
   /**
    * Specifies tab index of `Button`
+   * @default 0
    */
   tabIndex?: number;
   /**
@@ -77,9 +78,9 @@ const sizeMapping: Record<Size, number> = {
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const {
     size = 'regular',
-    appearance,
-    iconAlign,
-    tabIndex,
+    appearance = 'basic',
+    iconAlign = 'left',
+    tabIndex = 0,
     type,
     children,
     icon,
@@ -132,11 +133,5 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
 });
 
 Button.displayName = 'Button';
-Button.defaultProps = {
-  appearance: 'basic',
-  size: 'regular',
-  iconAlign: 'left',
-  tabIndex: 0
-};
 
 export default Button;

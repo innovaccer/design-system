@@ -29,9 +29,8 @@ export interface ChipProps extends BaseProps {
   selected?: boolean;
   /**
    * Type of chip
-   * @default "input"
    */
-  type?: Type;
+  type: Type;
   /**
    * Handler to be called when Chip is closed
    */
@@ -42,12 +41,13 @@ export interface ChipProps extends BaseProps {
   onClick?: (name: Name) => void;
   name: Name;
 }
+
 export const Chip = (props: ChipProps) => {
   const {
-    label = '',
+    label,
     icon,
     clearButton,
-    type = 'input',
+    type,
     disabled,
     selected,
     onClose,
@@ -90,5 +90,10 @@ export const Chip = (props: ChipProps) => {
     />
   );
 };
+
 Chip.displayName = 'Chip';
+Chip.defaultProps = {
+  type: 'input'
+};
+
 export default Chip;

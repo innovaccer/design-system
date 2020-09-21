@@ -117,7 +117,7 @@ const renderMetaList = (props: CellProps) => {
     return (
       <div className="GridCell-metaList">
         {metaList.map((list, index) => (
-          <Text key={index} className="ellipsis" appearance={'subtle'} small={true}>{list}</Text>
+          <Text key={index} className="ellipsis" appearance={'subtle'} size="small">{list}</Text>
         ))}
       </div>
     );

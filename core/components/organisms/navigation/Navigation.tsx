@@ -21,7 +21,7 @@ export interface NavigationProps extends BaseProps {
   /**
    * `Navigation` component type
    */
-  type?: LayoutType;
+  type: LayoutType;
   /**
    * List of menus to be rendered
    * <pre className="DocPage-codeBlock">
@@ -56,7 +56,7 @@ export interface NavigationProps extends BaseProps {
   /**
    * Set expanded state of `Navigation`**(applicable only for type: `vertical`)**
    */
-  expanded?: boolean;
+  expanded: boolean;
   /**
    * Shows footer**(applicable only for type: `vertical`)**
    */
@@ -293,9 +293,7 @@ export const Navigation = (props: NavigationProps) => {
 
 Navigation.defaultProps = {
   type: 'horizontal',
-  menus: [],
   expanded: true,
-  footer: false,
   autoCollapse: true
 };
 

@@ -8,20 +8,18 @@ export type Size = 'small' | 'medium' | 'large';
 export interface SpinnerProps extends BaseProps {
   /**
    * Color of `Spinner`
-   * @default "primary"
    */
-  appearance?: Appearance;
+  appearance: Appearance;
   /**
    * Size of `Spinner`
-   * @default "medium"
    */
-  size?: Size;
+  size: Size;
 }
 
 export const Spinner = (props: SpinnerProps) => {
   const {
-    appearance = 'primary',
-    size = 'medium',
+    appearance,
+    size,
     className
   } = props;
 
@@ -56,5 +54,9 @@ export const Spinner = (props: SpinnerProps) => {
 };
 
 Spinner.displayName = 'Spinner';
+Spinner.defaultProps = {
+  appearance: 'primary',
+  size: 'medium'
+};
 
 export default Spinner;

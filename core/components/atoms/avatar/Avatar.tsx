@@ -143,12 +143,11 @@ export const Avatar = (props: AvatarProps) => {
   return renderTooltip();
 };
 
+Avatar.displayName = 'Avatar';
 Avatar.defaultProps = {
   tooltipPosition: 'bottom',
   withTooltip: true,
   size: 'regular'
 };
-
-Avatar.displayName = 'Avatar';
 
 export default Avatar;

@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Appearance = 'default' | 'destructive' | 'white' | 'subtle' | 'disabled' | 'info' | 'alert' | 'warning' | 'success';
-
 export type IconType = 'filled' | 'outline' | 'rounded' | 'sharp';
 
 export interface IconProps extends BaseProps {
@@ -14,17 +13,15 @@ export interface IconProps extends BaseProps {
   /**
    * Size of `Icon`
    */
-  size?: number;
+  size: number;
   /**
    * Type of material `Icon`
-   * @default "filled"
    */
   type?: IconType;
   /**
    * Color of `Icon`
-   * @default "default"
    */
-  appearance?: Appearance;
+  appearance: Appearance;
   /**
    * Handler to be called when icon is clicked
    */
@@ -62,16 +59,15 @@ export const Icon = (props: IconProps) => {
       style={styles}
       onClick={onClick}
     >
-      {`${name}_${type}`}
+      {type ? `${name}_${type}` : name}
     </i>
   );
 };
 
+Icon.displayName = 'Icon';
 Icon.defaultProps = {
   appearance: 'default',
   size: 16
 };
-
-Icon.displayName = 'Icon';
 
 export default Icon;

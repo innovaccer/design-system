@@ -207,13 +207,12 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
   );
 };
 
+AvatarGroup.displayName = 'AvatarGroup';
 AvatarGroup.defaultProps = {
   max: 2,
   borderColor: 'var(--white)',
   tooltipPosition: 'bottom',
   popoverOptions: {},
 };
-
-AvatarGroup.displayName = 'AvatarGroup';
 
 export default AvatarGroup;

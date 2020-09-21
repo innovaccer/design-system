@@ -13,7 +13,7 @@ export interface ModalHeaderProps extends BaseProps {
 }
 
 export const ModalHeader = (props: ModalHeaderProps) => {
-  const { className, heading = '', icon = '', subHeading = '' } = props;
+  const { className, heading, icon, subHeading, onClose } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames({
@@ -25,43 +25,29 @@ export const ModalHeader = (props: ModalHeaderProps) => {
     ['Modal-header-subheader--withIcon']: icon
   });
 
-  const getCloseButton = () => {
-    const { onClose } = props;
-
-    return (
-      <div
-        className="Modal-close-icon"
-        data-test="DesignSystem-ModalHeader--CloseIcon"
-        onClick={(event: React.MouseEvent<HTMLElement, MouseEvent>) => onClose(event, 'IconClick')}
-      >
-        <Icon name={'close'} />
-      </div>
-    );
-  };
-
-  const getHeaderIcon = () => {
-    return (
-      <div
-        className="Modal-header-icon"
-        data-test="DesignSystem-ModalHeader--Icon"
-      >
-        <Icon name={icon} />
-      </div>
-    );
-  };
-
-  const closeButton = getCloseButton();
-
   return (
     <div className="Modal-header-wrapper">
-      <div data-test="DesignSystem-ModalHeader" {...baseProps} className={classes}>
-        {icon && getHeaderIcon()}
-        <div>
-          <Heading>
-            {heading}
-          </Heading>
-        </div>
-        {closeButton}
+      <div {...baseProps} className={classes}>
+        {icon && (
+          <Icon
+            className="Modal-header-icon"
+            name={icon}
+            data-test="DesignSystem-ModalHeader--Icon"
+          />
+        )}
+        {heading && (
+          <div>
+            <Heading>
+              {heading}
+            </Heading>
+          </div>
+        )}
+        <Icon
+          name={'close'}
+          className="Modal-close-icon"
+          data-test="DesignSystem-ModalHeader--CloseIcon"
+          onClick={(event: React.MouseEvent<HTMLElement, MouseEvent>) => onClose(event, 'IconClick')}
+        />
       </div>
       {subHeading && (
         <div className={subheaderClasses} data-test="DesignSystem-ModalHeader--Subheading">

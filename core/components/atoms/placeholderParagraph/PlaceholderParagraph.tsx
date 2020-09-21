@@ -8,9 +8,8 @@ export type Size = 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
 export interface PlaceholderParagraphProps extends BaseProps {
   /**
    * Length of `Placeholder`
-   * @default "medium"
    */
-  length?: Length;
+  length: Length;
   /**
    * Height of `Placeholder`
    *
@@ -63,10 +62,9 @@ export const PlaceholderParagraph = (props: PlaceholderParagraphProps) => {
   );
 };
 
+PlaceholderParagraph.displayName = 'PlaceholderParagraph';
 PlaceholderParagraph.defaultProps = {
   length: 'medium'
 };
-
-PlaceholderParagraph.displayName = 'PlaceholderParagraph';
 
 export default PlaceholderParagraph;

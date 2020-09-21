@@ -84,7 +84,7 @@ interface SyncProps {
    * | selected | Denotes default selection of option <br/>(works in case of uncontrolled component) | |
    * | group | Defines group to which the option belongs | |
    */
-  options?: Option[];
+  options: Option[];
   /**
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * Adds loaders inside `Dropdown` when waiting for an action to complete.
@@ -135,9 +135,8 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
   totalOptions?: number;
   /**
    * Determines if dropdown closes on option selection (works in case of single select)
-   * @default true
    */
-  closeOnSelect?: boolean;
+  closeOnSelect: boolean;
   /**
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * TriggerProps:
@@ -154,7 +153,7 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
    * | customTrigger | Adds custom trigger | |
    * </pre>
    */
-  triggerOptions?: TriggerProps;
+  triggerOptions: TriggerProps;
   /**
    * Callback to get the updated label of `Dropdown trigger`
    */
@@ -203,6 +202,12 @@ interface DropdownState {
 
 const bulk = 50;
 
+export const defaultProps = {
+  triggerOptions: {},
+  options: [],
+  closeOnSelect: true
+};
+
 /**
  * ###Note:
  * 1. Dropdown props types:
@@ -217,18 +222,19 @@ const bulk = 50;
  *  - Uncontrolled Dropdown:
  *    * onChange: Called when user `clicks on option` / `clicks on Clear, or Apply button`.
  */
-
 export class Dropdown extends React.Component<DropdownProps, DropdownState> {
+  static defaultProps = defaultProps;
+
   constructor(props: DropdownProps) {
     super(props);
 
     const {
+      selected = [],
       totalOptions,
       withCheckbox,
-      loading = false,
-      open = false,
-      selected = [],
-      options = [],
+      loading,
+      open,
+      options,
     } = props;
 
     const optionsLength = totalOptions ? totalOptions : options.length;
@@ -256,11 +262,6 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
     if (async) this.updateOptions(true);
   }
-
-  static defaultProps = {
-    triggerOptions: {},
-    closeOnSelect: true,
-  };
 
   componentDidUpdate(prevProps: DropdownProps, prevState: DropdownState) {
     if (!this.state.async) {

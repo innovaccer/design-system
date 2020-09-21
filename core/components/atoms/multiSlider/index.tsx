@@ -19,14 +19,12 @@ type NumberRange = [number, number];
 export interface MultiSliderProps extends BaseProps {
   /**
    * Determines whether the `Slider` is non-interactive.
-   * @default false
    */
   disabled?: boolean;
   /**
    * Indicates increment between successive labels (Must be greater than zero).
-   * @default 1
    */
-  labelStepSize?: number;
+  labelStepSize: number;
   /**
    * Number of decimal places to use when rendering label value. <br/>
    * Default value is the number of decimals used in the `stepSize` prop.
@@ -34,19 +32,16 @@ export interface MultiSliderProps extends BaseProps {
   labelPrecision?: number;
   /**
    * Maximum value of the `Slider`.
-   * @default 10
    */
-  max?: number;
+  max: number;
   /**
    * Minimum value of the `Slider`.
-   * @default 0
    */
-  min?: number;
+  min: number;
   /**
    * Indicates the amount by which the handle moves (Must be greater than zero).
-   * @default 1
    */
-  stepSize?: number;
+  stepSize: number;
   /**
    * Label of `Slider`
    */
@@ -55,9 +50,8 @@ export interface MultiSliderProps extends BaseProps {
    * Callback to render a custom label.
    * If `true`, labels will use number value formatted to `labelPrecision` decimal places.
    * If `false`, labels will not be shown.
-   * @default true
    */
-  labelRenderer?: boolean | ((value: number) => string);
+  labelRenderer: boolean | ((value: number) => string);
 }
 
 interface SliderBaserProps extends MultiSliderProps {
@@ -76,22 +70,18 @@ interface MultiSliderState {
   tickSizeRatio: number;
 }
 
-const defaultProps = {
-  disabled: false,
-  labelStepSize: 1,
-  max: 10,
-  min: 0,
-  stepSize: 1,
-};
-
-type DefaultProps = Readonly<typeof defaultProps>;
-
-type InternalMultiSliderProps = SliderBaserProps & RangeSliderBaseProps & DefaultProps;
+type InternalMultiSliderProps = SliderBaserProps & RangeSliderBaseProps;
 
 const MultiSliderHandle: React.FunctionComponent<HandleProps> = () => null;
 
 export class MultiSlider extends React.Component<InternalMultiSliderProps, MultiSliderState> {
-  static defaultProps = defaultProps;
+  static defaultProps = {
+    labelStepSize: 1,
+    max: 10,
+    min: 0,
+    stepSize: 1,
+    labelRenderer: true
+  };
   static Handle = MultiSliderHandle;
 
   handleElements: Handle[] = [];
@@ -321,7 +311,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
         <div className={'Slider-label'} key={i} style={style}>
           <span className={'Slider-ticks'} />
           {labelRenderer !== false && (
-            <Text small={true} appearance={active ? 'default' : 'disabled'}>
+            <Text size="small" appearance={active ? 'default' : 'disabled'}>
               {this.formatLabel(i)}
             </Text>
           )}

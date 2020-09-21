@@ -1,7 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { TabProps } from './Tab';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseProps, extractBaseProps, SingleOrArray } from '@/utils/types';
 
 export interface TabsWrapperProps extends BaseProps {
   /**
@@ -11,7 +10,7 @@ export interface TabsWrapperProps extends BaseProps {
   /**
    * `Tab` Component will be wrapped in `TabsWrapper` container
    */
-  children: React.FunctionComponentElement<TabProps>[];
+  children: SingleOrArray<React.ReactElement>;
   /**
    * Called with a new index when a new tab is selected by user
    */
@@ -20,20 +19,22 @@ export interface TabsWrapperProps extends BaseProps {
 
 export const TabsWrapper = (props: TabsWrapperProps) => {
   const {
-    children = [],
+    children,
     onTabChange,
     className,
   } = props;
 
   const baseProps = extractBaseProps(props);
+  const tabs = Array.isArray(children) ? children : [children];
+  const totalTabs = tabs.length;
 
-  const [active, setActiveTab] = React.useState(props.active && props.active < children.length
+  const [active, setActiveTab] = React.useState(props.active && props.active < totalTabs
     ? props.active
     : 0);
 
   React.useEffect(() => {
     setActiveTab(
-      props.active && props.active < children.length
+      props.active && props.active < totalTabs
         ? props.active
         : 0
     );
@@ -49,7 +50,7 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
   };
 
   const TabsHeader = (
-    children.map((child, index) => {
+    tabs.map((child, index) => {
       const { label, disabled } = child.props;
 
       const tabHeaderClass = classNames({
@@ -77,7 +78,7 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
         {TabsHeader}
       </div>
       <div className="TabsWrapper-content" data-test="DesignSystem-Tabs--Content">
-        {children[active]}
+        {tabs[active]}
       </div>
     </div>
   );

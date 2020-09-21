@@ -23,7 +23,7 @@ export interface SharedProps extends BaseProps {
   /**
    * Number of months rendered in view
    */
-  monthsInView?: number;
+  monthsInView: number;
   /**
    * Enables jumping to different view on clicking on Calendar Header
    *
@@ -33,11 +33,11 @@ export interface SharedProps extends BaseProps {
   /**
    * Specifies first day of week to be rendered
    */
-  firstDayOfWeek?: Day;
+  firstDayOfWeek: Day;
   /**
    * Specifies initial view of `Calendar`
    */
-  view?: View;
+  view: View;
   /**
    * Dates to be disabled before mentioned date
    */
@@ -62,7 +62,7 @@ export interface SharedProps extends BaseProps {
   monthNav?: number;
 }
 
-type CompProps = {
+export type CalendarProps = {
   /**
    * Callback function called when date is changed
    */
@@ -109,17 +109,12 @@ interface CalendarState {
   monthNav: number;
 }
 
-const defaultProps = {
-  monthsInView: 1,
-  view: 'date',
-  firstDayOfWeek: 'sunday',
-};
-
-type DefaultProps = Readonly<typeof defaultProps>;
-export type CalendarProps = CompProps & DefaultProps;
-
 export class Calendar extends React.Component<CalendarProps, CalendarState> {
-  static defaultProps = defaultProps;
+  static defaultProps = {
+    monthsInView: 1,
+    view: 'date',
+    firstDayOfWeek: 'sunday',
+  };
 
   constructor(props: CalendarProps) {
     super(props);

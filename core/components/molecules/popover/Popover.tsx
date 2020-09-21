@@ -26,14 +26,12 @@ export interface CustomStyle {
 export interface PopoverProps extends BaseProps {
   /**
    *  Position to place the `trigger`
-   * @default "bottom"
    */
-  position?: Position;
+  position: Position;
   /**
    * Appends `trigger` wrapper inside body
-   * @default true
    */
-  appendToBody?: boolean;
+  appendToBody: boolean;
   /**
    * Vertical offset from `trigger`
    */
@@ -52,14 +50,12 @@ export interface PopoverProps extends BaseProps {
   dark?: boolean;
   /**
    * Closes `Popover` on outside click
-   * @default true
    */
-  closeOnBackdropClick?: boolean;
+  closeOnBackdropClick: boolean;
   /**
    * Event triggering the `Popover`
-   * @default 'click'
    */
-  on?: ActionType;
+  on: ActionType;
   /**
    * Handles open/close
    */
@@ -76,9 +72,8 @@ export interface PopoverProps extends BaseProps {
    *  maxWidth?: number | string;
    * }
    * </pre>
-   * @default {}
    */
-  customStyle?: CustomStyle;
+  customStyle: CustomStyle;
   /**
    * Callback after `Popover` is toggled
    *
@@ -97,11 +92,11 @@ export interface PopoverProps extends BaseProps {
 
 export const Popover = (props: PopoverProps) => {
   const {
-    position = 'bottom',
-    closeOnBackdropClick = true,
-    appendToBody = true,
-    on = 'click',
-    customStyle = {},
+    position,
+    closeOnBackdropClick,
+    appendToBody,
+    on,
+    customStyle,
     dark,
     hoverable,
     children,
@@ -154,5 +149,12 @@ export const Popover = (props: PopoverProps) => {
 };
 
 Popover.displayName = 'Popover';
+Popover.defaultProps = {
+  position: 'bottom',
+  closeOnBackdropClick: true,
+  appendToBody: true,
+  on: 'click',
+  customStyle: {},
+};
 
 export default Popover;

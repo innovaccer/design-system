@@ -11,18 +11,9 @@ export interface ModalProps extends BaseProps {
   /**
    * Callback for `Modal` close event on backdrop click
    */
-  backdropClose: (event?: Event, reason?: string) => void;
-  /**
-   * Closes `Modal` on outside click
-   */
-  backdrop?: boolean;
-  /**
-   * Closes `Modal` on pressing escape key
-   */
-  closeOnEscape?: boolean;
+  backdropClose?: (event?: Event, reason?: string) => void;
   /**
    * Dimension of `Modal`
-   * @default "small"
    */
   dimension?: Dimension;
   /**
@@ -137,7 +128,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
       </div>
     );
 
-    const ModalWrapper = this.props.backdrop ? (
+    const ModalWrapper = backdropClose ? (
       <OutsideClick
         data-test="DesignSystem-Modal--OutsideClick"
         onOutsideClick={(event: Event) => open && backdropClose(event, 'OutsideClick')}

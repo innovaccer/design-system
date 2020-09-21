@@ -58,8 +58,8 @@ export interface TextareaProps extends BaseProps {
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
   const {
+    rows = 3,
     disabled,
-    rows,
     name,
     placeholder,
     value,
@@ -106,10 +106,6 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
     </div >
   );
 });
-
-Textarea.defaultProps = {
-  rows: 3
-};
 
 Textarea.displayName = 'Textarea';
 

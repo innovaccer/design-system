@@ -15,9 +15,8 @@ const IconMapping = {
 export interface MessageProps extends BaseProps {
   /**
    * Color of `Message`
-   * @default "default"
    */
-  appearance?: Appearance;
+  appearance: Appearance;
   /**
    * Title of the `Message`
    */
@@ -29,9 +28,9 @@ export interface MessageProps extends BaseProps {
   children: React.ReactNode;
 }
 
-export const Message: React.FunctionComponent<MessageProps> = props => {
+export const Message = (props: MessageProps) => {
   const {
-    appearance = 'default',
+    appearance,
     title,
     children,
     className
@@ -69,5 +68,8 @@ export const Message: React.FunctionComponent<MessageProps> = props => {
 };
 
 Message.displayName = 'Message';
+Message.defaultProps = {
+  appearance: 'default'
+};
 
 export default Message;

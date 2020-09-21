@@ -8,16 +8,15 @@ export interface PlaceholderProps extends BaseProps {
   /**
    * Shows `Placeholder` along with image
    */
-  withImage?: boolean;
+  withImage: boolean;
   /**
    * Changes shape of `Placeholder` to circle
    */
   round?: boolean;
   /**
    * Specifies dimension of `Placeholder`
-   * @default "small"
    */
-  imageSize?: Size;
+  imageSize: Size;
   /**
    * To be rendered in `Placeholder` wrapper
    */
@@ -58,11 +57,10 @@ export const Placeholder = (props: PlaceholderProps) => {
   );
 };
 
+Placeholder.displayName = 'Placeholder';
 Placeholder.defaultProps = {
   withImage: true,
   imageSize: 'small',
 };
-
-Placeholder.displayName = 'Placeholder';
 
 export default Placeholder;

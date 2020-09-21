@@ -36,12 +36,11 @@ export interface LinkProps extends BaseProps {
   onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
   /**
    * Element to be rendered
-   * @type {React.ReactNode}
    */
-  children?: React.ReactNode;
+  children: React.ReactNode;
 }
 
-export const Link: React.FunctionComponent<LinkProps> = props => {
+export const Link = (props: LinkProps) => {
   const {
     children,
     className,

@@ -11,13 +11,11 @@ enum RangeIndex {
 export interface RangeSliderProps extends MultiSliderProps {
   /**
    * Gives default value to `RangeSlider` (Used in case of uncontrolled `RangeSlider`).
-   * @default 0
    */
-  defaultValue?: NumberRange;
+  defaultValue: NumberRange;
   /**
    * Denotes range value of slider. Handles will be rendered at each position in the range. <br/>
    * (Used in case of controlled `RangeSlider`)
-   * @default [0, 10]
    */
   value?: NumberRange;
   /**
@@ -33,7 +31,7 @@ export interface RangeSliderProps extends MultiSliderProps {
 export const RangeSlider = (props: RangeSliderProps) => {
   const {
     value: valueProp,
-    defaultValue = [0, 10],
+    defaultValue,
     onChange,
     onRelease,
     ...rest
@@ -64,6 +62,12 @@ export const RangeSlider = (props: RangeSliderProps) => {
       <MultiSlider.Handle value={value[RangeIndex.END]} />
     </MultiSlider>
   );
+};
+
+RangeSlider.displayName = 'RangeSlider';
+RangeSlider.defaultProps = {
+  ...MultiSlider.defaultProps,
+  defaultValue: [0, 10]
 };
 
 export default RangeSlider;

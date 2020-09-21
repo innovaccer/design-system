@@ -8,22 +8,21 @@ export interface ProgressRingProps extends BaseProps {
   /**
    * Size of `Progress Ring`
    */
-  size?: Size;
+  size: Size;
   /**
    * Specifies how much of the task that has been completed. Value should lie between 0 to max.
    */
   value: number;
   /**
    * Describes how much work the task indicated by the `Progress Ring` requires.
-   * @default 100
    */
-  max?: number;
+  max: number;
 }
 
 export const ProgressRing = (props: ProgressRingProps) => {
   const {
-    size = 'regular',
-    max = 100,
+    size,
+    max,
     value,
     className
   } = props;
@@ -67,5 +66,9 @@ export const ProgressRing = (props: ProgressRingProps) => {
 };
 
 ProgressRing.displayName = 'ProgressRing';
+ProgressRing.defaultProps = {
+  size: 'regular',
+  max: 100
+};
 
 export default ProgressRing;

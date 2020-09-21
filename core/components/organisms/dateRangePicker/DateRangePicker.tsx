@@ -8,7 +8,7 @@ import validators from '@/utils/validators';
 import { getDateInfo, convertToDate, compareDate, translateToString, translateToDate, Validator } from '../calendar/utility';
 import { Row, Column, InputMask, Popover, Label } from '@/index';
 
-type CompProps = {
+export type DateRangePickerProps = SharedProps & {
   /**
    * @argument startDate Start Date object
    * @argument endDate End Date object
@@ -42,25 +42,25 @@ type CompProps = {
   /**
    * Position of `DateRangePicker` w.r.t. `InputMask`
    */
-  position?: Position;
+  position: Position;
   /**
    * Should be used if `date` is of type `string`
-   * @default "mm/dd/yyyy"
    */
-  inputFormat?: DateFormat;
+  inputFormat: DateFormat;
   /**
    * Should be used to translate `date` to desired format for `onRangeChange` callback
-   * @default "mm/dd/yyyy"
    */
-  outputFormat?: DateFormat;
+  outputFormat: DateFormat;
   /**
    * Props to be used for Start date `InputMask`
    */
-  startInputOptions?: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear'>;
+  startInputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear'>
+  & { label: string };
   /**
    * Props to be used for Start date `InputMask`
    */
-  endInputOptions?: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear'>;
+  endInputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear'>
+  & { label: string };
   /**
    * custom Mask for the mentioned inputFormat
    */
@@ -69,26 +69,8 @@ type CompProps = {
    * custom Validator for the mentioned inputFormat and outputFormat
    * `(format: string, val: string) => boolean`
    */
-  validator?: Validator;
-} & SharedProps;
-
-const defaultProps = {
-  view: 'date',
-  firstDayOfWeek: 'sunday',
-  position: 'bottom',
-  inputFormat: 'mm/dd/yyyy',
-  outputFormat: 'mm/dd/yyyy',
-  validator: validators.date,
-  startInputOptions: {
-    label: 'Start Date'
-  },
-  endInputOptions: {
-    label: 'End Date'
-  }
+  validator: Validator;
 };
-
-type DefaultProps = Readonly<typeof defaultProps>;
-export type DateRangePickerProps = CompProps & DefaultProps;
 
 interface DateRangePickerState {
   startDate?: Date;
@@ -101,7 +83,20 @@ interface DateRangePickerState {
 }
 
 export class DateRangePicker extends React.Component<DateRangePickerProps, DateRangePickerState> {
-  static defaultProps = defaultProps;
+  static defaultProps = {
+    ...Calendar.defaultProps,
+    monthsInView: 2,
+    position: 'bottom',
+    inputFormat: 'mm/dd/yyyy',
+    outputFormat: 'mm/dd/yyyy',
+    validator: validators.date,
+    startInputOptions: {
+      label: 'Start Date'
+    },
+    endInputOptions: {
+      label: 'End Date'
+    }
+  };
   monthsInView: number;
 
   constructor(props: DateRangePickerProps) {

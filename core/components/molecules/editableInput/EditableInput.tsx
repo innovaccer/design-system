@@ -14,7 +14,7 @@ export interface EditableInputProps extends BaseProps {
   /**
    * String to show inside `Editable Input` when value is not defined
    */
-  placeholder: string;
+  placeholder?: string;
   /**
    * Size of `Editable Input`
    */

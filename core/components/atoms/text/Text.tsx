@@ -22,11 +22,11 @@ export interface TextProps extends BaseProps {
   /**
    * Color of `Text`
    */
-  appearance?: Appearance;
+  appearance: Appearance;
   /**
    * Size of `Text`
    */
-  size?: Size;
+  size: Size;
 }
 
 export const Text = (props: TextProps) => {

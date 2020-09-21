@@ -8,7 +8,7 @@ export interface CardProps extends BaseProps {
   /**
    * Shadow of the `Card`
    */
-  shadow?: Shadow;
+  shadow: Shadow;
   /**
    * Will be wrapped in a `Card` container
    */
@@ -37,10 +37,9 @@ export const Card = (props: CardProps) => {
   );
 };
 
+Card.displayName = 'Card';
 Card.defaultProps = {
   shadow: 'medium'
 };
-
-Card.displayName = 'Card';
 
 export default Card;

@@ -13,14 +13,13 @@ export interface SubheadingProps extends BaseProps {
   children: React.ReactText;
   /**
    * Color of `Subheading`
-   * @default "default"
    */
-  appearance?: Appearance;
+  appearance: Appearance;
 }
 
 export const Subheading = (props: SubheadingProps) => {
   const {
-    appearance = 'default',
+    appearance,
     children,
     className
   } = props;
@@ -40,5 +39,8 @@ export const Subheading = (props: SubheadingProps) => {
 };
 
 Subheading.displayName = 'Subheading';
+Subheading.defaultProps = {
+  appearance: 'default'
+};
 
 export default Subheading;

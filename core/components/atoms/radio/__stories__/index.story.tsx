@@ -5,7 +5,6 @@ import Radio from '../Radio';
 
 // CSF format story
 export const all = () => {
-
   const size = select(
     'size',
     ['regular', 'tiny'],

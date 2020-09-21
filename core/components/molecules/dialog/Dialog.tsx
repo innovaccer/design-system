@@ -12,14 +12,9 @@ export interface DialogProps extends BaseProps {
    */
   onClose: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
   /**
-   * closes `Dialog` on pressing escape key
-   */
-  closeOnEscape?: boolean;
-  /**
    * Dimension of `Dialog`
-   * @default "small"
    */
-  dimension?: Dimension;
+  dimension: Dimension;
   /**
    * Handles open/close
    */
@@ -46,9 +41,8 @@ export interface DialogProps extends BaseProps {
   primaryButtonLabel: string;
   /**
    * Color of second button inside `Dialog`
-   * @default "primary"
    */
-  primaryButtonAppearance?: Appearance;
+  primaryButtonAppearance: Appearance;
   /**
    * Handler to be called when first button is clicked
    */
@@ -59,9 +53,8 @@ export interface DialogProps extends BaseProps {
   secondaryButtonLabel: string;
   /**
    * Color of second button inside `Dialog`
-   * @default "basic"
    */
-  secondaryButtonAppearance?: Appearance;
+  secondaryButtonAppearance: Appearance;
   /**
    * Handler to be called when second button is clicked
    */
@@ -70,15 +63,15 @@ export interface DialogProps extends BaseProps {
 
 const Dialog = (props: DialogProps) => {
   const {
-    dimension = 'small',
-    primaryButtonAppearance = 'primary',
-    secondaryButtonAppearance = 'basic',
+    dimension,
+    primaryButtonAppearance,
+    secondaryButtonAppearance,
     open,
     onClose,
     icon,
-    heading = '',
-    title = '',
-    description = '',
+    heading,
+    title,
+    description,
     primaryButtonLabel,
     primaryButtonCallback,
     secondaryButtonLabel,
@@ -129,5 +122,10 @@ const Dialog = (props: DialogProps) => {
 };
 
 Dialog.displayName = 'Dialog';
+Dialog.defaultProps = {
+  dimension: 'small',
+  primaryButtonAppearance: 'primary',
+  secondaryButtonAppearance: 'basic'
+};
 
 export default Dialog;
