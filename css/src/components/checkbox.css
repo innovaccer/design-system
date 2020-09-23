@@ -1,8 +1,7 @@
 /* badge */
 
 .Checkbox {
-    display: inline-flex;
-    cursor: pointer;
+    display: flex;
     align-items: center;
     -webkit-user-select: none;
     -moz-user-select: none;
