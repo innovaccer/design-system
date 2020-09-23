@@ -1542,8 +1542,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/http.d.ts": {
-        "version": "d0280b7e9e5a11bfd381c8ffbb12bb1007ab2967e06d8af114f4140444abb631",
-        "signature": "d0280b7e9e5a11bfd381c8ffbb12bb1007ab2967e06d8af114f4140444abb631",
+        "version": "bbc5e63e6789b5dca3ed78bbeaaca9f6a67bad86e235726f35fdc7831c0fa553",
+        "signature": "bbc5e63e6789b5dca3ed78bbeaaca9f6a67bad86e235726f35fdc7831c0fa553",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/http2.d.ts": {

@@ -1328,8 +1328,7 @@ body {
 /* badge */
 
 .Checkbox {
-    display: inline-flex;
-    cursor: pointer;
+    display: flex;
     align-items: center;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -3309,7 +3308,6 @@ body {
     -ms-user-select: none;
     user-select: none;
     align-items: center;
-    cursor: pointer;
 }
 
 .Radio-outerWrapper {
@@ -3652,7 +3650,7 @@ body {
   pointer-events: none;
 }
 .Switch {
-    display: flex;
+    display: inline-flex;
     position: relative;
 }
 
