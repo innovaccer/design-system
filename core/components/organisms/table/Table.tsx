@@ -459,9 +459,11 @@ export class Table extends React.Component<TableProps, TableState> {
   }
 
   updateData = () => {
-    this.setState({
-      loading: true
-    });
+    if (this.state.async) {
+      this.setState({
+        loading: true
+      });
+    }
 
     this.debounceUpdate();
   }
@@ -542,7 +544,6 @@ export class Table extends React.Component<TableProps, TableState> {
 
       this.setState({
         totalRecords,
-        loading: false,
         error: !renderedData.length,
         errorType: 'NO_RECORDS_FOUND',
         selectAll: getSelectAll(renderedData),
