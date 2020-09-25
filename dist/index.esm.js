@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1600872341629 
+   * Generated on: 1601024256630 
    *      Package: @innovaccer/design-system
-   *      Version: v1.2.0-4
+   *      Version: v1.2.0-5
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -7797,7 +7797,7 @@ var renderTitle = function renderTitle(props) {
       cellData = props.cellData;
   var children = cellData.title;
 
-  if (children) {
+  if (children !== undefined && children !== null) {
     if (tooltip) {
       return /*#__PURE__*/createElement(Tooltip, {
         tooltip: children,
@@ -9178,9 +9178,11 @@ var Table = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
 
     _defineProperty(_assertThisInitialized(_this), "updateData", function () {
-      _this.setState({
-        loading: true
-      });
+      if (_this.state.async) {
+        _this.setState({
+          loading: true
+        });
+      }
 
       _this.debounceUpdate();
     });
@@ -9253,7 +9255,6 @@ var Table = /*#__PURE__*/function (_React$Component) {
 
         _this.setState({
           totalRecords: totalRecords,
-          loading: false,
           error: !renderedData.length,
           errorType: 'NO_RECORDS_FOUND',
           selectAll: getSelectAll$1(renderedData),
