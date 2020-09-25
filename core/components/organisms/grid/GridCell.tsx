@@ -88,7 +88,7 @@ const renderTitle = (props: CellProps) => {
 
   const children = cellData.title;
 
-  if (children) {
+  if (children !== undefined && children !== null) {
     if (tooltip) {
       return (
         <Tooltip tooltip={children} position={'top-start'} triggerClass="w-100 overflow-hidden">
