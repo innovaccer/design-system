@@ -1,101 +1,6 @@
 import * as React from 'react';
-import { Input, Button, Heading, Label, Icon, Link, Card } from '@/index';
 
-interface BasicFormState {
-  signInDisabled: boolean;
-  passwordVisible: boolean;
-  password: string;
-}
-
-class BasicForm extends React.Component<{}, BasicFormState> {
-  private emailRef: React.RefObject<HTMLInputElement>;
-
-  constructor(props = {}) {
-    super(props);
-
-    this.state = {
-      signInDisabled: true,
-      passwordVisible: false,
-      password: ''
-    };
-
-    this.emailRef = React.createRef();
-  }
-
-  onEmailChange = (event: any) => {
-    const newPassword = this.state.password;
-    const email = event.target.value;
-    const disabled = !newPassword || !email;
-
-    this.setState({
-      signInDisabled: disabled
-    });
-  }
-
-  onPasswordChange = (event: any) => {
-    const email = this.emailRef.current?.value;
-    const newPassword = event.target.value;
-    const disabled = !newPassword || !email;
-
-    this.setState({
-      password: newPassword,
-      signInDisabled: disabled
-    });
-  }
-
-  onActionClick = () => {
-    this.setState({
-      passwordVisible: !this.state.passwordVisible
-    });
-  }
-
-  render() {
-    return (
-      <div style={{ width: '350px' }}>
-        <Card className="px-6 py-6">
-          <Heading className="mb-7" size="m">Login</Heading>
-          <Label withInput={true}>Email</Label>
-          <Input
-            name="input"
-            type="text"
-            placeholder="Enter email"
-            className="mb-6"
-            ref={this.emailRef}
-            autocomplete={'off'}
-            onChange={this.onEmailChange}
-          />
-          <Label withInput={true}>Password</Label>
-          <Input
-            name="input"
-            className="mb-4"
-            placeholder="Enter password"
-            autocomplete={'off'}
-            type={this.state.passwordVisible ? 'text' : 'password'}
-            value={this.state.password}
-            onChange={this.onPasswordChange}
-            actionIcon={(
-              <Icon
-                name={this.state.passwordVisible ? 'visibility' : 'visibility_off'}
-                onClick={this.onActionClick}
-              />
-            )}
-          />
-          <Link target="_blank" href="#">Forgot Password?</Link>
-          <Button
-            className="mt-7"
-            appearance="primary"
-            expanded={true}
-            disabled={this.state.signInDisabled}
-          >
-            Sign In
-          </Button>
-        </Card>
-      </div>
-    );
-  }
-}
-
-export const basicForm = () => <BasicForm />;
+export const basicForm = () => <></>;
 
 const customCode = `
 // import * as React from 'react';
@@ -110,14 +15,13 @@ const customCode = `
       this.state = {
         signInDisabled: true,
         passwordVisible: false,
-        password: ''
+        data: { email: '', password: '' }
       };
-
-      this.emailRef = React.createRef();
 
       this.onEmailChange = this.onEmailChange.bind(this);
       this.onPasswordChange = this.onPasswordChange.bind(this);
       this.onActionClick = this.onActionClick.bind(this);
+      this.onSubmit = this.onSubmit.bind(this);
     }
 
     onActionClick() {
@@ -127,66 +31,78 @@ const customCode = `
     }
 
     onEmailChange(event) {
-      const newPassword = this.state.password;
+      const { password = '' } = this.state.data;
       const email = event.target.value;
-      const disabled = !newPassword || !email;
+      const disabled = !password || !email;
 
       this.setState({
+        data: { ...this.state.data, email },
         signInDisabled: disabled
       });
     };
 
     onPasswordChange(event) {
-      const email = this.emailRef.current.value;
-      const newPassword = event.target.value;
-      const disabled = !newPassword || !email;
+      const { email = '' } = this.state.data;
+      const password = event.target.value;
+      const disabled = !password || !email;
 
       this.setState({
-        password: newPassword,
+        data: { ...this.state.data, password },
         signInDisabled: disabled
       });
     }
 
+    onSubmit(e) {
+      e.preventDefault();
+      const { email = '', password = '' } = this.state.data;
+      console.log(\`email: \${email}, password: \${password}\`);
+      return false;
+    }
+
     render() {
+      const { password = '' } = this.state.data;
+
       return (
         <div style={{ width: '350px' }}>
           <Card className="px-6 py-6">
-            <Heading className="mb-7" size="m">Login</Heading>
-            <Label withInput={true}>Email</Label>
-            <Input
-              name="input"
-              type="text"
-              placeholder="Enter email"
-              className="mb-6"
-              ref={this.emailRef}
-              autocomplete={'off'}
-              onChange={this.onEmailChange}
-            />
-            <Label withInput={true}>Password</Label>
-            <Input
-              name="input"
-              className="mb-4"
-              placeholder="Enter password"
-              autocomplete={'off'}
-              type={this.state.passwordVisible ? 'text' : 'password'}
-              value={this.state.password}
-              onChange={this.onPasswordChange}
-              actionIcon={
-                <Icon
-                  name={this.state.passwordVisible ? 'visibility' : 'visibility_off'}
-                  onClick={this.onActionClick}
-                />
-              }
-            />
-            <Link target="_blank" href="#">Forgot Password?</Link>
-            <Button
-              className="mt-7"
-              appearance="primary"
-              expanded={true}
-              disabled={this.state.signInDisabled}
-            >
-              Sign In
-            </Button>
+            <form onSubmit={this.onSubmit}>
+              <Heading className="mb-7" size="m">Login</Heading>
+              <Label withInput={true}>Email</Label>
+              <Input
+                name="input"
+                type="text"
+                placeholder="Enter email"
+                className="mb-6"
+                autocomplete={'off'}
+                onChange={this.onEmailChange}
+              />
+              <Label withInput={true}>Password</Label>
+              <Input
+                name="input"
+                className="mb-4"
+                placeholder="Enter password"
+                autocomplete={'off'}
+                type={this.state.passwordVisible ? 'text' : 'password'}
+                value={password}
+                onChange={this.onPasswordChange}
+                actionIcon={(
+                  <Icon
+                    name={this.state.passwordVisible ? 'visibility' : 'visibility_off'}
+                    onClick={this.onActionClick}
+                  />
+                )}
+              />
+              <Link target="_blank" href="#">Forgot Password?</Link>
+              <Button
+                className="mt-7"
+                appearance="primary"
+                expanded={true}
+                disabled={this.state.signInDisabled}
+                type="submit"
+              >
+                Sign In
+              </Button>
+            </form>
           </Card>
         </div>
       );
