@@ -6,6 +6,14 @@
   background-color: var(--secondary) !important;
 }
 
+.bg-secondary-lighter {
+  background-color: var(--secondary-lighter) !important;
+}
+
+.bg-secondary-lightest {
+  background-color: var(--secondary-lightest) !important;
+}
+
 .bg-success {
   background-color: var(--success) !important;
 }
