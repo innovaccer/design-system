@@ -56,6 +56,7 @@ export { StepperProps } from './components/molecules/stepper';
 export { DateRangePickerProps } from './components/organisms/dateRangePicker';
 export { TabsWrapperProps, TabProps } from './components/molecules/tabs';
 export { GridProps } from './components/organisms/grid';
+export { GridCellProps } from './components/organisms/grid/GridCell';
 export { ListProps } from './components/organisms/list';
 export { TableProps } from './components/organisms/table';
 export { NavigationProps } from './components/organisms/navigation';

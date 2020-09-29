@@ -178,20 +178,17 @@ const customCode = `
       })
     },
     {
-      name: 'customCell',
+      name: 'email',
       displayName: 'Custom Cell',
       width: 200,
       resizable: true,
       separator: true,
       cellRenderer: (props) => {
-        const {
-          loading
-        } = props;
-
-        if (loading) return <></>;
-
         return (
-          <Button appearance={'primary'}>Button</Button>
+          <>
+            <Icon className="mr-5" name="events" />
+            <GridCell {...props} />
+          </>
         );
       }
     },

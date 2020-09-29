@@ -2,8 +2,7 @@ import * as React from 'react';
 import { Schema } from '../../Grid';
 // @ts-ignore
 import iconImg from './image.png';
-import { GridCellProps } from '../../GridCell';
-import { Button } from '@/index';
+import { Icon, GridCell } from '@/index';
 
 const schema: Schema = [
   {
@@ -96,19 +95,19 @@ const schema: Schema = [
     // status: "success"
   },
   {
-    name: 'customCell',
+    name: 'email',
     displayName: 'Custom Cell',
     width: 200,
     resizable: true,
     // pinned: 'right',
     // separator: true,
-    cellRenderer: (props: GridCellProps) => {
-      const {
-        loading
-      } = props;
-
+    cellType: 'WITH_META_LIST',
+    cellRenderer: props => {
       return (
-        <Button loading={loading} appearance={'primary'}>Button</Button>
+        <>
+          <Icon className="mr-5" name="events" />
+          <GridCell {...props} />
+        </>
       );
     }
     // status: "success"

@@ -25,9 +25,18 @@ export interface CellData {
 // }
 
 export interface PartialCellProps {
+  /**
+   * Row data
+   */
   data: RowData;
+  /**
+   * Column schema
+   */
   schema: ColumnSchema;
-  loading: boolean;
+  /**
+   * Loading state of cell
+   */
+  loading?: boolean;
 }
 
 // export const Image = (props: ImageProps) => {
@@ -70,9 +79,18 @@ export interface PartialCellProps {
 // };
 
 export interface GridCellProps extends PartialCellProps {
-  size: GridSize;
-  rowIndex: number;
-  colIndex: number;
+  /**
+   * Grid size
+   */
+  size?: GridSize;
+  /**
+   * Row index for cell
+   */
+  rowIndex?: number;
+  /**
+   * Column index for cell
+   */
+  colIndex?: number;
 }
 
 type CellProps = {
@@ -193,8 +211,6 @@ export const GridCell = (props: GridCellProps) => {
     // rowIndex,
     loading,
   } = props;
-
-  if (schema.cellRenderer) return schema.cellRenderer(props);
 
   const data = !loading ? translateData(schema, props.data) : {};
 

@@ -1,12 +1,18 @@
 import * as React from 'react';
-import GridCell from '@/components/organisms/grid/GridCell';
+import { GridCell } from '@/index';
 import { select, boolean, number } from '@storybook/addon-knobs';
 
-export const CellType = () => {
+export const Grid_Cell = () => {
   const schema = {
     name: 'name',
     displayName: 'Name',
   };
+
+  const size = select(
+    'size',
+    ['comfortable', 'standard', 'compressed', 'tight'],
+    'comfortable'
+  );
 
   const width = number(
     'width',
@@ -22,20 +28,18 @@ export const CellType = () => {
   const align = select(
     'align',
     ['left', 'center', 'right'],
-    'right'
+    'left'
   );
 
   const tooltip = boolean(
     'tooltip',
-    false
+    true
   );
 
   const loading = boolean(
     'loading',
-    true
+    false
   );
-
-  const size = 'comfortable';
 
   return (
     <div className="Grid-cell Grid-cell--body" style={{ width, border: 'var(--border)' }}>

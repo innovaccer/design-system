@@ -55,6 +55,7 @@ export { Stepper } from './components/molecules/stepper';
 export { DateRangePicker } from './components/organisms/dateRangePicker';
 export { TabsWrapper, Tab } from './components/molecules/tabs';
 export { Grid } from './components/organisms/grid';
+export { GridCell } from './components/organisms/grid/GridCell';
 export { List } from './components/organisms/list';
 export { Table } from './components/organisms/table';
 export { Navigation } from './components/organisms/navigation';
