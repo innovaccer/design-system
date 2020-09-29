@@ -7,7 +7,7 @@ const postcssColorMod = require('postcss-color-mod-function');
 const cleaner = require('gulp-clean');
 
 const materialIcons = './material-design-icons/iconfont/material-icons.css';
-const materialFont = './material-design-icons/iconfont/MaterialIcons-Regular.{ttf,woff,woff2,eot}';
+const materialFont = './material-design-icons/iconfont/*.{ttf,otf}';
 
 const sources = [
   './src/tokens/*.css',
