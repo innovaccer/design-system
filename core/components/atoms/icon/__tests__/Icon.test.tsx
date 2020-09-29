@@ -5,7 +5,7 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 
 const size = 50;
 const appearance = ['destructive', 'white', 'subtle', 'disabled', 'alert', 'info', 'success', 'warning'];
-const type = ['filled', 'outline', 'rounded', 'sharp'];
+const type = ['filled', 'outline', 'rounded', 'outlined', 'round', 'two-tone', 'sharp'];
 const FunctionValue = jest.fn();
 const StringValue = 'events';
 
