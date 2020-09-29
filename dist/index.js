@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1601024257053 
+   * Generated on: 1601366370592 
    *      Package: @innovaccer/design-system
-   *      Version: v1.2.0-5
+   *      Version: v1.2.0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -6233,7 +6233,9 @@
 
       var buttonHelper = [];
       if (type === 'basic') buttonHelper.push('mx-3');else buttonHelper.push('mx-4');
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-Pagination"
+      }, baseProps, {
         className: wrapperClass
       }), /*#__PURE__*/React.createElement("div", {
         className: prevButtonWrapperClass
@@ -6244,8 +6246,10 @@
         disabled: page <= 1,
         appearance: "transparent",
         size: "large",
-        icon: "first_page"
+        icon: "first_page",
+        "data-test": "DesignSystem-Pagination--FirstButton"
       }), /*#__PURE__*/React.createElement("div", {
+        "data-test": "DesignSystem-Pagination--Prev",
         className: __spreadArrays(['ml-4'], buttonHelper).join(' ')
       }, /*#__PURE__*/React.createElement(Button, {
         onClick: function onClick() {
@@ -6253,7 +6257,8 @@
         },
         disabled: page <= 1,
         size: "large",
-        icon: "navigate_before"
+        icon: "navigate_before",
+        "data-test": "DesignSystem-Pagination--PrevButton"
       }))), type === 'jump' && /*#__PURE__*/React.createElement("div", {
         className: "Pagination-pageIndex"
       }, /*#__PURE__*/React.createElement(Input, {
@@ -6261,7 +6266,8 @@
         type: "number",
         size: "large",
         onChange: inputChangeHandler,
-        value: "" + (page === 0 ? '' : page)
+        value: "" + (page === 0 ? '' : page),
+        "data-test": "DesignSystem-Pagination--Input"
       }), /*#__PURE__*/React.createElement(Text, null, " of " + totalPages + " pages")), /*#__PURE__*/React.createElement("div", {
         className: nextButtonWrapperClass
       }, /*#__PURE__*/React.createElement("div", {
@@ -6272,7 +6278,8 @@
         },
         disabled: page >= totalPages,
         size: "large",
-        icon: "navigate_next"
+        icon: "navigate_next",
+        "data-test": "DesignSystem-Pagination--NextButton"
       })), /*#__PURE__*/React.createElement(Button, {
         onClick: function onClick() {
           return onClickHandler('last');
@@ -6280,7 +6287,8 @@
         disabled: page >= totalPages,
         appearance: "transparent",
         size: "large",
-        icon: "last_page"
+        icon: "last_page",
+        "data-test": "DesignSystem-Pagination--LastButton"
       })));
     };
     Pagination.displayName = 'Pagination';

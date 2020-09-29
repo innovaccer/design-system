@@ -470,7 +470,7 @@ body {
 }
 
 .Caption--hidden {
-  visibility: hidden;
+  display: none;
 }
 
 /* Subheading */

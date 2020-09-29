@@ -892,7 +892,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/pagination/Pagination.tsx": {
-        "version": "bc5efa91eb97509eaf149015366dbca4d4f2869a514b668dcc8ba3a8014891a4",
+        "version": "9248187514724caa41bef794c4590c3f87fe16e38fd63dd2f51bc0753bec5b78",
         "signature": "f53f7f35b3468ae56e259341d99b91af7152258d7448c83d78aa85f6b9d913b1",
         "affectsGlobalScope": false
       },
@@ -1817,13 +1817,28 @@
         "affectsGlobalScope": false
       },
       "../../core/components/patterns/forms/CreatePassword.story.tsx": {
-        "version": "986ab10abed2547510ef577a8d6d2f762bd56452290db51e2c0b13f6b5405fa8",
+        "version": "4d0b1f1319c630e70b3c093bcd19a92b7187973e1a99d4749bb094ca9abd0f13",
         "signature": "8cad14e714466c98b5e9a0c34c5f22c06a0b437e3190d8c028e9a4b3545f200f",
         "affectsGlobalScope": false
       },
+      "../../core/components/patterns/forms/CreateUser.story.tsx": {
+        "version": "90b25c3c43e0f1fab96da44e2c1985d846e6b91bef8fe1d723590f25e0fa1dc7",
+        "signature": "dc0da0dd651d506d586cf2edf792a8f184620c9ee16165f797564b3800c2ca37",
+        "affectsGlobalScope": false
+      },
       "../../core/components/patterns/forms/InlineForm.story.tsx": {
-        "version": "f155931b8796455d885ed1e52abef0ab3785f1dd713b8bf2d912356d9e872053",
+        "version": "e15facae483a601a1f60c0b49279a4eaf6308a5c651eec075200460c66a71b9d",
         "signature": "4fad764a0b125dea30676cb66b5e673030964c0b9d865bb155005d9a57edbebc",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/patterns/forms/InlineLabelForm.story.tsx": {
+        "version": "ac57bc02b2b759b749193120cb85838037ef9f56e9178384d6a49ac1c931dbd6",
+        "signature": "a5a3a2dc093fcecef080a7920d1caeba1c4487a2a3417763918281cad6382a28",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/patterns/forms/StepperForm.story.tsx": {
+        "version": "1ecec8e90eb8738cc41ae3a38b29d85ac5a6cbba634fa95931330fa045370ad2",
+        "signature": "96067030069a86f14d5159b8f595f99995b29e345fb34fe2ffd9b0d1b8b9cc4b",
         "affectsGlobalScope": false
       },
       "../../core/components/patterns/forms/TimePeriodForm.story.tsx": {
@@ -1832,7 +1847,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/patterns/forms/index.story.tsx": {
-        "version": "2d8f0328aa4c6f3779942920a1fe918a49062ce5303564f6a733c65d716c3cb5",
+        "version": "1cf62d0ba5189878fd4e86669d3a2e014e790977604223bf73fe1a73ff2ad468",
         "signature": "10e1a99d2966c1392d621f6d4728718cf39ea70c0e205c9aba4420f76523c5df",
         "affectsGlobalScope": false
       },
@@ -2356,6 +2371,15 @@
           "core/*"
         ],
         "*": [
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
           "*",
           "*",
           "*",
@@ -4015,17 +4039,24 @@
         "../../core/components/organisms/table/Table.tsx"
       ],
       "../../core/components/patterns/forms/CreatePassword.story.tsx": [
-        "../../core/index.tsx",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/patterns/forms/CreateUser.story.tsx": [
         "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/components/patterns/forms/InlineForm.story.tsx": [
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/patterns/forms/InlineLabelForm.story.tsx": [
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/patterns/forms/StepperForm.story.tsx": [
         "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/components/patterns/forms/TimePeriodForm.story.tsx": [
         "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/components/patterns/forms/index.story.tsx": [
-        "../../core/index.tsx",
         "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/index.tsx": [
@@ -5792,7 +5823,10 @@
       "../../core/components/organisms/table/Table.tsx",
       "../../core/components/organisms/table/index.tsx",
       "../../core/components/patterns/forms/CreatePassword.story.tsx",
+      "../../core/components/patterns/forms/CreateUser.story.tsx",
       "../../core/components/patterns/forms/InlineForm.story.tsx",
+      "../../core/components/patterns/forms/InlineLabelForm.story.tsx",
+      "../../core/components/patterns/forms/StepperForm.story.tsx",
       "../../core/components/patterns/forms/TimePeriodForm.story.tsx",
       "../../core/components/patterns/forms/index.story.tsx",
       "../../core/index.tsx",

@@ -1,7 +1,9 @@
 
 -------------------
- **v1.2.0-5**  (2020-09-25) 
+ **v1.2.0**  (2020-09-29) 
 
-* bc61fdc v1.2.0-5
-* fe117ea fix(Grid): fixes 0 value render in GridCell
-* 7569958 fix(Table): removes loading toggle in sync Table
+* e287530 v1.2.0
+* 8bc4fda docs(Forms-Patterns): wraps in form element
+* 17554ba feat(Forms-Patterns): adds advanced forms
+* 108748b fix(Caption): fixes hidden css class
+* 449f012 test(pagination): adds unit tests
