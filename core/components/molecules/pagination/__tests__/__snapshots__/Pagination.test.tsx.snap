@@ -23,7 +23,7 @@ exports[`Pagination component
             class="material-icons Icon Icon--default"
             style="font-size: 20px; width: 20px;"
           >
-            first_page_undefined
+            first_page
           </i>
         </div>
       </button>
@@ -43,7 +43,7 @@ exports[`Pagination component
               class="material-icons Icon Icon--default"
               style="font-size: 20px; width: 20px;"
             >
-              navigate_before_undefined
+              navigate_before
             </i>
           </div>
         </button>
@@ -67,7 +67,7 @@ exports[`Pagination component
               class="material-icons Icon Icon--default"
               style="font-size: 20px; width: 20px;"
             >
-              navigate_next_undefined
+              navigate_next
             </i>
           </div>
         </button>
@@ -84,7 +84,7 @@ exports[`Pagination component
             class="material-icons Icon Icon--default"
             style="font-size: 20px; width: 20px;"
           >
-            last_page_undefined
+            last_page
           </i>
         </div>
       </button>
@@ -116,7 +116,7 @@ exports[`Pagination component
             class="material-icons Icon Icon--default"
             style="font-size: 20px; width: 20px;"
           >
-            first_page_undefined
+            first_page
           </i>
         </div>
       </button>
@@ -136,7 +136,7 @@ exports[`Pagination component
               class="material-icons Icon Icon--default"
               style="font-size: 20px; width: 20px;"
             >
-              navigate_before_undefined
+              navigate_before
             </i>
           </div>
         </button>
@@ -182,7 +182,7 @@ exports[`Pagination component
               class="material-icons Icon Icon--default"
               style="font-size: 20px; width: 20px;"
             >
-              navigate_next_undefined
+              navigate_next
             </i>
           </div>
         </button>
@@ -199,7 +199,7 @@ exports[`Pagination component
             class="material-icons Icon Icon--default"
             style="font-size: 20px; width: 20px;"
           >
-            last_page_undefined
+            last_page
           </i>
         </div>
       </button>

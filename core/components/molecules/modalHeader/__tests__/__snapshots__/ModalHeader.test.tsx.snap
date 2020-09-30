@@ -16,7 +16,7 @@ exports[`ModalHeader component
         data-test="DesignSystem-ModalHeader--Icon"
         style="font-size: 16px; width: 16px;"
       >
-        events_undefined
+        events
       </i>
       <div>
         <h4
@@ -31,7 +31,7 @@ exports[`ModalHeader component
         data-test="DesignSystem-ModalHeader--CloseIcon"
         style="font-size: 16px; width: 16px;"
       >
-        close_undefined
+        close
       </i>
     </div>
     <div
