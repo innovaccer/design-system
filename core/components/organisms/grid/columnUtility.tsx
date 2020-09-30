@@ -19,9 +19,7 @@ export const resizeCol = (_this: Grid, name: string, el: HTMLDivElement | null) 
 };
 
 export function sortColumn(this: Grid, name: ColumnSchema['name'], type: SortType) {
-  let {
-    sortingList
-  } = this.props;
+  let sortingList = [...this.props.sortingList];
 
   const index = sortingList.findIndex(l => l.name === name);
   if (index !== -1) {
