@@ -1,9 +1,8 @@
 
 -------------------
- **v1.2.0**  (2020-09-29) 
+ **v1.3.0-0**  (2020-09-30) 
 
-* e287530 v1.2.0
-* 8bc4fda docs(Forms-Patterns): wraps in form element
-* 17554ba feat(Forms-Patterns): adds advanced forms
-* 108748b fix(Caption): fixes hidden css class
-* 449f012 test(pagination): adds unit tests
+* 185fec7 v1.3.0-0
+* 98ed302 fix(Grid): fixes sortingList prop update
+* 17d347d test(Dialog): adds unit tests
+* 062d76c feat(Modal): adds unit tests

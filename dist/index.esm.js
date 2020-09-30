@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1601366370195 
+   * Generated on: 1601468438066 
    *      Package: @innovaccer/design-system
-   *      Version: v1.2.0
+   *      Version: v1.3.0-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -6451,24 +6451,28 @@ var Modal = /*#__PURE__*/function (_React$Component) {
           zIndex = _this$state.zIndex;
       var _this$props = this.props,
           className = _this$props.className,
-          dimension = _this$props.dimension,
-          backdropClose = _this$props.backdropClose;
+          backdropClose = _this$props.backdropClose,
+          dimension = _this$props.dimension;
       var classes = classNames((_classNames = {
         Modal: true
       }, _defineProperty(_classNames, "Modal--".concat(dimension), dimension), _defineProperty(_classNames, 'Modal--open', open), _defineProperty(_classNames, 'Modal-animation--open', animate), _defineProperty(_classNames, 'Modal-animation--close', !animate), _classNames), className);
       var ContainerClass = classNames((_classNames2 = {}, _defineProperty(_classNames2, 'Modal-container', true), _defineProperty(_classNames2, 'Modal-container--open', open), _classNames2));
       var baseProps = extractBaseProps(this.props);
       var ModalContainer = /*#__PURE__*/createElement("div", {
+        "data-test": "DesignSystem-ModalContainer",
         className: ContainerClass,
         "data-layer": true,
         style: {
           zIndex: zIndex
         },
         ref: this.modalRef
-      }, /*#__PURE__*/createElement("div", _extends({}, baseProps, {
+      }, /*#__PURE__*/createElement("div", _extends({
+        "data-test": "DesignSystem-Modal"
+      }, baseProps, {
         className: classes
       }), this.props.children));
       var ModalWrapper = this.props.backdrop ? /*#__PURE__*/createElement(OutsideClick, {
+        "data-test": "DesignSystem-Modal--OutsideClick",
         onOutsideClick: function onOutsideClick(event) {
           return open && backdropClose(event, 'OutsideClick');
         }
@@ -6503,6 +6507,7 @@ var ModalHeader = function ModalHeader(props) {
     var onClose = props.onClose;
     return /*#__PURE__*/createElement("div", {
       className: "Modal-close-icon",
+      "data-test": "DesignSystem-ModalHeader--CloseIcon",
       onClick: function onClick(event) {
         return onClose(event, 'IconClick');
       }
@@ -6513,7 +6518,8 @@ var ModalHeader = function ModalHeader(props) {
 
   var getHeaderIcon = function getHeaderIcon() {
     return /*#__PURE__*/createElement("div", {
-      className: "Modal-header-icon"
+      className: "Modal-header-icon",
+      "data-test": "DesignSystem-ModalHeader--Icon"
     }, /*#__PURE__*/createElement(Icon, {
       name: icon
     }));
@@ -6522,10 +6528,13 @@ var ModalHeader = function ModalHeader(props) {
   var closeButton = getCloseButton();
   return /*#__PURE__*/createElement("div", {
     className: "Modal-header-wrapper"
-  }, /*#__PURE__*/createElement("div", _extends({}, baseProps, {
+  }, /*#__PURE__*/createElement("div", _extends({
+    "data-test": "DesignSystem-ModalHeader"
+  }, baseProps, {
     className: classes
   }), icon && getHeaderIcon(), /*#__PURE__*/createElement("div", null, /*#__PURE__*/createElement(Heading, null, heading)), closeButton), subHeading && /*#__PURE__*/createElement("div", {
-    className: subheaderClasses
+    className: subheaderClasses,
+    "data-test": "DesignSystem-ModalHeader--Subheading"
   }, /*#__PURE__*/createElement(Text, {
     appearance: "subtle"
   }, subHeading)));
@@ -6544,11 +6553,16 @@ var ModalDescription = function ModalDescription(props) {
   var classes = classNames(_defineProperty({
     'Modal-description': true
   }, 'pl-6 pr-6', !removePadding), className);
-  return /*#__PURE__*/createElement("div", _extends({}, baseProps, {
+  return /*#__PURE__*/createElement("div", _extends({
+    "data-test": "DesignSystem-ModalDescription"
+  }, baseProps, {
     className: classes
   }), title && /*#__PURE__*/createElement("div", null, /*#__PURE__*/createElement(Text, {
-    weight: "strong"
-  }, title)), description && /*#__PURE__*/createElement("div", null, /*#__PURE__*/createElement(Text, null, description)));
+    weight: "strong",
+    "data-test": "DesignSystem-ModalDescription--Title"
+  }, title)), description && /*#__PURE__*/createElement("div", null, /*#__PURE__*/createElement(Text, {
+    "data-test": "DesignSystem-ModalDescription--Description"
+  }, description)));
 };
 ModalDescription.displayName = 'ModalDescription';
 
@@ -6559,7 +6573,9 @@ var ModalFooter = function ModalFooter(props) {
   var classes = classNames({
     'Modal-footer': true
   }, className);
-  return /*#__PURE__*/createElement("div", _extends({}, baseProps, {
+  return /*#__PURE__*/createElement("div", _extends({
+    "data-test": "DesignSystem-ModalFooter"
+  }, baseProps, {
     className: classes
   }), children);
 };
@@ -6600,10 +6616,14 @@ var Dialog = function Dialog(props) {
     title: title,
     description: description
   };
-  return /*#__PURE__*/createElement(Modal, _extends({}, baseProps, modalOptions), /*#__PURE__*/createElement(ModalHeader, modalHeaderOptions), /*#__PURE__*/createElement(ModalDescription, modalDescriptionOptions), /*#__PURE__*/createElement(ModalFooter, null, /*#__PURE__*/createElement(Button, {
+  return /*#__PURE__*/createElement(Modal, _extends({
+    "data-test": "DesignSystem-Dialog"
+  }, baseProps, modalOptions), /*#__PURE__*/createElement(ModalHeader, modalHeaderOptions), /*#__PURE__*/createElement(ModalDescription, modalDescriptionOptions), /*#__PURE__*/createElement(ModalFooter, null, /*#__PURE__*/createElement(Button, {
+    "data-test": "DesignSystem-Dialog--SecondaryButton",
     appearance: secondaryButtonAppearance,
     onClick: secondaryButtonCallback
   }, secondaryButtonLabel), /*#__PURE__*/createElement(Button, {
+    "data-test": "DesignSystem-Dialog--PrimaryButton",
     appearance: primaryButtonAppearance,
     onClick: primaryButtonCallback
   }, primaryButtonLabel)));
@@ -6635,7 +6655,9 @@ var ModalBody = function ModalBody(props) {
   var classes = classNames(_defineProperty({
     'Modal-body': true
   }, 'Modal-body--border', scroll), className);
-  return /*#__PURE__*/createElement("div", _extends({}, baseProps, {
+  return /*#__PURE__*/createElement("div", _extends({
+    "data-test": "DesignSystem-ModalBody"
+  }, baseProps, {
     className: classes,
     ref: ref
   }), children);
@@ -7585,7 +7607,8 @@ var resizeCol = function resizeCol(_this, name, el) {
   });
 };
 function sortColumn(name, type) {
-  var sortingList = this.props.sortingList;
+  var sortingList = _toConsumableArray(this.props.sortingList);
+
   var index = sortingList.findIndex(function (l) {
     return l.name === name;
   });

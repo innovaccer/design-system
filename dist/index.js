@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1601366370592 
+   * Generated on: 1601468438426 
    *      Package: @innovaccer/design-system
-   *      Version: v1.2.0
+   *      Version: v1.3.0-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -5975,24 +5975,28 @@
             zIndex = _c.zIndex;
         var _d = this.props,
             className = _d.className,
-            dimension = _d.dimension,
-            backdropClose = _d.backdropClose;
+            backdropClose = _d.backdropClose,
+            dimension = _d.dimension;
         var classes = classNames__default['default']((_a = {
           Modal: true
         }, _a["Modal--" + dimension] = dimension, _a['Modal--open'] = open, _a['Modal-animation--open'] = animate, _a['Modal-animation--close'] = !animate, _a), className);
         var ContainerClass = classNames__default['default']((_b = {}, _b['Modal-container'] = true, _b['Modal-container--open'] = open, _b));
         var baseProps = extractBaseProps(this.props);
         var ModalContainer = /*#__PURE__*/React.createElement("div", {
+          "data-test": "DesignSystem-ModalContainer",
           className: ContainerClass,
           "data-layer": true,
           style: {
             zIndex: zIndex
           },
           ref: this.modalRef
-        }, /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+        }, /*#__PURE__*/React.createElement("div", __assign({
+          "data-test": "DesignSystem-Modal"
+        }, baseProps, {
           className: classes
         }), this.props.children));
         var ModalWrapper = this.props.backdrop ? /*#__PURE__*/React.createElement(OutsideClick, {
+          "data-test": "DesignSystem-Modal--OutsideClick",
           onOutsideClick: function onOutsideClick(event) {
             return open && backdropClose(event, 'OutsideClick');
           }
@@ -6028,6 +6032,7 @@
         var onClose = props.onClose;
         return /*#__PURE__*/React.createElement("div", {
           className: "Modal-close-icon",
+          "data-test": "DesignSystem-ModalHeader--CloseIcon",
           onClick: function onClick(event) {
             return onClose(event, 'IconClick');
           }
@@ -6038,7 +6043,8 @@
 
       var getHeaderIcon = function getHeaderIcon() {
         return /*#__PURE__*/React.createElement("div", {
-          className: "Modal-header-icon"
+          className: "Modal-header-icon",
+          "data-test": "DesignSystem-ModalHeader--Icon"
         }, /*#__PURE__*/React.createElement(Icon, {
           name: icon
         }));
@@ -6047,10 +6053,13 @@
       var closeButton = getCloseButton();
       return /*#__PURE__*/React.createElement("div", {
         className: "Modal-header-wrapper"
-      }, /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      }, /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-ModalHeader"
+      }, baseProps, {
         className: classes
       }), icon && getHeaderIcon(), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Heading, null, heading)), closeButton), subHeading && /*#__PURE__*/React.createElement("div", {
-        className: subheaderClasses
+        className: subheaderClasses,
+        "data-test": "DesignSystem-ModalHeader--Subheading"
       }, /*#__PURE__*/React.createElement(Text, {
         appearance: "subtle"
       }, subHeading)));
@@ -6071,11 +6080,16 @@
       var classes = classNames__default['default']((_a = {
         'Modal-description': true
       }, _a['pl-6 pr-6'] = !removePadding, _a), className);
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-ModalDescription"
+      }, baseProps, {
         className: classes
       }), title && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Text, {
-        weight: "strong"
-      }, title)), description && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Text, null, description)));
+        weight: "strong",
+        "data-test": "DesignSystem-ModalDescription--Title"
+      }, title)), description && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Text, {
+        "data-test": "DesignSystem-ModalDescription--Description"
+      }, description)));
     };
     ModalDescription.displayName = 'ModalDescription';
 
@@ -6086,7 +6100,9 @@
       var classes = classNames__default['default']({
         'Modal-footer': true
       }, className);
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-ModalFooter"
+      }, baseProps, {
         className: classes
       }), children);
     };
@@ -6127,10 +6143,14 @@
         title: title,
         description: description
       };
-      return /*#__PURE__*/React.createElement(Modal, __assign({}, baseProps, modalOptions), /*#__PURE__*/React.createElement(ModalHeader, __assign({}, modalHeaderOptions)), /*#__PURE__*/React.createElement(ModalDescription, __assign({}, modalDescriptionOptions)), /*#__PURE__*/React.createElement(ModalFooter, null, /*#__PURE__*/React.createElement(Button, {
+      return /*#__PURE__*/React.createElement(Modal, __assign({
+        "data-test": "DesignSystem-Dialog"
+      }, baseProps, modalOptions), /*#__PURE__*/React.createElement(ModalHeader, __assign({}, modalHeaderOptions)), /*#__PURE__*/React.createElement(ModalDescription, __assign({}, modalDescriptionOptions)), /*#__PURE__*/React.createElement(ModalFooter, null, /*#__PURE__*/React.createElement(Button, {
+        "data-test": "DesignSystem-Dialog--SecondaryButton",
         appearance: secondaryButtonAppearance,
         onClick: secondaryButtonCallback
       }, secondaryButtonLabel), /*#__PURE__*/React.createElement(Button, {
+        "data-test": "DesignSystem-Dialog--PrimaryButton",
         appearance: primaryButtonAppearance,
         onClick: primaryButtonCallback
       }, primaryButtonLabel)));
@@ -6163,7 +6183,9 @@
       var classes = classNames__default['default']((_a = {
         'Modal-body': true
       }, _a['Modal-body--border'] = scroll, _a), className);
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-ModalBody"
+      }, baseProps, {
         className: classes,
         ref: ref
       }), children);
@@ -7093,7 +7115,8 @@
       });
     };
     function sortColumn(name, type) {
-      var sortingList = this.props.sortingList;
+      var sortingList = __spreadArrays(this.props.sortingList);
+
       var index = sortingList.findIndex(function (l) {
         return l.name === name;
       });
