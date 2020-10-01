@@ -30,7 +30,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              Sample String_undefined
+              Sample String
             </i>
             <div>
               <h4
@@ -45,7 +45,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
         </div>
@@ -135,7 +135,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              Sample String_undefined
+              Sample String
             </i>
             <div>
               <h4
@@ -150,7 +150,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
         </div>
@@ -234,7 +234,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              Sample String_undefined
+              Sample String
             </i>
             <div>
               <h4
@@ -249,7 +249,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
         </div>
@@ -336,7 +336,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              Sample String_undefined
+              Sample String
             </i>
             <div>
               <h4
@@ -351,7 +351,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
         </div>
@@ -438,7 +438,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              Sample String_undefined
+              Sample String
             </i>
             <div>
               <h4
@@ -453,7 +453,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
         </div>
@@ -540,7 +540,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              Sample String_undefined
+              Sample String
             </i>
             <div>
               <h4
@@ -555,7 +555,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
         </div>
@@ -642,7 +642,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              Sample String_undefined
+              Sample String
             </i>
             <div>
               <h4
@@ -657,7 +657,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
         </div>
@@ -744,7 +744,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              Sample String_undefined
+              Sample String
             </i>
             <div>
               <h4
@@ -759,7 +759,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
         </div>
@@ -846,7 +846,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              Sample String_undefined
+              Sample String
             </i>
             <div>
               <h4
@@ -861,7 +861,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
         </div>
@@ -948,7 +948,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              Sample String_undefined
+              Sample String
             </i>
             <div>
               <h4
@@ -963,7 +963,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
         </div>
@@ -1050,7 +1050,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              Sample String_undefined
+              Sample String
             </i>
             <div>
               <h4
@@ -1065,7 +1065,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
         </div>
@@ -1152,7 +1152,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              Sample String_undefined
+              Sample String
             </i>
             <div>
               <h4
@@ -1167,7 +1167,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
         </div>
@@ -1254,7 +1254,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              Sample String_undefined
+              Sample String
             </i>
             <div>
               <h4
@@ -1269,7 +1269,7 @@ exports[`Dialog component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
         </div>

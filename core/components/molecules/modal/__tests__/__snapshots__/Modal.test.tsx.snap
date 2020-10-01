@@ -30,7 +30,7 @@ exports[`Modal component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              pan_tool_undefined
+              pan_tool
             </i>
             <div>
               <h4
@@ -45,7 +45,7 @@ exports[`Modal component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
           <div
@@ -103,7 +103,7 @@ exports[`Modal component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              pan_tool_undefined
+              pan_tool
             </i>
             <div>
               <h4
@@ -118,7 +118,7 @@ exports[`Modal component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
           <div
@@ -176,7 +176,7 @@ exports[`Modal component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              pan_tool_undefined
+              pan_tool
             </i>
             <div>
               <h4
@@ -191,7 +191,7 @@ exports[`Modal component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
           <div
@@ -249,7 +249,7 @@ exports[`Modal component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              pan_tool_undefined
+              pan_tool
             </i>
             <div>
               <h4
@@ -264,7 +264,7 @@ exports[`Modal component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
           <div
@@ -325,7 +325,7 @@ exports[`Modal component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              pan_tool_undefined
+              pan_tool
             </i>
             <div>
               <h4
@@ -340,7 +340,7 @@ exports[`Modal component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
           <div
@@ -395,7 +395,7 @@ exports[`Modal component
               data-test="DesignSystem-ModalHeader--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              pan_tool_undefined
+              pan_tool
             </i>
             <div>
               <h4
@@ -410,7 +410,7 @@ exports[`Modal component
               data-test="DesignSystem-ModalHeader--CloseIcon"
               style="font-size: 16px; width: 16px;"
             >
-              close_undefined
+              close
             </i>
           </div>
           <div

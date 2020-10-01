@@ -12,7 +12,7 @@ exports[`Radio component
     <input
       className="Radio-input"
       disabled={false}
-      id="Options-Radio-1f2abfce-6b31-41bc-9340-bab350f51525"
+      id="Options-Radio-Test-uid"
       name="Options"
       onChange={[MockFunction]}
       type="radio"
@@ -24,7 +24,7 @@ exports[`Radio component
   </div>
   <label
     className="Radio-label"
-    htmlFor="Options-Radio-1f2abfce-6b31-41bc-9340-bab350f51525"
+    htmlFor="Options-Radio-Test-uid"
   >
     <Text
       appearance="default"
@@ -48,7 +48,7 @@ exports[`Radio component
     <input
       className="Radio-input"
       disabled={true}
-      id="Options-Radio-437b37e7-af32-4da2-8dee-1be015ed1e6b"
+      id="Options-Radio-Test-uid"
       name="Options"
       onChange={[MockFunction]}
       type="radio"
@@ -60,7 +60,7 @@ exports[`Radio component
   </div>
   <label
     className="Radio-label"
-    htmlFor="Options-Radio-437b37e7-af32-4da2-8dee-1be015ed1e6b"
+    htmlFor="Options-Radio-Test-uid"
   >
     <Text
       appearance="default"
@@ -83,7 +83,7 @@ exports[`Radio component
   >
     <input
       className="Radio-input"
-      id="Options-Radio-c9eb4b97-c402-4f2d-a9a9-db0974fddcab"
+      id="Options-Radio-Test-uid"
       name="Options"
       onChange={[MockFunction]}
       type="radio"
@@ -95,7 +95,7 @@ exports[`Radio component
   </div>
   <label
     className="Radio-label"
-    htmlFor="Options-Radio-c9eb4b97-c402-4f2d-a9a9-db0974fddcab"
+    htmlFor="Options-Radio-Test-uid"
   >
     <Text
       appearance="default"
@@ -118,7 +118,7 @@ exports[`Radio component
   >
     <input
       className="Radio-input"
-      id="Options-Radio-3bd260c1-d3e6-4868-a661-d8514cf42165"
+      id="Options-Radio-Test-uid"
       name="Options"
       onChange={[MockFunction]}
       type="radio"
@@ -130,7 +130,7 @@ exports[`Radio component
   </div>
   <label
     className="Radio-label"
-    htmlFor="Options-Radio-3bd260c1-d3e6-4868-a661-d8514cf42165"
+    htmlFor="Options-Radio-Test-uid"
   >
     <Text
       appearance="default"

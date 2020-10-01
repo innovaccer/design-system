@@ -42,7 +42,7 @@ exports[`EditableDropdown component
                 class="material-icons Icon Icon--default"
                 style="font-size: 16px; width: 16px;"
               >
-                keyboard_arrow_down_undefined
+                keyboard_arrow_down
               </i>
             </button>
           </span>
