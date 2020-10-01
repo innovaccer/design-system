@@ -487,6 +487,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       withCheckbox,
       showApplyButton,
       closeOnSelect,
+      name
     } = this.props;
 
     const isClearClicked = selectedArray.length === 0 && selected.length > 0;
@@ -582,7 +583,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
   debounceClear = debounce(250, () => this.updateOptions(false));
 
   onClearOptions = () => {
-    const { selected, onUpdate, showApplyButton, onChange } = this.props;
+    const { selected, name, onUpdate, showApplyButton, onChange } = this.props;
 
     if (_isControlled(selected) && !showApplyButton) {
       if (onUpdate) onUpdate('clear-all');
@@ -601,7 +602,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
   onCancelOptions = () => {
     const { previousSelected, tempSelected, optionsLength } = this.state;
-    const { selected, onUpdate } = this.props;
+    const { selected, onUpdate, name } = this.props;
 
     if (_isControlled(selected)) {
       if (onUpdate) onUpdate('cancel-selected', previousSelected, tempSelected);
@@ -629,7 +630,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       previousSelected,
     } = this.state;
 
-    const { onChange, onClose, selected, onUpdate } = this.props;
+    const { onChange, onClose, selected, onUpdate, name } = this.props;
 
     if (_isControlled(selected)) {
       if (onUpdate) onUpdate('apply-selected', previousSelected, tempSelected);
