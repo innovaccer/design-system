@@ -24,6 +24,11 @@ export interface MaskProps extends BaseProps {
    */
   caption?: string;
   /**
+   * custom Validator for `InputMask`
+   * `boolean | ((val?: string) => boolean)`
+   */
+  validator?: (val: string) => boolean;
+  /**
    * <br/>**Second argument will be the masked value**
    */
   onChange?: (e: React.ChangeEvent<HTMLInputElement>, maskedVal: string) => void;
@@ -54,6 +59,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     onBlur,
     onClick,
     onClear,
+    validator,
     className,
     ...rest
   } = props;
@@ -164,9 +170,12 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputVal = e.currentTarget.value;
     const maskedVal = convertToMasked(inputVal);
-    setValue(maskedVal);
+    const isValid = validator ? validator(maskedVal) : true;
 
-    if (onChange) onChange(e, maskedVal);
+    if (isValid) {
+      setValue(maskedVal);
+      if (onChange) onChange(e, maskedVal);
+    }
   };
 
   const onBlurHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
