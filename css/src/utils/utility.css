@@ -1,4 +1,5 @@
 /** utility **/
+
 .hide-scroll-bar::-webkit-scrollbar {
     height: 0px;
     /* Remove scrollbar space */
@@ -20,4 +21,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }

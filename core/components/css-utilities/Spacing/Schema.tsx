@@ -1,18 +1,27 @@
 import { Schema } from '../../organisms/grid';
-const utilitiesSchema: Schema = [
+
+export const classSchema: Schema = [
   {
     name: 'marginClasses',
     displayName: 'Margin Classes',
-    width: 500,
-    resizable: true,
-    align: 'left',
+    width: 500
   },
   {
     name: 'paddingClasses',
     displayName: 'Padding Classes',
-    width: 500,
-    resizable: true,
-    align: 'left',
-  },
+    width: 500
+  }
 ];
-export default utilitiesSchema;
+
+export const sizeSchema: Schema = [
+  {
+    name: 'value',
+    displayName: 'Value',
+    width: 500
+  },
+  {
+    name: 'properties',
+    displayName: 'Properties',
+    width: 500
+  }
+];
