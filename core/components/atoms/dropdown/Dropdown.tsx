@@ -48,16 +48,6 @@ interface ControlledProps {
    * | 'cancel-selected' | Array of previously selected options | Array of recently selected options |
    */
   onUpdate?: (type: EventType, options?: Option | Option[], recentSelected?: Option[]) => void;
-  /**
-   * Determines if the `Dropdown Popover` is open <br/>
-   * **Only works if `selected` is not undefined**
-   */
-  open?: boolean;
-  /**
-   * Callback called after `Dropdown Popover` is toggled <br/>
-   * **Only works if `selected` is not undefined**
-   */
-  onPopperToggle?: (open: boolean, type?: string) => void;
 }
 
 interface SyncProps {
@@ -155,6 +145,20 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
    */
   triggerOptions: TriggerProps;
   /**
+   * Determines if the `Dropdown Popover` is open <br/>
+   */
+  open?: boolean;
+  /**
+   * Callback function called to toggle the `Dropdown Popover`
+   *
+   * type: 'onClick' | 'outsideClick' | 'optionClick' | 'applyClick' | 'cancelClick'
+   *
+   * **Works with `open` prop**
+   *
+   * **Type `optionClick` works in case of single select (closeOnSelect = true)**
+   */
+  onPopperToggle?: (open: boolean, type?: string) => void;
+  /**
    * Callback to get the updated label of `Dropdown trigger`
    */
   getLabel?: (label: string) => void;
@@ -166,9 +170,7 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
    */
   onChange?: (selected: any[] | any, name?: string | number) => void;
   /**
-   * Callback function called when dropdown is closed <br/>
-   * **It doesn't work in case of `controlled dropdown` if `onPopperToggle` callback**
-   * **is passed because close event can be handled through `onPopperToggle`.**
+   * Callback function called when dropdown is closed
    */
   onClose?: (selected: any[], name?: string | number) => void;
 }
@@ -299,7 +301,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     if (prevProps.open !== this.props.open
       || prevState.open !== this.state.open
     ) {
-      if (_isOpenControlled(this.props.open, this.props.selected) && this.props.open === this.state.open) return;
+      if (_isOpenControlled(this.props.open) && this.props.open === this.state.open) return;
       this.updateOnPopperToggle();
     }
 
@@ -402,6 +404,8 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     const {
       withCheckbox,
       showApplyButton,
+      onClose,
+      name,
       selected = []
     } = this.props;
 
@@ -414,7 +418,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       searchTerm
     } = this.state;
 
-    const popperIsOpen = _isOpenControlled(this.props.open, this.props.selected) ? this.props.open : this.state.open;
+    const popperIsOpen = _isOpenControlled(this.props.open) ? this.props.open : this.state.open;
 
     if (withCheckbox && showApplyButton) {
       const temporarySelected = _isControlled(this.props.selected) ? selected : previousSelected;
@@ -426,7 +430,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       });
     }
 
-    if (_isOpenControlled(this.props.open, this.props.selected)) {
+    if (_isOpenControlled(this.props.open)) {
       this.setState({
         open: popperIsOpen,
       });
@@ -444,6 +448,15 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       });
 
       if (moveSelectedGroup) this.updateOptions(false);
+    }
+
+    if (onClose && !popperIsOpen) {
+      const arr = withCheckbox && showApplyButton
+        ? _isControlled(this.props.selected) ? selected : previousSelected
+        : this.state.tempSelected;
+
+      const values = arr.map(option => option.value);
+      onClose(values, name);
     }
   }
 
@@ -487,7 +500,8 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       withCheckbox,
       showApplyButton,
       closeOnSelect,
-      name
+      name,
+      onPopperToggle
     } = this.props;
 
     const isClearClicked = selectedArray.length === 0 && selected.length > 0;
@@ -498,7 +512,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       tempSelected: selectedArray,
       triggerLabel: this.updateTriggerLabel(selectedArray),
       selectAll: getSelectAll(selectedArray, optionsLength),
-      open: _isOpenControlled(this.props.open, this.props.selected) || withCheckbox ? open : !closeOnSelect,
+      open: _isOpenControlled(this.props.open) || withCheckbox ? open : !closeOnSelect,
       previousSelected: updatePreviousSelected ? selectedArray : previousSelected,
       selected: isClearClicked ? selectedArray : selected,
       loading: isClearClicked ? true : loading
@@ -510,6 +524,14 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       const values = selectedArray.map(item => item.value);
       const selectedValues = isSingleSelect ? values[0] : values;
       onChange(selectedValues, name);
+    }
+
+    if (!withCheckbox
+      && closeOnSelect
+      && onPopperToggle
+      && _isOpenControlled(this.props.open)
+    ) {
+      onPopperToggle(false, 'optionClick');
     }
   }
 
@@ -600,12 +622,24 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     if (onChange && !showApplyButton) onChange([], name);
   }
 
+  onTogglePopper = (type: string) => {
+    const { onPopperToggle } = this.props;
+
+    if (onPopperToggle && _isOpenControlled(this.props.open)) {
+      onPopperToggle(false, type);
+    }
+  }
+
   onCancelOptions = () => {
     const { previousSelected, tempSelected, optionsLength } = this.state;
-    const { selected, onUpdate, name } = this.props;
+    const { selected, onUpdate, onClose, name } = this.props;
+
+    const popperIsOpen = _isOpenControlled(this.props.open) ? this.state.open : false;
+    const values = previousSelected.map(option => option.value);
 
     if (_isControlled(selected)) {
       if (onUpdate) onUpdate('cancel-selected', previousSelected, tempSelected);
+      this.onTogglePopper('cancelClick');
       return;
     }
 
@@ -615,13 +649,14 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       tempSelected: previousSelected,
       selectAll: getSelectAll(previousSelected, optionsLength),
       triggerLabel: label,
-      open: false,
+      open: popperIsOpen,
     });
 
-    if (this.props.onClose) {
-      const values = previousSelected.map(option => option.value);
-      this.props.onClose(values, name);
+    if (onClose && !popperIsOpen) {
+      onClose(values, name);
     }
+
+    this.onTogglePopper('cancelClick');
   }
 
   onApplyOptions = () => {
@@ -630,10 +665,14 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       previousSelected,
     } = this.state;
 
-    const { onChange, onClose, selected, onUpdate, name } = this.props;
+    const { onChange, selected, onUpdate, onClose, name } = this.props;
+
+    const popperIsOpen = _isOpenControlled(this.props.open) ? this.state.open : false;
+    const values = tempSelected.map(option => option.value);
 
     if (_isControlled(selected)) {
       if (onUpdate) onUpdate('apply-selected', previousSelected, tempSelected);
+      this.onTogglePopper('applyClick');
       return;
     }
 
@@ -641,17 +680,19 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       ...this.state,
       previousSelected: tempSelected,
       optionsApplied: true,
-      open: false,
+      open: popperIsOpen
     });
-
-    const values = tempSelected.map(option => option.value);
 
     if (onChange) {
       onChange(values, name);
     }
-    if (onClose) {
+
+    if (onClose && !popperIsOpen) {
       onClose(values, name);
     }
+
+    this.onTogglePopper('applyClick');
+
   }
 
   onToggleDropdown = (updatedOpen: boolean, type?: string) => {
@@ -659,25 +700,16 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       return;
     }
 
-    const { showApplyButton, withCheckbox, onClose, name, onPopperToggle } = this.props;
+    const { onPopperToggle } = this.props;
 
-    if (onPopperToggle && _isOpenControlled(this.props.open, this.props.selected)) {
+    if (onPopperToggle && _isOpenControlled(this.props.open)) {
       onPopperToggle(updatedOpen, type);
       return;
     }
 
-    const isPopperOpen = _isOpenControlled(this.props.open, this.props.selected) ? this.state.open : updatedOpen;
-    const isCloseEvent = type === 'outsideClick' || (type === 'onClick' && !isPopperOpen);
-
     this.setState({
-      open: isPopperOpen,
+      open: updatedOpen,
     });
-
-    if (onClose && isCloseEvent) {
-      const arr = withCheckbox && showApplyButton ? this.state.previousSelected : this.state.tempSelected;
-      const values = arr.map(option => option.value);
-      onClose(values, name);
-    }
 
   }
 

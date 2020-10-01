@@ -39,11 +39,9 @@ export const bulkMultiSelectWithApplyButton = () => {
   const onUpdate = (type: EventType, _options?: any, recentSelected?: any) => {
     switch (type) {
       case 'apply-selected':
-        setOpen(!open);
         setSelected(recentSelected);
         return;
       case 'cancel-selected':
-        setOpen(!open);
         return action('cancel event triggered')();
       default:
         return;
@@ -103,22 +101,25 @@ const customCode = `() => {
     console.log(selectedValues);
   };
 
-  const onPopperToggle = (popperIsOpen) => {
+  const onPopperToggle = (popperIsOpen, type) => {
     setOpen(popperIsOpen);
+    console.log(\`type: \${type}\`);
   }
 
   const onUpdate = (type, options, recentSelected) => {
     switch (type) {
       case 'apply-selected':
-        setOpen(!open);
         setSelected(recentSelected);
         return;
       case 'cancel-selected':
-        setOpen(!open);
-        return action('cancel event triggered')();
+        console.log('cancel-clicked');
       default:
         return;
     }
+  };
+
+  const onClose = (values) => {
+    console.log(\`dropdown closed with selected values: \${values}\`)
   };
 
   return (
@@ -133,6 +134,7 @@ const customCode = `() => {
         withCheckbox={true}
         showApplyButton={true}
         open={open}
+        onClose={onClose}
       />
     </div>
   );

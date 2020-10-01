@@ -13,7 +13,7 @@ export const _isEqual = (arr1: Option[], arr2: Option[]) => (
 
 export const _isControlled = (selected?: Option[]) => selected !== undefined;
 
-export const _isOpenControlled = (open?: boolean, selected?: Option[]) => open !== undefined && selected !== undefined;
+export const _isOpenControlled = (open?: boolean) => open !== undefined;
 
 export const _showSelectedItems = (
   bulk: boolean,

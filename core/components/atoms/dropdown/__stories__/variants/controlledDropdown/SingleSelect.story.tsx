@@ -96,8 +96,13 @@ const customCode = `() => {
     }, 2000);
   };
 
-  const onPopperToggle = (updatedOpen) => {
+  const onPopperToggle = (updatedOpen, type) => {
+    console.log(type)
     setOpen(updatedOpen);
+  }
+
+  const onClose = (values) => {
+    console.log(values);
   }
 
   return (
@@ -108,6 +113,7 @@ const customCode = `() => {
         selected={selected}
         onChange={onChangeHandler}
         onPopperToggle={onPopperToggle}
+        onClose={onClose}
         open={open}
       />
     </div>
