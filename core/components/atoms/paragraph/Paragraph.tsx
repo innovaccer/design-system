@@ -13,14 +13,13 @@ export interface ParagraphProps extends BaseProps {
   children: React.ReactNode;
   /**
    * Color of `Paragraph`
-   * @default "default"
    */
-  appearance?: Appearance;
+  appearance: Appearance;
 }
 
-export const Paragraph: React.FunctionComponent<ParagraphProps> = props => {
+export const Paragraph = (props: ParagraphProps) => {
   const {
-    appearance = 'default',
+    appearance,
     children,
     className
   } = props;
@@ -40,5 +39,8 @@ export const Paragraph: React.FunctionComponent<ParagraphProps> = props => {
 };
 
 Paragraph.displayName = 'Paragraph';
+Paragraph.defaultProps = {
+  appearance: 'default'
+};
 
 export default Paragraph;

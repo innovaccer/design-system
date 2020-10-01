@@ -8,7 +8,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="PopperWrapper-trigger"
+        class="PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--accent1"
@@ -26,7 +26,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="PopperWrapper-trigger"
+      class="PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--accent1"
@@ -103,7 +103,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="PopperWrapper-trigger"
+        class="PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--accent2"
@@ -121,7 +121,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="PopperWrapper-trigger"
+      class="PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--accent2"
@@ -198,7 +198,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="PopperWrapper-trigger"
+        class="PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--accent3"
@@ -216,7 +216,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="PopperWrapper-trigger"
+      class="PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--accent3"
@@ -293,7 +293,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="PopperWrapper-trigger"
+        class="PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--accent4"
@@ -311,7 +311,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="PopperWrapper-trigger"
+      class="PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--accent4"
@@ -388,7 +388,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="PopperWrapper-trigger"
+        class="PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--alert"
@@ -406,7 +406,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="PopperWrapper-trigger"
+      class="PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--alert"
@@ -483,7 +483,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="PopperWrapper-trigger"
+        class="PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--primary"
@@ -501,7 +501,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="PopperWrapper-trigger"
+      class="PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--primary"
@@ -578,7 +578,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="PopperWrapper-trigger"
+        class="PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--success"
@@ -596,7 +596,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="PopperWrapper-trigger"
+      class="PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--success"
@@ -673,7 +673,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="PopperWrapper-trigger"
+        class="PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--warning"
@@ -691,7 +691,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="PopperWrapper-trigger"
+      class="PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--warning"
@@ -768,7 +768,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="PopperWrapper-trigger"
+        class="PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--accent1"
@@ -786,7 +786,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="PopperWrapper-trigger"
+      class="PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--accent1"
@@ -863,7 +863,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="PopperWrapper-trigger"
+        class="PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--tiny Avatar--accent1"
@@ -881,7 +881,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="PopperWrapper-trigger"
+      class="PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--tiny Avatar--accent1"

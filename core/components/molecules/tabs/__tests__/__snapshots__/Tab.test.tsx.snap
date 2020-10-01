@@ -19,3 +19,5 @@ exports[`Tab component
   </div>
 </DocumentFragment>
 `;
+
+exports[`Tab component renders without children 1`] = `<DocumentFragment />`;

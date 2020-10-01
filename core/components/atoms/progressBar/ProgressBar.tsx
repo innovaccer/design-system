@@ -9,14 +9,13 @@ export interface ProgressBarProps extends BaseProps {
   value: number;
   /**
    * Describes how much work the task indicated by the `Progress Bar` requires
-   * @default 100
    */
-  max?: number;
+  max: number;
 }
 
 export const ProgressBar = (props: ProgressBarProps) => {
   const {
-    max = 100,
+    max,
     value,
     className
   } = props;
@@ -39,5 +38,8 @@ export const ProgressBar = (props: ProgressBarProps) => {
 };
 
 ProgressBar.displayName = 'ProgressBar';
+ProgressBar.defaultProps = {
+  max: 100
+};
 
 export default ProgressBar;

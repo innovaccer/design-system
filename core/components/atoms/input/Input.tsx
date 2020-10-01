@@ -97,7 +97,6 @@ export interface InputProps extends BaseProps {
   error?: boolean;
   /**
    * Text to be rendered in info `Popover`
-   * @default true
    */
   info?: string;
   /**

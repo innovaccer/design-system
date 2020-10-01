@@ -16,6 +16,7 @@ export interface MaskProps extends BaseProps {
   mask: Mask;
   /**
    * Character to be used for empty value at particular index in `Mask`
+   * @default '_'
    */
   placeholderChar?: string;
   /**
@@ -43,7 +44,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
   const {
     mask: maskProp,
     value: valueProp,
-    placeholderChar,
+    placeholderChar = '_',
     defaultValue,
     mask,
     error,
@@ -205,8 +206,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     </div>
   );
 });
-InputMask.defaultProps = {
-  placeholderChar: '_'
-};
+
+InputMask.displayName = 'InputMask';
 
 export default InputMask;

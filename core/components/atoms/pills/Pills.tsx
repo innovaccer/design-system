@@ -7,9 +7,8 @@ export type Appearance = 'primary' | 'secondary' | 'alert' | 'warning' | 'succes
 export interface PillsProps extends BaseProps {
   /**
    * Color of the `Pills`
-   * @default "secondary"
    */
-  appearance?: Appearance;
+  appearance: Appearance;
   /**
    * Makes `Pills` appearance subtle
    */
@@ -22,7 +21,7 @@ export interface PillsProps extends BaseProps {
 
 export const Pills = (props: PillsProps) => {
   const {
-    appearance = 'secondary',
+    appearance,
     children,
     subtle,
     className
@@ -44,5 +43,8 @@ export const Pills = (props: PillsProps) => {
 };
 
 Pills.displayName = 'Pills';
+Pills.defaultProps = {
+  appearance: 'secondary'
+};
 
 export default Pills;

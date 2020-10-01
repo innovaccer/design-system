@@ -11,9 +11,8 @@ export interface PlaceholderImageProps extends BaseProps {
   round?: boolean;
   /**
    * Specifies dimension of `Placeholder`
-   * @default "small"
    */
-  size?: Size;
+  size: Size;
 }
 
 export const PlaceholderImage = (props: PlaceholderImageProps) => {
@@ -38,5 +37,8 @@ export const PlaceholderImage = (props: PlaceholderImageProps) => {
 };
 
 PlaceholderImage.displayName = 'PlaceholderImage';
+PlaceholderImage.defaultProps = {
+  size: 'small'
+};
 
 export default PlaceholderImage;

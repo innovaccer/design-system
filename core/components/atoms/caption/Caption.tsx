@@ -7,31 +7,27 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 export interface CaptionProps extends BaseProps {
   /**
    * Text to be rendered
-   * @type {React.ReactNode}
    */
   children: React.ReactNode;
   /**
    * Shows error state in case of failed validation
-   * @default false
    */
   error?: boolean;
   /**
    * Makes `Caption` component invisible
-   * @default false
    */
   hide?: boolean;
   /**
    * Adds default top margin of 4px
-   * @default false
    */
   withInput?: boolean;
 }
 
 export const Caption = (props: CaptionProps) => {
   const {
-    error = false,
-    hide = false,
-    withInput = false,
+    error,
+    hide,
+    withInput,
     children,
     className,
   } = props;
@@ -55,7 +51,7 @@ export const Caption = (props: CaptionProps) => {
           <Icon size={14} name={'error'} appearance={'alert'}/>
         </div>
       )}
-      <Text appearance={error ? 'destructive' : 'subtle'} small={true} weight="medium">{`${children}`}</Text>
+      <Text appearance={error ? 'destructive' : 'subtle'} size="small" weight="medium">{`${children}`}</Text>
     </div>
   );
 };

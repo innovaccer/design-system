@@ -3,7 +3,9 @@ import classNames from 'classnames';
 import Editable from '@/components/atoms/editable';
 import { Dropdown } from '@/index';
 import { DropdownProps } from '@/index.type';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseProps, extractBaseProps, MakeOptional } from '@/utils/types';
+
+type DropdownOptions = MakeOptional<DropdownProps, keyof typeof Dropdown['defaultProps']>;
 
 export interface EditableDropdownProps extends BaseProps {
   /**
@@ -13,7 +15,7 @@ export interface EditableDropdownProps extends BaseProps {
   /**
    * Props to be used for `Dropdown`
    */
-  dropdownOptions: Omit<DropdownProps, 'getLabel' | 'placeholder'>;
+  dropdownOptions: Omit<DropdownOptions, 'getLabel' | 'placeholder'>;
 }
 
 export const EditableDropdown = (props: EditableDropdownProps) => {

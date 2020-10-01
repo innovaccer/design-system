@@ -34,6 +34,19 @@ describe('TabsWrapper component', () => {
 });
 
 describe('TabsWrapper component', () => {
+  it('renders single tab', () => {
+    const activeTab = 0;
+    const activeTabContent = 'Tab 1';
+
+    const { getByTestId, getAllByTestId } = render(
+      <TabsWrapper active={activeTab} onTabChange={FunctionValue}>
+        <Tab label={<></>}>Tab 1</Tab>
+      </TabsWrapper>
+    );
+
+    expect(getByTestId('DesignSystem-Tabs--Content').textContent).toMatch(activeTabContent);
+    expect(getAllByTestId('DesignSystem-Tabs--Header')[activeTab]).toHaveClass('Tab--active');
+  });
 
   it('renders active tab and children', () => {
     const activeTab = 1;

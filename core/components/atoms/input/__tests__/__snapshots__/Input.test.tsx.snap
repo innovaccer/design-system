@@ -5,9 +5,11 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--minWidth Input--regular"
+  data-test="DesignSystem-InputWrapper"
 >
   <input
     className="Input-input Input-input--regular"
+    data-test="DesignSystem-Input"
     name="name"
     onChangeHandler={[MockFunction]}
     placeholder="Placeholder"
@@ -21,6 +23,7 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--minWidth Input--regular"
+  data-test="DesignSystem-InputWrapper"
 >
   <div
     className="Input-icon Input-icon--left Input-icon--disabled"
@@ -33,6 +36,7 @@ exports[`Input component
   </div>
   <input
     className="Input-input Input-input--regular"
+    data-test="DesignSystem-Input"
     name="name"
     onChangeHandler={[MockFunction]}
     placeholder="Placeholder"
@@ -46,9 +50,11 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--minWidth Input--regular"
+  data-test="DesignSystem-InputWrapper"
 >
   <input
     className="Input-input Input-input--regular"
+    data-test="DesignSystem-Input"
     name="name"
     onChangeHandler={[MockFunction]}
     placeholder="Placeholder"
@@ -63,6 +69,7 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--minWidth Input--regular"
+  data-test="DesignSystem-InputWrapper"
 >
   <div
     className="Input-icon Input-icon--left"
@@ -75,6 +82,7 @@ exports[`Input component
   </div>
   <input
     className="Input-input Input-input--regular"
+    data-test="DesignSystem-Input"
     name="name"
     onChangeHandler={[MockFunction]}
     placeholder="Placeholder"
@@ -89,9 +97,11 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--minWidth Input--large"
+  data-test="DesignSystem-InputWrapper"
 >
   <input
     className="Input-input Input-input--large"
+    data-test="DesignSystem-Input"
     name="name"
     onChangeHandler={[MockFunction]}
     type="text"
@@ -104,6 +114,7 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--large"
+  data-test="DesignSystem-InputWrapper"
 >
   <div
     className="Input-inlineLabel"
@@ -117,6 +128,7 @@ exports[`Input component
   </div>
   <input
     className="Input-input Input-input--large"
+    data-test="DesignSystem-Input"
     name="name"
     onChangeHandler={[MockFunction]}
     type="number"
@@ -129,9 +141,11 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--minWidth Input--regular"
+  data-test="DesignSystem-InputWrapper"
 >
   <input
     className="Input-input Input-input--regular"
+    data-test="DesignSystem-Input"
     name="name"
     onChangeHandler={[MockFunction]}
     type="text"
@@ -144,6 +158,7 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--regular"
+  data-test="DesignSystem-InputWrapper"
 >
   <div
     className="Input-inlineLabel"
@@ -157,6 +172,7 @@ exports[`Input component
   </div>
   <input
     className="Input-input Input-input--regular"
+    data-test="DesignSystem-Input"
     name="name"
     onChangeHandler={[MockFunction]}
     type="number"
@@ -169,9 +185,11 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--minWidth Input--tiny"
+  data-test="DesignSystem-InputWrapper"
 >
   <input
     className="Input-input Input-input--tiny"
+    data-test="DesignSystem-Input"
     name="name"
     onChangeHandler={[MockFunction]}
     type="text"
@@ -184,6 +202,7 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--tiny"
+  data-test="DesignSystem-InputWrapper"
 >
   <div
     className="Input-inlineLabel"
@@ -197,6 +216,7 @@ exports[`Input component
   </div>
   <input
     className="Input-input Input-input--tiny"
+    data-test="DesignSystem-Input"
     name="name"
     onChangeHandler={[MockFunction]}
     type="number"
@@ -209,9 +229,11 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--regular"
+  data-test="DesignSystem-InputWrapper"
 >
   <input
     className="Input-input Input-input--regular"
+    data-test="DesignSystem-Input"
     name="name"
     onChangeHandler={[MockFunction]}
     type="number"
@@ -224,9 +246,11 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--minWidth Input--regular"
+  data-test="DesignSystem-InputWrapper"
 >
   <input
     className="Input-input Input-input--regular"
+    data-test="DesignSystem-Input"
     name="name"
     onChangeHandler={[MockFunction]}
     type="password"
@@ -239,9 +263,11 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--minWidth Input--regular"
+  data-test="DesignSystem-InputWrapper"
 >
   <input
     className="Input-input Input-input--regular"
+    data-test="DesignSystem-Input"
     name="name"
     onChangeHandler={[MockFunction]}
     type="text"
@@ -254,9 +280,11 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--minWidth Input--regular Input--disabled"
+  data-test="DesignSystem-InputWrapper"
 >
   <input
     className="Input-input Input-input--regular"
+    data-test="DesignSystem-Input"
     disabled={true}
     name="name"
     type="text"
@@ -270,6 +298,7 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--minWidth Input--regular Input--disabled"
+  data-test="DesignSystem-InputWrapper"
 >
   <div
     className="Input-icon Input-icon--left"
@@ -282,6 +311,7 @@ exports[`Input component
   </div>
   <input
     className="Input-input Input-input--regular"
+    data-test="DesignSystem-Input"
     disabled={true}
     name="name"
     type="text"
@@ -295,9 +325,11 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--minWidth Input--regular Input--disabled"
+  data-test="DesignSystem-InputWrapper"
 >
   <input
     className="Input-input Input-input--regular"
+    data-test="DesignSystem-Input"
     disabled={true}
     name="name"
     onChangeHandler={[MockFunction]}
@@ -312,6 +344,7 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--minWidth Input--regular Input--disabled"
+  data-test="DesignSystem-InputWrapper"
 >
   <div
     className="Input-icon Input-icon--left"
@@ -324,6 +357,7 @@ exports[`Input component
   </div>
   <input
     className="Input-input Input-input--regular"
+    data-test="DesignSystem-Input"
     disabled={true}
     name="name"
     onChangeHandler={[MockFunction]}
@@ -338,9 +372,11 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--minWidth Input--regular Input--error"
+  data-test="DesignSystem-InputWrapper"
 >
   <input
     className="Input-input Input-input--regular"
+    data-test="DesignSystem-Input"
     name="name"
     onChangeHandler={[MockFunction]}
     type="text"
@@ -354,6 +390,7 @@ exports[`Input component
  1`] = `
 <div
   className="Input Input--minWidth Input--regular Input--error"
+  data-test="DesignSystem-InputWrapper"
 >
   <div
     className="Input-icon Input-icon--left"
@@ -366,6 +403,7 @@ exports[`Input component
   </div>
   <input
     className="Input-input Input-input--regular"
+    data-test="DesignSystem-Input"
     name="name"
     onChangeHandler={[MockFunction]}
     type="text"

@@ -45,12 +45,11 @@ export interface PageHeaderProps extends BaseProps {
   /**
    * Page header layout type
    */
-  navigationPosition?: navigationPositionType;
+  navigationPosition: navigationPositionType;
   /**
    * provides a border at bottom
-   * @default true;
    */
-  separator?: boolean;
+  separator: boolean;
 }
 
 export const PageHeader = (props: PageHeaderProps) => {
@@ -86,7 +85,7 @@ export const PageHeader = (props: PageHeaderProps) => {
 
   return (
     <div {...baseProps} className={wrapperClasses}>
-      {breadcrumbs && breadcrumbs}
+      {breadcrumbs}
       <div className={classes}>
         <Row>
           <Column size="4" sizeXL="4" sizeM="4">
@@ -119,14 +118,6 @@ export const PageHeader = (props: PageHeaderProps) => {
 };
 
 PageHeader.defaultProps = {
-  title: '',
-  navigation: null,
-  actions: null,
-  tabs: null,
-  breadcrumbs: null,
-  badge: null,
-  status: null,
-  meta: null,
   navigationPosition: 'center',
   separator: true
 };

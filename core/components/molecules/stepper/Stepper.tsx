@@ -100,10 +100,10 @@ export const Stepper = (props: StepperProps) => {
   );
 };
 
+Stepper.displayName = 'Stepper';
 Stepper.defaultProps = {
   completed: -1,
-  active: 0,
-  steps: []
+  active: 0
 };
 
 export default Stepper;

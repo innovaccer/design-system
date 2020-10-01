@@ -44,6 +44,7 @@ export interface CheckboxProps extends BaseProps {
   value?: string | number;
   /**
    * Specifies tab index of `Checkbox`
+   * @default 0
    */
   tabIndex?: number;
   /**
@@ -155,7 +156,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
       </div>
       {label && label.trim() && (
         <label htmlFor={id} className={CheckboxTextClass}>
-          <Text small={size === 'tiny'}>{label.trim()}</Text>
+          <Text size={size === 'tiny' ? 'small' : 'regular'}>{label.trim()}</Text>
         </label>
       )}
     </div>

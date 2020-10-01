@@ -12,9 +12,8 @@ export interface StatusHintProps extends BaseProps {
   children: React.ReactText;
   /**
    * Color of Icon
-   * @default "inverse"
    */
-  appearance?: Appearance;
+  appearance: Appearance;
   /**
    * Handler to be called when `Status Hint` is clicked
    */
@@ -31,7 +30,7 @@ export interface StatusHintProps extends BaseProps {
 
 export const StatusHint = (props: StatusHintProps) => {
   const {
-    appearance = 'default',
+    appearance,
     children,
     onMouseEnter,
     onMouseLeave,
@@ -66,5 +65,8 @@ export const StatusHint = (props: StatusHintProps) => {
 };
 
 StatusHint.displayName = 'StatusHint';
+StatusHint.defaultProps = {
+  appearance: 'default'
+};
 
 export default StatusHint;

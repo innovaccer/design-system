@@ -6,7 +6,7 @@ exports[`DateRangePicker component
 <Calendar
   endDate={2020-03-10T18:30:00.000Z}
   firstDayOfWeek="sunday"
-  monthsInView={1}
+  monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
   startDate={2020-03-02T18:30:00.000Z}
@@ -109,6 +109,9 @@ exports[`DateRangePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  closeOnBackdropClick={true}
+  customStyle={Object {}}
+  on="click"
   onToggle={[Function]}
   open={false}
   position="bottom"
@@ -124,7 +127,7 @@ exports[`DateRangePicker component
         >
           Start Date
         </Label>
-        <ForwardRef
+        <InputMask
           caption=""
           icon="events"
           label="Start Date"
@@ -147,7 +150,6 @@ exports[`DateRangePicker component
           onClear={[Function]}
           onClick={[Function]}
           placeholder="mm/dd/yyyy"
-          placeholderChar="_"
           value="03/03/2020"
         />
       </Column>
@@ -161,7 +163,7 @@ exports[`DateRangePicker component
         >
           End Date
         </Label>
-        <ForwardRef
+        <InputMask
           caption=""
           icon="events"
           label="End Date"
@@ -184,7 +186,6 @@ exports[`DateRangePicker component
           onClear={[Function]}
           onClick={[Function]}
           placeholder="mm/dd/yyyy"
-          placeholderChar="_"
           value="03/11/2020"
         />
       </Column>
@@ -209,6 +210,9 @@ exports[`DateRangePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  closeOnBackdropClick={true}
+  customStyle={Object {}}
+  on="click"
   onToggle={[Function]}
   open={true}
   position="bottom"
@@ -224,7 +228,7 @@ exports[`DateRangePicker component
         >
           Start Date
         </Label>
-        <ForwardRef
+        <InputMask
           caption=""
           icon="events"
           label="Start Date"
@@ -247,7 +251,6 @@ exports[`DateRangePicker component
           onClear={[Function]}
           onClick={[Function]}
           placeholder="mm/dd/yyyy"
-          placeholderChar="_"
           value="03/03/2020"
         />
       </Column>
@@ -261,7 +264,7 @@ exports[`DateRangePicker component
         >
           End Date
         </Label>
-        <ForwardRef
+        <InputMask
           caption=""
           icon="events"
           label="End Date"
@@ -284,7 +287,6 @@ exports[`DateRangePicker component
           onClear={[Function]}
           onClick={[Function]}
           placeholder="mm/dd/yyyy"
-          placeholderChar="_"
           value="03/11/2020"
         />
       </Column>
@@ -310,7 +312,7 @@ exports[`DateRangePicker component
 <Calendar
   endDate={2020-03-10T18:30:00.000Z}
   firstDayOfWeek="sunday"
-  monthsInView={1}
+  monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
   startDate={2020-03-02T18:30:00.000Z}
@@ -324,7 +326,7 @@ exports[`DateRangePicker component
 <Calendar
   endDate={2020-03-10T18:30:00.000Z}
   firstDayOfWeek="sunday"
-  monthsInView={1}
+  monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
   startDate={2020-03-02T18:30:00.000Z}
@@ -338,7 +340,7 @@ exports[`DateRangePicker component
 <Calendar
   endDate={2020-03-10T18:30:00.000Z}
   firstDayOfWeek="sunday"
-  monthsInView={1}
+  monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
   startDate={2020-03-02T18:30:00.000Z}
@@ -352,7 +354,7 @@ exports[`DateRangePicker component
 <Calendar
   endDate={2020-03-10T18:30:00.000Z}
   firstDayOfWeek="sunday"
-  monthsInView={1}
+  monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
   startDate={2020-03-02T18:30:00.000Z}
@@ -365,6 +367,9 @@ exports[`DateRangePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  closeOnBackdropClick={true}
+  customStyle={Object {}}
+  on="click"
   onToggle={[Function]}
   open={false}
   position="bottom"
@@ -380,7 +385,7 @@ exports[`DateRangePicker component
         >
           Start Date
         </Label>
-        <ForwardRef
+        <InputMask
           caption=""
           icon="events"
           label="Start Date"
@@ -403,7 +408,6 @@ exports[`DateRangePicker component
           onClear={[Function]}
           onClick={[Function]}
           placeholder="mm/dd/yyyy"
-          placeholderChar="_"
           value="03/03/2020"
         />
       </Column>
@@ -417,7 +421,7 @@ exports[`DateRangePicker component
         >
           End Date
         </Label>
-        <ForwardRef
+        <InputMask
           caption=""
           icon="events"
           label="End Date"
@@ -440,7 +444,6 @@ exports[`DateRangePicker component
           onClear={[Function]}
           onClick={[Function]}
           placeholder="mm/dd/yyyy"
-          placeholderChar="_"
           value="03/11/2020"
         />
       </Column>

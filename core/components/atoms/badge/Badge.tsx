@@ -7,9 +7,8 @@ export type Appearance = 'primary' | 'secondary' | 'alert' | 'warning' | 'succes
 export interface BadgeProps extends BaseProps {
   /*
    * Color of the `Badge`
-   * @default "secondary"
    */
-  appearance?: Appearance;
+  appearance: Appearance;
   /**
    * Makes `Badge` appearance subtle
    */
@@ -22,7 +21,7 @@ export interface BadgeProps extends BaseProps {
 
 export const Badge = (props: BadgeProps) => {
   const {
-    appearance = 'secondary',
+    appearance,
     children,
     subtle,
     className,
@@ -44,5 +43,8 @@ export const Badge = (props: BadgeProps) => {
 };
 
 Badge.displayName = 'Badge';
+Badge.defaultProps = {
+  appearance: 'secondary'
+};
 
 export default Badge;

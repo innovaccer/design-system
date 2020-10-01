@@ -13,7 +13,7 @@ exports[`Icon component
     }
   }
 >
-  events_undefined
+  events
 </i>
 `;
 
@@ -30,7 +30,7 @@ exports[`Icon component
     }
   }
 >
-  events_undefined
+  events
 </i>
 `;
 
@@ -47,7 +47,7 @@ exports[`Icon component
     }
   }
 >
-  events_undefined
+  events
 </i>
 `;
 
@@ -64,7 +64,7 @@ exports[`Icon component
     }
   }
 >
-  events_undefined
+  events
 </i>
 `;
 
@@ -81,7 +81,7 @@ exports[`Icon component
     }
   }
 >
-  events_undefined
+  events
 </i>
 `;
 
@@ -98,7 +98,7 @@ exports[`Icon component
     }
   }
 >
-  events_undefined
+  events
 </i>
 `;
 
@@ -115,7 +115,7 @@ exports[`Icon component
     }
   }
 >
-  events_undefined
+  events
 </i>
 `;
 
@@ -132,7 +132,7 @@ exports[`Icon component
     }
   }
 >
-  events_undefined
+  events
 </i>
 `;
 

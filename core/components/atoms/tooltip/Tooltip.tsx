@@ -24,14 +24,12 @@ export interface TooltipProps extends DivProps {
   children: React.ReactElement<any>;
   /**
    * Position to place the `Tooltip`
-   * @default "bottom"
    */
-  position?: PositionType;
+  position: PositionType;
   /**
    * Appends `Tooltip` wrapper inside body
-   * @default true
    */
-  appendToBody?: boolean;
+  appendToBody: boolean;
   /**
    * Classes to be added to PopperWrapper trigger
    */
@@ -51,6 +49,11 @@ interface IState {
  * For left navigation with only icons, show tooltip on the right.
  */
 export class Tooltip extends React.Component<TooltipProps, IState> {
+  static defaultProps = {
+    position: 'bottom',
+    appendToBody: true
+  };
+
   constructor(props: TooltipProps) {
     super(props);
 
@@ -69,8 +72,8 @@ export class Tooltip extends React.Component<TooltipProps, IState> {
 
   public render() {
     const {
-      appendToBody = true,
-      position = 'bottom',
+      appendToBody,
+      position,
       tooltip,
       children,
       className,

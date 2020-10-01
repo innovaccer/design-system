@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Size = 's' | 'm' | 'l' | 'xl' | 'xxl';
-
 export type Appearance = 'default' | 'subtle' | 'disabled' | 'white';
 
 export interface HeadingProps extends BaseProps {
@@ -14,14 +13,12 @@ export interface HeadingProps extends BaseProps {
   children: React.ReactText;
   /**
    * Color of `Heading`
-   * @default "default"
    */
-  appearance?: Appearance;
+  appearance: Appearance;
   /**
    * size of `Heading`
-   * @default "default"
    */
-  size?: Size;
+  size: Size;
 }
 
 const sizeMap = {
@@ -35,7 +32,7 @@ const sizeMap = {
 export const Heading = (props: HeadingProps) => {
   const {
     appearance,
-    size = 'm',
+    size,
     children,
     className
   } = props;
@@ -55,11 +52,10 @@ export const Heading = (props: HeadingProps) => {
   );
 };
 
+Heading.displayName = 'Heading';
 Heading.defaultProps = {
   appearance: 'default',
   size: 'm'
 };
-
-Heading.displayName = 'Heading';
 
 export default Heading;

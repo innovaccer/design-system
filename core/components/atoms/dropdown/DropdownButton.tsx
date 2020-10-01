@@ -16,6 +16,7 @@ export interface TriggerProps {
   icon?: string;
   /**
    * String to show inside `Dropdown trigger` when no options are selected
+   * @default "Select"
    */
   placeholder?: string;
   /**

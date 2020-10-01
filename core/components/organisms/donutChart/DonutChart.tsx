@@ -40,33 +40,31 @@ export interface DonutChartProps extends BaseProps {
   /**
    * Colors of different data index
    */
-  colors?: string[];
+  colors: string[];
   /**
    * Shows text at the center of `DonutChart`
-   * @default true
    */
   withCenterText: boolean;
   /**
    * Color of total count at the center
    */
-  colorOfTotalCount?: string;
+  colorOfTotalCount: string;
   /**
    * Outer radius of the donut chart
    */
   radius?: number;
   /**
    * Percent w.r.t. radius
-   * @default 20
    */
-  width?: number;
+  width: number;
 }
 
 export const DonutChart = (props: DonutChartProps) => {
   const {
-    width = 20,
-    colors = ['primary', 'secondary', 'success', 'warning', 'alert'],
-    withCenterText = true,
-    colorOfTotalCount = 'success',
+    width,
+    colors,
+    withCenterText,
+    colorOfTotalCount,
     data,
     radius,
     withLegends,
@@ -232,6 +230,14 @@ export const DonutChart = (props: DonutChartProps) => {
       )}
     </Row>
   );
+};
+
+DonutChart.displayName = 'DonutChart';
+DonutChart.defaultProps = {
+  width: 20,
+  colors: ['primary', 'secondary', 'success', 'warning', 'alert'],
+  withCenterText: true,
+  colorOfTotalCount: 'success',
 };
 
 export default DonutChart;

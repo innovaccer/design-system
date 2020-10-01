@@ -10,18 +10,16 @@ export interface LegendProps extends BaseProps {
   children: React.ReactText;
   /**
    * Color of Icon
-   * @default "inverse"
    */
-  iconAppearance?: string;
+  iconAppearance: string;
   /**
    * Color of label
    */
   labelAppearance?: LabelAppearance;
   /**
    * Size of Icon
-   * @default 16
    */
-  iconSize?: number;
+  iconSize: number;
   /**
    * Denotes weight of `text`
    */
@@ -42,8 +40,8 @@ export interface LegendProps extends BaseProps {
 
 export const Legend = (props: LegendProps) => {
   const {
-    iconAppearance = 'inverse',
-    iconSize = 16,
+    iconAppearance,
+    iconSize,
     labelAppearance,
     children,
     labelWeight,
@@ -85,5 +83,9 @@ export const Legend = (props: LegendProps) => {
 };
 
 Legend.displayName = 'Legend';
+Legend.defaultProps = {
+  iconAppearance: 'inverse',
+  iconSize: 16
+};
 
 export default Legend;

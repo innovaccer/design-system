@@ -26,9 +26,8 @@ export interface ToastProps extends BaseProps {
   title: string;
   /**
    * Color of `Toast`
-   * @default "default"
    */
-  appearance?: Appearance;
+  appearance: Appearance;
   /**
    * Message to be rendered inside `Toast`
    */
@@ -52,7 +51,7 @@ export interface ToastProps extends BaseProps {
 
 export const Toast = (props: ToastProps) => {
   const {
-    appearance = 'default',
+    appearance,
     title,
     message,
     actions,
@@ -138,5 +137,8 @@ export const Toast = (props: ToastProps) => {
 };
 
 Toast.displayName = 'Toast';
+Toast.defaultProps = {
+  appearance: 'default'
+};
 
 export default Toast;

@@ -14,7 +14,6 @@ export interface MetaListProps extends BaseProps {
 }
 
 export const MetaList = (props: MetaListProps) => {
-
   const { list, seperator } = props;
   const baseProps = extractBaseProps(props);
 
@@ -39,5 +38,7 @@ export const MetaList = (props: MetaListProps) => {
     </div>
   );
 };
+
 MetaList.displayName = 'MetaList';
+
 export default MetaList;

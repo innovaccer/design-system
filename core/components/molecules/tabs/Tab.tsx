@@ -12,7 +12,7 @@ export interface TabProps {
   /**
    * To be rendered in `Tab` component
    */
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export const Tab = (props: TabProps) => {

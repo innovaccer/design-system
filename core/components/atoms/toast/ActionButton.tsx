@@ -4,17 +4,14 @@ import Text from '@/components/atoms/text';
 import { Appearance } from './Toast';
 
 export interface Props {
-  /**
-   * @default "default"
-   */
-  appearance?: Appearance;
+  appearance: Appearance;
   label: string;
   onClick?: (e: React.MouseEvent) => void;
 }
 
-const ActionButton: React.FunctionComponent<Props> = props => {
+const ActionButton = (props: Props) => {
   const {
-    appearance = 'default',
+    appearance,
     label,
     onClick
   } = props;
@@ -39,5 +36,8 @@ const ActionButton: React.FunctionComponent<Props> = props => {
 };
 
 ActionButton.displayName = 'ActionButton';
+ActionButton.defaultProps = {
+  appearance: 'default'
+};
 
 export default ActionButton;

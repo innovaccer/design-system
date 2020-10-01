@@ -12,7 +12,7 @@ import { Text, Paragraph } from '@/index';
 
 export const all = () => {
   const open = boolean('open', true);
-  const backdrop = boolean('backdrop', false);
+  const backdropClose = boolean('backdropClose', false);
   const dimension = select(
     'dimension',
     ['small', 'medium', 'large'],
@@ -26,9 +26,8 @@ export const all = () => {
 
   const options = {
     open,
-    backdrop,
     dimension,
-    backdropClose: onClose
+    backdropClose: backdropClose ? onClose : undefined
   };
 
   const modalHeaderOptions = {
@@ -133,6 +132,7 @@ const customCode = `() => {
 export default {
   title: 'Molecules|Modal',
   component: Modal,
+  subcomponents: { ModalHeader, ModalBody, ModalDescription, ModalFooter },
   parameters: {
     docs: {
       docPage: {

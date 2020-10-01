@@ -4,9 +4,8 @@ import MultiSlider, { MultiSliderProps } from '@/components/atoms/multiSlider';
 export interface SliderProps extends MultiSliderProps {
   /**
    * Gives default value to `Slider` (Used in case of uncontrolled `Slider`).
-   * @default 0
    */
-  defaultValue?: number;
+  defaultValue: number;
   /**
    * Value of `Slider`(Used in case of controlled `Slider`).
    */
@@ -24,7 +23,7 @@ export interface SliderProps extends MultiSliderProps {
 export const Slider = (props: SliderProps) => {
   const {
     value: valueProp,
-    defaultValue = 0,
+    defaultValue,
     onRelease,
     onChange,
     ...rest
@@ -55,6 +54,12 @@ export const Slider = (props: SliderProps) => {
       />
     </MultiSlider>
   );
+};
+
+Slider.displayName = 'Slider';
+Slider.defaultProps = {
+  ...MultiSlider.defaultProps,
+  defaultValue: 0
 };
 
 export default Slider;

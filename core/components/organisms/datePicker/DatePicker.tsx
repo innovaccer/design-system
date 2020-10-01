@@ -7,7 +7,7 @@ import masks from '@/components/molecules/inputMask/masks';
 import validators from '@/utils/validators';
 import { convertToDate, translateToDate, translateToString, Validator, compareDate, getDateInfo } from '../calendar/utility';
 
-type CompProps = {
+export type DatePickerProps = SharedProps & {
   /**
    * Callback function called when date is changed
    * @argument date Date object
@@ -33,23 +33,20 @@ type CompProps = {
   open?: boolean;
   /**
    * Position of `DatePicker` with respect to `InputMask`
-   * @default "bottom-start"
    */
-  position?: Position;
+  position: Position;
   /**
    * Should be used if `date` is of type `string`
-   * @default "mm/dd/yyyy"
    */
-  inputFormat?: DateFormat;
+  inputFormat: DateFormat;
   /**
    * Should be used to translate `date` to desired format for `onDateChange` callback
-   * @default "mm/dd/yyyy"
    */
-  outputFormat?: DateFormat;
+  outputFormat: DateFormat;
   /**
    * Props to be used for `InputMask`
    */
-  inputOptions?: InputMaskProps;
+  inputOptions: InputMaskProps;
   /**
    * custom Mask for the mentioned inputFormat
    */
@@ -58,26 +55,12 @@ type CompProps = {
    * custom Validator for the mentioned inputFormat and outputFormat
    * `(format: string, val: string) => boolean`
    */
-  validator?: Validator;
+  validator: Validator;
   /**
    * Close Popover on date selection
    */
-  closeOnSelect?: boolean;
-} & SharedProps;
-
-const defaultProps = {
-  view: 'date',
-  firstDayOfWeek: 'sunday',
-  position: 'bottom-start',
-  inputFormat: 'mm/dd/yyyy',
-  outputFormat: 'mm/dd/yyyy',
-  validator: validators.date,
-  inputOptions: {},
-  closeOnSelect: true
+  closeOnSelect: boolean;
 };
-
-type DefaultProps = Readonly<typeof defaultProps>;
-export type DatePickerProps = CompProps & DefaultProps;
 
 interface DatePickerState {
   date?: Date;
@@ -86,7 +69,15 @@ interface DatePickerState {
 }
 
 export class DatePicker extends React.Component<DatePickerProps, DatePickerState> {
-  static defaultProps = defaultProps;
+  static defaultProps = {
+    ...Calendar.defaultProps,
+    position: 'bottom-start',
+    inputFormat: 'mm/dd/yyyy',
+    outputFormat: 'mm/dd/yyyy',
+    validator: validators.date,
+    inputOptions: {},
+    closeOnSelect: true
+  };
 
   constructor(props: DatePickerProps) {
     super(props);

@@ -11,12 +11,7 @@ exports[`Tooltip component
   open={false}
   placement="bottom"
   trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
-    >
+    <Button>
       Button
     </Button>
   }
@@ -40,12 +35,7 @@ exports[`Tooltip component
   open={false}
   placement="bottom-end"
   trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
-    >
+    <Button>
       Button
     </Button>
   }
@@ -69,12 +59,7 @@ exports[`Tooltip component
   open={false}
   placement="bottom-start"
   trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
-    >
+    <Button>
       Button
     </Button>
   }
@@ -98,12 +83,7 @@ exports[`Tooltip component
   open={false}
   placement="left"
   trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
-    >
+    <Button>
       Button
     </Button>
   }
@@ -127,12 +107,7 @@ exports[`Tooltip component
   open={false}
   placement="right"
   trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
-    >
+    <Button>
       Button
     </Button>
   }
@@ -156,12 +131,7 @@ exports[`Tooltip component
   open={false}
   placement="top"
   trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
-    >
+    <Button>
       Button
     </Button>
   }
@@ -185,12 +155,7 @@ exports[`Tooltip component
   open={false}
   placement="top-end"
   trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
-    >
+    <Button>
       Button
     </Button>
   }
@@ -214,12 +179,7 @@ exports[`Tooltip component
   open={false}
   placement="top-start"
   trigger={
-    <Button
-      appearance="basic"
-      iconAlign="left"
-      size="regular"
-      tabIndex={0}
-    >
+    <Button>
       Button
     </Button>
   }

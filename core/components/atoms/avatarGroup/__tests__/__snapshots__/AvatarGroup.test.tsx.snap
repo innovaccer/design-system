@@ -17,7 +17,7 @@ Object {
           style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
         >
           <span
-            class="PopperWrapper-trigger"
+            class="PopperWrapper-trigger flex-grow-0"
           >
             <span
               class="Avatar Avatar--regular Avatar--accent1"
@@ -38,7 +38,7 @@ Object {
           style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
         >
           <span
-            class="PopperWrapper-trigger"
+            class="PopperWrapper-trigger flex-grow-0"
           >
             <span
               class="Avatar Avatar--regular Avatar--alert"
@@ -87,7 +87,7 @@ Object {
         style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
       >
         <span
-          class="PopperWrapper-trigger"
+          class="PopperWrapper-trigger flex-grow-0"
         >
           <span
             class="Avatar Avatar--regular Avatar--accent1"
@@ -108,7 +108,7 @@ Object {
         style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
       >
         <span
-          class="PopperWrapper-trigger"
+          class="PopperWrapper-trigger flex-grow-0"
         >
           <span
             class="Avatar Avatar--regular Avatar--alert"

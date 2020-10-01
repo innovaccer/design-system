@@ -18,7 +18,7 @@ export interface GenericChipProps extends BaseProps {
 
 export const GenericChip = (props: GenericChipProps) => {
   const {
-    label = '',
+    label,
     icon,
     clearButton,
     disabled,
@@ -69,4 +69,7 @@ export const GenericChip = (props: GenericChipProps) => {
     </div>
   );
 };
+
+GenericChip.displayName = 'GenericChip';
+
 export default GenericChip;

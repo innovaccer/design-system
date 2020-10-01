@@ -10,7 +10,7 @@ export interface ModalDescriptionProps extends BaseProps {
 }
 
 export const ModalDescription = (props: ModalDescriptionProps) => {
-  const { title = '', description = '', removePadding = false, className } = props;
+  const { title, description, removePadding, className } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames({

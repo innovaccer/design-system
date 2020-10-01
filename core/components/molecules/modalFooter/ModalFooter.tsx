@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export interface ModalFooterProps extends BaseProps {
-  children: React.ReactElement[];
+  children: React.ReactNode;
 }
 
 export const ModalFooter = (props: ModalFooterProps) => {

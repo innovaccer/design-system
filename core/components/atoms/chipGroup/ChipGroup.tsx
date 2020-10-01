@@ -19,7 +19,6 @@ export interface ChipGroupProps extends BaseProps {
 }
 
 export const ChipGroup = (props: ChipGroupProps) => {
-
   const { list, onClick, onClose, className } = props;
   const baseProps = extractBaseProps(props);
 
@@ -58,5 +57,7 @@ export const ChipGroup = (props: ChipGroupProps) => {
     </div>
   );
 };
+
 ChipGroup.displayName = 'ChipGroup';
+
 export default ChipGroup;

@@ -11,17 +11,13 @@ exports[`ModalHeader component
       class="Modal-header"
       data-test="DesignSystem-ModalHeader"
     >
-      <div
-        class="Modal-header-icon"
+      <i
+        class="material-icons Icon Icon--default Modal-header-icon"
         data-test="DesignSystem-ModalHeader--Icon"
+        style="font-size: 16px; width: 16px;"
       >
-        <i
-          class="material-icons Icon Icon--default"
-          style="font-size: 16px; width: 16px;"
-        >
-          events_undefined
-        </i>
-      </div>
+        events_undefined
+      </i>
       <div>
         <h4
           class="Heading Heading--m Heading--default"
@@ -30,17 +26,13 @@ exports[`ModalHeader component
           Modal header
         </h4>
       </div>
-      <div
-        class="Modal-close-icon"
+      <i
+        class="material-icons Icon Icon--default Modal-close-icon"
         data-test="DesignSystem-ModalHeader--CloseIcon"
+        style="font-size: 16px; width: 16px;"
       >
-        <i
-          class="material-icons Icon Icon--default"
-          style="font-size: 16px; width: 16px;"
-        >
-          close_undefined
-        </i>
-      </div>
+        close_undefined
+      </i>
     </div>
     <div
       class="Modal-header-subheader Modal-header-subheader--withIcon"
