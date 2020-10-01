@@ -1,9 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { RowData, ColumnSchema } from './Grid';
-import { Dropdown, Grid, Placeholder, PlaceholderParagraph, Text, Icon, Button, Tooltip } from '@/index';
+import { Dropdown, Grid, Placeholder, PlaceholderParagraph, Text, Icon, Button, Tooltip, GridCell } from '@/index';
 import { resizeCol, getInit } from './utility';
-import { GridCell } from './GridCell';
 import { DropdownProps } from '@/components/atoms/dropdown';
 import { getCellSize, getWidth } from './columnUtility';
 
@@ -238,6 +237,15 @@ const BodyCell = (props: BodyCellProps) => {
 
   const [expanded, setExpanded] = expandedState;
 
+  const cellProps = {
+    rowIndex,
+    colIndex,
+    size,
+    schema,
+    data,
+    loading,
+  };
+
   return (
     <div className="Grid-cellContent">
       {colIndex === 0 && nestedRows && (
@@ -251,15 +259,14 @@ const BodyCell = (props: BodyCellProps) => {
           }}
         />
       )}
-      <GridCell
-        key={`${rowIndex}-${colIndex}`}
-        rowIndex={rowIndex}
-        colIndex={colIndex}
-        size={size}
-        schema={schema}
-        data={data}
-        loading={loading}
-      />
+      {schema.cellRenderer ?
+        schema.cellRenderer(cellProps)
+        : (
+          <GridCell
+            key={`${rowIndex}-${colIndex}`}
+            {...cellProps}
+          />
+        )}
     </div>
   );
 };
