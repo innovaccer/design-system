@@ -5,9 +5,9 @@ import Text from '@/components/atoms/text';
 
 // CSF format story
 export const type = () => {
-  const types: IconType[] = ['filled', 'outline', 'rounded', 'sharp'];
+  const types: IconType[] = ['filled', 'outlined', 'round', 'two-tone', 'sharp'];
 
-  const name = text('Name', 'info');
+  const name = text('Name', 'assignment');
   return (
     <div className="d-flex">
       {

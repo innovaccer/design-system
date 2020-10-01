@@ -3,7 +3,13 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Appearance = 'default' | 'destructive' | 'white' | 'subtle' | 'disabled' | 'info' | 'alert' | 'warning' | 'success';
-export type IconType = 'filled' | 'outline' | 'rounded' | 'sharp';
+export type IconType = 'filled'
+  | 'outlined'
+  | 'outline'
+  | 'rounded'
+  | 'round'
+  | 'two-tone'
+  | 'sharp';      // 'outline', 'rounded' to be deprecated soon.
 
 export interface IconProps extends BaseProps {
   /**
@@ -16,6 +22,8 @@ export interface IconProps extends BaseProps {
   size: number;
   /**
    * Type of material `Icon`
+   *
+   * ** `'outline' | 'rounded'` will be deprecated**
    */
   type?: IconType;
   /**
@@ -31,7 +39,6 @@ export interface IconProps extends BaseProps {
 export const Icon = (props: IconProps) => {
   const {
     appearance,
-    type,
     className,
     name,
     size,
@@ -40,8 +47,17 @@ export const Icon = (props: IconProps) => {
 
   const baseProps = extractBaseProps(props);
 
+  const mapper = (val: IconProps['type']) => {
+    if (val === 'outline') return 'outlined';
+    if (val === 'rounded') return 'round';
+    return val;
+  };
+
+  const type = mapper(props.type);
+
   const iconClass = classNames({
-    ['material-icons']: true,
+    ['material-icons']: true,       // change to !type || type === 'filled' after migration
+    [`material-icons-${mapper(type)}`]: type && type !== 'filled',
     ['Icon']: true,
     [`Icon--${appearance}`]: appearance,
     [`${className}`]: className
@@ -59,7 +75,7 @@ export const Icon = (props: IconProps) => {
       style={styles}
       onClick={onClick}
     >
-      {type ? `${name}_${type}` : name}
+      {type ? `${name}_${type}` : name}         {/* change to {name} after migration */}
     </i>
   );
 };

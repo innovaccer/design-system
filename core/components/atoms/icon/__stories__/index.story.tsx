@@ -13,13 +13,13 @@ export const all = () => {
 
   const iconType = select(
     'type',
-    ['filled', 'outline', 'rounded', 'sharp'],
+    ['filled', 'outlined', 'round', 'two-tone', 'sharp'],
     undefined
   );
 
   const size = number('size', 50);
 
-  const name = text('Name', 'events');
+  const name = text('Name', 'info');
 
   return (
     <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>
@@ -35,7 +35,7 @@ export const all = () => {
 };
 const customCode = `() => {
   return(
-    <Icon size={50} name='events'/>
+    <Icon size={50} name='place'/>
     );
 }`;
 
