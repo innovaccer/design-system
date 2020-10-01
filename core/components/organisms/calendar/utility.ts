@@ -19,13 +19,13 @@ export const getFirstDayOfMonth = (year: number, month: number): number => new D
 export const getDateInfo = (d?: DateType): Record<string, any> => {
   if (d) {
     const dateVal = convertToDate(d);
-    if(dateVal) {
+    if (dateVal) {
       const year = dateVal.getFullYear();
       const month = dateVal.getMonth();
       const day = dateVal.getDay();
       const date = dateVal.getDate();
       const decadeYear = getYearBlock(year);
-  
+
       return { decadeYear, year, month, day, date };
     } else {
       return {};
@@ -37,7 +37,7 @@ export const getDateInfo = (d?: DateType): Record<string, any> => {
 export const convertToDate = (d?: DateType | DateObject, format?: string, validator?: Validator): Date | undefined => {
   let dateVal;
 
-  if(d) {
+  if (d) {
     if (typeof d === 'number') {
       dateVal = new Date(d);
     } else if (typeof d === 'string') {
@@ -127,32 +127,35 @@ export const compareDate = (
   return false;
 };
 
-export const translateToString = (format: string, d: Date): string => {
-  const {
-    year,
-    month,
-    date
-  } = getDateInfo(d);
+export const translateToString = (format: string, d?: Date): string => {
+  if (format && d) {
+    const {
+      year,
+      month,
+      date
+    } = getDateInfo(d);
 
-  const separator = format.includes('/') ? '/' : '-';
-  const f = format.split(separator);
-  const val = f.reduce((out, curr, i) => {
-    switch (curr) {
-      case 'mm':
-        out += (month < 9 && '0') + (month + 1);
-        break;
-      case 'yyyy':
-        out += year;
-        break;
-      case 'dd':
-        out += (date < 10 && '0') + date;
-        break;
-    }
-    if (i !== f.length - 1) out += separator;
-    return out;
-  }, '');
+    const separator = format.includes('/') ? '/' : '-';
+    const f = format.split(separator);
+    const val = f.reduce((out, curr, i) => {
+      switch (curr) {
+        case 'mm':
+          out += (month < 9 && '0') + (month + 1);
+          break;
+        case 'yyyy':
+          out += year;
+          break;
+        case 'dd':
+          out += (date < 10 && '0') + date;
+          break;
+      }
+      if (i !== f.length - 1) out += separator;
+      return out;
+    }, '');
 
-  return val;
+    return val;
+  }
+  return '';
 }
 
 export const translateToDate = (format: string, val: string, validator?: Validator): Date | undefined => {

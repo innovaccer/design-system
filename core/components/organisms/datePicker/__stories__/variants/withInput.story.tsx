@@ -84,6 +84,9 @@ export const withInput = () => {
         }}
         view={view}
         firstDayOfWeek={firstDayOfWeek}
+        inputOptions={{
+          required: true
+        }}
         {...attr}
       />
     </div>
