@@ -100,6 +100,13 @@ export interface InputProps extends BaseProps {
    */
   info?: string;
   /**
+   * minimum width of `Input` component
+   *
+   * **No default value for `type='number'`**
+   * @default 256
+   */
+  minWidth?: string;
+  /**
    * Callback function when user clicks the clear button
    */
   onClear?: (e: React.MouseEvent<HTMLElement>) => void;
@@ -140,6 +147,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
   const {
     size = 'regular',
     type = 'text',
+    minWidth = type !== 'number' ? 256 : undefined,
     readonly,
     defaultValue,
     name,
@@ -168,7 +176,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
 
   const classes = classNames({
     ['Input']: true,
-    ['Input--minWidth']: type !== 'number',
     [`Input--${size}`]: size,
     ['Input--disabled']: disabled,
     ['Input--error']: error
@@ -193,7 +200,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
   const trigger = <div className={rightIconClass}><Icon name={'info'} size={sizeMapping[size]} /></div>;
 
   return (
-    <div data-test="DesignSystem-InputWrapper" className={classes}>
+    <div data-test="DesignSystem-InputWrapper" className={classes} style={{ minWidth }}>
       {inlineLabel && (
         <div className="Input-inlineLabel">
           <Text appearance="subtle">{inlineLabel}</Text>

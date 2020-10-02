@@ -17,10 +17,6 @@
     background: var(--white);
 }
 
-.Input--minWidth {
-    min-width: var(--spacing-9);
-}
-
 .Input--tiny {
     height: var(--spacing-xl);
     padding-top: var(--spacing-m);
