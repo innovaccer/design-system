@@ -32,6 +32,7 @@ exports[`DatePicker component
       onBlur={[Function]}
       onChange={[Function]}
       onClear={[Function]}
+      onFocus={[Function]}
       placeholder="mm/dd/yyyy"
       value="03/01/2020"
     />
@@ -80,6 +81,7 @@ exports[`DatePicker component
       onBlur={[Function]}
       onChange={[Function]}
       onClear={[Function]}
+      onFocus={[Function]}
       placeholder="mm/dd/yyyy"
       value="03/01/2020"
     />
@@ -176,6 +178,7 @@ exports[`DatePicker component
       onBlur={[Function]}
       onChange={[Function]}
       onClear={[Function]}
+      onFocus={[Function]}
       placeholder="mm/dd/yyyy"
       value="03/01/2020"
     />

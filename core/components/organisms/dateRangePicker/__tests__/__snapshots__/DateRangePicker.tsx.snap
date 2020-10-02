@@ -149,6 +149,7 @@ exports[`DateRangePicker component
           onChange={[Function]}
           onClear={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           placeholder="mm/dd/yyyy"
           value="03/03/2020"
         />
@@ -250,6 +251,7 @@ exports[`DateRangePicker component
           onChange={[Function]}
           onClear={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           placeholder="mm/dd/yyyy"
           value="03/03/2020"
         />
@@ -407,6 +409,7 @@ exports[`DateRangePicker component
           onChange={[Function]}
           onClear={[Function]}
           onClick={[Function]}
+          onFocus={[Function]}
           placeholder="mm/dd/yyyy"
           value="03/03/2020"
         />
