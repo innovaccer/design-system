@@ -4,8 +4,13 @@ exports[`Input component
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--minWidth Input--regular"
+  className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": 256,
+    }
+  }
 >
   <input
     className="Input-input Input-input--regular"
@@ -22,8 +27,13 @@ exports[`Input component
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", icon: "events"
  1`] = `
 <div
-  className="Input Input--minWidth Input--regular"
+  className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": 256,
+    }
+  }
 >
   <div
     className="Input-icon Input-icon--left Input-icon--disabled"
@@ -49,8 +59,13 @@ exports[`Input component
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", value: "value"
  1`] = `
 <div
-  className="Input Input--minWidth Input--regular"
+  className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": 256,
+    }
+  }
 >
   <input
     className="Input-input Input-input--regular"
@@ -68,8 +83,13 @@ exports[`Input component
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", value: "value", icon: "events"
  1`] = `
 <div
-  className="Input Input--minWidth Input--regular"
+  className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": 256,
+    }
+  }
 >
   <div
     className="Input-icon Input-icon--left"
@@ -96,8 +116,13 @@ exports[`Input component
   name: "name", size: "large", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--minWidth Input--large"
+  className="Input Input--large"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": 256,
+    }
+  }
 >
   <input
     className="Input-input Input-input--large"
@@ -115,6 +140,11 @@ exports[`Input component
 <div
   className="Input Input--large"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": undefined,
+    }
+  }
 >
   <div
     className="Input-inlineLabel"
@@ -140,8 +170,13 @@ exports[`Input component
   name: "name", size: "regular", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--minWidth Input--regular"
+  className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": 256,
+    }
+  }
 >
   <input
     className="Input-input Input-input--regular"
@@ -159,6 +194,11 @@ exports[`Input component
 <div
   className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": undefined,
+    }
+  }
 >
   <div
     className="Input-inlineLabel"
@@ -184,8 +224,13 @@ exports[`Input component
   name: "name", size: "tiny", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--minWidth Input--tiny"
+  className="Input Input--tiny"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": 256,
+    }
+  }
 >
   <input
     className="Input-input Input-input--tiny"
@@ -203,6 +248,11 @@ exports[`Input component
 <div
   className="Input Input--tiny"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": undefined,
+    }
+  }
 >
   <div
     className="Input-inlineLabel"
@@ -230,6 +280,11 @@ exports[`Input component
 <div
   className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": undefined,
+    }
+  }
 >
   <input
     className="Input-input Input-input--regular"
@@ -245,8 +300,13 @@ exports[`Input component
   name: "name", type: "password", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--minWidth Input--regular"
+  className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": 256,
+    }
+  }
 >
   <input
     className="Input-input Input-input--regular"
@@ -262,8 +322,13 @@ exports[`Input component
   name: "name", type: "text", onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--minWidth Input--regular"
+  className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": 256,
+    }
+  }
 >
   <input
     className="Input-input Input-input--regular"
@@ -279,8 +344,13 @@ exports[`Input component
   name: "name", value: "value", disabled: true
  1`] = `
 <div
-  className="Input Input--minWidth Input--regular Input--disabled"
+  className="Input Input--regular Input--disabled"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": 256,
+    }
+  }
 >
   <input
     className="Input-input Input-input--regular"
@@ -297,8 +367,13 @@ exports[`Input component
   name: "name", value: "value", disabled: true, icon: "events"
  1`] = `
 <div
-  className="Input Input--minWidth Input--regular Input--disabled"
+  className="Input Input--regular Input--disabled"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": 256,
+    }
+  }
 >
   <div
     className="Input-icon Input-icon--left"
@@ -324,8 +399,13 @@ exports[`Input component
   name: "name", value: "value", disabled: true, onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--minWidth Input--regular Input--disabled"
+  className="Input Input--regular Input--disabled"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": 256,
+    }
+  }
 >
   <input
     className="Input-input Input-input--regular"
@@ -343,8 +423,13 @@ exports[`Input component
   name: "name", value: "value", disabled: true, onChangeHandler: "[Function]", icon: "events"
  1`] = `
 <div
-  className="Input Input--minWidth Input--regular Input--disabled"
+  className="Input Input--regular Input--disabled"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": 256,
+    }
+  }
 >
   <div
     className="Input-icon Input-icon--left"
@@ -371,8 +456,13 @@ exports[`Input component
   name: "name", value: "value", error: true, onChangeHandler: "[Function]"
  1`] = `
 <div
-  className="Input Input--minWidth Input--regular Input--error"
+  className="Input Input--regular Input--error"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": 256,
+    }
+  }
 >
   <input
     className="Input-input Input-input--regular"
@@ -389,8 +479,13 @@ exports[`Input component
   name: "name", value: "value", error: true, onChangeHandler: "[Function]", icon: "events"
  1`] = `
 <div
-  className="Input Input--minWidth Input--regular Input--error"
+  className="Input Input--regular Input--error"
   data-test="DesignSystem-InputWrapper"
+  style={
+    Object {
+      "minWidth": 256,
+    }
+  }
 >
   <div
     className="Input-icon Input-icon--left"
