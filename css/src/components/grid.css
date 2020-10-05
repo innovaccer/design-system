@@ -280,12 +280,16 @@
 
 .Grid-cellGroup--pinned-left {
     left: 0;
-    border-right: 3px solid var(--secondary);
+    border-right: var(--border);
+    border-right-width: 4px;
+    border-image: linear-gradient( to right, var(--secondary), var(--secondary) 25%, color-mod(var(--secondary) a(0.1))) 1 100%;
 }
 
 .Grid-cellGroup--pinned-right {
     right: 0;
-    border-left: 3px solid var(--secondary);
+    border-left: var(--border);
+    border-left-width: 4px;
+    border-image: linear-gradient( to left, var(--secondary), var(--secondary) 25%, color-mod(var(--secondary) a(0.1))) 1 100%;
 }
 
 .Grid .Checkbox-wrapper {
