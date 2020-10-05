@@ -76,7 +76,7 @@ export default [{
   output: formats.map(format => ({
     file: `dist/index.${format}.js`,
     format,
-    name: `inno-${format}`,
+    name: `InnovaccerDesignSystem`,
     globals: globals(),
     banner: banner(),
   }))
