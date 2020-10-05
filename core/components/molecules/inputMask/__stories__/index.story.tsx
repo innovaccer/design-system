@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { select, text, boolean } from '@storybook/addon-knobs';
 import InputMask from '../InputMask';
-import masks from '../masks';
+import { Masks } from '@/utils';
 import { action } from '@storybook/addon-actions';
 
 // CSF format story
@@ -92,7 +92,7 @@ export const all = () => {
         error={error}
         caption={caption}
         info={info}
-        mask={masks.date['mm/dd/yyyy']}
+        mask={Masks.masks.date['mm/dd/yyyy']}
       />
     </div>
   );

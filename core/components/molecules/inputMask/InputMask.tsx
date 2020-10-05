@@ -1,11 +1,8 @@
 import * as React from 'react';
-import Input, { InputProps } from '@/components/atoms/input';
-import Caption from '@/components/atoms/caption';
-import { BaseProps, SingleOrArray } from '@/utils/types';
 import classNames from 'classnames';
-
-export type Mask = (string | RegExp)[];
-export type ValidatorFn = (val: string) => boolean;
+import { BaseProps, Validators, Mask } from '@/utils/types';
+import { Input, Caption, Utils } from '@/index';
+import { InputProps } from '@/index.type';
 
 export interface MaskProps extends BaseProps {
   /**
@@ -27,10 +24,10 @@ export interface MaskProps extends BaseProps {
   /**
    * custom Validator for `InputMask`
    *
-   * ValidatorFn = (val: string) => boolean;
+   * `ValidatorFn: (val: string) => boolean`
    * @default []
    */
-  validators?: SingleOrArray<ValidatorFn>;
+  validators?: Validators;
   /**
    * <br/>**Second argument will be the masked value**
    */
@@ -170,16 +167,11 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     if (onClick) onClick(e);
   };
 
-  const onValidate = (val: string) => {
-    const inputValidators = Array.isArray(validators) ? validators : [validators];
-    return inputValidators.every(validator => validator(val));
-  };
-
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputVal = e.currentTarget.value;
     const maskedVal = convertToMasked(inputVal);
 
-    if (onValidate(maskedVal)) {
+    if (Utils.validators.isValid(validators, maskedVal)) {
       setValue(maskedVal);
       if (onChange) onChange(e, maskedVal);
     }

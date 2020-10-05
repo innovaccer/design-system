@@ -1,8 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Row, Column, Legend } from '@/index';
+import { Row, Column, Legend, Utils } from '@/index';
 import { ColumnProps } from '@/index.type';
-import { colorToHex } from '@/utils';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import {
   ResponsiveContainer,
@@ -100,6 +99,8 @@ export const DonutChart = (props: DonutChartProps) => {
     }
     return null;
   };
+
+  const { colorToHex } = Utils.css;
 
   const renderActiveShape = (activeShapeProps: any) => {
     const RADIAN = Math.PI / 180;

@@ -1,8 +1,9 @@
 import { DateObject, DateType, Day } from './types';
 import config from './config';
+import { Validators } from '@/utils/types';
+import { isValid } from '@/utils/validators';
 
 type Operator = 'less' | 'more' | 'equal';
-export type Validator = (format: string, val: string) => boolean;
 
 const {
   yearBlockRange
@@ -34,14 +35,14 @@ export const getDateInfo = (d?: DateType): Record<string, any> => {
   return {};
 };
 
-export const convertToDate = (d?: DateType | DateObject, format?: string, validator?: Validator): Date | undefined => {
+export const convertToDate = (d?: DateType | DateObject, format?: string, validators?: Validators): Date | undefined => {
   let dateVal;
 
   if (d) {
     if (typeof d === 'number') {
       dateVal = new Date(d);
     } else if (typeof d === 'string') {
-      return format ? translateToDate(format, d, validator) : undefined;
+      return format ? translateToDate(format, d, validators) : undefined;
     } else if (!(d instanceof Date)) {
       const { year, month, date } = d as DateObject;
       dateVal = new Date();
@@ -158,9 +159,8 @@ export const translateToString = (format: string, d?: Date): string => {
   return '';
 }
 
-export const translateToDate = (format: string, val: string, validator?: Validator): Date | undefined => {
-  const isValid = validator ? validator(format, val) : true;
-  if (isValid) {
+export const translateToDate = (format: string, val: string, validators: Validators = []): Date | undefined => {
+  if (isValid(validators, val, format)) {
     const separator = format.includes('/') ? '/' : '-';
 
     let year: number = -1,
