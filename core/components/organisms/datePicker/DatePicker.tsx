@@ -13,7 +13,7 @@ export type DatePickerProps = SharedProps & {
    * @argument date Date object
    * @argument dateVal Date string value as per `outputFormat`
    */
-  onDateChange?: (date: Date, dateVal: string) => void;
+  onDateChange?: (date: Date | undefined, dateVal?: string) => void;
   /**
    * Selected date
    *
@@ -46,7 +46,7 @@ export type DatePickerProps = SharedProps & {
   /**
    * Props to be used for `InputMask`
    */
-  inputOptions: InputMaskProps;
+  inputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear' | 'error'>;
   /**
    * custom Mask for the mentioned inputFormat
    */
@@ -63,6 +63,7 @@ export type DatePickerProps = SharedProps & {
 };
 
 interface DatePickerState {
+  init: boolean;
   date?: Date;
   error: boolean;
   open: boolean;
@@ -88,11 +89,13 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     } = props;
 
     const date = convertToDate(props.date, inputFormat, validator);
+    const error = this.getError(date);
 
     this.state = {
       date,
+      error,
+      init: false,
       open: props.open || false,
-      error: this.getError(date)
     };
   }
 
@@ -129,10 +132,12 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
       this.setState({ error: newError });
 
-      if (!newError && onDateChange) {
-        if (date) {
+      if (onDateChange) {
+        if (!newError) {
           const dVal = translateToString(outputFormat, date);
           onDateChange(date, dVal);
+        } else {
+          onDateChange(undefined, '');
         }
       }
     }
@@ -162,7 +167,10 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   }
 
   onDateChangeHandler = (d?: Date) => {
-    this.setState({ date: d });
+    this.setState({
+      init: true,
+      date: d
+    });
 
     const {
       closeOnSelect
@@ -188,6 +196,12 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     }
   }
 
+  onFocusHandler = () => {
+    this.setState({
+      init: true
+    });
+  }
+
   onBlurHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
     const placeholderChar = '_';
     if (!val || val.includes(placeholderChar)) {
@@ -197,6 +211,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
   onClearHandler = () => {
     this.setState({
+      init: true,
       date: undefined
     });
   }
@@ -255,24 +270,28 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     } = this.props;
 
     const {
+      init,
       date,
       error,
       open
     } = this.state;
 
     if (withInput) {
+      const showError = inputOptions.required && error && init;
+
       const trigger = (
         <InputMask
           icon="events"
           placeholder={inputFormat}
           {...inputOptions}
-          error={inputOptions.required && error}
+          error={showError}
           mask={mask}
           value={date ? translateToString(inputFormat, date) : ''}
           onChange={this.onChangeHandler}
+          onFocus={this.onFocusHandler}
           onBlur={this.onBlurHandler}
           onClear={this.onClearHandler}
-          caption={inputOptions.required && error ? inputOptions.caption || 'Invalid value' : ''}
+          caption={showError ? inputOptions.caption || 'Invalid value' : ''}
         />
       );
 
