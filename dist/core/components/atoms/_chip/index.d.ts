@@ -11,5 +11,8 @@ export interface GenericChipProps extends BaseProps {
     onClick?: () => void;
     name: Name;
 }
-export declare const GenericChip: (props: GenericChipProps) => JSX.Element;
+export declare const GenericChip: {
+    (props: GenericChipProps): JSX.Element;
+    displayName: string;
+};
 export default GenericChip;

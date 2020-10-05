@@ -7,7 +7,7 @@ export declare type Action = {
 };
 export interface ToastProps extends BaseProps {
     title: string;
-    appearance?: Appearance;
+    appearance: Appearance;
     message?: string;
     actions?: Action[];
     onClose?: () => void;
@@ -15,5 +15,8 @@ export interface ToastProps extends BaseProps {
 export declare const Toast: {
     (props: ToastProps): JSX.Element;
     displayName: string;
+    defaultProps: {
+        appearance: string;
+    };
 };
 export default Toast;

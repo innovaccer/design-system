@@ -2,9 +2,7 @@ import * as React from 'react';
 import { BaseProps } from "../../../utils/types";
 export declare type Dimension = 'small' | 'medium' | 'large';
 export interface ModalProps extends BaseProps {
-    backdropClose: (event?: Event, reason?: string) => void;
-    backdrop?: boolean;
-    closeOnEscape?: boolean;
+    backdropClose?: (event?: Event, reason?: string) => void;
     dimension?: Dimension;
     open: boolean;
     children?: React.ReactNode;

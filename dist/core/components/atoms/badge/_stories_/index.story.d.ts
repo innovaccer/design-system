@@ -5,6 +5,9 @@ declare const _default: {
     component: {
         (props: import("../Badge").BadgeProps): JSX.Element;
         displayName: string;
+        defaultProps: {
+            appearance: string;
+        };
     };
 };
 export default _default;

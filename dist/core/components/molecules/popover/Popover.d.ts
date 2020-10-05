@@ -11,16 +11,16 @@ export interface CustomStyle {
     maxWidth?: number | string;
 }
 export interface PopoverProps extends BaseProps {
-    position?: Position;
-    appendToBody?: boolean;
+    position: Position;
+    appendToBody: boolean;
     verticalOffset?: number;
     trigger: React.ReactElement<any>;
     hoverable?: boolean;
     dark?: boolean;
-    closeOnBackdropClick?: boolean;
-    on?: ActionType;
+    closeOnBackdropClick: boolean;
+    on: ActionType;
     open?: boolean;
-    customStyle?: CustomStyle;
+    customStyle: CustomStyle;
     onToggle?: (open: boolean, type?: string) => void;
     children: React.ReactNode;
     triggerClass?: string;
@@ -28,5 +28,12 @@ export interface PopoverProps extends BaseProps {
 export declare const Popover: {
     (props: PopoverProps): JSX.Element;
     displayName: string;
+    defaultProps: {
+        position: string;
+        closeOnBackdropClick: boolean;
+        appendToBody: boolean;
+        on: string;
+        customStyle: {};
+    };
 };
 export default Popover;

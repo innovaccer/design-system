@@ -14,11 +14,11 @@ export interface AvatarProps extends BaseProps {
 }
 export declare const Avatar: {
     (props: AvatarProps): JSX.Element;
+    displayName: string;
     defaultProps: {
         tooltipPosition: string;
         withTooltip: boolean;
         size: string;
     };
-    displayName: string;
 };
 export default Avatar;

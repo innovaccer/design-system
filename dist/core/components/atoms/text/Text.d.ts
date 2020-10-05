@@ -6,8 +6,8 @@ export interface TextProps extends BaseProps {
     children: React.ReactText;
     weight?: 'strong' | 'medium';
     small?: boolean;
-    appearance?: Appearance;
-    size?: Size;
+    appearance: Appearance;
+    size: Size;
 }
 export declare const Text: {
     (props: TextProps): JSX.Element;

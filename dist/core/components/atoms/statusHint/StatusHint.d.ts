@@ -3,7 +3,7 @@ import { BaseProps } from "../../../utils/types";
 export declare type Appearance = 'info' | 'alert' | 'warning' | 'success' | 'default';
 export interface StatusHintProps extends BaseProps {
     children: React.ReactText;
-    appearance?: Appearance;
+    appearance: Appearance;
     onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
     onMouseEnter?: (e: React.MouseEvent<HTMLDivElement>) => void;
     onMouseLeave?: (e: React.MouseEvent<HTMLDivElement>) => void;
@@ -11,5 +11,8 @@ export interface StatusHintProps extends BaseProps {
 export declare const StatusHint: {
     (props: StatusHintProps): JSX.Element;
     displayName: string;
+    defaultProps: {
+        appearance: string;
+    };
 };
 export default StatusHint;

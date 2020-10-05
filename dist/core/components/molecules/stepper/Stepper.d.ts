@@ -12,10 +12,10 @@ export interface StepperProps extends BaseProps {
 }
 export declare const Stepper: {
     (props: StepperProps): JSX.Element;
+    displayName: string;
     defaultProps: {
         completed: number;
         active: number;
-        steps: never[];
     };
 };
 export default Stepper;

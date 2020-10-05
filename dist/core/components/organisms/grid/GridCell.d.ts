@@ -13,12 +13,12 @@ export interface CellData {
 export interface PartialCellProps {
     data: RowData;
     schema: ColumnSchema;
-    loading: boolean;
+    loading?: boolean;
 }
 export interface GridCellProps extends PartialCellProps {
-    size: GridSize;
-    rowIndex: number;
-    colIndex: number;
+    size?: GridSize;
+    rowIndex?: number;
+    colIndex?: number;
 }
 export declare const GridCell: {
     (props: GridCellProps): JSX.Element | null;

@@ -4,38 +4,27 @@ import { DateType, DateFormat } from "../calendar/types";
 import { Position } from "../../molecules/popover";
 import { Mask, InputMaskProps } from "../../molecules/inputMask";
 import { Validator } from "../calendar/utility";
-declare type CompProps = {
-    onRangeChange?: (startDate: Date, endDate: Date, startValue?: string, endValue?: string) => void;
+export declare type DateRangePickerProps = SharedProps & {
+    onRangeChange?: (startDate?: Date, endDate?: Date, startValue?: string, endValue?: string) => void;
     startDate?: DateType;
     endDate?: DateType;
     rangeLimit?: number;
     withInput?: boolean;
     open?: boolean;
-    position?: Position;
-    inputFormat?: DateFormat;
-    outputFormat?: DateFormat;
-    startInputOptions?: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear'>;
-    endInputOptions?: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear'>;
+    position: Position;
+    inputFormat: DateFormat;
+    outputFormat: DateFormat;
+    startInputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear' | 'error'> & {
+        label?: string;
+    };
+    endInputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear' | 'error'> & {
+        label?: string;
+    };
     mask?: Mask;
-    validator?: Validator;
-} & SharedProps;
-declare const defaultProps: {
-    view: string;
-    firstDayOfWeek: string;
-    position: string;
-    inputFormat: string;
-    outputFormat: string;
-    validator: any;
-    startInputOptions: {
-        label: string;
-    };
-    endInputOptions: {
-        label: string;
-    };
+    validator: Validator;
 };
-declare type DefaultProps = Readonly<typeof defaultProps>;
-export declare type DateRangePickerProps = CompProps & DefaultProps;
 interface DateRangePickerState {
+    init: boolean;
     startDate?: Date;
     endDate?: Date;
     startError: boolean;
@@ -46,8 +35,7 @@ interface DateRangePickerState {
 }
 export declare class DateRangePicker extends React.Component<DateRangePickerProps, DateRangePickerState> {
     static defaultProps: {
-        view: string;
-        firstDayOfWeek: string;
+        monthsInView: number;
         position: string;
         inputFormat: string;
         outputFormat: string;
@@ -58,6 +46,8 @@ export declare class DateRangePicker extends React.Component<DateRangePickerProp
         endInputOptions: {
             label: string;
         };
+        view: string;
+        firstDayOfWeek: string;
     };
     monthsInView: number;
     constructor(props: DateRangePickerProps);
@@ -70,6 +60,7 @@ export declare class DateRangePicker extends React.Component<DateRangePickerProp
     onRangeChangeHandler: (sDate?: Date | undefined, eDate?: Date | undefined) => void;
     updateNav: (type: string) => void;
     onChangeHandler: (_e: React.ChangeEvent<HTMLInputElement>, val: string, type: string) => void;
+    onFocusHandler: () => void;
     onBlurHandler: (_e: React.ChangeEvent<HTMLInputElement>, val: string, type: string) => void;
     onClearHandler: (type: string) => void;
     onClickHandler: (type: string) => void;

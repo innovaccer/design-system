@@ -4,13 +4,13 @@ import Handle, { HandleProps } from "./Handle";
 declare type NumberRange = [number, number];
 export interface MultiSliderProps extends BaseProps {
     disabled?: boolean;
-    labelStepSize?: number;
+    labelStepSize: number;
     labelPrecision?: number;
-    max?: number;
-    min?: number;
-    stepSize?: number;
+    max: number;
+    min: number;
+    stepSize: number;
     label?: string;
-    labelRenderer?: boolean | ((value: number) => string);
+    labelRenderer: boolean | ((value: number) => string);
 }
 interface SliderBaserProps extends MultiSliderProps {
     onChange?: (values: number) => void;
@@ -25,22 +25,14 @@ interface MultiSliderState {
     tickSize: number;
     tickSizeRatio: number;
 }
-declare const defaultProps: {
-    disabled: boolean;
-    labelStepSize: number;
-    max: number;
-    min: number;
-    stepSize: number;
-};
-declare type DefaultProps = Readonly<typeof defaultProps>;
-declare type InternalMultiSliderProps = SliderBaserProps & RangeSliderBaseProps & DefaultProps;
+declare type InternalMultiSliderProps = SliderBaserProps & RangeSliderBaseProps;
 export declare class MultiSlider extends React.Component<InternalMultiSliderProps, MultiSliderState> {
     static defaultProps: {
-        disabled: boolean;
         labelStepSize: number;
         max: number;
         min: number;
         stepSize: number;
+        labelRenderer: boolean;
     };
     static Handle: React.FunctionComponent<HandleProps>;
     handleElements: Handle[];

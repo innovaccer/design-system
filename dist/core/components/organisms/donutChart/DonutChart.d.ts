@@ -9,11 +9,20 @@ export interface DonutChartProps extends BaseProps {
     withLegends?: boolean;
     withTooltip?: boolean;
     withActiveSegment?: boolean;
-    colors?: string[];
+    colors: string[];
     withCenterText: boolean;
-    colorOfTotalCount?: string;
+    colorOfTotalCount: string;
     radius?: number;
-    width?: number;
+    width: number;
 }
-export declare const DonutChart: (props: DonutChartProps) => JSX.Element;
+export declare const DonutChart: {
+    (props: DonutChartProps): JSX.Element;
+    displayName: string;
+    defaultProps: {
+        width: number;
+        colors: string[];
+        withCenterText: boolean;
+        colorOfTotalCount: string;
+    };
+};
 export default DonutChart;

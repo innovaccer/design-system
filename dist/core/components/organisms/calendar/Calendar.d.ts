@@ -2,16 +2,16 @@ import * as React from 'react';
 import { BaseProps } from "../../../utils/types";
 import { Day, View } from "./types";
 export interface SharedProps extends BaseProps {
-    monthsInView?: number;
+    monthsInView: number;
     jumpView?: boolean;
-    firstDayOfWeek?: Day;
-    view?: View;
+    firstDayOfWeek: Day;
+    view: View;
     disabledBefore?: Date;
     disabledAfter?: Date;
     yearNav?: number;
     monthNav?: number;
 }
-declare type CompProps = {
+export declare type CalendarProps = {
     onDateChange?: (date: Date) => void;
     onRangeChange?: (startDate: Date | undefined, endDate: Date | undefined) => void;
     date?: Date;
@@ -33,13 +33,6 @@ interface CalendarState {
     yearNav: number;
     monthNav: number;
 }
-declare const defaultProps: {
-    monthsInView: number;
-    view: string;
-    firstDayOfWeek: string;
-};
-declare type DefaultProps = Readonly<typeof defaultProps>;
-export declare type CalendarProps = CompProps & DefaultProps;
 export declare class Calendar extends React.Component<CalendarProps, CalendarState> {
     static defaultProps: {
         monthsInView: number;

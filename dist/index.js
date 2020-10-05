@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1601468438426 
+   * Generated on: 1601887148070 
    *      Package: @innovaccer/design-system
-   *      Version: v1.3.0-0
+   *      Version: v1.3.0-1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -145,12 +145,12 @@
 
       return renderTooltip();
     };
+    Avatar.displayName = 'Avatar';
     Avatar.defaultProps = {
       tooltipPosition: 'bottom',
       withTooltip: true,
       size: 'regular'
     };
-    Avatar.displayName = 'Avatar';
 
     var Offsets;
 
@@ -424,16 +424,11 @@
     var Popover = function Popover(props) {
       var _a;
 
-      var _b = props.position,
-          position = _b === void 0 ? 'bottom' : _b,
-          _c = props.closeOnBackdropClick,
-          closeOnBackdropClick = _c === void 0 ? true : _c,
-          _d = props.appendToBody,
-          appendToBody = _d === void 0 ? true : _d,
-          _e = props.on,
-          on = _e === void 0 ? 'click' : _e,
-          _f = props.customStyle,
-          customStyle = _f === void 0 ? {} : _f,
+      var position = props.position,
+          closeOnBackdropClick = props.closeOnBackdropClick,
+          appendToBody = props.appendToBody,
+          on = props.on,
+          customStyle = props.customStyle,
           dark = props.dark,
           hoverable = props.hoverable,
           children = props.children,
@@ -442,9 +437,9 @@
           onToggle = props.onToggle,
           className = props.className;
 
-      var _g = React.useState(props.open || false),
-          open = _g[0],
-          setOpen = _g[1];
+      var _b = React.useState(props.open || false),
+          open = _b[0],
+          setOpen = _b[1];
 
       React.useEffect(function () {
         if (onToggle) {
@@ -481,6 +476,13 @@
       }), PopoverWrapper);
     };
     Popover.displayName = 'Popover';
+    Popover.defaultProps = {
+      position: 'bottom',
+      closeOnBackdropClick: true,
+      appendToBody: true,
+      on: 'click',
+      customStyle: {}
+    };
 
     var AvatarGroup = function AvatarGroup(props) {
       var _a, _b;
@@ -587,13 +589,13 @@
         className: popperClass
       }, renderPopper()));
     };
+    AvatarGroup.displayName = 'AvatarGroup';
     AvatarGroup.defaultProps = {
       max: 2,
       borderColor: 'var(--white)',
       tooltipPosition: 'bottom',
       popoverOptions: {}
     };
-    AvatarGroup.displayName = 'AvatarGroup';
 
     var useEffect = React.useEffect,
         useState = React.useState;
@@ -666,8 +668,7 @@
     var Badge = function Badge(props) {
       var _a;
 
-      var _b = props.appearance,
-          appearance = _b === void 0 ? 'secondary' : _b,
+      var appearance = props.appearance,
           children = props.children,
           subtle = props.subtle,
           className = props.className;
@@ -682,6 +683,9 @@
       }), children);
     };
     Badge.displayName = 'Badge';
+    Badge.defaultProps = {
+      appearance: 'secondary'
+    };
 
     /* eslint-disable no-undefined,no-param-reassign,no-shadow */
 
@@ -835,8 +839,8 @@
     var _isControlled = function _isControlled(selected) {
       return selected !== undefined;
     };
-    var _isOpenControlled = function _isOpenControlled(open, selected) {
-      return open !== undefined && selected !== undefined;
+    var _isOpenControlled = function _isOpenControlled(open) {
+      return open !== undefined;
     };
     var _showSelectedItems = function _showSelectedItems(bulk, searchTerm, withCheckbox) {
       return bulk && withCheckbox && searchTerm === '';
@@ -876,13 +880,20 @@
       var _a;
 
       var appearance = props.appearance,
-          type = props.type,
           className = props.className,
           name = props.name,
           size = props.size,
           onClick = props.onClick;
       var baseProps = extractBaseProps(props);
-      var iconClass = classNames__default['default']((_a = {}, _a['material-icons'] = true, _a['Icon'] = true, _a["Icon--" + appearance] = appearance, _a["" + className] = className, _a));
+
+      var mapper = function mapper(val) {
+        if (val === 'outline') return 'outlined';
+        if (val === 'rounded') return 'round';
+        return val;
+      };
+
+      var type = mapper(props.type);
+      var iconClass = classNames__default['default']((_a = {}, _a['material-icons'] = true, _a["material-icons-" + mapper(type)] = type && type !== 'filled', _a['Icon'] = true, _a["Icon--" + appearance] = appearance, _a["" + className] = className, _a));
       var styles = {
         fontSize: size + "px",
         width: size + "px"
@@ -891,13 +902,13 @@
         className: iconClass,
         style: styles,
         onClick: onClick
-      }), name + "_" + type);
+      }), type ? name + "_" + type : name, "         ");
     };
+    Icon.displayName = 'Icon';
     Icon.defaultProps = {
       appearance: 'default',
       size: 16
     };
-    Icon.displayName = 'Icon';
 
     var DropdownButton = /*#__PURE__*/React.forwardRef(function (props, ref) {
       var _a, _b;
@@ -1077,7 +1088,7 @@
         htmlFor: id,
         className: CheckboxTextClass
       }, /*#__PURE__*/React.createElement(Text, {
-        small: size === 'tiny'
+        size: size === 'tiny' ? 'small' : 'regular'
       }, label.trim())));
     });
     Checkbox.displayName = 'Checkbox';
@@ -1277,10 +1288,8 @@
     var Spinner = function Spinner(props) {
       var _a, _b;
 
-      var _c = props.appearance,
-          appearance = _c === void 0 ? 'primary' : _c,
-          _d = props.size,
-          size = _d === void 0 ? 'medium' : _d,
+      var appearance = props.appearance,
+          size = props.size,
           className = props.className;
       var baseProps = extractBaseProps(props);
       var wrapperClasses = classNames__default['default']((_a = {
@@ -1307,6 +1316,10 @@
       }, circleProps)));
     };
     Spinner.displayName = 'Spinner';
+    Spinner.defaultProps = {
+      appearance: 'primary',
+      size: 'medium'
+    };
 
     var sizeMapping = {
       tiny: 12,
@@ -1318,9 +1331,12 @@
 
       var _d = props.size,
           size = _d === void 0 ? 'regular' : _d,
-          appearance = props.appearance,
-          iconAlign = props.iconAlign,
-          tabIndex = props.tabIndex,
+          _e = props.appearance,
+          appearance = _e === void 0 ? 'basic' : _e,
+          _f = props.iconAlign,
+          iconAlign = _f === void 0 ? 'left' : _f,
+          _g = props.tabIndex,
+          tabIndex = _g === void 0 ? 0 : _g,
           type = props.type,
           children = props.children,
           icon = props.icon,
@@ -1353,12 +1369,6 @@
       })), children);
     });
     Button.displayName = 'Button';
-    Button.defaultProps = {
-      appearance: 'basic',
-      size: 'regular',
-      iconAlign: 'left',
-      tabIndex: 0
-    };
 
     var sizeMapping$1 = {
       tiny: 12,
@@ -1469,10 +1479,10 @@
         className: classes
       }));
     };
+    PlaceholderParagraph.displayName = 'PlaceholderParagraph';
     PlaceholderParagraph.defaultProps = {
       length: 'medium'
     };
-    PlaceholderParagraph.displayName = 'PlaceholderParagraph';
 
     var PlaceholderImage = function PlaceholderImage(props) {
       var _a;
@@ -1491,6 +1501,9 @@
       }));
     };
     PlaceholderImage.displayName = 'PlaceholderImage';
+    PlaceholderImage.defaultProps = {
+      size: 'small'
+    };
 
     var Placeholder = function Placeholder(props) {
       var _a, _b;
@@ -1518,11 +1531,11 @@
         "data-test": "DesignSystem-Placeholder--Paragraph"
       }, children));
     };
+    Placeholder.displayName = 'Placeholder';
     Placeholder.defaultProps = {
       withImage: true,
       imageSize: 'small'
     };
-    Placeholder.displayName = 'Placeholder';
 
     var Loading = function Loading(props) {
       var loadingType = props.loadingType;
@@ -1993,6 +2006,11 @@
 
     var inputRef = /*#__PURE__*/React.createRef();
     var bulk = 50;
+    var defaultProps = {
+      triggerOptions: {},
+      options: [],
+      closeOnSelect: true
+    };
 
     var Dropdown = function (_super) {
       __extends(Dropdown, _super);
@@ -2100,6 +2118,8 @@
           var _a = _this.props,
               withCheckbox = _a.withCheckbox,
               showApplyButton = _a.showApplyButton,
+              onClose = _a.onClose,
+              name = _a.name,
               _b = _a.selected,
               selected = _b === void 0 ? [] : _b;
           var _c = _this.state,
@@ -2109,7 +2129,7 @@
               async = _c.async,
               loading = _c.loading,
               searchTerm = _c.searchTerm;
-          var popperIsOpen = _isOpenControlled(_this.props.open, _this.props.selected) ? _this.props.open : _this.state.open;
+          var popperIsOpen = _isOpenControlled(_this.props.open) ? _this.props.open : _this.state.open;
 
           if (withCheckbox && showApplyButton) {
             var temporarySelected = _isControlled(_this.props.selected) ? selected : previousSelected;
@@ -2121,7 +2141,7 @@
             });
           }
 
-          if (_isOpenControlled(_this.props.open, _this.props.selected)) {
+          if (_isOpenControlled(_this.props.open)) {
             _this.setState({
               open: popperIsOpen
             });
@@ -2137,6 +2157,14 @@
             });
 
             if (moveSelectedGroup) _this.updateOptions(false);
+          }
+
+          if (onClose && !popperIsOpen) {
+            var arr = withCheckbox && showApplyButton ? _isControlled(_this.props.selected) ? selected : previousSelected : _this.state.tempSelected;
+            var values = arr.map(function (option) {
+              return option.value;
+            });
+            onClose(values, name);
           }
         };
 
@@ -2180,7 +2208,9 @@
               onChange = _b.onChange,
               withCheckbox = _b.withCheckbox,
               showApplyButton = _b.showApplyButton,
-              closeOnSelect = _b.closeOnSelect;
+              closeOnSelect = _b.closeOnSelect,
+              name = _b.name,
+              onPopperToggle = _b.onPopperToggle;
           var isClearClicked = selectedArray.length === 0 && selected.length > 0;
           var updatePreviousSelected = withCheckbox && showApplyButton && isControlled;
 
@@ -2188,7 +2218,7 @@
             tempSelected: selectedArray,
             triggerLabel: _this.updateTriggerLabel(selectedArray),
             selectAll: getSelectAll(selectedArray, optionsLength),
-            open: _isOpenControlled(_this.props.open, _this.props.selected) || withCheckbox ? open : !closeOnSelect,
+            open: _isOpenControlled(_this.props.open) || withCheckbox ? open : !closeOnSelect,
             previousSelected: updatePreviousSelected ? selectedArray : previousSelected,
             selected: isClearClicked ? selectedArray : selected,
             loading: isClearClicked ? true : loading
@@ -2202,6 +2232,10 @@
             });
             var selectedValues = isSingleSelect ? values[0] : values;
             onChange(selectedValues, name);
+          }
+
+          if (!withCheckbox && closeOnSelect && onPopperToggle && _isOpenControlled(_this.props.open)) {
+            onPopperToggle(false, 'optionClick');
           }
         };
 
@@ -2274,6 +2308,7 @@
         _this.onClearOptions = function () {
           var _a = _this.props,
               selected = _a.selected,
+              name = _a.name,
               onUpdate = _a.onUpdate,
               showApplyButton = _a.showApplyButton,
               onChange = _a.onChange;
@@ -2295,6 +2330,14 @@
           if (onChange && !showApplyButton) onChange([], name);
         };
 
+        _this.onTogglePopper = function (type) {
+          var onPopperToggle = _this.props.onPopperToggle;
+
+          if (onPopperToggle && _isOpenControlled(_this.props.open)) {
+            onPopperToggle(false, type);
+          }
+        };
+
         _this.onCancelOptions = function () {
           var _a = _this.state,
               previousSelected = _a.previousSelected,
@@ -2302,10 +2345,19 @@
               optionsLength = _a.optionsLength;
           var _b = _this.props,
               selected = _b.selected,
-              onUpdate = _b.onUpdate;
+              onUpdate = _b.onUpdate,
+              onClose = _b.onClose,
+              name = _b.name;
+          var popperIsOpen = _isOpenControlled(_this.props.open) ? _this.state.open : false;
+          var values = previousSelected.map(function (option) {
+            return option.value;
+          });
 
           if (_isControlled(selected)) {
             if (onUpdate) onUpdate('cancel-selected', previousSelected, tempSelected);
+
+            _this.onTogglePopper('cancelClick');
+
             return;
           }
 
@@ -2315,16 +2367,14 @@
             tempSelected: previousSelected,
             selectAll: getSelectAll(previousSelected, optionsLength),
             triggerLabel: label,
-            open: false
+            open: popperIsOpen
           }));
 
-          if (_this.props.onClose) {
-            var values = previousSelected.map(function (option) {
-              return option.value;
-            });
-
-            _this.props.onClose(values, name);
+          if (onClose && !popperIsOpen) {
+            onClose(values, name);
           }
+
+          _this.onTogglePopper('cancelClick');
         };
 
         _this.onApplyOptions = function () {
@@ -2333,32 +2383,38 @@
               previousSelected = _a.previousSelected;
           var _b = _this.props,
               onChange = _b.onChange,
-              onClose = _b.onClose,
               selected = _b.selected,
-              onUpdate = _b.onUpdate;
+              onUpdate = _b.onUpdate,
+              onClose = _b.onClose,
+              name = _b.name;
+          var popperIsOpen = _isOpenControlled(_this.props.open) ? _this.state.open : false;
+          var values = tempSelected.map(function (option) {
+            return option.value;
+          });
 
           if (_isControlled(selected)) {
             if (onUpdate) onUpdate('apply-selected', previousSelected, tempSelected);
+
+            _this.onTogglePopper('applyClick');
+
             return;
           }
 
           _this.setState(__assign(__assign({}, _this.state), {
             previousSelected: tempSelected,
             optionsApplied: true,
-            open: false
+            open: popperIsOpen
           }));
-
-          var values = tempSelected.map(function (option) {
-            return option.value;
-          });
 
           if (onChange) {
             onChange(values, name);
           }
 
-          if (onClose) {
+          if (onClose && !popperIsOpen) {
             onClose(values, name);
           }
+
+          _this.onTogglePopper('applyClick');
         };
 
         _this.onToggleDropdown = function (updatedOpen, type) {
@@ -2366,44 +2422,25 @@
             return;
           }
 
-          var _a = _this.props,
-              showApplyButton = _a.showApplyButton,
-              withCheckbox = _a.withCheckbox,
-              onClose = _a.onClose,
-              name = _a.name,
-              onPopperToggle = _a.onPopperToggle;
+          var onPopperToggle = _this.props.onPopperToggle;
 
-          if (onPopperToggle && _isOpenControlled(_this.props.open, _this.props.selected)) {
+          if (onPopperToggle && _isOpenControlled(_this.props.open)) {
             onPopperToggle(updatedOpen, type);
             return;
           }
 
-          var isPopperOpen = _isOpenControlled(_this.props.open, _this.props.selected) ? _this.state.open : updatedOpen;
-          var isCloseEvent = type === 'outsideClick' || type === 'onClick' && !isPopperOpen;
-
           _this.setState({
-            open: isPopperOpen
+            open: updatedOpen
           });
-
-          if (onClose && isCloseEvent) {
-            var arr = withCheckbox && showApplyButton ? _this.state.previousSelected : _this.state.tempSelected;
-            var values = arr.map(function (option) {
-              return option.value;
-            });
-            onClose(values, name);
-          }
         };
 
-        var totalOptions = props.totalOptions,
+        var _a = props.selected,
+            selected = _a === void 0 ? [] : _a,
+            totalOptions = props.totalOptions,
             withCheckbox = props.withCheckbox,
-            _a = props.loading,
-            loading = _a === void 0 ? false : _a,
-            _b = props.open,
-            open = _b === void 0 ? false : _b,
-            _c = props.selected,
-            selected = _c === void 0 ? [] : _c,
-            _d = props.options,
-            options = _d === void 0 ? [] : _d;
+            loading = props.loading,
+            open = props.open,
+            options = props.options;
         var optionsLength = totalOptions ? totalOptions : options.length;
         var async = 'fetchOptions' in _this.props || optionsLength > bulk;
         var selectedGroup = !async ? _this.getSelectedOptions(options, true) : [];
@@ -2464,7 +2501,7 @@
         }
 
         if (prevProps.open !== this.props.open || prevState.open !== this.state.open) {
-          if (_isOpenControlled(this.props.open, this.props.selected) && this.props.open === this.state.open) return;
+          if (_isOpenControlled(this.props.open) && this.props.open === this.state.open) return;
           this.updateOnPopperToggle();
         }
 
@@ -2520,10 +2557,7 @@
         }, rest));
       };
 
-      Dropdown.defaultProps = {
-        triggerOptions: {},
-        closeOnSelect: true
-      };
+      Dropdown.defaultProps = defaultProps;
       return Dropdown;
     }(React.Component);
 
@@ -2634,14 +2668,13 @@
         className: classes
       }), children);
     };
+    Card.displayName = 'Card';
     Card.defaultProps = {
       shadow: 'medium'
     };
-    Card.displayName = 'Card';
 
     var GenericChip = function GenericChip(props) {
-      var _a = props.label,
-          label = _a === void 0 ? '' : _a,
+      var label = props.label,
           icon = props.icon,
           clearButton = props.clearButton,
           disabled = props.disabled,
@@ -2682,16 +2715,15 @@
         onClick: onCloseHandler
       }));
     };
+    GenericChip.displayName = 'GenericChip';
 
     var Chip = function Chip(props) {
       var _a;
 
-      var _b = props.label,
-          label = _b === void 0 ? '' : _b,
+      var label = props.label,
           icon = props.icon,
           clearButton = props.clearButton,
-          _c = props.type,
-          type = _c === void 0 ? 'input' : _c,
+          type = props.type,
           disabled = props.disabled,
           selected = props.selected,
           onClose = props.onClose,
@@ -2726,6 +2758,9 @@
       }));
     };
     Chip.displayName = 'Chip';
+    Chip.defaultProps = {
+      type: 'input'
+    };
 
     var ChipGroup = function ChipGroup(props) {
       var _a;
@@ -2808,8 +2843,7 @@
       var _a;
 
       var appearance = props.appearance,
-          _b = props.size,
-          size = _b === void 0 ? 'm' : _b,
+          size = props.size,
           children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
@@ -2823,17 +2857,16 @@
         componentType: sizeMap[size]
       }), children);
     };
+    Heading.displayName = 'Heading';
     Heading.defaultProps = {
       appearance: 'default',
       size: 'm'
     };
-    Heading.displayName = 'Heading';
 
     var Subheading = function Subheading(props) {
       var _a;
 
-      var _b = props.appearance,
-          appearance = _b === void 0 ? 'default' : _b,
+      var appearance = props.appearance,
           children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
@@ -2848,6 +2881,9 @@
       }), children);
     };
     Subheading.displayName = 'Subheading';
+    Subheading.defaultProps = {
+      appearance: 'default'
+    };
 
     var config = {
       yearBlockRange: 12,
@@ -2986,72 +3022,70 @@
       return false;
     };
     var translateToString = function translateToString(format, d) {
-      var _a = getDateInfo(d),
-          year = _a.year,
-          month = _a.month,
-          date = _a.date;
+      if (format && d) {
+        var _a = getDateInfo(d),
+            year_1 = _a.year,
+            month_1 = _a.month,
+            date_1 = _a.date;
 
-      var separator = format.includes('/') ? '/' : '-';
-      var f = format.split(separator);
-      var val = f.reduce(function (out, curr, i) {
-        switch (curr) {
-          case 'mm':
-            out += (month < 9 && '0') + (month + 1);
-            break;
+        var separator_1 = format.includes('/') ? '/' : '-';
+        var f_1 = format.split(separator_1);
+        var val = f_1.reduce(function (out, curr, i) {
+          switch (curr) {
+            case 'mm':
+              out += (month_1 < 9 && '0') + (month_1 + 1);
+              break;
 
-          case 'yyyy':
-            out += year;
-            break;
+            case 'yyyy':
+              out += year_1;
+              break;
 
-          case 'dd':
-            out += (date < 10 && '0') + date;
-            break;
-        }
+            case 'dd':
+              out += (date_1 < 10 && '0') + date_1;
+              break;
+          }
 
-        if (i !== f.length - 1) out += separator;
-        return out;
-      }, '');
-      return val;
+          if (i !== f_1.length - 1) out += separator_1;
+          return out;
+        }, '');
+        return val;
+      }
+
+      return '';
     };
     var translateToDate = function translateToDate(format, val, validator) {
       var isValid = validator ? validator(format, val) : true;
 
       if (isValid) {
         var separator = format.includes('/') ? '/' : '-';
-        var year_1 = -1,
-            month_1 = -1,
-            date_1 = -1;
+        var year_2 = -1,
+            month_2 = -1,
+            date_2 = -1;
         var v_1 = val.split(separator);
         format.split(separator).forEach(function (f, i) {
           switch (f) {
             case 'mm':
-              month_1 = +v_1[i] - 1;
+              month_2 = +v_1[i] - 1;
               break;
 
             case 'yyyy':
-              year_1 = +v_1[i];
+              year_2 = +v_1[i];
               break;
 
             case 'dd':
-              date_1 = +v_1[i];
+              date_2 = +v_1[i];
               break;
           }
         });
         var d = convertToDate({
-          year: year_1,
-          month: month_1,
-          date: date_1
+          year: year_2,
+          month: month_2,
+          date: date_2
         });
         return d;
       } else {
         return undefined;
       }
-    };
-
-    var defaultProps = {
-      monthsInView: 1,
-      view: 'date',
-      firstDayOfWeek: 'sunday'
     };
 
     var Calendar = function (_super) {
@@ -3793,7 +3827,11 @@
         }));
       };
 
-      Calendar.defaultProps = defaultProps;
+      Calendar.defaultProps = {
+        monthsInView: 1,
+        view: 'date',
+        firstDayOfWeek: 'sunday'
+      };
       return Calendar;
     }(React.Component);
 
@@ -3816,12 +3854,9 @@
     var Caption = function Caption(props) {
       var _a, _b;
 
-      var _c = props.error,
-          error = _c === void 0 ? false : _c,
-          _d = props.hide,
-          hide = _d === void 0 ? false : _d,
-          _e = props.withInput,
-          withInput = _e === void 0 ? false : _e,
+      var error = props.error,
+          hide = props.hide,
+          withInput = props.withInput,
           children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
@@ -3839,7 +3874,7 @@
         appearance: 'alert'
       })), /*#__PURE__*/React.createElement(Text, {
         appearance: error ? 'destructive' : 'subtle',
-        small: true,
+        size: "small",
         weight: "medium"
       }, "" + children));
     };
@@ -3848,7 +3883,10 @@
     var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
       var maskProp = props.mask,
           valueProp = props.value,
-          placeholderChar = props.placeholderChar,
+          _a = props.placeholderChar,
+          placeholderChar = _a === void 0 ? '_' : _a,
+          _b = props.validators,
+          validators = _b === void 0 ? [] : _b,
           defaultValue = props.defaultValue,
           mask = props.mask,
           error = props.error,
@@ -3859,15 +3897,15 @@
           onClick = props.onClick,
           onClear = props.onClear,
           className = props.className,
-          rest = __rest(props, ["mask", "value", "placeholderChar", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onClick", "onClear", "className"]);
+          rest = __rest(props, ["mask", "value", "placeholderChar", "validators", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onClick", "onClear", "className"]);
 
-      var _a = React.useState(defaultValue || valueProp || ''),
-          value = _a[0],
-          setValue = _a[1];
+      var _c = React.useState(defaultValue || valueProp || ''),
+          value = _c[0],
+          setValue = _c[1];
 
-      var _b = React.useState(0),
-          caret = _b[0],
-          setCaret = _b[1];
+      var _d = React.useState(0),
+          caret = _d[0],
+          setCaret = _d[1];
 
       var ref = React.useRef(null);
       var fixedMask = mask.filter(function (m) {
@@ -3972,11 +4010,21 @@
         if (onClick) onClick(e);
       };
 
+      var onValidate = function onValidate(val) {
+        var inputValidators = Array.isArray(validators) ? validators : [validators];
+        return inputValidators.every(function (validator) {
+          return validator(val);
+        });
+      };
+
       var onChangeHandler = function onChangeHandler(e) {
         var inputVal = e.currentTarget.value;
         var maskedVal = convertToMasked(inputVal);
-        setValue(maskedVal);
-        if (onChange) onChange(e, maskedVal);
+
+        if (onValidate(maskedVal)) {
+          setValue(maskedVal);
+          if (onChange) onChange(e, maskedVal);
+        }
       };
 
       var onBlurHandler = function onBlurHandler(e) {
@@ -4011,9 +4059,7 @@
         hide: !caption
       }, caption));
     });
-    InputMask.defaultProps = {
-      placeholderChar: '_'
-    };
+    InputMask.displayName = 'InputMask';
 
     var dateMask = {
       'dd/mm/yyyy': [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
@@ -4086,17 +4132,6 @@
       date: dateValidator
     };
 
-    var defaultProps$1 = {
-      view: 'date',
-      firstDayOfWeek: 'sunday',
-      position: 'bottom-start',
-      inputFormat: 'mm/dd/yyyy',
-      outputFormat: 'mm/dd/yyyy',
-      validator: e$1.date,
-      inputOptions: {},
-      closeOnSelect: true
-    };
-
     var DatePicker = function (_super) {
       __extends(DatePicker, _super);
 
@@ -4123,6 +4158,7 @@
 
         _this.onDateChangeHandler = function (d) {
           _this.setState({
+            init: true,
             date: d
           });
 
@@ -4152,6 +4188,12 @@
           }
         };
 
+        _this.onFocusHandler = function () {
+          _this.setState({
+            init: true
+          });
+        };
+
         _this.onBlurHandler = function (_e, val) {
           var placeholderChar = '_';
 
@@ -4164,6 +4206,7 @@
 
         _this.onClearHandler = function () {
           _this.setState({
+            init: true,
             date: undefined
           });
         };
@@ -4189,10 +4232,14 @@
         var inputFormat = props.inputFormat,
             validator = props.validator;
         var date = convertToDate(props.date, inputFormat, validator);
+
+        var error = _this.getError(date);
+
         _this.state = {
           date: date,
-          open: props.open || false,
-          error: _this.getError(date)
+          error: error,
+          init: false,
+          open: props.open || false
         };
         return _this;
       }
@@ -4224,10 +4271,12 @@
             error: newError
           });
 
-          if (!newError && onDateChange) {
-            if (date) {
+          if (onDateChange) {
+            if (!newError) {
               var dVal = translateToString(outputFormat, date);
               onDateChange(date, dVal);
+            } else {
+              onDateChange(undefined, '');
             }
           }
         }
@@ -4268,22 +4317,25 @@
             mask = _b === void 0 ? e.date[inputFormat] : _b,
             withInput = _a.withInput;
         var _c = this.state,
+            init = _c.init,
             date = _c.date,
             error = _c.error,
             open = _c.open;
 
         if (withInput) {
+          var showError = inputOptions.required && error && init;
           var trigger = /*#__PURE__*/React.createElement(InputMask, __assign({
             icon: "events",
             placeholder: inputFormat
           }, inputOptions, {
-            error: inputOptions.required && error,
+            error: showError,
             mask: mask,
             value: date ? translateToString(inputFormat, date) : '',
             onChange: this.onChangeHandler,
+            onFocus: this.onFocusHandler,
             onBlur: this.onBlurHandler,
             onClear: this.onClearHandler,
-            caption: inputOptions.required && error ? inputOptions.caption || 'Invalid value' : ''
+            caption: showError ? inputOptions.caption || 'Invalid value' : ''
           }));
           return /*#__PURE__*/React.createElement(Popover, {
             trigger: trigger,
@@ -4298,21 +4350,24 @@
         return this.renderCalendar();
       };
 
-      DatePicker.defaultProps = defaultProps$1;
+      DatePicker.defaultProps = __assign(__assign({}, Calendar.defaultProps), {
+        position: 'bottom-start',
+        inputFormat: 'mm/dd/yyyy',
+        outputFormat: 'mm/dd/yyyy',
+        validator: e$1.date,
+        inputOptions: {},
+        closeOnSelect: true
+      });
       return DatePicker;
     }(React.Component);
 
     var DonutChart = function DonutChart(props) {
       var _a;
 
-      var _b = props.width,
-          width = _b === void 0 ? 20 : _b,
-          _c = props.colors,
-          colors = _c === void 0 ? ['primary', 'secondary', 'success', 'warning', 'alert'] : _c,
-          _d = props.withCenterText,
-          withCenterText = _d === void 0 ? true : _d,
-          _e = props.colorOfTotalCount,
-          colorOfTotalCount = _e === void 0 ? 'success' : _e,
+      var width = props.width,
+          colors = props.colors,
+          withCenterText = props.withCenterText,
+          colorOfTotalCount = props.colorOfTotalCount,
           data = props.data,
           radius = props.radius,
           withLegends = props.withLegends,
@@ -4426,9 +4481,9 @@
         }, (percent * 100).toFixed(0) + "%")));
       };
 
-      var _f = React.useState(0),
-          activeIndex = _f[0],
-          setActiveIndex = _f[1];
+      var _b = React.useState(0),
+          activeIndex = _b[0],
+          setActiveIndex = _b[1];
 
       var onPieEnter = function onPieEnter(_data, index) {
         setActiveIndex(index);
@@ -4470,14 +4525,19 @@
         }, d.name + " - " + (+d.value).toLocaleString());
       })));
     };
+    DonutChart.displayName = 'DonutChart';
+    DonutChart.defaultProps = {
+      width: 20,
+      colors: ['primary', 'secondary', 'success', 'warning', 'alert'],
+      withCenterText: true,
+      colorOfTotalCount: 'success'
+    };
 
     var Label = function Label(props) {
       var _a;
 
-      var _b = props.required,
-          required = _b === void 0 ? false : _b,
-          _c = props.withInput,
-          withInput = _c === void 0 ? false : _c,
+      var required = props.required,
+          withInput = props.withInput,
           disabled = props.disabled,
           children = props.children,
           className = props.className;
@@ -4506,10 +4566,8 @@
     var Legend = function Legend(props) {
       var _a;
 
-      var _b = props.iconAppearance,
-          iconAppearance = _b === void 0 ? 'inverse' : _b,
-          _c = props.iconSize,
-          iconSize = _c === void 0 ? 16 : _c,
+      var iconAppearance = props.iconAppearance,
+          iconSize = props.iconSize,
           labelAppearance = props.labelAppearance,
           children = props.children,
           labelWeight = props.labelWeight,
@@ -4544,6 +4602,10 @@
       }, children));
     };
     Legend.displayName = 'Legend';
+    Legend.defaultProps = {
+      iconAppearance: 'inverse',
+      iconSize: 16
+    };
 
     var Editable = function Editable(props) {
       var _a;
@@ -4672,8 +4734,7 @@
     var Message = function Message(props) {
       var _a, _b;
 
-      var _c = props.appearance,
-          appearance = _c === void 0 ? 'default' : _c,
+      var appearance = props.appearance,
           title = props.title,
           children = props.children,
           className = props.className;
@@ -4702,6 +4763,9 @@
       }, children)));
     };
     Message.displayName = 'Message';
+    Message.defaultProps = {
+      appearance: 'default'
+    };
 
     var Meta = function Meta(props) {
       var label = props.label,
@@ -4789,8 +4853,7 @@
     var Paragraph = function Paragraph(props) {
       var _a;
 
-      var _b = props.appearance,
-          appearance = _b === void 0 ? 'default' : _b,
+      var appearance = props.appearance,
           children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
@@ -4805,10 +4868,12 @@
       }), children);
     };
     Paragraph.displayName = 'Paragraph';
+    Paragraph.defaultProps = {
+      appearance: 'default'
+    };
 
     var ProgressBar = function ProgressBar(props) {
-      var _a = props.max,
-          max = _a === void 0 ? 100 : _a,
+      var max = props.max,
           value = props.value,
           className = props.className;
       var baseProps = extractBaseProps(props);
@@ -4828,6 +4893,9 @@
       }));
     };
     ProgressBar.displayName = 'ProgressBar';
+    ProgressBar.defaultProps = {
+      max: 100
+    };
 
     var Radio = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
       var _a, _b, _c;
@@ -4872,7 +4940,7 @@
         className: "Radio-label",
         htmlFor: id
       }, /*#__PURE__*/React.createElement(Text, {
-        small: size === 'tiny'
+        size: size === 'tiny' ? 'small' : 'regular'
       }, label)));
     });
     Radio.displayName = 'Radio';
@@ -4897,8 +4965,7 @@
     var StatusHint = function StatusHint(props) {
       var _a, _b;
 
-      var _c = props.appearance,
-          appearance = _c === void 0 ? 'default' : _c,
+      var appearance = props.appearance,
           children = props.children,
           _onMouseEnter = props.onMouseEnter,
           _onMouseLeave = props.onMouseLeave,
@@ -4929,12 +4996,14 @@
       }, children));
     };
     StatusHint.displayName = 'StatusHint';
+    StatusHint.defaultProps = {
+      appearance: 'default'
+    };
 
     var Pills = function Pills(props) {
       var _a;
 
-      var _b = props.appearance,
-          appearance = _b === void 0 ? 'secondary' : _b,
+      var appearance = props.appearance,
           children = props.children,
           subtle = props.subtle,
           className = props.className;
@@ -4949,6 +5018,9 @@
       }), children);
     };
     Pills.displayName = 'Pills';
+    Pills.defaultProps = {
+      appearance: 'secondary'
+    };
 
     var ARROW_LEFT = 37;
     var ARROW_RIGHT = 39;
@@ -5216,14 +5288,6 @@
       return Handle;
     }(React.Component);
 
-    var defaultProps$2 = {
-      disabled: false,
-      labelStepSize: 1,
-      max: 10,
-      min: 0,
-      stepSize: 1
-    };
-
     var MultiSliderHandle = function MultiSliderHandle() {
       return null;
     };
@@ -5458,7 +5522,7 @@
             }, /*#__PURE__*/React.createElement("span", {
               className: 'Slider-ticks'
             }), labelRenderer !== false && /*#__PURE__*/React.createElement(Text, {
-              small: true,
+              size: "small",
               appearance: active ? 'default' : 'disabled'
             }, _this.formatLabel(i))));
           }
@@ -5578,22 +5642,27 @@
         }, this.renderLabels()), this.renderHandles()));
       };
 
-      MultiSlider.defaultProps = defaultProps$2;
+      MultiSlider.defaultProps = {
+        labelStepSize: 1,
+        max: 10,
+        min: 0,
+        stepSize: 1,
+        labelRenderer: true
+      };
       MultiSlider.Handle = MultiSliderHandle;
       return MultiSlider;
     }(React.Component);
 
     var Slider = function Slider(props) {
       var valueProp = props.value,
-          _a = props.defaultValue,
-          defaultValue = _a === void 0 ? 0 : _a,
+          defaultValue = props.defaultValue,
           onRelease = props.onRelease,
           onChange = props.onChange,
           rest = __rest(props, ["value", "defaultValue", "onRelease", "onChange"]);
 
-      var _b = React.useState(valueProp === undefined ? defaultValue : valueProp),
-          value = _b[0],
-          setValue = _b[1];
+      var _a = React.useState(valueProp === undefined ? defaultValue : valueProp),
+          value = _a[0],
+          setValue = _a[1];
 
       React.useEffect(function () {
         if (valueProp !== undefined) {
@@ -5616,6 +5685,10 @@
         fillBefore: true
       }));
     };
+    Slider.displayName = 'Slider';
+    Slider.defaultProps = __assign(__assign({}, MultiSlider.defaultProps), {
+      defaultValue: 0
+    });
 
     var RangeIndex;
 
@@ -5626,15 +5699,14 @@
 
     var RangeSlider = function RangeSlider(props) {
       var valueProp = props.value,
-          _a = props.defaultValue,
-          defaultValue = _a === void 0 ? [0, 10] : _a,
+          defaultValue = props.defaultValue,
           onChange = props.onChange,
           onRelease = props.onRelease,
           rest = __rest(props, ["value", "defaultValue", "onChange", "onRelease"]);
 
-      var _b = React.useState(valueProp === undefined ? defaultValue : valueProp),
-          value = _b[0],
-          setValue = _b[1];
+      var _a = React.useState(valueProp === undefined ? defaultValue : valueProp),
+          value = _a[0],
+          setValue = _a[1];
 
       React.useEffect(function () {
         if (valueProp !== undefined) {
@@ -5660,6 +5732,10 @@
         value: value[RangeIndex.END]
       }));
     };
+    RangeSlider.displayName = 'RangeSlider';
+    RangeSlider.defaultProps = __assign(__assign({}, MultiSlider.defaultProps), {
+      defaultValue: [0, 10]
+    });
 
     var Switch = /*#__PURE__*/React.forwardRef(function (props, ref) {
       var _a, _b;
@@ -5712,8 +5788,9 @@
     var Textarea = /*#__PURE__*/React.forwardRef(function (props, ref) {
       var _a, _b;
 
-      var disabled = props.disabled,
-          rows = props.rows,
+      var _c = props.rows,
+          rows = _c === void 0 ? 3 : _c,
+          disabled = props.disabled,
           name = props.name,
           placeholder = props.placeholder,
           value = props.value,
@@ -5748,16 +5825,12 @@
         onFocus: onFocus
       })));
     });
-    Textarea.defaultProps = {
-      rows: 3
-    };
     Textarea.displayName = 'Textarea';
 
     var ActionButton = function ActionButton(props) {
       var _a;
 
-      var _b = props.appearance,
-          appearance = _b === void 0 ? 'default' : _b,
+      var appearance = props.appearance,
           label = props.label,
           onClick = props.onClick;
       var buttonClass = classNames__default['default']((_a = {}, _a['Button'] = true, _a['Button--tiny'] = true, _a['Toast-actionButton'] = true, _a["Toast-actionButton--" + appearance] = appearance, _a));
@@ -5776,12 +5849,14 @@
     };
 
     ActionButton.displayName = 'ActionButton';
+    ActionButton.defaultProps = {
+      appearance: 'default'
+    };
 
     var Toast = function Toast(props) {
       var _a, _b;
 
-      var _c = props.appearance,
-          appearance = _c === void 0 ? 'default' : _c,
+      var appearance = props.appearance,
           title = props.title,
           message = props.message,
           actions = props.actions,
@@ -5845,6 +5920,9 @@
       }))));
     };
     Toast.displayName = 'Toast';
+    Toast.defaultProps = {
+      appearance: 'default'
+    };
 
     var Tooltip = function (_super) {
       __extends(Tooltip, _super);
@@ -5872,9 +5950,8 @@
 
       Tooltip.prototype.render = function () {
         var _a = this.props,
-            _b = _a.appendToBody,
-            appendToBody = _b === void 0 ? true : _b,
-            _c = _a.position,
+            appendToBody = _a.appendToBody,
+            position = _a.position,
             tooltip = _a.tooltip,
             children = _a.children,
             className = _a.className,
@@ -5896,6 +5973,10 @@
         }, tooltipWrapper);
       };
 
+      Tooltip.defaultProps = {
+        position: 'bottom',
+        appendToBody: true
+      };
       return Tooltip;
     }(React.Component);
 
@@ -5995,7 +6076,7 @@
         }, baseProps, {
           className: classes
         }), this.props.children));
-        var ModalWrapper = this.props.backdrop ? /*#__PURE__*/React.createElement(OutsideClick, {
+        var ModalWrapper = backdropClose ? /*#__PURE__*/React.createElement(OutsideClick, {
           "data-test": "DesignSystem-Modal--OutsideClick",
           onOutsideClick: function onOutsideClick(event) {
             return open && backdropClose(event, 'OutsideClick');
@@ -6014,12 +6095,10 @@
       var _a;
 
       var className = props.className,
-          _b = props.heading,
-          heading = _b === void 0 ? '' : _b,
-          _c = props.icon,
-          icon = _c === void 0 ? '' : _c,
-          _d = props.subHeading,
-          subHeading = _d === void 0 ? '' : _d;
+          heading = props.heading,
+          icon = props.icon,
+          subHeading = props.subHeading,
+          onClose = props.onClose;
       var baseProps = extractBaseProps(props);
       var classes = classNames__default['default']({
         'Modal-header': true
@@ -6027,37 +6106,24 @@
       var subheaderClasses = classNames__default['default']((_a = {
         'Modal-header-subheader': true
       }, _a['Modal-header-subheader--withIcon'] = icon, _a));
-
-      var getCloseButton = function getCloseButton() {
-        var onClose = props.onClose;
-        return /*#__PURE__*/React.createElement("div", {
-          className: "Modal-close-icon",
-          "data-test": "DesignSystem-ModalHeader--CloseIcon",
-          onClick: function onClick(event) {
-            return onClose(event, 'IconClick');
-          }
-        }, /*#__PURE__*/React.createElement(Icon, {
-          name: 'close'
-        }));
-      };
-
-      var getHeaderIcon = function getHeaderIcon() {
-        return /*#__PURE__*/React.createElement("div", {
-          className: "Modal-header-icon",
-          "data-test": "DesignSystem-ModalHeader--Icon"
-        }, /*#__PURE__*/React.createElement(Icon, {
-          name: icon
-        }));
-      };
-
-      var closeButton = getCloseButton();
       return /*#__PURE__*/React.createElement("div", {
         className: "Modal-header-wrapper"
       }, /*#__PURE__*/React.createElement("div", __assign({
         "data-test": "DesignSystem-ModalHeader"
       }, baseProps, {
         className: classes
-      }), icon && getHeaderIcon(), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Heading, null, heading)), closeButton), subHeading && /*#__PURE__*/React.createElement("div", {
+      }), icon && /*#__PURE__*/React.createElement(Icon, {
+        className: "Modal-header-icon",
+        name: icon,
+        "data-test": "DesignSystem-ModalHeader--Icon"
+      }), heading && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Heading, null, heading)), /*#__PURE__*/React.createElement(Icon, {
+        name: 'close',
+        className: "Modal-close-icon",
+        "data-test": "DesignSystem-ModalHeader--CloseIcon",
+        onClick: function onClick(event) {
+          return onClose(event, 'IconClick');
+        }
+      })), subHeading && /*#__PURE__*/React.createElement("div", {
         className: subheaderClasses,
         "data-test": "DesignSystem-ModalHeader--Subheading"
       }, /*#__PURE__*/React.createElement(Text, {
@@ -6069,12 +6135,9 @@
     var ModalDescription = function ModalDescription(props) {
       var _a;
 
-      var _b = props.title,
-          title = _b === void 0 ? '' : _b,
-          _c = props.description,
-          description = _c === void 0 ? '' : _c,
-          _d = props.removePadding,
-          removePadding = _d === void 0 ? false : _d,
+      var title = props.title,
+          description = props.description,
+          removePadding = props.removePadding,
           className = props.className;
       var baseProps = extractBaseProps(props);
       var classes = classNames__default['default']((_a = {
@@ -6109,21 +6172,15 @@
     ModalFooter.displayName = 'ModalFooter';
 
     var Dialog = function Dialog(props) {
-      var _a = props.dimension,
-          dimension = _a === void 0 ? 'small' : _a,
-          _b = props.primaryButtonAppearance,
-          primaryButtonAppearance = _b === void 0 ? 'primary' : _b,
-          _c = props.secondaryButtonAppearance,
-          secondaryButtonAppearance = _c === void 0 ? 'basic' : _c,
+      var dimension = props.dimension,
+          primaryButtonAppearance = props.primaryButtonAppearance,
+          secondaryButtonAppearance = props.secondaryButtonAppearance,
           open = props.open,
           onClose = props.onClose,
           icon = props.icon,
-          _d = props.heading,
-          heading = _d === void 0 ? '' : _d,
-          _e = props.title,
-          title = _e === void 0 ? '' : _e,
-          _f = props.description,
-          description = _f === void 0 ? '' : _f,
+          heading = props.heading,
+          title = props.title,
+          description = props.description,
           primaryButtonLabel = props.primaryButtonLabel,
           primaryButtonCallback = props.primaryButtonCallback,
           secondaryButtonLabel = props.secondaryButtonLabel,
@@ -6157,6 +6214,11 @@
     };
 
     Dialog.displayName = 'Dialog';
+    Dialog.defaultProps = {
+      dimension: 'small',
+      primaryButtonAppearance: 'primary',
+      secondaryButtonAppearance: 'basic'
+    };
 
     var useRef = React.useRef,
         useEffect$1 = React.useEffect,
@@ -6461,10 +6523,8 @@
     var ProgressRing = function ProgressRing(props) {
       var _a;
 
-      var _b = props.size,
-          size = _b === void 0 ? 'regular' : _b,
-          _c = props.max,
-          max = _c === void 0 ? 100 : _c,
+      var size = props.size,
+          max = props.max,
           value = props.value,
           className = props.className;
       var baseProps = extractBaseProps(props);
@@ -6499,6 +6559,10 @@
       })));
     };
     ProgressRing.displayName = 'ProgressRing';
+    ProgressRing.defaultProps = {
+      size: 'regular',
+      max: 100
+    };
 
     var Step = function Step(props) {
       var _a;
@@ -6571,25 +6635,10 @@
         });
       }));
     };
+    Stepper.displayName = 'Stepper';
     Stepper.defaultProps = {
       completed: -1,
-      active: 0,
-      steps: []
-    };
-
-    var defaultProps$3 = {
-      view: 'date',
-      firstDayOfWeek: 'sunday',
-      position: 'bottom',
-      inputFormat: 'mm/dd/yyyy',
-      outputFormat: 'mm/dd/yyyy',
-      validator: e$1.date,
-      startInputOptions: {
-        label: 'Start Date'
-      },
-      endInputOptions: {
-        label: 'End Date'
-      }
+      active: 0
     };
 
     var DateRangePicker = function (_super) {
@@ -6674,6 +6723,7 @@
 
         _this.onRangeChangeHandler = function (sDate, eDate) {
           _this.setState({
+            init: true,
             startDate: sDate,
             endDate: eDate
           });
@@ -6760,6 +6810,12 @@
           }
         };
 
+        _this.onFocusHandler = function () {
+          _this.setState({
+            init: true
+          });
+        };
+
         _this.onBlurHandler = function (_e, val, type) {
           var _a = _this.props,
               startInputOptions = _a.startInputOptions,
@@ -6783,6 +6839,7 @@
         _this.onClearHandler = function (type) {
           if (type === 'start') {
             _this.setState({
+              init: true,
               startDate: undefined
             });
 
@@ -6791,6 +6848,7 @@
 
           if (type === 'end') {
             _this.setState({
+              init: true,
               endDate: undefined
             });
 
@@ -6826,13 +6884,21 @@
             validator = props.validator;
         var startDate = convertToDate(props.startDate, inputFormat, validator);
         var endDate = convertToDate(props.endDate, inputFormat, validator);
-        _this.state = __assign({
+
+        var _a = _this.getErrors(startDate, endDate),
+            startError = _a.startError,
+            endError = _a.endError;
+
+        _this.state = {
           startDate: startDate,
           endDate: endDate,
+          startError: startError,
+          endError: endError,
+          init: false,
           open: props.open || false,
           yearNav: props.yearNav,
           monthNav: props.monthNav
-        }, _this.getErrors(startDate, endDate));
+        };
         _this.monthsInView = props.monthsInView || (props.withInput ? 2 : 1);
         return _this;
       }
@@ -6894,14 +6960,14 @@
           });
 
           if (onRangeChange) {
-            if (startDate && endDate) {
-              var inRangeError = this.getInRangeError();
+            var inRangeError = this.getInRangeError();
+            var sValue = translateToString(outputFormat, startDate);
+            var eValue = translateToString(outputFormat, endDate);
 
-              if (!inRangeError && !startError && !endError) {
-                var sValue = translateToString(outputFormat, startDate);
-                var eValue = translateToString(outputFormat, endDate);
-                onRangeChange(startDate, endDate, sValue, eValue);
-              }
+            if (!inRangeError && !startError && !endError) {
+              onRangeChange(startDate, endDate, sValue, eValue);
+            } else {
+              if (!startError) onRangeChange(startDate, undefined, sValue, eValue);else if (!endError) onRangeChange(undefined, endDate, sValue, eValue);else onRangeChange(undefined, undefined, sValue, eValue);
             }
           }
         }
@@ -6959,6 +7025,7 @@
             mask = _b === void 0 ? e.date[inputFormat] : _b,
             position = _a.position;
         var _c = this.state,
+            init = _c.init,
             startDate = _c.startDate,
             endDate = _c.endDate,
             startError = _c.startError,
@@ -6966,6 +7033,8 @@
             open = _c.open;
 
         if (withInput) {
+          var showStartError = startInputOptions.required && startError && init;
+          var showEndError = endInputOptions.required && endError && init;
           var trigger = /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, {
             size: '6',
             sizeXS: '12',
@@ -6979,6 +7048,7 @@
           }, startInputOptions, {
             mask: mask,
             value: startDate ? translateToString(inputFormat, startDate) : '',
+            onFocus: this.onFocusHandler,
             onChange: function onChange(e, val) {
               _this.onChangeHandler(e, val || '', 'start');
             },
@@ -6991,8 +7061,8 @@
             onClick: function onClick() {
               return _this.onClickHandler('start');
             },
-            error: startInputOptions.required && startError,
-            caption: startInputOptions.required && startError ? startInputOptions.caption || 'Invalid value' : ''
+            error: showStartError,
+            caption: showStartError ? startInputOptions.caption || 'Invalid value' : ''
           }))), /*#__PURE__*/React.createElement(Column, {
             size: '6',
             sizeXS: '12',
@@ -7018,8 +7088,8 @@
             onClick: function onClick() {
               return _this.onClickHandler('end');
             },
-            error: endInputOptions.required && endError,
-            caption: endInputOptions.required && endError ? endInputOptions.caption || 'Invalid value' : ''
+            error: showEndError,
+            caption: showEndError ? endInputOptions.caption || 'Invalid value' : ''
           }))));
           return /*#__PURE__*/React.createElement(Popover, {
             trigger: trigger,
@@ -7034,25 +7104,38 @@
         return this.renderCalendar();
       };
 
-      DateRangePicker.defaultProps = defaultProps$3;
+      DateRangePicker.defaultProps = __assign(__assign({}, Calendar.defaultProps), {
+        monthsInView: 2,
+        position: 'bottom',
+        inputFormat: 'mm/dd/yyyy',
+        outputFormat: 'mm/dd/yyyy',
+        validator: e$1.date,
+        startInputOptions: {
+          label: 'Start Date'
+        },
+        endInputOptions: {
+          label: 'End Date'
+        }
+      });
       return DateRangePicker;
     }(React.Component);
 
     var TabsWrapper = function TabsWrapper(props) {
       var _a;
 
-      var _b = props.children,
-          children = _b === void 0 ? [] : _b,
+      var children = props.children,
           onTabChange = props.onTabChange,
           className = props.className;
       var baseProps = extractBaseProps(props);
+      var tabs = Array.isArray(children) ? children : [children];
+      var totalTabs = tabs.length;
 
-      var _c = React.useState(props.active && props.active < children.length ? props.active : 0),
-          active = _c[0],
-          setActiveTab = _c[1];
+      var _b = React.useState(props.active && props.active < totalTabs ? props.active : 0),
+          active = _b[0],
+          setActiveTab = _b[1];
 
       React.useEffect(function () {
-        setActiveTab(props.active && props.active < children.length ? props.active : 0);
+        setActiveTab(props.active && props.active < totalTabs ? props.active : 0);
       }, [props.active]);
       var wrapperClass = classNames__default['default']((_a = {}, _a['TabsWrapper'] = true, _a), className);
 
@@ -7061,7 +7144,7 @@
         if (onTabChange) onTabChange(tabIndex);
       };
 
-      var TabsHeader = children.map(function (child, index) {
+      var TabsHeader = tabs.map(function (child, index) {
         var _a;
 
         var _b = child.props,
@@ -7086,7 +7169,7 @@
       }, TabsHeader), /*#__PURE__*/React.createElement("div", {
         className: "TabsWrapper-content",
         "data-test": "DesignSystem-Tabs--Content"
-      }, children[active]));
+      }, tabs[active]));
     };
     TabsWrapper.displayName = 'TabsWrapper';
 
@@ -7332,238 +7415,6 @@
       return schema;
     };
 
-    var renderTitle = function renderTitle(props) {
-      var tooltip = props.tooltip,
-          cellData = props.cellData;
-      var children = cellData.title;
-
-      if (children !== undefined && children !== null) {
-        if (tooltip) {
-          return /*#__PURE__*/React.createElement(Tooltip, {
-            tooltip: children,
-            position: 'top-start',
-            triggerClass: "w-100 overflow-hidden"
-          }, /*#__PURE__*/React.createElement(Text, {
-            className: "w-100 ellipsis"
-          }, children));
-        }
-
-        return /*#__PURE__*/React.createElement(Text, {
-          className: "w-100 ellipsis"
-        }, children);
-      }
-
-      return null;
-    };
-
-    var renderMetaList = function renderMetaList(props) {
-      var cellData = props.cellData;
-      var metaList = cellData.metaList;
-
-      if (metaList) {
-        return /*#__PURE__*/React.createElement("div", {
-          className: "GridCell-metaList"
-        }, metaList.map(function (list, index) {
-          return /*#__PURE__*/React.createElement(Text, {
-            key: index,
-            className: "ellipsis",
-            appearance: 'subtle',
-            small: true
-          }, list);
-        }));
-      }
-
-      return null;
-    };
-
-    var renderAvatar = function renderAvatar(props) {
-      var cellData = props.cellData;
-      var firstName = cellData.firstName,
-          lastName = cellData.lastName,
-          title = cellData.title;
-
-      if (firstName || lastName) {
-        return /*#__PURE__*/React.createElement(Avatar, {
-          className: "mr-5",
-          firstName: firstName,
-          lastName: lastName
-        });
-      }
-
-      if (title) {
-        return /*#__PURE__*/React.createElement(Avatar, {
-          className: "mr-5"
-        }, title);
-      }
-
-      return null;
-    };
-
-    var renderIcon = function renderIcon(props) {
-      var cellData = props.cellData;
-      var icon = cellData.icon;
-
-      if (icon) {
-        return /*#__PURE__*/React.createElement(Icon, {
-          name: icon
-        });
-      }
-
-      return null;
-    };
-
-    var renderStatusHint = function renderStatusHint(props) {
-      var cellData = props.cellData;
-      var statusAppearance = cellData.statusAppearance;
-      var children = cellData.title;
-
-      if (children) {
-        return /*#__PURE__*/React.createElement(StatusHint, {
-          appearance: statusAppearance
-        }, children);
-      }
-
-      return null;
-    };
-
-    var GridCell = function GridCell(props) {
-      var _a;
-
-      var size = props.size,
-          schema = props.schema,
-          loading = props.loading;
-      if (schema.cellRenderer) return schema.cellRenderer(props);
-      var data = !loading ? translateData(schema, props.data) : {};
-      var name = schema.name,
-          _b = schema.cellType,
-          cellType = _b === void 0 ? 'DEFAULT' : _b,
-          _c = schema.align,
-          align = _c === void 0 ? 'left' : _c,
-          tooltip = schema.tooltip;
-      var cellData = data[name];
-      var cellClass = classNames__default['default']((_a = {}, _a['GridCell'] = true, _a));
-
-      switch (cellType) {
-        case 'DEFAULT':
-          return /*#__PURE__*/React.createElement("div", {
-            className: cellClass + " GridCell--align-" + align + " GridCell--default"
-          }, loading ? /*#__PURE__*/React.createElement(PlaceholderParagraph, {
-            length: "medium"
-          }) : renderTitle({
-            tooltip: tooltip,
-            cellData: cellData
-          }));
-
-        case 'WITH_META_LIST':
-          return /*#__PURE__*/React.createElement("div", {
-            className: cellClass + " GridCell--metaList"
-          }, loading ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
-            length: "medium"
-          }), /*#__PURE__*/React.createElement(PlaceholderParagraph, {
-            length: "large",
-            size: "xxs"
-          })) : /*#__PURE__*/React.createElement(React.Fragment, null, renderTitle({
-            tooltip: tooltip,
-            cellData: cellData
-          }), renderMetaList({
-            cellData: cellData
-          })));
-
-        case 'AVATAR':
-          if (loading) {
-            return /*#__PURE__*/React.createElement(Placeholder, {
-              className: "GridCell--align-" + align,
-              imageSize: 'medium',
-              round: true
-            });
-          }
-
-          return /*#__PURE__*/React.createElement("div", {
-            className: cellClass + " GridCell--align-" + align + " GridCell--avatar"
-          }, size !== 'tight' && renderAvatar({
-            cellData: cellData
-          }));
-
-        case 'AVATAR_WITH_TEXT':
-          if (loading) {
-            return /*#__PURE__*/React.createElement(Placeholder, {
-              imageSize: 'medium',
-              round: true
-            }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
-              className: "ml-3",
-              length: "medium"
-            }));
-          }
-
-          return /*#__PURE__*/React.createElement("div", {
-            className: cellClass + " GridCell--avatarWithText"
-          }, size !== 'tight' && renderAvatar({
-            cellData: cellData
-          }), renderTitle({
-            tooltip: tooltip,
-            cellData: cellData
-          }));
-
-        case 'AVATAR_WITH_META_LIST':
-          if (loading) {
-            return /*#__PURE__*/React.createElement(Placeholder, {
-              imageSize: 'medium',
-              round: true
-            }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
-              className: "ml-3",
-              length: "medium"
-            }), /*#__PURE__*/React.createElement(PlaceholderParagraph, {
-              className: "ml-3",
-              length: "large"
-            }));
-          }
-
-          return /*#__PURE__*/React.createElement("div", {
-            className: cellClass + " GridCell--avatarWithText"
-          }, size !== 'tight' && renderAvatar({
-            cellData: cellData
-          }), /*#__PURE__*/React.createElement("div", {
-            className: "GridCell-metaListWrapper"
-          }, renderTitle({
-            tooltip: tooltip,
-            cellData: cellData
-          }), renderMetaList({
-            cellData: cellData
-          })));
-
-        case 'ICON':
-          if (loading) {
-            return /*#__PURE__*/React.createElement(Placeholder, {
-              className: "GridCell--align-" + align,
-              imageSize: 'small',
-              round: true
-            });
-          }
-
-          return /*#__PURE__*/React.createElement("div", {
-            className: cellClass + " GridCell--align-" + align + " GridCell--icon"
-          }, renderIcon({
-            cellData: cellData
-          }));
-
-        case 'STATUS_HINT':
-          return /*#__PURE__*/React.createElement("div", {
-            className: cellClass + " GridCell--align-" + align + " GridCell--statusHint"
-          }, loading ? /*#__PURE__*/React.createElement(Placeholder, {
-            className: "w-75 flex-grow-0",
-            imageSize: 'small',
-            round: true
-          }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
-            length: "large"
-          })) : renderStatusHint({
-            cellData: cellData
-          }));
-      }
-
-      return null;
-    };
-    GridCell.displayName = 'GridCell';
-
     var HeaderCell = function HeaderCell(props) {
       var _this = props._this,
           schema = props.schema,
@@ -7734,6 +7585,14 @@
           nestedRows = _a.nestedRows;
       var expanded = expandedState[0],
           setExpanded = expandedState[1];
+      var cellProps = {
+        rowIndex: rowIndex,
+        colIndex: colIndex,
+        size: size,
+        schema: schema,
+        data: data,
+        loading: loading
+      };
       return /*#__PURE__*/React.createElement("div", {
         className: "Grid-cellContent"
       }, colIndex === 0 && nestedRows && /*#__PURE__*/React.createElement(Icon, {
@@ -7744,15 +7603,9 @@
           e.stopPropagation();
           setExpanded(!expanded);
         }
-      }), /*#__PURE__*/React.createElement(GridCell, {
-        key: rowIndex + "-" + colIndex,
-        rowIndex: rowIndex,
-        colIndex: colIndex,
-        size: size,
-        schema: schema,
-        data: data,
-        loading: loading
-      }));
+      }), schema.cellRenderer ? schema.cellRenderer(cellProps) : /*#__PURE__*/React.createElement(GridCell, __assign({
+        key: rowIndex + "-" + colIndex
+      }, cellProps)));
     };
 
     var Cell = function Cell(props) {
@@ -8400,6 +8253,237 @@
       return Grid;
     }(React.Component);
 
+    var renderTitle = function renderTitle(props) {
+      var tooltip = props.tooltip,
+          cellData = props.cellData;
+      var children = cellData.title;
+
+      if (children !== undefined && children !== null) {
+        if (tooltip) {
+          return /*#__PURE__*/React.createElement(Tooltip, {
+            tooltip: children,
+            position: 'top-start',
+            triggerClass: "w-100 overflow-hidden"
+          }, /*#__PURE__*/React.createElement(Text, {
+            className: "w-100 ellipsis"
+          }, children));
+        }
+
+        return /*#__PURE__*/React.createElement(Text, {
+          className: "w-100 ellipsis"
+        }, children);
+      }
+
+      return null;
+    };
+
+    var renderMetaList = function renderMetaList(props) {
+      var cellData = props.cellData;
+      var metaList = cellData.metaList;
+
+      if (metaList) {
+        return /*#__PURE__*/React.createElement("div", {
+          className: "GridCell-metaList"
+        }, metaList.map(function (list, index) {
+          return /*#__PURE__*/React.createElement(Text, {
+            key: index,
+            className: "ellipsis",
+            appearance: 'subtle',
+            size: "small"
+          }, list);
+        }));
+      }
+
+      return null;
+    };
+
+    var renderAvatar = function renderAvatar(props) {
+      var cellData = props.cellData;
+      var firstName = cellData.firstName,
+          lastName = cellData.lastName,
+          title = cellData.title;
+
+      if (firstName || lastName) {
+        return /*#__PURE__*/React.createElement(Avatar, {
+          className: "mr-5",
+          firstName: firstName,
+          lastName: lastName
+        });
+      }
+
+      if (title) {
+        return /*#__PURE__*/React.createElement(Avatar, {
+          className: "mr-5"
+        }, title);
+      }
+
+      return null;
+    };
+
+    var renderIcon = function renderIcon(props) {
+      var cellData = props.cellData;
+      var icon = cellData.icon;
+
+      if (icon) {
+        return /*#__PURE__*/React.createElement(Icon, {
+          name: icon
+        });
+      }
+
+      return null;
+    };
+
+    var renderStatusHint = function renderStatusHint(props) {
+      var cellData = props.cellData;
+      var statusAppearance = cellData.statusAppearance;
+      var children = cellData.title;
+
+      if (children) {
+        return /*#__PURE__*/React.createElement(StatusHint, {
+          appearance: statusAppearance
+        }, children);
+      }
+
+      return null;
+    };
+
+    var GridCell = function GridCell(props) {
+      var _a;
+
+      var size = props.size,
+          schema = props.schema,
+          loading = props.loading;
+      var data = !loading ? translateData(schema, props.data) : {};
+      var name = schema.name,
+          _b = schema.cellType,
+          cellType = _b === void 0 ? 'DEFAULT' : _b,
+          _c = schema.align,
+          align = _c === void 0 ? 'left' : _c,
+          tooltip = schema.tooltip;
+      var cellData = data[name];
+      var cellClass = classNames__default['default']((_a = {}, _a['GridCell'] = true, _a));
+
+      switch (cellType) {
+        case 'DEFAULT':
+          return /*#__PURE__*/React.createElement("div", {
+            className: cellClass + " GridCell--align-" + align + " GridCell--default"
+          }, loading ? /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+            length: "medium"
+          }) : renderTitle({
+            tooltip: tooltip,
+            cellData: cellData
+          }));
+
+        case 'WITH_META_LIST':
+          return /*#__PURE__*/React.createElement("div", {
+            className: cellClass + " GridCell--metaList"
+          }, loading ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+            length: "medium"
+          }), /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+            length: "large",
+            size: "xxs"
+          })) : /*#__PURE__*/React.createElement(React.Fragment, null, renderTitle({
+            tooltip: tooltip,
+            cellData: cellData
+          }), renderMetaList({
+            cellData: cellData
+          })));
+
+        case 'AVATAR':
+          if (loading) {
+            return /*#__PURE__*/React.createElement(Placeholder, {
+              className: "GridCell--align-" + align,
+              imageSize: 'medium',
+              round: true
+            });
+          }
+
+          return /*#__PURE__*/React.createElement("div", {
+            className: cellClass + " GridCell--align-" + align + " GridCell--avatar"
+          }, size !== 'tight' && renderAvatar({
+            cellData: cellData
+          }));
+
+        case 'AVATAR_WITH_TEXT':
+          if (loading) {
+            return /*#__PURE__*/React.createElement(Placeholder, {
+              imageSize: 'medium',
+              round: true
+            }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+              className: "ml-3",
+              length: "medium"
+            }));
+          }
+
+          return /*#__PURE__*/React.createElement("div", {
+            className: cellClass + " GridCell--avatarWithText"
+          }, size !== 'tight' && renderAvatar({
+            cellData: cellData
+          }), renderTitle({
+            tooltip: tooltip,
+            cellData: cellData
+          }));
+
+        case 'AVATAR_WITH_META_LIST':
+          if (loading) {
+            return /*#__PURE__*/React.createElement(Placeholder, {
+              imageSize: 'medium',
+              round: true
+            }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+              className: "ml-3",
+              length: "medium"
+            }), /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+              className: "ml-3",
+              length: "large"
+            }));
+          }
+
+          return /*#__PURE__*/React.createElement("div", {
+            className: cellClass + " GridCell--avatarWithText"
+          }, size !== 'tight' && renderAvatar({
+            cellData: cellData
+          }), /*#__PURE__*/React.createElement("div", {
+            className: "GridCell-metaListWrapper"
+          }, renderTitle({
+            tooltip: tooltip,
+            cellData: cellData
+          }), renderMetaList({
+            cellData: cellData
+          })));
+
+        case 'ICON':
+          if (loading) {
+            return /*#__PURE__*/React.createElement(Placeholder, {
+              className: "GridCell--align-" + align,
+              imageSize: 'small',
+              round: true
+            });
+          }
+
+          return /*#__PURE__*/React.createElement("div", {
+            className: cellClass + " GridCell--align-" + align + " GridCell--icon"
+          }, renderIcon({
+            cellData: cellData
+          }));
+
+        case 'STATUS_HINT':
+          return /*#__PURE__*/React.createElement("div", {
+            className: cellClass + " GridCell--align-" + align + " GridCell--statusHint"
+          }, loading ? /*#__PURE__*/React.createElement(Placeholder, {
+            className: "w-75 flex-grow-0",
+            imageSize: 'small',
+            round: true
+          }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+            length: "large"
+          })) : renderStatusHint({
+            cellData: cellData
+          }));
+      }
+
+      return null;
+    };
+    GridCell.displayName = 'GridCell';
+
     var Header = function Header(props) {
       var loading = props.loading,
           error = props.error,
@@ -8618,7 +8702,7 @@
       return /*#__PURE__*/React.createElement(Heading, null, errorMessages[errorType]);
     };
 
-    var defaultProps$4 = {
+    var defaultProps$1 = {
       type: 'data',
       size: 'standard',
       showHead: true,
@@ -8950,7 +9034,7 @@
         })));
       };
 
-      Table.defaultProps = defaultProps$4;
+      Table.defaultProps = defaultProps$1;
       return Table;
     }(React.Component);
 
@@ -8959,7 +9043,7 @@
         showHead: false
       }));
     };
-    List.defaultProps = defaultProps$4;
+    List.defaultProps = defaultProps$1;
 
     var useState$2 = React.useState;
     var Navigation = function Navigation(props) {
@@ -9153,9 +9237,7 @@
     };
     Navigation.defaultProps = {
       type: 'horizontal',
-      menus: [],
       expanded: true,
-      footer: false,
       autoCollapse: true
     };
 
@@ -9188,7 +9270,7 @@
 
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
         className: wrapperClasses
-      }), breadcrumbs && breadcrumbs, /*#__PURE__*/React.createElement("div", {
+      }), breadcrumbs, /*#__PURE__*/React.createElement("div", {
         className: classes
       }, /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, {
         size: "4",
@@ -9215,14 +9297,6 @@
       }, renderCenter()), tabs && /*#__PURE__*/React.createElement("div", null, tabs));
     };
     PageHeader.defaultProps = {
-      title: '',
-      navigation: null,
-      actions: null,
-      tabs: null,
-      breadcrumbs: null,
-      badge: null,
-      status: null,
-      meta: null,
       navigationPosition: 'center',
       separator: true
     };
@@ -9247,6 +9321,7 @@
     exports.EditableDropdown = EditableDropdown;
     exports.EditableInput = EditableInput;
     exports.Grid = Grid;
+    exports.GridCell = GridCell;
     exports.Heading = Heading;
     exports.Icon = Icon;
     exports.Input = Input;

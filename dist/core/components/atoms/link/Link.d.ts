@@ -9,7 +9,10 @@ export interface LinkProps extends BaseProps {
     download?: string;
     hreflang?: string;
     onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
-    children?: React.ReactNode;
+    children: React.ReactNode;
 }
-export declare const Link: React.FunctionComponent<LinkProps>;
+export declare const Link: {
+    (props: LinkProps): JSX.Element;
+    displayName: string;
+};
 export default Link;

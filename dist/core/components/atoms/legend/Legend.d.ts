@@ -3,9 +3,9 @@ import { Appearance as LabelAppearance } from "../text";
 import { BaseProps } from "../../../utils/types";
 export interface LegendProps extends BaseProps {
     children: React.ReactText;
-    iconAppearance?: string;
+    iconAppearance: string;
     labelAppearance?: LabelAppearance;
-    iconSize?: number;
+    iconSize: number;
     labelWeight?: 'strong' | 'medium';
     onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
     onMouseEnter?: (e: React.MouseEvent<HTMLDivElement>) => void;
@@ -14,5 +14,9 @@ export interface LegendProps extends BaseProps {
 export declare const Legend: {
     (props: LegendProps): JSX.Element;
     displayName: string;
+    defaultProps: {
+        iconAppearance: string;
+        iconSize: number;
+    };
 };
 export default Legend;

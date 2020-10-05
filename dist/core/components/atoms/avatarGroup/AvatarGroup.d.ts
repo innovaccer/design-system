@@ -26,12 +26,12 @@ export interface AvatarGroupProps extends BaseProps {
 }
 export declare const AvatarGroup: {
     (props: AvatarGroupProps): JSX.Element;
+    displayName: string;
     defaultProps: {
         max: number;
         borderColor: string;
         tooltipPosition: string;
         popoverOptions: {};
     };
-    displayName: string;
 };
 export default AvatarGroup;

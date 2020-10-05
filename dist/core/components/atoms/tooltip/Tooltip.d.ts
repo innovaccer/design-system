@@ -5,14 +5,18 @@ declare type DivProps = Omit<JSX.IntrinsicElements['div'], 'ref'>;
 export interface TooltipProps extends DivProps {
     tooltip: string;
     children: React.ReactElement<any>;
-    position?: PositionType;
-    appendToBody?: boolean;
+    position: PositionType;
+    appendToBody: boolean;
     triggerClass?: string;
 }
 interface IState {
     open: boolean;
 }
 export declare class Tooltip extends React.Component<TooltipProps, IState> {
+    static defaultProps: {
+        position: string;
+        appendToBody: boolean;
+    };
     constructor(props: TooltipProps);
     onToggle: (open: boolean) => void;
     componentWillUnmount(): void;

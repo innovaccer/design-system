@@ -1,9 +1,11 @@
 /// <reference types="react" />
+import { Dropdown } from "../../../index";
 import { DropdownProps } from "../../../index.type";
-import { BaseProps } from "../../../utils/types";
+import { BaseProps, MakeOptional } from "../../../utils/types";
+declare type DropdownOptions = MakeOptional<DropdownProps, keyof typeof Dropdown['defaultProps']>;
 export interface EditableDropdownProps extends BaseProps {
     placeholder: string;
-    dropdownOptions: Omit<DropdownProps, 'getLabel' | 'placeholder'>;
+    dropdownOptions: Omit<DropdownOptions, 'getLabel' | 'placeholder'>;
 }
 export declare const EditableDropdown: {
     (props: EditableDropdownProps): JSX.Element;

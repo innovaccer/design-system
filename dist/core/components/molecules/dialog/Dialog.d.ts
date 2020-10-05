@@ -4,22 +4,26 @@ import { Appearance } from "../../atoms/button";
 import { BaseProps } from "../../../utils/types";
 export interface DialogProps extends BaseProps {
     onClose: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
-    closeOnEscape?: boolean;
-    dimension?: Dimension;
+    dimension: Dimension;
     open: boolean;
     heading?: string;
     icon?: string;
     title?: string;
     description?: string;
     primaryButtonLabel: string;
-    primaryButtonAppearance?: Appearance;
+    primaryButtonAppearance: Appearance;
     primaryButtonCallback: () => void;
     secondaryButtonLabel: string;
-    secondaryButtonAppearance?: Appearance;
+    secondaryButtonAppearance: Appearance;
     secondaryButtonCallback: () => void;
 }
 declare const Dialog: {
     (props: DialogProps): JSX.Element;
     displayName: string;
+    defaultProps: {
+        dimension: string;
+        primaryButtonAppearance: string;
+        secondaryButtonAppearance: string;
+    };
 };
 export default Dialog;

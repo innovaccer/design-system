@@ -1,3 +1,3 @@
 import { Schema } from "../../organisms/grid";
-declare const utilitiesSchema: Schema;
-export default utilitiesSchema;
+export declare const classSchema: Schema;
+export declare const sizeSchema: Schema;

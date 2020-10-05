@@ -8,7 +8,7 @@ export interface ChipProps extends BaseProps {
     clearButton?: boolean;
     disabled?: boolean;
     selected?: boolean;
-    type?: Type;
+    type: Type;
     onClose?: (name: Name) => void;
     onClick?: (name: Name) => void;
     name: Name;
@@ -16,5 +16,8 @@ export interface ChipProps extends BaseProps {
 export declare const Chip: {
     (props: ChipProps): JSX.Element;
     displayName: string;
+    defaultProps: {
+        type: string;
+    };
 };
 export default Chip;

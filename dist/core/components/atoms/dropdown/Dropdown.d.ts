@@ -10,11 +10,9 @@ export declare type EventType = 'select-option' | 'deselect-option' | 'select-al
 interface ControlledProps {
     selected?: Option[];
     onUpdate?: (type: EventType, options?: Option | Option[], recentSelected?: Option[]) => void;
-    open?: boolean;
-    onPopperToggle?: (open: boolean, type?: string) => void;
 }
 interface SyncProps {
-    options?: Option[];
+    options: Option[];
     loading?: boolean;
 }
 interface AsyncProps {
@@ -28,8 +26,10 @@ interface TriggerProps {
 interface SharedDropdownProps extends DropdownListProps, BaseProps {
     name?: string | number;
     totalOptions?: number;
-    closeOnSelect?: boolean;
-    triggerOptions?: TriggerProps;
+    closeOnSelect: boolean;
+    triggerOptions: TriggerProps;
+    open?: boolean;
+    onPopperToggle?: (open: boolean, type?: string) => void;
     getLabel?: (label: string) => void;
     onChange?: (selected: any[] | any, name?: string | number) => void;
     onClose?: (selected: any[], name?: string | number) => void;
@@ -55,12 +55,18 @@ interface DropdownState {
     tempSelected: Option[];
     previousSelected: Option[];
 }
+export declare const defaultProps: {
+    triggerOptions: {};
+    options: never[];
+    closeOnSelect: boolean;
+};
 export declare class Dropdown extends React.Component<DropdownProps, DropdownState> {
-    constructor(props: DropdownProps);
     static defaultProps: {
         triggerOptions: {};
+        options: never[];
         closeOnSelect: boolean;
     };
+    constructor(props: DropdownProps);
     componentDidUpdate(prevProps: DropdownProps, prevState: DropdownState): void;
     fetchOptionsFunction: (searchTerm: string) => Promise<any>;
     getUnSelectedOptions: (options: Option[], init: boolean) => Option[];
@@ -76,6 +82,7 @@ export declare class Dropdown extends React.Component<DropdownProps, DropdownSta
     debounceSearch: import("throttle-debounce").throttle<() => void>;
     debounceClear: import("throttle-debounce").throttle<() => void>;
     onClearOptions: () => void;
+    onTogglePopper: (type: string) => void;
     onCancelOptions: () => void;
     onApplyOptions: () => void;
     onToggleDropdown: (updatedOpen: boolean, type?: string | undefined) => void;

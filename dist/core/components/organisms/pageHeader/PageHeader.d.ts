@@ -11,20 +11,12 @@ export interface PageHeaderProps extends BaseProps {
     badge?: React.ReactNode;
     status?: React.ReactNode;
     meta?: React.ReactNode;
-    navigationPosition?: navigationPositionType;
-    separator?: boolean;
+    navigationPosition: navigationPositionType;
+    separator: boolean;
 }
 export declare const PageHeader: {
     (props: PageHeaderProps): JSX.Element;
     defaultProps: {
-        title: string;
-        navigation: null;
-        actions: null;
-        tabs: null;
-        breadcrumbs: null;
-        badge: null;
-        status: null;
-        meta: null;
         navigationPosition: string;
         separator: boolean;
     };

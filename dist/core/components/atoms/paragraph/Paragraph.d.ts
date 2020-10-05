@@ -3,7 +3,13 @@ import { BaseProps } from "../../../utils/types";
 export declare type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled';
 export interface ParagraphProps extends BaseProps {
     children: React.ReactNode;
-    appearance?: Appearance;
+    appearance: Appearance;
 }
-export declare const Paragraph: React.FunctionComponent<ParagraphProps>;
+export declare const Paragraph: {
+    (props: ParagraphProps): JSX.Element;
+    displayName: string;
+    defaultProps: {
+        appearance: string;
+    };
+};
 export default Paragraph;
