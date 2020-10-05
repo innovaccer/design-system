@@ -19,6 +19,10 @@ export const miscellaneous = () => {
     {
       className: 'ellipsis--noWrap',
       properties: 'white-space: nowrap;\noverflow: hidden;\ntext-overflow: ellipsis;'
+    },
+    {
+      className: 'cursor-pointer',
+      properties: 'cursor: pointer;'
     }
   ];
   return (
