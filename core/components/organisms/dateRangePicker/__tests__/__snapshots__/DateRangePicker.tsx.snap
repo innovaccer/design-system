@@ -133,10 +133,10 @@ exports[`DateRangePicker component
           label="Start Date"
           mask={
             Array [
-              /\\\\d/,
+              /\\[01\\]/,
               /\\\\d/,
               "/",
-              /\\\\d/,
+              /\\[0123\\]/,
               /\\\\d/,
               "/",
               /\\\\d/,
@@ -151,6 +151,11 @@ exports[`DateRangePicker component
           onClick={[Function]}
           onFocus={[Function]}
           placeholder="mm/dd/yyyy"
+          validators={
+            Array [
+              [Function],
+            ]
+          }
           value="03/03/2020"
         />
       </Column>
@@ -170,10 +175,10 @@ exports[`DateRangePicker component
           label="End Date"
           mask={
             Array [
-              /\\\\d/,
+              /\\[01\\]/,
               /\\\\d/,
               "/",
-              /\\\\d/,
+              /\\[0123\\]/,
               /\\\\d/,
               "/",
               /\\\\d/,
@@ -187,6 +192,11 @@ exports[`DateRangePicker component
           onClear={[Function]}
           onClick={[Function]}
           placeholder="mm/dd/yyyy"
+          validators={
+            Array [
+              [Function],
+            ]
+          }
           value="03/11/2020"
         />
       </Column>
@@ -235,10 +245,10 @@ exports[`DateRangePicker component
           label="Start Date"
           mask={
             Array [
-              /\\\\d/,
+              /\\[01\\]/,
               /\\\\d/,
               "/",
-              /\\\\d/,
+              /\\[0123\\]/,
               /\\\\d/,
               "/",
               /\\\\d/,
@@ -253,6 +263,11 @@ exports[`DateRangePicker component
           onClick={[Function]}
           onFocus={[Function]}
           placeholder="mm/dd/yyyy"
+          validators={
+            Array [
+              [Function],
+            ]
+          }
           value="03/03/2020"
         />
       </Column>
@@ -272,10 +287,10 @@ exports[`DateRangePicker component
           label="End Date"
           mask={
             Array [
-              /\\\\d/,
+              /\\[01\\]/,
               /\\\\d/,
               "/",
-              /\\\\d/,
+              /\\[0123\\]/,
               /\\\\d/,
               "/",
               /\\\\d/,
@@ -289,6 +304,11 @@ exports[`DateRangePicker component
           onClear={[Function]}
           onClick={[Function]}
           placeholder="mm/dd/yyyy"
+          validators={
+            Array [
+              [Function],
+            ]
+          }
           value="03/11/2020"
         />
       </Column>
@@ -393,10 +413,10 @@ exports[`DateRangePicker component
           label="Start Date"
           mask={
             Array [
-              /\\\\d/,
+              /\\[01\\]/,
               /\\\\d/,
               "/",
-              /\\\\d/,
+              /\\[0123\\]/,
               /\\\\d/,
               "/",
               /\\\\d/,
@@ -411,6 +431,11 @@ exports[`DateRangePicker component
           onClick={[Function]}
           onFocus={[Function]}
           placeholder="mm/dd/yyyy"
+          validators={
+            Array [
+              [Function],
+            ]
+          }
           value="03/03/2020"
         />
       </Column>
@@ -430,10 +455,10 @@ exports[`DateRangePicker component
           label="End Date"
           mask={
             Array [
-              /\\\\d/,
+              /\\[01\\]/,
               /\\\\d/,
               "/",
-              /\\\\d/,
+              /\\[0123\\]/,
               /\\\\d/,
               "/",
               /\\\\d/,
@@ -447,6 +472,11 @@ exports[`DateRangePicker component
           onClear={[Function]}
           onClick={[Function]}
           placeholder="mm/dd/yyyy"
+          validators={
+            Array [
+              [Function],
+            ]
+          }
           value="03/11/2020"
         />
       </Column>
