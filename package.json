@@ -98,7 +98,6 @@
   },
   "dependencies": {
     "@types/classnames": "^2.2.9",
-    "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "js-beautify": "1.10.3",
     "react-dom": "^16.8.6",
