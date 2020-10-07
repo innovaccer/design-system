@@ -20,7 +20,13 @@ jobs:
         run: npm run lint
 
       - name: test
-        run: npm run test:ci
+        run: npm run test
+      
+      - name: coverage report
+        uses: romeovs/lcov-reporter-action@v0.2.16
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          lcov-file: ./coverage/lcov.info
 
       - name: build
         run: npm run build
