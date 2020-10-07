@@ -43,7 +43,6 @@ function globals() {
     'react-dom': 'ReactDOM',
     'classnames': 'classNames',
     'react-popper': 'ReactPopper',
-    'axios': 'axios',
     'recharts': 'recharts'
   };
 }
@@ -88,7 +87,7 @@ export default [{
 }, {
   input: './core/index.tsx',
 
-  external: ['react', 'react-dom', 'classnames', 'react-popper', 'axios', 'recharts'],
+  external: ['react', 'react-dom', 'classnames', 'react-popper', 'recharts'],
 
   plugins: [
     alias({
