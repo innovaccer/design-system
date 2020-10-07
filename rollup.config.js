@@ -6,6 +6,7 @@ import json from '@rollup/plugin-json';
 import path from 'path';
 import packageJSON from './package.json';
 import typescript from '@rollup/plugin-typescript';
+import replace from '@rollup/plugin-replace';
 
 const banner = () => {
 
@@ -41,7 +42,7 @@ function globals() {
     'react': 'React',
     'react-dom': 'ReactDOM',
     'classnames': 'classNames',
-    'react-popper': 'reactPopper',
+    'react-popper': 'ReactPopper',
     'axios': 'axios',
     'recharts': 'recharts'
   };
@@ -52,7 +53,7 @@ export default [{
 
   // Specify here external modules which you don't want to include in your bundle (for instance: 'lodash', 'moment' etc.)
   // https://rollupjs.org/guide/en#external-e-external
-  external: ['react', 'react-dom', 'classnames', 'react-popper', 'axios', 'recharts'],
+  external: ['react', 'react-dom'],
 
   plugins: [
     alias({
@@ -62,7 +63,7 @@ export default [{
     }),
     
     // Allows node_modules resolution
-    resolve({ extensions }),
+    resolve({ extensions, preferBuiltins: false }),
 
     // Allow bundling cjs modules. Rollup doesn't understand cjs
     commonjs(),
@@ -70,7 +71,11 @@ export default [{
     // Compile TypeScript/JavaScript files
     babel({ extensions, include: ['core/**/*'] }),
 
-    json()
+    json(),
+
+    replace({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    })  
   ],
 
   output: formats.map(format => ({
@@ -113,5 +118,6 @@ export default [{
     name: `inno`,
     globals: globals(),
     banner: banner(),
+    sourcemap: true,
   }
 }];
