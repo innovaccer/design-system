@@ -39,6 +39,10 @@ export interface TextareaProps extends BaseProps {
    */
   error?: boolean;
   /**
+   * Disable the resizable property of a `Textarea`
+   */
+  resize?: boolean;
+  /**
    * Callback function when `Textarea` text changes
    */
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
@@ -59,6 +63,7 @@ export interface TextareaProps extends BaseProps {
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
   const {
     rows = 3,
+    resize = true,
     disabled,
     name,
     placeholder,
@@ -81,6 +86,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
 
   const TextareaClass = classNames({
     ['Textarea-textarea']: true,
+    ['Textarea-textarea--resize']: resize,
     ['Textarea-textarea--error']: error
   });
 

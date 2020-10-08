@@ -25,6 +25,11 @@ export const all = () => {
     false
   );
 
+  const resize = boolean(
+    'resize',
+    true
+  );
+
   const rows = number('rows', 3);
 
   return (
@@ -37,6 +42,7 @@ export const all = () => {
         onClick={action('on-click')}
         placeholder={placeholder}
         error={error}
+        resize={resize}
         rows={rows}
       />
     </div>

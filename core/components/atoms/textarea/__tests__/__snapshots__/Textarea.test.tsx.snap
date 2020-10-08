@@ -8,7 +8,7 @@ exports[`Textarea component
     class="Textarea"
   >
     <textarea
-      class="Textarea-textarea"
+      class="Textarea-textarea Textarea-textarea--resize"
       data-test="DesignSystem-Textarea"
       name="Textarea"
       placeholder="Write something.."
@@ -28,7 +28,7 @@ exports[`Textarea component
     class="Textarea"
   >
     <textarea
-      class="Textarea-textarea"
+      class="Textarea-textarea Textarea-textarea--resize"
       data-test="DesignSystem-Textarea"
       disabled=""
       name="Textarea"
