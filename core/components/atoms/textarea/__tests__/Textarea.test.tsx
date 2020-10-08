@@ -75,6 +75,20 @@ describe('Textarea component with prop: rows', () => {
 
 });
 
+describe('Textarea component with prop: resize', () => {
+
+  it('resizes textarea', () => {
+    const { getByTestId } = render(<Textarea />);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea-textarea--resize');
+  });
+
+  it('does not resize textarea', () => {
+    const { getByTestId } = render(<Textarea resize={false}/>);
+    expect(getByTestId(dataTestId)).not.toHaveClass('Textarea-textarea--resize');
+  });
+
+});
+
 describe('Textarea component with prop: onChange', () => {
   const onChange = jest.fn();
   const newValue = 'Textarea-test';

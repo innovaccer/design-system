@@ -22,6 +22,7 @@
   border: var(--border);
   color: var(--inverse);
   padding: var(--spacing) var(--spacing-l);
+  resize: none;
 }
 
 .Textarea-textarea::placeholder {
@@ -46,6 +47,10 @@
 .Textarea-textarea--error:focus-within {
   border: var(--spacing-xs) solid var(--alert);
   box-shadow: var(--shadow-spread) var(--alert-shadow);
+}
+
+.Textarea-textarea--resize {
+  resize: auto;
 }
 
 .Textarea-textarea::-webkit-scrollbar {
