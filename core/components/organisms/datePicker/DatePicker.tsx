@@ -2,10 +2,10 @@ import * as React from 'react';
 import { Calendar, SharedProps } from '../calendar/Calendar';
 import { DateType, DateFormat } from '../calendar/types';
 import Popover, { Position } from '@/components/molecules/popover';
-import InputMask, { Mask, InputMaskProps } from '@/components/molecules/inputMask';
-import masks from '@/components/molecules/inputMask/masks';
-import validators from '@/utils/validators';
-import { convertToDate, translateToDate, translateToString, Validator, compareDate, getDateInfo } from '../calendar/utility';
+import { InputMask, InputMaskProps } from '@/components/molecules/inputMask';
+import { Utils } from '@/index';
+import { Validators } from '@/utils/types';
+import { convertToDate, translateToDate, translateToString, compareDate, getDateInfo } from '../calendar/utility';
 
 export type DatePickerProps = SharedProps & {
   /**
@@ -46,16 +46,13 @@ export type DatePickerProps = SharedProps & {
   /**
    * Props to be used for `InputMask`
    */
-  inputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear' | 'error'>;
+  inputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClear' | 'error'>;
   /**
-   * custom Mask for the mentioned inputFormat
+   * custom Validator for `DatePicker`
+   *
+   * `ValidatorFn = (val: string, format: string) => boolean`
    */
-  mask?: Mask;
-  /**
-   * custom Validator for the mentioned inputFormat and outputFormat
-   * `(format: string, val: string) => boolean`
-   */
-  validator: Validator;
+  validators: Validators;
   /**
    * Close Popover on date selection
    */
@@ -75,7 +72,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     position: 'bottom-start',
     inputFormat: 'mm/dd/yyyy',
     outputFormat: 'mm/dd/yyyy',
-    validator: validators.date,
+    validators: [Utils.validators.date],
     inputOptions: {},
     closeOnSelect: true
   };
@@ -85,10 +82,10 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
     const {
       inputFormat,
-      validator
+      validators
     } = props;
 
-    const date = convertToDate(props.date, inputFormat, validator);
+    const date = convertToDate(props.date, inputFormat, validators);
     const error = this.getError(date);
 
     this.state = {
@@ -103,10 +100,10 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     if (prevProps.date !== this.props.date) {
       const {
         inputFormat,
-        validator
+        validators
       } = this.props;
 
-      const d = convertToDate(this.props.date, inputFormat, validator);
+      const d = convertToDate(this.props.date, inputFormat, validators);
       this.setState({
         date: d
       });
@@ -182,7 +179,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   onChangeHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
     const {
       inputFormat,
-      validator
+      validators
     } = this.props;
 
     this.setState({
@@ -191,7 +188,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
     const placeholderChar = '_';
     if (val && !val.includes(placeholderChar)) {
-      const d = translateToDate(inputFormat, val, validator);
+      const d = translateToDate(inputFormat, val, validators);
       this.setState({ date: d });
     }
   }
@@ -235,8 +232,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       inputFormat,
       outputFormat,
       inputOptions,
-      mask,
-      validator,
+      validators,
       withInput,
       disabledBefore,
       disabledAfter,
@@ -252,9 +248,9 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     return (
       <Calendar
         {...rest}
-        date={convertToDate(date, inputFormat, validator)}
-        disabledBefore={convertToDate(disabledBefore, inputFormat, validator)}
-        disabledAfter={convertToDate(disabledAfter, inputFormat, validator)}
+        date={convertToDate(date, inputFormat, validators)}
+        disabledBefore={convertToDate(disabledBefore, inputFormat, validators)}
+        disabledAfter={convertToDate(disabledAfter, inputFormat, validators)}
         onDateChange={this.onDateChangeHandler}
       />
     );
@@ -265,8 +261,8 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       position,
       inputFormat,
       inputOptions,
-      mask = masks.date[inputFormat],
-      withInput
+      withInput,
+      validators
     } = this.props;
 
     const {
@@ -278,6 +274,9 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
     if (withInput) {
       const showError = inputOptions.required && error && init;
+      const inputValidator = (val: string): boolean => {
+        return Utils.validators.isValid(validators, val, inputFormat);
+      };
 
       const trigger = (
         <InputMask
@@ -285,13 +284,14 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
           placeholder={inputFormat}
           {...inputOptions}
           error={showError}
-          mask={mask}
+          mask={Utils.masks.date[inputFormat]}
           value={date ? translateToString(inputFormat, date) : ''}
           onChange={this.onChangeHandler}
           onFocus={this.onFocusHandler}
           onBlur={this.onBlurHandler}
           onClear={this.onClearHandler}
           caption={showError ? inputOptions.caption || 'Invalid value' : ''}
+          validators={[inputValidator]}
         />
       );
 

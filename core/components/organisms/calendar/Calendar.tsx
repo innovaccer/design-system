@@ -271,7 +271,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       if (year !== undefined && monthsInView === 1) {
         this.setState({
           year,
-          yearBlockNav: getYearBlock(year)
+          yearBlockNav: getYearBlock(year),
+          yearNav: year
         });
       }
     }

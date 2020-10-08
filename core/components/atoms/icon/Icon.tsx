@@ -68,6 +68,7 @@ export const Icon = (props: IconProps) => {
     width: `${size}px`,
   };
 
+  // change `children` to {name} after migration
   return (
     <i
       {...baseProps}
@@ -75,7 +76,7 @@ export const Icon = (props: IconProps) => {
       style={styles}
       onClick={onClick}
     >
-      {type ? `${name}_${type}` : name}         {/* change to {name} after migration */}
+      {type ? `${name}_${type}` : name}
     </i>
   );
 };

@@ -17,10 +17,10 @@ exports[`DatePicker component
       icon="events"
       mask={
         Array [
-          /\\\\d/,
+          /\\[01\\]/,
           /\\\\d/,
           "/",
-          /\\\\d/,
+          /\\[0123\\]/,
           /\\\\d/,
           "/",
           /\\\\d/,
@@ -34,6 +34,11 @@ exports[`DatePicker component
       onClear={[Function]}
       onFocus={[Function]}
       placeholder="mm/dd/yyyy"
+      validators={
+        Array [
+          [Function],
+        ]
+      }
       value="03/01/2020"
     />
   }
@@ -66,10 +71,10 @@ exports[`DatePicker component
       icon="events"
       mask={
         Array [
-          /\\\\d/,
+          /\\[01\\]/,
           /\\\\d/,
           "/",
-          /\\\\d/,
+          /\\[0123\\]/,
           /\\\\d/,
           "/",
           /\\\\d/,
@@ -83,6 +88,11 @@ exports[`DatePicker component
       onClear={[Function]}
       onFocus={[Function]}
       placeholder="mm/dd/yyyy"
+      validators={
+        Array [
+          [Function],
+        ]
+      }
       value="03/01/2020"
     />
   }
@@ -163,10 +173,10 @@ exports[`DatePicker component
       icon="events"
       mask={
         Array [
-          /\\\\d/,
+          /\\[01\\]/,
           /\\\\d/,
           "/",
-          /\\\\d/,
+          /\\[0123\\]/,
           /\\\\d/,
           "/",
           /\\\\d/,
@@ -180,6 +190,11 @@ exports[`DatePicker component
       onClear={[Function]}
       onFocus={[Function]}
       placeholder="mm/dd/yyyy"
+      validators={
+        Array [
+          [Function],
+        ]
+      }
       value="03/01/2020"
     />
   }
