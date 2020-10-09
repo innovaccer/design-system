@@ -1,4 +1,5 @@
 import { Validators } from '@/utils/types';
+import { getTimeObjFromStr, isFormat12hour } from '@/components/organisms/timePicker/utils';
 
 export const isValid = (validators: Validators, ...value: any[]) => {
   const iterator = Array.isArray(validators) ? validators : [validators];
@@ -64,4 +65,11 @@ export const date = (val: string, format: string): boolean => {
     default:
       return false;
   }
+}
+
+export const time = (val: string, format: string): boolean => {
+  const { hours, minutes } = getTimeObjFromStr(format, val);
+  const hoursCond = isFormat12hour(format) ? hours <= 12 : hours < 24;
+
+  return hoursCond && minutes <= 60;
 }
