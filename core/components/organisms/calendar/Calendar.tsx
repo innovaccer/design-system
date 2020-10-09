@@ -689,7 +689,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             const dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
 
             return (
-              <Subheading className={valueClass} appearance="disabled">{days[dayValue]}</Subheading>
+              <Subheading key={day} className={valueClass} appearance="disabled">{days[dayValue]}</Subheading>
             );
           })}
         </div>
@@ -816,7 +816,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 'Calendar-value--disabled': disabled,
               });
               return (
-                <div className={wrapperClass}>
+                <div key={row} className={wrapperClass}>
                   <span
                     className={valueClass}
                     onClick={() => onClickHandler(date)}
