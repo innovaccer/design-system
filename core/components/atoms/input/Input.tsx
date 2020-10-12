@@ -143,7 +143,7 @@ const sizeMapping = {
  *  - [Controlled Input](https://reactjs.org/docs/forms.html#controlled-components)
  *  - [Uncontrolled Input](https://reactjs.org/docs/uncontrolled-components.html)
  */
-export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forwardedRef) => {
   const {
     size = 'regular',
     type = 'text',
@@ -166,8 +166,19 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
     actionIcon,
     className,
     autocomplete,
+    autoFocus,
     ...rest
   } = props;
+
+  const ref = React.useRef<HTMLInputElement>(null);
+
+  React.useImperativeHandle(forwardedRef, (): HTMLInputElement => {
+    return ref.current as HTMLInputElement;
+  });
+
+  React.useEffect(() => {
+    if (autoFocus) ref.current?.focus({ preventScroll: true });
+  }, []);
 
   const autoComplete = props.autoComplete || autocomplete;
   const disabled = props.disabled || readonly;
