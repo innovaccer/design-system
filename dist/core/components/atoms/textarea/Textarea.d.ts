@@ -9,6 +9,7 @@ export interface TextareaProps extends BaseProps {
     disabled?: boolean;
     required?: boolean;
     error?: boolean;
+    resize?: boolean;
     onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
     onClick?: (e: React.MouseEvent<HTMLTextAreaElement>) => void;
     onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;

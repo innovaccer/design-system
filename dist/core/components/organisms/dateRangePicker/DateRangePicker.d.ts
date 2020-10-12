@@ -2,8 +2,8 @@ import * as React from 'react';
 import { SharedProps } from "../calendar/Calendar";
 import { DateType, DateFormat } from "../calendar/types";
 import { Position } from "../../molecules/popover";
-import { Mask, InputMaskProps } from "../../molecules/inputMask";
-import { Validator } from "../calendar/utility";
+import { InputMaskProps } from "../../molecules/inputMask";
+import { Validators } from "../../../utils/types";
 export declare type DateRangePickerProps = SharedProps & {
     onRangeChange?: (startDate?: Date, endDate?: Date, startValue?: string, endValue?: string) => void;
     startDate?: DateType;
@@ -14,14 +14,13 @@ export declare type DateRangePickerProps = SharedProps & {
     position: Position;
     inputFormat: DateFormat;
     outputFormat: DateFormat;
-    startInputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear' | 'error'> & {
+    startInputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClick' | 'onClear' | 'error'> & {
         label?: string;
     };
-    endInputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear' | 'error'> & {
+    endInputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClick' | 'onClear' | 'error'> & {
         label?: string;
     };
-    mask?: Mask;
-    validator: Validator;
+    validators: Validators;
 };
 interface DateRangePickerState {
     init: boolean;
@@ -39,7 +38,7 @@ export declare class DateRangePicker extends React.Component<DateRangePickerProp
         position: string;
         inputFormat: string;
         outputFormat: string;
-        validator: any;
+        validators: ((val: string, format: string) => boolean)[];
         startInputOptions: {
             label: string;
         };

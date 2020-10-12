@@ -2003,9 +2003,17 @@ body {
     background: var(--white);
 }
 
-.Grid--resource .Grid-body .Grid-row:hover, .Grid--resource .Grid-body .Grid-row:hover .Grid-cellGroup {
+.Grid--resource .Grid-row--body:hover, .Grid--resource .Grid-row--body:hover .Grid-cellGroup {
     cursor: pointer;
     background: var(--secondary-lightest);
+}
+
+.Grid--resource .Grid-row--body:active, .Grid--resource .Grid-row--body:active .Grid-cellGroup {
+    background: var(--warning-lightest) !important;
+}
+
+.Grid--resource .Grid-row--body:focus {
+    outline-color: var(--warning);
 }
 
 .Grid--pinned {
@@ -2126,7 +2134,11 @@ body {
 }
 
 .Grid-row--body {
-    border-color: var(--secondary-lightest);
+    border-color: var(--secondary-light);
+}
+
+.Grid-row--selected, .Grid-row--selected .Grid-cellGroup {
+    background: var(--warning-lightest) !important;
 }
 
 .Grid-rowWrapper:last-child .Grid-row--body {
@@ -2140,10 +2152,6 @@ body {
 .Grid-nestedRowTrigger {
     margin-right: var(--spacing-l);
     cursor: pointer;
-}
-
-.Grid-row--selected, .Grid-row--selected .Grid-cellGroup {
-    background: var(--warning-lightest) !important;
 }
 
 .Grid-cell {
@@ -2164,6 +2172,7 @@ body {
 
 .Grid-cell--separator {
     border-left: var(--border);
+    border-color: var(--secondary-light);
 }
 
 .Grid-cell--selected {
@@ -2271,16 +2280,16 @@ body {
     left: 0;
     border-right: var(--border);
     border-right-width: 4px;
-    -o-border-image: linear-gradient( to right, var(--secondary), var(--secondary) 25%, rgba(213, 213, 213, 0.1)) 1 100%;
-       border-image: linear-gradient( to right, var(--secondary), var(--secondary) 25%, rgba(213, 213, 213, 0.1)) 1 100%;
+    -o-border-image: linear-gradient( to right, var(--secondary), var(--secondary) 25%, rgba(213, 213, 213, 0.1) 25%, rgba(213, 213, 213, 0.1)) 1 100%;
+       border-image: linear-gradient( to right, var(--secondary), var(--secondary) 25%, rgba(213, 213, 213, 0.1) 25%, rgba(213, 213, 213, 0.1)) 1 100%;
 }
 
 .Grid-cellGroup--pinned-right {
     right: 0;
     border-left: var(--border);
     border-left-width: 4px;
-    -o-border-image: linear-gradient( to left, var(--secondary), var(--secondary) 25%, rgba(213, 213, 213, 0.1)) 1 100%;
-       border-image: linear-gradient( to left, var(--secondary), var(--secondary) 25%, rgba(213, 213, 213, 0.1)) 1 100%;
+    -o-border-image: linear-gradient( to left, var(--secondary), var(--secondary) 25%, rgba(213, 213, 213, 0.1) 25%, rgba(213, 213, 213, 0.1)) 1 100%;
+       border-image: linear-gradient( to left, var(--secondary), var(--secondary) 25%, rgba(213, 213, 213, 0.1) 25%, rgba(213, 213, 213, 0.1)) 1 100%;
 }
 
 .Grid .Checkbox-wrapper {
@@ -2518,10 +2527,6 @@ body {
     padding-right: var(--spacing-l);
     padding-left: var(--spacing-l);
     background: var(--white);
-}
-
-.Input--minWidth {
-    min-width: var(--spacing-9);
 }
 
 .Input--tiny {
@@ -3953,6 +3958,7 @@ body {
   border: var(--border);
   color: var(--inverse);
   padding: var(--spacing) var(--spacing-l);
+  resize: none;
 }
 
 .Textarea-textarea::-moz-placeholder {
@@ -3985,6 +3991,10 @@ body {
 .Textarea-textarea--error:focus-within {
   border: var(--spacing-xs) solid var(--alert);
   box-shadow: var(--shadow-spread) var(--alert-shadow);
+}
+
+.Textarea-textarea--resize {
+  resize: auto;
 }
 
 .Textarea-textarea::-webkit-scrollbar {

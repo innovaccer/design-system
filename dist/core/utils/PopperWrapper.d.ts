@@ -26,7 +26,7 @@ interface IState {
     mouseLeaveDelay: number;
     mouseEnterDelay: number;
 }
-declare class PopperWrapper extends React.Component<Props, IState> {
+export declare class PopperWrapper extends React.Component<Props, IState> {
     private triggerRef;
     private popupRef;
     private _timer?;

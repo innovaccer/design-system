@@ -2,8 +2,8 @@ import * as React from 'react';
 import { SharedProps } from "../calendar/Calendar";
 import { DateType, DateFormat } from "../calendar/types";
 import { Position } from "../../molecules/popover";
-import { Mask, InputMaskProps } from "../../molecules/inputMask";
-import { Validator } from "../calendar/utility";
+import { InputMaskProps } from "../../molecules/inputMask";
+import { Validators } from "../../../utils/types";
 export declare type DatePickerProps = SharedProps & {
     onDateChange?: (date: Date | undefined, dateVal?: string) => void;
     date?: DateType;
@@ -12,9 +12,8 @@ export declare type DatePickerProps = SharedProps & {
     position: Position;
     inputFormat: DateFormat;
     outputFormat: DateFormat;
-    inputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'Blur' | 'onClick' | 'onClear' | 'error'>;
-    mask?: Mask;
-    validator: Validator;
+    inputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClear' | 'error'>;
+    validators: Validators;
     closeOnSelect: boolean;
 };
 interface DatePickerState {
@@ -28,7 +27,7 @@ export declare class DatePicker extends React.Component<DatePickerProps, DatePic
         position: string;
         inputFormat: string;
         outputFormat: string;
-        validator: any;
+        validators: ((val: string, format: string) => boolean)[];
         inputOptions: {};
         closeOnSelect: boolean;
         monthsInView: number;
