@@ -11,6 +11,7 @@ export { ChipGroupProps } from "./components/atoms/chipGroup";
 export { CheckboxProps } from "./components/atoms/checkbox";
 export { ColumnProps } from "./components/atoms/column";
 export { DatePickerProps } from "./components/organisms/datePicker";
+export { TimePickerProps } from "./components/organisms/timePicker";
 export { DonutChartProps } from "./components/organisms/donutChart";
 export { DropdownProps } from "./components/atoms/dropdown";
 export { HeadingProps } from "./components/atoms/heading";

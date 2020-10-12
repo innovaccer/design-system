@@ -1,18 +1,18 @@
 
   /**
-   * Generated on: 1601887147647 
+   * Generated on: 1602504972287 
    *      Package: @innovaccer/design-system
-   *      Version: v1.3.0-1
+   *      Version: v1.3.0-2
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
 
     
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('classnames'), require('react-dom'), require('react-popper'), require('recharts')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'react', 'classnames', 'react-dom', 'react-popper', 'recharts'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.InnovaccerDesignSystem = {}, global.React, global.classNames, global.ReactDOM, global.reactPopper, global.recharts));
-}(this, (function (exports, React, classNames, ReactDOM, reactPopper, recharts) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('react-dom'), require('react-popper'), require('classnames'), require('recharts')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'react', 'react-dom', 'react-popper', 'classnames', 'recharts'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.InnovaccerDesignSystem = {}, global.React, global.ReactDOM, global.reactPopper, global.classNames, global.recharts));
+}(this, (function (exports, React, ReactDOM, reactPopper, classNames, recharts) { 'use strict';
 
   function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -368,83 +368,6 @@
     };
   }
 
-  // export type DefaultProps<T> = T extends { defaultProps: any }
-  //   ? T['defaultProps']
-  //   : {};
-  // export type Props<T, U> = Omit<T, keyof U> & {
-  //   [P in keyof T & keyof U]?: T[P];
-  // };
-  var baseProps = ['className', 'data-test'];
-  var extractBaseProps = function extractBaseProps(props) {
-    var basePropsObj = baseProps.reduce(function (acc, curr) {
-      return props[curr] ? _objectSpread2(_objectSpread2({}, acc), {}, _defineProperty({}, curr, props[curr])) : _objectSpread2({}, acc);
-    }, {});
-    return basePropsObj;
-  };
-
-  var initialsLength = 2;
-  var Avatar = function Avatar(props) {
-    var _classNames, _classNames2;
-
-    var withTooltip = props.withTooltip,
-        tooltipPosition = props.tooltipPosition,
-        size = props.size,
-        children = props.children,
-        firstName = props.firstName,
-        lastName = props.lastName,
-        className = props.className,
-        appearance = props.appearance;
-    var baseProps = extractBaseProps(props);
-    var initials = children ? children.trim().slice(0, initialsLength) : "".concat(firstName ? firstName.trim()[0] : '').concat(lastName ? lastName.trim()[0] : '');
-    var tooltip = children || "".concat(firstName || '', " ").concat(lastName || '') || '';
-    var DefaultAppearance = 'secondary';
-    var colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
-    var AvatarAppearance = appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
-    var classes = classNames__default['default']((_classNames = {
-      Avatar: true
-    }, _defineProperty(_classNames, "Avatar--".concat(size), size), _defineProperty(_classNames, "Avatar--".concat(AvatarAppearance), AvatarAppearance), _defineProperty(_classNames, 'Avatar--disabled', !initials || !withTooltip), _classNames), className);
-    var ContentClass = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, "Avatar-content--".concat(size), size), _defineProperty(_classNames2, "Avatar-content--".concat(AvatarAppearance), AvatarAppearance), _classNames2));
-    var IconClass = classNames__default['default'](_defineProperty({}, "Avatar-content--".concat(AvatarAppearance), AvatarAppearance));
-
-    var renderAvatar = function renderAvatar() {
-      return /*#__PURE__*/React.createElement("span", _extends({
-        "data-test": "DesignSystem-Avatar"
-      }, baseProps, {
-        className: classes
-      }), initials && /*#__PURE__*/React.createElement(Text, {
-        weight: "medium",
-        appearance: 'white',
-        className: ContentClass
-      }, initials), !initials && /*#__PURE__*/React.createElement(Icon, {
-        "data-test": "DesignSystem-AvatarIcon",
-        name: "person",
-        size: size === 'regular' ? 16 : 12,
-        appearance: 'white',
-        className: IconClass
-      }));
-    };
-
-    var renderTooltip = function renderTooltip() {
-      if (withTooltip && initials) {
-        return /*#__PURE__*/React.createElement(Tooltip, {
-          tooltip: tooltip,
-          position: tooltipPosition,
-          triggerClass: 'flex-grow-0'
-        }, renderAvatar());
-      }
-
-      return renderAvatar();
-    };
-
-    return renderTooltip();
-  };
-  Avatar.displayName = 'Avatar';
-  Avatar.defaultProps = {
-    tooltipPosition: 'bottom',
-    withTooltip: true,
-    size: 'regular'
-  };
-
   var Offsets;
 
   (function (Offsets) {
@@ -734,6 +657,326 @@
 
   var colorToHex = function colorToHex(color) {
     return getComputedStyle(document.documentElement).getPropertyValue("--".concat(color));
+  };
+
+  var css = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    colorToHex: colorToHex
+  });
+
+  var _placeholders;
+
+  var placeholders = (_placeholders = {}, _defineProperty(_placeholders, 'hh:mm', '-- : --'), _defineProperty(_placeholders, 'hh:mm AM', '-- : -- AM'), _placeholders);
+  var isFormat12hour = function isFormat12hour(format) {
+    return format === 'hh:mm AM';
+  };
+
+  var get12hourFormat = function get12hourFormat(hours) {
+    var AMPM = hours < 12 ? 'AM' : 'PM';
+    var hrs = hours % 12 || 12;
+    return {
+      hrs: hrs,
+      AMPM: AMPM
+    };
+  };
+
+  var get24hourFormat = function get24hourFormat(hours, am_pm) {
+    var convertedHours = hours;
+
+    if (am_pm) {
+      if (am_pm === 'PM' && hours < 12) {
+        convertedHours = hours + 12;
+      } else if (am_pm === 'AM' && hours === 12) {
+        convertedHours = hours - 12;
+      }
+
+      return convertedHours;
+    }
+
+    return hours;
+  };
+
+  var translateToTime = function translateToTime(format, time) {
+    if (!time) return '';
+
+    if (typeof time === 'number') {
+      var timeObj = getTimeObjectFromNumber(format, time);
+      return translateToString(format, timeObj);
+    }
+
+    return time;
+  };
+
+  var getTimeObjectFromNumber = function getTimeObjectFromNumber(format, time) {
+    var d = new Date(time);
+    var hours = d.getHours();
+    hours = isFormat12hour(format) ? get12hourFormat(hours).hrs : hours;
+    var am_pm = isFormat12hour(format) ? get12hourFormat(hours).AMPM : '';
+    var minutes = d.getMinutes();
+    var seconds = d.getSeconds();
+    return {
+      hours: hours,
+      minutes: minutes,
+      seconds: seconds,
+      am_pm: am_pm
+    };
+  };
+
+  var getTimeObjFromStr = function getTimeObjFromStr(format, time) {
+    var separator = ':';
+    var hours = 0;
+    var minutes = 0;
+    var len = format.length;
+    var timeLength = time.length;
+    var lastChars = format.substring(len - 2, len);
+    var is12hrFormat = lastChars === 'AM' || lastChars === 'PM';
+    var am_pm = is12hrFormat ? time.substring(timeLength - 2, timeLength) : '';
+    var timeFormat = is12hrFormat ? time.substring(0, timeLength - 3) : time;
+    var inputFormat = is12hrFormat ? format.substring(0, len - 3) : format;
+    var v = timeFormat.split(separator);
+    inputFormat.split(separator).forEach(function (f, i) {
+      switch (f) {
+        case 'hh':
+          hours = +v[i] || 0;
+          break;
+
+        case 'mm':
+          minutes = +v[i] || 0;
+          break;
+      }
+    });
+    return {
+      hours: hours,
+      minutes: minutes,
+      am_pm: am_pm
+    };
+  };
+  var getOutputTimeString = function getOutputTimeString(inputFormat, outputFormat, time) {
+    if (inputFormat === outputFormat) return time;
+
+    var _getTimeObjFromStr = getTimeObjFromStr(inputFormat, time),
+        hours = _getTimeObjFromStr.hours,
+        minutes = _getTimeObjFromStr.minutes,
+        am_pm = _getTimeObjFromStr.am_pm;
+
+    var AMPM = isFormat12hour(outputFormat) ? get12hourFormat(hours).AMPM : '';
+    var hrs = isFormat12hour(outputFormat) ? get12hourFormat(hours).hrs : get24hourFormat(hours, am_pm);
+    var timeStr = translateToString(outputFormat, {
+      minutes: minutes,
+      hours: hrs,
+      am_pm: AMPM
+    });
+    return timeStr;
+  };
+
+  var translateToString = function translateToString(format, time) {
+    var hours = time.hours,
+        minutes = time.minutes,
+        am_pm = time.am_pm;
+    var separator = ':';
+    var timeFormat = format.split(' ');
+    var v = timeFormat[0].split(separator);
+    var val = '';
+    v.forEach(function (f, i) {
+      switch (f) {
+        case 'hh':
+          val += hours < 10 ? "0".concat(hours) : hours;
+          break;
+
+        case 'mm':
+          val += minutes < 10 ? "0".concat(minutes) : minutes;
+          break;
+      }
+
+      if (i !== f.length - 1) val += separator;
+    });
+    val += isFormat12hour(format) && am_pm ? " ".concat(am_pm) : '';
+    return val;
+  };
+
+  var isValid = function isValid(validators) {
+    for (var _len = arguments.length, value = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      value[_key - 1] = arguments[_key];
+    }
+
+    var iterator = Array.isArray(validators) ? validators : [validators];
+    return iterator.every(function (validator) {
+      return validator.apply(void 0, value);
+    });
+  };
+  var date = function date(val, format) {
+    var validate = function validate(date, month, year) {
+      var monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; // Adjust for leap years
+
+      if (year % 400 == 0 || year % 100 != 0 && year % 4 == 0) monthLength[1] = 29; // Check the range of the day
+
+      return month <= 12 && date <= monthLength[month - 1];
+    };
+
+    switch (format) {
+      case 'dd/mm/yyyy':
+        var p = val.split('/');
+        var date = +p[0] || 1;
+        var month = +p[1] || 1;
+        var year = +p[2] || 1900;
+        return validate(date, month, year);
+
+      case 'mm/dd/yyyy':
+        var p = val.split('/');
+        var date = +p[1] || 1;
+        var month = +p[0] || 1;
+        var year = +p[2] || 1900;
+        return validate(date, month, year);
+
+      case 'yyyy/mm/dd':
+        var p = val.split('/');
+        var date = +p[2] || 1;
+        var month = +p[1] || 1;
+        var year = +p[0] || 1900;
+        return validate(date, month, year);
+
+      case 'dd-mm-yyyy':
+        var p = val.split('-');
+        var date = +p[0] || 1;
+        var month = +p[1] || 1;
+        var year = +p[2] || 1900;
+        return validate(date, month, year);
+
+      case 'mm-dd-yyyy':
+        var p = val.split('-');
+        var date = +p[1] || 1;
+        var month = +p[0] || 1;
+        var year = +p[2] || 1900;
+        return validate(date, month, year);
+
+      case 'yyyy-mm-dd':
+        var p = val.split('-');
+        var date = +p[2] || 1;
+        var month = +p[1] || 1;
+        var year = +p[0] || 1900;
+        return validate(date, month, year);
+
+      default:
+        return false;
+    }
+  };
+  var time = function time(val, format) {
+    var _getTimeObjFromStr = getTimeObjFromStr(format, val),
+        hours = _getTimeObjFromStr.hours,
+        minutes = _getTimeObjFromStr.minutes;
+
+    var hoursCond = isFormat12hour(format) ? hours <= 12 : hours < 24;
+    return hoursCond && minutes <= 60;
+  };
+
+  var validators = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    isValid: isValid,
+    date: date,
+    time: time
+  });
+
+  var _time;
+
+  var date$1 = {
+    'dd/mm/yyyy': [/[0123]/, /\d/, '/', /\[01]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
+    'mm/dd/yyyy': [/[01]/, /\d/, '/', /[0123]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
+    'yyyy/mm/dd': [/\d/, /\d/, /\d/, /\d/, '/', /[01]/, /\d/, '/', /[0123]/, /\d/],
+    'dd-mm-yyyy': [/[0123]/, /\d/, '-', /[01]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
+    'mm-dd-yyyy': [/[01]/, /\d/, '-', /[0123]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
+    'yyyy-mm-dd': [/\d/, /\d/, /\d/, /\d/, '-', /[01]/, /\d/, '-', /[0123]/, /\d/]
+  };
+  var time$1 = (_time = {}, _defineProperty(_time, 'hh:mm', [/[0-1-2]/, /\d/, ' ', ':', ' ', /[0-6]/, /\d/]), _defineProperty(_time, 'hh:mm AM', [/[0-1]/, /\d/, ' ', ':', ' ', /[0-6]/, /\d/, ' ', /[AP]/, 'M']), _time);
+
+  var masks = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    date: date$1,
+    time: time$1
+  });
+
+  var index = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    css: css,
+    validators: validators,
+    masks: masks,
+    PopperWrapper: PopperWrapper
+  });
+
+  // export type DefaultProps<T> = T extends { defaultProps: any }
+  //   ? T['defaultProps']
+  //   : {};
+  // export type Props<T, U> = Omit<T, keyof U> & {
+  //   [P in keyof T & keyof U]?: T[P];
+  // };
+  var extractBaseProps = function extractBaseProps(props) {
+    var baseProps = ['className', 'data-test'];
+    var basePropsObj = baseProps.reduce(function (acc, curr) {
+      return props[curr] ? _objectSpread2(_objectSpread2({}, acc), {}, _defineProperty({}, curr, props[curr])) : _objectSpread2({}, acc);
+    }, {});
+    return basePropsObj;
+  };
+
+  var initialsLength = 2;
+  var Avatar = function Avatar(props) {
+    var _classNames, _classNames2;
+
+    var withTooltip = props.withTooltip,
+        tooltipPosition = props.tooltipPosition,
+        size = props.size,
+        children = props.children,
+        firstName = props.firstName,
+        lastName = props.lastName,
+        className = props.className,
+        appearance = props.appearance;
+    var baseProps = extractBaseProps(props);
+    var initials = children ? children.trim().slice(0, initialsLength) : "".concat(firstName ? firstName.trim()[0] : '').concat(lastName ? lastName.trim()[0] : '');
+    var tooltip = children || "".concat(firstName || '', " ").concat(lastName || '') || '';
+    var DefaultAppearance = 'secondary';
+    var colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
+    var AvatarAppearance = appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
+    var classes = classNames__default['default']((_classNames = {
+      Avatar: true
+    }, _defineProperty(_classNames, "Avatar--".concat(size), size), _defineProperty(_classNames, "Avatar--".concat(AvatarAppearance), AvatarAppearance), _defineProperty(_classNames, 'Avatar--disabled', !initials || !withTooltip), _classNames), className);
+    var ContentClass = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, "Avatar-content--".concat(size), size), _defineProperty(_classNames2, "Avatar-content--".concat(AvatarAppearance), AvatarAppearance), _classNames2));
+    var IconClass = classNames__default['default'](_defineProperty({}, "Avatar-content--".concat(AvatarAppearance), AvatarAppearance));
+
+    var renderAvatar = function renderAvatar() {
+      return /*#__PURE__*/React.createElement("span", _extends({
+        "data-test": "DesignSystem-Avatar"
+      }, baseProps, {
+        className: classes
+      }), initials && /*#__PURE__*/React.createElement(Text, {
+        weight: "medium",
+        appearance: 'white',
+        className: ContentClass
+      }, initials), !initials && /*#__PURE__*/React.createElement(Icon, {
+        "data-test": "DesignSystem-AvatarIcon",
+        name: "person",
+        size: size === 'regular' ? 16 : 12,
+        appearance: 'white',
+        className: IconClass
+      }));
+    };
+
+    var renderTooltip = function renderTooltip() {
+      if (withTooltip && initials) {
+        return /*#__PURE__*/React.createElement(Tooltip, {
+          tooltip: tooltip,
+          position: tooltipPosition,
+          triggerClass: 'flex-grow-0'
+        }, renderAvatar());
+      }
+
+      return renderAvatar();
+    };
+
+    return renderTooltip();
+  };
+  Avatar.displayName = 'Avatar';
+  Avatar.defaultProps = {
+    tooltipPosition: 'bottom',
+    withTooltip: true,
+    size: 'regular'
   };
 
   var Popover = function Popover(props) {
@@ -1212,12 +1455,13 @@
     var styles = {
       fontSize: "".concat(size, "px"),
       width: "".concat(size, "px")
-    };
+    }; // change `children` to {name} after migration
+
     return /*#__PURE__*/React.createElement("i", _extends({}, baseProps, {
       className: iconClass,
       style: styles,
       onClick: onClick
-    }), type ? "".concat(name, "_").concat(type) : name, "         ");
+    }), type ? "".concat(name, "_").concat(type) : name);
   };
   Icon.displayName = 'Icon';
   Icon.defaultProps = {
@@ -1710,6 +1954,8 @@
         size = _props$size === void 0 ? 'regular' : _props$size,
         _props$type = props.type,
         type = _props$type === void 0 ? 'text' : _props$type,
+        _props$minWidth = props.minWidth,
+        minWidth = _props$minWidth === void 0 ? type !== 'number' ? 256 : undefined : _props$minWidth,
         readonly = props.readonly,
         defaultValue = props.defaultValue,
         name = props.name,
@@ -1728,12 +1974,12 @@
         actionIcon = props.actionIcon,
         className = props.className,
         autocomplete = props.autocomplete,
-        rest = _objectWithoutProperties(props, ["size", "type", "readonly", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autocomplete"]);
+        rest = _objectWithoutProperties(props, ["size", "type", "minWidth", "readonly", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autocomplete"]);
 
     var autoComplete = props.autoComplete || autocomplete;
     var disabled = props.disabled || readonly;
     var baseProps = extractBaseProps(props);
-    var classes = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Input', true), _defineProperty(_classNames, 'Input--minWidth', type !== 'number'), _defineProperty(_classNames, "Input--".concat(size), size), _defineProperty(_classNames, 'Input--disabled', disabled), _defineProperty(_classNames, 'Input--error', error), _classNames), className);
+    var classes = classNames__default['default']((_classNames = {}, _defineProperty(_classNames, 'Input', true), _defineProperty(_classNames, "Input--".concat(size), size), _defineProperty(_classNames, 'Input--disabled', disabled), _defineProperty(_classNames, 'Input--error', error), _classNames), className);
     var inputClass = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'Input-input', true), _defineProperty(_classNames2, "Input-input--".concat(size), size), _classNames2));
     var leftIconClass = classNames__default['default']((_classNames3 = {}, _defineProperty(_classNames3, 'Input-icon', true), _defineProperty(_classNames3, 'Input-icon--left', true), _defineProperty(_classNames3, 'Input-icon--disabled', !value), _classNames3));
     var rightIconClass = classNames__default['default']((_classNames4 = {}, _defineProperty(_classNames4, 'Input-icon', true), _defineProperty(_classNames4, 'Input-icon--right', true), _classNames4));
@@ -1745,7 +1991,10 @@
     }));
     return /*#__PURE__*/React.createElement("div", {
       "data-test": "DesignSystem-InputWrapper",
-      className: classes
+      className: classes,
+      style: {
+        minWidth: minWidth
+      }
     }, inlineLabel && /*#__PURE__*/React.createElement("div", {
       className: "Input-inlineLabel"
     }, /*#__PURE__*/React.createElement(Text, {
@@ -3285,14 +3534,14 @@
 
     return {};
   };
-  var convertToDate = function convertToDate(d, format, validator) {
+  var convertToDate = function convertToDate(d, format, validators) {
     var dateVal;
 
     if (d) {
       if (typeof d === 'number') {
         dateVal = new Date(d);
       } else if (typeof d === 'string') {
-        return format ? translateToDate(format, d, validator) : undefined;
+        return format ? translateToDate(format, d, validators) : undefined;
       } else if (!(d instanceof Date)) {
         var _ref = d,
             year = _ref.year,
@@ -3375,7 +3624,7 @@
 
     return false;
   };
-  var translateToString = function translateToString(format, d) {
+  var translateToString$1 = function translateToString(format, d) {
     if (format && d) {
       var _getDateInfo3 = getDateInfo(d),
           year = _getDateInfo3.year,
@@ -3384,8 +3633,7 @@
 
       var separator = format.includes('/') ? '/' : '-';
       var f = format.split(separator);
-
-      var _val = f.reduce(function (out, curr, i) {
+      var val = f.reduce(function (out, curr, i) {
         switch (curr) {
           case 'mm':
             out += (month < 9 && '0') + (month + 1);
@@ -3403,16 +3651,15 @@
         if (i !== f.length - 1) out += separator;
         return out;
       }, '');
-
-      return _val;
+      return val;
     }
 
     return '';
   };
-  var translateToDate = function translateToDate(format, val, validator) {
-    var isValid = validator ? validator(format, val) : true;
+  var translateToDate = function translateToDate(format, val) {
+    var validators = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
 
-    if (isValid) {
+    if (isValid(validators, val, format)) {
       var separator = format.includes('/') ? '/' : '-';
       var year = -1,
           month = -1,
@@ -4163,7 +4410,8 @@
           if (_year3 !== undefined && monthsInView === 1) {
             this.setState({
               year: _year3,
-              yearBlockNav: getYearBlock(_year3)
+              yearBlockNav: getYearBlock(_year3),
+              yearNav: _year3
             });
           }
         }
@@ -4205,35 +4453,6 @@
     view: 'date',
     firstDayOfWeek: 'sunday'
   });
-
-  var Caption = function Caption(props) {
-    var _classNames;
-
-    var error = props.error,
-        hide = props.hide,
-        withInput = props.withInput,
-        children = props.children,
-        className = props.className;
-    var baseProps = extractBaseProps(props);
-    var classes = classNames__default['default']((_classNames = {
-      Caption: true
-    }, _defineProperty(_classNames, 'Caption--hidden', hide), _defineProperty(_classNames, 'Caption--withInput', withInput), _classNames), className);
-    var errorIconClass = classNames__default['default'](_defineProperty({}, 'Caption-icon', true));
-    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
-      className: classes
-    }), error && /*#__PURE__*/React.createElement("div", {
-      className: errorIconClass
-    }, /*#__PURE__*/React.createElement(Icon, {
-      size: 14,
-      name: 'error',
-      appearance: 'alert'
-    })), /*#__PURE__*/React.createElement(Text, {
-      appearance: error ? 'destructive' : 'subtle',
-      size: "small",
-      weight: "medium"
-    }, "".concat(children)));
-  };
-  Caption.displayName = 'Caption';
 
   /**
    * It works as Uncontrolled Input
@@ -4375,18 +4594,11 @@
       if (onClick) onClick(e);
     };
 
-    var onValidate = function onValidate(val) {
-      var inputValidators = Array.isArray(validators) ? validators : [validators];
-      return inputValidators.every(function (validator) {
-        return validator(val);
-      });
-    };
-
     var onChangeHandler = function onChangeHandler(e) {
       var inputVal = e.currentTarget.value;
       var maskedVal = convertToMasked(inputVal);
 
-      if (onValidate(maskedVal)) {
+      if (isValid(validators, maskedVal)) {
         setValue(maskedVal);
         if (onChange) onChange(e, maskedVal);
       }
@@ -4425,80 +4637,6 @@
     }, caption));
   });
   InputMask.displayName = 'InputMask';
-
-  var dateMask = {
-    'dd/mm/yyyy': [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
-    'mm/dd/yyyy': [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
-    'yyyy/mm/dd': [/\d/, /\d/, /\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/],
-    'dd-mm-yyyy': [/\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
-    'mm-dd-yyyy': [/\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
-    'yyyy-mm-dd': [/\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]
-  };
-  var e = {
-    date: dateMask
-  };
-
-  var dateValidator = function dateValidator(format, val) {
-    var validate = function validate(date, month, year) {
-      // Check the ranges of month and year
-      if (year < 1000 || year > 3000 || month == 0 || month > 12) return false;
-      var monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; // Adjust for leap years
-
-      if (year % 400 == 0 || year % 100 != 0 && year % 4 == 0) monthLength[1] = 29; // Check the range of the day
-
-      return date > 0 && date <= monthLength[month - 1];
-    };
-
-    switch (format) {
-      case 'dd/mm/yyyy':
-        var p = val.split('/');
-        var date = +p[0];
-        var month = +p[1];
-        var year = +p[2];
-        return validate(date, month, year);
-
-      case 'mm/dd/yyyy':
-        var p = val.split('/');
-        var date = +p[1];
-        var month = +p[0];
-        var year = +p[2];
-        return validate(date, month, year);
-
-      case 'yyyy/mm/dd':
-        var p = val.split('/');
-        var date = +p[2];
-        var month = +p[1];
-        var year = +p[0];
-        return validate(date, month, year);
-
-      case 'dd-mm-yyyy':
-        var p = val.split('-');
-        var date = +p[0];
-        var month = +p[1];
-        var year = +p[2];
-        return validate(date, month, year);
-
-      case 'mm-dd-yyyy':
-        var p = val.split('-');
-        var date = +p[1];
-        var month = +p[0];
-        var year = +p[2];
-        return validate(date, month, year);
-
-      case 'yyyy-mm-dd':
-        var p = val.split('-');
-        var date = +p[2];
-        var month = +p[1];
-        var year = +p[0];
-        return validate(date, month, year);
-
-      default:
-        return false;
-    }
-  };
-  var e$1 = {
-    date: dateValidator
-  };
 
   var DatePicker = /*#__PURE__*/function (_React$Component) {
     _inherits(DatePicker, _React$Component);
@@ -4545,7 +4683,7 @@
       _defineProperty(_assertThisInitialized(_this), "onChangeHandler", function (_e, val) {
         var _this$props2 = _this.props,
             inputFormat = _this$props2.inputFormat,
-            validator = _this$props2.validator;
+            validators = _this$props2.validators;
 
         _this.setState({
           open: true
@@ -4554,7 +4692,7 @@
         var placeholderChar = '_';
 
         if (val && !val.includes(placeholderChar)) {
-          var d = translateToDate(inputFormat, val, validator);
+          var d = translateToDate(inputFormat, val, validators);
 
           _this.setState({
             date: d
@@ -4604,9 +4742,9 @@
       });
 
       var _inputFormat = props.inputFormat,
-          _validator = props.validator;
+          _validators = props.validators;
 
-      var _date = convertToDate(props.date, _inputFormat, _validator);
+      var _date = convertToDate(props.date, _inputFormat, _validators);
 
       var error = _this.getError(_date);
 
@@ -4625,8 +4763,8 @@
         if (prevProps.date !== this.props.date) {
           var _this$props3 = this.props,
               inputFormat = _this$props3.inputFormat,
-              validator = _this$props3.validator;
-          var d = convertToDate(this.props.date, inputFormat, validator);
+              validators = _this$props3.validators;
+          var d = convertToDate(this.props.date, inputFormat, validators);
           this.setState({
             date: d
           });
@@ -4650,7 +4788,7 @@
 
           if (onDateChange) {
             if (!newError) {
-              var dVal = translateToString(outputFormat, _date2);
+              var dVal = translateToString$1(outputFormat, _date2);
               onDateChange(_date2, dVal);
             } else {
               onDateChange(undefined, '');
@@ -4668,20 +4806,19 @@
             inputFormat = _this$props5.inputFormat,
             outputFormat = _this$props5.outputFormat,
             inputOptions = _this$props5.inputOptions,
-            mask = _this$props5.mask,
-            validator = _this$props5.validator,
+            validators = _this$props5.validators,
             withInput = _this$props5.withInput,
             disabledBefore = _this$props5.disabledBefore,
             disabledAfter = _this$props5.disabledAfter,
             onDateChange = _this$props5.onDateChange,
             closeOnSelect = _this$props5.closeOnSelect,
-            rest = _objectWithoutProperties(_this$props5, ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "mask", "validator", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect"]);
+            rest = _objectWithoutProperties(_this$props5, ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect"]);
 
         var date = this.state.date;
         return /*#__PURE__*/React.createElement(Calendar, _extends({}, rest, {
-          date: convertToDate(date, inputFormat, validator),
-          disabledBefore: convertToDate(disabledBefore, inputFormat, validator),
-          disabledAfter: convertToDate(disabledAfter, inputFormat, validator),
+          date: convertToDate(date, inputFormat, validators),
+          disabledBefore: convertToDate(disabledBefore, inputFormat, validators),
+          disabledAfter: convertToDate(disabledAfter, inputFormat, validators),
           onDateChange: this.onDateChangeHandler
         }));
       }
@@ -4692,9 +4829,8 @@
             position = _this$props6.position,
             inputFormat = _this$props6.inputFormat,
             inputOptions = _this$props6.inputOptions,
-            _this$props6$mask = _this$props6.mask,
-            mask = _this$props6$mask === void 0 ? e.date[inputFormat] : _this$props6$mask,
-            withInput = _this$props6.withInput;
+            withInput = _this$props6.withInput,
+            validators = _this$props6.validators;
         var _this$state = this.state,
             init = _this$state.init,
             date = _this$state.date,
@@ -4703,18 +4839,24 @@
 
         if (withInput) {
           var showError = inputOptions.required && error && init;
+
+          var inputValidator = function inputValidator(val) {
+            return isValid(validators, val, inputFormat);
+          };
+
           var trigger = /*#__PURE__*/React.createElement(InputMask, _extends({
             icon: "events",
             placeholder: inputFormat
           }, inputOptions, {
             error: showError,
-            mask: mask,
-            value: date ? translateToString(inputFormat, date) : '',
+            mask: date$1[inputFormat],
+            value: date ? translateToString$1(inputFormat, date) : '',
             onChange: this.onChangeHandler,
             onFocus: this.onFocusHandler,
             onBlur: this.onBlurHandler,
             onClear: this.onClearHandler,
-            caption: showError ? inputOptions.caption || 'Invalid value' : ''
+            caption: showError ? inputOptions.caption || 'Invalid value' : '',
+            validators: [inputValidator]
           }));
           return /*#__PURE__*/React.createElement(Popover, {
             trigger: trigger,
@@ -4737,10 +4879,50 @@
     position: 'bottom-start',
     inputFormat: 'mm/dd/yyyy',
     outputFormat: 'mm/dd/yyyy',
-    validator: e$1.date,
+    validators: [date],
     inputOptions: {},
     closeOnSelect: true
   }));
+
+  var TimePicker = function TimePicker(props) {
+    var validators = props.validators,
+        inputOptions = props.inputOptions,
+        inputFormat = props.inputFormat,
+        outputFormat = props.outputFormat,
+        onTimeChange = props.onTimeChange,
+        time = props.time;
+
+    var onChangeHandler = function onChangeHandler(_e, val) {
+      var _inputOptions$placeho = inputOptions.placeholderChar,
+          placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho;
+
+      if (onTimeChange) {
+        var outputTimeStr = val && !val.includes(placeholderChar) ? getOutputTimeString(inputFormat, outputFormat, val) : undefined;
+        onTimeChange(outputTimeStr);
+      }
+    };
+
+    var inputValidator = function inputValidator(val) {
+      return isValid(validators, val, inputFormat);
+    };
+
+    return /*#__PURE__*/React.createElement(InputMask, _extends({
+      placeholder: placeholders[inputFormat],
+      placeholderChar: "_"
+    }, inputOptions, {
+      mask: time$1[inputFormat],
+      value: translateToTime(inputFormat, time),
+      validators: inputValidator,
+      onChange: onChangeHandler
+    }));
+  };
+  TimePicker.defaultProps = {
+    inputFormat: 'hh:mm AM',
+    outputFormat: 'hh:mm AM',
+    inputOptions: {},
+    validators: [time]
+  };
+  TimePicker.displayName = 'TimePicker';
 
   var DonutChart = function DonutChart(props) {
     var width = props.width,
@@ -4779,6 +4961,8 @@
       return null;
     };
 
+    var colorToHex$1 = colorToHex;
+
     var renderActiveShape = function renderActiveShape(activeShapeProps) {
       var RADIAN = Math.PI / 180;
       var cx = activeShapeProps.cx,
@@ -4813,7 +4997,7 @@
         dy: 22,
         "font-size": 'var(--font-size-l)',
         textAnchor: "middle",
-        fill: colorToHex(colorOfTotalCount)
+        fill: colorToHex$1(colorOfTotalCount)
       }, total.toLocaleString())), /*#__PURE__*/React.createElement(recharts.Sector, {
         cx: cx,
         cy: cy,
@@ -4871,7 +5055,7 @@
 
     var getColor = function getColor(index, type) {
       var color = colors[index % colors.length];
-      var colorHex = colorToHex(color);
+      var colorHex = colorToHex$1(color);
       return type === 'hex' ? colorHex : color;
     };
 
@@ -4949,6 +5133,35 @@
     }));
   };
   Label.displayName = 'Label';
+
+  var Caption = function Caption(props) {
+    var _classNames;
+
+    var error = props.error,
+        hide = props.hide,
+        withInput = props.withInput,
+        children = props.children,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
+    var classes = classNames__default['default']((_classNames = {
+      Caption: true
+    }, _defineProperty(_classNames, 'Caption--hidden', hide), _defineProperty(_classNames, 'Caption--withInput', withInput), _classNames), className);
+    var errorIconClass = classNames__default['default'](_defineProperty({}, 'Caption-icon', true));
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
+      className: classes
+    }), error && /*#__PURE__*/React.createElement("div", {
+      className: errorIconClass
+    }, /*#__PURE__*/React.createElement(Icon, {
+      size: 14,
+      name: 'error',
+      appearance: 'alert'
+    })), /*#__PURE__*/React.createElement(Text, {
+      appearance: error ? 'destructive' : 'subtle',
+      size: "small",
+      weight: "medium"
+    }, "".concat(children)));
+  };
+  Caption.displayName = 'Caption';
 
   var Legend = function Legend(props) {
     var iconAppearance = props.iconAppearance,
@@ -6249,6 +6462,8 @@
 
     var _props$rows = props.rows,
         rows = _props$rows === void 0 ? 3 : _props$rows,
+        _props$resize = props.resize,
+        resize = _props$resize === void 0 ? true : _props$resize,
         disabled = props.disabled,
         name = props.name,
         placeholder = props.placeholder,
@@ -6263,7 +6478,7 @@
         className = props.className;
     var baseProps = extractBaseProps(props);
     var classes = classNames__default['default'](_defineProperty({}, 'Textarea', true), className);
-    var TextareaClass = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'Textarea-textarea', true), _defineProperty(_classNames2, 'Textarea-textarea--error', error), _classNames2));
+    var TextareaClass = classNames__default['default']((_classNames2 = {}, _defineProperty(_classNames2, 'Textarea-textarea', true), _defineProperty(_classNames2, 'Textarea-textarea--resize', resize), _defineProperty(_classNames2, 'Textarea-textarea--error', error), _classNames2));
     return /*#__PURE__*/React.createElement("div", {
       className: classes
     }, /*#__PURE__*/React.createElement("textarea", _extends({
@@ -7258,7 +7473,7 @@
             startInputOptions = _this$props2.startInputOptions,
             endInputOptions = _this$props2.endInputOptions,
             inputFormat = _this$props2.inputFormat,
-            validator = _this$props2.validator;
+            validators = _this$props2.validators;
         var _this$state3 = _this.state,
             startDate = _this$state3.startDate,
             endDate = _this$state3.endDate;
@@ -7271,7 +7486,7 @@
           var placeholderChar = startInputOptions.placeholderChar || '_';
 
           if (val && !val.includes(placeholderChar)) {
-            var d = translateToDate(inputFormat, val, validator);
+            var d = translateToDate(inputFormat, val, validators);
 
             if (d) {
               _this.setState({
@@ -7298,7 +7513,7 @@
           var _placeholderChar = endInputOptions.placeholderChar ? endInputOptions.placeholderChar : '_';
 
           if (val && !val.includes(_placeholderChar)) {
-            var _d = translateToDate(inputFormat, val, validator);
+            var _d = translateToDate(inputFormat, val, validators);
 
             if (_d) _this.setState({
               endDate: _d
@@ -7379,11 +7594,11 @@
       });
 
       var _inputFormat = props.inputFormat,
-          _validator = props.validator;
+          _validators = props.validators;
 
-      var _startDate = convertToDate(props.startDate, _inputFormat, _validator);
+      var _startDate = convertToDate(props.startDate, _inputFormat, _validators);
 
-      var _endDate = convertToDate(props.endDate, _inputFormat, _validator);
+      var _endDate = convertToDate(props.endDate, _inputFormat, _validators);
 
       var _this$getErrors = _this.getErrors(_startDate, _endDate),
           _startError = _this$getErrors.startError,
@@ -7409,8 +7624,8 @@
         if (prevProps.startDate !== this.props.startDate) {
           var _this$props4 = this.props,
               inputFormat = _this$props4.inputFormat,
-              validator = _this$props4.validator;
-          var d = convertToDate(this.props.startDate, inputFormat, validator);
+              validators = _this$props4.validators;
+          var d = convertToDate(this.props.startDate, inputFormat, validators);
           this.setState({
             startDate: d
           });
@@ -7419,9 +7634,9 @@
         if (prevProps.endDate !== this.props.endDate) {
           var _this$props5 = this.props,
               _inputFormat2 = _this$props5.inputFormat,
-              _validator2 = _this$props5.validator;
+              _validators2 = _this$props5.validators;
 
-          var _d2 = convertToDate(this.props.endDate, _inputFormat2, _validator2);
+          var _d2 = convertToDate(this.props.endDate, _inputFormat2, _validators2);
 
           this.setState({
             endDate: _d2
@@ -7465,8 +7680,8 @@
 
           if (onRangeChange) {
             var inRangeError = this.getInRangeError();
-            var sValue = translateToString(outputFormat, _startDate3);
-            var eValue = translateToString(outputFormat, _endDate3);
+            var sValue = translateToString$1(outputFormat, _startDate3);
+            var eValue = translateToString$1(outputFormat, _endDate3);
 
             if (!inRangeError && !startError && !endError) {
               onRangeChange(_startDate3, _endDate3, sValue, eValue);
@@ -7489,15 +7704,14 @@
             outputFormat = _this$props7.outputFormat,
             startInputOptions = _this$props7.startInputOptions,
             endInputOptions = _this$props7.endInputOptions,
-            mask = _this$props7.mask,
-            validator = _this$props7.validator,
+            validators = _this$props7.validators,
             withInput = _this$props7.withInput,
             position = _this$props7.position,
             disabledBefore = _this$props7.disabledBefore,
             disabledAfter = _this$props7.disabledAfter,
             onRangeChange = _this$props7.onRangeChange,
             rangeLimit = _this$props7.rangeLimit,
-            rest = _objectWithoutProperties(_this$props7, ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "startInputOptions", "endInputOptions", "mask", "validator", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"]);
+            rest = _objectWithoutProperties(_this$props7, ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "startInputOptions", "endInputOptions", "validators", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"]);
 
         var _this$state5 = this.state,
             startDate = _this$state5.startDate,
@@ -7507,10 +7721,10 @@
         return /*#__PURE__*/React.createElement(Calendar, _extends({}, rest, {
           monthsInView: this.monthsInView,
           rangePicker: true,
-          startDate: convertToDate(startDate, inputFormat, validator),
-          endDate: convertToDate(endDate, inputFormat, validator),
-          disabledBefore: convertToDate(disabledBefore, inputFormat, validator),
-          disabledAfter: convertToDate(disabledAfter, inputFormat, validator),
+          startDate: convertToDate(startDate, inputFormat, validators),
+          endDate: convertToDate(endDate, inputFormat, validators),
+          disabledBefore: convertToDate(disabledBefore, inputFormat, validators),
+          disabledAfter: convertToDate(disabledAfter, inputFormat, validators),
           onRangeChange: this.onRangeChangeHandler,
           yearNav: yearNav,
           monthNav: monthNav,
@@ -7527,9 +7741,8 @@
             startInputOptions = _this$props8.startInputOptions,
             endInputOptions = _this$props8.endInputOptions,
             inputFormat = _this$props8.inputFormat,
-            _this$props8$mask = _this$props8.mask,
-            mask = _this$props8$mask === void 0 ? e.date[inputFormat] : _this$props8$mask,
-            position = _this$props8.position;
+            position = _this$props8.position,
+            validators = _this$props8.validators;
         var _this$state6 = this.state,
             init = _this$state6.init,
             startDate = _this$state6.startDate,
@@ -7539,8 +7752,14 @@
             open = _this$state6.open;
 
         if (withInput) {
+          var mask = date$1[inputFormat];
           var showStartError = startInputOptions.required && startError && init;
           var showEndError = endInputOptions.required && endError && init;
+
+          var inputValidator = function inputValidator(val) {
+            return isValid(validators, val, inputFormat);
+          };
+
           var trigger = /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, {
             size: '6',
             sizeXS: '12',
@@ -7553,7 +7772,7 @@
             placeholder: inputFormat
           }, startInputOptions, {
             mask: mask,
-            value: startDate ? translateToString(inputFormat, startDate) : '',
+            value: startDate ? translateToString$1(inputFormat, startDate) : '',
             onFocus: this.onFocusHandler,
             onChange: function onChange(e, val) {
               _this2.onChangeHandler(e, val || '', 'start');
@@ -7568,7 +7787,8 @@
               return _this2.onClickHandler('start');
             },
             error: showStartError,
-            caption: showStartError ? startInputOptions.caption || 'Invalid value' : ''
+            caption: showStartError ? startInputOptions.caption || 'Invalid value' : '',
+            validators: [inputValidator]
           }))), /*#__PURE__*/React.createElement(Column, {
             size: '6',
             sizeXS: '12',
@@ -7581,7 +7801,7 @@
             placeholder: inputFormat
           }, endInputOptions, {
             mask: mask,
-            value: endDate ? translateToString(inputFormat, endDate) : '',
+            value: endDate ? translateToString$1(inputFormat, endDate) : '',
             onChange: function onChange(e, val) {
               _this2.onChangeHandler(e, val || '', 'end');
             },
@@ -7595,7 +7815,8 @@
               return _this2.onClickHandler('end');
             },
             error: showEndError,
-            caption: showEndError ? endInputOptions.caption || 'Invalid value' : ''
+            caption: showEndError ? endInputOptions.caption || 'Invalid value' : '',
+            validators: [inputValidator]
           }))));
           return /*#__PURE__*/React.createElement(Popover, {
             trigger: trigger,
@@ -7619,7 +7840,7 @@
     position: 'bottom',
     inputFormat: 'mm/dd/yyyy',
     outputFormat: 'mm/dd/yyyy',
-    validator: e$1.date,
+    validators: [date],
     startInputOptions: {
       label: 'Start Date'
     },
@@ -8238,7 +8459,7 @@
           var cI = pinned === 'left' ? index : leftPinnedSchema.length + index;
           if (pinned === 'right') cI += unpinnedSchema.length;
           return /*#__PURE__*/React.createElement(Cell, {
-            key: s.name,
+            key: "".concat(cI),
             _this: _this,
             head: true,
             draggable: draggable,
@@ -9974,8 +10195,10 @@
   exports.TabsWrapper = TabsWrapper;
   exports.Text = Text;
   exports.Textarea = Textarea;
+  exports.TimePicker = TimePicker;
   exports.Toast = Toast;
   exports.Tooltip = Tooltip;
+  exports.Utils = index;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 

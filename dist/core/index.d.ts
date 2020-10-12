@@ -1,3 +1,4 @@
+export * as Utils from "./utils";
 export { Avatar } from "./components/atoms/avatar";
 export { AvatarGroup } from "./components/atoms/avatarGroup";
 export { Backdrop } from "./components/atoms/backdrop";
@@ -10,6 +11,7 @@ export { ChipGroup } from "./components/atoms/chipGroup";
 export { Checkbox } from "./components/atoms/checkbox";
 export { Column } from "./components/atoms/column";
 export { DatePicker } from "./components/organisms/datePicker";
+export { TimePicker } from "./components/organisms/timePicker";
 export { DonutChart } from "./components/organisms/donutChart";
 export { Dropdown } from "./components/atoms/dropdown";
 export { Heading } from "./components/atoms/heading";

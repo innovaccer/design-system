@@ -26,6 +26,7 @@ export interface InputProps extends BaseProps {
     pattern?: string;
     error?: boolean;
     info?: string;
+    minWidth?: string;
     onClear?: (e: React.MouseEvent<HTMLElement>) => void;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
