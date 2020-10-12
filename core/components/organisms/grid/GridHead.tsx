@@ -72,7 +72,7 @@ export const GridHead = (props: GridHeadProps) => {
 
             return (
               <Cell
-                key={s.name}
+                key={`${cI}`}
                 _this={_this}
                 head={true}
                 draggable={draggable}
