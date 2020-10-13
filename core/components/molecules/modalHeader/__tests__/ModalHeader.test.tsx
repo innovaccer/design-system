@@ -5,13 +5,13 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 
 const Heading = 'Modal header';
 const Icon = 'events';
-const iconAppearance = 'alert';
+const iconAppearance = ['default', 'alert'];
 const SubHeading = 'Modal subheading';
 const onClose = jest.fn();
 
 const Mapper = {
   icon: valueHelper(Icon, { required: true }),
-  iconAppearance: valueHelper(iconAppearance, { required: true }),
+  iconAppearance: valueHelper(iconAppearance, { required: true, iterate: true }),
   heading: valueHelper(Heading, { required: true }),
   onClose: valueHelper(onClose, { required: true }),
   subHeading: valueHelper(SubHeading, { required: true }),
