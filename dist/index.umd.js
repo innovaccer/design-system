@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1602504972287 
+   * Generated on: 1602585780172 
    *      Package: @innovaccer/design-system
-   *      Version: v1.3.0-2
+   *      Version: v1.3.0-3
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -1947,7 +1947,7 @@
    *  - [Uncontrolled Input](https://reactjs.org/docs/uncontrolled-components.html)
    */
 
-  var Input = /*#__PURE__*/React.forwardRef(function (props, ref) {
+  var Input = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     var _classNames, _classNames2, _classNames3, _classNames4;
 
     var _props$size = props.size,
@@ -1974,8 +1974,20 @@
         actionIcon = props.actionIcon,
         className = props.className,
         autocomplete = props.autocomplete,
-        rest = _objectWithoutProperties(props, ["size", "type", "minWidth", "readonly", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autocomplete"]);
+        autoFocus = props.autoFocus,
+        rest = _objectWithoutProperties(props, ["size", "type", "minWidth", "readonly", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autocomplete", "autoFocus"]);
 
+    var ref = React.useRef(null);
+    React.useImperativeHandle(forwardedRef, function () {
+      return ref.current;
+    });
+    React.useEffect(function () {
+      var _ref$current;
+
+      if (autoFocus) (_ref$current = ref.current) === null || _ref$current === void 0 ? void 0 : _ref$current.focus({
+        preventScroll: true
+      });
+    }, []);
     var autoComplete = props.autoComplete || autocomplete;
     var disabled = props.disabled || readonly;
     var baseProps = extractBaseProps(props);
@@ -6802,6 +6814,7 @@
     var className = props.className,
         heading = props.heading,
         icon = props.icon,
+        iconAppearance = props.iconAppearance,
         subHeading = props.subHeading,
         onClose = props.onClose;
     var baseProps = extractBaseProps(props);
@@ -6820,8 +6833,11 @@
     }), icon && /*#__PURE__*/React.createElement(Icon, {
       className: "Modal-header-icon",
       name: icon,
+      appearance: iconAppearance,
       "data-test": "DesignSystem-ModalHeader--Icon"
-    }), heading && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Heading, null, heading)), /*#__PURE__*/React.createElement(Icon, {
+    }), heading && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Heading, {
+      size: "s"
+    }, heading)), /*#__PURE__*/React.createElement(Icon, {
       name: 'close',
       className: "Modal-close-icon",
       "data-test": "DesignSystem-ModalHeader--CloseIcon",
@@ -6836,6 +6852,9 @@
     }, subHeading)));
   };
   ModalHeader.displayName = 'ModalHeader';
+  ModalHeader.defaultProps = {
+    iconAppearance: Icon.defaultProps.appearance
+  };
 
   var ModalDescription = function ModalDescription(props) {
     var title = props.title,

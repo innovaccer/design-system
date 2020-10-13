@@ -362,7 +362,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/input/Input.tsx": {
-        "version": "07e31fafed199379c40af00a05321b5579104d3ef3bffd6ada675d4283ad91f5",
+        "version": "6a5a081628607a6caf773cd89da992614a666fdd3dba7ec5dbe5be705e7e7f0e",
         "signature": "72a48fa88aaff02d0fca80dabee6451ad9bbd41c705b61fcb85976040202e099",
         "affectsGlobalScope": false
       },
@@ -837,8 +837,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/modalHeader/ModalHeader.tsx": {
-        "version": "9c6b0e833a6f4c9c08c1ef18d92128c08d474a5eedf337989b1d9235db3f7307",
-        "signature": "385eb9b59cb4972da3a7f87ff5f7cd79c2171f32f735a80ddf3fe034349ed713",
+        "version": "49ae86ee3a74634b667e45dddb7480d648e70ce7f46e37e4024448f962825647",
+        "signature": "efa9fd49a210690a0bbf09b769f12827ecff989dd1dd7816899a3a2720479208",
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/modalHeader/index.tsx": {
@@ -3798,9 +3798,8 @@
         "../../core/components/molecules/modalFooter/ModalFooter.tsx"
       ],
       "../../core/components/molecules/modalHeader/ModalHeader.tsx": [
-        "../../core/components/atoms/heading/index.tsx",
-        "../../core/components/atoms/icon/index.tsx",
-        "../../core/components/atoms/text/index.tsx",
+        "../../core/index.tsx",
+        "../../core/index.type.tsx",
         "../../core/utils/types.tsx",
         "../../node_modules/@types/classnames/index.d.ts",
         "../../node_modules/@types/react/index.d.ts"
