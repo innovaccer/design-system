@@ -33,12 +33,12 @@ exports[`Modal component
               pan_tool
             </i>
             <div>
-              <h4
-                class="Heading Heading--m Heading--default"
+              <h5
+                class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Heading
-              </h4>
+              </h5>
             </div>
             <i
               class="material-icons Icon Icon--default Modal-close-icon"
@@ -106,12 +106,12 @@ exports[`Modal component
               pan_tool
             </i>
             <div>
-              <h4
-                class="Heading Heading--m Heading--default"
+              <h5
+                class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Heading
-              </h4>
+              </h5>
             </div>
             <i
               class="material-icons Icon Icon--default Modal-close-icon"
@@ -179,12 +179,12 @@ exports[`Modal component
               pan_tool
             </i>
             <div>
-              <h4
-                class="Heading Heading--m Heading--default"
+              <h5
+                class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Heading
-              </h4>
+              </h5>
             </div>
             <i
               class="material-icons Icon Icon--default Modal-close-icon"
@@ -252,12 +252,12 @@ exports[`Modal component
               pan_tool
             </i>
             <div>
-              <h4
-                class="Heading Heading--m Heading--default"
+              <h5
+                class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Heading
-              </h4>
+              </h5>
             </div>
             <i
               class="material-icons Icon Icon--default Modal-close-icon"
@@ -328,12 +328,12 @@ exports[`Modal component
               pan_tool
             </i>
             <div>
-              <h4
-                class="Heading Heading--m Heading--default"
+              <h5
+                class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Heading
-              </h4>
+              </h5>
             </div>
             <i
               class="material-icons Icon Icon--default Modal-close-icon"
@@ -398,12 +398,12 @@ exports[`Modal component
               pan_tool
             </i>
             <div>
-              <h4
-                class="Heading Heading--m Heading--default"
+              <h5
+                class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               >
                 Heading
-              </h4>
+              </h5>
             </div>
             <i
               class="material-icons Icon Icon--default Modal-close-icon"
