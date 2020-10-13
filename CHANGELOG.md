@@ -1,13 +1,10 @@
 
 -------------------
- **v1.3.0-2**  (2020-10-12) 
+ **v1.3.0-3**  (2020-10-13) 
 
-* 4728d65 v1.3.0-2
-* 6ee4154 fix(Grid): fixes extra column render while pinned
-* 5205a75 fix(Grid): updates separator style
-* be2a79c feat(TimePicker): adds component
-* ad62d12 test: updates snapshots
-* 55c5ac7 fix(DatePicker, DateRangePicker): removes mask and updates validators
-* 04bda3e feat(Textarea): adds resize prop
-* 62c61f4 test(Input): updates snapshots
-* 9ceb28c feat(Input): adds minWidth prop
+* 1f97fd7 v1.3.0-3
+* b6ad936 test: updates snapshots
+* dab4ae4 test: updates snapshots
+* 8d7c947 feat(ModalHeader): adds iconAppearance prop
+* 731f22c fix(ModalHeader): fixes Heading size
+* 976bd50 fix(Input): fixes input autoFocus
