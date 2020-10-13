@@ -37,7 +37,7 @@ export const ModalHeader = (props: ModalHeaderProps) => {
         )}
         {heading && (
           <div>
-            <Heading>
+            <Heading size="s">
               {heading}
             </Heading>
           </div>
