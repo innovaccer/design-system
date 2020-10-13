@@ -1,19 +1,19 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import Heading from '@/components/atoms/heading';
-import Text from '@/components/atoms/text';
-import Icon from '@/components/atoms/icon';
+import { Heading, Text, Icon } from '@/index';
+import { IconProps } from '@/index.type';
 
 export interface ModalHeaderProps extends BaseProps {
-  icon?: string;
+  icon?: IconProps['name'];
+  iconAppearance: IconProps['appearance'];
   heading?: string;
   onClose: (event?: React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
   subHeading?: string;
 }
 
 export const ModalHeader = (props: ModalHeaderProps) => {
-  const { className, heading, icon, subHeading, onClose } = props;
+  const { className, heading, icon, iconAppearance, subHeading, onClose } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames({
@@ -32,6 +32,7 @@ export const ModalHeader = (props: ModalHeaderProps) => {
           <Icon
             className="Modal-header-icon"
             name={icon}
+            appearance={iconAppearance}
             data-test="DesignSystem-ModalHeader--Icon"
           />
         )}
@@ -61,5 +62,8 @@ export const ModalHeader = (props: ModalHeaderProps) => {
 };
 
 ModalHeader.displayName = 'ModalHeader';
+ModalHeader.defaultProps = {
+  iconAppearance: Icon.defaultProps.appearance
+};
 
 export default ModalHeader;
