@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { OptionTypeProps } from './index';
-import Icon from '@/components/atoms/icon';
+import { Icon } from '@/index';
 import classNames from 'classnames';
 
 const IconWithMetaOption = (props: OptionTypeProps) => {
   const {
     className,
     textClassName,
+    renderSubInfo,
     selected,
     onClickHandler,
     optionData,
@@ -15,7 +16,7 @@ const IconWithMetaOption = (props: OptionTypeProps) => {
     dataTest,
   } = props;
 
-  const { label, icon, subInfo } = optionData;
+  const { subInfo, label, icon } = optionData;
 
   const OptionClass = classNames({
     [`${className}`]: true,
@@ -34,7 +35,7 @@ const IconWithMetaOption = (props: OptionTypeProps) => {
       )}
       <div className={'Option-label'}>
         <div className={textClassName}>{label}</div>
-        {subInfo && <div className={'Option-subinfo'}>{subInfo}</div>}
+        {subInfo && renderSubInfo(subInfo)}
       </div>
     </div>
   );
