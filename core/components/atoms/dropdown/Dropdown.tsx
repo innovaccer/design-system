@@ -57,7 +57,7 @@ interface SyncProps {
    *   label: string;
    *   value: any;
    *   icon?: string;
-   *   subInfo?: string;
+   *   subInfo?: string | MetaListProps;
    *   optionType?: OptionType;
    *   selected?: boolean;
    *   group?: string;

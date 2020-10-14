@@ -8,10 +8,11 @@ const MetaOption = (props: OptionTypeProps) => {
     onClickHandler,
     optionData,
     onUpdateActiveOption,
+    renderSubInfo,
     dataTest,
   } = props;
 
-  const { label, subInfo } = optionData;
+  const { subInfo, label } = optionData;
 
   return (
     <div
@@ -22,7 +23,7 @@ const MetaOption = (props: OptionTypeProps) => {
     >
       <div className={'Option-label'}>
         <div className={textClassName}>{label}</div>
-        {subInfo && <div className={'Option-subinfo'}>{subInfo}</div>}
+        {subInfo && renderSubInfo(subInfo)}
       </div>
     </div>
   );
