@@ -7,13 +7,9 @@
 }
 
 .MetaList-seperator {
-    border-radius: 50%;
-    height: var(--spacing-m);
-    width: var(--spacing-m);
     margin-left: var(--spacing);
-    background: var(--inverse-lightest);
 }
-.MetaList-separator--left{
+.MetaList-seperator--left{
     margin-right: var(--spacing-m);
 }
 .Meta-icon{

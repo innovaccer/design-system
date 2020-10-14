@@ -5,6 +5,7 @@ import { boolean } from '@storybook/addon-knobs';
 // CSF format story
 export const all = () => {
   const seperator = boolean('seperator', true);
+
   const list = [
     {
       label: 'Meta data', icon: 'assessment'
