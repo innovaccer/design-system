@@ -5,6 +5,8 @@ import DefaultOption from './DefaultOption';
 import MetaOption from './MetaOption';
 import IconOption from './IconOption';
 import IconWithMetaOption from './IconWithMetaOption';
+import { MetaList, Text } from '@/index';
+import { MetaListProps } from '@/index.type';
 import { OptionType } from '../DropdownList';
 
 export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
@@ -34,7 +36,7 @@ export interface OptionSchema {
   label: string;
   value: any;
   icon?: string;
-  subInfo?: string;
+  subInfo?: string | MetaListProps;
   optionType?: OptionType;
   selected?: boolean;
   group?: string;
@@ -50,6 +52,7 @@ export interface OptionTypeProps {
   onUpdateActiveOption: () => void;
   onClickHandler?: (event: ClickEvent) => void;
   onChangeHandler?: (event: ChangeEvent) => void;
+  renderSubInfo: (subInfo: string | MetaListProps) => React.ReactElement;
 }
 
 interface OptionProps extends OptionRendererProps {
@@ -136,6 +139,31 @@ const Option = (props: OptionProps) => {
       </div>
     );
   }
+
+  const renderSubInfo = (subInfo: string | MetaListProps) => {
+    const labelAppearance = selected ? 'white' : 'subtle';
+    const iconAppearance = selected ? 'white' : 'disabled';
+
+    if (typeof subInfo === 'string') {
+      return (
+        <Text appearance={labelAppearance}>
+          {subInfo}
+        </Text>
+      );
+    }
+
+    const { list = [], seperator } = subInfo;
+    return (
+      <MetaList
+        list={list}
+        seperator={seperator}
+        iconAppearance={iconAppearance}
+        labelAppearance={labelAppearance}
+        seperatorAppearance={iconAppearance}
+      />
+    );
+  };
+
   const type = checkboxes ? 'WITH_CHECKBOX' : optionType;
   const component = OptionTypeMapping[type];
 
@@ -143,6 +171,7 @@ const Option = (props: OptionProps) => {
     {
       menu,
       selected,
+      renderSubInfo,
       optionData,
       textClassName,
       onClickHandler,
