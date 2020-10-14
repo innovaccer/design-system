@@ -1,37 +1,100 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import Meta, { MetaProps } from './Meta';
+import { Icon } from '@/index';
+import { IconProps, TextProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export interface MetaListProps extends BaseProps {
   /**
-   * List of Meta
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * MetaProps:
+   * {
+   *   label: string;
+   *   icon?: string;
+   * }
+   *
+   * | Name | Description | Default |
+   * | --- | --- | --- |
+   * | label | Label of Meta component |  |
+   * | icon | Icon of Meta component | |
+   * </pre>
    */
   list: MetaProps[];
   /**
-   * Left Seperator
+   * Shows left seperator
    */
   seperator?: boolean;
+  /**
+   * Color of seperator
+   */
+  seperatorAppearance: IconProps['appearance'];
+  /**
+   * Appearance of icon in `Meta` component
+   */
+  iconAppearance: IconProps['appearance'];
+  /**
+   * Appearance of label in `Meta` component
+   */
+  labelAppearance: TextProps['appearance'];
 }
 
 export const MetaList = (props: MetaListProps) => {
-  const { list, seperator } = props;
+  const {
+    list,
+    seperator,
+    seperatorAppearance,
+    iconAppearance,
+    labelAppearance,
+    className
+  } = props;
+
   const baseProps = extractBaseProps(props);
 
-  return (
-    <div {...baseProps} className={'MetaList'}>
+  const MetaClass = classNames({
+    ['MetaList']: true,
+  }, className);
 
-      {seperator && (<span className={'MetaList-seperator MetaList-separator--left'} />)}
+  const SeperatorClass = classNames({
+    ['MetaList-seperator']: true,
+  });
+
+  const LeftSeperatorClass = classNames({
+    ['MetaList-seperator']: true,
+    ['MetaList-seperator--left']: true
+  });
+
+  return (
+    <div {...baseProps} className={MetaClass}>
+      {seperator && (
+        <Icon
+          name="fiber_manual_record"
+          size={8}
+          className={LeftSeperatorClass}
+          appearance={seperatorAppearance}
+        />
+      )}
 
       {list.map((item, ind) => {
         const { label = '', icon } = item;
-        const rightSeperator = ind === ((list.length) - 1) ? false : true;
+        const rightSeperator = ind !== list.length - 1;
+
         return (
           <span key={ind} className="MetaList-item">
             <Meta
               label={label}
               icon={icon}
+              iconAppearance={iconAppearance}
+              labelAppearance={labelAppearance}
             />
-            {rightSeperator && (<span className={'MetaList-seperator'} />)}
+            {rightSeperator && (
+              <Icon
+                name="fiber_manual_record"
+                size={8}
+                className={SeperatorClass}
+                appearance={seperatorAppearance}
+              />
+            )}
           </span>
         );
       })}
@@ -40,5 +103,11 @@ export const MetaList = (props: MetaListProps) => {
 };
 
 MetaList.displayName = 'MetaList';
+
+MetaList.defaultProps = {
+  seperatorAppearance: 'disabled',
+  iconAppearance: 'disabled',
+  labelAppearance: 'subtle'
+};
 
 export default MetaList;
