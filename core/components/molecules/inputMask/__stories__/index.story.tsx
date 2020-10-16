@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { select, text, boolean } from '@storybook/addon-knobs';
-import InputMask from '../InputMask';
-import { Masks } from '@/utils';
+import { InputMask, Utils } from '@/index';
 import { action } from '@storybook/addon-actions';
 
 // CSF format story
@@ -47,11 +46,6 @@ export const all = () => {
     false
   );
 
-  // const label = text(
-  //   'label',
-  //   ''
-  // );
-
   const inlineLabel = text(
     'inlineLabel',
     ''
@@ -92,7 +86,7 @@ export const all = () => {
         error={error}
         caption={caption}
         info={info}
-        mask={Masks.masks.date['mm/dd/yyyy']}
+        mask={Utils.masks.date['mm/dd/yyyy']}
       />
     </div>
   );
