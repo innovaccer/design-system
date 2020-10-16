@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1602585780172 
+   * Generated on: 1602831092470 
    *      Package: @innovaccer/design-system
-   *      Version: v1.3.0-3
+   *      Version: v1.3.0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -7972,8 +7972,8 @@ function getWidth(width) {
   if (typeof width === 'number') return width;
 
   if (width.charAt(width.length - 1) === '%' && this.state.init) {
-    var withCheckbox = this.props.withCheckbox;
-    var checkboxWidth = withCheckbox ? this.gridRef.querySelector('.Grid-cell--checkbox').clientWidth : 0;
+    var checkboxCell = this.gridRef.querySelector('.Grid-cell--checkbox');
+    var checkboxWidth = checkboxCell ? checkboxCell.clientWidth : 0;
     var gridWidth = this.gridRef.clientWidth - checkboxWidth;
     return gridWidth * (+width.slice(0, -1) / 100);
   }
