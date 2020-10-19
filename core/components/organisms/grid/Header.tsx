@@ -10,6 +10,8 @@ import {
   updateFilterListFunction
 } from './Grid';
 import { getInit } from './utility';
+import { DraggableDropdown } from './DraggableDropdown';
+import { DropdownProps } from '@/index.type';
 
 export interface ExternalHeaderProps {
   children?: React.ReactNode;
@@ -102,26 +104,22 @@ export const Header = (props: HeaderProps) => {
     }
   };
 
-  const onHideColumn = (selected: any[]) => {
-    const newSchema = schema.map(s => ({
-      ...s,
-      hidden: selected.findIndex(val => val === s.name) === -1
-    }));
-
-    if (updateSchema) updateSchema(newSchema);
-  };
-
-  const pinnedSchema = schema.filter(s => s.pinned);
-  const leftPinnedSchema = pinnedSchema.filter(s => s.pinned === 'left');
-  const rightPinnedSchema = pinnedSchema.filter(s => s.pinned === 'right');
-  const unpinnedSchema = schema.filter(s => !s.pinned);
-  const renderedSchema = [...leftPinnedSchema, ...unpinnedSchema, ...rightPinnedSchema];
-
-  const columnOptions = renderedSchema.map(s => ({
+  const columnOptions = schema.map(s => ({
     label: s.displayName,
     value: s.name,
     selected: !s.hidden
   }));
+
+  const onDynamicColumnUpdate = (options: DropdownProps['options']) => {
+    const newSchema = options.map(option => ({
+      ...schema.find(colSchema => colSchema.name === option.value),
+      hidden: !option.selected
+    /* tslint:disable:no-object-literal-type-assertion */
+    } as ColumnSchema));
+    /* tslint:enable:no-object-literal-type-assertion */
+
+    if (updateSchema) updateSchema(newSchema);
+  };
 
   const selectedCount = data.filter(d => d._selected).length;
   const label = withCheckbox && selectedCount ?
@@ -250,29 +248,9 @@ export const Header = (props: HeaderProps) => {
         </div>
         {dynamicColumn && (
           <div className="Header-hideColumns">
-            <Dropdown
-              key={`${flag}`}
-              triggerSize={'tiny'}
-              withCheckbox={true}
-              showApplyButton={true}
+            <DraggableDropdown
               options={columnOptions}
-              totalOptions={columnOptions.length}
-              align={'left'}
-              triggerOptions={{
-                labelLimit: 0,
-                customLabel: (selected, totalOptions) => `Showing ${selected} of ${totalOptions} columns`,
-                customTrigger: triggerLabel => (
-                  <Button
-                    size="tiny"
-                    appearance="transparent"
-                    icon="keyboard_arrow_down_filled"
-                    iconAlign="right"
-                  >
-                    {triggerLabel ? triggerLabel : `Showing 0 of ${columnOptions.length} columns`}
-                  </Button>
-                )
-              }}
-              onChange={selected => onHideColumn(selected)}
+              onChange={onDynamicColumnUpdate}
             />
           </div>
         )}
