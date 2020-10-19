@@ -440,6 +440,11 @@
     margin: 0 var(--spacing-m);
 }
 
+.Header-draggableDropdown .Dropdown-wrapper {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
 .Header-filters {
     display: flex;
 }
