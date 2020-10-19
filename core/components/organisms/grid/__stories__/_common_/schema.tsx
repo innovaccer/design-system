@@ -95,7 +95,7 @@ const schema: Schema = [
     // status: "success"
   },
   {
-    name: 'email',
+    name: 'customCell',
     displayName: 'Custom Cell',
     width: 200,
     resizable: true,
@@ -106,7 +106,13 @@ const schema: Schema = [
       return (
         <>
           <Icon className="mr-5" name="events" />
-          <GridCell {...props} />
+          <GridCell
+            {...props}
+            schema={{
+              ...props.schema,
+              name: 'email'
+            }}
+          />
         </>
       );
     }
