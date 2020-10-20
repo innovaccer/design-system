@@ -4,12 +4,12 @@ exports[`DateRangePicker component
   
  1`] = `
 <Calendar
-  endDate={2020-03-10T18:30:00.000Z}
+  endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
+  startDate={2020-03-03T00:00:00.000Z}
   view="date"
 />
 `;
@@ -18,12 +18,12 @@ exports[`DateRangePicker component
   monthsInView: 1
  1`] = `
 <Calendar
-  endDate={2020-03-10T18:30:00.000Z}
+  endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   monthsInView={1}
   onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
+  startDate={2020-03-03T00:00:00.000Z}
   view="date"
 />
 `;
@@ -32,13 +32,13 @@ exports[`DateRangePicker component
   monthsInView: 1
  2`] = `
 <Calendar
-  endDate={2020-03-10T18:30:00.000Z}
+  endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   monthNav={11}
   monthsInView={1}
   onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
+  startDate={2020-03-03T00:00:00.000Z}
   view="date"
   yearNav={2019}
 />
@@ -48,12 +48,12 @@ exports[`DateRangePicker component
   monthsInView: 2
  1`] = `
 <Calendar
-  endDate={2020-03-10T18:30:00.000Z}
+  endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
+  startDate={2020-03-03T00:00:00.000Z}
   view="date"
 />
 `;
@@ -62,13 +62,13 @@ exports[`DateRangePicker component
   monthsInView: 2
  2`] = `
 <Calendar
-  endDate={2020-03-10T18:30:00.000Z}
+  endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   monthNav={11}
   monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
+  startDate={2020-03-03T00:00:00.000Z}
   view="date"
   yearNav={2019}
 />
@@ -78,12 +78,12 @@ exports[`DateRangePicker component
   monthsInView: 3
  1`] = `
 <Calendar
-  endDate={2020-03-10T18:30:00.000Z}
+  endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   monthsInView={3}
   onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
+  startDate={2020-03-03T00:00:00.000Z}
   view="date"
 />
 `;
@@ -92,13 +92,13 @@ exports[`DateRangePicker component
   monthsInView: 3
  2`] = `
 <Calendar
-  endDate={2020-03-10T18:30:00.000Z}
+  endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   monthNav={11}
   monthsInView={3}
   onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
+  startDate={2020-03-03T00:00:00.000Z}
   view="date"
   yearNav={2019}
 />
@@ -205,12 +205,12 @@ exports[`DateRangePicker component
   triggerClass="w-100"
 >
   <Calendar
-    endDate={2020-03-10T18:30:00.000Z}
+    endDate={2020-03-11T00:00:00.000Z}
     firstDayOfWeek="sunday"
     monthsInView={2}
     onRangeChange={[Function]}
     rangePicker={true}
-    startDate={2020-03-02T18:30:00.000Z}
+    startDate={2020-03-03T00:00:00.000Z}
     view="date"
   />
 </Popover>
@@ -317,12 +317,12 @@ exports[`DateRangePicker component
   triggerClass="w-100"
 >
   <Calendar
-    endDate={2020-03-10T18:30:00.000Z}
+    endDate={2020-03-11T00:00:00.000Z}
     firstDayOfWeek="sunday"
     monthsInView={2}
     onRangeChange={[Function]}
     rangePicker={true}
-    startDate={2020-03-02T18:30:00.000Z}
+    startDate={2020-03-03T00:00:00.000Z}
     view="date"
   />
 </Popover>
@@ -332,12 +332,12 @@ exports[`DateRangePicker component
   view: "date"
  1`] = `
 <Calendar
-  endDate={2020-03-10T18:30:00.000Z}
+  endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
+  startDate={2020-03-03T00:00:00.000Z}
   view="date"
 />
 `;
@@ -346,12 +346,12 @@ exports[`DateRangePicker component
   view: "month"
  1`] = `
 <Calendar
-  endDate={2020-03-10T18:30:00.000Z}
+  endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
+  startDate={2020-03-03T00:00:00.000Z}
   view="month"
 />
 `;
@@ -360,12 +360,12 @@ exports[`DateRangePicker component
   view: "year"
  1`] = `
 <Calendar
-  endDate={2020-03-10T18:30:00.000Z}
+  endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
+  startDate={2020-03-03T00:00:00.000Z}
   view="year"
 />
 `;
@@ -374,12 +374,12 @@ exports[`DateRangePicker component
   withInput: false
  1`] = `
 <Calendar
-  endDate={2020-03-10T18:30:00.000Z}
+  endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
-  startDate={2020-03-02T18:30:00.000Z}
+  startDate={2020-03-03T00:00:00.000Z}
   view="date"
 />
 `;
@@ -485,12 +485,12 @@ exports[`DateRangePicker component
   triggerClass="w-100"
 >
   <Calendar
-    endDate={2020-03-10T18:30:00.000Z}
+    endDate={2020-03-11T00:00:00.000Z}
     firstDayOfWeek="sunday"
     monthsInView={2}
     onRangeChange={[Function]}
     rangePicker={true}
-    startDate={2020-03-02T18:30:00.000Z}
+    startDate={2020-03-03T00:00:00.000Z}
     view="date"
   />
 </Popover>
