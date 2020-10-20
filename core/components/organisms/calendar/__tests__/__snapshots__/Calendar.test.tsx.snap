@@ -664,7 +664,7 @@ exports[`Calendar component
 `;
 
 exports[`Calendar component 
-  disabledAfter: 1584642600000
+  disabledAfter: 1584662400000
  1`] = `
 <div
   className="Calendar-wrapper undefined"
@@ -1327,7 +1327,7 @@ exports[`Calendar component
 `;
 
 exports[`Calendar component 
-  disabledBefore: 1583778600000
+  disabledBefore: 1583798400000
  1`] = `
 <div
   className="Calendar-wrapper undefined"
@@ -1990,7 +1990,7 @@ exports[`Calendar component
 `;
 
 exports[`Calendar component 
-  disabledBefore: 1583778600000, disabledAfter: 1584642600000
+  disabledBefore: 1583798400000, disabledAfter: 1584662400000
  1`] = `
 <div
   className="Calendar-wrapper undefined"

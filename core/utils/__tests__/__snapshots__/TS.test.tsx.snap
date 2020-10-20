@@ -785,8 +785,9 @@ exports[`TS renders children 1`] = `
     Hello World!
   </i>
   <div
-    class="Input Input--minWidth Input--regular"
+    class="Input Input--regular"
     data-test="DesignSystem-InputWrapper"
+    style="min-width: 256px;"
   >
     <input
       class="Input-input Input-input--regular"
@@ -799,8 +800,9 @@ exports[`TS renders children 1`] = `
     class="d-flex flex-column flex-grow-1"
   >
     <div
-      class="Input Input--minWidth Input--regular"
+      class="Input Input--regular"
       data-test="DesignSystem-InputWrapper"
+      style="min-width: 256px;"
     >
       <input
         autocomplete="off"
@@ -1134,6 +1136,7 @@ exports[`TS renders children 1`] = `
       </div>
       <div
         class="Slider-handle"
+        style="left: calc(0.00% - 0px);"
         tabindex="1"
       >
         <span
@@ -1328,6 +1331,7 @@ exports[`TS renders children 1`] = `
       </div>
       <div
         class="Slider-handle"
+        style="left: calc(0.00% - 0px);"
         tabindex="1"
       >
         <span
@@ -1340,6 +1344,7 @@ exports[`TS renders children 1`] = `
       </div>
       <div
         class="Slider-handle"
+        style="left: calc(100.00% - 0px);"
         tabindex="1"
       >
         <span
@@ -1380,7 +1385,7 @@ exports[`TS renders children 1`] = `
     class="Textarea"
   >
     <textarea
-      class="Textarea-textarea"
+      class="Textarea-textarea Textarea-textarea--resize"
       data-test="DesignSystem-Textarea"
       rows="3"
     />
