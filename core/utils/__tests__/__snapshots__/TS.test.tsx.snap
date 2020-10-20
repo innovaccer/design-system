@@ -1136,6 +1136,7 @@ exports[`TS renders children 1`] = `
       </div>
       <div
         class="Slider-handle"
+        style="left: calc(0.00% - 0px);"
         tabindex="1"
       >
         <span
@@ -1330,6 +1331,7 @@ exports[`TS renders children 1`] = `
       </div>
       <div
         class="Slider-handle"
+        style="left: calc(0.00% - 0px);"
         tabindex="1"
       >
         <span
@@ -1342,6 +1344,7 @@ exports[`TS renders children 1`] = `
       </div>
       <div
         class="Slider-handle"
+        style="left: calc(100.00% - 0px);"
         tabindex="1"
       >
         <span
@@ -2871,7 +2874,7 @@ exports[`TS renders children 1`] = `
     </div>
   </div>
   <div
-    class="Navigation Navigation--horizontal"
+    class="Navigation Navigation--horizontal justify-content-center"
   />
   <div
     class="PageHeader-wrapper PageHeader-wrapper--separator"

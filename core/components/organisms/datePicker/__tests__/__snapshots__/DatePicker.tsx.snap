@@ -45,7 +45,7 @@ exports[`DatePicker component
   triggerClass="w-100"
 >
   <Calendar
-    date={2020-02-29T18:30:00.000Z}
+    date={2020-03-01T00:00:00.000Z}
     firstDayOfWeek="sunday"
     monthsInView={1}
     onDateChange={[Function]}
@@ -99,7 +99,7 @@ exports[`DatePicker component
   triggerClass="w-100"
 >
   <Calendar
-    date={2020-02-29T18:30:00.000Z}
+    date={2020-03-01T00:00:00.000Z}
     firstDayOfWeek="sunday"
     monthsInView={1}
     onDateChange={[Function]}
@@ -112,7 +112,7 @@ exports[`DatePicker component
   view: "date"
  1`] = `
 <Calendar
-  date={2020-02-29T18:30:00.000Z}
+  date={2020-03-01T00:00:00.000Z}
   firstDayOfWeek="sunday"
   monthsInView={1}
   onDateChange={[Function]}
@@ -124,7 +124,7 @@ exports[`DatePicker component
   view: "month"
  1`] = `
 <Calendar
-  date={2020-02-29T18:30:00.000Z}
+  date={2020-03-01T00:00:00.000Z}
   firstDayOfWeek="sunday"
   monthsInView={1}
   onDateChange={[Function]}
@@ -136,7 +136,7 @@ exports[`DatePicker component
   view: "year"
  1`] = `
 <Calendar
-  date={2020-02-29T18:30:00.000Z}
+  date={2020-03-01T00:00:00.000Z}
   firstDayOfWeek="sunday"
   monthsInView={1}
   onDateChange={[Function]}
@@ -148,7 +148,7 @@ exports[`DatePicker component
   withInput: false
  1`] = `
 <Calendar
-  date={2020-02-29T18:30:00.000Z}
+  date={2020-03-01T00:00:00.000Z}
   firstDayOfWeek="sunday"
   monthsInView={1}
   onDateChange={[Function]}
@@ -201,7 +201,7 @@ exports[`DatePicker component
   triggerClass="w-100"
 >
   <Calendar
-    date={2020-02-29T18:30:00.000Z}
+    date={2020-03-01T00:00:00.000Z}
     firstDayOfWeek="sunday"
     monthsInView={1}
     onDateChange={[Function]}
