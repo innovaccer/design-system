@@ -26,7 +26,7 @@ jobs:
         uses: /innovaccer/design-system/actions/check-release-commit@feat-coverage
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          lcov-file: ./coverage/lcov.info
+          test-command: npm run test
 
       - name: build
         run: npm run build
