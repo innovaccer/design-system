@@ -1,6 +1,6 @@
 
 -------------------
- **v1.3.0**  (2020-10-16) 
+ **v1.3.1-0**  (2020-10-20) 
 
-* aa130cb v1.3.0
-* 2f1ae5c chore(storybook): fixes InputMask and Grid stories
+* 58b221a v1.3.1-0
+* 2f87382 feat(Navigation): adds align prop

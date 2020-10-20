@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1602831092884 
+   * Generated on: 1603192595782 
    *      Package: @innovaccer/design-system
-   *      Version: v1.3.0
+   *      Version: v1.3.1-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -9296,6 +9296,7 @@
       var _a;
 
       var type = props.type,
+          align = props.align,
           menus = props.menus,
           active = props.active,
           onClick = props.onClick,
@@ -9476,13 +9477,14 @@
         })));
       };
 
-      var classes = classNames__default['default']((_a = {}, _a['Navigation'] = true, _a["Navigation--" + type] = type, _a['Navigation--collapsed'] = !expanded, _a), className);
+      var classes = classNames__default['default']((_a = {}, _a['Navigation'] = true, _a["Navigation--" + type] = type, _a['justify-content-center'] = type === 'horizontal' && align === 'center', _a['Navigation--collapsed'] = !expanded, _a), className);
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
         className: classes
       }), type === 'horizontal' ? getHorizontalMenu(menus) : getVerticalMenu());
     };
     Navigation.defaultProps = {
       type: 'horizontal',
+      align: 'center',
       expanded: true,
       autoCollapse: true
     };

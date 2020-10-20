@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1602831092470 
+   * Generated on: 1603192595391 
    *      Package: @innovaccer/design-system
-   *      Version: v1.3.0
+   *      Version: v1.3.1-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -9891,6 +9891,7 @@ var Navigation = function Navigation(props) {
   var _classNames5;
 
   var type = props.type,
+      align = props.align,
       menus = props.menus,
       active = props.active,
       onClick = props.onClick,
@@ -10077,13 +10078,14 @@ var Navigation = function Navigation(props) {
     })));
   };
 
-  var classes = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'Navigation', true), _defineProperty(_classNames5, "Navigation--".concat(type), type), _defineProperty(_classNames5, 'Navigation--collapsed', !expanded), _classNames5), className);
+  var classes = classNames((_classNames5 = {}, _defineProperty(_classNames5, 'Navigation', true), _defineProperty(_classNames5, "Navigation--".concat(type), type), _defineProperty(_classNames5, 'justify-content-center', type === 'horizontal' && align === 'center'), _defineProperty(_classNames5, 'Navigation--collapsed', !expanded), _classNames5), className);
   return /*#__PURE__*/createElement("div", _extends({}, baseProps, {
     className: classes
   }), type === 'horizontal' ? getHorizontalMenu(menus) : getVerticalMenu());
 };
 Navigation.defaultProps = {
   type: 'horizontal',
+  align: 'center',
   expanded: true,
   autoCollapse: true
 };

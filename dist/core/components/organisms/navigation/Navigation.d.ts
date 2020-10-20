@@ -1,6 +1,7 @@
 /// <reference types="react" />
 import { BaseProps } from "../../../utils/types";
 export declare type LayoutType = 'vertical' | 'horizontal';
+export declare type Align = 'left' | 'center';
 export declare type Menu = {
     name: string;
     label: string;
@@ -16,6 +17,7 @@ declare type ActiveMenu = ({
 }) & Partial<Menu>;
 export interface NavigationProps extends BaseProps {
     type: LayoutType;
+    align: Align;
     menus: Menu[];
     active?: ActiveMenu;
     onClick?: (menu: Menu) => void;
@@ -28,6 +30,7 @@ export declare const Navigation: {
     (props: NavigationProps): JSX.Element;
     defaultProps: {
         type: string;
+        align: string;
         expanded: boolean;
         autoCollapse: boolean;
     };

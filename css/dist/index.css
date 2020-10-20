@@ -2947,7 +2947,7 @@ body {
 }
 
 .Navigation--horizontal {
-  justify-content: center;
+  flex-grow: 1;
 }
 
 .Navigation--vertical {
