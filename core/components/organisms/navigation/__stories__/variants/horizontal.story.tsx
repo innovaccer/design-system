@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Navigation } from '@/index';
 import { action } from '@storybook/addon-actions';
 import { Menu } from '../../Navigation';
+import { select } from '@storybook/addon-knobs';
 
 export const horizontal = () => {
   const data = [
@@ -31,6 +32,12 @@ export const horizontal = () => {
     setActive(menu);
   };
 
+  const align = select(
+    'align',
+    ['left', 'center'],
+    'center'
+  );
+
   return (
     <div style={{ height: '200px', background: 'var(--secondary-lightest)' }}>
       <div
@@ -42,6 +49,7 @@ export const horizontal = () => {
         }}
       >
         <Navigation
+          align={align}
           menus={data}
           active={active}
           onClick={onClickHandler}
@@ -78,6 +86,8 @@ const customCode = `() => {
     setActive(menu);
   };
 
+  const align = 'center';
+
   return (
     <div style={{ height: '200px', background: 'var(--secondary-lightest)' }}>
       <div
@@ -89,6 +99,7 @@ const customCode = `() => {
         }}
       >
         <Navigation
+          align={align}
           menus={data}
           active={active}
           onClick={onClickHandler}
