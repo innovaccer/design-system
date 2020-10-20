@@ -5,6 +5,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 const { useState } = React;
 
 export type LayoutType = 'vertical' | 'horizontal';
+export type Align = 'left' | 'center';
 
 export type Menu = {
   name: string;
@@ -22,6 +23,10 @@ export interface NavigationProps extends BaseProps {
    * `Navigation` component type
    */
   type: LayoutType;
+  /**
+   * Alignment of `Navigation` component
+   */
+  align: Align;
   /**
    * List of menus to be rendered
    * <pre className="DocPage-codeBlock">
@@ -77,6 +82,7 @@ export interface NavigationProps extends BaseProps {
 export const Navigation = (props: NavigationProps) => {
   const {
     type,
+    align,
     menus,
     active,
     onClick,
@@ -278,6 +284,7 @@ export const Navigation = (props: NavigationProps) => {
   const classes = classNames({
     ['Navigation']: true,
     [`Navigation--${type}`]: type,
+    ['justify-content-center']: type === 'horizontal' && align === 'center',
     ['Navigation--collapsed']: !expanded
   }, className);
 
@@ -293,6 +300,7 @@ export const Navigation = (props: NavigationProps) => {
 
 Navigation.defaultProps = {
   type: 'horizontal',
+  align: 'center',
   expanded: true,
   autoCollapse: true
 };
