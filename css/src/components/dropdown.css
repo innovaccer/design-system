@@ -132,15 +132,6 @@
     line-height: var(--font-height);
 }
 
-.Option-subinfo {
-    font-size: var(--spacing-l);
-    color: var(--inverse-light);
-}
-
-.Option--selected .Option-subinfo {
-    color: var(--white);
-}
-
 .Dropdown-wrapper::-webkit-scrollbar {
     width: var(--spacing);
 }
