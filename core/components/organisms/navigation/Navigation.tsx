@@ -21,10 +21,16 @@ type ActiveMenu = ({ name: string } | { link: string }) & Partial<Menu>;
 export interface NavigationProps extends BaseProps {
   /**
    * `Navigation` component type
+   *
+   * `LayoutType: 'horizontal' | 'vertical'`
    */
   type: LayoutType;
   /**
    * Alignment of `Navigation` component
+   *
+   * **Applicable only in case of type: `horizontal`**
+   *
+   * `Align: 'left' | 'center'`
    */
   align: Align;
   /**
