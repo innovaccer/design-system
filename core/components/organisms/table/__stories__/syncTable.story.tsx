@@ -121,19 +121,24 @@ const customCode = `
       })
     },
     {
-      name: 'email',
+      name: 'customCell',
       displayName: 'Custom Cell',
       width: 200,
       resizable: true,
-      separator: true,
       cellType: 'WITH_META_LIST',
-      cellRenderer: (props) => {
-        return(
+      cellRenderer: props => {
+        return (
           <>
             <Icon className="mr-5" name="events" />
-            <GridCell {...props} />
+            <GridCell
+              {...props}
+              schema={{
+                ...props.schema,
+                name: 'email'
+              }}
+            />
           </>
-        )
+        );
       }
     },
   ];
