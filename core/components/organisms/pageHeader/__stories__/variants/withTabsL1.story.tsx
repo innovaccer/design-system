@@ -192,7 +192,10 @@ const customCode = `() => {
       <StatusHint appearance="alert">Alert</StatusHint>
     ),
     meta: (
-      <StatusHint appearance="default">Meta Data</StatusHint>
+      <MetaList
+        list={[{ label: 'Meta data' }]}
+        seperator={true}
+      />
     )
   };
   return (
