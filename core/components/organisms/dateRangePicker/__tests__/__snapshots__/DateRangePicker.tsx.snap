@@ -6,6 +6,11 @@ exports[`DateRangePicker component
 <Calendar
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
+  inputOptions={
+    Object {
+      "label": "Date",
+    }
+  }
   monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
@@ -20,6 +25,11 @@ exports[`DateRangePicker component
 <Calendar
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
+  inputOptions={
+    Object {
+      "label": "Date",
+    }
+  }
   monthsInView={1}
   onRangeChange={[Function]}
   rangePicker={true}
@@ -34,6 +44,11 @@ exports[`DateRangePicker component
 <Calendar
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
+  inputOptions={
+    Object {
+      "label": "Date",
+    }
+  }
   monthNav={11}
   monthsInView={1}
   onRangeChange={[Function]}
@@ -50,6 +65,11 @@ exports[`DateRangePicker component
 <Calendar
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
+  inputOptions={
+    Object {
+      "label": "Date",
+    }
+  }
   monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
@@ -64,6 +84,11 @@ exports[`DateRangePicker component
 <Calendar
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
+  inputOptions={
+    Object {
+      "label": "Date",
+    }
+  }
   monthNav={11}
   monthsInView={2}
   onRangeChange={[Function]}
@@ -80,6 +105,11 @@ exports[`DateRangePicker component
 <Calendar
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
+  inputOptions={
+    Object {
+      "label": "Date",
+    }
+  }
   monthsInView={3}
   onRangeChange={[Function]}
   rangePicker={true}
@@ -94,6 +124,11 @@ exports[`DateRangePicker component
 <Calendar
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
+  inputOptions={
+    Object {
+      "label": "Date",
+    }
+  }
   monthNav={11}
   monthsInView={3}
   onRangeChange={[Function]}
@@ -114,7 +149,7 @@ exports[`DateRangePicker component
   on="click"
   onToggle={[Function]}
   open={false}
-  position="bottom"
+  position="bottom-start"
   trigger={
     <Row>
       <Column
@@ -207,6 +242,11 @@ exports[`DateRangePicker component
   <Calendar
     endDate={2020-03-11T00:00:00.000Z}
     firstDayOfWeek="sunday"
+    inputOptions={
+      Object {
+        "label": "Date",
+      }
+    }
     monthsInView={2}
     onRangeChange={[Function]}
     rangePicker={true}
@@ -226,7 +266,7 @@ exports[`DateRangePicker component
   on="click"
   onToggle={[Function]}
   open={true}
-  position="bottom"
+  position="bottom-start"
   trigger={
     <Row>
       <Column
@@ -319,6 +359,11 @@ exports[`DateRangePicker component
   <Calendar
     endDate={2020-03-11T00:00:00.000Z}
     firstDayOfWeek="sunday"
+    inputOptions={
+      Object {
+        "label": "Date",
+      }
+    }
     monthsInView={2}
     onRangeChange={[Function]}
     rangePicker={true}
@@ -334,6 +379,11 @@ exports[`DateRangePicker component
 <Calendar
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
+  inputOptions={
+    Object {
+      "label": "Date",
+    }
+  }
   monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
@@ -348,6 +398,11 @@ exports[`DateRangePicker component
 <Calendar
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
+  inputOptions={
+    Object {
+      "label": "Date",
+    }
+  }
   monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
@@ -362,6 +417,11 @@ exports[`DateRangePicker component
 <Calendar
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
+  inputOptions={
+    Object {
+      "label": "Date",
+    }
+  }
   monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
@@ -376,6 +436,11 @@ exports[`DateRangePicker component
 <Calendar
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
+  inputOptions={
+    Object {
+      "label": "Date",
+    }
+  }
   monthsInView={2}
   onRangeChange={[Function]}
   rangePicker={true}
@@ -394,7 +459,7 @@ exports[`DateRangePicker component
   on="click"
   onToggle={[Function]}
   open={false}
-  position="bottom"
+  position="bottom-start"
   trigger={
     <Row>
       <Column
@@ -487,6 +552,11 @@ exports[`DateRangePicker component
   <Calendar
     endDate={2020-03-11T00:00:00.000Z}
     firstDayOfWeek="sunday"
+    inputOptions={
+      Object {
+        "label": "Date",
+      }
+    }
     monthsInView={2}
     onRangeChange={[Function]}
     rangePicker={true}
