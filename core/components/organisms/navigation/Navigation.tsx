@@ -291,6 +291,7 @@ export const Navigation = (props: NavigationProps) => {
     ['Navigation']: true,
     [`Navigation--${type}`]: type,
     ['justify-content-center']: type === 'horizontal' && align === 'center',
+    ['justify-content-start']: type === 'horizontal' && align === 'left',
     ['Navigation--collapsed']: !expanded
   }, className);
 
