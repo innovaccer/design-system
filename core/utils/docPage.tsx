@@ -168,6 +168,7 @@ ${jsx.split('\n').map(l => `    ${l}`).join('\n')}
     return (
       <Card
         shadow="light"
+        className="overflow-hidden"
       >
         <LiveProvider code={jsxCode} scope={{ ...DS, ...importScope }}>
           <Preview

@@ -45,3 +45,9 @@ html, body {
   height: 100px;
   border: var(--spacing-xs) dotted black;
 }
+
+.sbdocs-preview {
+  border-radius: 0 !important;
+  border: 0 !important;
+  border-bottom: var(--border);
+}
