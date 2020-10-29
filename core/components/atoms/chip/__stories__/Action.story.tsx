@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions';
 import * as React from 'react';
 import Chip from '../Chip';
 
@@ -8,6 +9,7 @@ export const actionChip = () => (
     disabled={false}
     type="action"
     name={'chip'}
+    onClick={action('on-click')}
   />
 );
 

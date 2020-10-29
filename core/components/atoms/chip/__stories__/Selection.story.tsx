@@ -1,15 +1,20 @@
 import * as React from 'react';
 import Chip from '../Chip';
 
-export const selection = () => (
-  <Chip
-    label="Yes"
-    clearButton={false}
-    type="selection"
-    selected={false}
-    name={'chip'}
-  />
-);
+export const selection = () => {
+  const [selected, setSelected] = React.useState(false);
+
+  return (
+    <Chip
+      label="Yes"
+      clearButton={false}
+      type="selection"
+      selected={selected}
+      name={'chip'}
+      onClick={() => setSelected(!selected)}
+    />
+  );
+};
 
 export default {
   title: 'Atoms|Chip',

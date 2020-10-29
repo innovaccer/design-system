@@ -139,7 +139,7 @@ const sizeMapping = {
 };
 
 /**
- * ######Input has two types:
+ * ###### Input has two types:
  *  - [Controlled Input](https://reactjs.org/docs/forms.html#controlled-components)
  *  - [Uncontrolled Input](https://reactjs.org/docs/uncontrolled-components.html)
  */
