@@ -20,7 +20,7 @@ const customCode = `
     onDateChange(date, dateVal) {
       this.setState({
         date: dateVal,
-        open: true
+        open: !!date
       });
     }
 
@@ -47,14 +47,14 @@ const customCode = `
       return (
         <div className="d-flex">
           <div className="d-flex flex-column">
-            <Label>Date</Label>
+            <Label withInput>Date</Label>
             <DatePicker
               withInput={true}
               onDateChange={this.onDateChange.bind(this)}
             />
           </div>
           <div className="d-flex flex-column ml-5" style={{width: 'var(--spacing-8)'}}>
-            <Label>Time</Label>
+            <Label withInput>Time</Label>
             <Dropdown
               open={open}
               onPopperToggle={this.onPopperToggle.bind(this)}

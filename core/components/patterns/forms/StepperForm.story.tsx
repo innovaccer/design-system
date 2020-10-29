@@ -188,7 +188,7 @@ const customCode = `
                   />
                 </div>
                 <Label className="mt-6" withInput={true} required>Retention</Label>
-                <Switch appearance="primary" defaultChecked={true} />
+                <Switch appearance="primary" defaultChecked={true} className="d-flex" />
               </div>
             </form>
           </Card>
