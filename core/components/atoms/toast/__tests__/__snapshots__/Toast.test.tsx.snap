@@ -220,7 +220,7 @@ exports[`Toast component
   title: "Sample Toast", message: "Sample string", appearance: "alert", onClose: "[Function]"
  1`] = `
 <div
-  className="Toast Toast--alert"
+  className="Toast Toast--withMessage Toast--alert"
 >
   <div
     className="Toast-icon Toast-icon--left"
@@ -275,7 +275,7 @@ exports[`Toast component
   title: "Sample Toast", message: "Sample string", appearance: "alert", onClose: "[Function]", actions: [{"label":"Action 1","onClick":"[Function]"}]
  1`] = `
 <div
-  className="Toast Toast--alert"
+  className="Toast Toast--withMessage Toast--alert"
 >
   <div
     className="Toast-icon Toast-icon--left"
@@ -340,7 +340,7 @@ exports[`Toast component
   title: "Sample Toast", message: "Sample string", appearance: "default", onClose: "[Function]"
  1`] = `
 <div
-  className="Toast Toast--default"
+  className="Toast Toast--withMessage Toast--default"
 >
   <div
     className="Toast-body"
@@ -386,7 +386,7 @@ exports[`Toast component
   title: "Sample Toast", message: "Sample string", appearance: "default", onClose: "[Function]", actions: [{"label":"Action 1","onClick":"[Function]"}]
  1`] = `
 <div
-  className="Toast Toast--default"
+  className="Toast Toast--withMessage Toast--default"
 >
   <div
     className="Toast-body"
@@ -442,7 +442,7 @@ exports[`Toast component
   title: "Sample Toast", message: "Sample string", appearance: "info", onClose: "[Function]"
  1`] = `
 <div
-  className="Toast Toast--info"
+  className="Toast Toast--withMessage Toast--info"
 >
   <div
     className="Toast-icon Toast-icon--left"
@@ -497,7 +497,7 @@ exports[`Toast component
   title: "Sample Toast", message: "Sample string", appearance: "info", onClose: "[Function]", actions: [{"label":"Action 1","onClick":"[Function]"}]
  1`] = `
 <div
-  className="Toast Toast--info"
+  className="Toast Toast--withMessage Toast--info"
 >
   <div
     className="Toast-icon Toast-icon--left"
@@ -562,7 +562,7 @@ exports[`Toast component
   title: "Sample Toast", message: "Sample string", appearance: "success", onClose: "[Function]"
  1`] = `
 <div
-  className="Toast Toast--success"
+  className="Toast Toast--withMessage Toast--success"
 >
   <div
     className="Toast-icon Toast-icon--left"
@@ -617,7 +617,7 @@ exports[`Toast component
   title: "Sample Toast", message: "Sample string", appearance: "success", onClose: "[Function]", actions: [{"label":"Action 1","onClick":"[Function]"}]
  1`] = `
 <div
-  className="Toast Toast--success"
+  className="Toast Toast--withMessage Toast--success"
 >
   <div
     className="Toast-icon Toast-icon--left"
@@ -682,7 +682,7 @@ exports[`Toast component
   title: "Sample Toast", message: "Sample string", appearance: "warning", onClose: "[Function]"
  1`] = `
 <div
-  className="Toast Toast--warning"
+  className="Toast Toast--withMessage Toast--warning"
 >
   <div
     className="Toast-icon Toast-icon--left"
@@ -737,7 +737,7 @@ exports[`Toast component
   title: "Sample Toast", message: "Sample string", appearance: "warning", onClose: "[Function]", actions: [{"label":"Action 1","onClick":"[Function]"}]
  1`] = `
 <div
-  className="Toast Toast--warning"
+  className="Toast Toast--withMessage Toast--warning"
 >
   <div
     className="Toast-icon Toast-icon--left"

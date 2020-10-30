@@ -63,7 +63,8 @@ export const Toast = (props: ToastProps) => {
 
   const wrapperClass = classNames({
     ['Toast']: true,
-    [`Toast--${appearance}`]: appearance,
+    ['Toast--withMessage']: message,
+    [`Toast--${appearance}`]: appearance
   }, className);
 
   const IconMapping: Record<string, any> = {
