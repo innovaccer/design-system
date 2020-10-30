@@ -93,6 +93,11 @@ Components can be imported as mentioned below:
 
 ```
 
+## Tutorial
+
+We have created a tutorial to guide you in creating an awesome app with Innovaccer Design System components. Please find it [here](/docs/AppTutorial.md).
+
+
 ## How to run locally?
 
 ```bash
