@@ -14,7 +14,7 @@ export const primary = create({
   appBorderRadius: 4,
 
   // Typography
-  fontBase: '"Open Sans", sans-serif',
+  fontBase: '"Nunito Sans", "Open Sans", sans-serif',
   fontCode: 'monospace',
 
   // Text colors
