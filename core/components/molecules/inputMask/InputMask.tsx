@@ -39,6 +39,10 @@ export interface MaskProps extends BaseProps {
   onClear?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 export type InputMaskProps = InputProps & MaskProps;
+type SelectionPos = {
+  start: number,
+  end: number
+};
 
 /**
  * It works as Uncontrolled Input
@@ -59,135 +63,187 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     onChange,
     onBlur,
     onClick,
+    onFocus,
     onClear,
     className,
     ...rest
   } = props;
 
+  const getNewCursorPosition = (type: 'left' | 'right', position: number): number => {
+    if (type === 'right') {
+      for (let i = position; i < mask.length; i++) {
+        if (isEditable(i)) return i;
+      }
+      return mask.length;
+    }
+    if (type === 'left') {
+      for (let i = position; i >= 0; i--) {
+        if (isEditable(i - 1)) return i;
+      }
+      return 0;
+    }
+    return position;
+  };
+
+  const getDefaultSelection = () => {
+    const pos = getNewCursorPosition('right', 0);
+    return { start: pos, end: pos };
+  };
+
+  const getPlaceholderValue = (start: number = 0, end: number = mask.length - 1) => {
+    let val = '';
+    for (let i = start; i <= end; i++) {
+      val += isEditable(i) ? placeholderChar : mask[i];
+    }
+    return val;
+  };
+
+  const getSelectionLength = (val: SelectionPos) => Math.abs(val.end - val.start);
+
+  const isEditable = (pos: number) => typeof mask[pos] === 'object';
+
+  const deferId = React.useRef<number | undefined>();
+  const selectionRef = React.useRef<number>(0);
   const [value, setValue] = React.useState<string>(defaultValue || valueProp || '');
-  const [caret, setCaret] = React.useState<number>(0);
+  const [selection, setSelection] = React.useState<SelectionPos>(getDefaultSelection());
   const ref = React.useRef<HTMLInputElement>(null);
-
-  const fixedMask = mask.filter(m => typeof m === 'string' && m.length === 1);
-
-  React.useEffect(() => {
-    setCaretPos(caret);
-  }, [caret]);
-
-  React.useEffect(() => {
-    if (ref.current && valueProp) {
-      setValue(convertToMasked(valueProp));
-    }
-  }, [valueProp]);
-
-  React.useEffect(() => {
-    if (ref.current) {
-      const el = ref.current;
-      el.addEventListener('keyup', e => {
-        if (e.keyCode === 37 || e.keyCode === 39) {
-          if (ref.current) {
-            const pos = ref.current.selectionEnd;
-            if (ref.current.selectionStart === ref.current.selectionEnd) {
-              if (pos) setCaret(pos);
-            }
-          }
-        }
-      });
-    }
-  }, [ref]);
 
   React.useImperativeHandle(forwardRef, () => ref.current as HTMLInputElement);
 
-  const setCaretPos = (pos: number): void => {
+  React.useEffect(() => {
+    if (ref.current && valueProp) {
+      setValue(valueProp);
+    }
+  }, [valueProp]);
+
+  const setCursorPosition = (val: number) => setSelectionPos({ start: val, end: val });
+
+  const getCurrSelection = () => ({
+    start: ref.current!.selectionStart || 0,
+    end: ref.current!.selectionEnd || 0,
+  });
+
+  const setSelectionPos = (pos: SelectionPos): void => {
     if (ref.current) {
       const el = ref.current;
-
-      // if (el.createTextRange) {
-      //   var range = el.createTextRange();
-      //   range.move('character', pos);
-      //   range.select();
-      //   return true;
-      // }
-
-      // else {
-      //   // (el.selectionStart === 0 added for Firefox bug)
-      if (el.selectionStart || el.selectionStart === 0) {
-        // el.focus();
-        const p = Math.ceil(pos);
-        el.setSelectionRange(p, p);
-      } else { // fail city, fortunately this never happens (as far as I've tested) :)
-        // el.focus();
-      }
-      // }
+      const start = Math.min(pos.start, pos.end);
+      const end = Math.max(pos.start, pos.end);
+      el.setSelectionRange(start, end);
     }
   };
 
-  const getRawValue = (val: string = '') => val.split('')
-    .filter(v => !(fixedMask.includes(v) || v === placeholderChar))
-    .join('');
+  const updateSelection = () => {
+    setSelection(getCurrSelection());
 
-  function convertToMasked(val: string = ''): string {
-    let currCaret: number = 0;
-    if (ref.current) {
-      currCaret = ref.current.selectionEnd ? ref.current.selectionEnd : 0;
+    deferId.current = window.requestAnimationFrame(updateSelection);
+  };
+
+  const insertAtIndex = (currValue: string, index: number, iterator: number = 0) => {
+    let newValue = '';
+    const newIndex = index + 1;
+    let newIterator = iterator;
+
+    if (index >= mask.length) {
+      return newValue;
     }
 
-    const oldRawValue = getRawValue(value);
-    const rawValue = getRawValue(val);
-    let it = 0;
-    let newVal = '';
-    let newCaretPos: number = currCaret;
-    for (let i = 0; i < mask.length; i++) {
-      const m = mask[i];
-      if (typeof m === 'object') {
-        if (it < rawValue.length && rawValue[it].match(m)) {
-          newVal += rawValue[it];
-        } else {
-          newVal += placeholderChar;
-        }
-        it++;
+    if (iterator >= currValue.length) {
+      selectionRef.current = index;
+      return newValue;
+    }
+
+    const m = mask[index];
+    if (isEditable(index)) {
+      if (currValue[iterator].match(m)) {
+        newValue += currValue[iterator];
       } else {
-        newVal += m;
-        if (i >= caret && i <= newCaretPos && it < rawValue.length) {
-          if (rawValue.length > oldRawValue.length) newCaretPos++;
-        }
+        newValue += placeholderChar;
       }
+      newIterator++;
+    } else {
+      newValue += m;
     }
 
-    setCaret(newCaretPos);
+    newValue += insertAtIndex(currValue, newIndex, newIterator);
 
-    return newVal;
-  }
-
-  const onClickHandler = (e: React.MouseEvent<HTMLInputElement>) => {
-    if (ref.current) {
-      const pos = ref.current.selectionStart ? ref.current.selectionStart : 0;
-      if (ref.current.selectionEnd === pos) setCaret(pos);
-    }
-    if (onClick) onClick(e);
+    return newValue;
   };
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputVal = e.currentTarget.value;
-    const maskedVal = convertToMasked(inputVal);
 
-    if (Utils.validators.isValid(validators, maskedVal)) {
-      setValue(maskedVal);
-      if (onChange) onChange(e, maskedVal);
+    const currSelection = getCurrSelection();
+    const start = Math.min(selection.start, currSelection.start);
+    const end = currSelection.end;
+
+    let cursorPosition = start;
+    let enteredVal = '';
+    let updatedVal = '';
+    let removedLength = 0;
+    let insertedStringLength = 0;
+
+    enteredVal = inputVal.slice(start, end);
+    updatedVal = insertAtIndex(enteredVal, start);
+    insertedStringLength = updatedVal.length;
+    if (currSelection.end > selection.end) {
+      removedLength = insertedStringLength ? getSelectionLength(selection) : 0;
+    } else if (inputVal.length < value.length) {
+      removedLength = value.length - inputVal.length;
+    }
+
+    cursorPosition += insertedStringLength;
+
+    const maskedVal = value.split('');
+    for (let i = 0; i < insertedStringLength; i++) {
+      maskedVal[start + i] = updatedVal[i];
+    }
+    for (let i = 0; i < removedLength; i++) {
+      const index = start + insertedStringLength + i;
+      maskedVal[index] = getPlaceholderValue(index, index);
+    }
+
+    const newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
+    if (removedLength === 1
+      && !updatedVal.length
+      && !isEditable(cursorPosition)
+      && newCursorPosition > 0) {
+      cursorPosition = newCursorPosition;
+      cursorPosition--;
+      maskedVal[cursorPosition] = placeholderChar;
+    } else if (removedLength !== 1) {
+      cursorPosition = newCursorPosition;
+    }
+    const newValue = maskedVal.slice(0, mask.length).join('');
+    window.requestAnimationFrame(() => setCursorPosition(cursorPosition));
+
+    if (Utils.validators.isValid(validators, newValue)) {
+      setValue(newValue);
+      if (onChange) onChange(e, newValue);
     }
   };
 
   const onBlurHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputVal = e.currentTarget.value;
-    const maskedVal = convertToMasked(inputVal);
 
-    if (onBlur) onBlur(e, maskedVal);
+    if (onBlur) onBlur(e, inputVal);
+
+    if (deferId.current) window.cancelAnimationFrame(deferId.current);
   };
 
   const onClearHandler = (e: React.MouseEvent<HTMLElement>) => {
     setValue('');
 
     if (onClear) onClear(e);
+  };
+
+  const onFocusHandler = (e: React.FocusEvent<HTMLInputElement>) => {
+    deferId.current = window.requestAnimationFrame(updateSelection);
+    if (!value) {
+      setValue(getPlaceholderValue());
+      window.requestAnimationFrame(() => setSelectionPos(getDefaultSelection()));
+    }
+
+    if (onFocus) onFocus(e);
   };
 
   const classes = classNames({
@@ -201,7 +257,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
         value={value}
         error={error}
         required={required}
-        onClick={onClickHandler}
+        onFocus={onFocusHandler}
         onChange={onChangeHandler}
         onClear={onClearHandler}
         onBlur={onBlurHandler}

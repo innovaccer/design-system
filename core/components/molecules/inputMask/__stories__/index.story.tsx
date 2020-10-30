@@ -66,6 +66,10 @@ export const all = () => {
     'sample info tooltip'
   );
 
+  const inputValidator = (val: string) => {
+    return Utils.validators.date(val, 'mm/dd/yyyy');
+  };
+
   return (
     <div className="w-25">
       <InputMask
@@ -87,6 +91,7 @@ export const all = () => {
         caption={caption}
         info={info}
         mask={Utils.masks.date['mm/dd/yyyy']}
+        validators={inputValidator}
       />
     </div>
   );
