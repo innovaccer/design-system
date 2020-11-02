@@ -1867,15 +1867,6 @@ body {
     line-height: var(--font-height);
 }
 
-.Option-subinfo {
-    font-size: var(--spacing-l);
-    color: var(--inverse-light);
-}
-
-.Option--selected .Option-subinfo {
-    color: var(--white);
-}
-
 .Dropdown-wrapper::-webkit-scrollbar {
     width: var(--spacing);
 }
@@ -2468,6 +2459,11 @@ body {
     margin: 0 var(--spacing-m);
 }
 
+.Header-draggableDropdown .Dropdown-wrapper {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
 .Header-filters {
     display: flex;
 }
@@ -2766,13 +2762,9 @@ body {
 }
 
 .MetaList-seperator {
-    border-radius: 50%;
-    height: var(--spacing-m);
-    width: var(--spacing-m);
     margin-left: var(--spacing);
-    background: var(--inverse-lightest);
 }
-.MetaList-separator--left{
+.MetaList-seperator--left{
     margin-right: var(--spacing-m);
 }
 .Meta-icon{
@@ -2985,6 +2977,7 @@ body {
 
 .Navigation--horizontal {
   flex-grow: 1;
+  justify-content: center;
 }
 
 .Navigation--vertical {
@@ -4056,6 +4049,10 @@ body {
     padding-left: var(--spacing-2);
     padding-right: var(--spacing-2);
     padding-top: var(--spacing-l);
+    padding-bottom: var(--spacing-l);
+}
+
+.Toast--withMessage {
     padding-bottom: var(--spacing-2);
 }
 

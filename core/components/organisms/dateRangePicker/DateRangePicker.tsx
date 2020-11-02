@@ -606,7 +606,6 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       endInputOptions,
       inputOptions,
       inputFormat,
-      position,
       validators,
       singleInput
     } = this.props;
@@ -721,7 +720,6 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
         <Popover
           trigger={trigger}
           triggerClass="w-100"
-          position={position}
           appendToBody={true}
           open={open}
           onToggle={this.onToggleHandler}
