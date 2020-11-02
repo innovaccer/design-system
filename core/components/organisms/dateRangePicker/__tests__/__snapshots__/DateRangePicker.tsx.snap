@@ -11,7 +11,7 @@ exports[`DateRangePicker component
       "label": "Date",
     }
   }
-  monthsInView={2}
+  monthsInView={1}
   onRangeChange={[Function]}
   rangePicker={true}
   startDate={2020-03-03T00:00:00.000Z}
@@ -384,7 +384,7 @@ exports[`DateRangePicker component
       "label": "Date",
     }
   }
-  monthsInView={2}
+  monthsInView={1}
   onRangeChange={[Function]}
   rangePicker={true}
   startDate={2020-03-03T00:00:00.000Z}
@@ -403,7 +403,7 @@ exports[`DateRangePicker component
       "label": "Date",
     }
   }
-  monthsInView={2}
+  monthsInView={1}
   onRangeChange={[Function]}
   rangePicker={true}
   startDate={2020-03-03T00:00:00.000Z}
@@ -422,7 +422,7 @@ exports[`DateRangePicker component
       "label": "Date",
     }
   }
-  monthsInView={2}
+  monthsInView={1}
   onRangeChange={[Function]}
   rangePicker={true}
   startDate={2020-03-03T00:00:00.000Z}
@@ -441,7 +441,7 @@ exports[`DateRangePicker component
       "label": "Date",
     }
   }
-  monthsInView={2}
+  monthsInView={1}
   onRangeChange={[Function]}
   rangePicker={true}
   startDate={2020-03-03T00:00:00.000Z}

@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions';
 export const withSingleInput = () => {
   const monthsInView = number(
     'monthsInView',
-    1
+    2
   );
 
   const startDate = date(

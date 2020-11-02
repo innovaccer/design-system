@@ -28,6 +28,7 @@ export interface SharedProps extends BaseProps {
    * Enables jumping to different view on clicking on Calendar Header
    *
    * **set to `false` if monthsInView > 1**
+   * @default true
    */
   jumpView?: boolean;
   /**

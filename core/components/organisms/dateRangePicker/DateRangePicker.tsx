@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Calendar, SharedProps } from '../calendar/Calendar';
+import { Calendar, CalendarProps, SharedProps } from '../calendar/Calendar';
 import { DateType, DateFormat } from '../calendar/types';
 import { Position } from '@/components/molecules/popover';
 import { InputMaskProps } from '@/components/molecules/inputMask';
@@ -83,6 +83,12 @@ export type DateRangePickerProps = SharedProps & {
    * `ValidatorFn: (val: string, format: string) => boolean`
    */
   validators: Validators;
+  /**
+   * Number of months rendered in view
+   *
+   * **Default set to `2` when `withInput: true`**
+   */
+  monthsInView?: CalendarProps['monthsInView'];
 };
 
 interface DateRangePickerState {
@@ -101,7 +107,7 @@ interface DateRangePickerState {
 export class DateRangePicker extends React.Component<DateRangePickerProps, DateRangePickerState> {
   static defaultProps = {
     ...Calendar.defaultProps,
-    monthsInView: 2,
+    monthsInView: undefined,
     position: 'bottom-start',
     inputFormat: 'mm/dd/yyyy',
     outputFormat: 'mm/dd/yyyy',
