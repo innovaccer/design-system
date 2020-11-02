@@ -1,6 +1,6 @@
 
 -------------------
- **v1.3.1-0**  (2020-10-20) 
+ **v1.3.1**  (2020-11-02) 
 
-* 58b221a v1.3.1-0
-* 2f87382 feat(Navigation): adds align prop
+* bda4fac v1.3.1
+* 42674f5 feat(ChatMessage): adds component
