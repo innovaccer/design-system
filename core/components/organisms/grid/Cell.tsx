@@ -41,7 +41,8 @@ const HeaderCell = (props: HeaderCellProps) => {
     showMenu,
     sortingList,
     filterList,
-    headCellTooltip
+    headCellTooltip,
+    showFilters
   } = _this.props;
 
   const {
@@ -147,7 +148,7 @@ const HeaderCell = (props: HeaderCellProps) => {
           )
         }
       </div>
-      {filters && (
+      {showFilters && filters && (
         <>
           {loading && !init ? (
             <span>

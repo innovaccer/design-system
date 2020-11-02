@@ -3,9 +3,11 @@ import { Table } from '@/index';
 import { TableProps } from '@/index.type';
 import { defaultProps, SyncTableProps, AsyncTableProps } from '@/components/organisms/table';
 
-export type ListProps = Omit<TableProps, 'showHead' | 'draggable' | 'showMenu' | 'headCellTooltip'>;
-export type SyncListProps = Omit<SyncTableProps, 'showHead' | 'draggable' | 'showMenu' | 'headCellTooltip'>;
-export type AsyncListProps = Omit<AsyncTableProps, 'showHead' | 'draggable' | 'showMenu' | 'headCellTooltip'>;
+type ExcludeTypes = 'showHead' | 'draggable' | 'showMenu' | 'headCellTooltip' | 'filterPosition';
+
+export type ListProps = Omit<TableProps, ExcludeTypes>;
+export type SyncListProps = Omit<SyncTableProps, ExcludeTypes>;
+export type AsyncListProps = Omit<AsyncTableProps, ExcludeTypes>;
 
 /**
  * **`List` is a pattern of `Table` with no Head Cells.**
@@ -17,6 +19,7 @@ export const List = (props: ListProps) => {
     <Table
       {...props}
       showHead={false}
+      filterPosition={'HEADER'}
     />
   );
 };

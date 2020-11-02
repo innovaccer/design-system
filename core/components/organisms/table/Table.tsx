@@ -21,6 +21,8 @@ export interface ErrorTemplateProps {
   errorType?: TableProps['errorType'];
 }
 
+export type FilterPosition = 'GRID' | 'HEADER';
+
 interface SyncProps {
   /**
    * <pre className="DocPage-codeBlock">
@@ -303,6 +305,10 @@ interface SharedTableProps extends BaseProps {
    * **Can be override by Column Schema**
    */
   separator?: GridProps['headCellTooltip'];
+  /**
+   * Filters position in the Table
+   */
+  filterPosition: FilterPosition;
 }
 
 export type SyncTableProps = SyncProps & SharedTableProps;
@@ -356,6 +362,7 @@ export const defaultProps = {
   loaderSchema: [],
   sortingList: [],
   filterList: {},
+  filterPosition: 'GRID',
   errorTemplate: defaultErrorTemplate
 };
 
@@ -662,7 +669,8 @@ export class Table extends React.Component<TableProps, TableState> {
       onRowClick,
       loaderSchema,
       errorTemplate,
-      className
+      className,
+      filterPosition
     } = this.props;
 
     const baseProps = extractBaseProps(this.props);
@@ -694,6 +702,7 @@ export class Table extends React.Component<TableProps, TableState> {
               onSelectAll={this.onSelectAll}
               withCheckbox={withCheckbox}
               withPagination={withPagination}
+              showFilters={filterPosition === 'HEADER'}
               {...headerAttr}
             >
               {headerChildren}
@@ -724,6 +733,7 @@ export class Table extends React.Component<TableProps, TableState> {
             loaderSchema={loaderSchema}
             errorTemplate={errorTemplate && errorTemplate({ errorType: this.state.errorType })}
             onRowClick={onRowClick}
+            showFilters={filterPosition === 'GRID'}
           />
         </div>
         {withPagination && (!this.state.loading && !this.state.error && totalPages > 1) && (
