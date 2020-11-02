@@ -36,6 +36,7 @@ export interface HeaderProps extends ExternalHeaderProps {
   // updateData?: updateDataFunction;
   updateSchema?: updateSchemaFunction;
   filterList?: GridProps['filterList'];
+  showFilters: boolean;
   updateFilterList?: updateFilterListFunction;
   onSelectAll?: onSelectAllFunction;
   searchTerm?: string;
@@ -64,7 +65,8 @@ export const Header = (props: HeaderProps) => {
     searchTerm,
     updateSearchTerm,
     dynamicColumn,
-    allowSelectAll
+    allowSelectAll,
+    showFilters
   } = props;
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
@@ -114,7 +116,7 @@ export const Header = (props: HeaderProps) => {
     const newSchema = options.map(option => ({
       ...schema.find(colSchema => colSchema.name === option.value),
       hidden: !option.selected
-    /* tslint:disable:no-object-literal-type-assertion */
+      /* tslint:disable:no-object-literal-type-assertion */
     } as ColumnSchema));
     /* tslint:enable:no-object-literal-type-assertion */
 
@@ -142,61 +144,36 @@ export const Header = (props: HeaderProps) => {
             />
           </div>
         )}
-        {!showHead && (
+        {showFilters && filterSchema.length > 0 && (
           <div className="Header-dropdown">
-            {/* {sortingSchema.length > 0 && (
-              <div className="Header-sorting">
-                {sortingSchema.map(s => {
-                  const {
-                    name,
-                    displayName,
-                    filters
-                  } = s;
+            <div className="Header-filters">
+              {filterSchema.map(s => {
+                const {
+                  name,
+                  displayName,
+                  filters
+                } = s;
 
-                  return (
-                    <Dropdown
-                      key={name}
-                      checkboxes={true}
-                      showApplyButton={true}
-                      placeholder={displayName}
-                      icon={'sort'}
-                      options={filters}
-                      onChange={selected => onSortChange(name, selected)}
-                    />
-                  );
-                })}
-              </div>
-            )} */}
-            {!showHead && filterSchema.length > 0 && (
-              <div className="Header-filters">
-                {filterSchema.map(s => {
-                  const {
-                    name,
-                    displayName,
-                    filters
-                  } = s;
+                const filterOptions = filters
+                  ? filters.map(f => ({
+                    ...f,
+                    selected: filterList[name] && filterList[name].findIndex(fl => fl === f.value) !== -1
+                  }))
+                  : [];
 
-                  const filterOptions = filters
-                    ? filters.map(f => ({
-                      ...f,
-                      selected: filterList[name] && filterList[name].findIndex(fl => fl === f.value) !== -1
-                    }))
-                    : [];
-
-                  return (
-                    <Dropdown
-                      key={name}
-                      withCheckbox={true}
-                      showApplyButton={true}
-                      inlineLabel={displayName}
-                      icon={'filter_list'}
-                      options={filterOptions}
-                      onChange={selected => onFilterChange(name, selected)}
-                    />
-                  );
-                })}
-              </div>
-            )}
+                return (
+                  <Dropdown
+                    key={name}
+                    withCheckbox={true}
+                    showApplyButton={true}
+                    inlineLabel={displayName}
+                    icon={'filter_list'}
+                    options={filterOptions}
+                    onChange={selected => onFilterChange(name, selected)}
+                  />
+                );
+              })}
+            </div>
           </div>
         )}
         {children && (
@@ -263,7 +240,8 @@ Header.defaultProps = {
   schema: [],
   data: [],
   searchPlaceholder: 'Search',
-  dynamicColumn: true
+  dynamicColumn: true,
+  showFilters: true
 };
 
 export default Header;
