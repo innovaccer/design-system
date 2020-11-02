@@ -628,31 +628,33 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       };
 
       const trigger = singleInput ? (
-        <div>
-          {inputOptions.label && (
-            <Label required={inputOptions.required} withInput={true}>
-              {inputOptions.label}
-            </Label>
-          )}
-          <InputMask
-            icon="events"
-            placeholder={`${inputFormat} - ${inputFormat}`}
-            {...inputOptions}
-            mask={rangeMask}
-            value={`${startValue || ''} - ${endValue || ''}`}
-            onFocus={this.onFocusHandler}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
-              this.onDateChangeHandler(e, val || '');
-            }}
-            onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
-              this.onBlurHandler(e, val || '', 'start-end');
-            }}
-            onClear={() => this.onClearHandler('start-end')}
-            error={showError}
-            caption={showError ? inputOptions.caption || 'Invalid value' : ''}
-            validators={[inputValidator]}
-          />
-        </div>
+        <Row>
+          <Column>
+            {inputOptions.label && (
+              <Label required={inputOptions.required} withInput={true}>
+                {inputOptions.label}
+              </Label>
+            )}
+            <InputMask
+              icon="events"
+              placeholder={`${inputFormat} - ${inputFormat}`}
+              {...inputOptions}
+              mask={rangeMask}
+              value={`${startValue || ''} - ${endValue || ''}`}
+              onFocus={this.onFocusHandler}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
+                this.onDateChangeHandler(e, val || '');
+              }}
+              onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
+                this.onBlurHandler(e, val || '', 'start-end');
+              }}
+              onClear={() => this.onClearHandler('start-end')}
+              error={showError}
+              caption={showError ? inputOptions.caption || 'Invalid value' : ''}
+              validators={[inputValidator]}
+            />
+          </Column>
+        </Row>
       ) : (
           <Row>
             <Column size={'6'} sizeXS={'12'} className="DateRangePicker-input DateRangePicker-input--startDate">
