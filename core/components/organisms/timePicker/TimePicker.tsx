@@ -54,15 +54,24 @@ export const TimePicker = (props: TimePickerProps) => {
     inputFormat,
     outputFormat,
     onTimeChange,
-    time,
+    time: timeProp
   } = props;
 
+  const [time, setTime] = React.useState(timeProp);
+
+  React.useEffect(() => {
+    setTime(timeProp);
+  }, [timeProp]);
+
   const onChangeHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
+    const updatedTime = val?.toUpperCase();
+
     const { placeholderChar = '_' } = inputOptions;
+    setTime(updatedTime);
 
     if (onTimeChange) {
-      const outputTimeStr = val && !val.includes(placeholderChar)
-        ? getOutputTimeString(inputFormat, outputFormat, val)
+      const outputTimeStr = updatedTime && !updatedTime.includes(placeholderChar)
+        ? getOutputTimeString(inputFormat, outputFormat, updatedTime)
         : undefined;
 
       onTimeChange(outputTimeStr);
