@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PageHeader from '../../PageHeader';
 import { select, text, boolean } from '@storybook/addon-knobs';
-import { Stepper, Button, Breadcrumbs, Badge, StatusHint } from '@/index';
+import { Stepper, Button, Breadcrumbs, Badge, StatusHint, MetaList } from '@/index';
 import { action } from '@storybook/addon-actions';
 
 export const withStepper = () => {
@@ -77,7 +77,10 @@ export const withStepper = () => {
       <StatusHint appearance="alert">Alert</StatusHint>
     ),
     meta: (
-      <StatusHint appearance="default">Meta Data</StatusHint>
+      <MetaList
+        list={[{ label: 'Meta data' }]}
+        seperator={true}
+      />
     )
   };
 
@@ -153,7 +156,10 @@ const customCode = `() => {
       <StatusHint appearance="alert">Alert</StatusHint>
     ),
     meta: (
-      <StatusHint appearance="default">Meta Data</StatusHint>
+      <MetaList
+        list={[{ label: 'Meta data' }]}
+        seperator={true}
+      />
     )
   };
 

@@ -19,12 +19,12 @@ exports[`ModalHeader component
         events
       </i>
       <div>
-        <h4
-          class="Heading Heading--m Heading--default"
+        <h5
+          class="Heading Heading--s Heading--default"
           data-test="DesignSystem-Heading"
         >
           Modal header
-        </h4>
+        </h5>
       </div>
       <i
         class="material-icons Icon Icon--default Modal-close-icon"

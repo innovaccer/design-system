@@ -265,6 +265,10 @@ export interface GridProps extends BaseProps {
    * **Can be override by Column Schema**
    */
   separator?: boolean;
+  /**
+   * Show filters in Head Cell
+   */
+  showFilters: boolean;
 }
 
 interface GridState {
@@ -293,6 +297,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     error: false,
     sortingList: [],
     filterList: {},
+    showFilters: true
   };
 
   gridRef: HTMLDivElement | null = null;

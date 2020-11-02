@@ -98,7 +98,7 @@ const customCode = `
                 />
               </Column>
               <Column size={1} className="d-flex align-items-center justify-content-end">
-                <Icon name="delete"/>
+                <Button icon="delete" appearance="transparent" />
               </Column>
             </Row>
             <Row className="my-5">
@@ -120,7 +120,7 @@ const customCode = `
                 </Button>
               </Column>
               <Column size={1} className="d-flex align-items-center justify-content-end">
-                <Icon name="delete"/>
+                <Button icon="delete" appearance="transparent" />
               </Column>
             </Row>
             <Row className="mt-6">
@@ -151,7 +151,7 @@ const customCode = `
                 />
               </Column>
               <Column size={1} className="d-flex align-items-center justify-content-end">
-                <Icon name="delete"/>
+                <Button icon="delete" appearance="transparent" />
               </Column>
             </Row>
             <Row className="my-5">
@@ -179,7 +179,7 @@ const customCode = `
                 />
               </Column>
               <Column size={1} className="d-flex align-items-center justify-content-end">
-              <Icon name="flag" appearance="warning"/>
+                <Icon name="flag" appearance="warning" className="mr-4"/>
               </Column>
             </Row>
           <div className="d-flex">

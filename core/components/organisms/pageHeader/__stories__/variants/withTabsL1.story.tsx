@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PageHeader from '../../PageHeader';
-import { Button, Breadcrumbs, Badge, StatusHint, Tab, TabsWrapper, Text } from '@/index';
+import { Button, Breadcrumbs, Badge, StatusHint, Tab, TabsWrapper, Text, MetaList } from '@/index';
 import { action } from '@storybook/addon-actions';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 import { number, text, boolean } from '@storybook/addon-knobs';
@@ -96,7 +96,10 @@ export const withTabs = () => {
       <StatusHint appearance="alert">Alert</StatusHint>
     ),
     meta: (
-      <StatusHint appearance="default">Meta Data</StatusHint>
+      <MetaList
+        list={[{ label: 'Meta data' }]}
+        seperator={true}
+      />
     )
   };
   return (
@@ -189,7 +192,10 @@ const customCode = `() => {
       <StatusHint appearance="alert">Alert</StatusHint>
     ),
     meta: (
-      <StatusHint appearance="default">Meta Data</StatusHint>
+      <MetaList
+        list={[{ label: 'Meta data' }]}
+        seperator={true}
+      />
     )
   };
   return (

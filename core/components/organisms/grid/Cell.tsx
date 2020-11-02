@@ -41,7 +41,8 @@ const HeaderCell = (props: HeaderCellProps) => {
     showMenu,
     sortingList,
     filterList,
-    headCellTooltip
+    headCellTooltip,
+    showFilters
   } = _this.props;
 
   const {
@@ -147,7 +148,7 @@ const HeaderCell = (props: HeaderCellProps) => {
           )
         }
       </div>
-      {filters && (
+      {showFilters && filters && (
         <>
           {loading && !init ? (
             <span>
@@ -326,21 +327,25 @@ export const Cell = (props: CellProps) => {
       className={cellClass}
       draggable={head && draggable}
       onDragStart={e => {
-        e.dataTransfer.setData('name', name);
-        if (pinned) e.dataTransfer.setData('type', pinned);
+        if (draggable) {
+          e.dataTransfer.setData('name', name);
+          if (pinned) e.dataTransfer.setData('type', pinned);
+        }
       }}
       onDragOver={e => e.preventDefault()}
       onDrop={e => {
-        const from = {
-          name: e.dataTransfer.getData('name'),
-          type: e.dataTransfer.getData('type')
-        };
-        const to = {
-          name,
-          type: pinned || ''
-        };
+        if (draggable) {
+          const from = {
+            name: e.dataTransfer.getData('name'),
+            type: e.dataTransfer.getData('type')
+          };
+          const to = {
+            name,
+            type: pinned || ''
+          };
 
-        if (from.type === to.type) _this.reorderCol(from.name, to.name);
+          if (from.type === to.type) _this.reorderCol(from.name, to.name);
+        }
       }}
       style={{
         visibility: !init ? 'hidden' : 'visible',

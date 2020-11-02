@@ -14,7 +14,7 @@ export const primary = create({
   appBorderRadius: 4,
 
   // Typography
-  fontBase: '"Open Sans", sans-serif',
+  fontBase: '"Nunito Sans", "Open Sans", sans-serif',
   fontCode: 'monospace',
 
   // Text colors
@@ -32,7 +32,6 @@ export const primary = create({
   inputTextColor: 'black',
   inputBorderRadius: 4,
 
-  brandTitle: `Innovaccer UI sandbox | v${packageJson.version}`,
-  brandUrl: 'https://github.com/innovaccer/design-system/',
-  brandImage: 'https://innovaccer.com/static/image/site-logo/innovaccer-logo-black.svg',
+  brandTitle: `Masala Design System v${packageJson.version}`,
+  brandUrl: 'https://github.com/innovaccer/design-system/'
 });

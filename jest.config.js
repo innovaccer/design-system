@@ -8,6 +8,7 @@ const config = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   modulePaths: ['core'],
   setupFilesAfterEnv: ['./scripts/setupTest.ts'],
+  globalSetup: './scripts/setupGlobalJest.ts',
   transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
   snapshotSerializers: ['enzyme-to-json/serializer'],
   testEnvironment: 'jsdom',

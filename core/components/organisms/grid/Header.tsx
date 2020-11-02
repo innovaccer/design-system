@@ -10,6 +10,8 @@ import {
   updateFilterListFunction
 } from './Grid';
 import { getInit } from './utility';
+import { DraggableDropdown } from './DraggableDropdown';
+import { DropdownProps } from '@/index.type';
 
 export interface ExternalHeaderProps {
   children?: React.ReactNode;
@@ -34,6 +36,7 @@ export interface HeaderProps extends ExternalHeaderProps {
   // updateData?: updateDataFunction;
   updateSchema?: updateSchemaFunction;
   filterList?: GridProps['filterList'];
+  showFilters: boolean;
   updateFilterList?: updateFilterListFunction;
   onSelectAll?: onSelectAllFunction;
   searchTerm?: string;
@@ -62,7 +65,8 @@ export const Header = (props: HeaderProps) => {
     searchTerm,
     updateSearchTerm,
     dynamicColumn,
-    allowSelectAll
+    allowSelectAll,
+    showFilters
   } = props;
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
@@ -102,26 +106,22 @@ export const Header = (props: HeaderProps) => {
     }
   };
 
-  const onHideColumn = (selected: any[]) => {
-    const newSchema = schema.map(s => ({
-      ...s,
-      hidden: selected.findIndex(val => val === s.name) === -1
-    }));
-
-    if (updateSchema) updateSchema(newSchema);
-  };
-
-  const pinnedSchema = schema.filter(s => s.pinned);
-  const leftPinnedSchema = pinnedSchema.filter(s => s.pinned === 'left');
-  const rightPinnedSchema = pinnedSchema.filter(s => s.pinned === 'right');
-  const unpinnedSchema = schema.filter(s => !s.pinned);
-  const renderedSchema = [...leftPinnedSchema, ...unpinnedSchema, ...rightPinnedSchema];
-
-  const columnOptions = renderedSchema.map(s => ({
+  const columnOptions = schema.map(s => ({
     label: s.displayName,
     value: s.name,
     selected: !s.hidden
   }));
+
+  const onDynamicColumnUpdate = (options: DropdownProps['options']) => {
+    const newSchema = options.map(option => ({
+      ...schema.find(colSchema => colSchema.name === option.value),
+      hidden: !option.selected
+      /* tslint:disable:no-object-literal-type-assertion */
+    } as ColumnSchema));
+    /* tslint:enable:no-object-literal-type-assertion */
+
+    if (updateSchema) updateSchema(newSchema);
+  };
 
   const selectedCount = data.filter(d => d._selected).length;
   const label = withCheckbox && selectedCount ?
@@ -144,61 +144,36 @@ export const Header = (props: HeaderProps) => {
             />
           </div>
         )}
-        {!showHead && (
+        {showFilters && filterSchema.length > 0 && (
           <div className="Header-dropdown">
-            {/* {sortingSchema.length > 0 && (
-              <div className="Header-sorting">
-                {sortingSchema.map(s => {
-                  const {
-                    name,
-                    displayName,
-                    filters
-                  } = s;
+            <div className="Header-filters">
+              {filterSchema.map(s => {
+                const {
+                  name,
+                  displayName,
+                  filters
+                } = s;
 
-                  return (
-                    <Dropdown
-                      key={name}
-                      checkboxes={true}
-                      showApplyButton={true}
-                      placeholder={displayName}
-                      icon={'sort'}
-                      options={filters}
-                      onChange={selected => onSortChange(name, selected)}
-                    />
-                  );
-                })}
-              </div>
-            )} */}
-            {!showHead && filterSchema.length > 0 && (
-              <div className="Header-filters">
-                {filterSchema.map(s => {
-                  const {
-                    name,
-                    displayName,
-                    filters
-                  } = s;
+                const filterOptions = filters
+                  ? filters.map(f => ({
+                    ...f,
+                    selected: filterList[name] && filterList[name].findIndex(fl => fl === f.value) !== -1
+                  }))
+                  : [];
 
-                  const filterOptions = filters
-                    ? filters.map(f => ({
-                      ...f,
-                      selected: filterList[name] && filterList[name].findIndex(fl => fl === f.value) !== -1
-                    }))
-                    : [];
-
-                  return (
-                    <Dropdown
-                      key={name}
-                      withCheckbox={true}
-                      showApplyButton={true}
-                      inlineLabel={displayName}
-                      icon={'filter_list'}
-                      options={filterOptions}
-                      onChange={selected => onFilterChange(name, selected)}
-                    />
-                  );
-                })}
-              </div>
-            )}
+                return (
+                  <Dropdown
+                    key={name}
+                    withCheckbox={true}
+                    showApplyButton={true}
+                    inlineLabel={displayName}
+                    icon={'filter_list'}
+                    options={filterOptions}
+                    onChange={selected => onFilterChange(name, selected)}
+                  />
+                );
+              })}
+            </div>
           </div>
         )}
         {children && (
@@ -250,29 +225,9 @@ export const Header = (props: HeaderProps) => {
         </div>
         {dynamicColumn && (
           <div className="Header-hideColumns">
-            <Dropdown
-              key={`${flag}`}
-              triggerSize={'tiny'}
-              withCheckbox={true}
-              showApplyButton={true}
+            <DraggableDropdown
               options={columnOptions}
-              totalOptions={columnOptions.length}
-              align={'left'}
-              triggerOptions={{
-                labelLimit: 0,
-                customLabel: (selected, totalOptions) => `Showing ${selected} of ${totalOptions} columns`,
-                customTrigger: triggerLabel => (
-                  <Button
-                    size="tiny"
-                    appearance="transparent"
-                    icon="keyboard_arrow_down_filled"
-                    iconAlign="right"
-                  >
-                    {triggerLabel ? triggerLabel : `Showing 0 of ${columnOptions.length} columns`}
-                  </Button>
-                )
-              }}
-              onChange={selected => onHideColumn(selected)}
+              onChange={onDynamicColumnUpdate}
             />
           </div>
         )}
@@ -285,7 +240,8 @@ Header.defaultProps = {
   schema: [],
   data: [],
   searchPlaceholder: 'Search',
-  dynamicColumn: true
+  dynamicColumn: true,
+  showFilters: true
 };
 
 export default Header;

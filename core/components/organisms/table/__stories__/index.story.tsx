@@ -120,6 +120,12 @@ export const all = () => {
     false
   );
 
+  const filterPosition = select(
+    'filterPosition',
+    ['GRID', 'HEADER'],
+    undefined
+  );
+
   let dataAttr = {};
   if (async) {
     dataAttr = {
@@ -179,6 +185,7 @@ export const all = () => {
           filterList={{
             name: ['h-r', 's-z']
           }}
+          filterPosition={filterPosition}
         />
       </Card>
     </div>
