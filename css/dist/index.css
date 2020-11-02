@@ -1403,6 +1403,43 @@ body {
   box-shadow: var(--shadow-l);
 }
 
+.Box {
+  width: 100%;
+  border-radius: var(--spacing);
+  padding: var(--spacing-l)
+}
+
+.Box--typing {
+  padding-top: var(--spacing);
+  padding-bottom: var(--spacing);
+}
+
+.Box--incoming {
+  border: var(--spacing-xs) solid var(--secondary-light);
+  background-color: var(--white);
+}
+
+.Box--outgoing {
+  background-color: var(--secondary-lightest);
+}
+
+.Box-incoming--withStatus {
+  border-bottom-left-radius: 0px;
+}
+
+.Box-outgoing--withStatus {
+  border-bottom-right-radius: 0px;
+}
+
+.Box--urgent {
+  border-color: var(--alert);
+}
+
+.ChatMessage-status {
+  margin-top: var(--spacing-m);
+  display: block;
+}
+
 /* badge */
 
 .Checkbox {

@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1603192595391 
+   * Generated on: 1604318350565 
    *      Package: @innovaccer/design-system
-   *      Version: v1.3.1-0
+   *      Version: v1.3.1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -6937,6 +6937,180 @@ Dialog.defaultProps = {
   secondaryButtonAppearance: 'basic'
 };
 
+var Status = function Status(props) {
+  var type = props.type,
+      time = props.time,
+      className = props.className,
+      _props$readText = props.readText,
+      readText = _props$readText === void 0 ? 'Read' : _props$readText,
+      _props$failedText = props.failedText,
+      failedText = _props$failedText === void 0 ? 'Click to retry' : _props$failedText,
+      _props$sendingText = props.sendingText,
+      sendingText = _props$sendingText === void 0 ? 'Sending..' : _props$sendingText;
+  var baseProps = extractBaseProps(props);
+  var StatusClass = classNames(_defineProperty({}, 'd-flex align-items-center mt-3', true), className);
+  var TextClass = classNames(_defineProperty({}, 'ChatMessage-status', true), className);
+
+  var getTime = function getTime(t) {
+    if (typeof t === 'number') {
+      var d = new Date(t);
+      var hours = d.getHours();
+      var minutes = d.getMinutes();
+      var AMPM = hours < 12 ? 'AM' : 'PM';
+      var hrs = hours % 12 || 12;
+      return "".concat(hrs, ":").concat(minutes, " ").concat(AMPM);
+    }
+
+    return t;
+  };
+
+  switch (type) {
+    case 'failed':
+      return /*#__PURE__*/createElement("div", _extends({}, baseProps, {
+        className: StatusClass
+      }), /*#__PURE__*/createElement(Icon, {
+        name: "error",
+        type: "outlined",
+        appearance: "destructive"
+      }), /*#__PURE__*/createElement(Text, {
+        appearance: "destructive",
+        size: "small",
+        className: "ml-1"
+      }, "Failed"), /*#__PURE__*/createElement(MetaList, {
+        list: [{
+          label: failedText
+        }],
+        seperator: true
+      }));
+
+    case 'urgent':
+      return /*#__PURE__*/createElement("div", _extends({}, baseProps, {
+        className: StatusClass
+      }), /*#__PURE__*/createElement(Icon, {
+        name: "notification_important",
+        type: "outlined",
+        appearance: "destructive"
+      }), /*#__PURE__*/createElement(Text, {
+        appearance: "destructive",
+        size: "small",
+        className: "ml-1"
+      }, "Urgent"), time && /*#__PURE__*/createElement(MetaList, {
+        list: [{
+          label: getTime(time)
+        }],
+        seperator: true
+      }));
+
+    case 'read':
+      return /*#__PURE__*/createElement("div", _extends({}, baseProps, {
+        className: StatusClass
+      }), time && /*#__PURE__*/createElement(Text, {
+        appearance: "subtle",
+        size: "small"
+      }, getTime(time)), /*#__PURE__*/createElement(MetaList, {
+        list: [{
+          label: readText
+        }],
+        seperator: true
+      }));
+
+    case 'sending':
+      return /*#__PURE__*/createElement(Text, _extends({}, baseProps, {
+        appearance: "subtle",
+        size: "small",
+        className: TextClass
+      }), sendingText);
+
+    case 'sent':
+      return /*#__PURE__*/createElement(Fragment, null, time && /*#__PURE__*/createElement(Text, _extends({}, baseProps, {
+        appearance: "subtle",
+        size: "small",
+        className: TextClass
+      }), getTime(time)));
+
+    default:
+      return null;
+  }
+};
+Status.displayName = 'Status';
+
+var Box = function Box(props) {
+  var _classNames;
+
+  var children = props.children,
+      type = props.type,
+      isTyping = props.isTyping,
+      statusType = props.statusType,
+      withStatus = props.withStatus,
+      onClick = props.onClick,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+  var MessageClass = classNames((_classNames = {}, _defineProperty(_classNames, 'Box', true), _defineProperty(_classNames, "Box--".concat(type), type), _defineProperty(_classNames, 'Box--typing', isTyping), _defineProperty(_classNames, 'Box--urgent', statusType === 'urgent'), _defineProperty(_classNames, "Box-".concat(type, "--withStatus"), withStatus || isTyping), _classNames), className);
+  return /*#__PURE__*/createElement("div", _extends({}, baseProps, {
+    className: MessageClass,
+    onClick: onClick
+  }), children);
+};
+Box.displayName = 'Box';
+
+var MessageText = function MessageText(props) {
+  var text = props.text,
+      type = props.type,
+      isTyping = props.isTyping,
+      typingText = props.typingText,
+      statusType = props.statusType,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+
+  if (isTyping && type === 'incoming') {
+    return /*#__PURE__*/createElement(Text, _extends({}, baseProps, {
+      appearance: 'subtle',
+      size: 'small',
+      className: className
+    }), typingText);
+  }
+
+  return /*#__PURE__*/createElement(Text, _extends({}, baseProps, {
+    className: className,
+    appearance: statusType === 'sending' ? 'subtle' : 'default'
+  }), text);
+};
+MessageText.defaultProps = {
+  text: '',
+  typingText: 'Typing..'
+};
+MessageText.displayName = 'MessageText';
+
+var ChatMessage = function ChatMessage(props) {
+  var type = props.type,
+      text = props.text,
+      isTyping = props.isTyping,
+      typingText = props.typingText,
+      statusOptions = props.statusOptions,
+      onClick = props.onClick,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+
+  var _ref = statusOptions || {},
+      statusType = _ref.type;
+
+  return /*#__PURE__*/createElement(Box, _extends({}, baseProps, {
+    type: type,
+    className: className,
+    onClick: onClick,
+    isTyping: isTyping,
+    statusType: statusType,
+    withStatus: statusOptions !== undefined
+  }), /*#__PURE__*/createElement(MessageText, {
+    type: type,
+    text: text,
+    typingText: typingText,
+    isTyping: isTyping,
+    statusType: statusType
+  }), !isTyping && statusOptions && /*#__PURE__*/createElement(Status, statusOptions));
+};
+ChatMessage.displayName = 'ChatMessage';
+
 var useRef = useRef$1,
     useEffect$1 = useEffect$2,
     useState$1 = useState$3;
@@ -10150,4 +10324,4 @@ PageHeader.defaultProps = {
   separator: true
 };
 
-export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, Checkbox, Chip, ChipGroup, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, EditableDropdown, EditableInput, Grid, GridCell, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip, index as Utils };
+export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, ChatMessage, Checkbox, Chip, ChipGroup, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, EditableDropdown, EditableInput, Grid, GridCell, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip, index as Utils };
