@@ -72,7 +72,7 @@ Please provide:
 
 The server runs on port 5000 and url is opened automaticaly in browser as the project uses storybook for component developement and documentation.
 
-### Colding guidelines for a component
+### Coding guidelines for a component
 
 #### Folder structure
 
