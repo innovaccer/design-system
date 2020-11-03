@@ -112,15 +112,9 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     inputFormat: 'mm/dd/yyyy',
     outputFormat: 'mm/dd/yyyy',
     validators: [Utils.validators.date],
-    inputOptions: {
-      label: 'Date'
-    },
-    startInputOptions: {
-      label: 'Start Date'
-    },
-    endInputOptions: {
-      label: 'End Date'
-    }
+    inputOptions: {},
+    startInputOptions: {},
+    endInputOptions: {}
   };
   monthsInView: number;
 
@@ -330,14 +324,12 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
   }
 
   onRangeChangeHandler = (sDate?: Date, eDate?: Date) => {
-    const { startValue, endValue } = this.state;
-
     this.setState({
       init: true,
       startDate: sDate,
       endDate: eDate,
-      startValue: sDate ? translateToString(this.props.inputFormat, sDate) : startValue,
-      endValue: eDate ? translateToString(this.props.inputFormat, eDate) : endValue
+      startValue: sDate ? translateToString(this.props.inputFormat, sDate) : '',
+      endValue: eDate ? translateToString(this.props.inputFormat, eDate) : ''
     });
   }
 
@@ -628,6 +620,15 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       const showStartError = startInputOptions.required && startError && init;
       const showEndError = endInputOptions.required && endError && init;
       const showError = inputOptions.required && (startError || endError) && init;
+      const { label = 'Date' } = inputOptions;
+      const { label: startLabel = 'Start Date' } = startInputOptions;
+      const { label: endLabel = 'End Date' } = endInputOptions;
+      const { placeholderChar = '_' } = inputOptions;
+
+      // @ts-ignore
+      const defaultValue = InputMask.utils.getDefaultValue(rangeMask, placeholderChar).split(' - ');
+      const sValue = startValue || defaultValue[0];
+      const eValue = endValue || defaultValue[1];
 
       const inputValidator = (val: string): boolean => {
         return Utils.validators.isValid(validators, val, inputFormat);
@@ -638,7 +639,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
           <Column>
             {inputOptions.label && (
               <Label required={inputOptions.required} withInput={true}>
-                {inputOptions.label}
+                {label}
               </Label>
             )}
             <InputMask
@@ -646,7 +647,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
               placeholder={`${inputFormat} - ${inputFormat}`}
               {...inputOptions}
               mask={rangeMask}
-              value={`${startValue || ''} - ${endValue || ''}`}
+              value={!startDate && !endDate && !init ? undefined : `${sValue} - ${eValue}`}
               onFocus={this.onFocusHandler}
               onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
                 this.onDateChangeHandler(e, val || '');
@@ -666,7 +667,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
             <Column size={'6'} sizeXS={'12'} className="DateRangePicker-input DateRangePicker-input--startDate">
               {startInputOptions.label && (
                 <Label required={startInputOptions.required} withInput={true}>
-                  {startInputOptions.label}
+                  {startLabel}
                 </Label>
               )}
               <InputMask
@@ -692,7 +693,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
             <Column size={'6'} sizeXS={'12'} className="DateRangePicker-input DateRangePicker-input--endDate">
               {endInputOptions.label && (
                 <Label required={endInputOptions.required} withInput={true}>
-                  {endInputOptions.label}
+                  {endLabel}
                 </Label>
               )}
               <InputMask
