@@ -111,9 +111,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
   React.useImperativeHandle(forwardRef, () => ref.current as HTMLInputElement);
 
   React.useEffect(() => {
-    if (ref.current && valueProp) {
-      setValue(valueProp);
-    }
+    setValue(valueProp || '');
   }, [valueProp]);
 
   const setCursorPosition = (val: number) => setSelectionPos({ start: val, end: val });
