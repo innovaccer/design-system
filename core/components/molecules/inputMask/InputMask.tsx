@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, Validators, Mask } from '@/utils/types';
 import { Input, Caption, Utils } from '@/index';
 import { InputProps } from '@/index.type';
+import { getDefaultValue } from './utilites';
 
 export interface MaskProps extends BaseProps {
   /**
@@ -90,13 +91,8 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     return { start: pos, end: pos };
   };
 
-  const getPlaceholderValue = (start: number = 0, end: number = mask.length - 1) => {
-    let val = '';
-    for (let i = start; i <= end; i++) {
-      val += isEditable(i) ? placeholderChar : mask[i];
-    }
-    return val;
-  };
+  const getPlaceholderValue = (start: number = 0, end: number = mask.length - 1) =>
+    getDefaultValue(mask, placeholderChar).slice(start, end);
 
   const getSelectionLength = (val: SelectionPos) => Math.abs(val.end - val.start);
 
@@ -270,5 +266,9 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
 });
 
 InputMask.displayName = 'InputMask';
+// @ts-ignore
+InputMask.utils = {
+  getDefaultValue
+};
 
 export default InputMask;
