@@ -179,14 +179,15 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   onChangeHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
     const {
       inputFormat,
-      validators
+      validators,
+      inputOptions
     } = this.props;
 
     this.setState({
       open: true
     });
 
-    const placeholderChar = '_';
+    const { placeholderChar = '_' } = inputOptions;
     if (val && !val.includes(placeholderChar)) {
       const d = translateToDate(inputFormat, val, validators);
       this.setState({ date: d });
@@ -200,7 +201,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   }
 
   onBlurHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
-    const placeholderChar = '_';
+    const { placeholderChar = '_' } = this.props.inputOptions;
     if (!val || val.includes(placeholderChar)) {
       this.setState({ date: undefined });
     }
