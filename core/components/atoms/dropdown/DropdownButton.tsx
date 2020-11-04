@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import Icon from '@/components/atoms/icon';
+import { Icon, Text } from '@/index';
 
 export type Size = 'tiny' | 'regular';
 
@@ -40,6 +40,7 @@ export interface TriggerProps {
 
 export interface DropdownButtonProps extends TriggerProps {
   children?: React.ReactText;
+  open?: boolean;
 }
 
 const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>((props, ref) => {
@@ -50,6 +51,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
     children,
     icon,
     disabled,
+    open,
     inlineLabel,
     error,
     ...rest
@@ -57,25 +59,24 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
 
   const buttonDisabled = disabled ? 'disabled' : 'default';
   const trimmedPlaceholder = placeholder.trim();
-  const value = children ? children : trimmedPlaceholder ? trimmedPlaceholder : 'Select';
+  const value = children ? children : trimmedPlaceholder;
   const iconName = !menu ? 'keyboard_arrow_down' : icon ? icon : 'more_horiz';
-  const label = inlineLabel && inlineLabel.trim();
 
   const buttonClass = classNames({
     ['Button']: true,
-    ['Button--basic']: true,
-    ['Button--square']: menu,
-    ['DropdownTrigger']: true,
     ['DropdownButton']: true,
     [`DropdownButton--${triggerSize}`]: triggerSize,
-    ['DropdownButton--icon']: icon,
+    [`DropdownButton--${triggerSize}Square`]: menu,
     ['DropdownButton--placeholder']: !children && !menu,
-    ['DropdownButton--label']: label,
+    ['DropdownButton--icon']: icon,
+    ['DropdownButton--open']: open,
     ['DropdownButton--error']: error,
   });
 
-  const labelClass = classNames({
-    ['DropdownButton-label']: true,
+  const textClass = classNames({
+    ['Text']: true,
+    ['Text--regular']: true,
+    ['DropdownButton-text']: true
   });
 
   return (
@@ -91,11 +92,19 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
     >
       {!menu && (
         <div className="DropdownButton-wrapper">
-          {label && (
-            <div className={labelClass}> {label.trim().charAt(0).toUpperCase()}{label.trim().slice(1)} </div>
+          {inlineLabel && (
+            <Text appearance="subtle" className="mr-4">
+              {`${inlineLabel.trim().charAt(0).toUpperCase()}${inlineLabel.trim().slice(1)}`}
+            </Text>
           )}
-          {(icon && !inlineLabel) && <Icon appearance={buttonDisabled} className="mr-4" name={icon} />}
-          <div className={'DropdownButton-text'}>{value && `${value}`}</div>
+          {(icon && !inlineLabel) && (
+            <Icon appearance={buttonDisabled} className="d-flex align-items-center mr-4" name={icon} />
+          )}
+          {value && (
+            <span className={textClass}>
+              {value}
+            </span>
+          )}
         </div>
       )}
       <Icon appearance={buttonDisabled} name={iconName} />

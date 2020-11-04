@@ -23,7 +23,7 @@ exports[`EditableDropdown component
             class="PopperWrapper-trigger w-100"
           >
             <button
-              class="Button Button--basic DropdownTrigger DropdownButton DropdownButton--regular DropdownButton--placeholder"
+              class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
               data-test="DesignSystem-DropdownTrigger"
               tabindex="0"
               type="button"
@@ -31,13 +31,7 @@ exports[`EditableDropdown component
             >
               <div
                 class="DropdownButton-wrapper"
-              >
-                <div
-                  class="DropdownButton-text"
-                >
-                  Select
-                </div>
-              </div>
+              />
               <i
                 class="material-icons Icon Icon--default"
                 style="font-size: 16px; width: 16px;"

@@ -1,10 +1,10 @@
 .DropdownButton {
     width: 100%;
     justify-content: space-between;
-    align-items: center;
     padding-top: unset;
     padding-bottom: unset;
-    text-transform: unset;
+    background: var(--secondary-light);
+    color: var(--text);
 }
 
 .DropdownButton-wrapper {
@@ -12,6 +12,13 @@
     display: flex;
     flex-direction: row;
     overflow: hidden;
+}
+
+.DropdownButton-text {
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .DropdownButton--tiny {
@@ -26,21 +33,39 @@
     padding-left: var(--spacing-l);
 }
 
-.DropdownButton--tiny.Button--square {
+.DropdownButton--tinySquare {
     padding-left: var(--spacing-m);
     padding-right: var(--spacing-m);
 }
 
-.DropdownButton--regular.Button--square {
+.DropdownButton--regularSquare {
     padding-left: var(--spacing);
     padding-right: var(--spacing);
 }
 
+.DropdownButton--placeholder {
+    color: var(--text-subtle);
+}
+
+.DropdownButton:hover {
+    background: var(--secondary);
+    color: var(--text);
+}
+
 .DropdownButton:focus {
     background-color: var(--secondary-lighter);
+    box-shadow: var(--shadow-spread) var(--secondary-shadow);
+}
+
+.DropdownButton:active,
+.DropdownButton--open {
+    background-color: var(--secondary-dark) !important;
+    color: var(--text) !important;
 }
 
 .DropdownButton:disabled {
+    background: var(--secondary-lighter);
+    color: var(--text-disabled);
     pointer-events: none;
 }
 
@@ -48,26 +73,6 @@
     padding-left: var(--spacing);
 }
 
-.DropdownButton-label {
-    color: var(--inverse-light);
-    margin-right: var(--spacing);
-}
-
-.DropdownButton-text {
-    text-align: left;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
 .DropdownButton--error {
     border: var(--spacing-xs) solid var(--alert);
-}
-
-.DropdownButton--placeholder {
-    color: var(--inverse-light);
-}
-
-.DropdownButton--label {
-    color: var(--inverse);
 }
