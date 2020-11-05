@@ -20,6 +20,7 @@ export interface HeaderProps extends ExternalHeaderProps {
     showHead?: boolean;
     updateSchema?: updateSchemaFunction;
     filterList?: GridProps['filterList'];
+    showFilters: boolean;
     updateFilterList?: updateFilterListFunction;
     onSelectAll?: onSelectAllFunction;
     searchTerm?: string;
@@ -32,6 +33,7 @@ export declare const Header: {
         data: never[];
         searchPlaceholder: string;
         dynamicColumn: boolean;
+        showFilters: boolean;
     };
 };
 export default Header;

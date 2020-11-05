@@ -1,9 +1,10 @@
 /// <reference types="react" />
 import { TableProps } from "../../../index.type";
 import { SyncTableProps, AsyncTableProps } from "../table";
-export declare type ListProps = Omit<TableProps, 'showHead' | 'draggable' | 'showMenu' | 'headCellTooltip'>;
-export declare type SyncListProps = Omit<SyncTableProps, 'showHead' | 'draggable' | 'showMenu' | 'headCellTooltip'>;
-export declare type AsyncListProps = Omit<AsyncTableProps, 'showHead' | 'draggable' | 'showMenu' | 'headCellTooltip'>;
+declare type ExcludeTypes = 'showHead' | 'draggable' | 'showMenu' | 'headCellTooltip' | 'filterPosition';
+export declare type ListProps = Omit<TableProps, ExcludeTypes>;
+export declare type SyncListProps = Omit<SyncTableProps, ExcludeTypes>;
+export declare type AsyncListProps = Omit<AsyncTableProps, ExcludeTypes>;
 export declare const List: {
     (props: ListProps): JSX.Element;
     defaultProps: {
@@ -25,6 +26,7 @@ export declare const List: {
         loaderSchema: never[];
         sortingList: never[];
         filterList: {};
+        filterPosition: string;
         errorTemplate: (props: import("../table").ErrorTemplateProps) => JSX.Element;
     };
 };

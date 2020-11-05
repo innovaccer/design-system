@@ -6,6 +6,7 @@ import { PaginationProps } from "../../molecules/pagination";
 export interface ErrorTemplateProps {
     errorType?: TableProps['errorType'];
 }
+export declare type FilterPosition = 'GRID' | 'HEADER';
 interface SyncProps {
     data: GridProps['data'];
     schema: GridProps['schema'];
@@ -42,6 +43,7 @@ interface SharedTableProps extends BaseProps {
     onPageChange?: PaginationProps['onPageChange'];
     headCellTooltip?: GridProps['headCellTooltip'];
     separator?: GridProps['headCellTooltip'];
+    filterPosition: FilterPosition;
 }
 export declare type SyncTableProps = SyncProps & SharedTableProps;
 export declare type AsyncTableProps = AsyncProps & SharedTableProps;
@@ -79,6 +81,7 @@ export declare const defaultProps: {
     loaderSchema: never[];
     sortingList: never[];
     filterList: {};
+    filterPosition: string;
     errorTemplate: (props: ErrorTemplateProps) => JSX.Element;
 };
 export declare class Table extends React.Component<TableProps, TableState> {
@@ -101,6 +104,7 @@ export declare class Table extends React.Component<TableProps, TableState> {
         loaderSchema: never[];
         sortingList: never[];
         filterList: {};
+        filterPosition: string;
         errorTemplate: (props: ErrorTemplateProps) => JSX.Element;
     };
     constructor(props: TableProps);

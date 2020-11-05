@@ -5,6 +5,11 @@ declare const _default: {
     component: {
         (props: import("../MetaList").MetaListProps): JSX.Element;
         displayName: string;
+        defaultProps: {
+            seperatorAppearance: string;
+            iconAppearance: string;
+            labelAppearance: string;
+        };
     };
 };
 export default _default;

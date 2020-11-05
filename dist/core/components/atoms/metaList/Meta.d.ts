@@ -1,8 +1,10 @@
 /// <reference types="react" />
-import { BaseProps } from "../../../utils/types";
-export interface MetaProps extends BaseProps {
+import { IconProps, TextProps } from "../../../index.type";
+export interface MetaProps {
     label: string;
     icon?: string;
+    iconAppearance?: IconProps['appearance'];
+    labelAppearance?: TextProps['appearance'];
 }
 export declare const Meta: {
     (props: MetaProps): JSX.Element;

@@ -98,6 +98,7 @@ export interface GridProps extends BaseProps {
     };
     headCellTooltip?: boolean;
     separator?: boolean;
+    showFilters: boolean;
 }
 interface GridState {
     init: boolean;
@@ -117,6 +118,7 @@ export declare class Grid extends React.Component<GridProps, GridState> {
         error: boolean;
         sortingList: never[];
         filterList: {};
+        showFilters: boolean;
     };
     gridRef: HTMLDivElement | null;
     updateRenderedData: import("throttle-debounce").throttle<(options?: Partial<FetchDataOptions> | undefined) => void>;

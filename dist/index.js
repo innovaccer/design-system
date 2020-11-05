@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1604318350918 
+   * Generated on: 1604563690251 
    *      Package: @innovaccer/design-system
-   *      Version: v1.3.1
+   *      Version: v1.4.0-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -11,7 +11,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('react-dom'), require('react-popper'), require('classnames'), require('recharts')) :
     typeof define === 'function' && define.amd ? define(['exports', 'react', 'react-dom', 'react-popper', 'classnames', 'recharts'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.inno = {}, global.React, global.ReactDOM, global.reactPopper, global.classNames, global.recharts));
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.inno = {}, global.React, global.ReactDOM, global.ReactPopper, global.classNames, global.recharts));
 }(this, (function (exports, React, ReactDOM, reactPopper, classNames, recharts) { 'use strict';
 
     function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
@@ -575,11 +575,20 @@
       'mm-dd-yyyy': [/[01]/, /\d/, '-', /[0123]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
       'yyyy-mm-dd': [/\d/, /\d/, /\d/, /\d/, '-', /[01]/, /\d/, '-', /[0123]/, /\d/]
     };
+    var rangeDate = {
+      'dd/mm/yyyy': [/[0123]/, /\d/, '/', /\[01]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, ' ', '-', ' ', /[0123]/, /\d/, '/', /\[01]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
+      'mm/dd/yyyy': [/[01]/, /\d/, '/', /[0123]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, ' ', '-', ' ', /[01]/, /\d/, '/', /[0123]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
+      'yyyy/mm/dd': [/\d/, /\d/, /\d/, /\d/, '/', /[01]/, /\d/, '/', /[0123]/, /\d/, ' ', '-', ' ', /\d/, /\d/, /\d/, /\d/, '/', /[01]/, /\d/, '/', /[0123]/, /\d/],
+      'dd-mm-yyyy': [/[0123]/, /\d/, '-', /[01]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, ' ', '-', ' ', /[0123]/, /\d/, '-', /[01]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
+      'mm-dd-yyyy': [/[01]/, /\d/, '-', /[0123]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, ' ', '-', ' ', /[01]/, /\d/, '-', /[0123]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
+      'yyyy-mm-dd': [/\d/, /\d/, /\d/, /\d/, '-', /[01]/, /\d/, '-', /[0123]/, /\d/, ' ', '-', ' ', /\d/, /\d/, /\d/, /\d/, '-', /[01]/, /\d/, '-', /[0123]/, /\d/]
+    };
     var time$1 = (_a$1 = {}, _a$1['hh:mm'] = [/[0-1-2]/, /\d/, ' ', ':', ' ', /[0-6]/, /\d/], _a$1['hh:mm AM'] = [/[0-1]/, /\d/, ' ', ':', ' ', /[0-6]/, /\d/, ' ', /[AP]/, 'M'], _a$1);
 
     var masks = /*#__PURE__*/Object.freeze({
         __proto__: null,
         date: date$1,
+        rangeDate: rangeDate,
         time: time$1
     });
 
@@ -1383,9 +1392,10 @@
           onClickHandler = props.onClickHandler,
           optionData = props.optionData,
           onUpdateActiveOption = props.onUpdateActiveOption,
+          renderSubInfo = props.renderSubInfo,
           dataTest = props.dataTest;
-      var label = optionData.label,
-          subInfo = optionData.subInfo;
+      var subInfo = optionData.subInfo,
+          label = optionData.label;
       return /*#__PURE__*/React.createElement("div", {
         className: className,
         onClick: onClickHandler,
@@ -1395,9 +1405,7 @@
         className: 'Option-label'
       }, /*#__PURE__*/React.createElement("div", {
         className: textClassName
-      }, label), subInfo && /*#__PURE__*/React.createElement("div", {
-        className: 'Option-subinfo'
-      }, subInfo)));
+      }, label), subInfo && renderSubInfo(subInfo)));
     };
 
     var IconOption = function IconOption(props) {
@@ -1435,15 +1443,16 @@
 
       var className = props.className,
           textClassName = props.textClassName,
+          renderSubInfo = props.renderSubInfo,
           selected = props.selected,
           onClickHandler = props.onClickHandler,
           optionData = props.optionData,
           onUpdateActiveOption = props.onUpdateActiveOption,
           menu = props.menu,
           dataTest = props.dataTest;
-      var label = optionData.label,
-          icon = optionData.icon,
-          subInfo = optionData.subInfo;
+      var subInfo = optionData.subInfo,
+          label = optionData.label,
+          icon = optionData.icon;
       var OptionClass = classNames__default['default']((_a = {}, _a["" + className] = true, _a['Option--icon'] = icon, _a));
       return /*#__PURE__*/React.createElement("div", {
         className: OptionClass,
@@ -1458,9 +1467,7 @@
         className: 'Option-label'
       }, /*#__PURE__*/React.createElement("div", {
         className: textClassName
-      }, label), subInfo && /*#__PURE__*/React.createElement("div", {
-        className: 'Option-subinfo'
-      }, subInfo)));
+      }, label), subInfo && renderSubInfo(subInfo)));
     };
 
     var _a$2;
@@ -1513,11 +1520,34 @@
         }));
       }
 
+      var renderSubInfo = function renderSubInfo(subInfo) {
+        var labelAppearance = selected ? 'white' : 'subtle';
+        var iconAppearance = selected ? 'white' : 'disabled';
+
+        if (typeof subInfo === 'string') {
+          return /*#__PURE__*/React.createElement(Text, {
+            appearance: labelAppearance
+          }, subInfo);
+        }
+
+        var _a = subInfo.list,
+            list = _a === void 0 ? [] : _a,
+            seperator = subInfo.seperator;
+        return /*#__PURE__*/React.createElement(MetaList, {
+          list: list,
+          seperator: seperator,
+          iconAppearance: iconAppearance,
+          labelAppearance: labelAppearance,
+          seperatorAppearance: iconAppearance
+        });
+      };
+
       var type = checkboxes ? 'WITH_CHECKBOX' : optionType;
       var component = OptionTypeMapping[type];
       return component({
         menu: menu,
         selected: selected,
+        renderSubInfo: renderSubInfo,
         optionData: optionData,
         textClassName: textClassName,
         onClickHandler: onClickHandler,
@@ -4129,140 +4159,225 @@
           onChange = props.onChange,
           onBlur = props.onBlur,
           onClick = props.onClick,
+          onFocus = props.onFocus,
           onClear = props.onClear,
           className = props.className,
-          rest = __rest(props, ["mask", "value", "placeholderChar", "validators", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onClick", "onClear", "className"]);
+          rest = __rest(props, ["mask", "value", "placeholderChar", "validators", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onClick", "onFocus", "onClear", "className"]);
+
+      var getNewCursorPosition = function getNewCursorPosition(type, position) {
+        if (type === 'right') {
+          for (var i = position; i < mask.length; i++) {
+            if (isEditable(i)) return i;
+          }
+
+          return mask.length;
+        }
+
+        if (type === 'left') {
+          for (var i = position; i >= 0; i--) {
+            if (isEditable(i - 1)) return i;
+          }
+
+          return 0;
+        }
+
+        return position;
+      };
+
+      var getDefaultSelection = function getDefaultSelection() {
+        var pos = getNewCursorPosition('right', 0);
+        return {
+          start: pos,
+          end: pos
+        };
+      };
+
+      var getPlaceholderValue = function getPlaceholderValue(start, end) {
+        if (start === void 0) {
+          start = 0;
+        }
+
+        if (end === void 0) {
+          end = mask.length - 1;
+        }
+
+        var val = '';
+
+        for (var i = start; i <= end; i++) {
+          val += isEditable(i) ? placeholderChar : mask[i];
+        }
+
+        return val;
+      };
+
+      var getSelectionLength = function getSelectionLength(val) {
+        return Math.abs(val.end - val.start);
+      };
+
+      var isEditable = function isEditable(pos) {
+        return _typeof(mask[pos]) === 'object';
+      };
+
+      var deferId = React.useRef();
+      var selectionRef = React.useRef(0);
 
       var _c = React.useState(defaultValue || valueProp || ''),
           value = _c[0],
           setValue = _c[1];
 
-      var _d = React.useState(0),
-          caret = _d[0],
-          setCaret = _d[1];
+      var _d = React.useState(getDefaultSelection()),
+          selection = _d[0],
+          setSelection = _d[1];
 
       var ref = React.useRef(null);
-      var fixedMask = mask.filter(function (m) {
-        return typeof m === 'string' && m.length === 1;
-      });
-      React.useEffect(function () {
-        setCaretPos(caret);
-      }, [caret]);
-      React.useEffect(function () {
-        if (ref.current && valueProp) {
-          setValue(convertToMasked(valueProp));
-        }
-      }, [valueProp]);
-      React.useEffect(function () {
-        if (ref.current) {
-          var el = ref.current;
-          el.addEventListener('keyup', function (e) {
-            if (e.keyCode === 37 || e.keyCode === 39) {
-              if (ref.current) {
-                var pos = ref.current.selectionEnd;
-
-                if (ref.current.selectionStart === ref.current.selectionEnd) {
-                  if (pos) setCaret(pos);
-                }
-              }
-            }
-          });
-        }
-      }, [ref]);
       React.useImperativeHandle(forwardRef, function () {
         return ref.current;
       });
+      React.useEffect(function () {
+        if (ref.current && valueProp) {
+          setValue(valueProp);
+        }
+      }, [valueProp]);
 
-      var setCaretPos = function setCaretPos(pos) {
+      var setCursorPosition = function setCursorPosition(val) {
+        return setSelectionPos({
+          start: val,
+          end: val
+        });
+      };
+
+      var getCurrSelection = function getCurrSelection() {
+        return {
+          start: ref.current.selectionStart || 0,
+          end: ref.current.selectionEnd || 0
+        };
+      };
+
+      var setSelectionPos = function setSelectionPos(pos) {
         if (ref.current) {
           var el = ref.current;
-
-          if (el.selectionStart || el.selectionStart === 0) {
-            var p = Math.ceil(pos);
-            el.setSelectionRange(p, p);
-          }
+          var start = Math.min(pos.start, pos.end);
+          var end = Math.max(pos.start, pos.end);
+          el.setSelectionRange(start, end);
         }
       };
 
-      var getRawValue = function getRawValue(val) {
-        if (val === void 0) {
-          val = '';
-        }
-
-        return val.split('').filter(function (v) {
-          return !(fixedMask.includes(v) || v === placeholderChar);
-        }).join('');
+      var updateSelection = function updateSelection() {
+        setSelection(getCurrSelection());
+        deferId.current = window.requestAnimationFrame(updateSelection);
       };
 
-      function convertToMasked(val) {
-        if (val === void 0) {
-          val = '';
+      var insertAtIndex = function insertAtIndex(currValue, index, iterator) {
+        if (iterator === void 0) {
+          iterator = 0;
         }
 
-        var currCaret = 0;
+        var newValue = '';
+        var newIndex = index + 1;
+        var newIterator = iterator;
 
-        if (ref.current) {
-          currCaret = ref.current.selectionEnd ? ref.current.selectionEnd : 0;
+        if (index >= mask.length) {
+          return newValue;
         }
 
-        var oldRawValue = getRawValue(value);
-        var rawValue = getRawValue(val);
-        var it = 0;
-        var newVal = '';
-        var newCaretPos = currCaret;
+        if (iterator >= currValue.length) {
+          selectionRef.current = index;
+          return newValue;
+        }
 
-        for (var i = 0; i < mask.length; i++) {
-          var m = mask[i];
+        var m = mask[index];
 
-          if (_typeof(m) === 'object') {
-            if (it < rawValue.length && rawValue[it].match(m)) {
-              newVal += rawValue[it];
-            } else {
-              newVal += placeholderChar;
-            }
-
-            it++;
+        if (isEditable(index)) {
+          if (currValue[iterator].match(m)) {
+            newValue += currValue[iterator];
           } else {
-            newVal += m;
-
-            if (i >= caret && i <= newCaretPos && it < rawValue.length) {
-              if (rawValue.length > oldRawValue.length) newCaretPos++;
-            }
+            newValue += placeholderChar;
           }
+
+          newIterator++;
+        } else {
+          newValue += m;
         }
 
-        setCaret(newCaretPos);
-        return newVal;
-      }
-
-      var onClickHandler = function onClickHandler(e) {
-        if (ref.current) {
-          var pos = ref.current.selectionStart ? ref.current.selectionStart : 0;
-          if (ref.current.selectionEnd === pos) setCaret(pos);
-        }
-
-        if (onClick) onClick(e);
+        newValue += insertAtIndex(currValue, newIndex, newIterator);
+        return newValue;
       };
 
       var onChangeHandler = function onChangeHandler(e) {
         var inputVal = e.currentTarget.value;
-        var maskedVal = convertToMasked(inputVal);
+        var currSelection = getCurrSelection();
+        var start = Math.min(selection.start, currSelection.start);
+        var end = currSelection.end;
+        var cursorPosition = start;
+        var enteredVal = '';
+        var updatedVal = '';
+        var removedLength = 0;
+        var insertedStringLength = 0;
+        enteredVal = inputVal.slice(start, end);
+        updatedVal = insertAtIndex(enteredVal, start);
+        insertedStringLength = updatedVal.length;
 
-        if (isValid(validators, maskedVal)) {
-          setValue(maskedVal);
-          if (onChange) onChange(e, maskedVal);
+        if (currSelection.end > selection.end) {
+          removedLength = insertedStringLength ? getSelectionLength(selection) : 0;
+        } else if (inputVal.length < value.length) {
+          removedLength = value.length - inputVal.length;
+        }
+
+        cursorPosition += insertedStringLength;
+        var maskedVal = value.split('');
+
+        for (var i = 0; i < insertedStringLength; i++) {
+          maskedVal[start + i] = updatedVal[i];
+        }
+
+        for (var i = 0; i < removedLength; i++) {
+          var index$1 = start + insertedStringLength + i;
+          maskedVal[index$1] = getPlaceholderValue(index$1, index$1);
+        }
+
+        var newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
+
+        if (removedLength === 1 && !updatedVal.length && !isEditable(cursorPosition) && newCursorPosition > 0) {
+          cursorPosition = newCursorPosition;
+          cursorPosition--;
+          maskedVal[cursorPosition] = placeholderChar;
+        } else if (removedLength !== 1) {
+          cursorPosition = newCursorPosition;
+        }
+
+        var newValue = maskedVal.slice(0, mask.length).join('');
+        window.requestAnimationFrame(function () {
+          return setCursorPosition(cursorPosition);
+        });
+
+        if (isValid(validators, newValue)) {
+          setValue(newValue);
+          if (onChange) onChange(e, newValue);
         }
       };
 
       var onBlurHandler = function onBlurHandler(e) {
         var inputVal = e.currentTarget.value;
-        var maskedVal = convertToMasked(inputVal);
-        if (onBlur) onBlur(e, maskedVal);
+        if (onBlur) onBlur(e, inputVal);
+        if (deferId.current) window.cancelAnimationFrame(deferId.current);
       };
 
       var onClearHandler = function onClearHandler(e) {
         setValue('');
         if (onClear) onClear(e);
+      };
+
+      var onFocusHandler = function onFocusHandler(e) {
+        deferId.current = window.requestAnimationFrame(updateSelection);
+
+        if (!value) {
+          setValue(getPlaceholderValue());
+          window.requestAnimationFrame(function () {
+            return setSelectionPos(getDefaultSelection());
+          });
+        }
+
+        if (onFocus) onFocus(e);
       };
 
       var classes = classNames__default['default']({
@@ -4274,7 +4389,7 @@
         value: value,
         error: error,
         required: required,
-        onClick: onClickHandler,
+        onFocus: onFocusHandler,
         onChange: onChangeHandler,
         onClear: onClearHandler,
         onBlur: onBlurHandler,
@@ -5000,45 +5115,68 @@
 
     var Meta = function Meta(props) {
       var label = props.label,
-          icon = props.icon;
-      var baseProps = extractBaseProps(props);
-      return /*#__PURE__*/React.createElement("span", __assign({}, baseProps, {
+          icon = props.icon,
+          iconAppearance = props.iconAppearance,
+          labelAppearance = props.labelAppearance;
+      return /*#__PURE__*/React.createElement("span", {
         className: 'Meta'
-      }), icon && /*#__PURE__*/React.createElement(Icon, {
+      }, icon && /*#__PURE__*/React.createElement(Icon, {
         name: icon,
-        appearance: "disabled",
+        appearance: iconAppearance,
         className: 'Meta-icon'
       }), /*#__PURE__*/React.createElement(Text, {
-        appearance: "subtle"
+        appearance: labelAppearance
       }, label));
     };
     Meta.displayName = 'Meta';
 
     var MetaList = function MetaList(props) {
+      var _a, _b, _c;
+
       var list = props.list,
-          seperator = props.seperator;
+          seperator = props.seperator,
+          seperatorAppearance = props.seperatorAppearance,
+          iconAppearance = props.iconAppearance,
+          labelAppearance = props.labelAppearance,
+          className = props.className;
       var baseProps = extractBaseProps(props);
+      var MetaClass = classNames__default['default']((_a = {}, _a['MetaList'] = true, _a), className);
+      var SeperatorClass = classNames__default['default']((_b = {}, _b['MetaList-seperator'] = true, _b));
+      var LeftSeperatorClass = classNames__default['default']((_c = {}, _c['MetaList-seperator'] = true, _c['MetaList-seperator--left'] = true, _c));
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
-        className: 'MetaList'
-      }), seperator && /*#__PURE__*/React.createElement("span", {
-        className: 'MetaList-seperator MetaList-separator--left'
+        className: MetaClass
+      }), seperator && /*#__PURE__*/React.createElement(Icon, {
+        name: "fiber_manual_record",
+        size: 8,
+        className: LeftSeperatorClass,
+        appearance: seperatorAppearance
       }), list.map(function (item, ind) {
         var _a = item.label,
             label = _a === void 0 ? '' : _a,
             icon = item.icon;
-        var rightSeperator = ind === list.length - 1 ? false : true;
+        var rightSeperator = ind !== list.length - 1;
         return /*#__PURE__*/React.createElement("span", {
           key: ind,
           className: "MetaList-item"
         }, /*#__PURE__*/React.createElement(Meta, {
           label: label,
-          icon: icon
-        }), rightSeperator && /*#__PURE__*/React.createElement("span", {
-          className: 'MetaList-seperator'
+          icon: icon,
+          iconAppearance: iconAppearance,
+          labelAppearance: labelAppearance
+        }), rightSeperator && /*#__PURE__*/React.createElement(Icon, {
+          name: "fiber_manual_record",
+          size: 8,
+          className: SeperatorClass,
+          appearance: seperatorAppearance
         }));
       }));
     };
     MetaList.displayName = 'MetaList';
+    MetaList.defaultProps = {
+      seperatorAppearance: 'disabled',
+      iconAppearance: 'disabled',
+      labelAppearance: 'subtle'
+    };
 
     var OutsideClick = function (_super) {
       __extends(OutsideClick, _super);
@@ -6096,7 +6234,7 @@
           onClose = props.onClose,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var wrapperClass = classNames__default['default']((_a = {}, _a['Toast'] = true, _a["Toast--" + appearance] = appearance, _a), className);
+      var wrapperClass = classNames__default['default']((_a = {}, _a['Toast'] = true, _a['Toast--withMessage'] = message, _a["Toast--" + appearance] = appearance, _a), className);
       var IconMapping = {
         info: 'info',
         success: 'check_circle',
@@ -7060,6 +7198,16 @@
       function DateRangePicker(props) {
         var _this = _super.call(this, props) || this;
 
+        _this.getDate = function (startDate, endDate) {
+          var inputFormat = _this.props.inputFormat;
+          var startVal = startDate ? translateToString$1(inputFormat, startDate) : '';
+          var endVal = endDate ? translateToString$1(inputFormat, endDate) : '';
+          return {
+            startValue: startVal,
+            endValue: endVal
+          };
+        };
+
         _this.getErrors = function (startDate, endDate) {
           var isError = function isError(date) {
             var _a = _this.props,
@@ -7135,10 +7283,16 @@
         };
 
         _this.onRangeChangeHandler = function (sDate, eDate) {
+          var _a = _this.state,
+              startValue = _a.startValue,
+              endValue = _a.endValue;
+
           _this.setState({
             init: true,
             startDate: sDate,
-            endDate: eDate
+            endDate: eDate,
+            startValue: sDate ? translateToString$1(_this.props.inputFormat, sDate) : startValue,
+            endValue: eDate ? translateToString$1(_this.props.inputFormat, eDate) : endValue
           });
         };
 
@@ -7170,11 +7324,70 @@
           }
         };
 
+        _this.onDateChangeHandler = function (_e, val) {
+          var _a = _this.props,
+              inputFormat = _a.inputFormat,
+              validators = _a.validators,
+              inputOptions = _a.inputOptions;
+          var _b = _this.state,
+              startDate = _b.startDate,
+              endDate = _b.endDate,
+              startValue = _b.startValue,
+              endValue = _b.endValue;
+          var date = val.split(' - ');
+          var startVal = date[0];
+          var endVal = date[1];
+          var placeholderChar = inputOptions.placeholderChar || '_';
+
+          if (startValue !== startVal && startVal && !startVal.includes(placeholderChar)) {
+            var startD = translateToDate(inputFormat, startVal, validators);
+
+            if (startD) {
+              var isEndDateValid = endValue && !endValue.includes(placeholderChar);
+
+              _this.setState({
+                startDate: startD,
+                endDate: isEndDateValid ? endDate : undefined
+              });
+
+              if (endDate) {
+                var _c = getDateInfo(endDate),
+                    eYear = _c.year,
+                    eMonth = _c.month,
+                    eDate = _c.date;
+
+                if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
+                  _this.setState({
+                    endDate: undefined
+                  });
+                }
+              }
+            }
+          }
+
+          if (endValue !== endVal && endVal && !endVal.includes(placeholderChar)) {
+            var endD = translateToDate(inputFormat, endVal, validators);
+            var isStartDateValid = startValue && !startValue.includes(placeholderChar);
+
+            if (endD) {
+              _this.setState({
+                endDate: endD,
+                startDate: isStartDateValid ? startDate : undefined
+              });
+            }
+          }
+
+          _this.setState({
+            startValue: startVal,
+            endValue: endVal
+          });
+        };
+
         _this.onChangeHandler = function (_e, val, type) {
           var _a = _this.props,
+              inputFormat = _a.inputFormat,
               startInputOptions = _a.startInputOptions,
               endInputOptions = _a.endInputOptions,
-              inputFormat = _a.inputFormat,
               validators = _a.validators;
           var _b = _this.state,
               startDate = _b.startDate,
@@ -7232,7 +7445,8 @@
         _this.onBlurHandler = function (_e, val, type) {
           var _a = _this.props,
               startInputOptions = _a.startInputOptions,
-              endInputOptions = _a.endInputOptions;
+              endInputOptions = _a.endInputOptions,
+              inputOptions = _a.inputOptions;
 
           if (type === 'start') {
             var placeholderChar = startInputOptions.placeholderChar || '_';
@@ -7244,6 +7458,19 @@
           if (type === 'end') {
             var placeholderChar = endInputOptions.placeholderChar || '_';
             if (!val || val.includes(placeholderChar)) _this.setState({
+              endDate: undefined
+            });
+          }
+
+          if (type === 'start-end') {
+            var placeholderChar = inputOptions.placeholderChar || '_';
+            var date = val.split(' - ');
+            var startVal = date[0];
+            var endVal = date[1];
+            if (!startVal || startVal.includes(placeholderChar)) _this.setState({
+              startDate: undefined
+            });
+            if (!endVal || endVal.includes(placeholderChar)) _this.setState({
               endDate: undefined
             });
           }
@@ -7266,6 +7493,16 @@
             });
 
             _this.updateNav('start');
+          }
+
+          if (type === 'start-end') {
+            _this.setState({
+              init: true,
+              startDate: undefined,
+              endDate: undefined,
+              yearNav: undefined,
+              monthNav: undefined
+            });
           }
         };
 
@@ -7298,13 +7535,19 @@
         var startDate = convertToDate(props.startDate, inputFormat, validators);
         var endDate = convertToDate(props.endDate, inputFormat, validators);
 
-        var _a = _this.getErrors(startDate, endDate),
-            startError = _a.startError,
-            endError = _a.endError;
+        var _a = _this.getDate(startDate, endDate),
+            startValue = _a.startValue,
+            endValue = _a.endValue;
+
+        var _b = _this.getErrors(startDate, endDate),
+            startError = _b.startError,
+            endError = _b.endError;
 
         _this.state = {
           startDate: startDate,
           endDate: endDate,
+          startValue: startValue,
+          endValue: endValue,
           startError: startError,
           endError: endError,
           init: false,
@@ -7322,8 +7565,10 @@
               inputFormat = _a.inputFormat,
               validators = _a.validators;
           var d = convertToDate(this.props.startDate, inputFormat, validators);
+          var val = translateToString$1(inputFormat, d);
           this.setState({
-            startDate: d
+            startDate: d,
+            startValue: val
           });
         }
 
@@ -7332,8 +7577,10 @@
               inputFormat = _b.inputFormat,
               validators = _b.validators;
           var d = convertToDate(this.props.endDate, inputFormat, validators);
+          var val = translateToString$1(inputFormat, d);
           this.setState({
-            endDate: d
+            endDate: d,
+            endValue: val
           });
         }
 
@@ -7432,27 +7679,55 @@
             withInput = _a.withInput,
             startInputOptions = _a.startInputOptions,
             endInputOptions = _a.endInputOptions,
+            inputOptions = _a.inputOptions,
             inputFormat = _a.inputFormat,
             position = _a.position,
-            validators = _a.validators;
+            validators = _a.validators,
+            singleInput = _a.singleInput;
         var _b = this.state,
             init = _b.init,
             startDate = _b.startDate,
             endDate = _b.endDate,
+            startValue = _b.startValue,
+            endValue = _b.endValue,
             startError = _b.startError,
             endError = _b.endError,
             open = _b.open;
 
         if (withInput) {
           var mask = date$1[inputFormat];
+          var rangeMask = rangeDate[inputFormat];
           var showStartError = startInputOptions.required && startError && init;
           var showEndError = endInputOptions.required && endError && init;
+          var showError = inputOptions.required && (startError || endError) && init;
 
           var inputValidator = function inputValidator(val) {
             return isValid(validators, val, inputFormat);
           };
 
-          var trigger = /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, {
+          var trigger = singleInput ? /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, null, inputOptions.label && /*#__PURE__*/React.createElement(Label, {
+            required: inputOptions.required,
+            withInput: true
+          }, inputOptions.label), /*#__PURE__*/React.createElement(InputMask, __assign({
+            icon: "events",
+            placeholder: inputFormat + " - " + inputFormat
+          }, inputOptions, {
+            mask: rangeMask,
+            value: (startValue || '') + " - " + (endValue || ''),
+            onFocus: this.onFocusHandler,
+            onChange: function onChange(e, val) {
+              _this.onDateChangeHandler(e, val || '');
+            },
+            onBlur: function onBlur(e, val) {
+              _this.onBlurHandler(e, val || '', 'start-end');
+            },
+            onClear: function onClear() {
+              return _this.onClearHandler('start-end');
+            },
+            error: showError,
+            caption: showError ? inputOptions.caption || 'Invalid value' : '',
+            validators: [inputValidator]
+          })))) : /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, {
             size: '6',
             sizeXS: '12',
             className: "DateRangePicker-input DateRangePicker-input--startDate"
@@ -7524,11 +7799,14 @@
       };
 
       DateRangePicker.defaultProps = __assign(__assign({}, Calendar.defaultProps), {
-        monthsInView: 2,
-        position: 'bottom',
+        monthsInView: undefined,
+        position: 'bottom-start',
         inputFormat: 'mm/dd/yyyy',
         outputFormat: 'mm/dd/yyyy',
         validators: [date],
+        inputOptions: {
+          label: 'Date'
+        },
         startInputOptions: {
           label: 'Start Date'
         },
@@ -7844,7 +8122,8 @@
           showMenu = _a.showMenu,
           sortingList = _a.sortingList,
           filterList = _a.filterList,
-          headCellTooltip = _a.headCellTooltip;
+          headCellTooltip = _a.headCellTooltip,
+          showFilters = _a.showFilters;
       var _b = schema.sorting,
           sorting = _b === void 0 ? true : _b,
           name = schema.name,
@@ -7945,7 +8224,7 @@
         position: "top-start",
         triggerClass: "w-100 overflow-hidden",
         tooltip: schema.displayName
-      }, renderLabel()) : renderLabel())), filters && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !init ? /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement(Placeholder, null)) : /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Dropdown, {
+      }, renderLabel()) : renderLabel())), showFilters && filters && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !init ? /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement(Placeholder, null)) : /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Dropdown, {
         menu: true,
         showApplyButton: true,
         withCheckbox: true,
@@ -8067,22 +8346,26 @@
         className: cellClass,
         draggable: head && draggable,
         onDragStart: function onDragStart(e) {
-          e.dataTransfer.setData('name', name);
-          if (pinned) e.dataTransfer.setData('type', pinned);
+          if (draggable) {
+            e.dataTransfer.setData('name', name);
+            if (pinned) e.dataTransfer.setData('type', pinned);
+          }
         },
         onDragOver: function onDragOver(e) {
           return e.preventDefault();
         },
         onDrop: function onDrop(e) {
-          var from = {
-            name: e.dataTransfer.getData('name'),
-            type: e.dataTransfer.getData('type')
-          };
-          var to = {
-            name: name,
-            type: pinned || ''
-          };
-          if (from.type === to.type) _this.reorderCol(from.name, to.name);
+          if (draggable) {
+            var from = {
+              name: e.dataTransfer.getData('name'),
+              type: e.dataTransfer.getData('type')
+            };
+            var to = {
+              name: name,
+              type: pinned || ''
+            };
+            if (from.type === to.type) _this.reorderCol(from.name, to.name);
+          }
         },
         style: {
           visibility: !init ? 'hidden' : 'visible',
@@ -8667,7 +8950,8 @@
         loading: false,
         error: false,
         sortingList: [],
-        filterList: {}
+        filterList: {},
+        showFilters: true
       };
       return Grid;
     }(React.Component);
@@ -8903,6 +9187,134 @@
     };
     GridCell.displayName = 'GridCell';
 
+    var DraggableDropdown = function DraggableDropdown(props) {
+      var options = props.options,
+          onChange = props.onChange;
+
+      var _a = React.useState(false),
+          open = _a[0],
+          setOpen = _a[1];
+
+      var _b = React.useState(options),
+          tempOptions = _b[0],
+          setTempOptions = _b[1];
+
+      var _c = React.useState('var(--spacing-8)'),
+          triggerWidth = _c[0],
+          setTriggerWidth = _c[1];
+
+      React.useEffect(function () {
+        setTempOptions(options);
+      }, [open]);
+
+      var handleParentChange = function handleParentChange(e) {
+        setTempOptions(tempOptions.map(function (option) {
+          return __assign(__assign({}, option), {
+            selected: e.target.checked
+          });
+        }));
+      };
+
+      var handleChildChange = function handleChildChange(e, index) {
+        var newOptions = __spreadArrays(tempOptions);
+
+        newOptions[index] = __assign(__assign({}, newOptions[index]), {
+          selected: e.target.checked
+        });
+        setTempOptions(newOptions);
+      };
+
+      var onToggleHandler = function onToggleHandler(newOpen) {
+        setOpen(newOpen);
+      };
+
+      var onCancelHandler = function onCancelHandler() {
+        setOpen(false);
+      };
+
+      var onApplyHandler = function onApplyHandler() {
+        setOpen(false);
+        if (onChange) onChange(tempOptions);
+      };
+
+      return /*#__PURE__*/React.createElement("div", {
+        className: "Dropdown"
+      }, /*#__PURE__*/React.createElement(Popover, {
+        open: open,
+        onToggle: onToggleHandler,
+        trigger: /*#__PURE__*/React.createElement(Button, {
+          ref: function ref(el) {
+            setTriggerWidth((el === null || el === void 0 ? void 0 : el.clientWidth) + "px");
+          },
+          size: "tiny",
+          appearance: "transparent",
+          icon: "keyboard_arrow_down_filled",
+          iconAlign: "right"
+        }, "Showing " + options.filter(function (option) {
+          return option.selected;
+        }).length + " of " + options.length + " columns"),
+        triggerClass: "w-100",
+        customStyle: {
+          width: triggerWidth
+        },
+        className: "Header-draggableDropdown"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "Dropdown-wrapper"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "OptionWrapper"
+      }, /*#__PURE__*/React.createElement(Checkbox, {
+        className: "OptionCheckbox",
+        label: "Select All",
+        checked: tempOptions.every(function (option) {
+          return option.selected;
+        }),
+        indeterminate: tempOptions.some(function (option) {
+          return option.selected;
+        }) && tempOptions.some(function (option) {
+          return !option.selected;
+        }),
+        onChange: handleParentChange
+      })), tempOptions.map(function (option, index) {
+        return /*#__PURE__*/React.createElement("div", {
+          key: option.value,
+          className: "OptionWrapper d-flex flex-space-between align-items-center cursor-pointer",
+          draggable: true,
+          onDragStart: function onDragStart(e) {
+            e.dataTransfer.setData('index', "" + index);
+          },
+          onDragOver: function onDragOver(e) {
+            return e.preventDefault();
+          },
+          onDrop: function onDrop(e) {
+            var from = +e.dataTransfer.getData('index');
+            var to = index;
+            if (from !== to) setTempOptions(moveToIndex(tempOptions, from, to));
+          }
+        }, /*#__PURE__*/React.createElement(Checkbox, {
+          className: "OptionCheckbox",
+          name: option.value,
+          label: option.label,
+          checked: tempOptions[index].selected,
+          onChange: function onChange(e) {
+            return handleChildChange(e, index);
+          }
+        }), /*#__PURE__*/React.createElement(Icon, {
+          name: "drag_handle",
+          className: "mr-4"
+        }));
+      })), /*#__PURE__*/React.createElement("div", {
+        className: "Dropdown-buttonWrapper"
+      }, /*#__PURE__*/React.createElement(Button, {
+        className: "mr-4",
+        size: "tiny",
+        onClick: onCancelHandler
+      }, "Cancel"), /*#__PURE__*/React.createElement(Button, {
+        appearance: "primary",
+        size: "tiny",
+        onClick: onApplyHandler
+      }, "Apply"))));
+    };
+
     var Header = function Header(props) {
       var loading = props.loading,
           error = props.error,
@@ -8925,7 +9337,8 @@
           searchTerm = props.searchTerm,
           updateSearchTerm = props.updateSearchTerm,
           dynamicColumn = props.dynamicColumn,
-          allowSelectAll = props.allowSelectAll;
+          allowSelectAll = props.allowSelectAll,
+          showFilters = props.showFilters;
 
       var _c = React.useState(false),
           selectAllRecords = _c[0],
@@ -8968,39 +9381,25 @@
         }
       };
 
-      var onHideColumn = function onHideColumn(selected) {
-        var newSchema = schema.map(function (s) {
-          return __assign(__assign({}, s), {
-            hidden: selected.findIndex(function (val) {
-              return val === s.name;
-            }) === -1
-          });
-        });
-        if (updateSchema) updateSchema(newSchema);
-      };
-
-      var pinnedSchema = schema.filter(function (s) {
-        return s.pinned;
-      });
-      var leftPinnedSchema = pinnedSchema.filter(function (s) {
-        return s.pinned === 'left';
-      });
-      var rightPinnedSchema = pinnedSchema.filter(function (s) {
-        return s.pinned === 'right';
-      });
-      var unpinnedSchema = schema.filter(function (s) {
-        return !s.pinned;
-      });
-
-      var renderedSchema = __spreadArrays(leftPinnedSchema, unpinnedSchema, rightPinnedSchema);
-
-      var columnOptions = renderedSchema.map(function (s) {
+      var columnOptions = schema.map(function (s) {
         return {
           label: s.displayName,
           value: s.name,
           selected: !s.hidden
         };
       });
+
+      var onDynamicColumnUpdate = function onDynamicColumnUpdate(options) {
+        var newSchema = options.map(function (option) {
+          return __assign(__assign({}, schema.find(function (colSchema) {
+            return colSchema.name === option.value;
+          })), {
+            hidden: !option.selected
+          });
+        });
+        if (updateSchema) updateSchema(newSchema);
+      };
+
       var selectedCount = data.filter(function (d) {
         return d._selected;
       }).length;
@@ -9021,9 +9420,9 @@
           return updateSearchTerm && updateSearchTerm('');
         },
         disabled: loading && !getInit(schema)
-      })), !showHead && /*#__PURE__*/React.createElement("div", {
+      })), showFilters && filterSchema.length > 0 && /*#__PURE__*/React.createElement("div", {
         className: "Header-dropdown"
-      }, !showHead && filterSchema.length > 0 && /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React.createElement("div", {
         className: "Header-filters"
       }, filterSchema.map(function (s) {
         var name = s.name,
@@ -9076,38 +9475,17 @@
         }
       }, "Clear Selection")))), dynamicColumn && /*#__PURE__*/React.createElement("div", {
         className: "Header-hideColumns"
-      }, /*#__PURE__*/React.createElement(Dropdown, {
-        key: "" + flag,
-        triggerSize: 'tiny',
-        withCheckbox: true,
-        showApplyButton: true,
+      }, /*#__PURE__*/React.createElement(DraggableDropdown, {
         options: columnOptions,
-        totalOptions: columnOptions.length,
-        align: 'left',
-        triggerOptions: {
-          labelLimit: 0,
-          customLabel: function customLabel(selected, totalOptions) {
-            return "Showing " + selected + " of " + totalOptions + " columns";
-          },
-          customTrigger: function customTrigger(triggerLabel) {
-            return /*#__PURE__*/React.createElement(Button, {
-              size: "tiny",
-              appearance: "transparent",
-              icon: "keyboard_arrow_down_filled",
-              iconAlign: "right"
-            }, triggerLabel ? triggerLabel : "Showing 0 of " + columnOptions.length + " columns");
-          }
-        },
-        onChange: function onChange(selected) {
-          return onHideColumn(selected);
-        }
+        onChange: onDynamicColumnUpdate
       }))));
     };
     Header.defaultProps = {
       schema: [],
       data: [],
       searchPlaceholder: 'Search',
-      dynamicColumn: true
+      dynamicColumn: true,
+      showFilters: true
     };
 
     var defaultErrorTemplate = function defaultErrorTemplate(props) {
@@ -9140,6 +9518,7 @@
       loaderSchema: [],
       sortingList: [],
       filterList: {},
+      filterPosition: 'GRID',
       errorTemplate: defaultErrorTemplate
     };
 
@@ -9395,7 +9774,8 @@
             onRowClick = _a.onRowClick,
             loaderSchema = _a.loaderSchema,
             errorTemplate = _a.errorTemplate,
-            className = _a.className;
+            className = _a.className,
+            filterPosition = _a.filterPosition;
         var baseProps = extractBaseProps(this.props);
 
         var _b = headerOptions,
@@ -9416,7 +9796,8 @@
           showHead: showHead,
           onSelectAll: this.onSelectAll,
           withCheckbox: withCheckbox,
-          withPagination: withPagination
+          withPagination: withPagination,
+          showFilters: filterPosition === 'HEADER'
         }, headerAttr), headerChildren)), /*#__PURE__*/React.createElement("div", {
           className: "Table-grid"
         }, /*#__PURE__*/React.createElement(Grid, __assign({}, this.state, {
@@ -9442,7 +9823,8 @@
           errorTemplate: errorTemplate && errorTemplate({
             errorType: this.state.errorType
           }),
-          onRowClick: onRowClick
+          onRowClick: onRowClick,
+          showFilters: filterPosition === 'GRID'
         }))), withPagination && !this.state.loading && !this.state.error && totalPages > 1 && /*#__PURE__*/React.createElement("div", {
           className: "Table-pagination"
         }, /*#__PURE__*/React.createElement(Pagination, {
@@ -9459,7 +9841,8 @@
 
     var List = function List(props) {
       return /*#__PURE__*/React.createElement(Table, __assign({}, props, {
-        showHead: false
+        showHead: false,
+        filterPosition: 'HEADER'
       }));
     };
     List.defaultProps = defaultProps$1;
@@ -9650,7 +10033,7 @@
         })));
       };
 
-      var classes = classNames__default['default']((_a = {}, _a['Navigation'] = true, _a["Navigation--" + type] = type, _a['justify-content-center'] = type === 'horizontal' && align === 'center', _a['Navigation--collapsed'] = !expanded, _a), className);
+      var classes = classNames__default['default']((_a = {}, _a['Navigation'] = true, _a["Navigation--" + type] = type, _a['justify-content-center'] = type === 'horizontal' && align === 'center', _a['justify-content-start'] = type === 'horizontal' && align === 'left', _a['Navigation--collapsed'] = !expanded, _a), className);
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
         className: classes
       }), type === 'horizontal' ? getHorizontalMenu(menus) : getVerticalMenu());
@@ -9792,3 +10175,4 @@
     Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
+//# sourceMappingURL=index.js.map
