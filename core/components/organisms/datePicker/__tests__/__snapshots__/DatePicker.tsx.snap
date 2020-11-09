@@ -12,34 +12,23 @@ exports[`DatePicker component
   open={false}
   position="bottom-start"
   trigger={
-    <InputMask
-      caption=""
-      icon="events"
-      mask={
-        Array [
-          /\\[01\\]/,
-          /\\\\d/,
-          "/",
-          /\\[0123\\]/,
-          /\\\\d/,
-          "/",
-          /\\\\d/,
-          /\\\\d/,
-          /\\\\d/,
-          /\\\\d/,
-        ]
+    <Unknown
+      inputFormat="mm/dd/yyyy"
+      inputOptions={Object {}}
+      setState={[Function]}
+      state={
+        Object {
+          "date": 2020-03-01T00:00:00.000Z,
+          "error": false,
+          "init": false,
+          "open": false,
+        }
       }
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClear={[Function]}
-      onFocus={[Function]}
-      placeholder="mm/dd/yyyy"
       validators={
         Array [
           [Function],
         ]
       }
-      value="03/01/2020"
     />
   }
   triggerClass="w-100"
@@ -66,34 +55,23 @@ exports[`DatePicker component
   open={true}
   position="bottom-start"
   trigger={
-    <InputMask
-      caption=""
-      icon="events"
-      mask={
-        Array [
-          /\\[01\\]/,
-          /\\\\d/,
-          "/",
-          /\\[0123\\]/,
-          /\\\\d/,
-          "/",
-          /\\\\d/,
-          /\\\\d/,
-          /\\\\d/,
-          /\\\\d/,
-        ]
+    <Unknown
+      inputFormat="mm/dd/yyyy"
+      inputOptions={Object {}}
+      setState={[Function]}
+      state={
+        Object {
+          "date": 2020-03-01T00:00:00.000Z,
+          "error": false,
+          "init": false,
+          "open": true,
+        }
       }
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClear={[Function]}
-      onFocus={[Function]}
-      placeholder="mm/dd/yyyy"
       validators={
         Array [
           [Function],
         ]
       }
-      value="03/01/2020"
     />
   }
   triggerClass="w-100"
@@ -168,34 +146,23 @@ exports[`DatePicker component
   open={false}
   position="bottom-start"
   trigger={
-    <InputMask
-      caption=""
-      icon="events"
-      mask={
-        Array [
-          /\\[01\\]/,
-          /\\\\d/,
-          "/",
-          /\\[0123\\]/,
-          /\\\\d/,
-          "/",
-          /\\\\d/,
-          /\\\\d/,
-          /\\\\d/,
-          /\\\\d/,
-        ]
+    <Unknown
+      inputFormat="mm/dd/yyyy"
+      inputOptions={Object {}}
+      setState={[Function]}
+      state={
+        Object {
+          "date": 2020-03-01T00:00:00.000Z,
+          "error": false,
+          "init": false,
+          "open": false,
+        }
       }
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClear={[Function]}
-      onFocus={[Function]}
-      placeholder="mm/dd/yyyy"
       validators={
         Array [
           [Function],
         ]
       }
-      value="03/01/2020"
     />
   }
   triggerClass="w-100"

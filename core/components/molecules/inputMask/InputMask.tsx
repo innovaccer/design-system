@@ -63,7 +63,6 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     required,
     onChange,
     onBlur,
-    onClick,
     onFocus,
     onClear,
     className,
@@ -92,7 +91,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
   };
 
   const getPlaceholderValue = (start: number = 0, end: number = mask.length - 1) =>
-    getDefaultValue(mask, placeholderChar).slice(start, end);
+    getDefaultValue(mask, placeholderChar).slice(start, end + 1);
 
   const getSelectionLength = (val: SelectionPos) => Math.abs(val.end - val.start);
 
