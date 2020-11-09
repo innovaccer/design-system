@@ -2,10 +2,11 @@ import * as React from 'react';
 import { Calendar, SharedProps } from '../calendar/Calendar';
 import { DateType, DateFormat } from '../calendar/types';
 import Popover, { Position } from '@/components/molecules/popover';
-import { InputMask, InputMaskProps } from '@/components/molecules/inputMask';
+import { InputMaskProps } from '@/components/molecules/inputMask';
 import { Utils } from '@/index';
 import { Validators } from '@/utils/types';
-import { convertToDate, translateToDate, translateToString, compareDate, getDateInfo } from '../calendar/utility';
+import { convertToDate, translateToString, compareDate, getDateInfo } from '../calendar/utility';
+import { Trigger } from './Trigger';
 
 export type DatePickerProps = SharedProps & {
   /**
@@ -59,7 +60,7 @@ export type DatePickerProps = SharedProps & {
   closeOnSelect: boolean;
 };
 
-interface DatePickerState {
+export interface DatePickerState {
   init: boolean;
   date?: Date;
   error: boolean;
@@ -176,44 +177,6 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     if (closeOnSelect) this.setState({ open: false });
   }
 
-  onChangeHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
-    const {
-      inputFormat,
-      validators,
-      inputOptions
-    } = this.props;
-
-    this.setState({
-      open: true
-    });
-
-    const { placeholderChar = '_' } = inputOptions;
-    if (val && !val.includes(placeholderChar)) {
-      const d = translateToDate(inputFormat, val, validators);
-      this.setState({ date: d });
-    }
-  }
-
-  onFocusHandler = () => {
-    this.setState({
-      init: true
-    });
-  }
-
-  onBlurHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
-    const { placeholderChar = '_' } = this.props.inputOptions;
-    if (!val || val.includes(placeholderChar)) {
-      this.setState({ date: undefined });
-    }
-  }
-
-  onClearHandler = () => {
-    this.setState({
-      init: true,
-      date: undefined
-    });
-  }
-
   onToggleHandler = (o: boolean, type?: string) => {
     switch (type) {
       case 'outsideClick':
@@ -260,45 +223,28 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   render() {
     const {
       position,
+      withInput,
       inputFormat,
       inputOptions,
-      withInput,
       validators
     } = this.props;
 
     const {
-      init,
-      date,
-      error,
       open
     } = this.state;
 
     if (withInput) {
-      const showError = inputOptions.required && error && init;
-      const inputValidator = (val: string): boolean => {
-        return Utils.validators.isValid(validators, val, inputFormat);
-      };
-
-      const trigger = (
-        <InputMask
-          icon="events"
-          placeholder={inputFormat}
-          {...inputOptions}
-          error={showError}
-          mask={Utils.masks.date[inputFormat]}
-          value={date ? translateToString(inputFormat, date) : ''}
-          onChange={this.onChangeHandler}
-          onFocus={this.onFocusHandler}
-          onBlur={this.onBlurHandler}
-          onClear={this.onClearHandler}
-          caption={showError ? inputOptions.caption || 'Invalid value' : ''}
-          validators={[inputValidator]}
-        />
-      );
-
       return (
         <Popover
-          trigger={trigger}
+          trigger={(
+            <Trigger
+              inputFormat={inputFormat}
+              inputOptions={inputOptions}
+              validators={validators}
+              state={this.state}
+              setState={this.setState.bind(this)}
+            />
+          )}
           triggerClass="w-100"
           position={position}
           appendToBody={true}
