@@ -132,6 +132,30 @@ describe('Button component', () => {
 describe('Button component', () => {
   const mapper: Record<string, any> = {
     appearance: valueHelper(appearance, { required: true, iterate: true }),
+    selected: valueHelper(true, { required: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+
+    it(testMessageHelper(attr), () => {
+      const tree = shallow(
+        <Button
+          {...attr}
+        >
+          Button
+        </Button >
+      );
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('Button component', () => {
+  const mapper: Record<string, any> = {
+    appearance: valueHelper(appearance, { required: true, iterate: true }),
     loading: valueHelper(true, { required: true }),
   };
 

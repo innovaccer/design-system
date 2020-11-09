@@ -85,6 +85,33 @@ export const basic = () => {
         <br />
         <Text weight="strong">Loading with Text</Text>
       </div>
+      <div className="mr-9">
+        <Button
+          onClick={action('button-clicked')}
+          onMouseEnter={action('mouse-enter')}
+          onMouseLeave={action('mouse-leave')}
+          appearance={'basic'}
+          size={'regular'}
+          selected={true}
+        >
+          {children}
+        </Button>
+        <br />
+        <Text weight="strong">Selected</Text>
+      </div>
+      <div className="mr-9">
+        <Button
+          onClick={action('button-clicked')}
+          onMouseEnter={action('mouse-enter')}
+          onMouseLeave={action('mouse-leave')}
+          appearance={'basic'}
+          size={'regular'}
+          selected={true}
+          icon="events"
+        />
+        <br />
+        <Text weight="strong">Selected Icon</Text>
+      </div>
     </div>
   );
 };
