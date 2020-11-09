@@ -55,6 +55,17 @@ exports[`Button component
 `;
 
 exports[`Button component 
+  appearance: "alert", selected: true
+ 1`] = `
+<button
+  className="Button Button--regular Button--alert Button--iconAlign-left"
+  tabIndex={0}
+>
+  Button
+</button>
+`;
+
+exports[`Button component 
   appearance: "basic", disabled: true
  1`] = `
 <button
@@ -104,6 +115,17 @@ exports[`Button component
       size="small"
     />
   </span>
+  Button
+</button>
+`;
+
+exports[`Button component 
+  appearance: "basic", selected: true
+ 1`] = `
+<button
+  className="Button Button--regular Button--basic Button--selected Button--iconAlign-left"
+  tabIndex={0}
+>
   Button
 </button>
 `;
@@ -163,6 +185,17 @@ exports[`Button component
 `;
 
 exports[`Button component 
+  appearance: "primary", selected: true
+ 1`] = `
+<button
+  className="Button Button--regular Button--primary Button--iconAlign-left"
+  tabIndex={0}
+>
+  Button
+</button>
+`;
+
+exports[`Button component 
   appearance: "success", disabled: true
  1`] = `
 <button
@@ -217,6 +250,17 @@ exports[`Button component
 `;
 
 exports[`Button component 
+  appearance: "success", selected: true
+ 1`] = `
+<button
+  className="Button Button--regular Button--success Button--iconAlign-left"
+  tabIndex={0}
+>
+  Button
+</button>
+`;
+
+exports[`Button component 
   appearance: "transparent", disabled: true
  1`] = `
 <button
@@ -266,6 +310,17 @@ exports[`Button component
       size="small"
     />
   </span>
+  Button
+</button>
+`;
+
+exports[`Button component 
+  appearance: "transparent", selected: true
+ 1`] = `
+<button
+  className="Button Button--regular Button--transparent Button--selected Button--iconAlign-left"
+  tabIndex={0}
+>
   Button
 </button>
 `;
@@ -463,7 +518,7 @@ exports[`Button component with no children
   appearance: "alert", loading: true
  1`] = `
 <button
-  className="Button Button--regular Button--square Button--alert"
+  className="Button Button--regular Button--regularSquare Button--alert"
   disabled={true}
   tabIndex={0}
 >
@@ -482,7 +537,7 @@ exports[`Button component with no children
   appearance: "basic", loading: true
  1`] = `
 <button
-  className="Button Button--regular Button--square Button--basic"
+  className="Button Button--regular Button--regularSquare Button--basic"
   disabled={true}
   tabIndex={0}
 >
@@ -501,7 +556,7 @@ exports[`Button component with no children
   appearance: "primary", loading: true
  1`] = `
 <button
-  className="Button Button--regular Button--square Button--primary"
+  className="Button Button--regular Button--regularSquare Button--primary"
   disabled={true}
   tabIndex={0}
 >
@@ -520,7 +575,7 @@ exports[`Button component with no children
   appearance: "success", loading: true
  1`] = `
 <button
-  className="Button Button--regular Button--square Button--success"
+  className="Button Button--regular Button--regularSquare Button--success"
   disabled={true}
   tabIndex={0}
 >
@@ -539,7 +594,7 @@ exports[`Button component with no children
   appearance: "transparent", loading: true
  1`] = `
 <button
-  className="Button Button--regular Button--square Button--transparent"
+  className="Button Button--regular Button--regularSquare Button--transparent"
   disabled={true}
   tabIndex={0}
 >

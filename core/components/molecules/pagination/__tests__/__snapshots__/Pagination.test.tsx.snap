@@ -12,7 +12,7 @@ exports[`Pagination component
       class="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
     >
       <button
-        class="Button Button--large Button--square Button--transparent"
+        class="Button Button--large Button--largeSquare Button--transparent"
         data-test="DesignSystem-Pagination--FirstButton"
         tabindex="0"
       >
@@ -32,7 +32,7 @@ exports[`Pagination component
         data-test="DesignSystem-Pagination--Prev"
       >
         <button
-          class="Button Button--large Button--square Button--basic"
+          class="Button Button--large Button--largeSquare Button--basic"
           data-test="DesignSystem-Pagination--PrevButton"
           tabindex="0"
         >
@@ -56,7 +56,7 @@ exports[`Pagination component
         class="mr-4 mx-3"
       >
         <button
-          class="Button Button--large Button--square Button--basic"
+          class="Button Button--large Button--largeSquare Button--basic"
           data-test="DesignSystem-Pagination--NextButton"
           tabindex="0"
         >
@@ -73,7 +73,7 @@ exports[`Pagination component
         </button>
       </div>
       <button
-        class="Button Button--large Button--square Button--transparent"
+        class="Button Button--large Button--largeSquare Button--transparent"
         data-test="DesignSystem-Pagination--LastButton"
         tabindex="0"
       >
@@ -105,7 +105,7 @@ exports[`Pagination component
       class="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
     >
       <button
-        class="Button Button--large Button--square Button--transparent"
+        class="Button Button--large Button--largeSquare Button--transparent"
         data-test="DesignSystem-Pagination--FirstButton"
         tabindex="0"
       >
@@ -125,7 +125,7 @@ exports[`Pagination component
         data-test="DesignSystem-Pagination--Prev"
       >
         <button
-          class="Button Button--large Button--square Button--basic"
+          class="Button Button--large Button--largeSquare Button--basic"
           data-test="DesignSystem-Pagination--PrevButton"
           tabindex="0"
         >
@@ -171,7 +171,7 @@ exports[`Pagination component
         class="mr-4 mx-4"
       >
         <button
-          class="Button Button--large Button--square Button--basic"
+          class="Button Button--large Button--largeSquare Button--basic"
           data-test="DesignSystem-Pagination--NextButton"
           tabindex="0"
         >
@@ -188,7 +188,7 @@ exports[`Pagination component
         </button>
       </div>
       <button
-        class="Button Button--large Button--square Button--transparent"
+        class="Button Button--large Button--largeSquare Button--transparent"
         data-test="DesignSystem-Pagination--LastButton"
         tabindex="0"
       >
