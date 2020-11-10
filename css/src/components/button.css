@@ -42,7 +42,7 @@
     padding-bottom: var(--spacing-m);
 }
 
-.Button--tiny.Button--square {
+.Button--tinySquare {
     padding-left: var(--spacing-m);
     padding-right: var(--spacing-m);
 }
@@ -53,7 +53,7 @@
 	padding-left: var(--spacing-l);
 }
 
-.Button--regular.Button--square {
+.Button--regularSquare {
     padding-left: var(--spacing);
     padding-right: var(--spacing);
 }
@@ -67,15 +67,15 @@
     font-size: var(--font-size-m);
 }
 
-.Button--large.Button--square {
+.Button--largeSquare {
     padding-left: var(--spacing);
     padding-right: var(--spacing);
 }
 
-.Button--tiny.Button--square .Button-icon,
-.Button--large.Button--square .Button-icon,
-.Button--tiny.Button--square .Spinner,
-.Button--large.Button--square .Spinner {
+.Button--tinySquare .Button-icon,
+.Button--largeSquare .Button-icon,
+.Button--tinySquare .Spinner,
+.Button--largeSquare .Spinner {
     padding-left: var(--spacing-s);
     padding-right: var(--spacing-s);
 }
@@ -216,10 +216,6 @@
     display: flex;
 }
 
-.Button--square .Button-spinner {
-    margin-right: 0 !important;
-}
-
 .Button--tiny .Button-spinner {
     margin-right: var(--spacing-m);
 }
@@ -232,4 +228,9 @@
 .Button--large .Spinner--small {
     height: var(--font-size-l);
     width: var(--font-size-l);
+}
+
+.Button--selected {
+    background: var(--primary-lightest);
+    color: var(--primary);
 }

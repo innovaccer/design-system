@@ -28,7 +28,7 @@ exports[`TS renders children 1`] = `
     class="Breadcrumbs"
   />
   <button
-    class="Button Button--regular Button--square Button--basic"
+    class="Button Button--regular Button--regularSquare Button--basic"
     tabindex="0"
   />
   <div
@@ -1469,7 +1469,7 @@ exports[`TS renders children 1`] = `
       class="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
     >
       <button
-        class="Button Button--large Button--square Button--transparent"
+        class="Button Button--large Button--largeSquare Button--transparent"
         data-test="DesignSystem-Pagination--FirstButton"
         disabled=""
         tabindex="0"
@@ -1490,7 +1490,7 @@ exports[`TS renders children 1`] = `
         data-test="DesignSystem-Pagination--Prev"
       >
         <button
-          class="Button Button--large Button--square Button--basic"
+          class="Button Button--large Button--largeSquare Button--basic"
           data-test="DesignSystem-Pagination--PrevButton"
           disabled=""
           tabindex="0"
@@ -1515,7 +1515,7 @@ exports[`TS renders children 1`] = `
         class="mr-4 mx-3"
       >
         <button
-          class="Button Button--large Button--square Button--basic"
+          class="Button Button--large Button--largeSquare Button--basic"
           data-test="DesignSystem-Pagination--NextButton"
           disabled=""
           tabindex="0"
@@ -1533,7 +1533,7 @@ exports[`TS renders children 1`] = `
         </button>
       </div>
       <button
-        class="Button Button--large Button--square Button--transparent"
+        class="Button Button--large Button--largeSquare Button--transparent"
         data-test="DesignSystem-Pagination--LastButton"
         disabled=""
         tabindex="0"
