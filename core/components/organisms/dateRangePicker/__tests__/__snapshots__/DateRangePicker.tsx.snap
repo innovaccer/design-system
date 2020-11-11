@@ -4,6 +4,7 @@ exports[`DateRangePicker component
   
  1`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -23,6 +24,7 @@ exports[`DateRangePicker component
   monthsInView: 1
  1`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -42,6 +44,7 @@ exports[`DateRangePicker component
   monthsInView: 1
  2`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -63,6 +66,7 @@ exports[`DateRangePicker component
   monthsInView: 2
  1`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -82,6 +86,7 @@ exports[`DateRangePicker component
   monthsInView: 2
  2`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -103,6 +108,7 @@ exports[`DateRangePicker component
   monthsInView: 3
  1`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -122,6 +128,7 @@ exports[`DateRangePicker component
   monthsInView: 3
  2`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -144,6 +151,7 @@ exports[`DateRangePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  className="DateRangePicker DateRangePicker--left"
   closeOnBackdropClick={true}
   customStyle={Object {}}
   on="click"
@@ -188,6 +196,7 @@ exports[`DateRangePicker component
   triggerClass="w-100"
 >
   <Calendar
+    contentAlign="left"
     endDate={2020-03-11T00:00:00.000Z}
     firstDayOfWeek="sunday"
     inputOptions={
@@ -209,6 +218,7 @@ exports[`DateRangePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  className="DateRangePicker DateRangePicker--left"
   closeOnBackdropClick={true}
   customStyle={Object {}}
   on="click"
@@ -253,6 +263,7 @@ exports[`DateRangePicker component
   triggerClass="w-100"
 >
   <Calendar
+    contentAlign="left"
     endDate={2020-03-11T00:00:00.000Z}
     firstDayOfWeek="sunday"
     inputOptions={
@@ -273,6 +284,7 @@ exports[`DateRangePicker component
   view: "date"
  1`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -292,6 +304,7 @@ exports[`DateRangePicker component
   view: "month"
  1`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -311,6 +324,7 @@ exports[`DateRangePicker component
   view: "year"
  1`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -330,6 +344,7 @@ exports[`DateRangePicker component
   withInput: false
  1`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -350,6 +365,7 @@ exports[`DateRangePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  className="DateRangePicker DateRangePicker--left"
   closeOnBackdropClick={true}
   customStyle={Object {}}
   on="click"
@@ -394,6 +410,7 @@ exports[`DateRangePicker component
   triggerClass="w-100"
 >
   <Calendar
+    contentAlign="left"
     endDate={2020-03-11T00:00:00.000Z}
     firstDayOfWeek="sunday"
     inputOptions={
