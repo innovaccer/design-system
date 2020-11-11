@@ -1,5 +1,13 @@
 .DateRangePicker {
+    display: flex;
+}
 
+.DateRangePicker--left {
+    flex-direction: row;
+}
+
+.DateRangePicker--right {
+    flex-direction: row-reverse;
 }
 
 .DateRangePicker-input {
