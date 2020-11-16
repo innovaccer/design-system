@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { Calendar, CalendarProps, SharedProps } from '../calendar/Calendar';
 import { DateType, DateFormat } from '../calendar/types';
 import { Position } from '@/components/molecules/popover';
@@ -13,6 +14,15 @@ import {
   translateToString,
 } from '../calendar/utility';
 import { Popover, Utils } from '@/index';
+import {
+  getCurrentWeek,
+  getPreviousWeek,
+  getPreviousMonth,
+  getPrevious90Days,
+  getCustomDates,
+  getCurrentYear,
+  getCurrentMonth
+} from './utilities';
 
 export type InputOptions = Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClick' | 'onClear' | 'error'>
   & { label?: string };
@@ -25,6 +35,14 @@ export type DateRangePickerProps = SharedProps & {
    * @argument endDateVal End Date string value as per `outputFormat`
    */
   onRangeChange?: (startDate?: Date, endDate?: Date, startValue?: string, endValue?: string) => void;
+  /**
+   * Element to be rendered inside Popover
+   */
+  children: React.ReactNode;
+  /**
+   * Alignment of `children` Element
+   */
+  contentAlign?: 'left' | 'right'
   /**
    * Start date of `DateRangePicker`
    */
@@ -108,6 +126,8 @@ export interface DateRangePickerState {
 export class DateRangePicker extends React.Component<DateRangePickerProps, DateRangePickerState> {
   static defaultProps = {
     ...Calendar.defaultProps,
+    children: <></>,
+    contentAlign: 'left',
     monthsInView: undefined,
     position: 'bottom-start',
     inputFormat: 'mm/dd/yyyy',
@@ -405,12 +425,19 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       inputFormat,
       position,
       validators,
-      singleInput
+      singleInput,
+      contentAlign,
+      children
     } = this.props;
 
     const {
       open
     } = this.state;
+
+    const RangePickerClass = classNames({
+      ['DateRangePicker']: true,
+      [`DateRangePicker--${contentAlign}`]: contentAlign
+    });
 
     if (withInput) {
       const trigger = singleInput ? (
@@ -436,11 +463,13 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
         <Popover
           trigger={trigger}
           triggerClass="w-100"
+          className={RangePickerClass}
           position={position}
           appendToBody={true}
           open={open}
           onToggle={this.onToggleHandler}
         >
+          {children}
           {this.renderCalendar()}
         </Popover>
       );
@@ -449,5 +478,15 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     return this.renderCalendar();
   }
 }
+// @ts-ignore
+DateRangePicker.utils = {
+  getCurrentWeek,
+  getPreviousWeek,
+  getPreviousMonth,
+  getPrevious90Days,
+  getCustomDates,
+  getCurrentYear,
+  getCurrentMonth
+};
 
 export default DateRangePicker;
