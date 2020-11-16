@@ -10,4 +10,7 @@
   box-sizing: border-box;
   word-break: break-word;
   hyphens: auto;
+  transition: opacity 120ms;
+  transition-delay: 800ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.38, 0.9);
 }
