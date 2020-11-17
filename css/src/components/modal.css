@@ -1,21 +1,21 @@
 @keyframes modal-open {
   from {
-    top: calc(10% + 20px);
+    top: 124px;
     opacity: 0;
   }
   to {
-    top: 10%;
+    top: 104px;
     opacity: 100;
   }
 }
 
 @keyframes modal-close {
   from {
-    top: calc(10%);
+    top: 104px;
     opacity: 100;
   }
   to {
-    top: calc(10% + 20px);
+    top: 124px;
     opacity: 0;
   }
 }
@@ -32,10 +32,11 @@
 
 .Modal {
   position: fixed;
-  top: 10%;
+  top: 104px;
   min-width: 480px;
   max-width: 960px;
   min-height: 200px;
+  max-height: 70%;
   box-shadow: var(--shadow-m);
   background-color: var(--white);
   border-radius: var(--spacing);
@@ -45,7 +46,8 @@
 }
 
 .Modal--open {
-  display: block;
+  display: flex;
+  flex-direction: column;
   visibility: visible;
 }
 
@@ -125,7 +127,6 @@
 
 .Modal-body {
   padding: 0 var(--spacing-2);
-  max-height: 480px;
   overflow-y: auto;
   margin-bottom: var(--spacing-5);
 }
