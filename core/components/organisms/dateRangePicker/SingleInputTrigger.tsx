@@ -39,7 +39,10 @@ export const SingleInputTrigger = (props: TriggerProps) => {
   const sValue = startValue || defaultValue[0];
   const eValue = endValue || defaultValue[1];
   const inputValidator = (val: string): boolean => {
-    return Utils.validators.isValid(validators, val, inputFormat);
+    const [startVal, endVal] = val.split(' - ');
+
+    return Utils.validators.isValid(validators, startVal, inputFormat)
+      && Utils.validators.isValid(validators, endVal, inputFormat);
   };
 
   const onChangeHandler = (_e: React.ChangeEvent<HTMLInputElement>, val: string) => {
