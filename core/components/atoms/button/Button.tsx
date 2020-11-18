@@ -33,6 +33,12 @@ export interface ButtonProps extends BaseProps {
    */
   expanded?: boolean;
   /**
+   * Selected state of `Button`
+   *
+   * **Only applicable for `appearance: 'basic' | 'transparent'`**
+   */
+  selected?: boolean;
+  /**
    * Adds loader inside `Button` when waiting for an action to complete
    */
   loading?: boolean;
@@ -85,6 +91,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     children,
     icon,
     expanded,
+    selected,
     loading,
     disabled,
     className,
@@ -95,8 +102,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     ['Button']: true,
     ['Button--expanded']: expanded,
     [`Button--${size}`]: size,
-    ['Button--square']: !children,
+    [`Button--${size}Square`]: !children,
     [`Button--${appearance}`]: appearance,
+    ['Button--selected']: selected && (appearance === 'basic' || appearance === 'transparent'),
     [`Button--iconAlign-${iconAlign}`]: children && iconAlign,
     [`${className}`]: className
   });
@@ -122,7 +130,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
         <div className={iconClass}>
           <Icon
             name={icon}
-            appearance={disabled ? 'disabled' : (appearance === 'basic' || appearance === 'transparent') ? 'default' : 'white'}
+            appearance={disabled ? 'disabled' : (appearance === 'basic' || appearance === 'transparent') ? selected ? 'info' : 'default' : 'white'}
             size={sizeMapping[size]}
           />
         </div>

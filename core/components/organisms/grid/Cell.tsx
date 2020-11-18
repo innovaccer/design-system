@@ -5,6 +5,7 @@ import { Dropdown, Grid, Placeholder, PlaceholderParagraph, Text, Icon, Button, 
 import { resizeCol, getInit } from './utility';
 import { DropdownProps } from '@/components/atoms/dropdown';
 import { getCellSize, getWidth } from './columnUtility';
+import { GridNestedRow } from './GridNestedRow';
 
 interface SharedCellProps {
   _this: Grid;
@@ -247,18 +248,35 @@ const BodyCell = (props: BodyCellProps) => {
     loading,
   };
 
+  const nestedProps = {
+    _this,
+    data,
+    rowIndex,
+  };
+
+  const isNestedRowDisabled = !GridNestedRow(nestedProps);
+
   return (
     <div className="Grid-cellContent">
       {colIndex === 0 && nestedRows && (
-        <Icon
-          className="Grid-nestedRowTrigger"
-          name={expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
-          size={20}
-          onClick={e => {
-            e.stopPropagation();
-            setExpanded(!expanded);
-          }}
-        />
+        <>
+          {!isNestedRowDisabled ? (
+            <Icon
+              className={'Grid-nestedRowTrigger'}
+              name={expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
+              size={20}
+              appearance={'default'}
+              onClick={e => {
+                if (!isNestedRowDisabled) {
+                  e.stopPropagation();
+                  setExpanded(!expanded);
+                }
+              }}
+            />
+          ) : (
+              <span className="Grid-nestedRowPlaceholder" />
+            )}
+        </>
       )}
       {schema.cellRenderer ?
         schema.cellRenderer(cellProps)

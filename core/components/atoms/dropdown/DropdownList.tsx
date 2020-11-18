@@ -211,6 +211,7 @@ const DropdownList = (props: OptionsProps) => {
     <DropdownButton
       placeholder={placeholder}
       triggerSize={triggerSize}
+      open={dropdownOpen}
       icon={icon}
       disabled={disabled}
       inlineLabel={inlineLabel}

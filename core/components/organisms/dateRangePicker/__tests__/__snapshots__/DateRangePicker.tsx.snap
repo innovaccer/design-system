@@ -4,6 +4,7 @@ exports[`DateRangePicker component
   
  1`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -23,6 +24,7 @@ exports[`DateRangePicker component
   monthsInView: 1
  1`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -42,6 +44,7 @@ exports[`DateRangePicker component
   monthsInView: 1
  2`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -63,6 +66,7 @@ exports[`DateRangePicker component
   monthsInView: 2
  1`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -82,6 +86,7 @@ exports[`DateRangePicker component
   monthsInView: 2
  2`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -103,6 +108,7 @@ exports[`DateRangePicker component
   monthsInView: 3
  1`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -122,6 +128,7 @@ exports[`DateRangePicker component
   monthsInView: 3
  2`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -144,6 +151,7 @@ exports[`DateRangePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  className="DateRangePicker DateRangePicker--left"
   closeOnBackdropClick={true}
   customStyle={Object {}}
   on="click"
@@ -151,95 +159,44 @@ exports[`DateRangePicker component
   open={false}
   position="bottom-start"
   trigger={
-    <Row>
-      <Column
-        className="DateRangePicker-input DateRangePicker-input--startDate"
-        size="6"
-        sizeXS="12"
-      >
-        <Label
-          withInput={true}
-        >
-          Start Date
-        </Label>
-        <InputMask
-          caption=""
-          icon="events"
-          label="Start Date"
-          mask={
-            Array [
-              /\\[01\\]/,
-              /\\\\d/,
-              "/",
-              /\\[0123\\]/,
-              /\\\\d/,
-              "/",
-              /\\\\d/,
-              /\\\\d/,
-              /\\\\d/,
-              /\\\\d/,
-            ]
-          }
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClear={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          placeholder="mm/dd/yyyy"
-          validators={
-            Array [
-              [Function],
-            ]
-          }
-          value="03/03/2020"
-        />
-      </Column>
-      <Column
-        className="DateRangePicker-input DateRangePicker-input--endDate"
-        size="6"
-        sizeXS="12"
-      >
-        <Label
-          withInput={true}
-        >
-          End Date
-        </Label>
-        <InputMask
-          caption=""
-          icon="events"
-          label="End Date"
-          mask={
-            Array [
-              /\\[01\\]/,
-              /\\\\d/,
-              "/",
-              /\\[0123\\]/,
-              /\\\\d/,
-              "/",
-              /\\\\d/,
-              /\\\\d/,
-              /\\\\d/,
-              /\\\\d/,
-            ]
-          }
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClear={[Function]}
-          onClick={[Function]}
-          placeholder="mm/dd/yyyy"
-          validators={
-            Array [
-              [Function],
-            ]
-          }
-          value="03/11/2020"
-        />
-      </Column>
-    </Row>
+    <Unknown
+      endInputOptions={
+        Object {
+          "label": "End Date",
+        }
+      }
+      inputFormat="mm/dd/yyyy"
+      setState={[Function]}
+      startInputOptions={
+        Object {
+          "label": "Start Date",
+        }
+      }
+      state={
+        Object {
+          "endDate": 2020-03-11T00:00:00.000Z,
+          "endError": false,
+          "endValue": "03/11/2020",
+          "init": false,
+          "monthNav": undefined,
+          "open": false,
+          "startDate": 2020-03-03T00:00:00.000Z,
+          "startError": false,
+          "startValue": "03/03/2020",
+          "yearNav": undefined,
+        }
+      }
+      validators={
+        Array [
+          [Function],
+        ]
+      }
+    />
   }
   triggerClass="w-100"
 >
   <Calendar
+    contentAlign="left"
     endDate={2020-03-11T00:00:00.000Z}
     firstDayOfWeek="sunday"
     inputOptions={
@@ -261,6 +218,7 @@ exports[`DateRangePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  className="DateRangePicker DateRangePicker--left"
   closeOnBackdropClick={true}
   customStyle={Object {}}
   on="click"
@@ -268,95 +226,44 @@ exports[`DateRangePicker component
   open={true}
   position="bottom-start"
   trigger={
-    <Row>
-      <Column
-        className="DateRangePicker-input DateRangePicker-input--startDate"
-        size="6"
-        sizeXS="12"
-      >
-        <Label
-          withInput={true}
-        >
-          Start Date
-        </Label>
-        <InputMask
-          caption=""
-          icon="events"
-          label="Start Date"
-          mask={
-            Array [
-              /\\[01\\]/,
-              /\\\\d/,
-              "/",
-              /\\[0123\\]/,
-              /\\\\d/,
-              "/",
-              /\\\\d/,
-              /\\\\d/,
-              /\\\\d/,
-              /\\\\d/,
-            ]
-          }
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClear={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          placeholder="mm/dd/yyyy"
-          validators={
-            Array [
-              [Function],
-            ]
-          }
-          value="03/03/2020"
-        />
-      </Column>
-      <Column
-        className="DateRangePicker-input DateRangePicker-input--endDate"
-        size="6"
-        sizeXS="12"
-      >
-        <Label
-          withInput={true}
-        >
-          End Date
-        </Label>
-        <InputMask
-          caption=""
-          icon="events"
-          label="End Date"
-          mask={
-            Array [
-              /\\[01\\]/,
-              /\\\\d/,
-              "/",
-              /\\[0123\\]/,
-              /\\\\d/,
-              "/",
-              /\\\\d/,
-              /\\\\d/,
-              /\\\\d/,
-              /\\\\d/,
-            ]
-          }
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClear={[Function]}
-          onClick={[Function]}
-          placeholder="mm/dd/yyyy"
-          validators={
-            Array [
-              [Function],
-            ]
-          }
-          value="03/11/2020"
-        />
-      </Column>
-    </Row>
+    <Unknown
+      endInputOptions={
+        Object {
+          "label": "End Date",
+        }
+      }
+      inputFormat="mm/dd/yyyy"
+      setState={[Function]}
+      startInputOptions={
+        Object {
+          "label": "Start Date",
+        }
+      }
+      state={
+        Object {
+          "endDate": 2020-03-11T00:00:00.000Z,
+          "endError": false,
+          "endValue": "03/11/2020",
+          "init": false,
+          "monthNav": undefined,
+          "open": true,
+          "startDate": 2020-03-03T00:00:00.000Z,
+          "startError": false,
+          "startValue": "03/03/2020",
+          "yearNav": undefined,
+        }
+      }
+      validators={
+        Array [
+          [Function],
+        ]
+      }
+    />
   }
   triggerClass="w-100"
 >
   <Calendar
+    contentAlign="left"
     endDate={2020-03-11T00:00:00.000Z}
     firstDayOfWeek="sunday"
     inputOptions={
@@ -377,6 +284,7 @@ exports[`DateRangePicker component
   view: "date"
  1`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -396,6 +304,7 @@ exports[`DateRangePicker component
   view: "month"
  1`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -415,6 +324,7 @@ exports[`DateRangePicker component
   view: "year"
  1`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -434,6 +344,7 @@ exports[`DateRangePicker component
   withInput: false
  1`] = `
 <Calendar
+  contentAlign="left"
   endDate={2020-03-11T00:00:00.000Z}
   firstDayOfWeek="sunday"
   inputOptions={
@@ -454,6 +365,7 @@ exports[`DateRangePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  className="DateRangePicker DateRangePicker--left"
   closeOnBackdropClick={true}
   customStyle={Object {}}
   on="click"
@@ -461,95 +373,44 @@ exports[`DateRangePicker component
   open={false}
   position="bottom-start"
   trigger={
-    <Row>
-      <Column
-        className="DateRangePicker-input DateRangePicker-input--startDate"
-        size="6"
-        sizeXS="12"
-      >
-        <Label
-          withInput={true}
-        >
-          Start Date
-        </Label>
-        <InputMask
-          caption=""
-          icon="events"
-          label="Start Date"
-          mask={
-            Array [
-              /\\[01\\]/,
-              /\\\\d/,
-              "/",
-              /\\[0123\\]/,
-              /\\\\d/,
-              "/",
-              /\\\\d/,
-              /\\\\d/,
-              /\\\\d/,
-              /\\\\d/,
-            ]
-          }
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClear={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          placeholder="mm/dd/yyyy"
-          validators={
-            Array [
-              [Function],
-            ]
-          }
-          value="03/03/2020"
-        />
-      </Column>
-      <Column
-        className="DateRangePicker-input DateRangePicker-input--endDate"
-        size="6"
-        sizeXS="12"
-      >
-        <Label
-          withInput={true}
-        >
-          End Date
-        </Label>
-        <InputMask
-          caption=""
-          icon="events"
-          label="End Date"
-          mask={
-            Array [
-              /\\[01\\]/,
-              /\\\\d/,
-              "/",
-              /\\[0123\\]/,
-              /\\\\d/,
-              "/",
-              /\\\\d/,
-              /\\\\d/,
-              /\\\\d/,
-              /\\\\d/,
-            ]
-          }
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClear={[Function]}
-          onClick={[Function]}
-          placeholder="mm/dd/yyyy"
-          validators={
-            Array [
-              [Function],
-            ]
-          }
-          value="03/11/2020"
-        />
-      </Column>
-    </Row>
+    <Unknown
+      endInputOptions={
+        Object {
+          "label": "End Date",
+        }
+      }
+      inputFormat="mm/dd/yyyy"
+      setState={[Function]}
+      startInputOptions={
+        Object {
+          "label": "Start Date",
+        }
+      }
+      state={
+        Object {
+          "endDate": 2020-03-11T00:00:00.000Z,
+          "endError": false,
+          "endValue": "03/11/2020",
+          "init": false,
+          "monthNav": undefined,
+          "open": false,
+          "startDate": 2020-03-03T00:00:00.000Z,
+          "startError": false,
+          "startValue": "03/03/2020",
+          "yearNav": undefined,
+        }
+      }
+      validators={
+        Array [
+          [Function],
+        ]
+      }
+    />
   }
   triggerClass="w-100"
 >
   <Calendar
+    contentAlign="left"
     endDate={2020-03-11T00:00:00.000Z}
     firstDayOfWeek="sunday"
     inputOptions={

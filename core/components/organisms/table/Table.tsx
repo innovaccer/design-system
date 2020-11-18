@@ -437,6 +437,8 @@ export class Table extends React.Component<TableProps, TableState> {
           page: 1,
           totalRecords: data.length || 0,
           selectAll: getSelectAll([])
+        }, () => {
+          this.updateData();
         });
       }
     }

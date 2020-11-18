@@ -168,6 +168,11 @@
     cursor: pointer;
 }
 
+.Grid-nestedRowPlaceholder {
+    width: 20px;
+    margin-right: var(--spacing-l);
+}
+
 .Grid-cell {
     position: relative;
     box-sizing: border-box;

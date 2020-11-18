@@ -51,10 +51,10 @@ export const translateToTime = (format: string, time?: TimeType) => {
 
 const getTimeObjectFromNumber = (format: string, time: number) => {
   const d = new Date(time);
-  let hours = d.getHours();
+  const hrs = d.getHours();
 
-  hours = isFormat12hour(format) ? get12hourFormat(hours).hrs : hours;
-  const am_pm = isFormat12hour(format) ? get12hourFormat(hours).AMPM : '';
+  const hours = isFormat12hour(format) ? get12hourFormat(hrs).hrs : hrs;
+  const am_pm = isFormat12hour(format) ? get12hourFormat(hrs).AMPM : '';
   const minutes = d.getMinutes();
   const seconds = d.getSeconds();
   return { hours, minutes, seconds, am_pm };

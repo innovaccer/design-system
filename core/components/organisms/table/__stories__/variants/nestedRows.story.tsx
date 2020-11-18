@@ -23,7 +23,6 @@ export const nestedRows = () => {
           data={data}
           nestedRows={true}
           nestedRowRenderer={nestedRowRenderer}
-          type={'resource'}
           onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
         />
       </Card>
