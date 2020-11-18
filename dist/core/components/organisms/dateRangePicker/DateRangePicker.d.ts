@@ -9,6 +9,8 @@ export declare type InputOptions = Omit<InputMaskProps, 'mask' | 'value' | 'onCh
 };
 export declare type DateRangePickerProps = SharedProps & {
     onRangeChange?: (startDate?: Date, endDate?: Date, startValue?: string, endValue?: string) => void;
+    children: React.ReactNode;
+    contentAlign?: 'left' | 'right';
     startDate?: DateType;
     endDate?: DateType;
     rangeLimit?: number;
@@ -24,7 +26,7 @@ export declare type DateRangePickerProps = SharedProps & {
     validators: Validators;
     monthsInView?: CalendarProps['monthsInView'];
 };
-interface DateRangePickerState {
+export interface DateRangePickerState {
     init: boolean;
     startDate?: Date;
     endDate?: Date;
@@ -38,6 +40,8 @@ interface DateRangePickerState {
 }
 export declare class DateRangePicker extends React.Component<DateRangePickerProps, DateRangePickerState> {
     static defaultProps: {
+        children: JSX.Element;
+        contentAlign: string;
         monthsInView: undefined;
         position: string;
         inputFormat: string;
@@ -68,13 +72,6 @@ export declare class DateRangePicker extends React.Component<DateRangePickerProp
     };
     getInRangeError: () => boolean;
     onRangeChangeHandler: (sDate?: Date | undefined, eDate?: Date | undefined) => void;
-    updateNav: (type: string) => void;
-    onDateChangeHandler: (_e: React.ChangeEvent<HTMLInputElement>, val: string) => void;
-    onChangeHandler: (_e: React.ChangeEvent<HTMLInputElement>, val: string, type: string) => void;
-    onFocusHandler: () => void;
-    onBlurHandler: (_e: React.ChangeEvent<HTMLInputElement>, val: string, type: string) => void;
-    onClearHandler: (type: string) => void;
-    onClickHandler: (type: string) => void;
     onToggleHandler: (o: boolean, type?: string | undefined) => void;
     renderCalendar(): JSX.Element;
     render(): JSX.Element;

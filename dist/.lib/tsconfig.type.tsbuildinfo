@@ -152,8 +152,8 @@
         "affectsGlobalScope": true
       },
       "../../node_modules/csstype/index.d.ts": {
-        "version": "c89da57b29cf0a695fe46e6ab8cd7d64edb15a6708ae2352e30d79a3936ccc5c",
-        "signature": "c89da57b29cf0a695fe46e6ab8cd7d64edb15a6708ae2352e30d79a3936ccc5c",
+        "version": "ea58e4cbcf3d760a15f9300978a360c46360f544b355c737b60c733a385b8858",
+        "signature": "ea58e4cbcf3d760a15f9300978a360c46360f544b355c737b60c733a385b8858",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/prop-types/index.d.ts": {
@@ -162,8 +162,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/react/index.d.ts": {
-        "version": "bc0442bf081aef1f744186372dc384f891ebdf7f3985a13788b7a7f65d353465",
-        "signature": "bc0442bf081aef1f744186372dc384f891ebdf7f3985a13788b7a7f65d353465",
+        "version": "416e5d547a57e2fc9bac063ff167eee2c34aad14296acf9688eaa24fee981e05",
+        "signature": "416e5d547a57e2fc9bac063ff167eee2c34aad14296acf9688eaa24fee981e05",
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/react-dom/index.d.ts": {
@@ -337,8 +337,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/dropdown/DropdownButton.tsx": {
-        "version": "3e75e6735e484a4168f8c3f48191bb060815b4f85d63dab19f1d54bb0448d345",
-        "signature": "66f00d38a576afebdd991a6b0ca52504b5634a2cfa6d8f1031c95a5439988323",
+        "version": "23353f5f7e2ed587824a8410aa3c563279d477018fe4d2fa133933bc9ca6c9c2",
+        "signature": "26d301cbbadf8786ebabbee083c5558fb5b807fd8a9f8587cf8d5c144507fc9b",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/spinner/Spinner.tsx": {
@@ -352,8 +352,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/button/Button.tsx": {
-        "version": "9620e93e63e827e2e19c5430708fd756e2628c9b348ef00bd1fbfb05e09cc1c2",
-        "signature": "7335c173fc5bcfb7d17315eabe07b9e02b143a16560c58a08b9c43a9e41417d6",
+        "version": "285a46c840bfbf85e9b7d8160d43f6c8703289898dfd794694806708babd52e6",
+        "signature": "9ce058ec6a9aa2d0518fd10c08dec2e4792a4455c12c0c0ddb876a6966452b2d",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/button/index.tsx": {
@@ -407,7 +407,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/dropdown/DropdownList.tsx": {
-        "version": "58915eaaae1cac89c67a1b1d47d083bbfadb16646a8036cc148e23c5b9270116",
+        "version": "a3407230fd548ae65dd6ed974af123698230bac3daffcb707e01b09cee5b7b28",
         "signature": "5bcd9927dfa85393e2247bfb0eb7d7f43ca52828c7997e446e3ec67a60a4d7fa",
         "affectsGlobalScope": false
       },
@@ -521,8 +521,13 @@
         "signature": "b92d6d7cfecd8981ab3039667ec26ee026cd85dc4b782f2aa81d6c98dd8563ae",
         "affectsGlobalScope": false
       },
+      "../../core/components/molecules/inputMask/utilites.tsx": {
+        "version": "0c11dae0199a72d338442d63dd528e07b32c73bbc36f3f9c23f0dcf34dd46054",
+        "signature": "5e349fe67f144931cc302513d9ee1328310b4b62049dc32880dcbcf100219eca",
+        "affectsGlobalScope": false
+      },
       "../../core/components/molecules/inputMask/InputMask.tsx": {
-        "version": "616bac4906b8ac0df00d5fae62fd8cdd5366381f6b8e7b0728245f0975cbc542",
+        "version": "587a4d25a0974b5d3e12323e64bddd4b9313489dd1937e2ffc1781ad177d1c82",
         "signature": "b459017c579da738bfa5cc7476f51d8cbc47ac177bcd3d35472d9e6f1d6097b1",
         "affectsGlobalScope": false
       },
@@ -531,9 +536,14 @@
         "signature": "0c89bc5a773baa972194f6f2a6d0f0293c7ed9f8d800ed31ffa7b7f1caba2b87",
         "affectsGlobalScope": false
       },
+      "../../core/components/organisms/datePicker/Trigger.tsx": {
+        "version": "ad8c9a3c18896f0e8f472395b7dc4d8256fd87d239bd89bdc108e44bf96a62e0",
+        "signature": "c138c9d108677f551a8f02486230875aa18e1ada5c0909479d71a1fe538a9293",
+        "affectsGlobalScope": false
+      },
       "../../core/components/organisms/datePicker/DatePicker.tsx": {
-        "version": "5db0f371d083d98adf2c47bc3bf30e1117653020ed9e8c1058925742d185e1ca",
-        "signature": "fd324491925cf5e094a8ec1de957538ebdaa4d7f4da57e6a5edc497f13916a46",
+        "version": "1072217cb181493697a1a39bd6e0486c2fb7c30a230dd2a8125a94bdc0ac8642",
+        "signature": "3e0733e19c7ccc8148ff2874bae501ebf33391f7629cfc5311c509e0d9bbd8ce",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/datePicker/index.tsx": {
@@ -966,9 +976,24 @@
         "signature": "3963c8b4d4d381139a5195bc0975bff5476331b049ae38198a50d80848517fe5",
         "affectsGlobalScope": false
       },
+      "../../core/components/organisms/dateRangePicker/Trigger.tsx": {
+        "version": "0d36b0a18a880bc7e02fef7e6f5bfd8bb0905d265485720bc448e853cfd82858",
+        "signature": "5f59448d4145a3e7b5d70870ef758c58d700f80faf24e5a9de6985f55512ecf2",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/organisms/dateRangePicker/SingleInputTrigger.tsx": {
+        "version": "041b41f9fe649e6261808350bfbfe6ce5fda975273341276a3c1ba020f8f16fc",
+        "signature": "92808d9616e3a8b5657abe4a09af6e09d343cf7131b7a34396b0b6aa4200eaf7",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/organisms/dateRangePicker/utilities.tsx": {
+        "version": "cb41ece8fdc53b23356bdce70ff1d71a2931c8507fb3656dfbf57dd162fa690d",
+        "signature": "169c0f477a4dbfc8fa1a8f0db48a490d0482038c0796699de06261c217def6d5",
+        "affectsGlobalScope": false
+      },
       "../../core/components/organisms/dateRangePicker/DateRangePicker.tsx": {
-        "version": "bd4496e8acb449e7ac2b7910facf30ea961aebc0fcd83d7da78a2a18d1b75fad",
-        "signature": "c38d556176819f09e1687cce78cd0503b86cca8da59c06eb68c3f31e6d7791ab",
+        "version": "0e8cbc9f775b9ebb381284c657e1a57b6544811963918ac6bf296c5255e05eaa",
+        "signature": "99565c26319b62a9873070bb310b4426fa596a17ccc94ddbafffa9ad65910ee8",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/dateRangePicker/index.tsx": {
@@ -1011,19 +1036,19 @@
         "signature": "e7ee5ab9151a6859503f52b657b918710b56bba3bfeb6b3f8a3d04695c04b357",
         "affectsGlobalScope": false
       },
+      "../../core/components/organisms/grid/GridNestedRow.tsx": {
+        "version": "020fca7d1781a873bb902ad1122055159d192b36c4cb17667ab6e88ddd128988",
+        "signature": "a4df78800ab9c9f7417b51982b836379ae67774855b319fec187ef3fcf4e3f6f",
+        "affectsGlobalScope": false
+      },
       "../../core/components/organisms/grid/Cell.tsx": {
-        "version": "588808491cfa2f3ad8d0a9a8bf837b5279e568d719e154b841a4b536ec3ffa84",
+        "version": "818234c5c9a2d5e1cb62f1bdfb866b560819a8d4097b09bfd2d2aa1b2a2ad006",
         "signature": "1007b9e91a5db78ae9433020058f3a9afdf6d6026be0de01fd43582600fb1aec",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/GridHead.tsx": {
         "version": "c77f2f9b4417222f327d2cbe69e1ae5d717d24840fcbdc1a6698cde54028fd87",
         "signature": "a117eb86bf4b44b1b3df36fa427d88deb737aff351e437aa493d0f4cb4cbd5ed",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/organisms/grid/GridNestedRow.tsx": {
-        "version": "020fca7d1781a873bb902ad1122055159d192b36c4cb17667ab6e88ddd128988",
-        "signature": "a4df78800ab9c9f7417b51982b836379ae67774855b319fec187ef3fcf4e3f6f",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/GridRow.tsx": {
@@ -1062,7 +1087,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/table/Table.tsx": {
-        "version": "097a1ce8986c0a4c0866f037da7465499da66f4e00d24363589f2386dba3d2b3",
+        "version": "df3204a1bd3604f6fe53455008c7c93b68c0a6c5f3ca0935abcad87fb60223f0",
         "signature": "8e1f93bce022bb0b437ef3129552fdb0a40f872aa5fd41849347bc01b0589552",
         "affectsGlobalScope": false
       },
@@ -1107,12 +1132,12 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/timePicker/TimePicker.tsx": {
-        "version": "7ab7e861e37af4b6d95d621efdb1c404ebd21c9805e3774464c4c45c318b58c2",
+        "version": "4fc377ab8cb73271fa2c63b4e9d5da41b21f6cc3181a7faaa27f675b0077f041",
         "signature": "87b7625d5b29eb10ba7817e750655a7003f64a8576b31901f62db24ccc157858",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/timePicker/utils.tsx": {
-        "version": "b82e6f6821dfec92d8b11776e99df7a0ab1f51a7fe909e6670dfecfe15d9e86a",
+        "version": "2890647ffeda52cf20a544ed0d28a7323a8a7886358d9a65f56b0fba30903ce8",
         "signature": "ff21acac0b1e0c79d4d6caa860084f83de73078ffc5b553f3b397ba4d5d8a09b",
         "affectsGlobalScope": false
       },
@@ -1122,7 +1147,7 @@
         "affectsGlobalScope": false
       },
       "../../core/utils/masks.ts": {
-        "version": "5a7876d5a2dcf7129d598dfa3918f0088b5fb448f52d4d59a9fddae6c3d527e1",
+        "version": "7358dd174432ebcb0a54df1f72bfd182739b7c231694185727a89f0781c1e79c",
         "signature": "cf1866499032299b8faae9efa5cdde48086c6c10a11feeede3f38d6fc791451d",
         "affectsGlobalScope": false
       },
@@ -1187,8 +1212,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@emotion/serialize/node_modules/csstype/index.d.ts": {
-        "version": "389ff64c4d75538171782c347554a2cb6328ffb2e838e9b012da3bda94e0767b",
-        "signature": "389ff64c4d75538171782c347554a2cb6328ffb2e838e9b012da3bda94e0767b",
+        "version": "f5c7642899e130a4ea871a03822a1cfb0e23ae9f62ad481f23b38b5a6f71ddac",
+        "signature": "f5c7642899e130a4ea871a03822a1cfb0e23ae9f62ad481f23b38b5a6f71ddac",
         "affectsGlobalScope": false
       },
       "../../node_modules/@emotion/serialize/types/helper.d.ts": {
@@ -1569,6 +1594,11 @@
       "../../core/components/patterns/datePicker/dateAndTimePicker.story.tsx": {
         "version": "04c008b40aa4f1f9ddc154a219c6eae03928f3c60d194d7536b4211c01ee745b",
         "signature": "3c766dbfe558c4c614728f34634fded3f5517543b426c28ba3d0bef4539c7038",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/patterns/dateRangePicker/withCustomPopover.story.tsx": {
+        "version": "3d8faf2ae1edf78201a7a93839cdd5407200ad7710308035f9c9315eb12efe6c",
+        "signature": "582908329b69f7201a550a46183a72844d7f0ff2af67f01eac59a905f2fbf133",
         "affectsGlobalScope": false
       },
       "../../core/components/patterns/forms/CreatePassword.story.tsx": {
@@ -2082,8 +2112,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/assert.d.ts": {
-        "version": "d0c575d48d6dad75648017ff18762eb97f9398cc9486541b3070e79ce12719e6",
-        "signature": "d0c575d48d6dad75648017ff18762eb97f9398cc9486541b3070e79ce12719e6",
+        "version": "00a0faaea871db3288a11ce92bbed248ea2473a5bfd174d222011cde800ce397",
+        "signature": "00a0faaea871db3288a11ce92bbed248ea2473a5bfd174d222011cde800ce397",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/base.d.ts": {
@@ -2197,8 +2227,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/babel__template/index.d.ts": {
-        "version": "3e0a34f7207431d967dc32d593d1cda0c23975e9484bc8895b39d96ffca4a0d8",
-        "signature": "3e0a34f7207431d967dc32d593d1cda0c23975e9484bc8895b39d96ffca4a0d8",
+        "version": "3051751533eee92572241b3cef28333212401408c4e7aa21718714b793c0f4ed",
+        "signature": "3051751533eee92572241b3cef28333212401408c4e7aa21718714b793c0f4ed",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/babel__core/index.d.ts": {
@@ -2277,8 +2307,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/minimist/index.d.ts": {
-        "version": "3602dfff3072caea42f23a9b63fb34a7b0c95a62b93ce2add5fe6b159447845e",
-        "signature": "3602dfff3072caea42f23a9b63fb34a7b0c95a62b93ce2add5fe6b159447845e",
+        "version": "e437d83044ba17246a861aa9691aa14223ff4a9d6f338ab1269c41c758586a88",
+        "signature": "e437d83044ba17246a861aa9691aa14223ff4a9d6f338ab1269c41c758586a88",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/normalize-package-data/index.d.ts": {
@@ -2417,8 +2447,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/webpack/index.d.ts": {
-        "version": "c0f715c52d382c77e752c83fb6a19d3dfec97d4bccdc78bae5f11abb7cb2ea21",
-        "signature": "c0f715c52d382c77e752c83fb6a19d3dfec97d4bccdc78bae5f11abb7cb2ea21",
+        "version": "6a11a44c28aeb36e551aad316a3c30e5edd9244396378f664dea164c4ce49fe0",
+        "signature": "6a11a44c28aeb36e551aad316a3c30e5edd9244396378f664dea164c4ce49fe0",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/webpack-env/index.d.ts": {
@@ -2466,6 +2496,24 @@
           "core/*"
         ],
         "*": [
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
           "*",
           "*",
           "*",
@@ -3366,7 +3414,7 @@
         "../../node_modules/@types/throttle-debounce/index.d.ts"
       ],
       "../../core/components/atoms/dropdown/DropdownButton.tsx": [
-        "../../core/components/atoms/icon/index.tsx",
+        "../../core/index.tsx",
         "../../node_modules/@types/classnames/index.d.ts",
         "../../node_modules/@types/react/index.d.ts"
       ],
@@ -3841,6 +3889,7 @@
         "../../core/components/molecules/editableInput/EditableInput.tsx"
       ],
       "../../core/components/molecules/inputMask/InputMask.tsx": [
+        "../../core/components/molecules/inputMask/utilites.tsx",
         "../../core/index.tsx",
         "../../core/index.type.tsx",
         "../../core/utils/types.tsx",
@@ -3849,6 +3898,9 @@
       ],
       "../../core/components/molecules/inputMask/index.tsx": [
         "../../core/components/molecules/inputMask/InputMask.tsx"
+      ],
+      "../../core/components/molecules/inputMask/utilites.tsx": [
+        "../../core/index.type.tsx"
       ],
       "../../core/components/molecules/modal/Modal.tsx": [
         "../../core/components/atoms/backdrop/index.tsx",
@@ -3981,8 +4033,15 @@
         "../../core/components/organisms/calendar/Calendar.tsx",
         "../../core/components/organisms/calendar/types.ts",
         "../../core/components/organisms/calendar/utility.ts",
+        "../../core/components/organisms/datePicker/Trigger.tsx",
         "../../core/index.tsx",
         "../../core/utils/types.tsx",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/organisms/datePicker/Trigger.tsx": [
+        "../../core/components/organisms/calendar/utility.ts",
+        "../../core/components/organisms/datePicker/DatePicker.tsx",
+        "../../core/index.tsx",
         "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/components/organisms/datePicker/index.tsx": [
@@ -3994,8 +4053,24 @@
         "../../core/components/organisms/calendar/Calendar.tsx",
         "../../core/components/organisms/calendar/types.ts",
         "../../core/components/organisms/calendar/utility.ts",
+        "../../core/components/organisms/dateRangePicker/SingleInputTrigger.tsx",
+        "../../core/components/organisms/dateRangePicker/Trigger.tsx",
+        "../../core/components/organisms/dateRangePicker/utilities.tsx",
         "../../core/index.tsx",
         "../../core/utils/types.tsx",
+        "../../node_modules/@types/classnames/index.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/organisms/dateRangePicker/SingleInputTrigger.tsx": [
+        "../../core/components/organisms/calendar/utility.ts",
+        "../../core/components/organisms/dateRangePicker/DateRangePicker.tsx",
+        "../../core/index.tsx",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/organisms/dateRangePicker/Trigger.tsx": [
+        "../../core/components/organisms/calendar/utility.ts",
+        "../../core/components/organisms/dateRangePicker/DateRangePicker.tsx",
+        "../../core/index.tsx",
         "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/components/organisms/dateRangePicker/index.tsx": [
@@ -4015,6 +4090,7 @@
       "../../core/components/organisms/grid/Cell.tsx": [
         "../../core/components/atoms/dropdown/index.tsx",
         "../../core/components/organisms/grid/Grid.tsx",
+        "../../core/components/organisms/grid/GridNestedRow.tsx",
         "../../core/components/organisms/grid/columnUtility.tsx",
         "../../core/components/organisms/grid/utility.tsx",
         "../../core/index.tsx",
@@ -4158,6 +4234,10 @@
         "../../core/index.type.tsx"
       ],
       "../../core/components/patterns/datePicker/dateAndTimePicker.story.tsx": [
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/patterns/dateRangePicker/withCustomPopover.story.tsx": [
+        "../../core/index.tsx",
         "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/components/patterns/forms/CreatePassword.story.tsx": [
@@ -6056,6 +6136,7 @@
       "../../core/components/molecules/editableInput/index.tsx",
       "../../core/components/molecules/inputMask/InputMask.tsx",
       "../../core/components/molecules/inputMask/index.tsx",
+      "../../core/components/molecules/inputMask/utilites.tsx",
       "../../core/components/molecules/modal/Modal.tsx",
       "../../core/components/molecules/modal/index.tsx",
       "../../core/components/molecules/modalBody/ModalBody.tsx",
@@ -6084,9 +6165,13 @@
       "../../core/components/organisms/calendar/types.ts",
       "../../core/components/organisms/calendar/utility.ts",
       "../../core/components/organisms/datePicker/DatePicker.tsx",
+      "../../core/components/organisms/datePicker/Trigger.tsx",
       "../../core/components/organisms/datePicker/index.tsx",
       "../../core/components/organisms/dateRangePicker/DateRangePicker.tsx",
+      "../../core/components/organisms/dateRangePicker/SingleInputTrigger.tsx",
+      "../../core/components/organisms/dateRangePicker/Trigger.tsx",
       "../../core/components/organisms/dateRangePicker/index.tsx",
+      "../../core/components/organisms/dateRangePicker/utilities.tsx",
       "../../core/components/organisms/donutChart/DonutChart.tsx",
       "../../core/components/organisms/donutChart/index.tsx",
       "../../core/components/organisms/grid/Cell.tsx",
@@ -6115,6 +6200,7 @@
       "../../core/components/organisms/timePicker/index.tsx",
       "../../core/components/organisms/timePicker/utils.tsx",
       "../../core/components/patterns/datePicker/dateAndTimePicker.story.tsx",
+      "../../core/components/patterns/dateRangePicker/withCustomPopover.story.tsx",
       "../../core/components/patterns/forms/CreatePassword.story.tsx",
       "../../core/components/patterns/forms/CreateUser.story.tsx",
       "../../core/components/patterns/forms/InlineForm.story.tsx",

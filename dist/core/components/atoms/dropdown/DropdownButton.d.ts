@@ -11,6 +11,7 @@ export interface TriggerProps {
 }
 export interface DropdownButtonProps extends TriggerProps {
     children?: React.ReactText;
+    open?: boolean;
 }
 declare const DropdownButton: React.ForwardRefExoticComponent<DropdownButtonProps & React.RefAttributes<HTMLButtonElement>>;
 export default DropdownButton;

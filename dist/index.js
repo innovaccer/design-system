@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1604563690251 
+   * Generated on: 1605716204596 
    *      Package: @innovaccer/design-system
-   *      Version: v1.4.0-0
+   *      Version: v1.4.0-1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -398,9 +398,9 @@
 
     var getTimeObjectFromNumber = function getTimeObjectFromNumber(format, time) {
       var d = new Date(time);
-      var hours = d.getHours();
-      hours = isFormat12hour(format) ? get12hourFormat(hours).hrs : hours;
-      var am_pm = isFormat12hour(format) ? get12hourFormat(hours).AMPM : '';
+      var hrs = d.getHours();
+      var hours = isFormat12hour(format) ? get12hourFormat(hrs).hrs : hrs;
+      var am_pm = isFormat12hour(format) ? get12hourFormat(hrs).AMPM : '';
       var minutes = d.getMinutes();
       var seconds = d.getSeconds();
       return {
@@ -583,7 +583,7 @@
       'mm-dd-yyyy': [/[01]/, /\d/, '-', /[0123]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, ' ', '-', ' ', /[01]/, /\d/, '-', /[0123]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
       'yyyy-mm-dd': [/\d/, /\d/, /\d/, /\d/, '-', /[01]/, /\d/, '-', /[0123]/, /\d/, ' ', '-', ' ', /\d/, /\d/, /\d/, /\d/, '-', /[01]/, /\d/, '-', /[0123]/, /\d/]
     };
-    var time$1 = (_a$1 = {}, _a$1['hh:mm'] = [/[0-1-2]/, /\d/, ' ', ':', ' ', /[0-6]/, /\d/], _a$1['hh:mm AM'] = [/[0-1]/, /\d/, ' ', ':', ' ', /[0-6]/, /\d/, ' ', /[AP]/, 'M'], _a$1);
+    var time$1 = (_a$1 = {}, _a$1['hh:mm'] = [/[0-1-2]/, /\d/, ' ', ':', ' ', /[0-6]/, /\d/], _a$1['hh:mm AM'] = [/[0-1]/, /\d/, ' ', ':', ' ', /[0-6]/, /\d/, ' ', /[APap]/, 'M'], _a$1);
 
     var masks = /*#__PURE__*/Object.freeze({
         __proto__: null,
@@ -1128,40 +1128,6 @@
       };
     };
 
-    var Icon = function Icon(props) {
-      var _a;
-
-      var appearance = props.appearance,
-          className = props.className,
-          name = props.name,
-          size = props.size,
-          onClick = props.onClick;
-      var baseProps = extractBaseProps(props);
-
-      var mapper = function mapper(val) {
-        if (val === 'outline') return 'outlined';
-        if (val === 'rounded') return 'round';
-        return val;
-      };
-
-      var type = mapper(props.type);
-      var iconClass = classNames__default['default']((_a = {}, _a['material-icons'] = true, _a["material-icons-" + mapper(type)] = type && type !== 'filled', _a['Icon'] = true, _a["Icon--" + appearance] = appearance, _a["" + className] = className, _a));
-      var styles = {
-        fontSize: size + "px",
-        width: size + "px"
-      };
-      return /*#__PURE__*/React.createElement("i", __assign({}, baseProps, {
-        className: iconClass,
-        style: styles,
-        onClick: onClick
-      }), type ? name + "_" + type : name);
-    };
-    Icon.displayName = 'Icon';
-    Icon.defaultProps = {
-      appearance: 'default',
-      size: 16
-    };
-
     var DropdownButton = /*#__PURE__*/React.forwardRef(function (props, ref) {
       var _a, _b;
 
@@ -1174,17 +1140,17 @@
           children = props.children,
           icon = props.icon,
           disabled = props.disabled,
+          open = props.open,
           inlineLabel = props.inlineLabel,
           error = props.error,
-          rest = __rest(props, ["triggerSize", "placeholder", "menu", "children", "icon", "disabled", "inlineLabel", "error"]);
+          rest = __rest(props, ["triggerSize", "placeholder", "menu", "children", "icon", "disabled", "open", "inlineLabel", "error"]);
 
       var buttonDisabled = disabled ? 'disabled' : 'default';
       var trimmedPlaceholder = placeholder.trim();
-      var value = children ? children : trimmedPlaceholder ? trimmedPlaceholder : 'Select';
+      var value = children ? children : trimmedPlaceholder;
       var iconName = !menu ? 'keyboard_arrow_down' : icon ? icon : 'more_horiz';
-      var label = inlineLabel && inlineLabel.trim();
-      var buttonClass = classNames__default['default']((_a = {}, _a['Button'] = true, _a['Button--basic'] = true, _a['Button--square'] = menu, _a['DropdownTrigger'] = true, _a['DropdownButton'] = true, _a["DropdownButton--" + triggerSize] = triggerSize, _a['DropdownButton--icon'] = icon, _a['DropdownButton--placeholder'] = !children && !menu, _a['DropdownButton--label'] = label, _a['DropdownButton--error'] = error, _a));
-      var labelClass = classNames__default['default']((_b = {}, _b['DropdownButton-label'] = true, _b));
+      var buttonClass = classNames__default['default']((_a = {}, _a['Button'] = true, _a['DropdownButton'] = true, _a["DropdownButton--" + triggerSize] = triggerSize, _a["DropdownButton--" + triggerSize + "Square"] = menu, _a['DropdownButton--placeholder'] = !children && !menu, _a['DropdownButton--icon'] = icon, _a['DropdownButton--open'] = open, _a['DropdownButton--error'] = error, _a));
+      var textClass = classNames__default['default']((_b = {}, _b['Text'] = true, _b['Text--regular'] = true, _b['DropdownButton-text'] = true, _b));
       return /*#__PURE__*/React.createElement("button", __assign({
         ref: ref,
         type: "button",
@@ -1195,15 +1161,16 @@
         "data-test": "DesignSystem-DropdownTrigger"
       }, rest), !menu && /*#__PURE__*/React.createElement("div", {
         className: "DropdownButton-wrapper"
-      }, label && /*#__PURE__*/React.createElement("div", {
-        className: labelClass
-      }, " ", label.trim().charAt(0).toUpperCase(), label.trim().slice(1), " "), icon && !inlineLabel && /*#__PURE__*/React.createElement(Icon, {
+      }, inlineLabel && /*#__PURE__*/React.createElement(Text, {
+        appearance: "subtle",
+        className: "mr-4"
+      }, "" + inlineLabel.trim().charAt(0).toUpperCase() + inlineLabel.trim().slice(1)), icon && !inlineLabel && /*#__PURE__*/React.createElement(Icon, {
         appearance: buttonDisabled,
-        className: "mr-4",
+        className: "d-flex align-items-center mr-4",
         name: icon
-      }), /*#__PURE__*/React.createElement("div", {
-        className: 'DropdownButton-text'
-      }, value && "" + value)), /*#__PURE__*/React.createElement(Icon, {
+      }), value && /*#__PURE__*/React.createElement("span", {
+        className: textClass
+      }, value)), /*#__PURE__*/React.createElement(Icon, {
         appearance: buttonDisabled,
         name: iconName
       }));
@@ -1246,6 +1213,40 @@
     Text.defaultProps = {
       appearance: 'default',
       size: 'regular'
+    };
+
+    var Icon = function Icon(props) {
+      var _a;
+
+      var appearance = props.appearance,
+          className = props.className,
+          name = props.name,
+          size = props.size,
+          onClick = props.onClick;
+      var baseProps = extractBaseProps(props);
+
+      var mapper = function mapper(val) {
+        if (val === 'outline') return 'outlined';
+        if (val === 'rounded') return 'round';
+        return val;
+      };
+
+      var type = mapper(props.type);
+      var iconClass = classNames__default['default']((_a = {}, _a['material-icons'] = true, _a["material-icons-" + mapper(type)] = type && type !== 'filled', _a['Icon'] = true, _a["Icon--" + appearance] = appearance, _a["" + className] = className, _a));
+      var styles = {
+        fontSize: size + "px",
+        width: size + "px"
+      };
+      return /*#__PURE__*/React.createElement("i", __assign({}, baseProps, {
+        className: iconClass,
+        style: styles,
+        onClick: onClick
+      }), type ? name + "_" + type : name);
+    };
+    Icon.displayName = 'Icon';
+    Icon.defaultProps = {
+      appearance: 'default',
+      size: 16
     };
 
     var uidGenerator = function uidGenerator() {
@@ -1614,12 +1615,13 @@
           children = props.children,
           icon = props.icon,
           expanded = props.expanded,
+          selected = props.selected,
           loading = props.loading,
           disabled = props.disabled,
           className = props.className,
-          rest = __rest(props, ["size", "appearance", "iconAlign", "tabIndex", "type", "children", "icon", "expanded", "loading", "disabled", "className"]);
+          rest = __rest(props, ["size", "appearance", "iconAlign", "tabIndex", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className"]);
 
-      var buttonClass = classNames__default['default']((_a = {}, _a['Button'] = true, _a['Button--expanded'] = expanded, _a["Button--" + size] = size, _a['Button--square'] = !children, _a["Button--" + appearance] = appearance, _a["Button--iconAlign-" + iconAlign] = children && iconAlign, _a["" + className] = className, _a));
+      var buttonClass = classNames__default['default']((_a = {}, _a['Button'] = true, _a['Button--expanded'] = expanded, _a["Button--" + size] = size, _a["Button--" + size + "Square"] = !children, _a["Button--" + appearance] = appearance, _a['Button--selected'] = selected && (appearance === 'basic' || appearance === 'transparent'), _a["Button--iconAlign-" + iconAlign] = children && iconAlign, _a["" + className] = className, _a));
       var iconClass = classNames__default['default']((_b = {}, _b['Button-icon'] = true, _b["Button-icon--" + iconAlign] = children && iconAlign, _b));
       var spinnerClass = classNames__default['default']((_c = {}, _c['Button-spinner'] = true, _c["Button-spinner--" + iconAlign] = children && iconAlign, _c));
       return /*#__PURE__*/React.createElement("button", __assign({
@@ -1637,7 +1639,7 @@
         className: iconClass
       }, /*#__PURE__*/React.createElement(Icon, {
         name: icon,
-        appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? 'default' : 'white',
+        appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
         size: sizeMapping[size]
       })), children);
     });
@@ -1962,6 +1964,7 @@
       var trigger = customTrigger ? NewCustomTrigger : /*#__PURE__*/React.createElement(DropdownButton, {
         placeholder: placeholder,
         triggerSize: triggerSize,
+        open: dropdownOpen,
         icon: icon,
         disabled: disabled,
         inlineLabel: inlineLabel,
@@ -4128,280 +4131,76 @@
       return Calendar;
     }(React.Component);
 
-    function _typeof(obj) {
-      "@babel/helpers - typeof";
+    var Trigger = function Trigger(props) {
+      var inputFormat = props.inputFormat,
+          inputOptions = props.inputOptions,
+          validators = props.validators,
+          state = props.state,
+          setState = props.setState;
+      var init = state.init,
+          date = state.date,
+          error = state.error;
 
-      if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-        _typeof = function (obj) {
-          return typeof obj;
-        };
-      } else {
-        _typeof = function (obj) {
-          return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-        };
-      }
-
-      return _typeof(obj);
-    }
-
-    var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
-      var maskProp = props.mask,
-          valueProp = props.value,
-          _a = props.placeholderChar,
-          placeholderChar = _a === void 0 ? '_' : _a,
-          _b = props.validators,
-          validators = _b === void 0 ? [] : _b,
-          defaultValue = props.defaultValue,
-          mask = props.mask,
-          error = props.error,
-          caption = props.caption,
-          required = props.required,
-          onChange = props.onChange,
-          onBlur = props.onBlur,
-          onClick = props.onClick,
-          onFocus = props.onFocus,
-          onClear = props.onClear,
-          className = props.className,
-          rest = __rest(props, ["mask", "value", "placeholderChar", "validators", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onClick", "onFocus", "onClear", "className"]);
-
-      var getNewCursorPosition = function getNewCursorPosition(type, position) {
-        if (type === 'right') {
-          for (var i = position; i < mask.length; i++) {
-            if (isEditable(i)) return i;
-          }
-
-          return mask.length;
-        }
-
-        if (type === 'left') {
-          for (var i = position; i >= 0; i--) {
-            if (isEditable(i - 1)) return i;
-          }
-
-          return 0;
-        }
-
-        return position;
-      };
-
-      var getDefaultSelection = function getDefaultSelection() {
-        var pos = getNewCursorPosition('right', 0);
-        return {
-          start: pos,
-          end: pos
-        };
-      };
-
-      var getPlaceholderValue = function getPlaceholderValue(start, end) {
-        if (start === void 0) {
-          start = 0;
-        }
-
-        if (end === void 0) {
-          end = mask.length - 1;
-        }
-
-        var val = '';
-
-        for (var i = start; i <= end; i++) {
-          val += isEditable(i) ? placeholderChar : mask[i];
-        }
-
-        return val;
-      };
-
-      var getSelectionLength = function getSelectionLength(val) {
-        return Math.abs(val.end - val.start);
-      };
-
-      var isEditable = function isEditable(pos) {
-        return _typeof(mask[pos]) === 'object';
-      };
-
-      var deferId = React.useRef();
-      var selectionRef = React.useRef(0);
-
-      var _c = React.useState(defaultValue || valueProp || ''),
-          value = _c[0],
-          setValue = _c[1];
-
-      var _d = React.useState(getDefaultSelection()),
-          selection = _d[0],
-          setSelection = _d[1];
-
-      var ref = React.useRef(null);
-      React.useImperativeHandle(forwardRef, function () {
-        return ref.current;
-      });
-      React.useEffect(function () {
-        if (ref.current && valueProp) {
-          setValue(valueProp);
-        }
-      }, [valueProp]);
-
-      var setCursorPosition = function setCursorPosition(val) {
-        return setSelectionPos({
-          start: val,
-          end: val
+      var onChangeHandler = function onChangeHandler(_e, val) {
+        setState({
+          open: true
         });
-      };
+        var _a = inputOptions.placeholderChar,
+            placeholderChar = _a === void 0 ? '_' : _a;
 
-      var getCurrSelection = function getCurrSelection() {
-        return {
-          start: ref.current.selectionStart || 0,
-          end: ref.current.selectionEnd || 0
-        };
-      };
-
-      var setSelectionPos = function setSelectionPos(pos) {
-        if (ref.current) {
-          var el = ref.current;
-          var start = Math.min(pos.start, pos.end);
-          var end = Math.max(pos.start, pos.end);
-          el.setSelectionRange(start, end);
-        }
-      };
-
-      var updateSelection = function updateSelection() {
-        setSelection(getCurrSelection());
-        deferId.current = window.requestAnimationFrame(updateSelection);
-      };
-
-      var insertAtIndex = function insertAtIndex(currValue, index, iterator) {
-        if (iterator === void 0) {
-          iterator = 0;
-        }
-
-        var newValue = '';
-        var newIndex = index + 1;
-        var newIterator = iterator;
-
-        if (index >= mask.length) {
-          return newValue;
-        }
-
-        if (iterator >= currValue.length) {
-          selectionRef.current = index;
-          return newValue;
-        }
-
-        var m = mask[index];
-
-        if (isEditable(index)) {
-          if (currValue[iterator].match(m)) {
-            newValue += currValue[iterator];
-          } else {
-            newValue += placeholderChar;
-          }
-
-          newIterator++;
-        } else {
-          newValue += m;
-        }
-
-        newValue += insertAtIndex(currValue, newIndex, newIterator);
-        return newValue;
-      };
-
-      var onChangeHandler = function onChangeHandler(e) {
-        var inputVal = e.currentTarget.value;
-        var currSelection = getCurrSelection();
-        var start = Math.min(selection.start, currSelection.start);
-        var end = currSelection.end;
-        var cursorPosition = start;
-        var enteredVal = '';
-        var updatedVal = '';
-        var removedLength = 0;
-        var insertedStringLength = 0;
-        enteredVal = inputVal.slice(start, end);
-        updatedVal = insertAtIndex(enteredVal, start);
-        insertedStringLength = updatedVal.length;
-
-        if (currSelection.end > selection.end) {
-          removedLength = insertedStringLength ? getSelectionLength(selection) : 0;
-        } else if (inputVal.length < value.length) {
-          removedLength = value.length - inputVal.length;
-        }
-
-        cursorPosition += insertedStringLength;
-        var maskedVal = value.split('');
-
-        for (var i = 0; i < insertedStringLength; i++) {
-          maskedVal[start + i] = updatedVal[i];
-        }
-
-        for (var i = 0; i < removedLength; i++) {
-          var index$1 = start + insertedStringLength + i;
-          maskedVal[index$1] = getPlaceholderValue(index$1, index$1);
-        }
-
-        var newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
-
-        if (removedLength === 1 && !updatedVal.length && !isEditable(cursorPosition) && newCursorPosition > 0) {
-          cursorPosition = newCursorPosition;
-          cursorPosition--;
-          maskedVal[cursorPosition] = placeholderChar;
-        } else if (removedLength !== 1) {
-          cursorPosition = newCursorPosition;
-        }
-
-        var newValue = maskedVal.slice(0, mask.length).join('');
-        window.requestAnimationFrame(function () {
-          return setCursorPosition(cursorPosition);
-        });
-
-        if (isValid(validators, newValue)) {
-          setValue(newValue);
-          if (onChange) onChange(e, newValue);
-        }
-      };
-
-      var onBlurHandler = function onBlurHandler(e) {
-        var inputVal = e.currentTarget.value;
-        if (onBlur) onBlur(e, inputVal);
-        if (deferId.current) window.cancelAnimationFrame(deferId.current);
-      };
-
-      var onClearHandler = function onClearHandler(e) {
-        setValue('');
-        if (onClear) onClear(e);
-      };
-
-      var onFocusHandler = function onFocusHandler(e) {
-        deferId.current = window.requestAnimationFrame(updateSelection);
-
-        if (!value) {
-          setValue(getPlaceholderValue());
-          window.requestAnimationFrame(function () {
-            return setSelectionPos(getDefaultSelection());
+        if (val && !val.includes(placeholderChar)) {
+          var d = translateToDate(inputFormat, val, validators);
+          setState({
+            date: d
           });
         }
-
-        if (onFocus) onFocus(e);
       };
 
-      var classes = classNames__default['default']({
-        'd-flex flex-column flex-grow-1': true
-      }, className);
-      return /*#__PURE__*/React.createElement("div", {
-        className: classes
-      }, /*#__PURE__*/React.createElement(Input, __assign({}, rest, {
-        value: value,
-        error: error,
-        required: required,
-        onFocus: onFocusHandler,
+      var onFocusHandler = function onFocusHandler() {
+        setState({
+          init: true
+        });
+      };
+
+      var onBlurHandler = function onBlurHandler(_e, val) {
+        var _a = inputOptions.placeholderChar,
+            placeholderChar = _a === void 0 ? '_' : _a;
+
+        if (!val || val.includes(placeholderChar)) {
+          setState({
+            date: undefined
+          });
+        }
+      };
+
+      var onClearHandler = function onClearHandler() {
+        setState({
+          init: true,
+          date: undefined
+        });
+      };
+
+      var showError = inputOptions.required && error && init;
+
+      var inputValidator = function inputValidator(val) {
+        return isValid(validators, val, inputFormat);
+      };
+
+      return /*#__PURE__*/React.createElement(InputMask, __assign({
+        icon: "events",
+        placeholder: inputFormat
+      }, inputOptions, {
+        error: showError,
+        mask: date$1[inputFormat],
+        value: date ? translateToString$1(inputFormat, date) : '',
         onChange: onChangeHandler,
-        onClear: onClearHandler,
+        onFocus: onFocusHandler,
         onBlur: onBlurHandler,
-        autoComplete: 'off',
-        ref: ref
-      })), /*#__PURE__*/React.createElement(Caption, {
-        error: error,
-        withInput: true,
-        hide: !caption
-      }, caption));
-    });
-    InputMask.displayName = 'InputMask';
+        onClear: onClearHandler,
+        caption: showError ? inputOptions.caption || 'Invalid value' : '',
+        validators: [inputValidator]
+      }));
+    };
 
     var DatePicker = function (_super) {
       __extends(DatePicker, _super);
@@ -4436,49 +4235,6 @@
           var closeOnSelect = _this.props.closeOnSelect;
           if (closeOnSelect) _this.setState({
             open: false
-          });
-        };
-
-        _this.onChangeHandler = function (_e, val) {
-          var _a = _this.props,
-              inputFormat = _a.inputFormat,
-              validators = _a.validators;
-
-          _this.setState({
-            open: true
-          });
-
-          var placeholderChar = '_';
-
-          if (val && !val.includes(placeholderChar)) {
-            var d = translateToDate(inputFormat, val, validators);
-
-            _this.setState({
-              date: d
-            });
-          }
-        };
-
-        _this.onFocusHandler = function () {
-          _this.setState({
-            init: true
-          });
-        };
-
-        _this.onBlurHandler = function (_e, val) {
-          var placeholderChar = '_';
-
-          if (!val || val.includes(placeholderChar)) {
-            _this.setState({
-              date: undefined
-            });
-          }
-        };
-
-        _this.onClearHandler = function () {
-          _this.setState({
-            init: true,
-            date: undefined
           });
         };
 
@@ -4581,39 +4337,21 @@
       DatePicker.prototype.render = function () {
         var _a = this.props,
             position = _a.position,
+            withInput = _a.withInput,
             inputFormat = _a.inputFormat,
             inputOptions = _a.inputOptions,
-            withInput = _a.withInput,
             validators = _a.validators;
-        var _b = this.state,
-            init = _b.init,
-            date = _b.date,
-            error = _b.error,
-            open = _b.open;
+        var open = this.state.open;
 
         if (withInput) {
-          var showError = inputOptions.required && error && init;
-
-          var inputValidator = function inputValidator(val) {
-            return isValid(validators, val, inputFormat);
-          };
-
-          var trigger = /*#__PURE__*/React.createElement(InputMask, __assign({
-            icon: "events",
-            placeholder: inputFormat
-          }, inputOptions, {
-            error: showError,
-            mask: date$1[inputFormat],
-            value: date ? translateToString$1(inputFormat, date) : '',
-            onChange: this.onChangeHandler,
-            onFocus: this.onFocusHandler,
-            onBlur: this.onBlurHandler,
-            onClear: this.onClearHandler,
-            caption: showError ? inputOptions.caption || 'Invalid value' : '',
-            validators: [inputValidator]
-          }));
           return /*#__PURE__*/React.createElement(Popover, {
-            trigger: trigger,
+            trigger: /*#__PURE__*/React.createElement(Trigger, {
+              inputFormat: inputFormat,
+              inputOptions: inputOptions,
+              validators: validators,
+              state: this.state,
+              setState: this.setState.bind(this)
+            }),
             triggerClass: "w-100",
             position: position,
             appendToBody: true,
@@ -4642,14 +4380,24 @@
           inputFormat = props.inputFormat,
           outputFormat = props.outputFormat,
           onTimeChange = props.onTimeChange,
-          time = props.time;
+          timeProp = props.time;
+
+      var _a = React.useState(timeProp),
+          time = _a[0],
+          setTime = _a[1];
+
+      React.useEffect(function () {
+        setTime(timeProp);
+      }, [timeProp]);
 
       var onChangeHandler = function onChangeHandler(_e, val) {
+        var updatedTime = val === null || val === void 0 ? void 0 : val.toUpperCase();
         var _a = inputOptions.placeholderChar,
             placeholderChar = _a === void 0 ? '_' : _a;
+        setTime(updatedTime);
 
         if (onTimeChange) {
-          var outputTimeStr = val && !val.includes(placeholderChar) ? getOutputTimeString(inputFormat, outputFormat, val) : undefined;
+          var outputTimeStr = updatedTime && !updatedTime.includes(placeholderChar) ? getOutputTimeString(inputFormat, outputFormat, updatedTime) : undefined;
           onTimeChange(outputTimeStr);
         }
       };
@@ -4848,6 +4596,288 @@
       colors: ['primary', 'secondary', 'success', 'warning', 'alert'],
       withCenterText: true,
       colorOfTotalCount: 'success'
+    };
+
+    function _typeof(obj) {
+      "@babel/helpers - typeof";
+
+      if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+        _typeof = function (obj) {
+          return typeof obj;
+        };
+      } else {
+        _typeof = function (obj) {
+          return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+        };
+      }
+
+      return _typeof(obj);
+    }
+
+    var isEditable = function isEditable(mask, pos) {
+      return _typeof(mask[pos]) === 'object';
+    };
+    var getDefaultValue = function getDefaultValue(mask, placeholderChar) {
+      var val = '';
+
+      for (var i = 0; i < mask.length; i++) {
+        val += isEditable(mask, i) ? placeholderChar : mask[i];
+      }
+
+      return val;
+    };
+
+    var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
+      var maskProp = props.mask,
+          valueProp = props.value,
+          _a = props.placeholderChar,
+          placeholderChar = _a === void 0 ? '_' : _a,
+          _b = props.validators,
+          validators = _b === void 0 ? [] : _b,
+          defaultValue = props.defaultValue,
+          mask = props.mask,
+          error = props.error,
+          caption = props.caption,
+          required = props.required,
+          onChange = props.onChange,
+          onBlur = props.onBlur,
+          onFocus = props.onFocus,
+          onClear = props.onClear,
+          className = props.className,
+          rest = __rest(props, ["mask", "value", "placeholderChar", "validators", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onFocus", "onClear", "className"]);
+
+      var getNewCursorPosition = function getNewCursorPosition(type, position) {
+        if (type === 'right') {
+          for (var i = position; i < mask.length; i++) {
+            if (isEditable(i)) return i;
+          }
+
+          return mask.length;
+        }
+
+        if (type === 'left') {
+          for (var i = position; i >= 0; i--) {
+            if (isEditable(i - 1)) return i;
+          }
+
+          return 0;
+        }
+
+        return position;
+      };
+
+      var getDefaultSelection = function getDefaultSelection() {
+        var pos = getNewCursorPosition('right', 0);
+        return {
+          start: pos,
+          end: pos
+        };
+      };
+
+      var getPlaceholderValue = function getPlaceholderValue(start, end) {
+        if (start === void 0) {
+          start = 0;
+        }
+
+        if (end === void 0) {
+          end = mask.length - 1;
+        }
+
+        return getDefaultValue(mask, placeholderChar).slice(start, end + 1);
+      };
+
+      var getSelectionLength = function getSelectionLength(val) {
+        return Math.abs(val.end - val.start);
+      };
+
+      var isEditable = function isEditable(pos) {
+        return _typeof(mask[pos]) === 'object';
+      };
+
+      var deferId = React.useRef();
+      var selectionRef = React.useRef(0);
+
+      var _c = React.useState(defaultValue || valueProp || ''),
+          value = _c[0],
+          setValue = _c[1];
+
+      var _d = React.useState(getDefaultSelection()),
+          selection = _d[0],
+          setSelection = _d[1];
+
+      var ref = React.useRef(null);
+      React.useImperativeHandle(forwardRef, function () {
+        return ref.current;
+      });
+      React.useEffect(function () {
+        setValue(valueProp || '');
+      }, [valueProp]);
+
+      var setCursorPosition = function setCursorPosition(val) {
+        return setSelectionPos({
+          start: val,
+          end: val
+        });
+      };
+
+      var getCurrSelection = function getCurrSelection() {
+        return {
+          start: ref.current.selectionStart || 0,
+          end: ref.current.selectionEnd || 0
+        };
+      };
+
+      var setSelectionPos = function setSelectionPos(pos) {
+        if (ref.current) {
+          var el = ref.current;
+          var start = Math.min(pos.start, pos.end);
+          var end = Math.max(pos.start, pos.end);
+          el.setSelectionRange(start, end);
+        }
+      };
+
+      var updateSelection = function updateSelection() {
+        setSelection(getCurrSelection());
+        deferId.current = window.requestAnimationFrame(updateSelection);
+      };
+
+      var insertAtIndex = function insertAtIndex(currValue, index, iterator) {
+        if (iterator === void 0) {
+          iterator = 0;
+        }
+
+        var newValue = '';
+        var newIndex = index + 1;
+        var newIterator = iterator;
+
+        if (index >= mask.length) {
+          return newValue;
+        }
+
+        if (iterator >= currValue.length) {
+          selectionRef.current = index;
+          return newValue;
+        }
+
+        var m = mask[index];
+
+        if (isEditable(index)) {
+          if (currValue[iterator].match(m)) {
+            newValue += currValue[iterator];
+          } else {
+            newValue += placeholderChar;
+          }
+
+          newIterator++;
+        } else {
+          newValue += m;
+        }
+
+        newValue += insertAtIndex(currValue, newIndex, newIterator);
+        return newValue;
+      };
+
+      var onChangeHandler = function onChangeHandler(e) {
+        var inputVal = e.currentTarget.value;
+        var currSelection = getCurrSelection();
+        var start = Math.min(selection.start, currSelection.start);
+        var end = currSelection.end;
+        var cursorPosition = start;
+        var enteredVal = '';
+        var updatedVal = '';
+        var removedLength = 0;
+        var insertedStringLength = 0;
+        enteredVal = inputVal.slice(start, end);
+        updatedVal = insertAtIndex(enteredVal, start);
+        insertedStringLength = updatedVal.length;
+
+        if (currSelection.end > selection.end) {
+          removedLength = insertedStringLength ? getSelectionLength(selection) : 0;
+        } else if (inputVal.length < value.length) {
+          removedLength = value.length - inputVal.length;
+        }
+
+        cursorPosition += insertedStringLength;
+        var maskedVal = value.split('');
+
+        for (var i = 0; i < insertedStringLength; i++) {
+          maskedVal[start + i] = updatedVal[i];
+        }
+
+        for (var i = 0; i < removedLength; i++) {
+          var index$1 = start + insertedStringLength + i;
+          maskedVal[index$1] = getPlaceholderValue(index$1, index$1);
+        }
+
+        var newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
+
+        if (removedLength === 1 && !updatedVal.length && !isEditable(cursorPosition) && newCursorPosition > 0) {
+          cursorPosition = newCursorPosition;
+          cursorPosition--;
+          maskedVal[cursorPosition] = placeholderChar;
+        } else if (removedLength !== 1) {
+          cursorPosition = newCursorPosition;
+        }
+
+        var newValue = maskedVal.slice(0, mask.length).join('');
+        window.requestAnimationFrame(function () {
+          return setCursorPosition(cursorPosition);
+        });
+
+        if (isValid(validators, newValue)) {
+          setValue(newValue);
+          if (onChange) onChange(e, newValue);
+        }
+      };
+
+      var onBlurHandler = function onBlurHandler(e) {
+        var inputVal = e.currentTarget.value;
+        if (onBlur) onBlur(e, inputVal);
+        if (deferId.current) window.cancelAnimationFrame(deferId.current);
+      };
+
+      var onClearHandler = function onClearHandler(e) {
+        setValue('');
+        if (onClear) onClear(e);
+      };
+
+      var onFocusHandler = function onFocusHandler(e) {
+        deferId.current = window.requestAnimationFrame(updateSelection);
+
+        if (!value) {
+          setValue(getPlaceholderValue());
+          window.requestAnimationFrame(function () {
+            return setSelectionPos(getDefaultSelection());
+          });
+        }
+
+        if (onFocus) onFocus(e);
+      };
+
+      var classes = classNames__default['default']({
+        'd-flex flex-column flex-grow-1': true
+      }, className);
+      return /*#__PURE__*/React.createElement("div", {
+        className: classes
+      }, /*#__PURE__*/React.createElement(Input, __assign({}, rest, {
+        value: value,
+        error: error,
+        required: required,
+        onFocus: onFocusHandler,
+        onChange: onChangeHandler,
+        onClear: onClearHandler,
+        onBlur: onBlurHandler,
+        autoComplete: 'off',
+        ref: ref
+      })), /*#__PURE__*/React.createElement(Caption, {
+        error: error,
+        withInput: true,
+        hide: !caption
+      }, caption));
+    });
+    InputMask.displayName = 'InputMask';
+    InputMask.utils = {
+      getDefaultValue: getDefaultValue
     };
 
     var Label = function Label(props) {
@@ -7192,6 +7222,395 @@
       active: 0
     };
 
+    var Trigger$1 = function Trigger(props) {
+      var inputFormat = props.inputFormat,
+          startInputOptions = props.startInputOptions,
+          endInputOptions = props.endInputOptions,
+          validators = props.validators,
+          state = props.state,
+          setState = props.setState;
+      var init = state.init,
+          startDate = state.startDate,
+          endDate = state.endDate,
+          startError = state.startError,
+          endError = state.endError;
+
+      var updateNav = function updateNav(type) {
+        if (type === 'start') {
+          var _a = getDateInfo(startDate),
+              year = _a.year,
+              month = _a.month;
+
+          setState({
+            yearNav: year,
+            monthNav: month
+          });
+        }
+
+        if (type === 'end') {
+          var _b = getDateInfo(endDate),
+              year = _b.year,
+              month = _b.month;
+
+          setState({
+            yearNav: year,
+            monthNav: month
+          });
+        }
+      };
+
+      var onChangeHandler = function onChangeHandler(_e, val, type) {
+        setState({
+          open: true
+        });
+
+        if (type === 'start') {
+          var placeholderChar = startInputOptions.placeholderChar || '_';
+
+          if (val && !val.includes(placeholderChar)) {
+            var d = translateToDate(inputFormat, val, validators);
+
+            if (d) {
+              setState({
+                startDate: d
+              });
+
+              if (endDate) {
+                var _a = getDateInfo(endDate),
+                    eYear = _a.year,
+                    eMonth = _a.month,
+                    eDate = _a.date;
+
+                if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
+                  setState({
+                    endDate: undefined
+                  });
+                }
+              }
+            }
+          }
+        }
+
+        if (type === 'end') {
+          var placeholderChar = endInputOptions.placeholderChar ? endInputOptions.placeholderChar : '_';
+
+          if (val && !val.includes(placeholderChar)) {
+            var d = translateToDate(inputFormat, val, validators);
+            if (d) setState({
+              endDate: d
+            });
+          }
+        }
+      };
+
+      var onFocusHandler = function onFocusHandler() {
+        setState({
+          init: true
+        });
+      };
+
+      var onBlurHandler = function onBlurHandler(_e, val, type) {
+        if (type === 'start') {
+          var _a = startInputOptions.placeholderChar,
+              placeholderChar = _a === void 0 ? '_' : _a;
+          if (!val || val.includes(placeholderChar)) setState({
+            startDate: undefined
+          });
+        }
+
+        if (type === 'end') {
+          var _b = endInputOptions.placeholderChar,
+              placeholderChar = _b === void 0 ? '_' : _b;
+          if (!val || val.includes(placeholderChar)) setState({
+            endDate: undefined
+          });
+        }
+      };
+
+      var onClearHandler = function onClearHandler(type) {
+        if (type === 'start') {
+          setState({
+            init: true,
+            startDate: undefined
+          });
+          updateNav('end');
+        }
+
+        if (type === 'end') {
+          setState({
+            init: true,
+            endDate: undefined
+          });
+          updateNav('start');
+        }
+      };
+
+      var onClickHandler = function onClickHandler(type) {
+        var open = state.open;
+
+        if (!open) {
+          updateNav(type);
+        }
+      };
+
+      var mask = date$1[inputFormat];
+      var showStartError = startInputOptions.required && startError && init;
+      var showEndError = endInputOptions.required && endError && init;
+      var startLabel = startInputOptions.label;
+      var endLabel = endInputOptions.label;
+
+      var inputValidator = function inputValidator(val) {
+        return isValid(validators, val, inputFormat);
+      };
+
+      return /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, {
+        size: '6',
+        sizeXS: '12',
+        className: "DateRangePicker-input DateRangePicker-input--startDate"
+      }, startLabel && /*#__PURE__*/React.createElement(Label, {
+        required: startInputOptions.required,
+        withInput: true
+      }, startLabel), /*#__PURE__*/React.createElement(InputMask, __assign({
+        icon: "events",
+        placeholder: inputFormat
+      }, startInputOptions, {
+        mask: mask,
+        value: startDate ? translateToString$1(inputFormat, startDate) : '',
+        onFocus: onFocusHandler,
+        onChange: function onChange(e, val) {
+          onChangeHandler(e, val || '', 'start');
+        },
+        onBlur: function onBlur(e, val) {
+          onBlurHandler(e, val || '', 'start');
+        },
+        onClear: function onClear() {
+          return onClearHandler('start');
+        },
+        onClick: function onClick() {
+          return onClickHandler('start');
+        },
+        error: showStartError,
+        caption: showStartError ? startInputOptions.caption || 'Invalid value' : '',
+        validators: [inputValidator]
+      }))), /*#__PURE__*/React.createElement(Column, {
+        size: '6',
+        sizeXS: '12',
+        className: "DateRangePicker-input DateRangePicker-input--endDate"
+      }, endLabel && /*#__PURE__*/React.createElement(Label, {
+        required: endInputOptions.required,
+        withInput: true
+      }, endLabel), /*#__PURE__*/React.createElement(InputMask, __assign({
+        icon: "events",
+        placeholder: inputFormat
+      }, endInputOptions, {
+        mask: mask,
+        value: endDate ? translateToString$1(inputFormat, endDate) : '',
+        onChange: function onChange(e, val) {
+          onChangeHandler(e, val || '', 'end');
+        },
+        onBlur: function onBlur(e, val) {
+          onBlurHandler(e, val || '', 'end');
+        },
+        onClear: function onClear() {
+          return onClearHandler('end');
+        },
+        onClick: function onClick() {
+          return onClickHandler('end');
+        },
+        error: showEndError,
+        caption: showEndError ? endInputOptions.caption || 'Invalid value' : '',
+        validators: [inputValidator]
+      }))));
+    };
+
+    var SingleInputTrigger = function SingleInputTrigger(props) {
+      var inputFormat = props.inputFormat,
+          inputOptions = props.inputOptions,
+          validators = props.validators,
+          state = props.state,
+          setState = props.setState;
+      var init = state.init,
+          startDate = state.startDate,
+          endDate = state.endDate,
+          startValue = state.startValue,
+          endValue = state.endValue,
+          startError = state.startError,
+          endError = state.endError;
+      var mask = rangeDate[inputFormat];
+      var showError = inputOptions.required && (startError || endError) && init;
+      var label = inputOptions.label;
+      var _a = inputOptions.placeholderChar,
+          placeholderChar = _a === void 0 ? '_' : _a;
+      var defaultValue = InputMask.utils.getDefaultValue(mask, placeholderChar).split(' - ');
+      var sValue = startValue || defaultValue[0];
+      var eValue = endValue || defaultValue[1];
+
+      var inputValidator = function inputValidator(val) {
+        var _a = val.split(' - '),
+            startVal = _a[0],
+            endVal = _a[1];
+
+        return isValid(validators, startVal, inputFormat) && isValid(validators, endVal, inputFormat);
+      };
+
+      var onChangeHandler = function onChangeHandler(_e, val) {
+        var date = val.split(' - ');
+        var startVal = date[0];
+        var endVal = date[1];
+
+        if (startValue !== startVal && startVal && !startVal.includes(placeholderChar)) {
+          var startD = translateToDate(inputFormat, startVal, validators);
+
+          if (startD) {
+            var isEndDateValid = endValue && !endValue.includes(placeholderChar);
+            setState({
+              startDate: startD,
+              endDate: isEndDateValid ? endDate : undefined
+            });
+
+            if (endDate) {
+              var _a = getDateInfo(endDate),
+                  eYear = _a.year,
+                  eMonth = _a.month,
+                  eDate = _a.date;
+
+              if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
+                setState({
+                  endDate: undefined
+                });
+              }
+            }
+          }
+        }
+
+        if (endValue !== endVal && endVal && !endVal.includes(placeholderChar)) {
+          var endD = translateToDate(inputFormat, endVal, validators);
+          var isStartDateValid = startValue && !startValue.includes(placeholderChar);
+
+          if (endD) {
+            setState({
+              endDate: endD,
+              startDate: isStartDateValid ? startDate : undefined
+            });
+          }
+        }
+
+        setState({
+          startValue: startVal,
+          endValue: endVal
+        });
+      };
+
+      var onFocusHandler = function onFocusHandler() {
+        setState({
+          init: true
+        });
+      };
+
+      var onBlurHandler = function onBlurHandler(_e, val) {
+        var date = val.split(' - ');
+        var startVal = date[0];
+        var endVal = date[1];
+        if (!startVal || startVal.includes(placeholderChar)) setState({
+          startDate: undefined
+        });
+        if (!endVal || endVal.includes(placeholderChar)) setState({
+          endDate: undefined
+        });
+      };
+
+      var onClearHandler = function onClearHandler() {
+        setState({
+          init: true,
+          startDate: undefined,
+          endDate: undefined,
+          yearNav: undefined,
+          monthNav: undefined
+        });
+      };
+
+      return /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, null, label && /*#__PURE__*/React.createElement(Label, {
+        required: inputOptions.required,
+        withInput: true
+      }, label), /*#__PURE__*/React.createElement(InputMask, __assign({
+        icon: "events",
+        placeholder: inputFormat + " - " + inputFormat
+      }, inputOptions, {
+        mask: mask,
+        value: !startDate && !endDate && !init ? undefined : sValue + " - " + eValue,
+        onFocus: onFocusHandler,
+        onChange: function onChange(e, val) {
+          onChangeHandler(e, val || '');
+        },
+        onBlur: function onBlur(e, val) {
+          onBlurHandler(e, val || '');
+        },
+        onClear: onClearHandler,
+        error: showError,
+        caption: showError ? inputOptions.caption || 'Invalid value' : '',
+        validators: [inputValidator]
+      }))));
+    };
+
+    var setDate = function setDate(date) {
+      var d = new Date();
+      return new Date(d.setDate(date));
+    };
+
+    var getCurrentYear = function getCurrentYear() {
+      var current = new Date();
+      var currentYear = current.getFullYear();
+      return currentYear;
+    };
+    var getCurrentMonth = function getCurrentMonth() {
+      var current = new Date();
+      var currentMonth = current.getMonth();
+      return currentMonth;
+    };
+    var getCurrentWeek = function getCurrentWeek() {
+      var current = new Date();
+      var currentDate = current.getDate();
+      var currentDay = current.getDay();
+      return {
+        startDate: setDate(currentDate - currentDay + 1),
+        endDate: setDate(currentDate - currentDay + 7)
+      };
+    };
+    var getPreviousWeek = function getPreviousWeek() {
+      var current = new Date();
+      var currentDate = current.getDate();
+      var currentDay = current.getDay();
+      return {
+        startDate: setDate(currentDate - currentDay - 6),
+        endDate: setDate(currentDate - currentDay)
+      };
+    };
+    var getPreviousMonth = function getPreviousMonth() {
+      var current = new Date();
+      var currentYear = current.getFullYear();
+      var currentMonth = current.getMonth();
+      return {
+        endDate: new Date(currentYear, currentMonth, 0),
+        startDate: new Date(currentYear - +(currentMonth < 0), (currentMonth + 11) % 12, 1)
+      };
+    };
+    var getPrevious90Days = function getPrevious90Days() {
+      var current = new Date();
+      var currentDate = current.getDate();
+      return {
+        startDate: setDate(currentDate - 90),
+        endDate: setDate(currentDate)
+      };
+    };
+    var getCustomDates = function getCustomDates() {
+      var current = new Date();
+      var currentDate = current.getDate();
+      return {
+        startDate: setDate(currentDate),
+        endDate: setDate(currentDate)
+      };
+    };
+
     var DateRangePicker = function (_super) {
       __extends(DateRangePicker, _super);
 
@@ -7283,233 +7702,13 @@
         };
 
         _this.onRangeChangeHandler = function (sDate, eDate) {
-          var _a = _this.state,
-              startValue = _a.startValue,
-              endValue = _a.endValue;
-
           _this.setState({
             init: true,
             startDate: sDate,
             endDate: eDate,
-            startValue: sDate ? translateToString$1(_this.props.inputFormat, sDate) : startValue,
-            endValue: eDate ? translateToString$1(_this.props.inputFormat, eDate) : endValue
+            startValue: sDate ? translateToString$1(_this.props.inputFormat, sDate) : '',
+            endValue: eDate ? translateToString$1(_this.props.inputFormat, eDate) : ''
           });
-        };
-
-        _this.updateNav = function (type) {
-          var _a = _this.state,
-              startDate = _a.startDate,
-              endDate = _a.endDate;
-
-          if (type === 'start') {
-            var _b = getDateInfo(startDate),
-                year = _b.year,
-                month = _b.month;
-
-            _this.setState({
-              yearNav: year,
-              monthNav: month
-            });
-          }
-
-          if (type === 'end') {
-            var _c = getDateInfo(endDate),
-                year = _c.year,
-                month = _c.month;
-
-            _this.setState({
-              yearNav: year,
-              monthNav: month
-            });
-          }
-        };
-
-        _this.onDateChangeHandler = function (_e, val) {
-          var _a = _this.props,
-              inputFormat = _a.inputFormat,
-              validators = _a.validators,
-              inputOptions = _a.inputOptions;
-          var _b = _this.state,
-              startDate = _b.startDate,
-              endDate = _b.endDate,
-              startValue = _b.startValue,
-              endValue = _b.endValue;
-          var date = val.split(' - ');
-          var startVal = date[0];
-          var endVal = date[1];
-          var placeholderChar = inputOptions.placeholderChar || '_';
-
-          if (startValue !== startVal && startVal && !startVal.includes(placeholderChar)) {
-            var startD = translateToDate(inputFormat, startVal, validators);
-
-            if (startD) {
-              var isEndDateValid = endValue && !endValue.includes(placeholderChar);
-
-              _this.setState({
-                startDate: startD,
-                endDate: isEndDateValid ? endDate : undefined
-              });
-
-              if (endDate) {
-                var _c = getDateInfo(endDate),
-                    eYear = _c.year,
-                    eMonth = _c.month,
-                    eDate = _c.date;
-
-                if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
-                  _this.setState({
-                    endDate: undefined
-                  });
-                }
-              }
-            }
-          }
-
-          if (endValue !== endVal && endVal && !endVal.includes(placeholderChar)) {
-            var endD = translateToDate(inputFormat, endVal, validators);
-            var isStartDateValid = startValue && !startValue.includes(placeholderChar);
-
-            if (endD) {
-              _this.setState({
-                endDate: endD,
-                startDate: isStartDateValid ? startDate : undefined
-              });
-            }
-          }
-
-          _this.setState({
-            startValue: startVal,
-            endValue: endVal
-          });
-        };
-
-        _this.onChangeHandler = function (_e, val, type) {
-          var _a = _this.props,
-              inputFormat = _a.inputFormat,
-              startInputOptions = _a.startInputOptions,
-              endInputOptions = _a.endInputOptions,
-              validators = _a.validators;
-          var _b = _this.state,
-              startDate = _b.startDate,
-              endDate = _b.endDate;
-
-          _this.setState({
-            open: true
-          });
-
-          if (type === 'start') {
-            var placeholderChar = startInputOptions.placeholderChar || '_';
-
-            if (val && !val.includes(placeholderChar)) {
-              var d = translateToDate(inputFormat, val, validators);
-
-              if (d) {
-                _this.setState({
-                  startDate: d
-                });
-
-                if (endDate) {
-                  var _c = getDateInfo(endDate),
-                      eYear = _c.year,
-                      eMonth = _c.month,
-                      eDate = _c.date;
-
-                  if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
-                    _this.setState({
-                      endDate: undefined
-                    });
-                  }
-                }
-              }
-            }
-          }
-
-          if (type === 'end') {
-            var placeholderChar = endInputOptions.placeholderChar ? endInputOptions.placeholderChar : '_';
-
-            if (val && !val.includes(placeholderChar)) {
-              var d = translateToDate(inputFormat, val, validators);
-              if (d) _this.setState({
-                endDate: d
-              });
-            }
-          }
-        };
-
-        _this.onFocusHandler = function () {
-          _this.setState({
-            init: true
-          });
-        };
-
-        _this.onBlurHandler = function (_e, val, type) {
-          var _a = _this.props,
-              startInputOptions = _a.startInputOptions,
-              endInputOptions = _a.endInputOptions,
-              inputOptions = _a.inputOptions;
-
-          if (type === 'start') {
-            var placeholderChar = startInputOptions.placeholderChar || '_';
-            if (!val || val.includes(placeholderChar)) _this.setState({
-              startDate: undefined
-            });
-          }
-
-          if (type === 'end') {
-            var placeholderChar = endInputOptions.placeholderChar || '_';
-            if (!val || val.includes(placeholderChar)) _this.setState({
-              endDate: undefined
-            });
-          }
-
-          if (type === 'start-end') {
-            var placeholderChar = inputOptions.placeholderChar || '_';
-            var date = val.split(' - ');
-            var startVal = date[0];
-            var endVal = date[1];
-            if (!startVal || startVal.includes(placeholderChar)) _this.setState({
-              startDate: undefined
-            });
-            if (!endVal || endVal.includes(placeholderChar)) _this.setState({
-              endDate: undefined
-            });
-          }
-        };
-
-        _this.onClearHandler = function (type) {
-          if (type === 'start') {
-            _this.setState({
-              init: true,
-              startDate: undefined
-            });
-
-            _this.updateNav('end');
-          }
-
-          if (type === 'end') {
-            _this.setState({
-              init: true,
-              endDate: undefined
-            });
-
-            _this.updateNav('start');
-          }
-
-          if (type === 'start-end') {
-            _this.setState({
-              init: true,
-              startDate: undefined,
-              endDate: undefined,
-              yearNav: undefined,
-              monthNav: undefined
-            });
-          }
-        };
-
-        _this.onClickHandler = function (type) {
-          if (!open) {
-            _this.updateNav(type);
-          }
         };
 
         _this.onToggleHandler = function (o, type) {
@@ -7610,9 +7809,9 @@
               startDate = _d.startDate,
               endDate = _d.endDate;
 
-          var _f = this.getErrors(startDate, endDate),
-              startError = _f.startError,
-              endError = _f.endError;
+          var _e = this.getErrors(startDate, endDate),
+              startError = _e.startError,
+              endError = _e.endError;
 
           this.setState({
             startError: startError,
@@ -7673,132 +7872,54 @@
       };
 
       DateRangePicker.prototype.render = function () {
-        var _this = this;
+        var _a;
 
-        var _a = this.props,
-            withInput = _a.withInput,
-            startInputOptions = _a.startInputOptions,
-            endInputOptions = _a.endInputOptions,
-            inputOptions = _a.inputOptions,
-            inputFormat = _a.inputFormat,
-            position = _a.position,
-            validators = _a.validators,
-            singleInput = _a.singleInput;
-        var _b = this.state,
-            init = _b.init,
-            startDate = _b.startDate,
-            endDate = _b.endDate,
-            startValue = _b.startValue,
-            endValue = _b.endValue,
-            startError = _b.startError,
-            endError = _b.endError,
-            open = _b.open;
+        var _b = this.props,
+            withInput = _b.withInput,
+            startInputOptions = _b.startInputOptions,
+            endInputOptions = _b.endInputOptions,
+            inputOptions = _b.inputOptions,
+            inputFormat = _b.inputFormat,
+            position = _b.position,
+            validators = _b.validators,
+            singleInput = _b.singleInput,
+            contentAlign = _b.contentAlign,
+            children = _b.children;
+        var open = this.state.open;
+        var RangePickerClass = classNames__default['default']((_a = {}, _a['DateRangePicker'] = true, _a["DateRangePicker--" + contentAlign] = contentAlign, _a));
 
         if (withInput) {
-          var mask = date$1[inputFormat];
-          var rangeMask = rangeDate[inputFormat];
-          var showStartError = startInputOptions.required && startError && init;
-          var showEndError = endInputOptions.required && endError && init;
-          var showError = inputOptions.required && (startError || endError) && init;
-
-          var inputValidator = function inputValidator(val) {
-            return isValid(validators, val, inputFormat);
-          };
-
-          var trigger = singleInput ? /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, null, inputOptions.label && /*#__PURE__*/React.createElement(Label, {
-            required: inputOptions.required,
-            withInput: true
-          }, inputOptions.label), /*#__PURE__*/React.createElement(InputMask, __assign({
-            icon: "events",
-            placeholder: inputFormat + " - " + inputFormat
-          }, inputOptions, {
-            mask: rangeMask,
-            value: (startValue || '') + " - " + (endValue || ''),
-            onFocus: this.onFocusHandler,
-            onChange: function onChange(e, val) {
-              _this.onDateChangeHandler(e, val || '');
-            },
-            onBlur: function onBlur(e, val) {
-              _this.onBlurHandler(e, val || '', 'start-end');
-            },
-            onClear: function onClear() {
-              return _this.onClearHandler('start-end');
-            },
-            error: showError,
-            caption: showError ? inputOptions.caption || 'Invalid value' : '',
-            validators: [inputValidator]
-          })))) : /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, {
-            size: '6',
-            sizeXS: '12',
-            className: "DateRangePicker-input DateRangePicker-input--startDate"
-          }, startInputOptions.label && /*#__PURE__*/React.createElement(Label, {
-            required: startInputOptions.required,
-            withInput: true
-          }, startInputOptions.label), /*#__PURE__*/React.createElement(InputMask, __assign({
-            icon: "events",
-            placeholder: inputFormat
-          }, startInputOptions, {
-            mask: mask,
-            value: startDate ? translateToString$1(inputFormat, startDate) : '',
-            onFocus: this.onFocusHandler,
-            onChange: function onChange(e, val) {
-              _this.onChangeHandler(e, val || '', 'start');
-            },
-            onBlur: function onBlur(e, val) {
-              _this.onBlurHandler(e, val || '', 'start');
-            },
-            onClear: function onClear() {
-              return _this.onClearHandler('start');
-            },
-            onClick: function onClick() {
-              return _this.onClickHandler('start');
-            },
-            error: showStartError,
-            caption: showStartError ? startInputOptions.caption || 'Invalid value' : '',
-            validators: [inputValidator]
-          }))), /*#__PURE__*/React.createElement(Column, {
-            size: '6',
-            sizeXS: '12',
-            className: "DateRangePicker-input DateRangePicker-input--endDate"
-          }, endInputOptions.label && /*#__PURE__*/React.createElement(Label, {
-            required: endInputOptions.required,
-            withInput: true
-          }, endInputOptions.label), /*#__PURE__*/React.createElement(InputMask, __assign({
-            icon: "events",
-            placeholder: inputFormat
-          }, endInputOptions, {
-            mask: mask,
-            value: endDate ? translateToString$1(inputFormat, endDate) : '',
-            onChange: function onChange(e, val) {
-              _this.onChangeHandler(e, val || '', 'end');
-            },
-            onBlur: function onBlur(e, val) {
-              _this.onBlurHandler(e, val || '', 'end');
-            },
-            onClear: function onClear() {
-              return _this.onClearHandler('end');
-            },
-            onClick: function onClick() {
-              return _this.onClickHandler('end');
-            },
-            error: showEndError,
-            caption: showEndError ? endInputOptions.caption || 'Invalid value' : '',
-            validators: [inputValidator]
-          }))));
+          var trigger = singleInput ? /*#__PURE__*/React.createElement(SingleInputTrigger, {
+            inputFormat: inputFormat,
+            inputOptions: inputOptions,
+            validators: validators,
+            state: this.state,
+            setState: this.setState.bind(this)
+          }) : /*#__PURE__*/React.createElement(Trigger$1, {
+            inputFormat: inputFormat,
+            startInputOptions: startInputOptions,
+            endInputOptions: endInputOptions,
+            validators: validators,
+            state: this.state,
+            setState: this.setState.bind(this)
+          });
           return /*#__PURE__*/React.createElement(Popover, {
             trigger: trigger,
             triggerClass: "w-100",
+            className: RangePickerClass,
             position: position,
             appendToBody: true,
             open: open,
             onToggle: this.onToggleHandler
-          }, this.renderCalendar());
+          }, children, this.renderCalendar());
         }
 
         return this.renderCalendar();
       };
 
       DateRangePicker.defaultProps = __assign(__assign({}, Calendar.defaultProps), {
+        children: /*#__PURE__*/React.createElement(React.Fragment, null),
+        contentAlign: 'left',
         monthsInView: undefined,
         position: 'bottom-start',
         inputFormat: 'mm/dd/yyyy',
@@ -7816,6 +7937,15 @@
       });
       return DateRangePicker;
     }(React.Component);
+    DateRangePicker.utils = {
+      getCurrentWeek: getCurrentWeek,
+      getPreviousWeek: getPreviousWeek,
+      getPreviousMonth: getPreviousMonth,
+      getPrevious90Days: getPrevious90Days,
+      getCustomDates: getCustomDates,
+      getCurrentYear: getCurrentYear,
+      getCurrentMonth: getCurrentMonth
+    };
 
     var TabsWrapper = function TabsWrapper(props) {
       var _a;
@@ -8112,6 +8242,23 @@
       return schema;
     };
 
+    var GridNestedRow = function GridNestedRow(props) {
+      var _this = props._this,
+          data = props.data,
+          rowIndex = props.rowIndex;
+      var _a = _this.props,
+          schema = _a.schema,
+          loading = _a.loading,
+          nestedRowRenderer = _a.nestedRowRenderer;
+      if (nestedRowRenderer) return nestedRowRenderer({
+        data: data,
+        schema: schema,
+        loading: loading,
+        rowIndex: rowIndex
+      });
+      return null;
+    };
+
     var HeaderCell = function HeaderCell(props) {
       var _this = props._this,
           schema = props.schema,
@@ -8291,17 +8438,28 @@
         data: data,
         loading: loading
       };
+      var nestedProps = {
+        _this: _this,
+        data: data,
+        rowIndex: rowIndex
+      };
+      var isNestedRowDisabled = !GridNestedRow(nestedProps);
       return /*#__PURE__*/React.createElement("div", {
         className: "Grid-cellContent"
-      }, colIndex === 0 && nestedRows && /*#__PURE__*/React.createElement(Icon, {
-        className: "Grid-nestedRowTrigger",
+      }, colIndex === 0 && nestedRows && /*#__PURE__*/React.createElement(React.Fragment, null, !isNestedRowDisabled ? /*#__PURE__*/React.createElement(Icon, {
+        className: 'Grid-nestedRowTrigger',
         name: expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
         size: 20,
+        appearance: 'default',
         onClick: function onClick(e) {
-          e.stopPropagation();
-          setExpanded(!expanded);
+          if (!isNestedRowDisabled) {
+            e.stopPropagation();
+            setExpanded(!expanded);
+          }
         }
-      }), schema.cellRenderer ? schema.cellRenderer(cellProps) : /*#__PURE__*/React.createElement(GridCell, __assign({
+      }) : /*#__PURE__*/React.createElement("span", {
+        className: "Grid-nestedRowPlaceholder"
+      })), schema.cellRenderer ? schema.cellRenderer(cellProps) : /*#__PURE__*/React.createElement(GridCell, __assign({
         key: rowIndex + "-" + colIndex
       }, cellProps)));
     };
@@ -8452,23 +8610,6 @@
       }, /*#__PURE__*/React.createElement("div", {
         className: "Grid-row Grid-row--head"
       }, renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left'), renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length), renderSchema(rightPinnedSchema, false, 'right')));
-    };
-
-    var GridNestedRow = function GridNestedRow(props) {
-      var _this = props._this,
-          data = props.data,
-          rowIndex = props.rowIndex;
-      var _a = _this.props,
-          schema = _a.schema,
-          loading = _a.loading,
-          nestedRowRenderer = _a.nestedRowRenderer;
-      if (nestedRowRenderer) return nestedRowRenderer({
-        data: data,
-        schema: schema,
-        loading: loading,
-        rowIndex: rowIndex
-      });
-      return null;
     };
 
     var GridRow = function GridRow(props) {
@@ -9722,6 +9863,8 @@
       }
 
       Table.prototype.componentDidUpdate = function (prevProps, prevState) {
+        var _this = this;
+
         if (!this.state.async) {
           if (prevProps.loading !== this.props.loading || prevProps.error !== this.props.error) {
             var _a = this.props,
@@ -9738,6 +9881,8 @@
               page: 1,
               totalRecords: data.length || 0,
               selectAll: getSelectAll$1([])
+            }, function () {
+              _this.updateData();
             });
           }
         }

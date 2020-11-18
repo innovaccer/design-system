@@ -10,6 +10,7 @@ export interface ButtonProps extends BaseProps {
     appearance?: Appearance;
     disabled?: boolean;
     expanded?: boolean;
+    selected?: boolean;
     loading?: boolean;
     icon?: string;
     iconAlign?: Alignment;

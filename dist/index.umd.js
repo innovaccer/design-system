@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1604563689913 
+   * Generated on: 1605716204193 
    *      Package: @innovaccer/design-system
-   *      Version: v1.4.0-0
+   *      Version: v1.4.0-1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -4328,11 +4328,11 @@
    * LICENSE file in the root directory of this source tree.
    */
   var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
-  Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
+  Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x$1=b?Symbol.for("react.responder"):60118,y$1=b?Symbol.for("react.scope"):60119;
   function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}var AsyncMode=l;var ConcurrentMode=m;var ContextConsumer=k;var ContextProvider=h;var Element$1=c;var ForwardRef=n;var Fragment=e;var Lazy=t;var Memo=r;var Portal=d;
   var Profiler=g;var StrictMode=f;var Suspense=p;var isAsyncMode=function(a){return A(a)||z(a)===l};var isConcurrentMode=A;var isContextConsumer=function(a){return z(a)===k};var isContextProvider=function(a){return z(a)===h};var isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};var isForwardRef=function(a){return z(a)===n};var isFragment=function(a){return z(a)===e};var isLazy=function(a){return z(a)===t};
   var isMemo=function(a){return z(a)===r};var isPortal=function(a){return z(a)===d};var isProfiler=function(a){return z(a)===g};var isStrictMode=function(a){return z(a)===f};var isSuspense=function(a){return z(a)===p};
-  var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};var typeOf=z;
+  var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w||a.$$typeof===x$1||a.$$typeof===y$1||a.$$typeof===v)};var typeOf=z;
 
   var reactIs_production_min = {
   	AsyncMode: AsyncMode,
@@ -4572,10 +4572,10 @@
   }
   });
 
-  var key = '__global_unique_id__';
+  var key$1 = '__global_unique_id__';
 
   var gud = function() {
-    return commonjsGlobal[key] = (commonjsGlobal[key] || 0) + 1;
+    return commonjsGlobal[key$1] = (commonjsGlobal[key$1] || 0) + 1;
   };
 
   /**
@@ -5509,9 +5509,9 @@
 
   var getTimeObjectFromNumber = function getTimeObjectFromNumber(format, time) {
     var d = new Date(time);
-    var hours = d.getHours();
-    hours = isFormat12hour(format) ? get12hourFormat(hours).hrs : hours;
-    var am_pm = isFormat12hour(format) ? get12hourFormat(hours).AMPM : '';
+    var hrs = d.getHours();
+    var hours = isFormat12hour(format) ? get12hourFormat(hrs).hrs : hrs;
+    var am_pm = isFormat12hour(format) ? get12hourFormat(hrs).AMPM : '';
     var minutes = d.getMinutes();
     var seconds = d.getSeconds();
     return {
@@ -5694,7 +5694,7 @@
     'mm-dd-yyyy': [/[01]/, /\d/, '-', /[0123]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, ' ', '-', ' ', /[01]/, /\d/, '-', /[0123]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
     'yyyy-mm-dd': [/\d/, /\d/, /\d/, /\d/, '-', /[01]/, /\d/, '-', /[0123]/, /\d/, ' ', '-', ' ', /\d/, /\d/, /\d/, /\d/, '-', /[01]/, /\d/, '-', /[0123]/, /\d/]
   };
-  var time$1 = (_time = {}, _defineProperty(_time, 'hh:mm', [/[0-1-2]/, /\d/, ' ', ':', ' ', /[0-6]/, /\d/]), _defineProperty(_time, 'hh:mm AM', [/[0-1]/, /\d/, ' ', ':', ' ', /[0-6]/, /\d/, ' ', /[AP]/, 'M']), _time);
+  var time$1 = (_time = {}, _defineProperty(_time, 'hh:mm', [/[0-1-2]/, /\d/, ' ', ':', ' ', /[0-6]/, /\d/]), _defineProperty(_time, 'hh:mm AM', [/[0-1]/, /\d/, ' ', ':', ' ', /[0-6]/, /\d/, ' ', /[APap]/, 'M']), _time);
 
   var masks = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -6243,43 +6243,8 @@
     };
   };
 
-  var Icon = function Icon(props) {
-    var _classNames;
-
-    var appearance = props.appearance,
-        className = props.className,
-        name = props.name,
-        size = props.size,
-        onClick = props.onClick;
-    var baseProps = extractBaseProps(props);
-
-    var mapper = function mapper(val) {
-      if (val === 'outline') return 'outlined';
-      if (val === 'rounded') return 'round';
-      return val;
-    };
-
-    var type = mapper(props.type);
-    var iconClass = classnames((_classNames = {}, _defineProperty(_classNames, 'material-icons', true), _defineProperty(_classNames, "material-icons-".concat(mapper(type)), type && type !== 'filled'), _defineProperty(_classNames, 'Icon', true), _defineProperty(_classNames, "Icon--".concat(appearance), appearance), _defineProperty(_classNames, "".concat(className), className), _classNames));
-    var styles = {
-      fontSize: "".concat(size, "px"),
-      width: "".concat(size, "px")
-    }; // change `children` to {name} after migration
-
-    return /*#__PURE__*/React.createElement("i", _extends({}, baseProps, {
-      className: iconClass,
-      style: styles,
-      onClick: onClick
-    }), type ? "".concat(name, "_").concat(type) : name);
-  };
-  Icon.displayName = 'Icon';
-  Icon.defaultProps = {
-    appearance: 'default',
-    size: 16
-  };
-
   var DropdownButton = /*#__PURE__*/React.forwardRef(function (props, ref) {
-    var _classNames;
+    var _classNames, _classNames2;
 
     var _props$triggerSize = props.triggerSize,
         triggerSize = _props$triggerSize === void 0 ? 'regular' : _props$triggerSize,
@@ -6290,17 +6255,17 @@
         children = props.children,
         icon = props.icon,
         disabled = props.disabled,
+        open = props.open,
         inlineLabel = props.inlineLabel,
         error = props.error,
-        rest = _objectWithoutProperties(props, ["triggerSize", "placeholder", "menu", "children", "icon", "disabled", "inlineLabel", "error"]);
+        rest = _objectWithoutProperties(props, ["triggerSize", "placeholder", "menu", "children", "icon", "disabled", "open", "inlineLabel", "error"]);
 
     var buttonDisabled = disabled ? 'disabled' : 'default';
     var trimmedPlaceholder = placeholder.trim();
-    var value = children ? children : trimmedPlaceholder ? trimmedPlaceholder : 'Select';
+    var value = children ? children : trimmedPlaceholder;
     var iconName = !menu ? 'keyboard_arrow_down' : icon ? icon : 'more_horiz';
-    var label = inlineLabel && inlineLabel.trim();
-    var buttonClass = classnames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--basic', true), _defineProperty(_classNames, 'Button--square', menu), _defineProperty(_classNames, 'DropdownTrigger', true), _defineProperty(_classNames, 'DropdownButton', true), _defineProperty(_classNames, "DropdownButton--".concat(triggerSize), triggerSize), _defineProperty(_classNames, 'DropdownButton--icon', icon), _defineProperty(_classNames, 'DropdownButton--placeholder', !children && !menu), _defineProperty(_classNames, 'DropdownButton--label', label), _defineProperty(_classNames, 'DropdownButton--error', error), _classNames));
-    var labelClass = classnames(_defineProperty({}, 'DropdownButton-label', true));
+    var buttonClass = classnames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'DropdownButton', true), _defineProperty(_classNames, "DropdownButton--".concat(triggerSize), triggerSize), _defineProperty(_classNames, "DropdownButton--".concat(triggerSize, "Square"), menu), _defineProperty(_classNames, 'DropdownButton--placeholder', !children && !menu), _defineProperty(_classNames, 'DropdownButton--icon', icon), _defineProperty(_classNames, 'DropdownButton--open', open), _defineProperty(_classNames, 'DropdownButton--error', error), _classNames));
+    var textClass = classnames((_classNames2 = {}, _defineProperty(_classNames2, 'Text', true), _defineProperty(_classNames2, 'Text--regular', true), _defineProperty(_classNames2, 'DropdownButton-text', true), _classNames2));
     return /*#__PURE__*/React.createElement("button", _extends({
       ref: ref,
       type: "button",
@@ -6311,15 +6276,16 @@
       "data-test": "DesignSystem-DropdownTrigger"
     }, rest), !menu && /*#__PURE__*/React.createElement("div", {
       className: "DropdownButton-wrapper"
-    }, label && /*#__PURE__*/React.createElement("div", {
-      className: labelClass
-    }, " ", label.trim().charAt(0).toUpperCase(), label.trim().slice(1), " "), icon && !inlineLabel && /*#__PURE__*/React.createElement(Icon, {
+    }, inlineLabel && /*#__PURE__*/React.createElement(Text, {
+      appearance: "subtle",
+      className: "mr-4"
+    }, "".concat(inlineLabel.trim().charAt(0).toUpperCase()).concat(inlineLabel.trim().slice(1))), icon && !inlineLabel && /*#__PURE__*/React.createElement(Icon, {
       appearance: buttonDisabled,
-      className: "mr-4",
+      className: "d-flex align-items-center mr-4",
       name: icon
-    }), /*#__PURE__*/React.createElement("div", {
-      className: 'DropdownButton-text'
-    }, value && "".concat(value))), /*#__PURE__*/React.createElement(Icon, {
+    }), value && /*#__PURE__*/React.createElement("span", {
+      className: textClass
+    }, value)), /*#__PURE__*/React.createElement(Icon, {
       appearance: buttonDisabled,
       name: iconName
     }));
@@ -6362,6 +6328,41 @@
   Text.defaultProps = {
     appearance: 'default',
     size: 'regular'
+  };
+
+  var Icon = function Icon(props) {
+    var _classNames;
+
+    var appearance = props.appearance,
+        className = props.className,
+        name = props.name,
+        size = props.size,
+        onClick = props.onClick;
+    var baseProps = extractBaseProps(props);
+
+    var mapper = function mapper(val) {
+      if (val === 'outline') return 'outlined';
+      if (val === 'rounded') return 'round';
+      return val;
+    };
+
+    var type = mapper(props.type);
+    var iconClass = classnames((_classNames = {}, _defineProperty(_classNames, 'material-icons', true), _defineProperty(_classNames, "material-icons-".concat(mapper(type)), type && type !== 'filled'), _defineProperty(_classNames, 'Icon', true), _defineProperty(_classNames, "Icon--".concat(appearance), appearance), _defineProperty(_classNames, "".concat(className), className), _classNames));
+    var styles = {
+      fontSize: "".concat(size, "px"),
+      width: "".concat(size, "px")
+    }; // change `children` to {name} after migration
+
+    return /*#__PURE__*/React.createElement("i", _extends({}, baseProps, {
+      className: iconClass,
+      style: styles,
+      onClick: onClick
+    }), type ? "".concat(name, "_").concat(type) : name);
+  };
+  Icon.displayName = 'Icon';
+  Icon.defaultProps = {
+    appearance: 'default',
+    size: 16
   };
 
   var uidGenerator = function uidGenerator() {
@@ -6737,12 +6738,13 @@
         children = props.children,
         icon = props.icon,
         expanded = props.expanded,
+        selected = props.selected,
         loading = props.loading,
         disabled = props.disabled,
         className = props.className,
-        rest = _objectWithoutProperties(props, ["size", "appearance", "iconAlign", "tabIndex", "type", "children", "icon", "expanded", "loading", "disabled", "className"]);
+        rest = _objectWithoutProperties(props, ["size", "appearance", "iconAlign", "tabIndex", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className"]);
 
-    var buttonClass = classnames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--expanded', expanded), _defineProperty(_classNames, "Button--".concat(size), size), _defineProperty(_classNames, 'Button--square', !children), _defineProperty(_classNames, "Button--".concat(appearance), appearance), _defineProperty(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _defineProperty(_classNames, "".concat(className), className), _classNames));
+    var buttonClass = classnames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--expanded', expanded), _defineProperty(_classNames, "Button--".concat(size), size), _defineProperty(_classNames, "Button--".concat(size, "Square"), !children), _defineProperty(_classNames, "Button--".concat(appearance), appearance), _defineProperty(_classNames, 'Button--selected', selected && (appearance === 'basic' || appearance === 'transparent')), _defineProperty(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _defineProperty(_classNames, "".concat(className), className), _classNames));
     var iconClass = classnames((_classNames2 = {}, _defineProperty(_classNames2, 'Button-icon', true), _defineProperty(_classNames2, "Button-icon--".concat(iconAlign), children && iconAlign), _classNames2));
     var spinnerClass = classnames((_classNames3 = {}, _defineProperty(_classNames3, 'Button-spinner', true), _defineProperty(_classNames3, "Button-spinner--".concat(iconAlign), children && iconAlign), _classNames3));
     return /*#__PURE__*/React.createElement("button", _extends({
@@ -6760,7 +6762,7 @@
       className: iconClass
     }, /*#__PURE__*/React.createElement(Icon, {
       name: icon,
-      appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? 'default' : 'white',
+      appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
       size: sizeMapping[size]
     })), children);
   });
@@ -7091,6 +7093,7 @@
     var trigger = customTrigger ? NewCustomTrigger : /*#__PURE__*/React.createElement(DropdownButton, {
       placeholder: placeholder,
       triggerSize: triggerSize,
+      open: dropdownOpen,
       icon: icon,
       disabled: disabled,
       inlineLabel: inlineLabel,
@@ -9296,262 +9299,76 @@
     firstDayOfWeek: 'sunday'
   });
 
-  /**
-   * It works as Uncontrolled Input
-   *
-   * **Updated value can be passed**
-   */
-  var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
-    var maskProp = props.mask,
-        valueProp = props.value,
-        _props$placeholderCha = props.placeholderChar,
-        placeholderChar = _props$placeholderCha === void 0 ? '_' : _props$placeholderCha,
-        _props$validators = props.validators,
-        validators = _props$validators === void 0 ? [] : _props$validators,
-        defaultValue = props.defaultValue,
-        mask = props.mask,
-        error = props.error,
-        caption = props.caption,
-        required = props.required,
-        onChange = props.onChange,
-        onBlur = props.onBlur,
-        onClick = props.onClick,
-        onFocus = props.onFocus,
-        onClear = props.onClear,
-        className = props.className,
-        rest = _objectWithoutProperties(props, ["mask", "value", "placeholderChar", "validators", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onClick", "onFocus", "onClear", "className"]);
+  var Trigger = function Trigger(props) {
+    var inputFormat = props.inputFormat,
+        inputOptions = props.inputOptions,
+        validators = props.validators,
+        state = props.state,
+        setState = props.setState;
+    var init = state.init,
+        date = state.date,
+        error = state.error;
 
-    var getNewCursorPosition = function getNewCursorPosition(type, position) {
-      if (type === 'right') {
-        for (var i = position; i < mask.length; i++) {
-          if (isEditable(i)) return i;
-        }
-
-        return mask.length;
-      }
-
-      if (type === 'left') {
-        for (var _i = position; _i >= 0; _i--) {
-          if (isEditable(_i - 1)) return _i;
-        }
-
-        return 0;
-      }
-
-      return position;
-    };
-
-    var getDefaultSelection = function getDefaultSelection() {
-      var pos = getNewCursorPosition('right', 0);
-      return {
-        start: pos,
-        end: pos
-      };
-    };
-
-    var getPlaceholderValue = function getPlaceholderValue() {
-      var start = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-      var end = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : mask.length - 1;
-      var val = '';
-
-      for (var i = start; i <= end; i++) {
-        val += isEditable(i) ? placeholderChar : mask[i];
-      }
-
-      return val;
-    };
-
-    var getSelectionLength = function getSelectionLength(val) {
-      return Math.abs(val.end - val.start);
-    };
-
-    var isEditable = function isEditable(pos) {
-      return _typeof(mask[pos]) === 'object';
-    };
-
-    var deferId = React.useRef();
-    var selectionRef = React.useRef(0);
-
-    var _React$useState = React.useState(defaultValue || valueProp || ''),
-        _React$useState2 = _slicedToArray(_React$useState, 2),
-        value = _React$useState2[0],
-        setValue = _React$useState2[1];
-
-    var _React$useState3 = React.useState(getDefaultSelection()),
-        _React$useState4 = _slicedToArray(_React$useState3, 2),
-        selection = _React$useState4[0],
-        setSelection = _React$useState4[1];
-
-    var ref = React.useRef(null);
-    React.useImperativeHandle(forwardRef, function () {
-      return ref.current;
-    });
-    React.useEffect(function () {
-      if (ref.current && valueProp) {
-        setValue(valueProp);
-      }
-    }, [valueProp]);
-
-    var setCursorPosition = function setCursorPosition(val) {
-      return setSelectionPos({
-        start: val,
-        end: val
+    var onChangeHandler = function onChangeHandler(_e, val) {
+      setState({
+        open: true
       });
-    };
+      var _inputOptions$placeho = inputOptions.placeholderChar,
+          placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho;
 
-    var getCurrSelection = function getCurrSelection() {
-      return {
-        start: ref.current.selectionStart || 0,
-        end: ref.current.selectionEnd || 0
-      };
-    };
-
-    var setSelectionPos = function setSelectionPos(pos) {
-      if (ref.current) {
-        var el = ref.current;
-        var start = Math.min(pos.start, pos.end);
-        var end = Math.max(pos.start, pos.end);
-        el.setSelectionRange(start, end);
-      }
-    };
-
-    var updateSelection = function updateSelection() {
-      setSelection(getCurrSelection());
-      deferId.current = window.requestAnimationFrame(updateSelection);
-    };
-
-    var insertAtIndex = function insertAtIndex(currValue, index) {
-      var iterator = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-      var newValue = '';
-      var newIndex = index + 1;
-      var newIterator = iterator;
-
-      if (index >= mask.length) {
-        return newValue;
-      }
-
-      if (iterator >= currValue.length) {
-        selectionRef.current = index;
-        return newValue;
-      }
-
-      var m = mask[index];
-
-      if (isEditable(index)) {
-        if (currValue[iterator].match(m)) {
-          newValue += currValue[iterator];
-        } else {
-          newValue += placeholderChar;
-        }
-
-        newIterator++;
-      } else {
-        newValue += m;
-      }
-
-      newValue += insertAtIndex(currValue, newIndex, newIterator);
-      return newValue;
-    };
-
-    var onChangeHandler = function onChangeHandler(e) {
-      var inputVal = e.currentTarget.value;
-      var currSelection = getCurrSelection();
-      var start = Math.min(selection.start, currSelection.start);
-      var end = currSelection.end;
-      var cursorPosition = start;
-      var enteredVal = '';
-      var updatedVal = '';
-      var removedLength = 0;
-      var insertedStringLength = 0;
-      enteredVal = inputVal.slice(start, end);
-      updatedVal = insertAtIndex(enteredVal, start);
-      insertedStringLength = updatedVal.length;
-
-      if (currSelection.end > selection.end) {
-        removedLength = insertedStringLength ? getSelectionLength(selection) : 0;
-      } else if (inputVal.length < value.length) {
-        removedLength = value.length - inputVal.length;
-      }
-
-      cursorPosition += insertedStringLength;
-      var maskedVal = value.split('');
-
-      for (var i = 0; i < insertedStringLength; i++) {
-        maskedVal[start + i] = updatedVal[i];
-      }
-
-      for (var _i2 = 0; _i2 < removedLength; _i2++) {
-        var index$1 = start + insertedStringLength + _i2;
-        maskedVal[index$1] = getPlaceholderValue(index$1, index$1);
-      }
-
-      var newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
-
-      if (removedLength === 1 && !updatedVal.length && !isEditable(cursorPosition) && newCursorPosition > 0) {
-        cursorPosition = newCursorPosition;
-        cursorPosition--;
-        maskedVal[cursorPosition] = placeholderChar;
-      } else if (removedLength !== 1) {
-        cursorPosition = newCursorPosition;
-      }
-
-      var newValue = maskedVal.slice(0, mask.length).join('');
-      window.requestAnimationFrame(function () {
-        return setCursorPosition(cursorPosition);
-      });
-
-      if (isValid(validators, newValue)) {
-        setValue(newValue);
-        if (onChange) onChange(e, newValue);
-      }
-    };
-
-    var onBlurHandler = function onBlurHandler(e) {
-      var inputVal = e.currentTarget.value;
-      if (onBlur) onBlur(e, inputVal);
-      if (deferId.current) window.cancelAnimationFrame(deferId.current);
-    };
-
-    var onClearHandler = function onClearHandler(e) {
-      setValue('');
-      if (onClear) onClear(e);
-    };
-
-    var onFocusHandler = function onFocusHandler(e) {
-      deferId.current = window.requestAnimationFrame(updateSelection);
-
-      if (!value) {
-        setValue(getPlaceholderValue());
-        window.requestAnimationFrame(function () {
-          return setSelectionPos(getDefaultSelection());
+      if (val && !val.includes(placeholderChar)) {
+        var d = translateToDate(inputFormat, val, validators);
+        setState({
+          date: d
         });
       }
-
-      if (onFocus) onFocus(e);
     };
 
-    var classes = classnames({
-      'd-flex flex-column flex-grow-1': true
-    }, className);
-    return /*#__PURE__*/React.createElement("div", {
-      className: classes
-    }, /*#__PURE__*/React.createElement(Input, _extends({}, rest, {
-      value: value,
-      error: error,
-      required: required,
-      onFocus: onFocusHandler,
+    var onFocusHandler = function onFocusHandler() {
+      setState({
+        init: true
+      });
+    };
+
+    var onBlurHandler = function onBlurHandler(_e, val) {
+      var _inputOptions$placeho2 = inputOptions.placeholderChar,
+          placeholderChar = _inputOptions$placeho2 === void 0 ? '_' : _inputOptions$placeho2;
+
+      if (!val || val.includes(placeholderChar)) {
+        setState({
+          date: undefined
+        });
+      }
+    };
+
+    var onClearHandler = function onClearHandler() {
+      setState({
+        init: true,
+        date: undefined
+      });
+    };
+
+    var showError = inputOptions.required && error && init;
+
+    var inputValidator = function inputValidator(val) {
+      return isValid(validators, val, inputFormat);
+    };
+
+    return /*#__PURE__*/React.createElement(InputMask, _extends({
+      icon: "events",
+      placeholder: inputFormat
+    }, inputOptions, {
+      error: showError,
+      mask: date$1[inputFormat],
+      value: date ? translateToString$1(inputFormat, date) : '',
       onChange: onChangeHandler,
-      onClear: onClearHandler,
+      onFocus: onFocusHandler,
       onBlur: onBlurHandler,
-      autoComplete: 'off',
-      ref: ref
-    })), /*#__PURE__*/React.createElement(Caption, {
-      error: error,
-      withInput: true,
-      hide: !caption
-    }, caption));
-  });
-  InputMask.displayName = 'InputMask';
+      onClear: onClearHandler,
+      caption: showError ? inputOptions.caption || 'Invalid value' : '',
+      validators: [inputValidator]
+    }));
+  };
 
   var DatePicker = /*#__PURE__*/function (_React$Component) {
     _inherits(DatePicker, _React$Component);
@@ -9595,49 +9412,6 @@
         });
       });
 
-      _defineProperty(_assertThisInitialized(_this), "onChangeHandler", function (_e, val) {
-        var _this$props2 = _this.props,
-            inputFormat = _this$props2.inputFormat,
-            validators = _this$props2.validators;
-
-        _this.setState({
-          open: true
-        });
-
-        var placeholderChar = '_';
-
-        if (val && !val.includes(placeholderChar)) {
-          var d = translateToDate(inputFormat, val, validators);
-
-          _this.setState({
-            date: d
-          });
-        }
-      });
-
-      _defineProperty(_assertThisInitialized(_this), "onFocusHandler", function () {
-        _this.setState({
-          init: true
-        });
-      });
-
-      _defineProperty(_assertThisInitialized(_this), "onBlurHandler", function (_e, val) {
-        var placeholderChar = '_';
-
-        if (!val || val.includes(placeholderChar)) {
-          _this.setState({
-            date: undefined
-          });
-        }
-      });
-
-      _defineProperty(_assertThisInitialized(_this), "onClearHandler", function () {
-        _this.setState({
-          init: true,
-          date: undefined
-        });
-      });
-
       _defineProperty(_assertThisInitialized(_this), "onToggleHandler", function (o, type) {
         switch (type) {
           case 'outsideClick':
@@ -9656,10 +9430,10 @@
         }
       });
 
-      var _inputFormat = props.inputFormat,
-          _validators = props.validators;
+      var inputFormat = props.inputFormat,
+          validators = props.validators;
 
-      var _date = convertToDate(props.date, _inputFormat, _validators);
+      var _date = convertToDate(props.date, inputFormat, validators);
 
       var error = _this.getError(_date);
 
@@ -9676,9 +9450,9 @@
       key: "componentDidUpdate",
       value: function componentDidUpdate(prevProps, prevState) {
         if (prevProps.date !== this.props.date) {
-          var _this$props3 = this.props,
-              inputFormat = _this$props3.inputFormat,
-              validators = _this$props3.validators;
+          var _this$props2 = this.props,
+              inputFormat = _this$props2.inputFormat,
+              validators = _this$props2.validators;
           var d = convertToDate(this.props.date, inputFormat, validators);
           this.setState({
             date: d
@@ -9692,9 +9466,9 @@
         }
 
         if (prevState.date !== this.state.date) {
-          var _this$props4 = this.props,
-              onDateChange = _this$props4.onDateChange,
-              outputFormat = _this$props4.outputFormat;
+          var _this$props3 = this.props,
+              onDateChange = _this$props3.onDateChange,
+              outputFormat = _this$props3.outputFormat;
           var _date2 = this.state.date;
           var newError = this.getError(_date2);
           this.setState({
@@ -9714,20 +9488,20 @@
     }, {
       key: "renderCalendar",
       value: function renderCalendar() {
-        var _this$props5 = this.props,
-            dateProp = _this$props5.date,
-            open = _this$props5.open,
-            position = _this$props5.position,
-            inputFormat = _this$props5.inputFormat,
-            outputFormat = _this$props5.outputFormat,
-            inputOptions = _this$props5.inputOptions,
-            validators = _this$props5.validators,
-            withInput = _this$props5.withInput,
-            disabledBefore = _this$props5.disabledBefore,
-            disabledAfter = _this$props5.disabledAfter,
-            onDateChange = _this$props5.onDateChange,
-            closeOnSelect = _this$props5.closeOnSelect,
-            rest = _objectWithoutProperties(_this$props5, ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect"]);
+        var _this$props4 = this.props,
+            dateProp = _this$props4.date,
+            open = _this$props4.open,
+            position = _this$props4.position,
+            inputFormat = _this$props4.inputFormat,
+            outputFormat = _this$props4.outputFormat,
+            inputOptions = _this$props4.inputOptions,
+            validators = _this$props4.validators,
+            withInput = _this$props4.withInput,
+            disabledBefore = _this$props4.disabledBefore,
+            disabledAfter = _this$props4.disabledAfter,
+            onDateChange = _this$props4.onDateChange,
+            closeOnSelect = _this$props4.closeOnSelect,
+            rest = _objectWithoutProperties(_this$props4, ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect"]);
 
         var date = this.state.date;
         return /*#__PURE__*/React.createElement(Calendar, _extends({}, rest, {
@@ -9740,41 +9514,23 @@
     }, {
       key: "render",
       value: function render() {
-        var _this$props6 = this.props,
-            position = _this$props6.position,
-            inputFormat = _this$props6.inputFormat,
-            inputOptions = _this$props6.inputOptions,
-            withInput = _this$props6.withInput,
-            validators = _this$props6.validators;
-        var _this$state = this.state,
-            init = _this$state.init,
-            date = _this$state.date,
-            error = _this$state.error,
-            open = _this$state.open;
+        var _this$props5 = this.props,
+            position = _this$props5.position,
+            withInput = _this$props5.withInput,
+            inputFormat = _this$props5.inputFormat,
+            inputOptions = _this$props5.inputOptions,
+            validators = _this$props5.validators;
+        var open = this.state.open;
 
         if (withInput) {
-          var showError = inputOptions.required && error && init;
-
-          var inputValidator = function inputValidator(val) {
-            return isValid(validators, val, inputFormat);
-          };
-
-          var trigger = /*#__PURE__*/React.createElement(InputMask, _extends({
-            icon: "events",
-            placeholder: inputFormat
-          }, inputOptions, {
-            error: showError,
-            mask: date$1[inputFormat],
-            value: date ? translateToString$1(inputFormat, date) : '',
-            onChange: this.onChangeHandler,
-            onFocus: this.onFocusHandler,
-            onBlur: this.onBlurHandler,
-            onClear: this.onClearHandler,
-            caption: showError ? inputOptions.caption || 'Invalid value' : '',
-            validators: [inputValidator]
-          }));
           return /*#__PURE__*/React.createElement(Popover, {
-            trigger: trigger,
+            trigger: /*#__PURE__*/React.createElement(Trigger, {
+              inputFormat: inputFormat,
+              inputOptions: inputOptions,
+              validators: validators,
+              state: this.state,
+              setState: this.setState.bind(this)
+            }),
             triggerClass: "w-100",
             position: position,
             appendToBody: true,
@@ -9805,14 +9561,25 @@
         inputFormat = props.inputFormat,
         outputFormat = props.outputFormat,
         onTimeChange = props.onTimeChange,
-        time = props.time;
+        timeProp = props.time;
+
+    var _React$useState = React.useState(timeProp),
+        _React$useState2 = _slicedToArray(_React$useState, 2),
+        time = _React$useState2[0],
+        setTime = _React$useState2[1];
+
+    React.useEffect(function () {
+      setTime(timeProp);
+    }, [timeProp]);
 
     var onChangeHandler = function onChangeHandler(_e, val) {
+      var updatedTime = val === null || val === void 0 ? void 0 : val.toUpperCase();
       var _inputOptions$placeho = inputOptions.placeholderChar,
           placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho;
+      setTime(updatedTime);
 
       if (onTimeChange) {
-        var outputTimeStr = val && !val.includes(placeholderChar) ? getOutputTimeString(inputFormat, outputFormat, val) : undefined;
+        var outputTimeStr = updatedTime && !updatedTime.includes(placeholderChar) ? getOutputTimeString(inputFormat, outputFormat, updatedTime) : undefined;
         onTimeChange(outputTimeStr);
       }
     };
@@ -10607,9 +10374,9 @@
       // ES6 (in case, if modules with ES6 Number statics required before):
       'EPSILON,isFinite,isInteger,isNaN,isSafeInteger,MAX_SAFE_INTEGER,' +
       'MIN_SAFE_INTEGER,parseFloat,parseInt,isInteger'
-    ).split(','), j = 0, key$1; keys.length > j; j++) {
-      if (_has(Base, key$1 = keys[j]) && !_has($Number, key$1)) {
-        dP$1($Number, key$1, gOPD$3(Base, key$1));
+    ).split(','), j = 0, key$2; keys.length > j; j++) {
+      if (_has(Base, key$2 = keys[j]) && !_has($Number, key$2)) {
+        dP$1($Number, key$2, gOPD$3(Base, key$2));
       }
     }
     $Number.prototype = proto;
@@ -14925,17 +14692,17 @@
     return new Linear(context);
   }
 
-  function x$1(p) {
+  function x$2(p) {
     return p[0];
   }
 
-  function y$1(p) {
+  function y$2(p) {
     return p[1];
   }
 
   function shapeLine() {
-    var x = x$1,
-        y = y$1,
+    var x = x$2,
+        y = y$2,
         defined = constant(true),
         context = null,
         curve = curveLinear,
@@ -14985,10 +14752,10 @@
   }
 
   function shapeArea() {
-    var x0 = x$1,
+    var x0 = x$2,
         x1 = null,
         y0 = constant(0),
-        y1 = y$1,
+        y1 = y$2,
         defined = constant(true),
         context = null,
         curve = curveLinear,
@@ -16432,10 +16199,10 @@
     , raf = root$1['request' + suffix]
     , caf = root$1['cancel' + suffix] || root$1['cancelRequest' + suffix];
 
-  for(var i = 0; !raf && i < vendors.length; i++) {
-    raf = root$1[vendors[i] + 'Request' + suffix];
-    caf = root$1[vendors[i] + 'Cancel' + suffix]
-        || root$1[vendors[i] + 'CancelRequest' + suffix];
+  for(var i$1 = 0; !raf && i$1 < vendors.length; i$1++) {
+    raf = root$1[vendors[i$1] + 'Request' + suffix];
+    caf = root$1[vendors[i$1] + 'Cancel' + suffix]
+        || root$1[vendors[i$1] + 'CancelRequest' + suffix];
   }
 
   // Some versions of FF have rAF but not cAF
@@ -22983,27 +22750,27 @@
   };
   var math_function = Mexp;
 
-  function inc (arr, val) {
+  function inc(arr, val) {
     for (var i = 0; i < arr.length; i++) {
       arr[i] += val;
     }
     return arr
   }
-  var token = ['sin', 'cos', 'tan', 'pi', '(', ')', 'P', 'C',
+  var token = ['sin', 'cos', 'tan', 'pi', '(', ')', 'P', 'C', ' ',
     'asin', 'acos', 'atan', '7', '8', '9', 'int',
     'cosh', 'acosh', 'ln', '^', 'root', '4', '5', '6', '/', '!',
     'tanh', 'atanh', 'Mod', '1', '2', '3', '*',
     'sinh', 'asinh', 'e', 'log', '0', '.', '+', '-', ',', 'Sigma', 'n', 'Pi', 'pow'];
-  var show = ['sin', 'cos', 'tan', '&pi;', '(', ')', 'P', 'C',
+  var show = ['sin', 'cos', 'tan', '&pi;', '(', ')', 'P', 'C', ' ',
     'asin', 'acos', 'atan', '7', '8', '9', 'Int',
     'cosh', 'acosh', ' ln', '^', 'root', '4', '5', '6', '&divide;', '!',
     'tanh', 'atanh', ' Mod ', '1', '2', '3', '&times;',
     'sinh', 'asinh', 'e', ' log', '0', '.', '+', '-', ',', '&Sigma;', 'n', '&Pi;', 'pow'];
-  var eva = [math_function.math.sin, math_function.math.cos, math_function.math.tan, 'PI', '(', ')', math_function.math.P, math_function.math.C,
-    math_function.math.asin, math_function.math.acos, math_function.math.atan, '7', '8', '9', Math.floor,
-    math_function.math.cosh, math_function.math.acosh, Math.log, Math.pow, Math.sqrt, '4', '5', '6', math_function.math.div, math_function.math.fact,
-    math_function.math.tanh, math_function.math.atanh, math_function.math.mod, '1', '2', '3', math_function.math.mul,
-    math_function.math.sinh, math_function.math.asinh, 'E', math_function.math.log, '0', '.', math_function.math.add, math_function.math.sub, ',', math_function.math.sigma, 'n', math_function.math.Pi, Math.pow];
+  var eva = [math_function.math.sin, math_function.math.cos, math_function.math.tan, 'PI', '(', ')', math_function.math.P, math_function.math.C, ' '.anchor,
+  math_function.math.asin, math_function.math.acos, math_function.math.atan, '7', '8', '9', Math.floor,
+  math_function.math.cosh, math_function.math.acosh, Math.log, Math.pow, Math.sqrt, '4', '5', '6', math_function.math.div, math_function.math.fact,
+  math_function.math.tanh, math_function.math.atanh, math_function.math.mod, '1', '2', '3', math_function.math.mul,
+  math_function.math.sinh, math_function.math.asinh, 'E', math_function.math.log, '0', '.', math_function.math.add, math_function.math.sub, ',', math_function.math.sigma, 'n', math_function.math.Pi, Math.pow];
   var preced = {
     0: 11,
     1: 0,
@@ -23018,9 +22785,10 @@
     10: 10,
     11: 0,
     12: 11,
-    13: 0
+    13: 0,
+    14: -1 // will be filtered after lexer
   }; // stores precedence by types
-  var type = [0, 0, 0, 3, 4, 5, 10, 10,
+  var type = [0, 0, 0, 3, 4, 5, 10, 10, 14,
     0, 0, 0, 1, 1, 1, 0,
     0, 0, 0, 10, 0, 1, 1, 1, 2, 7,
     0, 0, 2, 1, 1, 1, 2,
@@ -23038,7 +22806,7 @@
   9 : binary operator like +,-
   10: binary operator like P C or ^
   11: ,
-  12: function with , seperated three parameters
+  12: function with , seperated three parameters and third parameter is a string that will be mexp string
   13: variable of Sigma function
   */
   var type0 = {
@@ -23050,7 +22818,8 @@
     8: true,
     9: true,
     12: true,
-    13: true
+    13: true,
+    14: true
   }; // type2:true,type4:true,type9:true,type11:true,type21:true,type22
   var type1 = {
     0: true,
@@ -23092,14 +22861,14 @@
   };
   var newAr = [
     [],
-    ['1', '2', '3', '7', '8', '9', '4', '5', '6', '+', '-', '*', '/', '(', ')', '^', '!', 'P', 'C', 'e', '0', '.', ',', 'n'],
+    ['1', '2', '3', '7', '8', '9', '4', '5', '6', '+', '-', '*', '/', '(', ')', '^', '!', 'P', 'C', 'e', '0', '.', ',', 'n', ' '],
     ['pi', 'ln', 'Pi'],
     ['sin', 'cos', 'tan', 'Del', 'int', 'Mod', 'log', 'pow'],
     ['asin', 'acos', 'atan', 'cosh', 'root', 'tanh', 'sinh'],
     ['acosh', 'atanh', 'asinh', 'Sigma']
   ];
 
-  function match (str1, str2, i, x) {
+  function match(str1, str2, i, x) {
     for (var f = 0; f < x; f++) {
       if (str1[i + f] !== str2[f]) {
         return false
@@ -23113,14 +22882,11 @@
       var temp = -1;
 
       // newAr is a specially designed data structure index of 1d array = length of tokens
-
-      if (x < newAr.length) { // match to check if token is really huge and not existing
-      // if not checked it will break in next line as undefined index
-        for (var y = 0; y < newAr[x].length; y++) {
-          if (tokens[i].token === newAr[x][y]) {
-            temp = token.indexOf(newAr[x][y]);
-            break
-          }
+      newAr[x] = newAr[x] || [];
+      for (var y = 0; y < newAr[x].length; y++) {
+        if (tokens[i].token === newAr[x][y]) {
+          temp = token.indexOf(newAr[x][y]);
+          break
         }
       }
       if (temp === -1) {
@@ -23132,7 +22898,7 @@
         newAr[tokens[i].token.length].push(tokens[i].token);
         eva.push(tokens[i].value);
         show.push(tokens[i].show);
-      } else {
+      } else { // overwrite
         token[temp] = tokens[i].token;
         type[temp] = tokens[i].type;
         eva[temp] = tokens[i].value;
@@ -23140,7 +22906,46 @@
       }
     }
   };
+
+  function tokenize(string) {
+    var nodes = [];
+    var length = string.length;
+    for (i = 0; i < length; i++) {
+      if (i < length - 1 && string[i] === ' ' && string[i + 1] === ' ') {
+        continue
+      }
+      key = '';
+      for (x = (string.length - i > (newAr.length - 2) ? newAr.length - 1 : string.length - i); x > 0; x--) {
+        if (newAr[x] === undefined) continue;
+        for (y = 0; y < newAr[x].length; y++) {
+          if (match(string, newAr[x][y], i, x)) {
+            key = newAr[x][y];
+            y = newAr[x].length;
+            x = 0;
+          }
+        }
+      }
+      i += key.length - 1;
+      if (key === '') {
+        console.log(string, nodes);
+        throw (new math_function.Exception('Can\'t understand after ' + string.slice(i)))
+      }
+      var index = token.indexOf(key);
+      nodes.push({
+        index: index,
+        token: key,
+        type: type[index],
+        eval: eva[index],
+        precedence: preced[type[index]],
+        show: show[index]
+      });
+    }
+    return nodes;
+  }
+
   math_function.lex = function (inp, tokens) {
+
+
     var changeSignObj = {
       value: math_function.math.changeSign,
       type: 0,
@@ -23160,50 +22965,44 @@
       show: '('
     };
     var str = [openingParObj];
+
     var ptc = []; // Parenthesis to close at the beginning is after one token
     var inpStr = inp;
-    var key;
     var allowed = type0;
     var bracToClose = 0;
     var asterick = empty;
     var prevKey = '';
-    var i, x, y;
+    var i;
     if (typeof tokens !== 'undefined') {
       math_function.addToken(tokens);
     }
     var obj = {};
-    for (i = 0; i < inpStr.length; i++) {
-      if (inpStr[i] === ' ') {
+    var nodes = tokenize(inpStr);
+    for (i = 0; i < nodes.length; i++) {
+      var node = nodes[i];
+      if (node.type === 14) {
+        if (i > 0 &&
+          i < nodes.length - 1 &&
+          nodes[i + 1].type === 1 &&
+          (nodes[i - 1].type === 1 || nodes[i - 1].type === 6))
+          throw new math_function.Exception('Unexpected Space')
         continue
       }
-      key = '';
-      for (x = (inpStr.length - i > (newAr.length - 2) ? newAr.length - 1 : inpStr.length - i); x > 0; x--) {
-        if (newAr[x] === undefined) continue;
-        for (y = 0; y < newAr[x].length; y++) {
-          if (match(inpStr, newAr[x][y], i, x)) {
-            key = newAr[x][y];
-            y = newAr[x].length;
-            x = 0;
-          }
-        }
-      }
-      i += key.length - 1;
-      if (key === '') {
-        throw (new math_function.Exception('Can\'t understand after ' + inpStr.slice(i)))
-      }
-      var index = token.indexOf(key);
-      var cToken = key;
-      var cType = type[index];
-      var cEv = eva[index];
-      var cPre = preced[cType];
-      var cShow = show[index];
+
+      var index = node.index;
+      var cToken = node.token;
+      var cType = node.type;
+      var cEv = node.eval;
+      var cPre = node.precedence;
+      var cShow = node.show;
       var pre = str[str.length - 1];
       var j;
       for (j = ptc.length; j--;) { // loop over ptc
         if (ptc[j] === 0) {
           if ([0, 2, 3, 4, 5, 9, 11, 12, 13].indexOf(cType) !== -1) {
             if (allowed[cType] !== true) {
-              throw (new math_function.Exception(key + ' is not allowed after ' + prevKey))
+              console.log(inp, node, nodes, allowed);
+              throw (new math_function.Exception(cToken + ' is not allowed after ' + prevKey))
             }
             str.push(closingParObj);
             allowed = type1;
@@ -23213,14 +23012,14 @@
         } else break
       }
       if (allowed[cType] !== true) {
-        throw (new math_function.Exception(key + ' is not allowed after ' + prevKey))
+        throw (new math_function.Exception(cToken + ' is not allowed after ' + prevKey))
       }
       if (asterick[cType] === true) {
         cType = 2;
         cEv = math_function.math.mul;
         cShow = '&times;';
         cPre = 3;
-        i = i - key.length;
+        i = i - cToken.length;
       }
       obj = {
         value: cEv,
@@ -23266,6 +23065,7 @@
         allowed = type1;
         asterick = type3Asterick;
         str.push(obj);
+        inc(ptc, 1);
       } else if (cType === 6) {
         if (pre.hasDec) {
           throw (new math_function.Exception('Two decimals are not allowed in one number'))
@@ -23343,7 +23143,7 @@
         str.push(obj);
       }
       inc(ptc, -1);
-      prevKey = key;
+      prevKey = cToken;
     }
     for (j = ptc.length; j--;) { // loop over ptc
       if (ptc[j] === 0) {
@@ -23365,51 +23165,51 @@
   var lexer = math_function;
 
   lexer.prototype.toPostfix = function () {
-  		var post=[],elem,popped,prep,pre,ele;
-      	var stack=[{value:"(",type:4,pre:0}];
-  		var arr=this.value;
-  		for (var i=1; i < arr.length; i++) {
-  			if(arr[i].type===1||arr[i].type===3||arr[i].type===13){	//if token is number,constant,or n(which is also a special constant in our case)
-  				if(arr[i].type===1)
-  					arr[i].value=Number(arr[i].value);
-  				post.push(arr[i]);
-  			}
-  			else if(arr[i].type===4){
-  				stack.push(arr[i]);
-  			}
-  			else if(arr[i].type===5){
-  				while((popped=stack.pop()).type!==4){
-  					post.push(popped);
-  				}
-  			}
-  			else if(arr[i].type===11){
-  				while((popped=stack.pop()).type!==4){
-  					post.push(popped);
-  				}
-  				stack.push(popped);
-  			}
-  			else {
-  				elem=arr[i];
-  				pre=elem.pre;
-  				ele=stack[stack.length-1];
-  				prep=ele.pre;
-  				var flag=ele.value=='Math.pow'&&elem.value=='Math.pow';
-  				if(pre>prep)stack.push(elem);
-  				else {
-  					while(prep>=pre&&!flag||flag&&pre<prep){
-  						popped=stack.pop();
-  						ele=stack[stack.length-1];
-  						post.push(popped);
-  						prep=ele.pre;
-  						flag=elem.value=='Math.pow'&&ele.value=='Math.pow';
-  					}
-  					stack.push(elem);
-  				}
+  	var post = [], elem, popped, prep, pre, ele;
+  	var stack = [{ value: "(", type: 4, pre: 0 }];
+  	var arr = this.value;
+  	for (var i = 1; i < arr.length; i++) {
+  		if (arr[i].type === 1 || arr[i].type === 3 || arr[i].type === 13) {	//if token is number,constant,or n(which is also a special constant in our case)
+  			if (arr[i].type === 1)
+  				arr[i].value = Number(arr[i].value);
+  			post.push(arr[i]);
+  		}
+  		else if (arr[i].type === 4) {
+  			stack.push(arr[i]);
+  		}
+  		else if (arr[i].type === 5) {
+  			while ((popped = stack.pop()).type !== 4) {
+  				post.push(popped);
   			}
   		}
-  		return new lexer(post);
-  	};
-      var postfix=lexer;
+  		else if (arr[i].type === 11) {
+  			while ((popped = stack.pop()).type !== 4) {
+  				post.push(popped);
+  			}
+  			stack.push(popped);
+  		}
+  		else {
+  			elem = arr[i];
+  			pre = elem.pre;
+  			ele = stack[stack.length - 1];
+  			prep = ele.pre;
+  			var flag = ele.value == 'Math.pow' && elem.value == 'Math.pow';
+  			if (pre > prep) stack.push(elem);
+  			else {
+  				while (prep >= pre && !flag || flag && pre < prep) {
+  					popped = stack.pop();
+  					ele = stack[stack.length - 1];
+  					post.push(popped);
+  					prep = ele.pre;
+  					flag = elem.value == 'Math.pow' && ele.value == 'Math.pow';
+  				}
+  				stack.push(elem);
+  			}
+  		}
+  	}
+  	return new lexer(post);
+  };
+  var postfix = lexer;
 
   postfix.prototype.postfixEval = function (UserDefined) {
   	UserDefined=UserDefined||{};
@@ -23463,7 +23263,6 @@
   			pop1=stack.pop();
   			pop2=stack.pop();
   			if(typeof pop2.type==="undefined"){
-                  console.log(pop2);
   				pop2=pop2.concat(pop1);
   				pop2.push(arr[i]);
   				stack.push(pop2);
@@ -23494,7 +23293,7 @@
   		}
   	}
   	if (stack.length>1) {
-  		throw(new postfix.exception("Uncaught Syntax error"));
+  		throw(new postfix.Exception("Uncaught Syntax error"));
   	}
   	return stack[0].value>1000000000000000?"Infinity":parseFloat(stack[0].value.toFixed(15));
   };
@@ -39487,6 +39286,271 @@
     colorOfTotalCount: 'success'
   };
 
+  var isEditable = function isEditable(mask, pos) {
+    return _typeof(mask[pos]) === 'object';
+  };
+  var getDefaultValue = function getDefaultValue(mask, placeholderChar) {
+    var val = '';
+
+    for (var i = 0; i < mask.length; i++) {
+      val += isEditable(mask, i) ? placeholderChar : mask[i];
+    }
+
+    return val;
+  };
+
+  /**
+   * It works as Uncontrolled Input
+   *
+   * **Updated value can be passed**
+   */
+  var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
+    var maskProp = props.mask,
+        valueProp = props.value,
+        _props$placeholderCha = props.placeholderChar,
+        placeholderChar = _props$placeholderCha === void 0 ? '_' : _props$placeholderCha,
+        _props$validators = props.validators,
+        validators = _props$validators === void 0 ? [] : _props$validators,
+        defaultValue = props.defaultValue,
+        mask = props.mask,
+        error = props.error,
+        caption = props.caption,
+        required = props.required,
+        onChange = props.onChange,
+        onBlur = props.onBlur,
+        onFocus = props.onFocus,
+        onClear = props.onClear,
+        className = props.className,
+        rest = _objectWithoutProperties(props, ["mask", "value", "placeholderChar", "validators", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onFocus", "onClear", "className"]);
+
+    var getNewCursorPosition = function getNewCursorPosition(type, position) {
+      if (type === 'right') {
+        for (var i = position; i < mask.length; i++) {
+          if (isEditable(i)) return i;
+        }
+
+        return mask.length;
+      }
+
+      if (type === 'left') {
+        for (var _i = position; _i >= 0; _i--) {
+          if (isEditable(_i - 1)) return _i;
+        }
+
+        return 0;
+      }
+
+      return position;
+    };
+
+    var getDefaultSelection = function getDefaultSelection() {
+      var pos = getNewCursorPosition('right', 0);
+      return {
+        start: pos,
+        end: pos
+      };
+    };
+
+    var getPlaceholderValue = function getPlaceholderValue() {
+      var start = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+      var end = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : mask.length - 1;
+      return getDefaultValue(mask, placeholderChar).slice(start, end + 1);
+    };
+
+    var getSelectionLength = function getSelectionLength(val) {
+      return Math.abs(val.end - val.start);
+    };
+
+    var isEditable = function isEditable(pos) {
+      return _typeof(mask[pos]) === 'object';
+    };
+
+    var deferId = React.useRef();
+    var selectionRef = React.useRef(0);
+
+    var _React$useState = React.useState(defaultValue || valueProp || ''),
+        _React$useState2 = _slicedToArray(_React$useState, 2),
+        value = _React$useState2[0],
+        setValue = _React$useState2[1];
+
+    var _React$useState3 = React.useState(getDefaultSelection()),
+        _React$useState4 = _slicedToArray(_React$useState3, 2),
+        selection = _React$useState4[0],
+        setSelection = _React$useState4[1];
+
+    var ref = React.useRef(null);
+    React.useImperativeHandle(forwardRef, function () {
+      return ref.current;
+    });
+    React.useEffect(function () {
+      setValue(valueProp || '');
+    }, [valueProp]);
+
+    var setCursorPosition = function setCursorPosition(val) {
+      return setSelectionPos({
+        start: val,
+        end: val
+      });
+    };
+
+    var getCurrSelection = function getCurrSelection() {
+      return {
+        start: ref.current.selectionStart || 0,
+        end: ref.current.selectionEnd || 0
+      };
+    };
+
+    var setSelectionPos = function setSelectionPos(pos) {
+      if (ref.current) {
+        var el = ref.current;
+        var start = Math.min(pos.start, pos.end);
+        var end = Math.max(pos.start, pos.end);
+        el.setSelectionRange(start, end);
+      }
+    };
+
+    var updateSelection = function updateSelection() {
+      setSelection(getCurrSelection());
+      deferId.current = window.requestAnimationFrame(updateSelection);
+    };
+
+    var insertAtIndex = function insertAtIndex(currValue, index) {
+      var iterator = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+      var newValue = '';
+      var newIndex = index + 1;
+      var newIterator = iterator;
+
+      if (index >= mask.length) {
+        return newValue;
+      }
+
+      if (iterator >= currValue.length) {
+        selectionRef.current = index;
+        return newValue;
+      }
+
+      var m = mask[index];
+
+      if (isEditable(index)) {
+        if (currValue[iterator].match(m)) {
+          newValue += currValue[iterator];
+        } else {
+          newValue += placeholderChar;
+        }
+
+        newIterator++;
+      } else {
+        newValue += m;
+      }
+
+      newValue += insertAtIndex(currValue, newIndex, newIterator);
+      return newValue;
+    };
+
+    var onChangeHandler = function onChangeHandler(e) {
+      var inputVal = e.currentTarget.value;
+      var currSelection = getCurrSelection();
+      var start = Math.min(selection.start, currSelection.start);
+      var end = currSelection.end;
+      var cursorPosition = start;
+      var enteredVal = '';
+      var updatedVal = '';
+      var removedLength = 0;
+      var insertedStringLength = 0;
+      enteredVal = inputVal.slice(start, end);
+      updatedVal = insertAtIndex(enteredVal, start);
+      insertedStringLength = updatedVal.length;
+
+      if (currSelection.end > selection.end) {
+        removedLength = insertedStringLength ? getSelectionLength(selection) : 0;
+      } else if (inputVal.length < value.length) {
+        removedLength = value.length - inputVal.length;
+      }
+
+      cursorPosition += insertedStringLength;
+      var maskedVal = value.split('');
+
+      for (var i = 0; i < insertedStringLength; i++) {
+        maskedVal[start + i] = updatedVal[i];
+      }
+
+      for (var _i2 = 0; _i2 < removedLength; _i2++) {
+        var index$1 = start + insertedStringLength + _i2;
+        maskedVal[index$1] = getPlaceholderValue(index$1, index$1);
+      }
+
+      var newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
+
+      if (removedLength === 1 && !updatedVal.length && !isEditable(cursorPosition) && newCursorPosition > 0) {
+        cursorPosition = newCursorPosition;
+        cursorPosition--;
+        maskedVal[cursorPosition] = placeholderChar;
+      } else if (removedLength !== 1) {
+        cursorPosition = newCursorPosition;
+      }
+
+      var newValue = maskedVal.slice(0, mask.length).join('');
+      window.requestAnimationFrame(function () {
+        return setCursorPosition(cursorPosition);
+      });
+
+      if (isValid(validators, newValue)) {
+        setValue(newValue);
+        if (onChange) onChange(e, newValue);
+      }
+    };
+
+    var onBlurHandler = function onBlurHandler(e) {
+      var inputVal = e.currentTarget.value;
+      if (onBlur) onBlur(e, inputVal);
+      if (deferId.current) window.cancelAnimationFrame(deferId.current);
+    };
+
+    var onClearHandler = function onClearHandler(e) {
+      setValue('');
+      if (onClear) onClear(e);
+    };
+
+    var onFocusHandler = function onFocusHandler(e) {
+      deferId.current = window.requestAnimationFrame(updateSelection);
+
+      if (!value) {
+        setValue(getPlaceholderValue());
+        window.requestAnimationFrame(function () {
+          return setSelectionPos(getDefaultSelection());
+        });
+      }
+
+      if (onFocus) onFocus(e);
+    };
+
+    var classes = classnames({
+      'd-flex flex-column flex-grow-1': true
+    }, className);
+    return /*#__PURE__*/React.createElement("div", {
+      className: classes
+    }, /*#__PURE__*/React.createElement(Input, _extends({}, rest, {
+      value: value,
+      error: error,
+      required: required,
+      onFocus: onFocusHandler,
+      onChange: onChangeHandler,
+      onClear: onClearHandler,
+      onBlur: onBlurHandler,
+      autoComplete: 'off',
+      ref: ref
+    })), /*#__PURE__*/React.createElement(Caption, {
+      error: error,
+      withInput: true,
+      hide: !caption
+    }, caption));
+  });
+  InputMask.displayName = 'InputMask'; // @ts-ignore
+
+  InputMask.utils = {
+    getDefaultValue: getDefaultValue
+  };
+
   var Label$1 = function Label(props) {
     var _classNames;
 
@@ -41931,6 +41995,399 @@
     active: 0
   };
 
+  var Trigger$1 = function Trigger(props) {
+    var inputFormat = props.inputFormat,
+        startInputOptions = props.startInputOptions,
+        endInputOptions = props.endInputOptions,
+        validators = props.validators,
+        state = props.state,
+        setState = props.setState;
+    var init = state.init,
+        startDate = state.startDate,
+        endDate = state.endDate,
+        startError = state.startError,
+        endError = state.endError;
+
+    var updateNav = function updateNav(type) {
+      if (type === 'start') {
+        var _getDateInfo = getDateInfo(startDate),
+            year = _getDateInfo.year,
+            month = _getDateInfo.month;
+
+        setState({
+          yearNav: year,
+          monthNav: month
+        });
+      }
+
+      if (type === 'end') {
+        var _getDateInfo2 = getDateInfo(endDate),
+            _year = _getDateInfo2.year,
+            _month = _getDateInfo2.month;
+
+        setState({
+          yearNav: _year,
+          monthNav: _month
+        });
+      }
+    };
+
+    var onChangeHandler = function onChangeHandler(_e, val, type) {
+      setState({
+        open: true
+      });
+
+      if (type === 'start') {
+        var placeholderChar = startInputOptions.placeholderChar || '_';
+
+        if (val && !val.includes(placeholderChar)) {
+          var d = translateToDate(inputFormat, val, validators);
+
+          if (d) {
+            setState({
+              startDate: d
+            });
+
+            if (endDate) {
+              var _getDateInfo3 = getDateInfo(endDate),
+                  eYear = _getDateInfo3.year,
+                  eMonth = _getDateInfo3.month,
+                  eDate = _getDateInfo3.date;
+
+              if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
+                setState({
+                  endDate: undefined
+                });
+              }
+            }
+          }
+        }
+      }
+
+      if (type === 'end') {
+        var _placeholderChar = endInputOptions.placeholderChar ? endInputOptions.placeholderChar : '_';
+
+        if (val && !val.includes(_placeholderChar)) {
+          var _d = translateToDate(inputFormat, val, validators);
+
+          if (_d) setState({
+            endDate: _d
+          });
+        }
+      }
+    };
+
+    var onFocusHandler = function onFocusHandler() {
+      setState({
+        init: true
+      });
+    };
+
+    var onBlurHandler = function onBlurHandler(_e, val, type) {
+      if (type === 'start') {
+        var _startInputOptions$pl = startInputOptions.placeholderChar,
+            placeholderChar = _startInputOptions$pl === void 0 ? '_' : _startInputOptions$pl;
+        if (!val || val.includes(placeholderChar)) setState({
+          startDate: undefined
+        });
+      }
+
+      if (type === 'end') {
+        var _endInputOptions$plac = endInputOptions.placeholderChar,
+            _placeholderChar2 = _endInputOptions$plac === void 0 ? '_' : _endInputOptions$plac;
+
+        if (!val || val.includes(_placeholderChar2)) setState({
+          endDate: undefined
+        });
+      }
+    };
+
+    var onClearHandler = function onClearHandler(type) {
+      if (type === 'start') {
+        setState({
+          init: true,
+          startDate: undefined
+        });
+        updateNav('end');
+      }
+
+      if (type === 'end') {
+        setState({
+          init: true,
+          endDate: undefined
+        });
+        updateNav('start');
+      }
+    };
+
+    var onClickHandler = function onClickHandler(type) {
+      var open = state.open;
+
+      if (!open) {
+        updateNav(type);
+      }
+    };
+
+    var mask = date$1[inputFormat];
+    var showStartError = startInputOptions.required && startError && init;
+    var showEndError = endInputOptions.required && endError && init;
+    var startLabel = startInputOptions.label;
+    var endLabel = endInputOptions.label;
+
+    var inputValidator = function inputValidator(val) {
+      return isValid(validators, val, inputFormat);
+    };
+
+    return /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, {
+      size: '6',
+      sizeXS: '12',
+      className: "DateRangePicker-input DateRangePicker-input--startDate"
+    }, startLabel && /*#__PURE__*/React.createElement(Label$1, {
+      required: startInputOptions.required,
+      withInput: true
+    }, startLabel), /*#__PURE__*/React.createElement(InputMask, _extends({
+      icon: "events",
+      placeholder: inputFormat
+    }, startInputOptions, {
+      mask: mask,
+      value: startDate ? translateToString$1(inputFormat, startDate) : '',
+      onFocus: onFocusHandler,
+      onChange: function onChange(e, val) {
+        onChangeHandler(e, val || '', 'start');
+      },
+      onBlur: function onBlur(e, val) {
+        onBlurHandler(e, val || '', 'start');
+      },
+      onClear: function onClear() {
+        return onClearHandler('start');
+      },
+      onClick: function onClick() {
+        return onClickHandler('start');
+      },
+      error: showStartError,
+      caption: showStartError ? startInputOptions.caption || 'Invalid value' : '',
+      validators: [inputValidator]
+    }))), /*#__PURE__*/React.createElement(Column, {
+      size: '6',
+      sizeXS: '12',
+      className: "DateRangePicker-input DateRangePicker-input--endDate"
+    }, endLabel && /*#__PURE__*/React.createElement(Label$1, {
+      required: endInputOptions.required,
+      withInput: true
+    }, endLabel), /*#__PURE__*/React.createElement(InputMask, _extends({
+      icon: "events",
+      placeholder: inputFormat
+    }, endInputOptions, {
+      mask: mask,
+      value: endDate ? translateToString$1(inputFormat, endDate) : '',
+      onChange: function onChange(e, val) {
+        onChangeHandler(e, val || '', 'end');
+      },
+      onBlur: function onBlur(e, val) {
+        onBlurHandler(e, val || '', 'end');
+      },
+      onClear: function onClear() {
+        return onClearHandler('end');
+      },
+      onClick: function onClick() {
+        return onClickHandler('end');
+      },
+      error: showEndError,
+      caption: showEndError ? endInputOptions.caption || 'Invalid value' : '',
+      validators: [inputValidator]
+    }))));
+  };
+
+  var SingleInputTrigger = function SingleInputTrigger(props) {
+    var inputFormat = props.inputFormat,
+        inputOptions = props.inputOptions,
+        validators = props.validators,
+        state = props.state,
+        setState = props.setState;
+    var init = state.init,
+        startDate = state.startDate,
+        endDate = state.endDate,
+        startValue = state.startValue,
+        endValue = state.endValue,
+        startError = state.startError,
+        endError = state.endError;
+    var mask = rangeDate[inputFormat];
+    var showError = inputOptions.required && (startError || endError) && init;
+    var label = inputOptions.label;
+    var _inputOptions$placeho = inputOptions.placeholderChar,
+        placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho; // @ts-ignore
+
+    var defaultValue = InputMask.utils.getDefaultValue(mask, placeholderChar).split(' - ');
+    var sValue = startValue || defaultValue[0];
+    var eValue = endValue || defaultValue[1];
+
+    var inputValidator = function inputValidator(val) {
+      var _val$split = val.split(' - '),
+          _val$split2 = _slicedToArray(_val$split, 2),
+          startVal = _val$split2[0],
+          endVal = _val$split2[1];
+
+      return isValid(validators, startVal, inputFormat) && isValid(validators, endVal, inputFormat);
+    };
+
+    var onChangeHandler = function onChangeHandler(_e, val) {
+      var date = val.split(' - ');
+      var startVal = date[0];
+      var endVal = date[1];
+
+      if (startValue !== startVal && startVal && !startVal.includes(placeholderChar)) {
+        var startD = translateToDate(inputFormat, startVal, validators);
+
+        if (startD) {
+          var isEndDateValid = endValue && !endValue.includes(placeholderChar);
+          setState({
+            startDate: startD,
+            endDate: isEndDateValid ? endDate : undefined
+          });
+
+          if (endDate) {
+            var _getDateInfo = getDateInfo(endDate),
+                eYear = _getDateInfo.year,
+                eMonth = _getDateInfo.month,
+                eDate = _getDateInfo.date;
+
+            if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
+              setState({
+                endDate: undefined
+              });
+            }
+          }
+        }
+      }
+
+      if (endValue !== endVal && endVal && !endVal.includes(placeholderChar)) {
+        var endD = translateToDate(inputFormat, endVal, validators);
+        var isStartDateValid = startValue && !startValue.includes(placeholderChar);
+
+        if (endD) {
+          setState({
+            endDate: endD,
+            startDate: isStartDateValid ? startDate : undefined
+          });
+        }
+      }
+
+      setState({
+        startValue: startVal,
+        endValue: endVal
+      });
+    };
+
+    var onFocusHandler = function onFocusHandler() {
+      setState({
+        init: true
+      });
+    };
+
+    var onBlurHandler = function onBlurHandler(_e, val) {
+      var date = val.split(' - ');
+      var startVal = date[0];
+      var endVal = date[1];
+      if (!startVal || startVal.includes(placeholderChar)) setState({
+        startDate: undefined
+      });
+      if (!endVal || endVal.includes(placeholderChar)) setState({
+        endDate: undefined
+      });
+    };
+
+    var onClearHandler = function onClearHandler() {
+      setState({
+        init: true,
+        startDate: undefined,
+        endDate: undefined,
+        yearNav: undefined,
+        monthNav: undefined
+      });
+    };
+
+    return /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, null, label && /*#__PURE__*/React.createElement(Label$1, {
+      required: inputOptions.required,
+      withInput: true
+    }, label), /*#__PURE__*/React.createElement(InputMask, _extends({
+      icon: "events",
+      placeholder: "".concat(inputFormat, " - ").concat(inputFormat)
+    }, inputOptions, {
+      mask: mask,
+      value: !startDate && !endDate && !init ? undefined : "".concat(sValue, " - ").concat(eValue),
+      onFocus: onFocusHandler,
+      onChange: function onChange(e, val) {
+        onChangeHandler(e, val || '');
+      },
+      onBlur: function onBlur(e, val) {
+        onBlurHandler(e, val || '');
+      },
+      onClear: onClearHandler,
+      error: showError,
+      caption: showError ? inputOptions.caption || 'Invalid value' : '',
+      validators: [inputValidator]
+    }))));
+  };
+
+  var setDate = function setDate(date) {
+    var d = new Date();
+    return new Date(d.setDate(date));
+  };
+
+  var getCurrentYear = function getCurrentYear() {
+    var current = new Date();
+    var currentYear = current.getFullYear();
+    return currentYear;
+  };
+  var getCurrentMonth = function getCurrentMonth() {
+    var current = new Date();
+    var currentMonth = current.getMonth();
+    return currentMonth;
+  };
+  var getCurrentWeek = function getCurrentWeek() {
+    var current = new Date();
+    var currentDate = current.getDate();
+    var currentDay = current.getDay();
+    return {
+      startDate: setDate(currentDate - currentDay + 1),
+      endDate: setDate(currentDate - currentDay + 7)
+    };
+  };
+  var getPreviousWeek = function getPreviousWeek() {
+    var current = new Date();
+    var currentDate = current.getDate();
+    var currentDay = current.getDay();
+    return {
+      startDate: setDate(currentDate - currentDay - 6),
+      endDate: setDate(currentDate - currentDay)
+    };
+  };
+  var getPreviousMonth = function getPreviousMonth() {
+    var current = new Date();
+    var currentYear = current.getFullYear();
+    var currentMonth = current.getMonth();
+    return {
+      endDate: new Date(currentYear, currentMonth, 0),
+      startDate: new Date(currentYear - +(currentMonth < 0), (currentMonth + 11) % 12, 1)
+    };
+  };
+  var getPrevious90Days = function getPrevious90Days() {
+    var current = new Date();
+    var currentDate = current.getDate();
+    return {
+      startDate: setDate(currentDate - 90),
+      endDate: setDate(currentDate)
+    };
+  };
+  var getCustomDates = function getCustomDates() {
+    var current = new Date();
+    var currentDate = current.getDate();
+    return {
+      startDate: setDate(currentDate),
+      endDate: setDate(currentDate)
+    };
+  };
+
   var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     _inherits(DateRangePicker, _React$Component);
 
@@ -42030,236 +42487,13 @@
       });
 
       _defineProperty(_assertThisInitialized(_this), "onRangeChangeHandler", function (sDate, eDate) {
-        var _this$state2 = _this.state,
-            startValue = _this$state2.startValue,
-            endValue = _this$state2.endValue;
-
         _this.setState({
           init: true,
           startDate: sDate,
           endDate: eDate,
-          startValue: sDate ? translateToString$1(_this.props.inputFormat, sDate) : startValue,
-          endValue: eDate ? translateToString$1(_this.props.inputFormat, eDate) : endValue
+          startValue: sDate ? translateToString$1(_this.props.inputFormat, sDate) : '',
+          endValue: eDate ? translateToString$1(_this.props.inputFormat, eDate) : ''
         });
-      });
-
-      _defineProperty(_assertThisInitialized(_this), "updateNav", function (type) {
-        var _this$state3 = _this.state,
-            startDate = _this$state3.startDate,
-            endDate = _this$state3.endDate;
-
-        if (type === 'start') {
-          var _getDateInfo6 = getDateInfo(startDate),
-              year = _getDateInfo6.year,
-              month = _getDateInfo6.month;
-
-          _this.setState({
-            yearNav: year,
-            monthNav: month
-          });
-        }
-
-        if (type === 'end') {
-          var _getDateInfo7 = getDateInfo(endDate),
-              _year = _getDateInfo7.year,
-              _month = _getDateInfo7.month;
-
-          _this.setState({
-            yearNav: _year,
-            monthNav: _month
-          });
-        }
-      });
-
-      _defineProperty(_assertThisInitialized(_this), "onDateChangeHandler", function (_e, val) {
-        var _this$props2 = _this.props,
-            inputFormat = _this$props2.inputFormat,
-            validators = _this$props2.validators,
-            inputOptions = _this$props2.inputOptions;
-        var _this$state4 = _this.state,
-            startDate = _this$state4.startDate,
-            endDate = _this$state4.endDate,
-            startValue = _this$state4.startValue,
-            endValue = _this$state4.endValue;
-        var date = val.split(' - ');
-        var startVal = date[0];
-        var endVal = date[1];
-        var placeholderChar = inputOptions.placeholderChar || '_';
-
-        if (startValue !== startVal && startVal && !startVal.includes(placeholderChar)) {
-          var startD = translateToDate(inputFormat, startVal, validators);
-
-          if (startD) {
-            var isEndDateValid = endValue && !endValue.includes(placeholderChar);
-
-            _this.setState({
-              startDate: startD,
-              endDate: isEndDateValid ? endDate : undefined
-            });
-
-            if (endDate) {
-              var _getDateInfo8 = getDateInfo(endDate),
-                  eYear = _getDateInfo8.year,
-                  eMonth = _getDateInfo8.month,
-                  eDate = _getDateInfo8.date;
-
-              if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
-                _this.setState({
-                  endDate: undefined
-                });
-              }
-            }
-          }
-        }
-
-        if (endValue !== endVal && endVal && !endVal.includes(placeholderChar)) {
-          var endD = translateToDate(inputFormat, endVal, validators);
-          var isStartDateValid = startValue && !startValue.includes(placeholderChar);
-
-          if (endD) {
-            _this.setState({
-              endDate: endD,
-              startDate: isStartDateValid ? startDate : undefined
-            });
-          }
-        }
-
-        _this.setState({
-          startValue: startVal,
-          endValue: endVal
-        });
-      });
-
-      _defineProperty(_assertThisInitialized(_this), "onChangeHandler", function (_e, val, type) {
-        var _this$props3 = _this.props,
-            inputFormat = _this$props3.inputFormat,
-            startInputOptions = _this$props3.startInputOptions,
-            endInputOptions = _this$props3.endInputOptions,
-            validators = _this$props3.validators;
-        var _this$state5 = _this.state,
-            startDate = _this$state5.startDate,
-            endDate = _this$state5.endDate;
-
-        _this.setState({
-          open: true
-        });
-
-        if (type === 'start') {
-          var placeholderChar = startInputOptions.placeholderChar || '_';
-
-          if (val && !val.includes(placeholderChar)) {
-            var d = translateToDate(inputFormat, val, validators);
-
-            if (d) {
-              _this.setState({
-                startDate: d
-              });
-
-              if (endDate) {
-                var _getDateInfo9 = getDateInfo(endDate),
-                    eYear = _getDateInfo9.year,
-                    eMonth = _getDateInfo9.month,
-                    eDate = _getDateInfo9.date;
-
-                if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
-                  _this.setState({
-                    endDate: undefined
-                  });
-                }
-              }
-            }
-          }
-        }
-
-        if (type === 'end') {
-          var _placeholderChar = endInputOptions.placeholderChar ? endInputOptions.placeholderChar : '_';
-
-          if (val && !val.includes(_placeholderChar)) {
-            var _d = translateToDate(inputFormat, val, validators);
-
-            if (_d) _this.setState({
-              endDate: _d
-            });
-          }
-        }
-      });
-
-      _defineProperty(_assertThisInitialized(_this), "onFocusHandler", function () {
-        _this.setState({
-          init: true
-        });
-      });
-
-      _defineProperty(_assertThisInitialized(_this), "onBlurHandler", function (_e, val, type) {
-        var _this$props4 = _this.props,
-            startInputOptions = _this$props4.startInputOptions,
-            endInputOptions = _this$props4.endInputOptions,
-            inputOptions = _this$props4.inputOptions;
-
-        if (type === 'start') {
-          var placeholderChar = startInputOptions.placeholderChar || '_';
-          if (!val || val.includes(placeholderChar)) _this.setState({
-            startDate: undefined
-          });
-        }
-
-        if (type === 'end') {
-          var _placeholderChar2 = endInputOptions.placeholderChar || '_';
-
-          if (!val || val.includes(_placeholderChar2)) _this.setState({
-            endDate: undefined
-          });
-        }
-
-        if (type === 'start-end') {
-          var _placeholderChar3 = inputOptions.placeholderChar || '_';
-
-          var date = val.split(' - ');
-          var startVal = date[0];
-          var endVal = date[1];
-          if (!startVal || startVal.includes(_placeholderChar3)) _this.setState({
-            startDate: undefined
-          });
-          if (!endVal || endVal.includes(_placeholderChar3)) _this.setState({
-            endDate: undefined
-          });
-        }
-      });
-
-      _defineProperty(_assertThisInitialized(_this), "onClearHandler", function (type) {
-        if (type === 'start') {
-          _this.setState({
-            init: true,
-            startDate: undefined
-          });
-
-          _this.updateNav('end');
-        }
-
-        if (type === 'end') {
-          _this.setState({
-            init: true,
-            endDate: undefined
-          });
-
-          _this.updateNav('start');
-        }
-
-        if (type === 'start-end') {
-          _this.setState({
-            init: true,
-            startDate: undefined,
-            endDate: undefined,
-            yearNav: undefined,
-            monthNav: undefined
-          });
-        }
-      });
-
-      _defineProperty(_assertThisInitialized(_this), "onClickHandler", function (type) {
-        if (!open) {
-          _this.updateNav(type);
-        }
       });
 
       _defineProperty(_assertThisInitialized(_this), "onToggleHandler", function (o, type) {
@@ -42281,15 +42515,15 @@
       });
 
       var _inputFormat = props.inputFormat,
-          _validators = props.validators;
+          validators = props.validators;
 
-      var _startDate = convertToDate(props.startDate, _inputFormat, _validators);
+      var _startDate = convertToDate(props.startDate, _inputFormat, validators);
 
-      var _endDate = convertToDate(props.endDate, _inputFormat, _validators);
+      var _endDate = convertToDate(props.endDate, _inputFormat, validators);
 
       var _this$getDate = _this.getDate(_startDate, _endDate),
-          _startValue = _this$getDate.startValue,
-          _endValue = _this$getDate.endValue;
+          startValue = _this$getDate.startValue,
+          endValue = _this$getDate.endValue;
 
       var _this$getErrors = _this.getErrors(_startDate, _endDate),
           _startError = _this$getErrors.startError,
@@ -42298,8 +42532,8 @@
       _this.state = {
         startDate: _startDate,
         endDate: _endDate,
-        startValue: _startValue,
-        endValue: _endValue,
+        startValue: startValue,
+        endValue: endValue,
         startError: _startError,
         endError: _endError,
         init: false,
@@ -42315,9 +42549,9 @@
       key: "componentDidUpdate",
       value: function componentDidUpdate(prevProps, prevState) {
         if (prevProps.startDate !== this.props.startDate) {
-          var _this$props5 = this.props,
-              inputFormat = _this$props5.inputFormat,
-              validators = _this$props5.validators;
+          var _this$props2 = this.props,
+              inputFormat = _this$props2.inputFormat,
+              validators = _this$props2.validators;
           var d = convertToDate(this.props.startDate, inputFormat, validators);
           var val = translateToString$1(inputFormat, d);
           this.setState({
@@ -42327,16 +42561,16 @@
         }
 
         if (prevProps.endDate !== this.props.endDate) {
-          var _this$props6 = this.props,
-              _inputFormat2 = _this$props6.inputFormat,
-              _validators2 = _this$props6.validators;
+          var _this$props3 = this.props,
+              _inputFormat2 = _this$props3.inputFormat,
+              _validators = _this$props3.validators;
 
-          var _d2 = convertToDate(this.props.endDate, _inputFormat2, _validators2);
+          var _d = convertToDate(this.props.endDate, _inputFormat2, _validators);
 
-          var _val = translateToString$1(_inputFormat2, _d2);
+          var _val = translateToString$1(_inputFormat2, _d);
 
           this.setState({
-            endDate: _d2,
+            endDate: _d,
             endValue: _val
           });
         }
@@ -42360,12 +42594,12 @@
         }
 
         if (prevState.startDate !== this.state.startDate || prevState.endDate !== this.state.endDate) {
-          var _this$props7 = this.props,
-              onRangeChange = _this$props7.onRangeChange,
-              outputFormat = _this$props7.outputFormat;
-          var _this$state6 = this.state,
-              _startDate3 = _this$state6.startDate,
-              _endDate3 = _this$state6.endDate;
+          var _this$props4 = this.props,
+              onRangeChange = _this$props4.onRangeChange,
+              outputFormat = _this$props4.outputFormat;
+          var _this$state2 = this.state,
+              _startDate3 = _this$state2.startDate,
+              _endDate3 = _this$state2.endDate;
 
           var _this$getErrors2 = this.getErrors(_startDate3, _endDate3),
               startError = _this$getErrors2.startError,
@@ -42392,30 +42626,30 @@
     }, {
       key: "renderCalendar",
       value: function renderCalendar() {
-        var _this$props8 = this.props,
-            startDateProp = _this$props8.startDate,
-            endDateProp = _this$props8.endDate,
-            yearNavProp = _this$props8.yearNav,
-            monthNavProp = _this$props8.monthNav,
-            open = _this$props8.open,
-            inputFormat = _this$props8.inputFormat,
-            outputFormat = _this$props8.outputFormat,
-            startInputOptions = _this$props8.startInputOptions,
-            endInputOptions = _this$props8.endInputOptions,
-            validators = _this$props8.validators,
-            withInput = _this$props8.withInput,
-            position = _this$props8.position,
-            disabledBefore = _this$props8.disabledBefore,
-            disabledAfter = _this$props8.disabledAfter,
-            onRangeChange = _this$props8.onRangeChange,
-            rangeLimit = _this$props8.rangeLimit,
-            rest = _objectWithoutProperties(_this$props8, ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "startInputOptions", "endInputOptions", "validators", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"]);
+        var _this$props5 = this.props,
+            startDateProp = _this$props5.startDate,
+            endDateProp = _this$props5.endDate,
+            yearNavProp = _this$props5.yearNav,
+            monthNavProp = _this$props5.monthNav,
+            open = _this$props5.open,
+            inputFormat = _this$props5.inputFormat,
+            outputFormat = _this$props5.outputFormat,
+            startInputOptions = _this$props5.startInputOptions,
+            endInputOptions = _this$props5.endInputOptions,
+            validators = _this$props5.validators,
+            withInput = _this$props5.withInput,
+            position = _this$props5.position,
+            disabledBefore = _this$props5.disabledBefore,
+            disabledAfter = _this$props5.disabledAfter,
+            onRangeChange = _this$props5.onRangeChange,
+            rangeLimit = _this$props5.rangeLimit,
+            rest = _objectWithoutProperties(_this$props5, ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "startInputOptions", "endInputOptions", "validators", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"]);
 
-        var _this$state7 = this.state,
-            startDate = _this$state7.startDate,
-            endDate = _this$state7.endDate,
-            yearNav = _this$state7.yearNav,
-            monthNav = _this$state7.monthNav;
+        var _this$state3 = this.state,
+            startDate = _this$state3.startDate,
+            endDate = _this$state3.endDate,
+            yearNav = _this$state3.yearNav,
+            monthNav = _this$state3.monthNav;
         return /*#__PURE__*/React.createElement(Calendar, _extends({}, rest, {
           monthsInView: this.monthsInView,
           rangePicker: true,
@@ -42432,126 +42666,46 @@
     }, {
       key: "render",
       value: function render() {
-        var _this2 = this;
+        var _classNames;
 
-        var _this$props9 = this.props,
-            withInput = _this$props9.withInput,
-            startInputOptions = _this$props9.startInputOptions,
-            endInputOptions = _this$props9.endInputOptions,
-            inputOptions = _this$props9.inputOptions,
-            inputFormat = _this$props9.inputFormat,
-            position = _this$props9.position,
-            validators = _this$props9.validators,
-            singleInput = _this$props9.singleInput;
-        var _this$state8 = this.state,
-            init = _this$state8.init,
-            startDate = _this$state8.startDate,
-            endDate = _this$state8.endDate,
-            startValue = _this$state8.startValue,
-            endValue = _this$state8.endValue,
-            startError = _this$state8.startError,
-            endError = _this$state8.endError,
-            open = _this$state8.open;
+        var _this$props6 = this.props,
+            withInput = _this$props6.withInput,
+            startInputOptions = _this$props6.startInputOptions,
+            endInputOptions = _this$props6.endInputOptions,
+            inputOptions = _this$props6.inputOptions,
+            inputFormat = _this$props6.inputFormat,
+            position = _this$props6.position,
+            validators = _this$props6.validators,
+            singleInput = _this$props6.singleInput,
+            contentAlign = _this$props6.contentAlign,
+            children = _this$props6.children;
+        var open = this.state.open;
+        var RangePickerClass = classnames((_classNames = {}, _defineProperty(_classNames, 'DateRangePicker', true), _defineProperty(_classNames, "DateRangePicker--".concat(contentAlign), contentAlign), _classNames));
 
         if (withInput) {
-          var mask = date$1[inputFormat];
-          var rangeMask = rangeDate[inputFormat];
-          var showStartError = startInputOptions.required && startError && init;
-          var showEndError = endInputOptions.required && endError && init;
-          var showError = inputOptions.required && (startError || endError) && init;
-
-          var inputValidator = function inputValidator(val) {
-            return isValid(validators, val, inputFormat);
-          };
-
-          var trigger = singleInput ? /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, null, inputOptions.label && /*#__PURE__*/React.createElement(Label$1, {
-            required: inputOptions.required,
-            withInput: true
-          }, inputOptions.label), /*#__PURE__*/React.createElement(InputMask, _extends({
-            icon: "events",
-            placeholder: "".concat(inputFormat, " - ").concat(inputFormat)
-          }, inputOptions, {
-            mask: rangeMask,
-            value: "".concat(startValue || '', " - ").concat(endValue || ''),
-            onFocus: this.onFocusHandler,
-            onChange: function onChange(e, val) {
-              _this2.onDateChangeHandler(e, val || '');
-            },
-            onBlur: function onBlur(e, val) {
-              _this2.onBlurHandler(e, val || '', 'start-end');
-            },
-            onClear: function onClear() {
-              return _this2.onClearHandler('start-end');
-            },
-            error: showError,
-            caption: showError ? inputOptions.caption || 'Invalid value' : '',
-            validators: [inputValidator]
-          })))) : /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, {
-            size: '6',
-            sizeXS: '12',
-            className: "DateRangePicker-input DateRangePicker-input--startDate"
-          }, startInputOptions.label && /*#__PURE__*/React.createElement(Label$1, {
-            required: startInputOptions.required,
-            withInput: true
-          }, startInputOptions.label), /*#__PURE__*/React.createElement(InputMask, _extends({
-            icon: "events",
-            placeholder: inputFormat
-          }, startInputOptions, {
-            mask: mask,
-            value: startDate ? translateToString$1(inputFormat, startDate) : '',
-            onFocus: this.onFocusHandler,
-            onChange: function onChange(e, val) {
-              _this2.onChangeHandler(e, val || '', 'start');
-            },
-            onBlur: function onBlur(e, val) {
-              _this2.onBlurHandler(e, val || '', 'start');
-            },
-            onClear: function onClear() {
-              return _this2.onClearHandler('start');
-            },
-            onClick: function onClick() {
-              return _this2.onClickHandler('start');
-            },
-            error: showStartError,
-            caption: showStartError ? startInputOptions.caption || 'Invalid value' : '',
-            validators: [inputValidator]
-          }))), /*#__PURE__*/React.createElement(Column, {
-            size: '6',
-            sizeXS: '12',
-            className: "DateRangePicker-input DateRangePicker-input--endDate"
-          }, endInputOptions.label && /*#__PURE__*/React.createElement(Label$1, {
-            required: endInputOptions.required,
-            withInput: true
-          }, endInputOptions.label), /*#__PURE__*/React.createElement(InputMask, _extends({
-            icon: "events",
-            placeholder: inputFormat
-          }, endInputOptions, {
-            mask: mask,
-            value: endDate ? translateToString$1(inputFormat, endDate) : '',
-            onChange: function onChange(e, val) {
-              _this2.onChangeHandler(e, val || '', 'end');
-            },
-            onBlur: function onBlur(e, val) {
-              _this2.onBlurHandler(e, val || '', 'end');
-            },
-            onClear: function onClear() {
-              return _this2.onClearHandler('end');
-            },
-            onClick: function onClick() {
-              return _this2.onClickHandler('end');
-            },
-            error: showEndError,
-            caption: showEndError ? endInputOptions.caption || 'Invalid value' : '',
-            validators: [inputValidator]
-          }))));
+          var trigger = singleInput ? /*#__PURE__*/React.createElement(SingleInputTrigger, {
+            inputFormat: inputFormat,
+            inputOptions: inputOptions,
+            validators: validators,
+            state: this.state,
+            setState: this.setState.bind(this)
+          }) : /*#__PURE__*/React.createElement(Trigger$1, {
+            inputFormat: inputFormat,
+            startInputOptions: startInputOptions,
+            endInputOptions: endInputOptions,
+            validators: validators,
+            state: this.state,
+            setState: this.setState.bind(this)
+          });
           return /*#__PURE__*/React.createElement(Popover, {
             trigger: trigger,
             triggerClass: "w-100",
+            className: RangePickerClass,
             position: position,
             appendToBody: true,
             open: open,
             onToggle: this.onToggleHandler
-          }, this.renderCalendar());
+          }, children, this.renderCalendar());
         }
 
         return this.renderCalendar();
@@ -42559,9 +42713,11 @@
     }]);
 
     return DateRangePicker;
-  }(React.Component);
+  }(React.Component); // @ts-ignore
 
   _defineProperty(DateRangePicker, "defaultProps", _objectSpread2(_objectSpread2({}, Calendar.defaultProps), {}, {
+    children: /*#__PURE__*/React.createElement(React.Fragment, null),
+    contentAlign: 'left',
     monthsInView: undefined,
     position: 'bottom-start',
     inputFormat: 'mm/dd/yyyy',
@@ -42577,6 +42733,16 @@
       label: 'End Date'
     }
   }));
+
+  DateRangePicker.utils = {
+    getCurrentWeek: getCurrentWeek,
+    getPreviousWeek: getPreviousWeek,
+    getPreviousMonth: getPreviousMonth,
+    getPrevious90Days: getPrevious90Days,
+    getCustomDates: getCustomDates,
+    getCurrentYear: getCurrentYear,
+    getCurrentMonth: getCurrentMonth
+  };
 
   var TabsWrapper = function TabsWrapper(props) {
     var children = props.children,
@@ -42871,6 +43037,54 @@
     return schema;
   };
 
+  // import * as React from 'react';
+  var GridNestedRow = function GridNestedRow(props) {
+    var _this = props._this,
+        data = props.data,
+        rowIndex = props.rowIndex;
+    var _this$props = _this.props,
+        schema = _this$props.schema,
+        loading = _this$props.loading,
+        nestedRowRenderer = _this$props.nestedRowRenderer;
+    if (nestedRowRenderer) return nestedRowRenderer({
+      data: data,
+      schema: schema,
+      loading: loading,
+      rowIndex: rowIndex
+    }); // return (
+    //   <Text>{JSON.stringify(data)}</Text>
+    // )
+    // const {
+    //   schema: propSchema
+    // } = _this.props;
+    // if (data._expanded) {
+    //   const showHead = data._expanded.showHead;
+    //   const schema = data._expanded.schema || propSchema;
+    //   let gridData = data._expanded.data;
+    //   if (!gridData) {
+    //     const {
+    //       _uid,
+    //       _expanded,
+    //       ...rest
+    //     } = data;
+    //     gridData = [rest];
+    //   }
+    //   return (
+    //     <div className="Grid-expandedRow">
+    //       <Grid
+    //         key={'expanedRow'}
+    //         showHead={showHead}
+    //         data={gridData}
+    //         schema={schema}
+    //         totalRecords={gridData.length}
+    //       />
+    //     </div>
+    //   );
+    // }
+
+    return null;
+  };
+
   var HeaderCell = function HeaderCell(props) {
     var _this = props._this,
         schema = props.schema,
@@ -43051,17 +43265,28 @@
       data: data,
       loading: loading
     };
+    var nestedProps = {
+      _this: _this,
+      data: data,
+      rowIndex: rowIndex
+    };
+    var isNestedRowDisabled = !GridNestedRow(nestedProps);
     return /*#__PURE__*/React.createElement("div", {
       className: "Grid-cellContent"
-    }, colIndex === 0 && nestedRows && /*#__PURE__*/React.createElement(Icon, {
-      className: "Grid-nestedRowTrigger",
+    }, colIndex === 0 && nestedRows && /*#__PURE__*/React.createElement(React.Fragment, null, !isNestedRowDisabled ? /*#__PURE__*/React.createElement(Icon, {
+      className: 'Grid-nestedRowTrigger',
       name: expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
       size: 20,
+      appearance: 'default',
       onClick: function onClick(e) {
-        e.stopPropagation();
-        setExpanded(!expanded);
+        if (!isNestedRowDisabled) {
+          e.stopPropagation();
+          setExpanded(!expanded);
+        }
       }
-    }), schema.cellRenderer ? schema.cellRenderer(cellProps) : /*#__PURE__*/React.createElement(GridCell, _extends({
+    }) : /*#__PURE__*/React.createElement("span", {
+      className: "Grid-nestedRowPlaceholder"
+    })), schema.cellRenderer ? schema.cellRenderer(cellProps) : /*#__PURE__*/React.createElement(GridCell, _extends({
       key: "".concat(rowIndex, "-").concat(colIndex)
     }, cellProps)));
   };
@@ -43212,54 +43437,6 @@
     }, /*#__PURE__*/React.createElement("div", {
       className: "Grid-row Grid-row--head"
     }, renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left'), renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length), renderSchema(rightPinnedSchema, false, 'right')));
-  };
-
-  // import * as React from 'react';
-  var GridNestedRow = function GridNestedRow(props) {
-    var _this = props._this,
-        data = props.data,
-        rowIndex = props.rowIndex;
-    var _this$props = _this.props,
-        schema = _this$props.schema,
-        loading = _this$props.loading,
-        nestedRowRenderer = _this$props.nestedRowRenderer;
-    if (nestedRowRenderer) return nestedRowRenderer({
-      data: data,
-      schema: schema,
-      loading: loading,
-      rowIndex: rowIndex
-    }); // return (
-    //   <Text>{JSON.stringify(data)}</Text>
-    // )
-    // const {
-    //   schema: propSchema
-    // } = _this.props;
-    // if (data._expanded) {
-    //   const showHead = data._expanded.showHead;
-    //   const schema = data._expanded.schema || propSchema;
-    //   let gridData = data._expanded.data;
-    //   if (!gridData) {
-    //     const {
-    //       _uid,
-    //       _expanded,
-    //       ...rest
-    //     } = data;
-    //     gridData = [rest];
-    //   }
-    //   return (
-    //     <div className="Grid-expandedRow">
-    //       <Grid
-    //         key={'expanedRow'}
-    //         showHead={showHead}
-    //         data={gridData}
-    //         schema={schema}
-    //         totalRecords={gridData.length}
-    //       />
-    //     </div>
-    //   );
-    // }
-
-    return null;
   };
 
   var GridRow = function GridRow(props) {
@@ -44566,6 +44743,8 @@
     _createClass(Table, [{
       key: "componentDidUpdate",
       value: function componentDidUpdate(prevProps, prevState) {
+        var _this2 = this;
+
         if (!this.state.async) {
           if (prevProps.loading !== this.props.loading || prevProps.error !== this.props.error) {
             var _this$props2 = this.props,
@@ -44583,6 +44762,8 @@
               page: 1,
               totalRecords: _data2.length || 0,
               selectAll: getSelectAll$1([])
+            }, function () {
+              _this2.updateData();
             });
           }
         }

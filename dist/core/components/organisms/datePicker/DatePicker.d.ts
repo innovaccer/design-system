@@ -16,7 +16,7 @@ export declare type DatePickerProps = SharedProps & {
     validators: Validators;
     closeOnSelect: boolean;
 };
-interface DatePickerState {
+export interface DatePickerState {
     init: boolean;
     date?: Date;
     error: boolean;
@@ -38,10 +38,6 @@ export declare class DatePicker extends React.Component<DatePickerProps, DatePic
     componentDidUpdate(prevProps: DatePickerProps, prevState: DatePickerState): void;
     getError: (date?: Date | undefined) => boolean;
     onDateChangeHandler: (d?: Date | undefined) => void;
-    onChangeHandler: (_e: React.ChangeEvent<HTMLInputElement>, val?: string | undefined) => void;
-    onFocusHandler: () => void;
-    onBlurHandler: (_e: React.ChangeEvent<HTMLInputElement>, val?: string | undefined) => void;
-    onClearHandler: () => void;
     onToggleHandler: (o: boolean, type?: string | undefined) => void;
     renderCalendar(): JSX.Element;
     render(): JSX.Element;
