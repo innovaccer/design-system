@@ -259,18 +259,24 @@ const BodyCell = (props: BodyCellProps) => {
   return (
     <div className="Grid-cellContent">
       {colIndex === 0 && nestedRows && (
-        <Icon
-          className={`Grid-nestedRowTrigger${isNestedRowDisabled ? '' : ' cursor-pointer'}`}
-          name={expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
-          size={20}
-          appearance={isNestedRowDisabled ? 'disabled' : 'default'}
-          onClick={e => {
-            if (!isNestedRowDisabled) {
-              e.stopPropagation();
-              setExpanded(!expanded);
-            }
-          }}
-        />
+        <>
+          {!isNestedRowDisabled ? (
+            <Icon
+              className={'Grid-nestedRowTrigger'}
+              name={expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
+              size={20}
+              appearance={'default'}
+              onClick={e => {
+                if (!isNestedRowDisabled) {
+                  e.stopPropagation();
+                  setExpanded(!expanded);
+                }
+              }}
+            />
+          ) : (
+              <span className="Grid-nestedRowPlaceholder" />
+            )}
+        </>
       )}
       {schema.cellRenderer ?
         schema.cellRenderer(cellProps)

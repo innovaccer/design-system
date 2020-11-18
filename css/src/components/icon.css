@@ -29,6 +29,7 @@
   flex-shrink: 0;
   overflow: hidden;
   flex-shrink: 0;
+  user-select: none;
 }
 
 .Icon--subtle {
