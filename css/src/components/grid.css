@@ -165,7 +165,12 @@
 
 .Grid-nestedRowTrigger {
     margin-right: var(--spacing-l);
-    user-select: none;
+    cursor: pointer;
+}
+
+.Grid-nestedRowPlaceholder {
+    width: 20px;
+    margin-right: var(--spacing-l);
 }
 
 .Grid-cell {
