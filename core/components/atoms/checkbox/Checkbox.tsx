@@ -156,7 +156,12 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
       </div>
       {label && label.trim() && (
         <label htmlFor={id} className={CheckboxTextClass}>
-          <Text size={size === 'tiny' ? 'small' : 'regular'}>{label.trim()}</Text>
+          <Text
+            size={size === 'tiny' ? 'small' : 'regular'}
+            appearance={disabled ? 'disabled' : 'default'}
+          >
+            {label.trim()}
+          </Text>
         </label>
       )}
     </div>
