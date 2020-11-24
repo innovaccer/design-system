@@ -102,7 +102,12 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
       </div>
       {label && (
         <label className="Radio-label" htmlFor={id}>
-          <Text size={size === 'tiny' ? 'small' : 'regular'}>{label}</Text>
+          <Text
+            size={size === 'tiny' ? 'small' : 'regular'}
+            appearance={disabled ? 'disabled' : 'default'}
+          >
+            {label}
+          </Text>
         </label>
       )}
     </div>
