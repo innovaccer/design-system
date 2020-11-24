@@ -63,7 +63,7 @@ exports[`Radio component
     htmlFor="Options-Radio-Test-uid"
   >
     <Text
-      appearance="default"
+      appearance="disabled"
       size="regular"
     >
       Radio
