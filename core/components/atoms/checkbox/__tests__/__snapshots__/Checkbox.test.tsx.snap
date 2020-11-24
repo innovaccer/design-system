@@ -67,7 +67,7 @@ exports[`Checkbox component
     htmlFor="Checkbox-Checkbox-Test-uid"
   >
     <Text
-      appearance="default"
+      appearance="disabled"
       size="regular"
     >
       Checkbox
@@ -155,7 +155,7 @@ exports[`Checkbox component
     htmlFor="Checkbox-Checkbox-Test-uid"
   >
     <Text
-      appearance="default"
+      appearance="disabled"
       size="regular"
     >
       Checkbox
@@ -241,7 +241,7 @@ exports[`Checkbox component
     htmlFor="Checkbox-Checkbox-Test-uid"
   >
     <Text
-      appearance="default"
+      appearance="disabled"
       size="regular"
     >
       Checkbox
