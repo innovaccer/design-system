@@ -12,7 +12,7 @@ export interface BackdropProps extends BaseProps {
   open: boolean;
 }
 
-const Backdrop = (props: BackdropProps) => {
+export const Backdrop: React.FC<BackdropProps> = props => {
   const {
     className,
   } = props;
