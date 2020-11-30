@@ -12,16 +12,18 @@ const CheckboxOption = (props: OptionTypeProps) => {
     dataTest,
   } = props;
 
-  const { label } = optionData;
+  const { label, disabled } = optionData;
 
   return (
     <div
       className={className}
       onMouseEnter={onUpdateActiveOption}
       data-test={dataTest}
+      data-disabled={disabled}
     >
       <Checkbox
         label={label}
+        disabled={disabled}
         checked={selected}
         onChange={onChangeHandler}
         tabIndex={-1}

@@ -1,6 +1,7 @@
 export const dropdownOptions: any[] = [];
 export const preSelectedOptions: any[] = [];
 export const storyOptions: any[] = [];
+export const disabledStoryOptions: any[] = [];
 export const iconOptions: any[] = [];
 export const subInfoOptions: any[] = [];
 export const iconWithSubinfoOptions: any[] = [];
@@ -11,6 +12,14 @@ for (let i = 1; i <= 10; i++) {
     value: `Option ${i}`,
     icon: 'events',
     subInfo: 'subInfo'
+  });
+}
+
+for (let i = 1; i <= 10; i++) {
+  disabledStoryOptions.push({
+    label: `Option ${i}`,
+    value: `Option ${i}`,
+    disabled: i === 2,
   });
 }
 
