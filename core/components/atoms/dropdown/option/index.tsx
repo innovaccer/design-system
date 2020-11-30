@@ -6,7 +6,7 @@ import MetaOption from './MetaOption';
 import IconOption from './IconOption';
 import IconWithMetaOption from './IconWithMetaOption';
 import { MetaList, Text } from '@/index';
-import { MetaListProps } from '@/index.type';
+import { MetaListProps, IconProps, TextProps } from '@/index.type';
 import { OptionType } from '../DropdownList';
 
 export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
@@ -39,6 +39,7 @@ export interface OptionSchema {
   subInfo?: string | MetaListProps;
   optionType?: OptionType;
   selected?: boolean;
+  disabled?: boolean;
   group?: string;
 }
 
@@ -48,7 +49,8 @@ export interface OptionTypeProps {
   dataTest?: string;
   optionData: OptionSchema;
   selected: boolean;
-  menu?: boolean;
+  appearance: IconProps['appearance'] & TextProps['appearance'];
+  index: number;
   onUpdateActiveOption: () => void;
   onClickHandler?: (event: ClickEvent) => void;
   onChangeHandler?: (event: ChangeEvent) => void;
@@ -90,17 +92,20 @@ const Option = (props: OptionProps) => {
   } = props;
 
   const { optionType = 'DEFAULT' } = optionData.optionType ? optionData : props;
+  const { disabled } = optionData;
 
   const OptionClassName = classNames({
     ['Option']: true,
-    ['OptionWrapper']: true,
     ['Option--active']: active,
     ['Option--selected']: selected && !menu,
+    ['Option--disabled']: disabled,
+    ['OptionWrapper']: true,
   });
 
   const CheckboxClassName = classNames({
+    ['Option-checkbox']: true,
+    ['Option-checkbox--active']: active,
     ['OptionWrapper']: true,
-    ['OptionWrapper--active']: active,
   });
 
   const textClassName = classNames({
@@ -108,16 +113,27 @@ const Option = (props: OptionProps) => {
     ['Option-text--wrap']: !props.truncateOption,
   });
 
+  const customOptionClass = classNames({
+    ['OptionWrapper']: true,
+    ['OptionWrapper--disabled']: disabled,
+  });
+
   const onUpdateActiveOption = () => {
+    if (disabled) return;
+
     if (updateActiveOption) updateActiveOption(index);
   };
 
   const onClickHandler = (e: ClickEvent) => {
+    if (disabled) return;
+
     e.stopPropagation();
     if (onClick) onClick();
   };
 
   const onChangeHandler = (e: ChangeEvent) => {
+    if (disabled) return;
+
     e.stopPropagation();
     if (onChange) onChange(e);
   };
@@ -125,7 +141,8 @@ const Option = (props: OptionProps) => {
   if (props.optionRenderer) {
     return (
       <div
-        className="OptionWrapper"
+        className={customOptionClass}
+        data-disabled={disabled}
         onMouseEnter={onUpdateActiveOption}
         {...(!checkboxes && { onClick })}
       >
@@ -141,7 +158,7 @@ const Option = (props: OptionProps) => {
   }
 
   const renderSubInfo = (subInfo: string | MetaListProps) => {
-    const labelAppearance = selected ? 'white' : 'subtle';
+    const labelAppearance = disabled ? 'disabled' : selected ? 'white' : 'subtle';
     const iconAppearance = selected ? 'white' : 'disabled';
 
     if (typeof subInfo === 'string') {
@@ -164,16 +181,18 @@ const Option = (props: OptionProps) => {
     );
   };
 
+  const appearance = disabled ? 'disabled' : selected && !menu ? 'white' : 'default';
   const type = checkboxes ? 'WITH_CHECKBOX' : optionType;
   const component = OptionTypeMapping[type];
 
   return component(
     {
-      menu,
       selected,
+      index,
       renderSubInfo,
       optionData,
       textClassName,
+      appearance,
       onClickHandler,
       onChangeHandler,
       onUpdateActiveOption,

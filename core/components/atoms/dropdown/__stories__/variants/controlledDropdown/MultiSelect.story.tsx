@@ -34,10 +34,17 @@ export const multiSelect = () => {
   const onSelectLessThan50 = (type: EventType, option?: any) => {
     switch (type) {
       case 'select-all':
-        setSelectedLessThan50(dropdownOptions.slice(0, 50));
+        const selectedDisabledArray = selectedLessThan50.filter(item => item.disabled);
+        const selectedOptions = [
+          ...dropdownOptions.slice(0, 50).filter(item => !item.disabled),
+          ...selectedDisabledArray
+        ];
+
+        setSelectedLessThan50(selectedOptions);
         return;
       case 'deselect-all':
-        setSelectedLessThan50([]);
+        const selectedArr = selectedLessThan50.filter(item => item.disabled);
+        setSelectedLessThan50(selectedArr);
         return;
       case 'select-option':
         setSelectedLessThan50(selectedLessThan50.concat(option));
@@ -64,7 +71,8 @@ export const multiSelect = () => {
         setSelectedMoreThan50(selectedArray);
         return;
       case 'clear-all':
-        setSelectedMoreThan50([]);
+        const selectedArr = selectedMoreThan50.filter(item => item.disabled);
+        setSelectedMoreThan50(selectedArr);
         return;
       default:
         return;
@@ -141,10 +149,16 @@ const customCode = `() => {
   const onSelectLessThan50 = (type, option) => {
     switch (type) {
       case 'select-all':
-        setSelectedLessThan50(dropdownOptions.slice(0, 50));
+        const selectedDisabledArray = selectedLessThan50.filter(option => option.disabled);
+        const selectedOptions = [
+          ...dropdownOptions..slice(0, 50).filter(option => !option.disabled),
+          ...selectedDisabledArray
+        ];
+        setSelectedLessThan50(selectedOptions);
         return;
       case 'deselect-all':
-        setSelectedLessThan50([]);
+        const selectedArr = selectedLessThan50.filter(option => option.disabled);
+        setSelectedLessThan50(selectedArr);
         return;
       case 'select-option':
         setSelectedLessThan50(selectedLessThan50.concat(option));
@@ -171,7 +185,8 @@ const customCode = `() => {
         setSelectedMoreThan50(selectedArray);
         return;
       case 'clear-all':
-        setSelectedMoreThan50([]);
+        const selectedArr = selectedMoreThan50.filter(option => option.disabled);
+        setSelectedMoreThan50(selectedArr);
         return;
       default:
         return;

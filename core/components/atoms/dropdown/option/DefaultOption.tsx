@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Text } from '@/index';
 import { OptionTypeProps } from './index';
 
 const DefaultOption = (props: OptionTypeProps) => {
@@ -7,11 +8,12 @@ const DefaultOption = (props: OptionTypeProps) => {
     textClassName,
     onClickHandler,
     optionData,
+    appearance,
     onUpdateActiveOption,
     dataTest,
   } = props;
 
-  const { label } = optionData;
+  const { label, disabled } = optionData;
 
   return (
     <div
@@ -19,9 +21,15 @@ const DefaultOption = (props: OptionTypeProps) => {
       onClick={onClickHandler}
       onMouseEnter={onUpdateActiveOption}
       data-test={dataTest}
+      data-disabled={disabled}
     >
       <div className={'Option-label'}>
-        <div className={textClassName}>{label}</div>
+        <Text
+          className={textClassName}
+          appearance={appearance}
+        >
+          {label}
+        </Text>
       </div>
     </div>
   );
