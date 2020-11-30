@@ -1,21 +1,20 @@
 import * as React from 'react';
 import { OptionTypeProps } from './index';
-import Icon from '@/components/atoms/icon';
+import { Text, Icon } from '@/index';
 import classNames from 'classnames';
 
 const IconOption = (props: OptionTypeProps) => {
   const {
     className,
     textClassName,
-    selected,
     onClickHandler,
     optionData,
     onUpdateActiveOption,
-    menu,
+    appearance,
     dataTest,
   } = props;
 
-  const { label, icon } = optionData;
+  const { label, icon, disabled } = optionData;
 
   const OptionClass = classNames({
     [`${className}`]: true,
@@ -28,12 +27,18 @@ const IconOption = (props: OptionTypeProps) => {
       onClick={onClickHandler}
       onMouseEnter={onUpdateActiveOption}
       data-test={dataTest}
+      data-disabled={disabled}
     >
       {icon && (
-        <Icon className="Option-icon mr-4" name={icon} appearance={selected && !menu ? 'white' : 'default'} />
+        <Icon className="Option-icon mr-4" name={icon} appearance={appearance} />
       )}
       <div className={'Option-label'}>
-        <div className={textClassName}>{label}</div>
+        <Text
+          className={textClassName}
+          appearance={appearance}
+        >
+          {label}
+        </Text>
       </div>
     </div>
   );

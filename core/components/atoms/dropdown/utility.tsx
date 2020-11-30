@@ -21,6 +21,13 @@ export const _showSelectedItems = (
   withCheckbox?: boolean
 ) => bulk && withCheckbox && searchTerm === '';
 
+export const _isSelectAllPresent = (
+  searchTerm: string,
+  bulkOptions: number,
+  withSelectAll: boolean,
+  withCheckbox?: boolean,
+) => withCheckbox && withSelectAll && bulkOptions === 0 && searchTerm === '';
+
 export const scrollTo = (element: Element, top: number) => {
   element.scrollTo(0, top);
 };
@@ -43,8 +50,19 @@ export const scrollIntoView = (menuElement: HTMLDivElement | null, focusedElemen
   }
 };
 
-export const getSelectAll = (selected: Option[], optionsLength: number) => {
+export const getSelectAll = (
+  selected: Option[],
+  optionsLength: number,
+  disabledOptionsLength: number
+) => {
   if (selected.length) {
+    if (
+      selected.length > 0
+      && disabledOptionsLength > 0
+      && selected.length === optionsLength - disabledOptionsLength
+    ) {
+      return { indeterminate: true, checked: true }; //
+    }
     const indeterminate = selected.length > 0 && selected.length !== optionsLength;
     const checked = selected.length > 0 && selected.length === optionsLength;
     const obj = { checked, indeterminate };

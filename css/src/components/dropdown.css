@@ -79,7 +79,7 @@
 }
 
 .Option--active,
-.OptionWrapper--active {
+.Option-checkbox--active {
     background-color: var(--secondary-lightest);
     cursor: pointer;
 }
@@ -90,7 +90,11 @@
 
 .Option--selected {
     background-color: var(--primary);
-    color: var(--white);
+    pointer-events: none;
+}
+
+.Option--disabled,
+.OptionWrapper--disabled {
     pointer-events: none;
 }
 
