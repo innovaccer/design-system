@@ -9,6 +9,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -174,6 +175,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -339,6 +341,7 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   checkboxes={true}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -505,6 +508,7 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   checkboxes={true}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -671,6 +675,7 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   closeOnSelect={true}
   disabled={false}
+  firstEnabledOption={0}
   icon="events"
   inputRef={
     Object {
@@ -837,6 +842,7 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   closeOnSelect={true}
   disabled={false}
+  firstEnabledOption={0}
   inlineLabel="Label"
   inputRef={
     Object {
@@ -1003,6 +1009,7 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   closeOnSelect={true}
   disabled={false}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -1168,6 +1175,7 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   closeOnSelect={true}
   disabled={true}
+  firstEnabledOption={0}
   icon="events"
   inputRef={
     Object {
@@ -1334,6 +1342,7 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   closeOnSelect={true}
   disabled={true}
+  firstEnabledOption={0}
   inlineLabel="Label"
   inputRef={
     Object {
@@ -1500,6 +1509,7 @@ exports[`Dropdown component
   cancelOptions={[Function]}
   closeOnSelect={true}
   disabled={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -1664,6 +1674,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -1808,6 +1819,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -1992,6 +2004,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -2176,6 +2189,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -2360,6 +2374,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -2525,6 +2540,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -2690,6 +2706,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -2854,6 +2871,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -3021,6 +3039,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -3188,6 +3207,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -3355,6 +3375,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -3522,6 +3543,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -3689,6 +3711,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -3856,6 +3879,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -4021,6 +4045,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -4186,6 +4211,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,
@@ -4255,6 +4281,7 @@ exports[`Dropdown component
   async={false}
   cancelOptions={[Function]}
   closeOnSelect={true}
+  firstEnabledOption={0}
   inputRef={
     Object {
       "current": null,

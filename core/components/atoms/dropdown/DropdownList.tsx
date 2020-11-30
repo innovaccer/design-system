@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { scrollIntoView, _isEqual } from './utility';
+import { scrollIntoView, _isEqual, _isSelectAllPresent } from './utility';
 import Popover, { Position, CustomStyle } from '@/components/molecules/popover';
 import DropdownButton, { TriggerProps } from './DropdownButton';
 import Checkbox from '@/components/atoms/checkbox';
@@ -71,6 +71,12 @@ export interface DropdownListProps extends ListProps {
    */
   withCheckbox?: boolean;
   /**
+   * Determines if `Select All` option is visible
+   * **Applicable only in case of `withCheckbox` and `options <= 50`**
+   * @default true
+   */
+  withSelectAll?: boolean;
+  /**
    * Updates the value of selected array after apply button is clicked, applicable in case of multiple selections
    */
   showApplyButton?: boolean;
@@ -116,6 +122,7 @@ interface OptionsProps extends DropdownListProps, BaseProps {
   dropdownOpen?: boolean;
   async?: boolean;
   remainingOptions: number;
+  firstEnabledOption: number;
   selected: OptionSchema[];
   tempSelected: OptionSchema[];
   previousSelected: OptionSchema[];
@@ -147,12 +154,14 @@ const DropdownList = (props: OptionsProps) => {
     align = 'right',
     optionType = 'DEFAULT',
     truncateOption = true,
+    withSelectAll = true,
     maxHeight = 200,
     customTrigger,
     selected,
     tempSelected,
     previousSelected,
     remainingOptions,
+    firstEnabledOption,
     dropdownOpen,
     menu,
     searchTerm,
@@ -176,7 +185,7 @@ const DropdownList = (props: OptionsProps) => {
   const dropdownApplyButtonRef = React.createRef<HTMLButtonElement>();
 
   const [popoverStyle, setPopoverStyle] = React.useState<CustomStyle>();
-  const [cursor, setCursor] = React.useState(0);
+  const [cursor, setCursor] = React.useState(firstEnabledOption);
 
   React.useEffect(() => {
     if (dropdownOpen) {
@@ -193,6 +202,10 @@ const DropdownList = (props: OptionsProps) => {
       setPopoverStyle(popperWrapperStyle);
     }
   }, [dropdownOpen]);
+
+  React.useEffect(() => {
+    if (firstEnabledOption !== cursor) setCursor(firstEnabledOption);
+  }, [firstEnabledOption]);
 
   const {
     triggerSize = 'regular',
@@ -254,14 +267,15 @@ const DropdownList = (props: OptionsProps) => {
   });
 
   const SelectAllClass = classNames({
+    ['Option-checkbox']: true,
+    ['Option-checkbox--active']: cursor === 0,
     ['OptionWrapper']: true,
-    ['OptionWrapper--active']: cursor === 0,
   });
 
   const onToggleDropdown = (open: boolean, type?: string) => {
     toggleDropdown(open, type);
     if (!disabled) dropdownTriggerRef.current?.focus();
-    setCursor(0);
+    setCursor(firstEnabledOption);
   };
 
   const onCancelOptions = () => {
@@ -280,17 +294,20 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const searchClearHandler = () => {
-    setCursor(0);
+    setCursor(firstEnabledOption);
     if (onSearchChange && searchTerm) onSearchChange('');
   };
 
   const searchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCursor(0);
+    setCursor(firstEnabledOption);
     if (onSearchChange) onSearchChange(event.target.value);
   };
 
   const updateActiveOption = (index: number, parentCheckbox?: boolean) => {
-    const updatedIndex = withCheckbox && !props.async && !parentCheckbox ? index + 1 : index;
+    const updatedIndex = withCheckbox && withSelectAll && !props.async && !parentCheckbox
+      ? index + 1
+      : index;
+
     setCursor(updatedIndex);
   };
 
@@ -305,11 +322,20 @@ const DropdownList = (props: OptionsProps) => {
 
   const renderGroups = (group: string, selectedGroup?: boolean) => {
     const { onClearOptions } = props;
+    const isClearDisabled = selected.every(option => option.disabled);
+
     return (
       <div className={getDropdownSectionClass(selectedGroup)}>
         <Text size="small" appearance={'subtle'}>{group}</Text>
         {selectedGroup && (
-          <Button onClick={onClearOptions} appearance="transparent" size="tiny">Clear</Button>
+          <Button
+            onClick={onClearOptions}
+            disabled={isClearDisabled}
+            appearance="transparent"
+            size="tiny"
+          >
+            Clear
+          </Button>
         )}
       </div>
     );
@@ -386,6 +412,7 @@ const DropdownList = (props: OptionsProps) => {
     } = props;
 
     const label = selectAllLabel.trim() ? selectAllLabel.trim() : 'Select All';
+
     return (
       <div className={SelectAllClass} onMouseEnter={_e => updateActiveOption(0, true)}>
         <Checkbox
@@ -401,7 +428,18 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const renderOptions = (item: OptionSchema, index: number) => {
-    const selectAllPresent = withCheckbox && remainingOptions === 0 && searchTerm === '';
+    // const selectAllPresent = withCheckbox
+    //   && remainingOptions === 0
+    //   && searchTerm === ''
+    //   && withSelectAll;
+
+    const selectAllPresent = _isSelectAllPresent(
+      searchTerm,
+      remainingOptions,
+      withSelectAll,
+      withCheckbox
+    );
+
     const active = selectAllPresent ? index + 1 === cursor : index === cursor;
     const optionIsSelected = tempSelected.findIndex(option => option.value === item.value) !== -1;
 
@@ -425,6 +463,13 @@ const DropdownList = (props: OptionsProps) => {
 
   const renderDropdownSection = () => {
     const { selectedSectionLabel = 'Selected Items', loadersCount = 10, loadingOptions } = props;
+    const selectAllPresent = _isSelectAllPresent(
+      searchTerm,
+      remainingOptions,
+      withSelectAll,
+      withCheckbox
+    );
+
     if (loadersCount && loadingOptions) {
       return (
         <div className={'Dropdown-loading'}>
@@ -450,7 +495,7 @@ const DropdownList = (props: OptionsProps) => {
 
     return (
       <div className={dropdownWrapperClass} style={dropdownStyle} ref={dropdownRef}>
-        {withCheckbox && remainingOptions === 0 && searchTerm === '' && renderSelectAll()}
+        {selectAllPresent && renderSelectAll()}
         {selected.length > 0 && renderGroups(selectedSectionLabel, true)}
         {
           selected.map((option, index) =>
@@ -479,11 +524,29 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const focusOption = (direction: string, classes: string) => {
-    const updatedCursor = direction === 'down' ? cursor + 1 : cursor - 1;
     const elements = document.querySelectorAll(classes);
-    const element: HTMLElement = elements[updatedCursor] as HTMLElement;
-    if (element) scrollIntoView(dropdownRef.current, element);
-    if (element !== undefined) setCursor(updatedCursor);
+
+    const updatedCursor = direction === 'down' ? cursor + 1 : cursor - 1;
+    let startIndex = updatedCursor;
+    const endIndex = direction === 'down' ? elements.length : -1;
+
+    while (startIndex !== endIndex) {
+      const node = elements[startIndex];
+
+      if (node.getAttribute('data-disabled') !== 'true') {
+        const element: HTMLElement = elements[startIndex] as HTMLElement;
+        if (element) scrollIntoView(dropdownRef.current, element);
+        if (element !== undefined) setCursor(startIndex);
+        break;
+      }
+
+      if (direction === 'down') {
+        startIndex++;
+      } else {
+        startIndex--;
+      }
+
+    }
   };
 
   const onkeydown = (event: any) => {

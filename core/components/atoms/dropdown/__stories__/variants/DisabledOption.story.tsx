@@ -2,11 +2,11 @@ import * as React from 'react';
 import Dropdown from '../../Dropdown';
 import { action } from '@storybook/addon-actions';
 import Text from '@/components/atoms/text';
-import { storyOptions } from '../Options';
+import { disabledStoryOptions } from '../Options';
 import { Uncontrolled, Controlled } from '../_common_/types';
 
 // CSF format story
-export const multiOptions = () => {
+export const disabledOption = () => {
   const onClose = (options: any) => {
     return action(`dropdown closed with selected values: ${options}`)();
   };
@@ -18,33 +18,20 @@ export const multiOptions = () => {
   return (
     <div className="d-flex">
       <div className="mr-9 w-25">
-        <Text weight="strong">{'With Apply Button'}</Text><br /><br />
-        <Dropdown
-          maxHeight={180}
-          withCheckbox={true}
-          showApplyButton={true}
-          options={storyOptions}
-          placeholder={'Select'}
-          onChange={onChangeHandler}
-          onClose={onClose}
-        />
-      </div>
-      <div className="mr-9 w-25">
-        <Text weight="strong">{'Without Apply Button'}</Text><br /><br />
-        <Dropdown
-          withCheckbox={true}
-          options={storyOptions}
-          placeholder={'Select'}
-          onChange={onChangeHandler}
-          onClose={onClose}
-        />
-      </div>
-      <div className="mr-9 w-25">
-        <Text weight="strong">{'Without Select All (Options <= 50)'}</Text><br /><br />
+        <Text weight="strong">{'With Checkbox'}</Text><br /><br />
         <Dropdown
           withCheckbox={true}
           withSelectAll={false}
-          options={storyOptions}
+          options={disabledStoryOptions}
+          placeholder={'Select'}
+          onChange={onChangeHandler}
+          onClose={onClose}
+        />
+      </div>
+      <div className="mr-9 w-25">
+        <Text weight="strong">{'Without Checkbox'}</Text><br /><br />
+        <Dropdown
+          options={disabledStoryOptions}
           placeholder={'Select'}
           onChange={onChangeHandler}
           onClose={onClose}
@@ -55,13 +42,12 @@ export const multiOptions = () => {
 };
 
 const customCode = `() => {
-  const storyOptions = [];
+  const disabledStoryOptions = [];
   for (let i = 1; i <= 10; i++) {
-    storyOptions.push({
+    disabledStoryOptions.push({
       label: \`Option \${i}\`,
       value: \`Option \${i}\`,
-      icon: 'events',
-      subInfo: 'subInfo'
+      disabled: i===2
     });
   }
 
@@ -76,33 +62,20 @@ const customCode = `() => {
   return (
     <div className='d-flex'>
       <div className='mr-9 w-25'>
-        <Text weight="strong">{'With Apply Button'}</Text><br /><br />
-        <Dropdown
-          maxHeight={180}
-          withCheckbox={true}
-          showApplyButton={true}
-          options={storyOptions}
-          placeholder={'Select'}
-          onChange={onChangeHandler}
-          onClose={onClose}
-        />
-      </div>
-      <div className='mr-9 w-25'>
-        <Text weight="strong">{'Without Apply Button'}</Text><br /><br />
-        <Dropdown
-          withCheckbox={true}
-          options={storyOptions}
-          placeholder={'Select'}
-          onChange={onChangeHandler}
-          onClose={onClose}
-        />
-      </div>
-      <div className='mr-9 w-25'>
-        <Text weight="strong">{'Without Select All (Options <= 50)'}</Text><br /><br />
+      <Text weight="strong">{'With Checkbox'}</Text><br /><br />
         <Dropdown
           withCheckbox={true}
           withSelectAll={false}
-          options={storyOptions}
+          options={disabledStoryOptions}
+          placeholder={'Select'}
+          onChange={onChangeHandler}
+          onClose={onClose}
+        />
+      </div>
+      <div className="mr-9 w-25">
+        <Text weight="strong">{'Without Checkbox'}</Text><br /><br />
+        <Dropdown
+          options={disabledStoryOptions}
           placeholder={'Select'}
           onChange={onChangeHandler}
           onClose={onClose}
@@ -122,7 +95,6 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
         }
       }
     }
