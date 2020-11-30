@@ -2,7 +2,6 @@ import * as React from 'react';
 import { CheckboxProps, DropdownProps } from '@/index.type';
 import { GridCellProps } from './GridCell';
 import { sortColumn, pinColumn, hideColumn, moveToIndex, getSchema } from './utility';
-import { debounce } from 'throttle-debounce';
 import { MainGrid } from './MainGrid';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { NestedRowProps } from './GridNestedRow';
@@ -29,7 +28,6 @@ export type fetchDataFunction = (options: FetchDataOptions) => Promise<{
 
 export type updateSortingListFunction = (newSortingList: GridProps['sortingList']) => void;
 export type updateFilterListFunction = (newFilterList: GridProps['filterList']) => void;
-export type updateDataFunction = (options: FetchDataOptions) => void;
 export type updateSchemaFunction = (newSchema: Schema) => void;
 export type updateSelectAllFunction = (attr: GridProps['selectAll']) => void;
 export type updateColumnSchemaFunction = (name: ColumnSchema['name'], schemaUpdate: Partial<ColumnSchema>) => void;
@@ -175,7 +173,7 @@ export interface GridProps extends BaseProps {
   /**
    * Callback to be called to get the updated data
    */
-  updateData?: updateDataFunction;
+  updateData?: () => void;
   /**
    * Callback to be called to get the updated data
    */
@@ -301,34 +299,6 @@ export class Grid extends React.Component<GridProps, GridState> {
   };
 
   gridRef: HTMLDivElement | null = null;
-
-  updateRenderedData = debounce(300, (options?: Partial<FetchDataOptions>) => {
-    const {
-      page,
-      pageSize,
-      updateData,
-      withPagination,
-      sortingList,
-      filterList
-    } = this.props;
-
-    const opts = {
-      ...options,
-      page,
-      pageSize,
-      sortingList,
-      filterList
-    };
-
-    if (!withPagination) {
-      delete opts.page;
-      delete opts.pageSize;
-    }
-
-    if (updateData) {
-      updateData(opts);
-    }
-  });
 
   updateRenderedSchema = (newSchema: Schema) => {
     const {

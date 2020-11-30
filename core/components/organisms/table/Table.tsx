@@ -278,6 +278,11 @@ interface SharedTableProps extends BaseProps {
    */
   errorTemplate?: React.FunctionComponent<ErrorTemplateProps>;
   /**
+   * Debounce duration to call updateData in case of search term update
+   * @default 750
+   */
+  searchDebounceDuration: number;
+  /**
    * Callback to be called when a row is clicked in case of Table type: "resource"
    *
    * `onRowClickFunction: (data: RowData, rowIndexes?: number) => void`
@@ -307,12 +312,15 @@ interface SharedTableProps extends BaseProps {
   separator?: GridProps['headCellTooltip'];
   /**
    * Filters position in the Table
+   *
+   * `FilterPosition: 'HEADER' | 'GRID'`
+   * @default 'GRID'
    */
   filterPosition: FilterPosition;
 }
 
-export type SyncTableProps = SyncProps & SharedTableProps;
-export type AsyncTableProps = AsyncProps & SharedTableProps;
+export type SyncTableProps = SharedTableProps & SyncProps;
+export type AsyncTableProps = SharedTableProps & AsyncProps;
 export type TableProps = (AsyncTableProps & SyncTableProps);
 
 interface TableState {
@@ -363,6 +371,7 @@ export const defaultProps = {
   sortingList: [],
   filterList: {},
   filterPosition: 'GRID',
+  searchDebounceDuration: 750,
   errorTemplate: defaultErrorTemplate
 };
 
@@ -394,6 +403,7 @@ export const defaultProps = {
 
 export class Table extends React.Component<TableProps, TableState> {
   static defaultProps = defaultProps;
+  debounceUpdate: () => void;
 
   constructor(props: TableProps) {
     super(props);
@@ -417,6 +427,7 @@ export class Table extends React.Component<TableProps, TableState> {
       searchTerm: undefined,
     };
 
+    this.debounceUpdate = debounce(props.searchDebounceDuration, this.updateDataFn);
     this.updateData();
   }
 
@@ -462,22 +473,27 @@ export class Table extends React.Component<TableProps, TableState> {
         // this.setState({
         //   errorType: errorCount > 1 ? "FAILED_TO_FETCH" : errorType
         // });
-        this.updateData();
+        const searchUpdate = prevState.searchTerm !== this.state.searchTerm;
+        this.updateData(searchUpdate);
       }
     }
   }
 
-  updateData = () => {
+  updateData = (searchUpdate?: boolean) => {
     if (this.state.async) {
       this.setState({
         loading: true
       });
     }
 
-    this.debounceUpdate();
+    if (searchUpdate) {
+      this.debounceUpdate();
+    } else {
+      this.updateDataFn();
+    }
   }
 
-  debounceUpdate = debounce(250, () => {
+  updateDataFn = () => {
     const {
       fetchData,
       pageSize,
@@ -560,7 +576,7 @@ export class Table extends React.Component<TableProps, TableState> {
         data: renderedData,
       });
     }
-  });
+  }
 
   onSelect: onSelectFunction = (rowIndexes, selected) => {
     const {
