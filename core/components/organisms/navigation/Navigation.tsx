@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Text, Icon } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+
 const { useState } = React;
 
 export type LayoutType = 'vertical' | 'horizontal';
@@ -65,6 +66,10 @@ export interface NavigationProps extends BaseProps {
    */
   onClick?: (menu: Menu) => void;
   /**
+   * Makes active menu rounded **(applicable only for type: `vertical` and `expanded` menu)**
+   */
+  rounded: boolean;
+  /**
    * Set expanded state of `Navigation`**(applicable only for type: `vertical`)**
    */
   expanded: boolean;
@@ -93,6 +98,7 @@ export const Navigation = (props: NavigationProps) => {
     active,
     onClick,
     expanded,
+    rounded,
     onToggle,
     footer,
     autoCollapse,
@@ -172,12 +178,22 @@ export const Navigation = (props: NavigationProps) => {
     return false;
   };
 
+  const getTextAppearance = (isMenuActive: boolean, disabled?: boolean) => {
+    return disabled ? 'subtle' : isMenuActive ? 'link' : 'default';
+  };
+
+  const getIconAppearance = (isMenuActive: boolean, disabled?: boolean) => {
+    return disabled ? 'subtle' : isMenuActive ? 'info' : 'default';
+  };
+
   const getHorizontalMenu = (menuData: Menu[]) => {
     const list = menuData.map((menu, index) => {
+      const isMenuActive = isActive(menu);
+
       const menuClasses = classNames({
         'Navigation-menu': true,
         [`Navigation-menu--${type}`]: type,
-        ['Navigation-menu--active']: isActive(menu)
+        ['Navigation-menu--active']: isMenuActive,
       });
 
       return (
@@ -186,10 +202,10 @@ export const Navigation = (props: NavigationProps) => {
             <Icon
               className="mr-3"
               name={menu.icon}
-              appearance={menu.disabled ? 'disabled' : 'default'}
+              appearance={getIconAppearance(isMenuActive, menu.disabled)}
             />
           )}
-          <Text appearance={menu.disabled ? 'subtle' : 'default'}>{menu.label}</Text>
+          <Text appearance={getTextAppearance(isMenuActive, menu.disabled)}>{menu.label}</Text>
         </div>
       );
     });
@@ -199,15 +215,19 @@ export const Navigation = (props: NavigationProps) => {
 
   const getVerticalMenu = () => {
     const list = menus.map((menu, index) => {
+      const activeMenu = expanded && !menuState[menu.name] && isActive(menu);
+      const activeMenuIcon = (!expanded && isActive(menu)) || activeMenu;
+
       const menuClasses = classNames({
         'Navigation-menu': true,
         [`Navigation-menu--${type}`]: type,
-        ['Navigation-menu--active']: expanded && !menuState[menu.name] && isActive(menu)
+        ['Navigation-menu--active']: activeMenu,
+        ['Navigation-menu--rounded']: type === 'vertical' && expanded && rounded,
       });
 
       const menuIconClasses = classNames({
         'Navigation-menuIcon': true,
-        'Navigation-menuIcon--active': !expanded && isActive(menu)
+        'Navigation-menuIcon--active': activeMenuIcon
       });
 
       return (
@@ -220,19 +240,19 @@ export const Navigation = (props: NavigationProps) => {
               <Icon
                 className={menuIconClasses}
                 name={menu.icon}
-                appearance={menu.disabled ? 'disabled' : 'default'}
+                appearance={getIconAppearance(activeMenuIcon, menu.disabled)}
               />
             )}
             {expanded && (
               <>
                 <span className="Navigation-menuLabel">
-                  <Text appearance={menu.disabled ? 'subtle' : 'default'}>{menu.label}</Text>
+                  <Text appearance={getTextAppearance(activeMenu, menu.disabled)}>{menu.label}</Text>
                 </span>
                 {menu.subMenu && menu.subMenu.length > 0 && (
                   <Icon
                     className="mx-4"
                     name={menuState[menu.name] ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
-                    appearance={menu.disabled ? 'disabled' : 'default'}
+                    appearance="subtle"
                   />
                 )}
               </>
@@ -243,9 +263,11 @@ export const Navigation = (props: NavigationProps) => {
               menu.subMenu &&
               expanded &&
               menu.subMenu.map((subMenu, ind) => {
+                const isMenuActive = isActive(subMenu);
+
                 const subMenuClasses = classNames(menuClasses, {
                   ['Navigation-menu--subMenu']: type,
-                  ['Navigation-menu--active']: isActive(subMenu)
+                  ['Navigation-menu--active']: isMenuActive
                 });
 
                 return (
@@ -254,7 +276,9 @@ export const Navigation = (props: NavigationProps) => {
                     className={subMenuClasses}
                     onClick={() => onClickHandler(subMenu)}
                   >
-                    <Text appearance={subMenu.disabled ? 'subtle' : 'default'}>{subMenu.label}</Text>
+                    <Text appearance={getTextAppearance(isMenuActive, subMenu.disabled)}>
+                      {subMenu.label}
+                    </Text>
                   </div>
                 );
               })}
@@ -309,7 +333,8 @@ Navigation.defaultProps = {
   type: 'horizontal',
   align: 'center',
   expanded: true,
-  autoCollapse: true
+  autoCollapse: true,
+  rounded: false
 };
 
 export default Navigation;
