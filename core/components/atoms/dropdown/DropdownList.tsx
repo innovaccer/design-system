@@ -63,6 +63,20 @@ export interface DropdownListProps extends ListProps {
    */
   selectedSectionLabel?: string;
   /**
+   * Label of Apply button
+   *
+   * (visible in case of `withCheckbox` and `showApplyButton`)
+   * @default "Apply"
+   */
+  applyButtonLabel?: string;
+  /**
+   * Label of Cancel button
+   *
+   * (visible in case of `withCheckbox` and `showApplyButton`)
+   * @default "Cancel"
+   */
+  cancelButtonLabel?: string;
+  /**
    * Determines if user can type to search for options (Always true for options count > 50)
    */
   withSearch?: boolean;
@@ -153,6 +167,8 @@ const DropdownList = (props: OptionsProps) => {
     inputRef,
     align = 'right',
     optionType = 'DEFAULT',
+    applyButtonLabel = 'Apply',
+    cancelButtonLabel = 'Cancel',
     truncateOption = true,
     withSelectAll = true,
     maxHeight = 200,
@@ -353,7 +369,7 @@ const DropdownList = (props: OptionsProps) => {
           size={'tiny'}
           tabIndex={-1}
         >
-          Cancel
+          {cancelButtonLabel}
         </Button>
         <Button
           ref={dropdownApplyButtonRef}
@@ -362,7 +378,7 @@ const DropdownList = (props: OptionsProps) => {
           size={'tiny'}
           onClick={onApplyOptions}
         >
-          Apply
+          {applyButtonLabel}
         </Button>
       </div>
     );
