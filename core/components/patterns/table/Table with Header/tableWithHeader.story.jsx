@@ -454,6 +454,8 @@ import './style.css';
       };
   
       this.pageSize = 3;
+      this.searchDebounceDuration = 750;
+      this.debounceUpdate = debounce(this.searchDebounceDuration, this.updateDataFn);
   
       this.updateData();
     }
@@ -471,60 +473,66 @@ import './style.css';
         if (!this.props.loading) this.updateData({});
       }
     }
-  
+
     updateData() {
-      debounce(250, () => {
-        this.onSelect(-1, false);
-    
-        const {
-          fetchData,
-        } = this.props;
-    
-        const {
-          page,
-          sortingList,
-          filterList,
-          searchTerm
-        } = this.state;
-    
-        const {
-          pageSize
-        } = this;
-    
-        const opts = {
-          page,
-          pageSize,
-          sortingList,
-          filterList,
-          searchTerm,
-        };
-    
-        this.setState({
-          loading: true
-        });
-        if (fetchData) {
-          fetchData(opts)
-            .then((res) => {
-              const data = res.data;
-              const schema = this.state.schema.length ? this.state.schema : res.schema;
-              this.setState({
-                data,
-                schema,
-                selectAll: getSelectAll(data),
-                totalRecords: res.count,
-                loading: false,
-                error: !data.length
-              });
-            })
-            .catch(() => {
-              this.setState({
-                loading: false,
-                error: true,
-                data: []
-              });
+      this.setState({
+        loading: true
+      });
+  
+      this.debounceUpdate();
+    }
+  
+    updateDataFn() {
+      this.onSelect(-1, false);
+  
+      const {
+        fetchData,
+      } = this.props;
+  
+      const {
+        page,
+        sortingList,
+        filterList,
+        searchTerm
+      } = this.state;
+  
+      const {
+        pageSize
+      } = this;
+  
+      const opts = {
+        page,
+        pageSize,
+        sortingList,
+        filterList,
+        searchTerm,
+      };
+  
+      this.setState({
+        loading: true
+      });
+      if (fetchData) {
+        fetchData(opts)
+          .then((res) => {
+            const data = res.data;
+            const schema = this.state.schema.length ? this.state.schema : res.schema;
+            this.setState({
+              data,
+              schema,
+              selectAll: getSelectAll(data),
+              totalRecords: res.count,
+              loading: false,
+              error: !data.length
             });
-        }
-      })();
+          })
+          .catch(() => {
+            this.setState({
+              loading: false,
+              error: true,
+              data: []
+            });
+          });
+      }
     }
   
     onSelect(rowIndexes, selected) {
