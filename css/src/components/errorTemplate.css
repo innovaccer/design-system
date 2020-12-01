@@ -1,0 +1,36 @@
+.ErrorTemplate {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+}
+
+.ErrorTemplate-title {
+	text-align: center;
+	max-width: 480px;
+}
+
+.ErrorTemplate-description {
+	text-align: center;
+	margin-top: var(--spacing-m);
+	max-width: 360px;
+}
+
+.ErrorTemplate-title--ERROR,
+.ErrorTemplate-title--NO_CONTENT {
+	margin-top: var(--spacing-4);
+}
+
+.ErrorTemplate-title--NO_SEARCH {
+	margin-top: var(--spacing-xl);
+}
+
+.ErrorTemplate-description--ERROR,
+.ErrorTemplate-description--NO_CONTENT {
+	margin-bottom: var(--spacing-xl);
+}
+
+.ErrorTemplate-description--NO_SEARCH {
+	margin-bottom: var(--spacing-2);
+}
