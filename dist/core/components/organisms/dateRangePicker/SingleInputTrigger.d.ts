@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { DateRangePickerProps, DateRangePickerState } from "./DateRangePicker";
 declare type TriggerProps = {
     inputFormat: DateRangePickerProps['inputFormat'];

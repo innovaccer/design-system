@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { BaseProps } from "../../../utils/types";
 export interface ModalDescriptionProps extends BaseProps {
     title?: string;

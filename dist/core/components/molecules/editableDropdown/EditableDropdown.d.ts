@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { Dropdown } from "../../../index";
 import { DropdownProps } from "../../../index.type";
 import { BaseProps, MakeOptional } from "../../../utils/types";

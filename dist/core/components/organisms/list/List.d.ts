@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { TableProps } from "../../../index.type";
 import { SyncTableProps, AsyncTableProps } from "../table";
 declare type ExcludeTypes = 'showHead' | 'draggable' | 'showMenu' | 'headCellTooltip' | 'filterPosition';
@@ -27,6 +26,7 @@ export declare const List: {
         sortingList: never[];
         filterList: {};
         filterPosition: string;
+        searchDebounceDuration: number;
         errorTemplate: (props: import("../table").ErrorTemplateProps) => JSX.Element;
     };
 };

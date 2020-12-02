@@ -1,4 +1,3 @@
-/// <reference types="react" />
 interface SubtleLinkProps {
     children: string;
     href: string;

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { InputMaskProps } from "../../../index.type";
 import { Validators } from "../../../utils/types";
 export declare type AMPMType = 'AM' | 'PM';

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { BaseProps } from "../../../utils/types";
 import { TooltipProps } from "../../../index.type";
 export declare type Appearance = 'primary' | 'secondary' | 'alert' | 'warning' | 'success' | 'accent1' | 'accent2' | 'accent3' | 'accent4';

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { MultiSliderProps } from "../multiSlider";
 export interface SliderProps extends MultiSliderProps {
     defaultValue: number;

@@ -20,8 +20,11 @@ export interface DropdownListProps extends ListProps {
     selectAllLabel?: string;
     footerLabel?: string;
     selectedSectionLabel?: string;
+    applyButtonLabel?: string;
+    cancelButtonLabel?: string;
     withSearch?: boolean;
     withCheckbox?: boolean;
+    withSelectAll?: boolean;
     showApplyButton?: boolean;
     truncateOption?: boolean;
     totalOptions?: number;
@@ -40,6 +43,7 @@ interface OptionsProps extends DropdownListProps, BaseProps {
     dropdownOpen?: boolean;
     async?: boolean;
     remainingOptions: number;
+    firstEnabledOption: number;
     selected: OptionSchema[];
     tempSelected: OptionSchema[];
     previousSelected: OptionSchema[];

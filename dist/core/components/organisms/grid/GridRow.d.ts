@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { Grid } from "../../../index";
 import { RowData, Schema } from "./Grid";
 export interface GridRowProps {

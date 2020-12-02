@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { BaseProps } from "../../../utils/types";
 import { SharedProps } from "./ChatMessage";
 export interface MessageTextProps extends BaseProps {

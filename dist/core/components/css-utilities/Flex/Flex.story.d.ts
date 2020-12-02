@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export declare const flex: () => JSX.Element;
 declare const _default: {
     title: string;

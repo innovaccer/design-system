@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { Name } from "../chip/Chip";
 import { BaseProps } from "../../../utils/types";
 export interface GenericChipProps extends BaseProps {

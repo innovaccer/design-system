@@ -38,6 +38,7 @@ interface SharedTableProps extends BaseProps {
     sortingList: GridProps['sortingList'];
     filterList: GridProps['filterList'];
     errorTemplate?: React.FunctionComponent<ErrorTemplateProps>;
+    searchDebounceDuration: number;
     onRowClick?: GridProps['onRowClick'];
     onSelect?: (rowIndexes: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean) => void;
     onPageChange?: PaginationProps['onPageChange'];
@@ -45,8 +46,8 @@ interface SharedTableProps extends BaseProps {
     separator?: GridProps['headCellTooltip'];
     filterPosition: FilterPosition;
 }
-export declare type SyncTableProps = SyncProps & SharedTableProps;
-export declare type AsyncTableProps = AsyncProps & SharedTableProps;
+export declare type SyncTableProps = SharedTableProps & SyncProps;
+export declare type AsyncTableProps = SharedTableProps & AsyncProps;
 export declare type TableProps = (AsyncTableProps & SyncTableProps);
 interface TableState {
     async: boolean;
@@ -82,6 +83,7 @@ export declare const defaultProps: {
     sortingList: never[];
     filterList: {};
     filterPosition: string;
+    searchDebounceDuration: number;
     errorTemplate: (props: ErrorTemplateProps) => JSX.Element;
 };
 export declare class Table extends React.Component<TableProps, TableState> {
@@ -105,12 +107,14 @@ export declare class Table extends React.Component<TableProps, TableState> {
         sortingList: never[];
         filterList: {};
         filterPosition: string;
+        searchDebounceDuration: number;
         errorTemplate: (props: ErrorTemplateProps) => JSX.Element;
     };
+    debounceUpdate: () => void;
     constructor(props: TableProps);
     componentDidUpdate(prevProps: TableProps, prevState: TableState): void;
-    updateData: () => void;
-    debounceUpdate: import("throttle-debounce").throttle<() => void>;
+    updateData: (searchUpdate?: boolean | undefined) => void;
+    updateDataFn: () => void;
     onSelect: onSelectFunction;
     onSelectAll: onSelectAllFunction;
     onPageChange: PaginationProps['onPageChange'];

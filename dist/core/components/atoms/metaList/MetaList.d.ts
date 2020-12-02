@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { MetaProps } from "./Meta";
 import { IconProps, TextProps } from "../../../index.type";
 import { BaseProps } from "../../../utils/types";

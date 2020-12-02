@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { BaseProps } from "../../../utils/types";
 import { StatusProps, StatusType } from "./Status";
 import { BoxProps } from "./Box";

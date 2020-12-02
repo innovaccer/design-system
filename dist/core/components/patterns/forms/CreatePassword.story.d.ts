@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export declare const createPassword: () => JSX.Element;
 declare const _default: {
     title: string;

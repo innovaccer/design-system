@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { DropdownProps } from "../../../index.type";
 interface DraggableDropdownProps {
     options: DropdownProps['options'];

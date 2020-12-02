@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { BaseProps } from "../../../utils/types";
 import { Appearance } from "../avatar";
 import { Position, ActionType } from "../../molecules/popover";

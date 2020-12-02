@@ -22,7 +22,6 @@ export declare type fetchDataFunction = (options: FetchDataOptions) => Promise<{
 }>;
 export declare type updateSortingListFunction = (newSortingList: GridProps['sortingList']) => void;
 export declare type updateFilterListFunction = (newFilterList: GridProps['filterList']) => void;
-export declare type updateDataFunction = (options: FetchDataOptions) => void;
 export declare type updateSchemaFunction = (newSchema: Schema) => void;
 export declare type updateSelectAllFunction = (attr: GridProps['selectAll']) => void;
 export declare type updateColumnSchemaFunction = (name: ColumnSchema['name'], schemaUpdate: Partial<ColumnSchema>) => void;
@@ -71,7 +70,7 @@ export interface GridProps extends BaseProps {
     totalRecords: number;
     loading: boolean;
     error: boolean;
-    updateData?: updateDataFunction;
+    updateData?: () => void;
     updateSchema?: updateSchemaFunction;
     showHead?: boolean;
     showMenu?: boolean;
@@ -121,7 +120,6 @@ export declare class Grid extends React.Component<GridProps, GridState> {
         showFilters: boolean;
     };
     gridRef: HTMLDivElement | null;
-    updateRenderedData: import("throttle-debounce").throttle<(options?: Partial<FetchDataOptions> | undefined) => void>;
     updateRenderedSchema: (newSchema: Schema) => void;
     updateColumnSchema: updateColumnSchemaFunction;
     reorderCol: reorderColFunction;

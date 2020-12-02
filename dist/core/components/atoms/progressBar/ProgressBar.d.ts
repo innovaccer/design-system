@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { BaseProps } from "../../../utils/types";
 export interface ProgressBarProps extends BaseProps {
     value: number;

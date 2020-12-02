@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { DatePickerProps, DatePickerState } from "./DatePicker";
 declare type TriggerProps = {
     inputFormat: DatePickerProps['inputFormat'];

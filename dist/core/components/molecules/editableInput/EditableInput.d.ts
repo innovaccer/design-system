@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { InputProps } from "../../../index.type";
 import { BaseProps } from "../../../utils/types";
 export interface EditableInputProps extends BaseProps {

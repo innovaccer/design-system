@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export declare const solidAlert: () => JSX.Element;
 declare const _default: {
     title: string;

@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1605716204596 
+   * Generated on: 1606895705132 
    *      Package: @innovaccer/design-system
-   *      Version: v1.4.0-1
+   *      Version: v1.4.0-2
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -851,7 +851,6 @@
 
     var useEffect = React.useEffect,
         useState = React.useState;
-
     var Backdrop = function Backdrop(props) {
       var className = props.className;
       var baseProps = extractBaseProps(props);
@@ -914,7 +913,6 @@
       })), document.body);
       return BackdropElement;
     };
-
     Backdrop.displayName = 'Backdrop';
 
     var Badge = function Badge(props) {
@@ -1097,6 +1095,9 @@
     var _showSelectedItems = function _showSelectedItems(bulk, searchTerm, withCheckbox) {
       return bulk && withCheckbox && searchTerm === '';
     };
+    var _isSelectAllPresent = function _isSelectAllPresent(searchTerm, bulkOptions, withSelectAll, withCheckbox) {
+      return withCheckbox && withSelectAll && bulkOptions === 0 && searchTerm === '';
+    };
     var scrollTo = function scrollTo(element, top) {
       element.scrollTo(0, top);
     };
@@ -1111,8 +1112,15 @@
         scrollTo(menuElement, focusedElement.offsetTop - overscroll);
       }
     };
-    var getSelectAll = function getSelectAll(selected, optionsLength) {
+    var getSelectAll = function getSelectAll(selected, optionsLength, disabledOptionsLength) {
       if (selected.length) {
+        if (selected.length > 0 && disabledOptionsLength > 0 && selected.length === optionsLength - disabledOptionsLength) {
+          return {
+            indeterminate: true,
+            checked: true
+          };
+        }
+
         var indeterminate = selected.length > 0 && selected.length !== optionsLength;
         var checked = selected.length > 0 && selected.length === optionsLength;
         var obj = {
@@ -1341,7 +1349,8 @@
         htmlFor: id,
         className: CheckboxTextClass
       }, /*#__PURE__*/React.createElement(Text, {
-        size: size === 'tiny' ? 'small' : 'regular'
+        size: size === 'tiny' ? 'small' : 'regular',
+        appearance: disabled ? 'disabled' : 'default'
       }, label.trim())));
     });
     Checkbox.displayName = 'Checkbox';
@@ -1353,13 +1362,16 @@
           onChangeHandler = props.onChangeHandler,
           onUpdateActiveOption = props.onUpdateActiveOption,
           dataTest = props.dataTest;
-      var label = optionData.label;
+      var label = optionData.label,
+          disabled = optionData.disabled;
       return /*#__PURE__*/React.createElement("div", {
         className: className,
         onMouseEnter: onUpdateActiveOption,
-        "data-test": dataTest
+        "data-test": dataTest,
+        "data-disabled": disabled
       }, /*#__PURE__*/React.createElement(Checkbox, {
         label: label,
+        disabled: disabled,
         checked: selected,
         onChange: onChangeHandler,
         tabIndex: -1,
@@ -1372,18 +1384,22 @@
           textClassName = props.textClassName,
           onClickHandler = props.onClickHandler,
           optionData = props.optionData,
+          appearance = props.appearance,
           onUpdateActiveOption = props.onUpdateActiveOption,
           dataTest = props.dataTest;
-      var label = optionData.label;
+      var label = optionData.label,
+          disabled = optionData.disabled;
       return /*#__PURE__*/React.createElement("div", {
         className: className,
         onClick: onClickHandler,
         onMouseEnter: onUpdateActiveOption,
-        "data-test": dataTest
+        "data-test": dataTest,
+        "data-disabled": disabled
       }, /*#__PURE__*/React.createElement("div", {
         className: 'Option-label'
-      }, /*#__PURE__*/React.createElement("div", {
-        className: textClassName
+      }, /*#__PURE__*/React.createElement(Text, {
+        className: textClassName,
+        appearance: appearance
       }, label)));
     };
 
@@ -1394,18 +1410,22 @@
           optionData = props.optionData,
           onUpdateActiveOption = props.onUpdateActiveOption,
           renderSubInfo = props.renderSubInfo,
+          appearance = props.appearance,
           dataTest = props.dataTest;
       var subInfo = optionData.subInfo,
-          label = optionData.label;
+          label = optionData.label,
+          disabled = optionData.disabled;
       return /*#__PURE__*/React.createElement("div", {
         className: className,
         onClick: onClickHandler,
         onMouseEnter: onUpdateActiveOption,
-        "data-test": dataTest
+        "data-test": dataTest,
+        "data-disabled": disabled
       }, /*#__PURE__*/React.createElement("div", {
         className: 'Option-label'
-      }, /*#__PURE__*/React.createElement("div", {
-        className: textClassName
+      }, /*#__PURE__*/React.createElement(Text, {
+        className: textClassName,
+        appearance: appearance
       }, label), subInfo && renderSubInfo(subInfo)));
     };
 
@@ -1414,28 +1434,30 @@
 
       var className = props.className,
           textClassName = props.textClassName,
-          selected = props.selected,
           onClickHandler = props.onClickHandler,
           optionData = props.optionData,
           onUpdateActiveOption = props.onUpdateActiveOption,
-          menu = props.menu,
+          appearance = props.appearance,
           dataTest = props.dataTest;
       var label = optionData.label,
-          icon = optionData.icon;
+          icon = optionData.icon,
+          disabled = optionData.disabled;
       var OptionClass = classNames__default['default']((_a = {}, _a["" + className] = true, _a['Option--icon'] = icon, _a));
       return /*#__PURE__*/React.createElement("div", {
         className: OptionClass,
         onClick: onClickHandler,
         onMouseEnter: onUpdateActiveOption,
-        "data-test": dataTest
+        "data-test": dataTest,
+        "data-disabled": disabled
       }, icon && /*#__PURE__*/React.createElement(Icon, {
         className: "Option-icon mr-4",
         name: icon,
-        appearance: selected && !menu ? 'white' : 'default'
+        appearance: appearance
       }), /*#__PURE__*/React.createElement("div", {
         className: 'Option-label'
-      }, /*#__PURE__*/React.createElement("div", {
-        className: textClassName
+      }, /*#__PURE__*/React.createElement(Text, {
+        className: textClassName,
+        appearance: appearance
       }, label)));
     };
 
@@ -1445,29 +1467,31 @@
       var className = props.className,
           textClassName = props.textClassName,
           renderSubInfo = props.renderSubInfo,
-          selected = props.selected,
           onClickHandler = props.onClickHandler,
           optionData = props.optionData,
           onUpdateActiveOption = props.onUpdateActiveOption,
-          menu = props.menu,
+          appearance = props.appearance,
           dataTest = props.dataTest;
       var subInfo = optionData.subInfo,
           label = optionData.label,
-          icon = optionData.icon;
+          icon = optionData.icon,
+          disabled = optionData.disabled;
       var OptionClass = classNames__default['default']((_a = {}, _a["" + className] = true, _a['Option--icon'] = icon, _a));
       return /*#__PURE__*/React.createElement("div", {
         className: OptionClass,
         onClick: onClickHandler,
         onMouseEnter: onUpdateActiveOption,
-        "data-test": dataTest
+        "data-test": dataTest,
+        "data-disabled": disabled
       }, icon && /*#__PURE__*/React.createElement(Icon, {
         className: "Option-icon mr-4",
         name: icon,
-        appearance: selected && !menu ? 'white' : 'default'
+        appearance: appearance
       }), /*#__PURE__*/React.createElement("div", {
         className: 'Option-label'
-      }, /*#__PURE__*/React.createElement("div", {
-        className: textClassName
+      }, /*#__PURE__*/React.createElement(Text, {
+        className: textClassName,
+        appearance: appearance
       }, label), subInfo && renderSubInfo(subInfo)));
     };
 
@@ -1475,7 +1499,7 @@
     var OptionTypeMapping = (_a$2 = {}, _a$2['DEFAULT'] = DefaultOption, _a$2['WITH_ICON'] = IconOption, _a$2['WITH_META'] = MetaOption, _a$2['WITH_CHECKBOX'] = CheckboxOption, _a$2['ICON_WITH_META'] = IconWithMetaOption, _a$2);
 
     var Option = function Option(props) {
-      var _a, _b, _c;
+      var _a, _b, _c, _d;
 
       var optionData = props.optionData,
           selected = props.selected,
@@ -1486,29 +1510,35 @@
           index = props.index,
           checkboxes = props.checkboxes,
           menu = props.menu;
-      var _d = (optionData.optionType ? optionData : props).optionType,
-          optionType = _d === void 0 ? 'DEFAULT' : _d;
-      var OptionClassName = classNames__default['default']((_a = {}, _a['Option'] = true, _a['OptionWrapper'] = true, _a['Option--active'] = active, _a['Option--selected'] = selected && !menu, _a));
-      var CheckboxClassName = classNames__default['default']((_b = {}, _b['OptionWrapper'] = true, _b['OptionWrapper--active'] = active, _b));
+      var _e = (optionData.optionType ? optionData : props).optionType,
+          optionType = _e === void 0 ? 'DEFAULT' : _e;
+      var disabled = optionData.disabled;
+      var OptionClassName = classNames__default['default']((_a = {}, _a['Option'] = true, _a['Option--active'] = active, _a['Option--selected'] = selected && !menu, _a['Option--disabled'] = disabled, _a['OptionWrapper'] = true, _a));
+      var CheckboxClassName = classNames__default['default']((_b = {}, _b['Option-checkbox'] = true, _b['Option-checkbox--active'] = active, _b['OptionWrapper'] = true, _b));
       var textClassName = classNames__default['default']((_c = {}, _c['Option-text'] = true, _c['Option-text--wrap'] = !props.truncateOption, _c));
+      var customOptionClass = classNames__default['default']((_d = {}, _d['OptionWrapper'] = true, _d['OptionWrapper--disabled'] = disabled, _d));
 
       var onUpdateActiveOption = function onUpdateActiveOption() {
+        if (disabled) return;
         if (updateActiveOption) updateActiveOption(index);
       };
 
       var onClickHandler = function onClickHandler(e) {
+        if (disabled) return;
         e.stopPropagation();
         if (onClick) onClick();
       };
 
       var onChangeHandler = function onChangeHandler(e) {
+        if (disabled) return;
         e.stopPropagation();
         if (onChange) onChange(e);
       };
 
       if (props.optionRenderer) {
         return /*#__PURE__*/React.createElement("div", __assign({
-          className: "OptionWrapper",
+          className: customOptionClass,
+          "data-disabled": disabled,
           onMouseEnter: onUpdateActiveOption
         }, !checkboxes && {
           onClick: onClick
@@ -1522,7 +1552,7 @@
       }
 
       var renderSubInfo = function renderSubInfo(subInfo) {
-        var labelAppearance = selected ? 'white' : 'subtle';
+        var labelAppearance = disabled ? 'disabled' : selected ? 'white' : 'subtle';
         var iconAppearance = selected ? 'white' : 'disabled';
 
         if (typeof subInfo === 'string') {
@@ -1543,14 +1573,16 @@
         });
       };
 
+      var appearance = disabled ? 'disabled' : selected && !menu ? 'white' : 'default';
       var type = checkboxes ? 'WITH_CHECKBOX' : optionType;
       var component = OptionTypeMapping[type];
       return component({
-        menu: menu,
         selected: selected,
+        index: index,
         renderSubInfo: renderSubInfo,
         optionData: optionData,
         textClassName: textClassName,
+        appearance: appearance,
         onClickHandler: onClickHandler,
         onChangeHandler: onChangeHandler,
         onUpdateActiveOption: onUpdateActiveOption,
@@ -1894,15 +1926,22 @@
           align = _f === void 0 ? 'right' : _f,
           _g = props.optionType,
           optionType = _g === void 0 ? 'DEFAULT' : _g,
-          _h = props.truncateOption,
-          truncateOption = _h === void 0 ? true : _h,
-          _j = props.maxHeight,
-          maxHeight = _j === void 0 ? 200 : _j,
+          _h = props.applyButtonLabel,
+          applyButtonLabel = _h === void 0 ? 'Apply' : _h,
+          _j = props.cancelButtonLabel,
+          cancelButtonLabel = _j === void 0 ? 'Cancel' : _j,
+          _k = props.truncateOption,
+          truncateOption = _k === void 0 ? true : _k,
+          _l = props.withSelectAll,
+          withSelectAll = _l === void 0 ? true : _l,
+          _m = props.maxHeight,
+          maxHeight = _m === void 0 ? 200 : _m,
           customTrigger = props.customTrigger,
           selected = props.selected,
           tempSelected = props.tempSelected,
           previousSelected = props.previousSelected,
           remainingOptions = props.remainingOptions,
+          firstEnabledOption = props.firstEnabledOption,
           dropdownOpen = props.dropdownOpen,
           menu = props.menu,
           searchTerm = props.searchTerm,
@@ -1922,13 +1961,13 @@
       var dropdownCancelButtonRef = /*#__PURE__*/React.createRef();
       var dropdownApplyButtonRef = /*#__PURE__*/React.createRef();
 
-      var _k = React.useState(),
-          popoverStyle = _k[0],
-          setPopoverStyle = _k[1];
+      var _o = React.useState(),
+          popoverStyle = _o[0],
+          setPopoverStyle = _o[1];
 
-      var _l = React.useState(0),
-          cursor = _l[0],
-          setCursor = _l[1];
+      var _p = React.useState(firstEnabledOption),
+          cursor = _p[0],
+          setCursor = _p[1];
 
       React.useEffect(function () {
         var _a;
@@ -1947,10 +1986,13 @@
           setPopoverStyle(popperWrapperStyle);
         }
       }, [dropdownOpen]);
-      var _m = props.triggerSize,
-          triggerSize = _m === void 0 ? 'regular' : _m,
-          _o = props.placeholder,
-          placeholder = _o === void 0 ? 'Select' : _o,
+      React.useEffect(function () {
+        if (firstEnabledOption !== cursor) setCursor(firstEnabledOption);
+      }, [firstEnabledOption]);
+      var _q = props.triggerSize,
+          triggerSize = _q === void 0 ? 'regular' : _q,
+          _r = props.placeholder,
+          placeholder = _r === void 0 ? 'Select' : _r,
           icon = props.icon,
           error = props.error,
           disabled = props.disabled,
@@ -1993,14 +2035,14 @@
 
       var dropdownClass = classNames__default['default']((_a = {}, _a['Dropdown'] = true, _a), className);
       var dropdownWrapperClass = classNames__default['default']((_b = {}, _b['Dropdown-wrapper'] = true, _b['Dropdown-wrapper--wrap'] = !truncateOption, _b));
-      var SelectAllClass = classNames__default['default']((_c = {}, _c['OptionWrapper'] = true, _c['OptionWrapper--active'] = cursor === 0, _c));
+      var SelectAllClass = classNames__default['default']((_c = {}, _c['Option-checkbox'] = true, _c['Option-checkbox--active'] = cursor === 0, _c['OptionWrapper'] = true, _c));
 
       var onToggleDropdown = function onToggleDropdown(open, type) {
         var _a;
 
         toggleDropdown(open, type);
         if (!disabled) (_a = dropdownTriggerRef.current) === null || _a === void 0 ? void 0 : _a.focus();
-        setCursor(0);
+        setCursor(firstEnabledOption);
       };
 
       var onCancelOptions = function onCancelOptions() {
@@ -2025,17 +2067,17 @@
       };
 
       var searchClearHandler = function searchClearHandler() {
-        setCursor(0);
+        setCursor(firstEnabledOption);
         if (onSearchChange && searchTerm) onSearchChange('');
       };
 
       var searchHandler = function searchHandler(event) {
-        setCursor(0);
+        setCursor(firstEnabledOption);
         if (onSearchChange) onSearchChange(event.target.value);
       };
 
       var updateActiveOption = function updateActiveOption(index, parentCheckbox) {
-        var updatedIndex = withCheckbox && !props.async && !parentCheckbox ? index + 1 : index;
+        var updatedIndex = withCheckbox && withSelectAll && !props.async && !parentCheckbox ? index + 1 : index;
         setCursor(updatedIndex);
       };
 
@@ -2052,6 +2094,9 @@
 
       var renderGroups = function renderGroups(group, selectedGroup) {
         var onClearOptions = props.onClearOptions;
+        var isClearDisabled = selected.every(function (option) {
+          return option.disabled;
+        });
         return /*#__PURE__*/React.createElement("div", {
           className: getDropdownSectionClass(selectedGroup)
         }, /*#__PURE__*/React.createElement(Text, {
@@ -2059,6 +2104,7 @@
           appearance: 'subtle'
         }, group), selectedGroup && /*#__PURE__*/React.createElement(Button, {
           onClick: onClearOptions,
+          disabled: isClearDisabled,
           appearance: "transparent",
           size: "tiny"
         }, "Clear"));
@@ -2076,13 +2122,13 @@
           onClick: onCancelOptions,
           size: 'tiny',
           tabIndex: -1
-        }, "Cancel"), /*#__PURE__*/React.createElement(Button, {
+        }, cancelButtonLabel), /*#__PURE__*/React.createElement(Button, {
           ref: dropdownApplyButtonRef,
           appearance: 'primary',
           disabled: disable,
           size: 'tiny',
           onClick: onApplyOptions
-        }, "Apply"));
+        }, applyButtonLabel));
       };
 
       var renderSearch = function renderSearch() {
@@ -2141,7 +2187,8 @@
       };
 
       var renderOptions = function renderOptions(item, index) {
-        var selectAllPresent = withCheckbox && remainingOptions === 0 && searchTerm === '';
+        var selectAllPresent = _isSelectAllPresent(searchTerm, remainingOptions, withSelectAll, withCheckbox);
+
         var active = selectAllPresent ? index + 1 === cursor : index === cursor;
         var optionIsSelected = tempSelected.findIndex(function (option) {
           return option.value === item.value;
@@ -2173,6 +2220,8 @@
             loadersCount = _b === void 0 ? 10 : _b,
             loadingOptions = props.loadingOptions;
 
+        var selectAllPresent = _isSelectAllPresent(searchTerm, remainingOptions, withSelectAll, withCheckbox);
+
         if (loadersCount && loadingOptions) {
           return /*#__PURE__*/React.createElement("div", {
             className: 'Dropdown-loading'
@@ -2198,7 +2247,7 @@
           className: dropdownWrapperClass,
           style: dropdownStyle,
           ref: dropdownRef
-        }, withCheckbox && remainingOptions === 0 && searchTerm === '' && renderSelectAll(), selected.length > 0 && renderGroups(selectedSectionLabel, true), selected.map(function (option, index) {
+        }, selectAllPresent && renderSelectAll(), selected.length > 0 && renderGroups(selectedSectionLabel, true), selected.map(function (option, index) {
           return renderOptions(option, index);
         }), listOptions.map(function (option, index) {
           var prevGroup = index > 0 ? listOptions[index - 1].group : selected.length ? selectedSectionLabel : undefined;
@@ -2213,11 +2262,27 @@
       };
 
       var focusOption = function focusOption(direction, classes) {
-        var updatedCursor = direction === 'down' ? cursor + 1 : cursor - 1;
         var elements = document.querySelectorAll(classes);
-        var element = elements[updatedCursor];
-        if (element) scrollIntoView(dropdownRef.current, element);
-        if (element !== undefined) setCursor(updatedCursor);
+        var updatedCursor = direction === 'down' ? cursor + 1 : cursor - 1;
+        var startIndex = updatedCursor;
+        var endIndex = direction === 'down' ? elements.length : -1;
+
+        while (startIndex !== endIndex) {
+          var node = elements[startIndex];
+
+          if (node.getAttribute('data-disabled') !== 'true') {
+            var element = elements[startIndex];
+            if (element) scrollIntoView(dropdownRef.current, element);
+            if (element !== undefined) setCursor(startIndex);
+            break;
+          }
+
+          if (direction === 'down') {
+            startIndex++;
+          } else {
+            startIndex--;
+          }
+        }
       };
 
       var onkeydown = function onkeydown(event) {
@@ -2311,6 +2376,16 @@
       function Dropdown(props) {
         var _this = _super.call(this, props) || this;
 
+        _this.getDisabledOptions = function (options) {
+          if (options === void 0) {
+            options = [];
+          }
+
+          return options.filter(function (option) {
+            return option.disabled;
+          });
+        };
+
         _this.fetchOptionsFunction = function (searchTerm) {
           var options = _this.props.options;
           var filteredOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
@@ -2382,6 +2457,8 @@
             var selectedGroup = searchTerm === '' ? _this.getSelectedOptions(options, init) : [];
             var optionsLength = searchTerm === '' ? count : _this.state.optionsLength;
 
+            var disabledOptions = _this.getDisabledOptions(unSelectedGroup.slice(0, bulk));
+
             _this.setState(__assign(__assign({}, _this.state), {
               optionsLength: optionsLength,
               loading: false,
@@ -2392,7 +2469,7 @@
               previousSelected: init ? selectedGroup : previousSelected,
               selected: _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? selectedGroup : [],
               triggerLabel: _this.updateTriggerLabel(init ? selectedGroup : tempSelected),
-              selectAll: !updatedAsync && init ? getSelectAll(selectedGroup, optionsLength) : selectAll
+              selectAll: !updatedAsync && init ? getSelectAll(selectedGroup, optionsLength, disabledOptions.length) : selectAll
             }));
 
             if (updatedAsync || withSearch) (_a = inputRef.current) === null || _a === void 0 ? void 0 : _a.focus();
@@ -2421,15 +2498,18 @@
               optionsLength = _c.optionsLength,
               async = _c.async,
               loading = _c.loading,
-              searchTerm = _c.searchTerm;
+              searchTerm = _c.searchTerm,
+              options = _c.options;
           var popperIsOpen = _isOpenControlled(_this.props.open) ? _this.props.open : _this.state.open;
+
+          var disabledOptionsCount = _this.getDisabledOptions(options).length;
 
           if (withCheckbox && showApplyButton) {
             var temporarySelected = _isControlled(_this.props.selected) ? selected : previousSelected;
 
             _this.setState({
               tempSelected: temporarySelected,
-              selectAll: getSelectAll(temporarySelected, optionsLength),
+              selectAll: getSelectAll(temporarySelected, optionsLength, disabledOptionsCount),
               triggerLabel: _this.updateTriggerLabel(temporarySelected)
             });
           }
@@ -2504,13 +2584,20 @@
               closeOnSelect = _b.closeOnSelect,
               name = _b.name,
               onPopperToggle = _b.onPopperToggle;
-          var isClearClicked = selectedArray.length === 0 && selected.length > 0;
           var updatePreviousSelected = withCheckbox && showApplyButton && isControlled;
+
+          var disabledOptions = _this.getDisabledOptions(_this.state.options);
+
+          var isClearClicked = selectedArray.length === 0 && selected.length > 0 || selectedArray.every(function (option) {
+            return option.disabled;
+          }) && !selected.every(function (option) {
+            return option.disabled;
+          });
 
           _this.setState(__assign(__assign({}, _this.state), {
             tempSelected: selectedArray,
             triggerLabel: _this.updateTriggerLabel(selectedArray),
-            selectAll: getSelectAll(selectedArray, optionsLength),
+            selectAll: getSelectAll(selectedArray, optionsLength, disabledOptions.length),
             open: _isOpenControlled(_this.props.open) || withCheckbox ? open : !closeOnSelect,
             previousSelected: updatePreviousSelected ? selectedArray : previousSelected,
             selected: isClearClicked ? selectedArray : selected,
@@ -2576,13 +2663,22 @@
               onUpdate = _a.onUpdate,
               selected = _a.selected,
               showApplyButton = _a.showApplyButton;
+          var _b = _this.state,
+              tempSelected = _b.tempSelected,
+              options = _b.options;
 
           if (_isControlled(selected) && !showApplyButton) {
             if (onUpdate) onUpdate(event.target.checked ? 'select-all' : 'deselect-all');
             return;
           }
 
-          var selectedArray = event.target.checked ? _this.state.options : [];
+          var selectedArr = tempSelected.slice();
+          var selectedDisabledArray = selectedArr.filter(function (option) {
+            return option.disabled;
+          });
+          var selectedArray = event.target.checked ? __spreadArrays(options.filter(function (option) {
+            return !option.disabled;
+          }), selectedDisabledArray) : selectedDisabledArray;
 
           _this.updateSelectedOptions(selectedArray, false);
         };
@@ -2605,6 +2701,10 @@
               onUpdate = _a.onUpdate,
               showApplyButton = _a.showApplyButton,
               onChange = _a.onChange;
+          var tempSelected = _this.state.tempSelected;
+          var selectedArray = tempSelected.filter(function (option) {
+            return option.disabled;
+          });
 
           if (_isControlled(selected) && !showApplyButton) {
             if (onUpdate) onUpdate('clear-all');
@@ -2612,15 +2712,15 @@
           }
 
           _this.setState({
-            selected: [],
-            tempSelected: [],
+            selected: selectedArray,
+            tempSelected: selectedArray,
             triggerLabel: '',
             loading: true
           });
 
           _this.debounceClear();
 
-          if (onChange && !showApplyButton) onChange([], name);
+          if (onChange && !showApplyButton) onChange(selectedArray, name);
         };
 
         _this.onTogglePopper = function (type) {
@@ -2656,9 +2756,11 @@
 
           var label = _this.updateTriggerLabel(previousSelected);
 
+          var disabledOptions = _this.getDisabledOptions(_this.state.options);
+
           _this.setState(__assign(__assign({}, _this.state), {
             tempSelected: previousSelected,
-            selectAll: getSelectAll(previousSelected, optionsLength),
+            selectAll: getSelectAll(previousSelected, optionsLength, disabledOptions.length),
             triggerLabel: label,
             open: popperIsOpen
           }));
@@ -2737,6 +2839,9 @@
         var optionsLength = totalOptions ? totalOptions : options.length;
         var async = 'fetchOptions' in _this.props || optionsLength > bulk;
         var selectedGroup = !async ? _this.getSelectedOptions(options, true) : [];
+
+        var disabledOptions = _this.getDisabledOptions(options);
+
         _this.state = {
           async: async,
           optionsLength: optionsLength,
@@ -2751,7 +2856,7 @@
           previousSelected: selectedGroup,
           selected: _showSelectedItems(async, '', withCheckbox) ? selected : [],
           triggerLabel: _this.updateTriggerLabel(selectedGroup, optionsLength),
-          selectAll: getSelectAll(selectedGroup, optionsLength)
+          selectAll: getSelectAll(selectedGroup, optionsLength, disabledOptions.length)
         };
         if (async) _this.updateOptions(true);
         return _this;
@@ -2767,6 +2872,7 @@
               _c = _b.options,
               options = _c === void 0 ? [] : _c,
               withSearch = _b.withSearch;
+          var disabledOptionsCount = this.getDisabledOptions(options).length;
 
           if (prevProps.loading !== loading && !fetchOptions) {
             if (options.length > bulk) {
@@ -2781,7 +2887,7 @@
                 optionsLength: options.length,
                 searchedOptionsLength: options.length,
                 triggerLabel: this.updateTriggerLabel(selectedGroup),
-                selectAll: getSelectAll(selectedGroup, this.state.optionsLength)
+                selectAll: getSelectAll(selectedGroup, this.state.optionsLength, disabledOptionsCount)
               }));
               if (withSearch) (_a = inputRef.current) === null || _a === void 0 ? void 0 : _a.focus();
             }
@@ -2816,18 +2922,26 @@
             selectAll = _a.selectAll,
             triggerLabel = _a.triggerLabel,
             previousSelected = _a.previousSelected;
-
         var _b = this.props,
-            _c = _b.triggerOptions,
-            triggerOptions = _c === void 0 ? {} : _c,
-            selected = _b.selected,
-            rest = __rest(_b, ["triggerOptions", "selected"]);
+            _c = _b.withSelectAll,
+            withSelectAll = _c === void 0 ? true : _c,
+            withCheckbox = _b.withCheckbox;
+
+        var _d = this.props,
+            _e = _d.triggerOptions,
+            triggerOptions = _e === void 0 ? {} : _e,
+            selected = _d.selected,
+            rest = __rest(_d, ["triggerOptions", "selected"]);
 
         var remainingOptionsLen = searchedOptionsLength - options.length;
+        var firstEnabledOption = _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox) ? 0 : options.findIndex(function (option) {
+          return !option.disabled;
+        });
         return /*#__PURE__*/React.createElement(DropdownList, __assign({
           listOptions: options,
           inputRef: inputRef,
           remainingOptions: remainingOptionsLen,
+          firstEnabledOption: firstEnabledOption,
           loadingOptions: loading,
           async: async,
           searchInit: searchInit,
@@ -5339,7 +5453,8 @@
         className: "Radio-label",
         htmlFor: id
       }, /*#__PURE__*/React.createElement(Text, {
-        size: size === 'tiny' ? 'small' : 'regular'
+        size: size === 'tiny' ? 'small' : 'regular',
+        appearance: disabled ? 'disabled' : 'default'
       }, label)));
     });
     Radio.displayName = 'Radio';
@@ -8917,31 +9032,6 @@
         var _this_1 = _super.call(this, props) || this;
 
         _this_1.gridRef = null;
-        _this_1.updateRenderedData = debounce(300, function (options) {
-          var _a = _this_1.props,
-              page = _a.page,
-              pageSize = _a.pageSize,
-              updateData = _a.updateData,
-              withPagination = _a.withPagination,
-              sortingList = _a.sortingList,
-              filterList = _a.filterList;
-
-          var opts = __assign(__assign({}, options), {
-            page: page,
-            pageSize: pageSize,
-            sortingList: sortingList,
-            filterList: filterList
-          });
-
-          if (!withPagination) {
-            delete opts.page;
-            delete opts.pageSize;
-          }
-
-          if (updateData) {
-            updateData(opts);
-          }
-        });
 
         _this_1.updateRenderedSchema = function (newSchema) {
           var updateSchema = _this_1.props.updateSchema;
@@ -9660,6 +9750,7 @@
       sortingList: [],
       filterList: {},
       filterPosition: 'GRID',
+      searchDebounceDuration: 750,
       errorTemplate: defaultErrorTemplate
     };
 
@@ -9669,17 +9760,21 @@
       function Table(props) {
         var _this = _super.call(this, props) || this;
 
-        _this.updateData = function () {
+        _this.updateData = function (searchUpdate) {
           if (_this.state.async) {
             _this.setState({
               loading: true
             });
           }
 
-          _this.debounceUpdate();
+          if (searchUpdate) {
+            _this.debounceUpdate();
+          } else {
+            _this.updateDataFn();
+          }
         };
 
-        _this.debounceUpdate = debounce(250, function () {
+        _this.updateDataFn = function () {
           var _a = _this.props,
               fetchData = _a.fetchData,
               pageSize = _a.pageSize,
@@ -9754,7 +9849,7 @@
               data: renderedData
             });
           }
-        });
+        };
 
         _this.onSelect = function (rowIndexes, selected) {
           var data = _this.state.data;
@@ -9856,6 +9951,7 @@
           selectAll: getSelectAll$1([]),
           searchTerm: undefined
         };
+        _this.debounceUpdate = debounce(props.searchDebounceDuration, _this.updateDataFn);
 
         _this.updateData();
 
@@ -9894,7 +9990,8 @@
 
         if (prevState.page !== this.state.page || prevState.filterList !== this.state.filterList || prevState.sortingList !== this.state.sortingList || prevState.searchTerm !== this.state.searchTerm) {
           if (!this.props.loading) {
-            this.updateData();
+            var searchUpdate = prevState.searchTerm !== this.state.searchTerm;
+            this.updateData(searchUpdate);
           }
         }
       };
@@ -10002,6 +10099,7 @@
           active = props.active,
           onClick = props.onClick,
           expanded = props.expanded,
+          rounded = props.rounded,
           onToggle = props.onToggle,
           footer = props.footer,
           autoCollapse = props.autoCollapse,
@@ -10088,13 +10186,22 @@
         return false;
       };
 
+      var getTextAppearance = function getTextAppearance(isMenuActive, disabled) {
+        return disabled ? 'subtle' : isMenuActive ? 'link' : 'default';
+      };
+
+      var getIconAppearance = function getIconAppearance(isMenuActive, disabled) {
+        return disabled ? 'subtle' : isMenuActive ? 'info' : 'default';
+      };
+
       var getHorizontalMenu = function getHorizontalMenu(menuData) {
         var list = menuData.map(function (menu, index) {
           var _a;
 
+          var isMenuActive = isActive(menu);
           var menuClasses = classNames__default['default']((_a = {
             'Navigation-menu': true
-          }, _a["Navigation-menu--" + type] = type, _a['Navigation-menu--active'] = isActive(menu), _a));
+          }, _a["Navigation-menu--" + type] = type, _a['Navigation-menu--active'] = isMenuActive, _a));
           return /*#__PURE__*/React.createElement("div", {
             key: index,
             className: menuClasses,
@@ -10104,9 +10211,9 @@
           }, menu.icon && /*#__PURE__*/React.createElement(Icon, {
             className: "mr-3",
             name: menu.icon,
-            appearance: menu.disabled ? 'disabled' : 'default'
+            appearance: getIconAppearance(isMenuActive, menu.disabled)
           }), /*#__PURE__*/React.createElement(Text, {
-            appearance: menu.disabled ? 'subtle' : 'default'
+            appearance: getTextAppearance(isMenuActive, menu.disabled)
           }, menu.label));
         });
         return list;
@@ -10118,12 +10225,14 @@
         var list = menus.map(function (menu, index) {
           var _a;
 
+          var activeMenu = expanded && !menuState[menu.name] && isActive(menu);
+          var activeMenuIcon = !expanded && isActive(menu) || activeMenu;
           var menuClasses = classNames__default['default']((_a = {
             'Navigation-menu': true
-          }, _a["Navigation-menu--" + type] = type, _a['Navigation-menu--active'] = expanded && !menuState[menu.name] && isActive(menu), _a));
+          }, _a["Navigation-menu--" + type] = type, _a['Navigation-menu--active'] = activeMenu, _a['Navigation-menu--rounded'] = type === 'vertical' && expanded && rounded, _a));
           var menuIconClasses = classNames__default['default']({
             'Navigation-menuIcon': true,
-            'Navigation-menuIcon--active': !expanded && isActive(menu)
+            'Navigation-menuIcon--active': activeMenuIcon
           });
           return /*#__PURE__*/React.createElement("div", {
             key: index
@@ -10135,21 +10244,22 @@
           }, menu.icon && /*#__PURE__*/React.createElement(Icon, {
             className: menuIconClasses,
             name: menu.icon,
-            appearance: menu.disabled ? 'disabled' : 'default'
+            appearance: getIconAppearance(activeMenuIcon, menu.disabled)
           }), expanded && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
             className: "Navigation-menuLabel"
           }, /*#__PURE__*/React.createElement(Text, {
-            appearance: menu.disabled ? 'subtle' : 'default'
+            appearance: getTextAppearance(activeMenu, menu.disabled)
           }, menu.label)), menu.subMenu && menu.subMenu.length > 0 && /*#__PURE__*/React.createElement(Icon, {
             className: "mx-4",
             name: menuState[menu.name] ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
-            appearance: menu.disabled ? 'disabled' : 'default'
+            appearance: "subtle"
           }))), /*#__PURE__*/React.createElement("div", {
             className: "Navigation-subMenu"
           }, menuState[menu.name] && menu.subMenu && expanded && menu.subMenu.map(function (subMenu, ind) {
             var _a;
 
-            var subMenuClasses = classNames__default['default'](menuClasses, (_a = {}, _a['Navigation-menu--subMenu'] = type, _a['Navigation-menu--active'] = isActive(subMenu), _a));
+            var isMenuActive = isActive(subMenu);
+            var subMenuClasses = classNames__default['default'](menuClasses, (_a = {}, _a['Navigation-menu--subMenu'] = type, _a['Navigation-menu--active'] = isMenuActive, _a));
             return /*#__PURE__*/React.createElement("div", {
               key: ind,
               className: subMenuClasses,
@@ -10157,7 +10267,7 @@
                 return onClickHandler(subMenu);
               }
             }, /*#__PURE__*/React.createElement(Text, {
-              appearance: subMenu.disabled ? 'subtle' : 'default'
+              appearance: getTextAppearance(isMenuActive, subMenu.disabled)
             }, subMenu.label));
           })));
         });
@@ -10187,7 +10297,8 @@
       type: 'horizontal',
       align: 'center',
       expanded: true,
-      autoCollapse: true
+      autoCollapse: true,
+      rounded: false
     };
 
     var PageHeader = function PageHeader(props) {

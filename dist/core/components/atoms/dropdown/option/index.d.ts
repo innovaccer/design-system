@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { MetaListProps } from "../../../../index.type";
+import { MetaListProps, IconProps, TextProps } from "../../../../index.type";
 import { OptionType } from "../DropdownList";
 export declare type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 export declare type ClickEvent = React.MouseEvent<HTMLDivElement>;
@@ -14,6 +14,7 @@ export interface OptionSchema {
     subInfo?: string | MetaListProps;
     optionType?: OptionType;
     selected?: boolean;
+    disabled?: boolean;
     group?: string;
 }
 export interface OptionTypeProps {
@@ -22,7 +23,8 @@ export interface OptionTypeProps {
     dataTest?: string;
     optionData: OptionSchema;
     selected: boolean;
-    menu?: boolean;
+    appearance: IconProps['appearance'] & TextProps['appearance'];
+    index: number;
     onUpdateActiveOption: () => void;
     onClickHandler?: (event: ClickEvent) => void;
     onChangeHandler?: (event: ChangeEvent) => void;

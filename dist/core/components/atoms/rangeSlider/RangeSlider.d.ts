@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { MultiSliderProps } from "../multiSlider";
 export declare type NumberRange = [number, number];
 export interface RangeSliderProps extends MultiSliderProps {

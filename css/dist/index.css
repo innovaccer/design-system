@@ -1821,7 +1821,7 @@ body {
 }
 
 .Option--active,
-.OptionWrapper--active {
+.Option-checkbox--active {
     background-color: var(--secondary-lightest);
     cursor: pointer;
 }
@@ -1832,7 +1832,11 @@ body {
 
 .Option--selected {
     background-color: var(--primary);
-    color: var(--white);
+    pointer-events: none;
+}
+
+.Option--disabled,
+.OptionWrapper--disabled {
     pointer-events: none;
 }
 
@@ -3037,7 +3041,7 @@ body {
 }
 
 .Navigation-menu--active {
-  background: var(--secondary-light);
+  background: var(--primary-lightest);
 }
 
 .Navigation-menu--vertical {
@@ -3048,6 +3052,10 @@ body {
   margin-bottom: var(--spacing-m);
   /* margin-right: var(--spacing); */
   border-radius: 0px var(--spacing-2) var(--spacing-2) 0px;
+}
+
+.Navigation-menu--rounded {
+  border-radius: var(--spacing-2);
 }
 
 .Navigation-menu--subMenu {
@@ -3064,7 +3072,7 @@ body {
 }
 
 .Navigation-menuIcon--active {
-  background: var(--secondary-light);
+  background: var(--primary-lightest);
 }
 
 .Navigation-menuLabel {

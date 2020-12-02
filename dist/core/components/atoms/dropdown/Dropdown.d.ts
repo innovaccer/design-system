@@ -68,6 +68,7 @@ export declare class Dropdown extends React.Component<DropdownProps, DropdownSta
     };
     constructor(props: DropdownProps);
     componentDidUpdate(prevProps: DropdownProps, prevState: DropdownState): void;
+    getDisabledOptions: (options?: Option[]) => Option[];
     fetchOptionsFunction: (searchTerm: string) => Promise<any>;
     getUnSelectedOptions: (options: Option[], init: boolean) => Option[];
     getSelectedOptions: (options: Option[], init: boolean) => Option[];

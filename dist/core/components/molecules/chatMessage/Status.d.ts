@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { BaseProps } from "../../../utils/types";
 export declare type StatusType = 'failed' | 'sending' | 'sent' | 'read' | 'urgent';
 export interface StatusProps extends BaseProps {

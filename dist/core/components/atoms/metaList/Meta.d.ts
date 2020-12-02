@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { IconProps, TextProps } from "../../../index.type";
 export interface MetaProps {
     label: string;
