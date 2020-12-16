@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1606895705132 
+   * Generated on: 1608107543756 
    *      Package: @innovaccer/design-system
-   *      Version: v1.4.0-2
+   *      Version: v1.4.0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -759,7 +759,7 @@
           _h = popoverOptions.popperClassName,
           popperClassName = _h === void 0 ? '' : _h;
       var baseProps = extractBaseProps(props);
-      var extraAvatars = list.length > max ? list.length - max : 0;
+      var extraAvatars = list.length > max ? list.length - max > 9 ? 9 : list.length - max : 0;
       var style = {
         borderRadius: '50%',
         backgroundColor: "" + borderColor,
@@ -6916,6 +6916,55 @@
     };
     ChatMessage.displayName = 'ChatMessage';
 
+    var defaultImageHeight = {
+      NO_CONTENT: '256px',
+      NO_SEARCH: '128px',
+      ERROR: '256px'
+    };
+    var HeadingSize = {
+      NO_CONTENT: 'l',
+      NO_SEARCH: 'm',
+      ERROR: 'l'
+    };
+    var textSize = {
+      NO_CONTENT: 'large',
+      NO_SEARCH: 'regular',
+      ERROR: 'large'
+    };
+    var ErrorTemplate = function ErrorTemplate(props) {
+      var _a, _b, _c;
+
+      var image = props.image,
+          title = props.title,
+          description = props.description,
+          templateType = props.templateType,
+          children = props.children,
+          className = props.className;
+      var _d = image.height,
+          height = _d === void 0 ? defaultImageHeight[templateType] : _d,
+          imageClassName = image.className,
+          src = image.src;
+      var baseProps = extractBaseProps(props);
+      var WrapperClass = classNames__default['default']((_a = {}, _a['ErrorTemplate'] = true, _a), className);
+      var HeadingClass = classNames__default['default']((_b = {}, _b['ErrorTemplate-title'] = true, _b["ErrorTemplate-title--" + templateType] = true, _b));
+      var TextClass = classNames__default['default']((_c = {}, _c['ErrorTemplate-description'] = true, _c["ErrorTemplate-description--" + templateType] = children !== undefined, _c));
+      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+        className: WrapperClass
+      }), /*#__PURE__*/React.createElement("img", {
+        src: src,
+        height: height,
+        className: imageClassName
+      }), /*#__PURE__*/React.createElement(Heading, {
+        size: HeadingSize[templateType],
+        className: HeadingClass
+      }, title), /*#__PURE__*/React.createElement(Text, {
+        size: textSize[templateType],
+        className: TextClass,
+        appearance: "subtle"
+      }, description), children && children);
+    };
+    ErrorTemplate.displayName = 'ErrorTemplate';
+
     var useRef = React.useRef,
         useEffect$1 = React.useEffect,
         useState$1 = React.useState;
@@ -10381,6 +10430,7 @@
     exports.Dropdown = Dropdown;
     exports.EditableDropdown = EditableDropdown;
     exports.EditableInput = EditableInput;
+    exports.ErrorTemplate = ErrorTemplate;
     exports.Grid = Grid;
     exports.GridCell = GridCell;
     exports.Heading = Heading;

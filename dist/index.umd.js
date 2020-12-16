@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1606895704758 
+   * Generated on: 1608107543415 
    *      Package: @innovaccer/design-system
-   *      Version: v1.4.0-2
+   *      Version: v1.4.0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -624,145 +624,6 @@
 
   var objectKeys = keysShim$1;
 
-  var hasToStringTag = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
-  var toStr$2 = Object.prototype.toString;
-
-  var isStandardArguments = function isArguments(value) {
-  	if (hasToStringTag && value && typeof value === 'object' && Symbol.toStringTag in value) {
-  		return false;
-  	}
-  	return toStr$2.call(value) === '[object Arguments]';
-  };
-
-  var isLegacyArguments = function isArguments(value) {
-  	if (isStandardArguments(value)) {
-  		return true;
-  	}
-  	return value !== null &&
-  		typeof value === 'object' &&
-  		typeof value.length === 'number' &&
-  		value.length >= 0 &&
-  		toStr$2.call(value) !== '[object Array]' &&
-  		toStr$2.call(value.callee) === '[object Function]';
-  };
-
-  var supportsStandardArguments = (function () {
-  	return isStandardArguments(arguments);
-  }());
-
-  isStandardArguments.isLegacyArguments = isLegacyArguments; // for tests
-
-  var isArguments$1 = supportsStandardArguments ? isStandardArguments : isLegacyArguments;
-
-  var hasSymbols = typeof Symbol === 'function' && typeof Symbol('foo') === 'symbol';
-
-  var toStr$3 = Object.prototype.toString;
-  var concat = Array.prototype.concat;
-  var origDefineProperty = Object.defineProperty;
-
-  var isFunction = function (fn) {
-  	return typeof fn === 'function' && toStr$3.call(fn) === '[object Function]';
-  };
-
-  var arePropertyDescriptorsSupported = function () {
-  	var obj = {};
-  	try {
-  		origDefineProperty(obj, 'x', { enumerable: false, value: obj });
-  		// eslint-disable-next-line no-unused-vars, no-restricted-syntax
-  		for (var _ in obj) { // jscs:ignore disallowUnusedVariables
-  			return false;
-  		}
-  		return obj.x === obj;
-  	} catch (e) { /* this is IE 8. */
-  		return false;
-  	}
-  };
-  var supportsDescriptors = origDefineProperty && arePropertyDescriptorsSupported();
-
-  var defineProperty$1 = function (object, name, value, predicate) {
-  	if (name in object && (!isFunction(predicate) || !predicate())) {
-  		return;
-  	}
-  	if (supportsDescriptors) {
-  		origDefineProperty(object, name, {
-  			configurable: true,
-  			enumerable: false,
-  			value: value,
-  			writable: true
-  		});
-  	} else {
-  		object[name] = value;
-  	}
-  };
-
-  var defineProperties = function (object, map) {
-  	var predicates = arguments.length > 2 ? arguments[2] : {};
-  	var props = objectKeys(map);
-  	if (hasSymbols) {
-  		props = concat.call(props, Object.getOwnPropertySymbols(map));
-  	}
-  	for (var i = 0; i < props.length; i += 1) {
-  		defineProperty$1(object, props[i], map[props[i]], predicates[props[i]]);
-  	}
-  };
-
-  defineProperties.supportsDescriptors = !!supportsDescriptors;
-
-  var defineProperties_1 = defineProperties;
-
-  /* eslint no-invalid-this: 1 */
-
-  var ERROR_MESSAGE = 'Function.prototype.bind called on incompatible ';
-  var slice$1 = Array.prototype.slice;
-  var toStr$4 = Object.prototype.toString;
-  var funcType = '[object Function]';
-
-  var implementation$1 = function bind(that) {
-      var target = this;
-      if (typeof target !== 'function' || toStr$4.call(target) !== funcType) {
-          throw new TypeError(ERROR_MESSAGE + target);
-      }
-      var args = slice$1.call(arguments, 1);
-
-      var bound;
-      var binder = function () {
-          if (this instanceof bound) {
-              var result = target.apply(
-                  this,
-                  args.concat(slice$1.call(arguments))
-              );
-              if (Object(result) === result) {
-                  return result;
-              }
-              return this;
-          } else {
-              return target.apply(
-                  that,
-                  args.concat(slice$1.call(arguments))
-              );
-          }
-      };
-
-      var boundLength = Math.max(0, target.length - args.length);
-      var boundArgs = [];
-      for (var i = 0; i < boundLength; i++) {
-          boundArgs.push('$' + i);
-      }
-
-      bound = Function('binder', 'return function (' + boundArgs.join(',') + '){ return binder.apply(this,arguments); }')(binder);
-
-      if (target.prototype) {
-          var Empty = function Empty() {};
-          Empty.prototype = target.prototype;
-          bound.prototype = new Empty();
-          Empty.prototype = null;
-      }
-
-      return bound;
-  };
-
-  var functionBind = Function.prototype.bind || implementation$1;
-
   /* eslint complexity: [2, 18], max-statements: [2, 33] */
   var shams = function hasSymbols() {
   	if (typeof Symbol !== 'function' || typeof Object.getOwnPropertySymbols !== 'function') { return false; }
@@ -807,7 +668,7 @@
   var origSymbol = commonjsGlobal.Symbol;
 
 
-  var hasSymbols$1 = function hasNativeSymbols() {
+  var hasSymbols = function hasNativeSymbols() {
   	if (typeof origSymbol !== 'function') { return false; }
   	if (typeof Symbol !== 'function') { return false; }
   	if (typeof origSymbol('foo') !== 'symbol') { return false; }
@@ -815,6 +676,59 @@
 
   	return shams();
   };
+
+  /* eslint no-invalid-this: 1 */
+
+  var ERROR_MESSAGE = 'Function.prototype.bind called on incompatible ';
+  var slice$1 = Array.prototype.slice;
+  var toStr$2 = Object.prototype.toString;
+  var funcType = '[object Function]';
+
+  var implementation$1 = function bind(that) {
+      var target = this;
+      if (typeof target !== 'function' || toStr$2.call(target) !== funcType) {
+          throw new TypeError(ERROR_MESSAGE + target);
+      }
+      var args = slice$1.call(arguments, 1);
+
+      var bound;
+      var binder = function () {
+          if (this instanceof bound) {
+              var result = target.apply(
+                  this,
+                  args.concat(slice$1.call(arguments))
+              );
+              if (Object(result) === result) {
+                  return result;
+              }
+              return this;
+          } else {
+              return target.apply(
+                  that,
+                  args.concat(slice$1.call(arguments))
+              );
+          }
+      };
+
+      var boundLength = Math.max(0, target.length - args.length);
+      var boundArgs = [];
+      for (var i = 0; i < boundLength; i++) {
+          boundArgs.push('$' + i);
+      }
+
+      bound = Function('binder', 'return function (' + boundArgs.join(',') + '){ return binder.apply(this,arguments); }')(binder);
+
+      if (target.prototype) {
+          var Empty = function Empty() {};
+          Empty.prototype = target.prototype;
+          bound.prototype = new Empty();
+          Empty.prototype = null;
+      }
+
+      return bound;
+  };
+
+  var functionBind = Function.prototype.bind || implementation$1;
 
   var src = functionBind.call(Function.call, Object.prototype.hasOwnProperty);
 
@@ -869,7 +783,7 @@
   	}())
   	: throwTypeError;
 
-  var hasSymbols$2 = hasSymbols$1();
+  var hasSymbols$1 = hasSymbols();
 
   var getProto = Object.getPrototypeOf || function (x) { return x.__proto__; }; // eslint-disable-line no-proto
 
@@ -883,7 +797,7 @@
   	'%AggregateError%': typeof AggregateError === 'undefined' ? undefined$1 : AggregateError,
   	'%Array%': Array,
   	'%ArrayBuffer%': typeof ArrayBuffer === 'undefined' ? undefined$1 : ArrayBuffer,
-  	'%ArrayIteratorPrototype%': hasSymbols$2 ? getProto([][Symbol.iterator]()) : undefined$1,
+  	'%ArrayIteratorPrototype%': hasSymbols$1 ? getProto([][Symbol.iterator]()) : undefined$1,
   	'%AsyncFromSyncIteratorPrototype%': undefined$1,
   	'%AsyncFunction%': getEvalledConstructor('async function () {}'),
   	'%AsyncGenerator%': asyncGenFunctionPrototype,
@@ -911,10 +825,10 @@
   	'%Int32Array%': typeof Int32Array === 'undefined' ? undefined$1 : Int32Array,
   	'%isFinite%': isFinite,
   	'%isNaN%': isNaN,
-  	'%IteratorPrototype%': hasSymbols$2 ? getProto(getProto([][Symbol.iterator]())) : undefined$1,
+  	'%IteratorPrototype%': hasSymbols$1 ? getProto(getProto([][Symbol.iterator]())) : undefined$1,
   	'%JSON%': typeof JSON === 'object' ? JSON : undefined$1,
   	'%Map%': typeof Map === 'undefined' ? undefined$1 : Map,
-  	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols$2 ? undefined$1 : getProto(new Map()[Symbol.iterator]()),
+  	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols$1 ? undefined$1 : getProto(new Map()[Symbol.iterator]()),
   	'%Math%': Math,
   	'%Number%': Number,
   	'%Object%': Object,
@@ -927,11 +841,11 @@
   	'%Reflect%': typeof Reflect === 'undefined' ? undefined$1 : Reflect,
   	'%RegExp%': RegExp,
   	'%Set%': typeof Set === 'undefined' ? undefined$1 : Set,
-  	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols$2 ? undefined$1 : getProto(new Set()[Symbol.iterator]()),
+  	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols$1 ? undefined$1 : getProto(new Set()[Symbol.iterator]()),
   	'%SharedArrayBuffer%': typeof SharedArrayBuffer === 'undefined' ? undefined$1 : SharedArrayBuffer,
   	'%String%': String,
-  	'%StringIteratorPrototype%': hasSymbols$2 ? getProto(''[Symbol.iterator]()) : undefined$1,
-  	'%Symbol%': hasSymbols$2 ? Symbol : undefined$1,
+  	'%StringIteratorPrototype%': hasSymbols$1 ? getProto(''[Symbol.iterator]()) : undefined$1,
+  	'%Symbol%': hasSymbols$1 ? Symbol : undefined$1,
   	'%SyntaxError%': $SyntaxError,
   	'%ThrowTypeError%': ThrowTypeError,
   	'%TypedArray%': TypedArray,
@@ -1144,6 +1058,104 @@
   });
   var callBind_1 = callBind.apply;
 
+  var $indexOf = callBind(getIntrinsic('String.prototype.indexOf'));
+
+  var callBound = function callBoundIntrinsic(name, allowMissing) {
+  	var intrinsic = getIntrinsic(name, !!allowMissing);
+  	if (typeof intrinsic === 'function' && $indexOf(name, '.prototype.') > -1) {
+  		return callBind(intrinsic);
+  	}
+  	return intrinsic;
+  };
+
+  var hasToStringTag = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
+
+
+  var $toString = callBound('Object.prototype.toString');
+
+  var isStandardArguments = function isArguments(value) {
+  	if (hasToStringTag && value && typeof value === 'object' && Symbol.toStringTag in value) {
+  		return false;
+  	}
+  	return $toString(value) === '[object Arguments]';
+  };
+
+  var isLegacyArguments = function isArguments(value) {
+  	if (isStandardArguments(value)) {
+  		return true;
+  	}
+  	return value !== null &&
+  		typeof value === 'object' &&
+  		typeof value.length === 'number' &&
+  		value.length >= 0 &&
+  		$toString(value) !== '[object Array]' &&
+  		$toString(value.callee) === '[object Function]';
+  };
+
+  var supportsStandardArguments = (function () {
+  	return isStandardArguments(arguments);
+  }());
+
+  isStandardArguments.isLegacyArguments = isLegacyArguments; // for tests
+
+  var isArguments$1 = supportsStandardArguments ? isStandardArguments : isLegacyArguments;
+
+  var hasSymbols$2 = typeof Symbol === 'function' && typeof Symbol('foo') === 'symbol';
+
+  var toStr$3 = Object.prototype.toString;
+  var concat = Array.prototype.concat;
+  var origDefineProperty = Object.defineProperty;
+
+  var isFunction = function (fn) {
+  	return typeof fn === 'function' && toStr$3.call(fn) === '[object Function]';
+  };
+
+  var arePropertyDescriptorsSupported = function () {
+  	var obj = {};
+  	try {
+  		origDefineProperty(obj, 'x', { enumerable: false, value: obj });
+  		// eslint-disable-next-line no-unused-vars, no-restricted-syntax
+  		for (var _ in obj) { // jscs:ignore disallowUnusedVariables
+  			return false;
+  		}
+  		return obj.x === obj;
+  	} catch (e) { /* this is IE 8. */
+  		return false;
+  	}
+  };
+  var supportsDescriptors = origDefineProperty && arePropertyDescriptorsSupported();
+
+  var defineProperty$1 = function (object, name, value, predicate) {
+  	if (name in object && (!isFunction(predicate) || !predicate())) {
+  		return;
+  	}
+  	if (supportsDescriptors) {
+  		origDefineProperty(object, name, {
+  			configurable: true,
+  			enumerable: false,
+  			value: value,
+  			writable: true
+  		});
+  	} else {
+  		object[name] = value;
+  	}
+  };
+
+  var defineProperties = function (object, map) {
+  	var predicates = arguments.length > 2 ? arguments[2] : {};
+  	var props = objectKeys(map);
+  	if (hasSymbols$2) {
+  		props = concat.call(props, Object.getOwnPropertySymbols(map));
+  	}
+  	for (var i = 0; i < props.length; i += 1) {
+  		defineProperty$1(object, props[i], map[props[i]], predicates[props[i]]);
+  	}
+  };
+
+  defineProperties.supportsDescriptors = !!supportsDescriptors;
+
+  var defineProperties_1 = defineProperties;
+
   var numberIsNaN = function (value) {
   	return value !== value;
   };
@@ -1185,7 +1197,7 @@
 
   var objectIs = polyfill$1;
 
-  var hasSymbols$3 = hasSymbols$1();
+  var hasSymbols$3 = hasSymbols();
   var hasToStringTag$1 = hasSymbols$3 && typeof Symbol.toStringTag === 'symbol';
   var hasOwnProperty;
   var regexExec;
@@ -1210,7 +1222,7 @@
   	}
   }
 
-  var toStr$5 = Object.prototype.toString;
+  var toStr$4 = Object.prototype.toString;
   var gOPD = Object.getOwnPropertyDescriptor;
   var regexClass = '[object RegExp]';
 
@@ -1239,7 +1251,7 @@
   			return false;
   		}
 
-  		return toStr$5.call(value) === regexClass;
+  		return toStr$4.call(value) === regexClass;
   	};
 
   /* globals
@@ -1278,7 +1290,7 @@
   	}())
   	: throwTypeError$1;
 
-  var hasSymbols$4 = hasSymbols$1();
+  var hasSymbols$4 = hasSymbols();
 
   var getProto$1 = Object.getPrototypeOf || function (x) { return x.__proto__; }; // eslint-disable-line no-proto
   var generatorFunction =  undefined$2;
@@ -1589,7 +1601,7 @@
   	}
   };
 
-  var toStr$6 = Object.prototype.toString;
+  var toStr$5 = Object.prototype.toString;
   var dateClass = '[object Date]';
   var hasToStringTag$2 = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
 
@@ -1597,7 +1609,7 @@
   	if (typeof value !== 'object' || value === null) {
   		return false;
   	}
-  	return hasToStringTag$2 ? tryDateObject(value) : toStr$6.call(value) === dateClass;
+  	return hasToStringTag$2 ? tryDateObject(value) : toStr$5.call(value) === dateClass;
   };
 
   var getTime = Date.prototype.getTime;
@@ -4329,11 +4341,11 @@
    * LICENSE file in the root directory of this source tree.
    */
   var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
-  Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x$1=b?Symbol.for("react.responder"):60118,y$1=b?Symbol.for("react.scope"):60119;
+  Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
   function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}var AsyncMode=l;var ConcurrentMode=m;var ContextConsumer=k;var ContextProvider=h;var Element$1=c;var ForwardRef=n;var Fragment=e;var Lazy=t;var Memo=r;var Portal=d;
   var Profiler=g;var StrictMode=f;var Suspense=p;var isAsyncMode=function(a){return A(a)||z(a)===l};var isConcurrentMode=A;var isContextConsumer=function(a){return z(a)===k};var isContextProvider=function(a){return z(a)===h};var isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};var isForwardRef=function(a){return z(a)===n};var isFragment=function(a){return z(a)===e};var isLazy=function(a){return z(a)===t};
   var isMemo=function(a){return z(a)===r};var isPortal=function(a){return z(a)===d};var isProfiler=function(a){return z(a)===g};var isStrictMode=function(a){return z(a)===f};var isSuspense=function(a){return z(a)===p};
-  var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w||a.$$typeof===x$1||a.$$typeof===y$1||a.$$typeof===v)};var typeOf=z;
+  var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};var typeOf=z;
 
   var reactIs_production_min = {
   	AsyncMode: AsyncMode,
@@ -4573,10 +4585,10 @@
   }
   });
 
-  var key$1 = '__global_unique_id__';
+  var key = '__global_unique_id__';
 
   var gud = function() {
-    return commonjsGlobal[key$1] = (commonjsGlobal[key$1] || 0) + 1;
+    return commonjsGlobal[key] = (commonjsGlobal[key] || 0) + 1;
   };
 
   /**
@@ -5872,7 +5884,7 @@
         _popoverOptions$poppe = popoverOptions.popperClassName,
         popperClassName = _popoverOptions$poppe === void 0 ? '' : _popoverOptions$poppe;
     var baseProps = extractBaseProps(props);
-    var extraAvatars = list.length > max ? list.length - max : 0;
+    var extraAvatars = list.length > max ? list.length - max > 9 ? 9 : list.length - max : 0;
     var style = {
       borderRadius: '50%',
       backgroundColor: "".concat(borderColor),
@@ -10490,9 +10502,9 @@
       // ES6 (in case, if modules with ES6 Number statics required before):
       'EPSILON,isFinite,isInteger,isNaN,isSafeInteger,MAX_SAFE_INTEGER,' +
       'MIN_SAFE_INTEGER,parseFloat,parseInt,isInteger'
-    ).split(','), j = 0, key$2; keys.length > j; j++) {
-      if (_has(Base, key$2 = keys[j]) && !_has($Number, key$2)) {
-        dP$1($Number, key$2, gOPD$3(Base, key$2));
+    ).split(','), j = 0, key$1; keys.length > j; j++) {
+      if (_has(Base, key$1 = keys[j]) && !_has($Number, key$1)) {
+        dP$1($Number, key$1, gOPD$3(Base, key$1));
       }
     }
     $Number.prototype = proto;
@@ -14808,17 +14820,17 @@
     return new Linear(context);
   }
 
-  function x$2(p) {
+  function x$1(p) {
     return p[0];
   }
 
-  function y$2(p) {
+  function y$1(p) {
     return p[1];
   }
 
   function shapeLine() {
-    var x = x$2,
-        y = y$2,
+    var x = x$1,
+        y = y$1,
         defined = constant(true),
         context = null,
         curve = curveLinear,
@@ -14868,10 +14880,10 @@
   }
 
   function shapeArea() {
-    var x0 = x$2,
+    var x0 = x$1,
         x1 = null,
         y0 = constant(0),
-        y1 = y$2,
+        y1 = y$1,
         defined = constant(true),
         context = null,
         curve = curveLinear,
@@ -16315,10 +16327,10 @@
     , raf = root$1['request' + suffix]
     , caf = root$1['cancel' + suffix] || root$1['cancelRequest' + suffix];
 
-  for(var i$1 = 0; !raf && i$1 < vendors.length; i$1++) {
-    raf = root$1[vendors[i$1] + 'Request' + suffix];
-    caf = root$1[vendors[i$1] + 'Cancel' + suffix]
-        || root$1[vendors[i$1] + 'CancelRequest' + suffix];
+  for(var i = 0; !raf && i < vendors.length; i++) {
+    raf = root$1[vendors[i] + 'Request' + suffix];
+    caf = root$1[vendors[i] + 'Cancel' + suffix]
+        || root$1[vendors[i] + 'CancelRequest' + suffix];
   }
 
   // Some versions of FF have rAF but not cAF
@@ -23026,7 +23038,8 @@
   function tokenize(string) {
     var nodes = [];
     var length = string.length;
-    for (i = 0; i < length; i++) {
+    var key, x, y;
+    for (var i = 0; i < length; i++) {
       if (i < length - 1 && string[i] === ' ' && string[i + 1] === ' ') {
         continue
       }
@@ -41691,6 +41704,55 @@
   };
   ChatMessage.displayName = 'ChatMessage';
 
+  var defaultImageHeight = {
+    NO_CONTENT: '256px',
+    NO_SEARCH: '128px',
+    ERROR: '256px'
+  };
+  var HeadingSize = {
+    NO_CONTENT: 'l',
+    NO_SEARCH: 'm',
+    ERROR: 'l'
+  };
+  var textSize = {
+    NO_CONTENT: 'large',
+    NO_SEARCH: 'regular',
+    ERROR: 'large'
+  };
+  var ErrorTemplate = function ErrorTemplate(props) {
+    var _classNames2, _classNames3;
+
+    var image = props.image,
+        title = props.title,
+        description = props.description,
+        templateType = props.templateType,
+        children = props.children,
+        className = props.className;
+    var _image$height = image.height,
+        height = _image$height === void 0 ? defaultImageHeight[templateType] : _image$height,
+        imageClassName = image.className,
+        src = image.src;
+    var baseProps = extractBaseProps(props);
+    var WrapperClass = classnames(_defineProperty({}, 'ErrorTemplate', true), className);
+    var HeadingClass = classnames((_classNames2 = {}, _defineProperty(_classNames2, 'ErrorTemplate-title', true), _defineProperty(_classNames2, "ErrorTemplate-title--".concat(templateType), true), _classNames2));
+    var TextClass = classnames((_classNames3 = {}, _defineProperty(_classNames3, 'ErrorTemplate-description', true), _defineProperty(_classNames3, "ErrorTemplate-description--".concat(templateType), children !== undefined), _classNames3));
+    return /*#__PURE__*/React.createElement("div", _extends({}, baseProps, {
+      className: WrapperClass
+    }), /*#__PURE__*/React.createElement("img", {
+      src: src,
+      height: height,
+      className: imageClassName
+    }), /*#__PURE__*/React.createElement(Heading, {
+      size: HeadingSize[templateType],
+      className: HeadingClass
+    }, title), /*#__PURE__*/React.createElement(Text, {
+      size: textSize[templateType],
+      className: TextClass,
+      appearance: "subtle"
+    }, description), children && children);
+  };
+  ErrorTemplate.displayName = 'ErrorTemplate';
+
   var useRef = React.useRef,
       useEffect$1 = React.useEffect,
       useState$1 = React.useState;
@@ -45294,6 +45356,7 @@
   exports.Dropdown = Dropdown;
   exports.EditableDropdown = EditableDropdown;
   exports.EditableInput = EditableInput;
+  exports.ErrorTemplate = ErrorTemplate;
   exports.Grid = Grid;
   exports.GridCell = GridCell;
   exports.Heading = Heading;

@@ -237,7 +237,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/avatarGroup/AvatarGroup.tsx": {
-        "version": "41f4398ff54fdd05c4f876fe7ca76936fa85a411c9d505397b22b0be7c5b30d4",
+        "version": "a181ed3925ea381b76facfa2401a1dfcc1e21f98a343689d38d787a3b6ec8a8d",
         "signature": "2fe4856a2d7776392bfbe5d9813046b2c6abeb93aea96067a80396233c73493f",
         "affectsGlobalScope": false
       },
@@ -577,8 +577,8 @@
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/recharts/index.d.ts": {
-        "version": "824e877d96c44dd13f39516b3702236157a464c8932fb86d4a73516449a43c56",
-        "signature": "824e877d96c44dd13f39516b3702236157a464c8932fb86d4a73516449a43c56",
+        "version": "b42931d3316a5567901230db8fb828990aa2ba57cd292e677b9d434f1b163429",
+        "signature": "b42931d3316a5567901230db8fb828990aa2ba57cd292e677b9d434f1b163429",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/donutChart/DonutChart.tsx": {
@@ -921,6 +921,16 @@
         "signature": "1dba2d13e2fa825420e0113039a846d70659446752421299af1fca92352dd372",
         "affectsGlobalScope": false
       },
+      "../../core/components/molecules/errorTemplate/ErrorTemplate.tsx": {
+        "version": "b20c3aeee2de27a10945f9fb59105cae74da331f5aa260570a37a2ac538876d5",
+        "signature": "b59c01e8fee05c2be31a89a6b3b2cfa99cf083a6865f2c4f15e8529b102358d2",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/errorTemplate/index.tsx": {
+        "version": "aedcfee312b82dd0207ad1f689969534254cfbddb90a0411a55d31dc9a1323db",
+        "signature": "6cfa4c095178d46564bc4f3e4454e26259525102aac6a59bd1cbe57f2d00a5e6",
+        "affectsGlobalScope": false
+      },
       "../../core/components/molecules/modalBody/ModalBody.tsx": {
         "version": "82c7bfc9797634fd7b02e839be6e3b90108dd846f3a344fceb4430dea82188a6",
         "signature": "59738b44687ead94b21f723a0071f7eba6b8b9f0e54eb705e2ce38d87b00b052",
@@ -1137,8 +1147,8 @@
         "affectsGlobalScope": false
       },
       "../../core/index.type.tsx": {
-        "version": "5294fa5a49d85a2e2fcd5c7fe44d2c2c16bab40d60e70f4324923fcba9ff858a",
-        "signature": "5949f10cc5fa17b96826b4c27200d3c17455abeda022c25b834d6b85a38f1d3c",
+        "version": "dfa4664f607d69c4b6b37ec90d20481ca4e37b92c7c280545d02157e5a6d02f4",
+        "signature": "1f33d2252e1b3b3b1cef43ddc4e2b313692378f2d271604013819d50df845d73",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/timePicker/TimePicker.tsx": {
@@ -1167,8 +1177,8 @@
         "affectsGlobalScope": false
       },
       "../../core/index.tsx": {
-        "version": "b431de3ccdc365801f373bb24a4164a81995bb015ed65d41c2c15edb365d1a1e",
-        "signature": "a45d3baaf890537531873a92f49a5a7bd36dc6f006656da8c298b34ae2212de5",
+        "version": "b57eb98bffd50140d9eaec46ca119d38d7a461995c54a9097fd6c87f4db1620e",
+        "signature": "a2ee934c40f508b900971a0fc60539d7e5f0cf5b9d89e83b8a187264ae11b6f2",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/badge/_stories_/SolidAlert.story.tsx": {
@@ -1902,8 +1912,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/globals.d.ts": {
-        "version": "cdbd1c3e0c329abaa9442d3dd8b62699464a26b2e8e36fbde362bd4e7d490f16",
-        "signature": "cdbd1c3e0c329abaa9442d3dd8b62699464a26b2e8e36fbde362bd4e7d490f16",
+        "version": "215d8d9a2c480fd460127edc048d68d9931d3b27f95132253a6e71975f060bb1",
+        "signature": "215d8d9a2c480fd460127edc048d68d9931d3b27f95132253a6e71975f060bb1",
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/node/async_hooks.d.ts": {
@@ -1937,8 +1947,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/crypto.d.ts": {
-        "version": "c5ecc351d5eaa36dc682b4c398b57a9d37c108857b71a09464a06e0185831ac2",
-        "signature": "c5ecc351d5eaa36dc682b4c398b57a9d37c108857b71a09464a06e0185831ac2",
+        "version": "2636f61a2d5f76d4039c7110f65c407a028ec5265e03d855fc2cf62b198ac415",
+        "signature": "2636f61a2d5f76d4039c7110f65c407a028ec5265e03d855fc2cf62b198ac415",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/dgram.d.ts": {
@@ -2057,8 +2067,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/tls.d.ts": {
-        "version": "a0545ca910ec6b318b8e1d63813c980c3be44824cf217b6477a56fbe9c7927d5",
-        "signature": "a0545ca910ec6b318b8e1d63813c980c3be44824cf217b6477a56fbe9c7927d5",
+        "version": "c52eb62e3388a01b966c57bd14ca0ee9d5f6e656d6a18f6ce6b7cdece63734a3",
+        "signature": "c52eb62e3388a01b966c57bd14ca0ee9d5f6e656d6a18f6ce6b7cdece63734a3",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/trace_events.d.ts": {
@@ -2122,8 +2132,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/assert.d.ts": {
-        "version": "00a0faaea871db3288a11ce92bbed248ea2473a5bfd174d222011cde800ce397",
-        "signature": "00a0faaea871db3288a11ce92bbed248ea2473a5bfd174d222011cde800ce397",
+        "version": "6fbe72eed85e363ad83b763e03be824558c6ea7456c7259a48bcf0afdeb9d7e4",
+        "signature": "6fbe72eed85e363ad83b763e03be824558c6ea7456c7259a48bcf0afdeb9d7e4",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/base.d.ts": {
@@ -2216,9 +2226,9 @@
         "signature": "17ce4c8c90dd63282e4ff0d6a90fb4c86244293d77a1eaa23947dbe4e8b66eb5",
         "affectsGlobalScope": false
       },
-      "../../node_modules/@babel/types/lib/index-ts3.7.d.ts": {
-        "version": "e77c996592700733c33bd5e342896226ab32898c085b86dc8512128a9cd114e8",
-        "signature": "e77c996592700733c33bd5e342896226ab32898c085b86dc8512128a9cd114e8",
+      "../../node_modules/@babel/types/lib/index.d.ts": {
+        "version": "bcb65ca77412000e1f33384efbbb615a8dac55aca6aa06a4552b01e7c8cd6577",
+        "signature": "bcb65ca77412000e1f33384efbbb615a8dac55aca6aa06a4552b01e7c8cd6577",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/babel__generator/index.d.ts": {
@@ -2227,8 +2237,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/babel__traverse/index.d.ts": {
-        "version": "5d90a58a1bd934430ebffce5844631ff7e77085d6f242d975f7b5e5fc4de6ce0",
-        "signature": "5d90a58a1bd934430ebffce5844631ff7e77085d6f242d975f7b5e5fc4de6ce0",
+        "version": "8a278bfba7b081cd849434c1130655046639ae90617a682436ed6954e2b57403",
+        "signature": "8a278bfba7b081cd849434c1130655046639ae90617a682436ed6954e2b57403",
         "affectsGlobalScope": false
       },
       "../../node_modules/@babel/parser/typings/babel-parser.d.ts": {
@@ -2247,8 +2257,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/cheerio/index.d.ts": {
-        "version": "4bb076d48d0dc20d1970b7df2b1e1545a12b1ac6f1fc628f0cc297f311aeb04f",
-        "signature": "4bb076d48d0dc20d1970b7df2b1e1545a12b1ac6f1fc628f0cc297f311aeb04f",
+        "version": "46f663eeae291f61998423a4f6c95a1184c6ed72167ed37ab0db5bfb7b3349b9",
+        "signature": "46f663eeae291f61998423a4f6c95a1184c6ed72167ed37ab0db5bfb7b3349b9",
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/enzyme/index.d.ts": {
@@ -2506,6 +2516,12 @@
           "core/*"
         ],
         "*": [
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
           "*",
           "*",
           "*",
@@ -3900,6 +3916,16 @@
       "../../core/components/molecules/editableInput/index.tsx": [
         "../../core/components/molecules/editableInput/EditableInput.tsx"
       ],
+      "../../core/components/molecules/errorTemplate/ErrorTemplate.tsx": [
+        "../../core/index.tsx",
+        "../../core/index.type.tsx",
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/classnames/index.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/molecules/errorTemplate/index.tsx": [
+        "../../core/components/molecules/errorTemplate/ErrorTemplate.tsx"
+      ],
       "../../core/components/molecules/inputMask/InputMask.tsx": [
         "../../core/components/molecules/inputMask/utilites.tsx",
         "../../core/index.tsx",
@@ -4334,6 +4360,7 @@
         "../../core/components/molecules/dialog/index.tsx",
         "../../core/components/molecules/editableDropdown/index.tsx",
         "../../core/components/molecules/editableInput/index.tsx",
+        "../../core/components/molecules/errorTemplate/index.tsx",
         "../../core/components/molecules/inputMask/index.tsx",
         "../../core/components/molecules/modal/index.tsx",
         "../../core/components/molecules/modalBody/index.tsx",
@@ -4401,6 +4428,7 @@
         "../../core/components/molecules/dialog/index.tsx",
         "../../core/components/molecules/editableDropdown/index.tsx",
         "../../core/components/molecules/editableInput/index.tsx",
+        "../../core/components/molecules/errorTemplate/index.tsx",
         "../../core/components/molecules/inputMask/index.tsx",
         "../../core/components/molecules/modal/index.tsx",
         "../../core/components/molecules/modalBody/index.tsx",
@@ -4459,7 +4487,7 @@
         "../../core/utils/types.tsx"
       ],
       "../../node_modules/@babel/parser/typings/babel-parser.d.ts": [
-        "../../node_modules/@babel/types/lib/index-ts3.7.d.ts"
+        "../../node_modules/@babel/types/lib/index.d.ts"
       ],
       "../../node_modules/@emotion/cache/types/index.d.ts": [
         "../../node_modules/@emotion/stylis/types/index.d.ts",
@@ -4733,20 +4761,20 @@
       ],
       "../../node_modules/@types/babel__core/index.d.ts": [
         "../../node_modules/@babel/parser/typings/babel-parser.d.ts",
-        "../../node_modules/@babel/types/lib/index-ts3.7.d.ts",
+        "../../node_modules/@babel/types/lib/index.d.ts",
         "../../node_modules/@types/babel__generator/index.d.ts",
         "../../node_modules/@types/babel__template/index.d.ts",
         "../../node_modules/@types/babel__traverse/index.d.ts"
       ],
       "../../node_modules/@types/babel__generator/index.d.ts": [
-        "../../node_modules/@babel/types/lib/index-ts3.7.d.ts"
+        "../../node_modules/@babel/types/lib/index.d.ts"
       ],
       "../../node_modules/@types/babel__template/index.d.ts": [
         "../../node_modules/@babel/parser/typings/babel-parser.d.ts",
-        "../../node_modules/@babel/types/lib/index-ts3.7.d.ts"
+        "../../node_modules/@babel/types/lib/index.d.ts"
       ],
       "../../node_modules/@types/babel__traverse/index.d.ts": [
-        "../../node_modules/@babel/types/lib/index-ts3.7.d.ts"
+        "../../node_modules/@babel/types/lib/index.d.ts"
       ],
       "../../node_modules/@types/cheerio/index.d.ts": [
         "../../node_modules/@types/node/index.d.ts"
@@ -5238,7 +5266,7 @@
     },
     "exportedModulesMap": {
       "../../node_modules/@babel/parser/typings/babel-parser.d.ts": [
-        "../../node_modules/@babel/types/lib/index-ts3.7.d.ts"
+        "../../node_modules/@babel/types/lib/index.d.ts"
       ],
       "../../node_modules/@emotion/cache/types/index.d.ts": [
         "../../node_modules/@emotion/stylis/types/index.d.ts",
@@ -5512,20 +5540,20 @@
       ],
       "../../node_modules/@types/babel__core/index.d.ts": [
         "../../node_modules/@babel/parser/typings/babel-parser.d.ts",
-        "../../node_modules/@babel/types/lib/index-ts3.7.d.ts",
+        "../../node_modules/@babel/types/lib/index.d.ts",
         "../../node_modules/@types/babel__generator/index.d.ts",
         "../../node_modules/@types/babel__template/index.d.ts",
         "../../node_modules/@types/babel__traverse/index.d.ts"
       ],
       "../../node_modules/@types/babel__generator/index.d.ts": [
-        "../../node_modules/@babel/types/lib/index-ts3.7.d.ts"
+        "../../node_modules/@babel/types/lib/index.d.ts"
       ],
       "../../node_modules/@types/babel__template/index.d.ts": [
         "../../node_modules/@babel/parser/typings/babel-parser.d.ts",
-        "../../node_modules/@babel/types/lib/index-ts3.7.d.ts"
+        "../../node_modules/@babel/types/lib/index.d.ts"
       ],
       "../../node_modules/@types/babel__traverse/index.d.ts": [
-        "../../node_modules/@babel/types/lib/index-ts3.7.d.ts"
+        "../../node_modules/@babel/types/lib/index.d.ts"
       ],
       "../../node_modules/@types/cheerio/index.d.ts": [
         "../../node_modules/@types/node/index.d.ts"
@@ -6155,6 +6183,8 @@
       "../../core/components/molecules/editableDropdown/index.tsx",
       "../../core/components/molecules/editableInput/EditableInput.tsx",
       "../../core/components/molecules/editableInput/index.tsx",
+      "../../core/components/molecules/errorTemplate/ErrorTemplate.tsx",
+      "../../core/components/molecules/errorTemplate/index.tsx",
       "../../core/components/molecules/inputMask/InputMask.tsx",
       "../../core/components/molecules/inputMask/index.tsx",
       "../../core/components/molecules/inputMask/utilites.tsx",
@@ -6250,7 +6280,7 @@
       "../../core/utils/uidGenerator.tsx",
       "../../core/utils/validators.ts",
       "../../node_modules/@babel/parser/typings/babel-parser.d.ts",
-      "../../node_modules/@babel/types/lib/index-ts3.7.d.ts",
+      "../../node_modules/@babel/types/lib/index.d.ts",
       "../../node_modules/@emotion/cache/types/index.d.ts",
       "../../node_modules/@emotion/core/types/index.d.ts",
       "../../node_modules/@emotion/css/types/index.d.ts",
