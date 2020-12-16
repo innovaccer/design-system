@@ -100,7 +100,7 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 
   const baseProps = extractBaseProps(props);
 
-  const extraAvatars = list.length > max ? list.length - max : 0;
+  const extraAvatars = list.length > max ? (list.length - max > 9 ? 9 : list.length - max) : 0;
 
   const style = {
     borderRadius: '50%',
