@@ -42,7 +42,7 @@ export { ToastProps } from './components/atoms/toast';
 export { TooltipProps } from './components/atoms/tooltip';
 export { DialogProps } from './components/molecules/dialog';
 export { ChatMessageProps } from './components/molecules/chatMessage';
-export { ErrorTemplateProps } from './components/molecules/errorTemplate';
+export { EmptyStateProps } from './components/molecules/emptyState';
 export { ModalProps } from './components/molecules/modal';
 export { ModalHeaderProps } from './components/molecules/modalHeader';
 export { ModalFooterProps } from './components/molecules/modalFooter';
