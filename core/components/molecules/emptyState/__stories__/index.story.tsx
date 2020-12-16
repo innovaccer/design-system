@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
-import { ErrorTemplate, Button } from '@/index';
+import { EmptyState, Button } from '@/index';
 import noContent from './assets/noContent.png';
 
 export const all = () => {
@@ -12,21 +12,19 @@ export const all = () => {
 
   return (
     <div className="h-100" style={{ backgroundColor: 'var(--secondary-lightest)' }}>
-      <ErrorTemplate
+      <EmptyState
         title={title}
         description={description}
-        templateType="NO_CONTENT"
-        image={{
-          src: noContent,
-        }}
+        size="large"
+        imageSrc={noContent}
       >
         <Button size="large" appearance="primary">Add campaigns</Button>
-      </ErrorTemplate>
+      </EmptyState>
     </div>
   );
 };
 
 export default {
-  title: 'Molecules|ErrorTemplate',
-  component: ErrorTemplate,
+  title: 'Molecules|EmptyState',
+  component: EmptyState,
 };
