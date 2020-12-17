@@ -62,6 +62,10 @@ export interface ButtonProps extends BaseProps {
    */
   tabIndex?: number;
   /**
+   * Specifies autoFocus on render
+   */
+  autoFocus?: boolean;
+  /**
    * Handler to be called when `Button` is clicked
    */
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
