@@ -1,19 +1,17 @@
 import * as React from 'react';
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import Modal from '../../../Modal';
-import ModalHeader from '@/components/molecules/modalHeader';
-import ModalDescription from '@/components/molecules/modalDescription';
-import ModalFooter from '@/components/molecules/modalFooter';
-import ModalBody from '@/components/molecules/modalBody';
-import { Button, Paragraph } from '@/index';
-
 import { updateKnob } from '@/utils/storybookEventEmitter';
+import { Modal, ModalHeader, ModalBody, ModalFooter, ModalDescription, Button, Text, Paragraph } from '@/index';
 
-export const medium = () => {
+export const old = () => {
   const open = boolean('open', true);
   const backdropClose = boolean('backdropClose', false);
-  const dimension = 'medium';
+  const dimension = select(
+    'dimension',
+    ['small', 'medium', 'large'],
+    'medium'
+  );
 
   const onClose = () => {
     updateKnob('open', false);
@@ -34,26 +32,27 @@ export const medium = () => {
       <Modal
         open={open}
         dimension={dimension}
-        backdropClose={backdropClose}
-        onClose={onClose}
-        headerOptions={{
-          heading: 'Heading',
-          subHeading: 'Subheading'
-        }}
-        footer={(
-          <>
-            <Button appearance="basic" onClick={action('Basic button click')}>Basic</Button>
-            <Button appearance="primary" className="ml-4" onClick={action('Primary button click')}>Primary</Button>
-          </>
-        )}
+        backdropClose={backdropClose ? onClose : undefined}
       >
-        <ModalDescription
-          title="Description Title"
-          description="Adding a subheading clearly indicates the hierarchy of the information."
+        <ModalHeader
+          onClose={onClose}
+          heading="Heading"
+          subHeading="Subheading"
         />
-        <ModalDescription
-          description="Card Sections include supporting text like an article summary or a restaurant description."
-        />
+        <ModalBody>
+          <Text>Modal Body</Text>
+          <ModalDescription
+            title="Description Title"
+            description="Adding a subheading clearly indicates the hierarchy of the information."
+          />
+          <ModalDescription
+            description="Card Sections include supporting text like an article summary or a restaurant description."
+          />
+        </ModalBody>
+        <ModalFooter open={open}>
+          <Button appearance="basic" onClick={action('Basic button click')}>Basic</Button>
+          <Button appearance="primary" className="ml-4" onClick={action('Primary button click')}>Primary</Button>
+        </ModalFooter>
       </Modal>
     </div>
   );
@@ -62,7 +61,6 @@ export const medium = () => {
 const customCode = `() => {
   const [open, setOpen] = React.useState(true);
   const dimension = 'medium';
-  const backdropClose = true;
 
   const onClose = () => {
     setOpen(!open);
@@ -83,34 +81,34 @@ const customCode = `() => {
       <Modal
         open={open}
         dimension={dimension}
-        backdropClose={backdropClose}
-        onClose={onClose}
-        headerOptions={{
-          heading: 'Heading',
-          subHeading: 'Subheading'
-        }}
-        footer={(
-          <>
-            <Button appearance="basic" onClick={console.log('Basic button click')}>Basic</Button>
-            <Button appearance="primary" className="ml-4" onClick={console.log('Primary button click')}>Primary</Button>
-          </>
-        )}
+        backdropClose={onClose}
       >
-        <Text>Modal Body</Text>
-        <ModalDescription
-          title="Description Title"
-          description="Adding a subheading clearly indicates the hierarchy of the information."
+        <ModalHeader
+          onClose={onClose}
+          heading="Heading"
+          subHeading="Subheading"
         />
-        <ModalDescription
-          description="Card Sections include supporting text like an article summary or a restaurant description."
-        />
+        <ModalBody>
+          <Text>Modal Body</Text>
+          <ModalDescription
+            title="Description Title"
+            description="Adding a subheading clearly indicates the hierarchy of the information."
+          />
+          <ModalDescription
+            description="Card Sections include supporting text like an article summary or a restaurant description."
+          />
+        </ModalBody>
+        <ModalFooter open={open}>
+          <Button appearance="basic" onClick={console.log('Basic button click')}>Basic</Button>
+          <Button appearance="primary" className="ml-4" onClick={console.log('Primary button click')}>Primary</Button>
+        </ModalFooter>
       </Modal>
     </div>
   );
 }`;
 
 export default {
-  title: 'Molecules|Modal/Variants/Dimesion',
+  title: 'Molecules|Modal',
   component: Modal,
   subcomponents: { ModalHeader, ModalBody, ModalDescription, ModalFooter },
   parameters: {
@@ -118,7 +116,7 @@ export default {
       docPage: {
         customCode,
         title: 'Modal',
-        noHtml: true,
+        noHtml: true
       }
     }
   }

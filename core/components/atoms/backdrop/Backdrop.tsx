@@ -64,7 +64,7 @@ export const Backdrop: React.FC<BackdropProps> = props => {
 
   const BackdropElement = ReactDOM.createPortal(
     (
-      <div data-test="DesignSystem-Backdrop" {...baseProps} className={classes}  />
+      <div data-test="DesignSystem-Backdrop" data-layer={true} {...baseProps} className={classes}  />
     ),
     document.body
   );

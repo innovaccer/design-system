@@ -10,55 +10,41 @@ exports[`Modal component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--large Modal--open Modal-animation--open"
+        class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
-              pan_tool
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Heading
-              </h5>
-            </div>
+              Heading
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
-          <div
-            class="Modal-header-subheader Modal-header-subheader--withIcon"
+          <span
+            class="Text Text--subtle Text--regular mt-2"
             data-test="DesignSystem-ModalHeader--Subheading"
           >
-            <span
-              class="Text Text--subtle Text--regular"
-              data-test="DesignSystem-Text"
-            >
-              Subheading
-            </span>
-          </div>
+            Subheading
+          </span>
         </div>
       </div>
     </div>
@@ -68,6 +54,7 @@ exports[`Modal component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -83,55 +70,41 @@ exports[`Modal component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--large Modal--open Modal-animation--open"
+        class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
-              pan_tool
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Heading
-              </h5>
-            </div>
+              Heading
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
-          <div
-            class="Modal-header-subheader Modal-header-subheader--withIcon"
+          <span
+            class="Text Text--subtle Text--regular mt-2"
             data-test="DesignSystem-ModalHeader--Subheading"
           >
-            <span
-              class="Text Text--subtle Text--regular"
-              data-test="DesignSystem-Text"
-            >
-              Subheading
-            </span>
-          </div>
+            Subheading
+          </span>
         </div>
       </div>
     </div>
@@ -141,6 +114,7 @@ exports[`Modal component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -156,55 +130,41 @@ exports[`Modal component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--medium Modal--open Modal-animation--open"
+        class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
-              pan_tool
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Heading
-              </h5>
-            </div>
+              Heading
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
-          <div
-            class="Modal-header-subheader Modal-header-subheader--withIcon"
+          <span
+            class="Text Text--subtle Text--regular mt-2"
             data-test="DesignSystem-ModalHeader--Subheading"
           >
-            <span
-              class="Text Text--subtle Text--regular"
-              data-test="DesignSystem-Text"
-            >
-              Subheading
-            </span>
-          </div>
+            Subheading
+          </span>
         </div>
       </div>
     </div>
@@ -214,6 +174,7 @@ exports[`Modal component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -229,55 +190,41 @@ exports[`Modal component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--medium Modal--open Modal-animation--open"
+        class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
-              pan_tool
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Heading
-              </h5>
-            </div>
+              Heading
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
-          <div
-            class="Modal-header-subheader Modal-header-subheader--withIcon"
+          <span
+            class="Text Text--subtle Text--regular mt-2"
             data-test="DesignSystem-ModalHeader--Subheading"
           >
-            <span
-              class="Text Text--subtle Text--regular"
-              data-test="DesignSystem-Text"
-            >
-              Subheading
-            </span>
-          </div>
+            Subheading
+          </span>
         </div>
       </div>
     </div>
@@ -287,6 +234,7 @@ exports[`Modal component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -305,61 +253,48 @@ exports[`Modal component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--small Modal--open Modal-animation--open"
+        class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
-              pan_tool
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Heading
-              </h5>
-            </div>
+              Heading
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
-          <div
-            class="Modal-header-subheader Modal-header-subheader--withIcon"
+          <span
+            class="Text Text--subtle Text--regular mt-2"
             data-test="DesignSystem-ModalHeader--Subheading"
           >
-            <span
-              class="Text Text--subtle Text--regular"
-              data-test="DesignSystem-Text"
-            >
-              Subheading
-            </span>
-          </div>
+            Subheading
+          </span>
         </div>
       </div>
     </div>
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -375,55 +310,41 @@ exports[`Modal component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--small Modal--open Modal-animation--open"
+        class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
-              pan_tool
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Heading
-              </h5>
-            </div>
+              Heading
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
-          <div
-            class="Modal-header-subheader Modal-header-subheader--withIcon"
+          <span
+            class="Text Text--subtle Text--regular mt-2"
             data-test="DesignSystem-ModalHeader--Subheading"
           >
-            <span
-              class="Text Text--subtle Text--regular"
-              data-test="DesignSystem-Text"
-            >
-              Subheading
-            </span>
-          </div>
+            Subheading
+          </span>
         </div>
       </div>
     </div>
@@ -433,6 +354,7 @@ exports[`Modal component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>

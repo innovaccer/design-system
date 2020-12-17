@@ -54,13 +54,14 @@ export const TS = () => {
       <DS.Dialog
         open={false}
         onClose={noop}
+        heading={string}
         primaryButtonLabel={string}
         primaryButtonCallback={noop}
         secondaryButtonLabel={string}
         secondaryButtonCallback={noop}
       />
       <DS.Modal open={false} />
-      <DS.ModalHeader onClose={noop} />
+      <DS.ModalHeader heading={string} onClose={noop} />
       <DS.ModalFooter>{dummyComp}</DS.ModalFooter>
       <DS.ModalBody>{dummyComp}</DS.ModalBody>
       <DS.ModalDescription />

@@ -1,27 +1,53 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import Backdrop from '@/components/atoms/backdrop';
-import OutsideClick from '@/components/atoms/outsideClick';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { Row, Column, Backdrop, OutsideClick, ModalHeader, ModalBody, ModalFooter } from '@/index';
+import { ColumnProps, ModalHeaderProps } from '@/index.type';
 
 export type Dimension = 'small' | 'medium' | 'large';
 
 export interface ModalProps extends BaseProps {
   /**
    * Callback for `Modal` close event on backdrop click
+   *
+   * ** Callback will be deprecated soon. Will only support boolean value. **
+   *
+   * ** Use `boolean` value if you are using `headerOptions` and `onClose` **
    */
-  backdropClose?: (event?: Event, reason?: string) => void;
+  backdropClose?: boolean | ((event?: Event, reason?: string) => void);
   /**
    * Dimension of `Modal`
    */
-  dimension?: Dimension;
+  dimension: Dimension;
   /**
    * Handles open/close state
    */
   open: boolean;
   /**
+   * onClose callback to be called on `Modal` close
+   */
+  onClose?: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
+  /**
+   * `ModalHeader` options
+   *
+   * ** Don't use composition of `ModalHeader`, `ModalBody` and `ModalFooter` along with `headerOptions`. **
+   */
+  headerOptions?: Omit<ModalHeaderProps, 'onClose'>;
+  /**
+   * Actions to be rendered in `ModalFooter`
+   *
+   * ** Don't use composition of `ModalHeader`, `ModalBody` and `ModalFooter` along with `footer`. **
+   */
+  footer?: React.ReactNode;
+  /**
    * Element to be rendered
+   *
+   * ** No need to write `ModalHeader`, `ModalBody` and `ModalFooter` anymore **
+   * ** if you are using `headerOptions` and `footer` **
+   * ** Just pass the content to be rendered in the `Modal` body. **
+   *
+   * ** Support for composition of `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **
    */
   children?: React.ReactNode;
 }
@@ -32,9 +58,20 @@ interface ModalState {
   zIndex?: number;
 }
 
+/**
+ * ** NOTE: Use `headerOptions`, `footer`, `onClose` and `backdropClose`(boolean). **
+ * ** Support for composition using `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **
+ *
+ * ** NOT RECOMMENDED: Only use composition of `ModalHeader`, `ModalBody` and `ModalFooter` **
+ * ** when you are not using `headerOptions` or `footer` **
+ */
 class Modal extends React.Component<ModalProps, ModalState> {
   modalRef = React.createRef<HTMLDivElement>();
   element: Element;
+
+  static defaultProps = {
+    dimension: 'medium'
+  };
 
   constructor(props: ModalProps) {
     super(props);
@@ -79,17 +116,15 @@ class Modal extends React.Component<ModalProps, ModalState> {
   getUpdatedZIndex = () => {
     if (this.element === null) return;
 
-    const elements = this.element.querySelectorAll('.Modal-container');
-    if (elements.length <= 1) return;
+    const elements = this.element.querySelectorAll('.Modal-container--open');
+    if (elements.length < 1) return;
 
     const siblings = Array.from(elements).filter(el => el !== this.modalRef.current);
     let zIndex = -1;
 
     siblings.forEach(element => {
-      if (element.classList.contains('Modal-container--open')) {
-        const prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
-        zIndex = Math.max(zIndex, prevZIndex + 10);
-      }
+      const prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
+      zIndex = Math.max(zIndex, prevZIndex + 10);
     });
 
     return zIndex > 0 ? zIndex : undefined;
@@ -97,11 +132,10 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
   render() {
     const { animate, open, zIndex } = this.state;
-    const { className, backdropClose, dimension } = this.props;
+    const { className, backdropClose, dimension, children, headerOptions, footer, onClose } = this.props;
 
     const classes = classNames({
       Modal: true,
-      [`Modal--${dimension}`]: dimension,
       'Modal--open': open,
       'Modal-animation--open': animate,
       'Modal-animation--close': !animate,
@@ -113,25 +147,80 @@ class Modal extends React.Component<ModalProps, ModalState> {
     });
 
     const baseProps = extractBaseProps(this.props);
+    const sizeMap: Record<ModalProps['dimension'], Partial<ColumnProps>> = {
+      small: {
+        size: '3',
+        sizeL: '4',
+        sizeM: '4',
+        sizeXS: '10'
+      },
+      medium: {
+        size: '4',
+        sizeL: '6',
+        sizeM: '6',
+        sizeXS: '10'
+      },
+      large: {
+        size: '6',
+        sizeL: '8',
+        sizeM: '8',
+        sizeXS: '10'
+      }
+    };
 
     const ModalContainer = (
-      <div
+      <Row
         data-test="DesignSystem-ModalContainer"
         className={ContainerClass}
         data-layer={true}
         style={{ zIndex }}
-        ref={this.modalRef}
       >
-        <div data-test="DesignSystem-Modal" {...baseProps} className={classes}>
-          {this.props.children}
-        </div>
-      </div>
+        <Column
+          data-test="DesignSystem-Modal"
+          {...baseProps}
+          className={classes}
+          {...sizeMap[dimension]}
+          ref={this.modalRef}
+        >
+          {headerOptions && (
+            <ModalHeader
+              onClose={(event: React.MouseEvent<HTMLElement, MouseEvent>, reason) => {
+                if (onClose) onClose(event, reason);
+              }}
+              {...headerOptions}
+            />
+          )}
+          {children && (
+            <>
+              {headerOptions || footer ? (
+                <ModalBody>
+                  {children}
+                </ModalBody>
+              ) : (
+                  children
+                )}
+            </>
+          )}
+          {footer && (
+            <ModalFooter open={open}>
+              {footer}
+            </ModalFooter>
+          )}
+        </Column>
+      </Row>
     );
+
+    const onOutsideClickHandler = (event: Event) => {
+      if (open) {
+        if (onClose) onClose(event, 'OutsideClick');
+        else if (typeof backdropClose === 'function') backdropClose(event, 'OutsideClick');
+      }
+    };
 
     const ModalWrapper = backdropClose ? (
       <OutsideClick
         data-test="DesignSystem-Modal--OutsideClick"
-        onOutsideClick={(event: Event) => open && backdropClose(event, 'OutsideClick')}
+        onOutsideClick={onOutsideClickHandler}
       >
         {ModalContainer}
       </OutsideClick>

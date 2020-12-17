@@ -3,13 +3,11 @@ import { render } from '@testing-library/react';
 import ModalDescription, { ModalDescriptionProps as Props } from '../ModalDescription';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const BooleanValue = [true, false];
 const StringValue = 'Sample String';
 
 const Mapper = {
   title: valueHelper(StringValue, { required: true }),
   description: valueHelper(StringValue, { required: true }),
-  removePadding: valueHelper(BooleanValue, { iterate: true, required: true }),
 };
 
 describe('ModalDescription component', () => {
@@ -35,7 +33,7 @@ describe('ModalDescription component with props', () => {
   it('renders default props', () => {
     const { getByTestId, queryByTestId } = render(<ModalDescription />);
 
-    expect(getByTestId('DesignSystem-ModalDescription')).toHaveClass('pl-6 pr-6');
+    expect(getByTestId('DesignSystem-ModalDescription')).toHaveClass('Modal-description');
     expect(queryByTestId('DesignSystem-ModalDescription--Title')).not.toBeInTheDocument();
     expect(queryByTestId('DesignSystem-ModalDescription--Description')).not.toBeInTheDocument();
 
@@ -52,13 +50,6 @@ describe('ModalDescription component with props', () => {
     const { getByTestId } = render(<ModalDescription description={StringValue}/>);
 
     expect(getByTestId('DesignSystem-ModalDescription--Description').textContent).toMatch(StringValue);
-
-  });
-
-  it('ModalDescription with prop: removePadding', () => {
-    const { getByTestId } = render(<ModalDescription removePadding={true}/>);
-
-    expect(getByTestId('DesignSystem-ModalDescription')).not.toHaveClass('pl-6 pr-6');
 
   });
 

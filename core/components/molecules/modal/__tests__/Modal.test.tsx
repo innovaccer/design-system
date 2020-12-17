@@ -82,7 +82,7 @@ describe('Modal component with prop: dimension', () => {
       <Modal backdropClose={FunctionValue} open={true} dimension={'small'}/>
     );
 
-    expect(getByTestId('DesignSystem-Modal')).toHaveClass('Modal--small');
+    expect(getByTestId('DesignSystem-Modal')).toHaveClass('Col Col--3 Col--xs-10');
   });
 
   it('renders Modal with dimension: medium', () => {
@@ -90,7 +90,7 @@ describe('Modal component with prop: dimension', () => {
       <Modal backdropClose={FunctionValue} open={true} dimension={'medium'} />
     );
 
-    expect(getByTestId('DesignSystem-Modal')).toHaveClass('Modal--medium');
+    expect(getByTestId('DesignSystem-Modal')).toHaveClass('Col Col--4 Col--xs-10');
   });
 
   it('renders Modal with dimension: large', () => {
@@ -98,7 +98,7 @@ describe('Modal component with prop: dimension', () => {
       <Modal backdropClose={FunctionValue} open={true} dimension={'large'} />
     );
 
-    expect(getByTestId('DesignSystem-Modal')).toHaveClass('Modal--large');
+    expect(getByTestId('DesignSystem-Modal')).toHaveClass('Col Col--6 Col--xs-10');
   });
 
 });
@@ -134,7 +134,7 @@ describe('Modal component with prop: open', () => {
   it('renders Modal with toggle of open', () => {
     const { getByTestId, rerender } = render(
       <Modal backdropClose={FunctionValue} open={true}>
-        <ModalHeader onClose={FunctionValue} />
+        <ModalHeader heading={'Heading'} onClose={FunctionValue} />
       </Modal>
     );
 
@@ -146,7 +146,7 @@ describe('Modal component with prop: open', () => {
 
     rerender(
       <Modal backdropClose={FunctionValue} open={false}>
-        <ModalHeader onClose={FunctionValue} />
+        <ModalHeader heading={'Heading'} onClose={FunctionValue} />
       </Modal>
     );
 
