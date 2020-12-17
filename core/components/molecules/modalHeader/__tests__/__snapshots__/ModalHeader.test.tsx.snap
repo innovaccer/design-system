@@ -1,99 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalHeader component 
-  icon: "events", iconAppearance: "alert", heading: "Modal header", onClose: "[Function]", subHeading: "Modal subheading"
+  heading: "Modal header", onClose: "[Function]", subHeading: "Modal subheading"
  1`] = `
 <DocumentFragment>
   <div
-    class="Modal-header-wrapper"
+    class="Modal-header"
+    data-test="DesignSystem-ModalHeader"
   >
     <div
-      class="Modal-header"
-      data-test="DesignSystem-ModalHeader"
+      class="Modal-headerHeading"
     >
-      <i
-        class="material-icons Icon Icon--alert Modal-header-icon"
-        data-test="DesignSystem-ModalHeader--Icon"
-        style="font-size: 16px; width: 16px;"
+      <h4
+        class="Heading Heading--m Heading--default"
+        data-test="DesignSystem-Heading"
       >
-        events
-      </i>
-      <div>
-        <h5
-          class="Heading Heading--s Heading--default"
-          data-test="DesignSystem-Heading"
-        >
-          Modal header
-        </h5>
-      </div>
+        Modal header
+      </h4>
       <i
-        class="material-icons Icon Icon--default Modal-close-icon"
+        class="material-icons Icon Icon--default mx-2 cursor-pointer"
         data-test="DesignSystem-ModalHeader--CloseIcon"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 20px; width: 20px;"
       >
         close
       </i>
     </div>
-    <div
-      class="Modal-header-subheader Modal-header-subheader--withIcon"
+    <span
+      class="Text Text--subtle Text--regular mt-2"
       data-test="DesignSystem-ModalHeader--Subheading"
     >
-      <span
-        class="Text Text--subtle Text--regular"
-        data-test="DesignSystem-Text"
-      >
-        Modal subheading
-      </span>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`ModalHeader component 
-  icon: "events", iconAppearance: "default", heading: "Modal header", onClose: "[Function]", subHeading: "Modal subheading"
- 1`] = `
-<DocumentFragment>
-  <div
-    class="Modal-header-wrapper"
-  >
-    <div
-      class="Modal-header"
-      data-test="DesignSystem-ModalHeader"
-    >
-      <i
-        class="material-icons Icon Icon--default Modal-header-icon"
-        data-test="DesignSystem-ModalHeader--Icon"
-        style="font-size: 16px; width: 16px;"
-      >
-        events
-      </i>
-      <div>
-        <h5
-          class="Heading Heading--s Heading--default"
-          data-test="DesignSystem-Heading"
-        >
-          Modal header
-        </h5>
-      </div>
-      <i
-        class="material-icons Icon Icon--default Modal-close-icon"
-        data-test="DesignSystem-ModalHeader--CloseIcon"
-        style="font-size: 16px; width: 16px;"
-      >
-        close
-      </i>
-    </div>
-    <div
-      class="Modal-header-subheader Modal-header-subheader--withIcon"
-      data-test="DesignSystem-ModalHeader--Subheading"
-    >
-      <span
-        class="Text Text--subtle Text--regular"
-        data-test="DesignSystem-Text"
-      >
-        Modal subheading
-      </span>
-    </div>
+      Modal subheading
+    </span>
   </div>
 </DocumentFragment>
 `;

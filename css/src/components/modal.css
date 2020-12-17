@@ -22,19 +22,15 @@
 
 .Modal-container {
   display: flex;
-  position: fixed;
+  position: relative;
   flex-direction: row;
   justify-content: center;
-  width: 100vw;
   z-index: 1500;
-  top: 0;
 }
 
 .Modal {
-  position: fixed;
+  position: fixed !important;
   top: 104px;
-  min-width: 480px;
-  max-width: 960px;
   min-height: 200px;
   max-height: 70%;
   box-shadow: var(--shadow-m);
@@ -59,76 +55,34 @@
   animation: modal-close 120ms cubic-bezier(0.4, 0.14, 1, 1);
 }
 
-.Modal-close-icon {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  position: absolute;
-  right: var(--spacing-2);
-}
-
-.Modal--small {
-  width: 480px;
-}
-
-.Modal--medium {
-  width: 640px;
-}
-
-.Modal--large {
-  width: 800px;
-}
-
 .Modal-header {
-  display: flex;
-  padding: var(--spacing-2) var(--spacing-2) 0;
-  justify-content: flex-start;
-  align-items: center;
+  padding: var(--spacing-2) var(--spacing-2) var(--spacing-l) var(--spacing-xl);
 }
 
-.Modal-header-subheader {
-  padding-top: var(--spacing-s);
-  padding-left: var(--spacing-2);
-}
-
-.Modal-header-subheader--withIcon {
-  padding-left: var(--spacing-4);
-}
-
-.Modal-header-wrapper {
-  margin-bottom: var(--spacing-l);
-}
-
-.Modal-header-icon {
+.Modal-headerHeading {
   display: flex;
   align-items: center;
-  margin-right: var(--spacing-2);
+  justify-content: space-between;
 }
 
 .Modal-description {
-  padding-top: var(--spacing-l);
-  padding-bottom: var(--spacing-2);
+  padding: var(--spacing) 0;
 }
 
 .Modal-footer {
-  padding: var(--spacing-2);
   display: flex;
   justify-content: flex-end;
-  flex-grow: 0;
+  padding: var(--spacing-xl);
   position: absolute;
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
 }
 
-.Modal-footer > * {
-  margin-left: var(--spacing);
-}
-
 .Modal-body {
-  padding: 0 var(--spacing-2);
+  padding: 0 var(--spacing-xl);
   overflow-y: auto;
-  margin-bottom: var(--spacing-5);
+  margin-bottom: 80px;
 }
 
 .Modal-body--border {

@@ -10,58 +10,51 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--small Modal--open Modal-animation--open"
+        class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
               Sample String
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Sample String
-              </h5>
-            </div>
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
         </div>
         <div
-          class="Modal-description pl-6 pr-6"
-          data-test="DesignSystem-ModalDescription"
+          class="Modal-body"
+          data-test="DesignSystem-ModalBody"
         >
-          <div>
+          <div
+            class="Modal-description"
+            data-test="DesignSystem-ModalDescription"
+          >
             <span
               class="Text Text--default Text--strong Text--regular"
               data-test="DesignSystem-ModalDescription--Title"
             >
               Sample String
             </span>
-          </div>
-          <div>
+            <br />
             <span
               class="Text Text--default Text--regular"
               data-test="DesignSystem-ModalDescription--Description"
@@ -82,7 +75,7 @@ exports[`Dialog component
             Sample String
           </button>
           <button
-            class="Button Button--regular Button--alert Button--iconAlign-left"
+            class="Button Button--regular Button--alert Button--iconAlign-left ml-4"
             data-test="DesignSystem-Dialog--PrimaryButton"
             tabindex="0"
           >
@@ -97,6 +90,7 @@ exports[`Dialog component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -115,58 +109,51 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--small Modal--open Modal-animation--open"
+        class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
               Sample String
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Sample String
-              </h5>
-            </div>
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
         </div>
         <div
-          class="Modal-description pl-6 pr-6"
-          data-test="DesignSystem-ModalDescription"
+          class="Modal-body"
+          data-test="DesignSystem-ModalBody"
         >
-          <div>
+          <div
+            class="Modal-description"
+            data-test="DesignSystem-ModalDescription"
+          >
             <span
               class="Text Text--default Text--strong Text--regular"
               data-test="DesignSystem-ModalDescription--Title"
             >
               Sample String
             </span>
-          </div>
-          <div>
+            <br />
             <span
               class="Text Text--default Text--regular"
               data-test="DesignSystem-ModalDescription--Description"
@@ -187,7 +174,7 @@ exports[`Dialog component
             Sample String
           </button>
           <button
-            class="Button Button--regular Button--basic Button--iconAlign-left"
+            class="Button Button--regular Button--basic Button--iconAlign-left ml-4"
             data-test="DesignSystem-Dialog--PrimaryButton"
             tabindex="0"
           >
@@ -199,6 +186,7 @@ exports[`Dialog component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -214,58 +202,51 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--small Modal--open Modal-animation--open"
+        class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
               Sample String
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Sample String
-              </h5>
-            </div>
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
         </div>
         <div
-          class="Modal-description pl-6 pr-6"
-          data-test="DesignSystem-ModalDescription"
+          class="Modal-body"
+          data-test="DesignSystem-ModalBody"
         >
-          <div>
+          <div
+            class="Modal-description"
+            data-test="DesignSystem-ModalDescription"
+          >
             <span
               class="Text Text--default Text--strong Text--regular"
               data-test="DesignSystem-ModalDescription--Title"
             >
               Sample String
             </span>
-          </div>
-          <div>
+            <br />
             <span
               class="Text Text--default Text--regular"
               data-test="DesignSystem-ModalDescription--Description"
@@ -286,7 +267,7 @@ exports[`Dialog component
             Sample String
           </button>
           <button
-            class="Button Button--regular Button--primary Button--iconAlign-left"
+            class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
             data-test="DesignSystem-Dialog--PrimaryButton"
             tabindex="0"
           >
@@ -301,6 +282,7 @@ exports[`Dialog component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -316,58 +298,51 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--small Modal--open Modal-animation--open"
+        class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
               Sample String
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Sample String
-              </h5>
-            </div>
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
         </div>
         <div
-          class="Modal-description pl-6 pr-6"
-          data-test="DesignSystem-ModalDescription"
+          class="Modal-body"
+          data-test="DesignSystem-ModalBody"
         >
-          <div>
+          <div
+            class="Modal-description"
+            data-test="DesignSystem-ModalDescription"
+          >
             <span
               class="Text Text--default Text--strong Text--regular"
               data-test="DesignSystem-ModalDescription--Title"
             >
               Sample String
             </span>
-          </div>
-          <div>
+            <br />
             <span
               class="Text Text--default Text--regular"
               data-test="DesignSystem-ModalDescription--Description"
@@ -388,7 +363,7 @@ exports[`Dialog component
             Sample String
           </button>
           <button
-            class="Button Button--regular Button--success Button--iconAlign-left"
+            class="Button Button--regular Button--success Button--iconAlign-left ml-4"
             data-test="DesignSystem-Dialog--PrimaryButton"
             tabindex="0"
           >
@@ -403,6 +378,7 @@ exports[`Dialog component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -418,58 +394,51 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--small Modal--open Modal-animation--open"
+        class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
               Sample String
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Sample String
-              </h5>
-            </div>
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
         </div>
         <div
-          class="Modal-description pl-6 pr-6"
-          data-test="DesignSystem-ModalDescription"
+          class="Modal-body"
+          data-test="DesignSystem-ModalBody"
         >
-          <div>
+          <div
+            class="Modal-description"
+            data-test="DesignSystem-ModalDescription"
+          >
             <span
               class="Text Text--default Text--strong Text--regular"
               data-test="DesignSystem-ModalDescription--Title"
             >
               Sample String
             </span>
-          </div>
-          <div>
+            <br />
             <span
               class="Text Text--default Text--regular"
               data-test="DesignSystem-ModalDescription--Description"
@@ -490,7 +459,7 @@ exports[`Dialog component
             Sample String
           </button>
           <button
-            class="Button Button--regular Button--transparent Button--iconAlign-left"
+            class="Button Button--regular Button--transparent Button--iconAlign-left ml-4"
             data-test="DesignSystem-Dialog--PrimaryButton"
             tabindex="0"
           >
@@ -505,6 +474,7 @@ exports[`Dialog component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -520,58 +490,51 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--large Modal--open Modal-animation--open"
+        class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
               Sample String
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Sample String
-              </h5>
-            </div>
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
         </div>
         <div
-          class="Modal-description pl-6 pr-6"
-          data-test="DesignSystem-ModalDescription"
+          class="Modal-body"
+          data-test="DesignSystem-ModalBody"
         >
-          <div>
+          <div
+            class="Modal-description"
+            data-test="DesignSystem-ModalDescription"
+          >
             <span
               class="Text Text--default Text--strong Text--regular"
               data-test="DesignSystem-ModalDescription--Title"
             >
               Sample String
             </span>
-          </div>
-          <div>
+            <br />
             <span
               class="Text Text--default Text--regular"
               data-test="DesignSystem-ModalDescription--Description"
@@ -592,7 +555,7 @@ exports[`Dialog component
             Sample String
           </button>
           <button
-            class="Button Button--regular Button--primary Button--iconAlign-left"
+            class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
             data-test="DesignSystem-Dialog--PrimaryButton"
             tabindex="0"
           >
@@ -607,6 +570,7 @@ exports[`Dialog component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -622,58 +586,51 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--medium Modal--open Modal-animation--open"
+        class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
               Sample String
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Sample String
-              </h5>
-            </div>
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
         </div>
         <div
-          class="Modal-description pl-6 pr-6"
-          data-test="DesignSystem-ModalDescription"
+          class="Modal-body"
+          data-test="DesignSystem-ModalBody"
         >
-          <div>
+          <div
+            class="Modal-description"
+            data-test="DesignSystem-ModalDescription"
+          >
             <span
               class="Text Text--default Text--strong Text--regular"
               data-test="DesignSystem-ModalDescription--Title"
             >
               Sample String
             </span>
-          </div>
-          <div>
+            <br />
             <span
               class="Text Text--default Text--regular"
               data-test="DesignSystem-ModalDescription--Description"
@@ -694,7 +651,7 @@ exports[`Dialog component
             Sample String
           </button>
           <button
-            class="Button Button--regular Button--primary Button--iconAlign-left"
+            class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
             data-test="DesignSystem-Dialog--PrimaryButton"
             tabindex="0"
           >
@@ -709,6 +666,7 @@ exports[`Dialog component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -724,58 +682,51 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--small Modal--open Modal-animation--open"
+        class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
               Sample String
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Sample String
-              </h5>
-            </div>
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
         </div>
         <div
-          class="Modal-description pl-6 pr-6"
-          data-test="DesignSystem-ModalDescription"
+          class="Modal-body"
+          data-test="DesignSystem-ModalBody"
         >
-          <div>
+          <div
+            class="Modal-description"
+            data-test="DesignSystem-ModalDescription"
+          >
             <span
               class="Text Text--default Text--strong Text--regular"
               data-test="DesignSystem-ModalDescription--Title"
             >
               Sample String
             </span>
-          </div>
-          <div>
+            <br />
             <span
               class="Text Text--default Text--regular"
               data-test="DesignSystem-ModalDescription--Description"
@@ -796,7 +747,7 @@ exports[`Dialog component
             Sample String
           </button>
           <button
-            class="Button Button--regular Button--primary Button--iconAlign-left"
+            class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
             data-test="DesignSystem-Dialog--PrimaryButton"
             tabindex="0"
           >
@@ -811,6 +762,7 @@ exports[`Dialog component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -826,58 +778,51 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--small Modal--open Modal-animation--open"
+        class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
               Sample String
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Sample String
-              </h5>
-            </div>
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
         </div>
         <div
-          class="Modal-description pl-6 pr-6"
-          data-test="DesignSystem-ModalDescription"
+          class="Modal-body"
+          data-test="DesignSystem-ModalBody"
         >
-          <div>
+          <div
+            class="Modal-description"
+            data-test="DesignSystem-ModalDescription"
+          >
             <span
               class="Text Text--default Text--strong Text--regular"
               data-test="DesignSystem-ModalDescription--Title"
             >
               Sample String
             </span>
-          </div>
-          <div>
+            <br />
             <span
               class="Text Text--default Text--regular"
               data-test="DesignSystem-ModalDescription--Description"
@@ -898,7 +843,7 @@ exports[`Dialog component
             Sample String
           </button>
           <button
-            class="Button Button--regular Button--primary Button--iconAlign-left"
+            class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
             data-test="DesignSystem-Dialog--PrimaryButton"
             tabindex="0"
           >
@@ -913,6 +858,7 @@ exports[`Dialog component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -928,58 +874,51 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--small Modal--open Modal-animation--open"
+        class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
               Sample String
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Sample String
-              </h5>
-            </div>
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
         </div>
         <div
-          class="Modal-description pl-6 pr-6"
-          data-test="DesignSystem-ModalDescription"
+          class="Modal-body"
+          data-test="DesignSystem-ModalBody"
         >
-          <div>
+          <div
+            class="Modal-description"
+            data-test="DesignSystem-ModalDescription"
+          >
             <span
               class="Text Text--default Text--strong Text--regular"
               data-test="DesignSystem-ModalDescription--Title"
             >
               Sample String
             </span>
-          </div>
-          <div>
+            <br />
             <span
               class="Text Text--default Text--regular"
               data-test="DesignSystem-ModalDescription--Description"
@@ -1000,7 +939,7 @@ exports[`Dialog component
             Sample String
           </button>
           <button
-            class="Button Button--regular Button--primary Button--iconAlign-left"
+            class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
             data-test="DesignSystem-Dialog--PrimaryButton"
             tabindex="0"
           >
@@ -1015,6 +954,7 @@ exports[`Dialog component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -1030,58 +970,51 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--small Modal--open Modal-animation--open"
+        class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
               Sample String
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Sample String
-              </h5>
-            </div>
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
         </div>
         <div
-          class="Modal-description pl-6 pr-6"
-          data-test="DesignSystem-ModalDescription"
+          class="Modal-body"
+          data-test="DesignSystem-ModalBody"
         >
-          <div>
+          <div
+            class="Modal-description"
+            data-test="DesignSystem-ModalDescription"
+          >
             <span
               class="Text Text--default Text--strong Text--regular"
               data-test="DesignSystem-ModalDescription--Title"
             >
               Sample String
             </span>
-          </div>
-          <div>
+            <br />
             <span
               class="Text Text--default Text--regular"
               data-test="DesignSystem-ModalDescription--Description"
@@ -1102,7 +1035,7 @@ exports[`Dialog component
             Sample String
           </button>
           <button
-            class="Button Button--regular Button--primary Button--iconAlign-left"
+            class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
             data-test="DesignSystem-Dialog--PrimaryButton"
             tabindex="0"
           >
@@ -1117,6 +1050,7 @@ exports[`Dialog component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -1132,58 +1066,51 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--small Modal--open Modal-animation--open"
+        class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
               Sample String
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Sample String
-              </h5>
-            </div>
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
         </div>
         <div
-          class="Modal-description pl-6 pr-6"
-          data-test="DesignSystem-ModalDescription"
+          class="Modal-body"
+          data-test="DesignSystem-ModalBody"
         >
-          <div>
+          <div
+            class="Modal-description"
+            data-test="DesignSystem-ModalDescription"
+          >
             <span
               class="Text Text--default Text--strong Text--regular"
               data-test="DesignSystem-ModalDescription--Title"
             >
               Sample String
             </span>
-          </div>
-          <div>
+            <br />
             <span
               class="Text Text--default Text--regular"
               data-test="DesignSystem-ModalDescription--Description"
@@ -1204,7 +1131,7 @@ exports[`Dialog component
             Sample String
           </button>
           <button
-            class="Button Button--regular Button--primary Button--iconAlign-left"
+            class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
             data-test="DesignSystem-Dialog--PrimaryButton"
             tabindex="0"
           >
@@ -1219,6 +1146,7 @@ exports[`Dialog component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -1234,58 +1162,51 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Modal-container Modal-container--open"
+      class="Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
       <div
-        class="Modal Modal--small Modal--open Modal-animation--open"
+        class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
       >
         <div
-          class="Modal-header-wrapper"
+          class="Modal-header"
+          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
+            class="Modal-headerHeading"
           >
-            <i
-              class="material-icons Icon Icon--default Modal-header-icon"
-              data-test="DesignSystem-ModalHeader--Icon"
-              style="font-size: 16px; width: 16px;"
+            <h4
+              class="Heading Heading--m Heading--default"
+              data-test="DesignSystem-Heading"
             >
               Sample String
-            </i>
-            <div>
-              <h5
-                class="Heading Heading--s Heading--default"
-                data-test="DesignSystem-Heading"
-              >
-                Sample String
-              </h5>
-            </div>
+            </h4>
             <i
-              class="material-icons Icon Icon--default Modal-close-icon"
+              class="material-icons Icon Icon--default mx-2 cursor-pointer"
               data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 20px; width: 20px;"
             >
               close
             </i>
           </div>
         </div>
         <div
-          class="Modal-description pl-6 pr-6"
-          data-test="DesignSystem-ModalDescription"
+          class="Modal-body"
+          data-test="DesignSystem-ModalBody"
         >
-          <div>
+          <div
+            class="Modal-description"
+            data-test="DesignSystem-ModalDescription"
+          >
             <span
               class="Text Text--default Text--strong Text--regular"
               data-test="DesignSystem-ModalDescription--Title"
             >
               Sample String
             </span>
-          </div>
-          <div>
+            <br />
             <span
               class="Text Text--default Text--regular"
               data-test="DesignSystem-ModalDescription--Description"
@@ -1306,7 +1227,7 @@ exports[`Dialog component
             Sample String
           </button>
           <button
-            class="Button Button--regular Button--primary Button--iconAlign-left"
+            class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
             data-test="DesignSystem-Dialog--PrimaryButton"
             tabindex="0"
           >
@@ -1321,6 +1242,7 @@ exports[`Dialog component
   </div>
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
