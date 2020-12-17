@@ -6,33 +6,28 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 export interface ModalDescriptionProps extends BaseProps {
   title?: string;
   description?: string;
-  removePadding?: boolean;
 }
 
 export const ModalDescription = (props: ModalDescriptionProps) => {
-  const { title, description, removePadding, className } = props;
+  const { title, description, className } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     'Modal-description': true,
-    ['pl-6 pr-6']: !removePadding
   }, className);
 
   return (
     <div data-test="DesignSystem-ModalDescription" {...baseProps} className={classes}>
       {title && (
-        <div>
-          <Text weight="strong" data-test="DesignSystem-ModalDescription--Title">
-            {title}
-          </Text>
-        </div>
+        <Text weight="strong" data-test="DesignSystem-ModalDescription--Title">
+          {title}
+        </Text>
       )}
+      {title && description && <br />}
       {description && (
-        <div>
-          <Text data-test="DesignSystem-ModalDescription--Description">
-            {description}
-          </Text>
-        </div>
+        <Text data-test="DesignSystem-ModalDescription--Description">
+          {description}
+        </Text>
       )}
     </div>
   );

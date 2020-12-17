@@ -98,6 +98,7 @@ describe('Dialog component with props', () => {
     const { getByTestId } = render(
       <Dialog
         open={true}
+        heading={StringValue}
         primaryButtonLabel={StringValue}
         secondaryButtonLabel={StringValue}
         primaryButtonCallback={FunctionValue}
@@ -113,6 +114,7 @@ describe('Dialog component with props', () => {
     const { getByTestId } = render(
       <Dialog
         open={true}
+        heading={StringValue}
         primaryButtonLabel={StringValue}
         secondaryButtonLabel={StringValue}
         primaryButtonCallback={FunctionValue}
@@ -121,13 +123,14 @@ describe('Dialog component with props', () => {
       />
     );
 
-    expect(getByTestId('DesignSystem-Dialog')).toHaveClass('Modal--small');
+    expect(getByTestId('DesignSystem-Dialog')).toHaveClass('Col Col--3 Col--xs-10');
   });
 
   it('renders default primary button appearance', () => {
     const { getByTestId } = render(
       <Dialog
         open={true}
+        heading={StringValue}
         primaryButtonLabel={StringValue}
         secondaryButtonLabel={StringValue}
         primaryButtonCallback={FunctionValue}
@@ -143,6 +146,7 @@ describe('Dialog component with props', () => {
     const { getByTestId } = render(
       <Dialog
         open={true}
+        heading={StringValue}
         primaryButtonLabel={StringValue}
         secondaryButtonLabel={StringValue}
         primaryButtonCallback={FunctionValue}
@@ -163,6 +167,7 @@ describe('Dialog Component with overwrite class', () => {
     const { getByTestId } = render(
       <Dialog
         open={true}
+        heading={StringValue}
         primaryButtonLabel={StringValue}
         secondaryButtonLabel={StringValue}
         primaryButtonCallback={FunctionValue}

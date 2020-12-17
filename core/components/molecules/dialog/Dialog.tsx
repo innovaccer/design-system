@@ -1,9 +1,6 @@
 import * as React from 'react';
-import Modal, { Dimension } from '@/components/molecules/modal';
-import ModalHeader from '@/components/molecules/modalHeader';
-import ModalDescription from '@/components/molecules/modalDescription';
-import ModalFooter from '@/components/molecules/modalFooter';
-import Button, { Appearance } from '@/components/atoms/button';
+import { Button, Modal, ModalDescription } from '@/index';
+import { ModalProps, ModalHeaderProps, ButtonProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export interface DialogProps extends BaseProps {
@@ -14,7 +11,7 @@ export interface DialogProps extends BaseProps {
   /**
    * Dimension of `Dialog`
    */
-  dimension: Dimension;
+  dimension: ModalProps['dimension'];
   /**
    * Handles open/close
    */
@@ -22,11 +19,7 @@ export interface DialogProps extends BaseProps {
   /**
    * Dialog heading
    */
-  heading?: string;
-  /**
-   * Material icon name
-   */
-  icon?: string;
+  heading: ModalHeaderProps['heading'];
   /**
    * Dialog's description title
    */
@@ -42,7 +35,7 @@ export interface DialogProps extends BaseProps {
   /**
    * Color of second button inside `Dialog`
    */
-  primaryButtonAppearance: Appearance;
+  primaryButtonAppearance: ButtonProps['appearance'];
   /**
    * Handler to be called when first button is clicked
    */
@@ -54,7 +47,7 @@ export interface DialogProps extends BaseProps {
   /**
    * Color of second button inside `Dialog`
    */
-  secondaryButtonAppearance: Appearance;
+  secondaryButtonAppearance: ButtonProps['appearance'];
   /**
    * Handler to be called when second button is clicked
    */
@@ -68,7 +61,6 @@ const Dialog = (props: DialogProps) => {
     secondaryButtonAppearance,
     open,
     onClose,
-    icon,
     heading,
     title,
     description,
@@ -80,43 +72,37 @@ const Dialog = (props: DialogProps) => {
 
   const baseProps = extractBaseProps(props);
 
-  const modalOptions = {
-    open,
-    dimension,
-    backdropClose: onClose
-  };
-
-  const modalHeaderOptions = {
-    onClose,
-    icon,
-    heading
-  };
-
-  const modalDescriptionOptions = {
-    title,
-    description
-  };
-
   return (
-    <Modal data-test="DesignSystem-Dialog" {...baseProps} {...modalOptions}>
-      <ModalHeader {...modalHeaderOptions} />
-      <ModalDescription {...modalDescriptionOptions} />
-      <ModalFooter>
-        <Button
-          data-test="DesignSystem-Dialog--SecondaryButton"
-          appearance={secondaryButtonAppearance}
-          onClick={secondaryButtonCallback}
-        >
-          {secondaryButtonLabel}
-        </Button>
-        <Button
-          data-test="DesignSystem-Dialog--PrimaryButton"
-          appearance={primaryButtonAppearance}
-          onClick={primaryButtonCallback}
-        >
-          {primaryButtonLabel}
-        </Button>
-      </ModalFooter>
+    <Modal
+      data-test="DesignSystem-Dialog"
+      {...baseProps}
+      open={open}
+      dimension={dimension}
+      onClose={onClose}
+      headerOptions={{
+        heading
+      }}
+      footer={(
+        <>
+          <Button
+            data-test="DesignSystem-Dialog--SecondaryButton"
+            appearance={secondaryButtonAppearance}
+            onClick={secondaryButtonCallback}
+          >
+            {secondaryButtonLabel}
+          </Button>
+          <Button
+            className="ml-4"
+            data-test="DesignSystem-Dialog--PrimaryButton"
+            appearance={primaryButtonAppearance}
+            onClick={primaryButtonCallback}
+          >
+            {primaryButtonLabel}
+          </Button>
+        </>
+      )}
+    >
+      <ModalDescription title={title} description={description} />
     </Modal>
   );
 };

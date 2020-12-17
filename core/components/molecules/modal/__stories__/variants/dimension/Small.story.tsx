@@ -12,35 +12,12 @@ import { updateKnob } from '@/utils/storybookEventEmitter';
 
 export const small = () => {
   const open = boolean('open', true);
-  const backdrop = boolean('backdrop', false);
+  const backdropClose = boolean('backdropClose', false);
+  const dimension = 'small';
 
   const onClose = () => {
-    action('on close triggered');
     updateKnob('open', false);
-  };
-
-  const options = {
-    open,
-    backdrop,
-    backdropClose: onClose
-  };
-
-  const modalHeaderOptions = {
-    onClose,
-    icon: 'pan_tool',
-    heading: 'Heading',
-    subHeading: 'Subheading'
-  };
-
-  const modalDescriptionOptions = {
-    title: 'Description Title/Variants',
-    description: 'Adding a subheading clearly indicates the hierarchy of the information.',
-    removePadding: true
-  };
-
-  const modalDescriptionOptionsWithoutTitle = {
-    description: 'Card Sections include supporting text like an article summary or a restaurant description.',
-    removePadding: true
+    action('on close triggered')();
   };
 
   return (
@@ -54,17 +31,29 @@ export const small = () => {
         Excepteur sint occaecat cupidatat non proident,
         sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
       </Paragraph>
-      <Modal dimension="small" {...options}>
-        <ModalHeader {...modalHeaderOptions} />
-        <ModalBody>
-          <p>Modal Body</p>
-          <ModalDescription {...modalDescriptionOptions} />
-          <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
-        </ModalBody>
-        <ModalFooter>
-          <Button appearance="basic" onClick={action('Basic button click')}>Basic</Button>
-          <Button appearance="primary" onClick={action('Primary button click')}>Primary</Button>
-        </ModalFooter>
+      <Modal
+        open={open}
+        dimension={dimension}
+        backdropClose={backdropClose}
+        onClose={onClose}
+        headerOptions={{
+          heading: 'Heading',
+          subHeading: 'Subheading'
+        }}
+        footer={(
+          <>
+            <Button appearance="basic" onClick={action('Basic button click')}>Basic</Button>
+            <Button appearance="primary" className="ml-4" onClick={action('Primary button click')}>Primary</Button>
+          </>
+        )}
+      >
+        <ModalDescription
+          title="Description Title"
+          description="Adding a subheading clearly indicates the hierarchy of the information."
+        />
+        <ModalDescription
+          description="Card Sections include supporting text like an article summary or a restaurant description."
+        />
       </Modal>
     </div>
   );
@@ -72,54 +61,49 @@ export const small = () => {
 
 const customCode = `() => {
   const [open, setOpen] = React.useState(true);
+  const dimension = 'small';
+  const backdropClose = true;
 
   const onClose = () => {
     setOpen(!open);
   };
 
-  const options = {
-    open,
-    backdropClose: onClose
-  };
-
-  const modalHeaderOptions = {
-    onClose,
-    icon: 'pan_tool',
-    heading: 'Heading',
-    subHeading: 'Subheading'
-  };
-
-  const modalDescriptionOptions = {
-    title: 'Description Title',
-    description: 'Adding a subheading clearly indicates the hierarchy of the information.',
-    removePadding: true
-  };
-
-  const modalDescriptionOptionsWithoutTitle = {
-    description: 'Card Sections include supporting text like an article summary or a restaurant description.',
-    removePadding: true
-  };
-
   return (
     <div>
       <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br />
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />
+        Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br />
+        Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
         <Button appearance="primary" onClick={() => setOpen(true)}>Open</Button>
       </Paragraph>
-      <Modal dimension="small" {...options}>
-        <ModalHeader {...modalHeaderOptions} />
-        <ModalBody>
-          <Text>Modal Body</Text>
-          <ModalDescription {...modalDescriptionOptions} />
-          <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
-        </ModalBody>
-        <ModalFooter>
-          <Button appearance="basic">Basic</Button>
-          <Button appearance="primary">Primary</Button>
-        </ModalFooter>
+      <Modal
+        open={open}
+        dimension={dimension}
+        backdropClose={backdropClose}
+        onClose={onClose}
+        headerOptions={{
+          heading: 'Heading',
+          subHeading: 'Subheading'
+        }}
+        footer={(
+          <>
+            <Button appearance="basic" onClick={console.log('Basic button click')}>Basic</Button>
+            <Button appearance="primary" className="ml-4" onClick={console.log('Primary button click')}>Primary</Button>
+          </>
+        )}
+      >
+        <Text>Modal Body</Text>
+        <ModalDescription
+          title="Description Title"
+          description="Adding a subheading clearly indicates the hierarchy of the information."
+        />
+        <ModalDescription
+          description="Card Sections include supporting text like an article summary or a restaurant description."
+        />
       </Modal>
     </div>
   );
