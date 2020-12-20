@@ -1,10 +1,11 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseContainerProps } from '@/utils/types';
 
-type Columns = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'auto';
+type Columns = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'auto'
+  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
-export interface ColumnProps extends BaseProps {
+export interface ColumnProps extends Omit<BaseContainerProps, 'size'> {
   /**
    * Default size of Column
    */
@@ -29,11 +30,9 @@ export interface ColumnProps extends BaseProps {
    * Size of Column if the viewport is 1200 pixels wide or wider.
    */
   sizeXL?: Columns;
-  children?: React.ReactNode;
-  className?: string;
 }
 
-export const Column = (props: ColumnProps) => {
+export const Column = React.forwardRef<HTMLDivElement, ColumnProps>((props, ref) => {
   const {
     size,
     sizeXS,
@@ -42,10 +41,9 @@ export const Column = (props: ColumnProps) => {
     sizeL,
     sizeXL,
     className,
-    children
+    children,
+    ...rest
   } = props;
-
-  const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     ['Col']: true,
@@ -58,8 +56,8 @@ export const Column = (props: ColumnProps) => {
     [`${className}`]: className
   });
 
-  return <div {...baseProps} className={classes}>{children}</div>;
-};
+  return <div ref={ref} {...rest} className={classes}>{children}</div>;
+});
 
 Column.displayName = 'Column';
 
