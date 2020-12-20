@@ -1,28 +1,24 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseContainerProps } from '@/utils/types';
 
 export type Shadow = 'none' | 'light' | 'medium' | 'dark';
 
-export interface CardProps extends BaseProps {
+export interface CardProps extends BaseContainerProps {
   /**
    * Shadow of the `Card`
+   * @default 'medium'
    */
-  shadow: Shadow;
-  /**
-   * Will be wrapped in a `Card` container
-   */
-  children: React.ReactNode;
+  shadow?: Shadow;
 }
 
-export const Card = (props: CardProps) => {
+export const Card = React.forwardRef<HTMLDivElement, CardProps>((props, ref) => {
   const {
-    shadow,
+    shadow = 'medium',
     children,
     className,
+    ...rest
   } = props;
-
-  const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     Card: true,
@@ -31,15 +27,12 @@ export const Card = (props: CardProps) => {
   });
 
   return (
-    <div {...baseProps} className={classes}>
+    <div ref={ref} {...rest} className={classes}>
       {children}
     </div>
   );
-};
+});
 
 Card.displayName = 'Card';
-Card.defaultProps = {
-  shadow: 'medium'
-};
 
 export default Card;
