@@ -1,21 +1,27 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseContainerProps } from '@/utils/types';
 
-export interface RowProps extends BaseProps {
-  children?: React.ReactNode;
-}
+export type RowProps = BaseContainerProps;
 
-export const Row = (props: RowProps) => {
-  const { className, children } = props;
-  const baseProps = extractBaseProps(props);
+export const Row = React.forwardRef<HTMLDivElement, RowProps>((props, ref) => {
+  const { className, children, ...rest } = props;
 
   const classes = classNames({
     Row: true,
     [`${className}`]: className
   });
-  return <div data-test="DesignSystem-Row"{...baseProps} className={classes}>{children}</div>;
-};
+  return (
+    <div
+      data-test="DesignSystem-Row"
+      ref={ref}
+      {...rest}
+      className={classes}
+    >
+      {children}
+    </div>
+  );
+});
 
 Row.displayName = 'Row';
 
