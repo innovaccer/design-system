@@ -27,6 +27,8 @@ export type BaseProps = {
   'data-test'?: string,
 };
 
+export type BaseContainerProps = Omit<React.HTMLProps<HTMLDivElement>, 'ref'>;
+
 export const extractBaseProps = (props: Record<string, any>) => {
   const baseProps = ['className', 'data-test'];
   const basePropsObj = baseProps.reduce((acc, curr) => {
