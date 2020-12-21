@@ -1431,25 +1431,29 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-ModalHeader"
   >
     <div
-      class="Modal-headerHeading"
+      class="Modal-headerWrapper"
     >
-      <h4
-        class="Heading Heading--m Heading--default"
-        data-test="DesignSystem-Heading"
+      <div
+        class="Modal-headerHeading"
       >
-        Hello World!
-      </h4>
-      <i
-        class="material-icons Icon Icon--default mx-2 cursor-pointer"
-        data-test="DesignSystem-ModalHeader--CloseIcon"
-        style="font-size: 20px; width: 20px;"
-      >
-        close
-      </i>
+        <h4
+          class="Heading Heading--m Heading--default"
+          data-test="DesignSystem-Heading"
+        >
+          Hello World!
+        </h4>
+        <i
+          class="material-icons Icon Icon--default mx-2 cursor-pointer"
+          data-test="DesignSystem-ModalHeader--CloseIcon"
+          style="font-size: 20px; width: 20px;"
+        >
+          close
+        </i>
+      </div>
     </div>
   </div>
   <div
-    class="Modal-footer"
+    class="Modal-footer Modal-footer--inModal Modal-footer--stickToBottom"
     data-test="DesignSystem-ModalFooter"
   >
     <span
@@ -1460,7 +1464,7 @@ exports[`TS renders children 1`] = `
     </span>
   </div>
   <div
-    class="Modal-body"
+    class="Modal-body Modal-body--stickFooter"
     data-test="DesignSystem-ModalBody"
   >
     <span
