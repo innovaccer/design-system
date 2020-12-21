@@ -10,7 +10,7 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Row Modal-container Modal-container--open"
+      class="Row Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -23,25 +23,29 @@ exports[`Dialog component
           data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerHeading"
+            class="Modal-headerWrapper"
           >
-            <h4
-              class="Heading Heading--m Heading--default"
-              data-test="DesignSystem-Heading"
+            <div
+              class="Modal-headerHeading"
             >
-              Sample String
-            </h4>
-            <i
-              class="material-icons Icon Icon--default mx-2 cursor-pointer"
-              data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 20px; width: 20px;"
-            >
-              close
-            </i>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+              <i
+                class="material-icons Icon Icon--default mx-2 cursor-pointer"
+                data-test="DesignSystem-ModalHeader--CloseIcon"
+                style="font-size: 20px; width: 20px;"
+              >
+                close
+              </i>
+            </div>
           </div>
         </div>
         <div
-          class="Modal-body"
+          class="Modal-body Modal-body--stickFooter"
           data-test="DesignSystem-ModalBody"
         >
           <div
@@ -64,7 +68,7 @@ exports[`Dialog component
           </div>
         </div>
         <div
-          class="Modal-footer"
+          class="Modal-footer Modal-footer--inModal Modal-footer--stickToBottom"
           data-test="DesignSystem-ModalFooter"
         >
           <button
@@ -109,7 +113,7 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Row Modal-container Modal-container--open"
+      class="Row Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -122,25 +126,29 @@ exports[`Dialog component
           data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerHeading"
+            class="Modal-headerWrapper"
           >
-            <h4
-              class="Heading Heading--m Heading--default"
-              data-test="DesignSystem-Heading"
+            <div
+              class="Modal-headerHeading"
             >
-              Sample String
-            </h4>
-            <i
-              class="material-icons Icon Icon--default mx-2 cursor-pointer"
-              data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 20px; width: 20px;"
-            >
-              close
-            </i>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+              <i
+                class="material-icons Icon Icon--default mx-2 cursor-pointer"
+                data-test="DesignSystem-ModalHeader--CloseIcon"
+                style="font-size: 20px; width: 20px;"
+              >
+                close
+              </i>
+            </div>
           </div>
         </div>
         <div
-          class="Modal-body"
+          class="Modal-body Modal-body--stickFooter"
           data-test="DesignSystem-ModalBody"
         >
           <div
@@ -163,7 +171,7 @@ exports[`Dialog component
           </div>
         </div>
         <div
-          class="Modal-footer"
+          class="Modal-footer Modal-footer--inModal Modal-footer--stickToBottom"
           data-test="DesignSystem-ModalFooter"
         >
           <button
@@ -202,7 +210,7 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Row Modal-container Modal-container--open"
+      class="Row Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -215,25 +223,29 @@ exports[`Dialog component
           data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerHeading"
+            class="Modal-headerWrapper"
           >
-            <h4
-              class="Heading Heading--m Heading--default"
-              data-test="DesignSystem-Heading"
+            <div
+              class="Modal-headerHeading"
             >
-              Sample String
-            </h4>
-            <i
-              class="material-icons Icon Icon--default mx-2 cursor-pointer"
-              data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 20px; width: 20px;"
-            >
-              close
-            </i>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+              <i
+                class="material-icons Icon Icon--default mx-2 cursor-pointer"
+                data-test="DesignSystem-ModalHeader--CloseIcon"
+                style="font-size: 20px; width: 20px;"
+              >
+                close
+              </i>
+            </div>
           </div>
         </div>
         <div
-          class="Modal-body"
+          class="Modal-body Modal-body--stickFooter"
           data-test="DesignSystem-ModalBody"
         >
           <div
@@ -256,7 +268,7 @@ exports[`Dialog component
           </div>
         </div>
         <div
-          class="Modal-footer"
+          class="Modal-footer Modal-footer--inModal Modal-footer--stickToBottom"
           data-test="DesignSystem-ModalFooter"
         >
           <button
@@ -298,7 +310,7 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Row Modal-container Modal-container--open"
+      class="Row Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -311,25 +323,29 @@ exports[`Dialog component
           data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerHeading"
+            class="Modal-headerWrapper"
           >
-            <h4
-              class="Heading Heading--m Heading--default"
-              data-test="DesignSystem-Heading"
+            <div
+              class="Modal-headerHeading"
             >
-              Sample String
-            </h4>
-            <i
-              class="material-icons Icon Icon--default mx-2 cursor-pointer"
-              data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 20px; width: 20px;"
-            >
-              close
-            </i>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+              <i
+                class="material-icons Icon Icon--default mx-2 cursor-pointer"
+                data-test="DesignSystem-ModalHeader--CloseIcon"
+                style="font-size: 20px; width: 20px;"
+              >
+                close
+              </i>
+            </div>
           </div>
         </div>
         <div
-          class="Modal-body"
+          class="Modal-body Modal-body--stickFooter"
           data-test="DesignSystem-ModalBody"
         >
           <div
@@ -352,7 +368,7 @@ exports[`Dialog component
           </div>
         </div>
         <div
-          class="Modal-footer"
+          class="Modal-footer Modal-footer--inModal Modal-footer--stickToBottom"
           data-test="DesignSystem-ModalFooter"
         >
           <button
@@ -394,7 +410,7 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Row Modal-container Modal-container--open"
+      class="Row Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -407,25 +423,29 @@ exports[`Dialog component
           data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerHeading"
+            class="Modal-headerWrapper"
           >
-            <h4
-              class="Heading Heading--m Heading--default"
-              data-test="DesignSystem-Heading"
+            <div
+              class="Modal-headerHeading"
             >
-              Sample String
-            </h4>
-            <i
-              class="material-icons Icon Icon--default mx-2 cursor-pointer"
-              data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 20px; width: 20px;"
-            >
-              close
-            </i>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+              <i
+                class="material-icons Icon Icon--default mx-2 cursor-pointer"
+                data-test="DesignSystem-ModalHeader--CloseIcon"
+                style="font-size: 20px; width: 20px;"
+              >
+                close
+              </i>
+            </div>
           </div>
         </div>
         <div
-          class="Modal-body"
+          class="Modal-body Modal-body--stickFooter"
           data-test="DesignSystem-ModalBody"
         >
           <div
@@ -448,7 +468,7 @@ exports[`Dialog component
           </div>
         </div>
         <div
-          class="Modal-footer"
+          class="Modal-footer Modal-footer--inModal Modal-footer--stickToBottom"
           data-test="DesignSystem-ModalFooter"
         >
           <button
@@ -490,7 +510,7 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Row Modal-container Modal-container--open"
+      class="Row Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -503,25 +523,29 @@ exports[`Dialog component
           data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerHeading"
+            class="Modal-headerWrapper"
           >
-            <h4
-              class="Heading Heading--m Heading--default"
-              data-test="DesignSystem-Heading"
+            <div
+              class="Modal-headerHeading"
             >
-              Sample String
-            </h4>
-            <i
-              class="material-icons Icon Icon--default mx-2 cursor-pointer"
-              data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 20px; width: 20px;"
-            >
-              close
-            </i>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+              <i
+                class="material-icons Icon Icon--default mx-2 cursor-pointer"
+                data-test="DesignSystem-ModalHeader--CloseIcon"
+                style="font-size: 20px; width: 20px;"
+              >
+                close
+              </i>
+            </div>
           </div>
         </div>
         <div
-          class="Modal-body"
+          class="Modal-body Modal-body--stickFooter"
           data-test="DesignSystem-ModalBody"
         >
           <div
@@ -544,7 +568,7 @@ exports[`Dialog component
           </div>
         </div>
         <div
-          class="Modal-footer"
+          class="Modal-footer Modal-footer--inModal Modal-footer--stickToBottom"
           data-test="DesignSystem-ModalFooter"
         >
           <button
@@ -586,7 +610,7 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Row Modal-container Modal-container--open"
+      class="Row Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -599,25 +623,29 @@ exports[`Dialog component
           data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerHeading"
+            class="Modal-headerWrapper"
           >
-            <h4
-              class="Heading Heading--m Heading--default"
-              data-test="DesignSystem-Heading"
+            <div
+              class="Modal-headerHeading"
             >
-              Sample String
-            </h4>
-            <i
-              class="material-icons Icon Icon--default mx-2 cursor-pointer"
-              data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 20px; width: 20px;"
-            >
-              close
-            </i>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+              <i
+                class="material-icons Icon Icon--default mx-2 cursor-pointer"
+                data-test="DesignSystem-ModalHeader--CloseIcon"
+                style="font-size: 20px; width: 20px;"
+              >
+                close
+              </i>
+            </div>
           </div>
         </div>
         <div
-          class="Modal-body"
+          class="Modal-body Modal-body--stickFooter"
           data-test="DesignSystem-ModalBody"
         >
           <div
@@ -640,7 +668,7 @@ exports[`Dialog component
           </div>
         </div>
         <div
-          class="Modal-footer"
+          class="Modal-footer Modal-footer--inModal Modal-footer--stickToBottom"
           data-test="DesignSystem-ModalFooter"
         >
           <button
@@ -682,7 +710,7 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Row Modal-container Modal-container--open"
+      class="Row Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -695,25 +723,29 @@ exports[`Dialog component
           data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerHeading"
+            class="Modal-headerWrapper"
           >
-            <h4
-              class="Heading Heading--m Heading--default"
-              data-test="DesignSystem-Heading"
+            <div
+              class="Modal-headerHeading"
             >
-              Sample String
-            </h4>
-            <i
-              class="material-icons Icon Icon--default mx-2 cursor-pointer"
-              data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 20px; width: 20px;"
-            >
-              close
-            </i>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+              <i
+                class="material-icons Icon Icon--default mx-2 cursor-pointer"
+                data-test="DesignSystem-ModalHeader--CloseIcon"
+                style="font-size: 20px; width: 20px;"
+              >
+                close
+              </i>
+            </div>
           </div>
         </div>
         <div
-          class="Modal-body"
+          class="Modal-body Modal-body--stickFooter"
           data-test="DesignSystem-ModalBody"
         >
           <div
@@ -736,7 +768,7 @@ exports[`Dialog component
           </div>
         </div>
         <div
-          class="Modal-footer"
+          class="Modal-footer Modal-footer--inModal Modal-footer--stickToBottom"
           data-test="DesignSystem-ModalFooter"
         >
           <button
@@ -778,7 +810,7 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Row Modal-container Modal-container--open"
+      class="Row Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -791,25 +823,29 @@ exports[`Dialog component
           data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerHeading"
+            class="Modal-headerWrapper"
           >
-            <h4
-              class="Heading Heading--m Heading--default"
-              data-test="DesignSystem-Heading"
+            <div
+              class="Modal-headerHeading"
             >
-              Sample String
-            </h4>
-            <i
-              class="material-icons Icon Icon--default mx-2 cursor-pointer"
-              data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 20px; width: 20px;"
-            >
-              close
-            </i>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+              <i
+                class="material-icons Icon Icon--default mx-2 cursor-pointer"
+                data-test="DesignSystem-ModalHeader--CloseIcon"
+                style="font-size: 20px; width: 20px;"
+              >
+                close
+              </i>
+            </div>
           </div>
         </div>
         <div
-          class="Modal-body"
+          class="Modal-body Modal-body--stickFooter"
           data-test="DesignSystem-ModalBody"
         >
           <div
@@ -832,7 +868,7 @@ exports[`Dialog component
           </div>
         </div>
         <div
-          class="Modal-footer"
+          class="Modal-footer Modal-footer--inModal Modal-footer--stickToBottom"
           data-test="DesignSystem-ModalFooter"
         >
           <button
@@ -874,7 +910,7 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Row Modal-container Modal-container--open"
+      class="Row Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -887,25 +923,29 @@ exports[`Dialog component
           data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerHeading"
+            class="Modal-headerWrapper"
           >
-            <h4
-              class="Heading Heading--m Heading--default"
-              data-test="DesignSystem-Heading"
+            <div
+              class="Modal-headerHeading"
             >
-              Sample String
-            </h4>
-            <i
-              class="material-icons Icon Icon--default mx-2 cursor-pointer"
-              data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 20px; width: 20px;"
-            >
-              close
-            </i>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+              <i
+                class="material-icons Icon Icon--default mx-2 cursor-pointer"
+                data-test="DesignSystem-ModalHeader--CloseIcon"
+                style="font-size: 20px; width: 20px;"
+              >
+                close
+              </i>
+            </div>
           </div>
         </div>
         <div
-          class="Modal-body"
+          class="Modal-body Modal-body--stickFooter"
           data-test="DesignSystem-ModalBody"
         >
           <div
@@ -928,7 +968,7 @@ exports[`Dialog component
           </div>
         </div>
         <div
-          class="Modal-footer"
+          class="Modal-footer Modal-footer--inModal Modal-footer--stickToBottom"
           data-test="DesignSystem-ModalFooter"
         >
           <button
@@ -970,7 +1010,7 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Row Modal-container Modal-container--open"
+      class="Row Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -983,25 +1023,29 @@ exports[`Dialog component
           data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerHeading"
+            class="Modal-headerWrapper"
           >
-            <h4
-              class="Heading Heading--m Heading--default"
-              data-test="DesignSystem-Heading"
+            <div
+              class="Modal-headerHeading"
             >
-              Sample String
-            </h4>
-            <i
-              class="material-icons Icon Icon--default mx-2 cursor-pointer"
-              data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 20px; width: 20px;"
-            >
-              close
-            </i>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+              <i
+                class="material-icons Icon Icon--default mx-2 cursor-pointer"
+                data-test="DesignSystem-ModalHeader--CloseIcon"
+                style="font-size: 20px; width: 20px;"
+              >
+                close
+              </i>
+            </div>
           </div>
         </div>
         <div
-          class="Modal-body"
+          class="Modal-body Modal-body--stickFooter"
           data-test="DesignSystem-ModalBody"
         >
           <div
@@ -1024,7 +1068,7 @@ exports[`Dialog component
           </div>
         </div>
         <div
-          class="Modal-footer"
+          class="Modal-footer Modal-footer--inModal Modal-footer--stickToBottom"
           data-test="DesignSystem-ModalFooter"
         >
           <button
@@ -1066,7 +1110,7 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Row Modal-container Modal-container--open"
+      class="Row Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -1079,25 +1123,29 @@ exports[`Dialog component
           data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerHeading"
+            class="Modal-headerWrapper"
           >
-            <h4
-              class="Heading Heading--m Heading--default"
-              data-test="DesignSystem-Heading"
+            <div
+              class="Modal-headerHeading"
             >
-              Sample String
-            </h4>
-            <i
-              class="material-icons Icon Icon--default mx-2 cursor-pointer"
-              data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 20px; width: 20px;"
-            >
-              close
-            </i>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+              <i
+                class="material-icons Icon Icon--default mx-2 cursor-pointer"
+                data-test="DesignSystem-ModalHeader--CloseIcon"
+                style="font-size: 20px; width: 20px;"
+              >
+                close
+              </i>
+            </div>
           </div>
         </div>
         <div
-          class="Modal-body"
+          class="Modal-body Modal-body--stickFooter"
           data-test="DesignSystem-ModalBody"
         >
           <div
@@ -1120,7 +1168,7 @@ exports[`Dialog component
           </div>
         </div>
         <div
-          class="Modal-footer"
+          class="Modal-footer Modal-footer--inModal Modal-footer--stickToBottom"
           data-test="DesignSystem-ModalFooter"
         >
           <button
@@ -1162,7 +1210,7 @@ exports[`Dialog component
     class="Modal-wrapper"
   >
     <div
-      class="Row Modal-container Modal-container--open"
+      class="Row Row Modal-container Modal-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -1175,25 +1223,29 @@ exports[`Dialog component
           data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerHeading"
+            class="Modal-headerWrapper"
           >
-            <h4
-              class="Heading Heading--m Heading--default"
-              data-test="DesignSystem-Heading"
+            <div
+              class="Modal-headerHeading"
             >
-              Sample String
-            </h4>
-            <i
-              class="material-icons Icon Icon--default mx-2 cursor-pointer"
-              data-test="DesignSystem-ModalHeader--CloseIcon"
-              style="font-size: 20px; width: 20px;"
-            >
-              close
-            </i>
+              <h4
+                class="Heading Heading--m Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Sample String
+              </h4>
+              <i
+                class="material-icons Icon Icon--default mx-2 cursor-pointer"
+                data-test="DesignSystem-ModalHeader--CloseIcon"
+                style="font-size: 20px; width: 20px;"
+              >
+                close
+              </i>
+            </div>
           </div>
         </div>
         <div
-          class="Modal-body"
+          class="Modal-body Modal-body--stickFooter"
           data-test="DesignSystem-ModalBody"
         >
           <div
@@ -1216,7 +1268,7 @@ exports[`Dialog component
           </div>
         </div>
         <div
-          class="Modal-footer"
+          class="Modal-footer Modal-footer--inModal Modal-footer--stickToBottom"
           data-test="DesignSystem-ModalFooter"
         >
           <button

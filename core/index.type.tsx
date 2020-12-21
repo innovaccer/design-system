@@ -43,6 +43,7 @@ export { TooltipProps } from './components/atoms/tooltip';
 export { DialogProps } from './components/molecules/dialog';
 export { ChatMessageProps } from './components/molecules/chatMessage';
 export { EmptyStateProps } from './components/molecules/emptyState';
+export { SidesheetProps } from './components/molecules/sidesheet';
 export { ModalProps } from './components/molecules/modal';
 export { ModalHeaderProps } from './components/molecules/modalHeader';
 export { ModalFooterProps } from './components/molecules/modalFooter';

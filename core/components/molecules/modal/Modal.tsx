@@ -142,6 +142,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
     }, className);
 
     const ContainerClass = classNames({
+      ['Row']: true,
       ['Modal-container']: true,
       ['Modal-container--open']: open,
     });

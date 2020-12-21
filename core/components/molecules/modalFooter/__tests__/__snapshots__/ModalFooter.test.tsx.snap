@@ -5,7 +5,7 @@ exports[`ModalFooter component
  1`] = `
 <DocumentFragment>
   <div
-    class="Modal-footer"
+    class="Modal-footer Modal-footer--inModal Modal-footer--stickToBottom"
     data-test="DesignSystem-ModalFooter"
   >
     <button
