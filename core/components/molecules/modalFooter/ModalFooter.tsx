@@ -5,14 +5,20 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 export interface ModalFooterProps extends BaseProps {
   open?: boolean;
   children: React.ReactNode;
+  stickToBottom: boolean;
+  seperator?: boolean;
+  inSidesheet?: boolean;
 }
 
 export const ModalFooter = (props: ModalFooterProps) => {
-  const { open, children, className } = props;
+  const { open, children, className, stickToBottom, seperator, inSidesheet } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames({
-    'Modal-footer': true
+    'Modal-footer': true,
+    ['Modal-footer--inModal']: !inSidesheet,
+    ['Modal-footer--seperator']: seperator,
+    ['Modal-footer--stickToBottom']: stickToBottom
   }, className);
 
   const wrapperRef = React.createRef<HTMLDivElement>();
@@ -34,6 +40,11 @@ export const ModalFooter = (props: ModalFooterProps) => {
       {children}
     </div>
   );
+};
+
+ModalFooter.defaultProps = {
+  stickToBottom: true,
+  inSidesheet: false
 };
 
 ModalFooter.displayName = 'ModalFooter';

@@ -44,6 +44,7 @@ export { Toast } from './components/atoms/toast';
 export { Tooltip } from './components/atoms/tooltip';
 export { Dialog } from './components/molecules/dialog';
 export { Modal } from './components/molecules/modal';
+export { Sidesheet } from './components/molecules/sidesheet';
 export { ChatMessage } from './components/molecules/chatMessage';
 export { EmptyState } from './components/molecules/emptyState';
 export { ModalHeader } from './components/molecules/modalHeader';
