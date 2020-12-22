@@ -212,8 +212,8 @@
         "affectsGlobalScope": false
       },
       "../../core/utils/types.tsx": {
-        "version": "638287dc35093ca7424d204351c653b0ae7589deec75d46e331f24f3179c3bd1",
-        "signature": "3b894ad8a6df665e17d7d4c63400452b77b5c110c06c56c40b163a02bdbf661b",
+        "version": "4c3c0f13594e404f0cab82a1508df2b9d538e5e07522a6cdf79891655ee76ccc",
+        "signature": "adb09ae8c788634fbb31393ad9aa3ad80ab13c6ce3deabdb1d86596a7de9ab10",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/avatar/Avatar.tsx": {
@@ -247,7 +247,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/backdrop/Backdrop.tsx": {
-        "version": "461bf59a7ec7a4caad3807519e6bde9653868024b4f9e8920298bd6ff34be5b5",
+        "version": "90ba075b18603a1b72e2e69be7d4d26a7e6106f1b5a1bc02b19b89881c0774f9",
         "signature": "0f95643c9e43ef475353613ccc9790e53263219a969c75c4268d967341a4d81e",
         "affectsGlobalScope": false
       },
@@ -362,8 +362,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/button/Button.tsx": {
-        "version": "285a46c840bfbf85e9b7d8160d43f6c8703289898dfd794694806708babd52e6",
-        "signature": "9ce058ec6a9aa2d0518fd10c08dec2e4792a4455c12c0c0ddb876a6966452b2d",
+        "version": "13226d090d6a798853e86fbfba2b9a230e594572acdcbb4ffae25615c7b60631",
+        "signature": "baf525611e90ff239190ce37ca34235b76a3edd8c74e0445cdf9552d8498602b",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/button/index.tsx": {
@@ -447,8 +447,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/card/Card.tsx": {
-        "version": "0f2ad21485cd5bcc3135366a2058fc6addb9770ae4711b330f3aca68c36cd465",
-        "signature": "5ab2c8c33818f4afd3418b58cf5f8b72ceac0110f88a89c2f8b4ff66cc6db766",
+        "version": "7ef3652714deb54a6ab530a4889a4fe3654dc7d8dcc07435d596a48325001986",
+        "signature": "6038a365c7d60f9aea1dc397bdabdb3b5870505c6583d3c404cade6267c7a88e",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/card/index.tsx": {
@@ -482,8 +482,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/column/Column.tsx": {
-        "version": "11618553afff36d952e2047dcbf9820a3c4f78f64a1976033cde92ee0f59e6ad",
-        "signature": "3c545f059fd168911e56627b8cfa90f9784baf3745738411ae54bbfbc68dd3dd",
+        "version": "8cdf932137f020d5c93111a33b9e07963b2dfe77a7728ac880e874d0bee48c30",
+        "signature": "0897aa3d685f54030c21f091010c04a10dc41c009879e77754f5376b602f9d01",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/column/index.tsx": {
@@ -707,8 +707,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/row/Row.tsx": {
-        "version": "133ad90f77be952560d88541dcab7b44d0e622e975029f6caffc9269f0dfd32a",
-        "signature": "dc828b79f446abddf2d08da35d9fd0b7abc372fe586739b716c4143167ecdc5b",
+        "version": "b74ba783bd439f29279530a49f1d354d2b7fde0e55280b2da9021a6ca274510a",
+        "signature": "b04485180a7eab2be29072bd270adae1698a78ac1355f4bd27f89de4e42a195b",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/row/index.tsx": {
@@ -846,49 +846,9 @@
         "signature": "029cbd98582266da511f8c80aca4504229423833394b6c01a07f3936c19aa7ac",
         "affectsGlobalScope": false
       },
-      "../../core/components/molecules/modal/Modal.tsx": {
-        "version": "500d85b5b5cdfe41847604b02c581a02e90ee8b81b9a0f95bd3e03b8697739e1",
-        "signature": "a033eef4157a1c212363c4b03c135eab950e89dfd169a739886f0b5cb1a159e3",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/molecules/modal/index.tsx": {
-        "version": "5a9be59a8d4a00cc669bbe53a08327723513a36f67632b559e13095c3f250913",
-        "signature": "303266479b4db97ed6efd5eaedc33cfac904aab57068dbcbcfd1ac3a48d94b52",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/molecules/modalHeader/ModalHeader.tsx": {
-        "version": "49ae86ee3a74634b667e45dddb7480d648e70ce7f46e37e4024448f962825647",
-        "signature": "efa9fd49a210690a0bbf09b769f12827ecff989dd1dd7816899a3a2720479208",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/molecules/modalHeader/index.tsx": {
-        "version": "8a3445cf1a8193bdb2a919e9cbb70a4a663e644a6e42588aa0f7369373e2c7e0",
-        "signature": "3de3e57d529b1679b25567a4c92f5e18fe516dbb7f20e45a858061216ab09ce4",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/molecules/modalDescription/ModalDescription.tsx": {
-        "version": "af35e74a83319c403279fc67cc48e17c1a07c82be0b8a23227c35fb7fe2802b7",
-        "signature": "532672f2b4e43d164512df8130089af4d8a62a7acc63024a62c60e988ac6d1d7",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/molecules/modalDescription/index.tsx": {
-        "version": "ff5daaf07c8e797b6e648e65be43a3b26cbb56ab8d6d2df1209705d7262ad4cf",
-        "signature": "698e7615475ccab9237b046d4d1314808eb557e7b823903f5cb040782ebf850a",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/molecules/modalFooter/ModalFooter.tsx": {
-        "version": "3478b039b2cf9cf2fb5c08a9815f4442739b1e34b53353518fe2144b90f2aca9",
-        "signature": "584cb14af1d7d39bc3c5099f91220d1399e04f1ed5dba0cc7c7b928d4ec955e5",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/molecules/modalFooter/index.tsx": {
-        "version": "e2a022c9c4f132d753d89d5302ac268043b94cc7763382fafed665fb28741f62",
-        "signature": "616d4ea60ed4940969c575ac6ee4229a196c5114375f707cb1a6d64e01eb38f4",
-        "affectsGlobalScope": false
-      },
       "../../core/components/molecules/dialog/Dialog.tsx": {
-        "version": "cd3bf72b4bea48b7703673a616791c0d133e16086c94b9c64cdbe6094b0a8e38",
-        "signature": "9a167f21250a77273be9877650a435f176bbe981294f758ea5d901e84c8eebf0",
+        "version": "b0168ac134a23afbf8844bf70e79c2af80c97d4ad4d48253a59a6a458c8e95e7",
+        "signature": "bdb61ad54f812237b0a946e46700c046091f6b49f2b7c9eb5186c15d559ccbbe",
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/dialog/index.tsx": {
@@ -921,24 +881,74 @@
         "signature": "1dba2d13e2fa825420e0113039a846d70659446752421299af1fca92352dd372",
         "affectsGlobalScope": false
       },
-      "../../core/components/molecules/errorTemplate/ErrorTemplate.tsx": {
-        "version": "b20c3aeee2de27a10945f9fb59105cae74da331f5aa260570a37a2ac538876d5",
-        "signature": "b59c01e8fee05c2be31a89a6b3b2cfa99cf083a6865f2c4f15e8529b102358d2",
+      "../../core/components/molecules/emptyState/EmptyState.tsx": {
+        "version": "36fb703a9b8d2bef9555111be1da58912287a12ad5ff9904d2ad6d4dfc125ce6",
+        "signature": "37b09708391d897204c352d1440459a4052651de102a6dd63688b149bc4c9921",
         "affectsGlobalScope": false
       },
-      "../../core/components/molecules/errorTemplate/index.tsx": {
-        "version": "aedcfee312b82dd0207ad1f689969534254cfbddb90a0411a55d31dc9a1323db",
-        "signature": "6cfa4c095178d46564bc4f3e4454e26259525102aac6a59bd1cbe57f2d00a5e6",
+      "../../core/components/molecules/emptyState/index.tsx": {
+        "version": "aeafb1df89a19d7060310a352d50019d21e867352cbbbc72e4c1485d3018476e",
+        "signature": "177bdd267c09acfba8e6c3c59e0bdfc49873520e44801e30ff5380c5132dfdeb",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/sidesheet/Sidesheet.tsx": {
+        "version": "75f71b8aee8695284c0fcaa4a9ebe4d196e13c3e2445cec34859ecf4c802b178",
+        "signature": "683fd1fe33aba7ba5744aeb4b339b3603dda9c61fca20cbc6199d1047c4fd265",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/sidesheet/index.tsx": {
+        "version": "3de26a0053a31ee264fccd8355b420e1f540662c0352336acf10da2b6067aec6",
+        "signature": "59b453a3fe8a22771fad2ef46b95cca7208d3db7f87522f07cf4e2e10ca479c2",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/modal/Modal.tsx": {
+        "version": "a1b5a00d38d947f6dfe2cbc30085f9fd01e12adda7b1ffe4bc978abe3fbff377",
+        "signature": "a532731834b7142e2a589d1885dad7ab73ce235f4f911ebe2074e32b61002575",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/modal/index.tsx": {
+        "version": "5a9be59a8d4a00cc669bbe53a08327723513a36f67632b559e13095c3f250913",
+        "signature": "303266479b4db97ed6efd5eaedc33cfac904aab57068dbcbcfd1ac3a48d94b52",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/modalHeader/ModalHeader.tsx": {
+        "version": "a67f6fb1b3eb088d3f041fad6dd84c8152b810a4262013211b3366f341f67323",
+        "signature": "678299dd27915f29c9c9071367be26bef65289e4236279d1e528c8875ee3da0b",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/modalHeader/index.tsx": {
+        "version": "8a3445cf1a8193bdb2a919e9cbb70a4a663e644a6e42588aa0f7369373e2c7e0",
+        "signature": "3de3e57d529b1679b25567a4c92f5e18fe516dbb7f20e45a858061216ab09ce4",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/modalFooter/ModalFooter.tsx": {
+        "version": "2e89bd0cafcb75e10f00e23fb52febe184ec0ba4ae0fa8e754c6539656fff9a5",
+        "signature": "7b2979f5efc5656924e366b3f9d3f16ed30a7e65e06fe0c35e8b609734dd1ed5",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/modalFooter/index.tsx": {
+        "version": "e2a022c9c4f132d753d89d5302ac268043b94cc7763382fafed665fb28741f62",
+        "signature": "616d4ea60ed4940969c575ac6ee4229a196c5114375f707cb1a6d64e01eb38f4",
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/modalBody/ModalBody.tsx": {
-        "version": "82c7bfc9797634fd7b02e839be6e3b90108dd846f3a344fceb4430dea82188a6",
-        "signature": "59738b44687ead94b21f723a0071f7eba6b8b9f0e54eb705e2ce38d87b00b052",
+        "version": "67bac67d21dcea59a93c7ec0dde8cb86c7ec42c7e1d4351b5ab769082b9b9728",
+        "signature": "5f552d07377d1ff1f841b1f0589208de9583911bbaea5a16d57eb97137d3fdf7",
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/modalBody/index.tsx": {
         "version": "827b35b086f5a7e8365bc7fab54b62fe837c7c666862d1821feaa5ab470d4ece",
         "signature": "76a85700d17abccf9d6641cbbd599c7afa892ec8342d63338e9fd69d49857a57",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/modalDescription/ModalDescription.tsx": {
+        "version": "d7fb7d5974088431520a490863fc3242daae840220f76631b48e85769a8da67a",
+        "signature": "b2c258ebd79e78a89fd4fd5576322f7e7e5ea2ddb2cf70034b71e285c03c143f",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/modalDescription/index.tsx": {
+        "version": "ff5daaf07c8e797b6e648e65be43a3b26cbb56ab8d6d2df1209705d7262ad4cf",
+        "signature": "698e7615475ccab9237b046d4d1314808eb557e7b823903f5cb040782ebf850a",
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/pagination/Pagination.tsx": {
@@ -1147,8 +1157,8 @@
         "affectsGlobalScope": false
       },
       "../../core/index.type.tsx": {
-        "version": "dfa4664f607d69c4b6b37ec90d20481ca4e37b92c7c280545d02157e5a6d02f4",
-        "signature": "1f33d2252e1b3b3b1cef43ddc4e2b313692378f2d271604013819d50df845d73",
+        "version": "b6f83428d3b95d31cf9062aac206ffca1e33baed07ffe523e4e2477dd03b9bf6",
+        "signature": "33d8411b474543ebbe1788770680fc286fc4b33439de237091d1fea98482f7ae",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/timePicker/TimePicker.tsx": {
@@ -1177,8 +1187,8 @@
         "affectsGlobalScope": false
       },
       "../../core/index.tsx": {
-        "version": "b57eb98bffd50140d9eaec46ca119d38d7a461995c54a9097fd6c87f4db1620e",
-        "signature": "a2ee934c40f508b900971a0fc60539d7e5f0cf5b9d89e83b8a187264ae11b6f2",
+        "version": "73e4929e73586d29d07cb2ef636ef612adbcd58e28c647eec7ef63316d3554d3",
+        "signature": "30b89d7b71617560b9e2ad981aae9b8968d5a1a39ebce9dca6988dedbcba6a6c",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/badge/_stories_/SolidAlert.story.tsx": {
@@ -1588,7 +1598,7 @@
       },
       "../../core/components/molecules/Layout/index.story.tsx": {
         "version": "a840a4770fe3ac9b789a03587c2b4dc9b59e2cb0e8bf6142900bae272f832564",
-        "signature": "13ae2c9514e481f81623dc537dc0ff2d0ca031664e13d803c7186ea30b3e9047",
+        "signature": "25e8c954ab1ff0526056ea3fef5e6d00971c0cf59ecfeef8f9c62fc4487e2793",
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/buttonGroup/IconButtonGroup.story.tsx": {
@@ -1684,11 +1694,6 @@
       "../../core/components/patterns/layouts/sidebarTemplate.story.tsx": {
         "version": "928eba74607d5c38147ccdf02b2687ea4c6fc0a4228f837fcf8d39299e5bc14a",
         "signature": "3e429df5d99756d374b6eb6bfd1d7c026c4453af23bbbccb4d09e41b9ee39dc2",
-        "affectsGlobalScope": false
-      },
-      "../../core/utils/baseProps.tsx": {
-        "version": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/react-dom/server/index.d.ts": {
@@ -3226,6 +3231,9 @@
           "*",
           "*",
           "*",
+          "*",
+          "*",
+          "*",
           "*"
         ]
       },
@@ -3883,11 +3891,8 @@
         "../../core/components/molecules/chatMessage/ChatMessage.tsx"
       ],
       "../../core/components/molecules/dialog/Dialog.tsx": [
-        "../../core/components/atoms/button/index.tsx",
-        "../../core/components/molecules/modal/index.tsx",
-        "../../core/components/molecules/modalDescription/index.tsx",
-        "../../core/components/molecules/modalFooter/index.tsx",
-        "../../core/components/molecules/modalHeader/index.tsx",
+        "../../core/index.tsx",
+        "../../core/index.type.tsx",
         "../../core/utils/types.tsx",
         "../../node_modules/@types/react/index.d.ts"
       ],
@@ -3916,15 +3921,15 @@
       "../../core/components/molecules/editableInput/index.tsx": [
         "../../core/components/molecules/editableInput/EditableInput.tsx"
       ],
-      "../../core/components/molecules/errorTemplate/ErrorTemplate.tsx": [
+      "../../core/components/molecules/emptyState/EmptyState.tsx": [
         "../../core/index.tsx",
         "../../core/index.type.tsx",
         "../../core/utils/types.tsx",
         "../../node_modules/@types/classnames/index.d.ts",
         "../../node_modules/@types/react/index.d.ts"
       ],
-      "../../core/components/molecules/errorTemplate/index.tsx": [
-        "../../core/components/molecules/errorTemplate/ErrorTemplate.tsx"
+      "../../core/components/molecules/emptyState/index.tsx": [
+        "../../core/components/molecules/emptyState/EmptyState.tsx"
       ],
       "../../core/components/molecules/inputMask/InputMask.tsx": [
         "../../core/components/molecules/inputMask/utilites.tsx",
@@ -3941,8 +3946,8 @@
         "../../core/index.type.tsx"
       ],
       "../../core/components/molecules/modal/Modal.tsx": [
-        "../../core/components/atoms/backdrop/index.tsx",
-        "../../core/components/atoms/outsideClick/index.tsx",
+        "../../core/index.tsx",
+        "../../core/index.type.tsx",
         "../../core/utils/types.tsx",
         "../../node_modules/@types/classnames/index.d.ts",
         "../../node_modules/@types/react-dom/index.d.ts",
@@ -3978,7 +3983,6 @@
       ],
       "../../core/components/molecules/modalHeader/ModalHeader.tsx": [
         "../../core/index.tsx",
-        "../../core/index.type.tsx",
         "../../core/utils/types.tsx",
         "../../node_modules/@types/classnames/index.d.ts",
         "../../node_modules/@types/react/index.d.ts"
@@ -4015,6 +4019,17 @@
       ],
       "../../core/components/molecules/popover/index.tsx": [
         "../../core/components/molecules/popover/Popover.tsx"
+      ],
+      "../../core/components/molecules/sidesheet/Sidesheet.tsx": [
+        "../../core/index.tsx",
+        "../../core/index.type.tsx",
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/classnames/index.d.ts",
+        "../../node_modules/@types/react-dom/index.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/molecules/sidesheet/index.tsx": [
+        "../../core/components/molecules/sidesheet/Sidesheet.tsx"
       ],
       "../../core/components/molecules/stepper/Step.tsx": [
         "../../core/index.tsx",
@@ -4360,7 +4375,7 @@
         "../../core/components/molecules/dialog/index.tsx",
         "../../core/components/molecules/editableDropdown/index.tsx",
         "../../core/components/molecules/editableInput/index.tsx",
-        "../../core/components/molecules/errorTemplate/index.tsx",
+        "../../core/components/molecules/emptyState/index.tsx",
         "../../core/components/molecules/inputMask/index.tsx",
         "../../core/components/molecules/modal/index.tsx",
         "../../core/components/molecules/modalBody/index.tsx",
@@ -4370,6 +4385,7 @@
         "../../core/components/molecules/pagination/index.tsx",
         "../../core/components/molecules/placeholder/index.tsx",
         "../../core/components/molecules/popover/index.tsx",
+        "../../core/components/molecules/sidesheet/index.tsx",
         "../../core/components/molecules/stepper/index.tsx",
         "../../core/components/molecules/tabs/index.tsx",
         "../../core/components/organisms/datePicker/index.tsx",
@@ -4428,7 +4444,7 @@
         "../../core/components/molecules/dialog/index.tsx",
         "../../core/components/molecules/editableDropdown/index.tsx",
         "../../core/components/molecules/editableInput/index.tsx",
-        "../../core/components/molecules/errorTemplate/index.tsx",
+        "../../core/components/molecules/emptyState/index.tsx",
         "../../core/components/molecules/inputMask/index.tsx",
         "../../core/components/molecules/modal/index.tsx",
         "../../core/components/molecules/modalBody/index.tsx",
@@ -4438,6 +4454,7 @@
         "../../core/components/molecules/pagination/index.tsx",
         "../../core/components/molecules/placeholder/index.tsx",
         "../../core/components/molecules/popover/index.tsx",
+        "../../core/components/molecules/sidesheet/index.tsx",
         "../../core/components/molecules/stepper/index.tsx",
         "../../core/components/molecules/tabs/index.tsx",
         "../../core/components/organisms/datePicker/index.tsx",
@@ -6183,8 +6200,8 @@
       "../../core/components/molecules/editableDropdown/index.tsx",
       "../../core/components/molecules/editableInput/EditableInput.tsx",
       "../../core/components/molecules/editableInput/index.tsx",
-      "../../core/components/molecules/errorTemplate/ErrorTemplate.tsx",
-      "../../core/components/molecules/errorTemplate/index.tsx",
+      "../../core/components/molecules/emptyState/EmptyState.tsx",
+      "../../core/components/molecules/emptyState/index.tsx",
       "../../core/components/molecules/inputMask/InputMask.tsx",
       "../../core/components/molecules/inputMask/index.tsx",
       "../../core/components/molecules/inputMask/utilites.tsx",
@@ -6204,6 +6221,8 @@
       "../../core/components/molecules/placeholder/index.tsx",
       "../../core/components/molecules/popover/Popover.tsx",
       "../../core/components/molecules/popover/index.tsx",
+      "../../core/components/molecules/sidesheet/Sidesheet.tsx",
+      "../../core/components/molecules/sidesheet/index.tsx",
       "../../core/components/molecules/stepper/Step.tsx",
       "../../core/components/molecules/stepper/Stepper.tsx",
       "../../core/components/molecules/stepper/index.tsx",
@@ -6269,7 +6288,6 @@
       "../../core/index.type.tsx",
       "../../core/utils/Keys.ts",
       "../../core/utils/PopperWrapper.tsx",
-      "../../core/utils/baseProps.tsx",
       "../../core/utils/css.ts",
       "../../core/utils/docPage.tsx",
       "../../core/utils/index.tsx",

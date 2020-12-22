@@ -1,14 +1,14 @@
 
   /**
-   * Generated on: 1608107543415 
+   * Generated on: 1608612816278 
    *      Package: @innovaccer/design-system
-   *      Version: v1.4.0
+   *      Version: v1.4.1-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
 
     
-import React, { createElement, Component, createRef, cloneElement, useState as useState$3, useEffect as useEffect$2, forwardRef, useRef as useRef$1, useImperativeHandle, Fragment as Fragment$1, Children, PureComponent, isValidElement } from 'react';
+import React, { createElement, Component, createRef, cloneElement, useState as useState$2, useEffect as useEffect$1, forwardRef, useRef, useImperativeHandle, Fragment as Fragment$1, Children, PureComponent, isValidElement } from 'react';
 import ReactDOM, { findDOMNode, createPortal } from 'react-dom';
 
 function _typeof(obj) {
@@ -911,11 +911,19 @@ var LEGACY_ALIASES = {
 var $concat = functionBind.call(Function.call, Array.prototype.concat);
 var $spliceApply = functionBind.call(Function.apply, Array.prototype.splice);
 var $replace = functionBind.call(Function.call, String.prototype.replace);
+var $strSlice = functionBind.call(Function.call, String.prototype.slice);
 
 /* adapted from https://github.com/lodash/lodash/blob/4.17.15/dist/lodash.js#L6735-L6744 */
 var rePropName = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g;
 var reEscapeChar = /\\(\\)?/g; /** Used to match backslashes in property paths. */
 var stringToPath = function stringToPath(string) {
+	var first = $strSlice(string, 0, 1);
+	var last = $strSlice(string, -1);
+	if (first === '%' && last !== '%') {
+		throw new $SyntaxError('invalid intrinsic syntax, expected closing `%`');
+	} else if (last === '%' && first !== '%') {
+		throw new $SyntaxError('invalid intrinsic syntax, expected opening `%`');
+	}
 	var result = [];
 	$replace(string, rePropName, function (match, number, quote, subString) {
 		result[result.length] = quote ? $replace(subString, reEscapeChar, '$1') : number || match;
@@ -972,6 +980,17 @@ var getIntrinsic = function GetIntrinsic(name, allowMissing) {
 
 	for (var i = 1, isOwn = true; i < parts.length; i += 1) {
 		var part = parts[i];
+		var first = $strSlice(part, 0, 1);
+		var last = $strSlice(part, -1);
+		if (
+			(
+				(first === '"' || first === "'" || first === '`')
+				|| (last === '"' || last === "'" || last === '`')
+			)
+			&& first !== last
+		) {
+			throw new $SyntaxError('property names with quotes must have matching quotes');
+		}
 		if (part === 'constructor' || !isOwn) {
 			skipFurtherCaching = true;
 		}
@@ -982,13 +1001,16 @@ var getIntrinsic = function GetIntrinsic(name, allowMissing) {
 		if (src(INTRINSICS, intrinsicRealName)) {
 			value = INTRINSICS[intrinsicRealName];
 		} else if (value != null) {
+			if (!(part in value)) {
+				if (!allowMissing) {
+					throw new $TypeError('base intrinsic for ' + name + ' exists, but the property is not available.');
+				}
+				return void undefined$1;
+			}
 			if ($gOPD && (i + 1) >= parts.length) {
 				var desc = $gOPD(value, part);
 				isOwn = !!desc;
 
-				if (!allowMissing && !(part in value)) {
-					throw new $TypeError('base intrinsic for ' + name + ' exists, but the property is not available.');
-				}
 				// By convention, when a data property is converted to an accessor
 				// property to emulate a data property that does not suffer from
 				// the override mistake, that accessor's getter is marked with
@@ -5807,12 +5829,12 @@ var Popover = function Popover(props) {
       onToggle = props.onToggle,
       className = props.className;
 
-  var _React$useState = useState$3(props.open || false),
+  var _React$useState = useState$2(props.open || false),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       open = _React$useState2[0],
       setOpen = _React$useState2[1];
 
-  useEffect$2(function () {
+  useEffect$1(function () {
     if (onToggle) {
       if (props.open !== undefined) setOpen(props.open);
     }
@@ -5966,8 +5988,8 @@ AvatarGroup.defaultProps = {
   popoverOptions: {}
 };
 
-var useEffect = useEffect$2,
-    useState = useState$3;
+var useEffect = useEffect$1,
+    useState = useState$2;
 var Backdrop = function Backdrop(props) {
   var className = props.className;
   var baseProps = extractBaseProps(props);
@@ -5977,12 +5999,12 @@ var Backdrop = function Backdrop(props) {
       savedBodyOverflow = _useState2[0],
       setBodyOverflow = _useState2[1];
 
-  var _React$useState = useState$3(props.open),
+  var _React$useState = useState$2(props.open),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       open = _React$useState2[0],
       setOpen = _React$useState2[1];
 
-  var _React$useState3 = useState$3(props.open),
+  var _React$useState3 = useState$2(props.open),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       animate = _React$useState4[0],
       setAnimate = _React$useState4[1];
@@ -6027,7 +6049,8 @@ var Backdrop = function Backdrop(props) {
     };
   }, [props.open]);
   var BackdropElement = /*#__PURE__*/createPortal( /*#__PURE__*/createElement("div", _extends({
-    "data-test": "DesignSystem-Backdrop"
+    "data-test": "DesignSystem-Backdrop",
+    "data-layer": true
   }, baseProps, {
     className: classes
   })), document.body);
@@ -6409,21 +6432,21 @@ var Checkbox = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
       name = props.name,
       value = props.value,
       className = props.className;
-  var ref = useRef$1(null);
+  var ref = useRef(null);
   var baseProps = extractBaseProps(props);
   useImperativeHandle(forwardedRef, function () {
     return ref.current;
   });
 
-  var _React$useState = useState$3(props.checked === undefined ? defaultChecked : props.checked),
+  var _React$useState = useState$2(props.checked === undefined ? defaultChecked : props.checked),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       checked = _React$useState2[0],
       setChecked = _React$useState2[1];
 
-  useEffect$2(function () {
+  useEffect$1(function () {
     setIndeterminate(indeterminate);
   }, [indeterminate]);
-  useEffect$2(function () {
+  useEffect$1(function () {
     if (props.checked !== undefined) {
       setChecked(props.checked);
     }
@@ -6846,11 +6869,11 @@ var Input = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
       autoFocus = props.autoFocus,
       rest = _objectWithoutProperties(props, ["size", "type", "minWidth", "readonly", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autocomplete", "autoFocus"]);
 
-  var ref = useRef$1(null);
+  var ref = useRef(null);
   useImperativeHandle(forwardedRef, function () {
     return ref.current;
   });
-  useEffect$2(function () {
+  useEffect$1(function () {
     var _ref$current;
 
     if (autoFocus) (_ref$current = ref.current) === null || _ref$current === void 0 ? void 0 : _ref$current.focus({
@@ -7093,17 +7116,17 @@ var DropdownList = function DropdownList(props) {
   var dropdownCancelButtonRef = /*#__PURE__*/createRef();
   var dropdownApplyButtonRef = /*#__PURE__*/createRef();
 
-  var _React$useState = useState$3(),
+  var _React$useState = useState$2(),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       popoverStyle = _React$useState2[0],
       setPopoverStyle = _React$useState2[1];
 
-  var _React$useState3 = useState$3(firstEnabledOption),
+  var _React$useState3 = useState$2(firstEnabledOption),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       cursor = _React$useState4[0],
       setCursor = _React$useState4[1];
 
-  useEffect$2(function () {
+  useEffect$1(function () {
     if (dropdownOpen) {
       var _triggerRef$current;
 
@@ -7120,7 +7143,7 @@ var DropdownList = function DropdownList(props) {
       setPopoverStyle(popperWrapperStyle);
     }
   }, [dropdownOpen]);
-  useEffect$2(function () {
+  useEffect$1(function () {
     if (firstEnabledOption !== cursor) setCursor(firstEnabledOption);
   }, [firstEnabledOption]);
   var _props$triggerSize = props.triggerSize,
@@ -8225,24 +8248,25 @@ var Breadcrumbs = function Breadcrumbs(props) {
   }, "/"))));
 };
 
-var Card = function Card(props) {
+var Card = /*#__PURE__*/forwardRef(function (props, ref) {
   var _classNames;
 
-  var shadow = props.shadow,
+  var _props$shadow = props.shadow,
+      shadow = _props$shadow === void 0 ? 'medium' : _props$shadow,
       children = props.children,
-      className = props.className;
-  var baseProps = extractBaseProps(props);
+      className = props.className,
+      rest = _objectWithoutProperties(props, ["shadow", "children", "className"]);
+
   var classes = classnames((_classNames = {
     Card: true
   }, _defineProperty(_classNames, "Card--shadow-".concat(shadow), shadow), _defineProperty(_classNames, "".concat(className), className), _classNames));
-  return /*#__PURE__*/createElement("div", _extends({}, baseProps, {
+  return /*#__PURE__*/createElement("div", _extends({
+    ref: ref
+  }, rest, {
     className: classes
   }), children);
-};
+});
 Card.displayName = 'Card';
-Card.defaultProps = {
-  shadow: 'medium'
-};
 
 var GenericChip = function GenericChip(props) {
   var label = props.label,
@@ -8382,7 +8406,7 @@ var ChipGroup = function ChipGroup(props) {
 };
 ChipGroup.displayName = 'ChipGroup';
 
-var Column = function Column(props) {
+var Column = /*#__PURE__*/forwardRef(function (props, ref) {
   var _classNames;
 
   var size = props.size,
@@ -8392,13 +8416,16 @@ var Column = function Column(props) {
       sizeL = props.sizeL,
       sizeXL = props.sizeXL,
       className = props.className,
-      children = props.children;
-  var baseProps = extractBaseProps(props);
+      children = props.children,
+      rest = _objectWithoutProperties(props, ["size", "sizeXS", "sizeS", "sizeM", "sizeL", "sizeXL", "className", "children"]);
+
   var classes = classnames((_classNames = {}, _defineProperty(_classNames, 'Col', true), _defineProperty(_classNames, "Col--".concat(size), size), _defineProperty(_classNames, "Col--xs-".concat(sizeXS), sizeXS), _defineProperty(_classNames, "Col--s-".concat(sizeS), sizeS), _defineProperty(_classNames, "Col--m-".concat(sizeM), sizeM), _defineProperty(_classNames, "Col--l-".concat(sizeL), sizeL), _defineProperty(_classNames, "Col--xl-".concat(sizeXL), sizeXL), _defineProperty(_classNames, "".concat(className), className), _classNames));
-  return /*#__PURE__*/createElement("div", _extends({}, baseProps, {
+  return /*#__PURE__*/createElement("div", _extends({
+    ref: ref
+  }, rest, {
     className: classes
   }), children);
-};
+});
 Column.displayName = 'Column';
 
 var sizeMap = {
@@ -9683,12 +9710,12 @@ var TimePicker = function TimePicker(props) {
       onTimeChange = props.onTimeChange,
       timeProp = props.time;
 
-  var _React$useState = useState$3(timeProp),
+  var _React$useState = useState$2(timeProp),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       time = _React$useState2[0],
       setTime = _React$useState2[1];
 
-  useEffect$2(function () {
+  useEffect$1(function () {
     setTime(timeProp);
   }, [timeProp]);
 
@@ -17517,10 +17544,17 @@ function (_PureComponent) {
       }
 
       if (!isActive) {
-        // eslint-disable-next-line react/no-did-update-set-state
-        this.setState({
+        var newState = {
           style: attributeName ? _defineProperty$8({}, attributeName, this.props.to) : this.props.to
-        });
+        };
+
+        if (this.state && this.state.style) {
+          if (attributeName && this.state.style[attributeName] !== this.props.to || !attributeName && this.state.style !== this.props.to) {
+            // eslint-disable-next-line react/no-did-update-set-state
+            this.setState(newState);
+          }
+        }
+
         return;
       }
 
@@ -17538,11 +17572,19 @@ function (_PureComponent) {
         this.stopJSAnimation();
       }
 
-      var from = isTriggered || shouldReAnimate ? this.props.from : prevProps.to; // eslint-disable-next-line react/no-did-update-set-state
+      var from = isTriggered || shouldReAnimate ? this.props.from : prevProps.to;
 
-      this.setState({
-        style: attributeName ? _defineProperty$8({}, attributeName, from) : from
-      });
+      if (this.state && this.state.style) {
+        var _newState = {
+          style: attributeName ? _defineProperty$8({}, attributeName, from) : from
+        };
+
+        if (attributeName && this.state.style[attributeName] !== from || !attributeName && this.state.style !== from) {
+          // eslint-disable-next-line react/no-did-update-set-state
+          this.setState(_newState);
+        }
+      }
+
       this.runAnimation(_objectSpread$4({}, this.props, {
         from: from,
         begin: 0
@@ -23048,7 +23090,6 @@ function tokenize(string) {
     }
     i += key.length - 1;
     if (key === '') {
-      console.log(string, nodes);
       throw (new math_function.Exception('Can\'t understand after ' + string.slice(i)))
     }
     var index = token.indexOf(key);
@@ -39347,7 +39388,7 @@ var DonutChart = function DonutChart(props) {
     }, "".concat((percent * 100).toFixed(0), "%"))));
   };
 
-  var _React$useState = useState$3(0),
+  var _React$useState = useState$2(0),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       activeIndex = _React$useState2[0],
       setActiveIndex = _React$useState2[1];
@@ -39486,24 +39527,24 @@ var InputMask = /*#__PURE__*/forwardRef(function (props, forwardRef) {
     return _typeof(mask[pos]) === 'object';
   };
 
-  var deferId = useRef$1();
-  var selectionRef = useRef$1(0);
+  var deferId = useRef();
+  var selectionRef = useRef(0);
 
-  var _React$useState = useState$3(defaultValue || valueProp || ''),
+  var _React$useState = useState$2(defaultValue || valueProp || ''),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       value = _React$useState2[0],
       setValue = _React$useState2[1];
 
-  var _React$useState3 = useState$3(getDefaultSelection()),
+  var _React$useState3 = useState$2(getDefaultSelection()),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       selection = _React$useState4[0],
       setSelection = _React$useState4[1];
 
-  var ref = useRef$1(null);
+  var ref = useRef(null);
   useImperativeHandle(forwardRef, function () {
     return ref.current;
   });
-  useEffect$2(function () {
+  useEffect$1(function () {
     setValue(valueProp || '');
   }, [valueProp]);
 
@@ -39809,17 +39850,17 @@ var EditableDropdown = function EditableDropdown(props) {
   var onDropdownChange = dropdownOptions.onChange,
       rest = _objectWithoutProperties(dropdownOptions, ["onChange"]);
 
-  var _React$useState = useState$3(placeholder),
+  var _React$useState = useState$2(placeholder),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       label = _React$useState2[0],
       setLabel = _React$useState2[1];
 
-  var _React$useState3 = useState$3(false),
+  var _React$useState3 = useState$2(false),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       editing = _React$useState4[0],
       setEditing = _React$useState4[1];
 
-  var _React$useState5 = useState$3(false),
+  var _React$useState5 = useState$2(false),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       showComponent = _React$useState6[0],
       setShowComponent = _React$useState6[1];
@@ -40133,7 +40174,7 @@ var Radio = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
       defaultChecked = props.defaultChecked,
       className = props.className;
   var baseProps = extractBaseProps(props);
-  var ref = useRef$1(null);
+  var ref = useRef(null);
   useImperativeHandle(forwardedRef, function () {
     return ref.current;
   });
@@ -40168,19 +40209,21 @@ var Radio = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
 });
 Radio.displayName = 'Radio';
 
-var Row = function Row(props) {
+var Row = /*#__PURE__*/forwardRef(function (props, ref) {
   var className = props.className,
-      children = props.children;
-  var baseProps = extractBaseProps(props);
+      children = props.children,
+      rest = _objectWithoutProperties(props, ["className", "children"]);
+
   var classes = classnames(_defineProperty({
     Row: true
   }, "".concat(className), className));
   return /*#__PURE__*/createElement("div", _extends({
-    "data-test": "DesignSystem-Row"
-  }, baseProps, {
+    "data-test": "DesignSystem-Row",
+    ref: ref
+  }, rest, {
     className: classes
   }), children);
-};
+});
 Row.displayName = 'Row';
 
 var StatusHint = function StatusHint(props) {
@@ -40916,12 +40959,12 @@ var Slider = function Slider(props) {
       onChange = props.onChange,
       rest = _objectWithoutProperties(props, ["value", "defaultValue", "onRelease", "onChange"]);
 
-  var _React$useState = useState$3(valueProp === undefined ? defaultValue : valueProp),
+  var _React$useState = useState$2(valueProp === undefined ? defaultValue : valueProp),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       value = _React$useState2[0],
       setValue = _React$useState2[1];
 
-  useEffect$2(function () {
+  useEffect$1(function () {
     if (valueProp !== undefined) {
       setValue(valueProp);
     }
@@ -40961,12 +41004,12 @@ var RangeSlider = function RangeSlider(props) {
       onRelease = props.onRelease,
       rest = _objectWithoutProperties(props, ["value", "defaultValue", "onChange", "onRelease"]);
 
-  var _React$useState = useState$3(valueProp === undefined ? defaultValue : valueProp),
+  var _React$useState = useState$2(valueProp === undefined ? defaultValue : valueProp),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       value = _React$useState2[0],
       setValue = _React$useState2[1];
 
-  useEffect$2(function () {
+  useEffect$1(function () {
     if (valueProp !== undefined) {
       setValue(valueProp);
     }
@@ -41015,12 +41058,12 @@ var Switch = /*#__PURE__*/forwardRef(function (props, ref) {
       className = props.className;
   var baseProps = extractBaseProps(props);
 
-  var _React$useState = useState$3(props.checked === undefined ? defaultChecked : props.checked),
+  var _React$useState = useState$2(props.checked === undefined ? defaultChecked : props.checked),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       checked = _React$useState2[0],
       setChecked = _React$useState2[1];
 
-  useEffect$2(function () {
+  useEffect$1(function () {
     if (props.checked !== undefined) setChecked(props.checked);
   }, [props.checked]);
   var SwitchClass = classnames((_classNames = {}, _defineProperty(_classNames, 'Switch', true), _defineProperty(_classNames, 'Switch--disabled', disabled), _defineProperty(_classNames, "Switch--".concat(size), size), _classNames), className);
@@ -41265,6 +41308,59 @@ _defineProperty(Tooltip$1, "defaultProps", {
   appendToBody: true
 });
 
+var Dialog = function Dialog(props) {
+  var dimension = props.dimension,
+      primaryButtonAppearance = props.primaryButtonAppearance,
+      secondaryButtonAppearance = props.secondaryButtonAppearance,
+      open = props.open,
+      onClose = props.onClose,
+      heading = props.heading,
+      title = props.title,
+      description = props.description,
+      primaryButtonLabel = props.primaryButtonLabel,
+      primaryButtonCallback = props.primaryButtonCallback,
+      secondaryButtonLabel = props.secondaryButtonLabel,
+      secondaryButtonCallback = props.secondaryButtonCallback;
+  var baseProps = extractBaseProps(props);
+  return /*#__PURE__*/createElement(Modal, _extends({
+    "data-test": "DesignSystem-Dialog"
+  }, baseProps, {
+    open: open,
+    dimension: dimension,
+    onClose: onClose,
+    headerOptions: {
+      heading: heading
+    },
+    footer: /*#__PURE__*/createElement(Fragment$1, null, /*#__PURE__*/createElement(Button, {
+      "data-test": "DesignSystem-Dialog--SecondaryButton",
+      appearance: secondaryButtonAppearance,
+      onClick: secondaryButtonCallback
+    }, secondaryButtonLabel), /*#__PURE__*/createElement(Button, {
+      className: "ml-4",
+      "data-test": "DesignSystem-Dialog--PrimaryButton",
+      appearance: primaryButtonAppearance,
+      onClick: primaryButtonCallback
+    }, primaryButtonLabel))
+  }), /*#__PURE__*/createElement(ModalDescription, {
+    title: title,
+    description: description
+  }));
+};
+
+Dialog.displayName = 'Dialog';
+Dialog.defaultProps = {
+  dimension: 'small',
+  primaryButtonAppearance: 'primary',
+  secondaryButtonAppearance: 'basic'
+};
+
+/**
+ * ** NOTE: Use `headerOptions`, `footer`, `onClose` and `backdropClose`(boolean). **
+ * ** Support for composition using `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **
+ *
+ * ** NOT RECOMMENDED: Only use composition of `ModalHeader`, `ModalBody` and `ModalFooter` **
+ * ** when you are not using `headerOptions` or `footer` **
+ */
 var Modal = /*#__PURE__*/function (_React$Component) {
   _inherits(Modal, _React$Component);
 
@@ -41284,18 +41380,16 @@ var Modal = /*#__PURE__*/function (_React$Component) {
     _defineProperty(_assertThisInitialized(_this), "getUpdatedZIndex", function () {
       if (_this.element === null) return;
 
-      var elements = _this.element.querySelectorAll('.Modal-container');
+      var elements = _this.element.querySelectorAll('.Modal-container--open');
 
-      if (elements.length <= 1) return;
+      if (elements.length < 1) return;
       var siblings = Array.from(elements).filter(function (el) {
         return el !== _this.modalRef.current;
       });
       var zIndex = -1;
       siblings.forEach(function (element) {
-        if (element.classList.contains('Modal-container--open')) {
-          var prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
-          zIndex = Math.max(zIndex, prevZIndex + 10);
-        }
+        var prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
+        zIndex = Math.max(zIndex, prevZIndex + 10);
       });
       return zIndex > 0 ? zIndex : undefined;
     });
@@ -41346,7 +41440,7 @@ var Modal = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _classNames, _classNames2;
+      var _classNames;
 
       var _this$state = this.state,
           animate = _this$state.animate,
@@ -41355,30 +41449,69 @@ var Modal = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           className = _this$props.className,
           backdropClose = _this$props.backdropClose,
-          dimension = _this$props.dimension;
-      var classes = classnames((_classNames = {
-        Modal: true
-      }, _defineProperty(_classNames, "Modal--".concat(dimension), dimension), _defineProperty(_classNames, 'Modal--open', open), _defineProperty(_classNames, 'Modal-animation--open', animate), _defineProperty(_classNames, 'Modal-animation--close', !animate), _classNames), className);
-      var ContainerClass = classnames((_classNames2 = {}, _defineProperty(_classNames2, 'Modal-container', true), _defineProperty(_classNames2, 'Modal-container--open', open), _classNames2));
+          dimension = _this$props.dimension,
+          children = _this$props.children,
+          headerOptions = _this$props.headerOptions,
+          footer = _this$props.footer,
+          _onClose = _this$props.onClose;
+      var classes = classnames({
+        Modal: true,
+        'Modal--open': open,
+        'Modal-animation--open': animate,
+        'Modal-animation--close': !animate
+      }, className);
+      var ContainerClass = classnames((_classNames = {}, _defineProperty(_classNames, 'Row', true), _defineProperty(_classNames, 'Modal-container', true), _defineProperty(_classNames, 'Modal-container--open', open), _classNames));
       var baseProps = extractBaseProps(this.props);
-      var ModalContainer = /*#__PURE__*/createElement("div", {
+      var sizeMap = {
+        small: {
+          size: '3',
+          sizeL: '4',
+          sizeM: '4',
+          sizeXS: '10'
+        },
+        medium: {
+          size: '4',
+          sizeL: '6',
+          sizeM: '6',
+          sizeXS: '10'
+        },
+        large: {
+          size: '6',
+          sizeL: '8',
+          sizeM: '8',
+          sizeXS: '10'
+        }
+      };
+      var ModalContainer = /*#__PURE__*/createElement(Row, {
         "data-test": "DesignSystem-ModalContainer",
         className: ContainerClass,
         "data-layer": true,
         style: {
           zIndex: zIndex
-        },
-        ref: this.modalRef
-      }, /*#__PURE__*/createElement("div", _extends({
+        }
+      }, /*#__PURE__*/createElement(Column, _extends({
         "data-test": "DesignSystem-Modal"
       }, baseProps, {
         className: classes
-      }), this.props.children));
+      }, sizeMap[dimension], {
+        ref: this.modalRef
+      }), headerOptions && /*#__PURE__*/createElement(ModalHeader, _extends({
+        onClose: function onClose(event, reason) {
+          if (_onClose) _onClose(event, reason);
+        }
+      }, headerOptions)), children && /*#__PURE__*/createElement(Fragment$1, null, headerOptions || footer ? /*#__PURE__*/createElement(ModalBody, null, children) : children), footer && /*#__PURE__*/createElement(ModalFooter, {
+        open: open
+      }, footer)));
+
+      var onOutsideClickHandler = function onOutsideClickHandler(event) {
+        if (open) {
+          if (_onClose) _onClose(event, 'OutsideClick');else if (typeof backdropClose === 'function') backdropClose(event, 'OutsideClick');
+        }
+      };
+
       var ModalWrapper = backdropClose ? /*#__PURE__*/createElement(OutsideClick, {
         "data-test": "DesignSystem-Modal--OutsideClick",
-        onOutsideClick: function onOutsideClick(event) {
-          return open && backdropClose(event, 'OutsideClick');
-        }
+        onOutsideClick: onOutsideClickHandler
       }, ModalContainer) : ModalContainer;
       var WrapperElement = /*#__PURE__*/createPortal(ModalWrapper, this.element);
       return /*#__PURE__*/createElement("div", null, WrapperElement, /*#__PURE__*/createElement(Backdrop, {
@@ -41390,137 +41523,172 @@ var Modal = /*#__PURE__*/function (_React$Component) {
   return Modal;
 }(Component);
 
-var ModalHeader = function ModalHeader(props) {
-  var className = props.className,
-      heading = props.heading,
-      icon = props.icon,
-      iconAppearance = props.iconAppearance,
-      subHeading = props.subHeading,
-      onClose = props.onClose;
-  var baseProps = extractBaseProps(props);
-  var classes = classnames({
-    'Modal-header': true
-  }, className);
-  var subheaderClasses = classnames(_defineProperty({
-    'Modal-header-subheader': true
-  }, 'Modal-header-subheader--withIcon', icon));
-  return /*#__PURE__*/createElement("div", {
-    className: "Modal-header-wrapper"
-  }, /*#__PURE__*/createElement("div", _extends({
-    "data-test": "DesignSystem-ModalHeader"
-  }, baseProps, {
-    className: classes
-  }), icon && /*#__PURE__*/createElement(Icon, {
-    className: "Modal-header-icon",
-    name: icon,
-    appearance: iconAppearance,
-    "data-test": "DesignSystem-ModalHeader--Icon"
-  }), heading && /*#__PURE__*/createElement("div", null, /*#__PURE__*/createElement(Heading, {
-    size: "s"
-  }, heading)), /*#__PURE__*/createElement(Icon, {
-    name: 'close',
-    className: "Modal-close-icon",
-    "data-test": "DesignSystem-ModalHeader--CloseIcon",
-    onClick: function onClick(event) {
-      return onClose(event, 'IconClick');
+_defineProperty(Modal, "defaultProps", {
+  dimension: 'medium'
+});
+
+var sidesheetWidth = {
+  regular: '6',
+  large: '10'
+};
+
+var Sidesheet = /*#__PURE__*/function (_React$Component) {
+  _inherits(Sidesheet, _React$Component);
+
+  var _super = _createSuper(Sidesheet);
+
+  function Sidesheet(props) {
+    var _this;
+
+    _classCallCheck(this, Sidesheet);
+
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "sidesheetRef", /*#__PURE__*/createRef());
+
+    _defineProperty(_assertThisInitialized(_this), "element", void 0);
+
+    _defineProperty(_assertThisInitialized(_this), "getUpdatedZIndex", function () {
+      if (_this.element === null) return;
+
+      var elements = _this.element.querySelectorAll('.Sidesheet-container--open');
+
+      if (elements.length <= 1) return;
+      var siblings = Array.from(elements).filter(function (el) {
+        return el !== _this.sidesheetRef.current;
+      });
+      var zIndex = -1;
+      siblings.forEach(function (element) {
+        var prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
+        zIndex = Math.max(zIndex, prevZIndex + 10);
+      });
+      return zIndex > 0 ? zIndex : undefined;
+    });
+
+    var _element = document.querySelector('.Sidesheet-wrapper');
+
+    if (_element === null) {
+      _element = document.createElement('div');
+
+      _element.classList.add('Sidesheet-wrapper');
+
+      document.body.appendChild(_element);
     }
-  })), subHeading && /*#__PURE__*/createElement("div", {
-    className: subheaderClasses,
-    "data-test": "DesignSystem-ModalHeader--Subheading"
-  }, /*#__PURE__*/createElement(Text, {
-    appearance: "subtle"
-  }, subHeading)));
-};
-ModalHeader.displayName = 'ModalHeader';
-ModalHeader.defaultProps = {
-  iconAppearance: Icon.defaultProps.appearance
-};
 
-var ModalDescription = function ModalDescription(props) {
-  var title = props.title,
-      description = props.description,
-      removePadding = props.removePadding,
-      className = props.className;
-  var baseProps = extractBaseProps(props);
-  var classes = classnames(_defineProperty({
-    'Modal-description': true
-  }, 'pl-6 pr-6', !removePadding), className);
-  return /*#__PURE__*/createElement("div", _extends({
-    "data-test": "DesignSystem-ModalDescription"
-  }, baseProps, {
-    className: classes
-  }), title && /*#__PURE__*/createElement("div", null, /*#__PURE__*/createElement(Text, {
-    weight: "strong",
-    "data-test": "DesignSystem-ModalDescription--Title"
-  }, title)), description && /*#__PURE__*/createElement("div", null, /*#__PURE__*/createElement(Text, {
-    "data-test": "DesignSystem-ModalDescription--Description"
-  }, description)));
-};
-ModalDescription.displayName = 'ModalDescription';
+    _this.element = _element;
+    _this.state = {
+      open: props.open,
+      animate: props.open
+    };
+    return _this;
+  }
 
-var ModalFooter = function ModalFooter(props) {
-  var children = props.children,
-      className = props.className;
-  var baseProps = extractBaseProps(props);
-  var classes = classnames({
-    'Modal-footer': true
-  }, className);
-  return /*#__PURE__*/createElement("div", _extends({
-    "data-test": "DesignSystem-ModalFooter"
-  }, baseProps, {
-    className: classes
-  }), children);
-};
-ModalFooter.displayName = 'ModalFooter';
+  _createClass(Sidesheet, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      var _this2 = this;
 
-var Dialog = function Dialog(props) {
-  var dimension = props.dimension,
-      primaryButtonAppearance = props.primaryButtonAppearance,
-      secondaryButtonAppearance = props.secondaryButtonAppearance,
-      open = props.open,
-      onClose = props.onClose,
-      icon = props.icon,
-      heading = props.heading,
-      title = props.title,
-      description = props.description,
-      primaryButtonLabel = props.primaryButtonLabel,
-      primaryButtonCallback = props.primaryButtonCallback,
-      secondaryButtonLabel = props.secondaryButtonLabel,
-      secondaryButtonCallback = props.secondaryButtonCallback;
-  var baseProps = extractBaseProps(props);
-  var modalOptions = {
-    open: open,
-    dimension: dimension,
-    backdropClose: onClose
-  };
-  var modalHeaderOptions = {
-    onClose: onClose,
-    icon: icon,
-    heading: heading
-  };
-  var modalDescriptionOptions = {
-    title: title,
-    description: description
-  };
-  return /*#__PURE__*/createElement(Modal, _extends({
-    "data-test": "DesignSystem-Dialog"
-  }, baseProps, modalOptions), /*#__PURE__*/createElement(ModalHeader, modalHeaderOptions), /*#__PURE__*/createElement(ModalDescription, modalDescriptionOptions), /*#__PURE__*/createElement(ModalFooter, null, /*#__PURE__*/createElement(Button, {
-    "data-test": "DesignSystem-Dialog--SecondaryButton",
-    appearance: secondaryButtonAppearance,
-    onClick: secondaryButtonCallback
-  }, secondaryButtonLabel), /*#__PURE__*/createElement(Button, {
-    "data-test": "DesignSystem-Dialog--PrimaryButton",
-    appearance: primaryButtonAppearance,
-    onClick: primaryButtonCallback
-  }, primaryButtonLabel)));
-};
+      if (prevProps.open !== this.props.open) {
+        if (this.props.open) {
+          var zIndex = this.getUpdatedZIndex();
+          this.setState({
+            zIndex: zIndex,
+            open: true,
+            animate: true
+          });
+        } else {
+          this.setState({
+            animate: false
+          });
+          setTimeout(function () {
+            _this2.setState({
+              open: false
+            });
+          }, 120);
+        }
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _classNames;
 
-Dialog.displayName = 'Dialog';
-Dialog.defaultProps = {
-  dimension: 'small',
-  primaryButtonAppearance: 'primary',
-  secondaryButtonAppearance: 'basic'
-};
+      var _this$state = this.state,
+          animate = _this$state.animate,
+          open = _this$state.open,
+          zIndex = _this$state.zIndex;
+      var _this$props = this.props,
+          className = _this$props.className,
+          backdropClose = _this$props.backdropClose,
+          dimension = _this$props.dimension,
+          footer = _this$props.footer,
+          seperator = _this$props.seperator,
+          stickFooter = _this$props.stickFooter,
+          headerOptions = _this$props.headerOptions,
+          _onClose = _this$props.onClose;
+      var classes = classnames({
+        Sidesheet: true,
+        'Sidesheet--open': open,
+        'Sidesheet-animation--open': animate,
+        'Sidesheet-animation--close': !animate
+      }, className);
+      var ContainerClass = classnames((_classNames = {}, _defineProperty(_classNames, 'Sidesheet-container', true), _defineProperty(_classNames, 'Sidesheet-container--open', open), _classNames));
+      var baseProps = extractBaseProps(this.props);
+
+      var headerObj = _objectSpread2(_objectSpread2({}, headerOptions), {}, {
+        seperator: seperator
+      });
+
+      var SidesheetContainer = /*#__PURE__*/createElement(Row, {
+        "data-test": "DesignSystem-SidesheetContainer",
+        className: ContainerClass,
+        "data-layer": true,
+        style: {
+          zIndex: zIndex
+        },
+        ref: this.sidesheetRef
+      }, /*#__PURE__*/createElement(Column, _extends({
+        "data-test": "DesignSystem-Sidesheet"
+      }, baseProps, {
+        className: classes,
+        size: sidesheetWidth[dimension]
+      }), /*#__PURE__*/createElement(ModalHeader, _extends({
+        onClose: function onClose(event, reason) {
+          if (_onClose) _onClose(event, reason);
+        }
+      }, headerObj)), /*#__PURE__*/createElement(ModalBody, {
+        stickFooter: stickFooter
+      }, this.props.children), footer && /*#__PURE__*/createElement(ModalFooter, {
+        inSidesheet: true,
+        stickToBottom: stickFooter,
+        seperator: seperator
+      }, footer)));
+
+      var onOutsideClickHandler = function onOutsideClickHandler(event) {
+        if (open) {
+          if (_onClose) _onClose(event, 'OutsideClick');
+        }
+      };
+
+      var SidesheetWrapper = backdropClose ? /*#__PURE__*/createElement(OutsideClick, {
+        "data-test": "DesignSystem-Sidesheet--OutsideClick",
+        onOutsideClick: onOutsideClickHandler
+      }, SidesheetContainer) : SidesheetContainer;
+      var WrapperElement = /*#__PURE__*/createPortal(SidesheetWrapper, this.element);
+      return /*#__PURE__*/createElement("div", null, WrapperElement, /*#__PURE__*/createElement(Backdrop, {
+        open: this.state.open
+      }));
+    }
+  }]);
+
+  return Sidesheet;
+}(Component);
+
+_defineProperty(Sidesheet, "defaultProps", {
+  dimension: 'regular',
+  stickFooter: false,
+  headerOptions: {}
+});
 
 var Status = function Status(props) {
   var type = props.type,
@@ -41696,87 +41864,177 @@ var ChatMessage = function ChatMessage(props) {
 };
 ChatMessage.displayName = 'ChatMessage';
 
-var defaultImageHeight = {
-  NO_CONTENT: '256px',
-  NO_SEARCH: '128px',
-  ERROR: '256px'
+var imageHeight = {
+  large: '256px',
+  small: '128px'
 };
 var HeadingSize = {
-  NO_CONTENT: 'l',
-  NO_SEARCH: 'm',
-  ERROR: 'l'
+  large: 'l',
+  small: 'm'
 };
 var textSize = {
-  NO_CONTENT: 'large',
-  NO_SEARCH: 'regular',
-  ERROR: 'large'
+  large: 'large',
+  small: 'regular'
 };
-var ErrorTemplate = function ErrorTemplate(props) {
+var EmptyState = function EmptyState(props) {
   var _classNames2, _classNames3;
 
-  var image = props.image,
+  var imageSrc = props.imageSrc,
       title = props.title,
       description = props.description,
-      templateType = props.templateType,
+      size = props.size,
       children = props.children,
       className = props.className;
-  var _image$height = image.height,
-      height = _image$height === void 0 ? defaultImageHeight[templateType] : _image$height,
-      imageClassName = image.className,
-      src = image.src;
   var baseProps = extractBaseProps(props);
-  var WrapperClass = classnames(_defineProperty({}, 'ErrorTemplate', true), className);
-  var HeadingClass = classnames((_classNames2 = {}, _defineProperty(_classNames2, 'ErrorTemplate-title', true), _defineProperty(_classNames2, "ErrorTemplate-title--".concat(templateType), true), _classNames2));
-  var TextClass = classnames((_classNames3 = {}, _defineProperty(_classNames3, 'ErrorTemplate-description', true), _defineProperty(_classNames3, "ErrorTemplate-description--".concat(templateType), children !== undefined), _classNames3));
+  var WrapperClass = classnames(_defineProperty({}, 'EmptyState', true), className);
+  var HeadingClass = classnames((_classNames2 = {}, _defineProperty(_classNames2, 'EmptyState-title', true), _defineProperty(_classNames2, "EmptyState-title--".concat(size), true), _classNames2));
+  var TextClass = classnames((_classNames3 = {}, _defineProperty(_classNames3, 'EmptyState-description', true), _defineProperty(_classNames3, "EmptyState-description--".concat(size), children !== undefined), _classNames3));
   return /*#__PURE__*/createElement("div", _extends({}, baseProps, {
     className: WrapperClass
   }), /*#__PURE__*/createElement("img", {
-    src: src,
-    height: height,
-    className: imageClassName
+    src: imageSrc,
+    height: imageHeight[size]
   }), /*#__PURE__*/createElement(Heading, {
-    size: HeadingSize[templateType],
+    size: HeadingSize[size],
     className: HeadingClass
   }, title), /*#__PURE__*/createElement(Text, {
-    size: textSize[templateType],
+    size: textSize[size],
     className: TextClass,
     appearance: "subtle"
   }, description), children && children);
 };
-ErrorTemplate.displayName = 'ErrorTemplate';
+EmptyState.displayName = 'EmptyState';
 
-var useRef = useRef$1,
-    useEffect$1 = useEffect$2,
-    useState$1 = useState$3;
-var ModalBody = function ModalBody(props) {
-  var _useState = useState$1(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      scroll = _useState2[0],
-      setScroll = _useState2[1];
+var ModalHeader = function ModalHeader(props) {
+  var _classNames;
 
-  var ref = useRef(null);
-  var children = props.children,
-      className = props.className;
+  var className = props.className,
+      heading = props.heading,
+      subHeading = props.subHeading,
+      onClose = props.onClose,
+      seperator = props.seperator,
+      backIcon = props.backIcon,
+      backIconCallback = props.backIconCallback;
   var baseProps = extractBaseProps(props);
-  useEffect$1(function () {
-    var scrollHeight = ref && ref.current ? ref.current.scrollHeight : 0;
-    var clientHeight = ref && ref.current ? ref.current.clientHeight : 0;
-
-    if (scrollHeight > clientHeight) {
-      setScroll(true);
+  var classes = classnames((_classNames = {
+    'Modal-header': true
+  }, _defineProperty(_classNames, 'Modal-header--backIcon', backIcon), _defineProperty(_classNames, 'Modal-header--seperator', seperator), _classNames), className);
+  var wrapperClass = classnames(_defineProperty({
+    'Modal-headerWrapper': true
+  }, 'Modal-headerWrapper--backIcon', backIcon));
+  return /*#__PURE__*/createElement("div", _extends({
+    "data-test": "DesignSystem-ModalHeader"
+  }, baseProps, {
+    className: classes
+  }), /*#__PURE__*/createElement("div", {
+    className: wrapperClass
+  }, backIcon && /*#__PURE__*/createElement(Icon, {
+    name: "keyboard_backspace",
+    size: 20,
+    className: "ml-3 mr-5 my-3 px-2 py-2 cursor-pointer",
+    onClick: backIconCallback
+  }), /*#__PURE__*/createElement("div", {
+    className: "Modal-headerHeading"
+  }, /*#__PURE__*/createElement(Heading, null, heading), /*#__PURE__*/createElement(Icon, {
+    size: 20,
+    name: 'close',
+    className: 'mx-2 cursor-pointer',
+    "data-test": "DesignSystem-ModalHeader--CloseIcon",
+    onClick: function onClick(event) {
+      return onClose(event, 'IconClick');
     }
-  }, [ref]);
+  }))), subHeading && /*#__PURE__*/createElement(Text, {
+    "data-test": "DesignSystem-ModalHeader--Subheading",
+    appearance: "subtle",
+    className: "mt-2 ml-7"
+  }, subHeading));
+};
+ModalHeader.displayName = 'ModalHeader';
+
+var ModalFooter = function ModalFooter(props) {
+  var _classNames;
+
+  var open = props.open,
+      children = props.children,
+      className = props.className,
+      stickToBottom = props.stickToBottom,
+      seperator = props.seperator,
+      inSidesheet = props.inSidesheet;
+  var baseProps = extractBaseProps(props);
+  var classes = classnames((_classNames = {
+    'Modal-footer': true
+  }, _defineProperty(_classNames, 'Modal-footer--inModal', !inSidesheet), _defineProperty(_classNames, 'Modal-footer--seperator', seperator), _defineProperty(_classNames, 'Modal-footer--stickToBottom', stickToBottom), _classNames), className);
+  var wrapperRef = /*#__PURE__*/createRef();
+  useEffect$1(function () {
+    if (open) {
+      if (wrapperRef.current) {
+        var _wrapperRef$current;
+
+        var secondaryBtns = (_wrapperRef$current = wrapperRef.current) === null || _wrapperRef$current === void 0 ? void 0 : _wrapperRef$current.querySelectorAll('.Button--basic');
+        var secondaryBtn = secondaryBtns[secondaryBtns.length - 1];
+
+        if (secondaryBtn) {
+          window.requestAnimationFrame(function () {
+            return secondaryBtn.focus({
+              preventScroll: true
+            });
+          });
+        }
+      }
+    }
+  }, [open]);
+  return /*#__PURE__*/createElement("div", _extends({
+    "data-test": "DesignSystem-ModalFooter",
+    ref: wrapperRef
+  }, baseProps, {
+    className: classes
+  }), children);
+};
+ModalFooter.defaultProps = {
+  stickToBottom: true,
+  inSidesheet: false
+};
+ModalFooter.displayName = 'ModalFooter';
+
+var ModalBody = function ModalBody(props) {
+  var children = props.children,
+      className = props.className,
+      stickFooter = props.stickFooter;
+  var baseProps = extractBaseProps(props);
   var classes = classnames(_defineProperty({
     'Modal-body': true
-  }, 'Modal-body--border', scroll), className);
+  }, 'Modal-body--stickFooter', stickFooter), className);
   return /*#__PURE__*/createElement("div", _extends({
     "data-test": "DesignSystem-ModalBody"
   }, baseProps, {
-    className: classes,
-    ref: ref
+    className: classes
   }), children);
 };
+ModalBody.defaultProps = {
+  stickFooter: true
+};
 ModalBody.displayName = 'ModalBody';
+
+var ModalDescription = function ModalDescription(props) {
+  var title = props.title,
+      description = props.description,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+  var classes = classnames({
+    'Modal-description': true
+  }, className);
+  return /*#__PURE__*/createElement("div", _extends({
+    "data-test": "DesignSystem-ModalDescription"
+  }, baseProps, {
+    className: classes
+  }), title && /*#__PURE__*/createElement(Text, {
+    weight: "strong",
+    "data-test": "DesignSystem-ModalDescription--Title"
+  }, title), title && description && /*#__PURE__*/createElement("br", null), description && /*#__PURE__*/createElement(Text, {
+    "data-test": "DesignSystem-ModalDescription--Description"
+  }, description));
+};
+ModalDescription.displayName = 'ModalDescription';
 
 var Pagination = function Pagination(props) {
   var _classNames, _classNames2, _classNames3;
@@ -41787,23 +42045,23 @@ var Pagination = function Pagination(props) {
       className = props.className;
   var baseProps = extractBaseProps(props);
 
-  var _React$useState = useState$3(props.page),
+  var _React$useState = useState$2(props.page),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       page = _React$useState2[0],
       setPage = _React$useState2[1];
 
-  var _React$useState3 = useState$3(false),
+  var _React$useState3 = useState$2(false),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       init = _React$useState4[0],
       setInit = _React$useState4[1];
 
-  useEffect$2(function () {
+  useEffect$1(function () {
     setPage(props.page);
   }, [props.page]);
   var wrapperClass = classnames((_classNames = {}, _defineProperty(_classNames, 'Pagination', true), _defineProperty(_classNames, "Pagination--".concat(type), type), _classNames), className);
   var nextButtonWrapperClass = classnames((_classNames2 = {}, _defineProperty(_classNames2, 'Pagination-buttonWrapper', true), _defineProperty(_classNames2, 'Pagination-buttonWrapper--next', true), _classNames2));
   var prevButtonWrapperClass = classnames((_classNames3 = {}, _defineProperty(_classNames3, 'Pagination-buttonWrapper', true), _defineProperty(_classNames3, 'Pagination-buttonWrapper--previous', true), _classNames3));
-  useEffect$2(function () {
+  useEffect$1(function () {
     if (init) {
       if (page >= 1 && page <= totalPages) onPageChange(page);
     }
@@ -41924,17 +42182,17 @@ var EditableInput = function EditableInput(props) {
   var onInputChange = inputOptions.onChange,
       rest = _objectWithoutProperties(inputOptions, ["onChange"]);
 
-  var _React$useState = useState$3(value),
+  var _React$useState = useState$2(value),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       inputValue = _React$useState2[0],
       setInputValue = _React$useState2[1];
 
-  var _React$useState3 = useState$3(false),
+  var _React$useState3 = useState$2(false),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       editing = _React$useState4[0],
       setEditing = _React$useState4[1];
 
-  var _React$useState5 = useState$3(false),
+  var _React$useState5 = useState$2(false),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       showComponent = _React$useState6[0],
       setShowComponent = _React$useState6[1];
@@ -41945,7 +42203,7 @@ var EditableInput = function EditableInput(props) {
   var EditableDefaultClass = classnames((_classNames2 = {}, _defineProperty(_classNames2, 'EditableInput-default', true), _defineProperty(_classNames2, "EditableInput-default--".concat(size), size), _classNames2));
   var InputClass = classnames(_defineProperty({}, 'EditableInput-Input--tiny', size === 'tiny'));
   var ActionClass = classnames((_classNames4 = {}, _defineProperty(_classNames4, 'EditableInput-actions', true), _defineProperty(_classNames4, "EditableInput-actions--".concat(size), size), _classNames4));
-  useEffect$2(function () {
+  useEffect$1(function () {
     setDefaultComponent();
   }, [value]);
 
@@ -42923,12 +43181,12 @@ var TabsWrapper = function TabsWrapper(props) {
   var tabs = Array.isArray(children) ? children : [children];
   var totalTabs = tabs.length;
 
-  var _React$useState = useState$3(props.active && props.active < totalTabs ? props.active : 0),
+  var _React$useState = useState$2(props.active && props.active < totalTabs ? props.active : 0),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       active = _React$useState2[0],
       setActiveTab = _React$useState2[1];
 
-  useEffect$2(function () {
+  useEffect$1(function () {
     setActiveTab(props.active && props.active < totalTabs ? props.active : 0);
   }, [props.active]);
   var wrapperClass = classnames(_defineProperty({}, 'TabsWrapper', true), className);
@@ -43616,9 +43874,9 @@ var GridRow = function GridRow(props) {
       data = props.data,
       withCheckbox = props.withCheckbox,
       rI = props.rowIndex;
-  var rowRef = useRef$1(null);
+  var rowRef = useRef(null);
 
-  var _React$useState = useState$3(false),
+  var _React$useState = useState$2(false),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       expanded = _React$useState2[0],
       setExpanded = _React$useState2[1];
@@ -43803,12 +44061,12 @@ var MainGrid = function MainGrid(props) {
     inView: 20
   };
 
-  var _React$useState = useState$3(initialState),
+  var _React$useState = useState$2(initialState),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       state = _React$useState2[0],
       setState = _React$useState2[1];
 
-  useEffect$2(function () {
+  useEffect$1(function () {
     if (init) {
       setState({
         offset: offset,
@@ -43817,7 +44075,7 @@ var MainGrid = function MainGrid(props) {
       });
     }
   }, [init]);
-  useEffect$2(function () {
+  useEffect$1(function () {
     setState(initialState);
 
     var el = _this.gridRef.querySelector('.Grid');
@@ -44314,22 +44572,22 @@ var DraggableDropdown = function DraggableDropdown(props) {
   var options = props.options,
       onChange = props.onChange;
 
-  var _React$useState = useState$3(false),
+  var _React$useState = useState$2(false),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       open = _React$useState2[0],
       setOpen = _React$useState2[1];
 
-  var _React$useState3 = useState$3(options),
+  var _React$useState3 = useState$2(options),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       tempOptions = _React$useState4[0],
       setTempOptions = _React$useState4[1];
 
-  var _React$useState5 = useState$3('var(--spacing-8)'),
+  var _React$useState5 = useState$2('var(--spacing-8)'),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
       triggerWidth = _React$useState6[0],
       setTriggerWidth = _React$useState6[1];
 
-  useEffect$2(function () {
+  useEffect$1(function () {
     setTempOptions(options);
   }, [open]);
 
@@ -44466,25 +44724,25 @@ var Header = function Header(props) {
       allowSelectAll = props.allowSelectAll,
       showFilters = props.showFilters;
 
-  var _React$useState = useState$3(false),
+  var _React$useState = useState$2(false),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       selectAllRecords = _React$useState2[0],
       setSelectAllRecords = _React$useState2[1];
 
-  var _React$useState3 = useState$3(true),
+  var _React$useState3 = useState$2(true),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       flag = _React$useState4[0],
       setFlag = _React$useState4[1];
 
-  useEffect$2(function () {
+  useEffect$1(function () {
     setFlag(!flag);
   }, [schema]);
-  useEffect$2(function () {
+  useEffect$1(function () {
     if (selectAll && selectAll.checked) {
       if (onSelectAll) onSelectAll(true, selectAllRecords);
     }
   }, [selectAllRecords]);
-  useEffect$2(function () {
+  useEffect$1(function () {
     if (selectAll && !selectAll.checked) setSelectAllRecords(false);
   }, [selectAll]);
   var filterSchema = schema.filter(function (s) {
@@ -45046,7 +45304,7 @@ var List = function List(props) {
 };
 List.defaultProps = defaultProps$4;
 
-var useState$2 = useState$3;
+var useState$1 = useState$2;
 
 /**
  * ####NOTE: Navigation(vertical) sets first subMenu(if present) active if the Navigation is collapsed.
@@ -45067,12 +45325,12 @@ var Navigation = function Navigation(props) {
       className = props.className;
   var baseProps = extractBaseProps(props);
 
-  var _useState = useState$2({}),
+  var _useState = useState$1({}),
       _useState2 = _slicedToArray(_useState, 2),
       menuState = _useState2[0],
       setMenuState = _useState2[1];
 
-  useEffect$2(function () {
+  useEffect$1(function () {
     if (props.active) {
       var currMenu = getMenu(props.active);
       if (currMenu) updateMenuState(currMenu, true);
@@ -45328,4 +45586,4 @@ PageHeader.defaultProps = {
   separator: true
 };
 
-export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, ChatMessage, Checkbox, Chip, ChipGroup, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, EditableDropdown, EditableInput, ErrorTemplate, Grid, GridCell, Heading, Icon, Input, InputMask, Label$1 as Label, Legend$1 as Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip$1 as Tooltip, index as Utils };
+export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, ChatMessage, Checkbox, Chip, ChipGroup, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, EditableDropdown, EditableInput, EmptyState, Grid, GridCell, Heading, Icon, Input, InputMask, Label$1 as Label, Legend$1 as Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip$1 as Tooltip, index as Utils };

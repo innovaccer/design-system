@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1608107543756 
+   * Generated on: 1608612816677 
    *      Package: @innovaccer/design-system
-   *      Version: v1.4.0
+   *      Version: v1.4.1-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -907,7 +907,8 @@
         };
       }, [props.open]);
       var BackdropElement = /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement("div", __assign({
-        "data-test": "DesignSystem-Backdrop"
+        "data-test": "DesignSystem-Backdrop",
+        "data-layer": true
       }, baseProps, {
         className: classes
       })), document.body);
@@ -3061,24 +3062,25 @@
       }, "/"))));
     };
 
-    var Card = function Card(props) {
+    var Card = /*#__PURE__*/React.forwardRef(function (props, ref) {
       var _a;
 
-      var shadow = props.shadow,
+      var _b = props.shadow,
+          shadow = _b === void 0 ? 'medium' : _b,
           children = props.children,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
+          className = props.className,
+          rest = __rest(props, ["shadow", "children", "className"]);
+
       var classes = classNames__default['default']((_a = {
         Card: true
       }, _a["Card--shadow-" + shadow] = shadow, _a["" + className] = className, _a));
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement("div", __assign({
+        ref: ref
+      }, rest, {
         className: classes
       }), children);
-    };
+    });
     Card.displayName = 'Card';
-    Card.defaultProps = {
-      shadow: 'medium'
-    };
 
     var GenericChip = function GenericChip(props) {
       var label = props.label,
@@ -3220,7 +3222,7 @@
     };
     ChipGroup.displayName = 'ChipGroup';
 
-    var Column = function Column(props) {
+    var Column = /*#__PURE__*/React.forwardRef(function (props, ref) {
       var _a;
 
       var size = props.size,
@@ -3230,13 +3232,16 @@
           sizeL = props.sizeL,
           sizeXL = props.sizeXL,
           className = props.className,
-          children = props.children;
-      var baseProps = extractBaseProps(props);
+          children = props.children,
+          rest = __rest(props, ["size", "sizeXS", "sizeS", "sizeM", "sizeL", "sizeXL", "className", "children"]);
+
       var classes = classNames__default['default']((_a = {}, _a['Col'] = true, _a["Col--" + size] = size, _a["Col--xs-" + sizeXS] = sizeXS, _a["Col--s-" + sizeS] = sizeS, _a["Col--m-" + sizeM] = sizeM, _a["Col--l-" + sizeL] = sizeL, _a["Col--xl-" + sizeXL] = sizeXL, _a["" + className] = className, _a));
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React.createElement("div", __assign({
+        ref: ref
+      }, rest, {
         className: classes
       }), children);
-    };
+    });
     Column.displayName = 'Column';
 
     var sizeMap = {
@@ -5459,21 +5464,23 @@
     });
     Radio.displayName = 'Radio';
 
-    var Row = function Row(props) {
+    var Row = /*#__PURE__*/React.forwardRef(function (props, ref) {
       var _a;
 
       var className = props.className,
-          children = props.children;
-      var baseProps = extractBaseProps(props);
+          children = props.children,
+          rest = __rest(props, ["className", "children"]);
+
       var classes = classNames__default['default']((_a = {
         Row: true
       }, _a["" + className] = className, _a));
       return /*#__PURE__*/React.createElement("div", __assign({
-        "data-test": "DesignSystem-Row"
-      }, baseProps, {
+        "data-test": "DesignSystem-Row",
+        ref: ref
+      }, rest, {
         className: classes
       }), children);
-    };
+    });
     Row.displayName = 'Row';
 
     var StatusHint = function StatusHint(props) {
@@ -6496,6 +6503,52 @@
       return Tooltip;
     }(React.Component);
 
+    var Dialog = function Dialog(props) {
+      var dimension = props.dimension,
+          primaryButtonAppearance = props.primaryButtonAppearance,
+          secondaryButtonAppearance = props.secondaryButtonAppearance,
+          open = props.open,
+          onClose = props.onClose,
+          heading = props.heading,
+          title = props.title,
+          description = props.description,
+          primaryButtonLabel = props.primaryButtonLabel,
+          primaryButtonCallback = props.primaryButtonCallback,
+          secondaryButtonLabel = props.secondaryButtonLabel,
+          secondaryButtonCallback = props.secondaryButtonCallback;
+      var baseProps = extractBaseProps(props);
+      return /*#__PURE__*/React.createElement(Modal, __assign({
+        "data-test": "DesignSystem-Dialog"
+      }, baseProps, {
+        open: open,
+        dimension: dimension,
+        onClose: onClose,
+        headerOptions: {
+          heading: heading
+        },
+        footer: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
+          "data-test": "DesignSystem-Dialog--SecondaryButton",
+          appearance: secondaryButtonAppearance,
+          onClick: secondaryButtonCallback
+        }, secondaryButtonLabel), /*#__PURE__*/React.createElement(Button, {
+          className: "ml-4",
+          "data-test": "DesignSystem-Dialog--PrimaryButton",
+          appearance: primaryButtonAppearance,
+          onClick: primaryButtonCallback
+        }, primaryButtonLabel))
+      }), /*#__PURE__*/React.createElement(ModalDescription, {
+        title: title,
+        description: description
+      }));
+    };
+
+    Dialog.displayName = 'Dialog';
+    Dialog.defaultProps = {
+      dimension: 'small',
+      primaryButtonAppearance: 'primary',
+      secondaryButtonAppearance: 'basic'
+    };
+
     var Modal = function (_super) {
       __extends(Modal, _super);
 
@@ -6507,18 +6560,16 @@
         _this.getUpdatedZIndex = function () {
           if (_this.element === null) return;
 
-          var elements = _this.element.querySelectorAll('.Modal-container');
+          var elements = _this.element.querySelectorAll('.Modal-container--open');
 
-          if (elements.length <= 1) return;
+          if (elements.length < 1) return;
           var siblings = Array.from(elements).filter(function (el) {
             return el !== _this.modalRef.current;
           });
           var zIndex = -1;
           siblings.forEach(function (element) {
-            if (element.classList.contains('Modal-container--open')) {
-              var prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
-              zIndex = Math.max(zIndex, prevZIndex + 10);
-            }
+            var prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
+            zIndex = Math.max(zIndex, prevZIndex + 10);
           });
           return zIndex > 0 ? zIndex : undefined;
         };
@@ -6564,39 +6615,78 @@
       };
 
       Modal.prototype.render = function () {
-        var _a, _b;
+        var _a;
 
-        var _c = this.state,
-            animate = _c.animate,
-            open = _c.open,
-            zIndex = _c.zIndex;
-        var _d = this.props,
-            className = _d.className,
-            backdropClose = _d.backdropClose,
-            dimension = _d.dimension;
-        var classes = classNames__default['default']((_a = {
-          Modal: true
-        }, _a["Modal--" + dimension] = dimension, _a['Modal--open'] = open, _a['Modal-animation--open'] = animate, _a['Modal-animation--close'] = !animate, _a), className);
-        var ContainerClass = classNames__default['default']((_b = {}, _b['Modal-container'] = true, _b['Modal-container--open'] = open, _b));
+        var _b = this.state,
+            animate = _b.animate,
+            open = _b.open,
+            zIndex = _b.zIndex;
+        var _c = this.props,
+            className = _c.className,
+            backdropClose = _c.backdropClose,
+            dimension = _c.dimension,
+            children = _c.children,
+            headerOptions = _c.headerOptions,
+            footer = _c.footer,
+            _onClose = _c.onClose;
+        var classes = classNames__default['default']({
+          Modal: true,
+          'Modal--open': open,
+          'Modal-animation--open': animate,
+          'Modal-animation--close': !animate
+        }, className);
+        var ContainerClass = classNames__default['default']((_a = {}, _a['Row'] = true, _a['Modal-container'] = true, _a['Modal-container--open'] = open, _a));
         var baseProps = extractBaseProps(this.props);
-        var ModalContainer = /*#__PURE__*/React.createElement("div", {
+        var sizeMap = {
+          small: {
+            size: '3',
+            sizeL: '4',
+            sizeM: '4',
+            sizeXS: '10'
+          },
+          medium: {
+            size: '4',
+            sizeL: '6',
+            sizeM: '6',
+            sizeXS: '10'
+          },
+          large: {
+            size: '6',
+            sizeL: '8',
+            sizeM: '8',
+            sizeXS: '10'
+          }
+        };
+        var ModalContainer = /*#__PURE__*/React.createElement(Row, {
           "data-test": "DesignSystem-ModalContainer",
           className: ContainerClass,
           "data-layer": true,
           style: {
             zIndex: zIndex
-          },
-          ref: this.modalRef
-        }, /*#__PURE__*/React.createElement("div", __assign({
+          }
+        }, /*#__PURE__*/React.createElement(Column, __assign({
           "data-test": "DesignSystem-Modal"
         }, baseProps, {
           className: classes
-        }), this.props.children));
+        }, sizeMap[dimension], {
+          ref: this.modalRef
+        }), headerOptions && /*#__PURE__*/React.createElement(ModalHeader, __assign({
+          onClose: function onClose(event, reason) {
+            if (_onClose) _onClose(event, reason);
+          }
+        }, headerOptions)), children && /*#__PURE__*/React.createElement(React.Fragment, null, headerOptions || footer ? /*#__PURE__*/React.createElement(ModalBody, null, children) : children), footer && /*#__PURE__*/React.createElement(ModalFooter, {
+          open: open
+        }, footer)));
+
+        var onOutsideClickHandler = function onOutsideClickHandler(event) {
+          if (open) {
+            if (_onClose) _onClose(event, 'OutsideClick');else if (typeof backdropClose === 'function') backdropClose(event, 'OutsideClick');
+          }
+        };
+
         var ModalWrapper = backdropClose ? /*#__PURE__*/React.createElement(OutsideClick, {
           "data-test": "DesignSystem-Modal--OutsideClick",
-          onOutsideClick: function onOutsideClick(event) {
-            return open && backdropClose(event, 'OutsideClick');
-          }
+          onOutsideClick: onOutsideClickHandler
         }, ModalContainer) : ModalContainer;
         var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(ModalWrapper, this.element);
         return /*#__PURE__*/React.createElement("div", null, WrapperElement, /*#__PURE__*/React.createElement(Backdrop, {
@@ -6604,144 +6694,159 @@
         }));
       };
 
+      Modal.defaultProps = {
+        dimension: 'medium'
+      };
       return Modal;
     }(React.Component);
 
-    var ModalHeader = function ModalHeader(props) {
-      var _a;
+    var sidesheetWidth = {
+      regular: '6',
+      large: '10'
+    };
 
-      var className = props.className,
-          heading = props.heading,
-          icon = props.icon,
-          iconAppearance = props.iconAppearance,
-          subHeading = props.subHeading,
-          onClose = props.onClose;
-      var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']({
-        'Modal-header': true
-      }, className);
-      var subheaderClasses = classNames__default['default']((_a = {
-        'Modal-header-subheader': true
-      }, _a['Modal-header-subheader--withIcon'] = icon, _a));
-      return /*#__PURE__*/React.createElement("div", {
-        className: "Modal-header-wrapper"
-      }, /*#__PURE__*/React.createElement("div", __assign({
-        "data-test": "DesignSystem-ModalHeader"
-      }, baseProps, {
-        className: classes
-      }), icon && /*#__PURE__*/React.createElement(Icon, {
-        className: "Modal-header-icon",
-        name: icon,
-        appearance: iconAppearance,
-        "data-test": "DesignSystem-ModalHeader--Icon"
-      }), heading && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Heading, {
-        size: "s"
-      }, heading)), /*#__PURE__*/React.createElement(Icon, {
-        name: 'close',
-        className: "Modal-close-icon",
-        "data-test": "DesignSystem-ModalHeader--CloseIcon",
-        onClick: function onClick(event) {
-          return onClose(event, 'IconClick');
+    var Sidesheet = function (_super) {
+      __extends(Sidesheet, _super);
+
+      function Sidesheet(props) {
+        var _this = _super.call(this, props) || this;
+
+        _this.sidesheetRef = /*#__PURE__*/React.createRef();
+
+        _this.getUpdatedZIndex = function () {
+          if (_this.element === null) return;
+
+          var elements = _this.element.querySelectorAll('.Sidesheet-container--open');
+
+          if (elements.length <= 1) return;
+          var siblings = Array.from(elements).filter(function (el) {
+            return el !== _this.sidesheetRef.current;
+          });
+          var zIndex = -1;
+          siblings.forEach(function (element) {
+            var prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
+            zIndex = Math.max(zIndex, prevZIndex + 10);
+          });
+          return zIndex > 0 ? zIndex : undefined;
+        };
+
+        var element = document.querySelector('.Sidesheet-wrapper');
+
+        if (element === null) {
+          element = document.createElement('div');
+          element.classList.add('Sidesheet-wrapper');
+          document.body.appendChild(element);
         }
-      })), subHeading && /*#__PURE__*/React.createElement("div", {
-        className: subheaderClasses,
-        "data-test": "DesignSystem-ModalHeader--Subheading"
-      }, /*#__PURE__*/React.createElement(Text, {
-        appearance: "subtle"
-      }, subHeading)));
-    };
-    ModalHeader.displayName = 'ModalHeader';
-    ModalHeader.defaultProps = {
-      iconAppearance: Icon.defaultProps.appearance
-    };
 
-    var ModalDescription = function ModalDescription(props) {
-      var _a;
+        _this.element = element;
+        _this.state = {
+          open: props.open,
+          animate: props.open
+        };
+        return _this;
+      }
 
-      var title = props.title,
-          description = props.description,
-          removePadding = props.removePadding,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {
-        'Modal-description': true
-      }, _a['pl-6 pr-6'] = !removePadding, _a), className);
-      return /*#__PURE__*/React.createElement("div", __assign({
-        "data-test": "DesignSystem-ModalDescription"
-      }, baseProps, {
-        className: classes
-      }), title && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Text, {
-        weight: "strong",
-        "data-test": "DesignSystem-ModalDescription--Title"
-      }, title)), description && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Text, {
-        "data-test": "DesignSystem-ModalDescription--Description"
-      }, description)));
-    };
-    ModalDescription.displayName = 'ModalDescription';
+      Sidesheet.prototype.componentDidUpdate = function (prevProps) {
+        var _this = this;
 
-    var ModalFooter = function ModalFooter(props) {
-      var children = props.children,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']({
-        'Modal-footer': true
-      }, className);
-      return /*#__PURE__*/React.createElement("div", __assign({
-        "data-test": "DesignSystem-ModalFooter"
-      }, baseProps, {
-        className: classes
-      }), children);
-    };
-    ModalFooter.displayName = 'ModalFooter';
-
-    var Dialog = function Dialog(props) {
-      var dimension = props.dimension,
-          primaryButtonAppearance = props.primaryButtonAppearance,
-          secondaryButtonAppearance = props.secondaryButtonAppearance,
-          open = props.open,
-          onClose = props.onClose,
-          icon = props.icon,
-          heading = props.heading,
-          title = props.title,
-          description = props.description,
-          primaryButtonLabel = props.primaryButtonLabel,
-          primaryButtonCallback = props.primaryButtonCallback,
-          secondaryButtonLabel = props.secondaryButtonLabel,
-          secondaryButtonCallback = props.secondaryButtonCallback;
-      var baseProps = extractBaseProps(props);
-      var modalOptions = {
-        open: open,
-        dimension: dimension,
-        backdropClose: onClose
+        if (prevProps.open !== this.props.open) {
+          if (this.props.open) {
+            var zIndex = this.getUpdatedZIndex();
+            this.setState({
+              zIndex: zIndex,
+              open: true,
+              animate: true
+            });
+          } else {
+            this.setState({
+              animate: false
+            });
+            setTimeout(function () {
+              _this.setState({
+                open: false
+              });
+            }, 120);
+          }
+        }
       };
-      var modalHeaderOptions = {
-        onClose: onClose,
-        icon: icon,
-        heading: heading
-      };
-      var modalDescriptionOptions = {
-        title: title,
-        description: description
-      };
-      return /*#__PURE__*/React.createElement(Modal, __assign({
-        "data-test": "DesignSystem-Dialog"
-      }, baseProps, modalOptions), /*#__PURE__*/React.createElement(ModalHeader, __assign({}, modalHeaderOptions)), /*#__PURE__*/React.createElement(ModalDescription, __assign({}, modalDescriptionOptions)), /*#__PURE__*/React.createElement(ModalFooter, null, /*#__PURE__*/React.createElement(Button, {
-        "data-test": "DesignSystem-Dialog--SecondaryButton",
-        appearance: secondaryButtonAppearance,
-        onClick: secondaryButtonCallback
-      }, secondaryButtonLabel), /*#__PURE__*/React.createElement(Button, {
-        "data-test": "DesignSystem-Dialog--PrimaryButton",
-        appearance: primaryButtonAppearance,
-        onClick: primaryButtonCallback
-      }, primaryButtonLabel)));
-    };
 
-    Dialog.displayName = 'Dialog';
-    Dialog.defaultProps = {
-      dimension: 'small',
-      primaryButtonAppearance: 'primary',
-      secondaryButtonAppearance: 'basic'
-    };
+      Sidesheet.prototype.render = function () {
+        var _a;
+
+        var _b = this.state,
+            animate = _b.animate,
+            open = _b.open,
+            zIndex = _b.zIndex;
+        var _c = this.props,
+            className = _c.className,
+            backdropClose = _c.backdropClose,
+            dimension = _c.dimension,
+            footer = _c.footer,
+            seperator = _c.seperator,
+            stickFooter = _c.stickFooter,
+            headerOptions = _c.headerOptions,
+            _onClose = _c.onClose;
+        var classes = classNames__default['default']({
+          Sidesheet: true,
+          'Sidesheet--open': open,
+          'Sidesheet-animation--open': animate,
+          'Sidesheet-animation--close': !animate
+        }, className);
+        var ContainerClass = classNames__default['default']((_a = {}, _a['Sidesheet-container'] = true, _a['Sidesheet-container--open'] = open, _a));
+        var baseProps = extractBaseProps(this.props);
+
+        var headerObj = __assign(__assign({}, headerOptions), {
+          seperator: seperator
+        });
+
+        var SidesheetContainer = /*#__PURE__*/React.createElement(Row, {
+          "data-test": "DesignSystem-SidesheetContainer",
+          className: ContainerClass,
+          "data-layer": true,
+          style: {
+            zIndex: zIndex
+          },
+          ref: this.sidesheetRef
+        }, /*#__PURE__*/React.createElement(Column, __assign({
+          "data-test": "DesignSystem-Sidesheet"
+        }, baseProps, {
+          className: classes,
+          size: sidesheetWidth[dimension]
+        }), /*#__PURE__*/React.createElement(ModalHeader, __assign({
+          onClose: function onClose(event, reason) {
+            if (_onClose) _onClose(event, reason);
+          }
+        }, headerObj)), /*#__PURE__*/React.createElement(ModalBody, {
+          stickFooter: stickFooter
+        }, this.props.children), footer && /*#__PURE__*/React.createElement(ModalFooter, {
+          inSidesheet: true,
+          stickToBottom: stickFooter,
+          seperator: seperator
+        }, footer)));
+
+        var onOutsideClickHandler = function onOutsideClickHandler(event) {
+          if (open) {
+            if (_onClose) _onClose(event, 'OutsideClick');
+          }
+        };
+
+        var SidesheetWrapper = backdropClose ? /*#__PURE__*/React.createElement(OutsideClick, {
+          "data-test": "DesignSystem-Sidesheet--OutsideClick",
+          onOutsideClick: onOutsideClickHandler
+        }, SidesheetContainer) : SidesheetContainer;
+        var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(SidesheetWrapper, this.element);
+        return /*#__PURE__*/React.createElement("div", null, WrapperElement, /*#__PURE__*/React.createElement(Backdrop, {
+          open: this.state.open
+        }));
+      };
+
+      Sidesheet.defaultProps = {
+        dimension: 'regular',
+        stickFooter: false,
+        headerOptions: {}
+      };
+      return Sidesheet;
+    }(React.Component);
 
     var Status = function Status(props) {
       var _a, _b;
@@ -6916,88 +7021,179 @@
     };
     ChatMessage.displayName = 'ChatMessage';
 
-    var defaultImageHeight = {
-      NO_CONTENT: '256px',
-      NO_SEARCH: '128px',
-      ERROR: '256px'
+    var imageHeight = {
+      large: '256px',
+      small: '128px'
     };
     var HeadingSize = {
-      NO_CONTENT: 'l',
-      NO_SEARCH: 'm',
-      ERROR: 'l'
+      large: 'l',
+      small: 'm'
     };
     var textSize = {
-      NO_CONTENT: 'large',
-      NO_SEARCH: 'regular',
-      ERROR: 'large'
+      large: 'large',
+      small: 'regular'
     };
-    var ErrorTemplate = function ErrorTemplate(props) {
+    var EmptyState = function EmptyState(props) {
       var _a, _b, _c;
 
-      var image = props.image,
+      var imageSrc = props.imageSrc,
           title = props.title,
           description = props.description,
-          templateType = props.templateType,
+          size = props.size,
           children = props.children,
           className = props.className;
-      var _d = image.height,
-          height = _d === void 0 ? defaultImageHeight[templateType] : _d,
-          imageClassName = image.className,
-          src = image.src;
       var baseProps = extractBaseProps(props);
-      var WrapperClass = classNames__default['default']((_a = {}, _a['ErrorTemplate'] = true, _a), className);
-      var HeadingClass = classNames__default['default']((_b = {}, _b['ErrorTemplate-title'] = true, _b["ErrorTemplate-title--" + templateType] = true, _b));
-      var TextClass = classNames__default['default']((_c = {}, _c['ErrorTemplate-description'] = true, _c["ErrorTemplate-description--" + templateType] = children !== undefined, _c));
+      var WrapperClass = classNames__default['default']((_a = {}, _a['EmptyState'] = true, _a), className);
+      var HeadingClass = classNames__default['default']((_b = {}, _b['EmptyState-title'] = true, _b["EmptyState-title--" + size] = true, _b));
+      var TextClass = classNames__default['default']((_c = {}, _c['EmptyState-description'] = true, _c["EmptyState-description--" + size] = children !== undefined, _c));
       return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
         className: WrapperClass
       }), /*#__PURE__*/React.createElement("img", {
-        src: src,
-        height: height,
-        className: imageClassName
+        src: imageSrc,
+        height: imageHeight[size]
       }), /*#__PURE__*/React.createElement(Heading, {
-        size: HeadingSize[templateType],
+        size: HeadingSize[size],
         className: HeadingClass
       }, title), /*#__PURE__*/React.createElement(Text, {
-        size: textSize[templateType],
+        size: textSize[size],
         className: TextClass,
         appearance: "subtle"
       }, description), children && children);
     };
-    ErrorTemplate.displayName = 'ErrorTemplate';
+    EmptyState.displayName = 'EmptyState';
 
-    var useRef = React.useRef,
-        useEffect$1 = React.useEffect,
-        useState$1 = React.useState;
+    var ModalHeader = function ModalHeader(props) {
+      var _a, _b;
+
+      var className = props.className,
+          heading = props.heading,
+          subHeading = props.subHeading,
+          onClose = props.onClose,
+          seperator = props.seperator,
+          backIcon = props.backIcon,
+          backIconCallback = props.backIconCallback;
+      var baseProps = extractBaseProps(props);
+      var classes = classNames__default['default']((_a = {
+        'Modal-header': true
+      }, _a['Modal-header--backIcon'] = backIcon, _a['Modal-header--seperator'] = seperator, _a), className);
+      var wrapperClass = classNames__default['default']((_b = {
+        'Modal-headerWrapper': true
+      }, _b['Modal-headerWrapper--backIcon'] = backIcon, _b));
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-ModalHeader"
+      }, baseProps, {
+        className: classes
+      }), /*#__PURE__*/React.createElement("div", {
+        className: wrapperClass
+      }, backIcon && /*#__PURE__*/React.createElement(Icon, {
+        name: "keyboard_backspace",
+        size: 20,
+        className: "ml-3 mr-5 my-3 px-2 py-2 cursor-pointer",
+        onClick: backIconCallback
+      }), /*#__PURE__*/React.createElement("div", {
+        className: "Modal-headerHeading"
+      }, /*#__PURE__*/React.createElement(Heading, null, heading), /*#__PURE__*/React.createElement(Icon, {
+        size: 20,
+        name: 'close',
+        className: 'mx-2 cursor-pointer',
+        "data-test": "DesignSystem-ModalHeader--CloseIcon",
+        onClick: function onClick(event) {
+          return onClose(event, 'IconClick');
+        }
+      }))), subHeading && /*#__PURE__*/React.createElement(Text, {
+        "data-test": "DesignSystem-ModalHeader--Subheading",
+        appearance: "subtle",
+        className: "mt-2 ml-7"
+      }, subHeading));
+    };
+    ModalHeader.displayName = 'ModalHeader';
+
+    var ModalFooter = function ModalFooter(props) {
+      var _a;
+
+      var open = props.open,
+          children = props.children,
+          className = props.className,
+          stickToBottom = props.stickToBottom,
+          seperator = props.seperator,
+          inSidesheet = props.inSidesheet;
+      var baseProps = extractBaseProps(props);
+      var classes = classNames__default['default']((_a = {
+        'Modal-footer': true
+      }, _a['Modal-footer--inModal'] = !inSidesheet, _a['Modal-footer--seperator'] = seperator, _a['Modal-footer--stickToBottom'] = stickToBottom, _a), className);
+      var wrapperRef = /*#__PURE__*/React.createRef();
+      React.useEffect(function () {
+        var _a;
+
+        if (open) {
+          if (wrapperRef.current) {
+            var secondaryBtns = (_a = wrapperRef.current) === null || _a === void 0 ? void 0 : _a.querySelectorAll('.Button--basic');
+            var secondaryBtn_1 = secondaryBtns[secondaryBtns.length - 1];
+
+            if (secondaryBtn_1) {
+              window.requestAnimationFrame(function () {
+                return secondaryBtn_1.focus({
+                  preventScroll: true
+                });
+              });
+            }
+          }
+        }
+      }, [open]);
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-ModalFooter",
+        ref: wrapperRef
+      }, baseProps, {
+        className: classes
+      }), children);
+    };
+    ModalFooter.defaultProps = {
+      stickToBottom: true,
+      inSidesheet: false
+    };
+    ModalFooter.displayName = 'ModalFooter';
+
     var ModalBody = function ModalBody(props) {
       var _a;
 
-      var _b = useState$1(false),
-          scroll = _b[0],
-          setScroll = _b[1];
-
-      var ref = useRef(null);
       var children = props.children,
-          className = props.className;
+          className = props.className,
+          stickFooter = props.stickFooter;
       var baseProps = extractBaseProps(props);
-      useEffect$1(function () {
-        var scrollHeight = ref && ref.current ? ref.current.scrollHeight : 0;
-        var clientHeight = ref && ref.current ? ref.current.clientHeight : 0;
-
-        if (scrollHeight > clientHeight) {
-          setScroll(true);
-        }
-      }, [ref]);
       var classes = classNames__default['default']((_a = {
         'Modal-body': true
-      }, _a['Modal-body--border'] = scroll, _a), className);
+      }, _a['Modal-body--stickFooter'] = stickFooter, _a), className);
       return /*#__PURE__*/React.createElement("div", __assign({
         "data-test": "DesignSystem-ModalBody"
       }, baseProps, {
-        className: classes,
-        ref: ref
+        className: classes
       }), children);
     };
+    ModalBody.defaultProps = {
+      stickFooter: true
+    };
     ModalBody.displayName = 'ModalBody';
+
+    var ModalDescription = function ModalDescription(props) {
+      var title = props.title,
+          description = props.description,
+          className = props.className;
+      var baseProps = extractBaseProps(props);
+      var classes = classNames__default['default']({
+        'Modal-description': true
+      }, className);
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-ModalDescription"
+      }, baseProps, {
+        className: classes
+      }), title && /*#__PURE__*/React.createElement(Text, {
+        weight: "strong",
+        "data-test": "DesignSystem-ModalDescription--Title"
+      }, title), title && description && /*#__PURE__*/React.createElement("br", null), description && /*#__PURE__*/React.createElement(Text, {
+        "data-test": "DesignSystem-ModalDescription--Description"
+      }, description));
+    };
+    ModalDescription.displayName = 'ModalDescription';
 
     var Pagination = function Pagination(props) {
       var _a, _b, _c;
@@ -10138,7 +10334,7 @@
     };
     List.defaultProps = defaultProps$1;
 
-    var useState$2 = React.useState;
+    var useState$1 = React.useState;
     var Navigation = function Navigation(props) {
       var _a;
 
@@ -10155,7 +10351,7 @@
           className = props.className;
       var baseProps = extractBaseProps(props);
 
-      var _b = useState$2({}),
+      var _b = useState$1({}),
           menuState = _b[0],
           setMenuState = _b[1];
 
@@ -10430,7 +10626,7 @@
     exports.Dropdown = Dropdown;
     exports.EditableDropdown = EditableDropdown;
     exports.EditableInput = EditableInput;
-    exports.ErrorTemplate = ErrorTemplate;
+    exports.EmptyState = EmptyState;
     exports.Grid = Grid;
     exports.GridCell = GridCell;
     exports.Heading = Heading;
@@ -10462,6 +10658,7 @@
     exports.Radio = Radio;
     exports.RangeSlider = RangeSlider;
     exports.Row = Row;
+    exports.Sidesheet = Sidesheet;
     exports.Slider = Slider;
     exports.Spinner = Spinner;
     exports.StatusHint = StatusHint;

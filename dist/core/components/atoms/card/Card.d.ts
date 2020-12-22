@@ -1,15 +1,8 @@
 import * as React from 'react';
-import { BaseProps } from "../../../utils/types";
+import { BaseContainerProps } from "../../../utils/types";
 export declare type Shadow = 'none' | 'light' | 'medium' | 'dark';
-export interface CardProps extends BaseProps {
-    shadow: Shadow;
-    children: React.ReactNode;
+export interface CardProps extends BaseContainerProps {
+    shadow?: Shadow;
 }
-export declare const Card: {
-    (props: CardProps): JSX.Element;
-    displayName: string;
-    defaultProps: {
-        shadow: string;
-    };
-};
+export declare const Card: React.ForwardRefExoticComponent<CardProps & React.RefAttributes<HTMLDivElement>>;
 export default Card;

@@ -1,20 +1,18 @@
 import * as React from 'react';
-import { Dimension } from "../modal";
-import { Appearance } from "../../atoms/button";
+import { ModalProps, ModalHeaderProps, ButtonProps } from "../../../index.type";
 import { BaseProps } from "../../../utils/types";
 export interface DialogProps extends BaseProps {
     onClose: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
-    dimension: Dimension;
+    dimension: ModalProps['dimension'];
     open: boolean;
-    heading?: string;
-    icon?: string;
+    heading: ModalHeaderProps['heading'];
     title?: string;
     description?: string;
     primaryButtonLabel: string;
-    primaryButtonAppearance: Appearance;
+    primaryButtonAppearance: ButtonProps['appearance'];
     primaryButtonCallback: () => void;
     secondaryButtonLabel: string;
-    secondaryButtonAppearance: Appearance;
+    secondaryButtonAppearance: ButtonProps['appearance'];
     secondaryButtonCallback: () => void;
 }
 declare const Dialog: {
