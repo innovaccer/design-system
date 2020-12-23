@@ -2,7 +2,7 @@ import * as React from 'react';
 import { boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { updateKnob } from '@/utils/storybookEventEmitter';
-import { Modal, ModalDescription, Button, Text, Paragraph } from '@/index';
+import { Modal, ModalDescription, ModalHeader, ModalBody, ModalFooter, Button, Text, Paragraph } from '@/index';
 
 export const all = () => {
   const open = boolean('open', true);
@@ -111,7 +111,7 @@ const customCode = `() => {
 export default {
   title: 'Molecules|Modal',
   component: Modal,
-  // subcomponents: { ModalHeader, ModalBody, ModalDescription, ModalFooter },
+  subcomponents: { ModalHeader, ModalBody, ModalDescription, ModalFooter },
   parameters: {
     docs: {
       docPage: {
