@@ -56,6 +56,10 @@ export interface DonutChartProps extends BaseProps {
    * Percent w.r.t. radius
    */
   width: number;
+  /**
+   * Callback to add custom tooltip component
+   */
+  customTooltip?: (payload: any) => JSX.Element;
 }
 
 export const DonutChart = (props: DonutChartProps) => {
@@ -68,6 +72,7 @@ export const DonutChart = (props: DonutChartProps) => {
     radius,
     withLegends,
     withTooltip,
+    customTooltip,
     withActiveSegment,
     className
   } = props;
@@ -91,6 +96,8 @@ export const DonutChart = (props: DonutChartProps) => {
     const payload = chartProps.payload[0];
 
     if (payload) {
+      if (customTooltip) return customTooltip(payload);
+
       return (
         <div className="DonutChart-tooltip">
           {`${payload.name}${chartProps.separator}${(+payload.value).toLocaleString()}`}
