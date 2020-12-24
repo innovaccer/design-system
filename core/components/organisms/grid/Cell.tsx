@@ -6,6 +6,7 @@ import { resizeCol, getInit } from './utility';
 import { DropdownProps } from '@/components/atoms/dropdown';
 import { getCellSize, getWidth } from './columnUtility';
 import { GridNestedRow } from './GridNestedRow';
+import { GridCellProps } from './GridCell';
 
 interface SharedCellProps {
   _this: Grid;
@@ -239,13 +240,14 @@ const BodyCell = (props: BodyCellProps) => {
 
   const [expanded, setExpanded] = expandedState;
 
-  const cellProps = {
+  const cellProps: GridCellProps = {
     rowIndex,
     colIndex,
     size,
     schema,
     data,
     loading,
+    expanded
   };
 
   const nestedProps = {

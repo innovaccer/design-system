@@ -37,6 +37,10 @@ export interface PartialCellProps {
    * Loading state of cell
    */
   loading?: boolean;
+  /**
+   * Expanded state of row
+   */
+  expanded?: boolean;
 }
 
 // export const Image = (props: ImageProps) => {
