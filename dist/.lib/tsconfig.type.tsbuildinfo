@@ -582,8 +582,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/donutChart/DonutChart.tsx": {
-        "version": "85d369b73349b65cdf29f7cac095086af877c628de0128cf04c31c8106102145",
-        "signature": "df845237ac70cd382e149f2ef87771f1ce53f5b5010f1dc5a07e4afff4c0d368",
+        "version": "612535b9697e815f65c203e9fa5fa652ac616e346f2dd91a03afb1bd032d2900",
+        "signature": "bab2351b4c9b1ccb9e9b755928a6392af20c05f2079cd46a34ae5f50ab21d974",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/donutChart/index.tsx": {
@@ -1952,8 +1952,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/crypto.d.ts": {
-        "version": "2636f61a2d5f76d4039c7110f65c407a028ec5265e03d855fc2cf62b198ac415",
-        "signature": "2636f61a2d5f76d4039c7110f65c407a028ec5265e03d855fc2cf62b198ac415",
+        "version": "75d76be86ffc40ae985ebace0cbd2c79b1e10c224c925d91f4df5a2705cc3f76",
+        "signature": "75d76be86ffc40ae985ebace0cbd2c79b1e10c224c925d91f4df5a2705cc3f76",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/dgram.d.ts": {
@@ -2092,8 +2092,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/util.d.ts": {
-        "version": "f5b9d446783f075eed9e93dfba1a5055b3fd61aab285fef3bbc761eadf598204",
-        "signature": "f5b9d446783f075eed9e93dfba1a5055b3fd61aab285fef3bbc761eadf598204",
+        "version": "f28704c27e1bd58068052f5407541a3306f0ffc77f068e2891f46527a4569e25",
+        "signature": "f28704c27e1bd58068052f5407541a3306f0ffc77f068e2891f46527a4569e25",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/v8.d.ts": {
@@ -2482,8 +2482,8 @@
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/yargs-parser/index.d.ts": {
-        "version": "fdfbe321c556c39a2ecf791d537b999591d0849e971dd938d88f460fea0186f6",
-        "signature": "fdfbe321c556c39a2ecf791d537b999591d0849e971dd938d88f460fea0186f6",
+        "version": "3bdd93ec24853e61bfa4c63ebaa425ff3e474156e87a47d90122e1d8cc717c1f",
+        "signature": "3bdd93ec24853e61bfa4c63ebaa425ff3e474156e87a47d90122e1d8cc717c1f",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/yargs/index.d.ts": {

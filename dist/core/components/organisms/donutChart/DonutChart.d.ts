@@ -13,6 +13,7 @@ export interface DonutChartProps extends BaseProps {
     colorOfTotalCount: string;
     radius?: number;
     width: number;
+    customTooltip?: (payload: any) => JSX.Element;
 }
 export declare const DonutChart: {
     (props: DonutChartProps): JSX.Element;

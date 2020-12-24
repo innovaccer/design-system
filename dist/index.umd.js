@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1608612816278 
+   * Generated on: 1608788104567 
    *      Package: @innovaccer/design-system
-   *      Version: v1.4.1-0
+   *      Version: v1.4.1-1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -39285,6 +39285,7 @@
         radius = props.radius,
         withLegends = props.withLegends,
         withTooltip = props.withTooltip,
+        customTooltip = props.customTooltip,
         withActiveSegment = props.withActiveSegment,
         className = props.className;
     var baseProps = extractBaseProps(props);
@@ -39305,6 +39306,7 @@
       var payload = chartProps.payload[0];
 
       if (payload) {
+        if (customTooltip) return customTooltip(payload);
         return /*#__PURE__*/React.createElement("div", {
           className: "DonutChart-tooltip"
         }, "".concat(payload.name).concat(chartProps.separator).concat((+payload.value).toLocaleString()));
