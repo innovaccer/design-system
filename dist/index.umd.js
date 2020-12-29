@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1608788104567 
+   * Generated on: 1609247982056 
    *      Package: @innovaccer/design-system
-   *      Version: v1.4.1-1
+   *      Version: v1.4.1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -39278,6 +39278,7 @@
 
   var DonutChart = function DonutChart(props) {
     var width = props.width,
+        legendWidth = props.legendWidth,
         colors = props.colors,
         withCenterText = props.withCenterText,
         colorOfTotalCount = props.colorOfTotalCount,
@@ -39289,14 +39290,16 @@
         withActiveSegment = props.withActiveSegment,
         className = props.className;
     var baseProps = extractBaseProps(props);
+    var legendSize = legendWidth;
+    var chartSize = 12 - legendWidth;
     var columnOptions = {
       chart: {
-        size: withLegends ? '9' : '12',
+        size: withLegends ? chartSize : '12',
         sizeS: '12',
         sizeXS: '12'
       },
       legends: {
-        size: '3',
+        size: legendSize,
         sizeS: '12',
         sizeXS: '12'
       }
@@ -39453,6 +39456,7 @@
   DonutChart.displayName = 'DonutChart';
   DonutChart.defaultProps = {
     width: 20,
+    legendWidth: 3,
     colors: ['primary', 'secondary', 'success', 'warning', 'alert'],
     withCenterText: true,
     colorOfTotalCount: 'success'
@@ -43702,7 +43706,8 @@
       size: size,
       schema: schema,
       data: data,
-      loading: loading
+      loading: loading,
+      expanded: expanded
     };
     var nestedProps = {
       _this: _this,

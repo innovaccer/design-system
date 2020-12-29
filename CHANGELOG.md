@@ -1,7 +1,8 @@
 
 -------------------
- **v1.4.1-1**  (2020-12-24) 
+ **v1.4.1**  (2020-12-29) 
 
-* 8dd1eea v1.4.1-1
-* 903a6aa chore(Modal): updates subcomponents of All story
-* 4a22b7d feat(DonutChart): adds custom tooltip
+* 5a24ea4 v1.4.1
+* 37092ef feat(donutChart): adds legend width support
+* 797c1dd chore(Table): updates cellRenderer props in story
+* d139ec5 feat(Grid): adds state of expanded

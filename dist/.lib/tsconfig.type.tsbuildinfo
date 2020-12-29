@@ -582,8 +582,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/donutChart/DonutChart.tsx": {
-        "version": "612535b9697e815f65c203e9fa5fa652ac616e346f2dd91a03afb1bd032d2900",
-        "signature": "bab2351b4c9b1ccb9e9b755928a6392af20c05f2079cd46a34ae5f50ab21d974",
+        "version": "dd976c72cf44a2a00ecf155d28406d7e66cb4eabd87c0766a4b28b947bcad3e3",
+        "signature": "62fe3218700cccee6ac8293bfc62b61ca11a8e086b99658be528dfe9fad11a30",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/donutChart/index.tsx": {
@@ -1062,8 +1062,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/GridCell.tsx": {
-        "version": "cda950822f3e097820446789c5bf4899a12559f7edb9ede82455e9ab0df05d74",
-        "signature": "247361ce20b0f8e26df134aae535195f93fec92047f01b6138a5a13efb2ad613",
+        "version": "c398eacc4a755f4334bb8ed810f4a22faedb0f1d24c9cc37e249a68e99cc0647",
+        "signature": "ecc7233dd7ca7e7a1a781ea8eccab50606e43eaeb8a3cffee6d2a0a6ad22af87",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/GridNestedRow.tsx": {
@@ -1072,7 +1072,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/Cell.tsx": {
-        "version": "818234c5c9a2d5e1cb62f1bdfb866b560819a8d4097b09bfd2d2aa1b2a2ad006",
+        "version": "84e05fbe7dfb42c3d4698696e04113f476cbf5c9bb3eb72a358da98334eaf81b",
         "signature": "1007b9e91a5db78ae9433020058f3a9afdf6d6026be0de01fd43582600fb1aec",
         "affectsGlobalScope": false
       },
@@ -1117,7 +1117,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/table/Table.tsx": {
-        "version": "cf3c5b7be114dbb821d2d56bef74d66aa3cb5f7bcaca3c81c8629f2545498e15",
+        "version": "259b5e6abd0ba1ed5f73331d22df476722e68674c546bd17231fe769e0528222",
         "signature": "6a169c43207605dc64cabbaf2e1e12c18ba124c399755be4e9732b3d467a765d",
         "affectsGlobalScope": false
       },
@@ -4143,6 +4143,7 @@
       "../../core/components/organisms/grid/Cell.tsx": [
         "../../core/components/atoms/dropdown/index.tsx",
         "../../core/components/organisms/grid/Grid.tsx",
+        "../../core/components/organisms/grid/GridCell.tsx",
         "../../core/components/organisms/grid/GridNestedRow.tsx",
         "../../core/components/organisms/grid/columnUtility.tsx",
         "../../core/components/organisms/grid/utility.tsx",

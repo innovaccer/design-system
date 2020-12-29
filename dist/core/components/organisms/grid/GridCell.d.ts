@@ -13,6 +13,7 @@ export interface PartialCellProps {
     data: RowData;
     schema: ColumnSchema;
     loading?: boolean;
+    expanded?: boolean;
 }
 export interface GridCellProps extends PartialCellProps {
     size?: GridSize;

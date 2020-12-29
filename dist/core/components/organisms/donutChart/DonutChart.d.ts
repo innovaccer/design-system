@@ -13,6 +13,7 @@ export interface DonutChartProps extends BaseProps {
     colorOfTotalCount: string;
     radius?: number;
     width: number;
+    legendWidth: number;
     customTooltip?: (payload: any) => JSX.Element;
 }
 export declare const DonutChart: {
@@ -20,6 +21,7 @@ export declare const DonutChart: {
     displayName: string;
     defaultProps: {
         width: number;
+        legendWidth: number;
         colors: string[];
         withCenterText: boolean;
         colorOfTotalCount: string;
