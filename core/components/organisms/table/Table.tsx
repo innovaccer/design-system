@@ -68,6 +68,7 @@ interface SyncProps {
    *        data: RowData;
    *        schema: ColumnSchema;
    *        loading: boolean;
+   *        expanded: boolean;
    *    }
    *
    * | CellType | CellData | Default Width |
@@ -181,6 +182,7 @@ interface SharedTableProps extends BaseProps {
    *    data: RowData;
    *    schema: GridProps['schema'];
    *    loading: boolean;
+   *    expanded: boolean;
    * }
    * </pre>
    */
