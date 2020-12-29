@@ -57,6 +57,12 @@ export interface DonutChartProps extends BaseProps {
    */
   width: number;
   /**
+   * Size of Legend
+   *
+   * 1 <= Size <= 12
+   */
+  legendWidth: number;
+  /**
    * Callback to add custom tooltip component
    */
   customTooltip?: (payload: any) => JSX.Element;
@@ -65,6 +71,7 @@ export interface DonutChartProps extends BaseProps {
 export const DonutChart = (props: DonutChartProps) => {
   const {
     width,
+    legendWidth,
     colors,
     withCenterText,
     colorOfTotalCount,
@@ -78,15 +85,17 @@ export const DonutChart = (props: DonutChartProps) => {
   } = props;
 
   const baseProps = extractBaseProps(props);
+  const legendSize = legendWidth as ColumnProps['size'];
+  const chartSize = (12 - legendWidth) as ColumnProps['size'];
 
   const columnOptions: Record<string, ColumnProps> = {
     chart: {
-      size: withLegends ? '9' : '12',
+      size: withLegends ? chartSize : '12',
       sizeS: '12',
       sizeXS: '12',
     },
     legends: {
-      size: '3',
+      size: legendSize,
       sizeS: '12',
       sizeXS: '12'
     }
@@ -243,6 +252,7 @@ export const DonutChart = (props: DonutChartProps) => {
 DonutChart.displayName = 'DonutChart';
 DonutChart.defaultProps = {
   width: 20,
+  legendWidth: 3,
   colors: ['primary', 'secondary', 'success', 'warning', 'alert'],
   withCenterText: true,
   colorOfTotalCount: 'success',
