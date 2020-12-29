@@ -742,7 +742,7 @@ exports[`DonutChart component
   className="DonutChart"
 >
   <Column
-    size="9"
+    size={9}
     sizeS="12"
     sizeXS="12"
   >
@@ -839,7 +839,7 @@ exports[`DonutChart component
   </Column>
   <Column
     className="DonutChart-legends"
-    size="3"
+    size={3}
     sizeS="12"
     sizeXS="12"
   >
