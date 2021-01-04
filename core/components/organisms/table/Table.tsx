@@ -91,7 +91,7 @@ interface SyncProps {
    * | maxWidth | max-width of the column(in px) | 800 |
    * | resizable | Denotes if column is resizable | |
    * | sorting | Enables sorting in column | true |
-   * | comparator | Sorting Function to be passed(in case of sync) | |
+   * | comparator | Sorting Function to be passed(in case of sync) | Default string comparator(localeCompare) |
    * | separator | Shows Left separator | |
    * | tooltip | Shows tooltip on hover | |
    * | pinned | Pin column | |
@@ -430,6 +430,9 @@ export class Table extends React.Component<TableProps, TableState> {
     };
 
     this.debounceUpdate = debounce(props.searchDebounceDuration, this.updateDataFn);
+  }
+
+  componentDidMount() {
     this.updateData();
   }
 

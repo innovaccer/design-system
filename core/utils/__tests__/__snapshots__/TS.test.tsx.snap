@@ -2374,18 +2374,12 @@ exports[`TS renders children 1`] = `
         <div
           class="Grid Grid--data Grid--standard"
         >
-          <div
-            class="Grid-body"
+          <h4
+            class="Heading Heading--m Heading--default"
+            data-test="DesignSystem-Heading"
           >
-            <div
-              class="GridBody-padding"
-              style="height: 0px;"
-            />
-            <div
-              class="GridBody-padding"
-              style="height: 0px;"
-            />
-          </div>
+            No results found
+          </h4>
         </div>
       </div>
     </div>
@@ -2409,18 +2403,12 @@ exports[`TS renders children 1`] = `
               class="Grid-row Grid-row--head"
             />
           </div>
-          <div
-            class="Grid-body"
+          <h4
+            class="Heading Heading--m Heading--default"
+            data-test="DesignSystem-Heading"
           >
-            <div
-              class="GridBody-padding"
-              style="height: 0px;"
-            />
-            <div
-              class="GridBody-padding"
-              style="height: 0px;"
-            />
-          </div>
+            No results found
+          </h4>
         </div>
       </div>
     </div>

@@ -265,7 +265,10 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       triggerLabel: this.updateTriggerLabel(selectedGroup, optionsLength),
       selectAll: getSelectAll(selectedGroup, optionsLength, disabledOptions.length)
     };
+  }
 
+  componentDidMount() {
+    const { async } = this.state;
     if (async) this.updateOptions(true);
   }
 

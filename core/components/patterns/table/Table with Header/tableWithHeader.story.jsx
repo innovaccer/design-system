@@ -456,7 +456,9 @@ import './style.css';
       this.pageSize = 3;
       this.searchDebounceDuration = 750;
       this.debounceUpdate = debounce(this.searchDebounceDuration, this.updateDataFn);
-  
+    }
+
+    componentDidMount() {
       this.updateData();
     }
   
