@@ -154,6 +154,7 @@ exports[`DateRangePicker component
   className="DateRangePicker DateRangePicker--left"
   closeOnBackdropClick={true}
   customStyle={Object {}}
+  hideOnReferenceEscape={true}
   on="click"
   onToggle={[Function]}
   open={false}
@@ -221,6 +222,7 @@ exports[`DateRangePicker component
   className="DateRangePicker DateRangePicker--left"
   closeOnBackdropClick={true}
   customStyle={Object {}}
+  hideOnReferenceEscape={true}
   on="click"
   onToggle={[Function]}
   open={true}
@@ -368,6 +370,7 @@ exports[`DateRangePicker component
   className="DateRangePicker DateRangePicker--left"
   closeOnBackdropClick={true}
   customStyle={Object {}}
+  hideOnReferenceEscape={true}
   on="click"
   onToggle={[Function]}
   open={false}
