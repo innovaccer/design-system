@@ -34,6 +34,14 @@ export interface TooltipProps extends DivProps {
    * Classes to be added to PopperWrapper trigger
    */
   triggerClass?: string;
+  /**
+   * Hides the `Popover` when its reference element is outside of the `Popover` boundaries
+   */
+  hideOnReferenceEscape?: boolean;
+  /**
+   * Boundary of Popover
+   */
+  boundaryElement?: Element | null;
 }
 
 interface IState {
@@ -51,7 +59,8 @@ interface IState {
 export class Tooltip extends React.Component<TooltipProps, IState> {
   static defaultProps = {
     position: 'bottom',
-    appendToBody: true
+    appendToBody: true,
+    hideOnReferenceEscape: true,
   };
 
   constructor(props: TooltipProps) {
@@ -78,6 +87,8 @@ export class Tooltip extends React.Component<TooltipProps, IState> {
       children,
       className,
       triggerClass,
+      hideOnReferenceEscape,
+      boundaryElement,
       ...props
     } = this.props;
 
@@ -100,6 +111,8 @@ export class Tooltip extends React.Component<TooltipProps, IState> {
         onToggle={this.onToggle}
         open={this.state.open}
         triggerClass={triggerClass}
+        hide={hideOnReferenceEscape}
+        boundaryElement={boundaryElement}
       >
         {tooltipWrapper}
       </PopperWrapper>
