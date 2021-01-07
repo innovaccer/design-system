@@ -31,6 +31,7 @@ enum Offsets {
 
 interface Props {
   trigger: React.ReactElement<any>;
+  boundaryElement?: Element | null;
   triggerClass?: string;
   placement: PositionType;
   children: React.ReactElement<any>;
@@ -41,6 +42,7 @@ interface Props {
   closeOnBackdropClick?: boolean;
   hoverable?: boolean;
   open?: boolean;
+  hide?: boolean;
   onToggle: (open: boolean, type?: string) => void;
 }
 
@@ -202,7 +204,8 @@ export class PopperWrapper extends React.Component<Props, IState> {
     children: React.ReactElement<any>,
     ref: React.Ref<any>,
     placement: string,
-    style: React.CSSProperties
+    style: React.CSSProperties,
+    outOfBoundaries: boolean | null
   ) {
     const options = this.props.on === 'hover'
       ? {
@@ -210,11 +213,13 @@ export class PopperWrapper extends React.Component<Props, IState> {
         style,
         onMouseEnter: this.handleMouseEnter,
         onMouseLeave: this.handleMouseLeave,
-        'data-placement': placement
+        'data-placement': placement,
+        'data-hide': outOfBoundaries
       } : {
         ref,
         style,
-        'data-placement': placement
+        'data-placement': placement,
+        'data-hide': outOfBoundaries
       };
 
     const element = React.cloneElement(children, options);
@@ -223,7 +228,7 @@ export class PopperWrapper extends React.Component<Props, IState> {
 
   public render() {
     const { trigger, children, placement, appendToBody, on = 'click', offset } = this.props;
-    const { open } = this.props;
+    const { open, boundaryElement, hide } = this.props;
 
     return (
       <Manager>
@@ -237,12 +242,19 @@ export class PopperWrapper extends React.Component<Props, IState> {
                 placement={placement}
                 innerRef={this.popupRef}
                 modifiers={{
-                  preventOverflow: { boundariesElement: document.body }
+                  preventOverflow: { boundariesElement: boundaryElement || document.body },
+                  hide: { enabled: hide }
                 }}
               >
-                {({ ref, style, placement }) => {
+                {({ ref, style, placement, outOfBoundaries }) => {
                   const newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
-                  return this.getChildrenElement(children, ref, placement, { ...newStyle, zIndex: this.state.zIndex });
+                  return this.getChildrenElement(
+                    children,
+                    ref,
+                    placement,
+                    { ...newStyle, zIndex: this.state.zIndex },
+                    outOfBoundaries
+                  );
                 }}
               </Popper>
             ),
@@ -250,9 +262,15 @@ export class PopperWrapper extends React.Component<Props, IState> {
           )}
         {(open || this.state.open) && !appendToBody && (
           <Popper placement={placement} innerRef={this.popupRef}>
-            {({ ref, style, placement }) => {
+            {({ ref, style, placement, outOfBoundaries }) => {
               const newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
-              return this.getChildrenElement(children, ref, placement, { ...newStyle, zIndex: this.state.zIndex });
+              return this.getChildrenElement(
+                children,
+                ref,
+                placement,
+                { ...newStyle, zIndex: this.state.zIndex },
+                outOfBoundaries
+              );
             }}
           </Popper>
         )}

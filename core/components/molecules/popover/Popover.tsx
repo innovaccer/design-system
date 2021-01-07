@@ -88,6 +88,14 @@ export interface PopoverProps extends BaseProps {
    * Class to be added to PopperWrapper trigger
    */
   triggerClass?: string;
+  /**
+   * Hides the `Popover` when its reference element is outside of the `Popover` boundaries
+   */
+  hideOnReferenceEscape?: boolean;
+  /**
+   * Boundary of Popover
+   */
+  boundaryElement?: Element | null;
 }
 
 export const Popover = (props: PopoverProps) => {
@@ -104,6 +112,8 @@ export const Popover = (props: PopoverProps) => {
     triggerClass,
     onToggle,
     className,
+    boundaryElement,
+    hideOnReferenceEscape,
   } = props;
 
   const [open, setOpen] = React.useState<boolean>(props.open || false);
@@ -130,12 +140,14 @@ export const Popover = (props: PopoverProps) => {
 
   const popperOptions = {
     trigger,
+    boundaryElement,
     triggerClass,
     appendToBody,
     closeOnBackdropClick,
     on,
     hoverable,
     open,
+    hide: hideOnReferenceEscape,
     style: customStyle,
     onToggle: onToggle || onToggleFunction,
     placement: position
@@ -152,6 +164,7 @@ Popover.displayName = 'Popover';
 Popover.defaultProps = {
   position: 'bottom',
   closeOnBackdropClick: true,
+  hideOnReferenceEscape: true,
   appendToBody: true,
   on: 'click',
   customStyle: {},

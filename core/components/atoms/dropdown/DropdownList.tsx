@@ -9,6 +9,7 @@ import Text from '@/components/atoms/text';
 import Input from '@/components/atoms/input';
 import classNames from 'classnames';
 import Loading from './Loading';
+import { PopoverProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
@@ -32,6 +33,12 @@ export interface Selected {
 export interface SelectAll {
   indeterminate: boolean;
   checked: boolean;
+}
+
+interface PopoverOptions {
+  appendToBody?: PopoverProps['appendToBody'];
+  hideOnReferenceEscape?: PopoverProps['hideOnReferenceEscape'];
+  boundaryElement?: PopoverProps['boundaryElement'];
 }
 
 type ListProps = TriggerProps & OptionRendererProps;
@@ -125,6 +132,23 @@ export interface DropdownListProps extends ListProps {
    * @default 10
    */
   loadersCount?: number;
+  /**
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * PopoverOptions:
+   * {
+   *    appendToBody?: boolean;
+   *    hideOnReferenceEscape?: boolean;
+   *    boundaryElement?: Element;
+   * }
+   *
+   * | Name | Description | Default |
+   * | --- | --- | --- |
+   * | appendToBody | Appends `Dropdown` inside body element | true |
+   * | hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |
+   * | boundaryElement | Boundary of Popover | |
+   * </pre>
+   */
+  popoverOptions?: PopoverOptions;
 }
 
 interface OptionsProps extends DropdownListProps, BaseProps {
@@ -184,6 +208,7 @@ const DropdownList = (props: OptionsProps) => {
     showApplyButton,
     withCheckbox,
     withSearch,
+    popoverOptions,
     onSearchChange,
     optionRenderer,
     applyOptions,
@@ -641,7 +666,7 @@ const DropdownList = (props: OptionsProps) => {
         open={dropdownOpen}
         customStyle={popoverStyle}
         position={alignmentMapping[align]}
-        appendToBody={true}
+        {...popoverOptions}
       >
         {(withSearch || props.async) && renderSearch()}
         {renderDropdownSection()}
