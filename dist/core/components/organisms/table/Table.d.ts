@@ -112,6 +112,7 @@ export declare class Table extends React.Component<TableProps, TableState> {
     };
     debounceUpdate: () => void;
     constructor(props: TableProps);
+    componentDidMount(): void;
     componentDidUpdate(prevProps: TableProps, prevState: TableState): void;
     updateData: (searchUpdate?: boolean | undefined) => void;
     updateDataFn: () => void;

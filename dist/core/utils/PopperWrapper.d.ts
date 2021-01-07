@@ -8,6 +8,7 @@ declare enum Offsets {
 }
 interface Props {
     trigger: React.ReactElement<any>;
+    boundaryElement?: Element | null;
     triggerClass?: string;
     placement: PositionType;
     children: React.ReactElement<any>;
@@ -18,6 +19,7 @@ interface Props {
     closeOnBackdropClick?: boolean;
     hoverable?: boolean;
     open?: boolean;
+    hide?: boolean;
     onToggle: (open: boolean, type?: string) => void;
 }
 interface IState {
@@ -40,7 +42,7 @@ export declare class PopperWrapper extends React.Component<Props, IState> {
     componentDidUpdate(prevProps: Props): void;
     getZIndexForLayer(node: HTMLElement | null): number | undefined;
     getTriggerElement(trigger: React.ReactElement<any>, ref: React.Ref<any>, on: actionType): React.FunctionComponentElement<any>;
-    getChildrenElement(children: React.ReactElement<any>, ref: React.Ref<any>, placement: string, style: React.CSSProperties): React.ReactElement<any, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)> | null) | (new (props: any) => React.Component<any, any, any>)>;
+    getChildrenElement(children: React.ReactElement<any>, ref: React.Ref<any>, placement: string, style: React.CSSProperties, outOfBoundaries: boolean | null): React.ReactElement<any, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)> | null) | (new (props: any) => React.Component<any, any, any>)>;
     render(): JSX.Element;
     private getUpdatedStyle;
     private findDOMNode;

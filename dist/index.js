@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1609247982434 
+   * Generated on: 1610007192935 
    *      Package: @innovaccer/design-system
-   *      Version: v1.4.1
+   *      Version: v1.5.0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -278,17 +278,19 @@
         return element;
       };
 
-      PopperWrapper.prototype.getChildrenElement = function (children, ref, placement, style) {
+      PopperWrapper.prototype.getChildrenElement = function (children, ref, placement, style, outOfBoundaries) {
         var options = this.props.on === 'hover' ? {
           ref: ref,
           style: style,
           onMouseEnter: this.handleMouseEnter,
           onMouseLeave: this.handleMouseLeave,
-          'data-placement': placement
+          'data-placement': placement,
+          'data-hide': outOfBoundaries
         } : {
           ref: ref,
           style: style,
-          'data-placement': placement
+          'data-placement': placement,
+          'data-hide': outOfBoundaries
         };
         var element = /*#__PURE__*/React.cloneElement(children, options);
         return element;
@@ -305,7 +307,10 @@
             _b = _a.on,
             on = _b === void 0 ? 'click' : _b,
             offset = _a.offset;
-        var open = this.props.open;
+        var _c = this.props,
+            open = _c.open,
+            boundaryElement = _c.boundaryElement,
+            hide = _c.hide;
         return /*#__PURE__*/React.createElement(reactPopper.Manager, null, /*#__PURE__*/React.createElement(reactPopper.Reference, {
           innerRef: this.triggerRef
         }, function (_a) {
@@ -316,28 +321,33 @@
           innerRef: this.popupRef,
           modifiers: {
             preventOverflow: {
-              boundariesElement: document.body
+              boundariesElement: boundaryElement || document.body
+            },
+            hide: {
+              enabled: hide
             }
           }
         }, function (_a) {
           var ref = _a.ref,
               style = _a.style,
-              placement = _a.placement;
+              placement = _a.placement,
+              outOfBoundaries = _a.outOfBoundaries;
           var newStyle = offset ? _this.getUpdatedStyle(style, placement, offset) : style;
           return _this.getChildrenElement(children, ref, placement, __assign(__assign({}, newStyle), {
             zIndex: _this.state.zIndex
-          }));
+          }), outOfBoundaries);
         }), document.body), (open || this.state.open) && !appendToBody && /*#__PURE__*/React.createElement(reactPopper.Popper, {
           placement: placement,
           innerRef: this.popupRef
         }, function (_a) {
           var ref = _a.ref,
               style = _a.style,
-              placement = _a.placement;
+              placement = _a.placement,
+              outOfBoundaries = _a.outOfBoundaries;
           var newStyle = offset ? _this.getUpdatedStyle(style, placement, offset) : style;
           return _this.getChildrenElement(children, ref, placement, __assign(__assign({}, newStyle), {
             zIndex: _this.state.zIndex
-          }));
+          }), outOfBoundaries);
         }));
       };
 
@@ -687,7 +697,9 @@
           trigger = props.trigger,
           triggerClass = props.triggerClass,
           onToggle = props.onToggle,
-          className = props.className;
+          className = props.className,
+          boundaryElement = props.boundaryElement,
+          hideOnReferenceEscape = props.hideOnReferenceEscape;
 
       var _b = React.useState(props.open || false),
           open = _b[0],
@@ -713,12 +725,14 @@
       }, children);
       var popperOptions = {
         trigger: trigger,
+        boundaryElement: boundaryElement,
         triggerClass: triggerClass,
         appendToBody: appendToBody,
         closeOnBackdropClick: closeOnBackdropClick,
         on: on,
         hoverable: hoverable,
         open: open,
+        hide: hideOnReferenceEscape,
         style: customStyle,
         onToggle: onToggle || onToggleFunction,
         placement: position
@@ -731,6 +745,7 @@
     Popover.defaultProps = {
       position: 'bottom',
       closeOnBackdropClick: true,
+      hideOnReferenceEscape: true,
       appendToBody: true,
       on: 'click',
       customStyle: {}
@@ -1949,6 +1964,7 @@
           showApplyButton = props.showApplyButton,
           withCheckbox = props.withCheckbox,
           withSearch = props.withSearch,
+          popoverOptions = props.popoverOptions,
           onSearchChange = props.onSearchChange,
           optionRenderer = props.optionRenderer,
           applyOptions = props.applyOptions,
@@ -2350,15 +2366,14 @@
         className: dropdownClass,
         ref: triggerRef,
         onKeyDown: onkeydown
-      }), /*#__PURE__*/React.createElement(Popover, {
+      }), /*#__PURE__*/React.createElement(Popover, __assign({
         onToggle: onToggleDropdown,
         trigger: trigger,
         triggerClass: !menu ? 'w-100' : '',
         open: dropdownOpen,
         customStyle: popoverStyle,
-        position: alignmentMapping[align],
-        appendToBody: true
-      }, (withSearch || props.async) && renderSearch(), renderDropdownSection(), showApplyButton && withCheckbox && renderApplyButton()));
+        position: alignmentMapping[align]
+      }, popoverOptions), (withSearch || props.async) && renderSearch(), renderDropdownSection(), showApplyButton && withCheckbox && renderApplyButton()));
     };
 
     DropdownList.displayName = 'DropdownList';
@@ -2859,9 +2874,13 @@
           triggerLabel: _this.updateTriggerLabel(selectedGroup, optionsLength),
           selectAll: getSelectAll(selectedGroup, optionsLength, disabledOptions.length)
         };
-        if (async) _this.updateOptions(true);
         return _this;
       }
+
+      Dropdown.prototype.componentDidMount = function () {
+        var async = this.state.async;
+        if (async) this.updateOptions(true);
+      };
 
       Dropdown.prototype.componentDidUpdate = function (prevProps, prevState) {
         var _a;
@@ -6485,7 +6504,9 @@
             children = _a.children,
             className = _a.className,
             triggerClass = _a.triggerClass,
-            props = __rest(_a, ["appendToBody", "position", "tooltip", "children", "className", "triggerClass"]);
+            hideOnReferenceEscape = _a.hideOnReferenceEscape,
+            boundaryElement = _a.boundaryElement,
+            props = __rest(_a, ["appendToBody", "position", "tooltip", "children", "className", "triggerClass", "hideOnReferenceEscape", "boundaryElement"]);
 
         var tooltipWrapper = /*#__PURE__*/React.createElement("div", __assign({
           className: "Tooltip"
@@ -6498,13 +6519,16 @@
           offset: 'Medium',
           onToggle: this.onToggle,
           open: this.state.open,
-          triggerClass: triggerClass
+          triggerClass: triggerClass,
+          hide: hideOnReferenceEscape,
+          boundaryElement: boundaryElement
         }, tooltipWrapper);
       };
 
       Tooltip.defaultProps = {
         position: 'bottom',
-        appendToBody: true
+        appendToBody: true,
+        hideOnReferenceEscape: true
       };
       return Tooltip;
     }(React.Component);
@@ -10204,11 +10228,12 @@
           searchTerm: undefined
         };
         _this.debounceUpdate = debounce(props.searchDebounceDuration, _this.updateDataFn);
-
-        _this.updateData();
-
         return _this;
       }
+
+      Table.prototype.componentDidMount = function () {
+        this.updateData();
+      };
 
       Table.prototype.componentDidUpdate = function (prevProps, prevState) {
         var _this = this;

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { TriggerProps } from "./DropdownButton";
 import { OptionRendererProps, OptionSchema } from "./option";
+import { PopoverProps } from "../../../index.type";
 import { BaseProps } from "../../../utils/types";
 export declare type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 export declare type DropdownAlign = 'left' | 'right';
@@ -12,6 +13,11 @@ export interface Selected {
 export interface SelectAll {
     indeterminate: boolean;
     checked: boolean;
+}
+interface PopoverOptions {
+    appendToBody?: PopoverProps['appendToBody'];
+    hideOnReferenceEscape?: PopoverProps['hideOnReferenceEscape'];
+    boundaryElement?: PopoverProps['boundaryElement'];
 }
 declare type ListProps = TriggerProps & OptionRendererProps;
 export interface DropdownListProps extends ListProps {
@@ -33,6 +39,7 @@ export interface DropdownListProps extends ListProps {
     maxWidth?: number;
     minWidth?: number;
     loadersCount?: number;
+    popoverOptions?: PopoverOptions;
 }
 interface OptionsProps extends DropdownListProps, BaseProps {
     listOptions: OptionSchema[];

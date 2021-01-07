@@ -24,6 +24,8 @@ export interface PopoverProps extends BaseProps {
     onToggle?: (open: boolean, type?: string) => void;
     children: React.ReactNode;
     triggerClass?: string;
+    hideOnReferenceEscape?: boolean;
+    boundaryElement?: Element | null;
 }
 export declare const Popover: {
     (props: PopoverProps): JSX.Element;
@@ -31,6 +33,7 @@ export declare const Popover: {
     defaultProps: {
         position: string;
         closeOnBackdropClick: boolean;
+        hideOnReferenceEscape: boolean;
         appendToBody: boolean;
         on: string;
         customStyle: {};

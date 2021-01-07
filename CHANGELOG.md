@@ -1,8 +1,9 @@
 
 -------------------
- **v1.4.1**  (2020-12-29) 
+ **v1.5.0**  (2021-01-07) 
 
-* 5a24ea4 v1.4.1
-* 37092ef feat(donutChart): adds legend width support
-* 797c1dd chore(Table): updates cellRenderer props in story
-* d139ec5 feat(Grid): adds state of expanded
+* 2781cf2 v1.5.0
+* dff9aa6 chore(Tooltip): refactors tooltip props
+* 1b282b6 fix(Table, Dropdown): moves updateData callback to componentDidMount
+* fe97119 feat(dropdown): adds popover options props
+* 5aecb26 feat(PopperWrapper): adds hide and boundary element props
