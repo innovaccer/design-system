@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Omit } from 'utility-types';
 import { PopperWrapper } from '@/utils';
+import { PopoverProps } from '@/index.type';
 
 export type PositionType =
   'top'
@@ -37,11 +38,11 @@ export interface TooltipProps extends DivProps {
   /**
    * Hides the `Popover` when its reference element is outside of the `Popover` boundaries
    */
-  hideOnReferenceEscape?: boolean;
+  hideOnReferenceEscape?: PopoverProps['hideOnReferenceEscape'];
   /**
    * Boundary of Popover
    */
-  boundaryElement?: Element | null;
+  boundaryElement?: PopoverProps['boundaryElement'];
 }
 
 interface IState {
