@@ -1,8 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BaseContainerProps } from '@/utils/types';
+import { BaseProps, BaseHtmlProps } from '@/utils/types';
 
-export type RowProps = BaseContainerProps;
+export type RowProps = BaseProps & BaseHtmlProps<HTMLDivElement>;
 
 export const Row = React.forwardRef<HTMLDivElement, RowProps>((props, ref) => {
   const { className, children, ...rest } = props;

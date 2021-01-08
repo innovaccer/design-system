@@ -2,14 +2,14 @@ import * as React from 'react';
 import Spinner from '@/components/atoms/spinner';
 import Icon from '@/components/atoms/icon';
 import classNames from 'classnames';
-import { BaseProps } from '@/utils/types';
+import { BaseProps, BaseHtmlProps } from '@/utils/types';
 
 export type ButtonType = 'button' | 'submit' | 'reset';
 export type Appearance = 'basic' | 'primary' | 'success' | 'alert' | 'transparent';
 export type Size = 'tiny' | 'regular' | 'large';
 export type Alignment = 'left' | 'right';
 
-export interface ButtonProps extends BaseProps {
+export interface ButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement> {
   /**
    * Type of `Button`
    */

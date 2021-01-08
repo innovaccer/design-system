@@ -2,13 +2,13 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Tooltip, Icon, Text } from '@/index';
 import { IconProps } from '@/index.type';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 
 export type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
 export type AutoComplete = 'on' | 'off';
 export type Size = 'tiny' | 'regular' | 'large';
 
-export interface InputProps extends BaseProps {
+export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
   /**
    * Name of the `Input`
    */

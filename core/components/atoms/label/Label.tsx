@@ -1,9 +1,9 @@
 import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 
-export interface LabelProps extends BaseProps {
+export interface LabelProps extends BaseProps, BaseHtmlProps<HTMLLabelElement> {
   /**
    * Text to be rendered
    * @type {React.ReactNode}
@@ -23,13 +23,17 @@ export interface LabelProps extends BaseProps {
   withInput?: boolean;
 }
 
+/**
+ * *NOTE: Extends props with HTMLProps<HTMLLabelElement>*
+ */
 export const Label = (props: LabelProps) => {
   const {
     required,
     withInput,
     disabled,
     children,
-    className
+    className,
+    ...rest
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -47,7 +51,7 @@ export const Label = (props: LabelProps) => {
 
   return (
     <div data-test="DesignSystem-Label" {...baseProps} className={LabelClass}>
-      <GenericText className={classes} componentType="label">
+      <GenericText className={classes} componentType="label" {...rest}>
         {children}
       </GenericText>
       {required && <span className="Label-requiredIndicator" data-test="DesignSystem-Label--RequiredIndicator"/>}

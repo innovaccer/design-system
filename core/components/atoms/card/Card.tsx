@@ -1,10 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BaseContainerProps } from '@/utils/types';
+import { BaseHtmlProps, BaseProps } from '@/utils/types';
 
 export type Shadow = 'none' | 'light' | 'medium' | 'dark';
 
-export interface CardProps extends BaseContainerProps {
+export interface CardProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
   /**
    * Shadow of the `Card`
    * @default 'medium'
