@@ -592,7 +592,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const noOfRows = Math.ceil(yearBlockRange / yearsInRow);
 
     return Array.from({ length: noOfRows }, (_y, row) => (
-      <div className="Calendar-valueRow">
+      <div key={row} className="Calendar-valueRow">
         {Array.from({ length: yearsInRow }, (_x, col) => {
           const offset = yearsInRow * row + col;
           if (offset === yearBlockNav) return undefined;
@@ -608,7 +608,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           });
 
           return (
-            <div className={valueClass} onClick={() => this.selectYear(year)}>
+            <div key={`${row}-${col}`} className={valueClass} onClick={() => this.selectYear(year)}>
               <Text appearance={active ? 'white' : disabled ? 'disabled' : 'default'}>{`${year}`}</Text>
             </div>
           );
@@ -638,7 +638,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const noOfRows = Math.ceil(monthBlock / monthsInRow);
 
     return Array.from({ length: noOfRows }, (_y, row) => (
-      <div className="Calendar-valueRow">
+      <div key={row} className="Calendar-valueRow">
         {Array.from({ length: monthsInRow }, (_x, col) => {
           const month = monthsInRow * row + col;
           const disabled = compareDate(disabledBefore, 'more', yearNav, month)
@@ -651,7 +651,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             'Calendar-value--dummy': disabled
           });
           return (
-            <div className={valueClass} onClick={() => this.selectMonth(month)}>
+            <div key={`${row}-${col}`} className={valueClass} onClick={() => this.selectMonth(month)}>
               <Text appearance={active ? 'white' : disabled ? 'disabled' : 'default'}>{months[month]}</Text>
             </div>
           );
@@ -690,7 +690,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             const dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
 
             return (
-              <Subheading className={valueClass} appearance="disabled">{days[dayValue]}</Subheading>
+              <Subheading key={day} className={valueClass} appearance="disabled">{days[dayValue]}</Subheading>
             );
           })}
         </div>
@@ -759,10 +759,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       }
     };
 
-    return Array.from({ length: noOfRows }, (_y, row) => (
-      <>
-        {dummyDays < daysInRow && (
-          <div className="Calendar-valueRow">
+    return Array.from({ length: noOfRows }, (_y, row) => {
+      if (dummyDays < daysInRow) {
+        return (
+          <div key={row} className="Calendar-valueRow">
             {Array.from({ length: daysInRow }, (_x, col) => {
               const date = daysInRow * row + col - dummyDays + 1;
               const dummy = date <= 0 || date > dayRange;
@@ -817,7 +817,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 'Calendar-value--disabled': disabled,
               });
               return (
-                <div className={wrapperClass}>
+                <div key={`${row}-${col}`} className={wrapperClass}>
                   <span
                     className={valueClass}
                     onClick={() => onClickHandler(date)}
@@ -831,9 +831,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               );
             })}
           </div>
-        )}
-      </>
-    ));
+        );
+      }
+      return null;
+    });
   }
 
   renderCalendar = (index: number) => {
@@ -859,7 +860,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     });
 
     return (
-      <div className={wrapperClass}>
+      <div key={index} className={wrapperClass}>
         <div className={headerClass}>
           {index === 0 &&
             this.renderJumpButton('prev')
