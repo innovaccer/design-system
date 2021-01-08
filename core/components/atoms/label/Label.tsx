@@ -3,7 +3,8 @@ import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export interface LabelProps extends BaseProps {
+type BaseLabelProps = React.HTMLProps<HTMLLabelElement>;
+export interface LabelProps extends BaseProps, BaseLabelProps {
   /**
    * Text to be rendered
    * @type {React.ReactNode}
@@ -29,7 +30,8 @@ export const Label = (props: LabelProps) => {
     withInput,
     disabled,
     children,
-    className
+    className,
+    ...rest
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -47,7 +49,7 @@ export const Label = (props: LabelProps) => {
 
   return (
     <div data-test="DesignSystem-Label" {...baseProps} className={LabelClass}>
-      <GenericText className={classes} componentType="label">
+      <GenericText className={classes} componentType="label" {...rest}>
         {children}
       </GenericText>
       {required && <span className="Label-requiredIndicator" data-test="DesignSystem-Label--RequiredIndicator"/>}
