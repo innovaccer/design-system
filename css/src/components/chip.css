@@ -1,106 +1,110 @@
 .Chip {
-    display: flex;
-    box-sizing: border-box;
-    border-radius: var( --spacing-l);
-    padding-right: var( --spacing);
-    padding-left: var( --spacing);
-    padding-top: var( --spacing-s);
-    padding-bottom: var( --spacing-s);
-    width: fit-content;
-    justify-content: space-between;
-    border-style: solid;
-    border-width: var( --spacing-xs);
-    align-items: center;
-    flex-direction: row;
-    cursor: default;
-  }
-  
-  .Chip-wrapper {
-    display: flex;
-    align-items: center;
-  }
-  .Chip-icon--left {
-    padding-right: var( --spacing-m);
-    display: flex;
-    align-items: center;
-  }
-  
-  .Chip-icon--right {
-    padding-left: var( --spacing-m);
-    display: flex;
-    align-items: center;
-  }
-  .Chip--action {
-    background: var( --shadow-0);
-    border-color: var(--stone);
-    cursor: pointer;
-  }
-  
-  .Chip--action:hover {
-    background: var(--stone-light);
-    border-color: var(--stone);
-  }
-  
-  .Chip--action:focus {
-    background: var(--stone-lighter);
-  }
-  
-  .Chip--action:active {
-    background: var(--stone-dark);
-  }
-  
-  .Chip-action--disabled {
-    background: var(--shadow-0);
-    border-color: var(--stone-light);
-    cursor: default;
-  }
-  
-  .Chip--selection {
-    background: var( --shadow-0);
-    border-color: var(--stone);
-  }
-  
-  .Chip--selection:hover {
-    background: var(--stone-light);
-    border-color: var(--stone);
-  }
-  
-  .Chip--selection:focus {
-    background: var(--stone-lighter);
-  }
-  
-  .Chip--selection:active {
-    background: var(--stone-dark);
-  }
-  
-  .Chip-selection--selected {
-    background: var(--jal-lightest);
-    border-color: var(--jal-lighter);
-  }
-  .Chip-selection--selected:hover {
-    background: var(--jal-lightest);
-    border-color: var(--jal-lighter);
-  }
-  .Chip-selection--selected .Text{
-    color:var(--primary);
-  }
-  
-  .Chip-selection--disabled {
-    background: var( --shadow-0);
-    border-color: var(--stone-light);
-  }
-  
-  .Chip--input {
-    background: var(--stone-light);
-    font-weight: var( --font-weight-normal);
-    border: 0px;
-  }
-  
-  .Chip--input:hover {
-    background: var(--stone-light);
-  }
-  
-  .Chip-input--disabled {
-    background: var(--stone-light);
-    border: 0px;
-  }
+  display: flex;
+  box-sizing: border-box;
+  border-radius: var( --spacing-l);
+  padding-right: var( --spacing);
+  padding-left: var( --spacing);
+  padding-top: var( --spacing-s);
+  padding-bottom: var( --spacing-s);
+  width: fit-content;
+  justify-content: space-between;
+  border-style: solid;
+  border-width: var( --spacing-xs);
+  align-items: center;
+  flex-direction: row;
+  cursor: default;
+}
+
+.Chip-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.Chip-icon--left {
+  padding-right: var( --spacing-m);
+  display: flex;
+  align-items: center;
+}
+
+.Chip-icon--right {
+  padding-left: var( --spacing-m);
+  display: flex;
+  align-items: center;
+}
+
+.Chip--action {
+  background: var( --shadow-0);
+  border-color: var(--stone);
+  cursor: pointer;
+}
+
+.Chip--action:hover {
+  background: var(--stone-light);
+  border-color: var(--stone);
+}
+
+.Chip--action:focus {
+  background: var(--stone-lighter);
+}
+
+.Chip--action:active {
+  background: var(--stone-dark);
+}
+
+.Chip-action--disabled {
+  background: var(--shadow-0);
+  border-color: var(--stone-light);
+  cursor: default;
+}
+
+.Chip--selection {
+  background: var( --shadow-0);
+  border-color: var(--stone);
+}
+
+.Chip--selection:hover {
+  background: var(--stone-light);
+  border-color: var(--stone);
+}
+
+.Chip--selection:focus {
+  background: var(--stone-lighter);
+}
+
+.Chip--selection:active {
+  background: var(--stone-dark);
+}
+
+.Chip-selection--selected {
+  background: var(--jal-lightest);
+  border-color: var(--jal-lighter);
+}
+
+.Chip-selection--selected:hover {
+  background: var(--jal-lightest);
+  border-color: var(--jal-lighter);
+}
+
+.Chip-selection--selected .Text {
+  color: var(--primary);
+}
+
+.Chip-selection--disabled {
+  background: var( --shadow-0);
+  border-color: var(--stone-light);
+}
+
+.Chip--input {
+  background: var(--stone-light);
+  font-weight: var( --font-weight-normal);
+  border: 0px;
+}
+
+.Chip--input:hover {
+  background: var(--stone-light);
+}
+
+.Chip-input--disabled {
+  background: var(--stone-light);
+  border: 0px;
+}

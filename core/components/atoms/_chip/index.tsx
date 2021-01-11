@@ -33,6 +33,7 @@ export const GenericChip = (props: GenericChipProps) => {
   const iconClass = (align: string) => classNames({
     ['Chip-icon']: true,
     [`Chip-icon--${align}`]: align,
+    ['cursor-pointer']: align === 'right' && !disabled
   });
 
   const onCloseHandler = (e: React.MouseEvent) => {
