@@ -27,7 +27,7 @@ export type BaseProps = {
   'data-test'?: string,
 };
 
-export type BaseContainerProps = Omit<React.HTMLProps<HTMLDivElement>, 'ref'>;
+export type BaseHtmlProps<T> = Omit<React.HTMLProps<T>, 'ref' | 'size'>;
 
 export const extractBaseProps = (props: Record<string, any>) => {
   const baseProps = ['className', 'data-test'];
