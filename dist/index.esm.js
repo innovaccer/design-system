@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1610466959060 
+   * Generated on: 1610467748049 
    *      Package: @innovaccer/design-system
-   *      Version: v1.5.1-0
+   *      Version: v1.5.1-1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
