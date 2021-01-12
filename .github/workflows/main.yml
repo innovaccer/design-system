@@ -70,3 +70,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         if: steps.is_release_commit.outputs.result == 1
         run: npm run deploy-storybook -- --ci
+      
+      - name: notify release
+        if: steps.is_release_commit.outputs.result == 1
+        uses: /innovaccer/design-system/actions/notify-release@master
+        env:
+          GCHAT_PATH: ${{ secrets.GCHAT_PATH }}
