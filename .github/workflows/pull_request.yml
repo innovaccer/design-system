@@ -27,3 +27,9 @@ jobs:
 
       - name: build storybook
         run: npm run build-storybook
+      
+      - name: notify release
+        if: steps.is_release_commit.outputs.result == 1
+        uses: /satyamyadav/design-system/actions/notify-release@develop
+        env:
+          GCHAT_PATH: ${{ secrets.GCHAT_PATH }}
