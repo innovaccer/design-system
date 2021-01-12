@@ -30,7 +30,8 @@ const req = http.request(options, function (res) {
 });
 
 const repo = "https://github.com/innovaccer/design-system";
-const version = require(`${process.cwd()}/package.json`).version;
+const pkg = require(`${process.cwd()}/package.json`);
+const version = `v${pkg.version}`
 
 const message = {
   "cards": [
