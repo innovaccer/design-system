@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1610007192935 
+   * Generated on: 1610466959368 
    *      Package: @innovaccer/design-system
-   *      Version: v1.5.0
+   *      Version: v1.5.1-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -3828,6 +3828,7 @@
             length: noOfRows
           }, function (_y, row) {
             return /*#__PURE__*/React.createElement("div", {
+              key: row,
               className: "Calendar-valueRow"
             }, Array.from({
               length: yearsInRow
@@ -3843,6 +3844,7 @@
                 'Calendar-value--disabled': disabled
               });
               return /*#__PURE__*/React.createElement("div", {
+                key: row + "-" + col,
                 className: valueClass,
                 onClick: function onClick() {
                   return _this.selectYear(year);
@@ -3870,6 +3872,7 @@
             length: noOfRows
           }, function (_y, row) {
             return /*#__PURE__*/React.createElement("div", {
+              key: row,
               className: "Calendar-valueRow"
             }, Array.from({
               length: monthsInRow
@@ -3883,6 +3886,7 @@
                 'Calendar-value--dummy': disabled
               });
               return /*#__PURE__*/React.createElement("div", {
+                key: row + "-" + col,
                 className: valueClass,
                 onClick: function onClick() {
                   return _this.selectMonth(month);
@@ -3920,6 +3924,7 @@
             });
             var dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
             return /*#__PURE__*/React.createElement(Subheading, {
+              key: day,
               className: valueClass,
               appearance: "disabled"
             }, days[dayValue]);
@@ -3983,62 +3988,68 @@
           return Array.from({
             length: noOfRows
           }, function (_y, row) {
-            return /*#__PURE__*/React.createElement(React.Fragment, null, dummyDays < daysInRow && /*#__PURE__*/React.createElement("div", {
-              className: "Calendar-valueRow"
-            }, Array.from({
-              length: daysInRow
-            }, function (_x, col) {
-              var date = daysInRow * row + col - dummyDays + 1;
-              var dummy = date <= 0 || date > dayRange;
-              var disabled = !dummy && (compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) || compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date));
-              var active = !disabled && yearState === yearNavVal && monthState === monthNavVal && dateState === date;
-              var startActive = false;
-              var endActive = false;
-              var inRange = false;
-              var inRangeLast = false;
-
-              if (rangePicker) {
-                startActive = compareDate(startDate, 'equal', yearNavVal, monthNavVal, date);
-                endActive = compareDate(endDate, 'equal', yearNavVal, monthNavVal, date);
-                inRangeLast = compareDate(hoverDate, 'equal', yearNavVal, monthNavVal, date);
-                active = !disabled && (startActive || endActive);
-
-                if (startDate && endDate) {
-                  inRange = !disabled && (compareDate(startDate, 'less', yearNavVal, monthNavVal, date) || startActive) && (compareDate(endDate, 'more', yearNavVal, monthNavVal, date) || endActive);
-                } else if (startDate) {
-                  inRange = !disabled && (compareDate(hoverDate, 'more', yearNavVal, monthNavVal, date) || inRangeLast) && compareDate(startDate, 'less', yearNavVal, monthNavVal, date);
-                } else if (endDate) {
-                  inRange = !disabled && (compareDate(hoverDate, 'less', yearNavVal, monthNavVal, date) || inRangeLast) && compareDate(endDate, 'more', yearNavVal, monthNavVal, date);
-                }
-              }
-
-              var wrapperClass = classNames__default['default']({
-                'Calendar-valueWrapper': true,
-                'Calendar-valueWrapper--start': startActive || inRangeLast && endDate,
-                'Calendar-valueWrapper--end': endActive || inRangeLast && startDate,
-                'Calendar-valueWrapper--inRange': inRange || rangePicker && active,
-                'Calendar-valueWrapper--inRange-error': inRange && inRangeError
-              });
-              var valueClass = classNames__default['default']({
-                'Calendar-value': true,
-                'Calendar-value--active': active,
-                'Calendar-value--dummy': dummy || disabled,
-                'Calendar-value--disabled': disabled
-              });
+            if (dummyDays < daysInRow) {
               return /*#__PURE__*/React.createElement("div", {
-                className: wrapperClass
-              }, /*#__PURE__*/React.createElement("span", {
-                className: valueClass,
-                onClick: function onClick() {
-                  return onClickHandler(date);
-                },
-                onMouseOver: function onMouseOver() {
-                  return onMouseOverHandler(date);
+                key: row,
+                className: "Calendar-valueRow"
+              }, Array.from({
+                length: daysInRow
+              }, function (_x, col) {
+                var date = daysInRow * row + col - dummyDays + 1;
+                var dummy = date <= 0 || date > dayRange;
+                var disabled = !dummy && (compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) || compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date));
+                var active = !disabled && yearState === yearNavVal && monthState === monthNavVal && dateState === date;
+                var startActive = false;
+                var endActive = false;
+                var inRange = false;
+                var inRangeLast = false;
+
+                if (rangePicker) {
+                  startActive = compareDate(startDate, 'equal', yearNavVal, monthNavVal, date);
+                  endActive = compareDate(endDate, 'equal', yearNavVal, monthNavVal, date);
+                  inRangeLast = compareDate(hoverDate, 'equal', yearNavVal, monthNavVal, date);
+                  active = !disabled && (startActive || endActive);
+
+                  if (startDate && endDate) {
+                    inRange = !disabled && (compareDate(startDate, 'less', yearNavVal, monthNavVal, date) || startActive) && (compareDate(endDate, 'more', yearNavVal, monthNavVal, date) || endActive);
+                  } else if (startDate) {
+                    inRange = !disabled && (compareDate(hoverDate, 'more', yearNavVal, monthNavVal, date) || inRangeLast) && compareDate(startDate, 'less', yearNavVal, monthNavVal, date);
+                  } else if (endDate) {
+                    inRange = !disabled && (compareDate(hoverDate, 'less', yearNavVal, monthNavVal, date) || inRangeLast) && compareDate(endDate, 'more', yearNavVal, monthNavVal, date);
+                  }
                 }
-              }, !dummy && /*#__PURE__*/React.createElement(Text, {
-                appearance: active ? 'white' : disabled ? 'disabled' : 'default'
-              }, "" + date)));
-            })));
+
+                var wrapperClass = classNames__default['default']({
+                  'Calendar-valueWrapper': true,
+                  'Calendar-valueWrapper--start': startActive || inRangeLast && endDate,
+                  'Calendar-valueWrapper--end': endActive || inRangeLast && startDate,
+                  'Calendar-valueWrapper--inRange': inRange || rangePicker && active,
+                  'Calendar-valueWrapper--inRange-error': inRange && inRangeError
+                });
+                var valueClass = classNames__default['default']({
+                  'Calendar-value': true,
+                  'Calendar-value--active': active,
+                  'Calendar-value--dummy': dummy || disabled,
+                  'Calendar-value--disabled': disabled
+                });
+                return /*#__PURE__*/React.createElement("div", {
+                  key: row + "-" + col,
+                  className: wrapperClass
+                }, /*#__PURE__*/React.createElement("span", {
+                  className: valueClass,
+                  onClick: function onClick() {
+                    return onClickHandler(date);
+                  },
+                  onMouseOver: function onMouseOver() {
+                    return onMouseOverHandler(date);
+                  }
+                }, !dummy && /*#__PURE__*/React.createElement(Text, {
+                  appearance: active ? 'white' : disabled ? 'disabled' : 'default'
+                }, "" + date)));
+              }));
+            }
+
+            return null;
           });
         };
 
@@ -4055,6 +4066,7 @@
             'Calendar-body': true
           });
           return /*#__PURE__*/React.createElement("div", {
+            key: index,
             className: wrapperClass
           }, /*#__PURE__*/React.createElement("div", {
             className: headerClass
@@ -5031,7 +5043,9 @@
           withInput = props.withInput,
           disabled = props.disabled,
           children = props.children,
-          className = props.className;
+          className = props.className,
+          rest = __rest(props, ["required", "withInput", "disabled", "children", "className"]);
+
       var baseProps = extractBaseProps(props);
       var LabelClass = classNames__default['default']((_a = {
         Label: true
@@ -5044,10 +5058,10 @@
         "data-test": "DesignSystem-Label"
       }, baseProps, {
         className: LabelClass
-      }), /*#__PURE__*/React.createElement(GenericText, {
+      }), /*#__PURE__*/React.createElement(GenericText, __assign({
         className: classes,
         componentType: "label"
-      }, children), required && /*#__PURE__*/React.createElement("span", {
+      }, rest), children), required && /*#__PURE__*/React.createElement("span", {
         className: "Label-requiredIndicator",
         "data-test": "DesignSystem-Label--RequiredIndicator"
       }));

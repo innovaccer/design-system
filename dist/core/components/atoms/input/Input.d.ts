@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { IconProps } from "../../../index.type";
-import { BaseProps } from "../../../utils/types";
+import { BaseHtmlProps, BaseProps } from "../../../utils/types";
 export declare type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
 export declare type AutoComplete = 'on' | 'off';
 export declare type Size = 'tiny' | 'regular' | 'large';
-export interface InputProps extends BaseProps {
+export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
     name?: string;
     type?: InputType;
     value?: string;

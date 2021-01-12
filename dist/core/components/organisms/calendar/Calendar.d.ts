@@ -54,7 +54,7 @@ export declare class Calendar extends React.Component<CalendarProps, CalendarSta
     renderBodyYear: () => JSX.Element[];
     renderBodyMonth: () => JSX.Element[];
     renderBodyDate: (index: number) => JSX.Element;
-    renderDateValues: (index: number) => JSX.Element[];
+    renderDateValues: (index: number) => (JSX.Element | null)[];
     renderCalendar: (index: number) => JSX.Element;
     render(): JSX.Element;
 }

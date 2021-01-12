@@ -1,9 +1,8 @@
 
 -------------------
- **v1.5.0**  (2021-01-07) 
+ **v1.5.1-0**  (2021-01-12) 
 
-* 2781cf2 v1.5.0
-* dff9aa6 chore(Tooltip): refactors tooltip props
-* 1b282b6 fix(Table, Dropdown): moves updateData callback to componentDidMount
-* fe97119 feat(dropdown): adds popover options props
-* 5aecb26 feat(PopperWrapper): adds hide and boundary element props
+* 4b3c418 v1.5.1-0
+* 9958ccf feat: adds action to notify new releases through google chat hooks api
+* 3309cfc feat(Button, Label, Input): adds support for HTML props
+* a0d8da8 chore(Calendar): adds key for iterative semantics

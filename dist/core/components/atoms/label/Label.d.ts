@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { BaseProps } from "../../../utils/types";
-export interface LabelProps extends BaseProps {
+import { BaseHtmlProps, BaseProps } from "../../../utils/types";
+export interface LabelProps extends BaseProps, BaseHtmlProps<HTMLLabelElement> {
     children: React.ReactNode;
     disabled?: boolean;
     required?: boolean;
