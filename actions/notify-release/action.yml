@@ -1,0 +1,8 @@
+# action.yml
+name: notify release
+
+description: 'notify release'
+
+runs:
+  using: 'node12'
+  main: 'main.js'
