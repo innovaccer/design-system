@@ -110,7 +110,7 @@ interface TriggerProps {
   /**
    * Callback function to change the label of trigger when options are selected
    */
-  customLabel?: (selected: number, totalOptions?: number) => string;
+  customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;
   /**
    * Adds custom trigger
    */
@@ -135,7 +135,7 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
    * TriggerProps:
    * {
    *    labelLimit?: number;
-   *    customLabel?: (selected: number, totalOptions?: number) => string;
+   *    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;
    *    customTrigger?: (label: string) => React.ReactElement;
    * }
    *
@@ -493,7 +493,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       }).join(', ');
     } else {
       label = customLabel ?
-        customLabel(selectedLength, optionsLength) : `${selectedLength} selected`;
+        customLabel(selectedLength, optionsLength, selectedArray) : `${selectedLength} selected`;
     }
 
     if (getLabel) getLabel(label);
