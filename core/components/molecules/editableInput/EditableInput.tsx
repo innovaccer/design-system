@@ -128,6 +128,19 @@ export const EditableInput = (props: EditableInputProps) => {
     />
   );
 
+  const onKeyDown = (event: any) => {
+    if (document.activeElement === inputRef.current) {
+      switch (event.key) {
+        case 'Enter':
+          onSaveChanges();
+          break;
+        case 'Escape':
+          setDefaultComponent();
+          break;
+      }
+    }
+  };
+
   const renderChildren = () => {
     if (showComponent) {
       return error && errorMessage && editing ? (
@@ -164,6 +177,7 @@ export const EditableInput = (props: EditableInputProps) => {
       data-test="DesignSystem-EditableInput"
       {...baseProps}
       className={EditableInputClass}
+      onKeyDown={onKeyDown}
     >
       <Editable
         onChange={onChangeHandler}
