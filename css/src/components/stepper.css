@@ -13,7 +13,7 @@
 }
 
 .Step--active {
-  background-color: var(--secondary-light);
+  background-color: var(--primary-lightest);
   border-radius: var(--spacing-2);
   pointer-events: none;
 }
