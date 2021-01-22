@@ -151,6 +151,7 @@ exports[`DateRangePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  boundaryElement={<body />}
   className="DateRangePicker DateRangePicker--left"
   closeOnBackdropClick={true}
   customStyle={Object {}}
@@ -221,6 +222,7 @@ exports[`DateRangePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  boundaryElement={<body />}
   className="DateRangePicker DateRangePicker--left"
   closeOnBackdropClick={true}
   customStyle={Object {}}
@@ -371,6 +373,7 @@ exports[`DateRangePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  boundaryElement={<body />}
   className="DateRangePicker DateRangePicker--left"
   closeOnBackdropClick={true}
   customStyle={Object {}}

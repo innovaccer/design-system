@@ -21,7 +21,16 @@ export interface CustomStyle {
   maxWidth?: number | string;
 }
 
-const propsList = ['appendToBody', 'trigger', 'hoverable', 'on', 'open', 'boundaryElement', 'closeOnBackdropClick', 'offset'] as const;
+const propsList = [
+  'appendToBody',
+  'trigger',
+  'hoverable',
+  'on',
+  'open',
+  'closeOnBackdropClick',
+  'offset',
+  'closeOnScroll'
+] as const;
 type PopperProps = typeof propsList[number];
 
 export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, BaseProps {
@@ -68,6 +77,10 @@ export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, Bas
    * Hides the `Popover` when its reference element is outside of the `Popover` boundaries
    */
   hideOnReferenceEscape?: boolean;
+  /**
+   * BoundaryElement for `Popover`
+   */
+  boundaryElement: React.RefObject<HTMLElement> | Element;
 }
 
 export const Popover = (props: PopoverProps) => {
@@ -79,10 +92,13 @@ export const Popover = (props: PopoverProps) => {
     onToggle,
     className,
     hideOnReferenceEscape,
+    boundaryElement,
     ...rest
   } = props;
 
   const [open, setOpen] = React.useState<boolean>(!!props.open);
+  const [init, setInit] = React.useState(false);
+
   React.useEffect(() => {
     if (props.open !== undefined) setOpen(props.open);
   }, [props.open]);
@@ -90,6 +106,14 @@ export const Popover = (props: PopoverProps) => {
   const defaultOnToggle = React.useCallback(newOpen => {
     setOpen(newOpen);
   }, []);
+
+  React.useEffect(() => {
+    if (!init) {
+      if ('current' in boundaryElement && boundaryElement.current) {
+        setInit(true);
+      }
+    }
+  }, [boundaryElement]);
 
   const classes = classNames({
     Popover: true,
@@ -105,6 +129,8 @@ export const Popover = (props: PopoverProps) => {
   return (
     <PopperWrapper
       {...rest}
+      init={init}
+      boundaryElement={'current' in boundaryElement ? boundaryElement.current : boundaryElement}
       open={open}
       hide={hideOnReferenceEscape}
       style={customStyle}
@@ -131,6 +157,7 @@ Popover.defaultProps = Object.assign({},
     position: 'bottom',
     hideOnReferenceEscape: true,
     customStyle: {},
+    boundaryElement: document.body
   }
 );
 
