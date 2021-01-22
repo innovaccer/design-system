@@ -74,45 +74,50 @@ exports[`Modal component
     class="Modal-wrapper"
   >
     <div
-      class="Row Row Modal-container Modal-container--open"
-      data-layer="true"
-      data-test="DesignSystem-ModalContainer"
+      class="OutsideClick"
+      data-test="DesignSystem-Modal--OutsideClick"
     >
       <div
-        class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
-        data-test="DesignSystem-Modal"
+        class="Row Row Modal-container Modal-container--open"
+        data-layer="true"
+        data-test="DesignSystem-ModalContainer"
       >
         <div
-          class="Modal-header"
-          data-test="DesignSystem-ModalHeader"
+          class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
+          data-test="DesignSystem-Modal"
         >
           <div
-            class="Modal-headerWrapper"
+            class="Modal-header"
+            data-test="DesignSystem-ModalHeader"
           >
             <div
-              class="Modal-headerHeading"
+              class="Modal-headerWrapper"
             >
-              <h4
-                class="Heading Heading--m Heading--default"
-                data-test="DesignSystem-Heading"
+              <div
+                class="Modal-headerHeading"
               >
-                Heading
-              </h4>
-              <i
-                class="material-icons Icon Icon--default mx-2 cursor-pointer"
-                data-test="DesignSystem-ModalHeader--CloseIcon"
-                style="font-size: 20px; width: 20px;"
-              >
-                close
-              </i>
+                <h4
+                  class="Heading Heading--m Heading--default"
+                  data-test="DesignSystem-Heading"
+                >
+                  Heading
+                </h4>
+                <i
+                  class="material-icons Icon Icon--default mx-2 cursor-pointer"
+                  data-test="DesignSystem-ModalHeader--CloseIcon"
+                  style="font-size: 20px; width: 20px;"
+                >
+                  close
+                </i>
+              </div>
             </div>
+            <span
+              class="Text Text--subtle Text--regular mt-2 ml-7"
+              data-test="DesignSystem-ModalHeader--Subheading"
+            >
+              Subheading
+            </span>
           </div>
-          <span
-            class="Text Text--subtle Text--regular mt-2 ml-7"
-            data-test="DesignSystem-ModalHeader--Subheading"
-          >
-            Subheading
-          </span>
         </div>
       </div>
     </div>
@@ -202,45 +207,50 @@ exports[`Modal component
     class="Modal-wrapper"
   >
     <div
-      class="Row Row Modal-container Modal-container--open"
-      data-layer="true"
-      data-test="DesignSystem-ModalContainer"
+      class="OutsideClick"
+      data-test="DesignSystem-Modal--OutsideClick"
     >
       <div
-        class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
-        data-test="DesignSystem-Modal"
+        class="Row Row Modal-container Modal-container--open"
+        data-layer="true"
+        data-test="DesignSystem-ModalContainer"
       >
         <div
-          class="Modal-header"
-          data-test="DesignSystem-ModalHeader"
+          class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
+          data-test="DesignSystem-Modal"
         >
           <div
-            class="Modal-headerWrapper"
+            class="Modal-header"
+            data-test="DesignSystem-ModalHeader"
           >
             <div
-              class="Modal-headerHeading"
+              class="Modal-headerWrapper"
             >
-              <h4
-                class="Heading Heading--m Heading--default"
-                data-test="DesignSystem-Heading"
+              <div
+                class="Modal-headerHeading"
               >
-                Heading
-              </h4>
-              <i
-                class="material-icons Icon Icon--default mx-2 cursor-pointer"
-                data-test="DesignSystem-ModalHeader--CloseIcon"
-                style="font-size: 20px; width: 20px;"
-              >
-                close
-              </i>
+                <h4
+                  class="Heading Heading--m Heading--default"
+                  data-test="DesignSystem-Heading"
+                >
+                  Heading
+                </h4>
+                <i
+                  class="material-icons Icon Icon--default mx-2 cursor-pointer"
+                  data-test="DesignSystem-ModalHeader--CloseIcon"
+                  style="font-size: 20px; width: 20px;"
+                >
+                  close
+                </i>
+              </div>
             </div>
+            <span
+              class="Text Text--subtle Text--regular mt-2 ml-7"
+              data-test="DesignSystem-ModalHeader--Subheading"
+            >
+              Subheading
+            </span>
           </div>
-          <span
-            class="Text Text--subtle Text--regular mt-2 ml-7"
-            data-test="DesignSystem-ModalHeader--Subheading"
-          >
-            Subheading
-          </span>
         </div>
       </div>
     </div>
@@ -330,45 +340,50 @@ exports[`Modal component
     class="Modal-wrapper"
   >
     <div
-      class="Row Row Modal-container Modal-container--open"
-      data-layer="true"
-      data-test="DesignSystem-ModalContainer"
+      class="OutsideClick"
+      data-test="DesignSystem-Modal--OutsideClick"
     >
       <div
-        class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
-        data-test="DesignSystem-Modal"
+        class="Row Row Modal-container Modal-container--open"
+        data-layer="true"
+        data-test="DesignSystem-ModalContainer"
       >
         <div
-          class="Modal-header"
-          data-test="DesignSystem-ModalHeader"
+          class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
+          data-test="DesignSystem-Modal"
         >
           <div
-            class="Modal-headerWrapper"
+            class="Modal-header"
+            data-test="DesignSystem-ModalHeader"
           >
             <div
-              class="Modal-headerHeading"
+              class="Modal-headerWrapper"
             >
-              <h4
-                class="Heading Heading--m Heading--default"
-                data-test="DesignSystem-Heading"
+              <div
+                class="Modal-headerHeading"
               >
-                Heading
-              </h4>
-              <i
-                class="material-icons Icon Icon--default mx-2 cursor-pointer"
-                data-test="DesignSystem-ModalHeader--CloseIcon"
-                style="font-size: 20px; width: 20px;"
-              >
-                close
-              </i>
+                <h4
+                  class="Heading Heading--m Heading--default"
+                  data-test="DesignSystem-Heading"
+                >
+                  Heading
+                </h4>
+                <i
+                  class="material-icons Icon Icon--default mx-2 cursor-pointer"
+                  data-test="DesignSystem-ModalHeader--CloseIcon"
+                  style="font-size: 20px; width: 20px;"
+                >
+                  close
+                </i>
+              </div>
             </div>
+            <span
+              class="Text Text--subtle Text--regular mt-2 ml-7"
+              data-test="DesignSystem-ModalHeader--Subheading"
+            >
+              Subheading
+            </span>
           </div>
-          <span
-            class="Text Text--subtle Text--regular mt-2 ml-7"
-            data-test="DesignSystem-ModalHeader--Subheading"
-          >
-            Subheading
-          </span>
         </div>
       </div>
     </div>
