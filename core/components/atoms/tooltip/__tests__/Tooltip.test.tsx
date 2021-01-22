@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Tooltip, { TooltipProps as Props } from '../Tooltip';
-import Button from '@/components/atoms/button';
+import { Tooltip, Button } from '@/index';
+import { TooltipProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const Position = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right'];

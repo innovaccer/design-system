@@ -154,7 +154,7 @@ export const Popover = (props: PopoverProps) => {
   };
 
   return (
-    <PopperWrapper {...popperOptions} offset="Large" >
+    <PopperWrapper {...popperOptions} offset="large" >
       {PopoverWrapper}
     </PopperWrapper>
   );
