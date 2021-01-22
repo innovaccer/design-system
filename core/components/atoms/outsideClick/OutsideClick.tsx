@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { BaseHtmlProps, BaseProps } from '@/utils/types';
+import classNames from 'classnames';
 
-export type DivProps = JSX.IntrinsicElements['div'];
-
-export interface OutsideClickProps extends DivProps {
+export interface OutsideClickProps extends BaseHtmlProps<HTMLDivElement>, BaseProps {
   /**
    * Trigger the function on outside click
    */
@@ -14,43 +14,27 @@ export interface OutsideClickProps extends DivProps {
   children: React.ReactElement<any>;
 }
 
-/**
- * Handle click outside component
- * @class OutsideClick
- * @extends {React.Component<OutsideClickProps, never>}
- */
-export class OutsideClick extends React.Component<OutsideClickProps, never> {
-  public container: React.RefObject<HTMLDivElement>;
+export const OutsideClick = React.forwardRef<HTMLDivElement, OutsideClickProps>((props, ref) => {
+  const {
+    children,
+    className,
+    ...rest
+  } = props;
 
-  constructor(props: OutsideClickProps) {
-    super(props);
-    this.container = React.createRef<HTMLDivElement>();
-  }
+  const innerRef = React.useRef<HTMLDivElement>(null);
 
-  /**
-   * Add event listener on mount
-   * @memberof OutsideClick
-   */
-  public componentDidMount() {
-    document.addEventListener('click', this.handleOutsideClick, true);
-  }
+  React.useImperativeHandle(ref, () => innerRef.current!, [innerRef]);
 
-  /**
-   * Remove event listener on unmount
-   * @memberof OutsideClick
-   */
-  public componentWillUnmount() {
-    document.removeEventListener('click', this.handleOutsideClick);
-  }
+  React.useEffect(() => {
+    document.addEventListener('click', handleOutsideClick, true);
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, []);
 
-  /**
-   * Handle Outside click
-   * @param {Event} event
-   * @returns
-   */
-  public handleOutsideClick = (event: Event) => {
-    const { onOutsideClick } = this.props;
-    const element = this.container;
+  const handleOutsideClick = React.useCallback((event: Event) => {
+    const { onOutsideClick } = props;
+    const element = innerRef;
 
     if (!event.target || !element.current) {
       return;
@@ -63,14 +47,18 @@ export class OutsideClick extends React.Component<OutsideClickProps, never> {
     ) {
       onOutsideClick(event);
     }
-  }
+  }, []);
 
-  public render() {
-    const { children } = this.props;
-    return React.cloneElement(React.Children.only(children), {
-      ref: this.container,
-    });
-  }
-}
+  const classes = classNames({
+    ['OutsideClick']: true
+  }, className);
 
+  return (
+    <div ref={innerRef} {...rest} className={classes}>
+      {children}
+    </div>
+  );
+});
+
+OutsideClick.displayName = 'OutsideClick';
 export default OutsideClick;

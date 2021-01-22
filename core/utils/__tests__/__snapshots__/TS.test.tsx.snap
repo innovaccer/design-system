@@ -927,12 +927,16 @@ exports[`TS renders children 1`] = `
   <div
     class="MetaList"
   />
-  <span
-    class="Text Text--default Text--regular"
-    data-test="DesignSystem-Text"
+  <div
+    class="OutsideClick"
   >
-    Hello World!
-  </span>
+    <span
+      class="Text Text--default Text--regular"
+      data-test="DesignSystem-Text"
+    >
+      Hello World!
+    </span>
+  </div>
   <p
     class="Text Text--default"
     data-test="DesignSystem-Paragraph"
