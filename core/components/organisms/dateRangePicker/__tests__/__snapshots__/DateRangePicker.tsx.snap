@@ -155,6 +155,8 @@ exports[`DateRangePicker component
   closeOnBackdropClick={true}
   customStyle={Object {}}
   hideOnReferenceEscape={true}
+  hoverable={true}
+  offset="large"
   on="click"
   onToggle={[Function]}
   open={false}
@@ -223,6 +225,8 @@ exports[`DateRangePicker component
   closeOnBackdropClick={true}
   customStyle={Object {}}
   hideOnReferenceEscape={true}
+  hoverable={true}
+  offset="large"
   on="click"
   onToggle={[Function]}
   open={true}
@@ -371,6 +375,8 @@ exports[`DateRangePicker component
   closeOnBackdropClick={true}
   customStyle={Object {}}
   hideOnReferenceEscape={true}
+  hoverable={true}
+  offset="large"
   on="click"
   onToggle={[Function]}
   open={false}

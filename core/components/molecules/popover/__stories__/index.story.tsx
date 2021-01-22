@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { boolean, select } from '@storybook/addon-knobs';
-import Popover from '../Popover';
-import Button from '@/components/atoms/button';
 import { action } from '@storybook/addon-actions';
 import { updateKnob } from '@/utils/storybookEventEmitter';
+import { Text, Button, Popover } from '@/index';
 
 // CSF format story
 export const all = () => {
@@ -15,16 +14,19 @@ export const all = () => {
   const position = select(
     'position',
     ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right'],
-    'bottom-start'
+    'bottom'
   );
+
   const on = select(
     'on',
     ['click', 'hover'],
     'click'
   );
-  const appendToBody = boolean('appendToBody', false);
-  const hoverable = boolean('hoverable', false);
+
+  const appendToBody = boolean('appendToBody', true);
+  const hoverable = boolean('hoverable', true);
   const closeOnBackdropClick = boolean('closeOnBackdropClick', true);
+  const hideOnReferenceEscape = boolean('hideOnReferenceEscape', true);
   const dark = boolean('dark', false);
 
   const onToggle = () => {
@@ -33,50 +35,47 @@ export const all = () => {
 
   const trigger = <Button appearance="basic">Open Popup</Button>;
 
-  const options = {
+  const options: Record<string, any> = {
     trigger,
     position,
     appendToBody,
     dark,
     closeOnBackdropClick,
+    hideOnReferenceEscape,
     on,
     hoverable,
     open,
-    onToggle,
-    customStyle: {
-      height: '100px',
-      width: '200px',
-    }
+    onToggle
   };
+  if (on === 'hover') delete options.onToggle;
 
   return (
     <Popover {...options}>
-      <div className="mx-6 my-6">
-        <p>Popup</p>
-        <Button appearance="primary" onClick={action('button clicked inside popover')}>Click</Button>
+      <div style={{ width: 100 }} className="mx-6 my-6">
+        <Text>Popup</Text>
+        <Button
+          className="mt-4"
+          appearance="primary"
+          onClick={action('button clicked inside popover')}
+        >
+          Click
+        </Button>
       </div>
     </Popover>
   );
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(false);
   return(
     <div className='mb-11'>
-      <Popover closeOnBackdropClick on="click" open={open} onToggle={function (open) { setOpen(open); }} position="bottom-start"
-        customStyle={{
-          height: '100px',
-          width: '200px'
-        }}
+      <Popover
+        position="bottom-start"
+        on="click"
         trigger={<Button appearance="basic">Open Popup</Button>}
       >
-        <div className='mx-6 my-6'>
-          <p>
-            Popup
-          </p>
-          <Button appearance="primary">
-            Click
-          </Button>
+        <div style={{ width: 100 }} className='mx-6 my-6'>
+          <Text>Popup</Text>
+          <Button appearance="primary" className="mt-4">Click</Button>
         </div>
       </Popover>
     </div>
@@ -89,7 +88,10 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
+        customCode,
+        props: {
+          exclude: ['offset'],
+        }
       }
     }
   }
