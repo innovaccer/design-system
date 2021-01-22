@@ -16,8 +16,8 @@ Object {
           data-test="DesignSystem-AvatarGroup--Avatar"
           style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
         >
-          <span
-            class="PopperWrapper-trigger flex-grow-0"
+          <div
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class="Avatar Avatar--regular Avatar--accent1"
@@ -30,15 +30,15 @@ Object {
                 JD
               </span>
             </span>
-          </span>
+          </div>
         </div>
         <div
           class="AvatarGroup-item"
           data-test="DesignSystem-AvatarGroup--Avatar"
           style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
         >
-          <span
-            class="PopperWrapper-trigger flex-grow-0"
+          <div
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class="Avatar Avatar--regular Avatar--alert"
@@ -51,10 +51,10 @@ Object {
                 SP
               </span>
             </span>
-          </span>
+          </div>
         </div>
-        <span
-          class="PopperWrapper-trigger"
+        <div
+          class="OutsideClick PopperWrapper-trigger"
         >
           <div
             data-test="DesignSystem-AvatarGroup--TriggerAvatar"
@@ -72,7 +72,7 @@ Object {
               </span>
             </span>
           </div>
-        </span>
+        </div>
       </div>
     </div>
   </body>,
@@ -86,8 +86,8 @@ Object {
         data-test="DesignSystem-AvatarGroup--Avatar"
         style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
       >
-        <span
-          class="PopperWrapper-trigger flex-grow-0"
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <span
             class="Avatar Avatar--regular Avatar--accent1"
@@ -100,15 +100,15 @@ Object {
               JD
             </span>
           </span>
-        </span>
+        </div>
       </div>
       <div
         class="AvatarGroup-item"
         data-test="DesignSystem-AvatarGroup--Avatar"
         style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
       >
-        <span
-          class="PopperWrapper-trigger flex-grow-0"
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <span
             class="Avatar Avatar--regular Avatar--alert"
@@ -121,10 +121,10 @@ Object {
               SP
             </span>
           </span>
-        </span>
+        </div>
       </div>
-      <span
-        class="PopperWrapper-trigger"
+      <div
+        class="OutsideClick PopperWrapper-trigger"
       >
         <div
           data-test="DesignSystem-AvatarGroup--TriggerAvatar"
@@ -142,7 +142,7 @@ Object {
             </span>
           </span>
         </div>
-      </span>
+      </div>
     </div>
   </div>,
   "debug": [Function],

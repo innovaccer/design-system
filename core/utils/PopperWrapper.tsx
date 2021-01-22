@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Manager, Reference, Popper } from 'react-popper';
+import { OutsideClick } from '@/index';
 import classNames from 'classnames';
 
 type PositionType =
@@ -18,146 +19,171 @@ type PositionType =
   | 'bottom-start'
   | 'left-end'
   | 'left'
-  | 'left-start'
-  | undefined;
+  | 'left-start';
 
-type actionType = 'click' | 'hover';
+type ActionType = 'click' | 'hover';
+type Offset = 'small' | 'medium' | 'large';
+type PopperChildrenProps = {
+  ref: React.Ref<any>,
+  placement: PositionType,
+  style: React.CSSProperties,
+  outOfBoundaries: boolean | null
+};
 
-enum Offsets {
-  Small = '2px',
-  Medium = '4px',
-  Large = '8px'
-}
-
-interface Props {
+export interface PopperWrapperProps {
+  /**
+   * Element triggering the `Popover`
+   */
   trigger: React.ReactElement<any>;
+  /**
+   * Boundary of Popover
+   * @default document.body
+   */
   boundaryElement?: Element | null;
   triggerClass?: string;
   placement: PositionType;
   children: React.ReactElement<any>;
-  style?: React.CSSProperties;
+  style: React.CSSProperties;
+  /**
+   * Appends `trigger` wrapper inside body
+   */
   appendToBody: boolean;
-  on?: actionType;
-  offset: keyof typeof Offsets;
-  closeOnBackdropClick?: boolean;
-  hoverable?: boolean;
+  /**
+   * Event triggering the `Popover`
+   */
+  on: ActionType;
+  /**
+   * Holds `Popover` on hover
+   *
+   * **Use only if you are using `on = 'hover'`**
+   */
+  hoverable: boolean;
+  /**
+   * Vertical offset from trigger
+   *
+   * <pre className="DocPage-codeBlock">
+   * {
+   *    small: '2px',
+   *    medium: '4px',
+   *    large: '8px'
+   * }
+   * </pre>
+   */
+  offset: Offset;
+  /**
+   * Close on Backdrop click
+   */
+  closeOnBackdropClick: boolean;
+  /**
+   * Handles open/close
+   */
   open?: boolean;
   hide?: boolean;
+  /**
+   * Callback after `Popover` is toggled
+   *
+   * type: 'onMouseLeave' | 'onMouseEnter' | 'outsideClick' | 'onClick';
+   */
   onToggle: (open: boolean, type?: string) => void;
 }
 
-interface IState {
-  open: boolean;
+interface PopperWrapperState {
   zIndex?: number;
-  mouseLeaveDelay: number;
-  mouseEnterDelay: number;
 }
 
-export class PopperWrapper extends React.Component<Props, IState> {
-  private triggerRef: React.RefObject<HTMLElement>;
-  private popupRef: React.RefObject<HTMLDivElement>;
-  private _timer?: number;
+export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWrapperState> {
+  triggerRef: React.RefObject<HTMLElement>;
+  popupRef: React.RefObject<HTMLDivElement>;
+  hoverableDelay?: number;
+  _timer?: number;
+  offsetMapping: Record<Offset, string>;
 
-  constructor(props: Props) {
+  static defaultProps = {
+    on: 'click',
+    offset: 'medium',
+    closeOnBackdropClick: true,
+    hoverable: true,
+    appendToBody: true,
+    style: {}
+  };
+
+  constructor(props: PopperWrapperProps) {
     super(props);
 
-    this.state = {
-      open: props.open || false,
-      mouseLeaveDelay: 50,
-      mouseEnterDelay: 0
+    this.hoverableDelay = 100;
+    this.offsetMapping = {
+      small: '2px',
+      medium: '4px',
+      large: '8px'
     };
-
     this.triggerRef = React.createRef();
     this.popupRef = React.createRef();
+
+    this.getPopperChildren = this.getPopperChildren.bind(this);
+    this.mouseMoveHandler = this.mouseMoveHandler.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
   }
 
-  public componentWillUnmount() {
-    clearTimeout(this._timer);
-    document.removeEventListener('mousedown', this.doesNodeContainClick);
+  componentDidUpdate(prevProps: PopperWrapperProps) {
+    if (prevProps.open !== this.props.open) {
+      if (this.props.open) {
+        const triggerElement = this.findDOMNode(this.triggerRef);
+        const zIndex = this.getZIndexForLayer(triggerElement);
+
+        this.setState({
+          zIndex: zIndex === undefined ? zIndex : zIndex + 1
+        });
+      }
+    }
   }
 
-  public handleMouseLeave = (event: React.MouseEvent<HTMLElement>) => {
-    const { hoverable = false, onToggle } = this.props;
-    if (hoverable) {
-      clearTimeout(this._timer);
-      this._timer = window.setTimeout(() => {
-        this.setState({ open: false });
-        if (this.props.children.props.onMouseLeave) {
-          this.props.children.props.onMouseLeave(event);
-        }
-      }, this.state.mouseLeaveDelay);
-    } else {
+  mouseMoveHandler() {
+    if (this._timer) clearTimeout(this._timer);
+
+    this._timer = setTimeout(() => {
+      const { onToggle } = this.props;
       onToggle(false, 'mouseLeave');
-      if (this.props.children.props.onMouseLeave) {
-        this.props.children.props.onMouseLeave(event);
-      }
-    }
+    }, this.hoverableDelay);
   }
 
-  public handleMouseEnter = (event: React.MouseEvent<HTMLElement>) => {
-    const { hoverable = false, onToggle } = this.props;
-    if (hoverable) {
-      clearTimeout(this._timer);
-      this._timer = window.setTimeout(() => {
-        this.setState({ open: true });
-        if (this.props.children.props.onMouseEnter) {
-          this.props.children.props.onMouseEnter(event);
-        }
-      }, this.state.mouseEnterDelay);
-    } else {
+  handleMouseEnter() {
+    const { on } = this.props;
+    if (on === 'hover') {
+      if (this._timer) clearTimeout(this._timer);
+      const { onToggle } = this.props;
+
       onToggle(true, 'mouseEnter');
-      if (this.props.children.props.onMouseEnter) {
-        this.props.children.props.onMouseEnter(event);
+    }
+  }
+
+  handleMouseLeave() {
+    const { on } = this.props;
+    if (on === 'hover') {
+      const { hoverable, onToggle } = this.props;
+      if (hoverable) {
+        this.mouseMoveHandler();
+      } else {
+        onToggle(false, 'mouseLeave');
       }
     }
   }
 
-  public togglePopper = (type?: string) => {
-    const { open = false, onToggle } = this.props;
-    onToggle(!open, type);
+  togglePopper = (type: string, newValue?: boolean) => {
+    const { open, onToggle } = this.props;
+    onToggle((newValue || !open), type);
   }
 
-  public doesNodeContainClick = (event: Event) => {
-    if (
-      !(
-        this.findDOMNode(this.popupRef).contains(event.target as HTMLElement) ||
-        this.findDOMNode(this.triggerRef).contains(event.target as HTMLElement)
-      )
-    ) {
-      this.togglePopper('outsideClick');
-    }
+  findDOMNode = (ref: React.RefObject<HTMLElement>) => {
+    return ReactDOM.findDOMNode(ref.current!) as Element | null;
   }
 
-  public componentDidMount() {
-    const { on = 'click', closeOnBackdropClick = true } = this.props;
-    const { open } = this.props;
-
-    if (on === 'click' && open && closeOnBackdropClick) {
-      document.addEventListener('mousedown', this.doesNodeContainClick);
-    }
+  doesEventContainsElement = (event: Event, ref: React.RefObject<any>) => {
+    const el = this.findDOMNode(ref);
+    return (el && el.contains(event.target as HTMLElement));
   }
 
-  public componentDidUpdate(prevProps: Props) {
-    const { on = 'click', closeOnBackdropClick = true } = this.props;
-    const { open } = this.props;
-
-    if (prevProps.open !== this.props.open && this.props.open) {
-      const triggerElement = this.findDOMNode(this.triggerRef);
-      const zIndex = this.getZIndexForLayer(triggerElement);
-
-      this.setState({
-        zIndex: zIndex === undefined ? zIndex : zIndex + 1
-      });
-    }
-
-    if (on === 'click' && open && closeOnBackdropClick) {
-      document.addEventListener('mousedown', this.doesNodeContainClick);
-    } else if (on === 'click' && !open && closeOnBackdropClick) {
-      document.removeEventListener('mousedown', this.doesNodeContainClick);
-    }
-  }
-
-  public getZIndexForLayer(node: HTMLElement | null) {
+  getZIndexForLayer(node: Element | null) {
     if (node === null) {
       return;
     }
@@ -170,7 +196,36 @@ export class PopperWrapper extends React.Component<Props, IState> {
     return zIndex === 'auto' || isNaN(zIndex) ? undefined : zIndex;
   }
 
-  public getTriggerElement(trigger: React.ReactElement<any>, ref: React.Ref<any>, on: actionType) {
+  getUpdatedStyle = (
+    oldStyle: React.CSSProperties,
+    placement: PositionType,
+    offset: Offset
+  ) => {
+    const { style } = this.props;
+    const newStyle = { ...style, ...oldStyle };
+    const position = placement ? placement.split('-')[0] : placement;
+    switch (position) {
+      case 'top':
+        newStyle.marginBottom = this.offsetMapping[offset];
+        break;
+
+      case 'bottom':
+        newStyle.marginTop = this.offsetMapping[offset];
+        break;
+
+      case 'left':
+        newStyle.marginRight = this.offsetMapping[offset];
+        break;
+
+      case 'right':
+        newStyle.marginLeft = this.offsetMapping[offset];
+        break;
+    }
+    return newStyle;
+  }
+
+  getTriggerElement(ref: React.Ref<any>) {
+    const { trigger, on, triggerClass } = this.props;
     const options = on === 'hover'
       ? {
         ref,
@@ -182,62 +237,53 @@ export class PopperWrapper extends React.Component<Props, IState> {
         onClick: () => this.togglePopper('onClick')
       };
 
-    const {
-      triggerClass
-    } = this.props;
-
     const classes = classNames('PopperWrapper-trigger', triggerClass);
 
-    const element = React.cloneElement(
-      (
-        <span className={classes}>
-          {trigger}
-        </span>
-      ),
-      options
+    const onOutsideClickHandler = (event: Event) => {
+      const { open, closeOnBackdropClick } = this.props;
+      if (open && closeOnBackdropClick) {
+        if (!this.doesEventContainsElement(event, this.popupRef)) {
+          this.togglePopper('outsideClick');
+        }
+      }
+    };
+
+    return (
+      <OutsideClick
+        className={classes}
+        onOutsideClick={onOutsideClickHandler}
+        {...options}
+      >
+        {trigger}
+      </OutsideClick>
     );
+  }
 
+  getPopperChildren({ ref, style, placement, outOfBoundaries }: PopperChildrenProps) {
+    const { offset, children } = this.props;
+    const newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
+
+    const element = React.cloneElement(children, {
+      ref,
+      style: newStyle,
+      'data-placement': placement,
+      'data-hide': outOfBoundaries,
+      onMouseEnter: this.handleMouseEnter,
+      onMouseLeave: this.handleMouseLeave
+    });
     return element;
   }
 
-  public getChildrenElement(
-    children: React.ReactElement<any>,
-    ref: React.Ref<any>,
-    placement: string,
-    style: React.CSSProperties,
-    outOfBoundaries: boolean | null
-  ) {
-    const options = this.props.on === 'hover'
-      ? {
-        ref,
-        style,
-        onMouseEnter: this.handleMouseEnter,
-        onMouseLeave: this.handleMouseLeave,
-        'data-placement': placement,
-        'data-hide': outOfBoundaries
-      } : {
-        ref,
-        style,
-        'data-placement': placement,
-        'data-hide': outOfBoundaries
-      };
-
-    const element = React.cloneElement(children, options);
-    return element;
-  }
-
-  public render() {
-    const { trigger, children, placement, appendToBody, on = 'click', offset } = this.props;
-    const { open, boundaryElement, hide } = this.props;
+  render() {
+    const { placement, appendToBody, open, hide, boundaryElement } = this.props;
 
     return (
       <Manager>
-        <Reference innerRef={this.triggerRef}>{({ ref }) => this.getTriggerElement(trigger, ref, on)}</Reference>
-        {(open || this.state.open) &&
+        <Reference innerRef={this.triggerRef}>{({ ref }) => this.getTriggerElement(ref)}</Reference>
+        {open &&
           appendToBody &&
           ReactDOM.createPortal(
             (
-              /* tslint:disable:no-shadowed-variable */
               <Popper
                 placement={placement}
                 innerRef={this.popupRef}
@@ -246,68 +292,18 @@ export class PopperWrapper extends React.Component<Props, IState> {
                   hide: { enabled: hide }
                 }}
               >
-                {({ ref, style, placement, outOfBoundaries }) => {
-                  const newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
-                  return this.getChildrenElement(
-                    children,
-                    ref,
-                    placement,
-                    { ...newStyle, zIndex: this.state.zIndex },
-                    outOfBoundaries
-                  );
-                }}
+                {this.getPopperChildren}
               </Popper>
             ),
             document.body
           )}
-        {(open || this.state.open) && !appendToBody && (
+        {open && !appendToBody && (
           <Popper placement={placement} innerRef={this.popupRef}>
-            {({ ref, style, placement, outOfBoundaries }) => {
-              const newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
-              return this.getChildrenElement(
-                children,
-                ref,
-                placement,
-                { ...newStyle, zIndex: this.state.zIndex },
-                outOfBoundaries
-              );
-            }}
+            {this.getPopperChildren}
           </Popper>
         )}
       </Manager>
     );
-  }
-
-  private getUpdatedStyle = (
-    oldStyle: React.CSSProperties,
-    placement: PositionType,
-    offset: keyof typeof Offsets = 'Medium'
-  ) => {
-    const { style = {} } = this.props;
-    const newStyle = { ...style, ...oldStyle };
-    const position = placement ? placement.split('-')[0] : placement;
-    switch (position) {
-      case 'top':
-        newStyle.marginBottom = Offsets[offset];
-        break;
-
-      case 'bottom':
-        newStyle.marginTop = Offsets[offset];
-        break;
-
-      case 'left':
-        newStyle.marginRight = Offsets[offset];
-        break;
-
-      case 'right':
-        newStyle.marginLeft = Offsets[offset];
-        break;
-    }
-    return newStyle;
-  }
-
-  private findDOMNode = (ref: React.RefObject<HTMLElement>) => {
-    return ReactDOM.findDOMNode(ref.current!) as HTMLElement;
   }
 }
 

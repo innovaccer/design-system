@@ -729,8 +729,8 @@ exports[`TS renders children 1`] = `
   <div
     class="Dropdown"
   >
-    <span
-      class="PopperWrapper-trigger w-100"
+    <div
+      class="OutsideClick PopperWrapper-trigger w-100"
     >
       <button
         class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -755,7 +755,7 @@ exports[`TS renders children 1`] = `
           keyboard_arrow_down
         </i>
       </button>
-    </span>
+    </div>
   </div>
   <div
     class="EditableDropdown"
@@ -772,8 +772,8 @@ exports[`TS renders children 1`] = `
           class="Dropdown d-none"
           data-test="DesignSystem-EditableDropdown--Dropdown"
         >
-          <span
-            class="PopperWrapper-trigger w-100"
+          <div
+            class="OutsideClick PopperWrapper-trigger w-100"
           >
             <button
               class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -792,7 +792,7 @@ exports[`TS renders children 1`] = `
                 keyboard_arrow_down
               </i>
             </button>
-          </span>
+          </div>
         </div>
         <div
           class="EditableDropdown-default"
@@ -1190,13 +1190,13 @@ exports[`TS renders children 1`] = `
         style="left: calc(0.00% - 0px);"
         tabindex="1"
       >
-        <span
-          class="PopperWrapper-trigger Slider-tooltip"
+        <div
+          class="OutsideClick PopperWrapper-trigger Slider-tooltip"
         >
           <span
             class="h-100 w-100"
           />
-        </span>
+        </div>
       </div>
     </div>
   </div>
@@ -1385,26 +1385,26 @@ exports[`TS renders children 1`] = `
         style="left: calc(0.00% - 0px);"
         tabindex="1"
       >
-        <span
-          class="PopperWrapper-trigger Slider-tooltip"
+        <div
+          class="OutsideClick PopperWrapper-trigger Slider-tooltip"
         >
           <span
             class="h-100 w-100"
           />
-        </span>
+        </div>
       </div>
       <div
         class="Slider-handle"
         style="left: calc(100.00% - 0px);"
         tabindex="1"
       >
-        <span
-          class="PopperWrapper-trigger Slider-tooltip"
+        <div
+          class="OutsideClick PopperWrapper-trigger Slider-tooltip"
         >
           <span
             class="h-100 w-100"
           />
-        </span>
+        </div>
       </div>
     </div>
   </div>
@@ -1471,8 +1471,8 @@ exports[`TS renders children 1`] = `
       </div>
     </div>
   </div>
-  <span
-    class="PopperWrapper-trigger"
+  <div
+    class="OutsideClick PopperWrapper-trigger"
   >
     <span
       class="Text Text--default Text--regular"
@@ -1480,7 +1480,7 @@ exports[`TS renders children 1`] = `
     >
       Hello World!
     </span>
-  </span>
+  </div>
   <div
     class="Modal-header"
     data-test="DesignSystem-ModalHeader"
@@ -1665,8 +1665,8 @@ exports[`TS renders children 1`] = `
       stroke-width="8"
     />
   </svg>
-  <span
-    class="PopperWrapper-trigger"
+  <div
+    class="OutsideClick PopperWrapper-trigger"
   >
     <span
       class="Text Text--default Text--regular"
@@ -1674,7 +1674,7 @@ exports[`TS renders children 1`] = `
     >
       Hello World!
     </span>
-  </span>
+  </div>
   <div
     class="Stepper"
     data-test="DesignSystem-Stepper"
