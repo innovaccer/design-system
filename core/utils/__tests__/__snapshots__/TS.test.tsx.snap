@@ -1477,8 +1477,6 @@ exports[`TS renders children 1`] = `
       Hello World!
     </span>
   </span>
-  <div />
-  <div />
   <div
     class="Modal-header"
     data-test="DesignSystem-ModalHeader"

@@ -233,10 +233,10 @@ class Modal extends React.Component<ModalProps, ModalState> {
     );
 
     return (
-      <div>
+      <>
         {WrapperElement}
         <Backdrop open={this.state.open} />
-      </div>
+      </>
     );
   }
 }
