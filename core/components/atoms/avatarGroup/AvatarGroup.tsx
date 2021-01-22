@@ -1,24 +1,23 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import Avatar, { Appearance } from '@/components/atoms/avatar';
-import Popover, { Position, ActionType } from '@/components/molecules/popover';
-import { Text } from '@/index';
+import { Avatar, Popover, Text } from '@/index';
+import { AvatarProps, PopoverProps } from '@/index.type';
 
 export type Size = 'regular' | 'tiny';
 
 interface AvatarData extends Record<string, any> {
   firstName?: string;
   lastName?: string;
-  appearance?: Appearance;
+  appearance?: AvatarProps['appearance'];
 }
 
 interface PopperProps {
   popperRenderer?: (names: AvatarData[]) => JSX.Element;
-  appendToBody?: boolean;
-  dark?: boolean;
-  position?: Position;
-  on?: ActionType;
+  appendToBody?: PopoverProps['appendToBody'];
+  dark?: PopoverProps['dark'];
+  position?: PopoverProps['position'];
+  on?: PopoverProps['on'];
   maxHeight?: number;
   popperClassName?: string;
 }
@@ -75,7 +74,7 @@ export interface AvatarGroupProps extends BaseProps {
   /**
    * Position to place the tooltip on `Avatars` shown before +x
    */
-  tooltipPosition: Position;
+  tooltipPosition: PopoverProps['position'];
 }
 
 export const AvatarGroup = (props: AvatarGroupProps) => {

@@ -8,6 +8,8 @@ exports[`DatePicker component
   closeOnBackdropClick={true}
   customStyle={Object {}}
   hideOnReferenceEscape={true}
+  hoverable={true}
+  offset="large"
   on="click"
   onToggle={[Function]}
   open={false}
@@ -52,6 +54,8 @@ exports[`DatePicker component
   closeOnBackdropClick={true}
   customStyle={Object {}}
   hideOnReferenceEscape={true}
+  hoverable={true}
+  offset="large"
   on="click"
   onToggle={[Function]}
   open={true}
@@ -144,6 +148,8 @@ exports[`DatePicker component
   closeOnBackdropClick={true}
   customStyle={Object {}}
   hideOnReferenceEscape={true}
+  hoverable={true}
+  offset="large"
   on="click"
   onToggle={[Function]}
   open={false}

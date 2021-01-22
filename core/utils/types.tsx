@@ -39,3 +39,11 @@ export const extractBaseProps = (props: Record<string, any>) => {
 
   return basePropsObj;
 };
+
+export const filterProps = (props: Record<string, any>, propsList: ReadonlyArray<string>, include?: boolean) =>
+  Object.entries(props)
+    .filter(obj => include ? propsList.includes(obj[0]) : !propsList.includes(obj[0]))
+    .reduce((acc: Record<string, any>, curr) => {
+      acc[curr[0]] = curr[1];
+      return acc;
+    }, {});

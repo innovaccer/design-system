@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { Calendar, SharedProps } from '../calendar/Calendar';
 import { DateType, DateFormat } from '../calendar/types';
-import Popover, { Position } from '@/components/molecules/popover';
-import { InputMaskProps } from '@/components/molecules/inputMask';
-import { Utils } from '@/index';
+import { Popover, Utils } from '@/index';
+import { PopoverProps, InputMaskProps } from '@/index.type';
 import { Validators } from '@/utils/types';
 import { convertToDate, translateToString, compareDate, getDateInfo } from '../calendar/utility';
 import { Trigger } from './Trigger';
@@ -35,7 +34,7 @@ export type DatePickerProps = SharedProps & {
   /**
    * Position of `DatePicker` with respect to `InputMask`
    */
-  position: Position;
+  position: PopoverProps['position'];
   /**
    * Should be used if `date` is of type `string`
    */
