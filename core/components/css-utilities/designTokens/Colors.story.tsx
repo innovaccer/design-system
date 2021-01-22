@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { Card, Heading, Subheading, Table } from "@/index";
-import { colorSchema } from "./Schema";
-import { tokenColors } from "./Data";
+import { Card, Heading, Subheading, Table } from '@/index';
+import { colorSchema } from './Schema';
+import { tokenColors } from './Data';
 
 export const colors = () => {
   return (
@@ -16,12 +16,13 @@ export const colors = () => {
         return (
           <div
             style={{
-              height: "350px",
+              height: '350px',
             }}
             className="mt-5 mb-10"
+            key={idx}
           >
             <Subheading>
-              {idx !== 4 ? data[0]["token"].slice(2) : "Neutral"}
+              {idx !== 4 ? data[0].token.slice(2) : 'Neutral'}
             </Subheading>
             <Card className="h-100">
               <Table data={data} schema={colorSchema} />
@@ -35,6 +36,6 @@ export const colors = () => {
 };
 
 export default {
-  title: "Design Tokens",
+  title: 'Design Tokens',
   component: colors,
 };

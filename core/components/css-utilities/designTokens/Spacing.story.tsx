@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { Card, Heading, Table } from "@/index";
-import { spacingData } from "./Data";
-import { spaceSchema } from "./Schema";
+import { Card, Heading, Table } from '@/index';
+import { spacingData } from './Data';
+import { spaceSchema } from './Schema';
 
 export const spacing = () => {
   return (
@@ -20,6 +20,6 @@ export const spacing = () => {
 };
 
 export default {
-  title: "Design Tokens",
+  title: 'Design Tokens',
   component: spacing,
 };
