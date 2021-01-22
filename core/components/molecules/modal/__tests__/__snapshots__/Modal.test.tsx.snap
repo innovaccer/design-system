@@ -53,9 +53,7 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div>
-    <div />
-  </div>
+  <div />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -122,9 +120,7 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div>
-    <div />
-  </div>
+  <div />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -186,9 +182,7 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div>
-    <div />
-  </div>
+  <div />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -255,9 +249,7 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div>
-    <div />
-  </div>
+  <div />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
@@ -272,9 +264,7 @@ exports[`Modal component
 <body
   style="overflow: hidden;"
 >
-  <div>
-    <div />
-  </div>
+  <div />
   <div
     class="Modal-wrapper"
   >
@@ -388,9 +378,7 @@ exports[`Modal component
       </div>
     </div>
   </div>
-  <div>
-    <div />
-  </div>
+  <div />
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"

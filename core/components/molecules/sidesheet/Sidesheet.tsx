@@ -227,10 +227,10 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     );
 
     return (
-      <div>
+      <>
         {WrapperElement}
         <Backdrop open={this.state.open} />
-      </div>
+      </>
     );
   }
 }
