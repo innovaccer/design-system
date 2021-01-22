@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { GridRow } from './GridRow';
 import { Data, Schema } from './Grid';
-import { Heading, Grid } from '@/index';
+import { Grid } from '@/index';
 
 export interface GridBodyProps {
   schema: Schema;
@@ -39,7 +39,7 @@ export const GridBody = (props: GridBodyProps) => {
   if (!loading && error) {
     return errorTemplate
       ? typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate
-      : <Heading>No results found</Heading>;
+      : null;
   }
 
   const totalPages = Math.ceil(totalRecords / pageSize);
