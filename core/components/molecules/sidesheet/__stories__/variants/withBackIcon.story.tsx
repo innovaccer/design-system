@@ -7,9 +7,12 @@ import ModalFooter from '@/components/molecules/modalFooter';
 import ModalBody from '@/components/molecules/modalBody';
 import Button from '@/components/atoms/button';
 import { updateKnob } from '@/utils/storybookEventEmitter';
-import { Text, Paragraph, Sidesheet } from '@/index';
+import { Heading, Text, Paragraph, Sidesheet } from '@/index';
 
 export const withBackIcon = () => {
+  const [screen, setScreen] = React.useState(2);
+  const totalScreens = 4;
+
   const open = boolean('open', true);
   const seperator = boolean('seperator', false);
   const stickFooter = boolean('stick bottom', false);
@@ -27,12 +30,13 @@ export const withBackIcon = () => {
 
   const backIconCallback = () => {
     action('back icon clicked')();
+    setScreen(screen - 1);
   };
 
   const headerOptions = {
     backIconCallback,
-    backIcon: true,
-    heading: 'Heading',
+    backIcon: screen > 1,
+    heading: `Heading ${screen}`,
     subHeading: 'Subheading'
   };
 
@@ -46,8 +50,23 @@ export const withBackIcon = () => {
     backdropClose,
     footer: (
       <>
-        <Button appearance="primary" className="mr-4">Primary</Button>
-        <Button appearance="basic" >Basic</Button>
+        {screen < totalScreens && (
+          <Button
+            appearance="primary"
+            className="mr-4"
+            onClick={() => setScreen(screen + 1)}
+          >
+            Next
+          </Button>
+        )}
+        {screen > 1 && (
+          <Button
+            appearance="basic"
+            onClick={() => setScreen(screen - 1)}
+          >
+            Back
+          </Button>
+        )}
       </>
     )
   };
@@ -75,6 +94,7 @@ export const withBackIcon = () => {
         sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
       </Paragraph>
       <Sidesheet {...options} >
+        <Heading size="s">{`Screen ${screen}`}</Heading>
         <Text>Modal Body</Text>
         <ModalDescription {...modalDescriptionOptions} />
         <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
@@ -85,19 +105,22 @@ export const withBackIcon = () => {
 
 const customCode = `() => {
   const [open, setOpen] = React.useState(true);
+  const [screen, setScreen] = React.useState(2);
+  const totalScreens = 4;
 
   const onClose = () => {
     setOpen(!open);
   };
 
-	const backIconCallback = (e) => {
-		console.log('back icon clicked');
-	};
+  const backIconCallback = (e) => {
+    console.log('back icon clicked');
+    setScreen(screen-1);
+  };
 
   const headerOptions = {
     backIconCallback,
-    backIcon: true,
-    heading: 'Heading',
+    backIcon: screen > 1,
+    heading: \`Heading \${screen}\`,
     subHeading: 'Subheading'
   };
 
@@ -105,10 +128,27 @@ const customCode = `() => {
     onClose,
     open,
     headerOptions,
+    stickFooter: true,
+    backdropClose: true,
     footer: (
       <>
-        <Button appearance="primary" className="mr-4">Primary</Button>
-        <Button appearance="basic">Basic</Button>
+        {screen < totalScreens && (
+          <Button
+            appearance="primary"
+            className="mr-4"
+            onClick={() => setScreen(screen + 1)}
+          >
+            Next
+          </Button>
+        )}
+        {screen > 1 && (
+          <Button
+            appearance="basic"
+            onClick={() => setScreen(screen - 1)}
+          >
+            Back
+          </Button>
+        )}
       </>
     )
   };
@@ -134,6 +174,7 @@ const customCode = `() => {
         <Button appearance="primary" onClick={() => setOpen(true)}>Open</Button>
       </Paragraph>
       <Sidesheet {...options} >
+        <Heading size="s">{\`Screen \${screen}\`}</Heading>
         <Text>Modal Body</Text>
         <ModalDescription {...modalDescriptionOptions} />
         <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
