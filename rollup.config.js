@@ -95,6 +95,8 @@ export default [{
         { find: '@', replacement: path.resolve('./core') },
       ]
     }),
+
+    json(),
     
     // Allows node_modules resolution
     resolve({ extensions }),
