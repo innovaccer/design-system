@@ -12,7 +12,8 @@ const propsList = [
   'dark',
   'customStyle',
   'closeOnBackdropClick',
-  'hideOnReferenceEscape'
+  'hideOnReferenceEscape',
+  'closeOnScroll'
 ] as const;
 type PopperProps = typeof propsList[number];
 export interface TooltipProps extends Omit<PopoverProps, PopperProps>, BaseProps {

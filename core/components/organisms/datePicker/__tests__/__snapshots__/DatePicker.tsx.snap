@@ -5,6 +5,7 @@ exports[`DatePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  boundaryElement={<body />}
   closeOnBackdropClick={true}
   customStyle={Object {}}
   hideOnReferenceEscape={true}
@@ -51,6 +52,7 @@ exports[`DatePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  boundaryElement={<body />}
   closeOnBackdropClick={true}
   customStyle={Object {}}
   hideOnReferenceEscape={true}
@@ -145,6 +147,7 @@ exports[`DatePicker component
  1`] = `
 <Popover
   appendToBody={true}
+  boundaryElement={<body />}
   closeOnBackdropClick={true}
   customStyle={Object {}}
   hideOnReferenceEscape={true}
