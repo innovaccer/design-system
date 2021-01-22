@@ -7,8 +7,8 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <span
-        class="PopperWrapper-trigger flex-grow-0"
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--accent1"
@@ -21,12 +21,12 @@ Object {
             JD
           </span>
         </span>
-      </span>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <span
-      class="PopperWrapper-trigger flex-grow-0"
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--accent1"
@@ -39,7 +39,7 @@ Object {
           JD
         </span>
       </span>
-    </span>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -102,8 +102,8 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <span
-        class="PopperWrapper-trigger flex-grow-0"
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--accent2"
@@ -116,12 +116,12 @@ Object {
             JD
           </span>
         </span>
-      </span>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <span
-      class="PopperWrapper-trigger flex-grow-0"
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--accent2"
@@ -134,7 +134,7 @@ Object {
           JD
         </span>
       </span>
-    </span>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -197,8 +197,8 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <span
-        class="PopperWrapper-trigger flex-grow-0"
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--accent3"
@@ -211,12 +211,12 @@ Object {
             JD
           </span>
         </span>
-      </span>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <span
-      class="PopperWrapper-trigger flex-grow-0"
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--accent3"
@@ -229,7 +229,7 @@ Object {
           JD
         </span>
       </span>
-    </span>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -292,8 +292,8 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <span
-        class="PopperWrapper-trigger flex-grow-0"
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--accent4"
@@ -306,12 +306,12 @@ Object {
             JD
           </span>
         </span>
-      </span>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <span
-      class="PopperWrapper-trigger flex-grow-0"
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--accent4"
@@ -324,7 +324,7 @@ Object {
           JD
         </span>
       </span>
-    </span>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -387,8 +387,8 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <span
-        class="PopperWrapper-trigger flex-grow-0"
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--alert"
@@ -401,12 +401,12 @@ Object {
             JD
           </span>
         </span>
-      </span>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <span
-      class="PopperWrapper-trigger flex-grow-0"
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--alert"
@@ -419,7 +419,7 @@ Object {
           JD
         </span>
       </span>
-    </span>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -482,8 +482,8 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <span
-        class="PopperWrapper-trigger flex-grow-0"
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--primary"
@@ -496,12 +496,12 @@ Object {
             JD
           </span>
         </span>
-      </span>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <span
-      class="PopperWrapper-trigger flex-grow-0"
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--primary"
@@ -514,7 +514,7 @@ Object {
           JD
         </span>
       </span>
-    </span>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -577,8 +577,8 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <span
-        class="PopperWrapper-trigger flex-grow-0"
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--success"
@@ -591,12 +591,12 @@ Object {
             JD
           </span>
         </span>
-      </span>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <span
-      class="PopperWrapper-trigger flex-grow-0"
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--success"
@@ -609,7 +609,7 @@ Object {
           JD
         </span>
       </span>
-    </span>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -672,8 +672,8 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <span
-        class="PopperWrapper-trigger flex-grow-0"
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--warning"
@@ -686,12 +686,12 @@ Object {
             JD
           </span>
         </span>
-      </span>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <span
-      class="PopperWrapper-trigger flex-grow-0"
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--warning"
@@ -704,7 +704,7 @@ Object {
           JD
         </span>
       </span>
-    </span>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -767,8 +767,8 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <span
-        class="PopperWrapper-trigger flex-grow-0"
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--regular Avatar--accent1"
@@ -781,12 +781,12 @@ Object {
             JD
           </span>
         </span>
-      </span>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <span
-      class="PopperWrapper-trigger flex-grow-0"
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--regular Avatar--accent1"
@@ -799,7 +799,7 @@ Object {
           JD
         </span>
       </span>
-    </span>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -862,8 +862,8 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <span
-        class="PopperWrapper-trigger flex-grow-0"
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
           class="Avatar Avatar--tiny Avatar--accent1"
@@ -876,12 +876,12 @@ Object {
             JD
           </span>
         </span>
-      </span>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <span
-      class="PopperWrapper-trigger flex-grow-0"
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
         class="Avatar Avatar--tiny Avatar--accent1"
@@ -894,7 +894,7 @@ Object {
           JD
         </span>
       </span>
-    </span>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

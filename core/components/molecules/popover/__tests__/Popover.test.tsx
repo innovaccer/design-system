@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react';
-import Popover, { PopoverProps as Props } from '../Popover';
-import Button from '@/components/atoms/button';
+import { Button, Popover } from '@/index';
+import { PopoverProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const position = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end'];

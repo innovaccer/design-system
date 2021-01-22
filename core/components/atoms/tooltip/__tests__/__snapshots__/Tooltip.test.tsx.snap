@@ -5,12 +5,15 @@ exports[`Tooltip component
  1`] = `
 <PopperWrapper
   appendToBody={true}
+  closeOnBackdropClick={true}
   hide={true}
-  offset="Medium"
+  hoverable={true}
+  offset="medium"
   on="hover"
   onToggle={[Function]}
   open={false}
   placement="bottom"
+  style={Object {}}
   trigger={
     <Button>
       Button
@@ -30,12 +33,15 @@ exports[`Tooltip component
  1`] = `
 <PopperWrapper
   appendToBody={true}
+  closeOnBackdropClick={true}
   hide={true}
-  offset="Medium"
+  hoverable={true}
+  offset="medium"
   on="hover"
   onToggle={[Function]}
   open={false}
   placement="bottom-end"
+  style={Object {}}
   trigger={
     <Button>
       Button
@@ -55,12 +61,15 @@ exports[`Tooltip component
  1`] = `
 <PopperWrapper
   appendToBody={true}
+  closeOnBackdropClick={true}
   hide={true}
-  offset="Medium"
+  hoverable={true}
+  offset="medium"
   on="hover"
   onToggle={[Function]}
   open={false}
   placement="bottom-start"
+  style={Object {}}
   trigger={
     <Button>
       Button
@@ -80,12 +89,15 @@ exports[`Tooltip component
  1`] = `
 <PopperWrapper
   appendToBody={true}
+  closeOnBackdropClick={true}
   hide={true}
-  offset="Medium"
+  hoverable={true}
+  offset="medium"
   on="hover"
   onToggle={[Function]}
   open={false}
   placement="left"
+  style={Object {}}
   trigger={
     <Button>
       Button
@@ -105,12 +117,15 @@ exports[`Tooltip component
  1`] = `
 <PopperWrapper
   appendToBody={true}
+  closeOnBackdropClick={true}
   hide={true}
-  offset="Medium"
+  hoverable={true}
+  offset="medium"
   on="hover"
   onToggle={[Function]}
   open={false}
   placement="right"
+  style={Object {}}
   trigger={
     <Button>
       Button
@@ -130,12 +145,15 @@ exports[`Tooltip component
  1`] = `
 <PopperWrapper
   appendToBody={true}
+  closeOnBackdropClick={true}
   hide={true}
-  offset="Medium"
+  hoverable={true}
+  offset="medium"
   on="hover"
   onToggle={[Function]}
   open={false}
   placement="top"
+  style={Object {}}
   trigger={
     <Button>
       Button
@@ -155,12 +173,15 @@ exports[`Tooltip component
  1`] = `
 <PopperWrapper
   appendToBody={true}
+  closeOnBackdropClick={true}
   hide={true}
-  offset="Medium"
+  hoverable={true}
+  offset="medium"
   on="hover"
   onToggle={[Function]}
   open={false}
   placement="top-end"
+  style={Object {}}
   trigger={
     <Button>
       Button
@@ -180,12 +201,15 @@ exports[`Tooltip component
  1`] = `
 <PopperWrapper
   appendToBody={true}
+  closeOnBackdropClick={true}
   hide={true}
-  offset="Medium"
+  hoverable={true}
+  offset="medium"
   on="hover"
   onToggle={[Function]}
   open={false}
   placement="top-start"
+  style={Object {}}
   trigger={
     <Button>
       Button

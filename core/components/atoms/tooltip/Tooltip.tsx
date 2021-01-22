@@ -108,7 +108,7 @@ export class Tooltip extends React.Component<TooltipProps, IState> {
         placement={this.props.position}
         appendToBody={appendToBody}
         on={'hover'}
-        offset={'Medium'}
+        offset={'medium'}
         onToggle={this.onToggle}
         open={this.state.open}
         triggerClass={triggerClass}

@@ -19,8 +19,8 @@ exports[`EditableDropdown component
           class="Dropdown d-none"
           data-test="DesignSystem-EditableDropdown--Dropdown"
         >
-          <span
-            class="PopperWrapper-trigger w-100"
+          <div
+            class="OutsideClick PopperWrapper-trigger w-100"
           >
             <button
               class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -39,7 +39,7 @@ exports[`EditableDropdown component
                 keyboard_arrow_down
               </i>
             </button>
-          </span>
+          </div>
         </div>
         <div
           class="EditableDropdown-default"

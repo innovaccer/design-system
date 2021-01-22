@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
-import DatePicker, { DatePickerProps as Props } from '../DatePicker';
+import { DatePicker } from '@/index';
+import { DatePickerProps as Props } from '@/index.type';
 
 const view = ['year', 'month', 'date'];
 const booleanValue = [true, false];

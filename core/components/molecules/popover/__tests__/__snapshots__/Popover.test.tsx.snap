@@ -4,8 +4,8 @@ exports[`Popover component
   appendToBody: false, trigger: "[ReactNode]", customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}, open: true, verticalOffset: 10, onToggle: "[Function]", dark: false
  1`] = `
 <DocumentFragment>
-  <span
-    class="PopperWrapper-trigger"
+  <div
+    class="OutsideClick PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -14,7 +14,7 @@ exports[`Popover component
     >
       Open Popup
     </button>
-  </span>
+  </div>
   <div
     class="Popover"
     data-layer="true"
@@ -30,8 +30,8 @@ exports[`Popover component
   appendToBody: false, trigger: "[ReactNode]", customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}, open: true, verticalOffset: 10, onToggle: "[Function]", dark: true
  1`] = `
 <DocumentFragment>
-  <span
-    class="PopperWrapper-trigger"
+  <div
+    class="OutsideClick PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -40,7 +40,7 @@ exports[`Popover component
     >
       Open Popup
     </button>
-  </span>
+  </div>
   <div
     class="Popover Popover--dark"
     data-layer="true"
@@ -56,8 +56,8 @@ exports[`Popover component
   appendToBody: false, trigger: "[ReactNode]", customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}, open: true, verticalOffset: 10, onToggle: "[Function]", position: "bottom"
  1`] = `
 <DocumentFragment>
-  <span
-    class="PopperWrapper-trigger"
+  <div
+    class="OutsideClick PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -66,7 +66,7 @@ exports[`Popover component
     >
       Open Popup
     </button>
-  </span>
+  </div>
   <div
     class="Popover"
     data-layer="true"
@@ -82,8 +82,8 @@ exports[`Popover component
   appendToBody: false, trigger: "[ReactNode]", customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}, open: true, verticalOffset: 10, onToggle: "[Function]", position: "bottom-end"
  1`] = `
 <DocumentFragment>
-  <span
-    class="PopperWrapper-trigger"
+  <div
+    class="OutsideClick PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -92,7 +92,7 @@ exports[`Popover component
     >
       Open Popup
     </button>
-  </span>
+  </div>
   <div
     class="Popover"
     data-layer="true"
@@ -108,8 +108,8 @@ exports[`Popover component
   appendToBody: false, trigger: "[ReactNode]", customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}, open: true, verticalOffset: 10, onToggle: "[Function]", position: "bottom-start"
  1`] = `
 <DocumentFragment>
-  <span
-    class="PopperWrapper-trigger"
+  <div
+    class="OutsideClick PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -118,7 +118,7 @@ exports[`Popover component
     >
       Open Popup
     </button>
-  </span>
+  </div>
   <div
     class="Popover"
     data-layer="true"
@@ -134,8 +134,8 @@ exports[`Popover component
   appendToBody: false, trigger: "[ReactNode]", customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}, open: true, verticalOffset: 10, onToggle: "[Function]", position: "top"
  1`] = `
 <DocumentFragment>
-  <span
-    class="PopperWrapper-trigger"
+  <div
+    class="OutsideClick PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -144,7 +144,7 @@ exports[`Popover component
     >
       Open Popup
     </button>
-  </span>
+  </div>
   <div
     class="Popover"
     data-layer="true"
@@ -160,8 +160,8 @@ exports[`Popover component
   appendToBody: false, trigger: "[ReactNode]", customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}, open: true, verticalOffset: 10, onToggle: "[Function]", position: "top-end"
  1`] = `
 <DocumentFragment>
-  <span
-    class="PopperWrapper-trigger"
+  <div
+    class="OutsideClick PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -170,7 +170,7 @@ exports[`Popover component
     >
       Open Popup
     </button>
-  </span>
+  </div>
   <div
     class="Popover"
     data-layer="true"
@@ -186,8 +186,8 @@ exports[`Popover component
   appendToBody: false, trigger: "[ReactNode]", customStyle: {"width":{"required":true,"value":"150px"},"height":{"required":true,"value":"150px"}}, open: true, verticalOffset: 10, onToggle: "[Function]", position: "top-start"
  1`] = `
 <DocumentFragment>
-  <span
-    class="PopperWrapper-trigger"
+  <div
+    class="OutsideClick PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -196,7 +196,7 @@ exports[`Popover component
     >
       Open Popup
     </button>
-  </span>
+  </div>
   <div
     class="Popover"
     data-layer="true"

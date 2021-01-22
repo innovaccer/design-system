@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
-import Dropdown, { DropdownProps as Props } from '../Dropdown';
+import { Dropdown } from '@/index';
+import { DropdownProps as Props } from '@/index.type';
 import { storyOptions, storyWrapOptions, iconOptions, subInfoOptions, iconWithSubinfoOptions } from '../__stories__/Options';
 
 const size = ['tiny', 'regular'];
