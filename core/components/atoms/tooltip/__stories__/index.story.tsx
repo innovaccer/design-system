@@ -11,10 +11,12 @@ export const all = () => {
     'bottom'
   );
   const appendToBody = boolean('appendToBody', true);
+  const hoverable = boolean('hoverable', false);
   const tooltip = text('tooltip', 'An awesome tooltip');
 
   const options = {
     tooltip,
+    hoverable,
     position,
     appendToBody
   };
