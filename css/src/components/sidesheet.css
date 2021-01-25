@@ -1,6 +1,6 @@
 @keyframes sidesheet-open {
   from {
-    right: 20px;
+    right: -100%;
     opacity: 0;
   }
   to {
@@ -15,7 +15,7 @@
     opacity: 100;
   }
   to {
-    right: 20px;
+    right: -100%;
     opacity: 0;
   }
 }
