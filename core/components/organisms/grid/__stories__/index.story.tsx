@@ -102,7 +102,7 @@ export const all = () => {
         height: '350px',
       }}
     >
-      <Card className="h-100">
+      <Card className="h-100 overflow-hidden">
         <Grid
           schema={applySchema ? schema : undefined}
           data={applyData ? data : undefined}
