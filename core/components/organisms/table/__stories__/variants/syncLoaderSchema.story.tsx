@@ -49,7 +49,7 @@ export const syncLoaderSchema = () => {
         // overflow: 'hidden'
       }}
     >
-      <Card className="h-100">
+      <Card className="h-100 overflow-hidden">
         <Table
           loading={loading}
           error={error}

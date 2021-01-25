@@ -1,14 +1,12 @@
 .Table-container {
   display: flex;
   height: 100%;
-  /* overflow: hidden; */
 }
 
 .Table-filters {
   box-sizing: border-box;
   display: flex;
   flex-shrink: 0;
-  /* background: var(--secondary); */
 }
 
 .Table-filters--vertical {

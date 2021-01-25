@@ -666,7 +666,7 @@ import './style.css';
       return (
         <div className="Table-container">
           <div style={{ width: showVerticalFilters ? 'calc(100% - var(--spacing-9))' : '100%' }}>
-            <Card className="Table">
+            <Card className="Table overflow-hidden">
               <div className="Table-header">
                 <Header
                   {...this.state}

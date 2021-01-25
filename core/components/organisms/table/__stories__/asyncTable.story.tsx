@@ -13,7 +13,7 @@ export const asyncTable = () => {
         height: '350px',
       }}
     >
-      <Card className="h-100">
+      <Card className="h-100 overflow-hidden">
         <Table
           loaderSchema={loaderSchema}
           fetchData={fetchData}
@@ -256,7 +256,7 @@ const customCode = `
         height: '350px',
       }}
     >
-      <Card className="h-100">
+      <Card className="h-100 overflow-hidden">
         <Table
           loaderSchema={loaderSchema}
           fetchData={fetchData}

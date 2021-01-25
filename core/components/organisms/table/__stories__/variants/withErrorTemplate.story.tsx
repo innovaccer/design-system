@@ -138,7 +138,7 @@ const customCode = `
         height: '350px',
       }}
     >
-      <Card className="h-100">
+      <Card className="h-100 overflow-hidden">
         <Table
           schema={schema}
           error={true}
