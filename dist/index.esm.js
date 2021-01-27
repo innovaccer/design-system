@@ -1,14 +1,14 @@
 
   /**
-   * Generated on: 1610467748049 
+   * Generated on: 1611758177535 
    *      Package: @innovaccer/design-system
-   *      Version: v1.5.1-1
+   *      Version: v1.6.0-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
 
     
-import React, { createElement, Component, createRef, cloneElement, useState as useState$2, useEffect as useEffect$1, forwardRef, useRef, useImperativeHandle, Fragment as Fragment$1, Children, PureComponent, isValidElement } from 'react';
+import React, { createElement, Component, createRef, cloneElement, useState as useState$2, useEffect as useEffect$1, forwardRef, useRef, useImperativeHandle, Fragment as Fragment$1, Children, PureComponent, isValidElement, useCallback } from 'react';
 import { findDOMNode, createPortal } from 'react-dom';
 
 function _typeof(obj) {
@@ -726,10 +726,7 @@ var src = functionBind.call(Function.call, Object.prototype.hasOwnProperty);
 
 /* globals
 	AggregateError,
-	Atomics,
-	FinalizationRegistry,
 	SharedArrayBuffer,
-	WeakRef,
 */
 
 var undefined$1;
@@ -741,8 +738,7 @@ var $TypeError = TypeError;
 // eslint-disable-next-line consistent-return
 var getEvalledConstructor = function (expressionSyntax) {
 	try {
-		// eslint-disable-next-line no-new-func
-		return Function('"use strict"; return (' + expressionSyntax + ').constructor;')();
+		return $Function('"use strict"; return (' + expressionSyntax + ').constructor;')();
 	} catch (e) {}
 };
 
@@ -779,9 +775,7 @@ var hasSymbols$1 = hasSymbols();
 
 var getProto = Object.getPrototypeOf || function (x) { return x.__proto__; }; // eslint-disable-line no-proto
 
-var asyncGenFunction = getEvalledConstructor('async function* () {}');
-var asyncGenFunctionPrototype = asyncGenFunction ? asyncGenFunction.prototype : undefined$1;
-var asyncGenPrototype = asyncGenFunctionPrototype ? asyncGenFunctionPrototype.prototype : undefined$1;
+var needsEval = {};
 
 var TypedArray = typeof Uint8Array === 'undefined' ? undefined$1 : getProto(Uint8Array);
 
@@ -791,10 +785,10 @@ var INTRINSICS = {
 	'%ArrayBuffer%': typeof ArrayBuffer === 'undefined' ? undefined$1 : ArrayBuffer,
 	'%ArrayIteratorPrototype%': hasSymbols$1 ? getProto([][Symbol.iterator]()) : undefined$1,
 	'%AsyncFromSyncIteratorPrototype%': undefined$1,
-	'%AsyncFunction%': getEvalledConstructor('async function () {}'),
-	'%AsyncGenerator%': asyncGenFunctionPrototype,
-	'%AsyncGeneratorFunction%': asyncGenFunction,
-	'%AsyncIteratorPrototype%': asyncGenPrototype ? getProto(asyncGenPrototype) : undefined$1,
+	'%AsyncFunction%': needsEval,
+	'%AsyncGenerator%': needsEval,
+	'%AsyncGeneratorFunction%': needsEval,
+	'%AsyncIteratorPrototype%': needsEval,
 	'%Atomics%': typeof Atomics === 'undefined' ? undefined$1 : Atomics,
 	'%BigInt%': typeof BigInt === 'undefined' ? undefined$1 : BigInt,
 	'%Boolean%': Boolean,
@@ -811,7 +805,7 @@ var INTRINSICS = {
 	'%Float64Array%': typeof Float64Array === 'undefined' ? undefined$1 : Float64Array,
 	'%FinalizationRegistry%': typeof FinalizationRegistry === 'undefined' ? undefined$1 : FinalizationRegistry,
 	'%Function%': $Function,
-	'%GeneratorFunction%': getEvalledConstructor('function* () {}'),
+	'%GeneratorFunction%': needsEval,
 	'%Int8Array%': typeof Int8Array === 'undefined' ? undefined$1 : Int8Array,
 	'%Int16Array%': typeof Int16Array === 'undefined' ? undefined$1 : Int16Array,
 	'%Int32Array%': typeof Int32Array === 'undefined' ? undefined$1 : Int32Array,
@@ -850,6 +844,31 @@ var INTRINSICS = {
 	'%WeakMap%': typeof WeakMap === 'undefined' ? undefined$1 : WeakMap,
 	'%WeakRef%': typeof WeakRef === 'undefined' ? undefined$1 : WeakRef,
 	'%WeakSet%': typeof WeakSet === 'undefined' ? undefined$1 : WeakSet
+};
+
+var doEval = function doEval(name) {
+	var value;
+	if (name === '%AsyncFunction%') {
+		value = getEvalledConstructor('async function () {}');
+	} else if (name === '%GeneratorFunction%') {
+		value = getEvalledConstructor('function* () {}');
+	} else if (name === '%AsyncGeneratorFunction%') {
+		value = getEvalledConstructor('async function* () {}');
+	} else if (name === '%AsyncGenerator%') {
+		var fn = doEval('%AsyncGeneratorFunction%');
+		if (fn) {
+			value = fn.prototype;
+		}
+	} else if (name === '%AsyncIteratorPrototype%') {
+		var gen = doEval('%AsyncGenerator%');
+		if (gen) {
+			value = getProto(gen.prototype);
+		}
+	}
+
+	INTRINSICS[name] = value;
+
+	return value;
 };
 
 var LEGACY_ALIASES = {
@@ -942,6 +961,9 @@ var getBaseIntrinsic = function getBaseIntrinsic(name, allowMissing) {
 
 	if (src(INTRINSICS, intrinsicName)) {
 		var value = INTRINSICS[intrinsicName];
+		if (value === needsEval) {
+			value = doEval(intrinsicName);
+		}
 		if (typeof value === 'undefined' && !allowMissing) {
 			throw new $TypeError('intrinsic ' + name + ' exists, but is not available. Please file an issue!');
 		}
@@ -1084,7 +1106,7 @@ if ($defineProperty) {
 	module.exports.apply = applyBind;
 }
 });
-var callBind_1 = callBind.apply;
+callBind.apply;
 
 var $indexOf = callBind(getIntrinsic('String.prototype.indexOf'));
 
@@ -1282,268 +1304,12 @@ var isRegex = hasToStringTag$1
 		return toStr$4.call(value) === regexClass;
 	};
 
-/* globals
-	Atomics,
-	SharedArrayBuffer,
-*/
-
-var undefined$2;
-
-var $TypeError$1 = TypeError;
-
-var $gOPD$1 = Object.getOwnPropertyDescriptor;
-if ($gOPD$1) {
-	try {
-		$gOPD$1({}, '');
-	} catch (e) {
-		$gOPD$1 = null; // this is IE 8, which has a broken gOPD
-	}
-}
-
-var throwTypeError$1 = function () { throw new $TypeError$1(); };
-var ThrowTypeError$1 = $gOPD$1
-	? (function () {
-		try {
-			// eslint-disable-next-line no-unused-expressions, no-caller, no-restricted-properties
-			arguments.callee; // IE 8 does not throw here
-			return throwTypeError$1;
-		} catch (calleeThrows) {
-			try {
-				// IE 8 throws on Object.getOwnPropertyDescriptor(arguments, '')
-				return $gOPD$1(arguments, 'callee').get;
-			} catch (gOPDthrows) {
-				return throwTypeError$1;
-			}
-		}
-	}())
-	: throwTypeError$1;
-
-var hasSymbols$4 = hasSymbols();
-
-var getProto$1 = Object.getPrototypeOf || function (x) { return x.__proto__; }; // eslint-disable-line no-proto
-var generatorFunction =  undefined$2;
-var asyncFunction =  undefined$2;
-var asyncGenFunction$1 =  undefined$2;
-
-var TypedArray$1 = typeof Uint8Array === 'undefined' ? undefined$2 : getProto$1(Uint8Array);
-
-var INTRINSICS$1 = {
-	'%Array%': Array,
-	'%ArrayBuffer%': typeof ArrayBuffer === 'undefined' ? undefined$2 : ArrayBuffer,
-	'%ArrayBufferPrototype%': typeof ArrayBuffer === 'undefined' ? undefined$2 : ArrayBuffer.prototype,
-	'%ArrayIteratorPrototype%': hasSymbols$4 ? getProto$1([][Symbol.iterator]()) : undefined$2,
-	'%ArrayPrototype%': Array.prototype,
-	'%ArrayProto_entries%': Array.prototype.entries,
-	'%ArrayProto_forEach%': Array.prototype.forEach,
-	'%ArrayProto_keys%': Array.prototype.keys,
-	'%ArrayProto_values%': Array.prototype.values,
-	'%AsyncFromSyncIteratorPrototype%': undefined$2,
-	'%AsyncFunction%': asyncFunction,
-	'%AsyncFunctionPrototype%':  undefined$2,
-	'%AsyncGenerator%':  undefined$2,
-	'%AsyncGeneratorFunction%': asyncGenFunction$1,
-	'%AsyncGeneratorPrototype%':  undefined$2,
-	'%AsyncIteratorPrototype%':  undefined$2,
-	'%Atomics%': typeof Atomics === 'undefined' ? undefined$2 : Atomics,
-	'%Boolean%': Boolean,
-	'%BooleanPrototype%': Boolean.prototype,
-	'%DataView%': typeof DataView === 'undefined' ? undefined$2 : DataView,
-	'%DataViewPrototype%': typeof DataView === 'undefined' ? undefined$2 : DataView.prototype,
-	'%Date%': Date,
-	'%DatePrototype%': Date.prototype,
-	'%decodeURI%': decodeURI,
-	'%decodeURIComponent%': decodeURIComponent,
-	'%encodeURI%': encodeURI,
-	'%encodeURIComponent%': encodeURIComponent,
-	'%Error%': Error,
-	'%ErrorPrototype%': Error.prototype,
-	'%eval%': eval, // eslint-disable-line no-eval
-	'%EvalError%': EvalError,
-	'%EvalErrorPrototype%': EvalError.prototype,
-	'%Float32Array%': typeof Float32Array === 'undefined' ? undefined$2 : Float32Array,
-	'%Float32ArrayPrototype%': typeof Float32Array === 'undefined' ? undefined$2 : Float32Array.prototype,
-	'%Float64Array%': typeof Float64Array === 'undefined' ? undefined$2 : Float64Array,
-	'%Float64ArrayPrototype%': typeof Float64Array === 'undefined' ? undefined$2 : Float64Array.prototype,
-	'%Function%': Function,
-	'%FunctionPrototype%': Function.prototype,
-	'%Generator%':  undefined$2,
-	'%GeneratorFunction%': generatorFunction,
-	'%GeneratorPrototype%':  undefined$2,
-	'%Int8Array%': typeof Int8Array === 'undefined' ? undefined$2 : Int8Array,
-	'%Int8ArrayPrototype%': typeof Int8Array === 'undefined' ? undefined$2 : Int8Array.prototype,
-	'%Int16Array%': typeof Int16Array === 'undefined' ? undefined$2 : Int16Array,
-	'%Int16ArrayPrototype%': typeof Int16Array === 'undefined' ? undefined$2 : Int8Array.prototype,
-	'%Int32Array%': typeof Int32Array === 'undefined' ? undefined$2 : Int32Array,
-	'%Int32ArrayPrototype%': typeof Int32Array === 'undefined' ? undefined$2 : Int32Array.prototype,
-	'%isFinite%': isFinite,
-	'%isNaN%': isNaN,
-	'%IteratorPrototype%': hasSymbols$4 ? getProto$1(getProto$1([][Symbol.iterator]())) : undefined$2,
-	'%JSON%': typeof JSON === 'object' ? JSON : undefined$2,
-	'%JSONParse%': typeof JSON === 'object' ? JSON.parse : undefined$2,
-	'%Map%': typeof Map === 'undefined' ? undefined$2 : Map,
-	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols$4 ? undefined$2 : getProto$1(new Map()[Symbol.iterator]()),
-	'%MapPrototype%': typeof Map === 'undefined' ? undefined$2 : Map.prototype,
-	'%Math%': Math,
-	'%Number%': Number,
-	'%NumberPrototype%': Number.prototype,
-	'%Object%': Object,
-	'%ObjectPrototype%': Object.prototype,
-	'%ObjProto_toString%': Object.prototype.toString,
-	'%ObjProto_valueOf%': Object.prototype.valueOf,
-	'%parseFloat%': parseFloat,
-	'%parseInt%': parseInt,
-	'%Promise%': typeof Promise === 'undefined' ? undefined$2 : Promise,
-	'%PromisePrototype%': typeof Promise === 'undefined' ? undefined$2 : Promise.prototype,
-	'%PromiseProto_then%': typeof Promise === 'undefined' ? undefined$2 : Promise.prototype.then,
-	'%Promise_all%': typeof Promise === 'undefined' ? undefined$2 : Promise.all,
-	'%Promise_reject%': typeof Promise === 'undefined' ? undefined$2 : Promise.reject,
-	'%Promise_resolve%': typeof Promise === 'undefined' ? undefined$2 : Promise.resolve,
-	'%Proxy%': typeof Proxy === 'undefined' ? undefined$2 : Proxy,
-	'%RangeError%': RangeError,
-	'%RangeErrorPrototype%': RangeError.prototype,
-	'%ReferenceError%': ReferenceError,
-	'%ReferenceErrorPrototype%': ReferenceError.prototype,
-	'%Reflect%': typeof Reflect === 'undefined' ? undefined$2 : Reflect,
-	'%RegExp%': RegExp,
-	'%RegExpPrototype%': RegExp.prototype,
-	'%Set%': typeof Set === 'undefined' ? undefined$2 : Set,
-	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols$4 ? undefined$2 : getProto$1(new Set()[Symbol.iterator]()),
-	'%SetPrototype%': typeof Set === 'undefined' ? undefined$2 : Set.prototype,
-	'%SharedArrayBuffer%': typeof SharedArrayBuffer === 'undefined' ? undefined$2 : SharedArrayBuffer,
-	'%SharedArrayBufferPrototype%': typeof SharedArrayBuffer === 'undefined' ? undefined$2 : SharedArrayBuffer.prototype,
-	'%String%': String,
-	'%StringIteratorPrototype%': hasSymbols$4 ? getProto$1(''[Symbol.iterator]()) : undefined$2,
-	'%StringPrototype%': String.prototype,
-	'%Symbol%': hasSymbols$4 ? Symbol : undefined$2,
-	'%SymbolPrototype%': hasSymbols$4 ? Symbol.prototype : undefined$2,
-	'%SyntaxError%': SyntaxError,
-	'%SyntaxErrorPrototype%': SyntaxError.prototype,
-	'%ThrowTypeError%': ThrowTypeError$1,
-	'%TypedArray%': TypedArray$1,
-	'%TypedArrayPrototype%': TypedArray$1 ? TypedArray$1.prototype : undefined$2,
-	'%TypeError%': $TypeError$1,
-	'%TypeErrorPrototype%': $TypeError$1.prototype,
-	'%Uint8Array%': typeof Uint8Array === 'undefined' ? undefined$2 : Uint8Array,
-	'%Uint8ArrayPrototype%': typeof Uint8Array === 'undefined' ? undefined$2 : Uint8Array.prototype,
-	'%Uint8ClampedArray%': typeof Uint8ClampedArray === 'undefined' ? undefined$2 : Uint8ClampedArray,
-	'%Uint8ClampedArrayPrototype%': typeof Uint8ClampedArray === 'undefined' ? undefined$2 : Uint8ClampedArray.prototype,
-	'%Uint16Array%': typeof Uint16Array === 'undefined' ? undefined$2 : Uint16Array,
-	'%Uint16ArrayPrototype%': typeof Uint16Array === 'undefined' ? undefined$2 : Uint16Array.prototype,
-	'%Uint32Array%': typeof Uint32Array === 'undefined' ? undefined$2 : Uint32Array,
-	'%Uint32ArrayPrototype%': typeof Uint32Array === 'undefined' ? undefined$2 : Uint32Array.prototype,
-	'%URIError%': URIError,
-	'%URIErrorPrototype%': URIError.prototype,
-	'%WeakMap%': typeof WeakMap === 'undefined' ? undefined$2 : WeakMap,
-	'%WeakMapPrototype%': typeof WeakMap === 'undefined' ? undefined$2 : WeakMap.prototype,
-	'%WeakSet%': typeof WeakSet === 'undefined' ? undefined$2 : WeakSet,
-	'%WeakSetPrototype%': typeof WeakSet === 'undefined' ? undefined$2 : WeakSet.prototype
-};
-
-
-var $replace$1 = functionBind.call(Function.call, String.prototype.replace);
-
-/* adapted from https://github.com/lodash/lodash/blob/4.17.15/dist/lodash.js#L6735-L6744 */
-var rePropName$1 = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g;
-var reEscapeChar$1 = /\\(\\)?/g; /** Used to match backslashes in property paths. */
-var stringToPath$1 = function stringToPath(string) {
-	var result = [];
-	$replace$1(string, rePropName$1, function (match, number, quote, subString) {
-		result[result.length] = quote ? $replace$1(subString, reEscapeChar$1, '$1') : (number || match);
-	});
-	return result;
-};
-/* end adaptation */
-
-var getBaseIntrinsic$1 = function getBaseIntrinsic(name, allowMissing) {
-	if (!(name in INTRINSICS$1)) {
-		throw new SyntaxError('intrinsic ' + name + ' does not exist!');
-	}
-
-	// istanbul ignore if // hopefully this is impossible to test :-)
-	if (typeof INTRINSICS$1[name] === 'undefined' && !allowMissing) {
-		throw new $TypeError$1('intrinsic ' + name + ' exists, but is not available. Please file an issue!');
-	}
-
-	return INTRINSICS$1[name];
-};
-
-var GetIntrinsic = function GetIntrinsic(name, allowMissing) {
-	if (typeof name !== 'string' || name.length === 0) {
-		throw new TypeError('intrinsic name must be a non-empty string');
-	}
-	if (arguments.length > 1 && typeof allowMissing !== 'boolean') {
-		throw new TypeError('"allowMissing" argument must be a boolean');
-	}
-
-	var parts = stringToPath$1(name);
-
-	var value = getBaseIntrinsic$1('%' + (parts.length > 0 ? parts[0] : '') + '%', allowMissing);
-	for (var i = 1; i < parts.length; i += 1) {
-		if (value != null) {
-			if ($gOPD$1 && (i + 1) >= parts.length) {
-				var desc = $gOPD$1(value, parts[i]);
-				if (!allowMissing && !(parts[i] in value)) {
-					throw new $TypeError$1('base intrinsic for ' + name + ' exists, but the property is not available.');
-				}
-				// By convention, when a data property is converted to an accessor
-				// property to emulate a data property that does not suffer from
-				// the override mistake, that accessor's getter is marked with
-				// an `originalValue` property. Here, when we detect this, we
-				// uphold the illusion by pretending to see that original data
-				// property, i.e., returning the value rather than the getter
-				// itself.
-				value = desc && 'get' in desc && !('originalValue' in desc.get) ? desc.get : value[parts[i]];
-			} else {
-				value = value[parts[i]];
-			}
-		}
-	}
-	return value;
-};
-
-var callBind$1 = createCommonjsModule(function (module) {
-
-
-
-
-
-var $apply = GetIntrinsic('%Function.prototype.apply%');
-var $call = GetIntrinsic('%Function.prototype.call%');
-var $reflectApply = GetIntrinsic('%Reflect.apply%', true) || functionBind.call($call, $apply);
-
-var $defineProperty = GetIntrinsic('%Object.defineProperty%', true);
-
-if ($defineProperty) {
-	try {
-		$defineProperty({}, 'a', { value: 1 });
-	} catch (e) {
-		// IE 8 has a broken defineProperty
-		$defineProperty = null;
-	}
-}
-
-module.exports = function callBind() {
-	return $reflectApply(functionBind, $call, arguments);
-};
-
-var applyBind = function applyBind() {
-	return $reflectApply(functionBind, $apply, arguments);
-};
-
-if ($defineProperty) {
-	$defineProperty(module.exports, 'apply', { value: applyBind });
-} else {
-	module.exports.apply = applyBind;
-}
-});
-var callBind_1$1 = callBind$1.apply;
-
 var $Object = Object;
-var $TypeError$2 = TypeError;
+var $TypeError$1 = TypeError;
 
 var implementation$3 = function flags() {
 	if (this != null && this !== $Object(this)) {
-		throw new $TypeError$2('RegExp.prototype.flags getter called on non-object');
+		throw new $TypeError$1('RegExp.prototype.flags getter called on non-object');
 	}
 	var result = '';
 	if (this.global) {
@@ -1568,15 +1334,15 @@ var implementation$3 = function flags() {
 };
 
 var supportsDescriptors$1 = defineProperties_1.supportsDescriptors;
-var $gOPD$2 = Object.getOwnPropertyDescriptor;
-var $TypeError$3 = TypeError;
+var $gOPD$1 = Object.getOwnPropertyDescriptor;
+var $TypeError$2 = TypeError;
 
 var polyfill$2 = function getPolyfill() {
 	if (!supportsDescriptors$1) {
-		throw new $TypeError$3('RegExp.prototype.flags requires a true ES5 environment that supports property descriptors');
+		throw new $TypeError$2('RegExp.prototype.flags requires a true ES5 environment that supports property descriptors');
 	}
 	if ((/a/mig).flags === 'gim') {
-		var descriptor = $gOPD$2(RegExp.prototype, 'flags');
+		var descriptor = $gOPD$1(RegExp.prototype, 'flags');
 		if (descriptor && typeof descriptor.get === 'function' && typeof (/a/).dotAll === 'boolean') {
 			return descriptor.get;
 		}
@@ -1589,15 +1355,15 @@ var supportsDescriptors$2 = defineProperties_1.supportsDescriptors;
 var gOPD$1 = Object.getOwnPropertyDescriptor;
 var defineProperty$2 = Object.defineProperty;
 var TypeErr = TypeError;
-var getProto$2 = Object.getPrototypeOf;
+var getProto$1 = Object.getPrototypeOf;
 var regex = /a/;
 
 var shim$1 = function shimFlags() {
-	if (!supportsDescriptors$2 || !getProto$2) {
+	if (!supportsDescriptors$2 || !getProto$1) {
 		throw new TypeErr('RegExp.prototype.flags requires a true ES5 environment that supports property descriptors');
 	}
 	var polyfill = polyfill$2();
-	var proto = getProto$2(regex);
+	var proto = getProto$1(regex);
 	var descriptor = gOPD$1(proto, 'flags');
 	if (!descriptor || descriptor.get !== polyfill) {
 		defineProperty$2(proto, 'flags', {
@@ -1609,7 +1375,7 @@ var shim$1 = function shimFlags() {
 	return polyfill;
 };
 
-var flagsBound = callBind$1(implementation$3);
+var flagsBound = callBind(implementation$3);
 
 defineProperties_1(flagsBound, {
 	getPolyfill: polyfill$2,
@@ -4408,36 +4174,36 @@ var reactIs_production_min = {
 
 var reactIs_development = createCommonjsModule(function (module, exports) {
 });
-var reactIs_development_1 = reactIs_development.AsyncMode;
-var reactIs_development_2 = reactIs_development.ConcurrentMode;
-var reactIs_development_3 = reactIs_development.ContextConsumer;
-var reactIs_development_4 = reactIs_development.ContextProvider;
-var reactIs_development_5 = reactIs_development.Element;
-var reactIs_development_6 = reactIs_development.ForwardRef;
-var reactIs_development_7 = reactIs_development.Fragment;
-var reactIs_development_8 = reactIs_development.Lazy;
-var reactIs_development_9 = reactIs_development.Memo;
-var reactIs_development_10 = reactIs_development.Portal;
-var reactIs_development_11 = reactIs_development.Profiler;
-var reactIs_development_12 = reactIs_development.StrictMode;
-var reactIs_development_13 = reactIs_development.Suspense;
-var reactIs_development_14 = reactIs_development.isAsyncMode;
-var reactIs_development_15 = reactIs_development.isConcurrentMode;
-var reactIs_development_16 = reactIs_development.isContextConsumer;
-var reactIs_development_17 = reactIs_development.isContextProvider;
-var reactIs_development_18 = reactIs_development.isElement;
-var reactIs_development_19 = reactIs_development.isForwardRef;
-var reactIs_development_20 = reactIs_development.isFragment;
-var reactIs_development_21 = reactIs_development.isLazy;
-var reactIs_development_22 = reactIs_development.isMemo;
-var reactIs_development_23 = reactIs_development.isPortal;
-var reactIs_development_24 = reactIs_development.isProfiler;
-var reactIs_development_25 = reactIs_development.isStrictMode;
-var reactIs_development_26 = reactIs_development.isSuspense;
-var reactIs_development_27 = reactIs_development.isValidElementType;
-var reactIs_development_28 = reactIs_development.typeOf;
+reactIs_development.AsyncMode;
+reactIs_development.ConcurrentMode;
+reactIs_development.ContextConsumer;
+reactIs_development.ContextProvider;
+reactIs_development.Element;
+reactIs_development.ForwardRef;
+reactIs_development.Fragment;
+reactIs_development.Lazy;
+reactIs_development.Memo;
+reactIs_development.Portal;
+reactIs_development.Profiler;
+reactIs_development.StrictMode;
+reactIs_development.Suspense;
+reactIs_development.isAsyncMode;
+reactIs_development.isConcurrentMode;
+reactIs_development.isContextConsumer;
+reactIs_development.isContextProvider;
+reactIs_development.isElement;
+reactIs_development.isForwardRef;
+reactIs_development.isFragment;
+reactIs_development.isLazy;
+reactIs_development.isMemo;
+reactIs_development.isPortal;
+reactIs_development.isProfiler;
+reactIs_development.isStrictMode;
+reactIs_development.isSuspense;
+reactIs_development.isValidElementType;
+reactIs_development.typeOf;
 
-var reactIs = createCommonjsModule(function (module) {
+createCommonjsModule(function (module) {
 
 {
   module.exports = reactIs_production_min;
@@ -4506,7 +4272,7 @@ function shouldUseNative() {
 	}
 }
 
-var objectAssign = shouldUseNative() ? Object.assign : function (target, source) {
+shouldUseNative() ? Object.assign : function (target, source) {
 	var from;
 	var to = toObject(target);
 	var symbols;
@@ -4544,7 +4310,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 var ReactPropTypesSecret_1 = ReactPropTypesSecret;
 
-var has$1 = Function.call.bind(Object.prototype.hasOwnProperty);
+Function.call.bind(Object.prototype.hasOwnProperty);
 
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
@@ -4636,7 +4402,7 @@ exports.__esModule = true;
 
 
 
-var _react2 = _interopRequireDefault(React);
+_interopRequireDefault(React);
 
 
 
@@ -4648,7 +4414,7 @@ var _gud2 = _interopRequireDefault(gud);
 
 
 
-var _warning2 = _interopRequireDefault(warning_1);
+_interopRequireDefault(warning_1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5209,14 +4975,6 @@ var classnames = createCommonjsModule(function (module) {
 }());
 });
 
-var Offsets;
-
-(function (Offsets) {
-  Offsets["Small"] = "2px";
-  Offsets["Medium"] = "4px";
-  Offsets["Large"] = "8px";
-})(Offsets || (Offsets = {}));
-
 var PopperWrapper = /*#__PURE__*/function (_React$Component) {
   _inherits(PopperWrapper, _React$Component);
 
@@ -5233,78 +4991,33 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_this), "popupRef", void 0);
 
+    _defineProperty(_assertThisInitialized(_this), "hoverableDelay", void 0);
+
     _defineProperty(_assertThisInitialized(_this), "_timer", void 0);
 
-    _defineProperty(_assertThisInitialized(_this), "handleMouseLeave", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "_throttleWait", void 0);
+
+    _defineProperty(_assertThisInitialized(_this), "offsetMapping", void 0);
+
+    _defineProperty(_assertThisInitialized(_this), "togglePopper", function (type, newValue) {
       var _this$props = _this.props,
-          _this$props$hoverable = _this$props.hoverable,
-          hoverable = _this$props$hoverable === void 0 ? false : _this$props$hoverable,
+          open = _this$props.open,
           onToggle = _this$props.onToggle;
-
-      if (hoverable) {
-        clearTimeout(_this._timer);
-        _this._timer = window.setTimeout(function () {
-          _this.setState({
-            open: false
-          });
-
-          if (_this.props.children.props.onMouseLeave) {
-            _this.props.children.props.onMouseLeave(event);
-          }
-        }, _this.state.mouseLeaveDelay);
-      } else {
-        onToggle(false, 'mouseLeave');
-
-        if (_this.props.children.props.onMouseLeave) {
-          _this.props.children.props.onMouseLeave(event);
-        }
-      }
+      onToggle(newValue === undefined ? !open : newValue, type);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handleMouseEnter", function (event) {
-      var _this$props2 = _this.props,
-          _this$props2$hoverabl = _this$props2.hoverable,
-          hoverable = _this$props2$hoverabl === void 0 ? false : _this$props2$hoverabl,
-          onToggle = _this$props2.onToggle;
-
-      if (hoverable) {
-        clearTimeout(_this._timer);
-        _this._timer = window.setTimeout(function () {
-          _this.setState({
-            open: true
-          });
-
-          if (_this.props.children.props.onMouseEnter) {
-            _this.props.children.props.onMouseEnter(event);
-          }
-        }, _this.state.mouseEnterDelay);
-      } else {
-        onToggle(true, 'mouseEnter');
-
-        if (_this.props.children.props.onMouseEnter) {
-          _this.props.children.props.onMouseEnter(event);
-        }
-      }
+    _defineProperty(_assertThisInitialized(_this), "findDOMNode", function (ref) {
+      return findDOMNode(ref.current);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "togglePopper", function (type) {
-      var _this$props3 = _this.props,
-          _this$props3$open = _this$props3.open,
-          open = _this$props3$open === void 0 ? false : _this$props3$open,
-          onToggle = _this$props3.onToggle;
-      onToggle(!open, type);
+    _defineProperty(_assertThisInitialized(_this), "doesEventContainsElement", function (event, ref) {
+      var el = _this.findDOMNode(ref);
+
+      return el && el.contains(event.target);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "doesNodeContainClick", function (event) {
-      if (!(_this.findDOMNode(_this.popupRef).contains(event.target) || _this.findDOMNode(_this.triggerRef).contains(event.target))) {
-        _this.togglePopper('outsideClick');
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "getUpdatedStyle", function (oldStyle, placement) {
-      var offset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'Medium';
-      var _this$props$style = _this.props.style,
-          style = _this$props$style === void 0 ? {} : _this$props$style;
+    _defineProperty(_assertThisInitialized(_this), "getUpdatedStyle", function (oldStyle, placement, offset) {
+      var style = _this.props.style;
 
       var newStyle = _objectSpread2(_objectSpread2({}, style), oldStyle);
 
@@ -5312,81 +5025,139 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
 
       switch (position) {
         case 'top':
-          newStyle.marginBottom = Offsets[offset];
+          newStyle.marginBottom = _this.offsetMapping[offset];
           break;
 
         case 'bottom':
-          newStyle.marginTop = Offsets[offset];
+          newStyle.marginTop = _this.offsetMapping[offset];
           break;
 
         case 'left':
-          newStyle.marginRight = Offsets[offset];
+          newStyle.marginRight = _this.offsetMapping[offset];
           break;
 
         case 'right':
-          newStyle.marginLeft = Offsets[offset];
+          newStyle.marginLeft = _this.offsetMapping[offset];
           break;
       }
 
       return newStyle;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "findDOMNode", function (ref) {
-      return findDOMNode(ref.current);
-    });
-
-    _this.state = {
-      open: props.open || false,
-      mouseLeaveDelay: 50,
-      mouseEnterDelay: 0
+    _this.hoverableDelay = 100;
+    _this.offsetMapping = {
+      small: '2px',
+      medium: '4px',
+      large: '8px'
     };
     _this.triggerRef = /*#__PURE__*/createRef();
     _this.popupRef = /*#__PURE__*/createRef();
+    _this.getPopperChildren = _this.getPopperChildren.bind(_assertThisInitialized(_this));
+    _this.mouseMoveHandler = _this.mouseMoveHandler.bind(_assertThisInitialized(_this));
+    _this.handleMouseEnter = _this.handleMouseEnter.bind(_assertThisInitialized(_this));
+    _this.handleMouseLeave = _this.handleMouseLeave.bind(_assertThisInitialized(_this));
+    _this.boundaryScrollHandler = _this.boundaryScrollHandler.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(PopperWrapper, [{
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      clearTimeout(this._timer);
-      document.removeEventListener('mousedown', this.doesNodeContainClick);
-    }
-  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      var _this$props4 = this.props,
-          _this$props4$on = _this$props4.on,
-          on = _this$props4$on === void 0 ? 'click' : _this$props4$on,
-          _this$props4$closeOnB = _this$props4.closeOnBackdropClick,
-          closeOnBackdropClick = _this$props4$closeOnB === void 0 ? true : _this$props4$closeOnB;
-      var open = this.props.open;
-
-      if (on === 'click' && open && closeOnBackdropClick) {
-        document.addEventListener('mousedown', this.doesNodeContainClick);
-      }
+      this.addBoundaryScrollHandler();
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
-      var _this$props5 = this.props,
-          _this$props5$on = _this$props5.on,
-          on = _this$props5$on === void 0 ? 'click' : _this$props5$on,
-          _this$props5$closeOnB = _this$props5.closeOnBackdropClick,
-          closeOnBackdropClick = _this$props5$closeOnB === void 0 ? true : _this$props5$closeOnB;
-      var open = this.props.open;
-
-      if (prevProps.open !== this.props.open && this.props.open) {
-        var triggerElement = this.findDOMNode(this.triggerRef);
-        var zIndex = this.getZIndexForLayer(triggerElement);
-        this.setState({
-          zIndex: zIndex === undefined ? zIndex : zIndex + 1
-        });
+      if (!prevProps.boundaryElement && this.props.boundaryElement) {
+        this.removeBoundaryScrollHandler();
+        this.addBoundaryScrollHandler();
       }
 
-      if (on === 'click' && open && closeOnBackdropClick) {
-        document.addEventListener('mousedown', this.doesNodeContainClick);
-      } else if (on === 'click' && !open && closeOnBackdropClick) {
-        document.removeEventListener('mousedown', this.doesNodeContainClick);
+      if (prevProps.open !== this.props.open) {
+        this._throttleWait = false;
+
+        if (this.props.open) {
+          var triggerElement = this.findDOMNode(this.triggerRef);
+          var zIndex = this.getZIndexForLayer(triggerElement);
+          this.setState({
+            zIndex: zIndex === undefined ? zIndex : zIndex + 1
+          });
+        }
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.removeBoundaryScrollHandler();
+    }
+  }, {
+    key: "boundaryScrollHandler",
+    value: function boundaryScrollHandler() {
+      var _this$props2 = this.props,
+          open = _this$props2.open,
+          on = _this$props2.on,
+          closeOnScroll = _this$props2.closeOnScroll;
+
+      if (on === 'click' && closeOnScroll) {
+        if (open) {
+          if (!this._throttleWait) {
+            this.togglePopper('onScroll', false);
+            this._throttleWait = true;
+          }
+        }
+      }
+    }
+  }, {
+    key: "addBoundaryScrollHandler",
+    value: function addBoundaryScrollHandler() {
+      if (this.props.boundaryElement) {
+        this.props.boundaryElement.addEventListener('scroll', this.boundaryScrollHandler);
+      }
+    }
+  }, {
+    key: "removeBoundaryScrollHandler",
+    value: function removeBoundaryScrollHandler() {
+      if (this.props.boundaryElement) {
+        this.props.boundaryElement.removeEventListener('scroll', this.boundaryScrollHandler);
+      }
+    }
+  }, {
+    key: "mouseMoveHandler",
+    value: function mouseMoveHandler() {
+      var _this2 = this;
+
+      if (this._timer) clearTimeout(this._timer);
+      this._timer = setTimeout(function () {
+        var onToggle = _this2.props.onToggle;
+        onToggle(false, 'mouseLeave');
+      }, this.hoverableDelay);
+    }
+  }, {
+    key: "handleMouseEnter",
+    value: function handleMouseEnter() {
+      var on = this.props.on;
+
+      if (on === 'hover') {
+        if (this._timer) clearTimeout(this._timer);
+        var onToggle = this.props.onToggle;
+        onToggle(true, 'mouseEnter');
+      }
+    }
+  }, {
+    key: "handleMouseLeave",
+    value: function handleMouseLeave() {
+      var on = this.props.on;
+
+      if (on === 'hover') {
+        var _this$props3 = this.props,
+            hoverable = _this$props3.hoverable,
+            onToggle = _this$props3.onToggle;
+
+        if (hoverable) {
+          this.mouseMoveHandler();
+        } else {
+          onToggle(false, 'mouseLeave');
+        }
       }
     }
   }, {
@@ -5402,9 +5173,13 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "getTriggerElement",
-    value: function getTriggerElement(trigger, ref, on) {
-      var _this2 = this;
+    value: function getTriggerElement(ref) {
+      var _this3 = this;
 
+      var _this$props4 = this.props,
+          trigger = _this$props4.trigger,
+          on = _this$props4.on,
+          triggerClass = _this$props4.triggerClass;
       var options = on === 'hover' ? {
         ref: ref,
         onMouseEnter: this.handleMouseEnter,
@@ -5412,62 +5187,66 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
       } : {
         ref: ref,
         onClick: function onClick() {
-          return _this2.togglePopper('onClick');
+          return _this3.togglePopper('onClick');
         }
       };
-      var triggerClass = this.props.triggerClass;
       var classes = classnames('PopperWrapper-trigger', triggerClass);
-      var element = /*#__PURE__*/cloneElement( /*#__PURE__*/createElement("span", {
-        className: classes
-      }, trigger), options);
-      return element;
+
+      var onOutsideClickHandler = function onOutsideClickHandler(event) {
+        var _this3$props = _this3.props,
+            open = _this3$props.open,
+            closeOnBackdropClick = _this3$props.closeOnBackdropClick;
+
+        if (open && closeOnBackdropClick) {
+          if (!_this3.doesEventContainsElement(event, _this3.popupRef)) {
+            _this3.togglePopper('outsideClick');
+          }
+        }
+      };
+
+      return /*#__PURE__*/createElement(OutsideClick, _extends({
+        className: classes,
+        onOutsideClick: onOutsideClickHandler
+      }, options), trigger);
     }
   }, {
-    key: "getChildrenElement",
-    value: function getChildrenElement(children, ref, placement, style, outOfBoundaries) {
-      var options = this.props.on === 'hover' ? {
+    key: "getPopperChildren",
+    value: function getPopperChildren(_ref) {
+      var ref = _ref.ref,
+          style = _ref.style,
+          placement = _ref.placement,
+          outOfBoundaries = _ref.outOfBoundaries;
+      var _this$props5 = this.props,
+          offset = _this$props5.offset,
+          children = _this$props5.children;
+      var newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
+      var element = /*#__PURE__*/cloneElement(children, {
         ref: ref,
-        style: style,
+        style: newStyle,
+        'data-placement': placement,
+        'data-hide': outOfBoundaries,
         onMouseEnter: this.handleMouseEnter,
-        onMouseLeave: this.handleMouseLeave,
-        'data-placement': placement,
-        'data-hide': outOfBoundaries
-      } : {
-        ref: ref,
-        style: style,
-        'data-placement': placement,
-        'data-hide': outOfBoundaries
-      };
-      var element = /*#__PURE__*/cloneElement(children, options);
+        onMouseLeave: this.handleMouseLeave
+      });
       return element;
     }
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       var _this$props6 = this.props,
-          trigger = _this$props6.trigger,
-          children = _this$props6.children,
           placement = _this$props6.placement,
           appendToBody = _this$props6.appendToBody,
-          _this$props6$on = _this$props6.on,
-          on = _this$props6$on === void 0 ? 'click' : _this$props6$on,
-          offset = _this$props6.offset;
-      var _this$props7 = this.props,
-          open = _this$props7.open,
-          boundaryElement = _this$props7.boundaryElement,
-          hide = _this$props7.hide;
+          open = _this$props6.open,
+          hide = _this$props6.hide,
+          boundaryElement = _this$props6.boundaryElement;
       return /*#__PURE__*/createElement(Manager, null, /*#__PURE__*/createElement(Reference, {
         innerRef: this.triggerRef
-      }, function (_ref) {
-        var ref = _ref.ref;
-        return _this3.getTriggerElement(trigger, ref, on);
-      }), (open || this.state.open) && appendToBody && /*#__PURE__*/createPortal(
-      /*#__PURE__*/
-
-      /* tslint:disable:no-shadowed-variable */
-      createElement(Popper$1, {
+      }, function (_ref2) {
+        var ref = _ref2.ref;
+        return _this4.getTriggerElement(ref);
+      }), open && appendToBody && /*#__PURE__*/createPortal( /*#__PURE__*/createElement(Popper$1, {
         placement: placement,
         innerRef: this.popupRef,
         modifiers: {
@@ -5478,33 +5257,24 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
             enabled: hide
           }
         }
-      }, function (_ref2) {
-        var ref = _ref2.ref,
-            style = _ref2.style,
-            placement = _ref2.placement,
-            outOfBoundaries = _ref2.outOfBoundaries;
-        var newStyle = offset ? _this3.getUpdatedStyle(style, placement, offset) : style;
-        return _this3.getChildrenElement(children, ref, placement, _objectSpread2(_objectSpread2({}, newStyle), {}, {
-          zIndex: _this3.state.zIndex
-        }), outOfBoundaries);
-      }), document.body), (open || this.state.open) && !appendToBody && /*#__PURE__*/createElement(Popper$1, {
+      }, this.getPopperChildren), document.body), open && !appendToBody && /*#__PURE__*/createElement(Popper$1, {
         placement: placement,
         innerRef: this.popupRef
-      }, function (_ref3) {
-        var ref = _ref3.ref,
-            style = _ref3.style,
-            placement = _ref3.placement,
-            outOfBoundaries = _ref3.outOfBoundaries;
-        var newStyle = offset ? _this3.getUpdatedStyle(style, placement, offset) : style;
-        return _this3.getChildrenElement(children, ref, placement, _objectSpread2(_objectSpread2({}, newStyle), {}, {
-          zIndex: _this3.state.zIndex
-        }), outOfBoundaries);
-      }));
+      }, this.getPopperChildren));
     }
   }]);
 
   return PopperWrapper;
 }(Component);
+
+_defineProperty(PopperWrapper, "defaultProps", {
+  on: 'click',
+  offset: 'medium',
+  closeOnBackdropClick: true,
+  hoverable: true,
+  appendToBody: true,
+  style: {}
+});
 
 var colorToHex = function colorToHex(color) {
   return getComputedStyle(document.documentElement).getPropertyValue("--".concat(color));
@@ -5775,6 +5545,14 @@ var extractBaseProps = function extractBaseProps(props) {
   }, {});
   return basePropsObj;
 };
+var filterProps = function filterProps(props, propsList, include) {
+  return Object.entries(props).filter(function (obj) {
+    return include ? propsList.includes(obj[0]) : !propsList.includes(obj[0]);
+  }).reduce(function (acc, curr) {
+    acc[curr[0]] = curr[1];
+    return acc;
+  }, {});
+};
 
 var initialsLength = 2;
 var Avatar = function Avatar(props) {
@@ -5837,73 +5615,6 @@ Avatar.defaultProps = {
   tooltipPosition: 'bottom',
   withTooltip: true,
   size: 'regular'
-};
-
-var Popover = function Popover(props) {
-  var position = props.position,
-      closeOnBackdropClick = props.closeOnBackdropClick,
-      appendToBody = props.appendToBody,
-      on = props.on,
-      customStyle = props.customStyle,
-      dark = props.dark,
-      hoverable = props.hoverable,
-      children = props.children,
-      trigger = props.trigger,
-      triggerClass = props.triggerClass,
-      onToggle = props.onToggle,
-      className = props.className,
-      boundaryElement = props.boundaryElement,
-      hideOnReferenceEscape = props.hideOnReferenceEscape;
-
-  var _React$useState = useState$2(props.open || false),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      open = _React$useState2[0],
-      setOpen = _React$useState2[1];
-
-  useEffect$1(function () {
-    if (onToggle) {
-      if (props.open !== undefined) setOpen(props.open);
-    }
-  }, [props.open]);
-
-  var onToggleFunction = function onToggleFunction(newOpen) {
-    setOpen(newOpen);
-  };
-
-  var classes = classnames(_defineProperty({
-    Popover: true
-  }, 'Popover--dark', dark), className);
-  var PopoverWrapper = /*#__PURE__*/createElement("div", {
-    "data-test": "DesignSystem-Popover",
-    className: classes,
-    "data-layer": true
-  }, children);
-  var popperOptions = {
-    trigger: trigger,
-    boundaryElement: boundaryElement,
-    triggerClass: triggerClass,
-    appendToBody: appendToBody,
-    closeOnBackdropClick: closeOnBackdropClick,
-    on: on,
-    hoverable: hoverable,
-    open: open,
-    hide: hideOnReferenceEscape,
-    style: customStyle,
-    onToggle: onToggle || onToggleFunction,
-    placement: position
-  };
-  return /*#__PURE__*/createElement(PopperWrapper, _extends({}, popperOptions, {
-    offset: "Large"
-  }), PopoverWrapper);
-};
-Popover.displayName = 'Popover';
-Popover.defaultProps = {
-  position: 'bottom',
-  closeOnBackdropClick: true,
-  hideOnReferenceEscape: true,
-  appendToBody: true,
-  on: 'click',
-  customStyle: {}
 };
 
 var AvatarGroup = function AvatarGroup(props) {
@@ -6773,202 +6484,6 @@ var Option = function Option(props) {
   });
 };
 
-var Spinner = function Spinner(props) {
-  var appearance = props.appearance,
-      size = props.size,
-      className = props.className;
-  var baseProps = extractBaseProps(props);
-  var wrapperClasses = classnames(_defineProperty({
-    Spinner: true
-  }, "Spinner--".concat(size), size), className);
-  var circleClasses = classnames(_defineProperty({
-    Circle: true
-  }, "Circle--".concat(appearance), appearance));
-  var svgProps = {
-    viewBox: '0 0 50 50'
-  };
-  var circleProps = {
-    cx: 25,
-    cy: 25,
-    r: 20,
-    fill: 'none',
-    strokeMiterlimit: '10',
-    strokeWidth: '4'
-  };
-  return /*#__PURE__*/createElement("svg", _extends({}, baseProps, {
-    className: wrapperClasses
-  }, svgProps), /*#__PURE__*/createElement("circle", _extends({
-    className: circleClasses
-  }, circleProps)));
-};
-Spinner.displayName = 'Spinner';
-Spinner.defaultProps = {
-  appearance: 'primary',
-  size: 'medium'
-};
-
-var sizeMapping = {
-  tiny: 12,
-  regular: 16,
-  large: 20
-};
-var Button = /*#__PURE__*/forwardRef(function (props, ref) {
-  var _classNames, _classNames2, _classNames3;
-
-  var _props$size = props.size,
-      size = _props$size === void 0 ? 'regular' : _props$size,
-      _props$appearance = props.appearance,
-      appearance = _props$appearance === void 0 ? 'basic' : _props$appearance,
-      _props$iconAlign = props.iconAlign,
-      iconAlign = _props$iconAlign === void 0 ? 'left' : _props$iconAlign,
-      _props$tabIndex = props.tabIndex,
-      tabIndex = _props$tabIndex === void 0 ? 0 : _props$tabIndex,
-      type = props.type,
-      children = props.children,
-      icon = props.icon,
-      expanded = props.expanded,
-      selected = props.selected,
-      loading = props.loading,
-      disabled = props.disabled,
-      className = props.className,
-      rest = _objectWithoutProperties(props, ["size", "appearance", "iconAlign", "tabIndex", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className"]);
-
-  var buttonClass = classnames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--expanded', expanded), _defineProperty(_classNames, "Button--".concat(size), size), _defineProperty(_classNames, "Button--".concat(size, "Square"), !children), _defineProperty(_classNames, "Button--".concat(appearance), appearance), _defineProperty(_classNames, 'Button--selected', selected && (appearance === 'basic' || appearance === 'transparent')), _defineProperty(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _defineProperty(_classNames, "".concat(className), className), _classNames));
-  var iconClass = classnames((_classNames2 = {}, _defineProperty(_classNames2, 'Button-icon', true), _defineProperty(_classNames2, "Button-icon--".concat(iconAlign), children && iconAlign), _classNames2));
-  var spinnerClass = classnames((_classNames3 = {}, _defineProperty(_classNames3, 'Button-spinner', true), _defineProperty(_classNames3, "Button-spinner--".concat(iconAlign), children && iconAlign), _classNames3));
-  return /*#__PURE__*/createElement("button", _extends({
-    ref: ref,
-    type: type,
-    className: buttonClass,
-    disabled: disabled || loading,
-    tabIndex: tabIndex
-  }, rest), loading && /*#__PURE__*/createElement("span", {
-    className: spinnerClass
-  }, /*#__PURE__*/createElement(Spinner, {
-    size: "small",
-    appearance: appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white'
-  })), icon && !loading && /*#__PURE__*/createElement("div", {
-    className: iconClass
-  }, /*#__PURE__*/createElement(Icon, {
-    name: icon,
-    appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
-    size: sizeMapping[size]
-  })), children);
-});
-Button.displayName = 'Button';
-
-var sizeMapping$1 = {
-  tiny: 12,
-  regular: 16,
-  large: 20
-};
-/**
- * ###### Input has two types:
- *  - [Controlled Input](https://reactjs.org/docs/forms.html#controlled-components)
- *  - [Uncontrolled Input](https://reactjs.org/docs/uncontrolled-components.html)
- */
-
-var Input = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
-  var _classNames, _classNames2, _classNames3, _classNames4;
-
-  var _props$size = props.size,
-      size = _props$size === void 0 ? 'regular' : _props$size,
-      _props$type = props.type,
-      type = _props$type === void 0 ? 'text' : _props$type,
-      _props$minWidth = props.minWidth,
-      minWidth = _props$minWidth === void 0 ? type !== 'number' ? 256 : undefined : _props$minWidth,
-      readonly = props.readonly,
-      defaultValue = props.defaultValue,
-      name = props.name,
-      placeholder = props.placeholder,
-      value = props.value,
-      icon = props.icon,
-      inlineLabel = props.inlineLabel,
-      required = props.required,
-      error = props.error,
-      info = props.info,
-      onChange = props.onChange,
-      onClick = props.onClick,
-      onClear = props.onClear,
-      onBlur = props.onBlur,
-      onFocus = props.onFocus,
-      actionIcon = props.actionIcon,
-      className = props.className,
-      autocomplete = props.autocomplete,
-      autoFocus = props.autoFocus,
-      rest = _objectWithoutProperties(props, ["size", "type", "minWidth", "readonly", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autocomplete", "autoFocus"]);
-
-  var ref = useRef(null);
-  useImperativeHandle(forwardedRef, function () {
-    return ref.current;
-  });
-  useEffect$1(function () {
-    var _ref$current;
-
-    if (autoFocus) (_ref$current = ref.current) === null || _ref$current === void 0 ? void 0 : _ref$current.focus({
-      preventScroll: true
-    });
-  }, []);
-  var autoComplete = props.autoComplete || autocomplete;
-  var disabled = props.disabled || readonly;
-  var baseProps = extractBaseProps(props);
-  var classes = classnames((_classNames = {}, _defineProperty(_classNames, 'Input', true), _defineProperty(_classNames, "Input--".concat(size), size), _defineProperty(_classNames, 'Input--disabled', disabled), _defineProperty(_classNames, 'Input--error', error), _classNames), className);
-  var inputClass = classnames((_classNames2 = {}, _defineProperty(_classNames2, 'Input-input', true), _defineProperty(_classNames2, "Input-input--".concat(size), size), _classNames2));
-  var leftIconClass = classnames((_classNames3 = {}, _defineProperty(_classNames3, 'Input-icon', true), _defineProperty(_classNames3, 'Input-icon--left', true), _defineProperty(_classNames3, 'Input-icon--disabled', !value), _classNames3));
-  var rightIconClass = classnames((_classNames4 = {}, _defineProperty(_classNames4, 'Input-icon', true), _defineProperty(_classNames4, 'Input-icon--right', true), _classNames4));
-  var trigger = /*#__PURE__*/createElement("div", {
-    className: rightIconClass
-  }, /*#__PURE__*/createElement(Icon, {
-    name: 'info',
-    size: sizeMapping$1[size]
-  }));
-  return /*#__PURE__*/createElement("div", {
-    "data-test": "DesignSystem-InputWrapper",
-    className: classes,
-    style: {
-      minWidth: minWidth
-    }
-  }, inlineLabel && /*#__PURE__*/createElement("div", {
-    className: "Input-inlineLabel"
-  }, /*#__PURE__*/createElement(Text, {
-    appearance: "subtle"
-  }, inlineLabel)), size !== 'tiny' && icon && /*#__PURE__*/createElement("div", {
-    className: leftIconClass
-  }, /*#__PURE__*/createElement(Icon, {
-    name: icon,
-    size: sizeMapping$1[size]
-  })), /*#__PURE__*/createElement("input", _extends({
-    "data-test": "DesignSystem-Input"
-  }, baseProps, rest, {
-    ref: ref,
-    name: name,
-    type: type,
-    defaultValue: defaultValue,
-    placeholder: placeholder,
-    className: inputClass,
-    value: value,
-    required: required,
-    autoComplete: autoComplete,
-    disabled: disabled,
-    onChange: onChange,
-    onBlur: onBlur,
-    onClick: onClick,
-    onFocus: onFocus
-  })), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/createElement(Tooltip$1, {
-    position: "top",
-    tooltip: info
-  }, trigger) : actionIcon ? actionIcon : onClear && value && !disabled && /*#__PURE__*/createElement("div", {
-    className: rightIconClass,
-    onClick: function onClick(e) {
-      return onClear(e);
-    }
-  }, /*#__PURE__*/createElement(Icon, {
-    name: 'close',
-    size: sizeMapping$1[size]
-  })));
-});
-Input.displayName = 'Input';
-
 var PlaceholderParagraph = function PlaceholderParagraph(props) {
   var _classNames2;
 
@@ -7555,19 +7070,14 @@ var DropdownList = function DropdownList(props) {
 DropdownList.displayName = 'DropdownList';
 
 var inputRef = /*#__PURE__*/createRef();
-var bulk = 50;
-var defaultProps = {
-  triggerOptions: {},
-  options: [],
-  closeOnSelect: true
-};
+
 /**
  * ###Note:
  * 1. Dropdown props types:
  *  - async: fetchOptions
  *  - sync: options, loading
  * 2. Sync Dropdown:
- *  - Manually toggle loading state to update options (Options <= 50).
+ *  - Manually toggle loading state to update options (Options <= staticLimit).
  * 3. Callback Functions
  *  - Controlled Dropdown:
  *    * onUpdate: Called when user `clicks on option` / `clicks on Clear, Cancel or Apply button`.
@@ -7575,7 +7085,6 @@ var defaultProps = {
  *  - Uncontrolled Dropdown:
  *    * onChange: Called when user `clicks on option` / `clicks on Clear, or Apply button`.
  */
-
 var Dropdown = /*#__PURE__*/function (_React$Component) {
   _inherits(Dropdown, _React$Component);
 
@@ -7587,6 +7096,8 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Dropdown);
 
     _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "staticLimit", void 0);
 
     _defineProperty(_assertThisInitialized(_this), "getDisabledOptions", function () {
       var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
@@ -7662,19 +7173,19 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
 
         var options = res.options,
             count = res.count;
-        updatedAsync = searchTerm === '' ? count > bulk : updatedAsync;
+        updatedAsync = searchTerm === '' ? count > _this.staticLimit : updatedAsync;
         var unSelectedGroup = _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? _this.getUnSelectedOptions(options, init) : options;
         var selectedGroup = searchTerm === '' ? _this.getSelectedOptions(options, init) : [];
         var optionsLength = searchTerm === '' ? count : _this.state.optionsLength;
 
-        var disabledOptions = _this.getDisabledOptions(unSelectedGroup.slice(0, bulk));
+        var disabledOptions = _this.getDisabledOptions(unSelectedGroup.slice(0, _this.staticLimit));
 
         _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
           optionsLength: optionsLength,
           loading: false,
           async: updatedAsync,
           searchedOptionsLength: count,
-          options: unSelectedGroup.slice(0, bulk),
+          options: unSelectedGroup.slice(0, _this.staticLimit),
           tempSelected: init ? selectedGroup : tempSelected,
           previousSelected: init ? selectedGroup : previousSelected,
           selected: _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? selectedGroup : [],
@@ -7771,7 +7282,7 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
           return option.label;
         }).join(', ');
       } else {
-        label = customLabel ? customLabel(selectedLength, optionsLength) : "".concat(selectedLength, " selected");
+        label = customLabel ? customLabel(selectedLength, optionsLength, selectedArray) : "".concat(selectedLength, " selected");
       }
 
       if (getLabel) getLabel(label);
@@ -8046,9 +7557,11 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
         _open = props.open,
         _options = props.options;
 
+    _this.staticLimit = Math.min(100, props.staticLimit);
+
     var _optionsLength = _totalOptions ? _totalOptions : _options.length;
 
-    var _async = 'fetchOptions' in _this.props || _optionsLength > bulk;
+    var _async = 'fetchOptions' in _this.props || _optionsLength > _this.staticLimit;
 
     var _selectedGroup = !_async ? _this.getSelectedOptions(_options, true) : [];
 
@@ -8093,7 +7606,7 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
         var disabledOptionsCount = this.getDisabledOptions(_options2).length;
 
         if (prevProps.loading !== loading && !fetchOptions) {
-          if (_options2.length > bulk) {
+          if (_options2.length > this.staticLimit) {
             this.updateOptions(true, true);
           } else {
             var _inputRef$current2;
@@ -8150,9 +7663,9 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
 
       var _this$props13 = this.props,
           _this$props13$trigger = _this$props13.triggerOptions,
-          triggerOptions = _this$props13$trigger === void 0 ? {} : _this$props13$trigger,
-          selected = _this$props13.selected,
-          rest = _objectWithoutProperties(_this$props13, ["triggerOptions", "selected"]);
+          triggerOptions = _this$props13$trigger === void 0 ? {} : _this$props13$trigger;
+          _this$props13.selected;
+          var rest = _objectWithoutProperties(_this$props13, ["triggerOptions", "selected"]);
 
       var remainingOptionsLen = searchedOptionsLength - options.length;
       var firstEnabledOption = _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox) ? 0 : options.findIndex(function (option) {
@@ -8189,7 +7702,12 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
   return Dropdown;
 }(Component);
 
-_defineProperty(Dropdown, "defaultProps", defaultProps);
+_defineProperty(Dropdown, "defaultProps", {
+  triggerOptions: {},
+  options: [],
+  closeOnSelect: true,
+  staticLimit: 50
+});
 
 var SubtleLink = function SubtleLink(props) {
   var onClick = props.onClick,
@@ -8282,6 +7800,90 @@ var Breadcrumbs = function Breadcrumbs(props) {
   }, "/"))));
 };
 
+var Spinner = function Spinner(props) {
+  var appearance = props.appearance,
+      size = props.size,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+  var wrapperClasses = classnames(_defineProperty({
+    Spinner: true
+  }, "Spinner--".concat(size), size), className);
+  var circleClasses = classnames(_defineProperty({
+    Circle: true
+  }, "Circle--".concat(appearance), appearance));
+  var svgProps = {
+    viewBox: '0 0 50 50'
+  };
+  var circleProps = {
+    cx: 25,
+    cy: 25,
+    r: 20,
+    fill: 'none',
+    strokeMiterlimit: '10',
+    strokeWidth: '4'
+  };
+  return /*#__PURE__*/createElement("svg", _extends({}, baseProps, {
+    className: wrapperClasses
+  }, svgProps), /*#__PURE__*/createElement("circle", _extends({
+    className: circleClasses
+  }, circleProps)));
+};
+Spinner.displayName = 'Spinner';
+Spinner.defaultProps = {
+  appearance: 'primary',
+  size: 'medium'
+};
+
+var sizeMapping = {
+  tiny: 12,
+  regular: 16,
+  large: 20
+};
+var Button = /*#__PURE__*/forwardRef(function (props, ref) {
+  var _classNames, _classNames2, _classNames3;
+
+  var _props$size = props.size,
+      size = _props$size === void 0 ? 'regular' : _props$size,
+      _props$appearance = props.appearance,
+      appearance = _props$appearance === void 0 ? 'basic' : _props$appearance,
+      _props$iconAlign = props.iconAlign,
+      iconAlign = _props$iconAlign === void 0 ? 'left' : _props$iconAlign,
+      _props$tabIndex = props.tabIndex,
+      tabIndex = _props$tabIndex === void 0 ? 0 : _props$tabIndex,
+      type = props.type,
+      children = props.children,
+      icon = props.icon,
+      expanded = props.expanded,
+      selected = props.selected,
+      loading = props.loading,
+      disabled = props.disabled,
+      className = props.className,
+      rest = _objectWithoutProperties(props, ["size", "appearance", "iconAlign", "tabIndex", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className"]);
+
+  var buttonClass = classnames((_classNames = {}, _defineProperty(_classNames, 'Button', true), _defineProperty(_classNames, 'Button--expanded', expanded), _defineProperty(_classNames, "Button--".concat(size), size), _defineProperty(_classNames, "Button--".concat(size, "Square"), !children), _defineProperty(_classNames, "Button--".concat(appearance), appearance), _defineProperty(_classNames, 'Button--selected', selected && (appearance === 'basic' || appearance === 'transparent')), _defineProperty(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _defineProperty(_classNames, "".concat(className), className), _classNames));
+  var iconClass = classnames((_classNames2 = {}, _defineProperty(_classNames2, 'Button-icon', true), _defineProperty(_classNames2, "Button-icon--".concat(iconAlign), children && iconAlign), _classNames2));
+  var spinnerClass = classnames((_classNames3 = {}, _defineProperty(_classNames3, 'Button-spinner', true), _defineProperty(_classNames3, "Button-spinner--".concat(iconAlign), children && iconAlign), _classNames3));
+  return /*#__PURE__*/createElement("button", _extends({
+    ref: ref,
+    type: type,
+    className: buttonClass,
+    disabled: disabled || loading,
+    tabIndex: tabIndex
+  }, rest), loading && /*#__PURE__*/createElement("span", {
+    className: spinnerClass
+  }, /*#__PURE__*/createElement(Spinner, {
+    size: "small",
+    appearance: appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white'
+  })), icon && !loading && /*#__PURE__*/createElement("div", {
+    className: iconClass
+  }, /*#__PURE__*/createElement(Icon, {
+    name: icon,
+    appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
+    size: sizeMapping[size]
+  })), children);
+});
+Button.displayName = 'Button';
+
 var Card = /*#__PURE__*/forwardRef(function (props, ref) {
   var _classNames;
 
@@ -8316,7 +7918,7 @@ var GenericChip = function GenericChip(props) {
   var iconClass = function iconClass(align) {
     var _classNames;
 
-    return classnames((_classNames = {}, _defineProperty(_classNames, 'Chip-icon', true), _defineProperty(_classNames, "Chip-icon--".concat(align), align), _classNames));
+    return classnames((_classNames = {}, _defineProperty(_classNames, 'Chip-icon', true), _defineProperty(_classNames, "Chip-icon--".concat(align), align), _defineProperty(_classNames, 'cursor-pointer', align === 'right' && !disabled), _classNames));
   };
 
   var onCloseHandler = function onCloseHandler(e) {
@@ -9681,20 +9283,20 @@ var DatePicker = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "renderCalendar",
     value: function renderCalendar() {
-      var _this$props4 = this.props,
-          dateProp = _this$props4.date,
-          open = _this$props4.open,
-          position = _this$props4.position,
-          inputFormat = _this$props4.inputFormat,
-          outputFormat = _this$props4.outputFormat,
-          inputOptions = _this$props4.inputOptions,
-          validators = _this$props4.validators,
-          withInput = _this$props4.withInput,
-          disabledBefore = _this$props4.disabledBefore,
-          disabledAfter = _this$props4.disabledAfter,
-          onDateChange = _this$props4.onDateChange,
-          closeOnSelect = _this$props4.closeOnSelect,
-          rest = _objectWithoutProperties(_this$props4, ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect"]);
+      var _this$props4 = this.props;
+          _this$props4.date;
+          _this$props4.open;
+          _this$props4.position;
+          var inputFormat = _this$props4.inputFormat;
+          _this$props4.outputFormat;
+          _this$props4.inputOptions;
+          var validators = _this$props4.validators;
+          _this$props4.withInput;
+          var disabledBefore = _this$props4.disabledBefore,
+          disabledAfter = _this$props4.disabledAfter;
+          _this$props4.onDateChange;
+          _this$props4.closeOnSelect;
+          var rest = _objectWithoutProperties(_this$props4, ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect"]);
 
       var date = this.state.date;
       return /*#__PURE__*/createElement(Calendar, _extends({}, rest, {
@@ -9812,7 +9414,7 @@ var _core = createCommonjsModule(function (module) {
 var core = module.exports = { version: '2.6.12' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 });
-var _core_1 = _core.version;
+_core.version;
 
 var _isObject = function (it) {
   return typeof it === 'object' ? it !== null : typeof it === 'function';
@@ -10253,7 +9855,7 @@ _export(_export.S, 'Math', {
   }
 });
 
-var math = _core.Math;
+_core.Math;
 
 var toString = {}.toString;
 
@@ -10799,7 +10401,7 @@ var _parseInt = $parseInt(_stringWs + '08') !== 8 || $parseInt(_stringWs + '0x16
 // 20.1.2.13 Number.parseInt(string, radix)
 _export(_export.S + _export.F * (Number.parseInt != _parseInt), 'Number', { parseInt: _parseInt });
 
-var number = _core.Number;
+_core.Number;
 
 /* eslint no-proto: 0 */
 
@@ -11859,10 +11461,10 @@ function memoizeCapped(func) {
 var _memoizeCapped = memoizeCapped;
 
 /** Used to match property names within property paths. */
-var rePropName$2 = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
+var rePropName$1 = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
 
 /** Used to match backslashes in property paths. */
-var reEscapeChar$2 = /\\(\\)?/g;
+var reEscapeChar$1 = /\\(\\)?/g;
 
 /**
  * Converts `string` to a property path array.
@@ -11871,18 +11473,18 @@ var reEscapeChar$2 = /\\(\\)?/g;
  * @param {string} string The string to convert.
  * @returns {Array} Returns the property path array.
  */
-var stringToPath$2 = _memoizeCapped(function(string) {
+var stringToPath$1 = _memoizeCapped(function(string) {
   var result = [];
   if (string.charCodeAt(0) === 46 /* . */) {
     result.push('');
   }
-  string.replace(rePropName$2, function(match, number, quote, subString) {
-    result.push(quote ? subString.replace(reEscapeChar$2, '$1') : (number || match));
+  string.replace(rePropName$1, function(match, number, quote, subString) {
+    result.push(quote ? subString.replace(reEscapeChar$1, '$1') : (number || match));
   });
   return result;
 });
 
-var _stringToPath = stringToPath$2;
+var _stringToPath = stringToPath$1;
 
 /**
  * A specialized version of `_.map` for arrays without support for iteratee
@@ -17774,20 +17376,20 @@ function (_PureComponent) {
     key: "render",
     value: function render() {
       var _this$props4 = this.props,
-          children = _this$props4.children,
-          begin = _this$props4.begin,
-          duration = _this$props4.duration,
-          attributeName = _this$props4.attributeName,
-          easing = _this$props4.easing,
-          isActive = _this$props4.isActive,
-          steps = _this$props4.steps,
-          from = _this$props4.from,
-          to = _this$props4.to,
-          canBegin = _this$props4.canBegin,
-          onAnimationEnd = _this$props4.onAnimationEnd,
-          shouldReAnimate = _this$props4.shouldReAnimate,
-          onAnimationReStart = _this$props4.onAnimationReStart,
-          others = _objectWithoutProperties$4(_this$props4, ["children", "begin", "duration", "attributeName", "easing", "isActive", "steps", "from", "to", "canBegin", "onAnimationEnd", "shouldReAnimate", "onAnimationReStart"]);
+          children = _this$props4.children;
+          _this$props4.begin;
+          _this$props4.duration;
+          _this$props4.attributeName;
+          _this$props4.easing;
+          var isActive = _this$props4.isActive;
+          _this$props4.steps;
+          _this$props4.from;
+          _this$props4.to;
+          _this$props4.canBegin;
+          _this$props4.onAnimationEnd;
+          _this$props4.shouldReAnimate;
+          _this$props4.onAnimationReStart;
+          var others = _objectWithoutProperties$4(_this$props4, ["children", "begin", "duration", "attributeName", "easing", "isActive", "steps", "from", "to", "canBegin", "onAnimationEnd", "shouldReAnimate", "onAnimationReStart"]);
 
       var count = Children.count(children);
       var stateStyle = translateStyle(this.state.style);
@@ -18439,7 +18041,7 @@ var propTypes$3 = {
   filterNull: propTypes.bool,
   useTranslate3d: propTypes.bool
 };
-var defaultProps$1 = {
+var defaultProps = {
   active: false,
   allowEscapeViewBox: {
     x: false,
@@ -18658,7 +18260,7 @@ function (_PureComponent) {
 
 Tooltip.displayName = 'Tooltip';
 Tooltip.propTypes = propTypes$3;
-Tooltip.defaultProps = defaultProps$1;
+Tooltip.defaultProps = defaultProps;
 
 /**
  * Gets the timestamp of the number of milliseconds that have elapsed since
@@ -20956,10 +20558,10 @@ function (_Component) {
       var _this$props = this.props,
           aspect = _this$props.aspect,
           width = _this$props.width,
-          height = _this$props.height,
-          minWidth = _this$props.minWidth,
-          minHeight = _this$props.minHeight,
-          maxHeight = _this$props.maxHeight,
+          height = _this$props.height;
+          _this$props.minWidth;
+          _this$props.minHeight;
+          var maxHeight = _this$props.maxHeight,
           children = _this$props.children;
       warn(isPercent(width) || isPercent(height));
       var calculatedWidth = isPercent(width) ? containerWidth : width;
@@ -21618,7 +21220,7 @@ math_function.lex = function (inp, tokens) {
       continue
     }
 
-    var index = node.index;
+    node.index;
     var cToken = node.token;
     var cType = node.type;
     var cEv = node.eval;
@@ -24858,13 +24460,13 @@ exports.memoize = memoize;
 });
 
 unwrapExports(utils);
-var utils_1 = utils.memoize;
-var utils_2 = utils.reverse;
-var utils_3 = utils.compose;
-var utils_4 = utils.map;
-var utils_5 = utils.range;
-var utils_6 = utils.curry;
-var utils_7 = utils.PLACE_HOLDER;
+utils.memoize;
+utils.reverse;
+utils.compose;
+utils.map;
+utils.range;
+utils.curry;
+utils.PLACE_HOLDER;
 
 var require$$0 = getCjsExportFromNamespace(decimal);
 
@@ -25305,9 +24907,9 @@ exports.getTickValuesFixedDomain = getTickValuesFixedDomain;
 });
 
 unwrapExports(getNiceTickValues_1);
-var getNiceTickValues_2 = getNiceTickValues_1.getTickValuesFixedDomain;
-var getNiceTickValues_3 = getNiceTickValues_1.getTickValues;
-var getNiceTickValues_4 = getNiceTickValues_1.getNiceTickValues;
+getNiceTickValues_1.getTickValuesFixedDomain;
+getNiceTickValues_1.getTickValues;
+getNiceTickValues_1.getNiceTickValues;
 
 var lib$2 = createCommonjsModule(function (module, exports) {
 
@@ -25335,7 +24937,7 @@ Object.defineProperty(exports, "getTickValuesFixedDomain", {
 });
 
 unwrapExports(lib$2);
-var lib_1 = lib$2.getTickValues;
+lib$2.getTickValues;
 var lib_2 = lib$2.getNiceTickValues;
 var lib_3 = lib$2.getTickValuesFixedDomain;
 
@@ -25378,7 +24980,7 @@ function ascendingComparator(f) {
 var ascendingBisect = bisector(ascending);
 var bisectRight = ascendingBisect.right;
 
-function number$1(x) {
+function number(x) {
   return x === null ? NaN : +x;
 }
 
@@ -25449,7 +25051,7 @@ function tickStep(start, stop, count) {
 }
 
 function threshold(values, p, valueof) {
-  if (valueof == null) valueof = number$1;
+  if (valueof == null) valueof = number;
   if (!(n = values.length)) return;
   if ((p = +p) <= 0 || n < 2) return +valueof(values[0], 0, values);
   if (p >= 1) return +valueof(values[n - 1], n - 1, values);
@@ -26303,7 +25905,7 @@ function constant$3(x) {
   };
 }
 
-function number$2(x) {
+function number$1(x) {
   return +x;
 }
 
@@ -26393,7 +25995,7 @@ function transformer() {
   };
 
   scale.domain = function(_) {
-    return arguments.length ? (domain = map$2.call(_, number$2), clamp === identity$2 || (clamp = clamper(domain)), rescale()) : domain.slice();
+    return arguments.length ? (domain = map$2.call(_, number$1), clamp === identity$2 || (clamp = clamper(domain)), rescale()) : domain.slice();
   };
 
   scale.range = function(_) {
@@ -26860,7 +26462,7 @@ function identity$4(domain) {
   scale.invert = scale;
 
   scale.domain = scale.range = function(_) {
-    return arguments.length ? (domain = map$2.call(_, number$2), scale) : domain.slice();
+    return arguments.length ? (domain = map$2.call(_, number$1), scale) : domain.slice();
   };
 
   scale.unknown = function(_) {
@@ -26871,7 +26473,7 @@ function identity$4(domain) {
     return identity$4(domain).unknown(unknown);
   };
 
-  domain = arguments.length ? map$2.call(domain, number$2) : [0, 1];
+  domain = arguments.length ? map$2.call(domain, number$1) : [0, 1];
 
   return linearish(scale);
 }
@@ -27411,11 +27013,11 @@ function weekday(i) {
 
 var sunday = weekday(0);
 var monday = weekday(1);
-var tuesday = weekday(2);
-var wednesday = weekday(3);
+weekday(2);
+weekday(3);
 var thursday = weekday(4);
-var friday = weekday(5);
-var saturday = weekday(6);
+weekday(5);
+weekday(6);
 
 var month = newInterval(function(date) {
   date.setDate(1);
@@ -27493,11 +27095,11 @@ function utcWeekday(i) {
 
 var utcSunday = utcWeekday(0);
 var utcMonday = utcWeekday(1);
-var utcTuesday = utcWeekday(2);
-var utcWednesday = utcWeekday(3);
+utcWeekday(2);
+utcWeekday(3);
 var utcThursday = utcWeekday(4);
-var utcFriday = utcWeekday(5);
-var utcSaturday = utcWeekday(6);
+utcWeekday(5);
+utcWeekday(6);
 
 var utcMonth = newInterval(function(date) {
   date.setUTCDate(1);
@@ -28255,7 +27857,7 @@ function date$3(t) {
   return new Date(t);
 }
 
-function number$3(t) {
+function number$2(t) {
   return t instanceof Date ? +t : +new Date(+t);
 }
 
@@ -28334,7 +27936,7 @@ function calendar(year, month, week, day, hour, minute, second, millisecond, for
   };
 
   scale.domain = function(_) {
-    return arguments.length ? domain(map$2.call(_, number$3)) : domain().map(date$3);
+    return arguments.length ? domain(map$2.call(_, number$2)) : domain().map(date$3);
   };
 
   scale.ticks = function(interval, step) {
@@ -30008,7 +29610,7 @@ var propTypes$4 = _objectSpread$c({}, PRESENTATION_ATTRIBUTES, {
   content: propTypes.oneOfType([propTypes.element, propTypes.func])
 });
 
-var defaultProps$2 = {
+var defaultProps$1 = {
   offset: 5
 };
 
@@ -30323,7 +29925,7 @@ function Label(props) {
 }
 
 Label.displayName = 'Label';
-Label.defaultProps = defaultProps$2;
+Label.defaultProps = defaultProps$1;
 Label.propTypes = propTypes$4;
 
 var parseViewBox = function parseViewBox(props) {
@@ -30520,7 +30122,7 @@ var propTypes$5 = {
   clockWise: propTypes.bool,
   dataKey: propTypes.oneOfType([propTypes.string, propTypes.number, propTypes.func])
 };
-var defaultProps$3 = {
+var defaultProps$2 = {
   valueAccessor: function valueAccessor(entry) {
     return isArray_1(entry.value) ? last_1(entry.value) : entry.value;
   }
@@ -30615,7 +30217,7 @@ var renderCallByParent$1 = function renderCallByParent(parentProps, data) {
 };
 
 LabelList.renderCallByParent = renderCallByParent$1;
-LabelList.defaultProps = defaultProps$3;
+LabelList.defaultProps = defaultProps$2;
 
 function ownKeys$c(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -33987,9 +33589,9 @@ function (_PureComponent) {
           xAxis = _this$props4.xAxis,
           yAxis = _this$props4.yAxis,
           shape = _this$props4.shape,
-          className = _this$props4.className,
-          alwaysShow = _this$props4.alwaysShow,
-          clipPathId = _this$props4.clipPathId;
+          className = _this$props4.className;
+          _this$props4.alwaysShow;
+          var clipPathId = _this$props4.clipPathId;
       var scales = LabeledScaleHelper.create({
         x: xAxis.scale,
         y: yAxis.scale
@@ -34141,9 +33743,9 @@ function (_PureComponent) {
       var _this$props2 = this.props,
           x = _this$props2.x,
           y = _this$props2.y,
-          r = _this$props2.r,
-          alwaysShow = _this$props2.alwaysShow,
-          clipPathId = _this$props2.clipPathId;
+          r = _this$props2.r;
+          _this$props2.alwaysShow;
+          var clipPathId = _this$props2.clipPathId;
       var isX = isNumOrStr(x);
       var isY = isNumOrStr(y);
 
@@ -34310,9 +33912,9 @@ function (_PureComponent) {
           x2 = _this$props2.x2,
           y1 = _this$props2.y1,
           y2 = _this$props2.y2,
-          className = _this$props2.className,
-          alwaysShow = _this$props2.alwaysShow,
-          clipPathId = _this$props2.clipPathId;
+          className = _this$props2.className;
+          _this$props2.alwaysShow;
+          var clipPathId = _this$props2.clipPathId;
       var hasX1 = isNumOrStr(x1);
       var hasX2 = isNumOrStr(x2);
       var hasY1 = isNumOrStr(y1);
@@ -37903,6 +37505,118 @@ DonutChart.defaultProps = {
   colorOfTotalCount: 'success'
 };
 
+var sizeMapping$1 = {
+  tiny: 12,
+  regular: 16,
+  large: 20
+};
+/**
+ * ###### Input has two types:
+ *  - [Controlled Input](https://reactjs.org/docs/forms.html#controlled-components)
+ *  - [Uncontrolled Input](https://reactjs.org/docs/uncontrolled-components.html)
+ */
+
+var Input = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
+  var _classNames, _classNames2, _classNames3, _classNames4;
+
+  var _props$size = props.size,
+      size = _props$size === void 0 ? 'regular' : _props$size,
+      _props$type = props.type,
+      type = _props$type === void 0 ? 'text' : _props$type,
+      _props$minWidth = props.minWidth,
+      minWidth = _props$minWidth === void 0 ? type !== 'number' ? 256 : undefined : _props$minWidth,
+      readonly = props.readonly,
+      defaultValue = props.defaultValue,
+      name = props.name,
+      placeholder = props.placeholder,
+      value = props.value,
+      icon = props.icon,
+      inlineLabel = props.inlineLabel,
+      required = props.required,
+      error = props.error,
+      info = props.info,
+      onChange = props.onChange,
+      onClick = props.onClick,
+      onClear = props.onClear,
+      onBlur = props.onBlur,
+      onFocus = props.onFocus,
+      actionIcon = props.actionIcon,
+      className = props.className,
+      autocomplete = props.autocomplete,
+      autoFocus = props.autoFocus,
+      rest = _objectWithoutProperties(props, ["size", "type", "minWidth", "readonly", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autocomplete", "autoFocus"]);
+
+  var ref = useRef(null);
+  useImperativeHandle(forwardedRef, function () {
+    return ref.current;
+  });
+  useEffect$1(function () {
+    var _ref$current;
+
+    if (autoFocus) (_ref$current = ref.current) === null || _ref$current === void 0 ? void 0 : _ref$current.focus({
+      preventScroll: true
+    });
+  }, []);
+  var autoComplete = props.autoComplete || autocomplete;
+  var disabled = props.disabled || readonly;
+  var baseProps = extractBaseProps(props);
+  var classes = classnames((_classNames = {}, _defineProperty(_classNames, 'Input', true), _defineProperty(_classNames, "Input--".concat(size), size), _defineProperty(_classNames, 'Input--disabled', disabled), _defineProperty(_classNames, 'Input--error', error), _classNames), className);
+  var inputClass = classnames((_classNames2 = {}, _defineProperty(_classNames2, 'Input-input', true), _defineProperty(_classNames2, "Input-input--".concat(size), size), _classNames2));
+  var leftIconClass = classnames((_classNames3 = {}, _defineProperty(_classNames3, 'Input-icon', true), _defineProperty(_classNames3, 'Input-icon--left', true), _defineProperty(_classNames3, 'Input-icon--disabled', !value), _classNames3));
+  var rightIconClass = classnames((_classNames4 = {}, _defineProperty(_classNames4, 'Input-icon', true), _defineProperty(_classNames4, 'Input-icon--right', true), _classNames4));
+  var trigger = /*#__PURE__*/createElement("div", {
+    className: rightIconClass
+  }, /*#__PURE__*/createElement(Icon, {
+    name: 'info',
+    size: sizeMapping$1[size]
+  }));
+  return /*#__PURE__*/createElement("div", {
+    "data-test": "DesignSystem-InputWrapper",
+    className: classes,
+    style: {
+      minWidth: minWidth
+    }
+  }, inlineLabel && /*#__PURE__*/createElement("div", {
+    className: "Input-inlineLabel"
+  }, /*#__PURE__*/createElement(Text, {
+    appearance: "subtle"
+  }, inlineLabel)), size !== 'tiny' && icon && /*#__PURE__*/createElement("div", {
+    className: leftIconClass
+  }, /*#__PURE__*/createElement(Icon, {
+    name: icon,
+    size: sizeMapping$1[size]
+  })), /*#__PURE__*/createElement("input", _extends({
+    "data-test": "DesignSystem-Input"
+  }, baseProps, rest, {
+    ref: ref,
+    name: name,
+    type: type,
+    defaultValue: defaultValue,
+    placeholder: placeholder,
+    className: inputClass,
+    value: value,
+    required: required,
+    autoComplete: autoComplete,
+    disabled: disabled,
+    onChange: onChange,
+    onBlur: onBlur,
+    onClick: onClick,
+    onFocus: onFocus
+  })), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/createElement(Tooltip$1, {
+    position: "top",
+    tooltip: info
+  }, trigger) : actionIcon ? actionIcon : onClear && value && !disabled && /*#__PURE__*/createElement("div", {
+    className: rightIconClass,
+    onClick: function onClick(e) {
+      return onClear(e);
+    }
+  }, /*#__PURE__*/createElement(Icon, {
+    name: 'close',
+    size: sizeMapping$1[size]
+  })));
+});
+Input.displayName = 'Input';
+
 var isEditable = function isEditable(mask, pos) {
   return _typeof(mask[pos]) === 'object';
 };
@@ -37922,8 +37636,8 @@ var getDefaultValue = function getDefaultValue(mask, placeholderChar) {
  * **Updated value can be passed**
  */
 var InputMask = /*#__PURE__*/forwardRef(function (props, forwardRef) {
-  var maskProp = props.mask,
-      valueProp = props.value,
+  props.mask;
+      var valueProp = props.value,
       _props$placeholderCha = props.placeholderChar,
       placeholderChar = _props$placeholderCha === void 0 ? '_' : _props$placeholderCha,
       _props$validators = props.validators,
@@ -38305,10 +38019,12 @@ var EditableDropdown = function EditableDropdown(props) {
 
   var placeholder = props.placeholder,
       dropdownOptions = props.dropdownOptions,
-      className = props.className;
+      className = props.className,
+      customTriggerRenderer = props.customTriggerRenderer;
 
   var onDropdownChange = dropdownOptions.onChange,
-      rest = _objectWithoutProperties(dropdownOptions, ["onChange"]);
+      onDropdownClose = dropdownOptions.onClose,
+      rest = _objectWithoutProperties(dropdownOptions, ["onChange", "onClose"]);
 
   var _React$useState = useState$2(placeholder),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -38355,6 +38071,17 @@ var EditableDropdown = function EditableDropdown(props) {
     if (onDropdownChange) onDropdownChange(value);
   };
 
+  var onClose = function onClose(selected) {
+    setEditing(false);
+    setShowComponent(false);
+    if (onDropdownClose) onDropdownClose(selected);
+  };
+
+  var renderComponent = function renderComponent(componentLabel) {
+    if (customTriggerRenderer) return customTriggerRenderer(componentLabel);
+    return componentLabel;
+  };
+
   return /*#__PURE__*/createElement("div", _extends({
     "data-test": "DesignSystem-EditableDropdown"
   }, baseProps, {
@@ -38366,12 +38093,13 @@ var EditableDropdown = function EditableDropdown(props) {
     placeholder: placeholder,
     onChange: onChange,
     getLabel: getLabel,
+    onClose: onClose,
     className: EditableDropdownClass,
     "data-test": "DesignSystem-EditableDropdown--Dropdown"
   }, rest)), /*#__PURE__*/createElement("div", {
     className: DefaultCompClass,
     "data-test": "DesignSystem-EditableDropdown--Default"
-  }, label || placeholder)));
+  }, renderComponent(label || placeholder))));
 };
 EditableDropdown.defaultProps = {
   placeholder: '',
@@ -38500,80 +38228,41 @@ MetaList.defaultProps = {
   labelAppearance: 'subtle'
 };
 
-/**
- * Handle click outside component
- * @class OutsideClick
- * @extends {React.Component<OutsideClickProps, never>}
- */
-var OutsideClick = /*#__PURE__*/function (_React$Component) {
-  _inherits(OutsideClick, _React$Component);
+var OutsideClick = /*#__PURE__*/forwardRef(function (props, ref) {
+  var children = props.children,
+      className = props.className,
+      onOutsideClick = props.onOutsideClick,
+      rest = _objectWithoutProperties(props, ["children", "className", "onOutsideClick"]);
 
-  var _super = _createSuper(OutsideClick);
+  var innerRef = useRef(null);
+  useImperativeHandle(ref, function () {
+    return innerRef.current;
+  }, [innerRef]);
+  useEffect$1(function () {
+    document.addEventListener('click', handleOutsideClick, true);
+    return function () {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, []);
+  var handleOutsideClick = useCallback(function (event) {
+    var element = innerRef;
 
-  function OutsideClick(props) {
-    var _this;
-
-    _classCallCheck(this, OutsideClick);
-
-    _this = _super.call(this, props);
-
-    _defineProperty(_assertThisInitialized(_this), "container", void 0);
-
-    _defineProperty(_assertThisInitialized(_this), "handleOutsideClick", function (event) {
-      var onOutsideClick = _this.props.onOutsideClick;
-      var element = _this.container;
-
-      if (!event.target || !element.current) {
-        return;
-      }
-
-      if (!findDOMNode(element.current).contains(event.target)) {
-        onOutsideClick(event);
-      }
-    });
-
-    _this.container = /*#__PURE__*/createRef();
-    return _this;
-  }
-  /**
-   * Add event listener on mount
-   * @memberof OutsideClick
-   */
-
-
-  _createClass(OutsideClick, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      document.addEventListener('click', this.handleOutsideClick, true);
+    if (!event.target || !element.current) {
+      return;
     }
-    /**
-     * Remove event listener on unmount
-     * @memberof OutsideClick
-     */
 
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      document.removeEventListener('click', this.handleOutsideClick);
+    if (!findDOMNode(element.current).contains(event.target)) {
+      onOutsideClick(event);
     }
-    /**
-     * Handle Outside click
-     * @param {Event} event
-     * @returns
-     */
-
-  }, {
-    key: "render",
-    value: function render() {
-      var children = this.props.children;
-      return /*#__PURE__*/cloneElement(Children.only(children), {
-        ref: this.container
-      });
-    }
-  }]);
-
-  return OutsideClick;
-}(Component);
+  }, []);
+  var classes = classnames(_defineProperty({}, 'OutsideClick', true), className);
+  return /*#__PURE__*/createElement("div", _extends({
+    ref: innerRef
+  }, rest, {
+    className: classes
+  }), children);
+});
+OutsideClick.displayName = 'OutsideClick';
 
 var Paragraph = function Paragraph(props) {
   var appearance = props.appearance,
@@ -39693,84 +39382,99 @@ Toast.defaultProps = {
   appearance: 'default'
 };
 
-/**
- * Tooltip is used to displays floating content in relation to a target when that target is hovered.
- *
- * Tooltips mostly appear either at the top or bottom of their target.
- * The preferred and default side is the bottom.
- *
- * For left navigation with only icons, show tooltip on the right.
- */
-var Tooltip$1 = /*#__PURE__*/function (_React$Component) {
-  _inherits(Tooltip, _React$Component);
+var propsList = ['appendToBody', 'trigger', 'hoverable', 'on', 'open', 'closeOnBackdropClick', 'offset', 'closeOnScroll'];
+var Popover = function Popover(props) {
+  var position = props.position,
+      customStyle = props.customStyle,
+      dark = props.dark,
+      children = props.children,
+      onToggle = props.onToggle,
+      className = props.className,
+      hideOnReferenceEscape = props.hideOnReferenceEscape,
+      boundaryElement = props.boundaryElement,
+      rest = _objectWithoutProperties(props, ["position", "customStyle", "dark", "children", "onToggle", "className", "hideOnReferenceEscape", "boundaryElement"]);
 
-  var _super = _createSuper(Tooltip);
+  var _React$useState = useState$2(!!props.open),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      open = _React$useState2[0],
+      setOpen = _React$useState2[1];
 
-  function Tooltip(props) {
-    var _this;
+  var _React$useState3 = useState$2(false),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      init = _React$useState4[0],
+      setInit = _React$useState4[1];
 
-    _classCallCheck(this, Tooltip);
-
-    _this = _super.call(this, props);
-
-    _defineProperty(_assertThisInitialized(_this), "onToggle", function (open) {
-      _this.setState({
-        open: open
-      });
-    });
-
-    _this.state = {
-      open: false
-    };
-    return _this;
-  }
-
-  _createClass(Tooltip, [{
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      this.setState({
-        open: false
-      });
+  useEffect$1(function () {
+    if (props.open !== undefined) setOpen(props.open);
+  }, [props.open]);
+  var defaultOnToggle = useCallback(function (newOpen) {
+    setOpen(newOpen);
+  }, []);
+  useEffect$1(function () {
+    if (!init) {
+      if ('current' in boundaryElement && boundaryElement.current) {
+        setInit(true);
+      }
     }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this$props = this.props,
-          appendToBody = _this$props.appendToBody,
-          position = _this$props.position,
-          tooltip = _this$props.tooltip,
-          children = _this$props.children,
-          className = _this$props.className,
-          triggerClass = _this$props.triggerClass,
-          hideOnReferenceEscape = _this$props.hideOnReferenceEscape,
-          boundaryElement = _this$props.boundaryElement,
-          props = _objectWithoutProperties(_this$props, ["appendToBody", "position", "tooltip", "children", "className", "triggerClass", "hideOnReferenceEscape", "boundaryElement"]);
+  }, [boundaryElement]);
+  var classes = classnames(_defineProperty({
+    Popover: true
+  }, 'Popover--dark', dark), className);
+  var PopoverWrapper = /*#__PURE__*/createElement("div", {
+    "data-test": "DesignSystem-Popover",
+    className: classes,
+    "data-layer": true
+  }, children);
+  return /*#__PURE__*/createElement(PopperWrapper, _extends({}, rest, {
+    init: init,
+    boundaryElement: 'current' in boundaryElement ? boundaryElement.current : boundaryElement,
+    open: open,
+    hide: hideOnReferenceEscape,
+    style: customStyle,
+    onToggle: onToggle || defaultOnToggle,
+    placement: position
+  }), PopoverWrapper);
+};
+Popover.displayName = 'Popover'; // Popover.defaultProps = {
+//   ...filterProps(PopperWrapper.defaultProps, propsList, true),
+//   offset: 'large',
+//   position: 'bottom',
+//   hideOnReferenceEscape: true,
+//   customStyle: {},
+// }
 
-      var tooltipWrapper = /*#__PURE__*/createElement("div", _extends({
-        className: "Tooltip"
-      }, props), tooltip);
-      return /*#__PURE__*/createElement(PopperWrapper, {
-        trigger: children,
-        placement: this.props.position,
-        appendToBody: appendToBody,
-        on: 'hover',
-        offset: 'Medium',
-        onToggle: this.onToggle,
-        open: this.state.open,
-        triggerClass: triggerClass,
-        hide: hideOnReferenceEscape,
-        boundaryElement: boundaryElement
-      }, tooltipWrapper);
-    }
-  }]);
-
-  return Tooltip;
-}(Component);
-
-_defineProperty(Tooltip$1, "defaultProps", {
+Popover.defaultProps = Object.assign({}, filterProps(PopperWrapper.defaultProps, propsList, true), {
+  offset: 'large',
   position: 'bottom',
-  appendToBody: true,
-  hideOnReferenceEscape: true
+  hideOnReferenceEscape: true,
+  customStyle: {},
+  boundaryElement: document.body
+});
+
+var propsList$1 = ['trigger', 'on', 'open', 'offset', 'onToggle', 'dark', 'customStyle', 'closeOnBackdropClick', 'hideOnReferenceEscape', 'closeOnScroll'];
+var Tooltip$1 = function Tooltip(props) {
+  var children = props.children,
+      tooltip = props.tooltip,
+      rest = _objectWithoutProperties(props, ["children", "tooltip"]);
+
+  var tooltipWrapper = /*#__PURE__*/createElement("div", {
+    className: "Tooltip"
+  }, /*#__PURE__*/createElement(Text, {
+    className: "Tooltip-text",
+    appearance: "white"
+  }, tooltip));
+  return /*#__PURE__*/createElement(Popover, _extends({
+    trigger: children,
+    on: 'hover',
+    offset: 'medium'
+  }, rest), tooltipWrapper);
+}; // Tooltip.defaultProps = filterProps({
+//   ...Popover.defaultProps,
+//   hoverable: false
+// }, propsList);
+
+Tooltip$1.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, propsList$1), {
+  hoverable: false
 });
 
 var Dialog = function Dialog(props) {
@@ -39893,12 +39597,13 @@ var Modal = /*#__PURE__*/function (_React$Component) {
         } else {
           this.setState({
             animate: false
+          }, function () {
+            setTimeout(function () {
+              _this2.setState({
+                open: false
+              });
+            }, 120);
           });
-          setTimeout(function () {
-            _this2.setState({
-              open: false
-            });
-          }, 120);
         }
       }
     }
@@ -39979,8 +39684,8 @@ var Modal = /*#__PURE__*/function (_React$Component) {
         onOutsideClick: onOutsideClickHandler
       }, ModalContainer) : ModalContainer;
       var WrapperElement = /*#__PURE__*/createPortal(ModalWrapper, this.element);
-      return /*#__PURE__*/createElement("div", null, WrapperElement, /*#__PURE__*/createElement(Backdrop, {
-        open: this.state.open
+      return /*#__PURE__*/createElement(Fragment$1, null, WrapperElement, /*#__PURE__*/createElement(Backdrop, {
+        open: this.state.animate
       }));
     }
   }]);
@@ -40064,12 +39769,13 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
         } else {
           this.setState({
             animate: false
+          }, function () {
+            setTimeout(function () {
+              _this2.setState({
+                open: false
+              });
+            }, 120);
           });
-          setTimeout(function () {
-            _this2.setState({
-              open: false
-            });
-          }, 120);
         }
       }
     }
@@ -40140,8 +39846,8 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
         onOutsideClick: onOutsideClickHandler
       }, SidesheetContainer) : SidesheetContainer;
       var WrapperElement = /*#__PURE__*/createPortal(SidesheetWrapper, this.element);
-      return /*#__PURE__*/createElement("div", null, WrapperElement, /*#__PURE__*/createElement(Backdrop, {
-        open: this.state.open
+      return /*#__PURE__*/createElement(Fragment$1, null, WrapperElement, /*#__PURE__*/createElement(Backdrop, {
+        open: this.state.animate
       }));
     }
   }]);
@@ -40716,6 +40422,20 @@ var EditableInput = function EditableInput(props) {
     "data-test": "DesignSystem-EditableInput--Input"
   }, rest));
 
+  var onKeyDown = function onKeyDown(event) {
+    if (document.activeElement === inputRef.current) {
+      switch (event.key) {
+        case 'Enter':
+          onSaveChanges();
+          break;
+
+        case 'Escape':
+          setDefaultComponent();
+          break;
+      }
+    }
+  };
+
   var renderChildren = function renderChildren() {
     if (showComponent) {
       return error && errorMessage && editing ? /*#__PURE__*/createElement(Popover, {
@@ -40743,7 +40463,8 @@ var EditableInput = function EditableInput(props) {
   return /*#__PURE__*/createElement("div", _extends({
     "data-test": "DesignSystem-EditableInput"
   }, baseProps, {
-    className: EditableInputClass
+    className: EditableInputClass,
+    onKeyDown: onKeyDown
   }), /*#__PURE__*/createElement(Editable, {
     onChange: onChangeHandler,
     editing: editing
@@ -41520,23 +41241,23 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "renderCalendar",
     value: function renderCalendar() {
-      var _this$props5 = this.props,
-          startDateProp = _this$props5.startDate,
-          endDateProp = _this$props5.endDate,
-          yearNavProp = _this$props5.yearNav,
-          monthNavProp = _this$props5.monthNav,
-          open = _this$props5.open,
-          inputFormat = _this$props5.inputFormat,
-          outputFormat = _this$props5.outputFormat,
-          startInputOptions = _this$props5.startInputOptions,
-          endInputOptions = _this$props5.endInputOptions,
-          validators = _this$props5.validators,
-          withInput = _this$props5.withInput,
-          position = _this$props5.position,
-          disabledBefore = _this$props5.disabledBefore,
-          disabledAfter = _this$props5.disabledAfter,
-          onRangeChange = _this$props5.onRangeChange,
-          rangeLimit = _this$props5.rangeLimit,
+      var _this$props5 = this.props;
+          _this$props5.startDate;
+          _this$props5.endDate;
+          _this$props5.yearNav;
+          _this$props5.monthNav;
+          _this$props5.open;
+          var inputFormat = _this$props5.inputFormat;
+          _this$props5.outputFormat;
+          _this$props5.startInputOptions;
+          _this$props5.endInputOptions;
+          var validators = _this$props5.validators;
+          _this$props5.withInput;
+          _this$props5.position;
+          var disabledBefore = _this$props5.disabledBefore,
+          disabledAfter = _this$props5.disabledAfter;
+          _this$props5.onRangeChange;
+          var rangeLimit = _this$props5.rangeLimit,
           rest = _objectWithoutProperties(_this$props5, ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "startInputOptions", "endInputOptions", "validators", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"]);
 
       var _this$state3 = this.state,
@@ -42459,7 +42180,7 @@ var GridBody = function GridBody(props) {
       errorTemplate = _this$props.errorTemplate;
 
   if (!loading && error) {
-    return errorTemplate ? typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate : /*#__PURE__*/createElement(Heading, null, "No results found");
+    return errorTemplate ? typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate : null;
   }
 
   var totalPages = Math.ceil(totalRecords / pageSize);
@@ -43353,7 +43074,7 @@ var defaultErrorTemplate = function defaultErrorTemplate(props) {
   return /*#__PURE__*/createElement(Heading, null, errorMessages[errorType]);
 };
 
-var defaultProps$4 = {
+var defaultProps$3 = {
   type: 'data',
   size: 'standard',
   showHead: true,
@@ -43757,7 +43478,7 @@ var Table = /*#__PURE__*/function (_React$Component) {
   return Table;
 }(Component);
 
-_defineProperty(Table, "defaultProps", defaultProps$4);
+_defineProperty(Table, "defaultProps", defaultProps$3);
 
 /**
  * **`List` is a pattern of `Table` with no Head Cells.**
@@ -43770,7 +43491,7 @@ var List = function List(props) {
     filterPosition: 'HEADER'
   }));
 };
-List.defaultProps = defaultProps$4;
+List.defaultProps = defaultProps$3;
 
 var useState$1 = useState$2;
 
@@ -44054,4 +43775,6 @@ PageHeader.defaultProps = {
   separator: true
 };
 
-export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, ChatMessage, Checkbox, Chip, ChipGroup, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, EditableDropdown, EditableInput, EmptyState, Grid, GridCell, Heading, Icon, Input, InputMask, Label$1 as Label, Legend$1 as Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip$1 as Tooltip, index as Utils };
+var version = "1.6.0-0";
+
+export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, ChatMessage, Checkbox, Chip, ChipGroup, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, EditableDropdown, EditableInput, EmptyState, Grid, GridCell, Heading, Icon, Input, InputMask, Label$1 as Label, Legend$1 as Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip$1 as Tooltip, index as Utils, version };

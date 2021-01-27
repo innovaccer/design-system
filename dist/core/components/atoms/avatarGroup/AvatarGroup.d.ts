@@ -1,18 +1,17 @@
 import { BaseProps } from "../../../utils/types";
-import { Appearance } from "../avatar";
-import { Position, ActionType } from "../../molecules/popover";
+import { AvatarProps, PopoverProps } from "../../../index.type";
 export declare type Size = 'regular' | 'tiny';
 interface AvatarData extends Record<string, any> {
     firstName?: string;
     lastName?: string;
-    appearance?: Appearance;
+    appearance?: AvatarProps['appearance'];
 }
 interface PopperProps {
     popperRenderer?: (names: AvatarData[]) => JSX.Element;
-    appendToBody?: boolean;
-    dark?: boolean;
-    position?: Position;
-    on?: ActionType;
+    appendToBody?: PopoverProps['appendToBody'];
+    dark?: PopoverProps['dark'];
+    position?: PopoverProps['position'];
+    on?: PopoverProps['on'];
     maxHeight?: number;
     popperClassName?: string;
 }
@@ -21,7 +20,7 @@ export interface AvatarGroupProps extends BaseProps {
     max: number;
     borderColor: string;
     popoverOptions: PopperProps;
-    tooltipPosition: Position;
+    tooltipPosition: PopoverProps['position'];
 }
 export declare const AvatarGroup: {
     (props: AvatarGroupProps): JSX.Element;

@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1610467748337 
+   * Generated on: 1611758177872 
    *      Package: @innovaccer/design-system
-   *      Version: v1.5.1-1
+   *      Version: v1.6.0-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -79,93 +79,31 @@
         return r;
     }
 
-    var Offsets;
-
-    (function (Offsets) {
-      Offsets["Small"] = "2px";
-      Offsets["Medium"] = "4px";
-      Offsets["Large"] = "8px";
-    })(Offsets || (Offsets = {}));
-
     var PopperWrapper = function (_super) {
       __extends(PopperWrapper, _super);
 
       function PopperWrapper(props) {
         var _this = _super.call(this, props) || this;
 
-        _this.handleMouseLeave = function (event) {
+        _this.togglePopper = function (type, newValue) {
           var _a = _this.props,
-              _b = _a.hoverable,
-              hoverable = _b === void 0 ? false : _b,
+              open = _a.open,
               onToggle = _a.onToggle;
-
-          if (hoverable) {
-            clearTimeout(_this._timer);
-            _this._timer = window.setTimeout(function () {
-              _this.setState({
-                open: false
-              });
-
-              if (_this.props.children.props.onMouseLeave) {
-                _this.props.children.props.onMouseLeave(event);
-              }
-            }, _this.state.mouseLeaveDelay);
-          } else {
-            onToggle(false, 'mouseLeave');
-
-            if (_this.props.children.props.onMouseLeave) {
-              _this.props.children.props.onMouseLeave(event);
-            }
-          }
+          onToggle(newValue === undefined ? !open : newValue, type);
         };
 
-        _this.handleMouseEnter = function (event) {
-          var _a = _this.props,
-              _b = _a.hoverable,
-              hoverable = _b === void 0 ? false : _b,
-              onToggle = _a.onToggle;
-
-          if (hoverable) {
-            clearTimeout(_this._timer);
-            _this._timer = window.setTimeout(function () {
-              _this.setState({
-                open: true
-              });
-
-              if (_this.props.children.props.onMouseEnter) {
-                _this.props.children.props.onMouseEnter(event);
-              }
-            }, _this.state.mouseEnterDelay);
-          } else {
-            onToggle(true, 'mouseEnter');
-
-            if (_this.props.children.props.onMouseEnter) {
-              _this.props.children.props.onMouseEnter(event);
-            }
-          }
+        _this.findDOMNode = function (ref) {
+          return ReactDOM.findDOMNode(ref.current);
         };
 
-        _this.togglePopper = function (type) {
-          var _a = _this.props,
-              _b = _a.open,
-              open = _b === void 0 ? false : _b,
-              onToggle = _a.onToggle;
-          onToggle(!open, type);
-        };
+        _this.doesEventContainsElement = function (event, ref) {
+          var el = _this.findDOMNode(ref);
 
-        _this.doesNodeContainClick = function (event) {
-          if (!(_this.findDOMNode(_this.popupRef).contains(event.target) || _this.findDOMNode(_this.triggerRef).contains(event.target))) {
-            _this.togglePopper('outsideClick');
-          }
+          return el && el.contains(event.target);
         };
 
         _this.getUpdatedStyle = function (oldStyle, placement, offset) {
-          if (offset === void 0) {
-            offset = 'Medium';
-          }
-
-          var _a = _this.props.style,
-              style = _a === void 0 ? {} : _a;
+          var style = _this.props.style;
 
           var newStyle = __assign(__assign({}, style), oldStyle);
 
@@ -173,77 +111,129 @@
 
           switch (position) {
             case 'top':
-              newStyle.marginBottom = Offsets[offset];
+              newStyle.marginBottom = _this.offsetMapping[offset];
               break;
 
             case 'bottom':
-              newStyle.marginTop = Offsets[offset];
+              newStyle.marginTop = _this.offsetMapping[offset];
               break;
 
             case 'left':
-              newStyle.marginRight = Offsets[offset];
+              newStyle.marginRight = _this.offsetMapping[offset];
               break;
 
             case 'right':
-              newStyle.marginLeft = Offsets[offset];
+              newStyle.marginLeft = _this.offsetMapping[offset];
               break;
           }
 
           return newStyle;
         };
 
-        _this.findDOMNode = function (ref) {
-          return ReactDOM.findDOMNode(ref.current);
-        };
-
-        _this.state = {
-          open: props.open || false,
-          mouseLeaveDelay: 50,
-          mouseEnterDelay: 0
+        _this.hoverableDelay = 100;
+        _this.offsetMapping = {
+          small: '2px',
+          medium: '4px',
+          large: '8px'
         };
         _this.triggerRef = /*#__PURE__*/React.createRef();
         _this.popupRef = /*#__PURE__*/React.createRef();
+        _this.getPopperChildren = _this.getPopperChildren.bind(_this);
+        _this.mouseMoveHandler = _this.mouseMoveHandler.bind(_this);
+        _this.handleMouseEnter = _this.handleMouseEnter.bind(_this);
+        _this.handleMouseLeave = _this.handleMouseLeave.bind(_this);
+        _this.boundaryScrollHandler = _this.boundaryScrollHandler.bind(_this);
         return _this;
       }
 
-      PopperWrapper.prototype.componentWillUnmount = function () {
-        clearTimeout(this._timer);
-        document.removeEventListener('mousedown', this.doesNodeContainClick);
-      };
-
       PopperWrapper.prototype.componentDidMount = function () {
-        var _a = this.props,
-            _b = _a.on,
-            on = _b === void 0 ? 'click' : _b,
-            _c = _a.closeOnBackdropClick,
-            closeOnBackdropClick = _c === void 0 ? true : _c;
-        var open = this.props.open;
-
-        if (on === 'click' && open && closeOnBackdropClick) {
-          document.addEventListener('mousedown', this.doesNodeContainClick);
-        }
+        this.addBoundaryScrollHandler();
       };
 
       PopperWrapper.prototype.componentDidUpdate = function (prevProps) {
-        var _a = this.props,
-            _b = _a.on,
-            on = _b === void 0 ? 'click' : _b,
-            _c = _a.closeOnBackdropClick,
-            closeOnBackdropClick = _c === void 0 ? true : _c;
-        var open = this.props.open;
-
-        if (prevProps.open !== this.props.open && this.props.open) {
-          var triggerElement = this.findDOMNode(this.triggerRef);
-          var zIndex = this.getZIndexForLayer(triggerElement);
-          this.setState({
-            zIndex: zIndex === undefined ? zIndex : zIndex + 1
-          });
+        if (!prevProps.boundaryElement && this.props.boundaryElement) {
+          this.removeBoundaryScrollHandler();
+          this.addBoundaryScrollHandler();
         }
 
-        if (on === 'click' && open && closeOnBackdropClick) {
-          document.addEventListener('mousedown', this.doesNodeContainClick);
-        } else if (on === 'click' && !open && closeOnBackdropClick) {
-          document.removeEventListener('mousedown', this.doesNodeContainClick);
+        if (prevProps.open !== this.props.open) {
+          this._throttleWait = false;
+
+          if (this.props.open) {
+            var triggerElement = this.findDOMNode(this.triggerRef);
+            var zIndex = this.getZIndexForLayer(triggerElement);
+            this.setState({
+              zIndex: zIndex === undefined ? zIndex : zIndex + 1
+            });
+          }
+        }
+      };
+
+      PopperWrapper.prototype.componentWillUnmount = function () {
+        this.removeBoundaryScrollHandler();
+      };
+
+      PopperWrapper.prototype.boundaryScrollHandler = function () {
+        var _a = this.props,
+            open = _a.open,
+            on = _a.on,
+            closeOnScroll = _a.closeOnScroll;
+
+        if (on === 'click' && closeOnScroll) {
+          if (open) {
+            if (!this._throttleWait) {
+              this.togglePopper('onScroll', false);
+              this._throttleWait = true;
+            }
+          }
+        }
+      };
+
+      PopperWrapper.prototype.addBoundaryScrollHandler = function () {
+        if (this.props.boundaryElement) {
+          this.props.boundaryElement.addEventListener('scroll', this.boundaryScrollHandler);
+        }
+      };
+
+      PopperWrapper.prototype.removeBoundaryScrollHandler = function () {
+        if (this.props.boundaryElement) {
+          this.props.boundaryElement.removeEventListener('scroll', this.boundaryScrollHandler);
+        }
+      };
+
+      PopperWrapper.prototype.mouseMoveHandler = function () {
+        var _this = this;
+
+        if (this._timer) clearTimeout(this._timer);
+        this._timer = setTimeout(function () {
+          var onToggle = _this.props.onToggle;
+          onToggle(false, 'mouseLeave');
+        }, this.hoverableDelay);
+      };
+
+      PopperWrapper.prototype.handleMouseEnter = function () {
+        var on = this.props.on;
+
+        if (on === 'hover') {
+          if (this._timer) clearTimeout(this._timer);
+          var onToggle = this.props.onToggle;
+          onToggle(true, 'mouseEnter');
+        }
+      };
+
+      PopperWrapper.prototype.handleMouseLeave = function () {
+        var on = this.props.on;
+
+        if (on === 'hover') {
+          var _a = this.props,
+              hoverable = _a.hoverable,
+              onToggle = _a.onToggle;
+
+          if (hoverable) {
+            this.mouseMoveHandler();
+          } else {
+            onToggle(false, 'mouseLeave');
+          }
         }
       };
 
@@ -257,9 +247,13 @@
         return zIndex === 'auto' || isNaN(zIndex) ? undefined : zIndex;
       };
 
-      PopperWrapper.prototype.getTriggerElement = function (trigger, ref, on) {
+      PopperWrapper.prototype.getTriggerElement = function (ref) {
         var _this = this;
 
+        var _a = this.props,
+            trigger = _a.trigger,
+            on = _a.on,
+            triggerClass = _a.triggerClass;
         var options = on === 'hover' ? {
           ref: ref,
           onMouseEnter: this.handleMouseEnter,
@@ -270,29 +264,43 @@
             return _this.togglePopper('onClick');
           }
         };
-        var triggerClass = this.props.triggerClass;
         var classes = classNames__default['default']('PopperWrapper-trigger', triggerClass);
-        var element = /*#__PURE__*/React.cloneElement( /*#__PURE__*/React.createElement("span", {
-          className: classes
-        }, trigger), options);
-        return element;
+
+        var onOutsideClickHandler = function onOutsideClickHandler(event) {
+          var _a = _this.props,
+              open = _a.open,
+              closeOnBackdropClick = _a.closeOnBackdropClick;
+
+          if (open && closeOnBackdropClick) {
+            if (!_this.doesEventContainsElement(event, _this.popupRef)) {
+              _this.togglePopper('outsideClick');
+            }
+          }
+        };
+
+        return /*#__PURE__*/React.createElement(OutsideClick, __assign({
+          className: classes,
+          onOutsideClick: onOutsideClickHandler
+        }, options), trigger);
       };
 
-      PopperWrapper.prototype.getChildrenElement = function (children, ref, placement, style, outOfBoundaries) {
-        var options = this.props.on === 'hover' ? {
+      PopperWrapper.prototype.getPopperChildren = function (_a) {
+        var ref = _a.ref,
+            style = _a.style,
+            placement = _a.placement,
+            outOfBoundaries = _a.outOfBoundaries;
+        var _b = this.props,
+            offset = _b.offset,
+            children = _b.children;
+        var newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
+        var element = /*#__PURE__*/React.cloneElement(children, {
           ref: ref,
-          style: style,
+          style: newStyle,
+          'data-placement': placement,
+          'data-hide': outOfBoundaries,
           onMouseEnter: this.handleMouseEnter,
-          onMouseLeave: this.handleMouseLeave,
-          'data-placement': placement,
-          'data-hide': outOfBoundaries
-        } : {
-          ref: ref,
-          style: style,
-          'data-placement': placement,
-          'data-hide': outOfBoundaries
-        };
-        var element = /*#__PURE__*/React.cloneElement(children, options);
+          onMouseLeave: this.handleMouseLeave
+        });
         return element;
       };
 
@@ -300,23 +308,17 @@
         var _this = this;
 
         var _a = this.props,
-            trigger = _a.trigger,
-            children = _a.children,
             placement = _a.placement,
             appendToBody = _a.appendToBody,
-            _b = _a.on,
-            on = _b === void 0 ? 'click' : _b,
-            offset = _a.offset;
-        var _c = this.props,
-            open = _c.open,
-            boundaryElement = _c.boundaryElement,
-            hide = _c.hide;
+            open = _a.open,
+            hide = _a.hide,
+            boundaryElement = _a.boundaryElement;
         return /*#__PURE__*/React.createElement(reactPopper.Manager, null, /*#__PURE__*/React.createElement(reactPopper.Reference, {
           innerRef: this.triggerRef
         }, function (_a) {
           var ref = _a.ref;
-          return _this.getTriggerElement(trigger, ref, on);
-        }), (open || this.state.open) && appendToBody && /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement(reactPopper.Popper, {
+          return _this.getTriggerElement(ref);
+        }), open && appendToBody && /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement(reactPopper.Popper, {
           placement: placement,
           innerRef: this.popupRef,
           modifiers: {
@@ -327,30 +329,20 @@
               enabled: hide
             }
           }
-        }, function (_a) {
-          var ref = _a.ref,
-              style = _a.style,
-              placement = _a.placement,
-              outOfBoundaries = _a.outOfBoundaries;
-          var newStyle = offset ? _this.getUpdatedStyle(style, placement, offset) : style;
-          return _this.getChildrenElement(children, ref, placement, __assign(__assign({}, newStyle), {
-            zIndex: _this.state.zIndex
-          }), outOfBoundaries);
-        }), document.body), (open || this.state.open) && !appendToBody && /*#__PURE__*/React.createElement(reactPopper.Popper, {
+        }, this.getPopperChildren), document.body), open && !appendToBody && /*#__PURE__*/React.createElement(reactPopper.Popper, {
           placement: placement,
           innerRef: this.popupRef
-        }, function (_a) {
-          var ref = _a.ref,
-              style = _a.style,
-              placement = _a.placement,
-              outOfBoundaries = _a.outOfBoundaries;
-          var newStyle = offset ? _this.getUpdatedStyle(style, placement, offset) : style;
-          return _this.getChildrenElement(children, ref, placement, __assign(__assign({}, newStyle), {
-            zIndex: _this.state.zIndex
-          }), outOfBoundaries);
-        }));
+        }, this.getPopperChildren));
       };
 
+      PopperWrapper.defaultProps = {
+        on: 'click',
+        offset: 'medium',
+        closeOnBackdropClick: true,
+        hoverable: true,
+        appendToBody: true,
+        style: {}
+      };
       return PopperWrapper;
     }(React.Component);
 
@@ -619,6 +611,14 @@
       }, {});
       return basePropsObj;
     };
+    var filterProps = function filterProps(props, propsList, include) {
+      return Object.entries(props).filter(function (obj) {
+        return include ? propsList.includes(obj[0]) : !propsList.includes(obj[0]);
+      }).reduce(function (acc, curr) {
+        acc[curr[0]] = curr[1];
+        return acc;
+      }, {});
+    };
 
     var initialsLength = 2;
     var Avatar = function Avatar(props) {
@@ -681,74 +681,6 @@
       tooltipPosition: 'bottom',
       withTooltip: true,
       size: 'regular'
-    };
-
-    var Popover = function Popover(props) {
-      var _a;
-
-      var position = props.position,
-          closeOnBackdropClick = props.closeOnBackdropClick,
-          appendToBody = props.appendToBody,
-          on = props.on,
-          customStyle = props.customStyle,
-          dark = props.dark,
-          hoverable = props.hoverable,
-          children = props.children,
-          trigger = props.trigger,
-          triggerClass = props.triggerClass,
-          onToggle = props.onToggle,
-          className = props.className,
-          boundaryElement = props.boundaryElement,
-          hideOnReferenceEscape = props.hideOnReferenceEscape;
-
-      var _b = React.useState(props.open || false),
-          open = _b[0],
-          setOpen = _b[1];
-
-      React.useEffect(function () {
-        if (onToggle) {
-          if (props.open !== undefined) setOpen(props.open);
-        }
-      }, [props.open]);
-
-      var onToggleFunction = function onToggleFunction(newOpen) {
-        setOpen(newOpen);
-      };
-
-      var classes = classNames__default['default']((_a = {
-        Popover: true
-      }, _a['Popover--dark'] = dark, _a), className);
-      var PopoverWrapper = /*#__PURE__*/React.createElement("div", {
-        "data-test": "DesignSystem-Popover",
-        className: classes,
-        "data-layer": true
-      }, children);
-      var popperOptions = {
-        trigger: trigger,
-        boundaryElement: boundaryElement,
-        triggerClass: triggerClass,
-        appendToBody: appendToBody,
-        closeOnBackdropClick: closeOnBackdropClick,
-        on: on,
-        hoverable: hoverable,
-        open: open,
-        hide: hideOnReferenceEscape,
-        style: customStyle,
-        onToggle: onToggle || onToggleFunction,
-        placement: position
-      };
-      return /*#__PURE__*/React.createElement(PopperWrapper, __assign({}, popperOptions, {
-        offset: "Large"
-      }), PopoverWrapper);
-    };
-    Popover.displayName = 'Popover';
-    Popover.defaultProps = {
-      position: 'bottom',
-      closeOnBackdropClick: true,
-      hideOnReferenceEscape: true,
-      appendToBody: true,
-      on: 'click',
-      customStyle: {}
     };
 
     var AvatarGroup = function AvatarGroup(props) {
@@ -1607,198 +1539,6 @@
       });
     };
 
-    var Spinner = function Spinner(props) {
-      var _a, _b;
-
-      var appearance = props.appearance,
-          size = props.size,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
-      var wrapperClasses = classNames__default['default']((_a = {
-        Spinner: true
-      }, _a["Spinner--" + size] = size, _a), className);
-      var circleClasses = classNames__default['default']((_b = {
-        Circle: true
-      }, _b["Circle--" + appearance] = appearance, _b));
-      var svgProps = {
-        viewBox: '0 0 50 50'
-      };
-      var circleProps = {
-        cx: 25,
-        cy: 25,
-        r: 20,
-        fill: 'none',
-        strokeMiterlimit: '10',
-        strokeWidth: '4'
-      };
-      return /*#__PURE__*/React.createElement("svg", __assign({}, baseProps, {
-        className: wrapperClasses
-      }, svgProps), /*#__PURE__*/React.createElement("circle", __assign({
-        className: circleClasses
-      }, circleProps)));
-    };
-    Spinner.displayName = 'Spinner';
-    Spinner.defaultProps = {
-      appearance: 'primary',
-      size: 'medium'
-    };
-
-    var sizeMapping = {
-      tiny: 12,
-      regular: 16,
-      large: 20
-    };
-    var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
-      var _a, _b, _c;
-
-      var _d = props.size,
-          size = _d === void 0 ? 'regular' : _d,
-          _e = props.appearance,
-          appearance = _e === void 0 ? 'basic' : _e,
-          _f = props.iconAlign,
-          iconAlign = _f === void 0 ? 'left' : _f,
-          _g = props.tabIndex,
-          tabIndex = _g === void 0 ? 0 : _g,
-          type = props.type,
-          children = props.children,
-          icon = props.icon,
-          expanded = props.expanded,
-          selected = props.selected,
-          loading = props.loading,
-          disabled = props.disabled,
-          className = props.className,
-          rest = __rest(props, ["size", "appearance", "iconAlign", "tabIndex", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className"]);
-
-      var buttonClass = classNames__default['default']((_a = {}, _a['Button'] = true, _a['Button--expanded'] = expanded, _a["Button--" + size] = size, _a["Button--" + size + "Square"] = !children, _a["Button--" + appearance] = appearance, _a['Button--selected'] = selected && (appearance === 'basic' || appearance === 'transparent'), _a["Button--iconAlign-" + iconAlign] = children && iconAlign, _a["" + className] = className, _a));
-      var iconClass = classNames__default['default']((_b = {}, _b['Button-icon'] = true, _b["Button-icon--" + iconAlign] = children && iconAlign, _b));
-      var spinnerClass = classNames__default['default']((_c = {}, _c['Button-spinner'] = true, _c["Button-spinner--" + iconAlign] = children && iconAlign, _c));
-      return /*#__PURE__*/React.createElement("button", __assign({
-        ref: ref,
-        type: type,
-        className: buttonClass,
-        disabled: disabled || loading,
-        tabIndex: tabIndex
-      }, rest), loading && /*#__PURE__*/React.createElement("span", {
-        className: spinnerClass
-      }, /*#__PURE__*/React.createElement(Spinner, {
-        size: "small",
-        appearance: appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white'
-      })), icon && !loading && /*#__PURE__*/React.createElement("div", {
-        className: iconClass
-      }, /*#__PURE__*/React.createElement(Icon, {
-        name: icon,
-        appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
-        size: sizeMapping[size]
-      })), children);
-    });
-    Button.displayName = 'Button';
-
-    var sizeMapping$1 = {
-      tiny: 12,
-      regular: 16,
-      large: 20
-    };
-    var Input = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
-      var _a, _b, _c, _d;
-
-      var _e = props.size,
-          size = _e === void 0 ? 'regular' : _e,
-          _f = props.type,
-          type = _f === void 0 ? 'text' : _f,
-          _g = props.minWidth,
-          minWidth = _g === void 0 ? type !== 'number' ? 256 : undefined : _g,
-          readonly = props.readonly,
-          defaultValue = props.defaultValue,
-          name = props.name,
-          placeholder = props.placeholder,
-          value = props.value,
-          icon = props.icon,
-          inlineLabel = props.inlineLabel,
-          required = props.required,
-          error = props.error,
-          info = props.info,
-          onChange = props.onChange,
-          onClick = props.onClick,
-          onClear = props.onClear,
-          onBlur = props.onBlur,
-          onFocus = props.onFocus,
-          actionIcon = props.actionIcon,
-          className = props.className,
-          autocomplete = props.autocomplete,
-          autoFocus = props.autoFocus,
-          rest = __rest(props, ["size", "type", "minWidth", "readonly", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autocomplete", "autoFocus"]);
-
-      var ref = React.useRef(null);
-      React.useImperativeHandle(forwardedRef, function () {
-        return ref.current;
-      });
-      React.useEffect(function () {
-        var _a;
-
-        if (autoFocus) (_a = ref.current) === null || _a === void 0 ? void 0 : _a.focus({
-          preventScroll: true
-        });
-      }, []);
-      var autoComplete = props.autoComplete || autocomplete;
-      var disabled = props.disabled || readonly;
-      var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {}, _a['Input'] = true, _a["Input--" + size] = size, _a['Input--disabled'] = disabled, _a['Input--error'] = error, _a), className);
-      var inputClass = classNames__default['default']((_b = {}, _b['Input-input'] = true, _b["Input-input--" + size] = size, _b));
-      var leftIconClass = classNames__default['default']((_c = {}, _c['Input-icon'] = true, _c['Input-icon--left'] = true, _c['Input-icon--disabled'] = !value, _c));
-      var rightIconClass = classNames__default['default']((_d = {}, _d['Input-icon'] = true, _d['Input-icon--right'] = true, _d));
-      var trigger = /*#__PURE__*/React.createElement("div", {
-        className: rightIconClass
-      }, /*#__PURE__*/React.createElement(Icon, {
-        name: 'info',
-        size: sizeMapping$1[size]
-      }));
-      return /*#__PURE__*/React.createElement("div", {
-        "data-test": "DesignSystem-InputWrapper",
-        className: classes,
-        style: {
-          minWidth: minWidth
-        }
-      }, inlineLabel && /*#__PURE__*/React.createElement("div", {
-        className: "Input-inlineLabel"
-      }, /*#__PURE__*/React.createElement(Text, {
-        appearance: "subtle"
-      }, inlineLabel)), size !== 'tiny' && icon && /*#__PURE__*/React.createElement("div", {
-        className: leftIconClass
-      }, /*#__PURE__*/React.createElement(Icon, {
-        name: icon,
-        size: sizeMapping$1[size]
-      })), /*#__PURE__*/React.createElement("input", __assign({
-        "data-test": "DesignSystem-Input"
-      }, baseProps, rest, {
-        ref: ref,
-        name: name,
-        type: type,
-        defaultValue: defaultValue,
-        placeholder: placeholder,
-        className: inputClass,
-        value: value,
-        required: required,
-        autoComplete: autoComplete,
-        disabled: disabled,
-        onChange: onChange,
-        onBlur: onBlur,
-        onClick: onClick,
-        onFocus: onFocus
-      })), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/React.createElement(Tooltip, {
-        position: "top",
-        tooltip: info
-      }, trigger) : actionIcon ? actionIcon : onClear && value && !disabled && /*#__PURE__*/React.createElement("div", {
-        className: rightIconClass,
-        onClick: function onClick(e) {
-          return onClear(e);
-        }
-      }, /*#__PURE__*/React.createElement(Icon, {
-        name: 'close',
-        size: sizeMapping$1[size]
-      })));
-    });
-    Input.displayName = 'Input';
-
     var PlaceholderParagraph = function PlaceholderParagraph(props) {
       var _a, _b;
 
@@ -2379,12 +2119,6 @@
     DropdownList.displayName = 'DropdownList';
 
     var inputRef = /*#__PURE__*/React.createRef();
-    var bulk = 50;
-    var defaultProps = {
-      triggerOptions: {},
-      options: [],
-      closeOnSelect: true
-    };
 
     var Dropdown = function (_super) {
       __extends(Dropdown, _super);
@@ -2468,19 +2202,19 @@
 
             var options = res.options,
                 count = res.count;
-            updatedAsync = searchTerm === '' ? count > bulk : updatedAsync;
+            updatedAsync = searchTerm === '' ? count > _this.staticLimit : updatedAsync;
             var unSelectedGroup = _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? _this.getUnSelectedOptions(options, init) : options;
             var selectedGroup = searchTerm === '' ? _this.getSelectedOptions(options, init) : [];
             var optionsLength = searchTerm === '' ? count : _this.state.optionsLength;
 
-            var disabledOptions = _this.getDisabledOptions(unSelectedGroup.slice(0, bulk));
+            var disabledOptions = _this.getDisabledOptions(unSelectedGroup.slice(0, _this.staticLimit));
 
             _this.setState(__assign(__assign({}, _this.state), {
               optionsLength: optionsLength,
               loading: false,
               async: updatedAsync,
               searchedOptionsLength: count,
-              options: unSelectedGroup.slice(0, bulk),
+              options: unSelectedGroup.slice(0, _this.staticLimit),
               tempSelected: init ? selectedGroup : tempSelected,
               previousSelected: init ? selectedGroup : previousSelected,
               selected: _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? selectedGroup : [],
@@ -2579,7 +2313,7 @@
               return option.label;
             }).join(', ');
           } else {
-            label = customLabel ? customLabel(selectedLength, optionsLength) : selectedLength + " selected";
+            label = customLabel ? customLabel(selectedLength, optionsLength, selectedArray) : selectedLength + " selected";
           }
 
           if (getLabel) getLabel(label);
@@ -2852,8 +2586,9 @@
             loading = props.loading,
             open = props.open,
             options = props.options;
+        _this.staticLimit = Math.min(100, props.staticLimit);
         var optionsLength = totalOptions ? totalOptions : options.length;
-        var async = 'fetchOptions' in _this.props || optionsLength > bulk;
+        var async = 'fetchOptions' in _this.props || optionsLength > _this.staticLimit;
         var selectedGroup = !async ? _this.getSelectedOptions(options, true) : [];
 
         var disabledOptions = _this.getDisabledOptions(options);
@@ -2895,7 +2630,7 @@
           var disabledOptionsCount = this.getDisabledOptions(options).length;
 
           if (prevProps.loading !== loading && !fetchOptions) {
-            if (options.length > bulk) {
+            if (options.length > this.staticLimit) {
               this.updateOptions(true, true);
             } else {
               var selectedGroup = this.getSelectedOptions(options, true);
@@ -2949,9 +2684,9 @@
 
         var _d = this.props,
             _e = _d.triggerOptions,
-            triggerOptions = _e === void 0 ? {} : _e,
-            selected = _d.selected,
-            rest = __rest(_d, ["triggerOptions", "selected"]);
+            triggerOptions = _e === void 0 ? {} : _e;
+            _d.selected;
+            var rest = __rest(_d, ["triggerOptions", "selected"]);
 
         var remainingOptionsLen = searchedOptionsLength - options.length;
         var firstEnabledOption = _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox) ? 0 : options.findIndex(function (option) {
@@ -2984,7 +2719,12 @@
         }, rest));
       };
 
-      Dropdown.defaultProps = defaultProps;
+      Dropdown.defaultProps = {
+        triggerOptions: {},
+        options: [],
+        closeOnSelect: true,
+        staticLimit: 50
+      };
       return Dropdown;
     }(React.Component);
 
@@ -3081,6 +2821,92 @@
       }, "/"))));
     };
 
+    var Spinner = function Spinner(props) {
+      var _a, _b;
+
+      var appearance = props.appearance,
+          size = props.size,
+          className = props.className;
+      var baseProps = extractBaseProps(props);
+      var wrapperClasses = classNames__default['default']((_a = {
+        Spinner: true
+      }, _a["Spinner--" + size] = size, _a), className);
+      var circleClasses = classNames__default['default']((_b = {
+        Circle: true
+      }, _b["Circle--" + appearance] = appearance, _b));
+      var svgProps = {
+        viewBox: '0 0 50 50'
+      };
+      var circleProps = {
+        cx: 25,
+        cy: 25,
+        r: 20,
+        fill: 'none',
+        strokeMiterlimit: '10',
+        strokeWidth: '4'
+      };
+      return /*#__PURE__*/React.createElement("svg", __assign({}, baseProps, {
+        className: wrapperClasses
+      }, svgProps), /*#__PURE__*/React.createElement("circle", __assign({
+        className: circleClasses
+      }, circleProps)));
+    };
+    Spinner.displayName = 'Spinner';
+    Spinner.defaultProps = {
+      appearance: 'primary',
+      size: 'medium'
+    };
+
+    var sizeMapping = {
+      tiny: 12,
+      regular: 16,
+      large: 20
+    };
+    var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
+      var _a, _b, _c;
+
+      var _d = props.size,
+          size = _d === void 0 ? 'regular' : _d,
+          _e = props.appearance,
+          appearance = _e === void 0 ? 'basic' : _e,
+          _f = props.iconAlign,
+          iconAlign = _f === void 0 ? 'left' : _f,
+          _g = props.tabIndex,
+          tabIndex = _g === void 0 ? 0 : _g,
+          type = props.type,
+          children = props.children,
+          icon = props.icon,
+          expanded = props.expanded,
+          selected = props.selected,
+          loading = props.loading,
+          disabled = props.disabled,
+          className = props.className,
+          rest = __rest(props, ["size", "appearance", "iconAlign", "tabIndex", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className"]);
+
+      var buttonClass = classNames__default['default']((_a = {}, _a['Button'] = true, _a['Button--expanded'] = expanded, _a["Button--" + size] = size, _a["Button--" + size + "Square"] = !children, _a["Button--" + appearance] = appearance, _a['Button--selected'] = selected && (appearance === 'basic' || appearance === 'transparent'), _a["Button--iconAlign-" + iconAlign] = children && iconAlign, _a["" + className] = className, _a));
+      var iconClass = classNames__default['default']((_b = {}, _b['Button-icon'] = true, _b["Button-icon--" + iconAlign] = children && iconAlign, _b));
+      var spinnerClass = classNames__default['default']((_c = {}, _c['Button-spinner'] = true, _c["Button-spinner--" + iconAlign] = children && iconAlign, _c));
+      return /*#__PURE__*/React.createElement("button", __assign({
+        ref: ref,
+        type: type,
+        className: buttonClass,
+        disabled: disabled || loading,
+        tabIndex: tabIndex
+      }, rest), loading && /*#__PURE__*/React.createElement("span", {
+        className: spinnerClass
+      }, /*#__PURE__*/React.createElement(Spinner, {
+        size: "small",
+        appearance: appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white'
+      })), icon && !loading && /*#__PURE__*/React.createElement("div", {
+        className: iconClass
+      }, /*#__PURE__*/React.createElement(Icon, {
+        name: icon,
+        appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
+        size: sizeMapping[size]
+      })), children);
+    });
+    Button.displayName = 'Button';
+
     var Card = /*#__PURE__*/React.forwardRef(function (props, ref) {
       var _a;
 
@@ -3115,7 +2941,7 @@
       var iconClass = function iconClass(align) {
         var _a;
 
-        return classNames__default['default']((_a = {}, _a['Chip-icon'] = true, _a["Chip-icon--" + align] = align, _a));
+        return classNames__default['default']((_a = {}, _a['Chip-icon'] = true, _a["Chip-icon--" + align] = align, _a['cursor-pointer'] = align === 'right' && !disabled, _a));
       };
 
       var onCloseHandler = function onCloseHandler(e) {
@@ -4460,20 +4286,20 @@
       };
 
       DatePicker.prototype.renderCalendar = function () {
-        var _a = this.props,
-            dateProp = _a.date,
-            open = _a.open,
-            position = _a.position,
-            inputFormat = _a.inputFormat,
-            outputFormat = _a.outputFormat,
-            inputOptions = _a.inputOptions,
-            validators = _a.validators,
-            withInput = _a.withInput,
-            disabledBefore = _a.disabledBefore,
-            disabledAfter = _a.disabledAfter,
-            onDateChange = _a.onDateChange,
-            closeOnSelect = _a.closeOnSelect,
-            rest = __rest(_a, ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect"]);
+        var _a = this.props;
+            _a.date;
+            _a.open;
+            _a.position;
+            var inputFormat = _a.inputFormat;
+            _a.outputFormat;
+            _a.inputOptions;
+            var validators = _a.validators;
+            _a.withInput;
+            var disabledBefore = _a.disabledBefore,
+            disabledAfter = _a.disabledAfter;
+            _a.onDateChange;
+            _a.closeOnSelect;
+            var rest = __rest(_a, ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect"]);
 
         var date = this.state.date;
         return /*#__PURE__*/React.createElement(Calendar, __assign({}, rest, {
@@ -4754,6 +4580,112 @@
       colorOfTotalCount: 'success'
     };
 
+    var sizeMapping$1 = {
+      tiny: 12,
+      regular: 16,
+      large: 20
+    };
+    var Input = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
+      var _a, _b, _c, _d;
+
+      var _e = props.size,
+          size = _e === void 0 ? 'regular' : _e,
+          _f = props.type,
+          type = _f === void 0 ? 'text' : _f,
+          _g = props.minWidth,
+          minWidth = _g === void 0 ? type !== 'number' ? 256 : undefined : _g,
+          readonly = props.readonly,
+          defaultValue = props.defaultValue,
+          name = props.name,
+          placeholder = props.placeholder,
+          value = props.value,
+          icon = props.icon,
+          inlineLabel = props.inlineLabel,
+          required = props.required,
+          error = props.error,
+          info = props.info,
+          onChange = props.onChange,
+          onClick = props.onClick,
+          onClear = props.onClear,
+          onBlur = props.onBlur,
+          onFocus = props.onFocus,
+          actionIcon = props.actionIcon,
+          className = props.className,
+          autocomplete = props.autocomplete,
+          autoFocus = props.autoFocus,
+          rest = __rest(props, ["size", "type", "minWidth", "readonly", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autocomplete", "autoFocus"]);
+
+      var ref = React.useRef(null);
+      React.useImperativeHandle(forwardedRef, function () {
+        return ref.current;
+      });
+      React.useEffect(function () {
+        var _a;
+
+        if (autoFocus) (_a = ref.current) === null || _a === void 0 ? void 0 : _a.focus({
+          preventScroll: true
+        });
+      }, []);
+      var autoComplete = props.autoComplete || autocomplete;
+      var disabled = props.disabled || readonly;
+      var baseProps = extractBaseProps(props);
+      var classes = classNames__default['default']((_a = {}, _a['Input'] = true, _a["Input--" + size] = size, _a['Input--disabled'] = disabled, _a['Input--error'] = error, _a), className);
+      var inputClass = classNames__default['default']((_b = {}, _b['Input-input'] = true, _b["Input-input--" + size] = size, _b));
+      var leftIconClass = classNames__default['default']((_c = {}, _c['Input-icon'] = true, _c['Input-icon--left'] = true, _c['Input-icon--disabled'] = !value, _c));
+      var rightIconClass = classNames__default['default']((_d = {}, _d['Input-icon'] = true, _d['Input-icon--right'] = true, _d));
+      var trigger = /*#__PURE__*/React.createElement("div", {
+        className: rightIconClass
+      }, /*#__PURE__*/React.createElement(Icon, {
+        name: 'info',
+        size: sizeMapping$1[size]
+      }));
+      return /*#__PURE__*/React.createElement("div", {
+        "data-test": "DesignSystem-InputWrapper",
+        className: classes,
+        style: {
+          minWidth: minWidth
+        }
+      }, inlineLabel && /*#__PURE__*/React.createElement("div", {
+        className: "Input-inlineLabel"
+      }, /*#__PURE__*/React.createElement(Text, {
+        appearance: "subtle"
+      }, inlineLabel)), size !== 'tiny' && icon && /*#__PURE__*/React.createElement("div", {
+        className: leftIconClass
+      }, /*#__PURE__*/React.createElement(Icon, {
+        name: icon,
+        size: sizeMapping$1[size]
+      })), /*#__PURE__*/React.createElement("input", __assign({
+        "data-test": "DesignSystem-Input"
+      }, baseProps, rest, {
+        ref: ref,
+        name: name,
+        type: type,
+        defaultValue: defaultValue,
+        placeholder: placeholder,
+        className: inputClass,
+        value: value,
+        required: required,
+        autoComplete: autoComplete,
+        disabled: disabled,
+        onChange: onChange,
+        onBlur: onBlur,
+        onClick: onClick,
+        onFocus: onFocus
+      })), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/React.createElement(Tooltip, {
+        position: "top",
+        tooltip: info
+      }, trigger) : actionIcon ? actionIcon : onClear && value && !disabled && /*#__PURE__*/React.createElement("div", {
+        className: rightIconClass,
+        onClick: function onClick(e) {
+          return onClear(e);
+        }
+      }, /*#__PURE__*/React.createElement(Icon, {
+        name: 'close',
+        size: sizeMapping$1[size]
+      })));
+    });
+    Input.displayName = 'Input';
+
     function _typeof(obj) {
       "@babel/helpers - typeof";
 
@@ -4784,8 +4716,8 @@
     };
 
     var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
-      var maskProp = props.mask,
-          valueProp = props.value,
+      props.mask;
+          var valueProp = props.value,
           _a = props.placeholderChar,
           placeholderChar = _a === void 0 ? '_' : _a,
           _b = props.validators,
@@ -5174,10 +5106,12 @@
 
       var placeholder = props.placeholder,
           dropdownOptions = props.dropdownOptions,
-          className = props.className;
+          className = props.className,
+          customTriggerRenderer = props.customTriggerRenderer;
 
       var onDropdownChange = dropdownOptions.onChange,
-          rest = __rest(dropdownOptions, ["onChange"]);
+          onDropdownClose = dropdownOptions.onClose,
+          rest = __rest(dropdownOptions, ["onChange", "onClose"]);
 
       var _d = React.useState(placeholder),
           label = _d[0],
@@ -5221,6 +5155,17 @@
         if (onDropdownChange) onDropdownChange(value);
       };
 
+      var onClose = function onClose(selected) {
+        setEditing(false);
+        setShowComponent(false);
+        if (onDropdownClose) onDropdownClose(selected);
+      };
+
+      var renderComponent = function renderComponent(componentLabel) {
+        if (customTriggerRenderer) return customTriggerRenderer(componentLabel);
+        return componentLabel;
+      };
+
       return /*#__PURE__*/React.createElement("div", __assign({
         "data-test": "DesignSystem-EditableDropdown"
       }, baseProps, {
@@ -5232,12 +5177,13 @@
         placeholder: placeholder,
         onChange: onChange,
         getLabel: getLabel,
+        onClose: onClose,
         className: EditableDropdownClass,
         "data-test": "DesignSystem-EditableDropdown--Dropdown"
       }, rest)), /*#__PURE__*/React.createElement("div", {
         className: DefaultCompClass,
         "data-test": "DesignSystem-EditableDropdown--Default"
-      }, label || placeholder)));
+      }, renderComponent(label || placeholder))));
     };
     EditableDropdown.defaultProps = {
       placeholder: '',
@@ -5366,46 +5312,43 @@
       labelAppearance: 'subtle'
     };
 
-    var OutsideClick = function (_super) {
-      __extends(OutsideClick, _super);
+    var OutsideClick = /*#__PURE__*/React.forwardRef(function (props, ref) {
+      var _a;
 
-      function OutsideClick(props) {
-        var _this = _super.call(this, props) || this;
+      var children = props.children,
+          className = props.className,
+          onOutsideClick = props.onOutsideClick,
+          rest = __rest(props, ["children", "className", "onOutsideClick"]);
 
-        _this.handleOutsideClick = function (event) {
-          var onOutsideClick = _this.props.onOutsideClick;
-          var element = _this.container;
-
-          if (!event.target || !element.current) {
-            return;
-          }
-
-          if (!ReactDOM.findDOMNode(element.current).contains(event.target)) {
-            onOutsideClick(event);
-          }
+      var innerRef = React.useRef(null);
+      React.useImperativeHandle(ref, function () {
+        return innerRef.current;
+      }, [innerRef]);
+      React.useEffect(function () {
+        document.addEventListener('click', handleOutsideClick, true);
+        return function () {
+          document.removeEventListener('click', handleOutsideClick);
         };
+      }, []);
+      var handleOutsideClick = React.useCallback(function (event) {
+        var element = innerRef;
 
-        _this.container = /*#__PURE__*/React.createRef();
-        return _this;
-      }
+        if (!event.target || !element.current) {
+          return;
+        }
 
-      OutsideClick.prototype.componentDidMount = function () {
-        document.addEventListener('click', this.handleOutsideClick, true);
-      };
-
-      OutsideClick.prototype.componentWillUnmount = function () {
-        document.removeEventListener('click', this.handleOutsideClick);
-      };
-
-      OutsideClick.prototype.render = function () {
-        var children = this.props.children;
-        return /*#__PURE__*/React.cloneElement(React.Children.only(children), {
-          ref: this.container
-        });
-      };
-
-      return OutsideClick;
-    }(React.Component);
+        if (!ReactDOM.findDOMNode(element.current).contains(event.target)) {
+          onOutsideClick(event);
+        }
+      }, []);
+      var classes = classNames__default['default']((_a = {}, _a['OutsideClick'] = true, _a), className);
+      return /*#__PURE__*/React.createElement("div", __assign({
+        ref: innerRef
+      }, rest, {
+        className: classes
+      }), children);
+    });
+    OutsideClick.displayName = 'OutsideClick';
 
     var Paragraph = function Paragraph(props) {
       var _a;
@@ -6486,66 +6429,89 @@
       appearance: 'default'
     };
 
-    var Tooltip = function (_super) {
-      __extends(Tooltip, _super);
+    var propsList = ['appendToBody', 'trigger', 'hoverable', 'on', 'open', 'closeOnBackdropClick', 'offset', 'closeOnScroll'];
+    var Popover = function Popover(props) {
+      var _a;
 
-      function Tooltip(props) {
-        var _this = _super.call(this, props) || this;
+      var position = props.position,
+          customStyle = props.customStyle,
+          dark = props.dark,
+          children = props.children,
+          onToggle = props.onToggle,
+          className = props.className,
+          hideOnReferenceEscape = props.hideOnReferenceEscape,
+          boundaryElement = props.boundaryElement,
+          rest = __rest(props, ["position", "customStyle", "dark", "children", "onToggle", "className", "hideOnReferenceEscape", "boundaryElement"]);
 
-        _this.onToggle = function (open) {
-          _this.setState({
-            open: open
-          });
-        };
+      var _b = React.useState(!!props.open),
+          open = _b[0],
+          setOpen = _b[1];
 
-        _this.state = {
-          open: false
-        };
-        return _this;
-      }
+      var _c = React.useState(false),
+          init = _c[0],
+          setInit = _c[1];
 
-      Tooltip.prototype.componentWillUnmount = function () {
-        this.setState({
-          open: false
-        });
-      };
+      React.useEffect(function () {
+        if (props.open !== undefined) setOpen(props.open);
+      }, [props.open]);
+      var defaultOnToggle = React.useCallback(function (newOpen) {
+        setOpen(newOpen);
+      }, []);
+      React.useEffect(function () {
+        if (!init) {
+          if ('current' in boundaryElement && boundaryElement.current) {
+            setInit(true);
+          }
+        }
+      }, [boundaryElement]);
+      var classes = classNames__default['default']((_a = {
+        Popover: true
+      }, _a['Popover--dark'] = dark, _a), className);
+      var PopoverWrapper = /*#__PURE__*/React.createElement("div", {
+        "data-test": "DesignSystem-Popover",
+        className: classes,
+        "data-layer": true
+      }, children);
+      return /*#__PURE__*/React.createElement(PopperWrapper, __assign({}, rest, {
+        init: init,
+        boundaryElement: 'current' in boundaryElement ? boundaryElement.current : boundaryElement,
+        open: open,
+        hide: hideOnReferenceEscape,
+        style: customStyle,
+        onToggle: onToggle || defaultOnToggle,
+        placement: position
+      }), PopoverWrapper);
+    };
+    Popover.displayName = 'Popover';
+    Popover.defaultProps = Object.assign({}, filterProps(PopperWrapper.defaultProps, propsList, true), {
+      offset: 'large',
+      position: 'bottom',
+      hideOnReferenceEscape: true,
+      customStyle: {},
+      boundaryElement: document.body
+    });
 
-      Tooltip.prototype.render = function () {
-        var _a = this.props,
-            appendToBody = _a.appendToBody,
-            position = _a.position,
-            tooltip = _a.tooltip,
-            children = _a.children,
-            className = _a.className,
-            triggerClass = _a.triggerClass,
-            hideOnReferenceEscape = _a.hideOnReferenceEscape,
-            boundaryElement = _a.boundaryElement,
-            props = __rest(_a, ["appendToBody", "position", "tooltip", "children", "className", "triggerClass", "hideOnReferenceEscape", "boundaryElement"]);
+    var propsList$1 = ['trigger', 'on', 'open', 'offset', 'onToggle', 'dark', 'customStyle', 'closeOnBackdropClick', 'hideOnReferenceEscape', 'closeOnScroll'];
+    var Tooltip = function Tooltip(props) {
+      var children = props.children,
+          tooltip = props.tooltip,
+          rest = __rest(props, ["children", "tooltip"]);
 
-        var tooltipWrapper = /*#__PURE__*/React.createElement("div", __assign({
-          className: "Tooltip"
-        }, props), tooltip);
-        return /*#__PURE__*/React.createElement(PopperWrapper, {
-          trigger: children,
-          placement: this.props.position,
-          appendToBody: appendToBody,
-          on: 'hover',
-          offset: 'Medium',
-          onToggle: this.onToggle,
-          open: this.state.open,
-          triggerClass: triggerClass,
-          hide: hideOnReferenceEscape,
-          boundaryElement: boundaryElement
-        }, tooltipWrapper);
-      };
-
-      Tooltip.defaultProps = {
-        position: 'bottom',
-        appendToBody: true,
-        hideOnReferenceEscape: true
-      };
-      return Tooltip;
-    }(React.Component);
+      var tooltipWrapper = /*#__PURE__*/React.createElement("div", {
+        className: "Tooltip"
+      }, /*#__PURE__*/React.createElement(Text, {
+        className: "Tooltip-text",
+        appearance: "white"
+      }, tooltip));
+      return /*#__PURE__*/React.createElement(Popover, __assign({
+        trigger: children,
+        on: 'hover',
+        offset: 'medium'
+      }, rest), tooltipWrapper);
+    };
+    Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, propsList$1), {
+      hoverable: false
+    });
 
     var Dialog = function Dialog(props) {
       var dimension = props.dimension,
@@ -6648,12 +6614,13 @@
           } else {
             this.setState({
               animate: false
+            }, function () {
+              setTimeout(function () {
+                _this.setState({
+                  open: false
+                });
+              }, 120);
             });
-            setTimeout(function () {
-              _this.setState({
-                open: false
-              });
-            }, 120);
           }
         }
       };
@@ -6733,8 +6700,8 @@
           onOutsideClick: onOutsideClickHandler
         }, ModalContainer) : ModalContainer;
         var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(ModalWrapper, this.element);
-        return /*#__PURE__*/React.createElement("div", null, WrapperElement, /*#__PURE__*/React.createElement(Backdrop, {
-          open: this.state.open
+        return /*#__PURE__*/React.createElement(React.Fragment, null, WrapperElement, /*#__PURE__*/React.createElement(Backdrop, {
+          open: this.state.animate
         }));
       };
 
@@ -6804,12 +6771,13 @@
           } else {
             this.setState({
               animate: false
+            }, function () {
+              setTimeout(function () {
+                _this.setState({
+                  open: false
+                });
+              }, 120);
             });
-            setTimeout(function () {
-              _this.setState({
-                open: false
-              });
-            }, 120);
           }
         }
       };
@@ -6879,8 +6847,8 @@
           onOutsideClick: onOutsideClickHandler
         }, SidesheetContainer) : SidesheetContainer;
         var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(SidesheetWrapper, this.element);
-        return /*#__PURE__*/React.createElement("div", null, WrapperElement, /*#__PURE__*/React.createElement(Backdrop, {
-          open: this.state.open
+        return /*#__PURE__*/React.createElement(React.Fragment, null, WrapperElement, /*#__PURE__*/React.createElement(Backdrop, {
+          open: this.state.animate
         }));
       };
 
@@ -7449,6 +7417,20 @@
         "data-test": "DesignSystem-EditableInput--Input"
       }, rest));
 
+      var onKeyDown = function onKeyDown(event) {
+        if (document.activeElement === inputRef.current) {
+          switch (event.key) {
+            case 'Enter':
+              onSaveChanges();
+              break;
+
+            case 'Escape':
+              setDefaultComponent();
+              break;
+          }
+        }
+      };
+
       var renderChildren = function renderChildren() {
         if (showComponent) {
           return error && errorMessage && editing ? /*#__PURE__*/React.createElement(Popover, {
@@ -7476,7 +7458,8 @@
       return /*#__PURE__*/React.createElement("div", __assign({
         "data-test": "DesignSystem-EditableInput"
       }, baseProps, {
-        className: EditableInputClass
+        className: EditableInputClass,
+        onKeyDown: onKeyDown
       }), /*#__PURE__*/React.createElement(Editable, {
         onChange: onChangeHandler,
         editing: editing
@@ -8237,23 +8220,23 @@
       };
 
       DateRangePicker.prototype.renderCalendar = function () {
-        var _a = this.props,
-            startDateProp = _a.startDate,
-            endDateProp = _a.endDate,
-            yearNavProp = _a.yearNav,
-            monthNavProp = _a.monthNav,
-            open = _a.open,
-            inputFormat = _a.inputFormat,
-            outputFormat = _a.outputFormat,
-            startInputOptions = _a.startInputOptions,
-            endInputOptions = _a.endInputOptions,
-            validators = _a.validators,
-            withInput = _a.withInput,
-            position = _a.position,
-            disabledBefore = _a.disabledBefore,
-            disabledAfter = _a.disabledAfter,
-            onRangeChange = _a.onRangeChange,
-            rangeLimit = _a.rangeLimit,
+        var _a = this.props;
+            _a.startDate;
+            _a.endDate;
+            _a.yearNav;
+            _a.monthNav;
+            _a.open;
+            var inputFormat = _a.inputFormat;
+            _a.outputFormat;
+            _a.startInputOptions;
+            _a.endInputOptions;
+            var validators = _a.validators;
+            _a.withInput;
+            _a.position;
+            var disabledBefore = _a.disabledBefore,
+            disabledAfter = _a.disabledAfter;
+            _a.onRangeChange;
+            var rangeLimit = _a.rangeLimit,
             rest = __rest(_a, ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "startInputOptions", "endInputOptions", "validators", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"]);
 
         var _b = this.state,
@@ -9141,7 +9124,7 @@
           errorTemplate = _a.errorTemplate;
 
       if (!loading && error) {
-        return errorTemplate ? typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate : /*#__PURE__*/React.createElement(Heading, null, "No results found");
+        return errorTemplate ? typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate : null;
       }
 
       var totalPages = Math.ceil(totalRecords / pageSize);
@@ -10020,7 +10003,7 @@
       return /*#__PURE__*/React.createElement(Heading, null, errorMessages[errorType]);
     };
 
-    var defaultProps$1 = {
+    var defaultProps = {
       type: 'data',
       size: 'standard',
       showHead: true,
@@ -10368,7 +10351,7 @@
         })));
       };
 
-      Table.defaultProps = defaultProps$1;
+      Table.defaultProps = defaultProps;
       return Table;
     }(React.Component);
 
@@ -10378,7 +10361,7 @@
         filterPosition: 'HEADER'
       }));
     };
-    List.defaultProps = defaultProps$1;
+    List.defaultProps = defaultProps;
 
     var useState$1 = React.useState;
     var Navigation = function Navigation(props) {
@@ -10652,6 +10635,8 @@
       separator: true
     };
 
+    var version = "1.6.0-0";
+
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
     exports.Backdrop = Backdrop;
@@ -10720,6 +10705,7 @@
     exports.Toast = Toast;
     exports.Tooltip = Tooltip;
     exports.Utils = index;
+    exports.version = version;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

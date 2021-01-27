@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { PopoverProps } from "../../../index.type";
 import { TriggerProps } from "./DropdownButton";
 import { OptionRendererProps, OptionSchema } from "./option";
-import { PopoverProps } from "../../../index.type";
 import { BaseProps } from "../../../utils/types";
 export declare type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 export declare type DropdownAlign = 'left' | 'right';

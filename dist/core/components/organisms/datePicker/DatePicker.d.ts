@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { SharedProps } from "../calendar/Calendar";
 import { DateType, DateFormat } from "../calendar/types";
-import { Position } from "../../molecules/popover";
-import { InputMaskProps } from "../../molecules/inputMask";
+import { PopoverProps, InputMaskProps } from "../../../index.type";
 import { Validators } from "../../../utils/types";
 export declare type DatePickerProps = SharedProps & {
     onDateChange?: (date: Date | undefined, dateVal?: string) => void;
     date?: DateType;
     withInput?: boolean;
     open?: boolean;
-    position: Position;
+    position: PopoverProps['position'];
     inputFormat: DateFormat;
     outputFormat: DateFormat;
     inputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClear' | 'error'>;

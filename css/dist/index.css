@@ -589,10 +589,6 @@ body {
     width: fit-content;
 }
 
-.Legend:hover {
-    cursor: pointer;
-}
-
 .Legend-icon {
     border-radius: var(--spacing-s);
     margin-right: var(--spacing);
@@ -1565,114 +1561,117 @@ body {
     border: 0;
 }
 .Chip {
-    display: flex;
-    box-sizing: border-box;
-    border-radius: var( --spacing-l);
-    padding-right: var( --spacing);
-    padding-left: var( --spacing);
-    padding-top: var( --spacing-s);
-    padding-bottom: var( --spacing-s);
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    justify-content: space-between;
-    border-style: solid;
-    border-width: var( --spacing-xs);
-    align-items: center;
-    flex-direction: row;
-    cursor: default;
-  }
-  
-  .Chip-wrapper {
-    display: flex;
-    align-items: center;
-  }
-  .Chip-icon--left {
-    padding-right: var( --spacing-m);
-    display: flex;
-    align-items: center;
-  }
-  
-  .Chip-icon--right {
-    padding-left: var( --spacing-m);
-    display: flex;
-    align-items: center;
-  }
-  .Chip--action {
-    background: var( --shadow-0);
-    border-color: var(--stone);
-    cursor: pointer;
-  }
-  
-  .Chip--action:hover {
-    background: var(--stone-light);
-    border-color: var(--stone);
-  }
-  
-  .Chip--action:focus {
-    background: var(--stone-lighter);
-  }
-  
-  .Chip--action:active {
-    background: var(--stone-dark);
-  }
-  
-  .Chip-action--disabled {
-    background: var(--shadow-0);
-    border-color: var(--stone-light);
-    cursor: default;
-  }
-  
-  .Chip--selection {
-    background: var( --shadow-0);
-    border-color: var(--stone);
-  }
-  
-  .Chip--selection:hover {
-    background: var(--stone-light);
-    border-color: var(--stone);
-  }
-  
-  .Chip--selection:focus {
-    background: var(--stone-lighter);
-  }
-  
-  .Chip--selection:active {
-    background: var(--stone-dark);
-  }
-  
-  .Chip-selection--selected {
-    background: var(--jal-lightest);
-    border-color: var(--jal-lighter);
-  }
-  .Chip-selection--selected:hover {
-    background: var(--jal-lightest);
-    border-color: var(--jal-lighter);
-  }
-  .Chip-selection--selected .Text{
-    color:var(--primary);
-  }
-  
-  .Chip-selection--disabled {
-    background: var( --shadow-0);
-    border-color: var(--stone-light);
-  }
-  
-  .Chip--input {
-    background: var(--stone-light);
-    font-weight: var( --font-weight-normal);
-    border: 0px;
-  }
-  
-  .Chip--input:hover {
-    background: var(--stone-light);
-  }
-  
-  .Chip-input--disabled {
-    background: var(--stone-light);
-    border: 0px;
-  }
+  display: flex;
+  box-sizing: border-box;
+  border-radius: var( --spacing-l);
+  padding-right: var( --spacing);
+  padding-left: var( --spacing);
+  padding-top: var( --spacing-s);
+  padding-bottom: var( --spacing-s);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-content: space-between;
+  border-style: solid;
+  border-width: var( --spacing-xs);
+  align-items: center;
+  flex-direction: row;
+  cursor: default;
+}
 
+.Chip-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.Chip-icon--left {
+  padding-right: var( --spacing-m);
+  display: flex;
+  align-items: center;
+}
+
+.Chip-icon--right {
+  padding-left: var( --spacing-m);
+  display: flex;
+  align-items: center;
+}
+
+.Chip--action {
+  background: var( --shadow-0);
+  border-color: var(--stone);
+  cursor: pointer;
+}
+
+.Chip--action:hover {
+  background: var(--stone-light);
+  border-color: var(--stone);
+}
+
+.Chip--action:focus {
+  background: var(--stone-lighter);
+}
+
+.Chip--action:active {
+  background: var(--stone-dark);
+}
+
+.Chip-action--disabled {
+  background: var(--shadow-0);
+  border-color: var(--stone-light);
+  cursor: default;
+}
+
+.Chip--selection {
+  background: var( --shadow-0);
+  border-color: var(--stone);
+}
+
+.Chip--selection:hover {
+  background: var(--stone-light);
+  border-color: var(--stone);
+}
+
+.Chip--selection:focus {
+  background: var(--stone-lighter);
+}
+
+.Chip--selection:active {
+  background: var(--stone-dark);
+}
+
+.Chip-selection--selected {
+  background: var(--jal-lightest);
+  border-color: var(--jal-lighter);
+}
+
+.Chip-selection--selected:hover {
+  background: var(--jal-lightest);
+  border-color: var(--jal-lighter);
+}
+
+.Chip-selection--selected .Text {
+  color: var(--primary);
+}
+
+.Chip-selection--disabled {
+  background: var( --shadow-0);
+  border-color: var(--stone-light);
+}
+
+.Chip--input {
+  background: var(--stone-light);
+  font-weight: var( --font-weight-normal);
+  border: 0px;
+}
+
+.Chip--input:hover {
+  background: var(--stone-light);
+}
+
+.Chip-input--disabled {
+  background: var(--stone-light);
+  border: 0px;
+}
 .ChipGroup {
     display: inline-flex;
 }
@@ -3588,7 +3587,7 @@ body {
 
 @-webkit-keyframes sidesheet-open {
   from {
-    right: 20px;
+    right: -100%;
     opacity: 0;
   }
   to {
@@ -3599,7 +3598,7 @@ body {
 
 @keyframes sidesheet-open {
   from {
-    right: 20px;
+    right: -100%;
     opacity: 0;
   }
   to {
@@ -3614,7 +3613,7 @@ body {
     opacity: 100;
   }
   to {
-    right: 20px;
+    right: -100%;
     opacity: 0;
   }
 }
@@ -3625,7 +3624,7 @@ body {
     opacity: 100;
   }
   to {
-    right: 20px;
+    right: -100%;
     opacity: 0;
   }
 }
@@ -3922,7 +3921,7 @@ body {
 }
 
 .Step--active {
-  background-color: var(--secondary-light);
+  background-color: var(--primary-lightest);
   border-radius: var(--spacing-2);
   pointer-events: none;
 }
@@ -4355,22 +4354,23 @@ body {
     box-shadow: var(--shadow-spread) var(--warning-shadow);
 }
 .Tooltip {
-  color: var(--white);
   max-width: var(--spacing-9);
   padding: var(--spacing) var(--spacing-2);
   border-radius: var(--spacing-m);
-  position: absolute;
   z-index: 500;
   background: var(--inverse);
   overflow: hidden;
   box-sizing: border-box;
+  transition: opacity 120ms;
+  transition-delay: 800ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.38, 0.9);
+}
+
+.Tooltip-text {
   word-break: break-word;
   -webkit-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto;
-  transition: opacity 120ms;
-  transition-delay: 800ms;
-  transition-timing-function: cubic-bezier(0, 0, 0.38, 0.9);
 }
 
 .align-baseline {

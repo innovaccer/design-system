@@ -5,6 +5,7 @@ export { BackdropProps } from "./components/atoms/backdrop";
 export { BadgeProps } from "./components/atoms/badge";
 export { BreadcrumbsProps } from "./components/atoms/breadcrumbs";
 export { ButtonProps } from "./components/atoms/button";
+export { CalendarProps } from "./components/organisms/calendar";
 export { CardProps } from "./components/atoms/card";
 export { ChipProps } from "./components/atoms/chip";
 export { ChipGroupProps } from "./components/atoms/chipGroup";

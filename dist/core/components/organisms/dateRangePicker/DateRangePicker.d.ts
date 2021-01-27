@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { CalendarProps, SharedProps } from "../calendar/Calendar";
 import { DateType, DateFormat } from "../calendar/types";
-import { Position } from "../../molecules/popover";
-import { InputMaskProps } from "../../molecules/inputMask";
+import { InputMaskProps, PopoverProps } from "../../../index.type";
 import { Validators } from "../../../utils/types";
 export declare type InputOptions = Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClick' | 'onClear' | 'error'> & {
     label?: string;
@@ -17,7 +16,7 @@ export declare type DateRangePickerProps = SharedProps & {
     withInput?: boolean;
     singleInput?: boolean;
     open?: boolean;
-    position: Position;
+    position: PopoverProps['position'];
     inputFormat: DateFormat;
     outputFormat: DateFormat;
     inputOptions: InputOptions;

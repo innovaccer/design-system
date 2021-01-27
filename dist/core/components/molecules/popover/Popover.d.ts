@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { PopperWrapperProps } from "../../../utils/PopperWrapper";
 import { BaseProps } from "../../../utils/types";
-export declare type Position = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'right';
-export declare type ActionType = 'click' | 'hover';
+declare type Position = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'right';
 export interface CustomStyle {
     height?: number | string;
     minHeight?: number | string;
@@ -10,33 +10,27 @@ export interface CustomStyle {
     minWidth?: number | string;
     maxWidth?: number | string;
 }
-export interface PopoverProps extends BaseProps {
-    position: Position;
-    appendToBody: boolean;
-    verticalOffset?: number;
-    trigger: React.ReactElement<any>;
-    hoverable?: boolean;
-    dark?: boolean;
-    closeOnBackdropClick: boolean;
-    on: ActionType;
-    open?: boolean;
-    customStyle: CustomStyle;
-    onToggle?: (open: boolean, type?: string) => void;
+declare const propsList: readonly ["appendToBody", "trigger", "hoverable", "on", "open", "closeOnBackdropClick", "offset", "closeOnScroll"];
+declare type PopperProps = typeof propsList[number];
+export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, BaseProps {
     children: React.ReactNode;
+    position: Position;
+    onToggle?: (open: boolean, type?: string) => void;
+    dark?: boolean;
+    customStyle: CustomStyle;
     triggerClass?: string;
     hideOnReferenceEscape?: boolean;
-    boundaryElement?: Element | null;
+    boundaryElement: React.RefObject<HTMLElement> | Element;
 }
 export declare const Popover: {
     (props: PopoverProps): JSX.Element;
     displayName: string;
-    defaultProps: {
+    defaultProps: Record<string, any> & {
+        offset: string;
         position: string;
-        closeOnBackdropClick: boolean;
         hideOnReferenceEscape: boolean;
-        appendToBody: boolean;
-        on: string;
         customStyle: {};
+        boundaryElement: HTMLElement;
     };
 };
 export default Popover;

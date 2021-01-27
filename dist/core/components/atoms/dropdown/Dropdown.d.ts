@@ -20,7 +20,7 @@ interface AsyncProps {
 }
 interface TriggerProps {
     labelLimit?: number;
-    customLabel?: (selected: number, totalOptions?: number) => string;
+    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;
     customTrigger?: (label: string) => React.ReactElement;
 }
 interface SharedDropdownProps extends DropdownListProps, BaseProps {
@@ -29,6 +29,7 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
     closeOnSelect: boolean;
     triggerOptions: TriggerProps;
     open?: boolean;
+    staticLimit: number;
     onPopperToggle?: (open: boolean, type?: string) => void;
     getLabel?: (label: string) => void;
     onChange?: (selected: any[] | any, name?: string | number) => void;
@@ -55,16 +56,13 @@ interface DropdownState {
     tempSelected: Option[];
     previousSelected: Option[];
 }
-export declare const defaultProps: {
-    triggerOptions: {};
-    options: never[];
-    closeOnSelect: boolean;
-};
 export declare class Dropdown extends React.Component<DropdownProps, DropdownState> {
+    staticLimit: number;
     static defaultProps: {
         triggerOptions: {};
         options: never[];
         closeOnSelect: boolean;
+        staticLimit: number;
     };
     constructor(props: DropdownProps);
     componentDidMount(): void;
