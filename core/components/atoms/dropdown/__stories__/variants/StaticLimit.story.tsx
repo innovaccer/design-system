@@ -5,7 +5,7 @@ import { Uncontrolled, Controlled } from '../_common_/types';
 import { dropdownOptions } from '../Options';
 
 // CSF format story
-export const bulk = () => {
+export const staticLimit = () => {
   const BooleanValue = [true, false];
 
   const getSearchedOptions = (options: any, searchTerm: string) => {
@@ -31,8 +31,11 @@ export const bulk = () => {
         BooleanValue.map((value, ind) => {
           const options = value ? dropdownOptions : dropdownOptions.slice(0, 50);
           return (
-            <div key={ind} style={{ marginRight: '10%', width: '170px' }}>
-              <Text weight="strong">{value ? 'Options > 50' : 'Options <= 50'}</Text> <br /><br />
+            <div key={ind} style={{ marginRight: '10%', width: '200px' }}>
+              <Text weight="strong">
+                {value ? 'Options length > staticLimit' : 'Options length <= staticLimit'}
+              </Text>
+              <br /><br />
               <Dropdown withSearch={true} withCheckbox={true} options={options} {...(value && { fetchOptions })} />
             </div>
           );
@@ -43,19 +46,13 @@ export const bulk = () => {
 };
 
 const customCode = `() => {
+  const staticLimit = 50;
   const dropdownOptions = [];
-  for (let i = 1; i <= 40; i++) {
+  for (let i = 1; i <= 100; i++) {
     dropdownOptions.push({
       label: \`Option \${i}\`,
       value: \`Option \${i}\`,
-      group: 'Group 1'
-    });
-  }
-  for (let i = 41; i <= 100; i++) {
-    dropdownOptions.push({
-      label: \`Option \${i}\`,
-      value: \`Option \${i}\`,
-      group: 'Group 2'
+      group: i <= 40 ? 'Group 1' : 'Group 2'
     });
   }
   const BooleanValue = [true, false];
@@ -79,12 +76,20 @@ const customCode = `() => {
   return (
     <div className='d-flex'>
       <div className='mr-10 w-25'>
-        <Text weight="strong">{'Options > 50'}</Text> <br /><br />
-        <Dropdown withCheckbox={true} fetchOptions={fetchOptions}/>
+        <Text weight="strong">{\`Options > \${staticLimit}\`}</Text> <br /><br />
+        <Dropdown
+          withCheckbox={true}
+          staticLimit={staticLimit}
+          fetchOptions={fetchOptions}
+        />
       </div>
       <div className='mr-10 w-25'>
-        <Text weight="strong">{'Options <= 50'}</Text> <br /><br />
-        <Dropdown withCheckbox={true} options={dropdownOptions.slice(0, 50)} />
+        <Text weight="strong">{\`Options <= \${staticLimit}\`}</Text> <br /><br />
+        <Dropdown
+          withCheckbox={true}
+          staticLimit={staticLimit}
+          options={dropdownOptions.slice(0, staticLimit)}
+        />
       </div>
     </div>
   )
