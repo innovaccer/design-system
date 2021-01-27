@@ -80,7 +80,7 @@ export interface DropdownListProps extends ListProps {
    */
   cancelButtonLabel?: string;
   /**
-   * Determines if user can type to search for options (Always true for options count > 50)
+   * Determines if user can type to search for options (Always true for options count > staticLimit)
    */
   withSearch?: boolean;
   /**
@@ -89,7 +89,7 @@ export interface DropdownListProps extends ListProps {
   withCheckbox?: boolean;
   /**
    * Determines if `Select All` option is visible
-   * **Applicable only in case of `withCheckbox` and `options <= 50`**
+   * **Applicable only in case of `withCheckbox` and `options <= staticLimit`**
    * @default true
    */
   withSelectAll?: boolean;

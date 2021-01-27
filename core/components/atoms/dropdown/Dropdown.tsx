@@ -152,6 +152,12 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
    */
   open?: boolean;
   /**
+   * Static limit of options to be rendered in the Dropdown List
+   *
+   * **Max value supported: 100**
+   */
+  staticLimit: number;
+  /**
    * Callback function called to toggle the `Dropdown Popover`
    *
    * type: 'onClick' | 'outsideClick' | 'optionClick' | 'applyClick' | 'cancelClick'
@@ -205,21 +211,13 @@ interface DropdownState {
   previousSelected: Option[];
 }
 
-const bulk = 50;
-
-export const defaultProps = {
-  triggerOptions: {},
-  options: [],
-  closeOnSelect: true
-};
-
 /**
  * ###Note:
  * 1. Dropdown props types:
  *  - async: fetchOptions
  *  - sync: options, loading
  * 2. Sync Dropdown:
- *  - Manually toggle loading state to update options (Options <= 50).
+ *  - Manually toggle loading state to update options (Options <= staticLimit).
  * 3. Callback Functions
  *  - Controlled Dropdown:
  *    * onUpdate: Called when user `clicks on option` / `clicks on Clear, Cancel or Apply button`.
@@ -228,7 +226,14 @@ export const defaultProps = {
  *    * onChange: Called when user `clicks on option` / `clicks on Clear, or Apply button`.
  */
 export class Dropdown extends React.Component<DropdownProps, DropdownState> {
-  static defaultProps = defaultProps;
+  staticLimit: number;
+
+  static defaultProps = {
+    triggerOptions: {},
+    options: [],
+    closeOnSelect: true,
+    staticLimit: 50
+  };
 
   constructor(props: DropdownProps) {
     super(props);
@@ -242,9 +247,10 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       options,
     } = props;
 
+    this.staticLimit = Math.min(100, props.staticLimit);
     const optionsLength = totalOptions ? totalOptions : options.length;
     const async = 'fetchOptions' in this.props
-      || optionsLength > bulk;
+      || optionsLength > this.staticLimit;
 
     const selectedGroup = !async ? this.getSelectedOptions(options, true) : [];
     const disabledOptions = this.getDisabledOptions(options);
@@ -278,7 +284,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       const disabledOptionsCount = this.getDisabledOptions(options).length;
 
       if (prevProps.loading !== loading && !fetchOptions) {
-        if (options.length > bulk) {
+        if (options.length > this.staticLimit) {
           this.updateOptions(true, true);
         } else {
           const selectedGroup = this.getSelectedOptions(options, true);
@@ -379,14 +385,14 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     fetchFunction(searchTerm)
       .then((res: any) => {
         const { options, count } = res;
-        updatedAsync = searchTerm === '' ? count > bulk : updatedAsync;
+        updatedAsync = searchTerm === '' ? count > this.staticLimit : updatedAsync;
 
         const unSelectedGroup = _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ?
           this.getUnSelectedOptions(options, init) : options;
         const selectedGroup = searchTerm === '' ?
           this.getSelectedOptions(options, init) : [];
         const optionsLength = searchTerm === '' ? count : this.state.optionsLength;
-        const disabledOptions = this.getDisabledOptions(unSelectedGroup.slice(0, bulk));
+        const disabledOptions = this.getDisabledOptions(unSelectedGroup.slice(0, this.staticLimit));
 
         this.setState({
           ...this.state,
@@ -394,7 +400,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
           loading: false,
           async: updatedAsync,
           searchedOptionsLength: count,
-          options: unSelectedGroup.slice(0, bulk),
+          options: unSelectedGroup.slice(0, this.staticLimit),
           tempSelected: init ? selectedGroup : tempSelected,
           previousSelected: init ? selectedGroup : previousSelected,
           selected: _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? selectedGroup : [],
