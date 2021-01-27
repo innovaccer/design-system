@@ -1,0 +1,34 @@
+name: "Create task on jira"
+
+on:
+  # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#issues
+  # https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads#issues
+  issues:
+    types: [opened]
+
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest
+    name: Create jira issue
+    steps:
+    - name: Login
+      uses: atlassian/gajira-login@master
+      env:
+        JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+        JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+    
+    - name: Create
+      id: create
+      uses: atlassian/gajira-create@master
+      with:
+        project: DS
+        issuetype: Task
+        summary: |
+          ${{ github.event.issue.title }}
+        description: |
+          ${{ github.event.issue.body }}
+        fields: '{"labels":["github"], "customfield_10018": "DS-843", "customfield_11120":"${{ github.event.issue.html_url }}", "customfield_11760":{"value":"No"}}'
+
+    - name: Log created issue
+      run: echo "Issue ${{ steps.create.outputs.issue }} was created"    
