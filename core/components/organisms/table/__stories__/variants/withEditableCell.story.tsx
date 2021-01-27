@@ -13,7 +13,7 @@ export const withEditableCell = () => {
         height: '350px',
       }}
     >
-      <Card className="h-100">
+      <Card className="h-100 overflow-hidden">
         <Table
           loaderSchema={loaderSchema}
           data={data}
@@ -159,7 +159,7 @@ const customCode = `
         height: '350px',
       }}
     >
-      <Card className="h-100">
+      <Card className="h-100 overflow-hidden">
         <Table
           loaderSchema={loaderSchema}
           data={data}

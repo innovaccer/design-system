@@ -123,7 +123,7 @@ export const all = () => {
         // overflow: 'hidden'
       }}
     >
-      <Card className="h-100">
+      <Card className="h-100 overflow-hidden">
         <List
           {...dataAttr}
           withHeader={withHeader}
