@@ -1,18 +1,16 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { PopperWrapper } from '@/utils';
-import { BaseProps } from '@/utils/types';
+import { PopperWrapper, PopperWrapperProps } from '@/utils/PopperWrapper';
+import { BaseProps, filterProps } from '@/utils/types';
 
-export type Position = 'top' |
-'top-start' |
-'top-end' |
-'bottom' |
-'bottom-start' |
-'bottom-end'|
-'left' |
-'right';
-
-export type ActionType = 'click' | 'hover';
+type Position = 'top' |
+  'top-start' |
+  'top-end' |
+  'bottom' |
+  'bottom-start' |
+  'bottom-end' |
+  'left' |
+  'right';
 
 export interface CustomStyle {
   height?: number | string;
@@ -23,46 +21,34 @@ export interface CustomStyle {
   maxWidth?: number | string;
 }
 
-export interface PopoverProps extends BaseProps {
+const propsList = ['appendToBody', 'trigger', 'hoverable', 'on', 'open', 'boundaryElement', 'closeOnBackdropClick', 'offset'] as const;
+type PopperProps = typeof propsList[number];
+
+export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, BaseProps {
   /**
-   *  Position to place the `trigger`
+   * To be rendered in `Popover` component
+   */
+  children: React.ReactNode;
+  /**
+   * Position to place the `trigger`
+   *
+   * @param Position - 'top' | 'top-start' | 'top-end' | 'bottom'
+   * | 'bottom-start' | 'bottom-end' | 'left' | 'right'
    */
   position: Position;
   /**
-   * Appends `trigger` wrapper inside body
+   * Callback after `Popover` is toggled
+   *
+   * @param type - 'onMouseLeave' | 'onMouseEnter' | 'outsideClick' | 'onClick'
    */
-  appendToBody: boolean;
-  /**
-   * Vertical offset from `trigger`
-   */
-  verticalOffset?: number;
-  /**
-   * Element triggering the `Popover`
-   */
-  trigger: React.ReactElement<any>;
-  /**
-   * Holds `Popover` on hover
-   */
-  hoverable?: boolean;
+  onToggle?: (open: boolean, type?: string) => void;
   /**
    * Changes background of `Popover`
    */
   dark?: boolean;
   /**
-   * Closes `Popover` on outside click
-   */
-  closeOnBackdropClick: boolean;
-  /**
-   * Event triggering the `Popover`
-   */
-  on: ActionType;
-  /**
-   * Handles open/close
-   */
-  open?: boolean;
-  /**
    * Adds custom CSS to `Popover` element
-   * <pre className="DocPage-codeBlock>
+   * <pre className="DocPage-codeBlock">
    * CustomStyle {
    *  height?: number | string;
    *  width?: number | string;
@@ -75,16 +61,6 @@ export interface PopoverProps extends BaseProps {
    */
   customStyle: CustomStyle;
   /**
-   * Callback after `Popover` is toggled
-   *
-   * type: 'onMouseLeave' | 'onMouseEnter' | 'outsideClick' | 'onClick';
-   */
-  onToggle?: (open: boolean, type?: string) => void;
-  /**
-   * To be rendered in `Popover` component
-   */
-  children: React.ReactNode;
-  /**
    * Class to be added to PopperWrapper trigger
    */
   triggerClass?: string;
@@ -92,40 +68,28 @@ export interface PopoverProps extends BaseProps {
    * Hides the `Popover` when its reference element is outside of the `Popover` boundaries
    */
   hideOnReferenceEscape?: boolean;
-  /**
-   * Boundary of Popover
-   */
-  boundaryElement?: Element | null;
 }
 
 export const Popover = (props: PopoverProps) => {
   const {
     position,
-    closeOnBackdropClick,
-    appendToBody,
-    on,
     customStyle,
     dark,
-    hoverable,
     children,
-    trigger,
-    triggerClass,
     onToggle,
     className,
-    boundaryElement,
     hideOnReferenceEscape,
+    ...rest
   } = props;
 
-  const [open, setOpen] = React.useState<boolean>(props.open || false);
+  const [open, setOpen] = React.useState<boolean>(!!props.open);
   React.useEffect(() => {
-    if (onToggle) {
-      if (props.open !== undefined) setOpen(props.open);
-    }
+    if (props.open !== undefined) setOpen(props.open);
   }, [props.open]);
 
-  const onToggleFunction: PopoverProps['onToggle'] = newOpen => {
+  const defaultOnToggle = React.useCallback(newOpen => {
     setOpen(newOpen);
-  };
+  }, []);
 
   const classes = classNames({
     Popover: true,
@@ -138,36 +102,36 @@ export const Popover = (props: PopoverProps) => {
     </div>
   );
 
-  const popperOptions = {
-    trigger,
-    boundaryElement,
-    triggerClass,
-    appendToBody,
-    closeOnBackdropClick,
-    on,
-    hoverable,
-    open,
-    hide: hideOnReferenceEscape,
-    style: customStyle,
-    onToggle: onToggle || onToggleFunction,
-    placement: position
-  };
-
   return (
-    <PopperWrapper {...popperOptions} offset="large" >
+    <PopperWrapper
+      {...rest}
+      open={open}
+      hide={hideOnReferenceEscape}
+      style={customStyle}
+      onToggle={onToggle || defaultOnToggle}
+      placement={position}
+    >
       {PopoverWrapper}
     </PopperWrapper>
   );
 };
 
 Popover.displayName = 'Popover';
-Popover.defaultProps = {
-  position: 'bottom',
-  closeOnBackdropClick: true,
-  hideOnReferenceEscape: true,
-  appendToBody: true,
-  on: 'click',
-  customStyle: {},
-};
+// Popover.defaultProps = {
+//   ...filterProps(PopperWrapper.defaultProps, propsList, true),
+//   offset: 'large',
+//   position: 'bottom',
+//   hideOnReferenceEscape: true,
+//   customStyle: {},
+// }
+Popover.defaultProps = Object.assign({},
+  filterProps(PopperWrapper.defaultProps, propsList, true),
+  {
+    offset: 'large',
+    position: 'bottom',
+    hideOnReferenceEscape: true,
+    customStyle: {},
+  }
+);
 
 export default Popover;

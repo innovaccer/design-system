@@ -2,8 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Calendar, CalendarProps, SharedProps } from '../calendar/Calendar';
 import { DateType, DateFormat } from '../calendar/types';
-import { Position } from '@/components/molecules/popover';
-import { InputMaskProps } from '@/components/molecules/inputMask';
+import { InputMaskProps, PopoverProps } from '@/index.type';
 import { Validators } from '@/utils/types';
 import { Trigger } from './Trigger';
 import { SingleInputTrigger } from './SingleInputTrigger';
@@ -73,7 +72,7 @@ export type DateRangePickerProps = SharedProps & {
   /**
    * Position of `DateRangePicker` w.r.t. `InputMask`
    */
-  position: Position;
+  position: PopoverProps['position'];
   /**
    * Should be used if `date` is of type `string`
    */

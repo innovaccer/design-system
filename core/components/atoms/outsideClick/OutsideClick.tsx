@@ -18,6 +18,7 @@ export const OutsideClick = React.forwardRef<HTMLDivElement, OutsideClickProps>(
   const {
     children,
     className,
+    onOutsideClick,
     ...rest
   } = props;
 
@@ -33,7 +34,6 @@ export const OutsideClick = React.forwardRef<HTMLDivElement, OutsideClickProps>(
   }, []);
 
   const handleOutsideClick = React.useCallback((event: Event) => {
-    const { onOutsideClick } = props;
     const element = innerRef;
 
     if (!event.target || !element.current) {

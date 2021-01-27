@@ -1,11 +1,10 @@
 import * as React from 'react';
-import Popover, { Position } from '../../Popover';
-import Button from '@/components/atoms/button';
-import { action } from '@storybook/addon-actions';
+import { Text, Button, Popover } from '@/index';
+import { PopoverProps } from '@/index.type';
 
 // CSF format story
 export const position = () => {
-  const positions: Position[] = [
+  const positions: PopoverProps['position'][] = [
     'top',
     'top-start',
     'top-end',
@@ -15,39 +14,13 @@ export const position = () => {
     'left',
     'right'
   ];
-  const appendToBody = false;
-  const hoverable = false;
-  const closeOnBackdropClick = true;
-  const dark = false;
-
-  const trigger: React.ReactElement[] = [];
-  positions.forEach(pos => {
-    trigger.push(
-      <div ref={buttonRef => buttonRef?.click()}>
-        <Button appearance="basic">{pos}</Button>
-      </div>
-    );
-  });
-
-  const onToggle = () => null;
-
-  const options = {
-    appendToBody,
-    dark,
-    closeOnBackdropClick,
-    hoverable,
-    onToggle,
-    customStyle: {
-      height: '100px',
-      width: '150px',
-    },
-    open: true
-  };
 
   const style = {
     display: 'flex',
     'flex-wrap': 'wrap',
   };
+
+  const getTrigger = (pos: string) => (<Button appearance="basic">{pos}</Button>);
 
   return (
     <div style={style}>
@@ -58,10 +31,10 @@ export const position = () => {
               key={ind}
               className={ind < 3 ? 'mt-11 mr-13' : 'mt-5 mb-11 mr-13'}
             >
-              <Popover trigger={trigger[ind]} position={pos} {...options}>
-                <div className="mx-6 my-6">
-                  <p>Popup</p>
-                  <Button appearance="primary" onClick={action('button clicked inside popover')}>Click</Button>
+              <Popover trigger={getTrigger(pos)} position={pos} open={true}>
+                <div style={{ width: 100 }} className="mx-6 my-6">
+                  <Text>Popup</Text>
+                  <Button appearance="primary" className="mt-4">Click</Button>
                 </div>
               </Popover>
             </div>
@@ -79,7 +52,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Popover'
+        title: 'Popover',
+        noHtml: true
       }
     }
   }

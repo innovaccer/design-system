@@ -1,15 +1,11 @@
 import * as React from 'react';
 import { scrollIntoView, _isEqual, _isSelectAllPresent } from './utility';
-import Popover, { Position, CustomStyle } from '@/components/molecules/popover';
+import { Popover, Checkbox, Button, Text, Input } from '@/index';
+import { PopoverProps } from '@/index.type';
 import DropdownButton, { TriggerProps } from './DropdownButton';
-import Checkbox from '@/components/atoms/checkbox';
 import Option, { OptionRendererProps, OptionSchema } from './option';
-import Button from '@/components/atoms/button';
-import Text from '@/components/atoms/text';
-import Input from '@/components/atoms/input';
 import classNames from 'classnames';
 import Loading from './Loading';
-import { PopoverProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
@@ -21,8 +17,8 @@ export type OptionType =
   'ICON_WITH_META';
 
 const alignmentMapping = {
-  right: 'bottom-start' as Position,
-  left: 'bottom-end' as Position
+  right: 'bottom-start' as const,
+  left: 'bottom-end' as const
 };
 
 export interface Selected {
@@ -225,7 +221,7 @@ const DropdownList = (props: OptionsProps) => {
   const dropdownCancelButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownApplyButtonRef = React.createRef<HTMLButtonElement>();
 
-  const [popoverStyle, setPopoverStyle] = React.useState<CustomStyle>();
+  const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
   const [cursor, setCursor] = React.useState(firstEnabledOption);
 
   React.useEffect(() => {
