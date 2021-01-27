@@ -103,12 +103,13 @@ class Modal extends React.Component<ModalProps, ModalState> {
       } else {
         this.setState({
           animate: false,
+        }, () => {
+          setTimeout(() => {
+            this.setState({
+              open: false
+            });
+          }, 120);
         });
-        setTimeout(() => {
-          this.setState({
-            open: false
-          });
-        }, 120);
       }
     }
   }
@@ -235,7 +236,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
     return (
       <>
         {WrapperElement}
-        <Backdrop open={this.state.open} />
+        <Backdrop open={this.state.animate} />
       </>
     );
   }

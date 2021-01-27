@@ -115,12 +115,13 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       } else {
         this.setState({
           animate: false,
+        }, () => {
+          setTimeout(() => {
+            this.setState({
+              open: false
+            });
+          }, 120);
         });
-        setTimeout(() => {
-          this.setState({
-            open: false
-          });
-        }, 120);
       }
     }
   }
@@ -229,7 +230,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     return (
       <>
         {WrapperElement}
-        <Backdrop open={this.state.open} />
+        <Backdrop open={this.state.animate} />
       </>
     );
   }
