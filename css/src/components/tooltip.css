@@ -1,16 +1,17 @@
 .Tooltip {
-  color: var(--white);
   max-width: var(--spacing-9);
   padding: var(--spacing) var(--spacing-2);
   border-radius: var(--spacing-m);
-  position: absolute;
   z-index: 500;
   background: var(--inverse);
   overflow: hidden;
   box-sizing: border-box;
-  word-break: break-word;
-  hyphens: auto;
   transition: opacity 120ms;
   transition-delay: 800ms;
   transition-timing-function: cubic-bezier(0, 0, 0.38, 0.9);
+}
+
+.Tooltip-text {
+  word-break: break-word;
+  hyphens: auto;
 }
