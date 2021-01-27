@@ -5,6 +5,7 @@ exports[`Tooltip component
  1`] = `
 <Popover
   appendToBody={true}
+  boundaryElement={<body />}
   closeOnBackdropClick={true}
   customStyle={Object {}}
   hideOnReferenceEscape={true}
@@ -37,6 +38,7 @@ exports[`Tooltip component
  1`] = `
 <Popover
   appendToBody={true}
+  boundaryElement={<body />}
   closeOnBackdropClick={true}
   customStyle={Object {}}
   hideOnReferenceEscape={true}
@@ -69,6 +71,7 @@ exports[`Tooltip component
  1`] = `
 <Popover
   appendToBody={true}
+  boundaryElement={<body />}
   closeOnBackdropClick={true}
   customStyle={Object {}}
   hideOnReferenceEscape={true}
@@ -101,6 +104,7 @@ exports[`Tooltip component
  1`] = `
 <Popover
   appendToBody={true}
+  boundaryElement={<body />}
   closeOnBackdropClick={true}
   customStyle={Object {}}
   hideOnReferenceEscape={true}
@@ -133,6 +137,7 @@ exports[`Tooltip component
  1`] = `
 <Popover
   appendToBody={true}
+  boundaryElement={<body />}
   closeOnBackdropClick={true}
   customStyle={Object {}}
   hideOnReferenceEscape={true}
@@ -165,6 +170,7 @@ exports[`Tooltip component
  1`] = `
 <Popover
   appendToBody={true}
+  boundaryElement={<body />}
   closeOnBackdropClick={true}
   customStyle={Object {}}
   hideOnReferenceEscape={true}
@@ -197,6 +203,7 @@ exports[`Tooltip component
  1`] = `
 <Popover
   appendToBody={true}
+  boundaryElement={<body />}
   closeOnBackdropClick={true}
   customStyle={Object {}}
   hideOnReferenceEscape={true}
@@ -229,6 +236,7 @@ exports[`Tooltip component
  1`] = `
 <Popover
   appendToBody={true}
+  boundaryElement={<body />}
   closeOnBackdropClick={true}
   customStyle={Object {}}
   hideOnReferenceEscape={true}

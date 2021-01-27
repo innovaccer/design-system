@@ -31,14 +31,11 @@ type PopperChildrenProps = {
 };
 
 export interface PopperWrapperProps {
+  init?: boolean;
   /**
    * Element triggering the `Popover`
    */
   trigger: React.ReactElement<any>;
-  /**
-   * Boundary of Popover
-   * @default document.body
-   */
   boundaryElement?: Element | null;
   triggerClass?: string;
   placement: PositionType;
@@ -75,6 +72,10 @@ export interface PopperWrapperProps {
    */
   closeOnBackdropClick: boolean;
   /**
+   * Close on `boundaryElement` scroll
+   */
+  closeOnScroll?: boolean;
+  /**
    * Handles open/close
    */
   open?: boolean;
@@ -96,6 +97,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   popupRef: React.RefObject<HTMLDivElement>;
   hoverableDelay?: number;
   _timer?: number;
+  _throttleWait?: boolean;
   offsetMapping: Record<Offset, string>;
 
   static defaultProps = {
@@ -123,10 +125,20 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     this.mouseMoveHandler = this.mouseMoveHandler.bind(this);
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
+    this.boundaryScrollHandler = this.boundaryScrollHandler.bind(this);
+  }
+
+  componentDidMount() {
+    this.addBoundaryScrollHandler();
   }
 
   componentDidUpdate(prevProps: PopperWrapperProps) {
+    if (!prevProps.boundaryElement && this.props.boundaryElement) {
+      this.removeBoundaryScrollHandler();
+      this.addBoundaryScrollHandler();
+    }
     if (prevProps.open !== this.props.open) {
+      this._throttleWait = false;
       if (this.props.open) {
         const triggerElement = this.findDOMNode(this.triggerRef);
         const zIndex = this.getZIndexForLayer(triggerElement);
@@ -135,6 +147,34 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
           zIndex: zIndex === undefined ? zIndex : zIndex + 1
         });
       }
+    }
+  }
+
+  componentWillUnmount() {
+    this.removeBoundaryScrollHandler();
+  }
+
+  boundaryScrollHandler() {
+    const { open, on, closeOnScroll } = this.props;
+    if (on === 'click' && closeOnScroll) {
+      if (open) {
+        if (!this._throttleWait) {
+          this.togglePopper('onScroll', false);
+          this._throttleWait = true;
+        }
+      }
+    }
+  }
+
+  addBoundaryScrollHandler() {
+    if (this.props.boundaryElement) {
+      this.props.boundaryElement.addEventListener('scroll', this.boundaryScrollHandler);
+    }
+  }
+
+  removeBoundaryScrollHandler() {
+    if (this.props.boundaryElement) {
+      this.props.boundaryElement.removeEventListener('scroll', this.boundaryScrollHandler);
     }
   }
 
@@ -171,7 +211,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
 
   togglePopper = (type: string, newValue?: boolean) => {
     const { open, onToggle } = this.props;
-    onToggle((newValue || !open), type);
+    onToggle((newValue === undefined ? !open : newValue), type);
   }
 
   findDOMNode = (ref: React.RefObject<HTMLElement>) => {
