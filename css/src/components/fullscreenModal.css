@@ -1,0 +1,123 @@
+@keyframes fullscreenModal-open {
+  from {
+    opacity: 0;
+    background: transparent;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+  }
+  to {
+    top: 0px;
+    left: 0px;
+    opacity: 100;
+  }
+}
+
+@keyframes fullscreenModal-close {
+  from {
+    top: 0px;
+    opacity: 100;
+  }
+  to {
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    opacity: 0;
+  }
+}
+
+.FullscreenModal-container {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  z-index: 1500;
+}
+
+.FullscreenModal {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: var(--spacing-4);
+  background-color: var(--white);
+  overflow: auto;
+  display: none;
+  visibility: hidden;
+}
+
+.FullscreenModal--open {
+  display: flex;
+  flex-direction: column;
+  visibility: visible;
+}
+
+.FullscreenModal-animation--open {
+  animation: fullscreenModal-open 240ms cubic-bezier(0, 0, 0.3, 1);
+}
+
+.FullscreenModal-animation--close {
+  animation: fullscreenModal-close 120ms cubic-bezier(0.4, 0.14, 1, 1);
+}
+
+.FullscreenModal-header {
+  box-sizing: border-box;
+}
+
+.FullscreenModal-header--seperator {
+  border-bottom: var(--border);
+}
+
+.FullscreenModal-headerWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.FullscreenModal-headerBackButton {
+  height: var(--spacing-3);
+  width: var(--spacing-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FullscreenModal-footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--spacing-xl);
+}
+
+.FullscreenModal-footer--inModal {
+  justify-content: flex-end;
+}
+
+.FullscreenModal-footer--seperator {
+  border-top: var(--border);
+}
+
+.FullscreenModal-body {
+  padding: var(--spacing) var(--spacing-xl);
+  overflow-y: auto;
+}
+
+.FullscreenModal-body--border {
+  border-top: var(--border);
+  border-bottom: var(--border);
+}
+
+.FullscreenModal-body::-webkit-scrollbar {
+  width: var(--spacing-2);
+}
+
+.FullscreenModal-body::-webkit-scrollbar-thumb {
+  border: var(--spacing-m) solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: var(--spacing);
+  background-color: var(--secondary);
+}

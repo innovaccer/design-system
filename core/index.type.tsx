@@ -46,6 +46,7 @@ export { ChatMessageProps } from './components/molecules/chatMessage';
 export { EmptyStateProps } from './components/molecules/emptyState';
 export { SidesheetProps } from './components/molecules/sidesheet';
 export { ModalProps } from './components/molecules/modal';
+export { FullscreenModalProps } from './components/molecules/fullscreenModal';
 export { ModalHeaderProps } from './components/molecules/modalHeader';
 export { ModalFooterProps } from './components/molecules/modalFooter';
 export { ModalBodyProps } from './components/molecules/modalBody';
