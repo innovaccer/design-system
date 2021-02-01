@@ -112,6 +112,8 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   constructor(props: PopperWrapperProps) {
     super(props);
 
+    this.state = {};
+
     this.hoverableDelay = 100;
     this.offsetMapping = {
       small: '2px',
@@ -301,11 +303,15 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
 
   getPopperChildren({ ref, style, placement, outOfBoundaries }: PopperChildrenProps) {
     const { offset, children } = this.props;
+    const { zIndex } = this.state;
     const newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
 
     const element = React.cloneElement(children, {
       ref,
-      style: newStyle,
+      style: {
+        ...newStyle,
+        zIndex
+      },
       'data-placement': placement,
       'data-hide': outOfBoundaries,
       onMouseEnter: this.handleMouseEnter,
