@@ -99,8 +99,8 @@ const customCode = `() => {
           />
         </ModalBody>
         <ModalFooter open={open}>
-          <Button appearance="basic" onClick={console.log('Basic button click')}>Basic</Button>
-          <Button appearance="primary" className="ml-4" onClick={console.log('Primary button click')}>Primary</Button>
+          <Button appearance="basic" onClick={()=>console.log('Basic button click')}>Basic</Button>
+          <Button appearance="primary" className="ml-4" onClick={()=>console.log('Primary button click')}>Primary</Button>
         </ModalFooter>
       </Modal>
     </div>
