@@ -31,21 +31,17 @@ export const Backdrop: React.FC<BackdropProps> = props => {
   }, className);
 
   const disableBodyScroll = () => {
-    if (savedBodyOverflow) {
-      return;
-    }
-
-    setBodyOverflow(document.body.style.overflow);
-    document.body.style.overflow = 'hidden';
+    document.body.style.setProperty('overflow', 'hidden', 'important');
   };
 
   const enableBodyScroll = () => {
-    document.body.style.overflow = savedBodyOverflow || 'auto';
+    document.body.style.overflow = savedBodyOverflow || '';
     setBodyOverflow(null);
   };
 
   useEffect(() => {
     if (props.open) {
+      setBodyOverflow(document.body.style.overflow);
       disableBodyScroll();
       setOpen(true);
       setAnimate(true);
@@ -55,11 +51,8 @@ export const Backdrop: React.FC<BackdropProps> = props => {
         setOpen(false);
       }, 120);
       setAnimate(false);
-    }
-
-    return () => {
       enableBodyScroll();
-    };
+    }
   }, [props.open]);
 
   const BackdropElement = ReactDOM.createPortal(
