@@ -838,7 +838,7 @@ export declare class PopperWrapper extends React.Component<PopperWrapperProps, P
         vectorEffect?: "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "none" | "non-scaling-stroke" | undefined;
     };
     getTriggerElement(ref: React.Ref<any>): JSX.Element;
-    getPopperChildren({ ref, style, placement, outOfBoundaries }: PopperChildrenProps): React.ReactElement<any, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)> | null) | (new (props: any) => React.Component<any, any, any>)>;
+    getPopperChildren({ ref, style, placement, outOfBoundaries }: PopperChildrenProps): React.ReactElement<any, string | ((props: any) => React.ReactElement<any, any> | null) | (new (props: any) => React.Component<any, any, any>)>;
     render(): JSX.Element;
 }
 export default PopperWrapper;

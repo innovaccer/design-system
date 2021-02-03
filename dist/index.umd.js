@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1611758177535 
+   * Generated on: 1612363783826 
    *      Package: @innovaccer/design-system
-   *      Version: v1.6.0-0
+   *      Version: v1.6.0-1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -430,10 +430,23 @@
 
   var assertThisInitialized = _assertThisInitialized$1;
 
+  var setPrototypeOf = createCommonjsModule(function (module) {
+  function _setPrototypeOf(o, p) {
+    module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+      o.__proto__ = p;
+      return o;
+    };
+
+    return _setPrototypeOf(o, p);
+  }
+
+  module.exports = _setPrototypeOf;
+  });
+
   function _inheritsLoose(subClass, superClass) {
     subClass.prototype = Object.create(superClass.prototype);
     subClass.prototype.constructor = subClass;
-    subClass.__proto__ = superClass;
+    setPrototypeOf(subClass, superClass);
   }
 
   var inheritsLoose = _inheritsLoose;
@@ -1256,14 +1269,14 @@
 
   var hasSymbols$3 = hasSymbols();
   var hasToStringTag$1 = hasSymbols$3 && typeof Symbol.toStringTag === 'symbol';
-  var hasOwnProperty;
-  var regexExec;
+  var has$1;
+  var $exec;
   var isRegexMarker;
   var badStringifier;
 
   if (hasToStringTag$1) {
-  	hasOwnProperty = Function.call.bind(Object.prototype.hasOwnProperty);
-  	regexExec = Function.call.bind(RegExp.prototype.exec);
+  	has$1 = callBound('Object.prototype.hasOwnProperty');
+  	$exec = callBound('RegExp.prototype.exec');
   	isRegexMarker = {};
 
   	var throwRegexMarker = function () {
@@ -1279,7 +1292,7 @@
   	}
   }
 
-  var toStr$4 = Object.prototype.toString;
+  var $toString$1 = callBound('Object.prototype.toString');
   var gOPD = Object.getOwnPropertyDescriptor;
   var regexClass = '[object RegExp]';
 
@@ -1291,13 +1304,13 @@
   		}
 
   		var descriptor = gOPD(value, 'lastIndex');
-  		var hasLastIndexDataProperty = descriptor && hasOwnProperty(descriptor, 'value');
+  		var hasLastIndexDataProperty = descriptor && has$1(descriptor, 'value');
   		if (!hasLastIndexDataProperty) {
   			return false;
   		}
 
   		try {
-  			regexExec(value, badStringifier);
+  			$exec(value, badStringifier);
   		} catch (e) {
   			return e === isRegexMarker;
   		}
@@ -1308,7 +1321,7 @@
   			return false;
   		}
 
-  		return toStr$4.call(value) === regexClass;
+  		return $toString$1(value) === regexClass;
   	};
 
   var $Object = Object;
@@ -1402,7 +1415,7 @@
   	}
   };
 
-  var toStr$5 = Object.prototype.toString;
+  var toStr$4 = Object.prototype.toString;
   var dateClass = '[object Date]';
   var hasToStringTag$2 = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
 
@@ -1410,7 +1423,7 @@
   	if (typeof value !== 'object' || value === null) {
   		return false;
   	}
-  	return hasToStringTag$2 ? tryDateObject(value) : toStr$5.call(value) === dateClass;
+  	return hasToStringTag$2 ? tryDateObject(value) : toStr$4.call(value) === dateClass;
   };
 
   var getTime = Date.prototype.getTime;
@@ -4224,7 +4237,7 @@
   */
   /* eslint-disable no-unused-vars */
   var getOwnPropertySymbols = Object.getOwnPropertySymbols;
-  var hasOwnProperty$1 = Object.prototype.hasOwnProperty;
+  var hasOwnProperty = Object.prototype.hasOwnProperty;
   var propIsEnumerable = Object.prototype.propertyIsEnumerable;
 
   function toObject(val) {
@@ -4288,7 +4301,7 @@
   		from = Object(arguments[s]);
 
   		for (var key in from) {
-  			if (hasOwnProperty$1.call(from, key)) {
+  			if (hasOwnProperty.call(from, key)) {
   				to[key] = from[key];
   			}
   		}
@@ -5051,6 +5064,7 @@
         return newStyle;
       });
 
+      _this.state = {};
       _this.hoverableDelay = 100;
       _this.offsetMapping = {
         small: '2px',
@@ -5226,10 +5240,13 @@
         var _this$props5 = this.props,
             offset = _this$props5.offset,
             children = _this$props5.children;
+        var zIndex = this.state.zIndex;
         var newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
         var element = /*#__PURE__*/React.cloneElement(children, {
           ref: ref,
-          style: newStyle,
+          style: _objectSpread2(_objectSpread2({}, newStyle), {}, {
+            zIndex: zIndex
+          }),
           'data-placement': placement,
           'data-hide': outOfBoundaries,
           onMouseEnter: this.handleMouseEnter,
@@ -5764,21 +5781,17 @@
     }, className);
 
     var disableBodyScroll = function disableBodyScroll() {
-      if (savedBodyOverflow) {
-        return;
-      }
-
-      setBodyOverflow(document.body.style.overflow);
-      document.body.style.overflow = 'hidden';
+      document.body.style.setProperty('overflow', 'hidden', 'important');
     };
 
     var enableBodyScroll = function enableBodyScroll() {
-      document.body.style.overflow = savedBodyOverflow || 'auto';
+      document.body.style.overflow = savedBodyOverflow || '';
       setBodyOverflow(null);
     };
 
     useEffect(function () {
       if (props.open) {
+        setBodyOverflow(document.body.style.overflow);
         disableBodyScroll();
         setOpen(true);
         setAnimate(true);
@@ -5789,11 +5802,8 @@
           setOpen(false);
         }, 120);
         setAnimate(false);
-      }
-
-      return function () {
         enableBodyScroll();
-      };
+      }
     }, [props.open]);
     var BackdropElement = /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement("div", _extends({
       "data-test": "DesignSystem-Backdrop",
@@ -9503,9 +9513,9 @@
     return object;
   };
 
-  var hasOwnProperty$2 = {}.hasOwnProperty;
+  var hasOwnProperty$1 = {}.hasOwnProperty;
   var _has = function (it, key) {
-    return hasOwnProperty$2.call(it, key);
+    return hasOwnProperty$1.call(it, key);
   };
 
   var id = 0;
@@ -9937,12 +9947,12 @@
     check: check
   };
 
-  var setPrototypeOf = _setProto.set;
+  var setPrototypeOf$1 = _setProto.set;
   var _inheritIfRequired = function (that, target, C) {
     var S = target.constructor;
     var P;
-    if (S !== C && typeof S == 'function' && (P = S.prototype) !== C.prototype && _isObject(P) && setPrototypeOf) {
-      setPrototypeOf(that, P);
+    if (S !== C && typeof S == 'function' && (P = S.prototype) !== C.prototype && _isObject(P) && setPrototypeOf$1) {
+      setPrototypeOf$1(that, P);
     } return that;
   };
 
@@ -10474,7 +10484,7 @@
   var objectProto = Object.prototype;
 
   /** Used to check objects for own properties. */
-  var hasOwnProperty$3 = objectProto.hasOwnProperty;
+  var hasOwnProperty$2 = objectProto.hasOwnProperty;
 
   /**
    * Used to resolve the
@@ -10494,7 +10504,7 @@
    * @returns {string} Returns the raw `toStringTag`.
    */
   function getRawTag(value) {
-    var isOwn = hasOwnProperty$3.call(value, symToStringTag),
+    var isOwn = hasOwnProperty$2.call(value, symToStringTag),
         tag = value[symToStringTag];
 
     try {
@@ -10836,11 +10846,11 @@
   var funcToString$1 = funcProto$1.toString;
 
   /** Used to check objects for own properties. */
-  var hasOwnProperty$4 = objectProto$2.hasOwnProperty;
+  var hasOwnProperty$3 = objectProto$2.hasOwnProperty;
 
   /** Used to detect if a method is native. */
   var reIsNative = RegExp('^' +
-    funcToString$1.call(hasOwnProperty$4).replace(reRegExpChar, '\\$&')
+    funcToString$1.call(hasOwnProperty$3).replace(reRegExpChar, '\\$&')
     .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
   );
 
@@ -10935,7 +10945,7 @@
   var objectProto$3 = Object.prototype;
 
   /** Used to check objects for own properties. */
-  var hasOwnProperty$5 = objectProto$3.hasOwnProperty;
+  var hasOwnProperty$4 = objectProto$3.hasOwnProperty;
 
   /**
    * Gets the hash value for `key`.
@@ -10952,7 +10962,7 @@
       var result = data[key];
       return result === HASH_UNDEFINED ? undefined : result;
     }
-    return hasOwnProperty$5.call(data, key) ? data[key] : undefined;
+    return hasOwnProperty$4.call(data, key) ? data[key] : undefined;
   }
 
   var _hashGet = hashGet;
@@ -10961,7 +10971,7 @@
   var objectProto$4 = Object.prototype;
 
   /** Used to check objects for own properties. */
-  var hasOwnProperty$6 = objectProto$4.hasOwnProperty;
+  var hasOwnProperty$5 = objectProto$4.hasOwnProperty;
 
   /**
    * Checks if a hash value for `key` exists.
@@ -10974,7 +10984,7 @@
    */
   function hashHas(key) {
     var data = this.__data__;
-    return _nativeCreate ? (data[key] !== undefined) : hasOwnProperty$6.call(data, key);
+    return _nativeCreate ? (data[key] !== undefined) : hasOwnProperty$5.call(data, key);
   }
 
   var _hashHas = hashHas;
@@ -13004,7 +13014,7 @@
   var objectProto$6 = Object.prototype;
 
   /** Used to check objects for own properties. */
-  var hasOwnProperty$7 = objectProto$6.hasOwnProperty;
+  var hasOwnProperty$6 = objectProto$6.hasOwnProperty;
 
   /** Built-in value references. */
   var propertyIsEnumerable$1 = objectProto$6.propertyIsEnumerable;
@@ -13028,7 +13038,7 @@
    * // => false
    */
   var isArguments$2 = _baseIsArguments(function() { return arguments; }()) ? _baseIsArguments : function(value) {
-    return isObjectLike_1(value) && hasOwnProperty$7.call(value, 'callee') &&
+    return isObjectLike_1(value) && hasOwnProperty$6.call(value, 'callee') &&
       !propertyIsEnumerable$1.call(value, 'callee');
   };
 
@@ -13284,7 +13294,7 @@
   var objectProto$7 = Object.prototype;
 
   /** Used to check objects for own properties. */
-  var hasOwnProperty$8 = objectProto$7.hasOwnProperty;
+  var hasOwnProperty$7 = objectProto$7.hasOwnProperty;
 
   /**
    * Creates an array of the enumerable property names of the array-like `value`.
@@ -13304,7 +13314,7 @@
         length = result.length;
 
     for (var key in value) {
-      if ((inherited || hasOwnProperty$8.call(value, key)) &&
+      if ((inherited || hasOwnProperty$7.call(value, key)) &&
           !(skipIndexes && (
              // Safari 9 has enumerable `arguments.length` in strict mode.
              key == 'length' ||
@@ -13367,7 +13377,7 @@
   var objectProto$9 = Object.prototype;
 
   /** Used to check objects for own properties. */
-  var hasOwnProperty$9 = objectProto$9.hasOwnProperty;
+  var hasOwnProperty$8 = objectProto$9.hasOwnProperty;
 
   /**
    * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
@@ -13382,7 +13392,7 @@
     }
     var result = [];
     for (var key in Object(object)) {
-      if (hasOwnProperty$9.call(object, key) && key != 'constructor') {
+      if (hasOwnProperty$8.call(object, key) && key != 'constructor') {
         result.push(key);
       }
     }
@@ -13476,7 +13486,7 @@
   var objectProto$a = Object.prototype;
 
   /** Used to check objects for own properties. */
-  var hasOwnProperty$a = objectProto$a.hasOwnProperty;
+  var hasOwnProperty$9 = objectProto$a.hasOwnProperty;
 
   /**
    * A specialized version of `baseIsEqualDeep` for objects with support for
@@ -13504,7 +13514,7 @@
     var index = objLength;
     while (index--) {
       var key = objProps[index];
-      if (!(isPartial ? key in other : hasOwnProperty$a.call(other, key))) {
+      if (!(isPartial ? key in other : hasOwnProperty$9.call(other, key))) {
         return false;
       }
     }
@@ -13641,7 +13651,7 @@
   var objectProto$b = Object.prototype;
 
   /** Used to check objects for own properties. */
-  var hasOwnProperty$b = objectProto$b.hasOwnProperty;
+  var hasOwnProperty$a = objectProto$b.hasOwnProperty;
 
   /**
    * A specialized version of `baseIsEqual` for arrays and objects which performs
@@ -13684,8 +13694,8 @@
         : _equalByTag(object, other, objTag, bitmask, customizer, equalFunc, stack);
     }
     if (!(bitmask & COMPARE_PARTIAL_FLAG$3)) {
-      var objIsWrapped = objIsObj && hasOwnProperty$b.call(object, '__wrapped__'),
-          othIsWrapped = othIsObj && hasOwnProperty$b.call(other, '__wrapped__');
+      var objIsWrapped = objIsObj && hasOwnProperty$a.call(object, '__wrapped__'),
+          othIsWrapped = othIsObj && hasOwnProperty$a.call(other, '__wrapped__');
 
       if (objIsWrapped || othIsWrapped) {
         var objUnwrapped = objIsWrapped ? object.value() : object,
@@ -31710,7 +31720,7 @@
   var funcToString$2 = funcProto$2.toString;
 
   /** Used to check objects for own properties. */
-  var hasOwnProperty$c = objectProto$e.hasOwnProperty;
+  var hasOwnProperty$b = objectProto$e.hasOwnProperty;
 
   /** Used to infer the `Object` constructor. */
   var objectCtorString = funcToString$2.call(Object);
@@ -31751,7 +31761,7 @@
     if (proto === null) {
       return true;
     }
-    var Ctor = hasOwnProperty$c.call(proto, 'constructor') && proto.constructor;
+    var Ctor = hasOwnProperty$b.call(proto, 'constructor') && proto.constructor;
     return typeof Ctor == 'function' && Ctor instanceof Ctor &&
       funcToString$2.call(Ctor) == objectCtorString;
   }
@@ -43782,7 +43792,7 @@
     separator: true
   };
 
-  var version = "1.6.0-0";
+  var version = "1.6.0-1";
 
   exports.Avatar = Avatar;
   exports.AvatarGroup = AvatarGroup;

@@ -6,5 +6,5 @@ interface Props {
 }
 declare const GenericText: ({ children, componentType, className, ...props }: Props) => React.ReactElement<{
     className: string | undefined;
-}, string | ((props: any) => React.ReactElement<any, string | any | (new (props: any) => React.Component<any, any, any>)> | null) | (new (props: any) => React.Component<any, any, any>)>;
+}, string | ((props: any) => React.ReactElement<any, any> | null) | (new (props: any) => React.Component<any, any, any>)>;
 export default GenericText;

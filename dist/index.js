@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1611758177872 
+   * Generated on: 1612363784246 
    *      Package: @innovaccer/design-system
-   *      Version: v1.6.0-0
+   *      Version: v1.6.0-1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -130,6 +130,7 @@
           return newStyle;
         };
 
+        _this.state = {};
         _this.hoverableDelay = 100;
         _this.offsetMapping = {
           small: '2px',
@@ -292,10 +293,13 @@
         var _b = this.props,
             offset = _b.offset,
             children = _b.children;
+        var zIndex = this.state.zIndex;
         var newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
         var element = /*#__PURE__*/React.cloneElement(children, {
           ref: ref,
-          style: newStyle,
+          style: __assign(__assign({}, newStyle), {
+            zIndex: zIndex
+          }),
           'data-placement': placement,
           'data-hide': outOfBoundaries,
           onMouseEnter: this.handleMouseEnter,
@@ -822,21 +826,17 @@
       }, className);
 
       var disableBodyScroll = function disableBodyScroll() {
-        if (savedBodyOverflow) {
-          return;
-        }
-
-        setBodyOverflow(document.body.style.overflow);
-        document.body.style.overflow = 'hidden';
+        document.body.style.setProperty('overflow', 'hidden', 'important');
       };
 
       var enableBodyScroll = function enableBodyScroll() {
-        document.body.style.overflow = savedBodyOverflow || 'auto';
+        document.body.style.overflow = savedBodyOverflow || '';
         setBodyOverflow(null);
       };
 
       useEffect(function () {
         if (props.open) {
+          setBodyOverflow(document.body.style.overflow);
           disableBodyScroll();
           setOpen(true);
           setAnimate(true);
@@ -847,11 +847,8 @@
             setOpen(false);
           }, 120);
           setAnimate(false);
-        }
-
-        return function () {
           enableBodyScroll();
-        };
+        }
       }, [props.open]);
       var BackdropElement = /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement("div", __assign({
         "data-test": "DesignSystem-Backdrop",
@@ -10635,7 +10632,7 @@
       separator: true
     };
 
-    var version = "1.6.0-0";
+    var version = "1.6.0-1";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
