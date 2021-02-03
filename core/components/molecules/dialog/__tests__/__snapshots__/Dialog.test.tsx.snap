@@ -7,7 +7,7 @@ exports[`Dialog component
   style="overflow: hidden;"
 >
   <div
-    class="Modal-wrapper"
+    class="Overlay-wrapper"
   >
     <div
       class="Row Row Modal-container Modal-container--open"
@@ -106,7 +106,7 @@ exports[`Dialog component
 >
   <div />
   <div
-    class="Modal-wrapper"
+    class="Overlay-wrapper"
   >
     <div
       class="Row Row Modal-container Modal-container--open"
@@ -203,7 +203,7 @@ exports[`Dialog component
   style="overflow: hidden;"
 >
   <div
-    class="Modal-wrapper"
+    class="Overlay-wrapper"
   >
     <div
       class="Row Row Modal-container Modal-container--open"
@@ -301,7 +301,7 @@ exports[`Dialog component
   style="overflow: hidden;"
 >
   <div
-    class="Modal-wrapper"
+    class="Overlay-wrapper"
   >
     <div
       class="Row Row Modal-container Modal-container--open"
@@ -399,7 +399,7 @@ exports[`Dialog component
   style="overflow: hidden;"
 >
   <div
-    class="Modal-wrapper"
+    class="Overlay-wrapper"
   >
     <div
       class="Row Row Modal-container Modal-container--open"
@@ -497,7 +497,7 @@ exports[`Dialog component
   style="overflow: hidden;"
 >
   <div
-    class="Modal-wrapper"
+    class="Overlay-wrapper"
   >
     <div
       class="Row Row Modal-container Modal-container--open"
@@ -595,7 +595,7 @@ exports[`Dialog component
   style="overflow: hidden;"
 >
   <div
-    class="Modal-wrapper"
+    class="Overlay-wrapper"
   >
     <div
       class="Row Row Modal-container Modal-container--open"
@@ -693,7 +693,7 @@ exports[`Dialog component
   style="overflow: hidden;"
 >
   <div
-    class="Modal-wrapper"
+    class="Overlay-wrapper"
   >
     <div
       class="Row Row Modal-container Modal-container--open"
@@ -791,7 +791,7 @@ exports[`Dialog component
   style="overflow: hidden;"
 >
   <div
-    class="Modal-wrapper"
+    class="Overlay-wrapper"
   >
     <div
       class="Row Row Modal-container Modal-container--open"
@@ -889,7 +889,7 @@ exports[`Dialog component
   style="overflow: hidden;"
 >
   <div
-    class="Modal-wrapper"
+    class="Overlay-wrapper"
   >
     <div
       class="Row Row Modal-container Modal-container--open"
@@ -987,7 +987,7 @@ exports[`Dialog component
   style="overflow: hidden;"
 >
   <div
-    class="Modal-wrapper"
+    class="Overlay-wrapper"
   >
     <div
       class="Row Row Modal-container Modal-container--open"
@@ -1085,7 +1085,7 @@ exports[`Dialog component
   style="overflow: hidden;"
 >
   <div
-    class="Modal-wrapper"
+    class="Overlay-wrapper"
   >
     <div
       class="Row Row Modal-container Modal-container--open"
@@ -1183,7 +1183,7 @@ exports[`Dialog component
   style="overflow: hidden;"
 >
   <div
-    class="Modal-wrapper"
+    class="Overlay-wrapper"
   >
     <div
       class="Row Row Modal-container Modal-container--open"
