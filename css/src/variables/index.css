@@ -26,7 +26,6 @@
 
   /* darker */
   --primary-darker: var(--jal-darker);
-  --secondary-darker: var(--stone-darker);
   --success-darker: var(--neem-darker);
   --alert-darker: var(--mirch-darker);
   --warning-darker: var(--haldi-darker);
@@ -57,6 +56,7 @@
   --accent2-lighter: var(--jamun-lighter);
   --accent3-lighter: var(--neel-lighter);
   --accent4-lighter: var(--nimbu-lighter);
+  --inverse-lighter: var(--night-lighter);
 
   /* lightest */
   --primary-lightest: var(--jal-lightest);
@@ -90,7 +90,6 @@
   --text-destructive: var(--alert);
   --text-white: var(--white);
   --text-success: var(--success);
-  --text-link: var(--primary);
 
   /* spacing */
   --spacing-xs: 1px;
@@ -150,13 +149,6 @@
   --letter-spacing: 0.5px;
 
   /* body settings */
-
-  /* Link */
-  --link-color: var(--primary);
-  --link-decoration: none;
-  --link-hover-color: var(--primary);
-  --link-hover-decoration: none;
-  --link-font-weight: var(--font-weight-medium);
 
   /* border */
   --border: var(--spacing-xs) solid var(--secondary);

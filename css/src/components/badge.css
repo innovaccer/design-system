@@ -69,7 +69,7 @@
 }
 
 .Badge--subtle-secondary {
-	color: var(--secondary-darker);
+	color: var(--stone-darker);
 	background: var(--secondary-lightest);
 }
 

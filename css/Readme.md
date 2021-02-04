@@ -462,15 +462,6 @@ Note: For more details [color-mod](https://www.npmjs.com/package/postcss-color-m
   | ----- | ---------- |
   | --letter-spacing | 0.5px; |
 
-## Link
-  | value | properties |
-  | ----- | ---------- |
-  | --link-color | --primary; |
-  | --link-decoration | none; |
-  | --link-hover-color | --primary; |
-  | --link-hover-decoration | none; |
-  | --link-font-weight | --font-weight-medium; |
-
 ## border
   | value | properties |
   | ----- | ---------- |
