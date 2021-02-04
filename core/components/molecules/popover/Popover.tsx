@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { PopperWrapper, PopperWrapperProps } from '@/utils/PopperWrapper';
+import { PopperWrapper, PopperWrapperProps } from '@/components/atoms/popperWrapper';
 import { BaseProps, filterProps } from '@/utils/types';
 
 type Position = 'top' |
