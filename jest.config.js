@@ -21,7 +21,6 @@ const config = {
     '!**/*.story.tsx',
     '!core/**/__stories__/**',
     'core/**/*.{ts,tsx}',
-    'core/utils/PopperWrapper.tsx',
   ],
   globals: {
     window: true

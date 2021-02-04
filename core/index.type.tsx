@@ -40,7 +40,7 @@ export { SwitchProps } from './components/atoms/switchInput';
 export { TextProps } from './components/atoms/text';
 export { TextareaProps } from './components/atoms/textarea';
 export { ToastProps } from './components/atoms/toast';
-export { TooltipProps } from './components/atoms/tooltip';
+export { TooltipProps } from './components/molecules/tooltip';
 export { DialogProps } from './components/molecules/dialog';
 export { ChatMessageProps } from './components/molecules/chatMessage';
 export { EmptyStateProps } from './components/molecules/emptyState';

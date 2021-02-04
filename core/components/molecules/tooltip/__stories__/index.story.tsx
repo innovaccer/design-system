@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { select, text, boolean } from '@storybook/addon-knobs';
-import Tooltip from '../Tooltip';
-import Button from '../../button';
+import { Tooltip, Button } from '@/index';
 
 // CSF format story
 export const all = () => {
@@ -31,6 +30,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|Tooltip',
+  title: 'Molecules|Tooltip',
   component: Tooltip
 };
