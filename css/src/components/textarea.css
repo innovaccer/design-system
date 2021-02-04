@@ -26,7 +26,7 @@
 }
 
 .Textarea-textarea::placeholder {
-  color: var(--inverse-light);
+  color: var(--inverse-lighter);
 }
 
 .Textarea-textarea:focus-within {
@@ -35,7 +35,7 @@
 }
 
 .Textarea-textarea:disabled {
-  color: var(--inverse-light);
+  color: var(--inverse-lighter);
   background: var(--secondary-lightest);
   border-color: var(--secondary-light);
 }

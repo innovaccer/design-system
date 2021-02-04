@@ -10,14 +10,14 @@ body {
 /* Link */
 
 .Link {
-  color: var(--link-color);
-  text-decoration: var(--link-decoration);
-  font-weight: var(--link-font-weight);
+  color: var(--text-link);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
 }
 
 .Link:hover {
-  color: var(--link-hover-color);
-  text-decoration: var(--link-hover-decoration);
+  color: var(--text-link);
+  text-decoration: none;
 }
 
 /* Text */

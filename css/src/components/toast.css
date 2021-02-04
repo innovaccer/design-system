@@ -90,7 +90,7 @@
 }
 
 .Toast-actionButton--default {
-    background: var(--inverse-light);
+    background: var(--inverse-lighter);
 }
 
 .Toast-actionButton--default:hover,
@@ -99,7 +99,7 @@
 }
 
 .Toast-actionButton--default:focus {
-    box-shadow: var(--shadow-spread) color-mod(var(--inverse-light) a(0.16));
+    box-shadow: var(--shadow-spread) color-mod(var(--inverse-lighter) a(0.16));
 }
 
 .Toast-actionButton--info {
