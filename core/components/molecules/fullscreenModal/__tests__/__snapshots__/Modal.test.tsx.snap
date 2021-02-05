@@ -5,7 +5,7 @@ exports[`FullscreenModal component
  1`] = `
 <body>
   <div
-    class="FullscreenModal-wrapper"
+    class="Overlay-wrapper"
   >
     <div
       class="FullscreenModal-container FullscreenModal-container--open"
@@ -80,7 +80,7 @@ exports[`FullscreenModal component
 <body>
   <div />
   <div
-    class="FullscreenModal-wrapper"
+    class="Overlay-wrapper"
   >
     <div
       class="FullscreenModal-container FullscreenModal-container--open"
