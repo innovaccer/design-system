@@ -32,8 +32,8 @@ export const all = () => {
     false
   );
 
-  const readonly = boolean(
-    'readonly',
+  const readOnly = boolean(
+    'readOnly',
     false
   );
 
@@ -94,7 +94,7 @@ export const all = () => {
         type={inputType}
         value={value}
         disabled={disabled}
-        readonly={readonly}
+        readOnly={readOnly}
         onChange={action('on-change')}
         onClick={action('on-click')}
         onClear={action('on-clear')}
