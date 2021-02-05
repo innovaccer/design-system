@@ -6,6 +6,7 @@ import { Row, Column, Icon } from '@/index';
 import { ModalHeader, ModalHeaderProps } from './ModalHeader';
 import { ModalFooter, ModalFooterProps } from './ModalFooter';
 import { ColumnProps } from '@/index.type';
+import { getWrapperElement, getUpdatedZIndex } from '@/utils/overlayHelper';
 
 export type Dimension = 'medium' | 'large';
 
@@ -71,14 +72,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
   constructor(props: FullscreenModalProps) {
     super(props);
 
-    let element = document.querySelector('.FullscreenModal-wrapper');
-    if (element === null) {
-      element = document.createElement('div');
-      element.classList.add('FullscreenModal-wrapper');
-      document.body.appendChild(element);
-    }
-
-    this.element = element;
+    this.element = getWrapperElement();
 
     this.state = {
       open: props.open,
@@ -89,7 +83,11 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
   componentDidUpdate(prevProps: FullscreenModalProps) {
     if (prevProps.open !== this.props.open) {
       if (this.props.open) {
-        const zIndex = this.getUpdatedZIndex();
+        const zIndex = getUpdatedZIndex({
+          element: this.element,
+          containerClassName: '.FullscreenModal-container--open',
+          elementRef: this.modalRef
+        });
         this.setState({
           zIndex,
           open: true,
@@ -110,23 +108,6 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
         );
       }
     }
-  }
-
-  getUpdatedZIndex = () => {
-    if (this.element === null) return;
-
-    const elements = this.element.querySelectorAll('.FullscreenModal-container--open');
-    if (elements.length < 1) return;
-
-    const siblings = Array.from(elements).filter(el => el !== this.modalRef.current);
-    let zIndex = -1;
-
-    siblings.forEach(element => {
-      const prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
-      zIndex = Math.max(zIndex, prevZIndex + 10);
-    });
-
-    return zIndex > 0 ? zIndex : undefined;
   }
 
   render() {
