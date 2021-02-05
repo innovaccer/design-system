@@ -64,7 +64,7 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
    */
   autoComplete?: AutoComplete;
   /**
-   * Same behaviour as `disabled` prop
+   * Disables the `Input`, making it unable to type
    */
   readOnly?: boolean;
   /**
