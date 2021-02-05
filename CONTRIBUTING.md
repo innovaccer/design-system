@@ -96,12 +96,18 @@ mkdir __stories__/variants
 #### Typescript Types
 
 - Component *types* names must be uppercase, e.g. Appearance, Size, etc.
-- Component Props interface should be named as '[COMPONENT_NAME]Props', e.g. AvatarProps, HeadingProps.
+- Component Props interface should be named as `[COMPONENT_NAME]Props`, e.g. AvatarProps, HeadingProps.
+- Every component props interface should extend **BaseProps** (e.g className, data-test). Properties inside BaseProps  interface are defined in `@/utils/types`.
 
 #### Exports
 
-- Export Component as named export, e.g. export Avatar from './core/index.tsx'.
+- Export Component as named export, e.g. export Avatar from `./core/index.tsx`.
 - Export Component Props from `./core/index.type.tsx`
+
+#### Testing
+
+- Jest and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) is used for unit testing and coverage.
+- Snapshots and unit tests are written in `[COMPONENT_NAME].test.tsx` file inside `__tests__` folder, e.g. Avatar.test.tsx.
 
 #### DocPage
 
@@ -127,11 +133,9 @@ export default {
 };
 ```
 
-
-
 ### Example Component
 
-Let's assume we want to add *Avatar* component in *Atoms* category.
+  Let's assume we want to add *Avatar* component in *Atoms* category.
 
 ##### Create folder structure
 
@@ -142,83 +146,215 @@ cd avatar
 mkdir __tests__
 mkdir __stories__
 mkdir __stories__/variants
- ```
-
+```
+ 
 ##### ./core/components/atoms/avatar/Avatar.tsx
+
+Now we will add *Avatar* component logic.
+
+###### Imports
+
+- Import Design System components from `@index`.
+- Import Design System component props from `@/index.type`.
+- Import BaseProps from `@/utils/type`;
 
 ```tsx
 import * as React from 'react';
 import classNames from 'classnames';
+import { Text, Tooltip, Icon } from '@/index';
+import { TooltipProps } from '@/index.type';
+import { BaseProps, extractBaseProps } from '@/utils/types';
+```
 
-export type Appearance = 'primary' | 'alert' | 'warning' | 'success' | 'accent1' | 'accent2' | 'accent3' | 'accent4';
+###### Component types
 
-export interface AvatarProps {
+```tsx
+export type Appearance = 'secondary' | 'primary' | 'alert' | 'warning' | 'success' | 'accent1' | 'accent2' | 'accent3' | 'accent4';
+
+export type Size = 'regular' | 'tiny';
+```
+###### Component interface
+- Component props interface should extend BaseProps.
+- Additional information of a prop is written in `/** */` block.
+```tsx
+export interface AvatarProps extends BaseProps {
   /**
    * Color of the `Avatar`
-   * @default "primary"
    */
   appearance?: Appearance;
   /**
-   * **Only first 2 characters are rendered**
+   * **Only first 2 characters are rendered (SOON TO BE DEPRECATED)**
    */
-  children: string;
+  children?: string;
+  /**
+   * First Name
+   */
+  firstName?: string;
+  /**
+   * Last Name
+   */
+  lastName?: string;
+  /**
+   * Determines if tooltip is visible
+   */
+  withTooltip: boolean;
+  /**
+   * Position to place the tooltip
+   */
+  tooltipPosition: TooltipProps['position'];
+  /**
+   * Determines size of `Avatar`
+   */
+  size: Size;
 }
+```
+###### Component Logic
+ - Props are destructured *(Note that Avatar is a Function Component)*.
 
-const initialsLength = 2;
-
+```jsx
 export const Avatar = (props: AvatarProps) => {
   const {
-    appearance = 'primary',
-    children
+    withTooltip,
+    tooltipPosition,
+    size,
+    children,
+    firstName,
+    lastName,
+    className,
+    appearance,
   } = props;
+```
+- BaseProps are extracted via `extractBaseProps` function;
+```jsx
+  const baseProps = extractBaseProps(props);
 
-  const initials = children.trim().slice(0, initialsLength);
+  const initials = children
+    ? children.trim().slice(0, initialsLength)
+    : `${firstName ? firstName.trim()[0] : ''}${lastName ? lastName.trim()[0] : ''}`;
+
+  const tooltip = children || `${firstName || ''} ${lastName || ''}` || '';
+  const DefaultAppearance = 'secondary';
+
+  const colors = ['accent4', 'primary', 'accent3', 'alert','accent2', 'warning', 'accent1', 'success'];
+  
+  const AvatarAppearance = appearance 
+  || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] 
+  || DefaultAppearance;
+```
+- [ClassNames](https://www.npmjs.com/package/classnames) is a utility for conditionally joining CSS classNames together.
+- CSS is added according to [BEM Convention](http://getbem.com/naming/).
+```jsx
   const classes = classNames({
     Avatar: true,
-    [`Avatar--${appearance}`]: appearance,
+    [`Avatar--${size}`]: size,
+    [`Avatar--${AvatarAppearance}`]: AvatarAppearance,
+    ['Avatar--disabled']: !initials || !withTooltip,
+  }, className);
+
+  const ContentClass = classNames({
+    [`Avatar-content--${size}`]: size,
+    [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance
   });
 
-  return (
-    <span className={classes}>{initials}</span>
-  );
-};
+  const IconClass = classNames({
+    [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance
+  });
+```
+- Add rendering logic and `data-test` attribute.
+- Convention for adding data-test id is `DesignSystem-[COMPONENT_NAME]` and it is used for testing.
+```jsx
+  const renderAvatar = () => {
+    return (
+      <span data-test="DesignSystem-Avatar" {...baseProps} className={classes} >
+        {initials && (
+          <Text
+            weight="medium"
+            appearance={'white'}
+            className={ContentClass}
+          >
+            {initials}
+          </Text>
+        )}
+        {!initials && (
+          <Icon
+            data-test="DesignSystem-AvatarIcon"
+            name="person"
+            size={size === 'regular' ? 16 : 12}
+            appearance={'white'}
+            className={IconClass}
+          />
+        )}
+      </span>
+    );
+  };
 
+  const renderTooltip = () => {
+    if (withTooltip && initials) {
+      return (
+        <Tooltip tooltip={tooltip} position={tooltipPosition} triggerClass={'flex-grow-0'}>
+          {renderAvatar()}
+        </Tooltip>
+      );
+    }
+
+    return renderAvatar();
+  };
+
+  return renderTooltip();
+};
+```
+- Export Avatar component
+```jsx
 Avatar.displayName = 'Avatar';
 
 export default Avatar;
 ```
 
-  ##### ./core/components/atoms/avatar/index.tsx
+##### ./core/components/atoms/avatar/index.tsx
 
 ```tsx
 export { default } from './Avatar';
 export * from './Avatar';
 ```
-##### ./core/components/atoms/avatar/\_\_stories\_\_/index.story.tsx
+##### Component Stories
+A [story](https://storybook.js.org/docs/react/get-started/whats-a-story) captures the rendered state of a UI component. We write multiple stories per component that describe all the interesting states a component can support.
 
+ ##### ./core/components/atoms/avatar/\_\_stories\_\_/index.story.tsx
+ - Import component and story knobs.
 ```tsx
 import * as React from 'react';
 import { select, text } from '@storybook/addon-knobs';
 import Avatar from '../Avatar';
-
+```
+- Every named export in the file represents a story function by default. So, name of the story in this case will be `All`.
+- Storybook knobs (e.g. select, text, boolean) allows to edit props dynamically using the Storybook UI.
+```tsx
 export const all = () => {
   const appearance = select(
     'appearance',
-    ['primary', 'alert', 'warning', 'success', 'accent1', 'accent2', 'accent3', 'accent4'],
+    ['primary', 'alert', 'warning', 'success', 'accent1', 'accent2', 'accent3', 'accent4', 'secondary'],
     undefined
   );
+  
+  const size = select('size', ['regular', 'tiny'], undefined);
+  const withTooltip = boolean('with tooltip', true);
 
   const children = text('children', 'JD');
 
   return (
     <Avatar
       appearance={appearance}
+      size={size}
+      withTooltip={withTooltip}
     >
       {children}
     </Avatar>
   );
 };
-
+```
+- The default export defines metadata about component.
+- Title will show up in the navigation UI story hierarchy.
+```jsx
 export default {
   title: 'Atoms|Avatar',
   component: Avatar
@@ -226,23 +362,42 @@ export default {
 ```
 
 ##### ./core/components/atoms/avatar/\_\_tests\_\_/Avatar.test.tsx
-
+Now we will add snapshot and unit testing.
+###### Imports
 ```tsx
 import * as React from 'react';
-import { shallow } from 'enzyme';
-import Avatar from '../Avatar';
+import { render } from '@testing-library/react';
+import { Avatar } from '@/index';
+import { AvatarProps as Props } from '@/index.type';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
+```
+##### Snapshot Testing
+- [Snapshot tests](https://jestjs.io/docs/en/snapshot-testing) are a very useful tool whenever you want to make sure your UI does not change unexpectedly.
+- Create a mapper object which includes required/iterable props.
+```tsx
+const sizes: AvatarProps['size'][] = ['regular', 'tiny'];
 
 describe('Avatar component', () => {
-  it('with primary appearance', () => {
-      const tree = shallow(
+  const mapper = {
+    size: valueHelper(sizes, { required: true, iterate: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+
+    it(testMessageHelper(attr), () => {
+      const { asFragment } = render(
         <Avatar
-					appearance={'primary'}
+          {...attr}
         >
           JD
         </Avatar>
       );
-      expect(tree).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
+  };
+
+  testHelper(mapper, testFunc);
 });
 
 ```
