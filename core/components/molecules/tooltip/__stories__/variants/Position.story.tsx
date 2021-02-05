@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { text, boolean } from '@storybook/addon-knobs';
-import Tooltip, { PositionType } from '../../Tooltip';
-import Button from '../../../button';
+import { Tooltip, Button } from '@/index';
+import { TooltipProps } from '@/index.type';
 
 // CSF format story
 export const position = () => {
-  const positions: PositionType[] = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right'];
+  const positions: TooltipProps['position'][] = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right'];
   const appendToBody = boolean('appendToBody', false);
   const tooltip = text('tooltip', 'An awesome tooltip');
 
@@ -43,7 +43,7 @@ export const position = () => {
 };
 
 export default {
-  title: 'Atoms|Tooltip/Variants',
+  title: 'Molecules|Tooltip/Variants',
   component: Tooltip,
   parameters: {
     docs: {
