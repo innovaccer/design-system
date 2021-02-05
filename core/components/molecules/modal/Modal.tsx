@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { Row, Column, Backdrop, OutsideClick, ModalHeader, ModalBody, ModalFooter } from '@/index';
 import { ColumnProps, ModalHeaderProps } from '@/index.type';
+import { getWrapperElement, getUpdatedZIndex } from '@/utils/overlayHelper';
 
 export type Dimension = 'small' | 'medium' | 'large';
 
@@ -76,14 +77,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
   constructor(props: ModalProps) {
     super(props);
 
-    let element = document.querySelector('.Modal-wrapper');
-    if (element === null) {
-      element = document.createElement('div');
-      element.classList.add('Modal-wrapper');
-      document.body.appendChild(element);
-    }
-
-    this.element = element;
+    this.element = getWrapperElement();
 
     this.state = {
       open: props.open,
@@ -94,7 +88,11 @@ class Modal extends React.Component<ModalProps, ModalState> {
   componentDidUpdate(prevProps: ModalProps) {
     if (prevProps.open !== this.props.open) {
       if (this.props.open) {
-        const zIndex = this.getUpdatedZIndex();
+        const zIndex = getUpdatedZIndex({
+          element: this.element,
+          containerClassName: '.Modal-container--open',
+          elementRef: this.modalRef
+        });
         this.setState({
           zIndex,
           open: true,
@@ -112,23 +110,6 @@ class Modal extends React.Component<ModalProps, ModalState> {
         });
       }
     }
-  }
-
-  getUpdatedZIndex = () => {
-    if (this.element === null) return;
-
-    const elements = this.element.querySelectorAll('.Modal-container--open');
-    if (elements.length < 1) return;
-
-    const siblings = Array.from(elements).filter(el => el !== this.modalRef.current);
-    let zIndex = -1;
-
-    siblings.forEach(element => {
-      const prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
-      zIndex = Math.max(zIndex, prevZIndex + 10);
-    });
-
-    return zIndex > 0 ? zIndex : undefined;
   }
 
   render() {
@@ -199,8 +180,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
                   {children}
                 </ModalBody>
               ) : (
-                  children
-                )}
+                children
+              )}
             </>
           )}
           {footer && (
