@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Button, Paragraph, Text, FullscreenModal } from '@/index';
 import Heading from '@/components/atoms/heading';
-import { action } from '@storybook/addon-actions';
 
 export const twoSteps = () => {
   const [open, setOpen] = React.useState(true);
@@ -42,21 +41,25 @@ export const twoSteps = () => {
           backButton: !!page,
           backButtonCallback: () => setPage(0)
         }}
-        footerOptions={{
-          actions: [
-            {
-              children: 'Basic',
-              appearance: 'basic',
-              onClick: action('Basic button click')
-            },
-            {
-              children: 'Primary',
-              appearance: 'primary',
-              className: 'ml-4',
-              onClick: action('Primary button click')
-            }
-          ]
-        }}
+        footer={(
+          <>
+            {page === 0 && (
+              <Button appearance="primary" onClick={() => setPage(1)}>
+                Next
+              </Button>
+            )}
+            {page === 1 && (
+              <>
+                <Button appearance="primary">
+                  Submit
+                </Button>
+                <Button appearance="basic" onClick={() => setPage(0)} className="ml-4">
+                  Back
+                </Button>
+              </>
+            )}
+          </>
+        )}
       >
         {page === 0 && (
           <>
@@ -66,9 +69,6 @@ export const twoSteps = () => {
             <Paragraph>
               Card Sections include supporting text like an article summary or a restaurant description.
             </Paragraph>
-            <Button appearance="primary" onClick={() => setPage(1)}>
-              Next
-            </Button>
           </>
         )}
         {page === 1 && (
@@ -81,9 +81,6 @@ export const twoSteps = () => {
             <Paragraph>
               Card Sections include supporting text like an article summary or a restaurant description.
             </Paragraph>
-            <Button appearance="primary" onClick={() => setPage(0)}>
-              Back
-            </Button>
           </>
         )}
       </FullscreenModal>
@@ -118,7 +115,7 @@ const customCode = `
         <br />
       </Paragraph>
 
-      <Button appearance="primary" onClick={openModal}>
+      <Button className="m-8" appearance="primary" onClick={openModal}>
         Open modal
       </Button>
 
@@ -132,21 +129,25 @@ const customCode = `
           backButton: !!page,
           backButtonCallback: () => setPage(0)
         }}
-        footerOptions={{
-          actions: [
-            {
-              children: 'Basic',
-              appearance: 'basic',
-              onClick: ev => console.log('Basic button click', ev)
-            },
-            {
-              children: 'Primary',
-              appearance: 'primary',
-              className: 'ml-4',
-              onClick: ev => console.log('Primary button click', ev)
-            }
-          ]
-        }}
+        footer={(
+          <>
+            {page === 0 && (
+              <Button appearance="primary" onClick={() => setPage(1)}>
+                Next
+              </Button>
+            )}
+            {page === 1 && (
+              <>
+                <Button appearance="primary" onClick={() => console.log("Submit button clicked")}>
+                  Submit
+                </Button>
+                <Button appearance="basic" onClick={() => setPage(0)} className="ml-4">
+                  Back
+                </Button>
+              </>
+            )}
+          </>
+        )}
       >
         {page === 0 && (
           <>
@@ -154,16 +155,16 @@ const customCode = `
             <Heading size="s">Description Title</Heading>
             <Paragraph>Adding a subheading clearly indicates the hierarchy of the information.</Paragraph>
             <Paragraph>Card Sections include supporting text like an article summary or a restaurant description.</Paragraph>
-            <Button appearance="primary" onClick={() => setPage(1)}>Next</Button>
           </>
         )}
         {page === 1 && (
           <>
             <Text>This is some info</Text>
             <Heading size="s">Second screen</Heading>
-            <Paragraph>This screen may be used as info screen or read more, for multiple step forms please use steppers.</Paragraph>
+            <Paragraph>
+              This screen may be used as info screen or read more, for multiple step forms please use steppers.
+            </Paragraph>
             <Paragraph>Card Sections include supporting text like an article summary or a restaurant description.</Paragraph>
-            <Button appearance="primary" onClick={() => setPage(0)}>Back</Button>
           </>
         )}
       </FullscreenModal>
