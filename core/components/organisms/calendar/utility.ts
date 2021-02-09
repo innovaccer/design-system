@@ -45,10 +45,7 @@ export const convertToDate = (d?: DateType | DateObject, format?: string, valida
       return format ? translateToDate(format, d, validators) : undefined;
     } else if (!(d instanceof Date)) {
       const { year, month, date } = d as DateObject;
-      dateVal = new Date();
-      dateVal.setDate(date);
-      dateVal.setMonth(month);
-      dateVal.setFullYear(year);
+      dateVal = new Date(year, month, date, 0, 0, 0);
     } else {
       dateVal = d;
     }
