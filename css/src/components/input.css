@@ -92,7 +92,7 @@
 }
 
 .Input-input::placeholder {
-    color: var(--inverse-light);
+    color: var(--inverse-lighter);
 }
 
 .Input-input:focus {
@@ -100,7 +100,7 @@
 }
 
 .Input-input:disabled .Input-input::placeholder {
-    color: var(--inverse-light);
+    color: var(--inverse-lighter);
 }
 
 .Input-icon {

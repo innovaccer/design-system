@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { Row, Column, Backdrop, OutsideClick, ModalBody, ModalFooter, ModalHeader } from '@/index';
 import { ColumnProps, ModalHeaderProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { getWrapperElement, getUpdatedZIndex } from '@/utils/overlayHelper';
 
 export type Dimension = 'regular' | 'large';
 
@@ -88,14 +89,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
   constructor(props: SidesheetProps) {
     super(props);
 
-    let element = document.querySelector('.Sidesheet-wrapper');
-    if (element === null) {
-      element = document.createElement('div');
-      element.classList.add('Sidesheet-wrapper');
-      document.body.appendChild(element);
-    }
-
-    this.element = element;
+    this.element = getWrapperElement();
 
     this.state = {
       open: props.open,
@@ -106,7 +100,11 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
   componentDidUpdate(prevProps: SidesheetProps) {
     if (prevProps.open !== this.props.open) {
       if (this.props.open) {
-        const zIndex = this.getUpdatedZIndex();
+        const zIndex = getUpdatedZIndex({
+          element: this.element,
+          containerClassName: '.Sidesheet-container--open',
+          elementRef: this.sidesheetRef
+        });
         this.setState({
           zIndex,
           open: true,
@@ -124,23 +122,6 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
         });
       }
     }
-  }
-
-  getUpdatedZIndex = () => {
-    if (this.element === null) return;
-
-    const elements = this.element.querySelectorAll('.Sidesheet-container--open');
-    if (elements.length <= 1) return;
-
-    const siblings = Array.from(elements).filter(el => el !== this.sidesheetRef.current);
-    let zIndex = -1;
-
-    siblings.forEach(element => {
-      const prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
-      zIndex = Math.max(zIndex, prevZIndex + 10);
-    });
-
-    return zIndex > 0 ? zIndex : undefined;
   }
 
   render() {

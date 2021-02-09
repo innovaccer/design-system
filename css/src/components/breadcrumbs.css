@@ -19,7 +19,7 @@
 }
 
 .Breadcrumbs-itemSeparator {
-  color: var(--inverse-light);
+  color: var(--inverse-lighter);
 }
 
 .Breadcrumbs-dropdown {
@@ -31,7 +31,7 @@
   text-decoration: none;
   cursor: pointer;
   font-size: var(--font-size-s);
-  color: var(--inverse-light);
+  color: var(--inverse-lighter);
   font-weight: var(--font-weight-medium);
 }
 
@@ -41,7 +41,7 @@
 }
 
 .SubtleLink:hover {
-  border-bottom: var(--spacing-xs) solid var(--inverse-light);
+  border-bottom: var(--spacing-xs) solid var(--inverse-lighter);
 }
 
 .SubtleLink:active {

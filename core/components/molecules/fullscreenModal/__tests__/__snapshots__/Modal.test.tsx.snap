@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FullscreenModal component 
+  dimension: "large", open: true
+ 1`] = `
+<body>
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="FullscreenModal-container FullscreenModal-container--open"
+      data-layer="true"
+      data-test="DesignSystem-FullscreenModalContainer"
+    >
+      <div
+        class="FullscreenModal FullscreenModal--open FullscreenModal-animation--open"
+        data-test="DesignSystem-FullscreenModal"
+      >
+        <div
+          class="Row justify-content-center"
+          data-test="DesignSystem-Row"
+        >
+          <div
+            class="Col Col--6 Col--xs-12 Col--m-8 Col--l-8"
+          >
+            <div
+              class="Row justify-content-between pt-6 pr-6 pb-5 pl-7"
+              data-test="DesignSystem-Row"
+            >
+              <div
+                class="Col Col--auto"
+              >
+                <div
+                  class="FullscreenModal-header"
+                  data-test="DesignSystem-ModalHeader"
+                >
+                  <div
+                    class="FullscreenModal-headerWrapper"
+                  />
+                </div>
+              </div>
+              <div
+                class="Col Col--auto pr-2"
+              >
+                <i
+                  class="material-icons Icon Icon--default cursor-pointer pt-3"
+                  data-test="DesignSystem-ModalHeader--CloseIcon"
+                  style="font-size: 20px; width: 20px;"
+                >
+                  close
+                </i>
+              </div>
+            </div>
+            <div
+              class="FullscreenModal-body"
+              data-test="DesignSystem-ModalBody"
+            >
+              this is modal body
+            </div>
+            <div
+              class="d-flex justify-content-end p-7"
+              data-test="DesignSystem-ModalFooter"
+            >
+              <div
+                class="d-flex"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div />
+</body>
+`;
+
+exports[`FullscreenModal component 
+  dimension: "medium", open: true
+ 1`] = `
+<body>
+  <div />
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="FullscreenModal-container FullscreenModal-container--open"
+      data-layer="true"
+      data-test="DesignSystem-FullscreenModalContainer"
+    >
+      <div
+        class="FullscreenModal FullscreenModal--open FullscreenModal-animation--open"
+        data-test="DesignSystem-FullscreenModal"
+      >
+        <div
+          class="Row justify-content-center"
+          data-test="DesignSystem-Row"
+        >
+          <div
+            class="Col Col--4 Col--xs-12 Col--m-6 Col--l-6"
+          >
+            <div
+              class="Row justify-content-between pt-6 pr-6 pb-5 pl-7"
+              data-test="DesignSystem-Row"
+            >
+              <div
+                class="Col Col--auto"
+              >
+                <div
+                  class="FullscreenModal-header"
+                  data-test="DesignSystem-ModalHeader"
+                >
+                  <div
+                    class="FullscreenModal-headerWrapper"
+                  />
+                </div>
+              </div>
+              <div
+                class="Col Col--auto pr-2"
+              >
+                <i
+                  class="material-icons Icon Icon--default cursor-pointer pt-3"
+                  data-test="DesignSystem-ModalHeader--CloseIcon"
+                  style="font-size: 20px; width: 20px;"
+                >
+                  close
+                </i>
+              </div>
+            </div>
+            <div
+              class="FullscreenModal-body"
+              data-test="DesignSystem-ModalBody"
+            >
+              this is modal body
+            </div>
+            <div
+              class="d-flex justify-content-end p-7"
+              data-test="DesignSystem-ModalFooter"
+            >
+              <div
+                class="d-flex"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

@@ -64,9 +64,9 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
    */
   autoComplete?: AutoComplete;
   /**
-   * Same behaviour as `disabled` prop
+   * Disables the `Input`, making it unable to type
    */
-  readonly?: boolean;
+  readOnly?: boolean;
   /**
    * Valid for number it defines the most negative value in the range of permitted values.
    */
@@ -148,7 +148,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     size = 'regular',
     type = 'text',
     minWidth = type !== 'number' ? 256 : undefined,
-    readonly,
+    readOnly,
     defaultValue,
     name,
     placeholder,
@@ -181,7 +181,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
   }, []);
 
   const autoComplete = props.autoComplete || autocomplete;
-  const disabled = props.disabled || readonly;
+  const disabled = props.disabled || readOnly;
 
   const baseProps = extractBaseProps(props);
 
