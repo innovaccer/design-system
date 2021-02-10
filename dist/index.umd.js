@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1612959824209 
+   * Generated on: 1612961002644 
    *      Package: @innovaccer/design-system
-   *      Version: v1.6.0-2
+   *      Version: v1.6.0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -43980,7 +43980,7 @@
     separator: true
   };
 
-  var version = "1.6.0-2";
+  var version = "1.6.0";
 
   exports.Avatar = Avatar;
   exports.AvatarGroup = AvatarGroup;
