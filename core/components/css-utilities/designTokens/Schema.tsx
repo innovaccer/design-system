@@ -1,40 +1,6 @@
 import * as React from 'react';
 import { Schema } from '../../organisms/grid';
 
-export const colorSchema: Schema = [
-  {
-    name: 'token',
-    displayName: 'Token',
-    width: '33.3%',
-    resizable: true,
-    sorting: false,
-  },
-  {
-    name: 'value',
-    displayName: 'Value',
-    width: '33.3%',
-    resizable: true,
-    sorting: false,
-  },
-  {
-    name: 'preview',
-    displayName: 'Preview',
-    width: '33.3%',
-    resizable: true,
-    sorting: false,
-    cellRenderer: (props: any) => {
-      return(
-        <div
-          style={{
-            backgroundColor: `${`var(${props.data.token})`}`,
-            padding: 'var(--spacing)',
-          }}
-        />
-      );
-    },
-  },
-];
-
 export const spaceSchema: Schema = [
   {
     name: 'token',
@@ -51,3 +17,42 @@ export const spaceSchema: Schema = [
     sorting: false,
   },
 ];
+
+export const getSchema = (property: string, text: string, classnames?: string, css?: object) => {
+  return [
+    {
+      name: 'token',
+      displayName: 'Token',
+      width: '33.3%',
+      resizable: true,
+      sorting: false,
+    },
+    {
+      name: 'value',
+      displayName: 'Value',
+      width: '33.3%',
+      resizable: true,
+      sorting: false,
+    },
+    {
+      name: 'preview',
+      displayName: 'Preview',
+      width: '33.3%',
+      resizable: true,
+      sorting: false,
+      cellRenderer: (props: any) => {
+        const styleObj: object = Object.assign({
+          [`${property}`]: `${`var(${props.data.token})`}`
+        }, css);
+        return (
+          <div
+            style={styleObj}
+            className={`${classnames} ${props.data.setBgColor === undefined ? '' : 'setBgColor'}`}
+          >
+            {text}
+          </div>
+        );
+      },
+    },
+  ];
+};
