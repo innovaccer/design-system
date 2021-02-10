@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1612363783826 
+   * Generated on: 1612959824209 
    *      Package: @innovaccer/design-system
-   *      Version: v1.6.0-1
+   *      Version: v1.6.0-2
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -17,6 +17,15 @@
   function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
   var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+
+  var colorToHex = function colorToHex(color) {
+    return getComputedStyle(document.documentElement).getPropertyValue("--".concat(color));
+  };
+
+  var css = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    colorToHex: colorToHex
+  });
 
   function _typeof(obj) {
     "@babel/helpers - typeof";
@@ -367,4948 +376,6 @@
     };
   }
 
-  function _objectWithoutPropertiesLoose$1(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-
-    for (i = 0; i < sourceKeys.length; i++) {
-      key = sourceKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      target[key] = source[key];
-    }
-
-    return target;
-  }
-
-  var objectWithoutPropertiesLoose = _objectWithoutPropertiesLoose$1;
-
-  var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
-
-  function unwrapExports (x) {
-  	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
-  }
-
-  function createCommonjsModule(fn, module) {
-  	return module = { exports: {} }, fn(module, module.exports), module.exports;
-  }
-
-  function getCjsExportFromNamespace (n) {
-  	return n && n['default'] || n;
-  }
-
-  var _extends_1 = createCommonjsModule(function (module) {
-  function _extends() {
-    module.exports = _extends = Object.assign || function (target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
-
-      return target;
-    };
-
-    return _extends.apply(this, arguments);
-  }
-
-  module.exports = _extends;
-  });
-
-  function _assertThisInitialized$1(self) {
-    if (self === void 0) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return self;
-  }
-
-  var assertThisInitialized = _assertThisInitialized$1;
-
-  var setPrototypeOf = createCommonjsModule(function (module) {
-  function _setPrototypeOf(o, p) {
-    module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-      o.__proto__ = p;
-      return o;
-    };
-
-    return _setPrototypeOf(o, p);
-  }
-
-  module.exports = _setPrototypeOf;
-  });
-
-  function _inheritsLoose(subClass, superClass) {
-    subClass.prototype = Object.create(superClass.prototype);
-    subClass.prototype.constructor = subClass;
-    setPrototypeOf(subClass, superClass);
-  }
-
-  var inheritsLoose = _inheritsLoose;
-
-  function _defineProperty$1(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
-
-    return obj;
-  }
-
-  var defineProperty = _defineProperty$1;
-
-  var toStr = Object.prototype.toString;
-
-  var isArguments = function isArguments(value) {
-  	var str = toStr.call(value);
-  	var isArgs = str === '[object Arguments]';
-  	if (!isArgs) {
-  		isArgs = str !== '[object Array]' &&
-  			value !== null &&
-  			typeof value === 'object' &&
-  			typeof value.length === 'number' &&
-  			value.length >= 0 &&
-  			toStr.call(value.callee) === '[object Function]';
-  	}
-  	return isArgs;
-  };
-
-  var keysShim;
-  if (!Object.keys) {
-  	// modified from https://github.com/es-shims/es5-shim
-  	var has = Object.prototype.hasOwnProperty;
-  	var toStr$1 = Object.prototype.toString;
-  	var isArgs = isArguments; // eslint-disable-line global-require
-  	var isEnumerable = Object.prototype.propertyIsEnumerable;
-  	var hasDontEnumBug = !isEnumerable.call({ toString: null }, 'toString');
-  	var hasProtoEnumBug = isEnumerable.call(function () {}, 'prototype');
-  	var dontEnums = [
-  		'toString',
-  		'toLocaleString',
-  		'valueOf',
-  		'hasOwnProperty',
-  		'isPrototypeOf',
-  		'propertyIsEnumerable',
-  		'constructor'
-  	];
-  	var equalsConstructorPrototype = function (o) {
-  		var ctor = o.constructor;
-  		return ctor && ctor.prototype === o;
-  	};
-  	var excludedKeys = {
-  		$applicationCache: true,
-  		$console: true,
-  		$external: true,
-  		$frame: true,
-  		$frameElement: true,
-  		$frames: true,
-  		$innerHeight: true,
-  		$innerWidth: true,
-  		$onmozfullscreenchange: true,
-  		$onmozfullscreenerror: true,
-  		$outerHeight: true,
-  		$outerWidth: true,
-  		$pageXOffset: true,
-  		$pageYOffset: true,
-  		$parent: true,
-  		$scrollLeft: true,
-  		$scrollTop: true,
-  		$scrollX: true,
-  		$scrollY: true,
-  		$self: true,
-  		$webkitIndexedDB: true,
-  		$webkitStorageInfo: true,
-  		$window: true
-  	};
-  	var hasAutomationEqualityBug = (function () {
-  		/* global window */
-  		if (typeof window === 'undefined') { return false; }
-  		for (var k in window) {
-  			try {
-  				if (!excludedKeys['$' + k] && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
-  					try {
-  						equalsConstructorPrototype(window[k]);
-  					} catch (e) {
-  						return true;
-  					}
-  				}
-  			} catch (e) {
-  				return true;
-  			}
-  		}
-  		return false;
-  	}());
-  	var equalsConstructorPrototypeIfNotBuggy = function (o) {
-  		/* global window */
-  		if (typeof window === 'undefined' || !hasAutomationEqualityBug) {
-  			return equalsConstructorPrototype(o);
-  		}
-  		try {
-  			return equalsConstructorPrototype(o);
-  		} catch (e) {
-  			return false;
-  		}
-  	};
-
-  	keysShim = function keys(object) {
-  		var isObject = object !== null && typeof object === 'object';
-  		var isFunction = toStr$1.call(object) === '[object Function]';
-  		var isArguments = isArgs(object);
-  		var isString = isObject && toStr$1.call(object) === '[object String]';
-  		var theKeys = [];
-
-  		if (!isObject && !isFunction && !isArguments) {
-  			throw new TypeError('Object.keys called on a non-object');
-  		}
-
-  		var skipProto = hasProtoEnumBug && isFunction;
-  		if (isString && object.length > 0 && !has.call(object, 0)) {
-  			for (var i = 0; i < object.length; ++i) {
-  				theKeys.push(String(i));
-  			}
-  		}
-
-  		if (isArguments && object.length > 0) {
-  			for (var j = 0; j < object.length; ++j) {
-  				theKeys.push(String(j));
-  			}
-  		} else {
-  			for (var name in object) {
-  				if (!(skipProto && name === 'prototype') && has.call(object, name)) {
-  					theKeys.push(String(name));
-  				}
-  			}
-  		}
-
-  		if (hasDontEnumBug) {
-  			var skipConstructor = equalsConstructorPrototypeIfNotBuggy(object);
-
-  			for (var k = 0; k < dontEnums.length; ++k) {
-  				if (!(skipConstructor && dontEnums[k] === 'constructor') && has.call(object, dontEnums[k])) {
-  					theKeys.push(dontEnums[k]);
-  				}
-  			}
-  		}
-  		return theKeys;
-  	};
-  }
-  var implementation = keysShim;
-
-  var slice = Array.prototype.slice;
-
-
-  var origKeys = Object.keys;
-  var keysShim$1 = origKeys ? function keys(o) { return origKeys(o); } : implementation;
-
-  var originalKeys = Object.keys;
-
-  keysShim$1.shim = function shimObjectKeys() {
-  	if (Object.keys) {
-  		var keysWorksWithArguments = (function () {
-  			// Safari 5.0 bug
-  			var args = Object.keys(arguments);
-  			return args && args.length === arguments.length;
-  		}(1, 2));
-  		if (!keysWorksWithArguments) {
-  			Object.keys = function keys(object) { // eslint-disable-line func-name-matching
-  				if (isArguments(object)) {
-  					return originalKeys(slice.call(object));
-  				}
-  				return originalKeys(object);
-  			};
-  		}
-  	} else {
-  		Object.keys = keysShim$1;
-  	}
-  	return Object.keys || keysShim$1;
-  };
-
-  var objectKeys = keysShim$1;
-
-  /* eslint complexity: [2, 18], max-statements: [2, 33] */
-  var shams = function hasSymbols() {
-  	if (typeof Symbol !== 'function' || typeof Object.getOwnPropertySymbols !== 'function') { return false; }
-  	if (typeof Symbol.iterator === 'symbol') { return true; }
-
-  	var obj = {};
-  	var sym = Symbol('test');
-  	var symObj = Object(sym);
-  	if (typeof sym === 'string') { return false; }
-
-  	if (Object.prototype.toString.call(sym) !== '[object Symbol]') { return false; }
-  	if (Object.prototype.toString.call(symObj) !== '[object Symbol]') { return false; }
-
-  	// temp disabled per https://github.com/ljharb/object.assign/issues/17
-  	// if (sym instanceof Symbol) { return false; }
-  	// temp disabled per https://github.com/WebReflection/get-own-property-symbols/issues/4
-  	// if (!(symObj instanceof Symbol)) { return false; }
-
-  	// if (typeof Symbol.prototype.toString !== 'function') { return false; }
-  	// if (String(sym) !== Symbol.prototype.toString.call(sym)) { return false; }
-
-  	var symVal = 42;
-  	obj[sym] = symVal;
-  	for (sym in obj) { return false; } // eslint-disable-line no-restricted-syntax
-  	if (typeof Object.keys === 'function' && Object.keys(obj).length !== 0) { return false; }
-
-  	if (typeof Object.getOwnPropertyNames === 'function' && Object.getOwnPropertyNames(obj).length !== 0) { return false; }
-
-  	var syms = Object.getOwnPropertySymbols(obj);
-  	if (syms.length !== 1 || syms[0] !== sym) { return false; }
-
-  	if (!Object.prototype.propertyIsEnumerable.call(obj, sym)) { return false; }
-
-  	if (typeof Object.getOwnPropertyDescriptor === 'function') {
-  		var descriptor = Object.getOwnPropertyDescriptor(obj, sym);
-  		if (descriptor.value !== symVal || descriptor.enumerable !== true) { return false; }
-  	}
-
-  	return true;
-  };
-
-  var origSymbol = commonjsGlobal.Symbol;
-
-
-  var hasSymbols = function hasNativeSymbols() {
-  	if (typeof origSymbol !== 'function') { return false; }
-  	if (typeof Symbol !== 'function') { return false; }
-  	if (typeof origSymbol('foo') !== 'symbol') { return false; }
-  	if (typeof Symbol('bar') !== 'symbol') { return false; }
-
-  	return shams();
-  };
-
-  /* eslint no-invalid-this: 1 */
-
-  var ERROR_MESSAGE = 'Function.prototype.bind called on incompatible ';
-  var slice$1 = Array.prototype.slice;
-  var toStr$2 = Object.prototype.toString;
-  var funcType = '[object Function]';
-
-  var implementation$1 = function bind(that) {
-      var target = this;
-      if (typeof target !== 'function' || toStr$2.call(target) !== funcType) {
-          throw new TypeError(ERROR_MESSAGE + target);
-      }
-      var args = slice$1.call(arguments, 1);
-
-      var bound;
-      var binder = function () {
-          if (this instanceof bound) {
-              var result = target.apply(
-                  this,
-                  args.concat(slice$1.call(arguments))
-              );
-              if (Object(result) === result) {
-                  return result;
-              }
-              return this;
-          } else {
-              return target.apply(
-                  that,
-                  args.concat(slice$1.call(arguments))
-              );
-          }
-      };
-
-      var boundLength = Math.max(0, target.length - args.length);
-      var boundArgs = [];
-      for (var i = 0; i < boundLength; i++) {
-          boundArgs.push('$' + i);
-      }
-
-      bound = Function('binder', 'return function (' + boundArgs.join(',') + '){ return binder.apply(this,arguments); }')(binder);
-
-      if (target.prototype) {
-          var Empty = function Empty() {};
-          Empty.prototype = target.prototype;
-          bound.prototype = new Empty();
-          Empty.prototype = null;
-      }
-
-      return bound;
-  };
-
-  var functionBind = Function.prototype.bind || implementation$1;
-
-  var src = functionBind.call(Function.call, Object.prototype.hasOwnProperty);
-
-  /* globals
-  	AggregateError,
-  	SharedArrayBuffer,
-  */
-
-  var undefined$1;
-
-  var $SyntaxError = SyntaxError;
-  var $Function = Function;
-  var $TypeError = TypeError;
-
-  // eslint-disable-next-line consistent-return
-  var getEvalledConstructor = function (expressionSyntax) {
-  	try {
-  		return $Function('"use strict"; return (' + expressionSyntax + ').constructor;')();
-  	} catch (e) {}
-  };
-
-  var $gOPD = Object.getOwnPropertyDescriptor;
-  if ($gOPD) {
-  	try {
-  		$gOPD({}, '');
-  	} catch (e) {
-  		$gOPD = null; // this is IE 8, which has a broken gOPD
-  	}
-  }
-
-  var throwTypeError = function () {
-  	throw new $TypeError();
-  };
-  var ThrowTypeError = $gOPD
-  	? (function () {
-  		try {
-  			// eslint-disable-next-line no-unused-expressions, no-caller, no-restricted-properties
-  			arguments.callee; // IE 8 does not throw here
-  			return throwTypeError;
-  		} catch (calleeThrows) {
-  			try {
-  				// IE 8 throws on Object.getOwnPropertyDescriptor(arguments, '')
-  				return $gOPD(arguments, 'callee').get;
-  			} catch (gOPDthrows) {
-  				return throwTypeError;
-  			}
-  		}
-  	}())
-  	: throwTypeError;
-
-  var hasSymbols$1 = hasSymbols();
-
-  var getProto = Object.getPrototypeOf || function (x) { return x.__proto__; }; // eslint-disable-line no-proto
-
-  var needsEval = {};
-
-  var TypedArray = typeof Uint8Array === 'undefined' ? undefined$1 : getProto(Uint8Array);
-
-  var INTRINSICS = {
-  	'%AggregateError%': typeof AggregateError === 'undefined' ? undefined$1 : AggregateError,
-  	'%Array%': Array,
-  	'%ArrayBuffer%': typeof ArrayBuffer === 'undefined' ? undefined$1 : ArrayBuffer,
-  	'%ArrayIteratorPrototype%': hasSymbols$1 ? getProto([][Symbol.iterator]()) : undefined$1,
-  	'%AsyncFromSyncIteratorPrototype%': undefined$1,
-  	'%AsyncFunction%': needsEval,
-  	'%AsyncGenerator%': needsEval,
-  	'%AsyncGeneratorFunction%': needsEval,
-  	'%AsyncIteratorPrototype%': needsEval,
-  	'%Atomics%': typeof Atomics === 'undefined' ? undefined$1 : Atomics,
-  	'%BigInt%': typeof BigInt === 'undefined' ? undefined$1 : BigInt,
-  	'%Boolean%': Boolean,
-  	'%DataView%': typeof DataView === 'undefined' ? undefined$1 : DataView,
-  	'%Date%': Date,
-  	'%decodeURI%': decodeURI,
-  	'%decodeURIComponent%': decodeURIComponent,
-  	'%encodeURI%': encodeURI,
-  	'%encodeURIComponent%': encodeURIComponent,
-  	'%Error%': Error,
-  	'%eval%': eval, // eslint-disable-line no-eval
-  	'%EvalError%': EvalError,
-  	'%Float32Array%': typeof Float32Array === 'undefined' ? undefined$1 : Float32Array,
-  	'%Float64Array%': typeof Float64Array === 'undefined' ? undefined$1 : Float64Array,
-  	'%FinalizationRegistry%': typeof FinalizationRegistry === 'undefined' ? undefined$1 : FinalizationRegistry,
-  	'%Function%': $Function,
-  	'%GeneratorFunction%': needsEval,
-  	'%Int8Array%': typeof Int8Array === 'undefined' ? undefined$1 : Int8Array,
-  	'%Int16Array%': typeof Int16Array === 'undefined' ? undefined$1 : Int16Array,
-  	'%Int32Array%': typeof Int32Array === 'undefined' ? undefined$1 : Int32Array,
-  	'%isFinite%': isFinite,
-  	'%isNaN%': isNaN,
-  	'%IteratorPrototype%': hasSymbols$1 ? getProto(getProto([][Symbol.iterator]())) : undefined$1,
-  	'%JSON%': typeof JSON === 'object' ? JSON : undefined$1,
-  	'%Map%': typeof Map === 'undefined' ? undefined$1 : Map,
-  	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols$1 ? undefined$1 : getProto(new Map()[Symbol.iterator]()),
-  	'%Math%': Math,
-  	'%Number%': Number,
-  	'%Object%': Object,
-  	'%parseFloat%': parseFloat,
-  	'%parseInt%': parseInt,
-  	'%Promise%': typeof Promise === 'undefined' ? undefined$1 : Promise,
-  	'%Proxy%': typeof Proxy === 'undefined' ? undefined$1 : Proxy,
-  	'%RangeError%': RangeError,
-  	'%ReferenceError%': ReferenceError,
-  	'%Reflect%': typeof Reflect === 'undefined' ? undefined$1 : Reflect,
-  	'%RegExp%': RegExp,
-  	'%Set%': typeof Set === 'undefined' ? undefined$1 : Set,
-  	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols$1 ? undefined$1 : getProto(new Set()[Symbol.iterator]()),
-  	'%SharedArrayBuffer%': typeof SharedArrayBuffer === 'undefined' ? undefined$1 : SharedArrayBuffer,
-  	'%String%': String,
-  	'%StringIteratorPrototype%': hasSymbols$1 ? getProto(''[Symbol.iterator]()) : undefined$1,
-  	'%Symbol%': hasSymbols$1 ? Symbol : undefined$1,
-  	'%SyntaxError%': $SyntaxError,
-  	'%ThrowTypeError%': ThrowTypeError,
-  	'%TypedArray%': TypedArray,
-  	'%TypeError%': $TypeError,
-  	'%Uint8Array%': typeof Uint8Array === 'undefined' ? undefined$1 : Uint8Array,
-  	'%Uint8ClampedArray%': typeof Uint8ClampedArray === 'undefined' ? undefined$1 : Uint8ClampedArray,
-  	'%Uint16Array%': typeof Uint16Array === 'undefined' ? undefined$1 : Uint16Array,
-  	'%Uint32Array%': typeof Uint32Array === 'undefined' ? undefined$1 : Uint32Array,
-  	'%URIError%': URIError,
-  	'%WeakMap%': typeof WeakMap === 'undefined' ? undefined$1 : WeakMap,
-  	'%WeakRef%': typeof WeakRef === 'undefined' ? undefined$1 : WeakRef,
-  	'%WeakSet%': typeof WeakSet === 'undefined' ? undefined$1 : WeakSet
-  };
-
-  var doEval = function doEval(name) {
-  	var value;
-  	if (name === '%AsyncFunction%') {
-  		value = getEvalledConstructor('async function () {}');
-  	} else if (name === '%GeneratorFunction%') {
-  		value = getEvalledConstructor('function* () {}');
-  	} else if (name === '%AsyncGeneratorFunction%') {
-  		value = getEvalledConstructor('async function* () {}');
-  	} else if (name === '%AsyncGenerator%') {
-  		var fn = doEval('%AsyncGeneratorFunction%');
-  		if (fn) {
-  			value = fn.prototype;
-  		}
-  	} else if (name === '%AsyncIteratorPrototype%') {
-  		var gen = doEval('%AsyncGenerator%');
-  		if (gen) {
-  			value = getProto(gen.prototype);
-  		}
-  	}
-
-  	INTRINSICS[name] = value;
-
-  	return value;
-  };
-
-  var LEGACY_ALIASES = {
-  	'%ArrayBufferPrototype%': ['ArrayBuffer', 'prototype'],
-  	'%ArrayPrototype%': ['Array', 'prototype'],
-  	'%ArrayProto_entries%': ['Array', 'prototype', 'entries'],
-  	'%ArrayProto_forEach%': ['Array', 'prototype', 'forEach'],
-  	'%ArrayProto_keys%': ['Array', 'prototype', 'keys'],
-  	'%ArrayProto_values%': ['Array', 'prototype', 'values'],
-  	'%AsyncFunctionPrototype%': ['AsyncFunction', 'prototype'],
-  	'%AsyncGenerator%': ['AsyncGeneratorFunction', 'prototype'],
-  	'%AsyncGeneratorPrototype%': ['AsyncGeneratorFunction', 'prototype', 'prototype'],
-  	'%BooleanPrototype%': ['Boolean', 'prototype'],
-  	'%DataViewPrototype%': ['DataView', 'prototype'],
-  	'%DatePrototype%': ['Date', 'prototype'],
-  	'%ErrorPrototype%': ['Error', 'prototype'],
-  	'%EvalErrorPrototype%': ['EvalError', 'prototype'],
-  	'%Float32ArrayPrototype%': ['Float32Array', 'prototype'],
-  	'%Float64ArrayPrototype%': ['Float64Array', 'prototype'],
-  	'%FunctionPrototype%': ['Function', 'prototype'],
-  	'%Generator%': ['GeneratorFunction', 'prototype'],
-  	'%GeneratorPrototype%': ['GeneratorFunction', 'prototype', 'prototype'],
-  	'%Int8ArrayPrototype%': ['Int8Array', 'prototype'],
-  	'%Int16ArrayPrototype%': ['Int16Array', 'prototype'],
-  	'%Int32ArrayPrototype%': ['Int32Array', 'prototype'],
-  	'%JSONParse%': ['JSON', 'parse'],
-  	'%JSONStringify%': ['JSON', 'stringify'],
-  	'%MapPrototype%': ['Map', 'prototype'],
-  	'%NumberPrototype%': ['Number', 'prototype'],
-  	'%ObjectPrototype%': ['Object', 'prototype'],
-  	'%ObjProto_toString%': ['Object', 'prototype', 'toString'],
-  	'%ObjProto_valueOf%': ['Object', 'prototype', 'valueOf'],
-  	'%PromisePrototype%': ['Promise', 'prototype'],
-  	'%PromiseProto_then%': ['Promise', 'prototype', 'then'],
-  	'%Promise_all%': ['Promise', 'all'],
-  	'%Promise_reject%': ['Promise', 'reject'],
-  	'%Promise_resolve%': ['Promise', 'resolve'],
-  	'%RangeErrorPrototype%': ['RangeError', 'prototype'],
-  	'%ReferenceErrorPrototype%': ['ReferenceError', 'prototype'],
-  	'%RegExpPrototype%': ['RegExp', 'prototype'],
-  	'%SetPrototype%': ['Set', 'prototype'],
-  	'%SharedArrayBufferPrototype%': ['SharedArrayBuffer', 'prototype'],
-  	'%StringPrototype%': ['String', 'prototype'],
-  	'%SymbolPrototype%': ['Symbol', 'prototype'],
-  	'%SyntaxErrorPrototype%': ['SyntaxError', 'prototype'],
-  	'%TypedArrayPrototype%': ['TypedArray', 'prototype'],
-  	'%TypeErrorPrototype%': ['TypeError', 'prototype'],
-  	'%Uint8ArrayPrototype%': ['Uint8Array', 'prototype'],
-  	'%Uint8ClampedArrayPrototype%': ['Uint8ClampedArray', 'prototype'],
-  	'%Uint16ArrayPrototype%': ['Uint16Array', 'prototype'],
-  	'%Uint32ArrayPrototype%': ['Uint32Array', 'prototype'],
-  	'%URIErrorPrototype%': ['URIError', 'prototype'],
-  	'%WeakMapPrototype%': ['WeakMap', 'prototype'],
-  	'%WeakSetPrototype%': ['WeakSet', 'prototype']
-  };
-
-
-
-  var $concat = functionBind.call(Function.call, Array.prototype.concat);
-  var $spliceApply = functionBind.call(Function.apply, Array.prototype.splice);
-  var $replace = functionBind.call(Function.call, String.prototype.replace);
-  var $strSlice = functionBind.call(Function.call, String.prototype.slice);
-
-  /* adapted from https://github.com/lodash/lodash/blob/4.17.15/dist/lodash.js#L6735-L6744 */
-  var rePropName = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g;
-  var reEscapeChar = /\\(\\)?/g; /** Used to match backslashes in property paths. */
-  var stringToPath = function stringToPath(string) {
-  	var first = $strSlice(string, 0, 1);
-  	var last = $strSlice(string, -1);
-  	if (first === '%' && last !== '%') {
-  		throw new $SyntaxError('invalid intrinsic syntax, expected closing `%`');
-  	} else if (last === '%' && first !== '%') {
-  		throw new $SyntaxError('invalid intrinsic syntax, expected opening `%`');
-  	}
-  	var result = [];
-  	$replace(string, rePropName, function (match, number, quote, subString) {
-  		result[result.length] = quote ? $replace(subString, reEscapeChar, '$1') : number || match;
-  	});
-  	return result;
-  };
-  /* end adaptation */
-
-  var getBaseIntrinsic = function getBaseIntrinsic(name, allowMissing) {
-  	var intrinsicName = name;
-  	var alias;
-  	if (src(LEGACY_ALIASES, intrinsicName)) {
-  		alias = LEGACY_ALIASES[intrinsicName];
-  		intrinsicName = '%' + alias[0] + '%';
-  	}
-
-  	if (src(INTRINSICS, intrinsicName)) {
-  		var value = INTRINSICS[intrinsicName];
-  		if (value === needsEval) {
-  			value = doEval(intrinsicName);
-  		}
-  		if (typeof value === 'undefined' && !allowMissing) {
-  			throw new $TypeError('intrinsic ' + name + ' exists, but is not available. Please file an issue!');
-  		}
-
-  		return {
-  			alias: alias,
-  			name: intrinsicName,
-  			value: value
-  		};
-  	}
-
-  	throw new $SyntaxError('intrinsic ' + name + ' does not exist!');
-  };
-
-  var getIntrinsic = function GetIntrinsic(name, allowMissing) {
-  	if (typeof name !== 'string' || name.length === 0) {
-  		throw new $TypeError('intrinsic name must be a non-empty string');
-  	}
-  	if (arguments.length > 1 && typeof allowMissing !== 'boolean') {
-  		throw new $TypeError('"allowMissing" argument must be a boolean');
-  	}
-
-  	var parts = stringToPath(name);
-  	var intrinsicBaseName = parts.length > 0 ? parts[0] : '';
-
-  	var intrinsic = getBaseIntrinsic('%' + intrinsicBaseName + '%', allowMissing);
-  	var intrinsicRealName = intrinsic.name;
-  	var value = intrinsic.value;
-  	var skipFurtherCaching = false;
-
-  	var alias = intrinsic.alias;
-  	if (alias) {
-  		intrinsicBaseName = alias[0];
-  		$spliceApply(parts, $concat([0, 1], alias));
-  	}
-
-  	for (var i = 1, isOwn = true; i < parts.length; i += 1) {
-  		var part = parts[i];
-  		var first = $strSlice(part, 0, 1);
-  		var last = $strSlice(part, -1);
-  		if (
-  			(
-  				(first === '"' || first === "'" || first === '`')
-  				|| (last === '"' || last === "'" || last === '`')
-  			)
-  			&& first !== last
-  		) {
-  			throw new $SyntaxError('property names with quotes must have matching quotes');
-  		}
-  		if (part === 'constructor' || !isOwn) {
-  			skipFurtherCaching = true;
-  		}
-
-  		intrinsicBaseName += '.' + part;
-  		intrinsicRealName = '%' + intrinsicBaseName + '%';
-
-  		if (src(INTRINSICS, intrinsicRealName)) {
-  			value = INTRINSICS[intrinsicRealName];
-  		} else if (value != null) {
-  			if (!(part in value)) {
-  				if (!allowMissing) {
-  					throw new $TypeError('base intrinsic for ' + name + ' exists, but the property is not available.');
-  				}
-  				return void undefined$1;
-  			}
-  			if ($gOPD && (i + 1) >= parts.length) {
-  				var desc = $gOPD(value, part);
-  				isOwn = !!desc;
-
-  				// By convention, when a data property is converted to an accessor
-  				// property to emulate a data property that does not suffer from
-  				// the override mistake, that accessor's getter is marked with
-  				// an `originalValue` property. Here, when we detect this, we
-  				// uphold the illusion by pretending to see that original data
-  				// property, i.e., returning the value rather than the getter
-  				// itself.
-  				if (isOwn && 'get' in desc && !('originalValue' in desc.get)) {
-  					value = desc.get;
-  				} else {
-  					value = value[part];
-  				}
-  			} else {
-  				isOwn = src(value, part);
-  				value = value[part];
-  			}
-
-  			if (isOwn && !skipFurtherCaching) {
-  				INTRINSICS[intrinsicRealName] = value;
-  			}
-  		}
-  	}
-  	return value;
-  };
-
-  var callBind = createCommonjsModule(function (module) {
-
-
-
-
-  var $apply = getIntrinsic('%Function.prototype.apply%');
-  var $call = getIntrinsic('%Function.prototype.call%');
-  var $reflectApply = getIntrinsic('%Reflect.apply%', true) || functionBind.call($call, $apply);
-
-  var $gOPD = getIntrinsic('%Object.getOwnPropertyDescriptor%', true);
-  var $defineProperty = getIntrinsic('%Object.defineProperty%', true);
-  var $max = getIntrinsic('%Math.max%');
-
-  if ($defineProperty) {
-  	try {
-  		$defineProperty({}, 'a', { value: 1 });
-  	} catch (e) {
-  		// IE 8 has a broken defineProperty
-  		$defineProperty = null;
-  	}
-  }
-
-  module.exports = function callBind(originalFunction) {
-  	var func = $reflectApply(functionBind, $call, arguments);
-  	if ($gOPD && $defineProperty) {
-  		var desc = $gOPD(func, 'length');
-  		if (desc.configurable) {
-  			// original length, plus the receiver, minus any additional arguments (after the receiver)
-  			$defineProperty(
-  				func,
-  				'length',
-  				{ value: 1 + $max(0, originalFunction.length - (arguments.length - 1)) }
-  			);
-  		}
-  	}
-  	return func;
-  };
-
-  var applyBind = function applyBind() {
-  	return $reflectApply(functionBind, $apply, arguments);
-  };
-
-  if ($defineProperty) {
-  	$defineProperty(module.exports, 'apply', { value: applyBind });
-  } else {
-  	module.exports.apply = applyBind;
-  }
-  });
-  callBind.apply;
-
-  var $indexOf = callBind(getIntrinsic('String.prototype.indexOf'));
-
-  var callBound = function callBoundIntrinsic(name, allowMissing) {
-  	var intrinsic = getIntrinsic(name, !!allowMissing);
-  	if (typeof intrinsic === 'function' && $indexOf(name, '.prototype.') > -1) {
-  		return callBind(intrinsic);
-  	}
-  	return intrinsic;
-  };
-
-  var hasToStringTag = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
-
-
-  var $toString = callBound('Object.prototype.toString');
-
-  var isStandardArguments = function isArguments(value) {
-  	if (hasToStringTag && value && typeof value === 'object' && Symbol.toStringTag in value) {
-  		return false;
-  	}
-  	return $toString(value) === '[object Arguments]';
-  };
-
-  var isLegacyArguments = function isArguments(value) {
-  	if (isStandardArguments(value)) {
-  		return true;
-  	}
-  	return value !== null &&
-  		typeof value === 'object' &&
-  		typeof value.length === 'number' &&
-  		value.length >= 0 &&
-  		$toString(value) !== '[object Array]' &&
-  		$toString(value.callee) === '[object Function]';
-  };
-
-  var supportsStandardArguments = (function () {
-  	return isStandardArguments(arguments);
-  }());
-
-  isStandardArguments.isLegacyArguments = isLegacyArguments; // for tests
-
-  var isArguments$1 = supportsStandardArguments ? isStandardArguments : isLegacyArguments;
-
-  var hasSymbols$2 = typeof Symbol === 'function' && typeof Symbol('foo') === 'symbol';
-
-  var toStr$3 = Object.prototype.toString;
-  var concat = Array.prototype.concat;
-  var origDefineProperty = Object.defineProperty;
-
-  var isFunction = function (fn) {
-  	return typeof fn === 'function' && toStr$3.call(fn) === '[object Function]';
-  };
-
-  var arePropertyDescriptorsSupported = function () {
-  	var obj = {};
-  	try {
-  		origDefineProperty(obj, 'x', { enumerable: false, value: obj });
-  		// eslint-disable-next-line no-unused-vars, no-restricted-syntax
-  		for (var _ in obj) { // jscs:ignore disallowUnusedVariables
-  			return false;
-  		}
-  		return obj.x === obj;
-  	} catch (e) { /* this is IE 8. */
-  		return false;
-  	}
-  };
-  var supportsDescriptors = origDefineProperty && arePropertyDescriptorsSupported();
-
-  var defineProperty$1 = function (object, name, value, predicate) {
-  	if (name in object && (!isFunction(predicate) || !predicate())) {
-  		return;
-  	}
-  	if (supportsDescriptors) {
-  		origDefineProperty(object, name, {
-  			configurable: true,
-  			enumerable: false,
-  			value: value,
-  			writable: true
-  		});
-  	} else {
-  		object[name] = value;
-  	}
-  };
-
-  var defineProperties = function (object, map) {
-  	var predicates = arguments.length > 2 ? arguments[2] : {};
-  	var props = objectKeys(map);
-  	if (hasSymbols$2) {
-  		props = concat.call(props, Object.getOwnPropertySymbols(map));
-  	}
-  	for (var i = 0; i < props.length; i += 1) {
-  		defineProperty$1(object, props[i], map[props[i]], predicates[props[i]]);
-  	}
-  };
-
-  defineProperties.supportsDescriptors = !!supportsDescriptors;
-
-  var defineProperties_1 = defineProperties;
-
-  var numberIsNaN = function (value) {
-  	return value !== value;
-  };
-
-  var implementation$2 = function is(a, b) {
-  	if (a === 0 && b === 0) {
-  		return 1 / a === 1 / b;
-  	}
-  	if (a === b) {
-  		return true;
-  	}
-  	if (numberIsNaN(a) && numberIsNaN(b)) {
-  		return true;
-  	}
-  	return false;
-  };
-
-  var polyfill = function getPolyfill() {
-  	return typeof Object.is === 'function' ? Object.is : implementation$2;
-  };
-
-  var shim = function shimObjectIs() {
-  	var polyfill$1 = polyfill();
-  	defineProperties_1(Object, { is: polyfill$1 }, {
-  		is: function testObjectIs() {
-  			return Object.is !== polyfill$1;
-  		}
-  	});
-  	return polyfill$1;
-  };
-
-  var polyfill$1 = callBind(polyfill(), Object);
-
-  defineProperties_1(polyfill$1, {
-  	getPolyfill: polyfill,
-  	implementation: implementation$2,
-  	shim: shim
-  });
-
-  var objectIs = polyfill$1;
-
-  var hasSymbols$3 = hasSymbols();
-  var hasToStringTag$1 = hasSymbols$3 && typeof Symbol.toStringTag === 'symbol';
-  var has$1;
-  var $exec;
-  var isRegexMarker;
-  var badStringifier;
-
-  if (hasToStringTag$1) {
-  	has$1 = callBound('Object.prototype.hasOwnProperty');
-  	$exec = callBound('RegExp.prototype.exec');
-  	isRegexMarker = {};
-
-  	var throwRegexMarker = function () {
-  		throw isRegexMarker;
-  	};
-  	badStringifier = {
-  		toString: throwRegexMarker,
-  		valueOf: throwRegexMarker
-  	};
-
-  	if (typeof Symbol.toPrimitive === 'symbol') {
-  		badStringifier[Symbol.toPrimitive] = throwRegexMarker;
-  	}
-  }
-
-  var $toString$1 = callBound('Object.prototype.toString');
-  var gOPD = Object.getOwnPropertyDescriptor;
-  var regexClass = '[object RegExp]';
-
-  var isRegex = hasToStringTag$1
-  	// eslint-disable-next-line consistent-return
-  	? function isRegex(value) {
-  		if (!value || typeof value !== 'object') {
-  			return false;
-  		}
-
-  		var descriptor = gOPD(value, 'lastIndex');
-  		var hasLastIndexDataProperty = descriptor && has$1(descriptor, 'value');
-  		if (!hasLastIndexDataProperty) {
-  			return false;
-  		}
-
-  		try {
-  			$exec(value, badStringifier);
-  		} catch (e) {
-  			return e === isRegexMarker;
-  		}
-  	}
-  	: function isRegex(value) {
-  		// In older browsers, typeof regex incorrectly returns 'function'
-  		if (!value || (typeof value !== 'object' && typeof value !== 'function')) {
-  			return false;
-  		}
-
-  		return $toString$1(value) === regexClass;
-  	};
-
-  var $Object = Object;
-  var $TypeError$1 = TypeError;
-
-  var implementation$3 = function flags() {
-  	if (this != null && this !== $Object(this)) {
-  		throw new $TypeError$1('RegExp.prototype.flags getter called on non-object');
-  	}
-  	var result = '';
-  	if (this.global) {
-  		result += 'g';
-  	}
-  	if (this.ignoreCase) {
-  		result += 'i';
-  	}
-  	if (this.multiline) {
-  		result += 'm';
-  	}
-  	if (this.dotAll) {
-  		result += 's';
-  	}
-  	if (this.unicode) {
-  		result += 'u';
-  	}
-  	if (this.sticky) {
-  		result += 'y';
-  	}
-  	return result;
-  };
-
-  var supportsDescriptors$1 = defineProperties_1.supportsDescriptors;
-  var $gOPD$1 = Object.getOwnPropertyDescriptor;
-  var $TypeError$2 = TypeError;
-
-  var polyfill$2 = function getPolyfill() {
-  	if (!supportsDescriptors$1) {
-  		throw new $TypeError$2('RegExp.prototype.flags requires a true ES5 environment that supports property descriptors');
-  	}
-  	if ((/a/mig).flags === 'gim') {
-  		var descriptor = $gOPD$1(RegExp.prototype, 'flags');
-  		if (descriptor && typeof descriptor.get === 'function' && typeof (/a/).dotAll === 'boolean') {
-  			return descriptor.get;
-  		}
-  	}
-  	return implementation$3;
-  };
-
-  var supportsDescriptors$2 = defineProperties_1.supportsDescriptors;
-
-  var gOPD$1 = Object.getOwnPropertyDescriptor;
-  var defineProperty$2 = Object.defineProperty;
-  var TypeErr = TypeError;
-  var getProto$1 = Object.getPrototypeOf;
-  var regex = /a/;
-
-  var shim$1 = function shimFlags() {
-  	if (!supportsDescriptors$2 || !getProto$1) {
-  		throw new TypeErr('RegExp.prototype.flags requires a true ES5 environment that supports property descriptors');
-  	}
-  	var polyfill = polyfill$2();
-  	var proto = getProto$1(regex);
-  	var descriptor = gOPD$1(proto, 'flags');
-  	if (!descriptor || descriptor.get !== polyfill) {
-  		defineProperty$2(proto, 'flags', {
-  			configurable: true,
-  			enumerable: false,
-  			get: polyfill
-  		});
-  	}
-  	return polyfill;
-  };
-
-  var flagsBound = callBind(implementation$3);
-
-  defineProperties_1(flagsBound, {
-  	getPolyfill: polyfill$2,
-  	implementation: implementation$3,
-  	shim: shim$1
-  });
-
-  var regexp_prototype_flags = flagsBound;
-
-  var getDay = Date.prototype.getDay;
-  var tryDateObject = function tryDateGetDayCall(value) {
-  	try {
-  		getDay.call(value);
-  		return true;
-  	} catch (e) {
-  		return false;
-  	}
-  };
-
-  var toStr$4 = Object.prototype.toString;
-  var dateClass = '[object Date]';
-  var hasToStringTag$2 = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
-
-  var isDateObject = function isDateObject(value) {
-  	if (typeof value !== 'object' || value === null) {
-  		return false;
-  	}
-  	return hasToStringTag$2 ? tryDateObject(value) : toStr$4.call(value) === dateClass;
-  };
-
-  var getTime = Date.prototype.getTime;
-
-  function deepEqual(actual, expected, options) {
-    var opts = options || {};
-
-    // 7.1. All identical values are equivalent, as determined by ===.
-    if (opts.strict ? objectIs(actual, expected) : actual === expected) {
-      return true;
-    }
-
-    // 7.3. Other pairs that do not both pass typeof value == 'object', equivalence is determined by ==.
-    if (!actual || !expected || (typeof actual !== 'object' && typeof expected !== 'object')) {
-      return opts.strict ? objectIs(actual, expected) : actual == expected;
-    }
-
-    /*
-     * 7.4. For all other Object pairs, including Array objects, equivalence is
-     * determined by having the same number of owned properties (as verified
-     * with Object.prototype.hasOwnProperty.call), the same set of keys
-     * (although not necessarily the same order), equivalent values for every
-     * corresponding key, and an identical 'prototype' property. Note: this
-     * accounts for both named and indexed properties on Arrays.
-     */
-    // eslint-disable-next-line no-use-before-define
-    return objEquiv(actual, expected, opts);
-  }
-
-  function isUndefinedOrNull(value) {
-    return value === null || value === undefined;
-  }
-
-  function isBuffer(x) {
-    if (!x || typeof x !== 'object' || typeof x.length !== 'number') {
-      return false;
-    }
-    if (typeof x.copy !== 'function' || typeof x.slice !== 'function') {
-      return false;
-    }
-    if (x.length > 0 && typeof x[0] !== 'number') {
-      return false;
-    }
-    return true;
-  }
-
-  function objEquiv(a, b, opts) {
-    /* eslint max-statements: [2, 50] */
-    var i, key;
-    if (typeof a !== typeof b) { return false; }
-    if (isUndefinedOrNull(a) || isUndefinedOrNull(b)) { return false; }
-
-    // an identical 'prototype' property.
-    if (a.prototype !== b.prototype) { return false; }
-
-    if (isArguments$1(a) !== isArguments$1(b)) { return false; }
-
-    var aIsRegex = isRegex(a);
-    var bIsRegex = isRegex(b);
-    if (aIsRegex !== bIsRegex) { return false; }
-    if (aIsRegex || bIsRegex) {
-      return a.source === b.source && regexp_prototype_flags(a) === regexp_prototype_flags(b);
-    }
-
-    if (isDateObject(a) && isDateObject(b)) {
-      return getTime.call(a) === getTime.call(b);
-    }
-
-    var aIsBuffer = isBuffer(a);
-    var bIsBuffer = isBuffer(b);
-    if (aIsBuffer !== bIsBuffer) { return false; }
-    if (aIsBuffer || bIsBuffer) { // && would work too, because both are true or both false here
-      if (a.length !== b.length) { return false; }
-      for (i = 0; i < a.length; i++) {
-        if (a[i] !== b[i]) { return false; }
-      }
-      return true;
-    }
-
-    if (typeof a !== typeof b) { return false; }
-
-    try {
-      var ka = objectKeys(a);
-      var kb = objectKeys(b);
-    } catch (e) { // happens when one is a string literal and the other isn't
-      return false;
-    }
-    // having the same number of owned properties (keys incorporates hasOwnProperty)
-    if (ka.length !== kb.length) { return false; }
-
-    // the same set of keys (although not necessarily the same order),
-    ka.sort();
-    kb.sort();
-    // ~~~cheap key test
-    for (i = ka.length - 1; i >= 0; i--) {
-      if (ka[i] != kb[i]) { return false; }
-    }
-    // equivalent values for every corresponding key, and ~~~possibly expensive deep test
-    for (i = ka.length - 1; i >= 0; i--) {
-      key = ka[i];
-      if (!deepEqual(a[key], b[key], opts)) { return false; }
-    }
-
-    return true;
-  }
-
-  var deepEqual_1 = deepEqual;
-
-  /**!
-   * @fileOverview Kickass library to create and place poppers near their reference elements.
-   * @version 1.16.1
-   * @license
-   * Copyright (c) 2016 Federico Zivolo and contributors
-   *
-   * Permission is hereby granted, free of charge, to any person obtaining a copy
-   * of this software and associated documentation files (the "Software"), to deal
-   * in the Software without restriction, including without limitation the rights
-   * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-   * copies of the Software, and to permit persons to whom the Software is
-   * furnished to do so, subject to the following conditions:
-   *
-   * The above copyright notice and this permission notice shall be included in all
-   * copies or substantial portions of the Software.
-   *
-   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   * SOFTWARE.
-   */
-  var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined' && typeof navigator !== 'undefined';
-
-  var timeoutDuration = function () {
-    var longerTimeoutBrowsers = ['Edge', 'Trident', 'Firefox'];
-    for (var i = 0; i < longerTimeoutBrowsers.length; i += 1) {
-      if (isBrowser && navigator.userAgent.indexOf(longerTimeoutBrowsers[i]) >= 0) {
-        return 1;
-      }
-    }
-    return 0;
-  }();
-
-  function microtaskDebounce(fn) {
-    var called = false;
-    return function () {
-      if (called) {
-        return;
-      }
-      called = true;
-      window.Promise.resolve().then(function () {
-        called = false;
-        fn();
-      });
-    };
-  }
-
-  function taskDebounce(fn) {
-    var scheduled = false;
-    return function () {
-      if (!scheduled) {
-        scheduled = true;
-        setTimeout(function () {
-          scheduled = false;
-          fn();
-        }, timeoutDuration);
-      }
-    };
-  }
-
-  var supportsMicroTasks = isBrowser && window.Promise;
-
-  /**
-  * Create a debounced version of a method, that's asynchronously deferred
-  * but called in the minimum time possible.
-  *
-  * @method
-  * @memberof Popper.Utils
-  * @argument {Function} fn
-  * @returns {Function}
-  */
-  var debounce = supportsMicroTasks ? microtaskDebounce : taskDebounce;
-
-  /**
-   * Check if the given variable is a function
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Any} functionToCheck - variable to check
-   * @returns {Boolean} answer to: is a function?
-   */
-  function isFunction$1(functionToCheck) {
-    var getType = {};
-    return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
-  }
-
-  /**
-   * Get CSS computed property of the given element
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Eement} element
-   * @argument {String} property
-   */
-  function getStyleComputedProperty(element, property) {
-    if (element.nodeType !== 1) {
-      return [];
-    }
-    // NOTE: 1 DOM access here
-    var window = element.ownerDocument.defaultView;
-    var css = window.getComputedStyle(element, null);
-    return property ? css[property] : css;
-  }
-
-  /**
-   * Returns the parentNode or the host of the element
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Element} element
-   * @returns {Element} parent
-   */
-  function getParentNode(element) {
-    if (element.nodeName === 'HTML') {
-      return element;
-    }
-    return element.parentNode || element.host;
-  }
-
-  /**
-   * Returns the scrolling parent of the given element
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Element} element
-   * @returns {Element} scroll parent
-   */
-  function getScrollParent(element) {
-    // Return body, `getScroll` will take care to get the correct `scrollTop` from it
-    if (!element) {
-      return document.body;
-    }
-
-    switch (element.nodeName) {
-      case 'HTML':
-      case 'BODY':
-        return element.ownerDocument.body;
-      case '#document':
-        return element.body;
-    }
-
-    // Firefox want us to check `-x` and `-y` variations as well
-
-    var _getStyleComputedProp = getStyleComputedProperty(element),
-        overflow = _getStyleComputedProp.overflow,
-        overflowX = _getStyleComputedProp.overflowX,
-        overflowY = _getStyleComputedProp.overflowY;
-
-    if (/(auto|scroll|overlay)/.test(overflow + overflowY + overflowX)) {
-      return element;
-    }
-
-    return getScrollParent(getParentNode(element));
-  }
-
-  /**
-   * Returns the reference node of the reference object, or the reference object itself.
-   * @method
-   * @memberof Popper.Utils
-   * @param {Element|Object} reference - the reference element (the popper will be relative to this)
-   * @returns {Element} parent
-   */
-  function getReferenceNode(reference) {
-    return reference && reference.referenceNode ? reference.referenceNode : reference;
-  }
-
-  var isIE11 = isBrowser && !!(window.MSInputMethodContext && document.documentMode);
-  var isIE10 = isBrowser && /MSIE 10/.test(navigator.userAgent);
-
-  /**
-   * Determines if the browser is Internet Explorer
-   * @method
-   * @memberof Popper.Utils
-   * @param {Number} version to check
-   * @returns {Boolean} isIE
-   */
-  function isIE(version) {
-    if (version === 11) {
-      return isIE11;
-    }
-    if (version === 10) {
-      return isIE10;
-    }
-    return isIE11 || isIE10;
-  }
-
-  /**
-   * Returns the offset parent of the given element
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Element} element
-   * @returns {Element} offset parent
-   */
-  function getOffsetParent(element) {
-    if (!element) {
-      return document.documentElement;
-    }
-
-    var noOffsetParent = isIE(10) ? document.body : null;
-
-    // NOTE: 1 DOM access here
-    var offsetParent = element.offsetParent || null;
-    // Skip hidden elements which don't have an offsetParent
-    while (offsetParent === noOffsetParent && element.nextElementSibling) {
-      offsetParent = (element = element.nextElementSibling).offsetParent;
-    }
-
-    var nodeName = offsetParent && offsetParent.nodeName;
-
-    if (!nodeName || nodeName === 'BODY' || nodeName === 'HTML') {
-      return element ? element.ownerDocument.documentElement : document.documentElement;
-    }
-
-    // .offsetParent will return the closest TH, TD or TABLE in case
-    // no offsetParent is present, I hate this job...
-    if (['TH', 'TD', 'TABLE'].indexOf(offsetParent.nodeName) !== -1 && getStyleComputedProperty(offsetParent, 'position') === 'static') {
-      return getOffsetParent(offsetParent);
-    }
-
-    return offsetParent;
-  }
-
-  function isOffsetContainer(element) {
-    var nodeName = element.nodeName;
-
-    if (nodeName === 'BODY') {
-      return false;
-    }
-    return nodeName === 'HTML' || getOffsetParent(element.firstElementChild) === element;
-  }
-
-  /**
-   * Finds the root node (document, shadowDOM root) of the given element
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Element} node
-   * @returns {Element} root node
-   */
-  function getRoot(node) {
-    if (node.parentNode !== null) {
-      return getRoot(node.parentNode);
-    }
-
-    return node;
-  }
-
-  /**
-   * Finds the offset parent common to the two provided nodes
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Element} element1
-   * @argument {Element} element2
-   * @returns {Element} common offset parent
-   */
-  function findCommonOffsetParent(element1, element2) {
-    // This check is needed to avoid errors in case one of the elements isn't defined for any reason
-    if (!element1 || !element1.nodeType || !element2 || !element2.nodeType) {
-      return document.documentElement;
-    }
-
-    // Here we make sure to give as "start" the element that comes first in the DOM
-    var order = element1.compareDocumentPosition(element2) & Node.DOCUMENT_POSITION_FOLLOWING;
-    var start = order ? element1 : element2;
-    var end = order ? element2 : element1;
-
-    // Get common ancestor container
-    var range = document.createRange();
-    range.setStart(start, 0);
-    range.setEnd(end, 0);
-    var commonAncestorContainer = range.commonAncestorContainer;
-
-    // Both nodes are inside #document
-
-    if (element1 !== commonAncestorContainer && element2 !== commonAncestorContainer || start.contains(end)) {
-      if (isOffsetContainer(commonAncestorContainer)) {
-        return commonAncestorContainer;
-      }
-
-      return getOffsetParent(commonAncestorContainer);
-    }
-
-    // one of the nodes is inside shadowDOM, find which one
-    var element1root = getRoot(element1);
-    if (element1root.host) {
-      return findCommonOffsetParent(element1root.host, element2);
-    } else {
-      return findCommonOffsetParent(element1, getRoot(element2).host);
-    }
-  }
-
-  /**
-   * Gets the scroll value of the given element in the given side (top and left)
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Element} element
-   * @argument {String} side `top` or `left`
-   * @returns {number} amount of scrolled pixels
-   */
-  function getScroll(element) {
-    var side = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'top';
-
-    var upperSide = side === 'top' ? 'scrollTop' : 'scrollLeft';
-    var nodeName = element.nodeName;
-
-    if (nodeName === 'BODY' || nodeName === 'HTML') {
-      var html = element.ownerDocument.documentElement;
-      var scrollingElement = element.ownerDocument.scrollingElement || html;
-      return scrollingElement[upperSide];
-    }
-
-    return element[upperSide];
-  }
-
-  /*
-   * Sum or subtract the element scroll values (left and top) from a given rect object
-   * @method
-   * @memberof Popper.Utils
-   * @param {Object} rect - Rect object you want to change
-   * @param {HTMLElement} element - The element from the function reads the scroll values
-   * @param {Boolean} subtract - set to true if you want to subtract the scroll values
-   * @return {Object} rect - The modifier rect object
-   */
-  function includeScroll(rect, element) {
-    var subtract = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-
-    var scrollTop = getScroll(element, 'top');
-    var scrollLeft = getScroll(element, 'left');
-    var modifier = subtract ? -1 : 1;
-    rect.top += scrollTop * modifier;
-    rect.bottom += scrollTop * modifier;
-    rect.left += scrollLeft * modifier;
-    rect.right += scrollLeft * modifier;
-    return rect;
-  }
-
-  /*
-   * Helper to detect borders of a given element
-   * @method
-   * @memberof Popper.Utils
-   * @param {CSSStyleDeclaration} styles
-   * Result of `getStyleComputedProperty` on the given element
-   * @param {String} axis - `x` or `y`
-   * @return {number} borders - The borders size of the given axis
-   */
-
-  function getBordersSize(styles, axis) {
-    var sideA = axis === 'x' ? 'Left' : 'Top';
-    var sideB = sideA === 'Left' ? 'Right' : 'Bottom';
-
-    return parseFloat(styles['border' + sideA + 'Width']) + parseFloat(styles['border' + sideB + 'Width']);
-  }
-
-  function getSize(axis, body, html, computedStyle) {
-    return Math.max(body['offset' + axis], body['scroll' + axis], html['client' + axis], html['offset' + axis], html['scroll' + axis], isIE(10) ? parseInt(html['offset' + axis]) + parseInt(computedStyle['margin' + (axis === 'Height' ? 'Top' : 'Left')]) + parseInt(computedStyle['margin' + (axis === 'Height' ? 'Bottom' : 'Right')]) : 0);
-  }
-
-  function getWindowSizes(document) {
-    var body = document.body;
-    var html = document.documentElement;
-    var computedStyle = isIE(10) && getComputedStyle(html);
-
-    return {
-      height: getSize('Height', body, html, computedStyle),
-      width: getSize('Width', body, html, computedStyle)
-    };
-  }
-
-  var classCallCheck = function (instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  };
-
-  var createClass = function () {
-    function defineProperties(target, props) {
-      for (var i = 0; i < props.length; i++) {
-        var descriptor = props[i];
-        descriptor.enumerable = descriptor.enumerable || false;
-        descriptor.configurable = true;
-        if ("value" in descriptor) descriptor.writable = true;
-        Object.defineProperty(target, descriptor.key, descriptor);
-      }
-    }
-
-    return function (Constructor, protoProps, staticProps) {
-      if (protoProps) defineProperties(Constructor.prototype, protoProps);
-      if (staticProps) defineProperties(Constructor, staticProps);
-      return Constructor;
-    };
-  }();
-
-
-
-
-
-  var defineProperty$3 = function (obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
-
-    return obj;
-  };
-
-  var _extends$1 = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  /**
-   * Given element offsets, generate an output similar to getBoundingClientRect
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Object} offsets
-   * @returns {Object} ClientRect like output
-   */
-  function getClientRect(offsets) {
-    return _extends$1({}, offsets, {
-      right: offsets.left + offsets.width,
-      bottom: offsets.top + offsets.height
-    });
-  }
-
-  /**
-   * Get bounding client rect of given element
-   * @method
-   * @memberof Popper.Utils
-   * @param {HTMLElement} element
-   * @return {Object} client rect
-   */
-  function getBoundingClientRect(element) {
-    var rect = {};
-
-    // IE10 10 FIX: Please, don't ask, the element isn't
-    // considered in DOM in some circumstances...
-    // This isn't reproducible in IE10 compatibility mode of IE11
-    try {
-      if (isIE(10)) {
-        rect = element.getBoundingClientRect();
-        var scrollTop = getScroll(element, 'top');
-        var scrollLeft = getScroll(element, 'left');
-        rect.top += scrollTop;
-        rect.left += scrollLeft;
-        rect.bottom += scrollTop;
-        rect.right += scrollLeft;
-      } else {
-        rect = element.getBoundingClientRect();
-      }
-    } catch (e) {}
-
-    var result = {
-      left: rect.left,
-      top: rect.top,
-      width: rect.right - rect.left,
-      height: rect.bottom - rect.top
-    };
-
-    // subtract scrollbar size from sizes
-    var sizes = element.nodeName === 'HTML' ? getWindowSizes(element.ownerDocument) : {};
-    var width = sizes.width || element.clientWidth || result.width;
-    var height = sizes.height || element.clientHeight || result.height;
-
-    var horizScrollbar = element.offsetWidth - width;
-    var vertScrollbar = element.offsetHeight - height;
-
-    // if an hypothetical scrollbar is detected, we must be sure it's not a `border`
-    // we make this check conditional for performance reasons
-    if (horizScrollbar || vertScrollbar) {
-      var styles = getStyleComputedProperty(element);
-      horizScrollbar -= getBordersSize(styles, 'x');
-      vertScrollbar -= getBordersSize(styles, 'y');
-
-      result.width -= horizScrollbar;
-      result.height -= vertScrollbar;
-    }
-
-    return getClientRect(result);
-  }
-
-  function getOffsetRectRelativeToArbitraryNode(children, parent) {
-    var fixedPosition = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-
-    var isIE10 = isIE(10);
-    var isHTML = parent.nodeName === 'HTML';
-    var childrenRect = getBoundingClientRect(children);
-    var parentRect = getBoundingClientRect(parent);
-    var scrollParent = getScrollParent(children);
-
-    var styles = getStyleComputedProperty(parent);
-    var borderTopWidth = parseFloat(styles.borderTopWidth);
-    var borderLeftWidth = parseFloat(styles.borderLeftWidth);
-
-    // In cases where the parent is fixed, we must ignore negative scroll in offset calc
-    if (fixedPosition && isHTML) {
-      parentRect.top = Math.max(parentRect.top, 0);
-      parentRect.left = Math.max(parentRect.left, 0);
-    }
-    var offsets = getClientRect({
-      top: childrenRect.top - parentRect.top - borderTopWidth,
-      left: childrenRect.left - parentRect.left - borderLeftWidth,
-      width: childrenRect.width,
-      height: childrenRect.height
-    });
-    offsets.marginTop = 0;
-    offsets.marginLeft = 0;
-
-    // Subtract margins of documentElement in case it's being used as parent
-    // we do this only on HTML because it's the only element that behaves
-    // differently when margins are applied to it. The margins are included in
-    // the box of the documentElement, in the other cases not.
-    if (!isIE10 && isHTML) {
-      var marginTop = parseFloat(styles.marginTop);
-      var marginLeft = parseFloat(styles.marginLeft);
-
-      offsets.top -= borderTopWidth - marginTop;
-      offsets.bottom -= borderTopWidth - marginTop;
-      offsets.left -= borderLeftWidth - marginLeft;
-      offsets.right -= borderLeftWidth - marginLeft;
-
-      // Attach marginTop and marginLeft because in some circumstances we may need them
-      offsets.marginTop = marginTop;
-      offsets.marginLeft = marginLeft;
-    }
-
-    if (isIE10 && !fixedPosition ? parent.contains(scrollParent) : parent === scrollParent && scrollParent.nodeName !== 'BODY') {
-      offsets = includeScroll(offsets, parent);
-    }
-
-    return offsets;
-  }
-
-  function getViewportOffsetRectRelativeToArtbitraryNode(element) {
-    var excludeScroll = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
-    var html = element.ownerDocument.documentElement;
-    var relativeOffset = getOffsetRectRelativeToArbitraryNode(element, html);
-    var width = Math.max(html.clientWidth, window.innerWidth || 0);
-    var height = Math.max(html.clientHeight, window.innerHeight || 0);
-
-    var scrollTop = !excludeScroll ? getScroll(html) : 0;
-    var scrollLeft = !excludeScroll ? getScroll(html, 'left') : 0;
-
-    var offset = {
-      top: scrollTop - relativeOffset.top + relativeOffset.marginTop,
-      left: scrollLeft - relativeOffset.left + relativeOffset.marginLeft,
-      width: width,
-      height: height
-    };
-
-    return getClientRect(offset);
-  }
-
-  /**
-   * Check if the given element is fixed or is inside a fixed parent
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Element} element
-   * @argument {Element} customContainer
-   * @returns {Boolean} answer to "isFixed?"
-   */
-  function isFixed(element) {
-    var nodeName = element.nodeName;
-    if (nodeName === 'BODY' || nodeName === 'HTML') {
-      return false;
-    }
-    if (getStyleComputedProperty(element, 'position') === 'fixed') {
-      return true;
-    }
-    var parentNode = getParentNode(element);
-    if (!parentNode) {
-      return false;
-    }
-    return isFixed(parentNode);
-  }
-
-  /**
-   * Finds the first parent of an element that has a transformed property defined
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Element} element
-   * @returns {Element} first transformed parent or documentElement
-   */
-
-  function getFixedPositionOffsetParent(element) {
-    // This check is needed to avoid errors in case one of the elements isn't defined for any reason
-    if (!element || !element.parentElement || isIE()) {
-      return document.documentElement;
-    }
-    var el = element.parentElement;
-    while (el && getStyleComputedProperty(el, 'transform') === 'none') {
-      el = el.parentElement;
-    }
-    return el || document.documentElement;
-  }
-
-  /**
-   * Computed the boundaries limits and return them
-   * @method
-   * @memberof Popper.Utils
-   * @param {HTMLElement} popper
-   * @param {HTMLElement} reference
-   * @param {number} padding
-   * @param {HTMLElement} boundariesElement - Element used to define the boundaries
-   * @param {Boolean} fixedPosition - Is in fixed position mode
-   * @returns {Object} Coordinates of the boundaries
-   */
-  function getBoundaries(popper, reference, padding, boundariesElement) {
-    var fixedPosition = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
-
-    // NOTE: 1 DOM access here
-
-    var boundaries = { top: 0, left: 0 };
-    var offsetParent = fixedPosition ? getFixedPositionOffsetParent(popper) : findCommonOffsetParent(popper, getReferenceNode(reference));
-
-    // Handle viewport case
-    if (boundariesElement === 'viewport') {
-      boundaries = getViewportOffsetRectRelativeToArtbitraryNode(offsetParent, fixedPosition);
-    } else {
-      // Handle other cases based on DOM element used as boundaries
-      var boundariesNode = void 0;
-      if (boundariesElement === 'scrollParent') {
-        boundariesNode = getScrollParent(getParentNode(reference));
-        if (boundariesNode.nodeName === 'BODY') {
-          boundariesNode = popper.ownerDocument.documentElement;
-        }
-      } else if (boundariesElement === 'window') {
-        boundariesNode = popper.ownerDocument.documentElement;
-      } else {
-        boundariesNode = boundariesElement;
-      }
-
-      var offsets = getOffsetRectRelativeToArbitraryNode(boundariesNode, offsetParent, fixedPosition);
-
-      // In case of HTML, we need a different computation
-      if (boundariesNode.nodeName === 'HTML' && !isFixed(offsetParent)) {
-        var _getWindowSizes = getWindowSizes(popper.ownerDocument),
-            height = _getWindowSizes.height,
-            width = _getWindowSizes.width;
-
-        boundaries.top += offsets.top - offsets.marginTop;
-        boundaries.bottom = height + offsets.top;
-        boundaries.left += offsets.left - offsets.marginLeft;
-        boundaries.right = width + offsets.left;
-      } else {
-        // for all the other DOM elements, this one is good
-        boundaries = offsets;
-      }
-    }
-
-    // Add paddings
-    padding = padding || 0;
-    var isPaddingNumber = typeof padding === 'number';
-    boundaries.left += isPaddingNumber ? padding : padding.left || 0;
-    boundaries.top += isPaddingNumber ? padding : padding.top || 0;
-    boundaries.right -= isPaddingNumber ? padding : padding.right || 0;
-    boundaries.bottom -= isPaddingNumber ? padding : padding.bottom || 0;
-
-    return boundaries;
-  }
-
-  function getArea(_ref) {
-    var width = _ref.width,
-        height = _ref.height;
-
-    return width * height;
-  }
-
-  /**
-   * Utility used to transform the `auto` placement to the placement with more
-   * available space.
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Object} data - The data object generated by update method
-   * @argument {Object} options - Modifiers configuration and options
-   * @returns {Object} The data object, properly modified
-   */
-  function computeAutoPlacement(placement, refRect, popper, reference, boundariesElement) {
-    var padding = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 0;
-
-    if (placement.indexOf('auto') === -1) {
-      return placement;
-    }
-
-    var boundaries = getBoundaries(popper, reference, padding, boundariesElement);
-
-    var rects = {
-      top: {
-        width: boundaries.width,
-        height: refRect.top - boundaries.top
-      },
-      right: {
-        width: boundaries.right - refRect.right,
-        height: boundaries.height
-      },
-      bottom: {
-        width: boundaries.width,
-        height: boundaries.bottom - refRect.bottom
-      },
-      left: {
-        width: refRect.left - boundaries.left,
-        height: boundaries.height
-      }
-    };
-
-    var sortedAreas = Object.keys(rects).map(function (key) {
-      return _extends$1({
-        key: key
-      }, rects[key], {
-        area: getArea(rects[key])
-      });
-    }).sort(function (a, b) {
-      return b.area - a.area;
-    });
-
-    var filteredAreas = sortedAreas.filter(function (_ref2) {
-      var width = _ref2.width,
-          height = _ref2.height;
-      return width >= popper.clientWidth && height >= popper.clientHeight;
-    });
-
-    var computedPlacement = filteredAreas.length > 0 ? filteredAreas[0].key : sortedAreas[0].key;
-
-    var variation = placement.split('-')[1];
-
-    return computedPlacement + (variation ? '-' + variation : '');
-  }
-
-  /**
-   * Get offsets to the reference element
-   * @method
-   * @memberof Popper.Utils
-   * @param {Object} state
-   * @param {Element} popper - the popper element
-   * @param {Element} reference - the reference element (the popper will be relative to this)
-   * @param {Element} fixedPosition - is in fixed position mode
-   * @returns {Object} An object containing the offsets which will be applied to the popper
-   */
-  function getReferenceOffsets(state, popper, reference) {
-    var fixedPosition = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
-
-    var commonOffsetParent = fixedPosition ? getFixedPositionOffsetParent(popper) : findCommonOffsetParent(popper, getReferenceNode(reference));
-    return getOffsetRectRelativeToArbitraryNode(reference, commonOffsetParent, fixedPosition);
-  }
-
-  /**
-   * Get the outer sizes of the given element (offset size + margins)
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Element} element
-   * @returns {Object} object containing width and height properties
-   */
-  function getOuterSizes(element) {
-    var window = element.ownerDocument.defaultView;
-    var styles = window.getComputedStyle(element);
-    var x = parseFloat(styles.marginTop || 0) + parseFloat(styles.marginBottom || 0);
-    var y = parseFloat(styles.marginLeft || 0) + parseFloat(styles.marginRight || 0);
-    var result = {
-      width: element.offsetWidth + y,
-      height: element.offsetHeight + x
-    };
-    return result;
-  }
-
-  /**
-   * Get the opposite placement of the given one
-   * @method
-   * @memberof Popper.Utils
-   * @argument {String} placement
-   * @returns {String} flipped placement
-   */
-  function getOppositePlacement(placement) {
-    var hash = { left: 'right', right: 'left', bottom: 'top', top: 'bottom' };
-    return placement.replace(/left|right|bottom|top/g, function (matched) {
-      return hash[matched];
-    });
-  }
-
-  /**
-   * Get offsets to the popper
-   * @method
-   * @memberof Popper.Utils
-   * @param {Object} position - CSS position the Popper will get applied
-   * @param {HTMLElement} popper - the popper element
-   * @param {Object} referenceOffsets - the reference offsets (the popper will be relative to this)
-   * @param {String} placement - one of the valid placement options
-   * @returns {Object} popperOffsets - An object containing the offsets which will be applied to the popper
-   */
-  function getPopperOffsets(popper, referenceOffsets, placement) {
-    placement = placement.split('-')[0];
-
-    // Get popper node sizes
-    var popperRect = getOuterSizes(popper);
-
-    // Add position, width and height to our offsets object
-    var popperOffsets = {
-      width: popperRect.width,
-      height: popperRect.height
-    };
-
-    // depending by the popper placement we have to compute its offsets slightly differently
-    var isHoriz = ['right', 'left'].indexOf(placement) !== -1;
-    var mainSide = isHoriz ? 'top' : 'left';
-    var secondarySide = isHoriz ? 'left' : 'top';
-    var measurement = isHoriz ? 'height' : 'width';
-    var secondaryMeasurement = !isHoriz ? 'height' : 'width';
-
-    popperOffsets[mainSide] = referenceOffsets[mainSide] + referenceOffsets[measurement] / 2 - popperRect[measurement] / 2;
-    if (placement === secondarySide) {
-      popperOffsets[secondarySide] = referenceOffsets[secondarySide] - popperRect[secondaryMeasurement];
-    } else {
-      popperOffsets[secondarySide] = referenceOffsets[getOppositePlacement(secondarySide)];
-    }
-
-    return popperOffsets;
-  }
-
-  /**
-   * Mimics the `find` method of Array
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Array} arr
-   * @argument prop
-   * @argument value
-   * @returns index or -1
-   */
-  function find(arr, check) {
-    // use native find if supported
-    if (Array.prototype.find) {
-      return arr.find(check);
-    }
-
-    // use `filter` to obtain the same behavior of `find`
-    return arr.filter(check)[0];
-  }
-
-  /**
-   * Return the index of the matching object
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Array} arr
-   * @argument prop
-   * @argument value
-   * @returns index or -1
-   */
-  function findIndex(arr, prop, value) {
-    // use native findIndex if supported
-    if (Array.prototype.findIndex) {
-      return arr.findIndex(function (cur) {
-        return cur[prop] === value;
-      });
-    }
-
-    // use `find` + `indexOf` if `findIndex` isn't supported
-    var match = find(arr, function (obj) {
-      return obj[prop] === value;
-    });
-    return arr.indexOf(match);
-  }
-
-  /**
-   * Loop trough the list of modifiers and run them in order,
-   * each of them will then edit the data object.
-   * @method
-   * @memberof Popper.Utils
-   * @param {dataObject} data
-   * @param {Array} modifiers
-   * @param {String} ends - Optional modifier name used as stopper
-   * @returns {dataObject}
-   */
-  function runModifiers(modifiers, data, ends) {
-    var modifiersToRun = ends === undefined ? modifiers : modifiers.slice(0, findIndex(modifiers, 'name', ends));
-
-    modifiersToRun.forEach(function (modifier) {
-      if (modifier['function']) {
-        // eslint-disable-line dot-notation
-        console.warn('`modifier.function` is deprecated, use `modifier.fn`!');
-      }
-      var fn = modifier['function'] || modifier.fn; // eslint-disable-line dot-notation
-      if (modifier.enabled && isFunction$1(fn)) {
-        // Add properties to offsets to make them a complete clientRect object
-        // we do this before each modifier to make sure the previous one doesn't
-        // mess with these values
-        data.offsets.popper = getClientRect(data.offsets.popper);
-        data.offsets.reference = getClientRect(data.offsets.reference);
-
-        data = fn(data, modifier);
-      }
-    });
-
-    return data;
-  }
-
-  /**
-   * Updates the position of the popper, computing the new offsets and applying
-   * the new style.<br />
-   * Prefer `scheduleUpdate` over `update` because of performance reasons.
-   * @method
-   * @memberof Popper
-   */
-  function update() {
-    // if popper is destroyed, don't perform any further update
-    if (this.state.isDestroyed) {
-      return;
-    }
-
-    var data = {
-      instance: this,
-      styles: {},
-      arrowStyles: {},
-      attributes: {},
-      flipped: false,
-      offsets: {}
-    };
-
-    // compute reference element offsets
-    data.offsets.reference = getReferenceOffsets(this.state, this.popper, this.reference, this.options.positionFixed);
-
-    // compute auto placement, store placement inside the data object,
-    // modifiers will be able to edit `placement` if needed
-    // and refer to originalPlacement to know the original value
-    data.placement = computeAutoPlacement(this.options.placement, data.offsets.reference, this.popper, this.reference, this.options.modifiers.flip.boundariesElement, this.options.modifiers.flip.padding);
-
-    // store the computed placement inside `originalPlacement`
-    data.originalPlacement = data.placement;
-
-    data.positionFixed = this.options.positionFixed;
-
-    // compute the popper offsets
-    data.offsets.popper = getPopperOffsets(this.popper, data.offsets.reference, data.placement);
-
-    data.offsets.popper.position = this.options.positionFixed ? 'fixed' : 'absolute';
-
-    // run the modifiers
-    data = runModifiers(this.modifiers, data);
-
-    // the first `update` will call `onCreate` callback
-    // the other ones will call `onUpdate` callback
-    if (!this.state.isCreated) {
-      this.state.isCreated = true;
-      this.options.onCreate(data);
-    } else {
-      this.options.onUpdate(data);
-    }
-  }
-
-  /**
-   * Helper used to know if the given modifier is enabled.
-   * @method
-   * @memberof Popper.Utils
-   * @returns {Boolean}
-   */
-  function isModifierEnabled(modifiers, modifierName) {
-    return modifiers.some(function (_ref) {
-      var name = _ref.name,
-          enabled = _ref.enabled;
-      return enabled && name === modifierName;
-    });
-  }
-
-  /**
-   * Get the prefixed supported property name
-   * @method
-   * @memberof Popper.Utils
-   * @argument {String} property (camelCase)
-   * @returns {String} prefixed property (camelCase or PascalCase, depending on the vendor prefix)
-   */
-  function getSupportedPropertyName(property) {
-    var prefixes = [false, 'ms', 'Webkit', 'Moz', 'O'];
-    var upperProp = property.charAt(0).toUpperCase() + property.slice(1);
-
-    for (var i = 0; i < prefixes.length; i++) {
-      var prefix = prefixes[i];
-      var toCheck = prefix ? '' + prefix + upperProp : property;
-      if (typeof document.body.style[toCheck] !== 'undefined') {
-        return toCheck;
-      }
-    }
-    return null;
-  }
-
-  /**
-   * Destroys the popper.
-   * @method
-   * @memberof Popper
-   */
-  function destroy() {
-    this.state.isDestroyed = true;
-
-    // touch DOM only if `applyStyle` modifier is enabled
-    if (isModifierEnabled(this.modifiers, 'applyStyle')) {
-      this.popper.removeAttribute('x-placement');
-      this.popper.style.position = '';
-      this.popper.style.top = '';
-      this.popper.style.left = '';
-      this.popper.style.right = '';
-      this.popper.style.bottom = '';
-      this.popper.style.willChange = '';
-      this.popper.style[getSupportedPropertyName('transform')] = '';
-    }
-
-    this.disableEventListeners();
-
-    // remove the popper if user explicitly asked for the deletion on destroy
-    // do not use `remove` because IE11 doesn't support it
-    if (this.options.removeOnDestroy) {
-      this.popper.parentNode.removeChild(this.popper);
-    }
-    return this;
-  }
-
-  /**
-   * Get the window associated with the element
-   * @argument {Element} element
-   * @returns {Window}
-   */
-  function getWindow(element) {
-    var ownerDocument = element.ownerDocument;
-    return ownerDocument ? ownerDocument.defaultView : window;
-  }
-
-  function attachToScrollParents(scrollParent, event, callback, scrollParents) {
-    var isBody = scrollParent.nodeName === 'BODY';
-    var target = isBody ? scrollParent.ownerDocument.defaultView : scrollParent;
-    target.addEventListener(event, callback, { passive: true });
-
-    if (!isBody) {
-      attachToScrollParents(getScrollParent(target.parentNode), event, callback, scrollParents);
-    }
-    scrollParents.push(target);
-  }
-
-  /**
-   * Setup needed event listeners used to update the popper position
-   * @method
-   * @memberof Popper.Utils
-   * @private
-   */
-  function setupEventListeners(reference, options, state, updateBound) {
-    // Resize event listener on window
-    state.updateBound = updateBound;
-    getWindow(reference).addEventListener('resize', state.updateBound, { passive: true });
-
-    // Scroll event listener on scroll parents
-    var scrollElement = getScrollParent(reference);
-    attachToScrollParents(scrollElement, 'scroll', state.updateBound, state.scrollParents);
-    state.scrollElement = scrollElement;
-    state.eventsEnabled = true;
-
-    return state;
-  }
-
-  /**
-   * It will add resize/scroll events and start recalculating
-   * position of the popper element when they are triggered.
-   * @method
-   * @memberof Popper
-   */
-  function enableEventListeners() {
-    if (!this.state.eventsEnabled) {
-      this.state = setupEventListeners(this.reference, this.options, this.state, this.scheduleUpdate);
-    }
-  }
-
-  /**
-   * Remove event listeners used to update the popper position
-   * @method
-   * @memberof Popper.Utils
-   * @private
-   */
-  function removeEventListeners(reference, state) {
-    // Remove resize event listener on window
-    getWindow(reference).removeEventListener('resize', state.updateBound);
-
-    // Remove scroll event listener on scroll parents
-    state.scrollParents.forEach(function (target) {
-      target.removeEventListener('scroll', state.updateBound);
-    });
-
-    // Reset state
-    state.updateBound = null;
-    state.scrollParents = [];
-    state.scrollElement = null;
-    state.eventsEnabled = false;
-    return state;
-  }
-
-  /**
-   * It will remove resize/scroll events and won't recalculate popper position
-   * when they are triggered. It also won't trigger `onUpdate` callback anymore,
-   * unless you call `update` method manually.
-   * @method
-   * @memberof Popper
-   */
-  function disableEventListeners() {
-    if (this.state.eventsEnabled) {
-      cancelAnimationFrame(this.scheduleUpdate);
-      this.state = removeEventListeners(this.reference, this.state);
-    }
-  }
-
-  /**
-   * Tells if a given input is a number
-   * @method
-   * @memberof Popper.Utils
-   * @param {*} input to check
-   * @return {Boolean}
-   */
-  function isNumeric(n) {
-    return n !== '' && !isNaN(parseFloat(n)) && isFinite(n);
-  }
-
-  /**
-   * Set the style to the given popper
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Element} element - Element to apply the style to
-   * @argument {Object} styles
-   * Object with a list of properties and values which will be applied to the element
-   */
-  function setStyles(element, styles) {
-    Object.keys(styles).forEach(function (prop) {
-      var unit = '';
-      // add unit if the value is numeric and is one of the following
-      if (['width', 'height', 'top', 'right', 'bottom', 'left'].indexOf(prop) !== -1 && isNumeric(styles[prop])) {
-        unit = 'px';
-      }
-      element.style[prop] = styles[prop] + unit;
-    });
-  }
-
-  /**
-   * Set the attributes to the given popper
-   * @method
-   * @memberof Popper.Utils
-   * @argument {Element} element - Element to apply the attributes to
-   * @argument {Object} styles
-   * Object with a list of properties and values which will be applied to the element
-   */
-  function setAttributes(element, attributes) {
-    Object.keys(attributes).forEach(function (prop) {
-      var value = attributes[prop];
-      if (value !== false) {
-        element.setAttribute(prop, attributes[prop]);
-      } else {
-        element.removeAttribute(prop);
-      }
-    });
-  }
-
-  /**
-   * @function
-   * @memberof Modifiers
-   * @argument {Object} data - The data object generated by `update` method
-   * @argument {Object} data.styles - List of style properties - values to apply to popper element
-   * @argument {Object} data.attributes - List of attribute properties - values to apply to popper element
-   * @argument {Object} options - Modifiers configuration and options
-   * @returns {Object} The same data object
-   */
-  function applyStyle(data) {
-    // any property present in `data.styles` will be applied to the popper,
-    // in this way we can make the 3rd party modifiers add custom styles to it
-    // Be aware, modifiers could override the properties defined in the previous
-    // lines of this modifier!
-    setStyles(data.instance.popper, data.styles);
-
-    // any property present in `data.attributes` will be applied to the popper,
-    // they will be set as HTML attributes of the element
-    setAttributes(data.instance.popper, data.attributes);
-
-    // if arrowElement is defined and arrowStyles has some properties
-    if (data.arrowElement && Object.keys(data.arrowStyles).length) {
-      setStyles(data.arrowElement, data.arrowStyles);
-    }
-
-    return data;
-  }
-
-  /**
-   * Set the x-placement attribute before everything else because it could be used
-   * to add margins to the popper margins needs to be calculated to get the
-   * correct popper offsets.
-   * @method
-   * @memberof Popper.modifiers
-   * @param {HTMLElement} reference - The reference element used to position the popper
-   * @param {HTMLElement} popper - The HTML element used as popper
-   * @param {Object} options - Popper.js options
-   */
-  function applyStyleOnLoad(reference, popper, options, modifierOptions, state) {
-    // compute reference element offsets
-    var referenceOffsets = getReferenceOffsets(state, popper, reference, options.positionFixed);
-
-    // compute auto placement, store placement inside the data object,
-    // modifiers will be able to edit `placement` if needed
-    // and refer to originalPlacement to know the original value
-    var placement = computeAutoPlacement(options.placement, referenceOffsets, popper, reference, options.modifiers.flip.boundariesElement, options.modifiers.flip.padding);
-
-    popper.setAttribute('x-placement', placement);
-
-    // Apply `position` to popper before anything else because
-    // without the position applied we can't guarantee correct computations
-    setStyles(popper, { position: options.positionFixed ? 'fixed' : 'absolute' });
-
-    return options;
-  }
-
-  /**
-   * @function
-   * @memberof Popper.Utils
-   * @argument {Object} data - The data object generated by `update` method
-   * @argument {Boolean} shouldRound - If the offsets should be rounded at all
-   * @returns {Object} The popper's position offsets rounded
-   *
-   * The tale of pixel-perfect positioning. It's still not 100% perfect, but as
-   * good as it can be within reason.
-   * Discussion here: https://github.com/FezVrasta/popper.js/pull/715
-   *
-   * Low DPI screens cause a popper to be blurry if not using full pixels (Safari
-   * as well on High DPI screens).
-   *
-   * Firefox prefers no rounding for positioning and does not have blurriness on
-   * high DPI screens.
-   *
-   * Only horizontal placement and left/right values need to be considered.
-   */
-  function getRoundedOffsets(data, shouldRound) {
-    var _data$offsets = data.offsets,
-        popper = _data$offsets.popper,
-        reference = _data$offsets.reference;
-    var round = Math.round,
-        floor = Math.floor;
-
-    var noRound = function noRound(v) {
-      return v;
-    };
-
-    var referenceWidth = round(reference.width);
-    var popperWidth = round(popper.width);
-
-    var isVertical = ['left', 'right'].indexOf(data.placement) !== -1;
-    var isVariation = data.placement.indexOf('-') !== -1;
-    var sameWidthParity = referenceWidth % 2 === popperWidth % 2;
-    var bothOddWidth = referenceWidth % 2 === 1 && popperWidth % 2 === 1;
-
-    var horizontalToInteger = !shouldRound ? noRound : isVertical || isVariation || sameWidthParity ? round : floor;
-    var verticalToInteger = !shouldRound ? noRound : round;
-
-    return {
-      left: horizontalToInteger(bothOddWidth && !isVariation && shouldRound ? popper.left - 1 : popper.left),
-      top: verticalToInteger(popper.top),
-      bottom: verticalToInteger(popper.bottom),
-      right: horizontalToInteger(popper.right)
-    };
-  }
-
-  var isFirefox = isBrowser && /Firefox/i.test(navigator.userAgent);
-
-  /**
-   * @function
-   * @memberof Modifiers
-   * @argument {Object} data - The data object generated by `update` method
-   * @argument {Object} options - Modifiers configuration and options
-   * @returns {Object} The data object, properly modified
-   */
-  function computeStyle(data, options) {
-    var x = options.x,
-        y = options.y;
-    var popper = data.offsets.popper;
-
-    // Remove this legacy support in Popper.js v2
-
-    var legacyGpuAccelerationOption = find(data.instance.modifiers, function (modifier) {
-      return modifier.name === 'applyStyle';
-    }).gpuAcceleration;
-    if (legacyGpuAccelerationOption !== undefined) {
-      console.warn('WARNING: `gpuAcceleration` option moved to `computeStyle` modifier and will not be supported in future versions of Popper.js!');
-    }
-    var gpuAcceleration = legacyGpuAccelerationOption !== undefined ? legacyGpuAccelerationOption : options.gpuAcceleration;
-
-    var offsetParent = getOffsetParent(data.instance.popper);
-    var offsetParentRect = getBoundingClientRect(offsetParent);
-
-    // Styles
-    var styles = {
-      position: popper.position
-    };
-
-    var offsets = getRoundedOffsets(data, window.devicePixelRatio < 2 || !isFirefox);
-
-    var sideA = x === 'bottom' ? 'top' : 'bottom';
-    var sideB = y === 'right' ? 'left' : 'right';
-
-    // if gpuAcceleration is set to `true` and transform is supported,
-    //  we use `translate3d` to apply the position to the popper we
-    // automatically use the supported prefixed version if needed
-    var prefixedProperty = getSupportedPropertyName('transform');
-
-    // now, let's make a step back and look at this code closely (wtf?)
-    // If the content of the popper grows once it's been positioned, it
-    // may happen that the popper gets misplaced because of the new content
-    // overflowing its reference element
-    // To avoid this problem, we provide two options (x and y), which allow
-    // the consumer to define the offset origin.
-    // If we position a popper on top of a reference element, we can set
-    // `x` to `top` to make the popper grow towards its top instead of
-    // its bottom.
-    var left = void 0,
-        top = void 0;
-    if (sideA === 'bottom') {
-      // when offsetParent is <html> the positioning is relative to the bottom of the screen (excluding the scrollbar)
-      // and not the bottom of the html element
-      if (offsetParent.nodeName === 'HTML') {
-        top = -offsetParent.clientHeight + offsets.bottom;
-      } else {
-        top = -offsetParentRect.height + offsets.bottom;
-      }
-    } else {
-      top = offsets.top;
-    }
-    if (sideB === 'right') {
-      if (offsetParent.nodeName === 'HTML') {
-        left = -offsetParent.clientWidth + offsets.right;
-      } else {
-        left = -offsetParentRect.width + offsets.right;
-      }
-    } else {
-      left = offsets.left;
-    }
-    if (gpuAcceleration && prefixedProperty) {
-      styles[prefixedProperty] = 'translate3d(' + left + 'px, ' + top + 'px, 0)';
-      styles[sideA] = 0;
-      styles[sideB] = 0;
-      styles.willChange = 'transform';
-    } else {
-      // othwerise, we use the standard `top`, `left`, `bottom` and `right` properties
-      var invertTop = sideA === 'bottom' ? -1 : 1;
-      var invertLeft = sideB === 'right' ? -1 : 1;
-      styles[sideA] = top * invertTop;
-      styles[sideB] = left * invertLeft;
-      styles.willChange = sideA + ', ' + sideB;
-    }
-
-    // Attributes
-    var attributes = {
-      'x-placement': data.placement
-    };
-
-    // Update `data` attributes, styles and arrowStyles
-    data.attributes = _extends$1({}, attributes, data.attributes);
-    data.styles = _extends$1({}, styles, data.styles);
-    data.arrowStyles = _extends$1({}, data.offsets.arrow, data.arrowStyles);
-
-    return data;
-  }
-
-  /**
-   * Helper used to know if the given modifier depends from another one.<br />
-   * It checks if the needed modifier is listed and enabled.
-   * @method
-   * @memberof Popper.Utils
-   * @param {Array} modifiers - list of modifiers
-   * @param {String} requestingName - name of requesting modifier
-   * @param {String} requestedName - name of requested modifier
-   * @returns {Boolean}
-   */
-  function isModifierRequired(modifiers, requestingName, requestedName) {
-    var requesting = find(modifiers, function (_ref) {
-      var name = _ref.name;
-      return name === requestingName;
-    });
-
-    var isRequired = !!requesting && modifiers.some(function (modifier) {
-      return modifier.name === requestedName && modifier.enabled && modifier.order < requesting.order;
-    });
-
-    if (!isRequired) {
-      var _requesting = '`' + requestingName + '`';
-      var requested = '`' + requestedName + '`';
-      console.warn(requested + ' modifier is required by ' + _requesting + ' modifier in order to work, be sure to include it before ' + _requesting + '!');
-    }
-    return isRequired;
-  }
-
-  /**
-   * @function
-   * @memberof Modifiers
-   * @argument {Object} data - The data object generated by update method
-   * @argument {Object} options - Modifiers configuration and options
-   * @returns {Object} The data object, properly modified
-   */
-  function arrow(data, options) {
-    var _data$offsets$arrow;
-
-    // arrow depends on keepTogether in order to work
-    if (!isModifierRequired(data.instance.modifiers, 'arrow', 'keepTogether')) {
-      return data;
-    }
-
-    var arrowElement = options.element;
-
-    // if arrowElement is a string, suppose it's a CSS selector
-    if (typeof arrowElement === 'string') {
-      arrowElement = data.instance.popper.querySelector(arrowElement);
-
-      // if arrowElement is not found, don't run the modifier
-      if (!arrowElement) {
-        return data;
-      }
-    } else {
-      // if the arrowElement isn't a query selector we must check that the
-      // provided DOM node is child of its popper node
-      if (!data.instance.popper.contains(arrowElement)) {
-        console.warn('WARNING: `arrow.element` must be child of its popper element!');
-        return data;
-      }
-    }
-
-    var placement = data.placement.split('-')[0];
-    var _data$offsets = data.offsets,
-        popper = _data$offsets.popper,
-        reference = _data$offsets.reference;
-
-    var isVertical = ['left', 'right'].indexOf(placement) !== -1;
-
-    var len = isVertical ? 'height' : 'width';
-    var sideCapitalized = isVertical ? 'Top' : 'Left';
-    var side = sideCapitalized.toLowerCase();
-    var altSide = isVertical ? 'left' : 'top';
-    var opSide = isVertical ? 'bottom' : 'right';
-    var arrowElementSize = getOuterSizes(arrowElement)[len];
-
-    //
-    // extends keepTogether behavior making sure the popper and its
-    // reference have enough pixels in conjunction
-    //
-
-    // top/left side
-    if (reference[opSide] - arrowElementSize < popper[side]) {
-      data.offsets.popper[side] -= popper[side] - (reference[opSide] - arrowElementSize);
-    }
-    // bottom/right side
-    if (reference[side] + arrowElementSize > popper[opSide]) {
-      data.offsets.popper[side] += reference[side] + arrowElementSize - popper[opSide];
-    }
-    data.offsets.popper = getClientRect(data.offsets.popper);
-
-    // compute center of the popper
-    var center = reference[side] + reference[len] / 2 - arrowElementSize / 2;
-
-    // Compute the sideValue using the updated popper offsets
-    // take popper margin in account because we don't have this info available
-    var css = getStyleComputedProperty(data.instance.popper);
-    var popperMarginSide = parseFloat(css['margin' + sideCapitalized]);
-    var popperBorderSide = parseFloat(css['border' + sideCapitalized + 'Width']);
-    var sideValue = center - data.offsets.popper[side] - popperMarginSide - popperBorderSide;
-
-    // prevent arrowElement from being placed not contiguously to its popper
-    sideValue = Math.max(Math.min(popper[len] - arrowElementSize, sideValue), 0);
-
-    data.arrowElement = arrowElement;
-    data.offsets.arrow = (_data$offsets$arrow = {}, defineProperty$3(_data$offsets$arrow, side, Math.round(sideValue)), defineProperty$3(_data$offsets$arrow, altSide, ''), _data$offsets$arrow);
-
-    return data;
-  }
-
-  /**
-   * Get the opposite placement variation of the given one
-   * @method
-   * @memberof Popper.Utils
-   * @argument {String} placement variation
-   * @returns {String} flipped placement variation
-   */
-  function getOppositeVariation(variation) {
-    if (variation === 'end') {
-      return 'start';
-    } else if (variation === 'start') {
-      return 'end';
-    }
-    return variation;
-  }
-
-  /**
-   * List of accepted placements to use as values of the `placement` option.<br />
-   * Valid placements are:
-   * - `auto`
-   * - `top`
-   * - `right`
-   * - `bottom`
-   * - `left`
-   *
-   * Each placement can have a variation from this list:
-   * - `-start`
-   * - `-end`
-   *
-   * Variations are interpreted easily if you think of them as the left to right
-   * written languages. Horizontally (`top` and `bottom`), `start` is left and `end`
-   * is right.<br />
-   * Vertically (`left` and `right`), `start` is top and `end` is bottom.
-   *
-   * Some valid examples are:
-   * - `top-end` (on top of reference, right aligned)
-   * - `right-start` (on right of reference, top aligned)
-   * - `bottom` (on bottom, centered)
-   * - `auto-end` (on the side with more space available, alignment depends by placement)
-   *
-   * @static
-   * @type {Array}
-   * @enum {String}
-   * @readonly
-   * @method placements
-   * @memberof Popper
-   */
-  var placements = ['auto-start', 'auto', 'auto-end', 'top-start', 'top', 'top-end', 'right-start', 'right', 'right-end', 'bottom-end', 'bottom', 'bottom-start', 'left-end', 'left', 'left-start'];
-
-  // Get rid of `auto` `auto-start` and `auto-end`
-  var validPlacements = placements.slice(3);
-
-  /**
-   * Given an initial placement, returns all the subsequent placements
-   * clockwise (or counter-clockwise).
-   *
-   * @method
-   * @memberof Popper.Utils
-   * @argument {String} placement - A valid placement (it accepts variations)
-   * @argument {Boolean} counter - Set to true to walk the placements counterclockwise
-   * @returns {Array} placements including their variations
-   */
-  function clockwise(placement) {
-    var counter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
-    var index = validPlacements.indexOf(placement);
-    var arr = validPlacements.slice(index + 1).concat(validPlacements.slice(0, index));
-    return counter ? arr.reverse() : arr;
-  }
-
-  var BEHAVIORS = {
-    FLIP: 'flip',
-    CLOCKWISE: 'clockwise',
-    COUNTERCLOCKWISE: 'counterclockwise'
-  };
-
-  /**
-   * @function
-   * @memberof Modifiers
-   * @argument {Object} data - The data object generated by update method
-   * @argument {Object} options - Modifiers configuration and options
-   * @returns {Object} The data object, properly modified
-   */
-  function flip(data, options) {
-    // if `inner` modifier is enabled, we can't use the `flip` modifier
-    if (isModifierEnabled(data.instance.modifiers, 'inner')) {
-      return data;
-    }
-
-    if (data.flipped && data.placement === data.originalPlacement) {
-      // seems like flip is trying to loop, probably there's not enough space on any of the flippable sides
-      return data;
-    }
-
-    var boundaries = getBoundaries(data.instance.popper, data.instance.reference, options.padding, options.boundariesElement, data.positionFixed);
-
-    var placement = data.placement.split('-')[0];
-    var placementOpposite = getOppositePlacement(placement);
-    var variation = data.placement.split('-')[1] || '';
-
-    var flipOrder = [];
-
-    switch (options.behavior) {
-      case BEHAVIORS.FLIP:
-        flipOrder = [placement, placementOpposite];
-        break;
-      case BEHAVIORS.CLOCKWISE:
-        flipOrder = clockwise(placement);
-        break;
-      case BEHAVIORS.COUNTERCLOCKWISE:
-        flipOrder = clockwise(placement, true);
-        break;
-      default:
-        flipOrder = options.behavior;
-    }
-
-    flipOrder.forEach(function (step, index) {
-      if (placement !== step || flipOrder.length === index + 1) {
-        return data;
-      }
-
-      placement = data.placement.split('-')[0];
-      placementOpposite = getOppositePlacement(placement);
-
-      var popperOffsets = data.offsets.popper;
-      var refOffsets = data.offsets.reference;
-
-      // using floor because the reference offsets may contain decimals we are not going to consider here
-      var floor = Math.floor;
-      var overlapsRef = placement === 'left' && floor(popperOffsets.right) > floor(refOffsets.left) || placement === 'right' && floor(popperOffsets.left) < floor(refOffsets.right) || placement === 'top' && floor(popperOffsets.bottom) > floor(refOffsets.top) || placement === 'bottom' && floor(popperOffsets.top) < floor(refOffsets.bottom);
-
-      var overflowsLeft = floor(popperOffsets.left) < floor(boundaries.left);
-      var overflowsRight = floor(popperOffsets.right) > floor(boundaries.right);
-      var overflowsTop = floor(popperOffsets.top) < floor(boundaries.top);
-      var overflowsBottom = floor(popperOffsets.bottom) > floor(boundaries.bottom);
-
-      var overflowsBoundaries = placement === 'left' && overflowsLeft || placement === 'right' && overflowsRight || placement === 'top' && overflowsTop || placement === 'bottom' && overflowsBottom;
-
-      // flip the variation if required
-      var isVertical = ['top', 'bottom'].indexOf(placement) !== -1;
-
-      // flips variation if reference element overflows boundaries
-      var flippedVariationByRef = !!options.flipVariations && (isVertical && variation === 'start' && overflowsLeft || isVertical && variation === 'end' && overflowsRight || !isVertical && variation === 'start' && overflowsTop || !isVertical && variation === 'end' && overflowsBottom);
-
-      // flips variation if popper content overflows boundaries
-      var flippedVariationByContent = !!options.flipVariationsByContent && (isVertical && variation === 'start' && overflowsRight || isVertical && variation === 'end' && overflowsLeft || !isVertical && variation === 'start' && overflowsBottom || !isVertical && variation === 'end' && overflowsTop);
-
-      var flippedVariation = flippedVariationByRef || flippedVariationByContent;
-
-      if (overlapsRef || overflowsBoundaries || flippedVariation) {
-        // this boolean to detect any flip loop
-        data.flipped = true;
-
-        if (overlapsRef || overflowsBoundaries) {
-          placement = flipOrder[index + 1];
-        }
-
-        if (flippedVariation) {
-          variation = getOppositeVariation(variation);
-        }
-
-        data.placement = placement + (variation ? '-' + variation : '');
-
-        // this object contains `position`, we want to preserve it along with
-        // any additional property we may add in the future
-        data.offsets.popper = _extends$1({}, data.offsets.popper, getPopperOffsets(data.instance.popper, data.offsets.reference, data.placement));
-
-        data = runModifiers(data.instance.modifiers, data, 'flip');
-      }
-    });
-    return data;
-  }
-
-  /**
-   * @function
-   * @memberof Modifiers
-   * @argument {Object} data - The data object generated by update method
-   * @argument {Object} options - Modifiers configuration and options
-   * @returns {Object} The data object, properly modified
-   */
-  function keepTogether(data) {
-    var _data$offsets = data.offsets,
-        popper = _data$offsets.popper,
-        reference = _data$offsets.reference;
-
-    var placement = data.placement.split('-')[0];
-    var floor = Math.floor;
-    var isVertical = ['top', 'bottom'].indexOf(placement) !== -1;
-    var side = isVertical ? 'right' : 'bottom';
-    var opSide = isVertical ? 'left' : 'top';
-    var measurement = isVertical ? 'width' : 'height';
-
-    if (popper[side] < floor(reference[opSide])) {
-      data.offsets.popper[opSide] = floor(reference[opSide]) - popper[measurement];
-    }
-    if (popper[opSide] > floor(reference[side])) {
-      data.offsets.popper[opSide] = floor(reference[side]);
-    }
-
-    return data;
-  }
-
-  /**
-   * Converts a string containing value + unit into a px value number
-   * @function
-   * @memberof {modifiers~offset}
-   * @private
-   * @argument {String} str - Value + unit string
-   * @argument {String} measurement - `height` or `width`
-   * @argument {Object} popperOffsets
-   * @argument {Object} referenceOffsets
-   * @returns {Number|String}
-   * Value in pixels, or original string if no values were extracted
-   */
-  function toValue(str, measurement, popperOffsets, referenceOffsets) {
-    // separate value from unit
-    var split = str.match(/((?:\-|\+)?\d*\.?\d*)(.*)/);
-    var value = +split[1];
-    var unit = split[2];
-
-    // If it's not a number it's an operator, I guess
-    if (!value) {
-      return str;
-    }
-
-    if (unit.indexOf('%') === 0) {
-      var element = void 0;
-      switch (unit) {
-        case '%p':
-          element = popperOffsets;
-          break;
-        case '%':
-        case '%r':
-        default:
-          element = referenceOffsets;
-      }
-
-      var rect = getClientRect(element);
-      return rect[measurement] / 100 * value;
-    } else if (unit === 'vh' || unit === 'vw') {
-      // if is a vh or vw, we calculate the size based on the viewport
-      var size = void 0;
-      if (unit === 'vh') {
-        size = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-      } else {
-        size = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-      }
-      return size / 100 * value;
-    } else {
-      // if is an explicit pixel unit, we get rid of the unit and keep the value
-      // if is an implicit unit, it's px, and we return just the value
-      return value;
-    }
-  }
-
-  /**
-   * Parse an `offset` string to extrapolate `x` and `y` numeric offsets.
-   * @function
-   * @memberof {modifiers~offset}
-   * @private
-   * @argument {String} offset
-   * @argument {Object} popperOffsets
-   * @argument {Object} referenceOffsets
-   * @argument {String} basePlacement
-   * @returns {Array} a two cells array with x and y offsets in numbers
-   */
-  function parseOffset(offset, popperOffsets, referenceOffsets, basePlacement) {
-    var offsets = [0, 0];
-
-    // Use height if placement is left or right and index is 0 otherwise use width
-    // in this way the first offset will use an axis and the second one
-    // will use the other one
-    var useHeight = ['right', 'left'].indexOf(basePlacement) !== -1;
-
-    // Split the offset string to obtain a list of values and operands
-    // The regex addresses values with the plus or minus sign in front (+10, -20, etc)
-    var fragments = offset.split(/(\+|\-)/).map(function (frag) {
-      return frag.trim();
-    });
-
-    // Detect if the offset string contains a pair of values or a single one
-    // they could be separated by comma or space
-    var divider = fragments.indexOf(find(fragments, function (frag) {
-      return frag.search(/,|\s/) !== -1;
-    }));
-
-    if (fragments[divider] && fragments[divider].indexOf(',') === -1) {
-      console.warn('Offsets separated by white space(s) are deprecated, use a comma (,) instead.');
-    }
-
-    // If divider is found, we divide the list of values and operands to divide
-    // them by ofset X and Y.
-    var splitRegex = /\s*,\s*|\s+/;
-    var ops = divider !== -1 ? [fragments.slice(0, divider).concat([fragments[divider].split(splitRegex)[0]]), [fragments[divider].split(splitRegex)[1]].concat(fragments.slice(divider + 1))] : [fragments];
-
-    // Convert the values with units to absolute pixels to allow our computations
-    ops = ops.map(function (op, index) {
-      // Most of the units rely on the orientation of the popper
-      var measurement = (index === 1 ? !useHeight : useHeight) ? 'height' : 'width';
-      var mergeWithPrevious = false;
-      return op
-      // This aggregates any `+` or `-` sign that aren't considered operators
-      // e.g.: 10 + +5 => [10, +, +5]
-      .reduce(function (a, b) {
-        if (a[a.length - 1] === '' && ['+', '-'].indexOf(b) !== -1) {
-          a[a.length - 1] = b;
-          mergeWithPrevious = true;
-          return a;
-        } else if (mergeWithPrevious) {
-          a[a.length - 1] += b;
-          mergeWithPrevious = false;
-          return a;
-        } else {
-          return a.concat(b);
-        }
-      }, [])
-      // Here we convert the string values into number values (in px)
-      .map(function (str) {
-        return toValue(str, measurement, popperOffsets, referenceOffsets);
-      });
-    });
-
-    // Loop trough the offsets arrays and execute the operations
-    ops.forEach(function (op, index) {
-      op.forEach(function (frag, index2) {
-        if (isNumeric(frag)) {
-          offsets[index] += frag * (op[index2 - 1] === '-' ? -1 : 1);
-        }
-      });
-    });
-    return offsets;
-  }
-
-  /**
-   * @function
-   * @memberof Modifiers
-   * @argument {Object} data - The data object generated by update method
-   * @argument {Object} options - Modifiers configuration and options
-   * @argument {Number|String} options.offset=0
-   * The offset value as described in the modifier description
-   * @returns {Object} The data object, properly modified
-   */
-  function offset(data, _ref) {
-    var offset = _ref.offset;
-    var placement = data.placement,
-        _data$offsets = data.offsets,
-        popper = _data$offsets.popper,
-        reference = _data$offsets.reference;
-
-    var basePlacement = placement.split('-')[0];
-
-    var offsets = void 0;
-    if (isNumeric(+offset)) {
-      offsets = [+offset, 0];
-    } else {
-      offsets = parseOffset(offset, popper, reference, basePlacement);
-    }
-
-    if (basePlacement === 'left') {
-      popper.top += offsets[0];
-      popper.left -= offsets[1];
-    } else if (basePlacement === 'right') {
-      popper.top += offsets[0];
-      popper.left += offsets[1];
-    } else if (basePlacement === 'top') {
-      popper.left += offsets[0];
-      popper.top -= offsets[1];
-    } else if (basePlacement === 'bottom') {
-      popper.left += offsets[0];
-      popper.top += offsets[1];
-    }
-
-    data.popper = popper;
-    return data;
-  }
-
-  /**
-   * @function
-   * @memberof Modifiers
-   * @argument {Object} data - The data object generated by `update` method
-   * @argument {Object} options - Modifiers configuration and options
-   * @returns {Object} The data object, properly modified
-   */
-  function preventOverflow(data, options) {
-    var boundariesElement = options.boundariesElement || getOffsetParent(data.instance.popper);
-
-    // If offsetParent is the reference element, we really want to
-    // go one step up and use the next offsetParent as reference to
-    // avoid to make this modifier completely useless and look like broken
-    if (data.instance.reference === boundariesElement) {
-      boundariesElement = getOffsetParent(boundariesElement);
-    }
-
-    // NOTE: DOM access here
-    // resets the popper's position so that the document size can be calculated excluding
-    // the size of the popper element itself
-    var transformProp = getSupportedPropertyName('transform');
-    var popperStyles = data.instance.popper.style; // assignment to help minification
-    var top = popperStyles.top,
-        left = popperStyles.left,
-        transform = popperStyles[transformProp];
-
-    popperStyles.top = '';
-    popperStyles.left = '';
-    popperStyles[transformProp] = '';
-
-    var boundaries = getBoundaries(data.instance.popper, data.instance.reference, options.padding, boundariesElement, data.positionFixed);
-
-    // NOTE: DOM access here
-    // restores the original style properties after the offsets have been computed
-    popperStyles.top = top;
-    popperStyles.left = left;
-    popperStyles[transformProp] = transform;
-
-    options.boundaries = boundaries;
-
-    var order = options.priority;
-    var popper = data.offsets.popper;
-
-    var check = {
-      primary: function primary(placement) {
-        var value = popper[placement];
-        if (popper[placement] < boundaries[placement] && !options.escapeWithReference) {
-          value = Math.max(popper[placement], boundaries[placement]);
-        }
-        return defineProperty$3({}, placement, value);
-      },
-      secondary: function secondary(placement) {
-        var mainSide = placement === 'right' ? 'left' : 'top';
-        var value = popper[mainSide];
-        if (popper[placement] > boundaries[placement] && !options.escapeWithReference) {
-          value = Math.min(popper[mainSide], boundaries[placement] - (placement === 'right' ? popper.width : popper.height));
-        }
-        return defineProperty$3({}, mainSide, value);
-      }
-    };
-
-    order.forEach(function (placement) {
-      var side = ['left', 'top'].indexOf(placement) !== -1 ? 'primary' : 'secondary';
-      popper = _extends$1({}, popper, check[side](placement));
-    });
-
-    data.offsets.popper = popper;
-
-    return data;
-  }
-
-  /**
-   * @function
-   * @memberof Modifiers
-   * @argument {Object} data - The data object generated by `update` method
-   * @argument {Object} options - Modifiers configuration and options
-   * @returns {Object} The data object, properly modified
-   */
-  function shift(data) {
-    var placement = data.placement;
-    var basePlacement = placement.split('-')[0];
-    var shiftvariation = placement.split('-')[1];
-
-    // if shift shiftvariation is specified, run the modifier
-    if (shiftvariation) {
-      var _data$offsets = data.offsets,
-          reference = _data$offsets.reference,
-          popper = _data$offsets.popper;
-
-      var isVertical = ['bottom', 'top'].indexOf(basePlacement) !== -1;
-      var side = isVertical ? 'left' : 'top';
-      var measurement = isVertical ? 'width' : 'height';
-
-      var shiftOffsets = {
-        start: defineProperty$3({}, side, reference[side]),
-        end: defineProperty$3({}, side, reference[side] + reference[measurement] - popper[measurement])
-      };
-
-      data.offsets.popper = _extends$1({}, popper, shiftOffsets[shiftvariation]);
-    }
-
-    return data;
-  }
-
-  /**
-   * @function
-   * @memberof Modifiers
-   * @argument {Object} data - The data object generated by update method
-   * @argument {Object} options - Modifiers configuration and options
-   * @returns {Object} The data object, properly modified
-   */
-  function hide(data) {
-    if (!isModifierRequired(data.instance.modifiers, 'hide', 'preventOverflow')) {
-      return data;
-    }
-
-    var refRect = data.offsets.reference;
-    var bound = find(data.instance.modifiers, function (modifier) {
-      return modifier.name === 'preventOverflow';
-    }).boundaries;
-
-    if (refRect.bottom < bound.top || refRect.left > bound.right || refRect.top > bound.bottom || refRect.right < bound.left) {
-      // Avoid unnecessary DOM access if visibility hasn't changed
-      if (data.hide === true) {
-        return data;
-      }
-
-      data.hide = true;
-      data.attributes['x-out-of-boundaries'] = '';
-    } else {
-      // Avoid unnecessary DOM access if visibility hasn't changed
-      if (data.hide === false) {
-        return data;
-      }
-
-      data.hide = false;
-      data.attributes['x-out-of-boundaries'] = false;
-    }
-
-    return data;
-  }
-
-  /**
-   * @function
-   * @memberof Modifiers
-   * @argument {Object} data - The data object generated by `update` method
-   * @argument {Object} options - Modifiers configuration and options
-   * @returns {Object} The data object, properly modified
-   */
-  function inner(data) {
-    var placement = data.placement;
-    var basePlacement = placement.split('-')[0];
-    var _data$offsets = data.offsets,
-        popper = _data$offsets.popper,
-        reference = _data$offsets.reference;
-
-    var isHoriz = ['left', 'right'].indexOf(basePlacement) !== -1;
-
-    var subtractLength = ['top', 'left'].indexOf(basePlacement) === -1;
-
-    popper[isHoriz ? 'left' : 'top'] = reference[basePlacement] - (subtractLength ? popper[isHoriz ? 'width' : 'height'] : 0);
-
-    data.placement = getOppositePlacement(placement);
-    data.offsets.popper = getClientRect(popper);
-
-    return data;
-  }
-
-  /**
-   * Modifier function, each modifier can have a function of this type assigned
-   * to its `fn` property.<br />
-   * These functions will be called on each update, this means that you must
-   * make sure they are performant enough to avoid performance bottlenecks.
-   *
-   * @function ModifierFn
-   * @argument {dataObject} data - The data object generated by `update` method
-   * @argument {Object} options - Modifiers configuration and options
-   * @returns {dataObject} The data object, properly modified
-   */
-
-  /**
-   * Modifiers are plugins used to alter the behavior of your poppers.<br />
-   * Popper.js uses a set of 9 modifiers to provide all the basic functionalities
-   * needed by the library.
-   *
-   * Usually you don't want to override the `order`, `fn` and `onLoad` props.
-   * All the other properties are configurations that could be tweaked.
-   * @namespace modifiers
-   */
-  var modifiers = {
-    /**
-     * Modifier used to shift the popper on the start or end of its reference
-     * element.<br />
-     * It will read the variation of the `placement` property.<br />
-     * It can be one either `-end` or `-start`.
-     * @memberof modifiers
-     * @inner
-     */
-    shift: {
-      /** @prop {number} order=100 - Index used to define the order of execution */
-      order: 100,
-      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-      enabled: true,
-      /** @prop {ModifierFn} */
-      fn: shift
-    },
-
-    /**
-     * The `offset` modifier can shift your popper on both its axis.
-     *
-     * It accepts the following units:
-     * - `px` or unit-less, interpreted as pixels
-     * - `%` or `%r`, percentage relative to the length of the reference element
-     * - `%p`, percentage relative to the length of the popper element
-     * - `vw`, CSS viewport width unit
-     * - `vh`, CSS viewport height unit
-     *
-     * For length is intended the main axis relative to the placement of the popper.<br />
-     * This means that if the placement is `top` or `bottom`, the length will be the
-     * `width`. In case of `left` or `right`, it will be the `height`.
-     *
-     * You can provide a single value (as `Number` or `String`), or a pair of values
-     * as `String` divided by a comma or one (or more) white spaces.<br />
-     * The latter is a deprecated method because it leads to confusion and will be
-     * removed in v2.<br />
-     * Additionally, it accepts additions and subtractions between different units.
-     * Note that multiplications and divisions aren't supported.
-     *
-     * Valid examples are:
-     * ```
-     * 10
-     * '10%'
-     * '10, 10'
-     * '10%, 10'
-     * '10 + 10%'
-     * '10 - 5vh + 3%'
-     * '-10px + 5vh, 5px - 6%'
-     * ```
-     * > **NB**: If you desire to apply offsets to your poppers in a way that may make them overlap
-     * > with their reference element, unfortunately, you will have to disable the `flip` modifier.
-     * > You can read more on this at this [issue](https://github.com/FezVrasta/popper.js/issues/373).
-     *
-     * @memberof modifiers
-     * @inner
-     */
-    offset: {
-      /** @prop {number} order=200 - Index used to define the order of execution */
-      order: 200,
-      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-      enabled: true,
-      /** @prop {ModifierFn} */
-      fn: offset,
-      /** @prop {Number|String} offset=0
-       * The offset value as described in the modifier description
-       */
-      offset: 0
-    },
-
-    /**
-     * Modifier used to prevent the popper from being positioned outside the boundary.
-     *
-     * A scenario exists where the reference itself is not within the boundaries.<br />
-     * We can say it has "escaped the boundaries" — or just "escaped".<br />
-     * In this case we need to decide whether the popper should either:
-     *
-     * - detach from the reference and remain "trapped" in the boundaries, or
-     * - if it should ignore the boundary and "escape with its reference"
-     *
-     * When `escapeWithReference` is set to`true` and reference is completely
-     * outside its boundaries, the popper will overflow (or completely leave)
-     * the boundaries in order to remain attached to the edge of the reference.
-     *
-     * @memberof modifiers
-     * @inner
-     */
-    preventOverflow: {
-      /** @prop {number} order=300 - Index used to define the order of execution */
-      order: 300,
-      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-      enabled: true,
-      /** @prop {ModifierFn} */
-      fn: preventOverflow,
-      /**
-       * @prop {Array} [priority=['left','right','top','bottom']]
-       * Popper will try to prevent overflow following these priorities by default,
-       * then, it could overflow on the left and on top of the `boundariesElement`
-       */
-      priority: ['left', 'right', 'top', 'bottom'],
-      /**
-       * @prop {number} padding=5
-       * Amount of pixel used to define a minimum distance between the boundaries
-       * and the popper. This makes sure the popper always has a little padding
-       * between the edges of its container
-       */
-      padding: 5,
-      /**
-       * @prop {String|HTMLElement} boundariesElement='scrollParent'
-       * Boundaries used by the modifier. Can be `scrollParent`, `window`,
-       * `viewport` or any DOM element.
-       */
-      boundariesElement: 'scrollParent'
-    },
-
-    /**
-     * Modifier used to make sure the reference and its popper stay near each other
-     * without leaving any gap between the two. Especially useful when the arrow is
-     * enabled and you want to ensure that it points to its reference element.
-     * It cares only about the first axis. You can still have poppers with margin
-     * between the popper and its reference element.
-     * @memberof modifiers
-     * @inner
-     */
-    keepTogether: {
-      /** @prop {number} order=400 - Index used to define the order of execution */
-      order: 400,
-      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-      enabled: true,
-      /** @prop {ModifierFn} */
-      fn: keepTogether
-    },
-
-    /**
-     * This modifier is used to move the `arrowElement` of the popper to make
-     * sure it is positioned between the reference element and its popper element.
-     * It will read the outer size of the `arrowElement` node to detect how many
-     * pixels of conjunction are needed.
-     *
-     * It has no effect if no `arrowElement` is provided.
-     * @memberof modifiers
-     * @inner
-     */
-    arrow: {
-      /** @prop {number} order=500 - Index used to define the order of execution */
-      order: 500,
-      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-      enabled: true,
-      /** @prop {ModifierFn} */
-      fn: arrow,
-      /** @prop {String|HTMLElement} element='[x-arrow]' - Selector or node used as arrow */
-      element: '[x-arrow]'
-    },
-
-    /**
-     * Modifier used to flip the popper's placement when it starts to overlap its
-     * reference element.
-     *
-     * Requires the `preventOverflow` modifier before it in order to work.
-     *
-     * **NOTE:** this modifier will interrupt the current update cycle and will
-     * restart it if it detects the need to flip the placement.
-     * @memberof modifiers
-     * @inner
-     */
-    flip: {
-      /** @prop {number} order=600 - Index used to define the order of execution */
-      order: 600,
-      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-      enabled: true,
-      /** @prop {ModifierFn} */
-      fn: flip,
-      /**
-       * @prop {String|Array} behavior='flip'
-       * The behavior used to change the popper's placement. It can be one of
-       * `flip`, `clockwise`, `counterclockwise` or an array with a list of valid
-       * placements (with optional variations)
-       */
-      behavior: 'flip',
-      /**
-       * @prop {number} padding=5
-       * The popper will flip if it hits the edges of the `boundariesElement`
-       */
-      padding: 5,
-      /**
-       * @prop {String|HTMLElement} boundariesElement='viewport'
-       * The element which will define the boundaries of the popper position.
-       * The popper will never be placed outside of the defined boundaries
-       * (except if `keepTogether` is enabled)
-       */
-      boundariesElement: 'viewport',
-      /**
-       * @prop {Boolean} flipVariations=false
-       * The popper will switch placement variation between `-start` and `-end` when
-       * the reference element overlaps its boundaries.
-       *
-       * The original placement should have a set variation.
-       */
-      flipVariations: false,
-      /**
-       * @prop {Boolean} flipVariationsByContent=false
-       * The popper will switch placement variation between `-start` and `-end` when
-       * the popper element overlaps its reference boundaries.
-       *
-       * The original placement should have a set variation.
-       */
-      flipVariationsByContent: false
-    },
-
-    /**
-     * Modifier used to make the popper flow toward the inner of the reference element.
-     * By default, when this modifier is disabled, the popper will be placed outside
-     * the reference element.
-     * @memberof modifiers
-     * @inner
-     */
-    inner: {
-      /** @prop {number} order=700 - Index used to define the order of execution */
-      order: 700,
-      /** @prop {Boolean} enabled=false - Whether the modifier is enabled or not */
-      enabled: false,
-      /** @prop {ModifierFn} */
-      fn: inner
-    },
-
-    /**
-     * Modifier used to hide the popper when its reference element is outside of the
-     * popper boundaries. It will set a `x-out-of-boundaries` attribute which can
-     * be used to hide with a CSS selector the popper when its reference is
-     * out of boundaries.
-     *
-     * Requires the `preventOverflow` modifier before it in order to work.
-     * @memberof modifiers
-     * @inner
-     */
-    hide: {
-      /** @prop {number} order=800 - Index used to define the order of execution */
-      order: 800,
-      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-      enabled: true,
-      /** @prop {ModifierFn} */
-      fn: hide
-    },
-
-    /**
-     * Computes the style that will be applied to the popper element to gets
-     * properly positioned.
-     *
-     * Note that this modifier will not touch the DOM, it just prepares the styles
-     * so that `applyStyle` modifier can apply it. This separation is useful
-     * in case you need to replace `applyStyle` with a custom implementation.
-     *
-     * This modifier has `850` as `order` value to maintain backward compatibility
-     * with previous versions of Popper.js. Expect the modifiers ordering method
-     * to change in future major versions of the library.
-     *
-     * @memberof modifiers
-     * @inner
-     */
-    computeStyle: {
-      /** @prop {number} order=850 - Index used to define the order of execution */
-      order: 850,
-      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-      enabled: true,
-      /** @prop {ModifierFn} */
-      fn: computeStyle,
-      /**
-       * @prop {Boolean} gpuAcceleration=true
-       * If true, it uses the CSS 3D transformation to position the popper.
-       * Otherwise, it will use the `top` and `left` properties
-       */
-      gpuAcceleration: true,
-      /**
-       * @prop {string} [x='bottom']
-       * Where to anchor the X axis (`bottom` or `top`). AKA X offset origin.
-       * Change this if your popper should grow in a direction different from `bottom`
-       */
-      x: 'bottom',
-      /**
-       * @prop {string} [x='left']
-       * Where to anchor the Y axis (`left` or `right`). AKA Y offset origin.
-       * Change this if your popper should grow in a direction different from `right`
-       */
-      y: 'right'
-    },
-
-    /**
-     * Applies the computed styles to the popper element.
-     *
-     * All the DOM manipulations are limited to this modifier. This is useful in case
-     * you want to integrate Popper.js inside a framework or view library and you
-     * want to delegate all the DOM manipulations to it.
-     *
-     * Note that if you disable this modifier, you must make sure the popper element
-     * has its position set to `absolute` before Popper.js can do its work!
-     *
-     * Just disable this modifier and define your own to achieve the desired effect.
-     *
-     * @memberof modifiers
-     * @inner
-     */
-    applyStyle: {
-      /** @prop {number} order=900 - Index used to define the order of execution */
-      order: 900,
-      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-      enabled: true,
-      /** @prop {ModifierFn} */
-      fn: applyStyle,
-      /** @prop {Function} */
-      onLoad: applyStyleOnLoad,
-      /**
-       * @deprecated since version 1.10.0, the property moved to `computeStyle` modifier
-       * @prop {Boolean} gpuAcceleration=true
-       * If true, it uses the CSS 3D transformation to position the popper.
-       * Otherwise, it will use the `top` and `left` properties
-       */
-      gpuAcceleration: undefined
-    }
-  };
-
-  /**
-   * The `dataObject` is an object containing all the information used by Popper.js.
-   * This object is passed to modifiers and to the `onCreate` and `onUpdate` callbacks.
-   * @name dataObject
-   * @property {Object} data.instance The Popper.js instance
-   * @property {String} data.placement Placement applied to popper
-   * @property {String} data.originalPlacement Placement originally defined on init
-   * @property {Boolean} data.flipped True if popper has been flipped by flip modifier
-   * @property {Boolean} data.hide True if the reference element is out of boundaries, useful to know when to hide the popper
-   * @property {HTMLElement} data.arrowElement Node used as arrow by arrow modifier
-   * @property {Object} data.styles Any CSS property defined here will be applied to the popper. It expects the JavaScript nomenclature (eg. `marginBottom`)
-   * @property {Object} data.arrowStyles Any CSS property defined here will be applied to the popper arrow. It expects the JavaScript nomenclature (eg. `marginBottom`)
-   * @property {Object} data.boundaries Offsets of the popper boundaries
-   * @property {Object} data.offsets The measurements of popper, reference and arrow elements
-   * @property {Object} data.offsets.popper `top`, `left`, `width`, `height` values
-   * @property {Object} data.offsets.reference `top`, `left`, `width`, `height` values
-   * @property {Object} data.offsets.arrow] `top` and `left` offsets, only one of them will be different from 0
-   */
-
-  /**
-   * Default options provided to Popper.js constructor.<br />
-   * These can be overridden using the `options` argument of Popper.js.<br />
-   * To override an option, simply pass an object with the same
-   * structure of the `options` object, as the 3rd argument. For example:
-   * ```
-   * new Popper(ref, pop, {
-   *   modifiers: {
-   *     preventOverflow: { enabled: false }
-   *   }
-   * })
-   * ```
-   * @type {Object}
-   * @static
-   * @memberof Popper
-   */
-  var Defaults = {
-    /**
-     * Popper's placement.
-     * @prop {Popper.placements} placement='bottom'
-     */
-    placement: 'bottom',
-
-    /**
-     * Set this to true if you want popper to position it self in 'fixed' mode
-     * @prop {Boolean} positionFixed=false
-     */
-    positionFixed: false,
-
-    /**
-     * Whether events (resize, scroll) are initially enabled.
-     * @prop {Boolean} eventsEnabled=true
-     */
-    eventsEnabled: true,
-
-    /**
-     * Set to true if you want to automatically remove the popper when
-     * you call the `destroy` method.
-     * @prop {Boolean} removeOnDestroy=false
-     */
-    removeOnDestroy: false,
-
-    /**
-     * Callback called when the popper is created.<br />
-     * By default, it is set to no-op.<br />
-     * Access Popper.js instance with `data.instance`.
-     * @prop {onCreate}
-     */
-    onCreate: function onCreate() {},
-
-    /**
-     * Callback called when the popper is updated. This callback is not called
-     * on the initialization/creation of the popper, but only on subsequent
-     * updates.<br />
-     * By default, it is set to no-op.<br />
-     * Access Popper.js instance with `data.instance`.
-     * @prop {onUpdate}
-     */
-    onUpdate: function onUpdate() {},
-
-    /**
-     * List of modifiers used to modify the offsets before they are applied to the popper.
-     * They provide most of the functionalities of Popper.js.
-     * @prop {modifiers}
-     */
-    modifiers: modifiers
-  };
-
-  /**
-   * @callback onCreate
-   * @param {dataObject} data
-   */
-
-  /**
-   * @callback onUpdate
-   * @param {dataObject} data
-   */
-
-  // Utils
-  // Methods
-  var Popper = function () {
-    /**
-     * Creates a new Popper.js instance.
-     * @class Popper
-     * @param {Element|referenceObject} reference - The reference element used to position the popper
-     * @param {Element} popper - The HTML / XML element used as the popper
-     * @param {Object} options - Your custom options to override the ones defined in [Defaults](#defaults)
-     * @return {Object} instance - The generated Popper.js instance
-     */
-    function Popper(reference, popper) {
-      var _this = this;
-
-      var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-      classCallCheck(this, Popper);
-
-      this.scheduleUpdate = function () {
-        return requestAnimationFrame(_this.update);
-      };
-
-      // make update() debounced, so that it only runs at most once-per-tick
-      this.update = debounce(this.update.bind(this));
-
-      // with {} we create a new object with the options inside it
-      this.options = _extends$1({}, Popper.Defaults, options);
-
-      // init state
-      this.state = {
-        isDestroyed: false,
-        isCreated: false,
-        scrollParents: []
-      };
-
-      // get reference and popper elements (allow jQuery wrappers)
-      this.reference = reference && reference.jquery ? reference[0] : reference;
-      this.popper = popper && popper.jquery ? popper[0] : popper;
-
-      // Deep merge modifiers options
-      this.options.modifiers = {};
-      Object.keys(_extends$1({}, Popper.Defaults.modifiers, options.modifiers)).forEach(function (name) {
-        _this.options.modifiers[name] = _extends$1({}, Popper.Defaults.modifiers[name] || {}, options.modifiers ? options.modifiers[name] : {});
-      });
-
-      // Refactoring modifiers' list (Object => Array)
-      this.modifiers = Object.keys(this.options.modifiers).map(function (name) {
-        return _extends$1({
-          name: name
-        }, _this.options.modifiers[name]);
-      })
-      // sort the modifiers by order
-      .sort(function (a, b) {
-        return a.order - b.order;
-      });
-
-      // modifiers have the ability to execute arbitrary code when Popper.js get inited
-      // such code is executed in the same order of its modifier
-      // they could add new properties to their options configuration
-      // BE AWARE: don't add options to `options.modifiers.name` but to `modifierOptions`!
-      this.modifiers.forEach(function (modifierOptions) {
-        if (modifierOptions.enabled && isFunction$1(modifierOptions.onLoad)) {
-          modifierOptions.onLoad(_this.reference, _this.popper, _this.options, modifierOptions, _this.state);
-        }
-      });
-
-      // fire the first update to position the popper in the right place
-      this.update();
-
-      var eventsEnabled = this.options.eventsEnabled;
-      if (eventsEnabled) {
-        // setup event listeners, they will take care of update the position in specific situations
-        this.enableEventListeners();
-      }
-
-      this.state.eventsEnabled = eventsEnabled;
-    }
-
-    // We can't use class properties because they don't get listed in the
-    // class prototype and break stuff like Sinon stubs
-
-
-    createClass(Popper, [{
-      key: 'update',
-      value: function update$$1() {
-        return update.call(this);
-      }
-    }, {
-      key: 'destroy',
-      value: function destroy$$1() {
-        return destroy.call(this);
-      }
-    }, {
-      key: 'enableEventListeners',
-      value: function enableEventListeners$$1() {
-        return enableEventListeners.call(this);
-      }
-    }, {
-      key: 'disableEventListeners',
-      value: function disableEventListeners$$1() {
-        return disableEventListeners.call(this);
-      }
-
-      /**
-       * Schedules an update. It will run on the next UI update available.
-       * @method scheduleUpdate
-       * @memberof Popper
-       */
-
-
-      /**
-       * Collection of utilities useful when writing custom modifiers.
-       * Starting from version 1.7, this method is available only if you
-       * include `popper-utils.js` before `popper.js`.
-       *
-       * **DEPRECATION**: This way to access PopperUtils is deprecated
-       * and will be removed in v2! Use the PopperUtils module directly instead.
-       * Due to the high instability of the methods contained in Utils, we can't
-       * guarantee them to follow semver. Use them at your own risk!
-       * @static
-       * @private
-       * @type {Object}
-       * @deprecated since version 1.8
-       * @member Utils
-       * @memberof Popper
-       */
-
-    }]);
-    return Popper;
-  }();
-
-  /**
-   * The `referenceObject` is an object that provides an interface compatible with Popper.js
-   * and lets you use it as replacement of a real DOM node.<br />
-   * You can use this method to position a popper relatively to a set of coordinates
-   * in case you don't have a DOM node to use as reference.
-   *
-   * ```
-   * new Popper(referenceObject, popperNode);
-   * ```
-   *
-   * NB: This feature isn't supported in Internet Explorer 10.
-   * @name referenceObject
-   * @property {Function} data.getBoundingClientRect
-   * A function that returns a set of coordinates compatible with the native `getBoundingClientRect` method.
-   * @property {number} data.clientWidth
-   * An ES6 getter that will return the width of the virtual reference element.
-   * @property {number} data.clientHeight
-   * An ES6 getter that will return the height of the virtual reference element.
-   */
-
-
-  Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
-  Popper.placements = placements;
-  Popper.Defaults = Defaults;
-
-  /** @license React v16.13.1
-   * react-is.production.min.js
-   *
-   * Copyright (c) Facebook, Inc. and its affiliates.
-   *
-   * This source code is licensed under the MIT license found in the
-   * LICENSE file in the root directory of this source tree.
-   */
-  var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
-  Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
-  function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}var AsyncMode=l;var ConcurrentMode=m;var ContextConsumer=k;var ContextProvider=h;var Element$1=c;var ForwardRef=n;var Fragment=e;var Lazy=t;var Memo=r;var Portal=d;
-  var Profiler=g;var StrictMode=f;var Suspense=p;var isAsyncMode=function(a){return A(a)||z(a)===l};var isConcurrentMode=A;var isContextConsumer=function(a){return z(a)===k};var isContextProvider=function(a){return z(a)===h};var isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};var isForwardRef=function(a){return z(a)===n};var isFragment=function(a){return z(a)===e};var isLazy=function(a){return z(a)===t};
-  var isMemo=function(a){return z(a)===r};var isPortal=function(a){return z(a)===d};var isProfiler=function(a){return z(a)===g};var isStrictMode=function(a){return z(a)===f};var isSuspense=function(a){return z(a)===p};
-  var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};var typeOf=z;
-
-  var reactIs_production_min = {
-  	AsyncMode: AsyncMode,
-  	ConcurrentMode: ConcurrentMode,
-  	ContextConsumer: ContextConsumer,
-  	ContextProvider: ContextProvider,
-  	Element: Element$1,
-  	ForwardRef: ForwardRef,
-  	Fragment: Fragment,
-  	Lazy: Lazy,
-  	Memo: Memo,
-  	Portal: Portal,
-  	Profiler: Profiler,
-  	StrictMode: StrictMode,
-  	Suspense: Suspense,
-  	isAsyncMode: isAsyncMode,
-  	isConcurrentMode: isConcurrentMode,
-  	isContextConsumer: isContextConsumer,
-  	isContextProvider: isContextProvider,
-  	isElement: isElement,
-  	isForwardRef: isForwardRef,
-  	isFragment: isFragment,
-  	isLazy: isLazy,
-  	isMemo: isMemo,
-  	isPortal: isPortal,
-  	isProfiler: isProfiler,
-  	isStrictMode: isStrictMode,
-  	isSuspense: isSuspense,
-  	isValidElementType: isValidElementType,
-  	typeOf: typeOf
-  };
-
-  var reactIs_development = createCommonjsModule(function (module, exports) {
-  });
-  reactIs_development.AsyncMode;
-  reactIs_development.ConcurrentMode;
-  reactIs_development.ContextConsumer;
-  reactIs_development.ContextProvider;
-  reactIs_development.Element;
-  reactIs_development.ForwardRef;
-  reactIs_development.Fragment;
-  reactIs_development.Lazy;
-  reactIs_development.Memo;
-  reactIs_development.Portal;
-  reactIs_development.Profiler;
-  reactIs_development.StrictMode;
-  reactIs_development.Suspense;
-  reactIs_development.isAsyncMode;
-  reactIs_development.isConcurrentMode;
-  reactIs_development.isContextConsumer;
-  reactIs_development.isContextProvider;
-  reactIs_development.isElement;
-  reactIs_development.isForwardRef;
-  reactIs_development.isFragment;
-  reactIs_development.isLazy;
-  reactIs_development.isMemo;
-  reactIs_development.isPortal;
-  reactIs_development.isProfiler;
-  reactIs_development.isStrictMode;
-  reactIs_development.isSuspense;
-  reactIs_development.isValidElementType;
-  reactIs_development.typeOf;
-
-  createCommonjsModule(function (module) {
-
-  {
-    module.exports = reactIs_production_min;
-  }
-  });
-
-  /*
-  object-assign
-  (c) Sindre Sorhus
-  @license MIT
-  */
-  /* eslint-disable no-unused-vars */
-  var getOwnPropertySymbols = Object.getOwnPropertySymbols;
-  var hasOwnProperty = Object.prototype.hasOwnProperty;
-  var propIsEnumerable = Object.prototype.propertyIsEnumerable;
-
-  function toObject(val) {
-  	if (val === null || val === undefined) {
-  		throw new TypeError('Object.assign cannot be called with null or undefined');
-  	}
-
-  	return Object(val);
-  }
-
-  function shouldUseNative() {
-  	try {
-  		if (!Object.assign) {
-  			return false;
-  		}
-
-  		// Detect buggy property enumeration order in older V8 versions.
-
-  		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
-  		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
-  		test1[5] = 'de';
-  		if (Object.getOwnPropertyNames(test1)[0] === '5') {
-  			return false;
-  		}
-
-  		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
-  		var test2 = {};
-  		for (var i = 0; i < 10; i++) {
-  			test2['_' + String.fromCharCode(i)] = i;
-  		}
-  		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
-  			return test2[n];
-  		});
-  		if (order2.join('') !== '0123456789') {
-  			return false;
-  		}
-
-  		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
-  		var test3 = {};
-  		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
-  			test3[letter] = letter;
-  		});
-  		if (Object.keys(Object.assign({}, test3)).join('') !==
-  				'abcdefghijklmnopqrst') {
-  			return false;
-  		}
-
-  		return true;
-  	} catch (err) {
-  		// We don't expect any of the above to throw, but better to be safe.
-  		return false;
-  	}
-  }
-
-  shouldUseNative() ? Object.assign : function (target, source) {
-  	var from;
-  	var to = toObject(target);
-  	var symbols;
-
-  	for (var s = 1; s < arguments.length; s++) {
-  		from = Object(arguments[s]);
-
-  		for (var key in from) {
-  			if (hasOwnProperty.call(from, key)) {
-  				to[key] = from[key];
-  			}
-  		}
-
-  		if (getOwnPropertySymbols) {
-  			symbols = getOwnPropertySymbols(from);
-  			for (var i = 0; i < symbols.length; i++) {
-  				if (propIsEnumerable.call(from, symbols[i])) {
-  					to[symbols[i]] = from[symbols[i]];
-  				}
-  			}
-  		}
-  	}
-
-  	return to;
-  };
-
-  /**
-   * Copyright (c) 2013-present, Facebook, Inc.
-   *
-   * This source code is licensed under the MIT license found in the
-   * LICENSE file in the root directory of this source tree.
-   */
-
-  var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-
-  var ReactPropTypesSecret_1 = ReactPropTypesSecret;
-
-  Function.call.bind(Object.prototype.hasOwnProperty);
-
-  function emptyFunction() {}
-  function emptyFunctionWithReset() {}
-  emptyFunctionWithReset.resetWarningCache = emptyFunction;
-
-  var factoryWithThrowingShims = function() {
-    function shim(props, propName, componentName, location, propFullName, secret) {
-      if (secret === ReactPropTypesSecret_1) {
-        // It is still safe when called from React.
-        return;
-      }
-      var err = new Error(
-        'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
-        'Use PropTypes.checkPropTypes() to call them. ' +
-        'Read more at http://fb.me/use-check-prop-types'
-      );
-      err.name = 'Invariant Violation';
-      throw err;
-    }  shim.isRequired = shim;
-    function getShim() {
-      return shim;
-    }  // Important!
-    // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
-    var ReactPropTypes = {
-      array: shim,
-      bool: shim,
-      func: shim,
-      number: shim,
-      object: shim,
-      string: shim,
-      symbol: shim,
-
-      any: shim,
-      arrayOf: getShim,
-      element: shim,
-      elementType: shim,
-      instanceOf: getShim,
-      node: shim,
-      objectOf: getShim,
-      oneOf: getShim,
-      oneOfType: getShim,
-      shape: getShim,
-      exact: getShim,
-
-      checkPropTypes: emptyFunctionWithReset,
-      resetWarningCache: emptyFunction
-    };
-
-    ReactPropTypes.PropTypes = ReactPropTypes;
-
-    return ReactPropTypes;
-  };
-
-  var propTypes = createCommonjsModule(function (module) {
-  /**
-   * Copyright (c) 2013-present, Facebook, Inc.
-   *
-   * This source code is licensed under the MIT license found in the
-   * LICENSE file in the root directory of this source tree.
-   */
-
-  {
-    // By explicitly using `prop-types` you are opting into new production behavior.
-    // http://fb.me/prop-types-in-prod
-    module.exports = factoryWithThrowingShims();
-  }
-  });
-
-  var key = '__global_unique_id__';
-
-  var gud = function() {
-    return commonjsGlobal[key] = (commonjsGlobal[key] || 0) + 1;
-  };
-
-  /**
-   * Copyright (c) 2014-present, Facebook, Inc.
-   *
-   * This source code is licensed under the MIT license found in the
-   * LICENSE file in the root directory of this source tree.
-   */
-
-  var warning = function() {};
-
-  var warning_1 = warning;
-
-  var implementation$4 = createCommonjsModule(function (module, exports) {
-
-  exports.__esModule = true;
-
-
-
-  _interopRequireDefault(React__default['default']);
-
-
-
-  var _propTypes2 = _interopRequireDefault(propTypes);
-
-
-
-  var _gud2 = _interopRequireDefault(gud);
-
-
-
-  _interopRequireDefault(warning_1);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-  var MAX_SIGNED_31_BIT_INT = 1073741823;
-
-  // Inlined Object.is polyfill.
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
-  function objectIs(x, y) {
-    if (x === y) {
-      return x !== 0 || 1 / x === 1 / y;
-    } else {
-      return x !== x && y !== y;
-    }
-  }
-
-  function createEventEmitter(value) {
-    var handlers = [];
-    return {
-      on: function on(handler) {
-        handlers.push(handler);
-      },
-      off: function off(handler) {
-        handlers = handlers.filter(function (h) {
-          return h !== handler;
-        });
-      },
-      get: function get() {
-        return value;
-      },
-      set: function set(newValue, changedBits) {
-        value = newValue;
-        handlers.forEach(function (handler) {
-          return handler(value, changedBits);
-        });
-      }
-    };
-  }
-
-  function onlyChild(children) {
-    return Array.isArray(children) ? children[0] : children;
-  }
-
-  function createReactContext(defaultValue, calculateChangedBits) {
-    var _Provider$childContex, _Consumer$contextType;
-
-    var contextProp = '__create-react-context-' + (0, _gud2.default)() + '__';
-
-    var Provider = function (_Component) {
-      _inherits(Provider, _Component);
-
-      function Provider() {
-        var _temp, _this, _ret;
-
-        _classCallCheck(this, Provider);
-
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-          args[_key] = arguments[_key];
-        }
-
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.emitter = createEventEmitter(_this.props.value), _temp), _possibleConstructorReturn(_this, _ret);
-      }
-
-      Provider.prototype.getChildContext = function getChildContext() {
-        var _ref;
-
-        return _ref = {}, _ref[contextProp] = this.emitter, _ref;
-      };
-
-      Provider.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
-        if (this.props.value !== nextProps.value) {
-          var oldValue = this.props.value;
-          var newValue = nextProps.value;
-          var changedBits = void 0;
-
-          if (objectIs(oldValue, newValue)) {
-            changedBits = 0; // No change
-          } else {
-            changedBits = typeof calculateChangedBits === 'function' ? calculateChangedBits(oldValue, newValue) : MAX_SIGNED_31_BIT_INT;
-
-            changedBits |= 0;
-
-            if (changedBits !== 0) {
-              this.emitter.set(nextProps.value, changedBits);
-            }
-          }
-        }
-      };
-
-      Provider.prototype.render = function render() {
-        return this.props.children;
-      };
-
-      return Provider;
-    }(React__default['default'].Component);
-
-    Provider.childContextTypes = (_Provider$childContex = {}, _Provider$childContex[contextProp] = _propTypes2.default.object.isRequired, _Provider$childContex);
-
-    var Consumer = function (_Component2) {
-      _inherits(Consumer, _Component2);
-
-      function Consumer() {
-        var _temp2, _this2, _ret2;
-
-        _classCallCheck(this, Consumer);
-
-        for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-          args[_key2] = arguments[_key2];
-        }
-
-        return _ret2 = (_temp2 = (_this2 = _possibleConstructorReturn(this, _Component2.call.apply(_Component2, [this].concat(args))), _this2), _this2.state = {
-          value: _this2.getValue()
-        }, _this2.onUpdate = function (newValue, changedBits) {
-          var observedBits = _this2.observedBits | 0;
-          if ((observedBits & changedBits) !== 0) {
-            _this2.setState({ value: _this2.getValue() });
-          }
-        }, _temp2), _possibleConstructorReturn(_this2, _ret2);
-      }
-
-      Consumer.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
-        var observedBits = nextProps.observedBits;
-
-        this.observedBits = observedBits === undefined || observedBits === null ? MAX_SIGNED_31_BIT_INT // Subscribe to all changes by default
-        : observedBits;
-      };
-
-      Consumer.prototype.componentDidMount = function componentDidMount() {
-        if (this.context[contextProp]) {
-          this.context[contextProp].on(this.onUpdate);
-        }
-        var observedBits = this.props.observedBits;
-
-        this.observedBits = observedBits === undefined || observedBits === null ? MAX_SIGNED_31_BIT_INT // Subscribe to all changes by default
-        : observedBits;
-      };
-
-      Consumer.prototype.componentWillUnmount = function componentWillUnmount() {
-        if (this.context[contextProp]) {
-          this.context[contextProp].off(this.onUpdate);
-        }
-      };
-
-      Consumer.prototype.getValue = function getValue() {
-        if (this.context[contextProp]) {
-          return this.context[contextProp].get();
-        } else {
-          return defaultValue;
-        }
-      };
-
-      Consumer.prototype.render = function render() {
-        return onlyChild(this.props.children)(this.state.value);
-      };
-
-      return Consumer;
-    }(React__default['default'].Component);
-
-    Consumer.contextTypes = (_Consumer$contextType = {}, _Consumer$contextType[contextProp] = _propTypes2.default.object, _Consumer$contextType);
-
-
-    return {
-      Provider: Provider,
-      Consumer: Consumer
-    };
-  }
-
-  exports.default = createReactContext;
-  module.exports = exports['default'];
-  });
-
-  unwrapExports(implementation$4);
-
-  var lib = createCommonjsModule(function (module, exports) {
-
-  exports.__esModule = true;
-
-
-
-  var _react2 = _interopRequireDefault(React__default['default']);
-
-
-
-  var _implementation2 = _interopRequireDefault(implementation$4);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  exports.default = _react2.default.createContext || _implementation2.default;
-  module.exports = exports['default'];
-  });
-
-  var createContext = unwrapExports(lib);
-
-  var ManagerReferenceNodeContext = createContext();
-  var ManagerReferenceNodeSetterContext = createContext();
-
-  var Manager =
-  /*#__PURE__*/
-  function (_React$Component) {
-    inheritsLoose(Manager, _React$Component);
-
-    function Manager() {
-      var _this;
-
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
-
-      defineProperty(assertThisInitialized(_this), "referenceNode", void 0);
-
-      defineProperty(assertThisInitialized(_this), "setReferenceNode", function (newReferenceNode) {
-        if (newReferenceNode && _this.referenceNode !== newReferenceNode) {
-          _this.referenceNode = newReferenceNode;
-
-          _this.forceUpdate();
-        }
-      });
-
-      return _this;
-    }
-
-    var _proto = Manager.prototype;
-
-    _proto.componentWillUnmount = function componentWillUnmount() {
-      this.referenceNode = null;
-    };
-
-    _proto.render = function render() {
-      return React.createElement(ManagerReferenceNodeContext.Provider, {
-        value: this.referenceNode
-      }, React.createElement(ManagerReferenceNodeSetterContext.Provider, {
-        value: this.setReferenceNode
-      }, this.props.children));
-    };
-
-    return Manager;
-  }(React.Component);
-
-  /**
-   * Takes an argument and if it's an array, returns the first item in the array,
-   * otherwise returns the argument. Used for Preact compatibility.
-   */
-  var unwrapArray = function unwrapArray(arg) {
-    return Array.isArray(arg) ? arg[0] : arg;
-  };
-  /**
-   * Takes a maybe-undefined function and arbitrary args and invokes the function
-   * only if it is defined.
-   */
-
-  var safeInvoke = function safeInvoke(fn) {
-    if (typeof fn === "function") {
-      for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-        args[_key - 1] = arguments[_key];
-      }
-
-      return fn.apply(void 0, args);
-    }
-  };
-  /**
-   * Sets a ref using either a ref callback or a ref object
-   */
-
-  var setRef = function setRef(ref, node) {
-    // if its a function call it
-    if (typeof ref === "function") {
-      return safeInvoke(ref, node);
-    } // otherwise we should treat it as a ref object
-    else if (ref != null) {
-        ref.current = node;
-      }
-  };
-
-  var initialStyle = {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    opacity: 0,
-    pointerEvents: 'none'
-  };
-  var initialArrowStyle = {};
-  var InnerPopper =
-  /*#__PURE__*/
-  function (_React$Component) {
-    inheritsLoose(InnerPopper, _React$Component);
-
-    function InnerPopper() {
-      var _this;
-
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
-
-      defineProperty(assertThisInitialized(_this), "state", {
-        data: undefined,
-        placement: undefined
-      });
-
-      defineProperty(assertThisInitialized(_this), "popperInstance", void 0);
-
-      defineProperty(assertThisInitialized(_this), "popperNode", null);
-
-      defineProperty(assertThisInitialized(_this), "arrowNode", null);
-
-      defineProperty(assertThisInitialized(_this), "setPopperNode", function (popperNode) {
-        if (!popperNode || _this.popperNode === popperNode) return;
-        setRef(_this.props.innerRef, popperNode);
-        _this.popperNode = popperNode;
-
-        _this.updatePopperInstance();
-      });
-
-      defineProperty(assertThisInitialized(_this), "setArrowNode", function (arrowNode) {
-        _this.arrowNode = arrowNode;
-      });
-
-      defineProperty(assertThisInitialized(_this), "updateStateModifier", {
-        enabled: true,
-        order: 900,
-        fn: function fn(data) {
-          var placement = data.placement;
-
-          _this.setState({
-            data: data,
-            placement: placement
-          });
-
-          return data;
-        }
-      });
-
-      defineProperty(assertThisInitialized(_this), "getOptions", function () {
-        return {
-          placement: _this.props.placement,
-          eventsEnabled: _this.props.eventsEnabled,
-          positionFixed: _this.props.positionFixed,
-          modifiers: _extends_1({}, _this.props.modifiers, {
-            arrow: _extends_1({}, _this.props.modifiers && _this.props.modifiers.arrow, {
-              enabled: !!_this.arrowNode,
-              element: _this.arrowNode
-            }),
-            applyStyle: {
-              enabled: false
-            },
-            updateStateModifier: _this.updateStateModifier
-          })
-        };
-      });
-
-      defineProperty(assertThisInitialized(_this), "getPopperStyle", function () {
-        return !_this.popperNode || !_this.state.data ? initialStyle : _extends_1({
-          position: _this.state.data.offsets.popper.position
-        }, _this.state.data.styles);
-      });
-
-      defineProperty(assertThisInitialized(_this), "getPopperPlacement", function () {
-        return !_this.state.data ? undefined : _this.state.placement;
-      });
-
-      defineProperty(assertThisInitialized(_this), "getArrowStyle", function () {
-        return !_this.arrowNode || !_this.state.data ? initialArrowStyle : _this.state.data.arrowStyles;
-      });
-
-      defineProperty(assertThisInitialized(_this), "getOutOfBoundariesState", function () {
-        return _this.state.data ? _this.state.data.hide : undefined;
-      });
-
-      defineProperty(assertThisInitialized(_this), "destroyPopperInstance", function () {
-        if (!_this.popperInstance) return;
-
-        _this.popperInstance.destroy();
-
-        _this.popperInstance = null;
-      });
-
-      defineProperty(assertThisInitialized(_this), "updatePopperInstance", function () {
-        _this.destroyPopperInstance();
-
-        var _assertThisInitialize = assertThisInitialized(_this),
-            popperNode = _assertThisInitialize.popperNode;
-
-        var referenceElement = _this.props.referenceElement;
-        if (!referenceElement || !popperNode) return;
-        _this.popperInstance = new Popper(referenceElement, popperNode, _this.getOptions());
-      });
-
-      defineProperty(assertThisInitialized(_this), "scheduleUpdate", function () {
-        if (_this.popperInstance) {
-          _this.popperInstance.scheduleUpdate();
-        }
-      });
-
-      return _this;
-    }
-
-    var _proto = InnerPopper.prototype;
-
-    _proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {
-      // If the Popper.js options have changed, update the instance (destroy + create)
-      if (this.props.placement !== prevProps.placement || this.props.referenceElement !== prevProps.referenceElement || this.props.positionFixed !== prevProps.positionFixed || !deepEqual_1(this.props.modifiers, prevProps.modifiers, {
-        strict: true
-      })) {
-
-        this.updatePopperInstance();
-      } else if (this.props.eventsEnabled !== prevProps.eventsEnabled && this.popperInstance) {
-        this.props.eventsEnabled ? this.popperInstance.enableEventListeners() : this.popperInstance.disableEventListeners();
-      } // A placement difference in state means popper determined a new placement
-      // apart from the props value. By the time the popper element is rendered with
-      // the new position Popper has already measured it, if the place change triggers
-      // a size change it will result in a misaligned popper. So we schedule an update to be sure.
-
-
-      if (prevState.placement !== this.state.placement) {
-        this.scheduleUpdate();
-      }
-    };
-
-    _proto.componentWillUnmount = function componentWillUnmount() {
-      setRef(this.props.innerRef, null);
-      this.destroyPopperInstance();
-    };
-
-    _proto.render = function render() {
-      return unwrapArray(this.props.children)({
-        ref: this.setPopperNode,
-        style: this.getPopperStyle(),
-        placement: this.getPopperPlacement(),
-        outOfBoundaries: this.getOutOfBoundariesState(),
-        scheduleUpdate: this.scheduleUpdate,
-        arrowProps: {
-          ref: this.setArrowNode,
-          style: this.getArrowStyle()
-        }
-      });
-    };
-
-    return InnerPopper;
-  }(React.Component);
-
-  defineProperty(InnerPopper, "defaultProps", {
-    placement: 'bottom',
-    eventsEnabled: true,
-    referenceElement: undefined,
-    positionFixed: false
-  });
-  function Popper$1(_ref) {
-    var referenceElement = _ref.referenceElement,
-        props = objectWithoutPropertiesLoose(_ref, ["referenceElement"]);
-
-    return React.createElement(ManagerReferenceNodeContext.Consumer, null, function (referenceNode) {
-      return React.createElement(InnerPopper, _extends_1({
-        referenceElement: referenceElement !== undefined ? referenceElement : referenceNode
-      }, props));
-    });
-  }
-
-  var InnerReference =
-  /*#__PURE__*/
-  function (_React$Component) {
-    inheritsLoose(InnerReference, _React$Component);
-
-    function InnerReference() {
-      var _this;
-
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
-
-      defineProperty(assertThisInitialized(_this), "refHandler", function (node) {
-        setRef(_this.props.innerRef, node);
-        safeInvoke(_this.props.setReferenceNode, node);
-      });
-
-      return _this;
-    }
-
-    var _proto = InnerReference.prototype;
-
-    _proto.componentWillUnmount = function componentWillUnmount() {
-      setRef(this.props.innerRef, null);
-    };
-
-    _proto.render = function render() {
-      warning_1(Boolean(this.props.setReferenceNode));
-      return unwrapArray(this.props.children)({
-        ref: this.refHandler
-      });
-    };
-
-    return InnerReference;
-  }(React.Component);
-
-  function Reference(props) {
-    return React.createElement(ManagerReferenceNodeSetterContext.Consumer, null, function (setReferenceNode) {
-      return React.createElement(InnerReference, _extends_1({
-        setReferenceNode: setReferenceNode
-      }, props));
-    });
-  }
-
-  var classnames = createCommonjsModule(function (module) {
-  /*!
-    Copyright (c) 2017 Jed Watson.
-    Licensed under the MIT License (MIT), see
-    http://jedwatson.github.io/classnames
-  */
-  /* global define */
-
-  (function () {
-
-  	var hasOwn = {}.hasOwnProperty;
-
-  	function classNames () {
-  		var classes = [];
-
-  		for (var i = 0; i < arguments.length; i++) {
-  			var arg = arguments[i];
-  			if (!arg) continue;
-
-  			var argType = typeof arg;
-
-  			if (argType === 'string' || argType === 'number') {
-  				classes.push(arg);
-  			} else if (Array.isArray(arg) && arg.length) {
-  				var inner = classNames.apply(null, arg);
-  				if (inner) {
-  					classes.push(inner);
-  				}
-  			} else if (argType === 'object') {
-  				for (var key in arg) {
-  					if (hasOwn.call(arg, key) && arg[key]) {
-  						classes.push(key);
-  					}
-  				}
-  			}
-  		}
-
-  		return classes.join(' ');
-  	}
-
-  	if ( module.exports) {
-  		classNames.default = classNames;
-  		module.exports = classNames;
-  	} else {
-  		window.classNames = classNames;
-  	}
-  }());
-  });
-
-  var PopperWrapper = /*#__PURE__*/function (_React$Component) {
-    _inherits(PopperWrapper, _React$Component);
-
-    var _super = _createSuper(PopperWrapper);
-
-    function PopperWrapper(props) {
-      var _this;
-
-      _classCallCheck(this, PopperWrapper);
-
-      _this = _super.call(this, props);
-
-      _defineProperty(_assertThisInitialized(_this), "triggerRef", void 0);
-
-      _defineProperty(_assertThisInitialized(_this), "popupRef", void 0);
-
-      _defineProperty(_assertThisInitialized(_this), "hoverableDelay", void 0);
-
-      _defineProperty(_assertThisInitialized(_this), "_timer", void 0);
-
-      _defineProperty(_assertThisInitialized(_this), "_throttleWait", void 0);
-
-      _defineProperty(_assertThisInitialized(_this), "offsetMapping", void 0);
-
-      _defineProperty(_assertThisInitialized(_this), "togglePopper", function (type, newValue) {
-        var _this$props = _this.props,
-            open = _this$props.open,
-            onToggle = _this$props.onToggle;
-        onToggle(newValue === undefined ? !open : newValue, type);
-      });
-
-      _defineProperty(_assertThisInitialized(_this), "findDOMNode", function (ref) {
-        return ReactDOM.findDOMNode(ref.current);
-      });
-
-      _defineProperty(_assertThisInitialized(_this), "doesEventContainsElement", function (event, ref) {
-        var el = _this.findDOMNode(ref);
-
-        return el && el.contains(event.target);
-      });
-
-      _defineProperty(_assertThisInitialized(_this), "getUpdatedStyle", function (oldStyle, placement, offset) {
-        var style = _this.props.style;
-
-        var newStyle = _objectSpread2(_objectSpread2({}, style), oldStyle);
-
-        var position = placement ? placement.split('-')[0] : placement;
-
-        switch (position) {
-          case 'top':
-            newStyle.marginBottom = _this.offsetMapping[offset];
-            break;
-
-          case 'bottom':
-            newStyle.marginTop = _this.offsetMapping[offset];
-            break;
-
-          case 'left':
-            newStyle.marginRight = _this.offsetMapping[offset];
-            break;
-
-          case 'right':
-            newStyle.marginLeft = _this.offsetMapping[offset];
-            break;
-        }
-
-        return newStyle;
-      });
-
-      _this.state = {};
-      _this.hoverableDelay = 100;
-      _this.offsetMapping = {
-        small: '2px',
-        medium: '4px',
-        large: '8px'
-      };
-      _this.triggerRef = /*#__PURE__*/React.createRef();
-      _this.popupRef = /*#__PURE__*/React.createRef();
-      _this.getPopperChildren = _this.getPopperChildren.bind(_assertThisInitialized(_this));
-      _this.mouseMoveHandler = _this.mouseMoveHandler.bind(_assertThisInitialized(_this));
-      _this.handleMouseEnter = _this.handleMouseEnter.bind(_assertThisInitialized(_this));
-      _this.handleMouseLeave = _this.handleMouseLeave.bind(_assertThisInitialized(_this));
-      _this.boundaryScrollHandler = _this.boundaryScrollHandler.bind(_assertThisInitialized(_this));
-      return _this;
-    }
-
-    _createClass(PopperWrapper, [{
-      key: "componentDidMount",
-      value: function componentDidMount() {
-        this.addBoundaryScrollHandler();
-      }
-    }, {
-      key: "componentDidUpdate",
-      value: function componentDidUpdate(prevProps) {
-        if (!prevProps.boundaryElement && this.props.boundaryElement) {
-          this.removeBoundaryScrollHandler();
-          this.addBoundaryScrollHandler();
-        }
-
-        if (prevProps.open !== this.props.open) {
-          this._throttleWait = false;
-
-          if (this.props.open) {
-            var triggerElement = this.findDOMNode(this.triggerRef);
-            var zIndex = this.getZIndexForLayer(triggerElement);
-            this.setState({
-              zIndex: zIndex === undefined ? zIndex : zIndex + 1
-            });
-          }
-        }
-      }
-    }, {
-      key: "componentWillUnmount",
-      value: function componentWillUnmount() {
-        this.removeBoundaryScrollHandler();
-      }
-    }, {
-      key: "boundaryScrollHandler",
-      value: function boundaryScrollHandler() {
-        var _this$props2 = this.props,
-            open = _this$props2.open,
-            on = _this$props2.on,
-            closeOnScroll = _this$props2.closeOnScroll;
-
-        if (on === 'click' && closeOnScroll) {
-          if (open) {
-            if (!this._throttleWait) {
-              this.togglePopper('onScroll', false);
-              this._throttleWait = true;
-            }
-          }
-        }
-      }
-    }, {
-      key: "addBoundaryScrollHandler",
-      value: function addBoundaryScrollHandler() {
-        if (this.props.boundaryElement) {
-          this.props.boundaryElement.addEventListener('scroll', this.boundaryScrollHandler);
-        }
-      }
-    }, {
-      key: "removeBoundaryScrollHandler",
-      value: function removeBoundaryScrollHandler() {
-        if (this.props.boundaryElement) {
-          this.props.boundaryElement.removeEventListener('scroll', this.boundaryScrollHandler);
-        }
-      }
-    }, {
-      key: "mouseMoveHandler",
-      value: function mouseMoveHandler() {
-        var _this2 = this;
-
-        if (this._timer) clearTimeout(this._timer);
-        this._timer = setTimeout(function () {
-          var onToggle = _this2.props.onToggle;
-          onToggle(false, 'mouseLeave');
-        }, this.hoverableDelay);
-      }
-    }, {
-      key: "handleMouseEnter",
-      value: function handleMouseEnter() {
-        var on = this.props.on;
-
-        if (on === 'hover') {
-          if (this._timer) clearTimeout(this._timer);
-          var onToggle = this.props.onToggle;
-          onToggle(true, 'mouseEnter');
-        }
-      }
-    }, {
-      key: "handleMouseLeave",
-      value: function handleMouseLeave() {
-        var on = this.props.on;
-
-        if (on === 'hover') {
-          var _this$props3 = this.props,
-              hoverable = _this$props3.hoverable,
-              onToggle = _this$props3.onToggle;
-
-          if (hoverable) {
-            this.mouseMoveHandler();
-          } else {
-            onToggle(false, 'mouseLeave');
-          }
-        }
-      }
-    }, {
-      key: "getZIndexForLayer",
-      value: function getZIndexForLayer(node) {
-        if (node === null) {
-          return;
-        }
-
-        var layerNode = node.closest('[data-layer]') || document.body;
-        var zIndex = layerNode === document.body ? 'auto' : parseInt(window.getComputedStyle(layerNode).zIndex || '0', 10);
-        return zIndex === 'auto' || isNaN(zIndex) ? undefined : zIndex;
-      }
-    }, {
-      key: "getTriggerElement",
-      value: function getTriggerElement(ref) {
-        var _this3 = this;
-
-        var _this$props4 = this.props,
-            trigger = _this$props4.trigger,
-            on = _this$props4.on,
-            triggerClass = _this$props4.triggerClass;
-        var options = on === 'hover' ? {
-          ref: ref,
-          onMouseEnter: this.handleMouseEnter,
-          onMouseLeave: this.handleMouseLeave
-        } : {
-          ref: ref,
-          onClick: function onClick() {
-            return _this3.togglePopper('onClick');
-          }
-        };
-        var classes = classnames('PopperWrapper-trigger', triggerClass);
-
-        var onOutsideClickHandler = function onOutsideClickHandler(event) {
-          var _this3$props = _this3.props,
-              open = _this3$props.open,
-              closeOnBackdropClick = _this3$props.closeOnBackdropClick;
-
-          if (open && closeOnBackdropClick) {
-            if (!_this3.doesEventContainsElement(event, _this3.popupRef)) {
-              _this3.togglePopper('outsideClick');
-            }
-          }
-        };
-
-        return /*#__PURE__*/React.createElement(OutsideClick, _extends({
-          className: classes,
-          onOutsideClick: onOutsideClickHandler
-        }, options), trigger);
-      }
-    }, {
-      key: "getPopperChildren",
-      value: function getPopperChildren(_ref) {
-        var ref = _ref.ref,
-            style = _ref.style,
-            placement = _ref.placement,
-            outOfBoundaries = _ref.outOfBoundaries;
-        var _this$props5 = this.props,
-            offset = _this$props5.offset,
-            children = _this$props5.children;
-        var zIndex = this.state.zIndex;
-        var newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
-        var element = /*#__PURE__*/React.cloneElement(children, {
-          ref: ref,
-          style: _objectSpread2(_objectSpread2({}, newStyle), {}, {
-            zIndex: zIndex
-          }),
-          'data-placement': placement,
-          'data-hide': outOfBoundaries,
-          onMouseEnter: this.handleMouseEnter,
-          onMouseLeave: this.handleMouseLeave
-        });
-        return element;
-      }
-    }, {
-      key: "render",
-      value: function render() {
-        var _this4 = this;
-
-        var _this$props6 = this.props,
-            placement = _this$props6.placement,
-            appendToBody = _this$props6.appendToBody,
-            open = _this$props6.open,
-            hide = _this$props6.hide,
-            boundaryElement = _this$props6.boundaryElement;
-        return /*#__PURE__*/React.createElement(Manager, null, /*#__PURE__*/React.createElement(Reference, {
-          innerRef: this.triggerRef
-        }, function (_ref2) {
-          var ref = _ref2.ref;
-          return _this4.getTriggerElement(ref);
-        }), open && appendToBody && /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement(Popper$1, {
-          placement: placement,
-          innerRef: this.popupRef,
-          modifiers: {
-            preventOverflow: {
-              boundariesElement: boundaryElement || document.body
-            },
-            hide: {
-              enabled: hide
-            }
-          }
-        }, this.getPopperChildren), document.body), open && !appendToBody && /*#__PURE__*/React.createElement(Popper$1, {
-          placement: placement,
-          innerRef: this.popupRef
-        }, this.getPopperChildren));
-      }
-    }]);
-
-    return PopperWrapper;
-  }(React.Component);
-
-  _defineProperty(PopperWrapper, "defaultProps", {
-    on: 'click',
-    offset: 'medium',
-    closeOnBackdropClick: true,
-    hoverable: true,
-    appendToBody: true,
-    style: {}
-  });
-
-  var colorToHex = function colorToHex(color) {
-    return getComputedStyle(document.documentElement).getPropertyValue("--".concat(color));
-  };
-
-  var css = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    colorToHex: colorToHex
-  });
-
   var _placeholders;
 
   var placeholders = (_placeholders = {}, _defineProperty(_placeholders, 'hh:mm', '-- : --'), _defineProperty(_placeholders, 'hh:mm AM', '-- : -- AM'), _placeholders);
@@ -5552,8 +619,70 @@
     __proto__: null,
     css: css,
     validators: validators,
-    masks: masks,
-    PopperWrapper: PopperWrapper
+    masks: masks
+  });
+
+  var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+  function unwrapExports (x) {
+  	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+  }
+
+  function createCommonjsModule(fn, module) {
+  	return module = { exports: {} }, fn(module, module.exports), module.exports;
+  }
+
+  function getCjsExportFromNamespace (n) {
+  	return n && n['default'] || n;
+  }
+
+  var classnames = createCommonjsModule(function (module) {
+  /*!
+    Copyright (c) 2017 Jed Watson.
+    Licensed under the MIT License (MIT), see
+    http://jedwatson.github.io/classnames
+  */
+  /* global define */
+
+  (function () {
+
+  	var hasOwn = {}.hasOwnProperty;
+
+  	function classNames () {
+  		var classes = [];
+
+  		for (var i = 0; i < arguments.length; i++) {
+  			var arg = arguments[i];
+  			if (!arg) continue;
+
+  			var argType = typeof arg;
+
+  			if (argType === 'string' || argType === 'number') {
+  				classes.push(arg);
+  			} else if (Array.isArray(arg) && arg.length) {
+  				var inner = classNames.apply(null, arg);
+  				if (inner) {
+  					classes.push(inner);
+  				}
+  			} else if (argType === 'object') {
+  				for (var key in arg) {
+  					if (hasOwn.call(arg, key) && arg[key]) {
+  						classes.push(key);
+  					}
+  				}
+  			}
+  		}
+
+  		return classes.join(' ');
+  	}
+
+  	if (module.exports) {
+  		classNames.default = classNames;
+  		module.exports = classNames;
+  	} else {
+  		window.classNames = classNames;
+  	}
+  }());
   });
 
   // export type DefaultProps<T> = T extends { defaultProps: any }
@@ -5971,7 +1100,7 @@
    * @returns {Function} A new, debounced function.
    */
 
-  function debounce$1 (delay, atBegin, callback) {
+  function debounce (delay, atBegin, callback) {
     return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
   }
 
@@ -7419,7 +2548,7 @@
         _this.updateSelectedOptions(selectedArray, false);
       });
 
-      _defineProperty(_assertThisInitialized(_this), "debounceSearch", debounce$1(300, function () {
+      _defineProperty(_assertThisInitialized(_this), "debounceSearch", debounce(300, function () {
         _this.setState({
           searchInit: false
         }, function () {
@@ -7427,7 +2556,7 @@
         });
       }));
 
-      _defineProperty(_assertThisInitialized(_this), "debounceClear", debounce$1(250, function () {
+      _defineProperty(_assertThisInitialized(_this), "debounceClear", debounce(250, function () {
         return _this.updateOptions(false);
       }));
 
@@ -8192,10 +3321,7 @@
             year = _ref.year,
             month = _ref.month,
             date = _ref.date;
-        dateVal = new Date();
-        dateVal.setDate(date);
-        dateVal.setMonth(month);
-        dateVal.setFullYear(year);
+        dateVal = new Date(year, month, date, 0, 0, 0);
       } else {
         dateVal = d;
       }
@@ -9481,7 +4607,7 @@
 
   var dP = Object.defineProperty;
 
-  var f$1 = _descriptors ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+  var f = _descriptors ? Object.defineProperty : function defineProperty(O, P, Attributes) {
     _anObject(O);
     P = _toPrimitive(P, true);
     _anObject(Attributes);
@@ -9494,7 +4620,7 @@
   };
 
   var _objectDp = {
-  	f: f$1
+  	f: f
   };
 
   var _propertyDesc = function (bitmap, value) {
@@ -9513,9 +4639,9 @@
     return object;
   };
 
-  var hasOwnProperty$1 = {}.hasOwnProperty;
+  var hasOwnProperty = {}.hasOwnProperty;
   var _has = function (it, key) {
-    return hasOwnProperty$1.call(it, key);
+    return hasOwnProperty.call(it, key);
   };
 
   var id = 0;
@@ -9532,7 +4658,7 @@
     return store[key] || (store[key] = value !== undefined ? value : {});
   })('versions', []).push({
     version: _core.version,
-    mode:  'global',
+    mode: 'global',
     copyright: '© 2020 Denis Pushkarev (zloirock.ru)'
   });
   });
@@ -9880,10 +5006,10 @@
     return toString.call(it).slice(8, -1);
   };
 
-  var f$2 = {}.propertyIsEnumerable;
+  var f$1 = {}.propertyIsEnumerable;
 
   var _objectPie = {
-  	f: f$2
+  	f: f$1
   };
 
   // fallback for non-array-like ES3 and non-enumerable old V8 strings
@@ -9906,19 +5032,19 @@
     return _iobject(_defined(it));
   };
 
-  var gOPD$2 = Object.getOwnPropertyDescriptor;
+  var gOPD = Object.getOwnPropertyDescriptor;
 
-  var f$3 = _descriptors ? gOPD$2 : function getOwnPropertyDescriptor(O, P) {
+  var f$2 = _descriptors ? gOPD : function getOwnPropertyDescriptor(O, P) {
     O = _toIobject(O);
     P = _toPrimitive(P, true);
     if (_ie8DomDefine) try {
-      return gOPD$2(O, P);
+      return gOPD(O, P);
     } catch (e) { /* empty */ }
     if (_has(O, P)) return _propertyDesc(!_objectPie.f.call(O, P), O[P]);
   };
 
   var _objectGopd = {
-  	f: f$3
+  	f: f$2
   };
 
   // Works with __proto__ only. Old v8 can't work with null proto objects.
@@ -9947,12 +5073,12 @@
     check: check
   };
 
-  var setPrototypeOf$1 = _setProto.set;
+  var setPrototypeOf = _setProto.set;
   var _inheritIfRequired = function (that, target, C) {
     var S = target.constructor;
     var P;
-    if (S !== C && typeof S == 'function' && (P = S.prototype) !== C.prototype && _isObject(P) && setPrototypeOf$1) {
-      setPrototypeOf$1(that, P);
+    if (S !== C && typeof S == 'function' && (P = S.prototype) !== C.prototype && _isObject(P) && setPrototypeOf) {
+      setPrototypeOf(that, P);
     } return that;
   };
 
@@ -10032,12 +5158,12 @@
 
   var hiddenKeys = _enumBugKeys.concat('length', 'prototype');
 
-  var f$4 = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
+  var f$3 = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
     return _objectKeysInternal(O, hiddenKeys);
   };
 
   var _objectGopn = {
-  	f: f$4
+  	f: f$3
   };
 
   var _stringWs = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
@@ -10134,7 +5260,7 @@
   };
 
   var gOPN = _objectGopn.f;
-  var gOPD$3 = _objectGopd.f;
+  var gOPD$1 = _objectGopd.f;
   var dP$1 = _objectDp.f;
   var $trim = _stringTrim.trim;
   var NUMBER = 'Number';
@@ -10186,9 +5312,9 @@
       // ES6 (in case, if modules with ES6 Number statics required before):
       'EPSILON,isFinite,isInteger,isNaN,isSafeInteger,MAX_SAFE_INTEGER,' +
       'MIN_SAFE_INTEGER,parseFloat,parseInt,isInteger'
-    ).split(','), j = 0, key$1; keys.length > j; j++) {
-      if (_has(Base, key$1 = keys[j]) && !_has($Number, key$1)) {
-        dP$1($Number, key$1, gOPD$3(Base, key$1));
+    ).split(','), j = 0, key; keys.length > j; j++) {
+      if (_has(Base, key = keys[j]) && !_has($Number, key)) {
+        dP$1($Number, key, gOPD$1(Base, key));
       }
     }
     $Number.prototype = proto;
@@ -10435,6 +5561,259 @@
       return nativeGetPrototypeOf.call(Object, object);
     };
   }
+
+  /** @license React v16.13.1
+   * react-is.production.min.js
+   *
+   * Copyright (c) Facebook, Inc. and its affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
+  var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f$4=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
+  Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
+  function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f$4:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}var AsyncMode=l;var ConcurrentMode=m;var ContextConsumer=k;var ContextProvider=h;var Element$1=c;var ForwardRef=n;var Fragment=e;var Lazy=t;var Memo=r;var Portal=d;
+  var Profiler=g;var StrictMode=f$4;var Suspense=p;var isAsyncMode=function(a){return A(a)||z(a)===l};var isConcurrentMode=A;var isContextConsumer=function(a){return z(a)===k};var isContextProvider=function(a){return z(a)===h};var isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};var isForwardRef=function(a){return z(a)===n};var isFragment=function(a){return z(a)===e};var isLazy=function(a){return z(a)===t};
+  var isMemo=function(a){return z(a)===r};var isPortal=function(a){return z(a)===d};var isProfiler=function(a){return z(a)===g};var isStrictMode=function(a){return z(a)===f$4};var isSuspense=function(a){return z(a)===p};
+  var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f$4||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};var typeOf=z;
+
+  var reactIs_production_min = {
+  	AsyncMode: AsyncMode,
+  	ConcurrentMode: ConcurrentMode,
+  	ContextConsumer: ContextConsumer,
+  	ContextProvider: ContextProvider,
+  	Element: Element$1,
+  	ForwardRef: ForwardRef,
+  	Fragment: Fragment,
+  	Lazy: Lazy,
+  	Memo: Memo,
+  	Portal: Portal,
+  	Profiler: Profiler,
+  	StrictMode: StrictMode,
+  	Suspense: Suspense,
+  	isAsyncMode: isAsyncMode,
+  	isConcurrentMode: isConcurrentMode,
+  	isContextConsumer: isContextConsumer,
+  	isContextProvider: isContextProvider,
+  	isElement: isElement,
+  	isForwardRef: isForwardRef,
+  	isFragment: isFragment,
+  	isLazy: isLazy,
+  	isMemo: isMemo,
+  	isPortal: isPortal,
+  	isProfiler: isProfiler,
+  	isStrictMode: isStrictMode,
+  	isSuspense: isSuspense,
+  	isValidElementType: isValidElementType,
+  	typeOf: typeOf
+  };
+
+  var reactIs_development = createCommonjsModule(function (module, exports) {
+  });
+  reactIs_development.AsyncMode;
+  reactIs_development.ConcurrentMode;
+  reactIs_development.ContextConsumer;
+  reactIs_development.ContextProvider;
+  reactIs_development.Element;
+  reactIs_development.ForwardRef;
+  reactIs_development.Fragment;
+  reactIs_development.Lazy;
+  reactIs_development.Memo;
+  reactIs_development.Portal;
+  reactIs_development.Profiler;
+  reactIs_development.StrictMode;
+  reactIs_development.Suspense;
+  reactIs_development.isAsyncMode;
+  reactIs_development.isConcurrentMode;
+  reactIs_development.isContextConsumer;
+  reactIs_development.isContextProvider;
+  reactIs_development.isElement;
+  reactIs_development.isForwardRef;
+  reactIs_development.isFragment;
+  reactIs_development.isLazy;
+  reactIs_development.isMemo;
+  reactIs_development.isPortal;
+  reactIs_development.isProfiler;
+  reactIs_development.isStrictMode;
+  reactIs_development.isSuspense;
+  reactIs_development.isValidElementType;
+  reactIs_development.typeOf;
+
+  createCommonjsModule(function (module) {
+
+  {
+    module.exports = reactIs_production_min;
+  }
+  });
+
+  /*
+  object-assign
+  (c) Sindre Sorhus
+  @license MIT
+  */
+  /* eslint-disable no-unused-vars */
+  var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+  var hasOwnProperty$1 = Object.prototype.hasOwnProperty;
+  var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+  function toObject(val) {
+  	if (val === null || val === undefined) {
+  		throw new TypeError('Object.assign cannot be called with null or undefined');
+  	}
+
+  	return Object(val);
+  }
+
+  function shouldUseNative() {
+  	try {
+  		if (!Object.assign) {
+  			return false;
+  		}
+
+  		// Detect buggy property enumeration order in older V8 versions.
+
+  		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+  		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
+  		test1[5] = 'de';
+  		if (Object.getOwnPropertyNames(test1)[0] === '5') {
+  			return false;
+  		}
+
+  		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+  		var test2 = {};
+  		for (var i = 0; i < 10; i++) {
+  			test2['_' + String.fromCharCode(i)] = i;
+  		}
+  		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+  			return test2[n];
+  		});
+  		if (order2.join('') !== '0123456789') {
+  			return false;
+  		}
+
+  		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+  		var test3 = {};
+  		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+  			test3[letter] = letter;
+  		});
+  		if (Object.keys(Object.assign({}, test3)).join('') !==
+  				'abcdefghijklmnopqrst') {
+  			return false;
+  		}
+
+  		return true;
+  	} catch (err) {
+  		// We don't expect any of the above to throw, but better to be safe.
+  		return false;
+  	}
+  }
+
+  shouldUseNative() ? Object.assign : function (target, source) {
+  	var from;
+  	var to = toObject(target);
+  	var symbols;
+
+  	for (var s = 1; s < arguments.length; s++) {
+  		from = Object(arguments[s]);
+
+  		for (var key in from) {
+  			if (hasOwnProperty$1.call(from, key)) {
+  				to[key] = from[key];
+  			}
+  		}
+
+  		if (getOwnPropertySymbols) {
+  			symbols = getOwnPropertySymbols(from);
+  			for (var i = 0; i < symbols.length; i++) {
+  				if (propIsEnumerable.call(from, symbols[i])) {
+  					to[symbols[i]] = from[symbols[i]];
+  				}
+  			}
+  		}
+  	}
+
+  	return to;
+  };
+
+  /**
+   * Copyright (c) 2013-present, Facebook, Inc.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
+
+  var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+  var ReactPropTypesSecret_1 = ReactPropTypesSecret;
+
+  Function.call.bind(Object.prototype.hasOwnProperty);
+
+  function emptyFunction() {}
+  function emptyFunctionWithReset() {}
+  emptyFunctionWithReset.resetWarningCache = emptyFunction;
+
+  var factoryWithThrowingShims = function() {
+    function shim(props, propName, componentName, location, propFullName, secret) {
+      if (secret === ReactPropTypesSecret_1) {
+        // It is still safe when called from React.
+        return;
+      }
+      var err = new Error(
+        'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+        'Use PropTypes.checkPropTypes() to call them. ' +
+        'Read more at http://fb.me/use-check-prop-types'
+      );
+      err.name = 'Invariant Violation';
+      throw err;
+    }  shim.isRequired = shim;
+    function getShim() {
+      return shim;
+    }  // Important!
+    // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+    var ReactPropTypes = {
+      array: shim,
+      bool: shim,
+      func: shim,
+      number: shim,
+      object: shim,
+      string: shim,
+      symbol: shim,
+
+      any: shim,
+      arrayOf: getShim,
+      element: shim,
+      elementType: shim,
+      instanceOf: getShim,
+      node: shim,
+      objectOf: getShim,
+      oneOf: getShim,
+      oneOfType: getShim,
+      shape: getShim,
+      exact: getShim,
+
+      checkPropTypes: emptyFunctionWithReset,
+      resetWarningCache: emptyFunction
+    };
+
+    ReactPropTypes.PropTypes = ReactPropTypes;
+
+    return ReactPropTypes;
+  };
+
+  var propTypes = createCommonjsModule(function (module) {
+  /**
+   * Copyright (c) 2013-present, Facebook, Inc.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
+
+  {
+    // By explicitly using `prop-types` you are opting into new production behavior.
+    // http://fb.me/prop-types-in-prod
+    module.exports = factoryWithThrowingShims();
+  }
+  });
 
   /**
    * Checks if `value` is `null` or `undefined`.
@@ -10712,7 +6091,7 @@
    * _.isFunction(/abc/);
    * // => false
    */
-  function isFunction$2(value) {
+  function isFunction(value) {
     if (!isObject_1(value)) {
       return false;
     }
@@ -10722,7 +6101,7 @@
     return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
   }
 
-  var isFunction_1 = isFunction$2;
+  var isFunction_1 = isFunction;
 
   /** `Object#toString` result references. */
   var symbolTag = '[object Symbol]';
@@ -11478,10 +6857,10 @@
   var _memoizeCapped = memoizeCapped;
 
   /** Used to match property names within property paths. */
-  var rePropName$1 = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
+  var rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
 
   /** Used to match backslashes in property paths. */
-  var reEscapeChar$1 = /\\(\\)?/g;
+  var reEscapeChar = /\\(\\)?/g;
 
   /**
    * Converts `string` to a property path array.
@@ -11490,18 +6869,18 @@
    * @param {string} string The string to convert.
    * @returns {Array} Returns the property path array.
    */
-  var stringToPath$1 = _memoizeCapped(function(string) {
+  var stringToPath = _memoizeCapped(function(string) {
     var result = [];
     if (string.charCodeAt(0) === 46 /* . */) {
       result.push('');
     }
-    string.replace(rePropName$1, function(match, number, quote, subString) {
-      result.push(quote ? subString.replace(reEscapeChar$1, '$1') : (number || match));
+    string.replace(rePropName, function(match, number, quote, subString) {
+      result.push(quote ? subString.replace(reEscapeChar, '$1') : (number || match));
     });
     return result;
   });
 
-  var _stringToPath = stringToPath$1;
+  var _stringToPath = stringToPath;
 
   /**
    * A specialized version of `_.map` for arrays without support for iteratee
@@ -11887,9 +7266,9 @@
 
   function _arrayWithoutHoles$1(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
-  function _objectWithoutProperties$1(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$2(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+  function _objectWithoutProperties$1(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$1(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
-  function _objectWithoutPropertiesLoose$2(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+  function _objectWithoutPropertiesLoose$1(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
   var PRESENTATION_ATTRIBUTES = {
     'aria-current': propTypes.string,
     // state
@@ -12343,11 +7722,11 @@
     return result;
   };
 
-  function _extends$2() { _extends$2 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$2.apply(this, arguments); }
+  function _extends$1() { _extends$1 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1.apply(this, arguments); }
 
-  function _objectWithoutProperties$2(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$3(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+  function _objectWithoutProperties$2(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$2(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
-  function _objectWithoutPropertiesLoose$3(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+  function _objectWithoutPropertiesLoose$2(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
   var propTypes$1 = {
     width: propTypes.number.isRequired,
     height: propTypes.number.isRequired,
@@ -12379,7 +7758,7 @@
     };
     var layerClass = classnames('recharts-surface', className);
     var attrs = getPresentationAttributes(others);
-    return React__default['default'].createElement("svg", _extends$2({}, attrs, {
+    return React__default['default'].createElement("svg", _extends$1({}, attrs, {
       className: layerClass,
       width: width,
       height: height,
@@ -12391,11 +7770,11 @@
 
   Surface.propTypes = propTypes$1;
 
-  function _extends$3() { _extends$3 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$3.apply(this, arguments); }
+  function _extends$2() { _extends$2 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$2.apply(this, arguments); }
 
-  function _objectWithoutProperties$3(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$4(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+  function _objectWithoutProperties$3(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$3(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
-  function _objectWithoutPropertiesLoose$4(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+  function _objectWithoutPropertiesLoose$3(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
   var propTypes$2 = {
     className: propTypes.string,
     children: propTypes.oneOfType([propTypes.arrayOf(propTypes.node), propTypes.node])
@@ -12407,7 +7786,7 @@
         others = _objectWithoutProperties$3(props, ["children", "className"]);
 
     var layerClass = classnames('recharts-layer', className);
-    return React__default['default'].createElement("g", _extends$3({
+    return React__default['default'].createElement("g", _extends$2({
       className: layerClass
     }, others), children);
   }
@@ -13037,12 +8416,12 @@
    * _.isArguments([1, 2, 3]);
    * // => false
    */
-  var isArguments$2 = _baseIsArguments(function() { return arguments; }()) ? _baseIsArguments : function(value) {
+  var isArguments = _baseIsArguments(function() { return arguments; }()) ? _baseIsArguments : function(value) {
     return isObjectLike_1(value) && hasOwnProperty$6.call(value, 'callee') &&
       !propertyIsEnumerable$1.call(value, 'callee');
   };
 
-  var isArguments_1 = isArguments$2;
+  var isArguments_1 = isArguments;
 
   /**
    * This method returns `false`.
@@ -13065,7 +8444,7 @@
 
   var isBuffer_1 = createCommonjsModule(function (module, exports) {
   /** Detect free variable `exports`. */
-  var freeExports =  exports && !exports.nodeType && exports;
+  var freeExports = exports && !exports.nodeType && exports;
 
   /** Detect free variable `module`. */
   var freeModule = freeExports && 'object' == 'object' && module && !module.nodeType && module;
@@ -13237,7 +8616,7 @@
 
   var _nodeUtil = createCommonjsModule(function (module, exports) {
   /** Detect free variable `exports`. */
-  var freeExports =  exports && !exports.nodeType && exports;
+  var freeExports = exports && !exports.nodeType && exports;
 
   /** Detect free variable `module`. */
   var freeModule = freeExports && 'object' == 'object' && module && !module.nodeType && module;
@@ -14667,7 +10046,7 @@
     return area;
   }
 
-  var slice$2 = Array.prototype.slice;
+  var slice = Array.prototype.slice;
 
   var symbolCircle = {
     draw: function(context, size) {
@@ -15250,7 +10629,7 @@
     }
 
     stack.keys = function(_) {
-      return arguments.length ? (keys = typeof _ === "function" ? _ : constant(slice$2.call(_)), stack) : keys;
+      return arguments.length ? (keys = typeof _ === "function" ? _ : constant(slice.call(_)), stack) : keys;
     };
 
     stack.value = function(_) {
@@ -15258,7 +10637,7 @@
     };
 
     stack.order = function(_) {
-      return arguments.length ? (order = _ == null ? stackOrderNone : typeof _ === "function" ? _ : constant(slice$2.call(_)), stack) : order;
+      return arguments.length ? (order = _ == null ? stackOrderNone : typeof _ === "function" ? _ : constant(slice.call(_)), stack) : order;
     };
 
     stack.offset = function(_) {
@@ -15311,13 +10690,13 @@
 
   function ownKeys$1(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$1(source, true).forEach(function (key) { _defineProperty$2(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$1(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$1(source, true).forEach(function (key) { _defineProperty$1(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$1(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$2(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$1(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _typeof$1(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$1 = function _typeof(obj) { return typeof obj; }; } else { _typeof$1 = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$1(obj); }
 
-  function _extends$4() { _extends$4 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$4.apply(this, arguments); }
+  function _extends$3() { _extends$3 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$3.apply(this, arguments); }
 
   function _classCallCheck$1(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -15325,9 +10704,9 @@
 
   function _createClass$1(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$1(Constructor.prototype, protoProps); if (staticProps) _defineProperties$1(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$1(self, call) { if (call && (_typeof$1(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$2(self); }
+  function _possibleConstructorReturn$1(self, call) { if (call && (_typeof$1(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$1(self); }
 
-  function _assertThisInitialized$2(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$1(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$1(o) { _getPrototypeOf$1 = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$1(o); }
 
@@ -15419,7 +10798,7 @@
             size = _this$props2.size;
 
         if (cx === +cx && cy === +cy && size === +size) {
-          return React__default['default'].createElement("path", _extends$4({}, getPresentationAttributes(this.props), filterEventAttributes(this.props), {
+          return React__default['default'].createElement("path", _extends$3({}, getPresentationAttributes(this.props), filterEventAttributes(this.props), {
             className: classnames('recharts-symbols', className),
             transform: "translate(".concat(cx, ", ").concat(cy, ")"),
             d: this.getPath()
@@ -15450,9 +10829,9 @@
 
   function _typeof$2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$2 = function _typeof(obj) { return typeof obj; }; } else { _typeof$2 = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$2(obj); }
 
-  function _extends$5() { _extends$5 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$5.apply(this, arguments); }
+  function _extends$4() { _extends$4 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$4.apply(this, arguments); }
 
-  function _defineProperty$3(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$2(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _classCallCheck$2(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -15460,9 +10839,9 @@
 
   function _createClass$2(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$2(Constructor.prototype, protoProps); if (staticProps) _defineProperties$2(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$2(self, call) { if (call && (_typeof$2(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$3(self); }
+  function _possibleConstructorReturn$2(self, call) { if (call && (_typeof$2(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$2(self); }
 
-  function _assertThisInitialized$3(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$2(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$2(o) { _getPrototypeOf$2 = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$2(o); }
 
@@ -15578,13 +10957,13 @@
           var finalFormatter = entry.formatter || formatter;
           var className = classnames((_classNames = {
             'recharts-legend-item': true
-          }, _defineProperty$3(_classNames, "legend-item-".concat(i), true), _defineProperty$3(_classNames, "inactive", entry.inactive), _classNames));
+          }, _defineProperty$2(_classNames, "legend-item-".concat(i), true), _defineProperty$2(_classNames, "inactive", entry.inactive), _classNames));
 
           if (entry.type === 'none') {
             return null;
           }
 
-          return React__default['default'].createElement("li", _extends$5({
+          return React__default['default'].createElement("li", _extends$4({
             className: className,
             style: itemStyle,
             key: "legend-item-".concat(i) // eslint-disable-line react/no-array-index-key
@@ -15657,9 +11036,9 @@
 
   function ownKeys$2(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$1(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$2(source, true).forEach(function (key) { _defineProperty$4(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$2(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$1(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$2(source, true).forEach(function (key) { _defineProperty$3(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$2(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$4(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$3(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _classCallCheck$3(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -15667,9 +11046,9 @@
 
   function _createClass$3(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$3(Constructor.prototype, protoProps); if (staticProps) _defineProperties$3(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$3(self, call) { if (call && (_typeof$3(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$4(self); }
+  function _possibleConstructorReturn$3(self, call) { if (call && (_typeof$3(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$3(self); }
 
-  function _assertThisInitialized$4(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$3(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$3(o) { _getPrototypeOf$3 = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$3(o); }
 
@@ -16072,7 +11451,7 @@
   var cancel = function() {
     caf.apply(root$1, arguments);
   };
-  var polyfill$3 = function(object) {
+  var polyfill = function(object) {
     if (!object) {
       object = root$1;
     }
@@ -16080,7 +11459,7 @@
     object.cancelAnimationFrame = caf;
   };
   raf_1.cancel = cancel;
-  raf_1.polyfill = polyfill$3;
+  raf_1.polyfill = polyfill;
 
   function setRafTimeout(callback) {
     var timeout = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
@@ -16327,7 +11706,7 @@
 
   var constant_1 = constant$1;
 
-  var defineProperty$4 = (function() {
+  var defineProperty = (function() {
     try {
       var func = _getNative(Object, 'defineProperty');
       func({}, '', {});
@@ -16335,7 +11714,7 @@
     } catch (e) {}
   }());
 
-  var _defineProperty$5 = defineProperty$4;
+  var _defineProperty$4 = defineProperty;
 
   /**
    * The base implementation of `setToString` without support for hot loop shorting.
@@ -16345,8 +11724,8 @@
    * @param {Function} string The `toString` result.
    * @returns {Function} Returns `func`.
    */
-  var baseSetToString = !_defineProperty$5 ? identity_1 : function(func, string) {
-    return _defineProperty$5(func, 'toString', {
+  var baseSetToString = !_defineProperty$4 ? identity_1 : function(func, string) {
+    return _defineProperty$4(func, 'toString', {
       'configurable': true,
       'enumerable': false,
       'value': constant_1(string),
@@ -16490,9 +11869,9 @@
 
   var intersection_1 = intersection;
 
-  function _objectSpread$2(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty$6(target, key, source[key]); }); } return target; }
+  function _objectSpread$2(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty$5(target, key, source[key]); }); } return target; }
 
-  function _defineProperty$6(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$5(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   /* eslint no-console: 0 */
   var PREFIX_LIST = ['Webkit', 'Moz', 'O', 'ms'];
@@ -16521,7 +11900,7 @@
 
   var generatePrefixStyle = function generatePrefixStyle(name, value) {
     if (IN_COMPATIBLE_PROPERTY.indexOf(name) === -1) {
-      return _defineProperty$6({}, name, value);
+      return _defineProperty$5({}, name, value);
     }
 
     var isTransition = name === 'transition';
@@ -16534,7 +11913,7 @@
         styleVal = value.replace(/(transform|transform-origin)/gim, "".concat(IN_LINE_PREFIX_LIST[i], "$1"));
       }
 
-      return _objectSpread$2({}, result, _defineProperty$6({}, property + camelName, styleVal));
+      return _objectSpread$2({}, result, _defineProperty$5({}, property + camelName, styleVal));
     }, {});
   };
   /*
@@ -16544,7 +11923,7 @@
 
   var mapObject = function mapObject(fn, obj) {
     return Object.keys(obj).reduce(function (res, key) {
-      return _objectSpread$2({}, res, _defineProperty$6({}, key, fn(key, obj[key])));
+      return _objectSpread$2({}, res, _defineProperty$5({}, key, fn(key, obj[key])));
     }, {});
   };
   /*
@@ -16945,9 +12324,9 @@
 
   function _arrayWithoutHoles$3(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
-  function _objectSpread$3(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty$7(target, key, source[key]); }); } return target; }
+  function _objectSpread$3(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty$6(target, key, source[key]); }); } return target; }
 
-  function _defineProperty$7(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$6(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _slicedToArray$2(arr, i) { return _arrayWithHoles$3(arr) || _iterableToArrayLimit$2(arr, i) || _nonIterableRest$3(); }
 
@@ -17009,10 +12388,10 @@
   var configUpdate = (function (from, to, easing, duration, render) {
     var interKeys = getIntersectionKeys(from, to);
     var timingStyle = interKeys.reduce(function (res, key) {
-      return _objectSpread$3({}, res, _defineProperty$7({}, key, [from[key], to[key]]));
+      return _objectSpread$3({}, res, _defineProperty$6({}, key, [from[key], to[key]]));
     }, {});
     var stepperStyle = interKeys.reduce(function (res, key) {
-      return _objectSpread$3({}, res, _defineProperty$7({}, key, {
+      return _objectSpread$3({}, res, _defineProperty$6({}, key, {
         from: from[key],
         velocity: 0,
         to: to[key]
@@ -17090,9 +12469,9 @@
 
   function _typeof$5(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$5 = function _typeof(obj) { return typeof obj; }; } else { _typeof$5 = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$5(obj); }
 
-  function _objectWithoutProperties$4(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$5(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+  function _objectWithoutProperties$4(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$4(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
-  function _objectWithoutPropertiesLoose$5(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+  function _objectWithoutPropertiesLoose$4(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
   function _toConsumableArray$4(arr) { return _arrayWithoutHoles$4(arr) || _iterableToArray$5(arr) || _nonIterableSpread$4(); }
 
@@ -17102,9 +12481,9 @@
 
   function _arrayWithoutHoles$4(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
-  function _objectSpread$4(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty$8(target, key, source[key]); }); } return target; }
+  function _objectSpread$4(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty$7(target, key, source[key]); }); } return target; }
 
-  function _defineProperty$8(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$7(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _classCallCheck$4(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -17112,7 +12491,7 @@
 
   function _createClass$4(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$4(Constructor.prototype, protoProps); if (staticProps) _defineProperties$4(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$4(self, call) { if (call && (_typeof$5(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$5(self); }
+  function _possibleConstructorReturn$4(self, call) { if (call && (_typeof$5(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$4(self); }
 
   function _getPrototypeOf$4(o) { _getPrototypeOf$4 = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$4(o); }
 
@@ -17120,7 +12499,7 @@
 
   function _setPrototypeOf$4(o, p) { _setPrototypeOf$4 = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf$4(o, p); }
 
-  function _assertThisInitialized$5(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$4(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   var Animate =
   /*#__PURE__*/
@@ -17140,8 +12519,8 @@
           to = _this$props.to,
           steps = _this$props.steps,
           children = _this$props.children;
-      _this.handleStyleChange = _this.handleStyleChange.bind(_assertThisInitialized$5(_assertThisInitialized$5(_this)));
-      _this.changeStyle = _this.changeStyle.bind(_assertThisInitialized$5(_assertThisInitialized$5(_this)));
+      _this.handleStyleChange = _this.handleStyleChange.bind(_assertThisInitialized$4(_assertThisInitialized$4(_this)));
+      _this.changeStyle = _this.changeStyle.bind(_assertThisInitialized$4(_assertThisInitialized$4(_this)));
 
       if (!isActive) {
         _this.state = {
@@ -17170,7 +12549,7 @@
         }
 
         _this.state = {
-          style: attributeName ? _defineProperty$8({}, attributeName, from) : from
+          style: attributeName ? _defineProperty$7({}, attributeName, from) : from
         };
       } else {
         _this.state = {
@@ -17210,7 +12589,7 @@
 
         if (!isActive) {
           var newState = {
-            style: attributeName ? _defineProperty$8({}, attributeName, this.props.to) : this.props.to
+            style: attributeName ? _defineProperty$7({}, attributeName, this.props.to) : this.props.to
           };
 
           if (this.state && this.state.style) {
@@ -17241,7 +12620,7 @@
 
         if (this.state && this.state.style) {
           var _newState = {
-            style: attributeName ? _defineProperty$8({}, attributeName, from) : from
+            style: attributeName ? _defineProperty$7({}, attributeName, from) : from
           };
 
           if (attributeName && this.state.style[attributeName] !== from || !attributeName && this.state.style !== from) {
@@ -17369,7 +12748,7 @@
           return;
         }
 
-        var to = attributeName ? _defineProperty$8({}, attributeName, propsTo) : propsTo;
+        var to = attributeName ? _defineProperty$7({}, attributeName, propsTo) : propsTo;
         var transition = getTransitionVal(Object.keys(to), duration, easing);
         manager.start([onAnimationStart, begin, _objectSpread$4({}, to, {
           transition: transition
@@ -17799,9 +13178,9 @@
 
   function ownKeys$3(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$5(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$3(source, true).forEach(function (key) { _defineProperty$9(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$3(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$5(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$3(source, true).forEach(function (key) { _defineProperty$8(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$3(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$9(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$8(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _classCallCheck$5(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -17809,9 +13188,9 @@
 
   function _createClass$5(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$5(Constructor.prototype, protoProps); if (staticProps) _defineProperties$5(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$5(self, call) { if (call && (_typeof$6(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$6(self); }
+  function _possibleConstructorReturn$5(self, call) { if (call && (_typeof$6(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$5(self); }
 
-  function _assertThisInitialized$6(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$5(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$5(o) { _getPrototypeOf$5 = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$5(o); }
 
@@ -17976,9 +13355,9 @@
 
   function ownKeys$4(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$6(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$4(source, true).forEach(function (key) { _defineProperty$a(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$4(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$6(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$4(source, true).forEach(function (key) { _defineProperty$9(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$4(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$a(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$9(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _classCallCheck$6(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -17986,9 +13365,9 @@
 
   function _createClass$6(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$6(Constructor.prototype, protoProps); if (staticProps) _defineProperties$6(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$6(self, call) { if (call && (_typeof$7(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$7(self); }
+  function _possibleConstructorReturn$6(self, call) { if (call && (_typeof$7(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$6(self); }
 
-  function _assertThisInitialized$7(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$6(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$6(o) { _getPrototypeOf$6 = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$6(o); }
 
@@ -18259,7 +13638,7 @@
           }), {}, outerStyle);
         }
 
-        var cls = classnames(CLS_PREFIX, (_classNames = {}, _defineProperty$a(_classNames, "".concat(CLS_PREFIX, "-right"), isNumber$1(translateX) && coordinate && isNumber$1(coordinate.x) && translateX >= coordinate.x), _defineProperty$a(_classNames, "".concat(CLS_PREFIX, "-left"), isNumber$1(translateX) && coordinate && isNumber$1(coordinate.x) && translateX < coordinate.x), _defineProperty$a(_classNames, "".concat(CLS_PREFIX, "-bottom"), isNumber$1(translateY) && coordinate && isNumber$1(coordinate.y) && translateY >= coordinate.y), _defineProperty$a(_classNames, "".concat(CLS_PREFIX, "-top"), isNumber$1(translateY) && coordinate && isNumber$1(coordinate.y) && translateY < coordinate.y), _classNames));
+        var cls = classnames(CLS_PREFIX, (_classNames = {}, _defineProperty$9(_classNames, "".concat(CLS_PREFIX, "-right"), isNumber$1(translateX) && coordinate && isNumber$1(coordinate.x) && translateX >= coordinate.x), _defineProperty$9(_classNames, "".concat(CLS_PREFIX, "-left"), isNumber$1(translateX) && coordinate && isNumber$1(coordinate.x) && translateX < coordinate.x), _defineProperty$9(_classNames, "".concat(CLS_PREFIX, "-bottom"), isNumber$1(translateY) && coordinate && isNumber$1(coordinate.y) && translateY >= coordinate.y), _defineProperty$9(_classNames, "".concat(CLS_PREFIX, "-top"), isNumber$1(translateY) && coordinate && isNumber$1(coordinate.y) && translateY < coordinate.y), _classNames));
         return React__default['default'].createElement("div", {
           className: cls,
           style: outerStyle,
@@ -18426,7 +13805,7 @@
    * // Cancel the trailing debounced invocation.
    * jQuery(window).on('popstate', debounced.cancel);
    */
-  function debounce$2(func, wait, options) {
+  function debounce$1(func, wait, options) {
     var lastArgs,
         lastThis,
         maxWait,
@@ -18551,7 +13930,7 @@
     return debounced;
   }
 
-  var debounce_1 = debounce$2;
+  var debounce_1 = debounce$1;
 
   /**
    * A collection of shims that provide minimal functionality of the ES6 collections.
@@ -18662,7 +14041,7 @@
   /**
    * Detects whether window and document objects are available in current environment.
    */
-  var isBrowser$1 = typeof window !== 'undefined' && typeof document !== 'undefined' && window.document === document;
+  var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined' && window.document === document;
 
   // Returns global object of a current environment.
   var global$1 = (function () {
@@ -18881,7 +14260,7 @@
       ResizeObserverController.prototype.connect_ = function () {
           // Do nothing if running in a non-browser environment or if listeners
           // have been already added.
-          if (!isBrowser$1 || this.connected_) {
+          if (!isBrowser || this.connected_) {
               return;
           }
           // Subscription to the "Transitionend" event is used as a workaround for
@@ -18913,7 +14292,7 @@
       ResizeObserverController.prototype.disconnect_ = function () {
           // Do nothing if running in a non-browser environment or if listeners
           // have been already removed.
-          if (!isBrowser$1 || !this.connected_) {
+          if (!isBrowser || !this.connected_) {
               return;
           }
           document.removeEventListener('transitionend', this.onTransitionEnd_);
@@ -19019,7 +14398,7 @@
    * @param {...string} positions - Borders positions (top, right, ...)
    * @returns {number}
    */
-  function getBordersSize$1(styles) {
+  function getBordersSize(styles) {
       var positions = [];
       for (var _i = 1; _i < arguments.length; _i++) {
           positions[_i - 1] = arguments[_i];
@@ -19096,10 +14475,10 @@
           // properties then it's either IE, and thus we don't need to subtract
           // anything, or an element merely doesn't have paddings/borders styles.
           if (Math.round(width + horizPad) !== clientWidth) {
-              width -= getBordersSize$1(styles, 'left', 'right') + horizPad;
+              width -= getBordersSize(styles, 'left', 'right') + horizPad;
           }
           if (Math.round(height + vertPad) !== clientHeight) {
-              height -= getBordersSize$1(styles, 'top', 'bottom') + vertPad;
+              height -= getBordersSize(styles, 'top', 'bottom') + vertPad;
           }
       }
       // Following steps can't be applied to the document's root element as its
@@ -19161,7 +14540,7 @@
    * @returns {DOMRectInit}
    */
   function getContentRect(target) {
-      if (!isBrowser$1) {
+      if (!isBrowser) {
           return emptyRect;
       }
       if (isSVGGraphicsElement(target)) {
@@ -19610,7 +14989,7 @@
    * // Cancel the trailing debounced invocation.
    * jQuery(window).on('popstate', debounced.cancel);
    */
-  function debounce$3(func, wait, options) {
+  function debounce$2(func, wait, options) {
     var lastArgs,
         lastThis,
         maxWait,
@@ -19856,7 +15235,7 @@
       : (reIsBadHex$1.test(value) ? NAN$1 : +value);
   }
 
-  var lodash_debounce = debounce$3;
+  var lodash_debounce = debounce$2;
 
   /**
    * lodash (Custom Build) <https://lodash.com/>
@@ -19988,7 +15367,7 @@
    * // Cancel the trailing debounced invocation.
    * jQuery(window).on('popstate', debounced.cancel);
    */
-  function debounce$4(func, wait, options) {
+  function debounce$3(func, wait, options) {
     var lastArgs,
         lastThis,
         maxWait,
@@ -20165,7 +15544,7 @@
       leading = 'leading' in options ? !!options.leading : leading;
       trailing = 'trailing' in options ? !!options.trailing : trailing;
     }
-    return debounce$4(func, wait, {
+    return debounce$3(func, wait, {
       'leading': leading,
       'maxWait': wait,
       'trailing': trailing
@@ -20450,7 +15829,7 @@
 
   unwrapExports(ResizeDetector_1);
 
-  var lib$1 = createCommonjsModule(function (module, exports) {
+  var lib = createCommonjsModule(function (module, exports) {
 
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -20465,7 +15844,7 @@
   exports.default = _ResizeDetector2.default;
   });
 
-  var ReactResizeDetector = unwrapExports(lib$1);
+  var ReactResizeDetector = unwrapExports(lib);
 
   /* eslint no-console: 0 */
   var warn = function warn(condition, format, a, b, c, d, e, f) {
@@ -20479,9 +15858,9 @@
 
   function _createClass$7(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$7(Constructor.prototype, protoProps); if (staticProps) _defineProperties$7(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$7(self, call) { if (call && (_typeof$8(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$8(self); }
+  function _possibleConstructorReturn$7(self, call) { if (call && (_typeof$8(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$7(self); }
 
-  function _assertThisInitialized$8(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$7(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$7(o) { _getPrototypeOf$7 = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$7(o); }
 
@@ -20663,9 +16042,9 @@
 
   function ownKeys$5(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$7(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$5(source, true).forEach(function (key) { _defineProperty$b(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$5(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$7(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$5(source, true).forEach(function (key) { _defineProperty$a(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$5(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$b(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$a(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function Cell() {
     return null;
@@ -21766,9 +17145,9 @@
 
   function ownKeys$6(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$8(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$6(source, true).forEach(function (key) { _defineProperty$c(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$6(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$8(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$6(source, true).forEach(function (key) { _defineProperty$b(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$6(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$c(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$b(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _toConsumableArray$5(arr) { return _arrayWithoutHoles$5(arr) || _iterableToArray$6(arr) || _nonIterableSpread$5(); }
 
@@ -21908,17 +17287,17 @@
 
   function ownKeys$7(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$9(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$7(source, true).forEach(function (key) { _defineProperty$d(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$7(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$9(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$7(source, true).forEach(function (key) { _defineProperty$c(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$7(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$d(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$c(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _typeof$9(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$9 = function _typeof(obj) { return typeof obj; }; } else { _typeof$9 = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$9(obj); }
 
-  function _extends$6() { _extends$6 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$6.apply(this, arguments); }
+  function _extends$5() { _extends$5 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$5.apply(this, arguments); }
 
-  function _objectWithoutProperties$5(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$6(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+  function _objectWithoutProperties$5(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$5(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
-  function _objectWithoutPropertiesLoose$6(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+  function _objectWithoutPropertiesLoose$5(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
   function _classCallCheck$8(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -21926,9 +17305,9 @@
 
   function _createClass$8(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$8(Constructor.prototype, protoProps); if (staticProps) _defineProperties$8(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$8(self, call) { if (call && (_typeof$9(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$9(self); }
+  function _possibleConstructorReturn$8(self, call) { if (call && (_typeof$9(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$8(self); }
 
-  function _assertThisInitialized$9(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$8(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$8(o) { _getPrototypeOf$8 = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$8(o); }
 
@@ -22103,7 +17482,7 @@
           textProps.transform = transforms.join(' ');
         }
 
-        return React__default['default'].createElement("text", _extends$6({}, getPresentationAttributes(textProps), filterEventAttributes(textProps), {
+        return React__default['default'].createElement("text", _extends$5({}, getPresentationAttributes(textProps), filterEventAttributes(textProps), {
           x: x,
           y: y,
           className: classnames('recharts-text', className),
@@ -24928,7 +20307,7 @@
   getNiceTickValues_1.getTickValues;
   getNiceTickValues_1.getNiceTickValues;
 
-  var lib$2 = createCommonjsModule(function (module, exports) {
+  var lib$1 = createCommonjsModule(function (module, exports) {
 
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -24953,10 +20332,10 @@
   });
   });
 
-  unwrapExports(lib$2);
-  lib$2.getTickValues;
-  var lib_2 = lib$2.getNiceTickValues;
-  var lib_3 = lib$2.getTickValuesFixedDomain;
+  unwrapExports(lib$1);
+  lib$1.getTickValues;
+  var lib_2 = lib$1.getNiceTickValues;
+  var lib_3 = lib$1.getTickValuesFixedDomain;
 
   function ascending(a, b) {
     return a < b ? -1 : a > b ? 1 : a >= b ? 0 : NaN;
@@ -25195,7 +20574,7 @@
   var array = Array.prototype;
 
   var map$2 = array.map;
-  var slice$3 = array.slice;
+  var slice$1 = array.slice;
 
   var implicit = {name: "implicit"};
 
@@ -25223,7 +20602,7 @@
     };
 
     scale.range = function(_) {
-      return arguments.length ? (range = slice$3.call(_), scale) : range.slice();
+      return arguments.length ? (range = slice$1.call(_), scale) : range.slice();
     };
 
     scale.unknown = function(_) {
@@ -26016,11 +21395,11 @@
     };
 
     scale.range = function(_) {
-      return arguments.length ? (range = slice$3.call(_), rescale()) : range.slice();
+      return arguments.length ? (range = slice$1.call(_), rescale()) : range.slice();
     };
 
     scale.rangeRound = function(_) {
-      return range = slice$3.call(_), interpolate = interpolateRound, rescale();
+      return range = slice$1.call(_), interpolate = interpolateRound, rescale();
     };
 
     scale.clamp = function(_) {
@@ -26767,7 +22146,7 @@
     };
 
     scale.range = function(_) {
-      return arguments.length ? (range = slice$3.call(_), rescale()) : range.slice();
+      return arguments.length ? (range = slice$1.call(_), rescale()) : range.slice();
     };
 
     scale.unknown = function(_) {
@@ -26812,7 +22191,7 @@
     };
 
     scale.range = function(_) {
-      return arguments.length ? (n = (range = slice$3.call(_)).length - 1, rescale()) : range.slice();
+      return arguments.length ? (n = (range = slice$1.call(_)).length - 1, rescale()) : range.slice();
     };
 
     scale.invertExtent = function(y) {
@@ -26852,11 +22231,11 @@
     }
 
     scale.domain = function(_) {
-      return arguments.length ? (domain = slice$3.call(_), n = Math.min(domain.length, range.length - 1), scale) : domain.slice();
+      return arguments.length ? (domain = slice$1.call(_), n = Math.min(domain.length, range.length - 1), scale) : domain.slice();
     };
 
     scale.range = function(_) {
-      return arguments.length ? (range = slice$3.call(_), n = Math.min(domain.length, range.length - 1), scale) : range.slice();
+      return arguments.length ? (range = slice$1.call(_), n = Math.min(domain.length, range.length - 1), scale) : range.slice();
     };
 
     scale.invertExtent = function(y) {
@@ -28227,7 +23606,7 @@
 
   function _typeof$a(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$a = function _typeof(obj) { return typeof obj; }; } else { _typeof$a = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$a(obj); }
 
-  function _extends$7() { _extends$7 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$7.apply(this, arguments); }
+  function _extends$6() { _extends$6 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$6.apply(this, arguments); }
 
   function _slicedToArray$4(arr, i) { return _arrayWithHoles$5(arr) || _iterableToArrayLimit$4(arr, i) || _nonIterableRest$5(); }
 
@@ -28237,9 +23616,9 @@
 
   function _arrayWithHoles$5(arr) { if (Array.isArray(arr)) return arr; }
 
-  function _objectWithoutProperties$6(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$7(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+  function _objectWithoutProperties$6(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$6(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
-  function _objectWithoutPropertiesLoose$7(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+  function _objectWithoutPropertiesLoose$6(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
   function _classCallCheck$9(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -28247,9 +23626,9 @@
 
   function _createClass$9(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$9(Constructor.prototype, protoProps); if (staticProps) _defineProperties$9(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$9(self, call) { if (call && (_typeof$a(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$a(self); }
+  function _possibleConstructorReturn$9(self, call) { if (call && (_typeof$a(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$9(self); }
 
-  function _assertThisInitialized$a(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$9(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$9(o) { _getPrototypeOf$9 = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$9(o); }
 
@@ -28360,7 +23739,7 @@
           }
 
           return (// eslint-disable-next-line react/no-array-index-key
-            React__default['default'].createElement(Layer, _extends$7({
+            React__default['default'].createElement(Layer, _extends$6({
               className: "recharts-errorBar",
               key: "bar-".concat(i)
             }, props), React__default['default'].createElement("line", coordsTop), React__default['default'].createElement("line", coordsMid), React__default['default'].createElement("line", coordsBot))
@@ -28409,9 +23788,9 @@
 
   function ownKeys$8(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$a(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$8(source, true).forEach(function (key) { _defineProperty$e(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$8(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$a(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$8(source, true).forEach(function (key) { _defineProperty$d(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$8(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$e(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$d(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
   var getValueByDataKey = function getValueByDataKey(obj, dataKey, defaultValue) {
     if (isNil_1(obj) || isNil_1(dataKey)) {
       return defaultValue;
@@ -28772,11 +24151,11 @@
           layout = legendProps.layout;
 
       if ((layout === 'vertical' || layout === 'horizontal' && verticalAlign === 'center') && isNumber$1(offset[align])) {
-        newOffset = _objectSpread$a({}, offset, _defineProperty$e({}, align, newOffset[align] + (box.width || 0)));
+        newOffset = _objectSpread$a({}, offset, _defineProperty$d({}, align, newOffset[align] + (box.width || 0)));
       }
 
       if ((layout === 'horizontal' || layout === 'vertical' && align === 'center') && isNumber$1(offset[verticalAlign])) {
-        newOffset = _objectSpread$a({}, offset, _defineProperty$e({}, verticalAlign, newOffset[verticalAlign] + (box.height || 0)));
+        newOffset = _objectSpread$a({}, offset, _defineProperty$d({}, verticalAlign, newOffset[verticalAlign] + (box.height || 0)));
       }
     }
 
@@ -29156,7 +24535,7 @@
         };
       }
 
-      return _objectSpread$a({}, result, _defineProperty$e({}, axisId, parentGroup));
+      return _objectSpread$a({}, result, _defineProperty$d({}, axisId, parentGroup));
     }, {});
     return Object.keys(stackGroups).reduce(function (result, axisId) {
       var group = stackGroups[axisId];
@@ -29164,7 +24543,7 @@
       if (group.hasStack) {
         group.stackGroups = Object.keys(group.stackGroups).reduce(function (res, stackId) {
           var g = group.stackGroups[stackId];
-          return _objectSpread$a({}, res, _defineProperty$e({}, stackId, {
+          return _objectSpread$a({}, res, _defineProperty$d({}, stackId, {
             numericAxisId: numericAxisId,
             cateAxisId: cateAxisId,
             items: g.items,
@@ -29173,7 +24552,7 @@
         }, {});
       }
 
-      return _objectSpread$a({}, result, _defineProperty$e({}, axisId, group));
+      return _objectSpread$a({}, result, _defineProperty$d({}, axisId, group));
     }, {});
   };
   /**
@@ -29362,9 +24741,9 @@
 
   function ownKeys$9(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$b(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$9(source, true).forEach(function (key) { _defineProperty$f(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$9(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$b(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$9(source, true).forEach(function (key) { _defineProperty$e(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$9(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$f(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$e(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _slicedToArray$5(arr, i) { return _arrayWithHoles$6(arr) || _iterableToArrayLimit$5(arr, i) || _nonIterableRest$6(); }
 
@@ -29462,7 +24841,7 @@
         endAngle: endAngle
       });
 
-      return _objectSpread$b({}, result, _defineProperty$f({}, id, finalAxis));
+      return _objectSpread$b({}, result, _defineProperty$e({}, id, finalAxis));
     }, {});
   };
   var distanceBetweenPoints = function distanceBetweenPoints(point, anotherPoint) {
@@ -29594,13 +24973,13 @@
 
   function _arrayWithoutHoles$7(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
-  function _extends$8() { _extends$8 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$8.apply(this, arguments); }
+  function _extends$7() { _extends$7 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$7.apply(this, arguments); }
 
   function ownKeys$a(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$c(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$a(source, true).forEach(function (key) { _defineProperty$g(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$a(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$c(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$a(source, true).forEach(function (key) { _defineProperty$f(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$a(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$g(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$f(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
   var cartesianViewBoxShape = propTypes.shape({
     x: propTypes.number,
     y: propTypes.number,
@@ -29682,7 +25061,7 @@
     var endPoint = polarToCartesian(cx, cy, radius, labelAngle + (direction ? 1 : -1) * 359);
     var path = "M".concat(startPoint.x, ",").concat(startPoint.y, "\n    A").concat(radius, ",").concat(radius, ",0,1,").concat(direction ? 0 : 1, ",\n    ").concat(endPoint.x, ",").concat(endPoint.y);
     var id = isNil_1(labelProps.id) ? uniqueId('recharts-radial-line-') : labelProps.id;
-    return React__default['default'].createElement("text", _extends$8({}, attrs, {
+    return React__default['default'].createElement("text", _extends$7({}, attrs, {
       dominantBaseline: "central",
       className: classnames('recharts-radial-bar-label', className)
     }), React__default['default'].createElement("defs", null, React__default['default'].createElement("path", {
@@ -29936,7 +25315,7 @@
     }
 
     var positionAttrs = isPolarLabel ? getAttrsOfPolarLabel(props) : getAttrsOfCartesianLabel(props);
-    return React__default['default'].createElement(Text$1, _extends$8({
+    return React__default['default'].createElement(Text$1, _extends$7({
       className: classnames('recharts-label', className)
     }, attrs, positionAttrs, events), label);
   }
@@ -30055,7 +25434,7 @@
     }
 
     if (isObject_1(label)) {
-      return React__default['default'].createElement(Label, _extends$8({
+      return React__default['default'].createElement(Label, _extends$7({
         viewBox: viewBox
       }, label, {
         key: "label-implicit"
@@ -30121,17 +25500,17 @@
 
   function _arrayWithoutHoles$8(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
-  function _extends$9() { _extends$9 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$9.apply(this, arguments); }
+  function _extends$8() { _extends$8 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$8.apply(this, arguments); }
 
   function ownKeys$b(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$d(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$b(source, true).forEach(function (key) { _defineProperty$h(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$b(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$d(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$b(source, true).forEach(function (key) { _defineProperty$g(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$b(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$h(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$g(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-  function _objectWithoutProperties$7(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$8(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+  function _objectWithoutProperties$7(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$7(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
-  function _objectWithoutPropertiesLoose$8(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+  function _objectWithoutPropertiesLoose$7(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
   var propTypes$5 = {
     id: propTypes.string,
     data: propTypes.arrayOf(propTypes.object),
@@ -30164,7 +25543,7 @@
       var idProps = isNil_1(id) ? {} : {
         id: "".concat(id, "-").concat(index)
       };
-      return React__default['default'].createElement(Label, _extends$9({}, getPresentationAttributes(entry), others, idProps, {
+      return React__default['default'].createElement(Label, _extends$8({}, getPresentationAttributes(entry), others, idProps, {
         index: index,
         value: value,
         viewBox: Label.parseViewBox(isNil_1(clockWise) ? entry : _objectSpread$d({}, entry, {
@@ -30200,7 +25579,7 @@
     }
 
     if (isObject_1(label)) {
-      return React__default['default'].createElement(LabelList, _extends$9({
+      return React__default['default'].createElement(LabelList, _extends$8({
         data: data
       }, label, {
         key: "labelList-implicit"
@@ -30238,13 +25617,13 @@
 
   function ownKeys$c(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$e(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$c(source, true).forEach(function (key) { _defineProperty$i(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$c(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$e(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$c(source, true).forEach(function (key) { _defineProperty$h(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$c(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$i(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$h(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _typeof$b(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$b = function _typeof(obj) { return typeof obj; }; } else { _typeof$b = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$b(obj); }
 
-  function _extends$a() { _extends$a = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$a.apply(this, arguments); }
+  function _extends$9() { _extends$9 = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$9.apply(this, arguments); }
 
   function _classCallCheck$a(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -30252,9 +25631,9 @@
 
   function _createClass$a(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$a(Constructor.prototype, protoProps); if (staticProps) _defineProperties$a(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$a(self, call) { if (call && (_typeof$b(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$b(self); }
+  function _possibleConstructorReturn$a(self, call) { if (call && (_typeof$b(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$a(self); }
 
-  function _assertThisInitialized$b(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$a(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$a(o) { _getPrototypeOf$a = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$a(o); }
 
@@ -30477,7 +25856,7 @@
           });
         }
 
-        return React__default['default'].createElement("path", _extends$a({}, getPresentationAttributes(this.props), filterEventAttributes(this.props), {
+        return React__default['default'].createElement("path", _extends$9({}, getPresentationAttributes(this.props), filterEventAttributes(this.props), {
           className: layerClass,
           d: path
         }));
@@ -30514,13 +25893,13 @@
 
   function _typeof$c(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$c = function _typeof(obj) { return typeof obj; }; } else { _typeof$c = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$c(obj); }
 
-  function _extends$b() { _extends$b = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$b.apply(this, arguments); }
+  function _extends$a() { _extends$a = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$a.apply(this, arguments); }
 
   function ownKeys$d(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$f(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$d(source, true).forEach(function (key) { _defineProperty$j(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$d(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$f(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$d(source, true).forEach(function (key) { _defineProperty$i(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$d(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$j(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$i(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _classCallCheck$b(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -30528,9 +25907,9 @@
 
   function _createClass$b(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$b(Constructor.prototype, protoProps); if (staticProps) _defineProperties$b(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$b(self, call) { if (call && (_typeof$c(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$c(self); }
+  function _possibleConstructorReturn$b(self, call) { if (call && (_typeof$c(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$b(self); }
 
-  function _assertThisInitialized$c(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$b(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$b(o) { _getPrototypeOf$b = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$b(o); }
 
@@ -30657,7 +26036,7 @@
         }
 
         var realPath = points && points.length ? this.getPath() : path;
-        return React__default['default'].createElement("path", _extends$b({}, getPresentationAttributes(this.props), filterEventAttributes(this.props, null, true), {
+        return React__default['default'].createElement("path", _extends$a({}, getPresentationAttributes(this.props), filterEventAttributes(this.props, null, true), {
           className: classnames('recharts-curve', className),
           d: realPath,
           ref: pathRef
@@ -30687,13 +26066,13 @@
 
   function ownKeys$e(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$g(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$e(source, true).forEach(function (key) { _defineProperty$k(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$e(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$g(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$e(source, true).forEach(function (key) { _defineProperty$j(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$e(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$k(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$j(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _typeof$d(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$d = function _typeof(obj) { return typeof obj; }; } else { _typeof$d = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$d(obj); }
 
-  function _extends$c() { _extends$c = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$c.apply(this, arguments); }
+  function _extends$b() { _extends$b = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$b.apply(this, arguments); }
 
   function _classCallCheck$c(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -30701,9 +26080,9 @@
 
   function _createClass$c(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$c(Constructor.prototype, protoProps); if (staticProps) _defineProperties$c(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$c(self, call) { if (call && (_typeof$d(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$d(self); }
+  function _possibleConstructorReturn$c(self, call) { if (call && (_typeof$d(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$c(self); }
 
-  function _assertThisInitialized$d(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$c(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$c(o) { _getPrototypeOf$c = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$c(o); }
 
@@ -30829,7 +26208,7 @@
         var layerClass = classnames('recharts-rectangle', className);
 
         if (!isUpdateAnimationActive) {
-          return React__default['default'].createElement("path", _extends$c({}, getPresentationAttributes(this.props), filterEventAttributes(this.props), {
+          return React__default['default'].createElement("path", _extends$b({}, getPresentationAttributes(this.props), filterEventAttributes(this.props), {
             className: layerClass,
             d: getRectangePath(x, y, width, height, radius)
           }));
@@ -30866,7 +26245,7 @@
             duration: animationDuration,
             isActive: isAnimationActive,
             easing: animationEasing
-          }, React__default['default'].createElement("path", _extends$c({}, getPresentationAttributes(_this2.props), filterEventAttributes(_this2.props), {
+          }, React__default['default'].createElement("path", _extends$b({}, getPresentationAttributes(_this2.props), filterEventAttributes(_this2.props), {
             className: layerClass,
             d: getRectangePath(currX, currY, currWidth, currHeight, radius),
             ref: function ref(node) {
@@ -30912,13 +26291,13 @@
 
   function ownKeys$f(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$h(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$f(source, true).forEach(function (key) { _defineProperty$l(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$f(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$h(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$f(source, true).forEach(function (key) { _defineProperty$k(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$f(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$l(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$k(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _typeof$e(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$e = function _typeof(obj) { return typeof obj; }; } else { _typeof$e = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$e(obj); }
 
-  function _extends$d() { _extends$d = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$d.apply(this, arguments); }
+  function _extends$c() { _extends$c = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$c.apply(this, arguments); }
 
   function _classCallCheck$d(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -30926,9 +26305,9 @@
 
   function _createClass$d(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$d(Constructor.prototype, protoProps); if (staticProps) _defineProperties$d(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$d(self, call) { if (call && (_typeof$e(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$e(self); }
+  function _possibleConstructorReturn$d(self, call) { if (call && (_typeof$e(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$d(self); }
 
-  function _assertThisInitialized$e(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$d(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$d(o) { _getPrototypeOf$d = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$d(o); }
 
@@ -30969,7 +26348,7 @@
         }
 
         var layerClass = classnames('recharts-polygon', className);
-        return React__default['default'].createElement("polygon", _extends$d({}, getPresentationAttributes(this.props), filterEventAttributes(this.props), {
+        return React__default['default'].createElement("polygon", _extends$c({}, getPresentationAttributes(this.props), filterEventAttributes(this.props), {
           className: layerClass,
           points: getPolygonPoints(points)
         }));
@@ -30990,7 +26369,7 @@
 
   function _typeof$f(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$f = function _typeof(obj) { return typeof obj; }; } else { _typeof$f = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$f(obj); }
 
-  function _extends$e() { _extends$e = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$e.apply(this, arguments); }
+  function _extends$d() { _extends$d = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$d.apply(this, arguments); }
 
   function _classCallCheck$e(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -30998,9 +26377,9 @@
 
   function _createClass$e(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$e(Constructor.prototype, protoProps); if (staticProps) _defineProperties$e(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$e(self, call) { if (call && (_typeof$f(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$f(self); }
+  function _possibleConstructorReturn$e(self, call) { if (call && (_typeof$f(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$e(self); }
 
-  function _assertThisInitialized$f(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$e(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$e(o) { _getPrototypeOf$e = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$e(o); }
 
@@ -31030,7 +26409,7 @@
         var layerClass = classnames('recharts-dot', className);
 
         if (cx === +cx && cy === +cy && r === +r) {
-          return React__default['default'].createElement("circle", _extends$e({}, getPresentationAttributes(this.props), filterEventAttributes(this.props, null, true), {
+          return React__default['default'].createElement("circle", _extends$d({}, getPresentationAttributes(this.props), filterEventAttributes(this.props, null, true), {
             className: layerClass,
             cx: cx,
             cy: cy,
@@ -31055,13 +26434,13 @@
 
   function ownKeys$g(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$i(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$g(source, true).forEach(function (key) { _defineProperty$m(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$g(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$i(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$g(source, true).forEach(function (key) { _defineProperty$l(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$g(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$m(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$l(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _typeof$g(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$g = function _typeof(obj) { return typeof obj; }; } else { _typeof$g = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$g(obj); }
 
-  function _extends$f() { _extends$f = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$f.apply(this, arguments); }
+  function _extends$e() { _extends$e = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$e.apply(this, arguments); }
 
   function _classCallCheck$f(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -31069,9 +26448,9 @@
 
   function _createClass$f(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$f(Constructor.prototype, protoProps); if (staticProps) _defineProperties$f(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$f(self, call) { if (call && (_typeof$g(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$g(self); }
+  function _possibleConstructorReturn$f(self, call) { if (call && (_typeof$g(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$f(self); }
 
-  function _assertThisInitialized$g(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$f(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$f(o) { _getPrototypeOf$f = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$f(o); }
 
@@ -31106,7 +26485,7 @@
           return null;
         }
 
-        return React__default['default'].createElement("path", _extends$f({}, getPresentationAttributes(this.props), {
+        return React__default['default'].createElement("path", _extends$e({}, getPresentationAttributes(this.props), {
           className: classnames('recharts-cross', className),
           d: this.constructor.getPath(x, y, width, height, top, left)
         }));
@@ -31204,17 +26583,17 @@
 
   function _typeof$h(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$h = function _typeof(obj) { return typeof obj; }; } else { _typeof$h = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$h(obj); }
 
-  function _extends$g() { _extends$g = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$g.apply(this, arguments); }
+  function _extends$f() { _extends$f = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$f.apply(this, arguments); }
 
   function ownKeys$h(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$j(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$h(source, true).forEach(function (key) { _defineProperty$n(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$h(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$j(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$h(source, true).forEach(function (key) { _defineProperty$m(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$h(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$n(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$m(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-  function _objectWithoutProperties$8(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$9(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+  function _objectWithoutProperties$8(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$8(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
-  function _objectWithoutPropertiesLoose$9(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+  function _objectWithoutPropertiesLoose$8(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
   function _classCallCheck$g(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -31222,9 +26601,9 @@
 
   function _createClass$g(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$g(Constructor.prototype, protoProps); if (staticProps) _defineProperties$g(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$g(self, call) { if (call && (_typeof$h(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$h(self); }
+  function _possibleConstructorReturn$g(self, call) { if (call && (_typeof$h(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$g(self); }
 
-  function _assertThisInitialized$h(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$g(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$g(o) { _getPrototypeOf$g = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$g(o); }
 
@@ -31333,7 +26712,7 @@
           y2: point1.y
         });
 
-        return React__default['default'].createElement("line", _extends$g({
+        return React__default['default'].createElement("line", _extends$f({
           className: "recharts-polar-radius-axis-line"
         }, props));
       }
@@ -31368,7 +26747,7 @@
             payload: entry
           });
 
-          return React__default['default'].createElement(Layer, _extends$g({
+          return React__default['default'].createElement(Layer, _extends$f({
             className: "recharts-polar-radius-axis-tick",
             key: "tick-".concat(i) // eslint-disable-line react/no-array-index-key
 
@@ -31404,7 +26783,7 @@
         } else if (isFunction_1(option)) {
           tickItem = option(props);
         } else {
-          tickItem = React__default['default'].createElement(Text$1, _extends$g({}, props, {
+          tickItem = React__default['default'].createElement(Text$1, _extends$f({}, props, {
             className: "recharts-polar-radius-axis-tick-value"
           }), value);
         }
@@ -31459,13 +26838,13 @@
 
   function _typeof$i(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$i = function _typeof(obj) { return typeof obj; }; } else { _typeof$i = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$i(obj); }
 
-  function _extends$h() { _extends$h = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$h.apply(this, arguments); }
+  function _extends$g() { _extends$g = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$g.apply(this, arguments); }
 
   function ownKeys$i(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$k(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$i(source, true).forEach(function (key) { _defineProperty$o(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$i(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$k(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$i(source, true).forEach(function (key) { _defineProperty$n(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$i(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$o(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$n(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _classCallCheck$h(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -31473,9 +26852,9 @@
 
   function _createClass$h(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$h(Constructor.prototype, protoProps); if (staticProps) _defineProperties$h(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$h(self, call) { if (call && (_typeof$i(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$i(self); }
+  function _possibleConstructorReturn$h(self, call) { if (call && (_typeof$i(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$h(self); }
 
-  function _assertThisInitialized$i(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$h(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$h(o) { _getPrototypeOf$h = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$h(o); }
 
@@ -31561,7 +26940,7 @@
         }, getPresentationAttributes(axisLine));
 
         if (axisLineType === 'circle') {
-          return React__default['default'].createElement(Dot, _extends$h({
+          return React__default['default'].createElement(Dot, _extends$g({
             className: "recharts-polar-angle-axis-line"
           }, props, {
             cx: cx,
@@ -31574,7 +26953,7 @@
         var points = ticks.map(function (entry) {
           return polarToCartesian(cx, cy, radius, entry.coordinate);
         });
-        return React__default['default'].createElement(Polygon, _extends$h({
+        return React__default['default'].createElement(Polygon, _extends$g({
           className: "recharts-polar-angle-axis-line"
         }, props, {
           points: points
@@ -31615,11 +26994,11 @@
             y: lineCoord.y2
           });
 
-          return React__default['default'].createElement(Layer, _extends$h({
+          return React__default['default'].createElement(Layer, _extends$g({
             className: "recharts-polar-angle-axis-tick",
             key: "tick-".concat(i) // eslint-disable-line react/no-array-index-key
 
-          }, filterEventsOfChild(_this.props, entry, i)), tickLine && React__default['default'].createElement("line", _extends$h({
+          }, filterEventsOfChild(_this.props, entry, i)), tickLine && React__default['default'].createElement("line", _extends$g({
             className: "recharts-polar-angle-axis-tick-line"
           }, tickLineProps, lineCoord)), tick && _this.constructor.renderTickItem(tick, tickProps, tickFormatter ? tickFormatter(entry.value) : entry.value));
         });
@@ -31653,7 +27032,7 @@
         } else if (isFunction_1(option)) {
           tickItem = option(props);
         } else {
-          tickItem = React__default['default'].createElement(Text$1, _extends$h({}, props, {
+          tickItem = React__default['default'].createElement(Text$1, _extends$g({}, props, {
             className: "recharts-polar-angle-axis-tick-value"
           }), value);
         }
@@ -31770,13 +27149,13 @@
 
   function _typeof$j(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$j = function _typeof(obj) { return typeof obj; }; } else { _typeof$j = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$j(obj); }
 
-  function _extends$i() { _extends$i = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$i.apply(this, arguments); }
+  function _extends$h() { _extends$h = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$h.apply(this, arguments); }
 
   function ownKeys$j(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$l(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$j(source, true).forEach(function (key) { _defineProperty$p(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$j(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$l(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$j(source, true).forEach(function (key) { _defineProperty$o(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$j(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$p(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$o(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _classCallCheck$i(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -31784,9 +27163,9 @@
 
   function _createClass$i(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$i(Constructor.prototype, protoProps); if (staticProps) _defineProperties$i(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$i(self, call) { if (call && (_typeof$j(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$j(self); }
+  function _possibleConstructorReturn$i(self, call) { if (call && (_typeof$j(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$i(self); }
 
-  function _assertThisInitialized$j(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$i(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$i(o) { _getPrototypeOf$i = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$i(o); }
 
@@ -31947,7 +27326,7 @@
             stroke: blendStroke ? entry.fill : entry.stroke
           });
 
-          return React__default['default'].createElement(Layer, _extends$i({
+          return React__default['default'].createElement(Layer, _extends$h({
             className: "recharts-pie-sector"
           }, filterEventsOfChild(_this3.props, entry, i), {
             key: "sector-".concat(i) // eslint-disable-line react/no-array-index-key
@@ -32081,7 +27460,7 @@
           return option(props);
         }
 
-        return React__default['default'].createElement(Curve, _extends$i({}, props, {
+        return React__default['default'].createElement(Curve, _extends$h({}, props, {
           type: "linear",
           className: "recharts-pie-label-line"
         }));
@@ -32103,7 +27482,7 @@
           }
         }
 
-        return React__default['default'].createElement(Text$1, _extends$i({}, props, {
+        return React__default['default'].createElement(Text$1, _extends$h({}, props, {
           alignmentBaseline: "middle",
           className: "recharts-pie-label-text"
         }), label);
@@ -32120,7 +27499,7 @@
         }
 
         if (isPlainObject_1(option)) {
-          return React__default['default'].createElement(Sector, _extends$i({}, props, option));
+          return React__default['default'].createElement(Sector, _extends$h({}, props, option));
         }
 
         return React__default['default'].createElement(Sector, props);
@@ -32488,9 +27867,9 @@
 
   function ownKeys$k(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$m(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$k(source, true).forEach(function (key) { _defineProperty$q(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$k(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$m(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$k(source, true).forEach(function (key) { _defineProperty$p(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$k(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$q(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$p(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   var PREFIX_LIST$1 = ['Webkit', 'Moz', 'O', 'ms'];
   var generatePrefixStyle$1 = function generatePrefixStyle(name, value) {
@@ -32502,7 +27881,7 @@
       return v.toUpperCase();
     });
     var result = PREFIX_LIST$1.reduce(function (res, entry) {
-      return _objectSpread$m({}, res, _defineProperty$q({}, entry + camelName, value));
+      return _objectSpread$m({}, res, _defineProperty$p({}, entry + camelName, value));
     }, {});
     result[name] = value;
     return result;
@@ -32510,9 +27889,9 @@
 
   function _typeof$k(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$k = function _typeof(obj) { return typeof obj; }; } else { _typeof$k = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$k(obj); }
 
-  function _extends$j() { _extends$j = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$j.apply(this, arguments); }
+  function _extends$i() { _extends$i = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$i.apply(this, arguments); }
 
-  function _defineProperty$r(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$q(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _classCallCheck$j(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -32520,11 +27899,11 @@
 
   function _createClass$j(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$j(Constructor.prototype, protoProps); if (staticProps) _defineProperties$j(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$j(self, call) { if (call && (_typeof$k(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$k(self); }
+  function _possibleConstructorReturn$j(self, call) { if (call && (_typeof$k(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$j(self); }
 
   function _getPrototypeOf$j(o) { _getPrototypeOf$j = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$j(o); }
 
-  function _assertThisInitialized$k(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$j(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _inherits$j(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf$j(subClass, superClass); }
 
@@ -32597,8 +27976,8 @@
       };
 
       _this.travellerDragStartHandlers = {
-        startX: _this.handleTravellerDragStart.bind(_assertThisInitialized$k(_this), 'startX'),
-        endX: _this.handleTravellerDragStart.bind(_assertThisInitialized$k(_this), 'endX')
+        startX: _this.handleTravellerDragStart.bind(_assertThisInitialized$j(_this), 'startX'),
+        endX: _this.handleTravellerDragStart.bind(_assertThisInitialized$j(_this), 'endX')
       };
       _this.state = props.data && props.data.length ? _this.updateScale(props) : {};
       return _this;
@@ -32762,7 +28141,7 @@
           return false;
         };
 
-        this.setState((_this$setState = {}, _defineProperty$r(_this$setState, movingTravellerId, prevValue + delta), _defineProperty$r(_this$setState, "brushMoveStartX", e.pageX), _this$setState), function () {
+        this.setState((_this$setState = {}, _defineProperty$q(_this$setState, movingTravellerId, prevValue + delta), _defineProperty$q(_this$setState, "brushMoveStartX", e.pageX), _this$setState), function () {
           if (onChange) {
             if (isFullGap()) {
               onChange(newIndex);
@@ -32927,12 +28306,12 @@
         };
         return React__default['default'].createElement(Layer, {
           className: "recharts-brush-texts"
-        }, React__default['default'].createElement(Text$1, _extends$j({
+        }, React__default['default'].createElement(Text$1, _extends$i({
           textAnchor: "end",
           verticalAnchor: "middle",
           x: Math.min(startX, endX) - offset,
           y: y + height / 2
-        }, attrs), this.getTextOfTick(startIndex)), React__default['default'].createElement(Text$1, _extends$j({
+        }, attrs), this.getTextOfTick(startIndex)), React__default['default'].createElement(Text$1, _extends$i({
           textAnchor: "start",
           verticalAnchor: "middle",
           x: Math.max(startX, endX) + travellerWidth + offset,
@@ -33226,8 +28605,8 @@
    * @param {*} value The value to assign.
    */
   function baseAssignValue(object, key, value) {
-    if (key == '__proto__' && _defineProperty$5) {
-      _defineProperty$5(object, key, {
+    if (key == '__proto__' && _defineProperty$4) {
+      _defineProperty$4(object, key, {
         'configurable': true,
         'enumerable': true,
         'value': value,
@@ -33463,9 +28842,9 @@
 
   function ownKeys$l(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$n(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$l(source, true).forEach(function (key) { _defineProperty$s(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$l(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$n(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$l(source, true).forEach(function (key) { _defineProperty$r(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$l(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$s(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$r(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _slicedToArray$6(arr, i) { return _arrayWithHoles$7(arr) || _iterableToArrayLimit$6(arr, i) || _nonIterableRest$7(); }
 
@@ -33481,9 +28860,9 @@
 
   function _createClass$l(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$l(Constructor.prototype, protoProps); if (staticProps) _defineProperties$l(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$k(self, call) { if (call && (_typeof$l(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$l(self); }
+  function _possibleConstructorReturn$k(self, call) { if (call && (_typeof$l(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$k(self); }
 
-  function _assertThisInitialized$l(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$k(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$k(o) { _getPrototypeOf$k = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$k(o); }
 
@@ -33491,7 +28870,7 @@
 
   function _setPrototypeOf$k(o, p) { _setPrototypeOf$k = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf$k(o, p); }
 
-  function _extends$k() { _extends$k = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$k.apply(this, arguments); }
+  function _extends$j() { _extends$j = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$j.apply(this, arguments); }
 
   var renderLine = function renderLine(option, props) {
     var line;
@@ -33501,7 +28880,7 @@
     } else if (isFunction_1(option)) {
       line = option(props);
     } else {
-      line = React__default['default'].createElement("line", _extends$k({}, props, {
+      line = React__default['default'].createElement("line", _extends$j({}, props, {
         className: "recharts-reference-line-line"
       }));
     }
@@ -33694,13 +29073,13 @@
 
   function _typeof$m(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$m = function _typeof(obj) { return typeof obj; }; } else { _typeof$m = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$m(obj); }
 
-  function _extends$l() { _extends$l = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$l.apply(this, arguments); }
+  function _extends$k() { _extends$k = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$k.apply(this, arguments); }
 
   function ownKeys$m(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$o(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$m(source, true).forEach(function (key) { _defineProperty$t(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$m(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$o(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$m(source, true).forEach(function (key) { _defineProperty$s(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$m(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$t(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$s(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _classCallCheck$m(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -33708,9 +29087,9 @@
 
   function _createClass$m(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$m(Constructor.prototype, protoProps); if (staticProps) _defineProperties$m(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$l(self, call) { if (call && (_typeof$m(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$m(self); }
+  function _possibleConstructorReturn$l(self, call) { if (call && (_typeof$m(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$l(self); }
 
-  function _assertThisInitialized$m(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$l(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$l(o) { _getPrototypeOf$l = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$l(o); }
 
@@ -33809,7 +29188,7 @@
         } else if (isFunction_1(option)) {
           dot = option(props);
         } else {
-          dot = React__default['default'].createElement(Dot, _extends$l({}, props, {
+          dot = React__default['default'].createElement(Dot, _extends$k({}, props, {
             cx: props.cx,
             cy: props.cy,
             className: "recharts-reference-dot-dot"
@@ -33857,13 +29236,13 @@
 
   function _typeof$n(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$n = function _typeof(obj) { return typeof obj; }; } else { _typeof$n = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$n(obj); }
 
-  function _extends$m() { _extends$m = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$m.apply(this, arguments); }
+  function _extends$l() { _extends$l = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$l.apply(this, arguments); }
 
   function ownKeys$n(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$p(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$n(source, true).forEach(function (key) { _defineProperty$u(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$n(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$p(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$n(source, true).forEach(function (key) { _defineProperty$t(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$n(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$u(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$t(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _classCallCheck$n(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -33871,9 +29250,9 @@
 
   function _createClass$n(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$n(Constructor.prototype, protoProps); if (staticProps) _defineProperties$n(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$m(self, call) { if (call && (_typeof$n(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$n(self); }
+  function _possibleConstructorReturn$m(self, call) { if (call && (_typeof$n(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$m(self); }
 
-  function _assertThisInitialized$n(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$m(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$m(o) { _getPrototypeOf$m = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$m(o); }
 
@@ -33965,7 +29344,7 @@
         } else if (isFunction_1(option)) {
           rect = option(props);
         } else {
-          rect = React__default['default'].createElement(Rectangle, _extends$m({}, props, {
+          rect = React__default['default'].createElement(Rectangle, _extends$l({}, props, {
             className: "recharts-reference-area-rect"
           }));
         }
@@ -34013,17 +29392,17 @@
 
   function _typeof$o(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$o = function _typeof(obj) { return typeof obj; }; } else { _typeof$o = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$o(obj); }
 
-  function _extends$n() { _extends$n = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$n.apply(this, arguments); }
+  function _extends$m() { _extends$m = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$m.apply(this, arguments); }
 
   function ownKeys$o(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$q(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$o(source, true).forEach(function (key) { _defineProperty$v(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$o(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$q(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$o(source, true).forEach(function (key) { _defineProperty$u(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$o(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$v(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$u(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-  function _objectWithoutProperties$9(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$a(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+  function _objectWithoutProperties$9(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$9(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
-  function _objectWithoutPropertiesLoose$a(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+  function _objectWithoutPropertiesLoose$9(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
   function _classCallCheck$o(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -34031,9 +29410,9 @@
 
   function _createClass$o(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$o(Constructor.prototype, protoProps); if (staticProps) _defineProperties$o(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$n(self, call) { if (call && (_typeof$o(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$o(self); }
+  function _possibleConstructorReturn$n(self, call) { if (call && (_typeof$o(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$n(self); }
 
-  function _assertThisInitialized$o(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$n(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _getPrototypeOf$n(o) { _getPrototypeOf$n = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$n(o); }
 
@@ -34220,7 +29599,7 @@
           });
         }
 
-        return React__default['default'].createElement("line", _extends$n({
+        return React__default['default'].createElement("line", _extends$m({
           className: "recharts-cartesian-axis-line"
         }, props));
       }
@@ -34270,11 +29649,11 @@
             visibleTicksCount: finalTicks.length
           });
 
-          return React__default['default'].createElement(Layer, _extends$n({
+          return React__default['default'].createElement(Layer, _extends$m({
             className: "recharts-cartesian-axis-tick",
             key: "tick-".concat(i) // eslint-disable-line react/no-array-index-key
 
-          }, filterEventsOfChild(_this.props, entry, i)), tickLine && React__default['default'].createElement("line", _extends$n({
+          }, filterEventsOfChild(_this.props, entry, i)), tickLine && React__default['default'].createElement("line", _extends$m({
             className: "recharts-cartesian-axis-tick-line"
           }, tickLineProps, lineCoord)), tick && _this.constructor.renderTickItem(tick, tickProps, "".concat(isFunction_1(tickFormatter) ? tickFormatter(entry.value) : entry.value).concat(unit || '')));
         });
@@ -34522,7 +29901,7 @@
         } else if (isFunction_1(option)) {
           tickItem = option(props);
         } else {
-          tickItem = React__default['default'].createElement(Text$1, _extends$n({}, props, {
+          tickItem = React__default['default'].createElement(Text$1, _extends$m({}, props, {
             className: "recharts-cartesian-axis-tick-value"
           }), value);
         }
@@ -34684,7 +30063,7 @@
    * _.findIndex(users, 'active');
    * // => 2
    */
-  function findIndex$1(array, predicate, fromIndex) {
+  function findIndex(array, predicate, fromIndex) {
     var length = array == null ? 0 : array.length;
     if (!length) {
       return -1;
@@ -34696,7 +30075,7 @@
     return _baseFindIndex(array, _baseIteratee(predicate), index);
   }
 
-  var findIndex_1 = findIndex$1;
+  var findIndex_1 = findIndex;
 
   /**
    * Iterates over elements of `collection`, returning the first element
@@ -34734,9 +30113,9 @@
    * _.find(users, 'active');
    * // => object for 'barney'
    */
-  var find$1 = _createFind(findIndex_1);
+  var find = _createFind(findIndex_1);
 
-  var find_1 = find$1;
+  var find_1 = find;
 
   /** Error message constants. */
   var FUNC_ERROR_TEXT$4 = 'Expected a function';
@@ -35317,11 +30696,11 @@
 
   function _typeof$p(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$p = function _typeof(obj) { return typeof obj; }; } else { _typeof$p = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$p(obj); }
 
-  function _objectWithoutProperties$a(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$b(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+  function _objectWithoutProperties$a(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$a(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
-  function _objectWithoutPropertiesLoose$b(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+  function _objectWithoutPropertiesLoose$a(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-  function _extends$o() { _extends$o = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$o.apply(this, arguments); }
+  function _extends$n() { _extends$n = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$n.apply(this, arguments); }
 
   function _toConsumableArray$9(arr) { return _arrayWithoutHoles$9(arr) || _iterableToArray$a(arr) || _nonIterableSpread$9(); }
 
@@ -35333,9 +30712,9 @@
 
   function ownKeys$p(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-  function _objectSpread$r(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$p(source, true).forEach(function (key) { _defineProperty$w(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$p(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+  function _objectSpread$r(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$p(source, true).forEach(function (key) { _defineProperty$v(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$p(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-  function _defineProperty$w(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _defineProperty$v(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _classCallCheck$p(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -35343,11 +30722,11 @@
 
   function _createClass$p(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties$p(Constructor.prototype, protoProps); if (staticProps) _defineProperties$p(Constructor, staticProps); return Constructor; }
 
-  function _possibleConstructorReturn$o(self, call) { if (call && (_typeof$p(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$p(self); }
+  function _possibleConstructorReturn$o(self, call) { if (call && (_typeof$p(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized$o(self); }
 
   function _getPrototypeOf$o(o) { _getPrototypeOf$o = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf$o(o); }
 
-  function _assertThisInitialized$p(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  function _assertThisInitialized$o(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
   function _inherits$o(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf$o(subClass, superClass); }
 
@@ -35855,7 +31234,7 @@
             return null;
           }
 
-          var _assertThisInitialize = _assertThisInitialized$p(_this),
+          var _assertThisInitialize = _assertThisInitialized$o(_this),
               clipPathId = _assertThisInitialize.clipPathId;
 
           var _this$state7 = _this.state,
@@ -36195,7 +31574,7 @@
                 }
               }
 
-              return _objectSpread$r({}, result, _defineProperty$w({}, axisId, _objectSpread$r({}, child.props, {
+              return _objectSpread$r({}, result, _defineProperty$v({}, axisId, _objectSpread$r({}, child.props, {
                 axisType: axisType,
                 domain: domain,
                 categoricalDomain: categoricalDomain,
@@ -36267,7 +31646,7 @@
                 domain = detectReferenceElementsDomain(children, domain, axisId, axisType);
               }
 
-              return _objectSpread$r({}, result, _defineProperty$w({}, axisId, _objectSpread$r({
+              return _objectSpread$r({}, result, _defineProperty$v({}, axisId, _objectSpread$r({
                 axisType: axisType
               }, Axis.defaultProps, {
                 hide: true,
@@ -36487,7 +31866,7 @@
               var axisMap = currentState["".concat(entry.axisType, "Map")];
               var id = item.props["".concat(entry.axisType, "Id")];
               var axis = axisMap && axisMap[id];
-              return _objectSpread$r({}, result, (_objectSpread4 = {}, _defineProperty$w(_objectSpread4, entry.axisType, axis), _defineProperty$w(_objectSpread4, "".concat(entry.axisType, "Ticks"), getTicksOfAxis(axis)), _objectSpread4));
+              return _objectSpread$r({}, result, (_objectSpread4 = {}, _defineProperty$v(_objectSpread4, entry.axisType, axis), _defineProperty$v(_objectSpread4, "".concat(entry.axisType, "Ticks"), getTicksOfAxis(axis)), _objectSpread4));
             }, {});
             var cateAxis = axisObj[cateAxisName];
             var cateTicks = axisObj["".concat(cateAxisName, "Ticks")];
@@ -36523,7 +31902,7 @@
                   onItemMouseEnter: combineEventHandlers(_this4.handleItemMouseEnter, null, item.props.onMouseEnter)
                 })), (_objectSpread5 = {
                   key: item.key || "item-".concat(index)
-                }, _defineProperty$w(_objectSpread5, numericAxisName, axisObj[numericAxisName]), _defineProperty$w(_objectSpread5, cateAxisName, axisObj[cateAxisName]), _defineProperty$w(_objectSpread5, "animationId", updateId), _objectSpread5)),
+                }, _defineProperty$v(_objectSpread5, numericAxisName, axisObj[numericAxisName]), _defineProperty$v(_objectSpread5, cateAxisName, axisObj[cateAxisName]), _defineProperty$v(_objectSpread5, "animationId", updateId), _objectSpread5)),
                 childIndex: parseChildIndex(item, props.children),
                 item: item
               });
@@ -36715,7 +32094,7 @@
           var stackGroups = getStackGroupsByAxisId(data, graphicalItems, "".concat(numericAxisName, "Id"), "".concat(cateAxisName, "Id"), stackOffset, reverseStackOrder);
           var axisObj = axisComponents.reduce(function (result, entry) {
             var name = "".concat(entry.axisType, "Map");
-            return _objectSpread$r({}, result, _defineProperty$w({}, name, _this5.getAxisMap(props, _objectSpread$r({}, entry, {
+            return _objectSpread$r({}, result, _defineProperty$v({}, name, _this5.getAxisMap(props, _objectSpread$r({}, entry, {
               graphicalItems: graphicalItems,
               stackGroups: entry.axisType === numericAxisName && stackGroups,
               dataStartIndex: dataStartIndex,
@@ -36795,7 +32174,7 @@
             var orientation = entry.orientation;
 
             if (!entry.mirror && !entry.hide) {
-              return _objectSpread$r({}, result, _defineProperty$w({}, orientation, result[orientation] + entry.width));
+              return _objectSpread$r({}, result, _defineProperty$v({}, orientation, result[orientation] + entry.width));
             }
 
             return result;
@@ -36808,7 +32187,7 @@
             var orientation = entry.orientation;
 
             if (!entry.mirror && !entry.hide) {
-              return _objectSpread$r({}, result, _defineProperty$w({}, orientation, result[orientation] + entry.height));
+              return _objectSpread$r({}, result, _defineProperty$v({}, orientation, result[orientation] + entry.height));
             }
 
             return result;
@@ -36876,7 +32255,7 @@
           var _this$props5 = this.props,
               width = _this$props5.width,
               height = _this$props5.height;
-          return React__default['default'].createElement(CartesianAxis, _extends$o({}, axisOptions, {
+          return React__default['default'].createElement(CartesianAxis, _extends$n({}, axisOptions, {
             className: "recharts-".concat(axisOptions.axisType, " ").concat(axisOptions.axisType),
             key: element.key || "".concat(displayName, "-").concat(index),
             viewBox: {
@@ -37116,14 +32495,14 @@
           }; // The "compact" mode is mainly used as the panorama within Brush
 
           if (compact) {
-            return React__default['default'].createElement(Surface, _extends$o({}, attrs, {
+            return React__default['default'].createElement(Surface, _extends$n({}, attrs, {
               width: width,
               height: height
             }), this.renderClipPath(), renderByOrder(children, map));
           }
 
           var events = this.parseEventsOfWrapper();
-          return React__default['default'].createElement("div", _extends$o({
+          return React__default['default'].createElement("div", _extends$n({
             className: classnames('recharts-wrapper', className),
             style: _objectSpread$r({
               position: 'relative',
@@ -37135,7 +32514,7 @@
             ref: function ref(node) {
               _this7.container = node;
             }
-          }), React__default['default'].createElement(Surface, _extends$o({}, attrs, {
+          }), React__default['default'].createElement(Surface, _extends$n({}, attrs, {
             width: width,
             height: height
           }), this.renderClipPath(), renderByOrder(children, map)), this.renderLegend(), this.renderTooltip());
@@ -37542,7 +32921,7 @@
         type = _props$type === void 0 ? 'text' : _props$type,
         _props$minWidth = props.minWidth,
         minWidth = _props$minWidth === void 0 ? type !== 'number' ? 256 : undefined : _props$minWidth,
-        readonly = props.readonly,
+        readOnly = props.readOnly,
         defaultValue = props.defaultValue,
         name = props.name,
         placeholder = props.placeholder,
@@ -37561,7 +32940,7 @@
         className = props.className,
         autocomplete = props.autocomplete,
         autoFocus = props.autoFocus,
-        rest = _objectWithoutProperties(props, ["size", "type", "minWidth", "readonly", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autocomplete", "autoFocus"]);
+        rest = _objectWithoutProperties(props, ["size", "type", "minWidth", "readOnly", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autocomplete", "autoFocus"]);
 
     var ref = React.useRef(null);
     React.useImperativeHandle(forwardedRef, function () {
@@ -37575,7 +32954,7 @@
       });
     }, []);
     var autoComplete = props.autoComplete || autocomplete;
-    var disabled = props.disabled || readonly;
+    var disabled = props.disabled || readOnly;
     var baseProps = extractBaseProps(props);
     var classes = classnames((_classNames = {}, _defineProperty(_classNames, 'Input', true), _defineProperty(_classNames, "Input--".concat(size), size), _defineProperty(_classNames, 'Input--disabled', disabled), _defineProperty(_classNames, 'Input--error', error), _classNames), className);
     var inputClass = classnames((_classNames2 = {}, _defineProperty(_classNames2, 'Input-input', true), _defineProperty(_classNames2, "Input-input--".concat(size), size), _classNames2));
@@ -39399,6 +34778,4618 @@
     appearance: 'default'
   };
 
+  function _objectWithoutPropertiesLoose$b(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+
+    for (i = 0; i < sourceKeys.length; i++) {
+      key = sourceKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      target[key] = source[key];
+    }
+
+    return target;
+  }
+
+  var objectWithoutPropertiesLoose = _objectWithoutPropertiesLoose$b;
+
+  var _extends_1 = createCommonjsModule(function (module) {
+  function _extends() {
+    module.exports = _extends = Object.assign || function (target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+
+      return target;
+    };
+
+    return _extends.apply(this, arguments);
+  }
+
+  module.exports = _extends;
+  });
+
+  function _assertThisInitialized$p(self) {
+    if (self === void 0) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return self;
+  }
+
+  var assertThisInitialized = _assertThisInitialized$p;
+
+  var setPrototypeOf$1 = createCommonjsModule(function (module) {
+  function _setPrototypeOf(o, p) {
+    module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+      o.__proto__ = p;
+      return o;
+    };
+
+    return _setPrototypeOf(o, p);
+  }
+
+  module.exports = _setPrototypeOf;
+  });
+
+  function _inheritsLoose(subClass, superClass) {
+    subClass.prototype = Object.create(superClass.prototype);
+    subClass.prototype.constructor = subClass;
+    setPrototypeOf$1(subClass, superClass);
+  }
+
+  var inheritsLoose = _inheritsLoose;
+
+  function _defineProperty$w(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
+  var defineProperty$1 = _defineProperty$w;
+
+  var toStr = Object.prototype.toString;
+
+  var isArguments$1 = function isArguments(value) {
+  	var str = toStr.call(value);
+  	var isArgs = str === '[object Arguments]';
+  	if (!isArgs) {
+  		isArgs = str !== '[object Array]' &&
+  			value !== null &&
+  			typeof value === 'object' &&
+  			typeof value.length === 'number' &&
+  			value.length >= 0 &&
+  			toStr.call(value.callee) === '[object Function]';
+  	}
+  	return isArgs;
+  };
+
+  var keysShim;
+  if (!Object.keys) {
+  	// modified from https://github.com/es-shims/es5-shim
+  	var has = Object.prototype.hasOwnProperty;
+  	var toStr$1 = Object.prototype.toString;
+  	var isArgs = isArguments$1; // eslint-disable-line global-require
+  	var isEnumerable = Object.prototype.propertyIsEnumerable;
+  	var hasDontEnumBug = !isEnumerable.call({ toString: null }, 'toString');
+  	var hasProtoEnumBug = isEnumerable.call(function () {}, 'prototype');
+  	var dontEnums = [
+  		'toString',
+  		'toLocaleString',
+  		'valueOf',
+  		'hasOwnProperty',
+  		'isPrototypeOf',
+  		'propertyIsEnumerable',
+  		'constructor'
+  	];
+  	var equalsConstructorPrototype = function (o) {
+  		var ctor = o.constructor;
+  		return ctor && ctor.prototype === o;
+  	};
+  	var excludedKeys = {
+  		$applicationCache: true,
+  		$console: true,
+  		$external: true,
+  		$frame: true,
+  		$frameElement: true,
+  		$frames: true,
+  		$innerHeight: true,
+  		$innerWidth: true,
+  		$onmozfullscreenchange: true,
+  		$onmozfullscreenerror: true,
+  		$outerHeight: true,
+  		$outerWidth: true,
+  		$pageXOffset: true,
+  		$pageYOffset: true,
+  		$parent: true,
+  		$scrollLeft: true,
+  		$scrollTop: true,
+  		$scrollX: true,
+  		$scrollY: true,
+  		$self: true,
+  		$webkitIndexedDB: true,
+  		$webkitStorageInfo: true,
+  		$window: true
+  	};
+  	var hasAutomationEqualityBug = (function () {
+  		/* global window */
+  		if (typeof window === 'undefined') { return false; }
+  		for (var k in window) {
+  			try {
+  				if (!excludedKeys['$' + k] && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
+  					try {
+  						equalsConstructorPrototype(window[k]);
+  					} catch (e) {
+  						return true;
+  					}
+  				}
+  			} catch (e) {
+  				return true;
+  			}
+  		}
+  		return false;
+  	}());
+  	var equalsConstructorPrototypeIfNotBuggy = function (o) {
+  		/* global window */
+  		if (typeof window === 'undefined' || !hasAutomationEqualityBug) {
+  			return equalsConstructorPrototype(o);
+  		}
+  		try {
+  			return equalsConstructorPrototype(o);
+  		} catch (e) {
+  			return false;
+  		}
+  	};
+
+  	keysShim = function keys(object) {
+  		var isObject = object !== null && typeof object === 'object';
+  		var isFunction = toStr$1.call(object) === '[object Function]';
+  		var isArguments = isArgs(object);
+  		var isString = isObject && toStr$1.call(object) === '[object String]';
+  		var theKeys = [];
+
+  		if (!isObject && !isFunction && !isArguments) {
+  			throw new TypeError('Object.keys called on a non-object');
+  		}
+
+  		var skipProto = hasProtoEnumBug && isFunction;
+  		if (isString && object.length > 0 && !has.call(object, 0)) {
+  			for (var i = 0; i < object.length; ++i) {
+  				theKeys.push(String(i));
+  			}
+  		}
+
+  		if (isArguments && object.length > 0) {
+  			for (var j = 0; j < object.length; ++j) {
+  				theKeys.push(String(j));
+  			}
+  		} else {
+  			for (var name in object) {
+  				if (!(skipProto && name === 'prototype') && has.call(object, name)) {
+  					theKeys.push(String(name));
+  				}
+  			}
+  		}
+
+  		if (hasDontEnumBug) {
+  			var skipConstructor = equalsConstructorPrototypeIfNotBuggy(object);
+
+  			for (var k = 0; k < dontEnums.length; ++k) {
+  				if (!(skipConstructor && dontEnums[k] === 'constructor') && has.call(object, dontEnums[k])) {
+  					theKeys.push(dontEnums[k]);
+  				}
+  			}
+  		}
+  		return theKeys;
+  	};
+  }
+  var implementation = keysShim;
+
+  var slice$2 = Array.prototype.slice;
+
+
+  var origKeys = Object.keys;
+  var keysShim$1 = origKeys ? function keys(o) { return origKeys(o); } : implementation;
+
+  var originalKeys = Object.keys;
+
+  keysShim$1.shim = function shimObjectKeys() {
+  	if (Object.keys) {
+  		var keysWorksWithArguments = (function () {
+  			// Safari 5.0 bug
+  			var args = Object.keys(arguments);
+  			return args && args.length === arguments.length;
+  		}(1, 2));
+  		if (!keysWorksWithArguments) {
+  			Object.keys = function keys(object) { // eslint-disable-line func-name-matching
+  				if (isArguments$1(object)) {
+  					return originalKeys(slice$2.call(object));
+  				}
+  				return originalKeys(object);
+  			};
+  		}
+  	} else {
+  		Object.keys = keysShim$1;
+  	}
+  	return Object.keys || keysShim$1;
+  };
+
+  var objectKeys = keysShim$1;
+
+  /* eslint complexity: [2, 18], max-statements: [2, 33] */
+  var shams = function hasSymbols() {
+  	if (typeof Symbol !== 'function' || typeof Object.getOwnPropertySymbols !== 'function') { return false; }
+  	if (typeof Symbol.iterator === 'symbol') { return true; }
+
+  	var obj = {};
+  	var sym = Symbol('test');
+  	var symObj = Object(sym);
+  	if (typeof sym === 'string') { return false; }
+
+  	if (Object.prototype.toString.call(sym) !== '[object Symbol]') { return false; }
+  	if (Object.prototype.toString.call(symObj) !== '[object Symbol]') { return false; }
+
+  	// temp disabled per https://github.com/ljharb/object.assign/issues/17
+  	// if (sym instanceof Symbol) { return false; }
+  	// temp disabled per https://github.com/WebReflection/get-own-property-symbols/issues/4
+  	// if (!(symObj instanceof Symbol)) { return false; }
+
+  	// if (typeof Symbol.prototype.toString !== 'function') { return false; }
+  	// if (String(sym) !== Symbol.prototype.toString.call(sym)) { return false; }
+
+  	var symVal = 42;
+  	obj[sym] = symVal;
+  	for (sym in obj) { return false; } // eslint-disable-line no-restricted-syntax
+  	if (typeof Object.keys === 'function' && Object.keys(obj).length !== 0) { return false; }
+
+  	if (typeof Object.getOwnPropertyNames === 'function' && Object.getOwnPropertyNames(obj).length !== 0) { return false; }
+
+  	var syms = Object.getOwnPropertySymbols(obj);
+  	if (syms.length !== 1 || syms[0] !== sym) { return false; }
+
+  	if (!Object.prototype.propertyIsEnumerable.call(obj, sym)) { return false; }
+
+  	if (typeof Object.getOwnPropertyDescriptor === 'function') {
+  		var descriptor = Object.getOwnPropertyDescriptor(obj, sym);
+  		if (descriptor.value !== symVal || descriptor.enumerable !== true) { return false; }
+  	}
+
+  	return true;
+  };
+
+  var origSymbol = commonjsGlobal.Symbol;
+
+
+  var hasSymbols = function hasNativeSymbols() {
+  	if (typeof origSymbol !== 'function') { return false; }
+  	if (typeof Symbol !== 'function') { return false; }
+  	if (typeof origSymbol('foo') !== 'symbol') { return false; }
+  	if (typeof Symbol('bar') !== 'symbol') { return false; }
+
+  	return shams();
+  };
+
+  /* eslint no-invalid-this: 1 */
+
+  var ERROR_MESSAGE = 'Function.prototype.bind called on incompatible ';
+  var slice$3 = Array.prototype.slice;
+  var toStr$2 = Object.prototype.toString;
+  var funcType = '[object Function]';
+
+  var implementation$1 = function bind(that) {
+      var target = this;
+      if (typeof target !== 'function' || toStr$2.call(target) !== funcType) {
+          throw new TypeError(ERROR_MESSAGE + target);
+      }
+      var args = slice$3.call(arguments, 1);
+
+      var bound;
+      var binder = function () {
+          if (this instanceof bound) {
+              var result = target.apply(
+                  this,
+                  args.concat(slice$3.call(arguments))
+              );
+              if (Object(result) === result) {
+                  return result;
+              }
+              return this;
+          } else {
+              return target.apply(
+                  that,
+                  args.concat(slice$3.call(arguments))
+              );
+          }
+      };
+
+      var boundLength = Math.max(0, target.length - args.length);
+      var boundArgs = [];
+      for (var i = 0; i < boundLength; i++) {
+          boundArgs.push('$' + i);
+      }
+
+      bound = Function('binder', 'return function (' + boundArgs.join(',') + '){ return binder.apply(this,arguments); }')(binder);
+
+      if (target.prototype) {
+          var Empty = function Empty() {};
+          Empty.prototype = target.prototype;
+          bound.prototype = new Empty();
+          Empty.prototype = null;
+      }
+
+      return bound;
+  };
+
+  var functionBind = Function.prototype.bind || implementation$1;
+
+  var src = functionBind.call(Function.call, Object.prototype.hasOwnProperty);
+
+  var undefined$1;
+
+  var $SyntaxError = SyntaxError;
+  var $Function = Function;
+  var $TypeError = TypeError;
+
+  // eslint-disable-next-line consistent-return
+  var getEvalledConstructor = function (expressionSyntax) {
+  	try {
+  		return $Function('"use strict"; return (' + expressionSyntax + ').constructor;')();
+  	} catch (e) {}
+  };
+
+  var $gOPD = Object.getOwnPropertyDescriptor;
+  if ($gOPD) {
+  	try {
+  		$gOPD({}, '');
+  	} catch (e) {
+  		$gOPD = null; // this is IE 8, which has a broken gOPD
+  	}
+  }
+
+  var throwTypeError = function () {
+  	throw new $TypeError();
+  };
+  var ThrowTypeError = $gOPD
+  	? (function () {
+  		try {
+  			// eslint-disable-next-line no-unused-expressions, no-caller, no-restricted-properties
+  			arguments.callee; // IE 8 does not throw here
+  			return throwTypeError;
+  		} catch (calleeThrows) {
+  			try {
+  				// IE 8 throws on Object.getOwnPropertyDescriptor(arguments, '')
+  				return $gOPD(arguments, 'callee').get;
+  			} catch (gOPDthrows) {
+  				return throwTypeError;
+  			}
+  		}
+  	}())
+  	: throwTypeError;
+
+  var hasSymbols$1 = hasSymbols();
+
+  var getProto = Object.getPrototypeOf || function (x) { return x.__proto__; }; // eslint-disable-line no-proto
+
+  var needsEval = {};
+
+  var TypedArray = typeof Uint8Array === 'undefined' ? undefined$1 : getProto(Uint8Array);
+
+  var INTRINSICS = {
+  	'%AggregateError%': typeof AggregateError === 'undefined' ? undefined$1 : AggregateError,
+  	'%Array%': Array,
+  	'%ArrayBuffer%': typeof ArrayBuffer === 'undefined' ? undefined$1 : ArrayBuffer,
+  	'%ArrayIteratorPrototype%': hasSymbols$1 ? getProto([][Symbol.iterator]()) : undefined$1,
+  	'%AsyncFromSyncIteratorPrototype%': undefined$1,
+  	'%AsyncFunction%': needsEval,
+  	'%AsyncGenerator%': needsEval,
+  	'%AsyncGeneratorFunction%': needsEval,
+  	'%AsyncIteratorPrototype%': needsEval,
+  	'%Atomics%': typeof Atomics === 'undefined' ? undefined$1 : Atomics,
+  	'%BigInt%': typeof BigInt === 'undefined' ? undefined$1 : BigInt,
+  	'%Boolean%': Boolean,
+  	'%DataView%': typeof DataView === 'undefined' ? undefined$1 : DataView,
+  	'%Date%': Date,
+  	'%decodeURI%': decodeURI,
+  	'%decodeURIComponent%': decodeURIComponent,
+  	'%encodeURI%': encodeURI,
+  	'%encodeURIComponent%': encodeURIComponent,
+  	'%Error%': Error,
+  	'%eval%': eval, // eslint-disable-line no-eval
+  	'%EvalError%': EvalError,
+  	'%Float32Array%': typeof Float32Array === 'undefined' ? undefined$1 : Float32Array,
+  	'%Float64Array%': typeof Float64Array === 'undefined' ? undefined$1 : Float64Array,
+  	'%FinalizationRegistry%': typeof FinalizationRegistry === 'undefined' ? undefined$1 : FinalizationRegistry,
+  	'%Function%': $Function,
+  	'%GeneratorFunction%': needsEval,
+  	'%Int8Array%': typeof Int8Array === 'undefined' ? undefined$1 : Int8Array,
+  	'%Int16Array%': typeof Int16Array === 'undefined' ? undefined$1 : Int16Array,
+  	'%Int32Array%': typeof Int32Array === 'undefined' ? undefined$1 : Int32Array,
+  	'%isFinite%': isFinite,
+  	'%isNaN%': isNaN,
+  	'%IteratorPrototype%': hasSymbols$1 ? getProto(getProto([][Symbol.iterator]())) : undefined$1,
+  	'%JSON%': typeof JSON === 'object' ? JSON : undefined$1,
+  	'%Map%': typeof Map === 'undefined' ? undefined$1 : Map,
+  	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols$1 ? undefined$1 : getProto(new Map()[Symbol.iterator]()),
+  	'%Math%': Math,
+  	'%Number%': Number,
+  	'%Object%': Object,
+  	'%parseFloat%': parseFloat,
+  	'%parseInt%': parseInt,
+  	'%Promise%': typeof Promise === 'undefined' ? undefined$1 : Promise,
+  	'%Proxy%': typeof Proxy === 'undefined' ? undefined$1 : Proxy,
+  	'%RangeError%': RangeError,
+  	'%ReferenceError%': ReferenceError,
+  	'%Reflect%': typeof Reflect === 'undefined' ? undefined$1 : Reflect,
+  	'%RegExp%': RegExp,
+  	'%Set%': typeof Set === 'undefined' ? undefined$1 : Set,
+  	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols$1 ? undefined$1 : getProto(new Set()[Symbol.iterator]()),
+  	'%SharedArrayBuffer%': typeof SharedArrayBuffer === 'undefined' ? undefined$1 : SharedArrayBuffer,
+  	'%String%': String,
+  	'%StringIteratorPrototype%': hasSymbols$1 ? getProto(''[Symbol.iterator]()) : undefined$1,
+  	'%Symbol%': hasSymbols$1 ? Symbol : undefined$1,
+  	'%SyntaxError%': $SyntaxError,
+  	'%ThrowTypeError%': ThrowTypeError,
+  	'%TypedArray%': TypedArray,
+  	'%TypeError%': $TypeError,
+  	'%Uint8Array%': typeof Uint8Array === 'undefined' ? undefined$1 : Uint8Array,
+  	'%Uint8ClampedArray%': typeof Uint8ClampedArray === 'undefined' ? undefined$1 : Uint8ClampedArray,
+  	'%Uint16Array%': typeof Uint16Array === 'undefined' ? undefined$1 : Uint16Array,
+  	'%Uint32Array%': typeof Uint32Array === 'undefined' ? undefined$1 : Uint32Array,
+  	'%URIError%': URIError,
+  	'%WeakMap%': typeof WeakMap === 'undefined' ? undefined$1 : WeakMap,
+  	'%WeakRef%': typeof WeakRef === 'undefined' ? undefined$1 : WeakRef,
+  	'%WeakSet%': typeof WeakSet === 'undefined' ? undefined$1 : WeakSet
+  };
+
+  var doEval = function doEval(name) {
+  	var value;
+  	if (name === '%AsyncFunction%') {
+  		value = getEvalledConstructor('async function () {}');
+  	} else if (name === '%GeneratorFunction%') {
+  		value = getEvalledConstructor('function* () {}');
+  	} else if (name === '%AsyncGeneratorFunction%') {
+  		value = getEvalledConstructor('async function* () {}');
+  	} else if (name === '%AsyncGenerator%') {
+  		var fn = doEval('%AsyncGeneratorFunction%');
+  		if (fn) {
+  			value = fn.prototype;
+  		}
+  	} else if (name === '%AsyncIteratorPrototype%') {
+  		var gen = doEval('%AsyncGenerator%');
+  		if (gen) {
+  			value = getProto(gen.prototype);
+  		}
+  	}
+
+  	INTRINSICS[name] = value;
+
+  	return value;
+  };
+
+  var LEGACY_ALIASES = {
+  	'%ArrayBufferPrototype%': ['ArrayBuffer', 'prototype'],
+  	'%ArrayPrototype%': ['Array', 'prototype'],
+  	'%ArrayProto_entries%': ['Array', 'prototype', 'entries'],
+  	'%ArrayProto_forEach%': ['Array', 'prototype', 'forEach'],
+  	'%ArrayProto_keys%': ['Array', 'prototype', 'keys'],
+  	'%ArrayProto_values%': ['Array', 'prototype', 'values'],
+  	'%AsyncFunctionPrototype%': ['AsyncFunction', 'prototype'],
+  	'%AsyncGenerator%': ['AsyncGeneratorFunction', 'prototype'],
+  	'%AsyncGeneratorPrototype%': ['AsyncGeneratorFunction', 'prototype', 'prototype'],
+  	'%BooleanPrototype%': ['Boolean', 'prototype'],
+  	'%DataViewPrototype%': ['DataView', 'prototype'],
+  	'%DatePrototype%': ['Date', 'prototype'],
+  	'%ErrorPrototype%': ['Error', 'prototype'],
+  	'%EvalErrorPrototype%': ['EvalError', 'prototype'],
+  	'%Float32ArrayPrototype%': ['Float32Array', 'prototype'],
+  	'%Float64ArrayPrototype%': ['Float64Array', 'prototype'],
+  	'%FunctionPrototype%': ['Function', 'prototype'],
+  	'%Generator%': ['GeneratorFunction', 'prototype'],
+  	'%GeneratorPrototype%': ['GeneratorFunction', 'prototype', 'prototype'],
+  	'%Int8ArrayPrototype%': ['Int8Array', 'prototype'],
+  	'%Int16ArrayPrototype%': ['Int16Array', 'prototype'],
+  	'%Int32ArrayPrototype%': ['Int32Array', 'prototype'],
+  	'%JSONParse%': ['JSON', 'parse'],
+  	'%JSONStringify%': ['JSON', 'stringify'],
+  	'%MapPrototype%': ['Map', 'prototype'],
+  	'%NumberPrototype%': ['Number', 'prototype'],
+  	'%ObjectPrototype%': ['Object', 'prototype'],
+  	'%ObjProto_toString%': ['Object', 'prototype', 'toString'],
+  	'%ObjProto_valueOf%': ['Object', 'prototype', 'valueOf'],
+  	'%PromisePrototype%': ['Promise', 'prototype'],
+  	'%PromiseProto_then%': ['Promise', 'prototype', 'then'],
+  	'%Promise_all%': ['Promise', 'all'],
+  	'%Promise_reject%': ['Promise', 'reject'],
+  	'%Promise_resolve%': ['Promise', 'resolve'],
+  	'%RangeErrorPrototype%': ['RangeError', 'prototype'],
+  	'%ReferenceErrorPrototype%': ['ReferenceError', 'prototype'],
+  	'%RegExpPrototype%': ['RegExp', 'prototype'],
+  	'%SetPrototype%': ['Set', 'prototype'],
+  	'%SharedArrayBufferPrototype%': ['SharedArrayBuffer', 'prototype'],
+  	'%StringPrototype%': ['String', 'prototype'],
+  	'%SymbolPrototype%': ['Symbol', 'prototype'],
+  	'%SyntaxErrorPrototype%': ['SyntaxError', 'prototype'],
+  	'%TypedArrayPrototype%': ['TypedArray', 'prototype'],
+  	'%TypeErrorPrototype%': ['TypeError', 'prototype'],
+  	'%Uint8ArrayPrototype%': ['Uint8Array', 'prototype'],
+  	'%Uint8ClampedArrayPrototype%': ['Uint8ClampedArray', 'prototype'],
+  	'%Uint16ArrayPrototype%': ['Uint16Array', 'prototype'],
+  	'%Uint32ArrayPrototype%': ['Uint32Array', 'prototype'],
+  	'%URIErrorPrototype%': ['URIError', 'prototype'],
+  	'%WeakMapPrototype%': ['WeakMap', 'prototype'],
+  	'%WeakSetPrototype%': ['WeakSet', 'prototype']
+  };
+
+
+
+  var $concat = functionBind.call(Function.call, Array.prototype.concat);
+  var $spliceApply = functionBind.call(Function.apply, Array.prototype.splice);
+  var $replace = functionBind.call(Function.call, String.prototype.replace);
+  var $strSlice = functionBind.call(Function.call, String.prototype.slice);
+
+  /* adapted from https://github.com/lodash/lodash/blob/4.17.15/dist/lodash.js#L6735-L6744 */
+  var rePropName$1 = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g;
+  var reEscapeChar$1 = /\\(\\)?/g; /** Used to match backslashes in property paths. */
+  var stringToPath$1 = function stringToPath(string) {
+  	var first = $strSlice(string, 0, 1);
+  	var last = $strSlice(string, -1);
+  	if (first === '%' && last !== '%') {
+  		throw new $SyntaxError('invalid intrinsic syntax, expected closing `%`');
+  	} else if (last === '%' && first !== '%') {
+  		throw new $SyntaxError('invalid intrinsic syntax, expected opening `%`');
+  	}
+  	var result = [];
+  	$replace(string, rePropName$1, function (match, number, quote, subString) {
+  		result[result.length] = quote ? $replace(subString, reEscapeChar$1, '$1') : number || match;
+  	});
+  	return result;
+  };
+  /* end adaptation */
+
+  var getBaseIntrinsic = function getBaseIntrinsic(name, allowMissing) {
+  	var intrinsicName = name;
+  	var alias;
+  	if (src(LEGACY_ALIASES, intrinsicName)) {
+  		alias = LEGACY_ALIASES[intrinsicName];
+  		intrinsicName = '%' + alias[0] + '%';
+  	}
+
+  	if (src(INTRINSICS, intrinsicName)) {
+  		var value = INTRINSICS[intrinsicName];
+  		if (value === needsEval) {
+  			value = doEval(intrinsicName);
+  		}
+  		if (typeof value === 'undefined' && !allowMissing) {
+  			throw new $TypeError('intrinsic ' + name + ' exists, but is not available. Please file an issue!');
+  		}
+
+  		return {
+  			alias: alias,
+  			name: intrinsicName,
+  			value: value
+  		};
+  	}
+
+  	throw new $SyntaxError('intrinsic ' + name + ' does not exist!');
+  };
+
+  var getIntrinsic = function GetIntrinsic(name, allowMissing) {
+  	if (typeof name !== 'string' || name.length === 0) {
+  		throw new $TypeError('intrinsic name must be a non-empty string');
+  	}
+  	if (arguments.length > 1 && typeof allowMissing !== 'boolean') {
+  		throw new $TypeError('"allowMissing" argument must be a boolean');
+  	}
+
+  	var parts = stringToPath$1(name);
+  	var intrinsicBaseName = parts.length > 0 ? parts[0] : '';
+
+  	var intrinsic = getBaseIntrinsic('%' + intrinsicBaseName + '%', allowMissing);
+  	var intrinsicRealName = intrinsic.name;
+  	var value = intrinsic.value;
+  	var skipFurtherCaching = false;
+
+  	var alias = intrinsic.alias;
+  	if (alias) {
+  		intrinsicBaseName = alias[0];
+  		$spliceApply(parts, $concat([0, 1], alias));
+  	}
+
+  	for (var i = 1, isOwn = true; i < parts.length; i += 1) {
+  		var part = parts[i];
+  		var first = $strSlice(part, 0, 1);
+  		var last = $strSlice(part, -1);
+  		if (
+  			(
+  				(first === '"' || first === "'" || first === '`')
+  				|| (last === '"' || last === "'" || last === '`')
+  			)
+  			&& first !== last
+  		) {
+  			throw new $SyntaxError('property names with quotes must have matching quotes');
+  		}
+  		if (part === 'constructor' || !isOwn) {
+  			skipFurtherCaching = true;
+  		}
+
+  		intrinsicBaseName += '.' + part;
+  		intrinsicRealName = '%' + intrinsicBaseName + '%';
+
+  		if (src(INTRINSICS, intrinsicRealName)) {
+  			value = INTRINSICS[intrinsicRealName];
+  		} else if (value != null) {
+  			if (!(part in value)) {
+  				if (!allowMissing) {
+  					throw new $TypeError('base intrinsic for ' + name + ' exists, but the property is not available.');
+  				}
+  				return void undefined$1;
+  			}
+  			if ($gOPD && (i + 1) >= parts.length) {
+  				var desc = $gOPD(value, part);
+  				isOwn = !!desc;
+
+  				// By convention, when a data property is converted to an accessor
+  				// property to emulate a data property that does not suffer from
+  				// the override mistake, that accessor's getter is marked with
+  				// an `originalValue` property. Here, when we detect this, we
+  				// uphold the illusion by pretending to see that original data
+  				// property, i.e., returning the value rather than the getter
+  				// itself.
+  				if (isOwn && 'get' in desc && !('originalValue' in desc.get)) {
+  					value = desc.get;
+  				} else {
+  					value = value[part];
+  				}
+  			} else {
+  				isOwn = src(value, part);
+  				value = value[part];
+  			}
+
+  			if (isOwn && !skipFurtherCaching) {
+  				INTRINSICS[intrinsicRealName] = value;
+  			}
+  		}
+  	}
+  	return value;
+  };
+
+  var callBind = createCommonjsModule(function (module) {
+
+
+
+
+  var $apply = getIntrinsic('%Function.prototype.apply%');
+  var $call = getIntrinsic('%Function.prototype.call%');
+  var $reflectApply = getIntrinsic('%Reflect.apply%', true) || functionBind.call($call, $apply);
+
+  var $gOPD = getIntrinsic('%Object.getOwnPropertyDescriptor%', true);
+  var $defineProperty = getIntrinsic('%Object.defineProperty%', true);
+  var $max = getIntrinsic('%Math.max%');
+
+  if ($defineProperty) {
+  	try {
+  		$defineProperty({}, 'a', { value: 1 });
+  	} catch (e) {
+  		// IE 8 has a broken defineProperty
+  		$defineProperty = null;
+  	}
+  }
+
+  module.exports = function callBind(originalFunction) {
+  	var func = $reflectApply(functionBind, $call, arguments);
+  	if ($gOPD && $defineProperty) {
+  		var desc = $gOPD(func, 'length');
+  		if (desc.configurable) {
+  			// original length, plus the receiver, minus any additional arguments (after the receiver)
+  			$defineProperty(
+  				func,
+  				'length',
+  				{ value: 1 + $max(0, originalFunction.length - (arguments.length - 1)) }
+  			);
+  		}
+  	}
+  	return func;
+  };
+
+  var applyBind = function applyBind() {
+  	return $reflectApply(functionBind, $apply, arguments);
+  };
+
+  if ($defineProperty) {
+  	$defineProperty(module.exports, 'apply', { value: applyBind });
+  } else {
+  	module.exports.apply = applyBind;
+  }
+  });
+  callBind.apply;
+
+  var $indexOf = callBind(getIntrinsic('String.prototype.indexOf'));
+
+  var callBound = function callBoundIntrinsic(name, allowMissing) {
+  	var intrinsic = getIntrinsic(name, !!allowMissing);
+  	if (typeof intrinsic === 'function' && $indexOf(name, '.prototype.') > -1) {
+  		return callBind(intrinsic);
+  	}
+  	return intrinsic;
+  };
+
+  var hasToStringTag = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
+
+
+  var $toString = callBound('Object.prototype.toString');
+
+  var isStandardArguments = function isArguments(value) {
+  	if (hasToStringTag && value && typeof value === 'object' && Symbol.toStringTag in value) {
+  		return false;
+  	}
+  	return $toString(value) === '[object Arguments]';
+  };
+
+  var isLegacyArguments = function isArguments(value) {
+  	if (isStandardArguments(value)) {
+  		return true;
+  	}
+  	return value !== null &&
+  		typeof value === 'object' &&
+  		typeof value.length === 'number' &&
+  		value.length >= 0 &&
+  		$toString(value) !== '[object Array]' &&
+  		$toString(value.callee) === '[object Function]';
+  };
+
+  var supportsStandardArguments = (function () {
+  	return isStandardArguments(arguments);
+  }());
+
+  isStandardArguments.isLegacyArguments = isLegacyArguments; // for tests
+
+  var isArguments$2 = supportsStandardArguments ? isStandardArguments : isLegacyArguments;
+
+  var hasSymbols$2 = typeof Symbol === 'function' && typeof Symbol('foo') === 'symbol';
+
+  var toStr$3 = Object.prototype.toString;
+  var concat = Array.prototype.concat;
+  var origDefineProperty = Object.defineProperty;
+
+  var isFunction$1 = function (fn) {
+  	return typeof fn === 'function' && toStr$3.call(fn) === '[object Function]';
+  };
+
+  var arePropertyDescriptorsSupported = function () {
+  	var obj = {};
+  	try {
+  		origDefineProperty(obj, 'x', { enumerable: false, value: obj });
+  		// eslint-disable-next-line no-unused-vars, no-restricted-syntax
+  		for (var _ in obj) { // jscs:ignore disallowUnusedVariables
+  			return false;
+  		}
+  		return obj.x === obj;
+  	} catch (e) { /* this is IE 8. */
+  		return false;
+  	}
+  };
+  var supportsDescriptors = origDefineProperty && arePropertyDescriptorsSupported();
+
+  var defineProperty$2 = function (object, name, value, predicate) {
+  	if (name in object && (!isFunction$1(predicate) || !predicate())) {
+  		return;
+  	}
+  	if (supportsDescriptors) {
+  		origDefineProperty(object, name, {
+  			configurable: true,
+  			enumerable: false,
+  			value: value,
+  			writable: true
+  		});
+  	} else {
+  		object[name] = value;
+  	}
+  };
+
+  var defineProperties = function (object, map) {
+  	var predicates = arguments.length > 2 ? arguments[2] : {};
+  	var props = objectKeys(map);
+  	if (hasSymbols$2) {
+  		props = concat.call(props, Object.getOwnPropertySymbols(map));
+  	}
+  	for (var i = 0; i < props.length; i += 1) {
+  		defineProperty$2(object, props[i], map[props[i]], predicates[props[i]]);
+  	}
+  };
+
+  defineProperties.supportsDescriptors = !!supportsDescriptors;
+
+  var defineProperties_1 = defineProperties;
+
+  var numberIsNaN = function (value) {
+  	return value !== value;
+  };
+
+  var implementation$2 = function is(a, b) {
+  	if (a === 0 && b === 0) {
+  		return 1 / a === 1 / b;
+  	}
+  	if (a === b) {
+  		return true;
+  	}
+  	if (numberIsNaN(a) && numberIsNaN(b)) {
+  		return true;
+  	}
+  	return false;
+  };
+
+  var polyfill$1 = function getPolyfill() {
+  	return typeof Object.is === 'function' ? Object.is : implementation$2;
+  };
+
+  var shim = function shimObjectIs() {
+  	var polyfill = polyfill$1();
+  	defineProperties_1(Object, { is: polyfill }, {
+  		is: function testObjectIs() {
+  			return Object.is !== polyfill;
+  		}
+  	});
+  	return polyfill;
+  };
+
+  var polyfill$2 = callBind(polyfill$1(), Object);
+
+  defineProperties_1(polyfill$2, {
+  	getPolyfill: polyfill$1,
+  	implementation: implementation$2,
+  	shim: shim
+  });
+
+  var objectIs = polyfill$2;
+
+  var hasSymbols$3 = hasSymbols();
+  var hasToStringTag$1 = hasSymbols$3 && typeof Symbol.toStringTag === 'symbol';
+  var has$1;
+  var $exec;
+  var isRegexMarker;
+  var badStringifier;
+
+  if (hasToStringTag$1) {
+  	has$1 = callBound('Object.prototype.hasOwnProperty');
+  	$exec = callBound('RegExp.prototype.exec');
+  	isRegexMarker = {};
+
+  	var throwRegexMarker = function () {
+  		throw isRegexMarker;
+  	};
+  	badStringifier = {
+  		toString: throwRegexMarker,
+  		valueOf: throwRegexMarker
+  	};
+
+  	if (typeof Symbol.toPrimitive === 'symbol') {
+  		badStringifier[Symbol.toPrimitive] = throwRegexMarker;
+  	}
+  }
+
+  var $toString$1 = callBound('Object.prototype.toString');
+  var gOPD$2 = Object.getOwnPropertyDescriptor;
+  var regexClass = '[object RegExp]';
+
+  var isRegex = hasToStringTag$1
+  	// eslint-disable-next-line consistent-return
+  	? function isRegex(value) {
+  		if (!value || typeof value !== 'object') {
+  			return false;
+  		}
+
+  		var descriptor = gOPD$2(value, 'lastIndex');
+  		var hasLastIndexDataProperty = descriptor && has$1(descriptor, 'value');
+  		if (!hasLastIndexDataProperty) {
+  			return false;
+  		}
+
+  		try {
+  			$exec(value, badStringifier);
+  		} catch (e) {
+  			return e === isRegexMarker;
+  		}
+  	}
+  	: function isRegex(value) {
+  		// In older browsers, typeof regex incorrectly returns 'function'
+  		if (!value || (typeof value !== 'object' && typeof value !== 'function')) {
+  			return false;
+  		}
+
+  		return $toString$1(value) === regexClass;
+  	};
+
+  var $Object = Object;
+  var $TypeError$1 = TypeError;
+
+  var implementation$3 = function flags() {
+  	if (this != null && this !== $Object(this)) {
+  		throw new $TypeError$1('RegExp.prototype.flags getter called on non-object');
+  	}
+  	var result = '';
+  	if (this.global) {
+  		result += 'g';
+  	}
+  	if (this.ignoreCase) {
+  		result += 'i';
+  	}
+  	if (this.multiline) {
+  		result += 'm';
+  	}
+  	if (this.dotAll) {
+  		result += 's';
+  	}
+  	if (this.unicode) {
+  		result += 'u';
+  	}
+  	if (this.sticky) {
+  		result += 'y';
+  	}
+  	return result;
+  };
+
+  var supportsDescriptors$1 = defineProperties_1.supportsDescriptors;
+  var $gOPD$1 = Object.getOwnPropertyDescriptor;
+  var $TypeError$2 = TypeError;
+
+  var polyfill$3 = function getPolyfill() {
+  	if (!supportsDescriptors$1) {
+  		throw new $TypeError$2('RegExp.prototype.flags requires a true ES5 environment that supports property descriptors');
+  	}
+  	if ((/a/mig).flags === 'gim') {
+  		var descriptor = $gOPD$1(RegExp.prototype, 'flags');
+  		if (descriptor && typeof descriptor.get === 'function' && typeof (/a/).dotAll === 'boolean') {
+  			return descriptor.get;
+  		}
+  	}
+  	return implementation$3;
+  };
+
+  var supportsDescriptors$2 = defineProperties_1.supportsDescriptors;
+
+  var gOPD$3 = Object.getOwnPropertyDescriptor;
+  var defineProperty$3 = Object.defineProperty;
+  var TypeErr = TypeError;
+  var getProto$1 = Object.getPrototypeOf;
+  var regex = /a/;
+
+  var shim$1 = function shimFlags() {
+  	if (!supportsDescriptors$2 || !getProto$1) {
+  		throw new TypeErr('RegExp.prototype.flags requires a true ES5 environment that supports property descriptors');
+  	}
+  	var polyfill = polyfill$3();
+  	var proto = getProto$1(regex);
+  	var descriptor = gOPD$3(proto, 'flags');
+  	if (!descriptor || descriptor.get !== polyfill) {
+  		defineProperty$3(proto, 'flags', {
+  			configurable: true,
+  			enumerable: false,
+  			get: polyfill
+  		});
+  	}
+  	return polyfill;
+  };
+
+  var flagsBound = callBind(implementation$3);
+
+  defineProperties_1(flagsBound, {
+  	getPolyfill: polyfill$3,
+  	implementation: implementation$3,
+  	shim: shim$1
+  });
+
+  var regexp_prototype_flags = flagsBound;
+
+  var getDay = Date.prototype.getDay;
+  var tryDateObject = function tryDateGetDayCall(value) {
+  	try {
+  		getDay.call(value);
+  		return true;
+  	} catch (e) {
+  		return false;
+  	}
+  };
+
+  var toStr$4 = Object.prototype.toString;
+  var dateClass = '[object Date]';
+  var hasToStringTag$2 = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
+
+  var isDateObject = function isDateObject(value) {
+  	if (typeof value !== 'object' || value === null) {
+  		return false;
+  	}
+  	return hasToStringTag$2 ? tryDateObject(value) : toStr$4.call(value) === dateClass;
+  };
+
+  var getTime = Date.prototype.getTime;
+
+  function deepEqual(actual, expected, options) {
+    var opts = options || {};
+
+    // 7.1. All identical values are equivalent, as determined by ===.
+    if (opts.strict ? objectIs(actual, expected) : actual === expected) {
+      return true;
+    }
+
+    // 7.3. Other pairs that do not both pass typeof value == 'object', equivalence is determined by ==.
+    if (!actual || !expected || (typeof actual !== 'object' && typeof expected !== 'object')) {
+      return opts.strict ? objectIs(actual, expected) : actual == expected;
+    }
+
+    /*
+     * 7.4. For all other Object pairs, including Array objects, equivalence is
+     * determined by having the same number of owned properties (as verified
+     * with Object.prototype.hasOwnProperty.call), the same set of keys
+     * (although not necessarily the same order), equivalent values for every
+     * corresponding key, and an identical 'prototype' property. Note: this
+     * accounts for both named and indexed properties on Arrays.
+     */
+    // eslint-disable-next-line no-use-before-define
+    return objEquiv(actual, expected, opts);
+  }
+
+  function isUndefinedOrNull(value) {
+    return value === null || value === undefined;
+  }
+
+  function isBuffer(x) {
+    if (!x || typeof x !== 'object' || typeof x.length !== 'number') {
+      return false;
+    }
+    if (typeof x.copy !== 'function' || typeof x.slice !== 'function') {
+      return false;
+    }
+    if (x.length > 0 && typeof x[0] !== 'number') {
+      return false;
+    }
+    return true;
+  }
+
+  function objEquiv(a, b, opts) {
+    /* eslint max-statements: [2, 50] */
+    var i, key;
+    if (typeof a !== typeof b) { return false; }
+    if (isUndefinedOrNull(a) || isUndefinedOrNull(b)) { return false; }
+
+    // an identical 'prototype' property.
+    if (a.prototype !== b.prototype) { return false; }
+
+    if (isArguments$2(a) !== isArguments$2(b)) { return false; }
+
+    var aIsRegex = isRegex(a);
+    var bIsRegex = isRegex(b);
+    if (aIsRegex !== bIsRegex) { return false; }
+    if (aIsRegex || bIsRegex) {
+      return a.source === b.source && regexp_prototype_flags(a) === regexp_prototype_flags(b);
+    }
+
+    if (isDateObject(a) && isDateObject(b)) {
+      return getTime.call(a) === getTime.call(b);
+    }
+
+    var aIsBuffer = isBuffer(a);
+    var bIsBuffer = isBuffer(b);
+    if (aIsBuffer !== bIsBuffer) { return false; }
+    if (aIsBuffer || bIsBuffer) { // && would work too, because both are true or both false here
+      if (a.length !== b.length) { return false; }
+      for (i = 0; i < a.length; i++) {
+        if (a[i] !== b[i]) { return false; }
+      }
+      return true;
+    }
+
+    if (typeof a !== typeof b) { return false; }
+
+    try {
+      var ka = objectKeys(a);
+      var kb = objectKeys(b);
+    } catch (e) { // happens when one is a string literal and the other isn't
+      return false;
+    }
+    // having the same number of owned properties (keys incorporates hasOwnProperty)
+    if (ka.length !== kb.length) { return false; }
+
+    // the same set of keys (although not necessarily the same order),
+    ka.sort();
+    kb.sort();
+    // ~~~cheap key test
+    for (i = ka.length - 1; i >= 0; i--) {
+      if (ka[i] != kb[i]) { return false; }
+    }
+    // equivalent values for every corresponding key, and ~~~possibly expensive deep test
+    for (i = ka.length - 1; i >= 0; i--) {
+      key = ka[i];
+      if (!deepEqual(a[key], b[key], opts)) { return false; }
+    }
+
+    return true;
+  }
+
+  var deepEqual_1 = deepEqual;
+
+  /**!
+   * @fileOverview Kickass library to create and place poppers near their reference elements.
+   * @version 1.16.1
+   * @license
+   * Copyright (c) 2016 Federico Zivolo and contributors
+   *
+   * Permission is hereby granted, free of charge, to any person obtaining a copy
+   * of this software and associated documentation files (the "Software"), to deal
+   * in the Software without restriction, including without limitation the rights
+   * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   * copies of the Software, and to permit persons to whom the Software is
+   * furnished to do so, subject to the following conditions:
+   *
+   * The above copyright notice and this permission notice shall be included in all
+   * copies or substantial portions of the Software.
+   *
+   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   * SOFTWARE.
+   */
+  var isBrowser$1 = typeof window !== 'undefined' && typeof document !== 'undefined' && typeof navigator !== 'undefined';
+
+  var timeoutDuration = function () {
+    var longerTimeoutBrowsers = ['Edge', 'Trident', 'Firefox'];
+    for (var i = 0; i < longerTimeoutBrowsers.length; i += 1) {
+      if (isBrowser$1 && navigator.userAgent.indexOf(longerTimeoutBrowsers[i]) >= 0) {
+        return 1;
+      }
+    }
+    return 0;
+  }();
+
+  function microtaskDebounce(fn) {
+    var called = false;
+    return function () {
+      if (called) {
+        return;
+      }
+      called = true;
+      window.Promise.resolve().then(function () {
+        called = false;
+        fn();
+      });
+    };
+  }
+
+  function taskDebounce(fn) {
+    var scheduled = false;
+    return function () {
+      if (!scheduled) {
+        scheduled = true;
+        setTimeout(function () {
+          scheduled = false;
+          fn();
+        }, timeoutDuration);
+      }
+    };
+  }
+
+  var supportsMicroTasks = isBrowser$1 && window.Promise;
+
+  /**
+  * Create a debounced version of a method, that's asynchronously deferred
+  * but called in the minimum time possible.
+  *
+  * @method
+  * @memberof Popper.Utils
+  * @argument {Function} fn
+  * @returns {Function}
+  */
+  var debounce$4 = supportsMicroTasks ? microtaskDebounce : taskDebounce;
+
+  /**
+   * Check if the given variable is a function
+   * @method
+   * @memberof Popper.Utils
+   * @argument {Any} functionToCheck - variable to check
+   * @returns {Boolean} answer to: is a function?
+   */
+  function isFunction$2(functionToCheck) {
+    var getType = {};
+    return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
+  }
+
+  /**
+   * Get CSS computed property of the given element
+   * @method
+   * @memberof Popper.Utils
+   * @argument {Eement} element
+   * @argument {String} property
+   */
+  function getStyleComputedProperty(element, property) {
+    if (element.nodeType !== 1) {
+      return [];
+    }
+    // NOTE: 1 DOM access here
+    var window = element.ownerDocument.defaultView;
+    var css = window.getComputedStyle(element, null);
+    return property ? css[property] : css;
+  }
+
+  /**
+   * Returns the parentNode or the host of the element
+   * @method
+   * @memberof Popper.Utils
+   * @argument {Element} element
+   * @returns {Element} parent
+   */
+  function getParentNode(element) {
+    if (element.nodeName === 'HTML') {
+      return element;
+    }
+    return element.parentNode || element.host;
+  }
+
+  /**
+   * Returns the scrolling parent of the given element
+   * @method
+   * @memberof Popper.Utils
+   * @argument {Element} element
+   * @returns {Element} scroll parent
+   */
+  function getScrollParent(element) {
+    // Return body, `getScroll` will take care to get the correct `scrollTop` from it
+    if (!element) {
+      return document.body;
+    }
+
+    switch (element.nodeName) {
+      case 'HTML':
+      case 'BODY':
+        return element.ownerDocument.body;
+      case '#document':
+        return element.body;
+    }
+
+    // Firefox want us to check `-x` and `-y` variations as well
+
+    var _getStyleComputedProp = getStyleComputedProperty(element),
+        overflow = _getStyleComputedProp.overflow,
+        overflowX = _getStyleComputedProp.overflowX,
+        overflowY = _getStyleComputedProp.overflowY;
+
+    if (/(auto|scroll|overlay)/.test(overflow + overflowY + overflowX)) {
+      return element;
+    }
+
+    return getScrollParent(getParentNode(element));
+  }
+
+  /**
+   * Returns the reference node of the reference object, or the reference object itself.
+   * @method
+   * @memberof Popper.Utils
+   * @param {Element|Object} reference - the reference element (the popper will be relative to this)
+   * @returns {Element} parent
+   */
+  function getReferenceNode(reference) {
+    return reference && reference.referenceNode ? reference.referenceNode : reference;
+  }
+
+  var isIE11 = isBrowser$1 && !!(window.MSInputMethodContext && document.documentMode);
+  var isIE10 = isBrowser$1 && /MSIE 10/.test(navigator.userAgent);
+
+  /**
+   * Determines if the browser is Internet Explorer
+   * @method
+   * @memberof Popper.Utils
+   * @param {Number} version to check
+   * @returns {Boolean} isIE
+   */
+  function isIE(version) {
+    if (version === 11) {
+      return isIE11;
+    }
+    if (version === 10) {
+      return isIE10;
+    }
+    return isIE11 || isIE10;
+  }
+
+  /**
+   * Returns the offset parent of the given element
+   * @method
+   * @memberof Popper.Utils
+   * @argument {Element} element
+   * @returns {Element} offset parent
+   */
+  function getOffsetParent(element) {
+    if (!element) {
+      return document.documentElement;
+    }
+
+    var noOffsetParent = isIE(10) ? document.body : null;
+
+    // NOTE: 1 DOM access here
+    var offsetParent = element.offsetParent || null;
+    // Skip hidden elements which don't have an offsetParent
+    while (offsetParent === noOffsetParent && element.nextElementSibling) {
+      offsetParent = (element = element.nextElementSibling).offsetParent;
+    }
+
+    var nodeName = offsetParent && offsetParent.nodeName;
+
+    if (!nodeName || nodeName === 'BODY' || nodeName === 'HTML') {
+      return element ? element.ownerDocument.documentElement : document.documentElement;
+    }
+
+    // .offsetParent will return the closest TH, TD or TABLE in case
+    // no offsetParent is present, I hate this job...
+    if (['TH', 'TD', 'TABLE'].indexOf(offsetParent.nodeName) !== -1 && getStyleComputedProperty(offsetParent, 'position') === 'static') {
+      return getOffsetParent(offsetParent);
+    }
+
+    return offsetParent;
+  }
+
+  function isOffsetContainer(element) {
+    var nodeName = element.nodeName;
+
+    if (nodeName === 'BODY') {
+      return false;
+    }
+    return nodeName === 'HTML' || getOffsetParent(element.firstElementChild) === element;
+  }
+
+  /**
+   * Finds the root node (document, shadowDOM root) of the given element
+   * @method
+   * @memberof Popper.Utils
+   * @argument {Element} node
+   * @returns {Element} root node
+   */
+  function getRoot(node) {
+    if (node.parentNode !== null) {
+      return getRoot(node.parentNode);
+    }
+
+    return node;
+  }
+
+  /**
+   * Finds the offset parent common to the two provided nodes
+   * @method
+   * @memberof Popper.Utils
+   * @argument {Element} element1
+   * @argument {Element} element2
+   * @returns {Element} common offset parent
+   */
+  function findCommonOffsetParent(element1, element2) {
+    // This check is needed to avoid errors in case one of the elements isn't defined for any reason
+    if (!element1 || !element1.nodeType || !element2 || !element2.nodeType) {
+      return document.documentElement;
+    }
+
+    // Here we make sure to give as "start" the element that comes first in the DOM
+    var order = element1.compareDocumentPosition(element2) & Node.DOCUMENT_POSITION_FOLLOWING;
+    var start = order ? element1 : element2;
+    var end = order ? element2 : element1;
+
+    // Get common ancestor container
+    var range = document.createRange();
+    range.setStart(start, 0);
+    range.setEnd(end, 0);
+    var commonAncestorContainer = range.commonAncestorContainer;
+
+    // Both nodes are inside #document
+
+    if (element1 !== commonAncestorContainer && element2 !== commonAncestorContainer || start.contains(end)) {
+      if (isOffsetContainer(commonAncestorContainer)) {
+        return commonAncestorContainer;
+      }
+
+      return getOffsetParent(commonAncestorContainer);
+    }
+
+    // one of the nodes is inside shadowDOM, find which one
+    var element1root = getRoot(element1);
+    if (element1root.host) {
+      return findCommonOffsetParent(element1root.host, element2);
+    } else {
+      return findCommonOffsetParent(element1, getRoot(element2).host);
+    }
+  }
+
+  /**
+   * Gets the scroll value of the given element in the given side (top and left)
+   * @method
+   * @memberof Popper.Utils
+   * @argument {Element} element
+   * @argument {String} side `top` or `left`
+   * @returns {number} amount of scrolled pixels
+   */
+  function getScroll(element) {
+    var side = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'top';
+
+    var upperSide = side === 'top' ? 'scrollTop' : 'scrollLeft';
+    var nodeName = element.nodeName;
+
+    if (nodeName === 'BODY' || nodeName === 'HTML') {
+      var html = element.ownerDocument.documentElement;
+      var scrollingElement = element.ownerDocument.scrollingElement || html;
+      return scrollingElement[upperSide];
+    }
+
+    return element[upperSide];
+  }
+
+  /*
+   * Sum or subtract the element scroll values (left and top) from a given rect object
+   * @method
+   * @memberof Popper.Utils
+   * @param {Object} rect - Rect object you want to change
+   * @param {HTMLElement} element - The element from the function reads the scroll values
+   * @param {Boolean} subtract - set to true if you want to subtract the scroll values
+   * @return {Object} rect - The modifier rect object
+   */
+  function includeScroll(rect, element) {
+    var subtract = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+    var scrollTop = getScroll(element, 'top');
+    var scrollLeft = getScroll(element, 'left');
+    var modifier = subtract ? -1 : 1;
+    rect.top += scrollTop * modifier;
+    rect.bottom += scrollTop * modifier;
+    rect.left += scrollLeft * modifier;
+    rect.right += scrollLeft * modifier;
+    return rect;
+  }
+
+  /*
+   * Helper to detect borders of a given element
+   * @method
+   * @memberof Popper.Utils
+   * @param {CSSStyleDeclaration} styles
+   * Result of `getStyleComputedProperty` on the given element
+   * @param {String} axis - `x` or `y`
+   * @return {number} borders - The borders size of the given axis
+   */
+
+  function getBordersSize$1(styles, axis) {
+    var sideA = axis === 'x' ? 'Left' : 'Top';
+    var sideB = sideA === 'Left' ? 'Right' : 'Bottom';
+
+    return parseFloat(styles['border' + sideA + 'Width']) + parseFloat(styles['border' + sideB + 'Width']);
+  }
+
+  function getSize(axis, body, html, computedStyle) {
+    return Math.max(body['offset' + axis], body['scroll' + axis], html['client' + axis], html['offset' + axis], html['scroll' + axis], isIE(10) ? parseInt(html['offset' + axis]) + parseInt(computedStyle['margin' + (axis === 'Height' ? 'Top' : 'Left')]) + parseInt(computedStyle['margin' + (axis === 'Height' ? 'Bottom' : 'Right')]) : 0);
+  }
+
+  function getWindowSizes(document) {
+    var body = document.body;
+    var html = document.documentElement;
+    var computedStyle = isIE(10) && getComputedStyle(html);
+
+    return {
+      height: getSize('Height', body, html, computedStyle),
+      width: getSize('Width', body, html, computedStyle)
+    };
+  }
+
+  var classCallCheck = function (instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  };
+
+  var createClass = function () {
+    function defineProperties(target, props) {
+      for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+      }
+    }
+
+    return function (Constructor, protoProps, staticProps) {
+      if (protoProps) defineProperties(Constructor.prototype, protoProps);
+      if (staticProps) defineProperties(Constructor, staticProps);
+      return Constructor;
+    };
+  }();
+
+
+
+
+
+  var defineProperty$4 = function (obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  };
+
+  var _extends$o = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  /**
+   * Given element offsets, generate an output similar to getBoundingClientRect
+   * @method
+   * @memberof Popper.Utils
+   * @argument {Object} offsets
+   * @returns {Object} ClientRect like output
+   */
+  function getClientRect(offsets) {
+    return _extends$o({}, offsets, {
+      right: offsets.left + offsets.width,
+      bottom: offsets.top + offsets.height
+    });
+  }
+
+  /**
+   * Get bounding client rect of given element
+   * @method
+   * @memberof Popper.Utils
+   * @param {HTMLElement} element
+   * @return {Object} client rect
+   */
+  function getBoundingClientRect(element) {
+    var rect = {};
+
+    // IE10 10 FIX: Please, don't ask, the element isn't
+    // considered in DOM in some circumstances...
+    // This isn't reproducible in IE10 compatibility mode of IE11
+    try {
+      if (isIE(10)) {
+        rect = element.getBoundingClientRect();
+        var scrollTop = getScroll(element, 'top');
+        var scrollLeft = getScroll(element, 'left');
+        rect.top += scrollTop;
+        rect.left += scrollLeft;
+        rect.bottom += scrollTop;
+        rect.right += scrollLeft;
+      } else {
+        rect = element.getBoundingClientRect();
+      }
+    } catch (e) {}
+
+    var result = {
+      left: rect.left,
+      top: rect.top,
+      width: rect.right - rect.left,
+      height: rect.bottom - rect.top
+    };
+
+    // subtract scrollbar size from sizes
+    var sizes = element.nodeName === 'HTML' ? getWindowSizes(element.ownerDocument) : {};
+    var width = sizes.width || element.clientWidth || result.width;
+    var height = sizes.height || element.clientHeight || result.height;
+
+    var horizScrollbar = element.offsetWidth - width;
+    var vertScrollbar = element.offsetHeight - height;
+
+    // if an hypothetical scrollbar is detected, we must be sure it's not a `border`
+    // we make this check conditional for performance reasons
+    if (horizScrollbar || vertScrollbar) {
+      var styles = getStyleComputedProperty(element);
+      horizScrollbar -= getBordersSize$1(styles, 'x');
+      vertScrollbar -= getBordersSize$1(styles, 'y');
+
+      result.width -= horizScrollbar;
+      result.height -= vertScrollbar;
+    }
+
+    return getClientRect(result);
+  }
+
+  function getOffsetRectRelativeToArbitraryNode(children, parent) {
+    var fixedPosition = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+    var isIE10 = isIE(10);
+    var isHTML = parent.nodeName === 'HTML';
+    var childrenRect = getBoundingClientRect(children);
+    var parentRect = getBoundingClientRect(parent);
+    var scrollParent = getScrollParent(children);
+
+    var styles = getStyleComputedProperty(parent);
+    var borderTopWidth = parseFloat(styles.borderTopWidth);
+    var borderLeftWidth = parseFloat(styles.borderLeftWidth);
+
+    // In cases where the parent is fixed, we must ignore negative scroll in offset calc
+    if (fixedPosition && isHTML) {
+      parentRect.top = Math.max(parentRect.top, 0);
+      parentRect.left = Math.max(parentRect.left, 0);
+    }
+    var offsets = getClientRect({
+      top: childrenRect.top - parentRect.top - borderTopWidth,
+      left: childrenRect.left - parentRect.left - borderLeftWidth,
+      width: childrenRect.width,
+      height: childrenRect.height
+    });
+    offsets.marginTop = 0;
+    offsets.marginLeft = 0;
+
+    // Subtract margins of documentElement in case it's being used as parent
+    // we do this only on HTML because it's the only element that behaves
+    // differently when margins are applied to it. The margins are included in
+    // the box of the documentElement, in the other cases not.
+    if (!isIE10 && isHTML) {
+      var marginTop = parseFloat(styles.marginTop);
+      var marginLeft = parseFloat(styles.marginLeft);
+
+      offsets.top -= borderTopWidth - marginTop;
+      offsets.bottom -= borderTopWidth - marginTop;
+      offsets.left -= borderLeftWidth - marginLeft;
+      offsets.right -= borderLeftWidth - marginLeft;
+
+      // Attach marginTop and marginLeft because in some circumstances we may need them
+      offsets.marginTop = marginTop;
+      offsets.marginLeft = marginLeft;
+    }
+
+    if (isIE10 && !fixedPosition ? parent.contains(scrollParent) : parent === scrollParent && scrollParent.nodeName !== 'BODY') {
+      offsets = includeScroll(offsets, parent);
+    }
+
+    return offsets;
+  }
+
+  function getViewportOffsetRectRelativeToArtbitraryNode(element) {
+    var excludeScroll = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+    var html = element.ownerDocument.documentElement;
+    var relativeOffset = getOffsetRectRelativeToArbitraryNode(element, html);
+    var width = Math.max(html.clientWidth, window.innerWidth || 0);
+    var height = Math.max(html.clientHeight, window.innerHeight || 0);
+
+    var scrollTop = !excludeScroll ? getScroll(html) : 0;
+    var scrollLeft = !excludeScroll ? getScroll(html, 'left') : 0;
+
+    var offset = {
+      top: scrollTop - relativeOffset.top + relativeOffset.marginTop,
+      left: scrollLeft - relativeOffset.left + relativeOffset.marginLeft,
+      width: width,
+      height: height
+    };
+
+    return getClientRect(offset);
+  }
+
+  /**
+   * Check if the given element is fixed or is inside a fixed parent
+   * @method
+   * @memberof Popper.Utils
+   * @argument {Element} element
+   * @argument {Element} customContainer
+   * @returns {Boolean} answer to "isFixed?"
+   */
+  function isFixed(element) {
+    var nodeName = element.nodeName;
+    if (nodeName === 'BODY' || nodeName === 'HTML') {
+      return false;
+    }
+    if (getStyleComputedProperty(element, 'position') === 'fixed') {
+      return true;
+    }
+    var parentNode = getParentNode(element);
+    if (!parentNode) {
+      return false;
+    }
+    return isFixed(parentNode);
+  }
+
+  /**
+   * Finds the first parent of an element that has a transformed property defined
+   * @method
+   * @memberof Popper.Utils
+   * @argument {Element} element
+   * @returns {Element} first transformed parent or documentElement
+   */
+
+  function getFixedPositionOffsetParent(element) {
+    // This check is needed to avoid errors in case one of the elements isn't defined for any reason
+    if (!element || !element.parentElement || isIE()) {
+      return document.documentElement;
+    }
+    var el = element.parentElement;
+    while (el && getStyleComputedProperty(el, 'transform') === 'none') {
+      el = el.parentElement;
+    }
+    return el || document.documentElement;
+  }
+
+  /**
+   * Computed the boundaries limits and return them
+   * @method
+   * @memberof Popper.Utils
+   * @param {HTMLElement} popper
+   * @param {HTMLElement} reference
+   * @param {number} padding
+   * @param {HTMLElement} boundariesElement - Element used to define the boundaries
+   * @param {Boolean} fixedPosition - Is in fixed position mode
+   * @returns {Object} Coordinates of the boundaries
+   */
+  function getBoundaries(popper, reference, padding, boundariesElement) {
+    var fixedPosition = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
+
+    // NOTE: 1 DOM access here
+
+    var boundaries = { top: 0, left: 0 };
+    var offsetParent = fixedPosition ? getFixedPositionOffsetParent(popper) : findCommonOffsetParent(popper, getReferenceNode(reference));
+
+    // Handle viewport case
+    if (boundariesElement === 'viewport') {
+      boundaries = getViewportOffsetRectRelativeToArtbitraryNode(offsetParent, fixedPosition);
+    } else {
+      // Handle other cases based on DOM element used as boundaries
+      var boundariesNode = void 0;
+      if (boundariesElement === 'scrollParent') {
+        boundariesNode = getScrollParent(getParentNode(reference));
+        if (boundariesNode.nodeName === 'BODY') {
+          boundariesNode = popper.ownerDocument.documentElement;
+        }
+      } else if (boundariesElement === 'window') {
+        boundariesNode = popper.ownerDocument.documentElement;
+      } else {
+        boundariesNode = boundariesElement;
+      }
+
+      var offsets = getOffsetRectRelativeToArbitraryNode(boundariesNode, offsetParent, fixedPosition);
+
+      // In case of HTML, we need a different computation
+      if (boundariesNode.nodeName === 'HTML' && !isFixed(offsetParent)) {
+        var _getWindowSizes = getWindowSizes(popper.ownerDocument),
+            height = _getWindowSizes.height,
+            width = _getWindowSizes.width;
+
+        boundaries.top += offsets.top - offsets.marginTop;
+        boundaries.bottom = height + offsets.top;
+        boundaries.left += offsets.left - offsets.marginLeft;
+        boundaries.right = width + offsets.left;
+      } else {
+        // for all the other DOM elements, this one is good
+        boundaries = offsets;
+      }
+    }
+
+    // Add paddings
+    padding = padding || 0;
+    var isPaddingNumber = typeof padding === 'number';
+    boundaries.left += isPaddingNumber ? padding : padding.left || 0;
+    boundaries.top += isPaddingNumber ? padding : padding.top || 0;
+    boundaries.right -= isPaddingNumber ? padding : padding.right || 0;
+    boundaries.bottom -= isPaddingNumber ? padding : padding.bottom || 0;
+
+    return boundaries;
+  }
+
+  function getArea(_ref) {
+    var width = _ref.width,
+        height = _ref.height;
+
+    return width * height;
+  }
+
+  /**
+   * Utility used to transform the `auto` placement to the placement with more
+   * available space.
+   * @method
+   * @memberof Popper.Utils
+   * @argument {Object} data - The data object generated by update method
+   * @argument {Object} options - Modifiers configuration and options
+   * @returns {Object} The data object, properly modified
+   */
+  function computeAutoPlacement(placement, refRect, popper, reference, boundariesElement) {
+    var padding = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 0;
+
+    if (placement.indexOf('auto') === -1) {
+      return placement;
+    }
+
+    var boundaries = getBoundaries(popper, reference, padding, boundariesElement);
+
+    var rects = {
+      top: {
+        width: boundaries.width,
+        height: refRect.top - boundaries.top
+      },
+      right: {
+        width: boundaries.right - refRect.right,
+        height: boundaries.height
+      },
+      bottom: {
+        width: boundaries.width,
+        height: boundaries.bottom - refRect.bottom
+      },
+      left: {
+        width: refRect.left - boundaries.left,
+        height: boundaries.height
+      }
+    };
+
+    var sortedAreas = Object.keys(rects).map(function (key) {
+      return _extends$o({
+        key: key
+      }, rects[key], {
+        area: getArea(rects[key])
+      });
+    }).sort(function (a, b) {
+      return b.area - a.area;
+    });
+
+    var filteredAreas = sortedAreas.filter(function (_ref2) {
+      var width = _ref2.width,
+          height = _ref2.height;
+      return width >= popper.clientWidth && height >= popper.clientHeight;
+    });
+
+    var computedPlacement = filteredAreas.length > 0 ? filteredAreas[0].key : sortedAreas[0].key;
+
+    var variation = placement.split('-')[1];
+
+    return computedPlacement + (variation ? '-' + variation : '');
+  }
+
+  /**
+   * Get offsets to the reference element
+   * @method
+   * @memberof Popper.Utils
+   * @param {Object} state
+   * @param {Element} popper - the popper element
+   * @param {Element} reference - the reference element (the popper will be relative to this)
+   * @param {Element} fixedPosition - is in fixed position mode
+   * @returns {Object} An object containing the offsets which will be applied to the popper
+   */
+  function getReferenceOffsets(state, popper, reference) {
+    var fixedPosition = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+
+    var commonOffsetParent = fixedPosition ? getFixedPositionOffsetParent(popper) : findCommonOffsetParent(popper, getReferenceNode(reference));
+    return getOffsetRectRelativeToArbitraryNode(reference, commonOffsetParent, fixedPosition);
+  }
+
+  /**
+   * Get the outer sizes of the given element (offset size + margins)
+   * @method
+   * @memberof Popper.Utils
+   * @argument {Element} element
+   * @returns {Object} object containing width and height properties
+   */
+  function getOuterSizes(element) {
+    var window = element.ownerDocument.defaultView;
+    var styles = window.getComputedStyle(element);
+    var x = parseFloat(styles.marginTop || 0) + parseFloat(styles.marginBottom || 0);
+    var y = parseFloat(styles.marginLeft || 0) + parseFloat(styles.marginRight || 0);
+    var result = {
+      width: element.offsetWidth + y,
+      height: element.offsetHeight + x
+    };
+    return result;
+  }
+
+  /**
+   * Get the opposite placement of the given one
+   * @method
+   * @memberof Popper.Utils
+   * @argument {String} placement
+   * @returns {String} flipped placement
+   */
+  function getOppositePlacement(placement) {
+    var hash = { left: 'right', right: 'left', bottom: 'top', top: 'bottom' };
+    return placement.replace(/left|right|bottom|top/g, function (matched) {
+      return hash[matched];
+    });
+  }
+
+  /**
+   * Get offsets to the popper
+   * @method
+   * @memberof Popper.Utils
+   * @param {Object} position - CSS position the Popper will get applied
+   * @param {HTMLElement} popper - the popper element
+   * @param {Object} referenceOffsets - the reference offsets (the popper will be relative to this)
+   * @param {String} placement - one of the valid placement options
+   * @returns {Object} popperOffsets - An object containing the offsets which will be applied to the popper
+   */
+  function getPopperOffsets(popper, referenceOffsets, placement) {
+    placement = placement.split('-')[0];
+
+    // Get popper node sizes
+    var popperRect = getOuterSizes(popper);
+
+    // Add position, width and height to our offsets object
+    var popperOffsets = {
+      width: popperRect.width,
+      height: popperRect.height
+    };
+
+    // depending by the popper placement we have to compute its offsets slightly differently
+    var isHoriz = ['right', 'left'].indexOf(placement) !== -1;
+    var mainSide = isHoriz ? 'top' : 'left';
+    var secondarySide = isHoriz ? 'left' : 'top';
+    var measurement = isHoriz ? 'height' : 'width';
+    var secondaryMeasurement = !isHoriz ? 'height' : 'width';
+
+    popperOffsets[mainSide] = referenceOffsets[mainSide] + referenceOffsets[measurement] / 2 - popperRect[measurement] / 2;
+    if (placement === secondarySide) {
+      popperOffsets[secondarySide] = referenceOffsets[secondarySide] - popperRect[secondaryMeasurement];
+    } else {
+      popperOffsets[secondarySide] = referenceOffsets[getOppositePlacement(secondarySide)];
+    }
+
+    return popperOffsets;
+  }
+
+  /**
+   * Mimics the `find` method of Array
+   * @method
+   * @memberof Popper.Utils
+   * @argument {Array} arr
+   * @argument prop
+   * @argument value
+   * @returns index or -1
+   */
+  function find$1(arr, check) {
+    // use native find if supported
+    if (Array.prototype.find) {
+      return arr.find(check);
+    }
+
+    // use `filter` to obtain the same behavior of `find`
+    return arr.filter(check)[0];
+  }
+
+  /**
+   * Return the index of the matching object
+   * @method
+   * @memberof Popper.Utils
+   * @argument {Array} arr
+   * @argument prop
+   * @argument value
+   * @returns index or -1
+   */
+  function findIndex$1(arr, prop, value) {
+    // use native findIndex if supported
+    if (Array.prototype.findIndex) {
+      return arr.findIndex(function (cur) {
+        return cur[prop] === value;
+      });
+    }
+
+    // use `find` + `indexOf` if `findIndex` isn't supported
+    var match = find$1(arr, function (obj) {
+      return obj[prop] === value;
+    });
+    return arr.indexOf(match);
+  }
+
+  /**
+   * Loop trough the list of modifiers and run them in order,
+   * each of them will then edit the data object.
+   * @method
+   * @memberof Popper.Utils
+   * @param {dataObject} data
+   * @param {Array} modifiers
+   * @param {String} ends - Optional modifier name used as stopper
+   * @returns {dataObject}
+   */
+  function runModifiers(modifiers, data, ends) {
+    var modifiersToRun = ends === undefined ? modifiers : modifiers.slice(0, findIndex$1(modifiers, 'name', ends));
+
+    modifiersToRun.forEach(function (modifier) {
+      if (modifier['function']) {
+        // eslint-disable-line dot-notation
+        console.warn('`modifier.function` is deprecated, use `modifier.fn`!');
+      }
+      var fn = modifier['function'] || modifier.fn; // eslint-disable-line dot-notation
+      if (modifier.enabled && isFunction$2(fn)) {
+        // Add properties to offsets to make them a complete clientRect object
+        // we do this before each modifier to make sure the previous one doesn't
+        // mess with these values
+        data.offsets.popper = getClientRect(data.offsets.popper);
+        data.offsets.reference = getClientRect(data.offsets.reference);
+
+        data = fn(data, modifier);
+      }
+    });
+
+    return data;
+  }
+
+  /**
+   * Updates the position of the popper, computing the new offsets and applying
+   * the new style.<br />
+   * Prefer `scheduleUpdate` over `update` because of performance reasons.
+   * @method
+   * @memberof Popper
+   */
+  function update() {
+    // if popper is destroyed, don't perform any further update
+    if (this.state.isDestroyed) {
+      return;
+    }
+
+    var data = {
+      instance: this,
+      styles: {},
+      arrowStyles: {},
+      attributes: {},
+      flipped: false,
+      offsets: {}
+    };
+
+    // compute reference element offsets
+    data.offsets.reference = getReferenceOffsets(this.state, this.popper, this.reference, this.options.positionFixed);
+
+    // compute auto placement, store placement inside the data object,
+    // modifiers will be able to edit `placement` if needed
+    // and refer to originalPlacement to know the original value
+    data.placement = computeAutoPlacement(this.options.placement, data.offsets.reference, this.popper, this.reference, this.options.modifiers.flip.boundariesElement, this.options.modifiers.flip.padding);
+
+    // store the computed placement inside `originalPlacement`
+    data.originalPlacement = data.placement;
+
+    data.positionFixed = this.options.positionFixed;
+
+    // compute the popper offsets
+    data.offsets.popper = getPopperOffsets(this.popper, data.offsets.reference, data.placement);
+
+    data.offsets.popper.position = this.options.positionFixed ? 'fixed' : 'absolute';
+
+    // run the modifiers
+    data = runModifiers(this.modifiers, data);
+
+    // the first `update` will call `onCreate` callback
+    // the other ones will call `onUpdate` callback
+    if (!this.state.isCreated) {
+      this.state.isCreated = true;
+      this.options.onCreate(data);
+    } else {
+      this.options.onUpdate(data);
+    }
+  }
+
+  /**
+   * Helper used to know if the given modifier is enabled.
+   * @method
+   * @memberof Popper.Utils
+   * @returns {Boolean}
+   */
+  function isModifierEnabled(modifiers, modifierName) {
+    return modifiers.some(function (_ref) {
+      var name = _ref.name,
+          enabled = _ref.enabled;
+      return enabled && name === modifierName;
+    });
+  }
+
+  /**
+   * Get the prefixed supported property name
+   * @method
+   * @memberof Popper.Utils
+   * @argument {String} property (camelCase)
+   * @returns {String} prefixed property (camelCase or PascalCase, depending on the vendor prefix)
+   */
+  function getSupportedPropertyName(property) {
+    var prefixes = [false, 'ms', 'Webkit', 'Moz', 'O'];
+    var upperProp = property.charAt(0).toUpperCase() + property.slice(1);
+
+    for (var i = 0; i < prefixes.length; i++) {
+      var prefix = prefixes[i];
+      var toCheck = prefix ? '' + prefix + upperProp : property;
+      if (typeof document.body.style[toCheck] !== 'undefined') {
+        return toCheck;
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Destroys the popper.
+   * @method
+   * @memberof Popper
+   */
+  function destroy() {
+    this.state.isDestroyed = true;
+
+    // touch DOM only if `applyStyle` modifier is enabled
+    if (isModifierEnabled(this.modifiers, 'applyStyle')) {
+      this.popper.removeAttribute('x-placement');
+      this.popper.style.position = '';
+      this.popper.style.top = '';
+      this.popper.style.left = '';
+      this.popper.style.right = '';
+      this.popper.style.bottom = '';
+      this.popper.style.willChange = '';
+      this.popper.style[getSupportedPropertyName('transform')] = '';
+    }
+
+    this.disableEventListeners();
+
+    // remove the popper if user explicitly asked for the deletion on destroy
+    // do not use `remove` because IE11 doesn't support it
+    if (this.options.removeOnDestroy) {
+      this.popper.parentNode.removeChild(this.popper);
+    }
+    return this;
+  }
+
+  /**
+   * Get the window associated with the element
+   * @argument {Element} element
+   * @returns {Window}
+   */
+  function getWindow(element) {
+    var ownerDocument = element.ownerDocument;
+    return ownerDocument ? ownerDocument.defaultView : window;
+  }
+
+  function attachToScrollParents(scrollParent, event, callback, scrollParents) {
+    var isBody = scrollParent.nodeName === 'BODY';
+    var target = isBody ? scrollParent.ownerDocument.defaultView : scrollParent;
+    target.addEventListener(event, callback, { passive: true });
+
+    if (!isBody) {
+      attachToScrollParents(getScrollParent(target.parentNode), event, callback, scrollParents);
+    }
+    scrollParents.push(target);
+  }
+
+  /**
+   * Setup needed event listeners used to update the popper position
+   * @method
+   * @memberof Popper.Utils
+   * @private
+   */
+  function setupEventListeners(reference, options, state, updateBound) {
+    // Resize event listener on window
+    state.updateBound = updateBound;
+    getWindow(reference).addEventListener('resize', state.updateBound, { passive: true });
+
+    // Scroll event listener on scroll parents
+    var scrollElement = getScrollParent(reference);
+    attachToScrollParents(scrollElement, 'scroll', state.updateBound, state.scrollParents);
+    state.scrollElement = scrollElement;
+    state.eventsEnabled = true;
+
+    return state;
+  }
+
+  /**
+   * It will add resize/scroll events and start recalculating
+   * position of the popper element when they are triggered.
+   * @method
+   * @memberof Popper
+   */
+  function enableEventListeners() {
+    if (!this.state.eventsEnabled) {
+      this.state = setupEventListeners(this.reference, this.options, this.state, this.scheduleUpdate);
+    }
+  }
+
+  /**
+   * Remove event listeners used to update the popper position
+   * @method
+   * @memberof Popper.Utils
+   * @private
+   */
+  function removeEventListeners(reference, state) {
+    // Remove resize event listener on window
+    getWindow(reference).removeEventListener('resize', state.updateBound);
+
+    // Remove scroll event listener on scroll parents
+    state.scrollParents.forEach(function (target) {
+      target.removeEventListener('scroll', state.updateBound);
+    });
+
+    // Reset state
+    state.updateBound = null;
+    state.scrollParents = [];
+    state.scrollElement = null;
+    state.eventsEnabled = false;
+    return state;
+  }
+
+  /**
+   * It will remove resize/scroll events and won't recalculate popper position
+   * when they are triggered. It also won't trigger `onUpdate` callback anymore,
+   * unless you call `update` method manually.
+   * @method
+   * @memberof Popper
+   */
+  function disableEventListeners() {
+    if (this.state.eventsEnabled) {
+      cancelAnimationFrame(this.scheduleUpdate);
+      this.state = removeEventListeners(this.reference, this.state);
+    }
+  }
+
+  /**
+   * Tells if a given input is a number
+   * @method
+   * @memberof Popper.Utils
+   * @param {*} input to check
+   * @return {Boolean}
+   */
+  function isNumeric(n) {
+    return n !== '' && !isNaN(parseFloat(n)) && isFinite(n);
+  }
+
+  /**
+   * Set the style to the given popper
+   * @method
+   * @memberof Popper.Utils
+   * @argument {Element} element - Element to apply the style to
+   * @argument {Object} styles
+   * Object with a list of properties and values which will be applied to the element
+   */
+  function setStyles(element, styles) {
+    Object.keys(styles).forEach(function (prop) {
+      var unit = '';
+      // add unit if the value is numeric and is one of the following
+      if (['width', 'height', 'top', 'right', 'bottom', 'left'].indexOf(prop) !== -1 && isNumeric(styles[prop])) {
+        unit = 'px';
+      }
+      element.style[prop] = styles[prop] + unit;
+    });
+  }
+
+  /**
+   * Set the attributes to the given popper
+   * @method
+   * @memberof Popper.Utils
+   * @argument {Element} element - Element to apply the attributes to
+   * @argument {Object} styles
+   * Object with a list of properties and values which will be applied to the element
+   */
+  function setAttributes(element, attributes) {
+    Object.keys(attributes).forEach(function (prop) {
+      var value = attributes[prop];
+      if (value !== false) {
+        element.setAttribute(prop, attributes[prop]);
+      } else {
+        element.removeAttribute(prop);
+      }
+    });
+  }
+
+  /**
+   * @function
+   * @memberof Modifiers
+   * @argument {Object} data - The data object generated by `update` method
+   * @argument {Object} data.styles - List of style properties - values to apply to popper element
+   * @argument {Object} data.attributes - List of attribute properties - values to apply to popper element
+   * @argument {Object} options - Modifiers configuration and options
+   * @returns {Object} The same data object
+   */
+  function applyStyle(data) {
+    // any property present in `data.styles` will be applied to the popper,
+    // in this way we can make the 3rd party modifiers add custom styles to it
+    // Be aware, modifiers could override the properties defined in the previous
+    // lines of this modifier!
+    setStyles(data.instance.popper, data.styles);
+
+    // any property present in `data.attributes` will be applied to the popper,
+    // they will be set as HTML attributes of the element
+    setAttributes(data.instance.popper, data.attributes);
+
+    // if arrowElement is defined and arrowStyles has some properties
+    if (data.arrowElement && Object.keys(data.arrowStyles).length) {
+      setStyles(data.arrowElement, data.arrowStyles);
+    }
+
+    return data;
+  }
+
+  /**
+   * Set the x-placement attribute before everything else because it could be used
+   * to add margins to the popper margins needs to be calculated to get the
+   * correct popper offsets.
+   * @method
+   * @memberof Popper.modifiers
+   * @param {HTMLElement} reference - The reference element used to position the popper
+   * @param {HTMLElement} popper - The HTML element used as popper
+   * @param {Object} options - Popper.js options
+   */
+  function applyStyleOnLoad(reference, popper, options, modifierOptions, state) {
+    // compute reference element offsets
+    var referenceOffsets = getReferenceOffsets(state, popper, reference, options.positionFixed);
+
+    // compute auto placement, store placement inside the data object,
+    // modifiers will be able to edit `placement` if needed
+    // and refer to originalPlacement to know the original value
+    var placement = computeAutoPlacement(options.placement, referenceOffsets, popper, reference, options.modifiers.flip.boundariesElement, options.modifiers.flip.padding);
+
+    popper.setAttribute('x-placement', placement);
+
+    // Apply `position` to popper before anything else because
+    // without the position applied we can't guarantee correct computations
+    setStyles(popper, { position: options.positionFixed ? 'fixed' : 'absolute' });
+
+    return options;
+  }
+
+  /**
+   * @function
+   * @memberof Popper.Utils
+   * @argument {Object} data - The data object generated by `update` method
+   * @argument {Boolean} shouldRound - If the offsets should be rounded at all
+   * @returns {Object} The popper's position offsets rounded
+   *
+   * The tale of pixel-perfect positioning. It's still not 100% perfect, but as
+   * good as it can be within reason.
+   * Discussion here: https://github.com/FezVrasta/popper.js/pull/715
+   *
+   * Low DPI screens cause a popper to be blurry if not using full pixels (Safari
+   * as well on High DPI screens).
+   *
+   * Firefox prefers no rounding for positioning and does not have blurriness on
+   * high DPI screens.
+   *
+   * Only horizontal placement and left/right values need to be considered.
+   */
+  function getRoundedOffsets(data, shouldRound) {
+    var _data$offsets = data.offsets,
+        popper = _data$offsets.popper,
+        reference = _data$offsets.reference;
+    var round = Math.round,
+        floor = Math.floor;
+
+    var noRound = function noRound(v) {
+      return v;
+    };
+
+    var referenceWidth = round(reference.width);
+    var popperWidth = round(popper.width);
+
+    var isVertical = ['left', 'right'].indexOf(data.placement) !== -1;
+    var isVariation = data.placement.indexOf('-') !== -1;
+    var sameWidthParity = referenceWidth % 2 === popperWidth % 2;
+    var bothOddWidth = referenceWidth % 2 === 1 && popperWidth % 2 === 1;
+
+    var horizontalToInteger = !shouldRound ? noRound : isVertical || isVariation || sameWidthParity ? round : floor;
+    var verticalToInteger = !shouldRound ? noRound : round;
+
+    return {
+      left: horizontalToInteger(bothOddWidth && !isVariation && shouldRound ? popper.left - 1 : popper.left),
+      top: verticalToInteger(popper.top),
+      bottom: verticalToInteger(popper.bottom),
+      right: horizontalToInteger(popper.right)
+    };
+  }
+
+  var isFirefox = isBrowser$1 && /Firefox/i.test(navigator.userAgent);
+
+  /**
+   * @function
+   * @memberof Modifiers
+   * @argument {Object} data - The data object generated by `update` method
+   * @argument {Object} options - Modifiers configuration and options
+   * @returns {Object} The data object, properly modified
+   */
+  function computeStyle(data, options) {
+    var x = options.x,
+        y = options.y;
+    var popper = data.offsets.popper;
+
+    // Remove this legacy support in Popper.js v2
+
+    var legacyGpuAccelerationOption = find$1(data.instance.modifiers, function (modifier) {
+      return modifier.name === 'applyStyle';
+    }).gpuAcceleration;
+    if (legacyGpuAccelerationOption !== undefined) {
+      console.warn('WARNING: `gpuAcceleration` option moved to `computeStyle` modifier and will not be supported in future versions of Popper.js!');
+    }
+    var gpuAcceleration = legacyGpuAccelerationOption !== undefined ? legacyGpuAccelerationOption : options.gpuAcceleration;
+
+    var offsetParent = getOffsetParent(data.instance.popper);
+    var offsetParentRect = getBoundingClientRect(offsetParent);
+
+    // Styles
+    var styles = {
+      position: popper.position
+    };
+
+    var offsets = getRoundedOffsets(data, window.devicePixelRatio < 2 || !isFirefox);
+
+    var sideA = x === 'bottom' ? 'top' : 'bottom';
+    var sideB = y === 'right' ? 'left' : 'right';
+
+    // if gpuAcceleration is set to `true` and transform is supported,
+    //  we use `translate3d` to apply the position to the popper we
+    // automatically use the supported prefixed version if needed
+    var prefixedProperty = getSupportedPropertyName('transform');
+
+    // now, let's make a step back and look at this code closely (wtf?)
+    // If the content of the popper grows once it's been positioned, it
+    // may happen that the popper gets misplaced because of the new content
+    // overflowing its reference element
+    // To avoid this problem, we provide two options (x and y), which allow
+    // the consumer to define the offset origin.
+    // If we position a popper on top of a reference element, we can set
+    // `x` to `top` to make the popper grow towards its top instead of
+    // its bottom.
+    var left = void 0,
+        top = void 0;
+    if (sideA === 'bottom') {
+      // when offsetParent is <html> the positioning is relative to the bottom of the screen (excluding the scrollbar)
+      // and not the bottom of the html element
+      if (offsetParent.nodeName === 'HTML') {
+        top = -offsetParent.clientHeight + offsets.bottom;
+      } else {
+        top = -offsetParentRect.height + offsets.bottom;
+      }
+    } else {
+      top = offsets.top;
+    }
+    if (sideB === 'right') {
+      if (offsetParent.nodeName === 'HTML') {
+        left = -offsetParent.clientWidth + offsets.right;
+      } else {
+        left = -offsetParentRect.width + offsets.right;
+      }
+    } else {
+      left = offsets.left;
+    }
+    if (gpuAcceleration && prefixedProperty) {
+      styles[prefixedProperty] = 'translate3d(' + left + 'px, ' + top + 'px, 0)';
+      styles[sideA] = 0;
+      styles[sideB] = 0;
+      styles.willChange = 'transform';
+    } else {
+      // othwerise, we use the standard `top`, `left`, `bottom` and `right` properties
+      var invertTop = sideA === 'bottom' ? -1 : 1;
+      var invertLeft = sideB === 'right' ? -1 : 1;
+      styles[sideA] = top * invertTop;
+      styles[sideB] = left * invertLeft;
+      styles.willChange = sideA + ', ' + sideB;
+    }
+
+    // Attributes
+    var attributes = {
+      'x-placement': data.placement
+    };
+
+    // Update `data` attributes, styles and arrowStyles
+    data.attributes = _extends$o({}, attributes, data.attributes);
+    data.styles = _extends$o({}, styles, data.styles);
+    data.arrowStyles = _extends$o({}, data.offsets.arrow, data.arrowStyles);
+
+    return data;
+  }
+
+  /**
+   * Helper used to know if the given modifier depends from another one.<br />
+   * It checks if the needed modifier is listed and enabled.
+   * @method
+   * @memberof Popper.Utils
+   * @param {Array} modifiers - list of modifiers
+   * @param {String} requestingName - name of requesting modifier
+   * @param {String} requestedName - name of requested modifier
+   * @returns {Boolean}
+   */
+  function isModifierRequired(modifiers, requestingName, requestedName) {
+    var requesting = find$1(modifiers, function (_ref) {
+      var name = _ref.name;
+      return name === requestingName;
+    });
+
+    var isRequired = !!requesting && modifiers.some(function (modifier) {
+      return modifier.name === requestedName && modifier.enabled && modifier.order < requesting.order;
+    });
+
+    if (!isRequired) {
+      var _requesting = '`' + requestingName + '`';
+      var requested = '`' + requestedName + '`';
+      console.warn(requested + ' modifier is required by ' + _requesting + ' modifier in order to work, be sure to include it before ' + _requesting + '!');
+    }
+    return isRequired;
+  }
+
+  /**
+   * @function
+   * @memberof Modifiers
+   * @argument {Object} data - The data object generated by update method
+   * @argument {Object} options - Modifiers configuration and options
+   * @returns {Object} The data object, properly modified
+   */
+  function arrow(data, options) {
+    var _data$offsets$arrow;
+
+    // arrow depends on keepTogether in order to work
+    if (!isModifierRequired(data.instance.modifiers, 'arrow', 'keepTogether')) {
+      return data;
+    }
+
+    var arrowElement = options.element;
+
+    // if arrowElement is a string, suppose it's a CSS selector
+    if (typeof arrowElement === 'string') {
+      arrowElement = data.instance.popper.querySelector(arrowElement);
+
+      // if arrowElement is not found, don't run the modifier
+      if (!arrowElement) {
+        return data;
+      }
+    } else {
+      // if the arrowElement isn't a query selector we must check that the
+      // provided DOM node is child of its popper node
+      if (!data.instance.popper.contains(arrowElement)) {
+        console.warn('WARNING: `arrow.element` must be child of its popper element!');
+        return data;
+      }
+    }
+
+    var placement = data.placement.split('-')[0];
+    var _data$offsets = data.offsets,
+        popper = _data$offsets.popper,
+        reference = _data$offsets.reference;
+
+    var isVertical = ['left', 'right'].indexOf(placement) !== -1;
+
+    var len = isVertical ? 'height' : 'width';
+    var sideCapitalized = isVertical ? 'Top' : 'Left';
+    var side = sideCapitalized.toLowerCase();
+    var altSide = isVertical ? 'left' : 'top';
+    var opSide = isVertical ? 'bottom' : 'right';
+    var arrowElementSize = getOuterSizes(arrowElement)[len];
+
+    //
+    // extends keepTogether behavior making sure the popper and its
+    // reference have enough pixels in conjunction
+    //
+
+    // top/left side
+    if (reference[opSide] - arrowElementSize < popper[side]) {
+      data.offsets.popper[side] -= popper[side] - (reference[opSide] - arrowElementSize);
+    }
+    // bottom/right side
+    if (reference[side] + arrowElementSize > popper[opSide]) {
+      data.offsets.popper[side] += reference[side] + arrowElementSize - popper[opSide];
+    }
+    data.offsets.popper = getClientRect(data.offsets.popper);
+
+    // compute center of the popper
+    var center = reference[side] + reference[len] / 2 - arrowElementSize / 2;
+
+    // Compute the sideValue using the updated popper offsets
+    // take popper margin in account because we don't have this info available
+    var css = getStyleComputedProperty(data.instance.popper);
+    var popperMarginSide = parseFloat(css['margin' + sideCapitalized]);
+    var popperBorderSide = parseFloat(css['border' + sideCapitalized + 'Width']);
+    var sideValue = center - data.offsets.popper[side] - popperMarginSide - popperBorderSide;
+
+    // prevent arrowElement from being placed not contiguously to its popper
+    sideValue = Math.max(Math.min(popper[len] - arrowElementSize, sideValue), 0);
+
+    data.arrowElement = arrowElement;
+    data.offsets.arrow = (_data$offsets$arrow = {}, defineProperty$4(_data$offsets$arrow, side, Math.round(sideValue)), defineProperty$4(_data$offsets$arrow, altSide, ''), _data$offsets$arrow);
+
+    return data;
+  }
+
+  /**
+   * Get the opposite placement variation of the given one
+   * @method
+   * @memberof Popper.Utils
+   * @argument {String} placement variation
+   * @returns {String} flipped placement variation
+   */
+  function getOppositeVariation(variation) {
+    if (variation === 'end') {
+      return 'start';
+    } else if (variation === 'start') {
+      return 'end';
+    }
+    return variation;
+  }
+
+  /**
+   * List of accepted placements to use as values of the `placement` option.<br />
+   * Valid placements are:
+   * - `auto`
+   * - `top`
+   * - `right`
+   * - `bottom`
+   * - `left`
+   *
+   * Each placement can have a variation from this list:
+   * - `-start`
+   * - `-end`
+   *
+   * Variations are interpreted easily if you think of them as the left to right
+   * written languages. Horizontally (`top` and `bottom`), `start` is left and `end`
+   * is right.<br />
+   * Vertically (`left` and `right`), `start` is top and `end` is bottom.
+   *
+   * Some valid examples are:
+   * - `top-end` (on top of reference, right aligned)
+   * - `right-start` (on right of reference, top aligned)
+   * - `bottom` (on bottom, centered)
+   * - `auto-end` (on the side with more space available, alignment depends by placement)
+   *
+   * @static
+   * @type {Array}
+   * @enum {String}
+   * @readonly
+   * @method placements
+   * @memberof Popper
+   */
+  var placements = ['auto-start', 'auto', 'auto-end', 'top-start', 'top', 'top-end', 'right-start', 'right', 'right-end', 'bottom-end', 'bottom', 'bottom-start', 'left-end', 'left', 'left-start'];
+
+  // Get rid of `auto` `auto-start` and `auto-end`
+  var validPlacements = placements.slice(3);
+
+  /**
+   * Given an initial placement, returns all the subsequent placements
+   * clockwise (or counter-clockwise).
+   *
+   * @method
+   * @memberof Popper.Utils
+   * @argument {String} placement - A valid placement (it accepts variations)
+   * @argument {Boolean} counter - Set to true to walk the placements counterclockwise
+   * @returns {Array} placements including their variations
+   */
+  function clockwise(placement) {
+    var counter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+    var index = validPlacements.indexOf(placement);
+    var arr = validPlacements.slice(index + 1).concat(validPlacements.slice(0, index));
+    return counter ? arr.reverse() : arr;
+  }
+
+  var BEHAVIORS = {
+    FLIP: 'flip',
+    CLOCKWISE: 'clockwise',
+    COUNTERCLOCKWISE: 'counterclockwise'
+  };
+
+  /**
+   * @function
+   * @memberof Modifiers
+   * @argument {Object} data - The data object generated by update method
+   * @argument {Object} options - Modifiers configuration and options
+   * @returns {Object} The data object, properly modified
+   */
+  function flip(data, options) {
+    // if `inner` modifier is enabled, we can't use the `flip` modifier
+    if (isModifierEnabled(data.instance.modifiers, 'inner')) {
+      return data;
+    }
+
+    if (data.flipped && data.placement === data.originalPlacement) {
+      // seems like flip is trying to loop, probably there's not enough space on any of the flippable sides
+      return data;
+    }
+
+    var boundaries = getBoundaries(data.instance.popper, data.instance.reference, options.padding, options.boundariesElement, data.positionFixed);
+
+    var placement = data.placement.split('-')[0];
+    var placementOpposite = getOppositePlacement(placement);
+    var variation = data.placement.split('-')[1] || '';
+
+    var flipOrder = [];
+
+    switch (options.behavior) {
+      case BEHAVIORS.FLIP:
+        flipOrder = [placement, placementOpposite];
+        break;
+      case BEHAVIORS.CLOCKWISE:
+        flipOrder = clockwise(placement);
+        break;
+      case BEHAVIORS.COUNTERCLOCKWISE:
+        flipOrder = clockwise(placement, true);
+        break;
+      default:
+        flipOrder = options.behavior;
+    }
+
+    flipOrder.forEach(function (step, index) {
+      if (placement !== step || flipOrder.length === index + 1) {
+        return data;
+      }
+
+      placement = data.placement.split('-')[0];
+      placementOpposite = getOppositePlacement(placement);
+
+      var popperOffsets = data.offsets.popper;
+      var refOffsets = data.offsets.reference;
+
+      // using floor because the reference offsets may contain decimals we are not going to consider here
+      var floor = Math.floor;
+      var overlapsRef = placement === 'left' && floor(popperOffsets.right) > floor(refOffsets.left) || placement === 'right' && floor(popperOffsets.left) < floor(refOffsets.right) || placement === 'top' && floor(popperOffsets.bottom) > floor(refOffsets.top) || placement === 'bottom' && floor(popperOffsets.top) < floor(refOffsets.bottom);
+
+      var overflowsLeft = floor(popperOffsets.left) < floor(boundaries.left);
+      var overflowsRight = floor(popperOffsets.right) > floor(boundaries.right);
+      var overflowsTop = floor(popperOffsets.top) < floor(boundaries.top);
+      var overflowsBottom = floor(popperOffsets.bottom) > floor(boundaries.bottom);
+
+      var overflowsBoundaries = placement === 'left' && overflowsLeft || placement === 'right' && overflowsRight || placement === 'top' && overflowsTop || placement === 'bottom' && overflowsBottom;
+
+      // flip the variation if required
+      var isVertical = ['top', 'bottom'].indexOf(placement) !== -1;
+
+      // flips variation if reference element overflows boundaries
+      var flippedVariationByRef = !!options.flipVariations && (isVertical && variation === 'start' && overflowsLeft || isVertical && variation === 'end' && overflowsRight || !isVertical && variation === 'start' && overflowsTop || !isVertical && variation === 'end' && overflowsBottom);
+
+      // flips variation if popper content overflows boundaries
+      var flippedVariationByContent = !!options.flipVariationsByContent && (isVertical && variation === 'start' && overflowsRight || isVertical && variation === 'end' && overflowsLeft || !isVertical && variation === 'start' && overflowsBottom || !isVertical && variation === 'end' && overflowsTop);
+
+      var flippedVariation = flippedVariationByRef || flippedVariationByContent;
+
+      if (overlapsRef || overflowsBoundaries || flippedVariation) {
+        // this boolean to detect any flip loop
+        data.flipped = true;
+
+        if (overlapsRef || overflowsBoundaries) {
+          placement = flipOrder[index + 1];
+        }
+
+        if (flippedVariation) {
+          variation = getOppositeVariation(variation);
+        }
+
+        data.placement = placement + (variation ? '-' + variation : '');
+
+        // this object contains `position`, we want to preserve it along with
+        // any additional property we may add in the future
+        data.offsets.popper = _extends$o({}, data.offsets.popper, getPopperOffsets(data.instance.popper, data.offsets.reference, data.placement));
+
+        data = runModifiers(data.instance.modifiers, data, 'flip');
+      }
+    });
+    return data;
+  }
+
+  /**
+   * @function
+   * @memberof Modifiers
+   * @argument {Object} data - The data object generated by update method
+   * @argument {Object} options - Modifiers configuration and options
+   * @returns {Object} The data object, properly modified
+   */
+  function keepTogether(data) {
+    var _data$offsets = data.offsets,
+        popper = _data$offsets.popper,
+        reference = _data$offsets.reference;
+
+    var placement = data.placement.split('-')[0];
+    var floor = Math.floor;
+    var isVertical = ['top', 'bottom'].indexOf(placement) !== -1;
+    var side = isVertical ? 'right' : 'bottom';
+    var opSide = isVertical ? 'left' : 'top';
+    var measurement = isVertical ? 'width' : 'height';
+
+    if (popper[side] < floor(reference[opSide])) {
+      data.offsets.popper[opSide] = floor(reference[opSide]) - popper[measurement];
+    }
+    if (popper[opSide] > floor(reference[side])) {
+      data.offsets.popper[opSide] = floor(reference[side]);
+    }
+
+    return data;
+  }
+
+  /**
+   * Converts a string containing value + unit into a px value number
+   * @function
+   * @memberof {modifiers~offset}
+   * @private
+   * @argument {String} str - Value + unit string
+   * @argument {String} measurement - `height` or `width`
+   * @argument {Object} popperOffsets
+   * @argument {Object} referenceOffsets
+   * @returns {Number|String}
+   * Value in pixels, or original string if no values were extracted
+   */
+  function toValue(str, measurement, popperOffsets, referenceOffsets) {
+    // separate value from unit
+    var split = str.match(/((?:\-|\+)?\d*\.?\d*)(.*)/);
+    var value = +split[1];
+    var unit = split[2];
+
+    // If it's not a number it's an operator, I guess
+    if (!value) {
+      return str;
+    }
+
+    if (unit.indexOf('%') === 0) {
+      var element = void 0;
+      switch (unit) {
+        case '%p':
+          element = popperOffsets;
+          break;
+        case '%':
+        case '%r':
+        default:
+          element = referenceOffsets;
+      }
+
+      var rect = getClientRect(element);
+      return rect[measurement] / 100 * value;
+    } else if (unit === 'vh' || unit === 'vw') {
+      // if is a vh or vw, we calculate the size based on the viewport
+      var size = void 0;
+      if (unit === 'vh') {
+        size = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      } else {
+        size = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+      }
+      return size / 100 * value;
+    } else {
+      // if is an explicit pixel unit, we get rid of the unit and keep the value
+      // if is an implicit unit, it's px, and we return just the value
+      return value;
+    }
+  }
+
+  /**
+   * Parse an `offset` string to extrapolate `x` and `y` numeric offsets.
+   * @function
+   * @memberof {modifiers~offset}
+   * @private
+   * @argument {String} offset
+   * @argument {Object} popperOffsets
+   * @argument {Object} referenceOffsets
+   * @argument {String} basePlacement
+   * @returns {Array} a two cells array with x and y offsets in numbers
+   */
+  function parseOffset(offset, popperOffsets, referenceOffsets, basePlacement) {
+    var offsets = [0, 0];
+
+    // Use height if placement is left or right and index is 0 otherwise use width
+    // in this way the first offset will use an axis and the second one
+    // will use the other one
+    var useHeight = ['right', 'left'].indexOf(basePlacement) !== -1;
+
+    // Split the offset string to obtain a list of values and operands
+    // The regex addresses values with the plus or minus sign in front (+10, -20, etc)
+    var fragments = offset.split(/(\+|\-)/).map(function (frag) {
+      return frag.trim();
+    });
+
+    // Detect if the offset string contains a pair of values or a single one
+    // they could be separated by comma or space
+    var divider = fragments.indexOf(find$1(fragments, function (frag) {
+      return frag.search(/,|\s/) !== -1;
+    }));
+
+    if (fragments[divider] && fragments[divider].indexOf(',') === -1) {
+      console.warn('Offsets separated by white space(s) are deprecated, use a comma (,) instead.');
+    }
+
+    // If divider is found, we divide the list of values and operands to divide
+    // them by ofset X and Y.
+    var splitRegex = /\s*,\s*|\s+/;
+    var ops = divider !== -1 ? [fragments.slice(0, divider).concat([fragments[divider].split(splitRegex)[0]]), [fragments[divider].split(splitRegex)[1]].concat(fragments.slice(divider + 1))] : [fragments];
+
+    // Convert the values with units to absolute pixels to allow our computations
+    ops = ops.map(function (op, index) {
+      // Most of the units rely on the orientation of the popper
+      var measurement = (index === 1 ? !useHeight : useHeight) ? 'height' : 'width';
+      var mergeWithPrevious = false;
+      return op
+      // This aggregates any `+` or `-` sign that aren't considered operators
+      // e.g.: 10 + +5 => [10, +, +5]
+      .reduce(function (a, b) {
+        if (a[a.length - 1] === '' && ['+', '-'].indexOf(b) !== -1) {
+          a[a.length - 1] = b;
+          mergeWithPrevious = true;
+          return a;
+        } else if (mergeWithPrevious) {
+          a[a.length - 1] += b;
+          mergeWithPrevious = false;
+          return a;
+        } else {
+          return a.concat(b);
+        }
+      }, [])
+      // Here we convert the string values into number values (in px)
+      .map(function (str) {
+        return toValue(str, measurement, popperOffsets, referenceOffsets);
+      });
+    });
+
+    // Loop trough the offsets arrays and execute the operations
+    ops.forEach(function (op, index) {
+      op.forEach(function (frag, index2) {
+        if (isNumeric(frag)) {
+          offsets[index] += frag * (op[index2 - 1] === '-' ? -1 : 1);
+        }
+      });
+    });
+    return offsets;
+  }
+
+  /**
+   * @function
+   * @memberof Modifiers
+   * @argument {Object} data - The data object generated by update method
+   * @argument {Object} options - Modifiers configuration and options
+   * @argument {Number|String} options.offset=0
+   * The offset value as described in the modifier description
+   * @returns {Object} The data object, properly modified
+   */
+  function offset(data, _ref) {
+    var offset = _ref.offset;
+    var placement = data.placement,
+        _data$offsets = data.offsets,
+        popper = _data$offsets.popper,
+        reference = _data$offsets.reference;
+
+    var basePlacement = placement.split('-')[0];
+
+    var offsets = void 0;
+    if (isNumeric(+offset)) {
+      offsets = [+offset, 0];
+    } else {
+      offsets = parseOffset(offset, popper, reference, basePlacement);
+    }
+
+    if (basePlacement === 'left') {
+      popper.top += offsets[0];
+      popper.left -= offsets[1];
+    } else if (basePlacement === 'right') {
+      popper.top += offsets[0];
+      popper.left += offsets[1];
+    } else if (basePlacement === 'top') {
+      popper.left += offsets[0];
+      popper.top -= offsets[1];
+    } else if (basePlacement === 'bottom') {
+      popper.left += offsets[0];
+      popper.top += offsets[1];
+    }
+
+    data.popper = popper;
+    return data;
+  }
+
+  /**
+   * @function
+   * @memberof Modifiers
+   * @argument {Object} data - The data object generated by `update` method
+   * @argument {Object} options - Modifiers configuration and options
+   * @returns {Object} The data object, properly modified
+   */
+  function preventOverflow(data, options) {
+    var boundariesElement = options.boundariesElement || getOffsetParent(data.instance.popper);
+
+    // If offsetParent is the reference element, we really want to
+    // go one step up and use the next offsetParent as reference to
+    // avoid to make this modifier completely useless and look like broken
+    if (data.instance.reference === boundariesElement) {
+      boundariesElement = getOffsetParent(boundariesElement);
+    }
+
+    // NOTE: DOM access here
+    // resets the popper's position so that the document size can be calculated excluding
+    // the size of the popper element itself
+    var transformProp = getSupportedPropertyName('transform');
+    var popperStyles = data.instance.popper.style; // assignment to help minification
+    var top = popperStyles.top,
+        left = popperStyles.left,
+        transform = popperStyles[transformProp];
+
+    popperStyles.top = '';
+    popperStyles.left = '';
+    popperStyles[transformProp] = '';
+
+    var boundaries = getBoundaries(data.instance.popper, data.instance.reference, options.padding, boundariesElement, data.positionFixed);
+
+    // NOTE: DOM access here
+    // restores the original style properties after the offsets have been computed
+    popperStyles.top = top;
+    popperStyles.left = left;
+    popperStyles[transformProp] = transform;
+
+    options.boundaries = boundaries;
+
+    var order = options.priority;
+    var popper = data.offsets.popper;
+
+    var check = {
+      primary: function primary(placement) {
+        var value = popper[placement];
+        if (popper[placement] < boundaries[placement] && !options.escapeWithReference) {
+          value = Math.max(popper[placement], boundaries[placement]);
+        }
+        return defineProperty$4({}, placement, value);
+      },
+      secondary: function secondary(placement) {
+        var mainSide = placement === 'right' ? 'left' : 'top';
+        var value = popper[mainSide];
+        if (popper[placement] > boundaries[placement] && !options.escapeWithReference) {
+          value = Math.min(popper[mainSide], boundaries[placement] - (placement === 'right' ? popper.width : popper.height));
+        }
+        return defineProperty$4({}, mainSide, value);
+      }
+    };
+
+    order.forEach(function (placement) {
+      var side = ['left', 'top'].indexOf(placement) !== -1 ? 'primary' : 'secondary';
+      popper = _extends$o({}, popper, check[side](placement));
+    });
+
+    data.offsets.popper = popper;
+
+    return data;
+  }
+
+  /**
+   * @function
+   * @memberof Modifiers
+   * @argument {Object} data - The data object generated by `update` method
+   * @argument {Object} options - Modifiers configuration and options
+   * @returns {Object} The data object, properly modified
+   */
+  function shift(data) {
+    var placement = data.placement;
+    var basePlacement = placement.split('-')[0];
+    var shiftvariation = placement.split('-')[1];
+
+    // if shift shiftvariation is specified, run the modifier
+    if (shiftvariation) {
+      var _data$offsets = data.offsets,
+          reference = _data$offsets.reference,
+          popper = _data$offsets.popper;
+
+      var isVertical = ['bottom', 'top'].indexOf(basePlacement) !== -1;
+      var side = isVertical ? 'left' : 'top';
+      var measurement = isVertical ? 'width' : 'height';
+
+      var shiftOffsets = {
+        start: defineProperty$4({}, side, reference[side]),
+        end: defineProperty$4({}, side, reference[side] + reference[measurement] - popper[measurement])
+      };
+
+      data.offsets.popper = _extends$o({}, popper, shiftOffsets[shiftvariation]);
+    }
+
+    return data;
+  }
+
+  /**
+   * @function
+   * @memberof Modifiers
+   * @argument {Object} data - The data object generated by update method
+   * @argument {Object} options - Modifiers configuration and options
+   * @returns {Object} The data object, properly modified
+   */
+  function hide(data) {
+    if (!isModifierRequired(data.instance.modifiers, 'hide', 'preventOverflow')) {
+      return data;
+    }
+
+    var refRect = data.offsets.reference;
+    var bound = find$1(data.instance.modifiers, function (modifier) {
+      return modifier.name === 'preventOverflow';
+    }).boundaries;
+
+    if (refRect.bottom < bound.top || refRect.left > bound.right || refRect.top > bound.bottom || refRect.right < bound.left) {
+      // Avoid unnecessary DOM access if visibility hasn't changed
+      if (data.hide === true) {
+        return data;
+      }
+
+      data.hide = true;
+      data.attributes['x-out-of-boundaries'] = '';
+    } else {
+      // Avoid unnecessary DOM access if visibility hasn't changed
+      if (data.hide === false) {
+        return data;
+      }
+
+      data.hide = false;
+      data.attributes['x-out-of-boundaries'] = false;
+    }
+
+    return data;
+  }
+
+  /**
+   * @function
+   * @memberof Modifiers
+   * @argument {Object} data - The data object generated by `update` method
+   * @argument {Object} options - Modifiers configuration and options
+   * @returns {Object} The data object, properly modified
+   */
+  function inner(data) {
+    var placement = data.placement;
+    var basePlacement = placement.split('-')[0];
+    var _data$offsets = data.offsets,
+        popper = _data$offsets.popper,
+        reference = _data$offsets.reference;
+
+    var isHoriz = ['left', 'right'].indexOf(basePlacement) !== -1;
+
+    var subtractLength = ['top', 'left'].indexOf(basePlacement) === -1;
+
+    popper[isHoriz ? 'left' : 'top'] = reference[basePlacement] - (subtractLength ? popper[isHoriz ? 'width' : 'height'] : 0);
+
+    data.placement = getOppositePlacement(placement);
+    data.offsets.popper = getClientRect(popper);
+
+    return data;
+  }
+
+  /**
+   * Modifier function, each modifier can have a function of this type assigned
+   * to its `fn` property.<br />
+   * These functions will be called on each update, this means that you must
+   * make sure they are performant enough to avoid performance bottlenecks.
+   *
+   * @function ModifierFn
+   * @argument {dataObject} data - The data object generated by `update` method
+   * @argument {Object} options - Modifiers configuration and options
+   * @returns {dataObject} The data object, properly modified
+   */
+
+  /**
+   * Modifiers are plugins used to alter the behavior of your poppers.<br />
+   * Popper.js uses a set of 9 modifiers to provide all the basic functionalities
+   * needed by the library.
+   *
+   * Usually you don't want to override the `order`, `fn` and `onLoad` props.
+   * All the other properties are configurations that could be tweaked.
+   * @namespace modifiers
+   */
+  var modifiers = {
+    /**
+     * Modifier used to shift the popper on the start or end of its reference
+     * element.<br />
+     * It will read the variation of the `placement` property.<br />
+     * It can be one either `-end` or `-start`.
+     * @memberof modifiers
+     * @inner
+     */
+    shift: {
+      /** @prop {number} order=100 - Index used to define the order of execution */
+      order: 100,
+      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+      enabled: true,
+      /** @prop {ModifierFn} */
+      fn: shift
+    },
+
+    /**
+     * The `offset` modifier can shift your popper on both its axis.
+     *
+     * It accepts the following units:
+     * - `px` or unit-less, interpreted as pixels
+     * - `%` or `%r`, percentage relative to the length of the reference element
+     * - `%p`, percentage relative to the length of the popper element
+     * - `vw`, CSS viewport width unit
+     * - `vh`, CSS viewport height unit
+     *
+     * For length is intended the main axis relative to the placement of the popper.<br />
+     * This means that if the placement is `top` or `bottom`, the length will be the
+     * `width`. In case of `left` or `right`, it will be the `height`.
+     *
+     * You can provide a single value (as `Number` or `String`), or a pair of values
+     * as `String` divided by a comma or one (or more) white spaces.<br />
+     * The latter is a deprecated method because it leads to confusion and will be
+     * removed in v2.<br />
+     * Additionally, it accepts additions and subtractions between different units.
+     * Note that multiplications and divisions aren't supported.
+     *
+     * Valid examples are:
+     * ```
+     * 10
+     * '10%'
+     * '10, 10'
+     * '10%, 10'
+     * '10 + 10%'
+     * '10 - 5vh + 3%'
+     * '-10px + 5vh, 5px - 6%'
+     * ```
+     * > **NB**: If you desire to apply offsets to your poppers in a way that may make them overlap
+     * > with their reference element, unfortunately, you will have to disable the `flip` modifier.
+     * > You can read more on this at this [issue](https://github.com/FezVrasta/popper.js/issues/373).
+     *
+     * @memberof modifiers
+     * @inner
+     */
+    offset: {
+      /** @prop {number} order=200 - Index used to define the order of execution */
+      order: 200,
+      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+      enabled: true,
+      /** @prop {ModifierFn} */
+      fn: offset,
+      /** @prop {Number|String} offset=0
+       * The offset value as described in the modifier description
+       */
+      offset: 0
+    },
+
+    /**
+     * Modifier used to prevent the popper from being positioned outside the boundary.
+     *
+     * A scenario exists where the reference itself is not within the boundaries.<br />
+     * We can say it has "escaped the boundaries" — or just "escaped".<br />
+     * In this case we need to decide whether the popper should either:
+     *
+     * - detach from the reference and remain "trapped" in the boundaries, or
+     * - if it should ignore the boundary and "escape with its reference"
+     *
+     * When `escapeWithReference` is set to`true` and reference is completely
+     * outside its boundaries, the popper will overflow (or completely leave)
+     * the boundaries in order to remain attached to the edge of the reference.
+     *
+     * @memberof modifiers
+     * @inner
+     */
+    preventOverflow: {
+      /** @prop {number} order=300 - Index used to define the order of execution */
+      order: 300,
+      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+      enabled: true,
+      /** @prop {ModifierFn} */
+      fn: preventOverflow,
+      /**
+       * @prop {Array} [priority=['left','right','top','bottom']]
+       * Popper will try to prevent overflow following these priorities by default,
+       * then, it could overflow on the left and on top of the `boundariesElement`
+       */
+      priority: ['left', 'right', 'top', 'bottom'],
+      /**
+       * @prop {number} padding=5
+       * Amount of pixel used to define a minimum distance between the boundaries
+       * and the popper. This makes sure the popper always has a little padding
+       * between the edges of its container
+       */
+      padding: 5,
+      /**
+       * @prop {String|HTMLElement} boundariesElement='scrollParent'
+       * Boundaries used by the modifier. Can be `scrollParent`, `window`,
+       * `viewport` or any DOM element.
+       */
+      boundariesElement: 'scrollParent'
+    },
+
+    /**
+     * Modifier used to make sure the reference and its popper stay near each other
+     * without leaving any gap between the two. Especially useful when the arrow is
+     * enabled and you want to ensure that it points to its reference element.
+     * It cares only about the first axis. You can still have poppers with margin
+     * between the popper and its reference element.
+     * @memberof modifiers
+     * @inner
+     */
+    keepTogether: {
+      /** @prop {number} order=400 - Index used to define the order of execution */
+      order: 400,
+      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+      enabled: true,
+      /** @prop {ModifierFn} */
+      fn: keepTogether
+    },
+
+    /**
+     * This modifier is used to move the `arrowElement` of the popper to make
+     * sure it is positioned between the reference element and its popper element.
+     * It will read the outer size of the `arrowElement` node to detect how many
+     * pixels of conjunction are needed.
+     *
+     * It has no effect if no `arrowElement` is provided.
+     * @memberof modifiers
+     * @inner
+     */
+    arrow: {
+      /** @prop {number} order=500 - Index used to define the order of execution */
+      order: 500,
+      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+      enabled: true,
+      /** @prop {ModifierFn} */
+      fn: arrow,
+      /** @prop {String|HTMLElement} element='[x-arrow]' - Selector or node used as arrow */
+      element: '[x-arrow]'
+    },
+
+    /**
+     * Modifier used to flip the popper's placement when it starts to overlap its
+     * reference element.
+     *
+     * Requires the `preventOverflow` modifier before it in order to work.
+     *
+     * **NOTE:** this modifier will interrupt the current update cycle and will
+     * restart it if it detects the need to flip the placement.
+     * @memberof modifiers
+     * @inner
+     */
+    flip: {
+      /** @prop {number} order=600 - Index used to define the order of execution */
+      order: 600,
+      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+      enabled: true,
+      /** @prop {ModifierFn} */
+      fn: flip,
+      /**
+       * @prop {String|Array} behavior='flip'
+       * The behavior used to change the popper's placement. It can be one of
+       * `flip`, `clockwise`, `counterclockwise` or an array with a list of valid
+       * placements (with optional variations)
+       */
+      behavior: 'flip',
+      /**
+       * @prop {number} padding=5
+       * The popper will flip if it hits the edges of the `boundariesElement`
+       */
+      padding: 5,
+      /**
+       * @prop {String|HTMLElement} boundariesElement='viewport'
+       * The element which will define the boundaries of the popper position.
+       * The popper will never be placed outside of the defined boundaries
+       * (except if `keepTogether` is enabled)
+       */
+      boundariesElement: 'viewport',
+      /**
+       * @prop {Boolean} flipVariations=false
+       * The popper will switch placement variation between `-start` and `-end` when
+       * the reference element overlaps its boundaries.
+       *
+       * The original placement should have a set variation.
+       */
+      flipVariations: false,
+      /**
+       * @prop {Boolean} flipVariationsByContent=false
+       * The popper will switch placement variation between `-start` and `-end` when
+       * the popper element overlaps its reference boundaries.
+       *
+       * The original placement should have a set variation.
+       */
+      flipVariationsByContent: false
+    },
+
+    /**
+     * Modifier used to make the popper flow toward the inner of the reference element.
+     * By default, when this modifier is disabled, the popper will be placed outside
+     * the reference element.
+     * @memberof modifiers
+     * @inner
+     */
+    inner: {
+      /** @prop {number} order=700 - Index used to define the order of execution */
+      order: 700,
+      /** @prop {Boolean} enabled=false - Whether the modifier is enabled or not */
+      enabled: false,
+      /** @prop {ModifierFn} */
+      fn: inner
+    },
+
+    /**
+     * Modifier used to hide the popper when its reference element is outside of the
+     * popper boundaries. It will set a `x-out-of-boundaries` attribute which can
+     * be used to hide with a CSS selector the popper when its reference is
+     * out of boundaries.
+     *
+     * Requires the `preventOverflow` modifier before it in order to work.
+     * @memberof modifiers
+     * @inner
+     */
+    hide: {
+      /** @prop {number} order=800 - Index used to define the order of execution */
+      order: 800,
+      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+      enabled: true,
+      /** @prop {ModifierFn} */
+      fn: hide
+    },
+
+    /**
+     * Computes the style that will be applied to the popper element to gets
+     * properly positioned.
+     *
+     * Note that this modifier will not touch the DOM, it just prepares the styles
+     * so that `applyStyle` modifier can apply it. This separation is useful
+     * in case you need to replace `applyStyle` with a custom implementation.
+     *
+     * This modifier has `850` as `order` value to maintain backward compatibility
+     * with previous versions of Popper.js. Expect the modifiers ordering method
+     * to change in future major versions of the library.
+     *
+     * @memberof modifiers
+     * @inner
+     */
+    computeStyle: {
+      /** @prop {number} order=850 - Index used to define the order of execution */
+      order: 850,
+      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+      enabled: true,
+      /** @prop {ModifierFn} */
+      fn: computeStyle,
+      /**
+       * @prop {Boolean} gpuAcceleration=true
+       * If true, it uses the CSS 3D transformation to position the popper.
+       * Otherwise, it will use the `top` and `left` properties
+       */
+      gpuAcceleration: true,
+      /**
+       * @prop {string} [x='bottom']
+       * Where to anchor the X axis (`bottom` or `top`). AKA X offset origin.
+       * Change this if your popper should grow in a direction different from `bottom`
+       */
+      x: 'bottom',
+      /**
+       * @prop {string} [x='left']
+       * Where to anchor the Y axis (`left` or `right`). AKA Y offset origin.
+       * Change this if your popper should grow in a direction different from `right`
+       */
+      y: 'right'
+    },
+
+    /**
+     * Applies the computed styles to the popper element.
+     *
+     * All the DOM manipulations are limited to this modifier. This is useful in case
+     * you want to integrate Popper.js inside a framework or view library and you
+     * want to delegate all the DOM manipulations to it.
+     *
+     * Note that if you disable this modifier, you must make sure the popper element
+     * has its position set to `absolute` before Popper.js can do its work!
+     *
+     * Just disable this modifier and define your own to achieve the desired effect.
+     *
+     * @memberof modifiers
+     * @inner
+     */
+    applyStyle: {
+      /** @prop {number} order=900 - Index used to define the order of execution */
+      order: 900,
+      /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
+      enabled: true,
+      /** @prop {ModifierFn} */
+      fn: applyStyle,
+      /** @prop {Function} */
+      onLoad: applyStyleOnLoad,
+      /**
+       * @deprecated since version 1.10.0, the property moved to `computeStyle` modifier
+       * @prop {Boolean} gpuAcceleration=true
+       * If true, it uses the CSS 3D transformation to position the popper.
+       * Otherwise, it will use the `top` and `left` properties
+       */
+      gpuAcceleration: undefined
+    }
+  };
+
+  /**
+   * The `dataObject` is an object containing all the information used by Popper.js.
+   * This object is passed to modifiers and to the `onCreate` and `onUpdate` callbacks.
+   * @name dataObject
+   * @property {Object} data.instance The Popper.js instance
+   * @property {String} data.placement Placement applied to popper
+   * @property {String} data.originalPlacement Placement originally defined on init
+   * @property {Boolean} data.flipped True if popper has been flipped by flip modifier
+   * @property {Boolean} data.hide True if the reference element is out of boundaries, useful to know when to hide the popper
+   * @property {HTMLElement} data.arrowElement Node used as arrow by arrow modifier
+   * @property {Object} data.styles Any CSS property defined here will be applied to the popper. It expects the JavaScript nomenclature (eg. `marginBottom`)
+   * @property {Object} data.arrowStyles Any CSS property defined here will be applied to the popper arrow. It expects the JavaScript nomenclature (eg. `marginBottom`)
+   * @property {Object} data.boundaries Offsets of the popper boundaries
+   * @property {Object} data.offsets The measurements of popper, reference and arrow elements
+   * @property {Object} data.offsets.popper `top`, `left`, `width`, `height` values
+   * @property {Object} data.offsets.reference `top`, `left`, `width`, `height` values
+   * @property {Object} data.offsets.arrow] `top` and `left` offsets, only one of them will be different from 0
+   */
+
+  /**
+   * Default options provided to Popper.js constructor.<br />
+   * These can be overridden using the `options` argument of Popper.js.<br />
+   * To override an option, simply pass an object with the same
+   * structure of the `options` object, as the 3rd argument. For example:
+   * ```
+   * new Popper(ref, pop, {
+   *   modifiers: {
+   *     preventOverflow: { enabled: false }
+   *   }
+   * })
+   * ```
+   * @type {Object}
+   * @static
+   * @memberof Popper
+   */
+  var Defaults = {
+    /**
+     * Popper's placement.
+     * @prop {Popper.placements} placement='bottom'
+     */
+    placement: 'bottom',
+
+    /**
+     * Set this to true if you want popper to position it self in 'fixed' mode
+     * @prop {Boolean} positionFixed=false
+     */
+    positionFixed: false,
+
+    /**
+     * Whether events (resize, scroll) are initially enabled.
+     * @prop {Boolean} eventsEnabled=true
+     */
+    eventsEnabled: true,
+
+    /**
+     * Set to true if you want to automatically remove the popper when
+     * you call the `destroy` method.
+     * @prop {Boolean} removeOnDestroy=false
+     */
+    removeOnDestroy: false,
+
+    /**
+     * Callback called when the popper is created.<br />
+     * By default, it is set to no-op.<br />
+     * Access Popper.js instance with `data.instance`.
+     * @prop {onCreate}
+     */
+    onCreate: function onCreate() {},
+
+    /**
+     * Callback called when the popper is updated. This callback is not called
+     * on the initialization/creation of the popper, but only on subsequent
+     * updates.<br />
+     * By default, it is set to no-op.<br />
+     * Access Popper.js instance with `data.instance`.
+     * @prop {onUpdate}
+     */
+    onUpdate: function onUpdate() {},
+
+    /**
+     * List of modifiers used to modify the offsets before they are applied to the popper.
+     * They provide most of the functionalities of Popper.js.
+     * @prop {modifiers}
+     */
+    modifiers: modifiers
+  };
+
+  /**
+   * @callback onCreate
+   * @param {dataObject} data
+   */
+
+  /**
+   * @callback onUpdate
+   * @param {dataObject} data
+   */
+
+  // Utils
+  // Methods
+  var Popper = function () {
+    /**
+     * Creates a new Popper.js instance.
+     * @class Popper
+     * @param {Element|referenceObject} reference - The reference element used to position the popper
+     * @param {Element} popper - The HTML / XML element used as the popper
+     * @param {Object} options - Your custom options to override the ones defined in [Defaults](#defaults)
+     * @return {Object} instance - The generated Popper.js instance
+     */
+    function Popper(reference, popper) {
+      var _this = this;
+
+      var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+      classCallCheck(this, Popper);
+
+      this.scheduleUpdate = function () {
+        return requestAnimationFrame(_this.update);
+      };
+
+      // make update() debounced, so that it only runs at most once-per-tick
+      this.update = debounce$4(this.update.bind(this));
+
+      // with {} we create a new object with the options inside it
+      this.options = _extends$o({}, Popper.Defaults, options);
+
+      // init state
+      this.state = {
+        isDestroyed: false,
+        isCreated: false,
+        scrollParents: []
+      };
+
+      // get reference and popper elements (allow jQuery wrappers)
+      this.reference = reference && reference.jquery ? reference[0] : reference;
+      this.popper = popper && popper.jquery ? popper[0] : popper;
+
+      // Deep merge modifiers options
+      this.options.modifiers = {};
+      Object.keys(_extends$o({}, Popper.Defaults.modifiers, options.modifiers)).forEach(function (name) {
+        _this.options.modifiers[name] = _extends$o({}, Popper.Defaults.modifiers[name] || {}, options.modifiers ? options.modifiers[name] : {});
+      });
+
+      // Refactoring modifiers' list (Object => Array)
+      this.modifiers = Object.keys(this.options.modifiers).map(function (name) {
+        return _extends$o({
+          name: name
+        }, _this.options.modifiers[name]);
+      })
+      // sort the modifiers by order
+      .sort(function (a, b) {
+        return a.order - b.order;
+      });
+
+      // modifiers have the ability to execute arbitrary code when Popper.js get inited
+      // such code is executed in the same order of its modifier
+      // they could add new properties to their options configuration
+      // BE AWARE: don't add options to `options.modifiers.name` but to `modifierOptions`!
+      this.modifiers.forEach(function (modifierOptions) {
+        if (modifierOptions.enabled && isFunction$2(modifierOptions.onLoad)) {
+          modifierOptions.onLoad(_this.reference, _this.popper, _this.options, modifierOptions, _this.state);
+        }
+      });
+
+      // fire the first update to position the popper in the right place
+      this.update();
+
+      var eventsEnabled = this.options.eventsEnabled;
+      if (eventsEnabled) {
+        // setup event listeners, they will take care of update the position in specific situations
+        this.enableEventListeners();
+      }
+
+      this.state.eventsEnabled = eventsEnabled;
+    }
+
+    // We can't use class properties because they don't get listed in the
+    // class prototype and break stuff like Sinon stubs
+
+
+    createClass(Popper, [{
+      key: 'update',
+      value: function update$$1() {
+        return update.call(this);
+      }
+    }, {
+      key: 'destroy',
+      value: function destroy$$1() {
+        return destroy.call(this);
+      }
+    }, {
+      key: 'enableEventListeners',
+      value: function enableEventListeners$$1() {
+        return enableEventListeners.call(this);
+      }
+    }, {
+      key: 'disableEventListeners',
+      value: function disableEventListeners$$1() {
+        return disableEventListeners.call(this);
+      }
+
+      /**
+       * Schedules an update. It will run on the next UI update available.
+       * @method scheduleUpdate
+       * @memberof Popper
+       */
+
+
+      /**
+       * Collection of utilities useful when writing custom modifiers.
+       * Starting from version 1.7, this method is available only if you
+       * include `popper-utils.js` before `popper.js`.
+       *
+       * **DEPRECATION**: This way to access PopperUtils is deprecated
+       * and will be removed in v2! Use the PopperUtils module directly instead.
+       * Due to the high instability of the methods contained in Utils, we can't
+       * guarantee them to follow semver. Use them at your own risk!
+       * @static
+       * @private
+       * @type {Object}
+       * @deprecated since version 1.8
+       * @member Utils
+       * @memberof Popper
+       */
+
+    }]);
+    return Popper;
+  }();
+
+  /**
+   * The `referenceObject` is an object that provides an interface compatible with Popper.js
+   * and lets you use it as replacement of a real DOM node.<br />
+   * You can use this method to position a popper relatively to a set of coordinates
+   * in case you don't have a DOM node to use as reference.
+   *
+   * ```
+   * new Popper(referenceObject, popperNode);
+   * ```
+   *
+   * NB: This feature isn't supported in Internet Explorer 10.
+   * @name referenceObject
+   * @property {Function} data.getBoundingClientRect
+   * A function that returns a set of coordinates compatible with the native `getBoundingClientRect` method.
+   * @property {number} data.clientWidth
+   * An ES6 getter that will return the width of the virtual reference element.
+   * @property {number} data.clientHeight
+   * An ES6 getter that will return the height of the virtual reference element.
+   */
+
+
+  Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
+  Popper.placements = placements;
+  Popper.Defaults = Defaults;
+
+  var key$1 = '__global_unique_id__';
+
+  var gud = function() {
+    return commonjsGlobal[key$1] = (commonjsGlobal[key$1] || 0) + 1;
+  };
+
+  /**
+   * Copyright (c) 2014-present, Facebook, Inc.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
+
+  var warning = function() {};
+
+  var warning_1 = warning;
+
+  var implementation$4 = createCommonjsModule(function (module, exports) {
+
+  exports.__esModule = true;
+
+
+
+  _interopRequireDefault(React__default['default']);
+
+
+
+  var _propTypes2 = _interopRequireDefault(propTypes);
+
+
+
+  var _gud2 = _interopRequireDefault(gud);
+
+
+
+  _interopRequireDefault(warning_1);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var MAX_SIGNED_31_BIT_INT = 1073741823;
+
+  // Inlined Object.is polyfill.
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+  function objectIs(x, y) {
+    if (x === y) {
+      return x !== 0 || 1 / x === 1 / y;
+    } else {
+      return x !== x && y !== y;
+    }
+  }
+
+  function createEventEmitter(value) {
+    var handlers = [];
+    return {
+      on: function on(handler) {
+        handlers.push(handler);
+      },
+      off: function off(handler) {
+        handlers = handlers.filter(function (h) {
+          return h !== handler;
+        });
+      },
+      get: function get() {
+        return value;
+      },
+      set: function set(newValue, changedBits) {
+        value = newValue;
+        handlers.forEach(function (handler) {
+          return handler(value, changedBits);
+        });
+      }
+    };
+  }
+
+  function onlyChild(children) {
+    return Array.isArray(children) ? children[0] : children;
+  }
+
+  function createReactContext(defaultValue, calculateChangedBits) {
+    var _Provider$childContex, _Consumer$contextType;
+
+    var contextProp = '__create-react-context-' + (0, _gud2.default)() + '__';
+
+    var Provider = function (_Component) {
+      _inherits(Provider, _Component);
+
+      function Provider() {
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, Provider);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+          args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.emitter = createEventEmitter(_this.props.value), _temp), _possibleConstructorReturn(_this, _ret);
+      }
+
+      Provider.prototype.getChildContext = function getChildContext() {
+        var _ref;
+
+        return _ref = {}, _ref[contextProp] = this.emitter, _ref;
+      };
+
+      Provider.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+        if (this.props.value !== nextProps.value) {
+          var oldValue = this.props.value;
+          var newValue = nextProps.value;
+          var changedBits = void 0;
+
+          if (objectIs(oldValue, newValue)) {
+            changedBits = 0; // No change
+          } else {
+            changedBits = typeof calculateChangedBits === 'function' ? calculateChangedBits(oldValue, newValue) : MAX_SIGNED_31_BIT_INT;
+
+            changedBits |= 0;
+
+            if (changedBits !== 0) {
+              this.emitter.set(nextProps.value, changedBits);
+            }
+          }
+        }
+      };
+
+      Provider.prototype.render = function render() {
+        return this.props.children;
+      };
+
+      return Provider;
+    }(React__default['default'].Component);
+
+    Provider.childContextTypes = (_Provider$childContex = {}, _Provider$childContex[contextProp] = _propTypes2.default.object.isRequired, _Provider$childContex);
+
+    var Consumer = function (_Component2) {
+      _inherits(Consumer, _Component2);
+
+      function Consumer() {
+        var _temp2, _this2, _ret2;
+
+        _classCallCheck(this, Consumer);
+
+        for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+          args[_key2] = arguments[_key2];
+        }
+
+        return _ret2 = (_temp2 = (_this2 = _possibleConstructorReturn(this, _Component2.call.apply(_Component2, [this].concat(args))), _this2), _this2.state = {
+          value: _this2.getValue()
+        }, _this2.onUpdate = function (newValue, changedBits) {
+          var observedBits = _this2.observedBits | 0;
+          if ((observedBits & changedBits) !== 0) {
+            _this2.setState({ value: _this2.getValue() });
+          }
+        }, _temp2), _possibleConstructorReturn(_this2, _ret2);
+      }
+
+      Consumer.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+        var observedBits = nextProps.observedBits;
+
+        this.observedBits = observedBits === undefined || observedBits === null ? MAX_SIGNED_31_BIT_INT // Subscribe to all changes by default
+        : observedBits;
+      };
+
+      Consumer.prototype.componentDidMount = function componentDidMount() {
+        if (this.context[contextProp]) {
+          this.context[contextProp].on(this.onUpdate);
+        }
+        var observedBits = this.props.observedBits;
+
+        this.observedBits = observedBits === undefined || observedBits === null ? MAX_SIGNED_31_BIT_INT // Subscribe to all changes by default
+        : observedBits;
+      };
+
+      Consumer.prototype.componentWillUnmount = function componentWillUnmount() {
+        if (this.context[contextProp]) {
+          this.context[contextProp].off(this.onUpdate);
+        }
+      };
+
+      Consumer.prototype.getValue = function getValue() {
+        if (this.context[contextProp]) {
+          return this.context[contextProp].get();
+        } else {
+          return defaultValue;
+        }
+      };
+
+      Consumer.prototype.render = function render() {
+        return onlyChild(this.props.children)(this.state.value);
+      };
+
+      return Consumer;
+    }(React__default['default'].Component);
+
+    Consumer.contextTypes = (_Consumer$contextType = {}, _Consumer$contextType[contextProp] = _propTypes2.default.object, _Consumer$contextType);
+
+
+    return {
+      Provider: Provider,
+      Consumer: Consumer
+    };
+  }
+
+  exports.default = createReactContext;
+  module.exports = exports['default'];
+  });
+
+  unwrapExports(implementation$4);
+
+  var lib$2 = createCommonjsModule(function (module, exports) {
+
+  exports.__esModule = true;
+
+
+
+  var _react2 = _interopRequireDefault(React__default['default']);
+
+
+
+  var _implementation2 = _interopRequireDefault(implementation$4);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  exports.default = _react2.default.createContext || _implementation2.default;
+  module.exports = exports['default'];
+  });
+
+  var createContext = unwrapExports(lib$2);
+
+  var ManagerReferenceNodeContext = createContext();
+  var ManagerReferenceNodeSetterContext = createContext();
+
+  var Manager =
+  /*#__PURE__*/
+  function (_React$Component) {
+    inheritsLoose(Manager, _React$Component);
+
+    function Manager() {
+      var _this;
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
+
+      defineProperty$1(assertThisInitialized(_this), "referenceNode", void 0);
+
+      defineProperty$1(assertThisInitialized(_this), "setReferenceNode", function (newReferenceNode) {
+        if (newReferenceNode && _this.referenceNode !== newReferenceNode) {
+          _this.referenceNode = newReferenceNode;
+
+          _this.forceUpdate();
+        }
+      });
+
+      return _this;
+    }
+
+    var _proto = Manager.prototype;
+
+    _proto.componentWillUnmount = function componentWillUnmount() {
+      this.referenceNode = null;
+    };
+
+    _proto.render = function render() {
+      return React.createElement(ManagerReferenceNodeContext.Provider, {
+        value: this.referenceNode
+      }, React.createElement(ManagerReferenceNodeSetterContext.Provider, {
+        value: this.setReferenceNode
+      }, this.props.children));
+    };
+
+    return Manager;
+  }(React.Component);
+
+  /**
+   * Takes an argument and if it's an array, returns the first item in the array,
+   * otherwise returns the argument. Used for Preact compatibility.
+   */
+  var unwrapArray = function unwrapArray(arg) {
+    return Array.isArray(arg) ? arg[0] : arg;
+  };
+  /**
+   * Takes a maybe-undefined function and arbitrary args and invokes the function
+   * only if it is defined.
+   */
+
+  var safeInvoke = function safeInvoke(fn) {
+    if (typeof fn === "function") {
+      for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        args[_key - 1] = arguments[_key];
+      }
+
+      return fn.apply(void 0, args);
+    }
+  };
+  /**
+   * Sets a ref using either a ref callback or a ref object
+   */
+
+  var setRef = function setRef(ref, node) {
+    // if its a function call it
+    if (typeof ref === "function") {
+      return safeInvoke(ref, node);
+    } // otherwise we should treat it as a ref object
+    else if (ref != null) {
+        ref.current = node;
+      }
+  };
+
+  var initialStyle = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    opacity: 0,
+    pointerEvents: 'none'
+  };
+  var initialArrowStyle = {};
+  var InnerPopper =
+  /*#__PURE__*/
+  function (_React$Component) {
+    inheritsLoose(InnerPopper, _React$Component);
+
+    function InnerPopper() {
+      var _this;
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
+
+      defineProperty$1(assertThisInitialized(_this), "state", {
+        data: undefined,
+        placement: undefined
+      });
+
+      defineProperty$1(assertThisInitialized(_this), "popperInstance", void 0);
+
+      defineProperty$1(assertThisInitialized(_this), "popperNode", null);
+
+      defineProperty$1(assertThisInitialized(_this), "arrowNode", null);
+
+      defineProperty$1(assertThisInitialized(_this), "setPopperNode", function (popperNode) {
+        if (!popperNode || _this.popperNode === popperNode) return;
+        setRef(_this.props.innerRef, popperNode);
+        _this.popperNode = popperNode;
+
+        _this.updatePopperInstance();
+      });
+
+      defineProperty$1(assertThisInitialized(_this), "setArrowNode", function (arrowNode) {
+        _this.arrowNode = arrowNode;
+      });
+
+      defineProperty$1(assertThisInitialized(_this), "updateStateModifier", {
+        enabled: true,
+        order: 900,
+        fn: function fn(data) {
+          var placement = data.placement;
+
+          _this.setState({
+            data: data,
+            placement: placement
+          });
+
+          return data;
+        }
+      });
+
+      defineProperty$1(assertThisInitialized(_this), "getOptions", function () {
+        return {
+          placement: _this.props.placement,
+          eventsEnabled: _this.props.eventsEnabled,
+          positionFixed: _this.props.positionFixed,
+          modifiers: _extends_1({}, _this.props.modifiers, {
+            arrow: _extends_1({}, _this.props.modifiers && _this.props.modifiers.arrow, {
+              enabled: !!_this.arrowNode,
+              element: _this.arrowNode
+            }),
+            applyStyle: {
+              enabled: false
+            },
+            updateStateModifier: _this.updateStateModifier
+          })
+        };
+      });
+
+      defineProperty$1(assertThisInitialized(_this), "getPopperStyle", function () {
+        return !_this.popperNode || !_this.state.data ? initialStyle : _extends_1({
+          position: _this.state.data.offsets.popper.position
+        }, _this.state.data.styles);
+      });
+
+      defineProperty$1(assertThisInitialized(_this), "getPopperPlacement", function () {
+        return !_this.state.data ? undefined : _this.state.placement;
+      });
+
+      defineProperty$1(assertThisInitialized(_this), "getArrowStyle", function () {
+        return !_this.arrowNode || !_this.state.data ? initialArrowStyle : _this.state.data.arrowStyles;
+      });
+
+      defineProperty$1(assertThisInitialized(_this), "getOutOfBoundariesState", function () {
+        return _this.state.data ? _this.state.data.hide : undefined;
+      });
+
+      defineProperty$1(assertThisInitialized(_this), "destroyPopperInstance", function () {
+        if (!_this.popperInstance) return;
+
+        _this.popperInstance.destroy();
+
+        _this.popperInstance = null;
+      });
+
+      defineProperty$1(assertThisInitialized(_this), "updatePopperInstance", function () {
+        _this.destroyPopperInstance();
+
+        var _assertThisInitialize = assertThisInitialized(_this),
+            popperNode = _assertThisInitialize.popperNode;
+
+        var referenceElement = _this.props.referenceElement;
+        if (!referenceElement || !popperNode) return;
+        _this.popperInstance = new Popper(referenceElement, popperNode, _this.getOptions());
+      });
+
+      defineProperty$1(assertThisInitialized(_this), "scheduleUpdate", function () {
+        if (_this.popperInstance) {
+          _this.popperInstance.scheduleUpdate();
+        }
+      });
+
+      return _this;
+    }
+
+    var _proto = InnerPopper.prototype;
+
+    _proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {
+      // If the Popper.js options have changed, update the instance (destroy + create)
+      if (this.props.placement !== prevProps.placement || this.props.referenceElement !== prevProps.referenceElement || this.props.positionFixed !== prevProps.positionFixed || !deepEqual_1(this.props.modifiers, prevProps.modifiers, {
+        strict: true
+      })) {
+
+        this.updatePopperInstance();
+      } else if (this.props.eventsEnabled !== prevProps.eventsEnabled && this.popperInstance) {
+        this.props.eventsEnabled ? this.popperInstance.enableEventListeners() : this.popperInstance.disableEventListeners();
+      } // A placement difference in state means popper determined a new placement
+      // apart from the props value. By the time the popper element is rendered with
+      // the new position Popper has already measured it, if the place change triggers
+      // a size change it will result in a misaligned popper. So we schedule an update to be sure.
+
+
+      if (prevState.placement !== this.state.placement) {
+        this.scheduleUpdate();
+      }
+    };
+
+    _proto.componentWillUnmount = function componentWillUnmount() {
+      setRef(this.props.innerRef, null);
+      this.destroyPopperInstance();
+    };
+
+    _proto.render = function render() {
+      return unwrapArray(this.props.children)({
+        ref: this.setPopperNode,
+        style: this.getPopperStyle(),
+        placement: this.getPopperPlacement(),
+        outOfBoundaries: this.getOutOfBoundariesState(),
+        scheduleUpdate: this.scheduleUpdate,
+        arrowProps: {
+          ref: this.setArrowNode,
+          style: this.getArrowStyle()
+        }
+      });
+    };
+
+    return InnerPopper;
+  }(React.Component);
+
+  defineProperty$1(InnerPopper, "defaultProps", {
+    placement: 'bottom',
+    eventsEnabled: true,
+    referenceElement: undefined,
+    positionFixed: false
+  });
+  function Popper$1(_ref) {
+    var referenceElement = _ref.referenceElement,
+        props = objectWithoutPropertiesLoose(_ref, ["referenceElement"]);
+
+    return React.createElement(ManagerReferenceNodeContext.Consumer, null, function (referenceNode) {
+      return React.createElement(InnerPopper, _extends_1({
+        referenceElement: referenceElement !== undefined ? referenceElement : referenceNode
+      }, props));
+    });
+  }
+
+  var InnerReference =
+  /*#__PURE__*/
+  function (_React$Component) {
+    inheritsLoose(InnerReference, _React$Component);
+
+    function InnerReference() {
+      var _this;
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
+
+      defineProperty$1(assertThisInitialized(_this), "refHandler", function (node) {
+        setRef(_this.props.innerRef, node);
+        safeInvoke(_this.props.setReferenceNode, node);
+      });
+
+      return _this;
+    }
+
+    var _proto = InnerReference.prototype;
+
+    _proto.componentWillUnmount = function componentWillUnmount() {
+      setRef(this.props.innerRef, null);
+    };
+
+    _proto.render = function render() {
+      warning_1(Boolean(this.props.setReferenceNode));
+      return unwrapArray(this.props.children)({
+        ref: this.refHandler
+      });
+    };
+
+    return InnerReference;
+  }(React.Component);
+
+  function Reference(props) {
+    return React.createElement(ManagerReferenceNodeSetterContext.Consumer, null, function (setReferenceNode) {
+      return React.createElement(InnerReference, _extends_1({
+        setReferenceNode: setReferenceNode
+      }, props));
+    });
+  }
+
+  var PopperWrapper = /*#__PURE__*/function (_React$Component) {
+    _inherits(PopperWrapper, _React$Component);
+
+    var _super = _createSuper(PopperWrapper);
+
+    function PopperWrapper(props) {
+      var _this;
+
+      _classCallCheck(this, PopperWrapper);
+
+      _this = _super.call(this, props);
+
+      _defineProperty(_assertThisInitialized(_this), "triggerRef", void 0);
+
+      _defineProperty(_assertThisInitialized(_this), "popupRef", void 0);
+
+      _defineProperty(_assertThisInitialized(_this), "hoverableDelay", void 0);
+
+      _defineProperty(_assertThisInitialized(_this), "_timer", void 0);
+
+      _defineProperty(_assertThisInitialized(_this), "_throttleWait", void 0);
+
+      _defineProperty(_assertThisInitialized(_this), "offsetMapping", void 0);
+
+      _defineProperty(_assertThisInitialized(_this), "togglePopper", function (type, newValue) {
+        var _this$props = _this.props,
+            open = _this$props.open,
+            onToggle = _this$props.onToggle;
+        onToggle(newValue === undefined ? !open : newValue, type);
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "findDOMNode", function (ref) {
+        return ReactDOM.findDOMNode(ref.current);
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "doesEventContainsElement", function (event, ref) {
+        var el = _this.findDOMNode(ref);
+
+        return el && el.contains(event.target);
+      });
+
+      _defineProperty(_assertThisInitialized(_this), "getUpdatedStyle", function (oldStyle, placement, offset) {
+        var style = _this.props.style;
+
+        var newStyle = _objectSpread2(_objectSpread2({}, style), oldStyle);
+
+        var position = placement ? placement.split('-')[0] : placement;
+
+        switch (position) {
+          case 'top':
+            newStyle.marginBottom = _this.offsetMapping[offset];
+            break;
+
+          case 'bottom':
+            newStyle.marginTop = _this.offsetMapping[offset];
+            break;
+
+          case 'left':
+            newStyle.marginRight = _this.offsetMapping[offset];
+            break;
+
+          case 'right':
+            newStyle.marginLeft = _this.offsetMapping[offset];
+            break;
+        }
+
+        return newStyle;
+      });
+
+      _this.state = {};
+      _this.hoverableDelay = 100;
+      _this.offsetMapping = {
+        small: '2px',
+        medium: '4px',
+        large: '8px'
+      };
+      _this.triggerRef = /*#__PURE__*/React.createRef();
+      _this.popupRef = /*#__PURE__*/React.createRef();
+      _this.getPopperChildren = _this.getPopperChildren.bind(_assertThisInitialized(_this));
+      _this.mouseMoveHandler = _this.mouseMoveHandler.bind(_assertThisInitialized(_this));
+      _this.handleMouseEnter = _this.handleMouseEnter.bind(_assertThisInitialized(_this));
+      _this.handleMouseLeave = _this.handleMouseLeave.bind(_assertThisInitialized(_this));
+      _this.boundaryScrollHandler = _this.boundaryScrollHandler.bind(_assertThisInitialized(_this));
+      return _this;
+    }
+
+    _createClass(PopperWrapper, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        this.addBoundaryScrollHandler();
+      }
+    }, {
+      key: "componentDidUpdate",
+      value: function componentDidUpdate(prevProps) {
+        if (!prevProps.boundaryElement && this.props.boundaryElement) {
+          this.removeBoundaryScrollHandler();
+          this.addBoundaryScrollHandler();
+        }
+
+        if (prevProps.open !== this.props.open) {
+          this._throttleWait = false;
+
+          if (this.props.open) {
+            var triggerElement = this.findDOMNode(this.triggerRef);
+            var zIndex = this.getZIndexForLayer(triggerElement);
+            this.setState({
+              zIndex: zIndex === undefined ? zIndex : zIndex + 1
+            });
+          }
+        }
+      }
+    }, {
+      key: "componentWillUnmount",
+      value: function componentWillUnmount() {
+        this.removeBoundaryScrollHandler();
+      }
+    }, {
+      key: "boundaryScrollHandler",
+      value: function boundaryScrollHandler() {
+        var _this$props2 = this.props,
+            open = _this$props2.open,
+            on = _this$props2.on,
+            closeOnScroll = _this$props2.closeOnScroll;
+
+        if (on === 'click' && closeOnScroll) {
+          if (open) {
+            if (!this._throttleWait) {
+              this.togglePopper('onScroll', false);
+              this._throttleWait = true;
+            }
+          }
+        }
+      }
+    }, {
+      key: "addBoundaryScrollHandler",
+      value: function addBoundaryScrollHandler() {
+        if (this.props.boundaryElement) {
+          this.props.boundaryElement.addEventListener('scroll', this.boundaryScrollHandler);
+        }
+      }
+    }, {
+      key: "removeBoundaryScrollHandler",
+      value: function removeBoundaryScrollHandler() {
+        if (this.props.boundaryElement) {
+          this.props.boundaryElement.removeEventListener('scroll', this.boundaryScrollHandler);
+        }
+      }
+    }, {
+      key: "mouseMoveHandler",
+      value: function mouseMoveHandler() {
+        var _this2 = this;
+
+        if (this._timer) clearTimeout(this._timer);
+        this._timer = setTimeout(function () {
+          var onToggle = _this2.props.onToggle;
+          onToggle(false, 'mouseLeave');
+        }, this.hoverableDelay);
+      }
+    }, {
+      key: "handleMouseEnter",
+      value: function handleMouseEnter() {
+        var on = this.props.on;
+
+        if (on === 'hover') {
+          if (this._timer) clearTimeout(this._timer);
+          var onToggle = this.props.onToggle;
+          onToggle(true, 'mouseEnter');
+        }
+      }
+    }, {
+      key: "handleMouseLeave",
+      value: function handleMouseLeave() {
+        var on = this.props.on;
+
+        if (on === 'hover') {
+          var _this$props3 = this.props,
+              hoverable = _this$props3.hoverable,
+              onToggle = _this$props3.onToggle;
+
+          if (hoverable) {
+            this.mouseMoveHandler();
+          } else {
+            onToggle(false, 'mouseLeave');
+          }
+        }
+      }
+    }, {
+      key: "getZIndexForLayer",
+      value: function getZIndexForLayer(node) {
+        if (node === null) {
+          return;
+        }
+
+        var layerNode = node.closest('[data-layer]') || document.body;
+        var zIndex = layerNode === document.body ? 'auto' : parseInt(window.getComputedStyle(layerNode).zIndex || '0', 10);
+        return zIndex === 'auto' || isNaN(zIndex) ? undefined : zIndex;
+      }
+    }, {
+      key: "getTriggerElement",
+      value: function getTriggerElement(ref) {
+        var _this3 = this;
+
+        var _this$props4 = this.props,
+            trigger = _this$props4.trigger,
+            on = _this$props4.on,
+            triggerClass = _this$props4.triggerClass;
+        var options = on === 'hover' ? {
+          ref: ref,
+          onMouseEnter: this.handleMouseEnter,
+          onMouseLeave: this.handleMouseLeave
+        } : {
+          ref: ref,
+          onClick: function onClick() {
+            return _this3.togglePopper('onClick');
+          }
+        };
+        var classes = classnames('PopperWrapper-trigger', triggerClass);
+
+        var onOutsideClickHandler = function onOutsideClickHandler(event) {
+          var _this3$props = _this3.props,
+              open = _this3$props.open,
+              closeOnBackdropClick = _this3$props.closeOnBackdropClick;
+
+          if (open && closeOnBackdropClick) {
+            if (!_this3.doesEventContainsElement(event, _this3.popupRef)) {
+              _this3.togglePopper('outsideClick');
+            }
+          }
+        };
+
+        return /*#__PURE__*/React.createElement(OutsideClick, _extends({
+          className: classes,
+          onOutsideClick: onOutsideClickHandler
+        }, options), trigger);
+      }
+    }, {
+      key: "getPopperChildren",
+      value: function getPopperChildren(_ref) {
+        var ref = _ref.ref,
+            style = _ref.style,
+            placement = _ref.placement,
+            outOfBoundaries = _ref.outOfBoundaries;
+        var _this$props5 = this.props,
+            offset = _this$props5.offset,
+            children = _this$props5.children;
+        var zIndex = this.state.zIndex;
+        var newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
+        var element = /*#__PURE__*/React.cloneElement(children, {
+          ref: ref,
+          style: _objectSpread2(_objectSpread2({}, newStyle), {}, {
+            zIndex: zIndex
+          }),
+          'data-placement': placement,
+          'data-hide': outOfBoundaries,
+          onMouseEnter: this.handleMouseEnter,
+          onMouseLeave: this.handleMouseLeave
+        });
+        return element;
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this4 = this;
+
+        var _this$props6 = this.props,
+            placement = _this$props6.placement,
+            appendToBody = _this$props6.appendToBody,
+            open = _this$props6.open,
+            hide = _this$props6.hide,
+            boundaryElement = _this$props6.boundaryElement;
+        return /*#__PURE__*/React.createElement(Manager, null, /*#__PURE__*/React.createElement(Reference, {
+          innerRef: this.triggerRef
+        }, function (_ref2) {
+          var ref = _ref2.ref;
+          return _this4.getTriggerElement(ref);
+        }), open && appendToBody && /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement(Popper$1, {
+          placement: placement,
+          innerRef: this.popupRef,
+          modifiers: {
+            preventOverflow: {
+              boundariesElement: boundaryElement || document.body
+            },
+            hide: {
+              enabled: hide
+            }
+          }
+        }, this.getPopperChildren), document.body), open && !appendToBody && /*#__PURE__*/React.createElement(Popper$1, {
+          placement: placement,
+          innerRef: this.popupRef
+        }, this.getPopperChildren));
+      }
+    }]);
+
+    return PopperWrapper;
+  }(React.Component);
+
+  _defineProperty(PopperWrapper, "defaultProps", {
+    on: 'click',
+    offset: 'medium',
+    closeOnBackdropClick: true,
+    hoverable: true,
+    appendToBody: true,
+    style: {}
+  });
+
   var propsList = ['appendToBody', 'trigger', 'hoverable', 'on', 'open', 'closeOnBackdropClick', 'offset', 'closeOnScroll'];
   var Popover = function Popover(props) {
     var position = props.position,
@@ -39540,6 +39531,35 @@
     secondaryButtonAppearance: 'basic'
   };
 
+  var getWrapperElement = function getWrapperElement() {
+    var element = document.querySelector('.Overlay-wrapper');
+
+    if (element === null) {
+      element = document.createElement('div');
+      element.classList.add('Overlay-wrapper');
+      document.body.appendChild(element);
+    }
+
+    return element;
+  };
+  var getUpdatedZIndex = function getUpdatedZIndex(ele) {
+    var containerClassName = ele.containerClassName,
+        elementRef = ele.elementRef,
+        element = ele.element;
+    if (element === null) return;
+    var elements = element.querySelectorAll(containerClassName);
+    if (elements.length < 1) return;
+    var siblings = Array.from(elements).filter(function (el) {
+      return el !== elementRef.current;
+    });
+    var zIndex = -1;
+    siblings.forEach(function (element) {
+      var prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
+      zIndex = Math.max(zIndex, prevZIndex + 10);
+    });
+    return zIndex > 0 ? zIndex : undefined;
+  };
+
   /**
    * ** NOTE: Use `headerOptions`, `footer`, `onClose` and `backdropClose`(boolean). **
    * ** Support for composition using `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **
@@ -39563,34 +39583,7 @@
 
       _defineProperty(_assertThisInitialized(_this), "element", void 0);
 
-      _defineProperty(_assertThisInitialized(_this), "getUpdatedZIndex", function () {
-        if (_this.element === null) return;
-
-        var elements = _this.element.querySelectorAll('.Modal-container--open');
-
-        if (elements.length < 1) return;
-        var siblings = Array.from(elements).filter(function (el) {
-          return el !== _this.modalRef.current;
-        });
-        var zIndex = -1;
-        siblings.forEach(function (element) {
-          var prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
-          zIndex = Math.max(zIndex, prevZIndex + 10);
-        });
-        return zIndex > 0 ? zIndex : undefined;
-      });
-
-      var _element = document.querySelector('.Modal-wrapper');
-
-      if (_element === null) {
-        _element = document.createElement('div');
-
-        _element.classList.add('Modal-wrapper');
-
-        document.body.appendChild(_element);
-      }
-
-      _this.element = _element;
+      _this.element = getWrapperElement();
       _this.state = {
         open: props.open,
         animate: props.open
@@ -39605,7 +39598,11 @@
 
         if (prevProps.open !== this.props.open) {
           if (this.props.open) {
-            var zIndex = this.getUpdatedZIndex();
+            var zIndex = getUpdatedZIndex({
+              element: this.element,
+              containerClassName: '.Modal-container--open',
+              elementRef: this.modalRef
+            });
             this.setState({
               zIndex: zIndex,
               open: true,
@@ -39682,11 +39679,11 @@
           className: classes
         }, sizeMap[dimension], {
           ref: this.modalRef
-        }), headerOptions && /*#__PURE__*/React.createElement(ModalHeader, _extends({
+        }), headerOptions && /*#__PURE__*/React.createElement(ModalHeader$1, _extends({
           onClose: function onClose(event, reason) {
             if (_onClose) _onClose(event, reason);
           }
-        }, headerOptions)), children && /*#__PURE__*/React.createElement(React.Fragment, null, headerOptions || footer ? /*#__PURE__*/React.createElement(ModalBody, null, children) : children), footer && /*#__PURE__*/React.createElement(ModalFooter, {
+        }, headerOptions)), children && /*#__PURE__*/React.createElement(React.Fragment, null, headerOptions || footer ? /*#__PURE__*/React.createElement(ModalBody, null, children) : children), footer && /*#__PURE__*/React.createElement(ModalFooter$1, {
           open: open
         }, footer)));
 
@@ -39714,6 +39711,220 @@
     dimension: 'medium'
   });
 
+  var ModalHeader = function ModalHeader(props) {
+    var className = props.className,
+        heading = props.heading,
+        subHeading = props.subHeading,
+        backButton = props.backButton,
+        backButtonCallback = props.backButtonCallback;
+    var baseProps = extractBaseProps(props);
+    var classes = classnames(_defineProperty({
+      'FullscreenModal-header': true
+    }, 'FullscreenModal-header--backButton', backButton), className);
+    return /*#__PURE__*/React.createElement("div", _extends({
+      "data-test": "DesignSystem-ModalHeader"
+    }, baseProps, {
+      className: classes
+    }), /*#__PURE__*/React.createElement("div", {
+      className: "FullscreenModal-headerWrapper"
+    }, backButton && /*#__PURE__*/React.createElement(Icon, {
+      name: "keyboard_backspace",
+      size: 20,
+      className: "mr-5 cursor-pointer",
+      onClick: backButtonCallback
+    }), heading && /*#__PURE__*/React.createElement(Heading, null, heading)), subHeading && /*#__PURE__*/React.createElement(Text, {
+      "data-test": "DesignSystem-ModalHeader--Subheading",
+      appearance: "subtle",
+      className: "mt-2"
+    }, subHeading));
+  };
+  ModalHeader.displayName = 'ModalHeader';
+
+  var ModalFooter = function ModalFooter(props) {
+    var open = props.open,
+        actions = props.actions;
+    var baseProps = extractBaseProps(props);
+    var wrapperRef = /*#__PURE__*/React.createRef();
+    React.useEffect(function () {
+      if (open) {
+        if (wrapperRef.current) {
+          var _wrapperRef$current;
+
+          var secondaryBtns = (_wrapperRef$current = wrapperRef.current) === null || _wrapperRef$current === void 0 ? void 0 : _wrapperRef$current.querySelectorAll('.Button--basic');
+          var secondaryBtn = secondaryBtns[secondaryBtns.length - 1];
+
+          if (secondaryBtn) {
+            window.requestAnimationFrame(function () {
+              return secondaryBtn.focus({
+                preventScroll: true
+              });
+            });
+          }
+        }
+      }
+    }, [open]);
+    return /*#__PURE__*/React.createElement("div", _extends({
+      ref: wrapperRef
+    }, baseProps, {
+      className: "d-flex"
+    }), actions.map(function (_ref, index) {
+      _ref.label;
+          var options = _objectWithoutProperties(_ref, ["label"]);
+
+      return /*#__PURE__*/React.createElement(Button, _extends({}, options, {
+        key: index
+      }));
+    }));
+  };
+  ModalFooter.defaultProps = {
+    actions: []
+  };
+  ModalFooter.displayName = 'ModalFooter';
+
+  var FullscreenModal = /*#__PURE__*/function (_React$Component) {
+    _inherits(FullscreenModal, _React$Component);
+
+    var _super = _createSuper(FullscreenModal);
+
+    function FullscreenModal(props) {
+      var _this;
+
+      _classCallCheck(this, FullscreenModal);
+
+      _this = _super.call(this, props);
+
+      _defineProperty(_assertThisInitialized(_this), "modalRef", /*#__PURE__*/React.createRef());
+
+      _defineProperty(_assertThisInitialized(_this), "element", void 0);
+
+      _this.element = getWrapperElement();
+      _this.state = {
+        open: props.open,
+        animate: props.open
+      };
+      return _this;
+    }
+
+    _createClass(FullscreenModal, [{
+      key: "componentDidUpdate",
+      value: function componentDidUpdate(prevProps) {
+        var _this2 = this;
+
+        if (prevProps.open !== this.props.open) {
+          if (this.props.open) {
+            var zIndex = getUpdatedZIndex({
+              element: this.element,
+              containerClassName: '.FullscreenModal-container--open',
+              elementRef: this.modalRef
+            });
+            this.setState({
+              zIndex: zIndex,
+              open: true,
+              animate: true
+            });
+          } else {
+            this.setState({
+              animate: false
+            }, function () {
+              setTimeout(function () {
+                _this2.setState({
+                  open: false
+                });
+              }, 120);
+            });
+          }
+        }
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _classNames;
+
+        var _this$state = this.state,
+            animate = _this$state.animate,
+            open = _this$state.open,
+            zIndex = _this$state.zIndex;
+        var _this$props = this.props,
+            className = _this$props.className,
+            dimension = _this$props.dimension,
+            children = _this$props.children,
+            header = _this$props.header,
+            headerOptions = _this$props.headerOptions,
+            footer = _this$props.footer,
+            footerOptions = _this$props.footerOptions,
+            onClose = _this$props.onClose;
+        var classes = classnames({
+          FullscreenModal: true,
+          'FullscreenModal--open': open,
+          'FullscreenModal-animation--open': animate,
+          'FullscreenModal-animation--close': !animate
+        }, className);
+        var ContainerClass = classnames((_classNames = {}, _defineProperty(_classNames, 'FullscreenModal-container', true), _defineProperty(_classNames, 'FullscreenModal-container--open', open), _classNames));
+        var baseProps = extractBaseProps(this.props);
+        var sizeMap = {
+          medium: {
+            size: '4',
+            sizeL: '6',
+            sizeM: '6',
+            sizeXS: '12'
+          },
+          large: {
+            size: '6',
+            sizeL: '8',
+            sizeM: '8',
+            sizeXS: '12'
+          }
+        };
+        var ModalContainer = /*#__PURE__*/React.createElement("div", {
+          "data-test": "DesignSystem-FullscreenModalContainer",
+          className: ContainerClass,
+          "data-layer": true,
+          style: {
+            zIndex: zIndex
+          }
+        }, /*#__PURE__*/React.createElement("div", _extends({
+          "data-test": "DesignSystem-FullscreenModal"
+        }, baseProps, {
+          className: classes,
+          ref: this.modalRef
+        }), /*#__PURE__*/React.createElement(Row, {
+          className: "justify-content-center"
+        }, /*#__PURE__*/React.createElement(Column, sizeMap[dimension], /*#__PURE__*/React.createElement(Row, {
+          className: "justify-content-between pt-6 pr-6 pb-5 pl-7"
+        }, /*#__PURE__*/React.createElement(Column, {
+          size: "auto"
+        }, !header && /*#__PURE__*/React.createElement(ModalHeader, headerOptions), !!header && header), /*#__PURE__*/React.createElement(Column, {
+          size: "auto",
+          className: "pr-2"
+        }, /*#__PURE__*/React.createElement(Icon, {
+          size: 20,
+          name: 'close',
+          className: "cursor-pointer pt-3",
+          "data-test": "DesignSystem-ModalHeader--CloseIcon",
+          onClick: function onClick(event) {
+            if (onClose) onClose(event, 'IconClick');
+          }
+        }))), /*#__PURE__*/React.createElement("div", {
+          "data-test": "DesignSystem-ModalBody",
+          className: "FullscreenModal-body"
+        }, children), /*#__PURE__*/React.createElement("div", {
+          "data-test": "DesignSystem-ModalFooter",
+          className: "d-flex justify-content-end p-7"
+        }, !footer && /*#__PURE__*/React.createElement(ModalFooter, _extends({}, footerOptions, {
+          open: open
+        })), !!footer && footer)))));
+        var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(ModalContainer, this.element);
+        return /*#__PURE__*/React.createElement(React.Fragment, null, WrapperElement);
+      }
+    }]);
+
+    return FullscreenModal;
+  }(React.Component);
+
+  _defineProperty(FullscreenModal, "defaultProps", {
+    dimension: 'medium'
+  });
+
   var sidesheetWidth = {
     regular: '6',
     large: '10'
@@ -39735,34 +39946,7 @@
 
       _defineProperty(_assertThisInitialized(_this), "element", void 0);
 
-      _defineProperty(_assertThisInitialized(_this), "getUpdatedZIndex", function () {
-        if (_this.element === null) return;
-
-        var elements = _this.element.querySelectorAll('.Sidesheet-container--open');
-
-        if (elements.length <= 1) return;
-        var siblings = Array.from(elements).filter(function (el) {
-          return el !== _this.sidesheetRef.current;
-        });
-        var zIndex = -1;
-        siblings.forEach(function (element) {
-          var prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
-          zIndex = Math.max(zIndex, prevZIndex + 10);
-        });
-        return zIndex > 0 ? zIndex : undefined;
-      });
-
-      var _element = document.querySelector('.Sidesheet-wrapper');
-
-      if (_element === null) {
-        _element = document.createElement('div');
-
-        _element.classList.add('Sidesheet-wrapper');
-
-        document.body.appendChild(_element);
-      }
-
-      _this.element = _element;
+      _this.element = getWrapperElement();
       _this.state = {
         open: props.open,
         animate: props.open
@@ -39777,7 +39961,11 @@
 
         if (prevProps.open !== this.props.open) {
           if (this.props.open) {
-            var zIndex = this.getUpdatedZIndex();
+            var zIndex = getUpdatedZIndex({
+              element: this.element,
+              containerClassName: '.Sidesheet-container--open',
+              elementRef: this.sidesheetRef
+            });
             this.setState({
               zIndex: zIndex,
               open: true,
@@ -39840,13 +40028,13 @@
         }, baseProps, {
           className: classes,
           size: sidesheetWidth[dimension]
-        }), /*#__PURE__*/React.createElement(ModalHeader, _extends({
+        }), /*#__PURE__*/React.createElement(ModalHeader$1, _extends({
           onClose: function onClose(event, reason) {
             if (_onClose) _onClose(event, reason);
           }
         }, headerObj)), /*#__PURE__*/React.createElement(ModalBody, {
           stickFooter: stickFooter
-        }, this.props.children), footer && /*#__PURE__*/React.createElement(ModalFooter, {
+        }, this.props.children), footer && /*#__PURE__*/React.createElement(ModalFooter$1, {
           inSidesheet: true,
           stickToBottom: stickFooter,
           seperator: seperator
@@ -40093,7 +40281,7 @@
   };
   EmptyState.displayName = 'EmptyState';
 
-  var ModalHeader = function ModalHeader(props) {
+  var ModalHeader$1 = function ModalHeader(props) {
     var _classNames;
 
     var className = props.className,
@@ -40137,9 +40325,9 @@
       className: "mt-2 ml-7"
     }, subHeading));
   };
-  ModalHeader.displayName = 'ModalHeader';
+  ModalHeader$1.displayName = 'ModalHeader';
 
-  var ModalFooter = function ModalFooter(props) {
+  var ModalFooter$1 = function ModalFooter(props) {
     var _classNames;
 
     var open = props.open,
@@ -40178,11 +40366,11 @@
       className: classes
     }), children);
   };
-  ModalFooter.defaultProps = {
+  ModalFooter$1.defaultProps = {
     stickToBottom: true,
     inSidesheet: false
   };
-  ModalFooter.displayName = 'ModalFooter';
+  ModalFooter$1.displayName = 'ModalFooter';
 
   var ModalBody = function ModalBody(props) {
     var children = props.children,
@@ -43348,7 +43536,7 @@
         selectAll: getSelectAll$1([]),
         searchTerm: undefined
       };
-      _this.debounceUpdate = debounce$1(props.searchDebounceDuration, _this.updateDataFn);
+      _this.debounceUpdate = debounce(props.searchDebounceDuration, _this.updateDataFn);
       return _this;
     }
 
@@ -43792,7 +43980,7 @@
     separator: true
   };
 
-  var version = "1.6.0-1";
+  var version = "1.6.0-2";
 
   exports.Avatar = Avatar;
   exports.AvatarGroup = AvatarGroup;
@@ -43815,6 +44003,7 @@
   exports.EditableDropdown = EditableDropdown;
   exports.EditableInput = EditableInput;
   exports.EmptyState = EmptyState;
+  exports.FullscreenModal = FullscreenModal;
   exports.Grid = Grid;
   exports.GridCell = GridCell;
   exports.Heading = Heading;
@@ -43830,8 +44019,8 @@
   exports.Modal = Modal;
   exports.ModalBody = ModalBody;
   exports.ModalDescription = ModalDescription;
-  exports.ModalFooter = ModalFooter;
-  exports.ModalHeader = ModalHeader;
+  exports.ModalFooter = ModalFooter$1;
+  exports.ModalHeader = ModalHeader$1;
   exports.Navigation = Navigation;
   exports.OutsideClick = OutsideClick;
   exports.PageHeader = PageHeader;

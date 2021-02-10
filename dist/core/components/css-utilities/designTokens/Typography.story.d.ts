@@ -1,4 +1,4 @@
-export declare const spacing: () => JSX.Element;
+export declare const typography: () => JSX.Element;
 declare const _default: {
     title: string;
 };
