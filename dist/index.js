@@ -1,354 +1,23 @@
 
   /**
-   * Generated on: 1612363784246 
+   * Generated on: 1612959824547 
    *      Package: @innovaccer/design-system
-   *      Version: v1.6.0-1
+   *      Version: v1.6.0-2
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
 
     
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('react-dom'), require('react-popper'), require('classnames'), require('recharts')) :
-    typeof define === 'function' && define.amd ? define(['exports', 'react', 'react-dom', 'react-popper', 'classnames', 'recharts'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.inno = {}, global.React, global.ReactDOM, global.ReactPopper, global.classNames, global.recharts));
-}(this, (function (exports, React, ReactDOM, reactPopper, classNames, recharts) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('classnames'), require('react-dom'), require('react-popper'), require('recharts')) :
+    typeof define === 'function' && define.amd ? define(['exports', 'react', 'classnames', 'react-dom', 'react-popper', 'recharts'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.inno = {}, global.React, global.classNames, global.ReactDOM, global.ReactPopper, global.recharts));
+}(this, (function (exports, React, classNames, ReactDOM, reactPopper, recharts) { 'use strict';
 
     function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
     var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
     var classNames__default = /*#__PURE__*/_interopDefaultLegacy(classNames);
-
-    /*! *****************************************************************************
-    Copyright (c) Microsoft Corporation.
-
-    Permission to use, copy, modify, and/or distribute this software for any
-    purpose with or without fee is hereby granted.
-
-    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-    REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-    AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-    INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-    LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-    OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-    PERFORMANCE OF THIS SOFTWARE.
-    ***************************************************************************** */
-    /* global Reflect, Promise */
-
-    var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-
-    function __extends(d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    }
-
-    var __assign = function() {
-        __assign = Object.assign || function __assign(t) {
-            for (var s, i = 1, n = arguments.length; i < n; i++) {
-                s = arguments[i];
-                for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-            }
-            return t;
-        };
-        return __assign.apply(this, arguments);
-    };
-
-    function __rest(s, e) {
-        var t = {};
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-            t[p] = s[p];
-        if (s != null && typeof Object.getOwnPropertySymbols === "function")
-            for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-                if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                    t[p[i]] = s[p[i]];
-            }
-        return t;
-    }
-
-    function __spreadArrays() {
-        for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-        for (var r = Array(s), k = 0, i = 0; i < il; i++)
-            for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-                r[k] = a[j];
-        return r;
-    }
-
-    var PopperWrapper = function (_super) {
-      __extends(PopperWrapper, _super);
-
-      function PopperWrapper(props) {
-        var _this = _super.call(this, props) || this;
-
-        _this.togglePopper = function (type, newValue) {
-          var _a = _this.props,
-              open = _a.open,
-              onToggle = _a.onToggle;
-          onToggle(newValue === undefined ? !open : newValue, type);
-        };
-
-        _this.findDOMNode = function (ref) {
-          return ReactDOM.findDOMNode(ref.current);
-        };
-
-        _this.doesEventContainsElement = function (event, ref) {
-          var el = _this.findDOMNode(ref);
-
-          return el && el.contains(event.target);
-        };
-
-        _this.getUpdatedStyle = function (oldStyle, placement, offset) {
-          var style = _this.props.style;
-
-          var newStyle = __assign(__assign({}, style), oldStyle);
-
-          var position = placement ? placement.split('-')[0] : placement;
-
-          switch (position) {
-            case 'top':
-              newStyle.marginBottom = _this.offsetMapping[offset];
-              break;
-
-            case 'bottom':
-              newStyle.marginTop = _this.offsetMapping[offset];
-              break;
-
-            case 'left':
-              newStyle.marginRight = _this.offsetMapping[offset];
-              break;
-
-            case 'right':
-              newStyle.marginLeft = _this.offsetMapping[offset];
-              break;
-          }
-
-          return newStyle;
-        };
-
-        _this.state = {};
-        _this.hoverableDelay = 100;
-        _this.offsetMapping = {
-          small: '2px',
-          medium: '4px',
-          large: '8px'
-        };
-        _this.triggerRef = /*#__PURE__*/React.createRef();
-        _this.popupRef = /*#__PURE__*/React.createRef();
-        _this.getPopperChildren = _this.getPopperChildren.bind(_this);
-        _this.mouseMoveHandler = _this.mouseMoveHandler.bind(_this);
-        _this.handleMouseEnter = _this.handleMouseEnter.bind(_this);
-        _this.handleMouseLeave = _this.handleMouseLeave.bind(_this);
-        _this.boundaryScrollHandler = _this.boundaryScrollHandler.bind(_this);
-        return _this;
-      }
-
-      PopperWrapper.prototype.componentDidMount = function () {
-        this.addBoundaryScrollHandler();
-      };
-
-      PopperWrapper.prototype.componentDidUpdate = function (prevProps) {
-        if (!prevProps.boundaryElement && this.props.boundaryElement) {
-          this.removeBoundaryScrollHandler();
-          this.addBoundaryScrollHandler();
-        }
-
-        if (prevProps.open !== this.props.open) {
-          this._throttleWait = false;
-
-          if (this.props.open) {
-            var triggerElement = this.findDOMNode(this.triggerRef);
-            var zIndex = this.getZIndexForLayer(triggerElement);
-            this.setState({
-              zIndex: zIndex === undefined ? zIndex : zIndex + 1
-            });
-          }
-        }
-      };
-
-      PopperWrapper.prototype.componentWillUnmount = function () {
-        this.removeBoundaryScrollHandler();
-      };
-
-      PopperWrapper.prototype.boundaryScrollHandler = function () {
-        var _a = this.props,
-            open = _a.open,
-            on = _a.on,
-            closeOnScroll = _a.closeOnScroll;
-
-        if (on === 'click' && closeOnScroll) {
-          if (open) {
-            if (!this._throttleWait) {
-              this.togglePopper('onScroll', false);
-              this._throttleWait = true;
-            }
-          }
-        }
-      };
-
-      PopperWrapper.prototype.addBoundaryScrollHandler = function () {
-        if (this.props.boundaryElement) {
-          this.props.boundaryElement.addEventListener('scroll', this.boundaryScrollHandler);
-        }
-      };
-
-      PopperWrapper.prototype.removeBoundaryScrollHandler = function () {
-        if (this.props.boundaryElement) {
-          this.props.boundaryElement.removeEventListener('scroll', this.boundaryScrollHandler);
-        }
-      };
-
-      PopperWrapper.prototype.mouseMoveHandler = function () {
-        var _this = this;
-
-        if (this._timer) clearTimeout(this._timer);
-        this._timer = setTimeout(function () {
-          var onToggle = _this.props.onToggle;
-          onToggle(false, 'mouseLeave');
-        }, this.hoverableDelay);
-      };
-
-      PopperWrapper.prototype.handleMouseEnter = function () {
-        var on = this.props.on;
-
-        if (on === 'hover') {
-          if (this._timer) clearTimeout(this._timer);
-          var onToggle = this.props.onToggle;
-          onToggle(true, 'mouseEnter');
-        }
-      };
-
-      PopperWrapper.prototype.handleMouseLeave = function () {
-        var on = this.props.on;
-
-        if (on === 'hover') {
-          var _a = this.props,
-              hoverable = _a.hoverable,
-              onToggle = _a.onToggle;
-
-          if (hoverable) {
-            this.mouseMoveHandler();
-          } else {
-            onToggle(false, 'mouseLeave');
-          }
-        }
-      };
-
-      PopperWrapper.prototype.getZIndexForLayer = function (node) {
-        if (node === null) {
-          return;
-        }
-
-        var layerNode = node.closest('[data-layer]') || document.body;
-        var zIndex = layerNode === document.body ? 'auto' : parseInt(window.getComputedStyle(layerNode).zIndex || '0', 10);
-        return zIndex === 'auto' || isNaN(zIndex) ? undefined : zIndex;
-      };
-
-      PopperWrapper.prototype.getTriggerElement = function (ref) {
-        var _this = this;
-
-        var _a = this.props,
-            trigger = _a.trigger,
-            on = _a.on,
-            triggerClass = _a.triggerClass;
-        var options = on === 'hover' ? {
-          ref: ref,
-          onMouseEnter: this.handleMouseEnter,
-          onMouseLeave: this.handleMouseLeave
-        } : {
-          ref: ref,
-          onClick: function onClick() {
-            return _this.togglePopper('onClick');
-          }
-        };
-        var classes = classNames__default['default']('PopperWrapper-trigger', triggerClass);
-
-        var onOutsideClickHandler = function onOutsideClickHandler(event) {
-          var _a = _this.props,
-              open = _a.open,
-              closeOnBackdropClick = _a.closeOnBackdropClick;
-
-          if (open && closeOnBackdropClick) {
-            if (!_this.doesEventContainsElement(event, _this.popupRef)) {
-              _this.togglePopper('outsideClick');
-            }
-          }
-        };
-
-        return /*#__PURE__*/React.createElement(OutsideClick, __assign({
-          className: classes,
-          onOutsideClick: onOutsideClickHandler
-        }, options), trigger);
-      };
-
-      PopperWrapper.prototype.getPopperChildren = function (_a) {
-        var ref = _a.ref,
-            style = _a.style,
-            placement = _a.placement,
-            outOfBoundaries = _a.outOfBoundaries;
-        var _b = this.props,
-            offset = _b.offset,
-            children = _b.children;
-        var zIndex = this.state.zIndex;
-        var newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
-        var element = /*#__PURE__*/React.cloneElement(children, {
-          ref: ref,
-          style: __assign(__assign({}, newStyle), {
-            zIndex: zIndex
-          }),
-          'data-placement': placement,
-          'data-hide': outOfBoundaries,
-          onMouseEnter: this.handleMouseEnter,
-          onMouseLeave: this.handleMouseLeave
-        });
-        return element;
-      };
-
-      PopperWrapper.prototype.render = function () {
-        var _this = this;
-
-        var _a = this.props,
-            placement = _a.placement,
-            appendToBody = _a.appendToBody,
-            open = _a.open,
-            hide = _a.hide,
-            boundaryElement = _a.boundaryElement;
-        return /*#__PURE__*/React.createElement(reactPopper.Manager, null, /*#__PURE__*/React.createElement(reactPopper.Reference, {
-          innerRef: this.triggerRef
-        }, function (_a) {
-          var ref = _a.ref;
-          return _this.getTriggerElement(ref);
-        }), open && appendToBody && /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement(reactPopper.Popper, {
-          placement: placement,
-          innerRef: this.popupRef,
-          modifiers: {
-            preventOverflow: {
-              boundariesElement: boundaryElement || document.body
-            },
-            hide: {
-              enabled: hide
-            }
-          }
-        }, this.getPopperChildren), document.body), open && !appendToBody && /*#__PURE__*/React.createElement(reactPopper.Popper, {
-          placement: placement,
-          innerRef: this.popupRef
-        }, this.getPopperChildren));
-      };
-
-      PopperWrapper.defaultProps = {
-        on: 'click',
-        offset: 'medium',
-        closeOnBackdropClick: true,
-        hoverable: true,
-        appendToBody: true,
-        style: {}
-      };
-      return PopperWrapper;
-    }(React.Component);
 
     var colorToHex = function colorToHex(color) {
       return getComputedStyle(document.documentElement).getPropertyValue("--" + color);
@@ -602,9 +271,68 @@
         __proto__: null,
         css: css,
         validators: validators,
-        masks: masks,
-        PopperWrapper: PopperWrapper
+        masks: masks
     });
+
+    /*! *****************************************************************************
+    Copyright (c) Microsoft Corporation.
+
+    Permission to use, copy, modify, and/or distribute this software for any
+    purpose with or without fee is hereby granted.
+
+    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+    REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+    AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+    INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+    LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+    OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+    PERFORMANCE OF THIS SOFTWARE.
+    ***************************************************************************** */
+    /* global Reflect, Promise */
+
+    var extendStatics = function(d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+
+    function __extends(d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    }
+
+    var __assign = function() {
+        __assign = Object.assign || function __assign(t) {
+            for (var s, i = 1, n = arguments.length; i < n; i++) {
+                s = arguments[i];
+                for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+            }
+            return t;
+        };
+        return __assign.apply(this, arguments);
+    };
+
+    function __rest(s, e) {
+        var t = {};
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+            t[p] = s[p];
+        if (s != null && typeof Object.getOwnPropertySymbols === "function")
+            for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+                if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                    t[p[i]] = s[p[i]];
+            }
+        return t;
+    }
+
+    function __spreadArrays() {
+        for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+        for (var r = Array(s), k = 0, i = 0; i < il; i++)
+            for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+                r[k] = a[j];
+        return r;
+    }
 
     var extractBaseProps = function extractBaseProps(props) {
       var baseProps = ['className', 'data-test'];
@@ -3199,10 +2927,7 @@
               year = _a.year,
               month = _a.month,
               date = _a.date;
-          dateVal = new Date();
-          dateVal.setDate(date);
-          dateVal.setMonth(month);
-          dateVal.setFullYear(year);
+          dateVal = new Date(year, month, date, 0, 0, 0);
         } else {
           dateVal = d;
         }
@@ -4591,7 +4316,7 @@
           type = _f === void 0 ? 'text' : _f,
           _g = props.minWidth,
           minWidth = _g === void 0 ? type !== 'number' ? 256 : undefined : _g,
-          readonly = props.readonly,
+          readOnly = props.readOnly,
           defaultValue = props.defaultValue,
           name = props.name,
           placeholder = props.placeholder,
@@ -4610,7 +4335,7 @@
           className = props.className,
           autocomplete = props.autocomplete,
           autoFocus = props.autoFocus,
-          rest = __rest(props, ["size", "type", "minWidth", "readonly", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autocomplete", "autoFocus"]);
+          rest = __rest(props, ["size", "type", "minWidth", "readOnly", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autocomplete", "autoFocus"]);
 
       var ref = React.useRef(null);
       React.useImperativeHandle(forwardedRef, function () {
@@ -4624,7 +4349,7 @@
         });
       }, []);
       var autoComplete = props.autoComplete || autocomplete;
-      var disabled = props.disabled || readonly;
+      var disabled = props.disabled || readOnly;
       var baseProps = extractBaseProps(props);
       var classes = classNames__default['default']((_a = {}, _a['Input'] = true, _a["Input--" + size] = size, _a['Input--disabled'] = disabled, _a['Input--error'] = error, _a), className);
       var inputClass = classNames__default['default']((_b = {}, _b['Input-input'] = true, _b["Input-input--" + size] = size, _b));
@@ -6426,6 +6151,277 @@
       appearance: 'default'
     };
 
+    var PopperWrapper = function (_super) {
+      __extends(PopperWrapper, _super);
+
+      function PopperWrapper(props) {
+        var _this = _super.call(this, props) || this;
+
+        _this.togglePopper = function (type, newValue) {
+          var _a = _this.props,
+              open = _a.open,
+              onToggle = _a.onToggle;
+          onToggle(newValue === undefined ? !open : newValue, type);
+        };
+
+        _this.findDOMNode = function (ref) {
+          return ReactDOM.findDOMNode(ref.current);
+        };
+
+        _this.doesEventContainsElement = function (event, ref) {
+          var el = _this.findDOMNode(ref);
+
+          return el && el.contains(event.target);
+        };
+
+        _this.getUpdatedStyle = function (oldStyle, placement, offset) {
+          var style = _this.props.style;
+
+          var newStyle = __assign(__assign({}, style), oldStyle);
+
+          var position = placement ? placement.split('-')[0] : placement;
+
+          switch (position) {
+            case 'top':
+              newStyle.marginBottom = _this.offsetMapping[offset];
+              break;
+
+            case 'bottom':
+              newStyle.marginTop = _this.offsetMapping[offset];
+              break;
+
+            case 'left':
+              newStyle.marginRight = _this.offsetMapping[offset];
+              break;
+
+            case 'right':
+              newStyle.marginLeft = _this.offsetMapping[offset];
+              break;
+          }
+
+          return newStyle;
+        };
+
+        _this.state = {};
+        _this.hoverableDelay = 100;
+        _this.offsetMapping = {
+          small: '2px',
+          medium: '4px',
+          large: '8px'
+        };
+        _this.triggerRef = /*#__PURE__*/React.createRef();
+        _this.popupRef = /*#__PURE__*/React.createRef();
+        _this.getPopperChildren = _this.getPopperChildren.bind(_this);
+        _this.mouseMoveHandler = _this.mouseMoveHandler.bind(_this);
+        _this.handleMouseEnter = _this.handleMouseEnter.bind(_this);
+        _this.handleMouseLeave = _this.handleMouseLeave.bind(_this);
+        _this.boundaryScrollHandler = _this.boundaryScrollHandler.bind(_this);
+        return _this;
+      }
+
+      PopperWrapper.prototype.componentDidMount = function () {
+        this.addBoundaryScrollHandler();
+      };
+
+      PopperWrapper.prototype.componentDidUpdate = function (prevProps) {
+        if (!prevProps.boundaryElement && this.props.boundaryElement) {
+          this.removeBoundaryScrollHandler();
+          this.addBoundaryScrollHandler();
+        }
+
+        if (prevProps.open !== this.props.open) {
+          this._throttleWait = false;
+
+          if (this.props.open) {
+            var triggerElement = this.findDOMNode(this.triggerRef);
+            var zIndex = this.getZIndexForLayer(triggerElement);
+            this.setState({
+              zIndex: zIndex === undefined ? zIndex : zIndex + 1
+            });
+          }
+        }
+      };
+
+      PopperWrapper.prototype.componentWillUnmount = function () {
+        this.removeBoundaryScrollHandler();
+      };
+
+      PopperWrapper.prototype.boundaryScrollHandler = function () {
+        var _a = this.props,
+            open = _a.open,
+            on = _a.on,
+            closeOnScroll = _a.closeOnScroll;
+
+        if (on === 'click' && closeOnScroll) {
+          if (open) {
+            if (!this._throttleWait) {
+              this.togglePopper('onScroll', false);
+              this._throttleWait = true;
+            }
+          }
+        }
+      };
+
+      PopperWrapper.prototype.addBoundaryScrollHandler = function () {
+        if (this.props.boundaryElement) {
+          this.props.boundaryElement.addEventListener('scroll', this.boundaryScrollHandler);
+        }
+      };
+
+      PopperWrapper.prototype.removeBoundaryScrollHandler = function () {
+        if (this.props.boundaryElement) {
+          this.props.boundaryElement.removeEventListener('scroll', this.boundaryScrollHandler);
+        }
+      };
+
+      PopperWrapper.prototype.mouseMoveHandler = function () {
+        var _this = this;
+
+        if (this._timer) clearTimeout(this._timer);
+        this._timer = setTimeout(function () {
+          var onToggle = _this.props.onToggle;
+          onToggle(false, 'mouseLeave');
+        }, this.hoverableDelay);
+      };
+
+      PopperWrapper.prototype.handleMouseEnter = function () {
+        var on = this.props.on;
+
+        if (on === 'hover') {
+          if (this._timer) clearTimeout(this._timer);
+          var onToggle = this.props.onToggle;
+          onToggle(true, 'mouseEnter');
+        }
+      };
+
+      PopperWrapper.prototype.handleMouseLeave = function () {
+        var on = this.props.on;
+
+        if (on === 'hover') {
+          var _a = this.props,
+              hoverable = _a.hoverable,
+              onToggle = _a.onToggle;
+
+          if (hoverable) {
+            this.mouseMoveHandler();
+          } else {
+            onToggle(false, 'mouseLeave');
+          }
+        }
+      };
+
+      PopperWrapper.prototype.getZIndexForLayer = function (node) {
+        if (node === null) {
+          return;
+        }
+
+        var layerNode = node.closest('[data-layer]') || document.body;
+        var zIndex = layerNode === document.body ? 'auto' : parseInt(window.getComputedStyle(layerNode).zIndex || '0', 10);
+        return zIndex === 'auto' || isNaN(zIndex) ? undefined : zIndex;
+      };
+
+      PopperWrapper.prototype.getTriggerElement = function (ref) {
+        var _this = this;
+
+        var _a = this.props,
+            trigger = _a.trigger,
+            on = _a.on,
+            triggerClass = _a.triggerClass;
+        var options = on === 'hover' ? {
+          ref: ref,
+          onMouseEnter: this.handleMouseEnter,
+          onMouseLeave: this.handleMouseLeave
+        } : {
+          ref: ref,
+          onClick: function onClick() {
+            return _this.togglePopper('onClick');
+          }
+        };
+        var classes = classNames__default['default']('PopperWrapper-trigger', triggerClass);
+
+        var onOutsideClickHandler = function onOutsideClickHandler(event) {
+          var _a = _this.props,
+              open = _a.open,
+              closeOnBackdropClick = _a.closeOnBackdropClick;
+
+          if (open && closeOnBackdropClick) {
+            if (!_this.doesEventContainsElement(event, _this.popupRef)) {
+              _this.togglePopper('outsideClick');
+            }
+          }
+        };
+
+        return /*#__PURE__*/React.createElement(OutsideClick, __assign({
+          className: classes,
+          onOutsideClick: onOutsideClickHandler
+        }, options), trigger);
+      };
+
+      PopperWrapper.prototype.getPopperChildren = function (_a) {
+        var ref = _a.ref,
+            style = _a.style,
+            placement = _a.placement,
+            outOfBoundaries = _a.outOfBoundaries;
+        var _b = this.props,
+            offset = _b.offset,
+            children = _b.children;
+        var zIndex = this.state.zIndex;
+        var newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
+        var element = /*#__PURE__*/React.cloneElement(children, {
+          ref: ref,
+          style: __assign(__assign({}, newStyle), {
+            zIndex: zIndex
+          }),
+          'data-placement': placement,
+          'data-hide': outOfBoundaries,
+          onMouseEnter: this.handleMouseEnter,
+          onMouseLeave: this.handleMouseLeave
+        });
+        return element;
+      };
+
+      PopperWrapper.prototype.render = function () {
+        var _this = this;
+
+        var _a = this.props,
+            placement = _a.placement,
+            appendToBody = _a.appendToBody,
+            open = _a.open,
+            hide = _a.hide,
+            boundaryElement = _a.boundaryElement;
+        return /*#__PURE__*/React.createElement(reactPopper.Manager, null, /*#__PURE__*/React.createElement(reactPopper.Reference, {
+          innerRef: this.triggerRef
+        }, function (_a) {
+          var ref = _a.ref;
+          return _this.getTriggerElement(ref);
+        }), open && appendToBody && /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement(reactPopper.Popper, {
+          placement: placement,
+          innerRef: this.popupRef,
+          modifiers: {
+            preventOverflow: {
+              boundariesElement: boundaryElement || document.body
+            },
+            hide: {
+              enabled: hide
+            }
+          }
+        }, this.getPopperChildren), document.body), open && !appendToBody && /*#__PURE__*/React.createElement(reactPopper.Popper, {
+          placement: placement,
+          innerRef: this.popupRef
+        }, this.getPopperChildren));
+      };
+
+      PopperWrapper.defaultProps = {
+        on: 'click',
+        offset: 'medium',
+        closeOnBackdropClick: true,
+        hoverable: true,
+        appendToBody: true,
+        style: {}
+      };
+      return PopperWrapper;
+    }(React.Component);
+
     var propsList = ['appendToBody', 'trigger', 'hoverable', 'on', 'open', 'closeOnBackdropClick', 'offset', 'closeOnScroll'];
     var Popover = function Popover(props) {
       var _a;
@@ -6556,6 +6552,35 @@
       secondaryButtonAppearance: 'basic'
     };
 
+    var getWrapperElement = function getWrapperElement() {
+      var element = document.querySelector('.Overlay-wrapper');
+
+      if (element === null) {
+        element = document.createElement('div');
+        element.classList.add('Overlay-wrapper');
+        document.body.appendChild(element);
+      }
+
+      return element;
+    };
+    var getUpdatedZIndex = function getUpdatedZIndex(ele) {
+      var containerClassName = ele.containerClassName,
+          elementRef = ele.elementRef,
+          element = ele.element;
+      if (element === null) return;
+      var elements = element.querySelectorAll(containerClassName);
+      if (elements.length < 1) return;
+      var siblings = Array.from(elements).filter(function (el) {
+        return el !== elementRef.current;
+      });
+      var zIndex = -1;
+      siblings.forEach(function (element) {
+        var prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
+        zIndex = Math.max(zIndex, prevZIndex + 10);
+      });
+      return zIndex > 0 ? zIndex : undefined;
+    };
+
     var Modal = function (_super) {
       __extends(Modal, _super);
 
@@ -6563,33 +6588,7 @@
         var _this = _super.call(this, props) || this;
 
         _this.modalRef = /*#__PURE__*/React.createRef();
-
-        _this.getUpdatedZIndex = function () {
-          if (_this.element === null) return;
-
-          var elements = _this.element.querySelectorAll('.Modal-container--open');
-
-          if (elements.length < 1) return;
-          var siblings = Array.from(elements).filter(function (el) {
-            return el !== _this.modalRef.current;
-          });
-          var zIndex = -1;
-          siblings.forEach(function (element) {
-            var prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
-            zIndex = Math.max(zIndex, prevZIndex + 10);
-          });
-          return zIndex > 0 ? zIndex : undefined;
-        };
-
-        var element = document.querySelector('.Modal-wrapper');
-
-        if (element === null) {
-          element = document.createElement('div');
-          element.classList.add('Modal-wrapper');
-          document.body.appendChild(element);
-        }
-
-        _this.element = element;
+        _this.element = getWrapperElement();
         _this.state = {
           open: props.open,
           animate: props.open
@@ -6602,7 +6601,11 @@
 
         if (prevProps.open !== this.props.open) {
           if (this.props.open) {
-            var zIndex = this.getUpdatedZIndex();
+            var zIndex = getUpdatedZIndex({
+              element: this.element,
+              containerClassName: '.Modal-container--open',
+              elementRef: this.modalRef
+            });
             this.setState({
               zIndex: zIndex,
               open: true,
@@ -6678,11 +6681,11 @@
           className: classes
         }, sizeMap[dimension], {
           ref: this.modalRef
-        }), headerOptions && /*#__PURE__*/React.createElement(ModalHeader, __assign({
+        }), headerOptions && /*#__PURE__*/React.createElement(ModalHeader$1, __assign({
           onClose: function onClose(event, reason) {
             if (_onClose) _onClose(event, reason);
           }
-        }, headerOptions)), children && /*#__PURE__*/React.createElement(React.Fragment, null, headerOptions || footer ? /*#__PURE__*/React.createElement(ModalBody, null, children) : children), footer && /*#__PURE__*/React.createElement(ModalFooter, {
+        }, headerOptions)), children && /*#__PURE__*/React.createElement(React.Fragment, null, headerOptions || footer ? /*#__PURE__*/React.createElement(ModalBody, null, children) : children), footer && /*#__PURE__*/React.createElement(ModalFooter$1, {
           open: open
         }, footer)));
 
@@ -6708,6 +6711,208 @@
       return Modal;
     }(React.Component);
 
+    var ModalHeader = function ModalHeader(props) {
+      var _a;
+
+      var className = props.className,
+          heading = props.heading,
+          subHeading = props.subHeading,
+          backButton = props.backButton,
+          backButtonCallback = props.backButtonCallback;
+      var baseProps = extractBaseProps(props);
+      var classes = classNames__default['default']((_a = {
+        'FullscreenModal-header': true
+      }, _a['FullscreenModal-header--backButton'] = backButton, _a), className);
+      return /*#__PURE__*/React.createElement("div", __assign({
+        "data-test": "DesignSystem-ModalHeader"
+      }, baseProps, {
+        className: classes
+      }), /*#__PURE__*/React.createElement("div", {
+        className: "FullscreenModal-headerWrapper"
+      }, backButton && /*#__PURE__*/React.createElement(Icon, {
+        name: "keyboard_backspace",
+        size: 20,
+        className: "mr-5 cursor-pointer",
+        onClick: backButtonCallback
+      }), heading && /*#__PURE__*/React.createElement(Heading, null, heading)), subHeading && /*#__PURE__*/React.createElement(Text, {
+        "data-test": "DesignSystem-ModalHeader--Subheading",
+        appearance: "subtle",
+        className: "mt-2"
+      }, subHeading));
+    };
+    ModalHeader.displayName = 'ModalHeader';
+
+    var ModalFooter = function ModalFooter(props) {
+      var open = props.open,
+          actions = props.actions;
+      var baseProps = extractBaseProps(props);
+      var wrapperRef = /*#__PURE__*/React.createRef();
+      React.useEffect(function () {
+        var _a;
+
+        if (open) {
+          if (wrapperRef.current) {
+            var secondaryBtns = (_a = wrapperRef.current) === null || _a === void 0 ? void 0 : _a.querySelectorAll('.Button--basic');
+            var secondaryBtn_1 = secondaryBtns[secondaryBtns.length - 1];
+
+            if (secondaryBtn_1) {
+              window.requestAnimationFrame(function () {
+                return secondaryBtn_1.focus({
+                  preventScroll: true
+                });
+              });
+            }
+          }
+        }
+      }, [open]);
+      return /*#__PURE__*/React.createElement("div", __assign({
+        ref: wrapperRef
+      }, baseProps, {
+        className: "d-flex"
+      }), actions.map(function (_a, index) {
+        _a.label;
+            var options = __rest(_a, ["label"]);
+
+        return /*#__PURE__*/React.createElement(Button, __assign({}, options, {
+          key: index
+        }));
+      }));
+    };
+    ModalFooter.defaultProps = {
+      actions: []
+    };
+    ModalFooter.displayName = 'ModalFooter';
+
+    var FullscreenModal = function (_super) {
+      __extends(FullscreenModal, _super);
+
+      function FullscreenModal(props) {
+        var _this = _super.call(this, props) || this;
+
+        _this.modalRef = /*#__PURE__*/React.createRef();
+        _this.element = getWrapperElement();
+        _this.state = {
+          open: props.open,
+          animate: props.open
+        };
+        return _this;
+      }
+
+      FullscreenModal.prototype.componentDidUpdate = function (prevProps) {
+        var _this = this;
+
+        if (prevProps.open !== this.props.open) {
+          if (this.props.open) {
+            var zIndex = getUpdatedZIndex({
+              element: this.element,
+              containerClassName: '.FullscreenModal-container--open',
+              elementRef: this.modalRef
+            });
+            this.setState({
+              zIndex: zIndex,
+              open: true,
+              animate: true
+            });
+          } else {
+            this.setState({
+              animate: false
+            }, function () {
+              setTimeout(function () {
+                _this.setState({
+                  open: false
+                });
+              }, 120);
+            });
+          }
+        }
+      };
+
+      FullscreenModal.prototype.render = function () {
+        var _a;
+
+        var _b = this.state,
+            animate = _b.animate,
+            open = _b.open,
+            zIndex = _b.zIndex;
+        var _c = this.props,
+            className = _c.className,
+            dimension = _c.dimension,
+            children = _c.children,
+            header = _c.header,
+            headerOptions = _c.headerOptions,
+            footer = _c.footer,
+            footerOptions = _c.footerOptions,
+            onClose = _c.onClose;
+        var classes = classNames__default['default']({
+          FullscreenModal: true,
+          'FullscreenModal--open': open,
+          'FullscreenModal-animation--open': animate,
+          'FullscreenModal-animation--close': !animate
+        }, className);
+        var ContainerClass = classNames__default['default']((_a = {}, _a['FullscreenModal-container'] = true, _a['FullscreenModal-container--open'] = open, _a));
+        var baseProps = extractBaseProps(this.props);
+        var sizeMap = {
+          medium: {
+            size: '4',
+            sizeL: '6',
+            sizeM: '6',
+            sizeXS: '12'
+          },
+          large: {
+            size: '6',
+            sizeL: '8',
+            sizeM: '8',
+            sizeXS: '12'
+          }
+        };
+        var ModalContainer = /*#__PURE__*/React.createElement("div", {
+          "data-test": "DesignSystem-FullscreenModalContainer",
+          className: ContainerClass,
+          "data-layer": true,
+          style: {
+            zIndex: zIndex
+          }
+        }, /*#__PURE__*/React.createElement("div", __assign({
+          "data-test": "DesignSystem-FullscreenModal"
+        }, baseProps, {
+          className: classes,
+          ref: this.modalRef
+        }), /*#__PURE__*/React.createElement(Row, {
+          className: "justify-content-center"
+        }, /*#__PURE__*/React.createElement(Column, __assign({}, sizeMap[dimension]), /*#__PURE__*/React.createElement(Row, {
+          className: "justify-content-between pt-6 pr-6 pb-5 pl-7"
+        }, /*#__PURE__*/React.createElement(Column, {
+          size: "auto"
+        }, !header && /*#__PURE__*/React.createElement(ModalHeader, __assign({}, headerOptions)), !!header && header), /*#__PURE__*/React.createElement(Column, {
+          size: "auto",
+          className: "pr-2"
+        }, /*#__PURE__*/React.createElement(Icon, {
+          size: 20,
+          name: 'close',
+          className: "cursor-pointer pt-3",
+          "data-test": "DesignSystem-ModalHeader--CloseIcon",
+          onClick: function onClick(event) {
+            if (onClose) onClose(event, 'IconClick');
+          }
+        }))), /*#__PURE__*/React.createElement("div", {
+          "data-test": "DesignSystem-ModalBody",
+          className: "FullscreenModal-body"
+        }, children), /*#__PURE__*/React.createElement("div", {
+          "data-test": "DesignSystem-ModalFooter",
+          className: "d-flex justify-content-end p-7"
+        }, !footer && /*#__PURE__*/React.createElement(ModalFooter, __assign({}, footerOptions, {
+          open: open
+        })), !!footer && footer)))));
+        var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(ModalContainer, this.element);
+        return /*#__PURE__*/React.createElement(React.Fragment, null, WrapperElement);
+      };
+
+      FullscreenModal.defaultProps = {
+        dimension: 'medium'
+      };
+      return FullscreenModal;
+    }(React.Component);
+
     var sidesheetWidth = {
       regular: '6',
       large: '10'
@@ -6720,33 +6925,7 @@
         var _this = _super.call(this, props) || this;
 
         _this.sidesheetRef = /*#__PURE__*/React.createRef();
-
-        _this.getUpdatedZIndex = function () {
-          if (_this.element === null) return;
-
-          var elements = _this.element.querySelectorAll('.Sidesheet-container--open');
-
-          if (elements.length <= 1) return;
-          var siblings = Array.from(elements).filter(function (el) {
-            return el !== _this.sidesheetRef.current;
-          });
-          var zIndex = -1;
-          siblings.forEach(function (element) {
-            var prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
-            zIndex = Math.max(zIndex, prevZIndex + 10);
-          });
-          return zIndex > 0 ? zIndex : undefined;
-        };
-
-        var element = document.querySelector('.Sidesheet-wrapper');
-
-        if (element === null) {
-          element = document.createElement('div');
-          element.classList.add('Sidesheet-wrapper');
-          document.body.appendChild(element);
-        }
-
-        _this.element = element;
+        _this.element = getWrapperElement();
         _this.state = {
           open: props.open,
           animate: props.open
@@ -6759,7 +6938,11 @@
 
         if (prevProps.open !== this.props.open) {
           if (this.props.open) {
-            var zIndex = this.getUpdatedZIndex();
+            var zIndex = getUpdatedZIndex({
+              element: this.element,
+              containerClassName: '.Sidesheet-container--open',
+              elementRef: this.sidesheetRef
+            });
             this.setState({
               zIndex: zIndex,
               open: true,
@@ -6821,13 +7004,13 @@
         }, baseProps, {
           className: classes,
           size: sidesheetWidth[dimension]
-        }), /*#__PURE__*/React.createElement(ModalHeader, __assign({
+        }), /*#__PURE__*/React.createElement(ModalHeader$1, __assign({
           onClose: function onClose(event, reason) {
             if (_onClose) _onClose(event, reason);
           }
         }, headerObj)), /*#__PURE__*/React.createElement(ModalBody, {
           stickFooter: stickFooter
-        }, this.props.children), footer && /*#__PURE__*/React.createElement(ModalFooter, {
+        }, this.props.children), footer && /*#__PURE__*/React.createElement(ModalFooter$1, {
           inSidesheet: true,
           stickToBottom: stickFooter,
           seperator: seperator
@@ -7071,7 +7254,7 @@
     };
     EmptyState.displayName = 'EmptyState';
 
-    var ModalHeader = function ModalHeader(props) {
+    var ModalHeader$1 = function ModalHeader(props) {
       var _a, _b;
 
       var className = props.className,
@@ -7115,9 +7298,9 @@
         className: "mt-2 ml-7"
       }, subHeading));
     };
-    ModalHeader.displayName = 'ModalHeader';
+    ModalHeader$1.displayName = 'ModalHeader';
 
-    var ModalFooter = function ModalFooter(props) {
+    var ModalFooter$1 = function ModalFooter(props) {
       var _a;
 
       var open = props.open,
@@ -7156,11 +7339,11 @@
         className: classes
       }), children);
     };
-    ModalFooter.defaultProps = {
+    ModalFooter$1.defaultProps = {
       stickToBottom: true,
       inSidesheet: false
     };
-    ModalFooter.displayName = 'ModalFooter';
+    ModalFooter$1.displayName = 'ModalFooter';
 
     var ModalBody = function ModalBody(props) {
       var _a;
@@ -10632,7 +10815,7 @@
       separator: true
     };
 
-    var version = "1.6.0-1";
+    var version = "1.6.0-2";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
@@ -10655,6 +10838,7 @@
     exports.EditableDropdown = EditableDropdown;
     exports.EditableInput = EditableInput;
     exports.EmptyState = EmptyState;
+    exports.FullscreenModal = FullscreenModal;
     exports.Grid = Grid;
     exports.GridCell = GridCell;
     exports.Heading = Heading;
@@ -10670,8 +10854,8 @@
     exports.Modal = Modal;
     exports.ModalBody = ModalBody;
     exports.ModalDescription = ModalDescription;
-    exports.ModalFooter = ModalFooter;
-    exports.ModalHeader = ModalHeader;
+    exports.ModalFooter = ModalFooter$1;
+    exports.ModalHeader = ModalHeader$1;
     exports.Navigation = Navigation;
     exports.OutsideClick = OutsideClick;
     exports.PageHeader = PageHeader;

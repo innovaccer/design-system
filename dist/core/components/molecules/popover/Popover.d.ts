@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PopperWrapperProps } from "../../../utils/PopperWrapper";
+import { PopperWrapperProps } from "../../atoms/popperWrapper";
 import { BaseProps } from "../../../utils/types";
 declare type Position = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'right';
 export interface CustomStyle {

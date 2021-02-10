@@ -18,7 +18,7 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
     autoFocus?: boolean;
     autocomplete?: AutoComplete;
     autoComplete?: AutoComplete;
-    readonly?: boolean;
+    readOnly?: boolean;
     min?: number;
     max?: number;
     minLength?: number;

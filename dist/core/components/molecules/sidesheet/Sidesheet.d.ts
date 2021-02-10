@@ -28,7 +28,6 @@ declare class Sidesheet extends React.Component<SidesheetProps, SidesheetState> 
     };
     constructor(props: SidesheetProps);
     componentDidUpdate(prevProps: SidesheetProps): void;
-    getUpdatedZIndex: () => number | undefined;
     render(): JSX.Element;
 }
 export default Sidesheet;

@@ -24,7 +24,6 @@ declare class Modal extends React.Component<ModalProps, ModalState> {
     };
     constructor(props: ModalProps);
     componentDidUpdate(prevProps: ModalProps): void;
-    getUpdatedZIndex: () => number | undefined;
     render(): JSX.Element;
 }
 export default Modal;
