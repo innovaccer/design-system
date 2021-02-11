@@ -8,8 +8,8 @@ interface TimeObject {
 }
 
 export const placeholders: { [key: string]: InputProps['placeholder'] } = {
-  ['hh:mm']: '-- : --',
-  ['hh:mm AM']: '-- : -- AM',
+  ['hh:mm']: '--:--',
+  ['hh:mm AM']: '--:-- AM',
 };
 
 export const isFormat12hour = (format: string) => {
