@@ -78,6 +78,10 @@ export const TimePicker = (props: TimePickerProps) => {
     }
   };
 
+  const onClearHandler = () => {
+    if (onTimeChange) onTimeChange(undefined);
+  };
+
   const inputValidator = (val: string): boolean => {
     return Utils.validators.isValid(validators, val, inputFormat);
   };
@@ -91,6 +95,7 @@ export const TimePicker = (props: TimePickerProps) => {
       value={translateToTime(inputFormat, time)}
       validators={inputValidator}
       onChange={onChangeHandler}
+      onClear={onClearHandler}
     />
   );
 };
