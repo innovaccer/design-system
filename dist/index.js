@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1612961003052 
+   * Generated on: 1613393109697 
    *      Package: @innovaccer/design-system
-   *      Version: v1.6.0
+   *      Version: v1.6.1-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -30,7 +30,7 @@
 
     var _a;
 
-    var placeholders = (_a = {}, _a['hh:mm'] = '-- : --', _a['hh:mm AM'] = '-- : -- AM', _a);
+    var placeholders = (_a = {}, _a['hh:mm'] = '--:--', _a['hh:mm AM'] = '--:-- AM', _a);
     var isFormat12hour = function isFormat12hour(format) {
       return format === 'hh:mm AM';
     };
@@ -258,7 +258,7 @@
       'mm-dd-yyyy': [/[01]/, /\d/, '-', /[0123]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, ' ', '-', ' ', /[01]/, /\d/, '-', /[0123]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
       'yyyy-mm-dd': [/\d/, /\d/, /\d/, /\d/, '-', /[01]/, /\d/, '-', /[0123]/, /\d/, ' ', '-', ' ', /\d/, /\d/, /\d/, /\d/, '-', /[01]/, /\d/, '-', /[0123]/, /\d/]
     };
-    var time$1 = (_a$1 = {}, _a$1['hh:mm'] = [/[0-1-2]/, /\d/, ' ', ':', ' ', /[0-6]/, /\d/], _a$1['hh:mm AM'] = [/[0-1]/, /\d/, ' ', ':', ' ', /[0-6]/, /\d/, ' ', /[APap]/, 'M'], _a$1);
+    var time$1 = (_a$1 = {}, _a$1['hh:mm'] = [/[0-1-2]/, /\d/, ':', /[0-6]/, /\d/], _a$1['hh:mm AM'] = [/[0-1]/, /\d/, ':', /[0-6]/, /\d/, ' ', /[APap]/, 'M'], _a$1);
 
     var masks = /*#__PURE__*/Object.freeze({
         __proto__: null,
@@ -4100,6 +4100,10 @@
         }
       };
 
+      var onClearHandler = function onClearHandler() {
+        if (onTimeChange) onTimeChange(undefined);
+      };
+
       var inputValidator = function inputValidator(val) {
         return isValid(validators, val, inputFormat);
       };
@@ -4111,7 +4115,8 @@
         mask: time$1[inputFormat],
         value: translateToTime(inputFormat, time),
         validators: inputValidator,
-        onChange: onChangeHandler
+        onChange: onChangeHandler,
+        onClear: onClearHandler
       }));
     };
     TimePicker.defaultProps = {
@@ -6094,8 +6099,8 @@
       var IconMapping = {
         info: 'info',
         success: 'check_circle',
-        alert: 'info',
-        warning: 'info'
+        alert: 'error',
+        warning: 'error'
       };
       var icon = IconMapping[appearance];
       var titleClass = classNames__default['default']((_b = {}, _b['Toast-title'] = true, _b['Toast-title--withMessage'] = message, _b));
@@ -10815,7 +10820,7 @@
       separator: true
     };
 
-    var version = "1.6.0";
+    var version = "1.6.1-0";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;

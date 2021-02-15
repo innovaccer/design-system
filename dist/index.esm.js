@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1612961002644 
+   * Generated on: 1613393109361 
    *      Package: @innovaccer/design-system
-   *      Version: v1.6.0
+   *      Version: v1.6.1-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -371,7 +371,7 @@ function _createForOfIteratorHelper(o, allowArrayLike) {
 
 var _placeholders;
 
-var placeholders = (_placeholders = {}, _defineProperty(_placeholders, 'hh:mm', '-- : --'), _defineProperty(_placeholders, 'hh:mm AM', '-- : -- AM'), _placeholders);
+var placeholders = (_placeholders = {}, _defineProperty(_placeholders, 'hh:mm', '--:--'), _defineProperty(_placeholders, 'hh:mm AM', '--:-- AM'), _placeholders);
 var isFormat12hour = function isFormat12hour(format) {
   return format === 'hh:mm AM';
 };
@@ -599,7 +599,7 @@ var rangeDate = {
   'mm-dd-yyyy': [/[01]/, /\d/, '-', /[0123]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, ' ', '-', ' ', /[01]/, /\d/, '-', /[0123]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
   'yyyy-mm-dd': [/\d/, /\d/, /\d/, /\d/, '-', /[01]/, /\d/, '-', /[0123]/, /\d/, ' ', '-', ' ', /\d/, /\d/, /\d/, /\d/, '-', /[01]/, /\d/, '-', /[0123]/, /\d/]
 };
-var time$1 = (_time = {}, _defineProperty(_time, 'hh:mm', [/[0-1-2]/, /\d/, ' ', ':', ' ', /[0-6]/, /\d/]), _defineProperty(_time, 'hh:mm AM', [/[0-1]/, /\d/, ' ', ':', ' ', /[0-6]/, /\d/, ' ', /[APap]/, 'M']), _time);
+var time$1 = (_time = {}, _defineProperty(_time, 'hh:mm', [/[0-1-2]/, /\d/, ':', /[0-6]/, /\d/]), _defineProperty(_time, 'hh:mm AM', [/[0-1]/, /\d/, ':', /[0-6]/, /\d/, ' ', /[APap]/, 'M']), _time);
 
 var masks = /*#__PURE__*/Object.freeze({
   __proto__: null,
@@ -4515,6 +4515,10 @@ var TimePicker = function TimePicker(props) {
     }
   };
 
+  var onClearHandler = function onClearHandler() {
+    if (onTimeChange) onTimeChange(undefined);
+  };
+
   var inputValidator = function inputValidator(val) {
     return isValid(validators, val, inputFormat);
   };
@@ -4526,7 +4530,8 @@ var TimePicker = function TimePicker(props) {
     mask: time$1[inputFormat],
     value: translateToTime(inputFormat, time),
     validators: inputValidator,
-    onChange: onChangeHandler
+    onChange: onChangeHandler,
+    onClear: onClearHandler
   }));
 };
 TimePicker.defaultProps = {
@@ -34714,8 +34719,8 @@ var Toast = function Toast(props) {
   var IconMapping = {
     info: 'info',
     success: 'check_circle',
-    alert: 'info',
-    warning: 'info'
+    alert: 'error',
+    warning: 'error'
   };
   var icon = IconMapping[appearance];
   var titleClass = classnames((_classNames2 = {}, _defineProperty(_classNames2, 'Toast-title', true), _defineProperty(_classNames2, 'Toast-title--withMessage', message), _classNames2));
@@ -43973,6 +43978,6 @@ PageHeader.defaultProps = {
   separator: true
 };
 
-var version = "1.6.0";
+var version = "1.6.1-0";
 
 export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, ChatMessage, Checkbox, Chip, ChipGroup, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, EditableDropdown, EditableInput, EmptyState, FullscreenModal, Grid, GridCell, Heading, Icon, Input, InputMask, Label$1 as Label, Legend$1 as Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter$1 as ModalFooter, ModalHeader$1 as ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip$1 as Tooltip, index as Utils, version };
