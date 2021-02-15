@@ -70,8 +70,8 @@ export const Toast = (props: ToastProps) => {
   const IconMapping: Record<string, any> = {
     info: 'info',
     success: 'check_circle',
-    alert: 'info',
-    warning: 'info'
+    alert: 'error',
+    warning: 'error'
   };
 
   const icon = IconMapping[appearance];
