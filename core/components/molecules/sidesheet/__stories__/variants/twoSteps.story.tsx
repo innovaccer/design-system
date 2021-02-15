@@ -9,9 +9,8 @@ import Button from '@/components/atoms/button';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 import { Heading, Text, Paragraph, Sidesheet } from '@/index';
 
-export const withBackIcon = () => {
-  const [screen, setScreen] = React.useState(2);
-  const totalScreens = 4;
+export const twoSteps = () => {
+  const [page, setPage] = React.useState(2);
 
   const open = boolean('open', true);
   const seperator = boolean('seperator', false);
@@ -30,13 +29,13 @@ export const withBackIcon = () => {
 
   const backIconCallback = () => {
     action('back icon clicked')();
-    setScreen(screen - 1);
+    setPage(1);
   };
 
   const headerOptions = {
     backIconCallback,
-    backIcon: screen > 1,
-    heading: `Heading ${screen}`,
+    backIcon: page === 2,
+    heading: `Heading ${page}`,
     subHeading: 'Subheading'
   };
 
@@ -50,22 +49,30 @@ export const withBackIcon = () => {
     backdropClose,
     footer: (
       <>
-        {screen < totalScreens && (
+        {page === 1 && (
           <Button
             appearance="primary"
             className="mr-4"
-            onClick={() => setScreen(screen + 1)}
+            onClick={() => setPage(2)}
           >
             Next
           </Button>
         )}
-        {screen > 1 && (
-          <Button
-            appearance="basic"
-            onClick={() => setScreen(screen - 1)}
-          >
-            Back
-          </Button>
+        {page === 2 && (
+          <>
+            <Button
+              appearance="primary"
+              className="mr-4"
+            >
+              Submit
+            </Button>
+            <Button
+              appearance="basic"
+              onClick={() => setPage(1)}
+            >
+              Back
+            </Button>
+          </>
         )}
       </>
     )
@@ -94,7 +101,7 @@ export const withBackIcon = () => {
         sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
       </Paragraph>
       <Sidesheet {...options} >
-        <Heading size="s">{`Screen ${screen}`}</Heading>
+        <Heading size="s">{`Page ${page}`}</Heading>
         <Text>Modal Body</Text>
         <ModalDescription {...modalDescriptionOptions} />
         <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
@@ -105,8 +112,7 @@ export const withBackIcon = () => {
 
 const customCode = `() => {
   const [open, setOpen] = React.useState(true);
-  const [screen, setScreen] = React.useState(2);
-  const totalScreens = 4;
+  const [page, setPage] = React.useState(2);
 
   const onClose = () => {
     setOpen(!open);
@@ -114,13 +120,13 @@ const customCode = `() => {
 
   const backIconCallback = (e) => {
     console.log('back icon clicked');
-    setScreen(screen-1);
+    setPage(1);
   };
 
   const headerOptions = {
     backIconCallback,
-    backIcon: screen > 1,
-    heading: \`Heading \${screen}\`,
+    backIcon: page === 2,
+    heading: \`Heading \${page}\`,
     subHeading: 'Subheading'
   };
 
@@ -132,22 +138,31 @@ const customCode = `() => {
     backdropClose: true,
     footer: (
       <>
-        {screen < totalScreens && (
+        {page === 1 && (
           <Button
             appearance="primary"
             className="mr-4"
-            onClick={() => setScreen(screen + 1)}
+            onClick={() => setPage(2)}
           >
             Next
           </Button>
         )}
-        {screen > 1 && (
-          <Button
-            appearance="basic"
-            onClick={() => setScreen(screen - 1)}
-          >
-            Back
-          </Button>
+        {page === 2 && (
+          <>
+            <Button
+              appearance="primary"
+              onClick={() => console.log('Submit button click')}
+              className="mr-4"
+            >
+              Submit
+            </Button>
+            <Button
+              appearance="basic"
+              onClick={() => setPage(1)}
+            >
+              Back
+            </Button>
+          </>
         )}
       </>
     )
@@ -174,7 +189,7 @@ const customCode = `() => {
         <Button appearance="primary" onClick={() => setOpen(true)}>Open</Button>
       </Paragraph>
       <Sidesheet {...options} >
-        <Heading size="s">{\`Screen \${screen}\`}</Heading>
+        <Heading size="s">{\`Page \${page}\`}</Heading>
         <Text>Modal Body</Text>
         <ModalDescription {...modalDescriptionOptions} />
         <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
