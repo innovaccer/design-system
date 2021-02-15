@@ -36,6 +36,13 @@ export const customRender = () => {
     );
   };
 
+  const optionRenderer = (props: any) => {
+    const { label } = props.optionData;
+    return (
+      <StatusHint className="px-5 py-4 cursor-pointer" appearance="warning">{label}</StatusHint>
+    );
+  };
+
   return (
     <div className="w-25">
       <Label withInput={true} className="ml-5">Editable Dropdown</Label>
@@ -44,7 +51,8 @@ export const customRender = () => {
         dropdownOptions={{
           options,
           onChange,
-          triggerOptions: { customTrigger }
+          optionRenderer,
+          triggerOptions: { customTrigger },
         }}
       />
     </div>
