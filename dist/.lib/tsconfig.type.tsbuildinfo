@@ -1252,8 +1252,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@emotion/serialize/node_modules/csstype/index.d.ts": {
-        "version": "f5c7642899e130a4ea871a03822a1cfb0e23ae9f62ad481f23b38b5a6f71ddac",
-        "signature": "f5c7642899e130a4ea871a03822a1cfb0e23ae9f62ad481f23b38b5a6f71ddac",
+        "version": "264efc86578e3dbc49c0f3e157da0ed1f88135544dd88d1b1191e13006daab35",
+        "signature": "264efc86578e3dbc49c0f3e157da0ed1f88135544dd88d1b1191e13006daab35",
         "affectsGlobalScope": false
       },
       "../../node_modules/@emotion/serialize/types/helper.d.ts": {
@@ -2237,8 +2237,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@babel/types/lib/index.d.ts": {
-        "version": "7c6b4c3bbc2c3cebe5cc1364e84a4fd0cbda5fda186c0ba15c2f693f403479d2",
-        "signature": "7c6b4c3bbc2c3cebe5cc1364e84a4fd0cbda5fda186c0ba15c2f693f403479d2",
+        "version": "7b5e26235ce4dcc952636ac7f5f881998ee0c82647e83afe028f652fd7748504",
+        "signature": "7b5e26235ce4dcc952636ac7f5f881998ee0c82647e83afe028f652fd7748504",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/babel__generator/index.d.ts": {
