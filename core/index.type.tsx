@@ -61,6 +61,7 @@ export { ProgressRingProps } from './components/atoms/progressRing';
 export { StepperProps } from './components/molecules/stepper';
 export { DateRangePickerProps } from './components/organisms/dateRangePicker';
 export { TabsWrapperProps, TabProps } from './components/molecules/tabs';
+export { FileUploaderProps, FileUploaderListProps } from './components/molecules/fileUploader';
 export { GridProps } from './components/organisms/grid';
 export { GridCellProps } from './components/organisms/grid/GridCell';
 export { ListProps } from './components/organisms/list';
