@@ -1,0 +1,44 @@
+.FileUploader {
+  display: flex;
+  flex-direction: column;
+}
+
+.FileUploader-link {
+  font-size: var(--font-size-s) !important;
+  margin-top: var(--spacing);
+}
+
+.FileUploaderButton {
+  width: fit-content;
+  position: relative;
+}
+
+.FileUploaderButton-input {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  opacity: 0;
+  font-size: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.FileUploaderItem {
+  width: var(--spacing-9);
+}
+
+.FileUploaderItem-text {
+  width: var(--spacing-8);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.FileUploaderItem-file {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--spacing-s);
+  padding-bottom: var(--spacing-s);
+}
