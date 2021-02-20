@@ -56,10 +56,6 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
    */
   autoFocus?: boolean;
   /**
-   * Specifies whether `input field should have autocomplete enabled **(SOON TO BE DEPRECATED)**
-   */
-  autocomplete?: AutoComplete;
-  /**
    * Specifies whether `input field should have autocomplete enabled
    */
   autoComplete?: AutoComplete;
@@ -148,7 +144,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     size = 'regular',
     type = 'text',
     minWidth = type !== 'number' ? 256 : undefined,
-    readOnly,
     defaultValue,
     name,
     placeholder,
@@ -165,8 +160,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     onFocus,
     actionIcon,
     className,
-    autocomplete,
     autoFocus,
+    disabled,
+    readOnly,
     ...rest
   } = props;
 
@@ -180,15 +176,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     if (autoFocus) ref.current?.focus({ preventScroll: true });
   }, []);
 
-  const autoComplete = props.autoComplete || autocomplete;
-  const disabled = props.disabled || readOnly;
-
   const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     ['Input']: true,
     [`Input--${size}`]: size,
-    ['Input--disabled']: disabled,
+    ['Input--disabled']: disabled || readOnly,
     ['Input--error']: error
   }, className);
 
@@ -237,8 +230,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         className={inputClass}
         value={value}
         required={required}
-        autoComplete={autoComplete}
         disabled={disabled}
+        readOnly={readOnly}
         onChange={onChange}
         onBlur={onBlur}
         onClick={onClick}
