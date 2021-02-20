@@ -95,6 +95,8 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       open: props.open,
       animate: props.open,
     };
+
+    this.onOutsideClickHandler = this.onOutsideClickHandler.bind(this);
   }
 
   componentDidUpdate(prevProps: SidesheetProps) {
@@ -121,6 +123,15 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
           }, 120);
         });
       }
+    }
+  }
+
+  onOutsideClickHandler(event: Event) {
+    const { onClose } = this.props;
+    const { open } = this.state;
+
+    if (open) {
+      if (onClose) onClose(event, 'OutsideClick');
     }
   }
 
@@ -188,16 +199,10 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       </Row>
     );
 
-    const onOutsideClickHandler = (event: Event) => {
-      if (open) {
-        if (onClose) onClose(event, 'OutsideClick');
-      }
-    };
-
     const SidesheetWrapper = backdropClose ? (
       <OutsideClick
         data-test="DesignSystem-Sidesheet--OutsideClick"
-        onOutsideClick={onOutsideClickHandler}
+        onOutsideClick={this.onOutsideClickHandler}
       >
         {SidesheetContainer}
       </OutsideClick>
