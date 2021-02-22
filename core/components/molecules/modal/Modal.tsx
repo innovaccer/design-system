@@ -188,7 +188,9 @@ class Modal extends React.Component<ModalProps, ModalState> {
           {children && (
             <>
               {headerOptions || footer ? (
-                <ModalBody>
+                <ModalBody
+                  withFooter={!!footer}
+                >
                   {children}
                 </ModalBody>
               ) : (

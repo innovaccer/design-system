@@ -44,6 +44,10 @@ export interface SidesheetProps extends BaseProps {
    */
   stickFooter?: boolean;
   /**
+   * Determines if margin bottom is to be applied to modal body
+   */
+  withFooter?: boolean;
+  /**
    * Show dividers in the header and the footer.
    */
   seperator?: boolean;
@@ -183,7 +187,10 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
             }}
             {...headerObj}
           />
-          <ModalBody stickFooter={stickFooter}>
+          <ModalBody
+            stickFooter={stickFooter}
+            withFooter={!!footer}
+          >
             {this.props.children}
           </ModalBody>
           {footer && (

@@ -178,11 +178,16 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
                 {children}
               </div>
 
-              <div data-test="DesignSystem-ModalFooter" className="d-flex justify-content-end p-7">
-                {!footer && <ModalFooter {...footerOptions} open={open} />}
+              {
+                (!!footer || !!footerOptions) &&
+                (
+                  <div data-test="DesignSystem-ModalFooter" className="d-flex justify-content-end p-7">
+                    {!footer && <ModalFooter {...footerOptions} open={open} />}
 
-                {!!footer && footer}
-              </div>
+                    {!!footer && footer}
+                  </div>
+                )
+              }
             </Column>
           </Row>
         </div>
