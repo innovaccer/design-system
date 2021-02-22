@@ -35,6 +35,7 @@ describe('FullscreenModal component with props', () => {
           heading: 'this is heading',
           subHeading: 'this is subheading'
         }}
+        footerOptions={{ actions: [] }}
       >
         <p>FullscreenModal Body</p>
       </FullscreenModal>
