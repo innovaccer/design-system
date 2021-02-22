@@ -19,7 +19,7 @@ export const bulkMultiSelectWithApplyButton = () => {
   const fetchOptions = (searchTerm: string) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
     return new Promise<any>(resolve => {
-      window.setTimeout(() => {
+      setTimeout(() => {
         resolve({
           options: searchedOptions,
           count: searchedOptions.length,
@@ -88,7 +88,7 @@ const customCode = `() => {
   const fetchOptions = (searchTerm) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
     return new Promise(resolve => {
-      window.setTimeout(() => {
+      setTimeout(() => {
         resolve({
           options: searchedOptions,
           count: searchedOptions.length,

@@ -224,7 +224,7 @@ const customCode = `
 
     if (page && pageSize) {
       return new Promise(resolve => {
-        window.setTimeout(() => {
+        setTimeout(() => {
           const start = (page - 1) * pageSize;
           const end = start + pageSize;
           const slicedData = sortedData.slice(start, end);
@@ -238,7 +238,7 @@ const customCode = `
     }
 
     return new Promise(resolve => {
-      window.setTimeout(() => {
+      setTimeout(() => {
         resolve({
           schema,
           count: sortedData.length,

@@ -6,20 +6,20 @@ export const controlledInput = () => {
   const [value, setValue] = React.useState('Value');
   const handleParentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const updatedValue = event.target.value;
-    window.setTimeout(() => {
+    setTimeout(() => {
       setValue(updatedValue);
     }, 1000);
   };
   const [value1, setValue1] = React.useState('Value');
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const updatedValue = event.target.value;
-    window.setTimeout(() => {
+    setTimeout(() => {
       setValue1(updatedValue);
     }, 1000);
   };
   const onClearHandler = () => {
     const updatedValue = '';
-    window.setTimeout(() => {
+    setTimeout(() => {
       setValue1(updatedValue);
     }, 1000);
   };

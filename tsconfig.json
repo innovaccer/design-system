@@ -16,6 +16,7 @@
     "strictNullChecks": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "types": [],
     "lib": [
       "es6",
       "es7",
