@@ -183,7 +183,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   mouseMoveHandler() {
     if (this._timer) clearTimeout(this._timer);
 
-    this._timer = setTimeout(() => {
+    this._timer = window.setTimeout(() => {
       const { onToggle } = this.props;
       onToggle(false, 'mouseLeave');
     }, this.hoverableDelay);

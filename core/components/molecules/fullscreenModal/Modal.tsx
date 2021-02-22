@@ -99,7 +99,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
             animate: false
           },
           () => {
-            setTimeout(() => {
+            window.setTimeout(() => {
               this.setState({
                 open: false
               });

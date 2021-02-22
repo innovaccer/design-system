@@ -8,7 +8,7 @@ export const controlledSlider = () => {
   const [value, setValue] = React.useState<NumberRange>([2, 4]);
 
   const onChange = (newValue: NumberRange) => {
-    setTimeout(() => {
+    window.setTimeout(() => {
       setValue(newValue);
     }, 1000);
   };
@@ -31,7 +31,7 @@ const customCode = `() => {
   const [value, setValue] = React.useState([2, 4]);
 
   const onChange = (value) => {
-    setTimeout(() => {
+    window.setTimeout(() => {
       setValue(value);
     }, 1000);
   };

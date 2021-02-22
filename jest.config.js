@@ -16,14 +16,15 @@ const config = {
   coverageReporters: ['json', 'lcov', 'text', 'text-summary', 'html'],
   verbose: true,
   collectCoverageFrom: [
+    'core/**/*.{ts,tsx}',
     '!core/utils/**',
     '!**/dist/**/*',
+    '!**/__stories__/**/*',
     '!**/*.story.tsx',
-    '!core/**/__stories__/**',
-    'core/**/*.{ts,tsx}',
   ],
   globals: {
-    window: true
+    window: true,
+    timers: "fake"
   },
   moduleNameMapper: {
     '@/(.*)$': '<rootDir>/core/$1'

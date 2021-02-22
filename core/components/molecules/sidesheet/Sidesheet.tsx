@@ -114,7 +114,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
         this.setState({
           animate: false,
         }, () => {
-          setTimeout(() => {
+          window.setTimeout(() => {
             this.setState({
               open: false
             });

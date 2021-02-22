@@ -25,7 +25,7 @@ export const all = () => {
   const fetchOptions = (searchTerm: string) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
     return new Promise<any>(resolve => {
-      setTimeout(() => {
+      window.setTimeout(() => {
         resolve({
           options: searchedOptions,
           count: searchedOptions.length,
@@ -71,7 +71,7 @@ const customCode = `() => {
   const fetchOptions = (searchTerm) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
     return new Promise(resolve => {
-      setTimeout(() => {
+      window.setTimeout(() => {
         resolve({
           options: searchedOptions,
           count: searchedOptions.length,

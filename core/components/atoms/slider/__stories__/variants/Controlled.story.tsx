@@ -6,7 +6,7 @@ export const controlledSlider = () => {
   const [value, setValue] = React.useState(4);
 
   const onChange = (newValue: number) => {
-    setTimeout(() => {
+    window.setTimeout(() => {
       setValue(newValue);
     }, 1000);
   };
@@ -29,7 +29,7 @@ const customCode = `() => {
   const [value, setValue] = React.useState(4);
 
   const onChange = (value) => {
-    setTimeout(() => {
+    window.setTimeout(() => {
       setValue(value);
     }, 1000);
   };

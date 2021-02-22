@@ -47,7 +47,7 @@ export const Backdrop: React.FC<BackdropProps> = props => {
       setAnimate(true);
     }
     if (!props.open) {
-      setTimeout(() => {
+      window.setTimeout(() => {
         setOpen(false);
       }, 120);
       setAnimate(false);
