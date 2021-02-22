@@ -83,6 +83,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
       open: props.open,
       animate: props.open,
     };
+
+    this.onOutsideClickHandler = this.onOutsideClickHandler.bind(this);
   }
 
   componentDidUpdate(prevProps: ModalProps) {
@@ -109,6 +111,16 @@ class Modal extends React.Component<ModalProps, ModalState> {
           }, 120);
         });
       }
+    }
+  }
+
+  onOutsideClickHandler(event: Event) {
+    const { backdropClose, onClose } = this.props;
+    const { open } = this.state;
+
+    if (open) {
+      if (onClose) onClose(event, 'OutsideClick');
+      else if (typeof backdropClose === 'function') backdropClose(event, 'OutsideClick');
     }
   }
 
@@ -193,17 +205,10 @@ class Modal extends React.Component<ModalProps, ModalState> {
       </Row>
     );
 
-    const onOutsideClickHandler = (event: Event) => {
-      if (open) {
-        if (onClose) onClose(event, 'OutsideClick');
-        else if (typeof backdropClose === 'function') backdropClose(event, 'OutsideClick');
-      }
-    };
-
     const ModalWrapper = backdropClose ? (
       <OutsideClick
         data-test="DesignSystem-Modal--OutsideClick"
-        onOutsideClick={onOutsideClickHandler}
+        onOutsideClick={this.onOutsideClickHandler}
       >
         {ModalContainer}
       </OutsideClick>
