@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1613669836608 
+   * Generated on: 1614003598239 
    *      Package: @innovaccer/design-system
-   *      Version: v1.6.1
+   *      Version: v1.7.0-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -571,7 +571,7 @@
         }
 
         if (!props.open) {
-          setTimeout(function () {
+          window.setTimeout(function () {
             setOpen(false);
           }, 120);
           setAnimate(false);
@@ -4321,7 +4321,6 @@
           type = _f === void 0 ? 'text' : _f,
           _g = props.minWidth,
           minWidth = _g === void 0 ? type !== 'number' ? 256 : undefined : _g,
-          readOnly = props.readOnly,
           defaultValue = props.defaultValue,
           name = props.name,
           placeholder = props.placeholder,
@@ -4338,9 +4337,10 @@
           onFocus = props.onFocus,
           actionIcon = props.actionIcon,
           className = props.className,
-          autocomplete = props.autocomplete,
           autoFocus = props.autoFocus,
-          rest = __rest(props, ["size", "type", "minWidth", "readOnly", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autocomplete", "autoFocus"]);
+          disabled = props.disabled,
+          readOnly = props.readOnly,
+          rest = __rest(props, ["size", "type", "minWidth", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autoFocus", "disabled", "readOnly"]);
 
       var ref = React.useRef(null);
       React.useImperativeHandle(forwardedRef, function () {
@@ -4353,10 +4353,8 @@
           preventScroll: true
         });
       }, []);
-      var autoComplete = props.autoComplete || autocomplete;
-      var disabled = props.disabled || readOnly;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {}, _a['Input'] = true, _a["Input--" + size] = size, _a['Input--disabled'] = disabled, _a['Input--error'] = error, _a), className);
+      var classes = classNames__default['default']((_a = {}, _a['Input'] = true, _a["Input--" + size] = size, _a['Input--disabled'] = disabled || readOnly, _a['Input--error'] = error, _a), className);
       var inputClass = classNames__default['default']((_b = {}, _b['Input-input'] = true, _b["Input-input--" + size] = size, _b));
       var leftIconClass = classNames__default['default']((_c = {}, _c['Input-icon'] = true, _c['Input-icon--left'] = true, _c['Input-icon--disabled'] = !value, _c));
       var rightIconClass = classNames__default['default']((_d = {}, _d['Input-icon'] = true, _d['Input-icon--right'] = true, _d));
@@ -4371,6 +4369,11 @@
         className: classes,
         style: {
           minWidth: minWidth
+        },
+        onClick: function onClick() {
+          var _a;
+
+          return (_a = ref.current) === null || _a === void 0 ? void 0 : _a.focus();
         }
       }, inlineLabel && /*#__PURE__*/React.createElement("div", {
         className: "Input-inlineLabel"
@@ -4392,8 +4395,8 @@
         className: inputClass,
         value: value,
         required: required,
-        autoComplete: autoComplete,
         disabled: disabled,
+        readOnly: readOnly,
         onChange: onChange,
         onBlur: onBlur,
         onClick: onClick,
@@ -6283,7 +6286,7 @@
         var _this = this;
 
         if (this._timer) clearTimeout(this._timer);
-        this._timer = setTimeout(function () {
+        this._timer = window.setTimeout(function () {
           var onToggle = _this.props.onToggle;
           onToggle(false, 'mouseLeave');
         }, this.hoverableDelay);
@@ -6598,6 +6601,7 @@
           open: props.open,
           animate: props.open
         };
+        _this.onOutsideClickHandler = _this.onOutsideClickHandler.bind(_this);
         return _this;
       }
 
@@ -6620,13 +6624,24 @@
             this.setState({
               animate: false
             }, function () {
-              setTimeout(function () {
+              window.setTimeout(function () {
                 _this.setState({
                   open: false
                 });
               }, 120);
             });
           }
+        }
+      };
+
+      Modal.prototype.onOutsideClickHandler = function (event) {
+        var _a = this.props,
+            backdropClose = _a.backdropClose,
+            onClose = _a.onClose;
+        var open = this.state.open;
+
+        if (open) {
+          if (onClose) onClose(event, 'OutsideClick');else if (typeof backdropClose === 'function') backdropClose(event, 'OutsideClick');
         }
       };
 
@@ -6690,19 +6705,14 @@
           onClose: function onClose(event, reason) {
             if (_onClose) _onClose(event, reason);
           }
-        }, headerOptions)), children && /*#__PURE__*/React.createElement(React.Fragment, null, headerOptions || footer ? /*#__PURE__*/React.createElement(ModalBody, null, children) : children), footer && /*#__PURE__*/React.createElement(ModalFooter$1, {
+        }, headerOptions)), children && /*#__PURE__*/React.createElement(React.Fragment, null, headerOptions || footer ? /*#__PURE__*/React.createElement(ModalBody, {
+          withFooter: !!footer
+        }, children) : children), footer && /*#__PURE__*/React.createElement(ModalFooter$1, {
           open: open
         }, footer)));
-
-        var onOutsideClickHandler = function onOutsideClickHandler(event) {
-          if (open) {
-            if (_onClose) _onClose(event, 'OutsideClick');else if (typeof backdropClose === 'function') backdropClose(event, 'OutsideClick');
-          }
-        };
-
         var ModalWrapper = backdropClose ? /*#__PURE__*/React.createElement(OutsideClick, {
           "data-test": "DesignSystem-Modal--OutsideClick",
-          onOutsideClick: onOutsideClickHandler
+          onOutsideClick: this.onOutsideClickHandler
         }, ModalContainer) : ModalContainer;
         var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(ModalWrapper, this.element);
         return /*#__PURE__*/React.createElement(React.Fragment, null, WrapperElement, /*#__PURE__*/React.createElement(Backdrop, {
@@ -6822,7 +6832,7 @@
             this.setState({
               animate: false
             }, function () {
-              setTimeout(function () {
+              window.setTimeout(function () {
                 _this.setState({
                   open: false
                 });
@@ -6902,7 +6912,7 @@
         }))), /*#__PURE__*/React.createElement("div", {
           "data-test": "DesignSystem-ModalBody",
           className: "FullscreenModal-body"
-        }, children), /*#__PURE__*/React.createElement("div", {
+        }, children), (!!footer || !!footerOptions) && /*#__PURE__*/React.createElement("div", {
           "data-test": "DesignSystem-ModalFooter",
           className: "d-flex justify-content-end p-7"
         }, !footer && /*#__PURE__*/React.createElement(ModalFooter, __assign({}, footerOptions, {
@@ -6935,6 +6945,7 @@
           open: props.open,
           animate: props.open
         };
+        _this.onOutsideClickHandler = _this.onOutsideClickHandler.bind(_this);
         return _this;
       }
 
@@ -6957,13 +6968,22 @@
             this.setState({
               animate: false
             }, function () {
-              setTimeout(function () {
+              window.setTimeout(function () {
                 _this.setState({
                   open: false
                 });
               }, 120);
             });
           }
+        }
+      };
+
+      Sidesheet.prototype.onOutsideClickHandler = function (event) {
+        var onClose = this.props.onClose;
+        var open = this.state.open;
+
+        if (open) {
+          if (onClose) onClose(event, 'OutsideClick');
         }
       };
 
@@ -7014,22 +7034,16 @@
             if (_onClose) _onClose(event, reason);
           }
         }, headerObj)), /*#__PURE__*/React.createElement(ModalBody, {
-          stickFooter: stickFooter
+          stickFooter: stickFooter,
+          withFooter: !!footer
         }, this.props.children), footer && /*#__PURE__*/React.createElement(ModalFooter$1, {
           inSidesheet: true,
           stickToBottom: stickFooter,
           seperator: seperator
         }, footer)));
-
-        var onOutsideClickHandler = function onOutsideClickHandler(event) {
-          if (open) {
-            if (_onClose) _onClose(event, 'OutsideClick');
-          }
-        };
-
         var SidesheetWrapper = backdropClose ? /*#__PURE__*/React.createElement(OutsideClick, {
           "data-test": "DesignSystem-Sidesheet--OutsideClick",
-          onOutsideClick: onOutsideClickHandler
+          onOutsideClick: this.onOutsideClickHandler
         }, SidesheetContainer) : SidesheetContainer;
         var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(SidesheetWrapper, this.element);
         return /*#__PURE__*/React.createElement(React.Fragment, null, WrapperElement, /*#__PURE__*/React.createElement(Backdrop, {
@@ -7355,11 +7369,12 @@
 
       var children = props.children,
           className = props.className,
-          stickFooter = props.stickFooter;
+          stickFooter = props.stickFooter,
+          withFooter = props.withFooter;
       var baseProps = extractBaseProps(props);
       var classes = classNames__default['default']((_a = {
         'Modal-body': true
-      }, _a['Modal-body--stickFooter'] = stickFooter, _a), className);
+      }, _a['Modal-body--stickFooter'] = withFooter && stickFooter, _a), className);
       return /*#__PURE__*/React.createElement("div", __assign({
         "data-test": "DesignSystem-ModalBody"
       }, baseProps, {
@@ -7367,7 +7382,8 @@
       }), children);
     };
     ModalBody.defaultProps = {
-      stickFooter: true
+      stickFooter: true,
+      withFooter: true
     };
     ModalBody.displayName = 'ModalBody';
 
@@ -8577,6 +8593,206 @@
       return /*#__PURE__*/React.createElement(React.Fragment, null, children);
     };
     Tab.displayName = 'Tab';
+
+    var FileUploaderButton = function FileUploaderButton(props) {
+      var _a;
+
+      var accept = props.accept,
+          multiple = props.multiple,
+          uploadButtonLabel = props.uploadButtonLabel,
+          disabled = props.disabled,
+          name = props.name,
+          className = props.className,
+          id = props.id,
+          _onChange = props.onChange;
+      var baseProps = extractBaseProps(props);
+      var FileUploaderButtonClass = classNames__default['default']((_a = {}, _a['FileUploaderButton'] = true, _a), className);
+      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+        className: FileUploaderButtonClass
+      }), /*#__PURE__*/React.createElement(Button, {
+        disabled: disabled,
+        icon: "backup"
+      }, uploadButtonLabel), /*#__PURE__*/React.createElement("input", {
+        name: name,
+        id: id,
+        accept: accept && accept.join(', '),
+        multiple: multiple,
+        disabled: disabled,
+        type: "file",
+        tabIndex: -1,
+        className: "FileUploaderButton-input",
+        onChange: function onChange(event) {
+          var fileList = event.target.files ? Array.from(event.target.files) : [];
+          if (_onChange) _onChange(fileList, event);
+        }
+      }));
+    };
+    FileUploaderButton.defaultProps = {
+      uploadButtonLabel: 'Upload files',
+      disabled: false,
+      multiple: false
+    };
+    FileUploaderButton.displayName = 'FileUploaderButton';
+
+    var FileUploader = function FileUploader(props) {
+      var _a;
+
+      var accept = props.accept,
+          multiple = props.multiple,
+          disabled = props.disabled,
+          title = props.title,
+          uploadButtonLabel = props.uploadButtonLabel,
+          sizeLabel = props.sizeLabel,
+          formatLabel = props.formatLabel,
+          sampleFileLink = props.sampleFileLink,
+          className = props.className,
+          id = props.id,
+          name = props.name,
+          onChange = props.onChange;
+      var baseProps = extractBaseProps(props);
+      var FileUploaderClass = classNames__default['default']((_a = {}, _a['FileUploader'] = true, _a), className);
+      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+        className: FileUploaderClass
+      }), title && /*#__PURE__*/React.createElement(Text, {
+        weight: "medium"
+      }, title), formatLabel && /*#__PURE__*/React.createElement(Text, {
+        size: "small",
+        appearance: "subtle",
+        className: "mt-4"
+      }, formatLabel), sizeLabel && /*#__PURE__*/React.createElement(Text, {
+        size: "small",
+        appearance: "subtle",
+        className: !formatLabel ? 'mt-4' : ''
+      }, sizeLabel), sampleFileLink && /*#__PURE__*/React.createElement("div", {
+        className: "FileUploader-link"
+      }, sampleFileLink), /*#__PURE__*/React.createElement(FileUploaderButton, {
+        id: id,
+        name: name,
+        accept: accept,
+        multiple: multiple,
+        disabled: disabled,
+        uploadButtonLabel: uploadButtonLabel,
+        onChange: onChange,
+        className: "mt-5"
+      }));
+    };
+    FileUploader.defaultProps = Object.assign({}, FileUploaderButton.defaultProps, {
+      title: 'Upload files',
+      sizeLabel: 'Maximum size: 25 MB',
+      fileNames: []
+    });
+    FileUploader.displayName = 'FileUploader';
+
+    var FileUploaderStatus = function FileUploaderStatus(props) {
+      var progress = props.progress,
+          status = props.status,
+          onRetry = props.onRetry;
+
+      switch (status) {
+        case 'uploading':
+          return /*#__PURE__*/React.createElement(ProgressRing, {
+            size: "small",
+            value: progress,
+            className: "mr-4"
+          });
+
+        case 'error':
+          return /*#__PURE__*/React.createElement(Icon, {
+            name: "refresh",
+            size: 20,
+            onClick: onRetry,
+            className: "mr-4 cursor-pointer"
+          });
+
+        default:
+          return null;
+      }
+    };
+    FileUploaderStatus.displayName = 'FileUploaderStatus';
+    FileUploaderStatus.defaultProps = {
+      status: 'completed',
+      progress: 0
+    };
+
+    var FileUploaderItem = function FileUploaderItem(props) {
+      var _a;
+
+      var file = props.file,
+          id = props.id,
+          status = props.status,
+          errorMessage = props.errorMessage,
+          progress = props.progress,
+          _onClick = props.onClick,
+          onDelete = props.onDelete,
+          _onRetry = props.onRetry,
+          className = props.className;
+      var name = file.name;
+      var baseProps = extractBaseProps(props);
+      var FileItemClass = classNames__default['default']((_a = {}, _a['FileUploaderItem'] = true, _a), className);
+      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+        className: FileItemClass,
+        onClick: function onClick() {
+          return _onClick && _onClick(file, id);
+        }
+      }), /*#__PURE__*/React.createElement("div", {
+        className: "FileUploaderItem-file"
+      }, /*#__PURE__*/React.createElement(Text, {
+        className: "FileUploaderItem-text",
+        appearance: status === 'completed' ? 'default' : 'subtle'
+      }, name), /*#__PURE__*/React.createElement("div", {
+        className: "d-flex align-items-center"
+      }, /*#__PURE__*/React.createElement(FileUploaderStatus, {
+        file: file,
+        id: id,
+        status: status,
+        progress: progress,
+        onRetry: function onRetry() {
+          return _onRetry && _onRetry(file, id);
+        }
+      }), /*#__PURE__*/React.createElement(Icon, {
+        name: "close",
+        size: 20,
+        onClick: function onClick() {
+          return onDelete && onDelete(file, id);
+        },
+        className: "py-2 px-2 my-3 mx-3 cursor-pointer"
+      }))), status === 'error' && /*#__PURE__*/React.createElement(Caption, {
+        error: true
+      }, errorMessage));
+    };
+    FileUploaderItem.defaultProps = {
+      status: 'completed',
+      progress: 0,
+      errorMessage: 'Network Error'
+    };
+    FileUploaderItem.displayName = 'FileUploaderItem';
+
+    var FileUploaderList = function FileUploaderList(props) {
+      var _a;
+
+      var fileList = props.fileList,
+          onClick = props.onClick,
+          onDelete = props.onDelete,
+          onRetry = props.onRetry,
+          className = props.className;
+      var baseProps = extractBaseProps(props);
+      var FileListClass = classNames__default['default']((_a = {}, _a['FileUploaderList'] = true, _a), className);
+      if (fileList.length === 0) return null;
+      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+        className: FileListClass
+      }), fileList.map(function (fileName, i) {
+        return /*#__PURE__*/React.createElement(FileUploaderItem, __assign({
+          key: i,
+          onDelete: onDelete,
+          onRetry: onRetry,
+          onClick: onClick
+        }, fileName));
+      }));
+    };
+    FileUploaderList.defaultProps = {
+      fileList: []
+    };
+    FileUploaderList.displayName = 'FileUploaderList';
 
     var resizeCol = function resizeCol(_this, name, el) {
       var elX = el === null || el === void 0 ? void 0 : el.getBoundingClientRect().x;
@@ -10820,7 +11036,7 @@
       separator: true
     };
 
-    var version = "1.6.1";
+    var version = "1.7.0-0";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
@@ -10843,6 +11059,8 @@
     exports.EditableDropdown = EditableDropdown;
     exports.EditableInput = EditableInput;
     exports.EmptyState = EmptyState;
+    exports.FileUploader = FileUploader;
+    exports.FileUploaderList = FileUploaderList;
     exports.FullscreenModal = FullscreenModal;
     exports.Grid = Grid;
     exports.GridCell = GridCell;

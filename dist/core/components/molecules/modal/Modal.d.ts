@@ -24,6 +24,7 @@ declare class Modal extends React.Component<ModalProps, ModalState> {
     };
     constructor(props: ModalProps);
     componentDidUpdate(prevProps: ModalProps): void;
+    onOutsideClickHandler(event: Event): void;
     render(): JSX.Element;
 }
 export default Modal;

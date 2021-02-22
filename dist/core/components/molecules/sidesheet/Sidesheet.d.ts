@@ -7,6 +7,7 @@ export interface SidesheetProps extends BaseProps {
     dimension: Dimension;
     open: boolean;
     stickFooter?: boolean;
+    withFooter?: boolean;
     seperator?: boolean;
     children?: React.ReactNode;
     footer?: React.ReactNode;
@@ -28,6 +29,7 @@ declare class Sidesheet extends React.Component<SidesheetProps, SidesheetState> 
     };
     constructor(props: SidesheetProps);
     componentDidUpdate(prevProps: SidesheetProps): void;
+    onOutsideClickHandler(event: Event): void;
     render(): JSX.Element;
 }
 export default Sidesheet;
