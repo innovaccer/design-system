@@ -204,7 +204,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
   const trigger = <div className={rightIconClass}><Icon name={'info'} size={sizeMapping[size]} /></div>;
 
   return (
-    <div data-test="DesignSystem-InputWrapper" className={classes} style={{ minWidth }}>
+    <div
+      data-test="DesignSystem-InputWrapper"
+      className={classes}
+      style={{ minWidth }}
+      onClick={() => ref.current?.focus()}
+    >
       {inlineLabel && (
         <div className="Input-inlineLabel">
           <Text appearance="subtle">{inlineLabel}</Text>
