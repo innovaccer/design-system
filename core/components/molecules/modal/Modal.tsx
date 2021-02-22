@@ -102,7 +102,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
         this.setState({
           animate: false,
         }, () => {
-          setTimeout(() => {
+          window.setTimeout(() => {
             this.setState({
               open: false
             });
