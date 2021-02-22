@@ -7,7 +7,7 @@ export const controlledCheckbox = () => {
 
   const handleParentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const updatedChecked = event.target.checked;
-    setTimeout(() => {
+    window.setTimeout(() => {
       setChecked(updatedChecked);
     }, 2000);
   };
@@ -27,7 +27,7 @@ const customCode = `() => {
 
   const handleParentChange = (event) => {
     const updatedChecked = event.target.checked;
-    setTimeout(() => {
+    window.setTimeout(() => {
       setChecked(updatedChecked);
     }, 2000);
   };
