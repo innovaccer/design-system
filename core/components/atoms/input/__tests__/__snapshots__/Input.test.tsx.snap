@@ -6,6 +6,7 @@ exports[`Input component
 <div
   className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": 256,
@@ -29,6 +30,7 @@ exports[`Input component
 <div
   className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": 256,
@@ -61,6 +63,7 @@ exports[`Input component
 <div
   className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": 256,
@@ -85,6 +88,7 @@ exports[`Input component
 <div
   className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": 256,
@@ -118,6 +122,7 @@ exports[`Input component
 <div
   className="Input Input--large"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": 256,
@@ -140,6 +145,7 @@ exports[`Input component
 <div
   className="Input Input--large"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": undefined,
@@ -172,6 +178,7 @@ exports[`Input component
 <div
   className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": 256,
@@ -194,6 +201,7 @@ exports[`Input component
 <div
   className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": undefined,
@@ -226,6 +234,7 @@ exports[`Input component
 <div
   className="Input Input--tiny"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": 256,
@@ -248,6 +257,7 @@ exports[`Input component
 <div
   className="Input Input--tiny"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": undefined,
@@ -280,6 +290,7 @@ exports[`Input component
 <div
   className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": undefined,
@@ -302,6 +313,7 @@ exports[`Input component
 <div
   className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": 256,
@@ -324,6 +336,7 @@ exports[`Input component
 <div
   className="Input Input--regular"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": 256,
@@ -346,6 +359,7 @@ exports[`Input component
 <div
   className="Input Input--regular Input--disabled"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": 256,
@@ -369,6 +383,7 @@ exports[`Input component
 <div
   className="Input Input--regular Input--disabled"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": 256,
@@ -401,6 +416,7 @@ exports[`Input component
 <div
   className="Input Input--regular Input--disabled"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": 256,
@@ -425,6 +441,7 @@ exports[`Input component
 <div
   className="Input Input--regular Input--disabled"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": 256,
@@ -458,6 +475,7 @@ exports[`Input component
 <div
   className="Input Input--regular Input--error"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": 256,
@@ -481,6 +499,7 @@ exports[`Input component
 <div
   className="Input Input--regular Input--error"
   data-test="DesignSystem-InputWrapper"
+  onClick={[Function]}
   style={
     Object {
       "minWidth": 256,
