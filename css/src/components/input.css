@@ -41,7 +41,7 @@
 .Input:hover {
     background: var(--secondary-lightest);
     border-color: var(--secondary-lightest);
-    cursor: pointer;
+    cursor: text;
 }
 
 .Input:focus-within {
