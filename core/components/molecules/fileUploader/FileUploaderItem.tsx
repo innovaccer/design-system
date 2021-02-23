@@ -9,6 +9,8 @@ export type FileStatus = 'uploading' | 'completed' | 'error';
 export interface FileItem {
   /**
    * Attached file
+   *
+   * File: Native File object that provides information about files.
    */
   file: File;
   /**
@@ -17,6 +19,8 @@ export interface FileItem {
   id?: any;
   /**
    * Status of file
+   *
+   * FileStatus: 'uploading' | 'completed' | 'error'
    */
   status?: FileStatus;
   /**

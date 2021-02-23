@@ -1,18 +1,18 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Text } from '@/index';
+import FileUploaderFormat, { FileUploaderFormatProps } from './FileUploaderFormat';
 import FileUploaderButton, { FileUploaderButtonProps } from './FileUploaderButton';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export interface FileUploaderProps extends FileUploaderButtonProps, BaseProps {
+export interface FileUploaderProps extends
+  FileUploaderButtonProps,
+  FileUploaderFormatProps,
+  BaseProps {
   /**
    * Describes the heading of `FileUploader`
    */
   title: string;
-  /**
-   * Description of accepted formats in `FileUploader`
-   */
-  formatLabel?: string;
   /**
    * Description of maximum size in `FileUploader`
    */
@@ -47,25 +47,17 @@ export const FileUploader = (props: FileUploaderProps) => {
 
   return (
     <div {...baseProps} className={FileUploaderClass}>
-      {title && <Text weight="medium">{title}</Text>}
-      {formatLabel && (
-        <Text size="small" appearance="subtle" className="mt-4">
-          {formatLabel}
-        </Text>
-      )}
-      {sizeLabel && (
-        <Text
-          size="small"
-          appearance="subtle"
-          className={!formatLabel ? 'mt-4' : ''}
-        >
-          {sizeLabel}
-        </Text>
-      )}
+      <Text weight="medium">{title}</Text>
+      <FileUploaderFormat formatLabel={formatLabel} />
+      <Text
+        size="small"
+        appearance="subtle"
+        className={!formatLabel ? 'mt-4' : ''}
+      >
+        {sizeLabel}
+      </Text>
       {sampleFileLink && (
-        <div className="FileUploader-link">
-          {sampleFileLink}
-        </div>
+        <div className="mt-4">{sampleFileLink}</div>
       )}
       <FileUploaderButton
         id={id}
@@ -86,7 +78,6 @@ FileUploader.defaultProps = Object.assign({},
   {
     title: 'Upload files',
     sizeLabel: 'Maximum size: 25 MB',
-    fileNames: [],
   }
 );
 

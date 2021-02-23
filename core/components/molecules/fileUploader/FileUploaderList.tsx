@@ -6,7 +6,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 export interface FileUploaderListProps extends BaseProps {
   /**
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
-   * List of files
+   * Array of FileItem object.
    * FileItem:
    * {
    *    file: File;
