@@ -51,14 +51,18 @@ export function hideColumn(this: Grid, name: ColumnSchema['name'], value: boolea
 }
 
 export function getWidth(this: Grid, width: React.ReactText) {
-  if (typeof width === 'number') return width;
-  if (width.charAt(width.length - 1) === '%' && this.state.init) {
-    const checkboxCell = this.gridRef!.querySelector('.Grid-cell--checkbox');
-    const checkboxWidth = checkboxCell ? checkboxCell.clientWidth : 0;
-    const gridWidth = this.gridRef!.clientWidth - checkboxWidth;
-    return gridWidth * (+width.slice(0, -1) / 100);
+  const isPercent = typeof width === 'string' && width.slice(-1) === '%';
+
+  if (isPercent) {
+    if (this.state.init) {
+      const checkboxCell = this.gridRef!.querySelector('.Grid-cell--checkbox');
+      const checkboxWidth = checkboxCell ? checkboxCell.clientWidth : 0;
+      const gridWidth = this.gridRef!.clientWidth - checkboxWidth;
+      return gridWidth * (+(width as string).slice(0, -1) / 100);
+    }
+    return 0;
   }
-  return 0;
+  return width;
 }
 
 export function getCellSize(cellType: CellType) {
