@@ -3,11 +3,6 @@
   flex-direction: column;
 }
 
-.FileUploader-link {
-  font-size: var(--font-size-s) !important;
-  margin-top: var(--spacing);
-}
-
 .FileUploaderButton {
   width: fit-content;
   position: relative;

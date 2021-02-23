@@ -7,8 +7,8 @@ export const all = () => {
   const [fileNames, setFileNames] = React.useState<any>([]);
 
   const title = text('title', 'Upload files');
-  const formatLabel = text('Format Label', 'Accepted formats: PDF, jpg');
-  const sizeLabel = text('Max size label', 'Maximum size: 25 MB');
+  const formatLabel = text('formatLabel', 'Accepted formats: PDF, jpg');
+  const sizeLabel = text('sizeLabel', 'Maximum size: 25 MB');
   const multiple = boolean('multiple', true);
 
   const onChangeHandler = (fileList: File[]) => {
