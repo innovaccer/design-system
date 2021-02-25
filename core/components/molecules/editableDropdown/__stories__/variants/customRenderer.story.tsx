@@ -71,12 +71,19 @@ const customCode = `() => {
   };
 
   const onChange = (selectedValues) => {
-    consol.log(selectedValues);
+    console.log(selectedValues);
   };
 
   const customRenderer = (label) => {
     return (
       <StatusHint appearance="warning">{label}</StatusHint>
+    );
+  };
+
+  const optionRenderer = (props) => {
+    const { label } = props.optionData;
+    return (
+      <StatusHint className="px-5 py-4 cursor-pointer" appearance="warning">{label}</StatusHint>
     );
   };
 
@@ -101,7 +108,8 @@ const customCode = `() => {
         dropdownOptions={{
           options,
           onChange,
-          triggerOptions: { customTrigger }
+          optionRenderer,
+          triggerOptions: { customTrigger },
         }}
       />
     </div>
