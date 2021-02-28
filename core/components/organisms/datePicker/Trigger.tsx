@@ -38,13 +38,11 @@ export const Trigger = (props: TriggerProps) => {
     }
   };
 
-  const onFocusHandler = () => {
+  const onBlurHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
     setState({
       init: true
     });
-  };
 
-  const onBlurHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
     const { placeholderChar = '_' } = inputOptions;
     if (!val || val.includes(placeholderChar)) {
       setState({ date: undefined });
@@ -58,7 +56,8 @@ export const Trigger = (props: TriggerProps) => {
     });
   };
 
-  const showError = inputOptions.required && error && init;
+  const showError = inputOptions.error || (inputOptions.required && error && init);
+  const errorMessage = inputOptions.caption === undefined ? 'Invalid value' : inputOptions.caption;
   const inputValidator = (val: string): boolean => {
     return Utils.validators.isValid(validators, val, inputFormat);
   };
@@ -72,10 +71,9 @@ export const Trigger = (props: TriggerProps) => {
       mask={Utils.masks.date[inputFormat]}
       value={date ? translateToString(inputFormat, date) : ''}
       onChange={onChangeHandler}
-      onFocus={onFocusHandler}
       onBlur={onBlurHandler}
       onClear={onClearHandler}
-      caption={showError ? inputOptions.caption || 'Invalid value' : ''}
+      caption={showError ? errorMessage : ''}
       validators={[inputValidator]}
     />
   );
