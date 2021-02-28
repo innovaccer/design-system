@@ -127,8 +127,10 @@ export const Trigger = (props: TriggerProps) => {
   };
 
   const mask = Utils.masks.date[inputFormat];
-  const showStartError = startInputOptions.required && startError && init;
-  const showEndError = endInputOptions.required && endError && init;
+  const showStartError = startInputOptions.error || (startInputOptions.required && startError && init);
+  const showEndError = endInputOptions.error || (endInputOptions.required && endError && init);
+  const startErrorMessage = startInputOptions.caption === undefined ? 'Invalid value' : startInputOptions.caption;
+  const endErrorMessage = endInputOptions.caption === undefined ? 'Invalid value' : endInputOptions.caption;
   const { label: startLabel } = startInputOptions;
   const { label: endLabel } = endInputOptions;
   const inputValidator = (val: string): boolean => {
@@ -159,7 +161,7 @@ export const Trigger = (props: TriggerProps) => {
           onClear={() => onClearHandler('start')}
           onClick={() => onClickHandler('start')}
           error={showStartError}
-          caption={showStartError ? startInputOptions.caption || 'Invalid value' : ''}
+          caption={showStartError ? startErrorMessage : ''}
           validators={[inputValidator]}
         />
       </Column>
@@ -184,7 +186,7 @@ export const Trigger = (props: TriggerProps) => {
           onClear={() => onClearHandler('end')}
           onClick={() => onClickHandler('end')}
           error={showEndError}
-          caption={showEndError ? endInputOptions.caption || 'Invalid value' : ''}
+          caption={showEndError ? endErrorMessage : ''}
           validators={[inputValidator]}
         />
       </Column>

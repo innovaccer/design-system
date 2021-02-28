@@ -46,7 +46,7 @@ export type DatePickerProps = SharedProps & {
   /**
    * Props to be used for `InputMask`
    */
-  inputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClear' | 'error'>;
+  inputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClear'>;
   /**
    * custom Validator for `DatePicker`
    *
