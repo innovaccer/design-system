@@ -86,9 +86,9 @@ interface SyncProps {
    * | --- | --- | --- |
    * | name | key of the value in `RowData` | |
    * | displayName | Column Head Label | |
-   * | width | width of the column(in px) | |
-   * | minWidth | min-width of the column(in px) | 100 |
-   * | maxWidth | max-width of the column(in px) | 800 |
+   * | width | width of the column(px or %) | |
+   * | minWidth | min-width of the column(px or %) | 100 |
+   * | maxWidth | max-width of the column(px or %) | 800 |
    * | resizable | Denotes if column is resizable | |
    * | sorting | Enables sorting in column | true |
    * | comparator | Sorting Function to be passed(in case of sync) | Default string comparator(localeCompare) |
