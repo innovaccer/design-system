@@ -31,7 +31,8 @@ export const SingleInputTrigger = (props: TriggerProps) => {
   } = state;
 
   const mask = Utils.masks.rangeDate[inputFormat];
-  const showError = inputOptions.required && (startError || endError) && init;
+  const showError = inputOptions.error || (inputOptions.required && (startError || endError) && init);
+  const errorMessage = inputOptions.caption === undefined ? 'Invalid value' : inputOptions.caption;
   const { label } = inputOptions;
   const { placeholderChar = '_' } = inputOptions;
   // @ts-ignore
@@ -140,7 +141,7 @@ export const SingleInputTrigger = (props: TriggerProps) => {
           }}
           onClear={onClearHandler}
           error={showError}
-          caption={showError ? inputOptions.caption || 'Invalid value' : ''}
+          caption={showError ? errorMessage : ''}
           validators={[inputValidator]}
         />
       </Column>

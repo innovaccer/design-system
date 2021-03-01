@@ -23,7 +23,7 @@ import {
   getCurrentMonth
 } from './utilities';
 
-export type InputOptions = Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClick' | 'onClear' | 'error'>
+export type InputOptions = Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClick' | 'onClear'>
   & { label?: string };
 
 export type DateRangePickerProps = SharedProps & {
