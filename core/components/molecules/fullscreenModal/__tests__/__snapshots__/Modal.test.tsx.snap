@@ -43,7 +43,7 @@ exports[`FullscreenModal component
                 class="Col Col--auto pr-2"
               >
                 <i
-                  class="material-icons Icon Icon--default cursor-pointer pt-3"
+                  class="material-icons Icon cursor-pointer pt-3"
                   data-test="DesignSystem-ModalHeader--CloseIcon"
                   style="font-size: 20px; width: 20px;"
                 >
@@ -110,7 +110,7 @@ exports[`FullscreenModal component
                 class="Col Col--auto pr-2"
               >
                 <i
-                  class="material-icons Icon Icon--default cursor-pointer pt-3"
+                  class="material-icons Icon cursor-pointer pt-3"
                   data-test="DesignSystem-ModalHeader--CloseIcon"
                   style="font-size: 20px; width: 20px;"
                 >

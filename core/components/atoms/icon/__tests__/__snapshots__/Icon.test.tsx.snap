@@ -140,7 +140,7 @@ exports[`Icon component
   name: "events", size: 50, type: "filled", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons Icon Icon--default"
+  className="material-icons Icon"
   onClick={[MockFunction]}
   style={
     Object {
@@ -157,7 +157,7 @@ exports[`Icon component
   name: "events", size: 50, type: "outline", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons material-icons-outlined Icon Icon--default"
+  className="material-icons material-icons-outlined Icon"
   onClick={[MockFunction]}
   style={
     Object {
@@ -174,7 +174,7 @@ exports[`Icon component
   name: "events", size: 50, type: "outlined", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons material-icons-outlined Icon Icon--default"
+  className="material-icons material-icons-outlined Icon"
   onClick={[MockFunction]}
   style={
     Object {
@@ -191,7 +191,7 @@ exports[`Icon component
   name: "events", size: 50, type: "round", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons material-icons-round Icon Icon--default"
+  className="material-icons material-icons-round Icon"
   onClick={[MockFunction]}
   style={
     Object {
@@ -208,7 +208,7 @@ exports[`Icon component
   name: "events", size: 50, type: "rounded", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons material-icons-round Icon Icon--default"
+  className="material-icons material-icons-round Icon"
   onClick={[MockFunction]}
   style={
     Object {
@@ -225,7 +225,7 @@ exports[`Icon component
   name: "events", size: 50, type: "sharp", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons material-icons-sharp Icon Icon--default"
+  className="material-icons material-icons-sharp Icon"
   onClick={[MockFunction]}
   style={
     Object {
@@ -242,7 +242,7 @@ exports[`Icon component
   name: "events", size: 50, type: "two-tone", onClick: "[Function]"
  1`] = `
 <i
-  className="material-icons material-icons-two-tone Icon Icon--default"
+  className="material-icons material-icons-two-tone Icon"
   onClick={[MockFunction]}
   style={
     Object {
