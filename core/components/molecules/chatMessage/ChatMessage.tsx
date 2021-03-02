@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import Status, { StatusProps, StatusType } from './Status';
 import Box, { BoxProps } from './Box';
-import MessageText, { MessageTextProps } from './Text';
+import MessageText, { MessageTextProps } from './MessageText';
 
 export type MessageType = 'incoming' | 'outgoing';
 

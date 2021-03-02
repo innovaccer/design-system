@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { boolean, optionsKnob } from '@storybook/addon-knobs';
-import Text from '../index';
+import { Text } from '@/index';
 
 // CSF format story
 export const all = () => {
