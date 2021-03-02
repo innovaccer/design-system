@@ -156,12 +156,12 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
           <Row className="justify-content-center">
             <Column {...sizeMap[dimension]}>
               <Row className="justify-content-between pt-6 pr-6 pb-5 pl-7">
-                <Column size="auto">
+                <Column>
                   {!header && <ModalHeader {...headerOptions} />}
 
                   {!!header && header}
                 </Column>
-                <Column size="auto" className="pr-2">
+                <Column className="pr-2">
                   <Icon
                     size={20}
                     name={'close'}

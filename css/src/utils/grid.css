@@ -7,11 +7,7 @@
 .Col {
   position: relative;
   box-sizing: border-box;
-  width: 100%;
-}
-
-.Col--auto {
-  flex: 0 0 auto;
+  flex: 1 0 auto;
   width: auto;
   max-width: 100%;
 }
@@ -95,11 +91,6 @@
     flex-grow: 1;
     max-width: 100%;
   }
-  .Col--xs-auto {
-    flex: 0 0 auto;
-    width: auto;
-    max-width: 100%;
-  }
   .Col--xs-1 {
     flex: 0 0;
     flex-basis: calc(100% / var(--grid-columns) * 1);
@@ -164,11 +155,6 @@
 /* if the viewport is between 576 and 767 pixels wide. */
 
 @media (min-width: 576px) and (max-width: 767px) {
-  .Col--s-auto {
-    flex: 0 0 auto;
-    width: auto;
-    max-width: 100%;
-  }
   .Col--s-1 {
     flex: 0 0;
     flex-basis: calc(100% / var(--grid-columns) * 1);
@@ -233,11 +219,6 @@
 /* if the viewport is between 768 and 991 pixels wide. */
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .Col--m-auto {
-    flex: 0 0 auto;
-    width: auto;
-    max-width: 100%;
-  }
   .Col--m-1 {
     flex: 0 0;
     flex-basis: calc(100% / var(--grid-columns) * 1);
@@ -302,11 +283,6 @@
 /* if the viewport is between 992 and 1199 pixels wide. */
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  .Col--l-auto {
-    flex: 0 0 auto;
-    width: auto;
-    max-width: 100%;
-  }
   .Col--l-1 {
     flex: 0 0;
     flex-basis: calc(100% / var(--grid-columns) * 1);
@@ -371,11 +347,6 @@
 /* if the viewport is 1200 pixels wide or wider. */
 
 @media (min-width: 1200px) {
-  .Col--xl-auto {
-    flex: 0 0 auto;
-    width: auto;
-    max-width: 100%;
-  }
   .Col--xl-1 {
     flex: 0 0;
     flex-basis: calc(100% / var(--grid-columns) * 1);
