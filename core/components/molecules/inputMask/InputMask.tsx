@@ -38,6 +38,11 @@ export interface MaskProps extends BaseProps {
    */
   onBlur?: (e: React.ChangeEvent<HTMLInputElement>, maskedVal: string) => void;
   onClear?: (e: React.MouseEvent<HTMLElement>) => void;
+  /**
+   * Clear the `Input` on blur if value === defaultPlaceholderValue
+   * @default true
+   */
+  clearOnEmptyBlur?: boolean;
 }
 export type InputMaskProps = InputProps & MaskProps;
 type SelectionPos = {
@@ -56,6 +61,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     value: valueProp,
     placeholderChar = '_',
     validators = [],
+    clearOnEmptyBlur = true,
     defaultValue,
     mask,
     error,
@@ -216,7 +222,14 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
   };
 
   const onBlurHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const inputVal = e.currentTarget.value;
+    let inputVal = e.currentTarget.value;
+
+    if (clearOnEmptyBlur) {
+      if (inputVal === getPlaceholderValue()) {
+        setValue('');
+        inputVal = '';
+      }
+    }
 
     if (onBlur) onBlur(e, inputVal);
 
@@ -224,7 +237,10 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
   };
 
   const onClearHandler = (e: React.MouseEvent<HTMLElement>) => {
-    setValue('');
+    // setValue('');
+    // window.requestAnimationFrame(() => ref.current!.blur());
+    setValue(getPlaceholderValue());
+    window.requestAnimationFrame(() => setCursorPosition(getDefaultSelection().start));
 
     if (onClear) onClear(e);
   };
