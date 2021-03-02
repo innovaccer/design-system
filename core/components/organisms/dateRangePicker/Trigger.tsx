@@ -85,13 +85,10 @@ export const Trigger = (props: TriggerProps) => {
     }
   };
 
-  const onFocusHandler = () => {
+  const onBlurHandler = (_e: React.ChangeEvent<HTMLInputElement>, val: string, type: string) => {
     setState({
       init: true
     });
-  };
-
-  const onBlurHandler = (_e: React.ChangeEvent<HTMLInputElement>, val: string, type: string) => {
     if (type === 'start') {
       const { placeholderChar = '_' } = startInputOptions;
       if (!val || val.includes(placeholderChar)) setState({ startDate: undefined });
@@ -103,16 +100,17 @@ export const Trigger = (props: TriggerProps) => {
   };
 
   const onClearHandler = (type: string) => {
+    setState({
+      init: true
+    });
     if (type === 'start') {
       setState({
-        init: true,
         startDate: undefined
       });
       updateNav('end');
     }
     if (type === 'end') {
       setState({
-        init: true,
         endDate: undefined
       });
       updateNav('start');
@@ -127,6 +125,8 @@ export const Trigger = (props: TriggerProps) => {
   };
 
   const mask = Utils.masks.date[inputFormat];
+  const startPlaceholderChar = startInputOptions.placeholderChar || '_';
+  const endPlaceholderChar = endInputOptions.placeholderChar || '_';
   const showStartError = startInputOptions.error || (startInputOptions.required && startError && init);
   const showEndError = endInputOptions.error || (endInputOptions.required && endError && init);
   const startErrorMessage = startInputOptions.caption === undefined ? 'Invalid value' : startInputOptions.caption;
@@ -150,8 +150,11 @@ export const Trigger = (props: TriggerProps) => {
           placeholder={inputFormat}
           {...startInputOptions}
           mask={mask}
-          value={startDate ? translateToString(inputFormat, startDate) : ''}
-          onFocus={onFocusHandler}
+          value={startDate
+            ? translateToString(inputFormat, startDate)
+            // @ts-ignore
+            : init ? InputMask.utils.getDefaultValue(mask, startPlaceholderChar) : ''
+          }
           onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
             onChangeHandler(e, val || '', 'start');
           }}
@@ -163,6 +166,7 @@ export const Trigger = (props: TriggerProps) => {
           error={showStartError}
           caption={showStartError ? startErrorMessage : ''}
           validators={[inputValidator]}
+          clearOnEmptyBlur={false}
         />
       </Column>
       <Column size={'6'} sizeXS={'12'} className="DateRangePicker-input DateRangePicker-input--endDate">
@@ -176,7 +180,11 @@ export const Trigger = (props: TriggerProps) => {
           placeholder={inputFormat}
           {...endInputOptions}
           mask={mask}
-          value={endDate ? translateToString(inputFormat, endDate) : ''}
+          value={endDate
+            ? translateToString(inputFormat, endDate)
+            // @ts-ignore
+            : init ? InputMask.utils.getDefaultValue(mask, endPlaceholderChar) : ''
+          }
           onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
             onChangeHandler(e, val || '', 'end');
           }}
@@ -188,6 +196,7 @@ export const Trigger = (props: TriggerProps) => {
           error={showEndError}
           caption={showEndError ? endErrorMessage : ''}
           validators={[inputValidator]}
+          clearOnEmptyBlur={false}
         />
       </Column>
     </Row>
