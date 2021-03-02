@@ -29,7 +29,7 @@ export interface IconProps extends BaseProps {
   /**
    * Color of `Icon`
    */
-  appearance: Appearance;
+  appearance?: Appearance;
   /**
    * Handler to be called when icon is clicked
    */
@@ -83,7 +83,6 @@ export const Icon = (props: IconProps) => {
 
 Icon.displayName = 'Icon';
 Icon.defaultProps = {
-  appearance: 'default',
   size: 16
 };
 

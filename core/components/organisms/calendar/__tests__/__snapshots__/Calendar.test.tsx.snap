@@ -14,7 +14,6 @@ exports[`Calendar component
       className="Calendar-header"
     >
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_back"
         onClick={[Function]}
@@ -46,7 +45,6 @@ exports[`Calendar component
         </span>
       </div>
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_forward"
         onClick={[Function]}
@@ -725,7 +723,6 @@ exports[`Calendar component
       className="Calendar-header"
     >
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_back"
         onClick={[Function]}
@@ -757,7 +754,6 @@ exports[`Calendar component
         </span>
       </div>
       <Icon
-        appearance="default"
         className="Calendar-headerIcon Calendar-headerIcon--disabled"
         name="arrow_forward"
         onClick={[Function]}
@@ -1436,7 +1432,6 @@ exports[`Calendar component
       className="Calendar-header"
     >
       <Icon
-        appearance="default"
         className="Calendar-headerIcon Calendar-headerIcon--disabled"
         name="arrow_back"
         onClick={[Function]}
@@ -1468,7 +1463,6 @@ exports[`Calendar component
         </span>
       </div>
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_forward"
         onClick={[Function]}
@@ -2147,7 +2141,6 @@ exports[`Calendar component
       className="Calendar-header"
     >
       <Icon
-        appearance="default"
         className="Calendar-headerIcon Calendar-headerIcon--disabled"
         name="arrow_back"
         onClick={[Function]}
@@ -2179,7 +2172,6 @@ exports[`Calendar component
         </span>
       </div>
       <Icon
-        appearance="default"
         className="Calendar-headerIcon Calendar-headerIcon--disabled"
         name="arrow_forward"
         onClick={[Function]}
@@ -2858,7 +2850,6 @@ exports[`Calendar component
       className="Calendar-header"
     >
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_back"
         onClick={[Function]}
@@ -2890,7 +2881,6 @@ exports[`Calendar component
         </span>
       </div>
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_forward"
         onClick={[Function]}
@@ -3569,7 +3559,6 @@ exports[`Calendar component
       className="Calendar-header"
     >
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_back"
         onClick={[Function]}
@@ -3601,7 +3590,6 @@ exports[`Calendar component
         </span>
       </div>
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_forward"
         onClick={[Function]}
@@ -4355,7 +4343,6 @@ exports[`Calendar component
       className="Calendar-header"
     >
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_back"
         onClick={[Function]}
@@ -4387,7 +4374,6 @@ exports[`Calendar component
         </span>
       </div>
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_forward"
         onClick={[Function]}
@@ -5066,7 +5052,6 @@ exports[`Calendar component
       className="Calendar-header"
     >
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_back"
         onClick={[Function]}
@@ -5098,7 +5083,6 @@ exports[`Calendar component
         </span>
       </div>
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_forward"
         onClick={[Function]}
@@ -5777,7 +5761,6 @@ exports[`Calendar component
       className="Calendar-header"
     >
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_back"
         onClick={[Function]}
@@ -5809,7 +5792,6 @@ exports[`Calendar component
         </span>
       </div>
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_forward"
         onClick={[Function]}
@@ -6488,7 +6470,6 @@ exports[`Calendar component
       className="Calendar-header"
     >
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_back"
         onClick={[Function]}
@@ -6520,7 +6501,6 @@ exports[`Calendar component
         </span>
       </div>
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_forward"
         onClick={[Function]}
@@ -7274,7 +7254,6 @@ exports[`Calendar component
       className="Calendar-header"
     >
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_back"
         onClick={[Function]}
@@ -7306,7 +7285,6 @@ exports[`Calendar component
         </span>
       </div>
       <Icon
-        appearance="default"
         className="Calendar-headerIcon"
         name="arrow_forward"
         onClick={[Function]}

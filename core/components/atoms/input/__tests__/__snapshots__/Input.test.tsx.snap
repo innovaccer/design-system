@@ -41,7 +41,6 @@ exports[`Input component
     className="Input-icon Input-icon--left Input-icon--disabled"
   >
     <Icon
-      appearance="default"
       name="events"
       size={16}
     />
@@ -99,7 +98,6 @@ exports[`Input component
     className="Input-icon Input-icon--left"
   >
     <Icon
-      appearance="default"
       name="events"
       size={16}
     />
@@ -394,7 +392,6 @@ exports[`Input component
     className="Input-icon Input-icon--left"
   >
     <Icon
-      appearance="default"
       name="events"
       size={16}
     />
@@ -452,7 +449,6 @@ exports[`Input component
     className="Input-icon Input-icon--left"
   >
     <Icon
-      appearance="default"
       name="events"
       size={16}
     />
@@ -510,7 +506,6 @@ exports[`Input component
     className="Input-icon Input-icon--left"
   >
     <Icon
-      appearance="default"
       name="events"
       size={16}
     />
