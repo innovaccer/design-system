@@ -15,7 +15,7 @@ export interface IconProps extends BaseProps {
   /**
    * Material icon name
    */
-  name: string;
+  name?: string;
   /**
    * Size of `Icon`
    */
@@ -34,6 +34,10 @@ export interface IconProps extends BaseProps {
    * Handler to be called when icon is clicked
    */
   onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+  /**
+   * DOM node to be passed as child to the component
+   */
+  children? :React.ReactNode;
 }
 
 export const Icon = (props: IconProps) => {
@@ -42,7 +46,8 @@ export const Icon = (props: IconProps) => {
     className,
     name,
     size,
-    onClick
+    onClick,
+    children
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -69,6 +74,16 @@ export const Icon = (props: IconProps) => {
   };
 
   // change `children` to {name} after migration
+  if (children && React.isValidElement(children)) {
+    return(
+      <span
+        {...baseProps}
+        className={className}
+      >
+        {children}
+      </span>
+    );
+  }
   return (
     <i
       {...baseProps}
