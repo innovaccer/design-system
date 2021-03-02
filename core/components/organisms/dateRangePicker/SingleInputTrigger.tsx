@@ -93,13 +93,11 @@ export const SingleInputTrigger = (props: TriggerProps) => {
     });
   };
 
-  const onFocusHandler = () => {
+  const onBlurHandler = (_e: React.ChangeEvent<HTMLInputElement>, val: string) => {
     setState({
       init: true
     });
-  };
 
-  const onBlurHandler = (_e: React.ChangeEvent<HTMLInputElement>, val: string) => {
     const date = val.split(' - ');
     const startVal = date[0];
     const endVal = date[1];
@@ -132,7 +130,6 @@ export const SingleInputTrigger = (props: TriggerProps) => {
           {...inputOptions}
           mask={mask}
           value={!startDate && !endDate && !init ? undefined : `${sValue} - ${eValue}`}
-          onFocus={onFocusHandler}
           onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
             onChangeHandler(e, val || '');
           }}
@@ -143,6 +140,7 @@ export const SingleInputTrigger = (props: TriggerProps) => {
           error={showError}
           caption={showError ? errorMessage : ''}
           validators={[inputValidator]}
+          clearOnEmptyBlur={false}
         />
       </Column>
     </Row>
