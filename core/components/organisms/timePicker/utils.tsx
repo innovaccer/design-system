@@ -12,6 +12,10 @@ export const placeholders: { [key: string]: InputProps['placeholder'] } = {
   ['hh:mm AM']: '--:-- AM',
 };
 
+export const isPlaceholderPresent = (placeholderChar: string, time?: string) => {
+  return time && time.includes(placeholderChar);
+};
+
 export const isFormat12hour = (format: string) => {
   return format === 'hh:mm AM';
 };

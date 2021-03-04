@@ -27,6 +27,6 @@ export const rangeDate: Record<DateFormat, Mask> = {
 };
 
 export const time: { [key: string]: InputMaskProps['mask'] } = {
-  ['hh:mm']: [/[0-1-2]/, /\d/, ':', /[0-6]/, /\d/],
-  ['hh:mm AM']: [/[0-1]/, /\d/, ':', /[0-6]/, /\d/, ' ', /[APap]/, 'M'],
+  ['hh:mm']: [/[0-1-2]/, /\d/, ':', /[0-5]/, /\d/],
+  ['hh:mm AM']: [/[0-1]/, /\d/, ':', /[0-5]/, /\d/, ' ', /[APap]/, 'M'],
 };
