@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1614934629137 
+   * Generated on: 1614935930716 
    *      Package: @innovaccer/design-system
-   *      Version: v1.7.0-1
+   *      Version: v1.7.0-2
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -379,6 +379,9 @@
   var _placeholders;
 
   var placeholders = (_placeholders = {}, _defineProperty$w(_placeholders, 'hh:mm', '--:--'), _defineProperty$w(_placeholders, 'hh:mm AM', '--:-- AM'), _placeholders);
+  var isPlaceholderPresent = function isPlaceholderPresent(placeholderChar, time) {
+    return time && time.includes(placeholderChar);
+  };
   var isFormat12hour = function isFormat12hour(format) {
     return format === 'hh:mm AM';
   };
@@ -606,7 +609,7 @@
     'mm-dd-yyyy': [/[01]/, /\d/, '-', /[0123]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, ' ', '-', ' ', /[01]/, /\d/, '-', /[0123]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
     'yyyy-mm-dd': [/\d/, /\d/, /\d/, /\d/, '-', /[01]/, /\d/, '-', /[0123]/, /\d/, ' ', '-', ' ', /\d/, /\d/, /\d/, /\d/, '-', /[01]/, /\d/, '-', /[0123]/, /\d/]
   };
-  var time$1 = (_time = {}, _defineProperty$w(_time, 'hh:mm', [/[0-1-2]/, /\d/, ':', /[0-6]/, /\d/]), _defineProperty$w(_time, 'hh:mm AM', [/[0-1]/, /\d/, ':', /[0-6]/, /\d/, ' ', /[APap]/, 'M']), _time);
+  var time$1 = (_time = {}, _defineProperty$w(_time, 'hh:mm', [/[0-1-2]/, /\d/, ':', /[0-5]/, /\d/]), _defineProperty$w(_time, 'hh:mm AM', [/[0-1]/, /\d/, ':', /[0-5]/, /\d/, ' ', /[APap]/, 'M']), _time);
 
   var masks = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -1259,7 +1262,8 @@
         className = props.className,
         name = props.name,
         size = props.size,
-        onClick = props.onClick;
+        onClick = props.onClick,
+        children = props.children;
     var baseProps = extractBaseProps(props);
 
     var mapper = function mapper(val) {
@@ -1275,6 +1279,12 @@
       width: "".concat(size, "px")
     }; // change `children` to {name} after migration
 
+    if (children && /*#__PURE__*/React.isValidElement(children)) {
+      return /*#__PURE__*/React.createElement("span", _extends$p({}, baseProps, {
+        className: className
+      }), children);
+    }
+
     return /*#__PURE__*/React.createElement("i", _extends$p({}, baseProps, {
       className: iconClass,
       style: styles,
@@ -1283,7 +1293,6 @@
   };
   Icon.displayName = 'Icon';
   Icon.defaultProps = {
-    appearance: 'default',
     size: 16
   };
 
@@ -4246,13 +4255,13 @@
     var init = state.init,
         date = state.date,
         error = state.error;
+    var _inputOptions$placeho = inputOptions.placeholderChar,
+        placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho;
 
     var onChangeHandler = function onChangeHandler(_e, val) {
       setState({
         open: true
       });
-      var _inputOptions$placeho = inputOptions.placeholderChar,
-          placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho;
 
       if (val && !val.includes(placeholderChar)) {
         var d = translateToDate(inputFormat, val, validators);
@@ -4262,15 +4271,10 @@
       }
     };
 
-    var onFocusHandler = function onFocusHandler() {
+    var onBlurHandler = function onBlurHandler(_e, val) {
       setState({
         init: true
       });
-    };
-
-    var onBlurHandler = function onBlurHandler(_e, val) {
-      var _inputOptions$placeho2 = inputOptions.placeholderChar,
-          placeholderChar = _inputOptions$placeho2 === void 0 ? '_' : _inputOptions$placeho2;
 
       if (!val || val.includes(placeholderChar)) {
         setState({
@@ -4286,25 +4290,28 @@
       });
     };
 
-    var showError = inputOptions.required && error && init;
+    var showError = inputOptions.error || inputOptions.required && error && init;
+    var errorMessage = inputOptions.caption === undefined ? 'Invalid value' : inputOptions.caption;
 
     var inputValidator = function inputValidator(val) {
       return isValid(validators, val, inputFormat);
     };
 
+    var mask = date$2[inputFormat];
     return /*#__PURE__*/React.createElement(InputMask, _extends$p({
       icon: "events",
       placeholder: inputFormat
     }, inputOptions, {
       error: showError,
-      mask: date$2[inputFormat],
-      value: date ? translateToString(inputFormat, date) : '',
+      mask: mask,
+      value: date ? translateToString(inputFormat, date) // @ts-ignore
+      : init ? InputMask.utils.getDefaultValue(mask, placeholderChar) : '',
       onChange: onChangeHandler,
-      onFocus: onFocusHandler,
       onBlur: onBlurHandler,
       onClear: onClearHandler,
-      caption: showError ? inputOptions.caption || 'Invalid value' : '',
-      validators: [inputValidator]
+      caption: showError ? errorMessage : '',
+      validators: [inputValidator],
+      clearOnEmptyBlur: false
     }));
   };
 
@@ -4506,39 +4513,65 @@
         time = _React$useState2[0],
         setTime = _React$useState2[1];
 
+    var _React$useState3 = React.useState(false),
+        _React$useState4 = _slicedToArray$6(_React$useState3, 2),
+        init = _React$useState4[0],
+        setInit = _React$useState4[1];
+
+    var _inputOptions$placeho = inputOptions.placeholderChar,
+        placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho;
     React.useEffect(function () {
-      setTime(timeProp);
+      var timeStr = translateToTime(inputFormat, time);
+      var updatedTime = timeProp === undefined && timeStr.includes(placeholderChar) ? time : timeProp;
+      setTime(updatedTime);
     }, [timeProp]);
 
-    var onChangeHandler = function onChangeHandler(_e, val) {
+    var onChangeHandler = function onChangeHandler(e) {
+      var val = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
       var updatedTime = val === null || val === void 0 ? void 0 : val.toUpperCase();
-      var _inputOptions$placeho = inputOptions.placeholderChar,
-          placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho;
       setTime(updatedTime);
 
-      if (onTimeChange) {
-        var outputTimeStr = updatedTime && !updatedTime.includes(placeholderChar) ? getOutputTimeString(inputFormat, outputFormat, updatedTime) : undefined;
-        onTimeChange(outputTimeStr);
+      if (inputOptions.onChange) {
+        inputOptions.onChange(e, val);
       }
     };
 
-    var onClearHandler = function onClearHandler() {
-      if (onTimeChange) onTimeChange(undefined);
+    var onBlurHandler = function onBlurHandler(e) {
+      var val = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+      var updatedTime = translateToTime(inputFormat, time);
+      setInit(true);
+
+      if (onTimeChange) {
+        var outputTimeStr = updatedTime && !isPlaceholderPresent(placeholderChar, updatedTime) ? getOutputTimeString(inputFormat, outputFormat, updatedTime) : undefined;
+        onTimeChange(outputTimeStr);
+      }
+
+      if (inputOptions.onBlur) inputOptions.onBlur(e, val);
+    };
+
+    var onClearHandler = function onClearHandler(e) {
+      var updatedTime = '';
+      setInit(true);
+      if (onTimeChange) onTimeChange(updatedTime);
+      if (inputOptions.onClear) inputOptions.onClear(e);
     };
 
     var inputValidator = function inputValidator(val) {
       return isValid(validators, val, inputFormat);
     };
 
+    var mask = time$1[inputFormat];
     return /*#__PURE__*/React.createElement(InputMask, _extends$p({
       placeholder: placeholders[inputFormat],
-      placeholderChar: "_"
+      placeholderChar: placeholderChar
     }, inputOptions, {
-      mask: time$1[inputFormat],
-      value: translateToTime(inputFormat, time),
+      mask: mask,
+      value: time ? translateToTime(inputFormat, time) // @ts-ignore
+      : init ? InputMask.utils.getDefaultValue(mask, placeholderChar) : '',
       validators: inputValidator,
       onChange: onChangeHandler,
-      onClear: onClearHandler
+      onClear: onClearHandler,
+      onBlur: onBlurHandler
     }));
   };
   TimePicker.defaultProps = {
@@ -33102,6 +33135,8 @@
         placeholderChar = _props$placeholderCha === void 0 ? '_' : _props$placeholderCha,
         _props$validators = props.validators,
         validators = _props$validators === void 0 ? [] : _props$validators,
+        _props$clearOnEmptyBl = props.clearOnEmptyBlur,
+        clearOnEmptyBlur = _props$clearOnEmptyBl === void 0 ? true : _props$clearOnEmptyBl,
         defaultValue = props.defaultValue,
         mask = props.mask,
         error = props.error,
@@ -33112,7 +33147,7 @@
         onFocus = props.onFocus,
         onClear = props.onClear,
         className = props.className,
-        rest = _objectWithoutProperties$a(props, ["mask", "value", "placeholderChar", "validators", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onFocus", "onClear", "className"]);
+        rest = _objectWithoutProperties$a(props, ["mask", "value", "placeholderChar", "validators", "clearOnEmptyBlur", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onFocus", "onClear", "className"]);
 
     var getNewCursorPosition = function getNewCursorPosition(type, position) {
       if (type === 'right') {
@@ -33293,12 +33328,25 @@
 
     var onBlurHandler = function onBlurHandler(e) {
       var inputVal = e.currentTarget.value;
+
+      if (clearOnEmptyBlur) {
+        if (inputVal === getPlaceholderValue()) {
+          setValue('');
+          inputVal = '';
+        }
+      }
+
       if (onBlur) onBlur(e, inputVal);
       if (deferId.current) window.cancelAnimationFrame(deferId.current);
     };
 
     var onClearHandler = function onClearHandler(e) {
-      setValue('');
+      // setValue('');
+      // window.requestAnimationFrame(() => ref.current!.blur());
+      setValue(getPlaceholderValue());
+      window.requestAnimationFrame(function () {
+        return setCursorPosition(getDefaultSelection().start);
+      });
       if (onClear) onClear(e);
     };
 
@@ -41004,13 +41052,11 @@
       }
     };
 
-    var onFocusHandler = function onFocusHandler() {
+    var onBlurHandler = function onBlurHandler(_e, val, type) {
       setState({
         init: true
       });
-    };
 
-    var onBlurHandler = function onBlurHandler(_e, val, type) {
       if (type === 'start') {
         var _startInputOptions$pl = startInputOptions.placeholderChar,
             placeholderChar = _startInputOptions$pl === void 0 ? '_' : _startInputOptions$pl;
@@ -41030,9 +41076,12 @@
     };
 
     var onClearHandler = function onClearHandler(type) {
+      setState({
+        init: true
+      });
+
       if (type === 'start') {
         setState({
-          init: true,
           startDate: undefined
         });
         updateNav('end');
@@ -41040,7 +41089,6 @@
 
       if (type === 'end') {
         setState({
-          init: true,
           endDate: undefined
         });
         updateNav('start');
@@ -41056,8 +41104,12 @@
     };
 
     var mask = date$2[inputFormat];
-    var showStartError = startInputOptions.required && startError && init;
-    var showEndError = endInputOptions.required && endError && init;
+    var startPlaceholderChar = startInputOptions.placeholderChar || '_';
+    var endPlaceholderChar = endInputOptions.placeholderChar || '_';
+    var showStartError = startInputOptions.error || startInputOptions.required && startError && init;
+    var showEndError = endInputOptions.error || endInputOptions.required && endError && init;
+    var startErrorMessage = startInputOptions.caption === undefined ? 'Invalid value' : startInputOptions.caption;
+    var endErrorMessage = endInputOptions.caption === undefined ? 'Invalid value' : endInputOptions.caption;
     var startLabel = startInputOptions.label;
     var endLabel = endInputOptions.label;
 
@@ -41077,8 +41129,8 @@
       placeholder: inputFormat
     }, startInputOptions, {
       mask: mask,
-      value: startDate ? translateToString(inputFormat, startDate) : '',
-      onFocus: onFocusHandler,
+      value: startDate ? translateToString(inputFormat, startDate) // @ts-ignore
+      : init ? InputMask.utils.getDefaultValue(mask, startPlaceholderChar) : '',
       onChange: function onChange(e, val) {
         onChangeHandler(e, val || '', 'start');
       },
@@ -41092,8 +41144,9 @@
         return onClickHandler('start');
       },
       error: showStartError,
-      caption: showStartError ? startInputOptions.caption || 'Invalid value' : '',
-      validators: [inputValidator]
+      caption: showStartError ? startErrorMessage : '',
+      validators: [inputValidator],
+      clearOnEmptyBlur: false
     }))), /*#__PURE__*/React.createElement(Column, {
       size: '6',
       sizeXS: '12',
@@ -41106,7 +41159,8 @@
       placeholder: inputFormat
     }, endInputOptions, {
       mask: mask,
-      value: endDate ? translateToString(inputFormat, endDate) : '',
+      value: endDate ? translateToString(inputFormat, endDate) // @ts-ignore
+      : init ? InputMask.utils.getDefaultValue(mask, endPlaceholderChar) : '',
       onChange: function onChange(e, val) {
         onChangeHandler(e, val || '', 'end');
       },
@@ -41120,8 +41174,9 @@
         return onClickHandler('end');
       },
       error: showEndError,
-      caption: showEndError ? endInputOptions.caption || 'Invalid value' : '',
-      validators: [inputValidator]
+      caption: showEndError ? endErrorMessage : '',
+      validators: [inputValidator],
+      clearOnEmptyBlur: false
     }))));
   };
 
@@ -41139,7 +41194,8 @@
         startError = state.startError,
         endError = state.endError;
     var mask = rangeDate[inputFormat];
-    var showError = inputOptions.required && (startError || endError) && init;
+    var showError = inputOptions.error || inputOptions.required && (startError || endError) && init;
+    var errorMessage = inputOptions.caption === undefined ? 'Invalid value' : inputOptions.caption;
     var label = inputOptions.label;
     var _inputOptions$placeho = inputOptions.placeholderChar,
         placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho; // @ts-ignore
@@ -41205,13 +41261,10 @@
       });
     };
 
-    var onFocusHandler = function onFocusHandler() {
+    var onBlurHandler = function onBlurHandler(_e, val) {
       setState({
         init: true
       });
-    };
-
-    var onBlurHandler = function onBlurHandler(_e, val) {
       var date = val.split(' - ');
       var startVal = date[0];
       var endVal = date[1];
@@ -41242,7 +41295,6 @@
     }, inputOptions, {
       mask: mask,
       value: !startDate && !endDate && !init ? undefined : "".concat(sValue, " - ").concat(eValue),
-      onFocus: onFocusHandler,
       onChange: function onChange(e, val) {
         onChangeHandler(e, val || '');
       },
@@ -41251,8 +41303,9 @@
       },
       onClear: onClearHandler,
       error: showError,
-      caption: showError ? inputOptions.caption || 'Invalid value' : '',
-      validators: [inputValidator]
+      caption: showError ? errorMessage : '',
+      validators: [inputValidator],
+      clearOnEmptyBlur: false
     }))));
   };
 
@@ -41729,6 +41782,21 @@
   };
   Tab.displayName = 'Tab';
 
+  var FileUploaderFormat = function FileUploaderFormat(props) {
+    var formatLabel = props.formatLabel;
+
+    if (formatLabel) {
+      return /*#__PURE__*/React.createElement(Text$1, {
+        size: "small",
+        appearance: "subtle",
+        className: "mt-4"
+      }, formatLabel);
+    }
+
+    return null;
+  };
+  FileUploaderFormat.displayName = 'FileUploaderFormat';
+
   var FileUploaderButton = function FileUploaderButton(props) {
     var accept = props.accept,
         multiple = props.multiple,
@@ -41784,18 +41852,16 @@
     var FileUploaderClass = classnames(_defineProperty$w({}, 'FileUploader', true), className);
     return /*#__PURE__*/React.createElement("div", _extends$p({}, baseProps, {
       className: FileUploaderClass
-    }), title && /*#__PURE__*/React.createElement(Text$1, {
+    }), /*#__PURE__*/React.createElement(Text$1, {
       weight: "medium"
-    }, title), formatLabel && /*#__PURE__*/React.createElement(Text$1, {
-      size: "small",
-      appearance: "subtle",
-      className: "mt-4"
-    }, formatLabel), sizeLabel && /*#__PURE__*/React.createElement(Text$1, {
+    }, title), /*#__PURE__*/React.createElement(FileUploaderFormat, {
+      formatLabel: formatLabel
+    }), /*#__PURE__*/React.createElement(Text$1, {
       size: "small",
       appearance: "subtle",
       className: !formatLabel ? 'mt-4' : ''
     }, sizeLabel), sampleFileLink && /*#__PURE__*/React.createElement("div", {
-      className: "FileUploader-link"
+      className: "mt-4"
     }, sampleFileLink), /*#__PURE__*/React.createElement(FileUploaderButton, {
       id: id,
       name: name,
@@ -41809,8 +41875,7 @@
   };
   FileUploader.defaultProps = Object.assign({}, FileUploaderButton.defaultProps, {
     title: 'Upload files',
-    sizeLabel: 'Maximum size: 25 MB',
-    fileNames: []
+    sizeLabel: 'Maximum size: 25 MB'
   });
   FileUploader.displayName = 'FileUploader';
 
@@ -44283,7 +44348,7 @@
     separator: true
   };
 
-  var version = "1.7.0-1";
+  var version = "1.7.0-2";
 
   exports.Avatar = Avatar;
   exports.AvatarGroup = AvatarGroup;

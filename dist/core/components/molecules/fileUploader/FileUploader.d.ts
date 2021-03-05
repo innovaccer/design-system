@@ -1,8 +1,8 @@
+import { FileUploaderFormatProps } from "./FileUploaderFormat";
 import { FileUploaderButtonProps } from "./FileUploaderButton";
 import { BaseProps } from "../../../utils/types";
-export interface FileUploaderProps extends FileUploaderButtonProps, BaseProps {
+export interface FileUploaderProps extends FileUploaderButtonProps, FileUploaderFormatProps, BaseProps {
     title: string;
-    formatLabel?: string;
     sizeLabel: string;
     sampleFileLink?: JSX.Element;
 }
@@ -15,7 +15,6 @@ export declare const FileUploader: {
     } & {
         title: string;
         sizeLabel: string;
-        fileNames: never[];
     };
     displayName: string;
 };

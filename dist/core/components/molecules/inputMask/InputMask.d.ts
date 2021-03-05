@@ -9,6 +9,7 @@ export interface MaskProps extends BaseProps {
     onChange?: (e: React.ChangeEvent<HTMLInputElement>, maskedVal: string) => void;
     onBlur?: (e: React.ChangeEvent<HTMLInputElement>, maskedVal: string) => void;
     onClear?: (e: React.MouseEvent<HTMLElement>) => void;
+    clearOnEmptyBlur?: boolean;
 }
 export declare type InputMaskProps = InputProps & MaskProps;
 export declare const InputMask: React.ForwardRefExoticComponent<InputProps & MaskProps & React.RefAttributes<HTMLInputElement>>;

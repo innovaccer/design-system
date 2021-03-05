@@ -3,7 +3,7 @@ import { CalendarProps, SharedProps } from "../calendar/Calendar";
 import { DateType, DateFormat } from "../calendar/types";
 import { InputMaskProps, PopoverProps } from "../../../index.type";
 import { Validators } from "../../../utils/types";
-export declare type InputOptions = Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClick' | 'onClear' | 'error'> & {
+export declare type InputOptions = Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClick' | 'onClear'> & {
     label?: string;
 };
 export declare type DateRangePickerProps = SharedProps & {

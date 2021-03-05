@@ -1,7 +1,7 @@
 import { BaseProps } from "../../../utils/types";
 import { StatusProps, StatusType } from "./Status";
 import { BoxProps } from "./Box";
-import { MessageTextProps } from "./Text";
+import { MessageTextProps } from "./MessageText";
 export declare type MessageType = 'incoming' | 'outgoing';
 export interface SharedProps {
     type: MessageType;

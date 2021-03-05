@@ -5,7 +5,7 @@ export declare type TimeFormat = 'hh:mm AM' | 'hh:mm';
 export declare type TimeType = number | string;
 export interface TimePickerProps {
     time?: TimeType;
-    inputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'validators'>;
+    inputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'validators'>;
     inputFormat: TimeFormat;
     outputFormat: TimeFormat;
     validators: Validators;

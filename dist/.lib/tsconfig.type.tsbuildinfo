@@ -262,8 +262,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/icon/Icon.tsx": {
-        "version": "844ac9783226ad7998f9bd51c7513b68dd6b157f2f1bb37f7e61946cf7968449",
-        "signature": "47145fed42bfd71879429d93b66b4fdc669ea0dc99aed9394f7ed691a49fbb5b",
+        "version": "3744a6815cc5e89f2fb5e35766d8ac63cd9e04ea679ecb7220349240ef3d3233",
+        "signature": "c5688b296e29986542141c685246c79bd0b6bf3d2f1df3058f1aca7654a349ea",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/icon/index.tsx": {
@@ -502,13 +502,13 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/datePicker/Trigger.tsx": {
-        "version": "ad8c9a3c18896f0e8f472395b7dc4d8256fd87d239bd89bdc108e44bf96a62e0",
+        "version": "de270b814594acc3d9e610b37a83e9bf35379bc674e2a39f5a6dbbfd48eebdd1",
         "signature": "772d91f645ba2cb9f7298e7cc7749a50e7df28ce240e6d6c8765d83f20bdfd32",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/datePicker/DatePicker.tsx": {
-        "version": "07eddb3945c77f69b26555e071f1c7d0008234149024df07f33c322eb75c1808",
-        "signature": "fa3496ad9809287e3f767aeb620a4e6ad2dfd1e8d5d260c5aa00fc9eb53dcfdd",
+        "version": "4c4fb5f3c36595dea6c04f66a641526d867384da078f7ac00860e015b8d2ad2e",
+        "signature": "92eacffa4f4a88c10ff374a48302125c3867f570ef0e380ca16ddcd483e50a0e",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/datePicker/index.tsx": {
@@ -562,8 +562,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/inputMask/InputMask.tsx": {
-        "version": "587a4d25a0974b5d3e12323e64bddd4b9313489dd1937e2ffc1781ad177d1c82",
-        "signature": "b459017c579da738bfa5cc7476f51d8cbc47ac177bcd3d35472d9e6f1d6097b1",
+        "version": "14445f03f7faac7ae39f9ca5b2eb9e20e38ddf2fc4f8cb73fcbcedf3a1a1a9e4",
+        "signature": "d33f3b757baff8ee90273e50bc6220b041e6ffbd07521e1fcddb009143efee6f",
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/inputMask/index.tsx": {
@@ -821,14 +821,14 @@
         "signature": "94d5c3d1aef918fcebabcff3e0f7cc705d17f1aaa7ee2ac8065b4c5eaeff79a5",
         "affectsGlobalScope": false
       },
-      "../../core/components/molecules/chatMessage/Text.tsx": {
+      "../../core/components/molecules/chatMessage/MessageText.tsx": {
         "version": "71f9b05852acbf56828b49962381548741d641c6614a0a423b01ebea80a9d81d",
         "signature": "21944d0c0932443dfc672e4b475132235704038c6d30fe39826df323df563238",
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/chatMessage/ChatMessage.tsx": {
-        "version": "4f03f90b89338f72138c9b1c790cd24e10ab54aeac53e728752bb7559b0fafb7",
-        "signature": "e4a6d9aba380384eb888f6022557ab59e1f7e86eb9ef009377693b64c64d1812",
+        "version": "73ced846e9919e7090c6dbb69d23ed7f0d4335eee2d9b91c0b02ed76bbea3e81",
+        "signature": "e05a8025ec3ebb1e98018ec67d27e64eaad388f2129ec95d3ccf34516e505ac6",
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/chatMessage/index.tsx": {
@@ -1017,12 +1017,12 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/dateRangePicker/Trigger.tsx": {
-        "version": "0d36b0a18a880bc7e02fef7e6f5bfd8bb0905d265485720bc448e853cfd82858",
+        "version": "0527e5b04816601c12ca0824cfd5ef9ea94d54aa2d1dc2d54ef5857d1ee77651",
         "signature": "8fb63e48afc23facf041aca8ebad538ec833649c1cb291890b8a7edb55a9b10c",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/dateRangePicker/SingleInputTrigger.tsx": {
-        "version": "041b41f9fe649e6261808350bfbfe6ce5fda975273341276a3c1ba020f8f16fc",
+        "version": "954d9984844d494d8b07e1ca8f99f04561140e211fc3f02ce2c2254101102722",
         "signature": "52e4e6fe9fd5d633812a50a1d0e4f4b07a343308ae3ce85e664cf1aa38566fa5",
         "affectsGlobalScope": false
       },
@@ -1032,8 +1032,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/dateRangePicker/DateRangePicker.tsx": {
-        "version": "67d5ea539a70fa2be690c5ec324e1a13144f3bcad17e0f29817a869baca84996",
-        "signature": "ee9773bd717f3f608016f9c583b75d8353b3863ace9a3bb9245f3b0cf9aac6b4",
+        "version": "177a3211348b82a52b6061786be724131048d0cb212ce57e8636d47d744de718",
+        "signature": "b7d9b57cc3d47f4626c238cd49cd31ffc4e2f0798863964653f9add55e24d1fd",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/dateRangePicker/index.tsx": {
@@ -1056,14 +1056,19 @@
         "signature": "b94bb6760f63f338c497a725d3adc4ab28d202e3c2c6f0bed7bb69647ed79259",
         "affectsGlobalScope": false
       },
+      "../../core/components/molecules/fileUploader/FileUploaderFormat.tsx": {
+        "version": "bf28a5129df786b83ac0143ea96ff114bdd7dd8694aa80a31e396bbe89dc05e4",
+        "signature": "6832076fdd5655a53a7ea8cf07b541b2f6511fa5085d3e4a993a4f6a45497e8d",
+        "affectsGlobalScope": false
+      },
       "../../core/components/molecules/fileUploader/FileUploaderButton.tsx": {
         "version": "e865aac3eafeece8bd32d10691e4cb4ee1c0391db576f18336149b325e67244b",
         "signature": "5e1bdd5443610aa5e3df574ff01a90c1f98da6353fd0ae779ba68555efff7b21",
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/fileUploader/FileUploader.tsx": {
-        "version": "2685992167341c26e9c3675c62ee0d42ca253b9de3ebe4987a493749acd02b88",
-        "signature": "e1c5bcc407006ac0e4d5d9795c4f460c56e82fd1223289664e8303d8f4ef0f16",
+        "version": "8f12b90acd8b898853e8fdf056be8437a5f92af0c901a98d18650a849f7b4291",
+        "signature": "31002352deea9bad883236c2956ea4fe415f15cc8ad5db8f859e0eef9e2bf556",
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/fileUploader/FileUploaderStatus.tsx": {
@@ -1072,12 +1077,12 @@
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/fileUploader/FileUploaderItem.tsx": {
-        "version": "21c3ace743b6a7cc2c20d1ab12df1607ed2ba775574ed5474e52538b1f1325a7",
+        "version": "3b447235516a8114f72eaf0fc982a8c1b3e78ecba608a2f62ab55df5285454cb",
         "signature": "1678e32b8280cc970a1c9c965af472b5cff9932b03b12d8f0d005dae74ef2d3a",
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/fileUploader/FileUploaderList.tsx": {
-        "version": "14474c61075ff5d0b954c901f48fbff20f12dd7a897d8824c5cb5c9da1a77d09",
+        "version": "b4d0987cab94a7342278c51a2dbbea98cdd423825ef60256c703f6e6a8517956",
         "signature": "b336932bd934aa1fc252d507e7ce155b9463d8288525de20626fd116cdb8cc82",
         "affectsGlobalScope": false
       },
@@ -1202,13 +1207,13 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/timePicker/TimePicker.tsx": {
-        "version": "e5823e41d5352dde43b223efb57ab80e947208fca6b07c17931ef2c4f2613ecb",
-        "signature": "9122a93b6d234bfbadf6fcec65497fdc1b465fc50e2557d295201bbb3d287ad2",
+        "version": "0445a63352526c339b9a2d159e32d2ffa4c632b45f6b38fb759cb3981d0100e8",
+        "signature": "a107e81df09a2318c2cb1c5a6386523fd0451ca5a46922afd4e54d7d89dc5923",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/timePicker/utils.tsx": {
-        "version": "e6c14293cc07379bf2a9702f678de7277b92bd43d0ed6dfd7432bb360aaaee1a",
-        "signature": "ff21acac0b1e0c79d4d6caa860084f83de73078ffc5b553f3b397ba4d5d8a09b",
+        "version": "b6d7ddb7acb0464b432c5a7fb94995f4023f863b4548eeb1dc94086f34ce3621",
+        "signature": "0977367935ba3f5bd7c6cffaf7078fb939c61d9ebe17c76aa68a372ffe113eac",
         "affectsGlobalScope": false
       },
       "../../core/utils/validators.ts": {
@@ -1217,7 +1222,7 @@
         "affectsGlobalScope": false
       },
       "../../core/utils/masks.ts": {
-        "version": "4708c4784ecd96e4371c10c1f670877af2b661d2892dc67c3f57164ea53c4469",
+        "version": "1fd1cfc5451ddc11c9775abafaea1dcdfe818f9022981b52566c644036e6b9c8",
         "signature": "cf1866499032299b8faae9efa5cdde48086c6c10a11feeede3f38d6fc791451d",
         "affectsGlobalScope": false
       },
@@ -3326,6 +3331,9 @@
           "*",
           "*",
           "*",
+          "*",
+          "*",
+          "*",
           "*"
         ]
       },
@@ -3993,8 +4001,14 @@
       ],
       "../../core/components/molecules/chatMessage/ChatMessage.tsx": [
         "../../core/components/molecules/chatMessage/Box.tsx",
+        "../../core/components/molecules/chatMessage/MessageText.tsx",
         "../../core/components/molecules/chatMessage/Status.tsx",
-        "../../core/components/molecules/chatMessage/Text.tsx",
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/molecules/chatMessage/MessageText.tsx": [
+        "../../core/components/molecules/chatMessage/ChatMessage.tsx",
+        "../../core/index.tsx",
         "../../core/utils/types.tsx",
         "../../node_modules/@types/react/index.d.ts"
       ],
@@ -4002,12 +4016,6 @@
         "../../core/index.tsx",
         "../../core/utils/types.tsx",
         "../../node_modules/@types/classnames/index.d.ts",
-        "../../node_modules/@types/react/index.d.ts"
-      ],
-      "../../core/components/molecules/chatMessage/Text.tsx": [
-        "../../core/components/molecules/chatMessage/ChatMessage.tsx",
-        "../../core/index.tsx",
-        "../../core/utils/types.tsx",
         "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/components/molecules/chatMessage/index.tsx": [
@@ -4056,6 +4064,7 @@
       ],
       "../../core/components/molecules/fileUploader/FileUploader.tsx": [
         "../../core/components/molecules/fileUploader/FileUploaderButton.tsx",
+        "../../core/components/molecules/fileUploader/FileUploaderFormat.tsx",
         "../../core/index.tsx",
         "../../core/utils/types.tsx",
         "../../node_modules/@types/classnames/index.d.ts",
@@ -4065,6 +4074,10 @@
         "../../core/index.tsx",
         "../../core/utils/types.tsx",
         "../../node_modules/@types/classnames/index.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/molecules/fileUploader/FileUploaderFormat.tsx": [
+        "../../core/index.tsx",
         "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/components/molecules/fileUploader/FileUploaderItem.tsx": [
@@ -6442,8 +6455,8 @@
       "../../core/components/molecules/buttonGroup/SplitButton.story.tsx",
       "../../core/components/molecules/chatMessage/Box.tsx",
       "../../core/components/molecules/chatMessage/ChatMessage.tsx",
+      "../../core/components/molecules/chatMessage/MessageText.tsx",
       "../../core/components/molecules/chatMessage/Status.tsx",
-      "../../core/components/molecules/chatMessage/Text.tsx",
       "../../core/components/molecules/chatMessage/index.tsx",
       "../../core/components/molecules/dialog/Dialog.tsx",
       "../../core/components/molecules/dialog/index.tsx",
@@ -6455,6 +6468,7 @@
       "../../core/components/molecules/emptyState/index.tsx",
       "../../core/components/molecules/fileUploader/FileUploader.tsx",
       "../../core/components/molecules/fileUploader/FileUploaderButton.tsx",
+      "../../core/components/molecules/fileUploader/FileUploaderFormat.tsx",
       "../../core/components/molecules/fileUploader/FileUploaderItem.tsx",
       "../../core/components/molecules/fileUploader/FileUploaderList.tsx",
       "../../core/components/molecules/fileUploader/FileUploaderStatus.tsx",

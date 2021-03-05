@@ -11,7 +11,7 @@ export declare type DatePickerProps = SharedProps & {
     position: PopoverProps['position'];
     inputFormat: DateFormat;
     outputFormat: DateFormat;
-    inputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClear' | 'error'>;
+    inputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClear'>;
     validators: Validators;
     closeOnSelect: boolean;
 };

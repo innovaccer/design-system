@@ -2058,11 +2058,6 @@ body {
   flex-direction: column;
 }
 
-.FileUploader-link {
-  font-size: var(--font-size-s) !important;
-  margin-top: var(--spacing);
-}
-
 .FileUploaderButton {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -4077,6 +4072,7 @@ body {
 }
 
 .StatusHint-icon {
+    flex-shrink: 0;
     border-radius: 50%;
     height: var(--spacing);
     width: var(--spacing);
