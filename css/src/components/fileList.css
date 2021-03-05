@@ -44,9 +44,7 @@
 .FileItem-error {
     margin-left: 40px;
 }
-.FileList {
-    width: 320px;
-}
+
 .FileIcon--image {
     background: var(--alert-lightest);
     color: var(--alert);
