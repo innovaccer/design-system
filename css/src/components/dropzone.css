@@ -1,0 +1,111 @@
+.Dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: var(--spacing-m);
+  width: 100%;
+  background-image:
+  linear-gradient(to right,var(--secondary) 50%, rgba(255, 255, 255, 0) 0%), 
+  linear-gradient(var(--secondary) 50%,rgba(255, 255, 255, 0) 0%),
+  linear-gradient(to right, var(--secondary) 50%,rgba(255, 255, 255, 0) 0%),
+  linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: top, right, bottom, left;
+  background-repeat: repeat-x, repeat-y;
+  background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+}
+
+.Dropzone--active {
+  background: var(--primary-lightest);
+  background-image: 
+  linear-gradient(to right,var(--primary) 50%, rgba(255, 255, 255, 0) 0%), 
+  linear-gradient(var(--primary) 50%,rgba(255, 255, 255, 0) 0%),
+  linear-gradient(to right, var(--primary) 50%,rgba(255, 255, 255, 0) 0%),
+  linear-gradient(var(--primary) 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: top, right, bottom, left;
+  background-repeat: repeat-x, repeat-y;
+  background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+}
+
+.Dropzone--error {
+  background: var(--alert-lightest);
+  background-image: 
+  linear-gradient(to right,var(--alert) 50%, rgba(255, 255, 255, 0) 0%), 
+  linear-gradient(var(--alert) 50%,rgba(255, 255, 255, 0) 0%),
+  linear-gradient(to right, var(--alert) 50%,rgba(255, 255, 255, 0) 0%),
+  linear-gradient(var(--alert) 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: top, right, bottom, left;
+  background-repeat: repeat-x, repeat-y;
+  background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+}
+
+.Dropzone--disabled {
+  background: var(--secondary-lightest);
+  background-image: 
+  linear-gradient(to right,var(--secondary) 50%, rgba(255, 255, 255, 0) 0%), 
+  linear-gradient(var(--secondary) 50%,rgba(255, 255, 255, 0) 0%),
+  linear-gradient(to right, var(--secondary) 50%,rgba(255, 255, 255, 0) 0%),
+  linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: top, right, bottom, left;
+  background-repeat: repeat-x, repeat-y;
+  background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+}
+
+.Dropzone--standard {
+  flex-direction: column;
+  height: 196px;
+}
+
+.Dropzone--compressed {
+  flex-direction: row;
+  height: 124px;
+}
+
+.Dropzone--tight {
+  height: 124px;
+}
+
+.DropzoneWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.DropzoneWrapper--standard,
+.DropzoneWrapper--tight {
+  align-items: center;
+}
+
+.DropzoneWrapper--compressed {
+  align-items: start;
+}
+
+.Dropzone-icon {
+  color: var(--inverse-lighter);
+}
+
+.Dropzone-icon--standard {
+  margin-bottom: var(--spacing-l);
+}
+
+.Dropzone-icon--compressed {
+  margin-right: var(--spacing-xl);
+}
+
+.Dropzone-icon--disabled {
+  color: var(--inverse-lightest);
+}
+
+.Dropzone-stateIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Dropzone-stateIcon--standard {
+  margin-bottom: var(--spacing-2);
+}
+
+.Dropzone-stateIcon--compressed {
+  margin-right: var(--spacing-2);
+}
