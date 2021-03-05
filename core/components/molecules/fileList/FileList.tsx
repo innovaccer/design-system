@@ -9,7 +9,6 @@ export interface FileListProps extends BaseProps {
    * FileItem:
    * {
    *    file: File;
-   *    id?: any;
    *    status: FileStatus;
    *    progress: number;
    *    icon: IconOptions
@@ -19,7 +18,6 @@ export interface FileListProps extends BaseProps {
    * | Name | Description | Default |
    * | --- | --- | --- |
    * | file | Attached file | |
-   * | id | Unique id/index of file | |
    * | status | Status of file | 'completed' |
    * | progress | Progress percent of `Progress Ring` | 0 |
    * | icon | Name of the icon to be rendered |

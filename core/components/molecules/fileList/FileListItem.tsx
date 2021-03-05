@@ -30,10 +30,6 @@ export interface FileListItemProps extends BaseProps, Record<string, any> {
    */
   file: File | FileObject;
   /**
-   * Unique id/index of file
-   */
-  id?: any;
-  /**
    * Status of file
    *
    * FileStatus: 'uploading' | 'completed' | 'error'
