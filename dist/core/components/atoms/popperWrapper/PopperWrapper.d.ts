@@ -571,11 +571,6 @@ export declare class PopperWrapper extends React.Component<PopperWrapperProps, P
         msWrapMargin?: string | number | undefined;
         msWrapThrough?: "wrap" | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "none" | undefined;
         msWritingMode?: "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "horizontal-tb" | "sideways-lr" | "sideways-rl" | "vertical-lr" | "vertical-rl" | undefined;
-        OObjectFit?: "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "none" | "fill" | "contain" | "cover" | "scale-down" | undefined;
-        OObjectPosition?: string | number | (string & {}) | undefined;
-        OTabSize?: string | number | (number & {}) | undefined;
-        OTextOverflow?: (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "clip" | "ellipsis" | undefined;
-        OTransformOrigin?: string | number | (string & {}) | undefined;
         WebkitAlignContent?: "start" | (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "end" | "center" | "space-around" | "space-between" | "space-evenly" | "stretch" | "flex-end" | "flex-start" | "baseline" | "normal" | undefined;
         WebkitAlignItems?: "start" | (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "end" | "center" | "stretch" | "flex-end" | "flex-start" | "baseline" | "normal" | "self-end" | "self-start" | undefined;
         WebkitAlignSelf?: "start" | (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "auto" | "end" | "center" | "stretch" | "flex-end" | "flex-start" | "baseline" | "normal" | "self-end" | "self-start" | undefined;
@@ -631,6 +626,11 @@ export declare class PopperWrapper extends React.Component<PopperWrapperProps, P
         WebkitMarginEnd?: string | number | (string & {}) | undefined;
         WebkitMarginStart?: string | number | (string & {}) | undefined;
         WebkitMaskAttachment?: "fixed" | (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "scroll" | "local" | undefined;
+        WebkitMaskBoxImageOutset?: string | number | (string & {}) | (number & {}) | undefined;
+        WebkitMaskBoxImageRepeat?: "repeat" | (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "round" | "space" | "stretch" | undefined;
+        WebkitMaskBoxImageSlice?: (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | (number & {}) | undefined;
+        WebkitMaskBoxImageSource?: (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "none" | undefined;
+        WebkitMaskBoxImageWidth?: string | number | (string & {}) | (number & {}) | undefined;
         WebkitMaskClip?: "content" | "text" | (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "border-box" | "content-box" | "padding-box" | "border" | "padding" | undefined;
         WebkitMaskComposite?: (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "copy" | "clear" | "destination-atop" | "destination-in" | "destination-out" | "destination-over" | "source-atop" | "source-in" | "source-out" | "source-over" | "xor" | undefined;
         WebkitMaskImage?: (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "none" | undefined;
@@ -700,6 +700,7 @@ export declare class PopperWrapper extends React.Component<PopperWrapperProps, P
         WebkitFlex?: string | number | (string & {}) | (number & {}) | undefined;
         WebkitFlexFlow?: "wrap" | (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "column" | "column-reverse" | "row" | "row-reverse" | "nowrap" | "wrap-reverse" | undefined;
         WebkitMask?: string | number | (string & {}) | undefined;
+        WebkitMaskBoxImage?: "repeat" | (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "none" | "round" | (number & {}) | "space" | "stretch" | "alpha" | "luminance" | undefined;
         WebkitTextEmphasis?: "open" | "circle" | "white" | (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "aliceblue" | "antiquewhite" | "aqua" | "aquamarine" | "azure" | "beige" | "bisque" | "black" | "blanchedalmond" | "blue" | "blueviolet" | "brown" | "burlywood" | "cadetblue" | "chartreuse" | "chocolate" | "coral" | "cornflowerblue" | "cornsilk" | "crimson" | "cyan" | "darkblue" | "darkcyan" | "darkgoldenrod" | "darkgray" | "darkgreen" | "darkgrey" | "darkkhaki" | "darkmagenta" | "darkolivegreen" | "darkorange" | "darkorchid" | "darkred" | "darksalmon" | "darkseagreen" | "darkslateblue" | "darkslategray" | "darkslategrey" | "darkturquoise" | "darkviolet" | "deeppink" | "deepskyblue" | "dimgray" | "dimgrey" | "dodgerblue" | "firebrick" | "floralwhite" | "forestgreen" | "fuchsia" | "gainsboro" | "ghostwhite" | "gold" | "goldenrod" | "gray" | "green" | "greenyellow" | "grey" | "honeydew" | "hotpink" | "indianred" | "indigo" | "ivory" | "khaki" | "lavender" | "lavenderblush" | "lawngreen" | "lemonchiffon" | "lightblue" | "lightcoral" | "lightcyan" | "lightgoldenrodyellow" | "lightgray" | "lightgreen" | "lightgrey" | "lightpink" | "lightsalmon" | "lightseagreen" | "lightskyblue" | "lightslategray" | "lightslategrey" | "lightsteelblue" | "lightyellow" | "lime" | "limegreen" | "linen" | "magenta" | "maroon" | "mediumaquamarine" | "mediumblue" | "mediumorchid" | "mediumpurple" | "mediumseagreen" | "mediumslateblue" | "mediumspringgreen" | "mediumturquoise" | "mediumvioletred" | "midnightblue" | "mintcream" | "mistyrose" | "moccasin" | "navajowhite" | "navy" | "oldlace" | "olive" | "olivedrab" | "orange" | "orangered" | "orchid" | "palegoldenrod" | "palegreen" | "paleturquoise" | "palevioletred" | "papayawhip" | "peachpuff" | "peru" | "pink" | "plum" | "powderblue" | "purple" | "rebeccapurple" | "red" | "rosybrown" | "royalblue" | "saddlebrown" | "salmon" | "sandybrown" | "seagreen" | "seashell" | "sienna" | "silver" | "skyblue" | "slateblue" | "slategray" | "slategrey" | "snow" | "springgreen" | "steelblue" | "tan" | "teal" | "thistle" | "tomato" | "transparent" | "turquoise" | "violet" | "wheat" | "whitesmoke" | "yellow" | "yellowgreen" | "ActiveBorder" | "ActiveCaption" | "AppWorkspace" | "Background" | "ButtonFace" | "ButtonHighlight" | "ButtonShadow" | "ButtonText" | "CaptionText" | "GrayText" | "Highlight" | "HighlightText" | "InactiveBorder" | "InactiveCaption" | "InactiveCaptionText" | "InfoBackground" | "InfoText" | "Menu" | "MenuText" | "Scrollbar" | "ThreeDDarkShadow" | "ThreeDFace" | "ThreeDHighlight" | "ThreeDLightShadow" | "ThreeDShadow" | "Window" | "WindowFrame" | "WindowText" | "currentcolor" | "none" | "filled" | "dot" | "double-circle" | "sesame" | "triangle" | undefined;
         WebkitTextStroke?: string | number | (string & {}) | undefined;
         WebkitTransition?: (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "none" | "all" | "ease" | "ease-in" | "ease-in-out" | "ease-out" | "step-end" | "step-start" | "linear" | undefined;
@@ -790,7 +791,12 @@ export declare class PopperWrapper extends React.Component<PopperWrapperProps, P
         OAnimationTimingFunction?: (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "ease" | "ease-in" | "ease-in-out" | "ease-out" | "step-end" | "step-start" | "linear" | undefined;
         OBackgroundSize?: string | number | (string & {}) | undefined;
         OBorderImage?: "repeat" | (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "none" | "round" | (number & {}) | "space" | "stretch" | undefined;
+        OObjectFit?: "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "none" | "fill" | "contain" | "cover" | "scale-down" | undefined;
+        OObjectPosition?: string | number | (string & {}) | undefined;
+        OTabSize?: string | number | (number & {}) | undefined;
+        OTextOverflow?: (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "clip" | "ellipsis" | undefined;
         OTransform?: (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "none" | undefined;
+        OTransformOrigin?: string | number | (string & {}) | undefined;
         OTransition?: (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | "none" | "all" | "ease" | "ease-in" | "ease-in-out" | "ease-out" | "step-end" | "step-start" | "linear" | undefined;
         OTransitionDelay?: (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | undefined;
         OTransitionDuration?: (string & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | undefined;

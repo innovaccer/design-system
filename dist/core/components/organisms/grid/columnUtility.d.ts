@@ -5,5 +5,5 @@ export declare const resizeCol: (_this: Grid, name: string, el: HTMLDivElement |
 export declare function sortColumn(this: Grid, name: ColumnSchema['name'], type: SortType): void;
 export declare function pinColumn(this: Grid, name: ColumnSchema['name'], type: Pinned): void;
 export declare function hideColumn(this: Grid, name: ColumnSchema['name'], value: boolean): void;
-export declare function getWidth(this: Grid, width: React.ReactText): number;
+export declare function getWidth(this: Grid, width: React.ReactText): import("react").ReactText;
 export declare function getCellSize(cellType: CellType): any;

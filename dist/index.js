@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1614003598239 
+   * Generated on: 1614934629550 
    *      Package: @innovaccer/design-system
-   *      Version: v1.7.0-0
+   *      Version: v1.7.0-1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -28,9 +28,9 @@
         colorToHex: colorToHex
     });
 
-    var _a;
+    var _a$2;
 
-    var placeholders = (_a = {}, _a['hh:mm'] = '--:--', _a['hh:mm AM'] = '--:-- AM', _a);
+    var placeholders = (_a$2 = {}, _a$2['hh:mm'] = '--:--', _a$2['hh:mm AM'] = '--:-- AM', _a$2);
     var isFormat12hour = function isFormat12hour(format) {
       return format === 'hh:mm AM';
     };
@@ -65,7 +65,7 @@
 
       if (typeof time === 'number') {
         var timeObj = getTimeObjectFromNumber(format, time);
-        return translateToString(format, timeObj);
+        return translateToString$1(format, timeObj);
       }
 
       return time;
@@ -125,7 +125,7 @@
 
       var AMPM = isFormat12hour(outputFormat) ? get12hourFormat(hours).AMPM : '';
       var hrs = isFormat12hour(outputFormat) ? get12hourFormat(hours).hrs : get24hourFormat(hours, am_pm);
-      var timeStr = translateToString(outputFormat, {
+      var timeStr = translateToString$1(outputFormat, {
         minutes: minutes,
         hours: hrs,
         am_pm: AMPM
@@ -133,7 +133,7 @@
       return timeStr;
     };
 
-    var translateToString = function translateToString(format, time) {
+    var translateToString$1 = function translateToString(format, time) {
       var hours = time.hours,
           minutes = time.minutes,
           am_pm = time.am_pm;
@@ -170,7 +170,7 @@
         return validator.apply(void 0, value);
       });
     };
-    var date = function date(val, format) {
+    var date$1 = function date(val, format) {
       var validate = function validate(date, month, year) {
         var monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         if (year % 400 == 0 || year % 100 != 0 && year % 4 == 0) monthLength[1] = 29;
@@ -224,7 +224,7 @@
           return false;
       }
     };
-    var time = function time(val, format) {
+    var time$1 = function time(val, format) {
       var _a = getTimeObjFromStr(format, val),
           hours = _a.hours,
           minutes = _a.minutes;
@@ -236,13 +236,13 @@
     var validators = /*#__PURE__*/Object.freeze({
         __proto__: null,
         isValid: isValid,
-        date: date,
-        time: time
+        date: date$1,
+        time: time$1
     });
 
     var _a$1;
 
-    var date$1 = {
+    var date = {
       'dd/mm/yyyy': [/[0123]/, /\d/, '/', /\[01]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
       'mm/dd/yyyy': [/[01]/, /\d/, '/', /[0123]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
       'yyyy/mm/dd': [/\d/, /\d/, /\d/, /\d/, '/', /[01]/, /\d/, '/', /[0123]/, /\d/],
@@ -258,13 +258,13 @@
       'mm-dd-yyyy': [/[01]/, /\d/, '-', /[0123]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, ' ', '-', ' ', /[01]/, /\d/, '-', /[0123]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
       'yyyy-mm-dd': [/\d/, /\d/, /\d/, /\d/, '-', /[01]/, /\d/, '-', /[0123]/, /\d/, ' ', '-', ' ', /\d/, /\d/, /\d/, /\d/, '-', /[01]/, /\d/, '-', /[0123]/, /\d/]
     };
-    var time$1 = (_a$1 = {}, _a$1['hh:mm'] = [/[0-1-2]/, /\d/, ':', /[0-6]/, /\d/], _a$1['hh:mm AM'] = [/[0-1]/, /\d/, ':', /[0-6]/, /\d/, ' ', /[APap]/, 'M'], _a$1);
+    var time = (_a$1 = {}, _a$1['hh:mm'] = [/[0-1-2]/, /\d/, ':', /[0-6]/, /\d/], _a$1['hh:mm AM'] = [/[0-1]/, /\d/, ':', /[0-6]/, /\d/, ' ', /[APap]/, 'M'], _a$1);
 
     var masks = /*#__PURE__*/Object.freeze({
         __proto__: null,
-        date: date$1,
+        date: date,
         rangeDate: rangeDate,
-        time: time$1
+        time: time
     });
 
     var index = /*#__PURE__*/Object.freeze({
@@ -529,12 +529,12 @@
     };
 
     var useEffect = React.useEffect,
-        useState = React.useState;
+        useState$1 = React.useState;
     var Backdrop = function Backdrop(props) {
       var className = props.className;
       var baseProps = extractBaseProps(props);
 
-      var _a = useState(null),
+      var _a = useState$1(null),
           savedBodyOverflow = _a[0],
           setBodyOverflow = _a[1];
 
@@ -785,7 +785,7 @@
         scrollTo(menuElement, focusedElement.offsetTop - overscroll);
       }
     };
-    var getSelectAll = function getSelectAll(selected, optionsLength, disabledOptionsLength) {
+    var getSelectAll$1 = function getSelectAll(selected, optionsLength, disabledOptionsLength) {
       if (selected.length) {
         if (selected.length > 0 && disabledOptionsLength > 0 && selected.length === optionsLength - disabledOptionsLength) {
           return {
@@ -1168,8 +1168,8 @@
       }, label), subInfo && renderSubInfo(subInfo)));
     };
 
-    var _a$2;
-    var OptionTypeMapping = (_a$2 = {}, _a$2['DEFAULT'] = DefaultOption, _a$2['WITH_ICON'] = IconOption, _a$2['WITH_META'] = MetaOption, _a$2['WITH_CHECKBOX'] = CheckboxOption, _a$2['ICON_WITH_META'] = IconWithMetaOption, _a$2);
+    var _a;
+    var OptionTypeMapping = (_a = {}, _a['DEFAULT'] = DefaultOption, _a['WITH_ICON'] = IconOption, _a['WITH_META'] = MetaOption, _a['WITH_CHECKBOX'] = CheckboxOption, _a['ICON_WITH_META'] = IconWithMetaOption, _a);
 
     var Option = function Option(props) {
       var _a, _b, _c, _d;
@@ -1944,7 +1944,7 @@
               previousSelected: init ? selectedGroup : previousSelected,
               selected: _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? selectedGroup : [],
               triggerLabel: _this.updateTriggerLabel(init ? selectedGroup : tempSelected),
-              selectAll: !updatedAsync && init ? getSelectAll(selectedGroup, optionsLength, disabledOptions.length) : selectAll
+              selectAll: !updatedAsync && init ? getSelectAll$1(selectedGroup, optionsLength, disabledOptions.length) : selectAll
             }));
 
             if (updatedAsync || withSearch) (_a = inputRef.current) === null || _a === void 0 ? void 0 : _a.focus();
@@ -1984,7 +1984,7 @@
 
             _this.setState({
               tempSelected: temporarySelected,
-              selectAll: getSelectAll(temporarySelected, optionsLength, disabledOptionsCount),
+              selectAll: getSelectAll$1(temporarySelected, optionsLength, disabledOptionsCount),
               triggerLabel: _this.updateTriggerLabel(temporarySelected)
             });
           }
@@ -2072,7 +2072,7 @@
           _this.setState(__assign(__assign({}, _this.state), {
             tempSelected: selectedArray,
             triggerLabel: _this.updateTriggerLabel(selectedArray),
-            selectAll: getSelectAll(selectedArray, optionsLength, disabledOptions.length),
+            selectAll: getSelectAll$1(selectedArray, optionsLength, disabledOptions.length),
             open: _isOpenControlled(_this.props.open) || withCheckbox ? open : !closeOnSelect,
             previousSelected: updatePreviousSelected ? selectedArray : previousSelected,
             selected: isClearClicked ? selectedArray : selected,
@@ -2235,7 +2235,7 @@
 
           _this.setState(__assign(__assign({}, _this.state), {
             tempSelected: previousSelected,
-            selectAll: getSelectAll(previousSelected, optionsLength, disabledOptions.length),
+            selectAll: getSelectAll$1(previousSelected, optionsLength, disabledOptions.length),
             triggerLabel: label,
             open: popperIsOpen
           }));
@@ -2332,7 +2332,7 @@
           previousSelected: selectedGroup,
           selected: _showSelectedItems(async, '', withCheckbox) ? selected : [],
           triggerLabel: _this.updateTriggerLabel(selectedGroup, optionsLength),
-          selectAll: getSelectAll(selectedGroup, optionsLength, disabledOptions.length)
+          selectAll: getSelectAll$1(selectedGroup, optionsLength, disabledOptions.length)
         };
         return _this;
       }
@@ -2367,7 +2367,7 @@
                 optionsLength: options.length,
                 searchedOptionsLength: options.length,
                 triggerLabel: this.updateTriggerLabel(selectedGroup),
-                selectAll: getSelectAll(selectedGroup, this.state.optionsLength, disabledOptionsCount)
+                selectAll: getSelectAll$1(selectedGroup, this.state.optionsLength, disabledOptionsCount)
               }));
               if (withSearch) (_a = inputRef.current) === null || _a === void 0 ? void 0 : _a.focus();
             }
@@ -2582,7 +2582,7 @@
       size: 'medium'
     };
 
-    var sizeMapping = {
+    var sizeMapping$1 = {
       tiny: 12,
       regular: 16,
       large: 20
@@ -2627,7 +2627,7 @@
       }, /*#__PURE__*/React.createElement(Icon, {
         name: icon,
         appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
-        size: sizeMapping[size]
+        size: sizeMapping$1[size]
       })), children);
     });
     Button.displayName = 'Button';
@@ -3000,7 +3000,7 @@
 
       return false;
     };
-    var translateToString$1 = function translateToString(format, d) {
+    var translateToString = function translateToString(format, d) {
       if (format && d) {
         var _a = getDateInfo(d),
             year_1 = _a.year,
@@ -3829,14 +3829,14 @@
       return Calendar;
     }(React.Component);
 
-    var Trigger = function Trigger(props) {
+    var Trigger$1 = function Trigger(props) {
       var inputFormat = props.inputFormat,
           inputOptions = props.inputOptions,
           validators = props.validators,
           state = props.state,
           setState = props.setState;
       var init = state.init,
-          date = state.date,
+          date$1 = state.date,
           error = state.error;
 
       var onChangeHandler = function onChangeHandler(_e, val) {
@@ -3889,8 +3889,8 @@
         placeholder: inputFormat
       }, inputOptions, {
         error: showError,
-        mask: date$1[inputFormat],
-        value: date ? translateToString$1(inputFormat, date) : '',
+        mask: date[inputFormat],
+        value: date$1 ? translateToString(inputFormat, date$1) : '',
         onChange: onChangeHandler,
         onFocus: onFocusHandler,
         onBlur: onBlurHandler,
@@ -3998,7 +3998,7 @@
 
           if (onDateChange) {
             if (!newError) {
-              var dVal = translateToString$1(outputFormat, date);
+              var dVal = translateToString(outputFormat, date);
               onDateChange(date, dVal);
             } else {
               onDateChange(undefined, '');
@@ -4043,7 +4043,7 @@
 
         if (withInput) {
           return /*#__PURE__*/React.createElement(Popover, {
-            trigger: /*#__PURE__*/React.createElement(Trigger, {
+            trigger: /*#__PURE__*/React.createElement(Trigger$1, {
               inputFormat: inputFormat,
               inputOptions: inputOptions,
               validators: validators,
@@ -4065,7 +4065,7 @@
         position: 'bottom-start',
         inputFormat: 'mm/dd/yyyy',
         outputFormat: 'mm/dd/yyyy',
-        validators: [date],
+        validators: [date$1],
         inputOptions: {},
         closeOnSelect: true
       });
@@ -4081,7 +4081,7 @@
           timeProp = props.time;
 
       var _a = React.useState(timeProp),
-          time = _a[0],
+          time$1 = _a[0],
           setTime = _a[1];
 
       React.useEffect(function () {
@@ -4112,8 +4112,8 @@
         placeholder: placeholders[inputFormat],
         placeholderChar: "_"
       }, inputOptions, {
-        mask: time$1[inputFormat],
-        value: translateToTime(inputFormat, time),
+        mask: time[inputFormat],
+        value: translateToTime(inputFormat, time$1),
         validators: inputValidator,
         onChange: onChangeHandler,
         onClear: onClearHandler
@@ -4123,7 +4123,7 @@
       inputFormat: 'hh:mm AM',
       outputFormat: 'hh:mm AM',
       inputOptions: {},
-      validators: [time]
+      validators: [time$1]
     };
     TimePicker.displayName = 'TimePicker';
 
@@ -4307,7 +4307,7 @@
       colorOfTotalCount: 'success'
     };
 
-    var sizeMapping$1 = {
+    var sizeMapping = {
       tiny: 12,
       regular: 16,
       large: 20
@@ -4362,7 +4362,7 @@
         className: rightIconClass
       }, /*#__PURE__*/React.createElement(Icon, {
         name: 'info',
-        size: sizeMapping$1[size]
+        size: sizeMapping[size]
       }));
       return /*#__PURE__*/React.createElement("div", {
         "data-test": "DesignSystem-InputWrapper",
@@ -4383,7 +4383,7 @@
         className: leftIconClass
       }, /*#__PURE__*/React.createElement(Icon, {
         name: icon,
-        size: sizeMapping$1[size]
+        size: sizeMapping[size]
       })), /*#__PURE__*/React.createElement("input", __assign({
         "data-test": "DesignSystem-Input"
       }, baseProps, rest, {
@@ -4411,7 +4411,7 @@
         }
       }, /*#__PURE__*/React.createElement(Icon, {
         name: 'close',
-        size: sizeMapping$1[size]
+        size: sizeMapping[size]
       })));
     });
     Input.displayName = 'Input';
@@ -6430,7 +6430,7 @@
       return PopperWrapper;
     }(React.Component);
 
-    var propsList = ['appendToBody', 'trigger', 'hoverable', 'on', 'open', 'closeOnBackdropClick', 'offset', 'closeOnScroll'];
+    var propsList$1 = ['appendToBody', 'trigger', 'hoverable', 'on', 'open', 'closeOnBackdropClick', 'offset', 'closeOnScroll'];
     var Popover = function Popover(props) {
       var _a;
 
@@ -6484,7 +6484,7 @@
       }), PopoverWrapper);
     };
     Popover.displayName = 'Popover';
-    Popover.defaultProps = Object.assign({}, filterProps(PopperWrapper.defaultProps, propsList, true), {
+    Popover.defaultProps = Object.assign({}, filterProps(PopperWrapper.defaultProps, propsList$1, true), {
       offset: 'large',
       position: 'bottom',
       hideOnReferenceEscape: true,
@@ -6492,7 +6492,7 @@
       boundaryElement: document.body
     });
 
-    var propsList$1 = ['trigger', 'on', 'open', 'offset', 'onToggle', 'dark', 'customStyle', 'closeOnBackdropClick', 'hideOnReferenceEscape', 'closeOnScroll'];
+    var propsList = ['trigger', 'on', 'open', 'offset', 'onToggle', 'dark', 'customStyle', 'closeOnBackdropClick', 'hideOnReferenceEscape', 'closeOnScroll'];
     var Tooltip = function Tooltip(props) {
       var children = props.children,
           tooltip = props.tooltip,
@@ -6510,7 +6510,7 @@
         offset: 'medium'
       }, rest), tooltipWrapper);
     };
-    Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, propsList$1), {
+    Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, propsList), {
       hoverable: false
     });
 
@@ -6701,13 +6701,13 @@
           className: classes
         }, sizeMap[dimension], {
           ref: this.modalRef
-        }), headerOptions && /*#__PURE__*/React.createElement(ModalHeader$1, __assign({
+        }), headerOptions && /*#__PURE__*/React.createElement(ModalHeader, __assign({
           onClose: function onClose(event, reason) {
             if (_onClose) _onClose(event, reason);
           }
         }, headerOptions)), children && /*#__PURE__*/React.createElement(React.Fragment, null, headerOptions || footer ? /*#__PURE__*/React.createElement(ModalBody, {
           withFooter: !!footer
-        }, children) : children), footer && /*#__PURE__*/React.createElement(ModalFooter$1, {
+        }, children) : children), footer && /*#__PURE__*/React.createElement(ModalFooter, {
           open: open
         }, footer)));
         var ModalWrapper = backdropClose ? /*#__PURE__*/React.createElement(OutsideClick, {
@@ -6726,7 +6726,7 @@
       return Modal;
     }(React.Component);
 
-    var ModalHeader = function ModalHeader(props) {
+    var ModalHeader$1 = function ModalHeader(props) {
       var _a;
 
       var className = props.className,
@@ -6755,9 +6755,9 @@
         className: "mt-2"
       }, subHeading));
     };
-    ModalHeader.displayName = 'ModalHeader';
+    ModalHeader$1.displayName = 'ModalHeader';
 
-    var ModalFooter = function ModalFooter(props) {
+    var ModalFooter$1 = function ModalFooter(props) {
       var open = props.open,
           actions = props.actions;
       var baseProps = extractBaseProps(props);
@@ -6793,10 +6793,10 @@
         }));
       }));
     };
-    ModalFooter.defaultProps = {
+    ModalFooter$1.defaultProps = {
       actions: []
     };
-    ModalFooter.displayName = 'ModalFooter';
+    ModalFooter$1.displayName = 'ModalFooter';
 
     var FullscreenModal = function (_super) {
       __extends(FullscreenModal, _super);
@@ -6898,7 +6898,7 @@
           className: "justify-content-between pt-6 pr-6 pb-5 pl-7"
         }, /*#__PURE__*/React.createElement(Column, {
           size: "auto"
-        }, !header && /*#__PURE__*/React.createElement(ModalHeader, __assign({}, headerOptions)), !!header && header), /*#__PURE__*/React.createElement(Column, {
+        }, !header && /*#__PURE__*/React.createElement(ModalHeader$1, __assign({}, headerOptions)), !!header && header), /*#__PURE__*/React.createElement(Column, {
           size: "auto",
           className: "pr-2"
         }, /*#__PURE__*/React.createElement(Icon, {
@@ -6915,7 +6915,7 @@
         }, children), (!!footer || !!footerOptions) && /*#__PURE__*/React.createElement("div", {
           "data-test": "DesignSystem-ModalFooter",
           className: "d-flex justify-content-end p-7"
-        }, !footer && /*#__PURE__*/React.createElement(ModalFooter, __assign({}, footerOptions, {
+        }, !footer && /*#__PURE__*/React.createElement(ModalFooter$1, __assign({}, footerOptions, {
           open: open
         })), !!footer && footer)))));
         var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(ModalContainer, this.element);
@@ -7029,14 +7029,14 @@
         }, baseProps, {
           className: classes,
           size: sidesheetWidth[dimension]
-        }), /*#__PURE__*/React.createElement(ModalHeader$1, __assign({
+        }), /*#__PURE__*/React.createElement(ModalHeader, __assign({
           onClose: function onClose(event, reason) {
             if (_onClose) _onClose(event, reason);
           }
         }, headerObj)), /*#__PURE__*/React.createElement(ModalBody, {
           stickFooter: stickFooter,
           withFooter: !!footer
-        }, this.props.children), footer && /*#__PURE__*/React.createElement(ModalFooter$1, {
+        }, this.props.children), footer && /*#__PURE__*/React.createElement(ModalFooter, {
           inSidesheet: true,
           stickToBottom: stickFooter,
           seperator: seperator
@@ -7273,7 +7273,7 @@
     };
     EmptyState.displayName = 'EmptyState';
 
-    var ModalHeader$1 = function ModalHeader(props) {
+    var ModalHeader = function ModalHeader(props) {
       var _a, _b;
 
       var className = props.className,
@@ -7317,9 +7317,9 @@
         className: "mt-2 ml-7"
       }, subHeading));
     };
-    ModalHeader$1.displayName = 'ModalHeader';
+    ModalHeader.displayName = 'ModalHeader';
 
-    var ModalFooter$1 = function ModalFooter(props) {
+    var ModalFooter = function ModalFooter(props) {
       var _a;
 
       var open = props.open,
@@ -7358,11 +7358,11 @@
         className: classes
       }), children);
     };
-    ModalFooter$1.defaultProps = {
+    ModalFooter.defaultProps = {
       stickToBottom: true,
       inSidesheet: false
     };
-    ModalFooter$1.displayName = 'ModalFooter';
+    ModalFooter.displayName = 'ModalFooter';
 
     var ModalBody = function ModalBody(props) {
       var _a;
@@ -7810,7 +7810,7 @@
       active: 0
     };
 
-    var Trigger$1 = function Trigger(props) {
+    var Trigger = function Trigger(props) {
       var inputFormat = props.inputFormat,
           startInputOptions = props.startInputOptions,
           endInputOptions = props.endInputOptions,
@@ -7941,7 +7941,7 @@
         }
       };
 
-      var mask = date$1[inputFormat];
+      var mask = date[inputFormat];
       var showStartError = startInputOptions.required && startError && init;
       var showEndError = endInputOptions.required && endError && init;
       var startLabel = startInputOptions.label;
@@ -7963,7 +7963,7 @@
         placeholder: inputFormat
       }, startInputOptions, {
         mask: mask,
-        value: startDate ? translateToString$1(inputFormat, startDate) : '',
+        value: startDate ? translateToString(inputFormat, startDate) : '',
         onFocus: onFocusHandler,
         onChange: function onChange(e, val) {
           onChangeHandler(e, val || '', 'start');
@@ -7992,7 +7992,7 @@
         placeholder: inputFormat
       }, endInputOptions, {
         mask: mask,
-        value: endDate ? translateToString$1(inputFormat, endDate) : '',
+        value: endDate ? translateToString(inputFormat, endDate) : '',
         onChange: function onChange(e, val) {
           onChangeHandler(e, val || '', 'end');
         },
@@ -8207,8 +8207,8 @@
 
         _this.getDate = function (startDate, endDate) {
           var inputFormat = _this.props.inputFormat;
-          var startVal = startDate ? translateToString$1(inputFormat, startDate) : '';
-          var endVal = endDate ? translateToString$1(inputFormat, endDate) : '';
+          var startVal = startDate ? translateToString(inputFormat, startDate) : '';
+          var endVal = endDate ? translateToString(inputFormat, endDate) : '';
           return {
             startValue: startVal,
             endValue: endVal
@@ -8294,8 +8294,8 @@
             init: true,
             startDate: sDate,
             endDate: eDate,
-            startValue: sDate ? translateToString$1(_this.props.inputFormat, sDate) : '',
-            endValue: eDate ? translateToString$1(_this.props.inputFormat, eDate) : ''
+            startValue: sDate ? translateToString(_this.props.inputFormat, sDate) : '',
+            endValue: eDate ? translateToString(_this.props.inputFormat, eDate) : ''
           });
         };
 
@@ -8352,7 +8352,7 @@
               inputFormat = _a.inputFormat,
               validators = _a.validators;
           var d = convertToDate(this.props.startDate, inputFormat, validators);
-          var val = translateToString$1(inputFormat, d);
+          var val = translateToString(inputFormat, d);
           this.setState({
             startDate: d,
             startValue: val
@@ -8364,7 +8364,7 @@
               inputFormat = _b.inputFormat,
               validators = _b.validators;
           var d = convertToDate(this.props.endDate, inputFormat, validators);
-          var val = translateToString$1(inputFormat, d);
+          var val = translateToString(inputFormat, d);
           this.setState({
             endDate: d,
             endValue: val
@@ -8408,8 +8408,8 @@
 
           if (onRangeChange) {
             var inRangeError = this.getInRangeError();
-            var sValue = translateToString$1(outputFormat, startDate);
-            var eValue = translateToString$1(outputFormat, endDate);
+            var sValue = translateToString(outputFormat, startDate);
+            var eValue = translateToString(outputFormat, endDate);
 
             if (!inRangeError && !startError && !endError) {
               onRangeChange(startDate, endDate, sValue, eValue);
@@ -8483,7 +8483,7 @@
             validators: validators,
             state: this.state,
             setState: this.setState.bind(this)
-          }) : /*#__PURE__*/React.createElement(Trigger$1, {
+          }) : /*#__PURE__*/React.createElement(Trigger, {
             inputFormat: inputFormat,
             startInputOptions: startInputOptions,
             endInputOptions: endInputOptions,
@@ -8512,7 +8512,7 @@
         position: 'bottom-start',
         inputFormat: 'mm/dd/yyyy',
         outputFormat: 'mm/dd/yyyy',
-        validators: [date],
+        validators: [date$1],
         inputOptions: {
           label: 'Date'
         },
@@ -8842,16 +8842,20 @@
       this.updateColumnSchema(name, schemaUpdate);
     }
     function getWidth(width) {
-      if (typeof width === 'number') return width;
+      var isPercent = typeof width === 'string' && width.slice(-1) === '%';
 
-      if (width.charAt(width.length - 1) === '%' && this.state.init) {
-        var checkboxCell = this.gridRef.querySelector('.Grid-cell--checkbox');
-        var checkboxWidth = checkboxCell ? checkboxCell.clientWidth : 0;
-        var gridWidth = this.gridRef.clientWidth - checkboxWidth;
-        return gridWidth * (+width.slice(0, -1) / 100);
+      if (isPercent) {
+        if (this.state.init) {
+          var checkboxCell = this.gridRef.querySelector('.Grid-cell--checkbox');
+          var checkboxWidth = checkboxCell ? checkboxCell.clientWidth : 0;
+          var gridWidth = this.gridRef.clientWidth - checkboxWidth;
+          return gridWidth * (+width.slice(0, -1) / 100);
+        }
+
+        return 0;
       }
 
-      return 0;
+      return width;
     }
     function getCellSize(cellType) {
       var sizes = {
@@ -8992,7 +8996,7 @@
     var getTotalPages = function getTotalPages(totalRecords, pageSize) {
       return Math.ceil(totalRecords / pageSize);
     };
-    var getSelectAll$1 = function getSelectAll(data) {
+    var getSelectAll = function getSelectAll(data) {
       if (data.length) {
         var anyUnSelected = data.some(function (d) {
           return !d._selected;
@@ -10486,7 +10490,7 @@
                 _this.setState({
                   data: data,
                   schema: schema,
-                  selectAll: getSelectAll$1(data),
+                  selectAll: getSelectAll(data),
                   totalRecords: res.count,
                   loading: false,
                   error: !data.length,
@@ -10518,7 +10522,7 @@
               totalRecords: totalRecords,
               error: !renderedData.length,
               errorType: 'NO_RECORDS_FOUND',
-              selectAll: getSelectAll$1(renderedData),
+              selectAll: getSelectAll(renderedData),
               schema: renderedSchema,
               data: renderedData
             });
@@ -10538,7 +10542,7 @@
 
             _this.setState({
               data: newData,
-              selectAll: getSelectAll$1(newData)
+              selectAll: getSelectAll(newData)
             });
           }
 
@@ -10569,7 +10573,7 @@
 
           _this.setState({
             data: newData,
-            selectAll: getSelectAll$1(newData)
+            selectAll: getSelectAll(newData)
           });
         };
 
@@ -10622,7 +10626,7 @@
           loading: !async ? props.loading : true,
           error: !async ? props.error : false,
           errorType: props.errorType,
-          selectAll: getSelectAll$1([]),
+          selectAll: getSelectAll([]),
           searchTerm: undefined
         };
         _this.debounceUpdate = debounce(props.searchDebounceDuration, _this.updateDataFn);
@@ -10651,7 +10655,7 @@
               errorType: this.props.errorType,
               page: 1,
               totalRecords: data.length || 0,
-              selectAll: getSelectAll$1([])
+              selectAll: getSelectAll([])
             }, function () {
               _this.updateData();
             });
@@ -10764,7 +10768,7 @@
     };
     List.defaultProps = defaultProps;
 
-    var useState$1 = React.useState;
+    var useState = React.useState;
     var Navigation = function Navigation(props) {
       var _a;
 
@@ -10781,7 +10785,7 @@
           className = props.className;
       var baseProps = extractBaseProps(props);
 
-      var _b = useState$1({}),
+      var _b = useState({}),
           menuState = _b[0],
           setMenuState = _b[1];
 
@@ -11036,7 +11040,7 @@
       separator: true
     };
 
-    var version = "1.7.0-0";
+    var version = "1.7.0-1";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
@@ -11077,8 +11081,8 @@
     exports.Modal = Modal;
     exports.ModalBody = ModalBody;
     exports.ModalDescription = ModalDescription;
-    exports.ModalFooter = ModalFooter$1;
-    exports.ModalHeader = ModalHeader$1;
+    exports.ModalFooter = ModalFooter;
+    exports.ModalHeader = ModalHeader;
     exports.Navigation = Navigation;
     exports.OutsideClick = OutsideClick;
     exports.PageHeader = PageHeader;

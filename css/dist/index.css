@@ -2359,7 +2359,6 @@ body {
 
 .Grid-head {
     display: flex;
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -2553,7 +2552,6 @@ body {
 }
 
 .Grid-cellGroup--pinned {
-    position: -webkit-sticky;
     position: sticky;
     z-index: 1;
 }
@@ -5304,7 +5302,6 @@ body {
 }
 
 .position-sticky {
-  position: -webkit-sticky !important;
   position: sticky !important;
 }
 .w-25 {
