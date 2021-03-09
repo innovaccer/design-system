@@ -276,7 +276,10 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       }
       : {
         ref,
-        onClick: () => this.togglePopper('onClick')
+        onClick: (ev: React.MouseEvent<HTMLDivElement>) => {
+          ev.stopPropagation();
+          this.togglePopper('onClick');
+        }
       };
 
     const classes = classNames('PopperWrapper-trigger', triggerClass);
