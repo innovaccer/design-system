@@ -1,12 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Text, Icon, Caption } from '@/index';
-import { BaseProps, extractBaseProps, MakeOptional } from '@/utils/types';
+import { Text, Caption } from '@/index';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 import FileIcon from './FileIcon';
-import { IconProps } from '@/index.type';
 
 export type FileStatus = 'uploading' | 'completed' | 'error';
-export type IconOptions = MakeOptional<IconProps, keyof typeof Icon['defaultProps']>;
 
 export interface FileObject extends BaseProps, Record<string, any> {
   /**
@@ -44,10 +42,6 @@ export interface FileListItemProps extends BaseProps, Record<string, any> {
    */
   errorMessage?: string;
   /**
-   * Icon options give details about the icon appearance
-   */
-  icon: IconOptions;
-  /**
    * Actions to be rendered inside the file item
    */
   actions?: React.ReactNode;
@@ -55,6 +49,10 @@ export interface FileListItemProps extends BaseProps, Record<string, any> {
    * Complete fileItem object
    */
   fileItem?: any;
+  /**
+   * Size of file;
+   */
+  fileSize?: string;
   /**
    * Callback called when file item is clicked
    */
@@ -70,8 +68,8 @@ export const FileListItem = (props: FileListItemProps) => {
     actions,
     fileItem,
     file,
-    icon,
-    status
+    status,
+    fileSize
   } = props;
 
   const { name } = file;
@@ -89,14 +87,13 @@ export const FileListItem = (props: FileListItemProps) => {
   };
 
   return (
-    <div {...baseProps} className={FileItemClass}  onClick={onClickHandler}>
+    <div {...baseProps} className={FileItemClass} onClick={onClickHandler}>
       <div className="FileItem-file">
         <div className="FileItem-fileContent">
           <FileIcon
             file={file}
             status={status}
             progress={progress}
-            iconOptions={icon}
           />
           <Text
             className="FileItem-text"
@@ -110,7 +107,7 @@ export const FileListItem = (props: FileListItemProps) => {
             className="FileItem-size"
             appearance={'subtle'}
           >
-          {file.size}
+            {fileSize || file.size}
           </Text>
           {!!actions && actions}
         </div>

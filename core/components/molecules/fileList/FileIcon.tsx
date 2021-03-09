@@ -1,30 +1,38 @@
 import * as React from 'react';
 import { ProgressRing, Icon } from '@/index';
-import { IconOptions, FileListItemProps } from './FileListItem';
+import { FileListItemProps } from './FileListItem';
 import classNames from 'classnames';
 const { useEffect, useState } = React;
+
+const IconMapping: { [key: string]: string } = {
+  audio: 'audiotrack',
+  image: 'image',
+  video: 'movie',
+  application: 'insert_drive_file',
+  others: 'text_snippet'
+};
 
 export interface FileIconProps {
   file: FileListItemProps['file'];
   progress: FileListItemProps['progress'];
   status: FileListItemProps['status'];
-  iconOptions?: IconOptions;
 }
 
 export const FileIcon = (props: FileIconProps) => {
   const {
     progress,
     status,
-    iconOptions,
     file
   } = props;
 
   const [animate, setAnimate] = useState<boolean>(false);
+  const type = file.type.split('/')[0] || 'others';
+  const fileType = IconMapping[type] ? type : 'others';
 
   const iconClass = classNames({
     ['FileIcon']: true,
     ['FileIcon--animate']: animate,
-    [`FileIcon--${file.type || 'others'}`]: true
+    [`FileIcon--${fileType}`]: true
   });
 
   const uploadingIconClass = classNames({
@@ -45,9 +53,9 @@ export const FileIcon = (props: FileIconProps) => {
       <ProgressRing size="small" value={progress || 0} className={uploadingIconClass} />
     );
   }
-  return(
+  return (
     <Icon
-      name={iconOptions?.name || ''}
+      name={IconMapping[fileType]}
       className={iconClass}
     />
   );

@@ -10,9 +10,6 @@ export const fileList: FileListProps['fileList'] = [
     status: 'uploading',
     progress: 45,
     id: 1,
-    icon: {
-      name: 'audiotrack'
-    }
   },
   {
     file: File = {
@@ -22,9 +19,6 @@ export const fileList: FileListProps['fileList'] = [
     } as any,
     status: 'completed',
     id: 2,
-    icon: {
-      name: 'movie'
-    }
   },
   {
     file: File = {
@@ -35,21 +29,15 @@ export const fileList: FileListProps['fileList'] = [
     status: 'error',
     errorMessage: 'Network failure',
     id: 3,
-    icon: {
-      name: 'image',
-    }
   },
   {
     file: File = {
       name: 'Document File.pdf',
       size: '3 MB',
-      type: 'document',
+      type: 'application',
     } as any,
     status: 'completed',
     id: 4,
-    icon: {
-      name: 'insert_drive_file',
-    }
   },
   {
     file: File = {
@@ -58,8 +46,5 @@ export const fileList: FileListProps['fileList'] = [
       type: 'others',
     } as any,
     status: 'completed',
-    icon: {
-      name: 'text_snippet',
-    }
   }
 ];
