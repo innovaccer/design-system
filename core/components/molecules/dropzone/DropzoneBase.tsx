@@ -28,9 +28,9 @@ interface FileError {
   message: string;
 }
 
-interface FileRejection {
+export interface FileRejection {
   file: File;
-  error: FileError;
+  errors: FileError[];
 }
 
 export interface DropzoneBaseProps extends BaseProps {
@@ -91,12 +91,14 @@ export interface DropzoneBaseProps extends BaseProps {
    * Note that the `onDrop` callback will always be invoked regardless if the dropped files were accepted or rejected.
    *
    * <pre className="DocPage-codeBlock">
+   * FileError: {
+   *   type: 'FILE_INVALID_TYPE' | 'FILE_TOO_LARGE' | 'FILE_TOO_SMALL' | 'TOO_MANY_FILES';
+   *   message: string;
+   * }
+   *
    * FileRejection {
    *  file: File;
-   *  error: {
-   *      type: 'FILE_INVALID_TYPE' | 'FILE_TOO_LARGE' | 'FILE_TOO_SMALL' | 'TOO_MANY_FILES';
-   *      message: string;
-   *    }
+   *  errors: FileError[];
    * }
    * </pre>
    *
@@ -104,7 +106,7 @@ export interface DropzoneBaseProps extends BaseProps {
    * @param {FileRejection[]} fileRejections
    * @param {(DragEvent|Event)} event A drag event or input change event (if files were selected via the file dialog)
    */
-  onDrop?: (acceptedFiles: File[], rejectedFiles: FileRejection[], event: DragEvent | Event) => void;
+  onDrop?: (event: DragEvent | Event, acceptedFiles: File[], rejectedFiles: FileRejection[]) => void;
 
   /**
    * Callback for when the `drop` event occurs.
@@ -113,7 +115,7 @@ export interface DropzoneBaseProps extends BaseProps {
    * @param {File[]} files
    * @param {(DragEvent|Event)} event
    */
-  onDropAccepted?: (files: File[], event: DragEvent | Event) => void;
+  onDropAccepted?: (event: DragEvent | Event, files: File[]) => void;
 
   /**
    * Callback for when the `drop` event occurs.
@@ -122,7 +124,7 @@ export interface DropzoneBaseProps extends BaseProps {
    * @param {FileRejection[]} fileRejections
    * @param {(DragEvent|Event)} event
    */
-  onDropRejected?: (rejectedFiles: FileRejection[], event: DragEvent | Event) => any;
+  onDropRejected?: (event: DragEvent | Event, rejectedFiles: FileRejection[]) => any;
 
   /**
    * Custom validation function
@@ -379,15 +381,15 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
           });
 
           if (onDrop) {
-            onDrop(acceptedFiles, fileRejections, event);
+            onDrop(event, acceptedFiles, fileRejections);
           }
 
           if (fileRejections.length > 0 && onDropRejected) {
-            onDropRejected(fileRejections, event);
+            onDropRejected(event, fileRejections);
           }
 
           if (acceptedFiles.length > 0 && onDropAccepted) {
-            onDropAccepted(acceptedFiles, event);
+            onDropAccepted(event, acceptedFiles);
           }
         });
       }

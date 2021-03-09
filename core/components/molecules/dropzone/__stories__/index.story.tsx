@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Dropzone, Link } from '@/index';
 import { select, boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import { DropzoneProps } from '@/index.type';
 
 export const all = () => {
   const type = select('type',
@@ -13,7 +14,7 @@ export const all = () => {
   const sizeLabel = text('sizeLabel', 'Maximum size: 25 MB');
   const multiple = boolean('multiple', true);
 
-  const onDrop = (acceptedFiles: File[]) => {
+  const onDrop: DropzoneProps['onDrop'] = (_event, acceptedFiles) => {
     return action(`Accepted Files: ${acceptedFiles}`)();
   };
 
@@ -43,7 +44,7 @@ const customCode = `() => {
       formatLabel='Accepted formats: PDF, jpg'
       sizeLabel='Maximum size: 25 MB'
       disabled={false}
-      onDrop={(acceptedFiles, rejectedFiles) => { console.log(acceptedFiles, rejectedFiles) }}
+      onDrop={(event, acceptedFiles, rejectedFiles) => { console.log(acceptedFiles, rejectedFiles) }}
       sampleFileLink={(
         <Link
           href="http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf"
