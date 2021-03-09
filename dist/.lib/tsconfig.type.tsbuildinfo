@@ -171,9 +171,14 @@
         "signature": "a7e32dcb90bf0c1b7a1e4ac89b0f7747cbcba25e7beddc1ebf17be1e161842ad",
         "affectsGlobalScope": false
       },
+      "../../node_modules/@types/scheduler/tracing.d.ts": {
+        "version": "f5a8b384f182b3851cec3596ccc96cb7464f8d3469f48c74bf2befb782a19de5",
+        "signature": "f5a8b384f182b3851cec3596ccc96cb7464f8d3469f48c74bf2befb782a19de5",
+        "affectsGlobalScope": false
+      },
       "../../node_modules/@types/react/index.d.ts": {
-        "version": "9692a141afe8f30a5542189ffceb1a043f3d1fbaf0e07d28a8e9ac6d32c4cb01",
-        "signature": "9692a141afe8f30a5542189ffceb1a043f3d1fbaf0e07d28a8e9ac6d32c4cb01",
+        "version": "5d708266116e778d6a4140fca2ac36f71d99b4c68bc3be63a45ba8bf5ade5348",
+        "signature": "5d708266116e778d6a4140fca2ac36f71d99b4c68bc3be63a45ba8bf5ade5348",
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/classnames/types.d.ts": {
@@ -212,8 +217,8 @@
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/react-dom/node_modules/@types/react/index.d.ts": {
-        "version": "d60f59818f6793e033bff754ff740083d88b9e899d1bce73aba91d3de9650f03",
-        "signature": "d60f59818f6793e033bff754ff740083d88b9e899d1bce73aba91d3de9650f03",
+        "version": "c90c1b049ca569edcad1f55e33bc9bd3c195a88957493f9a3a0f3e67f0b54316",
+        "signature": "c90c1b049ca569edcad1f55e33bc9bd3c195a88957493f9a3a0f3e67f0b54316",
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/react-dom/index.d.ts": {
@@ -1056,6 +1061,46 @@
         "signature": "b94bb6760f63f338c497a725d3adc4ab28d202e3c2c6f0bed7bb69647ed79259",
         "affectsGlobalScope": false
       },
+      "../../core/components/molecules/dropzone/utils.tsx": {
+        "version": "cf9808b75b0f2f08cbdd036efebbd816798733ad1810043a5b159b016655ad92",
+        "signature": "79e29976886d0338339a197e41462c2592ec3978329f0c39c05403d1ee56f8d8",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/dropzone/FileErrors.tsx": {
+        "version": "d8aa314e3cab9e8e23d5c8ce7d077c906692f21e6236692adac2c2444b4fc52e",
+        "signature": "2e955901d4ca289686638d508cab1de90d6e25db8e072d5c0eda68022eeb34ed",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/dropzone/FileSelectorUtils.tsx": {
+        "version": "221c64ed0ca5c17e7c6bee6d584ce1c3e66998230da7d36b33b25a5412cda6d0",
+        "signature": "a2978eca43762c593ed20df43e7b69ba889bbf076277545467a40808c4cf0043",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/dropzone/DropzoneBase.tsx": {
+        "version": "72958beb619d04ca133bf3ec18da508b279debf230848cda3266a70cb87b932d",
+        "signature": "74d0cfa13c9635e4eaa87ab0127b687c3c4c6c3027860c64995240c39448d69e",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/dropzone/DropzoneActive.tsx": {
+        "version": "9b3b44142109677209292f114bcebcd8032f483850b074132a069390d470aace",
+        "signature": "fa43f57da6926f7fcb89e05b7b2a7de2fc6fddad153e485f90b1f91b979d0ade",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/dropzone/DropzoneError.tsx": {
+        "version": "5276a5bc7c61fe85ef636c720cc6caee3c5953c1be09d6e16e30ea453a81f70d",
+        "signature": "16d56587d21c7eef77e09ce9a412f598456d6bb48b1e6fb16548d13ec9b0e9a0",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/dropzone/Dropzone.tsx": {
+        "version": "3854e94879881717225745a4403a6ace7101f5687898f41cd3da2d5f8a81b2b9",
+        "signature": "c145cc44acc0360e8789b15fe5cd58be030e4c2771876c834ab2f337e9815cd7",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/dropzone/index.tsx": {
+        "version": "52d8d9ba10d2fb730466fb2a9a0508714e2083bd22782344bf617eb2ed47cdf6",
+        "signature": "80341ea8981cf1eac51a3178e1fd66b20ae6cdc09474a8b7a0af525ac150f9e0",
+        "affectsGlobalScope": false
+      },
       "../../core/components/molecules/fileUploader/FileUploaderFormat.tsx": {
         "version": "bf28a5129df786b83ac0143ea96ff114bdd7dd8694aa80a31e396bbe89dc05e4",
         "signature": "6832076fdd5655a53a7ea8cf07b541b2f6511fa5085d3e4a993a4f6a45497e8d",
@@ -1201,9 +1246,29 @@
         "signature": "4e21513d0ade77d09783970cb64efeab6ebee6e67160785ec837dab41ac61878",
         "affectsGlobalScope": false
       },
+      "../../core/components/molecules/fileList/FileIcon.tsx": {
+        "version": "2720a4ed7c530ea7b4b54572daa774d5432a941c01f4e6b6da4d7b02a1e4779b",
+        "signature": "873e497b860e8207cdd15ef73af0675b3de2da5cde7f13c6f4e02912a7bd0d70",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/fileList/FileListItem.tsx": {
+        "version": "fd6b2aaf1c03a6e59988892296dcf56b09301aedcef803bc53410a20123159a7",
+        "signature": "638d411266fe132156d6887bb24dcaaaa75ed4fac007290c38b64361923f7fd0",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/fileList/FileList.tsx": {
+        "version": "dd9bd2d82e2268cdaa8f61862faf0b757632229918a9adb2df211b897dd06f9a",
+        "signature": "f8155bf1821df2346201910d0e9c063ad30a1772e1af31fb8174b39ab0dec718",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/molecules/fileList/index.tsx": {
+        "version": "a3d46f1919da7a29a3fe6a376742d6869629a3e45534416c481eab17ab35c379",
+        "signature": "6b665195783b2ea97cfafdecf1db6dfe9859f9ca1bc222b322dceb7de7603835",
+        "affectsGlobalScope": false
+      },
       "../../core/index.type.tsx": {
-        "version": "8aa4de9eb9edc394674acbc833c37b2d799b278a3e1a9885ae298198bfa7ed0c",
-        "signature": "3e675ad1e681bb00235f185f701cc8dc0d766f18aa7959ba1b6f5404641eaf18",
+        "version": "39c0bdea712d22d40d71e9e46f30cb6bf23c54f7925e2d198a58f2a5ec714576",
+        "signature": "524923dd0f4e9b22ffc8044b035271fbed7f7ea2e84d932772e23ef6a9348ad2",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/timePicker/TimePicker.tsx": {
@@ -1232,8 +1297,8 @@
         "affectsGlobalScope": false
       },
       "../../core/index.tsx": {
-        "version": "8fa508e0acbe7d54652d91eb7a176482387de6088b734b1aedfe1408f33b7358",
-        "signature": "35f82bc821b8e6a8924f0e1667ad53e573bf5db74746b0663c1cb339e4714982",
+        "version": "94be24d201b6bb5d98a14756f6679b5c582fdda1211ef0d6781c8ac54f6ee63e",
+        "signature": "4dbf4a7b9036c4c64c5f47b6ad1bdea0b49085f9bc5f1348a4b2f55345427c54",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/badge/_stories_/SolidAlert.story.tsx": {
@@ -1957,8 +2022,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/globals.d.ts": {
-        "version": "e9a43c3ee6fb8376bb9a4d318a660412c6abcfe5161c106e801e5431b41b7476",
-        "signature": "e9a43c3ee6fb8376bb9a4d318a660412c6abcfe5161c106e801e5431b41b7476",
+        "version": "25b4a0c4fab47c373ee49df4c239826ee3430019fc0c1b5e59edc3e398b7468d",
+        "signature": "25b4a0c4fab47c373ee49df4c239826ee3430019fc0c1b5e59edc3e398b7468d",
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/node/async_hooks.d.ts": {
@@ -2302,8 +2367,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/cheerio/index.d.ts": {
-        "version": "0a75c8a3f087ede0118157a8e9aa2007bb27c61d03c59299cf9eb1cfd49c9f3a",
-        "signature": "0a75c8a3f087ede0118157a8e9aa2007bb27c61d03c59299cf9eb1cfd49c9f3a",
+        "version": "ca40f2302e9e53f81310ce59d9887579171d7399e0f52d9c9c0d1eabaab392a5",
+        "signature": "ca40f2302e9e53f81310ce59d9887579171d7399e0f52d9c9c0d1eabaab392a5",
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/enzyme/index.d.ts": {
@@ -2416,6 +2481,11 @@
         "signature": "2880728492d6a6baa55411d14cc42fa55714a24b1d1d27ff9a8a610abd47c761",
         "affectsGlobalScope": false
       },
+      "../../node_modules/@types/scheduler/index.d.ts": {
+        "version": "3169db033165677f1d414baf0c82ba27801089ca1b66d97af464512a47df31b5",
+        "signature": "3169db033165677f1d414baf0c82ba27801089ca1b66d97af464512a47df31b5",
+        "affectsGlobalScope": false
+      },
       "../../node_modules/@types/source-list-map/index.d.ts": {
         "version": "67fc055eb86a0632e2e072838f889ffe1754083cb13c8c80a06a7d895d877aae",
         "signature": "67fc055eb86a0632e2e072838f889ffe1754083cb13c8c80a06a7d895d877aae",
@@ -2437,8 +2507,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/uglify-js/index.d.ts": {
-        "version": "6eb4533a72414577ea2d61cac639e20bea6c60639d9238a6aac2b5683f0ac64e",
-        "signature": "6eb4533a72414577ea2d61cac639e20bea6c60639d9238a6aac2b5683f0ac64e",
+        "version": "bee79f5862fe1278d2ba275298862bce3f7abf1e59d9c669c4b9a4b2bba96956",
+        "signature": "bee79f5862fe1278d2ba275298862bce3f7abf1e59d9c669c4b9a4b2bba96956",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/webpack/node_modules/source-map/source-map.d.ts": {
@@ -2561,6 +2631,42 @@
           "core/*"
         ],
         "*": [
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
           "*",
           "*",
           "*",
@@ -4030,6 +4136,41 @@
       "../../core/components/molecules/dialog/index.tsx": [
         "../../core/components/molecules/dialog/Dialog.tsx"
       ],
+      "../../core/components/molecules/dropzone/Dropzone.tsx": [
+        "../../core/components/molecules/dropzone/DropzoneActive.tsx",
+        "../../core/components/molecules/dropzone/DropzoneBase.tsx",
+        "../../core/components/molecules/dropzone/DropzoneError.tsx",
+        "../../core/components/molecules/dropzone/FileErrors.tsx",
+        "../../core/index.tsx",
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/classnames/index.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/molecules/dropzone/DropzoneActive.tsx": [
+        "../../core/index.tsx",
+        "../../core/index.type.tsx",
+        "../../node_modules/@types/classnames/index.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/molecules/dropzone/DropzoneBase.tsx": [
+        "../../core/components/molecules/dropzone/FileErrors.tsx",
+        "../../core/components/molecules/dropzone/FileSelectorUtils.tsx",
+        "../../core/components/molecules/dropzone/utils.tsx",
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/molecules/dropzone/DropzoneError.tsx": [
+        "../../core/index.tsx",
+        "../../core/index.type.tsx",
+        "../../node_modules/@types/classnames/index.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/molecules/dropzone/FileErrors.tsx": [
+        "../../core/components/molecules/dropzone/utils.tsx"
+      ],
+      "../../core/components/molecules/dropzone/index.tsx": [
+        "../../core/components/molecules/dropzone/Dropzone.tsx"
+      ],
       "../../core/components/molecules/editableDropdown/EditableDropdown.tsx": [
         "../../core/components/atoms/editable/index.tsx",
         "../../core/index.tsx",
@@ -4061,6 +4202,29 @@
       ],
       "../../core/components/molecules/emptyState/index.tsx": [
         "../../core/components/molecules/emptyState/EmptyState.tsx"
+      ],
+      "../../core/components/molecules/fileList/FileIcon.tsx": [
+        "../../core/components/molecules/fileList/FileListItem.tsx",
+        "../../core/index.tsx",
+        "../../node_modules/@types/classnames/index.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/molecules/fileList/FileList.tsx": [
+        "../../core/components/molecules/fileList/FileListItem.tsx",
+        "../../core/index.tsx",
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/molecules/fileList/FileListItem.tsx": [
+        "../../core/components/molecules/fileList/FileIcon.tsx",
+        "../../core/index.tsx",
+        "../../core/index.type.tsx",
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/classnames/index.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/molecules/fileList/index.tsx": [
+        "../../core/components/molecules/fileList/FileList.tsx"
       ],
       "../../core/components/molecules/fileUploader/FileUploader.tsx": [
         "../../core/components/molecules/fileUploader/FileUploaderButton.tsx",
@@ -4579,9 +4743,11 @@
         "../../core/components/atoms/toast/index.tsx",
         "../../core/components/molecules/chatMessage/index.tsx",
         "../../core/components/molecules/dialog/index.tsx",
+        "../../core/components/molecules/dropzone/index.tsx",
         "../../core/components/molecules/editableDropdown/index.tsx",
         "../../core/components/molecules/editableInput/index.tsx",
         "../../core/components/molecules/emptyState/index.tsx",
+        "../../core/components/molecules/fileList/index.tsx",
         "../../core/components/molecules/fileUploader/index.tsx",
         "../../core/components/molecules/fullscreenModal/index.tsx",
         "../../core/components/molecules/inputMask/index.tsx",
@@ -4650,9 +4816,11 @@
         "../../core/components/atoms/toast/index.tsx",
         "../../core/components/molecules/chatMessage/index.tsx",
         "../../core/components/molecules/dialog/index.tsx",
+        "../../core/components/molecules/dropzone/index.tsx",
         "../../core/components/molecules/editableDropdown/index.tsx",
         "../../core/components/molecules/editableInput/index.tsx",
         "../../core/components/molecules/emptyState/index.tsx",
+        "../../core/components/molecules/fileList/index.tsx",
         "../../core/components/molecules/fileUploader/index.tsx",
         "../../core/components/molecules/fullscreenModal/index.tsx",
         "../../core/components/molecules/inputMask/index.tsx",
@@ -5368,6 +5536,7 @@
       "../../node_modules/@types/react-dom/node_modules/@types/react/index.d.ts": [
         "../../node_modules/@types/prop-types/index.d.ts",
         "../../node_modules/@types/react-dom/node_modules/@types/react/global.d.ts",
+        "../../node_modules/@types/scheduler/tracing.d.ts",
         "../../node_modules/csstype/index.d.ts"
       ],
       "../../node_modules/@types/react-dom/server/index.d.ts": [
@@ -5383,6 +5552,7 @@
       "../../node_modules/@types/react/index.d.ts": [
         "../../node_modules/@types/prop-types/index.d.ts",
         "../../node_modules/@types/react/global.d.ts",
+        "../../node_modules/@types/scheduler/tracing.d.ts",
         "../../node_modules/csstype/index.d.ts"
       ],
       "../../node_modules/@types/reactcss/index.d.ts": [
@@ -6173,6 +6343,7 @@
       "../../node_modules/@types/react-dom/node_modules/@types/react/index.d.ts": [
         "../../node_modules/@types/prop-types/index.d.ts",
         "../../node_modules/@types/react-dom/node_modules/@types/react/global.d.ts",
+        "../../node_modules/@types/scheduler/tracing.d.ts",
         "../../node_modules/csstype/index.d.ts"
       ],
       "../../node_modules/@types/react-dom/server/index.d.ts": [
@@ -6188,6 +6359,7 @@
       "../../node_modules/@types/react/index.d.ts": [
         "../../node_modules/@types/prop-types/index.d.ts",
         "../../node_modules/@types/react/global.d.ts",
+        "../../node_modules/@types/scheduler/tracing.d.ts",
         "../../node_modules/csstype/index.d.ts"
       ],
       "../../node_modules/@types/reactcss/index.d.ts": [
@@ -6460,12 +6632,24 @@
       "../../core/components/molecules/chatMessage/index.tsx",
       "../../core/components/molecules/dialog/Dialog.tsx",
       "../../core/components/molecules/dialog/index.tsx",
+      "../../core/components/molecules/dropzone/Dropzone.tsx",
+      "../../core/components/molecules/dropzone/DropzoneActive.tsx",
+      "../../core/components/molecules/dropzone/DropzoneBase.tsx",
+      "../../core/components/molecules/dropzone/DropzoneError.tsx",
+      "../../core/components/molecules/dropzone/FileErrors.tsx",
+      "../../core/components/molecules/dropzone/FileSelectorUtils.tsx",
+      "../../core/components/molecules/dropzone/index.tsx",
+      "../../core/components/molecules/dropzone/utils.tsx",
       "../../core/components/molecules/editableDropdown/EditableDropdown.tsx",
       "../../core/components/molecules/editableDropdown/index.tsx",
       "../../core/components/molecules/editableInput/EditableInput.tsx",
       "../../core/components/molecules/editableInput/index.tsx",
       "../../core/components/molecules/emptyState/EmptyState.tsx",
       "../../core/components/molecules/emptyState/index.tsx",
+      "../../core/components/molecules/fileList/FileIcon.tsx",
+      "../../core/components/molecules/fileList/FileList.tsx",
+      "../../core/components/molecules/fileList/FileListItem.tsx",
+      "../../core/components/molecules/fileList/index.tsx",
       "../../core/components/molecules/fileUploader/FileUploader.tsx",
       "../../core/components/molecules/fileUploader/FileUploaderButton.tsx",
       "../../core/components/molecules/fileUploader/FileUploaderFormat.tsx",
@@ -6757,6 +6941,8 @@
       "../../node_modules/@types/reactcss/index.d.ts",
       "../../node_modules/@types/recharts/index.d.ts",
       "../../node_modules/@types/resolve/index.d.ts",
+      "../../node_modules/@types/scheduler/index.d.ts",
+      "../../node_modules/@types/scheduler/tracing.d.ts",
       "../../node_modules/@types/source-list-map/index.d.ts",
       "../../node_modules/@types/stack-utils/index.d.ts",
       "../../node_modules/@types/tapable/index.d.ts",

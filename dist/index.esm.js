@@ -1,14 +1,14 @@
 
   /**
-   * Generated on: 1614935930716 
+   * Generated on: 1615272706500 
    *      Package: @innovaccer/design-system
-   *      Version: v1.7.0-2
+   *      Version: v1.7.0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
 
     
-import React, { createElement, useState as useState$2, useEffect as useEffect$1, forwardRef, isValidElement, useRef, useImperativeHandle, Fragment as Fragment$1, createRef, cloneElement, Component, Children, PureComponent, useCallback } from 'react';
+import React, { createElement, useState as useState$3, useEffect as useEffect$2, forwardRef, isValidElement, useRef, useImperativeHandle, Fragment as Fragment$1, createRef, cloneElement, Component, Children, PureComponent, useCallback, useReducer, useMemo } from 'react';
 import { createPortal, findDOMNode } from 'react-dom';
 
 var colorToHex = function colorToHex(color) {
@@ -34,6 +34,42 @@ function _typeof$p(obj) {
   }
 
   return _typeof$p(obj);
+}
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
+
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+        args = arguments;
+    return new Promise(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+
+      _next(undefined);
+    });
+  };
 }
 
 function _classCallCheck$p(instance, Constructor) {
@@ -877,23 +913,23 @@ AvatarGroup.defaultProps = {
   popoverOptions: {}
 };
 
-var useEffect = useEffect$1,
-    useState$1 = useState$2;
+var useEffect$1 = useEffect$2,
+    useState$2 = useState$3;
 var Backdrop = function Backdrop(props) {
   var className = props.className;
   var baseProps = extractBaseProps(props);
 
-  var _useState = useState$1(null),
+  var _useState = useState$2(null),
       _useState2 = _slicedToArray$6(_useState, 2),
       savedBodyOverflow = _useState2[0],
       setBodyOverflow = _useState2[1];
 
-  var _React$useState = useState$2(props.open),
+  var _React$useState = useState$3(props.open),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       open = _React$useState2[0],
       setOpen = _React$useState2[1];
 
-  var _React$useState3 = useState$2(props.open),
+  var _React$useState3 = useState$3(props.open),
       _React$useState4 = _slicedToArray$6(_React$useState3, 2),
       animate = _React$useState4[0],
       setAnimate = _React$useState4[1];
@@ -914,7 +950,7 @@ var Backdrop = function Backdrop(props) {
     setBodyOverflow(null);
   };
 
-  useEffect(function () {
+  useEffect$1(function () {
     if (props.open) {
       setBodyOverflow(document.body.style.overflow);
       disableBodyScroll();
@@ -1326,15 +1362,15 @@ var Checkbox = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
     return ref.current;
   });
 
-  var _React$useState = useState$2(props.checked === undefined ? defaultChecked : props.checked),
+  var _React$useState = useState$3(props.checked === undefined ? defaultChecked : props.checked),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       checked = _React$useState2[0],
       setChecked = _React$useState2[1];
 
-  useEffect$1(function () {
+  useEffect$2(function () {
     setIndeterminate(indeterminate);
   }, [indeterminate]);
-  useEffect$1(function () {
+  useEffect$2(function () {
     if (props.checked !== undefined) {
       setChecked(props.checked);
     }
@@ -1809,17 +1845,17 @@ var DropdownList = function DropdownList(props) {
   var dropdownCancelButtonRef = /*#__PURE__*/createRef();
   var dropdownApplyButtonRef = /*#__PURE__*/createRef();
 
-  var _React$useState = useState$2(),
+  var _React$useState = useState$3(),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       popoverStyle = _React$useState2[0],
       setPopoverStyle = _React$useState2[1];
 
-  var _React$useState3 = useState$2(firstEnabledOption),
+  var _React$useState3 = useState$3(firstEnabledOption),
       _React$useState4 = _slicedToArray$6(_React$useState3, 2),
       cursor = _React$useState4[0],
       setCursor = _React$useState4[1];
 
-  useEffect$1(function () {
+  useEffect$2(function () {
     if (dropdownOpen) {
       var _triggerRef$current;
 
@@ -1836,7 +1872,7 @@ var DropdownList = function DropdownList(props) {
       setPopoverStyle(popperWrapperStyle);
     }
   }, [dropdownOpen]);
-  useEffect$1(function () {
+  useEffect$2(function () {
     if (firstEnabledOption !== cursor) setCursor(firstEnabledOption);
   }, [firstEnabledOption]);
   var _props$triggerSize = props.triggerSize,
@@ -4501,19 +4537,19 @@ var TimePicker = function TimePicker(props) {
       onTimeChange = props.onTimeChange,
       timeProp = props.time;
 
-  var _React$useState = useState$2(timeProp),
+  var _React$useState = useState$3(timeProp),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       time = _React$useState2[0],
       setTime = _React$useState2[1];
 
-  var _React$useState3 = useState$2(false),
+  var _React$useState3 = useState$3(false),
       _React$useState4 = _slicedToArray$6(_React$useState3, 2),
       init = _React$useState4[0],
       setInit = _React$useState4[1];
 
   var _inputOptions$placeho = inputOptions.placeholderChar,
       placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho;
-  useEffect$1(function () {
+  useEffect$2(function () {
     var timeStr = translateToTime(inputFormat, time);
     var updatedTime = timeProp === undefined && timeStr.includes(placeholderChar) ? time : timeProp;
     setTime(updatedTime);
@@ -32927,7 +32963,7 @@ var DonutChart = function DonutChart(props) {
     }, "".concat((percent * 100).toFixed(0), "%"))));
   };
 
-  var _React$useState = useState$2(0),
+  var _React$useState = useState$3(0),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       activeIndex = _React$useState2[0],
       setActiveIndex = _React$useState2[1];
@@ -33033,7 +33069,7 @@ var Input = /*#__PURE__*/forwardRef(function (props, forwardedRef) {
   useImperativeHandle(forwardedRef, function () {
     return ref.current;
   });
-  useEffect$1(function () {
+  useEffect$2(function () {
     var _ref$current;
 
     if (autoFocus) (_ref$current = ref.current) === null || _ref$current === void 0 ? void 0 : _ref$current.focus({
@@ -33187,12 +33223,12 @@ var InputMask = /*#__PURE__*/forwardRef(function (props, forwardRef) {
   var deferId = useRef();
   var selectionRef = useRef(0);
 
-  var _React$useState = useState$2(defaultValue || valueProp || ''),
+  var _React$useState = useState$3(defaultValue || valueProp || ''),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       value = _React$useState2[0],
       setValue = _React$useState2[1];
 
-  var _React$useState3 = useState$2(getDefaultSelection()),
+  var _React$useState3 = useState$3(getDefaultSelection()),
       _React$useState4 = _slicedToArray$6(_React$useState3, 2),
       selection = _React$useState4[0],
       setSelection = _React$useState4[1];
@@ -33201,7 +33237,7 @@ var InputMask = /*#__PURE__*/forwardRef(function (props, forwardRef) {
   useImperativeHandle(forwardRef, function () {
     return ref.current;
   });
-  useEffect$1(function () {
+  useEffect$2(function () {
     setValue(valueProp || '');
   }, [valueProp]);
 
@@ -33527,17 +33563,17 @@ var EditableDropdown = function EditableDropdown(props) {
       onDropdownClose = dropdownOptions.onClose,
       rest = _objectWithoutProperties$a(dropdownOptions, ["onChange", "onClose"]);
 
-  var _React$useState = useState$2(placeholder),
+  var _React$useState = useState$3(placeholder),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       label = _React$useState2[0],
       setLabel = _React$useState2[1];
 
-  var _React$useState3 = useState$2(false),
+  var _React$useState3 = useState$3(false),
       _React$useState4 = _slicedToArray$6(_React$useState3, 2),
       editing = _React$useState4[0],
       setEditing = _React$useState4[1];
 
-  var _React$useState5 = useState$2(false),
+  var _React$useState5 = useState$3(false),
       _React$useState6 = _slicedToArray$6(_React$useState5, 2),
       showComponent = _React$useState6[0],
       setShowComponent = _React$useState6[1];
@@ -33739,7 +33775,7 @@ var OutsideClick = /*#__PURE__*/forwardRef(function (props, ref) {
   useImperativeHandle(ref, function () {
     return innerRef.current;
   }, [innerRef]);
-  useEffect$1(function () {
+  useEffect$2(function () {
     document.addEventListener('click', handleOutsideClick, true);
     return function () {
       document.removeEventListener('click', handleOutsideClick);
@@ -34609,12 +34645,12 @@ var Slider = function Slider(props) {
       onChange = props.onChange,
       rest = _objectWithoutProperties$a(props, ["value", "defaultValue", "onRelease", "onChange"]);
 
-  var _React$useState = useState$2(valueProp === undefined ? defaultValue : valueProp),
+  var _React$useState = useState$3(valueProp === undefined ? defaultValue : valueProp),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       value = _React$useState2[0],
       setValue = _React$useState2[1];
 
-  useEffect$1(function () {
+  useEffect$2(function () {
     if (valueProp !== undefined) {
       setValue(valueProp);
     }
@@ -34654,12 +34690,12 @@ var RangeSlider = function RangeSlider(props) {
       onRelease = props.onRelease,
       rest = _objectWithoutProperties$a(props, ["value", "defaultValue", "onChange", "onRelease"]);
 
-  var _React$useState = useState$2(valueProp === undefined ? defaultValue : valueProp),
+  var _React$useState = useState$3(valueProp === undefined ? defaultValue : valueProp),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       value = _React$useState2[0],
       setValue = _React$useState2[1];
 
-  useEffect$1(function () {
+  useEffect$2(function () {
     if (valueProp !== undefined) {
       setValue(valueProp);
     }
@@ -34708,12 +34744,12 @@ var Switch = /*#__PURE__*/forwardRef(function (props, ref) {
       className = props.className;
   var baseProps = extractBaseProps(props);
 
-  var _React$useState = useState$2(props.checked === undefined ? defaultChecked : props.checked),
+  var _React$useState = useState$3(props.checked === undefined ? defaultChecked : props.checked),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       checked = _React$useState2[0],
       setChecked = _React$useState2[1];
 
-  useEffect$1(function () {
+  useEffect$2(function () {
     if (props.checked !== undefined) setChecked(props.checked);
   }, [props.checked]);
   var SwitchClass = classnames((_classNames = {}, _defineProperty$w(_classNames, 'Switch', true), _defineProperty$w(_classNames, 'Switch--disabled', disabled), _defineProperty$w(_classNames, "Switch--".concat(size), size), _classNames), className);
@@ -39535,23 +39571,23 @@ var Popover = function Popover(props) {
       boundaryElement = props.boundaryElement,
       rest = _objectWithoutProperties$a(props, ["position", "customStyle", "dark", "children", "onToggle", "className", "hideOnReferenceEscape", "boundaryElement"]);
 
-  var _React$useState = useState$2(!!props.open),
+  var _React$useState = useState$3(!!props.open),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       open = _React$useState2[0],
       setOpen = _React$useState2[1];
 
-  var _React$useState3 = useState$2(false),
+  var _React$useState3 = useState$3(false),
       _React$useState4 = _slicedToArray$6(_React$useState3, 2),
       init = _React$useState4[0],
       setInit = _React$useState4[1];
 
-  useEffect$1(function () {
+  useEffect$2(function () {
     if (props.open !== undefined) setOpen(props.open);
   }, [props.open]);
   var defaultOnToggle = useCallback(function (newOpen) {
     setOpen(newOpen);
   }, []);
-  useEffect$1(function () {
+  useEffect$2(function () {
     if (!init) {
       if ('current' in boundaryElement && boundaryElement.current) {
         setInit(true);
@@ -39886,7 +39922,7 @@ var ModalFooter$1 = function ModalFooter(props) {
       actions = props.actions;
   var baseProps = extractBaseProps(props);
   var wrapperRef = /*#__PURE__*/createRef();
-  useEffect$1(function () {
+  useEffect$2(function () {
     if (open) {
       if (wrapperRef.current) {
         var _wrapperRef$current;
@@ -40487,7 +40523,7 @@ var ModalFooter = function ModalFooter(props) {
     'Modal-footer': true
   }, _defineProperty$w(_classNames, 'Modal-footer--inModal', !inSidesheet), _defineProperty$w(_classNames, 'Modal-footer--seperator', seperator), _defineProperty$w(_classNames, 'Modal-footer--stickToBottom', stickToBottom), _classNames), className);
   var wrapperRef = /*#__PURE__*/createRef();
-  useEffect$1(function () {
+  useEffect$2(function () {
     if (open) {
       if (wrapperRef.current) {
         var _wrapperRef$current;
@@ -40569,23 +40605,23 @@ var Pagination = function Pagination(props) {
       className = props.className;
   var baseProps = extractBaseProps(props);
 
-  var _React$useState = useState$2(props.page),
+  var _React$useState = useState$3(props.page),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       page = _React$useState2[0],
       setPage = _React$useState2[1];
 
-  var _React$useState3 = useState$2(false),
+  var _React$useState3 = useState$3(false),
       _React$useState4 = _slicedToArray$6(_React$useState3, 2),
       init = _React$useState4[0],
       setInit = _React$useState4[1];
 
-  useEffect$1(function () {
+  useEffect$2(function () {
     setPage(props.page);
   }, [props.page]);
   var wrapperClass = classnames((_classNames = {}, _defineProperty$w(_classNames, 'Pagination', true), _defineProperty$w(_classNames, "Pagination--".concat(type), type), _classNames), className);
   var nextButtonWrapperClass = classnames((_classNames2 = {}, _defineProperty$w(_classNames2, 'Pagination-buttonWrapper', true), _defineProperty$w(_classNames2, 'Pagination-buttonWrapper--next', true), _classNames2));
   var prevButtonWrapperClass = classnames((_classNames3 = {}, _defineProperty$w(_classNames3, 'Pagination-buttonWrapper', true), _defineProperty$w(_classNames3, 'Pagination-buttonWrapper--previous', true), _classNames3));
-  useEffect$1(function () {
+  useEffect$2(function () {
     if (init) {
       if (page >= 1 && page <= totalPages) onPageChange(page);
     }
@@ -40706,17 +40742,17 @@ var EditableInput = function EditableInput(props) {
   var onInputChange = inputOptions.onChange,
       rest = _objectWithoutProperties$a(inputOptions, ["onChange"]);
 
-  var _React$useState = useState$2(value),
+  var _React$useState = useState$3(value),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       inputValue = _React$useState2[0],
       setInputValue = _React$useState2[1];
 
-  var _React$useState3 = useState$2(false),
+  var _React$useState3 = useState$3(false),
       _React$useState4 = _slicedToArray$6(_React$useState3, 2),
       editing = _React$useState4[0],
       setEditing = _React$useState4[1];
 
-  var _React$useState5 = useState$2(false),
+  var _React$useState5 = useState$3(false),
       _React$useState6 = _slicedToArray$6(_React$useState5, 2),
       showComponent = _React$useState6[0],
       setShowComponent = _React$useState6[1];
@@ -40727,7 +40763,7 @@ var EditableInput = function EditableInput(props) {
   var EditableDefaultClass = classnames((_classNames2 = {}, _defineProperty$w(_classNames2, 'EditableInput-default', true), _defineProperty$w(_classNames2, "EditableInput-default--".concat(size), size), _classNames2));
   var InputClass = classnames(_defineProperty$w({}, 'EditableInput-Input--tiny', size === 'tiny'));
   var ActionClass = classnames((_classNames4 = {}, _defineProperty$w(_classNames4, 'EditableInput-actions', true), _defineProperty$w(_classNames4, "EditableInput-actions--".concat(size), size), _classNames4));
-  useEffect$1(function () {
+  useEffect$2(function () {
     setDefaultComponent();
   }, [value]);
 
@@ -41725,12 +41761,12 @@ var TabsWrapper = function TabsWrapper(props) {
   var tabs = Array.isArray(children) ? children : [children];
   var totalTabs = tabs.length;
 
-  var _React$useState = useState$2(props.active && props.active < totalTabs ? props.active : 0),
+  var _React$useState = useState$3(props.active && props.active < totalTabs ? props.active : 0),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       active = _React$useState2[0],
       setActiveTab = _React$useState2[1];
 
-  useEffect$1(function () {
+  useEffect$2(function () {
     setActiveTab(props.active && props.active < totalTabs ? props.active : 0);
   }, [props.active]);
   var wrapperClass = classnames(_defineProperty$w({}, 'TabsWrapper', true), className);
@@ -41774,6 +41810,1006 @@ var Tab = function Tab(props) {
   return /*#__PURE__*/createElement(Fragment$1, null, children);
 };
 Tab.displayName = 'Tab';
+
+var accepts = function accepts(file, acceptedFiles) {
+  if (file && acceptedFiles) {
+    var acceptedFilesArray = Array.isArray(acceptedFiles) ? acceptedFiles : acceptedFiles.split(',');
+    var fileName = file.name || '';
+    var mimeType = (file.type || '').toLowerCase();
+    var baseMimeType = mimeType.replace(/\/.*$/, '');
+    return acceptedFilesArray.some(function (type) {
+      var validType = type.trim().toLowerCase();
+
+      if (validType.charAt(0) === '.') {
+        return fileName.toLowerCase().endsWith(validType);
+      }
+
+      if (validType.endsWith('/*')) {
+        return baseMimeType === validType.replace(/\/.*$/, '');
+      }
+
+      return mimeType === validType;
+    });
+  }
+
+  return true;
+};
+var isPropagationStopped = function isPropagationStopped(event) {
+  if (typeof event.isPropagationStopped === 'function') {
+    return event.isPropagationStopped();
+  }
+
+  if (typeof event.cancelBubble !== 'undefined') {
+    return event.cancelBubble;
+  }
+
+  return false;
+};
+var isEvtWithFiles = function isEvtWithFiles(event) {
+  if (!event.dataTransfer) {
+    return !!event.target && !!event.target.files;
+  }
+
+  return Array.prototype.some.call(event.dataTransfer.types, function (type) {
+    return type === 'Files' || type === 'application/x-moz-file';
+  });
+};
+var onDocumentDragOver = function onDocumentDragOver(event) {
+  event.preventDefault();
+};
+var composeEventHandlers = function composeEventHandlers() {
+  for (var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++) {
+    fns[_key] = arguments[_key];
+  }
+
+  return function (event) {
+    for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+      args[_key2 - 1] = arguments[_key2];
+    }
+
+    return fns.some(function (fn) {
+      if (!isPropagationStopped(event) && fn) {
+        fn.apply(void 0, [event].concat(args));
+      }
+
+      return isPropagationStopped(event);
+    });
+  };
+};
+var reducer = function reducer(state, action) {
+  switch (action.type) {
+    case 'focus':
+      return _objectSpread2(_objectSpread2({}, state), {}, {
+        isFocused: true
+      });
+
+    case 'blur':
+      return _objectSpread2(_objectSpread2({}, state), {}, {
+        isFocused: false
+      });
+
+    case 'openDialog':
+      return _objectSpread2(_objectSpread2({}, state), {}, {
+        isFileDialogActive: true
+      });
+
+    case 'closeDialog':
+      return _objectSpread2(_objectSpread2({}, state), {}, {
+        isFileDialogActive: false
+      });
+
+    case 'setDraggedFiles':
+      /* eslint no-case-declarations: 0 */
+      var isDragActive = action.isDragActive,
+          draggedFiles = action.draggedFiles;
+      return _objectSpread2(_objectSpread2({}, state), {}, {
+        draggedFiles: draggedFiles,
+        isDragActive: isDragActive
+      });
+
+    case 'setFiles':
+      return _objectSpread2(_objectSpread2({}, state), {}, {
+        acceptedFiles: action.acceptedFiles,
+        fileRejections: action.fileRejections
+      });
+
+    case 'reset':
+      return _objectSpread2(_objectSpread2({}, state), {}, {
+        isFileDialogActive: false,
+        isDragActive: false,
+        draggedFiles: [],
+        acceptedFiles: [],
+        fileRejections: []
+      });
+
+    default:
+      return state;
+  }
+};
+
+var fileErrorMessages = {
+  FILE_INVALID_TYPE: 'File format not accepted',
+  FILE_TOO_LARGE: 'File is too large',
+  FILE_TOO_SMALL: 'File is too small',
+  TOO_MANY_FILES: 'Multiple files are not accepted'
+};
+
+var isDefined = function isDefined(value) {
+  return value !== undefined && value !== null;
+};
+
+var getInvalidTypeRejectionErr = function getInvalidTypeRejectionErr(accept) {
+  var updatedAccept = Array.isArray(accept) && accept.length === 1 ? accept[0] : accept;
+  var messageSuffix = Array.isArray(updatedAccept) ? "one of ".concat(updatedAccept.join(', ')) : updatedAccept;
+  return {
+    type: 'FILE_INVALID_TYPE',
+    message: "File type must be ".concat(messageSuffix)
+  };
+};
+var getTooLargeRejectionErr = function getTooLargeRejectionErr(maxSize) {
+  return {
+    type: 'FILE_TOO_LARGE',
+    message: "File is larger than ".concat(maxSize, " bytes")
+  };
+};
+var getTooSmallRejectionErr = function getTooSmallRejectionErr(minSize) {
+  return {
+    type: 'FILE_TOO_SMALL',
+    message: "File is smaller than ".concat(minSize, " bytes")
+  };
+};
+var fileAccepted = function fileAccepted(file, accept) {
+  var isAcceptable = file.type === 'application/x-moz-file' || accepts(file, accept);
+  return [isAcceptable, isAcceptable ? null : getInvalidTypeRejectionErr(accept)];
+};
+var fileMatchSize = function fileMatchSize(file, minSize, maxSize) {
+  if (isDefined(file.size)) {
+    if (isDefined(minSize) && isDefined(maxSize)) {
+      if (file.size > maxSize) return [false, getTooLargeRejectionErr(maxSize)];
+      if (file.size < minSize) return [false, getTooSmallRejectionErr(minSize)];
+    } else if (isDefined(minSize) && file.size < minSize) {
+      return [false, getTooSmallRejectionErr(minSize)];
+    } else if (isDefined(maxSize) && file.size > maxSize) {
+      return [false, getTooLargeRejectionErr(maxSize)];
+    }
+  }
+
+  return [true, null];
+};
+var getFileError = function getFileError(options) {
+  var files = options.files,
+      accept = options.accept,
+      minSize = options.minSize,
+      maxSize = options.maxSize,
+      multiple = options.multiple;
+
+  if (!multiple && files.length > 1) {
+    return 'TOO_MANY_FILES';
+  }
+
+  var typeError = files.every(function (file) {
+    var _fileAccepted = fileAccepted(file, accept),
+        _fileAccepted2 = _slicedToArray$6(_fileAccepted, 1),
+        accepted = _fileAccepted2[0];
+
+    return !accepted;
+  });
+  var sizeError = files.every(function (file) {
+    var _fileMatchSize = fileMatchSize(file, minSize, maxSize),
+        _fileMatchSize2 = _slicedToArray$6(_fileMatchSize, 1),
+        sizeMatch = _fileMatchSize2[0];
+
+    return !sizeMatch;
+  });
+  return typeError ? 'FILE_INVALID_TYPE' : sizeError ? 'FILE_TOO_LARGE' : '';
+};
+var allFilesAccepted = function allFilesAccepted(options) {
+  var files = options.files,
+      accept = options.accept,
+      minSize = options.minSize,
+      maxSize = options.maxSize,
+      multiple = options.multiple;
+
+  if (!multiple && files.length > 1) {
+    return false;
+  }
+
+  return files.every(function (file) {
+    var _fileAccepted3 = fileAccepted(file, accept),
+        _fileAccepted4 = _slicedToArray$6(_fileAccepted3, 1),
+        accepted = _fileAccepted4[0];
+
+    var _fileMatchSize3 = fileMatchSize(file, minSize, maxSize),
+        _fileMatchSize4 = _slicedToArray$6(_fileMatchSize3, 1),
+        sizeMatch = _fileMatchSize4[0];
+
+    return accepted && sizeMatch;
+  });
+};
+
+var COMMON_MIME_TYPES = new Map([['avi', 'video/avi'], ['gif', 'image/gif'], ['ico', 'image/x-icon'], ['jpeg', 'image/jpeg'], ['jpg', 'image/jpeg'], ['mkv', 'video/x-matroska'], ['mov', 'video/quicktime'], ['mp4', 'video/mp4'], ['pdf', 'application/pdf'], ['png', 'image/png'], ['zip', 'application/zip'], ['doc', 'application/msword'], ['docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']]);
+var FILES_TO_IGNORE = ['.DS_Store', 'Thumbs.db'];
+function fromEvent(_x) {
+  return _fromEvent.apply(this, arguments);
+}
+
+function _fromEvent() {
+  _fromEvent = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(evt) {
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            return _context2.abrupt("return", isDragEvt(evt) && evt.dataTransfer ? getDataTransferFiles(evt.dataTransfer, evt.type) : getInputFiles(evt));
+
+          case 1:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+  return _fromEvent.apply(this, arguments);
+}
+
+function isDragEvt(value) {
+  return !!value.dataTransfer;
+}
+
+function toFileWithPath(file, path) {
+  var f = withMimeType(file);
+
+  if (typeof f.path !== 'string') {
+    var _ref = file,
+        webkitRelativePath = _ref.webkitRelativePath;
+    Object.defineProperty(f, 'path', {
+      value: typeof path === 'string' ? path : typeof webkitRelativePath === 'string' && webkitRelativePath.length > 0 ? webkitRelativePath : file.name,
+      writable: false,
+      configurable: false,
+      enumerable: true
+    });
+  }
+
+  return f;
+}
+
+function withMimeType(file) {
+  var name = file.name;
+  var hasExtension = name && name.lastIndexOf('.') !== -1;
+
+  if (hasExtension && !file.type) {
+    var ext = name.split('.').pop().toLowerCase();
+    var type = COMMON_MIME_TYPES.get(ext);
+
+    if (type) {
+      Object.defineProperty(file, 'type', {
+        value: type,
+        writable: false,
+        configurable: false,
+        enumerable: true
+      });
+    }
+  }
+
+  return file;
+}
+
+function getInputFiles(evt) {
+  var files = isInput(evt.target) ? evt.target.files ? fromList(evt.target.files) : [] : [];
+  return files.map(function (file) {
+    return toFileWithPath(file);
+  });
+}
+
+function isInput(value) {
+  return value !== null;
+}
+
+function getDataTransferFiles(_x2, _x3) {
+  return _getDataTransferFiles.apply(this, arguments);
+}
+
+function _getDataTransferFiles() {
+  _getDataTransferFiles = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(dt, type) {
+    var items, files;
+    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            if (!dt.items) {
+              _context3.next = 8;
+              break;
+            }
+
+            items = fromList(dt.items).filter(function (item) {
+              return item.kind === 'file';
+            });
+
+            if (!(type !== 'drop')) {
+              _context3.next = 4;
+              break;
+            }
+
+            return _context3.abrupt("return", items);
+
+          case 4:
+            _context3.next = 6;
+            return Promise.all(items.map(toFilePromises));
+
+          case 6:
+            files = _context3.sent;
+            return _context3.abrupt("return", noIgnoredFiles(flatten(files)));
+
+          case 8:
+            return _context3.abrupt("return", noIgnoredFiles(fromList(dt.files).map(function (file) {
+              return toFileWithPath(file);
+            })));
+
+          case 9:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+  return _getDataTransferFiles.apply(this, arguments);
+}
+
+function noIgnoredFiles(files) {
+  return files.filter(function (file) {
+    return FILES_TO_IGNORE.indexOf(file.name) === -1;
+  });
+}
+
+function fromList(items) {
+  var files = []; // tslint:disable: prefer-for-of
+
+  for (var i = 0; i < items.length; i++) {
+    var file = items[i];
+    files.push(file);
+  }
+
+  return files;
+}
+
+function toFilePromises(item) {
+  if (typeof item.webkitGetAsEntry !== 'function') {
+    return fromDataTransferItem(item);
+  }
+
+  var entry = item.webkitGetAsEntry();
+
+  if (entry && entry.isDirectory) {
+    return fromDirEntry(entry);
+  }
+
+  return fromDataTransferItem(item);
+}
+
+function flatten(items) {
+  return items.reduce(function (acc, files) {
+    return [].concat(_toConsumableArray$9(acc), _toConsumableArray$9(Array.isArray(files) ? flatten(files) : [files]));
+  }, []);
+}
+
+function fromDataTransferItem(item) {
+  var file = item.getAsFile();
+
+  if (!file) {
+    return Promise.reject("".concat(item, " is not a File"));
+  }
+
+  var fwp = toFileWithPath(file);
+  return Promise.resolve(fwp);
+}
+
+function fromEntry(_x4) {
+  return _fromEntry.apply(this, arguments);
+}
+
+function _fromEntry() {
+  _fromEntry = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(entry) {
+    return regeneratorRuntime.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            return _context4.abrupt("return", entry.isDirectory ? fromDirEntry(entry) : fromFileEntry(entry));
+
+          case 1:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+  return _fromEntry.apply(this, arguments);
+}
+
+function fromDirEntry(entry) {
+  var reader = entry.createReader();
+  return new Promise(function (resolve, reject) {
+    var entries = [];
+
+    function readEntries() {
+      reader.readEntries( /*#__PURE__*/function () {
+        var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(batch) {
+          var files, items;
+          return regeneratorRuntime.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  if (batch.length) {
+                    _context.next = 13;
+                    break;
+                  }
+
+                  _context.prev = 1;
+                  _context.next = 4;
+                  return Promise.all(entries);
+
+                case 4:
+                  files = _context.sent;
+                  resolve(files);
+                  _context.next = 11;
+                  break;
+
+                case 8:
+                  _context.prev = 8;
+                  _context.t0 = _context["catch"](1);
+                  reject(_context.t0);
+
+                case 11:
+                  _context.next = 16;
+                  break;
+
+                case 13:
+                  items = Promise.all(batch.map(fromEntry));
+                  entries.push(items); // Continue reading
+
+                  readEntries();
+
+                case 16:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee, null, [[1, 8]]);
+        }));
+
+        return function (_x5) {
+          return _ref2.apply(this, arguments);
+        };
+      }(), function (err) {
+        reject(err);
+      });
+    }
+
+    readEntries();
+  });
+}
+
+function fromFileEntry(_x6) {
+  return _fromFileEntry.apply(this, arguments);
+}
+
+function _fromFileEntry() {
+  _fromFileEntry = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(entry) {
+    return regeneratorRuntime.wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            return _context5.abrupt("return", new Promise(function (resolve, reject) {
+              entry.file(function (file) {
+                var fwp = toFileWithPath(file, entry.fullPath);
+                resolve(fwp);
+              }, function (err) {
+                reject(err);
+              });
+            }));
+
+          case 1:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5);
+  }));
+  return _fromFileEntry.apply(this, arguments);
+}
+
+var initialState = {
+  isFocused: false,
+  isFileDialogActive: false,
+  isDragActive: false,
+  isDragAccept: false,
+  isDragReject: false,
+  draggedFiles: [],
+  acceptedFiles: [],
+  fileRejections: []
+};
+var DropzoneBase = function DropzoneBase(props) {
+  var accept = props.accept,
+      disabled = props.disabled,
+      maxSize = props.maxSize,
+      minSize = props.minSize,
+      multiple = props.multiple,
+      onDragEnter = props.onDragEnter,
+      onDragLeave = props.onDragLeave,
+      onDragOver = props.onDragOver,
+      onDrop = props.onDrop,
+      onDropAccepted = props.onDropAccepted,
+      onDropRejected = props.onDropRejected,
+      onFileDialogCancel = props.onFileDialogCancel,
+      getFilesFromEvent = props.getFilesFromEvent,
+      preventDropOnDocument = props.preventDropOnDocument,
+      validator = props.validator;
+  var rootRef = useRef(null);
+  var inputRef = useRef(null);
+
+  var _useReducer = useReducer(reducer, initialState),
+      _useReducer2 = _slicedToArray$6(_useReducer, 2),
+      state = _useReducer2[0],
+      dispatch = _useReducer2[1];
+
+  var isFocused = state.isFocused,
+      isFileDialogActive = state.isFileDialogActive,
+      draggedFiles = state.draggedFiles;
+  var openFileDialog = useCallback(function () {
+    if (inputRef.current) {
+      dispatch({
+        type: 'openDialog'
+      }); // @ts-ignore
+
+      inputRef.current.value = null; // @ts-ignore
+
+      inputRef.current.click();
+    }
+  }, [dispatch]);
+
+  var onWindowFocus = function onWindowFocus() {
+    if (isFileDialogActive) {
+      setTimeout(function () {
+        if (inputRef.current) {
+          // @ts-ignore
+          var _files = inputRef.current.files;
+
+          if (!_files.length) {
+            dispatch({
+              type: 'closeDialog'
+            });
+
+            if (typeof onFileDialogCancel === 'function') {
+              onFileDialogCancel();
+            }
+          }
+        }
+      }, 300);
+    }
+  };
+
+  useEffect$2(function () {
+    window.addEventListener('focus', onWindowFocus, false);
+    return function () {
+      window.removeEventListener('focus', onWindowFocus, false);
+    };
+  }, [inputRef, isFileDialogActive, onFileDialogCancel]); // Cb to open the file dialog when SPACE/ENTER occurs on the dropzone
+
+  var onKeyDownCb = useCallback(function (event) {
+    // @ts-ignore
+    if (!rootRef.current || !rootRef.current.isEqualNode(event.target)) {
+      return;
+    }
+
+    if (event.keyCode === 32 || event.keyCode === 13) {
+      event.preventDefault();
+      openFileDialog();
+    }
+  }, [rootRef, inputRef]); // Update focus state for the dropzone
+
+  var onFocusCb = useCallback(function () {
+    dispatch({
+      type: 'focus'
+    });
+  }, []);
+  var onBlurCb = useCallback(function () {
+    dispatch({
+      type: 'blur'
+    });
+  }, []);
+  var dragTargetsRef = useRef([]);
+
+  var onDocumentDrop = function onDocumentDrop(event) {
+    // @ts-ignore
+    if (rootRef.current && rootRef.current.contains(event.target)) {
+      return;
+    }
+
+    event.preventDefault();
+    dragTargetsRef.current = [];
+  };
+
+  useEffect$2(function () {
+    if (preventDropOnDocument) {
+      document.addEventListener('dragover', onDocumentDragOver, false);
+      document.addEventListener('drop', onDocumentDrop, false);
+    }
+
+    return function () {
+      if (preventDropOnDocument) {
+        document.removeEventListener('dragover', onDocumentDragOver);
+        document.removeEventListener('drop', onDocumentDrop);
+      }
+    };
+  }, [rootRef, preventDropOnDocument]);
+  var onDragEnterCb = useCallback(function (event) {
+    event.preventDefault();
+    event.persist(); // @ts-ignore
+
+    dragTargetsRef.current = [].concat(_toConsumableArray$9(dragTargetsRef.current), [event.target]);
+
+    if (isEvtWithFiles(event)) {
+      Promise.resolve(getFilesFromEvent(event)).then(function (files) {
+        if (isPropagationStopped(event)) {
+          return;
+        }
+
+        dispatch({
+          draggedFiles: files,
+          isDragActive: true,
+          type: 'setDraggedFiles'
+        });
+
+        if (onDragEnter) {
+          onDragEnter(event);
+        }
+      });
+    }
+  }, [getFilesFromEvent, onDragEnter]);
+  var onDragOverCb = useCallback(function (event) {
+    event.preventDefault();
+    event.persist();
+
+    if (event.dataTransfer) {
+      try {
+        event.dataTransfer.dropEffect = 'copy';
+      } catch (_unused) {}
+      /* eslint-disable-line no-empty */
+
+    }
+
+    if (isEvtWithFiles(event) && onDragOver) {
+      onDragOver(event);
+    }
+
+    return false;
+  }, [onDragOver]);
+  var onDragLeaveCb = useCallback(function (event) {
+    event.preventDefault();
+    event.persist();
+    var targets = dragTargetsRef.current.filter( // @ts-ignore
+    function (target) {
+      return rootRef.current && rootRef.current.contains(target);
+    }); // @ts-ignore
+
+    var targetIdx = targets.indexOf(event.target);
+
+    if (targetIdx !== -1) {
+      targets.splice(targetIdx, 1);
+    }
+
+    dragTargetsRef.current = targets;
+
+    if (targets.length > 0) {
+      return;
+    }
+
+    dispatch({
+      isDragActive: false,
+      type: 'setDraggedFiles',
+      draggedFiles: []
+    });
+
+    if (isEvtWithFiles(event) && onDragLeave) {
+      onDragLeave(event);
+    }
+  }, [rootRef, onDragLeave]);
+  var onDropCb = useCallback(function (event) {
+    event.preventDefault(); // Persist here because we need the event later after getFilesFromEvent() is done
+
+    event.persist();
+    dragTargetsRef.current = [];
+
+    if (isEvtWithFiles(event)) {
+      Promise.resolve(getFilesFromEvent(event)).then(function (files) {
+        if (isPropagationStopped(event)) {
+          return;
+        }
+
+        var acceptedFiles = [];
+        var fileRejections = [];
+        files.forEach(function (file) {
+          var _fileAccepted = fileAccepted(file, accept),
+              _fileAccepted2 = _slicedToArray$6(_fileAccepted, 2),
+              accepted = _fileAccepted2[0],
+              acceptError = _fileAccepted2[1];
+
+          var _fileMatchSize = fileMatchSize(file, minSize, maxSize),
+              _fileMatchSize2 = _slicedToArray$6(_fileMatchSize, 2),
+              sizeMatch = _fileMatchSize2[0],
+              sizeError = _fileMatchSize2[1];
+
+          var customErrors = validator ? validator(file) : null;
+
+          if (accepted && sizeMatch && !customErrors) {
+            acceptedFiles.push(file);
+          } else {
+            var errors = [acceptError, sizeError];
+
+            if (customErrors) {
+              errors = errors.concat(customErrors);
+            }
+
+            fileRejections.push({
+              file: file,
+              errors: errors.filter(function (e) {
+                return e;
+              })
+            });
+          }
+        });
+        dispatch({
+          acceptedFiles: acceptedFiles,
+          fileRejections: fileRejections,
+          type: 'setFiles'
+        });
+
+        if (onDrop) {
+          onDrop(acceptedFiles, fileRejections, event);
+        }
+
+        if (fileRejections.length > 0 && onDropRejected) {
+          onDropRejected(fileRejections, event);
+        }
+
+        if (acceptedFiles.length > 0 && onDropAccepted) {
+          onDropAccepted(acceptedFiles, event);
+        }
+      });
+    }
+
+    dispatch({
+      type: 'reset'
+    });
+  }, [multiple, accept, minSize, maxSize, getFilesFromEvent, onDrop, onDropAccepted, onDropRejected]);
+
+  var composeHandler = function composeHandler(fn) {
+    return disabled ? null : fn;
+  };
+
+  var composeKeyboardHandler = function composeKeyboardHandler(_fn) {
+    return null;
+  };
+
+  var composeDragHandler = function composeDragHandler(fn) {
+    return composeHandler(fn);
+  };
+
+  var getRootProps = useMemo(function () {
+    return function () {
+      var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+          _ref$refKey = _ref.refKey,
+          refKey = _ref$refKey === void 0 ? 'ref' : _ref$refKey,
+          onKeyDown = _ref.onKeyDown,
+          onFocus = _ref.onFocus,
+          onBlur = _ref.onBlur;
+          _ref.onClick;
+          var onDragEnterCallback = _ref.onDragEnterCallback,
+          onDragOverCallback = _ref.onDragOverCallback,
+          onDragLeaveCallback = _ref.onDragLeaveCallback,
+          onDropCallback = _ref.onDropCallback,
+          rest = _objectWithoutProperties$a(_ref, ["refKey", "onKeyDown", "onFocus", "onBlur", "onClick", "onDragEnterCallback", "onDragOverCallback", "onDragLeaveCallback", "onDropCallback"]);
+
+      return _objectSpread2(_defineProperty$w({
+        onKeyDown: composeKeyboardHandler(composeEventHandlers(onKeyDown, onKeyDownCb)),
+        onFocus: composeKeyboardHandler(composeEventHandlers(onFocus, onFocusCb)),
+        onBlur: composeKeyboardHandler(composeEventHandlers(onBlur, onBlurCb)),
+        // onClick: composeHandler(composeEventHandlers(onClick, onClickCb)),
+        onDragEnter: composeDragHandler(composeEventHandlers(onDragEnterCallback, onDragEnterCb)),
+        onDragOver: composeDragHandler(composeEventHandlers(onDragOverCallback, onDragOverCb)),
+        onDragLeave: composeDragHandler(composeEventHandlers(onDragLeaveCallback, onDragLeaveCb)),
+        onDrop: composeDragHandler(composeEventHandlers(onDropCallback, onDropCb))
+      }, refKey, rootRef), rest);
+    };
+  }, [rootRef, onKeyDownCb, onFocusCb, onBlurCb, onDragEnterCb, onDragOverCb, onDragLeaveCb, onDropCb, disabled]);
+  var onInputElementClick = useCallback(function (event) {
+    event.stopPropagation();
+  }, []);
+  var getInputProps = useMemo(function () {
+    return function () {
+      var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+          _ref2$refKey = _ref2.refKey,
+          refKey = _ref2$refKey === void 0 ? 'ref' : _ref2$refKey,
+          onChange = _ref2.onChange,
+          onClick = _ref2.onClick,
+          rest = _objectWithoutProperties$a(_ref2, ["refKey", "onChange", "onClick"]);
+
+      var inputProps = _defineProperty$w({
+        accept: accept,
+        multiple: multiple,
+        type: 'file',
+        style: {
+          display: 'none'
+        },
+        onChange: composeHandler(composeEventHandlers(onChange, onDropCb)),
+        onClick: composeHandler(composeEventHandlers(onClick, onInputElementClick)),
+        autoComplete: 'off',
+        tabIndex: -1
+      }, refKey, inputRef);
+
+      return _objectSpread2(_objectSpread2({}, inputProps), rest);
+    };
+  }, [inputRef, accept, multiple, onDropCb, disabled]);
+  var fileCount = draggedFiles.length;
+  var isDragAccept = fileCount > 0 && allFilesAccepted({
+    accept: accept,
+    minSize: minSize,
+    maxSize: maxSize,
+    multiple: multiple,
+    files: draggedFiles
+  });
+  var isDragReject = fileCount > 0 && !isDragAccept;
+  var fileError = isDragReject ? getFileError({
+    accept: accept,
+    minSize: minSize,
+    maxSize: maxSize,
+    multiple: multiple,
+    files: draggedFiles
+  }) : '';
+  return _objectSpread2(_objectSpread2({}, state), {}, {
+    isDragAccept: isDragAccept,
+    isDragReject: isDragReject,
+    getRootProps: getRootProps,
+    getInputProps: getInputProps,
+    rootRef: rootRef,
+    inputRef: inputRef,
+    draggedFiles: draggedFiles,
+    fileError: fileError,
+    isFocused: isFocused && !disabled,
+    open: composeHandler(openFileDialog)
+  });
+};
+DropzoneBase.displayName = 'DropzoneBase';
+DropzoneBase.defaultProps = {
+  disabled: false,
+  getFilesFromEvent: fromEvent,
+  maxSize: Infinity,
+  minSize: 0,
+  multiple: true,
+  preventDropOnDocument: true,
+  validator: function validator() {
+    return null;
+  }
+};
+
+var DropzoneActive = function DropzoneActive(props) {
+  var _classNames;
+
+  var type = props.type;
+  var IconClass = classnames((_classNames = {}, _defineProperty$w(_classNames, 'Dropzone-stateIcon', true), _defineProperty$w(_classNames, "Dropzone-stateIcon--".concat(type), type), _classNames));
+  return /*#__PURE__*/createElement(Fragment$1, null, type !== 'tight' && /*#__PURE__*/createElement(Icon, {
+    name: "archive",
+    size: 64,
+    appearance: "info",
+    className: IconClass
+  }), /*#__PURE__*/createElement(Text$1, {
+    appearance: "link",
+    size: "large",
+    weight: "strong"
+  }, "Drop your files here"));
+};
+DropzoneActive.displayName = 'DropzoneActive';
+
+var DropzoneError = function DropzoneError(props) {
+  var _classNames;
+
+  var type = props.type,
+      error = props.error;
+  var IconClass = classnames((_classNames = {}, _defineProperty$w(_classNames, 'Dropzone-stateIcon', true), _defineProperty$w(_classNames, "Dropzone-stateIcon--".concat(type), type), _classNames));
+  return /*#__PURE__*/createElement(Fragment$1, null, type !== 'tight' && /*#__PURE__*/createElement(Icon, {
+    name: "error",
+    size: 64,
+    appearance: "alert",
+    className: IconClass
+  }), /*#__PURE__*/createElement(Text$1, {
+    appearance: "destructive",
+    size: "large",
+    weight: "strong"
+  }, error));
+};
+DropzoneError.displayName = 'DropzoneError';
+
+var Dropzone = function Dropzone(props) {
+  var _classNames, _classNames2, _classNames3;
+
+  var type = props.type,
+      sizeLabel = props.sizeLabel,
+      className = props.className,
+      formatLabel = props.formatLabel,
+      sampleFileLink = props.sampleFileLink,
+      disabled = props.disabled;
+
+  var _DropzoneBase = DropzoneBase(props),
+      open = _DropzoneBase.open,
+      getRootProps = _DropzoneBase.getRootProps,
+      getInputProps = _DropzoneBase.getInputProps,
+      isDragActive = _DropzoneBase.isDragActive,
+      isDragReject = _DropzoneBase.isDragReject,
+      fileError = _DropzoneBase.fileError;
+
+  var baseProps = extractBaseProps(props);
+  var DropzoneClass = classnames((_classNames = {}, _defineProperty$w(_classNames, 'Dropzone', true), _defineProperty$w(_classNames, "Dropzone--".concat(type), type), _defineProperty$w(_classNames, 'Dropzone--disabled', disabled), _defineProperty$w(_classNames, 'Dropzone--active', isDragActive), _defineProperty$w(_classNames, 'Dropzone--error', isDragReject), _classNames), className);
+  var IconClass = classnames((_classNames2 = {}, _defineProperty$w(_classNames2, 'Dropzone-icon', true), _defineProperty$w(_classNames2, "Dropzone-icon--".concat(type), true), _defineProperty$w(_classNames2, 'Dropzone-icon--disabled', disabled), _classNames2));
+  var WrapperClass = classnames((_classNames3 = {}, _defineProperty$w(_classNames3, 'DropzoneWrapper', true), _defineProperty$w(_classNames3, "DropzoneWrapper--".concat(type), true), _classNames3));
+
+  if (isDragReject) {
+    return /*#__PURE__*/React.createElement("div", _extends$p({}, getRootProps(), baseProps, {
+      className: DropzoneClass
+    }), /*#__PURE__*/React.createElement(DropzoneError, {
+      type: type,
+      error: fileErrorMessages[fileError]
+    }));
+  }
+
+  if (isDragActive) {
+    return /*#__PURE__*/React.createElement("div", _extends$p({}, getRootProps(), baseProps, {
+      className: DropzoneClass
+    }), /*#__PURE__*/React.createElement(DropzoneActive, {
+      type: type
+    }));
+  }
+
+  var renderDropzone = function renderDropzone() {
+    if (isDragReject) return /*#__PURE__*/React.createElement(DropzoneError, {
+      type: type,
+      error: fileErrorMessages[fileError]
+    });
+    if (isDragActive) return /*#__PURE__*/React.createElement(DropzoneActive, {
+      type: type
+    });
+    return /*#__PURE__*/React.createElement(React.Fragment, null, type !== 'tight' && /*#__PURE__*/React.createElement(Icon, {
+      name: "backup",
+      size: 64,
+      className: IconClass
+    }), /*#__PURE__*/React.createElement("div", {
+      className: WrapperClass
+    }, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement(Text$1, {
+      size: "large",
+      weight: "strong",
+      className: "mr-2",
+      appearance: disabled ? 'disabled' : 'default'
+    }, "Drag your files here or"), /*#__PURE__*/React.createElement("span", {
+      className: "cursor-pointer",
+      onClick: open
+    }, /*#__PURE__*/React.createElement(Text$1, {
+      size: "large",
+      weight: "strong",
+      appearance: disabled ? 'disabled' : 'link'
+    }, " browse files")), /*#__PURE__*/React.createElement("input", getInputProps())), formatLabel && /*#__PURE__*/React.createElement(Text$1, {
+      appearance: disabled ? 'disabled' : 'subtle'
+    }, formatLabel), sizeLabel && /*#__PURE__*/React.createElement(Text$1, {
+      appearance: disabled ? 'disabled' : 'subtle'
+    }, sizeLabel), sampleFileLink && /*#__PURE__*/React.createElement("div", {
+      className: "mt-5"
+    }, sampleFileLink)));
+  };
+
+  return /*#__PURE__*/React.createElement("div", _extends$p({}, getRootProps(), baseProps, {
+    className: DropzoneClass
+  }), renderDropzone());
+};
+Dropzone.displayName = 'Dropzone';
+Dropzone.defaultProps = _objectSpread2(_objectSpread2({}, DropzoneBase.defaultProps), {}, {
+  type: 'standard'
+});
 
 var FileUploaderFormat = function FileUploaderFormat(props) {
   var formatLabel = props.formatLabel;
@@ -42629,7 +43665,7 @@ var GridRow = function GridRow(props) {
       rI = props.rowIndex;
   var rowRef = useRef(null);
 
-  var _React$useState = useState$2(false),
+  var _React$useState = useState$3(false),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       expanded = _React$useState2[0],
       setExpanded = _React$useState2[1];
@@ -42814,12 +43850,12 @@ var MainGrid = function MainGrid(props) {
     inView: 20
   };
 
-  var _React$useState = useState$2(initialState),
+  var _React$useState = useState$3(initialState),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       state = _React$useState2[0],
       setState = _React$useState2[1];
 
-  useEffect$1(function () {
+  useEffect$2(function () {
     if (init) {
       setState({
         offset: offset,
@@ -42828,7 +43864,7 @@ var MainGrid = function MainGrid(props) {
       });
     }
   }, [init]);
-  useEffect$1(function () {
+  useEffect$2(function () {
     setState(initialState);
 
     var el = _this.gridRef.querySelector('.Grid');
@@ -43325,22 +44361,22 @@ var DraggableDropdown = function DraggableDropdown(props) {
   var options = props.options,
       onChange = props.onChange;
 
-  var _React$useState = useState$2(false),
+  var _React$useState = useState$3(false),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       open = _React$useState2[0],
       setOpen = _React$useState2[1];
 
-  var _React$useState3 = useState$2(options),
+  var _React$useState3 = useState$3(options),
       _React$useState4 = _slicedToArray$6(_React$useState3, 2),
       tempOptions = _React$useState4[0],
       setTempOptions = _React$useState4[1];
 
-  var _React$useState5 = useState$2('var(--spacing-8)'),
+  var _React$useState5 = useState$3('var(--spacing-8)'),
       _React$useState6 = _slicedToArray$6(_React$useState5, 2),
       triggerWidth = _React$useState6[0],
       setTriggerWidth = _React$useState6[1];
 
-  useEffect$1(function () {
+  useEffect$2(function () {
     setTempOptions(options);
   }, [open]);
 
@@ -43477,25 +44513,25 @@ var Header = function Header(props) {
       allowSelectAll = props.allowSelectAll,
       showFilters = props.showFilters;
 
-  var _React$useState = useState$2(false),
+  var _React$useState = useState$3(false),
       _React$useState2 = _slicedToArray$6(_React$useState, 2),
       selectAllRecords = _React$useState2[0],
       setSelectAllRecords = _React$useState2[1];
 
-  var _React$useState3 = useState$2(true),
+  var _React$useState3 = useState$3(true),
       _React$useState4 = _slicedToArray$6(_React$useState3, 2),
       flag = _React$useState4[0],
       setFlag = _React$useState4[1];
 
-  useEffect$1(function () {
+  useEffect$2(function () {
     setFlag(!flag);
   }, [schema]);
-  useEffect$1(function () {
+  useEffect$2(function () {
     if (selectAll && selectAll.checked) {
       if (onSelectAll) onSelectAll(true, selectAllRecords);
     }
   }, [selectAllRecords]);
-  useEffect$1(function () {
+  useEffect$2(function () {
     if (selectAll && !selectAll.checked) setSelectAllRecords(false);
   }, [selectAll]);
   var filterSchema = schema.filter(function (s) {
@@ -44059,7 +45095,7 @@ var List = function List(props) {
 };
 List.defaultProps = defaultProps;
 
-var useState = useState$2;
+var useState$1 = useState$3;
 
 /**
  * ####NOTE: Navigation(vertical) sets first subMenu(if present) active if the Navigation is collapsed.
@@ -44080,12 +45116,12 @@ var Navigation = function Navigation(props) {
       className = props.className;
   var baseProps = extractBaseProps(props);
 
-  var _useState = useState({}),
+  var _useState = useState$1({}),
       _useState2 = _slicedToArray$6(_useState, 2),
       menuState = _useState2[0],
       setMenuState = _useState2[1];
 
-  useEffect$1(function () {
+  useEffect$2(function () {
     if (props.active) {
       var currMenu = getMenu(props.active);
       if (currMenu) updateMenuState(currMenu, true);
@@ -44341,6 +45377,125 @@ PageHeader.defaultProps = {
   separator: true
 };
 
-var version = "1.7.0-2";
+var useEffect = useEffect$2,
+    useState = useState$3;
+var FileIcon = function FileIcon(props) {
+  var _classNames, _classNames2;
 
-export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, ChatMessage, Checkbox, Chip, ChipGroup, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, EditableDropdown, EditableInput, EmptyState, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text$1 as Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, version };
+  var progress = props.progress,
+      status = props.status,
+      iconOptions = props.iconOptions,
+      file = props.file;
+
+  var _useState = useState(false),
+      _useState2 = _slicedToArray$6(_useState, 2),
+      animate = _useState2[0],
+      setAnimate = _useState2[1];
+
+  var iconClass = classnames((_classNames = {}, _defineProperty$w(_classNames, 'FileIcon', true), _defineProperty$w(_classNames, 'FileIcon--animate', animate), _defineProperty$w(_classNames, "FileIcon--".concat(file.type || 'others'), true), _classNames));
+  var uploadingIconClass = classnames((_classNames2 = {}, _defineProperty$w(_classNames2, 'FileIcon', true), _defineProperty$w(_classNames2, 'FileIcon--uploading', true), _classNames2));
+  useEffect(function () {
+    if (status === 'completed') {
+      setAnimate(true);
+    } else {
+      setAnimate(false);
+    }
+  }, [status]);
+
+  if (status === 'uploading') {
+    return /*#__PURE__*/createElement(ProgressRing, {
+      size: "small",
+      value: progress || 0,
+      className: uploadingIconClass
+    });
+  }
+
+  return /*#__PURE__*/createElement(Icon, {
+    name: (iconOptions === null || iconOptions === void 0 ? void 0 : iconOptions.name) || '',
+    className: iconClass
+  });
+};
+FileIcon.displayName = 'FileIcon';
+FileIcon.defaultProps = {
+  progress: 0,
+  status: 'completed'
+};
+
+var FileListItem = function FileListItem(props) {
+  var progress = props.progress,
+      errorMessage = props.errorMessage,
+      onClick = props.onClick,
+      className = props.className,
+      actions = props.actions,
+      fileItem = props.fileItem,
+      file = props.file,
+      icon = props.icon,
+      status = props.status;
+  var name = file.name;
+  var baseProps = extractBaseProps(props);
+  var FileItemClass = classnames(_defineProperty$w({}, 'FileItem', true), className);
+
+  var onClickHandler = function onClickHandler() {
+    if (onClick) {
+      onClick(fileItem);
+    }
+  };
+
+  return /*#__PURE__*/createElement("div", _extends$p({}, baseProps, {
+    className: FileItemClass,
+    onClick: onClickHandler
+  }), /*#__PURE__*/createElement("div", {
+    className: "FileItem-file"
+  }, /*#__PURE__*/createElement("div", {
+    className: "FileItem-fileContent"
+  }, /*#__PURE__*/createElement(FileIcon, {
+    file: file,
+    status: status,
+    progress: progress,
+    iconOptions: icon
+  }), /*#__PURE__*/createElement(Text$1, {
+    className: "FileItem-text",
+    appearance: status === 'completed' ? 'default' : 'subtle'
+  }, name)), /*#__PURE__*/createElement("div", {
+    className: "FileItem-actions"
+  }, /*#__PURE__*/createElement(Text$1, {
+    className: "FileItem-size",
+    appearance: 'subtle'
+  }, file.size), !!actions && actions)), status === 'error' && /*#__PURE__*/createElement(Caption, {
+    className: 'FileItem-error',
+    error: true
+  }, errorMessage));
+};
+FileListItem.defaultProps = {
+  progress: 0,
+  errorMessage: 'Network Error'
+};
+FileListItem.displayName = 'FileListItem';
+
+var FileList = function FileList(props) {
+  var fileList = props.fileList,
+      onClick = props.onClick,
+      actionRenderer = props.actionRenderer,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+  if (fileList.length === 0) return null;
+  return /*#__PURE__*/createElement(Card, _extends$p({}, baseProps, {
+    shadow: 'none',
+    className: className
+  }), fileList.map(function (fileItem, index) {
+    return /*#__PURE__*/createElement(FileListItem, _extends$p({
+      key: index,
+      onClick: onClick,
+      actions: actionRenderer && actionRenderer(fileItem),
+      fileItem: fileItem
+    }, fileItem));
+  }));
+};
+FileList.defaultProps = {
+  fileList: []
+};
+FileList.displayName = 'FileList';
+
+var version = "1.7.0";
+
+export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, ChatMessage, Checkbox, Chip, ChipGroup, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, Dropzone, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text$1 as Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, version };

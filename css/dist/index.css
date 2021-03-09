@@ -1961,6 +1961,118 @@ body {
     border: var(--spacing-xs) solid var(--alert);
 }
 
+.Dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: var(--spacing-m);
+  width: 100%;
+  background-image:
+  linear-gradient(to right,var(--secondary) 50%, rgba(255, 255, 255, 0) 0%), 
+  linear-gradient(var(--secondary) 50%,rgba(255, 255, 255, 0) 0%),
+  linear-gradient(to right, var(--secondary) 50%,rgba(255, 255, 255, 0) 0%),
+  linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: top, right, bottom, left;
+  background-repeat: repeat-x, repeat-y;
+  background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+}
+
+.Dropzone--active {
+  background: var(--primary-lightest);
+  background-image: 
+  linear-gradient(to right,var(--primary) 50%, rgba(255, 255, 255, 0) 0%), 
+  linear-gradient(var(--primary) 50%,rgba(255, 255, 255, 0) 0%),
+  linear-gradient(to right, var(--primary) 50%,rgba(255, 255, 255, 0) 0%),
+  linear-gradient(var(--primary) 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: top, right, bottom, left;
+  background-repeat: repeat-x, repeat-y;
+  background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+}
+
+.Dropzone--error {
+  background: var(--alert-lightest);
+  background-image: 
+  linear-gradient(to right,var(--alert) 50%, rgba(255, 255, 255, 0) 0%), 
+  linear-gradient(var(--alert) 50%,rgba(255, 255, 255, 0) 0%),
+  linear-gradient(to right, var(--alert) 50%,rgba(255, 255, 255, 0) 0%),
+  linear-gradient(var(--alert) 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: top, right, bottom, left;
+  background-repeat: repeat-x, repeat-y;
+  background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+}
+
+.Dropzone--disabled {
+  background: var(--secondary-lightest);
+  background-image: 
+  linear-gradient(to right,var(--secondary) 50%, rgba(255, 255, 255, 0) 0%), 
+  linear-gradient(var(--secondary) 50%,rgba(255, 255, 255, 0) 0%),
+  linear-gradient(to right, var(--secondary) 50%,rgba(255, 255, 255, 0) 0%),
+  linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: top, right, bottom, left;
+  background-repeat: repeat-x, repeat-y;
+  background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+}
+
+.Dropzone--standard {
+  flex-direction: column;
+  height: 196px;
+}
+
+.Dropzone--compressed {
+  flex-direction: row;
+  height: 124px;
+}
+
+.Dropzone--tight {
+  height: 124px;
+}
+
+.DropzoneWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.DropzoneWrapper--standard,
+.DropzoneWrapper--tight {
+  align-items: center;
+}
+
+.DropzoneWrapper--compressed {
+  align-items: start;
+}
+
+.Dropzone-icon {
+  color: var(--inverse-lighter);
+}
+
+.Dropzone-icon--standard {
+  margin-bottom: var(--spacing-l);
+}
+
+.Dropzone-icon--compressed {
+  margin-right: var(--spacing-xl);
+}
+
+.Dropzone-icon--disabled {
+  color: var(--inverse-lightest);
+}
+
+.Dropzone-stateIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Dropzone-stateIcon--standard {
+  margin-bottom: var(--spacing-2);
+}
+
+.Dropzone-stateIcon--compressed {
+  margin-right: var(--spacing-2);
+}
+
 .EditableDropdown {
   width: 100%;
 }
@@ -2053,6 +2165,96 @@ body {
 .EmptyState-description--small {
 	margin-bottom: var(--spacing-2);
 }
+.FileIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing);
+    border-radius: 50%;
+}
+.FileItem:not(:last-child) {
+    border-bottom: var(--border);
+    width: 100%;
+    box-sizing: border-box;
+}
+.FileItem {
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
+    padding-left: var(--spacing-l);
+    padding-right: var(--spacing);
+}
+.FileItem-fileContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.FileItem-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.FileItem-file {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} 
+.FileItem-size {
+    margin-right: var(--spacing);
+    margin-left: var(--spacing);
+}
+.FileItem-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: var(--spacing-l);
+}
+.FileItem-error {
+    margin-left: 40px;
+}
+
+.FileIcon--image {
+    background: var(--alert-lightest);
+    color: var(--alert);
+}
+.FileIcon--audio {
+    background: var(--accent1-lightest);
+    color: var(--accent1);
+}
+.FileIcon--video {
+    background: var(--accent2-lightest);
+    color: var(--accent2);
+}
+.FileIcon--document {
+    background: var(--accent3-lightest);
+    color: var(--accent3);
+}
+.FileIcon--others {
+    background: var(--warning-lightest);
+    color: var(--warning);
+}
+.FileIcon--animate {
+    -webkit-animation: fadeIn 160ms cubic-bezier(0, 0, 0.38, 0.9);
+            animation: fadeIn 160ms cubic-bezier(0, 0, 0.38, 0.9);
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+  
 .FileUploader {
   display: flex;
   flex-direction: column;
