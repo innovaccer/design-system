@@ -22,8 +22,8 @@ const alignmentMapping = {
 };
 
 export interface Selected {
-  label: string;
-  value: any;
+  label: OptionSchema['label'];
+  value: OptionSchema['value'];
 }
 
 export interface SelectAll {
