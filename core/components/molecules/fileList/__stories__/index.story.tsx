@@ -62,9 +62,6 @@ const customCode = `() => {
       status: 'uploading',
       progress: 45,
       id: 1,
-      icon: {
-        name: 'audiotrack'
-      }
     },
     {
       file:{
@@ -74,9 +71,6 @@ const customCode = `() => {
       },
       status: 'completed',
       id: 2,
-      icon: {
-        name: 'movie'
-      }
     },
     {
       file:{
@@ -87,21 +81,15 @@ const customCode = `() => {
       status: 'error',
       errorMessage: 'Network failure',
       id: 3,
-      icon: {
-        name: 'image',
-      }
     },
     {
       file:{
         name: 'Document File.pdf',
         size: '3 MB',
-        type: 'document',
+        type: 'application',
       },
       status: 'completed',
       id: 4,
-      icon: {
-        name: 'insert_drive_file',
-      }
     },
     {
       file:{
@@ -111,9 +99,6 @@ const customCode = `() => {
       },
       status: 'completed',
       id: 5,
-      icon: {
-        name: 'text_snippet',
-      }
     }
   ];
 
