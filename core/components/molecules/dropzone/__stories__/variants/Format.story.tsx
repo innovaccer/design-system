@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { Dropzone, Link } from '@/index';
 import { action } from '@storybook/addon-actions';
+import { DropzoneProps } from '@/index.type';
 
 export const format = () => {
 
-  const onDrop = (acceptedFiles: File[], rejectedFiles: any) => {
+  const onDrop: DropzoneProps['onDrop'] = (_event, acceptedFiles, rejectedFiles) => {
     return action(`Accepted Files: ${acceptedFiles}, rejectedFiles: ${rejectedFiles}`)();
   };
 
@@ -12,6 +13,7 @@ export const format = () => {
     <Dropzone
       accept="image/jpeg, image/png"
       formatLabel="Accepted formats: PDF, jpg"
+      sizeLabel="Maximum size: 25 MB"
       onDrop={onDrop}
       className="mb-3"
       sampleFileLink={(
@@ -28,7 +30,7 @@ export const format = () => {
 };
 
 const customCode = `() => {
-  const onDrop = (acceptedFiles, rejectedFiles) => {
+  const onDrop = (event, acceptedFiles, rejectedFiles) => {
     console.log(acceptedFiles, rejectedFiles);
   };
 
@@ -36,6 +38,7 @@ const customCode = `() => {
     <Dropzone
       accept="image/jpeg, image/png"
       formatLabel="Accepted formats: PDF, jpg"
+      sizeLabel='Maximum size: 25 MB'
       onDrop={onDrop}
       className="mb-3"
       sampleFileLink={(
