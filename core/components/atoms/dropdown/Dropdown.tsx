@@ -56,7 +56,7 @@ interface SyncProps {
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * OptionSchema: {
    *   label: string;
-   *   value: any;
+   *   value: React.ReactText;
    *   icon?: string;
    *   subInfo?: string | MetaListProps;
    *   optionType?: OptionType;
@@ -158,6 +158,11 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
    */
   staticLimit: number;
   /**
+   * Debounce duration to call updateData in case of search term update
+   * @default 300
+   */
+  searchDebounceDuration: number;
+  /**
    * Callback function called to toggle the `Dropdown Popover`
    *
    * type: 'onClick' | 'outsideClick' | 'optionClick' | 'applyClick' | 'cancelClick'
@@ -232,7 +237,8 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     triggerOptions: {},
     options: [],
     closeOnSelect: true,
-    staticLimit: 50
+    staticLimit: 50,
+    searchDebounceDuration: 300
   };
 
   constructor(props: DropdownProps) {
@@ -630,7 +636,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     this.updateSelectedOptions(selectedArray, false);
   }
 
-  debounceSearch = debounce(300, () => {
+  debounceSearch = debounce(this.props.searchDebounceDuration, () => {
     this.setState({
       searchInit: false,
     }, () => {

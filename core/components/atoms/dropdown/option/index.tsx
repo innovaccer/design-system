@@ -32,9 +32,9 @@ export interface OptionRendererProps {
   optionType?: OptionType;
 }
 
-export interface OptionSchema {
+export interface OptionSchema extends Record<string, any> {
   label: string;
-  value: any;
+  value: React.ReactText;
   icon?: string;
   subInfo?: string | MetaListProps;
   optionType?: OptionType;
