@@ -104,7 +104,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
               >
                 <Checkbox
                   className="OptionCheckbox"
-                  name={option.value}
+                  name={option.value as string}
                   label={option.label}
                   checked={tempOptions[index].selected}
                   onChange={e => handleChildChange(e, index)}

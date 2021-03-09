@@ -151,6 +151,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -318,6 +319,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -485,6 +487,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -653,6 +656,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -822,6 +826,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -990,6 +995,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -1157,6 +1163,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -1325,6 +1332,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -1493,6 +1501,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -1660,6 +1669,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -1806,6 +1816,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -1992,6 +2003,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -2178,6 +2190,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -2364,6 +2377,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -2531,6 +2545,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -2698,6 +2713,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -2864,6 +2880,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -3033,6 +3050,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -3202,6 +3220,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -3371,6 +3390,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -3540,6 +3560,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -3709,6 +3730,7 @@ exports[`Dropdown component
   previousSelected={Array []}
   remainingOptions={0}
   search={true}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -3878,6 +3900,7 @@ exports[`Dropdown component
   previousSelected={Array []}
   remainingOptions={0}
   search={true}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -4044,6 +4067,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -4211,6 +4235,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -4282,6 +4307,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
@@ -4353,6 +4379,7 @@ exports[`Dropdown component
   }
   previousSelected={Array []}
   remainingOptions={0}
+  searchDebounceDuration={300}
   searchInit={false}
   searchTerm=""
   selectAll={
