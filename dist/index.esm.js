@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1615272706500 
+   * Generated on: 1615366415968 
    *      Package: @innovaccer/design-system
-   *      Version: v1.7.0
+   *      Version: v1.7.1-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -2586,7 +2586,7 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
       _this.updateSelectedOptions(selectedArray, false);
     });
 
-    _defineProperty$w(_assertThisInitialized$p(_this), "debounceSearch", debounce$4(300, function () {
+    _defineProperty$w(_assertThisInitialized$p(_this), "debounceSearch", debounce$4(_this.props.searchDebounceDuration, function () {
       _this.setState({
         searchInit: false
       }, function () {
@@ -2890,7 +2890,8 @@ _defineProperty$w(Dropdown, "defaultProps", {
   triggerOptions: {},
   options: [],
   closeOnSelect: true,
-  staticLimit: 50
+  staticLimit: 50,
+  searchDebounceDuration: 300
 });
 
 var SubtleLink = function SubtleLink(props) {
@@ -33658,7 +33659,7 @@ var Link = function Link(props) {
 };
 Link.displayName = 'Link';
 
-var IconMapping = {
+var IconMapping$1 = {
   success: 'check_circle',
   info: 'info',
   warning: 'warning',
@@ -33682,7 +33683,7 @@ var Message = function Message(props) {
     className: MessageIcon,
     "data-test": "DesignSystem-Message--Icon"
   }, /*#__PURE__*/createElement(Icon, {
-    name: IconMapping[appearance],
+    name: IconMapping$1[appearance],
     appearance: appearance
   })), /*#__PURE__*/createElement("div", {
     "data-test": "DesignSystem-Message--Title"
@@ -39466,8 +39467,10 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
         onMouseLeave: this.handleMouseLeave
       } : {
         ref: ref,
-        onClick: function onClick() {
-          return _this3.togglePopper('onClick');
+        onClick: function onClick(ev) {
+          ev.stopPropagation();
+
+          _this3.togglePopper('onClick');
         }
       };
       var classes = classnames('PopperWrapper-trigger', triggerClass);
@@ -42563,15 +42566,15 @@ var DropzoneBase = function DropzoneBase(props) {
         });
 
         if (onDrop) {
-          onDrop(acceptedFiles, fileRejections, event);
+          onDrop(event, acceptedFiles, fileRejections);
         }
 
         if (fileRejections.length > 0 && onDropRejected) {
-          onDropRejected(fileRejections, event);
+          onDropRejected(event, fileRejections);
         }
 
         if (acceptedFiles.length > 0 && onDropAccepted) {
-          onDropAccepted(acceptedFiles, event);
+          onDropAccepted(event, acceptedFiles);
         }
       });
     }
@@ -45379,12 +45382,18 @@ PageHeader.defaultProps = {
 
 var useEffect = useEffect$2,
     useState = useState$3;
+var IconMapping = {
+  audio: 'audiotrack',
+  image: 'image',
+  video: 'movie',
+  application: 'insert_drive_file',
+  others: 'text_snippet'
+};
 var FileIcon = function FileIcon(props) {
   var _classNames, _classNames2;
 
   var progress = props.progress,
       status = props.status,
-      iconOptions = props.iconOptions,
       file = props.file;
 
   var _useState = useState(false),
@@ -45392,7 +45401,9 @@ var FileIcon = function FileIcon(props) {
       animate = _useState2[0],
       setAnimate = _useState2[1];
 
-  var iconClass = classnames((_classNames = {}, _defineProperty$w(_classNames, 'FileIcon', true), _defineProperty$w(_classNames, 'FileIcon--animate', animate), _defineProperty$w(_classNames, "FileIcon--".concat(file.type || 'others'), true), _classNames));
+  var type = file.type.split('/')[0] || 'others';
+  var fileType = IconMapping[type] ? type : 'others';
+  var iconClass = classnames((_classNames = {}, _defineProperty$w(_classNames, 'FileIcon', true), _defineProperty$w(_classNames, 'FileIcon--animate', animate), _defineProperty$w(_classNames, "FileIcon--".concat(fileType), true), _classNames));
   var uploadingIconClass = classnames((_classNames2 = {}, _defineProperty$w(_classNames2, 'FileIcon', true), _defineProperty$w(_classNames2, 'FileIcon--uploading', true), _classNames2));
   useEffect(function () {
     if (status === 'completed') {
@@ -45411,7 +45422,7 @@ var FileIcon = function FileIcon(props) {
   }
 
   return /*#__PURE__*/createElement(Icon, {
-    name: (iconOptions === null || iconOptions === void 0 ? void 0 : iconOptions.name) || '',
+    name: IconMapping[fileType],
     className: iconClass
   });
 };
@@ -45429,8 +45440,8 @@ var FileListItem = function FileListItem(props) {
       actions = props.actions,
       fileItem = props.fileItem,
       file = props.file,
-      icon = props.icon,
-      status = props.status;
+      status = props.status,
+      fileSize = props.fileSize;
   var name = file.name;
   var baseProps = extractBaseProps(props);
   var FileItemClass = classnames(_defineProperty$w({}, 'FileItem', true), className);
@@ -45451,8 +45462,7 @@ var FileListItem = function FileListItem(props) {
   }, /*#__PURE__*/createElement(FileIcon, {
     file: file,
     status: status,
-    progress: progress,
-    iconOptions: icon
+    progress: progress
   }), /*#__PURE__*/createElement(Text$1, {
     className: "FileItem-text",
     appearance: status === 'completed' ? 'default' : 'subtle'
@@ -45461,7 +45471,7 @@ var FileListItem = function FileListItem(props) {
   }, /*#__PURE__*/createElement(Text$1, {
     className: "FileItem-size",
     appearance: 'subtle'
-  }, file.size), !!actions && actions)), status === 'error' && /*#__PURE__*/createElement(Caption, {
+  }, fileSize || file.size), !!actions && actions)), status === 'error' && /*#__PURE__*/createElement(Caption, {
     className: 'FileItem-error',
     error: true
   }, errorMessage));
@@ -45496,6 +45506,6 @@ FileList.defaultProps = {
 };
 FileList.displayName = 'FileList';
 
-var version = "1.7.0";
+var version = "1.7.1-0";
 
 export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, ChatMessage, Checkbox, Chip, ChipGroup, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, Dropzone, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text$1 as Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, version };

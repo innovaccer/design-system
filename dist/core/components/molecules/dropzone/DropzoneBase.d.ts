@@ -5,9 +5,9 @@ interface FileError {
     type: FileErrorTypes;
     message: string;
 }
-interface FileRejection {
+export interface FileRejection {
     file: File;
-    error: FileError;
+    errors: FileError[];
 }
 export interface DropzoneBaseProps extends BaseProps {
     accept?: string | string[];
@@ -21,9 +21,9 @@ export interface DropzoneBaseProps extends BaseProps {
     onDragEnter?: (event: DragEvent) => void;
     onDragLeave?: (event: DragEvent) => void;
     onDragOver?: (event: DragEvent) => void;
-    onDrop?: (acceptedFiles: File[], rejectedFiles: FileRejection[], event: DragEvent | Event) => void;
-    onDropAccepted?: (files: File[], event: DragEvent | Event) => void;
-    onDropRejected?: (rejectedFiles: FileRejection[], event: DragEvent | Event) => any;
+    onDrop?: (event: DragEvent | Event, acceptedFiles: File[], rejectedFiles: FileRejection[]) => void;
+    onDropAccepted?: (event: DragEvent | Event, files: File[]) => void;
+    onDropRejected?: (event: DragEvent | Event, rejectedFiles: FileRejection[]) => any;
     validator?: (file: File) => FileError | FileError[];
 }
 export declare const DropzoneBase: {

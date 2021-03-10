@@ -2224,7 +2224,7 @@ body {
     background: var(--accent2-lightest);
     color: var(--accent2);
 }
-.FileIcon--document {
+.FileIcon--application {
     background: var(--accent3-lightest);
     color: var(--accent3);
 }

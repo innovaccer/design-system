@@ -30,6 +30,7 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
     triggerOptions: TriggerProps;
     open?: boolean;
     staticLimit: number;
+    searchDebounceDuration: number;
     onPopperToggle?: (open: boolean, type?: string) => void;
     getLabel?: (label: string) => void;
     onChange?: (selected: any[] | any, name?: string | number) => void;
@@ -63,6 +64,7 @@ export declare class Dropdown extends React.Component<DropdownProps, DropdownSta
         options: never[];
         closeOnSelect: boolean;
         staticLimit: number;
+        searchDebounceDuration: number;
     };
     constructor(props: DropdownProps);
     componentDidMount(): void;

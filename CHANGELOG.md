@@ -1,9 +1,9 @@
 
 -------------------
- **v1.7.0**  (2021-03-09) 
+ **v1.7.1-0**  (2021-03-10) 
 
-* 2372447 v1.7.0
-* 8b85b67 chore(PageHeader): fixes navigationPosition in stories
-* f3e0b79 fix(fileList):removes id from fileListItem
-* 0a7b8ac feat(fileList): adds component
-* bfa2d1c feat(dropzone): adds component
+* f82cf3b v1.7.1-0
+* 031f821 chore(Dropzone): adds dropzone with fileList story
+* 1640bbf feat(FileList): adds size prop in FileItemProp
+* c52f193 feat(dropdown): adds searchDebounceDuration prop and fixes option value prop
+* 58c594d fix: adds ev.stopPropagation in trigger element onClick

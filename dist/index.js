@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1615272706940 
+   * Generated on: 1615366416344 
    *      Package: @innovaccer/design-system
-   *      Version: v1.7.0
+   *      Version: v1.7.1-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -2206,7 +2206,7 @@
           _this.updateSelectedOptions(selectedArray, false);
         };
 
-        _this.debounceSearch = debounce(300, function () {
+        _this.debounceSearch = debounce(_this.props.searchDebounceDuration, function () {
           _this.setState({
             searchInit: false
           }, function () {
@@ -2496,7 +2496,8 @@
         triggerOptions: {},
         options: [],
         closeOnSelect: true,
-        staticLimit: 50
+        staticLimit: 50,
+        searchDebounceDuration: 300
       };
       return Dropdown;
     }(React.Component);
@@ -5023,7 +5024,7 @@
     };
     Link.displayName = 'Link';
 
-    var IconMapping = {
+    var IconMapping$1 = {
       success: 'check_circle',
       info: 'info',
       warning: 'warning',
@@ -5047,7 +5048,7 @@
         className: MessageIcon,
         "data-test": "DesignSystem-Message--Icon"
       }, /*#__PURE__*/React.createElement(Icon, {
-        name: IconMapping[appearance],
+        name: IconMapping$1[appearance],
         appearance: appearance
       })), /*#__PURE__*/React.createElement("div", {
         "data-test": "DesignSystem-Message--Title"
@@ -6429,8 +6430,10 @@
           onMouseLeave: this.handleMouseLeave
         } : {
           ref: ref,
-          onClick: function onClick() {
-            return _this.togglePopper('onClick');
+          onClick: function onClick(ev) {
+            ev.stopPropagation();
+
+            _this.togglePopper('onClick');
           }
         };
         var classes = classNames__default['default']('PopperWrapper-trigger', triggerClass);
@@ -9341,15 +9344,15 @@
             });
 
             if (onDrop) {
-              onDrop(acceptedFiles, fileRejections, event);
+              onDrop(event, acceptedFiles, fileRejections);
             }
 
             if (fileRejections.length > 0 && onDropRejected) {
-              onDropRejected(fileRejections, event);
+              onDropRejected(event, fileRejections);
             }
 
             if (acceptedFiles.length > 0 && onDropAccepted) {
-              onDropAccepted(acceptedFiles, event);
+              onDropAccepted(event, acceptedFiles);
             }
           });
         }
@@ -12057,19 +12060,27 @@
 
     var useEffect = React.useEffect,
         useState = React.useState;
+    var IconMapping = {
+      audio: 'audiotrack',
+      image: 'image',
+      video: 'movie',
+      application: 'insert_drive_file',
+      others: 'text_snippet'
+    };
     var FileIcon = function FileIcon(props) {
       var _a, _b;
 
       var progress = props.progress,
           status = props.status,
-          iconOptions = props.iconOptions,
           file = props.file;
 
       var _c = useState(false),
           animate = _c[0],
           setAnimate = _c[1];
 
-      var iconClass = classNames__default['default']((_a = {}, _a['FileIcon'] = true, _a['FileIcon--animate'] = animate, _a["FileIcon--" + (file.type || 'others')] = true, _a));
+      var type = file.type.split('/')[0] || 'others';
+      var fileType = IconMapping[type] ? type : 'others';
+      var iconClass = classNames__default['default']((_a = {}, _a['FileIcon'] = true, _a['FileIcon--animate'] = animate, _a["FileIcon--" + fileType] = true, _a));
       var uploadingIconClass = classNames__default['default']((_b = {}, _b['FileIcon'] = true, _b['FileIcon--uploading'] = true, _b));
       useEffect(function () {
         if (status === 'completed') {
@@ -12088,7 +12099,7 @@
       }
 
       return /*#__PURE__*/React.createElement(Icon, {
-        name: (iconOptions === null || iconOptions === void 0 ? void 0 : iconOptions.name) || '',
+        name: IconMapping[fileType],
         className: iconClass
       });
     };
@@ -12108,8 +12119,8 @@
           actions = props.actions,
           fileItem = props.fileItem,
           file = props.file,
-          icon = props.icon,
-          status = props.status;
+          status = props.status,
+          fileSize = props.fileSize;
       var name = file.name;
       var baseProps = extractBaseProps(props);
       var FileItemClass = classNames__default['default']((_a = {}, _a['FileItem'] = true, _a), className);
@@ -12130,8 +12141,7 @@
       }, /*#__PURE__*/React.createElement(FileIcon, {
         file: file,
         status: status,
-        progress: progress,
-        iconOptions: icon
+        progress: progress
       }), /*#__PURE__*/React.createElement(Text, {
         className: "FileItem-text",
         appearance: status === 'completed' ? 'default' : 'subtle'
@@ -12140,7 +12150,7 @@
       }, /*#__PURE__*/React.createElement(Text, {
         className: "FileItem-size",
         appearance: 'subtle'
-      }, file.size), !!actions && actions)), status === 'error' && /*#__PURE__*/React.createElement(Caption, {
+      }, fileSize || file.size), !!actions && actions)), status === 'error' && /*#__PURE__*/React.createElement(Caption, {
         className: 'FileItem-error',
         error: true
       }, errorMessage));
@@ -12175,7 +12185,7 @@
     };
     FileList.displayName = 'FileList';
 
-    var version = "1.7.0";
+    var version = "1.7.1-0";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;

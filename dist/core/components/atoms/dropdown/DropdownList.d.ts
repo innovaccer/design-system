@@ -7,8 +7,8 @@ export declare type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 export declare type DropdownAlign = 'left' | 'right';
 export declare type OptionType = 'DEFAULT' | 'WITH_ICON' | 'WITH_META' | 'ICON_WITH_META';
 export interface Selected {
-    label: string;
-    value: any;
+    label: OptionSchema['label'];
+    value: OptionSchema['value'];
 }
 export interface SelectAll {
     indeterminate: boolean;
