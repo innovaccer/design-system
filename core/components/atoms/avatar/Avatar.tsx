@@ -147,7 +147,7 @@ Avatar.displayName = 'Avatar';
 Avatar.defaultProps = {
   tooltipPosition: 'bottom',
   withTooltip: true,
-  size: 'regular'
+  size: 'tiny'
 };
 
 export default Avatar;
