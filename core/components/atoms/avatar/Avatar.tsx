@@ -112,6 +112,7 @@ export const Avatar = (props: AvatarProps) => {
             appearance={'white'}
             className={ContentClass}
           >
+            Some test
             {initials}
           </Text>
         )}
