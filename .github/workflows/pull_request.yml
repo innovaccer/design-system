@@ -24,7 +24,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          npm-command: npm run test:ci
+          test-command: npm run test:ci
 
       - name: build
         run: npm run build
