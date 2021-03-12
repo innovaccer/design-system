@@ -1,7 +1,6 @@
 name: Pull request 
 
-# on: pull_request  
-on: push
+on: pull_request  
 
 jobs:
   lint_test_build:
@@ -17,20 +16,18 @@ jobs:
       - name: npm install
         run: npm install
       
-      # - name: lint
-      #   run: npm run lint
+      - name: lint
+        run: npm run lint
 
       - name: test coverage
         uses: mattallty/jest-github-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          coverage-comment: false
           changes-only: true
-          # test-command: "npm test"
 
-      # - name: build
-      #   run: npm run build
+      - name: build
+        run: npm run build
 
-      # - name: build storybook
-      #   run: npm run build-storybook
+      - name: build storybook
+        run: npm run build-storybook
