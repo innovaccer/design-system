@@ -22,7 +22,7 @@ jobs:
       - name: test coverage
         uses: mattallty/jest-github-action@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           test-command: npm run test:ci
 
