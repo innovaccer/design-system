@@ -42,6 +42,6 @@ export const chatMessage = () => {
 };
 
 export default {
-  title: 'Molecules|Chat/ChatMessage',
+  title: 'Components/Chat/ChatMessage',
   component: ChatMessage,
 };

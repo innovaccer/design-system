@@ -51,7 +51,7 @@ const customCode = `() => {
 `;
 
 export default {
-  title: 'Organisms|Grid/Variants',
+  title: 'Components/Grid/Variants',
   parameters: {
     docs: {
       docPage: {

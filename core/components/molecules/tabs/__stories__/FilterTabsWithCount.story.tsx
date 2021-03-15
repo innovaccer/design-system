@@ -178,7 +178,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Molecules|Tabs',
+  title: 'Components/Tabs',
   component: TabsWrapper,
   subcomponents: { Tab },
   parameters: {

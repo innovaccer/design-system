@@ -20,7 +20,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|Typography/Label',
+  title: 'Components/Label',
   component: Label,
   parameters: {
     docs: {

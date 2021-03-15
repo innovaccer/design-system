@@ -24,7 +24,7 @@ export const rangeLimit = () => {
 };
 
 export default {
-  title: 'Organisms|DateRangePicker/Variants',
+  title: 'Components/DateRangePicker/Variants',
   component: DateRangePicker,
   parameters: {
     docs: {

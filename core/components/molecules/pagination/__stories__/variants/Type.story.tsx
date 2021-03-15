@@ -47,7 +47,7 @@ export const type = () => {
 };
 
 export default {
-  title: 'Molecules|Pagination/Variants',
+  title: 'Components/Pagination/Variants',
   component: Pagination,
   parameters: {
     docs: {

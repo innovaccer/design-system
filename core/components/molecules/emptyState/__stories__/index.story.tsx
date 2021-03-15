@@ -25,6 +25,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Molecules|EmptyState',
+  title: 'Components/EmptyState',
   component: EmptyState,
 };

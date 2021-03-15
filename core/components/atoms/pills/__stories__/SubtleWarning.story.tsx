@@ -11,7 +11,7 @@ export const subtleWarning = () => (
   );
 
 export default {
-  title: 'Atoms|Pills',
+  title: 'Components/Pills',
   component: Pills,
   parameters: {
     docs: {

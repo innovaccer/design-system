@@ -137,13 +137,13 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Molecules|Fullscreen Modal/Variants/Dimesion',
+  title: 'Components/FullscreenModal/Variants/Dimesion',
   component: FullscreenModal,
   parameters: {
     docs: {
       docPage: {
         customCode,
-        title: 'Fullscreen Modal',
+        title: 'FullscreenModal',
         noHtml: true
       }
     }

@@ -38,6 +38,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|Card',
+  title: 'Components/Card',
   component: Card
 };

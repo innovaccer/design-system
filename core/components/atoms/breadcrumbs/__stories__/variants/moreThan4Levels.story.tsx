@@ -72,7 +72,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Atoms|Breadcrumbs/Variants',
+  title: 'Components/Breadcrumbs/Variants',
   component: Breadcrumbs,
   parameters: {
     docs: {

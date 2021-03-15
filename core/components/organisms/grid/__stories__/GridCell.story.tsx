@@ -70,6 +70,6 @@ export const Grid_Cell = () => {
 };
 
 export default {
-  title: 'Organisms|Grid',
+  title: 'Components/Grid',
   component: GridCell,
 };

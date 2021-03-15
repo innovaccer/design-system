@@ -16,7 +16,7 @@ export const disabled = () => {
 };
 
 export default {
-  title: 'Atoms|Typography/Link/Variants',
+  title: 'Components/Link/Variants',
   component: Link,
   parameters: {
     docs: {

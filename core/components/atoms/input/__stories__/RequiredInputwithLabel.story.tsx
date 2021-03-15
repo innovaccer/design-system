@@ -16,7 +16,7 @@ export const requiredInputWithLabel = () => (
 );
 
 export default {
-  title: 'Atoms|Input',
+  title: 'Components/Input',
   component: Input,
   parameters: {
     docs: {

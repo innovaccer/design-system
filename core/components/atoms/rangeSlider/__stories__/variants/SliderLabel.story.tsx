@@ -30,6 +30,6 @@ export const sliderLabel = () => {
 };
 
 export default {
-  title: 'Atoms|RangeSlider/Variants',
+  title: 'Components/RangeSlider/Variants',
   component: RangeSlider,
 };

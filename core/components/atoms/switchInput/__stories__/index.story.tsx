@@ -48,6 +48,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|Switch',
+  title: 'Components/Switch',
   component: Switch
 };

@@ -90,7 +90,7 @@ export const alert = () => {
 };
 
 export default {
-  title: 'Atoms|Button/Variants/State',
+  title: 'Components/Button/Variants/State',
   component: Button,
   parameters: {
     docs: {

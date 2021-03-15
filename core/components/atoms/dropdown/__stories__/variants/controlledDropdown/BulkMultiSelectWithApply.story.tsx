@@ -141,7 +141,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Atoms|Dropdown/Variants/ControlledDropdown',
+  title: 'Components/Dropdown/Variants/ControlledDropdown',
   component: Dropdown,
   parameters: {
     docs: {

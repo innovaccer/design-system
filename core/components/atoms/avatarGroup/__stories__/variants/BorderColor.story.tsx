@@ -65,7 +65,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Atoms|AvatarGroup/Variants',
+  title: 'Components/AvatarGroup/Variants',
   component: AvatarGroup,
   parameters: {
     docs: {

@@ -11,7 +11,7 @@ export const regular = () => (
 );
 
 export default {
-  title: 'Atoms|Switch',
+  title: 'Components/Switch',
   component: Switch,
   parameters: {
     docs: {

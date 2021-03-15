@@ -17,6 +17,6 @@ export const freeSlider = () => {
 };
 
 export default {
-  title: 'Atoms|RangeSlider/Variants',
+  title: 'Components/RangeSlider/Variants',
   component: RangeSlider,
 };

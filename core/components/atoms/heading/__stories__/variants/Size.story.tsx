@@ -29,7 +29,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Atoms|Typography/Heading/Variants',
+  title: 'Components/Heading/Variants',
   component: Heading,
   parameters: {
     docs: {

@@ -23,7 +23,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Atoms|Loaders/Placeholder/Paragraph/Variants',
+  title: 'Components/Loaders/Placeholder/Paragraph/Variants',
   component: PlaceholderParagraph,
   parameters: {
     docs: {

@@ -26,7 +26,7 @@ export const imageSize = () => {
 };
 
 export default {
-  title: 'Molecules|Loaders/Placeholder/Variants',
+  title: 'Components/Loaders/Placeholder/Variants',
   component: Placeholder,
   subcomponents: { PlaceholderImage, PlaceholderParagraph }
 };

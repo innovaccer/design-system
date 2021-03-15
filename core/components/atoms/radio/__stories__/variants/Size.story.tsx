@@ -28,7 +28,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Atoms|Radio/Variants',
+  title: 'Components/Radio/Variants',
   component: Radio,
   parameters: {
     docs: {

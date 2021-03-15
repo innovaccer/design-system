@@ -33,6 +33,6 @@ export const all = () => {
   );
 };
 export default {
-  title: 'Atoms|ChipGroup',
+  title: 'Components/ChipGroup',
   component: ChipGroup
 };

@@ -100,7 +100,7 @@ export const withSingleInput = () => {
 };
 
 export default {
-  title: 'Organisms|DateRangePicker/Variants',
+  title: 'Components/DateRangePicker/Variants',
   component: DateRangePicker,
   subcomponents: { InputMask }
 };

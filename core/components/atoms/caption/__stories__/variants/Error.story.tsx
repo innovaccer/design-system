@@ -20,7 +20,7 @@ export const error = () => {
 };
 
 export default {
-  title: 'Atoms|Typography/Caption/Variants',
+  title: 'Components/Caption/Variants',
   component: Caption,
   parameters: {
     docs: {

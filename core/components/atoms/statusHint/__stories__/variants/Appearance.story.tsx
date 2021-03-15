@@ -31,7 +31,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Atoms|StatusHint/Variants',
+  title: 'Components/StatusHint/Variants',
   component: StatusHint,
   parameters: {
     docs: {

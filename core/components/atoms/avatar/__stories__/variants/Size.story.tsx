@@ -21,7 +21,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Atoms|Avatar/Variants',
+  title: 'Components/Avatar/Variants',
   component: Avatar,
   parameters: {
     docs: {

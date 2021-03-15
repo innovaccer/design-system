@@ -16,7 +16,7 @@ export const LargeIconRightPrimary = () => (
 );
 
 export default {
-  title: 'Atoms|Button',
+  title: 'Components/Button',
   component: Button,
   parameters: {
     docs: {

@@ -110,7 +110,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Molecules|Modal/Variants/Dimesion',
+  title: 'Components/Modal/Variants/Dimesion',
   component: Modal,
   subcomponents: { ModalHeader, ModalBody, ModalDescription, ModalFooter },
   parameters: {

@@ -75,7 +75,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Molecules|FileUploader',
+  title: 'Components/FileUploader',
   component: FileUploaderList,
   parameters: {
     docs: {

@@ -43,7 +43,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Atoms|Checkbox/Variants',
+  title: 'Components/Checkbox/Variants',
   component: Checkbox,
   parameters: {
     docs: {

@@ -81,6 +81,6 @@ blank - for classes that set a margin or padding on all 4 sides of the element<b
 };
 
 export default {
-  title: 'Utilities',
+  title: 'Others/Utilities',
   component: spacing,
 };

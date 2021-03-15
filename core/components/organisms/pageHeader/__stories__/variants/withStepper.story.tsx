@@ -107,7 +107,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Organisms|PageHeader/Level 0/Variants',
+  title: 'Components/PageHeader/Level 0/Variants',
   component: PageHeader,
   parameters: {
     docs: {

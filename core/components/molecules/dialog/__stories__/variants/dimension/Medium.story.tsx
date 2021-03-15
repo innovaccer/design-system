@@ -75,7 +75,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Molecules|Dialog/Variants/Dimension',
+  title: 'Components/Dialog/Variants/Dimension',
   component: Dialog,
   parameters: {
     docs: {

@@ -11,7 +11,7 @@ export const defaultpill = () => (
 );
 
 export default {
-  title: 'Atoms|Pills',
+  title: 'Components/Pills',
   component: Pills,
   parameters: {
     docs: {

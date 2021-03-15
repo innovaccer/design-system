@@ -24,7 +24,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Atoms|Toast/Variants',
+  title: 'Components/Toast/Variants',
   component: Toast,
   parameters: {
     docs: {

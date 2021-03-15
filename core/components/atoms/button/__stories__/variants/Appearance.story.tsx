@@ -46,7 +46,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Atoms|Button/Variants',
+  title: 'Components/Button/Variants',
   component: Button,
   parameters: {
     docs: {
