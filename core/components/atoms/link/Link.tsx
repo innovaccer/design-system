@@ -3,13 +3,27 @@ import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
 
-export type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
+type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
+type Appearance = 'default' | 'subtle';
+type Size = 'regular' | 'tiny';
 
 export interface LinkProps extends BaseProps {
   /**
    * HTML ID of `Link`
    */
   id?: string;
+  /**
+   * Color of `Link`
+   */
+  appearance: Appearance;
+  /**
+   * Size of `Link`
+   */
+  size: Size;
+  /**
+   * Disables the `Link`, making it unable to be clicked
+   */
+  disabled: boolean;
   /**
    * The URL to navigate to when the `Link` is clicked
    */
@@ -44,20 +58,32 @@ export const Link = (props: LinkProps) => {
   const {
     children,
     className,
+    appearance,
+    size,
+    disabled,
     ...rest
   } = props;
 
   const classes = classNames({
     Link: true,
+    ['Link--disabled']: disabled,
+    [`Link--${size}`]: size,
+    [`Link--${appearance}`]: appearance
   }, className);
 
   return (
-    <GenericText className={classes} componentType="a" {...rest}>
+    <GenericText data-test="DesignSystem-Link" className={classes} componentType="a" {...rest}>
       {children}
     </GenericText>
   );
 };
 
 Link.displayName = 'Link';
+
+Link.defaultProps = {
+  appearance: 'default',
+  size: 'regular',
+  disabled: false
+};
 
 export default Link;

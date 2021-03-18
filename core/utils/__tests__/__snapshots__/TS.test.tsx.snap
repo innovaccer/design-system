@@ -852,7 +852,8 @@ exports[`TS renders children 1`] = `
     </span>
   </div>
   <a
-    class="Link"
+    class="Link Link--regular Link--default"
+    data-test="DesignSystem-Link"
   >
     Hello World!
   </a>

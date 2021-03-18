@@ -3,71 +3,75 @@
 exports[`Link component 
   id: "Sample string", href: "Sample string", target: "_blank", rel: "Sample string", onClick: "[Function]"
  1`] = `
-<GenericText
-  className="Link"
-  componentType="a"
-  href="Sample string"
-  id="Sample string"
-  onClick={[MockFunction]}
-  rel="Sample string"
-  target="_blank"
->
-  <span>
-    Link
-  </span>
-</GenericText>
+<body>
+  <div>
+    <a
+      class="Link Link--regular Link--default"
+      data-test="DesignSystem-Link"
+      href="Sample string"
+      id="Sample string"
+      rel="Sample string"
+      target="_blank"
+    >
+      Link
+    </a>
+  </div>
+</body>
 `;
 
 exports[`Link component 
   id: "Sample string", href: "Sample string", target: "_parent", rel: "Sample string", onClick: "[Function]"
  1`] = `
-<GenericText
-  className="Link"
-  componentType="a"
-  href="Sample string"
-  id="Sample string"
-  onClick={[MockFunction]}
-  rel="Sample string"
-  target="_parent"
->
-  <span>
-    Link
-  </span>
-</GenericText>
+<body>
+  <div>
+    <a
+      class="Link Link--regular Link--default"
+      data-test="DesignSystem-Link"
+      href="Sample string"
+      id="Sample string"
+      rel="Sample string"
+      target="_parent"
+    >
+      Link
+    </a>
+  </div>
+</body>
 `;
 
 exports[`Link component 
   id: "Sample string", href: "Sample string", target: "_self", rel: "Sample string", onClick: "[Function]"
  1`] = `
-<GenericText
-  className="Link"
-  componentType="a"
-  href="Sample string"
-  id="Sample string"
-  onClick={[MockFunction]}
-  rel="Sample string"
-  target="_self"
->
-  <span>
-    Link
-  </span>
-</GenericText>
+<body>
+  <div>
+    <a
+      class="Link Link--regular Link--default"
+      data-test="DesignSystem-Link"
+      href="Sample string"
+      id="Sample string"
+      rel="Sample string"
+      target="_self"
+    >
+      Link
+    </a>
+  </div>
+</body>
 `;
 
 exports[`Link component 
   id: "Sample string", href: "Sample string", target: "_top", rel: "Sample string", onClick: "[Function]"
  1`] = `
-<GenericText
-  className="Link"
-  componentType="a"
-  href="Sample string"
-  id="Sample string"
-  onClick={[MockFunction]}
-  rel="Sample string"
-  target="_top"
->
-  <span>
-    Link
-  </span>
-</GenericText>
+<body>
+  <div>
+    <a
+      class="Link Link--regular Link--default"
+      data-test="DesignSystem-Link"
+      href="Sample string"
+      id="Sample string"
+      rel="Sample string"
+      target="_top"
+    >
+      Link
+    </a>
+  </div>
+</body>
 `;
