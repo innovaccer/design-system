@@ -7,19 +7,6 @@ body {
   font-size: var(--font-size);
 }
 
-/* Link */
-
-.Link {
-  color: var(--text-link);
-  text-decoration: none;
-  font-weight: var(--font-weight-medium);
-}
-
-.Link:hover {
-  color: var(--text-link);
-  text-decoration: none;
-}
-
 /* Text */
 .Text {
   margin: 0;

@@ -1,0 +1,51 @@
+.Link {
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+}
+
+.Link--regular {
+  font-size: var(--font-size);
+}
+
+.Link--tiny {
+  font-size: var(--font-size-s);
+}
+
+.Link--default {
+  color: var(--text-link);
+}
+
+.Link--subtle {
+  color: var(--inverse-lighter);
+}
+
+.Link--default:hover {
+  border-bottom: var(--spacing-xs) solid var(--primary);
+}
+
+.Link--subtle:hover {
+  border-bottom: var(--spacing-xs) solid var(--inverse-lighter);
+}
+
+.Link--default:active {
+  color: var(--primary-dark);
+  border: none;
+}
+
+.Link--subtle:active {
+  color: var(--inverse);
+  border: none;
+}
+
+.Link--default:focus {
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
+.Link--subtle:focus {
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+}
+
+.Link--disabled {
+  color: var(--inverse-lightest);
+  pointer-events: none;
+}
