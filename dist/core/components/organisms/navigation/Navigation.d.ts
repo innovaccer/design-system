@@ -1,4 +1,5 @@
 import { BaseProps } from "../../../utils/types";
+import { VerticalNavigationProps } from "./VerticalNavigation";
 export declare type LayoutType = 'vertical' | 'horizontal';
 export declare type Align = 'left' | 'center';
 export declare type Menu = {
@@ -6,25 +7,13 @@ export declare type Menu = {
     label: string;
     link?: string;
     icon?: string;
+    count?: number;
     disabled?: boolean;
     subMenu?: Menu[];
 };
-declare type ActiveMenu = ({
-    name: string;
-} | {
-    link: string;
-}) & Partial<Menu>;
-export interface NavigationProps extends BaseProps {
+export interface NavigationProps extends BaseProps, VerticalNavigationProps {
     type: LayoutType;
     align: Align;
-    menus: Menu[];
-    active?: ActiveMenu;
-    onClick?: (menu: Menu) => void;
-    rounded: boolean;
-    expanded: boolean;
-    footer?: boolean;
-    onToggle?: (expanded: boolean) => void;
-    autoCollapse: boolean;
 }
 export declare const Navigation: {
     (props: NavigationProps): JSX.Element;

@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1616155250715 
+   * Generated on: 1616175735792 
    *      Package: @innovaccer/design-system
-   *      Version: v1.7.1
+   *      Version: v2.0.0-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -33491,19 +33491,30 @@ EditableDropdown.defaultProps = {
 };
 
 var Link = function Link(props) {
+  var _classNames;
+
   var children = props.children,
       className = props.className,
-      rest = _objectWithoutProperties$a(props, ["children", "className"]);
+      appearance = props.appearance,
+      size = props.size,
+      disabled = props.disabled,
+      rest = _objectWithoutProperties$a(props, ["children", "className", "appearance", "size", "disabled"]);
 
-  var classes = classnames({
+  var classes = classnames((_classNames = {
     Link: true
-  }, className);
+  }, _defineProperty$w(_classNames, 'Link--disabled', disabled), _defineProperty$w(_classNames, "Link--".concat(size), size), _defineProperty$w(_classNames, "Link--".concat(appearance), appearance), _classNames), className);
   return /*#__PURE__*/React.createElement(GenericText, _extends$p({
+    "data-test": "DesignSystem-Link",
     className: classes,
     componentType: "a"
   }, rest), children);
 };
 Link.displayName = 'Link';
+Link.defaultProps = {
+  appearance: 'default',
+  size: 'regular',
+  disabled: false
+};
 
 var IconMapping$1 = {
   success: 'check_circle',
@@ -39917,10 +39928,7 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
         className: "justify-content-center"
       }, /*#__PURE__*/React.createElement(Column, sizeMap[dimension], /*#__PURE__*/React.createElement(Row, {
         className: "justify-content-between pt-6 pr-6 pb-5 pl-7"
-      }, /*#__PURE__*/React.createElement(Column, {
-        size: "auto"
-      }, !header && /*#__PURE__*/React.createElement(ModalHeader$1, headerOptions), !!header && header), /*#__PURE__*/React.createElement(Column, {
-        size: "auto",
+      }, /*#__PURE__*/React.createElement(Column, null, !header && /*#__PURE__*/React.createElement(ModalHeader$1, headerOptions), !!header && header), /*#__PURE__*/React.createElement(Column, {
         className: "pr-2"
       }, /*#__PURE__*/React.createElement(Icon, {
         size: 20,
@@ -44944,26 +44952,121 @@ var List = function List(props) {
 };
 List.defaultProps = defaultProps;
 
+var getTextAppearance = function getTextAppearance(isActive, disabled) {
+  return disabled ? 'disabled' : isActive ? 'link' : 'default';
+};
+var getIconAppearance = function getIconAppearance(isActive, disabled) {
+  return disabled ? 'disabled' : isActive ? 'info' : 'default';
+};
+var getPillsAppearance = function getPillsAppearance(isActive) {
+  return isActive ? 'primary' : 'secondary';
+};
+var getMenu = function getMenu(menus, active) {
+  var _iterator = _createForOfIteratorHelper(menus),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var menu = _step.value;
+
+      if (active.name && menu.name === active.name || active.link && menu.link === active.link) {
+        return menu;
+      }
+
+      if (menu.subMenu) {
+        var activeMenu = menu.subMenu.find(function (submenu) {
+          return active.name && submenu.name === active.name || active.link && submenu.link === active.link;
+        });
+        if (activeMenu) return activeMenu;
+      }
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  return null;
+};
+var isMenuActive = function isMenuActive(menus, menu, active) {
+  if (active) {
+    var currActiveMenu = getMenu(menus, active);
+    return !!currActiveMenu && (currActiveMenu === menu || currActiveMenu.name.split('.')[0] === menu.name || currActiveMenu.name === menu.name || !!currActiveMenu.link && currActiveMenu.link === menu.link);
+  }
+
+  return false;
+};
+
+var HorizontalNavigation = function HorizontalNavigation(props) {
+  var menus = props.menus,
+      active = props.active,
+      onClick = props.onClick;
+
+  var onClickHandler = function onClickHandler(menu) {
+    return function () {
+      if (onClick) onClick(menu);
+    };
+  };
+
+  var getPillsClass = function getPillsClass(disabled) {
+    var _classNames;
+
+    return classnames((_classNames = {}, _defineProperty$w(_classNames, 'Navigation-horizontalPills', true), _defineProperty$w(_classNames, 'Navigation-horizontalPills--disabled', disabled), _classNames));
+  };
+
+  var renderIcon = function renderIcon(menu, isActive) {
+    if (menu.count !== undefined) {
+      var count = menu.count > 99 ? '99+' : menu.count;
+      return /*#__PURE__*/React.createElement(Pills, {
+        subtle: menu.disabled,
+        className: getPillsClass(menu.disabled),
+        appearance: getPillsAppearance(isActive),
+        "data-test": "DesignSystem-HorizontalNavigation--Pills"
+      }, count);
+    }
+
+    if (menu.icon) {
+      return /*#__PURE__*/React.createElement(Icon, {
+        className: "mr-3",
+        name: menu.icon,
+        appearance: getIconAppearance(isActive, menu.disabled),
+        "data-test": "DesignSystem-HorizontalNavigation--Icon"
+      });
+    }
+
+    return null;
+  };
+
+  var list = menus.map(function (menu, index) {
+    var _classNames2;
+
+    var isActive = isMenuActive(menus, menu, active);
+    var menuClasses = classnames((_classNames2 = {
+      'Navigation-menu': true
+    }, _defineProperty$w(_classNames2, 'Navigation-menu--horizontal', true), _defineProperty$w(_classNames2, 'Navigation-menu--active', isActive), _defineProperty$w(_classNames2, 'Navigation-menu--disabled', menu.disabled), _classNames2));
+    return /*#__PURE__*/React.createElement("div", {
+      "data-test": "DesignSystem-HorizontalNavigation",
+      key: index,
+      className: menuClasses,
+      onClick: onClickHandler(menu)
+    }, renderIcon(menu, isActive), /*#__PURE__*/React.createElement(Text$1, {
+      appearance: getTextAppearance(isActive, menu.disabled),
+      "data-test": "DesignSystem-HorizontalNavigation--Text"
+    }, menu.label));
+  });
+  return /*#__PURE__*/React.createElement(React.Fragment, null, list);
+};
+
 var useState$1 = React.useState;
-
-/**
- * ####NOTE: Navigation(vertical) sets first subMenu(if present) active if the Navigation is collapsed.
- */
-var Navigation = function Navigation(props) {
-  var _classNames5;
-
-  var type = props.type,
-      align = props.align,
-      menus = props.menus,
+var VerticalNavigation = function VerticalNavigation(props) {
+  var menus = props.menus,
       active = props.active,
       onClick = props.onClick,
       expanded = props.expanded,
       rounded = props.rounded,
       onToggle = props.onToggle,
       footer = props.footer,
-      autoCollapse = props.autoCollapse,
-      className = props.className;
-  var baseProps = extractBaseProps(props);
+      autoCollapse = props.autoCollapse;
 
   var _useState = useState$1({}),
       _useState2 = _slicedToArray$7(_useState, 2),
@@ -44972,41 +45075,13 @@ var Navigation = function Navigation(props) {
 
   React.useEffect(function () {
     if (props.active) {
-      var currMenu = getMenu(props.active);
+      var currMenu = getMenu(menus, props.active);
       if (currMenu) updateMenuState(currMenu, true);
     }
   }, [props.active]);
 
-  var getMenu = function getMenu(menu) {
-    var _iterator = _createForOfIteratorHelper(menus),
-        _step;
-
-    try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var m = _step.value;
-
-        if (menu.name && m.name === menu.name || menu.link && m.link === menu.link) {
-          return m;
-        }
-
-        if (m.subMenu) {
-          var activeMenu = m.subMenu.find(function (sm) {
-            return menu.name && sm.name === menu.name || menu.link && sm.link === menu.link;
-          });
-          if (activeMenu) return activeMenu;
-        }
-      }
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
-    }
-
-    return null;
-  };
-
   var updateMenuState = function updateMenuState(menu, val) {
-    var currMenu = getMenu(menu);
+    var currMenu = getMenu(menus, menu);
 
     if (currMenu) {
       var nameSplit = currMenu.name.split('.');
@@ -45044,119 +45119,117 @@ var Navigation = function Navigation(props) {
     }
   };
 
-  var isActive = function isActive(menu) {
-    if (active) {
-      var currMenu = getMenu(active);
-      return !!currMenu && (currMenu === menu || currMenu.name.split('.')[0] === menu.name || currMenu.name === menu.name || !!currMenu.link && currMenu.link === menu.link);
-    }
+  var list = menus.map(function (menu, index) {
+    var _classNames;
 
-    return false;
-  };
-
-  var getTextAppearance = function getTextAppearance(isMenuActive, disabled) {
-    return disabled ? 'subtle' : isMenuActive ? 'link' : 'default';
-  };
-
-  var getIconAppearance = function getIconAppearance(isMenuActive, disabled) {
-    return disabled ? 'subtle' : isMenuActive ? 'info' : 'default';
-  };
-
-  var getHorizontalMenu = function getHorizontalMenu(menuData) {
-    var list = menuData.map(function (menu, index) {
-      var _classNames;
-
-      var isMenuActive = isActive(menu);
-      var menuClasses = classnames((_classNames = {
-        'Navigation-menu': true
-      }, _defineProperty$w(_classNames, "Navigation-menu--".concat(type), type), _defineProperty$w(_classNames, 'Navigation-menu--active', isMenuActive), _classNames));
-      return /*#__PURE__*/React.createElement("div", {
-        key: index,
-        className: menuClasses,
-        onClick: function onClick() {
-          return onClickHandler(menu);
-        }
-      }, menu.icon && /*#__PURE__*/React.createElement(Icon, {
-        className: "mr-3",
-        name: menu.icon,
-        appearance: getIconAppearance(isMenuActive, menu.disabled)
-      }), /*#__PURE__*/React.createElement(Text$1, {
-        appearance: getTextAppearance(isMenuActive, menu.disabled)
-      }, menu.label));
+    var activeMenu = expanded && !menuState[menu.name] && isMenuActive(menus, menu, active);
+    var activeMenuIcon = !expanded && isMenuActive(menus, menu, active) || activeMenu;
+    var menuClasses = classnames((_classNames = {
+      'Navigation-menu': true
+    }, _defineProperty$w(_classNames, 'Navigation-menu--vertical', true), _defineProperty$w(_classNames, 'Navigation-menu--active', activeMenu), _defineProperty$w(_classNames, 'Navigation-menu--rounded', expanded && rounded), _classNames));
+    var menuIconClasses = classnames({
+      'Navigation-menuIcon': true,
+      'Navigation-menuIcon--active': activeMenuIcon
     });
-    return list;
-  };
-
-  var getVerticalMenu = function getVerticalMenu() {
-    var list = menus.map(function (menu, index) {
+    return /*#__PURE__*/React.createElement("div", {
+      key: index
+    }, /*#__PURE__*/React.createElement("div", {
+      className: menuClasses,
+      onClick: function onClick() {
+        return onClickHandler(menu);
+      }
+    }, menu.icon && /*#__PURE__*/React.createElement(Icon, {
+      className: menuIconClasses,
+      name: menu.icon,
+      appearance: getIconAppearance(activeMenuIcon, menu.disabled)
+    }), expanded && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+      className: "Navigation-menuLabel"
+    }, /*#__PURE__*/React.createElement(Text$1, {
+      appearance: getTextAppearance(activeMenu, menu.disabled)
+    }, menu.label)), menu.subMenu && menu.subMenu.length > 0 && /*#__PURE__*/React.createElement(Icon, {
+      className: "mx-4",
+      name: menuState[menu.name] ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
+      appearance: "subtle"
+    }))), /*#__PURE__*/React.createElement("div", {
+      className: "Navigation-subMenu"
+    }, menuState[menu.name] && menu.subMenu && expanded && menu.subMenu.map(function (subMenu, ind) {
       var _classNames2;
 
-      var activeMenu = expanded && !menuState[menu.name] && isActive(menu);
-      var activeMenuIcon = !expanded && isActive(menu) || activeMenu;
-      var menuClasses = classnames((_classNames2 = {
-        'Navigation-menu': true
-      }, _defineProperty$w(_classNames2, "Navigation-menu--".concat(type), type), _defineProperty$w(_classNames2, 'Navigation-menu--active', activeMenu), _defineProperty$w(_classNames2, 'Navigation-menu--rounded', type === 'vertical' && expanded && rounded), _classNames2));
-      var menuIconClasses = classnames({
-        'Navigation-menuIcon': true,
-        'Navigation-menuIcon--active': activeMenuIcon
-      });
+      var isActive = isMenuActive(menus, subMenu, active);
+      var subMenuClasses = classnames(menuClasses, (_classNames2 = {}, _defineProperty$w(_classNames2, 'Navigation-menu--subMenu', true), _defineProperty$w(_classNames2, 'Navigation-menu--active', isActive), _classNames2));
       return /*#__PURE__*/React.createElement("div", {
-        key: index
-      }, /*#__PURE__*/React.createElement("div", {
-        className: menuClasses,
+        key: ind,
+        className: subMenuClasses,
         onClick: function onClick() {
-          return onClickHandler(menu);
+          return onClickHandler(subMenu);
         }
-      }, menu.icon && /*#__PURE__*/React.createElement(Icon, {
-        className: menuIconClasses,
-        name: menu.icon,
-        appearance: getIconAppearance(activeMenuIcon, menu.disabled)
-      }), expanded && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
-        className: "Navigation-menuLabel"
       }, /*#__PURE__*/React.createElement(Text$1, {
-        appearance: getTextAppearance(activeMenu, menu.disabled)
-      }, menu.label)), menu.subMenu && menu.subMenu.length > 0 && /*#__PURE__*/React.createElement(Icon, {
-        className: "mx-4",
-        name: menuState[menu.name] ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
-        appearance: "subtle"
-      }))), /*#__PURE__*/React.createElement("div", {
-        className: "Navigation-subMenu"
-      }, menuState[menu.name] && menu.subMenu && expanded && menu.subMenu.map(function (subMenu, ind) {
-        var _classNames3;
-
-        var isMenuActive = isActive(subMenu);
-        var subMenuClasses = classnames(menuClasses, (_classNames3 = {}, _defineProperty$w(_classNames3, 'Navigation-menu--subMenu', type), _defineProperty$w(_classNames3, 'Navigation-menu--active', isMenuActive), _classNames3));
-        return /*#__PURE__*/React.createElement("div", {
-          key: ind,
-          className: subMenuClasses,
-          onClick: function onClick() {
-            return onClickHandler(subMenu);
-          }
-        }, /*#__PURE__*/React.createElement(Text$1, {
-          appearance: getTextAppearance(isMenuActive, subMenu.disabled)
-        }, subMenu.label));
-      })));
-    });
-    var footerClasses = classnames(_defineProperty$w({
-      'Navigation-footer': true
-    }, 'Navigation-footer--border', true));
-    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-      className: "Navigation-body"
-    }, list), footer && /*#__PURE__*/React.createElement("div", {
-      className: footerClasses
-    }, /*#__PURE__*/React.createElement(Icon, {
-      className: "Navigation-menuIcon Navigation-menuIcon--footer",
-      name: "menu_open",
-      size: 16,
-      onClick: function onClick() {
-        return onToggle && onToggle(!expanded);
-      }
+        appearance: getTextAppearance(isActive, subMenu.disabled)
+      }, subMenu.label));
     })));
+  });
+  var footerClasses = classnames(_defineProperty$w({
+    'Navigation-footer': true
+  }, 'Navigation-footer--border', true));
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    className: "Navigation-body"
+  }, list), footer && /*#__PURE__*/React.createElement("div", {
+    className: footerClasses
+  }, /*#__PURE__*/React.createElement(Icon, {
+    className: "Navigation-menuIcon Navigation-menuIcon--footer",
+    name: "menu_open",
+    size: 16,
+    onClick: function onClick() {
+      return onToggle && onToggle(!expanded);
+    }
+  })));
+};
+VerticalNavigation.defaultProps = {
+  expanded: true,
+  autoCollapse: true,
+  rounded: false
+};
+
+/**
+ * ####NOTE: Navigation(vertical) sets first subMenu(if present) active if the Navigation is collapsed.
+ */
+var Navigation = function Navigation(props) {
+  var _classNames;
+
+  var type = props.type,
+      align = props.align,
+      menus = props.menus,
+      active = props.active,
+      onClick = props.onClick,
+      expanded = props.expanded,
+      rounded = props.rounded,
+      onToggle = props.onToggle,
+      footer = props.footer,
+      autoCollapse = props.autoCollapse,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+  var classes = classnames((_classNames = {}, _defineProperty$w(_classNames, 'Navigation', true), _defineProperty$w(_classNames, "Navigation--".concat(type), type), _defineProperty$w(_classNames, 'justify-content-center', type === 'horizontal' && align === 'center'), _defineProperty$w(_classNames, 'justify-content-start', type === 'horizontal' && align === 'left'), _defineProperty$w(_classNames, 'Navigation--collapsed', !expanded), _classNames), className);
+
+  var renderNavigation = function renderNavigation() {
+    return type === 'horizontal' ? /*#__PURE__*/React.createElement(HorizontalNavigation, {
+      menus: menus,
+      active: active,
+      onClick: onClick
+    }) : /*#__PURE__*/React.createElement(VerticalNavigation, {
+      menus: menus,
+      active: active,
+      autoCollapse: autoCollapse,
+      expanded: expanded,
+      rounded: rounded,
+      footer: footer,
+      onToggle: onToggle,
+      onClick: onClick
+    });
   };
 
-  var classes = classnames((_classNames5 = {}, _defineProperty$w(_classNames5, 'Navigation', true), _defineProperty$w(_classNames5, "Navigation--".concat(type), type), _defineProperty$w(_classNames5, 'justify-content-center', type === 'horizontal' && align === 'center'), _defineProperty$w(_classNames5, 'justify-content-start', type === 'horizontal' && align === 'left'), _defineProperty$w(_classNames5, 'Navigation--collapsed', !expanded), _classNames5), className);
   return /*#__PURE__*/React.createElement("div", _extends$p({}, baseProps, {
     className: classes
-  }), type === 'horizontal' ? getHorizontalMenu(menus) : getVerticalMenu());
+  }), renderNavigation());
 };
 Navigation.defaultProps = {
   type: 'horizontal',
@@ -45352,6 +45425,6 @@ FileList.defaultProps = {
 };
 FileList.displayName = 'FileList';
 
-var version = "1.7.1";
+var version = "2.0.0-0";
 
 export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, ChatMessage, Checkbox, Chip, ChipGroup, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, Dropzone, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text$1 as Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, version };

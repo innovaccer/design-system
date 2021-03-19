@@ -1,8 +1,13 @@
 import * as React from 'react';
 import { BaseProps } from "../../../utils/types";
-export declare type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
+declare type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
+declare type Appearance = 'default' | 'subtle';
+declare type Size = 'regular' | 'tiny';
 export interface LinkProps extends BaseProps {
     id?: string;
+    appearance: Appearance;
+    size: Size;
+    disabled: boolean;
     href?: string;
     target?: LinkTarget;
     rel?: string;
@@ -14,5 +19,10 @@ export interface LinkProps extends BaseProps {
 export declare const Link: {
     (props: LinkProps): JSX.Element;
     displayName: string;
+    defaultProps: {
+        appearance: string;
+        size: string;
+        disabled: boolean;
+    };
 };
 export default Link;

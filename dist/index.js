@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1616155251059 
+   * Generated on: 1616175736198 
    *      Package: @innovaccer/design-system
-   *      Version: v1.7.1
+   *      Version: v2.0.0-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -318,11 +318,13 @@
     var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
 
     function __extends(d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -389,6 +391,7 @@
         }
     }
 
+    /** @deprecated */
     function __spreadArrays() {
         for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
         for (var r = Array(s), k = 0, i = 0; i < il; i++)
@@ -5032,19 +5035,30 @@
     };
 
     var Link = function Link(props) {
+      var _a;
+
       var children = props.children,
           className = props.className,
-          rest = __rest(props, ["children", "className"]);
+          appearance = props.appearance,
+          size = props.size,
+          disabled = props.disabled,
+          rest = __rest(props, ["children", "className", "appearance", "size", "disabled"]);
 
-      var classes = classNames__default['default']({
+      var classes = classNames__default['default']((_a = {
         Link: true
-      }, className);
+      }, _a['Link--disabled'] = disabled, _a["Link--" + size] = size, _a["Link--" + appearance] = appearance, _a), className);
       return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
+        "data-test": "DesignSystem-Link",
         className: classes,
         componentType: "a"
       }, rest), children);
     };
     Link.displayName = 'Link';
+    Link.defaultProps = {
+      appearance: 'default',
+      size: 'regular',
+      disabled: false
+    };
 
     var IconMapping$1 = {
       success: 'check_circle',
@@ -7009,10 +7023,7 @@
           className: "justify-content-center"
         }, /*#__PURE__*/React__namespace.createElement(Column, __assign({}, sizeMap[dimension]), /*#__PURE__*/React__namespace.createElement(Row, {
           className: "justify-content-between pt-6 pr-6 pb-5 pl-7"
-        }, /*#__PURE__*/React__namespace.createElement(Column, {
-          size: "auto"
-        }, !header && /*#__PURE__*/React__namespace.createElement(ModalHeader$1, __assign({}, headerOptions)), !!header && header), /*#__PURE__*/React__namespace.createElement(Column, {
-          size: "auto",
+        }, /*#__PURE__*/React__namespace.createElement(Column, null, !header && /*#__PURE__*/React__namespace.createElement(ModalHeader$1, __assign({}, headerOptions)), !!header && header), /*#__PURE__*/React__namespace.createElement(Column, {
           className: "pr-2"
         }, /*#__PURE__*/React__namespace.createElement(Icon, {
           size: 20,
@@ -11808,22 +11819,114 @@
     };
     List.defaultProps = defaultProps;
 
+    var getTextAppearance = function getTextAppearance(isActive, disabled) {
+      return disabled ? 'disabled' : isActive ? 'link' : 'default';
+    };
+    var getIconAppearance = function getIconAppearance(isActive, disabled) {
+      return disabled ? 'disabled' : isActive ? 'info' : 'default';
+    };
+    var getPillsAppearance = function getPillsAppearance(isActive) {
+      return isActive ? 'primary' : 'secondary';
+    };
+    var getMenu = function getMenu(menus, active) {
+      for (var _i = 0, menus_1 = menus; _i < menus_1.length; _i++) {
+        var menu = menus_1[_i];
+
+        if (active.name && menu.name === active.name || active.link && menu.link === active.link) {
+          return menu;
+        }
+
+        if (menu.subMenu) {
+          var activeMenu = menu.subMenu.find(function (submenu) {
+            return active.name && submenu.name === active.name || active.link && submenu.link === active.link;
+          });
+          if (activeMenu) return activeMenu;
+        }
+      }
+
+      return null;
+    };
+    var isMenuActive = function isMenuActive(menus, menu, active) {
+      if (active) {
+        var currActiveMenu = getMenu(menus, active);
+        return !!currActiveMenu && (currActiveMenu === menu || currActiveMenu.name.split('.')[0] === menu.name || currActiveMenu.name === menu.name || !!currActiveMenu.link && currActiveMenu.link === menu.link);
+      }
+
+      return false;
+    };
+
+    var HorizontalNavigation = function HorizontalNavigation(props) {
+      var menus = props.menus,
+          active = props.active,
+          onClick = props.onClick;
+
+      var onClickHandler = function onClickHandler(menu) {
+        return function () {
+          if (onClick) onClick(menu);
+        };
+      };
+
+      var getPillsClass = function getPillsClass(disabled) {
+        var _a;
+
+        return classNames__default['default']((_a = {}, _a['Navigation-horizontalPills'] = true, _a['Navigation-horizontalPills--disabled'] = disabled, _a));
+      };
+
+      var renderIcon = function renderIcon(menu, isActive) {
+        if (menu.count !== undefined) {
+          var count = menu.count > 99 ? '99+' : menu.count;
+          return /*#__PURE__*/React__namespace.createElement(Pills, {
+            subtle: menu.disabled,
+            className: getPillsClass(menu.disabled),
+            appearance: getPillsAppearance(isActive),
+            "data-test": "DesignSystem-HorizontalNavigation--Pills"
+          }, count);
+        }
+
+        if (menu.icon) {
+          return /*#__PURE__*/React__namespace.createElement(Icon, {
+            className: "mr-3",
+            name: menu.icon,
+            appearance: getIconAppearance(isActive, menu.disabled),
+            "data-test": "DesignSystem-HorizontalNavigation--Icon"
+          });
+        }
+
+        return null;
+      };
+
+      var list = menus.map(function (menu, index) {
+        var _a;
+
+        var isActive = isMenuActive(menus, menu, active);
+        var menuClasses = classNames__default['default']((_a = {
+          'Navigation-menu': true
+        }, _a['Navigation-menu--horizontal'] = true, _a['Navigation-menu--active'] = isActive, _a['Navigation-menu--disabled'] = menu.disabled, _a));
+        return /*#__PURE__*/React__namespace.createElement("div", {
+          "data-test": "DesignSystem-HorizontalNavigation",
+          key: index,
+          className: menuClasses,
+          onClick: onClickHandler(menu)
+        }, renderIcon(menu, isActive), /*#__PURE__*/React__namespace.createElement(Text, {
+          appearance: getTextAppearance(isActive, menu.disabled),
+          "data-test": "DesignSystem-HorizontalNavigation--Text"
+        }, menu.label));
+      });
+      return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, list);
+    };
+
     var useState$1 = React__namespace.useState;
-    var Navigation = function Navigation(props) {
+    var VerticalNavigation = function VerticalNavigation(props) {
       var _a;
 
-      var type = props.type,
-          align = props.align,
-          menus = props.menus,
+      var menus = props.menus,
           active = props.active,
           onClick = props.onClick,
           expanded = props.expanded,
           rounded = props.rounded,
           onToggle = props.onToggle,
           footer = props.footer,
-          autoCollapse = props.autoCollapse,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
+          autoCollapse = props.autoCollapse;
 
       var _b = useState$1({}),
           menuState = _b[0],
@@ -11831,34 +11934,15 @@
 
       React__namespace.useEffect(function () {
         if (props.active) {
-          var currMenu = getMenu(props.active);
+          var currMenu = getMenu(menus, props.active);
           if (currMenu) updateMenuState(currMenu, true);
         }
       }, [props.active]);
 
-      var getMenu = function getMenu(menu) {
-        for (var _i = 0, menus_1 = menus; _i < menus_1.length; _i++) {
-          var m = menus_1[_i];
-
-          if (menu.name && m.name === menu.name || menu.link && m.link === menu.link) {
-            return m;
-          }
-
-          if (m.subMenu) {
-            var activeMenu = m.subMenu.find(function (sm) {
-              return menu.name && sm.name === menu.name || menu.link && sm.link === menu.link;
-            });
-            if (activeMenu) return activeMenu;
-          }
-        }
-
-        return null;
-      };
-
       var updateMenuState = function updateMenuState(menu, val) {
         var _a;
 
-        var currMenu = getMenu(menu);
+        var currMenu = getMenu(menus, menu);
 
         if (currMenu) {
           var nameSplit = currMenu.name.split('.');
@@ -11896,121 +11980,114 @@
         }
       };
 
-      var isActive = function isActive(menu) {
-        if (active) {
-          var currMenu = getMenu(active);
-          return !!currMenu && (currMenu === menu || currMenu.name.split('.')[0] === menu.name || currMenu.name === menu.name || !!currMenu.link && currMenu.link === menu.link);
-        }
-
-        return false;
-      };
-
-      var getTextAppearance = function getTextAppearance(isMenuActive, disabled) {
-        return disabled ? 'subtle' : isMenuActive ? 'link' : 'default';
-      };
-
-      var getIconAppearance = function getIconAppearance(isMenuActive, disabled) {
-        return disabled ? 'subtle' : isMenuActive ? 'info' : 'default';
-      };
-
-      var getHorizontalMenu = function getHorizontalMenu(menuData) {
-        var list = menuData.map(function (menu, index) {
-          var _a;
-
-          var isMenuActive = isActive(menu);
-          var menuClasses = classNames__default['default']((_a = {
-            'Navigation-menu': true
-          }, _a["Navigation-menu--" + type] = type, _a['Navigation-menu--active'] = isMenuActive, _a));
-          return /*#__PURE__*/React__namespace.createElement("div", {
-            key: index,
-            className: menuClasses,
-            onClick: function onClick() {
-              return onClickHandler(menu);
-            }
-          }, menu.icon && /*#__PURE__*/React__namespace.createElement(Icon, {
-            className: "mr-3",
-            name: menu.icon,
-            appearance: getIconAppearance(isMenuActive, menu.disabled)
-          }), /*#__PURE__*/React__namespace.createElement(Text, {
-            appearance: getTextAppearance(isMenuActive, menu.disabled)
-          }, menu.label));
-        });
-        return list;
-      };
-
-      var getVerticalMenu = function getVerticalMenu() {
+      var list = menus.map(function (menu, index) {
         var _a;
 
-        var list = menus.map(function (menu, index) {
+        var activeMenu = expanded && !menuState[menu.name] && isMenuActive(menus, menu, active);
+        var activeMenuIcon = !expanded && isMenuActive(menus, menu, active) || activeMenu;
+        var menuClasses = classNames__default['default']((_a = {
+          'Navigation-menu': true
+        }, _a['Navigation-menu--vertical'] = true, _a['Navigation-menu--active'] = activeMenu, _a['Navigation-menu--rounded'] = expanded && rounded, _a));
+        var menuIconClasses = classNames__default['default']({
+          'Navigation-menuIcon': true,
+          'Navigation-menuIcon--active': activeMenuIcon
+        });
+        return /*#__PURE__*/React__namespace.createElement("div", {
+          key: index
+        }, /*#__PURE__*/React__namespace.createElement("div", {
+          className: menuClasses,
+          onClick: function onClick() {
+            return onClickHandler(menu);
+          }
+        }, menu.icon && /*#__PURE__*/React__namespace.createElement(Icon, {
+          className: menuIconClasses,
+          name: menu.icon,
+          appearance: getIconAppearance(activeMenuIcon, menu.disabled)
+        }), expanded && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("span", {
+          className: "Navigation-menuLabel"
+        }, /*#__PURE__*/React__namespace.createElement(Text, {
+          appearance: getTextAppearance(activeMenu, menu.disabled)
+        }, menu.label)), menu.subMenu && menu.subMenu.length > 0 && /*#__PURE__*/React__namespace.createElement(Icon, {
+          className: "mx-4",
+          name: menuState[menu.name] ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
+          appearance: "subtle"
+        }))), /*#__PURE__*/React__namespace.createElement("div", {
+          className: "Navigation-subMenu"
+        }, menuState[menu.name] && menu.subMenu && expanded && menu.subMenu.map(function (subMenu, ind) {
           var _a;
 
-          var activeMenu = expanded && !menuState[menu.name] && isActive(menu);
-          var activeMenuIcon = !expanded && isActive(menu) || activeMenu;
-          var menuClasses = classNames__default['default']((_a = {
-            'Navigation-menu': true
-          }, _a["Navigation-menu--" + type] = type, _a['Navigation-menu--active'] = activeMenu, _a['Navigation-menu--rounded'] = type === 'vertical' && expanded && rounded, _a));
-          var menuIconClasses = classNames__default['default']({
-            'Navigation-menuIcon': true,
-            'Navigation-menuIcon--active': activeMenuIcon
-          });
+          var isActive = isMenuActive(menus, subMenu, active);
+          var subMenuClasses = classNames__default['default'](menuClasses, (_a = {}, _a['Navigation-menu--subMenu'] = true, _a['Navigation-menu--active'] = isActive, _a));
           return /*#__PURE__*/React__namespace.createElement("div", {
-            key: index
-          }, /*#__PURE__*/React__namespace.createElement("div", {
-            className: menuClasses,
+            key: ind,
+            className: subMenuClasses,
             onClick: function onClick() {
-              return onClickHandler(menu);
+              return onClickHandler(subMenu);
             }
-          }, menu.icon && /*#__PURE__*/React__namespace.createElement(Icon, {
-            className: menuIconClasses,
-            name: menu.icon,
-            appearance: getIconAppearance(activeMenuIcon, menu.disabled)
-          }), expanded && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("span", {
-            className: "Navigation-menuLabel"
           }, /*#__PURE__*/React__namespace.createElement(Text, {
-            appearance: getTextAppearance(activeMenu, menu.disabled)
-          }, menu.label)), menu.subMenu && menu.subMenu.length > 0 && /*#__PURE__*/React__namespace.createElement(Icon, {
-            className: "mx-4",
-            name: menuState[menu.name] ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
-            appearance: "subtle"
-          }))), /*#__PURE__*/React__namespace.createElement("div", {
-            className: "Navigation-subMenu"
-          }, menuState[menu.name] && menu.subMenu && expanded && menu.subMenu.map(function (subMenu, ind) {
-            var _a;
-
-            var isMenuActive = isActive(subMenu);
-            var subMenuClasses = classNames__default['default'](menuClasses, (_a = {}, _a['Navigation-menu--subMenu'] = type, _a['Navigation-menu--active'] = isMenuActive, _a));
-            return /*#__PURE__*/React__namespace.createElement("div", {
-              key: ind,
-              className: subMenuClasses,
-              onClick: function onClick() {
-                return onClickHandler(subMenu);
-              }
-            }, /*#__PURE__*/React__namespace.createElement(Text, {
-              appearance: getTextAppearance(isMenuActive, subMenu.disabled)
-            }, subMenu.label));
-          })));
-        });
-        var footerClasses = classNames__default['default']((_a = {
-          'Navigation-footer': true
-        }, _a['Navigation-footer--border'] = true, _a));
-        return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
-          className: "Navigation-body"
-        }, list), footer && /*#__PURE__*/React__namespace.createElement("div", {
-          className: footerClasses
-        }, /*#__PURE__*/React__namespace.createElement(Icon, {
-          className: "Navigation-menuIcon Navigation-menuIcon--footer",
-          name: "menu_open",
-          size: 16,
-          onClick: function onClick() {
-            return onToggle && onToggle(!expanded);
-          }
+            appearance: getTextAppearance(isActive, subMenu.disabled)
+          }, subMenu.label));
         })));
+      });
+      var footerClasses = classNames__default['default']((_a = {
+        'Navigation-footer': true
+      }, _a['Navigation-footer--border'] = true, _a));
+      return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
+        className: "Navigation-body"
+      }, list), footer && /*#__PURE__*/React__namespace.createElement("div", {
+        className: footerClasses
+      }, /*#__PURE__*/React__namespace.createElement(Icon, {
+        className: "Navigation-menuIcon Navigation-menuIcon--footer",
+        name: "menu_open",
+        size: 16,
+        onClick: function onClick() {
+          return onToggle && onToggle(!expanded);
+        }
+      })));
+    };
+    VerticalNavigation.defaultProps = {
+      expanded: true,
+      autoCollapse: true,
+      rounded: false
+    };
+
+    var Navigation = function Navigation(props) {
+      var _a;
+
+      var type = props.type,
+          align = props.align,
+          menus = props.menus,
+          active = props.active,
+          onClick = props.onClick,
+          expanded = props.expanded,
+          rounded = props.rounded,
+          onToggle = props.onToggle,
+          footer = props.footer,
+          autoCollapse = props.autoCollapse,
+          className = props.className;
+      var baseProps = extractBaseProps(props);
+      var classes = classNames__default['default']((_a = {}, _a['Navigation'] = true, _a["Navigation--" + type] = type, _a['justify-content-center'] = type === 'horizontal' && align === 'center', _a['justify-content-start'] = type === 'horizontal' && align === 'left', _a['Navigation--collapsed'] = !expanded, _a), className);
+
+      var renderNavigation = function renderNavigation() {
+        return type === 'horizontal' ? /*#__PURE__*/React__namespace.createElement(HorizontalNavigation, {
+          menus: menus,
+          active: active,
+          onClick: onClick
+        }) : /*#__PURE__*/React__namespace.createElement(VerticalNavigation, {
+          menus: menus,
+          active: active,
+          autoCollapse: autoCollapse,
+          expanded: expanded,
+          rounded: rounded,
+          footer: footer,
+          onToggle: onToggle,
+          onClick: onClick
+        });
       };
 
-      var classes = classNames__default['default']((_a = {}, _a['Navigation'] = true, _a["Navigation--" + type] = type, _a['justify-content-center'] = type === 'horizontal' && align === 'center', _a['justify-content-start'] = type === 'horizontal' && align === 'left', _a['Navigation--collapsed'] = !expanded, _a), className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: classes
-      }), type === 'horizontal' ? getHorizontalMenu(menus) : getVerticalMenu());
+      }), renderNavigation());
     };
     Navigation.defaultProps = {
       type: 'horizontal',
@@ -12207,7 +12284,7 @@
     };
     FileList.displayName = 'FileList';
 
-    var version = "1.7.1";
+    var version = "2.0.0-0";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
