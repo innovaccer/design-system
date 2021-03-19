@@ -38,7 +38,7 @@ export const Action = () => {
   );
 };
 export default {
-  title: 'Atoms|Chip/Variants',
+  title: 'Components/Chip/Variants',
   component: Chip,
   parameters: {
     docs: {

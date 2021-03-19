@@ -13,7 +13,7 @@ export const defaultTextarea = () => (
 );
 
 export default {
-  title: 'Atoms|Textarea',
+  title: 'Components/Textarea',
   component: Textarea,
   parameters: {
     docs: {

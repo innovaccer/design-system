@@ -42,5 +42,5 @@ export const miscellaneous = () => {
 };
 
 export default {
-  title: 'Design Tokens'
+  title: 'Others/Design Tokens'
 };

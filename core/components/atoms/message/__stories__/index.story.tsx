@@ -29,6 +29,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|Message',
+  title: 'Components/Message',
   component: Message
 };

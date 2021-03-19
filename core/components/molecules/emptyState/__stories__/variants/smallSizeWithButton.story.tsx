@@ -18,6 +18,6 @@ export const smallSizeWithButton = () => {
 };
 
 export default {
-  title: 'Molecules|EmptyState/Variants',
+  title: 'Components/EmptyState/Variants',
   component: EmptyState,
 };

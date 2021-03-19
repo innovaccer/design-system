@@ -141,7 +141,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Organisms|Grid',
+  title: 'Components/Grid',
   component: Grid,
   parameters: {
     docs: {

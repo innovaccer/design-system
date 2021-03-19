@@ -3,7 +3,10 @@ html, body {
   overflow-y: auto;
 }
 
-.DocPage {}
+.DocPage .sbdocs-preview {
+  box-shadow: var(--shadow-s);
+  border-radius: var(--spacing-m);
+}
 
 .DocPage-editorTabs .TabsWrapper-header {
   margin-left: var(--spacing-l)

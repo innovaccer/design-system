@@ -138,7 +138,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Molecules|Sidesheet',
+  title: 'Components/Sidesheet',
   component: Sidesheet,
   subcomponents: { ModalHeader, ModalBody, ModalDescription, ModalFooter },
   parameters: {

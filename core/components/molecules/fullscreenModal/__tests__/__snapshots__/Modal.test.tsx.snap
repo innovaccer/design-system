@@ -28,7 +28,7 @@ exports[`FullscreenModal component
               data-test="DesignSystem-Row"
             >
               <div
-                class="Col Col--auto"
+                class="Col"
               >
                 <div
                   class="FullscreenModal-header"
@@ -40,7 +40,7 @@ exports[`FullscreenModal component
                 </div>
               </div>
               <div
-                class="Col Col--auto pr-2"
+                class="Col pr-2"
               >
                 <i
                   class="material-icons Icon cursor-pointer pt-3"
@@ -95,7 +95,7 @@ exports[`FullscreenModal component
               data-test="DesignSystem-Row"
             >
               <div
-                class="Col Col--auto"
+                class="Col"
               >
                 <div
                   class="FullscreenModal-header"
@@ -107,7 +107,7 @@ exports[`FullscreenModal component
                 </div>
               </div>
               <div
-                class="Col Col--auto pr-2"
+                class="Col pr-2"
               >
                 <i
                   class="material-icons Icon cursor-pointer pt-3"

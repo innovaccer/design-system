@@ -39,6 +39,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|AvatarGroup',
+  title: 'Components/AvatarGroup',
   component: AvatarGroup
 };

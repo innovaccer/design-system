@@ -1,16 +1,22 @@
 import * as React from 'react';
-import { text, select } from '@storybook/addon-knobs';
-import Link from '../index';
+import { text, select, boolean } from '@storybook/addon-knobs';
+import { Link } from '@/index';
 import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const all = () => {
   const href = text('href', 'http://innovaccer.com');
   const target = select('target', ['_blank', '_self', '_parent', '_top'], '_blank');
+  const size = select('size', ['regular', 'tiny'], 'regular');
+  const appearance = select('appearance', ['default', 'subtle'], 'default');
+  const disabled = boolean('disabled', false);
 
   const options = {
     href,
-    target
+    target,
+    size,
+    appearance,
+    disabled
   };
 
   return (
@@ -21,7 +27,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|Typography/Link',
+  title: 'Components/Link',
   component: Link,
   parameters: {
     docs: {

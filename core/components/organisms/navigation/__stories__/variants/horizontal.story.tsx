@@ -13,7 +13,8 @@ export const horizontal = () => {
     },
     {
       name: 'menu_2',
-      label: 'Menu 2'
+      label: 'Menu 2',
+      count: 10
     },
     {
       name: 'menu_3',
@@ -68,7 +69,8 @@ const customCode = `() => {
     },
     {
       name: 'menu_2',
-      label: 'Menu 2'
+      label: 'Menu 2',
+      count: 10
     },
     {
       name: 'menu_3',
@@ -110,7 +112,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Organisms|Navigation/Variants',
+  title: 'Components/Navigation/Variants',
   component: Navigation,
   parameters: {
     docs: {

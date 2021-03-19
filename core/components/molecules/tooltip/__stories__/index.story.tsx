@@ -30,6 +30,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Molecules|Tooltip',
+  title: 'Components/Tooltip',
   component: Tooltip
 };

@@ -52,7 +52,7 @@ export const withPagination = () => {
 };
 
 export default {
-  title: 'Organisms|Table/Variants',
+  title: 'Components/Table/Variants',
   component: Table,
   parameters: {
     docs: {

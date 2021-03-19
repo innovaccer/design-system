@@ -63,6 +63,6 @@ export const overflow = () => {
 };
 
 export default {
-  title: 'Utilities',
+  title: 'Others/Utilities',
   component: overflow,
 };

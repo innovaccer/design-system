@@ -10,7 +10,7 @@ export const info = () => (
 );
 
 export default {
-  title: 'Atoms|StatusHint',
+  title: 'Components/StatusHint',
   component: StatusHint,
   parameters: {
     docs: {

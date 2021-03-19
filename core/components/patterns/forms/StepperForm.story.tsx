@@ -202,7 +202,7 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Patterns|Forms',
+  title: 'Patterns/Forms',
   parameters: {
     docs: {
       docPage: {

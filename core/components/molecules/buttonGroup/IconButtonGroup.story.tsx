@@ -24,7 +24,7 @@ export const iconButtonGroup = () => (
 );
 
 export default {
-  title: 'Molecules|ButtonGroup',
+  title: 'Components/ButtonGroup',
   component: Button,
   parameters: {
     docs: {

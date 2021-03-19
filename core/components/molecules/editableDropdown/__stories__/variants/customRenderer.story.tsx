@@ -117,7 +117,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Molecules|EditableDropdown/Variants',
+  title: 'Components/EditableDropdown/Variants',
   component: EditableDropdown,
   parameters: {
     docs: {

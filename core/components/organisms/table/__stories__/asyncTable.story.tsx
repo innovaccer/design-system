@@ -277,7 +277,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Organisms|Table',
+  title: 'Components/Table',
   component: Table,
   parameters: {
     docs: {

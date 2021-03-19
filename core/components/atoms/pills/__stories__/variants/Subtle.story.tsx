@@ -34,7 +34,7 @@ export const subtle = () => {
 };
 
 export default {
-  title: 'Atoms|Pills/Variants',
+  title: 'Components/Pills/Variants',
   component: Pills,
   parameters: {
     docs: {

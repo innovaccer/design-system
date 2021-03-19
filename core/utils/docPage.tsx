@@ -1,7 +1,19 @@
 // @ts-nocheck
 
 import * as React from 'react';
-import { Title, Subtitle, Heading, Subheading, Props, Description, Preview, Source, PropsProps } from '@storybook/addon-docs/blocks';
+import {
+  Title,
+  Subtitle,
+  Heading,
+  Subheading,
+  Props,
+  Description,
+  Preview,
+  Source,
+  PropsProps,
+  Stories,
+  ArgsTable,
+} from '@storybook/addon-docs/blocks';
 import { renderToStaticMarkup } from 'react-dom/server';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 import { html as beautifyHTML } from 'js-beautify';
@@ -220,7 +232,7 @@ export const docPage = () => {
     noStory,
     noProps,
     imports
-  } = sp.docs.docPage;
+  } = sp.docs.docPage || {};
 
   const separatorIndex = title?.indexOf('|');
 
@@ -241,9 +253,10 @@ export const docPage = () => {
       {!noProps && (
         <>
           <Heading>PropTable</Heading>
-          <Props {...propsAttr} />
+          <ArgsTable story="." {...propsAttr} />
         </>
       )}
+      <Stories includePrimary={true} />
     </div>
   );
 };

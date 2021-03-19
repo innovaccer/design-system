@@ -39,7 +39,7 @@ export const appearanceWithTitle = () => {
 };
 
 export default {
-  title: 'Atoms|Message/Variants',
+  title: 'Components/Message/Variants',
   component: Message,
   parameters: {
     docs: {

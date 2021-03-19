@@ -38,7 +38,7 @@ export const Disable = () => {
 };
 
 export default {
-  title: 'Atoms|Textarea/Variants',
+  title: 'Components/Textarea/Variants',
   component: Textarea,
   parameters: {
     docs: {

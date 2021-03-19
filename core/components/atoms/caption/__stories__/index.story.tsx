@@ -22,7 +22,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|Typography/Caption',
+  title: 'Components/Caption',
   component: Caption,
   parameters: {
     docs: {

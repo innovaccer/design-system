@@ -95,7 +95,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Molecules|Dialog',
+  title: 'Components/Dialog',
   component: Dialog,
   parameters: {
     docs: {

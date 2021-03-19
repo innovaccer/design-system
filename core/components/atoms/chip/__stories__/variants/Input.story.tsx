@@ -39,7 +39,7 @@ export const Input = () => {
   );
 };
 export default {
-  title: 'Atoms|Chip/Variants',
+  title: 'Components/Chip/Variants',
   component: Chip,
   parameters: {
     docs: {

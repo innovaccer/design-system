@@ -91,5 +91,5 @@ export const typography = () => {
 };
 
 export default {
-  title: 'Design Tokens'
+  title: 'Others/Design Tokens'
 };

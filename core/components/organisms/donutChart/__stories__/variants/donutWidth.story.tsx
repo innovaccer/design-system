@@ -25,7 +25,7 @@ export const donutWidth = () => {
 };
 
 export default {
-  title: 'Organisms|DonutChart/Variants',
+  title: 'Components/DonutChart/Variants',
   component: DonutChart,
   parameters: {
     docs: {

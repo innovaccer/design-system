@@ -11,7 +11,7 @@ export const solidAlert = () => (
 );
 
 export default {
-  title: 'Atoms|Badge',
+  title: 'Components/Badge',
   component: Badge,
   parameters: {
     docs: {

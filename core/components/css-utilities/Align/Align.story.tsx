@@ -80,6 +80,6 @@ export const align = () => {
 };
 
 export default {
-  title: 'Utilities',
+  title: 'Others/Utilities',
   component: align,
 };

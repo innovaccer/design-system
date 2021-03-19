@@ -59,6 +59,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|Toast',
+  title: 'Components/Toast',
   component: Toast,
 };

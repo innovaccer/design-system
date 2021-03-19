@@ -30,7 +30,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Atoms|Loaders/Placeholder/Image/Variants',
+  title: 'Components/Loaders/Placeholder/Image/Variants',
   component: PlaceholderImage,
   parameters: {
     docs: {

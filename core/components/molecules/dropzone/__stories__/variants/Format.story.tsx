@@ -55,7 +55,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Molecules|Dropzone/Variants',
+  title: 'Components/Dropzone/Variants',
   component: Dropzone,
   parameters: {
     docs: {

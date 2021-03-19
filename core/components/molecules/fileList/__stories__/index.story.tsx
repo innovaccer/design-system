@@ -148,7 +148,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Molecules|FileList',
+  title: 'Components/FileList',
   component: FileList,
   parameters: {
     docs: {

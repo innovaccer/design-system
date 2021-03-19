@@ -35,7 +35,7 @@ export const UncontrolledRadioGroup = () => {
 };
 
 export default {
-  title: 'Atoms|Radio/Variants',
+  title: 'Components/Radio/Variants',
   component: Radio,
   parameters: {
     docs: {

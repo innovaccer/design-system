@@ -108,7 +108,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Molecules|Modal',
+  title: 'Components/Modal',
   component: Modal,
   subcomponents: { ModalHeader, ModalBody, ModalDescription, ModalFooter },
   parameters: {

@@ -29,6 +29,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|Loaders/Spinner',
+  title: 'Components/Loaders/Spinner',
   component: Spinner
 };

@@ -36,6 +36,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|RangeSlider',
+  title: 'Components/RangeSlider',
   component: RangeSlider,
 };

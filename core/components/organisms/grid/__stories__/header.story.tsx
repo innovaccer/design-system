@@ -85,6 +85,6 @@ export const header = () => {
 };
 
 export default {
-  title: 'Organisms|Grid',
+  title: 'Components/Grid',
   component: Header,
 };

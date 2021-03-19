@@ -29,7 +29,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Atoms|Typography/Subheading/Variants',
+  title: 'Components/Subheading/Variants',
   component: Subheading,
   parameters: {
     docs: {

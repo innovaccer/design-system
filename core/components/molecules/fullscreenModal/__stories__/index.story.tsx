@@ -144,13 +144,13 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Molecules| Fullscreen Modal',
+  title: 'Components/FullscreenModal',
   component: FullscreenModal,
   parameters: {
     docs: {
       docPage: {
         customCode,
-        title: 'Fullscreen Modal',
+        title: 'FullscreenModal',
         noHtml: true
       }
     }
