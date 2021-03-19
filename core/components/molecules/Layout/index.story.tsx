@@ -20,7 +20,6 @@ export const ColumnSize = () => {
       10: '10',
       11: '11',
       12: '12',
-      auto: 'auto'
     },
     undefined,
     {
@@ -42,7 +41,6 @@ export const ColumnSize = () => {
       10: '10',
       11: '11',
       12: '12',
-      auto: 'auto'
     },
     undefined,
     {
@@ -64,7 +62,6 @@ export const ColumnSize = () => {
       10: '10',
       11: '11',
       12: '12',
-      auto: 'auto'
     },
     undefined,
     {
@@ -86,7 +83,6 @@ export const ColumnSize = () => {
       10: '10',
       11: '11',
       12: '12',
-      auto: 'auto'
     },
     undefined,
     {
@@ -108,7 +104,6 @@ export const ColumnSize = () => {
       10: '10',
       11: '11',
       12: '12',
-      auto: 'auto'
     },
     undefined,
     {
@@ -130,7 +125,6 @@ export const ColumnSize = () => {
       10: '10',
       11: '11',
       12: '12',
-      auto: 'auto'
     },
     undefined,
     {

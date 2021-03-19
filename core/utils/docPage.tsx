@@ -232,7 +232,7 @@ export const docPage = () => {
     noStory,
     noProps,
     imports
-  } = sp.docs.docPage;
+  } = sp.docs.docPage || {};
 
   const separatorIndex = title?.indexOf('|');
 
