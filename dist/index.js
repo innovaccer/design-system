@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1615366416344 
+   * Generated on: 1616155251059 
    *      Package: @innovaccer/design-system
-   *      Version: v1.7.1-0
+   *      Version: v1.7.1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -16,8 +16,30 @@
 
     function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
+    function _interopNamespace(e) {
+        if (e && e.__esModule) return e;
+        var n = Object.create(null);
+        if (e) {
+            Object.keys(e).forEach(function (k) {
+                if (k !== 'default') {
+                    var d = Object.getOwnPropertyDescriptor(e, k);
+                    Object.defineProperty(n, k, d.get ? d : {
+                        enumerable: true,
+                        get: function () {
+                            return e[k];
+                        }
+                    });
+                }
+            });
+        }
+        n['default'] = e;
+        return Object.freeze(n);
+    }
+
+    var React__namespace = /*#__PURE__*/_interopNamespace(React);
     var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
     var classNames__default = /*#__PURE__*/_interopDefaultLegacy(classNames);
+    var ReactDOM__namespace = /*#__PURE__*/_interopNamespace(ReactDOM);
 
     var colorToHex = function colorToHex(color) {
       return getComputedStyle(document.documentElement).getPropertyValue("--" + color);
@@ -418,15 +440,15 @@
       var IconClass = classNames__default['default']((_c = {}, _c["Avatar-content--" + AvatarAppearance] = AvatarAppearance, _c));
 
       var renderAvatar = function renderAvatar() {
-        return /*#__PURE__*/React.createElement("span", __assign({
+        return /*#__PURE__*/React__namespace.createElement("span", __assign({
           "data-test": "DesignSystem-Avatar"
         }, baseProps, {
           className: classes
-        }), initials && /*#__PURE__*/React.createElement(Text, {
+        }), initials && /*#__PURE__*/React__namespace.createElement(Text, {
           weight: "medium",
           appearance: 'white',
           className: ContentClass
-        }, initials), !initials && /*#__PURE__*/React.createElement(Icon, {
+        }, initials), !initials && /*#__PURE__*/React__namespace.createElement(Icon, {
           "data-test": "DesignSystem-AvatarIcon",
           name: "person",
           size: size === 'regular' ? 16 : 12,
@@ -437,7 +459,7 @@
 
       var renderTooltip = function renderTooltip() {
         if (withTooltip && initials) {
-          return /*#__PURE__*/React.createElement(Tooltip, {
+          return /*#__PURE__*/React__namespace.createElement(Tooltip, {
             tooltip: tooltip,
             position: tooltipPosition,
             triggerClass: 'flex-grow-0'
@@ -488,10 +510,10 @@
       };
       var AvatarGroupClass = classNames__default['default']((_a = {}, _a['AvatarGroup'] = true, _a), className);
       var popperClass = classNames__default['default']((_b = {}, _b['AvatarGroup-Popper'] = true, _b), popperClassName);
-      var trigger = /*#__PURE__*/React.createElement("div", {
+      var trigger = /*#__PURE__*/React__namespace.createElement("div", {
         "data-test": "DesignSystem-AvatarGroup--TriggerAvatar",
         style: style
-      }, /*#__PURE__*/React.createElement(Avatar, {
+      }, /*#__PURE__*/React__namespace.createElement(Avatar, {
         appearance: "secondary",
         firstName: "+",
         lastName: "" + extraAvatars,
@@ -505,9 +527,9 @@
           return popperRenderer(extraAvatarsList);
         }
 
-        return /*#__PURE__*/React.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement("div", {
           className: "py-6 pr-4 pl-6"
-        }, /*#__PURE__*/React.createElement("div", {
+        }, /*#__PURE__*/React__namespace.createElement("div", {
           className: "AvatarGroup-TextWrapper",
           style: {
             maxHeight: maxHeight
@@ -518,7 +540,7 @@
               _b = item.lastName,
               lastName = _b === void 0 ? '' : _b;
           var name = firstName + " " + lastName;
-          return /*#__PURE__*/React.createElement(Text, {
+          return /*#__PURE__*/React__namespace.createElement(Text, {
             key: ind,
             appearance: dark ? 'white' : 'default',
             className: ind < extraAvatars - 1 ? 'mb-5' : '',
@@ -532,12 +554,12 @@
           var appearance = item.appearance,
               firstName = item.firstName,
               lastName = item.lastName;
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             "data-test": "DesignSystem-AvatarGroup--Avatar",
             className: "AvatarGroup-item",
             style: style,
             key: index
-          }, /*#__PURE__*/React.createElement(Avatar, {
+          }, /*#__PURE__*/React__namespace.createElement(Avatar, {
             appearance: appearance,
             firstName: firstName,
             lastName: lastName,
@@ -548,11 +570,11 @@
         return avatars;
       };
 
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-AvatarGroup"
       }, baseProps, {
         className: AvatarGroupClass + " d-inline-flex"
-      }), renderAvatars(), list.length - max > 0 && /*#__PURE__*/React.createElement(Popover, {
+      }), renderAvatars(), list.length - max > 0 && /*#__PURE__*/React__namespace.createElement(Popover, {
         on: on,
         dark: dark,
         trigger: trigger,
@@ -569,8 +591,8 @@
       popoverOptions: {}
     };
 
-    var useEffect$1 = React.useEffect,
-        useState$2 = React.useState;
+    var useEffect$1 = React__namespace.useEffect,
+        useState$2 = React__namespace.useState;
     var Backdrop = function Backdrop(props) {
       var className = props.className;
       var baseProps = extractBaseProps(props);
@@ -579,11 +601,11 @@
           savedBodyOverflow = _a[0],
           setBodyOverflow = _a[1];
 
-      var _b = React.useState(props.open),
+      var _b = React__namespace.useState(props.open),
           open = _b[0],
           setOpen = _b[1];
 
-      var _c = React.useState(props.open),
+      var _c = React__namespace.useState(props.open),
           animate = _c[0],
           setAnimate = _c[1];
 
@@ -619,7 +641,7 @@
           enableBodyScroll();
         }
       }, [props.open]);
-      var BackdropElement = /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement("div", __assign({
+      var BackdropElement = /*#__PURE__*/ReactDOM__namespace.createPortal( /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Backdrop",
         "data-layer": true
       }, baseProps, {
@@ -640,7 +662,7 @@
       var classes = classNames__default['default']((_a = {
         Badge: true
       }, _a["Badge--" + appearance] = appearance && !subtle, _a["Badge--subtle-" + appearance] = subtle, _a), className);
-      return /*#__PURE__*/React.createElement("span", __assign({
+      return /*#__PURE__*/React__namespace.createElement("span", __assign({
         "data-test": "DesignSystem-Badge"
       }, baseProps, {
         className: classes
@@ -850,7 +872,7 @@
       };
     };
 
-    var DropdownButton = /*#__PURE__*/React.forwardRef(function (props, ref) {
+    var DropdownButton = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
       var _a, _b;
 
       var _c = props.triggerSize,
@@ -873,7 +895,7 @@
       var iconName = !menu ? 'keyboard_arrow_down' : icon ? icon : 'more_horiz';
       var buttonClass = classNames__default['default']((_a = {}, _a['Button'] = true, _a['DropdownButton'] = true, _a["DropdownButton--" + triggerSize] = triggerSize, _a["DropdownButton--" + triggerSize + "Square"] = menu, _a['DropdownButton--placeholder'] = !children && !menu, _a['DropdownButton--icon'] = icon, _a['DropdownButton--open'] = open, _a['DropdownButton--error'] = error, _a));
       var textClass = classNames__default['default']((_b = {}, _b['Text'] = true, _b['Text--regular'] = true, _b['DropdownButton-text'] = true, _b));
-      return /*#__PURE__*/React.createElement("button", __assign({
+      return /*#__PURE__*/React__namespace.createElement("button", __assign({
         ref: ref,
         type: "button",
         value: children,
@@ -881,18 +903,18 @@
         disabled: disabled,
         tabIndex: 0,
         "data-test": "DesignSystem-DropdownTrigger"
-      }, rest), !menu && /*#__PURE__*/React.createElement("div", {
+      }, rest), !menu && /*#__PURE__*/React__namespace.createElement("div", {
         className: "DropdownButton-wrapper"
-      }, inlineLabel && /*#__PURE__*/React.createElement(Text, {
+      }, inlineLabel && /*#__PURE__*/React__namespace.createElement(Text, {
         appearance: "subtle",
         className: "mr-4"
-      }, "" + inlineLabel.trim().charAt(0).toUpperCase() + inlineLabel.trim().slice(1)), icon && !inlineLabel && /*#__PURE__*/React.createElement(Icon, {
+      }, "" + inlineLabel.trim().charAt(0).toUpperCase() + inlineLabel.trim().slice(1)), icon && !inlineLabel && /*#__PURE__*/React__namespace.createElement(Icon, {
         appearance: buttonDisabled,
         className: "d-flex align-items-center mr-4",
         name: icon
-      }), value && /*#__PURE__*/React.createElement("span", {
+      }), value && /*#__PURE__*/React__namespace.createElement("span", {
         className: textClass
-      }, value)), /*#__PURE__*/React.createElement(Icon, {
+      }, value)), /*#__PURE__*/React__namespace.createElement(Icon, {
         appearance: buttonDisabled,
         name: iconName
       }));
@@ -906,7 +928,7 @@
           className = _a.className,
           props = __rest(_a, ["children", "componentType", "className"]);
 
-      return /*#__PURE__*/React.createElement(componentType, __assign(__assign({}, props), {
+      return /*#__PURE__*/React__namespace.createElement(componentType, __assign(__assign({}, props), {
         className: className
       }), children);
     };
@@ -924,7 +946,7 @@
       var classes = classNames__default['default']((_a = {
         Text: true
       }, _a["Text--" + appearance] = appearance, _a["Text--" + weight] = weight, _a["Text--" + size] = size, _a['Text--small'] = size === 'small' || small, _a), className);
-      return /*#__PURE__*/React.createElement(GenericText, __assign({
+      return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
         "data-test": "DesignSystem-Text"
       }, baseProps, {
         className: classes,
@@ -961,13 +983,13 @@
         width: size + "px"
       };
 
-      if (children && /*#__PURE__*/React.isValidElement(children)) {
-        return /*#__PURE__*/React.createElement("span", __assign({}, baseProps, {
+      if (children && /*#__PURE__*/React__namespace.isValidElement(children)) {
+        return /*#__PURE__*/React__namespace.createElement("span", __assign({}, baseProps, {
           className: className
         }), children);
       }
 
-      return /*#__PURE__*/React.createElement("i", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("i", __assign({}, baseProps, {
         className: iconClass,
         style: styles,
         onClick: onClick
@@ -989,7 +1011,7 @@
       return uuid;
     };
 
-    var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
+    var Checkbox = /*#__PURE__*/React__namespace.forwardRef(function (props, forwardedRef) {
       var _a, _b, _c, _d, _e;
 
       var _f = props.size,
@@ -1004,20 +1026,20 @@
           name = props.name,
           value = props.value,
           className = props.className;
-      var ref = React.useRef(null);
+      var ref = React__namespace.useRef(null);
       var baseProps = extractBaseProps(props);
-      React.useImperativeHandle(forwardedRef, function () {
+      React__namespace.useImperativeHandle(forwardedRef, function () {
         return ref.current;
       });
 
-      var _h = React.useState(props.checked === undefined ? defaultChecked : props.checked),
+      var _h = React__namespace.useState(props.checked === undefined ? defaultChecked : props.checked),
           checked = _h[0],
           setChecked = _h[1];
 
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         setIndeterminate(indeterminate);
       }, [indeterminate]);
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         if (props.checked !== undefined) {
           setChecked(props.checked);
         }
@@ -1044,11 +1066,11 @@
       var id = name + "-" + label + "-" + uidGenerator();
       var IconName = indeterminate ? 'remove' : checked ? 'check' : '';
       var IconSize = size === 'tiny' ? 8 : 16;
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         className: CheckboxClass
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: CheckboxOuterWrapper
-      }, /*#__PURE__*/React.createElement("input", __assign({}, baseProps, {
+      }, /*#__PURE__*/React__namespace.createElement("input", __assign({}, baseProps, {
         type: "checkbox",
         defaultChecked: defaultChecked,
         onChange: onChangeHandler,
@@ -1060,16 +1082,16 @@
         className: CheckboxInputWrapper,
         tabIndex: tabIndex,
         id: id
-      })), /*#__PURE__*/React.createElement("span", {
+      })), /*#__PURE__*/React__namespace.createElement("span", {
         className: CheckboxWrapper
-      }, IconName && /*#__PURE__*/React.createElement(Icon, {
+      }, IconName && /*#__PURE__*/React__namespace.createElement(Icon, {
         name: IconName,
         size: IconSize,
         appearance: 'white'
-      }))), label && label.trim() && /*#__PURE__*/React.createElement("label", {
+      }))), label && label.trim() && /*#__PURE__*/React__namespace.createElement("label", {
         htmlFor: id,
         className: CheckboxTextClass
-      }, /*#__PURE__*/React.createElement(Text, {
+      }, /*#__PURE__*/React__namespace.createElement(Text, {
         size: size === 'tiny' ? 'small' : 'regular',
         appearance: disabled ? 'disabled' : 'default'
       }, label.trim())));
@@ -1085,12 +1107,12 @@
           dataTest = props.dataTest;
       var label = optionData.label,
           disabled = optionData.disabled;
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         className: className,
         onMouseEnter: onUpdateActiveOption,
         "data-test": dataTest,
         "data-disabled": disabled
-      }, /*#__PURE__*/React.createElement(Checkbox, {
+      }, /*#__PURE__*/React__namespace.createElement(Checkbox, {
         label: label,
         disabled: disabled,
         checked: selected,
@@ -1110,15 +1132,15 @@
           dataTest = props.dataTest;
       var label = optionData.label,
           disabled = optionData.disabled;
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         className: className,
         onClick: onClickHandler,
         onMouseEnter: onUpdateActiveOption,
         "data-test": dataTest,
         "data-disabled": disabled
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: 'Option-label'
-      }, /*#__PURE__*/React.createElement(Text, {
+      }, /*#__PURE__*/React__namespace.createElement(Text, {
         className: textClassName,
         appearance: appearance
       }, label)));
@@ -1136,15 +1158,15 @@
       var subInfo = optionData.subInfo,
           label = optionData.label,
           disabled = optionData.disabled;
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         className: className,
         onClick: onClickHandler,
         onMouseEnter: onUpdateActiveOption,
         "data-test": dataTest,
         "data-disabled": disabled
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: 'Option-label'
-      }, /*#__PURE__*/React.createElement(Text, {
+      }, /*#__PURE__*/React__namespace.createElement(Text, {
         className: textClassName,
         appearance: appearance
       }, label), subInfo && renderSubInfo(subInfo)));
@@ -1164,19 +1186,19 @@
           icon = optionData.icon,
           disabled = optionData.disabled;
       var OptionClass = classNames__default['default']((_a = {}, _a["" + className] = true, _a['Option--icon'] = icon, _a));
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         className: OptionClass,
         onClick: onClickHandler,
         onMouseEnter: onUpdateActiveOption,
         "data-test": dataTest,
         "data-disabled": disabled
-      }, icon && /*#__PURE__*/React.createElement(Icon, {
+      }, icon && /*#__PURE__*/React__namespace.createElement(Icon, {
         className: "Option-icon mr-4",
         name: icon,
         appearance: appearance
-      }), /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React__namespace.createElement("div", {
         className: 'Option-label'
-      }, /*#__PURE__*/React.createElement(Text, {
+      }, /*#__PURE__*/React__namespace.createElement(Text, {
         className: textClassName,
         appearance: appearance
       }, label)));
@@ -1198,19 +1220,19 @@
           icon = optionData.icon,
           disabled = optionData.disabled;
       var OptionClass = classNames__default['default']((_a = {}, _a["" + className] = true, _a['Option--icon'] = icon, _a));
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         className: OptionClass,
         onClick: onClickHandler,
         onMouseEnter: onUpdateActiveOption,
         "data-test": dataTest,
         "data-disabled": disabled
-      }, icon && /*#__PURE__*/React.createElement(Icon, {
+      }, icon && /*#__PURE__*/React__namespace.createElement(Icon, {
         className: "Option-icon mr-4",
         name: icon,
         appearance: appearance
-      }), /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React__namespace.createElement("div", {
         className: 'Option-label'
-      }, /*#__PURE__*/React.createElement(Text, {
+      }, /*#__PURE__*/React__namespace.createElement(Text, {
         className: textClassName,
         appearance: appearance
       }, label), subInfo && renderSubInfo(subInfo)));
@@ -1257,7 +1279,7 @@
       };
 
       if (props.optionRenderer) {
-        return /*#__PURE__*/React.createElement("div", __assign({
+        return /*#__PURE__*/React__namespace.createElement("div", __assign({
           className: customOptionClass,
           "data-disabled": disabled,
           onMouseEnter: onUpdateActiveOption
@@ -1277,7 +1299,7 @@
         var iconAppearance = selected ? 'white' : 'disabled';
 
         if (typeof subInfo === 'string') {
-          return /*#__PURE__*/React.createElement(Text, {
+          return /*#__PURE__*/React__namespace.createElement(Text, {
             appearance: labelAppearance
           }, subInfo);
         }
@@ -1285,7 +1307,7 @@
         var _a = subInfo.list,
             list = _a === void 0 ? [] : _a,
             seperator = subInfo.seperator;
-        return /*#__PURE__*/React.createElement(MetaList, {
+        return /*#__PURE__*/React__namespace.createElement(MetaList, {
           list: list,
           seperator: seperator,
           iconAppearance: iconAppearance,
@@ -1326,9 +1348,9 @@
       var wrapperClass = classNames__default['default']((_b = {
         'PlaceholderParagraph-wrapper': true
       }, _b["PlaceholderParagraph-wrapper--length-" + length] = length, _b["PlaceholderParagraph-wrapper--size-" + size] = size, _b), className);
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: wrapperClass
-      }), /*#__PURE__*/React.createElement("span", {
+      }), /*#__PURE__*/React__namespace.createElement("span", {
         className: classes
       }));
     };
@@ -1349,7 +1371,7 @@
         PlaceholderImage: true,
         'Placeholder--animation': true
       }, _a['PlaceholderImage--round'] = round, _a["PlaceholderImage--" + size] = size, _a), className);
-      return /*#__PURE__*/React.createElement("span", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("span", __assign({}, baseProps, {
         className: classes
       }));
     };
@@ -1371,15 +1393,15 @@
         'Placeholder-paragraph': true
       }, _a['Placeholder-paragraph--withImage'] = withImage, _a));
       var classes = classNames__default['default']((_b = {}, _b['Placeholder'] = true, _b), className);
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Placeholder"
       }, baseProps, {
         className: classes
-      }), withImage && /*#__PURE__*/React.createElement(PlaceholderImage, {
+      }), withImage && /*#__PURE__*/React__namespace.createElement(PlaceholderImage, {
         round: round,
         size: imageSize,
         "data-test": "DesignSystem-Placeholder--Image"
-      }), children && /*#__PURE__*/React.createElement("div", {
+      }), children && /*#__PURE__*/React__namespace.createElement("div", {
         className: paragraphClasses,
         "data-test": "DesignSystem-Placeholder--Paragraph"
       }, children));
@@ -1485,21 +1507,21 @@
           toggleDropdown = props.toggleDropdown,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var dropdownRef = /*#__PURE__*/React.createRef();
-      var triggerRef = /*#__PURE__*/React.createRef();
-      var dropdownTriggerRef = /*#__PURE__*/React.createRef();
-      var dropdownCancelButtonRef = /*#__PURE__*/React.createRef();
-      var dropdownApplyButtonRef = /*#__PURE__*/React.createRef();
+      var dropdownRef = /*#__PURE__*/React__namespace.createRef();
+      var triggerRef = /*#__PURE__*/React__namespace.createRef();
+      var dropdownTriggerRef = /*#__PURE__*/React__namespace.createRef();
+      var dropdownCancelButtonRef = /*#__PURE__*/React__namespace.createRef();
+      var dropdownApplyButtonRef = /*#__PURE__*/React__namespace.createRef();
 
-      var _o = React.useState(),
+      var _o = React__namespace.useState(),
           popoverStyle = _o[0],
           setPopoverStyle = _o[1];
 
-      var _p = React.useState(firstEnabledOption),
+      var _p = React__namespace.useState(firstEnabledOption),
           cursor = _p[0],
           setCursor = _p[1];
 
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         var _a;
 
         if (dropdownOpen) {
@@ -1516,7 +1538,7 @@
           setPopoverStyle(popperWrapperStyle);
         }
       }, [dropdownOpen]);
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         if (firstEnabledOption !== cursor) setCursor(firstEnabledOption);
       }, [firstEnabledOption]);
       var _q = props.triggerSize,
@@ -1528,12 +1550,12 @@
           disabled = props.disabled,
           inlineLabel = props.inlineLabel,
           triggerLabel = props.triggerLabel;
-      var CustomTrigger = customTrigger ? customTrigger(triggerLabel ? triggerLabel : placeholder) : /*#__PURE__*/React.createElement(React.Fragment, null);
-      var NewCustomTrigger = /*#__PURE__*/React.cloneElement(CustomTrigger, {
+      var CustomTrigger = customTrigger ? customTrigger(triggerLabel ? triggerLabel : placeholder) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null);
+      var NewCustomTrigger = /*#__PURE__*/React__namespace.cloneElement(CustomTrigger, {
         tabindex: 0,
         ref: dropdownTriggerRef
       });
-      var trigger = customTrigger ? NewCustomTrigger : /*#__PURE__*/React.createElement(DropdownButton, {
+      var trigger = customTrigger ? NewCustomTrigger : /*#__PURE__*/React__namespace.createElement(DropdownButton, {
         placeholder: placeholder,
         triggerSize: triggerSize,
         open: dropdownOpen,
@@ -1614,9 +1636,9 @@
       var renderFooter = function renderFooter() {
         var _a = props.footerLabel,
             footerLabel = _a === void 0 ? 'Search for more options' : _a;
-        return /*#__PURE__*/React.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement("div", {
           className: 'Dropdown-footer'
-        }, /*#__PURE__*/React.createElement(Text, {
+        }, /*#__PURE__*/React__namespace.createElement(Text, {
           size: "small",
           appearance: 'subtle'
         }, footerLabel));
@@ -1627,12 +1649,12 @@
         var isClearDisabled = selected.every(function (option) {
           return option.disabled;
         });
-        return /*#__PURE__*/React.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement("div", {
           className: getDropdownSectionClass(selectedGroup)
-        }, /*#__PURE__*/React.createElement(Text, {
+        }, /*#__PURE__*/React__namespace.createElement(Text, {
           size: "small",
           appearance: 'subtle'
-        }, group), selectedGroup && /*#__PURE__*/React.createElement(Button, {
+        }, group), selectedGroup && /*#__PURE__*/React__namespace.createElement(Button, {
           onClick: onClearOptions,
           disabled: isClearDisabled,
           appearance: "transparent",
@@ -1643,16 +1665,16 @@
       var renderApplyButton = function renderApplyButton() {
         var disable = _isEqual(previousSelected, tempSelected);
 
-        return /*#__PURE__*/React.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement("div", {
           className: 'Dropdown-buttonWrapper'
-        }, /*#__PURE__*/React.createElement(Button, {
+        }, /*#__PURE__*/React__namespace.createElement(Button, {
           ref: dropdownCancelButtonRef,
           className: "mr-4",
           appearance: 'basic',
           onClick: onCancelOptions,
           size: 'tiny',
           tabIndex: -1
-        }, cancelButtonLabel), /*#__PURE__*/React.createElement(Button, {
+        }, cancelButtonLabel), /*#__PURE__*/React__namespace.createElement(Button, {
           ref: dropdownApplyButtonRef,
           appearance: 'primary',
           disabled: disable,
@@ -1665,9 +1687,9 @@
         var loadingOptions = props.loadingOptions,
             searchInit = props.searchInit;
         var disable = loadingOptions && !searchInit;
-        return /*#__PURE__*/React.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement("div", {
           className: 'Dropdown-inputWrapper'
-        }, /*#__PURE__*/React.createElement(Input, {
+        }, /*#__PURE__*/React__namespace.createElement(Input, {
           name: "Dropdown-search",
           icon: 'search',
           value: searchTerm,
@@ -1686,10 +1708,10 @@
         var arr = Array(loadersLength).fill('Loading');
         var type = withCheckbox ? 'WITH_CHECKBOX' : optionType;
         return arr.map(function (option, ind) {
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             className: "Option-loading",
             key: option + "-" + ind
-          }, /*#__PURE__*/React.createElement(Loading, {
+          }, /*#__PURE__*/React__namespace.createElement(Loading, {
             loadingType: type
           }));
         });
@@ -1701,12 +1723,12 @@
             selectAll = props.selectAll,
             onSelectAll = props.onSelectAll;
         var label = selectAllLabel.trim() ? selectAllLabel.trim() : 'Select All';
-        return /*#__PURE__*/React.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement("div", {
           className: SelectAllClass,
           onMouseEnter: function onMouseEnter(_e) {
             return updateActiveOption(0, true);
           }
-        }, /*#__PURE__*/React.createElement(Checkbox, {
+        }, /*#__PURE__*/React__namespace.createElement(Checkbox, {
           label: label,
           onChange: onSelectAll,
           checked: selectAll.checked,
@@ -1723,7 +1745,7 @@
         var optionIsSelected = tempSelected.findIndex(function (option) {
           return option.value === item.value;
         }) !== -1;
-        return /*#__PURE__*/React.createElement(Option, {
+        return /*#__PURE__*/React__namespace.createElement(Option, {
           optionData: item,
           truncateOption: truncateOption,
           selected: optionIsSelected,
@@ -1753,9 +1775,9 @@
         var selectAllPresent = _isSelectAllPresent(searchTerm, remainingOptions, withSelectAll, withCheckbox);
 
         if (loadersCount && loadingOptions) {
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             className: 'Dropdown-loading'
-          }, /*#__PURE__*/React.createElement("div", {
+          }, /*#__PURE__*/React__namespace.createElement("div", {
             className: "Dropdown-wrapper",
             style: dropdownStyle
           }, renderLoading(loadersCount)));
@@ -1764,16 +1786,16 @@
         if (listOptions.length === 0 && !loadingOptions) {
           var _c = props.noResultMessage,
               noResultMessage = _c === void 0 ? 'No result found' : _c;
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             className: 'Dropdown-errorWrapper'
-          }, /*#__PURE__*/React.createElement("div", {
+          }, /*#__PURE__*/React__namespace.createElement("div", {
             className: 'Option'
-          }, /*#__PURE__*/React.createElement("div", {
+          }, /*#__PURE__*/React__namespace.createElement("div", {
             className: 'Option-subinfo'
           }, noResultMessage)));
         }
 
-        return /*#__PURE__*/React.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement("div", {
           className: dropdownWrapperClass,
           style: dropdownStyle,
           ref: dropdownRef
@@ -1784,7 +1806,7 @@
           var currentGroup = option.group;
           var isGroup = prevGroup !== currentGroup;
           var updatedIndex = index + selected.length;
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             className: getDropdownClass(updatedIndex, isGroup),
             key: index
           }, isGroup && currentGroup && renderGroups(currentGroup), renderOptions(option, updatedIndex));
@@ -1875,11 +1897,11 @@
         }
       };
 
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: dropdownClass,
         ref: triggerRef,
         onKeyDown: onkeydown
-      }), /*#__PURE__*/React.createElement(Popover, __assign({
+      }), /*#__PURE__*/React__namespace.createElement(Popover, __assign({
         onToggle: onToggleDropdown,
         trigger: trigger,
         triggerClass: !menu ? 'w-100' : '',
@@ -1891,7 +1913,7 @@
 
     DropdownList.displayName = 'DropdownList';
 
-    var inputRef = /*#__PURE__*/React.createRef();
+    var inputRef = /*#__PURE__*/React__namespace.createRef();
 
     var Dropdown = function (_super) {
       __extends(Dropdown, _super);
@@ -2465,7 +2487,7 @@
         var firstEnabledOption = _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox) ? 0 : options.findIndex(function (option) {
           return !option.disabled;
         });
-        return /*#__PURE__*/React.createElement(DropdownList, __assign({
+        return /*#__PURE__*/React__namespace.createElement(DropdownList, __assign({
           listOptions: options,
           inputRef: inputRef,
           remainingOptions: remainingOptionsLen,
@@ -2500,7 +2522,7 @@
         searchDebounceDuration: 300
       };
       return Dropdown;
-    }(React.Component);
+    }(React__namespace.Component);
 
     var SubtleLink = function SubtleLink(props) {
       var onClick = props.onClick,
@@ -2512,7 +2534,7 @@
         onClick();
       };
 
-      return /*#__PURE__*/React.createElement("a", {
+      return /*#__PURE__*/React__namespace.createElement("a", {
         className: "SubtleLink",
         href: href,
         onClick: onClickHandler
@@ -2520,7 +2542,7 @@
     };
 
     var renderLink = function renderLink(item, _onClick) {
-      return /*#__PURE__*/React.createElement(SubtleLink, {
+      return /*#__PURE__*/React__namespace.createElement(SubtleLink, {
         href: item.link,
         onClick: function onClick() {
           return _onClick(item.link);
@@ -2537,14 +2559,14 @@
       });
 
       var customTrigger = function customTrigger() {
-        return /*#__PURE__*/React.createElement(Button, {
+        return /*#__PURE__*/React__namespace.createElement(Button, {
           size: "tiny",
           appearance: "transparent",
           icon: "more_horiz_filled"
         });
       };
 
-      return /*#__PURE__*/React.createElement(Dropdown, {
+      return /*#__PURE__*/React__namespace.createElement(Dropdown, {
         triggerSize: 'tiny',
         triggerOptions: {
           customTrigger: customTrigger
@@ -2565,32 +2587,32 @@
           className = props.className;
       var baseProps = extractBaseProps(props);
       var BreadcrumbClass = classNames__default['default']((_a = {}, _a['Breadcrumbs'] = true, _a), className);
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: BreadcrumbClass
       }), list.length <= 4 ? list.map(function (item, index) {
-        return /*#__PURE__*/React.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement("div", {
           key: index,
           className: "Breadcrumbs-item"
-        }, /*#__PURE__*/React.createElement("span", {
+        }, /*#__PURE__*/React__namespace.createElement("span", {
           className: "Breadcrumbs-link"
-        }, renderLink(item, onClick)), /*#__PURE__*/React.createElement("span", {
+        }, renderLink(item, onClick)), /*#__PURE__*/React__namespace.createElement("span", {
           className: "Breadcrumbs-itemSeparator"
         }, "/"));
-      }) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+      }) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
         className: "Breadcrumbs-item"
-      }, /*#__PURE__*/React.createElement("span", {
+      }, /*#__PURE__*/React__namespace.createElement("span", {
         className: "Breadcrumbs-link"
-      }, renderLink(list[0], onClick)), /*#__PURE__*/React.createElement("span", {
+      }, renderLink(list[0], onClick)), /*#__PURE__*/React__namespace.createElement("span", {
         className: "Breadcrumbs-itemSeparator"
-      }, "/")), /*#__PURE__*/React.createElement("div", {
+      }, "/")), /*#__PURE__*/React__namespace.createElement("div", {
         className: "Breadcrumbs-dropdown"
-      }, renderDropdown(list.slice(1, list.length - 1), onClick), /*#__PURE__*/React.createElement("span", {
+      }, renderDropdown(list.slice(1, list.length - 1), onClick), /*#__PURE__*/React__namespace.createElement("span", {
         className: "Breadcrumbs-itemSeparator"
-      }, "/")), /*#__PURE__*/React.createElement("div", {
+      }, "/")), /*#__PURE__*/React__namespace.createElement("div", {
         className: "Breadcrumbs-item"
-      }, /*#__PURE__*/React.createElement("span", {
+      }, /*#__PURE__*/React__namespace.createElement("span", {
         className: "Breadcrumbs-link"
-      }, renderLink(list[list.length - 1], onClick)), /*#__PURE__*/React.createElement("span", {
+      }, renderLink(list[list.length - 1], onClick)), /*#__PURE__*/React__namespace.createElement("span", {
         className: "Breadcrumbs-itemSeparator"
       }, "/"))));
     };
@@ -2619,9 +2641,9 @@
         strokeMiterlimit: '10',
         strokeWidth: '4'
       };
-      return /*#__PURE__*/React.createElement("svg", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("svg", __assign({}, baseProps, {
         className: wrapperClasses
-      }, svgProps), /*#__PURE__*/React.createElement("circle", __assign({
+      }, svgProps), /*#__PURE__*/React__namespace.createElement("circle", __assign({
         className: circleClasses
       }, circleProps)));
     };
@@ -2636,7 +2658,7 @@
       regular: 16,
       large: 20
     };
-    var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
+    var Button = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
       var _a, _b, _c;
 
       var _d = props.size,
@@ -2660,20 +2682,20 @@
       var buttonClass = classNames__default['default']((_a = {}, _a['Button'] = true, _a['Button--expanded'] = expanded, _a["Button--" + size] = size, _a["Button--" + size + "Square"] = !children, _a["Button--" + appearance] = appearance, _a['Button--selected'] = selected && (appearance === 'basic' || appearance === 'transparent'), _a["Button--iconAlign-" + iconAlign] = children && iconAlign, _a["" + className] = className, _a));
       var iconClass = classNames__default['default']((_b = {}, _b['Button-icon'] = true, _b["Button-icon--" + iconAlign] = children && iconAlign, _b));
       var spinnerClass = classNames__default['default']((_c = {}, _c['Button-spinner'] = true, _c["Button-spinner--" + iconAlign] = children && iconAlign, _c));
-      return /*#__PURE__*/React.createElement("button", __assign({
+      return /*#__PURE__*/React__namespace.createElement("button", __assign({
         ref: ref,
         type: type,
         className: buttonClass,
         disabled: disabled || loading,
         tabIndex: tabIndex
-      }, rest), loading && /*#__PURE__*/React.createElement("span", {
+      }, rest), loading && /*#__PURE__*/React__namespace.createElement("span", {
         className: spinnerClass
-      }, /*#__PURE__*/React.createElement(Spinner, {
+      }, /*#__PURE__*/React__namespace.createElement(Spinner, {
         size: "small",
         appearance: appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white'
-      })), icon && !loading && /*#__PURE__*/React.createElement("div", {
+      })), icon && !loading && /*#__PURE__*/React__namespace.createElement("div", {
         className: iconClass
-      }, /*#__PURE__*/React.createElement(Icon, {
+      }, /*#__PURE__*/React__namespace.createElement(Icon, {
         name: icon,
         appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
         size: sizeMapping$1[size]
@@ -2681,7 +2703,7 @@
     });
     Button.displayName = 'Button';
 
-    var Card = /*#__PURE__*/React.forwardRef(function (props, ref) {
+    var Card = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
       var _a;
 
       var _b = props.shadow,
@@ -2693,7 +2715,7 @@
       var classes = classNames__default['default']((_a = {
         Card: true
       }, _a["Card--shadow-" + shadow] = shadow, _a["" + className] = className, _a));
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         ref: ref
       }, rest, {
         className: classes
@@ -2727,16 +2749,16 @@
         if (onClick) onClick();
       };
 
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: "Chip-wrapper " + className,
         onClick: onClickHandler
-      }), icon && /*#__PURE__*/React.createElement(Icon, {
+      }), icon && /*#__PURE__*/React__namespace.createElement(Icon, {
         name: icon,
         appearance: disabled ? 'disabled' : selected ? 'info' : 'default',
         className: iconClass('left')
-      }), /*#__PURE__*/React.createElement(Text, {
+      }), /*#__PURE__*/React__namespace.createElement(Text, {
         appearance: disabled ? 'disabled' : 'default'
-      }, label), clearButton && /*#__PURE__*/React.createElement(Icon, {
+      }, label), clearButton && /*#__PURE__*/React__namespace.createElement(Icon, {
         name: "clear",
         appearance: disabled ? 'disabled' : selected ? 'info' : 'subtle',
         className: iconClass('right'),
@@ -2773,7 +2795,7 @@
       }, _a["Chip-" + type + "--disabled"] = disabled, _a["Chip--" + type] = type && !disabled, _a["Chip-" + type + "--selected"] = selected && !disabled, _a), className);
       var clearbutton = type === 'action' ? false : clearButton;
       var select = type === 'selection' && selected ? true : false;
-      return /*#__PURE__*/React.createElement(GenericChip, __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement(GenericChip, __assign({}, baseProps, {
         label: label,
         selected: select,
         icon: icon,
@@ -2808,7 +2830,7 @@
       };
 
       var ChipGroupClass = classNames__default['default']((_a = {}, _a['ChipGroup'] = true, _a), className);
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: ChipGroupClass
       }), list.map(function (item, ind) {
         var _a = item.label,
@@ -2819,10 +2841,10 @@
             selected = item.selected,
             clearButton = item.clearButton,
             name = item.name;
-        return /*#__PURE__*/React.createElement("span", {
+        return /*#__PURE__*/React__namespace.createElement("span", {
           key: ind,
           className: "ChipGroup-item"
-        }, /*#__PURE__*/React.createElement(Chip, {
+        }, /*#__PURE__*/React__namespace.createElement(Chip, {
           name: name,
           label: label,
           selected: selected,
@@ -2841,7 +2863,7 @@
     };
     ChipGroup.displayName = 'ChipGroup';
 
-    var Column = /*#__PURE__*/React.forwardRef(function (props, ref) {
+    var Column = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
       var _a;
 
       var size = props.size,
@@ -2855,7 +2877,7 @@
           rest = __rest(props, ["size", "sizeXS", "sizeS", "sizeM", "sizeL", "sizeXL", "className", "children"]);
 
       var classes = classNames__default['default']((_a = {}, _a['Col'] = true, _a["Col--" + size] = size, _a["Col--xs-" + sizeXS] = sizeXS, _a["Col--s-" + sizeS] = sizeS, _a["Col--m-" + sizeM] = sizeM, _a["Col--l-" + sizeL] = sizeL, _a["Col--xl-" + sizeXL] = sizeXL, _a["" + className] = className, _a));
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         ref: ref
       }, rest, {
         className: classes
@@ -2881,7 +2903,7 @@
       var classes = classNames__default['default']((_a = {
         Heading: true
       }, _a["Heading--" + size] = size, _a["Heading--" + appearance] = appearance, _a), className);
-      return /*#__PURE__*/React.createElement(GenericText, __assign({
+      return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
         "data-test": "DesignSystem-Heading"
       }, baseProps, {
         className: classes,
@@ -2904,7 +2926,7 @@
       var classes = classNames__default['default']((_a = {
         Subheading: true
       }, _a["Subheading--" + appearance] = appearance, _a), className);
-      return /*#__PURE__*/React.createElement(GenericText, __assign({
+      return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
         "data-test": "DesignSystem-Subheading"
       }, baseProps, {
         className: classes,
@@ -3337,7 +3359,7 @@
             'Calendar-headerIcon': true,
             'Calendar-headerIcon--disabled': disabled
           });
-          return /*#__PURE__*/React.createElement(Icon, {
+          return /*#__PURE__*/React__namespace.createElement(Icon, {
             name: "arrow_" + (type === 'next' ? 'forward' : 'back'),
             className: headerIconClass,
             onClick: function onClick() {
@@ -3387,25 +3409,25 @@
 
           if (view === 'year') headerContent = yearBlockNav + " - " + (yearBlockNav + (yearBlockRange - 1));
           if (view === 'month') headerContent = "" + yearNavVal;
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             className: headerContentClass
-          }, view !== 'date' && /*#__PURE__*/React.createElement("span", {
+          }, view !== 'date' && /*#__PURE__*/React__namespace.createElement("span", {
             onClick: function onClick() {
               return onClickHandler(view);
             }
-          }, /*#__PURE__*/React.createElement(Heading, {
+          }, /*#__PURE__*/React__namespace.createElement(Heading, {
             size: "s"
-          }, headerContent)), view === 'date' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+          }, headerContent)), view === 'date' && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("span", {
             onClick: function onClick() {
               return onClickHandler(view);
             }
-          }, /*#__PURE__*/React.createElement(Heading, {
+          }, /*#__PURE__*/React__namespace.createElement(Heading, {
             size: "s"
-          }, months[monthNavVal])), "\xA0", /*#__PURE__*/React.createElement("span", {
+          }, months[monthNavVal])), "\xA0", /*#__PURE__*/React__namespace.createElement("span", {
             onClick: function onClick() {
               return onClickHandler('month');
             }
-          }, /*#__PURE__*/React.createElement(Heading, {
+          }, /*#__PURE__*/React__namespace.createElement(Heading, {
             size: "s"
           }, yearNavVal))));
         };
@@ -3424,7 +3446,7 @@
           return Array.from({
             length: noOfRows
           }, function (_y, row) {
-            return /*#__PURE__*/React.createElement("div", {
+            return /*#__PURE__*/React__namespace.createElement("div", {
               key: row,
               className: "Calendar-valueRow"
             }, Array.from({
@@ -3440,13 +3462,13 @@
                 'Calendar-value--active': active,
                 'Calendar-value--disabled': disabled
               });
-              return /*#__PURE__*/React.createElement("div", {
+              return /*#__PURE__*/React__namespace.createElement("div", {
                 key: row + "-" + col,
                 className: valueClass,
                 onClick: function onClick() {
                   return _this.selectYear(year);
                 }
-              }, /*#__PURE__*/React.createElement(Text, {
+              }, /*#__PURE__*/React__namespace.createElement(Text, {
                 appearance: active ? 'white' : disabled ? 'disabled' : 'default'
               }, "" + year));
             }));
@@ -3468,7 +3490,7 @@
           return Array.from({
             length: noOfRows
           }, function (_y, row) {
-            return /*#__PURE__*/React.createElement("div", {
+            return /*#__PURE__*/React__namespace.createElement("div", {
               key: row,
               className: "Calendar-valueRow"
             }, Array.from({
@@ -3482,13 +3504,13 @@
                 'Calendar-value--active': active,
                 'Calendar-value--dummy': disabled
               });
-              return /*#__PURE__*/React.createElement("div", {
+              return /*#__PURE__*/React__namespace.createElement("div", {
                 key: row + "-" + col,
                 className: valueClass,
                 onClick: function onClick() {
                   return _this.selectMonth(month);
                 }
-              }, /*#__PURE__*/React.createElement(Text, {
+              }, /*#__PURE__*/React__namespace.createElement(Text, {
                 appearance: active ? 'white' : disabled ? 'disabled' : 'default'
               }, months[month]));
             }));
@@ -3510,7 +3532,7 @@
             }
           };
 
-          return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
             className: "Calendar-dayValues"
           }, Array.from({
             length: 7
@@ -3520,12 +3542,12 @@
               'Calendar-value--dummy': true
             });
             var dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
-            return /*#__PURE__*/React.createElement(Subheading, {
+            return /*#__PURE__*/React__namespace.createElement(Subheading, {
               key: day,
               className: valueClass,
               appearance: "disabled"
             }, days[dayValue]);
-          })), /*#__PURE__*/React.createElement("div", {
+          })), /*#__PURE__*/React__namespace.createElement("div", {
             className: "Calendar-dateValues",
             onMouseLeave: onMouseLeaveHandler
           }, _this.renderDateValues(index)));
@@ -3586,7 +3608,7 @@
             length: noOfRows
           }, function (_y, row) {
             if (dummyDays < daysInRow) {
-              return /*#__PURE__*/React.createElement("div", {
+              return /*#__PURE__*/React__namespace.createElement("div", {
                 key: row,
                 className: "Calendar-valueRow"
               }, Array.from({
@@ -3629,10 +3651,10 @@
                   'Calendar-value--dummy': dummy || disabled,
                   'Calendar-value--disabled': disabled
                 });
-                return /*#__PURE__*/React.createElement("div", {
+                return /*#__PURE__*/React__namespace.createElement("div", {
                   key: row + "-" + col,
                   className: wrapperClass
-                }, /*#__PURE__*/React.createElement("span", {
+                }, /*#__PURE__*/React__namespace.createElement("span", {
                   className: valueClass,
                   onClick: function onClick() {
                     return onClickHandler(date);
@@ -3640,7 +3662,7 @@
                   onMouseOver: function onMouseOver() {
                     return onMouseOverHandler(date);
                   }
-                }, !dummy && /*#__PURE__*/React.createElement(Text, {
+                }, !dummy && /*#__PURE__*/React__namespace.createElement(Text, {
                   appearance: active ? 'white' : disabled ? 'disabled' : 'default'
                 }, "" + date)));
               }));
@@ -3662,12 +3684,12 @@
           var bodyClass = classNames__default['default']({
             'Calendar-body': true
           });
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             key: index,
             className: wrapperClass
-          }, /*#__PURE__*/React.createElement("div", {
+          }, /*#__PURE__*/React__namespace.createElement("div", {
             className: headerClass
-          }, index === 0 && _this.renderJumpButton('prev'), _this.renderHeaderContent(index), index === monthsInView - 1 && _this.renderJumpButton('next')), /*#__PURE__*/React.createElement("div", {
+          }, index === 0 && _this.renderJumpButton('prev'), _this.renderHeaderContent(index), index === monthsInView - 1 && _this.renderJumpButton('next')), /*#__PURE__*/React__namespace.createElement("div", {
             className: bodyClass
           }, view === 'year' && _this.renderBodyYear(), view === 'month' && _this.renderBodyMonth(), view === 'date' && _this.renderBodyDate(index)));
         };
@@ -3861,7 +3883,7 @@
             monthsInView = _a.monthsInView,
             className = _a.className;
         var baseProps = extractBaseProps(this.props);
-        return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+        return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
           className: "Calendar-wrapper " + className
         }), Array.from({
           length: monthsInView
@@ -3876,7 +3898,7 @@
         firstDayOfWeek: 'sunday'
       };
       return Calendar;
-    }(React.Component);
+    }(React__namespace.Component);
 
     var Trigger$1 = function Trigger(props) {
       var inputFormat = props.inputFormat,
@@ -3930,7 +3952,7 @@
       };
 
       var mask = date[inputFormat];
-      return /*#__PURE__*/React.createElement(InputMask, __assign({
+      return /*#__PURE__*/React__namespace.createElement(InputMask, __assign({
         icon: "events",
         placeholder: inputFormat
       }, inputOptions, {
@@ -4070,7 +4092,7 @@
             var rest = __rest(_a, ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect"]);
 
         var date = this.state.date;
-        return /*#__PURE__*/React.createElement(Calendar, __assign({}, rest, {
+        return /*#__PURE__*/React__namespace.createElement(Calendar, __assign({}, rest, {
           date: convertToDate(date, inputFormat, validators),
           disabledBefore: convertToDate(disabledBefore, inputFormat, validators),
           disabledAfter: convertToDate(disabledAfter, inputFormat, validators),
@@ -4088,8 +4110,8 @@
         var open = this.state.open;
 
         if (withInput) {
-          return /*#__PURE__*/React.createElement(Popover, {
-            trigger: /*#__PURE__*/React.createElement(Trigger$1, {
+          return /*#__PURE__*/React__namespace.createElement(Popover, {
+            trigger: /*#__PURE__*/React__namespace.createElement(Trigger$1, {
               inputFormat: inputFormat,
               inputOptions: inputOptions,
               validators: validators,
@@ -4116,7 +4138,7 @@
         closeOnSelect: true
       });
       return DatePicker;
-    }(React.Component);
+    }(React__namespace.Component);
 
     var TimePicker = function TimePicker(props) {
       var validators = props.validators,
@@ -4126,17 +4148,17 @@
           onTimeChange = props.onTimeChange,
           timeProp = props.time;
 
-      var _a = React.useState(timeProp),
+      var _a = React__namespace.useState(timeProp),
           time$1 = _a[0],
           setTime = _a[1];
 
-      var _b = React.useState(false),
+      var _b = React__namespace.useState(false),
           init = _b[0],
           setInit = _b[1];
 
       var _c = inputOptions.placeholderChar,
           placeholderChar = _c === void 0 ? '_' : _c;
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         var timeStr = translateToTime(inputFormat, time$1);
         var updatedTime = timeProp === undefined && timeStr.includes(placeholderChar) ? time$1 : timeProp;
         setTime(updatedTime);
@@ -4183,7 +4205,7 @@
       };
 
       var mask = time[inputFormat];
-      return /*#__PURE__*/React.createElement(InputMask, __assign({
+      return /*#__PURE__*/React__namespace.createElement(InputMask, __assign({
         placeholder: placeholders[inputFormat],
         placeholderChar: placeholderChar
       }, inputOptions, {
@@ -4239,7 +4261,7 @@
 
         if (payload) {
           if (customTooltip) return customTooltip(payload);
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             className: "DonutChart-tooltip"
           }, "" + payload.name + chartProps.separator + (+payload.value).toLocaleString());
         }
@@ -4272,19 +4294,19 @@
         var ey = my;
         var textAnchor = cos >= 0 ? 'start' : 'end';
         var total = Math.ceil(value / percent);
-        return /*#__PURE__*/React.createElement("g", null, withCenterText && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("text", {
+        return /*#__PURE__*/React__namespace.createElement("g", null, withCenterText && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("text", {
           x: cx,
           y: cy,
           "font-size": 'var(--font-size-xl)',
           textAnchor: "middle"
-        }, "Total"), /*#__PURE__*/React.createElement("text", {
+        }, "Total"), /*#__PURE__*/React__namespace.createElement("text", {
           x: cx,
           y: cy,
           dy: 22,
           "font-size": 'var(--font-size-l)',
           textAnchor: "middle",
           fill: colorToHex$1(colorOfTotalCount)
-        }, total.toLocaleString())), /*#__PURE__*/React.createElement(recharts.Sector, {
+        }, total.toLocaleString())), /*#__PURE__*/React__namespace.createElement(recharts.Sector, {
           cx: cx,
           cy: cy,
           innerRadius: innerRadius,
@@ -4292,7 +4314,7 @@
           startAngle: startAngle,
           endAngle: endAngle,
           fill: fill
-        }), withActiveSegment && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(recharts.Sector, {
+        }), withActiveSegment && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(recharts.Sector, {
           cx: cx,
           cy: cy,
           startAngle: startAngle,
@@ -4300,28 +4322,28 @@
           innerRadius: outerRadius + 6,
           outerRadius: outerRadius + 10,
           fill: fill
-        }), /*#__PURE__*/React.createElement("path", {
+        }), /*#__PURE__*/React__namespace.createElement("path", {
           d: "M" + sx + "," + sy + "L" + mx + "," + my + "L" + ex + "," + ey,
           stroke: fill,
           fill: "none"
-        }), /*#__PURE__*/React.createElement("circle", {
+        }), /*#__PURE__*/React__namespace.createElement("circle", {
           cx: ex,
           cy: ey,
           r: 2,
           fill: fill,
           stroke: "none"
-        }), /*#__PURE__*/React.createElement("text", {
+        }), /*#__PURE__*/React__namespace.createElement("text", {
           x: ex + (cos >= 0 ? 1 : -1) * 12,
           y: ey,
           dy: -18,
           textAnchor: textAnchor,
           fill: fill
-        }, "" + payload.name), /*#__PURE__*/React.createElement("text", {
+        }, "" + payload.name), /*#__PURE__*/React__namespace.createElement("text", {
           x: ex + (cos >= 0 ? 1 : -1) * 12,
           y: ey,
           textAnchor: textAnchor,
           fill: "#333"
-        }, "" + value.toLocaleString()), /*#__PURE__*/React.createElement("text", {
+        }, "" + value.toLocaleString()), /*#__PURE__*/React__namespace.createElement("text", {
           x: ex + (cos >= 0 ? 1 : -1) * 12,
           y: ey,
           dy: 18,
@@ -4330,7 +4352,7 @@
         }, (percent * 100).toFixed(0) + "%")));
       };
 
-      var _b = React.useState(0),
+      var _b = React__namespace.useState(0),
           activeIndex = _b[0],
           setActiveIndex = _b[1];
 
@@ -4347,9 +4369,9 @@
       var oRadius = withActiveSegment ? radius ? .7 * radius : '70%' : radius || '100%';
       var iRadius = withActiveSegment ? radius ? (100 - width) / 100 * oRadius : (100 - width) / 100 * 70 + "%" : radius ? (100 - width) / 100 * radius : 100 - width + "%";
       var classes = classNames__default['default']((_a = {}, _a['DonutChart'] = true, _a), className);
-      return /*#__PURE__*/React.createElement(Row, __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement(Row, __assign({}, baseProps, {
         className: classes
-      }), /*#__PURE__*/React.createElement(Column, __assign({}, columnOptions.chart), /*#__PURE__*/React.createElement(recharts.ResponsiveContainer, null, /*#__PURE__*/React.createElement(recharts.PieChart, null, /*#__PURE__*/React.createElement(recharts.Pie, {
+      }), /*#__PURE__*/React__namespace.createElement(Column, __assign({}, columnOptions.chart), /*#__PURE__*/React__namespace.createElement(recharts.ResponsiveContainer, null, /*#__PURE__*/React__namespace.createElement(recharts.PieChart, null, /*#__PURE__*/React__namespace.createElement(recharts.Pie, {
         data: data,
         dataKey: "value",
         activeIndex: activeIndex,
@@ -4358,17 +4380,17 @@
         outerRadius: oRadius,
         innerRadius: iRadius
       }, data.map(function (_entry, index) {
-        return /*#__PURE__*/React.createElement(recharts.Cell, {
+        return /*#__PURE__*/React__namespace.createElement(recharts.Cell, {
           fill: getColor(index, 'hex'),
           key: index
         });
-      })), withTooltip && /*#__PURE__*/React.createElement(recharts.Tooltip, {
+      })), withTooltip && /*#__PURE__*/React__namespace.createElement(recharts.Tooltip, {
         separator: ": ",
-        content: /*#__PURE__*/React.createElement(ChartTooltip, null)
-      })))), withLegends && /*#__PURE__*/React.createElement(Column, __assign({
+        content: /*#__PURE__*/React__namespace.createElement(ChartTooltip, null)
+      })))), withLegends && /*#__PURE__*/React__namespace.createElement(Column, __assign({
         className: "DonutChart-legends"
       }, columnOptions.legends), data.map(function (d, i) {
-        return /*#__PURE__*/React.createElement(Legend, {
+        return /*#__PURE__*/React__namespace.createElement(Legend, {
           key: i,
           iconAppearance: getColor(i)
         }, d.name + " - " + (+d.value).toLocaleString());
@@ -4388,7 +4410,7 @@
       regular: 16,
       large: 20
     };
-    var Input = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
+    var Input = /*#__PURE__*/React__namespace.forwardRef(function (props, forwardedRef) {
       var _a, _b, _c, _d;
 
       var _e = props.size,
@@ -4418,11 +4440,11 @@
           readOnly = props.readOnly,
           rest = __rest(props, ["size", "type", "minWidth", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autoFocus", "disabled", "readOnly"]);
 
-      var ref = React.useRef(null);
-      React.useImperativeHandle(forwardedRef, function () {
+      var ref = React__namespace.useRef(null);
+      React__namespace.useImperativeHandle(forwardedRef, function () {
         return ref.current;
       });
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         var _a;
 
         if (autoFocus) (_a = ref.current) === null || _a === void 0 ? void 0 : _a.focus({
@@ -4434,13 +4456,13 @@
       var inputClass = classNames__default['default']((_b = {}, _b['Input-input'] = true, _b["Input-input--" + size] = size, _b));
       var leftIconClass = classNames__default['default']((_c = {}, _c['Input-icon'] = true, _c['Input-icon--left'] = true, _c['Input-icon--disabled'] = !value, _c));
       var rightIconClass = classNames__default['default']((_d = {}, _d['Input-icon'] = true, _d['Input-icon--right'] = true, _d));
-      var trigger = /*#__PURE__*/React.createElement("div", {
+      var trigger = /*#__PURE__*/React__namespace.createElement("div", {
         className: rightIconClass
-      }, /*#__PURE__*/React.createElement(Icon, {
+      }, /*#__PURE__*/React__namespace.createElement(Icon, {
         name: 'info',
         size: sizeMapping[size]
       }));
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         "data-test": "DesignSystem-InputWrapper",
         className: classes,
         style: {
@@ -4451,16 +4473,16 @@
 
           return (_a = ref.current) === null || _a === void 0 ? void 0 : _a.focus();
         }
-      }, inlineLabel && /*#__PURE__*/React.createElement("div", {
+      }, inlineLabel && /*#__PURE__*/React__namespace.createElement("div", {
         className: "Input-inlineLabel"
-      }, /*#__PURE__*/React.createElement(Text, {
+      }, /*#__PURE__*/React__namespace.createElement(Text, {
         appearance: "subtle"
-      }, inlineLabel)), size !== 'tiny' && icon && /*#__PURE__*/React.createElement("div", {
+      }, inlineLabel)), size !== 'tiny' && icon && /*#__PURE__*/React__namespace.createElement("div", {
         className: leftIconClass
-      }, /*#__PURE__*/React.createElement(Icon, {
+      }, /*#__PURE__*/React__namespace.createElement(Icon, {
         name: icon,
         size: sizeMapping[size]
-      })), /*#__PURE__*/React.createElement("input", __assign({
+      })), /*#__PURE__*/React__namespace.createElement("input", __assign({
         "data-test": "DesignSystem-Input"
       }, baseProps, rest, {
         ref: ref,
@@ -4477,15 +4499,15 @@
         onBlur: onBlur,
         onClick: onClick,
         onFocus: onFocus
-      })), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/React.createElement(Tooltip, {
+      })), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/React__namespace.createElement(Tooltip, {
         position: "top",
         tooltip: info
-      }, trigger) : actionIcon ? actionIcon : onClear && value && !disabled && /*#__PURE__*/React.createElement("div", {
+      }, trigger) : actionIcon ? actionIcon : onClear && value && !disabled && /*#__PURE__*/React__namespace.createElement("div", {
         className: rightIconClass,
         onClick: function onClick(e) {
           return onClear(e);
         }
-      }, /*#__PURE__*/React.createElement(Icon, {
+      }, /*#__PURE__*/React__namespace.createElement(Icon, {
         name: 'close',
         size: sizeMapping[size]
       })));
@@ -4521,7 +4543,7 @@
       return val;
     };
 
-    var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
+    var InputMask = /*#__PURE__*/React__namespace.forwardRef(function (props, forwardRef) {
       props.mask;
           var valueProp = props.value,
           _a = props.placeholderChar,
@@ -4590,22 +4612,22 @@
         return _typeof(mask[pos]) === 'object';
       };
 
-      var deferId = React.useRef();
-      var selectionRef = React.useRef(0);
+      var deferId = React__namespace.useRef();
+      var selectionRef = React__namespace.useRef(0);
 
-      var _d = React.useState(defaultValue || valueProp || ''),
+      var _d = React__namespace.useState(defaultValue || valueProp || ''),
           value = _d[0],
           setValue = _d[1];
 
-      var _e = React.useState(getDefaultSelection()),
+      var _e = React__namespace.useState(getDefaultSelection()),
           selection = _e[0],
           setSelection = _e[1];
 
-      var ref = React.useRef(null);
-      React.useImperativeHandle(forwardRef, function () {
+      var ref = React__namespace.useRef(null);
+      React__namespace.useImperativeHandle(forwardRef, function () {
         return ref.current;
       });
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         setValue(valueProp || '');
       }, [valueProp]);
 
@@ -4764,9 +4786,9 @@
       var classes = classNames__default['default']({
         'd-flex flex-column flex-grow-1': true
       }, className);
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         className: classes
-      }, /*#__PURE__*/React.createElement(Input, __assign({}, rest, {
+      }, /*#__PURE__*/React__namespace.createElement(Input, __assign({}, rest, {
         value: value,
         error: error,
         required: required,
@@ -4776,7 +4798,7 @@
         onBlur: onBlurHandler,
         autoComplete: 'off',
         ref: ref
-      })), /*#__PURE__*/React.createElement(Caption, {
+      })), /*#__PURE__*/React__namespace.createElement(Caption, {
         error: error,
         withInput: true,
         hide: !caption
@@ -4805,14 +4827,14 @@
         'Label-label': true,
         'Label--disabled': disabled
       });
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Label"
       }, baseProps, {
         className: LabelClass
-      }), /*#__PURE__*/React.createElement(GenericText, __assign({
+      }), /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
         className: classes,
         componentType: "label"
-      }, rest), children), required && /*#__PURE__*/React.createElement("span", {
+      }, rest), children), required && /*#__PURE__*/React__namespace.createElement("span", {
         className: "Label-requiredIndicator",
         "data-test": "DesignSystem-Label--RequiredIndicator"
       }));
@@ -4832,15 +4854,15 @@
         Caption: true
       }, _a['Caption--hidden'] = hide, _a['Caption--withInput'] = withInput, _a), className);
       var errorIconClass = classNames__default['default']((_b = {}, _b['Caption-icon'] = true, _b));
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: classes
-      }), error && /*#__PURE__*/React.createElement("div", {
+      }), error && /*#__PURE__*/React__namespace.createElement("div", {
         className: errorIconClass
-      }, /*#__PURE__*/React.createElement(Icon, {
+      }, /*#__PURE__*/React__namespace.createElement(Icon, {
         size: 14,
         name: 'error',
         appearance: 'alert'
-      })), /*#__PURE__*/React.createElement(Text, {
+      })), /*#__PURE__*/React__namespace.createElement(Text, {
         appearance: error ? 'destructive' : 'subtle',
         size: "small",
         weight: "medium"
@@ -4867,7 +4889,7 @@
         height: iconSize + "px",
         width: iconSize + "px"
       };
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: legendClass,
         onClick: function onClick(e) {
           return _onClick && _onClick(e);
@@ -4878,10 +4900,10 @@
         onMouseLeave: function onMouseLeave(e) {
           return _onMouseLeave && _onMouseLeave(e);
         }
-      }), /*#__PURE__*/React.createElement("span", {
+      }), /*#__PURE__*/React__namespace.createElement("span", {
         className: "Legend-icon",
         style: styles
-      }), /*#__PURE__*/React.createElement(Text, {
+      }), /*#__PURE__*/React__namespace.createElement(Text, {
         appearance: labelAppearance,
         weight: labelWeight
       }, children));
@@ -4901,11 +4923,11 @@
           children = props.children;
       var baseProps = extractBaseProps(props);
       var EditableClass = classNames__default['default']((_a = {}, _a['Editable'] = true, _a), className);
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Editable"
       }, baseProps, {
         className: EditableClass
-      }), /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React__namespace.createElement("div", {
         "data-test": "DesignSystem-EditableWrapper",
         onClick: function onClick() {
           return onChange('edit');
@@ -4932,15 +4954,15 @@
           onDropdownClose = dropdownOptions.onClose,
           rest = __rest(dropdownOptions, ["onChange", "onClose"]);
 
-      var _d = React.useState(placeholder),
+      var _d = React__namespace.useState(placeholder),
           label = _d[0],
           setLabel = _d[1];
 
-      var _e = React.useState(false),
+      var _e = React__namespace.useState(false),
           editing = _e[0],
           setEditing = _e[1];
 
-      var _f = React.useState(false),
+      var _f = React__namespace.useState(false),
           showComponent = _f[0],
           setShowComponent = _f[1];
 
@@ -4985,21 +5007,21 @@
         return componentLabel;
       };
 
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-EditableDropdown"
       }, baseProps, {
         className: CompClass
-      }), /*#__PURE__*/React.createElement(Editable, {
+      }), /*#__PURE__*/React__namespace.createElement(Editable, {
         onChange: onChangeHandler,
         editing: editing
-      }, /*#__PURE__*/React.createElement(Dropdown, __assign({
+      }, /*#__PURE__*/React__namespace.createElement(Dropdown, __assign({
         placeholder: placeholder,
         onChange: onChange,
         getLabel: getLabel,
         onClose: onClose,
         className: EditableDropdownClass,
         "data-test": "DesignSystem-EditableDropdown--Dropdown"
-      }, rest)), /*#__PURE__*/React.createElement("div", {
+      }, rest)), /*#__PURE__*/React__namespace.createElement("div", {
         className: DefaultCompClass,
         "data-test": "DesignSystem-EditableDropdown--Default"
       }, renderComponent(label || placeholder))));
@@ -5017,7 +5039,7 @@
       var classes = classNames__default['default']({
         Link: true
       }, className);
-      return /*#__PURE__*/React.createElement(GenericText, __assign({
+      return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
         className: classes,
         componentType: "a"
       }, rest), children);
@@ -5040,23 +5062,23 @@
       var baseProps = extractBaseProps(props);
       var MessageClass = classNames__default['default']((_a = {}, _a['Message'] = true, _a["Message--" + appearance] = appearance, _a), className);
       var MessageIcon = classNames__default['default']((_b = {}, _b['Message-icon'] = true, _b["Message-icon--" + appearance] = appearance, _b['Message-icon--withTitle'] = title, _b));
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Message"
       }, baseProps, {
         className: MessageClass
-      }), appearance !== 'default' && /*#__PURE__*/React.createElement("div", {
+      }), appearance !== 'default' && /*#__PURE__*/React__namespace.createElement("div", {
         className: MessageIcon,
         "data-test": "DesignSystem-Message--Icon"
-      }, /*#__PURE__*/React.createElement(Icon, {
+      }, /*#__PURE__*/React__namespace.createElement(Icon, {
         name: IconMapping$1[appearance],
         appearance: appearance
-      })), /*#__PURE__*/React.createElement("div", {
+      })), /*#__PURE__*/React__namespace.createElement("div", {
         "data-test": "DesignSystem-Message--Title"
-      }, title && /*#__PURE__*/React.createElement("div", {
+      }, title && /*#__PURE__*/React__namespace.createElement("div", {
         className: "Message-title"
-      }, /*#__PURE__*/React.createElement(Heading, {
+      }, /*#__PURE__*/React__namespace.createElement(Heading, {
         size: "s"
-      }, title)), /*#__PURE__*/React.createElement("div", {
+      }, title)), /*#__PURE__*/React__namespace.createElement("div", {
         "data-test": "DesignSystem-Message--Description",
         className: "Message-description"
       }, children)));
@@ -5071,13 +5093,13 @@
           icon = props.icon,
           iconAppearance = props.iconAppearance,
           labelAppearance = props.labelAppearance;
-      return /*#__PURE__*/React.createElement("span", {
+      return /*#__PURE__*/React__namespace.createElement("span", {
         className: 'Meta'
-      }, icon && /*#__PURE__*/React.createElement(Icon, {
+      }, icon && /*#__PURE__*/React__namespace.createElement(Icon, {
         name: icon,
         appearance: iconAppearance,
         className: 'Meta-icon'
-      }), /*#__PURE__*/React.createElement(Text, {
+      }), /*#__PURE__*/React__namespace.createElement(Text, {
         appearance: labelAppearance
       }, label));
     };
@@ -5096,9 +5118,9 @@
       var MetaClass = classNames__default['default']((_a = {}, _a['MetaList'] = true, _a), className);
       var SeperatorClass = classNames__default['default']((_b = {}, _b['MetaList-seperator'] = true, _b));
       var LeftSeperatorClass = classNames__default['default']((_c = {}, _c['MetaList-seperator'] = true, _c['MetaList-seperator--left'] = true, _c));
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: MetaClass
-      }), seperator && /*#__PURE__*/React.createElement(Icon, {
+      }), seperator && /*#__PURE__*/React__namespace.createElement(Icon, {
         name: "fiber_manual_record",
         size: 8,
         className: LeftSeperatorClass,
@@ -5108,15 +5130,15 @@
             label = _a === void 0 ? '' : _a,
             icon = item.icon;
         var rightSeperator = ind !== list.length - 1;
-        return /*#__PURE__*/React.createElement("span", {
+        return /*#__PURE__*/React__namespace.createElement("span", {
           key: ind,
           className: "MetaList-item"
-        }, /*#__PURE__*/React.createElement(Meta, {
+        }, /*#__PURE__*/React__namespace.createElement(Meta, {
           label: label,
           icon: icon,
           iconAppearance: iconAppearance,
           labelAppearance: labelAppearance
-        }), rightSeperator && /*#__PURE__*/React.createElement(Icon, {
+        }), rightSeperator && /*#__PURE__*/React__namespace.createElement(Icon, {
           name: "fiber_manual_record",
           size: 8,
           className: SeperatorClass,
@@ -5131,7 +5153,7 @@
       labelAppearance: 'subtle'
     };
 
-    var OutsideClick = /*#__PURE__*/React.forwardRef(function (props, ref) {
+    var OutsideClick = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
       var _a;
 
       var children = props.children,
@@ -5139,29 +5161,29 @@
           onOutsideClick = props.onOutsideClick,
           rest = __rest(props, ["children", "className", "onOutsideClick"]);
 
-      var innerRef = React.useRef(null);
-      React.useImperativeHandle(ref, function () {
+      var innerRef = React__namespace.useRef(null);
+      React__namespace.useImperativeHandle(ref, function () {
         return innerRef.current;
       }, [innerRef]);
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         document.addEventListener('click', handleOutsideClick, true);
         return function () {
           document.removeEventListener('click', handleOutsideClick);
         };
       }, []);
-      var handleOutsideClick = React.useCallback(function (event) {
+      var handleOutsideClick = React__namespace.useCallback(function (event) {
         var element = innerRef;
 
         if (!event.target || !element.current) {
           return;
         }
 
-        if (!ReactDOM.findDOMNode(element.current).contains(event.target)) {
+        if (!ReactDOM__namespace.findDOMNode(element.current).contains(event.target)) {
           onOutsideClick(event);
         }
       }, []);
       var classes = classNames__default['default']((_a = {}, _a['OutsideClick'] = true, _a), className);
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         ref: innerRef
       }, rest, {
         className: classes
@@ -5179,7 +5201,7 @@
       var classes = classNames__default['default']((_a = {
         Text: true
       }, _a["Text--" + appearance] = appearance, _a), className);
-      return /*#__PURE__*/React.createElement(GenericText, __assign({
+      return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
         "data-test": "DesignSystem-Paragraph"
       }, baseProps, {
         className: classes,
@@ -5202,11 +5224,11 @@
       var ProgressBarClass = classNames__default['default']({
         ProgressBar: true
       }, className);
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-ProgressBar"
       }, baseProps, {
         className: ProgressBarClass
-      }), /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React__namespace.createElement("div", {
         className: 'ProgressBar-indicator',
         style: style
       }));
@@ -5216,7 +5238,7 @@
       max: 100
     };
 
-    var Radio = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
+    var Radio = /*#__PURE__*/React__namespace.forwardRef(function (props, forwardedRef) {
       var _a, _b, _c;
 
       var _d = props.size,
@@ -5230,19 +5252,19 @@
           defaultChecked = props.defaultChecked,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var ref = React.useRef(null);
-      React.useImperativeHandle(forwardedRef, function () {
+      var ref = React__namespace.useRef(null);
+      React__namespace.useImperativeHandle(forwardedRef, function () {
         return ref.current;
       });
       var RadioClass = classNames__default['default']((_a = {}, _a['Radio'] = true, _a['Radio--disabled'] = disabled, _a["Radio--" + size] = size, _a), className);
       var RadioWrapper = classNames__default['default']((_b = {}, _b['Radio-wrapper'] = true, _b["Radio-wrapper--" + size] = size, _b));
       var RadioOuterWrapper = classNames__default['default']((_c = {}, _c['Radio-outerWrapper'] = true, _c["Radio-outerWrapper--" + size] = size, _c));
       var id = name + "-" + label + "-" + uidGenerator();
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         className: RadioClass
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: RadioOuterWrapper
-      }, /*#__PURE__*/React.createElement("input", __assign({}, baseProps, {
+      }, /*#__PURE__*/React__namespace.createElement("input", __assign({}, baseProps, {
         type: "radio",
         disabled: disabled,
         checked: checked,
@@ -5253,19 +5275,19 @@
         onChange: onChange,
         className: "Radio-input",
         id: id
-      })), /*#__PURE__*/React.createElement("span", {
+      })), /*#__PURE__*/React__namespace.createElement("span", {
         className: RadioWrapper
-      })), label && /*#__PURE__*/React.createElement("label", {
+      })), label && /*#__PURE__*/React__namespace.createElement("label", {
         className: "Radio-label",
         htmlFor: id
-      }, /*#__PURE__*/React.createElement(Text, {
+      }, /*#__PURE__*/React__namespace.createElement(Text, {
         size: size === 'tiny' ? 'small' : 'regular',
         appearance: disabled ? 'disabled' : 'default'
       }, label)));
     });
     Radio.displayName = 'Radio';
 
-    var Row = /*#__PURE__*/React.forwardRef(function (props, ref) {
+    var Row = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
       var _a;
 
       var className = props.className,
@@ -5275,7 +5297,7 @@
       var classes = classNames__default['default']((_a = {
         Row: true
       }, _a["" + className] = className, _a));
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Row",
         ref: ref
       }, rest, {
@@ -5296,7 +5318,7 @@
       var baseProps = extractBaseProps(props);
       var StatusHintClass = classNames__default['default']((_a = {}, _a['StatusHint'] = true, _a), className);
       var StatusHintIconClass = classNames__default['default']((_b = {}, _b['StatusHint-icon'] = true, _b["StatusHint--" + appearance] = appearance, _b));
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-StatusHint"
       }, baseProps, {
         className: StatusHintClass,
@@ -5309,10 +5331,10 @@
         onMouseLeave: function onMouseLeave(e) {
           return _onMouseLeave && _onMouseLeave(e);
         }
-      }), /*#__PURE__*/React.createElement("span", {
+      }), /*#__PURE__*/React__namespace.createElement("span", {
         "data-test": "DesignSystem-StatusHint--Icon",
         className: StatusHintIconClass
-      }), /*#__PURE__*/React.createElement(Text, {
+      }), /*#__PURE__*/React__namespace.createElement(Text, {
         "data-test": "DesignSystem-StatusHint--Text",
         weight: 'medium'
       }, children));
@@ -5333,7 +5355,7 @@
       var classes = classNames__default['default']((_a = {
         Pills: true
       }, _a["Badge--" + appearance] = appearance && !subtle, _a["Badge--subtle-" + appearance] = subtle, _a), className);
-      return /*#__PURE__*/React.createElement("span", __assign({
+      return /*#__PURE__*/React__namespace.createElement("span", __assign({
         "data-test": "DesignSystem-Pills"
       }, baseProps, {
         className: classes
@@ -5590,7 +5612,7 @@
           left: offsetCalc
         };
         var className = classNames__default['default']((_a = {}, _a['Slider-handle'] = true, _a['Slider-handle--disabled'] = disabled, _a['Slider-handle--active'] = this.state.isMoving, _a));
-        return /*#__PURE__*/React.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement("div", {
           className: className,
           onMouseDown: this.beginHandleMovement,
           onKeyDown: this.handleKeyDown,
@@ -5598,17 +5620,17 @@
           ref: this.refHandlers.handle,
           style: style,
           tabIndex: 1
-        }, !this.state.isMoving && /*#__PURE__*/React.createElement(Tooltip, {
+        }, !this.state.isMoving && /*#__PURE__*/React__namespace.createElement(Tooltip, {
           tooltip: label,
           position: "top",
           triggerClass: 'Slider-tooltip'
-        }, /*#__PURE__*/React.createElement("span", {
+        }, /*#__PURE__*/React__namespace.createElement("span", {
           className: "h-100 w-100"
         })));
       };
 
       return Handle;
-    }(React.Component);
+    }(React__namespace.Component);
 
     var MultiSliderHandle = function MultiSliderHandle() {
       return null;
@@ -5640,7 +5662,7 @@
         };
 
         _this.getHandleValues = function (props) {
-          var maybeHandles = React.Children.map(props.children, function (child) {
+          var maybeHandles = React__namespace.Children.map(props.children, function (child) {
             return isElementOfType(child) ? child.props : null;
           });
           var handles = maybeHandles != null ? maybeHandles : [];
@@ -5784,7 +5806,7 @@
 
           return handleProps.map(function (_a, index) {
             var value = _a.value;
-            return /*#__PURE__*/React.createElement(Handle, {
+            return /*#__PURE__*/React__namespace.createElement(Handle, {
               disabled: disabled,
               key: index + "-" + handleProps.length,
               max: max,
@@ -5837,13 +5859,13 @@
               left: offsetPercentage
             };
             var active = !disabled && activeLabels.indexOf(i.toFixed(_this.state.labelPrecision)) !== -1;
-            labels.push( /*#__PURE__*/React.createElement("div", {
+            labels.push( /*#__PURE__*/React__namespace.createElement("div", {
               className: 'Slider-label',
               key: i,
               style: style
-            }, /*#__PURE__*/React.createElement("span", {
+            }, /*#__PURE__*/React__namespace.createElement("span", {
               className: 'Slider-ticks'
-            }), labelRenderer !== false && /*#__PURE__*/React.createElement(Text, {
+            }), labelRenderer !== false && /*#__PURE__*/React__namespace.createElement(Text, {
               size: "small",
               appearance: active ? 'default' : 'disabled'
             }, _this.formatLabel(i))));
@@ -5873,7 +5895,7 @@
           var fillTrack = _this.getTrackFill(start, end);
 
           var classes = classNames__default['default']((_a = {}, _a['Slider-progress'] = true, _a['Slider-progress--disabled'] = _this.props.disabled, _a['Slider-progress--inRange'] = fillTrack, _a['Slider-progress--inRangeDisabled'] = fillTrack && _this.props.disabled, _a));
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             key: "track-" + index,
             className: classes,
             style: style
@@ -5947,19 +5969,19 @@
         var baseProps = extractBaseProps(this.props);
         var SliderClass = classNames__default['default']((_a = {}, _a['Slider'] = true, _a), className);
         var WrapperClass = classNames__default['default']((_b = {}, _b['Slider-wrapper'] = true, _b['Slider-wrapper--disabled'] = this.props.disabled, _b));
-        return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+        return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
           className: SliderClass
-        }), label && /*#__PURE__*/React.createElement(Label, {
+        }), label && /*#__PURE__*/React__namespace.createElement(Label, {
           withInput: true
-        }, label), /*#__PURE__*/React.createElement("div", {
+        }, label), /*#__PURE__*/React__namespace.createElement("div", {
           className: WrapperClass,
           onMouseDown: this.maybeHandleTrackClick
-        }, /*#__PURE__*/React.createElement("div", {
+        }, /*#__PURE__*/React__namespace.createElement("div", {
           className: "Slider-track",
           ref: function ref(_ref) {
             return _this.trackElement = _ref;
           }
-        }, this.renderTracks()), /*#__PURE__*/React.createElement("div", {
+        }, this.renderTracks()), /*#__PURE__*/React__namespace.createElement("div", {
           className: "Slider-axis'"
         }, this.renderLabels()), this.renderHandles()));
       };
@@ -5973,7 +5995,7 @@
       };
       MultiSlider.Handle = MultiSliderHandle;
       return MultiSlider;
-    }(React.Component);
+    }(React__namespace.Component);
 
     var Slider = function Slider(props) {
       var valueProp = props.value,
@@ -5982,11 +6004,11 @@
           onChange = props.onChange,
           rest = __rest(props, ["value", "defaultValue", "onRelease", "onChange"]);
 
-      var _a = React.useState(valueProp === undefined ? defaultValue : valueProp),
+      var _a = React__namespace.useState(valueProp === undefined ? defaultValue : valueProp),
           value = _a[0],
           setValue = _a[1];
 
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         if (valueProp !== undefined) {
           setValue(valueProp);
         }
@@ -6000,7 +6022,7 @@
         if (onChange) onChange(newValue);
       };
 
-      return /*#__PURE__*/React.createElement(MultiSlider, __assign({}, rest), /*#__PURE__*/React.createElement(MultiSlider.Handle, {
+      return /*#__PURE__*/React__namespace.createElement(MultiSlider, __assign({}, rest), /*#__PURE__*/React__namespace.createElement(MultiSlider.Handle, {
         value: value,
         onChange: onChangeHandler,
         onRelease: onRelease,
@@ -6026,11 +6048,11 @@
           onRelease = props.onRelease,
           rest = __rest(props, ["value", "defaultValue", "onChange", "onRelease"]);
 
-      var _a = React.useState(valueProp === undefined ? defaultValue : valueProp),
+      var _a = React__namespace.useState(valueProp === undefined ? defaultValue : valueProp),
           value = _a[0],
           setValue = _a[1];
 
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         if (valueProp !== undefined) {
           setValue(valueProp);
         }
@@ -6044,13 +6066,13 @@
         if (onChange) onChange(range);
       };
 
-      return /*#__PURE__*/React.createElement(MultiSlider, __assign({
+      return /*#__PURE__*/React__namespace.createElement(MultiSlider, __assign({
         onRangeChange: onChangeHandler,
         onRangeRelease: onRelease
-      }, rest), /*#__PURE__*/React.createElement(MultiSlider.Handle, {
+      }, rest), /*#__PURE__*/React__namespace.createElement(MultiSlider.Handle, {
         value: value[RangeIndex.START],
         fillAfter: true
-      }), /*#__PURE__*/React.createElement(MultiSlider.Handle, {
+      }), /*#__PURE__*/React__namespace.createElement(MultiSlider.Handle, {
         value: value[RangeIndex.END]
       }));
     };
@@ -6059,7 +6081,7 @@
       defaultValue: [0, 10]
     });
 
-    var Switch = /*#__PURE__*/React.forwardRef(function (props, ref) {
+    var Switch = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
       var _a, _b;
 
       var _c = props.size,
@@ -6074,11 +6096,11 @@
           className = props.className;
       var baseProps = extractBaseProps(props);
 
-      var _e = React.useState(props.checked === undefined ? defaultChecked : props.checked),
+      var _e = React__namespace.useState(props.checked === undefined ? defaultChecked : props.checked),
           checked = _e[0],
           setChecked = _e[1];
 
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         if (props.checked !== undefined) setChecked(props.checked);
       }, [props.checked]);
       var SwitchClass = classNames__default['default']((_a = {}, _a['Switch'] = true, _a['Switch--disabled'] = disabled, _a["Switch--" + size] = size, _a), className);
@@ -6089,9 +6111,9 @@
         if (onChange) onChange(event, !checked);
       };
 
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         className: SwitchClass
-      }, /*#__PURE__*/React.createElement("input", __assign({}, baseProps, {
+      }, /*#__PURE__*/React__namespace.createElement("input", __assign({}, baseProps, {
         type: "checkbox",
         defaultChecked: defaultChecked,
         disabled: disabled,
@@ -6101,13 +6123,13 @@
         name: name,
         value: value,
         className: "Switch-input"
-      })), /*#__PURE__*/React.createElement("span", {
+      })), /*#__PURE__*/React__namespace.createElement("span", {
         className: SwitchWrapper
       }));
     });
     Switch.displayName = 'Switch';
 
-    var Textarea = /*#__PURE__*/React.forwardRef(function (props, ref) {
+    var Textarea = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
       var _a, _b;
 
       var _c = props.rows,
@@ -6129,9 +6151,9 @@
       var baseProps = extractBaseProps(props);
       var classes = classNames__default['default']((_a = {}, _a['Textarea'] = true, _a), className);
       var TextareaClass = classNames__default['default']((_b = {}, _b['Textarea-textarea'] = true, _b['Textarea-textarea--resize'] = resize, _b['Textarea-textarea--error'] = error, _b));
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         className: classes
-      }, /*#__PURE__*/React.createElement("textarea", __assign({
+      }, /*#__PURE__*/React__namespace.createElement("textarea", __assign({
         "data-test": "DesignSystem-Textarea"
       }, baseProps, {
         ref: ref,
@@ -6164,10 +6186,10 @@
         if (onClick) onClick(e);
       };
 
-      return /*#__PURE__*/React.createElement("button", {
+      return /*#__PURE__*/React__namespace.createElement("button", {
         className: buttonClass,
         onClick: onClickHandler
-      }, /*#__PURE__*/React.createElement(Text, {
+      }, /*#__PURE__*/React__namespace.createElement(Text, {
         appearance: "white"
       }, label));
     };
@@ -6207,35 +6229,35 @@
         if (onClose) onClose();
       };
 
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: wrapperClass
-      }), icon && /*#__PURE__*/React.createElement("div", {
+      }), icon && /*#__PURE__*/React__namespace.createElement("div", {
         className: iconClass('left')
-      }, /*#__PURE__*/React.createElement(Icon, {
+      }, /*#__PURE__*/React__namespace.createElement(Icon, {
         name: icon,
         appearance: appearance !== 'warning' ? 'white' : 'default'
-      })), /*#__PURE__*/React.createElement("div", {
+      })), /*#__PURE__*/React__namespace.createElement("div", {
         className: "Toast-body"
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: titleClass
-      }, /*#__PURE__*/React.createElement(Heading, {
+      }, /*#__PURE__*/React__namespace.createElement(Heading, {
         size: "s",
         appearance: appearance !== 'warning' ? 'white' : 'default'
-      }, title), /*#__PURE__*/React.createElement("div", {
+      }, title), /*#__PURE__*/React__namespace.createElement("div", {
         onClick: onCloseHandler
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: iconClass('right')
-      }, /*#__PURE__*/React.createElement(Icon, {
+      }, /*#__PURE__*/React__namespace.createElement(Icon, {
         name: 'close',
         appearance: appearance !== 'warning' ? 'white' : 'default'
-      })))), message && /*#__PURE__*/React.createElement("div", {
+      })))), message && /*#__PURE__*/React__namespace.createElement("div", {
         className: "Toast-message"
-      }, /*#__PURE__*/React.createElement(Text, {
+      }, /*#__PURE__*/React__namespace.createElement(Text, {
         appearance: appearance !== 'warning' ? 'white' : 'default'
-      }, message)), !!(actions === null || actions === void 0 ? void 0 : actions.length) && /*#__PURE__*/React.createElement("div", {
+      }, message)), !!(actions === null || actions === void 0 ? void 0 : actions.length) && /*#__PURE__*/React__namespace.createElement("div", {
         className: "Toast-actions"
       }, actions.slice(0, 2).map(function (action, index) {
-        return /*#__PURE__*/React.createElement(ActionButton, {
+        return /*#__PURE__*/React__namespace.createElement(ActionButton, {
           key: index,
           label: action.label,
           appearance: appearance,
@@ -6262,7 +6284,7 @@
         };
 
         _this.findDOMNode = function (ref) {
-          return ReactDOM.findDOMNode(ref.current);
+          return ReactDOM__namespace.findDOMNode(ref.current);
         };
 
         _this.doesEventContainsElement = function (event, ref) {
@@ -6306,8 +6328,8 @@
           medium: '4px',
           large: '8px'
         };
-        _this.triggerRef = /*#__PURE__*/React.createRef();
-        _this.popupRef = /*#__PURE__*/React.createRef();
+        _this.triggerRef = /*#__PURE__*/React__namespace.createRef();
+        _this.popupRef = /*#__PURE__*/React__namespace.createRef();
         _this.getPopperChildren = _this.getPopperChildren.bind(_this);
         _this.mouseMoveHandler = _this.mouseMoveHandler.bind(_this);
         _this.handleMouseEnter = _this.handleMouseEnter.bind(_this);
@@ -6450,7 +6472,7 @@
           }
         };
 
-        return /*#__PURE__*/React.createElement(OutsideClick, __assign({
+        return /*#__PURE__*/React__namespace.createElement(OutsideClick, __assign({
           className: classes,
           onOutsideClick: onOutsideClickHandler
         }, options), trigger);
@@ -6466,7 +6488,7 @@
             children = _b.children;
         var zIndex = this.state.zIndex;
         var newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
-        var element = /*#__PURE__*/React.cloneElement(children, {
+        var element = /*#__PURE__*/React__namespace.cloneElement(children, {
           ref: ref,
           style: __assign(__assign({}, newStyle), {
             zIndex: zIndex
@@ -6488,12 +6510,12 @@
             open = _a.open,
             hide = _a.hide,
             boundaryElement = _a.boundaryElement;
-        return /*#__PURE__*/React.createElement(reactPopper.Manager, null, /*#__PURE__*/React.createElement(reactPopper.Reference, {
+        return /*#__PURE__*/React__namespace.createElement(reactPopper.Manager, null, /*#__PURE__*/React__namespace.createElement(reactPopper.Reference, {
           innerRef: this.triggerRef
         }, function (_a) {
           var ref = _a.ref;
           return _this.getTriggerElement(ref);
-        }), open && appendToBody && /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement(reactPopper.Popper, {
+        }), open && appendToBody && /*#__PURE__*/ReactDOM__namespace.createPortal( /*#__PURE__*/React__namespace.createElement(reactPopper.Popper, {
           placement: placement,
           innerRef: this.popupRef,
           modifiers: {
@@ -6504,7 +6526,7 @@
               enabled: hide
             }
           }
-        }, this.getPopperChildren), document.body), open && !appendToBody && /*#__PURE__*/React.createElement(reactPopper.Popper, {
+        }, this.getPopperChildren), document.body), open && !appendToBody && /*#__PURE__*/React__namespace.createElement(reactPopper.Popper, {
           placement: placement,
           innerRef: this.popupRef
         }, this.getPopperChildren));
@@ -6519,7 +6541,7 @@
         style: {}
       };
       return PopperWrapper;
-    }(React.Component);
+    }(React__namespace.Component);
 
     var propsList$1 = ['appendToBody', 'trigger', 'hoverable', 'on', 'open', 'closeOnBackdropClick', 'offset', 'closeOnScroll'];
     var Popover = function Popover(props) {
@@ -6535,21 +6557,21 @@
           boundaryElement = props.boundaryElement,
           rest = __rest(props, ["position", "customStyle", "dark", "children", "onToggle", "className", "hideOnReferenceEscape", "boundaryElement"]);
 
-      var _b = React.useState(!!props.open),
+      var _b = React__namespace.useState(!!props.open),
           open = _b[0],
           setOpen = _b[1];
 
-      var _c = React.useState(false),
+      var _c = React__namespace.useState(false),
           init = _c[0],
           setInit = _c[1];
 
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         if (props.open !== undefined) setOpen(props.open);
       }, [props.open]);
-      var defaultOnToggle = React.useCallback(function (newOpen) {
+      var defaultOnToggle = React__namespace.useCallback(function (newOpen) {
         setOpen(newOpen);
       }, []);
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         if (!init) {
           if ('current' in boundaryElement && boundaryElement.current) {
             setInit(true);
@@ -6559,12 +6581,12 @@
       var classes = classNames__default['default']((_a = {
         Popover: true
       }, _a['Popover--dark'] = dark, _a), className);
-      var PopoverWrapper = /*#__PURE__*/React.createElement("div", {
+      var PopoverWrapper = /*#__PURE__*/React__namespace.createElement("div", {
         "data-test": "DesignSystem-Popover",
         className: classes,
         "data-layer": true
       }, children);
-      return /*#__PURE__*/React.createElement(PopperWrapper, __assign({}, rest, {
+      return /*#__PURE__*/React__namespace.createElement(PopperWrapper, __assign({}, rest, {
         init: init,
         boundaryElement: 'current' in boundaryElement ? boundaryElement.current : boundaryElement,
         open: open,
@@ -6589,13 +6611,13 @@
           tooltip = props.tooltip,
           rest = __rest(props, ["children", "tooltip"]);
 
-      var tooltipWrapper = /*#__PURE__*/React.createElement("div", {
+      var tooltipWrapper = /*#__PURE__*/React__namespace.createElement("div", {
         className: "Tooltip"
-      }, /*#__PURE__*/React.createElement(Text, {
+      }, /*#__PURE__*/React__namespace.createElement(Text, {
         className: "Tooltip-text",
         appearance: "white"
       }, tooltip));
-      return /*#__PURE__*/React.createElement(Popover, __assign({
+      return /*#__PURE__*/React__namespace.createElement(Popover, __assign({
         trigger: children,
         on: 'hover',
         offset: 'medium'
@@ -6619,7 +6641,7 @@
           secondaryButtonLabel = props.secondaryButtonLabel,
           secondaryButtonCallback = props.secondaryButtonCallback;
       var baseProps = extractBaseProps(props);
-      return /*#__PURE__*/React.createElement(Modal, __assign({
+      return /*#__PURE__*/React__namespace.createElement(Modal, __assign({
         "data-test": "DesignSystem-Dialog"
       }, baseProps, {
         open: open,
@@ -6628,17 +6650,17 @@
         headerOptions: {
           heading: heading
         },
-        footer: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
+        footer: /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Button, {
           "data-test": "DesignSystem-Dialog--SecondaryButton",
           appearance: secondaryButtonAppearance,
           onClick: secondaryButtonCallback
-        }, secondaryButtonLabel), /*#__PURE__*/React.createElement(Button, {
+        }, secondaryButtonLabel), /*#__PURE__*/React__namespace.createElement(Button, {
           className: "ml-4",
           "data-test": "DesignSystem-Dialog--PrimaryButton",
           appearance: primaryButtonAppearance,
           onClick: primaryButtonCallback
         }, primaryButtonLabel))
-      }), /*#__PURE__*/React.createElement(ModalDescription, {
+      }), /*#__PURE__*/React__namespace.createElement(ModalDescription, {
         title: title,
         description: description
       }));
@@ -6686,7 +6708,7 @@
       function Modal(props) {
         var _this = _super.call(this, props) || this;
 
-        _this.modalRef = /*#__PURE__*/React.createRef();
+        _this.modalRef = /*#__PURE__*/React__namespace.createRef();
         _this.element = getWrapperElement();
         _this.state = {
           open: props.open,
@@ -6779,34 +6801,34 @@
             sizeXS: '10'
           }
         };
-        var ModalContainer = /*#__PURE__*/React.createElement(Row, {
+        var ModalContainer = /*#__PURE__*/React__namespace.createElement(Row, {
           "data-test": "DesignSystem-ModalContainer",
           className: ContainerClass,
           "data-layer": true,
           style: {
             zIndex: zIndex
           }
-        }, /*#__PURE__*/React.createElement(Column, __assign({
+        }, /*#__PURE__*/React__namespace.createElement(Column, __assign({
           "data-test": "DesignSystem-Modal"
         }, baseProps, {
           className: classes
         }, sizeMap[dimension], {
           ref: this.modalRef
-        }), headerOptions && /*#__PURE__*/React.createElement(ModalHeader, __assign({
+        }), headerOptions && /*#__PURE__*/React__namespace.createElement(ModalHeader, __assign({
           onClose: function onClose(event, reason) {
             if (_onClose) _onClose(event, reason);
           }
-        }, headerOptions)), children && /*#__PURE__*/React.createElement(React.Fragment, null, headerOptions || footer ? /*#__PURE__*/React.createElement(ModalBody, {
+        }, headerOptions)), children && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, headerOptions || footer ? /*#__PURE__*/React__namespace.createElement(ModalBody, {
           withFooter: !!footer
-        }, children) : children), footer && /*#__PURE__*/React.createElement(ModalFooter, {
+        }, children) : children), footer && /*#__PURE__*/React__namespace.createElement(ModalFooter, {
           open: open
         }, footer)));
-        var ModalWrapper = backdropClose ? /*#__PURE__*/React.createElement(OutsideClick, {
+        var ModalWrapper = backdropClose ? /*#__PURE__*/React__namespace.createElement(OutsideClick, {
           "data-test": "DesignSystem-Modal--OutsideClick",
           onOutsideClick: this.onOutsideClickHandler
         }, ModalContainer) : ModalContainer;
-        var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(ModalWrapper, this.element);
-        return /*#__PURE__*/React.createElement(React.Fragment, null, WrapperElement, /*#__PURE__*/React.createElement(Backdrop, {
+        var WrapperElement = /*#__PURE__*/ReactDOM__namespace.createPortal(ModalWrapper, this.element);
+        return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, WrapperElement, /*#__PURE__*/React__namespace.createElement(Backdrop, {
           open: this.state.animate
         }));
       };
@@ -6815,7 +6837,7 @@
         dimension: 'medium'
       };
       return Modal;
-    }(React.Component);
+    }(React__namespace.Component);
 
     var ModalHeader$1 = function ModalHeader(props) {
       var _a;
@@ -6829,18 +6851,18 @@
       var classes = classNames__default['default']((_a = {
         'FullscreenModal-header': true
       }, _a['FullscreenModal-header--backButton'] = backButton, _a), className);
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-ModalHeader"
       }, baseProps, {
         className: classes
-      }), /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React__namespace.createElement("div", {
         className: "FullscreenModal-headerWrapper"
-      }, backButton && /*#__PURE__*/React.createElement(Icon, {
+      }, backButton && /*#__PURE__*/React__namespace.createElement(Icon, {
         name: "keyboard_backspace",
         size: 20,
         className: "mr-5 cursor-pointer",
         onClick: backButtonCallback
-      }), heading && /*#__PURE__*/React.createElement(Heading, null, heading)), subHeading && /*#__PURE__*/React.createElement(Text, {
+      }), heading && /*#__PURE__*/React__namespace.createElement(Heading, null, heading)), subHeading && /*#__PURE__*/React__namespace.createElement(Text, {
         "data-test": "DesignSystem-ModalHeader--Subheading",
         appearance: "subtle",
         className: "mt-2"
@@ -6852,8 +6874,8 @@
       var open = props.open,
           actions = props.actions;
       var baseProps = extractBaseProps(props);
-      var wrapperRef = /*#__PURE__*/React.createRef();
-      React.useEffect(function () {
+      var wrapperRef = /*#__PURE__*/React__namespace.createRef();
+      React__namespace.useEffect(function () {
         var _a;
 
         if (open) {
@@ -6871,7 +6893,7 @@
           }
         }
       }, [open]);
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         ref: wrapperRef
       }, baseProps, {
         className: "d-flex"
@@ -6879,7 +6901,7 @@
         _a.label;
             var options = __rest(_a, ["label"]);
 
-        return /*#__PURE__*/React.createElement(Button, __assign({}, options, {
+        return /*#__PURE__*/React__namespace.createElement(Button, __assign({}, options, {
           key: index
         }));
       }));
@@ -6895,7 +6917,7 @@
       function FullscreenModal(props) {
         var _this = _super.call(this, props) || this;
 
-        _this.modalRef = /*#__PURE__*/React.createRef();
+        _this.modalRef = /*#__PURE__*/React__namespace.createRef();
         _this.element = getWrapperElement();
         _this.state = {
           open: props.open,
@@ -6971,28 +6993,28 @@
             sizeXS: '12'
           }
         };
-        var ModalContainer = /*#__PURE__*/React.createElement("div", {
+        var ModalContainer = /*#__PURE__*/React__namespace.createElement("div", {
           "data-test": "DesignSystem-FullscreenModalContainer",
           className: ContainerClass,
           "data-layer": true,
           style: {
             zIndex: zIndex
           }
-        }, /*#__PURE__*/React.createElement("div", __assign({
+        }, /*#__PURE__*/React__namespace.createElement("div", __assign({
           "data-test": "DesignSystem-FullscreenModal"
         }, baseProps, {
           className: classes,
           ref: this.modalRef
-        }), /*#__PURE__*/React.createElement(Row, {
+        }), /*#__PURE__*/React__namespace.createElement(Row, {
           className: "justify-content-center"
-        }, /*#__PURE__*/React.createElement(Column, __assign({}, sizeMap[dimension]), /*#__PURE__*/React.createElement(Row, {
+        }, /*#__PURE__*/React__namespace.createElement(Column, __assign({}, sizeMap[dimension]), /*#__PURE__*/React__namespace.createElement(Row, {
           className: "justify-content-between pt-6 pr-6 pb-5 pl-7"
-        }, /*#__PURE__*/React.createElement(Column, {
+        }, /*#__PURE__*/React__namespace.createElement(Column, {
           size: "auto"
-        }, !header && /*#__PURE__*/React.createElement(ModalHeader$1, __assign({}, headerOptions)), !!header && header), /*#__PURE__*/React.createElement(Column, {
+        }, !header && /*#__PURE__*/React__namespace.createElement(ModalHeader$1, __assign({}, headerOptions)), !!header && header), /*#__PURE__*/React__namespace.createElement(Column, {
           size: "auto",
           className: "pr-2"
-        }, /*#__PURE__*/React.createElement(Icon, {
+        }, /*#__PURE__*/React__namespace.createElement(Icon, {
           size: 20,
           name: 'close',
           className: "cursor-pointer pt-3",
@@ -7000,24 +7022,24 @@
           onClick: function onClick(event) {
             if (onClose) onClose(event, 'IconClick');
           }
-        }))), /*#__PURE__*/React.createElement("div", {
+        }))), /*#__PURE__*/React__namespace.createElement("div", {
           "data-test": "DesignSystem-ModalBody",
           className: "FullscreenModal-body"
-        }, children), (!!footer || !!footerOptions) && /*#__PURE__*/React.createElement("div", {
+        }, children), (!!footer || !!footerOptions) && /*#__PURE__*/React__namespace.createElement("div", {
           "data-test": "DesignSystem-ModalFooter",
           className: "d-flex justify-content-end p-7"
-        }, !footer && /*#__PURE__*/React.createElement(ModalFooter$1, __assign({}, footerOptions, {
+        }, !footer && /*#__PURE__*/React__namespace.createElement(ModalFooter$1, __assign({}, footerOptions, {
           open: open
         })), !!footer && footer)))));
-        var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(ModalContainer, this.element);
-        return /*#__PURE__*/React.createElement(React.Fragment, null, WrapperElement);
+        var WrapperElement = /*#__PURE__*/ReactDOM__namespace.createPortal(ModalContainer, this.element);
+        return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, WrapperElement);
       };
 
       FullscreenModal.defaultProps = {
         dimension: 'medium'
       };
       return FullscreenModal;
-    }(React.Component);
+    }(React__namespace.Component);
 
     var sidesheetWidth = {
       regular: '6',
@@ -7030,7 +7052,7 @@
       function Sidesheet(props) {
         var _this = _super.call(this, props) || this;
 
-        _this.sidesheetRef = /*#__PURE__*/React.createRef();
+        _this.sidesheetRef = /*#__PURE__*/React__namespace.createRef();
         _this.element = getWrapperElement();
         _this.state = {
           open: props.open,
@@ -7107,7 +7129,7 @@
           seperator: seperator
         });
 
-        var SidesheetContainer = /*#__PURE__*/React.createElement(Row, {
+        var SidesheetContainer = /*#__PURE__*/React__namespace.createElement(Row, {
           "data-test": "DesignSystem-SidesheetContainer",
           className: ContainerClass,
           "data-layer": true,
@@ -7115,29 +7137,29 @@
             zIndex: zIndex
           },
           ref: this.sidesheetRef
-        }, /*#__PURE__*/React.createElement(Column, __assign({
+        }, /*#__PURE__*/React__namespace.createElement(Column, __assign({
           "data-test": "DesignSystem-Sidesheet"
         }, baseProps, {
           className: classes,
           size: sidesheetWidth[dimension]
-        }), /*#__PURE__*/React.createElement(ModalHeader, __assign({
+        }), /*#__PURE__*/React__namespace.createElement(ModalHeader, __assign({
           onClose: function onClose(event, reason) {
             if (_onClose) _onClose(event, reason);
           }
-        }, headerObj)), /*#__PURE__*/React.createElement(ModalBody, {
+        }, headerObj)), /*#__PURE__*/React__namespace.createElement(ModalBody, {
           stickFooter: stickFooter,
           withFooter: !!footer
-        }, this.props.children), footer && /*#__PURE__*/React.createElement(ModalFooter, {
+        }, this.props.children), footer && /*#__PURE__*/React__namespace.createElement(ModalFooter, {
           inSidesheet: true,
           stickToBottom: stickFooter,
           seperator: seperator
         }, footer)));
-        var SidesheetWrapper = backdropClose ? /*#__PURE__*/React.createElement(OutsideClick, {
+        var SidesheetWrapper = backdropClose ? /*#__PURE__*/React__namespace.createElement(OutsideClick, {
           "data-test": "DesignSystem-Sidesheet--OutsideClick",
           onOutsideClick: this.onOutsideClickHandler
         }, SidesheetContainer) : SidesheetContainer;
-        var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(SidesheetWrapper, this.element);
-        return /*#__PURE__*/React.createElement(React.Fragment, null, WrapperElement, /*#__PURE__*/React.createElement(Backdrop, {
+        var WrapperElement = /*#__PURE__*/ReactDOM__namespace.createPortal(SidesheetWrapper, this.element);
+        return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, WrapperElement, /*#__PURE__*/React__namespace.createElement(Backdrop, {
           open: this.state.animate
         }));
       };
@@ -7148,7 +7170,7 @@
         headerOptions: {}
       };
       return Sidesheet;
-    }(React.Component);
+    }(React__namespace.Component);
 
     var Status = function Status(props) {
       var _a, _b;
@@ -7181,17 +7203,17 @@
 
       switch (type) {
         case 'failed':
-          return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+          return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
             className: StatusClass
-          }), /*#__PURE__*/React.createElement(Icon, {
+          }), /*#__PURE__*/React__namespace.createElement(Icon, {
             name: "error",
             type: "outlined",
             appearance: "destructive"
-          }), /*#__PURE__*/React.createElement(Text, {
+          }), /*#__PURE__*/React__namespace.createElement(Text, {
             appearance: "destructive",
             size: "small",
             className: "ml-1"
-          }, "Failed"), /*#__PURE__*/React.createElement(MetaList, {
+          }, "Failed"), /*#__PURE__*/React__namespace.createElement(MetaList, {
             list: [{
               label: failedText
             }],
@@ -7199,17 +7221,17 @@
           }));
 
         case 'urgent':
-          return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+          return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
             className: StatusClass
-          }), /*#__PURE__*/React.createElement(Icon, {
+          }), /*#__PURE__*/React__namespace.createElement(Icon, {
             name: "notification_important",
             type: "outlined",
             appearance: "destructive"
-          }), /*#__PURE__*/React.createElement(Text, {
+          }), /*#__PURE__*/React__namespace.createElement(Text, {
             appearance: "destructive",
             size: "small",
             className: "ml-1"
-          }, "Urgent"), time && /*#__PURE__*/React.createElement(MetaList, {
+          }, "Urgent"), time && /*#__PURE__*/React__namespace.createElement(MetaList, {
             list: [{
               label: getTime(time)
             }],
@@ -7217,12 +7239,12 @@
           }));
 
         case 'read':
-          return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+          return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
             className: StatusClass
-          }), time && /*#__PURE__*/React.createElement(Text, {
+          }), time && /*#__PURE__*/React__namespace.createElement(Text, {
             appearance: "subtle",
             size: "small"
-          }, getTime(time)), /*#__PURE__*/React.createElement(MetaList, {
+          }, getTime(time)), /*#__PURE__*/React__namespace.createElement(MetaList, {
             list: [{
               label: readText
             }],
@@ -7230,14 +7252,14 @@
           }));
 
         case 'sending':
-          return /*#__PURE__*/React.createElement(Text, __assign({}, baseProps, {
+          return /*#__PURE__*/React__namespace.createElement(Text, __assign({}, baseProps, {
             appearance: "subtle",
             size: "small",
             className: TextClass
           }), sendingText);
 
         case 'sent':
-          return /*#__PURE__*/React.createElement(React.Fragment, null, time && /*#__PURE__*/React.createElement(Text, __assign({}, baseProps, {
+          return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, time && /*#__PURE__*/React__namespace.createElement(Text, __assign({}, baseProps, {
             appearance: "subtle",
             size: "small",
             className: TextClass
@@ -7261,7 +7283,7 @@
           className = props.className;
       var baseProps = extractBaseProps(props);
       var MessageClass = classNames__default['default']((_a = {}, _a['Box'] = true, _a["Box--" + type] = type, _a['Box--typing'] = isTyping, _a['Box--urgent'] = statusType === 'urgent', _a["Box-" + type + "--withStatus"] = withStatus || isTyping, _a), className);
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: MessageClass,
         onClick: onClick
       }), children);
@@ -7278,14 +7300,14 @@
       var baseProps = extractBaseProps(props);
 
       if (isTyping && type === 'incoming') {
-        return /*#__PURE__*/React.createElement(Text, __assign({}, baseProps, {
+        return /*#__PURE__*/React__namespace.createElement(Text, __assign({}, baseProps, {
           appearance: 'subtle',
           size: 'small',
           className: className
         }), typingText);
       }
 
-      return /*#__PURE__*/React.createElement(Text, __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement(Text, __assign({}, baseProps, {
         className: className,
         appearance: statusType === 'sending' ? 'subtle' : 'default'
       }), text);
@@ -7306,20 +7328,20 @@
           className = props.className;
       var baseProps = extractBaseProps(props);
       var statusType = (statusOptions || {}).type;
-      return /*#__PURE__*/React.createElement(Box, __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement(Box, __assign({}, baseProps, {
         type: type,
         className: className,
         onClick: onClick,
         isTyping: isTyping,
         statusType: statusType,
         withStatus: statusOptions !== undefined
-      }), /*#__PURE__*/React.createElement(MessageText, {
+      }), /*#__PURE__*/React__namespace.createElement(MessageText, {
         type: type,
         text: text,
         typingText: typingText,
         isTyping: isTyping,
         statusType: statusType
-      }), !isTyping && statusOptions && /*#__PURE__*/React.createElement(Status, __assign({}, statusOptions)));
+      }), !isTyping && statusOptions && /*#__PURE__*/React__namespace.createElement(Status, __assign({}, statusOptions)));
     };
     ChatMessage.displayName = 'ChatMessage';
 
@@ -7348,15 +7370,15 @@
       var WrapperClass = classNames__default['default']((_a = {}, _a['EmptyState'] = true, _a), className);
       var HeadingClass = classNames__default['default']((_b = {}, _b['EmptyState-title'] = true, _b["EmptyState-title--" + size] = true, _b));
       var TextClass = classNames__default['default']((_c = {}, _c['EmptyState-description'] = true, _c["EmptyState-description--" + size] = children !== undefined, _c));
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: WrapperClass
-      }), /*#__PURE__*/React.createElement("img", {
+      }), /*#__PURE__*/React__namespace.createElement("img", {
         src: imageSrc,
         height: imageHeight[size]
-      }), /*#__PURE__*/React.createElement(Heading, {
+      }), /*#__PURE__*/React__namespace.createElement(Heading, {
         size: HeadingSize[size],
         className: HeadingClass
-      }, title), /*#__PURE__*/React.createElement(Text, {
+      }, title), /*#__PURE__*/React__namespace.createElement(Text, {
         size: textSize[size],
         className: TextClass,
         appearance: "subtle"
@@ -7381,20 +7403,20 @@
       var wrapperClass = classNames__default['default']((_b = {
         'Modal-headerWrapper': true
       }, _b['Modal-headerWrapper--backIcon'] = backIcon, _b));
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-ModalHeader"
       }, baseProps, {
         className: classes
-      }), /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React__namespace.createElement("div", {
         className: wrapperClass
-      }, backIcon && /*#__PURE__*/React.createElement(Icon, {
+      }, backIcon && /*#__PURE__*/React__namespace.createElement(Icon, {
         name: "keyboard_backspace",
         size: 20,
         className: "ml-3 mr-5 my-3 px-2 py-2 cursor-pointer",
         onClick: backIconCallback
-      }), /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React__namespace.createElement("div", {
         className: "Modal-headerHeading"
-      }, /*#__PURE__*/React.createElement(Heading, null, heading), /*#__PURE__*/React.createElement(Icon, {
+      }, /*#__PURE__*/React__namespace.createElement(Heading, null, heading), /*#__PURE__*/React__namespace.createElement(Icon, {
         size: 20,
         name: 'close',
         className: 'mx-2 cursor-pointer',
@@ -7402,7 +7424,7 @@
         onClick: function onClick(event) {
           return onClose(event, 'IconClick');
         }
-      }))), subHeading && /*#__PURE__*/React.createElement(Text, {
+      }))), subHeading && /*#__PURE__*/React__namespace.createElement(Text, {
         "data-test": "DesignSystem-ModalHeader--Subheading",
         appearance: "subtle",
         className: "mt-2 ml-7"
@@ -7423,8 +7445,8 @@
       var classes = classNames__default['default']((_a = {
         'Modal-footer': true
       }, _a['Modal-footer--inModal'] = !inSidesheet, _a['Modal-footer--seperator'] = seperator, _a['Modal-footer--stickToBottom'] = stickToBottom, _a), className);
-      var wrapperRef = /*#__PURE__*/React.createRef();
-      React.useEffect(function () {
+      var wrapperRef = /*#__PURE__*/React__namespace.createRef();
+      React__namespace.useEffect(function () {
         var _a;
 
         if (open) {
@@ -7442,7 +7464,7 @@
           }
         }
       }, [open]);
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-ModalFooter",
         ref: wrapperRef
       }, baseProps, {
@@ -7466,7 +7488,7 @@
       var classes = classNames__default['default']((_a = {
         'Modal-body': true
       }, _a['Modal-body--stickFooter'] = withFooter && stickFooter, _a), className);
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-ModalBody"
       }, baseProps, {
         className: classes
@@ -7486,14 +7508,14 @@
       var classes = classNames__default['default']({
         'Modal-description': true
       }, className);
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-ModalDescription"
       }, baseProps, {
         className: classes
-      }), title && /*#__PURE__*/React.createElement(Text, {
+      }), title && /*#__PURE__*/React__namespace.createElement(Text, {
         weight: "strong",
         "data-test": "DesignSystem-ModalDescription--Title"
-      }, title), title && description && /*#__PURE__*/React.createElement("br", null), description && /*#__PURE__*/React.createElement(Text, {
+      }, title), title && description && /*#__PURE__*/React__namespace.createElement("br", null), description && /*#__PURE__*/React__namespace.createElement(Text, {
         "data-test": "DesignSystem-ModalDescription--Description"
       }, description));
     };
@@ -7508,21 +7530,21 @@
           className = props.className;
       var baseProps = extractBaseProps(props);
 
-      var _d = React.useState(props.page),
+      var _d = React__namespace.useState(props.page),
           page = _d[0],
           setPage = _d[1];
 
-      var _e = React.useState(false),
+      var _e = React__namespace.useState(false),
           init = _e[0],
           setInit = _e[1];
 
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         setPage(props.page);
       }, [props.page]);
       var wrapperClass = classNames__default['default']((_a = {}, _a['Pagination'] = true, _a["Pagination--" + type] = type, _a), className);
       var nextButtonWrapperClass = classNames__default['default']((_b = {}, _b['Pagination-buttonWrapper'] = true, _b['Pagination-buttonWrapper--next'] = true, _b));
       var prevButtonWrapperClass = classNames__default['default']((_c = {}, _c['Pagination-buttonWrapper'] = true, _c['Pagination-buttonWrapper--previous'] = true, _c));
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         if (init) {
           if (page >= 1 && page <= totalPages) onPageChange(page);
         }
@@ -7562,13 +7584,13 @@
 
       var buttonHelper = [];
       if (type === 'basic') buttonHelper.push('mx-3');else buttonHelper.push('mx-4');
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Pagination"
       }, baseProps, {
         className: wrapperClass
-      }), /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React__namespace.createElement("div", {
         className: prevButtonWrapperClass
-      }, /*#__PURE__*/React.createElement(Button, {
+      }, /*#__PURE__*/React__namespace.createElement(Button, {
         onClick: function onClick() {
           return onClickHandler('first');
         },
@@ -7577,10 +7599,10 @@
         size: "large",
         icon: "first_page",
         "data-test": "DesignSystem-Pagination--FirstButton"
-      }), /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React__namespace.createElement("div", {
         "data-test": "DesignSystem-Pagination--Prev",
         className: __spreadArrays(['ml-4'], buttonHelper).join(' ')
-      }, /*#__PURE__*/React.createElement(Button, {
+      }, /*#__PURE__*/React__namespace.createElement(Button, {
         onClick: function onClick() {
           return onClickHandler('prev');
         },
@@ -7588,20 +7610,20 @@
         size: "large",
         icon: "navigate_before",
         "data-test": "DesignSystem-Pagination--PrevButton"
-      }))), type === 'jump' && /*#__PURE__*/React.createElement("div", {
+      }))), type === 'jump' && /*#__PURE__*/React__namespace.createElement("div", {
         className: "Pagination-pageIndex"
-      }, /*#__PURE__*/React.createElement(Input, {
+      }, /*#__PURE__*/React__namespace.createElement(Input, {
         name: "page",
         type: "number",
         size: "large",
         onChange: inputChangeHandler,
         value: "" + (page === 0 ? '' : page),
         "data-test": "DesignSystem-Pagination--Input"
-      }), /*#__PURE__*/React.createElement(Text, null, " of " + totalPages + " pages")), /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React__namespace.createElement(Text, null, " of " + totalPages + " pages")), /*#__PURE__*/React__namespace.createElement("div", {
         className: nextButtonWrapperClass
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: __spreadArrays(['mr-4'], buttonHelper).join(' ')
-      }, /*#__PURE__*/React.createElement(Button, {
+      }, /*#__PURE__*/React__namespace.createElement(Button, {
         onClick: function onClick() {
           return onClickHandler('next');
         },
@@ -7609,7 +7631,7 @@
         size: "large",
         icon: "navigate_next",
         "data-test": "DesignSystem-Pagination--NextButton"
-      })), /*#__PURE__*/React.createElement(Button, {
+      })), /*#__PURE__*/React__namespace.createElement(Button, {
         onClick: function onClick() {
           return onClickHandler('last');
         },
@@ -7643,25 +7665,25 @@
       var onInputChange = inputOptions.onChange,
           rest = __rest(inputOptions, ["onChange"]);
 
-      var _e = React.useState(value),
+      var _e = React__namespace.useState(value),
           inputValue = _e[0],
           setInputValue = _e[1];
 
-      var _f = React.useState(false),
+      var _f = React__namespace.useState(false),
           editing = _f[0],
           setEditing = _f[1];
 
-      var _g = React.useState(false),
+      var _g = React__namespace.useState(false),
           showComponent = _g[0],
           setShowComponent = _g[1];
 
-      var inputRef = /*#__PURE__*/React.createRef();
+      var inputRef = /*#__PURE__*/React__namespace.createRef();
       var baseProps = extractBaseProps(props);
       var EditableInputClass = classNames__default['default']((_a = {}, _a['EditableInput'] = true, _a), className);
       var EditableDefaultClass = classNames__default['default']((_b = {}, _b['EditableInput-default'] = true, _b["EditableInput-default--" + size] = size, _b));
       var InputClass = classNames__default['default']((_c = {}, _c['EditableInput-Input--tiny'] = size === 'tiny', _c));
       var ActionClass = classNames__default['default']((_d = {}, _d['EditableInput-actions'] = true, _d["EditableInput-actions--" + size] = size, _d));
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         setDefaultComponent();
       }, [value]);
 
@@ -7697,7 +7719,7 @@
         }
       };
 
-      var inputComponent = /*#__PURE__*/React.createElement(Input, __assign({
+      var inputComponent = /*#__PURE__*/React__namespace.createElement(Input, __assign({
         defaultValue: inputValue,
         placeholder: placeholder,
         className: InputClass,
@@ -7725,46 +7747,46 @@
 
       var renderChildren = function renderChildren() {
         if (showComponent) {
-          return error && errorMessage && editing ? /*#__PURE__*/React.createElement(Popover, {
+          return error && errorMessage && editing ? /*#__PURE__*/React__namespace.createElement(Popover, {
             trigger: inputComponent,
             position: "right",
             className: "px-6 py-6 d-flex align-items-center",
             on: "hover"
-          }, /*#__PURE__*/React.createElement(Icon, {
+          }, /*#__PURE__*/React__namespace.createElement(Icon, {
             name: "error",
             appearance: 'alert',
             className: "mr-4"
-          }), /*#__PURE__*/React.createElement(Text, {
+          }), /*#__PURE__*/React__namespace.createElement(Text, {
             "data-test": "DesignSystem-EditableInput--ErrorPopper",
             appearance: "destructive",
             weight: "medium"
           }, errorMessage)) : inputComponent;
         }
 
-        return /*#__PURE__*/React.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement("div", {
           className: EditableDefaultClass,
           "data-test": "DesignSystem-EditableInput--Default"
         }, value || placeholder);
       };
 
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-EditableInput"
       }, baseProps, {
         className: EditableInputClass,
         onKeyDown: onKeyDown
-      }), /*#__PURE__*/React.createElement(Editable, {
+      }), /*#__PURE__*/React__namespace.createElement(Editable, {
         onChange: onChangeHandler,
         editing: editing
-      }, renderChildren()), editing && /*#__PURE__*/React.createElement("div", {
+      }, renderChildren()), editing && /*#__PURE__*/React__namespace.createElement("div", {
         className: ActionClass,
         "data-test": "DesignSystem-EditableInput--Actions"
-      }, /*#__PURE__*/React.createElement(Button, {
+      }, /*#__PURE__*/React__namespace.createElement(Button, {
         icon: "clear",
         className: "mr-3",
         size: "tiny",
         onClick: setDefaultComponent,
         "data-test": "DesignSystem-EditableInput--Discard"
-      }), /*#__PURE__*/React.createElement(Button, {
+      }), /*#__PURE__*/React__namespace.createElement(Button, {
         icon: "check",
         appearance: "primary",
         size: "tiny",
@@ -7805,13 +7827,13 @@
         strokeWidth: '8',
         strokeDasharray: circumference + " " + circumference
       };
-      return /*#__PURE__*/React.createElement("svg", __assign({
+      return /*#__PURE__*/React__namespace.createElement("svg", __assign({
         "data-test": "DesignSystem-ProgressRing"
       }, baseProps, {
         className: ProgressRingClass
-      }, svgProps), /*#__PURE__*/React.createElement("circle", __assign({
+      }, svgProps), /*#__PURE__*/React__namespace.createElement("circle", __assign({
         className: "Ring-background"
-      }, circleProps)), /*#__PURE__*/React.createElement("circle", __assign({
+      }, circleProps)), /*#__PURE__*/React__namespace.createElement("circle", __assign({
         className: "Ring-indicator",
         strokeDashoffset: circumference - updatedValue / 100 * circumference
       }, circleProps, {
@@ -7841,16 +7863,16 @@
       };
 
       var iconAppearance = completed ? 'info' : disabled ? 'disabled' : 'default';
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         "data-test": "DesignSystem-Step",
         className: StepClass,
         onClick: onClickHandle
-      }, /*#__PURE__*/React.createElement(Icon, {
+      }, /*#__PURE__*/React__namespace.createElement(Icon, {
         "data-test": "DesignSystem-StepIcon",
         name: completed ? 'check_circle' : 'radio_button_unchecked',
         appearance: iconAppearance,
         className: "mr-3 my-4"
-      }), label && /*#__PURE__*/React.createElement(Text, {
+      }), label && /*#__PURE__*/React__namespace.createElement(Text, {
         weight: "medium",
         appearance: disabled ? 'disabled' : 'default'
       }, label));
@@ -7872,7 +7894,7 @@
       };
 
       var StepperClass = classNames__default['default']((_a = {}, _a['Stepper'] = true, _a), className);
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Stepper"
       }, baseProps, {
         className: StepperClass
@@ -7882,7 +7904,7 @@
         var activeStep = active === index;
         var completedStep = completed >= index;
         var disabled = completed + 1 < index;
-        return /*#__PURE__*/React.createElement(Step, {
+        return /*#__PURE__*/React__namespace.createElement(Step, {
           key: index,
           label: label,
           value: value,
@@ -8046,14 +8068,14 @@
         return isValid(validators, val, inputFormat);
       };
 
-      return /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, {
+      return /*#__PURE__*/React__namespace.createElement(Row, null, /*#__PURE__*/React__namespace.createElement(Column, {
         size: '6',
         sizeXS: '12',
         className: "DateRangePicker-input DateRangePicker-input--startDate"
-      }, startLabel && /*#__PURE__*/React.createElement(Label, {
+      }, startLabel && /*#__PURE__*/React__namespace.createElement(Label, {
         required: startInputOptions.required,
         withInput: true
-      }, startLabel), /*#__PURE__*/React.createElement(InputMask, __assign({
+      }, startLabel), /*#__PURE__*/React__namespace.createElement(InputMask, __assign({
         icon: "events",
         placeholder: inputFormat
       }, startInputOptions, {
@@ -8075,14 +8097,14 @@
         caption: showStartError ? startErrorMessage : '',
         validators: [inputValidator],
         clearOnEmptyBlur: false
-      }))), /*#__PURE__*/React.createElement(Column, {
+      }))), /*#__PURE__*/React__namespace.createElement(Column, {
         size: '6',
         sizeXS: '12',
         className: "DateRangePicker-input DateRangePicker-input--endDate"
-      }, endLabel && /*#__PURE__*/React.createElement(Label, {
+      }, endLabel && /*#__PURE__*/React__namespace.createElement(Label, {
         required: endInputOptions.required,
         withInput: true
-      }, endLabel), /*#__PURE__*/React.createElement(InputMask, __assign({
+      }, endLabel), /*#__PURE__*/React__namespace.createElement(InputMask, __assign({
         icon: "events",
         placeholder: inputFormat
       }, endInputOptions, {
@@ -8211,10 +8233,10 @@
         });
       };
 
-      return /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, null, label && /*#__PURE__*/React.createElement(Label, {
+      return /*#__PURE__*/React__namespace.createElement(Row, null, /*#__PURE__*/React__namespace.createElement(Column, null, label && /*#__PURE__*/React__namespace.createElement(Label, {
         required: inputOptions.required,
         withInput: true
-      }, label), /*#__PURE__*/React.createElement(InputMask, __assign({
+      }, label), /*#__PURE__*/React__namespace.createElement(InputMask, __assign({
         icon: "events",
         placeholder: inputFormat + " - " + inputFormat
       }, inputOptions, {
@@ -8539,7 +8561,7 @@
             endDate = _b.endDate,
             yearNav = _b.yearNav,
             monthNav = _b.monthNav;
-        return /*#__PURE__*/React.createElement(Calendar, __assign({}, rest, {
+        return /*#__PURE__*/React__namespace.createElement(Calendar, __assign({}, rest, {
           monthsInView: this.monthsInView,
           rangePicker: true,
           startDate: convertToDate(startDate, inputFormat, validators),
@@ -8571,13 +8593,13 @@
         var RangePickerClass = classNames__default['default']((_a = {}, _a['DateRangePicker'] = true, _a["DateRangePicker--" + contentAlign] = contentAlign, _a));
 
         if (withInput) {
-          var trigger = singleInput ? /*#__PURE__*/React.createElement(SingleInputTrigger, {
+          var trigger = singleInput ? /*#__PURE__*/React__namespace.createElement(SingleInputTrigger, {
             inputFormat: inputFormat,
             inputOptions: inputOptions,
             validators: validators,
             state: this.state,
             setState: this.setState.bind(this)
-          }) : /*#__PURE__*/React.createElement(Trigger, {
+          }) : /*#__PURE__*/React__namespace.createElement(Trigger, {
             inputFormat: inputFormat,
             startInputOptions: startInputOptions,
             endInputOptions: endInputOptions,
@@ -8585,7 +8607,7 @@
             state: this.state,
             setState: this.setState.bind(this)
           });
-          return /*#__PURE__*/React.createElement(Popover, {
+          return /*#__PURE__*/React__namespace.createElement(Popover, {
             trigger: trigger,
             triggerClass: "w-100",
             className: RangePickerClass,
@@ -8600,7 +8622,7 @@
       };
 
       DateRangePicker.defaultProps = __assign(__assign({}, Calendar.defaultProps), {
-        children: /*#__PURE__*/React.createElement(React.Fragment, null),
+        children: /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null),
         contentAlign: 'left',
         monthsInView: undefined,
         position: 'bottom-start',
@@ -8618,7 +8640,7 @@
         }
       });
       return DateRangePicker;
-    }(React.Component);
+    }(React__namespace.Component);
     DateRangePicker.utils = {
       getCurrentWeek: getCurrentWeek,
       getPreviousWeek: getPreviousWeek,
@@ -8639,11 +8661,11 @@
       var tabs = Array.isArray(children) ? children : [children];
       var totalTabs = tabs.length;
 
-      var _b = React.useState(props.active && props.active < totalTabs ? props.active : 0),
+      var _b = React__namespace.useState(props.active && props.active < totalTabs ? props.active : 0),
           active = _b[0],
           setActiveTab = _b[1];
 
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         setActiveTab(props.active && props.active < totalTabs ? props.active : 0);
       }, [props.active]);
       var wrapperClass = classNames__default['default']((_a = {}, _a['TabsWrapper'] = true, _a), className);
@@ -8660,7 +8682,7 @@
             label = _b.label,
             disabled = _b.disabled;
         var tabHeaderClass = classNames__default['default']((_a = {}, _a['Tab'] = true, _a['Tab--disabled'] = disabled, _a['Tab--active'] = !disabled && active === index, _a));
-        return /*#__PURE__*/React.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement("div", {
           "data-test": "DesignSystem-Tabs--Header",
           key: index,
           className: tabHeaderClass,
@@ -8669,13 +8691,13 @@
           }
         }, label);
       });
-      return /*#__PURE__*/React.createElement("div", __assign({
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-TabsWrapper"
       }, baseProps, {
         className: wrapperClass
-      }), /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React__namespace.createElement("div", {
         className: "TabsWrapper-header"
-      }, TabsHeader), /*#__PURE__*/React.createElement("div", {
+      }, TabsHeader), /*#__PURE__*/React__namespace.createElement("div", {
         className: "TabsWrapper-content",
         "data-test": "DesignSystem-Tabs--Content"
       }, tabs[active]));
@@ -8684,7 +8706,7 @@
 
     var Tab = function Tab(props) {
       var children = props.children;
-      return /*#__PURE__*/React.createElement(React.Fragment, null, children);
+      return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, children);
     };
     Tab.displayName = 'Tab';
 
@@ -9484,12 +9506,12 @@
 
       var type = props.type;
       var IconClass = classNames__default['default']((_a = {}, _a['Dropzone-stateIcon'] = true, _a["Dropzone-stateIcon--" + type] = type, _a));
-      return /*#__PURE__*/React.createElement(React.Fragment, null, type !== 'tight' && /*#__PURE__*/React.createElement(Icon, {
+      return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, type !== 'tight' && /*#__PURE__*/React__namespace.createElement(Icon, {
         name: "archive",
         size: 64,
         appearance: "info",
         className: IconClass
-      }), /*#__PURE__*/React.createElement(Text, {
+      }), /*#__PURE__*/React__namespace.createElement(Text, {
         appearance: "link",
         size: "large",
         weight: "strong"
@@ -9503,12 +9525,12 @@
       var type = props.type,
           error = props.error;
       var IconClass = classNames__default['default']((_a = {}, _a['Dropzone-stateIcon'] = true, _a["Dropzone-stateIcon--" + type] = type, _a));
-      return /*#__PURE__*/React.createElement(React.Fragment, null, type !== 'tight' && /*#__PURE__*/React.createElement(Icon, {
+      return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, type !== 'tight' && /*#__PURE__*/React__namespace.createElement(Icon, {
         name: "error",
         size: 64,
         appearance: "alert",
         className: IconClass
-      }), /*#__PURE__*/React.createElement(Text, {
+      }), /*#__PURE__*/React__namespace.createElement(Text, {
         appearance: "destructive",
         size: "large",
         weight: "strong"
@@ -9604,7 +9626,7 @@
       var formatLabel = props.formatLabel;
 
       if (formatLabel) {
-        return /*#__PURE__*/React.createElement(Text, {
+        return /*#__PURE__*/React__namespace.createElement(Text, {
           size: "small",
           appearance: "subtle",
           className: "mt-4"
@@ -9628,12 +9650,12 @@
           _onChange = props.onChange;
       var baseProps = extractBaseProps(props);
       var FileUploaderButtonClass = classNames__default['default']((_a = {}, _a['FileUploaderButton'] = true, _a), className);
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: FileUploaderButtonClass
-      }), /*#__PURE__*/React.createElement(Button, {
+      }), /*#__PURE__*/React__namespace.createElement(Button, {
         disabled: disabled,
         icon: "backup"
-      }, uploadButtonLabel), /*#__PURE__*/React.createElement("input", {
+      }, uploadButtonLabel), /*#__PURE__*/React__namespace.createElement("input", {
         name: name,
         id: id,
         accept: accept && accept.join(', '),
@@ -9672,19 +9694,19 @@
           onChange = props.onChange;
       var baseProps = extractBaseProps(props);
       var FileUploaderClass = classNames__default['default']((_a = {}, _a['FileUploader'] = true, _a), className);
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: FileUploaderClass
-      }), /*#__PURE__*/React.createElement(Text, {
+      }), /*#__PURE__*/React__namespace.createElement(Text, {
         weight: "medium"
-      }, title), /*#__PURE__*/React.createElement(FileUploaderFormat, {
+      }, title), /*#__PURE__*/React__namespace.createElement(FileUploaderFormat, {
         formatLabel: formatLabel
-      }), /*#__PURE__*/React.createElement(Text, {
+      }), /*#__PURE__*/React__namespace.createElement(Text, {
         size: "small",
         appearance: "subtle",
         className: !formatLabel ? 'mt-4' : ''
-      }, sizeLabel), sampleFileLink && /*#__PURE__*/React.createElement("div", {
+      }, sizeLabel), sampleFileLink && /*#__PURE__*/React__namespace.createElement("div", {
         className: "mt-4"
-      }, sampleFileLink), /*#__PURE__*/React.createElement(FileUploaderButton, {
+      }, sampleFileLink), /*#__PURE__*/React__namespace.createElement(FileUploaderButton, {
         id: id,
         name: name,
         accept: accept,
@@ -9708,14 +9730,14 @@
 
       switch (status) {
         case 'uploading':
-          return /*#__PURE__*/React.createElement(ProgressRing, {
+          return /*#__PURE__*/React__namespace.createElement(ProgressRing, {
             size: "small",
             value: progress,
             className: "mr-4"
           });
 
         case 'error':
-          return /*#__PURE__*/React.createElement(Icon, {
+          return /*#__PURE__*/React__namespace.createElement(Icon, {
             name: "refresh",
             size: 20,
             onClick: onRetry,
@@ -9747,19 +9769,19 @@
       var name = file.name;
       var baseProps = extractBaseProps(props);
       var FileItemClass = classNames__default['default']((_a = {}, _a['FileUploaderItem'] = true, _a), className);
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: FileItemClass,
         onClick: function onClick() {
           return _onClick && _onClick(file, id);
         }
-      }), /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React__namespace.createElement("div", {
         className: "FileUploaderItem-file"
-      }, /*#__PURE__*/React.createElement(Text, {
+      }, /*#__PURE__*/React__namespace.createElement(Text, {
         className: "FileUploaderItem-text",
         appearance: status === 'completed' ? 'default' : 'subtle'
-      }, name), /*#__PURE__*/React.createElement("div", {
+      }, name), /*#__PURE__*/React__namespace.createElement("div", {
         className: "d-flex align-items-center"
-      }, /*#__PURE__*/React.createElement(FileUploaderStatus, {
+      }, /*#__PURE__*/React__namespace.createElement(FileUploaderStatus, {
         file: file,
         id: id,
         status: status,
@@ -9767,14 +9789,14 @@
         onRetry: function onRetry() {
           return _onRetry && _onRetry(file, id);
         }
-      }), /*#__PURE__*/React.createElement(Icon, {
+      }), /*#__PURE__*/React__namespace.createElement(Icon, {
         name: "close",
         size: 20,
         onClick: function onClick() {
           return onDelete && onDelete(file, id);
         },
         className: "py-2 px-2 my-3 mx-3 cursor-pointer"
-      }))), status === 'error' && /*#__PURE__*/React.createElement(Caption, {
+      }))), status === 'error' && /*#__PURE__*/React__namespace.createElement(Caption, {
         error: true
       }, errorMessage));
     };
@@ -9796,10 +9818,10 @@
       var baseProps = extractBaseProps(props);
       var FileListClass = classNames__default['default']((_a = {}, _a['FileUploaderList'] = true, _a), className);
       if (fileList.length === 0) return null;
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: FileListClass
       }), fileList.map(function (fileName, i) {
-        return /*#__PURE__*/React.createElement(FileUploaderItem, __assign({
+        return /*#__PURE__*/React__namespace.createElement(FileUploaderItem, __assign({
           key: i,
           onDelete: onDelete,
           onRetry: onRetry,
@@ -10091,7 +10113,7 @@
         return l.name === name;
       });
       var sorted = listIndex !== -1 ? sortingList[listIndex].type : null;
-      var el = /*#__PURE__*/React.createRef();
+      var el = /*#__PURE__*/React__namespace.createRef();
       var sortOptions = [{
         label: 'Sort Ascending',
         value: 'sortAsc',
@@ -10146,25 +10168,25 @@
       }) : [];
 
       var renderLabel = function renderLabel() {
-        return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
+        return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Text, {
           weight: "strong",
           className: "ellipsis--noWrap"
-        }, schema.displayName), sorting && /*#__PURE__*/React.createElement("div", {
+        }, schema.displayName), sorting && /*#__PURE__*/React__namespace.createElement("div", {
           className: "Grid-sortingIcons"
-        }, sorted ? sorted === 'asc' ? /*#__PURE__*/React.createElement(Icon, {
+        }, sorted ? sorted === 'asc' ? /*#__PURE__*/React__namespace.createElement(Icon, {
           name: "arrow_downward"
-        }) : /*#__PURE__*/React.createElement(Icon, {
+        }) : /*#__PURE__*/React__namespace.createElement(Icon, {
           name: "arrow_upward"
-        }) : /*#__PURE__*/React.createElement(Icon, {
+        }) : /*#__PURE__*/React__namespace.createElement(Icon, {
           name: "unfold_more"
         })));
       };
 
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         key: name,
         className: classes,
         ref: el
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: "Grid-cellContent",
         onClick: function onClick() {
           if (!loading && sorting) {
@@ -10173,21 +10195,21 @@
             if (!sorted) _this.onMenuChange(name, 'sortAsc');
           }
         }
-      }, loading && !init ? /*#__PURE__*/React.createElement(Placeholder, {
+      }, loading && !init ? /*#__PURE__*/React__namespace.createElement(Placeholder, {
         withImage: false
-      }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+      }, /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
         length: "medium"
-      })) : /*#__PURE__*/React.createElement(React.Fragment, null, headCellTooltip ? /*#__PURE__*/React.createElement(Tooltip, {
+      })) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, headCellTooltip ? /*#__PURE__*/React__namespace.createElement(Tooltip, {
         position: "top-start",
         triggerClass: "w-100 overflow-hidden",
         tooltip: schema.displayName
-      }, renderLabel()) : renderLabel())), showFilters && filters && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !init ? /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement(Placeholder, null)) : /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Dropdown, {
+      }, renderLabel()) : renderLabel())), showFilters && filters && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, loading && !init ? /*#__PURE__*/React__namespace.createElement("span", null, /*#__PURE__*/React__namespace.createElement(Placeholder, null)) : /*#__PURE__*/React__namespace.createElement("div", null, /*#__PURE__*/React__namespace.createElement(Dropdown, {
         menu: true,
         showApplyButton: true,
         withCheckbox: true,
         triggerOptions: {
           customTrigger: function customTrigger() {
-            return /*#__PURE__*/React.createElement(Button, {
+            return /*#__PURE__*/React__namespace.createElement(Button, {
               icon: "filter_list",
               appearance: "transparent"
             });
@@ -10199,15 +10221,15 @@
           return _this.onFilterChange(name, selected);
         },
         minWidth: 176
-      }))), showMenu && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !init ? /*#__PURE__*/React.createElement("span", {
+      }))), showMenu && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, loading && !init ? /*#__PURE__*/React__namespace.createElement("span", {
         className: "ml-4"
-      }, /*#__PURE__*/React.createElement(Placeholder, null)) : /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Dropdown, {
+      }, /*#__PURE__*/React__namespace.createElement(Placeholder, null)) : /*#__PURE__*/React__namespace.createElement("div", null, /*#__PURE__*/React__namespace.createElement(Dropdown, {
         key: name + "-" + sorted + "-" + pinned,
         menu: true,
         optionType: "WITH_ICON",
         triggerOptions: {
           customTrigger: function customTrigger() {
-            return /*#__PURE__*/React.createElement(Button, {
+            return /*#__PURE__*/React__namespace.createElement(Button, {
               icon: "more_vert_filled",
               appearance: "transparent"
             });
@@ -10219,7 +10241,7 @@
           return _this.onMenuChange(name, selected);
         },
         minWidth: 176
-      }))), schema.resizable && /*#__PURE__*/React.createElement("span", {
+      }))), schema.resizable && /*#__PURE__*/React__namespace.createElement("span", {
         className: "Grid-cellResize",
         onMouseDown: function onMouseDown() {
           resizeCol(_this, name, el.current);
@@ -10255,9 +10277,9 @@
         rowIndex: rowIndex
       };
       var isNestedRowDisabled = !GridNestedRow(nestedProps);
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         className: "Grid-cellContent"
-      }, colIndex === 0 && nestedRows && /*#__PURE__*/React.createElement(React.Fragment, null, !isNestedRowDisabled ? /*#__PURE__*/React.createElement(Icon, {
+      }, colIndex === 0 && nestedRows && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, !isNestedRowDisabled ? /*#__PURE__*/React__namespace.createElement(Icon, {
         className: 'Grid-nestedRowTrigger',
         name: expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
         size: 20,
@@ -10268,9 +10290,9 @@
             setExpanded(!expanded);
           }
         }
-      }) : /*#__PURE__*/React.createElement("span", {
+      }) : /*#__PURE__*/React__namespace.createElement("span", {
         className: "Grid-nestedRowPlaceholder"
-      })), schema.cellRenderer ? schema.cellRenderer(cellProps) : /*#__PURE__*/React.createElement(GridCell, __assign({
+      })), schema.cellRenderer ? schema.cellRenderer(cellProps) : /*#__PURE__*/React__namespace.createElement(GridCell, __assign({
         key: rowIndex + "-" + colIndex
       }, cellProps)));
     };
@@ -10310,7 +10332,7 @@
         'Grid-cell--nestedRow': !head && colIndex === 0 && nestedRows
       });
       if (hidden) return null;
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         key: rowIndex + "-" + colIndex,
         className: cellClass,
         draggable: head && draggable,
@@ -10342,12 +10364,12 @@
           minWidth: getWidth.call(_this, schema.minWidth || minWidth),
           maxWidth: getWidth.call(_this, schema.maxWidth || maxWidth)
         }
-      }, head ? /*#__PURE__*/React.createElement(HeaderCell, {
+      }, head ? /*#__PURE__*/React__namespace.createElement(HeaderCell, {
         _this: _this,
         draggable: draggable,
         colIndex: colIndex,
         schema: schema
-      }) : /*#__PURE__*/React.createElement(BodyCell, {
+      }) : /*#__PURE__*/React__namespace.createElement(BodyCell, {
         _this: _this,
         rowIndex: rowIndex,
         colIndex: colIndex,
@@ -10381,9 +10403,9 @@
 
       var renderCheckbox = function renderCheckbox(show) {
         if (!show || !withCheckbox) return null;
-        return /*#__PURE__*/React.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement("div", {
           className: "Grid-cell Grid-cell--head Grid-cell--checkbox"
-        }, loading ? /*#__PURE__*/React.createElement(Placeholder, null) : /*#__PURE__*/React.createElement(Checkbox, __assign({}, selectAll, {
+        }, loading ? /*#__PURE__*/React__namespace.createElement(Placeholder, null) : /*#__PURE__*/React__namespace.createElement(Checkbox, __assign({}, selectAll, {
           onChange: _this.onSelectAll
         })));
       };
@@ -10396,12 +10418,12 @@
             'Grid-cellGroup': true,
             'Grid-cellGroup--pinned': pinned
           }, _a["Grid-cellGroup--pinned-" + pinned] = pinned, _a['Grid-cellGroup--main'] = !pinned, _a));
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             className: classes
           }, renderCheckbox(shouldRenderCheckbox), currSchema.map(function (s, index) {
             var cI = pinned === 'left' ? index : leftPinnedSchema.length + index;
             if (pinned === 'right') cI += unpinnedSchema.length;
-            return /*#__PURE__*/React.createElement(Cell, {
+            return /*#__PURE__*/React__namespace.createElement(Cell, {
               key: "" + cI,
               _this: _this,
               head: true,
@@ -10416,9 +10438,9 @@
         return null;
       };
 
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         className: "Grid-head"
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: "Grid-row Grid-row--head"
       }, renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left'), renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length), renderSchema(rightPinnedSchema, false, 'right')));
     };
@@ -10429,9 +10451,9 @@
           data = props.data,
           withCheckbox = props.withCheckbox,
           rI = props.rowIndex;
-      var rowRef = React.useRef(null);
+      var rowRef = React__namespace.useRef(null);
 
-      var _a = React.useState(false),
+      var _a = React__namespace.useState(false),
           expanded = _a[0],
           setExpanded = _a[1];
 
@@ -10469,12 +10491,12 @@
 
       var renderCheckbox = function renderCheckbox(show) {
         if (!show || !withCheckbox) return null;
-        return /*#__PURE__*/React.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement("div", {
           className: "Grid-cell Grid-cell--body Grid-cell--checkbox",
           onClick: function onClick(e) {
             return e.stopPropagation();
           }
-        }, loading ? /*#__PURE__*/React.createElement(Placeholder, null) : /*#__PURE__*/React.createElement(Checkbox, {
+        }, loading ? /*#__PURE__*/React__namespace.createElement(Placeholder, null) : /*#__PURE__*/React__namespace.createElement(Checkbox, {
           checked: !!data._selected,
           onChange: function onChange(event) {
             _this.onSelect(rI, event.target.checked);
@@ -10490,12 +10512,12 @@
             'Grid-cellGroup': true,
             'Grid-cellGroup--pinned': pinned
           }, _a["Grid-cellGroup--pinned-" + pinned] = pinned, _a['Grid-cellGroup--main'] = !pinned, _a));
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             className: classes
           }, renderCheckbox(shouldRenderCheckbox), currSchema.map(function (s, index) {
             var cI = pinned === 'left' ? index : leftPinnedSchema.length + index;
             if (pinned === 'right') cI += unpinnedSchema.length;
-            return /*#__PURE__*/React.createElement(Cell, {
+            return /*#__PURE__*/React__namespace.createElement(Cell, {
               key: rI + "-" + cI,
               _this: _this,
               rowIndex: rI,
@@ -10511,17 +10533,17 @@
         return null;
       };
 
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         className: "Grid-rowWrapper"
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: rowClasses,
         onClick: onClickHandler,
         ref: rowRef
-      }, renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left'), renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length), renderSchema(rightPinnedSchema, false, 'right')), nestedRows && expanded && /*#__PURE__*/React.createElement("div", {
+      }, renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left'), renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length), renderSchema(rightPinnedSchema, false, 'right')), nestedRows && expanded && /*#__PURE__*/React__namespace.createElement("div", {
         style: {
           width: rowRef.current ? rowRef.current.clientWidth : 0
         }
-      }, /*#__PURE__*/React.createElement(GridNestedRow, {
+      }, /*#__PURE__*/React__namespace.createElement(GridNestedRow, {
         _this: _this,
         data: data,
         rowIndex: rI
@@ -10559,15 +10581,15 @@
       }) : data.slice(offset, offset + buffer);
       var topPadding = Math.max(0, offset * avgRowHeight);
       var bottomPadding = Math.max(0, ((withPagination ? dummyRows : data.length) - inView - offset - 1) * avgRowHeight);
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         className: "Grid-body"
-      }, !loading && /*#__PURE__*/React.createElement("div", {
+      }, !loading && /*#__PURE__*/React__namespace.createElement("div", {
         className: "GridBody-padding",
         style: {
           height: topPadding
         }
       }), rows.map(function (d, rI) {
-        return /*#__PURE__*/React.createElement(GridRow, {
+        return /*#__PURE__*/React__namespace.createElement(GridRow, {
           key: offset + rI,
           _this: _this,
           rowIndex: offset + rI,
@@ -10575,7 +10597,7 @@
           schema: schema,
           withCheckbox: withCheckbox
         });
-      }), !loading && /*#__PURE__*/React.createElement("div", {
+      }), !loading && /*#__PURE__*/React__namespace.createElement("div", {
         className: "GridBody-padding",
         style: {
           height: bottomPadding
@@ -10615,11 +10637,11 @@
         inView: 20
       };
 
-      var _c = React.useState(initialState),
+      var _c = React__namespace.useState(initialState),
           state = _c[0],
           setState = _c[1];
 
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         if (init) {
           setState({
             offset: offset,
@@ -10628,7 +10650,7 @@
           });
         }
       }, [init]);
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         setState(initialState);
 
         var el = _this.gridRef.querySelector('.Grid');
@@ -10700,16 +10722,16 @@
         }
       };
 
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: classes,
         onScroll: onScrollHandler
-      }), showHead && /*#__PURE__*/React.createElement(GridHead, {
+      }), showHead && /*#__PURE__*/React__namespace.createElement(GridHead, {
         key: 'GridHead',
         _this: _this,
         schema: schema,
         draggable: draggable,
         withCheckbox: withCheckbox
-      }), /*#__PURE__*/React.createElement(GridBody, {
+      }), /*#__PURE__*/React__namespace.createElement(GridBody, {
         key: 'GridBody',
         _this: _this,
         schema: schema,
@@ -10848,7 +10870,7 @@
 
         var baseProps = extractBaseProps(this.props);
         var schema = getSchema(this);
-        return /*#__PURE__*/React.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement("div", {
           className: "Grid-wrapper",
           ref: function ref(el) {
             _this_1.gridRef = el;
@@ -10859,7 +10881,7 @@
               });
             }
           }
-        }, /*#__PURE__*/React.createElement(MainGrid, __assign({}, baseProps, {
+        }, /*#__PURE__*/React__namespace.createElement(MainGrid, __assign({}, baseProps, {
           _this: this,
           schema: schema
         })));
@@ -10881,7 +10903,7 @@
         showFilters: true
       };
       return Grid;
-    }(React.Component);
+    }(React__namespace.Component);
 
     var renderTitle = function renderTitle(props) {
       var tooltip = props.tooltip,
@@ -10890,16 +10912,16 @@
 
       if (children !== undefined && children !== null) {
         if (tooltip) {
-          return /*#__PURE__*/React.createElement(Tooltip, {
+          return /*#__PURE__*/React__namespace.createElement(Tooltip, {
             tooltip: children,
             position: 'top-start',
             triggerClass: "w-100 overflow-hidden"
-          }, /*#__PURE__*/React.createElement(Text, {
+          }, /*#__PURE__*/React__namespace.createElement(Text, {
             className: "w-100 ellipsis"
           }, children));
         }
 
-        return /*#__PURE__*/React.createElement(Text, {
+        return /*#__PURE__*/React__namespace.createElement(Text, {
           className: "w-100 ellipsis"
         }, children);
       }
@@ -10912,10 +10934,10 @@
       var metaList = cellData.metaList;
 
       if (metaList) {
-        return /*#__PURE__*/React.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement("div", {
           className: "GridCell-metaList"
         }, metaList.map(function (list, index) {
-          return /*#__PURE__*/React.createElement(Text, {
+          return /*#__PURE__*/React__namespace.createElement(Text, {
             key: index,
             className: "ellipsis",
             appearance: 'subtle',
@@ -10934,7 +10956,7 @@
           title = cellData.title;
 
       if (firstName || lastName) {
-        return /*#__PURE__*/React.createElement(Avatar, {
+        return /*#__PURE__*/React__namespace.createElement(Avatar, {
           className: "mr-5",
           firstName: firstName,
           lastName: lastName
@@ -10942,7 +10964,7 @@
       }
 
       if (title) {
-        return /*#__PURE__*/React.createElement(Avatar, {
+        return /*#__PURE__*/React__namespace.createElement(Avatar, {
           className: "mr-5"
         }, title);
       }
@@ -10955,7 +10977,7 @@
       var icon = cellData.icon;
 
       if (icon) {
-        return /*#__PURE__*/React.createElement(Icon, {
+        return /*#__PURE__*/React__namespace.createElement(Icon, {
           name: icon
         });
       }
@@ -10969,7 +10991,7 @@
       var children = cellData.title;
 
       if (children) {
-        return /*#__PURE__*/React.createElement(StatusHint, {
+        return /*#__PURE__*/React__namespace.createElement(StatusHint, {
           appearance: statusAppearance
         }, children);
       }
@@ -10995,9 +11017,9 @@
 
       switch (cellType) {
         case 'DEFAULT':
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             className: cellClass + " GridCell--align-" + align + " GridCell--default"
-          }, loading ? /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+          }, loading ? /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
             length: "medium"
           }) : renderTitle({
             tooltip: tooltip,
@@ -11005,14 +11027,14 @@
           }));
 
         case 'WITH_META_LIST':
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             className: cellClass + " GridCell--metaList"
-          }, loading ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+          }, loading ? /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
             length: "medium"
-          }), /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+          }), /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
             length: "large",
             size: "xxs"
-          })) : /*#__PURE__*/React.createElement(React.Fragment, null, renderTitle({
+          })) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, renderTitle({
             tooltip: tooltip,
             cellData: cellData
           }), renderMetaList({
@@ -11021,14 +11043,14 @@
 
         case 'AVATAR':
           if (loading) {
-            return /*#__PURE__*/React.createElement(Placeholder, {
+            return /*#__PURE__*/React__namespace.createElement(Placeholder, {
               className: "GridCell--align-" + align,
               imageSize: 'medium',
               round: true
             });
           }
 
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             className: cellClass + " GridCell--align-" + align + " GridCell--avatar"
           }, size !== 'tight' && renderAvatar({
             cellData: cellData
@@ -11036,16 +11058,16 @@
 
         case 'AVATAR_WITH_TEXT':
           if (loading) {
-            return /*#__PURE__*/React.createElement(Placeholder, {
+            return /*#__PURE__*/React__namespace.createElement(Placeholder, {
               imageSize: 'medium',
               round: true
-            }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+            }, /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
               className: "ml-3",
               length: "medium"
             }));
           }
 
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             className: cellClass + " GridCell--avatarWithText"
           }, size !== 'tight' && renderAvatar({
             cellData: cellData
@@ -11056,23 +11078,23 @@
 
         case 'AVATAR_WITH_META_LIST':
           if (loading) {
-            return /*#__PURE__*/React.createElement(Placeholder, {
+            return /*#__PURE__*/React__namespace.createElement(Placeholder, {
               imageSize: 'medium',
               round: true
-            }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+            }, /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
               className: "ml-3",
               length: "medium"
-            }), /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+            }), /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
               className: "ml-3",
               length: "large"
             }));
           }
 
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             className: cellClass + " GridCell--avatarWithText"
           }, size !== 'tight' && renderAvatar({
             cellData: cellData
-          }), /*#__PURE__*/React.createElement("div", {
+          }), /*#__PURE__*/React__namespace.createElement("div", {
             className: "GridCell-metaListWrapper"
           }, renderTitle({
             tooltip: tooltip,
@@ -11083,27 +11105,27 @@
 
         case 'ICON':
           if (loading) {
-            return /*#__PURE__*/React.createElement(Placeholder, {
+            return /*#__PURE__*/React__namespace.createElement(Placeholder, {
               className: "GridCell--align-" + align,
               imageSize: 'small',
               round: true
             });
           }
 
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             className: cellClass + " GridCell--align-" + align + " GridCell--icon"
           }, renderIcon({
             cellData: cellData
           }));
 
         case 'STATUS_HINT':
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             className: cellClass + " GridCell--align-" + align + " GridCell--statusHint"
-          }, loading ? /*#__PURE__*/React.createElement(Placeholder, {
+          }, loading ? /*#__PURE__*/React__namespace.createElement(Placeholder, {
             className: "w-75 flex-grow-0",
             imageSize: 'small',
             round: true
-          }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+          }, /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
             length: "large"
           })) : renderStatusHint({
             cellData: cellData
@@ -11118,19 +11140,19 @@
       var options = props.options,
           onChange = props.onChange;
 
-      var _a = React.useState(false),
+      var _a = React__namespace.useState(false),
           open = _a[0],
           setOpen = _a[1];
 
-      var _b = React.useState(options),
+      var _b = React__namespace.useState(options),
           tempOptions = _b[0],
           setTempOptions = _b[1];
 
-      var _c = React.useState('var(--spacing-8)'),
+      var _c = React__namespace.useState('var(--spacing-8)'),
           triggerWidth = _c[0],
           setTriggerWidth = _c[1];
 
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         setTempOptions(options);
       }, [open]);
 
@@ -11164,12 +11186,12 @@
         if (onChange) onChange(tempOptions);
       };
 
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         className: "Dropdown"
-      }, /*#__PURE__*/React.createElement(Popover, {
+      }, /*#__PURE__*/React__namespace.createElement(Popover, {
         open: open,
         onToggle: onToggleHandler,
-        trigger: /*#__PURE__*/React.createElement(Button, {
+        trigger: /*#__PURE__*/React__namespace.createElement(Button, {
           ref: function ref(el) {
             setTriggerWidth((el === null || el === void 0 ? void 0 : el.clientWidth) + "px");
           },
@@ -11185,11 +11207,11 @@
           width: triggerWidth
         },
         className: "Header-draggableDropdown"
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: "Dropdown-wrapper"
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: "OptionWrapper"
-      }, /*#__PURE__*/React.createElement(Checkbox, {
+      }, /*#__PURE__*/React__namespace.createElement(Checkbox, {
         className: "OptionCheckbox",
         label: "Select All",
         checked: tempOptions.every(function (option) {
@@ -11202,7 +11224,7 @@
         }),
         onChange: handleParentChange
       })), tempOptions.map(function (option, index) {
-        return /*#__PURE__*/React.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement("div", {
           key: option.value,
           className: "OptionWrapper d-flex flex-space-between align-items-center cursor-pointer",
           draggable: true,
@@ -11217,7 +11239,7 @@
             var to = index;
             if (from !== to) setTempOptions(moveToIndex(tempOptions, from, to));
           }
-        }, /*#__PURE__*/React.createElement(Checkbox, {
+        }, /*#__PURE__*/React__namespace.createElement(Checkbox, {
           className: "OptionCheckbox",
           name: option.value,
           label: option.label,
@@ -11225,17 +11247,17 @@
           onChange: function onChange(e) {
             return handleChildChange(e, index);
           }
-        }), /*#__PURE__*/React.createElement(Icon, {
+        }), /*#__PURE__*/React__namespace.createElement(Icon, {
           name: "drag_handle",
           className: "mr-4"
         }));
-      })), /*#__PURE__*/React.createElement("div", {
+      })), /*#__PURE__*/React__namespace.createElement("div", {
         className: "Dropdown-buttonWrapper"
-      }, /*#__PURE__*/React.createElement(Button, {
+      }, /*#__PURE__*/React__namespace.createElement(Button, {
         className: "mr-4",
         size: "tiny",
         onClick: onCancelHandler
-      }, "Cancel"), /*#__PURE__*/React.createElement(Button, {
+      }, "Cancel"), /*#__PURE__*/React__namespace.createElement(Button, {
         appearance: "primary",
         size: "tiny",
         onClick: onApplyHandler
@@ -11267,23 +11289,23 @@
           allowSelectAll = props.allowSelectAll,
           showFilters = props.showFilters;
 
-      var _c = React.useState(false),
+      var _c = React__namespace.useState(false),
           selectAllRecords = _c[0],
           setSelectAllRecords = _c[1];
 
-      var _d = React.useState(true),
+      var _d = React__namespace.useState(true),
           flag = _d[0],
           setFlag = _d[1];
 
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         setFlag(!flag);
       }, [schema]);
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         if (selectAll && selectAll.checked) {
           if (onSelectAll) onSelectAll(true, selectAllRecords);
         }
       }, [selectAllRecords]);
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         if (selectAll && !selectAll.checked) setSelectAllRecords(false);
       }, [selectAll]);
       var filterSchema = schema.filter(function (s) {
@@ -11331,13 +11353,13 @@
         return d._selected;
       }).length;
       var label = withCheckbox && selectedCount ? selectAllRecords ? "Selected all " + totalRecords + " items" : "Selected " + selectedCount + " items on this page" : "Showing " + (!error ? totalRecords : 0) + " items";
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement("div", {
         className: "Header"
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: "Header-content Header-content--top"
-      }, withSearch && /*#__PURE__*/React.createElement("div", {
+      }, withSearch && /*#__PURE__*/React__namespace.createElement("div", {
         className: "Header-search"
-      }, /*#__PURE__*/React.createElement(Input, {
+      }, /*#__PURE__*/React__namespace.createElement(Input, {
         name: "GridHeader-search",
         icon: "search",
         placeholder: searchPlaceholder,
@@ -11347,9 +11369,9 @@
           return updateSearchTerm && updateSearchTerm('');
         },
         disabled: loading && !getInit(schema)
-      })), showFilters && filterSchema.length > 0 && /*#__PURE__*/React.createElement("div", {
+      })), showFilters && filterSchema.length > 0 && /*#__PURE__*/React__namespace.createElement("div", {
         className: "Header-dropdown"
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: "Header-filters"
       }, filterSchema.map(function (s) {
         var name = s.name,
@@ -11362,7 +11384,7 @@
             }) !== -1
           });
         }) : [];
-        return /*#__PURE__*/React.createElement(Dropdown, {
+        return /*#__PURE__*/React__namespace.createElement(Dropdown, {
           key: name,
           withCheckbox: true,
           showApplyButton: true,
@@ -11373,36 +11395,36 @@
             return onFilterChange(name, selected);
           }
         });
-      }))), children && /*#__PURE__*/React.createElement("div", {
+      }))), children && /*#__PURE__*/React__namespace.createElement("div", {
         className: "Header-actions"
-      }, children)), /*#__PURE__*/React.createElement("div", {
+      }, children)), /*#__PURE__*/React__namespace.createElement("div", {
         className: "Header-content Header-content--bottom"
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: "Header-label"
-      }, !showHead && withCheckbox && !loading && /*#__PURE__*/React.createElement(Checkbox, __assign({}, selectAll, {
+      }, !showHead && withCheckbox && !loading && /*#__PURE__*/React__namespace.createElement(Checkbox, __assign({}, selectAll, {
         onChange: function onChange(event) {
           if (onSelectAll) onSelectAll(event.target.checked);
         }
-      })), loading ? /*#__PURE__*/React.createElement(Placeholder, {
+      })), loading ? /*#__PURE__*/React__namespace.createElement(Placeholder, {
         withImage: !showHead && withCheckbox
-      }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+      }, /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
         length: 'small',
         size: 's'
-      })) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Label, null, label), withPagination && (selectAll === null || selectAll === void 0 ? void 0 : selectAll.checked) && allowSelectAll && /*#__PURE__*/React.createElement("div", {
+      })) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Label, null, label), withPagination && (selectAll === null || selectAll === void 0 ? void 0 : selectAll.checked) && allowSelectAll && /*#__PURE__*/React__namespace.createElement("div", {
         className: "ml-4"
-      }, !selectAllRecords ? /*#__PURE__*/React.createElement(Button, {
+      }, !selectAllRecords ? /*#__PURE__*/React__namespace.createElement(Button, {
         size: "tiny",
         onClick: function onClick() {
           return setSelectAllRecords(true);
         }
-      }, "Select all " + totalRecords + " items") : /*#__PURE__*/React.createElement(Button, {
+      }, "Select all " + totalRecords + " items") : /*#__PURE__*/React__namespace.createElement(Button, {
         size: "tiny",
         onClick: function onClick() {
           return setSelectAllRecords(false);
         }
-      }, "Clear Selection")))), dynamicColumn && /*#__PURE__*/React.createElement("div", {
+      }, "Clear Selection")))), dynamicColumn && /*#__PURE__*/React__namespace.createElement("div", {
         className: "Header-hideColumns"
-      }, /*#__PURE__*/React.createElement(DraggableDropdown, {
+      }, /*#__PURE__*/React__namespace.createElement(DraggableDropdown, {
         options: columnOptions,
         onChange: onDynamicColumnUpdate
       }))));
@@ -11423,7 +11445,7 @@
         NO_RECORDS_FOUND: 'No results found',
         DEFAULT: 'No results found'
       };
-      return /*#__PURE__*/React.createElement(Heading, null, errorMessages[errorType]);
+      return /*#__PURE__*/React__namespace.createElement(Heading, null, errorMessages[errorType]);
     };
 
     var defaultProps = {
@@ -11724,11 +11746,11 @@
         var classes = className ? " " + className : '';
         var totalRecords = this.state.totalRecords;
         var totalPages = getTotalPages(totalRecords, pageSize);
-        return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+        return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
           className: "Table" + classes
-        }), withHeader && /*#__PURE__*/React.createElement("div", {
+        }), withHeader && /*#__PURE__*/React__namespace.createElement("div", {
           className: "Table-header"
-        }, /*#__PURE__*/React.createElement(Header, __assign({}, this.state, {
+        }, /*#__PURE__*/React__namespace.createElement(Header, __assign({}, this.state, {
           updateSchema: this.updateSchema,
           updateFilterList: this.updateFilterList,
           updateSearchTerm: this.updateSearchTerm,
@@ -11737,9 +11759,9 @@
           withCheckbox: withCheckbox,
           withPagination: withPagination,
           showFilters: filterPosition === 'HEADER'
-        }, headerAttr), headerChildren)), /*#__PURE__*/React.createElement("div", {
+        }, headerAttr), headerChildren)), /*#__PURE__*/React__namespace.createElement("div", {
           className: "Table-grid"
-        }, /*#__PURE__*/React.createElement(Grid, __assign({}, this.state, {
+        }, /*#__PURE__*/React__namespace.createElement(Grid, __assign({}, this.state, {
           updateData: this.updateData,
           updateSchema: this.updateSchema,
           updateSortingList: this.updateSortingList,
@@ -11764,9 +11786,9 @@
           }),
           onRowClick: onRowClick,
           showFilters: filterPosition === 'GRID'
-        }))), withPagination && !this.state.loading && !this.state.error && totalPages > 1 && /*#__PURE__*/React.createElement("div", {
+        }))), withPagination && !this.state.loading && !this.state.error && totalPages > 1 && /*#__PURE__*/React__namespace.createElement("div", {
           className: "Table-pagination"
-        }, /*#__PURE__*/React.createElement(Pagination, {
+        }, /*#__PURE__*/React__namespace.createElement(Pagination, {
           page: this.state.page,
           totalPages: getTotalPages(totalRecords, pageSize),
           type: paginationType,
@@ -11776,17 +11798,17 @@
 
       Table.defaultProps = defaultProps;
       return Table;
-    }(React.Component);
+    }(React__namespace.Component);
 
     var List = function List(props) {
-      return /*#__PURE__*/React.createElement(Table, __assign({}, props, {
+      return /*#__PURE__*/React__namespace.createElement(Table, __assign({}, props, {
         showHead: false,
         filterPosition: 'HEADER'
       }));
     };
     List.defaultProps = defaultProps;
 
-    var useState$1 = React.useState;
+    var useState$1 = React__namespace.useState;
     var Navigation = function Navigation(props) {
       var _a;
 
@@ -11807,7 +11829,7 @@
           menuState = _b[0],
           setMenuState = _b[1];
 
-      React.useEffect(function () {
+      React__namespace.useEffect(function () {
         if (props.active) {
           var currMenu = getMenu(props.active);
           if (currMenu) updateMenuState(currMenu, true);
@@ -11899,17 +11921,17 @@
           var menuClasses = classNames__default['default']((_a = {
             'Navigation-menu': true
           }, _a["Navigation-menu--" + type] = type, _a['Navigation-menu--active'] = isMenuActive, _a));
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             key: index,
             className: menuClasses,
             onClick: function onClick() {
               return onClickHandler(menu);
             }
-          }, menu.icon && /*#__PURE__*/React.createElement(Icon, {
+          }, menu.icon && /*#__PURE__*/React__namespace.createElement(Icon, {
             className: "mr-3",
             name: menu.icon,
             appearance: getIconAppearance(isMenuActive, menu.disabled)
-          }), /*#__PURE__*/React.createElement(Text, {
+          }), /*#__PURE__*/React__namespace.createElement(Text, {
             appearance: getTextAppearance(isMenuActive, menu.disabled)
           }, menu.label));
         });
@@ -11931,39 +11953,39 @@
             'Navigation-menuIcon': true,
             'Navigation-menuIcon--active': activeMenuIcon
           });
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React__namespace.createElement("div", {
             key: index
-          }, /*#__PURE__*/React.createElement("div", {
+          }, /*#__PURE__*/React__namespace.createElement("div", {
             className: menuClasses,
             onClick: function onClick() {
               return onClickHandler(menu);
             }
-          }, menu.icon && /*#__PURE__*/React.createElement(Icon, {
+          }, menu.icon && /*#__PURE__*/React__namespace.createElement(Icon, {
             className: menuIconClasses,
             name: menu.icon,
             appearance: getIconAppearance(activeMenuIcon, menu.disabled)
-          }), expanded && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+          }), expanded && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("span", {
             className: "Navigation-menuLabel"
-          }, /*#__PURE__*/React.createElement(Text, {
+          }, /*#__PURE__*/React__namespace.createElement(Text, {
             appearance: getTextAppearance(activeMenu, menu.disabled)
-          }, menu.label)), menu.subMenu && menu.subMenu.length > 0 && /*#__PURE__*/React.createElement(Icon, {
+          }, menu.label)), menu.subMenu && menu.subMenu.length > 0 && /*#__PURE__*/React__namespace.createElement(Icon, {
             className: "mx-4",
             name: menuState[menu.name] ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
             appearance: "subtle"
-          }))), /*#__PURE__*/React.createElement("div", {
+          }))), /*#__PURE__*/React__namespace.createElement("div", {
             className: "Navigation-subMenu"
           }, menuState[menu.name] && menu.subMenu && expanded && menu.subMenu.map(function (subMenu, ind) {
             var _a;
 
             var isMenuActive = isActive(subMenu);
             var subMenuClasses = classNames__default['default'](menuClasses, (_a = {}, _a['Navigation-menu--subMenu'] = type, _a['Navigation-menu--active'] = isMenuActive, _a));
-            return /*#__PURE__*/React.createElement("div", {
+            return /*#__PURE__*/React__namespace.createElement("div", {
               key: ind,
               className: subMenuClasses,
               onClick: function onClick() {
                 return onClickHandler(subMenu);
               }
-            }, /*#__PURE__*/React.createElement(Text, {
+            }, /*#__PURE__*/React__namespace.createElement(Text, {
               appearance: getTextAppearance(isMenuActive, subMenu.disabled)
             }, subMenu.label));
           })));
@@ -11971,11 +11993,11 @@
         var footerClasses = classNames__default['default']((_a = {
           'Navigation-footer': true
         }, _a['Navigation-footer--border'] = true, _a));
-        return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
           className: "Navigation-body"
-        }, list), footer && /*#__PURE__*/React.createElement("div", {
+        }, list), footer && /*#__PURE__*/React__namespace.createElement("div", {
           className: footerClasses
-        }, /*#__PURE__*/React.createElement(Icon, {
+        }, /*#__PURE__*/React__namespace.createElement(Icon, {
           className: "Navigation-menuIcon Navigation-menuIcon--footer",
           name: "menu_open",
           size: 16,
@@ -11986,7 +12008,7 @@
       };
 
       var classes = classNames__default['default']((_a = {}, _a['Navigation'] = true, _a["Navigation--" + type] = type, _a['justify-content-center'] = type === 'horizontal' && align === 'center', _a['justify-content-start'] = type === 'horizontal' && align === 'left', _a['Navigation--collapsed'] = !expanded, _a), className);
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: classes
       }), type === 'horizontal' ? getHorizontalMenu(menus) : getVerticalMenu());
     };
@@ -12025,41 +12047,41 @@
         return navigation ? navigation : stepper;
       };
 
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: wrapperClasses
-      }), breadcrumbs, /*#__PURE__*/React.createElement("div", {
+      }), breadcrumbs, /*#__PURE__*/React__namespace.createElement("div", {
         className: classes
-      }, /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, {
+      }, /*#__PURE__*/React__namespace.createElement(Row, null, /*#__PURE__*/React__namespace.createElement(Column, {
         size: "4",
         sizeXL: "4",
         sizeM: "4"
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: "PageHeader-titleWrapper"
-      }, /*#__PURE__*/React.createElement(Heading, {
+      }, /*#__PURE__*/React__namespace.createElement(Heading, {
         className: "PageHeader-title"
-      }, title), badge)), /*#__PURE__*/React.createElement(Column, {
+      }, title), badge)), /*#__PURE__*/React__namespace.createElement(Column, {
         size: "4",
         sizeXL: "4",
         sizeM: "4"
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: "PageHeader-navigationWrapper"
-      }, (!breadcrumbs || navigationPosition === 'center') && renderCenter())), /*#__PURE__*/React.createElement(Column, {
+      }, (!breadcrumbs || navigationPosition === 'center') && renderCenter())), /*#__PURE__*/React__namespace.createElement(Column, {
         size: "4",
         sizeXL: "4",
         sizeM: "4"
-      }, actions))), (status || meta) && /*#__PURE__*/React.createElement("div", {
+      }, actions))), (status || meta) && /*#__PURE__*/React__namespace.createElement("div", {
         className: "PageHeader-statusWrapper"
-      }, status, meta), breadcrumbs && navigationPosition === 'bottom' && /*#__PURE__*/React.createElement("div", {
+      }, status, meta), breadcrumbs && navigationPosition === 'bottom' && /*#__PURE__*/React__namespace.createElement("div", {
         className: "PageHeader-navigationWrapper"
-      }, renderCenter()), tabs && /*#__PURE__*/React.createElement("div", null, tabs));
+      }, renderCenter()), tabs && /*#__PURE__*/React__namespace.createElement("div", null, tabs));
     };
     PageHeader.defaultProps = {
       navigationPosition: 'center',
       separator: true
     };
 
-    var useEffect = React.useEffect,
-        useState = React.useState;
+    var useEffect = React__namespace.useEffect,
+        useState = React__namespace.useState;
     var IconMapping = {
       audio: 'audiotrack',
       image: 'image',
@@ -12091,14 +12113,14 @@
       }, [status]);
 
       if (status === 'uploading') {
-        return /*#__PURE__*/React.createElement(ProgressRing, {
+        return /*#__PURE__*/React__namespace.createElement(ProgressRing, {
           size: "small",
           value: progress || 0,
           className: uploadingIconClass
         });
       }
 
-      return /*#__PURE__*/React.createElement(Icon, {
+      return /*#__PURE__*/React__namespace.createElement(Icon, {
         name: IconMapping[fileType],
         className: iconClass
       });
@@ -12131,26 +12153,26 @@
         }
       };
 
-      return /*#__PURE__*/React.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: FileItemClass,
         onClick: onClickHandler
-      }), /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React__namespace.createElement("div", {
         className: "FileItem-file"
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
         className: "FileItem-fileContent"
-      }, /*#__PURE__*/React.createElement(FileIcon, {
+      }, /*#__PURE__*/React__namespace.createElement(FileIcon, {
         file: file,
         status: status,
         progress: progress
-      }), /*#__PURE__*/React.createElement(Text, {
+      }), /*#__PURE__*/React__namespace.createElement(Text, {
         className: "FileItem-text",
         appearance: status === 'completed' ? 'default' : 'subtle'
-      }, name)), /*#__PURE__*/React.createElement("div", {
+      }, name)), /*#__PURE__*/React__namespace.createElement("div", {
         className: "FileItem-actions"
-      }, /*#__PURE__*/React.createElement(Text, {
+      }, /*#__PURE__*/React__namespace.createElement(Text, {
         className: "FileItem-size",
         appearance: 'subtle'
-      }, fileSize || file.size), !!actions && actions)), status === 'error' && /*#__PURE__*/React.createElement(Caption, {
+      }, fileSize || file.size), !!actions && actions)), status === 'error' && /*#__PURE__*/React__namespace.createElement(Caption, {
         className: 'FileItem-error',
         error: true
       }, errorMessage));
@@ -12168,11 +12190,11 @@
           className = props.className;
       var baseProps = extractBaseProps(props);
       if (fileList.length === 0) return null;
-      return /*#__PURE__*/React.createElement(Card, __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement(Card, __assign({}, baseProps, {
         shadow: 'none',
         className: className
       }), fileList.map(function (fileItem, index) {
-        return /*#__PURE__*/React.createElement(FileListItem, __assign({
+        return /*#__PURE__*/React__namespace.createElement(FileListItem, __assign({
           key: index,
           onClick: onClick,
           actions: actionRenderer && actionRenderer(fileItem),
@@ -12185,7 +12207,7 @@
     };
     FileList.displayName = 'FileList';
 
-    var version = "1.7.1-0";
+    var version = "1.7.1";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
