@@ -16,7 +16,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Atoms|Typography/Link/Variants',
+  title: 'Components/Link/Variants',
   component: Link,
   parameters: {
     docs: {

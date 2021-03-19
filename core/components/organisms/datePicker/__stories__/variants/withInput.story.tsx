@@ -94,7 +94,7 @@ export const withInput = () => {
 };
 
 export default {
-  title: 'Organisms|DatePicker/Variants',
+  title: 'Components/DatePicker/Variants',
   component: DatePicker,
   subcomponents: { InputMask }
 };

@@ -35,7 +35,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Atoms|OutsideClick',
+  title: 'Components/OutsideClick',
   component: OutsideClick,
   parameters: {
     docs: {

@@ -24,7 +24,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|Loaders/Placeholder/Paragraph',
+  title: 'Components/Loaders/Placeholder/Paragraph',
   component: PlaceholderParagraph,
   parameters: {
     docs: {

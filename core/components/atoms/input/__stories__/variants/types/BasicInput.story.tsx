@@ -64,7 +64,7 @@ export const basic = () => {
 };
 
 export default {
-  title: 'Atoms|Input/Variants/Types',
+  title: 'Components/Input/Variants/Types',
   component: Input,
   parameters: {
     docs: {

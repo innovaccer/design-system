@@ -35,7 +35,7 @@ export const subtle = () => {
 };
 
 export default {
-  title: 'Atoms|Badge/Variants',
+  title: 'Components/Badge/Variants',
   component: Badge,
   parameters: {
     docs: {

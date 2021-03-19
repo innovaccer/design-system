@@ -25,7 +25,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|Typography/Subheading',
+  title: 'Components/Subheading',
   component: Subheading,
   parameters: {
     docs: {

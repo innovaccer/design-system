@@ -20,7 +20,7 @@ export const state = () => {
 };
 
 export default {
-  title: 'Atoms|Typography/Label/Variants',
+  title: 'Components/Label/Variants',
   component: Label,
   parameters: {
     docs: {

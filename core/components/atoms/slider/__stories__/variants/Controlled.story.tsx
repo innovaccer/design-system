@@ -49,7 +49,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Atoms|Slider/Variants',
+  title: 'Components/Slider/Variants',
   component: Slider,
   parameters: {
     docs: {

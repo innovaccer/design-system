@@ -197,7 +197,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Organisms|Navigation/Variants',
+  title: 'Components/Navigation/Variants',
   component: Navigation,
   parameters: {
     docs: {

@@ -61,6 +61,6 @@ export const position = () => {
 };
 
 export default {
-  title: 'Utilities',
+  title: 'Others/Utilities',
   component: position,
 };

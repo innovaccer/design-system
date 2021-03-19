@@ -13,7 +13,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Patterns|Layouts',
+  title: 'Patterns/Layouts',
   parameters: {
     docs: {
       docPage: {

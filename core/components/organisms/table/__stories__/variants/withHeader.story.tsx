@@ -37,5 +37,5 @@ export const withHeader = () => {
 };
 
 export default {
-  title: 'Organisms|Table/Variants'
+  title: 'Components/Table/Variants'
 };

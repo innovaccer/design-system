@@ -47,7 +47,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Atoms|Input/Variants',
+  title: 'Components/Input/Variants',
   component: Input,
   parameters: {
     docs: {

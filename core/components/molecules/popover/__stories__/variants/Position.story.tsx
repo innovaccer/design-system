@@ -47,7 +47,7 @@ export const position = () => {
 };
 
 export default {
-  title: 'Molecules|Popover/Variants',
+  title: 'Components/Popover/Variants',
   component: Popover,
   parameters: {
     docs: {

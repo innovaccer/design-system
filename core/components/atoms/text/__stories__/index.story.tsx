@@ -41,7 +41,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|Typography/Text',
+  title: 'Components/Text',
   component: Text,
   parameters: {
     docs: {

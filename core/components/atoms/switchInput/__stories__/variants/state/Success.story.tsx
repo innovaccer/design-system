@@ -30,7 +30,7 @@ export const success = () => {
 };
 
 export default {
-  title: 'Atoms|Switch/Variants/State',
+  title: 'Components/Switch/Variants/State',
   component: Switch,
   parameters: {
     docs: {

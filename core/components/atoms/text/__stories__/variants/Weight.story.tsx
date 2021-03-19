@@ -16,7 +16,7 @@ export const weight = () => {
 };
 
 export default {
-  title: 'Atoms|Typography/Text/Variants',
+  title: 'Components/Text/Variants',
   component: Text,
   parameters: {
     docs: {

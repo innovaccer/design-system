@@ -13,7 +13,7 @@ export const subtleAlert = () => {
 };
 
 export default {
-  title: 'Atoms|Pills',
+  title: 'Components/Pills',
   component: Pills,
   parameters: {
     docs: {

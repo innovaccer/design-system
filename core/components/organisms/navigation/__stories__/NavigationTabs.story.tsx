@@ -88,7 +88,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Organisms|Navigation',
+  title: 'Components/Navigation',
   component: Navigation,
   parameters: {
     docs: {

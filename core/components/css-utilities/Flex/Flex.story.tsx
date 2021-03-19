@@ -271,6 +271,6 @@ export const flex = () => {
 };
 
 export default {
-  title: 'Utilities',
+  title: 'Others/Utilities',
   component: flex,
 };

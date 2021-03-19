@@ -83,7 +83,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Molecules|Popover',
+  title: 'Components/Popover',
   component: Popover,
   parameters: {
     docs: {

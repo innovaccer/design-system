@@ -75,7 +75,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Molecules|EditableInput/Variants',
+  title: 'Components/EditableInput/Variants',
   component: EditableInput,
   parameters: {
     docs: {

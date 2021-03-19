@@ -75,7 +75,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Molecules|Dialog/Variants/SecondaryButton',
+  title: 'Components/Dialog/Variants/SecondaryButton',
   component: Dialog,
   parameters: {
     docs: {

@@ -156,7 +156,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Organisms|List',
+  title: 'Components/List',
   component: List,
   parameters: {
     docs: {

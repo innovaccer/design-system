@@ -87,7 +87,7 @@ const customCode =  `() => {
 }`;
 
 export default {
-  title: 'Atoms|Dropdown/Variants/Trigger',
+  title: 'Components/Dropdown/Variants/Trigger',
   component: Dropdown,
   parameters: {
     docs: {

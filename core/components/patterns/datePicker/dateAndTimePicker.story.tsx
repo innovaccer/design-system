@@ -71,7 +71,7 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Patterns|DatePicker',
+  title: 'Patterns/DatePicker',
   parameters: {
     docs: {
       docPage: {

@@ -26,7 +26,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|Typography/Paragraph',
+  title: 'Components/Paragraph',
   component: Paragraph,
   parameters: {
     docs: {

@@ -43,7 +43,7 @@ export const position = () => {
 };
 
 export default {
-  title: 'Molecules|Tooltip/Variants',
+  title: 'Components/Tooltip/Variants',
   component: Tooltip,
   parameters: {
     docs: {

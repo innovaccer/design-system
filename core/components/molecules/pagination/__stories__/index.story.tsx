@@ -32,6 +32,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Molecules|Pagination',
+  title: 'Components/Pagination',
   component: Pagination
 };

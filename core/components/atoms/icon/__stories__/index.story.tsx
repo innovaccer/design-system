@@ -40,7 +40,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Atoms|Icon',
+  title: 'Components/Icon',
   component: Icon,
   parameters: {
     docs: {

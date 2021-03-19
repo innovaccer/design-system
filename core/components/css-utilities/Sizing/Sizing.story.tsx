@@ -149,6 +149,6 @@ export const sizing = () => {
 };
 
 export default {
-  title: 'Utilities',
+  title: 'Others/Utilities',
   component: sizing,
 };

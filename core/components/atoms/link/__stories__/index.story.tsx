@@ -27,7 +27,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|Typography/Link',
+  title: 'Components/Link',
   component: Link,
   parameters: {
     docs: {

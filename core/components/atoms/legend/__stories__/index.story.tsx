@@ -44,7 +44,7 @@ const customCode = `() => {
     );
 }`;
 export default {
-  title: 'Atoms|Legend',
+  title: 'Components/Legend',
   component: Legend,
   parameters: {
     docs: {

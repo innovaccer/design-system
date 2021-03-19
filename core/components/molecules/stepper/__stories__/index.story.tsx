@@ -58,7 +58,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Molecules|Stepper',
+  title: 'Components/Stepper',
   component: Stepper,
   parameters: {
     docs: {

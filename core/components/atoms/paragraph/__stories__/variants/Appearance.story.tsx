@@ -25,7 +25,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Atoms|Typography/Paragraph/Variants',
+  title: 'Components/Paragraph/Variants',
   component: Paragraph,
   parameters: {
     docs: {

@@ -50,6 +50,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Atoms|Textarea',
+  title: 'Components/Textarea',
   component: Textarea,
 };

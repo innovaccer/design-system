@@ -12,7 +12,7 @@ export const subtleSecondary = () => (
 );
 
 export default {
-  title: 'Atoms|Badge',
+  title: 'Components/Badge',
   component: Badge,
   parameters: {
     docs: {

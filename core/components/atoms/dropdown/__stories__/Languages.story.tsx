@@ -29,7 +29,7 @@ export const languages = () => (
 );
 
 export default {
-  title: 'Atoms|Dropdown',
+  title: 'Components/Dropdown',
   component: Dropdown,
   parameters: {
     docs: {
