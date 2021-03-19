@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Horizontal Navigation component 
+  type: "horizontal", menus: [{"name":"tab1","label":"Tab #1","icon":"events","link":"/patient360"},{"name":"tab2","label":"Tab #2","count":10,"link":"/outreach"},{"name":"tab3","label":"Tab #3","disabled":true,"link":"/innote"}], active: {"name":"tab1"}, onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Navigation Navigation--horizontal justify-content-center"
+    >
+      <div
+        class="Navigation-menu Navigation-menu--horizontal Navigation-menu--active"
+        data-test="DesignSystem-HorizontalNavigation"
+      >
+        <i
+          class="material-icons Icon Icon--info mr-3"
+          data-test="DesignSystem-HorizontalNavigation--Icon"
+          style="font-size: 16px; width: 16px;"
+        >
+          events
+        </i>
+        <span
+          class="Text Text--link Text--regular"
+          data-test="DesignSystem-HorizontalNavigation--Text"
+        >
+          Tab #1
+        </span>
+      </div>
+      <div
+        class="Navigation-menu Navigation-menu--horizontal"
+        data-test="DesignSystem-HorizontalNavigation"
+      >
+        <span
+          class="Pills Badge--secondary Navigation-horizontalPills"
+          data-test="DesignSystem-HorizontalNavigation--Pills"
+        >
+          10
+        </span>
+        <span
+          class="Text Text--default Text--regular"
+          data-test="DesignSystem-HorizontalNavigation--Text"
+        >
+          Tab #2
+        </span>
+      </div>
+      <div
+        class="Navigation-menu Navigation-menu--horizontal Navigation-menu--disabled"
+        data-test="DesignSystem-HorizontalNavigation"
+      >
+        <span
+          class="Text Text--disabled Text--regular"
+          data-test="DesignSystem-HorizontalNavigation--Text"
+        >
+          Tab #3
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
