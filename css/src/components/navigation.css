@@ -34,12 +34,23 @@
 }
 
 .Navigation-menu--horizontal {
+  height: var(--spacing-3);
+  padding-right: var(--spacing-l);
+  padding-left: var(--spacing-l);
   border-radius: var(--spacing-2);
-  padding: var(--spacing-m) var(--spacing-l);
   margin: 0 var(--spacing-xs);
 }
 
-.Navigation-menu--active {
+.Navigation-menu--disabled {
+  pointer-events: none;
+}
+
+.Navigation-menu:hover {
+  background-color: var(--secondary-light);
+}
+
+.Navigation-menu--active,
+.Navigation-menu--active:hover {
   background: var(--primary-lightest);
 }
 
@@ -84,6 +95,14 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.Navigation-horizontalPills {
+  margin-right: var(--spacing-m);
+}
+
+.Navigation-horizontalPills--disabled {
+  opacity: 0.6;
 }
 
 .Navigation-footer {
