@@ -222,8 +222,8 @@
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/react-dom/index.d.ts": {
-        "version": "8483a29c17f7feb768a1f4333cf12ccf1e7341bd89dadcf407e012d5315228d0",
-        "signature": "8483a29c17f7feb768a1f4333cf12ccf1e7341bd89dadcf407e012d5315228d0",
+        "version": "bf2684235f5a5bf5d91c1cddb9255ecf9db2e2f2cc72c5ad4aac73033a31b81d",
+        "signature": "bf2684235f5a5bf5d91c1cddb9255ecf9db2e2f2cc72c5ad4aac73033a31b81d",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/backdrop/Backdrop.tsx": {
@@ -497,8 +497,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/column/Column.tsx": {
-        "version": "16054c03e0a90b39bda48bf587d287e78d8839dc5aa13a51f51362b72cf0b032",
-        "signature": "790df68eb3e6b7ccfb06591aaafcefa0a48b9d0cb58b912ac7352224e4d45d4e",
+        "version": "02d0895940403f4340e441c24deee41b514e8f27945c004c03ff791c6419093e",
+        "signature": "4951fc9e5f2bd374151b33e7765a30c2edb6475c5747bbb3b375fa93ab83314b",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/column/index.tsx": {
@@ -2532,7 +2532,7 @@
         "affectsGlobalScope": false
       },
       "../../core/utils/docPage.tsx": {
-        "version": "3f100b3a5a3c0e4559dc4454471fc49ad2136c8fbc32226d5b13ee6db215a477",
+        "version": "82acbc753bc85d8c6b37f07ef0afd87d07d12b4fa56d81ba2818c8168d24729c",
         "signature": "d793df693e1f566f2a7fd586a5ba76f93009c359e9795372d49bb1dafa1d2c00",
         "affectsGlobalScope": false
       },
@@ -2587,18 +2587,13 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@babel/types/lib/index.d.ts": {
-        "version": "368d98ad7e5cb65c247aa95c97e86b3812b4d91a74bafa6b0d4420d1ce91557c",
-        "signature": "368d98ad7e5cb65c247aa95c97e86b3812b4d91a74bafa6b0d4420d1ce91557c",
+        "version": "c13e280d244dc0829d954089e1d0446455efdb72fb4bdc2e3f0561ffbc66c905",
+        "signature": "c13e280d244dc0829d954089e1d0446455efdb72fb4bdc2e3f0561ffbc66c905",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/babel__generator/index.d.ts": {
         "version": "b25c5f2970d06c729f464c0aeaa64b1a5b5f1355aa93554bb5f9c199b8624b1e",
         "signature": "b25c5f2970d06c729f464c0aeaa64b1a5b5f1355aa93554bb5f9c199b8624b1e",
-        "affectsGlobalScope": false
-      },
-      "../../node_modules/@types/babel__traverse/ts4.1/index.d.ts": {
-        "version": "e60cdc881a28c83e48b0e6f4e335845c7bd83ff9d900a5ed7cc292747580450f",
-        "signature": "e60cdc881a28c83e48b0e6f4e335845c7bd83ff9d900a5ed7cc292747580450f",
         "affectsGlobalScope": false
       },
       "../../node_modules/@babel/parser/typings/babel-parser.d.ts": {
@@ -2611,9 +2606,14 @@
         "signature": "3051751533eee92572241b3cef28333212401408c4e7aa21718714b793c0f4ed",
         "affectsGlobalScope": false
       },
+      "../../node_modules/@types/babel__traverse/ts4.1/index.d.ts": {
+        "version": "e60cdc881a28c83e48b0e6f4e335845c7bd83ff9d900a5ed7cc292747580450f",
+        "signature": "e60cdc881a28c83e48b0e6f4e335845c7bd83ff9d900a5ed7cc292747580450f",
+        "affectsGlobalScope": false
+      },
       "../../node_modules/@types/babel__core/index.d.ts": {
-        "version": "f90b5f1a70d869ed6e275628b7483352d4b344e8d99155d5252b45d17fa9cd13",
-        "signature": "f90b5f1a70d869ed6e275628b7483352d4b344e8d99155d5252b45d17fa9cd13",
+        "version": "6f1d39d26959517da3bd105c552eded4c34702705c64d75b03f54d864b6e41c2",
+        "signature": "6f1d39d26959517da3bd105c552eded4c34702705c64d75b03f54d864b6e41c2",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/braces/index.d.ts": {
@@ -2852,8 +2852,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/cheerio/index.d.ts": {
-        "version": "99169805c2f7bdfc478ac41fdbc960f039db458984cb8a2ee7fb9b351ee74f3d",
-        "signature": "99169805c2f7bdfc478ac41fdbc960f039db458984cb8a2ee7fb9b351ee74f3d",
+        "version": "496086e48c978c6410a7dd1fee3c2c8f7abf297ed9f32e92672358c5ff9d1035",
+        "signature": "496086e48c978c6410a7dd1fee3c2c8f7abf297ed9f32e92672358c5ff9d1035",
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/enzyme/index.d.ts": {
@@ -5478,6 +5478,7 @@
       ],
       "../../core/utils/docPage.tsx": [
         "../../node_modules/@storybook/addon-docs/blocks.d.ts",
+        "../../node_modules/@storybook/components/dist/index.d.ts",
         "../../node_modules/@types/react-dom/server/index.d.ts",
         "../../node_modules/@types/react-syntax-highlighter/index.d.ts",
         "../../node_modules/@types/react/index.d.ts",
