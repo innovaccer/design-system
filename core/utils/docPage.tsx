@@ -11,8 +11,7 @@ import {
   Preview,
   Source,
   PropsProps,
-  Stories,
-  ArgsTable,
+  ArgsTable
 } from '@storybook/addon-docs/blocks';
 import { renderToStaticMarkup } from 'react-dom/server';
 import reactElementToJSXString from 'react-element-to-jsx-string';
@@ -22,14 +21,8 @@ import { docco, dark, a11yDark, githubGist, dracula, vs2015 } from 'react-syntax
 import * as DS from '@/';
 import { Button, Card, TabsWrapper, Tab } from '@/';
 import vsDark from 'prism-react-renderer/themes/vsDark';
-
-import {
-  LiveProvider,
-  LiveEditor,
-  LiveError,
-  LivePreview,
-  withLive
-} from 'react-live';
+import { resetComponents, Story as PureStory } from '@storybook/components';
+import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'react-live';
 
 export interface Example {
   title: string;
@@ -67,7 +60,7 @@ const JSXtoStringOptions = {
     return true;
   },
   showFunctions: true,
-  functionValue: _fn => _ => { },
+  functionValue: _fn => _ => {}
   // maxInlineAttributesLineLength: 10
 };
 
@@ -87,7 +80,14 @@ const CopyComp = props => {
         zIndex: 10
       }}
     >
-      <Button size="small" style={{ borderRadius: '0' }} appearance="basic" onClick={onClick}>Copy</Button>
+      <Button
+        size="tiny"
+        style={{ borderRadius: '0', borderBottomLeftRadius: '4px' }}
+        appearance="basic"
+        onClick={onClick}
+      >
+        Copy
+      </Button>
     </div>
   );
 };
@@ -113,11 +113,7 @@ const getStory = () => {
 };
 
 const StoryComp = props => {
-  const {
-    customCode,
-    noHtml,
-    noStory
-  } = props;
+  const { customCode, noHtml, noStory } = props;
 
   const { story, storyId } = getStory();
   const comp = story.getOriginal()();
@@ -134,38 +130,35 @@ ${importString}
 
 () => {
   return(
-${jsx.split('\n').map(l => `    ${l}`).join('\n')}
+${jsx
+  .split('\n')
+  .map(l => `    ${l}`)
+  .join('\n')}
   );
 }
   `;
   const [jsxCode, setJsxCode] = React.useState<string>(customCode ? customCode : code);
   const [htmlCode, setHtmlCode] = React.useState<string>(`${html}`);
+  const [isExpanded, setIsExpanded] = React.useState(false);
 
   const importScope = props.imports;
 
   const renderHTMLTab = () => {
     if (!noHtml) {
-      return (
-        <Tab label={'HTML'}>
-          {renderCodeBlock(htmlCode)}
-        </Tab>
-      );
+      return <Tab label={'HTML'}>{renderCodeBlock(htmlCode)}</Tab>;
     }
     return <></>;
   };
 
   const TabsWrap = withLive(({ live, currentTab }) => {
-    const {
-      error,
-      element: Element,
-    } = live;
+    const { error, element: Element } = live;
 
     React.useEffect(() => {
       if (!error && currentTab === 1) {
         try {
           const htmlValue = beautifyHTML(renderToStaticMarkup(<Element />), beautifyHTMLOptions);
           setHtmlCode(htmlValue);
-        } catch (e) { }
+        } catch (e) {}
       }
     }, [currentTab]);
 
@@ -178,40 +171,47 @@ ${jsx.split('\n').map(l => `    ${l}`).join('\n')}
 
   if (!noStory) {
     return (
-      <Card
-        shadow="light"
-        className="overflow-hidden"
-      >
+      <Card shadow="light" className="overflow-hidden">
         <LiveProvider code={jsxCode} scope={{ ...DS, ...importScope }}>
           <Preview
             className="my-0"
             withSource="none"
             withToolbar={true}
+            isExpanded={isExpanded}
+            additionalActions={[
+              {
+                title: `${!isExpanded ? 'Show' : 'Hide'} code`,
+                onClick: ev => {
+                  setIsExpanded(!isExpanded);
+                }
+              }
+            ]}
           >
             <LivePreview />
           </Preview>
 
-          <TabsWrap activeTab={activeTab} />
-          <div className="DocPage-editorTabs">
-            <TabsWrapper
-              activeTab={activeTab}
-              onTabChange={tab => setActiveTab(tab)}
-            >
-              <Tab label={'React'}>
-                <div style={{ position: 'relative' }}>
-                  <CopyComp
-                    onClick={() => {
-                      const editor = document.querySelector('.npm__react-simple-code-editor__textarea');
-                      if (editor) copyCode(editor.value);
-                    }}
-                  />
-                  <LiveEditor theme={vsDark} onChange={onChangeCode} />
-                  <LiveError />
-                </div>
-              </Tab>
-              {renderHTMLTab()}
-            </TabsWrapper>
-          </div>
+          {isExpanded && (
+            <>
+              <TabsWrap activeTab={activeTab} />
+              <div className="DocPage-editorTabs">
+                <TabsWrapper activeTab={activeTab} onTabChange={tab => setActiveTab(tab)}>
+                  <Tab label={'React'}>
+                    <div style={{ position: 'relative' }}>
+                      <CopyComp
+                        onClick={() => {
+                          const editor = document.querySelector('.npm__react-simple-code-editor__textarea');
+                          if (editor) copyCode(editor.value);
+                        }}
+                      />
+                      <LiveEditor theme={vsDark} onChange={onChangeCode} />
+                      <LiveError />
+                    </div>
+                  </Tab>
+                  {renderHTMLTab()}
+                </TabsWrapper>
+              </div>
+            </>
+          )}
         </LiveProvider>
       </Card>
     );
@@ -222,41 +222,34 @@ ${jsx.split('\n').map(l => `    ${l}`).join('\n')}
 export const docPage = () => {
   const { story, storyId } = getStory();
   const sp = story.parameters;
+  const isEmbed = window.location.search.includes('embed=true');
 
-  const {
-    title,
-    description,
-    props: propsAttr,
-    customCode,
-    noHtml,
-    noStory,
-    noProps,
-    imports
-  } = sp.docs.docPage || {};
+  const { title, description, props: propsAttr, customCode, noHtml, noStory, noProps = isEmbed, imports } =
+    sp.docs.docPage || {};
 
   const separatorIndex = title?.indexOf('|');
 
   return (
     <div className="DocPage">
-      <Title>{title && separatorIndex !== -1 ? title.slice(separatorIndex + 1) : title}</Title>
+      {!isEmbed && (
+        <>
+          <Title>{title && separatorIndex !== -1 ? title.slice(separatorIndex + 1) : title}</Title>
+          <br />
+        </>
+      )}
+      <Description>{description}</Description>
       <br />
 
-      <Description>
-        {description}
-      </Description>
-      <br />
-
-      {!noStory && (<Heading>Story</Heading>)}
       <StoryComp key={storyId} customCode={customCode} noHtml={noHtml} noStory={noStory} imports={imports} />
-      <br />
 
       {!noProps && (
         <>
+          <br />
+          <br />
           <Heading>PropTable</Heading>
           <ArgsTable story="." {...propsAttr} />
         </>
       )}
-      <Stories includePrimary={true} />
     </div>
   );
 };
