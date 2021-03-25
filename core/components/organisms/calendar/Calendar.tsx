@@ -130,8 +130,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     const currDate = rangePicker ? (endDate || startDate) : props.date;
 
-    const yearNav = props.yearNav || getDateInfo(currDate || Date.now()).year;
-    const monthNav = props.monthNav || getDateInfo(currDate || Date.now()).month;
+    const yearNav = props.yearNav !== undefined ? props.yearNav : getDateInfo(currDate || Date.now()).year;
+    const monthNav = props.monthNav !== undefined ? props.monthNav : getDateInfo(currDate || Date.now()).month;
     const { year, month, date } = getDateInfo(currDate);
 
     this.state = {
