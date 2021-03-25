@@ -23,6 +23,7 @@ import { Button, Card, TabsWrapper, Tab } from '@/';
 import vsDark from 'prism-react-renderer/themes/vsDark';
 import { resetComponents, Story as PureStory } from '@storybook/components';
 import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'react-live';
+import openSandbox from './sandbox';
 
 export interface Example {
   title: string;
@@ -179,6 +180,13 @@ ${jsx
             withToolbar={true}
             isExpanded={isExpanded}
             additionalActions={[
+              {
+                title: 'Edit in codeSandbox',
+                onClick: ev => {
+                  ev.preventDefault();
+                  openSandbox(jsxCode);
+                }
+              },
               {
                 title: `${!isExpanded ? 'Show' : 'Hide'} code`,
                 onClick: ev => {
