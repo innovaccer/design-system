@@ -6,10 +6,8 @@ import {
   Subtitle,
   Heading,
   Subheading,
-  Props,
   Description,
   Preview,
-  Source,
   PropsProps,
   ArgsTable
 } from '@storybook/addon-docs/blocks';
@@ -235,13 +233,11 @@ export const docPage = () => {
   const { title, description, props: propsAttr, customCode, noHtml, noStory, noProps = isEmbed, imports } =
     sp.docs.docPage || {};
 
-  const separatorIndex = title?.indexOf('|');
-
   return (
     <div className="DocPage">
       {!isEmbed && (
         <>
-          <Title>{title && separatorIndex !== -1 ? title.slice(separatorIndex + 1) : title}</Title>
+          <Title> {title || sp.component.displayName} </Title>
           <br />
         </>
       )}
@@ -255,7 +251,7 @@ export const docPage = () => {
           <br />
           <br />
           <Heading>PropTable</Heading>
-          <ArgsTable story="." {...propsAttr} />
+          <ArgsTable {...propsAttr} />
         </>
       )}
     </div>
