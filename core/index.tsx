@@ -47,6 +47,7 @@ export { Dialog } from './components/molecules/dialog';
 export { Modal } from './components/molecules/modal';
 export { FullscreenModal } from './components/molecules/fullscreenModal';
 export { Sidesheet } from './components/molecules/sidesheet';
+export { Collapsible } from './components/atoms/collapsible';
 export { ChatMessage } from './components/molecules/chatMessage';
 export { EmptyState } from './components/molecules/emptyState';
 export { ModalHeader } from './components/molecules/modalHeader';

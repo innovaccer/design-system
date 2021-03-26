@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Collapsible component 
+  expanded: false, hoverable: false, height: "100vh", onToggle: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Collapsible-wrapper Collapsible-wrapper--overlay"
+      data-test="DesignSystem-CollapsibleWrapper"
+      style="height: 100vh;"
+    >
+      <div
+        class="Collapsible Collapsible--overlay"
+        data-layer="true"
+        data-test="DesignSystem-Collapsible"
+      >
+        <div
+          class="Collapsible-body"
+          data-test="DesignSystem-CollapsibleBody"
+        >
+          <div>
+            Panel
+          </div>
+        </div>
+        <div
+          class="Collapsible-footer"
+          data-test="DesignSystem-Collapsible--Footer"
+        >
+          <i
+            class="material-icons Icon px-5 py-4 my-2 cursor-pointer"
+            data-test="DesignSystem-Collapsible--FooterIcon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_right
+          </i>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Collapsible component 
+  expanded: false, hoverable: true, height: "100vh", expandedWidth: 250, onToggle: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Collapsible-wrapper Collapsible-wrapper--overlay"
+      data-test="DesignSystem-CollapsibleWrapper"
+      style="height: 100vh;"
+    >
+      <div
+        class="Collapsible Collapsible--overlay"
+        data-layer="true"
+        data-test="DesignSystem-Collapsible"
+      >
+        <div
+          class="Collapsible-body"
+          data-test="DesignSystem-CollapsibleBody"
+        >
+          <div>
+            Panel
+          </div>
+        </div>
+        <div
+          class="Collapsible-footer"
+          data-test="DesignSystem-Collapsible--Footer"
+        >
+          <i
+            class="material-icons Icon px-5 py-4 my-2 cursor-pointer"
+            data-test="DesignSystem-Collapsible--FooterIcon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_right
+          </i>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Collapsible component 
+  expanded: true, hoverable: false, height: "100vh", onToggle: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Collapsible-wrapper Collapsible-wrapper--overlay"
+      data-test="DesignSystem-CollapsibleWrapper"
+      style="height: 100vh;"
+    >
+      <div
+        class="Collapsible Collapsible--overlay"
+        data-layer="true"
+        data-test="DesignSystem-Collapsible"
+      >
+        <div
+          class="Collapsible-body"
+          data-test="DesignSystem-CollapsibleBody"
+        >
+          <div>
+            Panel
+          </div>
+        </div>
+        <div
+          class="Collapsible-footer"
+          data-test="DesignSystem-Collapsible--Footer"
+        >
+          <i
+            class="material-icons Icon px-5 py-4 my-2 cursor-pointer"
+            data-test="DesignSystem-Collapsible--FooterIcon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_left
+          </i>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Collapsible component 
+  expanded: true, hoverable: true, height: "100vh", expandedWidth: 250, onToggle: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Collapsible-wrapper Collapsible-wrapper--overlay"
+      data-test="DesignSystem-CollapsibleWrapper"
+      style="height: 100vh;"
+    >
+      <div
+        class="Collapsible Collapsible--overlay"
+        data-layer="true"
+        data-test="DesignSystem-Collapsible"
+        style="width: 250px;"
+      >
+        <div
+          class="Collapsible-body"
+          data-test="DesignSystem-CollapsibleBody"
+        >
+          <div>
+            Panel
+          </div>
+        </div>
+        <div
+          class="Collapsible-footer"
+          data-test="DesignSystem-Collapsible--Footer"
+        >
+          <i
+            class="material-icons Icon px-5 py-4 my-2 cursor-pointer"
+            data-test="DesignSystem-Collapsible--FooterIcon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_left
+          </i>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
