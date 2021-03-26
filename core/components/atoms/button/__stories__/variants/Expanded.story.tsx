@@ -46,7 +46,7 @@ export const expanded = () => {
 };
 
 export default {
-  title: 'Components/Button/Variants',
+  title: 'Components/Button/Variants/Expanded',
   component: Button,
   parameters: {
     docs: {

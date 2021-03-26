@@ -17,7 +17,7 @@ export const selection = () => {
 };
 
 export default {
-  title: 'Components/Chip',
+  title: 'Components/Chip/Selection',
   component: Chip,
   parameters: {
     docs: {

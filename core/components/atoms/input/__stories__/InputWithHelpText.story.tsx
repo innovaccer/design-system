@@ -16,7 +16,7 @@ export const inputWithHelpText = () => (
 );
 
 export default {
-  title: 'Components/Input',
+  title: 'Components/Input/Input With Help Text',
   component: Input,
   parameters: {
     docs: {

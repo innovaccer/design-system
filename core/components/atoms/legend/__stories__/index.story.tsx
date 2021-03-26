@@ -44,7 +44,7 @@ const customCode = `() => {
     );
 }`;
 export default {
-  title: 'Components/Legend',
+  title: 'Components/Legend/All',
   component: Legend,
   parameters: {
     docs: {

@@ -110,7 +110,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Modal/Variants/Dimesion',
+  title: 'Components/Modal/Variants/Dimesion/Large',
   component: Modal,
   subcomponents: { ModalHeader, ModalBody, ModalDescription, ModalFooter },
   parameters: {

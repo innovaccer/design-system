@@ -17,7 +17,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Patterns/Layouts',
+  title: 'Patterns/Layouts/Resource Table Template',
   parameters: {
     docs: {
       docPage: {

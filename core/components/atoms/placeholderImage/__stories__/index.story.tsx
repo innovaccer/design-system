@@ -20,7 +20,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Placeholder/Image',
+  title: 'Components/Loaders/Placeholder/Image/All',
   component: PlaceholderImage,
   parameters: {
     docs: {

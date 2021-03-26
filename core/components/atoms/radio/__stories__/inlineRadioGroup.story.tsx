@@ -33,7 +33,7 @@ export const inlineRadioGroup = () => (
 );
 
 export default {
-  title: 'Components/Radio',
+  title: 'Components/Radio/Inline Radio Group',
   component: Radio,
   parameters: {
     docs: {

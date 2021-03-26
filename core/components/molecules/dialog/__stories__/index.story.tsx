@@ -95,7 +95,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Dialog',
+  title: 'Components/Dialog/All',
   component: Dialog,
   parameters: {
     docs: {

@@ -11,7 +11,7 @@ export const success = () => (
   );
 
 export default {
-  title: 'Components/Badge',
+  title: 'Components/Badge/Success',
   component: Badge,
   parameters: {
     docs: {

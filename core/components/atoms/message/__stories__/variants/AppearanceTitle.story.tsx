@@ -39,7 +39,7 @@ export const appearanceWithTitle = () => {
 };
 
 export default {
-  title: 'Components/Message/Variants',
+  title: 'Components/Message/Variants/Appearance With Title',
   component: Message,
   parameters: {
     docs: {

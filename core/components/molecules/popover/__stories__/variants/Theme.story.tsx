@@ -34,7 +34,7 @@ export const theme = () => {
 };
 
 export default {
-  title: 'Components/Popover/Variants',
+  title: 'Components/Popover/Variants/Theme',
   component: Popover,
   parameters: {
     docs: {

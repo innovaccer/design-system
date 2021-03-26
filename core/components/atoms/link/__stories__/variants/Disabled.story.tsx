@@ -16,7 +16,7 @@ export const disabled = () => {
 };
 
 export default {
-  title: 'Components/Link/Variants',
+  title: 'Components/Link/Variants/Disabled',
   component: Link,
   parameters: {
     docs: {

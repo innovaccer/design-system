@@ -28,7 +28,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Components/Heading/Variants',
+  title: 'Components/Heading/Variants/Appearance',
   component: Heading,
   parameters: {
     docs: {

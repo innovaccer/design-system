@@ -34,7 +34,7 @@ export const iconAppearance = () => {
 };
 
 export default {
-  title: 'Components/Legend/Variants',
+  title: 'Components/Legend/Variants/Icon Appearance',
   component: Legend,
   parameters: {
     docs: {

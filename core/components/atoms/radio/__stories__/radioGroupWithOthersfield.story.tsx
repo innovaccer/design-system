@@ -51,7 +51,7 @@ export const radioGroupWithOthersField = () => (
 );
 
 export default {
-  title: 'Components/Radio',
+  title: 'Components/Radio/Radio Group With Others Field',
   component: Radio,
   parameters: {
     docs: {

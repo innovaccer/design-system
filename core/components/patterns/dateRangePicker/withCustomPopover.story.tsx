@@ -146,7 +146,7 @@ const customCode = `
 export const withCustomPopover = () => <></>;
 
 export default {
-  title: 'Patterns/DateRangePicker',
+  title: 'Patterns/DateRangePicker/With Custom Popover',
   component: DateRangePicker,
   subcomponents: { InputMask },
   parameters: {

@@ -30,6 +30,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Tooltip',
+  title: 'Components/Tooltip/All',
   component: Tooltip
 };

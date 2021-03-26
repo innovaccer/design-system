@@ -49,7 +49,7 @@ export const showMenu = () => {
 };
 
 export default {
-  title: 'Components/Table/Variants',
+  title: 'Components/Table/Variants/Show Menu',
   component: Table,
   parameters: {
     docs: {

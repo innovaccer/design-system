@@ -20,7 +20,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/Text/Variants',
+  title: 'Components/Text/Variants/Size',
   component: Text,
   parameters: {
     docs: {

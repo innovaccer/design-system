@@ -22,7 +22,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Caption',
+  title: 'Components/Caption/All',
   component: Caption,
   parameters: {
     docs: {

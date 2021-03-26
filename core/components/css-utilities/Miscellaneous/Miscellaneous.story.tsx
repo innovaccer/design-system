@@ -45,6 +45,6 @@ export const miscellaneous = () => {
 };
 
 export default {
-  title: 'Others/Utilities',
-  component: miscellaneous,
+  title: 'Others/Utilities/Miscellaneous',
+  component: miscellaneous
 };

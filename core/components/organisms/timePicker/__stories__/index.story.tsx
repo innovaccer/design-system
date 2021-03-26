@@ -46,7 +46,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/TimePicker',
+  title: 'Components/TimePicker/All',
   component: TimePicker,
   parameters: {
     docs: {

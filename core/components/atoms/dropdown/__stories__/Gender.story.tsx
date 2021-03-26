@@ -26,7 +26,7 @@ export const gender = () => (
 );
 
 export default {
-  title: 'Components/Dropdown',
+  title: 'Components/Dropdown/Gender',
   component: Dropdown,
   parameters: {
     docs: {

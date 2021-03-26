@@ -15,7 +15,7 @@ export const menuHorizontal = () => (
 );
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Button/Menu Horizontal',
   component: Button,
   parameters: {
     docs: {

@@ -30,6 +30,6 @@ export const sliderLabel = () => {
 };
 
 export default {
-  title: 'Components/Slider/Variants',
-  component: Slider,
+  title: 'Components/Slider/Variants/Slider Label',
+  component: Slider
 };

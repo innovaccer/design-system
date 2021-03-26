@@ -15,7 +15,7 @@ export const inputWithLabel = () => (
 );
 
 export default {
-  title: 'Components/Input',
+  title: 'Components/Input/Input With Label',
   component: Input,
   parameters: {
     docs: {

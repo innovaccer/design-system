@@ -96,6 +96,6 @@ export const display = () => {
 };
 
 export default {
-  title: 'Others/Utilities',
-  component: display,
+  title: 'Others/Utilities/Display',
+  component: display
 };

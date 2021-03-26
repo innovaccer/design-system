@@ -108,7 +108,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Dropdown/Variants',
+  title: 'Components/Dropdown/Variants/Cutsom Option',
   component: Dropdown,
   parameters: {
     docs: {

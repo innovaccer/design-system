@@ -10,7 +10,7 @@ export const success = () => (
 );
 
 export default {
-  title: 'Components/StatusHint',
+  title: 'Components/StatusHint/Success',
   component: StatusHint,
   parameters: {
     docs: {

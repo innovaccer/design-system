@@ -24,7 +24,7 @@ export const iconButtonGroup = () => (
 );
 
 export default {
-  title: 'Components/ButtonGroup',
+  title: 'Components/ButtonGroup/Icon Button Group',
   component: Button,
   parameters: {
     docs: {

@@ -26,7 +26,7 @@ export const view = () => {
 };
 
 export default {
-  title: 'Components/DatePicker/Variants',
+  title: 'Components/DatePicker/Variants/View',
   component: DatePicker,
   parameters: {
     docs: {

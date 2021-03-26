@@ -16,7 +16,7 @@ export const downloadButton = () => (
 );
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Button/Download Button',
   component: Button,
   parameters: {
     docs: {

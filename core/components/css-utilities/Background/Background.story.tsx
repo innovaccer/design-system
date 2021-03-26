@@ -100,6 +100,6 @@ export const background = () => {
 };
 
 export default {
-  title: 'Others/Utilities',
-  component: background,
+  title: 'Others/Utilities/Background',
+  component: background
 };

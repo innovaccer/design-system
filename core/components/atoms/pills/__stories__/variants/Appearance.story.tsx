@@ -35,7 +35,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Components/Pills/Variants',
+  title: 'Components/Pills/Variants/Appearance',
   component: Pills,
   parameters: {
     docs: {

@@ -43,5 +43,5 @@ export const colors = () => {
 };
 
 export default {
-  title: 'Others/Design Tokens'
+  title: 'Others/Design Tokens/Colors'
 };

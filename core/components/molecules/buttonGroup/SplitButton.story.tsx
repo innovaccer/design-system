@@ -36,7 +36,7 @@ export const splitButton = () => (
 );
 
 export default {
-  title: 'Components/ButtonGroup',
+  title: 'Components/ButtonGroup/Split Button',
   component: Button,
   parameters: {
     docs: {

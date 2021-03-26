@@ -976,7 +976,7 @@ import './style.css';
 }`
 
 export default {
-  title: 'Patterns/Grid',
+  title: 'Patterns/Grid/Table With Header',
   parameters: {
     docs: {
       docPage: {

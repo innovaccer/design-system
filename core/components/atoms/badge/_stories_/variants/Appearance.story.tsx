@@ -35,7 +35,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Components/Badge/Variants',
+  title: 'Components/Badge/Variants/Appearance',
   component: Badge,
   parameters: {
     docs: {

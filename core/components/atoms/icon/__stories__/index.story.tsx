@@ -40,7 +40,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Icon',
+  title: 'Components/Icon/All',
   component: Icon,
   parameters: {
     docs: {

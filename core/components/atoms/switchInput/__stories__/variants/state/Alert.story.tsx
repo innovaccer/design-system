@@ -30,7 +30,7 @@ export const alert = () => {
 };
 
 export default {
-  title: 'Components/Switch/Variants/State',
+  title: 'Components/Switch/Variants/State/Alert',
   component: Switch,
   parameters: {
     docs: {

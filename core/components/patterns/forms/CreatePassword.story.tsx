@@ -161,7 +161,7 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Patterns/Forms',
+  title: 'Patterns/Forms/Create Password',
   parameters: {
     docs: {
       docPage: {

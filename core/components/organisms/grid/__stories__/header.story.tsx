@@ -85,6 +85,6 @@ export const header = () => {
 };
 
 export default {
-  title: 'Components/Grid',
-  component: Header,
+  title: 'Components/Grid/Header',
+  component: Header
 };

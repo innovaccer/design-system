@@ -48,7 +48,7 @@ export const icon = () => {
 };
 
 export default {
-  title: 'Components/Button/Variants/Icon',
+  title: 'Components/Button/Variants/Icon/Icon',
   component: Button,
   parameters: {
     docs: {

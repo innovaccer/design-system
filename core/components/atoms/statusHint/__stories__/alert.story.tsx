@@ -10,7 +10,7 @@ export const alert = () => (
 );
 
 export default {
-  title: 'Components/StatusHint',
+  title: 'Components/StatusHint/Alert',
   component: StatusHint,
   parameters: {
     docs: {

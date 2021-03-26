@@ -131,7 +131,7 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Components/FullscreenModal',
+  title: 'Components/FullscreenModal/Customized',
   component: FullscreenModal,
   parameters: {
     docs: {

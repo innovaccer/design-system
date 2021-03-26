@@ -74,6 +74,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Button/All',
   component: Button
 };

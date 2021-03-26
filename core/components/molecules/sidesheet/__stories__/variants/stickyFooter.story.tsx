@@ -157,7 +157,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Sidesheet',
+  title: 'Components/Sidesheet/Sticky Footer',
   component: Sidesheet,
   subcomponents: { ModalHeader, ModalBody, ModalDescription, ModalFooter },
   parameters: {

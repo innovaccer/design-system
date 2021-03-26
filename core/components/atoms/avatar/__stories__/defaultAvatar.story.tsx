@@ -6,7 +6,7 @@ export const defaultAvatar = () => (
 );
 
 export default {
-  title: 'Components/Avatar',
+  title: 'Components/Avatar/Default Avatar',
   component: Avatar,
   parameters: {
     docs: {

@@ -10,7 +10,7 @@ export const defaultCheckedWithLabel = () => (
 );
 
 export default {
-  title: 'Components/Checkbox',
+  title: 'Components/Checkbox/Default Checked With Label',
   component: Checkbox,
   parameters: {
     docs: {

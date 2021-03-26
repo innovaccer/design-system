@@ -73,6 +73,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/DonutChart',
+  title: 'Components/DonutChart/All',
   component: DonutChart
 };

@@ -88,7 +88,7 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Patterns/Forms',
+  title: 'Patterns/Forms/Time Period Form',
   parameters: {
     docs: {
       docPage: {

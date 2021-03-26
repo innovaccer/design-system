@@ -49,7 +49,7 @@ export const showHead = () => {
 };
 
 export default {
-  title: 'Components/Table/Variants',
+  title: 'Components/Table/Variants/Show Head',
   component: Table,
   parameters: {
     docs: {

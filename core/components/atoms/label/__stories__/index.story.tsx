@@ -20,7 +20,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Label',
+  title: 'Components/Label/All',
   component: Label,
   parameters: {
     docs: {

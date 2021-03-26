@@ -9,7 +9,7 @@ export const defaultChecked = () => (
 );
 
 export default {
-  title: 'Components/Checkbox',
+  title: 'Components/Checkbox/Default Checked',
   component: Checkbox,
   parameters: {
     docs: {

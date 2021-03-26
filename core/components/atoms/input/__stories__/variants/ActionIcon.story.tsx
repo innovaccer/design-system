@@ -29,7 +29,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Input/Variants',
+  title: 'Components/Input/Variants/Action Icon',
   component: Input,
   parameters: {
     docs: {

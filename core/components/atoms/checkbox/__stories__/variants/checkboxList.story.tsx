@@ -115,7 +115,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Checkbox/Variants',
+  title: 'Components/Checkbox/Variants/Checkbox List',
   component: Checkbox,
   parameters: {
     docs: {

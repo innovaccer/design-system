@@ -41,7 +41,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Components/Icon/Variants',
+  title: 'Components/Icon/Variants/Appearance',
   component: Icon,
   parameters: {
     docs: {

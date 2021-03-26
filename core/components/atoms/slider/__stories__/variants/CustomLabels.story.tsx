@@ -52,12 +52,12 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Slider/Variants',
+  title: 'Components/Slider/Variants/Cutsom Labels',
   component: Slider,
   parameters: {
     docs: {
       docPage: {
-        customCode,
+        customCode
       }
     }
   }

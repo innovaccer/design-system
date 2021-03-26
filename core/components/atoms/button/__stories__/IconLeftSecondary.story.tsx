@@ -16,7 +16,7 @@ export const iconLeftSecondary = () => (
 );
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Button/Icon Left Secondary',
   component: Button,
   parameters: {
     docs: {

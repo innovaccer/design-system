@@ -52,7 +52,7 @@ export const withPagination = () => {
 };
 
 export default {
-  title: 'Components/Table/Variants',
+  title: 'Components/Table/Variants/With Pagination',
   component: Table,
   parameters: {
     docs: {

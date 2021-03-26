@@ -95,7 +95,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Stepper',
+  title: 'Components/Stepper/Stepper With Trigger',
   component: Stepper,
   parameters: {
     docs: {

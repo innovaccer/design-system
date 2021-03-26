@@ -24,7 +24,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Placeholder/Paragraph',
+  title: 'Components/Loaders/Placeholder/Paragraph/All',
   component: PlaceholderParagraph,
   parameters: {
     docs: {

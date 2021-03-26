@@ -28,7 +28,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/Radio/Variants',
+  title: 'Components/Radio/Variants/Size',
   component: Radio,
   parameters: {
     docs: {

@@ -10,7 +10,7 @@ export const ongoing = () => (
 );
 
 export default {
-  title: 'Components/StatusHint',
+  title: 'Components/StatusHint/Ongoing',
   component: StatusHint,
   parameters: {
     docs: {

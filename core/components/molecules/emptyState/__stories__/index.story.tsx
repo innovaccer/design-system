@@ -25,6 +25,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/EmptyState',
-  component: EmptyState,
+  title: 'Components/EmptyState/All',
+  component: EmptyState
 };
