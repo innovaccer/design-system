@@ -20,5 +20,5 @@ export const spacing = () => {
 };
 
 export default {
-  title: 'Others/Design Tokens'
+  title: 'Others/Design Tokens/Spacing'
 };

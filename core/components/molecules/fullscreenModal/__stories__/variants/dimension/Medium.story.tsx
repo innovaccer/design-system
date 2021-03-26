@@ -137,7 +137,7 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Components/FullscreenModal/Variants/Dimesion',
+  title: 'Components/FullscreenModal/Variants/Dimesion/Medium',
   component: FullscreenModal,
   parameters: {
     docs: {

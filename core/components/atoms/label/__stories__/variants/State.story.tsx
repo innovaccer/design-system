@@ -20,7 +20,7 @@ export const state = () => {
 };
 
 export default {
-  title: 'Components/Label/Variants',
+  title: 'Components/Label/Variants/State',
   component: Label,
   parameters: {
     docs: {

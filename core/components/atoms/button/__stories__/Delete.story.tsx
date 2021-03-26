@@ -14,7 +14,7 @@ export const deleteButton = () => (
 );
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Button/Delete Button',
   component: Button,
   parameters: {
     docs: {

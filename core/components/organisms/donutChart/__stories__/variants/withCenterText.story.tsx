@@ -26,7 +26,7 @@ export const withCenterText = () => {
 };
 
 export default {
-  title: 'Components/DonutChart/Variants',
+  title: 'Components/DonutChart/Variants/With Center Text',
   component: DonutChart,
   parameters: {
     docs: {

@@ -15,7 +15,7 @@ export const input = () => (
 );
 
 export default {
-  title: 'Components/Chip',
+  title: 'Components/Chip/Input',
   component: Chip,
   parameters: {
     docs: {

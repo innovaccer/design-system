@@ -12,7 +12,7 @@ export const searchInput = () => (
 );
 
 export default {
-  title: 'Components/Input',
+  title: 'Components/Input/Search Input',
   component: Input,
   parameters: {
     docs: {

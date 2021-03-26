@@ -47,7 +47,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/Input/Variants',
+  title: 'Components/Input/Variants/Size',
   component: Input,
   parameters: {
     docs: {

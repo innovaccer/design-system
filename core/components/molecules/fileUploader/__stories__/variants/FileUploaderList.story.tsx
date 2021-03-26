@@ -75,7 +75,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/FileUploader',
+  title: 'Components/FileUploader/File Uploader List',
   component: FileUploaderList,
   parameters: {
     docs: {

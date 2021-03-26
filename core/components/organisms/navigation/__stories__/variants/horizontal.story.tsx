@@ -112,7 +112,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Navigation/Variants',
+  title: 'Components/Navigation/Variants/Horizontal',
   component: Navigation,
   parameters: {
     docs: {

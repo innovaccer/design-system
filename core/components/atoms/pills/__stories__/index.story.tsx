@@ -25,6 +25,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Pills',
+  title: 'Components/Pills/All',
   component: Pills
 };

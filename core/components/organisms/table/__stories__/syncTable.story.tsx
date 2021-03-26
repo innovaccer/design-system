@@ -179,7 +179,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Table',
+  title: 'Components/Table/Sync Table',
   component: Table,
   parameters: {
     docs: {

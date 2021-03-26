@@ -77,7 +77,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Tabs',
+  title: 'Components/Tabs/All',
   component: TabsWrapper,
   subcomponents: { Tab }
 };

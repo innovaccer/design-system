@@ -10,7 +10,7 @@ export const inactive = () => (
 );
 
 export default {
-  title: 'Components/StatusHint',
+  title: 'Components/StatusHint/Inactive',
   component: StatusHint,
   parameters: {
     docs: {

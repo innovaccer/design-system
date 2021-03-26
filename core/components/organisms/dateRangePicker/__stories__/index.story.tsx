@@ -130,7 +130,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/DateRangePicker',
+  title: 'Components/DateRangePicker/All',
   component: DateRangePicker,
   subcomponents: { InputMask }
 };

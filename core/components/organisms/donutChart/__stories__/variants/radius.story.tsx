@@ -25,7 +25,7 @@ export const radius = () => {
 };
 
 export default {
-  title: 'Components/DonutChart/Variants',
+  title: 'Components/DonutChart/Variants/Radius',
   component: DonutChart,
   parameters: {
     docs: {

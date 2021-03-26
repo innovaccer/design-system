@@ -171,7 +171,7 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Patterns/Forms',
+  title: 'Patterns/Forms/Create User',
   parameters: {
     docs: {
       docPage: {

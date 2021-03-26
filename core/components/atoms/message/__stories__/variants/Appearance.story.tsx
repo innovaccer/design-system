@@ -32,7 +32,7 @@ export const appearanceWithoutTitle = () => {
 };
 
 export default {
-  title: 'Components/Message/Variants',
+  title: 'Components/Message/Variants/Appearance Without Title',
   component: Message,
   parameters: {
     docs: {

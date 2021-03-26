@@ -25,7 +25,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Components/Paragraph/Variants',
+  title: 'Components/Paragraph/Variants/Appearance',
   component: Paragraph,
   parameters: {
     docs: {

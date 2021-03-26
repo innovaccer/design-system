@@ -163,7 +163,7 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Patterns/Forms',
+  title: 'Patterns/Forms/Inline Form',
   parameters: {
     docs: {
       docPage: {

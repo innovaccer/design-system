@@ -187,7 +187,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Table/Variants',
+  title: 'Components/Table/Variants/With Editable Cell',
   component: Table,
   parameters: {
     docs: {

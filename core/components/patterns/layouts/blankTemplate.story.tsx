@@ -13,7 +13,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Patterns/Layouts',
+  title: 'Patterns/Layouts/Blank Template',
   parameters: {
     docs: {
       docPage: {

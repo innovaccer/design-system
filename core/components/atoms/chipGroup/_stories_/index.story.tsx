@@ -33,6 +33,6 @@ export const all = () => {
   );
 };
 export default {
-  title: 'Components/ChipGroup',
+  title: 'Components/ChipGroup/All',
   component: ChipGroup
 };

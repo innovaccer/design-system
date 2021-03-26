@@ -29,7 +29,7 @@ export const statusWithLabel = () => (
 );
 
 export default {
-  title: 'Components/Dropdown',
+  title: 'Components/Dropdown/Status With Label',
   component: Dropdown,
   parameters: {
     docs: {

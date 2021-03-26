@@ -81,7 +81,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/FileUploader',
+  title: 'Components/FileUploader/All',
   component: FileUploader,
   parameters: {
     docs: {

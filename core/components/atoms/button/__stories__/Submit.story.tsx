@@ -14,7 +14,7 @@ export const submitButton = () => (
 );
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Button/Submit Button',
   component: Button,
   parameters: {
     docs: {

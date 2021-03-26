@@ -49,12 +49,12 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Slider/Variants',
+  title: 'Components/Slider/Variants/Controlled Slider',
   component: Slider,
   parameters: {
     docs: {
       docPage: {
-        customCode,
+        customCode
       }
     }
   }

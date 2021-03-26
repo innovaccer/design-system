@@ -32,7 +32,7 @@ export const type = () => {
 };
 
 export default {
-  title: 'Components/Icon/Variants',
+  title: 'Components/Icon/Variants/Type',
   component: Icon,
   parameters: {
     docs: {

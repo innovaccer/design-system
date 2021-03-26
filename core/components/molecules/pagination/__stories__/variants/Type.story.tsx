@@ -47,7 +47,7 @@ export const type = () => {
 };
 
 export default {
-  title: 'Components/Pagination/Variants',
+  title: 'Components/Pagination/Variants/Type',
   component: Pagination,
   parameters: {
     docs: {

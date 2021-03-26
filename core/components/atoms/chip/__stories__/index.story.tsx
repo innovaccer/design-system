@@ -54,6 +54,6 @@ export const all = () => {
   );
 };
 export default {
-  title: 'Components/Chip',
+  title: 'Components/Chip/All',
   component: Chip
 };

@@ -11,7 +11,7 @@ export const defaultRadio = () => (
 );
 
 export default {
-  title: 'Components/Radio',
+  title: 'Components/Radio/Default Radio',
   component: Radio,
   parameters: {
     docs: {

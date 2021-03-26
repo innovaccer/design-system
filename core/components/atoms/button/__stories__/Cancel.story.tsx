@@ -14,7 +14,7 @@ export const cancelButton = () => (
 );
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Button/Cancel Button',
   component: Button,
   parameters: {
     docs: {

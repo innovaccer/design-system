@@ -14,7 +14,7 @@ export const loadingPrimary = () => (
 );
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Button/Loading Primary',
   component: Button,
   parameters: {
     docs: {

@@ -10,7 +10,7 @@ export const completed = () => (
 );
 
 export default {
-  title: 'Components/StatusHint',
+  title: 'Components/StatusHint/Completed',
   component: StatusHint,
   parameters: {
     docs: {

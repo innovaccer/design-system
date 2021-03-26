@@ -38,6 +38,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Card',
+  title: 'Components/Card/All',
   component: Card
 };

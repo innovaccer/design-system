@@ -26,7 +26,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/ProgressRing/Variants',
+  title: 'Components/ProgressRing/Variants/Size',
   component: ProgressRing,
   parameters: {
     docs: {

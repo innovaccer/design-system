@@ -11,7 +11,7 @@ export const tiny = () => (
 );
 
 export default {
-  title: 'Components/Switch',
+  title: 'Components/Switch/Tiny',
   component: Switch,
   parameters: {
     docs: {

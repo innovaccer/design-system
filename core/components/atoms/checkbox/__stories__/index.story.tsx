@@ -51,6 +51,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Checkbox',
+  title: 'Components/Checkbox/All',
   component: Checkbox
 };

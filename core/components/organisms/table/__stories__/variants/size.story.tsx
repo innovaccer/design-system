@@ -49,7 +49,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/Table/Variants',
+  title: 'Components/Table/Variants/Size',
   component: Table,
   parameters: {
     docs: {

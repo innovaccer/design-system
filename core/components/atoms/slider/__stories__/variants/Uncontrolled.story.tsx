@@ -17,6 +17,6 @@ export const uncontrolledSlider = () => {
 };
 
 export default {
-  title: 'Components/Slider/Variants',
-  component: Slider,
+  title: 'Components/Slider/Variants/Uncontrolled Slider',
+  component: Slider
 };

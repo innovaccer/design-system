@@ -25,7 +25,7 @@ export const donutWidth = () => {
 };
 
 export default {
-  title: 'Components/DonutChart/Variants',
+  title: 'Components/DonutChart/Variants/Donut Width',
   component: DonutChart,
   parameters: {
     docs: {

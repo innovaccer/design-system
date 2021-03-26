@@ -50,12 +50,12 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/RangeSlider/Variants',
+  title: 'Components/RangeSlider/Variants/Controlled Slider',
   component: RangeSlider,
   parameters: {
     docs: {
       docPage: {
-        customCode,
+        customCode
       }
     }
   }

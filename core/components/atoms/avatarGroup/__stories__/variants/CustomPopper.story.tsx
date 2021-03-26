@@ -103,12 +103,12 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/AvatarGroup/Variants',
+  title: 'Components/AvatarGroup/Variants/Custom Popper',
   component: AvatarGroup,
   parameters: {
     docs: {
       docPage: {
-        customCode,
+        customCode
       }
     }
   }

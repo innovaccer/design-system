@@ -16,7 +16,7 @@ export const LargeIconRightPrimary = () => (
 );
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Button/Large Icon Right Primary',
   component: Button,
   parameters: {
     docs: {

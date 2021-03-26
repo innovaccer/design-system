@@ -59,6 +59,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Toast',
-  component: Toast,
+  title: 'Components/Toast/All',
+  component: Toast
 };

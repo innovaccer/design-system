@@ -15,7 +15,7 @@ export const emailInput = () => (
 );
 
 export default {
-  title: 'Components/Input',
+  title: 'Components/Input/Email Input',
   component: Input,
   parameters: {
     docs: {

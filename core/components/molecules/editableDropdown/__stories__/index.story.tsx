@@ -99,12 +99,12 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/EditableDropdown',
+  title: 'Components/EditableDropdown/All',
   component: EditableDropdown,
   parameters: {
     docs: {
       docPage: {
-        customCode,
+        customCode
       }
     }
   }

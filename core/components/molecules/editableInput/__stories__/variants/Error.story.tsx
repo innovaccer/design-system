@@ -43,12 +43,12 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/EditableInput/Variants',
+  title: 'Components/EditableInput/Variants/Error',
   component: EditableInput,
   parameters: {
     docs: {
       docPage: {
-        customCode,
+        customCode
       }
     }
   }

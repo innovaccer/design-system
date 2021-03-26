@@ -138,7 +138,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Sidesheet',
+  title: 'Components/Sidesheet/All',
   component: Sidesheet,
   subcomponents: { ModalHeader, ModalBody, ModalDescription, ModalFooter },
   parameters: {

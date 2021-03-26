@@ -11,7 +11,7 @@ export const info = () => (
 );
 
 export default {
-  title: 'Components/Pills',
+  title: 'Components/Pills/Info',
   component: Pills,
   parameters: {
     docs: {

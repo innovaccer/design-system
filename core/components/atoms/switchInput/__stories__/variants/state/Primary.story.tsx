@@ -28,7 +28,7 @@ export const primary = () => {
 };
 
 export default {
-  title: 'Components/Switch/Variants/State',
+  title: 'Components/Switch/Variants/State/Primary',
   component: Switch,
   parameters: {
     docs: {

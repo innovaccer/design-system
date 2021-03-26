@@ -25,7 +25,7 @@ export const withLegends = () => {
 };
 
 export default {
-  title: 'Components/DonutChart/Variants',
+  title: 'Components/DonutChart/Variants/With Legends',
   component: DonutChart,
   parameters: {
     docs: {

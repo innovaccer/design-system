@@ -26,6 +26,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/MetaList',
+  title: 'Components/MetaList/All',
   component: MetaList
 };

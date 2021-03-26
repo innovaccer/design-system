@@ -98,7 +98,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Navigation',
+  title: 'Components/Navigation/Navigation Tabs With Count',
   component: Navigation,
   parameters: {
     docs: {

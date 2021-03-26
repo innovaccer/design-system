@@ -141,12 +141,12 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Grid',
+  title: 'Components/Grid/All',
   component: Grid,
   parameters: {
     docs: {
       docPage: {
-        noStory: true,
+        noStory: true
       }
     }
   }

@@ -36,6 +36,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/RangeSlider',
-  component: RangeSlider,
+  title: 'Components/RangeSlider/All',
+  component: RangeSlider
 };

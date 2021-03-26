@@ -17,7 +17,7 @@ export const labelWeight = () => {
 };
 
 export default {
-  title: 'Components/Legend/Variants',
+  title: 'Components/Legend/Variants/Label Weight',
   component: Legend,
   parameters: {
     docs: {

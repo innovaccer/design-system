@@ -75,7 +75,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Dialog/Variants/PrimaryButton',
+  title: 'Components/Dialog/Variants/PrimaryButton/Primary',
   component: Dialog,
   parameters: {
     docs: {

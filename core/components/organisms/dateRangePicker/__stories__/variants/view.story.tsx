@@ -29,7 +29,7 @@ export const view = () => {
 };
 
 export default {
-  title: 'Components/DateRangePicker/Variants',
+  title: 'Components/DateRangePicker/Variants/View',
   component: DateRangePicker,
   parameters: {
     docs: {
