@@ -13,7 +13,7 @@
     "test": "jest --coverage",
     "test:ci": "jest --onlyChanged",
     "start": "start-storybook -p 5000",
-    "dev": "concurrently --kill-others \"npm run watch-css\" \"npm run start\"",
+    "dev": "concurrently --kill-others --raw \"npm run watch-css\" \"npm run start\"",
     "storybook": "start-storybook",
     "build-storybook": "build-storybook -c .storybook -o .dist --loglevel error",
     "deploy-storybook": "storybook-to-ghpages",

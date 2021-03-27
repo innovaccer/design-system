@@ -1,7 +1,6 @@
 import React from 'react';
 import '../css';
 import './docPage.css'
-import { primary } from './themes';
 import { addParameters } from '@storybook/react';
 import { DocsContainer } from '@storybook/addon-docs/blocks';
 import { docPage } from '@/utils/docPage';
@@ -36,10 +35,6 @@ export const parameters = {
   },
   controls: { expanded: true },
   options: {
-    /**
-     * theme storybook
-     */
-    theme: primary,
     /**
      * function to sort stories in the tree view
      * common use is alphabetical `(a, b) => a[1].id.localeCompare(b[1].id)`

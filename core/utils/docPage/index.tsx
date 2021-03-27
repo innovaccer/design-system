@@ -7,7 +7,7 @@ import {
   Heading,
   Subheading,
   Description,
-  Preview,
+  Canvas,
   PropsProps,
   ArgsTable
 } from '@storybook/addon-docs/blocks';
@@ -172,7 +172,7 @@ ${jsx
     return (
       <Card shadow="light" className="overflow-hidden">
         <LiveProvider code={jsxCode} scope={{ ...DS, ...importScope }}>
-          <Preview
+          <Canvas
             className="my-0"
             withSource="none"
             withToolbar={true}
@@ -194,7 +194,7 @@ ${jsx
             ]}
           >
             <LivePreview />
-          </Preview>
+          </Canvas>
 
           {isExpanded && (
             <>
