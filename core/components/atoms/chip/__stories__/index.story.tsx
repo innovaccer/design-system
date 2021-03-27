@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { select, boolean, text } from '@storybook/addon-knobs';
 import Chip from '../Chip';
-// import { updateKnob } from '@/utils/storybookEventEmitter';
 import { action } from '@storybook/addon-actions';
 
 export const all = () => {

@@ -3,8 +3,6 @@ import * as React from 'react';
 export const timePeriodForm = () =>  <></>;
 
 const customCode = `
-// import * as React from 'react';
-// import { Button, Label, Card, Slider, Text, Heading, DateRangePicker, Dropdown, Link, Paragraph } from 'design-system';
 
 () => {
   class TimePeriodForm extends React.Component {
