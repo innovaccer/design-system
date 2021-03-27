@@ -11,6 +11,7 @@ export type Dimension = 'regular' | 'large';
 export interface SidesheetProps extends BaseProps {
   /**
    * Heading Options
+   *
    * <pre className="DocPage-codeBlock">
    * Header:
    * {

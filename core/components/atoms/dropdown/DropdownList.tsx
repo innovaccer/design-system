@@ -255,7 +255,7 @@ const DropdownList = (props: OptionsProps) => {
   } = props;
 
   const CustomTrigger = customTrigger ? customTrigger(triggerLabel ? triggerLabel : placeholder) : <></>;
-  const NewCustomTrigger = React.cloneElement(CustomTrigger, { tabindex: 0, ref: dropdownTriggerRef });
+  const NewCustomTrigger = React.cloneElement(CustomTrigger, { tabIndex: 0, ref: dropdownTriggerRef });
 
   const trigger = customTrigger ? NewCustomTrigger : (
     <DropdownButton

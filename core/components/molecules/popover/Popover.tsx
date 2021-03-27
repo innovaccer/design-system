@@ -57,6 +57,7 @@ export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, Bas
   dark?: boolean;
   /**
    * Adds custom CSS to `Popover` element
+   *
    * <pre className="DocPage-codeBlock">
    * CustomStyle {
    *  height?: number | string;

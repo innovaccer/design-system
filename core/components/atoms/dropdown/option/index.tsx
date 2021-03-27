@@ -15,6 +15,7 @@ export type ClickEvent = React.MouseEvent<HTMLDivElement>;
 export interface OptionRendererProps {
   /**
    * Adds custom option
+   *
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * OptionProps: {
    *   optionData: Option;
