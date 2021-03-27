@@ -3,8 +3,6 @@ import * as React from 'react';
 export const createPassword = () => <></>;
 
 const customCode = `
-// import * as React from 'react';
-// import { Input, Button, Text, Label, Icon, Card } from 'design-system';
 
 () => {
   const passwordRequirements = [

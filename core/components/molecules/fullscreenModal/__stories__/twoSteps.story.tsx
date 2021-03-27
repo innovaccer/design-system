@@ -89,7 +89,6 @@ export const twoSteps = () => {
 };
 
 const customCode = `
-// import { FullscreenModal, Paragraph, Button, Heading, Text } from '@innovaccer/design-system';
 () => {
   const [open, setOpen] = React.useState(false);
   const [page, setPage] = React.useState(0);

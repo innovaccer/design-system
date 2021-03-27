@@ -3,8 +3,6 @@ import * as React from 'react';
 export const InlineLabelForm = () => <></>;
 
 const customCode = `
-// import * as React from 'react';
-// import { Input, Button, Label, Card, Dropdown, Text, Checkbox, Icon, Radio, InputMask } from 'design-system';
 
 () => {
   const languages = [

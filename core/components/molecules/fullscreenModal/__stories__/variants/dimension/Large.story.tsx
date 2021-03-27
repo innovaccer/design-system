@@ -69,7 +69,6 @@ export const large = () => {
 };
 
 const customCode = `
-// import { FullscreenModal, Paragraph, Button, Heading, Text } from '@innovaccer/design-system';
 () => {
   const [open, setOpen] = React.useState(false);
 

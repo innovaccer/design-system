@@ -3,8 +3,6 @@ import * as React from 'react';
 export const stepperForm = () => <></>;
 
 const customCode = `
-// import * as React from 'react';
-// import { Button, Label, Card, Stepper, Text, Heading, DateRangePicker, Dropdown, Link, Paragraph } from 'design-system';
 
 () => {
   const steps = [

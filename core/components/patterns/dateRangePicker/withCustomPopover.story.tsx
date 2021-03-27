@@ -2,8 +2,6 @@ import * as React from 'react';
 import { DateRangePicker, InputMask } from '@/index';
 
 const customCode = `
-// import * as React from 'react';
-// import { DateRangePicker, InputMask, Heading, Radio, Icon } from '@/index';
 
 () => {
    class CustomPopover extends React.Component {

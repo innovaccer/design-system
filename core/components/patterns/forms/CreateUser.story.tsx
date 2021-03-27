@@ -3,8 +3,6 @@ import * as React from 'react';
 export const createUser = () => <></>;
 
 const customCode = `
-// import * as React from 'react';
-// import { Input, Button, Label, Card, DatePicker, Dropdown, Text, Row, Column } from 'design-system';
 
 () => {
   const genderOptions = [

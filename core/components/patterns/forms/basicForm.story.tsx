@@ -3,8 +3,6 @@ import * as React from 'react';
 export const basicForm = () => <></>;
 
 const customCode = `
-// import * as React from 'react';
-// import { Input, Button, Heading, Label, Icon, Link, Card } from 'design-system';
 
 () => {
   class BasicForm extends React.Component {
