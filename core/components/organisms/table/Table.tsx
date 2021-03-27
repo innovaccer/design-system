@@ -176,6 +176,7 @@ interface SharedTableProps extends BaseProps {
   nestedRows?: GridProps['nestedRows'];
   /**
    * Renderer to be used for nested rows
+   *
    * <pre className="DocPage-codeBlock">
    * NestedRowProps: {
    *    rowIndex: number;
@@ -255,6 +256,7 @@ interface SharedTableProps extends BaseProps {
   multipleSorting: boolean;
   /**
    * Initial sortingList passed to `Table`
+   *
    * <pre className="DocPage-codeBlock">
    * SortType: 'asc' | 'desc'
    * </pre>
@@ -263,6 +265,7 @@ interface SharedTableProps extends BaseProps {
   sortingList: GridProps['sortingList'];
   /**
    * Initial filterList passed to `Table`
+   *
    * <pre className="DocPage-codeBlock">
    * Filter: Array of selected values passed in dropdown
    * `any[]`
@@ -272,6 +275,7 @@ interface SharedTableProps extends BaseProps {
   filterList: GridProps['filterList'];
   /**
    * Template to be rendered when **error: true**
+   *
    * <pre className="DocPage-codeBlock">
    * ErrorTemplateProps: {
    *    errorType: TableProps['errorType']
@@ -388,6 +392,7 @@ export const defaultProps = {
  *    - Promise reject:
  *      error: true, errorType: 'FAILED\_TO\_FETCH'
  * 3. Default errorTemplate:
+ *
  * <pre class="DocPage-codeBlock">
  * (props) => {
  *      const { errorType = 'DEFAULT' } = props;

@@ -13,6 +13,7 @@ interface Breadcrumb {
 export interface BreadcrumbsProps extends BaseProps {
   /**
    * List of `Breadcrumb` props
+   *
    * <pre className="DocPage-codeBlock">
    * Breadcrumb: {
    *    label: string;

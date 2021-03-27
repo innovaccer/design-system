@@ -90,6 +90,7 @@ interface SyncProps {
 interface AsyncProps {
   /**
    * Callback function to fetch options from API
+   *
    * <pre className="DocPage-codeBlock">
    * fetchOptionsFunction: (searchTerm: string) => Promise<{
    *      count: number,
