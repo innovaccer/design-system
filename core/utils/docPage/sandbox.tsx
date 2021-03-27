@@ -42,9 +42,18 @@ ReactDOM.render(<App />, document.getElementById("root"));
 `;
 
   const html = `
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <div id="root"></div>
+<link
+  href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+<div class="p-6">
+  <div id="root"></div>
+</div>
+
   `;
 
   const parameters = getParameters({
