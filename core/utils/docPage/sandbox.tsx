@@ -27,8 +27,11 @@ const getParameters = (options: { files: IFiles }) => {
 export default (jsxStoryCode: string) => {
   const structuredCode = jsxStoryCode
     .trim()
-    .replace('// import', 'import')
-    .replace('() => {', 'const App = () => {');
+    // @ts-ignore
+    .replaceAll('// import', 'import')
+    .replace('() => {', 'const App = () => {')
+    .replaceAll('<>', '<React.Fragment>')
+    .replaceAll('</>', '</React.Fragment>');
   const code = `
 import ReactDOM from "react-dom";
 import React from "react";
