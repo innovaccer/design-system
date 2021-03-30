@@ -6,6 +6,7 @@ export { Backdrop } from './components/atoms/backdrop';
 export { Badge } from './components/atoms/badge';
 export { Breadcrumbs } from './components/atoms/breadcrumbs';
 export { Button } from './components/atoms/button';
+export { Calendar } from './components/organisms/calendar';
 export { Card } from './components/atoms/card';
 export { Chip } from './components/atoms/chip';
 export { ChipGroup } from './components/atoms/chipGroup';
