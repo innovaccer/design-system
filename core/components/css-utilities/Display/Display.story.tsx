@@ -97,5 +97,12 @@ export const display = () => {
 
 export default {
   title: 'Others/Utilities/Display',
-  component: display
+  component: display,
+  parameters: {
+    docs: {
+      docPage: {
+        noProps: true
+      }
+    }
+  }
 };

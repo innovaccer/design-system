@@ -81,5 +81,12 @@ export const align = () => {
 
 export default {
   title: 'Others/Utilities/Align',
-  component: align
+  component: align,
+  parameters: {
+    docs: {
+      docPage: {
+        noProps: true
+      }
+    }
+  }
 };

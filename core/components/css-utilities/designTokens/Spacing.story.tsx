@@ -20,5 +20,12 @@ export const spacing = () => {
 };
 
 export default {
-  title: 'Others/Design Tokens/Spacing'
+  title: 'Others/Design Tokens/Spacing',
+  parameters: {
+    docs: {
+      docPage: {
+        noProps: true
+      }
+    }
+  }
 };

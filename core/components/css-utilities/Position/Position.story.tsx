@@ -62,5 +62,12 @@ export const position = () => {
 
 export default {
   title: 'Others/Utilities/Position',
-  component: position
+  component: position,
+  parameters: {
+    docs: {
+      docPage: {
+        noProps: true
+      }
+    }
+  }
 };

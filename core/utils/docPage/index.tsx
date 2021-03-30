@@ -4,7 +4,6 @@ import * as React from 'react';
 import {
   Title,
   Subtitle,
-  Heading,
   Subheading,
   Description,
   Canvas,
@@ -17,7 +16,7 @@ import { html as beautifyHTML } from 'js-beautify';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco, dark, a11yDark, githubGist, dracula, vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import * as DS from '@/';
-import { Button, Card, TabsWrapper, Tab } from '@/';
+import { Button, Card, TabsWrapper, Tab, Heading } from '@/';
 import vsDark from 'prism-react-renderer/themes/vsDark';
 import { resetComponents, Story as PureStory } from '@storybook/components';
 import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'react-live';
@@ -136,7 +135,7 @@ ${jsx
 };
 
 const StoryComp = props => {
-  const { customCode, noHtml, noStory } = props;
+  const { customCode, noHtml, noStory, noSandbox } = props;
   const { story, storyId } = getStory();
   const comp = story.getOriginal()();
   const sp = story.parameters;
@@ -190,7 +189,8 @@ const StoryComp = props => {
                 onClick: ev => {
                   ev.preventDefault();
                   openSandbox(jsxCode);
-                }
+                },
+                disabled: noSandbox
               },
               {
                 title: `${!isExpanded ? 'Show' : 'Hide'} code`,
@@ -235,15 +235,16 @@ const StoryComp = props => {
 export const docPage = () => {
   const { story, storyId } = getStory();
   const sp = story.parameters;
-  const isEmbed = window.location.search.includes('embed=true');
+  const isEmbed = window.location.search.includes('embed=min');
+  const isEmbedWithProp = window.location.search.includes('embed=prop');
 
-  const { title, description, props: propsAttr, customCode, noHtml, noStory, noProps = isEmbed, imports } =
+  const { title, description, props: propsAttr, customCode, noHtml, noStory, noProps = isEmbed, noSandbox, imports } =
     sp.docs.docPage || {};
   const { component: { displayName } = {} } = sp;
 
   return (
     <div className="DocPage">
-      {!isEmbed && (
+      {!isEmbed && !isEmbedWithProp && (
         <>
           <Title> {title || displayName} </Title>
           <br />
@@ -252,13 +253,20 @@ export const docPage = () => {
       <Description>{description}</Description>
       <br />
 
-      <StoryComp key={storyId} customCode={customCode} noHtml={noHtml} noStory={noStory} imports={imports} />
+      <StoryComp
+        key={storyId}
+        customCode={customCode}
+        noHtml={noHtml}
+        noStory={noStory}
+        noSandbox={noSandbox}
+        imports={imports}
+      />
 
       {!noProps && (
         <>
           <br />
           <br />
-          <Heading>PropTable</Heading>
+          <Heading appearance="subtle">Prop table</Heading>
           <ArgsTable {...propsAttr} />
         </>
       )}

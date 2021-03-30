@@ -1,17 +1,10 @@
 import React from 'react';
 import '../css';
 import './docPage.css'
-import { addParameters } from '@storybook/react';
 import { DocsContainer } from '@storybook/addon-docs/blocks';
 import { docPage } from '@/utils/docPage';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-
-addParameters({
-  docs: {
-    container: DocsContainer,
-    page: docPage,
-  },
-});
+import { primary } from './themes';
 
 export const decorators = [
   (Story) => (
@@ -22,6 +15,12 @@ export const decorators = [
 ];
 
 export const parameters = {
+  docs: {
+    container: DocsContainer,
+    page: docPage,
+    theme: primary
+  },
+  viewMode: 'docs',
   actions: { argTypesRegex: "^on[A-Z].*" },
   // Storybook a11y addon configuration
   a11y: {
