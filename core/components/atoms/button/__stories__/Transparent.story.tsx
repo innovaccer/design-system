@@ -1,25 +1,23 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const deleteButton = () => (
+export const transparent = () => (
   <Button
-    appearance="alert"
+    appearance="transparent"
     size="regular"
-    expanded={false}
-    disabled={false}
-    loading={false}
   >
-    Delete
+    Re-evaluate
   </Button>
 );
 
 export default {
-  title: 'Components/Button/Delete Button',
+  title: 'Components/Button/Transparent',
   component: Button,
   parameters: {
     docs: {
       docPage: {
-        title: 'Button'
+        title: 'Button',
+        description: 'Transparent button.'
       }
     }
   }

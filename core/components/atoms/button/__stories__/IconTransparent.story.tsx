@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const menuHorizontal = () => (
+export const transparentIcon = () => (
   <Button
     appearance={'transparent'}
     size="regular"
@@ -15,12 +15,13 @@ export const menuHorizontal = () => (
 );
 
 export default {
-  title: 'Components/Button/Menu Horizontal',
+  title: 'Components/Button/Transparent Icon',
   component: Button,
   parameters: {
     docs: {
       docPage: {
-        title: 'Button'
+        title: 'Button',
+        description: 'Transparent button with icon.'
       }
     }
   }

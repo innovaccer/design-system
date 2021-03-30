@@ -251,7 +251,6 @@ export const docPage = () => {
         </>
       )}
       <Description>{description}</Description>
-      <br />
 
       <StoryComp
         key={storyId}

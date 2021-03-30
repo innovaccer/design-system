@@ -1,27 +1,26 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const LargeIconRightPrimary = () => (
+export const Alert = () => (
   <Button
-    appearance="primary"
-    size="large"
+    appearance="alert"
+    size="regular"
     expanded={false}
     disabled={false}
     loading={false}
-    icon={'refresh'}
-    iconAlign={'right'}
   >
-    {'Button'}
+    Delete
   </Button>
 );
 
 export default {
-  title: 'Components/Button/Large Icon Right Primary',
+  title: 'Components/Button/Alert',
   component: Button,
   parameters: {
     docs: {
       docPage: {
-        title: 'Button'
+        title: 'Button',
+        description: 'Delete button'
       }
     }
   }

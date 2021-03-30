@@ -1,26 +1,24 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const loading = () => (
+export const LargeExpanded = () => (
   <Button
     appearance="primary"
-    size="regular"
-    expanded={false}
-    disabled={false}
-    loading={true}
+    size="large"
+    expanded={true}
   >
-    {''}
+    Login
   </Button>
 );
 
 export default {
-  title: 'Components/Button/Loading',
+  title: 'Components/Button/Large Expanded',
   component: Button,
   parameters: {
     docs: {
       docPage: {
         title: 'Button',
-        description: 'Primary button in loading state.'
+        description: 'Large expanded button.'
       }
     }
   }

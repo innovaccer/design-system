@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const submitButton = () => (
+export const Primary = () => (
   <Button
     appearance="primary"
     size="regular"
@@ -14,12 +14,13 @@ export const submitButton = () => (
 );
 
 export default {
-  title: 'Components/Button/Submit Button',
+  title: 'Components/Button/Primary',
   component: Button,
   parameters: {
     docs: {
       docPage: {
-        title: 'Button'
+        title: 'Button',
+        description: 'Primary button'
       }
     }
   }
