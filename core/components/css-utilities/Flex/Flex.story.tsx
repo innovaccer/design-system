@@ -272,5 +272,12 @@ export const flex = () => {
 
 export default {
   title: 'Others/Utilities/Flex',
-  component: flex
+  component: flex,
+  parameters: {
+    docs: {
+      docPage: {
+        noProps: true
+      }
+    }
+  }
 };

@@ -101,5 +101,12 @@ export const background = () => {
 
 export default {
   title: 'Others/Utilities/Background',
-  component: background
+  component: background,
+  parameters: {
+    docs: {
+      docPage: {
+        noProps: true
+      }
+    }
+  }
 };

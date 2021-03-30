@@ -82,5 +82,12 @@ blank - for classes that set a margin or padding on all 4 sides of the element<b
 
 export default {
   title: 'Others/Utilities/Spacing',
-  component: spacing
+  component: spacing,
+  parameters: {
+    docs: {
+      docPage: {
+        noProps: true
+      }
+    }
+  }
 };

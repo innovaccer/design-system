@@ -49,3 +49,10 @@ html, body {
   border: 0 !important;
   border-bottom: var(--border);
 }
+
+.sbdocs-title {
+  font-weight: var(--font-weight-medium) !important;
+  font-size: var(--font-size-xl) !important;
+  line-height: var(--font-height-xl) !important;
+  color: var(--text) !important;
+}

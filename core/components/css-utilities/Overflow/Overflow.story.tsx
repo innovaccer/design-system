@@ -64,5 +64,12 @@ export const overflow = () => {
 
 export default {
   title: 'Others/Utilities/Overflow',
-  component: overflow
+  component: overflow,
+  parameters: {
+    docs: {
+      docPage: {
+        noProps: true
+      }
+    }
+  }
 };
