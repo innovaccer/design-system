@@ -8,10 +8,10 @@ export const iconLeftSecondary = () => (
     expanded={false}
     disabled={false}
     loading={false}
-    icon={'refresh'}
-    iconAlign={'left'}
+    icon="get_app"
+    iconAlign="left"
   >
-    {'Button'}
+    Download
   </Button>
 );
 
@@ -21,7 +21,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Button'
+        title: 'Button',
+        description: 'Secondary button with left aligned icon.'
       }
     }
   }

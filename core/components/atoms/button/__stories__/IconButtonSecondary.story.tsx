@@ -1,26 +1,22 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const cancel = () => (
+export const iconButtonSecondary = () => (
   <Button
     appearance="basic"
     size="regular"
-    expanded={false}
-    disabled={false}
-    loading={false}
-  >
-    Cancel
-  </Button>
+    icon="navigate_next"
+  />
 );
 
 export default {
-  title: 'Components/Button/Cancel',
+  title: 'Components/Button/Icon Button Secondary',
   component: Button,
   parameters: {
     docs: {
       docPage: {
         title: 'Button',
-        description: 'Cancel Button'
+        description: 'Secondary button with icon.'
       }
     }
   }

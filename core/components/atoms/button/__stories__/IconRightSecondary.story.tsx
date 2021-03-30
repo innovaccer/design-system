@@ -1,26 +1,25 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const cancel = () => (
+export const iconRightSecondary = () => (
   <Button
     appearance="basic"
     size="regular"
-    expanded={false}
-    disabled={false}
-    loading={false}
+    icon="arrow_forward"
+    iconAlign="right"
   >
-    Cancel
+    Next in rank
   </Button>
 );
 
 export default {
-  title: 'Components/Button/Cancel',
+  title: 'Components/Button/Icon Right Secondary',
   component: Button,
   parameters: {
     docs: {
       docPage: {
         title: 'Button',
-        description: 'Cancel Button'
+        description: 'Secondary button with right aligned icon.'
       }
     }
   }

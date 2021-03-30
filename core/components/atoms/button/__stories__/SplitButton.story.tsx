@@ -23,7 +23,7 @@ export const splitButton = () => (
       loading={false}
       className="mr-2"
     >
-      Download
+      Request review
     </Button>
     <div className="mb-10" style={{ width: '150px' }}>
       <Dropdown
@@ -36,12 +36,13 @@ export const splitButton = () => (
 );
 
 export default {
-  title: 'Components/ButtonGroup/Split Button',
+  title: 'Components/Button/Split Button',
   component: Button,
   parameters: {
     docs: {
       docPage: {
-        title: 'Button'
+        title: 'Button',
+        description: 'Split button.'
       }
     }
   }
