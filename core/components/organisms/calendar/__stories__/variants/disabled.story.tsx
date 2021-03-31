@@ -69,7 +69,7 @@ export const disabled = () => {
 };
 
 export default {
-  title: 'Components/Calendar/Variants',
+  title: 'Components/Calendar/Variants/Disabled',
   component: Calendar,
   parameters: {
     docs: {

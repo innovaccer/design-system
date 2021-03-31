@@ -159,7 +159,7 @@ export const ColumnSize = () => {
 };
 
 export default {
-  title: 'Others/Layout',
+  title: 'Others/Layout/Column Size',
   component: Column,
   subcomponents: { Row }
 };

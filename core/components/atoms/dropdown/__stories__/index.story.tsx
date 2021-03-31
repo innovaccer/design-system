@@ -157,7 +157,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Dropdown',
+  title: 'Components/Dropdown/All',
   component: Dropdown,
   parameters: {
     docs: {

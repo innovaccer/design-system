@@ -40,7 +40,7 @@ exports[`FullscreenModal component
                 </div>
               </div>
               <div
-                class="Col pr-2"
+                class="Col pr-2 flex-grow-0"
               >
                 <i
                   class="material-icons Icon cursor-pointer pt-3"
@@ -107,7 +107,7 @@ exports[`FullscreenModal component
                 </div>
               </div>
               <div
-                class="Col pr-2"
+                class="Col pr-2 flex-grow-0"
               >
                 <i
                   class="material-icons Icon cursor-pointer pt-3"

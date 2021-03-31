@@ -197,7 +197,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Navigation/Variants',
+  title: 'Components/Navigation/Variants/Vertical Round',
   component: Navigation,
   parameters: {
     docs: {

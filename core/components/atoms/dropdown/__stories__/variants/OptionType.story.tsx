@@ -47,7 +47,7 @@ export const optionType = () => {
 };
 
 export default {
-  title: 'Components/Dropdown/Variants',
+  title: 'Components/Dropdown/Variants/Option Type',
   component: Dropdown,
   parameters: {
     docs: {

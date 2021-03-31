@@ -45,7 +45,7 @@ export const controlledInput = () => {
   );
 };
 export default {
-  title: 'Components/Input',
+  title: 'Components/Input/Controlled Input',
   component: Input,
   parameters: {
     docs: {

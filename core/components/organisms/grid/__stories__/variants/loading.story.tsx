@@ -51,7 +51,7 @@ const customCode = `() => {
 `;
 
 export default {
-  title: 'Components/Grid/Variants',
+  title: 'Components/Grid/Variants/Loading',
   parameters: {
     docs: {
       docPage: {

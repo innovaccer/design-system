@@ -39,6 +39,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/AvatarGroup',
+  title: 'Components/AvatarGroup/All',
   component: AvatarGroup
 };

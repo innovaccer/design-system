@@ -26,7 +26,7 @@ export const radioGroup = () => (
 );
 
 export default {
-  title: 'Components/Radio',
+  title: 'Components/Radio/Radio Group',
   component: Radio,
   parameters: {
     docs: {

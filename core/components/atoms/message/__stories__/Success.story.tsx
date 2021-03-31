@@ -11,6 +11,6 @@ export const successWithoutTitle = () => (
 );
 
 export default {
-  title: 'Components/Message',
+  title: 'Components/Message/Success Without Title',
   component: Message
 };

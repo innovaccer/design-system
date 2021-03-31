@@ -1,35 +1,39 @@
 import * as React from 'react';
 import Button from '@/components/atoms/button';
 
-export const iconButtonGroup = () => (
+export const labelButtonGroup = () => (
   <div className="d-flex">
     <Button
       appearance="basic"
       size="tiny"
-      icon="content_copy"
       className="mr-2"
-    />
+    >
+      Copy
+    </Button>
     <Button
       appearance="basic"
       size="tiny"
-      icon="content_paste"
       className="mr-2"
-    />
+    >
+      Paste
+    </Button>
     <Button
       appearance="basic"
       size="tiny"
-      icon="delete"
-    />
+    >
+      Delete
+    </Button>
   </div>
 );
 
 export default {
-  title: 'Components/ButtonGroup',
+  title: 'Components/Button/Label Button Group',
   component: Button,
   parameters: {
     docs: {
       docPage: {
-        title: 'Button'
+        title: 'Button',
+        description: 'A pattern using buttons in a group.'
       }
     }
   }

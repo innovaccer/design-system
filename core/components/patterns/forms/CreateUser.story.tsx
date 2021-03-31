@@ -3,8 +3,6 @@ import * as React from 'react';
 export const createUser = () => <></>;
 
 const customCode = `
-// import * as React from 'react';
-// import { Input, Button, Label, Card, DatePicker, Dropdown, Text, Row, Column } from 'design-system';
 
 () => {
   const genderOptions = [
@@ -171,7 +169,7 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Patterns/Forms',
+  title: 'Patterns/Forms/Create User',
   parameters: {
     docs: {
       docPage: {

@@ -121,7 +121,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Patterns/Layouts',
+  title: 'Patterns/Layouts/Mini Sidebar Template',
   parameters: {
     docs: {
       docPage: {

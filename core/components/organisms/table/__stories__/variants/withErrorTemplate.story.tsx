@@ -151,7 +151,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Table/Variants',
+  title: 'Components/Table/Variants/With Error Template',
   component: Table,
   parameters: {
     docs: {

@@ -59,12 +59,12 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Dropzone',
+  title: 'Components/Dropzone/All',
   component: Dropzone,
   parameters: {
     docs: {
       docPage: {
-        customCode,
+        customCode
       }
     }
   }

@@ -161,7 +161,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
 
                   {!!header && header}
                 </Column>
-                <Column className="pr-2">
+                <Column className="pr-2 flex-grow-0">
                   <Icon
                     size={20}
                     name={'close'}

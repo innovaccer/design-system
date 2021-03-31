@@ -149,6 +149,13 @@ export const sizing = () => {
 };
 
 export default {
-  title: 'Others/Utilities',
+  title: 'Others/Utilities/Sizing',
   component: sizing,
+  parameters: {
+    docs: {
+      docPage: {
+        noProps: true
+      }
+    }
+  }
 };

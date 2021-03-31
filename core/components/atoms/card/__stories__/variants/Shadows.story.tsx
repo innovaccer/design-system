@@ -24,7 +24,7 @@ export const shadow = () => {
 };
 
 export default {
-  title: 'Components/Card/Variants',
+  title: 'Components/Card/Shadow',
   component: Card,
   parameters: {
     docs: {

@@ -41,7 +41,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Text',
+  title: 'Components/Text/All',
   component: Text,
   parameters: {
     docs: {

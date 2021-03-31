@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const loadingPrimary = () => (
+export const loading = () => (
   <Button
     appearance="primary"
     size="regular"
@@ -14,12 +14,13 @@ export const loadingPrimary = () => (
 );
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Button/Loading',
   component: Button,
   parameters: {
     docs: {
       docPage: {
-        title: 'Button'
+        title: 'Button',
+        description: 'Primary button in loading state.'
       }
     }
   }

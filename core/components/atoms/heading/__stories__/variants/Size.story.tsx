@@ -29,7 +29,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/Heading/Variants',
+  title: 'Components/Heading/Variants/Size',
   component: Heading,
   parameters: {
     docs: {

@@ -24,6 +24,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/ProgressRing',
+  title: 'Components/ProgressRing/All',
   component: ProgressRing
 };

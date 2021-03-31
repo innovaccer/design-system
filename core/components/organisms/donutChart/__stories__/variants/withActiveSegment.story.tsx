@@ -25,7 +25,7 @@ export const withActiveSegment = () => {
 };
 
 export default {
-  title: 'Components/DonutChart/Variants',
+  title: 'Components/DonutChart/Variants/With Active Segment',
   component: DonutChart,
   parameters: {
     docs: {

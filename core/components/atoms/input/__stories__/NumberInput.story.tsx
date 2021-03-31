@@ -16,7 +16,7 @@ export const inputWithNumber = () => (
 );
 
 export default {
-  title: 'Components/Input',
+  title: 'Components/Input/Input With Number',
   component: Input,
   parameters: {
     docs: {

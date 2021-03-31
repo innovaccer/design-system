@@ -26,7 +26,7 @@ export const menu = () => (
 );
 
 export default {
-  title: 'Components/Dropdown',
+  title: 'Components/Dropdown/Menu',
   component: Dropdown,
   parameters: {
     docs: {

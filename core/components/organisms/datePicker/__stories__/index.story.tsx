@@ -118,7 +118,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/DatePicker',
+  title: 'Components/DatePicker/All',
   component: DatePicker,
   subcomponents: { InputMask }
 };

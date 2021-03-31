@@ -50,7 +50,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Dropdown/Variants',
+  title: 'Components/Dropdown/Variants/Disabled',
   component: Dropdown,
   parameters: {
     docs: {

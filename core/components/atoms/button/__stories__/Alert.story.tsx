@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const deleteButton = () => (
+export const Alert = () => (
   <Button
     appearance="alert"
     size="regular"
@@ -14,12 +14,13 @@ export const deleteButton = () => (
 );
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Button/Alert',
   component: Button,
   parameters: {
     docs: {
       docPage: {
-        title: 'Button'
+        title: 'Button',
+        description: 'Delete button'
       }
     }
   }

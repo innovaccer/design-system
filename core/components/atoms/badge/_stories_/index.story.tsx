@@ -25,6 +25,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Badge',
+  title: 'Components/Badge/All',
   component: Badge
 };

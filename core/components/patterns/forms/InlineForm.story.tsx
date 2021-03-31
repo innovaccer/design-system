@@ -3,8 +3,6 @@ import * as React from 'react';
 export const inlineForm = () => <></>;
 
 const customCode = `
-// import * as React from 'react';
-// import { Input, Button, Label, Card, DatePicker, Dropdown } from 'design-system';
 
 () => {
   class InlineForm extends React.Component {
@@ -163,7 +161,7 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Patterns/Forms',
+  title: 'Patterns/Forms/Inline Form',
   parameters: {
     docs: {
       docPage: {

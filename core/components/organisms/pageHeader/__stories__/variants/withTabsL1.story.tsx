@@ -206,7 +206,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/PageHeader/Level 1/Variants',
+  title: 'Components/PageHeader/Level 1/Variants/With Tabs',
   component: PageHeader,
   parameters: {
     docs: {

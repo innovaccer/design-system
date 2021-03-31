@@ -178,7 +178,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Tabs',
+  title: 'Components/Tabs/Filter Tabs With Count',
   component: TabsWrapper,
   subcomponents: { Tab },
   parameters: {

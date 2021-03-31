@@ -117,12 +117,12 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/EditableDropdown/Variants',
+  title: 'Components/EditableDropdown/Variants/Custom Render',
   component: EditableDropdown,
   parameters: {
     docs: {
       docPage: {
-        customCode,
+        customCode
       }
     }
   }

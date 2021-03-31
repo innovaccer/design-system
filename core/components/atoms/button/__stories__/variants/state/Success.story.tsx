@@ -90,7 +90,7 @@ export const success = () => {
 };
 
 export default {
-  title: 'Components/Button/Variants/State',
+  title: 'Components/Button/Variants/State/Success',
   component: Button,
   parameters: {
     docs: {

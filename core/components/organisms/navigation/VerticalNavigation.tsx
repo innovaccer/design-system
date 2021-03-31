@@ -18,6 +18,7 @@ export type Align = 'left' | 'center';
 export interface VerticalNavigationProps {
   /**
    * List of menus to be rendered
+   *
    * <pre className="DocPage-codeBlock">
    * Menu: {
    *    name: string;

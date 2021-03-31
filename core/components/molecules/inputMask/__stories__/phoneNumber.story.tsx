@@ -16,6 +16,6 @@ export const USPhoneNumber = () => {
 };
 
 export default {
-  title: 'Components/InputMask',
+  title: 'Components/InputMask/US Phone Number',
   component: InputMask
 };

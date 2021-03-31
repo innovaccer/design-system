@@ -116,7 +116,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Input',
+  title: 'Components/Input/All',
   component: Input,
   parameters: {
     docs: {

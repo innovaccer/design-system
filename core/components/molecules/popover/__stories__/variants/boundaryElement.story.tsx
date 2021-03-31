@@ -96,7 +96,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Popover/Variants',
+  title: 'Components/Popover/Variants/Boundary Element',
   component: Popover,
   parameters: {
     docs: {

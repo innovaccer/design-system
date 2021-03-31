@@ -152,7 +152,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/PageHeader/Level 0/Variants',
+  title: 'Components/PageHeader/Level 0/Variants/With Tabs',
   component: PageHeader,
   parameters: {
     docs: {

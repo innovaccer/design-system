@@ -10,7 +10,7 @@ export const info = () => (
 );
 
 export default {
-  title: 'Components/StatusHint',
+  title: 'Components/StatusHint/Info',
   component: StatusHint,
   parameters: {
     docs: {

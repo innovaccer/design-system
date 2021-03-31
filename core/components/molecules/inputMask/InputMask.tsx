@@ -8,6 +8,7 @@ import { getDefaultValue } from './utilites';
 export interface MaskProps extends BaseProps {
   /**
    * Every value of Array represent either fixed char or regular expression for particular index
+   *
    * <pre className="DocPage-codeBlock">
    * Mask: (string | RegExp)[]
    * </pre>

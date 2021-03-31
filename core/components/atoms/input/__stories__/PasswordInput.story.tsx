@@ -18,7 +18,7 @@ export const passwordInput = () => (
 );
 
 export default {
-  title: 'Components/Input',
+  title: 'Components/Input/Password Input',
   component: Input,
   parameters: {
     docs: {

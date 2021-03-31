@@ -39,7 +39,7 @@ const customCode = `() => (
 )`;
 
 export default {
-  title: 'Components/Backdrop',
+  title: 'Components/Backdrop/All',
   component: Backdrop,
   parameters: {
     docs: {

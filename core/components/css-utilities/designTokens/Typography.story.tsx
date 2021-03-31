@@ -91,5 +91,12 @@ export const typography = () => {
 };
 
 export default {
-  title: 'Others/Design Tokens'
+  title: 'Others/Design Tokens/Typography',
+  parameters: {
+    docs: {
+      docPage: {
+        noProps: true
+      }
+    }
+  }
 };

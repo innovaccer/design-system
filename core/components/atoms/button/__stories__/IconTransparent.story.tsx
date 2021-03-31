@@ -1,25 +1,27 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const submitButton = () => (
+export const transparentIcon = () => (
   <Button
-    appearance="primary"
+    appearance={'transparent'}
     size="regular"
     expanded={false}
     disabled={false}
     loading={false}
+    icon="more_horiz"
   >
-    Submit
+    {''}
   </Button>
 );
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Button/Transparent Icon',
   component: Button,
   parameters: {
     docs: {
       docPage: {
-        title: 'Button'
+        title: 'Button',
+        description: 'Transparent button with icon.'
       }
     }
   }

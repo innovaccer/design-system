@@ -10,6 +10,6 @@ export const modalLoader = () => (
 );
 
 export default {
-  title: 'Components/Loaders/Spinner',
+  title: 'Components/Loaders/Spinner/Modal Loader',
   component: Spinner
 };

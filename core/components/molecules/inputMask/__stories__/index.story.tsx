@@ -98,6 +98,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/InputMask',
+  title: 'Components/InputMask/All',
   component: InputMask
 };

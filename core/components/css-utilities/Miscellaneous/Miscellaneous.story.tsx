@@ -45,6 +45,13 @@ export const miscellaneous = () => {
 };
 
 export default {
-  title: 'Others/Utilities',
+  title: 'Others/Utilities/Miscellaneous',
   component: miscellaneous,
+  parameters: {
+    docs: {
+      docPage: {
+        noProps: true
+      }
+    }
+  }
 };

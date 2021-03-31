@@ -101,12 +101,12 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/DonutChart/Variants',
+  title: 'Components/DonutChart/Variants/Custom Tooltip',
   component: DonutChart,
   parameters: {
     docs: {
       docPage: {
-        customCode,
+        customCode
       }
     }
   }

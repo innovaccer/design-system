@@ -28,7 +28,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Components/Switch/Variants',
+  title: 'Components/Switch/Variants/Appearance',
   component: Switch,
   parameters: {
     docs: {

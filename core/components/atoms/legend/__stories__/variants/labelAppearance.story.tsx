@@ -26,7 +26,7 @@ export const labelAppearance = () => {
 };
 
 export default {
-  title: 'Components/Legend/Variants',
+  title: 'Components/Legend/Variants/Label Appearance',
   component: Legend,
   parameters: {
     docs: {

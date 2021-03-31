@@ -30,7 +30,7 @@ export const warning = () => {
 };
 
 export default {
-  title: 'Components/Switch/Variants/State',
+  title: 'Components/Switch/Variants/State/Warning',
   component: Switch,
   parameters: {
     docs: {

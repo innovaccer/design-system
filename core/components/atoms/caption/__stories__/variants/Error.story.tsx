@@ -20,7 +20,7 @@ export const error = () => {
 };
 
 export default {
-  title: 'Components/Caption/Variants',
+  title: 'Components/Caption/Error',
   component: Caption,
   parameters: {
     docs: {

@@ -976,10 +976,11 @@ import './style.css';
 }`
 
 export default {
-  title: 'Patterns/Grid',
+  title: 'Patterns/Grid/Table With Header',
   parameters: {
     docs: {
       docPage: {
+        title: 'Table with header',
         customCode,
         imports: {
           debounce: debounce
@@ -987,7 +988,8 @@ export default {
         props: {
           exclude: ['showHead'],
         },
-        noProps: true
+        noProps: true,
+        noSandbox: true
       }
     }
   }

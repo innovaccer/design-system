@@ -3,8 +3,6 @@ import * as React from 'react';
 export const dateAndTimePicker = () => <></>;
 
 const customCode = `
-// import * as React from 'react';
-// import { Input, Button, Heading, Label, Icon, Link, Card } from 'design-system';
 
 () => {
   class DateTimePicker extends React.Component {
@@ -71,12 +69,13 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Patterns/DatePicker',
+  title: 'Patterns/DatePicker/Date And Time Picker',
   parameters: {
     docs: {
       docPage: {
         customCode,
-        noProps: true
+        noProps: true,
+        title: 'Date and time picker'
       }
     }
   }

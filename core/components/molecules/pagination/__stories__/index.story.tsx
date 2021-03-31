@@ -32,6 +32,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Pagination',
+  title: 'Components/Pagination/All',
   component: Pagination
 };

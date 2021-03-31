@@ -53,7 +53,7 @@ export const withCheckbox = () => {
 };
 
 export default {
-  title: 'Components/Table/Variants',
+  title: 'Components/Table/Variants/With Checkbox',
   component: Table,
   parameters: {
     docs: {

@@ -10,6 +10,6 @@ export const fiftyPercent = () => (
 );
 
 export default {
-  title: 'Components/ProgressBar',
+  title: 'Components/ProgressBar/Fifty Percent',
   component: ProgressBar
 };

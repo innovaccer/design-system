@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const cancelButton = () => (
+export const cancel = () => (
   <Button
     appearance="basic"
     size="regular"
@@ -14,12 +14,13 @@ export const cancelButton = () => (
 );
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Button/Cancel',
   component: Button,
   parameters: {
     docs: {
       docPage: {
-        title: 'Button'
+        title: 'Button',
+        description: 'Cancel Button'
       }
     }
   }

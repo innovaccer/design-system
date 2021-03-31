@@ -15,7 +15,7 @@ export const inputWithPrefix = () => (
 );
 
 export default {
-  title: 'Components/Input',
+  title: 'Components/Input/Input With Prefix',
   component: Input,
   parameters: {
     docs: {

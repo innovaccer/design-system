@@ -1,26 +1,26 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const menuHorizontal = () => (
+export const Primary = () => (
   <Button
-    appearance={'transparent'}
+    appearance="primary"
     size="regular"
     expanded={false}
     disabled={false}
     loading={false}
-    icon="more_horiz"
   >
-    {''}
+    Submit
   </Button>
 );
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Button/Primary',
   component: Button,
   parameters: {
     docs: {
       docPage: {
-        title: 'Button'
+        title: 'Button',
+        description: 'Primary button'
       }
     }
   }

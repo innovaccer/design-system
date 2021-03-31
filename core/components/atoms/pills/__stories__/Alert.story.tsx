@@ -11,7 +11,7 @@ export const alert = () => (
   );
 
 export default {
-  title: 'Components/Pills',
+  title: 'Components/Pills/Alert',
   component: Pills,
   parameters: {
     docs: {

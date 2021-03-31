@@ -193,7 +193,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Table',
+  title: 'Components/Table/All',
   component: Table,
   parameters: {
     docs: {

@@ -42,5 +42,12 @@ export const miscellaneous = () => {
 };
 
 export default {
-  title: 'Others/Design Tokens'
+  title: 'Others/Design Tokens/Miscellaneous',
+  parameters: {
+    docs: {
+      docPage: {
+        noProps: true
+      }
+    }
+  }
 };

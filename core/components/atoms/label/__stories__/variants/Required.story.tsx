@@ -20,7 +20,7 @@ export const required = () => {
 };
 
 export default {
-  title: 'Components/Label/Variants',
+  title: 'Components/Label/Variants/Required',
   component: Label,
   parameters: {
     docs: {

@@ -30,7 +30,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Placeholder/Image/Variants',
+  title: 'Components/Loaders/Placeholder/Image/Variants/Size',
   component: PlaceholderImage,
   parameters: {
     docs: {

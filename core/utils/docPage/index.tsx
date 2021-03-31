@@ -4,12 +4,9 @@ import * as React from 'react';
 import {
   Title,
   Subtitle,
-  Heading,
   Subheading,
-  Props,
   Description,
-  Preview,
-  Source,
+  Canvas,
   PropsProps,
   ArgsTable
 } from '@storybook/addon-docs/blocks';
@@ -19,10 +16,13 @@ import { html as beautifyHTML } from 'js-beautify';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco, dark, a11yDark, githubGist, dracula, vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import * as DS from '@/';
-import { Button, Card, TabsWrapper, Tab } from '@/';
+import { Button, Card, TabsWrapper, Tab, Heading } from '@/';
 import vsDark from 'prism-react-renderer/themes/vsDark';
 import { resetComponents, Story as PureStory } from '@storybook/components';
 import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'react-live';
+import openSandbox from './sandbox';
+import generateImports from './generateImports';
+import * as componentLib from '@/index';
 
 export interface Example {
   title: string;
@@ -65,9 +65,6 @@ const JSXtoStringOptions = {
 };
 
 const copyCode = (val: string) => navigator.clipboard.writeText(val);
-
-const importsToStr = (imports: string[]): string =>
-  `import { ${imports.join(', ')} } from '@innovaccer/design-system';`;
 
 const CopyComp = props => {
   const { onClick } = props;
@@ -112,19 +109,16 @@ const getStory = () => {
   return { storyId, story };
 };
 
-const StoryComp = props => {
-  const { customCode, noHtml, noStory } = props;
+const getRawPreviewCode = (customCode, comp) => {
+  if (customCode) {
+    return `${generateImports(customCode, componentLib, '@innovaccer/design-system')}
 
-  const { story, storyId } = getStory();
-  const comp = story.getOriginal()();
-  const sp = story.parameters;
-  const imports = [sp.component ? sp.component : {}, ...(sp.subcomponents ? Object.values(sp.subcomponents) : [])];
-
-  const importString = `// ${importsToStr(imports.map(i => i.displayName))}`;
+${customCode}
+    `;
+  }
   const jsx = `${beautifyHTML(reactElementToJSXString(comp, JSXtoStringOptions), beautifyJSXOptions)}`;
-  const html = !noHtml ? beautifyHTML(renderToStaticMarkup(comp), beautifyHTMLOptions) : '';
+  const importString = generateImports(jsx, componentLib, '@innovaccer/design-system');
 
-  const [activeTab, setActiveTab] = React.useState<number>(0);
   const code = `
 ${importString}
 
@@ -137,7 +131,18 @@ ${jsx
   );
 }
   `;
-  const [jsxCode, setJsxCode] = React.useState<string>(customCode ? customCode : code);
+  return code;
+};
+
+const StoryComp = props => {
+  const { customCode, noHtml, noStory, noSandbox } = props;
+  const { story, storyId } = getStory();
+  const comp = story.getOriginal()();
+  const sp = story.parameters;
+  const html = !noHtml ? beautifyHTML(renderToStaticMarkup(comp), beautifyHTMLOptions) : '';
+
+  const [activeTab, setActiveTab] = React.useState<number>(0);
+  const [jsxCode, setJsxCode] = React.useState<string>(getRawPreviewCode(customCode, comp));
   const [htmlCode, setHtmlCode] = React.useState<string>(`${html}`);
   const [isExpanded, setIsExpanded] = React.useState(false);
 
@@ -173,12 +178,20 @@ ${jsx
     return (
       <Card shadow="light" className="overflow-hidden">
         <LiveProvider code={jsxCode} scope={{ ...DS, ...importScope }}>
-          <Preview
+          <Canvas
             className="my-0"
             withSource="none"
             withToolbar={true}
             isExpanded={isExpanded}
             additionalActions={[
+              {
+                title: 'Edit in sandbox',
+                onClick: ev => {
+                  ev.preventDefault();
+                  openSandbox(jsxCode);
+                },
+                disabled: noSandbox
+              },
               {
                 title: `${!isExpanded ? 'Show' : 'Hide'} code`,
                 onClick: ev => {
@@ -188,7 +201,7 @@ ${jsx
             ]}
           >
             <LivePreview />
-          </Preview>
+          </Canvas>
 
           {isExpanded && (
             <>
@@ -222,32 +235,38 @@ ${jsx
 export const docPage = () => {
   const { story, storyId } = getStory();
   const sp = story.parameters;
-  const isEmbed = window.location.search.includes('embed=true');
+  const isEmbed = window.location.search.includes('embed=min');
+  const isEmbedWithProp = window.location.search.includes('embed=prop');
 
-  const { title, description, props: propsAttr, customCode, noHtml, noStory, noProps = isEmbed, imports } =
+  const { title, description, props: propsAttr, customCode, noHtml, noStory, noProps = isEmbed, noSandbox, imports } =
     sp.docs.docPage || {};
-
-  const separatorIndex = title?.indexOf('|');
+  const { component: { displayName } = {} } = sp;
 
   return (
     <div className="DocPage">
-      {!isEmbed && (
+      {!isEmbed && !isEmbedWithProp && (
         <>
-          <Title>{title && separatorIndex !== -1 ? title.slice(separatorIndex + 1) : title}</Title>
+          <Title> {title || displayName} </Title>
           <br />
         </>
       )}
       <Description>{description}</Description>
-      <br />
 
-      <StoryComp key={storyId} customCode={customCode} noHtml={noHtml} noStory={noStory} imports={imports} />
+      <StoryComp
+        key={storyId}
+        customCode={customCode}
+        noHtml={noHtml}
+        noStory={noStory}
+        noSandbox={noSandbox}
+        imports={imports}
+      />
 
       {!noProps && (
         <>
           <br />
           <br />
-          <Heading>PropTable</Heading>
-          <ArgsTable story="." {...propsAttr} />
+          <Heading appearance="subtle">Prop table</Heading>
+          <ArgsTable {...propsAttr} />
         </>
       )}
     </div>

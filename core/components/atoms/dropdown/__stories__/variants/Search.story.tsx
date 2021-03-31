@@ -25,7 +25,7 @@ export const search = () => {
 };
 
 export default {
-  title: 'Components/Dropdown/Variants',
+  title: 'Components/Dropdown/Variants/Search',
   component: Dropdown,
   parameters: {
     docs: {

@@ -29,7 +29,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Components/Subheading/Variants',
+  title: 'Components/Subheading/Variants/Appearance',
   component: Subheading,
   parameters: {
     docs: {

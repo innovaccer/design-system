@@ -29,6 +29,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Spinner',
+  title: 'Components/Loaders/Spinner/All',
   component: Spinner
 };

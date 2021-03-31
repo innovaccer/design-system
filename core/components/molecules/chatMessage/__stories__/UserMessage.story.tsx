@@ -42,6 +42,6 @@ export const chatMessage = () => {
 };
 
 export default {
-  title: 'Components/Chat/ChatMessage',
-  component: ChatMessage,
+  title: 'Components/Chat/Chat Message',
+  component: ChatMessage
 };

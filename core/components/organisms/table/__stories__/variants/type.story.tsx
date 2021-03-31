@@ -51,7 +51,7 @@ export const type = () => {
 };
 
 export default {
-  title: 'Components/Table/Variants',
+  title: 'Components/Table/Variants/Type',
   component: Table,
   parameters: {
     docs: {

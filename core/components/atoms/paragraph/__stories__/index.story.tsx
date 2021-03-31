@@ -26,7 +26,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Paragraph',
+  title: 'Components/Paragraph/All',
   component: Paragraph,
   parameters: {
     docs: {

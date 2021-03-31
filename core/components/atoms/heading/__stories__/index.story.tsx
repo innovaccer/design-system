@@ -35,7 +35,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Heading',
+  title: 'Components/Heading/All',
   component: Heading,
   parameters: {
     docs: {

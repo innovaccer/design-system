@@ -16,7 +16,7 @@ export const requiredInputWithLabel = () => (
 );
 
 export default {
-  title: 'Components/Input',
+  title: 'Components/Input/Required Input With Label',
   component: Input,
   parameters: {
     docs: {

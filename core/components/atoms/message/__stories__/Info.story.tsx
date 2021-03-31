@@ -11,6 +11,6 @@ export const info = () => (
 );
 
 export default {
-  title: 'Components/Message',
+  title: 'Components/Message/Info',
   component: Message
 };
