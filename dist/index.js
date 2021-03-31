@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1616586463909 
+   * Generated on: 1617183944638 
    *      Package: @innovaccer/design-system
-   *      Version: v2.0.0-1
+   *      Version: v2.0.0-2
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -318,13 +318,11 @@
     var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
 
     function __extends(d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -391,7 +389,6 @@
         }
     }
 
-    /** @deprecated */
     function __spreadArrays() {
         for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
         for (var r = Array(s), k = 0, i = 0; i < il; i++)
@@ -1555,7 +1552,7 @@
           triggerLabel = props.triggerLabel;
       var CustomTrigger = customTrigger ? customTrigger(triggerLabel ? triggerLabel : placeholder) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null);
       var NewCustomTrigger = /*#__PURE__*/React__namespace.cloneElement(CustomTrigger, {
-        tabindex: 0,
+        tabIndex: 0,
         ref: dropdownTriggerRef
       });
       var trigger = customTrigger ? NewCustomTrigger : /*#__PURE__*/React__namespace.createElement(DropdownButton, {
@@ -2706,188 +2703,6 @@
     });
     Button.displayName = 'Button';
 
-    var Card = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
-      var _a;
-
-      var _b = props.shadow,
-          shadow = _b === void 0 ? 'medium' : _b,
-          children = props.children,
-          className = props.className,
-          rest = __rest(props, ["shadow", "children", "className"]);
-
-      var classes = classNames__default['default']((_a = {
-        Card: true
-      }, _a["Card--shadow-" + shadow] = shadow, _a["" + className] = className, _a));
-      return /*#__PURE__*/React__namespace.createElement("div", __assign({
-        ref: ref
-      }, rest, {
-        className: classes
-      }), children);
-    });
-    Card.displayName = 'Card';
-
-    var GenericChip = function GenericChip(props) {
-      var label = props.label,
-          icon = props.icon,
-          clearButton = props.clearButton,
-          disabled = props.disabled,
-          className = props.className,
-          selected = props.selected,
-          onClose = props.onClose,
-          onClick = props.onClick;
-      var baseProps = extractBaseProps(props);
-
-      var iconClass = function iconClass(align) {
-        var _a;
-
-        return classNames__default['default']((_a = {}, _a['Chip-icon'] = true, _a["Chip-icon--" + align] = align, _a['cursor-pointer'] = align === 'right' && !disabled, _a));
-      };
-
-      var onCloseHandler = function onCloseHandler(e) {
-        e.stopPropagation();
-        if (onClose) onClose();
-      };
-
-      var onClickHandler = function onClickHandler() {
-        if (onClick) onClick();
-      };
-
-      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
-        className: "Chip-wrapper " + className,
-        onClick: onClickHandler
-      }), icon && /*#__PURE__*/React__namespace.createElement(Icon, {
-        name: icon,
-        appearance: disabled ? 'disabled' : selected ? 'info' : 'default',
-        className: iconClass('left')
-      }), /*#__PURE__*/React__namespace.createElement(Text, {
-        appearance: disabled ? 'disabled' : 'default'
-      }, label), clearButton && /*#__PURE__*/React__namespace.createElement(Icon, {
-        name: "clear",
-        appearance: disabled ? 'disabled' : selected ? 'info' : 'subtle',
-        className: iconClass('right'),
-        onClick: onCloseHandler
-      }));
-    };
-    GenericChip.displayName = 'GenericChip';
-
-    var Chip = function Chip(props) {
-      var _a;
-
-      var label = props.label,
-          icon = props.icon,
-          clearButton = props.clearButton,
-          type = props.type,
-          disabled = props.disabled,
-          selected = props.selected,
-          onClose = props.onClose,
-          onClick = props.onClick,
-          name = props.name,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
-
-      var onCloseHandler = function onCloseHandler() {
-        if (!disabled && onClose) onClose(name);
-      };
-
-      var onClickHandler = function onClickHandler() {
-        if (!disabled && onClick) onClick(name);
-      };
-
-      var chipClass = classNames__default['default']((_a = {
-        Chip: true
-      }, _a["Chip-" + type + "--disabled"] = disabled, _a["Chip--" + type] = type && !disabled, _a["Chip-" + type + "--selected"] = selected && !disabled, _a), className);
-      var clearbutton = type === 'action' ? false : clearButton;
-      var select = type === 'selection' && selected ? true : false;
-      return /*#__PURE__*/React__namespace.createElement(GenericChip, __assign({}, baseProps, {
-        label: label,
-        selected: select,
-        icon: icon,
-        clearButton: clearbutton,
-        disabled: disabled,
-        className: chipClass,
-        onClose: onCloseHandler,
-        onClick: onClickHandler,
-        name: name
-      }));
-    };
-    Chip.displayName = 'Chip';
-    Chip.defaultProps = {
-      type: 'input'
-    };
-
-    var ChipGroup = function ChipGroup(props) {
-      var _a;
-
-      var list = props.list,
-          onClick = props.onClick,
-          onClose = props.onClose,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
-
-      var onClickHandler = function onClickHandler(item) {
-        if (onClick) onClick(item);
-      };
-
-      var onCloseHandler = function onCloseHandler(item) {
-        if (onClose) onClose(item);
-      };
-
-      var ChipGroupClass = classNames__default['default']((_a = {}, _a['ChipGroup'] = true, _a), className);
-      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
-        className: ChipGroupClass
-      }), list.map(function (item, ind) {
-        var _a = item.label,
-            label = _a === void 0 ? '' : _a,
-            icon = item.icon,
-            type = item.type,
-            disabled = item.disabled,
-            selected = item.selected,
-            clearButton = item.clearButton,
-            name = item.name;
-        return /*#__PURE__*/React__namespace.createElement("span", {
-          key: ind,
-          className: "ChipGroup-item"
-        }, /*#__PURE__*/React__namespace.createElement(Chip, {
-          name: name,
-          label: label,
-          selected: selected,
-          icon: icon,
-          disabled: disabled,
-          clearButton: clearButton,
-          type: type,
-          onClick: function onClick() {
-            return onClickHandler(item);
-          },
-          onClose: function onClose() {
-            return onCloseHandler(item);
-          }
-        }));
-      }));
-    };
-    ChipGroup.displayName = 'ChipGroup';
-
-    var Column = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
-      var _a;
-
-      var size = props.size,
-          sizeXS = props.sizeXS,
-          sizeS = props.sizeS,
-          sizeM = props.sizeM,
-          sizeL = props.sizeL,
-          sizeXL = props.sizeXL,
-          className = props.className,
-          children = props.children,
-          rest = __rest(props, ["size", "sizeXS", "sizeS", "sizeM", "sizeL", "sizeXL", "className", "children"]);
-
-      var classes = classNames__default['default']((_a = {}, _a['Col'] = true, _a["Col--" + size] = size, _a["Col--xs-" + sizeXS] = sizeXS, _a["Col--s-" + sizeS] = sizeS, _a["Col--m-" + sizeM] = sizeM, _a["Col--l-" + sizeL] = sizeL, _a["Col--xl-" + sizeXL] = sizeXL, _a["" + className] = className, _a));
-      return /*#__PURE__*/React__namespace.createElement("div", __assign({
-        ref: ref
-      }, rest, {
-        className: classes
-      }), children);
-    });
-    Column.displayName = 'Column';
-
     var sizeMap = {
       s: 'h5',
       m: 'h4',
@@ -3704,8 +3519,8 @@
             monthsInView = _a.monthsInView,
             view = _a.view;
         var currDate = rangePicker ? endDate || startDate : props.date;
-        var yearNav = props.yearNav || getDateInfo(currDate || Date.now()).year;
-        var monthNav = props.monthNav || getDateInfo(currDate || Date.now()).month;
+        var yearNav = props.yearNav !== undefined ? props.yearNav : getDateInfo(currDate || Date.now()).year;
+        var monthNav = props.monthNav !== undefined ? props.monthNav : getDateInfo(currDate || Date.now()).month;
 
         var _b = getDateInfo(currDate),
             year = _b.year,
@@ -3902,6 +3717,188 @@
       };
       return Calendar;
     }(React__namespace.Component);
+
+    var Card = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
+      var _a;
+
+      var _b = props.shadow,
+          shadow = _b === void 0 ? 'medium' : _b,
+          children = props.children,
+          className = props.className,
+          rest = __rest(props, ["shadow", "children", "className"]);
+
+      var classes = classNames__default['default']((_a = {
+        Card: true
+      }, _a["Card--shadow-" + shadow] = shadow, _a["" + className] = className, _a));
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        ref: ref
+      }, rest, {
+        className: classes
+      }), children);
+    });
+    Card.displayName = 'Card';
+
+    var GenericChip = function GenericChip(props) {
+      var label = props.label,
+          icon = props.icon,
+          clearButton = props.clearButton,
+          disabled = props.disabled,
+          className = props.className,
+          selected = props.selected,
+          onClose = props.onClose,
+          onClick = props.onClick;
+      var baseProps = extractBaseProps(props);
+
+      var iconClass = function iconClass(align) {
+        var _a;
+
+        return classNames__default['default']((_a = {}, _a['Chip-icon'] = true, _a["Chip-icon--" + align] = align, _a['cursor-pointer'] = align === 'right' && !disabled, _a));
+      };
+
+      var onCloseHandler = function onCloseHandler(e) {
+        e.stopPropagation();
+        if (onClose) onClose();
+      };
+
+      var onClickHandler = function onClickHandler() {
+        if (onClick) onClick();
+      };
+
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
+        className: "Chip-wrapper " + className,
+        onClick: onClickHandler
+      }), icon && /*#__PURE__*/React__namespace.createElement(Icon, {
+        name: icon,
+        appearance: disabled ? 'disabled' : selected ? 'info' : 'default',
+        className: iconClass('left')
+      }), /*#__PURE__*/React__namespace.createElement(Text, {
+        appearance: disabled ? 'disabled' : 'default'
+      }, label), clearButton && /*#__PURE__*/React__namespace.createElement(Icon, {
+        name: "clear",
+        appearance: disabled ? 'disabled' : selected ? 'info' : 'subtle',
+        className: iconClass('right'),
+        onClick: onCloseHandler
+      }));
+    };
+    GenericChip.displayName = 'GenericChip';
+
+    var Chip = function Chip(props) {
+      var _a;
+
+      var label = props.label,
+          icon = props.icon,
+          clearButton = props.clearButton,
+          type = props.type,
+          disabled = props.disabled,
+          selected = props.selected,
+          onClose = props.onClose,
+          onClick = props.onClick,
+          name = props.name,
+          className = props.className;
+      var baseProps = extractBaseProps(props);
+
+      var onCloseHandler = function onCloseHandler() {
+        if (!disabled && onClose) onClose(name);
+      };
+
+      var onClickHandler = function onClickHandler() {
+        if (!disabled && onClick) onClick(name);
+      };
+
+      var chipClass = classNames__default['default']((_a = {
+        Chip: true
+      }, _a["Chip-" + type + "--disabled"] = disabled, _a["Chip--" + type] = type && !disabled, _a["Chip-" + type + "--selected"] = selected && !disabled, _a), className);
+      var clearbutton = type === 'action' ? false : clearButton;
+      var select = type === 'selection' && selected ? true : false;
+      return /*#__PURE__*/React__namespace.createElement(GenericChip, __assign({}, baseProps, {
+        label: label,
+        selected: select,
+        icon: icon,
+        clearButton: clearbutton,
+        disabled: disabled,
+        className: chipClass,
+        onClose: onCloseHandler,
+        onClick: onClickHandler,
+        name: name
+      }));
+    };
+    Chip.displayName = 'Chip';
+    Chip.defaultProps = {
+      type: 'input'
+    };
+
+    var ChipGroup = function ChipGroup(props) {
+      var _a;
+
+      var list = props.list,
+          onClick = props.onClick,
+          onClose = props.onClose,
+          className = props.className;
+      var baseProps = extractBaseProps(props);
+
+      var onClickHandler = function onClickHandler(item) {
+        if (onClick) onClick(item);
+      };
+
+      var onCloseHandler = function onCloseHandler(item) {
+        if (onClose) onClose(item);
+      };
+
+      var ChipGroupClass = classNames__default['default']((_a = {}, _a['ChipGroup'] = true, _a), className);
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
+        className: ChipGroupClass
+      }), list.map(function (item, ind) {
+        var _a = item.label,
+            label = _a === void 0 ? '' : _a,
+            icon = item.icon,
+            type = item.type,
+            disabled = item.disabled,
+            selected = item.selected,
+            clearButton = item.clearButton,
+            name = item.name;
+        return /*#__PURE__*/React__namespace.createElement("span", {
+          key: ind,
+          className: "ChipGroup-item"
+        }, /*#__PURE__*/React__namespace.createElement(Chip, {
+          name: name,
+          label: label,
+          selected: selected,
+          icon: icon,
+          disabled: disabled,
+          clearButton: clearButton,
+          type: type,
+          onClick: function onClick() {
+            return onClickHandler(item);
+          },
+          onClose: function onClose() {
+            return onCloseHandler(item);
+          }
+        }));
+      }));
+    };
+    ChipGroup.displayName = 'ChipGroup';
+
+    var Column = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
+      var _a;
+
+      var size = props.size,
+          sizeXS = props.sizeXS,
+          sizeS = props.sizeS,
+          sizeM = props.sizeM,
+          sizeL = props.sizeL,
+          sizeXL = props.sizeXL,
+          className = props.className,
+          children = props.children,
+          rest = __rest(props, ["size", "sizeXS", "sizeS", "sizeM", "sizeL", "sizeXL", "className", "children"]);
+
+      var classes = classNames__default['default']((_a = {}, _a['Col'] = true, _a["Col--" + size] = size, _a["Col--xs-" + sizeXS] = sizeXS, _a["Col--s-" + sizeS] = sizeS, _a["Col--m-" + sizeM] = sizeM, _a["Col--l-" + sizeL] = sizeL, _a["Col--xl-" + sizeXL] = sizeXL, _a["" + className] = className, _a));
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        ref: ref
+      }, rest, {
+        className: classes
+      }), children);
+    });
+    Column.displayName = 'Column';
 
     var Trigger$1 = function Trigger(props) {
       var inputFormat = props.inputFormat,
@@ -7024,7 +7021,7 @@
         }, /*#__PURE__*/React__namespace.createElement(Column, __assign({}, sizeMap[dimension]), /*#__PURE__*/React__namespace.createElement(Row, {
           className: "justify-content-between pt-6 pr-6 pb-5 pl-7"
         }, /*#__PURE__*/React__namespace.createElement(Column, null, !header && /*#__PURE__*/React__namespace.createElement(ModalHeader$1, __assign({}, headerOptions)), !!header && header), /*#__PURE__*/React__namespace.createElement(Column, {
-          className: "pr-2"
+          className: "pr-2 flex-grow-0"
         }, /*#__PURE__*/React__namespace.createElement(Icon, {
           size: 20,
           name: 'close',
@@ -7182,6 +7179,96 @@
       };
       return Sidesheet;
     }(React__namespace.Component);
+
+    var Collapsible = function Collapsible(props) {
+      var _a, _b, _c, _d;
+
+      var expanded = props.expanded,
+          hoverable = props.hoverable,
+          expandedWidth = props.expandedWidth,
+          height = props.height,
+          children = props.children,
+          className = props.className,
+          onToggle = props.onToggle;
+
+      var _e = React__namespace.useState(false),
+          isClicked = _e[0],
+          setIsClicked = _e[1];
+
+      var _f = React__namespace.useState(false),
+          seperator = _f[0],
+          setSeperator = _f[1];
+
+      var ref = /*#__PURE__*/React__namespace.createRef();
+      var baseProps = extractBaseProps(props);
+      React__namespace.useEffect(function () {
+        if (ref.current && ref.current.scrollHeight > ref.current.clientHeight) {
+          setSeperator(true);
+        }
+      });
+      var WrapperClass = classNames__default['default']((_a = {}, _a['Collapsible-wrapper'] = true, _a['Collapsible-wrapper--overlay'] = !isClicked, _a));
+      var BodyClass = classNames__default['default']((_b = {}, _b['Collapsible-body'] = true, _b));
+      var classes = classNames__default['default']((_c = {
+        Collapsible: true
+      }, _c['Collapsible--overlay'] = !isClicked, _c), className);
+      var FooterClass = classNames__default['default']((_d = {}, _d['Collapsible-footer'] = true, _d['Collapsible-footer--seperator'] = seperator, _d));
+
+      var onToggleHandler = function onToggleHandler(newExpanded, type) {
+        return function () {
+          if (onToggle) {
+            if (type === 'mouseenter' || type === 'mouseleave') {
+              if (isClicked && expanded || !hoverable) return;
+              setIsClicked(false);
+            }
+
+            if (type === 'click') {
+              setIsClicked(true);
+            }
+
+            onToggle(newExpanded);
+          }
+        };
+      };
+
+      var width = expanded ? expandedWidth : undefined;
+      return /*#__PURE__*/React__namespace.createElement("div", {
+        "data-test": "DesignSystem-CollapsibleWrapper",
+        className: WrapperClass,
+        style: {
+          height: height
+        }
+      }, /*#__PURE__*/React__namespace.createElement("div", __assign({
+        "data-test": "DesignSystem-Collapsible"
+      }, baseProps, {
+        "data-layer": true,
+        className: classes,
+        style: {
+          width: width
+        }
+      }), /*#__PURE__*/React__namespace.createElement("div", {
+        className: BodyClass,
+        "data-test": "DesignSystem-CollapsibleBody",
+        onMouseEnter: onToggleHandler(true, 'mouseenter'),
+        onMouseLeave: onToggleHandler(false, 'mouseleave'),
+        ref: ref
+      }, children), /*#__PURE__*/React__namespace.createElement("div", {
+        "data-test": "DesignSystem-Collapsible--Footer",
+        className: FooterClass
+      }, /*#__PURE__*/React__namespace.createElement(Icon, {
+        name: expanded ? 'keyboard_arrow_left' : 'keyboard_arrow_right',
+        "data-test": "DesignSystem-Collapsible--FooterIcon",
+        className: "px-5 py-4 my-2 cursor-pointer",
+        onClick: onToggleHandler(!expanded, 'click'),
+        size: 16
+      }))));
+    };
+    Collapsible.displayName = 'Collapsible';
+    Collapsible.defaultProps = {
+      expanded: false,
+      hoverable: true,
+      height: '100%',
+      expandedWidth: 'var(--spacing-9)'
+    };
 
     var Status = function Status(props) {
       var _a, _b;
@@ -12284,7 +12371,7 @@
     };
     FileList.displayName = 'FileList';
 
-    var version = "2.0.0-1";
+    var version = "2.0.0-2";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
@@ -12292,12 +12379,14 @@
     exports.Badge = Badge;
     exports.Breadcrumbs = Breadcrumbs;
     exports.Button = Button;
+    exports.Calendar = Calendar;
     exports.Caption = Caption;
     exports.Card = Card;
     exports.ChatMessage = ChatMessage;
     exports.Checkbox = Checkbox;
     exports.Chip = Chip;
     exports.ChipGroup = ChipGroup;
+    exports.Collapsible = Collapsible;
     exports.Column = Column;
     exports.DatePicker = DatePicker;
     exports.DateRangePicker = DateRangePicker;

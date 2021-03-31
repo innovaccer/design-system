@@ -6,6 +6,7 @@ declare const _default: {
             docPage: {
                 customCode: string;
                 noProps: boolean;
+                title: string;
             };
         };
     };

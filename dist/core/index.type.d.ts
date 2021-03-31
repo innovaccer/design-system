@@ -22,6 +22,7 @@ export { InputMaskProps } from "./components/molecules/inputMask";
 export { LabelProps } from "./components/atoms/label";
 export { CaptionProps } from "./components/atoms/caption";
 export { EditableDropdownProps } from "./components/molecules/editableDropdown";
+export { CollapsibleProps } from "./components/atoms/collapsible";
 export { LegendProps } from "./components/atoms/legend";
 export { LinkProps } from "./components/atoms/link";
 export { MessageProps } from "./components/atoms/message";

@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1616586463533 
+   * Generated on: 1617183944226 
    *      Package: @innovaccer/design-system
-   *      Version: v2.0.0-1
+   *      Version: v2.0.0-2
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -1883,7 +1883,7 @@ var DropdownList = function DropdownList(props) {
       triggerLabel = props.triggerLabel;
   var CustomTrigger = customTrigger ? customTrigger(triggerLabel ? triggerLabel : placeholder) : /*#__PURE__*/React.createElement(React.Fragment, null);
   var NewCustomTrigger = /*#__PURE__*/React.cloneElement(CustomTrigger, {
-    tabindex: 0,
+    tabIndex: 0,
     ref: dropdownTriggerRef
   });
   var trigger = customTrigger ? NewCustomTrigger : /*#__PURE__*/React.createElement(DropdownButton, {
@@ -3066,186 +3066,6 @@ var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
 });
 Button.displayName = 'Button';
 
-var Card = /*#__PURE__*/React.forwardRef(function (props, ref) {
-  var _classNames;
-
-  var _props$shadow = props.shadow,
-      shadow = _props$shadow === void 0 ? 'medium' : _props$shadow,
-      children = props.children,
-      className = props.className,
-      rest = _objectWithoutProperties$a(props, ["shadow", "children", "className"]);
-
-  var classes = classnames((_classNames = {
-    Card: true
-  }, _defineProperty$w(_classNames, "Card--shadow-".concat(shadow), shadow), _defineProperty$w(_classNames, "".concat(className), className), _classNames));
-  return /*#__PURE__*/React.createElement("div", _extends$p({
-    ref: ref
-  }, rest, {
-    className: classes
-  }), children);
-});
-Card.displayName = 'Card';
-
-var GenericChip = function GenericChip(props) {
-  var label = props.label,
-      icon = props.icon,
-      clearButton = props.clearButton,
-      disabled = props.disabled,
-      className = props.className,
-      selected = props.selected,
-      onClose = props.onClose,
-      onClick = props.onClick;
-  var baseProps = extractBaseProps(props);
-
-  var iconClass = function iconClass(align) {
-    var _classNames;
-
-    return classnames((_classNames = {}, _defineProperty$w(_classNames, 'Chip-icon', true), _defineProperty$w(_classNames, "Chip-icon--".concat(align), align), _defineProperty$w(_classNames, 'cursor-pointer', align === 'right' && !disabled), _classNames));
-  };
-
-  var onCloseHandler = function onCloseHandler(e) {
-    e.stopPropagation();
-    if (onClose) onClose();
-  };
-
-  var onClickHandler = function onClickHandler() {
-    if (onClick) onClick();
-  };
-
-  return /*#__PURE__*/React.createElement("div", _extends$p({}, baseProps, {
-    className: "Chip-wrapper ".concat(className),
-    onClick: onClickHandler
-  }), icon && /*#__PURE__*/React.createElement(Icon, {
-    name: icon,
-    appearance: disabled ? 'disabled' : selected ? 'info' : 'default',
-    className: iconClass('left')
-  }), /*#__PURE__*/React.createElement(Text$1, {
-    appearance: disabled ? 'disabled' : 'default'
-  }, label), clearButton && /*#__PURE__*/React.createElement(Icon, {
-    name: "clear",
-    appearance: disabled ? 'disabled' : selected ? 'info' : 'subtle',
-    className: iconClass('right'),
-    onClick: onCloseHandler
-  }));
-};
-GenericChip.displayName = 'GenericChip';
-
-var Chip = function Chip(props) {
-  var _classNames;
-
-  var label = props.label,
-      icon = props.icon,
-      clearButton = props.clearButton,
-      type = props.type,
-      disabled = props.disabled,
-      selected = props.selected,
-      onClose = props.onClose,
-      onClick = props.onClick,
-      name = props.name,
-      className = props.className;
-  var baseProps = extractBaseProps(props);
-
-  var onCloseHandler = function onCloseHandler() {
-    if (!disabled && onClose) onClose(name);
-  };
-
-  var onClickHandler = function onClickHandler() {
-    if (!disabled && onClick) onClick(name);
-  };
-
-  var chipClass = classnames((_classNames = {
-    Chip: true
-  }, _defineProperty$w(_classNames, "Chip-".concat(type, "--disabled"), disabled), _defineProperty$w(_classNames, "Chip--".concat(type), type && !disabled), _defineProperty$w(_classNames, "Chip-".concat(type, "--selected"), selected && !disabled), _classNames), className);
-  var clearbutton = type === 'action' ? false : clearButton;
-  var select = type === 'selection' && selected ? true : false;
-  return /*#__PURE__*/React.createElement(GenericChip, _extends$p({}, baseProps, {
-    label: label,
-    selected: select,
-    icon: icon,
-    clearButton: clearbutton,
-    disabled: disabled,
-    className: chipClass,
-    onClose: onCloseHandler,
-    onClick: onClickHandler,
-    name: name
-  }));
-};
-Chip.displayName = 'Chip';
-Chip.defaultProps = {
-  type: 'input'
-};
-
-var ChipGroup = function ChipGroup(props) {
-  var list = props.list,
-      onClick = props.onClick,
-      onClose = props.onClose,
-      className = props.className;
-  var baseProps = extractBaseProps(props);
-
-  var onClickHandler = function onClickHandler(item) {
-    if (onClick) onClick(item);
-  };
-
-  var onCloseHandler = function onCloseHandler(item) {
-    if (onClose) onClose(item);
-  };
-
-  var ChipGroupClass = classnames(_defineProperty$w({}, 'ChipGroup', true), className);
-  return /*#__PURE__*/React.createElement("div", _extends$p({}, baseProps, {
-    className: ChipGroupClass
-  }), list.map(function (item, ind) {
-    var _item$label = item.label,
-        label = _item$label === void 0 ? '' : _item$label,
-        icon = item.icon,
-        type = item.type,
-        disabled = item.disabled,
-        selected = item.selected,
-        clearButton = item.clearButton,
-        name = item.name;
-    return /*#__PURE__*/React.createElement("span", {
-      key: ind,
-      className: "ChipGroup-item"
-    }, /*#__PURE__*/React.createElement(Chip, {
-      name: name,
-      label: label,
-      selected: selected,
-      icon: icon,
-      disabled: disabled,
-      clearButton: clearButton,
-      type: type,
-      onClick: function onClick() {
-        return onClickHandler(item);
-      },
-      onClose: function onClose() {
-        return onCloseHandler(item);
-      }
-    }));
-  }));
-};
-ChipGroup.displayName = 'ChipGroup';
-
-var Column = /*#__PURE__*/React.forwardRef(function (props, ref) {
-  var _classNames;
-
-  var size = props.size,
-      sizeXS = props.sizeXS,
-      sizeS = props.sizeS,
-      sizeM = props.sizeM,
-      sizeL = props.sizeL,
-      sizeXL = props.sizeXL,
-      className = props.className,
-      children = props.children,
-      rest = _objectWithoutProperties$a(props, ["size", "sizeXS", "sizeS", "sizeM", "sizeL", "sizeXL", "className", "children"]);
-
-  var classes = classnames((_classNames = {}, _defineProperty$w(_classNames, 'Col', true), _defineProperty$w(_classNames, "Col--".concat(size), size), _defineProperty$w(_classNames, "Col--xs-".concat(sizeXS), sizeXS), _defineProperty$w(_classNames, "Col--s-".concat(sizeS), sizeS), _defineProperty$w(_classNames, "Col--m-".concat(sizeM), sizeM), _defineProperty$w(_classNames, "Col--l-".concat(sizeL), sizeL), _defineProperty$w(_classNames, "Col--xl-".concat(sizeXL), sizeXL), _defineProperty$w(_classNames, "".concat(className), className), _classNames));
-  return /*#__PURE__*/React.createElement("div", _extends$p({
-    ref: ref
-  }, rest, {
-    className: classes
-  }), children);
-});
-Column.displayName = 'Column';
-
 var sizeMap = {
   s: 'h5',
   m: 'h4',
@@ -4066,9 +3886,9 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         _view = _this$props8.view;
     var currDate = _rangePicker ? _endDate || _startDate : props.date;
 
-    var _yearNav = props.yearNav || getDateInfo(currDate || Date.now()).year;
+    var _yearNav = props.yearNav !== undefined ? props.yearNav : getDateInfo(currDate || Date.now()).year;
 
-    var _monthNav = props.monthNav || getDateInfo(currDate || Date.now()).month;
+    var _monthNav = props.monthNav !== undefined ? props.monthNav : getDateInfo(currDate || Date.now()).month;
 
     var _getDateInfo4 = getDateInfo(currDate),
         _year = _getDateInfo4.year,
@@ -4272,6 +4092,186 @@ _defineProperty$w(Calendar, "defaultProps", {
   view: 'date',
   firstDayOfWeek: 'sunday'
 });
+
+var Card = /*#__PURE__*/React.forwardRef(function (props, ref) {
+  var _classNames;
+
+  var _props$shadow = props.shadow,
+      shadow = _props$shadow === void 0 ? 'medium' : _props$shadow,
+      children = props.children,
+      className = props.className,
+      rest = _objectWithoutProperties$a(props, ["shadow", "children", "className"]);
+
+  var classes = classnames((_classNames = {
+    Card: true
+  }, _defineProperty$w(_classNames, "Card--shadow-".concat(shadow), shadow), _defineProperty$w(_classNames, "".concat(className), className), _classNames));
+  return /*#__PURE__*/React.createElement("div", _extends$p({
+    ref: ref
+  }, rest, {
+    className: classes
+  }), children);
+});
+Card.displayName = 'Card';
+
+var GenericChip = function GenericChip(props) {
+  var label = props.label,
+      icon = props.icon,
+      clearButton = props.clearButton,
+      disabled = props.disabled,
+      className = props.className,
+      selected = props.selected,
+      onClose = props.onClose,
+      onClick = props.onClick;
+  var baseProps = extractBaseProps(props);
+
+  var iconClass = function iconClass(align) {
+    var _classNames;
+
+    return classnames((_classNames = {}, _defineProperty$w(_classNames, 'Chip-icon', true), _defineProperty$w(_classNames, "Chip-icon--".concat(align), align), _defineProperty$w(_classNames, 'cursor-pointer', align === 'right' && !disabled), _classNames));
+  };
+
+  var onCloseHandler = function onCloseHandler(e) {
+    e.stopPropagation();
+    if (onClose) onClose();
+  };
+
+  var onClickHandler = function onClickHandler() {
+    if (onClick) onClick();
+  };
+
+  return /*#__PURE__*/React.createElement("div", _extends$p({}, baseProps, {
+    className: "Chip-wrapper ".concat(className),
+    onClick: onClickHandler
+  }), icon && /*#__PURE__*/React.createElement(Icon, {
+    name: icon,
+    appearance: disabled ? 'disabled' : selected ? 'info' : 'default',
+    className: iconClass('left')
+  }), /*#__PURE__*/React.createElement(Text$1, {
+    appearance: disabled ? 'disabled' : 'default'
+  }, label), clearButton && /*#__PURE__*/React.createElement(Icon, {
+    name: "clear",
+    appearance: disabled ? 'disabled' : selected ? 'info' : 'subtle',
+    className: iconClass('right'),
+    onClick: onCloseHandler
+  }));
+};
+GenericChip.displayName = 'GenericChip';
+
+var Chip = function Chip(props) {
+  var _classNames;
+
+  var label = props.label,
+      icon = props.icon,
+      clearButton = props.clearButton,
+      type = props.type,
+      disabled = props.disabled,
+      selected = props.selected,
+      onClose = props.onClose,
+      onClick = props.onClick,
+      name = props.name,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+
+  var onCloseHandler = function onCloseHandler() {
+    if (!disabled && onClose) onClose(name);
+  };
+
+  var onClickHandler = function onClickHandler() {
+    if (!disabled && onClick) onClick(name);
+  };
+
+  var chipClass = classnames((_classNames = {
+    Chip: true
+  }, _defineProperty$w(_classNames, "Chip-".concat(type, "--disabled"), disabled), _defineProperty$w(_classNames, "Chip--".concat(type), type && !disabled), _defineProperty$w(_classNames, "Chip-".concat(type, "--selected"), selected && !disabled), _classNames), className);
+  var clearbutton = type === 'action' ? false : clearButton;
+  var select = type === 'selection' && selected ? true : false;
+  return /*#__PURE__*/React.createElement(GenericChip, _extends$p({}, baseProps, {
+    label: label,
+    selected: select,
+    icon: icon,
+    clearButton: clearbutton,
+    disabled: disabled,
+    className: chipClass,
+    onClose: onCloseHandler,
+    onClick: onClickHandler,
+    name: name
+  }));
+};
+Chip.displayName = 'Chip';
+Chip.defaultProps = {
+  type: 'input'
+};
+
+var ChipGroup = function ChipGroup(props) {
+  var list = props.list,
+      onClick = props.onClick,
+      onClose = props.onClose,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+
+  var onClickHandler = function onClickHandler(item) {
+    if (onClick) onClick(item);
+  };
+
+  var onCloseHandler = function onCloseHandler(item) {
+    if (onClose) onClose(item);
+  };
+
+  var ChipGroupClass = classnames(_defineProperty$w({}, 'ChipGroup', true), className);
+  return /*#__PURE__*/React.createElement("div", _extends$p({}, baseProps, {
+    className: ChipGroupClass
+  }), list.map(function (item, ind) {
+    var _item$label = item.label,
+        label = _item$label === void 0 ? '' : _item$label,
+        icon = item.icon,
+        type = item.type,
+        disabled = item.disabled,
+        selected = item.selected,
+        clearButton = item.clearButton,
+        name = item.name;
+    return /*#__PURE__*/React.createElement("span", {
+      key: ind,
+      className: "ChipGroup-item"
+    }, /*#__PURE__*/React.createElement(Chip, {
+      name: name,
+      label: label,
+      selected: selected,
+      icon: icon,
+      disabled: disabled,
+      clearButton: clearButton,
+      type: type,
+      onClick: function onClick() {
+        return onClickHandler(item);
+      },
+      onClose: function onClose() {
+        return onCloseHandler(item);
+      }
+    }));
+  }));
+};
+ChipGroup.displayName = 'ChipGroup';
+
+var Column = /*#__PURE__*/React.forwardRef(function (props, ref) {
+  var _classNames;
+
+  var size = props.size,
+      sizeXS = props.sizeXS,
+      sizeS = props.sizeS,
+      sizeM = props.sizeM,
+      sizeL = props.sizeL,
+      sizeXL = props.sizeXL,
+      className = props.className,
+      children = props.children,
+      rest = _objectWithoutProperties$a(props, ["size", "sizeXS", "sizeS", "sizeM", "sizeL", "sizeXL", "className", "children"]);
+
+  var classes = classnames((_classNames = {}, _defineProperty$w(_classNames, 'Col', true), _defineProperty$w(_classNames, "Col--".concat(size), size), _defineProperty$w(_classNames, "Col--xs-".concat(sizeXS), sizeXS), _defineProperty$w(_classNames, "Col--s-".concat(sizeS), sizeS), _defineProperty$w(_classNames, "Col--m-".concat(sizeM), sizeM), _defineProperty$w(_classNames, "Col--l-".concat(sizeL), sizeL), _defineProperty$w(_classNames, "Col--xl-".concat(sizeXL), sizeXL), _defineProperty$w(_classNames, "".concat(className), className), _classNames));
+  return /*#__PURE__*/React.createElement("div", _extends$p({
+    ref: ref
+  }, rest, {
+    className: classes
+  }), children);
+});
+Column.displayName = 'Column';
 
 var Trigger$1 = function Trigger(props) {
   var inputFormat = props.inputFormat,
@@ -39929,7 +39929,7 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/React.createElement(Column, sizeMap[dimension], /*#__PURE__*/React.createElement(Row, {
         className: "justify-content-between pt-6 pr-6 pb-5 pl-7"
       }, /*#__PURE__*/React.createElement(Column, null, !header && /*#__PURE__*/React.createElement(ModalHeader$1, headerOptions), !!header && header), /*#__PURE__*/React.createElement(Column, {
-        className: "pr-2"
+        className: "pr-2 flex-grow-0"
       }, /*#__PURE__*/React.createElement(Icon, {
         size: 20,
         name: 'close',
@@ -40104,6 +40104,98 @@ _defineProperty$w(Sidesheet, "defaultProps", {
   stickFooter: false,
   headerOptions: {}
 });
+
+var Collapsible = function Collapsible(props) {
+  var _classNames, _classNames4;
+
+  var expanded = props.expanded,
+      hoverable = props.hoverable,
+      expandedWidth = props.expandedWidth,
+      height = props.height,
+      children = props.children,
+      className = props.className,
+      onToggle = props.onToggle;
+
+  var _React$useState = React.useState(false),
+      _React$useState2 = _slicedToArray$7(_React$useState, 2),
+      isClicked = _React$useState2[0],
+      setIsClicked = _React$useState2[1];
+
+  var _React$useState3 = React.useState(false),
+      _React$useState4 = _slicedToArray$7(_React$useState3, 2),
+      seperator = _React$useState4[0],
+      setSeperator = _React$useState4[1];
+
+  var ref = /*#__PURE__*/React.createRef();
+  var baseProps = extractBaseProps(props);
+  React.useEffect(function () {
+    if (ref.current && ref.current.scrollHeight > ref.current.clientHeight) {
+      setSeperator(true);
+    }
+  });
+  var WrapperClass = classnames((_classNames = {}, _defineProperty$w(_classNames, 'Collapsible-wrapper', true), _defineProperty$w(_classNames, 'Collapsible-wrapper--overlay', !isClicked), _classNames));
+  var BodyClass = classnames(_defineProperty$w({}, 'Collapsible-body', true));
+  var classes = classnames(_defineProperty$w({
+    Collapsible: true
+  }, 'Collapsible--overlay', !isClicked), className);
+  var FooterClass = classnames((_classNames4 = {}, _defineProperty$w(_classNames4, 'Collapsible-footer', true), _defineProperty$w(_classNames4, 'Collapsible-footer--seperator', seperator), _classNames4));
+
+  var onToggleHandler = function onToggleHandler(newExpanded, type) {
+    return function () {
+      if (onToggle) {
+        if (type === 'mouseenter' || type === 'mouseleave') {
+          if (isClicked && expanded || !hoverable) return;
+          setIsClicked(false);
+        }
+
+        if (type === 'click') {
+          setIsClicked(true);
+        }
+
+        onToggle(newExpanded);
+      }
+    };
+  };
+
+  var width = expanded ? expandedWidth : undefined;
+  return /*#__PURE__*/React.createElement("div", {
+    "data-test": "DesignSystem-CollapsibleWrapper",
+    className: WrapperClass,
+    style: {
+      height: height
+    }
+  }, /*#__PURE__*/React.createElement("div", _extends$p({
+    "data-test": "DesignSystem-Collapsible"
+  }, baseProps, {
+    "data-layer": true,
+    className: classes,
+    style: {
+      width: width
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: BodyClass,
+    "data-test": "DesignSystem-CollapsibleBody",
+    onMouseEnter: onToggleHandler(true, 'mouseenter'),
+    onMouseLeave: onToggleHandler(false, 'mouseleave'),
+    ref: ref
+  }, children), /*#__PURE__*/React.createElement("div", {
+    "data-test": "DesignSystem-Collapsible--Footer",
+    className: FooterClass
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: expanded ? 'keyboard_arrow_left' : 'keyboard_arrow_right',
+    "data-test": "DesignSystem-Collapsible--FooterIcon",
+    className: "px-5 py-4 my-2 cursor-pointer",
+    onClick: onToggleHandler(!expanded, 'click'),
+    size: 16
+  }))));
+};
+Collapsible.displayName = 'Collapsible';
+Collapsible.defaultProps = {
+  expanded: false,
+  hoverable: true,
+  height: '100%',
+  expandedWidth: 'var(--spacing-9)'
+};
 
 var Status = function Status(props) {
   var type = props.type,
@@ -44567,6 +44659,7 @@ var defaultProps = {
  *    - Promise reject:
  *      error: true, errorType: 'FAILED\_TO\_FETCH'
  * 3. Default errorTemplate:
+ *
  * <pre class="DocPage-codeBlock">
  * (props) => {
  *      const { errorType = 'DEFAULT' } = props;
@@ -45425,6 +45518,6 @@ FileList.defaultProps = {
 };
 FileList.displayName = 'FileList';
 
-var version = "2.0.0-1";
+var version = "2.0.0-2";
 
-export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Caption, Card, ChatMessage, Checkbox, Chip, ChipGroup, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, Dropzone, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text$1 as Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, version };
+export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, ChatMessage, Checkbox, Chip, ChipGroup, Collapsible, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, Dropzone, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text$1 as Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, version };

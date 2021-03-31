@@ -1670,6 +1670,44 @@ body {
 .ChipGroup-item:last-child {
     margin-right: 0;
 }
+.Collapsible-wrapper {
+  position: relative;
+}
+
+.Collapsible-wrapper--overlay {
+  margin-right: 40px;
+}
+
+.Collapsible {
+  display: inline-flex;
+  flex-direction: column;
+  background-color: var(--secondary-lightest);
+  width: 40px;
+  height: 100%;
+  transition: width 0.1s ease-in-out;
+}
+
+.Collapsible--overlay {
+  position: absolute;
+}
+
+.Collapsible-body {
+  flex-grow: 1;
+  overflow-y: auto;
+  transition: width 0.1s ease-in-out;
+}
+
+.Collapsible-footer {
+  padding-top: var(--spacing-m);
+  padding-bottom: var(--spacing-m);
+  box-sizing: border-box;
+  display: flex;
+}
+
+.Collapsible-footer--seperator {
+  border-top: var(--spacing-xs) solid var(--secondary-light);
+}
+
 .DateRangePicker {
     display: flex;
 }
