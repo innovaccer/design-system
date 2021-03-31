@@ -5,5 +5,8 @@ export default {
   monthsInRow: 3,
   daysInRow: 7,
   months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-  days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+  days: {
+    small: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+    large: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+  }
 }

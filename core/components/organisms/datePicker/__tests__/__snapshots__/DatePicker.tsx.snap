@@ -40,8 +40,10 @@ exports[`DatePicker component
   <Calendar
     date={2020-03-01T00:00:00.000Z}
     firstDayOfWeek="sunday"
+    jumpView={true}
     monthsInView={1}
     onDateChange={[Function]}
+    size="large"
     view="date"
   />
 </Popover>
@@ -87,8 +89,10 @@ exports[`DatePicker component
   <Calendar
     date={2020-03-01T00:00:00.000Z}
     firstDayOfWeek="sunday"
+    jumpView={true}
     monthsInView={1}
     onDateChange={[Function]}
+    size="large"
     view="date"
   />
 </Popover>
@@ -100,8 +104,10 @@ exports[`DatePicker component
 <Calendar
   date={2020-03-01T00:00:00.000Z}
   firstDayOfWeek="sunday"
+  jumpView={true}
   monthsInView={1}
   onDateChange={[Function]}
+  size="large"
   view="date"
 />
 `;
@@ -112,8 +118,10 @@ exports[`DatePicker component
 <Calendar
   date={2020-03-01T00:00:00.000Z}
   firstDayOfWeek="sunday"
+  jumpView={true}
   monthsInView={1}
   onDateChange={[Function]}
+  size="large"
   view="month"
 />
 `;
@@ -124,8 +132,10 @@ exports[`DatePicker component
 <Calendar
   date={2020-03-01T00:00:00.000Z}
   firstDayOfWeek="sunday"
+  jumpView={true}
   monthsInView={1}
   onDateChange={[Function]}
+  size="large"
   view="year"
 />
 `;
@@ -136,8 +146,10 @@ exports[`DatePicker component
 <Calendar
   date={2020-03-01T00:00:00.000Z}
   firstDayOfWeek="sunday"
+  jumpView={true}
   monthsInView={1}
   onDateChange={[Function]}
+  size="large"
   view="date"
 />
 `;
@@ -182,8 +194,10 @@ exports[`DatePicker component
   <Calendar
     date={2020-03-01T00:00:00.000Z}
     firstDayOfWeek="sunday"
+    jumpView={true}
     monthsInView={1}
     onDateChange={[Function]}
+    size="large"
     view="date"
   />
 </Popover>
