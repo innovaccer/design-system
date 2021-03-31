@@ -1,8 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import Dropdown from '../dropdown';
-import { Button } from '@/index';
-import { SubtleLink } from './SubtleLink';
+import { Button, Link } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 interface Breadcrumb {
@@ -25,16 +24,23 @@ export interface BreadcrumbsProps extends BaseProps {
   /**
    * onClick handler for `Breadcrumb`
    */
-  onClick: (link: string) => void;
+  onClick?: (link: string) => void;
 }
 
 const renderLink = (item: Breadcrumb, onClick: BreadcrumbsProps['onClick']) => (
-  <SubtleLink
+  <Link
     href={item.link}
-    onClick={() => onClick(item.link)}
+    onClick={ev => {
+      if (onClick) {
+        ev.preventDefault();
+        onClick(item.link);
+      }
+    }}
+    appearance="subtle"
+    size="tiny"
   >
     {item.label}
-  </SubtleLink>
+  </Link>
 );
 
 const renderDropdown = (list: BreadcrumbsProps['list'], onClick: BreadcrumbsProps['onClick']) => {
@@ -43,7 +49,7 @@ const renderDropdown = (list: BreadcrumbsProps['list'], onClick: BreadcrumbsProp
     value: item.link
   }));
 
-  const customTrigger = () => <Button size="tiny" appearance="transparent" icon="more_horiz_filled" />;
+  const customTrigger = () => <Button size="tiny" appearance="transparent" icon="more_horiz_filled" data-test="DesignSystem-Breadcrumbs-more" />;
 
   return (
     <Dropdown
@@ -52,7 +58,9 @@ const renderDropdown = (list: BreadcrumbsProps['list'], onClick: BreadcrumbsProp
       options={options}
       menu={true}
       onChange={selected => {
-        onClick(selected);
+        if (onClick) {
+          onClick(selected);
+        }
       }}
     />
   );
@@ -72,11 +80,11 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
   }, className);
 
   return (
-    <div {...baseProps} className={BreadcrumbClass}>
+    <div data-test="DesignSystem-Breadcrumbs" {...baseProps} className={BreadcrumbClass}>
       {list.length <= 4 ? (
         list.map((item, index) => {
           return (
-            <div key={index} className="Breadcrumbs-item">
+            <div key={index} className="Breadcrumbs-item" data-test="DesignSystem-Breadcrumbs-item">
               <span className="Breadcrumbs-link">
                 {renderLink(item, onClick)}
               </span>
@@ -86,7 +94,7 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
         })
       ) : (
           <>
-            <div className="Breadcrumbs-item">
+            <div className="Breadcrumbs-item" data-test="DesignSystem-Breadcrumbs-item">
               <span className="Breadcrumbs-link">
                 {renderLink(list[0], onClick)}
               </span>
@@ -96,7 +104,7 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
               {renderDropdown(list.slice(1, list.length - 1), onClick)}
               <span className="Breadcrumbs-itemSeparator">/</span>
             </div>
-            <div className="Breadcrumbs-item">
+            <div className="Breadcrumbs-item" data-test="DesignSystem-Breadcrumbs-item">
               <span className="Breadcrumbs-link">
                 {renderLink(list[list.length - 1], onClick)}
               </span>
