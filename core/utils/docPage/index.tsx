@@ -23,6 +23,7 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'reac
 import openSandbox from './sandbox';
 import generateImports from './generateImports';
 import * as componentLib from '@/index';
+import classNames from 'classnames';
 
 export interface Example {
   title: string;
@@ -135,7 +136,7 @@ ${jsx
 };
 
 const StoryComp = props => {
-  const { customCode, noHtml, noStory, noSandbox } = props;
+  const { customCode, noHtml, noStory, noSandbox, isEmbed } = props;
   const { story, storyId } = getStory();
   const comp = story.getOriginal()();
   const sp = story.parameters;
@@ -144,7 +145,7 @@ const StoryComp = props => {
   const [activeTab, setActiveTab] = React.useState<number>(0);
   const [jsxCode, setJsxCode] = React.useState<string>(getRawPreviewCode(customCode, comp));
   const [htmlCode, setHtmlCode] = React.useState<string>(`${html}`);
-  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isExpanded, setIsExpanded] = React.useState(isEmbed);
 
   const importScope = props.imports;
 
@@ -175,30 +176,35 @@ const StoryComp = props => {
   };
 
   if (!noStory) {
+    const actions = [
+      {
+        title: 'Edit in sandbox',
+        onClick: ev => {
+          ev.preventDefault();
+          openSandbox(jsxCode);
+        },
+        disabled: noSandbox
+      }
+    ];
+
+    if (!isEmbed) {
+      actions.push({
+        title: `${!isExpanded ? 'Show' : 'Hide'} code`,
+        onClick: ev => {
+          setIsExpanded(!isExpanded);
+        }
+      });
+    }
+
     return (
-      <Card shadow="light" className="overflow-hidden">
+      <Card shadow={isEmbed ? 'none' : 'light'} className="overflow-hidden">
         <LiveProvider code={jsxCode} scope={{ ...DS, ...importScope }}>
           <Canvas
             className="my-0"
             withSource="none"
             withToolbar={true}
             isExpanded={isExpanded}
-            additionalActions={[
-              {
-                title: 'Edit in sandbox',
-                onClick: ev => {
-                  ev.preventDefault();
-                  openSandbox(jsxCode);
-                },
-                disabled: noSandbox
-              },
-              {
-                title: `${!isExpanded ? 'Show' : 'Hide'} code`,
-                onClick: ev => {
-                  setIsExpanded(!isExpanded);
-                }
-              }
-            ]}
+            additionalActions={actions}
           >
             <LivePreview />
           </Canvas>
@@ -241,16 +247,19 @@ export const docPage = () => {
   const { title, description, props: propsAttr, customCode, noHtml, noStory, noProps = isEmbed, noSandbox, imports } =
     sp.docs.docPage || {};
   const { component: { displayName } = {} } = sp;
+  const pageClassnames = classNames({
+    DocPage: true,
+    'pt-8 pb-8': !(isEmbed || isEmbedWithProp)
+  });
 
   return (
-    <div className="DocPage">
+    <div className={pageClassnames}>
       {!isEmbed && !isEmbedWithProp && (
         <>
           <Title> {title || displayName} </Title>
-          <br />
+          <Description>{description}</Description>
         </>
       )}
-      <Description>{description}</Description>
 
       <StoryComp
         key={storyId}
@@ -259,6 +268,7 @@ export const docPage = () => {
         noStory={noStory}
         noSandbox={noSandbox}
         imports={imports}
+        isEmbed={isEmbed || isEmbedWithProp}
       />
 
       {!noProps && (
