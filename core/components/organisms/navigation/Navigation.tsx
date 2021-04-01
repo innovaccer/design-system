@@ -35,8 +35,9 @@ export interface NavigationProps extends BaseProps, VerticalNavigationProps {
 }
 
 /**
- * ####NOTE: Navigation(vertical) sets first subMenu(if present) active if the Navigation is collapsed.
+ * ####NOTE: Navigation type vertical will be deprecated soon. VerticalMenu will be supported.
  */
+
 export const Navigation = (props: NavigationProps) => {
   const {
     type,

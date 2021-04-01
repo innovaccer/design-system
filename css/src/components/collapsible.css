@@ -12,7 +12,8 @@
   background-color: var(--secondary-lightest);
   width: 40px;
   height: 100%;
-  transition: width 0.1s ease-in-out;
+  transition: width 240ms;
+  transition-timing-function: cubic-bezier(0.4, 0.14, 0.3, 1);
 }
 
 .Collapsible--overlay {
@@ -22,7 +23,6 @@
 .Collapsible-body {
   flex-grow: 1;
   overflow-y: auto;
-  transition: width 0.1s ease-in-out;
 }
 
 .Collapsible-footer {
