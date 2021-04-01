@@ -48,8 +48,8 @@ export const Collapsible = (props: CollapsibleProps) => {
   const baseProps = extractBaseProps(props);
 
   React.useEffect(() => {
-    if (ref.current && (ref.current.scrollHeight > ref.current.clientHeight)) {
-      setSeperator(true);
+    if (ref.current) {
+      setSeperator(ref.current.scrollHeight > ref.current.clientHeight);
     }
   });
 
