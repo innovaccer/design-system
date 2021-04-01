@@ -103,7 +103,7 @@
   },
   "dependencies": {
     "@types/classnames": "^2.2.9",
-    "classnames": "^2.2.6",
+    "classnames": "2.2.6",
     "core-js": "^3.9.1",
     "js-beautify": "1.10.3",
     "react-dom": "^16.8.6",
