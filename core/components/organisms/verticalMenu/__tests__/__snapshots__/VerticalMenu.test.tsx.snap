@@ -1,0 +1,295 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Vertical Navigation component 
+  expanded: false, menus: [{"name":"patient_360","label":"Patient 360","icon":"assignment_ind","link":"/patient360","count":10,"group":"Section 1"},{"name":"care_management","label":"Care Management and Resources","icon":"forum","group":"Section 2","subMenu":[{"name":"care_management.timeline","label":"Timeline","icon":"assignment_ind"},{"name":"care_management.care_plans","label":"Care Plans","icon":"events"}]},{"name":"episodes","label":"Episodes","disabled":true,"icon":"airline_seat_flat_angled","group":"Section 2","count":100},{"name":"risk","label":"Risk","icon":"favorite","group":"Section 2","subMenu":[{"name":"risk.timeline","label":"Timeline"},{"name":"risk.care_plans","label":"Care Plans"}]}], active: {"name":"care_management.timeline"}, onClick: "[Function]", onToggle: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="VerticalMenu"
+    >
+      <div
+        class="MenuItem MenuItem--vertical MenuItem--collapsed"
+        data-test="DesignSystem-VerticalMenu--Item"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-icons Icon Icon--default"
+            data-test="DesignSystem-VerticalMenu--Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            assignment_ind
+          </i>
+        </div>
+      </div>
+      <div
+        class="MenuItem MenuItem--vertical MenuItem--collapsed"
+        data-test="DesignSystem-VerticalMenu--Item"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-icons Icon Icon--default"
+            data-test="DesignSystem-VerticalMenu--Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            forum
+          </i>
+        </div>
+      </div>
+      <div
+        class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-icons Icon Icon--info"
+            data-test="DesignSystem-VerticalMenu--Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            assignment_ind
+          </i>
+        </div>
+      </div>
+      <div
+        class="MenuItem MenuItem--vertical MenuItem--collapsed"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-icons Icon Icon--default"
+            data-test="DesignSystem-VerticalMenu--Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            events
+          </i>
+        </div>
+      </div>
+      <div
+        class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled"
+        data-test="DesignSystem-VerticalMenu--Item"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-icons Icon Icon--disabled"
+            data-test="DesignSystem-VerticalMenu--Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            airline_seat_flat_angled
+          </i>
+        </div>
+      </div>
+      <div
+        class="MenuItem MenuItem--vertical MenuItem--collapsed"
+        data-test="DesignSystem-VerticalMenu--Item"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-icons Icon Icon--default"
+            data-test="DesignSystem-VerticalMenu--Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            favorite
+          </i>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Vertical Navigation component 
+  expanded: true, rounded: [true,false], menus: [{"name":"patient_360","label":"Patient 360","icon":"assignment_ind","link":"/patient360","count":10,"group":"Section 1"},{"name":"care_management","label":"Care Management and Resources","icon":"forum","group":"Section 2","subMenu":[{"name":"care_management.timeline","label":"Timeline","icon":"assignment_ind"},{"name":"care_management.care_plans","label":"Care Plans","icon":"events"}]},{"name":"episodes","label":"Episodes","disabled":true,"icon":"airline_seat_flat_angled","group":"Section 2","count":100},{"name":"risk","label":"Risk","icon":"favorite","group":"Section 2","subMenu":[{"name":"risk.timeline","label":"Timeline"},{"name":"risk.care_plans","label":"Care Plans"}]}], active: {"name":"care_management.timeline"}, onClick: "[Function]", onToggle: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="VerticalMenu VerticalMenu--expanded"
+    >
+      <div
+        class="VerticalMenu-section"
+      >
+        <span
+          class="Text Text--default Text--strong Text--small"
+          data-test="DesignSystem-VerticalMenu--Section"
+        >
+          Section 1
+        </span>
+      </div>
+      <div
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded"
+        data-test="DesignSystem-VerticalMenu--Item"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-icons Icon Icon--default mr-4"
+            data-test="DesignSystem-VerticalMenu--Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            assignment_ind
+          </i>
+          <span
+            class="Text Text--default Text--regular"
+            data-test="DesignSystem-VerticalMenu--Text"
+          >
+            Patient 360
+          </span>
+        </div>
+        <span
+          class="Pills Badge--secondary MenuItem-count"
+          data-test="DesignSystem-VerticalMenu--Pills"
+        >
+          10
+        </span>
+      </div>
+      <div
+        class="VerticalMenu-section VerticalMenu-section--border"
+      >
+        <span
+          class="Text Text--default Text--strong Text--small"
+          data-test="DesignSystem-VerticalMenu--Section"
+        >
+          Section 2
+        </span>
+      </div>
+      <div
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded"
+        data-test="DesignSystem-VerticalMenu--Item"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-icons Icon Icon--default mr-4"
+            data-test="DesignSystem-VerticalMenu--Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            forum
+          </i>
+          <span
+            class="Text Text--default Text--regular"
+            data-test="DesignSystem-VerticalMenu--Text"
+          >
+            Care Management and Resources
+          </span>
+        </div>
+        <i
+          class="material-icons Icon Icon--subtle mx-4"
+          style="font-size: 16px; width: 16px;"
+        >
+          keyboard_arrow_up
+        </i>
+      </div>
+      <div
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--active MenuItem--subMenu MenuItem--rounded"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-icons Icon Icon--info mr-4"
+            data-test="DesignSystem-VerticalMenu--Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            assignment_ind
+          </i>
+          <span
+            class="Text Text--link Text--regular"
+            data-test="DesignSystem-VerticalMenu--Text"
+          >
+            Timeline
+          </span>
+        </div>
+      </div>
+      <div
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--subMenu MenuItem--rounded"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-icons Icon Icon--default mr-4"
+            data-test="DesignSystem-VerticalMenu--Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            events
+          </i>
+          <span
+            class="Text Text--default Text--regular"
+            data-test="DesignSystem-VerticalMenu--Text"
+          >
+            Care Plans
+          </span>
+        </div>
+      </div>
+      <div
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--disabled MenuItem--rounded"
+        data-test="DesignSystem-VerticalMenu--Item"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-icons Icon Icon--disabled mr-4"
+            data-test="DesignSystem-VerticalMenu--Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            airline_seat_flat_angled
+          </i>
+          <span
+            class="Text Text--disabled Text--regular"
+            data-test="DesignSystem-VerticalMenu--Text"
+          >
+            Episodes
+          </span>
+        </div>
+        <span
+          class="Pills Badge--subtle-secondary MenuItem-count MenuItem-count--disabled"
+          data-test="DesignSystem-VerticalMenu--Pills"
+        >
+          99+
+        </span>
+      </div>
+      <div
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded"
+        data-test="DesignSystem-VerticalMenu--Item"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-icons Icon Icon--default mr-4"
+            data-test="DesignSystem-VerticalMenu--Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            favorite
+          </i>
+          <span
+            class="Text Text--default Text--regular"
+            data-test="DesignSystem-VerticalMenu--Text"
+          >
+            Risk
+          </span>
+        </div>
+        <i
+          class="material-icons Icon Icon--subtle mx-4"
+          style="font-size: 16px; width: 16px;"
+        >
+          keyboard_arrow_down
+        </i>
+      </div>
+    </div>
+  </div>
+</body>
+`;
