@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumbs component renders empty breadcrumbs 1`] = `
+<body>
+  <div>
+    <div
+      class="Breadcrumbs"
+      data-test="DesignSystem-Breadcrumbs"
+    />
+  </div>
+</body>
+`;
+
+exports[`Breadcrumbs component renders four links 1`] = `
+<body>
+  <div>
+    <div
+      class="Breadcrumbs"
+      data-test="DesignSystem-Breadcrumbs"
+    >
+      <div
+        class="Breadcrumbs-item"
+        data-test="DesignSystem-Breadcrumbs-item"
+      >
+        <span
+          class="Breadcrumbs-link"
+        >
+          <a
+            class="Link Link--tiny Link--subtle"
+            data-test="DesignSystem-Link"
+            href="/level0"
+          >
+            Level 0
+          </a>
+        </span>
+        <span
+          class="Breadcrumbs-itemSeparator"
+        >
+          /
+        </span>
+      </div>
+      <div
+        class="Breadcrumbs-item"
+        data-test="DesignSystem-Breadcrumbs-item"
+      >
+        <span
+          class="Breadcrumbs-link"
+        >
+          <a
+            class="Link Link--tiny Link--subtle"
+            data-test="DesignSystem-Link"
+            href="/level1"
+          >
+            Level 1
+          </a>
+        </span>
+        <span
+          class="Breadcrumbs-itemSeparator"
+        >
+          /
+        </span>
+      </div>
+      <div
+        class="Breadcrumbs-item"
+        data-test="DesignSystem-Breadcrumbs-item"
+      >
+        <span
+          class="Breadcrumbs-link"
+        >
+          <a
+            class="Link Link--tiny Link--subtle"
+            data-test="DesignSystem-Link"
+            href="/level2"
+          >
+            Level 2
+          </a>
+        </span>
+        <span
+          class="Breadcrumbs-itemSeparator"
+        >
+          /
+        </span>
+      </div>
+      <div
+        class="Breadcrumbs-item"
+        data-test="DesignSystem-Breadcrumbs-item"
+      >
+        <span
+          class="Breadcrumbs-link"
+        >
+          <a
+            class="Link Link--tiny Link--subtle"
+            data-test="DesignSystem-Link"
+            href="/level3"
+          >
+            Level 3
+          </a>
+        </span>
+        <span
+          class="Breadcrumbs-itemSeparator"
+        >
+          /
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Breadcrumbs component renders with custom className 1`] = `
+<body>
+  <div>
+    <div
+      class="Breadcrumbs My-custom-style"
+      data-test="DesignSystem-Breadcrumbs"
+    />
+  </div>
+</body>
+`;
