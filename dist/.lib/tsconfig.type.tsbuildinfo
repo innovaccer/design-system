@@ -381,14 +381,9 @@
         "signature": "40f70594c27bbf52364c559154aa64ecba00179ec4a548df2b751e72542f6497",
         "affectsGlobalScope": false
       },
-      "../../core/components/atoms/breadcrumbs/SubtleLink.tsx": {
-        "version": "0023763cec8b4f5770661aec08ae71e19b0daaf574e46b814eeb6cc1994a5a7d",
-        "signature": "f8f3ae3cd8e6173970635dd87b5b001176cdc4ea35f7cb45d906583a827e6e25",
-        "affectsGlobalScope": false
-      },
       "../../core/components/atoms/breadcrumbs/Breadcrumbs.tsx": {
-        "version": "0693d962a732db4cba68e294c196d24de9c6a7908c3b177866755705b454b1dd",
-        "signature": "ac2f0cbd1ce8483e17e96bd5ab19db6be340ce55f6be590a97184bc39708bbae",
+        "version": "ef7ea9e4045a7b1b47a8a888c55822e78a851f3effebb25312cfee2db8c53c26",
+        "signature": "1386549cc62d6f495546a3ed7295592da38aabd3565a63c52a1904b3dc3e29a1",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/breadcrumbs/index.tsx": {
@@ -416,34 +411,14 @@
         "signature": "dd7307efa66bcc152cc7525fe72c1d9670fd4ad47251ad21d372e7f9c5a4d0a4",
         "affectsGlobalScope": false
       },
-      "../../core/components/atoms/heading/Heading.tsx": {
-        "version": "01f51529e25d0c9ddc4385dc974fd669e895240819cd6af34aa9ad02b0513b77",
-        "signature": "aef863fbb1a13d9b5fa7b44e4bb2bc003188192dcbef8a126fd52e2db271e401",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/atoms/heading/index.tsx": {
-        "version": "eaef820e7cbb7a56bf1fec8b7132e8262258e50268c14436e822c1c3882c93d0",
-        "signature": "480c19fe72b950086e8c0e45b46b798590b05be70563147e4cb2df46c4002180",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/atoms/subheading/Subheading.tsx": {
-        "version": "a3cd74030abe05bd61a662d516a234518424d911656c768e79866032c1ead2fa",
-        "signature": "4b45f815e54247f6334dc38e44365f965a65e265a7ad81d02f35d28575fc35fd",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/atoms/subheading/index.tsx": {
-        "version": "5eaec0ac9097a6d6b4e4010622e988d682014e965ef1f4d67468b68467557eda",
-        "signature": "7b63de77b5fa0602bbec876c50155ddd98c2a55b9ace2b5809e6563cd00b6bcf",
-        "affectsGlobalScope": false
-      },
       "../../core/components/organisms/calendar/config.ts": {
-        "version": "6b97f5e28c7bab8096f4c9492550c493bc9b51a38693a000c928d4723baa82c5",
-        "signature": "8ece974461d081771e431ad31f0774b592d96813009e756a0886f3ffc4d6f1bb",
+        "version": "bc875f6caa49919ed0897b13cb039d7e1936f3b3b3149c61445a74aadc2a64fe",
+        "signature": "fb386782ba87c1aef3743ee1e9cda336e878c0577de2308809385f56aa2e84a2",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/calendar/types.ts": {
-        "version": "e3451273cab8c971e44a15d15193830657267e7184fc1f6c6aed78c927787597",
-        "signature": "c77b3cfb479b4c47702be89c93009869098ce6de404dd3b45c4e25c7bbfe8f97",
+        "version": "59b82e11772e605a6de0b6b0f703929f2f30ccdabf7440a0061cbb2c6c18c3e7",
+        "signature": "9fbcf5298161d2db183433f59cf8a7ab2203aa2557c4c2a056bc3ca55a27d1fb",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/calendar/utility.ts": {
@@ -452,8 +427,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/calendar/Calendar.tsx": {
-        "version": "191a1e64dccebb2b0bbe34a0358abcafa692ed9e2b21a89ac856015a865a7220",
-        "signature": "5e1d8ad2719a0cf26355983c50a1c231371d8f747bdf741a2ffdb4f228e3f647",
+        "version": "e3ebb8c67ebb257573b94d58ea4d206f6ba059f420266dc1150c871f7df3c5c8",
+        "signature": "8881a111d50fd07e0e6876fdd682e6aa9cabb2fc93d27faee63b66b7c5bce2db",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/calendar/index.tsx": {
@@ -513,7 +488,7 @@
       },
       "../../core/components/organisms/datePicker/DatePicker.tsx": {
         "version": "4c4fb5f3c36595dea6c04f66a641526d867384da078f7ac00860e015b8d2ad2e",
-        "signature": "92eacffa4f4a88c10ff374a48302125c3867f570ef0e380ca16ddcd483e50a0e",
+        "signature": "27aca7a933b4aca271476ed97a872edf847e2bbb02f04e9cbe4d1c7ecbda0811",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/datePicker/index.tsx": {
@@ -549,6 +524,16 @@
       "../../core/components/organisms/donutChart/index.tsx": {
         "version": "41774f5de3549bc7fb7fac978e4b4b0a67aa7442fc5696bd7b8f33a1ca3ae823",
         "signature": "cfa3b268f72171ec45f6a59d6df27a096029872306b1e9a04554b33907d7eb8a",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/heading/Heading.tsx": {
+        "version": "01f51529e25d0c9ddc4385dc974fd669e895240819cd6af34aa9ad02b0513b77",
+        "signature": "aef863fbb1a13d9b5fa7b44e4bb2bc003188192dcbef8a126fd52e2db271e401",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/heading/index.tsx": {
+        "version": "eaef820e7cbb7a56bf1fec8b7132e8262258e50268c14436e822c1c3882c93d0",
+        "signature": "480c19fe72b950086e8c0e45b46b798590b05be70563147e4cb2df46c4002180",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/input/Input.tsx": {
@@ -596,6 +581,26 @@
         "signature": "5762fae5cc1601bbc027d1998ad3ad2a924763b0ae9a36ea21c3f6213dbcc363",
         "affectsGlobalScope": false
       },
+      "../../core/components/organisms/navigation/utils.tsx": {
+        "version": "061c2976b306b4a05f1fb08e763e0fa4375781c68d9d007c5ef03eb44fb6202b",
+        "signature": "a061829b38c05acd0c29e2af7d0914d6baf3d96029e2a44cb3728cf5b660f230",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/organisms/verticalMenu/MenuItem.tsx": {
+        "version": "9a53f2ce0eab29ecad6ef41f2c16585b4f6d263edd23a7b47f18b818dfed89b8",
+        "signature": "85deda176dd6a726086d644d2594bf6d131fa7b11d8e156ec6fc5e3cc792ec52",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/organisms/verticalMenu/VerticalMenu.tsx": {
+        "version": "8be06ccecc29ad8057ad535907f7b364b4395d5851dfdc65410b5630a53c9262",
+        "signature": "6d41c7032246b0a62d2bf11a976646929abab18042cd3956652f6439c4fd0772",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/organisms/verticalMenu/index.tsx": {
+        "version": "c31ab4953fbc79bafb0ee405fdc61125916a1e723039d98445765a5dbef555ed",
+        "signature": "5fb1dd8c34f163b9215d34e5cdf60319535356d5388ec0eccf597da187d68fb2",
+        "affectsGlobalScope": false
+      },
       "../../core/components/atoms/editable/Editable.tsx": {
         "version": "faccd59eaa781e7eaf429080bb73a45df61d9962ce51bc3f5f46279e6a3d2f71",
         "signature": "04e3b3fabd6ed0e11fcdafe0312506c9defec830b29b568f5f97d4ec4faf649c",
@@ -617,7 +622,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/collapsible/Collapsible.tsx": {
-        "version": "681a0c10b72583dd6ec795ed971bc0e19f5509e8b645696f2e23fe084223450b",
+        "version": "74495b107f71c72984150707df993dfe0fa879ce8cfc979111acac7c19ed0d65",
         "signature": "0ec128931cf603ed5c188f9b6992f6104adaaaff68ca2e49549dfaddeaf78256",
         "affectsGlobalScope": false
       },
@@ -769,6 +774,16 @@
       "../../core/components/atoms/pills/index.tsx": {
         "version": "856080a312a7f6e7079904cb6756f3cb3db22659177c6f5e9e3dbb6882806347",
         "signature": "161c3ab9b0f8c0597baf037b1d056aa5b54bc7f159372f6bd6c5b9cc88e4c048",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/subheading/Subheading.tsx": {
+        "version": "a3cd74030abe05bd61a662d516a234518424d911656c768e79866032c1ead2fa",
+        "signature": "4b45f815e54247f6334dc38e44365f965a65e265a7ad81d02f35d28575fc35fd",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/subheading/index.tsx": {
+        "version": "5eaec0ac9097a6d6b4e4010622e988d682014e965ef1f4d67468b68467557eda",
+        "signature": "7b63de77b5fa0602bbec876c50155ddd98c2a55b9ace2b5809e6563cd00b6bcf",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/switchInput/Switch.tsx": {
@@ -1048,7 +1063,7 @@
       },
       "../../core/components/organisms/dateRangePicker/DateRangePicker.tsx": {
         "version": "177a3211348b82a52b6061786be724131048d0cb212ce57e8636d47d744de718",
-        "signature": "b7d9b57cc3d47f4626c238cd49cd31ffc4e2f0798863964653f9add55e24d1fd",
+        "signature": "da0a3962fd2112c7f7fa416814ea9def33c4e48cabd3dcb56c2d13c61f2e3fa3",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/dateRangePicker/index.tsx": {
@@ -1236,11 +1251,6 @@
         "signature": "8eedabe90df6443c5332fa9e29b7bc9aa07ca7c766310c86452b3547e9e22505",
         "affectsGlobalScope": false
       },
-      "../../core/components/organisms/navigation/utils.tsx": {
-        "version": "0094679968d4917ad590a64bf73fba29076b663af95595adac0dfe7cc5b695d2",
-        "signature": "988896d95004666d2644b936518e2d5b28bd59f21d58d4877bf358c7deb43b11",
-        "affectsGlobalScope": false
-      },
       "../../core/components/organisms/navigation/HorizontalNavigation.tsx": {
         "version": "cde80eb60e0832c46edd8251c658f9dd4036ff4989b24cc4ef31af376c9178a1",
         "signature": "ada014a298ff924ea27f6367ee4fad720b42a3cba35be1f5457f035dfa642f94",
@@ -1252,7 +1262,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/navigation/Navigation.tsx": {
-        "version": "98a4cc4c87abf639e998169ab2a77728c07f844a9d620e620480f05ff4528bdd",
+        "version": "a955db2787083f31b2dcbde071abad733fadea08a3350c1288fa2954994741ac",
         "signature": "670d8e00afb20d44cf3c3dae749d127e3a051562a5a5bd3f600fd6ac3c9b5c83",
         "affectsGlobalScope": false
       },
@@ -1292,8 +1302,8 @@
         "affectsGlobalScope": false
       },
       "../../core/index.type.tsx": {
-        "version": "5c2523cf3c4ea3310242e868ad4d849d4505546dcd506e481f7f20a252046377",
-        "signature": "7deca9a2385f26aa84a27f5fa3f2cfb85ce89bac71e804ece985ee71f110f919",
+        "version": "588d308799805b3c21d0d1c66d7a159b3fdcb92ed1131ace46d843c6aff70470",
+        "signature": "8a1db5b43b89caebc70d8006b1ad078f0bce49f885d38e59fcad5baad89a9375",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/timePicker/TimePicker.tsx": {
@@ -1322,8 +1332,8 @@
         "affectsGlobalScope": false
       },
       "../../core/index.tsx": {
-        "version": "ef73e1301c8c42a9eb75abccf383d13c5a247dcdabc2024fca7e95f364cb1873",
-        "signature": "44b8d428c1d362d2afcd736a7149172ed3d77a9ed93099615d5f6ecd9fc79d89",
+        "version": "599d6aaa8ae05c8183e5efd9c361c785a1e8c803a1ac6ebc32c5c0144c09f2e1",
+        "signature": "957cd0b55abc98ee3d3176112cf0fb4e607b3170d5b459e7f24e906dc700b721",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/badge/_stories_/SolidAlert.story.tsx": {
@@ -1719,6 +1729,11 @@
       "../../core/components/patterns/layouts/sidebarTemplate.story.tsx": {
         "version": "a6ffcacc713f252919b154d9da585fd15db928658fa8d1187509d4c64de099b3",
         "signature": "3e429df5d99756d374b6eb6bfd1d7c026c4453af23bbbccb4d09e41b9ee39dc2",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/patterns/verticalNavigation/sideNav.story.tsx": {
+        "version": "8ebedc2a16b326db682a5f5577b87fb5f45e326b7d8000cc63b4816087a9cbc9",
+        "signature": "86de2353c64682d83051ad96acbb4d2ef145448d3a3985d0963b6abfb96798a1",
         "affectsGlobalScope": false
       },
       "../../node_modules/@storybook/channels/dist/ts3.9/index.d.ts": {
@@ -2647,7 +2662,7 @@
         "affectsGlobalScope": false
       },
       "../../core/utils/docPage/index.tsx": {
-        "version": "15721d7416334fb4b917b24760249b56c43ecb978b2603f3a88a49833d12c820",
+        "version": "709547ae4f9483c2bae562a49247981bb329cc3689b99fa692fc0d59faf2b1a6",
         "signature": "d793df693e1f566f2a7fd586a5ba76f93009c359e9795372d49bb1dafa1d2c00",
         "affectsGlobalScope": false
       },
@@ -4097,6 +4112,15 @@
           "*",
           "*",
           "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
           "*"
         ]
       },
@@ -4217,14 +4241,10 @@
         "../../core/components/atoms/badge/Badge.tsx"
       ],
       "../../core/components/atoms/breadcrumbs/Breadcrumbs.tsx": [
-        "../../core/components/atoms/breadcrumbs/SubtleLink.tsx",
         "../../core/components/atoms/dropdown/index.tsx",
         "../../core/index.tsx",
         "../../core/utils/types.tsx",
         "../../node_modules/@types/classnames/index.d.ts",
-        "../../node_modules/@types/react/index.d.ts"
-      ],
-      "../../core/components/atoms/breadcrumbs/SubtleLink.tsx": [
         "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/components/atoms/breadcrumbs/index.tsx": [
@@ -5082,13 +5102,10 @@
         "../../core/components/molecules/tooltip/Tooltip.tsx"
       ],
       "../../core/components/organisms/calendar/Calendar.tsx": [
-        "../../core/components/atoms/heading/index.tsx",
-        "../../core/components/atoms/icon/index.tsx",
-        "../../core/components/atoms/subheading/index.tsx",
-        "../../core/components/atoms/text/index.tsx",
         "../../core/components/organisms/calendar/config.ts",
         "../../core/components/organisms/calendar/types.ts",
         "../../core/components/organisms/calendar/utility.ts",
+        "../../core/index.tsx",
         "../../core/utils/types.tsx",
         "../../node_modules/@types/classnames/index.d.ts",
         "../../node_modules/@types/react/index.d.ts"
@@ -5322,6 +5339,24 @@
         "../../core/components/organisms/timePicker/TimePicker.tsx",
         "../../core/index.type.tsx"
       ],
+      "../../core/components/organisms/verticalMenu/MenuItem.tsx": [
+        "../../core/components/organisms/navigation/utils.tsx",
+        "../../core/index.tsx",
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/classnames/index.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/organisms/verticalMenu/VerticalMenu.tsx": [
+        "../../core/components/organisms/navigation/utils.tsx",
+        "../../core/components/organisms/verticalMenu/MenuItem.tsx",
+        "../../core/index.tsx",
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/classnames/index.d.ts",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/organisms/verticalMenu/index.tsx": [
+        "../../core/components/organisms/verticalMenu/VerticalMenu.tsx"
+      ],
       "../../core/components/patterns/datePicker/dateAndTimePicker.story.tsx": [
         "../../node_modules/@types/react/index.d.ts"
       ],
@@ -5366,6 +5401,9 @@
         "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/components/patterns/layouts/sidebarTemplate.story.tsx": [
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/patterns/verticalNavigation/sideNav.story.tsx": [
         "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/index.tsx": [
@@ -5441,6 +5479,7 @@
         "../../core/components/organisms/pageHeader/index.tsx",
         "../../core/components/organisms/table/index.tsx",
         "../../core/components/organisms/timePicker/index.tsx",
+        "../../core/components/organisms/verticalMenu/index.tsx",
         "../../core/utils/index.tsx"
       ],
       "../../core/index.type.tsx": [
@@ -5516,6 +5555,7 @@
         "../../core/components/organisms/pageHeader/index.tsx",
         "../../core/components/organisms/table/index.tsx",
         "../../core/components/organisms/timePicker/index.tsx",
+        "../../core/components/organisms/verticalMenu/index.tsx",
         "../../core/index.tsx"
       ],
       "../../core/utils/docPage/index.tsx": [
@@ -5524,6 +5564,7 @@
         "../../core/utils/docPage/sandbox.tsx",
         "../../node_modules/@storybook/addon-docs/blocks.d.ts",
         "../../node_modules/@storybook/components/dist/ts3.9/index.d.ts",
+        "../../node_modules/@types/classnames/index.d.ts",
         "../../node_modules/@types/react-dom/server/index.d.ts",
         "../../node_modules/@types/react-syntax-highlighter/index.d.ts",
         "../../node_modules/@types/react/index.d.ts",
@@ -8240,7 +8281,6 @@
       "../../core/components/atoms/badge/_stories_/variants/Subtle.story.tsx",
       "../../core/components/atoms/badge/index.tsx",
       "../../core/components/atoms/breadcrumbs/Breadcrumbs.tsx",
-      "../../core/components/atoms/breadcrumbs/SubtleLink.tsx",
       "../../core/components/atoms/breadcrumbs/index.tsx",
       "../../core/components/atoms/button/Button.tsx",
       "../../core/components/atoms/button/index.tsx",
@@ -8461,6 +8501,9 @@
       "../../core/components/organisms/timePicker/TimePicker.tsx",
       "../../core/components/organisms/timePicker/index.tsx",
       "../../core/components/organisms/timePicker/utils.tsx",
+      "../../core/components/organisms/verticalMenu/MenuItem.tsx",
+      "../../core/components/organisms/verticalMenu/VerticalMenu.tsx",
+      "../../core/components/organisms/verticalMenu/index.tsx",
       "../../core/components/patterns/datePicker/dateAndTimePicker.story.tsx",
       "../../core/components/patterns/dateRangePicker/withCustomPopover.story.tsx",
       "../../core/components/patterns/forms/CreatePassword.story.tsx",
@@ -8476,6 +8519,7 @@
       "../../core/components/patterns/layouts/narrowWidthContentTemplate.story.tsx",
       "../../core/components/patterns/layouts/resourceTableTemplate.story.tsx",
       "../../core/components/patterns/layouts/sidebarTemplate.story.tsx",
+      "../../core/components/patterns/verticalNavigation/sideNav.story.tsx",
       "../../core/index.tsx",
       "../../core/index.type.tsx",
       "../../core/utils/Keys.ts",

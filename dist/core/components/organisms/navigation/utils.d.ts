@@ -3,6 +3,7 @@ export declare type Menu = {
     label: string;
     link?: string;
     icon?: string;
+    group?: string;
     count?: number;
     disabled?: boolean;
     subMenu?: Menu[];

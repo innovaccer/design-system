@@ -5,7 +5,7 @@ interface Breadcrumb {
 }
 export interface BreadcrumbsProps extends BaseProps {
     list: Breadcrumb[];
-    onClick: (link: string) => void;
+    onClick?: (link: string) => void;
 }
 export declare const Breadcrumbs: (props: BreadcrumbsProps) => JSX.Element;
 export default Breadcrumbs;

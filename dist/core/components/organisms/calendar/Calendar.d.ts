@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BaseProps } from "../../../utils/types";
-import { Day, View } from "./types";
+import { Size, Day, View } from "./types";
 export interface SharedProps extends BaseProps {
     monthsInView: number;
     jumpView?: boolean;
@@ -12,6 +12,7 @@ export interface SharedProps extends BaseProps {
     monthNav?: number;
 }
 export declare type CalendarProps = {
+    size: Size;
     onDateChange?: (date: Date) => void;
     onRangeChange?: (startDate: Date | undefined, endDate: Date | undefined) => void;
     date?: Date;
@@ -35,9 +36,11 @@ interface CalendarState {
 }
 export declare class Calendar extends React.Component<CalendarProps, CalendarState> {
     static defaultProps: {
+        size: string;
         monthsInView: number;
         view: string;
         firstDayOfWeek: string;
+        jumpView: boolean;
     };
     constructor(props: CalendarProps);
     componentDidUpdate(prevProps: CalendarProps, prevState: CalendarState): void;
@@ -45,14 +48,16 @@ export declare class Calendar extends React.Component<CalendarProps, CalendarSta
     getDateValue: (year: number, month: number, date: number) => Date | undefined;
     getNavDateInfo: (index: number) => Record<string, any>;
     getInRangeError: () => boolean;
-    selectYear: (year: number) => void;
-    selectMonth: (month: number) => void;
+    selectYear: (year: number) => () => void;
+    selectMonth: (month: number) => () => void;
     selectDate: (index: number, date: number) => void;
-    navClickHandler: (type: string) => void;
+    onNavIconClickHandler: (type: string) => () => void;
     renderJumpButton: (type: string) => JSX.Element;
+    onNavHeadingClickHandler: (currView: View) => () => void;
     renderHeaderContent: (index: number) => JSX.Element;
     renderBodyYear: () => JSX.Element[];
     renderBodyMonth: () => JSX.Element[];
+    onDateRowMouseLeaveHandler: () => void;
     renderBodyDate: (index: number) => JSX.Element;
     renderDateValues: (index: number) => (JSX.Element | null)[];
     renderCalendar: (index: number) => JSX.Element;

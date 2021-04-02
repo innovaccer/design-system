@@ -5,6 +5,9 @@ declare const _default: {
     monthsInRow: number;
     daysInRow: number;
     months: string[];
-    days: string[];
+    days: {
+        small: string[];
+        large: string[];
+    };
 };
 export default _default;

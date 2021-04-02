@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1617183944226 
+   * Generated on: 1617351487852 
    *      Package: @innovaccer/design-system
-   *      Version: v2.0.0-2
+   *      Version: v2.0.0-3
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -2891,29 +2891,18 @@ _defineProperty$w(Dropdown, "defaultProps", {
   searchDebounceDuration: 300
 });
 
-var SubtleLink = function SubtleLink(props) {
-  var onClick = props.onClick,
-      children = props.children,
-      href = props.href;
-
-  var onClickHandler = function onClickHandler(e) {
-    e.preventDefault();
-    onClick();
-  };
-
-  return /*#__PURE__*/React.createElement("a", {
-    className: "SubtleLink",
-    href: href,
-    onClick: onClickHandler
-  }, children);
-};
-
 var renderLink = function renderLink(item, _onClick) {
-  return /*#__PURE__*/React.createElement(SubtleLink, {
+  return /*#__PURE__*/React.createElement(Link, {
     href: item.link,
-    onClick: function onClick() {
-      return _onClick(item.link);
-    }
+    onClick: function onClick(ev) {
+      if (_onClick) {
+        ev.preventDefault();
+
+        _onClick(item.link);
+      }
+    },
+    appearance: "subtle",
+    size: "tiny"
   }, item.label);
 };
 
@@ -2929,7 +2918,8 @@ var renderDropdown = function renderDropdown(list, onClick) {
     return /*#__PURE__*/React.createElement(Button, {
       size: "tiny",
       appearance: "transparent",
-      icon: "more_horiz_filled"
+      icon: "more_horiz_filled",
+      "data-test": "DesignSystem-Breadcrumbs-more"
     });
   };
 
@@ -2941,7 +2931,9 @@ var renderDropdown = function renderDropdown(list, onClick) {
     options: options,
     menu: true,
     onChange: function onChange(selected) {
-      onClick(selected);
+      if (onClick) {
+        onClick(selected);
+      }
     }
   });
 };
@@ -2952,19 +2944,23 @@ var Breadcrumbs = function Breadcrumbs(props) {
       className = props.className;
   var baseProps = extractBaseProps(props);
   var BreadcrumbClass = classnames(_defineProperty$w({}, 'Breadcrumbs', true), className);
-  return /*#__PURE__*/React.createElement("div", _extends$p({}, baseProps, {
+  return /*#__PURE__*/React.createElement("div", _extends$p({
+    "data-test": "DesignSystem-Breadcrumbs"
+  }, baseProps, {
     className: BreadcrumbClass
   }), list.length <= 4 ? list.map(function (item, index) {
     return /*#__PURE__*/React.createElement("div", {
       key: index,
-      className: "Breadcrumbs-item"
+      className: "Breadcrumbs-item",
+      "data-test": "DesignSystem-Breadcrumbs-item"
     }, /*#__PURE__*/React.createElement("span", {
       className: "Breadcrumbs-link"
     }, renderLink(item, onClick)), /*#__PURE__*/React.createElement("span", {
       className: "Breadcrumbs-itemSeparator"
     }, "/"));
   }) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-    className: "Breadcrumbs-item"
+    className: "Breadcrumbs-item",
+    "data-test": "DesignSystem-Breadcrumbs-item"
   }, /*#__PURE__*/React.createElement("span", {
     className: "Breadcrumbs-link"
   }, renderLink(list[0], onClick)), /*#__PURE__*/React.createElement("span", {
@@ -2974,7 +2970,8 @@ var Breadcrumbs = function Breadcrumbs(props) {
   }, renderDropdown(list.slice(1, list.length - 1), onClick), /*#__PURE__*/React.createElement("span", {
     className: "Breadcrumbs-itemSeparator"
   }, "/")), /*#__PURE__*/React.createElement("div", {
-    className: "Breadcrumbs-item"
+    className: "Breadcrumbs-item",
+    "data-test": "DesignSystem-Breadcrumbs-item"
   }, /*#__PURE__*/React.createElement("span", {
     className: "Breadcrumbs-link"
   }, renderLink(list[list.length - 1], onClick)), /*#__PURE__*/React.createElement("span", {
@@ -3066,57 +3063,6 @@ var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
 });
 Button.displayName = 'Button';
 
-var sizeMap = {
-  s: 'h5',
-  m: 'h4',
-  l: 'h3',
-  xl: 'h2',
-  xxl: 'h1'
-};
-var Heading = function Heading(props) {
-  var _classNames;
-
-  var appearance = props.appearance,
-      size = props.size,
-      children = props.children,
-      className = props.className;
-  var baseProps = extractBaseProps(props);
-  var classes = classnames((_classNames = {
-    Heading: true
-  }, _defineProperty$w(_classNames, "Heading--".concat(size), size), _defineProperty$w(_classNames, "Heading--".concat(appearance), appearance), _classNames), className);
-  return /*#__PURE__*/React.createElement(GenericText, _extends$p({
-    "data-test": "DesignSystem-Heading"
-  }, baseProps, {
-    className: classes,
-    componentType: sizeMap[size]
-  }), children);
-};
-Heading.displayName = 'Heading';
-Heading.defaultProps = {
-  appearance: 'default',
-  size: 'm'
-};
-
-var Subheading = function Subheading(props) {
-  var appearance = props.appearance,
-      children = props.children,
-      className = props.className;
-  var baseProps = extractBaseProps(props);
-  var classes = classnames(_defineProperty$w({
-    Subheading: true
-  }, "Subheading--".concat(appearance), appearance), className);
-  return /*#__PURE__*/React.createElement(GenericText, _extends$p({
-    "data-test": "DesignSystem-Subheading"
-  }, baseProps, {
-    className: classes,
-    componentType: 'h4'
-  }), children);
-};
-Subheading.displayName = 'Subheading';
-Subheading.defaultProps = {
-  appearance: 'default'
-};
-
 var config$1 = {
   yearBlockRange: 12,
   yearsInRow: 3,
@@ -3124,7 +3070,10 @@ var config$1 = {
   monthsInRow: 3,
   daysInRow: 7,
   months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-  days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+  days: {
+    small: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+    large: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+  }
 };
 
 var yearBlockRange = config$1.yearBlockRange;
@@ -3411,19 +3360,23 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty$w(_assertThisInitialized$p(_this), "selectYear", function (year) {
-      _this.updateState(year);
+      return function () {
+        _this.updateState(year);
 
-      _this.setState({
-        view: 'month'
-      });
+        _this.setState({
+          view: 'month'
+        });
+      };
     });
 
     _defineProperty$w(_assertThisInitialized$p(_this), "selectMonth", function (month) {
-      _this.updateState(_this.state.yearNav, month);
+      return function () {
+        _this.updateState(_this.state.yearNav, month);
 
-      _this.setState({
-        view: 'date'
-      });
+        _this.setState({
+          view: 'date'
+        });
+      };
     });
 
     _defineProperty$w(_assertThisInitialized$p(_this), "selectDate", function (index, date) {
@@ -3440,57 +3393,59 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       });
     });
 
-    _defineProperty$w(_assertThisInitialized$p(_this), "navClickHandler", function (type) {
-      var _this$state3 = _this.state,
-          view = _this$state3.view,
-          yearBlockNav = _this$state3.yearBlockNav,
-          yearNav = _this$state3.yearNav,
-          monthNav = _this$state3.monthNav;
-      var yearBlockRange = config$1.yearBlockRange,
-          monthBlock = config$1.monthBlock;
+    _defineProperty$w(_assertThisInitialized$p(_this), "onNavIconClickHandler", function (type) {
+      return function () {
+        var _this$state3 = _this.state,
+            view = _this$state3.view,
+            yearBlockNav = _this$state3.yearBlockNav,
+            yearNav = _this$state3.yearNav,
+            monthNav = _this$state3.monthNav;
+        var yearBlockRange = config$1.yearBlockRange,
+            monthBlock = config$1.monthBlock;
 
-      switch (view) {
-        case 'year':
-          if (type === 'prev') _this.setState({
-            yearBlockNav: yearBlockNav - yearBlockRange
-          });
-          if (type === 'next') _this.setState({
-            yearBlockNav: yearBlockNav + yearBlockRange
-          });
-          break;
+        switch (view) {
+          case 'year':
+            if (type === 'prev') _this.setState({
+              yearBlockNav: yearBlockNav - yearBlockRange
+            });
+            if (type === 'next') _this.setState({
+              yearBlockNav: yearBlockNav + yearBlockRange
+            });
+            break;
 
-        case 'month':
-          if (type === 'prev') _this.setState({
-            yearNav: yearNav - 1
-          });
-          if (type === 'next') _this.setState({
-            yearNav: yearNav + 1
-          });
-          break;
-
-        case 'date':
-          if (type === 'prev') {
-            if (monthNav === 0) _this.setState({
+          case 'month':
+            if (type === 'prev') _this.setState({
               yearNav: yearNav - 1
             });
-
-            _this.setState({
-              monthNav: (monthBlock + monthNav - 1) % monthBlock
-            });
-          }
-
-          if (type === 'next') {
-            if (monthNav === monthBlock - 1) _this.setState({
+            if (type === 'next') _this.setState({
               yearNav: yearNav + 1
             });
+            break;
 
-            _this.setState({
-              monthNav: (monthNav + 1) % monthBlock
-            });
-          }
+          case 'date':
+            if (type === 'prev') {
+              if (monthNav === 0) _this.setState({
+                yearNav: yearNav - 1
+              });
 
-          break;
-      }
+              _this.setState({
+                monthNav: (monthBlock + monthNav - 1) % monthBlock
+              });
+            }
+
+            if (type === 'next') {
+              if (monthNav === monthBlock - 1) _this.setState({
+                yearNav: yearNav + 1
+              });
+
+              _this.setState({
+                monthNav: (monthNav + 1) % monthBlock
+              });
+            }
+
+            break;
+        }
+      };
     });
 
     _defineProperty$w(_assertThisInitialized$p(_this), "renderJumpButton", function (type) {
@@ -3539,45 +3494,27 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           break;
       }
 
-      var headerIconClass = classnames({
-        'Calendar-headerIcon': true,
-        'Calendar-headerIcon--disabled': disabled
-      });
-      return /*#__PURE__*/React.createElement(Icon, {
-        name: "arrow_".concat(type === 'next' ? 'forward' : 'back'),
+      var headerIconClass = classnames(_defineProperty$w({
+        'Calendar-headerIcon': true
+      }, "Calendar-headerIcon--".concat(type), type));
+      return /*#__PURE__*/React.createElement(Button, {
         className: headerIconClass,
-        onClick: function onClick() {
-          return _this.navClickHandler(type);
-        }
+        appearance: "transparent",
+        icon: "arrow_".concat(type === 'next' ? 'forward' : 'back'),
+        disabled: disabled,
+        onClick: _this.onNavIconClickHandler(type)
       });
     });
 
-    _defineProperty$w(_assertThisInitialized$p(_this), "renderHeaderContent", function (index) {
-      var monthsInView = _this.props.monthsInView;
-      var _this$state5 = _this.state,
-          view = _this$state5.view,
-          yearBlockNav = _this$state5.yearBlockNav;
-      var yearBlockRange = config$1.yearBlockRange,
-          months = config$1.months;
-      var _this$props$jumpView = _this.props.jumpView,
-          jumpView = _this$props$jumpView === void 0 ? true : _this$props$jumpView;
+    _defineProperty$w(_assertThisInitialized$p(_this), "onNavHeadingClickHandler", function (currView) {
+      return function () {
+        var monthsInView = _this.props.monthsInView;
+        var jumpView = _this.props.jumpView;
 
-      if (jumpView) {
-        if (monthsInView > 1) jumpView = false;
-      }
+        if (jumpView) {
+          if (monthsInView > 1) jumpView = false;
+        }
 
-      var _this$getNavDateInfo2 = _this.getNavDateInfo(index),
-          yearNavVal = _this$getNavDateInfo2.year,
-          monthNavVal = _this$getNavDateInfo2.month;
-
-      var headerContentClass = classnames({
-        'Calendar-headerContent': true,
-        'Calendar-headerContent--noIcon-left': index === monthsInView - 1,
-        'Calendar-headerContent--noIcon-right': index === 0
-      });
-      var headerContent = '';
-
-      var onClickHandler = function onClickHandler(currView) {
         if (jumpView) {
           if (currView === 'year') _this.setState({
             view: 'date'
@@ -3590,39 +3527,63 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           });
         }
       };
+    });
 
+    _defineProperty$w(_assertThisInitialized$p(_this), "renderHeaderContent", function (index) {
+      var _this$props4 = _this.props,
+          size = _this$props4.size,
+          monthsInView = _this$props4.monthsInView;
+      var _this$state5 = _this.state,
+          view = _this$state5.view,
+          yearBlockNav = _this$state5.yearBlockNav;
+      var yearBlockRange = config$1.yearBlockRange,
+          months = config$1.months;
+
+      var _this$getNavDateInfo2 = _this.getNavDateInfo(index),
+          yearNavVal = _this$getNavDateInfo2.year,
+          monthNavVal = _this$getNavDateInfo2.month;
+
+      var headerContentClass = classnames({
+        'Calendar-headerContent': true,
+        'Calendar-headerContent--noIcon-left': index === monthsInView - 1,
+        'Calendar-headerContent--noIcon-right': index === 0
+      });
+      var headerContent = '';
       if (view === 'year') headerContent = "".concat(yearBlockNav, " - ").concat(yearBlockNav + (yearBlockRange - 1));
       if (view === 'month') headerContent = "".concat(yearNavVal);
+
+      var renderHeading = function renderHeading(content) {
+        if (size === 'small') {
+          return /*#__PURE__*/React.createElement(Text$1, {
+            weight: "strong"
+          }, content);
+        }
+
+        return /*#__PURE__*/React.createElement(Heading, {
+          size: "s"
+        }, content);
+      };
+
       return /*#__PURE__*/React.createElement("div", {
         className: headerContentClass
       }, view !== 'date' && /*#__PURE__*/React.createElement("span", {
-        onClick: function onClick() {
-          return onClickHandler(view);
-        }
-      }, /*#__PURE__*/React.createElement(Heading, {
-        size: "s"
-      }, headerContent)), view === 'date' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
-        onClick: function onClick() {
-          return onClickHandler(view);
-        }
-      }, /*#__PURE__*/React.createElement(Heading, {
-        size: "s"
-      }, months[monthNavVal])), "\xA0", /*#__PURE__*/React.createElement("span", {
-        onClick: function onClick() {
-          return onClickHandler('month');
-        }
-      }, /*#__PURE__*/React.createElement(Heading, {
-        size: "s"
-      }, yearNavVal))));
+        onClick: _this.onNavHeadingClickHandler(view)
+      }, renderHeading(headerContent)), view === 'date' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
+        onClick: _this.onNavHeadingClickHandler(view)
+      }, renderHeading(months[monthNavVal])), /*#__PURE__*/React.createElement("span", {
+        className: "ml-4",
+        onClick: _this.onNavHeadingClickHandler('month')
+      }, renderHeading(yearNavVal))));
     });
 
     _defineProperty$w(_assertThisInitialized$p(_this), "renderBodyYear", function () {
       var yearBlockRange = config$1.yearBlockRange,
           yearsInRow = config$1.yearsInRow;
-      var _this$props4 = _this.props,
-          rangePicker = _this$props4.rangePicker,
-          disabledBefore = _this$props4.disabledBefore,
-          disabledAfter = _this$props4.disabledAfter;
+      var _this$props5 = _this.props,
+          size = _this$props5.size,
+          rangePicker = _this$props5.rangePicker,
+          disabledBefore = _this$props5.disabledBefore,
+          disabledAfter = _this$props5.disabledAfter;
       var _this$state6 = _this.state,
           yearBlockNav = _this$state6.yearBlockNav,
           yearNav = _this$state6.yearNav;
@@ -3641,20 +3602,21 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           var year = yearBlockNav + offset;
           var disabled = compareDate(disabledBefore, 'more', year) || compareDate(disabledAfter, 'less', year);
           var active = !disabled && !rangePicker && yearNav === year && year === _this.state.year;
-          var valueClass = classnames({
+          var valueClass = classnames(_defineProperty$w({
             'Calendar-value': true,
             'Calendar-value--active': active,
-            'Calendar-value--disabled': disabled
-          });
+            'Calendar-value--disabled': disabled,
+            'Calendar-yearValue': true
+          }, "Calendar-yearValue--".concat(size), size));
           return /*#__PURE__*/React.createElement("div", {
             key: "".concat(row, "-").concat(col),
+            "data-test": "DesignSystem-Calendar--yearValue",
             className: valueClass,
-            onClick: function onClick() {
-              return _this.selectYear(year);
-            }
+            onClick: _this.selectYear(year)
           }, /*#__PURE__*/React.createElement(Text$1, {
+            size: size === 'small' ? 'small' : 'regular',
             appearance: active ? 'white' : disabled ? 'disabled' : 'default'
-          }, "".concat(year)));
+          }, year));
         }));
       });
     });
@@ -3663,9 +3625,10 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       var monthBlock = config$1.monthBlock,
           monthsInRow = config$1.monthsInRow,
           months = config$1.months;
-      var _this$props5 = _this.props,
-          disabledBefore = _this$props5.disabledBefore,
-          disabledAfter = _this$props5.disabledAfter;
+      var _this$props6 = _this.props,
+          size = _this$props6.size,
+          disabledBefore = _this$props6.disabledBefore,
+          disabledAfter = _this$props6.disabledAfter;
       var _this$state7 = _this.state,
           yearNav = _this$state7.yearNav,
           monthNav = _this$state7.monthNav,
@@ -3683,67 +3646,69 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           var month = monthsInRow * row + col;
           var disabled = compareDate(disabledBefore, 'more', yearNav, month) || compareDate(disabledAfter, 'less', yearNav, month);
           var active = !disabled && year === yearNav && monthNav === month;
-          var valueClass = classnames({
+          var valueClass = classnames(_defineProperty$w({
             'Calendar-value': true,
             'Calendar-value--active': active,
-            'Calendar-value--dummy': disabled
-          });
+            'Calendar-value--dummy': disabled,
+            'Calendar-monthValue': true
+          }, "Calendar-monthValue--".concat(size), size));
           return /*#__PURE__*/React.createElement("div", {
             key: "".concat(row, "-").concat(col),
+            "data-test": "DesignSystem-Calendar--monthValue",
             className: valueClass,
-            onClick: function onClick() {
-              return _this.selectMonth(month);
-            }
+            onClick: _this.selectMonth(month)
           }, /*#__PURE__*/React.createElement(Text$1, {
+            size: size === 'small' ? 'small' : 'regular',
             appearance: active ? 'white' : disabled ? 'disabled' : 'default'
           }, months[month]));
         }));
       });
     });
 
+    _defineProperty$w(_assertThisInitialized$p(_this), "onDateRowMouseLeaveHandler", function () {
+      var rangePicker = _this.props.rangePicker;
+
+      if (rangePicker) {
+        _this.setState({
+          hoverDate: undefined
+        });
+      }
+    });
+
     _defineProperty$w(_assertThisInitialized$p(_this), "renderBodyDate", function (index) {
       var daysInRow = config$1.daysInRow,
           days = config$1.days;
-      var _this$props6 = _this.props,
-          rangePicker = _this$props6.rangePicker,
-          firstDayOfWeek = _this$props6.firstDayOfWeek;
-
-      var onMouseLeaveHandler = function onMouseLeaveHandler() {
-        if (rangePicker) {
-          _this.setState({
-            hoverDate: undefined
-          });
-        }
-      };
-
+      var _this$props7 = _this.props,
+          size = _this$props7.size,
+          firstDayOfWeek = _this$props7.firstDayOfWeek;
       return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
         className: "Calendar-dayValues"
       }, Array.from({
         length: 7
       }, function (_x, day) {
         var valueClass = classnames({
-          'Calendar-value': true,
-          'Calendar-value--dummy': true
+          'Calendar-valueWrapper': true
         });
         var dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
         return /*#__PURE__*/React.createElement(Subheading, {
           key: day,
           className: valueClass,
           appearance: "disabled"
-        }, days[dayValue]);
+        }, days[size][dayValue]);
       })), /*#__PURE__*/React.createElement("div", {
         className: "Calendar-dateValues",
-        onMouseLeave: onMouseLeaveHandler
+        onMouseLeave: _this.onDateRowMouseLeaveHandler
       }, _this.renderDateValues(index)));
     });
 
     _defineProperty$w(_assertThisInitialized$p(_this), "renderDateValues", function (index) {
       var daysInRow = config$1.daysInRow;
-      var _this$props7 = _this.props,
-          rangePicker = _this$props7.rangePicker,
-          firstDayOfWeek = _this$props7.firstDayOfWeek,
-          disabledBefore = _this$props7.disabledBefore,
-          disabledAfter = _this$props7.disabledAfter;
+      var _this$props8 = _this.props,
+          size = _this$props8.size,
+          rangePicker = _this$props8.rangePicker,
+          firstDayOfWeek = _this$props8.firstDayOfWeek,
+          disabledBefore = _this$props8.disabledBefore,
+          disabledAfter = _this$props8.disabledAfter;
       var _this$state8 = _this.state,
           startDate = _this$state8.startDate,
           endDate = _this$state8.endDate,
@@ -3765,27 +3730,31 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       var inRangeError = _this.getInRangeError();
 
       var onClickHandler = function onClickHandler(date) {
-        if (rangePicker) {
-          if (startDate && endDate) {
-            _this.selectDate(index, date);
+        return function () {
+          if (rangePicker) {
+            if (startDate && endDate) {
+              _this.selectDate(index, date);
+            } else {
+              if (!inRangeError) _this.selectDate(index, date);
+            }
           } else {
-            if (!inRangeError) _this.selectDate(index, date);
+            _this.selectDate(index, date);
           }
-        } else {
-          _this.selectDate(index, date);
-        }
+        };
       };
 
       var onMouseOverHandler = function onMouseOverHandler(date) {
-        if (rangePicker) {
-          var d = _this.getDateValue(yearNavVal, monthNavVal, date);
+        return function () {
+          if (rangePicker) {
+            var d = _this.getDateValue(yearNavVal, monthNavVal, date);
 
-          if (!(startDate && endDate)) {
-            _this.setState({
-              hoverDate: d
-            });
+            if (!(startDate && endDate)) {
+              _this.setState({
+                hoverDate: d
+              });
+            }
           }
-        }
+        };
       };
 
       return Array.from({
@@ -3822,33 +3791,51 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
               }
             }
 
+            var _getDateInfo4 = getDateInfo(startDate),
+                sYear = _getDateInfo4.year,
+                sMonth = _getDateInfo4.month,
+                sDate = _getDateInfo4.date;
+
+            var _getDateInfo5 = getDateInfo(endDate),
+                eYear = _getDateInfo5.year,
+                eMonth = _getDateInfo5.month,
+                eDate = _getDateInfo5.date;
+
+            var isStart = startActive || endDate && inRangeLast && compareDate(hoverDate, 'less', eYear, eMonth, eDate);
+            var isEnd = endActive || startDate && inRangeLast && compareDate(hoverDate, 'more', sYear, sMonth, sDate);
+            var isRangeError = inRange && inRangeError;
             var wrapperClass = classnames({
               'Calendar-valueWrapper': true,
-              'Calendar-valueWrapper--start': startActive || inRangeLast && endDate,
-              'Calendar-valueWrapper--end': endActive || inRangeLast && startDate,
               'Calendar-valueWrapper--inRange': inRange || rangePicker && active,
-              'Calendar-valueWrapper--inRange-error': inRange && inRangeError
+              'Calendar-valueWrapper--inRangeError': isRangeError,
+              'Calendar-valueWrapper--start': isStart && !isEnd,
+              'Calendar-valueWrapper--end': isEnd && !isStart,
+              'Calendar-valueWrapper--startError': isStart && isRangeError,
+              'Calendar-valueWrapper--endError': isEnd && isRangeError
             });
-            var valueClass = classnames({
+            var valueClass = classnames(_defineProperty$w({
               'Calendar-value': true,
+              'Calendar-value--start': isStart && !isEnd,
+              'Calendar-value--end': isEnd && !isStart,
+              'Calendar-value--startError': isStart && isRangeError,
+              'Calendar-value--endError': isEnd && isRangeError,
               'Calendar-value--active': active,
               'Calendar-value--dummy': dummy || disabled,
-              'Calendar-value--disabled': disabled
-            });
+              'Calendar-value--disabled': disabled,
+              'Calendar-dateValue': true
+            }, "Calendar-dateValue--".concat(size), size));
             return /*#__PURE__*/React.createElement("div", {
               key: "".concat(row, "-").concat(col),
               className: wrapperClass
             }, /*#__PURE__*/React.createElement("span", {
+              "data-test": "DesignSystem-Calendar--dateValue",
               className: valueClass,
-              onClick: function onClick() {
-                return onClickHandler(date);
-              },
-              onMouseOver: function onMouseOver() {
-                return onMouseOverHandler(date);
-              }
+              onClick: onClickHandler(date),
+              onMouseOver: onMouseOverHandler(date)
             }, !dummy && /*#__PURE__*/React.createElement(Text$1, {
-              appearance: active ? 'white' : disabled ? 'disabled' : 'default'
-            }, "".concat(date))));
+              appearance: active ? 'white' : disabled ? 'disabled' : 'default',
+              size: size === 'small' ? 'small' : 'regular'
+            }, date)));
           }));
         }
 
@@ -3857,11 +3844,13 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty$w(_assertThisInitialized$p(_this), "renderCalendar", function (index) {
-      var _classNames;
+      var _classNames5;
 
-      var monthsInView = _this.props.monthsInView;
+      var _this$props9 = _this.props,
+          size = _this$props9.size,
+          monthsInView = _this$props9.monthsInView;
       var view = _this.state.view;
-      var wrapperClass = classnames((_classNames = {}, _defineProperty$w(_classNames, 'Calendar', true), _defineProperty$w(_classNames, "Calendar--".concat(view), view), _classNames));
+      var containerClass = classnames((_classNames5 = {}, _defineProperty$w(_classNames5, 'Calendar', true), _defineProperty$w(_classNames5, "Calendar--".concat(view), view), _defineProperty$w(_classNames5, "Calendar--".concat(size), size), _classNames5));
       var headerClass = classnames({
         'Calendar-header': true
       });
@@ -3870,7 +3859,8 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       });
       return /*#__PURE__*/React.createElement("div", {
         key: index,
-        className: wrapperClass
+        "data-test": "DesignSystem-Calendar",
+        className: containerClass
       }, /*#__PURE__*/React.createElement("div", {
         className: headerClass
       }, index === 0 && _this.renderJumpButton('prev'), _this.renderHeaderContent(index), index === monthsInView - 1 && _this.renderJumpButton('next')), /*#__PURE__*/React.createElement("div", {
@@ -3878,22 +3868,22 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       }, view === 'year' && _this.renderBodyYear(), view === 'month' && _this.renderBodyMonth(), view === 'date' && _this.renderBodyDate(index)));
     });
 
-    var _this$props8 = _this.props,
-        _rangePicker = _this$props8.rangePicker,
-        _startDate = _this$props8.startDate,
-        _endDate = _this$props8.endDate,
-        _monthsInView = _this$props8.monthsInView,
-        _view = _this$props8.view;
+    var _this$props10 = _this.props,
+        _rangePicker = _this$props10.rangePicker,
+        _startDate = _this$props10.startDate,
+        _endDate = _this$props10.endDate,
+        _monthsInView = _this$props10.monthsInView,
+        _view = _this$props10.view;
     var currDate = _rangePicker ? _endDate || _startDate : props.date;
 
     var _yearNav = props.yearNav !== undefined ? props.yearNav : getDateInfo(currDate || Date.now()).year;
 
     var _monthNav = props.monthNav !== undefined ? props.monthNav : getDateInfo(currDate || Date.now()).month;
 
-    var _getDateInfo4 = getDateInfo(currDate),
-        _year = _getDateInfo4.year,
-        _month = _getDateInfo4.month,
-        _date = _getDateInfo4.date;
+    var _getDateInfo6 = getDateInfo(currDate),
+        _year = _getDateInfo6.year,
+        _month = _getDateInfo6.month,
+        _date = _getDateInfo6.date;
 
     _this.state = {
       currDate: currDate,
@@ -3916,10 +3906,10 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       var monthsInView = this.props.monthsInView;
 
       if (prevProps.date !== this.props.date) {
-        var _getDateInfo5 = getDateInfo(this.props.date),
-            year = _getDateInfo5.year,
-            month = _getDateInfo5.month,
-            _date2 = _getDateInfo5.date;
+        var _getDateInfo7 = getDateInfo(this.props.date),
+            year = _getDateInfo7.year,
+            month = _getDateInfo7.month,
+            _date2 = _getDateInfo7.date;
 
         this.updateState(year, month, _date2);
         var d = convertToDate(this.props.date);
@@ -3974,9 +3964,9 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       }
 
       if (prevState.currDate !== this.state.currDate) {
-        var _this$props9 = this.props,
-            rangePicker = _this$props9.rangePicker,
-            onDateChange = _this$props9.onDateChange;
+        var _this$props11 = this.props,
+            rangePicker = _this$props11.rangePicker,
+            onDateChange = _this$props11.onDateChange;
         var _this$state10 = this.state,
             currDate = _this$state10.currDate,
             _startDate3 = _this$state10.startDate,
@@ -3996,10 +3986,10 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
                 endDate: undefined
               });
             } else {
-              var _getDateInfo6 = getDateInfo(currDate),
-                  _year2 = _getDateInfo6.year,
-                  _month2 = _getDateInfo6.month,
-                  _date3 = _getDateInfo6.date;
+              var _getDateInfo8 = getDateInfo(currDate),
+                  _year2 = _getDateInfo8.year,
+                  _month2 = _getDateInfo8.month,
+                  _date3 = _getDateInfo8.date;
 
               if (_startDate3) {
                 if (compareDate(_startDate3, 'more', _year2, _month2, _date3)) {
@@ -4070,12 +4060,15 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var _this$props10 = this.props,
-          monthsInView = _this$props10.monthsInView,
-          className = _this$props10.className;
+      var _this$props12 = this.props,
+          monthsInView = _this$props12.monthsInView,
+          className = _this$props12.className;
       var baseProps = extractBaseProps(this.props);
+      var classes = classnames({
+        'Calendar-wrapper': true
+      }, className);
       return /*#__PURE__*/React.createElement("div", _extends$p({}, baseProps, {
-        className: "Calendar-wrapper ".concat(className)
+        className: classes
       }), Array.from({
         length: monthsInView
       }, function (_x, index) {
@@ -4088,9 +4081,11 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
 }(React.Component);
 
 _defineProperty$w(Calendar, "defaultProps", {
+  size: 'large',
   monthsInView: 1,
   view: 'date',
-  firstDayOfWeek: 'sunday'
+  firstDayOfWeek: 'sunday',
+  jumpView: true
 });
 
 var Card = /*#__PURE__*/React.forwardRef(function (props, ref) {
@@ -32871,6 +32866,37 @@ DonutChart.defaultProps = {
   colorOfTotalCount: 'success'
 };
 
+var sizeMap = {
+  s: 'h5',
+  m: 'h4',
+  l: 'h3',
+  xl: 'h2',
+  xxl: 'h1'
+};
+var Heading = function Heading(props) {
+  var _classNames;
+
+  var appearance = props.appearance,
+      size = props.size,
+      children = props.children,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+  var classes = classnames((_classNames = {
+    Heading: true
+  }, _defineProperty$w(_classNames, "Heading--".concat(size), size), _defineProperty$w(_classNames, "Heading--".concat(appearance), appearance), _classNames), className);
+  return /*#__PURE__*/React.createElement(GenericText, _extends$p({
+    "data-test": "DesignSystem-Heading"
+  }, baseProps, {
+    className: classes,
+    componentType: sizeMap[size]
+  }), children);
+};
+Heading.displayName = 'Heading';
+Heading.defaultProps = {
+  appearance: 'default',
+  size: 'm'
+};
+
 var sizeMapping = {
   tiny: 12,
   regular: 16,
@@ -34581,6 +34607,26 @@ RangeSlider.displayName = 'RangeSlider';
 RangeSlider.defaultProps = _objectSpread2(_objectSpread2({}, MultiSlider.defaultProps), {}, {
   defaultValue: [0, 10]
 });
+
+var Subheading = function Subheading(props) {
+  var appearance = props.appearance,
+      children = props.children,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+  var classes = classnames(_defineProperty$w({
+    Subheading: true
+  }, "Subheading--".concat(appearance), appearance), className);
+  return /*#__PURE__*/React.createElement(GenericText, _extends$p({
+    "data-test": "DesignSystem-Subheading"
+  }, baseProps, {
+    className: classes,
+    componentType: 'h4'
+  }), children);
+};
+Subheading.displayName = 'Subheading';
+Subheading.defaultProps = {
+  appearance: 'default'
+};
 
 /**
  * ######Switch has two types:
@@ -39488,6 +39534,232 @@ Popover.defaultProps = Object.assign({}, filterProps(PopperWrapper.defaultProps,
   boundaryElement: document.body
 });
 
+var getTextAppearance = function getTextAppearance(isActive, disabled) {
+  return disabled ? 'disabled' : isActive ? 'link' : 'default';
+};
+var getIconAppearance = function getIconAppearance(isActive, disabled) {
+  return disabled ? 'disabled' : isActive ? 'info' : 'default';
+};
+var getPillsAppearance = function getPillsAppearance(isActive) {
+  return isActive ? 'primary' : 'secondary';
+};
+var getMenu = function getMenu(menus, active) {
+  var _iterator = _createForOfIteratorHelper(menus),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var menu = _step.value;
+
+      if (active.name && menu.name === active.name || active.link && menu.link === active.link) {
+        return menu;
+      }
+
+      if (menu.subMenu) {
+        var activeMenu = menu.subMenu.find(function (submenu) {
+          return active.name && submenu.name === active.name || active.link && submenu.link === active.link;
+        });
+        if (activeMenu) return activeMenu;
+      }
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  return null;
+};
+var isMenuActive = function isMenuActive(menus, menu, active) {
+  if (active) {
+    var currActiveMenu = getMenu(menus, active);
+    return !!currActiveMenu && (currActiveMenu === menu || currActiveMenu.name.split('.')[0] === menu.name || currActiveMenu.name === menu.name || !!currActiveMenu.link && currActiveMenu.link === menu.link);
+  }
+
+  return false;
+};
+
+var MenuItem = function MenuItem(props) {
+  var _classNames;
+
+  var menu = props.menu,
+      isActive = props.isActive,
+      expanded = props.expanded,
+      rounded = props.rounded,
+      hasSubmenu = props.hasSubmenu,
+      isChildren = props.isChildren,
+      isChildrenVisible = props.isChildrenVisible,
+      onClick = props.onClick;
+  var baseProps = extractBaseProps(props);
+
+  var onClickHandler = function onClickHandler() {
+    if (onClick) onClick(menu);
+  };
+
+  var ItemClass = classnames((_classNames = {}, _defineProperty$w(_classNames, 'MenuItem', true), _defineProperty$w(_classNames, 'MenuItem--vertical', true), _defineProperty$w(_classNames, 'MenuItem--collapsed', !expanded), _defineProperty$w(_classNames, 'MenuItem--expanded', expanded), _defineProperty$w(_classNames, 'MenuItem--active', isActive), _defineProperty$w(_classNames, 'MenuItem--disabled', menu.disabled), _defineProperty$w(_classNames, 'MenuItem--subMenu', isChildren && expanded), _defineProperty$w(_classNames, 'MenuItem--rounded', rounded && expanded), _classNames));
+
+  var renderSubMenu = function renderSubMenu() {
+    if (hasSubmenu) {
+      return /*#__PURE__*/React.createElement(Icon, {
+        className: "mx-4",
+        name: isChildrenVisible ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
+        appearance: "subtle"
+      });
+    }
+
+    if (menu.count !== undefined) {
+      var _classNames2;
+
+      var count = menu.count > 99 ? '99+' : menu.count;
+      var PillsClass = classnames((_classNames2 = {}, _defineProperty$w(_classNames2, 'MenuItem-count', true), _defineProperty$w(_classNames2, 'MenuItem-count--disabled', menu.disabled), _classNames2));
+      return /*#__PURE__*/React.createElement(Pills, {
+        subtle: menu.disabled,
+        className: PillsClass,
+        appearance: getPillsAppearance(isActive),
+        "data-test": "DesignSystem-VerticalMenu--Pills"
+      }, count);
+    }
+
+    return null;
+  };
+
+  if (!expanded && !menu.icon) return null;
+  return /*#__PURE__*/React.createElement("div", _extends$p({
+    className: ItemClass
+  }, baseProps, {
+    onClick: onClickHandler
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "d-flex align-items-center overflow-hidden"
+  }, menu.icon && /*#__PURE__*/React.createElement(Icon, {
+    "data-test": "DesignSystem-VerticalMenu--Icon",
+    className: expanded ? 'mr-4' : '',
+    name: menu.icon,
+    appearance: getIconAppearance(isActive, menu.disabled)
+  }), expanded && /*#__PURE__*/React.createElement(Text$1, {
+    "data-test": "DesignSystem-VerticalMenu--Text",
+    appearance: getTextAppearance(isActive, menu.disabled)
+  }, menu.label)), expanded && renderSubMenu());
+};
+MenuItem.defaultProps = {
+  isActive: false
+};
+
+/**
+ * ####NOTE: VerticalMenu sets first subMenu(if present) active if the Navigation is collapsed.
+ */
+var VerticalMenu = function VerticalMenu(props) {
+  var menus = props.menus,
+      active = props.active,
+      onClick = props.onClick,
+      expanded = props.expanded,
+      rounded = props.rounded,
+      autoCollapse = props.autoCollapse,
+      className = props.className;
+
+  var _React$useState = React.useState({}),
+      _React$useState2 = _slicedToArray$7(_React$useState, 2),
+      menuState = _React$useState2[0],
+      setMenuState = _React$useState2[1];
+
+  var baseProps = extractBaseProps(props);
+  React.useEffect(function () {
+    if (props.active) {
+      var currMenu = getMenu(menus, props.active);
+      if (currMenu) updateMenuState(currMenu, true);
+    }
+  }, [props.active]);
+
+  var updateMenuState = function updateMenuState(menu, val) {
+    var currMenu = getMenu(menus, menu);
+
+    if (currMenu) {
+      var nameSplit = currMenu.name.split('.');
+
+      if (nameSplit.length > 1 || currMenu.subMenu) {
+        var name = nameSplit[0];
+
+        if (autoCollapse) {
+          setMenuState(_defineProperty$w({}, name, val || !menuState[name]));
+        } else {
+          var menuData = _objectSpread2({}, menuState);
+
+          menuData[name] = val !== undefined ? val : !menuData[name];
+          setMenuState(menuData);
+        }
+      } else {
+        if (autoCollapse) {
+          if (!expanded) setMenuState({});
+        }
+      }
+    }
+  };
+
+  var onClickHandler = function onClickHandler(menu) {
+    if (menu.subMenu) {
+      if (!expanded) {
+        if (onClick) onClick(menu.subMenu[0]);
+      } else {
+        updateMenuState(menu);
+      }
+    } else {
+      if (onClick) onClick(menu);
+    }
+  };
+
+  var renderList = function renderList() {
+    var list = menus.map(function (menu, index) {
+      var _classNames;
+
+      var isActive = !menuState[menu.name] && isMenuActive(menus, menu, active);
+      var hasSubmenu = menu.subMenu && menu.subMenu.length > 0;
+      var isChildrenVisible = hasSubmenu && menuState[menu.name];
+      var hasGroup = index === 0 || menus[index - 1].group !== menu.group;
+      var sectionClass = classnames((_classNames = {}, _defineProperty$w(_classNames, 'VerticalMenu-section', true), _defineProperty$w(_classNames, 'VerticalMenu-section--border', index !== 0), _classNames));
+      return /*#__PURE__*/React.createElement(React.Fragment, null, hasGroup && menu.group && expanded && /*#__PURE__*/React.createElement("div", {
+        className: sectionClass
+      }, /*#__PURE__*/React.createElement(Text$1, {
+        "data-test": "DesignSystem-VerticalMenu--Section",
+        size: "small",
+        weight: "strong"
+      }, menu.group)), /*#__PURE__*/React.createElement(MenuItem, {
+        "data-test": "DesignSystem-VerticalMenu--Item",
+        menu: menu,
+        expanded: expanded,
+        isActive: isActive,
+        hasSubmenu: hasSubmenu,
+        isChildren: false,
+        rounded: rounded,
+        isChildrenVisible: isChildrenVisible,
+        onClick: onClickHandler
+      }), menuState[menu.name] && menu.subMenu && menu.subMenu.map(function (subMenu, id) {
+        return /*#__PURE__*/React.createElement(MenuItem, {
+          key: id,
+          menu: subMenu,
+          expanded: expanded,
+          hasSubmenu: false,
+          isChildren: true,
+          rounded: rounded,
+          onClick: onClickHandler,
+          isActive: isMenuActive(menus, subMenu, active)
+        });
+      }));
+    });
+    return /*#__PURE__*/React.createElement(React.Fragment, null, list);
+  };
+
+  var classes = classnames(_defineProperty$w({
+    VerticalMenu: true
+  }, 'VerticalMenu--expanded', expanded), className);
+  return /*#__PURE__*/React.createElement("div", _extends$p({}, baseProps, {
+    className: classes
+  }), renderList());
+};
+VerticalMenu.defaultProps = {
+  expanded: true,
+  autoCollapse: true,
+  rounded: false
+};
+
 var propsList = ['trigger', 'on', 'open', 'offset', 'onToggle', 'dark', 'customStyle', 'closeOnBackdropClick', 'hideOnReferenceEscape', 'closeOnScroll'];
 var Tooltip = function Tooltip(props) {
   var children = props.children,
@@ -40129,8 +40401,8 @@ var Collapsible = function Collapsible(props) {
   var ref = /*#__PURE__*/React.createRef();
   var baseProps = extractBaseProps(props);
   React.useEffect(function () {
-    if (ref.current && ref.current.scrollHeight > ref.current.clientHeight) {
-      setSeperator(true);
+    if (ref.current) {
+      setSeperator(ref.current.scrollHeight > ref.current.clientHeight);
     }
   });
   var WrapperClass = classnames((_classNames = {}, _defineProperty$w(_classNames, 'Collapsible-wrapper', true), _defineProperty$w(_classNames, 'Collapsible-wrapper--overlay', !isClicked), _classNames));
@@ -45045,51 +45317,6 @@ var List = function List(props) {
 };
 List.defaultProps = defaultProps;
 
-var getTextAppearance = function getTextAppearance(isActive, disabled) {
-  return disabled ? 'disabled' : isActive ? 'link' : 'default';
-};
-var getIconAppearance = function getIconAppearance(isActive, disabled) {
-  return disabled ? 'disabled' : isActive ? 'info' : 'default';
-};
-var getPillsAppearance = function getPillsAppearance(isActive) {
-  return isActive ? 'primary' : 'secondary';
-};
-var getMenu = function getMenu(menus, active) {
-  var _iterator = _createForOfIteratorHelper(menus),
-      _step;
-
-  try {
-    for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var menu = _step.value;
-
-      if (active.name && menu.name === active.name || active.link && menu.link === active.link) {
-        return menu;
-      }
-
-      if (menu.subMenu) {
-        var activeMenu = menu.subMenu.find(function (submenu) {
-          return active.name && submenu.name === active.name || active.link && submenu.link === active.link;
-        });
-        if (activeMenu) return activeMenu;
-      }
-    }
-  } catch (err) {
-    _iterator.e(err);
-  } finally {
-    _iterator.f();
-  }
-
-  return null;
-};
-var isMenuActive = function isMenuActive(menus, menu, active) {
-  if (active) {
-    var currActiveMenu = getMenu(menus, active);
-    return !!currActiveMenu && (currActiveMenu === menu || currActiveMenu.name.split('.')[0] === menu.name || currActiveMenu.name === menu.name || !!currActiveMenu.link && currActiveMenu.link === menu.link);
-  }
-
-  return false;
-};
-
 var HorizontalNavigation = function HorizontalNavigation(props) {
   var menus = props.menus,
       active = props.active,
@@ -45284,7 +45511,7 @@ VerticalNavigation.defaultProps = {
 };
 
 /**
- * ####NOTE: Navigation(vertical) sets first subMenu(if present) active if the Navigation is collapsed.
+ * ####NOTE: Navigation type vertical will be deprecated soon. VerticalMenu will be supported.
  */
 var Navigation = function Navigation(props) {
   var _classNames;
@@ -45518,6 +45745,6 @@ FileList.defaultProps = {
 };
 FileList.displayName = 'FileList';
 
-var version = "2.0.0-2";
+var version = "2.0.0-3";
 
-export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, ChatMessage, Checkbox, Chip, ChipGroup, Collapsible, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, Dropzone, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text$1 as Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, version };
+export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, ChatMessage, Checkbox, Chip, ChipGroup, Collapsible, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, Dropzone, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text$1 as Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, VerticalMenu, version };

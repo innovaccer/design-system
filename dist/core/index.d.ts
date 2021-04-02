@@ -42,6 +42,7 @@ export { Text } from "./components/atoms/text";
 export { Textarea } from "./components/atoms/textarea";
 export { Toast } from "./components/atoms/toast";
 export { Popover } from "./components/molecules/popover";
+export { VerticalMenu } from "./components/organisms/verticalMenu";
 export { Tooltip } from "./components/molecules/tooltip";
 export { Dialog } from "./components/molecules/dialog";
 export { Modal } from "./components/molecules/modal";

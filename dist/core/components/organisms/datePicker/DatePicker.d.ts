@@ -29,9 +29,11 @@ export declare class DatePicker extends React.Component<DatePickerProps, DatePic
         validators: ((val: string, format: string) => boolean)[];
         inputOptions: {};
         closeOnSelect: boolean;
+        size: string;
         monthsInView: number;
         view: string;
         firstDayOfWeek: string;
+        jumpView: boolean;
     };
     constructor(props: DatePickerProps);
     componentDidUpdate(prevProps: DatePickerProps, prevState: DatePickerState): void;

@@ -55,8 +55,10 @@ export declare class DateRangePicker extends React.Component<DateRangePickerProp
         endInputOptions: {
             label: string;
         };
+        size: string;
         view: string;
         firstDayOfWeek: string;
+        jumpView: boolean;
     };
     monthsInView: number;
     constructor(props: DateRangePickerProps);

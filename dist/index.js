@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1617183944638 
+   * Generated on: 1617351488191 
    *      Package: @innovaccer/design-system
-   *      Version: v2.0.0-2
+   *      Version: v2.0.0-3
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -2524,29 +2524,18 @@
       return Dropdown;
     }(React__namespace.Component);
 
-    var SubtleLink = function SubtleLink(props) {
-      var onClick = props.onClick,
-          children = props.children,
-          href = props.href;
-
-      var onClickHandler = function onClickHandler(e) {
-        e.preventDefault();
-        onClick();
-      };
-
-      return /*#__PURE__*/React__namespace.createElement("a", {
-        className: "SubtleLink",
-        href: href,
-        onClick: onClickHandler
-      }, children);
-    };
-
     var renderLink = function renderLink(item, _onClick) {
-      return /*#__PURE__*/React__namespace.createElement(SubtleLink, {
+      return /*#__PURE__*/React__namespace.createElement(Link, {
         href: item.link,
-        onClick: function onClick() {
-          return _onClick(item.link);
-        }
+        onClick: function onClick(ev) {
+          if (_onClick) {
+            ev.preventDefault();
+
+            _onClick(item.link);
+          }
+        },
+        appearance: "subtle",
+        size: "tiny"
       }, item.label);
     };
 
@@ -2562,7 +2551,8 @@
         return /*#__PURE__*/React__namespace.createElement(Button, {
           size: "tiny",
           appearance: "transparent",
-          icon: "more_horiz_filled"
+          icon: "more_horiz_filled",
+          "data-test": "DesignSystem-Breadcrumbs-more"
         });
       };
 
@@ -2574,7 +2564,9 @@
         options: options,
         menu: true,
         onChange: function onChange(selected) {
-          onClick(selected);
+          if (onClick) {
+            onClick(selected);
+          }
         }
       });
     };
@@ -2587,19 +2579,23 @@
           className = props.className;
       var baseProps = extractBaseProps(props);
       var BreadcrumbClass = classNames__default['default']((_a = {}, _a['Breadcrumbs'] = true, _a), className);
-      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        "data-test": "DesignSystem-Breadcrumbs"
+      }, baseProps, {
         className: BreadcrumbClass
       }), list.length <= 4 ? list.map(function (item, index) {
         return /*#__PURE__*/React__namespace.createElement("div", {
           key: index,
-          className: "Breadcrumbs-item"
+          className: "Breadcrumbs-item",
+          "data-test": "DesignSystem-Breadcrumbs-item"
         }, /*#__PURE__*/React__namespace.createElement("span", {
           className: "Breadcrumbs-link"
         }, renderLink(item, onClick)), /*#__PURE__*/React__namespace.createElement("span", {
           className: "Breadcrumbs-itemSeparator"
         }, "/"));
       }) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
-        className: "Breadcrumbs-item"
+        className: "Breadcrumbs-item",
+        "data-test": "DesignSystem-Breadcrumbs-item"
       }, /*#__PURE__*/React__namespace.createElement("span", {
         className: "Breadcrumbs-link"
       }, renderLink(list[0], onClick)), /*#__PURE__*/React__namespace.createElement("span", {
@@ -2609,7 +2605,8 @@
       }, renderDropdown(list.slice(1, list.length - 1), onClick), /*#__PURE__*/React__namespace.createElement("span", {
         className: "Breadcrumbs-itemSeparator"
       }, "/")), /*#__PURE__*/React__namespace.createElement("div", {
-        className: "Breadcrumbs-item"
+        className: "Breadcrumbs-item",
+        "data-test": "DesignSystem-Breadcrumbs-item"
       }, /*#__PURE__*/React__namespace.createElement("span", {
         className: "Breadcrumbs-link"
       }, renderLink(list[list.length - 1], onClick)), /*#__PURE__*/React__namespace.createElement("span", {
@@ -2703,59 +2700,6 @@
     });
     Button.displayName = 'Button';
 
-    var sizeMap = {
-      s: 'h5',
-      m: 'h4',
-      l: 'h3',
-      xl: 'h2',
-      xxl: 'h1'
-    };
-    var Heading = function Heading(props) {
-      var _a;
-
-      var appearance = props.appearance,
-          size = props.size,
-          children = props.children,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {
-        Heading: true
-      }, _a["Heading--" + size] = size, _a["Heading--" + appearance] = appearance, _a), className);
-      return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
-        "data-test": "DesignSystem-Heading"
-      }, baseProps, {
-        className: classes,
-        componentType: sizeMap[size]
-      }), children);
-    };
-    Heading.displayName = 'Heading';
-    Heading.defaultProps = {
-      appearance: 'default',
-      size: 'm'
-    };
-
-    var Subheading = function Subheading(props) {
-      var _a;
-
-      var appearance = props.appearance,
-          children = props.children,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {
-        Subheading: true
-      }, _a["Subheading--" + appearance] = appearance, _a), className);
-      return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
-        "data-test": "DesignSystem-Subheading"
-      }, baseProps, {
-        className: classes,
-        componentType: 'h4'
-      }), children);
-    };
-    Subheading.displayName = 'Subheading';
-    Subheading.defaultProps = {
-      appearance: 'default'
-    };
-
     var config = {
       yearBlockRange: 12,
       yearsInRow: 3,
@@ -2763,7 +2707,10 @@
       monthsInRow: 3,
       daysInRow: 7,
       months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+      days: {
+        small: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+        large: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+      }
     };
 
     var yearBlockRange = config.yearBlockRange;
@@ -3045,19 +2992,23 @@
         };
 
         _this.selectYear = function (year) {
-          _this.updateState(year);
+          return function () {
+            _this.updateState(year);
 
-          _this.setState({
-            view: 'month'
-          });
+            _this.setState({
+              view: 'month'
+            });
+          };
         };
 
         _this.selectMonth = function (month) {
-          _this.updateState(_this.state.yearNav, month);
+          return function () {
+            _this.updateState(_this.state.yearNav, month);
 
-          _this.setState({
-            view: 'date'
-          });
+            _this.setState({
+              view: 'date'
+            });
+          };
         };
 
         _this.selectDate = function (index, date) {
@@ -3074,68 +3025,72 @@
           });
         };
 
-        _this.navClickHandler = function (type) {
-          var _a = _this.state,
-              view = _a.view,
-              yearBlockNav = _a.yearBlockNav,
-              yearNav = _a.yearNav,
-              monthNav = _a.monthNav;
-          var yearBlockRange = config.yearBlockRange,
-              monthBlock = config.monthBlock;
+        _this.onNavIconClickHandler = function (type) {
+          return function () {
+            var _a = _this.state,
+                view = _a.view,
+                yearBlockNav = _a.yearBlockNav,
+                yearNav = _a.yearNav,
+                monthNav = _a.monthNav;
+            var yearBlockRange = config.yearBlockRange,
+                monthBlock = config.monthBlock;
 
-          switch (view) {
-            case 'year':
-              if (type === 'prev') _this.setState({
-                yearBlockNav: yearBlockNav - yearBlockRange
-              });
-              if (type === 'next') _this.setState({
-                yearBlockNav: yearBlockNav + yearBlockRange
-              });
-              break;
+            switch (view) {
+              case 'year':
+                if (type === 'prev') _this.setState({
+                  yearBlockNav: yearBlockNav - yearBlockRange
+                });
+                if (type === 'next') _this.setState({
+                  yearBlockNav: yearBlockNav + yearBlockRange
+                });
+                break;
 
-            case 'month':
-              if (type === 'prev') _this.setState({
-                yearNav: yearNav - 1
-              });
-              if (type === 'next') _this.setState({
-                yearNav: yearNav + 1
-              });
-              break;
-
-            case 'date':
-              if (type === 'prev') {
-                if (monthNav === 0) _this.setState({
+              case 'month':
+                if (type === 'prev') _this.setState({
                   yearNav: yearNav - 1
                 });
-
-                _this.setState({
-                  monthNav: (monthBlock + monthNav - 1) % monthBlock
-                });
-              }
-
-              if (type === 'next') {
-                if (monthNav === monthBlock - 1) _this.setState({
+                if (type === 'next') _this.setState({
                   yearNav: yearNav + 1
                 });
+                break;
 
-                _this.setState({
-                  monthNav: (monthNav + 1) % monthBlock
-                });
-              }
+              case 'date':
+                if (type === 'prev') {
+                  if (monthNav === 0) _this.setState({
+                    yearNav: yearNav - 1
+                  });
 
-              break;
-          }
+                  _this.setState({
+                    monthNav: (monthBlock + monthNav - 1) % monthBlock
+                  });
+                }
+
+                if (type === 'next') {
+                  if (monthNav === monthBlock - 1) _this.setState({
+                    yearNav: yearNav + 1
+                  });
+
+                  _this.setState({
+                    monthNav: (monthNav + 1) % monthBlock
+                  });
+                }
+
+                break;
+            }
+          };
         };
 
         _this.renderJumpButton = function (type) {
-          var _a = _this.props,
-              disabledBefore = _a.disabledBefore,
-              disabledAfter = _a.disabledAfter;
-          var _b = _this.state,
-              view = _b.view,
-              yearBlockNav = _b.yearBlockNav,
-              yearNav = _b.yearNav,
-              monthNav = _b.monthNav;
+          var _a;
+
+          var _b = _this.props,
+              disabledBefore = _b.disabledBefore,
+              disabledAfter = _b.disabledAfter;
+          var _c = _this.state,
+              view = _c.view,
+              yearBlockNav = _c.yearBlockNav,
+              yearNav = _c.yearNav,
+              monthNav = _c.monthNav;
           var disabled = false;
 
           switch (view) {
@@ -3173,45 +3128,27 @@
               break;
           }
 
-          var headerIconClass = classNames__default['default']({
-            'Calendar-headerIcon': true,
-            'Calendar-headerIcon--disabled': disabled
-          });
-          return /*#__PURE__*/React__namespace.createElement(Icon, {
-            name: "arrow_" + (type === 'next' ? 'forward' : 'back'),
+          var headerIconClass = classNames__default['default']((_a = {
+            'Calendar-headerIcon': true
+          }, _a["Calendar-headerIcon--" + type] = type, _a));
+          return /*#__PURE__*/React__namespace.createElement(Button, {
             className: headerIconClass,
-            onClick: function onClick() {
-              return _this.navClickHandler(type);
-            }
+            appearance: "transparent",
+            icon: "arrow_" + (type === 'next' ? 'forward' : 'back'),
+            disabled: disabled,
+            onClick: _this.onNavIconClickHandler(type)
           });
         };
 
-        _this.renderHeaderContent = function (index) {
-          var monthsInView = _this.props.monthsInView;
-          var _a = _this.state,
-              view = _a.view,
-              yearBlockNav = _a.yearBlockNav;
-          var yearBlockRange = config.yearBlockRange,
-              months = config.months;
-          var _b = _this.props.jumpView,
-              jumpView = _b === void 0 ? true : _b;
+        _this.onNavHeadingClickHandler = function (currView) {
+          return function () {
+            var monthsInView = _this.props.monthsInView;
+            var jumpView = _this.props.jumpView;
 
-          if (jumpView) {
-            if (monthsInView > 1) jumpView = false;
-          }
+            if (jumpView) {
+              if (monthsInView > 1) jumpView = false;
+            }
 
-          var _c = _this.getNavDateInfo(index),
-              yearNavVal = _c.year,
-              monthNavVal = _c.month;
-
-          var headerContentClass = classNames__default['default']({
-            'Calendar-headerContent': true,
-            'Calendar-headerContent--noIcon-left': index === monthsInView - 1,
-            'Calendar-headerContent--noIcon-right': index === 0
-          });
-          var headerContent = '';
-
-          var onClickHandler = function onClickHandler(currView) {
             if (jumpView) {
               if (currView === 'year') _this.setState({
                 view: 'date'
@@ -3224,36 +3161,60 @@
               });
             }
           };
+        };
 
+        _this.renderHeaderContent = function (index) {
+          var _a = _this.props,
+              size = _a.size,
+              monthsInView = _a.monthsInView;
+          var _b = _this.state,
+              view = _b.view,
+              yearBlockNav = _b.yearBlockNav;
+          var yearBlockRange = config.yearBlockRange,
+              months = config.months;
+
+          var _c = _this.getNavDateInfo(index),
+              yearNavVal = _c.year,
+              monthNavVal = _c.month;
+
+          var headerContentClass = classNames__default['default']({
+            'Calendar-headerContent': true,
+            'Calendar-headerContent--noIcon-left': index === monthsInView - 1,
+            'Calendar-headerContent--noIcon-right': index === 0
+          });
+          var headerContent = '';
           if (view === 'year') headerContent = yearBlockNav + " - " + (yearBlockNav + (yearBlockRange - 1));
           if (view === 'month') headerContent = "" + yearNavVal;
+
+          var renderHeading = function renderHeading(content) {
+            if (size === 'small') {
+              return /*#__PURE__*/React__namespace.createElement(Text, {
+                weight: "strong"
+              }, content);
+            }
+
+            return /*#__PURE__*/React__namespace.createElement(Heading, {
+              size: "s"
+            }, content);
+          };
+
           return /*#__PURE__*/React__namespace.createElement("div", {
             className: headerContentClass
           }, view !== 'date' && /*#__PURE__*/React__namespace.createElement("span", {
-            onClick: function onClick() {
-              return onClickHandler(view);
-            }
-          }, /*#__PURE__*/React__namespace.createElement(Heading, {
-            size: "s"
-          }, headerContent)), view === 'date' && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("span", {
-            onClick: function onClick() {
-              return onClickHandler(view);
-            }
-          }, /*#__PURE__*/React__namespace.createElement(Heading, {
-            size: "s"
-          }, months[monthNavVal])), "\xA0", /*#__PURE__*/React__namespace.createElement("span", {
-            onClick: function onClick() {
-              return onClickHandler('month');
-            }
-          }, /*#__PURE__*/React__namespace.createElement(Heading, {
-            size: "s"
-          }, yearNavVal))));
+            onClick: _this.onNavHeadingClickHandler(view)
+          }, renderHeading(headerContent)), view === 'date' && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("span", {
+            onClick: _this.onNavHeadingClickHandler(view)
+          }, renderHeading(months[monthNavVal])), /*#__PURE__*/React__namespace.createElement("span", {
+            className: "ml-4",
+            onClick: _this.onNavHeadingClickHandler('month')
+          }, renderHeading(yearNavVal))));
         };
 
         _this.renderBodyYear = function () {
           var yearBlockRange = config.yearBlockRange,
               yearsInRow = config.yearsInRow;
           var _a = _this.props,
+              size = _a.size,
               rangePicker = _a.rangePicker,
               disabledBefore = _a.disabledBefore,
               disabledAfter = _a.disabledAfter;
@@ -3270,25 +3231,28 @@
             }, Array.from({
               length: yearsInRow
             }, function (_x, col) {
+              var _a;
+
               var offset = yearsInRow * row + col;
               if (offset === yearBlockNav) return undefined;
               var year = yearBlockNav + offset;
               var disabled = compareDate(disabledBefore, 'more', year) || compareDate(disabledAfter, 'less', year);
               var active = !disabled && !rangePicker && yearNav === year && year === _this.state.year;
-              var valueClass = classNames__default['default']({
+              var valueClass = classNames__default['default']((_a = {
                 'Calendar-value': true,
                 'Calendar-value--active': active,
-                'Calendar-value--disabled': disabled
-              });
+                'Calendar-value--disabled': disabled,
+                'Calendar-yearValue': true
+              }, _a["Calendar-yearValue--" + size] = size, _a));
               return /*#__PURE__*/React__namespace.createElement("div", {
                 key: row + "-" + col,
+                "data-test": "DesignSystem-Calendar--yearValue",
                 className: valueClass,
-                onClick: function onClick() {
-                  return _this.selectYear(year);
-                }
+                onClick: _this.selectYear(year)
               }, /*#__PURE__*/React__namespace.createElement(Text, {
+                size: size === 'small' ? 'small' : 'regular',
                 appearance: active ? 'white' : disabled ? 'disabled' : 'default'
-              }, "" + year));
+              }, year));
             }));
           });
         };
@@ -3298,6 +3262,7 @@
               monthsInRow = config.monthsInRow,
               months = config.months;
           var _a = _this.props,
+              size = _a.size,
               disabledBefore = _a.disabledBefore,
               disabledAfter = _a.disabledAfter;
           var _b = _this.state,
@@ -3314,66 +3279,70 @@
             }, Array.from({
               length: monthsInRow
             }, function (_x, col) {
+              var _a;
+
               var month = monthsInRow * row + col;
               var disabled = compareDate(disabledBefore, 'more', yearNav, month) || compareDate(disabledAfter, 'less', yearNav, month);
               var active = !disabled && year === yearNav && monthNav === month;
-              var valueClass = classNames__default['default']({
+              var valueClass = classNames__default['default']((_a = {
                 'Calendar-value': true,
                 'Calendar-value--active': active,
-                'Calendar-value--dummy': disabled
-              });
+                'Calendar-value--dummy': disabled,
+                'Calendar-monthValue': true
+              }, _a["Calendar-monthValue--" + size] = size, _a));
               return /*#__PURE__*/React__namespace.createElement("div", {
                 key: row + "-" + col,
+                "data-test": "DesignSystem-Calendar--monthValue",
                 className: valueClass,
-                onClick: function onClick() {
-                  return _this.selectMonth(month);
-                }
+                onClick: _this.selectMonth(month)
               }, /*#__PURE__*/React__namespace.createElement(Text, {
+                size: size === 'small' ? 'small' : 'regular',
                 appearance: active ? 'white' : disabled ? 'disabled' : 'default'
               }, months[month]));
             }));
           });
         };
 
+        _this.onDateRowMouseLeaveHandler = function () {
+          var rangePicker = _this.props.rangePicker;
+
+          if (rangePicker) {
+            _this.setState({
+              hoverDate: undefined
+            });
+          }
+        };
+
         _this.renderBodyDate = function (index) {
           var daysInRow = config.daysInRow,
               days = config.days;
           var _a = _this.props,
-              rangePicker = _a.rangePicker,
+              size = _a.size,
               firstDayOfWeek = _a.firstDayOfWeek;
-
-          var onMouseLeaveHandler = function onMouseLeaveHandler() {
-            if (rangePicker) {
-              _this.setState({
-                hoverDate: undefined
-              });
-            }
-          };
-
           return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
             className: "Calendar-dayValues"
           }, Array.from({
             length: 7
           }, function (_x, day) {
             var valueClass = classNames__default['default']({
-              'Calendar-value': true,
-              'Calendar-value--dummy': true
+              'Calendar-valueWrapper': true
             });
             var dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
             return /*#__PURE__*/React__namespace.createElement(Subheading, {
               key: day,
               className: valueClass,
               appearance: "disabled"
-            }, days[dayValue]);
+            }, days[size][dayValue]);
           })), /*#__PURE__*/React__namespace.createElement("div", {
             className: "Calendar-dateValues",
-            onMouseLeave: onMouseLeaveHandler
+            onMouseLeave: _this.onDateRowMouseLeaveHandler
           }, _this.renderDateValues(index)));
         };
 
         _this.renderDateValues = function (index) {
           var daysInRow = config.daysInRow;
           var _a = _this.props,
+              size = _a.size,
               rangePicker = _a.rangePicker,
               firstDayOfWeek = _a.firstDayOfWeek,
               disabledBefore = _a.disabledBefore,
@@ -3399,27 +3368,31 @@
           var inRangeError = _this.getInRangeError();
 
           var onClickHandler = function onClickHandler(date) {
-            if (rangePicker) {
-              if (startDate && endDate) {
-                _this.selectDate(index, date);
+            return function () {
+              if (rangePicker) {
+                if (startDate && endDate) {
+                  _this.selectDate(index, date);
+                } else {
+                  if (!inRangeError) _this.selectDate(index, date);
+                }
               } else {
-                if (!inRangeError) _this.selectDate(index, date);
+                _this.selectDate(index, date);
               }
-            } else {
-              _this.selectDate(index, date);
-            }
+            };
           };
 
           var onMouseOverHandler = function onMouseOverHandler(date) {
-            if (rangePicker) {
-              var d = _this.getDateValue(yearNavVal, monthNavVal, date);
+            return function () {
+              if (rangePicker) {
+                var d = _this.getDateValue(yearNavVal, monthNavVal, date);
 
-              if (!(startDate && endDate)) {
-                _this.setState({
-                  hoverDate: d
-                });
+                if (!(startDate && endDate)) {
+                  _this.setState({
+                    hoverDate: d
+                  });
+                }
               }
-            }
+            };
           };
 
           return Array.from({
@@ -3432,6 +3405,8 @@
               }, Array.from({
                 length: daysInRow
               }, function (_x, col) {
+                var _a;
+
                 var date = daysInRow * row + col - dummyDays + 1;
                 var dummy = date <= 0 || date > dayRange;
                 var disabled = !dummy && (compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) || compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date));
@@ -3456,33 +3431,51 @@
                   }
                 }
 
+                var _b = getDateInfo(startDate),
+                    sYear = _b.year,
+                    sMonth = _b.month,
+                    sDate = _b.date;
+
+                var _c = getDateInfo(endDate),
+                    eYear = _c.year,
+                    eMonth = _c.month,
+                    eDate = _c.date;
+
+                var isStart = startActive || endDate && inRangeLast && compareDate(hoverDate, 'less', eYear, eMonth, eDate);
+                var isEnd = endActive || startDate && inRangeLast && compareDate(hoverDate, 'more', sYear, sMonth, sDate);
+                var isRangeError = inRange && inRangeError;
                 var wrapperClass = classNames__default['default']({
                   'Calendar-valueWrapper': true,
-                  'Calendar-valueWrapper--start': startActive || inRangeLast && endDate,
-                  'Calendar-valueWrapper--end': endActive || inRangeLast && startDate,
                   'Calendar-valueWrapper--inRange': inRange || rangePicker && active,
-                  'Calendar-valueWrapper--inRange-error': inRange && inRangeError
+                  'Calendar-valueWrapper--inRangeError': isRangeError,
+                  'Calendar-valueWrapper--start': isStart && !isEnd,
+                  'Calendar-valueWrapper--end': isEnd && !isStart,
+                  'Calendar-valueWrapper--startError': isStart && isRangeError,
+                  'Calendar-valueWrapper--endError': isEnd && isRangeError
                 });
-                var valueClass = classNames__default['default']({
+                var valueClass = classNames__default['default']((_a = {
                   'Calendar-value': true,
+                  'Calendar-value--start': isStart && !isEnd,
+                  'Calendar-value--end': isEnd && !isStart,
+                  'Calendar-value--startError': isStart && isRangeError,
+                  'Calendar-value--endError': isEnd && isRangeError,
                   'Calendar-value--active': active,
                   'Calendar-value--dummy': dummy || disabled,
-                  'Calendar-value--disabled': disabled
-                });
+                  'Calendar-value--disabled': disabled,
+                  'Calendar-dateValue': true
+                }, _a["Calendar-dateValue--" + size] = size, _a));
                 return /*#__PURE__*/React__namespace.createElement("div", {
                   key: row + "-" + col,
                   className: wrapperClass
                 }, /*#__PURE__*/React__namespace.createElement("span", {
+                  "data-test": "DesignSystem-Calendar--dateValue",
                   className: valueClass,
-                  onClick: function onClick() {
-                    return onClickHandler(date);
-                  },
-                  onMouseOver: function onMouseOver() {
-                    return onMouseOverHandler(date);
-                  }
+                  onClick: onClickHandler(date),
+                  onMouseOver: onMouseOverHandler(date)
                 }, !dummy && /*#__PURE__*/React__namespace.createElement(Text, {
-                  appearance: active ? 'white' : disabled ? 'disabled' : 'default'
-                }, "" + date)));
+                  appearance: active ? 'white' : disabled ? 'disabled' : 'default',
+                  size: size === 'small' ? 'small' : 'regular'
+                }, date)));
               }));
             }
 
@@ -3493,9 +3486,11 @@
         _this.renderCalendar = function (index) {
           var _a;
 
-          var monthsInView = _this.props.monthsInView;
+          var _b = _this.props,
+              size = _b.size,
+              monthsInView = _b.monthsInView;
           var view = _this.state.view;
-          var wrapperClass = classNames__default['default']((_a = {}, _a['Calendar'] = true, _a["Calendar--" + view] = view, _a));
+          var containerClass = classNames__default['default']((_a = {}, _a['Calendar'] = true, _a["Calendar--" + view] = view, _a["Calendar--" + size] = size, _a));
           var headerClass = classNames__default['default']({
             'Calendar-header': true
           });
@@ -3504,7 +3499,8 @@
           });
           return /*#__PURE__*/React__namespace.createElement("div", {
             key: index,
-            className: wrapperClass
+            "data-test": "DesignSystem-Calendar",
+            className: containerClass
           }, /*#__PURE__*/React__namespace.createElement("div", {
             className: headerClass
           }, index === 0 && _this.renderJumpButton('prev'), _this.renderHeaderContent(index), index === monthsInView - 1 && _this.renderJumpButton('next')), /*#__PURE__*/React__namespace.createElement("div", {
@@ -3701,8 +3697,11 @@
             monthsInView = _a.monthsInView,
             className = _a.className;
         var baseProps = extractBaseProps(this.props);
+        var classes = classNames__default['default']({
+          'Calendar-wrapper': true
+        }, className);
         return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
-          className: "Calendar-wrapper " + className
+          className: classes
         }), Array.from({
           length: monthsInView
         }, function (_x, index) {
@@ -3711,9 +3710,11 @@
       };
 
       Calendar.defaultProps = {
+        size: 'large',
         monthsInView: 1,
         view: 'date',
-        firstDayOfWeek: 'sunday'
+        firstDayOfWeek: 'sunday',
+        jumpView: true
       };
       return Calendar;
     }(React__namespace.Component);
@@ -4403,6 +4404,37 @@
       colors: ['primary', 'secondary', 'success', 'warning', 'alert'],
       withCenterText: true,
       colorOfTotalCount: 'success'
+    };
+
+    var sizeMap = {
+      s: 'h5',
+      m: 'h4',
+      l: 'h3',
+      xl: 'h2',
+      xxl: 'h1'
+    };
+    var Heading = function Heading(props) {
+      var _a;
+
+      var appearance = props.appearance,
+          size = props.size,
+          children = props.children,
+          className = props.className;
+      var baseProps = extractBaseProps(props);
+      var classes = classNames__default['default']((_a = {
+        Heading: true
+      }, _a["Heading--" + size] = size, _a["Heading--" + appearance] = appearance, _a), className);
+      return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
+        "data-test": "DesignSystem-Heading"
+      }, baseProps, {
+        className: classes,
+        componentType: sizeMap[size]
+      }), children);
+    };
+    Heading.displayName = 'Heading';
+    Heading.defaultProps = {
+      appearance: 'default',
+      size: 'm'
     };
 
     var sizeMapping = {
@@ -6092,6 +6124,28 @@
       defaultValue: [0, 10]
     });
 
+    var Subheading = function Subheading(props) {
+      var _a;
+
+      var appearance = props.appearance,
+          children = props.children,
+          className = props.className;
+      var baseProps = extractBaseProps(props);
+      var classes = classNames__default['default']((_a = {
+        Subheading: true
+      }, _a["Subheading--" + appearance] = appearance, _a), className);
+      return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
+        "data-test": "DesignSystem-Subheading"
+      }, baseProps, {
+        className: classes,
+        componentType: 'h4'
+      }), children);
+    };
+    Subheading.displayName = 'Subheading';
+    Subheading.defaultProps = {
+      appearance: 'default'
+    };
+
     var Switch = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
       var _a, _b;
 
@@ -6615,6 +6669,223 @@
       customStyle: {},
       boundaryElement: document.body
     });
+
+    var getTextAppearance = function getTextAppearance(isActive, disabled) {
+      return disabled ? 'disabled' : isActive ? 'link' : 'default';
+    };
+    var getIconAppearance = function getIconAppearance(isActive, disabled) {
+      return disabled ? 'disabled' : isActive ? 'info' : 'default';
+    };
+    var getPillsAppearance = function getPillsAppearance(isActive) {
+      return isActive ? 'primary' : 'secondary';
+    };
+    var getMenu = function getMenu(menus, active) {
+      for (var _i = 0, menus_1 = menus; _i < menus_1.length; _i++) {
+        var menu = menus_1[_i];
+
+        if (active.name && menu.name === active.name || active.link && menu.link === active.link) {
+          return menu;
+        }
+
+        if (menu.subMenu) {
+          var activeMenu = menu.subMenu.find(function (submenu) {
+            return active.name && submenu.name === active.name || active.link && submenu.link === active.link;
+          });
+          if (activeMenu) return activeMenu;
+        }
+      }
+
+      return null;
+    };
+    var isMenuActive = function isMenuActive(menus, menu, active) {
+      if (active) {
+        var currActiveMenu = getMenu(menus, active);
+        return !!currActiveMenu && (currActiveMenu === menu || currActiveMenu.name.split('.')[0] === menu.name || currActiveMenu.name === menu.name || !!currActiveMenu.link && currActiveMenu.link === menu.link);
+      }
+
+      return false;
+    };
+
+    var MenuItem = function MenuItem(props) {
+      var _a;
+
+      var menu = props.menu,
+          isActive = props.isActive,
+          expanded = props.expanded,
+          rounded = props.rounded,
+          hasSubmenu = props.hasSubmenu,
+          isChildren = props.isChildren,
+          isChildrenVisible = props.isChildrenVisible,
+          onClick = props.onClick;
+      var baseProps = extractBaseProps(props);
+
+      var onClickHandler = function onClickHandler() {
+        if (onClick) onClick(menu);
+      };
+
+      var ItemClass = classNames__default['default']((_a = {}, _a['MenuItem'] = true, _a['MenuItem--vertical'] = true, _a['MenuItem--collapsed'] = !expanded, _a['MenuItem--expanded'] = expanded, _a['MenuItem--active'] = isActive, _a['MenuItem--disabled'] = menu.disabled, _a['MenuItem--subMenu'] = isChildren && expanded, _a['MenuItem--rounded'] = rounded && expanded, _a));
+
+      var renderSubMenu = function renderSubMenu() {
+        var _a;
+
+        if (hasSubmenu) {
+          return /*#__PURE__*/React__namespace.createElement(Icon, {
+            className: "mx-4",
+            name: isChildrenVisible ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
+            appearance: "subtle"
+          });
+        }
+
+        if (menu.count !== undefined) {
+          var count = menu.count > 99 ? '99+' : menu.count;
+          var PillsClass = classNames__default['default']((_a = {}, _a['MenuItem-count'] = true, _a['MenuItem-count--disabled'] = menu.disabled, _a));
+          return /*#__PURE__*/React__namespace.createElement(Pills, {
+            subtle: menu.disabled,
+            className: PillsClass,
+            appearance: getPillsAppearance(isActive),
+            "data-test": "DesignSystem-VerticalMenu--Pills"
+          }, count);
+        }
+
+        return null;
+      };
+
+      if (!expanded && !menu.icon) return null;
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        className: ItemClass
+      }, baseProps, {
+        onClick: onClickHandler
+      }), /*#__PURE__*/React__namespace.createElement("div", {
+        className: "d-flex align-items-center overflow-hidden"
+      }, menu.icon && /*#__PURE__*/React__namespace.createElement(Icon, {
+        "data-test": "DesignSystem-VerticalMenu--Icon",
+        className: expanded ? 'mr-4' : '',
+        name: menu.icon,
+        appearance: getIconAppearance(isActive, menu.disabled)
+      }), expanded && /*#__PURE__*/React__namespace.createElement(Text, {
+        "data-test": "DesignSystem-VerticalMenu--Text",
+        appearance: getTextAppearance(isActive, menu.disabled)
+      }, menu.label)), expanded && renderSubMenu());
+    };
+    MenuItem.defaultProps = {
+      isActive: false
+    };
+
+    var VerticalMenu = function VerticalMenu(props) {
+      var _a;
+
+      var menus = props.menus,
+          active = props.active,
+          onClick = props.onClick,
+          expanded = props.expanded,
+          rounded = props.rounded,
+          autoCollapse = props.autoCollapse,
+          className = props.className;
+
+      var _b = React__namespace.useState({}),
+          menuState = _b[0],
+          setMenuState = _b[1];
+
+      var baseProps = extractBaseProps(props);
+      React__namespace.useEffect(function () {
+        if (props.active) {
+          var currMenu = getMenu(menus, props.active);
+          if (currMenu) updateMenuState(currMenu, true);
+        }
+      }, [props.active]);
+
+      var updateMenuState = function updateMenuState(menu, val) {
+        var _a;
+
+        var currMenu = getMenu(menus, menu);
+
+        if (currMenu) {
+          var nameSplit = currMenu.name.split('.');
+
+          if (nameSplit.length > 1 || currMenu.subMenu) {
+            var name_1 = nameSplit[0];
+
+            if (autoCollapse) {
+              setMenuState((_a = {}, _a[name_1] = val || !menuState[name_1], _a));
+            } else {
+              var menuData = __assign({}, menuState);
+
+              menuData[name_1] = val !== undefined ? val : !menuData[name_1];
+              setMenuState(menuData);
+            }
+          } else {
+            if (autoCollapse) {
+              if (!expanded) setMenuState({});
+            }
+          }
+        }
+      };
+
+      var onClickHandler = function onClickHandler(menu) {
+        if (menu.subMenu) {
+          if (!expanded) {
+            if (onClick) onClick(menu.subMenu[0]);
+          } else {
+            updateMenuState(menu);
+          }
+        } else {
+          if (onClick) onClick(menu);
+        }
+      };
+
+      var renderList = function renderList() {
+        var list = menus.map(function (menu, index) {
+          var _a;
+
+          var isActive = !menuState[menu.name] && isMenuActive(menus, menu, active);
+          var hasSubmenu = menu.subMenu && menu.subMenu.length > 0;
+          var isChildrenVisible = hasSubmenu && menuState[menu.name];
+          var hasGroup = index === 0 || menus[index - 1].group !== menu.group;
+          var sectionClass = classNames__default['default']((_a = {}, _a['VerticalMenu-section'] = true, _a['VerticalMenu-section--border'] = index !== 0, _a));
+          return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, hasGroup && menu.group && expanded && /*#__PURE__*/React__namespace.createElement("div", {
+            className: sectionClass
+          }, /*#__PURE__*/React__namespace.createElement(Text, {
+            "data-test": "DesignSystem-VerticalMenu--Section",
+            size: "small",
+            weight: "strong"
+          }, menu.group)), /*#__PURE__*/React__namespace.createElement(MenuItem, {
+            "data-test": "DesignSystem-VerticalMenu--Item",
+            menu: menu,
+            expanded: expanded,
+            isActive: isActive,
+            hasSubmenu: hasSubmenu,
+            isChildren: false,
+            rounded: rounded,
+            isChildrenVisible: isChildrenVisible,
+            onClick: onClickHandler
+          }), menuState[menu.name] && menu.subMenu && menu.subMenu.map(function (subMenu, id) {
+            return /*#__PURE__*/React__namespace.createElement(MenuItem, {
+              key: id,
+              menu: subMenu,
+              expanded: expanded,
+              hasSubmenu: false,
+              isChildren: true,
+              rounded: rounded,
+              onClick: onClickHandler,
+              isActive: isMenuActive(menus, subMenu, active)
+            });
+          }));
+        });
+        return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, list);
+      };
+
+      var classes = classNames__default['default']((_a = {
+        VerticalMenu: true
+      }, _a['VerticalMenu--expanded'] = expanded, _a), className);
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
+        className: classes
+      }), renderList());
+    };
+    VerticalMenu.defaultProps = {
+      expanded: true,
+      autoCollapse: true,
+      rounded: false
+    };
 
     var propsList = ['trigger', 'on', 'open', 'offset', 'onToggle', 'dark', 'customStyle', 'closeOnBackdropClick', 'hideOnReferenceEscape', 'closeOnScroll'];
     var Tooltip = function Tooltip(props) {
@@ -7202,8 +7473,8 @@
       var ref = /*#__PURE__*/React__namespace.createRef();
       var baseProps = extractBaseProps(props);
       React__namespace.useEffect(function () {
-        if (ref.current && ref.current.scrollHeight > ref.current.clientHeight) {
-          setSeperator(true);
+        if (ref.current) {
+          setSeperator(ref.current.scrollHeight > ref.current.clientHeight);
         }
       });
       var WrapperClass = classNames__default['default']((_a = {}, _a['Collapsible-wrapper'] = true, _a['Collapsible-wrapper--overlay'] = !isClicked, _a));
@@ -11906,42 +12177,6 @@
     };
     List.defaultProps = defaultProps;
 
-    var getTextAppearance = function getTextAppearance(isActive, disabled) {
-      return disabled ? 'disabled' : isActive ? 'link' : 'default';
-    };
-    var getIconAppearance = function getIconAppearance(isActive, disabled) {
-      return disabled ? 'disabled' : isActive ? 'info' : 'default';
-    };
-    var getPillsAppearance = function getPillsAppearance(isActive) {
-      return isActive ? 'primary' : 'secondary';
-    };
-    var getMenu = function getMenu(menus, active) {
-      for (var _i = 0, menus_1 = menus; _i < menus_1.length; _i++) {
-        var menu = menus_1[_i];
-
-        if (active.name && menu.name === active.name || active.link && menu.link === active.link) {
-          return menu;
-        }
-
-        if (menu.subMenu) {
-          var activeMenu = menu.subMenu.find(function (submenu) {
-            return active.name && submenu.name === active.name || active.link && submenu.link === active.link;
-          });
-          if (activeMenu) return activeMenu;
-        }
-      }
-
-      return null;
-    };
-    var isMenuActive = function isMenuActive(menus, menu, active) {
-      if (active) {
-        var currActiveMenu = getMenu(menus, active);
-        return !!currActiveMenu && (currActiveMenu === menu || currActiveMenu.name.split('.')[0] === menu.name || currActiveMenu.name === menu.name || !!currActiveMenu.link && currActiveMenu.link === menu.link);
-      }
-
-      return false;
-    };
-
     var HorizontalNavigation = function HorizontalNavigation(props) {
       var menus = props.menus,
           active = props.active,
@@ -12371,7 +12606,7 @@
     };
     FileList.displayName = 'FileList';
 
-    var version = "2.0.0-2";
+    var version = "2.0.0-3";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
@@ -12448,6 +12683,7 @@
     exports.Toast = Toast;
     exports.Tooltip = Tooltip;
     exports.Utils = index;
+    exports.VerticalMenu = VerticalMenu;
     exports.version = version;
 
     Object.defineProperty(exports, '__esModule', { value: true });
