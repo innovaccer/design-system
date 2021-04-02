@@ -26,6 +26,7 @@ exports[`TS renders children 1`] = `
   </span>
   <div
     class="Breadcrumbs"
+    data-test="DesignSystem-Breadcrumbs"
   />
   <button
     class="Button Button--regular Button--regularSquare Button--basic"
