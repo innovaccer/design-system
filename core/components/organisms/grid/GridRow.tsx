@@ -11,6 +11,7 @@ export interface GridRowProps {
   withCheckbox?: boolean;
   _this: Grid;
   rowIndex: number;
+  className?: string;
 }
 
 export const GridRow = (props: GridRowProps) => {
@@ -19,7 +20,8 @@ export const GridRow = (props: GridRowProps) => {
     schema,
     data,
     withCheckbox,
-    rowIndex: rI
+    rowIndex: rI,
+    className
   } = props;
 
   const rowRef = React.useRef<HTMLDivElement>(null);
@@ -115,19 +117,19 @@ export const GridRow = (props: GridRowProps) => {
     return null;
   };
 
+  const wrapperClasses = classNames(className, {
+    'Grid-rowWrapper': true
+  });
+
   return (
-    <div className="Grid-rowWrapper">
+    <div className={wrapperClasses}>
       <div className={rowClasses} onClick={onClickHandler} ref={rowRef}>
         {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
         {renderSchema(rightPinnedSchema, false, 'right')}
       </div>
       {nestedRows && expanded && (
-        <div
-          style={{
-            width: rowRef.current ? rowRef.current.clientWidth : 0
-          }}
-        >
+        <div className="Grid-nestedRow">
           <GridNestedRow
             _this={_this}
             data={data}
@@ -137,6 +139,10 @@ export const GridRow = (props: GridRowProps) => {
       )}
     </div>
   );
+};
+
+GridRow.defaultProps = {
+  data: {}
 };
 
 export default GridRow;

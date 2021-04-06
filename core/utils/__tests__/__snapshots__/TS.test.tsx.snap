@@ -2330,30 +2330,129 @@ exports[`TS renders children 1`] = `
     </div>
   </div>
   <div
-    class="Grid-wrapper"
+    class="Grid Grid--data Grid--standard"
   >
     <div
-      class="Grid Grid--data Grid--standard"
+      class="Grid-head"
     >
       <div
-        class="Grid-head"
+        class="Grid-row Grid-row--head"
+      />
+    </div>
+    <div
+      class="Grid-body"
+    >
+      <div
+        style="flex-shrink: 0; height: 0px;"
+      />
+      <div
+        class="VS-item Grid-rowWrapper"
       >
         <div
-          class="Grid-row Grid-row--head"
+          class="Grid-row Grid-row--body"
         />
       </div>
       <div
-        class="Grid-body"
+        class="VS-item Grid-rowWrapper"
       >
         <div
-          class="GridBody-padding"
-          style="height: 0px;"
-        />
-        <div
-          class="GridBody-padding"
-          style="height: 0px;"
+          class="Grid-row Grid-row--body"
         />
       </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        style="flex-shrink: 0; height: 0px;"
+      />
     </div>
   </div>
   <div
@@ -2363,18 +2462,14 @@ exports[`TS renders children 1`] = `
       class="Table-grid"
     >
       <div
-        class="Grid-wrapper"
+        class="Grid Grid--data Grid--standard"
       >
-        <div
-          class="Grid Grid--data Grid--standard"
+        <h4
+          class="Heading Heading--m Heading--default"
+          data-test="DesignSystem-Heading"
         >
-          <h4
-            class="Heading Heading--m Heading--default"
-            data-test="DesignSystem-Heading"
-          >
-            No results found
-          </h4>
-        </div>
+          No results found
+        </h4>
       </div>
     </div>
   </div>
@@ -2385,25 +2480,21 @@ exports[`TS renders children 1`] = `
       class="Table-grid"
     >
       <div
-        class="Grid-wrapper"
+        class="Grid Grid--data Grid--standard"
       >
         <div
-          class="Grid Grid--data Grid--standard"
+          class="Grid-head"
         >
           <div
-            class="Grid-head"
-          >
-            <div
-              class="Grid-row Grid-row--head"
-            />
-          </div>
-          <h4
-            class="Heading Heading--m Heading--default"
-            data-test="DesignSystem-Heading"
-          >
-            No results found
-          </h4>
+            class="Grid-row Grid-row--head"
+          />
         </div>
+        <h4
+          class="Heading Heading--m Heading--default"
+          data-test="DesignSystem-Heading"
+        >
+          No results found
+        </h4>
       </div>
     </div>
   </div>

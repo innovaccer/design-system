@@ -1,16 +1,16 @@
 import * as React from 'react';
+// @ts-ignore
+import VirtualScroll from 'react-dynamic-virtual-scroll';
 import { GridRow } from './GridRow';
 import { Data, Schema } from './Grid';
 import { Grid } from '@/index';
+import { GridProps } from '@/index.type';
 
 export interface GridBodyProps {
   schema: Schema;
   data: Data;
   withCheckbox?: boolean;
   _this: Grid;
-  offset: number;
-  inView: number;
-  avgRowHeight: number;
 }
 
 export const GridBody = (props: GridBodyProps) => {
@@ -18,15 +18,18 @@ export const GridBody = (props: GridBodyProps) => {
     _this,
     schema,
     data,
-    withCheckbox,
-    offset,
-    inView,
-    avgRowHeight
+    withCheckbox
   } = props;
 
-  const buffer = 50;
+  const minRowHeight: Record<GridProps['size'], number> = {
+    comfortable: 40,
+    standard: 40,
+    compressed: 32,
+    tight: 24
+  };
 
   const {
+    size,
     loading,
     error,
     withPagination,
@@ -43,42 +46,34 @@ export const GridBody = (props: GridBodyProps) => {
   }
 
   const totalPages = Math.ceil(totalRecords / pageSize);
-  const dummyRows = withPagination && page === totalPages ? totalRecords - (page - 1) * pageSize : pageSize;
-  const rows = loading ? Array.from({ length: dummyRows }, () => ({})) : data.slice(offset, offset + buffer);
-  const topPadding = Math.max(0, offset * avgRowHeight);
-  const bottomPadding = Math.max(0, ((withPagination ? dummyRows : data.length) - inView - offset - 1) * avgRowHeight);
+  const isLastPage = withPagination && page === totalPages;
+  const dataLength = isLastPage
+    ? totalRecords - (page - 1) * pageSize
+    : loading
+      ? pageSize
+      : Math.min(totalRecords, pageSize);
+
+  const renderItem = (rowIndex: number) => {
+    return (
+      <GridRow
+        _this={_this}
+        rowIndex={rowIndex}
+        data={data[rowIndex]}
+        schema={schema}
+        withCheckbox={withCheckbox}
+      />
+    );
+  };
 
   return (
-    <div className="Grid-body">
-      {!loading && (
-        <div
-          className="GridBody-padding"
-          style={{
-            height: topPadding
-          }}
-        />
-      )}
-      {rows.map((d, rI) => {
-        return (
-          <GridRow
-            key={offset + rI}
-            _this={_this}
-            rowIndex={offset + rI}
-            data={d}
-            schema={schema}
-            withCheckbox={withCheckbox}
-          />
-        );
-      })}
-      {!loading && (
-        <div
-          className="GridBody-padding"
-          style={{
-            height: bottomPadding
-          }}
-        />
-      )}
-    </div>
+    <VirtualScroll
+      className="Grid-body"
+      minItemHeight={minRowHeight[size]}
+      totalLength={dataLength}
+      length={20}
+      buffer={7}
+      renderItem={renderItem}
+    />
   );
 };
 
