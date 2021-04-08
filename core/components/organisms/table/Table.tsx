@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Header, ExternalHeaderProps, updateSearchTermFunction, HeaderProps } from '../grid/Header';
+import { Header, ExternalHeaderProps, updateSearchTermFunction, HeaderProps } from './Header';
 import { Grid, Pagination, Heading } from '@/index';
 import {
   Data,
@@ -730,6 +730,7 @@ export class Table extends React.Component<TableProps, TableState> {
               onSelectAll={this.onSelectAll}
               withCheckbox={withCheckbox}
               withPagination={withPagination}
+              pageSize={pageSize}
               showFilters={filterPosition === 'HEADER'}
               {...headerAttr}
             >

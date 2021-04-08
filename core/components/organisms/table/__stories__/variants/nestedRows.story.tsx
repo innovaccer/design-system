@@ -8,6 +8,8 @@ import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const nestedRows = () => {
+  schema[0].width = 400;
+
   return (
     <div
       style={{

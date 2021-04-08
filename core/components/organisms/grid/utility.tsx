@@ -59,3 +59,5 @@ export const getSchema = (_this: Grid): Schema => {
 
   return schema;
 };
+
+export const getPluralSuffix = (count: number) => count > 1 ? 's' : '';

@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { CheckboxProps, DropdownProps } from '@/index.type';
 import { GridCellProps } from './GridCell';
+import { GridHead } from './GridHead';
+import { GridBody } from './GridBody';
 import { sortColumn, pinColumn, hideColumn, moveToIndex, getSchema } from './utility';
-import { MainGrid } from './MainGrid';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { NestedRowProps } from './GridNestedRow';
+import classNames from 'classnames';
 
 export type SortType = 'asc' | 'desc' | 'unsort';
 export type Pinned = 'left' | 'right' | 'unpin';
@@ -298,7 +300,61 @@ export class Grid extends React.Component<GridProps, GridState> {
     showFilters: true
   };
 
+  componentDidMount() {
+    this.addScrollListeners();
+  }
+
+  componentWillUnmount() {
+    this.removeScrollListeners();
+  }
+
+  componentDidUpdate(prevProps: GridProps) {
+    if (prevProps.page !== this.props.page) {
+      this.removeScrollListeners();
+      this.addScrollListeners();
+    }
+  }
+
   gridRef: HTMLDivElement | null = null;
+  isHeadSyncing: boolean = false;
+  isBodySyncing: boolean = false;
+
+  addScrollListeners() {
+    const gridHeadEl = this.gridRef!.querySelector('.Grid-head');
+    const gridBodyEl = this.gridRef!.querySelector('.Grid-body');
+
+    gridHeadEl?.addEventListener('scroll', this.syncScroll('head'));
+    gridBodyEl?.addEventListener('scroll', this.syncScroll('body'));
+  }
+
+  removeScrollListeners() {
+    const gridHeadEl = this.gridRef!.querySelector('.Grid-head');
+    const gridBodyEl = this.gridRef!.querySelector('.Grid-body');
+
+    gridHeadEl?.removeEventListener('scroll', this.syncScroll('head'));
+    gridBodyEl?.removeEventListener('scroll', this.syncScroll('body'));
+  }
+
+  syncScroll = (type: string) => () => {
+    const gridHeadEl = this.gridRef!.querySelector('.Grid-head');
+    const gridBodyEl = this.gridRef!.querySelector('.Grid-body');
+
+    if (type === 'head') {
+      if (!this.isHeadSyncing) {
+        this.isBodySyncing = true;
+        gridBodyEl!.scrollLeft = gridHeadEl!.scrollLeft;
+      }
+      this.isHeadSyncing = false;
+    }
+
+    if (type === 'body') {
+      if (!this.isBodySyncing) {
+        this.isHeadSyncing = true;
+        gridHeadEl!.scrollLeft = gridBodyEl!.scrollLeft;
+      }
+      this.isBodySyncing = false;
+    }
+  }
 
   updateRenderedSchema = (newSchema: Schema) => {
     const {
@@ -417,9 +473,28 @@ export class Grid extends React.Component<GridProps, GridState> {
     const baseProps = extractBaseProps(this.props);
     const schema = getSchema(this);
 
+    const {
+      type,
+      size,
+      showHead,
+      draggable,
+      withCheckbox,
+      data,
+      className,
+      page
+    } = this.props;
+
+    const classes = classNames({
+      Grid: 'true',
+      [`Grid--${type}`]: type,
+      [`Grid--${size}`]: size,
+    }, className);
+
     return (
       <div
-        className="Grid-wrapper"
+        key={`${page}`}
+        className={classes}
+        {...baseProps}
         ref={el => {
           this.gridRef = el;
           if (el && !this.state.init) {
@@ -429,10 +504,19 @@ export class Grid extends React.Component<GridProps, GridState> {
           }
         }}
       >
-        <MainGrid
-          {...baseProps}
+        {showHead && (
+          <GridHead
+            _this={this}
+            schema={schema}
+            draggable={draggable}
+            withCheckbox={withCheckbox}
+          />
+        )}
+        <GridBody
           _this={this}
           schema={schema}
+          data={data}
+          withCheckbox={withCheckbox}
         />
       </div>
     );

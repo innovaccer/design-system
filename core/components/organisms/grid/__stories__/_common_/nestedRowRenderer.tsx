@@ -14,6 +14,7 @@ export const nestedRowRenderer = (props: NestedRowProps) => {
       loading={loading}
       schema={schema}
       data={[data]}
+      nestedRows={true}
     />
   );
 };

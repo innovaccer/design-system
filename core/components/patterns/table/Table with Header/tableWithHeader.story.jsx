@@ -102,6 +102,8 @@ import './style.css';
   const getTotalPages = (totalRecords, pageSize) => Math.ceil(totalRecords / pageSize);
   
   const getInit = schema => (schema && !!schema.length);
+
+  const getPluralSuffix = (count) => count > 1 ? 's' : '';
   
   const updateBatchData = (data, rowIndexes, dataUpdate) => {
     const updatedData = [...data];
@@ -195,7 +197,7 @@ import './style.css';
               icon="keyboard_arrow_down_filled"
               iconAlign="right"
             >
-              {\`Showing \${options.filter(option => option.selected).length} of \${options.length} columns\`}
+              {\`Showing \${options.filter(option => option.selected).length} of \${options.length} column\${getPluralSuffix(options.length)}\`}
             </Button>
           )}
           triggerClass="w-100"
@@ -261,6 +263,8 @@ import './style.css';
       schema,
       showHead,
       withPagination,
+      page,
+      pageSize,
       withCheckbox,
       updateSchema,
       filterList = {},
@@ -328,9 +332,17 @@ import './style.css';
     };
   
     const selectedCount = data.filter(d => d._selected).length;
-    const label = withCheckbox && selectedCount ?
-      selectAllRecords ? \`Selected all \${totalRecords} items\` : \`Selected \${selectedCount} items on this page\`
-      : \`Showing \${!error ? totalRecords : 0} items\`;
+    const startIndex = (page - 1) * pageSize + 1;
+  const endIndex = Math.min(page * pageSize, totalRecords);
+  const label = error
+    ? \`Showing 0 items\`
+    : withCheckbox && selectedCount
+      ? selectAllRecords
+        ? \`Selected all \${totalRecords} item\${getPluralSuffix(totalRecords)}\`
+        : \`Selected \${selectedCount} item\${getPluralSuffix(totalRecords)} on this page\`
+      : withPagination
+        ? \`Showing \${startIndex}-\${endIndex} of \${totalRecords} item\${getPluralSuffix(totalRecords)}\`
+        : \`Showing \${totalRecords} item\${getPluralSuffix(totalRecords)}\`;
   
     return (
       <div className="Header">
@@ -677,6 +689,7 @@ import './style.css';
                   onSelectAll={this.onSelectAll.bind(this)}
                   withCheckbox={withCheckbox}
                   withPagination={withPagination}
+                  pageSize={pageSize}
                 />
               </div>
               <div className="Table-grid">
@@ -976,7 +989,7 @@ import './style.css';
 }`
 
 export default {
-  title: 'Patterns/Grid/Table With Header',
+  title: 'Patterns/Table/Table With Header',
   parameters: {
     docs: {
       docPage: {
