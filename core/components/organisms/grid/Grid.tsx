@@ -300,11 +300,26 @@ export class Grid extends React.Component<GridProps, GridState> {
     showFilters: true
   };
 
+  componentDidMount() {
+    this.addScrollListeners();
+  }
+
+  componentWillUnmount() {
+    this.removeScrollListeners();
+  }
+
+  componentDidUpdate(prevProps: GridProps) {
+    if (prevProps.page !== this.props.page) {
+      this.removeScrollListeners();
+      this.addScrollListeners();
+    }
+  }
+
   gridRef: HTMLDivElement | null = null;
   isHeadSyncing: boolean = false;
   isBodySyncing: boolean = false;
 
-  componentDidMount() {
+  addScrollListeners() {
     const gridHeadEl = this.gridRef!.querySelector('.Grid-head');
     const gridBodyEl = this.gridRef!.querySelector('.Grid-body');
 
@@ -312,7 +327,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     gridBodyEl?.addEventListener('scroll', this.syncScroll('body'));
   }
 
-  componentWillUnmount() {
+  removeScrollListeners() {
     const gridHeadEl = this.gridRef!.querySelector('.Grid-head');
     const gridBodyEl = this.gridRef!.querySelector('.Grid-body');
 
@@ -477,6 +492,7 @@ export class Grid extends React.Component<GridProps, GridState> {
 
     return (
       <div
+        key={`${page}`}
         className={classes}
         {...baseProps}
         ref={el => {
@@ -497,7 +513,6 @@ export class Grid extends React.Component<GridProps, GridState> {
           />
         )}
         <GridBody
-          key={`${page}`}
           _this={this}
           schema={schema}
           data={data}
