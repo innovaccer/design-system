@@ -6,6 +6,12 @@ export interface GridRowProps {
     withCheckbox?: boolean;
     _this: Grid;
     rowIndex: number;
+    className?: string;
 }
-export declare const GridRow: (props: GridRowProps) => JSX.Element;
+export declare const GridRow: {
+    (props: GridRowProps): JSX.Element;
+    defaultProps: {
+        data: {};
+    };
+};
 export default GridRow;

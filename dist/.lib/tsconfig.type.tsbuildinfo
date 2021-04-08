@@ -1172,8 +1172,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/utility.tsx": {
-        "version": "6f3a2d098f9218f2b0a5786fcdddc06a7d9921dc4083ca802821d23088a60d75",
-        "signature": "9814ef140f7d8eac89c05f404fad5866b41ba0bfd2e271f091d89d5a190299c4",
+        "version": "402b2ba67ccbdc596c1b05bcc07a3cc8575a3c0a4a81ac87751dbe6bf3c4175e",
+        "signature": "714b42f86c467917388408b442b9944787b3abe349216b828e8cff6fa92839f3",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/GridCell.tsx": {
@@ -1197,23 +1197,18 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/GridRow.tsx": {
-        "version": "6c9837fe28bed5dd3c10daecbf85ab1c576bfd9b9697a0515e92e0b1b43111c1",
-        "signature": "3f6e94f87ed79909e709b1ba52f1001a4c01007d0fb1efeec76797ced231849f",
+        "version": "4a4da0bff30870dcf1e5fa48bbcc3bdd3630d68de778bbae6f5d6482a0ef676c",
+        "signature": "22af990cf70207c57f1d1486ceed8f38baa403919c510addeb0b38a34bccd192",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/GridBody.tsx": {
-        "version": "76264313235fc4ac908c4332189162940d7d15a7432ff65817010daf4af42b4d",
-        "signature": "5a0e612e3563f6e6800d9c781aadd929addc6a7a43856a5b76cc67fc330daf5e",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/organisms/grid/MainGrid.tsx": {
-        "version": "78d6faab92e57469d34491c2684ae6174e02e0cc822eef01cba6d661aec7f1d9",
-        "signature": "6abe9ea68235883429a1d8eba3638fe5f62bcea290087c1b8b7a1bc56153f7bc",
+        "version": "5dde48488ad8f6e8b1588bc54c559bf84c7450ff79822861bbad0d9490fe57e9",
+        "signature": "f98e905879a21b9d58a2d914eadc33945035a802b6fb82a96e02ff23b4f153bc",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/Grid.tsx": {
-        "version": "9f3a09c27523e572bede73d04360fe5cd005d5d4bcc233db1416b7f8f3e66b90",
-        "signature": "50190c6889dc7b4d47e2becd3e0ba86d9758978df49a116672b4ce6c4201fe68",
+        "version": "6fb986c0698e17ac9c1f757cf503e1ecc86b951d5770252137f77b380c3f5882",
+        "signature": "2da9e12be094d88995625bad3802dc847102b99e42efe8ddf3bcfd2957d677e7",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/index.tsx": {
@@ -1221,19 +1216,19 @@
         "signature": "3a7d8fed341f3567a43b403e181fc3b2ae15b49b55aeeacd6419ddaac22e9a97",
         "affectsGlobalScope": false
       },
-      "../../core/components/organisms/grid/DraggableDropdown.tsx": {
-        "version": "35ca06546f9a72d5cc7b4d98fa24e8e9ac5201ed3ac51f3c1ae6011077744539",
+      "../../core/components/organisms/table/DraggableDropdown.tsx": {
+        "version": "e66097488424b1a51731ccbb358a8208d0cbfdebb721a264cb32fac41bc7a851",
         "signature": "6edec7d2b1a8d5b57bbfadc8187d3b29ed59c7df6c80279930c7270a1fc1ed9f",
         "affectsGlobalScope": false
       },
-      "../../core/components/organisms/grid/Header.tsx": {
-        "version": "1080315faaa24f95bbeb87d5c4d225a516b0d965d92b23d2588df8dfc2e2946f",
-        "signature": "8aa39dd5344cfed0d771685ff58d152c20fd0e50036db969d20e03b48d7af087",
+      "../../core/components/organisms/table/Header.tsx": {
+        "version": "344e83fdc527d3338fbd5bdd24819eccef311b8f64c5a34e995dfcce2c853d46",
+        "signature": "d917ebfa4e2718ff39cc4d5429b5950ba79c998312bb03dff1a1d860ccbe0067",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/table/Table.tsx": {
-        "version": "d26f609e113af2592427bcc70f8da9174cea8b817c2356513f9672739941286b",
-        "signature": "b957c8d710c676a0fedfd9b21759c2a9aa5e33b4c12acb451233ef7e9aee6928",
+        "version": "b88c7ae96f77cfb03532228909b15d58656c9b97b504dab179d1c8a1c03420c9",
+        "signature": "bc6571bcedc4c47c67178aa087cb5bee1f17e328c6537cb42a976f27418b805e",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/table/index.tsx": {
@@ -2312,8 +2307,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@storybook/components/dist/ts3.9/blocks/ArgsTable/TabbedArgsTable.d.ts": {
-        "version": "adfb1961419840a2fe8dbd3f31c182e6050621eaa2065dc71ad8a2dab981b767",
-        "signature": "adfb1961419840a2fe8dbd3f31c182e6050621eaa2065dc71ad8a2dab981b767",
+        "version": "ffc417b36bb84e55290842204f0be5eabec0daf179f019a9219ddf2d7dc3ebaa",
+        "signature": "ffc417b36bb84e55290842204f0be5eabec0daf179f019a9219ddf2d7dc3ebaa",
         "affectsGlobalScope": false
       },
       "../../node_modules/@storybook/components/dist/ts3.9/blocks/ArgsTable/NoControlsWarning.d.ts": {
@@ -3097,13 +3092,13 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node-fetch/externals.d.ts": {
-        "version": "972f1e91dab93b182624a17eeed02f683b8cb3fefbda7b689cc84570029d5f73",
-        "signature": "972f1e91dab93b182624a17eeed02f683b8cb3fefbda7b689cc84570029d5f73",
+        "version": "8fe9135b86994075c4192f3358a4350389e80d3abec712db2a82061962d9d21c",
+        "signature": "8fe9135b86994075c4192f3358a4350389e80d3abec712db2a82061962d9d21c",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node-fetch/index.d.ts": {
-        "version": "9895aad6ad1d505e2b03c8e41c8643b60a813ad130eb68f843b736b2db7d42e1",
-        "signature": "9895aad6ad1d505e2b03c8e41c8643b60a813ad130eb68f843b736b2db7d42e1",
+        "version": "e0014889f31fee76a572b6b15e74b2174cbcf6346ae8ab5c69eb553a10e5c944",
+        "signature": "e0014889f31fee76a572b6b15e74b2174cbcf6346ae8ab5c69eb553a10e5c944",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/normalize-package-data/index.d.ts": {
@@ -3291,9 +3286,6 @@
           "core/*"
         ],
         "*": [
-          "*",
-          "*",
-          "*",
           "*",
           "*",
           "*",
@@ -5190,25 +5182,22 @@
         "../../node_modules/@types/classnames/index.d.ts",
         "../../node_modules/@types/react/index.d.ts"
       ],
-      "../../core/components/organisms/grid/DraggableDropdown.tsx": [
-        "../../core/components/organisms/grid/utility.tsx",
-        "../../core/index.tsx",
-        "../../core/index.type.tsx",
-        "../../node_modules/@types/react/index.d.ts"
-      ],
       "../../core/components/organisms/grid/Grid.tsx": [
+        "../../core/components/organisms/grid/GridBody.tsx",
         "../../core/components/organisms/grid/GridCell.tsx",
+        "../../core/components/organisms/grid/GridHead.tsx",
         "../../core/components/organisms/grid/GridNestedRow.tsx",
-        "../../core/components/organisms/grid/MainGrid.tsx",
         "../../core/components/organisms/grid/utility.tsx",
         "../../core/index.type.tsx",
         "../../core/utils/types.tsx",
+        "../../node_modules/@types/classnames/index.d.ts",
         "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/components/organisms/grid/GridBody.tsx": [
         "../../core/components/organisms/grid/Grid.tsx",
         "../../core/components/organisms/grid/GridRow.tsx",
         "../../core/index.tsx",
+        "../../core/index.type.tsx",
         "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/components/organisms/grid/GridCell.tsx": [
@@ -5237,22 +5226,6 @@
         "../../core/components/organisms/grid/Grid.tsx",
         "../../core/components/organisms/grid/GridNestedRow.tsx",
         "../../core/index.tsx",
-        "../../node_modules/@types/classnames/index.d.ts",
-        "../../node_modules/@types/react/index.d.ts"
-      ],
-      "../../core/components/organisms/grid/Header.tsx": [
-        "../../core/components/organisms/grid/DraggableDropdown.tsx",
-        "../../core/components/organisms/grid/Grid.tsx",
-        "../../core/components/organisms/grid/utility.tsx",
-        "../../core/index.tsx",
-        "../../core/index.type.tsx",
-        "../../node_modules/@types/react/index.d.ts"
-      ],
-      "../../core/components/organisms/grid/MainGrid.tsx": [
-        "../../core/components/organisms/grid/Grid.tsx",
-        "../../core/components/organisms/grid/GridBody.tsx",
-        "../../core/components/organisms/grid/GridHead.tsx",
-        "../../core/utils/types.tsx",
         "../../node_modules/@types/classnames/index.d.ts",
         "../../node_modules/@types/react/index.d.ts"
       ],
@@ -5312,11 +5285,25 @@
       "../../core/components/organisms/pageHeader/index.tsx": [
         "../../core/components/organisms/pageHeader/PageHeader.tsx"
       ],
+      "../../core/components/organisms/table/DraggableDropdown.tsx": [
+        "../../core/components/organisms/grid/utility.tsx",
+        "../../core/index.tsx",
+        "../../core/index.type.tsx",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
+      "../../core/components/organisms/table/Header.tsx": [
+        "../../core/components/organisms/grid/Grid.tsx",
+        "../../core/components/organisms/grid/utility.tsx",
+        "../../core/components/organisms/table/DraggableDropdown.tsx",
+        "../../core/index.tsx",
+        "../../core/index.type.tsx",
+        "../../node_modules/@types/react/index.d.ts"
+      ],
       "../../core/components/organisms/table/Table.tsx": [
         "../../core/components/molecules/pagination/index.tsx",
-        "../../core/components/organisms/grid/Header.tsx",
         "../../core/components/organisms/grid/index.tsx",
         "../../core/components/organisms/grid/utility.tsx",
+        "../../core/components/organisms/table/Header.tsx",
         "../../core/index.tsx",
         "../../core/utils/types.tsx",
         "../../node_modules/@types/react/index.d.ts",
@@ -8474,15 +8461,12 @@
       "../../core/components/organisms/donutChart/DonutChart.tsx",
       "../../core/components/organisms/donutChart/index.tsx",
       "../../core/components/organisms/grid/Cell.tsx",
-      "../../core/components/organisms/grid/DraggableDropdown.tsx",
       "../../core/components/organisms/grid/Grid.tsx",
       "../../core/components/organisms/grid/GridBody.tsx",
       "../../core/components/organisms/grid/GridCell.tsx",
       "../../core/components/organisms/grid/GridHead.tsx",
       "../../core/components/organisms/grid/GridNestedRow.tsx",
       "../../core/components/organisms/grid/GridRow.tsx",
-      "../../core/components/organisms/grid/Header.tsx",
-      "../../core/components/organisms/grid/MainGrid.tsx",
       "../../core/components/organisms/grid/columnUtility.tsx",
       "../../core/components/organisms/grid/index.tsx",
       "../../core/components/organisms/grid/rowUtility.tsx",
@@ -8496,6 +8480,8 @@
       "../../core/components/organisms/navigation/utils.tsx",
       "../../core/components/organisms/pageHeader/PageHeader.tsx",
       "../../core/components/organisms/pageHeader/index.tsx",
+      "../../core/components/organisms/table/DraggableDropdown.tsx",
+      "../../core/components/organisms/table/Header.tsx",
       "../../core/components/organisms/table/Table.tsx",
       "../../core/components/organisms/table/index.tsx",
       "../../core/components/organisms/timePicker/TimePicker.tsx",

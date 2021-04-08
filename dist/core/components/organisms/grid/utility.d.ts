@@ -9,3 +9,4 @@ export declare const getSelectAll: (data: Data) => {
 };
 export declare const getInit: (schema: Schema) => boolean;
 export declare const getSchema: (_this: Grid) => Schema;
+export declare const getPluralSuffix: (count: number) => "" | "s";

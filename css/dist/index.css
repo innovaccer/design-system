@@ -2457,13 +2457,6 @@ body {
 
 /** Grid **/
 
-/* .Grid-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow: hidden;
-} */
-
 .Grid-wrapper {
     display: flex;
     position: relative;
@@ -2475,7 +2468,8 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    overflow: auto;
+    height: 100%;
+    overflow: hidden;
     background: var(--white);
 }
 
@@ -2499,17 +2493,6 @@ body {
     overflow-x: hidden;
     -ms-overflow-style: none;
     border-right: 3px solid var(--secondary);
-}
-
-.Grid::-webkit-scrollbar {
-    background: var(--white);
-    height: var(--spacing-l);
-    width: var(--spacing-l);
-}
-
-.Grid::-webkit-scrollbar-thumb {
-    background: var(--secondary);
-    border-radius: var(--spacing);
 }
 
 .Grid-pinned::-webkit-scrollbar {
@@ -2558,9 +2541,12 @@ body {
 
 .Grid-head {
     display: flex;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    flex: 0 0 auto;
+    overflow-x: auto;
+}
+
+.Grid-head::-webkit-scrollbar {
+    display: none;
 }
 
 .Grid-headCell {
@@ -2583,10 +2569,20 @@ body {
 .Grid-body {
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
-    /* min-width: fit-content; */
-    /* overflow-x: hidden; */
-    /* overflow-y: scroll; */
+    flex-grow: 1;
+    overflow-x: auto;
+    overflow-y: overlay;
+}
+
+.Grid-body::-webkit-scrollbar {
+    background: var(--white);
+    height: var(--spacing-l);
+    width: var(--spacing-l);
+}
+
+.Grid-body::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: var(--spacing);
 }
 
 .Grid-rowWrapper {
@@ -2595,7 +2591,6 @@ body {
     min-width: -webkit-fit-content;
     min-width: -moz-fit-content;
     min-width: fit-content;
-    flex-grow: 1;
     flex-shrink: 0;
 }
 
@@ -2622,6 +2617,11 @@ body {
 
 .GridBody-padding {
     flex-shrink: 0;
+}
+
+.Grid-nestedRow {
+    width: 100%;
+    overflow: hidden;
 }
 
 .Grid-nestedRowTrigger {
@@ -4506,7 +4506,6 @@ body {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
-    /* flex-grow: 0; */
     height: 100%;
     width: 100%;
     z-index: 1;
@@ -4515,7 +4514,6 @@ body {
 .Table-grid {
     height: 100%;
     overflow: hidden;
-    height: 100%;
     z-index: 1;
 }
 

@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1617351488191 
+   * Generated on: 1617878056614 
    *      Package: @innovaccer/design-system
-   *      Version: v2.0.0-3
+   *      Version: v2.0.0-4
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -292,7 +292,7 @@
         time: time
     });
 
-    var index = /*#__PURE__*/Object.freeze({
+    var index$1 = /*#__PURE__*/Object.freeze({
         __proto__: null,
         css: css,
         validators: validators,
@@ -4755,8 +4755,8 @@
         }
 
         for (var i = 0; i < removedLength; i++) {
-          var index$1 = start + insertedStringLength + i;
-          maskedVal[index$1] = getPlaceholderValue(index$1, index$1);
+          var index = start + insertedStringLength + i;
+          maskedVal[index] = getPlaceholderValue(index, index);
         }
 
         var newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
@@ -10442,6 +10442,9 @@
 
       return schema;
     };
+    var getPluralSuffix = function getPluralSuffix(count) {
+      return count > 1 ? 's' : '';
+    };
 
     var GridNestedRow = function GridNestedRow(props) {
       var _this = props._this,
@@ -10814,12 +10817,411 @@
       }, renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left'), renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length), renderSchema(rightPinnedSchema, false, 'right')));
     };
 
+    function _classCallCheck(instance, Constructor) {
+      if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+      }
+    }
+
+    function _defineProperties(target, props) {
+      for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+      }
+    }
+
+    function _createClass(Constructor, protoProps, staticProps) {
+      if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+      if (staticProps) _defineProperties(Constructor, staticProps);
+      return Constructor;
+    }
+
+    function _defineProperty(obj, key, value) {
+      if (key in obj) {
+        Object.defineProperty(obj, key, {
+          value: value,
+          enumerable: true,
+          configurable: true,
+          writable: true
+        });
+      } else {
+        obj[key] = value;
+      }
+
+      return obj;
+    }
+
+    function _extends() {
+      _extends = Object.assign || function (target) {
+        for (var i = 1; i < arguments.length; i++) {
+          var source = arguments[i];
+
+          for (var key in source) {
+            if (Object.prototype.hasOwnProperty.call(source, key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+
+        return target;
+      };
+
+      return _extends.apply(this, arguments);
+    }
+
+    function _inherits(subClass, superClass) {
+      if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function");
+      }
+
+      subClass.prototype = Object.create(superClass && superClass.prototype, {
+        constructor: {
+          value: subClass,
+          writable: true,
+          configurable: true
+        }
+      });
+      if (superClass) _setPrototypeOf(subClass, superClass);
+    }
+
+    function _getPrototypeOf(o) {
+      _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+        return o.__proto__ || Object.getPrototypeOf(o);
+      };
+      return _getPrototypeOf(o);
+    }
+
+    function _setPrototypeOf(o, p) {
+      _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+        o.__proto__ = p;
+        return o;
+      };
+
+      return _setPrototypeOf(o, p);
+    }
+
+    function _isNativeReflectConstruct() {
+      if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+      if (Reflect.construct.sham) return false;
+      if (typeof Proxy === "function") return true;
+
+      try {
+        Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function _objectWithoutPropertiesLoose(source, excluded) {
+      if (source == null) return {};
+      var target = {};
+      var sourceKeys = Object.keys(source);
+      var key, i;
+
+      for (i = 0; i < sourceKeys.length; i++) {
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+      }
+
+      return target;
+    }
+
+    function _objectWithoutProperties(source, excluded) {
+      if (source == null) return {};
+
+      var target = _objectWithoutPropertiesLoose(source, excluded);
+
+      var key, i;
+
+      if (Object.getOwnPropertySymbols) {
+        var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+        for (i = 0; i < sourceSymbolKeys.length; i++) {
+          key = sourceSymbolKeys[i];
+          if (excluded.indexOf(key) >= 0) continue;
+          if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+          target[key] = source[key];
+        }
+      }
+
+      return target;
+    }
+
+    function _assertThisInitialized(self) {
+      if (self === void 0) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+      }
+
+      return self;
+    }
+
+    function _possibleConstructorReturn(self, call) {
+      if (call && (typeof call === "object" || typeof call === "function")) {
+        return call;
+      }
+
+      return _assertThisInitialized(self);
+    }
+
+    function _createSuper(Derived) {
+      var hasNativeReflectConstruct = _isNativeReflectConstruct();
+
+      return function _createSuperInternal() {
+        var Super = _getPrototypeOf(Derived),
+            result;
+
+        if (hasNativeReflectConstruct) {
+          var NewTarget = _getPrototypeOf(this).constructor;
+
+          result = Reflect.construct(Super, arguments, NewTarget);
+        } else {
+          result = Super.apply(this, arguments);
+        }
+
+        return _possibleConstructorReturn(this, result);
+      };
+    }
+
+    var isInView = function isInView(container, element) {
+      var containerTop = container.offsetTop;
+      var elementRect = element.getBoundingClientRect();
+      var elementTop = elementRect.top;
+      var elementHeight = elementRect.height;
+      return elementHeight - (containerTop - elementTop) > 0;
+    };
+
+    var VirtualScroll = /*#__PURE__*/function (_React$Component) {
+      _inherits(VirtualScroll, _React$Component);
+
+      var _super = _createSuper(VirtualScroll);
+
+      function VirtualScroll(props) {
+        var _this;
+
+        _classCallCheck(this, VirtualScroll);
+
+        _this = _super.call(this, props);
+        _this.state = {
+          offset: props.offset
+        };
+        _this.lastScrollTop = 0;
+        _this.avgRowHeight = props.minItemHeight;
+        return _this;
+      }
+
+      _createClass(VirtualScroll, [{
+        key: "componentDidMount",
+        value: function componentDidMount() {
+          var _this2 = this;
+
+          window.requestAnimationFrame(function () {
+            if (_this2.listRef) {
+              _this2.listRef.scrollTop = _this2.state.offset * _this2.avgRowHeight;
+            }
+          });
+        }
+      }, {
+        key: "componentDidUpdate",
+        value: function componentDidUpdate(_prevProps, prevState) {
+          if (prevState.offset > this.state.offset) {
+            this.updateOffset(prevState);
+          }
+        }
+      }, {
+        key: "updateOffset",
+        value: function updateOffset(prevState) {
+          var offsetDiff = prevState.offset - this.state.offset;
+
+          if (this.listRef) {
+            var el = this.listRef;
+            var items = el.querySelectorAll(".VS-item");
+            var heightAdded = 0;
+            var currOffset = prevState.offset;
+            var start = Math.min(this.state.offset, this.props.buffer);
+            var end = start + offsetDiff;
+
+            for (var i = Math.min(items.length, end) - 1; i >= start; i--) {
+              var inView = isInView(el, items[i]);
+
+              if (inView) {
+                currOffset--;
+                var rowHeight = items[i].clientHeight;
+                heightAdded += rowHeight;
+              } else {
+                break;
+              }
+            }
+
+            if (items.length < end) {
+              var diff = end - items.length;
+              heightAdded += diff * this.props.minItemHeight;
+              currOffset -= diff;
+            }
+
+            var newAvgRowHeight = currOffset === 0 ? this.props.minItemHeight : (this.avgRowHeight * prevState.offset - heightAdded) / currOffset;
+            this.setState({
+              offset: currOffset
+            });
+            this.avgRowHeight = Math.max(this.props.minItemHeight, newAvgRowHeight);
+          }
+        }
+      }, {
+        key: "onScrollHandler",
+        value: function onScrollHandler(event) {
+          if (this.listRef) {
+            var _this$props = this.props,
+                totalLength = _this$props.totalLength,
+                length = _this$props.length,
+                buffer = _this$props.buffer;
+            var offset = this.state.offset;
+            var avgRowHeight = this.avgRowHeight;
+            var el = this.listRef;
+            var scrollTop = el.scrollTop;
+            var direction = Math.floor(scrollTop - this.lastScrollTop);
+            if (direction === 0) return;
+            var items = el.querySelectorAll(".VS-item");
+            var newOffset = offset;
+            var newAvgRowHeight = avgRowHeight;
+            var start = Math.min(offset, buffer);
+
+            if (direction > 0) {
+              if (offset < totalLength - length) {
+                var heightAdded = 0;
+
+                for (var i = start; i < items.length; i++) {
+                  var inView = isInView(el, items[i]);
+                  var rowHeight = items[i].clientHeight;
+
+                  if (!inView) {
+                    heightAdded += rowHeight;
+                    newOffset++;
+                  } else {
+                    break;
+                  }
+                }
+
+                if (heightAdded < direction) {
+                  var heightLeft = direction - heightAdded;
+                  var offsetToBeAdded = Math.floor(heightLeft / this.props.minItemHeight);
+                  newOffset += offsetToBeAdded;
+                  heightAdded += offsetToBeAdded * this.props.minItemHeight;
+                }
+
+                newAvgRowHeight = newOffset > 0 ? (offset * avgRowHeight + heightAdded) / newOffset : this.props.minItemHeight;
+                this.setState({
+                  offset: Math.min(newOffset, totalLength - length)
+                });
+                this.avgRowHeight = Math.max(this.props.minItemHeight, newAvgRowHeight);
+              }
+            } else {
+              var scrollDiff = items[start].getBoundingClientRect().y - el.getBoundingClientRect().y;
+
+              if (scrollDiff > 0) {
+                var offsetDiff = Math.floor(scrollDiff / this.props.minItemHeight) || 1;
+
+                var _newOffset = offset - offsetDiff;
+
+                if (_newOffset < totalLength - (length + buffer)) {
+                  this.setState({
+                    offset: Math.max(0, _newOffset)
+                  });
+                }
+              }
+            }
+
+            this.lastScrollTop = scrollTop;
+          }
+
+          if (this.props.onScroll) this.props.onScroll(event);
+        }
+      }, {
+        key: "renderItems",
+        value: function renderItems(start, end) {
+          var renderItem = this.props.renderItem;
+          return Array.from({
+            length: end - start + 1
+          }, function (_, index) {
+            var rowIndex = start + index;
+            var component = renderItem(rowIndex);
+            return /*#__PURE__*/React__namespace.cloneElement(component, {
+              key: rowIndex,
+              className: ["VS-item", component.props.className].join(' ').trim()
+            });
+          });
+        }
+      }, {
+        key: "render",
+        value: function render() {
+          var _this3 = this;
+
+          var _this$props2 = this.props,
+              totalLength = _this$props2.totalLength,
+              length = _this$props2.length,
+              buffer = _this$props2.buffer;
+              _this$props2.offset;
+              _this$props2.renderItems;
+              _this$props2.minItemHeight;
+              var forwardRef = _this$props2.forwardRef,
+              rest = _objectWithoutProperties(_this$props2, ["totalLength", "length", "buffer", "offset", "renderItems", "minItemHeight", "forwardRef"]);
+
+          var _this$state = this.state,
+              init = _this$state.init,
+              offset = _this$state.offset;
+          var avgRowHeight = this.avgRowHeight;
+          var start = Math.max(0, offset - buffer);
+          var end = Math.min(offset + (length + buffer) - 1, totalLength - 1);
+          var topPadding = Math.max(0, start * avgRowHeight);
+          var bottomPadding = Math.max(0, (totalLength - end - 1) * avgRowHeight);
+          return /*#__PURE__*/React__namespace.createElement("div", _extends({}, rest, {
+            ref: function ref(el) {
+              _this3.listRef = el;
+              if (forwardRef) forwardRef.current = el;
+              if (!init) _this3.setState({
+                init: true
+              });
+            },
+            onScroll: this.onScrollHandler.bind(this)
+          }), init && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
+            style: {
+              flexShrink: 0,
+              height: topPadding
+            }
+          }), this.renderItems(start, end), /*#__PURE__*/React__namespace.createElement("div", {
+            style: {
+              flexShrink: 0,
+              height: bottomPadding
+            }
+          })));
+        }
+      }]);
+
+      return VirtualScroll;
+    }(React__namespace.Component);
+
+    _defineProperty(VirtualScroll, "defaultProps", {
+      buffer: 10,
+      length: 30,
+      offset: 0
+    });
+
+    var index = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
+      return /*#__PURE__*/React__namespace.createElement(VirtualScroll, _extends({
+        forwardRef: ref
+      }, props));
+    });
+
     var GridRow = function GridRow(props) {
       var _this = props._this,
           schema = props.schema,
           data = props.data,
           withCheckbox = props.withCheckbox,
-          rI = props.rowIndex;
+          rI = props.rowIndex,
+          className = props.className;
       var rowRef = React__namespace.useRef(null);
 
       var _a = React__namespace.useState(false),
@@ -10902,33 +11304,40 @@
         return null;
       };
 
+      var wrapperClasses = classNames__default['default'](className, {
+        'Grid-rowWrapper': true
+      });
       return /*#__PURE__*/React__namespace.createElement("div", {
-        className: "Grid-rowWrapper"
+        className: wrapperClasses
       }, /*#__PURE__*/React__namespace.createElement("div", {
         className: rowClasses,
         onClick: onClickHandler,
         ref: rowRef
       }, renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left'), renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length), renderSchema(rightPinnedSchema, false, 'right')), nestedRows && expanded && /*#__PURE__*/React__namespace.createElement("div", {
-        style: {
-          width: rowRef.current ? rowRef.current.clientWidth : 0
-        }
+        className: "Grid-nestedRow"
       }, /*#__PURE__*/React__namespace.createElement(GridNestedRow, {
         _this: _this,
         data: data,
         rowIndex: rI
       })));
     };
+    GridRow.defaultProps = {
+      data: {}
+    };
 
     var GridBody = function GridBody(props) {
       var _this = props._this,
           schema = props.schema,
           data = props.data,
-          withCheckbox = props.withCheckbox,
-          offset = props.offset,
-          inView = props.inView,
-          avgRowHeight = props.avgRowHeight;
-      var buffer = 50;
+          withCheckbox = props.withCheckbox;
+      var minRowHeight = {
+        comfortable: 40,
+        standard: 40,
+        compressed: 32,
+        tight: 24
+      };
       var _a = _this.props,
+          size = _a.size,
           loading = _a.loading,
           error = _a.error,
           withPagination = _a.withPagination,
@@ -10942,174 +11351,27 @@
       }
 
       var totalPages = Math.ceil(totalRecords / pageSize);
-      var dummyRows = withPagination && page === totalPages ? totalRecords - (page - 1) * pageSize : pageSize;
-      var rows = loading ? Array.from({
-        length: dummyRows
-      }, function () {
-        return {};
-      }) : data.slice(offset, offset + buffer);
-      var topPadding = Math.max(0, offset * avgRowHeight);
-      var bottomPadding = Math.max(0, ((withPagination ? dummyRows : data.length) - inView - offset - 1) * avgRowHeight);
-      return /*#__PURE__*/React__namespace.createElement("div", {
-        className: "Grid-body"
-      }, !loading && /*#__PURE__*/React__namespace.createElement("div", {
-        className: "GridBody-padding",
-        style: {
-          height: topPadding
-        }
-      }), rows.map(function (d, rI) {
+      var isLastPage = withPagination && page === totalPages;
+      var dataLength = isLastPage ? totalRecords - (page - 1) * pageSize : loading ? pageSize : Math.min(totalRecords, pageSize);
+
+      var renderItem = function renderItem(rowIndex) {
         return /*#__PURE__*/React__namespace.createElement(GridRow, {
-          key: offset + rI,
           _this: _this,
-          rowIndex: offset + rI,
-          data: d,
+          rowIndex: rowIndex,
+          data: data[rowIndex],
           schema: schema,
           withCheckbox: withCheckbox
         });
-      }), !loading && /*#__PURE__*/React__namespace.createElement("div", {
-        className: "GridBody-padding",
-        style: {
-          height: bottomPadding
-        }
-      }));
-    };
-
-    var MainGrid = function MainGrid(props) {
-      var _a;
-
-      var _this = props._this,
-          schema = props.schema,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
-      var _b = _this.props,
-          loading = _b.loading,
-          error = _b.error,
-          type = _b.type,
-          size = _b.size,
-          showHead = _b.showHead,
-          draggable = _b.draggable,
-          withCheckbox = _b.withCheckbox,
-          data = _b.data;
-      var init = _this.state.init;
-      var classes = classNames__default['default']((_a = {
-        Grid: 'true'
-      }, _a["Grid--" + type] = type, _a["Grid--" + size] = size, _a), className);
-      var minRowHeight = {
-        comfortable: 40,
-        standard: 40,
-        compressed: 32,
-        tight: 24
-      };
-      var initialState = {
-        offset: 0,
-        avgRowHeight: minRowHeight[size],
-        inView: 20
       };
 
-      var _c = React__namespace.useState(initialState),
-          state = _c[0],
-          setState = _c[1];
-
-      React__namespace.useEffect(function () {
-        if (init) {
-          setState({
-            offset: offset,
-            avgRowHeight: avgRowHeight,
-            inView: _this.gridRef.scrollHeight / avgRowHeight
-          });
-        }
-      }, [init]);
-      React__namespace.useEffect(function () {
-        setState(initialState);
-
-        var el = _this.gridRef.querySelector('.Grid');
-
-        if (el) el.scrollTop = 0;
-      }, [loading, error]);
-      var offset = state.offset,
-          avgRowHeight = state.avgRowHeight,
-          inView = state.inView;
-
-      var onScrollHandler = function onScrollHandler() {
-        if (!loading) {
-          if (_this.gridRef && _this.gridRef) {
-            var el = _this.gridRef.querySelector('.Grid');
-
-            if (el) {
-              var scrollTop = el.scrollTop;
-              var items = el.querySelectorAll('.Grid-body .Grid-row');
-              var newScroll = Math.floor(scrollTop - offset * avgRowHeight);
-              var newInView = 0;
-              var currScroll = 0;
-              var i = 0;
-
-              while (i < items.length && currScroll + items[i].clientHeight <= el.clientHeight) {
-                var rowHeight = items[i].clientHeight;
-                currScroll += rowHeight;
-                newInView++;
-                i++;
-              }
-
-              if (newScroll > 0) {
-                currScroll = newScroll;
-                var newOffset = offset;
-                var newAvgHeight = avgRowHeight;
-                i = 0;
-
-                while (i < items.length && currScroll >= items[i].clientHeight) {
-                  var rowHeight = items[i].clientHeight;
-                  currScroll -= rowHeight;
-                  newAvgHeight = (newOffset * newAvgHeight + rowHeight) / (newOffset + 1);
-                  newOffset++;
-                  i++;
-                }
-
-                newOffset = newOffset < data.length - inView ? newOffset : data.length - inView - 1;
-
-                if (newOffset > offset) {
-                  setState(__assign(__assign({}, state), {
-                    inView: newInView,
-                    offset: newOffset,
-                    avgRowHeight: newAvgHeight
-                  }));
-                }
-              } else {
-                if (avgRowHeight) {
-                  var diff = Math.floor(newScroll / avgRowHeight) || -1;
-                  var newOffset = offset + diff;
-
-                  if (newOffset < offset) {
-                    setState(__assign(__assign({}, state), {
-                      inView: newInView,
-                      offset: newOffset < 0 ? 0 : newOffset
-                    }));
-                  }
-                }
-              }
-            }
-          }
-        }
-      };
-
-      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
-        className: classes,
-        onScroll: onScrollHandler
-      }), showHead && /*#__PURE__*/React__namespace.createElement(GridHead, {
-        key: 'GridHead',
-        _this: _this,
-        schema: schema,
-        draggable: draggable,
-        withCheckbox: withCheckbox
-      }), /*#__PURE__*/React__namespace.createElement(GridBody, {
-        key: 'GridBody',
-        _this: _this,
-        schema: schema,
-        data: data,
-        withCheckbox: withCheckbox,
-        offset: offset,
-        inView: inView,
-        avgRowHeight: avgRowHeight
-      }));
+      return /*#__PURE__*/React__namespace.createElement(index, {
+        className: "Grid-body",
+        minItemHeight: minRowHeight[size],
+        totalLength: dataLength,
+        length: 20,
+        buffer: 7,
+        renderItem: renderItem
+      });
     };
 
     var Grid = function (_super) {
@@ -11119,6 +11381,34 @@
         var _this_1 = _super.call(this, props) || this;
 
         _this_1.gridRef = null;
+        _this_1.isHeadSyncing = false;
+        _this_1.isBodySyncing = false;
+
+        _this_1.syncScroll = function (type) {
+          return function () {
+            var gridHeadEl = _this_1.gridRef.querySelector('.Grid-head');
+
+            var gridBodyEl = _this_1.gridRef.querySelector('.Grid-body');
+
+            if (type === 'head') {
+              if (!_this_1.isHeadSyncing) {
+                _this_1.isBodySyncing = true;
+                gridBodyEl.scrollLeft = gridHeadEl.scrollLeft;
+              }
+
+              _this_1.isHeadSyncing = false;
+            }
+
+            if (type === 'body') {
+              if (!_this_1.isBodySyncing) {
+                _this_1.isHeadSyncing = true;
+                gridHeadEl.scrollLeft = gridBodyEl.scrollLeft;
+              }
+
+              _this_1.isBodySyncing = false;
+            }
+          };
+        };
 
         _this_1.updateRenderedSchema = function (newSchema) {
           var updateSchema = _this_1.props.updateSchema;
@@ -11234,13 +11524,58 @@
         return _this_1;
       }
 
+      Grid.prototype.componentDidMount = function () {
+        this.addScrollListeners();
+      };
+
+      Grid.prototype.componentWillUnmount = function () {
+        this.removeScrollListeners();
+      };
+
+      Grid.prototype.componentDidUpdate = function (prevProps) {
+        if (prevProps.page !== this.props.page) {
+          this.removeScrollListeners();
+          this.addScrollListeners();
+        }
+      };
+
+      Grid.prototype.addScrollListeners = function () {
+        var gridHeadEl = this.gridRef.querySelector('.Grid-head');
+        var gridBodyEl = this.gridRef.querySelector('.Grid-body');
+        gridHeadEl === null || gridHeadEl === void 0 ? void 0 : gridHeadEl.addEventListener('scroll', this.syncScroll('head'));
+        gridBodyEl === null || gridBodyEl === void 0 ? void 0 : gridBodyEl.addEventListener('scroll', this.syncScroll('body'));
+      };
+
+      Grid.prototype.removeScrollListeners = function () {
+        var gridHeadEl = this.gridRef.querySelector('.Grid-head');
+        var gridBodyEl = this.gridRef.querySelector('.Grid-body');
+        gridHeadEl === null || gridHeadEl === void 0 ? void 0 : gridHeadEl.removeEventListener('scroll', this.syncScroll('head'));
+        gridBodyEl === null || gridBodyEl === void 0 ? void 0 : gridBodyEl.removeEventListener('scroll', this.syncScroll('body'));
+      };
+
       Grid.prototype.render = function () {
+        var _a;
+
         var _this_1 = this;
 
         var baseProps = extractBaseProps(this.props);
         var schema = getSchema(this);
-        return /*#__PURE__*/React__namespace.createElement("div", {
-          className: "Grid-wrapper",
+        var _b = this.props,
+            type = _b.type,
+            size = _b.size,
+            showHead = _b.showHead,
+            draggable = _b.draggable,
+            withCheckbox = _b.withCheckbox,
+            data = _b.data,
+            className = _b.className,
+            page = _b.page;
+        var classes = classNames__default['default']((_a = {
+          Grid: 'true'
+        }, _a["Grid--" + type] = type, _a["Grid--" + size] = size, _a), className);
+        return /*#__PURE__*/React__namespace.createElement("div", __assign({
+          key: "" + page,
+          className: classes
+        }, baseProps, {
           ref: function ref(el) {
             _this_1.gridRef = el;
 
@@ -11250,10 +11585,17 @@
               });
             }
           }
-        }, /*#__PURE__*/React__namespace.createElement(MainGrid, __assign({}, baseProps, {
+        }), showHead && /*#__PURE__*/React__namespace.createElement(GridHead, {
           _this: this,
-          schema: schema
-        })));
+          schema: schema,
+          draggable: draggable,
+          withCheckbox: withCheckbox
+        }), /*#__PURE__*/React__namespace.createElement(GridBody, {
+          _this: this,
+          schema: schema,
+          data: data,
+          withCheckbox: withCheckbox
+        }));
       };
 
       Grid.defaultProps = {
@@ -11570,7 +11912,7 @@
           iconAlign: "right"
         }, "Showing " + options.filter(function (option) {
           return option.selected;
-        }).length + " of " + options.length + " columns"),
+        }).length + " of " + options.length + " column" + getPluralSuffix(options.length)),
         triggerClass: "w-100",
         customStyle: {
           width: triggerWidth
@@ -11641,6 +11983,8 @@
           withSearch = props.withSearch,
           showHead = props.showHead,
           withPagination = props.withPagination,
+          page = props.page,
+          pageSize = props.pageSize,
           withCheckbox = props.withCheckbox,
           children = props.children,
           updateSchema = props.updateSchema,
@@ -11721,7 +12065,9 @@
       var selectedCount = data.filter(function (d) {
         return d._selected;
       }).length;
-      var label = withCheckbox && selectedCount ? selectAllRecords ? "Selected all " + totalRecords + " items" : "Selected " + selectedCount + " items on this page" : "Showing " + (!error ? totalRecords : 0) + " items";
+      var startIndex = (page - 1) * pageSize + 1;
+      var endIndex = Math.min(page * pageSize, totalRecords);
+      var label = error ? 'Showing 0 items' : withCheckbox && selectedCount ? selectAllRecords ? "Selected all " + totalRecords + " item" + getPluralSuffix(totalRecords) : "Selected " + selectedCount + " item" + getPluralSuffix(totalRecords) + " on this page" : withPagination ? "Showing " + startIndex + "-" + endIndex + " of " + totalRecords + " item" + getPluralSuffix(totalRecords) : "Showing " + totalRecords + " item" + getPluralSuffix(totalRecords);
       return /*#__PURE__*/React__namespace.createElement("div", {
         className: "Header"
       }, /*#__PURE__*/React__namespace.createElement("div", {
@@ -12127,6 +12473,7 @@
           onSelectAll: this.onSelectAll,
           withCheckbox: withCheckbox,
           withPagination: withPagination,
+          pageSize: pageSize,
           showFilters: filterPosition === 'HEADER'
         }, headerAttr), headerChildren)), /*#__PURE__*/React__namespace.createElement("div", {
           className: "Table-grid"
@@ -12606,7 +12953,7 @@
     };
     FileList.displayName = 'FileList';
 
-    var version = "2.0.0-3";
+    var version = "2.0.0-4";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
@@ -12682,7 +13029,7 @@
     exports.TimePicker = TimePicker;
     exports.Toast = Toast;
     exports.Tooltip = Tooltip;
-    exports.Utils = index;
+    exports.Utils = index$1;
     exports.VerticalMenu = VerticalMenu;
     exports.version = version;
 

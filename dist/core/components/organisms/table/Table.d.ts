@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ExternalHeaderProps, updateSearchTermFunction, HeaderProps } from "../grid/Header";
+import { ExternalHeaderProps, updateSearchTermFunction, HeaderProps } from "./Header";
 import { Data, onSelectFunction, onSelectAllFunction, GridProps, fetchDataFunction, RowData, updateSchemaFunction, updateSortingListFunction, updateFilterListFunction } from "../grid";
 import { BaseProps } from "../../../utils/types";
 import { PaginationProps } from "../../molecules/pagination";

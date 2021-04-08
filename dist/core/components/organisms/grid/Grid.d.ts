@@ -119,7 +119,15 @@ export declare class Grid extends React.Component<GridProps, GridState> {
         filterList: {};
         showFilters: boolean;
     };
+    componentDidMount(): void;
+    componentWillUnmount(): void;
+    componentDidUpdate(prevProps: GridProps): void;
     gridRef: HTMLDivElement | null;
+    isHeadSyncing: boolean;
+    isBodySyncing: boolean;
+    addScrollListeners(): void;
+    removeScrollListeners(): void;
+    syncScroll: (type: string) => () => void;
     updateRenderedSchema: (newSchema: Schema) => void;
     updateColumnSchema: updateColumnSchemaFunction;
     reorderCol: reorderColFunction;
