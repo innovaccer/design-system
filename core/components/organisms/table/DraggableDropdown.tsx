@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button, Checkbox, Popover, Icon } from '@/index';
 import { DropdownProps } from '@/index.type';
-import { moveToIndex } from './utility';
+import { moveToIndex, getPluralSuffix } from '../grid/utility';
 
 interface DraggableDropdownProps {
   options: DropdownProps['options'];
@@ -65,7 +65,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
             icon="keyboard_arrow_down_filled"
             iconAlign="right"
           >
-            {`Showing ${options.filter(option => option.selected).length} of ${options.length} columns`}
+            {`Showing ${options.filter(option => option.selected).length} of ${options.length} column${getPluralSuffix(options.length)}`}
           </Button>
         )}
         triggerClass="w-100"
