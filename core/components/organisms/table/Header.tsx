@@ -8,8 +8,8 @@ import {
   onSelectAllFunction,
   GridProps,
   updateFilterListFunction
-} from './Grid';
-import { getInit } from './utility';
+} from '../grid/Grid';
+import { getInit, getPluralSuffix } from '../grid/utility';
 import { DraggableDropdown } from './DraggableDropdown';
 import { DropdownProps } from '@/index.type';
 
@@ -31,6 +31,8 @@ export interface HeaderProps extends ExternalHeaderProps {
   selectAll?: GridProps['selectAll'];
   totalRecords: number;
   withPagination?: boolean;
+  page: number;
+  pageSize: number;
   withCheckbox?: boolean;
   showHead?: boolean;
   // updateData?: updateDataFunction;
@@ -52,6 +54,8 @@ export const Header = (props: HeaderProps) => {
     withSearch,
     showHead,
     withPagination,
+    page,
+    pageSize,
     withCheckbox,
     children,
     // updateData,
@@ -124,9 +128,17 @@ export const Header = (props: HeaderProps) => {
   };
 
   const selectedCount = data.filter(d => d._selected).length;
-  const label = withCheckbox && selectedCount ?
-    selectAllRecords ? `Selected all ${totalRecords} items` : `Selected ${selectedCount} items on this page`
-    : `Showing ${!error ? totalRecords : 0} items`;
+  const startIndex = (page - 1) * pageSize + 1;
+  const endIndex = Math.min(page * pageSize, totalRecords);
+  const label = error
+    ? 'Showing 0 items'
+    : withCheckbox && selectedCount
+      ? selectAllRecords
+        ? `Selected all ${totalRecords} item${getPluralSuffix(totalRecords)}`
+        : `Selected ${selectedCount} item${getPluralSuffix(totalRecords)} on this page`
+      : withPagination
+        ? `Showing ${startIndex}-${endIndex} of ${totalRecords} item${getPluralSuffix(totalRecords)}`
+        : `Showing ${totalRecords} item${getPluralSuffix(totalRecords)}`;
 
   return (
     <div className="Header">
@@ -197,30 +209,30 @@ export const Header = (props: HeaderProps) => {
               <PlaceholderParagraph length={'small'} size={'s'} />
             </Placeholder>
           ) : (
-              <>
-                <Label>{label}</Label>
-                {withPagination && selectAll?.checked && allowSelectAll && (
-                  <div className="ml-4">
-                    {!selectAllRecords ? (
-                      <Button
-                        size="tiny"
-                        onClick={() => setSelectAllRecords(true)}
-                      >
-                        {`Select all ${totalRecords} items`}
-                      </Button>
-                    ) : (
-                        <Button
-                          size="tiny"
-                          onClick={() => setSelectAllRecords(false)}
-                        >
-                          Clear Selection
-                        </Button>
-                      )
-                    }
-                  </div>
-                )}
-              </>
-            )
+            <>
+              <Label>{label}</Label>
+              {withPagination && selectAll?.checked && allowSelectAll && (
+                <div className="ml-4">
+                  {!selectAllRecords ? (
+                    <Button
+                      size="tiny"
+                      onClick={() => setSelectAllRecords(true)}
+                    >
+                      {`Select all ${totalRecords} items`}
+                    </Button>
+                  ) : (
+                    <Button
+                      size="tiny"
+                      onClick={() => setSelectAllRecords(false)}
+                    >
+                      Clear Selection
+                    </Button>
+                  )
+                  }
+                </div>
+              )}
+            </>
+          )
           }
         </div>
         {dynamicColumn && (
