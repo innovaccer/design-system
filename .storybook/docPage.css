@@ -12,7 +12,8 @@ html, body {
   font-family: monospace !important;
   font-size: 13px !important;
   background: #f8f8f8 !important;
-  margin-top: 8px !important;
+  margin-top: var(--spacing) !important;
+  margin-bottom: var(--spacing) !important;
   white-space: break-spaces !important;
 }
 

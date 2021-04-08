@@ -393,7 +393,7 @@ export const defaultProps = {
  *      error: true, errorType: 'FAILED\_TO\_FETCH'
  * 3. Default errorTemplate:
  *
- * <pre class="DocPage-codeBlock">
+ * <pre class="DocPage-codeBlock mx-6 mb-7">
  * (props) => {
  *      const { errorType = 'DEFAULT' } = props;
  *      const errorMessages = {

@@ -16,7 +16,7 @@ import { html as beautifyHTML } from 'js-beautify';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco, dark, a11yDark, githubGist, dracula, vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import * as DS from '@/';
-import { Button, Card, TabsWrapper, Tab, Heading } from '@/';
+import { Button, Card, TabsWrapper, Tab, Heading } from '@/index';
 import vsDark from 'prism-react-renderer/themes/vsDark';
 import { resetComponents, Story as PureStory } from '@storybook/components';
 import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'react-live';
@@ -61,7 +61,7 @@ const JSXtoStringOptions = {
     return true;
   },
   showFunctions: true,
-  functionValue: _fn => _ => {}
+  functionValue: _fn => _ => { }
   // maxInlineAttributesLineLength: 10
 };
 
@@ -164,78 +164,78 @@ const StoryComp = props => {
         try {
           const htmlValue = beautifyHTML(renderToStaticMarkup(<Element />), beautifyHTMLOptions);
           setHtmlCode(htmlValue);
-        } catch (e) {}
+        } catch (e) { }
       }
     }, [currentTab]);
 
     return null;
   });
 
-  const onChangeCode = updatedCode => {
+  const onChangeCode = React.useCallback(updatedCode => {
     setJsxCode(updatedCode);
-  };
+  }, []);
 
-  if (!noStory) {
-    const actions = [
-      {
-        title: 'Edit in sandbox',
-        onClick: ev => {
-          ev.preventDefault();
-          openSandbox(jsxCode);
-        },
-        disabled: noSandbox
-      }
-    ];
-
-    if (!isEmbed) {
-      actions.push({
-        title: `${!isExpanded ? 'Show' : 'Hide'} code`,
-        onClick: ev => {
-          setIsExpanded(!isExpanded);
-        }
-      });
+  const actions = [
+    {
+      title: 'Edit in sandbox',
+      onClick: ev => {
+        ev.preventDefault();
+        openSandbox(jsxCode);
+      },
+      disabled: noSandbox
     }
+  ];
 
-    return (
-      <Card shadow={isEmbed ? 'none' : 'light'} className="overflow-hidden">
-        <LiveProvider code={jsxCode} scope={{ ...DS, ...importScope }}>
-          <Canvas
-            className="my-0"
-            withSource="none"
-            withToolbar={true}
-            isExpanded={isExpanded}
-            additionalActions={actions}
-          >
-            <LivePreview />
-          </Canvas>
-
-          {isExpanded && (
-            <>
-              <TabsWrap activeTab={activeTab} />
-              <div className="DocPage-editorTabs">
-                <TabsWrapper activeTab={activeTab} onTabChange={tab => setActiveTab(tab)}>
-                  <Tab label={'React'}>
-                    <div style={{ position: 'relative' }}>
-                      <CopyComp
-                        onClick={() => {
-                          const editor = document.querySelector('.npm__react-simple-code-editor__textarea');
-                          if (editor) copyCode(editor.value);
-                        }}
-                      />
-                      <LiveEditor theme={vsDark} onChange={onChangeCode} />
-                      <LiveError />
-                    </div>
-                  </Tab>
-                  {renderHTMLTab()}
-                </TabsWrapper>
-              </div>
-            </>
-          )}
-        </LiveProvider>
-      </Card>
-    );
+  if (!isEmbed) {
+    actions.push({
+      title: `${!isExpanded ? 'Show' : 'Hide'} code`,
+      onClick: ev => {
+        setIsExpanded(!isExpanded);
+      }
+    });
   }
-  return null;
+
+  const imports = React.useMemo(() => ({ ...DS, ...importScope }), []);
+
+  return (
+    <Card shadow={isEmbed ? 'none' : 'light'} className="overflow-hidden">
+      <LiveProvider code={jsxCode} scope={imports}>
+        <Canvas
+          className="my-0"
+          withSource="none"
+          withToolbar={true}
+          isExpanded={isExpanded}
+          additionalActions={actions}
+        >
+          <LivePreview />
+        </Canvas>
+
+        <LiveError className="px-7" />
+
+        {isExpanded && (
+          <>
+            <TabsWrap activeTab={activeTab} />
+            <div className="DocPage-editorTabs">
+              <TabsWrapper activeTab={activeTab} onTabChange={tab => setActiveTab(tab)}>
+                <Tab label={'React'}>
+                  <div style={{ position: 'relative' }}>
+                    <CopyComp
+                      onClick={() => {
+                        const editor = document.querySelector('.npm__react-simple-code-editor__textarea');
+                        if (editor) copyCode(editor.value);
+                      }}
+                    />
+                    <LiveEditor theme={vsDark} onChange={onChangeCode} />
+                  </div>
+                </Tab>
+                {renderHTMLTab()}
+              </TabsWrapper>
+            </div>
+          </>
+        )}
+      </LiveProvider>
+    </Card>
+  );
 };
 
 export const docPage = () => {
@@ -261,15 +261,16 @@ export const docPage = () => {
         </>
       )}
 
-      <StoryComp
-        key={storyId}
-        customCode={customCode}
-        noHtml={noHtml}
-        noStory={noStory}
-        noSandbox={noSandbox}
-        imports={imports}
-        isEmbed={isEmbed || isEmbedWithProp}
-      />
+      {!noStory && (
+        <StoryComp
+          key={storyId}
+          customCode={customCode}
+          noHtml={noHtml}
+          noSandbox={noSandbox}
+          imports={imports}
+          isEmbed={isEmbed || isEmbedWithProp}
+        />
+      )}
 
       {!noProps && (
         <>
