@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1617878056244 
+   * Generated on: 1618414773497 
    *      Package: @innovaccer/design-system
-   *      Version: v2.0.0-4
+   *      Version: v2.0.0-5
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -45285,7 +45285,7 @@ var defaultProps = {
  *      error: true, errorType: 'FAILED\_TO\_FETCH'
  * 3. Default errorTemplate:
  *
- * <pre class="DocPage-codeBlock">
+ * <pre class="DocPage-codeBlock mx-6 mb-7">
  * (props) => {
  *      const { errorType = 'DEFAULT' } = props;
  *      const errorMessages = {
@@ -46099,6 +46099,6 @@ FileList.defaultProps = {
 };
 FileList.displayName = 'FileList';
 
-var version = "2.0.0-4";
+var version = "2.0.0-5";
 
 export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, ChatMessage, Checkbox, Chip, ChipGroup, Collapsible, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, Dropzone, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text$1 as Text, Textarea, TimePicker, Toast, Tooltip, index$2 as Utils, VerticalMenu, version };

@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1617878056614 
+   * Generated on: 1618414773932 
    *      Package: @innovaccer/design-system
-   *      Version: v2.0.0-4
+   *      Version: v2.0.0-5
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -318,11 +318,13 @@
     var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
 
     function __extends(d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -389,6 +391,7 @@
         }
     }
 
+    /** @deprecated */
     function __spreadArrays() {
         for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
         for (var r = Array(s), k = 0, i = 0; i < il; i++)
@@ -12953,7 +12956,7 @@
     };
     FileList.displayName = 'FileList';
 
-    var version = "2.0.0-4";
+    var version = "2.0.0-5";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;

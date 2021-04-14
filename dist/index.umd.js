@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1617878056244 
+   * Generated on: 1618414773497 
    *      Package: @innovaccer/design-system
-   *      Version: v2.0.0-4
+   *      Version: v2.0.0-5
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -45313,7 +45313,7 @@
    *      error: true, errorType: 'FAILED\_TO\_FETCH'
    * 3. Default errorTemplate:
    *
-   * <pre class="DocPage-codeBlock">
+   * <pre class="DocPage-codeBlock mx-6 mb-7">
    * (props) => {
    *      const { errorType = 'DEFAULT' } = props;
    *      const errorMessages = {
@@ -46127,7 +46127,7 @@
   };
   FileList.displayName = 'FileList';
 
-  var version = "2.0.0-4";
+  var version = "2.0.0-5";
 
   exports.Avatar = Avatar;
   exports.AvatarGroup = AvatarGroup;

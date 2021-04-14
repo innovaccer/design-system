@@ -1,8 +1,7 @@
 
 -------------------
- **v2.0.0-4**  (2021-04-08) 
+ **v2.0.0-5**  (2021-04-14) 
 
-* 967bc20b v2.0.0-4
-* 35f44c96 fix(Grid): fixes horizontall scroll sync for different pages
-* 9d42ab1a fix(Table): updates Header label as per new design guidelines
-* 1b721f6d chore(Table): adds react-dynamic-virtual-scroll
+* 55935322 v2.0.0-5
+* 007486c3 chore(docPage): fixes minor issues with LiveEditor
+* 67f00da9 fix(Calendar): updates sizing for small variant
