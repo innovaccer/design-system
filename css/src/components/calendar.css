@@ -16,8 +16,8 @@
     padding-left: var(--spacing);
     padding-right: var(--spacing);
     padding-bottom: var(--spacing);
-    height: 222px;
-    width: 220px;
+    height: 248px;
+    width: 212px;
 }
 
 .Calendar--large {
@@ -144,7 +144,7 @@
 .Calendar-yearValue, .Calendar-monthValue {}
 
 .Calendar-yearValue--small, .Calendar-monthValue--small {
-    height: 28px;
+    height: var(--spacing-xl);
     width: var(--spacing-4);
 }
 
@@ -156,8 +156,8 @@
 .Calendar-dateValue {}
 
 .Calendar-dateValue--small {
-    height: 28px;
-    width: 28px;
+    height: var(--spacing-xl);
+    width: var(--spacing-xl);
 }
 
 .Calendar-dateValue--large {
