@@ -151,7 +151,7 @@ const customCode = `() => {
       case 'select-all':
         const selectedDisabledArray = selectedLessThan50.filter(option => option.disabled);
         const selectedOptions = [
-          ...dropdownOptions..slice(0, 50).filter(option => !option.disabled),
+          ...dropdownOptions.slice(0, 50).filter(option => !option.disabled),
           ...selectedDisabledArray
         ];
         setSelectedLessThan50(selectedOptions);
