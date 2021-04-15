@@ -1,20 +1,17 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const Primary = () => (
+export const PrimaryButton = () => (
   <Button
     appearance="primary"
     size="regular"
-    expanded={false}
-    disabled={false}
-    loading={false}
   >
     Submit
   </Button>
 );
 
 export default {
-  title: 'Components/Button/Primary',
+  title: 'Components/Button/Primary Button',
   component: Button,
   parameters: {
     docs: {

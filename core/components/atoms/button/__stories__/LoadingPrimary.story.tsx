@@ -1,20 +1,15 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const loading = () => (
+export const LoaderInButton = () => (
   <Button
     appearance="primary"
-    size="regular"
-    expanded={false}
-    disabled={false}
     loading={true}
-  >
-    {''}
-  </Button>
+  />
 );
 
 export default {
-  title: 'Components/Button/Loading',
+  title: 'Components/Button/Loader In Button',
   component: Button,
   parameters: {
     docs: {
