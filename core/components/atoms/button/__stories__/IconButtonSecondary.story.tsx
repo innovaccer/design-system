@@ -1,16 +1,15 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const iconButtonSecondary = () => (
+export const iconButton = () => (
   <Button
     appearance="basic"
-    size="regular"
-    icon="navigate_next"
+    icon="keyboard_arrow_right"
   />
 );
 
 export default {
-  title: 'Components/Button/Icon Button Secondary',
+  title: 'Components/Button/Icon Button',
   component: Button,
   parameters: {
     docs: {

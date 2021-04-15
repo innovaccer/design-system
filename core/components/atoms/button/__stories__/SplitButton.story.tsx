@@ -16,11 +16,6 @@ const options = [
 export const splitButton = () => (
   <div className="d-flex">
     <Button
-      appearance="basic"
-      size="regular"
-      expanded={false}
-      disabled={false}
-      loading={false}
       className="mr-2"
     >
       Request review

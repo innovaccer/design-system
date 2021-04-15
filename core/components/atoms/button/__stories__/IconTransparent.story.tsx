@@ -1,21 +1,15 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const transparentIcon = () => (
+export const transparentIconButton = () => (
   <Button
-    appearance={'transparent'}
-    size="regular"
-    expanded={false}
-    disabled={false}
-    loading={false}
+    appearance="transparent"
     icon="more_horiz"
-  >
-    {''}
-  </Button>
+  />
 );
 
 export default {
-  title: 'Components/Button/Transparent Icon',
+  title: 'Components/Button/Transparent Icon Button',
   component: Button,
   parameters: {
     docs: {

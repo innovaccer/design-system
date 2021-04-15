@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const LargeExpanded = () => (
+export const ExpandedButton = () => (
   <Button
     appearance="primary"
     size="large"
@@ -12,7 +12,7 @@ export const LargeExpanded = () => (
 );
 
 export default {
-  title: 'Components/Button/Large Expanded',
+  title: 'Components/Button/Expanded Button',
   component: Button,
   parameters: {
     docs: {

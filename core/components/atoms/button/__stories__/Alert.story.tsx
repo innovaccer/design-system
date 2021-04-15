@@ -1,20 +1,16 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const Alert = () => (
+export const AlertButton = () => (
   <Button
     appearance="alert"
-    size="regular"
-    expanded={false}
-    disabled={false}
-    loading={false}
   >
     Delete
   </Button>
 );
 
 export default {
-  title: 'Components/Button/Alert',
+  title: 'Components/Button/Alert Button',
   component: Button,
   parameters: {
     docs: {
