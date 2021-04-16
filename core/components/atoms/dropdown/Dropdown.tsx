@@ -58,7 +58,8 @@ interface SyncProps {
    *   label: string;
    *   value: React.ReactText;
    *   icon?: string;
-   *   subInfo?: string | MetaListProps;
+   *   subInfo?: string | [MetaListProps]
+   *    (https://innovaccer.github.io/design-system/?path=/docs/components-metalist-all--all);
    *   optionType?: OptionType;
    *   selected?: boolean;
    *   disabled?: boolean;
@@ -320,6 +321,10 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       this.updateSelectedOptions(this.props.selected, isSingleSelect, true);
     }
 
+    if (prevState.searchTerm !== this.state.searchTerm) {
+      this.debounceSearch();
+    }
+
     if (prevProps.open !== this.props.open
       || prevState.open !== this.state.open
     ) {
@@ -327,9 +332,6 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       this.updateOnPopperToggle();
     }
 
-    if (prevState.searchTerm !== this.state.searchTerm) {
-      this.debounceSearch();
-    }
   }
 
   getDisabledOptions = (options: Option[] = []) => {
