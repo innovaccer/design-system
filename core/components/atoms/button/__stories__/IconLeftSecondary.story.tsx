@@ -1,13 +1,8 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const iconLeftSecondary = () => (
+export const iconLeftButton = () => (
   <Button
-    appearance="basic"
-    size="regular"
-    expanded={false}
-    disabled={false}
-    loading={false}
     icon="get_app"
     iconAlign="left"
   >
@@ -16,7 +11,7 @@ export const iconLeftSecondary = () => (
 );
 
 export default {
-  title: 'Components/Button/Icon Left Secondary',
+  title: 'Components/Button/Icon Left Button',
   component: Button,
   parameters: {
     docs: {
