@@ -6,8 +6,8 @@ export const required = () => {
   return (
     <div>
       <div className="mr-5 mb-8">
-        <Label>
-          Not Required
+        <Label optional={true}>
+          Not required
         </Label>
       </div>
       <div>

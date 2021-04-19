@@ -1,6 +1,7 @@
 import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
+import { Text } from '@/index';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 
 export interface LabelProps extends BaseProps, BaseHtmlProps<HTMLLabelElement> {
@@ -14,9 +15,13 @@ export interface LabelProps extends BaseProps, BaseHtmlProps<HTMLLabelElement> {
    */
   disabled?: boolean;
   /**
-   * Shows the user that this field id required
+   * Shows the user that this field is required
    */
   required?: boolean;
+  /**
+   * Shows the user that this field is optional
+   */
+  optional?: boolean;
   /**
    * Adds default bottom margin of 4px
    */
@@ -29,6 +34,7 @@ export interface LabelProps extends BaseProps, BaseHtmlProps<HTMLLabelElement> {
 export const Label = (props: LabelProps) => {
   const {
     required,
+    optional,
     withInput,
     disabled,
     children,
@@ -41,20 +47,39 @@ export const Label = (props: LabelProps) => {
   const LabelClass = classNames({
     Label: true,
     ['Label--withInput']: withInput,
-    [`${className}`]: className
-  });
+    ['Label--optional']: optional,
+  }, className);
 
   const classes = classNames({
     'Label-label': true,
     'Label--disabled': disabled
   });
 
+  const renderInfo = (isRequired: boolean = false, isOptional?: boolean) => {
+    if (isRequired) {
+      return <span className="Label-requiredIndicator" data-test="DesignSystem-Label--RequiredIndicator" />;
+    }
+
+    if (isOptional) {
+      return (
+        <Text
+          data-test="DesignSystem-Label--OptionalLabel"
+          appearance="subtle"
+          className="ml-3"
+        >
+          (optional)
+        </Text>
+      );
+    }
+    return null;
+  };
+
   return (
     <div data-test="DesignSystem-Label" {...baseProps} className={LabelClass}>
-      <GenericText className={classes} componentType="label" {...rest}>
+      <GenericText data-test="DesignSystem-Label--Label" className={classes} componentType="label" {...rest}>
         {children}
       </GenericText>
-      {required && <span className="Label-requiredIndicator" data-test="DesignSystem-Label--RequiredIndicator"/>}
+      {renderInfo(required, optional)}
     </div>
   );
 };

@@ -6,10 +6,12 @@ import Label from '../index';
 export const all = () => {
   const disabled = boolean('disabled', false);
   const required = boolean('required', false);
+  const optional = boolean('optional', false);
 
   const options = {
     disabled,
     required,
+    optional
   };
 
   return (
