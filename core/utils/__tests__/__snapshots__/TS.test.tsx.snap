@@ -30,6 +30,7 @@ exports[`TS renders children 1`] = `
   />
   <button
     class="Button Button--regular Button--regularSquare Button--basic"
+    data-test="DesignSystem-Button"
     tabindex="0"
   />
   <div
@@ -88,6 +89,7 @@ exports[`TS renders children 1`] = `
       >
         <button
           class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
+          data-test="DesignSystem-Button"
           tabindex="0"
         >
           <div
@@ -95,6 +97,7 @@ exports[`TS renders children 1`] = `
           >
             <i
               class="material-icons Icon Icon--default"
+              data-test="DesignSystem-Button--Icon"
               style="font-size: 16px; width: 16px;"
             >
               arrow_back
@@ -125,6 +128,7 @@ exports[`TS renders children 1`] = `
         </div>
         <button
           class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
+          data-test="DesignSystem-Button"
           tabindex="0"
         >
           <div
@@ -132,6 +136,7 @@ exports[`TS renders children 1`] = `
           >
             <i
               class="material-icons Icon Icon--default"
+              data-test="DesignSystem-Button--Icon"
               style="font-size: 16px; width: 16px;"
             >
               arrow_forward
@@ -1547,6 +1552,7 @@ exports[`TS renders children 1`] = `
         >
           <i
             class="material-icons Icon Icon--disabled"
+            data-test="DesignSystem-Button--Icon"
             style="font-size: 20px; width: 20px;"
           >
             first_page
@@ -1568,6 +1574,7 @@ exports[`TS renders children 1`] = `
           >
             <i
               class="material-icons Icon Icon--disabled"
+              data-test="DesignSystem-Button--Icon"
               style="font-size: 20px; width: 20px;"
             >
               navigate_before
@@ -1593,6 +1600,7 @@ exports[`TS renders children 1`] = `
           >
             <i
               class="material-icons Icon Icon--disabled"
+              data-test="DesignSystem-Button--Icon"
               style="font-size: 20px; width: 20px;"
             >
               navigate_next
@@ -1611,6 +1619,7 @@ exports[`TS renders children 1`] = `
         >
           <i
             class="material-icons Icon Icon--disabled"
+            data-test="DesignSystem-Button--Icon"
             style="font-size: 20px; width: 20px;"
           >
             last_page
@@ -1687,6 +1696,7 @@ exports[`TS renders children 1`] = `
       >
         <button
           class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
+          data-test="DesignSystem-Button"
           tabindex="0"
         >
           <div
@@ -1694,6 +1704,7 @@ exports[`TS renders children 1`] = `
           >
             <i
               class="material-icons Icon Icon--default"
+              data-test="DesignSystem-Button--Icon"
               style="font-size: 16px; width: 16px;"
             >
               arrow_back
@@ -1724,6 +1735,7 @@ exports[`TS renders children 1`] = `
         </div>
         <button
           class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
+          data-test="DesignSystem-Button"
           tabindex="0"
         >
           <div
@@ -1731,6 +1743,7 @@ exports[`TS renders children 1`] = `
           >
             <i
               class="material-icons Icon Icon--default"
+              data-test="DesignSystem-Button--Icon"
               style="font-size: 16px; width: 16px;"
             >
               arrow_forward
