@@ -1,13 +1,18 @@
 import * as React from 'react';
-import Message from '../index';
+import { Message, Text } from '@/index';
 
 // CSF format story
 export const successWithoutTitle = () => (
   <Message
     appearance={'success'}
-  >
-    {'Password updated. Login with your updated credentials.'}
-  </Message>
+    description="Password updated. Login with your updated credentials."
+    actions={(
+      <>
+        <Text className="cursor-pointer" appearance="link">Action 1</Text>
+        <Text className="ml-5 cursor-pointer" appearance="link">Action 2</Text>
+      </>
+    )}
+  />
 );
 
 export default {
