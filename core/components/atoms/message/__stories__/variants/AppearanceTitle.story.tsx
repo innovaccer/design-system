@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
-import Message, { Appearance } from '../../index';
-import Text from '@/components/atoms/text';
+import { Message, Text } from '@/index';
+import { MessageProps } from '@/index.type';
 
 // CSF format story
 export const appearanceWithTitle = () => {
 
-  const appearances: Appearance[] = ['default', 'alert', 'info', 'success', 'warning'];
+  const appearances: MessageProps['appearance'][] = ['default', 'alert', 'info', 'success', 'warning'];
   const innerStyle = {
     display: 'flex',
     'align-items': 'center',
@@ -24,9 +24,17 @@ export const appearanceWithTitle = () => {
         appearances.map((appear, ind) => {
           return (
             <div key={ind} style={innerStyle} className="mr-7 mb-7 w-25 d-flex">
-              <Message appearance={appear} title={title}>
-                Patient record has been updated with new records.
-              </Message>
+              <Message
+                appearance={appear}
+                title={title}
+                description="Patient record has been updated with new records."
+                actions={(
+                  <>
+                    <Text className="cursor-pointer" appearance="link">Action 1</Text>
+                    <Text className="ml-5 cursor-pointer" appearance="link">Action 2</Text>
+                  </>
+                )}
+              />
               <br />
               <Text weight="strong">{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>
             </div>

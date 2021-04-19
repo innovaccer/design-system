@@ -1,331 +1,254 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Message component 
-  appearance: "alert"
+  appearance: "alert", title: "Title goes here", description: "Description goes here", actions: "[ReactNode]"
  1`] = `
-<div
-  className="Message Message--alert"
-  data-test="DesignSystem-Message"
->
-  <div
-    className="Message-icon Message-icon--alert"
-    data-test="DesignSystem-Message--Icon"
-  >
-    <Icon
-      appearance="alert"
-      name="error"
-      size={16}
-    />
-  </div>
-  <div
-    data-test="DesignSystem-Message--Title"
-  >
+<body>
+  <div>
     <div
-      className="Message-description"
-      data-test="DesignSystem-Message--Description"
+      class="Message Message--alert"
+      data-test="DesignSystem-Message"
     >
-      Description goes here
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Message component 
-  appearance: "alert", title: "Title goes here"
- 1`] = `
-<div
-  className="Message Message--alert"
-  data-test="DesignSystem-Message"
->
-  <div
-    className="Message-icon Message-icon--alert Message-icon--withTitle"
-    data-test="DesignSystem-Message--Icon"
-  >
-    <Icon
-      appearance="alert"
-      name="error"
-      size={16}
-    />
-  </div>
-  <div
-    data-test="DesignSystem-Message--Title"
-  >
-    <div
-      className="Message-title"
-    >
-      <Heading
-        appearance="default"
-        size="s"
+      <i
+        class="material-icons Icon Icon--alert Message-icon Message-icon--alert Message-icon--withTitle"
+        data-test="DesignSystem-Message--Icon"
+        style="font-size: 16px; width: 16px;"
       >
-        Title goes here
-      </Heading>
-    </div>
-    <div
-      className="Message-description"
-      data-test="DesignSystem-Message--Description"
-    >
-      Description goes here
+        error
+      </i>
+      <div>
+        <h5
+          class="Heading Heading--s Heading--default Message-heading Message-heading--alert"
+          data-test="DesignSystem-Message--Title"
+        >
+          Title goes here
+        </h5>
+        <span
+          class="Text Text--default Text--regular Message-text Message-text--alert"
+          data-test="DesignSystem-Message--Description"
+        >
+          Description goes here
+        </span>
+        <div
+          class="Message-actions"
+          data-test="DesignSystem-Message--actions"
+        >
+          <span
+            class="Text Text--link Text--regular mr-5 cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 1
+          </span>
+          <span
+            class="Text Text--link Text--regular cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 2
+          </span>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
 `;
 
 exports[`Message component 
-  appearance: "default"
+  appearance: "default", title: "Title goes here", description: "Description goes here", actions: "[ReactNode]"
  1`] = `
-<div
-  className="Message Message--default"
-  data-test="DesignSystem-Message"
->
-  <div
-    data-test="DesignSystem-Message--Title"
-  >
+<body>
+  <div>
     <div
-      className="Message-description"
-      data-test="DesignSystem-Message--Description"
+      class="Message Message--default"
+      data-test="DesignSystem-Message"
     >
-      Description goes here
+      <div>
+        <h5
+          class="Heading Heading--s Heading--default Message-heading Message-heading--default"
+          data-test="DesignSystem-Message--Title"
+        >
+          Title goes here
+        </h5>
+        <span
+          class="Text Text--default Text--regular Message-text Message-text--default"
+          data-test="DesignSystem-Message--Description"
+        >
+          Description goes here
+        </span>
+        <div
+          class="Message-actions"
+          data-test="DesignSystem-Message--actions"
+        >
+          <span
+            class="Text Text--link Text--regular mr-5 cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 1
+          </span>
+          <span
+            class="Text Text--link Text--regular cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 2
+          </span>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
 `;
 
 exports[`Message component 
-  appearance: "default", title: "Title goes here"
+  appearance: "info", title: "Title goes here", description: "Description goes here", actions: "[ReactNode]"
  1`] = `
-<div
-  className="Message Message--default"
-  data-test="DesignSystem-Message"
->
-  <div
-    data-test="DesignSystem-Message--Title"
-  >
+<body>
+  <div>
     <div
-      className="Message-title"
+      class="Message Message--info"
+      data-test="DesignSystem-Message"
     >
-      <Heading
-        appearance="default"
-        size="s"
+      <i
+        class="material-icons Icon Icon--info Message-icon Message-icon--info Message-icon--withTitle"
+        data-test="DesignSystem-Message--Icon"
+        style="font-size: 16px; width: 16px;"
       >
-        Title goes here
-      </Heading>
-    </div>
-    <div
-      className="Message-description"
-      data-test="DesignSystem-Message--Description"
-    >
-      Description goes here
+        info
+      </i>
+      <div>
+        <h5
+          class="Heading Heading--s Heading--default Message-heading Message-heading--info"
+          data-test="DesignSystem-Message--Title"
+        >
+          Title goes here
+        </h5>
+        <span
+          class="Text Text--default Text--regular Message-text Message-text--info"
+          data-test="DesignSystem-Message--Description"
+        >
+          Description goes here
+        </span>
+        <div
+          class="Message-actions"
+          data-test="DesignSystem-Message--actions"
+        >
+          <span
+            class="Text Text--link Text--regular mr-5 cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 1
+          </span>
+          <span
+            class="Text Text--link Text--regular cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 2
+          </span>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
 `;
 
 exports[`Message component 
-  appearance: "info"
+  appearance: "success", title: "Title goes here", description: "Description goes here", actions: "[ReactNode]"
  1`] = `
-<div
-  className="Message Message--info"
-  data-test="DesignSystem-Message"
->
-  <div
-    className="Message-icon Message-icon--info"
-    data-test="DesignSystem-Message--Icon"
-  >
-    <Icon
-      appearance="info"
-      name="info"
-      size={16}
-    />
-  </div>
-  <div
-    data-test="DesignSystem-Message--Title"
-  >
+<body>
+  <div>
     <div
-      className="Message-description"
-      data-test="DesignSystem-Message--Description"
+      class="Message Message--success"
+      data-test="DesignSystem-Message"
     >
-      Description goes here
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Message component 
-  appearance: "info", title: "Title goes here"
- 1`] = `
-<div
-  className="Message Message--info"
-  data-test="DesignSystem-Message"
->
-  <div
-    className="Message-icon Message-icon--info Message-icon--withTitle"
-    data-test="DesignSystem-Message--Icon"
-  >
-    <Icon
-      appearance="info"
-      name="info"
-      size={16}
-    />
-  </div>
-  <div
-    data-test="DesignSystem-Message--Title"
-  >
-    <div
-      className="Message-title"
-    >
-      <Heading
-        appearance="default"
-        size="s"
+      <i
+        class="material-icons Icon Icon--success Message-icon Message-icon--success Message-icon--withTitle"
+        data-test="DesignSystem-Message--Icon"
+        style="font-size: 16px; width: 16px;"
       >
-        Title goes here
-      </Heading>
-    </div>
-    <div
-      className="Message-description"
-      data-test="DesignSystem-Message--Description"
-    >
-      Description goes here
+        check_circle
+      </i>
+      <div>
+        <h5
+          class="Heading Heading--s Heading--default Message-heading Message-heading--success"
+          data-test="DesignSystem-Message--Title"
+        >
+          Title goes here
+        </h5>
+        <span
+          class="Text Text--default Text--regular Message-text Message-text--success"
+          data-test="DesignSystem-Message--Description"
+        >
+          Description goes here
+        </span>
+        <div
+          class="Message-actions"
+          data-test="DesignSystem-Message--actions"
+        >
+          <span
+            class="Text Text--link Text--regular mr-5 cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 1
+          </span>
+          <span
+            class="Text Text--link Text--regular cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 2
+          </span>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
 `;
 
 exports[`Message component 
-  appearance: "success"
+  appearance: "warning", title: "Title goes here", description: "Description goes here", actions: "[ReactNode]"
  1`] = `
-<div
-  className="Message Message--success"
-  data-test="DesignSystem-Message"
->
-  <div
-    className="Message-icon Message-icon--success"
-    data-test="DesignSystem-Message--Icon"
-  >
-    <Icon
-      appearance="success"
-      name="check_circle"
-      size={16}
-    />
-  </div>
-  <div
-    data-test="DesignSystem-Message--Title"
-  >
+<body>
+  <div>
     <div
-      className="Message-description"
-      data-test="DesignSystem-Message--Description"
+      class="Message Message--warning"
+      data-test="DesignSystem-Message"
     >
-      Description goes here
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Message component 
-  appearance: "success", title: "Title goes here"
- 1`] = `
-<div
-  className="Message Message--success"
-  data-test="DesignSystem-Message"
->
-  <div
-    className="Message-icon Message-icon--success Message-icon--withTitle"
-    data-test="DesignSystem-Message--Icon"
-  >
-    <Icon
-      appearance="success"
-      name="check_circle"
-      size={16}
-    />
-  </div>
-  <div
-    data-test="DesignSystem-Message--Title"
-  >
-    <div
-      className="Message-title"
-    >
-      <Heading
-        appearance="default"
-        size="s"
+      <i
+        class="material-icons Icon Icon--warning Message-icon Message-icon--warning Message-icon--withTitle"
+        data-test="DesignSystem-Message--Icon"
+        style="font-size: 16px; width: 16px;"
       >
-        Title goes here
-      </Heading>
-    </div>
-    <div
-      className="Message-description"
-      data-test="DesignSystem-Message--Description"
-    >
-      Description goes here
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Message component 
-  appearance: "warning"
- 1`] = `
-<div
-  className="Message Message--warning"
-  data-test="DesignSystem-Message"
->
-  <div
-    className="Message-icon Message-icon--warning"
-    data-test="DesignSystem-Message--Icon"
-  >
-    <Icon
-      appearance="warning"
-      name="warning"
-      size={16}
-    />
-  </div>
-  <div
-    data-test="DesignSystem-Message--Title"
-  >
-    <div
-      className="Message-description"
-      data-test="DesignSystem-Message--Description"
-    >
-      Description goes here
+        warning
+      </i>
+      <div>
+        <h5
+          class="Heading Heading--s Heading--default Message-heading Message-heading--warning"
+          data-test="DesignSystem-Message--Title"
+        >
+          Title goes here
+        </h5>
+        <span
+          class="Text Text--default Text--regular Message-text Message-text--warning"
+          data-test="DesignSystem-Message--Description"
+        >
+          Description goes here
+        </span>
+        <div
+          class="Message-actions"
+          data-test="DesignSystem-Message--actions"
+        >
+          <span
+            class="Text Text--link Text--regular mr-5 cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 1
+          </span>
+          <span
+            class="Text Text--link Text--regular cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 2
+          </span>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-`;
-
-exports[`Message component 
-  appearance: "warning", title: "Title goes here"
- 1`] = `
-<div
-  className="Message Message--warning"
-  data-test="DesignSystem-Message"
->
-  <div
-    className="Message-icon Message-icon--warning Message-icon--withTitle"
-    data-test="DesignSystem-Message--Icon"
-  >
-    <Icon
-      appearance="warning"
-      name="warning"
-      size={16}
-    />
-  </div>
-  <div
-    data-test="DesignSystem-Message--Title"
-  >
-    <div
-      className="Message-title"
-    >
-      <Heading
-        appearance="default"
-        size="s"
-      >
-        Title goes here
-      </Heading>
-    </div>
-    <div
-      className="Message-description"
-      data-test="DesignSystem-Message--Description"
-    >
-      Description goes here
-    </div>
-  </div>
-</div>
+</body>
 `;

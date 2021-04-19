@@ -910,15 +910,13 @@ exports[`TS renders children 1`] = `
     class="Message Message--default"
     data-test="DesignSystem-Message"
   >
-    <div
-      data-test="DesignSystem-Message--Title"
-    >
-      <div
-        class="Message-description"
+    <div>
+      <span
+        class="Text Text--default Text--regular Message-text Message-text--default"
         data-test="DesignSystem-Message--Description"
       >
         Hello World!
-      </div>
+      </span>
     </div>
   </div>
   <div
