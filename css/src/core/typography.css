@@ -124,6 +124,10 @@ body {
   margin-bottom: var(--spacing-m);
 }
 
+.Label--optional {
+  align-items: center;
+}
+
 .Label-label {
   line-height: var(--font-height-s);
   font-weight: var(--font-weight-medium);

@@ -45,44 +45,55 @@ describe('Label component', () => {
 
 describe('Label component', () => {
 
-  const children = <div>Label</div>;
-
   it('renders children', () => {
-    const { getByTestId } = render(<Label>{children}</Label>);
-    expect(getByTestId('DesignSystem-Label')).toContainHTML('<div>Label</div>');
+    const { getByTestId } = render(<Label>Label</Label>);
+    expect(getByTestId('DesignSystem-Label').textContent).toMatch('Label');
   });
 
-  describe('Label Component with overwrite class', () => {
-
-    it('overwrite Label class', () => {
-      const { getByTestId } = render(<Label className="LabelClass">{children}</Label>);
-      expect(getByTestId('DesignSystem-Label')).toHaveClass('LabelClass');
-    });
-
+  it('renders label element', () => {
+    const { getByTestId } = render(<Label>Label</Label>);
+    expect(getByTestId('DesignSystem-Label--Label').tagName).toMatch('LABEL');
   });
 
-  describe('Label component with prop:withInput', () => {
-    it('should have Label--withInput class when withInput={true}', () => {
-      const { getByTestId } = render(<Label withInput={true}>{'Design System'}</Label>);
-      expect(getByTestId('DesignSystem-Label')).toHaveClass('Label--withInput');
-    });
+});
+
+describe('Label Component with overwrite class', () => {
+
+  it('overwrite Label class', () => {
+    const { getByTestId } = render(<Label className="LabelClass">Label</Label>);
+    expect(getByTestId('DesignSystem-Label')).toHaveClass('LabelClass');
   });
 
-  describe('Label component with prop:disabled', () => {
+});
 
-    it('disabled', () => {
-      const { getByTestId } = render(<Label disabled={true}>{'Design System'}</Label>);
-      expect(getByTestId('DesignSystem-Label').firstElementChild).toHaveClass('Label--disabled');
-    });
+describe('Label component with prop: withInput', () => {
+  it('should have Label--withInput class when withInput={true}', () => {
+    const { getByTestId } = render(<Label withInput={true}>Label</Label>);
+    expect(getByTestId('DesignSystem-Label')).toHaveClass('Label--withInput');
+  });
+});
 
+describe('Label component with prop: disabled', () => {
+
+  it('should be disabled', () => {
+    const { getByTestId } = render(<Label disabled={true}>Label</Label>);
+    expect(getByTestId('DesignSystem-Label').firstElementChild).toHaveClass('Label--disabled');
   });
 
-  describe('Label component with prop:required', () => {
+});
 
-    it('required', () => {
-      const { getByTestId } = render(<Label required={true}>{'Design System'}</Label>);
-      expect(getByTestId('DesignSystem-Label--RequiredIndicator').tagName).toMatch('SPAN');
-    });
+describe('Label component with prop: required', () => {
+
+  it('renders required indicator', () => {
+    const { getByTestId } = render(<Label required={true}>Label</Label>);
+    expect(getByTestId('DesignSystem-Label--RequiredIndicator')).toBeInTheDocument();
   });
+});
 
+describe('Label component with prop: optional', () => {
+
+  it('renders optional label', () => {
+    const { getByTestId } = render(<Label optional={true}>Label</Label>);
+    expect(getByTestId('DesignSystem-Label--OptionalLabel')).toBeInTheDocument();
+  });
 });
