@@ -109,7 +109,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       if (this.props.open) {
         const zIndex = getUpdatedZIndex({
           element: this.element,
-          containerClassName: '.Sidesheet-container--open',
+          containerClassName: '.Overlay-container--open',
           elementRef: this.sidesheetRef
         });
         this.setState({
@@ -161,8 +161,8 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     }, className);
 
     const ContainerClass = classNames({
-      ['Sidesheet-container']: true,
-      ['Sidesheet-container--open']: open,
+      ['Overlay-container']: true,
+      ['Overlay-container--open']: open,
     });
 
     const baseProps = extractBaseProps(this.props);

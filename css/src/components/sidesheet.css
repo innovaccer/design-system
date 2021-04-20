@@ -20,14 +20,6 @@
   }
 }
 
-.Sidesheet-container {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  justify-content: center;
-  z-index: 1500;
-}
-
 .Sidesheet {
   position: fixed !important;
   top: 0;

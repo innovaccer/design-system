@@ -120,7 +120,7 @@ describe('Modal component with prop: open', () => {
 
     expect(getByTestId('DesignSystem-Modal')).toHaveClass('Modal--open');
     expect(getByTestId('DesignSystem-Modal')).toHaveClass('Modal-animation--open');
-    expect(getByTestId('DesignSystem-ModalContainer')).toHaveClass('Modal-container--open');
+    expect(getByTestId('DesignSystem-ModalContainer')).toHaveClass('Overlay-container--open');
   });
 
   it('renders Modal with open: false', () => {

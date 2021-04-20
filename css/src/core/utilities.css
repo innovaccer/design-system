@@ -2,3 +2,11 @@
   display: inline-flex;
   flex-grow: 1;
 }
+
+.Overlay-container {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  z-index: 1500;
+}

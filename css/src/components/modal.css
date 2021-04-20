@@ -20,14 +20,6 @@
   }
 }
 
-.Modal-container {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  justify-content: center;
-  z-index: 1500;
-}
-
 .Modal {
   position: fixed !important;
   top: 104px;
