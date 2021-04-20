@@ -79,7 +79,7 @@ describe('FullscreenModal component with prop: open', () => {
 
     expect(getByTestId('DesignSystem-FullscreenModal')).toHaveClass('FullscreenModal--open');
     expect(getByTestId('DesignSystem-FullscreenModal')).toHaveClass('FullscreenModal-animation--open');
-    expect(getByTestId('DesignSystem-FullscreenModalContainer')).toHaveClass('FullscreenModal-container--open');
+    expect(getByTestId('DesignSystem-FullscreenModalContainer')).toHaveClass('Overlay-container--open');
   });
 
   it('renders FullscreenModal with open: false', () => {

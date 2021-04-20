@@ -8,7 +8,7 @@ exports[`FullscreenModal component
     class="Overlay-wrapper"
   >
     <div
-      class="FullscreenModal-container FullscreenModal-container--open"
+      class="Overlay-container Overlay-container--open"
       data-layer="true"
       data-test="DesignSystem-FullscreenModalContainer"
     >
@@ -75,7 +75,7 @@ exports[`FullscreenModal component
     class="Overlay-wrapper"
   >
     <div
-      class="FullscreenModal-container FullscreenModal-container--open"
+      class="Overlay-container Overlay-container--open"
       data-layer="true"
       data-test="DesignSystem-FullscreenModalContainer"
     >

@@ -85,7 +85,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
       if (this.props.open) {
         const zIndex = getUpdatedZIndex({
           element: this.element,
-          containerClassName: '.FullscreenModal-container--open',
+          containerClassName: '.Overlay-container--open',
           elementRef: this.modalRef
         });
         this.setState({
@@ -125,8 +125,8 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
     );
 
     const ContainerClass = classNames({
-      ['FullscreenModal-container']: true,
-      ['FullscreenModal-container--open']: open
+      ['Overlay-container']: true,
+      ['Overlay-container--open']: open
     });
 
     const baseProps = extractBaseProps(this.props);
