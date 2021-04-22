@@ -1,48 +1,81 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import Button, { Size } from '../../../Button';
-import Text from '@/components/atoms/text';
+import { Button, Text } from '@/index';
 
 // CSF format story
 export const icon = () => {
-  const disabled = false;
-  const expanded = false;
-  const loading = false;
 
-  const sizes: Size[] = ['tiny', 'regular', 'large'];
-
-  const ButtonIcon = text(
-    'icon',
-    'refresh'
-  );
   return (
-    <div className="d-flex w-25">
-      {
-        sizes.map((IconSize, ind) => {
-          return (
-            <div key={ind} className="mr-5">
-              <div className="h-50">
-                <Button
-                  onClick={action('button-clicked')}
-                  onMouseEnter={action('mouse-enter')}
-                  onMouseLeave={action('mouse-leave')}
-                  appearance={'basic'}
-                  size={IconSize}
-                  expanded={expanded}
-                  disabled={disabled}
-                  loading={loading}
-                  icon={ButtonIcon}
-                >
-                  {''}
-                </Button>
-              </div>
-              <br />
-              <Text weight="strong">{IconSize.charAt(0).toUpperCase() + IconSize.slice(1)}</Text>
-            </div>
-          );
-        })
-      }
+    <div>
+      <div className="mb-7">
+        <Text weight="medium" size="large">Tiny</Text>
+        <div className="d-flex align-items-center mt-4">
+          <Button
+            onClick={action('button-clicked')}
+            onMouseEnter={action('mouse-enter')}
+            onMouseLeave={action('mouse-leave')}
+            className="mr-7"
+            icon="events"
+            size="tiny"
+            largeIcon={false}
+          />
+          <Button
+            onClick={action('button-clicked')}
+            onMouseEnter={action('mouse-enter')}
+            onMouseLeave={action('mouse-leave')}
+            className=""
+            icon="events"
+            size="tiny"
+            largeIcon={true}
+          />
+        </div>
+      </div>
+      <div className="mb-7">
+        <Text weight="medium" size="large">Regular</Text>
+        <div className="d-flex align-items-center mt-4">
+          <Button
+            onClick={action('button-clicked')}
+            onMouseEnter={action('mouse-enter')}
+            onMouseLeave={action('mouse-leave')}
+            className="mr-7"
+            icon="events"
+            size="regular"
+            largeIcon={false}
+          />
+          <Button
+            onClick={action('button-clicked')}
+            onMouseEnter={action('mouse-enter')}
+            onMouseLeave={action('mouse-leave')}
+            className=""
+            icon="events"
+            size="regular"
+            largeIcon={true}
+          />
+        </div>
+      </div>
+      <div className="mb-7">
+        <Text weight="medium" size="large">Large</Text>
+        <div className="d-flex align-items-center mt-4">
+          <Button
+            onClick={action('button-clicked')}
+            onMouseEnter={action('mouse-enter')}
+            onMouseLeave={action('mouse-leave')}
+            className="mr-7"
+            icon="events"
+            size="large"
+            largeIcon={false}
+          />
+          <Button
+            onClick={action('button-clicked')}
+            onMouseEnter={action('mouse-enter')}
+            onMouseLeave={action('mouse-leave')}
+            className=""
+            icon="events"
+            size="large"
+            largeIcon={true}
+          />
+        </div>
+      </div>
     </div>
   );
 };

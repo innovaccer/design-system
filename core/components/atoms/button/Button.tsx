@@ -53,6 +53,12 @@ export interface ButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement>
    */
   iconAlign?: Alignment;
   /**
+   * Determines if size of icon is large
+   *
+   * **Valid when button has icon only**
+   */
+  largeIcon?: boolean;
+  /**
    * Text to be added inside `Button`
    */
   children?: React.ReactText;
@@ -91,6 +97,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     appearance = 'basic',
     iconAlign = 'left',
     tabIndex = 0,
+    largeIcon,
     type,
     children,
     icon,
@@ -124,7 +131,15 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   });
 
   return (
-    <button ref={ref} type={type} className={buttonClass} disabled={disabled || loading} tabIndex={tabIndex} {...rest} >
+    <button
+      data-test="DesignSystem-Button"
+      ref={ref}
+      type={type}
+      className={buttonClass}
+      disabled={disabled || loading}
+      tabIndex={tabIndex}
+      {...rest}
+    >
       {loading && (
         <span className={spinnerClass}>
           <Spinner size="small" appearance={(appearance === 'basic' || appearance === 'transparent') ? 'secondary' : 'white'} />
@@ -133,9 +148,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
       {icon && !loading && (
         <div className={iconClass}>
           <Icon
+            data-test="DesignSystem-Button--Icon"
             name={icon}
             appearance={disabled ? 'disabled' : (appearance === 'basic' || appearance === 'transparent') ? selected ? 'info' : 'default' : 'white'}
-            size={sizeMapping[size]}
+            size={largeIcon && !children ? sizeMapping[size] + 4 : sizeMapping[size]}
           />
         </div>
       )}
