@@ -10,7 +10,7 @@ exports[`Dialog component
     class="Overlay-wrapper"
   >
     <div
-      class="Row Row Modal-container Modal-container--open"
+      class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -109,7 +109,7 @@ exports[`Dialog component
     class="Overlay-wrapper"
   >
     <div
-      class="Row Row Modal-container Modal-container--open"
+      class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -206,7 +206,7 @@ exports[`Dialog component
     class="Overlay-wrapper"
   >
     <div
-      class="Row Row Modal-container Modal-container--open"
+      class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -304,7 +304,7 @@ exports[`Dialog component
     class="Overlay-wrapper"
   >
     <div
-      class="Row Row Modal-container Modal-container--open"
+      class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -402,7 +402,7 @@ exports[`Dialog component
     class="Overlay-wrapper"
   >
     <div
-      class="Row Row Modal-container Modal-container--open"
+      class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -500,7 +500,7 @@ exports[`Dialog component
     class="Overlay-wrapper"
   >
     <div
-      class="Row Row Modal-container Modal-container--open"
+      class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -598,7 +598,7 @@ exports[`Dialog component
     class="Overlay-wrapper"
   >
     <div
-      class="Row Row Modal-container Modal-container--open"
+      class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -696,7 +696,7 @@ exports[`Dialog component
     class="Overlay-wrapper"
   >
     <div
-      class="Row Row Modal-container Modal-container--open"
+      class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -794,7 +794,7 @@ exports[`Dialog component
     class="Overlay-wrapper"
   >
     <div
-      class="Row Row Modal-container Modal-container--open"
+      class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -892,7 +892,7 @@ exports[`Dialog component
     class="Overlay-wrapper"
   >
     <div
-      class="Row Row Modal-container Modal-container--open"
+      class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -990,7 +990,7 @@ exports[`Dialog component
     class="Overlay-wrapper"
   >
     <div
-      class="Row Row Modal-container Modal-container--open"
+      class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -1088,7 +1088,7 @@ exports[`Dialog component
     class="Overlay-wrapper"
   >
     <div
-      class="Row Row Modal-container Modal-container--open"
+      class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >
@@ -1186,7 +1186,7 @@ exports[`Dialog component
     class="Overlay-wrapper"
   >
     <div
-      class="Row Row Modal-container Modal-container--open"
+      class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
       data-test="DesignSystem-ModalContainer"
     >

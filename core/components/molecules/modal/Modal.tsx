@@ -92,7 +92,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
       if (this.props.open) {
         const zIndex = getUpdatedZIndex({
           element: this.element,
-          containerClassName: '.Modal-container--open',
+          containerClassName: '.Overlay-container--open',
           elementRef: this.modalRef
         });
         this.setState({
@@ -137,8 +137,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
     const ContainerClass = classNames({
       ['Row']: true,
-      ['Modal-container']: true,
-      ['Modal-container--open']: open,
+      ['Overlay-container']: true,
+      ['Overlay-container--open']: open,
     });
 
     const baseProps = extractBaseProps(this.props);
