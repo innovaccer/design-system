@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1618414773932 
+   * Generated on: 1619085482330 
    *      Package: @innovaccer/design-system
-   *      Version: v2.0.0-5
+   *      Version: v2.0.0-6
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -2452,13 +2452,13 @@
           this.updateSelectedOptions(this.props.selected, isSingleSelect, true);
         }
 
+        if (prevState.searchTerm !== this.state.searchTerm) {
+          this.debounceSearch();
+        }
+
         if (prevProps.open !== this.props.open || prevState.open !== this.state.open) {
           if (_isOpenControlled(this.props.open) && this.props.open === this.state.open) return;
           this.updateOnPopperToggle();
-        }
-
-        if (prevState.searchTerm !== this.state.searchTerm) {
-          this.debounceSearch();
         }
       };
 
@@ -2669,6 +2669,7 @@
           iconAlign = _f === void 0 ? 'left' : _f,
           _g = props.tabIndex,
           tabIndex = _g === void 0 ? 0 : _g,
+          largeIcon = props.largeIcon,
           type = props.type,
           children = props.children,
           icon = props.icon,
@@ -2677,12 +2678,13 @@
           loading = props.loading,
           disabled = props.disabled,
           className = props.className,
-          rest = __rest(props, ["size", "appearance", "iconAlign", "tabIndex", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className"]);
+          rest = __rest(props, ["size", "appearance", "iconAlign", "tabIndex", "largeIcon", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className"]);
 
       var buttonClass = classNames__default['default']((_a = {}, _a['Button'] = true, _a['Button--expanded'] = expanded, _a["Button--" + size] = size, _a["Button--" + size + "Square"] = !children, _a["Button--" + appearance] = appearance, _a['Button--selected'] = selected && (appearance === 'basic' || appearance === 'transparent'), _a["Button--iconAlign-" + iconAlign] = children && iconAlign, _a["" + className] = className, _a));
       var iconClass = classNames__default['default']((_b = {}, _b['Button-icon'] = true, _b["Button-icon--" + iconAlign] = children && iconAlign, _b));
       var spinnerClass = classNames__default['default']((_c = {}, _c['Button-spinner'] = true, _c["Button-spinner--" + iconAlign] = children && iconAlign, _c));
       return /*#__PURE__*/React__namespace.createElement("button", __assign({
+        "data-test": "DesignSystem-Button",
         ref: ref,
         type: type,
         className: buttonClass,
@@ -2696,9 +2698,10 @@
       })), icon && !loading && /*#__PURE__*/React__namespace.createElement("div", {
         className: iconClass
       }, /*#__PURE__*/React__namespace.createElement(Icon, {
+        "data-test": "DesignSystem-Button--Icon",
         name: icon,
         appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
-        size: sizeMapping$1[size]
+        size: largeIcon && !children ? sizeMapping$1[size] + 4 : sizeMapping$1[size]
       })), children);
     });
     Button.displayName = 'Button';
@@ -3726,7 +3729,7 @@
       var _a;
 
       var _b = props.shadow,
-          shadow = _b === void 0 ? 'medium' : _b,
+          shadow = _b === void 0 ? 'light' : _b,
           children = props.children,
           className = props.className,
           rest = __rest(props, ["shadow", "children", "className"]);
@@ -3741,6 +3744,26 @@
       }), children);
     });
     Card.displayName = 'Card';
+
+    var CardSubdued = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
+      var _a;
+
+      var border = props.border,
+          children = props.children,
+          className = props.className,
+          rest = __rest(props, ["border", "children", "className"]);
+
+      var classes = classNames__default['default']((_a = {
+        CardSubdued: true
+      }, _a["CardSubdued--" + border] = border, _a), className);
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        "data-test": "DesignSystem-CardSubdued",
+        ref: ref
+      }, rest, {
+        className: classes
+      }), children);
+    });
+    CardSubdued.displayName = 'CardSubdued';
 
     var GenericChip = function GenericChip(props) {
       var label = props.label,
@@ -4848,31 +4871,54 @@
       var _a;
 
       var required = props.required,
+          optional = props.optional,
           withInput = props.withInput,
           disabled = props.disabled,
           children = props.children,
           className = props.className,
-          rest = __rest(props, ["required", "withInput", "disabled", "children", "className"]);
+          rest = __rest(props, ["required", "optional", "withInput", "disabled", "children", "className"]);
 
       var baseProps = extractBaseProps(props);
       var LabelClass = classNames__default['default']((_a = {
         Label: true
-      }, _a['Label--withInput'] = withInput, _a["" + className] = className, _a));
+      }, _a['Label--withInput'] = withInput, _a['Label--optional'] = optional, _a), className);
       var classes = classNames__default['default']({
         'Label-label': true,
         'Label--disabled': disabled
       });
+
+      var renderInfo = function renderInfo(isRequired, isOptional) {
+        if (isRequired === void 0) {
+          isRequired = false;
+        }
+
+        if (isRequired) {
+          return /*#__PURE__*/React__namespace.createElement("span", {
+            className: "Label-requiredIndicator",
+            "data-test": "DesignSystem-Label--RequiredIndicator"
+          });
+        }
+
+        if (isOptional) {
+          return /*#__PURE__*/React__namespace.createElement(Text, {
+            "data-test": "DesignSystem-Label--OptionalLabel",
+            appearance: "subtle",
+            className: "ml-3"
+          }, "(optional)");
+        }
+
+        return null;
+      };
+
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Label"
       }, baseProps, {
         className: LabelClass
       }), /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
+        "data-test": "DesignSystem-Label--Label",
         className: classes,
         componentType: "label"
-      }, rest), children), required && /*#__PURE__*/React__namespace.createElement("span", {
-        className: "Label-requiredIndicator",
-        "data-test": "DesignSystem-Label--RequiredIndicator"
-      }));
+      }, rest), children), renderInfo(required, optional));
     };
     Label.displayName = 'Label';
 
@@ -5099,39 +5145,58 @@
       alert: 'error'
     };
     var Message = function Message(props) {
-      var _a, _b;
+      var _a, _b, _c, _d;
 
       var appearance = props.appearance,
+          actions = props.actions,
           title = props.title,
-          children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
       var MessageClass = classNames__default['default']((_a = {}, _a['Message'] = true, _a["Message--" + appearance] = appearance, _a), className);
-      var MessageIcon = classNames__default['default']((_b = {}, _b['Message-icon'] = true, _b["Message-icon--" + appearance] = appearance, _b['Message-icon--withTitle'] = title, _b));
+      var IconClass = classNames__default['default']((_b = {}, _b['Message-icon'] = true, _b["Message-icon--" + appearance] = appearance, _b['Message-icon--withTitle'] = title, _b));
+      var TitleClass = classNames__default['default']((_c = {}, _c['Message-heading'] = true, _c["Message-heading--" + appearance] = appearance, _c));
+      var DescriptionClass = classNames__default['default']((_d = {}, _d['Message-text'] = true, _d["Message-text--" + appearance] = appearance, _d));
+
+      var renderDescription = function renderDescription(description, children) {
+        if (description || typeof children === 'string') {
+          return /*#__PURE__*/React__namespace.createElement(Text, {
+            "data-test": "DesignSystem-Message--Description",
+            className: DescriptionClass
+          }, description || (typeof children === 'string' ? children : ''));
+        }
+
+        if (children) {
+          return /*#__PURE__*/React__namespace.createElement("div", {
+            "data-test": "DesignSystem-Message--Description",
+            className: "Message-description"
+          }, children);
+        }
+
+        return null;
+      };
+
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Message"
       }, baseProps, {
         className: MessageClass
-      }), appearance !== 'default' && /*#__PURE__*/React__namespace.createElement("div", {
-        className: MessageIcon,
-        "data-test": "DesignSystem-Message--Icon"
-      }, /*#__PURE__*/React__namespace.createElement(Icon, {
+      }), appearance !== 'default' && /*#__PURE__*/React__namespace.createElement(Icon, {
+        "data-test": "DesignSystem-Message--Icon",
         name: IconMapping$1[appearance],
-        appearance: appearance
-      })), /*#__PURE__*/React__namespace.createElement("div", {
-        "data-test": "DesignSystem-Message--Title"
-      }, title && /*#__PURE__*/React__namespace.createElement("div", {
-        className: "Message-title"
-      }, /*#__PURE__*/React__namespace.createElement(Heading, {
-        size: "s"
-      }, title)), /*#__PURE__*/React__namespace.createElement("div", {
-        "data-test": "DesignSystem-Message--Description",
-        className: "Message-description"
-      }, children)));
+        appearance: appearance,
+        className: IconClass
+      }), /*#__PURE__*/React__namespace.createElement("div", null, title && /*#__PURE__*/React__namespace.createElement(Heading, {
+        "data-test": "DesignSystem-Message--Title",
+        size: "s",
+        className: TitleClass
+      }, title), renderDescription(props.description, props.children), actions && /*#__PURE__*/React__namespace.createElement("div", {
+        "data-test": "DesignSystem-Message--actions",
+        className: "Message-actions"
+      }, actions)));
     };
     Message.displayName = 'Message';
     Message.defaultProps = {
-      appearance: 'default'
+      appearance: 'default',
+      description: ''
     };
 
     var Meta = function Meta(props) {
@@ -7010,7 +7075,7 @@
           if (this.props.open) {
             var zIndex = getUpdatedZIndex({
               element: this.element,
-              containerClassName: '.Modal-container--open',
+              containerClassName: '.Overlay-container--open',
               elementRef: this.modalRef
             });
             this.setState({
@@ -7064,7 +7129,7 @@
           'Modal-animation--open': animate,
           'Modal-animation--close': !animate
         }, className);
-        var ContainerClass = classNames__default['default']((_a = {}, _a['Row'] = true, _a['Modal-container'] = true, _a['Modal-container--open'] = open, _a));
+        var ContainerClass = classNames__default['default']((_a = {}, _a['Row'] = true, _a['Overlay-container'] = true, _a['Overlay-container--open'] = open, _a));
         var baseProps = extractBaseProps(this.props);
         var sizeMap = {
           small: {
@@ -7218,7 +7283,7 @@
           if (this.props.open) {
             var zIndex = getUpdatedZIndex({
               element: this.element,
-              containerClassName: '.FullscreenModal-container--open',
+              containerClassName: '.Overlay-container--open',
               elementRef: this.modalRef
             });
             this.setState({
@@ -7262,7 +7327,7 @@
           'FullscreenModal-animation--open': animate,
           'FullscreenModal-animation--close': !animate
         }, className);
-        var ContainerClass = classNames__default['default']((_a = {}, _a['FullscreenModal-container'] = true, _a['FullscreenModal-container--open'] = open, _a));
+        var ContainerClass = classNames__default['default']((_a = {}, _a['Overlay-container'] = true, _a['Overlay-container--open'] = open, _a));
         var baseProps = extractBaseProps(this.props);
         var sizeMap = {
           medium: {
@@ -7351,7 +7416,7 @@
           if (this.props.open) {
             var zIndex = getUpdatedZIndex({
               element: this.element,
-              containerClassName: '.Sidesheet-container--open',
+              containerClassName: '.Overlay-container--open',
               elementRef: this.sidesheetRef
             });
             this.setState({
@@ -7404,7 +7469,7 @@
           'Sidesheet-animation--open': animate,
           'Sidesheet-animation--close': !animate
         }, className);
-        var ContainerClass = classNames__default['default']((_a = {}, _a['Sidesheet-container'] = true, _a['Sidesheet-container--open'] = open, _a));
+        var ContainerClass = classNames__default['default']((_a = {}, _a['Overlay-container'] = true, _a['Overlay-container--open'] = open, _a));
         var baseProps = extractBaseProps(this.props);
 
         var headerObj = __assign(__assign({}, headerOptions), {
@@ -12956,7 +13021,7 @@
     };
     FileList.displayName = 'FileList';
 
-    var version = "2.0.0-5";
+    var version = "2.0.0-6";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
@@ -12967,6 +13032,7 @@
     exports.Calendar = Calendar;
     exports.Caption = Caption;
     exports.Card = Card;
+    exports.CardSubdued = CardSubdued;
     exports.ChatMessage = ChatMessage;
     exports.Checkbox = Checkbox;
     exports.Chip = Chip;

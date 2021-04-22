@@ -4,6 +4,7 @@ export interface LabelProps extends BaseProps, BaseHtmlProps<HTMLLabelElement> {
     children: React.ReactNode;
     disabled?: boolean;
     required?: boolean;
+    optional?: boolean;
     withInput?: boolean;
 }
 export declare const Label: {

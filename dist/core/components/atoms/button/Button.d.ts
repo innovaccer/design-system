@@ -14,6 +14,7 @@ export interface ButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement>
     loading?: boolean;
     icon?: string;
     iconAlign?: Alignment;
+    largeIcon?: boolean;
     children?: React.ReactText;
     tabIndex?: number;
     autoFocus?: boolean;

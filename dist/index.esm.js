@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1618414773497 
+   * Generated on: 1619085481895 
    *      Package: @innovaccer/design-system
-   *      Version: v2.0.0-5
+   *      Version: v2.0.0-6
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -294,18 +294,21 @@ function _arrayWithHoles$8(arr) {
 }
 
 function _iterableToArray$c(iter) {
-  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
 }
 
 function _iterableToArrayLimit$7(arr, i) {
-  if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+  var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]);
+
+  if (_i == null) return;
   var _arr = [];
   var _n = true;
   var _d = false;
-  var _e = undefined;
+
+  var _s, _e;
 
   try {
-    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
       _arr.push(_s.value);
 
       if (i && _arr.length === i) break;
@@ -350,9 +353,9 @@ function _nonIterableRest$8() {
 }
 
 function _createForOfIteratorHelper(o, allowArrayLike) {
-  var it;
+  var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
 
-  if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+  if (!it) {
     if (Array.isArray(o) || (it = _unsupportedIterableToArray$2(o)) || allowArrayLike && o && typeof o.length === "number") {
       if (it) o = it;
       var i = 0;
@@ -385,7 +388,7 @@ function _createForOfIteratorHelper(o, allowArrayLike) {
       err;
   return {
     s: function () {
-      it = o[Symbol.iterator]();
+      it = it.call(o);
     },
     n: function () {
       var step = it.next();
@@ -667,7 +670,7 @@ function createCommonjsModule(fn, module) {
 
 var classnames = createCommonjsModule(function (module) {
 /*!
-  Copyright (c) 2017 Jed Watson.
+  Copyright (c) 2018 Jed Watson.
   Licensed under the MIT License (MIT), see
   http://jedwatson.github.io/classnames
 */
@@ -677,7 +680,7 @@ var classnames = createCommonjsModule(function (module) {
 
 	var hasOwn = {}.hasOwnProperty;
 
-	function classNames () {
+	function classNames() {
 		var classes = [];
 
 		for (var i = 0; i < arguments.length; i++) {
@@ -688,16 +691,22 @@ var classnames = createCommonjsModule(function (module) {
 
 			if (argType === 'string' || argType === 'number') {
 				classes.push(arg);
-			} else if (Array.isArray(arg) && arg.length) {
-				var inner = classNames.apply(null, arg);
-				if (inner) {
-					classes.push(inner);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
 				}
 			} else if (argType === 'object') {
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
+				if (arg.toString === Object.prototype.toString) {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
 					}
+				} else {
+					classes.push(arg.toString());
 				}
 			}
 		}
@@ -2813,13 +2822,13 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
         this.updateSelectedOptions(this.props.selected, isSingleSelect, true);
       }
 
+      if (prevState.searchTerm !== this.state.searchTerm) {
+        this.debounceSearch();
+      }
+
       if (prevProps.open !== this.props.open || prevState.open !== this.state.open) {
         if (_isOpenControlled(this.props.open) && this.props.open === this.state.open) return;
         this.updateOnPopperToggle();
-      }
-
-      if (prevState.searchTerm !== this.state.searchTerm) {
-        this.debounceSearch();
       }
     }
   }, {
@@ -3029,6 +3038,7 @@ var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
       iconAlign = _props$iconAlign === void 0 ? 'left' : _props$iconAlign,
       _props$tabIndex = props.tabIndex,
       tabIndex = _props$tabIndex === void 0 ? 0 : _props$tabIndex,
+      largeIcon = props.largeIcon,
       type = props.type,
       children = props.children,
       icon = props.icon,
@@ -3037,12 +3047,13 @@ var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
       loading = props.loading,
       disabled = props.disabled,
       className = props.className,
-      rest = _objectWithoutProperties$b(props, ["size", "appearance", "iconAlign", "tabIndex", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className"]);
+      rest = _objectWithoutProperties$b(props, ["size", "appearance", "iconAlign", "tabIndex", "largeIcon", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className"]);
 
   var buttonClass = classnames((_classNames = {}, _defineProperty$x(_classNames, 'Button', true), _defineProperty$x(_classNames, 'Button--expanded', expanded), _defineProperty$x(_classNames, "Button--".concat(size), size), _defineProperty$x(_classNames, "Button--".concat(size, "Square"), !children), _defineProperty$x(_classNames, "Button--".concat(appearance), appearance), _defineProperty$x(_classNames, 'Button--selected', selected && (appearance === 'basic' || appearance === 'transparent')), _defineProperty$x(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _defineProperty$x(_classNames, "".concat(className), className), _classNames));
   var iconClass = classnames((_classNames2 = {}, _defineProperty$x(_classNames2, 'Button-icon', true), _defineProperty$x(_classNames2, "Button-icon--".concat(iconAlign), children && iconAlign), _classNames2));
   var spinnerClass = classnames((_classNames3 = {}, _defineProperty$x(_classNames3, 'Button-spinner', true), _defineProperty$x(_classNames3, "Button-spinner--".concat(iconAlign), children && iconAlign), _classNames3));
   return /*#__PURE__*/React.createElement("button", _extends$q({
+    "data-test": "DesignSystem-Button",
     ref: ref,
     type: type,
     className: buttonClass,
@@ -3056,9 +3067,10 @@ var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
   })), icon && !loading && /*#__PURE__*/React.createElement("div", {
     className: iconClass
   }, /*#__PURE__*/React.createElement(Icon, {
+    "data-test": "DesignSystem-Button--Icon",
     name: icon,
     appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
-    size: sizeMapping$1[size]
+    size: largeIcon && !children ? sizeMapping$1[size] + 4 : sizeMapping$1[size]
   })), children);
 });
 Button.displayName = 'Button';
@@ -4092,7 +4104,7 @@ var Card = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames;
 
   var _props$shadow = props.shadow,
-      shadow = _props$shadow === void 0 ? 'medium' : _props$shadow,
+      shadow = _props$shadow === void 0 ? 'light' : _props$shadow,
       children = props.children,
       className = props.className,
       rest = _objectWithoutProperties$b(props, ["shadow", "children", "className"]);
@@ -4107,6 +4119,24 @@ var Card = /*#__PURE__*/React.forwardRef(function (props, ref) {
   }), children);
 });
 Card.displayName = 'Card';
+
+var CardSubdued = /*#__PURE__*/React.forwardRef(function (props, ref) {
+  var border = props.border,
+      children = props.children,
+      className = props.className,
+      rest = _objectWithoutProperties$b(props, ["border", "children", "className"]);
+
+  var classes = classnames(_defineProperty$x({
+    CardSubdued: true
+  }, "CardSubdued--".concat(border), border), className);
+  return /*#__PURE__*/React.createElement("div", _extends$q({
+    "data-test": "DesignSystem-CardSubdued",
+    ref: ref
+  }, rest, {
+    className: classes
+  }), children);
+});
+CardSubdued.displayName = 'CardSubdued';
 
 var GenericChip = function GenericChip(props) {
   var label = props.label,
@@ -33302,31 +33332,53 @@ var Label = function Label(props) {
   var _classNames;
 
   var required = props.required,
+      optional = props.optional,
       withInput = props.withInput,
       disabled = props.disabled,
       children = props.children,
       className = props.className,
-      rest = _objectWithoutProperties$b(props, ["required", "withInput", "disabled", "children", "className"]);
+      rest = _objectWithoutProperties$b(props, ["required", "optional", "withInput", "disabled", "children", "className"]);
 
   var baseProps = extractBaseProps(props);
   var LabelClass = classnames((_classNames = {
     Label: true
-  }, _defineProperty$x(_classNames, 'Label--withInput', withInput), _defineProperty$x(_classNames, "".concat(className), className), _classNames));
+  }, _defineProperty$x(_classNames, 'Label--withInput', withInput), _defineProperty$x(_classNames, 'Label--optional', optional), _classNames), className);
   var classes = classnames({
     'Label-label': true,
     'Label--disabled': disabled
   });
+
+  var renderInfo = function renderInfo() {
+    var isRequired = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+    var isOptional = arguments.length > 1 ? arguments[1] : undefined;
+
+    if (isRequired) {
+      return /*#__PURE__*/React.createElement("span", {
+        className: "Label-requiredIndicator",
+        "data-test": "DesignSystem-Label--RequiredIndicator"
+      });
+    }
+
+    if (isOptional) {
+      return /*#__PURE__*/React.createElement(Text$1, {
+        "data-test": "DesignSystem-Label--OptionalLabel",
+        appearance: "subtle",
+        className: "ml-3"
+      }, "(optional)");
+    }
+
+    return null;
+  };
+
   return /*#__PURE__*/React.createElement("div", _extends$q({
     "data-test": "DesignSystem-Label"
   }, baseProps, {
     className: LabelClass
   }), /*#__PURE__*/React.createElement(GenericText, _extends$q({
+    "data-test": "DesignSystem-Label--Label",
     className: classes,
     componentType: "label"
-  }, rest), children), required && /*#__PURE__*/React.createElement("span", {
-    className: "Label-requiredIndicator",
-    "data-test": "DesignSystem-Label--RequiredIndicator"
-  }));
+  }, rest), children), renderInfo(required, optional));
 };
 Label.displayName = 'Label';
 
@@ -33552,39 +33604,58 @@ var IconMapping$1 = {
   alert: 'error'
 };
 var Message = function Message(props) {
-  var _classNames, _classNames2;
+  var _classNames, _classNames2, _classNames3, _classNames4;
 
   var appearance = props.appearance,
+      actions = props.actions,
       title = props.title,
-      children = props.children,
       className = props.className;
   var baseProps = extractBaseProps(props);
   var MessageClass = classnames((_classNames = {}, _defineProperty$x(_classNames, 'Message', true), _defineProperty$x(_classNames, "Message--".concat(appearance), appearance), _classNames), className);
-  var MessageIcon = classnames((_classNames2 = {}, _defineProperty$x(_classNames2, 'Message-icon', true), _defineProperty$x(_classNames2, "Message-icon--".concat(appearance), appearance), _defineProperty$x(_classNames2, 'Message-icon--withTitle', title), _classNames2));
+  var IconClass = classnames((_classNames2 = {}, _defineProperty$x(_classNames2, 'Message-icon', true), _defineProperty$x(_classNames2, "Message-icon--".concat(appearance), appearance), _defineProperty$x(_classNames2, 'Message-icon--withTitle', title), _classNames2));
+  var TitleClass = classnames((_classNames3 = {}, _defineProperty$x(_classNames3, 'Message-heading', true), _defineProperty$x(_classNames3, "Message-heading--".concat(appearance), appearance), _classNames3));
+  var DescriptionClass = classnames((_classNames4 = {}, _defineProperty$x(_classNames4, 'Message-text', true), _defineProperty$x(_classNames4, "Message-text--".concat(appearance), appearance), _classNames4));
+
+  var renderDescription = function renderDescription(description, children) {
+    if (description || typeof children === 'string') {
+      return /*#__PURE__*/React.createElement(Text$1, {
+        "data-test": "DesignSystem-Message--Description",
+        className: DescriptionClass
+      }, description || (typeof children === 'string' ? children : ''));
+    }
+
+    if (children) {
+      return /*#__PURE__*/React.createElement("div", {
+        "data-test": "DesignSystem-Message--Description",
+        className: "Message-description"
+      }, children);
+    }
+
+    return null;
+  };
+
   return /*#__PURE__*/React.createElement("div", _extends$q({
     "data-test": "DesignSystem-Message"
   }, baseProps, {
     className: MessageClass
-  }), appearance !== 'default' && /*#__PURE__*/React.createElement("div", {
-    className: MessageIcon,
-    "data-test": "DesignSystem-Message--Icon"
-  }, /*#__PURE__*/React.createElement(Icon, {
+  }), appearance !== 'default' && /*#__PURE__*/React.createElement(Icon, {
+    "data-test": "DesignSystem-Message--Icon",
     name: IconMapping$1[appearance],
-    appearance: appearance
-  })), /*#__PURE__*/React.createElement("div", {
-    "data-test": "DesignSystem-Message--Title"
-  }, title && /*#__PURE__*/React.createElement("div", {
-    className: "Message-title"
-  }, /*#__PURE__*/React.createElement(Heading, {
-    size: "s"
-  }, title)), /*#__PURE__*/React.createElement("div", {
-    "data-test": "DesignSystem-Message--Description",
-    className: "Message-description"
-  }, children)));
+    appearance: appearance,
+    className: IconClass
+  }), /*#__PURE__*/React.createElement("div", null, title && /*#__PURE__*/React.createElement(Heading, {
+    "data-test": "DesignSystem-Message--Title",
+    size: "s",
+    className: TitleClass
+  }, title), renderDescription(props.description, props.children), actions && /*#__PURE__*/React.createElement("div", {
+    "data-test": "DesignSystem-Message--actions",
+    className: "Message-actions"
+  }, actions)));
 };
 Message.displayName = 'Message';
 Message.defaultProps = {
-  appearance: 'default'
+  appearance: 'default',
+  description: ''
 };
 
 var Meta = function Meta(props) {
@@ -39905,7 +39976,7 @@ var Modal = /*#__PURE__*/function (_React$Component) {
         if (this.props.open) {
           var zIndex = getUpdatedZIndex({
             element: this.element,
-            containerClassName: '.Modal-container--open',
+            containerClassName: '.Overlay-container--open',
             elementRef: this.modalRef
           });
           this.setState({
@@ -39961,7 +40032,7 @@ var Modal = /*#__PURE__*/function (_React$Component) {
         'Modal-animation--open': animate,
         'Modal-animation--close': !animate
       }, className);
-      var ContainerClass = classnames((_classNames = {}, _defineProperty$x(_classNames, 'Row', true), _defineProperty$x(_classNames, 'Modal-container', true), _defineProperty$x(_classNames, 'Modal-container--open', open), _classNames));
+      var ContainerClass = classnames((_classNames = {}, _defineProperty$x(_classNames, 'Row', true), _defineProperty$x(_classNames, 'Overlay-container', true), _defineProperty$x(_classNames, 'Overlay-container--open', open), _classNames));
       var baseProps = extractBaseProps(this.props);
       var sizeMap = {
         small: {
@@ -40126,7 +40197,7 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
         if (this.props.open) {
           var zIndex = getUpdatedZIndex({
             element: this.element,
-            containerClassName: '.FullscreenModal-container--open',
+            containerClassName: '.Overlay-container--open',
             elementRef: this.modalRef
           });
           this.setState({
@@ -40171,7 +40242,7 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
         'FullscreenModal-animation--open': animate,
         'FullscreenModal-animation--close': !animate
       }, className);
-      var ContainerClass = classnames((_classNames = {}, _defineProperty$x(_classNames, 'FullscreenModal-container', true), _defineProperty$x(_classNames, 'FullscreenModal-container--open', open), _classNames));
+      var ContainerClass = classnames((_classNames = {}, _defineProperty$x(_classNames, 'Overlay-container', true), _defineProperty$x(_classNames, 'Overlay-container--open', open), _classNames));
       var baseProps = extractBaseProps(this.props);
       var sizeMap = {
         medium: {
@@ -40273,7 +40344,7 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
         if (this.props.open) {
           var zIndex = getUpdatedZIndex({
             element: this.element,
-            containerClassName: '.Sidesheet-container--open',
+            containerClassName: '.Overlay-container--open',
             elementRef: this.sidesheetRef
           });
           this.setState({
@@ -40328,7 +40399,7 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
         'Sidesheet-animation--open': animate,
         'Sidesheet-animation--close': !animate
       }, className);
-      var ContainerClass = classnames((_classNames = {}, _defineProperty$x(_classNames, 'Sidesheet-container', true), _defineProperty$x(_classNames, 'Sidesheet-container--open', open), _classNames));
+      var ContainerClass = classnames((_classNames = {}, _defineProperty$x(_classNames, 'Overlay-container', true), _defineProperty$x(_classNames, 'Overlay-container--open', open), _classNames));
       var baseProps = extractBaseProps(this.props);
 
       var headerObj = _objectSpread2(_objectSpread2({}, headerOptions), {}, {
@@ -46099,6 +46170,6 @@ FileList.defaultProps = {
 };
 FileList.displayName = 'FileList';
 
-var version = "2.0.0-5";
+var version = "2.0.0-6";
 
-export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, ChatMessage, Checkbox, Chip, ChipGroup, Collapsible, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, Dropzone, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text$1 as Text, Textarea, TimePicker, Toast, Tooltip, index$2 as Utils, VerticalMenu, version };
+export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, CardSubdued, ChatMessage, Checkbox, Chip, ChipGroup, Collapsible, Column, DatePicker, DateRangePicker, Dialog, DonutChart, Dropdown, Dropzone, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, TabsWrapper, Text$1 as Text, Textarea, TimePicker, Toast, Tooltip, index$2 as Utils, VerticalMenu, version };

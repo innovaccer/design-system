@@ -7,6 +7,7 @@ export { BreadcrumbsProps } from "./components/atoms/breadcrumbs";
 export { ButtonProps } from "./components/atoms/button";
 export { CalendarProps } from "./components/organisms/calendar";
 export { CardProps } from "./components/atoms/card";
+export { CardSubduedProps } from "./components/atoms/cardSubdued";
 export { ChipProps } from "./components/atoms/chip";
 export { ChipGroupProps } from "./components/atoms/chipGroup";
 export { CheckboxProps } from "./components/atoms/checkbox";

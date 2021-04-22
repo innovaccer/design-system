@@ -1,5 +1,6 @@
 /// <reference types="react" />
 export declare type SingleOrArray<T> = T | T[];
+export declare type MakeRequired<T> = Exclude<T, null | undefined>;
 export declare type MakeOptional<T extends {}, K extends keyof any> = Omit<T, K> & {
     [OK in keyof T & K]?: T[OK];
 };
