@@ -34,7 +34,7 @@ exports[`TS renders children 1`] = `
     tabindex="0"
   />
   <div
-    class="Card Card--shadow-medium"
+    class="Card Card--shadow-light"
   >
     <span
       class="Text Text--default Text--regular"

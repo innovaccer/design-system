@@ -3,7 +3,7 @@ import Card, { Shadow } from '../../Card';
 
 // CSF format story
 export const shadow = () => {
-  const shadows: Shadow[] = ['none', 'light', 'medium', 'dark'];
+  const shadows: Shadow[] = ['none', 'light'];
 
   return (
     <div className="d-flex">

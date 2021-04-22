@@ -6,7 +6,7 @@ import Card from '../Card';
 export const all = () => {
   const shadow = select(
     'shadow',
-    ['none', 'light', 'medium', 'dark'],
+    ['none', 'light'],
     undefined
   );
 
@@ -14,13 +14,6 @@ export const all = () => {
     switch (shadowType) {
       case 'light':
         return <span>Light Shadow</span>;
-
-      case 'medium':
-        return <span>Medium Shadow</span>;
-
-      case 'dark':
-        return <span>Dark Shadow</span>;
-
       default:
         return <span>No Shadow</span>;
     }

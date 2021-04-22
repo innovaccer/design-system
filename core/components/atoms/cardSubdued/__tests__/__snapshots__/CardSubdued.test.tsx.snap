@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardSubdued component 
+  border: "bottom"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="CardSubdued CardSubdued--bottom"
+      data-test="DesignSystem-CardSubdued"
+    >
+      <span>
+        Hello
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`CardSubdued component 
+  border: "left"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="CardSubdued CardSubdued--left"
+      data-test="DesignSystem-CardSubdued"
+    >
+      <span>
+        Hello
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`CardSubdued component 
+  border: "right"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="CardSubdued CardSubdued--right"
+      data-test="DesignSystem-CardSubdued"
+    >
+      <span>
+        Hello
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`CardSubdued component 
+  border: "top"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="CardSubdued CardSubdued--top"
+      data-test="DesignSystem-CardSubdued"
+    >
+      <span>
+        Hello
+      </span>
+    </div>
+  </div>
+</body>
+`;

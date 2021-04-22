@@ -8,13 +8,15 @@ export interface CardProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
   /**
    * Shadow of the `Card`
    * @default 'medium'
+   *
+   * **Shadow `medium` and `dark` will be soon deprecated.**
    */
   shadow?: Shadow;
 }
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>((props, ref) => {
   const {
-    shadow = 'medium',
+    shadow = 'light',
     children,
     className,
     ...rest

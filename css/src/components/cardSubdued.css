@@ -1,0 +1,22 @@
+
+.CardSubdued {
+  border-radius: var(--spacing);
+  background: #FCFAFA;
+}
+
+.CardSubdued--top {
+  border-top: var(--spacing-xs) solid var(--secondary-light);
+}
+
+.CardSubdued--left {
+  border-left: var(--spacing-xs) solid var(--secondary-light);;
+}
+
+.CardSubdued--right {
+  border-right: var(--spacing-xs) solid var(--secondary-light);;
+}
+
+.CardSubdued--bottom {
+  border-bottom: var(--spacing-xs) solid var(--secondary-light);;
+}
+
