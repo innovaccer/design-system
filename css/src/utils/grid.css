@@ -147,6 +147,7 @@
   }
   .Col--s-3 {
     flex: 0 0 auto;
+    width: calc(100% / var(--grid-columns) * 3);
   }
   .Col--s-4 {
     flex: 0 0 auto;
@@ -203,6 +204,7 @@
   }
   .Col--m-3 {
     flex: 0 0 auto;
+    width: calc(100% / var(--grid-columns) * 3);
   }
   .Col--m-4 {
     flex: 0 0 auto;
@@ -259,6 +261,7 @@
   }
   .Col--l-3 {
     flex: 0 0 auto;
+    width: calc(100% / var(--grid-columns) * 3);
   }
   .Col--l-4 {
     flex: 0 0 auto;
@@ -315,6 +318,7 @@
   }
   .Col--xl-3 {
     flex: 0 0 auto;
+    width: calc(100% / var(--grid-columns) * 3);
   }
   .Col--xl-4 {
     flex: 0 0 auto;
