@@ -8,6 +8,7 @@ export { Breadcrumbs } from './components/atoms/breadcrumbs';
 export { Button } from './components/atoms/button';
 export { Calendar } from './components/organisms/calendar';
 export { Card } from './components/atoms/card';
+export { CardSubdued } from './components/atoms/cardSubdued';
 export { Chip } from './components/atoms/chip';
 export { ChipGroup } from './components/atoms/chipGroup';
 export { Checkbox } from './components/atoms/checkbox';
