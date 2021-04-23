@@ -128,9 +128,14 @@ body {
   align-items: center;
 }
 
-.Label-label {
+.Label-text {
   line-height: var(--font-height-s);
   font-weight: var(--font-weight-medium);
+}
+
+.Label-optionalText {
+  line-height: var(--font-height-s);
+  margin-left: var(--spacing-s);
 }
 
 .Label--disabled {

@@ -52,7 +52,7 @@ describe('Label component', () => {
 
   it('renders label element', () => {
     const { getByTestId } = render(<Label>Label</Label>);
-    expect(getByTestId('DesignSystem-Label--Label').tagName).toMatch('LABEL');
+    expect(getByTestId('DesignSystem-Label--Text').tagName).toMatch('LABEL');
   });
 
 });
@@ -94,6 +94,6 @@ describe('Label component with prop: optional', () => {
 
   it('renders optional label', () => {
     const { getByTestId } = render(<Label optional={true}>Label</Label>);
-    expect(getByTestId('DesignSystem-Label--OptionalLabel')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Label--OptionalText')).toBeInTheDocument();
   });
 });

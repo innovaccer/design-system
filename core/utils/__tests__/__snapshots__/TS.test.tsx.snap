@@ -876,8 +876,8 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-Label"
   >
     <label
-      class="Label-label"
-      data-test="DesignSystem-Label--Label"
+      class="Label-text"
+      data-test="DesignSystem-Label--Text"
     >
       Hello World!
     </label>

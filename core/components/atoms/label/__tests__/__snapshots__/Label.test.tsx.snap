@@ -8,9 +8,9 @@ exports[`Label component
   data-test="DesignSystem-Label"
 >
   <GenericText
-    className="Label-label"
+    className="Label-text"
     componentType="label"
-    data-test="DesignSystem-Label--Label"
+    data-test="DesignSystem-Label--Text"
   >
     Label
   </GenericText>
@@ -25,9 +25,9 @@ exports[`Label component
   data-test="DesignSystem-Label"
 >
   <GenericText
-    className="Label-label"
+    className="Label-text"
     componentType="label"
-    data-test="DesignSystem-Label--Label"
+    data-test="DesignSystem-Label--Text"
   >
     Label
   </GenericText>
@@ -42,9 +42,9 @@ exports[`Label component
   data-test="DesignSystem-Label"
 >
   <GenericText
-    className="Label-label"
+    className="Label-text"
     componentType="label"
-    data-test="DesignSystem-Label--Label"
+    data-test="DesignSystem-Label--Text"
   >
     Label
   </GenericText>
@@ -59,9 +59,9 @@ exports[`Label component
   data-test="DesignSystem-Label"
 >
   <GenericText
-    className="Label-label"
+    className="Label-text"
     componentType="label"
-    data-test="DesignSystem-Label--Label"
+    data-test="DesignSystem-Label--Text"
   >
     Label
   </GenericText>
