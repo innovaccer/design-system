@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardFooter component 
+  withSeperator: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Card-footer"
+      data-test="DesignSystem-CardFooter"
+    >
+      <div
+        data-test="DesignSystem-CardFooter--actions"
+      >
+        <button
+          class="Button Button--regular Button--basic Button--iconAlign-left"
+          data-test="DesignSystem-Button"
+          tabindex="0"
+        >
+          Cancel
+        </button>
+        <button
+          class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
+          data-test="DesignSystem-Button"
+          tabindex="0"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`CardFooter component 
+  withSeperator: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Card-footer Card-footer--withSeperator"
+      data-test="DesignSystem-CardFooter"
+    >
+      <div
+        data-test="DesignSystem-CardFooter--actions"
+      >
+        <button
+          class="Button Button--regular Button--basic Button--iconAlign-left"
+          data-test="DesignSystem-Button"
+          tabindex="0"
+        >
+          Cancel
+        </button>
+        <button
+          class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
+          data-test="DesignSystem-Button"
+          tabindex="0"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;

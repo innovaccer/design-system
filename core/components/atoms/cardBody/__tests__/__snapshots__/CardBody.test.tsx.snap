@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardBody component 
+  
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Card-body"
+      data-test="DesignSystem-CardBody"
+    >
+      <span>
+        Card Body
+      </span>
+    </div>
+  </div>
+</body>
+`;

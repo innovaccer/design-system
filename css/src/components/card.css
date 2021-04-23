@@ -3,11 +3,38 @@
 .Card {
   border-radius: var(--spacing);
   border: var(--spacing-xs) solid var(--secondary-light);
+  position: relative;
+  overflow: hidden;
 }
 
+.Card--shadow-default,
 .Card--shadow-light,
 .Card--shadow-medium,
 .Card--shadow-dark {
   border: none;
   box-shadow: var(--shadow-s);
 }
+
+.Card-header {
+  padding: var(--spacing-2) var(--spacing-2) var(--spacing-l) var(--spacing-2);
+}
+
+.Card-body {
+  padding-left: var(--spacing-2);
+  padding-right: var(--spacing-2);
+}
+
+.Card-footer {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: var(--spacing-2);
+}
+
+.Card-footer--withSeperator {
+  border-top: var(--spacing-xs) solid var(--secondary-light);
+}
+
