@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardHeader component 
+  
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Card-header"
+      data-test="DesignSystem-CardHeader"
+    >
+      <span
+        class="Text Text--default Text--strong Text--large"
+        data-test="DesignSystem-Text"
+      >
+        Card Heading
+      </span>
+    </div>
+  </div>
+</body>
+`;
