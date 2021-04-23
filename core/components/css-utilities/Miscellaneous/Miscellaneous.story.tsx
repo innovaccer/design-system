@@ -48,10 +48,10 @@ export default {
   title: 'Others/Utilities/Miscellaneous',
   component: miscellaneous,
   parameters: {
+    viewMode: 'story',
     docs: {
-      docPage: {
-        noProps: true
-      }
+      page: null,
+      docPage: null
     }
   }
 };

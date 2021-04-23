@@ -83,10 +83,10 @@ export default {
   title: 'Others/Utilities/Align',
   component: align,
   parameters: {
+    viewMode: 'story',
     docs: {
-      docPage: {
-        noProps: true
-      }
+      docPage: null,
+      page: null
     }
   }
 };

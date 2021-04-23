@@ -1,5 +1,8 @@
 import * as React from 'react';
 import { Schema } from '../../organisms/grid';
+import { GridCell, Button } from '@/index';
+
+const copyCode = (val: string) => navigator.clipboard.writeText(val);
 
 export const spaceSchema: Schema = [
   {
@@ -8,14 +11,28 @@ export const spaceSchema: Schema = [
     width: '50%',
     resizable: true,
     sorting: false,
+    cellRenderer: (props: any) => {
+      const { data: { token = '' } = {} } = props;
+      return (
+        <>
+          <GridCell {...props} />
+          <Button
+            title="Copy token to clipboard"
+            appearance="transparent"
+            icon="content_copy"
+            onClick={copyCode.bind(null, token)}
+          />
+        </>
+      );
+    }
   },
   {
     name: 'value',
     displayName: 'Value',
     width: '50%',
     resizable: true,
-    sorting: false,
-  },
+    sorting: false
+  }
 ];
 
 export const getSchema = (property: string, text: string, classnames?: string, css?: object) => {
@@ -26,13 +43,27 @@ export const getSchema = (property: string, text: string, classnames?: string, c
       width: '33.3%',
       resizable: true,
       sorting: false,
+      cellRenderer: (props: any) => {
+        const { data: { token = '' } = {} } = props;
+        return (
+          <>
+            <GridCell {...props} />
+            <Button
+              title="Copy token to clipboard"
+              appearance="transparent"
+              icon="content_copy"
+              onClick={copyCode.bind(null, token)}
+            />
+          </>
+        );
+      }
     },
     {
       name: 'value',
       displayName: 'Value',
       width: '33.3%',
       resizable: true,
-      sorting: false,
+      sorting: false
     },
     {
       name: 'preview',
@@ -41,18 +72,18 @@ export const getSchema = (property: string, text: string, classnames?: string, c
       resizable: true,
       sorting: false,
       cellRenderer: (props: any) => {
-        const styleObj: object = Object.assign({
-          [`${property}`]: `${`var(${props.data.token})`}`
-        }, css);
+        const styleObj: object = Object.assign(
+          {
+            [`${property}`]: `${`var(${props.data.token})`}`
+          },
+          css
+        );
         return (
-          <div
-            style={styleObj}
-            className={`${classnames} ${props.data.setBgColor === undefined ? '' : 'setBgColor'}`}
-          >
+          <div style={styleObj} className={`${classnames} ${props.data.setBgColor === undefined ? '' : 'setBgColor'}`}>
             {text}
           </div>
         );
-      },
-    },
+      }
+    }
   ];
 };

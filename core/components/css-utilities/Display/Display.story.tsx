@@ -99,10 +99,10 @@ export default {
   title: 'Others/Utilities/Display',
   component: display,
   parameters: {
+    viewMode: 'story',
     docs: {
-      docPage: {
-        noProps: true
-      }
+      page: null,
+      docPage: null
     }
   }
 };

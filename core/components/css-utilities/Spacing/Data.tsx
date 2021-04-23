@@ -1,4 +1,4 @@
-export const classData = [
+const classMap = [
   {
     marginClasses: 'm-0',
     paddingClasses: 'p-0'
@@ -450,20 +450,49 @@ export const classData = [
 ];
 
 export const sizeData = [
-  { value: '0', properties: '0' },
-  { value: '1', properties: 'var(--spacing-xs)' },
-  { value: '2', properties: 'var(--spacing-s)' },
-  { value: '3', properties: 'var(--spacing-m)' },
-  { value: '4', properties: 'var(--spacing)' },
-  { value: '5', properties: 'var(--spacing-l)' },
-  { value: '6', properties: 'var(--spacing-2)' },
-  { value: '7', properties: 'var(--spacing-xl)' },
-  { value: '8', properties: 'var(--spacing-3)' },
-  { value: '9', properties: 'var(--spacing-4)' },
-  { value: '10', properties: 'var(--spacing-5)' },
-  { value: '11', properties: 'var(--spacing-6)' },
-  { value: '12', properties: 'var(--spacing-7)' },
-  { value: '13', properties: 'var(--spacing-8)' },
-  { value: '14', properties: 'var(--spacing-9)' },
-  { value: 'auto', properties: 'auto;' }
+  { pixel: '0', value: '0', properties: '0' },
+  { pixel: '1px', value: '1', properties: 'var(--spacing-xs)' },
+  { pixel: '2px', value: '2', properties: 'var(--spacing-s)' },
+  { pixel: '4px', value: '3', properties: 'var(--spacing-m)' },
+  { pixel: '8px', value: '4', properties: 'var(--spacing)' },
+  { pixel: '12px', value: '5', properties: 'var(--spacing-l)' },
+  { pixel: '16px', value: '6', properties: 'var(--spacing-2)' },
+  { pixel: '24px', value: '7', properties: 'var(--spacing-xl)' },
+  { pixel: '32px', value: '8', properties: 'var(--spacing-3)' },
+  { pixel: '48px', value: '9', properties: 'var(--spacing-4)' },
+  { pixel: '64px', value: '10', properties: 'var(--spacing-5)' },
+  { pixel: '96px', value: '11', properties: 'var(--spacing-6)' },
+  { pixel: '128px', value: '12', properties: 'var(--spacing-7)' },
+  { pixel: '176px', value: '13', properties: 'var(--spacing-8)' },
+  { pixel: '256px', value: '14', properties: 'var(--spacing-9)' },
+  { pixel: '', value: 'auto', properties: 'auto' }
 ];
+
+const sizeMap = {
+  0: '0',
+  1: '1px',
+  2: '2px',
+  3: '4px',
+  4: '8px',
+  5: '12px',
+  6: '16px',
+  7: '24px',
+  8: '32px',
+  9: '48px',
+  10: '64px',
+  11: '96px',
+  12: '128px',
+  13: '176px',
+  14: '256px',
+  auto: ''
+};
+
+export const classData = classMap.map(item => {
+  const  { paddingClasses = '' } = item;
+  const key = paddingClasses.split('-')[1] as keyof typeof sizeMap;
+
+  return {
+    ...item,
+    pixel: sizeMap[key]
+  };
+});

@@ -103,10 +103,10 @@ export default {
   title: 'Others/Utilities/Background',
   component: background,
   parameters: {
+    viewMode: 'story',
     docs: {
-      docPage: {
-        noProps: true
-      }
+      page: null,
+      docPage: null
     }
   }
 };

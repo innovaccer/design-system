@@ -74,12 +74,7 @@ export const sizing = () => {
       with our width and height utilities. </Text>< br />
       &nbsp;
       <Heading size="s">WIDTH</Heading>
-      <div
-        style={{
-          height: '350px',
-        }}
-        className="mt-4 mb-8"
-      >
+      <div className="mt-4 mb-8">
         <Card className="h-100">
           <Table
             data={data}
@@ -108,12 +103,7 @@ export const sizing = () => {
       </div>
       &nbsp;
       <Heading size="m">HEIGHT</Heading>
-      <div
-        style={{
-          height: '350px',
-        }}
-        className="mt-4 mb-8"
-      >
+      <div className="mt-4 mb-8">
         <Card className="h-100">
           <Table
             data={Data}
@@ -152,10 +142,10 @@ export default {
   title: 'Others/Utilities/Sizing',
   component: sizing,
   parameters: {
+    viewMode: 'story',
     docs: {
-      docPage: {
-        noProps: true
-      }
+      page: null,
+      docPage: null
     }
   }
 };
