@@ -45,10 +45,10 @@ export const colors = () => {
 export default {
   title: 'Others/Design Tokens/Colors',
   parameters: {
+    viewMode: 'story',
     docs: {
-      docPage: {
-        noProps: true
-      }
+      page: null,
+      docPage: null
     }
   }
 };

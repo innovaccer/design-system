@@ -66,10 +66,10 @@ export default {
   title: 'Others/Utilities/Overflow',
   component: overflow,
   parameters: {
+    viewMode: 'story',
     docs: {
-      docPage: {
-        noProps: true
-      }
+      page: null,
+      docPage: null
     }
   }
 };

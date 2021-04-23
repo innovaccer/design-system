@@ -44,10 +44,10 @@ export const miscellaneous = () => {
 export default {
   title: 'Others/Design Tokens/Miscellaneous',
   parameters: {
+    viewMode: 'story',
     docs: {
-      docPage: {
-        noProps: true
-      }
+      page: null,
+      docPage: null
     }
   }
 };

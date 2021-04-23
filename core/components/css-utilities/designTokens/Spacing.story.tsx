@@ -22,10 +22,10 @@ export const spacing = () => {
 export default {
   title: 'Others/Design Tokens/Spacing',
   parameters: {
+    viewMode: 'story',
     docs: {
-      docPage: {
-        noProps: true
-      }
+      page: null,
+      docPage: null
     }
   }
 };
