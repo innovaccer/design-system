@@ -82,34 +82,28 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
 
   const classes = classNames({
     ['Textarea']: true,
+    ['Textarea--resize']: resize,
+    ['Textarea--error']: error
   }, className);
 
-  const TextareaClass = classNames({
-    ['Textarea-textarea']: true,
-    ['Textarea-textarea--resize']: resize,
-    ['Textarea-textarea--error']: error
-  });
-
   return (
-    <div className={classes}>
-      <textarea
-        data-test="DesignSystem-Textarea"
-        {...baseProps}
-        ref={ref}
-        name={name}
-        rows={rows}
-        placeholder={placeholder}
-        className={TextareaClass}
-        value={value}
-        defaultValue={defaultValue}
-        required={required}
-        disabled={disabled}
-        onChange={onChange}
-        onBlur={onBlur}
-        onClick={onClick}
-        onFocus={onFocus}
-      />
-    </div >
+    <textarea
+      data-test="DesignSystem-Textarea"
+      {...baseProps}
+      ref={ref}
+      name={name}
+      rows={rows}
+      placeholder={placeholder}
+      className={classes}
+      value={value}
+      defaultValue={defaultValue}
+      required={required}
+      disabled={disabled}
+      onChange={onChange}
+      onBlur={onBlur}
+      onClick={onClick}
+      onFocus={onFocus}
+    />
   );
 });
 

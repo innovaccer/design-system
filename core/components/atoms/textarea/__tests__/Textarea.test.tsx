@@ -49,7 +49,7 @@ describe('Textarea component', () => {
 
   it('renders textarea with error', () => {
     const { getByTestId } = render(<Textarea error={true} />);
-    expect(getByTestId(dataTestId)).toHaveClass('Textarea-textarea--error');
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--error');
   });
 
   it('renders textarea with placeholder', () => {
@@ -79,12 +79,12 @@ describe('Textarea component with prop: resize', () => {
 
   it('resizes textarea', () => {
     const { getByTestId } = render(<Textarea />);
-    expect(getByTestId(dataTestId)).toHaveClass('Textarea-textarea--resize');
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--resize');
   });
 
   it('does not resize textarea', () => {
     const { getByTestId } = render(<Textarea resize={false}/>);
-    expect(getByTestId(dataTestId)).not.toHaveClass('Textarea-textarea--resize');
+    expect(getByTestId(dataTestId)).not.toHaveClass('Textarea--resize');
   });
 
 });
