@@ -274,10 +274,10 @@ export default {
   title: 'Others/Utilities/Flex',
   component: flex,
   parameters: {
+    viewMode: 'story',
     docs: {
-      docPage: {
-        noProps: true
-      }
+      page: null,
+      docPage: null
     }
   }
 };

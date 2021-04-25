@@ -64,10 +64,10 @@ export default {
   title: 'Others/Utilities/Position',
   component: position,
   parameters: {
+    viewMode: 'story',
     docs: {
-      docPage: {
-        noProps: true
-      }
+      page: null,
+      docPage: null
     }
   }
 };
