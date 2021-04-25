@@ -45,7 +45,11 @@ const beautifyHTMLOptions = {
   preserve_newlines: true,
   jslint_happy: true,
   end_with_newline: false,
-  indent_inner_html: true
+  indent_inner_html: true,
+  break_chained_methods: true,
+  keep_array_indentation: true,
+  good_stuff: true,
+  indent_empty_lines: true
 };
 
 const beautifyJSXOptions = {
@@ -61,8 +65,10 @@ const JSXtoStringOptions = {
     return true;
   },
   showFunctions: true,
-  functionValue: _fn => _ => { }
-  // maxInlineAttributesLineLength: 10
+  functionValue: _fn => _ => { },
+  // maxInlineAttributesLineLength: 10,
+  showDefaultProps: false,
+  useBooleanShorthandSyntax: false,
 };
 
 const copyCode = (val: string) => navigator.clipboard.writeText(val);
@@ -131,15 +137,16 @@ ${jsx
   .join('\n')}
   );
 }
-  `;
+`;
   return code;
 };
 
 const StoryComp = props => {
   const { customCode, noHtml, noStory, noSandbox, isEmbed } = props;
   const { story, storyId } = getStory();
-  const comp = story.getOriginal()();
   const sp = story.parameters;
+  // const comp = sp.storySource.source;
+  const comp = story.getOriginal()();
   const html = !noHtml ? beautifyHTML(renderToStaticMarkup(comp), beautifyHTMLOptions) : '';
 
   const [activeTab, setActiveTab] = React.useState<number>(0);
