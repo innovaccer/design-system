@@ -2,18 +2,17 @@ import * as React from 'react';
 import { Message, Row, Column } from '@/index';
 
 // CSF format story
-export const successMessage = () => (
+export const defaultMessage = () => (
   <Row>
     <Column size="4">
       <Message
-        appearance="success"
-        description="Password updated. Login with your updated credentials."
+        description="Message will be accessible through a password protected link."
       />
     </Column>
   </Row>
 );
 
 export default {
-  title: 'Components/Message/Success Message',
+  title: 'Components/Message/Default Message',
   component: Message
 };
