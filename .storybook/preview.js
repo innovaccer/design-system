@@ -42,13 +42,9 @@ export const parameters = {
      * @type {Function}
      */
     storySort: (a, b) => {
-      if (a[1].kind === b[1].kind) {
-        if (a[1].story === 'All') return 0;
-        if (b[1].story === 'All') return 1;
-        return 0;
-      } else {
-        return a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
-      }
+      if (a[1].story === 'All') return 0;
+      if (b[1].story === 'All') return 1;
+      return a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
     },
   }
 }
