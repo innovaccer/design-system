@@ -43,6 +43,7 @@ export const all = () => {
         }}
       >
         <HorizontalNav
+          className="w-100 justify-content-center"
           menus={data}
           active={active}
           onClick={onClickHandler}
@@ -91,6 +92,7 @@ const customCode = `() => {
         }}
       >
         <HorizontalNav
+          className="w-100 justify-content-center"
           menus={data}
           active={active}
           onClick={onClickHandler}
