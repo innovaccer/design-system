@@ -21,7 +21,6 @@ export const TS = () => {
       <DS.Checkbox />
       <DS.Column />
       <DS.DatePicker />
-      <DS.DonutChart data={[]} />
       <DS.Dropdown />
       <DS.EditableDropdown />
       <DS.EditableInput />
