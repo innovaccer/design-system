@@ -7,7 +7,7 @@ import {
   getIconAppearance,
   getPillsAppearance,
   Menu,
-} from '../navigation/utils';
+} from '@/utils/navigationHelper';
 
 export interface MenuItemProps extends BaseProps {
   menu: Menu;
@@ -72,7 +72,7 @@ export const MenuItem = (props: MenuItemProps) => {
           subtle={menu.disabled}
           className={PillsClass}
           appearance={getPillsAppearance(isActive)}
-          data-test="DesignSystem-VerticalMenu--Pills"
+          data-test="DesignSystem-VerticalNav--Pills"
         >
           {count}
         </Pills>
@@ -93,7 +93,7 @@ export const MenuItem = (props: MenuItemProps) => {
       <div className="d-flex align-items-center overflow-hidden">
         {menu.icon && (
           <Icon
-            data-test="DesignSystem-VerticalMenu--Icon"
+            data-test="DesignSystem-VerticalNav--Icon"
             className={expanded ? 'mr-4' : ''}
             name={menu.icon}
             appearance={getIconAppearance(isActive, menu.disabled)}
@@ -101,7 +101,7 @@ export const MenuItem = (props: MenuItemProps) => {
         )}
         {expanded && (
           <Text
-            data-test="DesignSystem-VerticalMenu--Text"
+            data-test="DesignSystem-VerticalNav--Text"
             appearance={getTextAppearance(isActive, menu.disabled)}
           >
             {menu.label}

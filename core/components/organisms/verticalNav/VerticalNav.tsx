@@ -8,9 +8,9 @@ import {
   isMenuActive,
   ActiveMenu,
   Menu
-} from '../navigation/utils';
+} from '@/utils/navigationHelper';
 
-export interface VerticalMenuProps extends BaseProps {
+export interface VerticalNavProps extends BaseProps {
   /**
    * List of menus to be rendered
    *
@@ -62,10 +62,10 @@ export interface VerticalMenuProps extends BaseProps {
 }
 
 /**
- * ####NOTE: VerticalMenu sets first subMenu(if present) active if the Navigation is collapsed.
+ * ####NOTE: VerticalNav sets first subMenu(if present) active if the Navigation is collapsed.
  */
 
-export const VerticalMenu = (props: VerticalMenuProps) => {
+export const VerticalNav = (props: VerticalNavProps) => {
   const {
     menus,
     active,
@@ -127,8 +127,8 @@ export const VerticalMenu = (props: VerticalMenuProps) => {
       const hasGroup = index === 0 || menus[index - 1].group !== menu.group;
 
       const sectionClass = classNames({
-        ['VerticalMenu-section']: true,
-        ['VerticalMenu-section--border']: index !== 0
+        ['VerticalNav-section']: true,
+        ['VerticalNav-section--border']: index !== 0
       });
 
       return (
@@ -136,16 +136,17 @@ export const VerticalMenu = (props: VerticalMenuProps) => {
           {hasGroup && menu.group && expanded && (
             <div className={sectionClass}>
               <Text
-                data-test="DesignSystem-VerticalMenu--Section"
+                data-test="DesignSystem-VerticalNav--Section"
                 size="small"
                 weight="strong"
+                appearance="subtle"
               >
                 {menu.group}
               </Text>
             </div>
           )}
           <MenuItem
-            data-test="DesignSystem-VerticalMenu--Item"
+            data-test="DesignSystem-VerticalNav--Item"
             menu={menu}
             expanded={expanded}
             isActive={isActive}
@@ -179,8 +180,8 @@ export const VerticalMenu = (props: VerticalMenuProps) => {
   };
 
   const classes = classNames({
-    VerticalMenu: true,
-    ['VerticalMenu--expanded']: expanded,
+    VerticalNav: true,
+    ['VerticalNav--expanded']: expanded,
   }, className);
 
   return (
@@ -190,10 +191,10 @@ export const VerticalMenu = (props: VerticalMenuProps) => {
   );
 };
 
-VerticalMenu.defaultProps = {
+VerticalNav.defaultProps = {
   expanded: true,
   autoCollapse: true,
   rounded: false
 };
 
-export default VerticalMenu;
+export default VerticalNav;
