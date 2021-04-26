@@ -1,15 +1,15 @@
 
-.VerticalMenu {
+.VerticalNav {
   height: 100%;
   display: inline-flex;
   flex-direction: column;
 }
 
-.VerticalMenu--expanded {
+.VerticalNav--expanded {
   width: var(--spacing-9);
 }
 
-.VerticalMenu-section {
+.VerticalNav-section {
   text-transform: uppercase;
   padding-left: var(--spacing-2);
   padding-top: var(--spacing-l);
@@ -17,7 +17,7 @@
   margin-top: var(--spacing);
 }
 
-.VerticalMenu-section--border {
+.VerticalNav-section--border {
   border-top: var(--spacing-xs) solid var(--secondary-light);
 }
 

@@ -2508,7 +2508,11 @@ exports[`TS renders children 1`] = `
   </div>
   <div
     class="Navigation Navigation--horizontal justify-content-center"
-  />
+  >
+    <div
+      class="HorizontalNav"
+    />
+  </div>
   <div
     class="PageHeader-wrapper PageHeader-wrapper--separator"
   >
