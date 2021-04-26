@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { VerticalMenu } from '@/index';
+import { VerticalNav } from '@/index';
 import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import { Menu } from '../../../Navigation';
@@ -93,7 +93,7 @@ export const section = () => {
 
   return (
     <div style={{ height: 'calc(90vh)', background: 'var(--secondary-lightest)' }}>
-      <VerticalMenu
+      <VerticalNav
         menus={data}
         expanded={true}
         autoCollapse={autoCollapse}
@@ -193,7 +193,7 @@ const customCode = `() => {
 
   return (
     <div style={{ height: 'calc(80vh)', background: 'var(--secondary-lightest)' }}>
-      <VerticalMenu
+      <VerticalNav
         menus={data}
         expanded={true}
         active={active}
@@ -205,8 +205,8 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/VerticalMenu/Variants/Section',
-  component: VerticalMenu,
+  title: 'Components/VerticalNav/Variants/Section',
+  component: VerticalNav,
   parameters: {
     docs: {
       docPage: {

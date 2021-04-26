@@ -8,7 +8,7 @@ import {
   isMenuActive,
   Menu,
   ActiveMenu
-} from './utils';
+} from '@/utils/navigationHelper';
 
 const { useState } = React;
 

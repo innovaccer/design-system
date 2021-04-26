@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { VerticalMenu } from '@/index';
+import { VerticalNav } from '@/index';
 import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
-import { Menu } from '../../Navigation';
+import { Menu } from '../../../Navigation';
 
-export const all = () => {
+export const rounded = () => {
 
   const autoCollapse = boolean('autoCollapse', true);
 
@@ -85,11 +85,12 @@ export const all = () => {
 
   return (
     <div style={{ height: 'calc(80vh)', background: 'var(--secondary-lightest)' }}>
-      <VerticalMenu
+      <VerticalNav
         menus={data}
         expanded={true}
         autoCollapse={autoCollapse}
         active={active}
+        rounded={true}
         onClick={onClickHandler}
       />
     </div>
@@ -102,7 +103,7 @@ const customCode = `() => {
       name: 'patient_360',
       label: 'Patient 360',
       icon: 'assignment_ind',
-      link: '/patient360',
+      link: '/patient360'
     },
     {
       name: 'care_management',
@@ -111,13 +112,11 @@ const customCode = `() => {
       subMenu: [
         {
           name: 'care_management.timeline',
-          label: 'Timeline',
-          icon: 'events'
+          label: 'Timeline'
         },
         {
           name: 'care_management.care_plans',
-          label: 'Care Plans',
-          icon: 'events'
+          label: 'Care Plans'
         }
       ]
     },
@@ -134,13 +133,11 @@ const customCode = `() => {
       subMenu: [
         {
           name: 'risk.timeline',
-          label: 'Timeline',
-          icon: 'events'
+          label: 'Timeline'
         },
         {
           name: 'risk.care_plans',
-          label: 'Care Plans',
-          icon: 'events'
+          label: 'Care Plans'
         }
       ]
     },
@@ -169,6 +166,7 @@ const customCode = `() => {
   const [active, setActive] = React.useState({
     name: 'care_management.timeline'
   });
+  const [expanded, setExpanded] = React.useState(false);
 
   const onClickHandler = (menu) => {
     console.log('menu-clicked: ', menu);
@@ -176,21 +174,21 @@ const customCode = `() => {
   };
 
   return (
-    <div style={{ height: 'calc(80vh)', background: 'var(--secondary-lightest)' }}>
-      <VerticalMenu
+    <div style={{ height: 'calc(80vh)' }}>
+      <VerticalNav
         menus={data}
         expanded={true}
         active={active}
+        rounded={true}
         onClick={onClickHandler}
-        hoverable={false}
       />
     </div>
   );
 }`;
 
 export default {
-  title: 'Components/VerticalMenu/All',
-  component: VerticalMenu,
+  title: 'Components/VerticalNav/Variants/Rounded',
+  component: VerticalNav,
   parameters: {
     docs: {
       docPage: {

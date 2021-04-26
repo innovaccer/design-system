@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { NavigationProps as Props } from '@/index.type';
-import { Navigation } from '@/index';
+import { HorizontalNavProps as Props } from '@/index.type';
+import { HorizontalNav } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const onClick = jest.fn();
@@ -67,10 +67,9 @@ export const countMenus = [
   },
 ];
 
-const HorizontalNavDataKey = 'DesignSystem-HorizontalNavigation';
+const HorizontalNavDataKey = 'DesignSystem-HorizontalNav';
 
 const mapper = {
-  type: valueHelper('horizontal', { required: true }),
   menus: valueHelper(menus, { required: true }),
   active: valueHelper(active, { required: true }),
   onClick: valueHelper(onClick, { required: true })
@@ -82,7 +81,7 @@ describe('Horizontal Navigation component', () => {
 
     it(testMessageHelper(attr), () => {
       const { baseElement } = render(
-        <Navigation {...attr} />
+        <HorizontalNav {...attr} />
       );
 
       expect(baseElement).toMatchSnapshot();
@@ -96,47 +95,47 @@ describe('Horizontal Navigation component with prop: menus', () => {
   const disabledIndex = 2;
 
   it('renders menus', () => {
-    const { getAllByTestId } = render(<Navigation menus={menus} />);
+    const { getAllByTestId } = render(<HorizontalNav menus={menus} />);
     expect(getAllByTestId(HorizontalNavDataKey)).toHaveLength(menus.length);
   });
 
   it('renders menus with icon', () => {
-    const { getAllByTestId } = render(<Navigation menus={iconMenus} />);
-    expect(getAllByTestId('DesignSystem-HorizontalNavigation--Icon')).toHaveLength(iconMenus.length);
+    const { getAllByTestId } = render(<HorizontalNav menus={iconMenus} />);
+    expect(getAllByTestId('DesignSystem-HorizontalNav--Icon')).toHaveLength(iconMenus.length);
   });
 
   it('renders menus with count', () => {
-    const { getAllByTestId } = render(<Navigation menus={countMenus} />);
-    expect(getAllByTestId('DesignSystem-HorizontalNavigation--Pills')).toHaveLength(countMenus.length);
+    const { getAllByTestId } = render(<HorizontalNav menus={countMenus} />);
+    expect(getAllByTestId('DesignSystem-HorizontalNav--Pills')).toHaveLength(countMenus.length);
   });
 
   it('renders menus with both icon and count', () => {
-    const { getByTestId } = render(<Navigation menus={menus} />);
-    expect(getByTestId('DesignSystem-HorizontalNavigation--Icon')).toBeInTheDocument();
-    expect(getByTestId('DesignSystem-HorizontalNavigation--Pills')).toBeInTheDocument();
+    const { getByTestId } = render(<HorizontalNav menus={menus} />);
+    expect(getByTestId('DesignSystem-HorizontalNav--Icon')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-HorizontalNav--Pills')).toBeInTheDocument();
   });
 
   it('renders count when menu is given both icon and count', () => {
-    const { getAllByTestId, queryByTestId } = render(<Navigation menus={countMenus} />);
-    expect(queryByTestId('DesignSystem-HorizontalNavigation--Icon')).not.toBeInTheDocument();
-    expect(getAllByTestId('DesignSystem-HorizontalNavigation--Pills')[0]).toBeInTheDocument();
+    const { getAllByTestId, queryByTestId } = render(<HorizontalNav menus={countMenus} />);
+    expect(queryByTestId('DesignSystem-HorizontalNav--Icon')).not.toBeInTheDocument();
+    expect(getAllByTestId('DesignSystem-HorizontalNav--Pills')[0]).toBeInTheDocument();
   });
 
   it('renders menus with disabled menu', () => {
-    const { getAllByTestId } = render(<Navigation menus={menus} />);
-    const disabledMenu = getAllByTestId('DesignSystem-HorizontalNavigation--Text')[disabledIndex];
+    const { getAllByTestId } = render(<HorizontalNav menus={menus} />);
+    const disabledMenu = getAllByTestId('DesignSystem-HorizontalNav--Text')[disabledIndex];
     expect(disabledMenu).toHaveClass('Text--disabled');
   });
 
   it('renders iconMenus with disabled menu', () => {
-    const { getAllByTestId } = render(<Navigation menus={iconMenus} />);
-    const disabledMenu = getAllByTestId('DesignSystem-HorizontalNavigation--Icon')[disabledIndex];
+    const { getAllByTestId } = render(<HorizontalNav menus={iconMenus} />);
+    const disabledMenu = getAllByTestId('DesignSystem-HorizontalNav--Icon')[disabledIndex];
     expect(disabledMenu).toHaveClass('Icon--disabled');
   });
 
   it('renders countMenus with disabled menu', () => {
-    const { getAllByTestId } = render(<Navigation menus={countMenus} />);
-    const disabledMenu = getAllByTestId('DesignSystem-HorizontalNavigation--Pills')[disabledIndex];
+    const { getAllByTestId } = render(<HorizontalNav menus={countMenus} />);
+    const disabledMenu = getAllByTestId('DesignSystem-HorizontalNav--Pills')[disabledIndex];
     expect(disabledMenu).toHaveClass('Badge--subtle-secondary');
   });
 
@@ -146,31 +145,31 @@ describe('Horizontal Navigation component active menu', () => {
   const activeIndex = 0;
 
   it('renders menus with active menu', () => {
-    const { getAllByTestId } = render(<Navigation menus={menus} active={active} />);
-    const activeMenu = getAllByTestId('DesignSystem-HorizontalNavigation--Text')[activeIndex];
+    const { getAllByTestId } = render(<HorizontalNav menus={menus} active={active} />);
+    const activeMenu = getAllByTestId('DesignSystem-HorizontalNav--Text')[activeIndex];
     expect(activeMenu).toHaveClass('Text--link');
   });
 
   it('renders iconMenus with active menu', () => {
-    const { getAllByTestId } = render(<Navigation menus={iconMenus} active={active} />);
-    const activeMenu = getAllByTestId('DesignSystem-HorizontalNavigation--Icon')[activeIndex];
+    const { getAllByTestId } = render(<HorizontalNav menus={iconMenus} active={active} />);
+    const activeMenu = getAllByTestId('DesignSystem-HorizontalNav--Icon')[activeIndex];
     expect(activeMenu).toHaveClass('Icon--info');
   });
 
   it('renders countMenus with active menu', () => {
-    const { getAllByTestId } = render(<Navigation menus={countMenus} active={active} />);
-    const activeMenu = getAllByTestId('DesignSystem-HorizontalNavigation--Pills')[activeIndex];
+    const { getAllByTestId } = render(<HorizontalNav menus={countMenus} active={active} />);
+    const activeMenu = getAllByTestId('DesignSystem-HorizontalNav--Pills')[activeIndex];
     expect(activeMenu).toHaveClass('Badge--primary');
   });
 
   it('renders active menu with link', () => {
     const { getAllByTestId } = render(
-      <Navigation
+      <HorizontalNav
         menus={menus}
         active={{ link: '/patient360' }}
       />
     );
-    const activeMenu = getAllByTestId('DesignSystem-HorizontalNavigation--Text')[activeIndex];
+    const activeMenu = getAllByTestId('DesignSystem-HorizontalNav--Text')[activeIndex];
     expect(activeMenu).toHaveClass('Text--link');
   });
 
@@ -181,14 +180,14 @@ describe('Horizontal Navigation component prop: onClick', () => {
   it('calls onClick callback', () => {
     const stepClicked = 1;
     const { getAllByTestId } = render(
-      <Navigation
+      <HorizontalNav
         menus={menus}
         active={active}
         onClick={onClick}
       />
     );
 
-    const activeMenu = getAllByTestId('DesignSystem-HorizontalNavigation')[stepClicked];
+    const activeMenu = getAllByTestId('DesignSystem-HorizontalNav')[stepClicked];
     fireEvent.click(activeMenu);
     expect(onClick).toHaveBeenCalledTimes(1);
     expect(onClick).toHaveBeenCalledWith(menus[stepClicked]);

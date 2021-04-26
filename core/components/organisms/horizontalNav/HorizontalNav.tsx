@@ -1,23 +1,32 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Text, Icon, Pills } from '@/index';
-import { NavigationProps } from '@/index.type';
+import { VerticalNavProps } from '@/index.type';
+import { extractBaseProps, BaseProps } from '@/utils/types';
 import {
   getTextAppearance,
   getIconAppearance,
   getPillsAppearance,
   isMenuActive,
   Menu,
-} from './utils';
+} from '@/utils/navigationHelper';
 
-export type HorizontalNavigationProps = Pick<NavigationProps, 'menus' | 'active' | 'onClick'>;
+export type HorizontalNavProps = BaseProps & Pick<VerticalNavProps, 'menus' | 'active' | 'onClick'>;
+export type Align = 'left' | 'center';
 
-export const HorizontalNavigation = (props: HorizontalNavigationProps) => {
+export const HorizontalNav = (props: HorizontalNavProps) => {
   const {
     menus,
     active,
     onClick,
+    className
   } = props;
+
+  const baseProps = extractBaseProps(props);
+
+  const classes = classNames({
+    ['HorizontalNav']: true,
+  }, className);
 
   const onClickHandler = (menu: Menu) => () => {
     if (onClick) onClick(menu);
@@ -25,8 +34,8 @@ export const HorizontalNavigation = (props: HorizontalNavigationProps) => {
 
   const getPillsClass = (disabled?: boolean) => (
     classNames({
-      ['Navigation-horizontalPills']: true,
-      ['Navigation-horizontalPills--disabled']: disabled
+      ['HorizontalNav-pills']: true,
+      ['HorizontalNav-pills--disabled']: disabled
     })
   );
 
@@ -38,7 +47,7 @@ export const HorizontalNavigation = (props: HorizontalNavigationProps) => {
           subtle={menu.disabled}
           className={getPillsClass(menu.disabled)}
           appearance={getPillsAppearance(isActive)}
-          data-test="DesignSystem-HorizontalNavigation--Pills"
+          data-test="DesignSystem-HorizontalNav--Pills"
         >
           {count}
         </Pills>
@@ -51,7 +60,7 @@ export const HorizontalNavigation = (props: HorizontalNavigationProps) => {
           className="mr-3"
           name={menu.icon}
           appearance={getIconAppearance(isActive, menu.disabled)}
-          data-test="DesignSystem-HorizontalNavigation--Icon"
+          data-test="DesignSystem-HorizontalNav--Icon"
         />
       );
     }
@@ -63,15 +72,14 @@ export const HorizontalNavigation = (props: HorizontalNavigationProps) => {
     const isActive = isMenuActive(menus, menu, active);
 
     const menuClasses = classNames({
-      'Navigation-menu': true,
-      ['Navigation-menu--horizontal']: true,
-      ['Navigation-menu--active']: isActive,
-      ['Navigation-menu--disabled']: menu.disabled
+      'HorizontalNav-menu': true,
+      ['HorizontalNav-menu--active']: isActive,
+      ['HorizontalNav-menu--disabled']: menu.disabled
     });
 
     return (
       <div
-        data-test="DesignSystem-HorizontalNavigation"
+        data-test="DesignSystem-HorizontalNav"
         key={index}
         className={menuClasses}
         onClick={onClickHandler(menu)}
@@ -79,7 +87,8 @@ export const HorizontalNavigation = (props: HorizontalNavigationProps) => {
         {renderIcon(menu, isActive)}
         <Text
           appearance={getTextAppearance(isActive, menu.disabled)}
-          data-test="DesignSystem-HorizontalNavigation--Text"
+          data-test="DesignSystem-HorizontalNav--Text"
+          className="HorizontalNav-menuText"
         >
           {menu.label}
         </Text>
@@ -87,7 +96,7 @@ export const HorizontalNavigation = (props: HorizontalNavigationProps) => {
     );
   });
 
-  return <>{list}</>;
+  return <div {...baseProps} className={classes}>{list}</div>;
 };
 
-export default HorizontalNavigation;
+export default HorizontalNav;
