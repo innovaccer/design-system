@@ -323,16 +323,20 @@ export class Grid extends React.Component<GridProps, GridState> {
     const gridHeadEl = this.gridRef!.querySelector('.Grid-head');
     const gridBodyEl = this.gridRef!.querySelector('.Grid-body');
 
-    gridHeadEl?.addEventListener('scroll', this.syncScroll('head'));
-    gridBodyEl?.addEventListener('scroll', this.syncScroll('body'));
+    if (gridHeadEl && gridBodyEl) {
+      gridHeadEl.addEventListener('scroll', this.syncScroll('head'));
+      gridBodyEl.addEventListener('scroll', this.syncScroll('body'));
+    }
   }
 
   removeScrollListeners() {
     const gridHeadEl = this.gridRef!.querySelector('.Grid-head');
     const gridBodyEl = this.gridRef!.querySelector('.Grid-body');
 
-    gridHeadEl?.removeEventListener('scroll', this.syncScroll('head'));
-    gridBodyEl?.removeEventListener('scroll', this.syncScroll('body'));
+    if (gridHeadEl && gridBodyEl) {
+      gridHeadEl.removeEventListener('scroll', this.syncScroll('head'));
+      gridBodyEl.removeEventListener('scroll', this.syncScroll('body'));
+    }
   }
 
   syncScroll = (type: string) => () => {
