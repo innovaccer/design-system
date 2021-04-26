@@ -51,7 +51,7 @@ export const Label = (props: LabelProps) => {
   }, className);
 
   const classes = classNames({
-    'Label-label': true,
+    'Label-text': true,
     'Label--disabled': disabled
   });
 
@@ -63,9 +63,9 @@ export const Label = (props: LabelProps) => {
     if (isOptional) {
       return (
         <Text
-          data-test="DesignSystem-Label--OptionalLabel"
+          data-test="DesignSystem-Label--OptionalText"
           appearance="subtle"
-          className="ml-3"
+          className="Label-optionalText"
         >
           (optional)
         </Text>
@@ -76,7 +76,7 @@ export const Label = (props: LabelProps) => {
 
   return (
     <div data-test="DesignSystem-Label" {...baseProps} className={LabelClass}>
-      <GenericText data-test="DesignSystem-Label--Label" className={classes} componentType="label" {...rest}>
+      <GenericText data-test="DesignSystem-Label--Text" className={classes} componentType="label" {...rest}>
         {children}
       </GenericText>
       {renderInfo(required, optional)}
