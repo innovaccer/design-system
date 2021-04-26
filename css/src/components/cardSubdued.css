@@ -1,9 +1,7 @@
 
 .CardSubdued {
-  border-radius: var(--spacing);
-  background: #FCFAFA;
-  position: relative;
-  overflow: hidden;
+  background: var(--card-subdued-bg);
+  padding: var(--spacing-2);
 }
 
 .CardSubdued--top {
