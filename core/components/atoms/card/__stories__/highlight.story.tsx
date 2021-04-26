@@ -1,14 +1,8 @@
 import * as React from 'react';
-import { select } from '@storybook/addon-knobs';
 import { Row, Column, CardSubdued, Card, CardHeader, CardBody, Heading, Paragraph, Radio, Text, StatusHint } from '@/index';
 
 // CSF format story
-export const all = () => {
-  const border = select(
-    'border',
-    ['top', 'left', 'right', 'bottom'],
-    'top'
-  );
+export const HighlightingASection = () => {
 
   return (
     <Row>
@@ -39,7 +33,8 @@ the sender's preferred timings.
               </Column>
             </Row>
           </CardBody>
-          <CardSubdued border={border}>
+
+          <CardSubdued border="top">
             <Text weight="strong" small={true}>
               SELECTED RECIPIENTS
             </Text>
@@ -52,6 +47,7 @@ the sender's preferred timings.
               </StatusHint>
             </div>
           </CardSubdued>
+
         </Card>
       </Column>
     </Row>
@@ -59,6 +55,16 @@ the sender's preferred timings.
 };
 
 export default {
-  title: 'Components/CardSubdued/All',
-  component: CardSubdued
+  title: 'Components/Card/Highlighting A Section',
+  component: CardSubdued,
+  parameters: {
+    docs: {
+      docPage: {
+        title: 'Card',
+        props: {
+          components: { Card, CardSubdued },
+        }
+      }
+    }
+  }
 };
