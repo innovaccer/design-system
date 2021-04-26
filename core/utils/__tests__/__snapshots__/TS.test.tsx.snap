@@ -1433,15 +1433,11 @@ exports[`TS renders children 1`] = `
   >
     Hello World!
   </span>
-  <div
-    class="Textarea"
-  >
-    <textarea
-      class="Textarea-textarea Textarea-textarea--resize"
-      data-test="DesignSystem-Textarea"
-      rows="3"
-    />
-  </div>
+  <textarea
+    class="Textarea Textarea--resize"
+    data-test="DesignSystem-Textarea"
+    rows="3"
+  />
   <div
     class="Toast Toast--default"
   >

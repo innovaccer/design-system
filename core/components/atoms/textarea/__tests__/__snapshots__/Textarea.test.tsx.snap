@@ -4,19 +4,15 @@ exports[`Textarea component
   name: "Textarea", placeholder: "Write something..", disabled: false, onChange: "[Function]", value: "Design System"
  1`] = `
 <DocumentFragment>
-  <div
-    class="Textarea"
+  <textarea
+    class="Textarea Textarea--resize"
+    data-test="DesignSystem-Textarea"
+    name="Textarea"
+    placeholder="Write something.."
+    rows="3"
   >
-    <textarea
-      class="Textarea-textarea Textarea-textarea--resize"
-      data-test="DesignSystem-Textarea"
-      name="Textarea"
-      placeholder="Write something.."
-      rows="3"
-    >
-      Design System
-    </textarea>
-  </div>
+    Design System
+  </textarea>
 </DocumentFragment>
 `;
 
@@ -24,19 +20,15 @@ exports[`Textarea component
   name: "Textarea", placeholder: "Write something..", disabled: true, onChange: "[Function]", value: "Design System"
  1`] = `
 <DocumentFragment>
-  <div
-    class="Textarea"
+  <textarea
+    class="Textarea Textarea--resize"
+    data-test="DesignSystem-Textarea"
+    disabled=""
+    name="Textarea"
+    placeholder="Write something.."
+    rows="3"
   >
-    <textarea
-      class="Textarea-textarea Textarea-textarea--resize"
-      data-test="DesignSystem-Textarea"
-      disabled=""
-      name="Textarea"
-      placeholder="Write something.."
-      rows="3"
-    >
-      Design System
-    </textarea>
-  </div>
+    Design System
+  </textarea>
 </DocumentFragment>
 `;

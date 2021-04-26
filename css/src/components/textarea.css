@@ -1,15 +1,6 @@
 /* Textarea */
 
-.Textarea-textarea::-ms-clear {
-  display: none;
-}
-
 .Textarea {
-  display: flex;
-  flex-direction: column;
-}
-
-.Textarea-textarea {
   min-height: var(--spacing-3);
   width: 100%;
   display: block;
@@ -25,39 +16,43 @@
   resize: none;
 }
 
-.Textarea-textarea::placeholder {
+.Textarea::placeholder {
   color: var(--inverse-lighter);
 }
 
-.Textarea-textarea:focus-within {
+.Textarea::-ms-clear {
+  display: none;
+}
+
+.Textarea:focus-within {
   outline: none;
   border: var(--spacing-xs) solid var(--primary);
 }
 
-.Textarea-textarea:disabled {
+.Textarea:disabled {
   color: var(--inverse-lighter);
   background: var(--secondary-lightest);
   border-color: var(--secondary-light);
 }
 
-.Textarea-textarea--error {
+.Textarea--error {
   border: var(--spacing-xs) solid var(--alert);
 }
 
-.Textarea-textarea--error:focus-within {
+.Textarea--error:focus-within {
   border: var(--spacing-xs) solid var(--alert);
   box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
-.Textarea-textarea--resize {
+.Textarea--resize {
   resize: auto;
 }
 
-.Textarea-textarea::-webkit-scrollbar {
+.Textarea::-webkit-scrollbar {
   width: var(--spacing-2);
 }
 
-.Textarea-textarea::-webkit-scrollbar-thumb {
+.Textarea::-webkit-scrollbar-thumb {
   border: var(--spacing-m) solid rgba(0, 0, 0, 0);
   background-clip: padding-box;
   border-radius: var(--spacing);
