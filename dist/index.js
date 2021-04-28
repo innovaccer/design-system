@@ -1,18 +1,18 @@
 
   /**
-   * Generated on: 1619085482330 
+   * Generated on: 1619596586972 
    *      Package: @innovaccer/design-system
-   *      Version: v2.0.0-6
+   *      Version: v2.0.0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
 
     
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('classnames'), require('react-dom'), require('react-popper'), require('recharts')) :
-    typeof define === 'function' && define.amd ? define(['exports', 'react', 'classnames', 'react-dom', 'react-popper', 'recharts'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.inno = {}, global.React, global.classNames, global.ReactDOM, global.ReactPopper, global.recharts));
-}(this, (function (exports, React, classNames, ReactDOM, reactPopper, recharts) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('classnames'), require('react-dom'), require('react-popper')) :
+    typeof define === 'function' && define.amd ? define(['exports', 'react', 'classnames', 'react-dom', 'react-popper'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.inno = {}, global.React, global.classNames, global.ReactDOM, global.ReactPopper));
+}(this, (function (exports, React, classNames, ReactDOM, reactPopper) { 'use strict';
 
     function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -3729,7 +3729,7 @@
       var _a;
 
       var _b = props.shadow,
-          shadow = _b === void 0 ? 'light' : _b,
+          shadow = _b === void 0 ? 'default' : _b,
           children = props.children,
           className = props.className,
           rest = __rest(props, ["shadow", "children", "className"]);
@@ -3764,6 +3764,57 @@
       }), children);
     });
     CardSubdued.displayName = 'CardSubdued';
+
+    var CardHeader = function CardHeader(props) {
+      var className = props.className,
+          children = props.children;
+      var baseProps = extractBaseProps(props);
+      var classes = classNames__default['default']({
+        'Card-header': true
+      }, className);
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        "data-test": "DesignSystem-CardHeader"
+      }, baseProps, {
+        className: classes
+      }), children);
+    };
+    CardHeader.displayName = 'CardHeader';
+
+    var CardBody = function CardBody(props) {
+      var className = props.className,
+          children = props.children;
+      var baseProps = extractBaseProps(props);
+      var classes = classNames__default['default']({
+        'Card-body': true
+      }, className);
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        "data-test": "DesignSystem-CardBody"
+      }, baseProps, {
+        className: classes
+      }), children);
+    };
+    CardBody.displayName = 'CardBody';
+
+    var CardFooter = function CardFooter(props) {
+      var _a;
+
+      var className = props.className,
+          children = props.children,
+          withSeperator = props.withSeperator;
+      var baseProps = extractBaseProps(props);
+      var classes = classNames__default['default']((_a = {
+        'Card-footer': true
+      }, _a['Card-footer--withSeperator'] = withSeperator, _a), className);
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        "data-test": "DesignSystem-CardFooter"
+      }, baseProps, {
+        className: classes
+      }), children);
+    };
+    CardFooter.displayName = 'CardFooter';
+    CardFooter.defaultProps = {
+      withSeperator: true
+    };
 
     var GenericChip = function GenericChip(props) {
       var label = props.label,
@@ -4252,186 +4303,6 @@
     };
     TimePicker.displayName = 'TimePicker';
 
-    var DonutChart = function DonutChart(props) {
-      var _a;
-
-      var width = props.width,
-          legendWidth = props.legendWidth,
-          colors = props.colors,
-          withCenterText = props.withCenterText,
-          colorOfTotalCount = props.colorOfTotalCount,
-          data = props.data,
-          radius = props.radius,
-          withLegends = props.withLegends,
-          withTooltip = props.withTooltip,
-          customTooltip = props.customTooltip,
-          withActiveSegment = props.withActiveSegment,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
-      var legendSize = legendWidth;
-      var chartSize = 12 - legendWidth;
-      var columnOptions = {
-        chart: {
-          size: withLegends ? chartSize : '12',
-          sizeS: '12',
-          sizeXS: '12'
-        },
-        legends: {
-          size: legendSize,
-          sizeS: '12',
-          sizeXS: '12'
-        }
-      };
-
-      var ChartTooltip = function ChartTooltip(chartProps) {
-        var payload = chartProps.payload[0];
-
-        if (payload) {
-          if (customTooltip) return customTooltip(payload);
-          return /*#__PURE__*/React__namespace.createElement("div", {
-            className: "DonutChart-tooltip"
-          }, "" + payload.name + chartProps.separator + (+payload.value).toLocaleString());
-        }
-
-        return null;
-      };
-
-      var colorToHex$1 = colorToHex;
-
-      var renderActiveShape = function renderActiveShape(activeShapeProps) {
-        var RADIAN = Math.PI / 180;
-        var cx = activeShapeProps.cx,
-            cy = activeShapeProps.cy,
-            midAngle = activeShapeProps.midAngle,
-            innerRadius = activeShapeProps.innerRadius,
-            outerRadius = activeShapeProps.outerRadius,
-            startAngle = activeShapeProps.startAngle,
-            endAngle = activeShapeProps.endAngle,
-            fill = activeShapeProps.fill,
-            payload = activeShapeProps.payload,
-            percent = activeShapeProps.percent,
-            value = activeShapeProps.value;
-        var sin = Math.sin(-RADIAN * midAngle);
-        var cos = Math.cos(-RADIAN * midAngle);
-        var sx = cx + (outerRadius + 10) * cos;
-        var sy = cy + (outerRadius + 10) * sin;
-        var mx = cx + (outerRadius + 30) * cos;
-        var my = cy + (outerRadius + 30) * sin;
-        var ex = mx + (cos >= 0 ? 1 : -1) * 22;
-        var ey = my;
-        var textAnchor = cos >= 0 ? 'start' : 'end';
-        var total = Math.ceil(value / percent);
-        return /*#__PURE__*/React__namespace.createElement("g", null, withCenterText && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("text", {
-          x: cx,
-          y: cy,
-          "font-size": 'var(--font-size-xl)',
-          textAnchor: "middle"
-        }, "Total"), /*#__PURE__*/React__namespace.createElement("text", {
-          x: cx,
-          y: cy,
-          dy: 22,
-          "font-size": 'var(--font-size-l)',
-          textAnchor: "middle",
-          fill: colorToHex$1(colorOfTotalCount)
-        }, total.toLocaleString())), /*#__PURE__*/React__namespace.createElement(recharts.Sector, {
-          cx: cx,
-          cy: cy,
-          innerRadius: innerRadius,
-          outerRadius: outerRadius,
-          startAngle: startAngle,
-          endAngle: endAngle,
-          fill: fill
-        }), withActiveSegment && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(recharts.Sector, {
-          cx: cx,
-          cy: cy,
-          startAngle: startAngle,
-          endAngle: endAngle,
-          innerRadius: outerRadius + 6,
-          outerRadius: outerRadius + 10,
-          fill: fill
-        }), /*#__PURE__*/React__namespace.createElement("path", {
-          d: "M" + sx + "," + sy + "L" + mx + "," + my + "L" + ex + "," + ey,
-          stroke: fill,
-          fill: "none"
-        }), /*#__PURE__*/React__namespace.createElement("circle", {
-          cx: ex,
-          cy: ey,
-          r: 2,
-          fill: fill,
-          stroke: "none"
-        }), /*#__PURE__*/React__namespace.createElement("text", {
-          x: ex + (cos >= 0 ? 1 : -1) * 12,
-          y: ey,
-          dy: -18,
-          textAnchor: textAnchor,
-          fill: fill
-        }, "" + payload.name), /*#__PURE__*/React__namespace.createElement("text", {
-          x: ex + (cos >= 0 ? 1 : -1) * 12,
-          y: ey,
-          textAnchor: textAnchor,
-          fill: "#333"
-        }, "" + value.toLocaleString()), /*#__PURE__*/React__namespace.createElement("text", {
-          x: ex + (cos >= 0 ? 1 : -1) * 12,
-          y: ey,
-          dy: 18,
-          textAnchor: textAnchor,
-          fill: "#999"
-        }, (percent * 100).toFixed(0) + "%")));
-      };
-
-      var _b = React__namespace.useState(0),
-          activeIndex = _b[0],
-          setActiveIndex = _b[1];
-
-      var onPieEnter = function onPieEnter(_data, index) {
-        setActiveIndex(index);
-      };
-
-      var getColor = function getColor(index, type) {
-        var color = colors[index % colors.length];
-        var colorHex = colorToHex$1(color);
-        return type === 'hex' ? colorHex : color;
-      };
-
-      var oRadius = withActiveSegment ? radius ? .7 * radius : '70%' : radius || '100%';
-      var iRadius = withActiveSegment ? radius ? (100 - width) / 100 * oRadius : (100 - width) / 100 * 70 + "%" : radius ? (100 - width) / 100 * radius : 100 - width + "%";
-      var classes = classNames__default['default']((_a = {}, _a['DonutChart'] = true, _a), className);
-      return /*#__PURE__*/React__namespace.createElement(Row, __assign({}, baseProps, {
-        className: classes
-      }), /*#__PURE__*/React__namespace.createElement(Column, __assign({}, columnOptions.chart), /*#__PURE__*/React__namespace.createElement(recharts.ResponsiveContainer, null, /*#__PURE__*/React__namespace.createElement(recharts.PieChart, null, /*#__PURE__*/React__namespace.createElement(recharts.Pie, {
-        data: data,
-        dataKey: "value",
-        activeIndex: activeIndex,
-        activeShape: renderActiveShape,
-        onMouseEnter: onPieEnter,
-        outerRadius: oRadius,
-        innerRadius: iRadius
-      }, data.map(function (_entry, index) {
-        return /*#__PURE__*/React__namespace.createElement(recharts.Cell, {
-          fill: getColor(index, 'hex'),
-          key: index
-        });
-      })), withTooltip && /*#__PURE__*/React__namespace.createElement(recharts.Tooltip, {
-        separator: ": ",
-        content: /*#__PURE__*/React__namespace.createElement(ChartTooltip, null)
-      })))), withLegends && /*#__PURE__*/React__namespace.createElement(Column, __assign({
-        className: "DonutChart-legends"
-      }, columnOptions.legends), data.map(function (d, i) {
-        return /*#__PURE__*/React__namespace.createElement(Legend, {
-          key: i,
-          iconAppearance: getColor(i)
-        }, d.name + " - " + (+d.value).toLocaleString());
-      })));
-    };
-    DonutChart.displayName = 'DonutChart';
-    DonutChart.defaultProps = {
-      width: 20,
-      legendWidth: 3,
-      colors: ['primary', 'secondary', 'success', 'warning', 'alert'],
-      withCenterText: true,
-      colorOfTotalCount: 'success'
-    };
-
     var sizeMap = {
       s: 'h5',
       m: 'h4',
@@ -4883,7 +4754,7 @@
         Label: true
       }, _a['Label--withInput'] = withInput, _a['Label--optional'] = optional, _a), className);
       var classes = classNames__default['default']({
-        'Label-label': true,
+        'Label-text': true,
         'Label--disabled': disabled
       });
 
@@ -4901,9 +4772,9 @@
 
         if (isOptional) {
           return /*#__PURE__*/React__namespace.createElement(Text, {
-            "data-test": "DesignSystem-Label--OptionalLabel",
+            "data-test": "DesignSystem-Label--OptionalText",
             appearance: "subtle",
-            className: "ml-3"
+            className: "Label-optionalText"
           }, "(optional)");
         }
 
@@ -4915,7 +4786,7 @@
       }, baseProps, {
         className: LabelClass
       }), /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
-        "data-test": "DesignSystem-Label--Label",
+        "data-test": "DesignSystem-Label--Text",
         className: classes,
         componentType: "label"
       }, rest), children), renderInfo(required, optional));
@@ -6263,12 +6134,12 @@
     Switch.displayName = 'Switch';
 
     var Textarea = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
-      var _a, _b;
+      var _a;
 
-      var _c = props.rows,
-          rows = _c === void 0 ? 3 : _c,
-          _d = props.resize,
-          resize = _d === void 0 ? true : _d,
+      var _b = props.rows,
+          rows = _b === void 0 ? 3 : _b,
+          _c = props.resize,
+          resize = _c === void 0 ? true : _c,
           disabled = props.disabled,
           name = props.name,
           placeholder = props.placeholder,
@@ -6282,18 +6153,15 @@
           onFocus = props.onFocus,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {}, _a['Textarea'] = true, _a), className);
-      var TextareaClass = classNames__default['default']((_b = {}, _b['Textarea-textarea'] = true, _b['Textarea-textarea--resize'] = resize, _b['Textarea-textarea--error'] = error, _b));
-      return /*#__PURE__*/React__namespace.createElement("div", {
-        className: classes
-      }, /*#__PURE__*/React__namespace.createElement("textarea", __assign({
+      var classes = classNames__default['default']((_a = {}, _a['Textarea'] = true, _a['Textarea--resize'] = resize, _a['Textarea--error'] = error, _a), className);
+      return /*#__PURE__*/React__namespace.createElement("textarea", __assign({
         "data-test": "DesignSystem-Textarea"
       }, baseProps, {
         ref: ref,
         name: name,
         rows: rows,
         placeholder: placeholder,
-        className: TextareaClass,
+        className: classes,
         value: value,
         defaultValue: defaultValue,
         required: required,
@@ -6302,7 +6170,7 @@
         onBlur: onBlur,
         onClick: onClick,
         onFocus: onFocus
-      })));
+      }));
     });
     Textarea.displayName = 'Textarea';
 
@@ -6811,7 +6679,7 @@
             subtle: menu.disabled,
             className: PillsClass,
             appearance: getPillsAppearance(isActive),
-            "data-test": "DesignSystem-VerticalMenu--Pills"
+            "data-test": "DesignSystem-VerticalNav--Pills"
           }, count);
         }
 
@@ -6826,12 +6694,12 @@
       }), /*#__PURE__*/React__namespace.createElement("div", {
         className: "d-flex align-items-center overflow-hidden"
       }, menu.icon && /*#__PURE__*/React__namespace.createElement(Icon, {
-        "data-test": "DesignSystem-VerticalMenu--Icon",
+        "data-test": "DesignSystem-VerticalNav--Icon",
         className: expanded ? 'mr-4' : '',
         name: menu.icon,
         appearance: getIconAppearance(isActive, menu.disabled)
       }), expanded && /*#__PURE__*/React__namespace.createElement(Text, {
-        "data-test": "DesignSystem-VerticalMenu--Text",
+        "data-test": "DesignSystem-VerticalNav--Text",
         appearance: getTextAppearance(isActive, menu.disabled)
       }, menu.label)), expanded && renderSubMenu());
     };
@@ -6839,7 +6707,7 @@
       isActive: false
     };
 
-    var VerticalMenu = function VerticalMenu(props) {
+    var VerticalNav = function VerticalNav(props) {
       var _a;
 
       var menus = props.menus,
@@ -6909,15 +6777,16 @@
           var hasSubmenu = menu.subMenu && menu.subMenu.length > 0;
           var isChildrenVisible = hasSubmenu && menuState[menu.name];
           var hasGroup = index === 0 || menus[index - 1].group !== menu.group;
-          var sectionClass = classNames__default['default']((_a = {}, _a['VerticalMenu-section'] = true, _a['VerticalMenu-section--border'] = index !== 0, _a));
+          var sectionClass = classNames__default['default']((_a = {}, _a['VerticalNav-section'] = true, _a['VerticalNav-section--border'] = index !== 0, _a));
           return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, hasGroup && menu.group && expanded && /*#__PURE__*/React__namespace.createElement("div", {
             className: sectionClass
           }, /*#__PURE__*/React__namespace.createElement(Text, {
-            "data-test": "DesignSystem-VerticalMenu--Section",
+            "data-test": "DesignSystem-VerticalNav--Section",
             size: "small",
-            weight: "strong"
+            weight: "strong",
+            appearance: "subtle"
           }, menu.group)), /*#__PURE__*/React__namespace.createElement(MenuItem, {
-            "data-test": "DesignSystem-VerticalMenu--Item",
+            "data-test": "DesignSystem-VerticalNav--Item",
             menu: menu,
             expanded: expanded,
             isActive: isActive,
@@ -6943,16 +6812,84 @@
       };
 
       var classes = classNames__default['default']((_a = {
-        VerticalMenu: true
-      }, _a['VerticalMenu--expanded'] = expanded, _a), className);
+        VerticalNav: true
+      }, _a['VerticalNav--expanded'] = expanded, _a), className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: classes
       }), renderList());
     };
-    VerticalMenu.defaultProps = {
+    VerticalNav.defaultProps = {
       expanded: true,
       autoCollapse: true,
       rounded: false
+    };
+
+    var HorizontalNav = function HorizontalNav(props) {
+      var _a;
+
+      var menus = props.menus,
+          active = props.active,
+          onClick = props.onClick,
+          className = props.className;
+      var baseProps = extractBaseProps(props);
+      var classes = classNames__default['default']((_a = {}, _a['HorizontalNav'] = true, _a), className);
+
+      var onClickHandler = function onClickHandler(menu) {
+        return function () {
+          if (onClick) onClick(menu);
+        };
+      };
+
+      var getPillsClass = function getPillsClass(disabled) {
+        var _a;
+
+        return classNames__default['default']((_a = {}, _a['HorizontalNav-pills'] = true, _a['HorizontalNav-pills--disabled'] = disabled, _a));
+      };
+
+      var renderIcon = function renderIcon(menu, isActive) {
+        if (menu.count !== undefined) {
+          var count = menu.count > 99 ? '99+' : menu.count;
+          return /*#__PURE__*/React__namespace.createElement(Pills, {
+            subtle: menu.disabled,
+            className: getPillsClass(menu.disabled),
+            appearance: getPillsAppearance(isActive),
+            "data-test": "DesignSystem-HorizontalNav--Pills"
+          }, count);
+        }
+
+        if (menu.icon) {
+          return /*#__PURE__*/React__namespace.createElement(Icon, {
+            className: "mr-3",
+            name: menu.icon,
+            appearance: getIconAppearance(isActive, menu.disabled),
+            "data-test": "DesignSystem-HorizontalNav--Icon"
+          });
+        }
+
+        return null;
+      };
+
+      var list = menus.map(function (menu, index) {
+        var _a;
+
+        var isActive = isMenuActive(menus, menu, active);
+        var menuClasses = classNames__default['default']((_a = {
+          'HorizontalNav-menu': true
+        }, _a['HorizontalNav-menu--active'] = isActive, _a['HorizontalNav-menu--disabled'] = menu.disabled, _a));
+        return /*#__PURE__*/React__namespace.createElement("div", {
+          "data-test": "DesignSystem-HorizontalNav",
+          key: index,
+          className: menuClasses,
+          onClick: onClickHandler(menu)
+        }, renderIcon(menu, isActive), /*#__PURE__*/React__namespace.createElement(Text, {
+          appearance: getTextAppearance(isActive, menu.disabled),
+          "data-test": "DesignSystem-HorizontalNav--Text",
+          className: "HorizontalNav-menuText"
+        }, menu.label));
+      });
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
+        className: classes
+      }), list);
     };
 
     var propsList = ['trigger', 'on', 'open', 'offset', 'onToggle', 'dark', 'customStyle', 'closeOnBackdropClick', 'hideOnReferenceEscape', 'closeOnScroll'];
@@ -11610,15 +11547,21 @@
       Grid.prototype.addScrollListeners = function () {
         var gridHeadEl = this.gridRef.querySelector('.Grid-head');
         var gridBodyEl = this.gridRef.querySelector('.Grid-body');
-        gridHeadEl === null || gridHeadEl === void 0 ? void 0 : gridHeadEl.addEventListener('scroll', this.syncScroll('head'));
-        gridBodyEl === null || gridBodyEl === void 0 ? void 0 : gridBodyEl.addEventListener('scroll', this.syncScroll('body'));
+
+        if (gridHeadEl && gridBodyEl) {
+          gridHeadEl.addEventListener('scroll', this.syncScroll('head'));
+          gridBodyEl.addEventListener('scroll', this.syncScroll('body'));
+        }
       };
 
       Grid.prototype.removeScrollListeners = function () {
         var gridHeadEl = this.gridRef.querySelector('.Grid-head');
         var gridBodyEl = this.gridRef.querySelector('.Grid-body');
-        gridHeadEl === null || gridHeadEl === void 0 ? void 0 : gridHeadEl.removeEventListener('scroll', this.syncScroll('head'));
-        gridBodyEl === null || gridBodyEl === void 0 ? void 0 : gridBodyEl.removeEventListener('scroll', this.syncScroll('body'));
+
+        if (gridHeadEl && gridBodyEl) {
+          gridHeadEl.removeEventListener('scroll', this.syncScroll('head'));
+          gridBodyEl.removeEventListener('scroll', this.syncScroll('body'));
+        }
       };
 
       Grid.prototype.render = function () {
@@ -12592,66 +12535,6 @@
     };
     List.defaultProps = defaultProps;
 
-    var HorizontalNavigation = function HorizontalNavigation(props) {
-      var menus = props.menus,
-          active = props.active,
-          onClick = props.onClick;
-
-      var onClickHandler = function onClickHandler(menu) {
-        return function () {
-          if (onClick) onClick(menu);
-        };
-      };
-
-      var getPillsClass = function getPillsClass(disabled) {
-        var _a;
-
-        return classNames__default['default']((_a = {}, _a['Navigation-horizontalPills'] = true, _a['Navigation-horizontalPills--disabled'] = disabled, _a));
-      };
-
-      var renderIcon = function renderIcon(menu, isActive) {
-        if (menu.count !== undefined) {
-          var count = menu.count > 99 ? '99+' : menu.count;
-          return /*#__PURE__*/React__namespace.createElement(Pills, {
-            subtle: menu.disabled,
-            className: getPillsClass(menu.disabled),
-            appearance: getPillsAppearance(isActive),
-            "data-test": "DesignSystem-HorizontalNavigation--Pills"
-          }, count);
-        }
-
-        if (menu.icon) {
-          return /*#__PURE__*/React__namespace.createElement(Icon, {
-            className: "mr-3",
-            name: menu.icon,
-            appearance: getIconAppearance(isActive, menu.disabled),
-            "data-test": "DesignSystem-HorizontalNavigation--Icon"
-          });
-        }
-
-        return null;
-      };
-
-      var list = menus.map(function (menu, index) {
-        var _a;
-
-        var isActive = isMenuActive(menus, menu, active);
-        var menuClasses = classNames__default['default']((_a = {
-          'Navigation-menu': true
-        }, _a['Navigation-menu--horizontal'] = true, _a['Navigation-menu--active'] = isActive, _a['Navigation-menu--disabled'] = menu.disabled, _a));
-        return /*#__PURE__*/React__namespace.createElement("div", {
-          "data-test": "DesignSystem-HorizontalNavigation",
-          key: index,
-          className: menuClasses,
-          onClick: onClickHandler(menu)
-        }, renderIcon(menu, isActive), /*#__PURE__*/React__namespace.createElement(Text, {
-          appearance: getTextAppearance(isActive, menu.disabled),
-          "data-test": "DesignSystem-HorizontalNavigation--Text"
-        }, menu.label));
-      });
-      return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, list);
-    };
-
     var useState$1 = React__namespace.useState;
     var VerticalNavigation = function VerticalNavigation(props) {
       var _a;
@@ -12806,7 +12689,7 @@
       var classes = classNames__default['default']((_a = {}, _a['Navigation'] = true, _a["Navigation--" + type] = type, _a['justify-content-center'] = type === 'horizontal' && align === 'center', _a['justify-content-start'] = type === 'horizontal' && align === 'left', _a['Navigation--collapsed'] = !expanded, _a), className);
 
       var renderNavigation = function renderNavigation() {
-        return type === 'horizontal' ? /*#__PURE__*/React__namespace.createElement(HorizontalNavigation, {
+        return type === 'horizontal' ? /*#__PURE__*/React__namespace.createElement(HorizontalNav, {
           menus: menus,
           active: active,
           onClick: onClick
@@ -13021,7 +12904,7 @@
     };
     FileList.displayName = 'FileList';
 
-    var version = "2.0.0-6";
+    var version = "2.0.0";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
@@ -13032,6 +12915,9 @@
     exports.Calendar = Calendar;
     exports.Caption = Caption;
     exports.Card = Card;
+    exports.CardBody = CardBody;
+    exports.CardFooter = CardFooter;
+    exports.CardHeader = CardHeader;
     exports.CardSubdued = CardSubdued;
     exports.ChatMessage = ChatMessage;
     exports.Checkbox = Checkbox;
@@ -13042,7 +12928,6 @@
     exports.DatePicker = DatePicker;
     exports.DateRangePicker = DateRangePicker;
     exports.Dialog = Dialog;
-    exports.DonutChart = DonutChart;
     exports.Dropdown = Dropdown;
     exports.Dropzone = Dropzone;
     exports.EditableDropdown = EditableDropdown;
@@ -13055,6 +12940,7 @@
     exports.Grid = Grid;
     exports.GridCell = GridCell;
     exports.Heading = Heading;
+    exports.HorizontalNav = HorizontalNav;
     exports.Icon = Icon;
     exports.Input = Input;
     exports.InputMask = InputMask;
@@ -13099,7 +12985,7 @@
     exports.Toast = Toast;
     exports.Tooltip = Tooltip;
     exports.Utils = index$1;
-    exports.VerticalMenu = VerticalMenu;
+    exports.VerticalNav = VerticalNav;
     exports.version = version;
 
     Object.defineProperty(exports, '__esModule', { value: true });

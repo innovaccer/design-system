@@ -432,8 +432,8 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/card/Card.tsx": {
-        "version": "e7c9bfc1e8f049bac6c1e4d86390082a3108e974222e5bd05de7a7fe9b61f060",
-        "signature": "17b31b0c11cd0bc62229362869e5e1eb479293cfdaf834591faa7668525e0b8a",
+        "version": "38f58cb82534db3566c9e73b4f48475e09ecb2e57a098dd478b60c56846445c6",
+        "signature": "4161ad09a3face310376fd8d59ae93dc8a6b04dbaa0c488c28359dede6334a72",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/card/index.tsx": {
@@ -449,6 +449,36 @@
       "../../core/components/atoms/cardSubdued/index.tsx": {
         "version": "a9e7087d713c09377a30e26730905fbd0aae55fd31f750949981c938b740b690",
         "signature": "a92398974ebe22d489861db6ec06bcf3e7c411082c3e46af237cbb309380a1ee",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/cardHeader/CardHeader.tsx": {
+        "version": "940f5393d8b168bc10fd37fa7f48e8187e705b46e271ba024b5b746f6a8c8fae",
+        "signature": "3c055256baa745f4e924b2341682b0428a83c3376a50571bb2b061993a4bcf98",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/cardHeader/index.tsx": {
+        "version": "dd8b175bc16a6cb49d24c5989b3d8a14413936646a5b3e9f813d563d3b37da2e",
+        "signature": "c4dd6951b756231da8ace8ced50acf5127f434f9a77efce6f4decc14a89a44b6",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/cardBody/CardBody.tsx": {
+        "version": "ad4c08e4d9fcdcbd055719654cff07c5c1e0e4650e7e5978ac2ffd4e51b5bd03",
+        "signature": "5f420e72c7cb161fe10efcabff254a1bcfd7a0ca8d4b423c0e167c6dfc4deb98",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/cardBody/index.tsx": {
+        "version": "59dea3b13c508adc0fc1c5b2251272155fa301441b6f2bed9672a17c7b07a282",
+        "signature": "2c59222b9d94bbfbb07e58e1e19a9a9e51a7e56497a10fbccb270c03d99ef5ee",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/cardFooter/CardFooter.tsx": {
+        "version": "76e7fc6a142f7fdcdd2b23d71438f021dc7626de5b76b80ad1dc7c8a00dd47d0",
+        "signature": "781dd16535cee57e48e70007f4628515923ee1917084da965f58e4694712a001",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/atoms/cardFooter/index.tsx": {
+        "version": "6c958adb07635c3470d887b00b072bf7eb79f78f09dcdf2656e44e10dfe8ac9f",
+        "signature": "059d7b3a44c7ac251a68e7de8c15e57592c85b6228221a5ef683cf398934605d",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/_chip/index.tsx": {
@@ -506,31 +536,6 @@
         "signature": "e07b3861694d1de22de7b56ef40ce5ab57de7a7f2fd976c80494349e1721c172",
         "affectsGlobalScope": false
       },
-      "../../node_modules/@types/d3-path/index.d.ts": {
-        "version": "9bbb0e9c08a0d81ca1068daf26c4ceb17a66450af5f6d7dabaae45210fe890cb",
-        "signature": "9bbb0e9c08a0d81ca1068daf26c4ceb17a66450af5f6d7dabaae45210fe890cb",
-        "affectsGlobalScope": false
-      },
-      "../../node_modules/@types/d3-shape/index.d.ts": {
-        "version": "584197f979161d92fc7a15767926154b35ff4d7fa7600ece98b23b30e66d2b42",
-        "signature": "584197f979161d92fc7a15767926154b35ff4d7fa7600ece98b23b30e66d2b42",
-        "affectsGlobalScope": true
-      },
-      "../../node_modules/@types/recharts/index.d.ts": {
-        "version": "bfde3f399f79a6e9194a6e5dc16db8b306d5b2ca793f73f37b725326e8995528",
-        "signature": "bfde3f399f79a6e9194a6e5dc16db8b306d5b2ca793f73f37b725326e8995528",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/organisms/donutChart/DonutChart.tsx": {
-        "version": "dd976c72cf44a2a00ecf155d28406d7e66cb4eabd87c0766a4b28b947bcad3e3",
-        "signature": "62fe3218700cccee6ac8293bfc62b61ca11a8e086b99658be528dfe9fad11a30",
-        "affectsGlobalScope": false
-      },
-      "../../core/components/organisms/donutChart/index.tsx": {
-        "version": "41774f5de3549bc7fb7fac978e4b4b0a67aa7442fc5696bd7b8f33a1ca3ae823",
-        "signature": "cfa3b268f72171ec45f6a59d6df27a096029872306b1e9a04554b33907d7eb8a",
-        "affectsGlobalScope": false
-      },
       "../../core/components/atoms/heading/Heading.tsx": {
         "version": "01f51529e25d0c9ddc4385dc974fd669e895240819cd6af34aa9ad02b0513b77",
         "signature": "aef863fbb1a13d9b5fa7b44e4bb2bc003188192dcbef8a126fd52e2db271e401",
@@ -567,7 +572,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/label/Label.tsx": {
-        "version": "2c912a324d6eb35a6ccd83ba000c33ed1e3baba926b27dd359cedc2328a47889",
+        "version": "f5fc10929def0d56d93d4d0d017f8d774e8a24ba1c187e0417551de99d302ee5",
         "signature": "c2bed342bb80212251349d3281615e87ec31a9c593c1b3e7cdbe733e18213856",
         "affectsGlobalScope": false
       },
@@ -586,24 +591,24 @@
         "signature": "5762fae5cc1601bbc027d1998ad3ad2a924763b0ae9a36ea21c3f6213dbcc363",
         "affectsGlobalScope": false
       },
-      "../../core/components/organisms/navigation/utils.tsx": {
+      "../../core/utils/navigationHelper.tsx": {
         "version": "061c2976b306b4a05f1fb08e763e0fa4375781c68d9d007c5ef03eb44fb6202b",
         "signature": "a061829b38c05acd0c29e2af7d0914d6baf3d96029e2a44cb3728cf5b660f230",
         "affectsGlobalScope": false
       },
-      "../../core/components/organisms/verticalMenu/MenuItem.tsx": {
-        "version": "9a53f2ce0eab29ecad6ef41f2c16585b4f6d263edd23a7b47f18b818dfed89b8",
-        "signature": "85deda176dd6a726086d644d2594bf6d131fa7b11d8e156ec6fc5e3cc792ec52",
+      "../../core/components/organisms/verticalNav/MenuItem.tsx": {
+        "version": "71e77aa371b870999d3ce12ded29eba45cdef3730e40c9ad0399033478b693d6",
+        "signature": "aacfdbb4c44e59a9b59d018da5d1cdaa6297785b4f456489f6ae5097ff81606a",
         "affectsGlobalScope": false
       },
-      "../../core/components/organisms/verticalMenu/VerticalMenu.tsx": {
-        "version": "8be06ccecc29ad8057ad535907f7b364b4395d5851dfdc65410b5630a53c9262",
-        "signature": "6d41c7032246b0a62d2bf11a976646929abab18042cd3956652f6439c4fd0772",
+      "../../core/components/organisms/verticalNav/VerticalNav.tsx": {
+        "version": "445d9c995b6ddba1dfe867fcf13460cec8d43da6d103a688a19deded39fbec4b",
+        "signature": "4d0dbb41238166355516729e34827b9059f921b739c7f04ef888509cfee1ded5",
         "affectsGlobalScope": false
       },
-      "../../core/components/organisms/verticalMenu/index.tsx": {
-        "version": "c31ab4953fbc79bafb0ee405fdc61125916a1e723039d98445765a5dbef555ed",
-        "signature": "5fb1dd8c34f163b9215d34e5cdf60319535356d5388ec0eccf597da187d68fb2",
+      "../../core/components/organisms/verticalNav/index.tsx": {
+        "version": "e4b5f179d0ab6887dddb0092b8689355e6c2def7b35a82910f4877c7c7afe8e5",
+        "signature": "fb6e60cc6528097aa6d662df9d3e5d266b9f1791591fa451f43106f7a2c062d8",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/editable/Editable.tsx": {
@@ -654,6 +659,16 @@
       "../../core/components/atoms/link/index.tsx": {
         "version": "9ee9322fd73a127279f558d30fc310a0e340cf90d7df19d21a95cb372d44fcf7",
         "signature": "4073d38667db022fa1a25b4d85cca76c8ad67a943e335891c2565c4e2e4a4a20",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/organisms/horizontalNav/HorizontalNav.tsx": {
+        "version": "be99ea8af6107404e89e5ea5068f8240b63ddf1490756a905ff3732d87ad2eaa",
+        "signature": "f514d24ce6074d591e449c02b591ee452010db46cf8ac4ed134508b59d168684",
+        "affectsGlobalScope": false
+      },
+      "../../core/components/organisms/horizontalNav/index.tsx": {
+        "version": "33a29ca2a254f89f98365450f1da9fcfe9056ad98a85b76967e4e77b8ddef346",
+        "signature": "d9161c181a9c1ab247f8243d2e4a04049dab1923a5ea9f80ad483a7e9574f5c7",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/message/Message.tsx": {
@@ -802,7 +817,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/textarea/Textarea.tsx": {
-        "version": "0c1f4344db80adb8a85aff60fb2b1077543917c068bad86d08bd998daeec169e",
+        "version": "3f1cf465075b061d971ec7d931983cfc8a7755a8772940b97fe7def27c86a821",
         "signature": "4345a769649914361b065f00e64523fcaaf525d66b78a9b0f20fab870217f16e",
         "affectsGlobalScope": false
       },
@@ -1008,7 +1023,7 @@
       },
       "../../core/components/atoms/popperWrapper/PopperWrapper.tsx": {
         "version": "2cd2a9cff8caefbf0d8d24b0c5e482a0a9767feae97b30fc4025cfe233fe3edd",
-        "signature": "2b71da16473f5ccfdc5868ec9328b3fffe2fbddee508892b16e7ee851c849d35",
+        "signature": "912d1c41155ae9a08f25042faa855eb6cbac588ae43f467237da751959e5ff5b",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/popperWrapper/index.tsx": {
@@ -1212,7 +1227,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/Grid.tsx": {
-        "version": "6fb986c0698e17ac9c1f757cf503e1ecc86b951d5770252137f77b380c3f5882",
+        "version": "c6dc6687d879540e67067f5fd41fbc31b7ad9ff93018a0606029ad1f205ff5c1",
         "signature": "2da9e12be094d88995625bad3802dc847102b99e42efe8ddf3bcfd2957d677e7",
         "affectsGlobalScope": false
       },
@@ -1251,18 +1266,13 @@
         "signature": "8eedabe90df6443c5332fa9e29b7bc9aa07ca7c766310c86452b3547e9e22505",
         "affectsGlobalScope": false
       },
-      "../../core/components/organisms/navigation/HorizontalNavigation.tsx": {
-        "version": "cde80eb60e0832c46edd8251c658f9dd4036ff4989b24cc4ef31af376c9178a1",
-        "signature": "ada014a298ff924ea27f6367ee4fad720b42a3cba35be1f5457f035dfa642f94",
-        "affectsGlobalScope": false
-      },
       "../../core/components/organisms/navigation/VerticalNavigation.tsx": {
-        "version": "259441a5bfffde937e5a647c538806ef5db79b6c534a4c70fdaf84ccfed1760a",
-        "signature": "7cc84c63b1ec66bba0c4c46e4fb29ffaa1bd6957540c41849a51581bf2df8e77",
+        "version": "a1d89b465820776f7a8a325a5445f010cdebee4fc94cf7fe7b5d5654b2270361",
+        "signature": "d464eb06c46104aa9cea07a7a44b82b9fb5347576efca9f3e94a90636b72d499",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/navigation/Navigation.tsx": {
-        "version": "a955db2787083f31b2dcbde071abad733fadea08a3350c1288fa2954994741ac",
+        "version": "1d7580ff849da45d6187898b63ee45c828368fbfe15a19b9d56615db42943859",
         "signature": "670d8e00afb20d44cf3c3dae749d127e3a051562a5a5bd3f600fd6ac3c9b5c83",
         "affectsGlobalScope": false
       },
@@ -1302,8 +1312,8 @@
         "affectsGlobalScope": false
       },
       "../../core/index.type.tsx": {
-        "version": "30cd513fec7df79b951db5399b79a3a5b5d526f52857590258c1bfd2fba6b236",
-        "signature": "991b1a332c18767199c9982cb314e8e4da86e74034811b84d4fbbe10ccc17309",
+        "version": "4a56db8e20daeea8d3468dbc825f0e12310dd0e6744ca6e6b00114d139fdfea5",
+        "signature": "73b809ea078853331bdc6146d6b44e65fa0db32fc14365dfb300aad865d59c62",
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/timePicker/TimePicker.tsx": {
@@ -1332,8 +1342,8 @@
         "affectsGlobalScope": false
       },
       "../../core/index.tsx": {
-        "version": "c7993f931b07a3f6272f4279e8d5b9c77a855bdacf7609fae48afb00c742ae89",
-        "signature": "ca3108560ec06b78eb72d70109f767bf2ab9864d93e5d8ac3a6eb832d6ffebcb",
+        "version": "9ecd473f2e1313caa7d33119df9fd2d972216345865db643041735ab7a94b9f5",
+        "signature": "81edb2c1a61578ab0b8fc1480fb4588c1ffaff91c82052f29fd880a2c719e6e0",
         "affectsGlobalScope": false
       },
       "../../core/components/atoms/badge/_stories_/SolidAlert.story.tsx": {
@@ -1557,68 +1567,68 @@
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/Schema.tsx": {
-        "version": "75468a04e5e836fddcffe2b7656e0f0e339b21affd703a2bb46bef96e4fe0528",
+        "version": "3ada917fd184573d578b4c21517503fa87659be813311dbfacaa35275a1184ae",
         "signature": "a2d709df76447c910e20754abbc386426fa953135b554cbbcb7a40de68a03f6f",
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/Align/Align.story.tsx": {
-        "version": "e21ff1b0029ece1805250de8c8075258e017582a5801e3151ff0e408c9787fee",
-        "signature": "60b5dc4ca60ff4b474fd1faec5634f5ac56b79e238e8733c0b62f35e110a0bd0",
+        "version": "b7ace5f429d2f16dae9b65857ec4ae3f6e11132810257ab3c98bc2d1a4f11bf5",
+        "signature": "7f801ed6fc28687230e1f619f0da0e0552ce8b0ee2c22169be883c7f37a40b74",
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/Background/Background.story.tsx": {
-        "version": "542974f72bf99a2748a1377aff3df812e00150c9a7eecbf0ec474f6e2ca08659",
-        "signature": "58be0f02111040cd7242b0d94c685a835dda79990f4dcdba1e2435f4800751ee",
+        "version": "6abc0faf12089f2f66cd7394d1b037e7d2977cbc440ed0133d0836601124cf7c",
+        "signature": "c3f951a453d3e559850a7a655c63e5af41e8ac4adc5c2f1849b31907b5bb435d",
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/Display/Display.story.tsx": {
-        "version": "dbde5a7fe6769834f63a7200abe1b92e6097a6a3e4d3ff0122d61e51b419ee66",
-        "signature": "2ef97fe003748180035053d10e185d33d9fef1f03752b7e3703f66f993b841ff",
+        "version": "5e089ef553bd5e6ba946eade4c04f19e5c9c51b3206169e464e974fe9267f755",
+        "signature": "d91039b79899b7a89d45d30c65668dbe119e1b075f771aa2f1c6ad3b9adf63ca",
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/Flex/Flex.story.tsx": {
-        "version": "a0ed8861e833582255ab9377acb831be77fc94acfcfa4180ca4f80680492c031",
-        "signature": "d8442f9d6133b88103a26825782d39d147ec8a6106f03f5f9cd476429a9aa8f3",
+        "version": "3204163edf0223f779689135a8d2809eb1c06be3c20eafb98036d72fc32edcfb",
+        "signature": "8d235c20fc788744bb474bd415064c7f621aa766e0a4c0f0e643c523062eeaaf",
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/Miscellaneous/Miscellaneous.story.tsx": {
-        "version": "53ece6f1f62cb3120c38ff28b27a3746438873958c11a7ef2ab6b75fa3967f52",
-        "signature": "0c5cde002ecce55fd6df0b172ff3903638493bb3f9ec1fd5814fe73f5639c2f2",
+        "version": "1213abdc06ab499aa721005f9a9500ef596c48deff08f38dbf1338965501180e",
+        "signature": "aa42c26e6c3aec0874b1b86dc76fa72fdf58a74fe6a7c7ce8179e70722d5520e",
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/Overflow/Overflow.story.tsx": {
-        "version": "feb674f6ce4c5643c095a1e6e58a73a434a89dc1e493557d311e1a835805cf53",
-        "signature": "c44ce89ea95ce66199da1326fc9ea4d5b7d5278b7bacc5b27661f1dec96909aa",
+        "version": "dd139fc25e8aed9f800f8c4f64752bc609763e58b7640e7a85e65dfcfd3b01d4",
+        "signature": "51d6333d0d51d0c853b9517a538fb359d20447c721ba32104e5bca799b48fd47",
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/Position/Position.story.tsx": {
-        "version": "7d87622c967dc5792faa0c4263e8b9e3ec3d5e97384f2dcacf9935b3c25afba1",
-        "signature": "e01d9498c71d87f3f7561df0b31ef1c829c800b54afa1e282f3d510099e89fe1",
+        "version": "ab6cb504226e9beff365562e644f34385001e76d1a0b919edbd57531ca0fa9fd",
+        "signature": "99eefb34084ecb833986c14634c62aa83edf4cd87f9547b7e01f86aec5a34119",
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/Sizing/Sizing.story.tsx": {
-        "version": "e850930aa2dfa1d5b0d139c020442e6ffd00250b318e67d32f564a6013d4026b",
-        "signature": "3e8880770d0ac4a1dc488862e1197e372462a974ab2b5a9219fb81d2bed000da",
+        "version": "c6080f4f49391a41a8c22ec55239f31dbf9160ce1497b816ff5fb0b7905ff26d",
+        "signature": "8de5cc5edbfa6946982f36503c92b6cde95c21e52422cc017256a214978085e0",
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/Spacing/Data.tsx": {
-        "version": "f76ce364e5b2956d5ce3b8075bcc98696660ca515547c61e30059387aa907667",
-        "signature": "6ce9c23966253f1e5617e9444bab610094172b79da8dc5ae31784904f58d5c6d",
+        "version": "e4f9fd913d33502db9a6e1d0a60421673b5d053aeb0b152a584877372ae68a72",
+        "signature": "b58336d143b58336739c5a9734a83ce78ee25852b3f3133aeff906fc364b3e09",
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/Spacing/Schema.tsx": {
-        "version": "160cccc033d31625959480bfe042482f27cc3bf47ed3eb5477d1805a3620c7b5",
+        "version": "5d7fe11a22e8f210f1a868db1002dcca6304b9f01cd20a1b837690bcf4c48b5f",
         "signature": "fb38e8c85063168d2ac414a267dbaf488b2e091b8eca22a58b6cb4065090bef1",
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/Spacing/Spacing.story.tsx": {
-        "version": "850658d2e9cb423d6f7e7cf01e26493151d30408dd26e0cc8717c12872577f0a",
-        "signature": "477569f7b030f611b09186be76f60320729539ce0d8c0a61a16b1b0cd971d1ef",
+        "version": "4062305ab181d892452b64ed1a4b499dada2235ad326d7e7128bef2316802709",
+        "signature": "48a37032741671e63ca4eab9bbc9e5d02c23373bcfcc80b99de7ee46b4c000d3",
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/designTokens/Schema.tsx": {
-        "version": "bd2389109ca87b9671465960c7e00145834d6cf0732ee5328d0f96a01be4b590",
-        "signature": "e3016c7a018dbfd96a33f4896a9bc318eda7ed9a72c34136ab12e9e8999b2789",
+        "version": "aaad5dd0ddbb547cdc666f9e993116c7434cc28cf8125fe12da8b62556b2371f",
+        "signature": "16059f2389bf9f06c4fff930238472606123e371e2e797aff1349c9497448d56",
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/designTokens/Data.tsx": {
@@ -1632,23 +1642,23 @@
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/designTokens/Colors.story.tsx": {
-        "version": "33a3a84c9fcece81a337bd82f68f7cbe667e4acaba8b52f2fbfe80f7948f00d4",
-        "signature": "a17f9ca225a42beca8cd28d2b82f257228a9844867b0b73fb1b93f4f41461926",
+        "version": "8650c051e65380d105110e14bdbf43f423013b53c6cb8ac65845401d7f93ae53",
+        "signature": "817007c8805bdffa63c2c9d851231cb06612a3e1b96cbc643e6366ac54bbb68b",
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/designTokens/Miscellaneous.story.tsx": {
-        "version": "3b2a89cade4f96b0e52f8f5522177a35a1aee063947cc06bf5dc1e9b882d6d9c",
-        "signature": "789ffba566843c61e3f376d4a382214bcd0a7bc6f92e40624af1e9c8d2dcffd6",
+        "version": "4baec42bed86644c88fb68513d8acff7fac7b11821550a8138f0c19f9585da6c",
+        "signature": "952745f88d79ec4dee4434fdff2534089aaea74b15be11cbcaea4ffd148b801c",
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/designTokens/Spacing.story.tsx": {
-        "version": "2de97f746cbe53d23b8e7bf98664fb944092ae98195cb4800f11401f41868111",
-        "signature": "eb527b7905036d16cd076494f228a073cca79f19655e24893e2f1cebf2025a20",
+        "version": "e43742f948763b2f73cd0efad45636e558c8174d11a449c910d980b72f338bc6",
+        "signature": "8256f7a6b98114343d3022339c3c3287abd3894364792e44a9e14b522f6d74bd",
         "affectsGlobalScope": false
       },
       "../../core/components/css-utilities/designTokens/Typography.story.tsx": {
-        "version": "7c3d3d949f4185d9b0968ffcc3e3e8aa17771f6254e134b349075e30eb77c88e",
-        "signature": "9e38b12bd3fcbf4b0b3890c454e866e164ab8ce1082e2303d69ab39d2e443114",
+        "version": "c0379f12e73c1d2ba74cc17ffdac0cd5f803cbfbcb0160f39309dcc913c3c6d1",
+        "signature": "42a9dbec2186535d4c8fc314fd0f484c60701f1a831c6663cecb449700af1716",
         "affectsGlobalScope": false
       },
       "../../core/components/molecules/Layout/index.story.tsx": {
@@ -1732,7 +1742,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/patterns/verticalNavigation/sideNav.story.tsx": {
-        "version": "8ebedc2a16b326db682a5f5577b87fb5f45e326b7d8000cc63b4816087a9cbc9",
+        "version": "ec0947b3a840905498695f4a83292308f012566d58061406483ccf6bfa661a73",
         "signature": "86de2353c64682d83051ad96acbb4d2ef145448d3a3985d0963b6abfb96798a1",
         "affectsGlobalScope": false
       },
@@ -2662,7 +2672,7 @@
         "affectsGlobalScope": false
       },
       "../../core/utils/docPage/index.tsx": {
-        "version": "e576e1b69b803884363a752e839a72a875ee132da1fd74d73e0c9ffbd2d7eff1",
+        "version": "dbc1c33c9e60a35ef2042e6f1a58de12612b452a1a0bde205c89079fe63afbf6",
         "signature": "d793df693e1f566f2a7fd586a5ba76f93009c359e9795372d49bb1dafa1d2c00",
         "affectsGlobalScope": false
       },
@@ -2741,9 +2751,14 @@
         "signature": "cfb42d1c8aa66607ef3b1e2cee85d28148358ba62dc5e5146b317dae7bfd9a96",
         "affectsGlobalScope": false
       },
+      "../../node_modules/@types/node/assert/strict.d.ts": {
+        "version": "c7bdc99177a2a94d25fb13722adaaf5b3291bf70b4d1b27584ba189dd3889ba3",
+        "signature": "c7bdc99177a2a94d25fb13722adaaf5b3291bf70b4d1b27584ba189dd3889ba3",
+        "affectsGlobalScope": false
+      },
       "../../node_modules/@types/node/globals.d.ts": {
-        "version": "583b4bd4e441916be4bf152ee323c4ffa6e178fd25df2ee2215ef05c7feb5ad4",
-        "signature": "583b4bd4e441916be4bf152ee323c4ffa6e178fd25df2ee2215ef05c7feb5ad4",
+        "version": "5402314c88d0127f63f94a0272f79e04ea0fc010ff6da6613807504c4163a1ad",
+        "signature": "5402314c88d0127f63f94a0272f79e04ea0fc010ff6da6613807504c4163a1ad",
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/node/async_hooks.d.ts": {
@@ -2777,8 +2792,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/crypto.d.ts": {
-        "version": "d53b352a01645c470a0d8c31bf290ba791fc28ade0ce187a4a50f5c2f826f75e",
-        "signature": "d53b352a01645c470a0d8c31bf290ba791fc28ade0ce187a4a50f5c2f826f75e",
+        "version": "4105385afd60b90ebac359d02a186250885839122850d776c0ad0e327c1afb65",
+        "signature": "4105385afd60b90ebac359d02a186250885839122850d776c0ad0e327c1afb65",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/dgram.d.ts": {
@@ -2787,8 +2802,13 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/dns.d.ts": {
-        "version": "2b34e7fcba9e1f24e7f54ba5c8be5a8895b0b8b444ccf6548e04acdee0899317",
-        "signature": "2b34e7fcba9e1f24e7f54ba5c8be5a8895b0b8b444ccf6548e04acdee0899317",
+        "version": "12b2ab05a3ededc0e8938f2e16e4e2e30fc82b6d97b414067c26253f26fce69a",
+        "signature": "12b2ab05a3ededc0e8938f2e16e4e2e30fc82b6d97b414067c26253f26fce69a",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@types/node/dns/promises.d.ts": {
+        "version": "e4ab7077b5adff3156d258a284986dc85e0bcf0fff1670df5c7f83efc25d4cc6",
+        "signature": "e4ab7077b5adff3156d258a284986dc85e0bcf0fff1670df5c7f83efc25d4cc6",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/domain.d.ts": {
@@ -2797,13 +2817,13 @@
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/node/events.d.ts": {
-        "version": "bfd4f140c07091b5e8a963c89e6fa3f44b6cfcbc11471b465cf63e2d020ad0eb",
-        "signature": "bfd4f140c07091b5e8a963c89e6fa3f44b6cfcbc11471b465cf63e2d020ad0eb",
+        "version": "eb15e56611c2a853526a2e202234dd1676bd37cc2fcdbd9843470f7dafb37f15",
+        "signature": "eb15e56611c2a853526a2e202234dd1676bd37cc2fcdbd9843470f7dafb37f15",
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/node/fs.d.ts": {
-        "version": "a106a0bea088b70879ac88ff606dc253c0cc474ea05ad3a282b8bfb1091ae576",
-        "signature": "a106a0bea088b70879ac88ff606dc253c0cc474ea05ad3a282b8bfb1091ae576",
+        "version": "2e0b4284620082f63b144da8096b207e9e9590c0e599834332b90624db0cc4a8",
+        "signature": "2e0b4284620082f63b144da8096b207e9e9590c0e599834332b90624db0cc4a8",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/fs/promises.d.ts": {
@@ -2817,8 +2837,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/http2.d.ts": {
-        "version": "9aff68f1b847b846d3d50a58c9f8f99389bedd0258d1b1c201f11b97ecfd36f8",
-        "signature": "9aff68f1b847b846d3d50a58c9f8f99389bedd0258d1b1c201f11b97ecfd36f8",
+        "version": "2f69728fd1ca1f381879bbf20a42ae47a8f7286e000afd138c6cf870d90d882f",
+        "signature": "2f69728fd1ca1f381879bbf20a42ae47a8f7286e000afd138c6cf870d90d882f",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/https.d.ts": {
@@ -2837,8 +2857,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/net.d.ts": {
-        "version": "f20ea392f7f27feb7a90e5a24319a4e365b07bf83c39a547711fe7ff9df68657",
-        "signature": "f20ea392f7f27feb7a90e5a24319a4e365b07bf83c39a547711fe7ff9df68657",
+        "version": "2c381d36201776828c67a307ad5fd8cbcf9ecaffb1fc7f77f7ce433d1a632b7f",
+        "signature": "2c381d36201776828c67a307ad5fd8cbcf9ecaffb1fc7f77f7ce433d1a632b7f",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/os.d.ts": {
@@ -2882,8 +2902,13 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/stream.d.ts": {
-        "version": "74594bec8a9fa1a2cd40268f9ab95d0c44b6080345da6e8b913939d19b1d57ae",
-        "signature": "74594bec8a9fa1a2cd40268f9ab95d0c44b6080345da6e8b913939d19b1d57ae",
+        "version": "2b6906b19436e07d874a51a5829d94ab690337c4ee652735ab422a8f102168be",
+        "signature": "2b6906b19436e07d874a51a5829d94ab690337c4ee652735ab422a8f102168be",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@types/node/stream/promises.d.ts": {
+        "version": "1b98a8704d0c68520ccb02ac44782b7ffdaab40d23d2fa00e13923b528587f8b",
+        "signature": "1b98a8704d0c68520ccb02ac44782b7ffdaab40d23d2fa00e13923b528587f8b",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/string_decoder.d.ts": {
@@ -2892,8 +2917,13 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/timers.d.ts": {
-        "version": "2d713cbcbd5bcc38d91546eaeea7bb1c8686dc4a2995a28556d957b1b9de11d9",
-        "signature": "2d713cbcbd5bcc38d91546eaeea7bb1c8686dc4a2995a28556d957b1b9de11d9",
+        "version": "911175d5a29fce5f6f471bcab94524474a1f99eec9cb86fe96505a40ce75f972",
+        "signature": "911175d5a29fce5f6f471bcab94524474a1f99eec9cb86fe96505a40ce75f972",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@types/node/timers/promises.d.ts": {
+        "version": "8b4f4519834b57645d2483af74d6f5d1675260a5b0e9aa6026f3e021edd2c5e9",
+        "signature": "8b4f4519834b57645d2483af74d6f5d1675260a5b0e9aa6026f3e021edd2c5e9",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/tls.d.ts": {
@@ -2932,8 +2962,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/worker_threads.d.ts": {
-        "version": "ddc086b1adac44e2fccf55422da1e90fa970e659d77f99712422a421564b4877",
-        "signature": "ddc086b1adac44e2fccf55422da1e90fa970e659d77f99712422a421564b4877",
+        "version": "0124e458b12ba82b08c87220a1c9d4fb7701dcda8f11e28f7d7266281501bcba",
+        "signature": "0124e458b12ba82b08c87220a1c9d4fb7701dcda8f11e28f7d7266281501bcba",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/zlib.d.ts": {
@@ -2952,8 +2982,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/ts3.6/base.d.ts": {
-        "version": "ae68a04912ee5a0f589276f9ec60b095f8c40d48128a4575b3fdd7d93806931c",
-        "signature": "ae68a04912ee5a0f589276f9ec60b095f8c40d48128a4575b3fdd7d93806931c",
+        "version": "210ef68f34baca2a4499c07a51f05d51b4f0ef01d64efea3017cb3bc31c37e33",
+        "signature": "210ef68f34baca2a4499c07a51f05d51b4f0ef01d64efea3017cb3bc31c37e33",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/assert.d.ts": {
@@ -2967,8 +2997,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/index.d.ts": {
-        "version": "9c4c395e927045b324877acdc4bfb95f128f36bc9f073266a2f0342495075a4f",
-        "signature": "9c4c395e927045b324877acdc4bfb95f128f36bc9f073266a2f0342495075a4f",
+        "version": "6c9c7e459e013ddf52c70b90f88bbdd925e483ef984d80f9bffb501029974e82",
+        "signature": "6c9c7e459e013ddf52c70b90f88bbdd925e483ef984d80f9bffb501029974e82",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/cheerio/index.d.ts": {
@@ -4124,6 +4154,21 @@
           "*",
           "*",
           "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
           "*"
         ]
       },
@@ -4280,6 +4325,30 @@
       ],
       "../../core/components/atoms/card/index.tsx": [
         "../../core/components/atoms/card/Card.tsx"
+      ],
+      "../../core/components/atoms/cardBody/CardBody.tsx": [
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/react/index.d.ts",
+        "../../node_modules/classnames/index.d.ts"
+      ],
+      "../../core/components/atoms/cardBody/index.tsx": [
+        "../../core/components/atoms/cardBody/CardBody.tsx"
+      ],
+      "../../core/components/atoms/cardFooter/CardFooter.tsx": [
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/react/index.d.ts",
+        "../../node_modules/classnames/index.d.ts"
+      ],
+      "../../core/components/atoms/cardFooter/index.tsx": [
+        "../../core/components/atoms/cardFooter/CardFooter.tsx"
+      ],
+      "../../core/components/atoms/cardHeader/CardHeader.tsx": [
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/react/index.d.ts",
+        "../../node_modules/classnames/index.d.ts"
+      ],
+      "../../core/components/atoms/cardHeader/index.tsx": [
+        "../../core/components/atoms/cardHeader/CardHeader.tsx"
       ],
       "../../core/components/atoms/cardSubdued/CardSubdued.tsx": [
         "../../core/utils/types.tsx",
@@ -4730,7 +4799,9 @@
         "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/components/css-utilities/Schema.tsx": [
-        "../../core/components/organisms/grid/index.tsx"
+        "../../core/components/organisms/grid/index.tsx",
+        "../../core/index.tsx",
+        "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/components/css-utilities/Sizing/Sizing.story.tsx": [
         "../../core/components/css-utilities/Schema.tsx",
@@ -4738,7 +4809,9 @@
         "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/components/css-utilities/Spacing/Schema.tsx": [
-        "../../core/components/organisms/grid/index.tsx"
+        "../../core/components/organisms/grid/index.tsx",
+        "../../core/index.tsx",
+        "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/components/css-utilities/Spacing/Spacing.story.tsx": [
         "../../core/components/css-utilities/Spacing/Data.tsx",
@@ -4762,6 +4835,7 @@
       ],
       "../../core/components/css-utilities/designTokens/Schema.tsx": [
         "../../core/components/organisms/grid/index.tsx",
+        "../../core/index.tsx",
         "../../node_modules/@types/react/index.d.ts"
       ],
       "../../core/components/css-utilities/designTokens/Spacing.story.tsx": [
@@ -5179,17 +5253,6 @@
       "../../core/components/organisms/dateRangePicker/index.tsx": [
         "../../core/components/organisms/dateRangePicker/DateRangePicker.tsx"
       ],
-      "../../core/components/organisms/donutChart/DonutChart.tsx": [
-        "../../core/index.tsx",
-        "../../core/index.type.tsx",
-        "../../core/utils/types.tsx",
-        "../../node_modules/@types/react/index.d.ts",
-        "../../node_modules/@types/recharts/index.d.ts",
-        "../../node_modules/classnames/index.d.ts"
-      ],
-      "../../core/components/organisms/donutChart/index.tsx": [
-        "../../core/components/organisms/donutChart/DonutChart.tsx"
-      ],
       "../../core/components/organisms/grid/Cell.tsx": [
         "../../core/components/atoms/dropdown/index.tsx",
         "../../core/components/organisms/grid/Grid.tsx",
@@ -5263,6 +5326,17 @@
         "../../core/components/organisms/grid/columnUtility.tsx",
         "../../core/components/organisms/grid/rowUtility.tsx"
       ],
+      "../../core/components/organisms/horizontalNav/HorizontalNav.tsx": [
+        "../../core/index.tsx",
+        "../../core/index.type.tsx",
+        "../../core/utils/navigationHelper.tsx",
+        "../../core/utils/types.tsx",
+        "../../node_modules/@types/react/index.d.ts",
+        "../../node_modules/classnames/index.d.ts"
+      ],
+      "../../core/components/organisms/horizontalNav/index.tsx": [
+        "../../core/components/organisms/horizontalNav/HorizontalNav.tsx"
+      ],
       "../../core/components/organisms/list/List.tsx": [
         "../../core/components/organisms/table/index.tsx",
         "../../core/index.tsx",
@@ -5272,23 +5346,16 @@
       "../../core/components/organisms/list/index.tsx": [
         "../../core/components/organisms/list/List.tsx"
       ],
-      "../../core/components/organisms/navigation/HorizontalNavigation.tsx": [
-        "../../core/components/organisms/navigation/utils.tsx",
-        "../../core/index.tsx",
-        "../../core/index.type.tsx",
-        "../../node_modules/@types/react/index.d.ts",
-        "../../node_modules/classnames/index.d.ts"
-      ],
       "../../core/components/organisms/navigation/Navigation.tsx": [
-        "../../core/components/organisms/navigation/HorizontalNavigation.tsx",
         "../../core/components/organisms/navigation/VerticalNavigation.tsx",
+        "../../core/index.tsx",
         "../../core/utils/types.tsx",
         "../../node_modules/@types/react/index.d.ts",
         "../../node_modules/classnames/index.d.ts"
       ],
       "../../core/components/organisms/navigation/VerticalNavigation.tsx": [
-        "../../core/components/organisms/navigation/utils.tsx",
         "../../core/index.tsx",
+        "../../core/utils/navigationHelper.tsx",
         "../../node_modules/@types/react/index.d.ts",
         "../../node_modules/classnames/index.d.ts"
       ],
@@ -5345,23 +5412,23 @@
         "../../core/components/organisms/timePicker/TimePicker.tsx",
         "../../core/index.type.tsx"
       ],
-      "../../core/components/organisms/verticalMenu/MenuItem.tsx": [
-        "../../core/components/organisms/navigation/utils.tsx",
+      "../../core/components/organisms/verticalNav/MenuItem.tsx": [
         "../../core/index.tsx",
+        "../../core/utils/navigationHelper.tsx",
         "../../core/utils/types.tsx",
         "../../node_modules/@types/react/index.d.ts",
         "../../node_modules/classnames/index.d.ts"
       ],
-      "../../core/components/organisms/verticalMenu/VerticalMenu.tsx": [
-        "../../core/components/organisms/navigation/utils.tsx",
-        "../../core/components/organisms/verticalMenu/MenuItem.tsx",
+      "../../core/components/organisms/verticalNav/VerticalNav.tsx": [
+        "../../core/components/organisms/verticalNav/MenuItem.tsx",
         "../../core/index.tsx",
+        "../../core/utils/navigationHelper.tsx",
         "../../core/utils/types.tsx",
         "../../node_modules/@types/react/index.d.ts",
         "../../node_modules/classnames/index.d.ts"
       ],
-      "../../core/components/organisms/verticalMenu/index.tsx": [
-        "../../core/components/organisms/verticalMenu/VerticalMenu.tsx"
+      "../../core/components/organisms/verticalNav/index.tsx": [
+        "../../core/components/organisms/verticalNav/VerticalNav.tsx"
       ],
       "../../core/components/patterns/datePicker/dateAndTimePicker.story.tsx": [
         "../../node_modules/@types/react/index.d.ts"
@@ -5421,6 +5488,9 @@
         "../../core/components/atoms/button/index.tsx",
         "../../core/components/atoms/caption/index.tsx",
         "../../core/components/atoms/card/index.tsx",
+        "../../core/components/atoms/cardBody/index.tsx",
+        "../../core/components/atoms/cardFooter/index.tsx",
+        "../../core/components/atoms/cardHeader/index.tsx",
         "../../core/components/atoms/cardSubdued/index.tsx",
         "../../core/components/atoms/checkbox/index.tsx",
         "../../core/components/atoms/chip/index.tsx",
@@ -5478,15 +5548,15 @@
         "../../core/components/organisms/calendar/index.tsx",
         "../../core/components/organisms/datePicker/index.tsx",
         "../../core/components/organisms/dateRangePicker/index.tsx",
-        "../../core/components/organisms/donutChart/index.tsx",
         "../../core/components/organisms/grid/GridCell.tsx",
         "../../core/components/organisms/grid/index.tsx",
+        "../../core/components/organisms/horizontalNav/index.tsx",
         "../../core/components/organisms/list/index.tsx",
         "../../core/components/organisms/navigation/index.tsx",
         "../../core/components/organisms/pageHeader/index.tsx",
         "../../core/components/organisms/table/index.tsx",
         "../../core/components/organisms/timePicker/index.tsx",
-        "../../core/components/organisms/verticalMenu/index.tsx",
+        "../../core/components/organisms/verticalNav/index.tsx",
         "../../core/utils/index.tsx"
       ],
       "../../core/index.type.tsx": [
@@ -5498,6 +5568,9 @@
         "../../core/components/atoms/button/index.tsx",
         "../../core/components/atoms/caption/index.tsx",
         "../../core/components/atoms/card/index.tsx",
+        "../../core/components/atoms/cardBody/index.tsx",
+        "../../core/components/atoms/cardFooter/index.tsx",
+        "../../core/components/atoms/cardHeader/index.tsx",
         "../../core/components/atoms/cardSubdued/index.tsx",
         "../../core/components/atoms/checkbox/index.tsx",
         "../../core/components/atoms/chip/index.tsx",
@@ -5555,15 +5628,15 @@
         "../../core/components/organisms/calendar/index.tsx",
         "../../core/components/organisms/datePicker/index.tsx",
         "../../core/components/organisms/dateRangePicker/index.tsx",
-        "../../core/components/organisms/donutChart/index.tsx",
         "../../core/components/organisms/grid/GridCell.tsx",
         "../../core/components/organisms/grid/index.tsx",
+        "../../core/components/organisms/horizontalNav/index.tsx",
         "../../core/components/organisms/list/index.tsx",
         "../../core/components/organisms/navigation/index.tsx",
         "../../core/components/organisms/pageHeader/index.tsx",
         "../../core/components/organisms/table/index.tsx",
         "../../core/components/organisms/timePicker/index.tsx",
-        "../../core/components/organisms/verticalMenu/index.tsx",
+        "../../core/components/organisms/verticalNav/index.tsx",
         "../../core/index.tsx"
       ],
       "../../core/utils/docPage/index.tsx": [
@@ -6493,9 +6566,6 @@
       "../../node_modules/@types/color-convert/route.d.ts": [
         "../../node_modules/@types/color-convert/conversions.d.ts"
       ],
-      "../../node_modules/@types/d3-shape/index.d.ts": [
-        "../../node_modules/@types/d3-path/index.d.ts"
-      ],
       "../../node_modules/@types/enzyme-adapter-react-16/index.d.ts": [
         "../../node_modules/@types/enzyme/index.d.ts"
       ],
@@ -6543,6 +6613,9 @@
       "../../node_modules/@types/node/assert.d.ts": [
         "../../node_modules/@types/node/assert.d.ts"
       ],
+      "../../node_modules/@types/node/assert/strict.d.ts": [
+        "../../node_modules/@types/node/assert.d.ts"
+      ],
       "../../node_modules/@types/node/async_hooks.d.ts": [
         "../../node_modules/@types/node/async_hooks.d.ts"
       ],
@@ -6586,7 +6659,12 @@
         "../../node_modules/@types/node/net.d.ts"
       ],
       "../../node_modules/@types/node/dns.d.ts": [
-        "../../node_modules/@types/node/dns.d.ts"
+        "../../node_modules/@types/node/dns.d.ts",
+        "../../node_modules/@types/node/dns/promises.d.ts"
+      ],
+      "../../node_modules/@types/node/dns/promises.d.ts": [
+        "../../node_modules/@types/node/dns.d.ts",
+        "../../node_modules/@types/node/dns/promises.d.ts"
       ],
       "../../node_modules/@types/node/domain.d.ts": [
         "../../node_modules/@types/node/domain.d.ts",
@@ -6676,13 +6754,22 @@
       ],
       "../../node_modules/@types/node/stream.d.ts": [
         "../../node_modules/@types/node/events.d.ts",
-        "../../node_modules/@types/node/stream.d.ts"
+        "../../node_modules/@types/node/stream.d.ts",
+        "../../node_modules/@types/node/stream/promises.d.ts"
+      ],
+      "../../node_modules/@types/node/stream/promises.d.ts": [
+        "../../node_modules/@types/node/stream.d.ts",
+        "../../node_modules/@types/node/stream/promises.d.ts"
       ],
       "../../node_modules/@types/node/string_decoder.d.ts": [
         "../../node_modules/@types/node/string_decoder.d.ts"
       ],
       "../../node_modules/@types/node/timers.d.ts": [
         "../../node_modules/@types/node/timers.d.ts"
+      ],
+      "../../node_modules/@types/node/timers/promises.d.ts": [
+        "../../node_modules/@types/node/timers.d.ts",
+        "../../node_modules/@types/node/timers/promises.d.ts"
       ],
       "../../node_modules/@types/node/tls.d.ts": [
         "../../node_modules/@types/node/net.d.ts",
@@ -6692,6 +6779,7 @@
         "../../node_modules/@types/node/trace_events.d.ts"
       ],
       "../../node_modules/@types/node/ts3.6/base.d.ts": [
+        "../../node_modules/@types/node/assert/strict.d.ts",
         "../../node_modules/@types/node/async_hooks.d.ts",
         "../../node_modules/@types/node/buffer.d.ts",
         "../../node_modules/@types/node/child_process.d.ts",
@@ -6701,6 +6789,7 @@
         "../../node_modules/@types/node/crypto.d.ts",
         "../../node_modules/@types/node/dgram.d.ts",
         "../../node_modules/@types/node/dns.d.ts",
+        "../../node_modules/@types/node/dns/promises.d.ts",
         "../../node_modules/@types/node/domain.d.ts",
         "../../node_modules/@types/node/events.d.ts",
         "../../node_modules/@types/node/fs.d.ts",
@@ -6722,8 +6811,10 @@
         "../../node_modules/@types/node/readline.d.ts",
         "../../node_modules/@types/node/repl.d.ts",
         "../../node_modules/@types/node/stream.d.ts",
+        "../../node_modules/@types/node/stream/promises.d.ts",
         "../../node_modules/@types/node/string_decoder.d.ts",
         "../../node_modules/@types/node/timers.d.ts",
+        "../../node_modules/@types/node/timers/promises.d.ts",
         "../../node_modules/@types/node/tls.d.ts",
         "../../node_modules/@types/node/trace_events.d.ts",
         "../../node_modules/@types/node/tty.d.ts",
@@ -6795,10 +6886,6 @@
         "../../node_modules/@types/react/global.d.ts",
         "../../node_modules/@types/scheduler/tracing.d.ts",
         "../../node_modules/csstype/index.d.ts"
-      ],
-      "../../node_modules/@types/recharts/index.d.ts": [
-        "../../node_modules/@types/d3-shape/index.d.ts",
-        "../../node_modules/@types/react/index.d.ts"
       ],
       "../../node_modules/@types/resolve/index.d.ts": [
         "../../node_modules/@types/node/index.d.ts"
@@ -7823,9 +7910,6 @@
       "../../node_modules/@types/color-convert/route.d.ts": [
         "../../node_modules/@types/color-convert/conversions.d.ts"
       ],
-      "../../node_modules/@types/d3-shape/index.d.ts": [
-        "../../node_modules/@types/d3-path/index.d.ts"
-      ],
       "../../node_modules/@types/enzyme-adapter-react-16/index.d.ts": [
         "../../node_modules/@types/enzyme/index.d.ts"
       ],
@@ -7873,6 +7957,9 @@
       "../../node_modules/@types/node/assert.d.ts": [
         "../../node_modules/@types/node/assert.d.ts"
       ],
+      "../../node_modules/@types/node/assert/strict.d.ts": [
+        "../../node_modules/@types/node/assert.d.ts"
+      ],
       "../../node_modules/@types/node/async_hooks.d.ts": [
         "../../node_modules/@types/node/async_hooks.d.ts"
       ],
@@ -7916,7 +8003,12 @@
         "../../node_modules/@types/node/net.d.ts"
       ],
       "../../node_modules/@types/node/dns.d.ts": [
-        "../../node_modules/@types/node/dns.d.ts"
+        "../../node_modules/@types/node/dns.d.ts",
+        "../../node_modules/@types/node/dns/promises.d.ts"
+      ],
+      "../../node_modules/@types/node/dns/promises.d.ts": [
+        "../../node_modules/@types/node/dns.d.ts",
+        "../../node_modules/@types/node/dns/promises.d.ts"
       ],
       "../../node_modules/@types/node/domain.d.ts": [
         "../../node_modules/@types/node/domain.d.ts",
@@ -8006,13 +8098,22 @@
       ],
       "../../node_modules/@types/node/stream.d.ts": [
         "../../node_modules/@types/node/events.d.ts",
-        "../../node_modules/@types/node/stream.d.ts"
+        "../../node_modules/@types/node/stream.d.ts",
+        "../../node_modules/@types/node/stream/promises.d.ts"
+      ],
+      "../../node_modules/@types/node/stream/promises.d.ts": [
+        "../../node_modules/@types/node/stream.d.ts",
+        "../../node_modules/@types/node/stream/promises.d.ts"
       ],
       "../../node_modules/@types/node/string_decoder.d.ts": [
         "../../node_modules/@types/node/string_decoder.d.ts"
       ],
       "../../node_modules/@types/node/timers.d.ts": [
         "../../node_modules/@types/node/timers.d.ts"
+      ],
+      "../../node_modules/@types/node/timers/promises.d.ts": [
+        "../../node_modules/@types/node/timers.d.ts",
+        "../../node_modules/@types/node/timers/promises.d.ts"
       ],
       "../../node_modules/@types/node/tls.d.ts": [
         "../../node_modules/@types/node/net.d.ts",
@@ -8022,6 +8123,7 @@
         "../../node_modules/@types/node/trace_events.d.ts"
       ],
       "../../node_modules/@types/node/ts3.6/base.d.ts": [
+        "../../node_modules/@types/node/assert/strict.d.ts",
         "../../node_modules/@types/node/async_hooks.d.ts",
         "../../node_modules/@types/node/buffer.d.ts",
         "../../node_modules/@types/node/child_process.d.ts",
@@ -8031,6 +8133,7 @@
         "../../node_modules/@types/node/crypto.d.ts",
         "../../node_modules/@types/node/dgram.d.ts",
         "../../node_modules/@types/node/dns.d.ts",
+        "../../node_modules/@types/node/dns/promises.d.ts",
         "../../node_modules/@types/node/domain.d.ts",
         "../../node_modules/@types/node/events.d.ts",
         "../../node_modules/@types/node/fs.d.ts",
@@ -8052,8 +8155,10 @@
         "../../node_modules/@types/node/readline.d.ts",
         "../../node_modules/@types/node/repl.d.ts",
         "../../node_modules/@types/node/stream.d.ts",
+        "../../node_modules/@types/node/stream/promises.d.ts",
         "../../node_modules/@types/node/string_decoder.d.ts",
         "../../node_modules/@types/node/timers.d.ts",
+        "../../node_modules/@types/node/timers/promises.d.ts",
         "../../node_modules/@types/node/tls.d.ts",
         "../../node_modules/@types/node/trace_events.d.ts",
         "../../node_modules/@types/node/tty.d.ts",
@@ -8125,10 +8230,6 @@
         "../../node_modules/@types/react/global.d.ts",
         "../../node_modules/@types/scheduler/tracing.d.ts",
         "../../node_modules/csstype/index.d.ts"
-      ],
-      "../../node_modules/@types/recharts/index.d.ts": [
-        "../../node_modules/@types/d3-shape/index.d.ts",
-        "../../node_modules/@types/react/index.d.ts"
       ],
       "../../node_modules/@types/resolve/index.d.ts": [
         "../../node_modules/@types/node/index.d.ts"
@@ -8290,6 +8391,12 @@
       "../../core/components/atoms/caption/index.tsx",
       "../../core/components/atoms/card/Card.tsx",
       "../../core/components/atoms/card/index.tsx",
+      "../../core/components/atoms/cardBody/CardBody.tsx",
+      "../../core/components/atoms/cardBody/index.tsx",
+      "../../core/components/atoms/cardFooter/CardFooter.tsx",
+      "../../core/components/atoms/cardFooter/index.tsx",
+      "../../core/components/atoms/cardHeader/CardHeader.tsx",
+      "../../core/components/atoms/cardHeader/index.tsx",
       "../../core/components/atoms/cardSubdued/CardSubdued.tsx",
       "../../core/components/atoms/cardSubdued/index.tsx",
       "../../core/components/atoms/checkbox/Checkbox.tsx",
@@ -8475,8 +8582,6 @@
       "../../core/components/organisms/dateRangePicker/Trigger.tsx",
       "../../core/components/organisms/dateRangePicker/index.tsx",
       "../../core/components/organisms/dateRangePicker/utilities.tsx",
-      "../../core/components/organisms/donutChart/DonutChart.tsx",
-      "../../core/components/organisms/donutChart/index.tsx",
       "../../core/components/organisms/grid/Cell.tsx",
       "../../core/components/organisms/grid/Grid.tsx",
       "../../core/components/organisms/grid/GridBody.tsx",
@@ -8488,13 +8593,13 @@
       "../../core/components/organisms/grid/index.tsx",
       "../../core/components/organisms/grid/rowUtility.tsx",
       "../../core/components/organisms/grid/utility.tsx",
+      "../../core/components/organisms/horizontalNav/HorizontalNav.tsx",
+      "../../core/components/organisms/horizontalNav/index.tsx",
       "../../core/components/organisms/list/List.tsx",
       "../../core/components/organisms/list/index.tsx",
-      "../../core/components/organisms/navigation/HorizontalNavigation.tsx",
       "../../core/components/organisms/navigation/Navigation.tsx",
       "../../core/components/organisms/navigation/VerticalNavigation.tsx",
       "../../core/components/organisms/navigation/index.tsx",
-      "../../core/components/organisms/navigation/utils.tsx",
       "../../core/components/organisms/pageHeader/PageHeader.tsx",
       "../../core/components/organisms/pageHeader/index.tsx",
       "../../core/components/organisms/table/DraggableDropdown.tsx",
@@ -8504,9 +8609,9 @@
       "../../core/components/organisms/timePicker/TimePicker.tsx",
       "../../core/components/organisms/timePicker/index.tsx",
       "../../core/components/organisms/timePicker/utils.tsx",
-      "../../core/components/organisms/verticalMenu/MenuItem.tsx",
-      "../../core/components/organisms/verticalMenu/VerticalMenu.tsx",
-      "../../core/components/organisms/verticalMenu/index.tsx",
+      "../../core/components/organisms/verticalNav/MenuItem.tsx",
+      "../../core/components/organisms/verticalNav/VerticalNav.tsx",
+      "../../core/components/organisms/verticalNav/index.tsx",
       "../../core/components/patterns/datePicker/dateAndTimePicker.story.tsx",
       "../../core/components/patterns/dateRangePicker/withCustomPopover.story.tsx",
       "../../core/components/patterns/forms/CreatePassword.story.tsx",
@@ -8532,6 +8637,7 @@
       "../../core/utils/docPage/sandbox.tsx",
       "../../core/utils/index.tsx",
       "../../core/utils/masks.ts",
+      "../../core/utils/navigationHelper.tsx",
       "../../core/utils/overlayHelper.ts",
       "../../core/utils/storybookEventEmitter.ts",
       "../../core/utils/testHelper.ts",
@@ -8752,8 +8858,6 @@
       "../../node_modules/@types/color-convert/index.d.ts",
       "../../node_modules/@types/color-convert/route.d.ts",
       "../../node_modules/@types/color-name/index.d.ts",
-      "../../node_modules/@types/d3-path/index.d.ts",
-      "../../node_modules/@types/d3-shape/index.d.ts",
       "../../node_modules/@types/enzyme-adapter-react-16/index.d.ts",
       "../../node_modules/@types/enzyme/index.d.ts",
       "../../node_modules/@types/estree/index.d.ts",
@@ -8777,6 +8881,7 @@
       "../../node_modules/@types/node-fetch/externals.d.ts",
       "../../node_modules/@types/node-fetch/index.d.ts",
       "../../node_modules/@types/node/assert.d.ts",
+      "../../node_modules/@types/node/assert/strict.d.ts",
       "../../node_modules/@types/node/async_hooks.d.ts",
       "../../node_modules/@types/node/base.d.ts",
       "../../node_modules/@types/node/buffer.d.ts",
@@ -8787,6 +8892,7 @@
       "../../node_modules/@types/node/crypto.d.ts",
       "../../node_modules/@types/node/dgram.d.ts",
       "../../node_modules/@types/node/dns.d.ts",
+      "../../node_modules/@types/node/dns/promises.d.ts",
       "../../node_modules/@types/node/domain.d.ts",
       "../../node_modules/@types/node/events.d.ts",
       "../../node_modules/@types/node/fs.d.ts",
@@ -8809,8 +8915,10 @@
       "../../node_modules/@types/node/readline.d.ts",
       "../../node_modules/@types/node/repl.d.ts",
       "../../node_modules/@types/node/stream.d.ts",
+      "../../node_modules/@types/node/stream/promises.d.ts",
       "../../node_modules/@types/node/string_decoder.d.ts",
       "../../node_modules/@types/node/timers.d.ts",
+      "../../node_modules/@types/node/timers/promises.d.ts",
       "../../node_modules/@types/node/tls.d.ts",
       "../../node_modules/@types/node/trace_events.d.ts",
       "../../node_modules/@types/node/ts3.6/base.d.ts",
@@ -8839,7 +8947,6 @@
       "../../node_modules/@types/react-syntax-highlighter/index.d.ts",
       "../../node_modules/@types/react/global.d.ts",
       "../../node_modules/@types/react/index.d.ts",
-      "../../node_modules/@types/recharts/index.d.ts",
       "../../node_modules/@types/resolve/index.d.ts",
       "../../node_modules/@types/scheduler/index.d.ts",
       "../../node_modules/@types/scheduler/tracing.d.ts",

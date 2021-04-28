@@ -247,6 +247,9 @@
  */
 
   --grid-columns: 12;
+
+  /* Undefined colors */
+  --card-subdued-bg: #FCFAFA;
 }
 
 /* fallback */
@@ -495,9 +498,14 @@ body {
   align-items: center;
 }
 
-.Label-label {
+.Label-text {
   line-height: var(--font-height-s);
   font-weight: var(--font-weight-medium);
+}
+
+.Label-optionalText {
+  line-height: var(--font-height-s);
+  margin-left: var(--spacing-s);
 }
 
 .Label--disabled {
@@ -1354,8 +1362,11 @@ body {
 .Card {
   border-radius: var(--spacing);
   border: var(--spacing-xs) solid var(--secondary-light);
+  position: relative;
+  overflow: hidden;
 }
 
+.Card--shadow-default,
 .Card--shadow-light,
 .Card--shadow-medium,
 .Card--shadow-dark {
@@ -1363,10 +1374,34 @@ body {
   box-shadow: var(--shadow-s);
 }
 
+.Card-header {
+  padding: var(--spacing-2) var(--spacing-2) var(--spacing-l) var(--spacing-2);
+}
+
+.Card-body {
+  padding-left: var(--spacing-2);
+  padding-right: var(--spacing-2);
+}
+
+.Card-footer {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: var(--spacing-2);
+}
+
+.Card-footer--withSeperator {
+  border-top: var(--spacing-xs) solid var(--secondary-light);
+}
+
+
 
 .CardSubdued {
-  border-radius: var(--spacing);
-  background: #FCFAFA;
+  background: var(--card-subdued-bg);
+  padding: var(--spacing-2);
 }
 
 .CardSubdued--top {
@@ -1743,25 +1778,6 @@ body {
     .DateRangePicker-input--endDate {
         padding-top: var(--spacing);
     }
-}
-/* Donut Chart */
-
-.DonutChart {
-    height: 100%;
-}
-
-.DonutChart-legends {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: var(--spacing-l) 0;
-}
-
-.DonutChart-tooltip {
-    color: var(--white);
-    padding: var(--spacing) var(--spacing-2);
-    border-radius: var(--spacing-m);
-    background: var(--inverse);
 }
 .Dropdown {
     width: 100%;
@@ -2945,6 +2961,50 @@ body {
 .Header-actions {
     margin-bottom: var(--spacing-2);
 }
+
+.HorizontalNav {
+  display: flex;
+}
+
+.HorizontalNav-menu {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: var(--spacing-3);
+  padding-right: var(--spacing-l);
+  padding-left: var(--spacing-l);
+  border-radius: var(--spacing-2);
+  margin: 0 var(--spacing-xs);
+}
+
+.HorizontalNav-menu--disabled {
+  pointer-events: none;
+}
+
+.HorizontalNav-menu:hover {
+  background-color: var(--secondary-light);
+}
+
+.HorizontalNav-menu--active,
+.HorizontalNav-menu--active:hover {
+  background: var(--primary-lightest);
+}
+
+.HorizontalNav-menuText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.HorizontalNav-pills {
+  margin-right: var(--spacing-m);
+}
+
+.HorizontalNav-pills--disabled {
+  opacity: 0.6;
+}
+
 /* Although the icons in the font can be scaled to any size, in accordance with material design icons guidelines, 
  * we recommend them to be shown in either 18, 24, 36 or 48px. The default being 24px. 
  * https://google.github.io/material-design-icons/
@@ -4625,16 +4685,7 @@ body {
 }
 /* Textarea */
 
-.Textarea-textarea::-ms-clear {
-  display: none;
-}
-
 .Textarea {
-  display: flex;
-  flex-direction: column;
-}
-
-.Textarea-textarea {
   min-height: var(--spacing-3);
   width: 100%;
   display: block;
@@ -4650,47 +4701,51 @@ body {
   resize: none;
 }
 
-.Textarea-textarea::-moz-placeholder {
+.Textarea::-moz-placeholder {
   color: var(--inverse-lighter);
 }
 
-.Textarea-textarea:-ms-input-placeholder {
+.Textarea:-ms-input-placeholder {
   color: var(--inverse-lighter);
 }
 
-.Textarea-textarea::placeholder {
+.Textarea::placeholder {
   color: var(--inverse-lighter);
 }
 
-.Textarea-textarea:focus-within {
+.Textarea::-ms-clear {
+  display: none;
+}
+
+.Textarea:focus-within {
   outline: none;
   border: var(--spacing-xs) solid var(--primary);
 }
 
-.Textarea-textarea:disabled {
+.Textarea:disabled {
   color: var(--inverse-lighter);
   background: var(--secondary-lightest);
   border-color: var(--secondary-light);
 }
 
-.Textarea-textarea--error {
+.Textarea--error {
   border: var(--spacing-xs) solid var(--alert);
 }
 
-.Textarea-textarea--error:focus-within {
+.Textarea--error:focus-within {
   border: var(--spacing-xs) solid var(--alert);
   box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
-.Textarea-textarea--resize {
+.Textarea--resize {
   resize: auto;
 }
 
-.Textarea-textarea::-webkit-scrollbar {
+.Textarea::-webkit-scrollbar {
   width: var(--spacing-2);
 }
 
-.Textarea-textarea::-webkit-scrollbar-thumb {
+.Textarea::-webkit-scrollbar-thumb {
   border: var(--spacing-m) solid rgba(0, 0, 0, 0);
   background-clip: padding-box;
   border-radius: var(--spacing);
@@ -4872,17 +4927,17 @@ body {
 }
 
 
-.VerticalMenu {
+.VerticalNav {
   height: 100%;
   display: inline-flex;
   flex-direction: column;
 }
 
-.VerticalMenu--expanded {
+.VerticalNav--expanded {
   width: var(--spacing-9);
 }
 
-.VerticalMenu-section {
+.VerticalNav-section {
   text-transform: uppercase;
   padding-left: var(--spacing-2);
   padding-top: var(--spacing-l);
@@ -4890,7 +4945,7 @@ body {
   margin-top: var(--spacing);
 }
 
-.VerticalMenu-section--border {
+.VerticalNav-section--border {
   border-top: var(--spacing-xs) solid var(--secondary-light);
 }
 

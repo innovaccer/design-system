@@ -6,12 +6,12 @@ export declare const getSchema: (property: string, text: string, classnames?: st
     width: string;
     resizable: boolean;
     sorting: boolean;
-    cellRenderer?: undefined;
+    cellRenderer: (props: any) => JSX.Element;
 } | {
     name: string;
     displayName: string;
     width: string;
     resizable: boolean;
     sorting: boolean;
-    cellRenderer: (props: any) => JSX.Element;
+    cellRenderer?: undefined;
 })[];

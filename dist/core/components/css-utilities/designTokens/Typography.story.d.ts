@@ -2,10 +2,10 @@ export declare const typography: () => JSX.Element;
 declare const _default: {
     title: string;
     parameters: {
+        viewMode: string;
         docs: {
-            docPage: {
-                noProps: boolean;
-            };
+            page: null;
+            docPage: null;
         };
     };
 };

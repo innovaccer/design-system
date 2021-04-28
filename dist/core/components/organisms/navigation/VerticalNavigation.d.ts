@@ -1,4 +1,4 @@
-import { Menu, ActiveMenu } from "./utils";
+import { Menu, ActiveMenu } from "../../../utils/navigationHelper";
 export declare type LayoutType = 'vertical' | 'horizontal';
 export declare type Align = 'left' | 'center';
 export interface VerticalNavigationProps {

@@ -3,10 +3,10 @@ declare const _default: {
     title: string;
     component: () => JSX.Element;
     parameters: {
+        viewMode: string;
         docs: {
-            docPage: {
-                noProps: boolean;
-            };
+            page: null;
+            docPage: null;
         };
     };
 };
