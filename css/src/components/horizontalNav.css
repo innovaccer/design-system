@@ -1,0 +1,43 @@
+
+.HorizontalNav {
+  display: flex;
+}
+
+.HorizontalNav-menu {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: var(--spacing-3);
+  padding-right: var(--spacing-l);
+  padding-left: var(--spacing-l);
+  border-radius: var(--spacing-2);
+  margin: 0 var(--spacing-xs);
+}
+
+.HorizontalNav-menu--disabled {
+  pointer-events: none;
+}
+
+.HorizontalNav-menu:hover {
+  background-color: var(--secondary-light);
+}
+
+.HorizontalNav-menu--active,
+.HorizontalNav-menu--active:hover {
+  background: var(--primary-lightest);
+}
+
+.HorizontalNav-menuText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.HorizontalNav-pills {
+  margin-right: var(--spacing-m);
+}
+
+.HorizontalNav-pills--disabled {
+  opacity: 0.6;
+}

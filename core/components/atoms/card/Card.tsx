@@ -2,21 +2,21 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
 
-export type Shadow = 'none' | 'light' | 'medium' | 'dark';
+export type Shadow = 'none' | 'default' | 'light' | 'medium' | 'dark';
 
 export interface CardProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
   /**
    * Shadow of the `Card`
    * @default 'medium'
    *
-   * **Shadow `medium` and `dark` will be soon deprecated.**
+   * **Shadow `light`, `medium` and `dark` will be soon deprecated.**
    */
   shadow?: Shadow;
 }
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>((props, ref) => {
   const {
-    shadow = 'light',
+    shadow = 'default',
     children,
     className,
     ...rest

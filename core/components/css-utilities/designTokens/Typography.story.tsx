@@ -93,10 +93,10 @@ export const typography = () => {
 export default {
   title: 'Others/Design Tokens/Typography',
   parameters: {
+    viewMode: 'story',
     docs: {
-      docPage: {
-        noProps: true
-      }
+      page: null,
+      docPage: null
     }
   }
 };

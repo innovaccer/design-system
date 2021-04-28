@@ -1,20 +1,18 @@
 import * as React from 'react';
-import { Message, Text } from '@/index';
+import { Message, Row, Column } from '@/index';
 // CSF format story
-export const warning = () => (
-  <Message
-    appearance={'warning'}
-    description="You must ask the owner to invite viewers."
-    actions={(
-      <>
-        <Text className="cursor-pointer" appearance="link">Action 1</Text>
-        <Text className="ml-5 cursor-pointer" appearance="link">Action 2</Text>
-      </>
-    )}
-  />
+export const warningMessage = () => (
+  <Row>
+    <Column size="4">
+      <Message
+        appearance="warning"
+        description="Try to save again. If it continues to fail, please raise a ticket."
+      />
+    </Column>
+  </Row>
 );
 
 export default {
-  title: 'Components/Message/Warning',
+  title: 'Components/Message/Warning Message',
   component: Message
 };

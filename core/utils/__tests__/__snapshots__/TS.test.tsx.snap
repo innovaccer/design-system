@@ -34,7 +34,7 @@ exports[`TS renders children 1`] = `
     tabindex="0"
   />
   <div
-    class="Card Card--shadow-light"
+    class="Card Card--shadow-default"
   >
     <span
       class="Text Text--default Text--regular"
@@ -707,23 +707,6 @@ exports[`TS renders children 1`] = `
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div
-    class="Row DonutChart"
-    data-test="DesignSystem-Row"
-  >
-    <div
-      class="Col Col--12 Col--xs-12 Col--s-12"
-    >
-      <div
-        class="recharts-responsive-container"
-        style="width: 100%; height: 100%;"
-      >
-        <div
-          style="position: absolute; width: 0px; height: 0px; visibility: hidden; display: none;"
-        />
       </div>
     </div>
   </div>
@@ -2508,7 +2491,11 @@ exports[`TS renders children 1`] = `
   </div>
   <div
     class="Navigation Navigation--horizontal justify-content-center"
-  />
+  >
+    <div
+      class="HorizontalNav"
+    />
+  </div>
   <div
     class="PageHeader-wrapper PageHeader-wrapper--separator"
   >

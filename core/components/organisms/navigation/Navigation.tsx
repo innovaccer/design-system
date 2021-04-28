@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { HorizontalNavigation } from './HorizontalNavigation';
+import { HorizontalNav } from '@/index';
 import { VerticalNavigation, VerticalNavigationProps } from './VerticalNavigation';
 
 export type LayoutType = 'vertical' | 'horizontal';
@@ -35,7 +35,7 @@ export interface NavigationProps extends BaseProps, VerticalNavigationProps {
 }
 
 /**
- * ####NOTE: Navigation type vertical will be deprecated soon. VerticalMenu will be supported.
+ * ####NOTE: Navigation will be deprecated soon. VerticalNav and HorizontalNav will be supported.
  */
 
 export const Navigation = (props: NavigationProps) => {
@@ -66,7 +66,7 @@ export const Navigation = (props: NavigationProps) => {
   const renderNavigation = () => {
     return type === 'horizontal' ?
       (
-        <HorizontalNavigation
+        <HorizontalNav
           menus={menus}
           active={active}
           onClick={onClick}

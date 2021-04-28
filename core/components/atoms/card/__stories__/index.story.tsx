@@ -1,36 +1,58 @@
 import * as React from 'react';
 import { select } from '@storybook/addon-knobs';
-import Card from '../Card';
+import { Card, CardHeader, CardBody, CardFooter, Button, Text, CardSubdued } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const shadow = select(
-    'shadow',
-    ['none', 'light'],
-    undefined
-  );
-
-  const getChildren = (shadowType: any) => {
-    switch (shadowType) {
-      case 'light':
-        return <span>Light Shadow</span>;
-      default:
-        return <span>No Shadow</span>;
-    }
-  };
-
-  const children = getChildren(shadow);
+  const shadow = select('shadow', ['none', 'default'], undefined);
 
   return (
-    <div className="w-25" style={{ height: '150px' }}>
-      <Card shadow={shadow} className="h-100 w-100" >
-        {children}
+    <>
+      <Card shadow={shadow} className="w-50" style={{ height: '250px' }}>
+        <CardHeader>
+          <Text weight="strong" size="large">
+            Card Heading
+          </Text>
+        </CardHeader>
+        <CardBody>
+          <div>Card Body</div>
+        </CardBody>
+        <CardFooter className="justify-content-end">
+          <>
+            <Button appearance="basic">Cancel</Button>
+            <Button appearance="primary" className="ml-4">
+              Submit
+            </Button>
+          </>
+        </CardFooter>
       </Card>
-    </div>
+      <Card className="mt-5 w-50">
+        <CardHeader>
+          <Text weight="strong" size="large">
+            Card Heading
+          </Text>
+        </CardHeader>
+        <CardBody>
+          <div>Card Body</div>
+        </CardBody>
+        <CardSubdued border="top">
+          Subdued section.
+        </CardSubdued>
+      </Card>
+    </>
   );
 };
 
 export default {
   title: 'Components/Card/All',
-  component: Card
+  component: Card,
+  parameters: {
+    docs: {
+      docPage: {
+        props: {
+          components: { Card, CardHeader, CardBody, CardFooter, CardSubdued }
+        }
+      }
+    }
+  }
 };

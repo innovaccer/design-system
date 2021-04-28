@@ -1,46 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card component 
-  shadow: "dark", style: {"width":"150px","height":"150px"}
+  shadow: "default", style: {"width":"150px","height":"150px"}
  1`] = `
 <div
-  className="Card Card--shadow-dark"
-  style={
-    Object {
-      "height": "150px",
-      "width": "150px",
-    }
-  }
->
-  <span>
-    Hello
-  </span>
-</div>
-`;
-
-exports[`Card component 
-  shadow: "light", style: {"width":"150px","height":"150px"}
- 1`] = `
-<div
-  className="Card Card--shadow-light"
-  style={
-    Object {
-      "height": "150px",
-      "width": "150px",
-    }
-  }
->
-  <span>
-    Hello
-  </span>
-</div>
-`;
-
-exports[`Card component 
-  shadow: "medium", style: {"width":"150px","height":"150px"}
- 1`] = `
-<div
-  className="Card Card--shadow-medium"
+  className="Card Card--shadow-default"
   style={
     Object {
       "height": "150px",
