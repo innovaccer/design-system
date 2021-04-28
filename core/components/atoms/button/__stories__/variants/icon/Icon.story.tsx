@@ -15,7 +15,7 @@ export const icon = () => {
             onMouseEnter={action('mouse-enter')}
             onMouseLeave={action('mouse-leave')}
             className="mr-7"
-            icon="events"
+            icon="add"
             size="tiny"
             largeIcon={false}
           />
@@ -24,7 +24,7 @@ export const icon = () => {
             onMouseEnter={action('mouse-enter')}
             onMouseLeave={action('mouse-leave')}
             className=""
-            icon="events"
+            icon="add"
             size="tiny"
             largeIcon={true}
           />
@@ -38,7 +38,7 @@ export const icon = () => {
             onMouseEnter={action('mouse-enter')}
             onMouseLeave={action('mouse-leave')}
             className="mr-7"
-            icon="events"
+            icon="print"
             size="regular"
             largeIcon={false}
           />
@@ -47,7 +47,7 @@ export const icon = () => {
             onMouseEnter={action('mouse-enter')}
             onMouseLeave={action('mouse-leave')}
             className=""
-            icon="events"
+            icon="print"
             size="regular"
             largeIcon={true}
           />
@@ -61,7 +61,7 @@ export const icon = () => {
             onMouseEnter={action('mouse-enter')}
             onMouseLeave={action('mouse-leave')}
             className="mr-7"
-            icon="events"
+            icon="more_horiz"
             size="large"
             largeIcon={false}
           />
@@ -70,7 +70,7 @@ export const icon = () => {
             onMouseEnter={action('mouse-enter')}
             onMouseLeave={action('mouse-leave')}
             className=""
-            icon="events"
+            icon="more_horiz"
             size="large"
             largeIcon={true}
           />
