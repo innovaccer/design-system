@@ -2,16 +2,15 @@ import * as React from 'react';
 import Switch from '../index';
 
 // CSF format story
-export const regular = () => (
+export const offState = () => (
   <Switch
     defaultChecked={false}
     size="regular"
-    appearance="primary"
   />
 );
 
 export default {
-  title: 'Components/Switch/Regular',
+  title: 'Components/Switch/Off State',
   component: Switch,
   parameters: {
     docs: {

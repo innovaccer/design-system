@@ -62,20 +62,8 @@
     box-sizing: border-box;
 }
 
-.Switch-wrapper--checked.Switch-wrapper--primary {
+.Switch-wrapper--checked {
     background-color: var(--primary);
-}
-
-.Switch-wrapper--checked.Switch-wrapper--alert {
-    background-color: var(--alert);
-}
-
-.Switch-wrapper--checked.Switch-wrapper--success {
-    background-color: var(--success);
-}
-
-.Switch-wrapper--checked.Switch-wrapper--warning {
-    background-color: var(--warning);
 }
 
 .Switch-wrapper--checked:before {
@@ -92,18 +80,6 @@
     background-color: var(--secondary-lightest);
 }
 
-.Switch-wrapper--checkedDisabled.Switch-wrapper--primary {
+.Switch-wrapper--checkedDisabled {
     background-color: var(--primary-lighter);
-}
-
-.Switch-wrapper--checkedDisabled.Switch-wrapper--alert {
-    background-color: var(--alert-lighter);
-}
-
-.Switch-wrapper--checkedDisabled.Switch-wrapper--success {
-    background-color: var(--success-lighter);
-}
-
-.Switch-wrapper--checkedDisabled.Switch-wrapper--warning {
-    background-color: var(--warning-lighter);
 }
