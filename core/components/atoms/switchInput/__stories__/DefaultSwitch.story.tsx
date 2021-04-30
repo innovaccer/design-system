@@ -2,16 +2,15 @@ import * as React from 'react';
 import Switch from '../index';
 
 // CSF format story
-export const tiny = () => (
+export const defaultSwitch = () => (
   <Switch
-    defaultChecked={false}
-    size="tiny"
-    appearance="primary"
+    defaultChecked={true}
+    size="regular"
   />
 );
 
 export default {
-  title: 'Components/Switch/Tiny',
+  title: 'Components/Switch/Default Switch',
   component: Switch,
   parameters: {
     docs: {

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Switch from '../../../Switch';
+import Switch from '../../Switch';
 import Text from '@/components/atoms/text';
 
 // CSF format story
-export const alert = () => {
+export const state = () => {
 
   return (
     <div className="d-flex">
@@ -11,7 +11,6 @@ export const alert = () => {
         <Switch
           defaultChecked={true}
           disabled={false}
-          appearance="alert"
         />
         <br />
         <Text weight="strong">Enabled</Text>
@@ -20,7 +19,6 @@ export const alert = () => {
         <Switch
           disabled={true}
           defaultChecked={true}
-          appearance="alert"
         />
         <br />
         <Text weight="strong">Disabled</Text>
@@ -30,7 +28,7 @@ export const alert = () => {
 };
 
 export default {
-  title: 'Components/Switch/Variants/State/Alert',
+  title: 'Components/Switch/Variants/State',
   component: Switch,
   parameters: {
     docs: {

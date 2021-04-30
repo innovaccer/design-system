@@ -15,7 +15,8 @@ export interface SwitchProps extends BaseProps {
   size?: Size;
   /**
    * Color of `Switch`
-   * @default "primary"
+   *
+   * **Soon to be deprecated**
    */
   appearance?: Appearance;
   /**
@@ -52,7 +53,6 @@ export interface SwitchProps extends BaseProps {
 export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, ref) => {
   const {
     size = 'regular',
-    appearance = 'primary',
     defaultChecked,
     disabled,
     onChange,
@@ -79,7 +79,6 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, re
     ['Switch-wrapper']: true,
     ['Switch-wrapper--disabled']: disabled,
     [`Switch-wrapper--${size}`]: size,
-    [`Switch-wrapper--${appearance}`]: appearance,
     ['Switch-wrapper--checked']: checked,
     ['Switch-wrapper--checkedDisabled']: checked && disabled,
   });
