@@ -419,7 +419,7 @@ Note: For more details [color-mod](https://www.npmjs.com/package/postcss-color-m
    | value | properties |
    | ----- | ---------- |
    | --text | --night ; |
-   | --text-subtle | --night-light ; |
+   | --text-subtle | --night-lighter ; |
    | --text-link | --primary ; |
    | --text-disabled | --inverse-lightest ; |
    | --text-destructive | --alert ; |
