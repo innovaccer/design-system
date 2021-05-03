@@ -1407,7 +1407,7 @@ exports[`TS renders children 1`] = `
       value=""
     />
     <span
-      class="Switch-wrapper Switch-wrapper--regular Switch-wrapper--primary"
+      class="Switch-wrapper Switch-wrapper--regular"
     />
   </div>
   <span

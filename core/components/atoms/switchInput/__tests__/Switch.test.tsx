@@ -4,12 +4,10 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 import Switch, { SwitchProps as Props } from '../Switch';
 
 export const size = ['tiny', 'regular'];
-export const appearance = ['primary', 'alert', 'success', 'warning'];
 const BooleanValue = [true, false];
 
 describe('Switch component', () => {
   const mapper: Record<string, any> = {
-    appearance: valueHelper(appearance, { required: true, iterate: true }),
     checked: valueHelper(true, { required: true }),
     disabled: valueHelper(BooleanValue, { required: true, iterate: true }),
   };
