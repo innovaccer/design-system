@@ -39,7 +39,7 @@
 }
 
 .Button--tiny {
-    height: 24px;
+    height: var(--spacing-xl);
     padding-right: var(--spacing);
     padding-left: var(--spacing);
     padding-top: var(--spacing-m);
@@ -47,19 +47,17 @@
 }
 
 .Button--tinySquare {
-    padding-left: var(--spacing-m);
-    padding-right: var(--spacing-m);
+    width: var(--spacing-xl);
 }
 
 .Button--regular {
-    height: 32px;
+    height: var(--spacing-3);
     padding-right: var(--spacing-l);
 	padding-left: var(--spacing-l);
 }
 
 .Button--regularSquare {
-    padding-left: var(--spacing);
-    padding-right: var(--spacing);
+    width: var(--spacing-3);
 }
 
 .Button--large {
@@ -72,8 +70,7 @@
 }
 
 .Button--largeSquare {
-    padding-left: var(--spacing);
-    padding-right: var(--spacing);
+    width: 40px;
 }
 
 .Button--tinySquare .Button-icon,
@@ -218,10 +215,6 @@
 
 .Button-spinner {
     display: flex;
-}
-
-.Button--tiny .Button-spinner {
-    margin-right: var(--spacing-m);
 }
 
 .Button--tiny .Spinner--small {
