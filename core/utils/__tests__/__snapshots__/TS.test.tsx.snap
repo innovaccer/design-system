@@ -112,7 +112,7 @@ exports[`TS renders children 1`] = `
               class="Heading Heading--s Heading--default"
               data-test="DesignSystem-Heading"
             >
-              Apr
+              May
             </h5>
           </span>
           <span
@@ -235,6 +235,22 @@ exports[`TS renders children 1`] = `
               class="Calendar-valueWrapper"
             >
               <span
+                class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
+                data-test="DesignSystem-Calendar--dateValue"
+              />
+            </div>
+            <div
+              class="Calendar-valueWrapper"
+            >
+              <span
+                class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
+                data-test="DesignSystem-Calendar--dateValue"
+              />
+            </div>
+            <div
+              class="Calendar-valueWrapper"
+            >
+              <span
                 class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
               >
@@ -246,6 +262,10 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
+          </div>
+          <div
+            class="Calendar-valueRow"
+          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -276,10 +296,6 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
-          </div>
-          <div
-            class="Calendar-valueRow"
-          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -355,6 +371,10 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
+          </div>
+          <div
+            class="Calendar-valueRow"
+          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -385,10 +405,6 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
-          </div>
-          <div
-            class="Calendar-valueRow"
-          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -464,6 +480,10 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
+          </div>
+          <div
+            class="Calendar-valueRow"
+          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -494,10 +514,6 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
-          </div>
-          <div
-            class="Calendar-valueRow"
-          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -573,6 +589,10 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
+          </div>
+          <div
+            class="Calendar-valueRow"
+          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -603,10 +623,6 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
-          </div>
-          <div
-            class="Calendar-valueRow"
-          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -682,6 +698,10 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
+          </div>
+          <div
+            class="Calendar-valueRow"
+          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -696,6 +716,53 @@ exports[`TS renders children 1`] = `
                   30
                 </span>
               </span>
+            </div>
+            <div
+              class="Calendar-valueWrapper"
+            >
+              <span
+                class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                data-test="DesignSystem-Calendar--dateValue"
+              >
+                <span
+                  class="Text Text--default Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  31
+                </span>
+              </span>
+            </div>
+            <div
+              class="Calendar-valueWrapper"
+            >
+              <span
+                class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
+                data-test="DesignSystem-Calendar--dateValue"
+              />
+            </div>
+            <div
+              class="Calendar-valueWrapper"
+            >
+              <span
+                class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
+                data-test="DesignSystem-Calendar--dateValue"
+              />
+            </div>
+            <div
+              class="Calendar-valueWrapper"
+            >
+              <span
+                class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
+                data-test="DesignSystem-Calendar--dateValue"
+              />
+            </div>
+            <div
+              class="Calendar-valueWrapper"
+            >
+              <span
+                class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
+                data-test="DesignSystem-Calendar--dateValue"
+              />
             </div>
             <div
               class="Calendar-valueWrapper"
@@ -1698,7 +1765,7 @@ exports[`TS renders children 1`] = `
               class="Heading Heading--s Heading--default"
               data-test="DesignSystem-Heading"
             >
-              Apr
+              May
             </h5>
           </span>
           <span
@@ -1821,6 +1888,22 @@ exports[`TS renders children 1`] = `
               class="Calendar-valueWrapper"
             >
               <span
+                class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
+                data-test="DesignSystem-Calendar--dateValue"
+              />
+            </div>
+            <div
+              class="Calendar-valueWrapper"
+            >
+              <span
+                class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
+                data-test="DesignSystem-Calendar--dateValue"
+              />
+            </div>
+            <div
+              class="Calendar-valueWrapper"
+            >
+              <span
                 class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
               >
@@ -1832,6 +1915,10 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
+          </div>
+          <div
+            class="Calendar-valueRow"
+          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -1862,10 +1949,6 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
-          </div>
-          <div
-            class="Calendar-valueRow"
-          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -1941,6 +2024,10 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
+          </div>
+          <div
+            class="Calendar-valueRow"
+          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -1971,10 +2058,6 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
-          </div>
-          <div
-            class="Calendar-valueRow"
-          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -2050,6 +2133,10 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
+          </div>
+          <div
+            class="Calendar-valueRow"
+          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -2080,10 +2167,6 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
-          </div>
-          <div
-            class="Calendar-valueRow"
-          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -2159,6 +2242,10 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
+          </div>
+          <div
+            class="Calendar-valueRow"
+          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -2189,10 +2276,6 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
-          </div>
-          <div
-            class="Calendar-valueRow"
-          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -2268,6 +2351,10 @@ exports[`TS renders children 1`] = `
                 </span>
               </span>
             </div>
+          </div>
+          <div
+            class="Calendar-valueRow"
+          >
             <div
               class="Calendar-valueWrapper"
             >
@@ -2282,6 +2369,53 @@ exports[`TS renders children 1`] = `
                   30
                 </span>
               </span>
+            </div>
+            <div
+              class="Calendar-valueWrapper"
+            >
+              <span
+                class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                data-test="DesignSystem-Calendar--dateValue"
+              >
+                <span
+                  class="Text Text--default Text--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  31
+                </span>
+              </span>
+            </div>
+            <div
+              class="Calendar-valueWrapper"
+            >
+              <span
+                class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
+                data-test="DesignSystem-Calendar--dateValue"
+              />
+            </div>
+            <div
+              class="Calendar-valueWrapper"
+            >
+              <span
+                class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
+                data-test="DesignSystem-Calendar--dateValue"
+              />
+            </div>
+            <div
+              class="Calendar-valueWrapper"
+            >
+              <span
+                class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
+                data-test="DesignSystem-Calendar--dateValue"
+              />
+            </div>
+            <div
+              class="Calendar-valueWrapper"
+            >
+              <span
+                class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
+                data-test="DesignSystem-Calendar--dateValue"
+              />
             </div>
             <div
               class="Calendar-valueWrapper"
