@@ -84,7 +84,7 @@
 
   /* Text colors */
   --text: var(--night);
-  --text-subtle: var(--night-light);
+  --text-subtle: var(--night-lighter);
   --text-link: var(--primary);
   --text-disabled: var(--inverse-lightest);
   --text-destructive: var(--alert);
