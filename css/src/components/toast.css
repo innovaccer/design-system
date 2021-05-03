@@ -44,7 +44,6 @@
 
 .Toast-icon {
     display: flex;
-    margin-top: var(--spacing-m);
     line-height: var(--font-height-m);
 }
 
@@ -57,6 +56,17 @@
     margin-left: var(--spacing-2);
 }
 
+.Toast-icon--info,
+.Toast-icon--success,
+.Toast-icon--alert,
+.Toast-icon--default {
+    color: var(--text-white);
+}
+
+.Toast-icon--warning {
+    color: var(--warning-darker);
+}
+
 .Toast-body {
     display: flex;
     flex-direction: column;
@@ -67,12 +77,17 @@
     display: flex;
 }
 
-.Toast-title .Heading {
+.Toast-heading {
     flex-grow: 1;
 }
 
-.Toast-message {
+.Toast-text {
     padding-top: var(--spacing);
+}
+
+.Toast-text--warning,
+.Toast-heading--warning {
+    color: var(--warning-darker) !important;
 }
 
 .Toast-actions {
@@ -82,6 +97,7 @@
 
 .Toast-actionButton {
     color: var(--text-white);
+    border-radius: var(--spacing-m);
     margin-right: var(--spacing);
 }
 
@@ -90,7 +106,7 @@
 }
 
 .Toast-actionButton--default {
-    background: var(--inverse-lighter);
+    background: var(--inverse-light);
 }
 
 .Toast-actionButton--default:hover,
