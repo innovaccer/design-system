@@ -35,6 +35,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Avatar',
+  title: 'Components/Avatar/All',
   component: Avatar
 };
