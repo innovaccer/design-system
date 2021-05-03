@@ -1,5 +1,6 @@
 .Collapsible-wrapper {
   position: relative;
+  z-index: 600;
 }
 
 .Collapsible-wrapper--overlay {
