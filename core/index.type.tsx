@@ -76,3 +76,4 @@ export { TableProps } from './components/organisms/table';
 export { NavigationProps } from './components/organisms/navigation';
 export { PageHeaderProps } from './components/organisms/pageHeader';
 export { FileListProps } from './components/molecules/fileList';
+export { VerificationCodeInputProps } from './components/molecules/verificationCodeInput';

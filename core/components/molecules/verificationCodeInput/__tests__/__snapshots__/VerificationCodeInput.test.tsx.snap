@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VerificationCodeInput component 
+  autoFocus: [null,false,true], fields: [null,4,6], type: [null,"number","text","password"]
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="VerificationCodeInput"
+      data-test="DesignSystem-VerificationCodeInput"
+    >
+      <div
+        class="Input Input--large VerificationCodeInput-Input"
+        data-test="DesignSystem-InputWrapper"
+        style="min-width: 40px;"
+      >
+        <input
+          class="Input-input Input-input--large"
+          data-id="0"
+          data-test="DesignSystem-Input"
+          placeholder=""
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</body>
+`;

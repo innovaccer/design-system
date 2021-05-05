@@ -77,5 +77,6 @@ export { Table } from './components/organisms/table';
 export { Navigation } from './components/organisms/navigation';
 export { PageHeader } from './components/organisms/pageHeader';
 export { FileList } from './components/molecules/fileList';
+export { VerificationCodeInput } from './components/molecules/verificationCodeInput';
 // @ts-ignore
 export { version } from '../package.json';
