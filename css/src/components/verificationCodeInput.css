@@ -1,0 +1,15 @@
+
+.VerificationCodeInput-Input {
+  display: inline-flex;
+  width: 40px;
+}
+
+.VerificationCodeInput-Input .Input-input {
+  text-align: center;
+}
+
+.VerificationCodeInput-Input .Input-input::-webkit-inner-spin-button, 
+.VerificationCodeInput-Input .Input-input::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
