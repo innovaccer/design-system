@@ -3,175 +3,239 @@
 exports[`Pills component 
   appearance: "accent1", subtle: false
  1`] = `
-<span
-  className="Pills Badge--accent1"
-  data-test="DesignSystem-Pills"
->
-  Pills
-</span>
+<body>
+  <div>
+    <span
+      class="Pills Badge--accent1"
+      data-test="DesignSystem-Pills"
+    >
+      Pills
+    </span>
+  </div>
+</body>
 `;
 
 exports[`Pills component 
   appearance: "accent1", subtle: true
  1`] = `
-<span
-  className="Pills Badge--subtle-accent1"
-  data-test="DesignSystem-Pills"
->
-  Pills
-</span>
+<body>
+  <div>
+    <span
+      class="Pills Badge--subtle-accent1"
+      data-test="DesignSystem-Pills"
+    >
+      Pills
+    </span>
+  </div>
+</body>
 `;
 
 exports[`Pills component 
   appearance: "accent2", subtle: false
  1`] = `
-<span
-  className="Pills Badge--accent2"
-  data-test="DesignSystem-Pills"
->
-  Pills
-</span>
+<body>
+  <div>
+    <span
+      class="Pills Badge--accent2"
+      data-test="DesignSystem-Pills"
+    >
+      Pills
+    </span>
+  </div>
+</body>
 `;
 
 exports[`Pills component 
   appearance: "accent2", subtle: true
  1`] = `
-<span
-  className="Pills Badge--subtle-accent2"
-  data-test="DesignSystem-Pills"
->
-  Pills
-</span>
+<body>
+  <div>
+    <span
+      class="Pills Badge--subtle-accent2"
+      data-test="DesignSystem-Pills"
+    >
+      Pills
+    </span>
+  </div>
+</body>
 `;
 
 exports[`Pills component 
   appearance: "accent3", subtle: false
  1`] = `
-<span
-  className="Pills Badge--accent3"
-  data-test="DesignSystem-Pills"
->
-  Pills
-</span>
+<body>
+  <div>
+    <span
+      class="Pills Badge--accent3"
+      data-test="DesignSystem-Pills"
+    >
+      Pills
+    </span>
+  </div>
+</body>
 `;
 
 exports[`Pills component 
   appearance: "accent3", subtle: true
  1`] = `
-<span
-  className="Pills Badge--subtle-accent3"
-  data-test="DesignSystem-Pills"
->
-  Pills
-</span>
+<body>
+  <div>
+    <span
+      class="Pills Badge--subtle-accent3"
+      data-test="DesignSystem-Pills"
+    >
+      Pills
+    </span>
+  </div>
+</body>
 `;
 
 exports[`Pills component 
   appearance: "accent4", subtle: false
  1`] = `
-<span
-  className="Pills Badge--accent4"
-  data-test="DesignSystem-Pills"
->
-  Pills
-</span>
+<body>
+  <div>
+    <span
+      class="Pills Badge--accent4"
+      data-test="DesignSystem-Pills"
+    >
+      Pills
+    </span>
+  </div>
+</body>
 `;
 
 exports[`Pills component 
   appearance: "accent4", subtle: true
  1`] = `
-<span
-  className="Pills Badge--subtle-accent4"
-  data-test="DesignSystem-Pills"
->
-  Pills
-</span>
+<body>
+  <div>
+    <span
+      class="Pills Badge--subtle-accent4"
+      data-test="DesignSystem-Pills"
+    >
+      Pills
+    </span>
+  </div>
+</body>
 `;
 
 exports[`Pills component 
   appearance: "alert", subtle: false
  1`] = `
-<span
-  className="Pills Badge--alert"
-  data-test="DesignSystem-Pills"
->
-  Pills
-</span>
+<body>
+  <div>
+    <span
+      class="Pills Badge--alert"
+      data-test="DesignSystem-Pills"
+    >
+      Pills
+    </span>
+  </div>
+</body>
 `;
 
 exports[`Pills component 
   appearance: "alert", subtle: true
  1`] = `
-<span
-  className="Pills Badge--subtle-alert"
-  data-test="DesignSystem-Pills"
->
-  Pills
-</span>
+<body>
+  <div>
+    <span
+      class="Pills Badge--subtle-alert"
+      data-test="DesignSystem-Pills"
+    >
+      Pills
+    </span>
+  </div>
+</body>
 `;
 
 exports[`Pills component 
   appearance: "primary", subtle: false
  1`] = `
-<span
-  className="Pills Badge--primary"
-  data-test="DesignSystem-Pills"
->
-  Pills
-</span>
+<body>
+  <div>
+    <span
+      class="Pills Badge--primary"
+      data-test="DesignSystem-Pills"
+    >
+      Pills
+    </span>
+  </div>
+</body>
 `;
 
 exports[`Pills component 
   appearance: "primary", subtle: true
  1`] = `
-<span
-  className="Pills Badge--subtle-primary"
-  data-test="DesignSystem-Pills"
->
-  Pills
-</span>
+<body>
+  <div>
+    <span
+      class="Pills Badge--subtle-primary"
+      data-test="DesignSystem-Pills"
+    >
+      Pills
+    </span>
+  </div>
+</body>
 `;
 
 exports[`Pills component 
   appearance: "success", subtle: false
  1`] = `
-<span
-  className="Pills Badge--success"
-  data-test="DesignSystem-Pills"
->
-  Pills
-</span>
+<body>
+  <div>
+    <span
+      class="Pills Badge--success"
+      data-test="DesignSystem-Pills"
+    >
+      Pills
+    </span>
+  </div>
+</body>
 `;
 
 exports[`Pills component 
   appearance: "success", subtle: true
  1`] = `
-<span
-  className="Pills Badge--subtle-success"
-  data-test="DesignSystem-Pills"
->
-  Pills
-</span>
+<body>
+  <div>
+    <span
+      class="Pills Badge--subtle-success"
+      data-test="DesignSystem-Pills"
+    >
+      Pills
+    </span>
+  </div>
+</body>
 `;
 
 exports[`Pills component 
   appearance: "warning", subtle: false
  1`] = `
-<span
-  className="Pills Badge--warning"
-  data-test="DesignSystem-Pills"
->
-  Pills
-</span>
+<body>
+  <div>
+    <span
+      class="Pills Badge--warning"
+      data-test="DesignSystem-Pills"
+    >
+      Pills
+    </span>
+  </div>
+</body>
 `;
 
 exports[`Pills component 
   appearance: "warning", subtle: true
  1`] = `
-<span
-  className="Pills Badge--subtle-warning"
-  data-test="DesignSystem-Pills"
->
-  Pills
-</span>
+<body>
+  <div>
+    <span
+      class="Pills Badge--subtle-warning"
+      data-test="DesignSystem-Pills"
+    >
+      Pills
+    </span>
+  </div>
+</body>
 `;

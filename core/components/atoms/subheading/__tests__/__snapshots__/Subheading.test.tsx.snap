@@ -3,47 +3,59 @@
 exports[`Subheading component 
   appearance: "default"
  1`] = `
-<GenericText
-  className="Subheading Subheading--default"
-  componentType="h4"
-  data-test="DesignSystem-Subheading"
->
-  Subheading
-</GenericText>
+<body>
+  <div>
+    <h4
+      class="Subheading Subheading--default"
+      data-test="DesignSystem-Subheading"
+    >
+      Subheading
+    </h4>
+  </div>
+</body>
 `;
 
 exports[`Subheading component 
   appearance: "disabled"
  1`] = `
-<GenericText
-  className="Subheading Subheading--disabled"
-  componentType="h4"
-  data-test="DesignSystem-Subheading"
->
-  Subheading
-</GenericText>
+<body>
+  <div>
+    <h4
+      class="Subheading Subheading--disabled"
+      data-test="DesignSystem-Subheading"
+    >
+      Subheading
+    </h4>
+  </div>
+</body>
 `;
 
 exports[`Subheading component 
   appearance: "subtle"
  1`] = `
-<GenericText
-  className="Subheading Subheading--subtle"
-  componentType="h4"
-  data-test="DesignSystem-Subheading"
->
-  Subheading
-</GenericText>
+<body>
+  <div>
+    <h4
+      class="Subheading Subheading--subtle"
+      data-test="DesignSystem-Subheading"
+    >
+      Subheading
+    </h4>
+  </div>
+</body>
 `;
 
 exports[`Subheading component 
   appearance: "white"
  1`] = `
-<GenericText
-  className="Subheading Subheading--white"
-  componentType="h4"
-  data-test="DesignSystem-Subheading"
->
-  Subheading
-</GenericText>
+<body>
+  <div>
+    <h4
+      class="Subheading Subheading--white"
+      data-test="DesignSystem-Subheading"
+    >
+      Subheading
+    </h4>
+  </div>
+</body>
 `;

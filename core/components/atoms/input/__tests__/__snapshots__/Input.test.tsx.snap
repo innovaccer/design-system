@@ -3,520 +3,501 @@
 exports[`Input component 
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]"
  1`] = `
-<div
-  className="Input Input--regular"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": 256,
-    }
-  }
->
-  <input
-    className="Input-input Input-input--regular"
-    data-test="DesignSystem-Input"
-    name="name"
-    onChangeHandler={[MockFunction]}
-    placeholder="Placeholder"
-    type="text"
-  />
-</div>
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        placeholder="Placeholder"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", icon: "events"
  1`] = `
-<div
-  className="Input Input--regular"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": 256,
-    }
-  }
->
-  <div
-    className="Input-icon Input-icon--left Input-icon--disabled"
-  >
-    <Icon
-      name="events"
-      size={16}
-    />
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      style="min-width: 256px;"
+    >
+      <div
+        class="Input-icon Input-icon--left Input-icon--disabled"
+      >
+        <i
+          class="material-icons Icon"
+          style="font-size: 16px; width: 16px;"
+        >
+          events
+        </i>
+      </div>
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        placeholder="Placeholder"
+        type="text"
+        value=""
+      />
+    </div>
   </div>
-  <input
-    className="Input-input Input-input--regular"
-    data-test="DesignSystem-Input"
-    name="name"
-    onChangeHandler={[MockFunction]}
-    placeholder="Placeholder"
-    type="text"
-  />
-</div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", value: "value"
  1`] = `
-<div
-  className="Input Input--regular"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": 256,
-    }
-  }
->
-  <input
-    className="Input-input Input-input--regular"
-    data-test="DesignSystem-Input"
-    name="name"
-    onChangeHandler={[MockFunction]}
-    placeholder="Placeholder"
-    type="text"
-    value="value"
-  />
-</div>
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        placeholder="Placeholder"
+        type="text"
+        value="value"
+      />
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", value: "value", icon: "events"
  1`] = `
-<div
-  className="Input Input--regular"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": 256,
-    }
-  }
->
-  <div
-    className="Input-icon Input-icon--left"
-  >
-    <Icon
-      name="events"
-      size={16}
-    />
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      style="min-width: 256px;"
+    >
+      <div
+        class="Input-icon Input-icon--left"
+      >
+        <i
+          class="material-icons Icon"
+          style="font-size: 16px; width: 16px;"
+        >
+          events
+        </i>
+      </div>
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        placeholder="Placeholder"
+        type="text"
+        value="value"
+      />
+    </div>
   </div>
-  <input
-    className="Input-input Input-input--regular"
-    data-test="DesignSystem-Input"
-    name="name"
-    onChangeHandler={[MockFunction]}
-    placeholder="Placeholder"
-    type="text"
-    value="value"
-  />
-</div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", size: "large", onChangeHandler: "[Function]"
  1`] = `
-<div
-  className="Input Input--large"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": 256,
-    }
-  }
->
-  <input
-    className="Input-input Input-input--large"
-    data-test="DesignSystem-Input"
-    name="name"
-    onChangeHandler={[MockFunction]}
-    type="text"
-  />
-</div>
+<body>
+  <div>
+    <div
+      class="Input Input--large"
+      data-test="DesignSystem-InputWrapper"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--large"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", size: "large", type: "number", inlineLabel: "USD", onChangeHandler: "[Function]"
  1`] = `
-<div
-  className="Input Input--large"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": undefined,
-    }
-  }
->
-  <div
-    className="Input-inlineLabel"
-  >
-    <Text
-      appearance="subtle"
-      size="regular"
+<body>
+  <div>
+    <div
+      class="Input Input--large"
+      data-test="DesignSystem-InputWrapper"
     >
-      USD
-    </Text>
+      <div
+        class="Input-inlineLabel"
+      >
+        <span
+          class="Text Text--subtle Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          USD
+        </span>
+      </div>
+      <input
+        class="Input-input Input-input--large"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="number"
+        value=""
+      />
+    </div>
   </div>
-  <input
-    className="Input-input Input-input--large"
-    data-test="DesignSystem-Input"
-    name="name"
-    onChangeHandler={[MockFunction]}
-    type="number"
-  />
-</div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", size: "regular", onChangeHandler: "[Function]"
  1`] = `
-<div
-  className="Input Input--regular"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": 256,
-    }
-  }
->
-  <input
-    className="Input-input Input-input--regular"
-    data-test="DesignSystem-Input"
-    name="name"
-    onChangeHandler={[MockFunction]}
-    type="text"
-  />
-</div>
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", size: "regular", type: "number", inlineLabel: "USD", onChangeHandler: "[Function]"
  1`] = `
-<div
-  className="Input Input--regular"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": undefined,
-    }
-  }
->
-  <div
-    className="Input-inlineLabel"
-  >
-    <Text
-      appearance="subtle"
-      size="regular"
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
     >
-      USD
-    </Text>
+      <div
+        class="Input-inlineLabel"
+      >
+        <span
+          class="Text Text--subtle Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          USD
+        </span>
+      </div>
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="number"
+        value=""
+      />
+    </div>
   </div>
-  <input
-    className="Input-input Input-input--regular"
-    data-test="DesignSystem-Input"
-    name="name"
-    onChangeHandler={[MockFunction]}
-    type="number"
-  />
-</div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", size: "tiny", onChangeHandler: "[Function]"
  1`] = `
-<div
-  className="Input Input--tiny"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": 256,
-    }
-  }
->
-  <input
-    className="Input-input Input-input--tiny"
-    data-test="DesignSystem-Input"
-    name="name"
-    onChangeHandler={[MockFunction]}
-    type="text"
-  />
-</div>
+<body>
+  <div>
+    <div
+      class="Input Input--tiny"
+      data-test="DesignSystem-InputWrapper"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--tiny"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", size: "tiny", type: "number", inlineLabel: "USD", onChangeHandler: "[Function]"
  1`] = `
-<div
-  className="Input Input--tiny"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": undefined,
-    }
-  }
->
-  <div
-    className="Input-inlineLabel"
-  >
-    <Text
-      appearance="subtle"
-      size="regular"
+<body>
+  <div>
+    <div
+      class="Input Input--tiny"
+      data-test="DesignSystem-InputWrapper"
     >
-      USD
-    </Text>
+      <div
+        class="Input-inlineLabel"
+      >
+        <span
+          class="Text Text--subtle Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          USD
+        </span>
+      </div>
+      <input
+        class="Input-input Input-input--tiny"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="number"
+        value=""
+      />
+    </div>
   </div>
-  <input
-    className="Input-input Input-input--tiny"
-    data-test="DesignSystem-Input"
-    name="name"
-    onChangeHandler={[MockFunction]}
-    type="number"
-  />
-</div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", type: "number", onChangeHandler: "[Function]"
  1`] = `
-<div
-  className="Input Input--regular"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": undefined,
-    }
-  }
->
-  <input
-    className="Input-input Input-input--regular"
-    data-test="DesignSystem-Input"
-    name="name"
-    onChangeHandler={[MockFunction]}
-    type="number"
-  />
-</div>
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="number"
+        value=""
+      />
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", type: "password", onChangeHandler: "[Function]"
  1`] = `
-<div
-  className="Input Input--regular"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": 256,
-    }
-  }
->
-  <input
-    className="Input-input Input-input--regular"
-    data-test="DesignSystem-Input"
-    name="name"
-    onChangeHandler={[MockFunction]}
-    type="password"
-  />
-</div>
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="password"
+        value=""
+      />
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", type: "text", onChangeHandler: "[Function]"
  1`] = `
-<div
-  className="Input Input--regular"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": 256,
-    }
-  }
->
-  <input
-    className="Input-input Input-input--regular"
-    data-test="DesignSystem-Input"
-    name="name"
-    onChangeHandler={[MockFunction]}
-    type="text"
-  />
-</div>
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", value: "value", disabled: true
  1`] = `
-<div
-  className="Input Input--regular Input--disabled"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": 256,
-    }
-  }
->
-  <input
-    className="Input-input Input-input--regular"
-    data-test="DesignSystem-Input"
-    disabled={true}
-    name="name"
-    type="text"
-    value="value"
-  />
-</div>
+<body>
+  <div>
+    <div
+      class="Input Input--regular Input--disabled"
+      data-test="DesignSystem-InputWrapper"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        disabled=""
+        name="name"
+        type="text"
+        value="value"
+      />
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", value: "value", disabled: true, icon: "events"
  1`] = `
-<div
-  className="Input Input--regular Input--disabled"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": 256,
-    }
-  }
->
-  <div
-    className="Input-icon Input-icon--left"
-  >
-    <Icon
-      name="events"
-      size={16}
-    />
+<body>
+  <div>
+    <div
+      class="Input Input--regular Input--disabled"
+      data-test="DesignSystem-InputWrapper"
+      style="min-width: 256px;"
+    >
+      <div
+        class="Input-icon Input-icon--left"
+      >
+        <i
+          class="material-icons Icon"
+          style="font-size: 16px; width: 16px;"
+        >
+          events
+        </i>
+      </div>
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        disabled=""
+        name="name"
+        type="text"
+        value="value"
+      />
+    </div>
   </div>
-  <input
-    className="Input-input Input-input--regular"
-    data-test="DesignSystem-Input"
-    disabled={true}
-    name="name"
-    type="text"
-    value="value"
-  />
-</div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", value: "value", disabled: true, onChangeHandler: "[Function]"
  1`] = `
-<div
-  className="Input Input--regular Input--disabled"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": 256,
-    }
-  }
->
-  <input
-    className="Input-input Input-input--regular"
-    data-test="DesignSystem-Input"
-    disabled={true}
-    name="name"
-    onChangeHandler={[MockFunction]}
-    type="text"
-    value="value"
-  />
-</div>
+<body>
+  <div>
+    <div
+      class="Input Input--regular Input--disabled"
+      data-test="DesignSystem-InputWrapper"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        disabled=""
+        name="name"
+        type="text"
+        value="value"
+      />
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", value: "value", disabled: true, onChangeHandler: "[Function]", icon: "events"
  1`] = `
-<div
-  className="Input Input--regular Input--disabled"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": 256,
-    }
-  }
->
-  <div
-    className="Input-icon Input-icon--left"
-  >
-    <Icon
-      name="events"
-      size={16}
-    />
+<body>
+  <div>
+    <div
+      class="Input Input--regular Input--disabled"
+      data-test="DesignSystem-InputWrapper"
+      style="min-width: 256px;"
+    >
+      <div
+        class="Input-icon Input-icon--left"
+      >
+        <i
+          class="material-icons Icon"
+          style="font-size: 16px; width: 16px;"
+        >
+          events
+        </i>
+      </div>
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        disabled=""
+        name="name"
+        type="text"
+        value="value"
+      />
+    </div>
   </div>
-  <input
-    className="Input-input Input-input--regular"
-    data-test="DesignSystem-Input"
-    disabled={true}
-    name="name"
-    onChangeHandler={[MockFunction]}
-    type="text"
-    value="value"
-  />
-</div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", value: "value", error: true, onChangeHandler: "[Function]"
  1`] = `
-<div
-  className="Input Input--regular Input--error"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": 256,
-    }
-  }
->
-  <input
-    className="Input-input Input-input--regular"
-    data-test="DesignSystem-Input"
-    name="name"
-    onChangeHandler={[MockFunction]}
-    type="text"
-    value="value"
-  />
-</div>
+<body>
+  <div>
+    <div
+      class="Input Input--regular Input--error"
+      data-test="DesignSystem-InputWrapper"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="text"
+        value="value"
+      />
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Input component 
   name: "name", value: "value", error: true, onChangeHandler: "[Function]", icon: "events"
  1`] = `
-<div
-  className="Input Input--regular Input--error"
-  data-test="DesignSystem-InputWrapper"
-  onClick={[Function]}
-  style={
-    Object {
-      "minWidth": 256,
-    }
-  }
->
-  <div
-    className="Input-icon Input-icon--left"
-  >
-    <Icon
-      name="events"
-      size={16}
-    />
+<body>
+  <div>
+    <div
+      class="Input Input--regular Input--error"
+      data-test="DesignSystem-InputWrapper"
+      style="min-width: 256px;"
+    >
+      <div
+        class="Input-icon Input-icon--left"
+      >
+        <i
+          class="material-icons Icon"
+          style="font-size: 16px; width: 16px;"
+        >
+          events
+        </i>
+      </div>
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="text"
+        value="value"
+      />
+    </div>
   </div>
-  <input
-    className="Input-input Input-input--regular"
-    data-test="DesignSystem-Input"
-    name="name"
-    onChangeHandler={[MockFunction]}
-    type="text"
-    value="value"
-  />
-</div>
+</body>
 `;

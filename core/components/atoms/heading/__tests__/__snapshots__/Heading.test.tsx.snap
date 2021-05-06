@@ -3,107 +3,134 @@
 exports[`Heading component 
   appearance: "default"
  1`] = `
-<GenericText
-  className="Heading Heading--m Heading--default"
-  componentType="h4"
-  data-test="DesignSystem-Heading"
->
-  Heading
-</GenericText>
+<body>
+  <div>
+    <h4
+      class="Heading Heading--m Heading--default"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h4>
+  </div>
+</body>
 `;
 
 exports[`Heading component 
   appearance: "disabled"
  1`] = `
-<GenericText
-  className="Heading Heading--m Heading--disabled"
-  componentType="h4"
-  data-test="DesignSystem-Heading"
->
-  Heading
-</GenericText>
+<body>
+  <div>
+    <h4
+      class="Heading Heading--m Heading--disabled"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h4>
+  </div>
+</body>
 `;
 
 exports[`Heading component 
   appearance: "subtle"
  1`] = `
-<GenericText
-  className="Heading Heading--m Heading--subtle"
-  componentType="h4"
-  data-test="DesignSystem-Heading"
->
-  Heading
-</GenericText>
+<body>
+  <div>
+    <h4
+      class="Heading Heading--m Heading--subtle"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h4>
+  </div>
+</body>
 `;
 
 exports[`Heading component 
   appearance: "white"
  1`] = `
-<GenericText
-  className="Heading Heading--m Heading--white"
-  componentType="h4"
-  data-test="DesignSystem-Heading"
->
-  Heading
-</GenericText>
+<body>
+  <div>
+    <h4
+      class="Heading Heading--m Heading--white"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h4>
+  </div>
+</body>
 `;
 
 exports[`Heading component 
   size: "l"
  1`] = `
-<GenericText
-  className="Heading Heading--l Heading--default"
-  componentType="h3"
-  data-test="DesignSystem-Heading"
->
-  Heading
-</GenericText>
+<body>
+  <div>
+    <h3
+      class="Heading Heading--l Heading--default"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h3>
+  </div>
+</body>
 `;
 
 exports[`Heading component 
   size: "m"
  1`] = `
-<GenericText
-  className="Heading Heading--m Heading--default"
-  componentType="h4"
-  data-test="DesignSystem-Heading"
->
-  Heading
-</GenericText>
+<body>
+  <div>
+    <h4
+      class="Heading Heading--m Heading--default"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h4>
+  </div>
+</body>
 `;
 
 exports[`Heading component 
   size: "s"
  1`] = `
-<GenericText
-  className="Heading Heading--s Heading--default"
-  componentType="h5"
-  data-test="DesignSystem-Heading"
->
-  Heading
-</GenericText>
+<body>
+  <div>
+    <h5
+      class="Heading Heading--s Heading--default"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h5>
+  </div>
+</body>
 `;
 
 exports[`Heading component 
   size: "xl"
  1`] = `
-<GenericText
-  className="Heading Heading--xl Heading--default"
-  componentType="h2"
-  data-test="DesignSystem-Heading"
->
-  Heading
-</GenericText>
+<body>
+  <div>
+    <h2
+      class="Heading Heading--xl Heading--default"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h2>
+  </div>
+</body>
 `;
 
 exports[`Heading component 
   size: "xxl"
  1`] = `
-<GenericText
-  className="Heading Heading--xxl Heading--default"
-  componentType="h1"
-  data-test="DesignSystem-Heading"
->
-  Heading
-</GenericText>
+<body>
+  <div>
+    <h1
+      class="Heading Heading--xxl Heading--default"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h1>
+  </div>
+</body>
 `;

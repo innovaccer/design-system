@@ -3,124 +3,119 @@
 exports[`StatusHint component 
   appearance: "alert"
  1`] = `
-<div
-  className="StatusHint"
-  data-test="DesignSystem-StatusHint"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="StatusHint-icon StatusHint--alert"
-    data-test="DesignSystem-StatusHint--Icon"
-  />
-  <Text
-    appearance="default"
-    data-test="DesignSystem-StatusHint--Text"
-    size="regular"
-    weight="medium"
-  >
-    StatusHint
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="StatusHint"
+      data-test="DesignSystem-StatusHint"
+    >
+      <span
+        class="StatusHint-icon StatusHint--alert"
+        data-test="DesignSystem-StatusHint--Icon"
+      />
+      <span
+        class="Text Text--default Text--medium Text--regular"
+        data-test="DesignSystem-StatusHint--Text"
+      >
+        StatusHint
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`StatusHint component 
   appearance: "default"
  1`] = `
-<div
-  className="StatusHint"
-  data-test="DesignSystem-StatusHint"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="StatusHint-icon StatusHint--default"
-    data-test="DesignSystem-StatusHint--Icon"
-  />
-  <Text
-    appearance="default"
-    data-test="DesignSystem-StatusHint--Text"
-    size="regular"
-    weight="medium"
-  >
-    StatusHint
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="StatusHint"
+      data-test="DesignSystem-StatusHint"
+    >
+      <span
+        class="StatusHint-icon StatusHint--default"
+        data-test="DesignSystem-StatusHint--Icon"
+      />
+      <span
+        class="Text Text--default Text--medium Text--regular"
+        data-test="DesignSystem-StatusHint--Text"
+      >
+        StatusHint
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`StatusHint component 
   appearance: "info"
  1`] = `
-<div
-  className="StatusHint"
-  data-test="DesignSystem-StatusHint"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="StatusHint-icon StatusHint--info"
-    data-test="DesignSystem-StatusHint--Icon"
-  />
-  <Text
-    appearance="default"
-    data-test="DesignSystem-StatusHint--Text"
-    size="regular"
-    weight="medium"
-  >
-    StatusHint
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="StatusHint"
+      data-test="DesignSystem-StatusHint"
+    >
+      <span
+        class="StatusHint-icon StatusHint--info"
+        data-test="DesignSystem-StatusHint--Icon"
+      />
+      <span
+        class="Text Text--default Text--medium Text--regular"
+        data-test="DesignSystem-StatusHint--Text"
+      >
+        StatusHint
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`StatusHint component 
   appearance: "success"
  1`] = `
-<div
-  className="StatusHint"
-  data-test="DesignSystem-StatusHint"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="StatusHint-icon StatusHint--success"
-    data-test="DesignSystem-StatusHint--Icon"
-  />
-  <Text
-    appearance="default"
-    data-test="DesignSystem-StatusHint--Text"
-    size="regular"
-    weight="medium"
-  >
-    StatusHint
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="StatusHint"
+      data-test="DesignSystem-StatusHint"
+    >
+      <span
+        class="StatusHint-icon StatusHint--success"
+        data-test="DesignSystem-StatusHint--Icon"
+      />
+      <span
+        class="Text Text--default Text--medium Text--regular"
+        data-test="DesignSystem-StatusHint--Text"
+      >
+        StatusHint
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`StatusHint component 
   appearance: "warning"
  1`] = `
-<div
-  className="StatusHint"
-  data-test="DesignSystem-StatusHint"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="StatusHint-icon StatusHint--warning"
-    data-test="DesignSystem-StatusHint--Icon"
-  />
-  <Text
-    appearance="default"
-    data-test="DesignSystem-StatusHint--Text"
-    size="regular"
-    weight="medium"
-  >
-    StatusHint
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="StatusHint"
+      data-test="DesignSystem-StatusHint"
+    >
+      <span
+        class="StatusHint-icon StatusHint--warning"
+        data-test="DesignSystem-StatusHint--Icon"
+      />
+      <span
+        class="Text Text--default Text--medium Text--regular"
+        data-test="DesignSystem-StatusHint--Text"
+      >
+        StatusHint
+      </span>
+    </div>
+  </div>
+</body>
 `;

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
 import { render } from '@testing-library/react';
 import Backdrop, { BackdropProps as Props } from '../Backdrop';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -15,12 +14,12 @@ describe('Backdrop component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <Backdrop
           {...attr}
         />
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 

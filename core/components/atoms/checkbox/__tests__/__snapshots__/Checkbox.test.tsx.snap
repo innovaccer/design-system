@@ -3,335 +3,360 @@
 exports[`Checkbox component 
   checked: false, disabled: false, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
-<div
-  className="Checkbox Checkbox--regular"
->
-  <div
-    className="Checkbox-outerWrapper"
-  >
-    <input
-      checked={false}
-      className="Checkbox-input"
-      disabled={false}
-      id="Checkbox-Checkbox-Test-uid"
-      name="Checkbox"
-      onChange={[Function]}
-      tabIndex={0}
-      type="checkbox"
-      value="Checkbox"
-    />
-    <span
-      className="Checkbox-wrapper Checkbox-wrapper--regular"
-    />
-  </div>
-  <label
-    className="Checkbox-label Checkbox-label--regular"
-    htmlFor="Checkbox-Checkbox-Test-uid"
-  >
-    <Text
-      appearance="default"
-      size="regular"
+<body>
+  <div>
+    <div
+      class="Checkbox Checkbox--regular"
     >
-      Checkbox
-    </Text>
-  </label>
-</div>
+      <div
+        class="Checkbox-outerWrapper"
+      >
+        <input
+          class="Checkbox-input"
+          id="Checkbox-Checkbox-Test-uid"
+          name="Checkbox"
+          tabindex="0"
+          type="checkbox"
+          value="Checkbox"
+        />
+        <span
+          class="Checkbox-wrapper Checkbox-wrapper--regular"
+        />
+      </div>
+      <label
+        class="Checkbox-label Checkbox-label--regular"
+        for="Checkbox-Checkbox-Test-uid"
+      >
+        <span
+          class="Text Text--default Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          Checkbox
+        </span>
+      </label>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Checkbox component 
   checked: false, disabled: true, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
-<div
-  className="Checkbox Checkbox--disabled Checkbox--regular"
->
-  <div
-    className="Checkbox-outerWrapper"
-  >
-    <input
-      checked={false}
-      className="Checkbox-input"
-      disabled={true}
-      id="Checkbox-Checkbox-Test-uid"
-      name="Checkbox"
-      onChange={[Function]}
-      tabIndex={0}
-      type="checkbox"
-      value="Checkbox"
-    />
-    <span
-      className="Checkbox-wrapper Checkbox-wrapper--regular"
-    />
-  </div>
-  <label
-    className="Checkbox-label Checkbox-label--regular"
-    htmlFor="Checkbox-Checkbox-Test-uid"
-  >
-    <Text
-      appearance="disabled"
-      size="regular"
+<body>
+  <div>
+    <div
+      class="Checkbox Checkbox--disabled Checkbox--regular"
     >
-      Checkbox
-    </Text>
-  </label>
-</div>
+      <div
+        class="Checkbox-outerWrapper"
+      >
+        <input
+          class="Checkbox-input"
+          disabled=""
+          id="Checkbox-Checkbox-Test-uid"
+          name="Checkbox"
+          tabindex="0"
+          type="checkbox"
+          value="Checkbox"
+        />
+        <span
+          class="Checkbox-wrapper Checkbox-wrapper--regular"
+        />
+      </div>
+      <label
+        class="Checkbox-label Checkbox-label--regular"
+        for="Checkbox-Checkbox-Test-uid"
+      >
+        <span
+          class="Text Text--disabled Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          Checkbox
+        </span>
+      </label>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Checkbox component 
   checked: true, disabled: false, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
-<div
-  className="Checkbox Checkbox--regular"
->
-  <div
-    className="Checkbox-outerWrapper"
-  >
-    <input
-      checked={true}
-      className="Checkbox-input Checkbox-input--checked"
-      disabled={false}
-      id="Checkbox-Checkbox-Test-uid"
-      name="Checkbox"
-      onChange={[Function]}
-      tabIndex={0}
-      type="checkbox"
-      value="Checkbox"
-    />
-    <span
-      className="Checkbox-wrapper Checkbox-wrapper--regular"
+<body>
+  <div>
+    <div
+      class="Checkbox Checkbox--regular"
     >
-      <Icon
-        appearance="white"
-        name="check"
-        size={16}
-      />
-    </span>
+      <div
+        class="Checkbox-outerWrapper"
+      >
+        <input
+          checked=""
+          class="Checkbox-input Checkbox-input--checked"
+          id="Checkbox-Checkbox-Test-uid"
+          name="Checkbox"
+          tabindex="0"
+          type="checkbox"
+          value="Checkbox"
+        />
+        <span
+          class="Checkbox-wrapper Checkbox-wrapper--regular"
+        >
+          <i
+            class="material-icons Icon Icon--white"
+            style="font-size: 16px; width: 16px;"
+          >
+            check
+          </i>
+        </span>
+      </div>
+      <label
+        class="Checkbox-label Checkbox-label--regular"
+        for="Checkbox-Checkbox-Test-uid"
+      >
+        <span
+          class="Text Text--default Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          Checkbox
+        </span>
+      </label>
+    </div>
   </div>
-  <label
-    className="Checkbox-label Checkbox-label--regular"
-    htmlFor="Checkbox-Checkbox-Test-uid"
-  >
-    <Text
-      appearance="default"
-      size="regular"
-    >
-      Checkbox
-    </Text>
-  </label>
-</div>
+</body>
 `;
 
 exports[`Checkbox component 
   checked: true, disabled: true, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
-<div
-  className="Checkbox Checkbox--disabled Checkbox--regular"
->
-  <div
-    className="Checkbox-outerWrapper"
-  >
-    <input
-      checked={true}
-      className="Checkbox-input Checkbox-input--checked"
-      disabled={true}
-      id="Checkbox-Checkbox-Test-uid"
-      name="Checkbox"
-      onChange={[Function]}
-      tabIndex={0}
-      type="checkbox"
-      value="Checkbox"
-    />
-    <span
-      className="Checkbox-wrapper Checkbox-wrapper--regular"
+<body>
+  <div>
+    <div
+      class="Checkbox Checkbox--disabled Checkbox--regular"
     >
-      <Icon
-        appearance="white"
-        name="check"
-        size={16}
-      />
-    </span>
+      <div
+        class="Checkbox-outerWrapper"
+      >
+        <input
+          checked=""
+          class="Checkbox-input Checkbox-input--checked"
+          disabled=""
+          id="Checkbox-Checkbox-Test-uid"
+          name="Checkbox"
+          tabindex="0"
+          type="checkbox"
+          value="Checkbox"
+        />
+        <span
+          class="Checkbox-wrapper Checkbox-wrapper--regular"
+        >
+          <i
+            class="material-icons Icon Icon--white"
+            style="font-size: 16px; width: 16px;"
+          >
+            check
+          </i>
+        </span>
+      </div>
+      <label
+        class="Checkbox-label Checkbox-label--regular"
+        for="Checkbox-Checkbox-Test-uid"
+      >
+        <span
+          class="Text Text--disabled Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          Checkbox
+        </span>
+      </label>
+    </div>
   </div>
-  <label
-    className="Checkbox-label Checkbox-label--regular"
-    htmlFor="Checkbox-Checkbox-Test-uid"
-  >
-    <Text
-      appearance="disabled"
-      size="regular"
-    >
-      Checkbox
-    </Text>
-  </label>
-</div>
+</body>
 `;
 
 exports[`Checkbox component 
   indeterminate: true, disabled: false, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
-<div
-  className="Checkbox Checkbox--regular"
->
-  <div
-    className="Checkbox-outerWrapper"
-  >
-    <input
-      className="Checkbox-input Checkbox-input--indeterminate"
-      disabled={false}
-      id="Checkbox-Checkbox-Test-uid"
-      name="Checkbox"
-      onChange={[Function]}
-      tabIndex={0}
-      type="checkbox"
-      value="Checkbox"
-    />
-    <span
-      className="Checkbox-wrapper Checkbox-wrapper--regular"
+<body>
+  <div>
+    <div
+      class="Checkbox Checkbox--regular"
     >
-      <Icon
-        appearance="white"
-        name="remove"
-        size={16}
-      />
-    </span>
+      <div
+        class="Checkbox-outerWrapper"
+      >
+        <input
+          class="Checkbox-input Checkbox-input--indeterminate"
+          id="Checkbox-Checkbox-Test-uid"
+          name="Checkbox"
+          tabindex="0"
+          type="checkbox"
+          value="Checkbox"
+        />
+        <span
+          class="Checkbox-wrapper Checkbox-wrapper--regular"
+        >
+          <i
+            class="material-icons Icon Icon--white"
+            style="font-size: 16px; width: 16px;"
+          >
+            remove
+          </i>
+        </span>
+      </div>
+      <label
+        class="Checkbox-label Checkbox-label--regular"
+        for="Checkbox-Checkbox-Test-uid"
+      >
+        <span
+          class="Text Text--default Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          Checkbox
+        </span>
+      </label>
+    </div>
   </div>
-  <label
-    className="Checkbox-label Checkbox-label--regular"
-    htmlFor="Checkbox-Checkbox-Test-uid"
-  >
-    <Text
-      appearance="default"
-      size="regular"
-    >
-      Checkbox
-    </Text>
-  </label>
-</div>
+</body>
 `;
 
 exports[`Checkbox component 
   indeterminate: true, disabled: true, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
-<div
-  className="Checkbox Checkbox--disabled Checkbox--regular"
->
-  <div
-    className="Checkbox-outerWrapper"
-  >
-    <input
-      className="Checkbox-input Checkbox-input--indeterminate"
-      disabled={true}
-      id="Checkbox-Checkbox-Test-uid"
-      name="Checkbox"
-      onChange={[Function]}
-      tabIndex={0}
-      type="checkbox"
-      value="Checkbox"
-    />
-    <span
-      className="Checkbox-wrapper Checkbox-wrapper--regular"
+<body>
+  <div>
+    <div
+      class="Checkbox Checkbox--disabled Checkbox--regular"
     >
-      <Icon
-        appearance="white"
-        name="remove"
-        size={16}
-      />
-    </span>
+      <div
+        class="Checkbox-outerWrapper"
+      >
+        <input
+          class="Checkbox-input Checkbox-input--indeterminate"
+          disabled=""
+          id="Checkbox-Checkbox-Test-uid"
+          name="Checkbox"
+          tabindex="0"
+          type="checkbox"
+          value="Checkbox"
+        />
+        <span
+          class="Checkbox-wrapper Checkbox-wrapper--regular"
+        >
+          <i
+            class="material-icons Icon Icon--white"
+            style="font-size: 16px; width: 16px;"
+          >
+            remove
+          </i>
+        </span>
+      </div>
+      <label
+        class="Checkbox-label Checkbox-label--regular"
+        for="Checkbox-Checkbox-Test-uid"
+      >
+        <span
+          class="Text Text--disabled Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          Checkbox
+        </span>
+      </label>
+    </div>
   </div>
-  <label
-    className="Checkbox-label Checkbox-label--regular"
-    htmlFor="Checkbox-Checkbox-Test-uid"
-  >
-    <Text
-      appearance="disabled"
-      size="regular"
-    >
-      Checkbox
-    </Text>
-  </label>
-</div>
+</body>
 `;
 
 exports[`Checkbox component 
   size: "regular", checked: true, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
-<div
-  className="Checkbox Checkbox--regular"
->
-  <div
-    className="Checkbox-outerWrapper"
-  >
-    <input
-      checked={true}
-      className="Checkbox-input Checkbox-input--checked"
-      id="Checkbox-Checkbox-Test-uid"
-      name="Checkbox"
-      onChange={[Function]}
-      tabIndex={0}
-      type="checkbox"
-      value="Checkbox"
-    />
-    <span
-      className="Checkbox-wrapper Checkbox-wrapper--regular"
+<body>
+  <div>
+    <div
+      class="Checkbox Checkbox--regular"
     >
-      <Icon
-        appearance="white"
-        name="check"
-        size={16}
-      />
-    </span>
+      <div
+        class="Checkbox-outerWrapper"
+      >
+        <input
+          checked=""
+          class="Checkbox-input Checkbox-input--checked"
+          id="Checkbox-Checkbox-Test-uid"
+          name="Checkbox"
+          tabindex="0"
+          type="checkbox"
+          value="Checkbox"
+        />
+        <span
+          class="Checkbox-wrapper Checkbox-wrapper--regular"
+        >
+          <i
+            class="material-icons Icon Icon--white"
+            style="font-size: 16px; width: 16px;"
+          >
+            check
+          </i>
+        </span>
+      </div>
+      <label
+        class="Checkbox-label Checkbox-label--regular"
+        for="Checkbox-Checkbox-Test-uid"
+      >
+        <span
+          class="Text Text--default Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          Checkbox
+        </span>
+      </label>
+    </div>
   </div>
-  <label
-    className="Checkbox-label Checkbox-label--regular"
-    htmlFor="Checkbox-Checkbox-Test-uid"
-  >
-    <Text
-      appearance="default"
-      size="regular"
-    >
-      Checkbox
-    </Text>
-  </label>
-</div>
+</body>
 `;
 
 exports[`Checkbox component 
   size: "tiny", checked: true, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
-<div
-  className="Checkbox Checkbox--tiny"
->
-  <div
-    className="Checkbox-outerWrapper"
-  >
-    <input
-      checked={true}
-      className="Checkbox-input Checkbox-input--checked"
-      id="Checkbox-Checkbox-Test-uid"
-      name="Checkbox"
-      onChange={[Function]}
-      tabIndex={0}
-      type="checkbox"
-      value="Checkbox"
-    />
-    <span
-      className="Checkbox-wrapper Checkbox-wrapper--tiny"
+<body>
+  <div>
+    <div
+      class="Checkbox Checkbox--tiny"
     >
-      <Icon
-        appearance="white"
-        name="check"
-        size={8}
-      />
-    </span>
+      <div
+        class="Checkbox-outerWrapper"
+      >
+        <input
+          checked=""
+          class="Checkbox-input Checkbox-input--checked"
+          id="Checkbox-Checkbox-Test-uid"
+          name="Checkbox"
+          tabindex="0"
+          type="checkbox"
+          value="Checkbox"
+        />
+        <span
+          class="Checkbox-wrapper Checkbox-wrapper--tiny"
+        >
+          <i
+            class="material-icons Icon Icon--white"
+            style="font-size: 8px; width: 8px;"
+          >
+            check
+          </i>
+        </span>
+      </div>
+      <label
+        class="Checkbox-label Checkbox-label--tiny"
+        for="Checkbox-Checkbox-Test-uid"
+      >
+        <span
+          class="Text Text--default Text--small"
+          data-test="DesignSystem-Text"
+        >
+          Checkbox
+        </span>
+      </label>
+    </div>
   </div>
-  <label
-    className="Checkbox-label Checkbox-label--tiny"
-    htmlFor="Checkbox-Checkbox-Test-uid"
-  >
-    <Text
-      appearance="default"
-      size="small"
-    >
-      Checkbox
-    </Text>
-  </label>
-</div>
+</body>
 `;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import Legend, { LegendProps as IProps } from '../Legend';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -29,12 +29,12 @@ describe('Legend component', () => {
     const attr = filterUndefined(props) as IProps;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <Legend {...attr}>
           {label}
         </Legend>
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 
@@ -51,12 +51,12 @@ describe('Legend component', () => {
     const attr = filterUndefined(props) as IProps;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <Legend {...attr}>
           {label}
         </Legend>
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 
@@ -73,12 +73,12 @@ describe('Legend component', () => {
     const attr = filterUndefined(props) as IProps;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <Legend {...attr}>
           {label}
         </Legend>
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 

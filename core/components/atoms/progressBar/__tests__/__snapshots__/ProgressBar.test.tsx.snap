@@ -3,17 +3,17 @@
 exports[`ProgressBar component 
   value: 10
  1`] = `
-<div
-  className="ProgressBar"
-  data-test="DesignSystem-ProgressBar"
->
-  <div
-    className="ProgressBar-indicator"
-    style={
-      Object {
-        "width": "10%",
-      }
-    }
-  />
-</div>
+<body>
+  <div>
+    <div
+      class="ProgressBar"
+      data-test="DesignSystem-ProgressBar"
+    >
+      <div
+        class="ProgressBar-indicator"
+        style="width: 10%;"
+      />
+    </div>
+  </div>
+</body>
 `;

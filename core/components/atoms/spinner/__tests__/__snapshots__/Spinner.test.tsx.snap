@@ -3,113 +3,137 @@
 exports[`Spinner component 
   appearance: "primary"
  1`] = `
-<svg
-  className="Spinner Spinner--medium"
-  viewBox="0 0 50 50"
->
-  <circle
-    className="Circle Circle--primary"
-    cx={25}
-    cy={25}
-    fill="none"
-    r={20}
-    strokeMiterlimit="10"
-    strokeWidth="4"
-  />
-</svg>
+<body>
+  <div>
+    <svg
+      class="Spinner Spinner--medium"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="Circle Circle--primary"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-miterlimit="10"
+        stroke-width="4"
+      />
+    </svg>
+  </div>
+</body>
 `;
 
 exports[`Spinner component 
   appearance: "secondary"
  1`] = `
-<svg
-  className="Spinner Spinner--medium"
-  viewBox="0 0 50 50"
->
-  <circle
-    className="Circle Circle--secondary"
-    cx={25}
-    cy={25}
-    fill="none"
-    r={20}
-    strokeMiterlimit="10"
-    strokeWidth="4"
-  />
-</svg>
+<body>
+  <div>
+    <svg
+      class="Spinner Spinner--medium"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="Circle Circle--secondary"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-miterlimit="10"
+        stroke-width="4"
+      />
+    </svg>
+  </div>
+</body>
 `;
 
 exports[`Spinner component 
   appearance: "white"
  1`] = `
-<svg
-  className="Spinner Spinner--medium"
-  viewBox="0 0 50 50"
->
-  <circle
-    className="Circle Circle--white"
-    cx={25}
-    cy={25}
-    fill="none"
-    r={20}
-    strokeMiterlimit="10"
-    strokeWidth="4"
-  />
-</svg>
+<body>
+  <div>
+    <svg
+      class="Spinner Spinner--medium"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="Circle Circle--white"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-miterlimit="10"
+        stroke-width="4"
+      />
+    </svg>
+  </div>
+</body>
 `;
 
 exports[`Spinner component 
   size: "large"
  1`] = `
-<svg
-  className="Spinner Spinner--large"
-  viewBox="0 0 50 50"
->
-  <circle
-    className="Circle Circle--primary"
-    cx={25}
-    cy={25}
-    fill="none"
-    r={20}
-    strokeMiterlimit="10"
-    strokeWidth="4"
-  />
-</svg>
+<body>
+  <div>
+    <svg
+      class="Spinner Spinner--large"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="Circle Circle--primary"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-miterlimit="10"
+        stroke-width="4"
+      />
+    </svg>
+  </div>
+</body>
 `;
 
 exports[`Spinner component 
   size: "medium"
  1`] = `
-<svg
-  className="Spinner Spinner--medium"
-  viewBox="0 0 50 50"
->
-  <circle
-    className="Circle Circle--primary"
-    cx={25}
-    cy={25}
-    fill="none"
-    r={20}
-    strokeMiterlimit="10"
-    strokeWidth="4"
-  />
-</svg>
+<body>
+  <div>
+    <svg
+      class="Spinner Spinner--medium"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="Circle Circle--primary"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-miterlimit="10"
+        stroke-width="4"
+      />
+    </svg>
+  </div>
+</body>
 `;
 
 exports[`Spinner component 
   size: "small"
  1`] = `
-<svg
-  className="Spinner Spinner--small"
-  viewBox="0 0 50 50"
->
-  <circle
-    className="Circle Circle--primary"
-    cx={25}
-    cy={25}
-    fill="none"
-    r={20}
-    strokeMiterlimit="10"
-    strokeWidth="4"
-  />
-</svg>
+<body>
+  <div>
+    <svg
+      class="Spinner Spinner--small"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="Circle Circle--primary"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-miterlimit="10"
+        stroke-width="4"
+      />
+    </svg>
+  </div>
+</body>
 `;
