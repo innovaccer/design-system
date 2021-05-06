@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Switch, { SwitchProps as Props } from '../Switch';
 
@@ -15,12 +15,12 @@ describe('Switch component', () => {
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <Switch
           {...attr}
         />
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
   testHelper(mapper, testFunc);
@@ -35,12 +35,12 @@ describe('Switch component', () => {
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <Switch
           {...attr}
         />
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
   testHelper(mapper, testFunc);

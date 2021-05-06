@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, arrayHelper, testMessageHelper } from '@/utils/testHelper';
 import Toast, { ToastProps as Props } from '../Toast';
 
@@ -24,12 +24,12 @@ describe('Toast component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <Toast
           {...attr}
         />
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 
@@ -49,12 +49,12 @@ describe('Toast component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <Toast
           {...attr}
         />
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 

@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Text component should match the snapshot 1`] = `
-<span>
-  Generic text component
-</span>
+<body>
+  <div>
+    <span>
+      Generic text component
+    </span>
+  </div>
+</body>
 `;

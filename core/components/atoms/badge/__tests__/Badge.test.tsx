@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
 import { render } from '@testing-library/react';
 import Badge, { BadgeProps as Props, Appearance } from '../Badge';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -18,14 +17,14 @@ describe('Badge component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <Badge
           {...attr}
         >
           Badge
         </Badge>
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 

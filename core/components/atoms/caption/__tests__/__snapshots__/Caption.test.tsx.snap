@@ -3,31 +3,37 @@
 exports[`Caption component 
   error: false
  1`] = `
-<div
-  className="Caption"
->
-  <Text
-    appearance="subtle"
-    size="small"
-    weight="medium"
-  >
-    Caption
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Caption"
+    >
+      <span
+        class="Text Text--subtle Text--medium Text--small"
+        data-test="DesignSystem-Text"
+      >
+        Caption
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Caption component 
   error: true
  1`] = `
-<div
-  className="Caption"
->
-  <Text
-    appearance="subtle"
-    size="small"
-    weight="medium"
-  >
-    Caption
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Caption"
+    >
+      <span
+        class="Text Text--subtle Text--medium Text--small"
+        data-test="DesignSystem-Text"
+      >
+        Caption
+      </span>
+    </div>
+  </div>
+</body>
 `;

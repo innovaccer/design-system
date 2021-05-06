@@ -3,477 +3,390 @@
 exports[`Legend component 
   iconAppearance: "accent1", label: "Legend"
  1`] = `
-<div
-  className="Legend"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="Legend-icon"
-    style={
-      Object {
-        "background": "var(--accent1)",
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-  />
-  <Text
-    appearance="default"
-    size="regular"
-  >
-    Legend
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Legend"
+    >
+      <span
+        class="Legend-icon"
+        style="height: 16px; width: 16px;"
+      />
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Legend
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Legend component 
   iconAppearance: "accent2", label: "Legend"
  1`] = `
-<div
-  className="Legend"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="Legend-icon"
-    style={
-      Object {
-        "background": "var(--accent2)",
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-  />
-  <Text
-    appearance="default"
-    size="regular"
-  >
-    Legend
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Legend"
+    >
+      <span
+        class="Legend-icon"
+        style="height: 16px; width: 16px;"
+      />
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Legend
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Legend component 
   iconAppearance: "accent3", label: "Legend"
  1`] = `
-<div
-  className="Legend"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="Legend-icon"
-    style={
-      Object {
-        "background": "var(--accent3)",
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-  />
-  <Text
-    appearance="default"
-    size="regular"
-  >
-    Legend
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Legend"
+    >
+      <span
+        class="Legend-icon"
+        style="height: 16px; width: 16px;"
+      />
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Legend
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Legend component 
   iconAppearance: "accent4", label: "Legend"
  1`] = `
-<div
-  className="Legend"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="Legend-icon"
-    style={
-      Object {
-        "background": "var(--accent4)",
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-  />
-  <Text
-    appearance="default"
-    size="regular"
-  >
-    Legend
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Legend"
+    >
+      <span
+        class="Legend-icon"
+        style="height: 16px; width: 16px;"
+      />
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Legend
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Legend component 
   iconAppearance: "alert", label: "Legend"
  1`] = `
-<div
-  className="Legend"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="Legend-icon"
-    style={
-      Object {
-        "background": "var(--alert)",
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-  />
-  <Text
-    appearance="default"
-    size="regular"
-  >
-    Legend
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Legend"
+    >
+      <span
+        class="Legend-icon"
+        style="height: 16px; width: 16px;"
+      />
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Legend
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Legend component 
   iconAppearance: "inverse", label: "Legend"
  1`] = `
-<div
-  className="Legend"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="Legend-icon"
-    style={
-      Object {
-        "background": "var(--inverse)",
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-  />
-  <Text
-    appearance="default"
-    size="regular"
-  >
-    Legend
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Legend"
+    >
+      <span
+        class="Legend-icon"
+        style="height: 16px; width: 16px;"
+      />
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Legend
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Legend component 
   iconAppearance: "primary", label: "Legend"
  1`] = `
-<div
-  className="Legend"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="Legend-icon"
-    style={
-      Object {
-        "background": "var(--primary)",
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-  />
-  <Text
-    appearance="default"
-    size="regular"
-  >
-    Legend
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Legend"
+    >
+      <span
+        class="Legend-icon"
+        style="height: 16px; width: 16px;"
+      />
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Legend
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Legend component 
   iconAppearance: "secondary", label: "Legend"
  1`] = `
-<div
-  className="Legend"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="Legend-icon"
-    style={
-      Object {
-        "background": "var(--secondary)",
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-  />
-  <Text
-    appearance="default"
-    size="regular"
-  >
-    Legend
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Legend"
+    >
+      <span
+        class="Legend-icon"
+        style="height: 16px; width: 16px;"
+      />
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Legend
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Legend component 
   iconAppearance: "success", label: "Legend"
  1`] = `
-<div
-  className="Legend"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="Legend-icon"
-    style={
-      Object {
-        "background": "var(--success)",
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-  />
-  <Text
-    appearance="default"
-    size="regular"
-  >
-    Legend
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Legend"
+    >
+      <span
+        class="Legend-icon"
+        style="height: 16px; width: 16px;"
+      />
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Legend
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Legend component 
   iconAppearance: "warning", label: "Legend"
  1`] = `
-<div
-  className="Legend"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="Legend-icon"
-    style={
-      Object {
-        "background": "var(--warning)",
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-  />
-  <Text
-    appearance="default"
-    size="regular"
-  >
-    Legend
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Legend"
+    >
+      <span
+        class="Legend-icon"
+        style="height: 16px; width: 16px;"
+      />
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Legend
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Legend component 
   labelAppearance: "default", label: "Legend"
  1`] = `
-<div
-  className="Legend"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="Legend-icon"
-    style={
-      Object {
-        "background": "var(--inverse)",
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-  />
-  <Text
-    appearance="default"
-    size="regular"
-  >
-    Legend
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Legend"
+    >
+      <span
+        class="Legend-icon"
+        style="height: 16px; width: 16px;"
+      />
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Legend
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Legend component 
   labelAppearance: "destructive", label: "Legend"
  1`] = `
-<div
-  className="Legend"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="Legend-icon"
-    style={
-      Object {
-        "background": "var(--inverse)",
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-  />
-  <Text
-    appearance="destructive"
-    size="regular"
-  >
-    Legend
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Legend"
+    >
+      <span
+        class="Legend-icon"
+        style="height: 16px; width: 16px;"
+      />
+      <span
+        class="Text Text--destructive Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Legend
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Legend component 
   labelAppearance: "disabled", label: "Legend"
  1`] = `
-<div
-  className="Legend"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="Legend-icon"
-    style={
-      Object {
-        "background": "var(--inverse)",
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-  />
-  <Text
-    appearance="disabled"
-    size="regular"
-  >
-    Legend
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Legend"
+    >
+      <span
+        class="Legend-icon"
+        style="height: 16px; width: 16px;"
+      />
+      <span
+        class="Text Text--disabled Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Legend
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Legend component 
   labelAppearance: "subtle", label: "Legend"
  1`] = `
-<div
-  className="Legend"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="Legend-icon"
-    style={
-      Object {
-        "background": "var(--inverse)",
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-  />
-  <Text
-    appearance="subtle"
-    size="regular"
-  >
-    Legend
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Legend"
+    >
+      <span
+        class="Legend-icon"
+        style="height: 16px; width: 16px;"
+      />
+      <span
+        class="Text Text--subtle Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Legend
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Legend component 
   labelAppearance: "white", label: "Legend"
  1`] = `
-<div
-  className="Legend"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="Legend-icon"
-    style={
-      Object {
-        "background": "var(--inverse)",
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-  />
-  <Text
-    appearance="white"
-    size="regular"
-  >
-    Legend
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Legend"
+    >
+      <span
+        class="Legend-icon"
+        style="height: 16px; width: 16px;"
+      />
+      <span
+        class="Text Text--white Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Legend
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Legend component 
   labelWeight: "medium", label: "Legend"
  1`] = `
-<div
-  className="Legend"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="Legend-icon"
-    style={
-      Object {
-        "background": "var(--inverse)",
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-  />
-  <Text
-    appearance="default"
-    size="regular"
-    weight="medium"
-  >
-    Legend
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Legend"
+    >
+      <span
+        class="Legend-icon"
+        style="height: 16px; width: 16px;"
+      />
+      <span
+        class="Text Text--default Text--medium Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Legend
+      </span>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Legend component 
   labelWeight: "strong", label: "Legend"
  1`] = `
-<div
-  className="Legend"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <span
-    className="Legend-icon"
-    style={
-      Object {
-        "background": "var(--inverse)",
-        "height": "16px",
-        "width": "16px",
-      }
-    }
-  />
-  <Text
-    appearance="default"
-    size="regular"
-    weight="strong"
-  >
-    Legend
-  </Text>
-</div>
+<body>
+  <div>
+    <div
+      class="Legend"
+    >
+      <span
+        class="Legend-icon"
+        style="height: 16px; width: 16px;"
+      />
+      <span
+        class="Text Text--default Text--strong Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Legend
+      </span>
+    </div>
+  </div>
+</body>
 `;

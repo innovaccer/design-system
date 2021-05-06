@@ -3,91 +3,110 @@
 exports[`Switch component 
   checked: true
  1`] = `
-<div
-  className="Switch Switch--regular"
->
-  <input
-    checked={true}
-    className="Switch-input"
-    onChange={[Function]}
-    type="checkbox"
-  />
-  <span
-    className="Switch-wrapper Switch-wrapper--regular Switch-wrapper--checked"
-  />
-</div>
+<body>
+  <div>
+    <div
+      class="Switch Switch--regular"
+    >
+      <input
+        checked=""
+        class="Switch-input"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="Switch-wrapper Switch-wrapper--regular Switch-wrapper--checked"
+      />
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Switch component 
   checked: true, disabled: false
  1`] = `
-<div
-  className="Switch Switch--regular"
->
-  <input
-    checked={true}
-    className="Switch-input"
-    disabled={false}
-    onChange={[Function]}
-    type="checkbox"
-  />
-  <span
-    className="Switch-wrapper Switch-wrapper--regular Switch-wrapper--checked"
-  />
-</div>
+<body>
+  <div>
+    <div
+      class="Switch Switch--regular"
+    >
+      <input
+        checked=""
+        class="Switch-input"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="Switch-wrapper Switch-wrapper--regular Switch-wrapper--checked"
+      />
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Switch component 
   checked: true, disabled: true
  1`] = `
-<div
-  className="Switch Switch--disabled Switch--regular"
->
-  <input
-    checked={true}
-    className="Switch-input"
-    disabled={true}
-    onChange={[Function]}
-    type="checkbox"
-  />
-  <span
-    className="Switch-wrapper Switch-wrapper--disabled Switch-wrapper--regular Switch-wrapper--checked Switch-wrapper--checkedDisabled"
-  />
-</div>
+<body>
+  <div>
+    <div
+      class="Switch Switch--disabled Switch--regular"
+    >
+      <input
+        checked=""
+        class="Switch-input"
+        disabled=""
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="Switch-wrapper Switch-wrapper--disabled Switch-wrapper--regular Switch-wrapper--checked Switch-wrapper--checkedDisabled"
+      />
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Switch component 
   checked: true, size: "regular"
  1`] = `
-<div
-  className="Switch Switch--regular"
->
-  <input
-    checked={true}
-    className="Switch-input"
-    onChange={[Function]}
-    type="checkbox"
-  />
-  <span
-    className="Switch-wrapper Switch-wrapper--regular Switch-wrapper--checked"
-  />
-</div>
+<body>
+  <div>
+    <div
+      class="Switch Switch--regular"
+    >
+      <input
+        checked=""
+        class="Switch-input"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="Switch-wrapper Switch-wrapper--regular Switch-wrapper--checked"
+      />
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Switch component 
   checked: true, size: "tiny"
  1`] = `
-<div
-  className="Switch Switch--tiny"
->
-  <input
-    checked={true}
-    className="Switch-input"
-    onChange={[Function]}
-    type="checkbox"
-  />
-  <span
-    className="Switch-wrapper Switch-wrapper--tiny Switch-wrapper--checked"
-  />
-</div>
+<body>
+  <div>
+    <div
+      class="Switch Switch--tiny"
+    >
+      <input
+        checked=""
+        class="Switch-input"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="Switch-wrapper Switch-wrapper--tiny Switch-wrapper--checked"
+      />
+    </div>
+  </div>
+</body>
 `;
