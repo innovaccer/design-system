@@ -1,0 +1,141 @@
+
+.MetricInput-input::-ms-clear {
+  display: none;
+}
+
+.MetricInput {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: var(--spacing-m);
+  border: var(--border);
+  padding-right: var(--spacing-m);
+  background: var(--white);
+}
+
+.MetricInput--regular {
+  height: var(--spacing-3);
+  padding-left: var(--spacing-l);
+}
+
+.MetricInput--large {
+  height: 40px;
+  padding-left: var(--spacing-2);
+}
+
+.MetricInput:hover {
+  background: var(--secondary-lightest);
+  border-color: var(--secondary-lightest);
+  cursor: text;
+}
+
+.MetricInput:focus-within {
+  background: var(--white);
+  border-color: var(--primary);
+}
+
+.MetricInput:focus-within .MetricInput-icon {
+  color: var(--primary);
+}
+
+.MetricInput--disabled {
+  background: var(--secondary-lightest);
+  border-color: var(--secondary-light);
+  pointer-events: none;
+}
+
+.MetricInput--disabled .MetricInput-icon {
+  color: var(--inverse-lightest);
+}
+
+.MetricInput--error,
+.MetricInput--error:hover {
+  background: var(--white);
+  border-color: var(--alert);
+}
+
+.MetricInput--error:focus-within {
+  border-color: var(--alert);
+  box-shadow: var(--shadow-spread) var(--alert-shadow);
+}
+
+.MetricInput--error:focus-within .MetricInput-icon {
+  color: var(--alert);
+}
+
+.MetricInput-input {
+  display: flex;
+  width: 100%;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size);
+  line-height: var(--font-height-s);
+  color: var(--night);
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.MetricInput-input--large {
+  line-height: var(--font-height-m);
+  font-size: var(--font-size-m);
+}
+
+.MetricInput-input::placeholder {
+  color: var(--inverse-lighter);
+}
+
+.MetricInput-input:focus {
+  outline: 0;
+}
+
+.MetricInput-input:disabled .MetricInput-input::placeholder {
+  color: var(--inverse-lighter);
+}
+
+.MetricInput-icon--regular {
+  margin-right: var(--spacing);
+  line-height: var(--font-height-s);
+}
+
+.MetricInput-icon--large {
+  margin-right: var(--spacing-l);
+  line-height: var(--font-height-m);
+}
+
+.MetricInput-arrowIcons {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--spacing-s);
+  margin-bottom: var(--spacing-s);
+  cursor: pointer;
+}
+
+.MetricInput-arrowIcons:focus {
+  outline: 0;
+}
+
+.MetricInput-arrowIcon {
+  background: var(--secondary-lightest);
+}
+
+.MetricInput-arrowIcon--regular {
+  margin-left: var(--spacing-l);
+}
+
+.MetricInput-arrowIcon--large {
+  margin-left: var(--spacing-2);
+}
+
+.MetricInput-arrowIcon--down {
+  margin-top: var(--spacing-s);
+}
+
+.MetricInput-input::-webkit-inner-spin-button, 
+.MetricInput-input::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0; 
+}
