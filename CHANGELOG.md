@@ -27,6 +27,46 @@ NA
 
 -------------------
 
+
+## 2.1.0-0  (2021-05-07) 
+
+### Highlights
+* New components added to library for metric values input and verification code input, namely `VerificationCodeInput` and `MetricInput`.
+* `Enzyme` testing library is removed from project, now our test cases are using react-testing-library and jest only.
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+* Adds new component VerificationCodeInput for verification code input. (6ec9218a)
+* Adds new component MetricInput for verification code input. (5632589d)
+
+### Fixes
+* Radio component css issue fixed. (b9049771)
+* Checkbox component css issue fixed. (d5036517)
+* Sorting of story titles in left navigation menu on storybook fixed for parent level menus. (d10d451e)
+* Enzyme is completely removed from library and snapshots are updated accordingly. (d511f73c)
+
+### Improvements
+* Text component's subtle variant color updated. (32d2fe9c)
+* Button component's button size for large icons updated. (65b100c2)
+
+
+### Documentation
+* Stories of `VerticalNav` component updated according to updated documentation and features. (87c5955e)
+* Stories of `Dropdown` component updated according to updated documentation and features. (70329569)
+* Stories of `Toast` component updated according to updated documentation and features. (b9e20b78)
+* Stories of `Switch` component updated according to updated documentation and features. (c66e5e55)
+
+
+-------------------
+
 ## 2.0.0  (2021-04-28)
 
 ### Highlights
