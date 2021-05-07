@@ -1004,7 +1004,7 @@ exports[`TS renders children 1`] = `
     />
   </div>
   <div
-    class="Radio Radio--regular"
+    class="Radio"
   >
     <div
       class="Radio-outerWrapper Radio-outerWrapper--regular"

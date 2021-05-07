@@ -6,7 +6,7 @@ exports[`Radio component
 <body>
   <div>
     <div
-      class="Radio Radio--regular"
+      class="Radio"
     >
       <div
         class="Radio-outerWrapper Radio-outerWrapper--regular"
@@ -44,7 +44,7 @@ exports[`Radio component
 <body>
   <div>
     <div
-      class="Radio Radio--disabled Radio--regular"
+      class="Radio Radio--disabled"
     >
       <div
         class="Radio-outerWrapper Radio-outerWrapper--regular"
@@ -83,7 +83,7 @@ exports[`Radio component
 <body>
   <div>
     <div
-      class="Radio Radio--regular"
+      class="Radio"
     >
       <div
         class="Radio-outerWrapper Radio-outerWrapper--regular"
@@ -121,7 +121,7 @@ exports[`Radio component
 <body>
   <div>
     <div
-      class="Radio Radio--tiny"
+      class="Radio"
     >
       <div
         class="Radio-outerWrapper Radio-outerWrapper--tiny"
