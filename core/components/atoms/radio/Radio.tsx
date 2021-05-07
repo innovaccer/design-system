@@ -68,7 +68,6 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
   const RadioClass = classNames({
     ['Radio']: true,
     ['Radio--disabled']: disabled,
-    [`Radio--${size}`]: size,
   }, className);
 
   const RadioWrapper = classNames({
