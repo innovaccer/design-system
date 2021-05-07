@@ -5,6 +5,7 @@
   border: var(--spacing-xs) solid var(--secondary-light);
   position: relative;
   overflow: hidden;
+  background-color: var(--white);
 }
 
 .Card--shadow-default,

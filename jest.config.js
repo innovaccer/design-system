@@ -10,7 +10,7 @@ const config = {
   setupFilesAfterEnv: ['./scripts/setupTest.ts'],
   globalSetup: './scripts/setupGlobalJest.ts',
   transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
-  snapshotSerializers: ['enzyme-to-json/serializer'],
+  // snapshotSerializers: ['enzyme-to-json/serializer'],
   testEnvironment: 'jsdom',
   collectCoverage: true,
   coverageReporters: ['json', 'lcov', 'text', 'text-summary', 'html'],

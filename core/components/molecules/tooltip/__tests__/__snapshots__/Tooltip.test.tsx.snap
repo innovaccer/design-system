@@ -3,263 +3,159 @@
 exports[`Tooltip component 
   position: "bottom", tooltip: "Sample string"
  1`] = `
-<Popover
-  appendToBody={true}
-  boundaryElement={<body />}
-  closeOnBackdropClick={true}
-  customStyle={Object {}}
-  hideOnReferenceEscape={true}
-  hoverable={false}
-  offset="medium"
-  on="hover"
-  position="bottom"
-  trigger={
-    <Button>
-      Button
-    </Button>
-  }
->
-  <div
-    className="Tooltip"
-  >
-    <Text
-      appearance="white"
-      className="Tooltip-text"
-      size="regular"
+<body>
+  <div>
+    <div
+      class="OutsideClick PopperWrapper-trigger"
     >
-      Sample string
-    </Text>
+      <button
+        class="Button Button--regular Button--basic Button--iconAlign-left"
+        data-test="DesignSystem-Button"
+        tabindex="0"
+      >
+        Button
+      </button>
+    </div>
   </div>
-</Popover>
+</body>
 `;
 
 exports[`Tooltip component 
   position: "bottom-end", tooltip: "Sample string"
  1`] = `
-<Popover
-  appendToBody={true}
-  boundaryElement={<body />}
-  closeOnBackdropClick={true}
-  customStyle={Object {}}
-  hideOnReferenceEscape={true}
-  hoverable={false}
-  offset="medium"
-  on="hover"
-  position="bottom-end"
-  trigger={
-    <Button>
-      Button
-    </Button>
-  }
->
-  <div
-    className="Tooltip"
-  >
-    <Text
-      appearance="white"
-      className="Tooltip-text"
-      size="regular"
+<body>
+  <div>
+    <div
+      class="OutsideClick PopperWrapper-trigger"
     >
-      Sample string
-    </Text>
+      <button
+        class="Button Button--regular Button--basic Button--iconAlign-left"
+        data-test="DesignSystem-Button"
+        tabindex="0"
+      >
+        Button
+      </button>
+    </div>
   </div>
-</Popover>
+</body>
 `;
 
 exports[`Tooltip component 
   position: "bottom-start", tooltip: "Sample string"
  1`] = `
-<Popover
-  appendToBody={true}
-  boundaryElement={<body />}
-  closeOnBackdropClick={true}
-  customStyle={Object {}}
-  hideOnReferenceEscape={true}
-  hoverable={false}
-  offset="medium"
-  on="hover"
-  position="bottom-start"
-  trigger={
-    <Button>
-      Button
-    </Button>
-  }
->
-  <div
-    className="Tooltip"
-  >
-    <Text
-      appearance="white"
-      className="Tooltip-text"
-      size="regular"
+<body>
+  <div>
+    <div
+      class="OutsideClick PopperWrapper-trigger"
     >
-      Sample string
-    </Text>
+      <button
+        class="Button Button--regular Button--basic Button--iconAlign-left"
+        data-test="DesignSystem-Button"
+        tabindex="0"
+      >
+        Button
+      </button>
+    </div>
   </div>
-</Popover>
+</body>
 `;
 
 exports[`Tooltip component 
   position: "left", tooltip: "Sample string"
  1`] = `
-<Popover
-  appendToBody={true}
-  boundaryElement={<body />}
-  closeOnBackdropClick={true}
-  customStyle={Object {}}
-  hideOnReferenceEscape={true}
-  hoverable={false}
-  offset="medium"
-  on="hover"
-  position="left"
-  trigger={
-    <Button>
-      Button
-    </Button>
-  }
->
-  <div
-    className="Tooltip"
-  >
-    <Text
-      appearance="white"
-      className="Tooltip-text"
-      size="regular"
+<body>
+  <div>
+    <div
+      class="OutsideClick PopperWrapper-trigger"
     >
-      Sample string
-    </Text>
+      <button
+        class="Button Button--regular Button--basic Button--iconAlign-left"
+        data-test="DesignSystem-Button"
+        tabindex="0"
+      >
+        Button
+      </button>
+    </div>
   </div>
-</Popover>
+</body>
 `;
 
 exports[`Tooltip component 
   position: "right", tooltip: "Sample string"
  1`] = `
-<Popover
-  appendToBody={true}
-  boundaryElement={<body />}
-  closeOnBackdropClick={true}
-  customStyle={Object {}}
-  hideOnReferenceEscape={true}
-  hoverable={false}
-  offset="medium"
-  on="hover"
-  position="right"
-  trigger={
-    <Button>
-      Button
-    </Button>
-  }
->
-  <div
-    className="Tooltip"
-  >
-    <Text
-      appearance="white"
-      className="Tooltip-text"
-      size="regular"
+<body>
+  <div>
+    <div
+      class="OutsideClick PopperWrapper-trigger"
     >
-      Sample string
-    </Text>
+      <button
+        class="Button Button--regular Button--basic Button--iconAlign-left"
+        data-test="DesignSystem-Button"
+        tabindex="0"
+      >
+        Button
+      </button>
+    </div>
   </div>
-</Popover>
+</body>
 `;
 
 exports[`Tooltip component 
   position: "top", tooltip: "Sample string"
  1`] = `
-<Popover
-  appendToBody={true}
-  boundaryElement={<body />}
-  closeOnBackdropClick={true}
-  customStyle={Object {}}
-  hideOnReferenceEscape={true}
-  hoverable={false}
-  offset="medium"
-  on="hover"
-  position="top"
-  trigger={
-    <Button>
-      Button
-    </Button>
-  }
->
-  <div
-    className="Tooltip"
-  >
-    <Text
-      appearance="white"
-      className="Tooltip-text"
-      size="regular"
+<body>
+  <div>
+    <div
+      class="OutsideClick PopperWrapper-trigger"
     >
-      Sample string
-    </Text>
+      <button
+        class="Button Button--regular Button--basic Button--iconAlign-left"
+        data-test="DesignSystem-Button"
+        tabindex="0"
+      >
+        Button
+      </button>
+    </div>
   </div>
-</Popover>
+</body>
 `;
 
 exports[`Tooltip component 
   position: "top-end", tooltip: "Sample string"
  1`] = `
-<Popover
-  appendToBody={true}
-  boundaryElement={<body />}
-  closeOnBackdropClick={true}
-  customStyle={Object {}}
-  hideOnReferenceEscape={true}
-  hoverable={false}
-  offset="medium"
-  on="hover"
-  position="top-end"
-  trigger={
-    <Button>
-      Button
-    </Button>
-  }
->
-  <div
-    className="Tooltip"
-  >
-    <Text
-      appearance="white"
-      className="Tooltip-text"
-      size="regular"
+<body>
+  <div>
+    <div
+      class="OutsideClick PopperWrapper-trigger"
     >
-      Sample string
-    </Text>
+      <button
+        class="Button Button--regular Button--basic Button--iconAlign-left"
+        data-test="DesignSystem-Button"
+        tabindex="0"
+      >
+        Button
+      </button>
+    </div>
   </div>
-</Popover>
+</body>
 `;
 
 exports[`Tooltip component 
   position: "top-start", tooltip: "Sample string"
  1`] = `
-<Popover
-  appendToBody={true}
-  boundaryElement={<body />}
-  closeOnBackdropClick={true}
-  customStyle={Object {}}
-  hideOnReferenceEscape={true}
-  hoverable={false}
-  offset="medium"
-  on="hover"
-  position="top-start"
-  trigger={
-    <Button>
-      Button
-    </Button>
-  }
->
-  <div
-    className="Tooltip"
-  >
-    <Text
-      appearance="white"
-      className="Tooltip-text"
-      size="regular"
+<body>
+  <div>
+    <div
+      class="OutsideClick PopperWrapper-trigger"
     >
-      Sample string
-    </Text>
+      <button
+        class="Button Button--regular Button--basic Button--iconAlign-left"
+        data-test="DesignSystem-Button"
+        tabindex="0"
+      >
+        Button
+      </button>
+    </div>
   </div>
-</Popover>
+</body>
 `;

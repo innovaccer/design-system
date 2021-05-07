@@ -3,141 +3,152 @@
 exports[`Radio component 
   disabled: false, selected: true, label: "Radio", onChange: "[Function]", name: "Options", value: "Options"
  1`] = `
-<div
-  className="Radio Radio--regular"
->
-  <div
-    className="Radio-outerWrapper Radio-outerWrapper--regular"
-  >
-    <input
-      className="Radio-input"
-      disabled={false}
-      id="Options-Radio-Test-uid"
-      name="Options"
-      onChange={[MockFunction]}
-      type="radio"
-      value="Options"
-    />
-    <span
-      className="Radio-wrapper Radio-wrapper--regular"
-    />
-  </div>
-  <label
-    className="Radio-label"
-    htmlFor="Options-Radio-Test-uid"
-  >
-    <Text
-      appearance="default"
-      size="regular"
+<body>
+  <div>
+    <div
+      class="Radio"
     >
-      Radio
-    </Text>
-  </label>
-</div>
+      <div
+        class="Radio-outerWrapper Radio-outerWrapper--regular"
+      >
+        <input
+          class="Radio-input"
+          id="Options-Radio-Test-uid"
+          name="Options"
+          type="radio"
+          value="Options"
+        />
+        <span
+          class="Radio-wrapper Radio-wrapper--regular"
+        />
+      </div>
+      <label
+        class="Radio-label"
+        for="Options-Radio-Test-uid"
+      >
+        <span
+          class="Text Text--default Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          Radio
+        </span>
+      </label>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Radio component 
   disabled: true, selected: true, label: "Radio", onChange: "[Function]", name: "Options", value: "Options"
  1`] = `
-<div
-  className="Radio Radio--disabled Radio--regular"
->
-  <div
-    className="Radio-outerWrapper Radio-outerWrapper--regular"
-  >
-    <input
-      className="Radio-input"
-      disabled={true}
-      id="Options-Radio-Test-uid"
-      name="Options"
-      onChange={[MockFunction]}
-      type="radio"
-      value="Options"
-    />
-    <span
-      className="Radio-wrapper Radio-wrapper--regular"
-    />
-  </div>
-  <label
-    className="Radio-label"
-    htmlFor="Options-Radio-Test-uid"
-  >
-    <Text
-      appearance="disabled"
-      size="regular"
+<body>
+  <div>
+    <div
+      class="Radio Radio--disabled"
     >
-      Radio
-    </Text>
-  </label>
-</div>
+      <div
+        class="Radio-outerWrapper Radio-outerWrapper--regular"
+      >
+        <input
+          class="Radio-input"
+          disabled=""
+          id="Options-Radio-Test-uid"
+          name="Options"
+          type="radio"
+          value="Options"
+        />
+        <span
+          class="Radio-wrapper Radio-wrapper--regular"
+        />
+      </div>
+      <label
+        class="Radio-label"
+        for="Options-Radio-Test-uid"
+      >
+        <span
+          class="Text Text--disabled Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          Radio
+        </span>
+      </label>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Radio component 
   size: "regular", selected: true, label: "Radio", onChange: "[Function]", name: "Options", value: "Options"
  1`] = `
-<div
-  className="Radio Radio--regular"
->
-  <div
-    className="Radio-outerWrapper Radio-outerWrapper--regular"
-  >
-    <input
-      className="Radio-input"
-      id="Options-Radio-Test-uid"
-      name="Options"
-      onChange={[MockFunction]}
-      type="radio"
-      value="Options"
-    />
-    <span
-      className="Radio-wrapper Radio-wrapper--regular"
-    />
-  </div>
-  <label
-    className="Radio-label"
-    htmlFor="Options-Radio-Test-uid"
-  >
-    <Text
-      appearance="default"
-      size="regular"
+<body>
+  <div>
+    <div
+      class="Radio"
     >
-      Radio
-    </Text>
-  </label>
-</div>
+      <div
+        class="Radio-outerWrapper Radio-outerWrapper--regular"
+      >
+        <input
+          class="Radio-input"
+          id="Options-Radio-Test-uid"
+          name="Options"
+          type="radio"
+          value="Options"
+        />
+        <span
+          class="Radio-wrapper Radio-wrapper--regular"
+        />
+      </div>
+      <label
+        class="Radio-label"
+        for="Options-Radio-Test-uid"
+      >
+        <span
+          class="Text Text--default Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          Radio
+        </span>
+      </label>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Radio component 
   size: "tiny", selected: true, label: "Radio", onChange: "[Function]", name: "Options", value: "Options"
  1`] = `
-<div
-  className="Radio Radio--tiny"
->
-  <div
-    className="Radio-outerWrapper Radio-outerWrapper--tiny"
-  >
-    <input
-      className="Radio-input"
-      id="Options-Radio-Test-uid"
-      name="Options"
-      onChange={[MockFunction]}
-      type="radio"
-      value="Options"
-    />
-    <span
-      className="Radio-wrapper Radio-wrapper--tiny"
-    />
-  </div>
-  <label
-    className="Radio-label"
-    htmlFor="Options-Radio-Test-uid"
-  >
-    <Text
-      appearance="default"
-      size="small"
+<body>
+  <div>
+    <div
+      class="Radio"
     >
-      Radio
-    </Text>
-  </label>
-</div>
+      <div
+        class="Radio-outerWrapper Radio-outerWrapper--tiny"
+      >
+        <input
+          class="Radio-input"
+          id="Options-Radio-Test-uid"
+          name="Options"
+          type="radio"
+          value="Options"
+        />
+        <span
+          class="Radio-wrapper Radio-wrapper--tiny"
+        />
+      </div>
+      <label
+        class="Radio-label"
+        for="Options-Radio-Test-uid"
+      >
+        <span
+          class="Text Text--default Text--small"
+          data-test="DesignSystem-Text"
+        >
+          Radio
+        </span>
+      </label>
+    </div>
+  </div>
+</body>
 `;

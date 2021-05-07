@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { DateRangePicker } from '@/index';
 import { DateRangePickerProps as Props } from '@/index.type';
@@ -16,14 +16,14 @@ describe('DateRangePicker component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <DateRangePicker
           startDate={new Date(2020, 2, 3)}
           endDate={new Date(2020, 2, 11)}
           {...attr}
         />
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 
@@ -39,14 +39,14 @@ describe('DateRangePicker component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <DateRangePicker
           startDate={new Date(2020, 2, 3)}
           endDate={new Date(2020, 2, 11)}
           {...attr}
         />
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 
@@ -62,7 +62,7 @@ describe('DateRangePicker component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <DateRangePicker
           startDate={new Date(2020, 2, 3)}
           endDate={new Date(2020, 2, 11)}
@@ -71,7 +71,7 @@ describe('DateRangePicker component', () => {
           {...attr}
         />
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 
@@ -87,14 +87,14 @@ describe('DateRangePicker component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <DateRangePicker
           startDate={new Date(2020, 2, 3)}
           endDate={new Date(2020, 2, 11)}
           {...attr}
         />
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 
@@ -110,14 +110,14 @@ describe('DateRangePicker component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <DateRangePicker
           startDate={new Date(2020, 2, 3)}
           endDate={new Date(2020, 2, 11)}
           {...attr}
         />
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 
@@ -133,7 +133,7 @@ describe('DateRangePicker component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <DateRangePicker
           startDate={new Date(2020, 2, 3)}
           endDate={new Date(2020, 2, 11)}
@@ -141,7 +141,7 @@ describe('DateRangePicker component', () => {
           {...attr}
         />
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 

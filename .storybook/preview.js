@@ -14,6 +14,11 @@ export const decorators = [
   )
 ];
 
+const getComponentName = story => {
+  const splits = story.kind.split('/');
+  return splits[splits.length - 2];
+}
+
 export const parameters = {
   docs: {
     container: DocsContainer,
@@ -42,8 +47,12 @@ export const parameters = {
      * @type {Function}
      */
     storySort: (a, b) => {
-      if (a[1].story === 'All') return 0;
-      if (b[1].story === 'All') return 1;
+      let aComponent = getComponentName(a[1]);
+      let bComponent = getComponentName(b[1]);
+      if (aComponent === bComponent) {
+        if (a[1].story === 'All') return 0;
+        if (b[1].story === 'All') return 1;
+      }
       return a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
     },
   }

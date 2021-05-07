@@ -13,12 +13,6 @@ export const all = () => {
     undefined
   );
 
-  const appearance = select(
-    'appearance',
-    ['primary', 'alert', 'success', 'warning'],
-    undefined
-  );
-
   const checked = boolean(
     'checked',
     false
@@ -38,7 +32,6 @@ export const all = () => {
     <div>
       <Switch
         disabled={disabled}
-        appearance={appearance}
         checked={checked}
         size={size}
         onChange={onChangeHandler}

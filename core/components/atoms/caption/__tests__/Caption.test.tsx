@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import Caption, { CaptionProps as Props } from '../Caption';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -13,10 +13,10 @@ describe('Caption component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <Caption>{'Caption'}</Caption>
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 

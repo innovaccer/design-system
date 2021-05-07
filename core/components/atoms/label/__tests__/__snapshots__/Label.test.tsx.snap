@@ -3,67 +3,79 @@
 exports[`Label component 
   disabled: false
  1`] = `
-<div
-  className="Label"
-  data-test="DesignSystem-Label"
->
-  <GenericText
-    className="Label-text"
-    componentType="label"
-    data-test="DesignSystem-Label--Text"
-  >
-    Label
-  </GenericText>
-</div>
+<body>
+  <div>
+    <div
+      class="Label"
+      data-test="DesignSystem-Label"
+    >
+      <label
+        class="Label-text"
+        data-test="DesignSystem-Label--Text"
+      >
+        Label
+      </label>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Label component 
   disabled: true
  1`] = `
-<div
-  className="Label"
-  data-test="DesignSystem-Label"
->
-  <GenericText
-    className="Label-text"
-    componentType="label"
-    data-test="DesignSystem-Label--Text"
-  >
-    Label
-  </GenericText>
-</div>
+<body>
+  <div>
+    <div
+      class="Label"
+      data-test="DesignSystem-Label"
+    >
+      <label
+        class="Label-text"
+        data-test="DesignSystem-Label--Text"
+      >
+        Label
+      </label>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Label component 
   required: false
  1`] = `
-<div
-  className="Label"
-  data-test="DesignSystem-Label"
->
-  <GenericText
-    className="Label-text"
-    componentType="label"
-    data-test="DesignSystem-Label--Text"
-  >
-    Label
-  </GenericText>
-</div>
+<body>
+  <div>
+    <div
+      class="Label"
+      data-test="DesignSystem-Label"
+    >
+      <label
+        class="Label-text"
+        data-test="DesignSystem-Label--Text"
+      >
+        Label
+      </label>
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Label component 
   required: true
  1`] = `
-<div
-  className="Label"
-  data-test="DesignSystem-Label"
->
-  <GenericText
-    className="Label-text"
-    componentType="label"
-    data-test="DesignSystem-Label--Text"
-  >
-    Label
-  </GenericText>
-</div>
+<body>
+  <div>
+    <div
+      class="Label"
+      data-test="DesignSystem-Label"
+    >
+      <label
+        class="Label-text"
+        data-test="DesignSystem-Label--Text"
+      >
+        Label
+      </label>
+    </div>
+  </div>
+</body>
 `;

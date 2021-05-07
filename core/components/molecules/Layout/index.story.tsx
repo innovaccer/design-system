@@ -4,7 +4,7 @@ import Row from '@/components/atoms/row';
 import Column from '@/components/atoms/column';
 import { optionsKnob } from '@storybook/addon-knobs';
 
-export const ColumnSize = () => {
+export const all = () => {
   const size = optionsKnob(
     'size',
     {
@@ -159,7 +159,7 @@ export const ColumnSize = () => {
 };
 
 export default {
-  title: 'Others/Layout/Column Size',
+  title: 'Others/Layout/All',
   component: Column,
   subcomponents: { Row }
 };

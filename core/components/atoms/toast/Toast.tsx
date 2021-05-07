@@ -83,7 +83,18 @@ export const Toast = (props: ToastProps) => {
 
   const iconClass = (align: string) => classNames({
     ['Toast-icon']: true,
-    [`Toast-icon--${align}`]: align
+    [`Toast-icon--${align}`]: align,
+    [`Toast-icon--${appearance}`]: appearance
+  });
+
+  const textClass = classNames({
+    ['Toast-text']: true,
+    [`Toast-text--${appearance}`]: appearance
+  });
+
+  const headingClass = classNames({
+    ['Toast-heading']: true,
+    [`Toast-heading--${appearance}`]: appearance
   });
 
   const onCloseHandler = () => {
@@ -93,32 +104,31 @@ export const Toast = (props: ToastProps) => {
   return (
     <div {...baseProps} className={wrapperClass}>
       {icon && (
-        <div className={iconClass('left')}>
-          <Icon name={icon} appearance={appearance !== 'warning' ? 'white' : 'default'} />
-        </div>
+        <Icon name={icon} className={iconClass('left')} />
       )}
       <div className="Toast-body">
         <div className={titleClass}>
           <Heading
             size="s"
+            className={headingClass}
             appearance={appearance !== 'warning' ? 'white' : 'default'}
           >
             {title}
           </Heading>
-          <div onClick={onCloseHandler}>
-            <div className={iconClass('right')}>
-              <Icon name={'close'} appearance={appearance !== 'warning' ? 'white' : 'default'} />
-            </div>
-          </div>
+          <Icon
+            name={'close'}
+            className={iconClass('right')}
+            onClick={onCloseHandler}
+            appearance={appearance !== 'warning' ? 'white' : 'default'}
+          />
         </div>
         {message && (
-          <div className="Toast-message">
-            <Text
-              appearance={appearance !== 'warning' ? 'white' : 'default'}
-            >
-              {message}
-            </Text>
-          </div>
+          <Text
+            appearance={appearance !== 'warning' ? 'white' : 'default'}
+            className={textClass}
+          >
+            {message}
+          </Text>
         )}
         {!!actions?.length && (
           <div className="Toast-actions">

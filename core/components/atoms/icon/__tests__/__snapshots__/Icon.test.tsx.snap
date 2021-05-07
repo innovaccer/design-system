@@ -3,254 +3,224 @@
 exports[`Icon component 
   name: "events", size: 50, appearance: "alert", onClick: "[Function]"
  1`] = `
-<i
-  className="material-icons Icon Icon--alert"
-  onClick={[MockFunction]}
-  style={
-    Object {
-      "fontSize": "50px",
-      "width": "50px",
-    }
-  }
->
-  events
-</i>
+<body>
+  <div>
+    <i
+      class="material-icons Icon Icon--alert"
+      style="font-size: 50px; width: 50px;"
+    >
+      events
+    </i>
+  </div>
+</body>
 `;
 
 exports[`Icon component 
   name: "events", size: 50, appearance: "destructive", onClick: "[Function]"
  1`] = `
-<i
-  className="material-icons Icon Icon--destructive"
-  onClick={[MockFunction]}
-  style={
-    Object {
-      "fontSize": "50px",
-      "width": "50px",
-    }
-  }
->
-  events
-</i>
+<body>
+  <div>
+    <i
+      class="material-icons Icon Icon--destructive"
+      style="font-size: 50px; width: 50px;"
+    >
+      events
+    </i>
+  </div>
+</body>
 `;
 
 exports[`Icon component 
   name: "events", size: 50, appearance: "disabled", onClick: "[Function]"
  1`] = `
-<i
-  className="material-icons Icon Icon--disabled"
-  onClick={[MockFunction]}
-  style={
-    Object {
-      "fontSize": "50px",
-      "width": "50px",
-    }
-  }
->
-  events
-</i>
+<body>
+  <div>
+    <i
+      class="material-icons Icon Icon--disabled"
+      style="font-size: 50px; width: 50px;"
+    >
+      events
+    </i>
+  </div>
+</body>
 `;
 
 exports[`Icon component 
   name: "events", size: 50, appearance: "info", onClick: "[Function]"
  1`] = `
-<i
-  className="material-icons Icon Icon--info"
-  onClick={[MockFunction]}
-  style={
-    Object {
-      "fontSize": "50px",
-      "width": "50px",
-    }
-  }
->
-  events
-</i>
+<body>
+  <div>
+    <i
+      class="material-icons Icon Icon--info"
+      style="font-size: 50px; width: 50px;"
+    >
+      events
+    </i>
+  </div>
+</body>
 `;
 
 exports[`Icon component 
   name: "events", size: 50, appearance: "subtle", onClick: "[Function]"
  1`] = `
-<i
-  className="material-icons Icon Icon--subtle"
-  onClick={[MockFunction]}
-  style={
-    Object {
-      "fontSize": "50px",
-      "width": "50px",
-    }
-  }
->
-  events
-</i>
+<body>
+  <div>
+    <i
+      class="material-icons Icon Icon--subtle"
+      style="font-size: 50px; width: 50px;"
+    >
+      events
+    </i>
+  </div>
+</body>
 `;
 
 exports[`Icon component 
   name: "events", size: 50, appearance: "success", onClick: "[Function]"
  1`] = `
-<i
-  className="material-icons Icon Icon--success"
-  onClick={[MockFunction]}
-  style={
-    Object {
-      "fontSize": "50px",
-      "width": "50px",
-    }
-  }
->
-  events
-</i>
+<body>
+  <div>
+    <i
+      class="material-icons Icon Icon--success"
+      style="font-size: 50px; width: 50px;"
+    >
+      events
+    </i>
+  </div>
+</body>
 `;
 
 exports[`Icon component 
   name: "events", size: 50, appearance: "warning", onClick: "[Function]"
  1`] = `
-<i
-  className="material-icons Icon Icon--warning"
-  onClick={[MockFunction]}
-  style={
-    Object {
-      "fontSize": "50px",
-      "width": "50px",
-    }
-  }
->
-  events
-</i>
+<body>
+  <div>
+    <i
+      class="material-icons Icon Icon--warning"
+      style="font-size: 50px; width: 50px;"
+    >
+      events
+    </i>
+  </div>
+</body>
 `;
 
 exports[`Icon component 
   name: "events", size: 50, appearance: "white", onClick: "[Function]"
  1`] = `
-<i
-  className="material-icons Icon Icon--white"
-  onClick={[MockFunction]}
-  style={
-    Object {
-      "fontSize": "50px",
-      "width": "50px",
-    }
-  }
->
-  events
-</i>
+<body>
+  <div>
+    <i
+      class="material-icons Icon Icon--white"
+      style="font-size: 50px; width: 50px;"
+    >
+      events
+    </i>
+  </div>
+</body>
 `;
 
 exports[`Icon component 
   name: "events", size: 50, type: "filled", onClick: "[Function]"
  1`] = `
-<i
-  className="material-icons Icon"
-  onClick={[MockFunction]}
-  style={
-    Object {
-      "fontSize": "50px",
-      "width": "50px",
-    }
-  }
->
-  events_filled
-</i>
+<body>
+  <div>
+    <i
+      class="material-icons Icon"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_filled
+    </i>
+  </div>
+</body>
 `;
 
 exports[`Icon component 
   name: "events", size: 50, type: "outline", onClick: "[Function]"
  1`] = `
-<i
-  className="material-icons material-icons-outlined Icon"
-  onClick={[MockFunction]}
-  style={
-    Object {
-      "fontSize": "50px",
-      "width": "50px",
-    }
-  }
->
-  events_outlined
-</i>
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-outlined Icon"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_outlined
+    </i>
+  </div>
+</body>
 `;
 
 exports[`Icon component 
   name: "events", size: 50, type: "outlined", onClick: "[Function]"
  1`] = `
-<i
-  className="material-icons material-icons-outlined Icon"
-  onClick={[MockFunction]}
-  style={
-    Object {
-      "fontSize": "50px",
-      "width": "50px",
-    }
-  }
->
-  events_outlined
-</i>
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-outlined Icon"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_outlined
+    </i>
+  </div>
+</body>
 `;
 
 exports[`Icon component 
   name: "events", size: 50, type: "round", onClick: "[Function]"
  1`] = `
-<i
-  className="material-icons material-icons-round Icon"
-  onClick={[MockFunction]}
-  style={
-    Object {
-      "fontSize": "50px",
-      "width": "50px",
-    }
-  }
->
-  events_round
-</i>
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
 `;
 
 exports[`Icon component 
   name: "events", size: 50, type: "rounded", onClick: "[Function]"
  1`] = `
-<i
-  className="material-icons material-icons-round Icon"
-  onClick={[MockFunction]}
-  style={
-    Object {
-      "fontSize": "50px",
-      "width": "50px",
-    }
-  }
->
-  events_round
-</i>
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
 `;
 
 exports[`Icon component 
   name: "events", size: 50, type: "sharp", onClick: "[Function]"
  1`] = `
-<i
-  className="material-icons material-icons-sharp Icon"
-  onClick={[MockFunction]}
-  style={
-    Object {
-      "fontSize": "50px",
-      "width": "50px",
-    }
-  }
->
-  events_sharp
-</i>
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-sharp Icon"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_sharp
+    </i>
+  </div>
+</body>
 `;
 
 exports[`Icon component 
   name: "events", size: 50, type: "two-tone", onClick: "[Function]"
  1`] = `
-<i
-  className="material-icons material-icons-two-tone Icon"
-  onClick={[MockFunction]}
-  style={
-    Object {
-      "fontSize": "50px",
-      "width": "50px",
-    }
-  }
->
-  events_two-tone
-</i>
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-two-tone Icon"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_two-tone
+    </i>
+  </div>
+</body>
 `;

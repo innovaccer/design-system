@@ -3,27 +3,29 @@
 exports[`Backdrop component 
   open: false
  1`] = `
-<Portal
-  containerInfo={<body />}
+<body
+  style=""
 >
+  <div />
   <div
-    className="Backdrop Backdrop-animation--close"
-    data-layer={true}
+    class="Backdrop Backdrop-animation--close"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
-</Portal>
+</body>
 `;
 
 exports[`Backdrop component 
   open: true
  1`] = `
-<Portal
-  containerInfo={<body />}
+<body
+  style="overflow: hidden;"
 >
+  <div />
   <div
-    className="Backdrop Backdrop--open Backdrop-animation--open"
-    data-layer={true}
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
     data-test="DesignSystem-Backdrop"
   />
-</Portal>
+</body>
 `;

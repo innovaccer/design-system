@@ -1,15 +1,13 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Switch, { SwitchProps as Props } from '../Switch';
 
 export const size = ['tiny', 'regular'];
-export const appearance = ['primary', 'alert', 'success', 'warning'];
 const BooleanValue = [true, false];
 
 describe('Switch component', () => {
   const mapper: Record<string, any> = {
-    appearance: valueHelper(appearance, { required: true, iterate: true }),
     checked: valueHelper(true, { required: true }),
     disabled: valueHelper(BooleanValue, { required: true, iterate: true }),
   };
@@ -17,12 +15,12 @@ describe('Switch component', () => {
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <Switch
           {...attr}
         />
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
   testHelper(mapper, testFunc);
@@ -37,12 +35,12 @@ describe('Switch component', () => {
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <Switch
           {...attr}
         />
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
   testHelper(mapper, testFunc);
