@@ -6,10 +6,10 @@ exports[`Checkbox component
 <body>
   <div>
     <div
-      class="Checkbox Checkbox--regular"
+      class="Checkbox"
     >
       <div
-        class="Checkbox-outerWrapper"
+        class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
       >
         <input
           class="Checkbox-input"
@@ -20,11 +20,11 @@ exports[`Checkbox component
           value="Checkbox"
         />
         <span
-          class="Checkbox-wrapper Checkbox-wrapper--regular"
+          class="Checkbox-wrapper"
         />
       </div>
       <label
-        class="Checkbox-label Checkbox-label--regular"
+        class="Checkbox-label"
         for="Checkbox-Checkbox-Test-uid"
       >
         <span
@@ -45,10 +45,10 @@ exports[`Checkbox component
 <body>
   <div>
     <div
-      class="Checkbox Checkbox--disabled Checkbox--regular"
+      class="Checkbox Checkbox--disabled"
     >
       <div
-        class="Checkbox-outerWrapper"
+        class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
       >
         <input
           class="Checkbox-input"
@@ -60,11 +60,11 @@ exports[`Checkbox component
           value="Checkbox"
         />
         <span
-          class="Checkbox-wrapper Checkbox-wrapper--regular"
+          class="Checkbox-wrapper"
         />
       </div>
       <label
-        class="Checkbox-label Checkbox-label--regular"
+        class="Checkbox-label"
         for="Checkbox-Checkbox-Test-uid"
       >
         <span
@@ -85,10 +85,10 @@ exports[`Checkbox component
 <body>
   <div>
     <div
-      class="Checkbox Checkbox--regular"
+      class="Checkbox"
     >
       <div
-        class="Checkbox-outerWrapper"
+        class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
       >
         <input
           checked=""
@@ -100,7 +100,7 @@ exports[`Checkbox component
           value="Checkbox"
         />
         <span
-          class="Checkbox-wrapper Checkbox-wrapper--regular"
+          class="Checkbox-wrapper"
         >
           <i
             class="material-icons Icon Icon--white"
@@ -111,7 +111,7 @@ exports[`Checkbox component
         </span>
       </div>
       <label
-        class="Checkbox-label Checkbox-label--regular"
+        class="Checkbox-label"
         for="Checkbox-Checkbox-Test-uid"
       >
         <span
@@ -132,10 +132,10 @@ exports[`Checkbox component
 <body>
   <div>
     <div
-      class="Checkbox Checkbox--disabled Checkbox--regular"
+      class="Checkbox Checkbox--disabled"
     >
       <div
-        class="Checkbox-outerWrapper"
+        class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
       >
         <input
           checked=""
@@ -148,7 +148,7 @@ exports[`Checkbox component
           value="Checkbox"
         />
         <span
-          class="Checkbox-wrapper Checkbox-wrapper--regular"
+          class="Checkbox-wrapper"
         >
           <i
             class="material-icons Icon Icon--white"
@@ -159,7 +159,7 @@ exports[`Checkbox component
         </span>
       </div>
       <label
-        class="Checkbox-label Checkbox-label--regular"
+        class="Checkbox-label"
         for="Checkbox-Checkbox-Test-uid"
       >
         <span
@@ -180,10 +180,10 @@ exports[`Checkbox component
 <body>
   <div>
     <div
-      class="Checkbox Checkbox--regular"
+      class="Checkbox"
     >
       <div
-        class="Checkbox-outerWrapper"
+        class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
       >
         <input
           class="Checkbox-input Checkbox-input--indeterminate"
@@ -194,7 +194,7 @@ exports[`Checkbox component
           value="Checkbox"
         />
         <span
-          class="Checkbox-wrapper Checkbox-wrapper--regular"
+          class="Checkbox-wrapper"
         >
           <i
             class="material-icons Icon Icon--white"
@@ -205,7 +205,7 @@ exports[`Checkbox component
         </span>
       </div>
       <label
-        class="Checkbox-label Checkbox-label--regular"
+        class="Checkbox-label"
         for="Checkbox-Checkbox-Test-uid"
       >
         <span
@@ -226,10 +226,10 @@ exports[`Checkbox component
 <body>
   <div>
     <div
-      class="Checkbox Checkbox--disabled Checkbox--regular"
+      class="Checkbox Checkbox--disabled"
     >
       <div
-        class="Checkbox-outerWrapper"
+        class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
       >
         <input
           class="Checkbox-input Checkbox-input--indeterminate"
@@ -241,7 +241,7 @@ exports[`Checkbox component
           value="Checkbox"
         />
         <span
-          class="Checkbox-wrapper Checkbox-wrapper--regular"
+          class="Checkbox-wrapper"
         >
           <i
             class="material-icons Icon Icon--white"
@@ -252,7 +252,7 @@ exports[`Checkbox component
         </span>
       </div>
       <label
-        class="Checkbox-label Checkbox-label--regular"
+        class="Checkbox-label"
         for="Checkbox-Checkbox-Test-uid"
       >
         <span
@@ -273,10 +273,10 @@ exports[`Checkbox component
 <body>
   <div>
     <div
-      class="Checkbox Checkbox--regular"
+      class="Checkbox"
     >
       <div
-        class="Checkbox-outerWrapper"
+        class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
       >
         <input
           checked=""
@@ -288,7 +288,7 @@ exports[`Checkbox component
           value="Checkbox"
         />
         <span
-          class="Checkbox-wrapper Checkbox-wrapper--regular"
+          class="Checkbox-wrapper"
         >
           <i
             class="material-icons Icon Icon--white"
@@ -299,7 +299,7 @@ exports[`Checkbox component
         </span>
       </div>
       <label
-        class="Checkbox-label Checkbox-label--regular"
+        class="Checkbox-label"
         for="Checkbox-Checkbox-Test-uid"
       >
         <span
@@ -320,10 +320,10 @@ exports[`Checkbox component
 <body>
   <div>
     <div
-      class="Checkbox Checkbox--tiny"
+      class="Checkbox"
     >
       <div
-        class="Checkbox-outerWrapper"
+        class="Checkbox-outerWrapper Checkbox-outerWrapper--tiny"
       >
         <input
           checked=""
@@ -335,18 +335,18 @@ exports[`Checkbox component
           value="Checkbox"
         />
         <span
-          class="Checkbox-wrapper Checkbox-wrapper--tiny"
+          class="Checkbox-wrapper"
         >
           <i
             class="material-icons Icon Icon--white"
-            style="font-size: 8px; width: 8px;"
+            style="font-size: 12px; width: 12px;"
           >
             check
           </i>
         </span>
       </div>
       <label
-        class="Checkbox-label Checkbox-label--tiny"
+        class="Checkbox-label"
         for="Checkbox-Checkbox-Test-uid"
       >
         <span
