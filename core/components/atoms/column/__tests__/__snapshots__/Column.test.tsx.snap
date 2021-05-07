@@ -1,17 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Column component should match the snapshot with columns 1`] = `
-<div
-  className="Col Col--12"
->
-  Primary
-</div>
+<body>
+  <div>
+    <div
+      class="Col Col--12"
+    >
+      Primary
+    </div>
+  </div>
+</body>
 `;
 
 exports[`Column component should match the snapshot without columns 1`] = `
-<div
-  className="Col"
->
-  Primary
-</div>
+<body>
+  <div>
+    <div
+      class="Col"
+    >
+      Primary
+    </div>
+  </div>
+</body>
 `;

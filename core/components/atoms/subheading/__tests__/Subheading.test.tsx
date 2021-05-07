@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
 import { render } from '@testing-library/react';
 import Subheading, { SubheadingProps as Props, Appearance } from '../Subheading';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -15,14 +14,14 @@ describe('Subheading component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <Subheading
           {...attr}
         >
           Subheading
         </Subheading>
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 

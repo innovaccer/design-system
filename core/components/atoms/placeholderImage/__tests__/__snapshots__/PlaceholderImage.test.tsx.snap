@@ -3,39 +3,59 @@
 exports[`Image placeholder component 
   round: false
  1`] = `
-<span
-  className="PlaceholderImage Placeholder--animation PlaceholderImage--small"
-/>
+<body>
+  <div>
+    <span
+      class="PlaceholderImage Placeholder--animation PlaceholderImage--small"
+    />
+  </div>
+</body>
 `;
 
 exports[`Image placeholder component 
   round: true
  1`] = `
-<span
-  className="PlaceholderImage Placeholder--animation PlaceholderImage--round PlaceholderImage--small"
-/>
+<body>
+  <div>
+    <span
+      class="PlaceholderImage Placeholder--animation PlaceholderImage--round PlaceholderImage--small"
+    />
+  </div>
+</body>
 `;
 
 exports[`Image placeholder component 
   size: "large"
  1`] = `
-<span
-  className="PlaceholderImage Placeholder--animation PlaceholderImage--large"
-/>
+<body>
+  <div>
+    <span
+      class="PlaceholderImage Placeholder--animation PlaceholderImage--large"
+    />
+  </div>
+</body>
 `;
 
 exports[`Image placeholder component 
   size: "medium"
  1`] = `
-<span
-  className="PlaceholderImage Placeholder--animation PlaceholderImage--medium"
-/>
+<body>
+  <div>
+    <span
+      class="PlaceholderImage Placeholder--animation PlaceholderImage--medium"
+    />
+  </div>
+</body>
 `;
 
 exports[`Image placeholder component 
   size: "small"
  1`] = `
-<span
-  className="PlaceholderImage Placeholder--animation PlaceholderImage--small"
-/>
+<body>
+  <div>
+    <span
+      class="PlaceholderImage Placeholder--animation PlaceholderImage--small"
+    />
+  </div>
+</body>
 `;

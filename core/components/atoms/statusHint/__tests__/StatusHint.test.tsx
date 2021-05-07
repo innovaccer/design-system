@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
 import { render } from '@testing-library/react';
 import StatusHint, { StatusHintProps as IProps, Appearance } from '../StatusHint';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -16,12 +15,12 @@ describe('StatusHint component', () => {
     const attr = filterUndefined(props) as IProps;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <StatusHint {...attr}>
           {label}
         </StatusHint>
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 

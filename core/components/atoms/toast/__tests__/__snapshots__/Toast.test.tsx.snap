@@ -3,644 +3,696 @@
 exports[`Toast component 
   title: "Sample Toast", appearance: "alert", onClose: "[Function]"
  1`] = `
-<div
-  className="Toast Toast--alert"
->
-  <Icon
-    className="Toast-icon Toast-icon--left Toast-icon--alert"
-    name="error"
-    size={16}
-  />
-  <div
-    className="Toast-body"
-  >
+<body>
+  <div>
     <div
-      className="Toast-title"
+      class="Toast Toast--alert"
     >
-      <Heading
-        appearance="white"
-        className="Toast-heading Toast-heading--alert"
-        size="s"
+      <i
+        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        style="font-size: 16px; width: 16px;"
       >
-        Sample Toast
-      </Heading>
-      <Icon
-        appearance="white"
-        className="Toast-icon Toast-icon--right Toast-icon--alert"
-        name="close"
-        onClick={[Function]}
-        size={16}
-      />
+        error
+      </i>
+      <div
+        class="Toast-body"
+      >
+        <div
+          class="Toast-title"
+        >
+          <h5
+            class="Heading Heading--s Heading--white Toast-heading Toast-heading--alert"
+            data-test="DesignSystem-Heading"
+          >
+            Sample Toast
+          </h5>
+          <i
+            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
 `;
 
 exports[`Toast component 
   title: "Sample Toast", appearance: "default", onClose: "[Function]"
  1`] = `
-<div
-  className="Toast Toast--default"
->
-  <div
-    className="Toast-body"
-  >
+<body>
+  <div>
     <div
-      className="Toast-title"
+      class="Toast Toast--default"
     >
-      <Heading
-        appearance="white"
-        className="Toast-heading Toast-heading--default"
-        size="s"
+      <div
+        class="Toast-body"
       >
-        Sample Toast
-      </Heading>
-      <Icon
-        appearance="white"
-        className="Toast-icon Toast-icon--right Toast-icon--default"
-        name="close"
-        onClick={[Function]}
-        size={16}
-      />
+        <div
+          class="Toast-title"
+        >
+          <h5
+            class="Heading Heading--s Heading--white Toast-heading Toast-heading--default"
+            data-test="DesignSystem-Heading"
+          >
+            Sample Toast
+          </h5>
+          <i
+            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--default"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
 `;
 
 exports[`Toast component 
   title: "Sample Toast", appearance: "info", onClose: "[Function]"
  1`] = `
-<div
-  className="Toast Toast--info"
->
-  <Icon
-    className="Toast-icon Toast-icon--left Toast-icon--info"
-    name="info"
-    size={16}
-  />
-  <div
-    className="Toast-body"
-  >
+<body>
+  <div>
     <div
-      className="Toast-title"
+      class="Toast Toast--info"
     >
-      <Heading
-        appearance="white"
-        className="Toast-heading Toast-heading--info"
-        size="s"
+      <i
+        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--info"
+        style="font-size: 16px; width: 16px;"
       >
-        Sample Toast
-      </Heading>
-      <Icon
-        appearance="white"
-        className="Toast-icon Toast-icon--right Toast-icon--info"
-        name="close"
-        onClick={[Function]}
-        size={16}
-      />
+        info
+      </i>
+      <div
+        class="Toast-body"
+      >
+        <div
+          class="Toast-title"
+        >
+          <h5
+            class="Heading Heading--s Heading--white Toast-heading Toast-heading--info"
+            data-test="DesignSystem-Heading"
+          >
+            Sample Toast
+          </h5>
+          <i
+            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
 `;
 
 exports[`Toast component 
   title: "Sample Toast", appearance: "success", onClose: "[Function]"
  1`] = `
-<div
-  className="Toast Toast--success"
->
-  <Icon
-    className="Toast-icon Toast-icon--left Toast-icon--success"
-    name="check_circle"
-    size={16}
-  />
-  <div
-    className="Toast-body"
-  >
+<body>
+  <div>
     <div
-      className="Toast-title"
+      class="Toast Toast--success"
     >
-      <Heading
-        appearance="white"
-        className="Toast-heading Toast-heading--success"
-        size="s"
+      <i
+        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--success"
+        style="font-size: 16px; width: 16px;"
       >
-        Sample Toast
-      </Heading>
-      <Icon
-        appearance="white"
-        className="Toast-icon Toast-icon--right Toast-icon--success"
-        name="close"
-        onClick={[Function]}
-        size={16}
-      />
+        check_circle
+      </i>
+      <div
+        class="Toast-body"
+      >
+        <div
+          class="Toast-title"
+        >
+          <h5
+            class="Heading Heading--s Heading--white Toast-heading Toast-heading--success"
+            data-test="DesignSystem-Heading"
+          >
+            Sample Toast
+          </h5>
+          <i
+            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
 `;
 
 exports[`Toast component 
   title: "Sample Toast", appearance: "warning", onClose: "[Function]"
  1`] = `
-<div
-  className="Toast Toast--warning"
->
-  <Icon
-    className="Toast-icon Toast-icon--left Toast-icon--warning"
-    name="error"
-    size={16}
-  />
-  <div
-    className="Toast-body"
-  >
+<body>
+  <div>
     <div
-      className="Toast-title"
+      class="Toast Toast--warning"
     >
-      <Heading
-        appearance="default"
-        className="Toast-heading Toast-heading--warning"
-        size="s"
+      <i
+        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        style="font-size: 16px; width: 16px;"
       >
-        Sample Toast
-      </Heading>
-      <Icon
-        appearance="default"
-        className="Toast-icon Toast-icon--right Toast-icon--warning"
-        name="close"
-        onClick={[Function]}
-        size={16}
-      />
+        error
+      </i>
+      <div
+        class="Toast-body"
+      >
+        <div
+          class="Toast-title"
+        >
+          <h5
+            class="Heading Heading--s Heading--default Toast-heading Toast-heading--warning"
+            data-test="DesignSystem-Heading"
+          >
+            Sample Toast
+          </h5>
+          <i
+            class="material-icons Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
 `;
 
 exports[`Toast component 
   title: "Sample Toast", message: "Sample string", appearance: "alert", onClose: "[Function]"
  1`] = `
-<div
-  className="Toast Toast--withMessage Toast--alert"
->
-  <Icon
-    className="Toast-icon Toast-icon--left Toast-icon--alert"
-    name="error"
-    size={16}
-  />
-  <div
-    className="Toast-body"
-  >
+<body>
+  <div>
     <div
-      className="Toast-title Toast-title--withMessage"
+      class="Toast Toast--withMessage Toast--alert"
     >
-      <Heading
-        appearance="white"
-        className="Toast-heading Toast-heading--alert"
-        size="s"
+      <i
+        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        style="font-size: 16px; width: 16px;"
       >
-        Sample Toast
-      </Heading>
-      <Icon
-        appearance="white"
-        className="Toast-icon Toast-icon--right Toast-icon--alert"
-        name="close"
-        onClick={[Function]}
-        size={16}
-      />
+        error
+      </i>
+      <div
+        class="Toast-body"
+      >
+        <div
+          class="Toast-title Toast-title--withMessage"
+        >
+          <h5
+            class="Heading Heading--s Heading--white Toast-heading Toast-heading--alert"
+            data-test="DesignSystem-Heading"
+          >
+            Sample Toast
+          </h5>
+          <i
+            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </div>
+        <span
+          class="Text Text--white Text--regular Toast-text Toast-text--alert"
+          data-test="DesignSystem-Text"
+        >
+          Sample string
+        </span>
+      </div>
     </div>
-    <Text
-      appearance="white"
-      className="Toast-text Toast-text--alert"
-      size="regular"
-    >
-      Sample string
-    </Text>
   </div>
-</div>
+</body>
 `;
 
 exports[`Toast component 
   title: "Sample Toast", message: "Sample string", appearance: "alert", onClose: "[Function]", actions: [{"label":"Action 1","onClick":"[Function]"}]
  1`] = `
-<div
-  className="Toast Toast--withMessage Toast--alert"
->
-  <Icon
-    className="Toast-icon Toast-icon--left Toast-icon--alert"
-    name="error"
-    size={16}
-  />
-  <div
-    className="Toast-body"
-  >
+<body>
+  <div>
     <div
-      className="Toast-title Toast-title--withMessage"
+      class="Toast Toast--withMessage Toast--alert"
     >
-      <Heading
-        appearance="white"
-        className="Toast-heading Toast-heading--alert"
-        size="s"
+      <i
+        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        style="font-size: 16px; width: 16px;"
       >
-        Sample Toast
-      </Heading>
-      <Icon
-        appearance="white"
-        className="Toast-icon Toast-icon--right Toast-icon--alert"
-        name="close"
-        onClick={[Function]}
-        size={16}
-      />
-    </div>
-    <Text
-      appearance="white"
-      className="Toast-text Toast-text--alert"
-      size="regular"
-    >
-      Sample string
-    </Text>
-    <div
-      className="Toast-actions"
-    >
-      <ActionButton
-        appearance="alert"
-        key="0"
-        label="Action 1"
-        onClick={[MockFunction]}
-      />
+        error
+      </i>
+      <div
+        class="Toast-body"
+      >
+        <div
+          class="Toast-title Toast-title--withMessage"
+        >
+          <h5
+            class="Heading Heading--s Heading--white Toast-heading Toast-heading--alert"
+            data-test="DesignSystem-Heading"
+          >
+            Sample Toast
+          </h5>
+          <i
+            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </div>
+        <span
+          class="Text Text--white Text--regular Toast-text Toast-text--alert"
+          data-test="DesignSystem-Text"
+        >
+          Sample string
+        </span>
+        <div
+          class="Toast-actions"
+        >
+          <button
+            class="Button Button--tiny Toast-actionButton Toast-actionButton--alert"
+          >
+            <span
+              class="Text Text--white Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Action 1
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
 `;
 
 exports[`Toast component 
   title: "Sample Toast", message: "Sample string", appearance: "default", onClose: "[Function]"
  1`] = `
-<div
-  className="Toast Toast--withMessage Toast--default"
->
-  <div
-    className="Toast-body"
-  >
+<body>
+  <div>
     <div
-      className="Toast-title Toast-title--withMessage"
+      class="Toast Toast--withMessage Toast--default"
     >
-      <Heading
-        appearance="white"
-        className="Toast-heading Toast-heading--default"
-        size="s"
+      <div
+        class="Toast-body"
       >
-        Sample Toast
-      </Heading>
-      <Icon
-        appearance="white"
-        className="Toast-icon Toast-icon--right Toast-icon--default"
-        name="close"
-        onClick={[Function]}
-        size={16}
-      />
+        <div
+          class="Toast-title Toast-title--withMessage"
+        >
+          <h5
+            class="Heading Heading--s Heading--white Toast-heading Toast-heading--default"
+            data-test="DesignSystem-Heading"
+          >
+            Sample Toast
+          </h5>
+          <i
+            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--default"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </div>
+        <span
+          class="Text Text--white Text--regular Toast-text Toast-text--default"
+          data-test="DesignSystem-Text"
+        >
+          Sample string
+        </span>
+      </div>
     </div>
-    <Text
-      appearance="white"
-      className="Toast-text Toast-text--default"
-      size="regular"
-    >
-      Sample string
-    </Text>
   </div>
-</div>
+</body>
 `;
 
 exports[`Toast component 
   title: "Sample Toast", message: "Sample string", appearance: "default", onClose: "[Function]", actions: [{"label":"Action 1","onClick":"[Function]"}]
  1`] = `
-<div
-  className="Toast Toast--withMessage Toast--default"
->
-  <div
-    className="Toast-body"
-  >
+<body>
+  <div>
     <div
-      className="Toast-title Toast-title--withMessage"
+      class="Toast Toast--withMessage Toast--default"
     >
-      <Heading
-        appearance="white"
-        className="Toast-heading Toast-heading--default"
-        size="s"
+      <div
+        class="Toast-body"
       >
-        Sample Toast
-      </Heading>
-      <Icon
-        appearance="white"
-        className="Toast-icon Toast-icon--right Toast-icon--default"
-        name="close"
-        onClick={[Function]}
-        size={16}
-      />
-    </div>
-    <Text
-      appearance="white"
-      className="Toast-text Toast-text--default"
-      size="regular"
-    >
-      Sample string
-    </Text>
-    <div
-      className="Toast-actions"
-    >
-      <ActionButton
-        appearance="default"
-        key="0"
-        label="Action 1"
-        onClick={[MockFunction]}
-      />
+        <div
+          class="Toast-title Toast-title--withMessage"
+        >
+          <h5
+            class="Heading Heading--s Heading--white Toast-heading Toast-heading--default"
+            data-test="DesignSystem-Heading"
+          >
+            Sample Toast
+          </h5>
+          <i
+            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--default"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </div>
+        <span
+          class="Text Text--white Text--regular Toast-text Toast-text--default"
+          data-test="DesignSystem-Text"
+        >
+          Sample string
+        </span>
+        <div
+          class="Toast-actions"
+        >
+          <button
+            class="Button Button--tiny Toast-actionButton Toast-actionButton--default"
+          >
+            <span
+              class="Text Text--white Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Action 1
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
 `;
 
 exports[`Toast component 
   title: "Sample Toast", message: "Sample string", appearance: "info", onClose: "[Function]"
  1`] = `
-<div
-  className="Toast Toast--withMessage Toast--info"
->
-  <Icon
-    className="Toast-icon Toast-icon--left Toast-icon--info"
-    name="info"
-    size={16}
-  />
-  <div
-    className="Toast-body"
-  >
+<body>
+  <div>
     <div
-      className="Toast-title Toast-title--withMessage"
+      class="Toast Toast--withMessage Toast--info"
     >
-      <Heading
-        appearance="white"
-        className="Toast-heading Toast-heading--info"
-        size="s"
+      <i
+        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--info"
+        style="font-size: 16px; width: 16px;"
       >
-        Sample Toast
-      </Heading>
-      <Icon
-        appearance="white"
-        className="Toast-icon Toast-icon--right Toast-icon--info"
-        name="close"
-        onClick={[Function]}
-        size={16}
-      />
+        info
+      </i>
+      <div
+        class="Toast-body"
+      >
+        <div
+          class="Toast-title Toast-title--withMessage"
+        >
+          <h5
+            class="Heading Heading--s Heading--white Toast-heading Toast-heading--info"
+            data-test="DesignSystem-Heading"
+          >
+            Sample Toast
+          </h5>
+          <i
+            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </div>
+        <span
+          class="Text Text--white Text--regular Toast-text Toast-text--info"
+          data-test="DesignSystem-Text"
+        >
+          Sample string
+        </span>
+      </div>
     </div>
-    <Text
-      appearance="white"
-      className="Toast-text Toast-text--info"
-      size="regular"
-    >
-      Sample string
-    </Text>
   </div>
-</div>
+</body>
 `;
 
 exports[`Toast component 
   title: "Sample Toast", message: "Sample string", appearance: "info", onClose: "[Function]", actions: [{"label":"Action 1","onClick":"[Function]"}]
  1`] = `
-<div
-  className="Toast Toast--withMessage Toast--info"
->
-  <Icon
-    className="Toast-icon Toast-icon--left Toast-icon--info"
-    name="info"
-    size={16}
-  />
-  <div
-    className="Toast-body"
-  >
+<body>
+  <div>
     <div
-      className="Toast-title Toast-title--withMessage"
+      class="Toast Toast--withMessage Toast--info"
     >
-      <Heading
-        appearance="white"
-        className="Toast-heading Toast-heading--info"
-        size="s"
+      <i
+        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--info"
+        style="font-size: 16px; width: 16px;"
       >
-        Sample Toast
-      </Heading>
-      <Icon
-        appearance="white"
-        className="Toast-icon Toast-icon--right Toast-icon--info"
-        name="close"
-        onClick={[Function]}
-        size={16}
-      />
-    </div>
-    <Text
-      appearance="white"
-      className="Toast-text Toast-text--info"
-      size="regular"
-    >
-      Sample string
-    </Text>
-    <div
-      className="Toast-actions"
-    >
-      <ActionButton
-        appearance="info"
-        key="0"
-        label="Action 1"
-        onClick={[MockFunction]}
-      />
+        info
+      </i>
+      <div
+        class="Toast-body"
+      >
+        <div
+          class="Toast-title Toast-title--withMessage"
+        >
+          <h5
+            class="Heading Heading--s Heading--white Toast-heading Toast-heading--info"
+            data-test="DesignSystem-Heading"
+          >
+            Sample Toast
+          </h5>
+          <i
+            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </div>
+        <span
+          class="Text Text--white Text--regular Toast-text Toast-text--info"
+          data-test="DesignSystem-Text"
+        >
+          Sample string
+        </span>
+        <div
+          class="Toast-actions"
+        >
+          <button
+            class="Button Button--tiny Toast-actionButton Toast-actionButton--info"
+          >
+            <span
+              class="Text Text--white Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Action 1
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
 `;
 
 exports[`Toast component 
   title: "Sample Toast", message: "Sample string", appearance: "success", onClose: "[Function]"
  1`] = `
-<div
-  className="Toast Toast--withMessage Toast--success"
->
-  <Icon
-    className="Toast-icon Toast-icon--left Toast-icon--success"
-    name="check_circle"
-    size={16}
-  />
-  <div
-    className="Toast-body"
-  >
+<body>
+  <div>
     <div
-      className="Toast-title Toast-title--withMessage"
+      class="Toast Toast--withMessage Toast--success"
     >
-      <Heading
-        appearance="white"
-        className="Toast-heading Toast-heading--success"
-        size="s"
+      <i
+        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--success"
+        style="font-size: 16px; width: 16px;"
       >
-        Sample Toast
-      </Heading>
-      <Icon
-        appearance="white"
-        className="Toast-icon Toast-icon--right Toast-icon--success"
-        name="close"
-        onClick={[Function]}
-        size={16}
-      />
+        check_circle
+      </i>
+      <div
+        class="Toast-body"
+      >
+        <div
+          class="Toast-title Toast-title--withMessage"
+        >
+          <h5
+            class="Heading Heading--s Heading--white Toast-heading Toast-heading--success"
+            data-test="DesignSystem-Heading"
+          >
+            Sample Toast
+          </h5>
+          <i
+            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </div>
+        <span
+          class="Text Text--white Text--regular Toast-text Toast-text--success"
+          data-test="DesignSystem-Text"
+        >
+          Sample string
+        </span>
+      </div>
     </div>
-    <Text
-      appearance="white"
-      className="Toast-text Toast-text--success"
-      size="regular"
-    >
-      Sample string
-    </Text>
   </div>
-</div>
+</body>
 `;
 
 exports[`Toast component 
   title: "Sample Toast", message: "Sample string", appearance: "success", onClose: "[Function]", actions: [{"label":"Action 1","onClick":"[Function]"}]
  1`] = `
-<div
-  className="Toast Toast--withMessage Toast--success"
->
-  <Icon
-    className="Toast-icon Toast-icon--left Toast-icon--success"
-    name="check_circle"
-    size={16}
-  />
-  <div
-    className="Toast-body"
-  >
+<body>
+  <div>
     <div
-      className="Toast-title Toast-title--withMessage"
+      class="Toast Toast--withMessage Toast--success"
     >
-      <Heading
-        appearance="white"
-        className="Toast-heading Toast-heading--success"
-        size="s"
+      <i
+        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--success"
+        style="font-size: 16px; width: 16px;"
       >
-        Sample Toast
-      </Heading>
-      <Icon
-        appearance="white"
-        className="Toast-icon Toast-icon--right Toast-icon--success"
-        name="close"
-        onClick={[Function]}
-        size={16}
-      />
-    </div>
-    <Text
-      appearance="white"
-      className="Toast-text Toast-text--success"
-      size="regular"
-    >
-      Sample string
-    </Text>
-    <div
-      className="Toast-actions"
-    >
-      <ActionButton
-        appearance="success"
-        key="0"
-        label="Action 1"
-        onClick={[MockFunction]}
-      />
+        check_circle
+      </i>
+      <div
+        class="Toast-body"
+      >
+        <div
+          class="Toast-title Toast-title--withMessage"
+        >
+          <h5
+            class="Heading Heading--s Heading--white Toast-heading Toast-heading--success"
+            data-test="DesignSystem-Heading"
+          >
+            Sample Toast
+          </h5>
+          <i
+            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </div>
+        <span
+          class="Text Text--white Text--regular Toast-text Toast-text--success"
+          data-test="DesignSystem-Text"
+        >
+          Sample string
+        </span>
+        <div
+          class="Toast-actions"
+        >
+          <button
+            class="Button Button--tiny Toast-actionButton Toast-actionButton--success"
+          >
+            <span
+              class="Text Text--white Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Action 1
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
 `;
 
 exports[`Toast component 
   title: "Sample Toast", message: "Sample string", appearance: "warning", onClose: "[Function]"
  1`] = `
-<div
-  className="Toast Toast--withMessage Toast--warning"
->
-  <Icon
-    className="Toast-icon Toast-icon--left Toast-icon--warning"
-    name="error"
-    size={16}
-  />
-  <div
-    className="Toast-body"
-  >
+<body>
+  <div>
     <div
-      className="Toast-title Toast-title--withMessage"
+      class="Toast Toast--withMessage Toast--warning"
     >
-      <Heading
-        appearance="default"
-        className="Toast-heading Toast-heading--warning"
-        size="s"
+      <i
+        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        style="font-size: 16px; width: 16px;"
       >
-        Sample Toast
-      </Heading>
-      <Icon
-        appearance="default"
-        className="Toast-icon Toast-icon--right Toast-icon--warning"
-        name="close"
-        onClick={[Function]}
-        size={16}
-      />
+        error
+      </i>
+      <div
+        class="Toast-body"
+      >
+        <div
+          class="Toast-title Toast-title--withMessage"
+        >
+          <h5
+            class="Heading Heading--s Heading--default Toast-heading Toast-heading--warning"
+            data-test="DesignSystem-Heading"
+          >
+            Sample Toast
+          </h5>
+          <i
+            class="material-icons Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </div>
+        <span
+          class="Text Text--default Text--regular Toast-text Toast-text--warning"
+          data-test="DesignSystem-Text"
+        >
+          Sample string
+        </span>
+      </div>
     </div>
-    <Text
-      appearance="default"
-      className="Toast-text Toast-text--warning"
-      size="regular"
-    >
-      Sample string
-    </Text>
   </div>
-</div>
+</body>
 `;
 
 exports[`Toast component 
   title: "Sample Toast", message: "Sample string", appearance: "warning", onClose: "[Function]", actions: [{"label":"Action 1","onClick":"[Function]"}]
  1`] = `
-<div
-  className="Toast Toast--withMessage Toast--warning"
->
-  <Icon
-    className="Toast-icon Toast-icon--left Toast-icon--warning"
-    name="error"
-    size={16}
-  />
-  <div
-    className="Toast-body"
-  >
+<body>
+  <div>
     <div
-      className="Toast-title Toast-title--withMessage"
+      class="Toast Toast--withMessage Toast--warning"
     >
-      <Heading
-        appearance="default"
-        className="Toast-heading Toast-heading--warning"
-        size="s"
+      <i
+        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        style="font-size: 16px; width: 16px;"
       >
-        Sample Toast
-      </Heading>
-      <Icon
-        appearance="default"
-        className="Toast-icon Toast-icon--right Toast-icon--warning"
-        name="close"
-        onClick={[Function]}
-        size={16}
-      />
-    </div>
-    <Text
-      appearance="default"
-      className="Toast-text Toast-text--warning"
-      size="regular"
-    >
-      Sample string
-    </Text>
-    <div
-      className="Toast-actions"
-    >
-      <ActionButton
-        appearance="warning"
-        key="0"
-        label="Action 1"
-        onClick={[MockFunction]}
-      />
+        error
+      </i>
+      <div
+        class="Toast-body"
+      >
+        <div
+          class="Toast-title Toast-title--withMessage"
+        >
+          <h5
+            class="Heading Heading--s Heading--default Toast-heading Toast-heading--warning"
+            data-test="DesignSystem-Heading"
+          >
+            Sample Toast
+          </h5>
+          <i
+            class="material-icons Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning"
+            style="font-size: 16px; width: 16px;"
+          >
+            close
+          </i>
+        </div>
+        <span
+          class="Text Text--default Text--regular Toast-text Toast-text--warning"
+          data-test="DesignSystem-Text"
+        >
+          Sample string
+        </span>
+        <div
+          class="Toast-actions"
+        >
+          <button
+            class="Button Button--tiny Toast-actionButton Toast-actionButton--warning"
+          >
+            <span
+              class="Text Text--white Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Action 1
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
 `;

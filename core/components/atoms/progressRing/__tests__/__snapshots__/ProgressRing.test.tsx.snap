@@ -3,61 +3,69 @@
 exports[`ProgressRing component 
   value: 30, size: "regular"
  1`] = `
-<svg
-  className="Ring Ring--regular"
-  data-test="DesignSystem-ProgressRing"
-  viewBox="0 0 50 50"
->
-  <circle
-    className="Ring-background"
-    cx={25}
-    cy={25}
-    fill="none"
-    r={20}
-    strokeDasharray="125.66370614359172 125.66370614359172"
-    strokeWidth="8"
-  />
-  <circle
-    className="Ring-indicator"
-    cx={25}
-    cy={25}
-    data-test="DesignSystem-ProgressRing--Circle"
-    fill="none"
-    r={20}
-    strokeDasharray="125.66370614359172 125.66370614359172"
-    strokeDashoffset={87.96459430051421}
-    strokeWidth="8"
-  />
-</svg>
+<body>
+  <div>
+    <svg
+      class="Ring Ring--regular"
+      data-test="DesignSystem-ProgressRing"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="Ring-background"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-dasharray="125.66370614359172 125.66370614359172"
+        stroke-width="8"
+      />
+      <circle
+        class="Ring-indicator"
+        cx="25"
+        cy="25"
+        data-test="DesignSystem-ProgressRing--Circle"
+        fill="none"
+        r="20"
+        stroke-dasharray="125.66370614359172 125.66370614359172"
+        stroke-dashoffset="87.96459430051421"
+        stroke-width="8"
+      />
+    </svg>
+  </div>
+</body>
 `;
 
 exports[`ProgressRing component 
   value: 30, size: "small"
  1`] = `
-<svg
-  className="Ring Ring--small"
-  data-test="DesignSystem-ProgressRing"
-  viewBox="0 0 50 50"
->
-  <circle
-    className="Ring-background"
-    cx={25}
-    cy={25}
-    fill="none"
-    r={20}
-    strokeDasharray="125.66370614359172 125.66370614359172"
-    strokeWidth="8"
-  />
-  <circle
-    className="Ring-indicator"
-    cx={25}
-    cy={25}
-    data-test="DesignSystem-ProgressRing--Circle"
-    fill="none"
-    r={20}
-    strokeDasharray="125.66370614359172 125.66370614359172"
-    strokeDashoffset={87.96459430051421}
-    strokeWidth="8"
-  />
-</svg>
+<body>
+  <div>
+    <svg
+      class="Ring Ring--small"
+      data-test="DesignSystem-ProgressRing"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="Ring-background"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-dasharray="125.66370614359172 125.66370614359172"
+        stroke-width="8"
+      />
+      <circle
+        class="Ring-indicator"
+        cx="25"
+        cy="25"
+        data-test="DesignSystem-ProgressRing--Circle"
+        fill="none"
+        r="20"
+        stroke-dasharray="125.66370614359172 125.66370614359172"
+        stroke-dashoffset="87.96459430051421"
+        stroke-width="8"
+      />
+    </svg>
+  </div>
+</body>
 `;

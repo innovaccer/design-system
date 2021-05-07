@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import Spinner, { SpinnerProps as Props } from '../Spinner';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -7,7 +7,7 @@ const appearance = ['primary', 'secondary', 'white'];
 const size = ['small', 'medium', 'large'];
 
 describe('Spinner component', () => {
-  const  mapper = {
+  const mapper = {
     appearance: valueHelper(appearance, { required: true, iterate: true }),
   };
 
@@ -15,12 +15,12 @@ describe('Spinner component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <Spinner
           {...attr}
         />
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 
@@ -28,7 +28,7 @@ describe('Spinner component', () => {
 });
 
 describe('Spinner component', () => {
-  const  mapper = {
+  const mapper = {
     size: valueHelper(size, { required: true, iterate: true }),
   };
 
@@ -36,12 +36,12 @@ describe('Spinner component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = shallow(
+      const { baseElement } = render(
         <Spinner
           {...attr}
         />
       );
-      expect(tree).toMatchSnapshot();
+      expect(baseElement).toMatchSnapshot();
     });
   };
 
