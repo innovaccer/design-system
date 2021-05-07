@@ -4,7 +4,7 @@ import Radio from '../Radio';
 // CSF format story
 export const defaultRadio = () => (
   <Radio
-    label={'Male'}
+    label={'Survey Outreach'}
     name={'Radio'}
     value={'Radio'}
   />
