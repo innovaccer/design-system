@@ -1,5 +1,5 @@
 import * as React from 'react';
-export declare const ColumnSize: () => JSX.Element;
+export declare const all: () => JSX.Element;
 declare const _default: {
     title: string;
     component: React.ForwardRefExoticComponent<import("../../atoms/column").ColumnProps & React.RefAttributes<HTMLDivElement>>;

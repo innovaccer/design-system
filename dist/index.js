@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1619596586972 
+   * Generated on: 1620401784245 
    *      Package: @innovaccer/design-system
-   *      Version: v2.0.0
+   *      Version: v2.1.0-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -1047,11 +1047,11 @@
           setChecked(props.checked);
         }
       }, [props.checked]);
-      var CheckboxClass = classNames__default['default']((_a = {}, _a['Checkbox'] = true, _a['Checkbox--disabled'] = disabled, _a["Checkbox--" + size] = size, _a), className);
-      var CheckboxOuterWrapper = classNames__default['default']((_b = {}, _b['Checkbox-outerWrapper'] = true, _b));
-      var CheckboxTextClass = classNames__default['default']((_c = {}, _c['Checkbox-label'] = true, _c["Checkbox-label--" + size] = size, _c));
+      var CheckboxClass = classNames__default['default']((_a = {}, _a['Checkbox'] = true, _a['Checkbox--disabled'] = disabled, _a), className);
+      var CheckboxOuterWrapper = classNames__default['default']((_b = {}, _b['Checkbox-outerWrapper'] = true, _b["Checkbox-outerWrapper--" + size] = size, _b));
+      var CheckboxTextClass = classNames__default['default']((_c = {}, _c['Checkbox-label'] = true, _c));
       var CheckboxInputWrapper = classNames__default['default']((_d = {}, _d['Checkbox-input'] = true, _d['Checkbox-input--checked'] = checked, _d['Checkbox-input--indeterminate'] = props.indeterminate, _d));
-      var CheckboxWrapper = classNames__default['default']((_e = {}, _e['Checkbox-wrapper'] = true, _e["Checkbox-wrapper--" + size] = size, _e));
+      var CheckboxWrapper = classNames__default['default']((_e = {}, _e['Checkbox-wrapper'] = true, _e));
 
       var setIndeterminate = function setIndeterminate(indeterminateValue) {
         ref.current.indeterminate = indeterminateValue;
@@ -1068,7 +1068,7 @@
 
       var id = name + "-" + label + "-" + uidGenerator();
       var IconName = indeterminate ? 'remove' : checked ? 'check' : '';
-      var IconSize = size === 'tiny' ? 8 : 16;
+      var IconSize = size === 'tiny' ? 12 : 16;
       return /*#__PURE__*/React__namespace.createElement("div", {
         className: CheckboxClass
       }, /*#__PURE__*/React__namespace.createElement("div", {
@@ -2653,7 +2653,7 @@
       size: 'medium'
     };
 
-    var sizeMapping$1 = {
+    var sizeMapping$2 = {
       tiny: 12,
       regular: 16,
       large: 20
@@ -2701,7 +2701,7 @@
         "data-test": "DesignSystem-Button--Icon",
         name: icon,
         appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
-        size: largeIcon && !children ? sizeMapping$1[size] + 4 : sizeMapping$1[size]
+        size: largeIcon && !children ? sizeMapping$2[size] + 4 : sizeMapping$2[size]
       })), children);
     });
     Button.displayName = 'Button';
@@ -4334,7 +4334,7 @@
       size: 'm'
     };
 
-    var sizeMapping = {
+    var sizeMapping$1 = {
       tiny: 12,
       regular: 16,
       large: 20
@@ -4389,7 +4389,7 @@
         className: rightIconClass
       }, /*#__PURE__*/React__namespace.createElement(Icon, {
         name: 'info',
-        size: sizeMapping[size]
+        size: sizeMapping$1[size]
       }));
       return /*#__PURE__*/React__namespace.createElement("div", {
         "data-test": "DesignSystem-InputWrapper",
@@ -4410,7 +4410,7 @@
         className: leftIconClass
       }, /*#__PURE__*/React__namespace.createElement(Icon, {
         name: icon,
-        size: sizeMapping[size]
+        size: sizeMapping$1[size]
       })), /*#__PURE__*/React__namespace.createElement("input", __assign({
         "data-test": "DesignSystem-Input"
       }, baseProps, rest, {
@@ -4438,10 +4438,199 @@
         }
       }, /*#__PURE__*/React__namespace.createElement(Icon, {
         name: 'close',
-        size: sizeMapping[size]
+        size: sizeMapping$1[size]
       })));
     });
     Input.displayName = 'Input';
+
+    var sizeMapping = {
+      regular: 16,
+      large: 20
+    };
+
+    var capMin = function capMin(min, value) {
+      if (min === void 0) {
+        min = -Infinity;
+      }
+
+      return isNaN(min) || !min && min !== 0 || isNaN(value) || !value && value !== 0 ? value : Math.max(min, value);
+    };
+
+    var capMax = function capMax(max, value) {
+      if (max === void 0) {
+        max = +Infinity;
+      }
+
+      return isNaN(max) || !max && max !== 0 || isNaN(value) || !value && value !== 0 ? value : Math.min(max, value);
+    };
+
+    var MetricInput = /*#__PURE__*/React__namespace.forwardRef(function (props, forwardedRef) {
+      var _a, _b, _c;
+
+      var _d = props.size,
+          size = _d === void 0 ? 'regular' : _d,
+          defaultValue = props.defaultValue,
+          name = props.name,
+          placeholder = props.placeholder,
+          icon = props.icon,
+          prefix = props.prefix,
+          suffix = props.suffix,
+          error = props.error,
+          min = props.min,
+          max = props.max,
+          onChange = props.onChange,
+          onClick = props.onClick,
+          onBlur = props.onBlur,
+          onFocus = props.onFocus,
+          className = props.className,
+          autoFocus = props.autoFocus,
+          disabled = props.disabled,
+          readOnly = props.readOnly,
+          valueProp = props.value,
+          rest = __rest(props, ["size", "defaultValue", "name", "placeholder", "icon", "prefix", "suffix", "error", "min", "max", "onChange", "onClick", "onBlur", "onFocus", "className", "autoFocus", "disabled", "readOnly", "value"]);
+
+      var ref = React__namespace.useRef(null);
+      var isUncontrolled = valueProp === undefined;
+
+      var _e = React__namespace.useState(valueProp || defaultValue),
+          value = _e[0],
+          setValue = _e[1];
+
+      React__namespace.useImperativeHandle(forwardedRef, function () {
+        return ref.current;
+      });
+      React__namespace.useEffect(function () {
+        var _a;
+
+        if (autoFocus) (_a = ref.current) === null || _a === void 0 ? void 0 : _a.focus({
+          preventScroll: true
+        });
+      }, []);
+      React__namespace.useEffect(function () {
+        if (valueProp !== undefined) {
+          setValue(valueProp);
+        }
+      }, [valueProp]);
+      var baseProps = extractBaseProps(props);
+      var classes = classNames__default['default']((_a = {}, _a['MetricInput'] = true, _a["MetricInput--" + size] = size, _a['MetricInput--disabled'] = disabled || readOnly, _a['MetricInput--error'] = error, _a), className);
+      var inputClass = classNames__default['default']((_b = {}, _b['MetricInput-input'] = true, _b["MetricInput-input--" + size] = size, _b));
+      var iconClass = classNames__default['default']((_c = {}, _c['MetricInput-icon'] = true, _c["MetricInput-icon--" + size] = size, _c));
+
+      var getArrowClass = function getArrowClass(direction) {
+        var _a;
+
+        return classNames__default['default']((_a = {}, _a['MetricInput-arrowIcon'] = true, _a["MetricInput-arrowIcon--" + size] = size, _a["MetricInput-arrowIcon--" + direction] = direction, _a));
+      };
+
+      var onChangeHandler = function onChangeHandler(e) {
+        if (isUncontrolled) {
+          setValue(e.target.value);
+        }
+
+        if (onChange) onChange(e);
+      };
+
+      var onArrowClick = function onArrowClick(e, direction) {
+        var newValue = Number(value || 0);
+        var isValid = direction === 'down' ? min !== undefined && newValue > min || min === undefined : max !== undefined && newValue < max || max === undefined;
+        if (disabled || readOnly || !isValid) return;
+        newValue = direction === 'down' ? newValue - 1 : newValue + 1;
+        newValue = capMax(max, capMin(min, newValue));
+        if (isUncontrolled) setValue(newValue);
+
+        if (onChange) {
+          var syntheticEvent = Object.create(e, {
+            target: {
+              value: newValue
+            }
+          });
+          onChange(syntheticEvent);
+        }
+      };
+
+      var onKeyDown = function onKeyDown(e) {
+        switch (e.key) {
+          case 'e':
+          case 'E':
+            e.preventDefault();
+            return;
+
+          case 'ArrowDown':
+            e.preventDefault();
+            onArrowClick(e, 'down');
+            return;
+
+          case 'ArrowUp':
+            e.preventDefault();
+            onArrowClick(e, 'up');
+            return;
+        }
+      };
+
+      var iconSize = size === 'regular' ? 12 : 16;
+      return /*#__PURE__*/React__namespace.createElement("div", {
+        "data-test": "DesignSystem-MetricInputWrapper",
+        className: classes,
+        onClick: function onClick() {
+          var _a;
+
+          return (_a = ref.current) === null || _a === void 0 ? void 0 : _a.focus();
+        }
+      }, icon && /*#__PURE__*/React__namespace.createElement(Icon, {
+        "data-test": "DesignSystem-MetricInput--icon",
+        name: icon,
+        size: sizeMapping[size],
+        appearance: !value ? 'disabled' : 'subtle',
+        className: iconClass
+      }), prefix && /*#__PURE__*/React__namespace.createElement(Text, {
+        "data-test": "DesignSystem-MetricInput--prefix",
+        className: size === 'regular' ? 'mr-4' : 'mr-5',
+        size: size,
+        appearance: "subtle"
+      }, prefix), /*#__PURE__*/React__namespace.createElement("input", __assign({
+        "data-test": "DesignSystem-MetricInput"
+      }, baseProps, rest, {
+        type: "number",
+        ref: ref,
+        name: name,
+        defaultValue: defaultValue,
+        placeholder: placeholder,
+        className: inputClass,
+        value: value,
+        disabled: disabled,
+        readOnly: readOnly,
+        onChange: onChangeHandler,
+        onBlur: onBlur,
+        onClick: onClick,
+        onFocus: onFocus,
+        onKeyDown: onKeyDown
+      })), suffix && /*#__PURE__*/React__namespace.createElement(Text, {
+        "data-test": "DesignSystem-MetricInput--suffix",
+        className: size === 'regular' ? 'ml-4' : 'ml-5',
+        size: size,
+        appearance: "subtle"
+      }, suffix), /*#__PURE__*/React__namespace.createElement("div", {
+        className: "MetricInput-arrowIcons",
+        tabIndex: 0
+      }, /*#__PURE__*/React__namespace.createElement(Icon, {
+        className: getArrowClass('up'),
+        size: iconSize,
+        name: "keyboard_arrow_up",
+        onClick: function onClick(e) {
+          return onArrowClick(e, 'up');
+        },
+        "data-test": "DesignSystem-MetricInput--upIcon"
+      }), /*#__PURE__*/React__namespace.createElement(Icon, {
+        className: getArrowClass('down'),
+        size: iconSize,
+        name: "keyboard_arrow_down",
+        onClick: function onClick(e) {
+          return onArrowClick(e, 'down');
+        },
+        "data-test": "DesignSystem-MetricInput--downIcon"
+      })));
+    });
+    MetricInput.displayName = 'MetricInput';
 
     function _typeof(obj) {
       "@babel/helpers - typeof";
@@ -5238,7 +5427,7 @@
       React__namespace.useImperativeHandle(forwardedRef, function () {
         return ref.current;
       });
-      var RadioClass = classNames__default['default']((_a = {}, _a['Radio'] = true, _a['Radio--disabled'] = disabled, _a["Radio--" + size] = size, _a), className);
+      var RadioClass = classNames__default['default']((_a = {}, _a['Radio'] = true, _a['Radio--disabled'] = disabled, _a), className);
       var RadioWrapper = classNames__default['default']((_b = {}, _b['Radio-wrapper'] = true, _b["Radio-wrapper--" + size] = size, _b));
       var RadioOuterWrapper = classNames__default['default']((_c = {}, _c['Radio-outerWrapper'] = true, _c["Radio-outerWrapper--" + size] = size, _c));
       var id = name + "-" + label + "-" + uidGenerator();
@@ -6090,8 +6279,6 @@
 
       var _c = props.size,
           size = _c === void 0 ? 'regular' : _c,
-          _d = props.appearance,
-          appearance = _d === void 0 ? 'primary' : _d,
           defaultChecked = props.defaultChecked,
           disabled = props.disabled,
           onChange = props.onChange,
@@ -6100,15 +6287,15 @@
           className = props.className;
       var baseProps = extractBaseProps(props);
 
-      var _e = React__namespace.useState(props.checked === undefined ? defaultChecked : props.checked),
-          checked = _e[0],
-          setChecked = _e[1];
+      var _d = React__namespace.useState(props.checked === undefined ? defaultChecked : props.checked),
+          checked = _d[0],
+          setChecked = _d[1];
 
       React__namespace.useEffect(function () {
         if (props.checked !== undefined) setChecked(props.checked);
       }, [props.checked]);
       var SwitchClass = classNames__default['default']((_a = {}, _a['Switch'] = true, _a['Switch--disabled'] = disabled, _a["Switch--" + size] = size, _a), className);
-      var SwitchWrapper = classNames__default['default']((_b = {}, _b['Switch-wrapper'] = true, _b['Switch-wrapper--disabled'] = disabled, _b["Switch-wrapper--" + size] = size, _b["Switch-wrapper--" + appearance] = appearance, _b['Switch-wrapper--checked'] = checked, _b['Switch-wrapper--checkedDisabled'] = checked && disabled, _b));
+      var SwitchWrapper = classNames__default['default']((_b = {}, _b['Switch-wrapper'] = true, _b['Switch-wrapper--disabled'] = disabled, _b["Switch-wrapper--" + size] = size, _b['Switch-wrapper--checked'] = checked, _b['Switch-wrapper--checkedDisabled'] = checked && disabled, _b));
 
       var onChangeHandler = function onChangeHandler(event) {
         if (props.checked === undefined) setChecked(!checked);
@@ -6201,7 +6388,7 @@
     };
 
     var Toast = function Toast(props) {
-      var _a, _b;
+      var _a, _b, _c, _d;
 
       var appearance = props.appearance,
           title = props.title,
@@ -6223,8 +6410,11 @@
       var iconClass = function iconClass(align) {
         var _a;
 
-        return classNames__default['default']((_a = {}, _a['Toast-icon'] = true, _a["Toast-icon--" + align] = align, _a));
+        return classNames__default['default']((_a = {}, _a['Toast-icon'] = true, _a["Toast-icon--" + align] = align, _a["Toast-icon--" + appearance] = appearance, _a));
       };
+
+      var textClass = classNames__default['default']((_c = {}, _c['Toast-text'] = true, _c["Toast-text--" + appearance] = appearance, _c));
+      var headingClass = classNames__default['default']((_d = {}, _d['Toast-heading'] = true, _d["Toast-heading--" + appearance] = appearance, _d));
 
       var onCloseHandler = function onCloseHandler() {
         if (onClose) onClose();
@@ -6232,30 +6422,26 @@
 
       return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: wrapperClass
-      }), icon && /*#__PURE__*/React__namespace.createElement("div", {
-        className: iconClass('left')
-      }, /*#__PURE__*/React__namespace.createElement(Icon, {
+      }), icon && /*#__PURE__*/React__namespace.createElement(Icon, {
         name: icon,
-        appearance: appearance !== 'warning' ? 'white' : 'default'
-      })), /*#__PURE__*/React__namespace.createElement("div", {
+        className: iconClass('left')
+      }), /*#__PURE__*/React__namespace.createElement("div", {
         className: "Toast-body"
       }, /*#__PURE__*/React__namespace.createElement("div", {
         className: titleClass
       }, /*#__PURE__*/React__namespace.createElement(Heading, {
         size: "s",
+        className: headingClass,
         appearance: appearance !== 'warning' ? 'white' : 'default'
-      }, title), /*#__PURE__*/React__namespace.createElement("div", {
-        onClick: onCloseHandler
-      }, /*#__PURE__*/React__namespace.createElement("div", {
-        className: iconClass('right')
-      }, /*#__PURE__*/React__namespace.createElement(Icon, {
+      }, title), /*#__PURE__*/React__namespace.createElement(Icon, {
         name: 'close',
+        className: iconClass('right'),
+        onClick: onCloseHandler,
         appearance: appearance !== 'warning' ? 'white' : 'default'
-      })))), message && /*#__PURE__*/React__namespace.createElement("div", {
-        className: "Toast-message"
-      }, /*#__PURE__*/React__namespace.createElement(Text, {
-        appearance: appearance !== 'warning' ? 'white' : 'default'
-      }, message)), !!(actions === null || actions === void 0 ? void 0 : actions.length) && /*#__PURE__*/React__namespace.createElement("div", {
+      })), message && /*#__PURE__*/React__namespace.createElement(Text, {
+        appearance: appearance !== 'warning' ? 'white' : 'default',
+        className: textClass
+      }, message), !!(actions === null || actions === void 0 ? void 0 : actions.length) && /*#__PURE__*/React__namespace.createElement("div", {
         className: "Toast-actions"
       }, actions.slice(0, 2).map(function (action, index) {
         return /*#__PURE__*/React__namespace.createElement(ActionButton, {
@@ -12904,7 +13090,215 @@
     };
     FileList.displayName = 'FileList';
 
-    var version = "2.0.0";
+    var KEY_CODE = {
+      backspace: 'Backspace',
+      left: 'ArrowLeft',
+      up: 'ArrowUp',
+      right: 'ArrowRight',
+      down: 'ArrowDown',
+      e: 'e',
+      E: 'E'
+    };
+
+    var VerificationCodeInput = function VerificationCodeInput(props) {
+      var _a = props.type,
+          type = _a === void 0 ? 'number' : _a,
+          _b = props.fields,
+          fields = _b === void 0 ? 4 : _b,
+          _c = props.placeholder,
+          placeholder = _c === void 0 ? '_' : _c,
+          _d = props.autoFocus,
+          autoFocus = _d === void 0 ? true : _d,
+          onComplete = props.onComplete,
+          onFocus = props.onFocus,
+          onBlur = props.onBlur,
+          className = props.className;
+          props.value;
+          var rest = __rest(props, ["type", "fields", "placeholder", "autoFocus", "onComplete", "onFocus", "onBlur", "className", "value"]);
+
+      var initialValues = React.useMemo(function () {
+        if (props.value && props.value.length) {
+          return props.value.split('');
+        }
+
+        return Array(fields).fill('');
+      }, []);
+      var initialRefs = React.useMemo(function () {
+        return __spreadArrays(Array(fields)).map(function () {
+          return /*#__PURE__*/React__default['default'].createRef();
+        });
+      }, []);
+
+      var _e = React.useState(initialValues),
+          values = _e[0],
+          setValues = _e[1];
+
+      var refs = React.useState(initialRefs)[0];
+      React.useEffect(function () {
+        if (refs[0] && refs[0].current && autoFocus) {
+          refs[0].current.focus({
+            preventScroll: true
+          });
+        }
+      }, []);
+      React.useEffect(function () {
+        var completeValue = values.join('');
+
+        if (onComplete && completeValue.length === fields) {
+          onComplete(completeValue);
+        }
+      }, [values]);
+
+      var onChangeHandler = function onChangeHandler(e) {
+        var index = parseInt(e.target.dataset.id, 10);
+        var fieldValue = e.target.value;
+        var nextRef;
+
+        var newValues = __spreadArrays(values);
+
+        if (!fieldValue) {
+          return;
+        }
+
+        if (fieldValue.length > 1) {
+          var nextIndex = fieldValue.length + index - 1;
+
+          if (nextIndex >= fields) {
+            nextIndex = fields - 1;
+          }
+
+          nextRef = refs[nextIndex];
+          var split = fieldValue.split('');
+          split.forEach(function (item, i) {
+            var cursor = index + i;
+
+            if (cursor < fields) {
+              newValues[cursor] = item;
+            }
+          });
+          setValues(newValues);
+        } else {
+          nextRef = refs[index + 1];
+          newValues[index] = fieldValue;
+          setValues(newValues);
+        }
+
+        if (nextRef && nextRef.current) {
+          nextRef.current.focus({
+            preventScroll: true
+          });
+          nextRef.current.select();
+        }
+      };
+
+      var onFocusHandler = function onFocusHandler(e) {
+        e.target.select();
+        e.target.placeholder = '';
+
+        if (onFocus) {
+          onFocus(e);
+        }
+      };
+
+      var onBlurHandler = function onBlurHandler(e) {
+        e.target.placeholder = placeholder;
+
+        if (onBlur) {
+          onBlur(e);
+        }
+      };
+
+      var onKeyDown = function onKeyDown(e) {
+        var index = parseInt(e.currentTarget.dataset.id, 10);
+        var prevIndex = index - 1;
+        var nextIndex = index + 1;
+        var prev = refs[prevIndex];
+        var nextRef = refs[nextIndex];
+
+        switch (e.key) {
+          case KEY_CODE.backspace:
+            e.preventDefault();
+
+            var vals = __spreadArrays(values);
+
+            if (values[index]) {
+              vals[index] = '';
+              setValues(vals);
+            } else if (prev && prev.current) {
+              vals[prevIndex] = '';
+              prev.current.focus({
+                preventScroll: true
+              });
+              setValues(vals);
+            }
+
+            break;
+
+          case KEY_CODE.left:
+            e.preventDefault();
+
+            if (prev && prev.current) {
+              prev.current.focus({
+                preventScroll: true
+              });
+            }
+
+            break;
+
+          case KEY_CODE.right:
+            e.preventDefault();
+
+            if (nextRef && nextRef.current) {
+              nextRef.current.focus({
+                preventScroll: true
+              });
+            }
+
+            break;
+
+          case KEY_CODE.up:
+          case KEY_CODE.down:
+          case KEY_CODE.e:
+          case KEY_CODE.E:
+            if (type === 'number') {
+              e.preventDefault();
+            }
+
+            break;
+        }
+      };
+
+      var wrapperClassNames = function wrapperClassNames(i) {
+        return classNames__default['default']({
+          'VerificationCodeInput-Input': true,
+          'ml-3': i > 0
+        }, className);
+      };
+
+      return /*#__PURE__*/React__default['default'].createElement("div", {
+        "data-test": "DesignSystem-VerificationCodeInput",
+        className: "VerificationCodeInput"
+      }, values.map(function (val, index) {
+        return /*#__PURE__*/React__default['default'].createElement(Input, __assign({
+          key: index,
+          className: wrapperClassNames(index),
+          size: "large",
+          minWidth: "40px",
+          value: val,
+          placeholder: placeholder,
+          onChange: onChangeHandler,
+          onKeyDown: onKeyDown,
+          onFocus: onFocusHandler,
+          onBlur: onBlurHandler,
+          "data-id": index,
+          ref: refs[index]
+        }, rest));
+      }));
+    };
+
+    VerificationCodeInput.displayName = 'VerificationCodeInput';
+
+    var version = "2.1.0-0";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
@@ -12950,6 +13344,7 @@
     exports.List = List;
     exports.Message = Message;
     exports.MetaList = MetaList;
+    exports.MetricInput = MetricInput;
     exports.Modal = Modal;
     exports.ModalBody = ModalBody;
     exports.ModalDescription = ModalDescription;
@@ -12985,6 +13380,7 @@
     exports.Toast = Toast;
     exports.Tooltip = Tooltip;
     exports.Utils = index$1;
+    exports.VerificationCodeInput = VerificationCodeInput;
     exports.VerticalNav = VerticalNav;
     exports.version = version;
 

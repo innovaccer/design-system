@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1619596586638 
+   * Generated on: 1620401783861 
    *      Package: @innovaccer/design-system
-   *      Version: v2.0.0
+   *      Version: v2.1.0-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -48,6 +48,44 @@
     __proto__: null,
     colorToHex: colorToHex
   });
+
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+
+      if (enumerableOnly) {
+        symbols = symbols.filter(function (sym) {
+          return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+        });
+      }
+
+      keys.push.apply(keys, symbols);
+    }
+
+    return keys;
+  }
+
+  function _objectSpread2(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i] != null ? arguments[i] : {};
+
+      if (i % 2) {
+        ownKeys(Object(source), true).forEach(function (key) {
+          _defineProperty$2(target, key, source[key]);
+        });
+      } else if (Object.getOwnPropertyDescriptors) {
+        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+      } else {
+        ownKeys(Object(source)).forEach(function (key) {
+          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+      }
+    }
+
+    return target;
+  }
 
   function _typeof(obj) {
     "@babel/helpers - typeof";
@@ -154,40 +192,6 @@
     };
 
     return _extends$3.apply(this, arguments);
-  }
-
-  function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
-
-    if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
-      if (enumerableOnly) symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
-      keys.push.apply(keys, symbols);
-    }
-
-    return keys;
-  }
-
-  function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
-
-      if (i % 2) {
-        ownKeys(Object(source), true).forEach(function (key) {
-          _defineProperty$2(target, key, source[key]);
-        });
-      } else if (Object.getOwnPropertyDescriptors) {
-        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-      } else {
-        ownKeys(Object(source)).forEach(function (key) {
-          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-        });
-      }
-    }
-
-    return target;
   }
 
   function _inherits$1(subClass, superClass) {
@@ -1376,7 +1380,7 @@
    *  - [Uncontrolled Checkbox](https://reactjs.org/docs/uncontrolled-components.html)
    */
   var Checkbox = /*#__PURE__*/React__namespace.forwardRef(function (props, forwardedRef) {
-    var _classNames, _classNames3, _classNames4, _classNames5;
+    var _classNames, _classNames2, _classNames4;
 
     var _props$size = props.size,
         size = _props$size === void 0 ? 'regular' : _props$size,
@@ -1409,11 +1413,11 @@
         setChecked(props.checked);
       }
     }, [props.checked]);
-    var CheckboxClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Checkbox', true), _defineProperty$2(_classNames, 'Checkbox--disabled', disabled), _defineProperty$2(_classNames, "Checkbox--".concat(size), size), _classNames), className);
-    var CheckboxOuterWrapper = classnames(_defineProperty$2({}, 'Checkbox-outerWrapper', true));
-    var CheckboxTextClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Checkbox-label', true), _defineProperty$2(_classNames3, "Checkbox-label--".concat(size), size), _classNames3));
+    var CheckboxClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Checkbox', true), _defineProperty$2(_classNames, 'Checkbox--disabled', disabled), _classNames), className);
+    var CheckboxOuterWrapper = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Checkbox-outerWrapper', true), _defineProperty$2(_classNames2, "Checkbox-outerWrapper--".concat(size), size), _classNames2));
+    var CheckboxTextClass = classnames(_defineProperty$2({}, 'Checkbox-label', true));
     var CheckboxInputWrapper = classnames((_classNames4 = {}, _defineProperty$2(_classNames4, 'Checkbox-input', true), _defineProperty$2(_classNames4, 'Checkbox-input--checked', checked), _defineProperty$2(_classNames4, 'Checkbox-input--indeterminate', props.indeterminate), _classNames4));
-    var CheckboxWrapper = classnames((_classNames5 = {}, _defineProperty$2(_classNames5, 'Checkbox-wrapper', true), _defineProperty$2(_classNames5, "Checkbox-wrapper--".concat(size), size), _classNames5));
+    var CheckboxWrapper = classnames(_defineProperty$2({}, 'Checkbox-wrapper', true));
 
     var setIndeterminate = function setIndeterminate(indeterminateValue) {
       ref.current.indeterminate = indeterminateValue;
@@ -1430,7 +1434,7 @@
 
     var id = "".concat(name, "-").concat(label, "-").concat(uidGenerator());
     var IconName = indeterminate ? 'remove' : checked ? 'check' : '';
-    var IconSize = size === 'tiny' ? 8 : 16;
+    var IconSize = size === 'tiny' ? 12 : 16;
     return /*#__PURE__*/React__namespace.createElement("div", {
       className: CheckboxClass
     }, /*#__PURE__*/React__namespace.createElement("div", {
@@ -3050,7 +3054,7 @@
     size: 'medium'
   };
 
-  var sizeMapping$1 = {
+  var sizeMapping$2 = {
     tiny: 12,
     regular: 16,
     large: 20
@@ -3098,7 +3102,7 @@
       "data-test": "DesignSystem-Button--Icon",
       name: icon,
       appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
-      size: largeIcon && !children ? sizeMapping$1[size] + 4 : sizeMapping$1[size]
+      size: largeIcon && !children ? sizeMapping$2[size] + 4 : sizeMapping$2[size]
     })), children);
   });
   Button.displayName = 'Button';
@@ -4742,7 +4746,7 @@
     size: 'm'
   };
 
-  var sizeMapping = {
+  var sizeMapping$1 = {
     tiny: 12,
     regular: 16,
     large: 20
@@ -4803,7 +4807,7 @@
       className: rightIconClass
     }, /*#__PURE__*/React__namespace.createElement(Icon, {
       name: 'info',
-      size: sizeMapping[size]
+      size: sizeMapping$1[size]
     }));
     return /*#__PURE__*/React__namespace.createElement("div", {
       "data-test": "DesignSystem-InputWrapper",
@@ -4824,7 +4828,7 @@
       className: leftIconClass
     }, /*#__PURE__*/React__namespace.createElement(Icon, {
       name: icon,
-      size: sizeMapping[size]
+      size: sizeMapping$1[size]
     })), /*#__PURE__*/React__namespace.createElement("input", _extends$3({
       "data-test": "DesignSystem-Input"
     }, baseProps, rest, {
@@ -4852,10 +4856,202 @@
       }
     }, /*#__PURE__*/React__namespace.createElement(Icon, {
       name: 'close',
-      size: sizeMapping[size]
+      size: sizeMapping$1[size]
     })));
   });
   Input.displayName = 'Input';
+
+  var sizeMapping = {
+    regular: 16,
+    large: 20
+  };
+
+  var capMin = function capMin() {
+    var min = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : -Infinity;
+    var value = arguments.length > 1 ? arguments[1] : undefined;
+    return isNaN(min) || !min && min !== 0 || isNaN(value) || !value && value !== 0 ? value : Math.max(min, value);
+  };
+
+  var capMax = function capMax() {
+    var max = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : +Infinity;
+    var value = arguments.length > 1 ? arguments[1] : undefined;
+    return isNaN(max) || !max && max !== 0 || isNaN(value) || !value && value !== 0 ? value : Math.min(max, value);
+  };
+  /**
+   * ###### MetricInput has two types:
+   *  - [Controlled MetricInput](https://reactjs.org/docs/forms.html#controlled-components)
+   *  - [Uncontrolled MetricInput](https://reactjs.org/docs/uncontrolled-components.html)
+   */
+
+
+  var MetricInput = /*#__PURE__*/React__namespace.forwardRef(function (props, forwardedRef) {
+    var _classNames, _classNames2, _classNames3;
+
+    var _props$size = props.size,
+        size = _props$size === void 0 ? 'regular' : _props$size,
+        defaultValue = props.defaultValue,
+        name = props.name,
+        placeholder = props.placeholder,
+        icon = props.icon,
+        prefix = props.prefix,
+        suffix = props.suffix,
+        error = props.error,
+        min = props.min,
+        max = props.max,
+        onChange = props.onChange,
+        onClick = props.onClick,
+        onBlur = props.onBlur,
+        onFocus = props.onFocus,
+        className = props.className,
+        autoFocus = props.autoFocus,
+        disabled = props.disabled,
+        readOnly = props.readOnly,
+        valueProp = props.value,
+        rest = _objectWithoutProperties$1(props, ["size", "defaultValue", "name", "placeholder", "icon", "prefix", "suffix", "error", "min", "max", "onChange", "onClick", "onBlur", "onFocus", "className", "autoFocus", "disabled", "readOnly", "value"]);
+
+    var ref = React__namespace.useRef(null);
+    var isUncontrolled = valueProp === undefined;
+
+    var _React$useState = React__namespace.useState(valueProp || defaultValue),
+        _React$useState2 = _slicedToArray(_React$useState, 2),
+        value = _React$useState2[0],
+        setValue = _React$useState2[1];
+
+    React__namespace.useImperativeHandle(forwardedRef, function () {
+      return ref.current;
+    });
+    React__namespace.useEffect(function () {
+      var _ref$current;
+
+      if (autoFocus) (_ref$current = ref.current) === null || _ref$current === void 0 ? void 0 : _ref$current.focus({
+        preventScroll: true
+      });
+    }, []);
+    React__namespace.useEffect(function () {
+      if (valueProp !== undefined) {
+        setValue(valueProp);
+      }
+    }, [valueProp]);
+    var baseProps = extractBaseProps(props);
+    var classes = classnames((_classNames = {}, _defineProperty$2(_classNames, 'MetricInput', true), _defineProperty$2(_classNames, "MetricInput--".concat(size), size), _defineProperty$2(_classNames, 'MetricInput--disabled', disabled || readOnly), _defineProperty$2(_classNames, 'MetricInput--error', error), _classNames), className);
+    var inputClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'MetricInput-input', true), _defineProperty$2(_classNames2, "MetricInput-input--".concat(size), size), _classNames2));
+    var iconClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'MetricInput-icon', true), _defineProperty$2(_classNames3, "MetricInput-icon--".concat(size), size), _classNames3));
+
+    var getArrowClass = function getArrowClass(direction) {
+      var _classNames4;
+
+      return classnames((_classNames4 = {}, _defineProperty$2(_classNames4, 'MetricInput-arrowIcon', true), _defineProperty$2(_classNames4, "MetricInput-arrowIcon--".concat(size), size), _defineProperty$2(_classNames4, "MetricInput-arrowIcon--".concat(direction), direction), _classNames4));
+    };
+
+    var onChangeHandler = function onChangeHandler(e) {
+      if (isUncontrolled) {
+        setValue(e.target.value);
+      }
+
+      if (onChange) onChange(e);
+    };
+
+    var onArrowClick = function onArrowClick(e, direction) {
+      var newValue = Number(value || 0);
+      var isValid = direction === 'down' ? min !== undefined && newValue > min || min === undefined : max !== undefined && newValue < max || max === undefined;
+      if (disabled || readOnly || !isValid) return;
+      newValue = direction === 'down' ? newValue - 1 : newValue + 1;
+      newValue = capMax(max, capMin(min, newValue));
+      if (isUncontrolled) setValue(newValue);
+
+      if (onChange) {
+        var syntheticEvent = Object.create(e, {
+          target: {
+            value: newValue
+          }
+        });
+        onChange(syntheticEvent);
+      }
+    };
+
+    var onKeyDown = function onKeyDown(e) {
+      switch (e.key) {
+        case 'e':
+        case 'E':
+          e.preventDefault();
+          return;
+
+        case 'ArrowDown':
+          e.preventDefault();
+          onArrowClick(e, 'down');
+          return;
+
+        case 'ArrowUp':
+          e.preventDefault();
+          onArrowClick(e, 'up');
+          return;
+      }
+    };
+
+    var iconSize = size === 'regular' ? 12 : 16;
+    return /*#__PURE__*/React__namespace.createElement("div", {
+      "data-test": "DesignSystem-MetricInputWrapper",
+      className: classes,
+      onClick: function onClick() {
+        var _ref$current2;
+
+        return (_ref$current2 = ref.current) === null || _ref$current2 === void 0 ? void 0 : _ref$current2.focus();
+      }
+    }, icon && /*#__PURE__*/React__namespace.createElement(Icon, {
+      "data-test": "DesignSystem-MetricInput--icon",
+      name: icon,
+      size: sizeMapping[size],
+      appearance: !value ? 'disabled' : 'subtle',
+      className: iconClass
+    }), prefix && /*#__PURE__*/React__namespace.createElement(Text, {
+      "data-test": "DesignSystem-MetricInput--prefix",
+      className: size === 'regular' ? 'mr-4' : 'mr-5',
+      size: size,
+      appearance: "subtle"
+    }, prefix), /*#__PURE__*/React__namespace.createElement("input", _extends$3({
+      "data-test": "DesignSystem-MetricInput"
+    }, baseProps, rest, {
+      type: "number",
+      ref: ref,
+      name: name,
+      defaultValue: defaultValue,
+      placeholder: placeholder,
+      className: inputClass,
+      value: value,
+      disabled: disabled,
+      readOnly: readOnly,
+      onChange: onChangeHandler,
+      onBlur: onBlur,
+      onClick: onClick,
+      onFocus: onFocus,
+      onKeyDown: onKeyDown
+    })), suffix && /*#__PURE__*/React__namespace.createElement(Text, {
+      "data-test": "DesignSystem-MetricInput--suffix",
+      className: size === 'regular' ? 'ml-4' : 'ml-5',
+      size: size,
+      appearance: "subtle"
+    }, suffix), /*#__PURE__*/React__namespace.createElement("div", {
+      className: "MetricInput-arrowIcons",
+      tabIndex: 0
+    }, /*#__PURE__*/React__namespace.createElement(Icon, {
+      className: getArrowClass('up'),
+      size: iconSize,
+      name: "keyboard_arrow_up",
+      onClick: function onClick(e) {
+        return onArrowClick(e, 'up');
+      },
+      "data-test": "DesignSystem-MetricInput--upIcon"
+    }), /*#__PURE__*/React__namespace.createElement(Icon, {
+      className: getArrowClass('down'),
+      size: iconSize,
+      name: "keyboard_arrow_down",
+      onClick: function onClick(e) {
+        return onArrowClick(e, 'down');
+      },
+      "data-test": "DesignSystem-MetricInput--downIcon"
+    })));
+  });
+  MetricInput.displayName = 'MetricInput';
 
   var isEditable = function isEditable(mask, pos) {
     return _typeof(mask[pos]) === 'object';
@@ -5634,7 +5830,7 @@
     React__namespace.useImperativeHandle(forwardedRef, function () {
       return ref.current;
     });
-    var RadioClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Radio', true), _defineProperty$2(_classNames, 'Radio--disabled', disabled), _defineProperty$2(_classNames, "Radio--".concat(size), size), _classNames), className);
+    var RadioClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Radio', true), _defineProperty$2(_classNames, 'Radio--disabled', disabled), _classNames), className);
     var RadioWrapper = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Radio-wrapper', true), _defineProperty$2(_classNames2, "Radio-wrapper--".concat(size), size), _classNames2));
     var RadioOuterWrapper = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Radio-outerWrapper', true), _defineProperty$2(_classNames3, "Radio-outerWrapper--".concat(size), size), _classNames3));
     var id = "".concat(name, "-").concat(label, "-").concat(uidGenerator());
@@ -6524,8 +6720,6 @@
 
     var _props$size = props.size,
         size = _props$size === void 0 ? 'regular' : _props$size,
-        _props$appearance = props.appearance,
-        appearance = _props$appearance === void 0 ? 'primary' : _props$appearance,
         defaultChecked = props.defaultChecked,
         disabled = props.disabled,
         onChange = props.onChange,
@@ -6543,7 +6737,7 @@
       if (props.checked !== undefined) setChecked(props.checked);
     }, [props.checked]);
     var SwitchClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Switch', true), _defineProperty$2(_classNames, 'Switch--disabled', disabled), _defineProperty$2(_classNames, "Switch--".concat(size), size), _classNames), className);
-    var SwitchWrapper = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Switch-wrapper', true), _defineProperty$2(_classNames2, 'Switch-wrapper--disabled', disabled), _defineProperty$2(_classNames2, "Switch-wrapper--".concat(size), size), _defineProperty$2(_classNames2, "Switch-wrapper--".concat(appearance), appearance), _defineProperty$2(_classNames2, 'Switch-wrapper--checked', checked), _defineProperty$2(_classNames2, 'Switch-wrapper--checkedDisabled', checked && disabled), _classNames2));
+    var SwitchWrapper = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Switch-wrapper', true), _defineProperty$2(_classNames2, 'Switch-wrapper--disabled', disabled), _defineProperty$2(_classNames2, "Switch-wrapper--".concat(size), size), _defineProperty$2(_classNames2, 'Switch-wrapper--checked', checked), _defineProperty$2(_classNames2, 'Switch-wrapper--checkedDisabled', checked && disabled), _classNames2));
 
     var onChangeHandler = function onChangeHandler(event) {
       if (props.checked === undefined) setChecked(!checked);
@@ -6636,7 +6830,7 @@
   };
 
   var Toast = function Toast(props) {
-    var _classNames, _classNames2;
+    var _classNames, _classNames2, _classNames4, _classNames5;
 
     var appearance = props.appearance,
         title = props.title,
@@ -6658,8 +6852,11 @@
     var iconClass = function iconClass(align) {
       var _classNames3;
 
-      return classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Toast-icon', true), _defineProperty$2(_classNames3, "Toast-icon--".concat(align), align), _classNames3));
+      return classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Toast-icon', true), _defineProperty$2(_classNames3, "Toast-icon--".concat(align), align), _defineProperty$2(_classNames3, "Toast-icon--".concat(appearance), appearance), _classNames3));
     };
+
+    var textClass = classnames((_classNames4 = {}, _defineProperty$2(_classNames4, 'Toast-text', true), _defineProperty$2(_classNames4, "Toast-text--".concat(appearance), appearance), _classNames4));
+    var headingClass = classnames((_classNames5 = {}, _defineProperty$2(_classNames5, 'Toast-heading', true), _defineProperty$2(_classNames5, "Toast-heading--".concat(appearance), appearance), _classNames5));
 
     var onCloseHandler = function onCloseHandler() {
       if (onClose) onClose();
@@ -6667,30 +6864,26 @@
 
     return /*#__PURE__*/React__namespace.createElement("div", _extends$3({}, baseProps, {
       className: wrapperClass
-    }), icon && /*#__PURE__*/React__namespace.createElement("div", {
-      className: iconClass('left')
-    }, /*#__PURE__*/React__namespace.createElement(Icon, {
+    }), icon && /*#__PURE__*/React__namespace.createElement(Icon, {
       name: icon,
-      appearance: appearance !== 'warning' ? 'white' : 'default'
-    })), /*#__PURE__*/React__namespace.createElement("div", {
+      className: iconClass('left')
+    }), /*#__PURE__*/React__namespace.createElement("div", {
       className: "Toast-body"
     }, /*#__PURE__*/React__namespace.createElement("div", {
       className: titleClass
     }, /*#__PURE__*/React__namespace.createElement(Heading, {
       size: "s",
+      className: headingClass,
       appearance: appearance !== 'warning' ? 'white' : 'default'
-    }, title), /*#__PURE__*/React__namespace.createElement("div", {
-      onClick: onCloseHandler
-    }, /*#__PURE__*/React__namespace.createElement("div", {
-      className: iconClass('right')
-    }, /*#__PURE__*/React__namespace.createElement(Icon, {
+    }, title), /*#__PURE__*/React__namespace.createElement(Icon, {
       name: 'close',
+      className: iconClass('right'),
+      onClick: onCloseHandler,
       appearance: appearance !== 'warning' ? 'white' : 'default'
-    })))), message && /*#__PURE__*/React__namespace.createElement("div", {
-      className: "Toast-message"
-    }, /*#__PURE__*/React__namespace.createElement(Text, {
-      appearance: appearance !== 'warning' ? 'white' : 'default'
-    }, message)), !!(actions !== null && actions !== void 0 && actions.length) && /*#__PURE__*/React__namespace.createElement("div", {
+    })), message && /*#__PURE__*/React__namespace.createElement(Text, {
+      appearance: appearance !== 'warning' ? 'white' : 'default',
+      className: textClass
+    }, message), !!(actions !== null && actions !== void 0 && actions.length) && /*#__PURE__*/React__namespace.createElement("div", {
       className: "Toast-actions"
     }, actions.slice(0, 2).map(function (action, index) {
       return /*#__PURE__*/React__namespace.createElement(ActionButton, {
@@ -18245,7 +18438,219 @@
   };
   FileList.displayName = 'FileList';
 
-  var version = "2.0.0";
+  var KEY_CODE = {
+    backspace: 'Backspace',
+    left: 'ArrowLeft',
+    up: 'ArrowUp',
+    right: 'ArrowRight',
+    down: 'ArrowDown',
+    e: 'e',
+    E: 'E'
+  };
+
+  var VerificationCodeInput = function VerificationCodeInput(props) {
+    var _props$type = props.type,
+        type = _props$type === void 0 ? 'number' : _props$type,
+        _props$fields = props.fields,
+        fields = _props$fields === void 0 ? 4 : _props$fields,
+        _props$placeholder = props.placeholder,
+        placeholder = _props$placeholder === void 0 ? '_' : _props$placeholder,
+        _props$autoFocus = props.autoFocus,
+        autoFocus = _props$autoFocus === void 0 ? true : _props$autoFocus,
+        onComplete = props.onComplete,
+        onFocus = props.onFocus,
+        onBlur = props.onBlur,
+        className = props.className;
+        props.value;
+        var rest = _objectWithoutProperties$1(props, ["type", "fields", "placeholder", "autoFocus", "onComplete", "onFocus", "onBlur", "className", "value"]);
+
+    var initialValues = React.useMemo(function () {
+      if (props.value && props.value.length) {
+        return props.value.split('');
+      }
+
+      return Array(fields).fill('');
+    }, []);
+    var initialRefs = React.useMemo(function () {
+      return _toConsumableArray(Array(fields)).map(function () {
+        return /*#__PURE__*/React__default['default'].createRef();
+      });
+    }, []);
+
+    var _useState = React.useState(initialValues),
+        _useState2 = _slicedToArray(_useState, 2),
+        values = _useState2[0],
+        setValues = _useState2[1];
+
+    var _useState3 = React.useState(initialRefs),
+        _useState4 = _slicedToArray(_useState3, 1),
+        refs = _useState4[0];
+
+    React.useEffect(function () {
+      if (refs[0] && refs[0].current && autoFocus) {
+        refs[0].current.focus({
+          preventScroll: true
+        });
+      }
+    }, []);
+    React.useEffect(function () {
+      var completeValue = values.join('');
+
+      if (onComplete && completeValue.length === fields) {
+        onComplete(completeValue);
+      }
+    }, [values]);
+
+    var onChangeHandler = function onChangeHandler(e) {
+      var index = parseInt(e.target.dataset.id, 10);
+      var fieldValue = e.target.value;
+      var nextRef;
+
+      var newValues = _toConsumableArray(values);
+
+      if (!fieldValue) {
+        return;
+      }
+
+      if (fieldValue.length > 1) {
+        var nextIndex = fieldValue.length + index - 1;
+
+        if (nextIndex >= fields) {
+          nextIndex = fields - 1;
+        }
+
+        nextRef = refs[nextIndex];
+        var split = fieldValue.split('');
+        split.forEach(function (item, i) {
+          var cursor = index + i;
+
+          if (cursor < fields) {
+            newValues[cursor] = item;
+          }
+        });
+        setValues(newValues);
+      } else {
+        nextRef = refs[index + 1];
+        newValues[index] = fieldValue;
+        setValues(newValues);
+      }
+
+      if (nextRef && nextRef.current) {
+        nextRef.current.focus({
+          preventScroll: true
+        });
+        nextRef.current.select();
+      }
+    };
+
+    var onFocusHandler = function onFocusHandler(e) {
+      e.target.select();
+      e.target.placeholder = '';
+
+      if (onFocus) {
+        onFocus(e);
+      }
+    };
+
+    var onBlurHandler = function onBlurHandler(e) {
+      e.target.placeholder = placeholder;
+
+      if (onBlur) {
+        onBlur(e);
+      }
+    };
+
+    var onKeyDown = function onKeyDown(e) {
+      var index = parseInt(e.currentTarget.dataset.id, 10);
+      var prevIndex = index - 1;
+      var nextIndex = index + 1;
+      var prev = refs[prevIndex];
+      var nextRef = refs[nextIndex];
+
+      switch (e.key) {
+        case KEY_CODE.backspace:
+          e.preventDefault();
+
+          var vals = _toConsumableArray(values);
+
+          if (values[index]) {
+            vals[index] = '';
+            setValues(vals);
+          } else if (prev && prev.current) {
+            vals[prevIndex] = '';
+            prev.current.focus({
+              preventScroll: true
+            });
+            setValues(vals);
+          }
+
+          break;
+
+        case KEY_CODE.left:
+          e.preventDefault();
+
+          if (prev && prev.current) {
+            prev.current.focus({
+              preventScroll: true
+            });
+          }
+
+          break;
+
+        case KEY_CODE.right:
+          e.preventDefault();
+
+          if (nextRef && nextRef.current) {
+            nextRef.current.focus({
+              preventScroll: true
+            });
+          }
+
+          break;
+
+        case KEY_CODE.up:
+        case KEY_CODE.down:
+        case KEY_CODE.e:
+        case KEY_CODE.E:
+          if (type === 'number') {
+            e.preventDefault();
+          }
+
+          break;
+      }
+    };
+
+    var wrapperClassNames = function wrapperClassNames(i) {
+      return classnames({
+        'VerificationCodeInput-Input': true,
+        'ml-3': i > 0
+      }, className);
+    };
+
+    return /*#__PURE__*/React__default['default'].createElement("div", {
+      "data-test": "DesignSystem-VerificationCodeInput",
+      className: "VerificationCodeInput"
+    }, values.map(function (val, index) {
+      return /*#__PURE__*/React__default['default'].createElement(Input, _extends$3({
+        key: index,
+        className: wrapperClassNames(index),
+        size: "large",
+        minWidth: "40px",
+        value: val,
+        placeholder: placeholder,
+        onChange: onChangeHandler,
+        onKeyDown: onKeyDown,
+        onFocus: onFocusHandler,
+        onBlur: onBlurHandler,
+        "data-id": index,
+        ref: refs[index]
+      }, rest));
+    }));
+  };
+
+  VerificationCodeInput.displayName = 'VerificationCodeInput';
+
+  var version = "2.1.0-0";
 
   exports.Avatar = Avatar;
   exports.AvatarGroup = AvatarGroup;
@@ -18291,6 +18696,7 @@
   exports.List = List;
   exports.Message = Message;
   exports.MetaList = MetaList;
+  exports.MetricInput = MetricInput;
   exports.Modal = Modal;
   exports.ModalBody = ModalBody;
   exports.ModalDescription = ModalDescription;
@@ -18326,6 +18732,7 @@
   exports.Toast = Toast;
   exports.Tooltip = Tooltip;
   exports.Utils = index$1;
+  exports.VerificationCodeInput = VerificationCodeInput;
   exports.VerticalNav = VerticalNav;
   exports.version = version;
 
