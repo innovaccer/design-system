@@ -21,6 +21,7 @@ export { DropdownProps } from './components/atoms/dropdown';
 export { HeadingProps } from './components/atoms/heading';
 export { IconProps } from './components/atoms/icon';
 export { InputProps } from './components/atoms/input';
+export { MetricInputProps } from './components/atoms/metricInput';
 export { InputMaskProps } from './components/molecules/inputMask';
 export { LabelProps } from './components/atoms/label';
 export { CaptionProps } from './components/atoms/caption';
