@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MetricInput component 
+  defaultValue: 10, icon: "events", error: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MetricInput MetricInput--regular"
+      data-test="DesignSystem-MetricInputWrapper"
+    >
+      <i
+        class="material-icons Icon Icon--subtle MetricInput-icon MetricInput-icon--regular"
+        data-test="DesignSystem-MetricInput--icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        events
+      </i>
+      <input
+        class="MetricInput-input MetricInput-input--regular"
+        data-test="DesignSystem-MetricInput"
+        type="number"
+        value="10"
+      />
+      <div
+        class="MetricInput-arrowIcons"
+        tabindex="0"
+      >
+        <i
+          class="material-icons Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--up"
+          data-test="DesignSystem-MetricInput--upIcon"
+          style="font-size: 12px; width: 12px;"
+        >
+          keyboard_arrow_up
+        </i>
+        <i
+          class="material-icons Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--down"
+          data-test="DesignSystem-MetricInput--downIcon"
+          style="font-size: 12px; width: 12px;"
+        >
+          keyboard_arrow_down
+        </i>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MetricInput component 
+  defaultValue: 10, icon: "events", error: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MetricInput MetricInput--regular MetricInput--error"
+      data-test="DesignSystem-MetricInputWrapper"
+    >
+      <i
+        class="material-icons Icon Icon--subtle MetricInput-icon MetricInput-icon--regular"
+        data-test="DesignSystem-MetricInput--icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        events
+      </i>
+      <input
+        class="MetricInput-input MetricInput-input--regular"
+        data-test="DesignSystem-MetricInput"
+        type="number"
+        value="10"
+      />
+      <div
+        class="MetricInput-arrowIcons"
+        tabindex="0"
+      >
+        <i
+          class="material-icons Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--up"
+          data-test="DesignSystem-MetricInput--upIcon"
+          style="font-size: 12px; width: 12px;"
+        >
+          keyboard_arrow_up
+        </i>
+        <i
+          class="material-icons Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--down"
+          data-test="DesignSystem-MetricInput--downIcon"
+          style="font-size: 12px; width: 12px;"
+        >
+          keyboard_arrow_down
+        </i>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MetricInput component 
+  name: "name", size: "large", value: 10, prefix: "USD", suffix: "kg", min: 0, max: 100, onChange: "[Function]", onBlur: "[Function]", onFocus: "[Function]", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MetricInput MetricInput--large"
+      data-test="DesignSystem-MetricInputWrapper"
+    >
+      <span
+        class="Text Text--subtle Text--large mr-5"
+        data-test="DesignSystem-MetricInput--prefix"
+      >
+        USD
+      </span>
+      <input
+        class="MetricInput-input MetricInput-input--large"
+        data-test="DesignSystem-MetricInput"
+        name="name"
+        type="number"
+        value="10"
+      />
+      <span
+        class="Text Text--subtle Text--large ml-5"
+        data-test="DesignSystem-MetricInput--suffix"
+      >
+        kg
+      </span>
+      <div
+        class="MetricInput-arrowIcons"
+        tabindex="0"
+      >
+        <i
+          class="material-icons Icon MetricInput-arrowIcon MetricInput-arrowIcon--large MetricInput-arrowIcon--up"
+          data-test="DesignSystem-MetricInput--upIcon"
+          style="font-size: 16px; width: 16px;"
+        >
+          keyboard_arrow_up
+        </i>
+        <i
+          class="material-icons Icon MetricInput-arrowIcon MetricInput-arrowIcon--large MetricInput-arrowIcon--down"
+          data-test="DesignSystem-MetricInput--downIcon"
+          style="font-size: 16px; width: 16px;"
+        >
+          keyboard_arrow_down
+        </i>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MetricInput component 
+  name: "name", size: "regular", value: 10, prefix: "USD", suffix: "kg", min: 0, max: 100, onChange: "[Function]", onBlur: "[Function]", onFocus: "[Function]", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MetricInput MetricInput--regular"
+      data-test="DesignSystem-MetricInputWrapper"
+    >
+      <span
+        class="Text Text--subtle Text--regular mr-4"
+        data-test="DesignSystem-MetricInput--prefix"
+      >
+        USD
+      </span>
+      <input
+        class="MetricInput-input MetricInput-input--regular"
+        data-test="DesignSystem-MetricInput"
+        name="name"
+        type="number"
+        value="10"
+      />
+      <span
+        class="Text Text--subtle Text--regular ml-4"
+        data-test="DesignSystem-MetricInput--suffix"
+      >
+        kg
+      </span>
+      <div
+        class="MetricInput-arrowIcons"
+        tabindex="0"
+      >
+        <i
+          class="material-icons Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--up"
+          data-test="DesignSystem-MetricInput--upIcon"
+          style="font-size: 12px; width: 12px;"
+        >
+          keyboard_arrow_up
+        </i>
+        <i
+          class="material-icons Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--down"
+          data-test="DesignSystem-MetricInput--downIcon"
+          style="font-size: 12px; width: 12px;"
+        >
+          keyboard_arrow_down
+        </i>
+      </div>
+    </div>
+  </div>
+</body>
+`;
