@@ -2,13 +2,14 @@
 
 .Checkbox {
     display: flex;
-    align-items: center;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     line-height: initial;
     box-sizing: border-box;
+    padding-top: var(--spacing-s);
+    padding-bottom: var(--spacing-s);
 }
 
 .Checkbox-input {
@@ -24,20 +25,23 @@
 .Checkbox-label {
     padding-left: var(--spacing);
     cursor: pointer;
-}
-
-.Checkbox-label--regular {
-    margin-top: var(--spacing-s);
-    margin-bottom: var(--spacing-s);
-}
-
-.Checkbox-label--tiny {
-    margin-top: var(--spacing-m);
-    margin-bottom: var(--spacing-m);
+    display: flex;
+    align-items: center;
 }
 
 .Checkbox-outerWrapper {
     position: relative;
+    margin-top: var(--spacing-s);
+}
+
+.Checkbox-outerWrapper--regular {
+    height: var(--spacing-2);
+    min-width: var(--spacing-2);
+}
+
+.Checkbox-outerWrapper--tiny {
+    height: var(--spacing-l);
+    min-width: var(--spacing-l);
 }
 
 /* Type: Unchecked  */
@@ -49,17 +53,8 @@
     border-radius: var(--spacing-s);
     display: flex;
     align-items: center;
-    box-sizing: border-box;   
-}
-
-.Checkbox-wrapper--regular {
-    height: var(--spacing-2);
-    min-width: var(--spacing-2);
-}
-
-.Checkbox-wrapper--tiny {
-    height: var(--spacing);
-    min-width: var(--spacing);
+    box-sizing: border-box;
+    height: inherit;
 }
 
 .Checkbox-input:focus {

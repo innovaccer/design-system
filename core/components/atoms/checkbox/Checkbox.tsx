@@ -95,16 +95,15 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
   const CheckboxClass = classNames({
     ['Checkbox']: true,
     ['Checkbox--disabled']: disabled,
-    [`Checkbox--${size}`]: size,
   }, className);
 
   const CheckboxOuterWrapper = classNames({
     ['Checkbox-outerWrapper']: true,
+    [`Checkbox-outerWrapper--${size}`]: size,
   });
 
   const CheckboxTextClass = classNames({
     ['Checkbox-label']: true,
-    [`Checkbox-label--${size}`]: size
   });
 
   const CheckboxInputWrapper = classNames({
@@ -115,7 +114,6 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
 
   const CheckboxWrapper = classNames({
     ['Checkbox-wrapper']: true,
-    [`Checkbox-wrapper--${size}`]: size,
   });
 
   const setIndeterminate = (indeterminateValue: any) => {
@@ -131,7 +129,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
   };
   const id = `${name}-${label}-${uidGenerator()}`;
   const IconName = (indeterminate) ? 'remove' : ((checked) ? 'check' : '');
-  const IconSize = (size) === 'tiny' ? 8 : 16;
+  const IconSize = (size) === 'tiny' ? 12 : 16;
 
   return (
     <div className={CheckboxClass}>

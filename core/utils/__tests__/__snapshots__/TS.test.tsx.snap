@@ -57,10 +57,10 @@ exports[`TS renders children 1`] = `
     class="ChipGroup"
   />
   <div
-    class="Checkbox Checkbox--regular"
+    class="Checkbox"
   >
     <div
-      class="Checkbox-outerWrapper"
+      class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
     >
       <input
         class="Checkbox-input"
@@ -70,7 +70,7 @@ exports[`TS renders children 1`] = `
         value=""
       />
       <span
-        class="Checkbox-wrapper Checkbox-wrapper--regular"
+        class="Checkbox-wrapper"
       />
     </div>
   </div>
