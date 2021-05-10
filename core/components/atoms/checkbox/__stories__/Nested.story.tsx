@@ -2,15 +2,15 @@ import * as React from 'react';
 import Checkbox from '../index';
 
 // CSF format story
-export const multipleChoiceList = () => {
+export const NestedCheckboxes = () => {
   const style = {
     display: 'flex',
     'flex-direction': 'column',
     paddingLeft: '25px',
   };
-  const parentObj = { checked: false, indeterminate: false };
-  const labels = ['InConnect', 'InGraph', 'InReport'];
-  const childArray = Array(labels.length).fill(false);
+  const parentObj = { checked: false, indeterminate: true };
+  const labels = ['Diabetes Eye Exam', 'HbA1c Test in last 12 months', 'Falls Risk Assessment'];
+  const childArray = [true, true, false];
 
   const [checked, setChecked] = React.useState(childArray);
   const [parentStatus, setParentStatus] = React.useState(parentObj);
@@ -37,9 +37,9 @@ export const multipleChoiceList = () => {
       <Checkbox
         checked={parentStatus.checked}
         indeterminate={parentStatus.indeterminate}
-        label={'Innovaccer'}
+        label={'Measures'}
         onChange={handleParentChange}
-        value={'Innovaccer'}
+        value={'Measures'}
       />
       <div style={style}>
         {
@@ -51,6 +51,7 @@ export const multipleChoiceList = () => {
                 checked={checked[ind]}
                 value={label}
                 onChange={c => handleChildChange(c, ind)}
+                defaultChecked={ind < 2}
               />
             );
           })
@@ -61,11 +62,12 @@ export const multipleChoiceList = () => {
 };
 
 const customCode = `() => {
-  const labels = ['InConnect', 'InGraph', 'InReport'];
+  const labels = ['Diabetes Eye Exam', 'HbA1c Test in last 12 months', 'Falls Risk Assessment'];
 
-  const childArray = Array(labels.length).fill(false);
+  const childArray = [true, true, false];
+
   const [checked, setChecked] = React.useState(childArray);
-  const [parentStatus, setParentStatus] = React.useState({ checked: false, indeterminate: false });
+  const [parentStatus, setParentStatus] = React.useState({ checked: false, indeterminate: true });
 
   const handleParentChange = (event) => {
     const updatedArray = [...childArray].fill(event.target.checked);
@@ -89,9 +91,9 @@ const customCode = `() => {
       <Checkbox
         checked={parentStatus.checked}
         indeterminate={parentStatus.indeterminate}
-        label={'Innovaccer'}
+        label={'Measures'}
         onChange={handleParentChange}
-        value={'Innovaccer'}
+        value={'Measures'}
       />
       <div style={{
           'flex-direction': 'column',
@@ -115,7 +117,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Checkbox/Multiple Choice List',
+  title: 'Components/Checkbox/Nested Checkboxes',
   component: Checkbox,
   parameters: {
     docs: {
