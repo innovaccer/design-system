@@ -5,22 +5,22 @@ export const radioGroup = () => (
   <div>
     <Radio
       size={'regular'}
-      label={'Option 1'}
-      name={'options'}
-      value={'Option 1'}
-    />
-    <Radio
-      size={'regular'}
-      label={'Option 2'}
-      name={'options'}
-      value={'Option 2'}
+      label={'High'}
+      name={'Priority'}
+      value={'High'}
       defaultChecked={true}
     />
     <Radio
       size={'regular'}
-      label={'Option 3'}
-      name={'options'}
-      value={'Option 3'}
+      label={'Medium'}
+      name={'Priority'}
+      value={'Medium'}
+    />
+    <Radio
+      size={'regular'}
+      label={'Low'}
+      name={'Priority'}
+      value={'Low'}
     />
   </div>
 );
