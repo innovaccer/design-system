@@ -60,7 +60,7 @@ const customCode = `
       this.setState({
         password: event.target.value,
         validations: newValidations,
-        signInDisabled: !isValidated && event.target.value !== this.state.confirmPassword,
+        signInDisabled: (!isValidated && event.target.value !== this.state.confirmPassword) || event.target.value=='',
       });
 
     }
@@ -68,7 +68,7 @@ const customCode = `
     onConfirmPasswordChange(event) {
       this.setState({
         confirmPassword: event.target.value,
-        signInDisabled: event.target.value !== this.state.password
+        signInDisabled: event.target.value !== this.state.password || event.target.value==''
       });
     }
 
