@@ -406,8 +406,6 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const renderSearch = () => {
-    const { loadingOptions, searchInit } = props;
-    const disable = loadingOptions && !searchInit;
     return (
       <div className={'Dropdown-inputWrapper'}>
         <Input
@@ -415,7 +413,6 @@ const DropdownList = (props: OptionsProps) => {
           icon={'search'}
           value={searchTerm}
           placeholder={'Search..'}
-          disabled={disable}
           autoFocus={true}
           onChange={searchHandler}
           onClear={searchClearHandler}
