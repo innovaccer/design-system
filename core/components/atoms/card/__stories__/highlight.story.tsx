@@ -20,7 +20,7 @@ the sender's preferred timings.
             </Paragraph>
             <Row>
               <Column size="12" className="pt-4">
-                <Radio label="Send now" name="gender" value="Checkbox" checked={true} />
+                <Radio label="Send now" name="gender" value="Checkbox" defaultChecked={true} />
                 <Text small={true} appearance="disabled" className="ml-7">
                 Campaign will start immediately
                 </Text>
