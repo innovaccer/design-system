@@ -14,6 +14,7 @@ import {
 import { BaseProps } from '@/utils/types';
 
 type fetchOptionsFunction = (searchTerm: string) => Promise<{
+  searchTerm?: string;
   count: number;
   options: Option[];
 }>;
@@ -94,6 +95,7 @@ interface AsyncProps {
    *
    * <pre className="DocPage-codeBlock">
    * fetchOptionsFunction: (searchTerm: string) => Promise<{
+   *      searchTerm?: string;
    *      count: number,
    *      option: Option[],
    * }>;
@@ -343,6 +345,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     const filteredOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
     return new Promise<any>(resolve => {
       resolve({
+        searchTerm,
         options: filteredOptions,
         count: filteredOptions.length,
       });
@@ -394,31 +397,33 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     fetchFunction(searchTerm)
       .then((res: any) => {
         const { options, count } = res;
-        updatedAsync = searchTerm === '' ? count > this.staticLimit : updatedAsync;
+        if (!res.searchTerm || (res.searchTerm && res.searchTerm === this.state.searchTerm)) {
+          updatedAsync = searchTerm === '' ? count > this.staticLimit : updatedAsync;
 
-        const unSelectedGroup = _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ?
-          this.getUnSelectedOptions(options, init) : options;
-        const selectedGroup = searchTerm === '' ?
-          this.getSelectedOptions(options, init) : [];
-        const optionsLength = searchTerm === '' ? count : this.state.optionsLength;
-        const disabledOptions = this.getDisabledOptions(unSelectedGroup.slice(0, this.staticLimit));
+          const unSelectedGroup = _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ?
+            this.getUnSelectedOptions(options, init) : options;
+          const selectedGroup = searchTerm === '' ?
+            this.getSelectedOptions(options, init) : [];
+          const optionsLength = searchTerm === '' ? count : this.state.optionsLength;
+          const disabledOptions = this.getDisabledOptions(unSelectedGroup.slice(0, this.staticLimit));
 
-        this.setState({
-          ...this.state,
-          optionsLength,
-          loading: false,
-          async: updatedAsync,
-          searchedOptionsLength: count,
-          options: unSelectedGroup.slice(0, this.staticLimit),
-          tempSelected: init ? selectedGroup : tempSelected,
-          previousSelected: init ? selectedGroup : previousSelected,
-          selected: _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? selectedGroup : [],
-          triggerLabel: this.updateTriggerLabel(init ? selectedGroup : tempSelected),
-          selectAll: !updatedAsync && init
-            ? getSelectAll(selectedGroup, optionsLength, disabledOptions.length)
-            : selectAll
-        });
-        if (updatedAsync || withSearch) inputRef.current?.focus();
+          this.setState({
+            ...this.state,
+            optionsLength,
+            loading: false,
+            async: updatedAsync,
+            searchedOptionsLength: count,
+            options: unSelectedGroup.slice(0, this.staticLimit),
+            tempSelected: init ? selectedGroup : tempSelected,
+            previousSelected: init ? selectedGroup : previousSelected,
+            selected: _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? selectedGroup : [],
+            triggerLabel: this.updateTriggerLabel(init ? selectedGroup : tempSelected),
+            selectAll: !updatedAsync && init
+              ? getSelectAll(selectedGroup, optionsLength, disabledOptions.length)
+              : selectAll
+          });
+          if (updatedAsync || withSearch) inputRef.current?.focus();
+        }
       });
   }
 

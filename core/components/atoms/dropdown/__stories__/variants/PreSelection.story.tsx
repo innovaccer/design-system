@@ -18,6 +18,7 @@ export const preSelection = () => {
     return new Promise<any>(resolve => {
       window.setTimeout(() => {
         resolve({
+          searchTerm,
           options: searchedOptions,
           count: searchedOptions.length,
         });
