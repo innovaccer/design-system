@@ -947,6 +947,7 @@ import './style.css';
           const end = start + pageSize;
           const slicedData = sortedData.slice(start, end);
           resolve({
+            searchTerm,
             schema,
             count: sortedData.length,
             data: slicedData,
@@ -958,6 +959,7 @@ import './style.css';
     return new Promise(resolve => {
       window.setTimeout(() => {
         resolve({
+          searchTerm,
           schema,
           count: sortedData.length,
           data: sortedData,
