@@ -277,6 +277,9 @@ interface GridState {
 }
 
 export class Grid extends React.Component<GridProps, GridState> {
+  currPageInfo = { page: 1, scrollTop: 0 };
+  prevPageInfo = this.currPageInfo;
+
   constructor(props: GridProps) {
     super(props);
 

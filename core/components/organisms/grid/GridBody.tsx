@@ -21,6 +21,22 @@ export const GridBody = (props: GridBodyProps) => {
     withCheckbox
   } = props;
 
+  React.useEffect(() => {
+    const gridBodyEl = _this.gridRef!.querySelector('.Grid-body');
+    if (gridBodyEl) {
+      window.requestAnimationFrame(() => {
+        if (_this.prevPageInfo.page === page) {
+          gridBodyEl.scrollTop = _this.prevPageInfo.scrollTop;
+        }
+        _this.prevPageInfo = _this.currPageInfo;
+      });
+    }
+
+    return () => {
+      _this.currPageInfo = { page, scrollTop: gridBodyEl!.scrollTop };
+    };
+  }, []);
+
   const minRowHeight: Record<GridProps['size'], number> = {
     comfortable: 40,
     standard: 40,
@@ -46,12 +62,15 @@ export const GridBody = (props: GridBodyProps) => {
   }
 
   const totalPages = Math.ceil(totalRecords / pageSize);
+
   const isLastPage = withPagination && page === totalPages;
   const dataLength = isLastPage
     ? totalRecords - (page - 1) * pageSize
     : loading
       ? pageSize
-      : Math.min(totalRecords, pageSize);
+      : withPagination
+        ? Math.min(totalRecords, pageSize)
+        : totalRecords;
 
   const renderItem = (rowIndex: number) => {
     return (
