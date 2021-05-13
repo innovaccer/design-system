@@ -131,6 +131,7 @@ interface AsyncProps {
    *
    * <pre className="DocPage-codeBlock">
    * fetchDataFunction: (options: FetchDataOptions) => Promise<{
+   *      searchTerm?: string,
    *      count: number,
    *      data: Data,
    *      schema: Schema
@@ -539,17 +540,19 @@ export class Table extends React.Component<TableProps, TableState> {
       if (fetchData) {
         fetchData(opts)
           .then((res: any) => {
-            const data = res.data;
-            const schema = this.state.schema.length ? this.state.schema : res.schema;
-            this.setState({
-              data,
-              schema,
-              selectAll: getSelectAll(data),
-              totalRecords: res.count,
-              loading: false,
-              error: !data.length,
-              errorType: 'NO_RECORDS_FOUND'
-            });
+            if (!res.searchTerm || (res.searchTerm && res.searchTerm === this.state.searchTerm)) {
+              const data = res.data;
+              const schema = this.state.schema.length ? this.state.schema : res.schema;
+              this.setState({
+                data,
+                schema,
+                selectAll: getSelectAll(data),
+                totalRecords: res.count,
+                loading: false,
+                error: !data.length,
+                errorType: 'NO_RECORDS_FOUND'
+              });
+            }
           })
           .catch(() => {
             this.setState({

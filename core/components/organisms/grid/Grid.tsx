@@ -23,6 +23,7 @@ export interface FetchDataOptions {
 }
 
 export type fetchDataFunction = (options: FetchDataOptions) => Promise<{
+  searchTerm?: string,
   count: number,
   data: Data,
   schema: Schema
