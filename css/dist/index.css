@@ -578,31 +578,6 @@ body {
   justify-content: center;
   z-index: 1500;
 }
-.Legend {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-}
-
-.Legend-icon {
-    border-radius: var(--spacing-s);
-    margin-right: var(--spacing);
-}
-.ProgressBar {
-  width: 100%;
-  border-radius: var(--spacing-m);
-  background: var(--secondary-lightest);
-}
-
-.ProgressBar-indicator {
-  height: var(--spacing);
-  background-color: var(--primary);
-  border-radius: var(--spacing-m);
-  transition: width 200ms;
-}
 /* badge */
 
 .Avatar {
@@ -3213,6 +3188,19 @@ body {
     margin-right: var(--spacing);
 }
 
+.Legend {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.Legend-icon {
+    border-radius: var(--spacing-s);
+    margin-right: var(--spacing);
+}
 .Link {
   text-decoration: none;
   font-weight: var(--font-weight-medium);
@@ -3291,22 +3279,22 @@ body {
   
   .Message--alert {
     border-color: var(--alert);
-    background-color: var(--alert-lightest);
+    background-color: rgba(var(--alert-lightest),0.4);
   }
   
   .Message--success {
     border-color: var(--success);
-    background-color: var(--success-lightest);
+    background-color: rgba(var(--success-lightest),0.4);
   }
   
   .Message--info {
     border-color: var(--primary);
-    background-color: var(--primary-lightest);
+    background-color: rgba(var(--primary-lightest),0.4);
   }
   
   .Message--warning {
     border-color: var(--accent1);
-    background-color: var(--accent1-lightest);
+    background-color: rgba(var(--accent1-lightest),0.4);
   }
 
   .Message--default {
@@ -4171,6 +4159,18 @@ body {
 .Popover[data-hide="true"] {
   visibility: hidden;
   pointer-events: none;
+}
+.ProgressBar {
+  width: 100%;
+  border-radius: var(--spacing-m);
+  background: var(--secondary-lightest);
+}
+
+.ProgressBar-indicator {
+  height: var(--spacing);
+  background-color: var(--primary);
+  border-radius: var(--spacing-m);
+  transition: width 200ms;
 }
 .Ring {
   transform: rotate(-90deg);
