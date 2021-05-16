@@ -2,6 +2,7 @@
 .VerificationCodeInput-Input {
   display: inline-flex;
   width: 40px;
+  margin-right: 8px;
 }
 
 .VerificationCodeInput-Input .Input-input {
