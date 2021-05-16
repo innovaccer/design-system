@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Text, Icon, Caption } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import FileUploaderStatus from './FileUploaderStatus';
-
+import {Button} from 'C:/Users/dishu/Desktop/workspace/design-system/core/components/atoms/button/Button';
 export type FileStatus = 'uploading' | 'completed' | 'error';
 
 export interface FileItem {
@@ -70,19 +70,21 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
           {name}
         </Text>
         <div className="d-flex align-items-center">
-          <FileUploaderStatus
+        <Button appearance='transparent'><FileUploaderStatus
             file={file}
             id={id}
             status={status}
             progress={progress}
             onRetry={() => onRetry && onRetry(file, id)}
           />
-          <Icon
+          </Button>
+          <Button appearance='transparent'><Icon
             name="close"
             size={20}
             onClick={() => onDelete && onDelete(file, id)}
             className="py-2 px-2 my-3 mx-3 cursor-pointer"
           />
+          </Button>
         </div>
       </div>
       {status === 'error' && (

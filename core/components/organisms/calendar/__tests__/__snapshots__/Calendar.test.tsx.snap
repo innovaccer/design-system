@@ -650,7 +650,7 @@ exports[`Calendar component
 `;
 
 exports[`Calendar component 
-  disabledAfter: 1584662400000
+  disabledAfter: 1584642600000
  1`] = `
 <body>
   <div>
@@ -1300,7 +1300,7 @@ exports[`Calendar component
 `;
 
 exports[`Calendar component 
-  disabledBefore: 1583798400000
+  disabledBefore: 1583778600000
  1`] = `
 <body>
   <div>
@@ -1950,7 +1950,7 @@ exports[`Calendar component
 `;
 
 exports[`Calendar component 
-  disabledBefore: 1583798400000, disabledAfter: 1584662400000
+  disabledBefore: 1583778600000, disabledAfter: 1584642600000
  1`] = `
 <body>
   <div>
