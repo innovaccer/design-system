@@ -3,8 +3,10 @@ import classNames from 'classnames';
 import { Text, Icon, Caption } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import FileUploaderStatus from './FileUploaderStatus';
-import {Button} from 'C:/Users/dishu/Desktop/workspace/design-system/core/components/atoms/button/Button';
+import Button from './../../atoms/button/Button';
+
 export type FileStatus = 'uploading' | 'completed' | 'error';
+
 
 export interface FileItem {
   /**
