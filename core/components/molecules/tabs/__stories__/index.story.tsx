@@ -2,45 +2,35 @@ import * as React from 'react';
 import { number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import TabsWrapper from '../TabsWrapper';
-import Tab from '../Tab';
+import { TabsWrapper, Tab, Icon } from './../../../../';
 import Text from '@/components/atoms/text';
 import Badge from '@/components/atoms/badge';
-import classNames from 'classnames';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 
 // CSF format story
 export const all = () => {
-  const active = number(
-    'active',
+  const activeIndex = number(
+    'activeIndex',
     1
   );
 
-  const tabIconClass = (tabIndex: number) => {
-    return classNames({
-      ['material-icons']: true,
-      ['Tab-icon']: true,
-      ['Tab-icon--active']: active === tabIndex
-    });
-  };
-
   const onTabChangeHandler = (tabIndex: number) => {
-    updateKnob('active', tabIndex);
+    updateKnob('activeIndex', tabIndex);
     return action(`tab-change: ${tabIndex}`)();
   };
 
   return (
     <TabsWrapper
-      active={active}
+      active={activeIndex}
       onTabChange={onTabChangeHandler}
     >
       <Tab
         label={(
           <>
             <div className="Tab-count">
-              <Badge appearance="secondary">2</Badge>
+              <Badge appearance={activeIndex === 0 ? 'primary' : 'secondary'}>2</Badge>
             </div>
-            <Text appearance={active !== 0 ? 'subtle' : undefined}>Tab(Recommended)</Text>
+            <Text appearance={activeIndex !== 0 ? 'subtle' : 'link'}>Tab(Recommended)</Text>
           </>
         )}
       >
@@ -50,10 +40,10 @@ export const all = () => {
       </Tab>
       <Tab
         label={(
-          <>
-            <i className={tabIconClass(1)}>call_received</i>
-            <Text appearance={active !== 1 ? 'subtle' : undefined}>All</Text>
-          </>
+          <div className="Tab-icon">
+            <Icon name="south_west" appearance={activeIndex === 1 ? 'info' : 'subtle'}/>
+            <Text appearance={activeIndex !== 1 ? 'subtle' : 'link'}>All</Text>
+          </div>
         )}
       >
         <div>
@@ -63,7 +53,7 @@ export const all = () => {
       <Tab
         label={(
           <>
-            <Text appearance={active !== 2 ? 'subtle' : undefined}>Extras</Text>
+            <Text appearance={activeIndex !== 2 ? 'subtle' : undefined}>Extras</Text>
           </>
         )}
         disabled={true}
@@ -76,8 +66,68 @@ export const all = () => {
   );
 };
 
+const customCode = `() => {
+const [activeIndex, setActive] = React.useState(0)
+
+const onTabChangeHandler = (tabIndex) => {
+  setActive(tabIndex)
+};
+
+return (
+  <TabsWrapper
+    active={activeIndex}
+    onTabChange={onTabChangeHandler}
+  >
+    <Tab
+      label={(
+        <>
+          <div className="Tab-count">
+            <Badge appearance={activeIndex === 0 ? "primary" : "secondary"}>2</Badge>
+          </div>
+          <Text tabIndex={1} appearance={activeIndex !== 0 ? 'subtle' : 'link'}>Tab(Recommended)</Text>
+        </>
+      )}
+    >
+      <div>
+        First Tab
+      </div>
+    </Tab>
+    <Tab
+      label={(
+        <div className='Tab-icon'>
+          <Icon name='south_west' appearance={activeIndex === 1 ? 'info' : 'subtle'}/>
+          <Text tabIndex={2} appearance={activeIndex !== 1 ? 'subtle' : 'link'}>All</Text>
+        </div>
+      )}
+    >
+      <div>
+        Second Tab
+      </div>
+    </Tab>
+    <Tab
+      label={(
+        <>
+          <Text tabIndex={3} appearance={activeIndex !== 2 ? 'subtle' : undefined}>Extras</Text>
+        </>
+      )}
+      disabled={true}
+    >
+      <div>
+        Third Tab
+      </div>
+    </Tab>
+  </TabsWrapper>
+);}`;
+
 export default {
   title: 'Components/Tabs/All',
   component: TabsWrapper,
-  subcomponents: { Tab }
+  subcomponents: { Tab },
+  parameters: {
+    docs: {
+      docPage: {
+        customCode,
+      }
+    }
+  }
 };

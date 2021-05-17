@@ -34,9 +34,26 @@
     margin-right: 0;
 }
 
-.Tab--active, .Tab:hover {
+.Tab--active {
     margin-bottom: -1px;
     border-bottom: var(--spacing-s) solid var(--primary);
+}
+
+.Tab--active:focus {
+    margin-bottom: -1px;
+    border-bottom: var(--spacing-s) solid var(--primary-dark);
+}
+
+.Tab:hover {
+    margin-bottom: -1px;
+    border-bottom: var(--spacing-s) solid var(--primary-dark);
+}
+
+.Tab:focus {
+    outline: none;
+    border-radius: 4px;
+    /* Using box shadow instead of border as border shifts the div down which cuts the Icon & Text of label. */
+    box-shadow: 0 0 3px 0 var(--text-link);
 }
 
 .Tab--disabled {
@@ -55,11 +72,6 @@
 
 .Tab-icon {
     display: flex;
-    margin-right: var(--spacing-l);
-    font-size: var(--font-size-m);
-    color: var(--text-subtle);
-}
-
-.Tab-icon--active {
-    color: var(--text);
+    min-width: inherit;
+    justify-content: space-between;
 }

@@ -14,6 +14,7 @@ exports[`TabsWrapper component
       <div
         class="Tab Tab--active"
         data-test="DesignSystem-Tabs--Header"
+        tabindex="0"
       >
         <span
           class="Text Text--default Text--regular"
@@ -25,6 +26,7 @@ exports[`TabsWrapper component
       <div
         class="Tab Tab--disabled"
         data-test="DesignSystem-Tabs--Header"
+        tabindex="-1"
       >
         <span
           class="Text Text--default Text--regular"
@@ -58,6 +60,7 @@ exports[`TabsWrapper component
       <div
         class="Tab Tab--active"
         data-test="DesignSystem-Tabs--Header"
+        tabindex="0"
       >
         <span
           class="Text Text--default Text--regular"
@@ -69,6 +72,7 @@ exports[`TabsWrapper component
       <div
         class="Tab Tab--disabled"
         data-test="DesignSystem-Tabs--Header"
+        tabindex="-1"
       >
         <span
           class="Text Text--default Text--regular"

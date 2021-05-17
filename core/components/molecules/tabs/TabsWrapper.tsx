@@ -44,9 +44,25 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
     ['TabsWrapper']: true,
   }, className);
 
+  const tabRefs: HTMLDivElement[] = [];
+
   const tabClickHandler = (tabIndex: number) => {
     setActiveTab(tabIndex);
     if (onTabChange) onTabChange(tabIndex);
+  };
+
+  const tabKeyDownHandler = (event: React.KeyboardEvent, tabIndex: number) => {
+    if (event.key === 'Enter') {
+      tabClickHandler(tabIndex);
+    }
+    if (event.key === 'ArrowLeft' && tabIndex > 0 && tabRefs.length > 0) {
+      const prevElement = tabRefs[tabIndex - 1];
+      prevElement?.focus();
+    }
+    if (event.key === 'ArrowRight' && tabIndex < tabs.length && tabRefs.length > 0) {
+      const nextElement = tabRefs[tabIndex + 1];
+      nextElement?.focus();
+    }
   };
 
   const TabsHeader = (
@@ -61,10 +77,13 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
 
       return (
         <div
+          ref={element => element && !disabled && tabRefs.push(element)}
           data-test="DesignSystem-Tabs--Header"
           key={index}
           className={tabHeaderClass}
           onClick={() => !disabled && tabClickHandler(index)}
+          onKeyDown={(event: React.KeyboardEvent) => tabKeyDownHandler(event, index)}
+          tabIndex={!disabled && index === 0 ? 0 : -1}
         >
           {label}
         </div>
