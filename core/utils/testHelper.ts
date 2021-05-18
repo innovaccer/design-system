@@ -140,3 +140,32 @@ export const JSONStringifyHelper = (_key: string, value: any) => {
   if (React.isValidElement(value)) return '[ReactNode]';
   return value;
 }
+
+export function pubSub() {
+  const subscribers:any = {}; 
+  let count = -1;
+
+  function publish(eventName: string | number, data: any) {
+    if (!Array.isArray(subscribers[eventName])) {
+      return;
+    }
+    count = ++count;
+    subscribers[eventName].forEach((callback: (arg0: any, count: number) => void) => {
+      callback(data,count);
+    })
+    return count;
+  }
+
+  function subscribe(eventName: string | number, callback: any) {
+    if (!Array.isArray(subscribers[eventName])) {
+      subscribers[eventName] = [];
+    }
+    subscribers[eventName].push(callback);
+     const index = subscribers[eventName].length - 1;
+    return  () => subscribers[eventName].splice(index, 1)
+  }
+  return {
+    publish,
+    subscribe
+  }
+}

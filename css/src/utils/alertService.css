@@ -1,0 +1,21 @@
+.alertService-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.alertService-enter.alertService-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: opacity 400ms ease-in, transform 400ms ease-in;
+}
+.alertService-leave {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.alertService-leave.alertService-leave-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 500ms, transform 500ms;
+}
+.alertService {
+  transition: all 1000ms ease-in;
+}
