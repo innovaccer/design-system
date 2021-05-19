@@ -53,6 +53,7 @@ export { ChatMessageProps } from './components/molecules/chatMessage';
 export { EmptyStateProps } from './components/molecules/emptyState';
 export { SidesheetProps } from './components/molecules/sidesheet';
 export { ModalProps } from './components/molecules/modal';
+export { ChipInputProps } from './components/molecules/chipInput';
 export { FullscreenModalProps } from './components/molecules/fullscreenModal';
 export { ModalHeaderProps } from './components/molecules/modalHeader';
 export { ModalFooterProps } from './components/molecules/modalFooter';
