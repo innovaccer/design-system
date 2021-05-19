@@ -2,13 +2,13 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Text from '@/components/atoms/text';
 import Icon from '@/components/atoms/icon';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseProps, OmitNativeProps } from '@/utils/types';
 import uidGenerator from '@/utils/uidGenerator';
 export type Size = 'regular' | 'tiny';
 
 type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 
-export interface CheckboxProps extends BaseProps {
+export interface CheckboxProps extends BaseProps, OmitNativeProps<HTMLInputElement, 'onChange'> {
   /**
    * Size of the `Checkbox`
    * @default "regular"
@@ -70,11 +70,11 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     name,
     value,
     className,
+    checked: checkedProp,
+    ...rest
   } = props;
 
   const ref = React.useRef<HTMLInputElement>(null);
-
-  const baseProps = extractBaseProps(props);
 
   React.useImperativeHandle(forwardedRef, (): HTMLInputElement => {
     return ref.current as HTMLInputElement;
@@ -135,7 +135,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     <div className={CheckboxClass}>
       <div className={CheckboxOuterWrapper}>
         <input
-          {...baseProps}
+          {...rest}
           type="checkbox"
           defaultChecked={defaultChecked}
           onChange={onChangeHandler}

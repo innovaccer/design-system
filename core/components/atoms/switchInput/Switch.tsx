@@ -1,13 +1,13 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { OmitNativeProps, BaseProps } from '@/utils/types';
 
 export type Size = 'regular' | 'tiny' | 'large';
 export type Appearance = 'primary' | 'alert' | 'success' | 'warning';
 
 type MouseEvent = React.ChangeEvent<HTMLInputElement>;
 
-export interface SwitchProps extends BaseProps {
+export interface SwitchProps extends BaseProps, OmitNativeProps<HTMLInputElement, 'onChange'> {
   /**
    * Size of `Switch`
    * @default "regular"
@@ -58,16 +58,17 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, re
     onChange,
     name,
     value,
-    className
+    className,
+    appearance,
+    checked: checkedProp,
+    ...rest
   } = props;
 
-  const baseProps = extractBaseProps(props);
-
-  const [checked, setChecked] = React.useState(props.checked === undefined ? defaultChecked : props.checked);
+  const [checked, setChecked] = React.useState(checkedProp === undefined ? defaultChecked : checkedProp);
 
   React.useEffect(() => {
-    if (props.checked !== undefined) setChecked(props.checked);
-  }, [props.checked]);
+    if (checkedProp !== undefined) setChecked(checkedProp);
+  }, [checkedProp]);
 
   const SwitchClass = classNames({
     ['Switch']: true,
@@ -84,14 +85,14 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, re
   });
 
   const onChangeHandler = (event: MouseEvent) => {
-    if (props.checked === undefined) setChecked(!checked);
+    if (checkedProp === undefined) setChecked(!checked);
     if (onChange) onChange(event, !checked);
   };
 
   return (
     <div className={SwitchClass}>
       <input
-        {...baseProps}
+        {...rest}
         type="checkbox"
         defaultChecked={defaultChecked}
         disabled={disabled}

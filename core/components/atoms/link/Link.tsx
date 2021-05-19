@@ -1,13 +1,13 @@
 import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
-import { BaseProps } from '@/utils/types';
+import { BaseProps, OmitNativeProps } from '@/utils/types';
 
 type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
 type Appearance = 'default' | 'subtle';
 type Size = 'regular' | 'tiny';
 
-export interface LinkProps extends BaseProps {
+export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, 'onClick'> {
   /**
    * HTML ID of `Link`
    */
