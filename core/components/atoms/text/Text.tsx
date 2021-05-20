@@ -1,12 +1,12 @@
 import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseHtmlProps, BaseProps } from '@/utils/types';
 
 export type Size = 'small' | 'regular' | 'large';
 export type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled' | 'success' | 'link';
 
-export interface TextProps extends BaseProps {
+export interface TextProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
   /**
    * Text to be rendered
    */
@@ -36,10 +36,9 @@ export const Text = (props: TextProps) => {
     children,
     weight,
     small,
-    className
+    className,
+    ...rest
   } = props;
-
-  const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     Text: true,
@@ -53,7 +52,7 @@ export const Text = (props: TextProps) => {
   return (
     <GenericText
       data-test="DesignSystem-Text"
-      {...baseProps}
+      {...rest}
       className={classes}
       componentType="span"
     >
