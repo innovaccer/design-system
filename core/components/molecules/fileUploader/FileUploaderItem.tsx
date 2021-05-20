@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Text, Icon, Caption } from '@/index';
+import { Text, Caption , Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import FileUploaderStatus from './FileUploaderStatus';
 
@@ -77,11 +77,11 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
             progress={progress}
             onRetry={() => onRetry && onRetry(file, id)}
           />
-          <Icon
-            name="close"
-            size={20}
+          <Button
+            appearance="transparent"
+            size="regular"
             onClick={() => onDelete && onDelete(file, id)}
-            className="py-2 px-2 my-3 mx-3 cursor-pointer"
+            icon="close"
           />
         </div>
       </div>
