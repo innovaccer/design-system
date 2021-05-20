@@ -1,4 +1,5 @@
 import * as React from 'react';
+import uidGenerator from './uidGenerator';
 
 interface IValueHelper {
   required?: boolean,
@@ -143,17 +144,16 @@ export const JSONStringifyHelper = (_key: string, value: any) => {
 
 export function pubSub() {
   const subscribers:any = {}; 
-  let count = -1;
 
   function publish(eventName: string | number, data: any) {
     if (!Array.isArray(subscribers[eventName])) {
       return;
     }
-    count = ++count;
-    subscribers[eventName].forEach((callback: (arg0: any, count: number) => void) => {
-      callback(data,count);
+    let uid = uidGenerator();
+    subscribers[eventName].forEach((callback: (arg0: any, uid: string) => void) => {
+      callback(data,uid);
     })
-    return count;
+    return uid;
   }
 
   function subscribe(eventName: string | number, callback: any) {

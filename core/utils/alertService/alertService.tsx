@@ -2,6 +2,13 @@ import * as React from 'react';
 import ReactDOM from 'react-dom';
 import AlertContainer from './alertContainer';
 import { pubSub } from '../testHelper';
+export interface AlertServiceConfig {
+  dismissIn: number;
+  position: string;
+  transitionDelay: number;
+  appearance: string;
+  title: string;
+}
 
 export class AlertService {
   elem: HTMLElement;
@@ -9,22 +16,30 @@ export class AlertService {
     publish: (eventName: string | number, data: any) => void;
     subscribe: (eventName: string | number, callback: any) => void;
   };
-  config: { dismissIn: number; position: string } | undefined;
-  constructor(config?: { dismissIn: number; position: string } | undefined) {
+  constructor(
+    config = {
+      dismissIn: 3000,
+      autoHiderBar: true,
+      position: 'left',
+      transitionDelay: 800,
+      appearance: 'alert',
+      title: 'Some error occurred'
+    }
+  ) {
     this.elem = document.createElement('div');
     this.pubSubService = pubSub();
-    this.config = config;
+    this.renderAlert(config);
   }
 
-  renderAlert = () => {
-    this.elem.setAttribute('id', 'alert-container');
+  renderAlert = (config: AlertServiceConfig) => {
+    this.elem.setAttribute('id', 'alertService-container');
     document.body.appendChild(this.elem);
-    ReactDOM.render(<AlertContainer pubSubService={this.pubSubService} config={this.config} />, this.elem);
+    ReactDOM.render(<AlertContainer pubSubService={this.pubSubService} defaultConfig={config} />, this.elem);
   }
 
-  removeToast = (toastId: number) => this.pubSubService.publish('remove-toast', toastId);
+  remove = (toastId: number) => this.pubSubService.publish('remove-toast', toastId);
 
-  addToast = (toast: any) => {
+  add = (toast: any) => {
     const toastId = this.pubSubService.publish('add-toast', toast);
     return toastId;
   }

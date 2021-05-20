@@ -1,3 +1,46 @@
+@keyframes SlideLeft {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+}
+@keyframes SlideDown {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+@keyframes SlideUp {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+.toast-item {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.toast-item.exit {
+  animation: SlideLeft 0.8s;
+  animation-fill-mode: forwards;
+}
+.toast-item.slidedown{
+  animation: SlideDown 0.8s;
+  animation-fill-mode: forwards;
+}
+.toast-item.slideup{
+  animation: SlideUp 0.8s;
+  animation-fill-mode: forwards;
+}
 .alertService-enter {
   opacity: 0;
   transform: translateX(-100%);
@@ -5,7 +48,7 @@
 .alertService-enter.alertService-enter-active {
   opacity: 1;
   transform: translateX(0%);
-  transition: opacity 400ms ease-in, transform 400ms ease-in;
+  transition: opacity 800ms ease-in, transform 800ms ease-in;
 }
 .alertService-leave {
   opacity: 1;
@@ -14,8 +57,11 @@
 .alertService-leave.alertService-leave-active {
   opacity: 0;
   transform: translateX(-100%);
-  transition: opacity 500ms, transform 500ms;
+  transition: opacity 800ms ease-out, transform 800ms ease-out;
 }
 .alertService {
-  transition: all 1000ms ease-in;
+  transition: all 800ms ease-in;
 }
+.toast-item{
+    transition: all 800ms ease-in;
+} 

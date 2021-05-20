@@ -1,51 +1,64 @@
 import * as React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import AlertComponent from './alertComponent';
-
+import { AlertServiceConfig } from './alertService';
+interface AlertContainerProps {
+  pubSubService: any;
+  defaultConfig: AlertServiceConfig;
+}
 export type doctype = Document;
-let timerIds: NodeJS.Timeout[] = [];
-const AlertContainer = (props: { pubSubService: any; config: any }) => {
-  const { pubSubService, config = { position: 'left' } } = props;
+const AlertContainer = (props: AlertContainerProps) => {
+  const { pubSubService, defaultConfig } = props;
+  const { transitionDelay, position } = defaultConfig;
   const [alerts, setAlerts] = React.useState<any[]>([]);
+  const [enter, setEnter] = React.useState(false);
+  const [slideUp, setSlideUp] = React.useState<boolean>(false);
   const renderAlerts = () => (alerts.length > 0 ? alerts.map(renderSingleAlert) : null);
-  const renderSingleAlert = (alert: { toastId: any; onClose: any; dismissIn: any }, i: number) => {
-    const { toastId, onClose, dismissIn = config.dismissIn } = alert;
-    let calcBottom: any = undefined;
-    let calcTop: any = undefined;
+  const renderSingleAlert = (alert: { toastId: any; onClose: any; dismissIn: any }, i: number, alertsStack: any) => {
+    const { toastId } = alert;
+    let calcBottom: any;
+    let calcTop: any;
     if (i === 0) {
-      timerIds.every(timeoutId => clearTimeout(timeoutId));
-      timerIds = [];
       calcBottom = 32;
     } else if (i === 1) {
       calcTop = 20;
     } else {
-      calcTop = -10;
-    }
-    if (dismissIn && i === 0) {
-      timerIds.push(setTimeout(() => dismiss(toastId, onClose), dismissIn));
+      const prevEle = document.getElementById(`alert-toast__${alertsStack[i].toastId}`);
+      const prevTop = prevEle ? prevEle.offsetHeight * 1 + prevEle.style.top.match(/\d+/g)[1] * 1 : 90 * i;
+      calcTop = -prevTop;
     }
     return (
       <AlertComponent
         bottom={calcBottom}
         top={calcTop}
-        leftOrRight={config.position}
+        zIndex={alertsStack.length - i}
+        leftOrRight={position}
         wrapId={`alert-toast__${toastId}`}
-        alert={alert}
+        alert={{ ...defaultConfig, ...alert }}
         key={toastId}
+        indexNumber={i}
         wrapClassName="alertService"
-        onClose={() => dismiss(toastId, onClose)}
+        onDismiss={dismiss}
+        addingNew={enter}
+        setSlideUp={setSlideUp}
+        slidingUp={slideUp}
       />
     );
   };
 
   const addToast = (toast: any, toastId: any) => {
-    const nalerts:any[] = alerts.slice();
-    nalerts.unshift({ ...toast, toastId });
-    setAlerts(nalerts);
+    setEnter(true);
+    setTimeout(() => {
+      const nalerts: any[] = alerts.slice();
+      nalerts.unshift({ ...toast, toastId });
+      setEnter(false);
+      setAlerts(nalerts);
+    }, transitionDelay);
   };
   const removeToast = (toastId: number) => {
-    const ralerts:any[] = alerts.slice().filter((alert:any) => alert.toastId !== toastId);
+    const ralerts: any[] = alerts.slice().filter((alert: any) => alert.toastId !== toastId);
     setAlerts(ralerts);
+    setSlideUp(false);
   };
 
   React.useEffect(() => {
@@ -62,7 +75,11 @@ const AlertContainer = (props: { pubSubService: any; config: any }) => {
   };
 
   return (
-    <ReactCSSTransitionGroup transitionName="alertService" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+    <ReactCSSTransitionGroup
+      transitionName="alertService"
+      transitionEnterTimeout={transitionDelay}
+      transitionLeaveTimeout={transitionDelay}
+    >
       {renderAlerts()}
     </ReactCSSTransitionGroup>
   );
