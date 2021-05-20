@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ProgressRing, Icon } from '@/index';
+import { ProgressRing, Button } from '@/index';
 import { FileStatus } from './FileUploaderItem';
 
 export interface FileUploaderStatusProps {
@@ -25,13 +25,15 @@ export const FileUploaderStatus = (props: FileUploaderStatusProps) => {
 
     case 'error':
       return (
-        <Icon
-          name="refresh"
-          size={20}
+        <Button
+          appearance="transparent"
+          size="regular"
           onClick={onRetry}
-          className="mr-4 cursor-pointer"
+          icon="refresh"
+          className="mr-2"
         />
       );
+
     default:
       return null;
   }
