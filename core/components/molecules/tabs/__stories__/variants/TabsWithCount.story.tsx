@@ -3,17 +3,18 @@ import { action } from '@storybook/addon-actions';
 import { Tabs } from '@/index';
 
 // CSF format story
-export const all = () => {
+export const tabsWithCount = () => {
   const tabs = [
     {
       count: 10,
       label: 'Tab(Recommended)'
     },
     {
-      icon: 'call_received',
+      count: 12,
       label: 'All'
     },
     {
+      count: 9,
       label: 'Extras',
       disabled: true
     },
@@ -42,9 +43,11 @@ const customCode = `() => {
       label: 'Tab(Recommended)'
     },
     {
-      icon: 'call_received',
+      count: 12,
       label: 'All'
-    }, {
+    },
+    {
+      count: 9,
       label: 'Extras',
       disabled: true
     },
@@ -62,7 +65,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Tabs/All',
+  title: 'Components/Tabs/Variants/Tabs With Count',
   component: Tabs,
   parameters: {
     docs: {
