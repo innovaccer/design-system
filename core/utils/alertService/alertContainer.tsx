@@ -1,31 +1,54 @@
 import * as React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import AlertComponent from './alertComponent';
-import { AlertServiceConfig } from './alertService';
+import { AlertServiceConfig, PubSubServiceProps } from './alertService';
+import { ToastProps } from '@/index.type';
+
+type autoHiderBarProp = { style: object | undefined } | undefined;
+export interface AlertServiceToastProps extends ToastProps {
+  toastId: string;
+  dismissIn?: number;
+  toastClassName: string;
+  autoHiderBar?: autoHiderBarProp;
+}
+
 interface AlertContainerProps {
-  pubSubService: any;
+  pubSubService: PubSubServiceProps;
   defaultConfig: AlertServiceConfig;
 }
+
+const pendingToasts: AlertServiceToastProps[] = [];
+
 export type doctype = Document;
+
 const AlertContainer = (props: AlertContainerProps) => {
   const { pubSubService, defaultConfig } = props;
   const { transitionDelay, position } = defaultConfig;
-  const [alerts, setAlerts] = React.useState<any[]>([]);
-  const [enter, setEnter] = React.useState(false);
-  const [slideUp, setSlideUp] = React.useState<boolean>(false);
+  const [alerts, setAlerts] = React.useState<AlertServiceToastProps[]>([]);
+  const [enterFlag, setEnterFlag] = React.useState(false);
+  const [removeFlag, setRemoveFlag] = React.useState<boolean>(false);
+
   const renderAlerts = () => (alerts.length > 0 ? alerts.map(renderSingleAlert) : null);
-  const renderSingleAlert = (alert: { toastId: any; onClose: any; dismissIn: any }, i: number, alertsStack: any) => {
+
+  const renderSingleAlert = (alert: AlertServiceToastProps, i: number, alertsStack: AlertServiceToastProps[]) => {
     const { toastId } = alert;
-    let calcBottom: any;
-    let calcTop: any;
+    let calcBottom: number | undefined;
+    let calcTop: number | undefined;
     if (i === 0) {
       calcBottom = 32;
     } else if (i === 1) {
       calcTop = 20;
+    } else if (i === 2) {
+      try {
+        const prevEle = document.getElementById(`alert-toast__${alertsStack[i - 1].toastId}`);
+        const prevTop = prevEle ? prevEle.offsetHeight * 1 - 5 : new Error('Previous element not found');
+        calcTop = -prevTop;
+      } catch (error) {
+        calcTop = -20;
+        console.error(error);
+      }
     } else {
-      const prevEle = document.getElementById(`alert-toast__${alertsStack[i].toastId}`);
-      const prevTop = prevEle ? prevEle.offsetHeight * 1 + prevEle.style.top.match(/\d+/g)[1] * 1 : 90 * i;
-      calcTop = -prevTop;
+      calcTop = -120;
     }
     return (
       <AlertComponent
@@ -39,26 +62,35 @@ const AlertContainer = (props: AlertContainerProps) => {
         indexNumber={i}
         wrapClassName="alertService"
         onDismiss={dismiss}
-        addingNew={enter}
-        setSlideUp={setSlideUp}
-        slidingUp={slideUp}
+        addingNew={enterFlag}
+        removingNew={removeFlag}
       />
     );
   };
 
-  const addToast = (toast: any, toastId: any) => {
-    setEnter(true);
-    setTimeout(() => {
-      const nalerts: any[] = alerts.slice();
-      nalerts.unshift({ ...toast, toastId });
-      setEnter(false);
-      setAlerts(nalerts);
-    }, transitionDelay);
+  const addToast = (toast: AlertServiceToastProps) => {
+    if (enterFlag) {
+      pendingToasts.push(toast);
+    } else {
+      setEnterFlag(true);
+      setTimeout(() => {
+        const nalerts: AlertServiceToastProps[] = alerts.slice();
+        nalerts.unshift(toast);
+        setEnterFlag(false);
+        setAlerts(nalerts);
+      }, transitionDelay);
+    }
   };
-  const removeToast = (toastId: number) => {
-    const ralerts: any[] = alerts.slice().filter((alert: any) => alert.toastId !== toastId);
-    setAlerts(ralerts);
-    setSlideUp(false);
+
+  const removeToast = (toastId: string) => {
+    setRemoveFlag(true);
+    setTimeout(() => {
+      const ralerts: AlertServiceToastProps[] = alerts
+        .slice()
+        .filter((alert: AlertServiceToastProps) => alert.toastId !== toastId);
+      setAlerts(ralerts);
+      setRemoveFlag(false);
+    }, transitionDelay + 500);
   };
 
   React.useEffect(() => {
@@ -69,9 +101,17 @@ const AlertContainer = (props: AlertContainerProps) => {
       removeUnsub();
     };
   });
-  const dismiss = (id: number, onClose: () => void) => {
+
+  React.useEffect(() => {
+    if (!enterFlag && pendingToasts.length) {
+      const newToast = pendingToasts.shift();
+      newToast ? setTimeout(() => addToast(newToast), 900) : null;
+    }
+  }, [alerts]);
+
+  const dismiss = (id: string, onClose: (id?: string) => void | undefined) => {
     removeToast(id);
-    return onClose ? onClose() : null;
+    return onClose ? onClose(id) : null;
   };
 
   return (

@@ -2,23 +2,30 @@ import * as React from 'react';
 import uidGenerator from './uidGenerator';
 
 interface IValueHelper {
-  required?: boolean,
-  iterate?: boolean,
-  maxLen?: number
-};
+  required?: boolean;
+  iterate?: boolean;
+  maxLen?: number;
+}
 
 const isMapper = (value: any) => typeof value === 'object' && !Array.isArray(value) && !React.isValidElement(value);
 
-const filterRequired = (props: Record<string, any>) => Object.keys(props)
-  .reduce((out, curr) => {
-    if (props[curr].required) out.required[curr] = props[curr];
-    else {
-      out.optional[curr] = props[curr];
-    }
-    return out;
-  }, { required: {}, optional: {} } as Record<string, any>);
+const filterRequired = (props: Record<string, any>) =>
+  Object.keys(props).reduce(
+    (out, curr) => {
+      if (props[curr].required) out.required[curr] = props[curr];
+      else {
+        out.optional[curr] = props[curr];
+      }
+      return out;
+    },
+    { required: {}, optional: {} } as Record<string, any>
+  );
 
-const iterateComb = (requiredComb: Record<string, any>[], optionalComb: Record<string, any>[], testFunc?: ((props: Record<string, any>) => void)): Record<string, any>[] => {
+const iterateComb = (
+  requiredComb: Record<string, any>[],
+  optionalComb: Record<string, any>[],
+  testFunc?: (props: Record<string, any>) => void
+): Record<string, any>[] => {
   const combinations: Record<string, any>[] = [];
 
   requiredComb.forEach(reqProps => {
@@ -26,11 +33,11 @@ const iterateComb = (requiredComb: Record<string, any>[], optionalComb: Record<s
       const allProps = { ...reqProps, ...optProps };
       if (!!testFunc) testFunc(allProps);
       else combinations.push(allProps);
-    })
-  })
+    });
+  });
 
   return combinations;
-}
+};
 
 const getCombinations = (Props: Record<string, any>): Record<string, any>[] => {
   const combinations: Record<string, any>[] = [];
@@ -50,7 +57,7 @@ const getCombinations = (Props: Record<string, any>): Record<string, any>[] => {
           iterateProps(currProps, propIndex + 1);
         }
       }
-    }
+    };
 
     const currProps = { ...curr };
 
@@ -67,13 +74,16 @@ const getCombinations = (Props: Record<string, any>): Record<string, any>[] => {
       currProps[propName] = propValue;
       iterateProps(currProps, propIndex + 1);
     }
-  }
+  };
 
   if (propNames.length) iterateProps(Props);
   return combinations.length ? combinations : [{}];
-}
+};
 
-const iterateMapper = (Mapper: Record<string, any>, testFunc?: ((props: Record<string, any>) => void)): Record<string, any>[] | void => {
+const iterateMapper = (
+  Mapper: Record<string, any>,
+  testFunc?: (props: Record<string, any>) => void
+): Record<string, any>[] | void => {
   Mapper = filterRequired(Mapper);
   const requiredComb = getCombinations(Mapper.required);
   const optionalComb = getCombinations(Mapper.optional);
@@ -83,18 +93,19 @@ const iterateMapper = (Mapper: Record<string, any>, testFunc?: ((props: Record<s
   } else {
     iterateComb(requiredComb, optionalComb, testFunc);
   }
-}
+};
 
-export const testHelper = (Mapper: Record<string, any>, testFunc: ((props: Record<string, any>) => void)): void => {
+export const testHelper = (Mapper: Record<string, any>, testFunc: (props: Record<string, any>) => void): void => {
   iterateMapper(Mapper, testFunc);
-}
+};
 
-export const filterUndefined = (props: Record<string, any>) => Object.keys(props)
-  .filter(prop => props[prop] !== undefined)
-  .reduce((out: Record<string, any>, curr) => {
-    out[curr] = props[curr];
-    return out;
-  }, {});
+export const filterUndefined = (props: Record<string, any>) =>
+  Object.keys(props)
+    .filter(prop => props[prop] !== undefined)
+    .reduce((out: Record<string, any>, curr) => {
+      out[curr] = props[curr];
+      return out;
+    }, {});
 
 export const valueHelper = (props: any, options: IValueHelper = {}): Record<string, any> => {
   const { required, iterate } = options;
@@ -103,9 +114,7 @@ export const valueHelper = (props: any, options: IValueHelper = {}): Record<stri
 };
 
 export const arrayHelper = (props: any[], options: IValueHelper = {}) => {
-  const {
-    maxLen = props.length
-  } = options;
+  const { maxLen = props.length } = options;
 
   const generateComb = () => {
     const combinations: any[] = [];
@@ -122,38 +131,40 @@ export const arrayHelper = (props: any[], options: IValueHelper = {}) => {
         combinations.push(newCurr);
         if (i < maxLen - 1) iterate(i + 1, newCurr);
       }
-    }
+    };
     for (let i = 0; i < props.length; i++) {
       iterate(i);
     }
     return combinations;
-  }
+  };
 
   return valueHelper(generateComb(), { iterate: true });
 };
 
 export const testMessageHelper = (attr: Record<string, any>) => `
-  ${Object.keys(attr).map(k => `${k}: ${JSON.stringify(attr[k], JSONStringifyHelper)}`).join(', ')}
+  ${Object.keys(attr)
+    .map(k => `${k}: ${JSON.stringify(attr[k], JSONStringifyHelper)}`)
+    .join(', ')}
 `;
 
 export const JSONStringifyHelper = (_key: string, value: any) => {
   if (typeof value === 'function') return '[Function]';
   if (React.isValidElement(value)) return '[ReactNode]';
   return value;
-}
+};
 
 export function pubSub() {
-  const subscribers:any = {}; 
+  const subscribers: any = {};
 
   function publish(eventName: string | number, data: any) {
     if (!Array.isArray(subscribers[eventName])) {
       return;
     }
-    let uid = uidGenerator();
-    subscribers[eventName].forEach((callback: (arg0: any, uid: string) => void) => {
-      callback(data,uid);
-    })
-    return uid;
+    let toastId = uidGenerator();
+    subscribers[eventName].forEach((callback: (arg0: any) => void) => {
+      callback({ ...data, toastId });
+    });
+    return toastId;
   }
 
   function subscribe(eventName: string | number, callback: any) {
@@ -161,11 +172,11 @@ export function pubSub() {
       subscribers[eventName] = [];
     }
     subscribers[eventName].push(callback);
-     const index = subscribers[eventName].length - 1;
-    return  () => subscribers[eventName].splice(index, 1)
+    const index = subscribers[eventName].length - 1;
+    return () => subscribers[eventName].splice(index, 1);
   }
   return {
     publish,
     subscribe
-  }
+  };
 }
