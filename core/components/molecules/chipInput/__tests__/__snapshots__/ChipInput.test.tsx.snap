@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChipInput component 
+  disabled: false, allowDuplicates: true, value: ["1020","80"], chipOptions: {"clearButton":true,"onClick":"[Function]"}, placeholder: "Add value", onChange: "[Function]", onBlur: "[Function]", onFocus: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="ChipInput ChipInput--withChips"
+      data-test="DesignSystem-ChipInput"
+    >
+      <div
+        class="ChipInput-wrapper"
+      >
+        <div
+          class="Chip-wrapper Chip Chip--input my-2 mx-2"
+          data-test="DesignSystem-ChipInput--Chip"
+        >
+          <span
+            class="Text Text--default Text--regular"
+            data-test="DesignSystem-Text"
+          >
+            1020
+          </span>
+          <i
+            class="material-icons Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+            style="font-size: 16px; width: 16px;"
+          >
+            clear
+          </i>
+        </div>
+        <div
+          class="Chip-wrapper Chip Chip--input my-2 mx-2"
+          data-test="DesignSystem-ChipInput--Chip"
+        >
+          <span
+            class="Text Text--default Text--regular"
+            data-test="DesignSystem-Text"
+          >
+            80
+          </span>
+          <i
+            class="material-icons Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+            style="font-size: 16px; width: 16px;"
+          >
+            clear
+          </i>
+        </div>
+        <input
+          class="ChipInput-input"
+          data-test="DesignSystem-ChipInput--Input"
+          placeholder="Add value"
+          value=""
+        />
+      </div>
+      <i
+        class="material-icons Icon Icon--subtle ChipInput-icon"
+        data-test="DesignSystem-ChipInput--Icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        close
+      </i>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ChipInput component 
+  disabled: true, allowDuplicates: true, value: ["1020","80"], chipOptions: {"clearButton":true,"onClick":"[Function]"}, placeholder: "Add value", onChange: "[Function]", onBlur: "[Function]", onFocus: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="ChipInput ChipInput--disabled ChipInput--withChips"
+      data-test="DesignSystem-ChipInput"
+    >
+      <div
+        class="ChipInput-wrapper"
+      >
+        <div
+          class="Chip-wrapper Chip Chip-input--disabled my-2 mx-2"
+          data-test="DesignSystem-ChipInput--Chip"
+        >
+          <span
+            class="Text Text--disabled Text--regular"
+            data-test="DesignSystem-Text"
+          >
+            1020
+          </span>
+          <i
+            class="material-icons Icon Icon--disabled Chip-icon Chip-icon--right"
+            style="font-size: 16px; width: 16px;"
+          >
+            clear
+          </i>
+        </div>
+        <div
+          class="Chip-wrapper Chip Chip-input--disabled my-2 mx-2"
+          data-test="DesignSystem-ChipInput--Chip"
+        >
+          <span
+            class="Text Text--disabled Text--regular"
+            data-test="DesignSystem-Text"
+          >
+            80
+          </span>
+          <i
+            class="material-icons Icon Icon--disabled Chip-icon Chip-icon--right"
+            style="font-size: 16px; width: 16px;"
+          >
+            clear
+          </i>
+        </div>
+        <input
+          class="ChipInput-input"
+          data-test="DesignSystem-ChipInput--Input"
+          disabled=""
+          placeholder="Add value"
+          value=""
+        />
+      </div>
+      <i
+        class="material-icons Icon Icon--subtle ChipInput-icon"
+        data-test="DesignSystem-ChipInput--Icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        close
+      </i>
+    </div>
+  </div>
+</body>
+`;

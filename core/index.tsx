@@ -47,6 +47,7 @@ export { Text } from './components/atoms/text';
 export { Textarea } from './components/atoms/textarea';
 export { Toast } from './components/atoms/toast';
 export { Popover } from './components/molecules/popover';
+export { ChipInput } from './components/molecules/chipInput';
 export { VerticalNav } from './components/organisms/verticalNav';
 export { HorizontalNav } from './components/organisms/horizontalNav';
 export { Tooltip } from './components/molecules/tooltip';
