@@ -69,7 +69,7 @@ export { PlaceholderParagraph } from './components/atoms/placeholderParagraph';
 export { ProgressRing } from './components/atoms/progressRing';
 export { Stepper } from './components/molecules/stepper';
 export { DateRangePicker } from './components/organisms/dateRangePicker';
-export { TabsWrapper, Tab } from './components/molecules/tabs';
+export { TabsWrapper, Tab, Tabs } from './components/molecules/tabs';
 export { Dropzone } from './components/molecules/dropzone';
 export { FileUploader, FileUploaderList } from './components/molecules/fileUploader';
 export { Grid } from './components/organisms/grid';
