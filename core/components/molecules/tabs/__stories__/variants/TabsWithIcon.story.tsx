@@ -1,35 +1,41 @@
 import * as React from 'react';
+import { number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Tabs } from '@/index';
+import { updateKnob } from '@/utils/storybookEventEmitter';
 
 // CSF format story
-export const all = () => {
+export const tabsWithIcon = () => {
   const tabs = [
     {
-      count: 10,
+      icon: 'warning',
       label: 'Tab(Recommended)'
     },
     {
-      icon: 'call_received',
+      icon: 'check_circle',
       label: 'All'
     },
     {
+      icon: 'warning',
       label: 'Extras',
       disabled: true
     },
   ];
 
-  const [activeIndex, setActiveIndex] = React.useState(0);
+  const active = number(
+    'active',
+    0
+  );
 
   const onTabChangeHandler = (tabIndex: number) => {
-    setActiveIndex(tabIndex);
+    updateKnob('active', tabIndex);
     return action(`tab-change: ${tabIndex}`)();
   };
 
   return (
     <Tabs
       tabs={tabs}
-      activeIndex={activeIndex}
+      active={active}
       onTabChange={onTabChangeHandler}
     />
   );
@@ -38,31 +44,33 @@ export const all = () => {
 const customCode = `() => {
   const tabs = [
     {
-      count: 10,
+      icon: 'warning',
       label: 'Tab(Recommended)'
     },
     {
-      icon: 'call_received',
+      icon: 'check_circle',
       label: 'All'
-    }, {
+    },
+    {
+      icon: 'warning',
       label: 'Extras',
       disabled: true
     },
   ];
 
-  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [active, setActive] = React.useState(0);
 
   return(
     <Tabs
       tabs={tabs}
-      activeIndex={activeIndex}
+      active={active}
       onTabChange={setActiveIndex}
     />
   );
 }`;
 
 export default {
-  title: 'Components/Tabs/All',
+  title: 'Components/Tabs/Variants/Tabs With Icon',
   component: Tabs,
   parameters: {
     docs: {

@@ -63,3 +63,23 @@
     min-width: inherit;
     justify-content: space-between;
 }
+
+.Tabs {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    height: var(--spacing-4);
+}
+
+.Tabs--withSeperator {
+    border-bottom: var(--border);
+}
+
+.Tabs-pills {
+    cursor: pointer;
+    margin-right: var(--spacing);
+}
+
+.Tabs-pills--disabled {
+    opacity: 60%;
+}
