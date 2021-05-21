@@ -194,7 +194,7 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
   const wrapperClassNames = (i: number) =>
     classNames({
       'VerificationCodeInput-Input': true,
-      'ml-3': i > 0
+      'ml-4': i > 0
     }, className);
 
   return (
