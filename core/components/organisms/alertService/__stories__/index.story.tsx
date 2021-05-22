@@ -1,9 +1,12 @@
 import * as React from 'react';
-import { AlertService } from '../../../index';
+import { AlertService } from '@/index';
 const newAlert = new AlertService();
 const addT = (conf: string) => {
   newAlert.add(JSON.parse(conf));
 };
+// const removeService = () => {
+//   newAlert.removeAlertService();
+// }
 // arbitrary js object:
 const myJsObj = {
   dismissIn: 3500,
@@ -57,7 +60,6 @@ const customCode = `
   //           onClick: (e: any)=>alert(e)
   //        }]}
   //  newAlert.add({title: "test", appearance: "info", message: "test message"});
-  //  newAlert.remove(toastId);
   const [conf, setConf] = React.useState(confSample);
   return(
    <>
@@ -86,7 +88,7 @@ const customCode = `
 }
 `;
 export default {
-  title: 'Patterns/AlertService/Alert Service',
+  title: 'Services/AlertService/Alert Service',
   component: AlertService,
   parameters: {
     docs: {

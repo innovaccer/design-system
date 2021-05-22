@@ -4,7 +4,7 @@ import { Toast } from '@/index';
 import { AlertServiceToastProps } from './alertContainer';
 
 interface AlertProps {
-  onDismiss: (toastId: string, onClose: (toastId?: string) => void | undefined) => void;
+  onDismiss: (toastId: string, onClose?: () => void | undefined) => void;
   alert: AlertServiceToastProps;
   wrapId?: string;
   wrapClassName?: string;
@@ -31,10 +31,10 @@ const AlertComponent = (props: AlertProps) => {
     removingNew
   } = props;
   const { appearance, toastId, onClose, dismissIn, toastClassName, autoHiderBar } = alert;
-  const { style, ...autoHiderBarProps } = autoHiderBar;
+  const { style: autoHiderBarStyle, ...autoHiderBarProps } = autoHiderBar;
   const [exit, setExit] = React.useState(false);
   const [width, setWidth] = React.useState(0);
-  const [intervalId, setIntervalId] = React.useState<NodeJS.Timeout | null>(null);
+  const [intervalId, setIntervalId] = React.useState<any>(null);
   const toastStyle: CSSProperties = {
     position: 'fixed',
     zIndex: zIndex + 50,
@@ -80,7 +80,7 @@ const AlertComponent = (props: AlertProps) => {
       handleCloseToast();
     } else if (indexNumber === 0 && dismissIn) {
       handleStartTimer();
-      return () => clearInterval(intervalId);
+  //    return () => clearInterval(intervalId);
     }
   }, [indexNumber]);
 
@@ -106,7 +106,7 @@ const AlertComponent = (props: AlertProps) => {
           {...autoHiderBarProps}
           style={{
             width: `${width}%`,
-            ...style
+            ...autoHiderBarStyle
           }}
         />
       )}

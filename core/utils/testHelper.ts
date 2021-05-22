@@ -1,5 +1,4 @@
 import * as React from 'react';
-import uidGenerator from './uidGenerator';
 
 interface IValueHelper {
   required?: boolean;
@@ -152,31 +151,3 @@ export const JSONStringifyHelper = (_key: string, value: any) => {
   if (React.isValidElement(value)) return '[ReactNode]';
   return value;
 };
-
-export function pubSub() {
-  const subscribers: any = {};
-
-  function publish(eventName: string | number, data: any) {
-    if (!Array.isArray(subscribers[eventName])) {
-      return;
-    }
-    let toastId = uidGenerator();
-    subscribers[eventName].forEach((callback: (arg0: any) => void) => {
-      callback({ ...data, toastId });
-    });
-    return toastId;
-  }
-
-  function subscribe(eventName: string | number, callback: any) {
-    if (!Array.isArray(subscribers[eventName])) {
-      subscribers[eventName] = [];
-    }
-    subscribers[eventName].push(callback);
-    const index = subscribers[eventName].length - 1;
-    return () => subscribers[eventName].splice(index, 1);
-  }
-  return {
-    publish,
-    subscribe
-  };
-}

@@ -4,12 +4,12 @@ import AlertComponent from './alertComponent';
 import { AlertServiceConfig, PubSubServiceProps } from './alertService';
 import { ToastProps } from '@/index.type';
 
-type autoHiderBarProp = { style: object | undefined } | undefined;
+type autoHiderBarProp = { style: object };
 export interface AlertServiceToastProps extends ToastProps {
   toastId: string;
   dismissIn?: number;
   toastClassName: string;
-  autoHiderBar?: autoHiderBarProp;
+  autoHiderBar: autoHiderBarProp;
 }
 
 interface AlertContainerProps {
@@ -109,9 +109,9 @@ const AlertContainer = (props: AlertContainerProps) => {
     }
   }, [alerts]);
 
-  const dismiss = (id: string, onClose: (id?: string) => void | undefined) => {
+  const dismiss = (id: string, onClose?: () => void | undefined) => {
     removeToast(id);
-    return onClose ? onClose(id) : null;
+    return onClose ? onClose() : null;
   };
 
   return (
