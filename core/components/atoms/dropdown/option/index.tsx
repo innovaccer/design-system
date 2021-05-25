@@ -126,16 +126,16 @@ const Option = (props: OptionProps) => {
   };
 
   const onClickHandler = (e: ClickEvent) => {
+    e.stopPropagation();
     if (disabled) return;
 
-    e.stopPropagation();
     if (onClick) onClick();
   };
 
   const onChangeHandler = (e: ChangeEvent) => {
+    e.stopPropagation();
     if (disabled) return;
 
-    e.stopPropagation();
     if (onChange) onChange(e);
   };
 
