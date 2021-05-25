@@ -96,19 +96,57 @@ const CopyComp = props => {
   );
 };
 
-const renderCodeBlock = (val: string) => (
-  <div style={{ position: 'relative' }}>
+const ShowMoreLessButton = ({ onClick, text = 'More' }) => (
+    <div
+      style={{
+        position: 'absolute',
+        right: '0',
+        bottom: '0',
+        zIndex: 10
+      }}
+    >
+      <Button
+        size="tiny"
+        style={{ borderRadius: '0', borderBottomLeftRadius: '4px' }}
+        appearance="basic"
+        onClick={onClick}
+      >
+        {`Show ${text}`}
+      </Button>
+    </div>
+  );
+
+const getHeight = (shouldShowMore: boolean, showMoreHTML: boolean) => {
+  if (shouldShowMore) {
+    return showMoreHTML ? '100%' : '200px';
+  }
+  return '100%';
+};
+
+const renderCodeBlock = (val: string, setShowMoreHTML, showMoreHTML) => {
+  const shouldShowMore = val.split('\n').length > 9;
+  return (
+  <div style={{ position: 'relative', height: getHeight(shouldShowMore, showMoreHTML) }}>
     <style>
       {`pre {
         margin: 0;
       }`}
     </style>
     <CopyComp onClick={() => copyCode(val)} />
-    <SyntaxHighlighter language="javascript" style={vs2015} showLineNumbers={true}>
-      {val}
-    </SyntaxHighlighter>
+      <SyntaxHighlighter language="javascript" style={vs2015} showLineNumbers={true}>
+        {val}
+      </SyntaxHighlighter>
+      {shouldShowMore &&
+        (
+        <ShowMoreLessButton
+          onClick={() => setShowMoreHTML(!showMoreHTML)}
+          text={showMoreHTML ? 'Less' : 'More'}
+        />
+        )
+      }
   </div>
-);
+  );
+};
 
 const getStory = () => {
   const { storyId } = __STORYBOOK_STORY_STORE__.getSelection();
@@ -153,12 +191,14 @@ const StoryComp = props => {
   const [jsxCode, setJsxCode] = React.useState<string>(getRawPreviewCode(customCode, comp));
   const [htmlCode, setHtmlCode] = React.useState<string>(`${html}`);
   const [isExpanded, setIsExpanded] = React.useState(isEmbed);
+  const [showMoreReact, setShowMoreReact] = React.useState<boolean>(false);
+  const [showMoreHTML, setShowMoreHTML] = React.useState<boolean>(false);
 
   const importScope = props.imports;
 
   const renderHTMLTab = () => {
     if (!noHtml) {
-      return <Tab label={'HTML'}>{renderCodeBlock(htmlCode)}</Tab>;
+      return <Tab label={'HTML'}>{renderCodeBlock(htmlCode, setShowMoreHTML, showMoreHTML)}</Tab>;
     }
     return <></>;
   };
@@ -203,7 +243,7 @@ const StoryComp = props => {
   }
 
   const imports = React.useMemo(() => ({ ...DS, ...importScope }), []);
-
+  const shouldShowMore = jsxCode.split('\n').length > 9;
   return (
     <Card shadow={isEmbed ? 'none' : 'light'} className="overflow-hidden">
       <LiveProvider code={jsxCode} scope={imports}>
@@ -225,17 +265,25 @@ const StoryComp = props => {
             <div className="DocPage-editorTabs">
               <TabsWrapper activeTab={activeTab} onTabChange={tab => setActiveTab(tab)}>
                 <Tab label={'React'}>
-                  <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'relative', height: getHeight(shouldShowMore, showMoreReact) }}>
                     <CopyComp
                       onClick={() => {
                         const editor = document.querySelector('.npm__react-simple-code-editor__textarea');
                         if (editor) copyCode(editor.value);
                       }}
                     />
-                    <LiveEditor theme={vsDark} onChange={onChangeCode} />
+                    <LiveEditor  theme={vsDark} onChange={onChangeCode} />
+                    {shouldShowMore &&
+                      (
+                        <ShowMoreLessButton
+                          onClick={() => setShowMoreReact(!showMoreReact)}
+                          text={showMoreReact ? 'Less' : 'More'}
+                        />
+                      )
+                      }
                   </div>
                 </Tab>
-                {renderHTMLTab()}
+                  {renderHTMLTab()}
               </TabsWrapper>
             </div>
           </>
