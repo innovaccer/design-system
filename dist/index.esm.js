@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1622025389178 
+   * Generated on: 1622042853006 
    *      Package: @innovaccer/design-system
-   *      Version: v2.1.0
+   *      Version: v2.1.1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -18924,6 +18924,6 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
 
 VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-var version = "2.1.0";
+var version = "2.1.1";
 
 export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, CardBody, CardFooter, CardHeader, CardSubdued, ChatMessage, Checkbox, Chip, ChipGroup, ChipInput, Collapsible, Column, DatePicker, DateRangePicker, Dialog, Dropdown, Dropzone, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, HorizontalNav, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, MetricInput, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, Tabs, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, VerificationCodeInput, VerticalNav, version };
