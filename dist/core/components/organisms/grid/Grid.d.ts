@@ -16,6 +16,7 @@ export interface FetchDataOptions {
     searchTerm?: string;
 }
 export declare type fetchDataFunction = (options: FetchDataOptions) => Promise<{
+    searchTerm?: string;
     count: number;
     data: Data;
     schema: Schema;
@@ -103,6 +104,14 @@ interface GridState {
     init: boolean;
 }
 export declare class Grid extends React.Component<GridProps, GridState> {
+    currPageInfo: {
+        page: number;
+        scrollTop: number;
+    };
+    prevPageInfo: {
+        page: number;
+        scrollTop: number;
+    };
     constructor(props: GridProps);
     static defaultProps: {
         showHead: boolean;

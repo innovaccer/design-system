@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { BaseProps } from "../../../utils/types";
+import { BaseHtmlProps, BaseProps } from "../../../utils/types";
 export declare type Size = 'small' | 'regular' | 'large';
 export declare type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled' | 'success' | 'link';
-export interface TextProps extends BaseProps {
+export interface TextProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
     children: React.ReactText;
     weight?: 'strong' | 'medium';
     small?: boolean;

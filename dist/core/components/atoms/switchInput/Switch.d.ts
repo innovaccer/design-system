@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { BaseProps } from "../../../utils/types";
+import { OmitNativeProps, BaseProps } from "../../../utils/types";
 export declare type Size = 'regular' | 'tiny' | 'large';
 export declare type Appearance = 'primary' | 'alert' | 'success' | 'warning';
 declare type MouseEvent = React.ChangeEvent<HTMLInputElement>;
-export interface SwitchProps extends BaseProps {
+export interface SwitchProps extends BaseProps, OmitNativeProps<HTMLInputElement, 'onChange'> {
     size?: Size;
     appearance?: Appearance;
     defaultChecked?: boolean;

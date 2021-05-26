@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { BaseProps } from "../../../utils/types";
+import { BaseProps, OmitNativeProps } from "../../../utils/types";
 declare type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
 declare type Appearance = 'default' | 'subtle';
 declare type Size = 'regular' | 'tiny';
-export interface LinkProps extends BaseProps {
+export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, 'onClick'> {
     id?: string;
     appearance: Appearance;
     size: Size;

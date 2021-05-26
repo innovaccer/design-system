@@ -3,6 +3,7 @@ import { DropdownListProps, SelectAll, Selected, ChangeEvent } from "./DropdownL
 import { OptionSchema as Option } from "./option";
 import { BaseProps } from "../../../utils/types";
 declare type fetchOptionsFunction = (searchTerm: string) => Promise<{
+    searchTerm?: string;
     count: number;
     options: Option[];
 }>;

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { BaseProps } from "../../../utils/types";
+import { BaseProps, OmitNativeProps } from "../../../utils/types";
 export declare type Size = 'regular' | 'tiny';
 declare type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
-export interface CheckboxProps extends BaseProps {
+export interface CheckboxProps extends BaseProps, OmitNativeProps<HTMLInputElement, 'onChange'> {
     size?: Size;
     defaultChecked?: boolean;
     checked?: boolean;

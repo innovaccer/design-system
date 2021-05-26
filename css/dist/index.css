@@ -1697,6 +1697,64 @@ body {
 .ChipGroup-item:last-child {
     margin-right: 0;
 }
+.ChipInput {
+  display: flex;
+  flex-direction: row;
+  border-radius: var(--spacing-m);
+  border: var(--border);
+  padding-top: var(--spacing-m);
+  padding-bottom: var(--spacing-m);
+  padding-left: var(--spacing-s);
+  background: var(--white);
+  min-height: var(--spacing-xl);
+  cursor: text;
+}
+
+.ChipInput--withChips {
+  padding-top: var(--spacing-s);
+  padding-bottom: var(--spacing-s);
+}
+
+.ChipInput-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: inherit;
+  flex-grow: 1;
+}
+
+.ChipInput:focus-within {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
+.ChipInput--disabled {
+  background: var(--secondary-lightest);
+  border-color: var(--secondary-light);
+  pointer-events: none;
+}
+
+.ChipInput-input {
+  border: none;
+  outline: none;
+  width: inherit;
+  margin-left: var(--spacing-m);
+  display: flex;
+  flex-grow: 1;
+}
+
+.ChipInput-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--spacing-2);
+  margin-top: var(--spacing-m);
+  padding-top: var(--spacing-s);  
+  margin-right: var(--spacing-l);
+  cursor: pointer;
+}
+
 .Collapsible-wrapper {
   position: relative;
   z-index: 600;
@@ -3291,22 +3349,22 @@ body {
   
   .Message--alert {
     border-color: var(--alert);
-    background-color: var(--alert-lightest);
+    background-color: rgba(249, 226, 226, 0.4);
   }
   
   .Message--success {
     border-color: var(--success);
-    background-color: var(--success-lightest);
+    background-color: rgba(215, 239, 223, 0.4);
   }
   
   .Message--info {
     border-color: var(--primary);
-    background-color: var(--primary-lightest);
+    background-color: rgba(220, 236, 249, 0.4);
   }
   
   .Message--warning {
     border-color: var(--accent1);
-    background-color: var(--accent1-lightest);
+    background-color: rgba(255, 245, 199, 0.4);
   }
 
   .Message--default {
@@ -4784,9 +4842,14 @@ body {
     margin-right: 0;
 }
 
-.Tab--active, .Tab:hover {
+.Tab--active {
     margin-bottom: -1px;
     border-bottom: var(--spacing-s) solid var(--primary);
+}
+
+.Tab:hover {
+    margin-bottom: -1px;
+    border-bottom: var(--spacing-s) solid var(--primary-dark);
 }
 
 .Tab--disabled {
@@ -4805,14 +4868,30 @@ body {
 
 .Tab-icon {
     display: flex;
-    margin-right: var(--spacing-l);
-    font-size: var(--font-size-m);
-    color: var(--text-subtle);
+    min-width: inherit;
+    justify-content: space-between;
 }
 
-.Tab-icon--active {
-    color: var(--text);
+.Tabs {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    height: var(--spacing-4);
 }
+
+.Tabs--withSeperator {
+    border-bottom: var(--border);
+}
+
+.Tabs-pills {
+    cursor: pointer;
+    margin-right: var(--spacing);
+}
+
+.Tabs-pills--disabled {
+    opacity: 60%;
+}
+
 /* Textarea */
 
 .Textarea {
@@ -5457,6 +5536,8 @@ body {
 .Row {
   display: flex;
   flex-wrap: wrap;
+  flex-grow: 1;
+  width: 100%;
 }
 
 .Col {

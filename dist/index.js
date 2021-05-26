@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1620401784245 
+   * Generated on: 1622025389584 
    *      Package: @innovaccer/design-system
-   *      Version: v2.1.0-0
+   *      Version: v2.1.0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -643,6 +643,10 @@
           setAnimate(false);
           enableBodyScroll();
         }
+
+        return function () {
+          enableBodyScroll();
+        };
       }, [props.open]);
       var BackdropElement = /*#__PURE__*/ReactDOM__namespace.createPortal( /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Backdrop",
@@ -944,14 +948,15 @@
           children = props.children,
           weight = props.weight,
           small = props.small,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
+          className = props.className,
+          rest = __rest(props, ["appearance", "size", "children", "weight", "small", "className"]);
+
       var classes = classNames__default['default']((_a = {
         Text: true
       }, _a["Text--" + appearance] = appearance, _a["Text--" + weight] = weight, _a["Text--" + size] = size, _a['Text--small'] = size === 'small' || small, _a), className);
       return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
         "data-test": "DesignSystem-Text"
-      }, baseProps, {
+      }, rest, {
         className: classes,
         componentType: "span"
       }), children);
@@ -1029,8 +1034,10 @@
           name = props.name,
           value = props.value,
           className = props.className;
+          props.checked;
+          var rest = __rest(props, ["size", "tabIndex", "defaultChecked", "indeterminate", "label", "disabled", "onChange", "name", "value", "className", "checked"]);
+
       var ref = React__namespace.useRef(null);
-      var baseProps = extractBaseProps(props);
       React__namespace.useImperativeHandle(forwardedRef, function () {
         return ref.current;
       });
@@ -1073,7 +1080,7 @@
         className: CheckboxClass
       }, /*#__PURE__*/React__namespace.createElement("div", {
         className: CheckboxOuterWrapper
-      }, /*#__PURE__*/React__namespace.createElement("input", __assign({}, baseProps, {
+      }, /*#__PURE__*/React__namespace.createElement("input", __assign({}, rest, {
         type: "checkbox",
         defaultChecked: defaultChecked,
         onChange: onChangeHandler,
@@ -1270,14 +1277,14 @@
       };
 
       var onClickHandler = function onClickHandler(e) {
-        if (disabled) return;
         e.stopPropagation();
+        if (disabled) return;
         if (onClick) onClick();
       };
 
       var onChangeHandler = function onChangeHandler(e) {
-        if (disabled) return;
         e.stopPropagation();
+        if (disabled) return;
         if (onChange) onChange(e);
       };
 
@@ -1687,9 +1694,6 @@
       };
 
       var renderSearch = function renderSearch() {
-        var loadingOptions = props.loadingOptions,
-            searchInit = props.searchInit;
-        var disable = loadingOptions && !searchInit;
         return /*#__PURE__*/React__namespace.createElement("div", {
           className: 'Dropdown-inputWrapper'
         }, /*#__PURE__*/React__namespace.createElement(Input, {
@@ -1697,7 +1701,6 @@
           icon: 'search',
           value: searchTerm,
           placeholder: 'Search..',
-          disabled: disable,
           autoFocus: true,
           onChange: searchHandler,
           onClear: searchClearHandler,
@@ -1939,6 +1942,7 @@
           var filteredOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
           return new Promise(function (resolve) {
             resolve({
+              searchTerm: searchTerm,
               options: filteredOptions,
               count: filteredOptions.length
             });
@@ -2000,27 +2004,30 @@
 
             var options = res.options,
                 count = res.count;
-            updatedAsync = searchTerm === '' ? count > _this.staticLimit : updatedAsync;
-            var unSelectedGroup = _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? _this.getUnSelectedOptions(options, init) : options;
-            var selectedGroup = searchTerm === '' ? _this.getSelectedOptions(options, init) : [];
-            var optionsLength = searchTerm === '' ? count : _this.state.optionsLength;
 
-            var disabledOptions = _this.getDisabledOptions(unSelectedGroup.slice(0, _this.staticLimit));
+            if (!res.searchTerm || res.searchTerm && res.searchTerm === _this.state.searchTerm) {
+              updatedAsync = searchTerm === '' ? count > _this.staticLimit : updatedAsync;
+              var unSelectedGroup = _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? _this.getUnSelectedOptions(options, init) : options;
+              var selectedGroup = searchTerm === '' ? _this.getSelectedOptions(options, init) : [];
+              var optionsLength = searchTerm === '' ? count : _this.state.optionsLength;
 
-            _this.setState(__assign(__assign({}, _this.state), {
-              optionsLength: optionsLength,
-              loading: false,
-              async: updatedAsync,
-              searchedOptionsLength: count,
-              options: unSelectedGroup.slice(0, _this.staticLimit),
-              tempSelected: init ? selectedGroup : tempSelected,
-              previousSelected: init ? selectedGroup : previousSelected,
-              selected: _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? selectedGroup : [],
-              triggerLabel: _this.updateTriggerLabel(init ? selectedGroup : tempSelected),
-              selectAll: !updatedAsync && init ? getSelectAll$1(selectedGroup, optionsLength, disabledOptions.length) : selectAll
-            }));
+              var disabledOptions = _this.getDisabledOptions(unSelectedGroup.slice(0, _this.staticLimit));
 
-            if (updatedAsync || withSearch) (_a = inputRef.current) === null || _a === void 0 ? void 0 : _a.focus();
+              _this.setState(__assign(__assign({}, _this.state), {
+                optionsLength: optionsLength,
+                loading: false,
+                async: updatedAsync,
+                searchedOptionsLength: count,
+                options: unSelectedGroup.slice(0, _this.staticLimit),
+                tempSelected: init ? selectedGroup : tempSelected,
+                previousSelected: init ? selectedGroup : previousSelected,
+                selected: _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? selectedGroup : [],
+                triggerLabel: _this.updateTriggerLabel(init ? selectedGroup : tempSelected),
+                selectAll: !updatedAsync && init ? getSelectAll$1(selectedGroup, optionsLength, disabledOptions.length) : selectAll
+              }));
+
+              if (updatedAsync || withSearch) (_a = inputRef.current) === null || _a === void 0 ? void 0 : _a.focus();
+            }
           });
         };
 
@@ -4316,14 +4323,15 @@
       var appearance = props.appearance,
           size = props.size,
           children = props.children,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
+          className = props.className,
+          rest = __rest(props, ["appearance", "size", "children", "className"]);
+
       var classes = classNames__default['default']((_a = {
         Heading: true
       }, _a["Heading--" + size] = size, _a["Heading--" + appearance] = appearance, _a), className);
       return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
         "data-test": "DesignSystem-Heading"
-      }, baseProps, {
+      }, rest, {
         className: classes,
         componentType: sizeMap[size]
       }), children);
@@ -5367,14 +5375,15 @@
 
       var appearance = props.appearance,
           children = props.children,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
+          className = props.className,
+          rest = __rest(props, ["appearance", "children", "className"]);
+
       var classes = classNames__default['default']((_a = {
         Text: true
       }, _a["Text--" + appearance] = appearance, _a), className);
       return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
         "data-test": "DesignSystem-Paragraph"
-      }, baseProps, {
+      }, rest, {
         className: classes,
         componentType: "p"
       }), children);
@@ -5421,8 +5430,9 @@
           value = props.value,
           checked = props.checked,
           defaultChecked = props.defaultChecked,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
+          className = props.className,
+          rest = __rest(props, ["size", "label", "disabled", "onChange", "name", "value", "checked", "defaultChecked", "className"]);
+
       var ref = React__namespace.useRef(null);
       React__namespace.useImperativeHandle(forwardedRef, function () {
         return ref.current;
@@ -5435,7 +5445,7 @@
         className: RadioClass
       }, /*#__PURE__*/React__namespace.createElement("div", {
         className: RadioOuterWrapper
-      }, /*#__PURE__*/React__namespace.createElement("input", __assign({}, baseProps, {
+      }, /*#__PURE__*/React__namespace.createElement("input", __assign({}, rest, {
         type: "radio",
         disabled: disabled,
         checked: checked,
@@ -6257,14 +6267,15 @@
 
       var appearance = props.appearance,
           children = props.children,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
+          className = props.className,
+          rest = __rest(props, ["appearance", "children", "className"]);
+
       var classes = classNames__default['default']((_a = {
         Subheading: true
       }, _a["Subheading--" + appearance] = appearance, _a), className);
       return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
         "data-test": "DesignSystem-Subheading"
-      }, baseProps, {
+      }, rest, {
         className: classes,
         componentType: 'h4'
       }), children);
@@ -6285,26 +6296,28 @@
           name = props.name,
           value = props.value,
           className = props.className;
-      var baseProps = extractBaseProps(props);
+          props.appearance;
+          var checkedProp = props.checked,
+          rest = __rest(props, ["size", "defaultChecked", "disabled", "onChange", "name", "value", "className", "appearance", "checked"]);
 
-      var _d = React__namespace.useState(props.checked === undefined ? defaultChecked : props.checked),
+      var _d = React__namespace.useState(checkedProp === undefined ? defaultChecked : checkedProp),
           checked = _d[0],
           setChecked = _d[1];
 
       React__namespace.useEffect(function () {
-        if (props.checked !== undefined) setChecked(props.checked);
-      }, [props.checked]);
+        if (checkedProp !== undefined) setChecked(checkedProp);
+      }, [checkedProp]);
       var SwitchClass = classNames__default['default']((_a = {}, _a['Switch'] = true, _a['Switch--disabled'] = disabled, _a["Switch--" + size] = size, _a), className);
       var SwitchWrapper = classNames__default['default']((_b = {}, _b['Switch-wrapper'] = true, _b['Switch-wrapper--disabled'] = disabled, _b["Switch-wrapper--" + size] = size, _b['Switch-wrapper--checked'] = checked, _b['Switch-wrapper--checkedDisabled'] = checked && disabled, _b));
 
       var onChangeHandler = function onChangeHandler(event) {
-        if (props.checked === undefined) setChecked(!checked);
+        if (checkedProp === undefined) setChecked(!checked);
         if (onChange) onChange(event, !checked);
       };
 
       return /*#__PURE__*/React__namespace.createElement("div", {
         className: SwitchClass
-      }, /*#__PURE__*/React__namespace.createElement("input", __assign({}, baseProps, {
+      }, /*#__PURE__*/React__namespace.createElement("input", __assign({}, rest, {
         type: "checkbox",
         defaultChecked: defaultChecked,
         disabled: disabled,
@@ -6338,12 +6351,13 @@
           onClick = props.onClick,
           onBlur = props.onBlur,
           onFocus = props.onFocus,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
+          className = props.className,
+          rest = __rest(props, ["rows", "resize", "disabled", "name", "placeholder", "value", "defaultValue", "required", "error", "onChange", "onClick", "onBlur", "onFocus", "className"]);
+
       var classes = classNames__default['default']((_a = {}, _a['Textarea'] = true, _a['Textarea--resize'] = resize, _a['Textarea--error'] = error, _a), className);
       return /*#__PURE__*/React__namespace.createElement("textarea", __assign({
         "data-test": "DesignSystem-Textarea"
-      }, baseProps, {
+      }, rest, {
         ref: ref,
         name: name,
         rows: rows,
@@ -6791,6 +6805,173 @@
       customStyle: {},
       boundaryElement: document.body
     });
+
+    var keyCodes = {
+      BACKSPACE: 'Backspace',
+      DELETE: 'Delete',
+      ENTER: 'Enter'
+    };
+    var ChipInput = function ChipInput(props) {
+      var _a;
+
+      var chipOptions = props.chipOptions,
+          allowDuplicates = props.allowDuplicates,
+          disabled = props.disabled,
+          placeholder = props.placeholder,
+          defaultValue = props.defaultValue,
+          value = props.value,
+          className = props.className,
+          autoFocus = props.autoFocus,
+          onChange = props.onChange,
+          onBlur = props.onBlur,
+          onFocus = props.onFocus;
+      var inputRef = /*#__PURE__*/React__namespace.createRef();
+
+      var _b = React__namespace.useState(value || defaultValue),
+          chips = _b[0],
+          setChips = _b[1];
+
+      var _c = React__namespace.useState(''),
+          inputValue = _c[0],
+          setInputValue = _c[1];
+
+      var baseProps = extractBaseProps(props);
+      React__namespace.useEffect(function () {
+        if (value !== undefined) {
+          setChips(value);
+        }
+      }, [value]);
+      var ChipInputClass = classNames__default['default']((_a = {
+        ChipInput: true
+      }, _a['ChipInput--disabled'] = disabled, _a['ChipInput--withChips'] = chips.length > 0, _a), className);
+
+      var onUpdateChips = function onUpdateChips(updatedChips) {
+        if (onChange) onChange(updatedChips);
+      };
+
+      var onChipDeleteHandler = function onChipDeleteHandler(index) {
+        var updatedChips = __spreadArrays(chips);
+
+        updatedChips.splice(index, 1);
+
+        if (!value) {
+          setChips(updatedChips);
+        }
+
+        onUpdateChips(updatedChips);
+      };
+
+      var onChipAddHandler = function onChipAddHandler() {
+        if (!inputValue) return;
+        var chip = inputValue.trim().toLowerCase();
+
+        if ((allowDuplicates || chips.indexOf(chip) === -1) && chip) {
+          var updatedChips = __spreadArrays(chips, [chip]);
+
+          if (!value) {
+            setChips(updatedChips);
+          }
+
+          onUpdateChips(updatedChips);
+          setInputValue('');
+        }
+      };
+
+      var onDeleteAllHandler = function onDeleteAllHandler() {
+        var updatedChips = [];
+
+        if (!value) {
+          setChips(updatedChips);
+        }
+
+        onUpdateChips(updatedChips);
+      };
+
+      var onKeyDownHandler = function onKeyDownHandler(event) {
+        var chipsLength = chips.length;
+
+        switch (event.key) {
+          case keyCodes.DELETE:
+          case keyCodes.BACKSPACE:
+            if (inputValue === '' && chipsLength > 0) {
+              onChipDeleteHandler(chipsLength - 1);
+            }
+
+            break;
+
+          case keyCodes.ENTER:
+            event.preventDefault();
+            onChipAddHandler();
+            break;
+        }
+      };
+
+      var onInputChangeHandler = function onInputChangeHandler(e) {
+        setInputValue(e.target.value);
+      };
+
+      var onClickHandler = function onClickHandler() {
+        var _a;
+
+        (_a = inputRef.current) === null || _a === void 0 ? void 0 : _a.focus();
+      };
+
+      var chipComponents = chips.map(function (chip, index) {
+        var _a = chipOptions.type,
+            type = _a === void 0 ? 'input' : _a,
+            _onClick = chipOptions.onClick,
+            rest = __rest(chipOptions, ["type", "onClick"]);
+
+        return /*#__PURE__*/React__namespace.createElement(Chip, __assign({
+          "data-test": "DesignSystem-ChipInput--Chip",
+          label: chip,
+          name: chip,
+          type: type,
+          disabled: disabled,
+          key: index,
+          className: "my-2 mx-2",
+          onClick: function onClick() {
+            return _onClick && _onClick(chip, index);
+          },
+          onClose: function onClose() {
+            return onChipDeleteHandler(index);
+          }
+        }, rest));
+      });
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        "data-test": "DesignSystem-ChipInput"
+      }, baseProps, {
+        className: ChipInputClass,
+        onClick: onClickHandler
+      }), /*#__PURE__*/React__namespace.createElement("div", {
+        className: "ChipInput-wrapper"
+      }, chips && chips.length > 0 && chipComponents, /*#__PURE__*/React__namespace.createElement("input", {
+        "data-test": "DesignSystem-ChipInput--Input",
+        ref: inputRef,
+        className: "ChipInput-input",
+        autoFocus: autoFocus,
+        placeholder: placeholder,
+        disabled: disabled,
+        value: inputValue,
+        onBlur: onBlur,
+        onFocus: onFocus,
+        onChange: onInputChangeHandler,
+        onKeyDown: onKeyDownHandler
+      })), chips.length > 0 && /*#__PURE__*/React__namespace.createElement(Icon, {
+        "data-test": "DesignSystem-ChipInput--Icon",
+        name: "close",
+        appearance: "subtle",
+        className: "ChipInput-icon",
+        onClick: onDeleteAllHandler
+      }));
+    };
+    ChipInput.displayName = 'ChipInput';
+    ChipInput.defaultProps = {
+      chipOptions: {},
+      defaultValue: [],
+      allowDuplicates: false,
+      autoFocus: false
+    };
 
     var getTextAppearance = function getTextAppearance(isActive, disabled) {
       return disabled ? 'disabled' : isActive ? 'link' : 'default';
@@ -9270,6 +9451,94 @@
     };
     Tab.displayName = 'Tab';
 
+    var Tabs = function Tabs(props) {
+      var _a;
+
+      var tabs = props.tabs,
+          withSeperator = props.withSeperator,
+          onTabChange = props.onTabChange,
+          className = props.className;
+      var baseProps = extractBaseProps(props);
+      var totalTabs = tabs.length;
+
+      var _b = React__namespace.useState(props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0),
+          activeIndex = _b[0],
+          setActiveTab = _b[1];
+
+      React__namespace.useEffect(function () {
+        if (props.activeIndex !== undefined && props.activeIndex < totalTabs) {
+          setActiveTab(props.activeIndex);
+        }
+      }, [props.activeIndex]);
+      var tabsClass = classNames__default['default']((_a = {}, _a['Tabs'] = true, _a['Tabs--withSeperator'] = withSeperator, _a), className);
+
+      var getPillsClass = function getPillsClass(disabled) {
+        var _a;
+
+        return classNames__default['default']((_a = {}, _a['Tabs-pills'] = true, _a['Tabs-pills--disabled'] = disabled, _a));
+      };
+
+      var tabClickHandler = function tabClickHandler(tabIndex) {
+        if (props.activeIndex === undefined) setActiveTab(tabIndex);
+        if (onTabChange) onTabChange(tabIndex);
+      };
+
+      var renderInfo = function renderInfo(tab, index) {
+        var count = tab.count,
+            icon = tab.icon,
+            disabled = tab.disabled;
+
+        if (count !== undefined) {
+          return /*#__PURE__*/React__namespace.createElement(Pills, {
+            "data-test": "DesignSystem-Tabs--Pills",
+            className: getPillsClass(disabled),
+            appearance: activeIndex === index ? 'primary' : 'secondary'
+          }, count);
+        }
+
+        if (icon) {
+          var iconAppearance = activeIndex === index ? 'info' : disabled ? 'disabled' : 'subtle';
+          return /*#__PURE__*/React__namespace.createElement(Icon, {
+            "data-test": "DesignSystem-Tabs--Icon",
+            className: "mr-4",
+            name: icon,
+            appearance: iconAppearance
+          });
+        }
+
+        return null;
+      };
+
+      var renderTabs = function renderTabs() {
+        return tabs.map(function (tab, index) {
+          var _a;
+
+          var label = tab.label,
+              disabled = tab.disabled;
+          var textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
+          var tabHeaderClass = classNames__default['default']((_a = {}, _a['Tab'] = true, _a['Tab--disabled'] = disabled, _a['Tab--active'] = !disabled && activeIndex === index, _a));
+          return /*#__PURE__*/React__namespace.createElement("div", {
+            "data-test": "DesignSystem-Tabs--Tab",
+            key: index,
+            className: tabHeaderClass,
+            onClick: function onClick() {
+              return !disabled && tabClickHandler(index);
+            }
+          }, renderInfo(tab, index), /*#__PURE__*/React__namespace.createElement(Text, {
+            "data-test": "DesignSystem-Tabs--Text",
+            appearance: textAppearance
+          }, label));
+        });
+      };
+
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        "data-test": "DesignSystem-Tabs"
+      }, baseProps, {
+        className: tabsClass
+      }), renderTabs());
+    };
+    Tabs.displayName = 'Tabs';
+
     var accepts = function accepts(file, acceptedFiles) {
       if (file && acceptedFiles) {
         var acceptedFilesArray = Array.isArray(acceptedFiles) ? acceptedFiles : acceptedFiles.split(',');
@@ -10297,11 +10566,12 @@
           });
 
         case 'error':
-          return /*#__PURE__*/React__namespace.createElement(Icon, {
-            name: "refresh",
-            size: 20,
+          return /*#__PURE__*/React__namespace.createElement(Button, {
+            appearance: "transparent",
+            size: "regular",
             onClick: onRetry,
-            className: "mr-4 cursor-pointer"
+            icon: "refresh",
+            className: "mr-2"
           });
 
         default:
@@ -10349,13 +10619,13 @@
         onRetry: function onRetry() {
           return _onRetry && _onRetry(file, id);
         }
-      }), /*#__PURE__*/React__namespace.createElement(Icon, {
-        name: "close",
-        size: 20,
+      }), /*#__PURE__*/React__namespace.createElement(Button, {
+        appearance: "transparent",
+        size: "regular",
         onClick: function onClick() {
           return onDelete && onDelete(file, id);
         },
-        className: "py-2 px-2 my-3 mx-3 cursor-pointer"
+        icon: "close"
       }))), status === 'error' && /*#__PURE__*/React__namespace.createElement(Caption, {
         error: true
       }, errorMessage));
@@ -11521,6 +11791,26 @@
           schema = props.schema,
           data = props.data,
           withCheckbox = props.withCheckbox;
+      React__namespace.useEffect(function () {
+        var gridBodyEl = _this.gridRef.querySelector('.Grid-body');
+
+        if (gridBodyEl) {
+          window.requestAnimationFrame(function () {
+            if (_this.prevPageInfo.page === page) {
+              gridBodyEl.scrollTop = _this.prevPageInfo.scrollTop;
+            }
+
+            _this.prevPageInfo = _this.currPageInfo;
+          });
+        }
+
+        return function () {
+          _this.currPageInfo = {
+            page: page,
+            scrollTop: gridBodyEl.scrollTop
+          };
+        };
+      }, []);
       var minRowHeight = {
         comfortable: 40,
         standard: 40,
@@ -11543,7 +11833,7 @@
 
       var totalPages = Math.ceil(totalRecords / pageSize);
       var isLastPage = withPagination && page === totalPages;
-      var dataLength = isLastPage ? totalRecords - (page - 1) * pageSize : loading ? pageSize : Math.min(totalRecords, pageSize);
+      var dataLength = isLastPage ? totalRecords - (page - 1) * pageSize : loading ? pageSize : withPagination ? Math.min(totalRecords, pageSize) : totalRecords;
 
       var renderItem = function renderItem(rowIndex) {
         return /*#__PURE__*/React__namespace.createElement(GridRow, {
@@ -11571,6 +11861,11 @@
       function Grid(props) {
         var _this_1 = _super.call(this, props) || this;
 
+        _this_1.currPageInfo = {
+          page: 1,
+          scrollTop: 0
+        };
+        _this_1.prevPageInfo = _this_1.currPageInfo;
         _this_1.gridRef = null;
         _this_1.isHeadSyncing = false;
         _this_1.isBodySyncing = false;
@@ -12436,18 +12731,20 @@
           if (async) {
             if (fetchData) {
               fetchData(opts).then(function (res) {
-                var data = res.data;
-                var schema = _this.state.schema.length ? _this.state.schema : res.schema;
+                if (!res.searchTerm || res.searchTerm && res.searchTerm === _this.state.searchTerm) {
+                  var data = res.data;
+                  var schema = _this.state.schema.length ? _this.state.schema : res.schema;
 
-                _this.setState({
-                  data: data,
-                  schema: schema,
-                  selectAll: getSelectAll(data),
-                  totalRecords: res.count,
-                  loading: false,
-                  error: !data.length,
-                  errorType: 'NO_RECORDS_FOUND'
-                });
+                  _this.setState({
+                    data: data,
+                    schema: schema,
+                    selectAll: getSelectAll(data),
+                    totalRecords: res.count,
+                    loading: false,
+                    error: !data.length,
+                    errorType: 'NO_RECORDS_FOUND'
+                  });
+                }
               })["catch"](function () {
                 _this.setState({
                   loading: false,
@@ -13271,7 +13568,7 @@
       var wrapperClassNames = function wrapperClassNames(i) {
         return classNames__default['default']({
           'VerificationCodeInput-Input': true,
-          'ml-3': i > 0
+          'ml-4': i > 0
         }, className);
       };
 
@@ -13298,7 +13595,7 @@
 
     VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-    var version = "2.1.0-0";
+    var version = "2.1.0";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
@@ -13317,6 +13614,7 @@
     exports.Checkbox = Checkbox;
     exports.Chip = Chip;
     exports.ChipGroup = ChipGroup;
+    exports.ChipInput = ChipInput;
     exports.Collapsible = Collapsible;
     exports.Column = Column;
     exports.DatePicker = DatePicker;
@@ -13373,6 +13671,7 @@
     exports.Switch = Switch;
     exports.Tab = Tab;
     exports.Table = Table;
+    exports.Tabs = Tabs;
     exports.TabsWrapper = TabsWrapper;
     exports.Text = Text;
     exports.Textarea = Textarea;

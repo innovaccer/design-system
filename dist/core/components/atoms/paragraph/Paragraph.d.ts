@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { BaseProps } from "../../../utils/types";
+import { BaseHtmlProps, BaseProps } from "../../../utils/types";
 export declare type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled';
-export interface ParagraphProps extends BaseProps {
+export interface ParagraphProps extends BaseProps, BaseHtmlProps<HTMLParagraphElement> {
     children: React.ReactNode;
     appearance: Appearance;
 }

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { BaseProps } from "../../../utils/types";
+import { BaseHtmlProps, BaseProps } from "../../../utils/types";
 export declare type Appearance = 'default' | 'subtle' | 'disabled' | 'white';
-export interface SubheadingProps extends BaseProps {
+export interface SubheadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingElement> {
     children: React.ReactText;
     appearance: Appearance;
 }

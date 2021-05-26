@@ -11,7 +11,8 @@ export declare type BaseProps = {
     className?: string;
     'data-test'?: string;
 };
-export declare type BaseHtmlProps<T> = Omit<React.HTMLProps<T>, 'ref' | 'size'>;
+export declare type BaseHtmlProps<T> = Omit<React.HTMLProps<T>, 'ref' | 'size' | 'className'>;
+export declare type OmitNativeProps<T, K extends keyof any> = Omit<BaseHtmlProps<T>, K>;
 export declare const extractBaseProps: (props: Record<string, any>) => {};
 export declare const filterProps: (props: Record<string, any>, propsList: ReadonlyArray<string>, include?: boolean | undefined) => Record<string, any>;
 export {};
