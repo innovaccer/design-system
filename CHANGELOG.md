@@ -25,6 +25,57 @@ NA
 ### Documentation
 NA
 
+
+-------------------
+## 2.1.0  (2021-05-26) 
+
+### Highlights
+* New component for tag based input is added as `ChipInput`. (dddcefb0)
+* Atomic components support all native HTML attributes as props now. (917918b9)
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+* Grid component can now preserve previous page scroll position. (98aa9085)
+* Atomic components support all native HTML attributes as props now. (917918b9)
+* New component for tag based input is added as `ChipInput`. (dddcefb0)
+
+### Fixes
+* Click event on disabled options of Dropdown component is fixed. (8e58516b)
+* Row component includes flex-grow in its style properties. (20645578)
+* Scrolling on body is now restored after un-mounting of Backdrop component. (60274751)
+* Next button in forms pattern is fixed. (93947e39)
+* upgrades @actions/core version from 1.2.6 to 1.2.7 (55bbe718)
+* upgrades js-beautify version from 1.10.3 to 1.13.13 (a9d2413d)
+* Loading state is fixed for searching in Dropdown. (7543c883)
+* Loading state is fixed for searching in Table. (715c0483)
+* Fixed story path for Dialog. (4785c838)
+
+
+
+### Improvements
+* FileUploaderItem component now uses icon button in stead of Icon component for actions. (12cff689)
+* Tabs component now have some more states for hovering over. (ac05ee66)
+* Margin between inputs of VerificationCodeInput component is updated. (c835e770)
+* Opacity in Message component as design improvement is added. (1b707bef)
+
+
+### Documentation
+* Updates Pagination component stories. (e132ebfc)
+* Updates Tabs component stories. (4774231e)
+* Updates Popover component stories. (24db67d9)
+* Updates Checkbox component stories. (24753996)
+* Updates Radio component stories. (8b30b313)
+* Updates highlight story of Card component. (c8a2fd84)
+
+
 -------------------
 
 
