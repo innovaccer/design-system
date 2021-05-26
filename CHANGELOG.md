@@ -25,6 +25,33 @@ NA
 ### Documentation
 NA
 
+-------------------
+## 2.1.1  (2021-05-26) 
+
+### Highlights
+NA
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+NA
+
+### Fixes
+* downgrades js-beautify to v1.10.3 for supporting node 8.x  (a540fb95)
+
+### Improvements
+NA
+
+### Documentation
+NA
+
 
 -------------------
 ## 2.1.0  (2021-05-26) 
