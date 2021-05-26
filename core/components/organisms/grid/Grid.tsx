@@ -23,6 +23,7 @@ export interface FetchDataOptions {
 }
 
 export type fetchDataFunction = (options: FetchDataOptions) => Promise<{
+  searchTerm?: string,
   count: number,
   data: Data,
   schema: Schema
@@ -276,6 +277,9 @@ interface GridState {
 }
 
 export class Grid extends React.Component<GridProps, GridState> {
+  currPageInfo = { page: 1, scrollTop: 0 };
+  prevPageInfo = this.currPageInfo;
+
   constructor(props: GridProps) {
     super(props);
 

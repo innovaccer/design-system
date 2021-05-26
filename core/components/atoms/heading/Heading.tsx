@@ -1,12 +1,12 @@
 import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseHtmlProps, BaseProps } from '@/utils/types';
 
 export type Size = 's' | 'm' | 'l' | 'xl' | 'xxl';
 export type Appearance = 'default' | 'subtle' | 'disabled' | 'white';
 
-export interface HeadingProps extends BaseProps {
+export interface HeadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingElement> {
   /**
    * Text to be rendered
    */
@@ -34,10 +34,9 @@ export const Heading = (props: HeadingProps) => {
     appearance,
     size,
     children,
-    className
+    className,
+    ...rest
   } = props;
-
-  const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     Heading: true,
@@ -46,7 +45,7 @@ export const Heading = (props: HeadingProps) => {
   }, className);
 
   return (
-    <GenericText data-test="DesignSystem-Heading" {...baseProps} className={classes} componentType={sizeMap[size]}>
+    <GenericText data-test="DesignSystem-Heading" {...rest} className={classes} componentType={sizeMap[size]}>
       {children}
     </GenericText>
   );

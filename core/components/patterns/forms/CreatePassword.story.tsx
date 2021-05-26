@@ -56,19 +56,20 @@ const customCode = `
       }, this.state.validations);
 
       const isValidated = Object.keys(newValidations).every(k => !newValidations[k]);
-
+      const value=event.target.value;
       this.setState({
-        password: event.target.value,
+        password: value,
         validations: newValidations,
-        signInDisabled: !isValidated && event.target.value !== this.state.confirmPassword,
+        signInDisabled: (!isValidated && value!== this.state.confirmPassword) || !value,
       });
 
     }
 
     onConfirmPasswordChange(event) {
+      const value=event.target.value;
       this.setState({
-        confirmPassword: event.target.value,
-        signInDisabled: event.target.value !== this.state.password
+        confirmPassword: value,
+        signInDisabled: value !== this.state.password || !value
       });
     }
 

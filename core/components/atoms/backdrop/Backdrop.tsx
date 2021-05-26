@@ -53,6 +53,10 @@ export const Backdrop: React.FC<BackdropProps> = props => {
       setAnimate(false);
       enableBodyScroll();
     }
+
+    return () => {
+      enableBodyScroll();
+    };
   }, [props.open]);
 
   const BackdropElement = ReactDOM.createPortal(

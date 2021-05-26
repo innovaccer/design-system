@@ -1,11 +1,11 @@
 import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseHtmlProps, BaseProps } from '@/utils/types';
 
 export type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled';
 
-export interface ParagraphProps extends BaseProps {
+export interface ParagraphProps extends BaseProps, BaseHtmlProps<HTMLParagraphElement> {
   /**
    * Text to be rendered
    * @type {React.ReactNode}
@@ -21,10 +21,9 @@ export const Paragraph = (props: ParagraphProps) => {
   const {
     appearance,
     children,
-    className
+    className,
+    ...rest
   } = props;
-
-  const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     Text: true,
@@ -32,7 +31,7 @@ export const Paragraph = (props: ParagraphProps) => {
   }, className);
 
   return (
-    <GenericText data-test="DesignSystem-Paragraph" {...baseProps} className={classes} componentType="p">
+    <GenericText data-test="DesignSystem-Paragraph" {...rest} className={classes} componentType="p">
       {children}
     </GenericText>
   );

@@ -1,83 +1,74 @@
 import * as React from 'react';
-import { number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-
-import TabsWrapper from '../TabsWrapper';
-import Tab from '../Tab';
-import Text from '@/components/atoms/text';
-import Badge from '@/components/atoms/badge';
-import classNames from 'classnames';
-import { updateKnob } from '@/utils/storybookEventEmitter';
+import { Tabs } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const active = number(
-    'active',
-    1
-  );
+  const tabs = [
+    {
+      count: 10,
+      label: 'Tab(Recommended)'
+    },
+    {
+      icon: 'call_received',
+      label: 'All'
+    },
+    {
+      label: 'Extras',
+      disabled: true
+    },
+  ];
 
-  const tabIconClass = (tabIndex: number) => {
-    return classNames({
-      ['material-icons']: true,
-      ['Tab-icon']: true,
-      ['Tab-icon--active']: active === tabIndex
-    });
-  };
+  const [activeIndex, setActiveIndex] = React.useState(0);
 
   const onTabChangeHandler = (tabIndex: number) => {
-    updateKnob('active', tabIndex);
+    setActiveIndex(tabIndex);
     return action(`tab-change: ${tabIndex}`)();
   };
 
   return (
-    <TabsWrapper
-      active={active}
+    <Tabs
+      tabs={tabs}
+      activeIndex={activeIndex}
       onTabChange={onTabChangeHandler}
-    >
-      <Tab
-        label={(
-          <>
-            <div className="Tab-count">
-              <Badge appearance="secondary">2</Badge>
-            </div>
-            <Text appearance={active !== 0 ? 'subtle' : undefined}>Tab(Recommended)</Text>
-          </>
-        )}
-      >
-        <div>
-          First Tab
-        </div>
-      </Tab>
-      <Tab
-        label={(
-          <>
-            <i className={tabIconClass(1)}>call_received</i>
-            <Text appearance={active !== 1 ? 'subtle' : undefined}>All</Text>
-          </>
-        )}
-      >
-        <div>
-          Second Tab
-        </div>
-      </Tab>
-      <Tab
-        label={(
-          <>
-            <Text appearance={active !== 2 ? 'subtle' : undefined}>Extras</Text>
-          </>
-        )}
-        disabled={true}
-      >
-        <div>
-          Third Tab
-        </div>
-      </Tab>
-    </TabsWrapper>
+    />
   );
 };
 
+const customCode = `() => {
+  const tabs = [
+    {
+      count: 10,
+      label: 'Tab(Recommended)'
+    },
+    {
+      icon: 'call_received',
+      label: 'All'
+    }, {
+      label: 'Extras',
+      disabled: true
+    },
+  ];
+
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
+  return(
+    <Tabs
+      tabs={tabs}
+      activeIndex={activeIndex}
+      onTabChange={setActiveIndex}
+    />
+  );
+}`;
+
 export default {
   title: 'Components/Tabs/All',
-  component: TabsWrapper,
-  subcomponents: { Tab }
+  component: Tabs,
+  parameters: {
+    docs: {
+      docPage: {
+        customCode,
+      }
+    }
+  }
 };

@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs component 
+  activeIndex: 0, onTabChange: "[Function]", withSeperator: false
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="Tabs"
+    data-test="DesignSystem-Tabs"
+  >
+    <div
+      class="Tab Tab--active"
+      data-test="DesignSystem-Tabs--Tab"
+    >
+      <span
+        class="Pills Badge--primary Tabs-pills"
+        data-test="DesignSystem-Tabs--Pills"
+      >
+        10
+      </span>
+      <span
+        class="Text Text--link Text--regular"
+        data-test="DesignSystem-Tabs--Text"
+      >
+        Tab 1
+      </span>
+    </div>
+    <div
+      class="Tab"
+      data-test="DesignSystem-Tabs--Tab"
+    >
+      <i
+        class="material-icons Icon Icon--subtle mr-4"
+        data-test="DesignSystem-Tabs--Icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        call_received
+      </i>
+      <span
+        class="Text Text--subtle Text--regular"
+        data-test="DesignSystem-Tabs--Text"
+      >
+        Tab 2
+      </span>
+    </div>
+    <div
+      class="Tab Tab--disabled"
+      data-test="DesignSystem-Tabs--Tab"
+    >
+      <span
+        class="Pills Badge--secondary Tabs-pills Tabs-pills--disabled"
+        data-test="DesignSystem-Tabs--Pills"
+      >
+        10
+      </span>
+      <span
+        class="Text Text--disabled Text--regular"
+        data-test="DesignSystem-Tabs--Text"
+      >
+        Tab 3
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Tabs component 
+  activeIndex: 0, onTabChange: "[Function]", withSeperator: true
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="Tabs Tabs--withSeperator"
+    data-test="DesignSystem-Tabs"
+  >
+    <div
+      class="Tab Tab--active"
+      data-test="DesignSystem-Tabs--Tab"
+    >
+      <span
+        class="Pills Badge--primary Tabs-pills"
+        data-test="DesignSystem-Tabs--Pills"
+      >
+        10
+      </span>
+      <span
+        class="Text Text--link Text--regular"
+        data-test="DesignSystem-Tabs--Text"
+      >
+        Tab 1
+      </span>
+    </div>
+    <div
+      class="Tab"
+      data-test="DesignSystem-Tabs--Tab"
+    >
+      <i
+        class="material-icons Icon Icon--subtle mr-4"
+        data-test="DesignSystem-Tabs--Icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        call_received
+      </i>
+      <span
+        class="Text Text--subtle Text--regular"
+        data-test="DesignSystem-Tabs--Text"
+      >
+        Tab 2
+      </span>
+    </div>
+    <div
+      class="Tab Tab--disabled"
+      data-test="DesignSystem-Tabs--Tab"
+    >
+      <span
+        class="Pills Badge--secondary Tabs-pills Tabs-pills--disabled"
+        data-test="DesignSystem-Tabs--Pills"
+      >
+        10
+      </span>
+      <span
+        class="Text Text--disabled Text--regular"
+        data-test="DesignSystem-Tabs--Text"
+      >
+        Tab 3
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;

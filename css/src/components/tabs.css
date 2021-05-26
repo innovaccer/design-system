@@ -34,9 +34,14 @@
     margin-right: 0;
 }
 
-.Tab--active, .Tab:hover {
+.Tab--active {
     margin-bottom: -1px;
     border-bottom: var(--spacing-s) solid var(--primary);
+}
+
+.Tab:hover {
+    margin-bottom: -1px;
+    border-bottom: var(--spacing-s) solid var(--primary-dark);
 }
 
 .Tab--disabled {
@@ -55,11 +60,26 @@
 
 .Tab-icon {
     display: flex;
-    margin-right: var(--spacing-l);
-    font-size: var(--font-size-m);
-    color: var(--text-subtle);
+    min-width: inherit;
+    justify-content: space-between;
 }
 
-.Tab-icon--active {
-    color: var(--text);
+.Tabs {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    height: var(--spacing-4);
+}
+
+.Tabs--withSeperator {
+    border-bottom: var(--border);
+}
+
+.Tabs-pills {
+    cursor: pointer;
+    margin-right: var(--spacing);
+}
+
+.Tabs-pills--disabled {
+    opacity: 60%;
 }

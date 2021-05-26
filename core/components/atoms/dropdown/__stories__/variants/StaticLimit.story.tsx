@@ -18,6 +18,7 @@ export const staticLimit = () => {
     return new Promise<any>(resolve => {
       window.setTimeout(() => {
         resolve({
+          searchTerm,
           options: searchedOptions,
           count: searchedOptions.length,
         });
@@ -67,6 +68,7 @@ const customCode = `() => {
     return new Promise(resolve => {
       window.setTimeout(() => {
         resolve({
+          searchTerm,
           options: searchedOptions,
           count: searchedOptions.length,
         });
