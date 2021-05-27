@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1622042853006 
+   * Generated on: 1622125969963 
    *      Package: @innovaccer/design-system
-   *      Version: v2.1.1
+   *      Version: v2.1.2
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -18952,7 +18952,7 @@
 
   VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-  var version = "2.1.1";
+  var version = "2.1.2";
 
   exports.Avatar = Avatar;
   exports.AvatarGroup = AvatarGroup;
