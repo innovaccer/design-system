@@ -1,5 +1,5 @@
 
-## Unreleased  (yyyy-mm-dd) 
+## 2.1.1  (2021-05-26) 
 
 ### Highlights
 NA
@@ -17,13 +17,15 @@ NA
 NA
 
 ### Fixes
-NA
+* downgrades js-beautify to v1.10.3 for supporting node 8.x  (d0c0206b)
 
 ### Improvements
 NA
 
 ### Documentation
-NA
+* Fixes Alignment and Group stories for Checkbox component. (37d2412e)
+* Fixes width of overflow story for Radio component. (5c632a2d)
+
 
 -------------------
 ## 2.1.1  (2021-05-26) 
