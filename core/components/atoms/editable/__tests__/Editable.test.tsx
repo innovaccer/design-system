@@ -34,11 +34,11 @@ describe('Editable component', () => {
   it('renders children', () => {
     const { getByTestId } = render(
       <Editable onChange={onChange}>
-        <div data-test="DS-Editable">First Name</div>
+        <div data-test="DesignSystem-Editable--Content">First Name</div>
       </Editable>
     );
 
-    expect(getByTestId('DS-Editable')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Editable--Content')).toBeInTheDocument();
   });
 
   it('Editable component with props editing (true) and onChange', () => {

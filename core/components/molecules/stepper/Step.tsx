@@ -44,7 +44,7 @@ export const Step = (props: StepProps) => {
       onClick={onClickHandle}
     >
       <Icon
-        data-test="DesignSystem-StepIcon"
+        data-test="DesignSystem-Step--Icon"
         name={completed ? 'check_circle' : 'radio_button_unchecked'}
         appearance={iconAppearance}
         className="mr-3 my-4"

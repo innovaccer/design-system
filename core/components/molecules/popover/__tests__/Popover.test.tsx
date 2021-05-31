@@ -12,7 +12,7 @@ const Style = {
   width: valueHelper('150px', { required: true }),
   height: valueHelper('150px', { required: true })
 };
-const trigger = <Button appearance="basic" data-test="DS-PopoverTrigger">Open Popup</Button>;
+const trigger = <Button appearance="basic" data-test="DesignSystem-PopoverTrigger">Open Popup</Button>;
 
 describe('Popover component', () => {
   const mapper = {
@@ -77,12 +77,12 @@ describe('renders Popover component', () => {
   it('renders children with dark: false', () => {
     const { getByTestId } = render(
       <Popover trigger={trigger} open={true}>
-        <div data-test="DS-Popover">Popover</div>
+        <div data-test="DesignSystem-Popover--Content">Popover</div>
       </Popover>
     );
 
-    expect(getByTestId('DS-Popover')).toBeInTheDocument();
-    expect(getByTestId('DesignSystem-Popover')).not.toHaveClass('Popover--dark');
+    expect(getByTestId('DesignSystem-Popover--Content')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Popover--Content')).not.toHaveClass('Popover--dark');
   });
 
   it('Popover component with prop: dark', () => {
@@ -116,7 +116,7 @@ describe('renders Popover component with prop: on', () => {
       </Popover>
     );
 
-    const popoverTrigger = getByTestId('DS-PopoverTrigger');
+    const popoverTrigger = getByTestId('DesignSystem-PopoverTrigger');
     fireEvent.click(popoverTrigger);
 
     expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
@@ -129,7 +129,7 @@ describe('renders Popover component with prop: on', () => {
       </Popover>
     );
 
-    const popoverTrigger = getByTestId('DS-PopoverTrigger');
+    const popoverTrigger = getByTestId('DesignSystem-PopoverTrigger');
     fireEvent.mouseEnter(popoverTrigger);
 
     expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
@@ -142,17 +142,17 @@ describe('renders Popover component with prop: closeOnBackdropClick', () => {
   it('Popover component with default prop: closeOnBackdropClick', async () => {
     const { queryByTestId, getByTestId } = render(
       <>
-        <div data-test="DS-OutsideClick" />
+        <div data-test="DesignSystem-OutsideClick" />
         <Popover trigger={trigger} appendToBody={false}>
           Popover
         </Popover>
       </>
     );
 
-    const popoverTrigger = getByTestId('DS-PopoverTrigger');
+    const popoverTrigger = getByTestId('DesignSystem-PopoverTrigger');
     fireEvent.click(popoverTrigger);
 
-    const outsideClick = getByTestId('DS-OutsideClick');
+    const outsideClick = getByTestId('DesignSystem-OutsideClick');
     fireEvent.click(outsideClick);
     cleanup();
     expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
@@ -162,17 +162,17 @@ describe('renders Popover component with prop: closeOnBackdropClick', () => {
   it('Popover component with closeOnBackdropClick: false', () => {
     const { getByTestId } = render(
       <>
-        <div data-test="DS-OutsideClick" />
+        <div data-test="DesignSystem-OutsideClick" />
         <Popover trigger={trigger} closeOnBackdropClick={false}>
           Popover
         </Popover>
       </>
     );
 
-    const popoverTrigger = getByTestId('DS-PopoverTrigger');
+    const popoverTrigger = getByTestId('DesignSystem-PopoverTrigger');
     fireEvent.click(popoverTrigger);
 
-    const outsideClick = getByTestId('DS-OutsideClick');
+    const outsideClick = getByTestId('DesignSystem-OutsideClick');
     fireEvent.click(outsideClick);
 
     expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
@@ -202,7 +202,7 @@ describe('renders Popover component with prop: open and onToggle', () => {
 
     expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
 
-    const popoverTrigger = getByTestId('DS-PopoverTrigger');
+    const popoverTrigger = getByTestId('DesignSystem-PopoverTrigger');
     fireEvent.click(popoverTrigger);
     expect(FunctionValue).toHaveBeenCalledWith(!open, 'onClick');
 

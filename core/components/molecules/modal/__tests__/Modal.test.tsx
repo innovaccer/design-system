@@ -44,31 +44,31 @@ describe('Modal component with props', () => {
   it('renders children', () => {
     const { getByTestId } = render(
       <Modal backdropClose={FunctionValue} open={true}>
-        <ModalHeader {...modalHeaderOptions} data-test="DS-ModalHeader" />
-        <ModalBody data-test="DS-ModalBody">
+        <ModalHeader {...modalHeaderOptions} data-test="DesignSystem-ModalHeader" />
+        <ModalBody data-test="DesignSystem-ModalBody">
           <p>Modal Body</p>
         </ModalBody>
-        <ModalFooter data-test="DS-ModalFooter">
+        <ModalFooter data-test="DesignSystem-ModalFooter">
           <Button appearance="basic">Basic</Button>
           <Button appearance="primary">Primary</Button>
         </ModalFooter>
       </Modal>
     );
 
-    expect(getByTestId('DS-ModalHeader')).toBeInTheDocument();
-    expect(getByTestId('DS-ModalBody')).toBeInTheDocument();
-    expect(getByTestId('DS-ModalFooter')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-ModalHeader')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-ModalBody')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-ModalFooter')).toBeInTheDocument();
   });
 
   it('renders with prop: backdropClose', () => {
     const { getByTestId } = render(
       <>
-        <div data-test="DS-OutsideClick">Outside Click</div>
+        <div data-test="DesignSystem-OutsideClick">Outside Click</div>
         <Modal backdropClose={FunctionValue} open={true} />
       </>
     );
 
-    const OutsideClick = getByTestId('DS-OutsideClick');
+    const OutsideClick = getByTestId('DesignSystem-OutsideClick');
     fireEvent.click(OutsideClick);
     expect(FunctionValue).toHaveBeenCalled();
   });
@@ -165,14 +165,14 @@ describe('Multiple modal components', () => {
         <Modal backdropClose={FunctionValue} open={true} dimension="large">
           <ModalFooter>
             <Button appearance="basic">Basic</Button>
-            <Button appearance="primary" data-test="DS-ModalButton">Primary</Button>
+            <Button appearance="primary" data-test="DesignSystem-ModalButton">Primary</Button>
           </ModalFooter>
         </Modal>
         <Modal backdropClose={FunctionValue} open={false} />
       </>
     );
 
-    const triggerButton = getByTestId('DS-ModalButton');
+    const triggerButton = getByTestId('DesignSystem-ModalButton');
     fireEvent.click(triggerButton);
 
     rerender(
@@ -180,7 +180,7 @@ describe('Multiple modal components', () => {
         <Modal backdropClose={FunctionValue} open={true} dimension="large">
           <ModalFooter>
             <Button appearance="basic">Basic</Button>
-            <Button appearance="primary" data-test="DS-ModalButton">Primary</Button>
+            <Button appearance="primary" data-test="DesignSystem-ModalButton">Primary</Button>
           </ModalFooter>
         </Modal>
         <Modal backdropClose={FunctionValue} open={true} />
