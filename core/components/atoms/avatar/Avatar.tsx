@@ -117,7 +117,7 @@ export const Avatar = (props: AvatarProps) => {
         )}
         {!initials && (
           <Icon
-            data-test="DesignSystem-AvatarIcon"
+            data-test="DesignSystem-Avatar--Icon"
             name="person"
             size={size === 'regular' ? 16 : 12}
             appearance={'white'}

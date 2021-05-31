@@ -8,7 +8,7 @@ exports[`TS renders children 1`] = `
   >
     <i
       class="material-icons Icon Icon--white Avatar-content--secondary"
-      data-test="DesignSystem-AvatarIcon"
+      data-test="DesignSystem-Avatar--Icon"
       style="font-size: 16px; width: 16px;"
     >
       person

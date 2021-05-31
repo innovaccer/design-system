@@ -9,7 +9,7 @@ exports[`Popover component
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
-      data-test="DS-PopoverTrigger"
+      data-test="DesignSystem-PopoverTrigger"
       tabindex="0"
     >
       Open Popup
@@ -35,7 +35,7 @@ exports[`Popover component
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
-      data-test="DS-PopoverTrigger"
+      data-test="DesignSystem-PopoverTrigger"
       tabindex="0"
     >
       Open Popup
@@ -61,7 +61,7 @@ exports[`Popover component
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
-      data-test="DS-PopoverTrigger"
+      data-test="DesignSystem-PopoverTrigger"
       tabindex="0"
     >
       Open Popup
@@ -87,7 +87,7 @@ exports[`Popover component
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
-      data-test="DS-PopoverTrigger"
+      data-test="DesignSystem-PopoverTrigger"
       tabindex="0"
     >
       Open Popup
@@ -113,7 +113,7 @@ exports[`Popover component
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
-      data-test="DS-PopoverTrigger"
+      data-test="DesignSystem-PopoverTrigger"
       tabindex="0"
     >
       Open Popup
@@ -139,7 +139,7 @@ exports[`Popover component
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
-      data-test="DS-PopoverTrigger"
+      data-test="DesignSystem-PopoverTrigger"
       tabindex="0"
     >
       Open Popup
@@ -165,7 +165,7 @@ exports[`Popover component
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
-      data-test="DS-PopoverTrigger"
+      data-test="DesignSystem-PopoverTrigger"
       tabindex="0"
     >
       Open Popup
@@ -191,7 +191,7 @@ exports[`Popover component
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
-      data-test="DS-PopoverTrigger"
+      data-test="DesignSystem-PopoverTrigger"
       tabindex="0"
     >
       Open Popup

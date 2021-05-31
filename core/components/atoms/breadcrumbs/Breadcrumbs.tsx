@@ -49,7 +49,7 @@ const renderDropdown = (list: BreadcrumbsProps['list'], onClick: BreadcrumbsProp
     value: item.link
   }));
 
-  const customTrigger = () => <Button size="tiny" appearance="transparent" icon="more_horiz_filled" data-test="DesignSystem-Breadcrumbs-more" />;
+  const customTrigger = () => <Button size="tiny" appearance="transparent" icon="more_horiz_filled" data-test="DesignSystem-Breadcrumbs--Button" />;
 
   return (
     <Dropdown

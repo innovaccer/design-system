@@ -91,7 +91,7 @@ describe('Avatar component', () => {
 
   it('renders fallback icon when there is no children', () => {
     const { getByTestId } = render(<Avatar />);
-    expect(getByTestId('DesignSystem-AvatarIcon')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Avatar--Icon')).toBeInTheDocument();
   });
 
 });
