@@ -254,6 +254,16 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
     }
   }
 
+  formatLabel = (value: number) => {
+    const { labelRenderer } = this.props;
+
+    if (typeof labelRenderer === 'function') {
+      return labelRenderer(value);
+    }
+
+    return value.toFixed(this.state.labelPrecision);
+  }
+
   renderHandles = () => {
     const { disabled, max, min, stepSize } = this.props;
     const handleProps = this.getHandleValues(this.props);
@@ -270,7 +280,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
         min={min}
         onRelease={newValue => this.onReleaseHandler(newValue, index)}
         onChange={newValue => this.onChangeHandler(newValue, index)}
-        label={value.toFixed(this.state.labelPrecision)}
+        label={this.formatLabel(value)}
         ref={this.addHandleRef}
         stepSize={stepSize}
         tickSize={this.state.tickSize}
@@ -278,16 +288,6 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
         value={value}
       />
     ));
-  }
-
-  formatLabel = (value: number) => {
-    const { labelRenderer } = this.props;
-
-    if (typeof labelRenderer === 'function') {
-      return labelRenderer(value);
-    }
-
-    return value.toFixed(this.state.labelPrecision);
   }
 
   renderLabels = () => {
