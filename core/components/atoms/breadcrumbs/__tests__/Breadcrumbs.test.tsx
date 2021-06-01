@@ -55,8 +55,8 @@ describe('Breadcrumbs component', () => {
       />
     );
     expect(getAllByTestId('DesignSystem-Breadcrumbs-item').length).toEqual(2);
-    expect(getByTestId('DesignSystem-Breadcrumbs-more')).toBeInTheDocument();
-    fireEvent.click(getByTestId('DesignSystem-Breadcrumbs-more'));
+    expect(getByTestId('DesignSystem-Breadcrumbs--Button')).toBeInTheDocument();
+    fireEvent.click(getByTestId('DesignSystem-Breadcrumbs--Button'));
     expect(getAllByTestId('DesignSystem-DropdownOption--DEFAULT').length).toEqual(3);
   });
 });

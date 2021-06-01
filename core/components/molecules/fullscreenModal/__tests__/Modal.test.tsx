@@ -116,7 +116,7 @@ describe('Multiple modal components', () => {
           footer={(
             <>
               <Button appearance="basic">Basic</Button>
-              <Button appearance="primary" data-test="DS-ModalButton">
+              <Button appearance="primary" data-test="DesignSystem-ModalButton">
                 Primary
               </Button>
             </>
@@ -128,7 +128,7 @@ describe('Multiple modal components', () => {
       </>
     );
 
-    const triggerButton = getByTestId('DS-ModalButton');
+    const triggerButton = getByTestId('DesignSystem-ModalButton');
     fireEvent.click(triggerButton);
 
     rerender(
@@ -139,7 +139,7 @@ describe('Multiple modal components', () => {
           footer={(
             <>
               <Button appearance="basic">Basic</Button>
-              <Button appearance="primary" data-test="DS-ModalButton">
+              <Button appearance="primary" data-test="DesignSystem-ModalButton">
                 Primary
               </Button>
             </>

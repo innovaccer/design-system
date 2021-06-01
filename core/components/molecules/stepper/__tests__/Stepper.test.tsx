@@ -93,14 +93,14 @@ describe('Stepper component with prop: active', () => {
 
   it('renders Icon inside active step', () => {
     const { getAllByTestId } = render(<Stepper steps={steps} active={active} completed={0} />);
-    expect(getAllByTestId('DesignSystem-StepIcon')[active].textContent).toMatch('radio_button_unchecked');
-    expect(getAllByTestId('DesignSystem-StepIcon')[active]).toHaveClass('Icon--default');
+    expect(getAllByTestId('DesignSystem-Step--Icon')[active].textContent).toMatch('radio_button_unchecked');
+    expect(getAllByTestId('DesignSystem-Step--Icon')[active]).toHaveClass('Icon--default');
   });
 
   it('renders stepper with equal active and completed prop', () => {
     const { getAllByTestId } = render(<Stepper steps={steps} active={active} completed={active} />);
     expect(getAllByTestId('DesignSystem-Step')[active]).toHaveClass('Step--active');
-    expect(getAllByTestId('DesignSystem-StepIcon')[active].textContent).toMatch('check_circle');
+    expect(getAllByTestId('DesignSystem-Step--Icon')[active].textContent).toMatch('check_circle');
   });
 
 });
@@ -110,7 +110,7 @@ describe('Stepper component with prop: completed', () => {
 
   it('renders Icon inside active step', () => {
     const { getAllByTestId } = render(<Stepper steps={steps} completed={completed} active={2} />);
-    const completedSteps = getAllByTestId('DesignSystem-StepIcon');
+    const completedSteps = getAllByTestId('DesignSystem-Step--Icon');
 
     completedSteps.forEach((step, index) => {
       if (index <= completed) {
@@ -141,7 +141,7 @@ describe('Stepper component with disabled steps', () => {
 
   it('renders Icon inside disabled step', () => {
     const { getAllByTestId } = render(<Stepper steps={steps} active={active} completed={completed} />);
-    const disabledSteps = getAllByTestId('DesignSystem-StepIcon');
+    const disabledSteps = getAllByTestId('DesignSystem-Step--Icon');
 
     disabledSteps.forEach((step, index) => {
       if (Math.max(completed, active) < index) {

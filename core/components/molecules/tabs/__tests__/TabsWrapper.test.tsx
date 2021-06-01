@@ -115,7 +115,7 @@ describe('TabsWrapper component with prop: onTabChange', () => {
   const tabs = (tab: number) => (
     <TabsWrapper active={tab} onTabChange={FunctionValue}>
       <Tab label={<div>Label 1</div>}>Tab 1</Tab>
-      <Tab label={<div data-test="DS-TabLabel">Label 2</div>}>Tab 2</Tab>
+      <Tab label={<div data-test="DesignSystem-TabLabel">Label 2</div>}>Tab 2</Tab>
     </TabsWrapper>
   );
 
@@ -125,7 +125,7 @@ describe('TabsWrapper component with prop: onTabChange', () => {
 
     const { getByTestId, getAllByTestId, rerender } = render(tabs(activeTab));
 
-    const tab = getByTestId('DS-TabLabel');
+    const tab = getByTestId('DesignSystem-TabLabel');
     fireEvent.click(tab);
 
     expect(FunctionValue).toHaveBeenCalledWith(clickedTab);
