@@ -24,36 +24,46 @@ exports[`FullscreenModal component
             class="Col Col--6 Col--xs-12 Col--m-8 Col--l-8"
           >
             <div
-              class="Row justify-content-between pt-6 pr-6 pb-5 pl-7"
+              class="Row FullscreenModal-header"
               data-test="DesignSystem-Row"
             >
               <div
                 class="Col"
               >
                 <div
-                  class="FullscreenModal-header"
-                  data-test="DesignSystem-ModalHeader"
+                  class="OverlayHeader"
+                  data-test="DesignSystem-OverlayHeader"
                 >
                   <div
-                    class="FullscreenModal-headerWrapper"
+                    class="OverlayHeader-headerWrapper"
                   />
                 </div>
               </div>
               <div
-                class="Col pr-2 flex-grow-0"
+                class="Col flex-grow-0"
               >
-                <i
-                  class="material-icons Icon cursor-pointer pt-3"
-                  data-test="DesignSystem-ModalHeader--CloseIcon"
-                  style="font-size: 20px; width: 20px;"
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-FullscreenModal--CloseButton"
+                  tabindex="0"
                 >
-                  close
-                </i>
+                  <div
+                    class="Button-icon"
+                  >
+                    <i
+                      class="material-icons Icon Icon--default"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close
+                    </i>
+                  </div>
+                </button>
               </div>
             </div>
             <div
-              class="FullscreenModal-body"
-              data-test="DesignSystem-ModalBody"
+              class="OverlayBody FullscreenModal-body"
+              data-test="DesignSystem-FullscreenModal--Body"
             >
               this is modal body
             </div>
@@ -91,36 +101,46 @@ exports[`FullscreenModal component
             class="Col Col--4 Col--xs-12 Col--m-6 Col--l-6"
           >
             <div
-              class="Row justify-content-between pt-6 pr-6 pb-5 pl-7"
+              class="Row FullscreenModal-header"
               data-test="DesignSystem-Row"
             >
               <div
                 class="Col"
               >
                 <div
-                  class="FullscreenModal-header"
-                  data-test="DesignSystem-ModalHeader"
+                  class="OverlayHeader"
+                  data-test="DesignSystem-OverlayHeader"
                 >
                   <div
-                    class="FullscreenModal-headerWrapper"
+                    class="OverlayHeader-headerWrapper"
                   />
                 </div>
               </div>
               <div
-                class="Col pr-2 flex-grow-0"
+                class="Col flex-grow-0"
               >
-                <i
-                  class="material-icons Icon cursor-pointer pt-3"
-                  data-test="DesignSystem-ModalHeader--CloseIcon"
-                  style="font-size: 20px; width: 20px;"
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-FullscreenModal--CloseButton"
+                  tabindex="0"
                 >
-                  close
-                </i>
+                  <div
+                    class="Button-icon"
+                  >
+                    <i
+                      class="material-icons Icon Icon--default"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close
+                    </i>
+                  </div>
+                </button>
               </div>
             </div>
             <div
-              class="FullscreenModal-body"
-              data-test="DesignSystem-ModalBody"
+              class="OverlayBody FullscreenModal-body"
+              data-test="DesignSystem-FullscreenModal--Body"
             >
               this is modal body
             </div>

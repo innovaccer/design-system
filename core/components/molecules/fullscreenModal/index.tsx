@@ -1,2 +1,2 @@
-export { default, default as FullscreenModal } from './Modal';
-export * from './Modal';
+export { default, default as FullscreenModal } from './FullscreenModal';
+export * from './FullscreenModal';

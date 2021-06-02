@@ -1,24 +1,27 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { Button } from '@/index';
+import { ButtonProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export interface ModalFooterProps extends BaseProps {
+export interface OverlayFooterProps extends BaseProps {
   open?: boolean;
-  children: React.ReactNode;
-  stickToBottom: boolean;
-  seperator?: boolean;
-  inSidesheet?: boolean;
+  children?: React.ReactNode;
+  actions?: ButtonProps[];
 }
 
-export const ModalFooter = (props: ModalFooterProps) => {
-  const { open, children, className, stickToBottom, seperator, inSidesheet } = props;
+export const OverlayFooter = (props: OverlayFooterProps) => {
+  const {
+    open,
+    className,
+    children,
+    actions
+  } = props;
+
   const baseProps = extractBaseProps(props);
 
   const classes = classNames({
-    'Modal-footer': true,
-    ['Modal-footer--inModal']: !inSidesheet,
-    ['Modal-footer--seperator']: seperator,
-    ['Modal-footer--stickToBottom']: stickToBottom
+    OverlayFooter: true,
   }, className);
 
   const wrapperRef = React.createRef<HTMLDivElement>();
@@ -35,18 +38,23 @@ export const ModalFooter = (props: ModalFooterProps) => {
     }
   }, [open]);
 
+  if (actions) {
+    return (
+      <div ref={wrapperRef} {...baseProps} className={classes}>
+        {actions.map(({ label, ...options }, index) => {
+          return <Button {...options} key={index} />;
+        })}
+      </div>
+    );
+  }
+
   return (
-    <div data-test="DesignSystem-ModalFooter" ref={wrapperRef} {...baseProps} className={classes}>
+    <div data-test="DesignSystem-OverlayFooter" ref={wrapperRef} {...baseProps} className={classes}>
       {children}
     </div>
   );
 };
 
-ModalFooter.defaultProps = {
-  stickToBottom: true,
-  inSidesheet: false
-};
+OverlayFooter.displayName = 'OverlayFooter';
 
-ModalFooter.displayName = 'ModalFooter';
-
-export default ModalFooter;
+export default OverlayFooter;

@@ -141,7 +141,7 @@ describe('Modal component with prop: open', () => {
     expect(getByTestId('DesignSystem-Modal')).toHaveClass('Modal--open');
     expect(getByTestId('DesignSystem-Modal')).toHaveClass('Modal-animation--open');
 
-    const closeIcon = getByTestId('DesignSystem-ModalHeader--CloseIcon');
+    const closeIcon = getByTestId('DesignSystem-Modal--CloseButton');
     fireEvent.click(closeIcon);
 
     rerender(

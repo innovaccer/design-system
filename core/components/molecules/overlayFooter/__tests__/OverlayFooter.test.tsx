@@ -1,20 +1,20 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import ModalFooter, { ModalFooterProps as Props } from '../ModalFooter';
+import OverlayFooter, { OverlayFooterProps as Props } from '../OverlayFooter';
 import { Button } from '@/index';
 import { testHelper, filterUndefined, testMessageHelper } from '@/utils/testHelper';
 
-describe('ModalFooter component', () => {
+describe('OverlayFooter component', () => {
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const { asFragment } = render(
-        <ModalFooter>
+        <OverlayFooter>
           <Button appearance="basic" onClick={() => null}>Basic</Button>
           <Button appearance="primary" onClick={() => null}>Primary</Button>
-        </ModalFooter>
+        </OverlayFooter>
       );
       expect(asFragment()).toMatchSnapshot();
     });
@@ -23,32 +23,32 @@ describe('ModalFooter component', () => {
   testHelper({}, testFunc);
 });
 
-describe('ModalFooter component with props: children', () => {
+describe('OverlayFooter component with props: children', () => {
 
   it('renders children', () => {
     const { getAllByTestId } = render(
-      <ModalFooter>
+      <OverlayFooter>
         <Button appearance="basic" data-test="Modal-Button">Basic</Button>
         <Button appearance="primary" data-test="Modal-Button">Primary</Button>
-      </ModalFooter>
+      </OverlayFooter>
     );
 
     expect(getAllByTestId('Modal-Button')).toHaveLength(2);
   });
 });
 
-describe('ModalFooter with overwrite class', () => {
-  const className = 'DS-ModalFooter';
+describe('OverlayFooter with overwrite class', () => {
+  const className = 'DS-OverlayFooter';
 
-  it('overwrite ModalFooter class', () => {
+  it('overwrite OverlayFooter class', () => {
     const { getByTestId } = render(
-      <ModalFooter className={className}>
+      <OverlayFooter className={className}>
         <Button appearance="basic" data-test="Modal-Button">Basic</Button>
         <Button appearance="primary" data-test="Modal-Button">Primary</Button>
-      </ModalFooter>
+      </OverlayFooter>
     );
 
-    expect(getByTestId('DesignSystem-ModalFooter')).toHaveClass(className);
+    expect(getByTestId('DesignSystem-OverlayFooter')).toHaveClass(className);
   });
 
 });
