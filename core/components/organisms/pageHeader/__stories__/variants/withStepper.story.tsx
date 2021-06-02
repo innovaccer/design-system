@@ -24,7 +24,7 @@ export const withStepper = () => {
     }
   ];
 
-  const seperator = boolean('seperator', true);
+  const separator = boolean('separator', true);
 
   const [active, setActive] = React.useState(0);
   const [completed, setCompleted] = React.useState(-1);
@@ -40,10 +40,10 @@ export const withStepper = () => {
 
   const options = {
     title,
-    seperator,
+    separator,
     stepper: <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={completed} />,
     actions: (
-      <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+      <div className="d-flex justify-content-end align-items-center">
         <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
         <Button appearance="primary" onClick={onClickHandler}>Next</Button>
       </div>
@@ -51,7 +51,7 @@ export const withStepper = () => {
   };
 
   return (
-    <div className="w-100 p-6" style={{ background: '#f4f4f4' }}>
+    <div className="w-100 p-6 bg-secondary-lightest">
       <PageHeader {...options} />
     </div>
   );
@@ -92,7 +92,7 @@ const customCode = `() => {
     seperator: true,
     stepper: <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={completed} />,
     actions: (
-      <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+      <div className="d-flex justify-content-end align-items-center">
         <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
         <Button appearance="primary" onClick={onClickHandler}>Primary</Button>
       </div>
@@ -100,7 +100,7 @@ const customCode = `() => {
   };
 
   return (
-    <div className="w-100 p-6" style={{ background: '#f4f4f4' }}>
+    <div className="w-100 p-6 bg-secondary-lightest">
       <PageHeader {...options} />
     </div>
   );

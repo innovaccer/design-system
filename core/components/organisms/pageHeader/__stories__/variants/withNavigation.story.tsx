@@ -26,14 +26,14 @@ export const withNavigation = () => {
       disabled: true
     }
   ];
-  const seperator = boolean('seperator', true);
+  const separator = boolean('separator', true);
 
   const options = {
     title,
-    seperator,
+    separator,
     navigation: <Navigation menus={navigationData} onClick={action('menu-clicked')} active={{ name: 'menu_1' }} />,
     actions: (
-      <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+      <div className="d-flex justify-content-end align-items-center">
         <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
         <Button appearance="primary">Primary</Button>
       </div>
@@ -41,7 +41,7 @@ export const withNavigation = () => {
   };
 
   return (
-    <div className="w-100 p-6" style={{ background: '#f4f4f4' }}>
+    <div className="w-100 p-6 bg-secondary-lightest">
       <PageHeader {...options} />
     </div>
   );
@@ -71,7 +71,7 @@ const customCode = `() => {
     title,
     navigation: <Navigation menus={navigationData} onClick={(menu) => console.log(menu)} active={{ name: 'menu_1' }} />,
     actions: (
-      <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+      <div className="d-flex justify-content-end align-items-center">
         <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
         <Button appearance="primary">Primary</Button>
       </div>
@@ -79,7 +79,7 @@ const customCode = `() => {
   };
 
   return (
-    <div className="w-100 p-6" style={{ background: '#f4f4f4' }}>
+    <div className="w-100 p-6 bg-secondary-lightest">
       <PageHeader {...options} />
     </div>
   );
