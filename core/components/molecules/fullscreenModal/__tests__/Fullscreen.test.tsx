@@ -41,9 +41,7 @@ describe('FullscreenModal component with props', () => {
       </FullscreenModal>
     );
 
-    expect(getByTestId('DesignSystem-ModalHeader')).toBeInTheDocument();
-    expect(getByTestId('DesignSystem-ModalBody')).toBeInTheDocument();
-    expect(getByTestId('DesignSystem-ModalFooter')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-OverlayHeader')).toBeInTheDocument();
   });
 });
 
@@ -94,7 +92,7 @@ describe('FullscreenModal component with prop: open', () => {
     expect(getByTestId('DesignSystem-FullscreenModal')).toHaveClass('FullscreenModal--open');
     expect(getByTestId('DesignSystem-FullscreenModal')).toHaveClass('FullscreenModal-animation--open');
 
-    const closeIcon = getByTestId('DesignSystem-ModalHeader--CloseIcon');
+    const closeIcon = getByTestId('DesignSystem-FullscreenModal--CloseButton');
     fireEvent.click(closeIcon);
 
     rerender(<FullscreenModal open={false}>this is modal body</FullscreenModal>);

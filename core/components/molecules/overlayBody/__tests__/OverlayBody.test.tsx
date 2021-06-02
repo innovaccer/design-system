@@ -1,20 +1,19 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
 import { testHelper, filterUndefined, testMessageHelper } from '@/utils/testHelper';
-import { ModalBodyProps as Props } from '../ModalBody';
-import { ModalBody } from '@/index';
+import { OverlayBody, OverlayBodyProps as Props } from '../OverlayBody';
 
-describe('ModalBody component', () => {
+describe('OverlayBody component', () => {
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const { asFragment } = render(
-        <ModalBody>
+        <OverlayBody>
           <div>
-            <p>Modal Body</p>
+            Overlay Body
           </div>
-        </ModalBody>
+        </OverlayBody>
       );
 
       expect(asFragment()).toMatchSnapshot();
@@ -24,18 +23,18 @@ describe('ModalBody component', () => {
   testHelper({}, testFunc);
 });
 
-describe('ModalBody with overwrite class', () => {
-  const className = 'DS-ModalBody';
+describe('OverlayBody with overwrite class', () => {
+  const className = 'DS-OverlayBody';
 
   it('overwrite ModalBody class', () => {
     const { getByTestId } = render(
-      <ModalBody className={className}>
+      <OverlayBody className={className}>
         <div>
-          <p>Modal Body</p>
+          Modal Body
         </div>
-      </ModalBody>
+      </OverlayBody>
     );
-    expect(getByTestId('DesignSystem-ModalBody')).toHaveClass(className);
+    expect(getByTestId('DesignSystem-OverlayBody')).toHaveClass(className);
   });
 
 });

@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ModalFooter component 
+exports[`OverlayFooter component 
   
  1`] = `
 <DocumentFragment>
   <div
-    class="Modal-footer Modal-footer--inModal Modal-footer--stickToBottom"
-    data-test="DesignSystem-ModalFooter"
+    class="OverlayFooter"
+    data-test="DesignSystem-OverlayFooter"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"

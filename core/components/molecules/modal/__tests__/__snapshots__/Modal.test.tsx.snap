@@ -20,35 +20,53 @@ exports[`Modal component
       >
         <div
           class="Modal-header"
-          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerWrapper"
+            class="Col"
           >
             <div
-              class="Modal-headerHeading"
+              class="OverlayHeader"
+              data-test="DesignSystem-OverlayHeader"
             >
-              <h4
-                class="Heading Heading--m Heading--default"
-                data-test="DesignSystem-Heading"
+              <div
+                class="OverlayHeader-headerWrapper"
               >
-                Heading
-              </h4>
-              <i
-                class="material-icons Icon mx-2 cursor-pointer"
-                data-test="DesignSystem-ModalHeader--CloseIcon"
-                style="font-size: 20px; width: 20px;"
+                <h4
+                  class="Heading Heading--m Heading--default"
+                  data-test="DesignSystem-Heading"
+                >
+                  Heading
+                </h4>
+              </div>
+              <span
+                class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                data-test="DesignSystem-OverlayHeader--Subheading"
               >
-                close
-              </i>
+                Subheading
+              </span>
             </div>
           </div>
-          <span
-            class="Text Text--subtle Text--regular mt-2 ml-7"
-            data-test="DesignSystem-ModalHeader--Subheading"
+          <div
+            class="Col flex-grow-0"
           >
-            Subheading
-          </span>
+            <button
+              class="Button Button--regular Button--regularSquare Button--transparent"
+              data-test="DesignSystem-Modal--CloseButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+              >
+                <i
+                  class="material-icons Icon Icon--default"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  close
+                </i>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -86,35 +104,53 @@ exports[`Modal component
         >
           <div
             class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
           >
             <div
-              class="Modal-headerWrapper"
+              class="Col"
             >
               <div
-                class="Modal-headerHeading"
+                class="OverlayHeader"
+                data-test="DesignSystem-OverlayHeader"
               >
-                <h4
-                  class="Heading Heading--m Heading--default"
-                  data-test="DesignSystem-Heading"
+                <div
+                  class="OverlayHeader-headerWrapper"
                 >
-                  Heading
-                </h4>
-                <i
-                  class="material-icons Icon mx-2 cursor-pointer"
-                  data-test="DesignSystem-ModalHeader--CloseIcon"
-                  style="font-size: 20px; width: 20px;"
+                  <h4
+                    class="Heading Heading--m Heading--default"
+                    data-test="DesignSystem-Heading"
+                  >
+                    Heading
+                  </h4>
+                </div>
+                <span
+                  class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                  data-test="DesignSystem-OverlayHeader--Subheading"
                 >
-                  close
-                </i>
+                  Subheading
+                </span>
               </div>
             </div>
-            <span
-              class="Text Text--subtle Text--regular mt-2 ml-7"
-              data-test="DesignSystem-ModalHeader--Subheading"
+            <div
+              class="Col flex-grow-0"
             >
-              Subheading
-            </span>
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -149,35 +185,53 @@ exports[`Modal component
       >
         <div
           class="Modal-header"
-          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerWrapper"
+            class="Col"
           >
             <div
-              class="Modal-headerHeading"
+              class="OverlayHeader"
+              data-test="DesignSystem-OverlayHeader"
             >
-              <h4
-                class="Heading Heading--m Heading--default"
-                data-test="DesignSystem-Heading"
+              <div
+                class="OverlayHeader-headerWrapper"
               >
-                Heading
-              </h4>
-              <i
-                class="material-icons Icon mx-2 cursor-pointer"
-                data-test="DesignSystem-ModalHeader--CloseIcon"
-                style="font-size: 20px; width: 20px;"
+                <h4
+                  class="Heading Heading--m Heading--default"
+                  data-test="DesignSystem-Heading"
+                >
+                  Heading
+                </h4>
+              </div>
+              <span
+                class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                data-test="DesignSystem-OverlayHeader--Subheading"
               >
-                close
-              </i>
+                Subheading
+              </span>
             </div>
           </div>
-          <span
-            class="Text Text--subtle Text--regular mt-2 ml-7"
-            data-test="DesignSystem-ModalHeader--Subheading"
+          <div
+            class="Col flex-grow-0"
           >
-            Subheading
-          </span>
+            <button
+              class="Button Button--regular Button--regularSquare Button--transparent"
+              data-test="DesignSystem-Modal--CloseButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+              >
+                <i
+                  class="material-icons Icon Icon--default"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  close
+                </i>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -215,35 +269,53 @@ exports[`Modal component
         >
           <div
             class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
           >
             <div
-              class="Modal-headerWrapper"
+              class="Col"
             >
               <div
-                class="Modal-headerHeading"
+                class="OverlayHeader"
+                data-test="DesignSystem-OverlayHeader"
               >
-                <h4
-                  class="Heading Heading--m Heading--default"
-                  data-test="DesignSystem-Heading"
+                <div
+                  class="OverlayHeader-headerWrapper"
                 >
-                  Heading
-                </h4>
-                <i
-                  class="material-icons Icon mx-2 cursor-pointer"
-                  data-test="DesignSystem-ModalHeader--CloseIcon"
-                  style="font-size: 20px; width: 20px;"
+                  <h4
+                    class="Heading Heading--m Heading--default"
+                    data-test="DesignSystem-Heading"
+                  >
+                    Heading
+                  </h4>
+                </div>
+                <span
+                  class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                  data-test="DesignSystem-OverlayHeader--Subheading"
                 >
-                  close
-                </i>
+                  Subheading
+                </span>
               </div>
             </div>
-            <span
-              class="Text Text--subtle Text--regular mt-2 ml-7"
-              data-test="DesignSystem-ModalHeader--Subheading"
+            <div
+              class="Col flex-grow-0"
             >
-              Subheading
-            </span>
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -279,35 +351,53 @@ exports[`Modal component
       >
         <div
           class="Modal-header"
-          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerWrapper"
+            class="Col"
           >
             <div
-              class="Modal-headerHeading"
+              class="OverlayHeader"
+              data-test="DesignSystem-OverlayHeader"
             >
-              <h4
-                class="Heading Heading--m Heading--default"
-                data-test="DesignSystem-Heading"
+              <div
+                class="OverlayHeader-headerWrapper"
               >
-                Heading
-              </h4>
-              <i
-                class="material-icons Icon mx-2 cursor-pointer"
-                data-test="DesignSystem-ModalHeader--CloseIcon"
-                style="font-size: 20px; width: 20px;"
+                <h4
+                  class="Heading Heading--m Heading--default"
+                  data-test="DesignSystem-Heading"
+                >
+                  Heading
+                </h4>
+              </div>
+              <span
+                class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                data-test="DesignSystem-OverlayHeader--Subheading"
               >
-                close
-              </i>
+                Subheading
+              </span>
             </div>
           </div>
-          <span
-            class="Text Text--subtle Text--regular mt-2 ml-7"
-            data-test="DesignSystem-ModalHeader--Subheading"
+          <div
+            class="Col flex-grow-0"
           >
-            Subheading
-          </span>
+            <button
+              class="Button Button--regular Button--regularSquare Button--transparent"
+              data-test="DesignSystem-Modal--CloseButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+              >
+                <i
+                  class="material-icons Icon Icon--default"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  close
+                </i>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -344,35 +434,53 @@ exports[`Modal component
         >
           <div
             class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
           >
             <div
-              class="Modal-headerWrapper"
+              class="Col"
             >
               <div
-                class="Modal-headerHeading"
+                class="OverlayHeader"
+                data-test="DesignSystem-OverlayHeader"
               >
-                <h4
-                  class="Heading Heading--m Heading--default"
-                  data-test="DesignSystem-Heading"
+                <div
+                  class="OverlayHeader-headerWrapper"
                 >
-                  Heading
-                </h4>
-                <i
-                  class="material-icons Icon mx-2 cursor-pointer"
-                  data-test="DesignSystem-ModalHeader--CloseIcon"
-                  style="font-size: 20px; width: 20px;"
+                  <h4
+                    class="Heading Heading--m Heading--default"
+                    data-test="DesignSystem-Heading"
+                  >
+                    Heading
+                  </h4>
+                </div>
+                <span
+                  class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                  data-test="DesignSystem-OverlayHeader--Subheading"
                 >
-                  close
-                </i>
+                  Subheading
+                </span>
               </div>
             </div>
-            <span
-              class="Text Text--subtle Text--regular mt-2 ml-7"
-              data-test="DesignSystem-ModalHeader--Subheading"
+            <div
+              class="Col flex-grow-0"
             >
-              Subheading
-            </span>
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>

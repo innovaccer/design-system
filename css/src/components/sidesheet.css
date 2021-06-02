@@ -45,16 +45,31 @@
   animation: sidesheet-close 120ms cubic-bezier(0.4, 0.14, 1, 1);
 }
 
-.Sidesheet-footer {
-  height: 80px;
+.Sidesheet-header {
   display: flex;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
-  padding-left: var(--spacing-xl);
+  justify-content: flex-start;
+  padding-top: var(--spacing-2);
+  padding-bottom: var(--spacing-l);
+  padding-right: var(--spacing-l);
 }
 
-.Sidesheet-footer--seperator {
+.Sidesheet-header--withSeperator {
+  border-bottom: var(--border);
+}
+
+.Sidesheet-body {
+  padding: 0 var(--spacing-xl);
+}
+
+.Sidesheet-body--withMargin {
+  margin-bottom: 80px;
+}
+
+.Sidesheet-footer {
+  height: 80px;
+}
+
+.Sidesheet-footer--withSeperator {
   border-top: var(--border);
 }
 

@@ -1,13 +1,8 @@
 import * as React from 'react';
 import { boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import ModalHeader from '@/components/molecules/modalHeader';
-import ModalDescription from '@/components/molecules/modalDescription';
-import ModalFooter from '@/components/molecules/modalFooter';
-import ModalBody from '@/components/molecules/modalBody';
-import Button from '@/components/atoms/button';
 import { updateKnob } from '@/utils/storybookEventEmitter';
-import { Text, Paragraph, Sidesheet } from '@/index';
+import { Text, Paragraph, Sidesheet, ModalDescription, Button } from '@/index';
 
 export const stickyFooter = () => {
   const open = boolean('open', true);
@@ -159,7 +154,6 @@ const customCode = `() => {
 export default {
   title: 'Components/Sidesheet/Sticky Footer',
   component: Sidesheet,
-  subcomponents: { ModalHeader, ModalBody, ModalDescription, ModalFooter },
   parameters: {
     docs: {
       docPage: {

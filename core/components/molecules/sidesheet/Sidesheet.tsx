@@ -1,16 +1,24 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import { Row, Column, Backdrop, OutsideClick, ModalBody, ModalFooter, ModalHeader } from '@/index';
-import { ColumnProps, ModalHeaderProps } from '@/index.type';
+import { Row, Column, Backdrop, OutsideClick, Button } from '@/index';
+import { ColumnProps } from '@/index.type';
+import { OverlayFooter, OverlayFooterProps } from '@/components/molecules/overlayFooter';
+import { OverlayHeader, OverlayHeaderProps } from '@/components/molecules/overlayHeader';
+import { OverlayBody } from '@/components/molecules/overlayBody';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { getWrapperElement, getUpdatedZIndex } from '@/utils/overlayHelper';
 
 export type Dimension = 'regular' | 'large';
+type FooterOptions = {
+  actions: OverlayFooterProps['actions']
+};
 
 export interface SidesheetProps extends BaseProps {
   /**
-   * Heading Options
+   * Header options (doesn't work if `header` prop is used)
+   *
+   * Use `header` prop if custom header is needed.
    *
    * <pre className="DocPage-codeBlock">
    * Header:
@@ -19,17 +27,28 @@ export interface SidesheetProps extends BaseProps {
    *    subHeading?: string;
    *    backIcon?: boolean;
    *    backIconCallback?: (e) => void;
+   *    backButton?: boolean;
+   *    backButtonCallback?: (e) => void;
    * }
    * </pre>
+   *
+   * **`backIcon` and `backIconCallback` will soon be deprecated**
    *
    * | Name | Description |
    * | --- | --- |
    * | heading | Heading of `Sidesheet` |
    * | subHeading | Subheading of `Sidesheet` |
-   * | backIcon | Determines if back icon is visible |
-   * | backIconCallback | Callback called when back icon is clicked |
+   * | backButton | Determines if back button is visible |
+   * | backButtonCallback | Callback called when back button is clicked |
+   * | backIcon | Determines if back button is visible |
+   * | backIconCallback | Callback called when back button is clicked |
    */
-  headerOptions: Omit<ModalHeaderProps, 'onClose'>;
+  headerOptions: Omit<OverlayHeaderProps, 'onClose'>;
+  /**
+   * header component to be used as sidesheet header.
+   * close button is not part of header so it will not be replaced.
+   */
+  header?: React.ReactNode;
   /**
    * Dimension of `Sidesheet`
    *
@@ -45,10 +64,6 @@ export interface SidesheetProps extends BaseProps {
    */
   stickFooter?: boolean;
   /**
-   * Determines if margin bottom is to be applied to modal body
-   */
-  withFooter?: boolean;
-  /**
    * Show dividers in the header and the footer.
    */
   seperator?: boolean;
@@ -60,6 +75,18 @@ export interface SidesheetProps extends BaseProps {
    * Footer component inside `Sidesheet`
    */
   footer?: React.ReactNode;
+  /**
+   * Footer options (doesn't work if `footer` prop is used).
+   *
+   * Use `footer` prop if custom footer is needed.
+   * <pre className="DocPage-codeBlock">
+   *  OverlayFooterOptions {
+   *    actions: ButtonProps[];
+   *  }
+   * ([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))
+   * </pre>
+   */
+  footerOptions?: FooterOptions;
   /**
    * Determined close event on backdrop click
    */
@@ -150,6 +177,8 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       seperator,
       stickFooter,
       headerOptions,
+      footerOptions,
+      header,
       onClose,
     } = this.props;
 
@@ -165,8 +194,23 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       ['Overlay-container--open']: open,
     });
 
+    const headerClass = classNames({
+      ['Sidesheet-header']: true,
+      ['Sidesheet-header--withSeperator']: seperator,
+    });
+
+    const footerClass = classNames({
+      ['Sidesheet-footer']: true,
+      ['Sidesheet-footer--withSeperator']: seperator,
+      ['Sidesheet-footer--stickToBottom']: stickFooter
+    });
+
+    const bodyClass = classNames({
+      ['Sidesheet-body']: true,
+      ['Sidesheet-body--withMargin']: !!footer && stickFooter
+    });
+
     const baseProps = extractBaseProps(this.props);
-    const headerObj = { ...headerOptions, seperator };
 
     const SidesheetContainer = (
       <Row
@@ -182,26 +226,41 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
           className={classes}
           size={sidesheetWidth[dimension]}
         >
-          <ModalHeader
-            onClose={(event: React.MouseEvent<HTMLElement, MouseEvent>, reason) => {
-              if (onClose) onClose(event, reason);
-            }}
-            {...headerObj}
-          />
-          <ModalBody
-            stickFooter={stickFooter}
-            withFooter={!!footer}
+          <div className={headerClass}>
+            <Column>
+              {!header && (
+                <OverlayHeader
+                  {...headerOptions}
+                />
+              )}
+
+              {!!header && header}
+            </Column>
+            <Column className="flex-grow-0">
+              <Button
+                icon="close"
+                appearance="transparent"
+                data-test="DesignSystem-Sidesheet--CloseButton"
+                onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+                  if (onClose) onClose(event, 'IconClick');
+                }}
+              />
+            </Column>
+          </div>
+          <OverlayBody
+            className={bodyClass}
           >
             {this.props.children}
-          </ModalBody>
-          {footer && (
-            <ModalFooter
-              inSidesheet={true}
-              stickToBottom={stickFooter}
-              seperator={seperator}
+          </OverlayBody>
+          {(!!footer || !!footerOptions) && (
+            <OverlayFooter
+              data-test="DesignSystem-Sidesheet--Footer"
+              {...footerOptions}
+              open={open}
+              className={footerClass}
             >
               {footer}
-            </ModalFooter>
+            </OverlayFooter>
           )}
         </Column>
       </Row>
