@@ -1,13 +1,8 @@
 import * as React from 'react';
 import { boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import ModalHeader from '@/components/molecules/modalHeader';
-import ModalDescription from '@/components/molecules/modalDescription';
-import ModalFooter from '@/components/molecules/modalFooter';
-import ModalBody from '@/components/molecules/modalBody';
-import Button from '@/components/atoms/button';
 import { updateKnob } from '@/utils/storybookEventEmitter';
-import { Heading, Text, Paragraph, Sidesheet } from '@/index';
+import { Heading, Text, Paragraph, Sidesheet, ModalDescription, Button } from '@/index';
 
 export const twoSteps = () => {
   const [page, setPage] = React.useState(2);
@@ -201,7 +196,6 @@ const customCode = `() => {
 export default {
   title: 'Components/Sidesheet/Two Steps',
   component: Sidesheet,
-  subcomponents: { ModalHeader, ModalBody, ModalDescription, ModalFooter },
   parameters: {
     docs: {
       docPage: {

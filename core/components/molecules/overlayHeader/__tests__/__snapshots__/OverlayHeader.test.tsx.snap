@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OverlayHeader component 
+  heading: "Modal header", onClose: "[Function]", subHeading: "Modal subheading"
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="OverlayHeader"
+    data-test="DesignSystem-OverlayHeader"
+  >
+    <div
+      class="OverlayHeader-headerWrapper"
+    >
+      <h4
+        class="Heading Heading--m Heading--default"
+        data-test="DesignSystem-Heading"
+      >
+        Modal header
+      </h4>
+    </div>
+    <span
+      class="Text Text--subtle Text--regular OverlayHeader-subheading"
+      data-test="DesignSystem-OverlayHeader--Subheading"
+    >
+      Modal subheading
+    </span>
+  </div>
+</DocumentFragment>
+`;

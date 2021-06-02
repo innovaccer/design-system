@@ -1,5 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { OverlayBody } from '@/components/molecules/overlayBody';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export interface ModalBodyProps extends BaseProps {
@@ -9,19 +10,22 @@ export interface ModalBodyProps extends BaseProps {
 }
 
 export const ModalBody = (props: ModalBodyProps) => {
-  const { children, className, stickFooter, withFooter } = props;
+  const { children, className } = props;
 
   const baseProps = extractBaseProps(props);
 
   const classes = classNames({
     'Modal-body': true,
-    ['Modal-body--stickFooter']: withFooter && stickFooter
   }, className);
 
   return (
-    <div data-test="DesignSystem-ModalBody" {...baseProps} className={classes}>
+    <OverlayBody
+      {...baseProps}
+      stickFooter={true}
+      className={classes}
+    >
       {children}
-    </div>
+    </OverlayBody>
   );
 };
 

@@ -2,13 +2,17 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { Row, Column, Icon } from '@/index';
-import { ModalHeader, ModalHeaderProps } from './ModalHeader';
-import { ModalFooter, ModalFooterProps } from './ModalFooter';
+import { OverlayFooter, OverlayFooterProps } from '@/components/molecules/overlayFooter';
+import { OverlayHeader, OverlayHeaderProps } from '@/components/molecules/overlayHeader';
+import { OverlayBody } from '@/components/molecules/overlayBody';
+import { Row, Column, Button } from '@/index';
 import { ColumnProps } from '@/index.type';
 import { getWrapperElement, getUpdatedZIndex } from '@/utils/overlayHelper';
 
 export type Dimension = 'medium' | 'large';
+type FooterOptions = {
+  actions: OverlayFooterProps['actions']
+};
 
 export interface FullscreenModalProps extends BaseProps {
   /**
@@ -27,11 +31,34 @@ export interface FullscreenModalProps extends BaseProps {
   onClose?: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
 
   /**
-   * `ModalHeader` options (doesn't work if `header` prop is used).
-   * use `header` prop if custom header is needed.
+   * Header options (doesn't work if `header` prop is used)
    *
+   * Use `header` prop if custom header is needed.
+   *
+   * <pre className="DocPage-codeBlock">
+   * Header:
+   * {
+   *    heading: string;
+   *    subHeading?: string;
+   *    backIcon?: boolean;
+   *    backIconCallback?: (e) => void;
+   *    backButton?: boolean;
+   *    backButtonCallback?: (e) => void;
+   * }
+   * </pre>
+   *
+   * **`backIcon` and `backIconCallback` will soon be deprecated**
+   *
+   * | Name | Description |
+   * | --- | --- |
+   * | heading | Heading of `Sidesheet` |
+   * | subHeading | Subheading of `Sidesheet` |
+   * | backButton | Determines if back button is visible |
+   * | backButtonCallback | Callback called when back button is clicked |
+   * | backIcon | Determines if back button is visible |
+   * | backIconCallback | Callback called when back button is clicked |
    */
-  headerOptions?: ModalHeaderProps;
+  headerOptions?: OverlayHeaderProps;
 
   /**
    * header component to be used as modal header.
@@ -40,9 +67,18 @@ export interface FullscreenModalProps extends BaseProps {
   header?: React.ReactNode;
 
   /**
-   * `ModalFooter` options (doesn't work if `footer` prop is used).
+   * Footer options (doesn't work if `footer` prop is used).
+   *
+   * Use `footer` prop if custom footer is needed.
+   *
+   * <pre className="DocPage-codeBlock">
+   *  OverlayFooterOptions {
+   *    actions: ButtonProps[];
+   *  }
+   * ([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))
+   * </pre>
    */
-  footerOptions?: ModalFooterProps;
+  footerOptions?: FooterOptions;
 
   /**
    * footer component to be used as modal footer.
@@ -155,39 +191,40 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
         <div data-test="DesignSystem-FullscreenModal" {...baseProps} className={classes} ref={this.modalRef}>
           <Row className="justify-content-center">
             <Column {...sizeMap[dimension]}>
-              <Row className="justify-content-between pt-6 pr-6 pb-5 pl-7">
+              <Row className="FullscreenModal-header">
                 <Column>
-                  {!header && <ModalHeader {...headerOptions} />}
+                  {!header && <OverlayHeader {...headerOptions} />}
 
                   {!!header && header}
                 </Column>
-                <Column className="pr-2 flex-grow-0">
-                  <Icon
-                    size={20}
-                    name={'close'}
-                    className="cursor-pointer pt-3"
-                    data-test="DesignSystem-ModalHeader--CloseIcon"
-                    onClick={(event: React.MouseEvent<HTMLElement, MouseEvent>) => {
+                <Column className="flex-grow-0">
+                  <Button
+                    icon="close"
+                    appearance="transparent"
+                    data-test="DesignSystem-FullscreenModal--CloseButton"
+                    onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
                       if (onClose) onClose(event, 'IconClick');
                     }}
                   />
                 </Column>
               </Row>
-
-              <div data-test="DesignSystem-ModalBody" className="FullscreenModal-body">
+              <OverlayBody
+                data-test="DesignSystem-FullscreenModal--Body"
+                className="FullscreenModal-body"
+              >
                 {children}
-              </div>
-
+              </OverlayBody>
               {
                 (!!footer || !!footerOptions) &&
                 (
-                  <div data-test="DesignSystem-ModalFooter" className="d-flex justify-content-end p-7">
-                    {!footer && <ModalFooter {...footerOptions} open={open} />}
-
-                    {!!footer && footer}
-                  </div>
-                )
-              }
+                  <OverlayFooter
+                    {...footerOptions}
+                    open={open}
+                    className="FullscreenModal-footer"
+                  >
+                    {footer}
+                  </OverlayFooter>
+                )}
             </Column>
           </Row>
         </div>
