@@ -1,6 +1,5 @@
 import * as React from 'react';
-import Spinner from '@/components/atoms/spinner';
-import Icon from '@/components/atoms/icon';
+import { Text, Icon, Spinner } from '@/index';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
 
@@ -125,11 +124,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     [`Button-icon--${iconAlign}`]: children && iconAlign
   });
 
-  const spinnerClass = classNames({
-    ['Button-spinner']: true,
-    [`Button-spinner--${iconAlign}`]: children && iconAlign
-  });
-
   return (
     <button
       data-test="DesignSystem-Button"
@@ -140,22 +134,35 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
       tabIndex={tabIndex}
       {...rest}
     >
-      {loading && (
-        <span className={spinnerClass}>
-          <Spinner size="small" appearance={(appearance === 'basic' || appearance === 'transparent') ? 'secondary' : 'white'} />
-        </span>
-      )}
-      {icon && !loading && (
-        <div className={iconClass}>
-          <Icon
-            data-test="DesignSystem-Button--Icon"
-            name={icon}
-            appearance={disabled ? 'disabled' : (appearance === 'basic' || appearance === 'transparent') ? selected ? 'info' : 'default' : 'white'}
-            size={largeIcon && !children ? sizeMapping[size] + 4 : sizeMapping[size]}
+      {loading ? (
+        <>
+          <Spinner
+            size="small"
+            appearance={(appearance === 'basic' || appearance === 'transparent') ? 'secondary' : 'white'}
+            data-test="DesignSystem-Button--Spinner"
+            className="Button-spinner"
           />
-        </div>
+          <Text className="Button-text Button-text--hidden">
+            {children || ''}
+            </Text>
+        </>
+      ) : (
+        <>
+          {icon && (
+            <div className={iconClass}>
+              <Icon
+                data-test="DesignSystem-Button--Icon"
+                name={icon}
+                appearance={
+                  disabled ? 'disabled' : (appearance === 'basic' || appearance === 'transparent') ? selected ? 'info' : 'default' : 'white'}
+                size={largeIcon && !children ? sizeMapping[size] + 4 : sizeMapping[size]}
+              />
+            </div>
+          )
+          }
+          {children}
+        </>
       )}
-      {children}
     </button>
   );
 });
