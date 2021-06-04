@@ -1,8 +1,7 @@
 import * as React from 'react';
-import Stepper from '../Stepper';
-import { Button } from '@/components/atoms/button';
 import { action } from '@storybook/addon-actions';
-import { steps } from './Steps';
+import { steps } from '../Steps';
+import { Stepper, Button } from '@/index';
 
 export const stepperWithTrigger = () => {
   const [active, setActive] = React.useState(0);
@@ -60,19 +59,15 @@ const customCode = `() => {
       value: 'Step4'
     }
   ];
-
   const [active, setActive] = React.useState(0);
   const [completed, setCompleted] = React.useState(active - 1);
-
   const onChange = (index) => {
     setActive(index);
   };
-
   const onClickHandler = () => {
     if (active > completed) setCompleted(active);
     active > completed ? setActive(active + 1) : setActive(completed + 1);
   };
-
   return (
     <div
       className="d-flex flex-column justify-content-between align-items-end py-4 px-4"
@@ -95,7 +90,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Stepper/Stepper With Trigger',
+  title: 'Components/Stepper/variants/Stepper With Trigger',
   component: Stepper,
   parameters: {
     docs: {

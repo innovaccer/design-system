@@ -35,7 +35,9 @@ export const Step = (props: StepProps) => {
     if (onChange) onChange(label, value);
   };
 
-  const iconAppearance = completed ? 'info' : disabled ? 'disabled' : 'default';
+  const iconAppearance = completed ? 'info' : disabled ? 'disabled' : active ? 'info' : 'default';
+
+  const appearance = active ? 'link' : disabled ? 'disabled' : 'default';
 
   return (
     <div
@@ -53,7 +55,7 @@ export const Step = (props: StepProps) => {
       {label && (
         <Text
           weight="medium"
-          appearance={disabled ? 'disabled' : 'default'}
+          appearance={appearance}
         >
           {label}
         </Text>
