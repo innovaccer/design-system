@@ -31,14 +31,14 @@ exports[`Stepper component
       data-test="DesignSystem-Step"
     >
       <i
-        class="material-icons Icon Icon--default mr-3 my-4"
+        class="material-icons Icon Icon--info mr-3 my-4"
         data-test="DesignSystem-Step--Icon"
         style="font-size: 16px; width: 16px;"
       >
         radio_button_unchecked
       </i>
       <span
-        class="Text Text--default Text--medium Text--regular"
+        class="Text Text--link Text--medium Text--regular"
         data-test="DesignSystem-Text"
       >
         Step B

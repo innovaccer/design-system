@@ -94,7 +94,7 @@ describe('Stepper component with prop: active', () => {
   it('renders Icon inside active step', () => {
     const { getAllByTestId } = render(<Stepper steps={steps} active={active} completed={0} />);
     expect(getAllByTestId('DesignSystem-Step--Icon')[active].textContent).toMatch('radio_button_unchecked');
-    expect(getAllByTestId('DesignSystem-Step--Icon')[active]).toHaveClass('Icon--default');
+    expect(getAllByTestId('DesignSystem-Step--Icon')[active]).toHaveClass('Icon--info');
   });
 
   it('renders stepper with equal active and completed prop', () => {
