@@ -1,0 +1,11 @@
+.myOwnClass:hover {
+    transform: skew(-10deg);
+    background-color: #f1f1f1 !important;
+}
+.myOwnClass{
+    background-color:#E5E5E5 !important
+}
+.myOwnClass.MenuItem--active{
+    background-color: white !important;
+    border:#E5E5E5 1px solid;
+}

@@ -24,6 +24,7 @@ export interface VerticalNavProps extends BaseProps {
    *    count?: number;
    *    subMenu?: Menu[];
    *    icon?: string;
+   *    className?: string;
    * };
    * </pre>
    *
@@ -37,6 +38,7 @@ export interface VerticalNavProps extends BaseProps {
    * | group | Section of menu | |
    * | subMenu | Menu submenus of type `Menu[]` | |
    * | icon | Menu icon | |
+   * | className | Adds class to menu tab | |
    */
   menus: Menu[];
   /**

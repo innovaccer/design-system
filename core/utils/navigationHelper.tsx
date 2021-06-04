@@ -7,6 +7,7 @@ export type Menu = {
   count?: number;
   disabled?: boolean;
   subMenu?: Menu[];
+  className?: string;
 };
 
 export type ActiveMenu = ({ name: string } | { link: string }) & Partial<Menu>;

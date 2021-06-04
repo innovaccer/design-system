@@ -47,6 +47,7 @@ export const MenuItem = (props: MenuItemProps) => {
     ['MenuItem--disabled']: menu.disabled,
     ['MenuItem--subMenu']: isChildren && expanded,
     ['MenuItem--rounded']: rounded && expanded,
+    [`${menu.className}`]: menu.className
   });
 
   const renderSubMenu = () => {

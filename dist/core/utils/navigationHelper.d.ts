@@ -7,6 +7,7 @@ export declare type Menu = {
     count?: number;
     disabled?: boolean;
     subMenu?: Menu[];
+    className?: string;
 };
 export declare type ActiveMenu = ({
     name: string;
