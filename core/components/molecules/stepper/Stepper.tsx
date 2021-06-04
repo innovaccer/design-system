@@ -45,6 +45,8 @@ export interface StepperProps extends BaseProps {
     label?: string,
     value?: React.ReactText
   ) => void;
+
+  skipIndexes : number[];
 }
 
 export const Stepper = (props: StepperProps) => {
@@ -54,6 +56,7 @@ export const Stepper = (props: StepperProps) => {
     completed,
     onChange,
     className,
+    skipIndexes,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -80,9 +83,10 @@ export const Stepper = (props: StepperProps) => {
 
         const { label, value } = step;
 
+        const isSkipped = skipIndexes.includes(index);
         const activeStep = active === index;
-        const completedStep = completed >= index;
-        const disabled = completed + 1 < index;
+        const completedStep = !isSkipped && completed >= index;
+        const disabled = !activeStep && !isSkipped && (completed + 1 < index);
 
         return (
           <Step
@@ -103,7 +107,8 @@ export const Stepper = (props: StepperProps) => {
 Stepper.displayName = 'Stepper';
 Stepper.defaultProps = {
   completed: -1,
-  active: 0
+  active: 0,
+  skipIndexes:[],
 };
 
 export default Stepper;
