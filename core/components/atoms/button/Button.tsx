@@ -92,8 +92,8 @@ const sizeMapping: Record<Size, number> = {
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const {
-    size = 'large',
-    appearance = 'basic',
+    size = 'regular',
+    appearance = 'primary',
     iconAlign = 'left',
     tabIndex = 0,
     largeIcon,
