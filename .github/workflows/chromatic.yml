@@ -21,9 +21,11 @@ jobs:
         run: npm install
         # 👇 Adds Chromatic as a step in the workflow
       - name: Publish to Chromatic
-        run: npm run chromatic
-      # uses: chromaui/action@v1
-        # # Chromatic GitHub Action options
-        # with:
-        #   token: ${{ secrets.GITHUB_TOKEN }}
-        #   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        # run: npm run chromatic
+        uses: chromaui/action@v1
+          # Chromatic GitHub Action options
+          with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+            exitZeroOnChanges: true # 👈 Option to prevent the workflow from failing
+
