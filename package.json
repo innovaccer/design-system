@@ -9,7 +9,7 @@
     "css": "css"
   },
   "scripts": {
-    "chromatic": "chromatic",
+    "chromatic":"chromatic --project-token=008ab60c4381",
     "test": "jest --coverage",
     "test:ci": "jest --onlyChanged",
     "start": "start-storybook -p 5000",

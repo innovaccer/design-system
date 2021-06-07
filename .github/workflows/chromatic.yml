@@ -2,15 +2,7 @@
 name: 'Chromatic'
 
 # Event for the workflow
-on:
-  push:
-    branches:
-      - master
-      - develop
-      
-  pull_request:
-    branches:
-      - master
+on: pull_request
 
 # List of jobs
 jobs:
