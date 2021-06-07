@@ -2,7 +2,7 @@
 name: 'Chromatic'
 
 # Event for the workflow
-on: push
+on: pull_request
 
 # List of jobs
 jobs:
@@ -26,5 +26,6 @@ jobs:
         # Chromatic GitHub Action options
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: 008ab60c4381
           exitZeroOnChanges: true # 👈 Option to prevent the workflow from failing
 
