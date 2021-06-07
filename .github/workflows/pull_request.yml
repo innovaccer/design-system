@@ -1,6 +1,6 @@
 name: Automated review checks
 
-on: pull_request  
+on: push  
 
 jobs:
   lint_test_build:
