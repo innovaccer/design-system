@@ -94,7 +94,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const {
     size = 'large',
     appearance = 'basic',
-    iconAlign = 'left',
+    iconAlign = 'right',
     tabIndex = 0,
     largeIcon,
     type,
