@@ -2,7 +2,7 @@
 name: 'Chromatic'
 
 # Event for the workflow
-on: pull_request
+on: push
 
 # List of jobs
 jobs:
@@ -12,8 +12,13 @@ jobs:
     # Job steps
     steps:
       - uses: actions/checkout@v1
-      - name: Install dependencies
-        run: yarn
+            
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      
+      - name: npm install
+        run: npm install
         # 👇 Adds Chromatic as a step in the workflow
       - name: Publish to Chromatic
         uses: chromaui/action@v1
