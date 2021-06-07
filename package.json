@@ -9,7 +9,7 @@
     "css": "css"
   },
   "scripts": {
-    "chromatic":"chromatic --project-token 008ab60c4381",
+    "chromatic": "chromatic --project-token 008ab60c4381",
     "test": "jest --coverage",
     "test:ci": "jest --onlyChanged",
     "start": "start-storybook -p 5000",
@@ -84,7 +84,6 @@
     "rollup": "^2.0.6",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-node-builtins": "^2.1.2",
-    "storybook-chromatic": "^3.5.5",
     "ts-jest": "^24.3.0",
     "ts-loader": "^6.2.1",
     "tslint": "^6.0.0-beta0",
