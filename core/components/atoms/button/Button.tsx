@@ -134,6 +134,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
       tabIndex={tabIndex}
       {...rest}
     >
+      Foo
       {loading ? (
         <>
           <Spinner
