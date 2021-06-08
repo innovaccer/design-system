@@ -33,7 +33,7 @@ exports[`Pagination component
         data-test="DesignSystem-Pagination--Prev"
       >
         <button
-          class="Button Button--large Button--largeSquare Button--basic"
+          class="Button Button--large Button--largeSquare Button--primary"
           data-test="DesignSystem-Pagination--PrevButton"
           tabindex="0"
         >
@@ -41,7 +41,7 @@ exports[`Pagination component
             class="Button-icon"
           >
             <i
-              class="material-icons Icon Icon--default"
+              class="material-icons Icon Icon--white"
               data-test="DesignSystem-Button--Icon"
               style="font-size: 20px; width: 20px;"
             >
@@ -58,7 +58,7 @@ exports[`Pagination component
         class="mr-4 mx-3"
       >
         <button
-          class="Button Button--large Button--largeSquare Button--basic"
+          class="Button Button--large Button--largeSquare Button--primary"
           data-test="DesignSystem-Pagination--NextButton"
           tabindex="0"
         >
@@ -66,7 +66,7 @@ exports[`Pagination component
             class="Button-icon"
           >
             <i
-              class="material-icons Icon Icon--default"
+              class="material-icons Icon Icon--white"
               data-test="DesignSystem-Button--Icon"
               style="font-size: 20px; width: 20px;"
             >
@@ -130,7 +130,7 @@ exports[`Pagination component
         data-test="DesignSystem-Pagination--Prev"
       >
         <button
-          class="Button Button--large Button--largeSquare Button--basic"
+          class="Button Button--large Button--largeSquare Button--primary"
           data-test="DesignSystem-Pagination--PrevButton"
           tabindex="0"
         >
@@ -138,7 +138,7 @@ exports[`Pagination component
             class="Button-icon"
           >
             <i
-              class="material-icons Icon Icon--default"
+              class="material-icons Icon Icon--white"
               data-test="DesignSystem-Button--Icon"
               style="font-size: 20px; width: 20px;"
             >
@@ -177,7 +177,7 @@ exports[`Pagination component
         class="mr-4 mx-4"
       >
         <button
-          class="Button Button--large Button--largeSquare Button--basic"
+          class="Button Button--large Button--largeSquare Button--primary"
           data-test="DesignSystem-Pagination--NextButton"
           tabindex="0"
         >
@@ -185,7 +185,7 @@ exports[`Pagination component
             class="Button-icon"
           >
             <i
-              class="material-icons Icon Icon--default"
+              class="material-icons Icon Icon--white"
               data-test="DesignSystem-Button--Icon"
               style="font-size: 20px; width: 20px;"
             >

@@ -29,7 +29,7 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-Breadcrumbs"
   />
   <button
-    class="Button Button--regular Button--regularSquare Button--basic"
+    class="Button Button--regular Button--regularSquare Button--primary"
     data-test="DesignSystem-Button"
     tabindex="0"
   />
@@ -1171,7 +1171,6 @@ exports[`TS renders children 1`] = `
       </div>
       <div
         class="Slider-handle"
-        style="left: calc(0.00% - 0px);"
         tabindex="1"
       >
         <div
@@ -1366,7 +1365,6 @@ exports[`TS renders children 1`] = `
       </div>
       <div
         class="Slider-handle"
-        style="left: calc(0.00% - 0px);"
         tabindex="1"
       >
         <div
@@ -1379,7 +1377,6 @@ exports[`TS renders children 1`] = `
       </div>
       <div
         class="Slider-handle"
-        style="left: calc(100.00% - 0px);"
         tabindex="1"
       >
         <div
@@ -1555,7 +1552,7 @@ exports[`TS renders children 1`] = `
         data-test="DesignSystem-Pagination--Prev"
       >
         <button
-          class="Button Button--large Button--largeSquare Button--basic"
+          class="Button Button--large Button--largeSquare Button--primary"
           data-test="DesignSystem-Pagination--PrevButton"
           disabled=""
           tabindex="0"
@@ -1581,7 +1578,7 @@ exports[`TS renders children 1`] = `
         class="mr-4 mx-3"
       >
         <button
-          class="Button Button--large Button--largeSquare Button--basic"
+          class="Button Button--large Button--largeSquare Button--primary"
           data-test="DesignSystem-Pagination--NextButton"
           disabled=""
           tabindex="0"

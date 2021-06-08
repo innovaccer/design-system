@@ -9,7 +9,7 @@ exports[`Tooltip component
       class="OutsideClick PopperWrapper-trigger"
     >
       <button
-        class="Button Button--regular Button--basic Button--iconAlign-left"
+        class="Button Button--regular Button--primary Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
       >
@@ -29,7 +29,7 @@ exports[`Tooltip component
       class="OutsideClick PopperWrapper-trigger"
     >
       <button
-        class="Button Button--regular Button--basic Button--iconAlign-left"
+        class="Button Button--regular Button--primary Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
       >
@@ -49,7 +49,7 @@ exports[`Tooltip component
       class="OutsideClick PopperWrapper-trigger"
     >
       <button
-        class="Button Button--regular Button--basic Button--iconAlign-left"
+        class="Button Button--regular Button--primary Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
       >
@@ -69,7 +69,7 @@ exports[`Tooltip component
       class="OutsideClick PopperWrapper-trigger"
     >
       <button
-        class="Button Button--regular Button--basic Button--iconAlign-left"
+        class="Button Button--regular Button--primary Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
       >
@@ -89,7 +89,7 @@ exports[`Tooltip component
       class="OutsideClick PopperWrapper-trigger"
     >
       <button
-        class="Button Button--regular Button--basic Button--iconAlign-left"
+        class="Button Button--regular Button--primary Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
       >
@@ -109,7 +109,7 @@ exports[`Tooltip component
       class="OutsideClick PopperWrapper-trigger"
     >
       <button
-        class="Button Button--regular Button--basic Button--iconAlign-left"
+        class="Button Button--regular Button--primary Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
       >
@@ -129,7 +129,7 @@ exports[`Tooltip component
       class="OutsideClick PopperWrapper-trigger"
     >
       <button
-        class="Button Button--regular Button--basic Button--iconAlign-left"
+        class="Button Button--regular Button--primary Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
       >
@@ -149,7 +149,7 @@ exports[`Tooltip component
       class="OutsideClick PopperWrapper-trigger"
     >
       <button
-        class="Button Button--regular Button--basic Button--iconAlign-left"
+        class="Button Button--regular Button--primary Button--iconAlign-left"
         data-test="DesignSystem-Button"
         tabindex="0"
       >
