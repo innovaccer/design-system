@@ -1,4 +1,4 @@
-name: Pull request 
+name: Automated review checks
 
 on: pull_request  
 
@@ -27,3 +27,14 @@ jobs:
 
       - name: build storybook
         run: npm run build-storybook
+      
+      - name: Visual review with Chromatic
+        # run: npm run chromatic
+        uses: chromaui/action@v1
+        # Chromatic GitHub Action options
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: cb3a73370975
+          exitZeroOnChanges: true # 👈 Option to prevent the workflow from failing
+
+
