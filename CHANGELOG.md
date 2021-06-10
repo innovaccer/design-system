@@ -1,5 +1,33 @@
 
-## 2.1.1  (2021-05-26) 
+## 2.1.1  (2021-06-10) 
+
+### Highlights
+NA
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+NA
+
+### Fixes
+* Adds width and height to checkbox in unchecked state. (c2561f34)
+
+### Improvements
+NA
+
+### Documentation
+NA
+
+-------------------
+
+## 2.1.2  (2021-05-26) 
 
 ### Highlights
 NA
