@@ -99,6 +99,7 @@
     outline: 0;
 }
 
+.Input-input:disabled,
 .Input-input:disabled .Input-input::placeholder {
     color: var(--inverse-lighter);
 }
