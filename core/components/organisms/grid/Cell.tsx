@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { RowData, ColumnSchema } from './Grid';
+import { RowData, ColumnSchema, SortType } from './Grid';
 import { Dropdown, Placeholder, PlaceholderParagraph, Text, Icon, Button, Tooltip, GridCell } from '@/index';
 import { DropdownProps, GridCellProps } from '@/index.type';
 import { resizeCol, hasSchema } from './utility';
@@ -30,7 +30,7 @@ type BodyCellProps = SharedCellProps & {
 
 export type CellProps = (HeaderCellProps | BodyCellProps) & {
   isHead?: boolean;
-  firstCell: boolean;
+  firstCell?: boolean;
 };
 
 const HeaderCell = (props: HeaderCellProps) => {
@@ -63,7 +63,7 @@ const HeaderCell = (props: HeaderCellProps) => {
   const isValidSchema = hasSchema(schemaProp);
 
   const listIndex = sortingList.findIndex(l => l.name === name);
-  const sorted = listIndex !== -1 ? sortingList[listIndex].type : null;
+  const sorted = listIndex !== -1 ? sortingList[listIndex].type : 'unsort';
 
   const el = React.createRef<HTMLDivElement>();
 
@@ -104,37 +104,40 @@ const HeaderCell = (props: HeaderCellProps) => {
     }))
     : [];
 
-  const renderLabel = () => (
-    <>
-      <Text weight="strong" className="ellipsis--noWrap">{schema.displayName}</Text>
-      {sorting && (
-        <div className="Grid-sortingIcons">
-          {sorted ? sorted === 'asc' ? (
-            <Icon name="arrow_downward" />
-          ) : (
-            <Icon name="arrow_upward" />
-          ) : (
-            <Icon name="unfold_more" />
-          )
-          }
-        </div>
-      )}
-    </>
-  );
+  const renderLabel = () => {
+    const iconMapping: Record<SortType, string> = {
+      asc: 'arrow_downward',
+      desc: 'arrow_upward',
+      unsort: 'unfold_more',
+    };
+
+    return (
+      <>
+        <Text weight="strong" className="ellipsis--noWrap">{schema.displayName}</Text>
+        {sorting && (
+          <div data-test="DesignSystem-SortingIcons" className="Grid-sortingIcons">
+            <Icon data-test="DesignSystem-SortingIcons--Icon" name={iconMapping[sorted]} />
+          </div>
+        )}
+      </>
+    );
+  };
 
   return (
     <div
       key={name}
+      data-test="DesignSystem-HeadCell"
       className={classes}
       ref={el}
     >
       <div
         className="Grid-cellContent"
+        data-test="DesignSystem-HeadCell--cellContent"
         onClick={() => {
           if (!loading && sorting) {
             if (sorted === 'asc') onMenuChange(name, 'sortDesc');
             if (sorted === 'desc') onMenuChange(name, 'unsort');
-            if (!sorted) onMenuChange(name, 'sortAsc');
+            if (sorted === 'unsort') onMenuChange(name, 'sortAsc');
           }
         }}
       >
@@ -196,6 +199,7 @@ const HeaderCell = (props: HeaderCellProps) => {
             <div>
               <Dropdown
                 key={`${name}-${sorted}-${pinned}`}
+                data-test="DesignSystem-CellMenu"
                 menu={true}
                 optionType="WITH_ICON"
                 triggerOptions={{
@@ -218,6 +222,7 @@ const HeaderCell = (props: HeaderCellProps) => {
       )}
       {schema.resizable && (
         <span
+          data-test="DesignSystem-CellResizeHandle"
           className="Grid-cellResize"
           onMouseDown={() => {
             resizeCol({ updateColumnSchema }, name, el.current);
@@ -252,9 +257,9 @@ const BodyCell = (props: BodyCellProps) => {
     size,
     schema,
     data,
-    loading,
-    expanded
+    loading
   };
+  if(nestedRows) cellProps['expanded'] = expanded;
 
   const nestedProps = {
     data,
@@ -264,11 +269,12 @@ const BodyCell = (props: BodyCellProps) => {
   const isNestedRowDisabled = !GridNestedRow(nestedProps);
 
   return (
-    <div className="Grid-cellContent">
+    <div data-test="DesignSystem-BodyCell" className="Grid-cellContent">
       {colIndex === 0 && nestedRows && (
         <>
           {!isNestedRowDisabled ? (
             <Icon
+              data-test="DesignSystem-NestedRowTrigger"
               className={'Grid-nestedRowTrigger'}
               name={expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
               size={20}
@@ -281,7 +287,7 @@ const BodyCell = (props: BodyCellProps) => {
               }}
             />
           ) : (
-            <span className="Grid-nestedRowPlaceholder" />
+            <span data-test="DesignSystem-NestedRowPlaceholder" className="Grid-nestedRowPlaceholder" />
           )}
         </>
       )}
@@ -356,6 +362,7 @@ export const Cell = (props: CellProps) => {
   return (
     <div
       key={`${rowIndex}-${colIndex}`}
+      data-test="DesignSystem-Cell"
       className={cellClass}
       draggable={isHead && draggable}
       onDragStart={e => {
