@@ -1508,7 +1508,8 @@ body {
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    height: inherit;
+    height: 100%;
+    width: 100%;
 }
 
 .Checkbox-input:focus {

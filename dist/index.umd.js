@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1622125969963 
+   * Generated on: 1623316352000 
    *      Package: @innovaccer/design-system
-   *      Version: v2.1.2
+   *      Version: v2.1.3
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -1239,6 +1239,7 @@
     };
   };
 
+  var _excluded$y = ["triggerSize", "placeholder", "menu", "children", "icon", "disabled", "open", "inlineLabel", "error"];
   var DropdownButton = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     var _classNames, _classNames2;
 
@@ -1254,7 +1255,7 @@
         open = props.open,
         inlineLabel = props.inlineLabel,
         error = props.error,
-        rest = _objectWithoutProperties$1(props, ["triggerSize", "placeholder", "menu", "children", "icon", "disabled", "open", "inlineLabel", "error"]);
+        rest = _objectWithoutProperties$1(props, _excluded$y);
 
     var buttonDisabled = disabled ? 'disabled' : 'default';
     var trimmedPlaceholder = placeholder.trim();
@@ -1288,18 +1289,21 @@
   });
   DropdownButton.displayName = 'DropdownButton';
 
+  var _excluded$x = ["children", "componentType", "className"];
+
   var GenericText = function GenericText(_ref) {
     var children = _ref.children,
         _ref$componentType = _ref.componentType,
         componentType = _ref$componentType === void 0 ? 'span' : _ref$componentType,
         className = _ref.className,
-        props = _objectWithoutProperties$1(_ref, ["children", "componentType", "className"]);
+        props = _objectWithoutProperties$1(_ref, _excluded$x);
 
     return /*#__PURE__*/React__namespace.createElement(componentType, _objectSpread2(_objectSpread2({}, props), {}, {
       className: className
     }), children);
   };
 
+  var _excluded$w = ["appearance", "size", "children", "weight", "small", "className"];
   var Text = function Text(props) {
     var _classNames;
 
@@ -1309,7 +1313,7 @@
         weight = props.weight,
         small = props.small,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, ["appearance", "size", "children", "weight", "small", "className"]);
+        rest = _objectWithoutProperties$1(props, _excluded$w);
 
     var classes = classnames((_classNames = {
       Text: true
@@ -1379,6 +1383,8 @@
     return uuid;
   };
 
+  var _excluded$v = ["size", "tabIndex", "defaultChecked", "indeterminate", "label", "disabled", "onChange", "name", "value", "className", "checked"];
+
   /**
    * ######Checkbox has two types:
    *  - [Controlled Checkbox](https://reactjs.org/docs/forms.html#controlled-components)
@@ -1400,7 +1406,7 @@
         value = props.value,
         className = props.className;
         props.checked;
-        var rest = _objectWithoutProperties$1(props, ["size", "tabIndex", "defaultChecked", "indeterminate", "label", "disabled", "onChange", "name", "value", "className", "checked"]);
+        var rest = _objectWithoutProperties$1(props, _excluded$v);
 
     var ref = React__namespace.useRef(null);
     React__namespace.useImperativeHandle(forwardedRef, function () {
@@ -2294,6 +2300,7 @@
 
   DropdownList.displayName = 'DropdownList';
 
+  var _excluded$u = ["triggerOptions", "selected"];
   var inputRef = /*#__PURE__*/React__namespace.createRef();
 
   /**
@@ -2894,7 +2901,7 @@
             _this$props13$trigger = _this$props13.triggerOptions,
             triggerOptions = _this$props13$trigger === void 0 ? {} : _this$props13$trigger;
             _this$props13.selected;
-            var rest = _objectWithoutProperties$1(_this$props13, ["triggerOptions", "selected"]);
+            var rest = _objectWithoutProperties$1(_this$props13, _excluded$u);
 
         var remainingOptionsLen = searchedOptionsLength - options.length;
         var firstEnabledOption = _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox) ? 0 : options.findIndex(function (option) {
@@ -3061,6 +3068,7 @@
     size: 'medium'
   };
 
+  var _excluded$t = ["size", "appearance", "iconAlign", "tabIndex", "largeIcon", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className"];
   var sizeMapping$2 = {
     tiny: 12,
     regular: 16,
@@ -3086,7 +3094,7 @@
         loading = props.loading,
         disabled = props.disabled,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, ["size", "appearance", "iconAlign", "tabIndex", "largeIcon", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className"]);
+        rest = _objectWithoutProperties$1(props, _excluded$t);
 
     var buttonClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Button', true), _defineProperty$2(_classNames, 'Button--expanded', expanded), _defineProperty$2(_classNames, "Button--".concat(size), size), _defineProperty$2(_classNames, "Button--".concat(size, "Square"), !children), _defineProperty$2(_classNames, "Button--".concat(appearance), appearance), _defineProperty$2(_classNames, 'Button--selected', selected && (appearance === 'basic' || appearance === 'transparent')), _defineProperty$2(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _defineProperty$2(_classNames, "".concat(className), className), _classNames));
     var iconClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Button-icon', true), _defineProperty$2(_classNames2, "Button-icon--".concat(iconAlign), children && iconAlign), _classNames2));
@@ -4139,6 +4147,7 @@
     jumpView: true
   });
 
+  var _excluded$s = ["shadow", "children", "className"];
   var Card = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     var _classNames;
 
@@ -4146,7 +4155,7 @@
         shadow = _props$shadow === void 0 ? 'default' : _props$shadow,
         children = props.children,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, ["shadow", "children", "className"]);
+        rest = _objectWithoutProperties$1(props, _excluded$s);
 
     var classes = classnames((_classNames = {
       Card: true
@@ -4159,11 +4168,12 @@
   });
   Card.displayName = 'Card';
 
+  var _excluded$r = ["border", "children", "className"];
   var CardSubdued = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     var border = props.border,
         children = props.children,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, ["border", "children", "className"]);
+        rest = _objectWithoutProperties$1(props, _excluded$r);
 
     var classes = classnames(_defineProperty$2({
       CardSubdued: true
@@ -4364,6 +4374,7 @@
   };
   ChipGroup.displayName = 'ChipGroup';
 
+  var _excluded$q = ["size", "sizeXS", "sizeS", "sizeM", "sizeL", "sizeXL", "className", "children"];
   var Column = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     var _classNames;
 
@@ -4375,7 +4386,7 @@
         sizeXL = props.sizeXL,
         className = props.className,
         children = props.children,
-        rest = _objectWithoutProperties$1(props, ["size", "sizeXS", "sizeS", "sizeM", "sizeL", "sizeXL", "className", "children"]);
+        rest = _objectWithoutProperties$1(props, _excluded$q);
 
     var classes = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Col', true), _defineProperty$2(_classNames, "Col--".concat(size), size), _defineProperty$2(_classNames, "Col--xs-".concat(sizeXS), sizeXS), _defineProperty$2(_classNames, "Col--s-".concat(sizeS), sizeS), _defineProperty$2(_classNames, "Col--m-".concat(sizeM), sizeM), _defineProperty$2(_classNames, "Col--l-".concat(sizeL), sizeL), _defineProperty$2(_classNames, "Col--xl-".concat(sizeXL), sizeXL), _defineProperty$2(_classNames, "".concat(className), className), _classNames));
     return /*#__PURE__*/React__namespace.createElement("div", _extends$3({
@@ -4455,6 +4466,7 @@
     }));
   };
 
+  var _excluded$p = ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect"];
   var DatePicker = /*#__PURE__*/function (_React$Component) {
     _inherits$1(DatePicker, _React$Component);
 
@@ -4586,7 +4598,7 @@
             disabledAfter = _this$props4.disabledAfter;
             _this$props4.onDateChange;
             _this$props4.closeOnSelect;
-            var rest = _objectWithoutProperties$1(_this$props4, ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect"]);
+            var rest = _objectWithoutProperties$1(_this$props4, _excluded$p);
 
         var date = this.state.date;
         return /*#__PURE__*/React__namespace.createElement(Calendar, _extends$3({}, rest, {
@@ -4722,6 +4734,7 @@
   };
   TimePicker.displayName = 'TimePicker';
 
+  var _excluded$o = ["appearance", "size", "children", "className"];
   var sizeMap = {
     s: 'h5',
     m: 'h4',
@@ -4736,7 +4749,7 @@
         size = props.size,
         children = props.children,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, ["appearance", "size", "children", "className"]);
+        rest = _objectWithoutProperties$1(props, _excluded$o);
 
     var classes = classnames((_classNames = {
       Heading: true
@@ -4754,6 +4767,7 @@
     size: 'm'
   };
 
+  var _excluded$n = ["size", "type", "minWidth", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autoFocus", "disabled", "readOnly"];
   var sizeMapping$1 = {
     tiny: 12,
     regular: 16,
@@ -4793,7 +4807,7 @@
         autoFocus = props.autoFocus,
         disabled = props.disabled,
         readOnly = props.readOnly,
-        rest = _objectWithoutProperties$1(props, ["size", "type", "minWidth", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autoFocus", "disabled", "readOnly"]);
+        rest = _objectWithoutProperties$1(props, _excluded$n);
 
     var ref = React__namespace.useRef(null);
     React__namespace.useImperativeHandle(forwardedRef, function () {
@@ -4869,6 +4883,7 @@
   });
   Input.displayName = 'Input';
 
+  var _excluded$m = ["size", "defaultValue", "name", "placeholder", "icon", "prefix", "suffix", "error", "min", "max", "onChange", "onClick", "onBlur", "onFocus", "className", "autoFocus", "disabled", "readOnly", "value"];
   var sizeMapping = {
     regular: 16,
     large: 20
@@ -4915,7 +4930,7 @@
         disabled = props.disabled,
         readOnly = props.readOnly,
         valueProp = props.value,
-        rest = _objectWithoutProperties$1(props, ["size", "defaultValue", "name", "placeholder", "icon", "prefix", "suffix", "error", "min", "max", "onChange", "onClick", "onBlur", "onFocus", "className", "autoFocus", "disabled", "readOnly", "value"]);
+        rest = _objectWithoutProperties$1(props, _excluded$m);
 
     var ref = React__namespace.useRef(null);
     var isUncontrolled = valueProp === undefined;
@@ -5074,6 +5089,8 @@
     return val;
   };
 
+  var _excluded$l = ["mask", "value", "placeholderChar", "validators", "clearOnEmptyBlur", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onFocus", "onClear", "className"];
+
   /**
    * It works as Uncontrolled Input
    *
@@ -5098,7 +5115,7 @@
         onFocus = props.onFocus,
         onClear = props.onClear,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, ["mask", "value", "placeholderChar", "validators", "clearOnEmptyBlur", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onFocus", "onClear", "className"]);
+        rest = _objectWithoutProperties$1(props, _excluded$l);
 
     var getNewCursorPosition = function getNewCursorPosition(type, position) {
       if (type === 'right') {
@@ -5341,6 +5358,8 @@
     getDefaultValue: getDefaultValue
   };
 
+  var _excluded$k = ["required", "optional", "withInput", "disabled", "children", "className"];
+
   /**
    * *NOTE: Extends props with HTMLProps<HTMLLabelElement>*
    */
@@ -5353,7 +5372,7 @@
         disabled = props.disabled,
         children = props.children,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, ["required", "optional", "withInput", "disabled", "children", "className"]);
+        rest = _objectWithoutProperties$1(props, _excluded$k);
 
     var baseProps = extractBaseProps(props);
     var LabelClass = classnames((_classNames = {
@@ -5495,6 +5514,7 @@
   };
   Editable.displayName = 'Editable';
 
+  var _excluded$j = ["onChange", "onClose"];
   var EditableDropdown = function EditableDropdown(props) {
     var _classNames2;
 
@@ -5505,7 +5525,7 @@
 
     var onDropdownChange = dropdownOptions.onChange,
         onDropdownClose = dropdownOptions.onClose,
-        rest = _objectWithoutProperties$1(dropdownOptions, ["onChange", "onClose"]);
+        rest = _objectWithoutProperties$1(dropdownOptions, _excluded$j);
 
     var _React$useState = React__namespace.useState(placeholder),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -5587,6 +5607,7 @@
     dropdownOptions: {}
   };
 
+  var _excluded$i = ["children", "className", "appearance", "size", "disabled"];
   var Link = function Link(props) {
     var _classNames;
 
@@ -5595,7 +5616,7 @@
         appearance = props.appearance,
         size = props.size,
         disabled = props.disabled,
-        rest = _objectWithoutProperties$1(props, ["children", "className", "appearance", "size", "disabled"]);
+        rest = _objectWithoutProperties$1(props, _excluded$i);
 
     var classes = classnames((_classNames = {
       Link: true
@@ -5739,11 +5760,12 @@
     labelAppearance: 'subtle'
   };
 
+  var _excluded$h = ["children", "className", "onOutsideClick"];
   var OutsideClick = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     var children = props.children,
         className = props.className,
         onOutsideClick = props.onOutsideClick,
-        rest = _objectWithoutProperties$1(props, ["children", "className", "onOutsideClick"]);
+        rest = _objectWithoutProperties$1(props, _excluded$h);
 
     var innerRef = React__namespace.useRef(null);
     React__namespace.useImperativeHandle(ref, function () {
@@ -5775,11 +5797,12 @@
   });
   OutsideClick.displayName = 'OutsideClick';
 
+  var _excluded$g = ["appearance", "children", "className"];
   var Paragraph = function Paragraph(props) {
     var appearance = props.appearance,
         children = props.children,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, ["appearance", "children", "className"]);
+        rest = _objectWithoutProperties$1(props, _excluded$g);
 
     var classes = classnames(_defineProperty$2({
       Text: true
@@ -5821,6 +5844,7 @@
     max: 100
   };
 
+  var _excluded$f = ["size", "label", "disabled", "onChange", "name", "value", "checked", "defaultChecked", "className"];
   var Radio = /*#__PURE__*/React__namespace.forwardRef(function (props, forwardedRef) {
     var _classNames, _classNames2, _classNames3;
 
@@ -5834,7 +5858,7 @@
         checked = props.checked,
         defaultChecked = props.defaultChecked,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, ["size", "label", "disabled", "onChange", "name", "value", "checked", "defaultChecked", "className"]);
+        rest = _objectWithoutProperties$1(props, _excluded$f);
 
     var ref = React__namespace.useRef(null);
     React__namespace.useImperativeHandle(forwardedRef, function () {
@@ -5871,10 +5895,11 @@
   });
   Radio.displayName = 'Radio';
 
+  var _excluded$e = ["className", "children"];
   var Row = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     var className = props.className,
         children = props.children,
-        rest = _objectWithoutProperties$1(props, ["className", "children"]);
+        rest = _objectWithoutProperties$1(props, _excluded$e);
 
     var classes = classnames(_defineProperty$2({
       Row: true
@@ -6614,12 +6639,13 @@
 
   _defineProperty$2(MultiSlider, "Handle", MultiSliderHandle);
 
+  var _excluded$d = ["value", "defaultValue", "onRelease", "onChange"];
   var Slider = function Slider(props) {
     var valueProp = props.value,
         defaultValue = props.defaultValue,
         onRelease = props.onRelease,
         onChange = props.onChange,
-        rest = _objectWithoutProperties$1(props, ["value", "defaultValue", "onRelease", "onChange"]);
+        rest = _objectWithoutProperties$1(props, _excluded$d);
 
     var _React$useState = React__namespace.useState(valueProp === undefined ? defaultValue : valueProp),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -6652,6 +6678,7 @@
     defaultValue: 0
   });
 
+  var _excluded$c = ["value", "defaultValue", "onChange", "onRelease"];
   var RangeIndex;
 
   (function (RangeIndex) {
@@ -6664,7 +6691,7 @@
         defaultValue = props.defaultValue,
         onChange = props.onChange,
         onRelease = props.onRelease,
-        rest = _objectWithoutProperties$1(props, ["value", "defaultValue", "onChange", "onRelease"]);
+        rest = _objectWithoutProperties$1(props, _excluded$c);
 
     var _React$useState = React__namespace.useState(valueProp === undefined ? defaultValue : valueProp),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -6700,11 +6727,12 @@
     defaultValue: [0, 10]
   });
 
+  var _excluded$b = ["appearance", "children", "className"];
   var Subheading = function Subheading(props) {
     var appearance = props.appearance,
         children = props.children,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, ["appearance", "children", "className"]);
+        rest = _objectWithoutProperties$1(props, _excluded$b);
 
     var classes = classnames(_defineProperty$2({
       Subheading: true
@@ -6720,6 +6748,8 @@
   Subheading.defaultProps = {
     appearance: 'default'
   };
+
+  var _excluded$a = ["size", "defaultChecked", "disabled", "onChange", "name", "value", "className", "appearance", "checked"];
 
   /**
    * ######Switch has two types:
@@ -6739,7 +6769,7 @@
         className = props.className;
         props.appearance;
         var checkedProp = props.checked,
-        rest = _objectWithoutProperties$1(props, ["size", "defaultChecked", "disabled", "onChange", "name", "value", "className", "appearance", "checked"]);
+        rest = _objectWithoutProperties$1(props, _excluded$a);
 
     var _React$useState = React__namespace.useState(checkedProp === undefined ? defaultChecked : checkedProp),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -6775,6 +6805,7 @@
   });
   Switch.displayName = 'Switch';
 
+  var _excluded$9 = ["rows", "resize", "disabled", "name", "placeholder", "value", "defaultValue", "required", "error", "onChange", "onClick", "onBlur", "onFocus", "className"];
   var Textarea = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     var _classNames;
 
@@ -6794,7 +6825,7 @@
         onBlur = props.onBlur,
         onFocus = props.onFocus,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, ["rows", "resize", "disabled", "name", "placeholder", "value", "defaultValue", "required", "error", "onChange", "onClick", "onBlur", "onFocus", "className"]);
+        rest = _objectWithoutProperties$1(props, _excluded$9);
 
     var classes = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Textarea', true), _defineProperty$2(_classNames, 'Textarea--resize', resize), _defineProperty$2(_classNames, 'Textarea--error', error), _classNames), className);
     return /*#__PURE__*/React__namespace.createElement("textarea", _extends$3({
@@ -11808,6 +11839,7 @@
     style: {}
   });
 
+  var _excluded$8 = ["position", "customStyle", "dark", "children", "onToggle", "className", "hideOnReferenceEscape", "boundaryElement"];
   var propsList$1 = ['appendToBody', 'trigger', 'hoverable', 'on', 'open', 'closeOnBackdropClick', 'offset', 'closeOnScroll'];
   var Popover = function Popover(props) {
     var position = props.position,
@@ -11818,7 +11850,7 @@
         className = props.className,
         hideOnReferenceEscape = props.hideOnReferenceEscape,
         boundaryElement = props.boundaryElement,
-        rest = _objectWithoutProperties$1(props, ["position", "customStyle", "dark", "children", "onToggle", "className", "hideOnReferenceEscape", "boundaryElement"]);
+        rest = _objectWithoutProperties$1(props, _excluded$8);
 
     var _React$useState = React__namespace.useState(!!props.open),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -11877,6 +11909,7 @@
     boundaryElement: document.body
   });
 
+  var _excluded$7 = ["type", "onClick"];
   var keyCodes = {
     BACKSPACE: 'Backspace',
     DELETE: 'Delete',
@@ -11993,7 +12026,7 @@
       var _chipOptions$type = chipOptions.type,
           type = _chipOptions$type === void 0 ? 'input' : _chipOptions$type,
           _onClick = chipOptions.onClick,
-          rest = _objectWithoutProperties$1(chipOptions, ["type", "onClick"]);
+          rest = _objectWithoutProperties$1(chipOptions, _excluded$7);
 
       return /*#__PURE__*/React__namespace.createElement(Chip, _extends$3({
         "data-test": "DesignSystem-ChipInput--Chip",
@@ -12339,11 +12372,12 @@
     }), list);
   };
 
+  var _excluded$6 = ["children", "tooltip"];
   var propsList = ['trigger', 'on', 'open', 'offset', 'onToggle', 'dark', 'customStyle', 'closeOnBackdropClick', 'hideOnReferenceEscape', 'closeOnScroll'];
   var Tooltip = function Tooltip(props) {
     var children = props.children,
         tooltip = props.tooltip,
-        rest = _objectWithoutProperties$1(props, ["children", "tooltip"]);
+        rest = _objectWithoutProperties$1(props, _excluded$6);
 
     var tooltipWrapper = /*#__PURE__*/React__namespace.createElement("div", {
       className: "Tooltip"
@@ -12628,6 +12662,7 @@
   };
   ModalHeader$1.displayName = 'ModalHeader';
 
+  var _excluded$5 = ["label"];
   var ModalFooter$1 = function ModalFooter(props) {
     var open = props.open,
         actions = props.actions;
@@ -12657,7 +12692,7 @@
       className: "d-flex"
     }), actions.map(function (_ref, index) {
       _ref.label;
-          var options = _objectWithoutProperties$1(_ref, ["label"]);
+          var options = _objectWithoutProperties$1(_ref, _excluded$5);
 
       return /*#__PURE__*/React__namespace.createElement(Button, _extends$3({}, options, {
         key: index
@@ -13526,6 +13561,7 @@
     totalPages: 1
   };
 
+  var _excluded$4 = ["onChange"];
   var EditableInput = function EditableInput(props) {
     var _classNames2, _classNames4;
 
@@ -13540,7 +13576,7 @@
         className = props.className;
 
     var onInputChange = inputOptions.onChange,
-        rest = _objectWithoutProperties$1(inputOptions, ["onChange"]);
+        rest = _objectWithoutProperties$1(inputOptions, _excluded$4);
 
     var _React$useState = React__namespace.useState(value),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -14197,6 +14233,7 @@
     };
   };
 
+  var _excluded$3 = ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "startInputOptions", "endInputOptions", "validators", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"];
   var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     _inherits$1(DateRangePicker, _React$Component);
 
@@ -14452,7 +14489,7 @@
             disabledAfter = _this$props5.disabledAfter;
             _this$props5.onRangeChange;
             var rangeLimit = _this$props5.rangeLimit,
-            rest = _objectWithoutProperties$1(_this$props5, ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "startInputOptions", "endInputOptions", "validators", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"]);
+            rest = _objectWithoutProperties$1(_this$props5, _excluded$3);
 
         var _this$state3 = this.state,
             startDate = _this$state3.startDate,
@@ -15205,6 +15242,8 @@
     return _fromFileEntry.apply(this, arguments);
   }
 
+  var _excluded$2 = ["refKey", "onKeyDown", "onFocus", "onBlur", "onClick", "onDragEnterCallback", "onDragOverCallback", "onDragLeaveCallback", "onDropCallback"],
+      _excluded2 = ["refKey", "onChange", "onClick"];
   var initialState = {
     isFocused: false,
     isFileDialogActive: false,
@@ -15495,7 +15534,7 @@
             onDragOverCallback = _ref.onDragOverCallback,
             onDragLeaveCallback = _ref.onDragLeaveCallback,
             onDropCallback = _ref.onDropCallback,
-            rest = _objectWithoutProperties$1(_ref, ["refKey", "onKeyDown", "onFocus", "onBlur", "onClick", "onDragEnterCallback", "onDragOverCallback", "onDragLeaveCallback", "onDropCallback"]);
+            rest = _objectWithoutProperties$1(_ref, _excluded$2);
 
         return _objectSpread2(_defineProperty$2({
           onKeyDown: composeKeyboardHandler(composeEventHandlers(onKeyDown, onKeyDownCb)),
@@ -15519,7 +15558,7 @@
             refKey = _ref2$refKey === void 0 ? 'ref' : _ref2$refKey,
             onChange = _ref2.onChange,
             onClick = _ref2.onClick,
-            rest = _objectWithoutProperties$1(_ref2, ["refKey", "onChange", "onClick"]);
+            rest = _objectWithoutProperties$1(_ref2, _excluded2);
 
         var inputProps = _defineProperty$2({
           accept: accept,
@@ -17938,6 +17977,8 @@
     showFilters: true
   };
 
+  var _excluded$1 = ["children"];
+
   var defaultErrorTemplate = function defaultErrorTemplate(props) {
     var _props$errorType = props.errorType,
         errorType = _props$errorType === void 0 ? 'DEFAULT' : _props$errorType;
@@ -18295,7 +18336,7 @@
 
         var _ref = headerOptions,
             headerChildren = _ref.children,
-            headerAttr = _objectWithoutProperties$1(_ref, ["children"]);
+            headerAttr = _objectWithoutProperties$1(_ref, _excluded$1);
 
         var classes = className ? " ".concat(className) : '';
         var totalRecords = this.state.totalRecords;
@@ -18740,6 +18781,7 @@
   };
   FileList.displayName = 'FileList';
 
+  var _excluded = ["type", "fields", "placeholder", "autoFocus", "onComplete", "onFocus", "onBlur", "className", "value"];
   var KEY_CODE = {
     backspace: 'Backspace',
     left: 'ArrowLeft',
@@ -18764,7 +18806,7 @@
         onBlur = props.onBlur,
         className = props.className;
         props.value;
-        var rest = _objectWithoutProperties$1(props, ["type", "fields", "placeholder", "autoFocus", "onComplete", "onFocus", "onBlur", "className", "value"]);
+        var rest = _objectWithoutProperties$1(props, _excluded);
 
     var initialValues = React.useMemo(function () {
       if (props.value && props.value.length) {
@@ -18952,7 +18994,7 @@
 
   VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-  var version = "2.1.2";
+  var version = "2.1.3";
 
   exports.Avatar = Avatar;
   exports.AvatarGroup = AvatarGroup;
