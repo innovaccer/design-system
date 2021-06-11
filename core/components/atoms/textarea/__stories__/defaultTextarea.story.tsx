@@ -1,13 +1,13 @@
 import * as React from 'react';
-import Label from '@/components/atoms/label';
-import { Textarea } from '@/index';
+import { Textarea, Label } from '@/index';
 
 export const defaultTextarea = () => (
   <>
-    <Label withInput={true}>Description</Label>
+    <Label withInput={true}>Comments</Label>
     <Textarea
       name="Textarea"
-      placeholder="Write a description"
+      className="w-25"
+      placeholder="Enter your comments here"
     />
   </>
 );

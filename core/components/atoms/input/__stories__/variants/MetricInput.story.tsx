@@ -1,6 +1,5 @@
 import * as React from 'react';
-import Input from '../../Input';
-import Text from '@/components/atoms/text';
+import { Input, Text } from '@/index';
 import { action } from '@storybook/addon-actions';
 
 // CSF format story

@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
-import Input from '../../Input';
+import { Input, Text } from '@/index';
 import { action } from '@storybook/addon-actions';
 import { Size } from '@/components/atoms/button';
-import Text from '@/components/atoms/text';
 
 // CSF format story
 export const size = () => {
