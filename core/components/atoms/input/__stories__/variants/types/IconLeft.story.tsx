@@ -1,7 +1,6 @@
 import * as React from 'react';
-import Input from '../../../Input';
+import { Input, Text } from '@/index';
 import { action } from '@storybook/addon-actions';
-import Text from '@/components/atoms/text';
 
 // CSF format story
 export const iconLeft = () => {

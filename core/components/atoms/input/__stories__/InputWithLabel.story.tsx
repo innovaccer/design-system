@@ -1,18 +1,45 @@
 import * as React from 'react';
-import Input from '../Input';
-import Label from '@/components/atoms/label';
-import { action } from '@storybook/addon-actions';
+import { Input, Label } from '@/index';
 
-export const inputWithLabel = () => (
-  <>
-    <Label withInput={true}>Full Name</Label>
-    <Input
-      name="input"
-      value="Joy Lawson"
-      onChange={action('on-change')}
-    />
-  </>
-);
+export const inputWithLabel = () => {
+  const [value, setValue] = React.useState('lawsonjoy@gmail.com');
+
+  const onChange = React.useCallback(e => {
+    setValue(e.target.value);
+  }, []);
+
+  return (
+    <>
+      <Label withInput={true}>Email</Label>
+      <Input
+        name="input"
+        className="w-25"
+        value={value}
+        onChange={onChange}
+      />
+    </>
+  );
+};
+
+const customCode = `() => {
+  const [value, setValue] = React.useState('lawsonjoy@gmail.com');
+
+  const onChange = React.useCallback((e) => {
+    setValue(e.target.value)
+  }, []);
+
+  return (
+    <>
+      <Label withInput={true}>Email</Label>
+      <Input
+        name="input"
+        className="w-25"
+        value={value}
+        onChange={onChange}
+      />
+    </>
+  );
+}`;
 
 export default {
   title: 'Components/Input/Input With Label',
@@ -20,6 +47,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        customCode,
         title: 'Input',
         props: {
           exclude: ['autocomplete']

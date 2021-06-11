@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Input from '../Input';
+import { Input } from '@/index';
 import Icon from '@/components/atoms/icon';
 
 export const controlledInput = () => {
@@ -45,7 +45,7 @@ export const controlledInput = () => {
   );
 };
 export default {
-  title: 'Components/Input/Controlled Input',
+  title: 'Components/Input/Variants/Controlled Input',
   component: Input,
   parameters: {
     docs: {

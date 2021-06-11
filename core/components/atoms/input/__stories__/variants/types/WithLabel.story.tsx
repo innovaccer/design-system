@@ -1,9 +1,6 @@
 import * as React from 'react';
-import Input from '../../../Input';
+import { Input, Text, Label, Caption } from '@/index';
 import { action } from '@storybook/addon-actions';
-import Text from '@/components/atoms/text';
-import Label from '@/components/atoms/label';
-import Caption from '@/components/atoms/caption';
 
 // CSF format story
 export const withLabel = () => {
