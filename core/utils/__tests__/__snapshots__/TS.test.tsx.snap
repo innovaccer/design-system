@@ -7,11 +7,11 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-Avatar"
   >
     <i
-      class="material-icons Icon Icon--white Avatar-content--secondary"
+      class="material-icons material-icons-round Icon Icon--white Avatar-content--secondary"
       data-test="DesignSystem-Avatar--Icon"
       style="font-size: 16px; width: 16px;"
     >
-      person
+      person_round
     </i>
   </span>
   <div
@@ -96,11 +96,11 @@ exports[`TS renders children 1`] = `
             class="Button-icon"
           >
             <i
-              class="material-icons Icon Icon--default"
+              class="material-icons material-icons-round Icon Icon--default"
               data-test="DesignSystem-Button--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              arrow_back
+              arrow_back_round
             </i>
           </div>
         </button>
@@ -135,11 +135,11 @@ exports[`TS renders children 1`] = `
             class="Button-icon"
           >
             <i
-              class="material-icons Icon Icon--default"
+              class="material-icons material-icons-round Icon Icon--default"
               data-test="DesignSystem-Button--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              arrow_forward
+              arrow_forward_round
             </i>
           </div>
         </button>
@@ -733,10 +733,10 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <i
-          class="material-icons Icon Icon--default"
+          class="material-icons material-icons-round Icon Icon--default"
           style="font-size: 16px; width: 16px;"
         >
-          keyboard_arrow_down
+          keyboard_arrow_down_round
         </i>
       </button>
     </div>
@@ -770,10 +770,10 @@ exports[`TS renders children 1`] = `
                 class="DropdownButton-wrapper"
               />
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 style="font-size: 16px; width: 16px;"
               >
-                keyboard_arrow_down
+                keyboard_arrow_down_round
               </i>
             </button>
           </div>
@@ -810,10 +810,10 @@ exports[`TS renders children 1`] = `
     Hello World!
   </h4>
   <i
-    class="material-icons Icon"
+    class="material-icons material-icons-round Icon"
     style="font-size: 16px; width: 16px;"
   >
-    Hello World!
+    Hello World!_round
   </i>
   <div
     class="Input Input--regular"
@@ -1437,10 +1437,10 @@ exports[`TS renders children 1`] = `
           Hello World!
         </h5>
         <i
-          class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--default"
+          class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--default"
           style="font-size: 16px; width: 16px;"
         >
-          close
+          close_round
         </i>
       </div>
     </div>
@@ -1489,11 +1489,11 @@ exports[`TS renders children 1`] = `
           class="Button-icon"
         >
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
           >
-            close
+            close_round
           </i>
         </div>
       </button>
@@ -1542,11 +1542,11 @@ exports[`TS renders children 1`] = `
           class="Button-icon"
         >
           <i
-            class="material-icons Icon Icon--disabled"
+            class="material-icons material-icons-round Icon Icon--disabled"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 20px; width: 20px;"
           >
-            first_page
+            first_page_round
           </i>
         </div>
       </button>
@@ -1564,11 +1564,11 @@ exports[`TS renders children 1`] = `
             class="Button-icon"
           >
             <i
-              class="material-icons Icon Icon--disabled"
+              class="material-icons material-icons-round Icon Icon--disabled"
               data-test="DesignSystem-Button--Icon"
               style="font-size: 20px; width: 20px;"
             >
-              navigate_before
+              navigate_before_round
             </i>
           </div>
         </button>
@@ -1590,11 +1590,11 @@ exports[`TS renders children 1`] = `
             class="Button-icon"
           >
             <i
-              class="material-icons Icon Icon--disabled"
+              class="material-icons material-icons-round Icon Icon--disabled"
               data-test="DesignSystem-Button--Icon"
               style="font-size: 20px; width: 20px;"
             >
-              navigate_next
+              navigate_next_round
             </i>
           </div>
         </button>
@@ -1609,11 +1609,11 @@ exports[`TS renders children 1`] = `
           class="Button-icon"
         >
           <i
-            class="material-icons Icon Icon--disabled"
+            class="material-icons material-icons-round Icon Icon--disabled"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 20px; width: 20px;"
           >
-            last_page
+            last_page_round
           </i>
         </div>
       </button>
@@ -1694,11 +1694,11 @@ exports[`TS renders children 1`] = `
             class="Button-icon"
           >
             <i
-              class="material-icons Icon Icon--default"
+              class="material-icons material-icons-round Icon Icon--default"
               data-test="DesignSystem-Button--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              arrow_back
+              arrow_back_round
             </i>
           </div>
         </button>
@@ -1733,11 +1733,11 @@ exports[`TS renders children 1`] = `
             class="Button-icon"
           >
             <i
-              class="material-icons Icon Icon--default"
+              class="material-icons material-icons-round Icon Icon--default"
               data-test="DesignSystem-Button--Icon"
               style="font-size: 16px; width: 16px;"
             >
-              arrow_forward
+              arrow_forward_round
             </i>
           </div>
         </button>

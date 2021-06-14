@@ -28,10 +28,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -68,10 +68,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -108,10 +108,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -148,10 +148,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -182,10 +182,10 @@ exports[`Dropdown component
             class="DropdownButton-wrapper"
           >
             <i
-              class="material-icons Icon Icon--default d-flex align-items-center mr-4"
+              class="material-icons material-icons-round Icon Icon--default d-flex align-items-center mr-4"
               style="font-size: 16px; width: 16px;"
             >
-              events
+              events_round
             </i>
             <span
               class="Text Text--regular DropdownButton-text"
@@ -194,10 +194,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -240,10 +240,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -280,10 +280,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -315,10 +315,10 @@ exports[`Dropdown component
             class="DropdownButton-wrapper"
           >
             <i
-              class="material-icons Icon Icon--disabled d-flex align-items-center mr-4"
+              class="material-icons material-icons-round Icon Icon--disabled d-flex align-items-center mr-4"
               style="font-size: 16px; width: 16px;"
             >
-              events
+              events_round
             </i>
             <span
               class="Text Text--regular DropdownButton-text"
@@ -327,10 +327,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--disabled"
+            class="material-icons material-icons-round Icon Icon--disabled"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -374,10 +374,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--disabled"
+            class="material-icons material-icons-round Icon Icon--disabled"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -415,10 +415,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--disabled"
+            class="material-icons material-icons-round Icon Icon--disabled"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -455,10 +455,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -495,10 +495,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -535,10 +535,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -575,10 +575,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -615,10 +615,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -646,10 +646,10 @@ exports[`Dropdown component
           value=""
         >
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            more_horiz
+            more_horiz_round
           </i>
         </button>
       </div>
@@ -686,10 +686,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -726,10 +726,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -766,10 +766,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -806,10 +806,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -846,10 +846,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -886,10 +886,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -926,10 +926,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -966,10 +966,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -1006,10 +1006,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -1046,10 +1046,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>
@@ -1086,10 +1086,10 @@ exports[`Dropdown component
             </span>
           </div>
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_down
+            keyboard_arrow_down_round
           </i>
         </button>
       </div>

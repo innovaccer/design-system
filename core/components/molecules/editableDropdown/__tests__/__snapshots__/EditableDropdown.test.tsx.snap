@@ -33,10 +33,10 @@ exports[`EditableDropdown component
                 class="DropdownButton-wrapper"
               />
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 style="font-size: 16px; width: 16px;"
               >
-                keyboard_arrow_down
+                keyboard_arrow_down_round
               </i>
             </button>
           </div>

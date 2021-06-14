@@ -9,10 +9,10 @@ exports[`Toast component
       class="Toast Toast--alert"
     >
       <i
-        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--alert"
         style="font-size: 16px; width: 16px;"
       >
-        error
+        error_round
       </i>
       <div
         class="Toast-body"
@@ -27,10 +27,10 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert"
+            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert"
             style="font-size: 16px; width: 16px;"
           >
-            close
+            close_round
           </i>
         </div>
       </div>
@@ -60,10 +60,10 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--default"
+            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            close
+            close_round
           </i>
         </div>
       </div>
@@ -81,10 +81,10 @@ exports[`Toast component
       class="Toast Toast--info"
     >
       <i
-        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--info"
+        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--info"
         style="font-size: 16px; width: 16px;"
       >
-        info
+        info_round
       </i>
       <div
         class="Toast-body"
@@ -99,10 +99,10 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info"
+            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info"
             style="font-size: 16px; width: 16px;"
           >
-            close
+            close_round
           </i>
         </div>
       </div>
@@ -120,10 +120,10 @@ exports[`Toast component
       class="Toast Toast--success"
     >
       <i
-        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--success"
+        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--success"
         style="font-size: 16px; width: 16px;"
       >
-        check_circle
+        check_circle_round
       </i>
       <div
         class="Toast-body"
@@ -138,10 +138,10 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success"
+            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success"
             style="font-size: 16px; width: 16px;"
           >
-            close
+            close_round
           </i>
         </div>
       </div>
@@ -159,10 +159,10 @@ exports[`Toast component
       class="Toast Toast--warning"
     >
       <i
-        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--warning"
         style="font-size: 16px; width: 16px;"
       >
-        error
+        error_round
       </i>
       <div
         class="Toast-body"
@@ -177,10 +177,10 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning"
+            class="material-icons material-icons-round Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning"
             style="font-size: 16px; width: 16px;"
           >
-            close
+            close_round
           </i>
         </div>
       </div>
@@ -198,10 +198,10 @@ exports[`Toast component
       class="Toast Toast--withMessage Toast--alert"
     >
       <i
-        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--alert"
         style="font-size: 16px; width: 16px;"
       >
-        error
+        error_round
       </i>
       <div
         class="Toast-body"
@@ -216,10 +216,10 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert"
+            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert"
             style="font-size: 16px; width: 16px;"
           >
-            close
+            close_round
           </i>
         </div>
         <span
@@ -243,10 +243,10 @@ exports[`Toast component
       class="Toast Toast--withMessage Toast--alert"
     >
       <i
-        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--alert"
         style="font-size: 16px; width: 16px;"
       >
-        error
+        error_round
       </i>
       <div
         class="Toast-body"
@@ -261,10 +261,10 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert"
+            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert"
             style="font-size: 16px; width: 16px;"
           >
-            close
+            close_round
           </i>
         </div>
         <span
@@ -314,10 +314,10 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--default"
+            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            close
+            close_round
           </i>
         </div>
         <span
@@ -353,10 +353,10 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--default"
+            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--default"
             style="font-size: 16px; width: 16px;"
           >
-            close
+            close_round
           </i>
         </div>
         <span
@@ -394,10 +394,10 @@ exports[`Toast component
       class="Toast Toast--withMessage Toast--info"
     >
       <i
-        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--info"
+        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--info"
         style="font-size: 16px; width: 16px;"
       >
-        info
+        info_round
       </i>
       <div
         class="Toast-body"
@@ -412,10 +412,10 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info"
+            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info"
             style="font-size: 16px; width: 16px;"
           >
-            close
+            close_round
           </i>
         </div>
         <span
@@ -439,10 +439,10 @@ exports[`Toast component
       class="Toast Toast--withMessage Toast--info"
     >
       <i
-        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--info"
+        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--info"
         style="font-size: 16px; width: 16px;"
       >
-        info
+        info_round
       </i>
       <div
         class="Toast-body"
@@ -457,10 +457,10 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info"
+            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info"
             style="font-size: 16px; width: 16px;"
           >
-            close
+            close_round
           </i>
         </div>
         <span
@@ -498,10 +498,10 @@ exports[`Toast component
       class="Toast Toast--withMessage Toast--success"
     >
       <i
-        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--success"
+        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--success"
         style="font-size: 16px; width: 16px;"
       >
-        check_circle
+        check_circle_round
       </i>
       <div
         class="Toast-body"
@@ -516,10 +516,10 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success"
+            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success"
             style="font-size: 16px; width: 16px;"
           >
-            close
+            close_round
           </i>
         </div>
         <span
@@ -543,10 +543,10 @@ exports[`Toast component
       class="Toast Toast--withMessage Toast--success"
     >
       <i
-        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--success"
+        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--success"
         style="font-size: 16px; width: 16px;"
       >
-        check_circle
+        check_circle_round
       </i>
       <div
         class="Toast-body"
@@ -561,10 +561,10 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success"
+            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success"
             style="font-size: 16px; width: 16px;"
           >
-            close
+            close_round
           </i>
         </div>
         <span
@@ -602,10 +602,10 @@ exports[`Toast component
       class="Toast Toast--withMessage Toast--warning"
     >
       <i
-        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--warning"
         style="font-size: 16px; width: 16px;"
       >
-        error
+        error_round
       </i>
       <div
         class="Toast-body"
@@ -620,10 +620,10 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning"
+            class="material-icons material-icons-round Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning"
             style="font-size: 16px; width: 16px;"
           >
-            close
+            close_round
           </i>
         </div>
         <span
@@ -647,10 +647,10 @@ exports[`Toast component
       class="Toast Toast--withMessage Toast--warning"
     >
       <i
-        class="material-icons Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--warning"
         style="font-size: 16px; width: 16px;"
       >
-        error
+        error_round
       </i>
       <div
         class="Toast-body"
@@ -665,10 +665,10 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning"
+            class="material-icons material-icons-round Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning"
             style="font-size: 16px; width: 16px;"
           >
-            close
+            close_round
           </i>
         </div>
         <span
