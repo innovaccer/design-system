@@ -13,11 +13,11 @@ exports[`Stepper component
       data-test="DesignSystem-Step"
     >
       <i
-        class="material-icons Icon Icon--info mr-3 my-4"
+        class="material-icons material-icons-round Icon Icon--info mr-3 my-4"
         data-test="DesignSystem-Step--Icon"
         style="font-size: 16px; width: 16px;"
       >
-        check_circle
+        check_circle_round
       </i>
       <span
         class="Text Text--default Text--medium Text--regular"
@@ -31,11 +31,11 @@ exports[`Stepper component
       data-test="DesignSystem-Step"
     >
       <i
-        class="material-icons Icon Icon--info mr-3 my-4"
+        class="material-icons material-icons-round Icon Icon--info mr-3 my-4"
         data-test="DesignSystem-Step--Icon"
         style="font-size: 16px; width: 16px;"
       >
-        radio_button_unchecked
+        radio_button_unchecked_round
       </i>
       <span
         class="Text Text--link Text--medium Text--regular"
@@ -49,11 +49,11 @@ exports[`Stepper component
       data-test="DesignSystem-Step"
     >
       <i
-        class="material-icons Icon Icon--disabled mr-3 my-4"
+        class="material-icons material-icons-round Icon Icon--disabled mr-3 my-4"
         data-test="DesignSystem-Step--Icon"
         style="font-size: 16px; width: 16px;"
       >
-        radio_button_unchecked
+        radio_button_unchecked_round
       </i>
       <span
         class="Text Text--disabled Text--medium Text--regular"
@@ -67,11 +67,11 @@ exports[`Stepper component
       data-test="DesignSystem-Step"
     >
       <i
-        class="material-icons Icon Icon--disabled mr-3 my-4"
+        class="material-icons material-icons-round Icon Icon--disabled mr-3 my-4"
         data-test="DesignSystem-Step--Icon"
         style="font-size: 16px; width: 16px;"
       >
-        radio_button_unchecked
+        radio_button_unchecked_round
       </i>
       <span
         class="Text Text--disabled Text--medium Text--regular"

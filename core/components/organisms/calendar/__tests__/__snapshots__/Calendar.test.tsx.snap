@@ -24,11 +24,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -63,11 +63,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -673,11 +673,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -713,11 +713,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--disabled"
+                class="material-icons material-icons-round Icon Icon--disabled"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -1324,11 +1324,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--disabled"
+                class="material-icons material-icons-round Icon Icon--disabled"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -1363,11 +1363,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -1974,11 +1974,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--disabled"
+                class="material-icons material-icons-round Icon Icon--disabled"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -2014,11 +2014,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--disabled"
+                class="material-icons material-icons-round Icon Icon--disabled"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -2624,11 +2624,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -2663,11 +2663,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -3273,11 +3273,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -3312,11 +3312,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -3982,11 +3982,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -4021,11 +4021,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -4631,11 +4631,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -4670,11 +4670,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -5280,11 +5280,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -5319,11 +5319,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -5929,11 +5929,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -5968,11 +5968,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -6638,11 +6638,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -6677,11 +6677,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -7287,11 +7287,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -7326,11 +7326,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -7936,11 +7936,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -8577,11 +8577,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -9180,11 +9180,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -10416,11 +10416,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -11086,11 +11086,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -11125,11 +11125,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -11735,11 +11735,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -11764,11 +11764,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -11955,11 +11955,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -11984,11 +11984,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -12175,11 +12175,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -12214,11 +12214,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -12824,11 +12824,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -13465,11 +13465,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -14068,11 +14068,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -15304,11 +15304,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -15974,11 +15974,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -16013,11 +16013,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -16623,11 +16623,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -16652,11 +16652,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -16843,11 +16843,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -16872,11 +16872,11 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>

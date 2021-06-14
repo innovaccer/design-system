@@ -16,11 +16,11 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
           >
-            assignment_ind
+            assignment_ind_round
           </i>
         </div>
       </div>
@@ -32,11 +32,11 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
           >
-            forum
+            forum_round
           </i>
         </div>
       </div>
@@ -47,11 +47,11 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons Icon Icon--info"
+            class="material-icons material-icons-round Icon Icon--info"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
           >
-            assignment_ind
+            assignment_ind_round
           </i>
         </div>
       </div>
@@ -62,11 +62,11 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
           >
-            events
+            events_round
           </i>
         </div>
       </div>
@@ -78,11 +78,11 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons Icon Icon--disabled"
+            class="material-icons material-icons-round Icon Icon--disabled"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
           >
-            airline_seat_flat_angled
+            airline_seat_flat_angled_round
           </i>
         </div>
       </div>
@@ -94,11 +94,11 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons Icon Icon--default"
+            class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
           >
-            favorite
+            favorite_round
           </i>
         </div>
       </div>
@@ -133,11 +133,11 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons Icon Icon--default mr-4"
+            class="material-icons material-icons-round Icon Icon--default mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
           >
-            assignment_ind
+            assignment_ind_round
           </i>
           <span
             class="Text Text--default Text--regular"
@@ -171,11 +171,11 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons Icon Icon--default mr-4"
+            class="material-icons material-icons-round Icon Icon--default mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
           >
-            forum
+            forum_round
           </i>
           <span
             class="Text Text--default Text--regular"
@@ -185,10 +185,10 @@ exports[`Vertical Navigation component
           </span>
         </div>
         <i
-          class="material-icons Icon Icon--subtle mx-4"
+          class="material-icons material-icons-round Icon Icon--subtle mx-4"
           style="font-size: 16px; width: 16px;"
         >
-          keyboard_arrow_up
+          keyboard_arrow_up_round
         </i>
       </div>
       <div
@@ -198,11 +198,11 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons Icon Icon--info mr-4"
+            class="material-icons material-icons-round Icon Icon--info mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
           >
-            assignment_ind
+            assignment_ind_round
           </i>
           <span
             class="Text Text--link Text--regular"
@@ -219,11 +219,11 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons Icon Icon--default mr-4"
+            class="material-icons material-icons-round Icon Icon--default mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
           >
-            events
+            events_round
           </i>
           <span
             class="Text Text--default Text--regular"
@@ -241,11 +241,11 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons Icon Icon--disabled mr-4"
+            class="material-icons material-icons-round Icon Icon--disabled mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
           >
-            airline_seat_flat_angled
+            airline_seat_flat_angled_round
           </i>
           <span
             class="Text Text--disabled Text--regular"
@@ -269,11 +269,11 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons Icon Icon--default mr-4"
+            class="material-icons material-icons-round Icon Icon--default mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
           >
-            favorite
+            favorite_round
           </i>
           <span
             class="Text Text--default Text--regular"
@@ -283,10 +283,10 @@ exports[`Vertical Navigation component
           </span>
         </div>
         <i
-          class="material-icons Icon Icon--subtle mx-4"
+          class="material-icons material-icons-round Icon Icon--subtle mx-4"
           style="font-size: 16px; width: 16px;"
         >
-          keyboard_arrow_down
+          keyboard_arrow_down_round
         </i>
       </div>
     </div>

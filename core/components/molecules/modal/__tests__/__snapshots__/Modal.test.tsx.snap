@@ -58,11 +58,11 @@ exports[`Modal component
                 class="Button-icon"
               >
                 <i
-                  class="material-icons Icon Icon--default"
+                  class="material-icons material-icons-round Icon Icon--default"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 16px; width: 16px;"
                 >
-                  close
+                  close_round
                 </i>
               </div>
             </button>
@@ -142,11 +142,11 @@ exports[`Modal component
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons Icon Icon--default"
+                    class="material-icons material-icons-round Icon Icon--default"
                     data-test="DesignSystem-Button--Icon"
                     style="font-size: 16px; width: 16px;"
                   >
-                    close
+                    close_round
                   </i>
                 </div>
               </button>
@@ -223,11 +223,11 @@ exports[`Modal component
                 class="Button-icon"
               >
                 <i
-                  class="material-icons Icon Icon--default"
+                  class="material-icons material-icons-round Icon Icon--default"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 16px; width: 16px;"
                 >
-                  close
+                  close_round
                 </i>
               </div>
             </button>
@@ -307,11 +307,11 @@ exports[`Modal component
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons Icon Icon--default"
+                    class="material-icons material-icons-round Icon Icon--default"
                     data-test="DesignSystem-Button--Icon"
                     style="font-size: 16px; width: 16px;"
                   >
-                    close
+                    close_round
                   </i>
                 </div>
               </button>
@@ -389,11 +389,11 @@ exports[`Modal component
                 class="Button-icon"
               >
                 <i
-                  class="material-icons Icon Icon--default"
+                  class="material-icons material-icons-round Icon Icon--default"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 16px; width: 16px;"
                 >
-                  close
+                  close_round
                 </i>
               </div>
             </button>
@@ -472,11 +472,11 @@ exports[`Modal component
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons Icon Icon--default"
+                    class="material-icons material-icons-round Icon Icon--default"
                     data-test="DesignSystem-Button--Icon"
                     style="font-size: 16px; width: 16px;"
                   >
-                    close
+                    close_round
                   </i>
                 </div>
               </button>
