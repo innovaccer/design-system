@@ -76,6 +76,7 @@ exports[`TS renders children 1`] = `
   </div>
   <div
     class="Col"
+    data-test="DesignSystem-Column"
   />
   <div
     class="Calendar-wrapper"
@@ -1460,6 +1461,7 @@ exports[`TS renders children 1`] = `
   >
     <div
       class="Col"
+      data-test="DesignSystem-Column"
     >
       <div
         class="OverlayHeader"
@@ -1479,6 +1481,7 @@ exports[`TS renders children 1`] = `
     </div>
     <div
       class="Col flex-grow-0"
+      data-test="DesignSystem-Column"
     >
       <button
         class="Button Button--regular Button--regularSquare Button--transparent"
@@ -2604,6 +2607,7 @@ exports[`TS renders children 1`] = `
       >
         <div
           class="Col Col--4 Col--m-4 Col--xl-4"
+          data-test="DesignSystem-Column"
         >
           <div
             class="PageHeader-titleWrapper"
@@ -2618,6 +2622,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Col Col--4 Col--m-4 Col--xl-4"
+          data-test="DesignSystem-Column"
         >
           <div
             class="PageHeader-navigationWrapper"
@@ -2625,6 +2630,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Col Col--4 Col--m-4 Col--xl-4"
+          data-test="DesignSystem-Column"
         />
       </div>
     </div>
