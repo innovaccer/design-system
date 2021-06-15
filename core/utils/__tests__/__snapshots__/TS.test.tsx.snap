@@ -1012,7 +1012,7 @@ exports[`TS renders children 1`] = `
         />
       </div>
       <div
-        class="Slider-axis'"
+        class="Slider-axis"
       >
         <div
           class="Slider-label"
@@ -1207,7 +1207,7 @@ exports[`TS renders children 1`] = `
         />
       </div>
       <div
-        class="Slider-axis'"
+        class="Slider-axis"
       >
         <div
           class="Slider-label"

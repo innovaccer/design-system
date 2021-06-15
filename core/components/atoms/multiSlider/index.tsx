@@ -306,9 +306,25 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
       const offsetPercentage = formatPercentage(offsetRatio);
       const style = { left: offsetPercentage };
       const active = !disabled && activeLabels.indexOf(i.toFixed(this.state.labelPrecision)) !== -1;
+      const onClickHandler = (event: React.MouseEvent<HTMLElement>) => {
+        if (!this.props.disabled) {
+          const foundHandle = this.nearestHandleForValue(this.handleElements, handle =>
+            handle.mouseEventClientOffset(event),
+          );
+
+          if (foundHandle) {
+            foundHandle.changeValue(i);
+          }
+        }
+      };
 
       labels.push(
-        <div className={'Slider-label'} key={i} style={style}>
+        <div
+          key={i}
+          className={'Slider-label'}
+          style={style}
+          onClick={onClickHandler}
+        >
           <span className={'Slider-ticks'} />
           {labelRenderer !== false && (
             <Text size="small" appearance={active ? 'default' : 'disabled'}>
@@ -377,11 +393,15 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
         {label && (
           <Label withInput={true}>{label}</Label>
         )}
-        <div className={WrapperClass} onMouseDown={this.maybeHandleTrackClick}>
-          <div className="Slider-track" ref={ref => (this.trackElement = ref)}>
+        <div className={WrapperClass}>
+          <div
+            className="Slider-track"
+            ref={ref => (this.trackElement = ref)}
+            onMouseDown={this.maybeHandleTrackClick}
+          >
             {this.renderTracks()}
           </div>
-          <div className="Slider-axis'">{this.renderLabels()}</div>
+          <div className="Slider-axis">{this.renderLabels()}</div>
           {this.renderHandles()}
         </div>
       </div>
