@@ -24,11 +24,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -63,11 +63,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -673,11 +673,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -712,11 +712,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -1322,11 +1322,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -1361,11 +1361,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -1971,11 +1971,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -2612,11 +2612,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -3215,11 +3215,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -3856,11 +3856,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -4466,11 +4466,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -5702,11 +5702,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -6372,11 +6372,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -7615,11 +7615,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -8225,10 +8225,10 @@ exports[`DateRangePicker component
                 class="Input-icon Input-icon--left"
               >
                 <i
-                  class="material-icons Icon"
+                  class="material-icons material-icons-round Icon"
                   style="font-size: 16px; width: 16px;"
                 >
-                  events
+                  events_round
                 </i>
               </div>
               <input
@@ -8244,10 +8244,10 @@ exports[`DateRangePicker component
                 class="Input-icon Input-icon--right"
               >
                 <i
-                  class="material-icons Icon"
+                  class="material-icons material-icons-round Icon"
                   style="font-size: 16px; width: 16px;"
                 >
-                  close
+                  close_round
                 </i>
               </div>
             </div>
@@ -8287,10 +8287,10 @@ exports[`DateRangePicker component
                 class="Input-icon Input-icon--left"
               >
                 <i
-                  class="material-icons Icon"
+                  class="material-icons material-icons-round Icon"
                   style="font-size: 16px; width: 16px;"
                 >
-                  events
+                  events_round
                 </i>
               </div>
               <input
@@ -8306,10 +8306,10 @@ exports[`DateRangePicker component
                 class="Input-icon Input-icon--right"
               >
                 <i
-                  class="material-icons Icon"
+                  class="material-icons material-icons-round Icon"
                   style="font-size: 16px; width: 16px;"
                 >
-                  close
+                  close_round
                 </i>
               </div>
             </div>
@@ -8367,10 +8367,10 @@ exports[`DateRangePicker component
                 class="Input-icon Input-icon--left"
               >
                 <i
-                  class="material-icons Icon"
+                  class="material-icons material-icons-round Icon"
                   style="font-size: 16px; width: 16px;"
                 >
-                  events
+                  events_round
                 </i>
               </div>
               <input
@@ -8386,10 +8386,10 @@ exports[`DateRangePicker component
                 class="Input-icon Input-icon--right"
               >
                 <i
-                  class="material-icons Icon"
+                  class="material-icons material-icons-round Icon"
                   style="font-size: 16px; width: 16px;"
                 >
-                  close
+                  close_round
                 </i>
               </div>
             </div>
@@ -8429,10 +8429,10 @@ exports[`DateRangePicker component
                 class="Input-icon Input-icon--left"
               >
                 <i
-                  class="material-icons Icon"
+                  class="material-icons material-icons-round Icon"
                   style="font-size: 16px; width: 16px;"
                 >
-                  events
+                  events_round
                 </i>
               </div>
               <input
@@ -8448,10 +8448,10 @@ exports[`DateRangePicker component
                 class="Input-icon Input-icon--right"
               >
                 <i
-                  class="material-icons Icon"
+                  class="material-icons material-icons-round Icon"
                   style="font-size: 16px; width: 16px;"
                 >
-                  close
+                  close_round
                 </i>
               </div>
             </div>
@@ -8493,11 +8493,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -9134,11 +9134,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -9737,11 +9737,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -9776,11 +9776,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -10386,11 +10386,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -10415,11 +10415,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -10606,11 +10606,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -10635,11 +10635,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -10826,11 +10826,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_back
+                arrow_back_round
               </i>
             </div>
           </button>
@@ -10865,11 +10865,11 @@ exports[`DateRangePicker component
               class="Button-icon"
             >
               <i
-                class="material-icons Icon Icon--default"
+                class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
                 style="font-size: 16px; width: 16px;"
               >
-                arrow_forward
+                arrow_forward_round
               </i>
             </div>
           </button>
@@ -11489,10 +11489,10 @@ exports[`DateRangePicker component
                 class="Input-icon Input-icon--left"
               >
                 <i
-                  class="material-icons Icon"
+                  class="material-icons material-icons-round Icon"
                   style="font-size: 16px; width: 16px;"
                 >
-                  events
+                  events_round
                 </i>
               </div>
               <input
@@ -11508,10 +11508,10 @@ exports[`DateRangePicker component
                 class="Input-icon Input-icon--right"
               >
                 <i
-                  class="material-icons Icon"
+                  class="material-icons material-icons-round Icon"
                   style="font-size: 16px; width: 16px;"
                 >
-                  close
+                  close_round
                 </i>
               </div>
             </div>
@@ -11551,10 +11551,10 @@ exports[`DateRangePicker component
                 class="Input-icon Input-icon--left"
               >
                 <i
-                  class="material-icons Icon"
+                  class="material-icons material-icons-round Icon"
                   style="font-size: 16px; width: 16px;"
                 >
-                  events
+                  events_round
                 </i>
               </div>
               <input
@@ -11570,10 +11570,10 @@ exports[`DateRangePicker component
                 class="Input-icon Input-icon--right"
               >
                 <i
-                  class="material-icons Icon"
+                  class="material-icons material-icons-round Icon"
                   style="font-size: 16px; width: 16px;"
                 >
-                  close
+                  close_round
                 </i>
               </div>
             </div>

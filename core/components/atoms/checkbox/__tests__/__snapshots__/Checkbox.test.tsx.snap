@@ -103,10 +103,10 @@ exports[`Checkbox component
           class="Checkbox-wrapper"
         >
           <i
-            class="material-icons Icon Icon--white"
+            class="material-icons material-icons-round Icon Icon--white"
             style="font-size: 16px; width: 16px;"
           >
-            check
+            check_round
           </i>
         </span>
       </div>
@@ -151,10 +151,10 @@ exports[`Checkbox component
           class="Checkbox-wrapper"
         >
           <i
-            class="material-icons Icon Icon--white"
+            class="material-icons material-icons-round Icon Icon--white"
             style="font-size: 16px; width: 16px;"
           >
-            check
+            check_round
           </i>
         </span>
       </div>
@@ -197,10 +197,10 @@ exports[`Checkbox component
           class="Checkbox-wrapper"
         >
           <i
-            class="material-icons Icon Icon--white"
+            class="material-icons material-icons-round Icon Icon--white"
             style="font-size: 16px; width: 16px;"
           >
-            remove
+            remove_round
           </i>
         </span>
       </div>
@@ -244,10 +244,10 @@ exports[`Checkbox component
           class="Checkbox-wrapper"
         >
           <i
-            class="material-icons Icon Icon--white"
+            class="material-icons material-icons-round Icon Icon--white"
             style="font-size: 16px; width: 16px;"
           >
-            remove
+            remove_round
           </i>
         </span>
       </div>
@@ -291,10 +291,10 @@ exports[`Checkbox component
           class="Checkbox-wrapper"
         >
           <i
-            class="material-icons Icon Icon--white"
+            class="material-icons material-icons-round Icon Icon--white"
             style="font-size: 16px; width: 16px;"
           >
-            check
+            check_round
           </i>
         </span>
       </div>
@@ -338,10 +338,10 @@ exports[`Checkbox component
           class="Checkbox-wrapper"
         >
           <i
-            class="material-icons Icon Icon--white"
+            class="material-icons material-icons-round Icon Icon--white"
             style="font-size: 12px; width: 12px;"
           >
-            check
+            check_round
           </i>
         </span>
       </div>

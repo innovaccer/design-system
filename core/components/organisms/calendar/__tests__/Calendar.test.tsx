@@ -10,8 +10,8 @@ const view = ['year', 'month', 'date'];
 
 describe('Calendar component', () => {
   const mapper: Record<string, any> = {
-    disabledBefore: valueHelper([(new Date(2020, 2, 10)).getTime()], { iterate: true }),
-    disabledAfter: valueHelper([(new Date(2020, 2, 20)).getTime()], { iterate: true }),
+    disabledBefore: valueHelper([(Date.UTC(2020, 2, 10))], { iterate: true }),
+    disabledAfter: valueHelper([(Date.UTC(2020, 2, 20))], { iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {

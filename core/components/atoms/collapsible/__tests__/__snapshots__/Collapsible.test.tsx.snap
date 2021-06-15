@@ -28,11 +28,11 @@ exports[`Collapsible component
           data-test="DesignSystem-Collapsible--Footer"
         >
           <i
-            class="material-icons Icon px-5 py-4 my-2 cursor-pointer"
+            class="material-icons material-icons-round Icon px-5 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_right
+            keyboard_arrow_right_round
           </i>
         </div>
       </div>
@@ -69,11 +69,11 @@ exports[`Collapsible component
           data-test="DesignSystem-Collapsible--Footer"
         >
           <i
-            class="material-icons Icon px-5 py-4 my-2 cursor-pointer"
+            class="material-icons material-icons-round Icon px-5 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_right
+            keyboard_arrow_right_round
           </i>
         </div>
       </div>
@@ -110,11 +110,11 @@ exports[`Collapsible component
           data-test="DesignSystem-Collapsible--Footer"
         >
           <i
-            class="material-icons Icon px-5 py-4 my-2 cursor-pointer"
+            class="material-icons material-icons-round Icon px-5 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_left
+            keyboard_arrow_left_round
           </i>
         </div>
       </div>
@@ -152,11 +152,11 @@ exports[`Collapsible component
           data-test="DesignSystem-Collapsible--Footer"
         >
           <i
-            class="material-icons Icon px-5 py-4 my-2 cursor-pointer"
+            class="material-icons material-icons-round Icon px-5 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
             style="font-size: 16px; width: 16px;"
           >
-            keyboard_arrow_left
+            keyboard_arrow_left_round
           </i>
         </div>
       </div>

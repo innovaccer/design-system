@@ -13,11 +13,11 @@ exports[`Horizontal Navigation component
         data-test="DesignSystem-HorizontalNav"
       >
         <i
-          class="material-icons Icon Icon--info mr-3"
+          class="material-icons material-icons-round Icon Icon--info mr-3"
           data-test="DesignSystem-HorizontalNav--Icon"
           style="font-size: 16px; width: 16px;"
         >
-          events
+          events_round
         </i>
         <span
           class="Text Text--link Text--regular HorizontalNav-menuText"

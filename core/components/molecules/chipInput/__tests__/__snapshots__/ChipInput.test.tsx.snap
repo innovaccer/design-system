@@ -23,10 +23,10 @@ exports[`ChipInput component
             1020
           </span>
           <i
-            class="material-icons Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+            class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
             style="font-size: 16px; width: 16px;"
           >
-            clear
+            clear_round
           </i>
         </div>
         <div
@@ -40,10 +40,10 @@ exports[`ChipInput component
             80
           </span>
           <i
-            class="material-icons Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+            class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
             style="font-size: 16px; width: 16px;"
           >
-            clear
+            clear_round
           </i>
         </div>
         <input
@@ -54,11 +54,11 @@ exports[`ChipInput component
         />
       </div>
       <i
-        class="material-icons Icon Icon--subtle ChipInput-icon"
+        class="material-icons material-icons-round Icon Icon--subtle ChipInput-icon"
         data-test="DesignSystem-ChipInput--Icon"
         style="font-size: 16px; width: 16px;"
       >
-        close
+        close_round
       </i>
     </div>
   </div>
@@ -88,10 +88,10 @@ exports[`ChipInput component
             1020
           </span>
           <i
-            class="material-icons Icon Icon--disabled Chip-icon Chip-icon--right"
+            class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--right"
             style="font-size: 16px; width: 16px;"
           >
-            clear
+            clear_round
           </i>
         </div>
         <div
@@ -105,10 +105,10 @@ exports[`ChipInput component
             80
           </span>
           <i
-            class="material-icons Icon Icon--disabled Chip-icon Chip-icon--right"
+            class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--right"
             style="font-size: 16px; width: 16px;"
           >
-            clear
+            clear_round
           </i>
         </div>
         <input
@@ -120,11 +120,11 @@ exports[`ChipInput component
         />
       </div>
       <i
-        class="material-icons Icon Icon--subtle ChipInput-icon"
+        class="material-icons material-icons-round Icon Icon--subtle ChipInput-icon"
         data-test="DesignSystem-ChipInput--Icon"
         style="font-size: 16px; width: 16px;"
       >
-        close
+        close_round
       </i>
     </div>
   </div>

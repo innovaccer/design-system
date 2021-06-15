@@ -4,7 +4,7 @@ import Icon, { IconProps as Props } from '../Icon';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const size = 50;
-const appearance = ['destructive', 'white', 'subtle', 'disabled', 'alert', 'info', 'success', 'warning'];
+const appearance = ['destructive', 'white', 'subtle', 'disabled', 'alert', 'info', 'success', 'warning', 'primary', 'primary_dark', 'primary_lighter', 'alert_dark', 'alert_lighter', 'success_dark', 'success_lighter', 'warning_dark', 'warning_lighter', 'accent1', 'accent1_dark', 'accent1_lighter', 'accent2', 'accent2_dark', 'accent2_lighter', 'accent3', 'accent3_dark', 'accent3_lighter', 'accent4', 'accent4_dark', 'accent4_lighter', 'inverse'];
 const type = ['filled', 'outline', 'rounded', 'outlined', 'round', 'two-tone', 'sharp'];
 const FunctionValue = jest.fn();
 const StringValue = 'events';
