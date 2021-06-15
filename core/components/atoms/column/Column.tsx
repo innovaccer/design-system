@@ -56,7 +56,16 @@ export const Column = React.forwardRef<HTMLDivElement, ColumnProps>((props, ref)
     [`${className}`]: className
   });
 
-  return <div ref={ref} {...rest} className={classes}>{children}</div>;
+  return (
+    <div
+      ref={ref}
+      data-test="DesignSystem-Column"
+      {...rest}
+      className={classes}
+    >
+      {children}
+    </div>
+  );
 });
 
 Column.displayName = 'Column';

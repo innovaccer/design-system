@@ -1,24 +1,2550 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Column component should match the snapshot with columns 1`] = `
+exports[`Column component 
+  size: "1"
+ 1`] = `
 <body>
   <div>
     <div
-      class="Col Col--12"
+      class="Col Col--1"
+      data-test="DesignSystem-Column"
     >
-      Primary
+      <div>
+        Masala Design System
+      </div>
     </div>
   </div>
 </body>
 `;
 
-exports[`Column component should match the snapshot without columns 1`] = `
+exports[`Column component 
+  size: "2"
+ 1`] = `
 <body>
   <div>
     <div
-      class="Col"
+      class="Col Col--2"
+      data-test="DesignSystem-Column"
     >
-      Primary
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: "3"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--3"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: "4"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--4"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: "5"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--5"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: "6"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--6"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: "7"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--7"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: "8"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--8"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: "9"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--9"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: "10"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--10"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: "11"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--11"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: "12"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--12"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: "auto"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--auto"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: 1
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--1"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: 2
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--2"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: 3
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--3"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: 4
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--4"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: 5
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--5"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: 6
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--6"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: 7
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--7"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: 8
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--8"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: 9
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--9"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: 10
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--10"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: 11
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--11"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  size: 12
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--12"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: "1"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-1"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: "2"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-2"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: "3"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-3"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: "4"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-4"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: "5"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-5"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: "6"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-6"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: "7"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-7"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: "8"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-8"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: "9"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-9"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: "10"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-10"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: "11"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-11"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: "12"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-12"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: "auto"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-auto"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: 1
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-1"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: 2
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-2"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: 3
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-3"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: 4
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-4"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: 5
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-5"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: 6
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-6"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: 7
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-7"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: 8
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-8"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: 9
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-9"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: 10
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-10"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: 11
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-11"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeL: 12
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--l-12"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: "1"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-1"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: "2"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-2"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: "3"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-3"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: "4"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-4"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: "5"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-5"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: "6"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-6"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: "7"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-7"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: "8"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-8"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: "9"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-9"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: "10"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-10"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: "11"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-11"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: "12"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-12"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: "auto"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-auto"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: 1
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-1"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: 2
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-2"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: 3
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-3"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: 4
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-4"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: 5
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-5"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: 6
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-6"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: 7
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-7"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: 8
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-8"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: 9
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-9"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: 10
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-10"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: 11
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-11"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeM: 12
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--m-12"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: "1"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-1"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: "2"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-2"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: "3"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-3"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: "4"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-4"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: "5"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-5"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: "6"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-6"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: "7"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-7"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: "8"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-8"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: "9"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-9"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: "10"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-10"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: "11"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-11"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: "12"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-12"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: "auto"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-auto"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: 1
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-1"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: 2
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-2"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: 3
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-3"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: 4
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-4"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: 5
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-5"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: 6
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-6"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: 7
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-7"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: 8
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-8"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: 9
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-9"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: 10
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-10"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: 11
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-11"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeS: 12
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--s-12"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: "1"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-1"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: "2"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-2"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: "3"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-3"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: "4"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-4"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: "5"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-5"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: "6"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-6"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: "7"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-7"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: "8"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-8"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: "9"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-9"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: "10"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-10"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: "11"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-11"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: "12"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-12"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: "auto"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-auto"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: 1
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-1"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: 2
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-2"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: 3
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-3"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: 4
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-4"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: 5
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-5"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: 6
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-6"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: 7
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-7"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: 8
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-8"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: 9
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-9"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: 10
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-10"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: 11
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-11"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXL: 12
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xl-12"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: "1"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-1"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: "2"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-2"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: "3"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-3"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: "4"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-4"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: "5"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-5"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: "6"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-6"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: "7"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-7"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: "8"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-8"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: "9"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-9"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: "10"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-10"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: "11"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-11"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: "12"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-12"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: "auto"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-auto"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: 1
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-1"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: 2
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-2"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: 3
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-3"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: 4
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-4"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: 5
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-5"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: 6
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-6"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: 7
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-7"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: 8
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-8"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: 9
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-9"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: 10
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-10"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: 11
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-11"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Column component 
+  sizeXS: 12
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Col Col--xs-12"
+      data-test="DesignSystem-Column"
+    >
+      <div>
+        Masala Design System
+      </div>
     </div>
   </div>
 </body>

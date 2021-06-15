@@ -8201,6 +8201,7 @@ exports[`DateRangePicker component
       >
         <div
           class="Col Col--6 Col--xs-12 DateRangePicker-input DateRangePicker-input--startDate"
+          data-test="DesignSystem-Column"
         >
           <div
             class="Label Label--withInput"
@@ -8263,6 +8264,7 @@ exports[`DateRangePicker component
         </div>
         <div
           class="Col Col--6 Col--xs-12 DateRangePicker-input DateRangePicker-input--endDate"
+          data-test="DesignSystem-Column"
         >
           <div
             class="Label Label--withInput"
@@ -8343,6 +8345,7 @@ exports[`DateRangePicker component
       >
         <div
           class="Col Col--6 Col--xs-12 DateRangePicker-input DateRangePicker-input--startDate"
+          data-test="DesignSystem-Column"
         >
           <div
             class="Label Label--withInput"
@@ -8405,6 +8408,7 @@ exports[`DateRangePicker component
         </div>
         <div
           class="Col Col--6 Col--xs-12 DateRangePicker-input DateRangePicker-input--endDate"
+          data-test="DesignSystem-Column"
         >
           <div
             class="Label Label--withInput"
@@ -11465,6 +11469,7 @@ exports[`DateRangePicker component
       >
         <div
           class="Col Col--6 Col--xs-12 DateRangePicker-input DateRangePicker-input--startDate"
+          data-test="DesignSystem-Column"
         >
           <div
             class="Label Label--withInput"
@@ -11527,6 +11532,7 @@ exports[`DateRangePicker component
         </div>
         <div
           class="Col Col--6 Col--xs-12 DateRangePicker-input DateRangePicker-input--endDate"
+          data-test="DesignSystem-Column"
         >
           <div
             class="Label Label--withInput"
