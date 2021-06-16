@@ -578,31 +578,6 @@ body {
   justify-content: center;
   z-index: 1500;
 }
-.Legend {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-}
-
-.Legend-icon {
-    border-radius: var(--spacing-s);
-    margin-right: var(--spacing);
-}
-.ProgressBar {
-  width: 100%;
-  border-radius: var(--spacing-m);
-  background: var(--secondary-lightest);
-}
-
-.ProgressBar-indicator {
-  height: var(--spacing);
-  background-color: var(--primary);
-  border-radius: var(--spacing-m);
-  transition: width 200ms;
-}
 /* badge */
 
 .Avatar {
@@ -3272,6 +3247,19 @@ body {
     margin-right: var(--spacing);
 }
 
+.Legend {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.Legend-icon {
+    border-radius: var(--spacing-s);
+    margin-right: var(--spacing);
+}
 .Link {
   text-decoration: none;
   font-weight: var(--font-weight-medium);
@@ -4231,6 +4219,18 @@ body {
   visibility: hidden;
   pointer-events: none;
 }
+.ProgressBar {
+  width: 100%;
+  border-radius: var(--spacing-m);
+  background: var(--secondary-lightest);
+}
+
+.ProgressBar-indicator {
+  height: var(--spacing);
+  background-color: var(--primary);
+  border-radius: var(--spacing-m);
+  transition: width 200ms;
+}
 .Ring {
   transform: rotate(-90deg);
 }
@@ -4702,87 +4702,91 @@ body {
   pointer-events: none;
 }
 .Switch {
-    display: inline-flex;
-    position: relative;
+  display: inline-flex;
+  position: relative;
 }
 
 .Switch--tiny {
-    height: var(--spacing-2);
-    width: var(--spacing-3);
+  height: var(--spacing-2);
+  width: var(--spacing-3);
 }
 
 .Switch--regular {
-    height: var(--spacing-xl);
-    width: var(--spacing-4);
+  height: var(--spacing-xl);
+  width: var(--spacing-4);
 }
 
 .Switch--large {
-    height: var(--spacing-3);
-    width: var(--spacing-5);
+  height: var(--spacing-3);
+  width: var(--spacing-5);
 }
 
 .Switch-input {
-    position: absolute;
-    cursor: pointer;
-    z-index: 10;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 
 .Switch-wrapper {
-    display: flex;
-    align-items: center;
-    line-height: 100%;
-    padding: var(--spacing-xs);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--secondary-light);
+  display: flex;
+  align-items: center;
+  line-height: 100%;
+  padding: var(--spacing-xs);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary-light);
+  transition: background-color 0.15s ease-in;
 }
 
 .Switch-wrapper--tiny {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .Switch-wrapper--regular {
-    border-radius: 34px;
+  border-radius: 34px;
 }
 
 .Switch-wrapper--large {
-    border-radius: 38px;
+  border-radius: 38px;
 }
 
 .Switch-wrapper:before {
-    content: "";
-    height: 100%;
-    width: 50%;
-    background-color: var(--shadow-0);
-    box-shadow: 0 0 var(--spacing-xs) 0 var(--shadow-20);
-    border-radius: 50%;
-    box-sizing: border-box;
+  content: '';
+  height: 100%;
+  width: 50%;
+  background-color: var(--shadow-0);
+  box-shadow: 0 0 var(--spacing-xs) 0 var(--shadow-20);
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: 0.15s ease-in;
 }
 
 .Switch-wrapper--checked {
-    background-color: var(--primary);
+  background-color: var(--primary);
+  transition: background-color 0.15s ease-out;
 }
 
 .Switch-wrapper--checked:before {
-    transform: translateX(100%);
+  transform: translateX(100%);
+  transition: 0.15s ease-out;
 }
 
 .Switch--disabled {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .Switch-wrapper--disabled:before {
-    background-color: var(--secondary-lightest);
+  background-color: var(--secondary-lightest);
 }
 
 .Switch-wrapper--checkedDisabled {
-    background-color: var(--primary-lighter);
+  background-color: var(--primary-lighter);
 }
 
 .Table {
