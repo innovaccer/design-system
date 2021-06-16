@@ -22,6 +22,7 @@ exports[`FullscreenModal component
         >
           <div
             class="Col Col--6 Col--xs-12 Col--m-8 Col--l-8"
+            data-test="DesignSystem-Column"
           >
             <div
               class="Row FullscreenModal-header"
@@ -29,6 +30,7 @@ exports[`FullscreenModal component
             >
               <div
                 class="Col"
+                data-test="DesignSystem-Column"
               >
                 <div
                   class="OverlayHeader"
@@ -41,6 +43,7 @@ exports[`FullscreenModal component
               </div>
               <div
                 class="Col flex-grow-0"
+                data-test="DesignSystem-Column"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -99,6 +102,7 @@ exports[`FullscreenModal component
         >
           <div
             class="Col Col--4 Col--xs-12 Col--m-6 Col--l-6"
+            data-test="DesignSystem-Column"
           >
             <div
               class="Row FullscreenModal-header"
@@ -106,6 +110,7 @@ exports[`FullscreenModal component
             >
               <div
                 class="Col"
+                data-test="DesignSystem-Column"
               >
                 <div
                   class="OverlayHeader"
@@ -118,6 +123,7 @@ exports[`FullscreenModal component
               </div>
               <div
                 class="Col flex-grow-0"
+                data-test="DesignSystem-Column"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
