@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import { Tooltip } from '@/index';
 import * as React from 'react';
 import * as Keys from '@/utils/Keys';
 import { formatPercentage, clamp } from './SliderUtils';
@@ -14,6 +13,7 @@ export interface HandleProps {
 
 export interface InternalHandleProps extends HandleProps {
   disabled?: boolean;
+  isCurrentLabelHovered?: boolean;
   label: string;
   max: number;
   min: number;
@@ -24,12 +24,14 @@ export interface InternalHandleProps extends HandleProps {
 }
 
 export interface HandleState {
-  isMoving?: boolean;
+  isHandleMoving?: boolean;
+  isHandleHovered?: boolean;
 }
 
 export class Handle extends React.Component<InternalHandleProps, HandleState> {
   state = {
-    isMoving: false,
+    isHandleMoving: false,
+    isHandleHovered: false,
   };
 
   handleElement: HTMLElement | null = null;
@@ -42,7 +44,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
   }
 
   componentDidUpdate(_prevProps: InternalHandleProps, prevState: HandleState) {
-    if (prevState.isMoving !== this.state.isMoving) {
+    if (prevState.isHandleMoving !== this.state.isHandleMoving) {
       if (this.handleElement) this.handleElement.focus();
     }
   }
@@ -83,7 +85,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     const { onRelease } = this.props;
 
     this.removeDocumentEventListeners();
-    this.setState({ isMoving: false });
+    this.setState({ isHandleMoving: false });
 
     const finalValue = this.changeValue(this.clientToValue(clientPixel));
     if (onRelease) onRelease(finalValue);
@@ -91,7 +93,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
 
   continueHandleMovement = (event: MouseEvent) => {
     const clientPixel = this.mouseEventClientOffset(event);
-    if (this.state.isMoving && !this.props.disabled) {
+    if (this.state.isHandleMoving && !this.props.disabled) {
       const value = this.clientToValue(clientPixel);
       this.changeValue(value);
     }
@@ -102,7 +104,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     document.addEventListener('mousemove', this.continueHandleMovement);
     document.addEventListener('mouseup', this.endHandleMovement);
 
-    this.setState({ isMoving: true });
+    this.setState({ isHandleMoving: true });
 
     const value = this.clientToValue(event.clientX);
     this.changeValue(value);
@@ -144,8 +146,25 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     return { handleOffset, handleMidpoint: handleRect[sizeKey] / 2 };
   }
 
+  handleMouseOver = () => {
+    this.setState({
+      isHandleHovered: true
+    });
+  }
+
+  handleMouseLeave = () => {
+    this.setState({
+      isHandleHovered: false
+    });
+  }
+
   render() {
-    const { min, tickSizeRatio, value, disabled, label } = this.props;
+    const { min, tickSizeRatio, value, disabled, label, isCurrentLabelHovered } = this.props;
+    const { isHandleMoving, isHandleHovered } = this.state;
+
+    const showTootlip = isHandleMoving
+      || isHandleHovered
+      || isCurrentLabelHovered;
 
     const { handleMidpoint } = this.getHandleMidpointAndOffset(this.handleElement, true);
     const offsetRatio = (value - min) * tickSizeRatio;
@@ -155,29 +174,32 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     const className = classNames({
       ['Slider-handle']: true,
       ['Slider-handle--disabled']: disabled,
-      ['Slider-handle--active']: this.state.isMoving
+      ['Slider-handle--active']: isHandleMoving
+    });
+
+    const TooltipClass = classNames({
+      ['Slider-tooltip']: true,
+      ['Tooltip']: true,
+      ['d-none']: !(showTootlip)
     });
 
     return (
-      <div
-        className={className}
-        onMouseDown={this.beginHandleMovement}
-        onKeyDown={this.handleKeyDown}
-        onKeyUp={this.handleKeyUp}
-        ref={this.refHandlers.handle}
-        style={style}
-        tabIndex={1}
-      >
-        {!this.state.isMoving && (
-          <Tooltip
-            tooltip={label}
-            position="top"
-            triggerClass={'Slider-tooltip'}
-          >
-            <span className="h-100 w-100" />
-          </Tooltip>
-        )}
-      </div>
+      <>
+        <div
+          className={className}
+          onMouseOver={this.handleMouseOver}
+          onMouseLeave={this.handleMouseLeave}
+          onMouseDown={this.beginHandleMovement}
+          onKeyDown={this.handleKeyDown}
+          onKeyUp={this.handleKeyUp}
+          ref={this.refHandlers.handle}
+          style={style}
+          tabIndex={1}
+        />
+        <div className={TooltipClass} style={style}>
+          {label}
+        </div>
+      </>
     );
   }
 
