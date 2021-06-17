@@ -1174,14 +1174,12 @@ exports[`TS renders children 1`] = `
         class="Slider-handle"
         style="left: calc(0.00% - 0px);"
         tabindex="1"
+      />
+      <div
+        class="Slider-tooltip Tooltip d-none"
+        style="left: calc(0.00% - 0px);"
       >
-        <div
-          class="OutsideClick PopperWrapper-trigger Slider-tooltip"
-        >
-          <span
-            class="h-100 w-100"
-          />
-        </div>
+        0
       </div>
     </div>
   </div>
@@ -1369,27 +1367,23 @@ exports[`TS renders children 1`] = `
         class="Slider-handle"
         style="left: calc(0.00% - 0px);"
         tabindex="1"
+      />
+      <div
+        class="Slider-tooltip Tooltip d-none"
+        style="left: calc(0.00% - 0px);"
       >
-        <div
-          class="OutsideClick PopperWrapper-trigger Slider-tooltip"
-        >
-          <span
-            class="h-100 w-100"
-          />
-        </div>
+        0
       </div>
       <div
         class="Slider-handle"
         style="left: calc(100.00% - 0px);"
         tabindex="1"
+      />
+      <div
+        class="Slider-tooltip Tooltip d-none"
+        style="left: calc(100.00% - 0px);"
       >
-        <div
-          class="OutsideClick PopperWrapper-trigger Slider-tooltip"
-        >
-          <span
-            class="h-100 w-100"
-          />
-        </div>
+        10
       </div>
     </div>
   </div>

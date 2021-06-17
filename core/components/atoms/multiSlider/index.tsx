@@ -68,6 +68,7 @@ interface MultiSliderState {
   labelPrecision: number;
   tickSize: number;
   tickSizeRatio: number;
+  hoveredLabelValue?: number;
 }
 
 type InternalMultiSliderProps = SliderBaserProps & RangeSliderBaseProps;
@@ -272,22 +273,28 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
       return null;
     }
 
-    return handleProps.map(({ value }, index) => (
-      <Handle
-        disabled={disabled}
-        key={`${index}-${handleProps.length}`}
-        max={max}
-        min={min}
-        onRelease={newValue => this.onReleaseHandler(newValue, index)}
-        onChange={newValue => this.onChangeHandler(newValue, index)}
-        label={this.formatLabel(value)}
-        ref={this.addHandleRef}
-        stepSize={stepSize}
-        tickSize={this.state.tickSize}
-        tickSizeRatio={this.state.tickSizeRatio}
-        value={value}
-      />
-    ));
+    return handleProps.map(({ value }, index) => {
+      const isCurrentLabelHovered =
+        this.state.hoveredLabelValue === Number(value.toFixed(this.state.labelPrecision));
+
+      return (
+        <Handle
+          disabled={disabled}
+          key={`${index}-${handleProps.length}`}
+          max={max}
+          min={min}
+          onRelease={newValue => this.onReleaseHandler(newValue, index)}
+          onChange={newValue => this.onChangeHandler(newValue, index)}
+          label={this.formatLabel(value)}
+          ref={this.addHandleRef}
+          stepSize={stepSize}
+          tickSize={this.state.tickSize}
+          tickSizeRatio={this.state.tickSizeRatio}
+          value={value}
+          isCurrentLabelHovered={isCurrentLabelHovered}
+        />
+      );
+    });
   }
 
   renderLabels = () => {
@@ -320,10 +327,12 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
 
       labels.push(
         <div
-          key={i}
-          className={'Slider-label'}
-          style={style}
           onClick={onClickHandler}
+          className={'Slider-label'}
+          key={i}
+          style={style}
+          onMouseOver={() => this.handleLabelMouseOver(i)}
+          onMouseLeave={this.handleLabelMouseLeave}
         >
           <span className={'Slider-ticks'} />
           {labelRenderer !== false && (
@@ -373,6 +382,18 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
     });
 
     return handles;
+  }
+
+  handleLabelMouseOver = (value: number) => {
+    this.setState({
+      hoveredLabelValue: value,
+    });
+  }
+
+  handleLabelMouseLeave = () => {
+    this.setState({
+      hoveredLabelValue: undefined,
+    });
   }
 
   render() {
