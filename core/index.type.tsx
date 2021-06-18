@@ -61,6 +61,7 @@ export { PlaceholderProps } from './components/molecules/placeholder';
 export { PlaceholderParagraphProps } from './components/atoms/placeholderParagraph';
 export { ProgressBarProps } from './components/atoms/progressBar';
 export { EditableInputProps } from './components/molecules/editableInput';
+export { EditableChipInputProps } from './components/molecules/editableChipInput';
 export { PopoverProps } from './components/molecules/popover';
 export { ProgressRingProps } from './components/atoms/progressRing';
 export { StepperProps } from './components/molecules/stepper';
