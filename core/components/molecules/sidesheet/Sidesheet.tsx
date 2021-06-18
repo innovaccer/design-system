@@ -227,7 +227,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
           size={sidesheetWidth[dimension]}
         >
           <div className={headerClass}>
-            <Column>
+            <Column data-test="DesignSystem-Sidesheet--Header">
               {!header && (
                 <OverlayHeader
                   {...headerOptions}
@@ -248,6 +248,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
             </Column>
           </div>
           <OverlayBody
+            data-test="DesignSystem-Sidesheet--OverlayBody"
             className={bodyClass}
           >
             {this.props.children}
