@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmptyState component 
+  size: "large", title: "Manage your outreach campaigns", description: "Campaigns let you reach out to patients with text messages, emails and voice calls", imageSrc: "noContent"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="EmptyState"
+      data-test="DesignSystem-EmptyState"
+    >
+      <img
+        data-test="DesignSystem-EmptyState--Img"
+        height="256px"
+        src="noContent"
+      />
+      <h3
+        class="Heading Heading--l Heading--default EmptyState-title EmptyState-title--large"
+        data-test="DesignSystem-EmptyState--Heading"
+      >
+        Manage your outreach campaigns
+      </h3>
+      <span
+        class="Text Text--subtle Text--large EmptyState-description"
+        data-test="DesignSystem-EmptyState--Text"
+      >
+        Campaigns let you reach out to patients with text messages, emails and voice calls
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`EmptyState component 
+  size: "small", title: "Manage your outreach campaigns", description: "Campaigns let you reach out to patients with text messages, emails and voice calls", imageSrc: "noContent"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="EmptyState"
+      data-test="DesignSystem-EmptyState"
+    >
+      <img
+        data-test="DesignSystem-EmptyState--Img"
+        height="128px"
+        src="noContent"
+      />
+      <h4
+        class="Heading Heading--m Heading--default EmptyState-title EmptyState-title--small"
+        data-test="DesignSystem-EmptyState--Heading"
+      >
+        Manage your outreach campaigns
+      </h4>
+      <span
+        class="Text Text--subtle Text--regular EmptyState-description"
+        data-test="DesignSystem-EmptyState--Text"
+      >
+        Campaigns let you reach out to patients with text messages, emails and voice calls
+      </span>
+    </div>
+  </div>
+</body>
+`;

@@ -73,12 +73,14 @@ export const EmptyState = (props: EmptyStateProps) => {
   });
 
   return (
-    <div {...baseProps} className={WrapperClass}>
+    <div data-test="DesignSystem-EmptyState" {...baseProps} className={WrapperClass} >
       <img
         src={imageSrc}
         height={imageHeight[size]}
+        data-test="DesignSystem-EmptyState--Img"
       />
       <Heading
+        data-test="DesignSystem-EmptyState--Heading"
         size={HeadingSize[size]}
         className={HeadingClass}
       >
@@ -88,6 +90,7 @@ export const EmptyState = (props: EmptyStateProps) => {
         size={textSize[size]}
         className={TextClass}
         appearance="subtle"
+        data-test="DesignSystem-EmptyState--Text"
       >
         {description}
       </Text>
