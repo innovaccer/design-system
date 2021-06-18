@@ -78,6 +78,7 @@ export const TS = () => {
       <DS.Table />
       <DS.Navigation menus={[]} />
       <DS.PageHeader title={string} />
+      <DS.EditableChipInput placeholder=""/>
     </>
   );
 };

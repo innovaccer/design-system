@@ -2629,5 +2629,28 @@ exports[`TS renders children 1`] = `
       </div>
     </div>
   </div>
+  <div
+    class="EditableChipInput"
+    data-test="DesignSystem-EditableChipInput"
+  >
+    <div
+      class="Editable"
+      data-test="DesignSystem-Editable"
+    >
+      <div
+        data-test="DesignSystem-EditableWrapper"
+      >
+        <div
+          class="EditableChipInput-default"
+          data-test="DesignSystem-EditableChipInput--Default"
+        >
+          <span
+            class="Text Text--default Text--regular EditableChipInput--Text"
+            data-test="DesignSystem-Text"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </DocumentFragment>
 `;
