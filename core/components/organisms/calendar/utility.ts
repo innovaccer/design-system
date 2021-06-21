@@ -54,7 +54,7 @@ export const convertToDate = (d?: DateType | DateObject, format?: string, valida
   return dateVal;
 };
 
-export const compareDecade = (d: DateType | undefined, operator: Operator, currDecade: number): boolean => {
+export const compareYearBlock = (d: DateType | undefined, operator: Operator, currDecade: number): boolean => {
   if (d) {
     const {
       decadeYear: limitDecade

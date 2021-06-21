@@ -107,6 +107,10 @@
     background: linear-gradient(90deg, var(--alert-lightest) 50%, white 50%);
 }
 
+.Calendar-valueWrapper--startEnd {
+    background: transparent;
+}
+
 .Calendar-value {
     display: inline-flex;
     align-items: center;
