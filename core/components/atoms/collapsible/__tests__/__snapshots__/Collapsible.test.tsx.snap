@@ -6,12 +6,12 @@ exports[`Collapsible component
 <body>
   <div>
     <div
-      class="Collapsible-wrapper Collapsible-wrapper--overlay"
+      class="Collapsible-wrapper"
       data-test="DesignSystem-CollapsibleWrapper"
       style="height: 100vh;"
     >
       <div
-        class="Collapsible Collapsible--overlay"
+        class="Collapsible"
         data-layer="true"
         data-test="DesignSystem-Collapsible"
       >
@@ -47,12 +47,12 @@ exports[`Collapsible component
 <body>
   <div>
     <div
-      class="Collapsible-wrapper Collapsible-wrapper--overlay"
+      class="Collapsible-wrapper"
       data-test="DesignSystem-CollapsibleWrapper"
       style="height: 100vh;"
     >
       <div
-        class="Collapsible Collapsible--overlay"
+        class="Collapsible"
         data-layer="true"
         data-test="DesignSystem-Collapsible"
       >
@@ -88,12 +88,12 @@ exports[`Collapsible component
 <body>
   <div>
     <div
-      class="Collapsible-wrapper Collapsible-wrapper--overlay"
+      class="Collapsible-wrapper"
       data-test="DesignSystem-CollapsibleWrapper"
       style="height: 100vh;"
     >
       <div
-        class="Collapsible Collapsible--overlay"
+        class="Collapsible"
         data-layer="true"
         data-test="DesignSystem-Collapsible"
       >
@@ -129,12 +129,12 @@ exports[`Collapsible component
 <body>
   <div>
     <div
-      class="Collapsible-wrapper Collapsible-wrapper--overlay"
+      class="Collapsible-wrapper"
       data-test="DesignSystem-CollapsibleWrapper"
       style="height: 100vh;"
     >
       <div
-        class="Collapsible Collapsible--overlay"
+        class="Collapsible"
         data-layer="true"
         data-test="DesignSystem-Collapsible"
         style="width: 250px;"
