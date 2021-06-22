@@ -41,7 +41,7 @@ export const Collapsible = (props: CollapsibleProps) => {
     onToggle,
   } = props;
 
-  const [isClicked, setIsClicked] = React.useState(false);
+  const [isClicked, setIsClicked] = React.useState(true);
   const [seperator, setSeperator] = React.useState(false);
 
   const ref = React.createRef<HTMLDivElement>();
