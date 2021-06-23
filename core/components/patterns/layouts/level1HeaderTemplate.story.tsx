@@ -53,12 +53,12 @@ const customCode = `() => {
   };
 
   return(
-    <div className="d-flex flex-column bg-secondary-lightest vh-100 overflow-hidden">
+    <div className="d-flex flex-column bg-secondary-lightest vh-100">
       <PageHeader
         {...options}
       />
-      <Row className="px-6 h-100 py-6">
-        <Column className="h-100 v-100 bg-light" />
+      <Row className="h-100 p-6">
+        <Column className="h-100 bg-light" />
       </Row>
     </div>
   );
