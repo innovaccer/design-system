@@ -3,12 +3,12 @@ import * as React from 'react';
 export const sidebarTemplate = () => <></>;
 
 const customCode = `() => {
-  const data = [
+  const menus = [
     {
       name: 'patient_360',
       label: 'Patient 360',
       icon: 'assignment_ind',
-      link: '/patient360'
+      link: '/patient360',
     },
     {
       name: 'care_management',
@@ -17,11 +17,13 @@ const customCode = `() => {
       subMenu: [
         {
           name: 'care_management.timeline',
-          label: 'Timeline'
+          label: 'Timeline',
+          icon: 'events'
         },
         {
           name: 'care_management.care_plans',
-          label: 'Care Plans'
+          label: 'Care Plans',
+          icon: 'events'
         }
       ]
     },
@@ -38,11 +40,13 @@ const customCode = `() => {
       subMenu: [
         {
           name: 'risk.timeline',
-          label: 'Timeline'
+          label: 'Timeline',
+          icon: 'events'
         },
         {
           name: 'risk.care_plans',
-          label: 'Care Plans'
+          label: 'Care Plans',
+          icon: 'events'
         }
       ]
     },
@@ -57,21 +61,16 @@ const customCode = `() => {
       icon: 'account_circle'
     },
     {
-      name: 'manula_entry',
-      label: 'Manual Entry',
-      icon: 'border_color'
-    },
-    {
       name: 'documents',
       label: 'Documents',
       icon: 'assignment'
     }
   ];
 
+  const [expanded, setExpanded] = React.useState(false);
   const [active, setActive] = React.useState({
     name: 'care_management.timeline'
   });
-  const [expanded, setExpanded] = React.useState(true);
 
   const onClickHandler = (menu) => {
     console.log('menu-clicked: ', menu);
@@ -80,28 +79,24 @@ const customCode = `() => {
 
   return(
     <Row className="vh-100 bg-secondary-lightest">
-      <div className="d-flex bg-secondary-lighter">
-        <Navigation
-          type="vertical"
-          menus={data}
+      <Collapsible expanded={expanded} onToggle={setExpanded}>
+        <VerticalNav
+          menus={menus}
           expanded={expanded}
-          footer={true}
-          onToggle={(val) => setExpanded(val)}
           active={active}
           onClick={onClickHandler}
+          hoverable={false}
         />
-      </div>
-      <Row>
-        <Column size={12} className="d-flex flex-column h-100 overflow-hidden pb-6">
-          <PageHeader
-            title="Page title"
-            separator={false}
-          />
-          <Row className="px-6 h-100">
-            <Column className="h-100 v-100 bg-light" />
-          </Row>
-        </Column>
-      </Row>
+      </Collapsible>
+      <Column className="d-flex flex-column pb-6">
+        <PageHeader
+          title="Page title"
+          separator={false}
+        />
+        <Row className="px-6">
+          <Column className="h-100 bg-light" />
+        </Row>
+      </Column>
     </Row>
   );
 }`;
