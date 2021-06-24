@@ -28,6 +28,7 @@ describe('MetricInput component', () => {
     onBlur: valueHelper(FunctionValue, { required: true }),
     onFocus: valueHelper(FunctionValue, { required: true }),
     onClick: valueHelper(FunctionValue, { required: true }),
+    withArrowIcons:valueHelper(Booleanvalue, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -78,6 +79,24 @@ describe('MetricInput component', () => {
     expect(getByTestId('DesignSystem-MetricInput').tagName).toMatch('INPUT');
     expect(getByTestId('DesignSystem-MetricInput--upIcon')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-MetricInput--downIcon')).toBeInTheDocument();
+  });
+
+});
+
+describe('MetricInput component with prop: withArrowIcons', () => {
+
+  it('renders component with prop withArrowIcons true', () => {
+    const { queryByTestId } = render(
+      <MetricInput withArrowIcons={true} />
+    );
+    expect(queryByTestId('DesignSystem-MetricInput--iconsWrapper')).not.toHaveClass('MetricInput-arrowIcons--hide');
+  });
+
+  it('renders component with prop withArrowIcons false', () => {
+    const { getByTestId } = render(
+      <MetricInput withArrowIcons={false} />
+    );
+    expect(getByTestId('DesignSystem-MetricInput--iconsWrapper')).toHaveClass('MetricInput-arrowIcons--hide');
   });
 
 });

@@ -70,6 +70,10 @@ export interface MetricInputProps extends BaseProps, BaseHtmlProps<HTMLInputElem
    */
   error?: boolean;
   /**
+   * Determines if arrow icons are visible
+   */
+  withArrowIcons?: boolean;
+  /**
    * Callback function when `MetricInput` text changes
    */
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -128,6 +132,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     disabled,
     readOnly,
     value: valueProp,
+    withArrowIcons,
     ...rest
   } = props;
 
@@ -176,6 +181,11 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
       [`MetricInput-arrowIcon--${direction}`]: direction,
     })
   );
+
+  const arrowIconsClass = classNames({
+    ['MetricInput-arrowIcons']:true,
+    ['MetricInput-arrowIcons--hide']: !withArrowIcons,
+  });
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (isUncontrolled) {
@@ -280,7 +290,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
           {suffix}
         </Text>
       )}
-      <div className="MetricInput-arrowIcons" tabIndex={0}>
+      <div data-test="DesignSystem-MetricInput--iconsWrapper" className={arrowIconsClass} tabIndex={0}>
         <Icon
           className={getArrowClass('up')}
           size={iconSize}
@@ -301,5 +311,8 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
 });
 
 MetricInput.displayName = 'MetricInput';
+MetricInput.defaultProps = {
+  withArrowIcons:true
+};
 
 export default MetricInput;

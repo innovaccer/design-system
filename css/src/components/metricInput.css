@@ -117,6 +117,10 @@
   outline: 0;
 }
 
+.MetricInput-arrowIcons--hide{
+  display: none;
+}
+
 .MetricInput-arrowIcon {
   background: var(--secondary-lightest);
 }
