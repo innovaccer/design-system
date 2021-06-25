@@ -247,105 +247,70 @@ exports[`DatePicker component
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--white Text--regular Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--white Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    1
-                  </span>
+                  1
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    2
-                  </span>
+                  2
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    3
-                  </span>
+                  3
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    4
-                  </span>
+                  4
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    5
-                  </span>
+                  5
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    6
-                  </span>
+                  6
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    7
-                  </span>
+                  7
                 </span>
               </div>
             </div>
@@ -356,105 +321,70 @@ exports[`DatePicker component
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    8
-                  </span>
+                  8
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    9
-                  </span>
+                  9
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    10
-                  </span>
+                  10
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    11
-                  </span>
+                  11
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    12
-                  </span>
+                  12
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    13
-                  </span>
+                  13
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    14
-                  </span>
+                  14
                 </span>
               </div>
             </div>
@@ -465,105 +395,70 @@ exports[`DatePicker component
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    15
-                  </span>
+                  15
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    16
-                  </span>
+                  16
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    17
-                  </span>
+                  17
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    18
-                  </span>
+                  18
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    19
-                  </span>
+                  19
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    20
-                  </span>
+                  20
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    21
-                  </span>
+                  21
                 </span>
               </div>
             </div>
@@ -574,105 +469,70 @@ exports[`DatePicker component
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    22
-                  </span>
+                  22
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    23
-                  </span>
+                  23
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    24
-                  </span>
+                  24
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    25
-                  </span>
+                  25
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    26
-                  </span>
+                  26
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    27
-                  </span>
+                  27
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    28
-                  </span>
+                  28
                 </span>
               </div>
             </div>
@@ -683,79 +543,44 @@ exports[`DatePicker component
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    29
-                  </span>
+                  29
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    30
-                  </span>
+                  30
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    31
-                  </span>
+                  31
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
-              >
-                <span
-                  class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
-                  data-test="DesignSystem-Calendar--dateValue"
-                />
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper"
-              >
-                <span
-                  class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
-                  data-test="DesignSystem-Calendar--dateValue"
-                />
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper"
-              >
-                <span
-                  class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
-                  data-test="DesignSystem-Calendar--dateValue"
-                />
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper"
-              >
-                <span
-                  class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
-                  data-test="DesignSystem-Calendar--dateValue"
-                />
-              </div>
+              />
             </div>
           </div>
         </div>
@@ -896,105 +721,70 @@ exports[`DatePicker component
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--white Text--regular Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--white Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    1
-                  </span>
+                  1
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    2
-                  </span>
+                  2
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    3
-                  </span>
+                  3
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    4
-                  </span>
+                  4
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    5
-                  </span>
+                  5
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    6
-                  </span>
+                  6
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    7
-                  </span>
+                  7
                 </span>
               </div>
             </div>
@@ -1005,105 +795,70 @@ exports[`DatePicker component
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    8
-                  </span>
+                  8
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    9
-                  </span>
+                  9
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    10
-                  </span>
+                  10
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    11
-                  </span>
+                  11
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    12
-                  </span>
+                  12
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    13
-                  </span>
+                  13
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    14
-                  </span>
+                  14
                 </span>
               </div>
             </div>
@@ -1114,105 +869,70 @@ exports[`DatePicker component
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    15
-                  </span>
+                  15
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    16
-                  </span>
+                  16
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    17
-                  </span>
+                  17
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    18
-                  </span>
+                  18
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    19
-                  </span>
+                  19
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    20
-                  </span>
+                  20
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    21
-                  </span>
+                  21
                 </span>
               </div>
             </div>
@@ -1223,105 +943,70 @@ exports[`DatePicker component
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    22
-                  </span>
+                  22
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    23
-                  </span>
+                  23
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    24
-                  </span>
+                  24
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    25
-                  </span>
+                  25
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    26
-                  </span>
+                  26
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    27
-                  </span>
+                  27
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    28
-                  </span>
+                  28
                 </span>
               </div>
             </div>
@@ -1332,79 +1017,44 @@ exports[`DatePicker component
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    29
-                  </span>
+                  29
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    30
-                  </span>
+                  30
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    31
-                  </span>
+                  31
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
-              >
-                <span
-                  class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
-                  data-test="DesignSystem-Calendar--dateValue"
-                />
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper"
-              >
-                <span
-                  class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
-                  data-test="DesignSystem-Calendar--dateValue"
-                />
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper"
-              >
-                <span
-                  class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
-                  data-test="DesignSystem-Calendar--dateValue"
-                />
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper"
-              >
-                <span
-                  class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
-                  data-test="DesignSystem-Calendar--dateValue"
-                />
-              </div>
+              />
             </div>
           </div>
         </div>
@@ -1985,105 +1635,70 @@ exports[`DatePicker component
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--white Text--regular Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--white Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    1
-                  </span>
+                  1
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    2
-                  </span>
+                  2
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    3
-                  </span>
+                  3
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    4
-                  </span>
+                  4
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    5
-                  </span>
+                  5
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    6
-                  </span>
+                  6
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    7
-                  </span>
+                  7
                 </span>
               </div>
             </div>
@@ -2094,105 +1709,70 @@ exports[`DatePicker component
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    8
-                  </span>
+                  8
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    9
-                  </span>
+                  9
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    10
-                  </span>
+                  10
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    11
-                  </span>
+                  11
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    12
-                  </span>
+                  12
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    13
-                  </span>
+                  13
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    14
-                  </span>
+                  14
                 </span>
               </div>
             </div>
@@ -2203,105 +1783,70 @@ exports[`DatePicker component
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    15
-                  </span>
+                  15
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    16
-                  </span>
+                  16
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    17
-                  </span>
+                  17
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    18
-                  </span>
+                  18
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    19
-                  </span>
+                  19
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    20
-                  </span>
+                  20
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    21
-                  </span>
+                  21
                 </span>
               </div>
             </div>
@@ -2312,105 +1857,70 @@ exports[`DatePicker component
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    22
-                  </span>
+                  22
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    23
-                  </span>
+                  23
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    24
-                  </span>
+                  24
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    25
-                  </span>
+                  25
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    26
-                  </span>
+                  26
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    27
-                  </span>
+                  27
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    28
-                  </span>
+                  28
                 </span>
               </div>
             </div>
@@ -2421,79 +1931,44 @@ exports[`DatePicker component
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    29
-                  </span>
+                  29
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    30
-                  </span>
+                  30
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
               >
                 <span
-                  class="Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
-                  <span
-                    class="Text Text--default Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    31
-                  </span>
+                  31
                 </span>
               </div>
               <div
                 class="Calendar-valueWrapper"
-              >
-                <span
-                  class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
-                  data-test="DesignSystem-Calendar--dateValue"
-                />
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper"
-              >
-                <span
-                  class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
-                  data-test="DesignSystem-Calendar--dateValue"
-                />
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper"
-              >
-                <span
-                  class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
-                  data-test="DesignSystem-Calendar--dateValue"
-                />
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper"
-              >
-                <span
-                  class="Calendar-value Calendar-value--dummy Calendar-dateValue Calendar-dateValue--large"
-                  data-test="DesignSystem-Calendar--dateValue"
-                />
-              </div>
+              />
             </div>
           </div>
         </div>
