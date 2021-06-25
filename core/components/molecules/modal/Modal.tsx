@@ -252,6 +252,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
               <Column>
                 {!header && (
                   <OverlayHeader
+                    data-test="DesignSystem-Modal--header"
                     {...headerOptions}
                   />
                 )}
@@ -287,6 +288,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
             (!!footer || !!footerOptions) &&
             (
               <OverlayFooter
+                data-test="DesignSystem-Modal--footer"
                 {...footerOptions}
                 open={open}
                 className={footerClass}

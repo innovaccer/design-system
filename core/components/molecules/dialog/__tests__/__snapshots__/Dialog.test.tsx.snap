@@ -27,7 +27,7 @@ exports[`Dialog component
           >
             <div
               class="OverlayHeader"
-              data-test="DesignSystem-OverlayHeader"
+              data-test="DesignSystem-Modal--header"
             >
               <div
                 class="OverlayHeader-headerWrapper"
@@ -89,7 +89,7 @@ exports[`Dialog component
         </div>
         <div
           class="OverlayFooter Modal-footer"
-          data-test="DesignSystem-OverlayFooter"
+          data-test="DesignSystem-Modal--footer"
         >
           <button
             class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -146,7 +146,7 @@ exports[`Dialog component
           >
             <div
               class="OverlayHeader"
-              data-test="DesignSystem-OverlayHeader"
+              data-test="DesignSystem-Modal--header"
             >
               <div
                 class="OverlayHeader-headerWrapper"
@@ -208,7 +208,7 @@ exports[`Dialog component
         </div>
         <div
           class="OverlayFooter Modal-footer"
-          data-test="DesignSystem-OverlayFooter"
+          data-test="DesignSystem-Modal--footer"
         >
           <button
             class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -263,7 +263,7 @@ exports[`Dialog component
           >
             <div
               class="OverlayHeader"
-              data-test="DesignSystem-OverlayHeader"
+              data-test="DesignSystem-Modal--header"
             >
               <div
                 class="OverlayHeader-headerWrapper"
@@ -325,7 +325,7 @@ exports[`Dialog component
         </div>
         <div
           class="OverlayFooter Modal-footer"
-          data-test="DesignSystem-OverlayFooter"
+          data-test="DesignSystem-Modal--footer"
         >
           <button
             class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -381,7 +381,7 @@ exports[`Dialog component
           >
             <div
               class="OverlayHeader"
-              data-test="DesignSystem-OverlayHeader"
+              data-test="DesignSystem-Modal--header"
             >
               <div
                 class="OverlayHeader-headerWrapper"
@@ -443,7 +443,7 @@ exports[`Dialog component
         </div>
         <div
           class="OverlayFooter Modal-footer"
-          data-test="DesignSystem-OverlayFooter"
+          data-test="DesignSystem-Modal--footer"
         >
           <button
             class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -499,7 +499,7 @@ exports[`Dialog component
           >
             <div
               class="OverlayHeader"
-              data-test="DesignSystem-OverlayHeader"
+              data-test="DesignSystem-Modal--header"
             >
               <div
                 class="OverlayHeader-headerWrapper"
@@ -561,7 +561,7 @@ exports[`Dialog component
         </div>
         <div
           class="OverlayFooter Modal-footer"
-          data-test="DesignSystem-OverlayFooter"
+          data-test="DesignSystem-Modal--footer"
         >
           <button
             class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -617,7 +617,7 @@ exports[`Dialog component
           >
             <div
               class="OverlayHeader"
-              data-test="DesignSystem-OverlayHeader"
+              data-test="DesignSystem-Modal--header"
             >
               <div
                 class="OverlayHeader-headerWrapper"
@@ -679,7 +679,7 @@ exports[`Dialog component
         </div>
         <div
           class="OverlayFooter Modal-footer"
-          data-test="DesignSystem-OverlayFooter"
+          data-test="DesignSystem-Modal--footer"
         >
           <button
             class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -735,7 +735,7 @@ exports[`Dialog component
           >
             <div
               class="OverlayHeader"
-              data-test="DesignSystem-OverlayHeader"
+              data-test="DesignSystem-Modal--header"
             >
               <div
                 class="OverlayHeader-headerWrapper"
@@ -797,7 +797,7 @@ exports[`Dialog component
         </div>
         <div
           class="OverlayFooter Modal-footer"
-          data-test="DesignSystem-OverlayFooter"
+          data-test="DesignSystem-Modal--footer"
         >
           <button
             class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -853,7 +853,7 @@ exports[`Dialog component
           >
             <div
               class="OverlayHeader"
-              data-test="DesignSystem-OverlayHeader"
+              data-test="DesignSystem-Modal--header"
             >
               <div
                 class="OverlayHeader-headerWrapper"
@@ -915,7 +915,7 @@ exports[`Dialog component
         </div>
         <div
           class="OverlayFooter Modal-footer"
-          data-test="DesignSystem-OverlayFooter"
+          data-test="DesignSystem-Modal--footer"
         >
           <button
             class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -971,7 +971,7 @@ exports[`Dialog component
           >
             <div
               class="OverlayHeader"
-              data-test="DesignSystem-OverlayHeader"
+              data-test="DesignSystem-Modal--header"
             >
               <div
                 class="OverlayHeader-headerWrapper"
@@ -1033,7 +1033,7 @@ exports[`Dialog component
         </div>
         <div
           class="OverlayFooter Modal-footer"
-          data-test="DesignSystem-OverlayFooter"
+          data-test="DesignSystem-Modal--footer"
         >
           <button
             class="Button Button--regular Button--alert Button--iconAlign-left"
@@ -1089,7 +1089,7 @@ exports[`Dialog component
           >
             <div
               class="OverlayHeader"
-              data-test="DesignSystem-OverlayHeader"
+              data-test="DesignSystem-Modal--header"
             >
               <div
                 class="OverlayHeader-headerWrapper"
@@ -1151,7 +1151,7 @@ exports[`Dialog component
         </div>
         <div
           class="OverlayFooter Modal-footer"
-          data-test="DesignSystem-OverlayFooter"
+          data-test="DesignSystem-Modal--footer"
         >
           <button
             class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -1207,7 +1207,7 @@ exports[`Dialog component
           >
             <div
               class="OverlayHeader"
-              data-test="DesignSystem-OverlayHeader"
+              data-test="DesignSystem-Modal--header"
             >
               <div
                 class="OverlayHeader-headerWrapper"
@@ -1269,7 +1269,7 @@ exports[`Dialog component
         </div>
         <div
           class="OverlayFooter Modal-footer"
-          data-test="DesignSystem-OverlayFooter"
+          data-test="DesignSystem-Modal--footer"
         >
           <button
             class="Button Button--regular Button--primary Button--iconAlign-left"
@@ -1325,7 +1325,7 @@ exports[`Dialog component
           >
             <div
               class="OverlayHeader"
-              data-test="DesignSystem-OverlayHeader"
+              data-test="DesignSystem-Modal--header"
             >
               <div
                 class="OverlayHeader-headerWrapper"
@@ -1387,7 +1387,7 @@ exports[`Dialog component
         </div>
         <div
           class="OverlayFooter Modal-footer"
-          data-test="DesignSystem-OverlayFooter"
+          data-test="DesignSystem-Modal--footer"
         >
           <button
             class="Button Button--regular Button--success Button--iconAlign-left"
@@ -1443,7 +1443,7 @@ exports[`Dialog component
           >
             <div
               class="OverlayHeader"
-              data-test="DesignSystem-OverlayHeader"
+              data-test="DesignSystem-Modal--header"
             >
               <div
                 class="OverlayHeader-headerWrapper"
@@ -1505,7 +1505,7 @@ exports[`Dialog component
         </div>
         <div
           class="OverlayFooter Modal-footer"
-          data-test="DesignSystem-OverlayFooter"
+          data-test="DesignSystem-Modal--footer"
         >
           <button
             class="Button Button--regular Button--transparent Button--iconAlign-left"

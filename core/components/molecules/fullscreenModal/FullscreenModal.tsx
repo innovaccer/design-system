@@ -193,7 +193,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
             <Column {...sizeMap[dimension]}>
               <Row className="FullscreenModal-header">
                 <Column>
-                  {!header && <OverlayHeader {...headerOptions} />}
+                  {!header && <OverlayHeader data-test="DesignSystem-FullscreenModal--header" {...headerOptions} />}
 
                   {!!header && header}
                 </Column>
@@ -218,6 +218,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
                 (!!footer || !!footerOptions) &&
                 (
                   <OverlayFooter
+                    data-test="DesignSystem-FullscreenModal--footer"
                     {...footerOptions}
                     open={open}
                     className="FullscreenModal-footer"
