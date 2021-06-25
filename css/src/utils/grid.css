@@ -1,8 +1,7 @@
 .Row {
   display: flex;
   flex-wrap: wrap;
-  flex-grow: 1;
-  width: 100%;
+  flex: 1 100%;
 }
 
 .Col {
