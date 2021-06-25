@@ -1,17 +1,84 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { FullscreenModalProps as Props } from '@/index.type';
-import { FullscreenModal, Button } from '@/index';
+import { FullscreenModal, Button, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const dimension = ['medium', 'large'];
+const footer = (
+  <>
+    <Button appearance="primary" className="mr-4" data-test="DesignSystem-FullscreenModal--FooterButton">
+      Primary
+    </Button>
+    <Button appearance="basic" >Basic</Button>
+  </>
+);
+const header = (
+<Text data-test="DesignSystem-FullscreenModal--HeaderText">Heading</Text>
+);
 
-const mapper = {
-  dimension: valueHelper(dimension, { required: true, iterate: true }),
-  open: valueHelper(true, { required: true })
+const footerOptions = { actions: [] };
+
+const headerOptions = {
+  heading: 'this is heading',
+  subHeading: 'this is subheading'
 };
 
+const onClose = jest.fn();
+
 describe('FullscreenModal component', () => {
+
+  const mapper = {
+    dimension: valueHelper(dimension, { required: true, iterate: true }),
+    open: valueHelper(true, { required: true })
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+    const { children, ...rest } = attr;
+
+    it(testMessageHelper(attr), () => {
+      const { baseElement } = render(<FullscreenModal {...rest}>this is modal body</FullscreenModal>);
+
+      expect(baseElement).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('FullscreenModal component', () => {
+
+  const mapper = {
+    dimension: valueHelper(dimension, { required: true, iterate: true }),
+    open: valueHelper(true, { required: true }),
+    header: valueHelper(header, { required: true }),
+    footer: valueHelper(footer, { required: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+    const { children, ...rest } = attr;
+
+    it(testMessageHelper(attr), () => {
+      const { baseElement } = render(<FullscreenModal {...rest}>this is modal body</FullscreenModal>);
+
+      expect(baseElement).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('FullscreenModal component', () => {
+
+  const mapper = {
+    dimension: valueHelper(dimension, { required: true, iterate: true }),
+    open: valueHelper(true, { required: true }),
+    headerOptions: valueHelper(headerOptions, { required: true }),
+    footerOptions: valueHelper(footerOptions, { required: true }),
+  };
+
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
     const { children, ...rest } = attr;
@@ -27,22 +94,85 @@ describe('FullscreenModal component', () => {
 });
 
 describe('FullscreenModal component with props', () => {
-  it('renders children', () => {
+
+  it('renders children with prop: open ', () => {
     const { getByTestId } = render(
       <FullscreenModal
         open={true}
-        headerOptions={{
-          heading: 'this is heading',
-          subHeading: 'this is subheading'
-        }}
-        footerOptions={{ actions: [] }}
+      />
+    );
+
+    expect(getByTestId('DesignSystem-FullscreenModalContainer')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-FullscreenModal')).toBeInTheDocument();
+  });
+
+  it('renders children with props : headerOptions & footerOptions ', () => {
+    const { getByTestId } = render(
+      <FullscreenModal
+        open={true}
+        headerOptions={headerOptions}
+        footerOptions={footerOptions}
       >
         <p>FullscreenModal Body</p>
       </FullscreenModal>
     );
 
-    expect(getByTestId('DesignSystem-OverlayHeader')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-FullscreenModalContainer')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-FullscreenModal')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-FullscreenModal--CloseButton')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-FullscreenModal--Body')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-FullscreenModal--header')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-FullscreenModal--footer')).toBeInTheDocument();
   });
+
+  it('renders children with props : header & footer', () => {
+    const { getByTestId } = render(
+      <FullscreenModal
+        open={true}
+        header={header}
+        footer={footer}
+      >
+        <p>FullscreenModal Body</p>
+      </FullscreenModal>
+    );
+
+    expect(getByTestId('DesignSystem-FullscreenModalContainer')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-FullscreenModal')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-FullscreenModal--CloseButton')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-FullscreenModal--Body')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-FullscreenModal--HeaderText')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-FullscreenModal--FooterButton')).toBeInTheDocument();
+  });
+
+  it('renders children without footer and footerOptions props', () => {
+    const { getByTestId, queryByTestId } = render(
+      <FullscreenModal
+        open={true}
+        header={header}
+      >
+        <p>FullscreenModal Body</p>
+      </FullscreenModal>
+    );
+    expect(getByTestId('DesignSystem-FullscreenModalContainer')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-FullscreenModal')).toBeInTheDocument();
+    expect(queryByTestId('DesignSystem-FullscreenModal--footer')).not.toBeInTheDocument();
+    expect(queryByTestId('DesignSystem-FullscreenModal--FooterButton')).not.toBeInTheDocument();
+  });
+
+  it('renders with prop: onClose and header', () => {
+    const { getByTestId } = render(
+      <FullscreenModal
+        open={true}
+        header={header}
+        onClose={onClose}
+      />
+    );
+
+    const closeIcon = getByTestId('DesignSystem-FullscreenModal--CloseButton');
+    fireEvent.click(closeIcon);
+    expect(onClose).toHaveBeenCalled();
+  });
+
 });
 
 describe('FullscreenModal component with prop: dimension', () => {

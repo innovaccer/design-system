@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { ModalProps as Props } from '@/index.type';
-import { ModalHeader, Modal, ModalBody, ModalFooter, Button } from '@/index';
+import { ModalHeader, Modal, ModalBody, ModalFooter, Button, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const FunctionValue = jest.fn();
+const onClose = jest.fn();
 const dimension = ['small', 'medium', 'large'];
 
 const modalHeaderOptions = {
@@ -14,13 +15,87 @@ const modalHeaderOptions = {
   subHeading: 'Subheading'
 };
 
-const mapper = {
-  backdropClose: valueHelper([FunctionValue], { iterate: true }),
-  dimension: valueHelper(dimension, { required: true, iterate: true }),
-  open: valueHelper(true, { required: true }),
+const footer = (
+  <>
+    <Button appearance="primary" className="mr-4" data-test="DesignSystem-Modal--FooterButton">Primary</Button>
+    <Button appearance="basic" >Basic</Button>
+  </>
+);
+const header = (
+<Text data-test="DesignSystem-Modal--HeaderText">Heading</Text>
+);
+
+const footerOptions = { actions: [] };
+
+const headerOptions = {
+  heading: 'this is heading',
+  subHeading: 'this is subheading'
 };
 
 describe('Modal component', () => {
+
+  const mapper = {
+    backdropClose: valueHelper([FunctionValue], { iterate: true }),
+    dimension: valueHelper(dimension, { required: true, iterate: true }),
+    open: valueHelper(true, { required: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+    const { children, ...rest } = attr;
+
+    it(testMessageHelper(attr), () => {
+      const { baseElement } = render(
+        <Modal {...rest}>
+          <ModalHeader {...modalHeaderOptions} />
+        </Modal>
+      );
+
+      expect(baseElement).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('Modal component', () => {
+
+  const mapper = {
+    backdropClose: valueHelper([FunctionValue], { iterate: true }),
+    dimension: valueHelper(dimension, { required: true, iterate: true }),
+    open: valueHelper(true, { required: true }),
+    header: valueHelper(header, { required: true }),
+    footer: valueHelper(footer, { required: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+    const { children, ...rest } = attr;
+
+    it(testMessageHelper(attr), () => {
+      const { baseElement } = render(
+        <Modal {...rest}>
+          <ModalHeader {...modalHeaderOptions} />
+        </Modal>
+      );
+
+      expect(baseElement).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('Modal component', () => {
+
+  const mapper = {
+    backdropClose: valueHelper([FunctionValue], { iterate: true }),
+    dimension: valueHelper(dimension, { required: true, iterate: true }),
+    open: valueHelper(true, { required: true }),
+    headerOptions: valueHelper(headerOptions, { required: true }),
+    footerOptions: valueHelper(footerOptions, { required: true }),
+  };
+
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
     const { children, ...rest } = attr;
@@ -54,23 +129,104 @@ describe('Modal component with props', () => {
         </ModalFooter>
       </Modal>
     );
-
     expect(getByTestId('DesignSystem-ModalHeader')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-ModalBody')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-ModalFooter')).toBeInTheDocument();
+  });
+
+  it('renders children with props : open', () => {
+    const { getByTestId, queryByTestId } = render(
+      <Modal
+        open={true}
+      />
+    );
+    expect(getByTestId('DesignSystem-ModalContainer')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Modal')).toBeInTheDocument();
+    expect(queryByTestId('DesignSystem-Modal--header')).not.toBeInTheDocument();
+    expect(queryByTestId('DesignSystem-Modal--footer')).not.toBeInTheDocument();
+    expect(queryByTestId('DesignSystem-Modal--HeaderText')).not.toBeInTheDocument();
+    expect(queryByTestId('DesignSystem-Modal--FooterButton')).not.toBeInTheDocument();
+  });
+
+  it('renders children with props : headerOptions and footerOptions', () => {
+    const { getByTestId } = render(
+      <Modal
+        backdropClose={FunctionValue}
+        open={true}
+        footerOptions={footerOptions}
+        headerOptions={headerOptions}
+      />
+    );
+    expect(getByTestId('DesignSystem-ModalContainer')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Modal')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Modal--header')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Modal--footer')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Modal--CloseButton')).toBeInTheDocument();
+  });
+
+  it('renders children with props : header and footer', () => {
+    const { getByTestId } = render(
+      <Modal
+        backdropClose={FunctionValue}
+        open={true}
+        header={header}
+        footer={footer}
+      />
+    );
+    expect(getByTestId('DesignSystem-ModalContainer')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Modal')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Modal--HeaderText')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Modal--FooterButton')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Modal--CloseButton')).toBeInTheDocument();
+  });
+
+  it('renders children without header and footer props', () => {
+    const { getByTestId, queryByTestId } = render(
+      <Modal
+        backdropClose={FunctionValue}
+        open={true}
+      />
+    );
+    expect(getByTestId('DesignSystem-ModalContainer')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Modal')).toBeInTheDocument();
+    expect(queryByTestId('DesignSystem-Modal--footer')).not.toBeInTheDocument();
+    expect(queryByTestId('DesignSystem-Modal--FooterButton')).not.toBeInTheDocument();
   });
 
   it('renders with prop: backdropClose', () => {
     const { getByTestId } = render(
       <>
         <div data-test="DesignSystem-OutsideClick">Outside Click</div>
-        <Modal backdropClose={FunctionValue} open={true} />
+        <Modal backdropClose={FunctionValue} open={true}/>
       </>
     );
 
     const OutsideClick = getByTestId('DesignSystem-OutsideClick');
     fireEvent.click(OutsideClick);
     expect(FunctionValue).toHaveBeenCalled();
+  });
+
+  it('renders with prop: onClose', () => {
+    const { getByTestId } = render(
+      <>
+        <div data-test="DesignSystem-OutsideClick">Outside Click</div>
+        <Modal backdropClose={FunctionValue} open={true} onClose={onClose}/>
+      </>
+    );
+
+    const OutsideClick = getByTestId('DesignSystem-OutsideClick');
+    fireEvent.click(OutsideClick);
+    expect(onClose).toHaveBeenCalled();
+  });
+
+  it('renders with prop: onClose and header', () => {
+    const { getByTestId } = render(
+      <Modal backdropClose={FunctionValue} open={true} onClose={onClose} header={header}/>
+    );
+
+    const closeIcon = getByTestId('DesignSystem-Modal--CloseButton');
+    fireEvent.click(closeIcon);
+    expect(onClose).toHaveBeenCalled();
   });
 
 });
