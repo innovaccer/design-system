@@ -75,6 +75,7 @@ describe('Collapsible component with prop: children', () => {
     );
     expect(getByTestId('DesignSystem-Collapsible--Icon')).toBeInTheDocument();
     expect(queryByTestId('DesignSystem-Collapsible--Text')).not.toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Collapsible')).not.toHaveClass('Collapsible--overlay');
   });
 
   it('renders expanded state', () => {
@@ -91,6 +92,7 @@ describe('Collapsible component with prop: children', () => {
       </Collapsible>
     );
     expect(getByTestId('DesignSystem-Collapsible--Text')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Collapsible')).not.toHaveClass('Collapsible--overlay');
   });
 
 });
