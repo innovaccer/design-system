@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, List, Text, Avatar, Button } from '@/index';
+import { Card, List, Text, Button } from '@/index';
 import { TableProps } from '@/index.type';
 import { AsyncTable, SyncTable } from './_common_/types';
 import { action } from '@storybook/addon-actions';
@@ -31,9 +31,20 @@ export const tableAsDescriptionList = () => {
     {
       name: 'info',
       displayName: 'Info',
-      width: '100%',
+      width: '80%',
+      cellType: 'AVATAR_WITH_META_LIST',
+      translate: a => ({
+        firstName: a.firstName,
+        lastName: a.lastName,
+        title: `${a.firstName} ${a.lastName}`,
+        metaList: [a.email]
+      }),
+    },
+    {
+      name: 'rights',
+      displayName: 'Rights',
+      width: '20%',
       cellRenderer: (props: GridCellProps) => {
-
         const renderRights = () => {
           if (props.data.owner) {
             return <Text appearance="subtle" className="pr-5">owner</Text>;
@@ -57,23 +68,16 @@ export const tableAsDescriptionList = () => {
         };
 
         return (
-          <div className="d-flex align-items-center justify-content-between flex-grow-1">
-            <div className="d-flex align-items-center">
-              <Avatar firstName={props.data.firstName} lastName={props.data.lastName} />
-              <div className="d-flex flex-column ml-4">
-                <Text>{`${props.data.firstName} ${props.data.lastName}`}</Text>
-                <Text size="small" appearance="subtle">{props.data.email}</Text>
-              </div>
-            </div>
+          <div className="d-flex align-items-center justify-content-end flex-grow-1">
             {renderRights()}
           </div>
         );
       }
-    },
+    }
   ];
 
   return (
-    <Card>
+    <Card className="py-4">
       <Text size="large" weight="strong" className="ml-5">Sharing Test Manual</Text>
       <List
         type="resource"
@@ -127,9 +131,20 @@ const customCode = `() => {
     {
       name: 'info',
       displayName: 'Info',
-      width: '100%',
+      width: '80%',
+      cellType: 'AVATAR_WITH_META_LIST',
+      translate: a => ({
+        firstName: a.firstName,
+        lastName: a.lastName,
+        title: \`\${a.firstName} \${a.lastName}\`,
+        metaList: [a.email]
+      }),
+    },
+    {
+      name: 'rights',
+      displayName: 'Rights',
+      width: '20%',
       cellRenderer: (props) => {
-
         const renderRights = () => {
           if (props.data.owner) {
             return <Text appearance="subtle" className="pr-5">owner</Text>;
@@ -153,23 +168,16 @@ const customCode = `() => {
         };
 
         return (
-          <div className="d-flex align-items-center justify-content-between flex-grow-1">
-            <div className="d-flex align-items-center">
-              <Avatar firstName={props.data.firstName} lastName={props.data.lastName} />
-              <div className="d-flex flex-column ml-4">
-                <Text>{\`\${props.data.firstName} \${props.data.lastName}\`}</Text>
-                <Text size="small" appearance="subtle">{props.data.email}</Text>
-              </div>
-            </div>
+          <div className="d-flex align-items-center justify-content-end flex-grow-1">
             {renderRights()}
           </div>
         );
       }
-    },
+    }
   ];
 
   return (
-      <Card>
+      <Card  className="py-4">
         <Text size="large" weight="strong" className="ml-5">Sharing Test Manual</Text>
         <List
           type="resource"

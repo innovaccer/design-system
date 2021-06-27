@@ -240,6 +240,7 @@ import './style.css';
       searchPlaceholder,
       searchTerm,
       updateSearchTerm,
+      onFilterChange,
       allowSelectAll,
     } = props;
 
@@ -297,26 +298,20 @@ import './style.css';
           </div>
         </div>
         <div className="mb-5">
-          <Chip
-            selected={filterList['name'] && filterList['name'].length > 0}
-            label={'Filter 1'}
-            name={1}
-            type="selection"
-          />
-          <Chip
-            selected={filterList['gender'] && filterList['gender'].length > 0}
-            label={'Filter 2'}
-            name={2}
-            type="selection"
-            className="ml-4"
-          />
-          <Chip
-            selected={filterList['status'] && filterList['status'].length > 0}
-            label={'Filter 3'}
-            name={3}
-            type="selection"
-            className="ml-4"
-          />
+          {Object.keys(filterList).map(filter => {
+            return filterList[filter].map(value => (
+              <Chip
+                label={value}
+                name={\`\${filter}--\${value}\`}
+                clearButton={true}
+                className="mr-4"
+                onClose={() => {
+                  const updatedFilter = filterList[filter].filter(f => f !== value);
+                  onFilterChange(filter, updatedFilter);
+                }}
+              />
+            ))
+          })}
         </div>
         <div className="Header-content Header-content--bottom">
           <div className="Header-label">
@@ -350,14 +345,19 @@ import './style.css';
   class Table extends React.Component {
     constructor(props) {
       super(props);
-      const filterList = { name: [], gender: [], status: [] }
+      const filterList = {
+        name: ['a-g', 'h-r', 's-z'],
+        gender: ['male', 'female'],
+        status: ['completed', 'failed']
+      };
+
       this.state = {
+        filterList,
         data: [],
         schema: [],
         page: 1,
         totalRecords: 0,
         sortingList: props.sortingList || [],
-        filterList: props.filterList || {},
         loading: true,
         error: false,
         searchTerm: undefined,
@@ -507,6 +507,7 @@ import './style.css';
 
       const {
         totalRecords,
+        filterList,
         loading
       } = this.state;
       const totalPages = getTotalPages(totalRecords, pageSize);
@@ -523,6 +524,7 @@ import './style.css';
                   withCheckbox={false}
                   withPagination={withPagination}
                   pageSize={pageSize}
+                  onFilterChange={this.onFilterChange.bind(this)}
                 />
               </div>
               <div className="Table-grid">
@@ -566,10 +568,11 @@ import './style.css';
                   withCheckbox={true}
                   showApplyButton={true}
                   inlineLabel={"Name"}
+                  key={filterList['name']}
                   options={[
-                    { label: 'A-G', value: 'a-g', selected: true },
-                    { label: 'H-R', value: 'h-r', selected: true },
-                    { label: 'S-Z', value: 's-z', selected: true },
+                    { label: 'A-G', value: 'a-g', selected: filterList['name'].includes('a-g') },
+                    { label: 'H-R', value: 'h-r', selected: filterList['name'].includes('h-r') },
+                    { label: 'S-Z', value: 's-z', selected: filterList['name'].includes('s-z') },
                   ]}
                   onChange={selected => this.onFilterChange("name", selected)}
                 />
@@ -581,9 +584,10 @@ import './style.css';
                   withCheckbox={true}
                   showApplyButton={true}
                   inlineLabel={"Gender"}
+                  key={filterList['gender']}
                   options={[
-                    { label: 'Male', value: 'male', selected: true },
-                    { label: 'Female', value: 'female', selected: true },
+                    { label: 'Male', value: 'male', selected: filterList['gender'].includes('male') },
+                    { label: 'Female', value: 'female', selected: filterList['gender'].includes('female') },
                   ]}
                   onChange={selected => this.onFilterChange("gender", selected)}
                 />
@@ -595,10 +599,10 @@ import './style.css';
                   withCheckbox={true}
                   showApplyButton={true}
                   inlineLabel={"Status"}
-
+                  key={filterList['status']}
                   options={[
-                    { label: 'Completed', value: 'completed', selected: true },
-                    { label: 'Failed', value: 'failed', selected: true },
+                    { label: 'Completed', value: 'completed', selected: filterList['status'].includes('completed') },
+                    { label: 'Failed', value: 'failed', selected: filterList['status'].includes('failed') },
                   ]}
                   onChange={selected => this.onFilterChange("status", selected)}
               />
@@ -670,7 +674,6 @@ import './style.css';
         }
       });
     }
-
     return filteredData;
   };
 
