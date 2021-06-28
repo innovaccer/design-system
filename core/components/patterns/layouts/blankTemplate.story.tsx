@@ -4,9 +4,9 @@ export const blankTemplate = () => <></>;
 
 const customCode = `() => {
   return(
-    <Row className="d-flex flex-column bg-secondary-lightest vh-100 py-6 px-4">
-      <Column size={12} className="px-4">
-        <div className="h-100 v-100 bg-light" />
+    <Row className="d-flex flex-column bg-secondary-lightest vh-100 p-6">
+      <Column>
+        <div className="h-100 bg-light" />
       </Column>
     </Row>
   );

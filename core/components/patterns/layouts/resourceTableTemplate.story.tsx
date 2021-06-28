@@ -4,13 +4,13 @@ export const resourceTableTemplate = () => <></>;
 
 const customCode = `() => {
   return(
-    <div className="d-flex flex-column bg-secondary-lightest vh-100 pb-6 overflow-hidden">
+    <div className="d-flex flex-column bg-secondary-lightest vh-100 pb-6">
       <PageHeader
         title="Page title"
         separator={false}
       />
       <Row className="px-6 h-100">
-        <Column className="h-100 v-100 bg-light" />
+        <Column className="h-100 bg-light" />
       </Row>
     </div>
   );
