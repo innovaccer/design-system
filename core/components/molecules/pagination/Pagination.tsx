@@ -1,7 +1,5 @@
 import * as React from 'react';
-import Button from '@/components/atoms/button';
-import Text from '@/components/atoms/text';
-import Input from '@/components/atoms/input';
+import { Text, MetricInput, Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 import classNames from 'classnames';
@@ -93,10 +91,6 @@ export const Pagination = (props: PaginationProps) => {
     }
   };
 
-  const buttonHelper: string[] = [];
-  if (type === 'basic') buttonHelper.push('mx-3');
-  else buttonHelper.push('mx-4');
-
   return (
     <div data-test="DesignSystem-Pagination" {...baseProps} className={wrapperClass}>
       <div className={prevButtonWrapperClass}>
@@ -104,26 +98,22 @@ export const Pagination = (props: PaginationProps) => {
           onClick={() => onClickHandler('first')}
           disabled={page <= 1}
           appearance="transparent"
-          size="large"
           icon="first_page"
           data-test="DesignSystem-Pagination--FirstButton"
         />
-        <div data-test="DesignSystem-Pagination--Prev" className={['ml-4', ...buttonHelper].join(' ')}>
-          <Button
-            onClick={() => onClickHandler('prev')}
-            disabled={page <= 1}
-            size="large"
-            icon="navigate_before"
-            data-test="DesignSystem-Pagination--PrevButton"
-          />
-        </div>
+        <Button
+          onClick={() => onClickHandler('prev')}
+          disabled={page <= 1}
+          icon="navigate_before"
+          data-test="DesignSystem-Pagination--PrevButton"
+          className="ml-4 mr-3"
+        />
       </div>
       {type === 'jump' && (
         <div className="Pagination-pageIndex">
-          <Input
+          <MetricInput
             name="page"
-            type="number"
-            size="large"
+            className="Pagination-MetricInput"
             onChange={inputChangeHandler}
             value={`${page === 0 ? '' : page}`}
             data-test="DesignSystem-Pagination--Input"
@@ -132,20 +122,17 @@ export const Pagination = (props: PaginationProps) => {
         </div>
       )}
       <div className={nextButtonWrapperClass}>
-        <div className={['mr-4', ...buttonHelper].join(' ')}>
-          <Button
-            onClick={() => onClickHandler('next')}
-            disabled={page >= totalPages}
-            size="large"
-            icon="navigate_next"
-            data-test="DesignSystem-Pagination--NextButton"
-          />
-        </div>
+        <Button
+          onClick={() => onClickHandler('next')}
+          disabled={page >= totalPages}
+          icon="navigate_next"
+          data-test="DesignSystem-Pagination--NextButton"
+          className="mr-4 ml-3"
+        />
         <Button
           onClick={() => onClickHandler('last')}
           disabled={page >= totalPages}
           appearance="transparent"
-          size="large"
           icon="last_page"
           data-test="DesignSystem-Pagination--LastButton"
         />

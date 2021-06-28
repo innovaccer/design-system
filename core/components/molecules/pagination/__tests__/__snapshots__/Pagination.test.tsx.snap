@@ -12,7 +12,7 @@ exports[`Pagination component
       class="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
     >
       <button
-        class="Button Button--large Button--largeSquare Button--transparent"
+        class="Button Button--regular Button--regularSquare Button--transparent"
         data-test="DesignSystem-Pagination--FirstButton"
         tabindex="0"
       >
@@ -22,61 +22,52 @@ exports[`Pagination component
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
-            style="font-size: 20px; width: 20px;"
+            style="font-size: 16px; width: 16px;"
           >
             first_page_round
           </i>
         </div>
       </button>
-      <div
-        class="ml-4 mx-3"
-        data-test="DesignSystem-Pagination--Prev"
+      <button
+        class="Button Button--regular Button--regularSquare Button--basic ml-4 mr-3"
+        data-test="DesignSystem-Pagination--PrevButton"
+        tabindex="0"
       >
-        <button
-          class="Button Button--large Button--largeSquare Button--basic"
-          data-test="DesignSystem-Pagination--PrevButton"
-          tabindex="0"
+        <div
+          class="Button-icon"
         >
-          <div
-            class="Button-icon"
+          <i
+            class="material-icons material-icons-round Icon Icon--default"
+            data-test="DesignSystem-Button--Icon"
+            style="font-size: 16px; width: 16px;"
           >
-            <i
-              class="material-icons material-icons-round Icon Icon--default"
-              data-test="DesignSystem-Button--Icon"
-              style="font-size: 20px; width: 20px;"
-            >
-              navigate_before_round
-            </i>
-          </div>
-        </button>
-      </div>
+            navigate_before_round
+          </i>
+        </div>
+      </button>
     </div>
     <div
       class="Pagination-buttonWrapper Pagination-buttonWrapper--next"
     >
-      <div
-        class="mr-4 mx-3"
-      >
-        <button
-          class="Button Button--large Button--largeSquare Button--basic"
-          data-test="DesignSystem-Pagination--NextButton"
-          tabindex="0"
-        >
-          <div
-            class="Button-icon"
-          >
-            <i
-              class="material-icons material-icons-round Icon Icon--default"
-              data-test="DesignSystem-Button--Icon"
-              style="font-size: 20px; width: 20px;"
-            >
-              navigate_next_round
-            </i>
-          </div>
-        </button>
-      </div>
       <button
-        class="Button Button--large Button--largeSquare Button--transparent"
+        class="Button Button--regular Button--regularSquare Button--basic mr-4 ml-3"
+        data-test="DesignSystem-Pagination--NextButton"
+        tabindex="0"
+      >
+        <div
+          class="Button-icon"
+        >
+          <i
+            class="material-icons material-icons-round Icon Icon--default"
+            data-test="DesignSystem-Button--Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            navigate_next_round
+          </i>
+        </div>
+      </button>
+      <button
+        class="Button Button--regular Button--regularSquare Button--transparent"
         data-test="DesignSystem-Pagination--LastButton"
         tabindex="0"
       >
@@ -86,7 +77,7 @@ exports[`Pagination component
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
-            style="font-size: 20px; width: 20px;"
+            style="font-size: 16px; width: 16px;"
           >
             last_page_round
           </i>
@@ -109,7 +100,7 @@ exports[`Pagination component
       class="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
     >
       <button
-        class="Button Button--large Button--largeSquare Button--transparent"
+        class="Button Button--regular Button--regularSquare Button--transparent"
         data-test="DesignSystem-Pagination--FirstButton"
         tabindex="0"
       >
@@ -119,49 +110,63 @@ exports[`Pagination component
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
-            style="font-size: 20px; width: 20px;"
+            style="font-size: 16px; width: 16px;"
           >
             first_page_round
           </i>
         </div>
       </button>
-      <div
-        class="ml-4 mx-4"
-        data-test="DesignSystem-Pagination--Prev"
+      <button
+        class="Button Button--regular Button--regularSquare Button--basic ml-4 mr-3"
+        data-test="DesignSystem-Pagination--PrevButton"
+        tabindex="0"
       >
-        <button
-          class="Button Button--large Button--largeSquare Button--basic"
-          data-test="DesignSystem-Pagination--PrevButton"
-          tabindex="0"
+        <div
+          class="Button-icon"
         >
-          <div
-            class="Button-icon"
+          <i
+            class="material-icons material-icons-round Icon Icon--default"
+            data-test="DesignSystem-Button--Icon"
+            style="font-size: 16px; width: 16px;"
           >
-            <i
-              class="material-icons material-icons-round Icon Icon--default"
-              data-test="DesignSystem-Button--Icon"
-              style="font-size: 20px; width: 20px;"
-            >
-              navigate_before_round
-            </i>
-          </div>
-        </button>
-      </div>
+            navigate_before_round
+          </i>
+        </div>
+      </button>
     </div>
     <div
       class="Pagination-pageIndex"
     >
       <div
-        class="Input Input--large"
-        data-test="DesignSystem-InputWrapper"
+        class="MetricInput MetricInput--regular Pagination-MetricInput"
+        data-test="DesignSystem-MetricInputWrapper"
       >
         <input
-          class="Input-input Input-input--large"
+          class="MetricInput-input MetricInput-input--regular"
           data-test="DesignSystem-Pagination--Input"
           name="page"
           type="number"
           value="10"
         />
+        <div
+          class="MetricInput-arrowIcons"
+          tabindex="0"
+        >
+          <i
+            class="material-icons material-icons-round Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--up"
+            data-test="DesignSystem-MetricInput--upIcon"
+            style="font-size: 12px; width: 12px;"
+          >
+            keyboard_arrow_up_round
+          </i>
+          <i
+            class="material-icons material-icons-round Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--down"
+            data-test="DesignSystem-MetricInput--downIcon"
+            style="font-size: 12px; width: 12px;"
+          >
+            keyboard_arrow_down_round
+          </i>
+        </div>
       </div>
       <span
         class="Text Text--default Text--regular"
@@ -173,29 +178,25 @@ exports[`Pagination component
     <div
       class="Pagination-buttonWrapper Pagination-buttonWrapper--next"
     >
-      <div
-        class="mr-4 mx-4"
-      >
-        <button
-          class="Button Button--large Button--largeSquare Button--basic"
-          data-test="DesignSystem-Pagination--NextButton"
-          tabindex="0"
-        >
-          <div
-            class="Button-icon"
-          >
-            <i
-              class="material-icons material-icons-round Icon Icon--default"
-              data-test="DesignSystem-Button--Icon"
-              style="font-size: 20px; width: 20px;"
-            >
-              navigate_next_round
-            </i>
-          </div>
-        </button>
-      </div>
       <button
-        class="Button Button--large Button--largeSquare Button--transparent"
+        class="Button Button--regular Button--regularSquare Button--basic mr-4 ml-3"
+        data-test="DesignSystem-Pagination--NextButton"
+        tabindex="0"
+      >
+        <div
+          class="Button-icon"
+        >
+          <i
+            class="material-icons material-icons-round Icon Icon--default"
+            data-test="DesignSystem-Button--Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            navigate_next_round
+          </i>
+        </div>
+      </button>
+      <button
+        class="Button Button--regular Button--regularSquare Button--transparent"
         data-test="DesignSystem-Pagination--LastButton"
         tabindex="0"
       >
@@ -205,7 +206,7 @@ exports[`Pagination component
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
-            style="font-size: 20px; width: 20px;"
+            style="font-size: 16px; width: 16px;"
           >
             last_page_round
           </i>
