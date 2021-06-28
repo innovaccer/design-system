@@ -34,7 +34,7 @@ exports[`Sidesheet component
               >
                 <h4
                   class="Heading Heading--m Heading--default"
-                  data-test="DesignSystem-Heading"
+                  data-test="DesignSystem-OverlayHeader--heading"
                 >
                   Heading
                 </h4>
@@ -121,7 +121,7 @@ exports[`Sidesheet component
               >
                 <h4
                   class="Heading Heading--m Heading--default"
-                  data-test="DesignSystem-Heading"
+                  data-test="DesignSystem-OverlayHeader--heading"
                 >
                   Heading
                 </h4>
