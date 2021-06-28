@@ -56,13 +56,14 @@ export const OverlayHeader = (props: OverlayHeaderProps) => {
       <div className="OverlayHeader-headerWrapper">
         {(backButton || backIcon) && (
           <Button
+            data-test="DesignSystem-OverlayHeader--Button"
             appearance="transparent"
             className="mr-5"
             icon="keyboard_backspace"
             onClick={backButtonCallback || backIconCallback}
           />
         )}
-        {heading && <Heading>{heading}</Heading>}
+        {heading && <Heading data-test="DesignSystem-OverlayHeader--heading">{heading}</Heading>}
       </div>
       {subHeading && (
         <Text data-test="DesignSystem-OverlayHeader--Subheading" appearance="subtle" className={subheadingClass}>

@@ -1291,7 +1291,7 @@ exports[`TS renders children 1`] = `
         >
           <h4
             class="Heading Heading--m Heading--default"
-            data-test="DesignSystem-Heading"
+            data-test="DesignSystem-OverlayHeader--heading"
           >
             Hello World!
           </h4>
