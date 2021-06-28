@@ -4,20 +4,6 @@ on:
     branches:
       - master
 jobs:
-  visual_test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Run chromatic test
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.16.1'
-      - run: npm install
-      - run: npm run build-css
-      - run: npm run chromatic
-        env:
-          CHROMATIC_APP_CODE: ${{ secrets.CHROMATIC_APP_CODE }}
-          CI: true
   release:
     # uncomment next line as soon as visual tesing starts working
     # needs: visual_test 
