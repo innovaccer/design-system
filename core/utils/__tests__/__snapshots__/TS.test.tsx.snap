@@ -1355,7 +1355,7 @@ exports[`TS renders children 1`] = `
       class="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
     >
       <button
-        class="Button Button--large Button--largeSquare Button--transparent"
+        class="Button Button--regular Button--regularSquare Button--transparent"
         data-test="DesignSystem-Pagination--FirstButton"
         disabled=""
         tabindex="0"
@@ -1366,63 +1366,54 @@ exports[`TS renders children 1`] = `
           <i
             class="material-icons material-icons-round Icon Icon--disabled"
             data-test="DesignSystem-Button--Icon"
-            style="font-size: 20px; width: 20px;"
+            style="font-size: 16px; width: 16px;"
           >
             first_page_round
           </i>
         </div>
       </button>
-      <div
-        class="ml-4 mx-3"
-        data-test="DesignSystem-Pagination--Prev"
+      <button
+        class="Button Button--regular Button--regularSquare Button--basic ml-4 mr-3"
+        data-test="DesignSystem-Pagination--PrevButton"
+        disabled=""
+        tabindex="0"
       >
-        <button
-          class="Button Button--large Button--largeSquare Button--basic"
-          data-test="DesignSystem-Pagination--PrevButton"
-          disabled=""
-          tabindex="0"
+        <div
+          class="Button-icon"
         >
-          <div
-            class="Button-icon"
+          <i
+            class="material-icons material-icons-round Icon Icon--disabled"
+            data-test="DesignSystem-Button--Icon"
+            style="font-size: 16px; width: 16px;"
           >
-            <i
-              class="material-icons material-icons-round Icon Icon--disabled"
-              data-test="DesignSystem-Button--Icon"
-              style="font-size: 20px; width: 20px;"
-            >
-              navigate_before_round
-            </i>
-          </div>
-        </button>
-      </div>
+            navigate_before_round
+          </i>
+        </div>
+      </button>
     </div>
     <div
       class="Pagination-buttonWrapper Pagination-buttonWrapper--next"
     >
-      <div
-        class="mr-4 mx-3"
-      >
-        <button
-          class="Button Button--large Button--largeSquare Button--basic"
-          data-test="DesignSystem-Pagination--NextButton"
-          disabled=""
-          tabindex="0"
-        >
-          <div
-            class="Button-icon"
-          >
-            <i
-              class="material-icons material-icons-round Icon Icon--disabled"
-              data-test="DesignSystem-Button--Icon"
-              style="font-size: 20px; width: 20px;"
-            >
-              navigate_next_round
-            </i>
-          </div>
-        </button>
-      </div>
       <button
-        class="Button Button--large Button--largeSquare Button--transparent"
+        class="Button Button--regular Button--regularSquare Button--basic mr-4 ml-3"
+        data-test="DesignSystem-Pagination--NextButton"
+        disabled=""
+        tabindex="0"
+      >
+        <div
+          class="Button-icon"
+        >
+          <i
+            class="material-icons material-icons-round Icon Icon--disabled"
+            data-test="DesignSystem-Button--Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            navigate_next_round
+          </i>
+        </div>
+      </button>
+      <button
+        class="Button Button--regular Button--regularSquare Button--transparent"
         data-test="DesignSystem-Pagination--LastButton"
         disabled=""
         tabindex="0"
@@ -1433,7 +1424,7 @@ exports[`TS renders children 1`] = `
           <i
             class="material-icons material-icons-round Icon Icon--disabled"
             data-test="DesignSystem-Button--Icon"
-            style="font-size: 20px; width: 20px;"
+            style="font-size: 16px; width: 16px;"
           >
             last_page_round
           </i>

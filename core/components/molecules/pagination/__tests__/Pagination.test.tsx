@@ -176,7 +176,7 @@ describe('Pagination component with prop: type', () => {
     );
 
     expect(getByTestId('DesignSystem-Pagination')).toHaveClass('Pagination--basic');
-    expect(getByTestId('DesignSystem-Pagination--Prev')).toHaveClass('mx-3');
+    expect(getByTestId('DesignSystem-Pagination--PrevButton')).toHaveClass('ml-4 mr-3');
     expect(getByTestId('DesignSystem-Pagination').textContent).not.toMatch(`${totalPages}`);
   });
 
@@ -186,7 +186,7 @@ describe('Pagination component with prop: type', () => {
     );
 
     expect(getByTestId('DesignSystem-Pagination')).toHaveClass('Pagination--jump');
-    expect(getByTestId('DesignSystem-Pagination--Prev')).toHaveClass('mx-4');
+    expect(getByTestId('DesignSystem-Pagination--NextButton')).toHaveClass('mr-4 ml-3');
   });
 
 });
