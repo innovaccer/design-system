@@ -45,7 +45,11 @@
 }
 
 .Tab--disabled {
-    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.Tab--disabled:hover {
+    border: none;
 }
 
 .Tab-count {
