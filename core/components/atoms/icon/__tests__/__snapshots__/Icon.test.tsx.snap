@@ -1,15 +1,225 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Icon component 
+  name: "events", size: 50, appearance: "accent1", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--accent1"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent1_dark", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--accent1Dark"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent1_lighter", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--accent1Lighter"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent2", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--accent2"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent2_dark", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--accent2Dark"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent2_lighter", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--accent2Lighter"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent3", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--accent3"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent3_dark", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--accent3Dark"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent3_lighter", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--accent3Lighter"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent4", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--accent4"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent4_dark", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--accent4Dark"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent4_lighter", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--accent4Lighter"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
   name: "events", size: 50, appearance: "alert", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons Icon Icon--alert"
+      class="material-icons material-icons-round Icon Icon--alert"
       style="font-size: 50px; width: 50px;"
     >
-      events
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "alert_dark", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--alertDark"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "alert_lighter", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--alertLighter"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
     </i>
   </div>
 </body>
@@ -21,10 +231,10 @@ exports[`Icon component
 <body>
   <div>
     <i
-      class="material-icons Icon Icon--destructive"
+      class="material-icons material-icons-round Icon Icon--destructive"
       style="font-size: 50px; width: 50px;"
     >
-      events
+      events_round
     </i>
   </div>
 </body>
@@ -36,10 +246,10 @@ exports[`Icon component
 <body>
   <div>
     <i
-      class="material-icons Icon Icon--disabled"
+      class="material-icons material-icons-round Icon Icon--disabled"
       style="font-size: 50px; width: 50px;"
     >
-      events
+      events_round
     </i>
   </div>
 </body>
@@ -51,10 +261,70 @@ exports[`Icon component
 <body>
   <div>
     <i
-      class="material-icons Icon Icon--info"
+      class="material-icons material-icons-round Icon Icon--info"
       style="font-size: 50px; width: 50px;"
     >
-      events
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "inverse", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--inverse"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "primary", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--primary"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "primary_dark", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--primaryDark"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "primary_lighter", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--primaryLighter"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
     </i>
   </div>
 </body>
@@ -66,10 +336,10 @@ exports[`Icon component
 <body>
   <div>
     <i
-      class="material-icons Icon Icon--subtle"
+      class="material-icons material-icons-round Icon Icon--subtle"
       style="font-size: 50px; width: 50px;"
     >
-      events
+      events_round
     </i>
   </div>
 </body>
@@ -81,10 +351,40 @@ exports[`Icon component
 <body>
   <div>
     <i
-      class="material-icons Icon Icon--success"
+      class="material-icons material-icons-round Icon Icon--success"
       style="font-size: 50px; width: 50px;"
     >
-      events
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "success_dark", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--successDark"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "success_lighter", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--successLighter"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
     </i>
   </div>
 </body>
@@ -96,10 +396,40 @@ exports[`Icon component
 <body>
   <div>
     <i
-      class="material-icons Icon Icon--warning"
+      class="material-icons material-icons-round Icon Icon--warning"
       style="font-size: 50px; width: 50px;"
     >
-      events
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "warning_dark", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--warningDark"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "warning_lighter", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Icon Icon--warningLighter"
+      style="font-size: 50px; width: 50px;"
+    >
+      events_round
     </i>
   </div>
 </body>
@@ -111,10 +441,10 @@ exports[`Icon component
 <body>
   <div>
     <i
-      class="material-icons Icon Icon--white"
+      class="material-icons material-icons-round Icon Icon--white"
       style="font-size: 50px; width: 50px;"
     >
-      events
+      events_round
     </i>
   </div>
 </body>

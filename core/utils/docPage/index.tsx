@@ -80,7 +80,6 @@ const CopyComp = props => {
       style={{
         position: 'absolute',
         right: '0',
-        top: '0',
         zIndex: 10
       }}
     >
@@ -96,19 +95,56 @@ const CopyComp = props => {
   );
 };
 
-const renderCodeBlock = (val: string) => (
-  <div style={{ position: 'relative' }}>
-    <style>
-      {`pre {
-        margin: 0;
-      }`}
-    </style>
-    <CopyComp onClick={() => copyCode(val)} />
-    <SyntaxHighlighter language="javascript" style={vs2015} showLineNumbers={true}>
-      {val}
-    </SyntaxHighlighter>
-  </div>
-);
+const buttonStyles = {
+  borderRadius: '0',
+  borderBottomLeftRadius: '4px',
+  width: '100%',
+  background: 'white'
+};
+
+const ShowMoreLessButton = ({ onClick, text = 'More' }) => (
+    <div
+      style={{
+        display: 'grid',
+        placeItems: 'center',
+        position: 'absolute',
+        width: '100%',
+        bottom: '0',
+        zIndex: 10
+      }}
+    >
+      <Button
+        size="tiny"
+        style={buttonStyles}
+        appearance="basic"
+        onClick={onClick}
+      >
+        {`Show ${text}`}
+      </Button>
+    </div>
+  );
+
+const getHeight = (shouldShowMore: boolean, showMoreHTML: boolean) => {
+  if (shouldShowMore) {
+    return showMoreHTML ? '100%' : '250px';
+  }
+  return '100%';
+};
+
+const renderCodeBlock = (val: string) =>
+  (
+    <>
+      <style>
+        {`pre {
+          margin: 0;
+        }`}
+      </style>
+      <CopyComp onClick={() => copyCode(val)} />
+        <SyntaxHighlighter language="javascript" style={vs2015} showLineNumbers={true}>
+          {val}
+        </SyntaxHighlighter>
+    </>
+  );
 
 const getStory = () => {
   const { storyId } = __STORYBOOK_STORY_STORE__.getSelection();
@@ -119,7 +155,6 @@ const getStory = () => {
 const getRawPreviewCode = (customCode, comp) => {
   if (customCode) {
     return `${generateImports(customCode, componentLib, '@innovaccer/design-system')}
-
 ${customCode}
     `;
   }
@@ -128,7 +163,6 @@ ${customCode}
 
   const code = `
 ${importString}
-
 () => {
   return(
 ${jsx
@@ -153,6 +187,9 @@ const StoryComp = props => {
   const [jsxCode, setJsxCode] = React.useState<string>(getRawPreviewCode(customCode, comp));
   const [htmlCode, setHtmlCode] = React.useState<string>(`${html}`);
   const [isExpanded, setIsExpanded] = React.useState(isEmbed);
+  const [showMore, setShowMore] = React.useState<boolean>(false);
+  const [shouldShowMore, setShouldShowMore] = React.useState<boolean>(false);
+  const codePanel = React.useRef(null);
 
   const importScope = props.imports;
 
@@ -174,6 +211,12 @@ const StoryComp = props => {
         } catch (e) { }
       }
     }, [currentTab]);
+
+    React.useEffect(() => {
+      if (codePanel.current?.clientHeight > '250') {
+        setShouldShowMore(true);
+      }
+    }, [codePanel]);
 
     return null;
   });
@@ -204,6 +247,11 @@ const StoryComp = props => {
 
   const imports = React.useMemo(() => ({ ...DS, ...importScope }), []);
 
+  const tabChangeHandler = tab => {
+    setActiveTab(tab);
+    setShouldShowMore(false);
+  };
+
   return (
     <Card shadow={isEmbed ? 'none' : 'light'} className="overflow-hidden">
       <LiveProvider code={jsxCode} scope={imports}>
@@ -222,22 +270,36 @@ const StoryComp = props => {
         {isExpanded && (
           <>
             <TabsWrap activeTab={activeTab} />
-            <div className="DocPage-editorTabs">
-              <TabsWrapper activeTab={activeTab} onTabChange={tab => setActiveTab(tab)}>
+            <div
+              ref={codePanel}
+              style={{
+                position: 'relative',
+                marginBottom: shouldShowMore ? '24px' : '',
+                height: getHeight(shouldShowMore, showMore)
+              }}
+              className="DocPage-editorTabs"
+            >
+              <TabsWrapper activeTab={activeTab} onTabChange={tabChangeHandler}>
                 <Tab label={'React'}>
-                  <div style={{ position: 'relative' }}>
                     <CopyComp
                       onClick={() => {
                         const editor = document.querySelector('.npm__react-simple-code-editor__textarea');
                         if (editor) copyCode(editor.value);
                       }}
                     />
-                    <LiveEditor theme={vsDark} onChange={onChangeCode} />
-                  </div>
+                    <LiveEditor  theme={vsDark} onChange={onChangeCode} />
                 </Tab>
-                {renderHTMLTab()}
+                  {renderHTMLTab()}
               </TabsWrapper>
             </div>
+            {shouldShowMore &&
+              (
+                <ShowMoreLessButton
+                  onClick={() => setShowMore(!showMore)}
+                  text={showMore ? 'Less' : 'More'}
+                />
+              )
+              }
           </>
         )}
       </LiveProvider>

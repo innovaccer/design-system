@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditableChipInput component 
+  placeholer: "Add Value", disableSaveAction: false, value: ["Chip1","Chip2"], chipInputOptions: {"chipOptions":{"onClick":"[Function]","clearButton":true},"allowDuplicates":false,"defaultValue":[],"autoFocus":true}
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="EditableChipInput"
+    data-test="DesignSystem-EditableChipInput"
+  >
+    <div
+      class="Editable"
+      data-test="DesignSystem-Editable"
+    >
+      <div
+        data-test="DesignSystem-EditableWrapper"
+      >
+        <div
+          class="EditableChipInput-defaultWithChips"
+          data-test="DesignSystem-EditableChipInput--Default"
+        >
+          <div
+            class="Chip-wrapper Chip Chip--input my-2 mx-2"
+            data-test="DesignSystem-EditableChipInput--Chip"
+          >
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Chip1
+            </span>
+            <i
+              class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+              style="font-size: 16px; width: 16px;"
+            >
+              clear_round
+            </i>
+          </div>
+          <div
+            class="Chip-wrapper Chip Chip--input my-2 mx-2"
+            data-test="DesignSystem-EditableChipInput--Chip"
+          >
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Chip2
+            </span>
+            <i
+              class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+              style="font-size: 16px; width: 16px;"
+            >
+              clear_round
+            </i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`EditableChipInput component 
+  placeholer: "Add Value", disableSaveAction: true, value: ["Chip1","Chip2"], chipInputOptions: {"chipOptions":{"onClick":"[Function]","clearButton":true},"allowDuplicates":false,"defaultValue":[],"autoFocus":true}
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="EditableChipInput"
+    data-test="DesignSystem-EditableChipInput"
+  >
+    <div
+      class="Editable"
+      data-test="DesignSystem-Editable"
+    >
+      <div
+        data-test="DesignSystem-EditableWrapper"
+      >
+        <div
+          class="EditableChipInput-defaultWithChips"
+          data-test="DesignSystem-EditableChipInput--Default"
+        >
+          <div
+            class="Chip-wrapper Chip Chip--input my-2 mx-2"
+            data-test="DesignSystem-EditableChipInput--Chip"
+          >
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Chip1
+            </span>
+            <i
+              class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+              style="font-size: 16px; width: 16px;"
+            >
+              clear_round
+            </i>
+          </div>
+          <div
+            class="Chip-wrapper Chip Chip--input my-2 mx-2"
+            data-test="DesignSystem-EditableChipInput--Chip"
+          >
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Text"
+            >
+              Chip2
+            </span>
+            <i
+              class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+              style="font-size: 16px; width: 16px;"
+            >
+              clear_round
+            </i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

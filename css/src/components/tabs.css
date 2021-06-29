@@ -35,17 +35,43 @@
 }
 
 .Tab--active {
+    position: relative;
+}
+
+.Tab--active::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    width: 100%;
+    height: var(--spacing-s);
+    background-color: var(--primary);
     margin-bottom: -1px;
-    border-bottom: var(--spacing-s) solid var(--primary);
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
 }
 
 .Tab:hover {
+    position: relative;
+}
+
+.Tab:hover::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    width: 100%;
+    height: var(--spacing-s);
+    background-color: var(--primary-dark);
     margin-bottom: -1px;
-    border-bottom: var(--spacing-s) solid var(--primary-dark);
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
 }
 
 .Tab--disabled {
-    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.Tab--disabled:hover {
+    border: none;
 }
 
 .Tab-count {

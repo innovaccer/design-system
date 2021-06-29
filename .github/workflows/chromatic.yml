@@ -1,0 +1,28 @@
+# Workflow name
+name: 'Chromatic'
+
+# Event for the workflow
+on: pull_request
+
+# List of jobs
+jobs:
+  chromatic-deployment:
+    # Operating System
+    runs-on: ubuntu-latest
+    # Job steps
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install dependencies
+        run: npm install
+
+      - run: npm run build-css
+
+        # 👇 Adds Chromatic as a step in the workflow
+      - name: Visual review with Chromatic
+        # run: npm run chromatic
+        uses: chromaui/action@v1
+        # Chromatic GitHub Action options
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: cb3a73370975
+          exitZeroOnChanges: true # 👈 Option to prevent the workflow from failing

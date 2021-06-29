@@ -35,13 +35,13 @@ describe('Tab component', () => {
   it('renders children', () => {
     const { getByTestId } = render(
       <Tab label={Label}>
-        <div data-test="DS-Tab">
+        <div data-test="DesignSystem-Tab">
           Tab
         </div>
       </Tab>
     );
 
-    expect(getByTestId('DS-Tab')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Tab')).toBeInTheDocument();
   });
 
   it('renders without children', () => {

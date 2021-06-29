@@ -10,7 +10,7 @@ export const withStepper = () => {
     ['center', 'bottom'],
     'center'
   );
-  const seperator = boolean('seperator', true);
+  const separator = boolean('separator', true);
   const title = text(
     'title',
     'Page title'
@@ -57,10 +57,10 @@ export const withStepper = () => {
   const options = {
     navigationPosition,
     title,
-    seperator,
+    separator,
     stepper: <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={completed} />,
     actions: (
-      <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+      <div className="d-flex justify-content-end align-items-center">
         <Button appearance="primary" onClick={onClickHandler}>Next</Button>
       </div>
     ),
@@ -85,7 +85,7 @@ export const withStepper = () => {
   };
 
   return (
-    <div className="w-100 p-6" style={{ background: '#f4f4f4' }}>
+    <div className="w-100 p-6 bg-secondary-lightest">
       <PageHeader {...options} />
     </div>
   );
@@ -140,7 +140,7 @@ const customCode = `() => {
     seperator: true,
     stepper: <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={completed} />,
     actions: (
-      <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+      <div className="d-flex justify-content-end align-items-center">
         <Button appearance="primary" onClick={onClickHandler}>Next</Button>
       </div>
     ),
@@ -164,7 +164,7 @@ const customCode = `() => {
   };
 
   return (
-    <div className="w-100 p-6" style={{ background: '#f4f4f4' }}>
+    <div className="w-100 p-6 bg-secondary-lightest">
       <PageHeader {...options} />
     </div>
   );

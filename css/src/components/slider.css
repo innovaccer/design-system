@@ -65,9 +65,11 @@
 }
 
 .Slider-tooltip {
-  height: 100%;
-  width: 100%;
+  position: absolute;
+  color: var(--white);
   outline: none;
+  bottom: calc(100% + 4px);
+  transform: translateX(calc(-50% + 8px));
 }
 
 .Slider-handle {

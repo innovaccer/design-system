@@ -10,7 +10,7 @@ export const withTabs = () => {
     'active',
     1
   );
-  const seperator = boolean('seperator', true);
+  const separator = boolean('separator', true);
   const title = text(
     'title',
     'Page title'
@@ -23,7 +23,7 @@ export const withTabs = () => {
 
   const options = {
     title,
-    seperator,
+    separator,
     tabs: (
       <TabsWrapper
         active={active}
@@ -68,7 +68,7 @@ export const withTabs = () => {
       </TabsWrapper>
     ),
     actions: (
-      <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+      <div className="d-flex justify-content-end align-items-center">
         <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
         <Button appearance="primary">Primary</Button>
       </div>
@@ -76,7 +76,7 @@ export const withTabs = () => {
   };
 
   return (
-    <div className="w-100 p-6" style={{ background: '#f4f4f4' }}>
+    <div className="w-100 p-6 bg-secondary-lightest">
       <PageHeader {...options} />
     </div>
   );
@@ -137,7 +137,7 @@ const customCode = `() => {
       </TabsWrapper>
     ),
     actions: (
-      <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+      <div className="d-flex justify-content-end align-items-center">
         <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
         <Button appearance="primary">Primary</Button>
       </div>
@@ -145,7 +145,7 @@ const customCode = `() => {
   };
 
   return (
-    <div className="w-100 p-6" style={{ background: '#f4f4f4' }}>
+    <div className="w-100 p-6 bg-secondary-lightest">
       <PageHeader {...options} />
     </div>
   );

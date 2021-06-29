@@ -68,6 +68,7 @@ interface MultiSliderState {
   labelPrecision: number;
   tickSize: number;
   tickSizeRatio: number;
+  hoveredLabelValue?: number;
 }
 
 type InternalMultiSliderProps = SliderBaserProps & RangeSliderBaseProps;
@@ -254,32 +255,6 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
     }
   }
 
-  renderHandles = () => {
-    const { disabled, max, min, stepSize } = this.props;
-    const handleProps = this.getHandleValues(this.props);
-
-    if (handleProps.length === 0) {
-      return null;
-    }
-
-    return handleProps.map(({ value }, index) => (
-      <Handle
-        disabled={disabled}
-        key={`${index}-${handleProps.length}`}
-        max={max}
-        min={min}
-        onRelease={newValue => this.onReleaseHandler(newValue, index)}
-        onChange={newValue => this.onChangeHandler(newValue, index)}
-        label={value.toFixed(this.state.labelPrecision)}
-        ref={this.addHandleRef}
-        stepSize={stepSize}
-        tickSize={this.state.tickSize}
-        tickSizeRatio={this.state.tickSizeRatio}
-        value={value}
-      />
-    ));
-  }
-
   formatLabel = (value: number) => {
     const { labelRenderer } = this.props;
 
@@ -288,6 +263,38 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
     }
 
     return value.toFixed(this.state.labelPrecision);
+  }
+
+  renderHandles = () => {
+    const { disabled, max, min, stepSize } = this.props;
+    const handleProps = this.getHandleValues(this.props);
+
+    if (handleProps.length === 0) {
+      return null;
+    }
+
+    return handleProps.map(({ value }, index) => {
+      const isCurrentLabelHovered =
+        this.state.hoveredLabelValue === Number(value.toFixed(this.state.labelPrecision));
+
+      return (
+        <Handle
+          disabled={disabled}
+          key={`${index}-${handleProps.length}`}
+          max={max}
+          min={min}
+          onRelease={newValue => this.onReleaseHandler(newValue, index)}
+          onChange={newValue => this.onChangeHandler(newValue, index)}
+          label={this.formatLabel(value)}
+          ref={this.addHandleRef}
+          stepSize={stepSize}
+          tickSize={this.state.tickSize}
+          tickSizeRatio={this.state.tickSizeRatio}
+          value={value}
+          isCurrentLabelHovered={isCurrentLabelHovered}
+        />
+      );
+    });
   }
 
   renderLabels = () => {
@@ -306,9 +313,27 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
       const offsetPercentage = formatPercentage(offsetRatio);
       const style = { left: offsetPercentage };
       const active = !disabled && activeLabels.indexOf(i.toFixed(this.state.labelPrecision)) !== -1;
+      const onClickHandler = (event: React.MouseEvent<HTMLElement>) => {
+        if (!this.props.disabled) {
+          const foundHandle = this.nearestHandleForValue(this.handleElements, handle =>
+            handle.mouseEventClientOffset(event),
+          );
+
+          if (foundHandle) {
+            foundHandle.changeValue(i);
+          }
+        }
+      };
 
       labels.push(
-        <div className={'Slider-label'} key={i} style={style}>
+        <div
+          onClick={onClickHandler}
+          className={'Slider-label'}
+          key={i}
+          style={style}
+          onMouseOver={() => this.handleLabelMouseOver(i)}
+          onMouseLeave={this.handleLabelMouseLeave}
+        >
           <span className={'Slider-ticks'} />
           {labelRenderer !== false && (
             <Text size="small" appearance={active ? 'default' : 'disabled'}>
@@ -359,6 +384,18 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
     return handles;
   }
 
+  handleLabelMouseOver = (value: number) => {
+    this.setState({
+      hoveredLabelValue: value,
+    });
+  }
+
+  handleLabelMouseLeave = () => {
+    this.setState({
+      hoveredLabelValue: undefined,
+    });
+  }
+
   render() {
     const { label, className } = this.props;
     const baseProps = extractBaseProps(this.props);
@@ -377,11 +414,15 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
         {label && (
           <Label withInput={true}>{label}</Label>
         )}
-        <div className={WrapperClass} onMouseDown={this.maybeHandleTrackClick}>
-          <div className="Slider-track" ref={ref => (this.trackElement = ref)}>
+        <div className={WrapperClass}>
+          <div
+            className="Slider-track"
+            ref={ref => (this.trackElement = ref)}
+            onMouseDown={this.maybeHandleTrackClick}
+          >
             {this.renderTracks()}
           </div>
-          <div className="Slider-axis'">{this.renderLabels()}</div>
+          <div className="Slider-axis">{this.renderLabels()}</div>
           {this.renderHandles()}
         </div>
       </div>

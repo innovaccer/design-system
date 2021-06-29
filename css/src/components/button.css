@@ -1,12 +1,10 @@
-/* button */
-
 .Button {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    
+    position: relative;
     vertical-align: middle;
     cursor: pointer;
     user-select: none;
@@ -27,7 +25,7 @@
 }
 
 .Button:disabled {
-    cursor: default;
+    cursor: not-allowed;
 }
 
 .Button:focus {
@@ -91,13 +89,11 @@
     align-items: center;
 }
 
-.Button-icon--left,
-.Button-spinner--left {
+.Button-icon--left {
     margin-right: var(--spacing);
 }
 
-.Button-icon--right,
-.Button-spinner--right {
+.Button-icon--right {
     margin-left: var(--spacing);
 }
 
@@ -215,6 +211,8 @@
 
 .Button-spinner {
     display: flex;
+    position: absolute;
+    z-index: 1;
 }
 
 .Button--tiny .Spinner--small {
@@ -230,4 +228,8 @@
 .Button--selected {
     background: var(--primary-lightest);
     color: var(--primary);
+}
+
+.Button-text--hidden {
+    visibility: hidden;
 }

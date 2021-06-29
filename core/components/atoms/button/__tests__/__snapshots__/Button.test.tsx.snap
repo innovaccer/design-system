@@ -60,25 +60,27 @@ exports[`Button component
       disabled=""
       tabindex="0"
     >
-      <span
-        class="Button-spinner Button-spinner--left"
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
       >
-        <svg
-          class="Spinner Spinner--small"
-          viewBox="0 0 50 50"
-        >
-          <circle
-            class="Circle Circle--white"
-            cx="25"
-            cy="25"
-            fill="none"
-            r="20"
-            stroke-miterlimit="10"
-            stroke-width="4"
-          />
-        </svg>
+        <circle
+          class="Circle Circle--white"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      >
+        Button
       </span>
-      Button
     </button>
   </div>
 </body>
@@ -160,25 +162,27 @@ exports[`Button component
       disabled=""
       tabindex="0"
     >
-      <span
-        class="Button-spinner Button-spinner--left"
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
       >
-        <svg
-          class="Spinner Spinner--small"
-          viewBox="0 0 50 50"
-        >
-          <circle
-            class="Circle Circle--secondary"
-            cx="25"
-            cy="25"
-            fill="none"
-            r="20"
-            stroke-miterlimit="10"
-            stroke-width="4"
-          />
-        </svg>
+        <circle
+          class="Circle Circle--secondary"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      >
+        Button
       </span>
-      Button
     </button>
   </div>
 </body>
@@ -260,25 +264,27 @@ exports[`Button component
       disabled=""
       tabindex="0"
     >
-      <span
-        class="Button-spinner Button-spinner--left"
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
       >
-        <svg
-          class="Spinner Spinner--small"
-          viewBox="0 0 50 50"
-        >
-          <circle
-            class="Circle Circle--white"
-            cx="25"
-            cy="25"
-            fill="none"
-            r="20"
-            stroke-miterlimit="10"
-            stroke-width="4"
-          />
-        </svg>
+        <circle
+          class="Circle Circle--white"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      >
+        Button
       </span>
-      Button
     </button>
   </div>
 </body>
@@ -360,25 +366,27 @@ exports[`Button component
       disabled=""
       tabindex="0"
     >
-      <span
-        class="Button-spinner Button-spinner--left"
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
       >
-        <svg
-          class="Spinner Spinner--small"
-          viewBox="0 0 50 50"
-        >
-          <circle
-            class="Circle Circle--white"
-            cx="25"
-            cy="25"
-            fill="none"
-            r="20"
-            stroke-miterlimit="10"
-            stroke-width="4"
-          />
-        </svg>
+        <circle
+          class="Circle Circle--white"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      >
+        Button
       </span>
-      Button
     </button>
   </div>
 </body>
@@ -460,25 +468,27 @@ exports[`Button component
       disabled=""
       tabindex="0"
     >
-      <span
-        class="Button-spinner Button-spinner--left"
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
       >
-        <svg
-          class="Spinner Spinner--small"
-          viewBox="0 0 50 50"
-        >
-          <circle
-            class="Circle Circle--secondary"
-            cx="25"
-            cy="25"
-            fill="none"
-            r="20"
-            stroke-miterlimit="10"
-            stroke-width="4"
-          />
-        </svg>
+        <circle
+          class="Circle Circle--secondary"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      >
+        Button
       </span>
-      Button
     </button>
   </div>
 </body>
@@ -530,11 +540,11 @@ exports[`Button component
         class="Button-icon Button-icon--left"
       >
         <i
-          class="material-icons Icon Icon--default"
+          class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 20px; width: 20px;"
         >
-          events
+          events_round
         </i>
       </div>
       Button
@@ -557,11 +567,11 @@ exports[`Button component
         class="Button-icon Button-icon--right"
       >
         <i
-          class="material-icons Icon Icon--default"
+          class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 20px; width: 20px;"
         >
-          events
+          events_round
         </i>
       </div>
       Button
@@ -584,11 +594,11 @@ exports[`Button component
         class="Button-icon Button-icon--left"
       >
         <i
-          class="material-icons Icon Icon--default"
+          class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 20px; width: 20px;"
         >
-          events
+          events_round
         </i>
       </div>
       Button
@@ -627,11 +637,11 @@ exports[`Button component
         class="Button-icon Button-icon--left"
       >
         <i
-          class="material-icons Icon Icon--default"
+          class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 16px; width: 16px;"
         >
-          events
+          events_round
         </i>
       </div>
       Button
@@ -654,11 +664,11 @@ exports[`Button component
         class="Button-icon Button-icon--right"
       >
         <i
-          class="material-icons Icon Icon--default"
+          class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 16px; width: 16px;"
         >
-          events
+          events_round
         </i>
       </div>
       Button
@@ -681,11 +691,11 @@ exports[`Button component
         class="Button-icon Button-icon--left"
       >
         <i
-          class="material-icons Icon Icon--default"
+          class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 16px; width: 16px;"
         >
-          events
+          events_round
         </i>
       </div>
       Button
@@ -724,11 +734,11 @@ exports[`Button component
         class="Button-icon Button-icon--left"
       >
         <i
-          class="material-icons Icon Icon--default"
+          class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 12px; width: 12px;"
         >
-          events
+          events_round
         </i>
       </div>
       Button
@@ -751,11 +761,11 @@ exports[`Button component
         class="Button-icon Button-icon--right"
       >
         <i
-          class="material-icons Icon Icon--default"
+          class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 12px; width: 12px;"
         >
-          events
+          events_round
         </i>
       </div>
       Button
@@ -778,11 +788,11 @@ exports[`Button component
         class="Button-icon Button-icon--left"
       >
         <i
-          class="material-icons Icon Icon--default"
+          class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 12px; width: 12px;"
         >
-          events
+          events_round
         </i>
       </div>
       Button
@@ -853,24 +863,25 @@ exports[`Button component with no children
       disabled=""
       tabindex="0"
     >
-      <span
-        class="Button-spinner"
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
       >
-        <svg
-          class="Spinner Spinner--small"
-          viewBox="0 0 50 50"
-        >
-          <circle
-            class="Circle Circle--white"
-            cx="25"
-            cy="25"
-            fill="none"
-            r="20"
-            stroke-miterlimit="10"
-            stroke-width="4"
-          />
-        </svg>
-      </span>
+        <circle
+          class="Circle Circle--white"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      />
     </button>
   </div>
 </body>
@@ -887,24 +898,25 @@ exports[`Button component with no children
       disabled=""
       tabindex="0"
     >
-      <span
-        class="Button-spinner"
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
       >
-        <svg
-          class="Spinner Spinner--small"
-          viewBox="0 0 50 50"
-        >
-          <circle
-            class="Circle Circle--secondary"
-            cx="25"
-            cy="25"
-            fill="none"
-            r="20"
-            stroke-miterlimit="10"
-            stroke-width="4"
-          />
-        </svg>
-      </span>
+        <circle
+          class="Circle Circle--secondary"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      />
     </button>
   </div>
 </body>
@@ -921,24 +933,25 @@ exports[`Button component with no children
       disabled=""
       tabindex="0"
     >
-      <span
-        class="Button-spinner"
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
       >
-        <svg
-          class="Spinner Spinner--small"
-          viewBox="0 0 50 50"
-        >
-          <circle
-            class="Circle Circle--white"
-            cx="25"
-            cy="25"
-            fill="none"
-            r="20"
-            stroke-miterlimit="10"
-            stroke-width="4"
-          />
-        </svg>
-      </span>
+        <circle
+          class="Circle Circle--white"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      />
     </button>
   </div>
 </body>
@@ -955,24 +968,25 @@ exports[`Button component with no children
       disabled=""
       tabindex="0"
     >
-      <span
-        class="Button-spinner"
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
       >
-        <svg
-          class="Spinner Spinner--small"
-          viewBox="0 0 50 50"
-        >
-          <circle
-            class="Circle Circle--white"
-            cx="25"
-            cy="25"
-            fill="none"
-            r="20"
-            stroke-miterlimit="10"
-            stroke-width="4"
-          />
-        </svg>
-      </span>
+        <circle
+          class="Circle Circle--white"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      />
     </button>
   </div>
 </body>
@@ -989,24 +1003,25 @@ exports[`Button component with no children
       disabled=""
       tabindex="0"
     >
-      <span
-        class="Button-spinner"
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
       >
-        <svg
-          class="Spinner Spinner--small"
-          viewBox="0 0 50 50"
-        >
-          <circle
-            class="Circle Circle--secondary"
-            cx="25"
-            cy="25"
-            fill="none"
-            r="20"
-            stroke-miterlimit="10"
-            stroke-width="4"
-          />
-        </svg>
-      </span>
+        <circle
+          class="Circle Circle--secondary"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      />
     </button>
   </div>
 </body>

@@ -30,11 +30,11 @@ exports[`Tabs component
       data-test="DesignSystem-Tabs--Tab"
     >
       <i
-        class="material-icons Icon Icon--subtle mr-4"
+        class="material-icons material-icons-round Icon Icon--subtle mr-4"
         data-test="DesignSystem-Tabs--Icon"
         style="font-size: 16px; width: 16px;"
       >
-        call_received
+        call_received_round
       </i>
       <span
         class="Text Text--subtle Text--regular"
@@ -94,11 +94,11 @@ exports[`Tabs component
       data-test="DesignSystem-Tabs--Tab"
     >
       <i
-        class="material-icons Icon Icon--subtle mr-4"
+        class="material-icons material-icons-round Icon Icon--subtle mr-4"
         data-test="DesignSystem-Tabs--Icon"
         style="font-size: 16px; width: 16px;"
       >
-        call_received
+        call_received_round
       </i>
       <span
         class="Text Text--subtle Text--regular"

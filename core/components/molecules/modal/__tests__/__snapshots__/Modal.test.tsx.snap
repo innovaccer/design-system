@@ -20,35 +20,55 @@ exports[`Modal component
       >
         <div
           class="Modal-header"
-          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerWrapper"
+            class="Col"
+            data-test="DesignSystem-Column"
           >
             <div
-              class="Modal-headerHeading"
+              class="OverlayHeader"
+              data-test="DesignSystem-OverlayHeader"
             >
-              <h4
-                class="Heading Heading--m Heading--default"
-                data-test="DesignSystem-Heading"
+              <div
+                class="OverlayHeader-headerWrapper"
               >
-                Heading
-              </h4>
-              <i
-                class="material-icons Icon mx-2 cursor-pointer"
-                data-test="DesignSystem-ModalHeader--CloseIcon"
-                style="font-size: 20px; width: 20px;"
+                <h4
+                  class="Heading Heading--m Heading--default"
+                  data-test="DesignSystem-OverlayHeader--heading"
+                >
+                  Heading
+                </h4>
+              </div>
+              <span
+                class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                data-test="DesignSystem-OverlayHeader--Subheading"
               >
-                close
-              </i>
+                Subheading
+              </span>
             </div>
           </div>
-          <span
-            class="Text Text--subtle Text--regular mt-2 ml-7"
-            data-test="DesignSystem-ModalHeader--Subheading"
+          <div
+            class="Col flex-grow-0"
+            data-test="DesignSystem-Column"
           >
-            Subheading
-          </span>
+            <button
+              class="Button Button--regular Button--regularSquare Button--transparent"
+              data-test="DesignSystem-Modal--CloseButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+              >
+                <i
+                  class="material-icons material-icons-round Icon Icon--default"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  close_round
+                </i>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -86,36 +106,638 @@ exports[`Modal component
         >
           <div
             class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
           >
             <div
-              class="Modal-headerWrapper"
+              class="Col"
+              data-test="DesignSystem-Column"
             >
               <div
-                class="Modal-headerHeading"
+                class="OverlayHeader"
+                data-test="DesignSystem-OverlayHeader"
+              >
+                <div
+                  class="OverlayHeader-headerWrapper"
+                >
+                  <h4
+                    class="Heading Heading--m Heading--default"
+                    data-test="DesignSystem-OverlayHeader--heading"
+                  >
+                    Heading
+                  </h4>
+                </div>
+                <span
+                  class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                  data-test="DesignSystem-OverlayHeader--Subheading"
+                >
+                  Subheading
+                </span>
+              </div>
+            </div>
+            <div
+              class="Col flex-grow-0"
+              data-test="DesignSystem-Column"
+            >
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons material-icons-round Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close_round
+                  </i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div />
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
+`;
+
+exports[`Modal component 
+  dimension: "large", open: true, header: "[ReactNode]", footer: "[ReactNode]"
+ 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="Row Row Overlay-container Overlay-container--open"
+      data-layer="true"
+      data-test="DesignSystem-ModalContainer"
+    >
+      <div
+        class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
+        data-test="DesignSystem-Modal"
+      >
+        <div
+          class="Modal-header"
+        >
+          <div
+            class="Col"
+            data-test="DesignSystem-Column"
+          >
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Modal--HeaderText"
+            >
+              Heading
+            </span>
+          </div>
+          <div
+            class="Col flex-grow-0"
+            data-test="DesignSystem-Column"
+          >
+            <button
+              class="Button Button--regular Button--regularSquare Button--transparent"
+              data-test="DesignSystem-Modal--CloseButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+              >
+                <i
+                  class="material-icons material-icons-round Icon Icon--default"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  close_round
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="OverlayBody Modal-body"
+          data-test="DesignSystem-OverlayBody"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Col"
+              data-test="DesignSystem-Column"
+            >
+              <div
+                class="OverlayHeader"
+                data-test="DesignSystem-OverlayHeader"
+              >
+                <div
+                  class="OverlayHeader-headerWrapper"
+                >
+                  <h4
+                    class="Heading Heading--m Heading--default"
+                    data-test="DesignSystem-OverlayHeader--heading"
+                  >
+                    Heading
+                  </h4>
+                </div>
+                <span
+                  class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                  data-test="DesignSystem-OverlayHeader--Subheading"
+                >
+                  Subheading
+                </span>
+              </div>
+            </div>
+            <div
+              class="Col flex-grow-0"
+              data-test="DesignSystem-Column"
+            >
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons material-icons-round Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close_round
+                  </i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="OverlayFooter Modal-footer"
+          data-test="DesignSystem-Modal--footer"
+        >
+          <button
+            class="Button Button--regular Button--primary Button--iconAlign-left mr-4"
+            data-test="DesignSystem-Modal--FooterButton"
+            tabindex="0"
+          >
+            Primary
+          </button>
+          <button
+            class="Button Button--regular Button--basic Button--iconAlign-left"
+            data-test="DesignSystem-Button"
+            tabindex="0"
+          >
+            Basic
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div />
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
+`;
+
+exports[`Modal component 
+  dimension: "large", open: true, header: "[ReactNode]", footer: "[ReactNode]", backdropClose: "[Function]"
+ 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="OutsideClick"
+      data-test="DesignSystem-Modal--OutsideClick"
+    >
+      <div
+        class="Row Row Overlay-container Overlay-container--open"
+        data-layer="true"
+        data-test="DesignSystem-ModalContainer"
+      >
+        <div
+          class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
+          data-test="DesignSystem-Modal"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Col"
+              data-test="DesignSystem-Column"
+            >
+              <span
+                class="Text Text--default Text--regular"
+                data-test="DesignSystem-Modal--HeaderText"
+              >
+                Heading
+              </span>
+            </div>
+            <div
+              class="Col flex-grow-0"
+              data-test="DesignSystem-Column"
+            >
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons material-icons-round Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close_round
+                  </i>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="OverlayBody Modal-body"
+            data-test="DesignSystem-OverlayBody"
+          >
+            <div
+              class="Modal-header"
+            >
+              <div
+                class="Col"
+                data-test="DesignSystem-Column"
+              >
+                <div
+                  class="OverlayHeader"
+                  data-test="DesignSystem-OverlayHeader"
+                >
+                  <div
+                    class="OverlayHeader-headerWrapper"
+                  >
+                    <h4
+                      class="Heading Heading--m Heading--default"
+                      data-test="DesignSystem-OverlayHeader--heading"
+                    >
+                      Heading
+                    </h4>
+                  </div>
+                  <span
+                    class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                    data-test="DesignSystem-OverlayHeader--Subheading"
+                  >
+                    Subheading
+                  </span>
+                </div>
+              </div>
+              <div
+                class="Col flex-grow-0"
+                data-test="DesignSystem-Column"
+              >
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
+                >
+                  <div
+                    class="Button-icon"
+                  >
+                    <i
+                      class="material-icons material-icons-round Icon Icon--default"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close_round
+                    </i>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="OverlayFooter Modal-footer"
+            data-test="DesignSystem-Modal--footer"
+          >
+            <button
+              class="Button Button--regular Button--primary Button--iconAlign-left mr-4"
+              data-test="DesignSystem-Modal--FooterButton"
+              tabindex="0"
+            >
+              Primary
+            </button>
+            <button
+              class="Button Button--regular Button--basic Button--iconAlign-left"
+              data-test="DesignSystem-Button"
+              tabindex="0"
+            >
+              Basic
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div />
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
+`;
+
+exports[`Modal component 
+  dimension: "large", open: true, headerOptions: {"heading":"this is heading","subHeading":"this is subheading"}, footerOptions: {"actions":[]}
+ 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="Row Row Overlay-container Overlay-container--open"
+      data-layer="true"
+      data-test="DesignSystem-ModalContainer"
+    >
+      <div
+        class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
+        data-test="DesignSystem-Modal"
+      >
+        <div
+          class="Modal-header"
+        >
+          <div
+            class="Col"
+            data-test="DesignSystem-Column"
+          >
+            <div
+              class="OverlayHeader"
+              data-test="DesignSystem-Modal--header"
+            >
+              <div
+                class="OverlayHeader-headerWrapper"
               >
                 <h4
                   class="Heading Heading--m Heading--default"
-                  data-test="DesignSystem-Heading"
+                  data-test="DesignSystem-OverlayHeader--heading"
                 >
-                  Heading
+                  this is heading
                 </h4>
+              </div>
+              <span
+                class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                data-test="DesignSystem-OverlayHeader--Subheading"
+              >
+                this is subheading
+              </span>
+            </div>
+          </div>
+          <div
+            class="Col flex-grow-0"
+            data-test="DesignSystem-Column"
+          >
+            <button
+              class="Button Button--regular Button--regularSquare Button--transparent"
+              data-test="DesignSystem-Modal--CloseButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+              >
                 <i
-                  class="material-icons Icon mx-2 cursor-pointer"
-                  data-test="DesignSystem-ModalHeader--CloseIcon"
-                  style="font-size: 20px; width: 20px;"
+                  class="material-icons material-icons-round Icon Icon--default"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
                 >
-                  close
+                  close_round
                 </i>
               </div>
-            </div>
-            <span
-              class="Text Text--subtle Text--regular mt-2 ml-7"
-              data-test="DesignSystem-ModalHeader--Subheading"
-            >
-              Subheading
-            </span>
+            </button>
           </div>
+        </div>
+        <div
+          class="OverlayBody Modal-body"
+          data-test="DesignSystem-OverlayBody"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Col"
+              data-test="DesignSystem-Column"
+            >
+              <div
+                class="OverlayHeader"
+                data-test="DesignSystem-OverlayHeader"
+              >
+                <div
+                  class="OverlayHeader-headerWrapper"
+                >
+                  <h4
+                    class="Heading Heading--m Heading--default"
+                    data-test="DesignSystem-OverlayHeader--heading"
+                  >
+                    Heading
+                  </h4>
+                </div>
+                <span
+                  class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                  data-test="DesignSystem-OverlayHeader--Subheading"
+                >
+                  Subheading
+                </span>
+              </div>
+            </div>
+            <div
+              class="Col flex-grow-0"
+              data-test="DesignSystem-Column"
+            >
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons material-icons-round Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close_round
+                  </i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="OverlayFooter Modal-footer"
+          data-test="DesignSystem-Modal--footer"
+        />
+      </div>
+    </div>
+  </div>
+  <div />
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
+`;
+
+exports[`Modal component 
+  dimension: "large", open: true, headerOptions: {"heading":"this is heading","subHeading":"this is subheading"}, footerOptions: {"actions":[]}, backdropClose: "[Function]"
+ 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="OutsideClick"
+      data-test="DesignSystem-Modal--OutsideClick"
+    >
+      <div
+        class="Row Row Overlay-container Overlay-container--open"
+        data-layer="true"
+        data-test="DesignSystem-ModalContainer"
+      >
+        <div
+          class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
+          data-test="DesignSystem-Modal"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Col"
+              data-test="DesignSystem-Column"
+            >
+              <div
+                class="OverlayHeader"
+                data-test="DesignSystem-Modal--header"
+              >
+                <div
+                  class="OverlayHeader-headerWrapper"
+                >
+                  <h4
+                    class="Heading Heading--m Heading--default"
+                    data-test="DesignSystem-OverlayHeader--heading"
+                  >
+                    this is heading
+                  </h4>
+                </div>
+                <span
+                  class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                  data-test="DesignSystem-OverlayHeader--Subheading"
+                >
+                  this is subheading
+                </span>
+              </div>
+            </div>
+            <div
+              class="Col flex-grow-0"
+              data-test="DesignSystem-Column"
+            >
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons material-icons-round Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close_round
+                  </i>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="OverlayBody Modal-body"
+            data-test="DesignSystem-OverlayBody"
+          >
+            <div
+              class="Modal-header"
+            >
+              <div
+                class="Col"
+                data-test="DesignSystem-Column"
+              >
+                <div
+                  class="OverlayHeader"
+                  data-test="DesignSystem-OverlayHeader"
+                >
+                  <div
+                    class="OverlayHeader-headerWrapper"
+                  >
+                    <h4
+                      class="Heading Heading--m Heading--default"
+                      data-test="DesignSystem-OverlayHeader--heading"
+                    >
+                      Heading
+                    </h4>
+                  </div>
+                  <span
+                    class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                    data-test="DesignSystem-OverlayHeader--Subheading"
+                  >
+                    Subheading
+                  </span>
+                </div>
+              </div>
+              <div
+                class="Col flex-grow-0"
+                data-test="DesignSystem-Column"
+              >
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
+                >
+                  <div
+                    class="Button-icon"
+                  >
+                    <i
+                      class="material-icons material-icons-round Icon Icon--default"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close_round
+                    </i>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="OverlayFooter Modal-footer"
+            data-test="DesignSystem-Modal--footer"
+          />
         </div>
       </div>
     </div>
@@ -149,35 +771,55 @@ exports[`Modal component
       >
         <div
           class="Modal-header"
-          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerWrapper"
+            class="Col"
+            data-test="DesignSystem-Column"
           >
             <div
-              class="Modal-headerHeading"
+              class="OverlayHeader"
+              data-test="DesignSystem-OverlayHeader"
             >
-              <h4
-                class="Heading Heading--m Heading--default"
-                data-test="DesignSystem-Heading"
+              <div
+                class="OverlayHeader-headerWrapper"
               >
-                Heading
-              </h4>
-              <i
-                class="material-icons Icon mx-2 cursor-pointer"
-                data-test="DesignSystem-ModalHeader--CloseIcon"
-                style="font-size: 20px; width: 20px;"
+                <h4
+                  class="Heading Heading--m Heading--default"
+                  data-test="DesignSystem-OverlayHeader--heading"
+                >
+                  Heading
+                </h4>
+              </div>
+              <span
+                class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                data-test="DesignSystem-OverlayHeader--Subheading"
               >
-                close
-              </i>
+                Subheading
+              </span>
             </div>
           </div>
-          <span
-            class="Text Text--subtle Text--regular mt-2 ml-7"
-            data-test="DesignSystem-ModalHeader--Subheading"
+          <div
+            class="Col flex-grow-0"
+            data-test="DesignSystem-Column"
           >
-            Subheading
-          </span>
+            <button
+              class="Button Button--regular Button--regularSquare Button--transparent"
+              data-test="DesignSystem-Modal--CloseButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+              >
+                <i
+                  class="material-icons material-icons-round Icon Icon--default"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  close_round
+                </i>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -215,36 +857,638 @@ exports[`Modal component
         >
           <div
             class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
           >
             <div
-              class="Modal-headerWrapper"
+              class="Col"
+              data-test="DesignSystem-Column"
             >
               <div
-                class="Modal-headerHeading"
+                class="OverlayHeader"
+                data-test="DesignSystem-OverlayHeader"
+              >
+                <div
+                  class="OverlayHeader-headerWrapper"
+                >
+                  <h4
+                    class="Heading Heading--m Heading--default"
+                    data-test="DesignSystem-OverlayHeader--heading"
+                  >
+                    Heading
+                  </h4>
+                </div>
+                <span
+                  class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                  data-test="DesignSystem-OverlayHeader--Subheading"
+                >
+                  Subheading
+                </span>
+              </div>
+            </div>
+            <div
+              class="Col flex-grow-0"
+              data-test="DesignSystem-Column"
+            >
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons material-icons-round Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close_round
+                  </i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div />
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
+`;
+
+exports[`Modal component 
+  dimension: "medium", open: true, header: "[ReactNode]", footer: "[ReactNode]"
+ 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="Row Row Overlay-container Overlay-container--open"
+      data-layer="true"
+      data-test="DesignSystem-ModalContainer"
+    >
+      <div
+        class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
+        data-test="DesignSystem-Modal"
+      >
+        <div
+          class="Modal-header"
+        >
+          <div
+            class="Col"
+            data-test="DesignSystem-Column"
+          >
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Modal--HeaderText"
+            >
+              Heading
+            </span>
+          </div>
+          <div
+            class="Col flex-grow-0"
+            data-test="DesignSystem-Column"
+          >
+            <button
+              class="Button Button--regular Button--regularSquare Button--transparent"
+              data-test="DesignSystem-Modal--CloseButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+              >
+                <i
+                  class="material-icons material-icons-round Icon Icon--default"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  close_round
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="OverlayBody Modal-body"
+          data-test="DesignSystem-OverlayBody"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Col"
+              data-test="DesignSystem-Column"
+            >
+              <div
+                class="OverlayHeader"
+                data-test="DesignSystem-OverlayHeader"
+              >
+                <div
+                  class="OverlayHeader-headerWrapper"
+                >
+                  <h4
+                    class="Heading Heading--m Heading--default"
+                    data-test="DesignSystem-OverlayHeader--heading"
+                  >
+                    Heading
+                  </h4>
+                </div>
+                <span
+                  class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                  data-test="DesignSystem-OverlayHeader--Subheading"
+                >
+                  Subheading
+                </span>
+              </div>
+            </div>
+            <div
+              class="Col flex-grow-0"
+              data-test="DesignSystem-Column"
+            >
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons material-icons-round Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close_round
+                  </i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="OverlayFooter Modal-footer"
+          data-test="DesignSystem-Modal--footer"
+        >
+          <button
+            class="Button Button--regular Button--primary Button--iconAlign-left mr-4"
+            data-test="DesignSystem-Modal--FooterButton"
+            tabindex="0"
+          >
+            Primary
+          </button>
+          <button
+            class="Button Button--regular Button--basic Button--iconAlign-left"
+            data-test="DesignSystem-Button"
+            tabindex="0"
+          >
+            Basic
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div />
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
+`;
+
+exports[`Modal component 
+  dimension: "medium", open: true, header: "[ReactNode]", footer: "[ReactNode]", backdropClose: "[Function]"
+ 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="OutsideClick"
+      data-test="DesignSystem-Modal--OutsideClick"
+    >
+      <div
+        class="Row Row Overlay-container Overlay-container--open"
+        data-layer="true"
+        data-test="DesignSystem-ModalContainer"
+      >
+        <div
+          class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
+          data-test="DesignSystem-Modal"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Col"
+              data-test="DesignSystem-Column"
+            >
+              <span
+                class="Text Text--default Text--regular"
+                data-test="DesignSystem-Modal--HeaderText"
+              >
+                Heading
+              </span>
+            </div>
+            <div
+              class="Col flex-grow-0"
+              data-test="DesignSystem-Column"
+            >
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons material-icons-round Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close_round
+                  </i>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="OverlayBody Modal-body"
+            data-test="DesignSystem-OverlayBody"
+          >
+            <div
+              class="Modal-header"
+            >
+              <div
+                class="Col"
+                data-test="DesignSystem-Column"
+              >
+                <div
+                  class="OverlayHeader"
+                  data-test="DesignSystem-OverlayHeader"
+                >
+                  <div
+                    class="OverlayHeader-headerWrapper"
+                  >
+                    <h4
+                      class="Heading Heading--m Heading--default"
+                      data-test="DesignSystem-OverlayHeader--heading"
+                    >
+                      Heading
+                    </h4>
+                  </div>
+                  <span
+                    class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                    data-test="DesignSystem-OverlayHeader--Subheading"
+                  >
+                    Subheading
+                  </span>
+                </div>
+              </div>
+              <div
+                class="Col flex-grow-0"
+                data-test="DesignSystem-Column"
+              >
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
+                >
+                  <div
+                    class="Button-icon"
+                  >
+                    <i
+                      class="material-icons material-icons-round Icon Icon--default"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close_round
+                    </i>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="OverlayFooter Modal-footer"
+            data-test="DesignSystem-Modal--footer"
+          >
+            <button
+              class="Button Button--regular Button--primary Button--iconAlign-left mr-4"
+              data-test="DesignSystem-Modal--FooterButton"
+              tabindex="0"
+            >
+              Primary
+            </button>
+            <button
+              class="Button Button--regular Button--basic Button--iconAlign-left"
+              data-test="DesignSystem-Button"
+              tabindex="0"
+            >
+              Basic
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div />
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
+`;
+
+exports[`Modal component 
+  dimension: "medium", open: true, headerOptions: {"heading":"this is heading","subHeading":"this is subheading"}, footerOptions: {"actions":[]}
+ 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="Row Row Overlay-container Overlay-container--open"
+      data-layer="true"
+      data-test="DesignSystem-ModalContainer"
+    >
+      <div
+        class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
+        data-test="DesignSystem-Modal"
+      >
+        <div
+          class="Modal-header"
+        >
+          <div
+            class="Col"
+            data-test="DesignSystem-Column"
+          >
+            <div
+              class="OverlayHeader"
+              data-test="DesignSystem-Modal--header"
+            >
+              <div
+                class="OverlayHeader-headerWrapper"
               >
                 <h4
                   class="Heading Heading--m Heading--default"
-                  data-test="DesignSystem-Heading"
+                  data-test="DesignSystem-OverlayHeader--heading"
                 >
-                  Heading
+                  this is heading
                 </h4>
+              </div>
+              <span
+                class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                data-test="DesignSystem-OverlayHeader--Subheading"
+              >
+                this is subheading
+              </span>
+            </div>
+          </div>
+          <div
+            class="Col flex-grow-0"
+            data-test="DesignSystem-Column"
+          >
+            <button
+              class="Button Button--regular Button--regularSquare Button--transparent"
+              data-test="DesignSystem-Modal--CloseButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+              >
                 <i
-                  class="material-icons Icon mx-2 cursor-pointer"
-                  data-test="DesignSystem-ModalHeader--CloseIcon"
-                  style="font-size: 20px; width: 20px;"
+                  class="material-icons material-icons-round Icon Icon--default"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
                 >
-                  close
+                  close_round
                 </i>
               </div>
-            </div>
-            <span
-              class="Text Text--subtle Text--regular mt-2 ml-7"
-              data-test="DesignSystem-ModalHeader--Subheading"
-            >
-              Subheading
-            </span>
+            </button>
           </div>
+        </div>
+        <div
+          class="OverlayBody Modal-body"
+          data-test="DesignSystem-OverlayBody"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Col"
+              data-test="DesignSystem-Column"
+            >
+              <div
+                class="OverlayHeader"
+                data-test="DesignSystem-OverlayHeader"
+              >
+                <div
+                  class="OverlayHeader-headerWrapper"
+                >
+                  <h4
+                    class="Heading Heading--m Heading--default"
+                    data-test="DesignSystem-OverlayHeader--heading"
+                  >
+                    Heading
+                  </h4>
+                </div>
+                <span
+                  class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                  data-test="DesignSystem-OverlayHeader--Subheading"
+                >
+                  Subheading
+                </span>
+              </div>
+            </div>
+            <div
+              class="Col flex-grow-0"
+              data-test="DesignSystem-Column"
+            >
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons material-icons-round Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close_round
+                  </i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="OverlayFooter Modal-footer"
+          data-test="DesignSystem-Modal--footer"
+        />
+      </div>
+    </div>
+  </div>
+  <div />
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
+`;
+
+exports[`Modal component 
+  dimension: "medium", open: true, headerOptions: {"heading":"this is heading","subHeading":"this is subheading"}, footerOptions: {"actions":[]}, backdropClose: "[Function]"
+ 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="OutsideClick"
+      data-test="DesignSystem-Modal--OutsideClick"
+    >
+      <div
+        class="Row Row Overlay-container Overlay-container--open"
+        data-layer="true"
+        data-test="DesignSystem-ModalContainer"
+      >
+        <div
+          class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
+          data-test="DesignSystem-Modal"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Col"
+              data-test="DesignSystem-Column"
+            >
+              <div
+                class="OverlayHeader"
+                data-test="DesignSystem-Modal--header"
+              >
+                <div
+                  class="OverlayHeader-headerWrapper"
+                >
+                  <h4
+                    class="Heading Heading--m Heading--default"
+                    data-test="DesignSystem-OverlayHeader--heading"
+                  >
+                    this is heading
+                  </h4>
+                </div>
+                <span
+                  class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                  data-test="DesignSystem-OverlayHeader--Subheading"
+                >
+                  this is subheading
+                </span>
+              </div>
+            </div>
+            <div
+              class="Col flex-grow-0"
+              data-test="DesignSystem-Column"
+            >
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons material-icons-round Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close_round
+                  </i>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="OverlayBody Modal-body"
+            data-test="DesignSystem-OverlayBody"
+          >
+            <div
+              class="Modal-header"
+            >
+              <div
+                class="Col"
+                data-test="DesignSystem-Column"
+              >
+                <div
+                  class="OverlayHeader"
+                  data-test="DesignSystem-OverlayHeader"
+                >
+                  <div
+                    class="OverlayHeader-headerWrapper"
+                  >
+                    <h4
+                      class="Heading Heading--m Heading--default"
+                      data-test="DesignSystem-OverlayHeader--heading"
+                    >
+                      Heading
+                    </h4>
+                  </div>
+                  <span
+                    class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                    data-test="DesignSystem-OverlayHeader--Subheading"
+                  >
+                    Subheading
+                  </span>
+                </div>
+              </div>
+              <div
+                class="Col flex-grow-0"
+                data-test="DesignSystem-Column"
+              >
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
+                >
+                  <div
+                    class="Button-icon"
+                  >
+                    <i
+                      class="material-icons material-icons-round Icon Icon--default"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close_round
+                    </i>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="OverlayFooter Modal-footer"
+            data-test="DesignSystem-Modal--footer"
+          />
         </div>
       </div>
     </div>
@@ -279,35 +1523,55 @@ exports[`Modal component
       >
         <div
           class="Modal-header"
-          data-test="DesignSystem-ModalHeader"
         >
           <div
-            class="Modal-headerWrapper"
+            class="Col"
+            data-test="DesignSystem-Column"
           >
             <div
-              class="Modal-headerHeading"
+              class="OverlayHeader"
+              data-test="DesignSystem-OverlayHeader"
             >
-              <h4
-                class="Heading Heading--m Heading--default"
-                data-test="DesignSystem-Heading"
+              <div
+                class="OverlayHeader-headerWrapper"
               >
-                Heading
-              </h4>
-              <i
-                class="material-icons Icon mx-2 cursor-pointer"
-                data-test="DesignSystem-ModalHeader--CloseIcon"
-                style="font-size: 20px; width: 20px;"
+                <h4
+                  class="Heading Heading--m Heading--default"
+                  data-test="DesignSystem-OverlayHeader--heading"
+                >
+                  Heading
+                </h4>
+              </div>
+              <span
+                class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                data-test="DesignSystem-OverlayHeader--Subheading"
               >
-                close
-              </i>
+                Subheading
+              </span>
             </div>
           </div>
-          <span
-            class="Text Text--subtle Text--regular mt-2 ml-7"
-            data-test="DesignSystem-ModalHeader--Subheading"
+          <div
+            class="Col flex-grow-0"
+            data-test="DesignSystem-Column"
           >
-            Subheading
-          </span>
+            <button
+              class="Button Button--regular Button--regularSquare Button--transparent"
+              data-test="DesignSystem-Modal--CloseButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+              >
+                <i
+                  class="material-icons material-icons-round Icon Icon--default"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  close_round
+                </i>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -344,36 +1608,638 @@ exports[`Modal component
         >
           <div
             class="Modal-header"
-            data-test="DesignSystem-ModalHeader"
           >
             <div
-              class="Modal-headerWrapper"
+              class="Col"
+              data-test="DesignSystem-Column"
             >
               <div
-                class="Modal-headerHeading"
+                class="OverlayHeader"
+                data-test="DesignSystem-OverlayHeader"
+              >
+                <div
+                  class="OverlayHeader-headerWrapper"
+                >
+                  <h4
+                    class="Heading Heading--m Heading--default"
+                    data-test="DesignSystem-OverlayHeader--heading"
+                  >
+                    Heading
+                  </h4>
+                </div>
+                <span
+                  class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                  data-test="DesignSystem-OverlayHeader--Subheading"
+                >
+                  Subheading
+                </span>
+              </div>
+            </div>
+            <div
+              class="Col flex-grow-0"
+              data-test="DesignSystem-Column"
+            >
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons material-icons-round Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close_round
+                  </i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div />
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
+`;
+
+exports[`Modal component 
+  dimension: "small", open: true, header: "[ReactNode]", footer: "[ReactNode]"
+ 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="Row Row Overlay-container Overlay-container--open"
+      data-layer="true"
+      data-test="DesignSystem-ModalContainer"
+    >
+      <div
+        class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
+        data-test="DesignSystem-Modal"
+      >
+        <div
+          class="Modal-header"
+        >
+          <div
+            class="Col"
+            data-test="DesignSystem-Column"
+          >
+            <span
+              class="Text Text--default Text--regular"
+              data-test="DesignSystem-Modal--HeaderText"
+            >
+              Heading
+            </span>
+          </div>
+          <div
+            class="Col flex-grow-0"
+            data-test="DesignSystem-Column"
+          >
+            <button
+              class="Button Button--regular Button--regularSquare Button--transparent"
+              data-test="DesignSystem-Modal--CloseButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+              >
+                <i
+                  class="material-icons material-icons-round Icon Icon--default"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  close_round
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="OverlayBody Modal-body"
+          data-test="DesignSystem-OverlayBody"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Col"
+              data-test="DesignSystem-Column"
+            >
+              <div
+                class="OverlayHeader"
+                data-test="DesignSystem-OverlayHeader"
+              >
+                <div
+                  class="OverlayHeader-headerWrapper"
+                >
+                  <h4
+                    class="Heading Heading--m Heading--default"
+                    data-test="DesignSystem-OverlayHeader--heading"
+                  >
+                    Heading
+                  </h4>
+                </div>
+                <span
+                  class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                  data-test="DesignSystem-OverlayHeader--Subheading"
+                >
+                  Subheading
+                </span>
+              </div>
+            </div>
+            <div
+              class="Col flex-grow-0"
+              data-test="DesignSystem-Column"
+            >
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons material-icons-round Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close_round
+                  </i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="OverlayFooter Modal-footer"
+          data-test="DesignSystem-Modal--footer"
+        >
+          <button
+            class="Button Button--regular Button--primary Button--iconAlign-left mr-4"
+            data-test="DesignSystem-Modal--FooterButton"
+            tabindex="0"
+          >
+            Primary
+          </button>
+          <button
+            class="Button Button--regular Button--basic Button--iconAlign-left"
+            data-test="DesignSystem-Button"
+            tabindex="0"
+          >
+            Basic
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div />
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
+`;
+
+exports[`Modal component 
+  dimension: "small", open: true, header: "[ReactNode]", footer: "[ReactNode]", backdropClose: "[Function]"
+ 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="OutsideClick"
+      data-test="DesignSystem-Modal--OutsideClick"
+    >
+      <div
+        class="Row Row Overlay-container Overlay-container--open"
+        data-layer="true"
+        data-test="DesignSystem-ModalContainer"
+      >
+        <div
+          class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
+          data-test="DesignSystem-Modal"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Col"
+              data-test="DesignSystem-Column"
+            >
+              <span
+                class="Text Text--default Text--regular"
+                data-test="DesignSystem-Modal--HeaderText"
+              >
+                Heading
+              </span>
+            </div>
+            <div
+              class="Col flex-grow-0"
+              data-test="DesignSystem-Column"
+            >
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons material-icons-round Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close_round
+                  </i>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="OverlayBody Modal-body"
+            data-test="DesignSystem-OverlayBody"
+          >
+            <div
+              class="Modal-header"
+            >
+              <div
+                class="Col"
+                data-test="DesignSystem-Column"
+              >
+                <div
+                  class="OverlayHeader"
+                  data-test="DesignSystem-OverlayHeader"
+                >
+                  <div
+                    class="OverlayHeader-headerWrapper"
+                  >
+                    <h4
+                      class="Heading Heading--m Heading--default"
+                      data-test="DesignSystem-OverlayHeader--heading"
+                    >
+                      Heading
+                    </h4>
+                  </div>
+                  <span
+                    class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                    data-test="DesignSystem-OverlayHeader--Subheading"
+                  >
+                    Subheading
+                  </span>
+                </div>
+              </div>
+              <div
+                class="Col flex-grow-0"
+                data-test="DesignSystem-Column"
+              >
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
+                >
+                  <div
+                    class="Button-icon"
+                  >
+                    <i
+                      class="material-icons material-icons-round Icon Icon--default"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close_round
+                    </i>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="OverlayFooter Modal-footer"
+            data-test="DesignSystem-Modal--footer"
+          >
+            <button
+              class="Button Button--regular Button--primary Button--iconAlign-left mr-4"
+              data-test="DesignSystem-Modal--FooterButton"
+              tabindex="0"
+            >
+              Primary
+            </button>
+            <button
+              class="Button Button--regular Button--basic Button--iconAlign-left"
+              data-test="DesignSystem-Button"
+              tabindex="0"
+            >
+              Basic
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div />
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
+`;
+
+exports[`Modal component 
+  dimension: "small", open: true, headerOptions: {"heading":"this is heading","subHeading":"this is subheading"}, footerOptions: {"actions":[]}
+ 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="Row Row Overlay-container Overlay-container--open"
+      data-layer="true"
+      data-test="DesignSystem-ModalContainer"
+    >
+      <div
+        class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
+        data-test="DesignSystem-Modal"
+      >
+        <div
+          class="Modal-header"
+        >
+          <div
+            class="Col"
+            data-test="DesignSystem-Column"
+          >
+            <div
+              class="OverlayHeader"
+              data-test="DesignSystem-Modal--header"
+            >
+              <div
+                class="OverlayHeader-headerWrapper"
               >
                 <h4
                   class="Heading Heading--m Heading--default"
-                  data-test="DesignSystem-Heading"
+                  data-test="DesignSystem-OverlayHeader--heading"
                 >
-                  Heading
+                  this is heading
                 </h4>
+              </div>
+              <span
+                class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                data-test="DesignSystem-OverlayHeader--Subheading"
+              >
+                this is subheading
+              </span>
+            </div>
+          </div>
+          <div
+            class="Col flex-grow-0"
+            data-test="DesignSystem-Column"
+          >
+            <button
+              class="Button Button--regular Button--regularSquare Button--transparent"
+              data-test="DesignSystem-Modal--CloseButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+              >
                 <i
-                  class="material-icons Icon mx-2 cursor-pointer"
-                  data-test="DesignSystem-ModalHeader--CloseIcon"
-                  style="font-size: 20px; width: 20px;"
+                  class="material-icons material-icons-round Icon Icon--default"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
                 >
-                  close
+                  close_round
                 </i>
               </div>
-            </div>
-            <span
-              class="Text Text--subtle Text--regular mt-2 ml-7"
-              data-test="DesignSystem-ModalHeader--Subheading"
-            >
-              Subheading
-            </span>
+            </button>
           </div>
+        </div>
+        <div
+          class="OverlayBody Modal-body"
+          data-test="DesignSystem-OverlayBody"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Col"
+              data-test="DesignSystem-Column"
+            >
+              <div
+                class="OverlayHeader"
+                data-test="DesignSystem-OverlayHeader"
+              >
+                <div
+                  class="OverlayHeader-headerWrapper"
+                >
+                  <h4
+                    class="Heading Heading--m Heading--default"
+                    data-test="DesignSystem-OverlayHeader--heading"
+                  >
+                    Heading
+                  </h4>
+                </div>
+                <span
+                  class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                  data-test="DesignSystem-OverlayHeader--Subheading"
+                >
+                  Subheading
+                </span>
+              </div>
+            </div>
+            <div
+              class="Col flex-grow-0"
+              data-test="DesignSystem-Column"
+            >
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons material-icons-round Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close_round
+                  </i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="OverlayFooter Modal-footer"
+          data-test="DesignSystem-Modal--footer"
+        />
+      </div>
+    </div>
+  </div>
+  <div />
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
+`;
+
+exports[`Modal component 
+  dimension: "small", open: true, headerOptions: {"heading":"this is heading","subHeading":"this is subheading"}, footerOptions: {"actions":[]}, backdropClose: "[Function]"
+ 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="OutsideClick"
+      data-test="DesignSystem-Modal--OutsideClick"
+    >
+      <div
+        class="Row Row Overlay-container Overlay-container--open"
+        data-layer="true"
+        data-test="DesignSystem-ModalContainer"
+      >
+        <div
+          class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
+          data-test="DesignSystem-Modal"
+        >
+          <div
+            class="Modal-header"
+          >
+            <div
+              class="Col"
+              data-test="DesignSystem-Column"
+            >
+              <div
+                class="OverlayHeader"
+                data-test="DesignSystem-Modal--header"
+              >
+                <div
+                  class="OverlayHeader-headerWrapper"
+                >
+                  <h4
+                    class="Heading Heading--m Heading--default"
+                    data-test="DesignSystem-OverlayHeader--heading"
+                  >
+                    this is heading
+                  </h4>
+                </div>
+                <span
+                  class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                  data-test="DesignSystem-OverlayHeader--Subheading"
+                >
+                  this is subheading
+                </span>
+              </div>
+            </div>
+            <div
+              class="Col flex-grow-0"
+              data-test="DesignSystem-Column"
+            >
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Modal--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                >
+                  <i
+                    class="material-icons material-icons-round Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close_round
+                  </i>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="OverlayBody Modal-body"
+            data-test="DesignSystem-OverlayBody"
+          >
+            <div
+              class="Modal-header"
+            >
+              <div
+                class="Col"
+                data-test="DesignSystem-Column"
+              >
+                <div
+                  class="OverlayHeader"
+                  data-test="DesignSystem-OverlayHeader"
+                >
+                  <div
+                    class="OverlayHeader-headerWrapper"
+                  >
+                    <h4
+                      class="Heading Heading--m Heading--default"
+                      data-test="DesignSystem-OverlayHeader--heading"
+                    >
+                      Heading
+                    </h4>
+                  </div>
+                  <span
+                    class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                    data-test="DesignSystem-OverlayHeader--Subheading"
+                  >
+                    Subheading
+                  </span>
+                </div>
+              </div>
+              <div
+                class="Col flex-grow-0"
+                data-test="DesignSystem-Column"
+              >
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
+                >
+                  <div
+                    class="Button-icon"
+                  >
+                    <i
+                      class="material-icons material-icons-round Icon Icon--default"
+                      data-test="DesignSystem-Button--Icon"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close_round
+                    </i>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="OverlayFooter Modal-footer"
+            data-test="DesignSystem-Modal--footer"
+          />
         </div>
       </div>
     </div>

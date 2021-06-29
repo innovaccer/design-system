@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidesheet component 
+  open: true, backdropClose: false, dimension: "large", headerOptions: {"backIcon":false,"heading":"Heading","subHeading":"Subheading"}, seperator: false, stickFooter: false
+ 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="Row Overlay-container Overlay-container--open"
+      data-layer="true"
+      data-test="DesignSystem-SidesheetContainer"
+    >
+      <div
+        class="Col Col--10 Sidesheet Sidesheet--open Sidesheet-animation--open"
+        data-test="DesignSystem-Sidesheet"
+      >
+        <div
+          class="Sidesheet-header"
+        >
+          <div
+            class="Col"
+            data-test="DesignSystem-Sidesheet--Header"
+          >
+            <div
+              class="OverlayHeader"
+              data-test="DesignSystem-OverlayHeader"
+            >
+              <div
+                class="OverlayHeader-headerWrapper"
+              >
+                <h4
+                  class="Heading Heading--m Heading--default"
+                  data-test="DesignSystem-OverlayHeader--heading"
+                >
+                  Heading
+                </h4>
+              </div>
+              <span
+                class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                data-test="DesignSystem-OverlayHeader--Subheading"
+              >
+                Subheading
+              </span>
+            </div>
+          </div>
+          <div
+            class="Col flex-grow-0"
+            data-test="DesignSystem-Column"
+          >
+            <button
+              class="Button Button--regular Button--regularSquare Button--transparent"
+              data-test="DesignSystem-Sidesheet--CloseButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+              >
+                <i
+                  class="material-icons material-icons-round Icon Icon--default"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  close_round
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="OverlayBody Sidesheet-body"
+          data-test="DesignSystem-Sidesheet--OverlayBody"
+        />
+      </div>
+    </div>
+  </div>
+  <div />
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
+`;
+
+exports[`Sidesheet component 
+  open: true, backdropClose: false, dimension: "regular", headerOptions: {"backIcon":false,"heading":"Heading","subHeading":"Subheading"}, seperator: false, stickFooter: false
+ 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div />
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="Row Overlay-container Overlay-container--open"
+      data-layer="true"
+      data-test="DesignSystem-SidesheetContainer"
+    >
+      <div
+        class="Col Col--6 Sidesheet Sidesheet--open Sidesheet-animation--open"
+        data-test="DesignSystem-Sidesheet"
+      >
+        <div
+          class="Sidesheet-header"
+        >
+          <div
+            class="Col"
+            data-test="DesignSystem-Sidesheet--Header"
+          >
+            <div
+              class="OverlayHeader"
+              data-test="DesignSystem-OverlayHeader"
+            >
+              <div
+                class="OverlayHeader-headerWrapper"
+              >
+                <h4
+                  class="Heading Heading--m Heading--default"
+                  data-test="DesignSystem-OverlayHeader--heading"
+                >
+                  Heading
+                </h4>
+              </div>
+              <span
+                class="Text Text--subtle Text--regular OverlayHeader-subheading"
+                data-test="DesignSystem-OverlayHeader--Subheading"
+              >
+                Subheading
+              </span>
+            </div>
+          </div>
+          <div
+            class="Col flex-grow-0"
+            data-test="DesignSystem-Column"
+          >
+            <button
+              class="Button Button--regular Button--regularSquare Button--transparent"
+              data-test="DesignSystem-Sidesheet--CloseButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+              >
+                <i
+                  class="material-icons material-icons-round Icon Icon--default"
+                  data-test="DesignSystem-Button--Icon"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  close_round
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="OverlayBody Sidesheet-body"
+          data-test="DesignSystem-Sidesheet--OverlayBody"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
+    data-test="DesignSystem-Backdrop"
+  />
+</body>
+`;

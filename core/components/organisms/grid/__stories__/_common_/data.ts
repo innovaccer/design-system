@@ -6,6 +6,7 @@ export default [
         lastName: 'Heeran',
         email: 'bheeran0@altervista.org',
         gender: 'Female',
+        status: 'Failed'
         // _expanded: {
         //     schema: [
         //         { name: 'firstName', displayName: 'First Name', width: 200 },
@@ -18,6 +19,7 @@ export default [
         lastName: 'Cathro',
         email: 'fcathro1@ucla.edu',
         gender: 'Male',
+        status: 'Failed'
         // _expanded: {
         //     schema: [
         //         { name: 'year', displayName: 'Year', width: 100, comparator: (a: Data, b: Data): number => a.year.localeCompare(b.year) },
@@ -42,11 +44,13 @@ export default [
             ]
         },
         gender: 'Male',
+        status: 'Completed'
     },
     {
         firstName: 'Randy',
         lastName: 'Boatwright',
         email: 'rboatwright3@arstechnica.com',
+        status: 'Completed',
         gender: 'Male',
         // _expanded: {
         //     showHead: false,
@@ -68,42 +72,49 @@ export default [
         lastName: 'Cyples',
         email: 'rcyples4@biglobe.ne.jp',
         gender: 'Male',
+        status: 'Failed'
     },
     {
         firstName: 'Lem',
         lastName: 'Males',
         email: 'lmales5@admin.ch',
         gender: 'Male',
+        status: 'Failed'
     },
     {
         firstName: 'Sayres',
         lastName: 'Adelberg',
         email: 'sadelberg6@uol.com.br',
         gender: 'Male',
+        status: 'Completed',
     },
     {
         firstName: 'Murray',
         lastName: 'Bravington',
         email: 'mbravington7@drupal.org',
         gender: 'Male',
+        status: 'Failed'
     },
     {
         firstName: 'Jena',
         lastName: 'Swatheridge',
         email: 'jswatheridge8@npr.org',
         gender: 'Female',
+        status: 'Failed'
     },
     {
         firstName: 'Annabel',
         lastName: 'Nelsey',
         email: 'anelsey9@google.com',
         gender: 'Female',
+        status: 'Completed'
     },
     {
         firstName: 'Carin',
         lastName: 'Robiou',
         email: 'crobioua@skype.com',
         gender: 'Female',
+        status: 'Completed'
     },
     {
         firstName: 'Anson',

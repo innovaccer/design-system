@@ -1,28 +1,21 @@
 .ChipInput {
+  box-sizing: border-box;
   display: flex;
-  flex-direction: row;
   border-radius: var(--spacing-m);
   border: var(--border);
-  padding-top: var(--spacing-m);
-  padding-bottom: var(--spacing-m);
   padding-left: var(--spacing-s);
-  background: var(--white);
-  min-height: var(--spacing-xl);
-  cursor: text;
-}
-
-.ChipInput--withChips {
   padding-top: var(--spacing-s);
   padding-bottom: var(--spacing-s);
+  background: var(--white);
+  cursor: text;
+  flex: 100%;
 }
 
 .ChipInput-wrapper {
   display: flex;
+  flex: 100%;
   align-items: center;
   flex-wrap: wrap;
-  flex-direction: row;
-  width: inherit;
-  flex-grow: 1;
 }
 
 .ChipInput:focus-within {
@@ -39,16 +32,18 @@
 .ChipInput-input {
   border: none;
   outline: none;
-  width: inherit;
-  margin-left: var(--spacing-m);
   display: flex;
-  flex-grow: 1;
+  width: 100%;
+  min-width: 30%;
+  flex: 0px;
+  box-sizing: border-box;
+  height: var(--spacing-xl);
+  margin-top: var(--spacing-s);
+  margin-bottom: var(--spacing-s);
+  padding-left: var(--spacing-m);
 }
 
 .ChipInput-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: var(--spacing-2);
   margin-top: var(--spacing-m);
   padding-top: var(--spacing-s);  

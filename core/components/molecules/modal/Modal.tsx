@@ -2,12 +2,17 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { Row, Column, Backdrop, OutsideClick, ModalHeader, ModalBody, ModalFooter } from '@/index';
-import { ColumnProps, ModalHeaderProps } from '@/index.type';
+import { OverlayFooter, OverlayFooterProps } from '@/components/molecules/overlayFooter';
+import { OverlayHeader, OverlayHeaderProps } from '@/components/molecules/overlayHeader';
+import { OverlayBody } from '@/components/molecules/overlayBody';
+import { Row, Column, Backdrop, OutsideClick, Button } from '@/index';
+import { ColumnProps } from '@/index.type';
 import { getWrapperElement, getUpdatedZIndex } from '@/utils/overlayHelper';
 
 export type Dimension = 'small' | 'medium' | 'large';
-
+type FooterOptions = {
+  actions: OverlayFooterProps['actions']
+};
 export interface ModalProps extends BaseProps {
   /**
    * Callback for `Modal` close event on backdrop click
@@ -30,17 +35,60 @@ export interface ModalProps extends BaseProps {
    */
   onClose?: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
   /**
-   * `ModalHeader` options
+   * Header options (doesn't work if `header` prop is used)
    *
-   * ** Don't use composition of `ModalHeader`, `ModalBody` and `ModalFooter` along with `headerOptions`. **
+   * Use `header` prop if custom header is needed.
+   *
+   * <pre className="DocPage-codeBlock">
+   * Header:
+   * {
+   *    heading: string;
+   *    subHeading?: string;
+   *    backIcon?: boolean;
+   *    backIconCallback?: (e) => void;
+   *    backButton?: boolean;
+   *    backButtonCallback?: (e) => void;
+   * }
+   * </pre>
+   *
+   * **`backIcon` and `backIconCallback` will soon be deprecated**
+   *
+   * | Name | Description |
+   * | --- | --- |
+   * | heading | Heading of `Sidesheet` |
+   * | subHeading | Subheading of `Sidesheet` |
+   * | backButton | Determines if back button is visible |
+   * | backButtonCallback | Callback called when back button is clicked |
+   * | backIcon | Determines if back button is visible |
+   * | backIconCallback | Callback called when back button is clicked |
+   *
+   * ** Don't use composition of `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **
    */
-  headerOptions?: Omit<ModalHeaderProps, 'onClose'>;
+  headerOptions?: OverlayHeaderProps;
   /**
-   * Actions to be rendered in `ModalFooter`
+   * header component to be used as modal header.
+   * close button is not part of header so it will not be replaced.
+   */
+  header?: React.ReactNode;
+  /**
+   * Custom `footer` component
    *
-   * ** Don't use composition of `ModalHeader`, `ModalBody` and `ModalFooter` along with `footer`. **
+   * ** Don't use composition of `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **
    */
   footer?: React.ReactNode;
+  /**
+   * Footer options (doesn't work if `footer` prop is used).
+   *
+   * Use `footer` prop if custom footer is needed.
+   *
+   * <pre className="DocPage-codeBlock">
+   *  OverlayFooterOptions {
+   *    actions: ButtonProps[];
+   *  }
+   * ([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))
+   * </pre>
+   */
+  footerOptions?: FooterOptions;
   /**
    * Element to be rendered
    *
@@ -51,6 +99,10 @@ export interface ModalProps extends BaseProps {
    * ** Support for composition of `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **
    */
   children?: React.ReactNode;
+  /**
+   * Show dividers in the header and the footer.
+   */
+  seperator?: boolean;
 }
 
 interface ModalState {
@@ -60,11 +112,8 @@ interface ModalState {
 }
 
 /**
- * ** NOTE: Use `headerOptions`, `footer`, `onClose` and `backdropClose`(boolean). **
+ * ** NOTE: Use `headerOptions`, `header`, `footerOptions`, `footer`, `onClose` and `backdropClose`(boolean). **
  * ** Support for composition using `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **
- *
- * ** NOT RECOMMENDED: Only use composition of `ModalHeader`, `ModalBody` and `ModalFooter` **
- * ** when you are not using `headerOptions` or `footer` **
  */
 class Modal extends React.Component<ModalProps, ModalState> {
   modalRef = React.createRef<HTMLDivElement>();
@@ -126,7 +175,18 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
   render() {
     const { animate, open, zIndex } = this.state;
-    const { className, backdropClose, dimension, children, headerOptions, footer, onClose } = this.props;
+    const {
+      className,
+      backdropClose,
+      dimension,
+      children,
+      headerOptions,
+      header,
+      footerOptions,
+      seperator,
+      footer,
+      onClose
+    } = this.props;
 
     const classes = classNames({
       Modal: true,
@@ -134,6 +194,16 @@ class Modal extends React.Component<ModalProps, ModalState> {
       'Modal-animation--open': animate,
       'Modal-animation--close': !animate,
     }, className);
+
+    const headerClass = classNames({
+      ['Modal-header']: true,
+      ['Modal-header--withSeperator']: seperator,
+    });
+
+    const footerClass = classNames({
+      ['Modal-footer']: true,
+      ['Modal-footer--withSeperator']: seperator,
+    });
 
     const ContainerClass = classNames({
       ['Row']: true,
@@ -177,32 +247,55 @@ class Modal extends React.Component<ModalProps, ModalState> {
           {...sizeMap[dimension]}
           ref={this.modalRef}
         >
-          {headerOptions && (
-            <ModalHeader
-              onClose={(event: React.MouseEvent<HTMLElement, MouseEvent>, reason) => {
-                if (onClose) onClose(event, reason);
-              }}
-              {...headerOptions}
-            />
+          {(headerOptions || header) && (
+            <div className={headerClass}>
+              <Column>
+                {!header && (
+                  <OverlayHeader
+                    data-test="DesignSystem-Modal--header"
+                    {...headerOptions}
+                  />
+                )}
+
+                {!!header && header}
+              </Column>
+              <Column className="flex-grow-0">
+                <Button
+                  icon="close"
+                  appearance="transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+                    if (onClose) onClose(event, 'IconClick');
+                  }}
+                />
+              </Column>
+            </div>
           )}
           {children && (
             <>
-              {headerOptions || footer ? (
-                <ModalBody
-                  withFooter={!!footer}
+              {(headerOptions || footerOptions || footer || header) ? (
+                <OverlayBody
+                  className="Modal-body"
                 >
-                  {children}
-                </ModalBody>
+                  {this.props.children}
+                </OverlayBody>
               ) : (
-                children
-              )}
+                  children
+                )}
             </>
           )}
-          {footer && (
-            <ModalFooter open={open}>
-              {footer}
-            </ModalFooter>
-          )}
+          {
+            (!!footer || !!footerOptions) &&
+            (
+              <OverlayFooter
+                data-test="DesignSystem-Modal--footer"
+                {...footerOptions}
+                open={open}
+                className={footerClass}
+              >
+                {footer}
+              </OverlayFooter>
+            )}
         </Column>
       </Row>
     );

@@ -38,7 +38,7 @@
 }
 
 .PageHeader-navigationWrapper {
-  display: flex;
+  display: inline-flex;
   margin-top: var(--spacing-l);
 }
 
