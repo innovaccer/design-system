@@ -33,7 +33,9 @@ export const GridBody = (props: GridBodyProps) => {
     }
 
     return () => {
-      _this.currPageInfo = { page, scrollTop: gridBodyEl!.scrollTop };
+      if (gridBodyEl) {
+        _this.currPageInfo = { page, scrollTop: gridBodyEl.scrollTop };
+      }
     };
   }, []);
 
