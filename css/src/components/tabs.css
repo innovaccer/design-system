@@ -15,6 +15,7 @@
 }
 
 .Tab {
+    position: relative;
     display: flex;
     flex-direction: row;
     cursor: pointer;
@@ -34,44 +35,36 @@
     margin-right: 0;
 }
 
-.Tab--active {
-    position: relative;
-}
-
-.Tab--active::after {
+.Tab::after {
     position: absolute;
     bottom: 0;
     content: '';
     width: 100%;
     height: var(--spacing-s);
-    background-color: var(--primary);
+    background-color: transparent; 
     margin-bottom: -1px;
     border-top-left-radius: 1px;
     border-top-right-radius: 1px;
-}
-
-.Tab:hover {
-    position: relative;
 }
 
 .Tab:hover::after {
-    position: absolute;
-    bottom: 0;
-    content: '';
-    width: 100%;
-    height: var(--spacing-s);
-    background-color: var(--primary-dark);
-    margin-bottom: -1px;
-    border-top-left-radius: 1px;
-    border-top-right-radius: 1px;
+    background-color: var(--primary-dark); 
+}
+
+.Tab:active::after {
+    background-color: var(--primary-darker);
+}
+
+.Tab--active::after {
+    background-color: var(--primary);
 }
 
 .Tab--disabled {
     cursor: not-allowed;
 }
 
-.Tab--disabled:hover {
-    border: none;
+.Tab--disabled:hover::after {
+    background-color: transparent; 
 }
 
 .Tab-count {
