@@ -13,7 +13,14 @@ export interface GridBodyProps {
   updatePrevPageInfo: updatePrevPageInfoFunction;
 }
 
-export const GridBody = (props: GridBodyProps) => {
+const minRowHeight: Record<GridProps['size'], number> = {
+  comfortable: 40,
+  standard: 40,
+  compressed: 32,
+  tight: 24
+};
+
+export const GridBody = React.memo((props: GridBodyProps) => {
   const context = React.useContext(GridContext);
 
   const {
@@ -59,13 +66,6 @@ export const GridBody = (props: GridBodyProps) => {
     };
   }, []);
 
-  const minRowHeight: Record<GridProps['size'], number> = {
-    comfortable: 40,
-    standard: 40,
-    compressed: 32,
-    tight: 24
-  };
-
   const totalPages = Math.ceil(totalRecords / pageSize);
   const isLastPage = withPagination && page === totalPages - 1;
   const dataLength = isLastPage
@@ -76,7 +76,7 @@ export const GridBody = (props: GridBodyProps) => {
         ? Math.min(totalRecords, pageSize)
         : totalRecords;
 
-  const renderItem = (rowIndex: number) => {
+  const renderItem = React.useCallback((rowIndex: number) => {
     return (
       <GridRow
         rowIndex={rowIndex}
@@ -85,7 +85,7 @@ export const GridBody = (props: GridBodyProps) => {
         onSelect={onSelect}
       />
     );
-  };
+  }, [data, schema]);
 
   return (
     <VirtualScroll
@@ -97,6 +97,6 @@ export const GridBody = (props: GridBodyProps) => {
       renderItem={renderItem}
     />
   );
-};
+});
 
 export default GridBody;

@@ -6,6 +6,7 @@ import { GridNestedRow } from './GridNestedRow';
 import { Cell } from './Cell';
 import GridContext from './GridContext';
 import { GridBodyProps } from './GridBody';
+import { getPinnedSchema } from './columnUtility';
 
 export interface GridRowProps {
   schema: Schema;
@@ -15,7 +16,7 @@ export interface GridRowProps {
   className?: string;
 }
 
-export const GridRow = (props: GridRowProps) => {
+export const GridRow = React.memo((props: GridRowProps) => {
   const context = React.useContext(GridContext);
 
   const {
@@ -37,26 +38,19 @@ export const GridRow = (props: GridRowProps) => {
   const rowRef = React.useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = React.useState<boolean>(false);
 
-  const rowClasses = classNames(
-    'Grid-row',
-    'Grid-row--body',
-    {
-      'Grid-row--selected': data._selected
-    }
-  );
-
   const onClickHandler = React.useCallback(() => {
     if (type === 'resource' && !loading) {
       if (onRowClick) {
         onRowClick(data, rI);
       }
     }
-  }, [data, rI]);
+  }, [loading, data, rI]);
 
-  const pinnedSchema = schema.filter(s => !s.hidden && s.pinned);
-  const leftPinnedSchema = pinnedSchema.filter(s => !s.hidden && s.pinned === 'left');
-  const rightPinnedSchema = pinnedSchema.filter(s => !s.hidden && s.pinned === 'right');
-  const unpinnedSchema = schema.filter(s => !s.hidden && !s.pinned);
+  const {
+    leftPinned,
+    rightPinned,
+    unpinned
+  } = React.useMemo(() => getPinnedSchema(schema), [schema]);
 
   const renderCheckbox = (show: boolean) => {
     if (!show || !(withCheckbox)) return null;
@@ -91,8 +85,8 @@ export const GridRow = (props: GridRowProps) => {
         <div className={classes}>
           {renderCheckbox(shouldRenderCheckbox)}
           {currSchema.map((s, index) => {
-            let cI = pinned === 'left' ? index : leftPinnedSchema.length + index;
-            if (pinned === 'right') cI += unpinnedSchema.length;
+            let cI = pinned === 'left' ? index : leftPinned.length + index;
+            if (pinned === 'right') cI += unpinned.length;
 
             return (
               <Cell
@@ -117,12 +111,18 @@ export const GridRow = (props: GridRowProps) => {
     'Grid-rowWrapper': true
   });
 
+  const rowClasses = classNames({
+    'Grid-row': true,
+    'Grid-row--body': true,
+    'Grid-row--selected': data._selected
+  });
+
   return (
     <div className={wrapperClasses}>
       <div className={rowClasses} onClick={onClickHandler} ref={rowRef}>
-        {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
-        {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
-        {renderSchema(rightPinnedSchema, false, 'right')}
+        {renderSchema(leftPinned, !!leftPinned.length, 'left')}
+        {renderSchema(unpinned, !leftPinned.length && !!unpinned.length)}
+        {renderSchema(rightPinned, false, 'right')}
       </div>
       {nestedRows && expanded && (
         <div className="Grid-nestedRow">
@@ -134,10 +134,6 @@ export const GridRow = (props: GridRowProps) => {
       )}
     </div>
   );
-};
-
-GridRow.defaultProps = {
-  data: {}
-};
+});
 
 export default GridRow;

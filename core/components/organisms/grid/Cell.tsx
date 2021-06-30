@@ -1,10 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { RowData, ColumnSchema } from './Grid';
+import { RowData, ColumnSchema, SortType } from './Grid';
 import { Dropdown, Placeholder, PlaceholderParagraph, Text, Icon, Button, Tooltip, GridCell } from '@/index';
-import { DropdownProps, GridCellProps } from '@/index.type';
+import { DropdownProps, GridCellProps, GridProps } from '@/index.type';
 import { resizeCol, hasSchema } from './utility';
-import { getCellSize, getWidth } from './columnUtility';
+import { getDefaultCellSize, getWidth } from './columnUtility';
 import { GridNestedRow } from './GridNestedRow';
 import { GridHeadProps } from './GridHead';
 import GridContext from './GridContext';
@@ -33,7 +33,45 @@ export type CellProps = (HeaderCellProps | BodyCellProps) & {
   firstCell: boolean;
 };
 
-const HeaderCell = (props: HeaderCellProps) => {
+const isSorted = (sortingList: GridProps['sortingList'], name: ColumnSchema['name']) => {
+  const listIndex = sortingList.findIndex(l => l.name === name);
+  return listIndex !== -1 ? sortingList[listIndex].type : undefined;
+};
+
+const getMenuOptions = (pinned: ColumnSchema['pinned'], sorting: boolean, sorted?: SortType): DropdownProps['options'] => {
+  const sortOptions: DropdownProps['options'] = React.useMemo(() => ([
+    { label: 'Sort Ascending', value: 'sortAsc', icon: 'arrow_downward' },
+    { label: 'Sort Descending', value: 'sortDesc', icon: 'arrow_upward' },
+  ]), []);
+  const pinOptions: DropdownProps['options'] = React.useMemo(() => ([
+    { label: 'Pin Left', value: 'pinLeft', icon: 'skip_previous' },
+    { label: 'Pin Right', value: 'pinRight', icon: 'skip_next' },
+  ]), []);
+  const hideOptions: DropdownProps['options'] = React.useMemo(() => ([
+    { label: 'Hide Column', value: 'hide', icon: 'cancel' },
+  ]), []);
+  const unpinOption = React.useMemo(() => {
+    return { label: 'Unpin', value: 'unpin', icon: 'replay' };
+  }, []);
+  const unsortOption = React.useMemo(() => {
+    return { label: 'Unsort', value: 'unsort', icon: 'unfold_more' };
+  }, []);
+
+  if (pinned === 'left') pinOptions[0] = unpinOption;
+  if (pinned === 'right') pinOptions[1] = unpinOption;
+  if (sorted === 'asc') sortOptions[0] = unsortOption;
+  if (sorted === 'desc') sortOptions[1] = unsortOption;
+
+  let options: DropdownProps['options'] = [
+    ...pinOptions,
+    ...hideOptions
+  ];
+  if (sorting) options = [...sortOptions, ...options];
+
+  return options;
+}
+
+const HeaderCell = React.memo((props: HeaderCellProps) => {
   const context = React.useContext(GridContext);
   const {
     schema,
@@ -60,51 +98,25 @@ const HeaderCell = (props: HeaderCellProps) => {
     pinned
   } = schema;
 
-  const isValidSchema = hasSchema(schemaProp);
+  const el = React.useRef<HTMLDivElement | null>(null);
 
-  const listIndex = sortingList.findIndex(l => l.name === name);
-  const sorted = listIndex !== -1 ? sortingList[listIndex].type : null;
+  const isValidSchema = React.useMemo(() => hasSchema(schemaProp), [schemaProp]);
+  const sorted = React.useMemo(() => {
+    return isSorted(sortingList, name)
+  }, [sortingList, name]);
 
-  const el = React.createRef<HTMLDivElement>();
+  const options = React.useMemo(() => {
+    return getMenuOptions(pinned, sorting, sorted);
+  }, [pinned, sorting, sorted]);
 
-  const sortOptions: DropdownProps['options'] = [
-    { label: 'Sort Ascending', value: 'sortAsc', icon: 'arrow_downward' },
-    { label: 'Sort Descending', value: 'sortDesc', icon: 'arrow_upward' },
-  ];
-  const pinOptions: DropdownProps['options'] = [
-    { label: 'Pin Left', value: 'pinLeft', icon: 'skip_previous' },
-    { label: 'Pin Right', value: 'pinRight', icon: 'skip_next' },
-  ];
-  const unpinOption = { label: 'Unpin', value: 'unpin', icon: 'replay' };
-  if (pinned === 'left') pinOptions[0] = unpinOption;
-  if (pinned === 'right') pinOptions[1] = unpinOption;
-
-  const hideOptions: DropdownProps['options'] = [
-    { label: 'Hide Column', value: 'hide', icon: 'cancel' },
-  ];
-  const unsortOption = { label: 'Unsort', value: 'unsort', icon: 'unfold_more' };
-  if (sorted === 'asc') sortOptions[0] = unsortOption;
-  if (sorted === 'desc') sortOptions[1] = unsortOption;
-
-  let options: DropdownProps['options'] = [
-    ...pinOptions,
-    ...hideOptions
-  ];
-  if (sorting) options = [...sortOptions, ...options];
-
-  const classes = classNames({
-    'Grid-headCell': true,
-    'Grid-headCell--draggable': draggable
-  });
-
-  const filterOptions = filters
+  const filterOptions = React.useMemo(() => filters
     ? filters.map(f => ({
       ...f,
       selected: filterList[name] && filterList[name].findIndex(fl => fl === f.value) !== -1
     }))
-    : [];
+    : [], [filters, filterList]);
 
-  const renderLabel = () => (
+  const renderLabel = React.useCallback(() => (
     <>
       <Text weight="strong" className="ellipsis--noWrap">{schema.displayName}</Text>
       {sorting && (
@@ -120,7 +132,24 @@ const HeaderCell = (props: HeaderCellProps) => {
         </div>
       )}
     </>
-  );
+  ), [sorting, sorted]);
+
+  const classes = classNames({
+    'Grid-headCell': true,
+    'Grid-headCell--draggable': draggable
+  });
+
+  const wrapperClickHandler = React.useCallback(() => {
+    if (!loading && sorting) {
+      if (sorted === 'asc') onMenuChange(name, 'sortDesc');
+      if (sorted === 'desc') onMenuChange(name, 'unsort');
+      if (!sorted) onMenuChange(name, 'sortAsc');
+    }
+  }, [loading, sorting, name]);
+
+  const resizeMouseDownHandler = React.useCallback(() => {
+    resizeCol({ updateColumnSchema }, name, el.current);
+  }, [name, el]);
 
   return (
     <div
@@ -130,13 +159,7 @@ const HeaderCell = (props: HeaderCellProps) => {
     >
       <div
         className="Grid-cellContent"
-        onClick={() => {
-          if (!loading && sorting) {
-            if (sorted === 'asc') onMenuChange(name, 'sortDesc');
-            if (sorted === 'desc') onMenuChange(name, 'unsort');
-            if (!sorted) onMenuChange(name, 'sortAsc');
-          }
-        }}
+        onClick={wrapperClickHandler}
       >
         {loading && !isValidSchema ? (
           <Placeholder withImage={false}>
@@ -219,16 +242,14 @@ const HeaderCell = (props: HeaderCellProps) => {
       {schema.resizable && (
         <span
           className="Grid-cellResize"
-          onMouseDown={() => {
-            resizeCol({ updateColumnSchema }, name, el.current);
-          }}
+          onMouseDown={resizeMouseDownHandler}
         />
       )}
     </div>
   );
-};
+});
 
-const BodyCell = (props: BodyCellProps) => {
+const BodyCell = React.memo((props: BodyCellProps) => {
   const context = React.useContext(GridContext);
   const {
     data,
@@ -261,7 +282,13 @@ const BodyCell = (props: BodyCellProps) => {
     rowIndex,
   };
 
-  const isNestedRowDisabled = !GridNestedRow(nestedProps);
+  const isNestedRowDisabled = React.useMemo(() => !GridNestedRow(nestedProps), [nestedProps]);
+  const nestedTriggerClickHandler = React.useCallback(e => {
+    if (!isNestedRowDisabled) {
+      e.stopPropagation();
+      setExpanded(!expanded);
+    }
+  }, [isNestedRowDisabled, expanded]);
 
   return (
     <div className="Grid-cellContent">
@@ -273,12 +300,7 @@ const BodyCell = (props: BodyCellProps) => {
               name={expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
               size={20}
               appearance={'default'}
-              onClick={e => {
-                if (!isNestedRowDisabled) {
-                  e.stopPropagation();
-                  setExpanded(!expanded);
-                }
-              }}
+              onClick={nestedTriggerClickHandler}
             />
           ) : (
             <span className="Grid-nestedRowPlaceholder" />
@@ -295,9 +317,9 @@ const BodyCell = (props: BodyCellProps) => {
         )}
     </div>
   );
-};
+});
 
-export const Cell = (props: CellProps) => {
+export const Cell = React.memo((props: CellProps) => {
   const context = React.useContext(GridContext);
   const {
     isHead,
@@ -337,11 +359,13 @@ export const Cell = (props: CellProps) => {
     cellType = 'DEFAULT'
   } = schema;
 
+  if (hidden) return null;
+
   const {
-    width,
-    minWidth = 96,
-    maxWidth = 800
-  } = getCellSize(cellType);
+    width: defaultWidth,
+    minWidth: defaultMinWidth = 96,
+    maxWidth: defaultMaxWidth = 800
+  } = React.useMemo(() => getDefaultCellSize(cellType), [cellType]);
 
   const cellClass = classNames({
     'Grid-cell': true,
@@ -351,38 +375,50 @@ export const Cell = (props: CellProps) => {
     'Grid-cell--nestedRow': !isHead && colIndex === 0 && nestedRows
   });
 
-  if (hidden) return null;
+  const onDragStartHandler = React.useCallback(e => {
+    if (draggable) {
+      e.dataTransfer.setData('name', name);
+      if (pinned) e.dataTransfer.setData('type', pinned);
+    }
+  }, [draggable, pinned]);
+
+  const onDropHandler = React.useCallback(e => {
+    if (draggable) {
+      const from = {
+        name: e.dataTransfer.getData('name'),
+        type: e.dataTransfer.getData('type')
+      };
+      const to = {
+        name,
+        type: pinned || ''
+      };
+
+      if (from.type === to.type) reorderColumn(from.name, to.name);
+    }
+  }, [draggable]);
+
+  const width = React.useMemo(() => {
+    return getWidth({ ref, withCheckbox }, schema.width || defaultWidth);
+  }, [ref, schema.width, defaultWidth]);
+  const minWidth = React.useMemo(() => {
+    return getWidth({ ref, withCheckbox }, schema.minWidth || defaultMinWidth);
+  }, [ref, schema.width, defaultWidth]);
+  const maxWidth = React.useMemo(() => {
+    return getWidth({ ref, withCheckbox }, schema.maxWidth || defaultMaxWidth);
+  }, [ref, schema.width, defaultWidth]);
 
   return (
     <div
       key={`${rowIndex}-${colIndex}`}
       className={cellClass}
       draggable={isHead && draggable}
-      onDragStart={e => {
-        if (draggable) {
-          e.dataTransfer.setData('name', name);
-          if (pinned) e.dataTransfer.setData('type', pinned);
-        }
-      }}
+      onDragStart={onDragStartHandler}
       onDragOver={e => e.preventDefault()}
-      onDrop={e => {
-        if (draggable) {
-          const from = {
-            name: e.dataTransfer.getData('name'),
-            type: e.dataTransfer.getData('type')
-          };
-          const to = {
-            name,
-            type: pinned || ''
-          };
-
-          if (from.type === to.type) reorderColumn(from.name, to.name);
-        }
-      }}
+      onDrop={onDropHandler}
       style={{
-        width: getWidth({ ref, withCheckbox }, schema.width || width),
-        minWidth: getWidth({ ref, withCheckbox }, schema.minWidth || minWidth),
-        maxWidth: getWidth({ ref, withCheckbox }, schema.maxWidth || maxWidth)
+        width,
+        minWidth,
+        maxWidth
       }}
     >
       {isHead ? (
@@ -406,6 +442,6 @@ export const Cell = (props: CellProps) => {
       )}
     </div>
   );
-};
+});
 
 export default Cell;
