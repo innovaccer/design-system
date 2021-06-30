@@ -1,51 +1,57 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { RowData, ColumnSchema } from './Grid';
-import { Dropdown, Grid, Placeholder, PlaceholderParagraph, Text, Icon, Button, Tooltip, GridCell } from '@/index';
-import { resizeCol, getInit } from './utility';
-import { DropdownProps } from '@/components/atoms/dropdown';
+import { Dropdown, Placeholder, PlaceholderParagraph, Text, Icon, Button, Tooltip, GridCell } from '@/index';
+import { DropdownProps, GridCellProps } from '@/index.type';
+import { resizeCol, hasSchema } from './utility';
 import { getCellSize, getWidth } from './columnUtility';
 import { GridNestedRow } from './GridNestedRow';
-import { GridCellProps } from './GridCell';
+import { GridHeadProps } from './GridHead';
+import GridContext from './GridContext';
 
 interface SharedCellProps {
-  _this: Grid;
   schema: ColumnSchema;
+  colIndex: number;
 }
 
 type HeaderCellProps = SharedCellProps & {
-  colIndex: number;
-  draggable: boolean;
+  onSelectAll: GridHeadProps['onSelectAll'];
+  onMenuChange: GridHeadProps['onMenuChange'];
+  onFilterChange: GridHeadProps['onFilterChange'];
+  updateColumnSchema: GridHeadProps['updateColumnSchema'];
+  reorderColumn: GridHeadProps['reorderColumn'];
 };
 
 type BodyCellProps = SharedCellProps & {
   data: RowData;
   rowIndex: number;
-  colIndex: number;
   expandedState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
 };
 
 export type CellProps = (HeaderCellProps | BodyCellProps) & {
-  head?: boolean;
+  isHead?: boolean;
   firstCell: boolean;
 };
 
 const HeaderCell = (props: HeaderCellProps) => {
+  const context = React.useContext(GridContext);
   const {
-    _this,
     schema,
-    draggable,
+    onMenuChange,
+    onFilterChange,
+    updateColumnSchema
   } = props;
 
   const {
-    schema: schemaProp,
     loading,
+    draggable,
     showMenu,
     sortingList,
     filterList,
     headCellTooltip,
-    showFilters
-  } = _this.props;
+    showFilters,
+    schema: schemaProp
+  } = context;
 
   const {
     sorting = true,
@@ -54,7 +60,7 @@ const HeaderCell = (props: HeaderCellProps) => {
     pinned
   } = schema;
 
-  const init = getInit(schemaProp);
+  const isValidSchema = hasSchema(schemaProp);
 
   const listIndex = sortingList.findIndex(l => l.name === name);
   const sorted = listIndex !== -1 ? sortingList[listIndex].type : null;
@@ -106,10 +112,10 @@ const HeaderCell = (props: HeaderCellProps) => {
           {sorted ? sorted === 'asc' ? (
             <Icon name="arrow_downward" />
           ) : (
-              <Icon name="arrow_upward" />
-            ) : (
-              <Icon name="unfold_more" />
-            )
+            <Icon name="arrow_upward" />
+          ) : (
+            <Icon name="unfold_more" />
+          )
           }
         </div>
       )}
@@ -126,87 +132,87 @@ const HeaderCell = (props: HeaderCellProps) => {
         className="Grid-cellContent"
         onClick={() => {
           if (!loading && sorting) {
-            if (sorted === 'asc') _this.onMenuChange(name, 'sortDesc');
-            if (sorted === 'desc') _this.onMenuChange(name, 'unsort');
-            if (!sorted) _this.onMenuChange(name, 'sortAsc');
+            if (sorted === 'asc') onMenuChange(name, 'sortDesc');
+            if (sorted === 'desc') onMenuChange(name, 'unsort');
+            if (!sorted) onMenuChange(name, 'sortAsc');
           }
         }}
       >
-        {loading && !init ? (
+        {loading && !isValidSchema ? (
           <Placeholder withImage={false}>
             <PlaceholderParagraph length="medium" />
           </Placeholder>
         ) : (
-            <>
-              {headCellTooltip ? (
-                <Tooltip position="top-start" triggerClass="w-100 overflow-hidden" tooltip={schema.displayName}>
-                  {renderLabel()}
-                </Tooltip>
-              ) : (
-                  renderLabel()
-                )
-              }
-            </>
-          )
+          <>
+            {headCellTooltip ? (
+              <Tooltip position="top-start" triggerClass="w-100 overflow-hidden" tooltip={schema.displayName}>
+                {renderLabel()}
+              </Tooltip>
+            ) : (
+              renderLabel()
+            )
+            }
+          </>
+        )
         }
       </div>
       {showFilters && filters && (
         <>
-          {loading && !init ? (
+          {loading && !isValidSchema ? (
             <span>
               <Placeholder />
             </span>
           ) : (
-              <div>
-                <Dropdown
-                  menu={true}
-                  showApplyButton={true}
-                  withCheckbox={true}
-                  triggerOptions={{
-                    customTrigger: () => (
-                      <Button
-                        icon="filter_list"
-                        appearance="transparent"
-                      />
-                    )
-                  }}
-                  options={filterOptions}
-                  align={'left'}
-                  onChange={(selected: any) => _this.onFilterChange(name, selected)}
-                  minWidth={176}
-                />
-              </div>
-            )
+            <div>
+              <Dropdown
+                menu={true}
+                showApplyButton={true}
+                withCheckbox={true}
+                triggerOptions={{
+                  customTrigger: () => (
+                    <Button
+                      icon="filter_list"
+                      appearance="transparent"
+                    />
+                  )
+                }}
+                options={filterOptions}
+                align={'left'}
+                onChange={(selected: any) => onFilterChange(name, selected)}
+                minWidth={176}
+              />
+            </div>
+          )
           }
         </>
       )}
       {showMenu && (
         <>
-          {loading && !init ? (
+          {loading && !isValidSchema ? (
             <span className="ml-4">
               <Placeholder />
             </span>
           ) : (
-              <div>
-                <Dropdown
-                  key={`${name}-${sorted}-${pinned}`}
-                  menu={true}
-                  optionType="WITH_ICON"
-                  triggerOptions={{
-                    customTrigger: () => (
-                      <Button
-                        icon="more_vert_filled"
-                        appearance="transparent"
-                      />
-                    )
-                  }}
-                  options={options}
-                  align={'left'}
-                  onChange={(selected: any) => _this.onMenuChange(name, selected)}
-                  minWidth={176}
-                />
-              </div>
-            )
+            <div>
+              <Dropdown
+                key={`${name}-${sorted}-${pinned}`}
+                menu={true}
+                optionType="WITH_ICON"
+                triggerOptions={{
+                  customTrigger: () => (
+                    <Button
+                      icon="more_vert_filled"
+                      appearance="transparent"
+                    />
+                  )
+                }}
+                options={options}
+                align={'left'}
+                onChange={(selected: any) => onMenuChange(name, selected)}
+                minWidth={176}
+              />
+            </div>
+          )
           }
         </>
       )}
@@ -214,7 +220,7 @@ const HeaderCell = (props: HeaderCellProps) => {
         <span
           className="Grid-cellResize"
           onMouseDown={() => {
-            resizeCol(_this, name, el.current);
+            resizeCol({ updateColumnSchema }, name, el.current);
           }}
         />
       )}
@@ -223,8 +229,8 @@ const HeaderCell = (props: HeaderCellProps) => {
 };
 
 const BodyCell = (props: BodyCellProps) => {
+  const context = React.useContext(GridContext);
   const {
-    _this,
     data,
     schema,
     expandedState,
@@ -236,7 +242,7 @@ const BodyCell = (props: BodyCellProps) => {
     size,
     loading,
     nestedRows
-  } = _this.props;
+  } = context;
 
   const [expanded, setExpanded] = expandedState;
 
@@ -251,7 +257,6 @@ const BodyCell = (props: BodyCellProps) => {
   };
 
   const nestedProps = {
-    _this,
     data,
     rowIndex,
   };
@@ -276,8 +281,8 @@ const BodyCell = (props: BodyCellProps) => {
               }}
             />
           ) : (
-              <span className="Grid-nestedRowPlaceholder" />
-            )}
+            <span className="Grid-nestedRowPlaceholder" />
+          )}
         </>
       )}
       {schema.cellRenderer ?
@@ -293,30 +298,37 @@ const BodyCell = (props: BodyCellProps) => {
 };
 
 export const Cell = (props: CellProps) => {
+  const context = React.useContext(GridContext);
   const {
-    _this,
-    head,
-    colIndex,
+    isHead,
     firstCell,
     schema,
-    // @ts-ignore
-    expandedState,
-    // @ts-ignore
-    draggable,
     // @ts-ignore
     data,
     // @ts-ignore
     rowIndex,
+    colIndex,
+    // @ts-ignore
+    expandedState,
+    // @ts-ignore
+    onSelectAll,
+    // @ts-ignore
+    onMenuChange,
+    // @ts-ignore
+    onFilterChange,
+    // @ts-ignore
+    updateColumnSchema,
+    // @ts-ignore
+    reorderColumn
   } = props;
 
   const {
+    draggable,
     separator,
-    nestedRows
-  } = _this.props;
-
-  const {
-    init
-  } = _this.state;
+    nestedRows,
+    ref,
+    withCheckbox
+  } = context;
 
   const {
     name,
@@ -333,10 +345,10 @@ export const Cell = (props: CellProps) => {
 
   const cellClass = classNames({
     'Grid-cell': true,
-    'Grid-cell--head': head,
-    'Grid-cell--body': !head,
+    'Grid-cell--head': isHead,
+    'Grid-cell--body': !isHead,
     'Grid-cell--separator': !firstCell && (schema.separator !== undefined ? schema.separator : separator),
-    'Grid-cell--nestedRow': !head && colIndex === 0 && nestedRows
+    'Grid-cell--nestedRow': !isHead && colIndex === 0 && nestedRows
   });
 
   if (hidden) return null;
@@ -345,7 +357,7 @@ export const Cell = (props: CellProps) => {
     <div
       key={`${rowIndex}-${colIndex}`}
       className={cellClass}
-      draggable={head && draggable}
+      draggable={isHead && draggable}
       onDragStart={e => {
         if (draggable) {
           e.dataTransfer.setData('name', name);
@@ -364,33 +376,34 @@ export const Cell = (props: CellProps) => {
             type: pinned || ''
           };
 
-          if (from.type === to.type) _this.reorderCol(from.name, to.name);
+          if (from.type === to.type) reorderColumn(from.name, to.name);
         }
       }}
       style={{
-        visibility: !init ? 'hidden' : 'visible',
-        width: getWidth.call(_this, schema.width || width),
-        minWidth: getWidth.call(_this, schema.minWidth || minWidth),
-        maxWidth: getWidth.call(_this, schema.maxWidth || maxWidth)
+        width: getWidth({ ref, withCheckbox }, schema.width || width),
+        minWidth: getWidth({ ref, withCheckbox }, schema.minWidth || minWidth),
+        maxWidth: getWidth({ ref, withCheckbox }, schema.maxWidth || maxWidth)
       }}
     >
-      {head ? (
+      {isHead ? (
         <HeaderCell
-          _this={_this}
-          draggable={draggable}
           colIndex={colIndex}
           schema={schema}
+          onSelectAll={onSelectAll}
+          onMenuChange={onMenuChange}
+          onFilterChange={onFilterChange}
+          updateColumnSchema={updateColumnSchema}
+          reorderColumn={reorderColumn}
         />
       ) : (
-          <BodyCell
-            _this={_this}
-            rowIndex={rowIndex}
-            colIndex={colIndex}
-            data={data}
-            schema={schema}
-            expandedState={expandedState}
-          />
-        )}
+        <BodyCell
+          rowIndex={rowIndex}
+          colIndex={colIndex}
+          data={data}
+          schema={schema}
+          expandedState={expandedState}
+        />
+      )}
     </div>
   );
 };

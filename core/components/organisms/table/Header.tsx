@@ -9,7 +9,7 @@ import {
   GridProps,
   updateFilterListFunction
 } from '../grid/Grid';
-import { getInit, getPluralSuffix } from '../grid/utility';
+import { hasSchema, getPluralSuffix } from '../grid/utility';
 import { DraggableDropdown } from './DraggableDropdown';
 import { DropdownProps } from '@/index.type';
 
@@ -152,7 +152,7 @@ export const Header = (props: HeaderProps) => {
               onChange={onSearchChange}
               value={searchTerm}
               onClear={() => updateSearchTerm && updateSearchTerm('')}
-              disabled={loading && !getInit(schema)}
+              disabled={loading && !hasSchema(schema)}
             />
           </div>
         )}
