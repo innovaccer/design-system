@@ -1,26 +1,36 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Checkbox, Grid, Placeholder } from '@/index';
+import { Checkbox, Placeholder } from '@/index';
 import { RowData, Schema, Pinned } from './Grid';
 import { GridNestedRow } from './GridNestedRow';
 import { Cell } from './Cell';
+import GridContext from './GridContext';
+import { GridBodyProps } from './GridBody';
 
 export interface GridRowProps {
   schema: Schema;
   data: RowData;
-  withCheckbox?: boolean;
-  _this: Grid;
   rowIndex: number;
+  onSelect: GridBodyProps['onSelect'];
   className?: string;
 }
 
 export const GridRow = (props: GridRowProps) => {
+  const context = React.useContext(GridContext);
+
   const {
-    _this,
+    type,
+    onRowClick,
+    loading,
+    withCheckbox,
+    nestedRows
+  } = context;
+
+  const {
     schema,
     data,
-    withCheckbox,
     rowIndex: rI,
+    onSelect,
     className
   } = props;
 
@@ -35,26 +45,13 @@ export const GridRow = (props: GridRowProps) => {
     }
   );
 
-  const onClickHandler = () => {
-    const {
-      type
-    } = _this.props;
-
+  const onClickHandler = React.useCallback(() => {
     if (type === 'resource' && !loading) {
-      const {
-        onRowClick,
-      } = _this.props;
-
       if (onRowClick) {
         onRowClick(data, rI);
       }
     }
-  };
-
-  const {
-    loading,
-    nestedRows
-  } = _this.props;
+  }, [data, rI]);
 
   const pinnedSchema = schema.filter(s => !s.hidden && s.pinned);
   const leftPinnedSchema = pinnedSchema.filter(s => !s.hidden && s.pinned === 'left');
@@ -69,13 +66,13 @@ export const GridRow = (props: GridRowProps) => {
         {loading ? (
           <Placeholder />
         ) : (
-            <Checkbox
-              checked={!!data._selected}
-              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                _this.onSelect(rI, event.target.checked);
-              }}
-            />
-          )
+          <Checkbox
+            checked={!!data._selected}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              onSelect(rI, event.target.checked);
+            }}
+          />
+        )
         }
       </div>
     );
@@ -100,7 +97,6 @@ export const GridRow = (props: GridRowProps) => {
             return (
               <Cell
                 key={`${rI}-${cI}`}
-                _this={_this}
                 rowIndex={rI}
                 colIndex={cI}
                 firstCell={!index}
@@ -131,7 +127,6 @@ export const GridRow = (props: GridRowProps) => {
       {nestedRows && expanded && (
         <div className="Grid-nestedRow">
           <GridNestedRow
-            _this={_this}
             data={data}
             rowIndex={rI}
           />
