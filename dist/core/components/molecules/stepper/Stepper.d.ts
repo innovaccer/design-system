@@ -9,6 +9,7 @@ export interface StepperProps extends BaseProps {
     completed: number;
     steps: StepProp[];
     onChange?: (active: number, completed: number, label?: string, value?: React.ReactText) => void;
+    skipIndexes: number[];
 }
 export declare const Stepper: {
     (props: StepperProps): JSX.Element;
@@ -16,6 +17,7 @@ export declare const Stepper: {
     defaultProps: {
         completed: number;
         active: number;
+        skipIndexes: never[];
     };
 };
 export default Stepper;

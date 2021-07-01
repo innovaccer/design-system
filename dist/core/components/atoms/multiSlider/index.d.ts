@@ -24,6 +24,7 @@ interface MultiSliderState {
     labelPrecision: number;
     tickSize: number;
     tickSizeRatio: number;
+    hoveredLabelValue?: number;
 }
 declare type InternalMultiSliderProps = SliderBaserProps & RangeSliderBaseProps;
 export declare class MultiSlider extends React.Component<InternalMultiSliderProps, MultiSliderState> {
@@ -55,11 +56,13 @@ export declare class MultiSlider extends React.Component<InternalMultiSliderProp
     getNewHandleValues: (newValue: number, oldIndex: number) => number[];
     onReleaseHandler: (newValue: number, index: number) => void;
     onChangeHandler: (newValue: number, index: number) => void;
-    renderHandles: () => JSX.Element[] | null;
     formatLabel: (value: number) => string;
+    renderHandles: () => JSX.Element[] | null;
     renderLabels: () => JSX.Element[];
     renderTrackFill: (index: number, start: HandleProps, end: HandleProps) => JSX.Element;
     renderTracks: () => JSX.Element[];
+    handleLabelMouseOver: (value: number) => void;
+    handleLabelMouseLeave: () => void;
     render(): JSX.Element;
 }
 export default MultiSlider;

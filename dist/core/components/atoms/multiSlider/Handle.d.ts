@@ -8,6 +8,7 @@ export interface HandleProps {
 }
 export interface InternalHandleProps extends HandleProps {
     disabled?: boolean;
+    isCurrentLabelHovered?: boolean;
     label: string;
     max: number;
     min: number;
@@ -17,11 +18,13 @@ export interface InternalHandleProps extends HandleProps {
     zIndex?: number;
 }
 export interface HandleState {
-    isMoving?: boolean;
+    isHandleMoving?: boolean;
+    isHandleHovered?: boolean;
 }
 export declare class Handle extends React.Component<InternalHandleProps, HandleState> {
     state: {
-        isMoving: boolean;
+        isHandleMoving: boolean;
+        isHandleHovered: boolean;
     };
     handleElement: HTMLElement | null;
     refHandlers: {
@@ -41,6 +44,8 @@ export declare class Handle extends React.Component<InternalHandleProps, HandleS
         handleMidpoint: number;
         handleOffset: number;
     };
+    handleMouseOver: () => void;
+    handleMouseLeave: () => void;
     render(): JSX.Element;
     removeDocumentEventListeners: () => void;
 }

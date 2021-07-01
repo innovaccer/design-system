@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1623316352000 
+   * Generated on: 1625121066993 
    *      Package: @innovaccer/design-system
-   *      Version: v2.1.3
+   *      Version: v2.2.0-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -330,7 +330,7 @@
   }
 
   function _iterableToArrayLimit(arr, i) {
-    var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]);
+    var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
 
     if (_i == null) return;
     var _arr = [];
@@ -811,7 +811,7 @@
         appearance: 'white',
         className: ContentClass
       }, initials), !initials && /*#__PURE__*/React__namespace.createElement(Icon, {
-        "data-test": "DesignSystem-AvatarIcon",
+        "data-test": "DesignSystem-Avatar--Icon",
         name: "person",
         size: size === 'regular' ? 16 : 12,
         appearance: 'white',
@@ -1239,7 +1239,7 @@
     };
   };
 
-  var _excluded$y = ["triggerSize", "placeholder", "menu", "children", "icon", "disabled", "open", "inlineLabel", "error"];
+  var _excluded$z = ["triggerSize", "placeholder", "menu", "children", "icon", "disabled", "open", "inlineLabel", "error"];
   var DropdownButton = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     var _classNames, _classNames2;
 
@@ -1255,7 +1255,7 @@
         open = props.open,
         inlineLabel = props.inlineLabel,
         error = props.error,
-        rest = _objectWithoutProperties$1(props, _excluded$y);
+        rest = _objectWithoutProperties$1(props, _excluded$z);
 
     var buttonDisabled = disabled ? 'disabled' : 'default';
     var trimmedPlaceholder = placeholder.trim();
@@ -1289,21 +1289,21 @@
   });
   DropdownButton.displayName = 'DropdownButton';
 
-  var _excluded$x = ["children", "componentType", "className"];
+  var _excluded$y = ["children", "componentType", "className"];
 
   var GenericText = function GenericText(_ref) {
     var children = _ref.children,
         _ref$componentType = _ref.componentType,
         componentType = _ref$componentType === void 0 ? 'span' : _ref$componentType,
         className = _ref.className,
-        props = _objectWithoutProperties$1(_ref, _excluded$x);
+        props = _objectWithoutProperties$1(_ref, _excluded$y);
 
     return /*#__PURE__*/React__namespace.createElement(componentType, _objectSpread2(_objectSpread2({}, props), {}, {
       className: className
     }), children);
   };
 
-  var _excluded$w = ["appearance", "size", "children", "weight", "small", "className"];
+  var _excluded$x = ["appearance", "size", "children", "weight", "small", "className"];
   var Text = function Text(props) {
     var _classNames;
 
@@ -1313,7 +1313,7 @@
         weight = props.weight,
         small = props.small,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, _excluded$w);
+        rest = _objectWithoutProperties$1(props, _excluded$x);
 
     var classes = classnames((_classNames = {
       Text: true
@@ -1349,7 +1349,14 @@
     };
 
     var type = mapper(props.type);
-    var iconClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'material-icons', true), _defineProperty$2(_classNames, "material-icons-".concat(mapper(type)), type && type !== 'filled'), _defineProperty$2(_classNames, 'Icon', true), _defineProperty$2(_classNames, "Icon--".concat(appearance), appearance), _defineProperty$2(_classNames, "".concat(className), className), _classNames));
+
+    var getIconAppearance = function getIconAppearance(iconColor) {
+      var x = iconColor.indexOf('_');
+      return iconColor.slice(0, x) + iconColor.charAt(x + 1).toUpperCase() + iconColor.slice(x + 2);
+    };
+
+    var color = appearance && appearance.includes('_') ? getIconAppearance(appearance) : appearance;
+    var iconClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'material-icons', true), _defineProperty$2(_classNames, "material-icons-".concat(mapper(type)), type && type !== 'filled'), _defineProperty$2(_classNames, 'Icon', true), _defineProperty$2(_classNames, "Icon--".concat(color), appearance), _defineProperty$2(_classNames, "".concat(className), className), _classNames));
     var styles = {
       fontSize: "".concat(size, "px"),
       width: "".concat(size, "px")
@@ -1369,7 +1376,8 @@
   };
   Icon.displayName = 'Icon';
   Icon.defaultProps = {
-    size: 16
+    size: 16,
+    type: 'round'
   };
 
   var uidGenerator = function uidGenerator() {
@@ -1383,7 +1391,7 @@
     return uuid;
   };
 
-  var _excluded$v = ["size", "tabIndex", "defaultChecked", "indeterminate", "label", "disabled", "onChange", "name", "value", "className", "checked"];
+  var _excluded$w = ["size", "tabIndex", "defaultChecked", "indeterminate", "label", "disabled", "onChange", "name", "value", "className", "checked"];
 
   /**
    * ######Checkbox has two types:
@@ -1406,7 +1414,7 @@
         value = props.value,
         className = props.className;
         props.checked;
-        var rest = _objectWithoutProperties$1(props, _excluded$v);
+        var rest = _objectWithoutProperties$1(props, _excluded$w);
 
     var ref = React__namespace.useRef(null);
     React__namespace.useImperativeHandle(forwardedRef, function () {
@@ -2300,7 +2308,7 @@
 
   DropdownList.displayName = 'DropdownList';
 
-  var _excluded$u = ["triggerOptions", "selected"];
+  var _excluded$v = ["triggerOptions", "selected"];
   var inputRef = /*#__PURE__*/React__namespace.createRef();
 
   /**
@@ -2901,7 +2909,7 @@
             _this$props13$trigger = _this$props13.triggerOptions,
             triggerOptions = _this$props13$trigger === void 0 ? {} : _this$props13$trigger;
             _this$props13.selected;
-            var rest = _objectWithoutProperties$1(_this$props13, _excluded$u);
+            var rest = _objectWithoutProperties$1(_this$props13, _excluded$v);
 
         var remainingOptionsLen = searchedOptionsLength - options.length;
         var firstEnabledOption = _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox) ? 0 : options.findIndex(function (option) {
@@ -2974,7 +2982,7 @@
         size: "tiny",
         appearance: "transparent",
         icon: "more_horiz_filled",
-        "data-test": "DesignSystem-Breadcrumbs-more"
+        "data-test": "DesignSystem-Breadcrumbs--Button"
       });
     };
 
@@ -3034,48 +3042,14 @@
     }, "/"))));
   };
 
-  var Spinner = function Spinner(props) {
-    var appearance = props.appearance,
-        size = props.size,
-        className = props.className;
-    var baseProps = extractBaseProps(props);
-    var wrapperClasses = classnames(_defineProperty$2({
-      Spinner: true
-    }, "Spinner--".concat(size), size), className);
-    var circleClasses = classnames(_defineProperty$2({
-      Circle: true
-    }, "Circle--".concat(appearance), appearance));
-    var svgProps = {
-      viewBox: '0 0 50 50'
-    };
-    var circleProps = {
-      cx: 25,
-      cy: 25,
-      r: 20,
-      fill: 'none',
-      strokeMiterlimit: '10',
-      strokeWidth: '4'
-    };
-    return /*#__PURE__*/React__namespace.createElement("svg", _extends$3({}, baseProps, {
-      className: wrapperClasses
-    }, svgProps), /*#__PURE__*/React__namespace.createElement("circle", _extends$3({
-      className: circleClasses
-    }, circleProps)));
-  };
-  Spinner.displayName = 'Spinner';
-  Spinner.defaultProps = {
-    appearance: 'primary',
-    size: 'medium'
-  };
-
-  var _excluded$t = ["size", "appearance", "iconAlign", "tabIndex", "largeIcon", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className"];
+  var _excluded$u = ["size", "appearance", "iconAlign", "tabIndex", "largeIcon", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className"];
   var sizeMapping$2 = {
     tiny: 12,
     regular: 16,
     large: 20
   };
   var Button = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
-    var _classNames, _classNames2, _classNames3;
+    var _classNames, _classNames2;
 
     var _props$size = props.size,
         size = _props$size === void 0 ? 'regular' : _props$size,
@@ -3094,11 +3068,10 @@
         loading = props.loading,
         disabled = props.disabled,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, _excluded$t);
+        rest = _objectWithoutProperties$1(props, _excluded$u);
 
     var buttonClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Button', true), _defineProperty$2(_classNames, 'Button--expanded', expanded), _defineProperty$2(_classNames, "Button--".concat(size), size), _defineProperty$2(_classNames, "Button--".concat(size, "Square"), !children), _defineProperty$2(_classNames, "Button--".concat(appearance), appearance), _defineProperty$2(_classNames, 'Button--selected', selected && (appearance === 'basic' || appearance === 'transparent')), _defineProperty$2(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _defineProperty$2(_classNames, "".concat(className), className), _classNames));
     var iconClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Button-icon', true), _defineProperty$2(_classNames2, "Button-icon--".concat(iconAlign), children && iconAlign), _classNames2));
-    var spinnerClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Button-spinner', true), _defineProperty$2(_classNames3, "Button-spinner--".concat(iconAlign), children && iconAlign), _classNames3));
     return /*#__PURE__*/React__namespace.createElement("button", _extends$3({
       "data-test": "DesignSystem-Button",
       ref: ref,
@@ -3106,19 +3079,21 @@
       className: buttonClass,
       disabled: disabled || loading,
       tabIndex: tabIndex
-    }, rest), loading && /*#__PURE__*/React__namespace.createElement("span", {
-      className: spinnerClass
-    }, /*#__PURE__*/React__namespace.createElement(Spinner, {
+    }, rest), loading ? /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Spinner, {
       size: "small",
-      appearance: appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white'
-    })), icon && !loading && /*#__PURE__*/React__namespace.createElement("div", {
+      appearance: appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white',
+      "data-test": "DesignSystem-Button--Spinner",
+      className: "Button-spinner"
+    }), /*#__PURE__*/React__namespace.createElement(Text, {
+      className: "Button-text Button-text--hidden"
+    }, children || '')) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, icon && /*#__PURE__*/React__namespace.createElement("div", {
       className: iconClass
     }, /*#__PURE__*/React__namespace.createElement(Icon, {
       "data-test": "DesignSystem-Button--Icon",
       name: icon,
       appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
       size: largeIcon && !children ? sizeMapping$2[size] + 4 : sizeMapping$2[size]
-    })), children);
+    })), children));
   });
   Button.displayName = 'Button';
 
@@ -3193,7 +3168,7 @@
 
     return dateVal;
   };
-  var compareDecade = function compareDecade(d, operator, currDecade) {
+  var compareYearBlock = function compareYearBlock(d, operator, currDecade) {
     if (d) {
       var _getDateInfo = getDateInfo(d),
           limitDecade = _getDateInfo.decadeYear;
@@ -3347,15 +3322,7 @@
       });
 
       _defineProperty$2(_assertThisInitialized$2(_this), "getDateValue", function (year, month, date) {
-        var _this$props = _this.props,
-            disabledBefore = _this$props.disabledBefore,
-            disabledAfter = _this$props.disabledAfter;
         var d = new Date(year, month, date);
-
-        if (compareDate(disabledBefore, 'more', year, month, date) || compareDate(disabledAfter, 'less', year, month, date)) {
-          return undefined;
-        }
-
         return d;
       });
 
@@ -3376,9 +3343,9 @@
       });
 
       _defineProperty$2(_assertThisInitialized$2(_this), "getInRangeError", function () {
-        var _this$props2 = _this.props,
-            rangePicker = _this$props2.rangePicker,
-            rangeLimit = _this$props2.rangeLimit;
+        var _this$props = _this.props,
+            rangePicker = _this$props.rangePicker,
+            rangeLimit = _this$props.rangeLimit;
         var _this$state2 = _this.state,
             startDateState = _this$state2.startDate,
             endDateState = _this$state2.endDate,
@@ -3508,9 +3475,9 @@
       });
 
       _defineProperty$2(_assertThisInitialized$2(_this), "renderJumpButton", function (type) {
-        var _this$props3 = _this.props,
-            disabledBefore = _this$props3.disabledBefore,
-            disabledAfter = _this$props3.disabledAfter;
+        var _this$props2 = _this.props,
+            disabledBefore = _this$props2.disabledBefore,
+            disabledAfter = _this$props2.disabledAfter;
         var _this$state4 = _this.state,
             view = _this$state4.view,
             yearBlockNav = _this$state4.yearBlockNav,
@@ -3521,11 +3488,11 @@
         switch (view) {
           case 'year':
             if (type === 'prev') {
-              disabled = compareDecade(disabledBefore, 'more', yearBlockNav) || compareDecade(disabledBefore, 'equal', yearBlockNav);
+              disabled = compareYearBlock(disabledBefore, 'more', yearBlockNav) || compareYearBlock(disabledBefore, 'equal', yearBlockNav);
             }
 
             if (type === 'next') {
-              disabled = compareDecade(disabledAfter, 'less', yearBlockNav) || compareDecade(disabledAfter, 'equal', yearBlockNav);
+              disabled = compareYearBlock(disabledAfter, 'less', yearBlockNav) || compareYearBlock(disabledAfter, 'equal', yearBlockNav);
             }
 
             break;
@@ -3589,9 +3556,9 @@
       });
 
       _defineProperty$2(_assertThisInitialized$2(_this), "renderHeaderContent", function (index) {
-        var _this$props4 = _this.props,
-            size = _this$props4.size,
-            monthsInView = _this$props4.monthsInView;
+        var _this$props3 = _this.props,
+            size = _this$props3.size,
+            monthsInView = _this$props3.monthsInView;
         var _this$state5 = _this.state,
             view = _this$state5.view,
             yearBlockNav = _this$state5.yearBlockNav;
@@ -3638,14 +3605,12 @@
       _defineProperty$2(_assertThisInitialized$2(_this), "renderBodyYear", function () {
         var yearBlockRange = config.yearBlockRange,
             yearsInRow = config.yearsInRow;
-        var _this$props5 = _this.props,
-            size = _this$props5.size,
-            rangePicker = _this$props5.rangePicker,
-            disabledBefore = _this$props5.disabledBefore,
-            disabledAfter = _this$props5.disabledAfter;
-        var _this$state6 = _this.state,
-            yearBlockNav = _this$state6.yearBlockNav,
-            yearNav = _this$state6.yearNav;
+        var _this$props4 = _this.props,
+            size = _this$props4.size,
+            rangePicker = _this$props4.rangePicker,
+            disabledBefore = _this$props4.disabledBefore,
+            disabledAfter = _this$props4.disabledAfter;
+        var yearBlockNav = _this.state.yearBlockNav;
         var noOfRows = Math.ceil(yearBlockRange / yearsInRow);
         return Array.from({
           length: noOfRows
@@ -3660,7 +3625,7 @@
             if (offset === yearBlockNav) return undefined;
             var year = yearBlockNav + offset;
             var disabled = compareDate(disabledBefore, 'more', year) || compareDate(disabledAfter, 'less', year);
-            var active = !disabled && !rangePicker && yearNav === year && year === _this.state.year;
+            var active = !disabled && !rangePicker && year === _this.state.year;
             var valueClass = classnames(_defineProperty$2({
               'Calendar-value': true,
               'Calendar-value--active': active,
@@ -3684,14 +3649,13 @@
         var monthBlock = config.monthBlock,
             monthsInRow = config.monthsInRow,
             months = config.months;
-        var _this$props6 = _this.props,
-            size = _this$props6.size,
-            disabledBefore = _this$props6.disabledBefore,
-            disabledAfter = _this$props6.disabledAfter;
-        var _this$state7 = _this.state,
-            yearNav = _this$state7.yearNav,
-            monthNav = _this$state7.monthNav,
-            year = _this$state7.year;
+        var _this$props5 = _this.props,
+            size = _this$props5.size,
+            disabledBefore = _this$props5.disabledBefore,
+            disabledAfter = _this$props5.disabledAfter;
+        var _this$state6 = _this.state,
+            yearNav = _this$state6.yearNav,
+            year = _this$state6.year;
         var noOfRows = Math.ceil(monthBlock / monthsInRow);
         return Array.from({
           length: noOfRows
@@ -3704,7 +3668,7 @@
           }, function (_x, col) {
             var month = monthsInRow * row + col;
             var disabled = compareDate(disabledBefore, 'more', yearNav, month) || compareDate(disabledAfter, 'less', yearNav, month);
-            var active = !disabled && year === yearNav && monthNav === month;
+            var active = !disabled && year === yearNav && month === _this.state.month;
             var valueClass = classnames(_defineProperty$2({
               'Calendar-value': true,
               'Calendar-value--active': active,
@@ -3737,9 +3701,9 @@
       _defineProperty$2(_assertThisInitialized$2(_this), "renderBodyDate", function (index) {
         var daysInRow = config.daysInRow,
             days = config.days;
-        var _this$props7 = _this.props,
-            size = _this$props7.size,
-            firstDayOfWeek = _this$props7.firstDayOfWeek;
+        var _this$props6 = _this.props,
+            size = _this$props6.size,
+            firstDayOfWeek = _this$props6.firstDayOfWeek;
         return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
           className: "Calendar-dayValues"
         }, Array.from({
@@ -3762,20 +3726,19 @@
 
       _defineProperty$2(_assertThisInitialized$2(_this), "renderDateValues", function (index) {
         var daysInRow = config.daysInRow;
-        var _this$props8 = _this.props,
-            size = _this$props8.size,
-            rangePicker = _this$props8.rangePicker,
-            firstDayOfWeek = _this$props8.firstDayOfWeek,
-            disabledBefore = _this$props8.disabledBefore,
-            disabledAfter = _this$props8.disabledAfter;
-        var _this$state8 = _this.state,
-            startDate = _this$state8.startDate,
-            endDate = _this$state8.endDate,
-            hoverDate = _this$state8.hoverDate;
-        var _this$state9 = _this.state,
-            yearState = _this$state9.year,
-            monthState = _this$state9.month,
-            dateState = _this$state9.date;
+        var _this$props7 = _this.props,
+            size = _this$props7.size,
+            rangePicker = _this$props7.rangePicker,
+            firstDayOfWeek = _this$props7.firstDayOfWeek,
+            disabledBefore = _this$props7.disabledBefore,
+            disabledAfter = _this$props7.disabledAfter;
+        var _this$state7 = _this.state,
+            startDate = _this$state7.startDate,
+            endDate = _this$state7.endDate,
+            hoverDate = _this$state7.hoverDate,
+            yearState = _this$state7.year,
+            monthState = _this$state7.month,
+            dateState = _this$state7.date;
 
         var _this$getNavDateInfo3 = _this.getNavDateInfo(index),
             yearNavVal = _this$getNavDateInfo3.year,
@@ -3783,7 +3746,7 @@
 
         var dayRange = getDaysInMonth(yearNavVal, monthNavVal);
         var dayDiff = getFirstDayOfMonth(yearNavVal, monthNavVal) - getIndexOfDay(firstDayOfWeek);
-        var dummyDays = (dayDiff + daysInRow) % daysInRow;
+        var dummyDays = Math.abs(dayDiff);
         var noOfRows = Math.ceil((dayRange + dummyDays) / daysInRow);
 
         var inRangeError = _this.getInRangeError();
@@ -3807,7 +3770,7 @@
             if (rangePicker) {
               var d = _this.getDateValue(yearNavVal, monthNavVal, date);
 
-              if (!(startDate && endDate)) {
+              if (!startDate || !endDate) {
                 _this.setState({
                   hoverDate: d
                 });
@@ -3819,95 +3782,91 @@
         return Array.from({
           length: noOfRows
         }, function (_y, row) {
-          if (dummyDays < daysInRow) {
-            return /*#__PURE__*/React__namespace.createElement("div", {
-              key: row,
-              className: "Calendar-valueRow"
-            }, Array.from({
-              length: daysInRow
-            }, function (_x, col) {
-              var date = daysInRow * row + col - dummyDays + 1;
-              var dummy = date <= 0 || date > dayRange;
-              var disabled = !dummy && (compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) || compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date));
-              var active = !disabled && yearState === yearNavVal && monthState === monthNavVal && dateState === date;
-              var startActive = false;
-              var endActive = false;
-              var inRange = false;
-              var inRangeLast = false;
+          return /*#__PURE__*/React__namespace.createElement("div", {
+            key: row,
+            className: "Calendar-valueRow"
+          }, Array.from({
+            length: daysInRow
+          }, function (_x, col) {
+            var date = daysInRow * row + col - dummyDays + 1;
+            var dummy = date <= 0 || date > dayRange;
+            var disabled = !dummy && (compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) || compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date));
+            var active = !disabled && yearState === yearNavVal && monthState === monthNavVal && dateState === date;
+            var startActive = false;
+            var endActive = false;
+            var inRange = false;
+            var inRangeLast = false;
 
-              if (rangePicker) {
-                startActive = compareDate(startDate, 'equal', yearNavVal, monthNavVal, date);
-                endActive = compareDate(endDate, 'equal', yearNavVal, monthNavVal, date);
-                inRangeLast = compareDate(hoverDate, 'equal', yearNavVal, monthNavVal, date);
-                active = !disabled && (startActive || endActive);
+            if (rangePicker) {
+              startActive = compareDate(startDate, 'equal', yearNavVal, monthNavVal, date);
+              endActive = compareDate(endDate, 'equal', yearNavVal, monthNavVal, date);
+              inRangeLast = compareDate(hoverDate, 'equal', yearNavVal, monthNavVal, date);
+              active = !disabled && (startActive || endActive);
 
-                if (startDate && endDate) {
-                  inRange = !disabled && (compareDate(startDate, 'less', yearNavVal, monthNavVal, date) || startActive) && (compareDate(endDate, 'more', yearNavVal, monthNavVal, date) || endActive);
-                } else if (startDate) {
-                  inRange = !disabled && (compareDate(hoverDate, 'more', yearNavVal, monthNavVal, date) || inRangeLast) && compareDate(startDate, 'less', yearNavVal, monthNavVal, date);
-                } else if (endDate) {
-                  inRange = !disabled && (compareDate(hoverDate, 'less', yearNavVal, monthNavVal, date) || inRangeLast) && compareDate(endDate, 'more', yearNavVal, monthNavVal, date);
-                }
+              if (startDate && endDate) {
+                inRange = !disabled && (compareDate(startDate, 'less', yearNavVal, monthNavVal, date) || startActive) && (compareDate(endDate, 'more', yearNavVal, monthNavVal, date) || endActive);
+              } else if (startDate) {
+                inRange = !disabled && (compareDate(hoverDate, 'more', yearNavVal, monthNavVal, date) || inRangeLast) && compareDate(startDate, 'less', yearNavVal, monthNavVal, date);
+              } else if (endDate) {
+                inRange = !disabled && (compareDate(hoverDate, 'less', yearNavVal, monthNavVal, date) || inRangeLast) && compareDate(endDate, 'more', yearNavVal, monthNavVal, date);
               }
+            }
 
-              var _getDateInfo4 = getDateInfo(startDate),
-                  sYear = _getDateInfo4.year,
-                  sMonth = _getDateInfo4.month,
-                  sDate = _getDateInfo4.date;
+            var _getDateInfo4 = getDateInfo(startDate),
+                sYear = _getDateInfo4.year,
+                sMonth = _getDateInfo4.month,
+                sDate = _getDateInfo4.date;
 
-              var _getDateInfo5 = getDateInfo(endDate),
-                  eYear = _getDateInfo5.year,
-                  eMonth = _getDateInfo5.month,
-                  eDate = _getDateInfo5.date;
+            var _getDateInfo5 = getDateInfo(endDate),
+                eYear = _getDateInfo5.year,
+                eMonth = _getDateInfo5.month,
+                eDate = _getDateInfo5.date;
 
-              var isStart = startActive || endDate && inRangeLast && compareDate(hoverDate, 'less', eYear, eMonth, eDate);
-              var isEnd = endActive || startDate && inRangeLast && compareDate(hoverDate, 'more', sYear, sMonth, sDate);
-              var isRangeError = inRange && inRangeError;
-              var wrapperClass = classnames({
-                'Calendar-valueWrapper': true,
-                'Calendar-valueWrapper--inRange': inRange || rangePicker && active,
-                'Calendar-valueWrapper--inRangeError': isRangeError,
-                'Calendar-valueWrapper--start': isStart && !isEnd,
-                'Calendar-valueWrapper--end': isEnd && !isStart,
-                'Calendar-valueWrapper--startError': isStart && isRangeError,
-                'Calendar-valueWrapper--endError': isEnd && isRangeError
-              });
-              var valueClass = classnames(_defineProperty$2({
-                'Calendar-value': true,
-                'Calendar-value--start': isStart && !isEnd,
-                'Calendar-value--end': isEnd && !isStart,
-                'Calendar-value--startError': isStart && isRangeError,
-                'Calendar-value--endError': isEnd && isRangeError,
-                'Calendar-value--active': active,
-                'Calendar-value--dummy': dummy || disabled,
-                'Calendar-value--disabled': disabled,
-                'Calendar-dateValue': true
-              }, "Calendar-dateValue--".concat(size), size));
-              return /*#__PURE__*/React__namespace.createElement("div", {
-                key: "".concat(row, "-").concat(col),
-                className: wrapperClass
-              }, /*#__PURE__*/React__namespace.createElement("span", {
-                "data-test": "DesignSystem-Calendar--dateValue",
-                className: valueClass,
-                onClick: onClickHandler(date),
-                onMouseOver: onMouseOverHandler(date)
-              }, !dummy && /*#__PURE__*/React__namespace.createElement(Text, {
-                appearance: active ? 'white' : disabled ? 'disabled' : 'default',
-                size: size === 'small' ? 'small' : 'regular'
-              }, date)));
-            }));
-          }
-
-          return null;
+            var isStart = startActive || endDate && inRangeLast && compareDate(hoverDate, 'less', eYear, eMonth, eDate);
+            var isEnd = endActive || startDate && inRangeLast && compareDate(hoverDate, 'more', sYear, sMonth, sDate);
+            var isRangeError = inRange && inRangeError;
+            var wrapperClass = classnames({
+              'Calendar-valueWrapper': true,
+              'Calendar-valueWrapper--inRange': inRange || rangePicker && active,
+              'Calendar-valueWrapper--inRangeError': isRangeError,
+              'Calendar-valueWrapper--start': isStart && !isEnd,
+              'Calendar-valueWrapper--end': isEnd && !isStart,
+              'Calendar-valueWrapper--startEnd': isStart && isEnd,
+              'Calendar-valueWrapper--startError': isStart && isRangeError,
+              'Calendar-valueWrapper--endError': isEnd && isRangeError
+            });
+            var valueClass = classnames(_defineProperty$2({
+              'Calendar-value': true,
+              'Calendar-value--start': isStart && !isEnd,
+              'Calendar-value--end': isEnd && !isStart,
+              'Calendar-value--startError': isStart && isRangeError,
+              'Calendar-value--endError': isEnd && isRangeError,
+              'Calendar-value--active': active,
+              'Calendar-value--dummy': dummy || disabled,
+              'Calendar-value--disabled': disabled,
+              'Calendar-dateValue': true
+            }, "Calendar-dateValue--".concat(size), size));
+            return /*#__PURE__*/React__namespace.createElement("div", {
+              key: "".concat(row, "-").concat(col),
+              className: wrapperClass
+            }, !dummy && /*#__PURE__*/React__namespace.createElement(Text, {
+              appearance: active ? 'white' : disabled ? 'disabled' : 'default',
+              size: size === 'small' ? 'small' : 'regular',
+              "data-test": "DesignSystem-Calendar--dateValue",
+              className: valueClass,
+              onClick: onClickHandler(date),
+              onMouseOver: onMouseOverHandler(date)
+            }, date));
+          }));
         });
       });
 
       _defineProperty$2(_assertThisInitialized$2(_this), "renderCalendar", function (index) {
         var _classNames5;
 
-        var _this$props9 = _this.props,
-            size = _this$props9.size,
-            monthsInView = _this$props9.monthsInView;
+        var _this$props8 = _this.props,
+            size = _this$props8.size,
+            monthsInView = _this$props8.monthsInView;
         var view = _this.state.view;
         var containerClass = classnames((_classNames5 = {}, _defineProperty$2(_classNames5, 'Calendar', true), _defineProperty$2(_classNames5, "Calendar--".concat(view), view), _defineProperty$2(_classNames5, "Calendar--".concat(size), size), _classNames5));
         var headerClass = classnames({
@@ -3927,12 +3886,12 @@
         }, view === 'year' && _this.renderBodyYear(), view === 'month' && _this.renderBodyMonth(), view === 'date' && _this.renderBodyDate(index)));
       });
 
-      var _this$props10 = _this.props,
-          _rangePicker = _this$props10.rangePicker,
-          _startDate = _this$props10.startDate,
-          _endDate = _this$props10.endDate,
-          _monthsInView = _this$props10.monthsInView,
-          _view = _this$props10.view;
+      var _this$props9 = _this.props,
+          _rangePicker = _this$props9.rangePicker,
+          _startDate = _this$props9.startDate,
+          _endDate = _this$props9.endDate,
+          _monthsInView = _this$props9.monthsInView,
+          _view = _this$props9.view;
       var currDate = _rangePicker ? _endDate || _startDate : props.date;
 
       var _yearNav = props.yearNav !== undefined ? props.yearNav : getDateInfo(currDate || Date.now()).year;
@@ -4023,13 +3982,13 @@
         }
 
         if (prevState.currDate !== this.state.currDate) {
-          var _this$props11 = this.props,
-              rangePicker = _this$props11.rangePicker,
-              onDateChange = _this$props11.onDateChange;
-          var _this$state10 = this.state,
-              currDate = _this$state10.currDate,
-              _startDate3 = _this$state10.startDate,
-              _endDate3 = _this$state10.endDate;
+          var _this$props10 = this.props,
+              rangePicker = _this$props10.rangePicker,
+              onDateChange = _this$props10.onDateChange;
+          var _this$state8 = this.state,
+              currDate = _this$state8.currDate,
+              _startDate3 = _this$state8.startDate,
+              _endDate3 = _this$state8.endDate;
 
           if (currDate) {
             if (onDateChange) onDateChange(currDate);
@@ -4086,9 +4045,9 @@
 
         if (prevState.startDate !== this.state.startDate || prevState.endDate !== this.state.endDate) {
           var onRangeChange = this.props.onRangeChange;
-          var _this$state11 = this.state,
-              _startDate4 = _this$state11.startDate,
-              _endDate4 = _this$state11.endDate;
+          var _this$state9 = this.state,
+              _startDate4 = _this$state9.startDate,
+              _endDate4 = _this$state9.endDate;
           if (onRangeChange) onRangeChange(_startDate4, _endDate4);
         }
 
@@ -4119,9 +4078,9 @@
       value: function render() {
         var _this2 = this;
 
-        var _this$props12 = this.props,
-            monthsInView = _this$props12.monthsInView,
-            className = _this$props12.className;
+        var _this$props11 = this.props,
+            monthsInView = _this$props11.monthsInView,
+            className = _this$props11.className;
         var baseProps = extractBaseProps(this.props);
         var classes = classnames({
           'Calendar-wrapper': true
@@ -4147,7 +4106,7 @@
     jumpView: true
   });
 
-  var _excluded$s = ["shadow", "children", "className"];
+  var _excluded$t = ["shadow", "children", "className"];
   var Card = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     var _classNames;
 
@@ -4155,7 +4114,7 @@
         shadow = _props$shadow === void 0 ? 'default' : _props$shadow,
         children = props.children,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, _excluded$s);
+        rest = _objectWithoutProperties$1(props, _excluded$t);
 
     var classes = classnames((_classNames = {
       Card: true
@@ -4168,12 +4127,12 @@
   });
   Card.displayName = 'Card';
 
-  var _excluded$r = ["border", "children", "className"];
+  var _excluded$s = ["border", "children", "className"];
   var CardSubdued = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     var border = props.border,
         children = props.children,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, _excluded$r);
+        rest = _objectWithoutProperties$1(props, _excluded$s);
 
     var classes = classnames(_defineProperty$2({
       CardSubdued: true
@@ -4374,7 +4333,7 @@
   };
   ChipGroup.displayName = 'ChipGroup';
 
-  var _excluded$q = ["size", "sizeXS", "sizeS", "sizeM", "sizeL", "sizeXL", "className", "children"];
+  var _excluded$r = ["size", "sizeXS", "sizeS", "sizeM", "sizeL", "sizeXL", "className", "children"];
   var Column = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     var _classNames;
 
@@ -4386,11 +4345,12 @@
         sizeXL = props.sizeXL,
         className = props.className,
         children = props.children,
-        rest = _objectWithoutProperties$1(props, _excluded$q);
+        rest = _objectWithoutProperties$1(props, _excluded$r);
 
     var classes = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Col', true), _defineProperty$2(_classNames, "Col--".concat(size), size), _defineProperty$2(_classNames, "Col--xs-".concat(sizeXS), sizeXS), _defineProperty$2(_classNames, "Col--s-".concat(sizeS), sizeS), _defineProperty$2(_classNames, "Col--m-".concat(sizeM), sizeM), _defineProperty$2(_classNames, "Col--l-".concat(sizeL), sizeL), _defineProperty$2(_classNames, "Col--xl-".concat(sizeXL), sizeXL), _defineProperty$2(_classNames, "".concat(className), className), _classNames));
     return /*#__PURE__*/React__namespace.createElement("div", _extends$3({
-      ref: ref
+      ref: ref,
+      "data-test": "DesignSystem-Column"
     }, rest, {
       className: classes
     }), children);
@@ -4466,7 +4426,7 @@
     }));
   };
 
-  var _excluded$p = ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect"];
+  var _excluded$q = ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect"];
   var DatePicker = /*#__PURE__*/function (_React$Component) {
     _inherits$1(DatePicker, _React$Component);
 
@@ -4598,7 +4558,7 @@
             disabledAfter = _this$props4.disabledAfter;
             _this$props4.onDateChange;
             _this$props4.closeOnSelect;
-            var rest = _objectWithoutProperties$1(_this$props4, _excluded$p);
+            var rest = _objectWithoutProperties$1(_this$props4, _excluded$q);
 
         var date = this.state.date;
         return /*#__PURE__*/React__namespace.createElement(Calendar, _extends$3({}, rest, {
@@ -4734,7 +4694,7 @@
   };
   TimePicker.displayName = 'TimePicker';
 
-  var _excluded$o = ["appearance", "size", "children", "className"];
+  var _excluded$p = ["appearance", "size", "children", "className"];
   var sizeMap = {
     s: 'h5',
     m: 'h4',
@@ -4749,7 +4709,7 @@
         size = props.size,
         children = props.children,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, _excluded$o);
+        rest = _objectWithoutProperties$1(props, _excluded$p);
 
     var classes = classnames((_classNames = {
       Heading: true
@@ -4767,7 +4727,7 @@
     size: 'm'
   };
 
-  var _excluded$n = ["size", "type", "minWidth", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autoFocus", "disabled", "readOnly"];
+  var _excluded$o = ["size", "type", "minWidth", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autoFocus", "disabled", "readOnly"];
   var sizeMapping$1 = {
     tiny: 12,
     regular: 16,
@@ -4807,7 +4767,7 @@
         autoFocus = props.autoFocus,
         disabled = props.disabled,
         readOnly = props.readOnly,
-        rest = _objectWithoutProperties$1(props, _excluded$n);
+        rest = _objectWithoutProperties$1(props, _excluded$o);
 
     var ref = React__namespace.useRef(null);
     React__namespace.useImperativeHandle(forwardedRef, function () {
@@ -4883,7 +4843,7 @@
   });
   Input.displayName = 'Input';
 
-  var _excluded$m = ["size", "defaultValue", "name", "placeholder", "icon", "prefix", "suffix", "error", "min", "max", "onChange", "onClick", "onBlur", "onFocus", "className", "autoFocus", "disabled", "readOnly", "value"];
+  var _excluded$n = ["size", "defaultValue", "name", "placeholder", "icon", "prefix", "suffix", "error", "min", "max", "onChange", "onClick", "onBlur", "onFocus", "className", "autoFocus", "disabled", "readOnly", "value"];
   var sizeMapping = {
     regular: 16,
     large: 20
@@ -4930,7 +4890,7 @@
         disabled = props.disabled,
         readOnly = props.readOnly,
         valueProp = props.value,
-        rest = _objectWithoutProperties$1(props, _excluded$m);
+        rest = _objectWithoutProperties$1(props, _excluded$n);
 
     var ref = React__namespace.useRef(null);
     var isUncontrolled = valueProp === undefined;
@@ -5089,7 +5049,7 @@
     return val;
   };
 
-  var _excluded$l = ["mask", "value", "placeholderChar", "validators", "clearOnEmptyBlur", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onFocus", "onClear", "className"];
+  var _excluded$m = ["mask", "value", "placeholderChar", "validators", "clearOnEmptyBlur", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onFocus", "onClear", "className"];
 
   /**
    * It works as Uncontrolled Input
@@ -5115,7 +5075,7 @@
         onFocus = props.onFocus,
         onClear = props.onClear,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, _excluded$l);
+        rest = _objectWithoutProperties$1(props, _excluded$m);
 
     var getNewCursorPosition = function getNewCursorPosition(type, position) {
       if (type === 'right') {
@@ -5358,7 +5318,7 @@
     getDefaultValue: getDefaultValue
   };
 
-  var _excluded$k = ["required", "optional", "withInput", "disabled", "children", "className"];
+  var _excluded$l = ["required", "optional", "withInput", "disabled", "children", "className"];
 
   /**
    * *NOTE: Extends props with HTMLProps<HTMLLabelElement>*
@@ -5372,7 +5332,7 @@
         disabled = props.disabled,
         children = props.children,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, _excluded$k);
+        rest = _objectWithoutProperties$1(props, _excluded$l);
 
     var baseProps = extractBaseProps(props);
     var LabelClass = classnames((_classNames = {
@@ -5514,7 +5474,7 @@
   };
   Editable.displayName = 'Editable';
 
-  var _excluded$j = ["onChange", "onClose"];
+  var _excluded$k = ["onChange", "onClose"];
   var EditableDropdown = function EditableDropdown(props) {
     var _classNames2;
 
@@ -5525,7 +5485,7 @@
 
     var onDropdownChange = dropdownOptions.onChange,
         onDropdownClose = dropdownOptions.onClose,
-        rest = _objectWithoutProperties$1(dropdownOptions, _excluded$j);
+        rest = _objectWithoutProperties$1(dropdownOptions, _excluded$k);
 
     var _React$useState = React__namespace.useState(placeholder),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -5607,7 +5567,7 @@
     dropdownOptions: {}
   };
 
-  var _excluded$i = ["children", "className", "appearance", "size", "disabled"];
+  var _excluded$j = ["children", "className", "appearance", "size", "disabled"];
   var Link = function Link(props) {
     var _classNames;
 
@@ -5616,7 +5576,7 @@
         appearance = props.appearance,
         size = props.size,
         disabled = props.disabled,
-        rest = _objectWithoutProperties$1(props, _excluded$i);
+        rest = _objectWithoutProperties$1(props, _excluded$j);
 
     var classes = classnames((_classNames = {
       Link: true
@@ -5760,12 +5720,12 @@
     labelAppearance: 'subtle'
   };
 
-  var _excluded$h = ["children", "className", "onOutsideClick"];
+  var _excluded$i = ["children", "className", "onOutsideClick"];
   var OutsideClick = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     var children = props.children,
         className = props.className,
         onOutsideClick = props.onOutsideClick,
-        rest = _objectWithoutProperties$1(props, _excluded$h);
+        rest = _objectWithoutProperties$1(props, _excluded$i);
 
     var innerRef = React__namespace.useRef(null);
     React__namespace.useImperativeHandle(ref, function () {
@@ -5797,12 +5757,12 @@
   });
   OutsideClick.displayName = 'OutsideClick';
 
-  var _excluded$g = ["appearance", "children", "className"];
+  var _excluded$h = ["appearance", "children", "className"];
   var Paragraph = function Paragraph(props) {
     var appearance = props.appearance,
         children = props.children,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, _excluded$g);
+        rest = _objectWithoutProperties$1(props, _excluded$h);
 
     var classes = classnames(_defineProperty$2({
       Text: true
@@ -5844,7 +5804,7 @@
     max: 100
   };
 
-  var _excluded$f = ["size", "label", "disabled", "onChange", "name", "value", "checked", "defaultChecked", "className"];
+  var _excluded$g = ["size", "label", "disabled", "onChange", "name", "value", "checked", "defaultChecked", "className"];
   var Radio = /*#__PURE__*/React__namespace.forwardRef(function (props, forwardedRef) {
     var _classNames, _classNames2, _classNames3;
 
@@ -5858,7 +5818,7 @@
         checked = props.checked,
         defaultChecked = props.defaultChecked,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, _excluded$f);
+        rest = _objectWithoutProperties$1(props, _excluded$g);
 
     var ref = React__namespace.useRef(null);
     React__namespace.useImperativeHandle(forwardedRef, function () {
@@ -5895,11 +5855,11 @@
   });
   Radio.displayName = 'Radio';
 
-  var _excluded$e = ["className", "children"];
+  var _excluded$f = ["className", "children"];
   var Row = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     var className = props.className,
         children = props.children,
-        rest = _objectWithoutProperties$1(props, _excluded$e);
+        rest = _objectWithoutProperties$1(props, _excluded$f);
 
     var classes = classnames(_defineProperty$2({
       Row: true
@@ -5971,6 +5931,40 @@
   Pills.displayName = 'Pills';
   Pills.defaultProps = {
     appearance: 'secondary'
+  };
+
+  var Spinner = function Spinner(props) {
+    var appearance = props.appearance,
+        size = props.size,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
+    var wrapperClasses = classnames(_defineProperty$2({
+      Spinner: true
+    }, "Spinner--".concat(size), size), className);
+    var circleClasses = classnames(_defineProperty$2({
+      Circle: true
+    }, "Circle--".concat(appearance), appearance));
+    var svgProps = {
+      viewBox: '0 0 50 50'
+    };
+    var circleProps = {
+      cx: 25,
+      cy: 25,
+      r: 20,
+      fill: 'none',
+      strokeMiterlimit: '10',
+      strokeWidth: '4'
+    };
+    return /*#__PURE__*/React__namespace.createElement("svg", _extends$3({}, baseProps, {
+      className: wrapperClasses
+    }, svgProps), /*#__PURE__*/React__namespace.createElement("circle", _extends$3({
+      className: circleClasses
+    }, circleProps)));
+  };
+  Spinner.displayName = 'Spinner';
+  Spinner.defaultProps = {
+    appearance: 'primary',
+    size: 'medium'
   };
 
   var ARROW_LEFT = 37;
@@ -6054,7 +6048,8 @@
       _this = _super.call.apply(_super, [this].concat(args));
 
       _defineProperty$2(_assertThisInitialized$2(_this), "state", {
-        isMoving: false
+        isHandleMoving: false,
+        isHandleHovered: false
       });
 
       _defineProperty$2(_assertThisInitialized$2(_this), "handleElement", null);
@@ -6114,7 +6109,7 @@
         _this.removeDocumentEventListeners();
 
         _this.setState({
-          isMoving: false
+          isHandleMoving: false
         });
 
         var finalValue = _this.changeValue(_this.clientToValue(clientPixel));
@@ -6125,7 +6120,7 @@
       _defineProperty$2(_assertThisInitialized$2(_this), "continueHandleMovement", function (event) {
         var clientPixel = _this.mouseEventClientOffset(event);
 
-        if (_this.state.isMoving && !_this.props.disabled) {
+        if (_this.state.isHandleMoving && !_this.props.disabled) {
           var value = _this.clientToValue(clientPixel);
 
           _this.changeValue(value);
@@ -6138,7 +6133,7 @@
         document.addEventListener('mouseup', _this.endHandleMovement);
 
         _this.setState({
-          isMoving: true
+          isHandleMoving: true
         });
 
         var value = _this.clientToValue(event.clientX);
@@ -6192,6 +6187,18 @@
         };
       });
 
+      _defineProperty$2(_assertThisInitialized$2(_this), "handleMouseOver", function () {
+        _this.setState({
+          isHandleHovered: true
+        });
+      });
+
+      _defineProperty$2(_assertThisInitialized$2(_this), "handleMouseLeave", function () {
+        _this.setState({
+          isHandleHovered: false
+        });
+      });
+
       _defineProperty$2(_assertThisInitialized$2(_this), "removeDocumentEventListeners", function () {
         document.removeEventListener('mousemove', _this.continueHandleMovement);
         document.removeEventListener('mouseup', _this.endHandleMovement);
@@ -6208,21 +6215,26 @@
     }, {
       key: "componentDidUpdate",
       value: function componentDidUpdate(_prevProps, prevState) {
-        if (prevState.isMoving !== this.state.isMoving) {
+        if (prevState.isHandleMoving !== this.state.isHandleMoving) {
           if (this.handleElement) this.handleElement.focus();
         }
       }
     }, {
       key: "render",
       value: function render() {
-        var _classNames;
+        var _classNames, _classNames2;
 
         var _this$props3 = this.props,
             min = _this$props3.min,
             tickSizeRatio = _this$props3.tickSizeRatio,
             value = _this$props3.value,
             disabled = _this$props3.disabled,
-            label = _this$props3.label;
+            label = _this$props3.label,
+            isCurrentLabelHovered = _this$props3.isCurrentLabelHovered;
+        var _this$state = this.state,
+            isHandleMoving = _this$state.isHandleMoving,
+            isHandleHovered = _this$state.isHandleHovered;
+        var showTootlip = isHandleMoving || isHandleHovered || isCurrentLabelHovered;
 
         var _this$getHandleMidpoi2 = this.getHandleMidpointAndOffset(this.handleElement, true),
             handleMidpoint = _this$getHandleMidpoi2.handleMidpoint;
@@ -6232,22 +6244,22 @@
         var style = {
           left: offsetCalc
         };
-        var className = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Slider-handle', true), _defineProperty$2(_classNames, 'Slider-handle--disabled', disabled), _defineProperty$2(_classNames, 'Slider-handle--active', this.state.isMoving), _classNames));
-        return /*#__PURE__*/React__namespace.createElement("div", {
+        var className = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Slider-handle', true), _defineProperty$2(_classNames, 'Slider-handle--disabled', disabled), _defineProperty$2(_classNames, 'Slider-handle--active', isHandleMoving), _classNames));
+        var TooltipClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Slider-tooltip', true), _defineProperty$2(_classNames2, 'Tooltip', true), _defineProperty$2(_classNames2, 'd-none', !showTootlip), _classNames2));
+        return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
           className: className,
+          onMouseOver: this.handleMouseOver,
+          onMouseLeave: this.handleMouseLeave,
           onMouseDown: this.beginHandleMovement,
           onKeyDown: this.handleKeyDown,
           onKeyUp: this.handleKeyUp,
           ref: this.refHandlers.handle,
           style: style,
           tabIndex: 1
-        }, !this.state.isMoving && /*#__PURE__*/React__namespace.createElement(Tooltip, {
-          tooltip: label,
-          position: "top",
-          triggerClass: 'Slider-tooltip'
-        }, /*#__PURE__*/React__namespace.createElement("span", {
-          className: "h-100 w-100"
-        })));
+        }), /*#__PURE__*/React__namespace.createElement("div", {
+          className: TooltipClass,
+          style: style
+        }, label));
       }
     }]);
 
@@ -6424,6 +6436,16 @@
         }
       });
 
+      _defineProperty$2(_assertThisInitialized$2(_this), "formatLabel", function (value) {
+        var labelRenderer = _this.props.labelRenderer;
+
+        if (typeof labelRenderer === 'function') {
+          return labelRenderer(value);
+        }
+
+        return value.toFixed(_this.state.labelPrecision);
+      });
+
       _defineProperty$2(_assertThisInitialized$2(_this), "renderHandles", function () {
         var _this$props = _this.props,
             disabled = _this$props.disabled,
@@ -6439,6 +6461,7 @@
 
         return handleProps.map(function (_ref2, index) {
           var value = _ref2.value;
+          var isCurrentLabelHovered = _this.state.hoveredLabelValue === Number(value.toFixed(_this.state.labelPrecision));
           return /*#__PURE__*/React__namespace.createElement(Handle, {
             disabled: disabled,
             key: "".concat(index, "-").concat(handleProps.length),
@@ -6450,24 +6473,15 @@
             onChange: function onChange(newValue) {
               return _this.onChangeHandler(newValue, index);
             },
-            label: value.toFixed(_this.state.labelPrecision),
+            label: _this.formatLabel(value),
             ref: _this.addHandleRef,
             stepSize: stepSize,
             tickSize: _this.state.tickSize,
             tickSizeRatio: _this.state.tickSizeRatio,
-            value: value
+            value: value,
+            isCurrentLabelHovered: isCurrentLabelHovered
           });
         });
-      });
-
-      _defineProperty$2(_assertThisInitialized$2(_this), "formatLabel", function (value) {
-        var labelRenderer = _this.props.labelRenderer;
-
-        if (typeof labelRenderer === 'function') {
-          return labelRenderer(value);
-        }
-
-        return value.toFixed(_this.state.labelPrecision);
       });
 
       _defineProperty$2(_assertThisInitialized$2(_this), "renderLabels", function () {
@@ -6486,22 +6500,44 @@
           return handle.value.toFixed(_this.state.labelPrecision);
         });
 
-        for (var i = min, offsetRatio = 0; i < max || approxEqual(i, max); i += labelStepSize, offsetRatio += stepSizeRatio) {
+        var _loop = function _loop(i, offsetRatio) {
           var offsetPercentage = formatPercentage(offsetRatio);
           var style = {
             left: offsetPercentage
           };
           var active = !disabled && activeLabels.indexOf(i.toFixed(_this.state.labelPrecision)) !== -1;
+
+          var onClickHandler = function onClickHandler(event) {
+            if (!_this.props.disabled) {
+              var foundHandle = _this.nearestHandleForValue(_this.handleElements, function (handle) {
+                return handle.mouseEventClientOffset(event);
+              });
+
+              if (foundHandle) {
+                foundHandle.changeValue(i);
+              }
+            }
+          };
+
           labels.push( /*#__PURE__*/React__namespace.createElement("div", {
+            onClick: onClickHandler,
             className: 'Slider-label',
             key: i,
-            style: style
+            style: style,
+            onMouseOver: function onMouseOver() {
+              return _this.handleLabelMouseOver(i);
+            },
+            onMouseLeave: _this.handleLabelMouseLeave
           }, /*#__PURE__*/React__namespace.createElement("span", {
             className: 'Slider-ticks'
           }), labelRenderer !== false && /*#__PURE__*/React__namespace.createElement(Text, {
             size: "small",
             appearance: active ? 'default' : 'disabled'
           }, _this.formatLabel(i))));
+        };
+
+        for (var i = min, offsetRatio = 0; i < max || approxEqual(i, max); i += labelStepSize, offsetRatio += stepSizeRatio) {
+          _loop(i, offsetRatio);
         }
 
         return labels;
@@ -6552,6 +6588,18 @@
           previous = current;
         });
         return handles;
+      });
+
+      _defineProperty$2(_assertThisInitialized$2(_this), "handleLabelMouseOver", function (value) {
+        _this.setState({
+          hoveredLabelValue: value
+        });
+      });
+
+      _defineProperty$2(_assertThisInitialized$2(_this), "handleLabelMouseLeave", function () {
+        _this.setState({
+          hoveredLabelValue: undefined
+        });
       });
 
       _this.state = {
@@ -6613,15 +6661,15 @@
         }), label && /*#__PURE__*/React__namespace.createElement(Label, {
           withInput: true
         }, label), /*#__PURE__*/React__namespace.createElement("div", {
-          className: WrapperClass,
-          onMouseDown: this.maybeHandleTrackClick
+          className: WrapperClass
         }, /*#__PURE__*/React__namespace.createElement("div", {
           className: "Slider-track",
           ref: function ref(_ref3) {
             return _this2.trackElement = _ref3;
-          }
+          },
+          onMouseDown: this.maybeHandleTrackClick
         }, this.renderTracks()), /*#__PURE__*/React__namespace.createElement("div", {
-          className: "Slider-axis'"
+          className: "Slider-axis"
         }, this.renderLabels()), this.renderHandles()));
       }
     }]);
@@ -6639,13 +6687,13 @@
 
   _defineProperty$2(MultiSlider, "Handle", MultiSliderHandle);
 
-  var _excluded$d = ["value", "defaultValue", "onRelease", "onChange"];
+  var _excluded$e = ["value", "defaultValue", "onRelease", "onChange"];
   var Slider = function Slider(props) {
     var valueProp = props.value,
         defaultValue = props.defaultValue,
         onRelease = props.onRelease,
         onChange = props.onChange,
-        rest = _objectWithoutProperties$1(props, _excluded$d);
+        rest = _objectWithoutProperties$1(props, _excluded$e);
 
     var _React$useState = React__namespace.useState(valueProp === undefined ? defaultValue : valueProp),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -6678,7 +6726,7 @@
     defaultValue: 0
   });
 
-  var _excluded$c = ["value", "defaultValue", "onChange", "onRelease"];
+  var _excluded$d = ["value", "defaultValue", "onChange", "onRelease"];
   var RangeIndex;
 
   (function (RangeIndex) {
@@ -6691,7 +6739,7 @@
         defaultValue = props.defaultValue,
         onChange = props.onChange,
         onRelease = props.onRelease,
-        rest = _objectWithoutProperties$1(props, _excluded$c);
+        rest = _objectWithoutProperties$1(props, _excluded$d);
 
     var _React$useState = React__namespace.useState(valueProp === undefined ? defaultValue : valueProp),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -6727,12 +6775,12 @@
     defaultValue: [0, 10]
   });
 
-  var _excluded$b = ["appearance", "children", "className"];
+  var _excluded$c = ["appearance", "children", "className"];
   var Subheading = function Subheading(props) {
     var appearance = props.appearance,
         children = props.children,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, _excluded$b);
+        rest = _objectWithoutProperties$1(props, _excluded$c);
 
     var classes = classnames(_defineProperty$2({
       Subheading: true
@@ -6749,7 +6797,7 @@
     appearance: 'default'
   };
 
-  var _excluded$a = ["size", "defaultChecked", "disabled", "onChange", "name", "value", "className", "appearance", "checked"];
+  var _excluded$b = ["size", "defaultChecked", "disabled", "onChange", "name", "value", "className", "appearance", "checked"];
 
   /**
    * ######Switch has two types:
@@ -6769,7 +6817,7 @@
         className = props.className;
         props.appearance;
         var checkedProp = props.checked,
-        rest = _objectWithoutProperties$1(props, _excluded$a);
+        rest = _objectWithoutProperties$1(props, _excluded$b);
 
     var _React$useState = React__namespace.useState(checkedProp === undefined ? defaultChecked : checkedProp),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -6805,7 +6853,7 @@
   });
   Switch.displayName = 'Switch';
 
-  var _excluded$9 = ["rows", "resize", "disabled", "name", "placeholder", "value", "defaultValue", "required", "error", "onChange", "onClick", "onBlur", "onFocus", "className"];
+  var _excluded$a = ["rows", "resize", "disabled", "name", "placeholder", "value", "defaultValue", "required", "error", "onChange", "onClick", "onBlur", "onFocus", "className"];
   var Textarea = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
     var _classNames;
 
@@ -6825,7 +6873,7 @@
         onBlur = props.onBlur,
         onFocus = props.onFocus,
         className = props.className,
-        rest = _objectWithoutProperties$1(props, _excluded$9);
+        rest = _objectWithoutProperties$1(props, _excluded$a);
 
     var classes = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Textarea', true), _defineProperty$2(_classNames, 'Textarea--resize', resize), _defineProperty$2(_classNames, 'Textarea--error', error), _classNames), className);
     return /*#__PURE__*/React__namespace.createElement("textarea", _extends$3({
@@ -11839,7 +11887,7 @@
     style: {}
   });
 
-  var _excluded$8 = ["position", "customStyle", "dark", "children", "onToggle", "className", "hideOnReferenceEscape", "boundaryElement"];
+  var _excluded$9 = ["position", "customStyle", "dark", "children", "onToggle", "className", "hideOnReferenceEscape", "boundaryElement"];
   var propsList$1 = ['appendToBody', 'trigger', 'hoverable', 'on', 'open', 'closeOnBackdropClick', 'offset', 'closeOnScroll'];
   var Popover = function Popover(props) {
     var position = props.position,
@@ -11850,7 +11898,7 @@
         className = props.className,
         hideOnReferenceEscape = props.hideOnReferenceEscape,
         boundaryElement = props.boundaryElement,
-        rest = _objectWithoutProperties$1(props, _excluded$8);
+        rest = _objectWithoutProperties$1(props, _excluded$9);
 
     var _React$useState = React__namespace.useState(!!props.open),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -11909,7 +11957,7 @@
     boundaryElement: document.body
   });
 
-  var _excluded$7 = ["type", "onClick"];
+  var _excluded$8 = ["type", "onClick"];
   var keyCodes = {
     BACKSPACE: 'Backspace',
     DELETE: 'Delete',
@@ -12026,7 +12074,7 @@
       var _chipOptions$type = chipOptions.type,
           type = _chipOptions$type === void 0 ? 'input' : _chipOptions$type,
           _onClick = chipOptions.onClick,
-          rest = _objectWithoutProperties$1(chipOptions, _excluded$7);
+          rest = _objectWithoutProperties$1(chipOptions, _excluded$8);
 
       return /*#__PURE__*/React__namespace.createElement(Chip, _extends$3({
         "data-test": "DesignSystem-ChipInput--Chip",
@@ -12372,12 +12420,12 @@
     }), list);
   };
 
-  var _excluded$6 = ["children", "tooltip"];
+  var _excluded$7 = ["children", "tooltip"];
   var propsList = ['trigger', 'on', 'open', 'offset', 'onToggle', 'dark', 'customStyle', 'closeOnBackdropClick', 'hideOnReferenceEscape', 'closeOnScroll'];
   var Tooltip = function Tooltip(props) {
     var children = props.children,
         tooltip = props.tooltip,
-        rest = _objectWithoutProperties$1(props, _excluded$6);
+        rest = _objectWithoutProperties$1(props, _excluded$7);
 
     var tooltipWrapper = /*#__PURE__*/React__namespace.createElement("div", {
       className: "Tooltip"
@@ -12445,6 +12493,116 @@
     secondaryButtonAppearance: 'basic'
   };
 
+  var _excluded$6 = ["label"];
+  var OverlayFooter = function OverlayFooter(props) {
+    var open = props.open,
+        className = props.className,
+        children = props.children,
+        actions = props.actions;
+    var baseProps = extractBaseProps(props);
+    var classes = classnames({
+      OverlayFooter: true
+    }, className);
+    var wrapperRef = /*#__PURE__*/React__namespace.createRef();
+    React__namespace.useEffect(function () {
+      if (open) {
+        if (wrapperRef.current) {
+          var _wrapperRef$current;
+
+          var secondaryBtns = (_wrapperRef$current = wrapperRef.current) === null || _wrapperRef$current === void 0 ? void 0 : _wrapperRef$current.querySelectorAll('.Button--basic');
+          var secondaryBtn = secondaryBtns[secondaryBtns.length - 1];
+
+          if (secondaryBtn) {
+            window.requestAnimationFrame(function () {
+              return secondaryBtn.focus({
+                preventScroll: true
+              });
+            });
+          }
+        }
+      }
+    }, [open]);
+
+    if (actions) {
+      return /*#__PURE__*/React__namespace.createElement("div", _extends$3({
+        ref: wrapperRef
+      }, baseProps, {
+        className: classes
+      }), actions.map(function (_ref, index) {
+        _ref.label;
+            var options = _objectWithoutProperties$1(_ref, _excluded$6);
+
+        return /*#__PURE__*/React__namespace.createElement(Button, _extends$3({}, options, {
+          key: index
+        }));
+      }));
+    }
+
+    return /*#__PURE__*/React__namespace.createElement("div", _extends$3({
+      "data-test": "DesignSystem-OverlayFooter",
+      ref: wrapperRef
+    }, baseProps, {
+      className: classes
+    }), children);
+  };
+  OverlayFooter.displayName = 'OverlayFooter';
+
+  var OverlayHeader = function OverlayHeader(props) {
+    var _classNames2;
+
+    var className = props.className,
+        heading = props.heading,
+        subHeading = props.subHeading,
+        backButton = props.backButton,
+        backIcon = props.backIcon,
+        backIconCallback = props.backIconCallback,
+        backButtonCallback = props.backButtonCallback;
+    var baseProps = extractBaseProps(props);
+    var classes = classnames(_defineProperty$2({
+      OverlayHeader: true
+    }, 'OverlayHeader--withBackButton', backButton || backIcon), className);
+    var subheadingClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'OverlayHeader-subheading', true), _defineProperty$2(_classNames2, 'OverlayHeader-subheading--withBackButton', backButton || backIcon), _classNames2));
+    return /*#__PURE__*/React__namespace.createElement("div", _extends$3({
+      "data-test": "DesignSystem-OverlayHeader"
+    }, baseProps, {
+      className: classes
+    }), /*#__PURE__*/React__namespace.createElement("div", {
+      className: "OverlayHeader-headerWrapper"
+    }, (backButton || backIcon) && /*#__PURE__*/React__namespace.createElement(Button, {
+      "data-test": "DesignSystem-OverlayHeader--Button",
+      appearance: "transparent",
+      className: "mr-5",
+      icon: "keyboard_backspace",
+      onClick: backButtonCallback || backIconCallback
+    }), heading && /*#__PURE__*/React__namespace.createElement(Heading, {
+      "data-test": "DesignSystem-OverlayHeader--heading"
+    }, heading)), subHeading && /*#__PURE__*/React__namespace.createElement(Text, {
+      "data-test": "DesignSystem-OverlayHeader--Subheading",
+      appearance: "subtle",
+      className: subheadingClass
+    }, subHeading));
+  };
+  OverlayHeader.displayName = 'OverlayHeader';
+
+  var OverlayBody = function OverlayBody(props) {
+    var children = props.children,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
+    var classes = classnames({
+      OverlayBody: true
+    }, className);
+    return /*#__PURE__*/React__namespace.createElement("div", _extends$3({
+      "data-test": "DesignSystem-OverlayBody"
+    }, baseProps, {
+      className: classes
+    }), children);
+  };
+  OverlayBody.defaultProps = {
+    stickFooter: true,
+    withFooter: true
+  };
+  OverlayBody.displayName = 'OverlayBody';
+
   var getWrapperElement = function getWrapperElement() {
     var element = document.querySelector('.Overlay-wrapper');
 
@@ -12475,11 +12633,8 @@
   };
 
   /**
-   * ** NOTE: Use `headerOptions`, `footer`, `onClose` and `backdropClose`(boolean). **
+   * ** NOTE: Use `headerOptions`, `header`, `footerOptions`, `footer`, `onClose` and `backdropClose`(boolean). **
    * ** Support for composition using `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **
-   *
-   * ** NOT RECOMMENDED: Only use composition of `ModalHeader`, `ModalBody` and `ModalFooter` **
-   * ** when you are not using `headerOptions` or `footer` **
    */
   var Modal = /*#__PURE__*/function (_React$Component) {
     _inherits$1(Modal, _React$Component);
@@ -12551,7 +12706,7 @@
     }, {
       key: "render",
       value: function render() {
-        var _classNames;
+        var _classNames, _classNames2, _classNames3;
 
         var _this$state = this.state,
             animate = _this$state.animate,
@@ -12563,15 +12718,20 @@
             dimension = _this$props2.dimension,
             children = _this$props2.children,
             headerOptions = _this$props2.headerOptions,
+            header = _this$props2.header,
+            footerOptions = _this$props2.footerOptions,
+            seperator = _this$props2.seperator,
             footer = _this$props2.footer,
-            _onClose = _this$props2.onClose;
+            onClose = _this$props2.onClose;
         var classes = classnames({
           Modal: true,
           'Modal--open': open,
           'Modal-animation--open': animate,
           'Modal-animation--close': !animate
         }, className);
-        var ContainerClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Row', true), _defineProperty$2(_classNames, 'Overlay-container', true), _defineProperty$2(_classNames, 'Overlay-container--open', open), _classNames));
+        var headerClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Modal-header', true), _defineProperty$2(_classNames, 'Modal-header--withSeperator', seperator), _classNames));
+        var footerClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Modal-footer', true), _defineProperty$2(_classNames2, 'Modal-footer--withSeperator', seperator), _classNames2));
+        var ContainerClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Row', true), _defineProperty$2(_classNames3, 'Overlay-container', true), _defineProperty$2(_classNames3, 'Overlay-container--open', open), _classNames3));
         var baseProps = extractBaseProps(this.props);
         var sizeMap = {
           small: {
@@ -12606,15 +12766,27 @@
           className: classes
         }, sizeMap[dimension], {
           ref: this.modalRef
-        }), headerOptions && /*#__PURE__*/React__namespace.createElement(ModalHeader, _extends$3({
-          onClose: function onClose(event, reason) {
-            if (_onClose) _onClose(event, reason);
+        }), (headerOptions || header) && /*#__PURE__*/React__namespace.createElement("div", {
+          className: headerClass
+        }, /*#__PURE__*/React__namespace.createElement(Column, null, !header && /*#__PURE__*/React__namespace.createElement(OverlayHeader, _extends$3({
+          "data-test": "DesignSystem-Modal--header"
+        }, headerOptions)), !!header && header), /*#__PURE__*/React__namespace.createElement(Column, {
+          className: "flex-grow-0"
+        }, /*#__PURE__*/React__namespace.createElement(Button, {
+          icon: "close",
+          appearance: "transparent",
+          "data-test": "DesignSystem-Modal--CloseButton",
+          onClick: function onClick(event) {
+            if (onClose) onClose(event, 'IconClick');
           }
-        }, headerOptions)), children && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, headerOptions || footer ? /*#__PURE__*/React__namespace.createElement(ModalBody, {
-          withFooter: !!footer
-        }, children) : children), footer && /*#__PURE__*/React__namespace.createElement(ModalFooter, {
-          open: open
-        }, footer)));
+        }))), children && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, headerOptions || footerOptions || footer || header ? /*#__PURE__*/React__namespace.createElement(OverlayBody, {
+          className: "Modal-body"
+        }, this.props.children) : children), (!!footer || !!footerOptions) && /*#__PURE__*/React__namespace.createElement(OverlayFooter, _extends$3({
+          "data-test": "DesignSystem-Modal--footer"
+        }, footerOptions, {
+          open: open,
+          className: footerClass
+        }), footer)));
         var ModalWrapper = backdropClose ? /*#__PURE__*/React__namespace.createElement(OutsideClick, {
           "data-test": "DesignSystem-Modal--OutsideClick",
           onOutsideClick: this.onOutsideClickHandler
@@ -12633,76 +12805,71 @@
     dimension: 'medium'
   });
 
-  var ModalHeader$1 = function ModalHeader(props) {
+  var ModalHeader = function ModalHeader(props) {
     var className = props.className,
         heading = props.heading,
         subHeading = props.subHeading,
-        backButton = props.backButton,
-        backButtonCallback = props.backButtonCallback;
+        onClose = props.onClose,
+        seperator = props.seperator,
+        backIcon = props.backIcon,
+        backIconCallback = props.backIconCallback;
     var baseProps = extractBaseProps(props);
     var classes = classnames(_defineProperty$2({
-      'FullscreenModal-header': true
-    }, 'FullscreenModal-header--backButton', backButton), className);
-    return /*#__PURE__*/React__namespace.createElement("div", _extends$3({
-      "data-test": "DesignSystem-ModalHeader"
-    }, baseProps, {
+      'Modal-header': true
+    }, 'Modal-header--withSeperator', seperator), className);
+    return /*#__PURE__*/React__namespace.createElement("div", _extends$3({}, baseProps, {
       className: classes
-    }), /*#__PURE__*/React__namespace.createElement("div", {
-      className: "FullscreenModal-headerWrapper"
-    }, backButton && /*#__PURE__*/React__namespace.createElement(Icon, {
-      name: "keyboard_backspace",
-      size: 20,
-      className: "mr-5 cursor-pointer",
-      onClick: backButtonCallback
-    }), heading && /*#__PURE__*/React__namespace.createElement(Heading, null, heading)), subHeading && /*#__PURE__*/React__namespace.createElement(Text, {
-      "data-test": "DesignSystem-ModalHeader--Subheading",
-      appearance: "subtle",
-      className: "mt-2"
-    }, subHeading));
-  };
-  ModalHeader$1.displayName = 'ModalHeader';
-
-  var _excluded$5 = ["label"];
-  var ModalFooter$1 = function ModalFooter(props) {
-    var open = props.open,
-        actions = props.actions;
-    var baseProps = extractBaseProps(props);
-    var wrapperRef = /*#__PURE__*/React__namespace.createRef();
-    React__namespace.useEffect(function () {
-      if (open) {
-        if (wrapperRef.current) {
-          var _wrapperRef$current;
-
-          var secondaryBtns = (_wrapperRef$current = wrapperRef.current) === null || _wrapperRef$current === void 0 ? void 0 : _wrapperRef$current.querySelectorAll('.Button--basic');
-          var secondaryBtn = secondaryBtns[secondaryBtns.length - 1];
-
-          if (secondaryBtn) {
-            window.requestAnimationFrame(function () {
-              return secondaryBtn.focus({
-                preventScroll: true
-              });
-            });
-          }
-        }
+    }), /*#__PURE__*/React__namespace.createElement(Column, null, /*#__PURE__*/React__namespace.createElement(OverlayHeader, {
+      heading: heading,
+      subHeading: subHeading,
+      backButton: backIcon,
+      backButtonCallback: backIconCallback
+    })), /*#__PURE__*/React__namespace.createElement(Column, {
+      className: "flex-grow-0"
+    }, /*#__PURE__*/React__namespace.createElement(Button, {
+      icon: "close",
+      appearance: "transparent",
+      "data-test": "DesignSystem-Modal--CloseButton",
+      onClick: function onClick(event) {
+        if (onClose) onClose(event, 'IconClick');
       }
-    }, [open]);
-    return /*#__PURE__*/React__namespace.createElement("div", _extends$3({
-      ref: wrapperRef
-    }, baseProps, {
-      className: "d-flex"
-    }), actions.map(function (_ref, index) {
-      _ref.label;
-          var options = _objectWithoutProperties$1(_ref, _excluded$5);
+    })));
+  };
+  ModalHeader.displayName = 'ModalHeader';
 
-      return /*#__PURE__*/React__namespace.createElement(Button, _extends$3({}, options, {
-        key: index
-      }));
-    }));
+  var ModalBody = function ModalBody(props) {
+    var children = props.children,
+        className = props.className;
+    var baseProps = extractBaseProps(props);
+    var classes = classnames({
+      'Modal-body': true
+    }, className);
+    return /*#__PURE__*/React__namespace.createElement(OverlayBody, _extends$3({}, baseProps, {
+      stickFooter: true,
+      className: classes
+    }), children);
   };
-  ModalFooter$1.defaultProps = {
-    actions: []
+  ModalBody.defaultProps = {
+    stickFooter: true,
+    withFooter: true
   };
-  ModalFooter$1.displayName = 'ModalFooter';
+  ModalBody.displayName = 'ModalBody';
+
+  var ModalFooter = function ModalFooter(props) {
+    var _classNames;
+
+    var open = props.open,
+        children = props.children,
+        className = props.className,
+        seperator = props.seperator;
+    var baseProps = extractBaseProps(props);
+    var classes = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Modal-footer', true), _defineProperty$2(_classNames, 'Modal-footer--withSeperator', seperator), _classNames), className);
+    return /*#__PURE__*/React__namespace.createElement(OverlayFooter, _extends$3({}, baseProps, {
+      open: open,
+      className: classes
+    }), children);
+  };
+  ModalFooter.displayName = 'ModalFooter';
 
   var FullscreenModal = /*#__PURE__*/function (_React$Component) {
     _inherits$1(FullscreenModal, _React$Component);
@@ -12813,26 +12980,27 @@
         }), /*#__PURE__*/React__namespace.createElement(Row, {
           className: "justify-content-center"
         }, /*#__PURE__*/React__namespace.createElement(Column, sizeMap[dimension], /*#__PURE__*/React__namespace.createElement(Row, {
-          className: "justify-content-between pt-6 pr-6 pb-5 pl-7"
-        }, /*#__PURE__*/React__namespace.createElement(Column, null, !header && /*#__PURE__*/React__namespace.createElement(ModalHeader$1, headerOptions), !!header && header), /*#__PURE__*/React__namespace.createElement(Column, {
-          className: "pr-2 flex-grow-0"
-        }, /*#__PURE__*/React__namespace.createElement(Icon, {
-          size: 20,
-          name: 'close',
-          className: "cursor-pointer pt-3",
-          "data-test": "DesignSystem-ModalHeader--CloseIcon",
+          className: "FullscreenModal-header"
+        }, /*#__PURE__*/React__namespace.createElement(Column, null, !header && /*#__PURE__*/React__namespace.createElement(OverlayHeader, _extends$3({
+          "data-test": "DesignSystem-FullscreenModal--header"
+        }, headerOptions)), !!header && header), /*#__PURE__*/React__namespace.createElement(Column, {
+          className: "flex-grow-0"
+        }, /*#__PURE__*/React__namespace.createElement(Button, {
+          icon: "close",
+          appearance: "transparent",
+          "data-test": "DesignSystem-FullscreenModal--CloseButton",
           onClick: function onClick(event) {
             if (onClose) onClose(event, 'IconClick');
           }
-        }))), /*#__PURE__*/React__namespace.createElement("div", {
-          "data-test": "DesignSystem-ModalBody",
+        }))), /*#__PURE__*/React__namespace.createElement(OverlayBody, {
+          "data-test": "DesignSystem-FullscreenModal--Body",
           className: "FullscreenModal-body"
-        }, children), (!!footer || !!footerOptions) && /*#__PURE__*/React__namespace.createElement("div", {
-          "data-test": "DesignSystem-ModalFooter",
-          className: "d-flex justify-content-end p-7"
-        }, !footer && /*#__PURE__*/React__namespace.createElement(ModalFooter$1, _extends$3({}, footerOptions, {
-          open: open
-        })), !!footer && footer)))));
+        }, children), (!!footer || !!footerOptions) && /*#__PURE__*/React__namespace.createElement(OverlayFooter, _extends$3({
+          "data-test": "DesignSystem-FullscreenModal--footer"
+        }, footerOptions, {
+          open: open,
+          className: "FullscreenModal-footer"
+        }), footer)))));
         var WrapperElement = /*#__PURE__*/ReactDOM__namespace.createPortal(ModalContainer, this.element);
         return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, WrapperElement);
       }
@@ -12918,7 +13086,7 @@
     }, {
       key: "render",
       value: function render() {
-        var _classNames;
+        var _classNames, _classNames2, _classNames3, _classNames4;
 
         var _this$state = this.state,
             animate = _this$state.animate,
@@ -12932,7 +13100,9 @@
             seperator = _this$props.seperator,
             stickFooter = _this$props.stickFooter,
             headerOptions = _this$props.headerOptions,
-            _onClose = _this$props.onClose;
+            footerOptions = _this$props.footerOptions,
+            header = _this$props.header,
+            onClose = _this$props.onClose;
         var classes = classnames({
           Sidesheet: true,
           'Sidesheet--open': open,
@@ -12940,12 +13110,10 @@
           'Sidesheet-animation--close': !animate
         }, className);
         var ContainerClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Overlay-container', true), _defineProperty$2(_classNames, 'Overlay-container--open', open), _classNames));
+        var headerClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Sidesheet-header', true), _defineProperty$2(_classNames2, 'Sidesheet-header--withSeperator', seperator), _classNames2));
+        var footerClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Sidesheet-footer', true), _defineProperty$2(_classNames3, 'Sidesheet-footer--withSeperator', seperator), _defineProperty$2(_classNames3, 'Sidesheet-footer--stickToBottom', stickFooter), _classNames3));
+        var bodyClass = classnames((_classNames4 = {}, _defineProperty$2(_classNames4, 'Sidesheet-body', true), _defineProperty$2(_classNames4, 'Sidesheet-body--withMargin', !!footer && stickFooter), _classNames4));
         var baseProps = extractBaseProps(this.props);
-
-        var headerObj = _objectSpread2(_objectSpread2({}, headerOptions), {}, {
-          seperator: seperator
-        });
-
         var SidesheetContainer = /*#__PURE__*/React__namespace.createElement(Row, {
           "data-test": "DesignSystem-SidesheetContainer",
           className: ContainerClass,
@@ -12959,18 +13127,28 @@
         }, baseProps, {
           className: classes,
           size: sidesheetWidth[dimension]
-        }), /*#__PURE__*/React__namespace.createElement(ModalHeader, _extends$3({
-          onClose: function onClose(event, reason) {
-            if (_onClose) _onClose(event, reason);
+        }), /*#__PURE__*/React__namespace.createElement("div", {
+          className: headerClass
+        }, /*#__PURE__*/React__namespace.createElement(Column, {
+          "data-test": "DesignSystem-Sidesheet--Header"
+        }, !header && /*#__PURE__*/React__namespace.createElement(OverlayHeader, headerOptions), !!header && header), /*#__PURE__*/React__namespace.createElement(Column, {
+          className: "flex-grow-0"
+        }, /*#__PURE__*/React__namespace.createElement(Button, {
+          icon: "close",
+          appearance: "transparent",
+          "data-test": "DesignSystem-Sidesheet--CloseButton",
+          onClick: function onClick(event) {
+            if (onClose) onClose(event, 'IconClick');
           }
-        }, headerObj)), /*#__PURE__*/React__namespace.createElement(ModalBody, {
-          stickFooter: stickFooter,
-          withFooter: !!footer
-        }, this.props.children), footer && /*#__PURE__*/React__namespace.createElement(ModalFooter, {
-          inSidesheet: true,
-          stickToBottom: stickFooter,
-          seperator: seperator
-        }, footer)));
+        }))), /*#__PURE__*/React__namespace.createElement(OverlayBody, {
+          "data-test": "DesignSystem-Sidesheet--OverlayBody",
+          className: bodyClass
+        }, this.props.children), (!!footer || !!footerOptions) && /*#__PURE__*/React__namespace.createElement(OverlayFooter, _extends$3({
+          "data-test": "DesignSystem-Sidesheet--Footer"
+        }, footerOptions, {
+          open: open,
+          className: footerClass
+        }), footer)));
         var SidesheetWrapper = backdropClose ? /*#__PURE__*/React__namespace.createElement(OutsideClick, {
           "data-test": "DesignSystem-Sidesheet--OutsideClick",
           onOutsideClick: this.onOutsideClickHandler
@@ -13002,7 +13180,7 @@
         className = props.className,
         onToggle = props.onToggle;
 
-    var _React$useState = React__namespace.useState(false),
+    var _React$useState = React__namespace.useState(true),
         _React$useState2 = _slicedToArray(_React$useState, 2),
         isClicked = _React$useState2[0],
         setIsClicked = _React$useState2[1];
@@ -13282,133 +13460,26 @@
     var WrapperClass = classnames(_defineProperty$2({}, 'EmptyState', true), className);
     var HeadingClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'EmptyState-title', true), _defineProperty$2(_classNames2, "EmptyState-title--".concat(size), true), _classNames2));
     var TextClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'EmptyState-description', true), _defineProperty$2(_classNames3, "EmptyState-description--".concat(size), children !== undefined), _classNames3));
-    return /*#__PURE__*/React__namespace.createElement("div", _extends$3({}, baseProps, {
+    return /*#__PURE__*/React__namespace.createElement("div", _extends$3({
+      "data-test": "DesignSystem-EmptyState"
+    }, baseProps, {
       className: WrapperClass
     }), /*#__PURE__*/React__namespace.createElement("img", {
       src: imageSrc,
-      height: imageHeight[size]
+      height: imageHeight[size],
+      "data-test": "DesignSystem-EmptyState--Img"
     }), /*#__PURE__*/React__namespace.createElement(Heading, {
+      "data-test": "DesignSystem-EmptyState--Heading",
       size: HeadingSize[size],
       className: HeadingClass
     }, title), /*#__PURE__*/React__namespace.createElement(Text, {
       size: textSize[size],
       className: TextClass,
-      appearance: "subtle"
+      appearance: "subtle",
+      "data-test": "DesignSystem-EmptyState--Text"
     }, description), children && children);
   };
   EmptyState.displayName = 'EmptyState';
-
-  var ModalHeader = function ModalHeader(props) {
-    var _classNames;
-
-    var className = props.className,
-        heading = props.heading,
-        subHeading = props.subHeading,
-        onClose = props.onClose,
-        seperator = props.seperator,
-        backIcon = props.backIcon,
-        backIconCallback = props.backIconCallback;
-    var baseProps = extractBaseProps(props);
-    var classes = classnames((_classNames = {
-      'Modal-header': true
-    }, _defineProperty$2(_classNames, 'Modal-header--backIcon', backIcon), _defineProperty$2(_classNames, 'Modal-header--seperator', seperator), _classNames), className);
-    var wrapperClass = classnames(_defineProperty$2({
-      'Modal-headerWrapper': true
-    }, 'Modal-headerWrapper--backIcon', backIcon));
-    return /*#__PURE__*/React__namespace.createElement("div", _extends$3({
-      "data-test": "DesignSystem-ModalHeader"
-    }, baseProps, {
-      className: classes
-    }), /*#__PURE__*/React__namespace.createElement("div", {
-      className: wrapperClass
-    }, backIcon && /*#__PURE__*/React__namespace.createElement(Icon, {
-      name: "keyboard_backspace",
-      size: 20,
-      className: "ml-3 mr-5 my-3 px-2 py-2 cursor-pointer",
-      onClick: backIconCallback
-    }), /*#__PURE__*/React__namespace.createElement("div", {
-      className: "Modal-headerHeading"
-    }, /*#__PURE__*/React__namespace.createElement(Heading, null, heading), /*#__PURE__*/React__namespace.createElement(Icon, {
-      size: 20,
-      name: 'close',
-      className: 'mx-2 cursor-pointer',
-      "data-test": "DesignSystem-ModalHeader--CloseIcon",
-      onClick: function onClick(event) {
-        return onClose(event, 'IconClick');
-      }
-    }))), subHeading && /*#__PURE__*/React__namespace.createElement(Text, {
-      "data-test": "DesignSystem-ModalHeader--Subheading",
-      appearance: "subtle",
-      className: "mt-2 ml-7"
-    }, subHeading));
-  };
-  ModalHeader.displayName = 'ModalHeader';
-
-  var ModalFooter = function ModalFooter(props) {
-    var _classNames;
-
-    var open = props.open,
-        children = props.children,
-        className = props.className,
-        stickToBottom = props.stickToBottom,
-        seperator = props.seperator,
-        inSidesheet = props.inSidesheet;
-    var baseProps = extractBaseProps(props);
-    var classes = classnames((_classNames = {
-      'Modal-footer': true
-    }, _defineProperty$2(_classNames, 'Modal-footer--inModal', !inSidesheet), _defineProperty$2(_classNames, 'Modal-footer--seperator', seperator), _defineProperty$2(_classNames, 'Modal-footer--stickToBottom', stickToBottom), _classNames), className);
-    var wrapperRef = /*#__PURE__*/React__namespace.createRef();
-    React__namespace.useEffect(function () {
-      if (open) {
-        if (wrapperRef.current) {
-          var _wrapperRef$current;
-
-          var secondaryBtns = (_wrapperRef$current = wrapperRef.current) === null || _wrapperRef$current === void 0 ? void 0 : _wrapperRef$current.querySelectorAll('.Button--basic');
-          var secondaryBtn = secondaryBtns[secondaryBtns.length - 1];
-
-          if (secondaryBtn) {
-            window.requestAnimationFrame(function () {
-              return secondaryBtn.focus({
-                preventScroll: true
-              });
-            });
-          }
-        }
-      }
-    }, [open]);
-    return /*#__PURE__*/React__namespace.createElement("div", _extends$3({
-      "data-test": "DesignSystem-ModalFooter",
-      ref: wrapperRef
-    }, baseProps, {
-      className: classes
-    }), children);
-  };
-  ModalFooter.defaultProps = {
-    stickToBottom: true,
-    inSidesheet: false
-  };
-  ModalFooter.displayName = 'ModalFooter';
-
-  var ModalBody = function ModalBody(props) {
-    var children = props.children,
-        className = props.className,
-        stickFooter = props.stickFooter,
-        withFooter = props.withFooter;
-    var baseProps = extractBaseProps(props);
-    var classes = classnames(_defineProperty$2({
-      'Modal-body': true
-    }, 'Modal-body--stickFooter', withFooter && stickFooter), className);
-    return /*#__PURE__*/React__namespace.createElement("div", _extends$3({
-      "data-test": "DesignSystem-ModalBody"
-    }, baseProps, {
-      className: classes
-    }), children);
-  };
-  ModalBody.defaultProps = {
-    stickFooter: true,
-    withFooter: true
-  };
-  ModalBody.displayName = 'ModalBody';
 
   var ModalDescription = function ModalDescription(props) {
     var title = props.title,
@@ -13494,8 +13565,6 @@
       }
     };
 
-    var buttonHelper = [];
-    if (type === 'basic') buttonHelper.push('mx-3');else buttonHelper.push('mx-4');
     return /*#__PURE__*/React__namespace.createElement("div", _extends$3({
       "data-test": "DesignSystem-Pagination"
     }, baseProps, {
@@ -13508,48 +13577,40 @@
       },
       disabled: page <= 1,
       appearance: "transparent",
-      size: "large",
       icon: "first_page",
       "data-test": "DesignSystem-Pagination--FirstButton"
-    }), /*#__PURE__*/React__namespace.createElement("div", {
-      "data-test": "DesignSystem-Pagination--Prev",
-      className: ['ml-4'].concat(buttonHelper).join(' ')
-    }, /*#__PURE__*/React__namespace.createElement(Button, {
+    }), /*#__PURE__*/React__namespace.createElement(Button, {
       onClick: function onClick() {
         return onClickHandler('prev');
       },
       disabled: page <= 1,
-      size: "large",
       icon: "navigate_before",
-      "data-test": "DesignSystem-Pagination--PrevButton"
-    }))), type === 'jump' && /*#__PURE__*/React__namespace.createElement("div", {
+      "data-test": "DesignSystem-Pagination--PrevButton",
+      className: "ml-4 mr-3"
+    })), type === 'jump' && /*#__PURE__*/React__namespace.createElement("div", {
       className: "Pagination-pageIndex"
-    }, /*#__PURE__*/React__namespace.createElement(Input, {
+    }, /*#__PURE__*/React__namespace.createElement(MetricInput, {
       name: "page",
-      type: "number",
-      size: "large",
+      className: "Pagination-MetricInput",
       onChange: inputChangeHandler,
       value: "".concat(page === 0 ? '' : page),
       "data-test": "DesignSystem-Pagination--Input"
     }), /*#__PURE__*/React__namespace.createElement(Text, null, " of ".concat(totalPages, " pages"))), /*#__PURE__*/React__namespace.createElement("div", {
       className: nextButtonWrapperClass
-    }, /*#__PURE__*/React__namespace.createElement("div", {
-      className: ['mr-4'].concat(buttonHelper).join(' ')
     }, /*#__PURE__*/React__namespace.createElement(Button, {
       onClick: function onClick() {
         return onClickHandler('next');
       },
       disabled: page >= totalPages,
-      size: "large",
       icon: "navigate_next",
-      "data-test": "DesignSystem-Pagination--NextButton"
-    })), /*#__PURE__*/React__namespace.createElement(Button, {
+      "data-test": "DesignSystem-Pagination--NextButton",
+      className: "mr-4 ml-3"
+    }), /*#__PURE__*/React__namespace.createElement(Button, {
       onClick: function onClick() {
         return onClickHandler('last');
       },
       disabled: page >= totalPages,
       appearance: "transparent",
-      size: "large",
       icon: "last_page",
       "data-test": "DesignSystem-Pagination--LastButton"
     })));
@@ -13561,7 +13622,7 @@
     totalPages: 1
   };
 
-  var _excluded$4 = ["onChange"];
+  var _excluded$5 = ["onChange"];
   var EditableInput = function EditableInput(props) {
     var _classNames2, _classNames4;
 
@@ -13576,7 +13637,7 @@
         className = props.className;
 
     var onInputChange = inputOptions.onChange,
-        rest = _objectWithoutProperties$1(inputOptions, _excluded$4);
+        rest = _objectWithoutProperties$1(inputOptions, _excluded$5);
 
     var _React$useState = React__namespace.useState(value),
         _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -13718,6 +13779,146 @@
     inputOptions: {}
   };
 
+  var _excluded$4 = ["onChange", "chipOptions"],
+      _excluded2$1 = ["onClick"];
+  var EditableChipInput = function EditableChipInput(props) {
+    var _classNames3;
+
+    var placeholder = props.placeholder,
+        value = props.value,
+        onChange = props.onChange,
+        className = props.className,
+        disableSaveAction = props.disableSaveAction,
+        chipInputOptions = props.chipInputOptions;
+
+    var onChipInputChange = chipInputOptions.onChange,
+        _chipInputOptions$chi = chipInputOptions.chipOptions,
+        chipOptions = _chipInputOptions$chi === void 0 ? {} : _chipInputOptions$chi,
+        rest = _objectWithoutProperties$1(chipInputOptions, _excluded$4);
+
+    var _onClick = chipOptions.onClick,
+        chipObject = _objectWithoutProperties$1(chipOptions, _excluded2$1);
+
+    var _React$useState = React__namespace.useState(value),
+        _React$useState2 = _slicedToArray(_React$useState, 2),
+        inputValue = _React$useState2[0],
+        setInputValue = _React$useState2[1];
+
+    var _React$useState3 = React__namespace.useState(false),
+        _React$useState4 = _slicedToArray(_React$useState3, 2),
+        showComponent = _React$useState4[0],
+        setShowComponent = _React$useState4[1];
+
+    var baseProps = extractBaseProps(props);
+    var isWithChips = inputValue && inputValue.length;
+    var classes = classnames(_defineProperty$2({}, 'EditableChipInput', true), className);
+    var actionClass = classnames(_defineProperty$2({}, 'EditableChipInput-actions', true));
+    var defaultClasses = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'EditableChipInput-default', !isWithChips), _defineProperty$2(_classNames3, 'EditableChipInput-defaultWithChips', isWithChips), _classNames3));
+    var inputClass = classnames(_defineProperty$2({}, 'EditableChipInput-chipInput', true));
+    React__namespace.useEffect(function () {
+      setDefaultComponent();
+    }, [value]);
+
+    var onChipInputChangeHandler = function onChipInputChangeHandler(val) {
+      setInputValue(val);
+      if (onChipInputChange) onChipInputChange(val);
+    };
+
+    var setDefaultComponent = function setDefaultComponent() {
+      setInputValue(value);
+      setShowComponent(false);
+    };
+
+    var onSaveChanges = function onSaveChanges() {
+      if (onChange && inputValue) onChange(inputValue);
+    };
+
+    var onChangeHandler = function onChangeHandler(eventType) {
+      switch (eventType) {
+        case 'edit':
+          setShowComponent(true);
+
+        case 'hover':
+          return;
+
+        case 'default':
+          setShowComponent(false);
+          return;
+      }
+    };
+
+    var renderDefaultState = function renderDefaultState() {
+      if (inputValue && inputValue.length) {
+        return inputValue.map(function (val, index) {
+          return /*#__PURE__*/React__namespace.createElement(Chip, _extends$3({
+            "data-test": "DesignSystem-EditableChipInput--Chip",
+            key: index,
+            name: val,
+            label: val,
+            className: "my-2 mx-2"
+          }, chipObject, {
+            onClick: function onClick() {
+              return _onClick && _onClick(val, index);
+            }
+          }));
+        });
+      }
+
+      return /*#__PURE__*/React__namespace.createElement(Text, {
+        className: "EditableChipInput--Text"
+      }, placeholder);
+    };
+
+    var renderChildren = function renderChildren() {
+      if (showComponent) {
+        return /*#__PURE__*/React__namespace.createElement("div", {
+          "data-test": "DesignSystem-EditableChipInput--wrapper"
+        }, /*#__PURE__*/React__namespace.createElement(ChipInput, _extends$3({
+          "data-test": "DesignSystem-EditableChipInput--ChipInput",
+          placeholder: placeholder,
+          onChange: onChipInputChangeHandler,
+          value: inputValue,
+          chipOptions: chipOptions
+        }, rest, {
+          className: inputClass
+        })));
+      }
+
+      return /*#__PURE__*/React__namespace.createElement("div", {
+        className: defaultClasses,
+        "data-test": "DesignSystem-EditableChipInput--Default"
+      }, renderDefaultState());
+    };
+
+    return /*#__PURE__*/React__namespace.createElement("div", _extends$3({
+      className: classes,
+      "data-test": "DesignSystem-EditableChipInput"
+    }, baseProps), /*#__PURE__*/React__namespace.createElement(Editable, {
+      onChange: onChangeHandler,
+      editing: showComponent
+    }, renderChildren()), showComponent && /*#__PURE__*/React__namespace.createElement("div", {
+      className: actionClass,
+      "data-test": "DesignSystem-EditableChipInput--Actions"
+    }, /*#__PURE__*/React__namespace.createElement(Button, {
+      "data-test": "DesignSystem-EditableChipInput--DiscardButton",
+      icon: "clear",
+      className: "mr-3",
+      size: "tiny",
+      onClick: setDefaultComponent
+    }), /*#__PURE__*/React__namespace.createElement(Button, {
+      "data-test": "DesignSystem-EditableChipInput--SaveButton",
+      icon: "check",
+      appearance: "primary",
+      size: "tiny",
+      disabled: disableSaveAction,
+      onClick: onSaveChanges
+    })));
+  };
+  EditableChipInput.defaultProps = {
+    placeholder: '',
+    chipInputOptions: {}
+  };
+
   var ProgressRing = function ProgressRing(props) {
     var size = props.size,
         max = props.max,
@@ -13776,19 +13977,20 @@
       if (onChange) onChange(label, value);
     };
 
-    var iconAppearance = completed ? 'info' : disabled ? 'disabled' : 'default';
+    var iconAppearance = completed ? 'info' : disabled ? 'disabled' : active ? 'info' : 'default';
+    var appearance = active ? 'link' : disabled ? 'disabled' : 'default';
     return /*#__PURE__*/React__namespace.createElement("div", {
       "data-test": "DesignSystem-Step",
       className: StepClass,
       onClick: onClickHandle
     }, /*#__PURE__*/React__namespace.createElement(Icon, {
-      "data-test": "DesignSystem-StepIcon",
+      "data-test": "DesignSystem-Step--Icon",
       name: completed ? 'check_circle' : 'radio_button_unchecked',
       appearance: iconAppearance,
       className: "mr-3 my-4"
     }), label && /*#__PURE__*/React__namespace.createElement(Text, {
       weight: "medium",
-      appearance: disabled ? 'disabled' : 'default'
+      appearance: appearance
     }, label));
   };
   Step.displayName = 'Step';
@@ -13798,7 +14000,8 @@
         active = props.active,
         completed = props.completed,
         onChange = props.onChange,
-        className = props.className;
+        className = props.className,
+        skipIndexes = props.skipIndexes;
     var baseProps = extractBaseProps(props);
 
     var onChangeHandler = function onChangeHandler(index, stepLabel, stepValue) {
@@ -13813,9 +14016,10 @@
     }), steps.map(function (step, index) {
       var label = step.label,
           value = step.value;
+      var isSkipped = skipIndexes.includes(index);
       var activeStep = active === index;
-      var completedStep = completed >= index;
-      var disabled = completed + 1 < index;
+      var completedStep = !isSkipped && completed >= index;
+      var disabled = !activeStep && !isSkipped && completed + 1 < index;
       return /*#__PURE__*/React__namespace.createElement(Step, {
         key: index,
         label: label,
@@ -13832,7 +14036,8 @@
   Stepper.displayName = 'Stepper';
   Stepper.defaultProps = {
     completed: -1,
-    active: 0
+    active: 0,
+    skipIndexes: []
   };
 
   var Trigger = function Trigger(props) {
@@ -17117,10 +17322,12 @@
       }
 
       return function () {
-        _this.currPageInfo = {
-          page: page,
-          scrollTop: gridBodyEl.scrollTop
-        };
+        if (gridBodyEl) {
+          _this.currPageInfo = {
+            page: page,
+            scrollTop: gridBodyEl.scrollTop
+          };
+        }
       };
     }, []);
     var minRowHeight = {
@@ -18994,7 +19201,7 @@
 
   VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-  var version = "2.1.3";
+  var version = "2.2.0-0";
 
   exports.Avatar = Avatar;
   exports.AvatarGroup = AvatarGroup;
@@ -19021,6 +19228,7 @@
   exports.Dialog = Dialog;
   exports.Dropdown = Dropdown;
   exports.Dropzone = Dropzone;
+  exports.EditableChipInput = EditableChipInput;
   exports.EditableDropdown = EditableDropdown;
   exports.EditableInput = EditableInput;
   exports.EmptyState = EmptyState;

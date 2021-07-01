@@ -1,16 +1,21 @@
 import * as React from 'react';
-import { ModalHeaderProps } from "../../../index.type";
+import { OverlayFooterProps } from "../overlayFooter";
+import { OverlayHeaderProps } from "../overlayHeader";
 import { BaseProps } from "../../../utils/types";
 export declare type Dimension = 'regular' | 'large';
+declare type FooterOptions = {
+    actions: OverlayFooterProps['actions'];
+};
 export interface SidesheetProps extends BaseProps {
-    headerOptions: Omit<ModalHeaderProps, 'onClose'>;
+    headerOptions: Omit<OverlayHeaderProps, 'onClose'>;
+    header?: React.ReactNode;
     dimension: Dimension;
     open: boolean;
     stickFooter?: boolean;
-    withFooter?: boolean;
     seperator?: boolean;
     children?: React.ReactNode;
     footer?: React.ReactNode;
+    footerOptions?: FooterOptions;
     backdropClose?: boolean;
     onClose?: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
 }

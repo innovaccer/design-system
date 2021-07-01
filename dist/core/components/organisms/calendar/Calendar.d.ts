@@ -2,6 +2,7 @@ import * as React from 'react';
 import { BaseProps } from "../../../utils/types";
 import { Size, Day, View } from "./types";
 export interface SharedProps extends BaseProps {
+    size: Size;
     monthsInView: number;
     jumpView?: boolean;
     firstDayOfWeek: Day;
@@ -12,7 +13,6 @@ export interface SharedProps extends BaseProps {
     monthNav?: number;
 }
 export declare type CalendarProps = {
-    size: Size;
     onDateChange?: (date: Date) => void;
     onRangeChange?: (startDate: Date | undefined, endDate: Date | undefined) => void;
     date?: Date;
@@ -59,7 +59,7 @@ export declare class Calendar extends React.Component<CalendarProps, CalendarSta
     renderBodyMonth: () => JSX.Element[];
     onDateRowMouseLeaveHandler: () => void;
     renderBodyDate: (index: number) => JSX.Element;
-    renderDateValues: (index: number) => (JSX.Element | null)[];
+    renderDateValues: (index: number) => JSX.Element[];
     renderCalendar: (index: number) => JSX.Element;
     render(): JSX.Element;
 }
