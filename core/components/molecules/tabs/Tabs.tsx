@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Pills, Icon, Text } from '@/index';
+import { Pills, Icon, Text, Separator } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 interface Tab {
@@ -18,7 +18,7 @@ export interface TabsProps extends BaseProps {
   /**
    * Shows border at bottom of  `Tabs`
    */
-  withSeperator?: boolean;
+  withSeparator?: boolean;
   /**
    * List of tabs
    * <pre className="DocPage-codeBlock">
@@ -47,7 +47,7 @@ export interface TabsProps extends BaseProps {
 export const Tabs = (props: TabsProps) => {
   const {
     tabs,
-    withSeperator,
+    withSeparator,
     onTabChange,
     className,
   } = props;
@@ -67,7 +67,6 @@ export const Tabs = (props: TabsProps) => {
 
   const tabsClass = classNames({
     ['Tabs']: true,
-    ['Tabs--withSeperator']: withSeperator,
   }, className);
 
   const getPillsClass = (disabled?: boolean) => (
@@ -140,10 +139,14 @@ export const Tabs = (props: TabsProps) => {
   return (
     <div data-test="DesignSystem-Tabs" {...baseProps} className={tabsClass}>
       {renderTabs()}
+      {withSeparator && <Separator />}
     </div>
   );
 };
 
 Tabs.displayName = 'Tabs';
+Tabs.defaultProps = {
+  withSeparator: true
+};
 
 export default Tabs;

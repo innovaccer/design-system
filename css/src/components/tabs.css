@@ -45,6 +45,7 @@
     width: 100%;
     height: var(--spacing-s);
     background-color: var(--primary);
+    z-index: 1;
     margin-bottom: -1px;
     border-top-left-radius: 1px;
     border-top-right-radius: 1px;
@@ -61,6 +62,7 @@
     width: 100%;
     height: var(--spacing-s);
     background-color: var(--primary-dark);
+    z-index: 1;
     margin-bottom: -1px;
     border-top-left-radius: 1px;
     border-top-right-radius: 1px;
@@ -91,14 +93,11 @@
 }
 
 .Tabs {
+    position: relative;
     display: flex;
     box-sizing: border-box;
     flex-direction: row;
     height: var(--spacing-4);
-}
-
-.Tabs--withSeperator {
-    border-bottom: var(--border);
 }
 
 .Tabs-pills {

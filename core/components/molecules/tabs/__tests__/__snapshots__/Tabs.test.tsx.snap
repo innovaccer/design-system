@@ -69,7 +69,7 @@ exports[`Tabs component
  1`] = `
 <DocumentFragment>
   <div
-    class="Tabs Tabs--withSeperator"
+    class="Tabs"
     data-test="DesignSystem-Tabs"
   >
     <div
