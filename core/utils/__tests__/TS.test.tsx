@@ -78,10 +78,14 @@ export const TS = () => {
       <DS.Table />
       <DS.Navigation menus={[]} />
       <DS.PageHeader title={string} />
-      <DS.EditableChipInput placeholder=""/>
+      <DS.EditableChipInput placeholder="" />
     </>
   );
 };
+
+beforeAll(() => {
+  Date.now = () => new Date('2021-06-14').getTime();
+});
 
 describe('TS', () => {
   it('renders children', () => {
