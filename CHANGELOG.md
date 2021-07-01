@@ -1,5 +1,58 @@
 
-## 2.1.1  (2021-06-10) 
+## 2.2.0-0  (2021-07-01) 
+
+### Highlights
+* New component EditableChipInput added. (18d702a7)
+
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+* New component EditableChipInput added. (18d702a7)
+
+
+### Fixes
+* Adds width and height property to checkbox in unchecked state. (c2561f34)
+* fixes GridBody scrollTop issue on unmount. (766b5686)
+* updates pagination component according to design. (601c3a47)
+* fixes expanded state on initial render of Collapsible component. (e2967a7b)
+* fixes single line case for width<240px in ChipInput. (92a37b6f)
+* fixes slider tooltip to move with pointer in Slider component. (f1698ff3)
+* fixes label onClick handling of MultiSlider component (ff4af117)
+* Updates DS-* to Design-System-* as data-test attribute value in components. (6956653e)
+* fixes label inside tooltip to show custom label in Slider component (5ff6f838)
+* Layout patterns styling and layout fixed. (e3b52908)
+* Button Spinner loading state fixed. (bd8d9436)
+* Show More button added in code preview panel. (134ef48a)
+
+
+### Improvements
+* skip feature for a step is addded in Stepper component (d4b775db)
+* now Modal, Sidesheet and FullScreenModal components have uniform APIs (2c25d036)
+* updated test cases for overlayheader, modal, sidesheet, EmptyState, Row, Column components.
+* removes width: 100% and updates flex in Row component. (875564e7)
+* adds box-shadow to focus state of Input component. (93b6356d)
+* adds width 100% to MetricInput component. (267b2ad7)
+* Bottom border radius added for tabs. (905e09b0) 
+* Cursor not allowed added for disabled tab component state. (716ed6c5)
+
+
+### Documentation
+* Updates stories of Table, PageHeader, Input components.
+* adds placeholder story for Loaders component. (c8622a2e)
+* updates the appearance variant story of Icon component. (42f654d9)
+* adds pattern, disabled and error state stories for VerificationInput component. (bb8ea8cd)
+
+-------------------
+
+## 2.1.3  (2021-06-10) 
 
 ### Highlights
 NA
