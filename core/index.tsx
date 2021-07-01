@@ -78,5 +78,6 @@ export { Navigation } from './components/organisms/navigation';
 export { PageHeader } from './components/organisms/pageHeader';
 export { FileList } from './components/molecules/fileList';
 export { VerificationCodeInput } from './components/molecules/verificationCodeInput';
+export { Separator } from './components/atoms/separator';
 // @ts-ignore
 export { version } from '../package.json';

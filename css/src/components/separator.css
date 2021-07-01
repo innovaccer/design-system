@@ -1,0 +1,9 @@
+.Separator {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: var(--spacing-xs);
+    width: 100%;
+    background-color: var(--secondary);
+    z-index: 0;
+}
