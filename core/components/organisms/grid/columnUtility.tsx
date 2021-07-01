@@ -1,12 +1,35 @@
-import { Grid } from '@/index';
-import { ColumnSchema, Pinned, SortType, CellType } from './Grid';
+import { GridProps } from '@/index.type';
+import { ColumnSchema, Pinned, SortType, CellType, GridRef, updateColumnSchemaFunction, updateSortingListFunction } from './Grid';
 
-export const resizeCol = (_this: Grid, name: string, el: HTMLDivElement | null) => {
+type resizeColFn = (
+  gridInfo: { updateColumnSchema: updateColumnSchemaFunction },
+  name: ColumnSchema['name'],
+  el: GridRef
+) => void;
+type sortColumnFn = (
+  gridInfo: {
+    sortingList: GridProps['sortingList'],
+    updateSortingList: updateSortingListFunction
+  },
+  name: ColumnSchema['name'], type: SortType
+) => void;
+type pinColumnFn = (
+  gridInfo: { updateColumnSchema: updateColumnSchemaFunction },
+  name: ColumnSchema['name'],
+  type: Pinned
+) => void;
+type hideColumnFn = (
+  gridInfo: { updateColumnSchema: updateColumnSchemaFunction },
+  name: ColumnSchema['name'],
+  value: boolean
+) => void;
+
+export const resizeCol: resizeColFn = ({ updateColumnSchema }, name, el) => {
   const elX = el?.getBoundingClientRect().x;
   function resizable(ev: MouseEvent) {
     ev.preventDefault();
     if (elX) {
-      _this.updateColumnSchema(name, {
+      updateColumnSchema(name, {
         width: ev.pageX - elX
       });
     }
@@ -18,49 +41,46 @@ export const resizeCol = (_this: Grid, name: string, el: HTMLDivElement | null) 
   });
 };
 
-export function sortColumn(this: Grid, name: ColumnSchema['name'], type: SortType) {
-  let sortingList = [...this.props.sortingList];
+export const sortColumn: sortColumnFn = ({ sortingList, updateSortingList }, name, type) => {
+  let newSortingList = [...sortingList];
 
-  const index = sortingList.findIndex(l => l.name === name);
+  const index = newSortingList.findIndex(l => l.name === name);
   if (index !== -1) {
-    sortingList = [
-      ...sortingList.slice(0, index),
-      ...sortingList.slice(index + 1),
+    newSortingList = [
+      ...newSortingList.slice(0, index),
+      ...newSortingList.slice(index + 1),
     ];
   }
 
-  if (type !== 'unsort') sortingList.push({ name, type });
+  if (type !== 'unsort') newSortingList.push({ name, type });
 
-  this.updateSortingList(sortingList);
-}
+  updateSortingList(newSortingList);
+};
 
-export function pinColumn(this: Grid, name: ColumnSchema['name'], type: Pinned) {
+export const pinColumn: pinColumnFn = ({ updateColumnSchema }, name: ColumnSchema['name'], type: Pinned) => {
   const schemaUpdate = {
     pinned: type !== 'unpin' ? type : undefined
   };
 
-  this.updateColumnSchema(name, schemaUpdate);
-}
+  updateColumnSchema(name, schemaUpdate);
+};
 
-export function hideColumn(this: Grid, name: ColumnSchema['name'], value: boolean) {
+export const hideColumn: hideColumnFn = ({ updateColumnSchema }, name, value) => {
   const schemaUpdate = {
     hidden: value,
   };
 
-  this.updateColumnSchema(name, schemaUpdate);
-}
+  updateColumnSchema(name, schemaUpdate);
+};
 
-export function getWidth(this: Grid, width: React.ReactText) {
+export function getWidth({ ref, withCheckbox }: { ref: GridRef, withCheckbox?: boolean }, width: React.ReactText) {
   const isPercent = typeof width === 'string' && width.slice(-1) === '%';
 
   if (isPercent) {
-    if (this.state.init) {
-      const checkboxCell = this.gridRef!.querySelector('.Grid-cell--checkbox');
-      const checkboxWidth = checkboxCell ? checkboxCell.clientWidth : 0;
-      const gridWidth = this.gridRef!.clientWidth - checkboxWidth;
-      return gridWidth * (+(width as string).slice(0, -1) / 100);
-    }
-    return 0;
+    const checkboxCell = ref!.querySelector('.Grid-cell--checkbox');
+    const checkboxWidth = withCheckbox ? checkboxCell?.clientWidth || 28 : 0;
+    const gridWidth = ref!.clientWidth - checkboxWidth;
+    return gridWidth * (+(width as string).slice(0, -1) / 100);
   }
   return width;
 }

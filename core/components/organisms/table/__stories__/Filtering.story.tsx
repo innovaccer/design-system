@@ -70,7 +70,7 @@ import './style.css';
 
   const getTotalPages = (totalRecords, pageSize) => Math.ceil(totalRecords / pageSize);
 
-  const getInit = schema => (schema && !!schema.length);
+  const hasSchema = schema => (schema && !!schema.length);
   const getPluralSuffix = (count) => count > 1 ? 's' : '';
 
   const updateBatchData = (data, rowIndexes, dataUpdate) => {
@@ -293,7 +293,7 @@ import './style.css';
               onChange={onSearchChange}
               value={searchTerm}
               onClear={() => updateSearchTerm && updateSearchTerm('')}
-              disabled={loading && !getInit(schema)}
+              disabled={loading && !hasSchema(schema)}
             />
           </div>
         </div>
