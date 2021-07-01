@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Breadcrumbs, Text, StatusHint, Navigation, AvatarGroup, PageHeader, Dropdown } from '@/index';
+import {  Breadcrumbs, Text, StatusHint, Navigation, AvatarGroup, PageHeader, Dropdown } from '@/index';
 import { action } from '@storybook/addon-actions';
 import { Menu } from '../../navigation';
 
@@ -30,17 +30,15 @@ export const Responsiveness = () => {
 
   const options = [
     {
-      label: 'Option 1',
-      value: 'Option 1',
+      icon: 'print',
+      label: 'Edit',
+      value: 'Edit',
     },
     {
-      label: 'Option 2',
-      value: 'Option 2',
+      icon: 'assignment_turned_in',
+      label: 'Complete',
+      value: 'Complete',
     },
-    {
-      label: 'Option 3',
-      value: 'Option 3',
-    }
   ];
 
   const [active, setActive] = React.useState({
@@ -56,10 +54,14 @@ export const Responsiveness = () => {
     <Text className="mr-4">Updated 1 day ago</Text>
     <AvatarGroup className="mr-5" list={list}/>
     <div className="mr-4">
-      <Dropdown menu={true} icon="more_horiz" options={options}/>
+      <Dropdown
+        menu={true}
+        optionType="WITH_ICON"
+        icon="more_horiz"
+        options={options}
+        align="left"
+      />
     </div>
-    <Button className="mr-4" icon="print"/>
-    <Button className="mr-4" icon="assignment_turned_in">Complete</Button>
     </div>
   );
 
@@ -127,17 +129,15 @@ const customCode = `() => {
 
   const options = [
     {
-      label: 'Option 1',
-      value: 'Option 1',
+      icon: 'print',
+      label: 'Edit',
+      value: 'Edit',
     },
     {
-      label: 'Option 2',
-      value: 'Option 2',
+      icon: 'assignment_turned_in',
+      label: 'Complete',
+      value: 'Complete',
     },
-    {
-      label: 'Option 3',
-      value: 'Option 3',
-    }
   ];
 
   const [active, setActive] = React.useState({
@@ -154,12 +154,13 @@ const customCode = `() => {
     <AvatarGroup className="mr-5" list={list}/>
     <div className="mr-4">
       <Dropdown
-        menu={true} icon="more_horiz"
+        menu={true}
+        optionType="WITH_ICON"
+        icon="more_horiz"
         options={options}
+        align="left"
       />
     </div>
-    <Button className="mr-4" icon="print"/>
-    <Button className="mr-4" icon="assignment_turned_in">Complete</Button>
     </div>
   );
 
@@ -186,7 +187,7 @@ const customCode = `() => {
   );
 
   return (
-    <div className="p-6 bg-secondary-lightest" style={{width:'1300px'}}>
+    <div className="p-6 bg-secondary-lightest">
       <PageHeader
         navigationPosition="bottom"
         title="Pac Follow-Up Protocol"
