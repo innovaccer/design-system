@@ -20,15 +20,11 @@
     flex-direction: row;
     cursor: pointer;
     min-width: 40px;
-    padding-top: var(--spacing-l);
-    padding-bottom: var(--spacing-2);
-    text-align: center;
-    margin-left: var(--spacing-l);
+    padding: var(--spacing-l);
+    margin-left: calc(-1 * var(--spacing-l));
     margin-right: var(--spacing-l);
-}
-
-.Tab:first-child {
-    margin-left: 0;
+    margin-bottom: calc(-1 * var(--spacing-xs));
+    text-align: center;
 }
 
 .Tab:last-child {
@@ -37,14 +33,15 @@
 
 .Tab::after {
     position: absolute;
+    left: 0;
     bottom: 0;
     content: '';
-    width: 100%;
+    width: calc(100% - 2*var(--spacing-l));
     height: var(--spacing-s);
     background-color: transparent; 
-    margin-bottom: -1px;
-    border-top-left-radius: 1px;
-    border-top-right-radius: 1px;
+    margin-left: var(--spacing-l);
+    border-top-left-radius: var(--spacing-xs);
+    border-top-right-radius: var(--spacing-xs);
 }
 
 .Tab:hover::after {
@@ -57,6 +54,17 @@
 
 .Tab--active::after {
     background-color: var(--primary);
+}
+
+.Tab:focus {
+    outline: none;
+    border-radius: 4px;
+    /* Using box shadow instead of border as border shifts the div down which cuts the Icon & Text of label. */
+    box-shadow: color-mod(var(--primary) a(0.2)) 0px 0px 0px var(--spacing-s) inset;
+}
+
+.Tab:active:focus {
+    box-shadow: none;
 }
 
 .Tab--disabled {
@@ -87,7 +95,6 @@
     display: flex;
     box-sizing: border-box;
     flex-direction: row;
-    height: var(--spacing-4);
 }
 
 .Tabs--withSeparator {
