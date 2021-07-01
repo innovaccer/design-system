@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Pills, Icon, Text } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-interface Tab {
+export interface TabConfig{
   label: string;
   count?: number;
   icon?: string;
@@ -37,7 +37,7 @@ export interface TabsProps extends BaseProps {
    * | disabled | Determines if tab is disabled | |
    * </pre>
    */
-  tabs: Tab[];
+  tabs: TabConfig[];
   /**
    * Called with a new index when a new tab is selected by user
    */
@@ -77,12 +77,31 @@ export const Tabs = (props: TabsProps) => {
     })
   );
 
-  const tabClickHandler = (tabIndex: number) => {
-    if (props.activeIndex === undefined) setActiveTab(tabIndex);
+  const tabClickHandler = (tabIndex: number, isKeyboard?: boolean) => {
+    if (props.activeIndex === undefined) {
+      setActiveTab(tabIndex);
+      if (!isKeyboard) tabRefs[tabIndex]?.blur();
+    }
     if (onTabChange) onTabChange(tabIndex);
   };
 
-  const renderInfo = (tab: Tab, index: number) => {
+  const tabRefs: HTMLDivElement[] = [];
+
+  const tabKeyDownHandler = (event: any, tabIndex: number) => {
+    if (event.key === 'Enter') {
+      tabClickHandler(tabIndex, true);
+    }
+    if (event.key === 'ArrowLeft' && tabIndex > 0) {
+      const prevElement = tabRefs[tabIndex - 1];
+      prevElement?.focus();
+    }
+    if (event.key === 'ArrowRight' && tabIndex < tabs.length) {
+      const nextElement = tabRefs[tabIndex + 1];
+      nextElement?.focus();
+    }
+  };
+
+  const renderInfo = (tab: TabConfig, index: number) => {
     const { count, icon, disabled } = tab;
 
     if (count !== undefined) {
@@ -125,10 +144,13 @@ export const Tabs = (props: TabsProps) => {
 
       return (
         <div
+          ref={element => element && !disabled && tabRefs.push(element)}
           data-test="DesignSystem-Tabs--Tab"
           key={index}
           className={tabHeaderClass}
           onClick={() => !disabled && tabClickHandler(index)}
+          onKeyDown={(event: React.KeyboardEvent) => tabKeyDownHandler(event, index)}
+          tabIndex={activeIndex === index ? 0 : -1}
         >
           {renderInfo(tab, index)}
           <Text data-test="DesignSystem-Tabs--Text" appearance={textAppearance}>{label}</Text>
