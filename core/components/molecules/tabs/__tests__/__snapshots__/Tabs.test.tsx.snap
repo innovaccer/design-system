@@ -11,6 +11,7 @@ exports[`Tabs component
     <div
       class="Tab Tab--active"
       data-test="DesignSystem-Tabs--Tab"
+      tabindex="0"
     >
       <span
         class="Pills Badge--primary Tabs-pills"
@@ -28,6 +29,7 @@ exports[`Tabs component
     <div
       class="Tab"
       data-test="DesignSystem-Tabs--Tab"
+      tabindex="-1"
     >
       <i
         class="material-icons material-icons-round Icon Icon--subtle mr-4"
@@ -46,6 +48,7 @@ exports[`Tabs component
     <div
       class="Tab Tab--disabled"
       data-test="DesignSystem-Tabs--Tab"
+      tabindex="-1"
     >
       <span
         class="Pills Badge--secondary Tabs-pills Tabs-pills--disabled"
@@ -75,6 +78,7 @@ exports[`Tabs component
     <div
       class="Tab Tab--active"
       data-test="DesignSystem-Tabs--Tab"
+      tabindex="0"
     >
       <span
         class="Pills Badge--primary Tabs-pills"
@@ -92,6 +96,7 @@ exports[`Tabs component
     <div
       class="Tab"
       data-test="DesignSystem-Tabs--Tab"
+      tabindex="-1"
     >
       <i
         class="material-icons material-icons-round Icon Icon--subtle mr-4"
@@ -110,6 +115,7 @@ exports[`Tabs component
     <div
       class="Tab Tab--disabled"
       data-test="DesignSystem-Tabs--Tab"
+      tabindex="-1"
     >
       <span
         class="Pills Badge--secondary Tabs-pills Tabs-pills--disabled"
