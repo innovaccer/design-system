@@ -31,7 +31,7 @@ export const twoStepsWorkflow = () => {
     );
   };
 
-  const data = [{ name:'Cultural and language barriers' }, { name:'Patient does not show Emotion' }];
+  const data = [{ name:'Cultural and language barriers', icon: 'cancel' }, { name:'Patient does not show Emotion', icon: 'cancel' }];
 
   const schema: TableProps['schema'] = [
     {
@@ -45,10 +45,7 @@ export const twoStepsWorkflow = () => {
       width: '20%',
       minWidth:'10',
       cellType:'ICON',
-      align:'right',
-      translate: _ => ({
-        icon: 'cancel',
-      }),
+      align:'right'
     },
   ];
 
@@ -157,7 +154,7 @@ const customCode = `
     );
   };
 
-  const data = [{ name:'Cultural and language barriers' }, { name:'Patient does not show Emotion' }];
+  const data = [{ name:'Cultural and language barriers', icon: 'cancel' }, { name:'Patient does not show Emotion', icon: 'cancel' }];
 
   const schema = [
     {
@@ -171,10 +168,7 @@ const customCode = `
       width: '20%',
       minWidth:'10',
       cellType:'ICON',
-      align:'right',
-      translate: _ => ({
-        icon: 'cancel',
-      }),
+      align:'right'
     },
   ];
 
