@@ -28,7 +28,7 @@ describe('Tabs component', () => {
   const Mapper: Record<string, any> = {
     activeIndex: valueHelper(activeIndex, { required: true }),
     onTabChange: valueHelper(FunctionValue, { required: true }),
-    withSeperator: valueHelper(BooleanValue, { required: true, iterate: true })
+    withSeparator: valueHelper(BooleanValue, { required: true, iterate: true })
   };
 
   const testFunc = (props: Record<string, any>): void => {

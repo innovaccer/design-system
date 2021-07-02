@@ -64,7 +64,7 @@ const customCode = `() => {
     <Tabs
       tabs={tabs}
       active={active}
-      onTabChange={setActiveIndex}
+      onTabChange={setActive}
     />
   );
 }`;
