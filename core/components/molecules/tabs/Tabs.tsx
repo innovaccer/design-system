@@ -18,7 +18,7 @@ export interface TabsProps extends BaseProps {
   /**
    * Shows border at bottom of  `Tabs`
    */
-  withSeperator?: boolean;
+  withSeparator?: boolean;
   /**
    * List of tabs
    * <pre className="DocPage-codeBlock">
@@ -47,7 +47,7 @@ export interface TabsProps extends BaseProps {
 export const Tabs = (props: TabsProps) => {
   const {
     tabs,
-    withSeperator,
+    withSeparator,
     onTabChange,
     className,
   } = props;
@@ -67,7 +67,7 @@ export const Tabs = (props: TabsProps) => {
 
   const tabsClass = classNames({
     ['Tabs']: true,
-    ['Tabs--withSeperator']: withSeperator,
+    ['Tabs--withSeparator']: withSeparator,
   }, className);
 
   const getPillsClass = (disabled?: boolean) => (
@@ -145,5 +145,8 @@ export const Tabs = (props: TabsProps) => {
 };
 
 Tabs.displayName = 'Tabs';
+Tabs.defaultProps = {
+  withSeparator: true
+};
 
 export default Tabs;

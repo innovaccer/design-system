@@ -35,7 +35,6 @@ export const tabsWithIcon = () => {
       </div>
       <Tabs
         tabs={tabs}
-        withSeperator={true}
         onTabChange={onTabChangeHandler}
       />
     </div>
@@ -70,7 +69,6 @@ const customCode = `() => {
       </div>
       <Tabs
         tabs={tabs}
-        withSeperator={true}
         onTabChange={console.log}
       />
     </div>
