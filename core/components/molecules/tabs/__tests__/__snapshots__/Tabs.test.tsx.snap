@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tabs component 
-  activeIndex: 0, onTabChange: "[Function]", withSeperator: false
+  activeIndex: 0, onTabChange: "[Function]", withSeparator: false
  1`] = `
 <DocumentFragment>
   <div
@@ -65,11 +65,11 @@ exports[`Tabs component
 `;
 
 exports[`Tabs component 
-  activeIndex: 0, onTabChange: "[Function]", withSeperator: true
+  activeIndex: 0, onTabChange: "[Function]", withSeparator: true
  1`] = `
 <DocumentFragment>
   <div
-    class="Tabs Tabs--withSeperator"
+    class="Tabs Tabs--withSeparator"
     data-test="DesignSystem-Tabs"
   >
     <div

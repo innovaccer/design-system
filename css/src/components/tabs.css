@@ -90,7 +90,7 @@
     height: var(--spacing-4);
 }
 
-.Tabs--withSeperator {
+.Tabs--withSeparator {
     border-bottom: var(--border);
 }
 
