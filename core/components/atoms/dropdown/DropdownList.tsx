@@ -370,6 +370,7 @@ const DropdownList = (props: OptionsProps) => {
             disabled={isClearDisabled}
             appearance="transparent"
             size="tiny"
+            type="button"
           >
             Clear
           </Button>
@@ -389,6 +390,7 @@ const DropdownList = (props: OptionsProps) => {
           onClick={onCancelOptions}
           size={'tiny'}
           tabIndex={-1}
+          type="button"
         >
           {cancelButtonLabel}
         </Button>
@@ -398,6 +400,7 @@ const DropdownList = (props: OptionsProps) => {
           disabled={disable}
           size={'tiny'}
           onClick={onApplyOptions}
+          type="button"
         >
           {applyButtonLabel}
         </Button>
