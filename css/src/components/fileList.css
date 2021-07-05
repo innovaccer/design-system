@@ -1,6 +1,5 @@
 .FileIcon {
     display: flex;
-    justify-content: center;
     align-items: center;
     padding: var(--spacing);
     border-radius: 50%;
