@@ -174,10 +174,11 @@ const renderIcon = (props: CellProps) => {
     cellData
   } = props;
 
-  const { icon } = cellData;
-  if (icon) {
+  const { title, icon } = cellData;
+  const iconName = icon || title;
+  if (iconName) {
     return (
-      <Icon name={icon} />
+      <Icon name={iconName} />
     );
   }
 
