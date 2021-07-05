@@ -76,7 +76,9 @@ export const PageHeader = (props: PageHeaderProps) => {
   }, className);
 
   const classes = classNames({
-    PageHeader: true
+    PageHeader: true,
+    ['d-none']: !badge && !title && (!navigation || (!!navigation && navigationPosition === 'bottom')) &&
+     !stepper && !actions,
   });
 
   const renderCenter = () => {
