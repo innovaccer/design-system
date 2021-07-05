@@ -515,9 +515,11 @@ export class Grid extends React.Component<GridProps, GridState> {
         ref={el => {
           this.gridRef = el;
           if (el && !this.state.init) {
-            this.setState({
-              init: true
-            });
+            document.onreadystatechange = () => {
+              this.setState({
+                init: true
+              });
+            };
           }
         }}
       >
