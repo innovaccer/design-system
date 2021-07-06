@@ -1972,15 +1972,211 @@ exports[`TS renders children 1`] = `
   </div>
   <div
     class="Grid Grid--data Grid--standard"
-  />
-  <div
-    class="Table"
   >
     <div
-      class="Table-grid"
+      class="Grid-head"
     >
       <div
-        class="Grid Grid--data Grid--standard"
+        class="Grid-row Grid-row--head"
+      />
+    </div>
+    <div
+      class="Grid-body"
+    >
+      <div
+        style="flex-shrink: 0; height: 0px;"
+      />
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        class="VS-item Grid-rowWrapper"
+      >
+        <div
+          class="Grid-row Grid-row--body"
+        />
+      </div>
+      <div
+        style="flex-shrink: 0; height: 920px;"
       />
     </div>
   </div>
@@ -1992,7 +2188,39 @@ exports[`TS renders children 1`] = `
     >
       <div
         class="Grid Grid--data Grid--standard"
-      />
+      >
+        <h4
+          class="Heading Heading--m Heading--default"
+          data-test="DesignSystem-Heading"
+        >
+          No results found
+        </h4>
+      </div>
+    </div>
+  </div>
+  <div
+    class="Table"
+  >
+    <div
+      class="Table-grid"
+    >
+      <div
+        class="Grid Grid--data Grid--standard"
+      >
+        <div
+          class="Grid-head"
+        >
+          <div
+            class="Grid-row Grid-row--head"
+          />
+        </div>
+        <h4
+          class="Heading Heading--m Heading--default"
+          data-test="DesignSystem-Heading"
+        >
+          No results found
+        </h4>
+      </div>
     </div>
   </div>
   <div

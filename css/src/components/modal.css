@@ -29,13 +29,12 @@
   background-color: var(--white);
   border-radius: var(--spacing);
   overflow: auto;
-  display: none;
+  display: flex;
+  flex-direction: column;
   visibility: hidden;
 }
 
 .Modal--open {
-  display: flex;
-  flex-direction: column;
   visibility: visible;
 }
 
