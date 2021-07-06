@@ -300,8 +300,20 @@ export class Grid extends React.Component<GridProps, GridState> {
     };
   }
 
+  componentDidMount() {
+    this.setState({
+      init: true
+    });
+    window.addEventListener('resize', this.forceRerender.bind(this));
+  }
+
+  forceRerender() {
+    this.forceUpdate();
+  }
+
   componentWillUnmount() {
     this.removeScrollListeners();
+    window.removeEventListener('resize', this.forceRerender.bind(this));
   }
 
   componentDidUpdate(prevProps: GridProps, prevState: GridState) {
@@ -514,13 +526,6 @@ export class Grid extends React.Component<GridProps, GridState> {
         {...baseProps}
         ref={el => {
           this.gridRef = el;
-          if (el && !this.state.init) {
-            document.onreadystatechange = () => {
-              this.setState({
-                init: true
-              });
-            };
-          }
         }}
       >
         {init && (

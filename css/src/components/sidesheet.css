@@ -27,13 +27,12 @@
   height: 100vh;
   box-shadow: var(--shadow-l);
   background-color: var(--white);
-  display: none;
+  display: flex;
+  flex-direction: column;
   visibility: hidden;
 }
 
 .Sidesheet--open {
-  display: flex;
-  flex-direction: column;
   visibility: visible;
 }
 
