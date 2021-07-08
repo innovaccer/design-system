@@ -2,29 +2,20 @@
   from {
     opacity: 0;
     background: transparent;
-    width: 120%;
-    height: 120%;
-    top: -10%;
-    left: -10%;
+    transform: scaleX(120%) scaleY(120%) translateX(-10%) translateY(-10%);
   }
   to {
-    top: 0px;
-    left: 0px;
     opacity: 100;
   }
 }
 
 @keyframes fullscreenModal-close {
   from {
-    top: 0px;
     opacity: 100;
   }
   to {
-    width: 120%;
-    height: 120%;
-    top: -10%;
-    left: -10%;
     opacity: 0;
+    transform: scaleX(120%) scaleY(120%) translateX(-10%) translateY(-10%);
   }
 }
 
@@ -38,13 +29,12 @@
   padding-top: var(--spacing-4);
   background-color: var(--white);
   overflow: auto;
-  display: none;
+  display: flex;
+  flex-direction: column;
   visibility: hidden;
 }
 
 .FullscreenModal--open {
-  display: flex;
-  flex-direction: column;
   visibility: visible;
 }
 
