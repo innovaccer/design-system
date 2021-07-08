@@ -80,7 +80,15 @@ export const PageHeader = (props: PageHeaderProps) => {
   });
 
   const renderCenter = () => {
-    return navigation ? navigation : stepper;
+    if (!navigation && !stepper) {
+      return null;
+    }
+
+    return (
+      <div className="PageHeader-navigationWrapper">
+        {navigation || stepper}
+      </div>
+    );
   };
 
   return (
@@ -95,9 +103,9 @@ export const PageHeader = (props: PageHeaderProps) => {
             </div>
           </Column>
           <Column size="4" sizeXL="4" sizeM="4">
-            <div className="PageHeader-navigationWrapper">
-              {(!breadcrumbs || navigationPosition === 'center') && renderCenter()}
-            </div>
+            {(!breadcrumbs || navigationPosition === 'center') && (
+              renderCenter()
+            )}
           </Column>
           <Column size="4" sizeXL="4" sizeM="4">
             {actions}
@@ -111,7 +119,8 @@ export const PageHeader = (props: PageHeaderProps) => {
         </div>
       )}
       {breadcrumbs && navigationPosition === 'bottom' && (
-        <div className="PageHeader-navigationWrapper">{renderCenter()}</div>)}
+        renderCenter()
+      )}
       {tabs && <div>{tabs}</div>}
     </div>
   );
