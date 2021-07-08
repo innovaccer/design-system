@@ -28,8 +28,8 @@ export const GridRow = React.memo((props: GridRowProps) => {
   } = context;
 
   const {
+    data = {},
     schema,
-    data,
     rowIndex: rI,
     onSelect,
     className
@@ -90,7 +90,7 @@ export const GridRow = React.memo((props: GridRowProps) => {
 
             return (
               <Cell
-                key={`${rI}-${cI}`}
+                key={`${s.name}-${rI}`}
                 rowIndex={rI}
                 colIndex={cI}
                 firstCell={!index}

@@ -107,7 +107,7 @@ const HeaderCell = React.memo((props: HeaderCellProps) => {
 
   const options = React.useMemo(() => {
     return getMenuOptions(pinned, sorting, sorted);
-  }, [pinned, sorting, sorted]);
+  }, [pinned, sorting]);
 
   const filterOptions = React.useMemo(() => filters
     ? filters.map(f => ({
@@ -153,7 +153,6 @@ const HeaderCell = React.memo((props: HeaderCellProps) => {
 
   return (
     <div
-      key={name}
       className={classes}
       ref={el}
     >
@@ -218,7 +217,7 @@ const HeaderCell = React.memo((props: HeaderCellProps) => {
           ) : (
             <div>
               <Dropdown
-                key={`${name}-${sorted}-${pinned}`}
+                // key={`${name}-${sorted}-${pinned}`}
                 menu={true}
                 optionType="WITH_ICON"
                 triggerOptions={{
@@ -311,7 +310,7 @@ const BodyCell = React.memo((props: BodyCellProps) => {
         schema.cellRenderer(cellProps)
         : (
           <GridCell
-            key={`${rowIndex}-${colIndex}`}
+            // key={`${rowIndex}-${colIndex}`}
             {...cellProps}
           />
         )}
@@ -409,7 +408,6 @@ export const Cell = React.memo((props: CellProps) => {
 
   return (
     <div
-      key={`${rowIndex}-${colIndex}`}
       className={cellClass}
       draggable={isHead && draggable}
       onDragStart={onDragStartHandler}

@@ -67,7 +67,7 @@ export const GridBody = React.memo((props: GridBodyProps) => {
   }, []);
 
   const totalPages = Math.ceil(totalRecords / pageSize);
-  const isLastPage = withPagination && page === totalPages - 1;
+  const isLastPage = withPagination && page === totalPages;
   const dataLength = isLastPage
     ? totalRecords - (page - 1) * pageSize
     : loading

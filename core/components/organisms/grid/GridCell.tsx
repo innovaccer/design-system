@@ -102,7 +102,7 @@ type CellProps = {
   cellData: CellData;
 };
 
-const renderTitle = React.memo((props: CellProps) => {
+const renderTitle = (props: CellProps) => {
   const {
     tooltip,
     cellData
@@ -124,9 +124,9 @@ const renderTitle = React.memo((props: CellProps) => {
   }
 
   return null;
-});
+};
 
-const renderMetaList = React.memo((props: CellProps) => {
+const renderMetaList = (props: CellProps) => {
   const {
     cellData
   } = props;
@@ -146,9 +146,9 @@ const renderMetaList = React.memo((props: CellProps) => {
   }
 
   return null;
-});
+};
 
-const renderAvatar = React.memo((props: CellProps) => {
+const renderAvatar = (props: CellProps) => {
   const {
     cellData
   } = props;
@@ -167,9 +167,9 @@ const renderAvatar = React.memo((props: CellProps) => {
   }
 
   return null;
-});
+};
 
-const renderIcon = React.memo((props: CellProps) => {
+const renderIcon = (props: CellProps) => {
   const {
     cellData
   } = props;
@@ -183,9 +183,9 @@ const renderIcon = React.memo((props: CellProps) => {
   }
 
   return null;
-});
+};
 
-const renderStatusHint = React.memo((props: CellProps) => {
+const renderStatusHint = (props: CellProps) => {
   const {
     cellData
   } = props;
@@ -207,7 +207,7 @@ const renderStatusHint = React.memo((props: CellProps) => {
   }
 
   return null;
-});
+};
 
 export const GridCell = React.memo((props: GridCellProps) => {
   const {

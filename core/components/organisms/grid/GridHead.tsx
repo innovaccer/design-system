@@ -74,7 +74,7 @@ export const GridHead = React.memo((props: GridHeadProps) => {
 
             return (
               <Cell
-                key={`${cI}`}
+                key={s.name}
                 firstCell={!index}
                 colIndex={cI}
                 isHead={true}
@@ -92,7 +92,7 @@ export const GridHead = React.memo((props: GridHeadProps) => {
     }
 
     return null;
-  }, [schema]);
+  }, [schema, renderCheckbox]);
 
   return (
     <div className="Grid-head">
