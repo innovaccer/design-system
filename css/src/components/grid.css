@@ -319,24 +319,22 @@
     box-sizing: border-box;
 }
 
-.GridCell--align-left {
+.GridCell--leftAlign {
     /* flex-direction: row; */
     justify-content: flex-start;
     text-align: left;
 }
 
-.GridCell--align-right {
+.GridCell--rightAlign {
     /* flex-direction: row-reverse; */
     justify-content: flex-end;
     text-align: right;
 }
 
-.GridCell--align-center {
+.GridCell--centerAlign {
     justify-content: center;
     text-align: center;
 }
-
-.GridCell--default {}
 
 .GridCell--metaList {
     display: flex;
