@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chip component 
+  label: "ChipLabel", icon: "events", clearButton: false, disabled: false, selected: false, name: "Chip", onclose: "[Function]", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Chip-wrapper undefined"
+      data-test="DesignSystem-GenericChip--GenericChipWrapper"
+    >
+      <i
+        class="material-icons material-icons-round Icon Icon--default Chip-icon Chip-icon--left"
+        data-test="DesignSystem-GenericChip--Icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        events_round
+      </i>
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-GenericChip--Text"
+      >
+        ChipLabel
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Chip component 
+  label: "ChipLabel", icon: "events", clearButton: false, disabled: false, selected: true, name: "Chip", onclose: "[Function]", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Chip-wrapper undefined"
+      data-test="DesignSystem-GenericChip--GenericChipWrapper"
+    >
+      <i
+        class="material-icons material-icons-round Icon Icon--info Chip-icon Chip-icon--left"
+        data-test="DesignSystem-GenericChip--Icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        events_round
+      </i>
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-GenericChip--Text"
+      >
+        ChipLabel
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Chip component 
+  label: "ChipLabel", icon: "events", clearButton: false, disabled: true, selected: false, name: "Chip", onclose: "[Function]", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Chip-wrapper undefined"
+      data-test="DesignSystem-GenericChip--GenericChipWrapper"
+    >
+      <i
+        class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--left"
+        data-test="DesignSystem-GenericChip--Icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        events_round
+      </i>
+      <span
+        class="Text Text--disabled Text--regular"
+        data-test="DesignSystem-GenericChip--Text"
+      >
+        ChipLabel
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Chip component 
+  label: "ChipLabel", icon: "events", clearButton: false, disabled: true, selected: true, name: "Chip", onclose: "[Function]", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Chip-wrapper undefined"
+      data-test="DesignSystem-GenericChip--GenericChipWrapper"
+    >
+      <i
+        class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--left"
+        data-test="DesignSystem-GenericChip--Icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        events_round
+      </i>
+      <span
+        class="Text Text--disabled Text--regular"
+        data-test="DesignSystem-GenericChip--Text"
+      >
+        ChipLabel
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Chip component 
+  label: "ChipLabel", icon: "events", clearButton: true, disabled: false, selected: false, name: "Chip", onclose: "[Function]", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Chip-wrapper undefined"
+      data-test="DesignSystem-GenericChip--GenericChipWrapper"
+    >
+      <i
+        class="material-icons material-icons-round Icon Icon--default Chip-icon Chip-icon--left"
+        data-test="DesignSystem-GenericChip--Icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        events_round
+      </i>
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-GenericChip--Text"
+      >
+        ChipLabel
+      </span>
+      <i
+        class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+        data-test="DesignSystem-GenericChip--clearButton"
+        style="font-size: 16px; width: 16px;"
+      >
+        clear_round
+      </i>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Chip component 
+  label: "ChipLabel", icon: "events", clearButton: true, disabled: false, selected: true, name: "Chip", onclose: "[Function]", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Chip-wrapper undefined"
+      data-test="DesignSystem-GenericChip--GenericChipWrapper"
+    >
+      <i
+        class="material-icons material-icons-round Icon Icon--info Chip-icon Chip-icon--left"
+        data-test="DesignSystem-GenericChip--Icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        events_round
+      </i>
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-GenericChip--Text"
+      >
+        ChipLabel
+      </span>
+      <i
+        class="material-icons material-icons-round Icon Icon--info Chip-icon Chip-icon--right cursor-pointer"
+        data-test="DesignSystem-GenericChip--clearButton"
+        style="font-size: 16px; width: 16px;"
+      >
+        clear_round
+      </i>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Chip component 
+  label: "ChipLabel", icon: "events", clearButton: true, disabled: true, selected: false, name: "Chip", onclose: "[Function]", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Chip-wrapper undefined"
+      data-test="DesignSystem-GenericChip--GenericChipWrapper"
+    >
+      <i
+        class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--left"
+        data-test="DesignSystem-GenericChip--Icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        events_round
+      </i>
+      <span
+        class="Text Text--disabled Text--regular"
+        data-test="DesignSystem-GenericChip--Text"
+      >
+        ChipLabel
+      </span>
+      <i
+        class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--right"
+        data-test="DesignSystem-GenericChip--clearButton"
+        style="font-size: 16px; width: 16px;"
+      >
+        clear_round
+      </i>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Chip component 
+  label: "ChipLabel", icon: "events", clearButton: true, disabled: true, selected: true, name: "Chip", onclose: "[Function]", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Chip-wrapper undefined"
+      data-test="DesignSystem-GenericChip--GenericChipWrapper"
+    >
+      <i
+        class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--left"
+        data-test="DesignSystem-GenericChip--Icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        events_round
+      </i>
+      <span
+        class="Text Text--disabled Text--regular"
+        data-test="DesignSystem-GenericChip--Text"
+      >
+        ChipLabel
+      </span>
+      <i
+        class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--right"
+        data-test="DesignSystem-GenericChip--clearButton"
+        style="font-size: 16px; width: 16px;"
+      >
+        clear_round
+      </i>
+    </div>
+  </div>
+</body>
+`;

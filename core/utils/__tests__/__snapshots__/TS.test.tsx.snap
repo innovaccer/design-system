@@ -45,16 +45,18 @@ exports[`TS renders children 1`] = `
   </div>
   <div
     class="Chip-wrapper Chip Chip--input"
+    data-test="DesignSystem-Chip--GenericChip"
   >
     <span
       class="Text Text--default Text--regular"
-      data-test="DesignSystem-Text"
+      data-test="DesignSystem-GenericChip--Text"
     >
       Hello World!
     </span>
   </div>
   <div
     class="ChipGroup"
+    data-test="DesignSystem-ChipGroup"
   />
   <div
     class="Checkbox"
