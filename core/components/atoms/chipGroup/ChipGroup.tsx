@@ -35,12 +35,13 @@ export const ChipGroup = (props: ChipGroupProps) => {
   }, className);
 
   return (
-    <div {...baseProps} className={ChipGroupClass}>
+    <div data-test="DesignSystem-ChipGroup" {...baseProps} className={ChipGroupClass}>
       {list.map((item, ind) => {
         const { label = '', icon, type, disabled, selected, clearButton, name } = item;
         return (
           <span key={ind} className="ChipGroup-item">
             <Chip
+              data-test="DesignSystem-ChipGroup--Chip"
               name={name}
               label={label}
               selected={selected}

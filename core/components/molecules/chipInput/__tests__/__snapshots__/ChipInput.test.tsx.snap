@@ -18,12 +18,13 @@ exports[`ChipInput component
         >
           <span
             class="Text Text--default Text--regular"
-            data-test="DesignSystem-Text"
+            data-test="DesignSystem-GenericChip--Text"
           >
             1020
           </span>
           <i
             class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+            data-test="DesignSystem-GenericChip--clearButton"
             style="font-size: 16px; width: 16px;"
           >
             clear_round
@@ -35,12 +36,13 @@ exports[`ChipInput component
         >
           <span
             class="Text Text--default Text--regular"
-            data-test="DesignSystem-Text"
+            data-test="DesignSystem-GenericChip--Text"
           >
             80
           </span>
           <i
             class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+            data-test="DesignSystem-GenericChip--clearButton"
             style="font-size: 16px; width: 16px;"
           >
             clear_round
@@ -83,12 +85,13 @@ exports[`ChipInput component
         >
           <span
             class="Text Text--disabled Text--regular"
-            data-test="DesignSystem-Text"
+            data-test="DesignSystem-GenericChip--Text"
           >
             1020
           </span>
           <i
             class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--right"
+            data-test="DesignSystem-GenericChip--clearButton"
             style="font-size: 16px; width: 16px;"
           >
             clear_round
@@ -100,12 +103,13 @@ exports[`ChipInput component
         >
           <span
             class="Text Text--disabled Text--regular"
-            data-test="DesignSystem-Text"
+            data-test="DesignSystem-GenericChip--Text"
           >
             80
           </span>
           <i
             class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--right"
+            data-test="DesignSystem-GenericChip--clearButton"
             style="font-size: 16px; width: 16px;"
           >
             clear_round
