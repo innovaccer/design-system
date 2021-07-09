@@ -2258,11 +2258,7 @@ exports[`TS renders children 1`] = `
         <div
           class="Col Col--4 Col--m-4 Col--xl-4"
           data-test="DesignSystem-Column"
-        >
-          <div
-            class="PageHeader-navigationWrapper"
-          />
-        </div>
+        />
         <div
           class="Col Col--4 Col--m-4 Col--xl-4"
           data-test="DesignSystem-Column"
