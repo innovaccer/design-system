@@ -209,7 +209,7 @@ const renderStatusHint = (props: CellProps) => {
   return null;
 };
 
-export const GridCell = (props: GridCellProps) => {
+export const GridCell = React.memo((props: GridCellProps) => {
   const {
     size,
     schema,
@@ -337,7 +337,7 @@ export const GridCell = (props: GridCellProps) => {
   }
 
   return null;
-};
+});
 
 GridCell.displayName = 'GridCell';
 

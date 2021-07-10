@@ -1,5 +1,5 @@
 import { GridProps } from '@/index.type';
-import { ColumnSchema, Pinned, SortType, CellType, GridRef, updateColumnSchemaFunction, updateSortingListFunction } from './Grid';
+import { Schema, ColumnSchema, Pinned, SortType, CellType, GridRef, updateColumnSchemaFunction, updateSortingListFunction } from './Grid';
 
 type resizeColFn = (
   gridInfo: { updateColumnSchema: updateColumnSchemaFunction },
@@ -23,6 +23,19 @@ type hideColumnFn = (
   name: ColumnSchema['name'],
   value: boolean
 ) => void;
+
+export const getPinnedSchema = (schema: Schema) => {
+  const pinned = schema.filter(s => !s.hidden && s.pinned);
+  const leftPinned = pinned.filter(s => !s.hidden && s.pinned === 'left');
+  const rightPinned = pinned.filter(s => !s.hidden && s.pinned === 'right');
+  const unpinned = schema.filter(s => !s.hidden && !s.pinned);
+
+  return ({
+    leftPinned,
+    rightPinned,
+    unpinned
+  });
+}
 
 export const resizeCol: resizeColFn = ({ updateColumnSchema }, name, el) => {
   const elX = el?.getBoundingClientRect().x;
@@ -85,7 +98,7 @@ export function getWidth({ ref, withCheckbox }: { ref: GridRef, withCheckbox?: b
   return width;
 }
 
-export function getCellSize(cellType: CellType) {
+export function getDefaultCellSize(cellType: CellType) {
   const sizes: Record<CellType, any> = {
     AVATAR: {
       minWidth: 48,

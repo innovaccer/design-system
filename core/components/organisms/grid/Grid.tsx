@@ -286,7 +286,7 @@ export interface GridState {
   prevPageInfo: PageInfo;
 }
 
-export class Grid extends React.Component<GridProps, GridState> {
+export class Grid extends React.PureComponent<GridProps, GridState> {
   static defaultProps: GridProps;
 
   constructor(props: GridProps) {
