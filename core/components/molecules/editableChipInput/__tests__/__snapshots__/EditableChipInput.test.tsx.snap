@@ -25,12 +25,13 @@ exports[`EditableChipInput component
           >
             <span
               class="Text Text--default Text--regular"
-              data-test="DesignSystem-Text"
+              data-test="DesignSystem-GenericChip--Text"
             >
               Chip1
             </span>
             <i
               class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+              data-test="DesignSystem-GenericChip--clearButton"
               style="font-size: 16px; width: 16px;"
             >
               clear_round
@@ -42,12 +43,13 @@ exports[`EditableChipInput component
           >
             <span
               class="Text Text--default Text--regular"
-              data-test="DesignSystem-Text"
+              data-test="DesignSystem-GenericChip--Text"
             >
               Chip2
             </span>
             <i
               class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+              data-test="DesignSystem-GenericChip--clearButton"
               style="font-size: 16px; width: 16px;"
             >
               clear_round
@@ -85,12 +87,13 @@ exports[`EditableChipInput component
           >
             <span
               class="Text Text--default Text--regular"
-              data-test="DesignSystem-Text"
+              data-test="DesignSystem-GenericChip--Text"
             >
               Chip1
             </span>
             <i
               class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+              data-test="DesignSystem-GenericChip--clearButton"
               style="font-size: 16px; width: 16px;"
             >
               clear_round
@@ -102,12 +105,13 @@ exports[`EditableChipInput component
           >
             <span
               class="Text Text--default Text--regular"
-              data-test="DesignSystem-Text"
+              data-test="DesignSystem-GenericChip--Text"
             >
               Chip2
             </span>
             <i
               class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+              data-test="DesignSystem-GenericChip--clearButton"
               style="font-size: 16px; width: 16px;"
             >
               clear_round

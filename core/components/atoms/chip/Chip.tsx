@@ -77,6 +77,7 @@ export const Chip = (props: ChipProps) => {
 
   return (
     <GenericChip
+      data-test="DesignSystem-Chip--GenericChip"
       {...baseProps}
       label={label}
       selected={select}
