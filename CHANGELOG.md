@@ -1,4 +1,45 @@
 
+## 2.2.0-1  (2021-07-12) 
+
+### Highlights
+NA
+
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+NA
+
+
+### Fixes
+* updates material icons font files. (4f5fd6b7)
+* fixes % width issue in overlays. (c1a4997d)
+* adds support for string for cellType: ICON (c153e3e6)
+* fixes width percent issue on initial render (fe12266d)
+* fixes hover state for disabled tabs. (85117ede)
+
+### Improvements
+* adds test for chip and chipGroup components (5f4e4e8c)
+* removes extra wrappers. (ab105189)
+* adds button type to dropdown with apply button. (28aa3fda)
+* adds focus state for tabs. (2365dc2e)
+* sets Tabs withSeparator default to true. (27e22655)
+* Uglify, brotli and gzip compression added. (101d71a6)
+* adds Date.now mock. (2644524c)
+* adds context api (ec94884f)
+### Documentation
+* adds stories to modal component (c12a633a)
+* fixes responsiveness story of pageheader component. (912a2246)
+* update guidelines for writing stories and patterns of components. (96159ad2)
+
+-------------------
 ## 2.2.0-0  (2021-07-01) 
 
 ### Highlights
