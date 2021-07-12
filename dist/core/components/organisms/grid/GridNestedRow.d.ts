@@ -1,9 +1,7 @@
-/// <reference types="react" />
-import { Grid } from "../../../index";
+import * as React from 'react';
 import { GridProps } from "../../../index.type";
 import { RowData } from "./Grid";
 export interface GridNestedRowProps {
-    _this: Grid;
     data: RowData;
     rowIndex: number;
 }
@@ -13,5 +11,5 @@ export interface NestedRowProps {
     schema: GridProps['schema'];
     loading: GridProps['loading'];
 }
-export declare const GridNestedRow: (props: GridNestedRowProps) => import("react").ReactElement<any, any> | null;
+export declare const GridNestedRow: (props: GridNestedRowProps) => React.ReactElement<any, any> | null;
 export default GridNestedRow;

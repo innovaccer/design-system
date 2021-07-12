@@ -1,10 +1,9 @@
-import { Data, Schema } from "./Grid";
-import { Grid } from "../../../index";
+import { GridState, onSelectFn, Schema, updatePrevPageInfoFunction } from "./Grid";
 export interface GridBodyProps {
     schema: Schema;
-    data: Data;
-    withCheckbox?: boolean;
-    _this: Grid;
+    onSelect: onSelectFn;
+    prevPageInfo: GridState['prevPageInfo'];
+    updatePrevPageInfo: updatePrevPageInfoFunction;
 }
 export declare const GridBody: (props: GridBodyProps) => any;
 export default GridBody;

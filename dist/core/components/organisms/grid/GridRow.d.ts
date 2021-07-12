@@ -1,11 +1,10 @@
-import { Grid } from "../../../index";
 import { RowData, Schema } from "./Grid";
+import { GridBodyProps } from "./GridBody";
 export interface GridRowProps {
     schema: Schema;
     data: RowData;
-    withCheckbox?: boolean;
-    _this: Grid;
     rowIndex: number;
+    onSelect: GridBodyProps['onSelect'];
     className?: string;
 }
 export declare const GridRow: {

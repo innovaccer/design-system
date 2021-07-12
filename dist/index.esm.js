@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1625121066993 
+   * Generated on: 1626097637254 
    *      Package: @innovaccer/design-system
-   *      Version: v2.2.0-0
+   *      Version: v2.2.0-1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -2021,7 +2021,8 @@ var DropdownList = function DropdownList(props) {
       onClick: onClearOptions,
       disabled: isClearDisabled,
       appearance: "transparent",
-      size: "tiny"
+      size: "tiny",
+      type: "button"
     }, "Clear"));
   };
 
@@ -2036,13 +2037,15 @@ var DropdownList = function DropdownList(props) {
       appearance: 'basic',
       onClick: onCancelOptions,
       size: 'tiny',
-      tabIndex: -1
+      tabIndex: -1,
+      type: "button"
     }, cancelButtonLabel), /*#__PURE__*/React.createElement(Button, {
       ref: dropdownApplyButtonRef,
       appearance: 'primary',
       disabled: disable,
       size: 'tiny',
-      onClick: onApplyOptions
+      onClick: onApplyOptions,
+      type: "button"
     }, applyButtonLabel));
   };
 
@@ -4193,16 +4196,21 @@ var GenericChip = function GenericChip(props) {
     if (onClick) onClick();
   };
 
-  return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
+  return /*#__PURE__*/React.createElement("div", _extends$3({
+    "data-test": "DesignSystem-GenericChip--GenericChipWrapper"
+  }, baseProps, {
     className: "Chip-wrapper ".concat(className),
     onClick: onClickHandler
   }), icon && /*#__PURE__*/React.createElement(Icon, {
+    "data-test": "DesignSystem-GenericChip--Icon",
     name: icon,
     appearance: disabled ? 'disabled' : selected ? 'info' : 'default',
     className: iconClass('left')
   }), /*#__PURE__*/React.createElement(Text, {
+    "data-test": "DesignSystem-GenericChip--Text",
     appearance: disabled ? 'disabled' : 'default'
   }, label), clearButton && /*#__PURE__*/React.createElement(Icon, {
+    "data-test": "DesignSystem-GenericChip--clearButton",
     name: "clear",
     appearance: disabled ? 'disabled' : selected ? 'info' : 'subtle',
     className: iconClass('right'),
@@ -4239,7 +4247,9 @@ var Chip = function Chip(props) {
   }, _defineProperty$2(_classNames, "Chip-".concat(type, "--disabled"), disabled), _defineProperty$2(_classNames, "Chip--".concat(type), type && !disabled), _defineProperty$2(_classNames, "Chip-".concat(type, "--selected"), selected && !disabled), _classNames), className);
   var clearbutton = type === 'action' ? false : clearButton;
   var select = type === 'selection' && selected ? true : false;
-  return /*#__PURE__*/React.createElement(GenericChip, _extends$3({}, baseProps, {
+  return /*#__PURE__*/React.createElement(GenericChip, _extends$3({
+    "data-test": "DesignSystem-Chip--GenericChip"
+  }, baseProps, {
     label: label,
     selected: select,
     icon: icon,
@@ -4272,7 +4282,9 @@ var ChipGroup = function ChipGroup(props) {
   };
 
   var ChipGroupClass = classnames(_defineProperty$2({}, 'ChipGroup', true), className);
-  return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
+  return /*#__PURE__*/React.createElement("div", _extends$3({
+    "data-test": "DesignSystem-ChipGroup"
+  }, baseProps, {
     className: ChipGroupClass
   }), list.map(function (item, ind) {
     var _item$label = item.label,
@@ -4287,6 +4299,7 @@ var ChipGroup = function ChipGroup(props) {
       key: ind,
       className: "ChipGroup-item"
     }, /*#__PURE__*/React.createElement(Chip, {
+      "data-test": "DesignSystem-ChipGroup--Chip",
       name: name,
       label: label,
       selected: selected,
@@ -11495,6 +11508,8 @@ _defineProperty$1(InnerPopper, "defaultProps", {
   referenceElement: undefined,
   positionFixed: false
 });
+
+Popper$1.placements;
 function Popper(_ref) {
   var referenceElement = _ref.referenceElement,
       props = _objectWithoutPropertiesLoose$1(_ref, ["referenceElement"]);
@@ -14829,7 +14844,7 @@ var Tabs = function Tabs(props) {
   var _classNames;
 
   var tabs = props.tabs,
-      withSeperator = props.withSeperator,
+      withSeparator = props.withSeparator,
       onTabChange = props.onTabChange,
       className = props.className;
   var baseProps = extractBaseProps(props);
@@ -14845,7 +14860,7 @@ var Tabs = function Tabs(props) {
       setActiveTab(props.activeIndex);
     }
   }, [props.activeIndex]);
-  var tabsClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Tabs', true), _defineProperty$2(_classNames, 'Tabs--withSeperator', withSeperator), _classNames), className);
+  var tabsClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Tabs', true), _defineProperty$2(_classNames, 'Tabs--withSeparator', withSeparator), _classNames), className);
 
   var getPillsClass = function getPillsClass(disabled) {
     var _classNames2;
@@ -14853,9 +14868,33 @@ var Tabs = function Tabs(props) {
     return classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Tabs-pills', true), _defineProperty$2(_classNames2, 'Tabs-pills--disabled', disabled), _classNames2));
   };
 
-  var tabClickHandler = function tabClickHandler(tabIndex) {
-    if (props.activeIndex === undefined) setActiveTab(tabIndex);
+  var tabClickHandler = function tabClickHandler(tabIndex, isKeyboard) {
+    if (props.activeIndex === undefined) {
+      var _tabRefs$tabIndex;
+
+      setActiveTab(tabIndex);
+      if (!isKeyboard) (_tabRefs$tabIndex = tabRefs[tabIndex]) === null || _tabRefs$tabIndex === void 0 ? void 0 : _tabRefs$tabIndex.blur();
+    }
+
     if (onTabChange) onTabChange(tabIndex);
+  };
+
+  var tabRefs = [];
+
+  var tabKeyDownHandler = function tabKeyDownHandler(event, tabIndex) {
+    if (event.key === 'Enter') {
+      tabClickHandler(tabIndex, true);
+    }
+
+    if (event.key === 'ArrowLeft' && tabIndex > 0) {
+      var prevElement = tabRefs[tabIndex - 1];
+      prevElement === null || prevElement === void 0 ? void 0 : prevElement.focus();
+    }
+
+    if (event.key === 'ArrowRight' && tabIndex < tabs.length) {
+      var nextElement = tabRefs[tabIndex + 1];
+      nextElement === null || nextElement === void 0 ? void 0 : nextElement.focus();
+    }
   };
 
   var renderInfo = function renderInfo(tab, index) {
@@ -14893,12 +14932,19 @@ var Tabs = function Tabs(props) {
       var textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
       var tabHeaderClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Tab', true), _defineProperty$2(_classNames3, 'Tab--disabled', disabled), _defineProperty$2(_classNames3, 'Tab--active', !disabled && activeIndex === index), _classNames3));
       return /*#__PURE__*/React.createElement("div", {
+        ref: function ref(element) {
+          return element && !disabled && tabRefs.push(element);
+        },
         "data-test": "DesignSystem-Tabs--Tab",
         key: index,
         className: tabHeaderClass,
         onClick: function onClick() {
           return !disabled && tabClickHandler(index);
-        }
+        },
+        onKeyDown: function onKeyDown(event) {
+          return tabKeyDownHandler(event, index);
+        },
+        tabIndex: activeIndex === index ? 0 : -1
       }, renderInfo(tab, index), /*#__PURE__*/React.createElement(Text, {
         "data-test": "DesignSystem-Tabs--Text",
         appearance: textAppearance
@@ -14913,6 +14959,9 @@ var Tabs = function Tabs(props) {
   }), renderTabs());
 };
 Tabs.displayName = 'Tabs';
+Tabs.defaultProps = {
+  withSeparator: true
+};
 
 var accepts = function accepts(file, acceptedFiles) {
   if (file && acceptedFiles) {
@@ -16121,14 +16170,15 @@ FileUploaderList.defaultProps = {
 };
 FileUploaderList.displayName = 'FileUploaderList';
 
-var resizeCol = function resizeCol(_this, name, el) {
+var resizeCol = function resizeCol(_ref, name, el) {
+  var updateColumnSchema = _ref.updateColumnSchema;
   var elX = el === null || el === void 0 ? void 0 : el.getBoundingClientRect().x;
 
   function resizable(ev) {
     ev.preventDefault();
 
     if (elX) {
-      _this.updateColumnSchema(name, {
+      updateColumnSchema(name, {
         width: ev.pageX - elX
       });
     }
@@ -16139,47 +16189,50 @@ var resizeCol = function resizeCol(_this, name, el) {
     window.removeEventListener('mousemove', resizable);
   });
 };
-function sortColumn(name, type) {
-  var sortingList = _toConsumableArray(this.props.sortingList);
+var sortColumn = function sortColumn(_ref2, name, type) {
+  var sortingList = _ref2.sortingList,
+      updateSortingList = _ref2.updateSortingList;
 
-  var index = sortingList.findIndex(function (l) {
+  var newSortingList = _toConsumableArray(sortingList);
+
+  var index = newSortingList.findIndex(function (l) {
     return l.name === name;
   });
 
   if (index !== -1) {
-    sortingList = [].concat(_toConsumableArray(sortingList.slice(0, index)), _toConsumableArray(sortingList.slice(index + 1)));
+    newSortingList = [].concat(_toConsumableArray(newSortingList.slice(0, index)), _toConsumableArray(newSortingList.slice(index + 1)));
   }
 
-  if (type !== 'unsort') sortingList.push({
+  if (type !== 'unsort') newSortingList.push({
     name: name,
     type: type
   });
-  this.updateSortingList(sortingList);
-}
-function pinColumn(name, type) {
+  updateSortingList(newSortingList);
+};
+var pinColumn = function pinColumn(_ref3, name, type) {
+  var updateColumnSchema = _ref3.updateColumnSchema;
   var schemaUpdate = {
     pinned: type !== 'unpin' ? type : undefined
   };
-  this.updateColumnSchema(name, schemaUpdate);
-}
-function hideColumn(name, value) {
+  updateColumnSchema(name, schemaUpdate);
+};
+var hideColumn = function hideColumn(_ref4, name, value) {
+  var updateColumnSchema = _ref4.updateColumnSchema;
   var schemaUpdate = {
     hidden: value
   };
-  this.updateColumnSchema(name, schemaUpdate);
-}
-function getWidth(width) {
+  updateColumnSchema(name, schemaUpdate);
+};
+function getWidth(_ref5, width) {
+  var ref = _ref5.ref,
+      withCheckbox = _ref5.withCheckbox;
   var isPercent = typeof width === 'string' && width.slice(-1) === '%';
 
   if (isPercent) {
-    if (this.state.init) {
-      var checkboxCell = this.gridRef.querySelector('.Grid-cell--checkbox');
-      var checkboxWidth = checkboxCell ? checkboxCell.clientWidth : 0;
-      var gridWidth = this.gridRef.clientWidth - checkboxWidth;
-      return gridWidth * (+width.slice(0, -1) / 100);
-    }
-
-    return 0;
+    var checkboxCell = ref.querySelector('.Grid-cell--checkbox');
+    var checkboxWidth = withCheckbox ? (checkboxCell === null || checkboxCell === void 0 ? void 0 : checkboxCell.clientWidth) || 28 : 0;
+    var gridWidth = ref.clientWidth - checkboxWidth;
+    return gridWidth * (+width.slice(0, -1) / 100);
   }
 
   return width;
@@ -16343,35 +16396,51 @@ var getSelectAll = function getSelectAll(data) {
     checked: false
   };
 };
-var getInit = function getInit(schema) {
+var hasSchema = function hasSchema(schema) {
   return schema && !!schema.length;
 };
-var getSchema = function getSchema(_this) {
-  var _this$props = _this.props,
-      loading = _this$props.loading,
-      loaderSchema = _this$props.loaderSchema;
-  var schema = _this.props.schema;
-  var init = getInit(schema);
+var getSchema = function getSchema(schema, loading, loaderSchema) {
+  var response = schema;
 
-  if (!init && loading) {
-    schema = loaderSchema;
+  if (!hasSchema(schema) && loading) {
+    response = loaderSchema;
   }
 
-  return schema;
+  return response;
 };
 var getPluralSuffix = function getPluralSuffix(count) {
   return count > 1 ? 's' : '';
 };
 
-// import * as React from 'react';
+var defaultProps$1 = {
+  showHead: true,
+  loaderSchema: [],
+  schema: [],
+  data: [],
+  totalRecords: 0,
+  type: 'data',
+  size: 'standard',
+  page: 1,
+  pageSize: 15,
+  loading: false,
+  error: false,
+  sortingList: [],
+  filterList: {},
+  showFilters: true
+};
+
+var context = /*#__PURE__*/React__default.createContext(_objectSpread2(_objectSpread2({}, defaultProps$1), {}, {
+  ref: null
+}));
+var GridProvider = context.Provider;
+
 var GridNestedRow = function GridNestedRow(props) {
-  var _this = props._this,
-      data = props.data,
+  var context$1 = React.useContext(context);
+  var schema = context$1.schema,
+      loading = context$1.loading,
+      nestedRowRenderer = context$1.nestedRowRenderer;
+  var data = props.data,
       rowIndex = props.rowIndex;
-  var _this$props = _this.props,
-      schema = _this$props.schema,
-      loading = _this$props.loading,
-      nestedRowRenderer = _this$props.nestedRowRenderer;
   if (nestedRowRenderer) return nestedRowRenderer({
     data: data,
     schema: schema,
@@ -16412,23 +16481,25 @@ var GridNestedRow = function GridNestedRow(props) {
 };
 
 var HeaderCell = function HeaderCell(props) {
-  var _this = props._this,
-      schema = props.schema,
-      draggable = props.draggable;
-  var _this$props = _this.props,
-      schemaProp = _this$props.schema,
-      loading = _this$props.loading,
-      showMenu = _this$props.showMenu,
-      sortingList = _this$props.sortingList,
-      filterList = _this$props.filterList,
-      headCellTooltip = _this$props.headCellTooltip,
-      showFilters = _this$props.showFilters;
+  var context$1 = React.useContext(context);
+  var schema = props.schema,
+      onMenuChange = props.onMenuChange,
+      onFilterChange = props.onFilterChange,
+      updateColumnSchema = props.updateColumnSchema;
+  var loading = context$1.loading,
+      draggable = context$1.draggable,
+      showMenu = context$1.showMenu,
+      sortingList = context$1.sortingList,
+      filterList = context$1.filterList,
+      headCellTooltip = context$1.headCellTooltip,
+      showFilters = context$1.showFilters,
+      schemaProp = context$1.schema;
   var _schema$sorting = schema.sorting,
       sorting = _schema$sorting === void 0 ? true : _schema$sorting,
       name = schema.name,
       filters = schema.filters,
       pinned = schema.pinned;
-  var init = getInit(schemaProp);
+  var isValidSchema = hasSchema(schemaProp);
   var listIndex = sortingList.findIndex(function (l) {
     return l.name === name;
   });
@@ -16508,12 +16579,12 @@ var HeaderCell = function HeaderCell(props) {
     className: "Grid-cellContent",
     onClick: function onClick() {
       if (!loading && sorting) {
-        if (sorted === 'asc') _this.onMenuChange(name, 'sortDesc');
-        if (sorted === 'desc') _this.onMenuChange(name, 'unsort');
-        if (!sorted) _this.onMenuChange(name, 'sortAsc');
+        if (sorted === 'asc') onMenuChange(name, 'sortDesc');
+        if (sorted === 'desc') onMenuChange(name, 'unsort');
+        if (!sorted) onMenuChange(name, 'sortAsc');
       }
     }
-  }, loading && !init ? /*#__PURE__*/React.createElement(Placeholder, {
+  }, loading && !isValidSchema ? /*#__PURE__*/React.createElement(Placeholder, {
     withImage: false
   }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
     length: "medium"
@@ -16521,7 +16592,7 @@ var HeaderCell = function HeaderCell(props) {
     position: "top-start",
     triggerClass: "w-100 overflow-hidden",
     tooltip: schema.displayName
-  }, renderLabel()) : renderLabel())), showFilters && filters && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !init ? /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement(Placeholder, null)) : /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Dropdown, {
+  }, renderLabel()) : renderLabel())), showFilters && filters && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !isValidSchema ? /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement(Placeholder, null)) : /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Dropdown, {
     menu: true,
     showApplyButton: true,
     withCheckbox: true,
@@ -16536,10 +16607,10 @@ var HeaderCell = function HeaderCell(props) {
     options: filterOptions,
     align: 'left',
     onChange: function onChange(selected) {
-      return _this.onFilterChange(name, selected);
+      return onFilterChange(name, selected);
     },
     minWidth: 176
-  }))), showMenu && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !init ? /*#__PURE__*/React.createElement("span", {
+  }))), showMenu && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !isValidSchema ? /*#__PURE__*/React.createElement("span", {
     className: "ml-4"
   }, /*#__PURE__*/React.createElement(Placeholder, null)) : /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Dropdown, {
     key: "".concat(name, "-").concat(sorted, "-").concat(pinned),
@@ -16556,28 +16627,29 @@ var HeaderCell = function HeaderCell(props) {
     options: options,
     align: 'left',
     onChange: function onChange(selected) {
-      return _this.onMenuChange(name, selected);
+      return onMenuChange(name, selected);
     },
     minWidth: 176
   }))), schema.resizable && /*#__PURE__*/React.createElement("span", {
     className: "Grid-cellResize",
     onMouseDown: function onMouseDown() {
-      resizeCol(_this, name, el.current);
+      resizeCol({
+        updateColumnSchema: updateColumnSchema
+      }, name, el.current);
     }
   }));
 };
 
 var BodyCell = function BodyCell(props) {
-  var _this = props._this,
-      data = props.data,
+  var context$1 = React.useContext(context);
+  var data = props.data,
       schema = props.schema,
       expandedState = props.expandedState,
       rowIndex = props.rowIndex,
       colIndex = props.colIndex;
-  var _this$props2 = _this.props,
-      size = _this$props2.size,
-      loading = _this$props2.loading,
-      nestedRows = _this$props2.nestedRows;
+  var size = context$1.size,
+      loading = context$1.loading,
+      nestedRows = context$1.nestedRows;
 
   var _expandedState = _slicedToArray(expandedState, 2),
       expanded = _expandedState[0],
@@ -16593,7 +16665,6 @@ var BodyCell = function BodyCell(props) {
     expanded: expanded
   };
   var nestedProps = {
-    _this: _this,
     data: data,
     rowIndex: rowIndex
   };
@@ -16619,19 +16690,24 @@ var BodyCell = function BodyCell(props) {
 };
 
 var Cell = function Cell(props) {
-  var _this = props._this,
-      head = props.head,
-      colIndex = props.colIndex,
+  var context$1 = React.useContext(context);
+  var isHead = props.isHead,
       firstCell = props.firstCell,
       schema = props.schema,
-      expandedState = props.expandedState,
-      draggable = props.draggable,
       data = props.data,
-      rowIndex = props.rowIndex;
-  var _this$props3 = _this.props,
-      separator = _this$props3.separator,
-      nestedRows = _this$props3.nestedRows;
-  var init = _this.state.init;
+      rowIndex = props.rowIndex,
+      colIndex = props.colIndex,
+      expandedState = props.expandedState,
+      onSelectAll = props.onSelectAll,
+      onMenuChange = props.onMenuChange,
+      onFilterChange = props.onFilterChange,
+      updateColumnSchema = props.updateColumnSchema,
+      reorderColumn = props.reorderColumn;
+  var draggable = context$1.draggable,
+      separator = context$1.separator,
+      nestedRows = context$1.nestedRows,
+      ref = context$1.ref,
+      withCheckbox = context$1.withCheckbox;
   var name = schema.name,
       hidden = schema.hidden,
       pinned = schema.pinned,
@@ -16647,16 +16723,16 @@ var Cell = function Cell(props) {
 
   var cellClass = classnames({
     'Grid-cell': true,
-    'Grid-cell--head': head,
-    'Grid-cell--body': !head,
+    'Grid-cell--head': isHead,
+    'Grid-cell--body': !isHead,
     'Grid-cell--separator': !firstCell && (schema.separator !== undefined ? schema.separator : separator),
-    'Grid-cell--nestedRow': !head && colIndex === 0 && nestedRows
+    'Grid-cell--nestedRow': !isHead && colIndex === 0 && nestedRows
   });
   if (hidden) return null;
   return /*#__PURE__*/React.createElement("div", {
     key: "".concat(rowIndex, "-").concat(colIndex),
     className: cellClass,
-    draggable: head && draggable,
+    draggable: isHead && draggable,
     onDragStart: function onDragStart(e) {
       if (draggable) {
         e.dataTransfer.setData('name', name);
@@ -16676,22 +16752,32 @@ var Cell = function Cell(props) {
           name: name,
           type: pinned || ''
         };
-        if (from.type === to.type) _this.reorderCol(from.name, to.name);
+        if (from.type === to.type) reorderColumn(from.name, to.name);
       }
     },
     style: {
-      visibility: !init ? 'hidden' : 'visible',
-      width: getWidth.call(_this, schema.width || width),
-      minWidth: getWidth.call(_this, schema.minWidth || minWidth),
-      maxWidth: getWidth.call(_this, schema.maxWidth || maxWidth)
+      width: getWidth({
+        ref: ref,
+        withCheckbox: withCheckbox
+      }, schema.width || width),
+      minWidth: getWidth({
+        ref: ref,
+        withCheckbox: withCheckbox
+      }, schema.minWidth || minWidth),
+      maxWidth: getWidth({
+        ref: ref,
+        withCheckbox: withCheckbox
+      }, schema.maxWidth || maxWidth)
     }
-  }, head ? /*#__PURE__*/React.createElement(HeaderCell, {
-    _this: _this,
-    draggable: draggable,
+  }, isHead ? /*#__PURE__*/React.createElement(HeaderCell, {
     colIndex: colIndex,
-    schema: schema
+    schema: schema,
+    onSelectAll: onSelectAll,
+    onMenuChange: onMenuChange,
+    onFilterChange: onFilterChange,
+    updateColumnSchema: updateColumnSchema,
+    reorderColumn: reorderColumn
   }) : /*#__PURE__*/React.createElement(BodyCell, {
-    _this: _this,
     rowIndex: rowIndex,
     colIndex: colIndex,
     data: data,
@@ -16701,14 +16787,16 @@ var Cell = function Cell(props) {
 };
 
 var GridHead = function GridHead(props) {
-  var _this = props._this,
-      _props$draggable = props.draggable,
-      draggable = _props$draggable === void 0 ? false : _props$draggable,
-      withCheckbox = props.withCheckbox;
-  var _this$props = _this.props,
-      loading = _this$props.loading,
-      selectAll = _this$props.selectAll;
-  var schema = getSchema(_this);
+  var context$1 = React.useContext(context);
+  var schema = props.schema,
+      onSelectAll = props.onSelectAll,
+      onMenuChange = props.onMenuChange,
+      onFilterChange = props.onFilterChange,
+      updateColumnSchema = props.updateColumnSchema,
+      reorderColumn = props.reorderColumn;
+  var withCheckbox = context$1.withCheckbox,
+      loading = context$1.loading,
+      selectAll = context$1.selectAll;
   var pinnedSchema = schema.filter(function (s) {
     return !s.hidden && s.pinned;
   });
@@ -16727,7 +16815,7 @@ var GridHead = function GridHead(props) {
     return /*#__PURE__*/React.createElement("div", {
       className: "Grid-cell Grid-cell--head Grid-cell--checkbox"
     }, loading ? /*#__PURE__*/React.createElement(Placeholder, null) : /*#__PURE__*/React.createElement(Checkbox, _extends$3({}, selectAll, {
-      onChange: _this.onSelectAll
+      onChange: onSelectAll
     })));
   };
 
@@ -16746,12 +16834,15 @@ var GridHead = function GridHead(props) {
         if (pinned === 'right') cI += unpinnedSchema.length;
         return /*#__PURE__*/React.createElement(Cell, {
           key: "".concat(cI),
-          _this: _this,
-          head: true,
-          draggable: draggable,
-          schema: s,
+          firstCell: !index,
           colIndex: cI,
-          firstCell: !index
+          isHead: true,
+          schema: s,
+          onSelectAll: onSelectAll,
+          onMenuChange: onMenuChange,
+          onFilterChange: onFilterChange,
+          updateColumnSchema: updateColumnSchema,
+          reorderColumn: reorderColumn
         });
       }));
     }
@@ -17165,11 +17256,16 @@ var index = /*#__PURE__*/React.forwardRef(function (props, ref) {
 });
 
 var GridRow = function GridRow(props) {
-  var _this = props._this,
-      schema = props.schema,
+  var context$1 = React.useContext(context);
+  var type = context$1.type,
+      onRowClick = context$1.onRowClick,
+      loading = context$1.loading,
+      withCheckbox = context$1.withCheckbox,
+      nestedRows = context$1.nestedRows;
+  var schema = props.schema,
       data = props.data,
-      withCheckbox = props.withCheckbox,
       rI = props.rowIndex,
+      onSelect = props.onSelect,
       className = props.className;
   var rowRef = React.useRef(null);
 
@@ -17181,22 +17277,13 @@ var GridRow = function GridRow(props) {
   var rowClasses = classnames('Grid-row', 'Grid-row--body', {
     'Grid-row--selected': data._selected
   });
-
-  var onClickHandler = function onClickHandler() {
-    var type = _this.props.type;
-
+  var onClickHandler = React.useCallback(function () {
     if (type === 'resource' && !loading) {
-      var onRowClick = _this.props.onRowClick;
-
       if (onRowClick) {
         onRowClick(data, rI);
       }
     }
-  };
-
-  var _this$props = _this.props,
-      loading = _this$props.loading,
-      nestedRows = _this$props.nestedRows;
+  }, [data, rI]);
   var pinnedSchema = schema.filter(function (s) {
     return !s.hidden && s.pinned;
   });
@@ -17220,7 +17307,7 @@ var GridRow = function GridRow(props) {
     }, loading ? /*#__PURE__*/React.createElement(Placeholder, null) : /*#__PURE__*/React.createElement(Checkbox, {
       checked: !!data._selected,
       onChange: function onChange(event) {
-        _this.onSelect(rI, event.target.checked);
+        onSelect(rI, event.target.checked);
       }
     }));
   };
@@ -17240,7 +17327,6 @@ var GridRow = function GridRow(props) {
         if (pinned === 'right') cI += unpinnedSchema.length;
         return /*#__PURE__*/React.createElement(Cell, {
           key: "".concat(rI, "-").concat(cI),
-          _this: _this,
           rowIndex: rI,
           colIndex: cI,
           firstCell: !index,
@@ -17266,7 +17352,6 @@ var GridRow = function GridRow(props) {
   }, renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left'), renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length), renderSchema(rightPinnedSchema, false, 'right')), nestedRows && expanded && /*#__PURE__*/React.createElement("div", {
     className: "Grid-nestedRow"
   }, /*#__PURE__*/React.createElement(GridNestedRow, {
-    _this: _this,
     data: data,
     rowIndex: rI
   })));
@@ -17276,29 +17361,43 @@ GridRow.defaultProps = {
 };
 
 var GridBody = function GridBody(props) {
-  var _this = props._this,
-      schema = props.schema,
-      data = props.data,
-      withCheckbox = props.withCheckbox;
+  var context$1 = React.useContext(context);
+  var data = context$1.data,
+      ref = context$1.ref,
+      size = context$1.size,
+      loading = context$1.loading,
+      error = context$1.error,
+      withPagination = context$1.withPagination,
+      page = context$1.page,
+      pageSize = context$1.pageSize,
+      totalRecords = context$1.totalRecords,
+      errorTemplate = context$1.errorTemplate;
+
+  if (!loading && error) {
+    return errorTemplate ? typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate : null;
+  }
+
+  var schema = props.schema,
+      prevPageInfo = props.prevPageInfo,
+      updatePrevPageInfo = props.updatePrevPageInfo,
+      onSelect = props.onSelect;
   React.useEffect(function () {
-    var gridBodyEl = _this.gridRef.querySelector('.Grid-body');
+    var gridBodyEl = ref.querySelector('.Grid-body');
 
     if (gridBodyEl) {
       window.requestAnimationFrame(function () {
-        if (_this.prevPageInfo.page === page) {
-          gridBodyEl.scrollTop = _this.prevPageInfo.scrollTop;
+        if (prevPageInfo.page === page) {
+          gridBodyEl.scrollTop = prevPageInfo.scrollTop;
         }
-
-        _this.prevPageInfo = _this.currPageInfo;
       });
     }
 
     return function () {
       if (gridBodyEl) {
-        _this.currPageInfo = {
+        updatePrevPageInfo({
           page: page,
           scrollTop: gridBodyEl.scrollTop
-        };
+        });
       }
     };
   }, []);
@@ -17308,31 +17407,16 @@ var GridBody = function GridBody(props) {
     compressed: 32,
     tight: 24
   };
-  var _this$props = _this.props,
-      size = _this$props.size,
-      loading = _this$props.loading,
-      error = _this$props.error,
-      withPagination = _this$props.withPagination,
-      page = _this$props.page,
-      pageSize = _this$props.pageSize,
-      totalRecords = _this$props.totalRecords,
-      errorTemplate = _this$props.errorTemplate;
-
-  if (!loading && error) {
-    return errorTemplate ? typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate : null;
-  }
-
   var totalPages = Math.ceil(totalRecords / pageSize);
-  var isLastPage = withPagination && page === totalPages;
+  var isLastPage = withPagination && page === totalPages - 1;
   var dataLength = isLastPage ? totalRecords - (page - 1) * pageSize : loading ? pageSize : withPagination ? Math.min(totalRecords, pageSize) : totalRecords;
 
   var renderItem = function renderItem(rowIndex) {
     return /*#__PURE__*/React.createElement(GridRow, {
-      _this: _this,
       rowIndex: rowIndex,
       data: data[rowIndex],
       schema: schema,
-      withCheckbox: withCheckbox
+      onSelect: onSelect
     });
   };
 
@@ -17357,13 +17441,6 @@ var Grid = /*#__PURE__*/function (_React$Component) {
     _classCallCheck$1(this, Grid);
 
     _this = _super.call(this, props);
-
-    _defineProperty$2(_assertThisInitialized$2(_this), "currPageInfo", {
-      page: 1,
-      scrollTop: 0
-    });
-
-    _defineProperty$2(_assertThisInitialized$2(_this), "prevPageInfo", _this.currPageInfo);
 
     _defineProperty$2(_assertThisInitialized$2(_this), "gridRef", null);
 
@@ -17418,7 +17495,7 @@ var Grid = /*#__PURE__*/function (_React$Component) {
       _this.updateRenderedSchema(newSchema);
     });
 
-    _defineProperty$2(_assertThisInitialized$2(_this), "reorderCol", function (from, to) {
+    _defineProperty$2(_assertThisInitialized$2(_this), "reorderColumn", function (from, to) {
       var schema = _this.props.schema;
       var fromInd = schema.findIndex(function (s) {
         return s.name === from;
@@ -17448,33 +17525,52 @@ var Grid = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty$2(_assertThisInitialized$2(_this), "onMenuChange", function (name, selected) {
+      var sortingList = _this.props.sortingList;
+
       switch (selected) {
         case 'sortAsc':
-          sortColumn.call(_assertThisInitialized$2(_this), name, 'asc');
+          sortColumn({
+            sortingList: sortingList,
+            updateSortingList: _this.updateSortingList
+          }, name, 'asc');
           break;
 
         case 'sortDesc':
-          sortColumn.call(_assertThisInitialized$2(_this), name, 'desc');
+          sortColumn({
+            sortingList: sortingList,
+            updateSortingList: _this.updateSortingList
+          }, name, 'desc');
           break;
 
         case 'unsort':
-          sortColumn.call(_assertThisInitialized$2(_this), name, 'unsort');
+          sortColumn({
+            sortingList: sortingList,
+            updateSortingList: _this.updateSortingList
+          }, name, 'unsort');
           break;
 
         case 'pinLeft':
-          pinColumn.call(_assertThisInitialized$2(_this), name, 'left');
+          pinColumn({
+            updateColumnSchema: _this.updateColumnSchema
+          }, name, 'left');
           break;
 
         case 'pinRight':
-          pinColumn.call(_assertThisInitialized$2(_this), name, 'right');
+          pinColumn({
+            updateColumnSchema: _this.updateColumnSchema
+          }, name, 'right');
           break;
 
         case 'unpin':
-          pinColumn.call(_assertThisInitialized$2(_this), name, 'unpin');
+          pinColumn({
+            updateColumnSchema: _this.updateColumnSchema
+          }, name, 'unpin');
           break;
 
         case 'hide':
-          hideColumn.call(_assertThisInitialized$2(_this), name, true);
+          hideColumn({
+            updateColumnSchema: _this.updateColumnSchema
+          }, name, true);
           break;
       }
     });
@@ -17503,8 +17599,19 @@ var Grid = /*#__PURE__*/function (_React$Component) {
       }
     });
 
+    _defineProperty$2(_assertThisInitialized$2(_this), "updatePrevPageInfo", function (value) {
+      _this.setState({
+        prevPageInfo: value
+      });
+    });
+
+    var pageInfo = {
+      page: 1,
+      scrollTop: 0
+    };
     _this.state = {
-      init: false
+      init: false,
+      prevPageInfo: pageInfo
     };
     return _this;
   }
@@ -17512,16 +17619,29 @@ var Grid = /*#__PURE__*/function (_React$Component) {
   _createClass$1(Grid, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.addScrollListeners();
+      this.setState({
+        init: true
+      });
+      window.addEventListener('resize', this.forceRerender.bind(this));
+    }
+  }, {
+    key: "forceRerender",
+    value: function forceRerender() {
+      this.forceUpdate();
     }
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       this.removeScrollListeners();
+      window.removeEventListener('resize', this.forceRerender.bind(this));
     }
   }, {
     key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (prevState.init !== this.state.init) {
+        this.addScrollListeners();
+      }
+
       if (prevProps.page !== this.props.page) {
         this.removeScrollListeners();
         this.addScrollListeners();
@@ -17553,67 +17673,58 @@ var Grid = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var _classNames,
-          _this2 = this;
+          _this2 = this,
+          _this$onSelectAll;
 
       var baseProps = extractBaseProps(this.props);
-      var schema = getSchema(this);
+      var _this$state = this.state,
+          init = _this$state.init,
+          prevPageInfo = _this$state.prevPageInfo;
       var _this$props = this.props,
           type = _this$props.type,
           size = _this$props.size,
           showHead = _this$props.showHead,
-          draggable = _this$props.draggable,
-          withCheckbox = _this$props.withCheckbox,
-          data = _this$props.data,
           className = _this$props.className,
-          page = _this$props.page;
+          page = _this$props.page,
+          loading = _this$props.loading,
+          loaderSchema = _this$props.loaderSchema;
+      var schema = getSchema(this.props.schema, loading, loaderSchema);
       var classes = classnames((_classNames = {
         Grid: 'true'
       }, _defineProperty$2(_classNames, "Grid--".concat(type), type), _defineProperty$2(_classNames, "Grid--".concat(size), size), _classNames), className);
       return /*#__PURE__*/React.createElement("div", _extends$3({
-        key: "".concat(page),
         className: classes
       }, baseProps, {
         ref: function ref(el) {
           _this2.gridRef = el;
-
-          if (el && !_this2.state.init) {
-            _this2.setState({
-              init: true
-            });
-          }
         }
-      }), showHead && /*#__PURE__*/React.createElement(GridHead, {
-        _this: this,
+      }), init && /*#__PURE__*/React.createElement(GridProvider, {
+        value: _objectSpread2(_objectSpread2({}, this.props), {}, {
+          ref: this.gridRef
+        })
+      }, showHead && /*#__PURE__*/React.createElement(GridHead, {
         schema: schema,
-        draggable: draggable,
-        withCheckbox: withCheckbox
+        onSelectAll: (_this$onSelectAll = this.onSelectAll) === null || _this$onSelectAll === void 0 ? void 0 : _this$onSelectAll.bind(this),
+        onMenuChange: this.onMenuChange.bind(this),
+        onFilterChange: this.onFilterChange.bind(this),
+        updateColumnSchema: this.updateColumnSchema.bind(this),
+        reorderColumn: this.reorderColumn.bind(this)
       }), /*#__PURE__*/React.createElement(GridBody, {
-        _this: this,
+        key: "".concat(page),
         schema: schema,
-        data: data,
-        withCheckbox: withCheckbox
-      }));
+        prevPageInfo: prevPageInfo,
+        updatePrevPageInfo: this.updatePrevPageInfo.bind(this),
+        onSelect: this.onSelect.bind(this)
+      })));
     }
   }]);
 
   return Grid;
 }(React.Component);
 
-_defineProperty$2(Grid, "defaultProps", {
-  showHead: true,
-  loaderSchema: [],
-  schema: [],
-  data: [],
-  type: 'data',
-  size: 'standard',
-  page: 1,
-  pageSize: 15,
-  loading: false,
-  error: false,
-  sortingList: [],
-  filterList: {},
-  showFilters: true
-});
+_defineProperty$2(Grid, "defaultProps", void 0);
+
+Grid.defaultProps = defaultProps$1;
 
 var renderTitle = function renderTitle(props) {
   var tooltip = props.tooltip,
@@ -17684,11 +17795,13 @@ var renderAvatar = function renderAvatar(props) {
 
 var renderIcon = function renderIcon(props) {
   var cellData = props.cellData;
-  var icon = cellData.icon;
+  var title = cellData.title,
+      icon = cellData.icon;
+  var iconName = icon || title;
 
-  if (icon) {
+  if (iconName) {
     return /*#__PURE__*/React.createElement(Icon, {
-      name: icon
+      name: iconName
     });
   }
 
@@ -18087,7 +18200,7 @@ var Header = function Header(props) {
     onClear: function onClear() {
       return updateSearchTerm && updateSearchTerm('');
     },
-    disabled: loading && !getInit(schema)
+    disabled: loading && !hasSchema(schema)
   })), showFilters && filterSchema.length > 0 && /*#__PURE__*/React.createElement("div", {
     className: "Header-dropdown"
   }, /*#__PURE__*/React.createElement("div", {
@@ -18798,7 +18911,13 @@ var PageHeader = function PageHeader(props) {
   });
 
   var renderCenter = function renderCenter() {
-    return navigation ? navigation : stepper;
+    if (!navigation && !stepper) {
+      return null;
+    }
+
+    return /*#__PURE__*/React.createElement("div", {
+      className: "PageHeader-navigationWrapper"
+    }, navigation || stepper);
   };
 
   return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
@@ -18817,17 +18936,13 @@ var PageHeader = function PageHeader(props) {
     size: "4",
     sizeXL: "4",
     sizeM: "4"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "PageHeader-navigationWrapper"
-  }, (!breadcrumbs || navigationPosition === 'center') && renderCenter())), /*#__PURE__*/React.createElement(Column, {
+  }, (!breadcrumbs || navigationPosition === 'center') && renderCenter()), /*#__PURE__*/React.createElement(Column, {
     size: "4",
     sizeXL: "4",
     sizeM: "4"
   }, actions))), (status || meta) && /*#__PURE__*/React.createElement("div", {
     className: "PageHeader-statusWrapper"
-  }, status, meta), breadcrumbs && navigationPosition === 'bottom' && /*#__PURE__*/React.createElement("div", {
-    className: "PageHeader-navigationWrapper"
-  }, renderCenter()), tabs && /*#__PURE__*/React.createElement("div", null, tabs));
+  }, status, meta), breadcrumbs && navigationPosition === 'bottom' && renderCenter(), tabs && /*#__PURE__*/React.createElement("div", null, tabs));
 };
 PageHeader.defaultProps = {
   navigationPosition: 'center',
@@ -19173,6 +19288,6 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
 
 VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-var version = "2.2.0-0";
+var version = "2.2.0-1";
 
 export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, CardBody, CardFooter, CardHeader, CardSubdued, ChatMessage, Checkbox, Chip, ChipGroup, ChipInput, Collapsible, Column, DatePicker, DateRangePicker, Dialog, Dropdown, Dropzone, EditableChipInput, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, HorizontalNav, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, MetricInput, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, Tabs, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, VerificationCodeInput, VerticalNav, version };

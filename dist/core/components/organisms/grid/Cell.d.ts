@@ -1,22 +1,24 @@
 import * as React from 'react';
 import { RowData, ColumnSchema } from "./Grid";
-import { Grid } from "../../../index";
+import { GridHeadProps } from "./GridHead";
 interface SharedCellProps {
-    _this: Grid;
     schema: ColumnSchema;
+    colIndex: number;
 }
 declare type HeaderCellProps = SharedCellProps & {
-    colIndex: number;
-    draggable: boolean;
+    onSelectAll: GridHeadProps['onSelectAll'];
+    onMenuChange: GridHeadProps['onMenuChange'];
+    onFilterChange: GridHeadProps['onFilterChange'];
+    updateColumnSchema: GridHeadProps['updateColumnSchema'];
+    reorderColumn: GridHeadProps['reorderColumn'];
 };
 declare type BodyCellProps = SharedCellProps & {
     data: RowData;
     rowIndex: number;
-    colIndex: number;
     expandedState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 };
 export declare type CellProps = (HeaderCellProps | BodyCellProps) & {
-    head?: boolean;
+    isHead?: boolean;
     firstCell: boolean;
 };
 export declare const Cell: (props: CellProps) => JSX.Element | null;

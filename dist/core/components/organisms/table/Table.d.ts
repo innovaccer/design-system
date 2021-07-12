@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ExternalHeaderProps, updateSearchTermFunction, HeaderProps } from "./Header";
-import { Data, onSelectFunction, onSelectAllFunction, GridProps, fetchDataFunction, RowData, updateSchemaFunction, updateSortingListFunction, updateFilterListFunction } from "../grid";
+import { Data, onSelectFn, onSelectAllFunction, GridProps, fetchDataFunction, RowData, updateSchemaFunction, updateSortingListFunction, updateFilterListFunction } from "../grid";
 import { BaseProps } from "../../../utils/types";
 import { PaginationProps } from "../../molecules/pagination";
 export interface ErrorTemplateProps {
@@ -116,7 +116,7 @@ export declare class Table extends React.Component<TableProps, TableState> {
     componentDidUpdate(prevProps: TableProps, prevState: TableState): void;
     updateData: (searchUpdate?: boolean | undefined) => void;
     updateDataFn: () => void;
-    onSelect: onSelectFunction;
+    onSelect: onSelectFn;
     onSelectAll: onSelectAllFunction;
     onPageChange: PaginationProps['onPageChange'];
     updateSchema: updateSchemaFunction;

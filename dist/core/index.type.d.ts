@@ -66,7 +66,7 @@ export { PopoverProps } from "./components/molecules/popover";
 export { ProgressRingProps } from "./components/atoms/progressRing";
 export { StepperProps } from "./components/molecules/stepper";
 export { DateRangePickerProps } from "./components/organisms/dateRangePicker";
-export { TabsWrapperProps, TabProps, TabsProps } from "./components/molecules/tabs";
+export { TabsWrapperProps, TabProps, TabsProps, TabConfig } from "./components/molecules/tabs";
 export { DropzoneProps } from "./components/molecules/dropzone";
 export { FileUploaderProps, FileUploaderListProps } from "./components/molecules/fileUploader";
 export { GridProps } from "./components/organisms/grid";
