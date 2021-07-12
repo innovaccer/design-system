@@ -3,7 +3,7 @@ import { Header, ExternalHeaderProps, updateSearchTermFunction, HeaderProps } fr
 import { Grid, Pagination, Heading } from '@/index';
 import {
   Data,
-  onSelectFunction,
+  onSelectFn,
   onSelectAllFunction,
   GridProps,
   fetchDataFunction,
@@ -591,7 +591,7 @@ export class Table extends React.Component<TableProps, TableState> {
     }
   }
 
-  onSelect: onSelectFunction = (rowIndexes, selected) => {
+  onSelect: onSelectFn = (rowIndexes, selected) => {
     const {
       data
     } = this.state;

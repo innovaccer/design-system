@@ -1,18 +1,21 @@
 import * as React from 'react';
-import { CheckboxProps, DropdownProps } from '@/index.type';
-import { GridCellProps } from './GridCell';
+import { DropdownProps, CheckboxProps, GridCellProps } from '@/index.type';
 import { GridHead } from './GridHead';
 import { GridBody } from './GridBody';
 import { sortColumn, pinColumn, hideColumn, moveToIndex, getSchema } from './utility';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { NestedRowProps } from './GridNestedRow';
 import classNames from 'classnames';
+import { GridProvider } from './GridContext';
+import defaultProps from './defaultProps';
 
 export type SortType = 'asc' | 'desc' | 'unsort';
 export type Pinned = 'left' | 'right' | 'unpin';
 export type Alignment = 'left' | 'right' | 'center';
 export type Comparator = (a: RowData, b: RowData) => -1 | 0 | 1;
 export type Filter = any[];
+export type GridRef = HTMLDivElement | null;
+export type PageInfo = { page: number, scrollTop: number };
 
 export interface FetchDataOptions {
   page?: number;
@@ -36,11 +39,14 @@ export type updateSelectAllFunction = (attr: GridProps['selectAll']) => void;
 export type updateColumnSchemaFunction = (name: ColumnSchema['name'], schemaUpdate: Partial<ColumnSchema>) => void;
 export type updateRowDataFunction = (rowIndexes: number[], dataUpdate: Partial<RowData>) => void;
 export type sortDataFunction = (comparator: Comparator, type: SortType) => void;
-export type reorderColFunction = (from: string, to: string) => void;
-export type onSelectFunction = (rowIndex: number, selected: boolean) => void;
+export type reorderColumnFunction = (from: string, to: string) => void;
+export type onSelectFn = (rowIndex: number, selected: boolean) => void;
+export type onFilterChangeFn = (name: ColumnSchema['name'], selected: any) => void;
 export type onSelectAllFunction = (selected: boolean, selectAll?: boolean) => void;
 export type onFilterChangeFunction = (data: RowData, filters: Filter) => boolean;
 export type onRowClickFunction = (data: RowData, rowIndex?: number) => void;
+export type onMenuChangeFn = (name: ColumnSchema['name'], selected: any) => void;
+export type updatePrevPageInfoFunction = (value: PageInfo) => void;
 export type CellType =
   'DEFAULT' |
   'WITH_META_LIST' |
@@ -79,6 +85,7 @@ export type ColumnSchema = {
   resizable?: boolean;
   /**
    * Enable sorting of the column
+   * @default true
    */
   sorting?: boolean;
   /**
@@ -108,9 +115,10 @@ export type ColumnSchema = {
   /**
    * Translate cell data
    */
-  translate?: (data: RowData) => RowData,
+  translate?: (data: RowData) => RowData;
   /**
    * Cell type
+   * @default DEFAULT
    */
   cellType?: CellType;
   /**
@@ -119,6 +127,7 @@ export type ColumnSchema = {
   cellRenderer?: React.FC<GridCellProps>;
   /**
    * Alignment of column
+   * @default 'left'
    */
   align?: Alignment;
   /**
@@ -220,7 +229,7 @@ export interface GridProps extends BaseProps {
   /**
    * Callback on row select
    */
-  onSelect?: onSelectFunction;
+  onSelect?: onSelectFn;
   /**
    * Callback on column head select
    */
@@ -272,54 +281,53 @@ export interface GridProps extends BaseProps {
   showFilters: boolean;
 }
 
-interface GridState {
+export interface GridState {
   init: boolean;
+  prevPageInfo: PageInfo;
 }
 
 export class Grid extends React.Component<GridProps, GridState> {
-  currPageInfo = { page: 1, scrollTop: 0 };
-  prevPageInfo = this.currPageInfo;
+  static defaultProps: GridProps;
 
   constructor(props: GridProps) {
     super(props);
 
+    const pageInfo = { page: 1, scrollTop: 0 };
+
     this.state = {
-      init: false
+      init: false,
+      prevPageInfo: pageInfo
     };
   }
 
-  static defaultProps = {
-    showHead: true,
-    loaderSchema: [],
-    schema: [],
-    data: [],
-    type: 'data',
-    size: 'standard',
-    page: 1,
-    pageSize: 15,
-    loading: false,
-    error: false,
-    sortingList: [],
-    filterList: {},
-    showFilters: true
-  };
-
   componentDidMount() {
-    this.addScrollListeners();
+    this.setState({
+      init: true
+    });
+    window.addEventListener('resize', this.forceRerender.bind(this));
+  }
+
+  forceRerender() {
+    this.forceUpdate();
   }
 
   componentWillUnmount() {
     this.removeScrollListeners();
+    window.removeEventListener('resize', this.forceRerender.bind(this));
   }
 
-  componentDidUpdate(prevProps: GridProps) {
+  componentDidUpdate(prevProps: GridProps, prevState: GridState) {
+    if (prevState.init !== this.state.init) {
+      this.addScrollListeners();
+    }
+
     if (prevProps.page !== this.props.page) {
       this.removeScrollListeners();
       this.addScrollListeners();
     }
   }
 
-  gridRef: HTMLDivElement | null = null;
+  gridRef: GridRef = null;
   isHeadSyncing: boolean = false;
   isBodySyncing: boolean = false;
 
@@ -387,7 +395,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     this.updateRenderedSchema(newSchema);
   }
 
-  reorderCol: reorderColFunction = (from, to) => {
+  reorderColumn: reorderColumnFunction = (from, to) => {
     const {
       schema
     } = this.props;
@@ -418,33 +426,36 @@ export class Grid extends React.Component<GridProps, GridState> {
     }
   }
 
-  onMenuChange = (name: ColumnSchema['name'], selected: any) => {
+  onMenuChange: onMenuChangeFn = (name, selected) => {
+    const {
+      sortingList
+    } = this.props;
     switch (selected) {
       case 'sortAsc':
-        sortColumn.call(this, name, 'asc');
+        sortColumn({ sortingList, updateSortingList: this.updateSortingList }, name, 'asc');
         break;
       case 'sortDesc':
-        sortColumn.call(this, name, 'desc');
+        sortColumn({ sortingList, updateSortingList: this.updateSortingList }, name, 'desc');
         break;
       case 'unsort':
-        sortColumn.call(this, name, 'unsort');
+        sortColumn({ sortingList, updateSortingList: this.updateSortingList }, name, 'unsort');
         break;
       case 'pinLeft':
-        pinColumn.call(this, name, 'left');
+        pinColumn({ updateColumnSchema: this.updateColumnSchema }, name, 'left');
         break;
       case 'pinRight':
-        pinColumn.call(this, name, 'right');
+        pinColumn({ updateColumnSchema: this.updateColumnSchema }, name, 'right');
         break;
       case 'unpin':
-        pinColumn.call(this, name, 'unpin');
+        pinColumn({ updateColumnSchema: this.updateColumnSchema }, name, 'unpin');
         break;
       case 'hide':
-        hideColumn.call(this, name, true);
+        hideColumn({ updateColumnSchema: this.updateColumnSchema }, name, true);
         break;
     }
   }
 
-  onFilterChange = (name: ColumnSchema['name'], selected: any) => {
+  onFilterChange: onFilterChangeFn = (name, selected) => {
     const {
       filterList
     } = this.props;
@@ -457,7 +468,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     this.updateFilterList(newFilterList);
   }
 
-  onSelect: onSelectFunction = (rowIndex, selected) => {
+  onSelect: onSelectFn = (rowIndex, selected) => {
     const {
       onSelect
     } = this.props;
@@ -467,7 +478,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     }
   }
 
-  onSelectAll: CheckboxProps['onChange'] = (event: React.ChangeEvent<HTMLInputElement>) => {
+  onSelectAll: CheckboxProps['onChange'] = event => {
     const {
       onSelectAll,
     } = this.props;
@@ -477,20 +488,31 @@ export class Grid extends React.Component<GridProps, GridState> {
     }
   }
 
+  updatePrevPageInfo: updatePrevPageInfoFunction = value => {
+    this.setState({
+      prevPageInfo: value
+    });
+  }
+
   render() {
     const baseProps = extractBaseProps(this.props);
-    const schema = getSchema(this);
+
+    const {
+      init,
+      prevPageInfo
+    } = this.state;
 
     const {
       type,
       size,
       showHead,
-      draggable,
-      withCheckbox,
-      data,
       className,
-      page
+      page,
+      loading,
+      loaderSchema
     } = this.props;
+
+    const schema = getSchema(this.props.schema, loading, loaderSchema);
 
     const classes = classNames({
       Grid: 'true',
@@ -500,35 +522,43 @@ export class Grid extends React.Component<GridProps, GridState> {
 
     return (
       <div
-        key={`${page}`}
         className={classes}
         {...baseProps}
         ref={el => {
           this.gridRef = el;
-          if (el && !this.state.init) {
-            this.setState({
-              init: true
-            });
-          }
         }}
       >
-        {showHead && (
-          <GridHead
-            _this={this}
-            schema={schema}
-            draggable={draggable}
-            withCheckbox={withCheckbox}
-          />
+        {init && (
+          <GridProvider
+            value={{
+              ...this.props,
+              ref: this.gridRef
+            }}
+          >
+            {showHead && (
+              <GridHead
+                schema={schema}
+                onSelectAll={this.onSelectAll?.bind(this)}
+                onMenuChange={this.onMenuChange.bind(this)}
+                onFilterChange={this.onFilterChange.bind(this)}
+                updateColumnSchema={this.updateColumnSchema.bind(this)}
+                reorderColumn={this.reorderColumn.bind(this)}
+              />
+            )}
+            <GridBody
+              key={`${page}`}
+              schema={schema}
+              prevPageInfo={prevPageInfo}
+              updatePrevPageInfo={this.updatePrevPageInfo.bind(this)}
+              onSelect={this.onSelect.bind(this)}
+            />
+          </GridProvider>
         )}
-        <GridBody
-          _this={this}
-          schema={schema}
-          data={data}
-          withCheckbox={withCheckbox}
-        />
       </div>
     );
   }
 }
+
+Grid.defaultProps = defaultProps;
 
 export default Grid;

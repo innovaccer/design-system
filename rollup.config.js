@@ -7,6 +7,9 @@ import path from 'path';
 import packageJSON from './package.json';
 import typescript from '@rollup/plugin-typescript';
 import replace from '@rollup/plugin-replace';
+import { uglify } from "rollup-plugin-uglify";
+import gzipPlugin from 'rollup-plugin-gzip'
+import { compress } from 'brotli';
 
 const banner = () => {
 
@@ -46,14 +49,14 @@ function globals() {
   };
 }
 
-export default [{
+const baseConfig = {
   input: './core/index.tsx',
-
   // Specify here external modules which you don't want to include in your bundle (for instance: 'lodash', 'moment' etc.)
   // https://rollupjs.org/guide/en#external-e-external
   external: ['react', 'react-dom'],
+}
 
-  plugins: [
+const commonJsPlugins =  [
     alias({
       entries: [
         { find: '@', replacement: path.resolve('./core') },
@@ -73,21 +76,41 @@ export default [{
 
     replace({
       'process.env.NODE_ENV': JSON.stringify('production')
-    })  
-  ],
+    }),
+    uglify()
+  ]
 
-  output: formats.map(format => ({
-    file: `dist/index.${format}.js`,
-    format,
+const jsUmdOutputConfig = {
+    file: 'dist/index.umd.js',
+    format: 'umd',
     name: `InnovaccerDesignSystem`,
     globals: globals(),
-    banner: banner(),
-  }))
-}, {
-  input: './core/index.tsx',
+    banner: banner()
+}
 
+const jsUmdConfig = {
+  ...baseConfig,
+  plugins: commonJsPlugins,
+  output: jsUmdOutputConfig  
+
+}
+
+const jsEsmConfig = {
+  ...baseConfig,
+  // Slice is used here to remove uglify compression during esm builds
+  plugins: commonJsPlugins.slice(0,-1),
+  output: {
+    file: 'dist/index.esm.js',
+    format: 'esm',
+    name: `InnovaccerDesignSystem`,
+    globals: globals(),
+    banner: banner()
+  }
+}
+
+const tsConfig = {
+  ...baseConfig,
   external: ['react', 'react-dom', 'classnames', 'react-popper'],
-
   plugins: [
     alias({
       entries: [
@@ -111,7 +134,6 @@ export default [{
     // Compile TypeScript/JavaScript files
     babel({ extensions, include: ['core/**/*'] }),
   ],
-
   output: {
     dir: 'dist',
     format: 'umd',
@@ -120,4 +142,29 @@ export default [{
     banner: banner(),
     sourcemap: true,
   }
-}];
+}
+
+const brotliConfig = {
+  ...baseConfig,
+  plugins: [
+    gzipPlugin({
+	    customCompression: content => compress(Buffer.from(content)),
+	    fileName: '.br',
+    }),
+    ...commonJsPlugins
+  ],
+
+  output: jsUmdOutputConfig  
+}
+
+const gzipConfig = {
+  ...baseConfig,
+  plugins: [
+    gzipPlugin(),
+    ...commonJsPlugins
+  ],
+
+  output: jsUmdOutputConfig  
+}
+
+export default [jsUmdConfig, jsEsmConfig, tsConfig, brotliConfig, gzipConfig];

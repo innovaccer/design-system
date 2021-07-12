@@ -1,4 +1,5 @@
-import Grid, { Data, Schema } from './Grid';
+import { Data, Schema } from './Grid';
+import { GridProps } from '@/index.type';
 export * from './columnUtility';
 export * from './rowUtility';
 
@@ -40,24 +41,15 @@ export const getSelectAll = (data: Data) => {
   return { indeterminate: false, checked: false };
 };
 
-export const getInit = (schema: Schema): boolean => (schema && !!schema.length);
+export const hasSchema = (schema: Schema): boolean => (schema && !!schema.length);
 
-export const getSchema = (_this: Grid): Schema => {
-  const {
-    loading,
-    loaderSchema
-  } = _this.props;
-
-  let {
-    schema,
-  } = _this.props;
-
-  const init = getInit(schema);
-  if (!init && loading) {
-    schema = loaderSchema;
+export const getSchema = (schema: GridProps['schema'], loading: GridProps['loading'], loaderSchema: GridProps['loaderSchema']): GridProps['schema'] => {
+  let response = schema;
+  if (!hasSchema(schema) && loading) {
+    response = loaderSchema;
   }
 
-  return schema;
+  return response;
 };
 
 export const getPluralSuffix = (count: number) => count > 1 ? 's' : '';

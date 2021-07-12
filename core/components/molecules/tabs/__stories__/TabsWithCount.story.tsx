@@ -93,6 +93,7 @@ const customCode = `() => {
         <Tabs
           tabs={tabs}
           onTabChange={console.log}
+          withSeparator={false}
         />
         <div style={{ width: 'var(--spacing-9)' }} className="ml-8">
           <Input placeholder="Search by name" icon="search" />

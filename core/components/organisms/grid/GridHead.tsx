@@ -1,36 +1,36 @@
 import * as React from 'react';
-import { Schema, Pinned } from './Grid';
-import { Checkbox, Grid, Placeholder } from '@/index';
+import { Schema, Pinned, onMenuChangeFn, onFilterChangeFn, updateColumnSchemaFunction, reorderColumnFunction } from './Grid';
+import { Checkbox, Placeholder } from '@/index';
 import { Cell } from './Cell';
-import { getSchema } from './utility';
 import classNames from 'classnames';
+import GridContext from './GridContext';
+import { GridProps, CheckboxProps } from '@/index.type';
 
 export interface GridHeadProps {
-  /**
-   * Header Schema
-   */
-  schema: Schema;
-  /**
-   * Allows dragging of column
-   */
-  draggable?: boolean;
-  withCheckbox?: boolean;
-  _this: Grid;
+  schema: GridProps['schema'];
+  onSelectAll: CheckboxProps['onChange'];
+  onMenuChange: onMenuChangeFn;
+  onFilterChange: onFilterChangeFn;
+  updateColumnSchema: updateColumnSchemaFunction;
+  reorderColumn: reorderColumnFunction;
 }
 
 export const GridHead = (props: GridHeadProps) => {
+  const context = React.useContext(GridContext);
   const {
-    _this,
-    draggable = false,
-    withCheckbox
+    schema,
+    onSelectAll,
+    onMenuChange,
+    onFilterChange,
+    updateColumnSchema,
+    reorderColumn,
   } = props;
 
   const {
+    withCheckbox,
     loading,
     selectAll,
-  } = _this.props;
-
-  const schema = getSchema(_this);
+  } = context;
 
   const pinnedSchema = schema.filter(s => !s.hidden && s.pinned);
   const leftPinnedSchema = pinnedSchema.filter(s => !s.hidden && s.pinned === 'left');
@@ -44,11 +44,11 @@ export const GridHead = (props: GridHeadProps) => {
         {loading ? (
           <Placeholder />
         ) : (
-            <Checkbox
-              {...selectAll}
-              onChange={_this.onSelectAll}
-            />
-          )
+          <Checkbox
+            {...selectAll}
+            onChange={onSelectAll}
+          />
+        )
         }
       </div>
     );
@@ -73,12 +73,15 @@ export const GridHead = (props: GridHeadProps) => {
             return (
               <Cell
                 key={`${cI}`}
-                _this={_this}
-                head={true}
-                draggable={draggable}
-                schema={s}
-                colIndex={cI}
                 firstCell={!index}
+                colIndex={cI}
+                isHead={true}
+                schema={s}
+                onSelectAll={onSelectAll}
+                onMenuChange={onMenuChange}
+                onFilterChange={onFilterChange}
+                updateColumnSchema={updateColumnSchema}
+                reorderColumn={reorderColumn}
               />
             );
           })}

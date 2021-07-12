@@ -113,26 +113,35 @@ mkdir __stories__/variants
 
 - [jsdoc](https://jsdoc.app/) is used for prop description
 - Custom props can be passed to docPage from corresponding story as follows:
-
+- Metadata is as follows:
+  - `title `: Determines where story will show up in the navigation UI story hierarchy. Read more [here](https://storybook.js.org/docs/riot/writing-stories/naming-components-and-hierarchy).
+    - **title**: The title of the component you export in the default export controls the name shown in the sidebar. `Components` in below example is the title.
+    - **Grouping**: It is also possible to group related components in an expandable interface in order to help with Storybook organization. `Avatar` in this example is the group.
+    - **Single Story**: Last part of title will be hoisted up to replace their parent component in the sidebar. Example: `All`
+  - `component`: Used by addons for automatic prop table generation and display of other component metadata
+  - `parameters`: Used to control the behavior of Storybook features and addons.
+  - `subcomponents`: Used to include subcomponents in prop table.
 ```tsx
 // Storybook CSF Format
 export default {
-  title: 'Atoms|Avatar',
-  component: Backdrop,
+  title: 'Components/Avatar/All',
+  component: Avatar,
+  subcomponent: Avatar,
   parameters: {
     docs: {
       docPage: {
-        noHtml: true, // If you don't want to include Html in docPage
-        noStory:true, // If you don't want to include Story in docPage
+        noHtml: true, // Includes Html in docPage
+        noStory:true, // Includes Story in docPage
+        noProps: true, // Includes props table in docPage,
+        noSandbox: true, // Includes code sandbox button in docPage,
         title: 'Avatar', // Custom title
         description: 'Dummy description', // Custom description
-        customCode: '() => <Avatar>JD</Avatar>' // Custom code for live code editor
+        customCode: '() => <Avatar>JD</Avatar>' // Custom code for live code editor,
       }
     }
   }
 };
 ```
-
 ### Example Component
 
   Let's assume we want to add *Avatar* component in *Atoms* category.
@@ -148,7 +157,7 @@ mkdir __stories__
 mkdir __stories__/variants
 ```
  
-##### ./core/components/atoms/avatar/Avatar.tsx
+##### [./core/components/atoms/avatar/Avatar.tsx](https://github.com/innovaccer/design-system/blob/master/core/components/atoms/avatar/Avatar.tsx)
 
 Now we will add *Avatar* component logic.
 
@@ -310,23 +319,24 @@ Avatar.displayName = 'Avatar';
 export default Avatar;
 ```
 
-##### ./core/components/atoms/avatar/index.tsx
+##### [./core/components/atoms/avatar/index.tsx](https://github.com/innovaccer/design-system/blob/master/core/components/atoms/avatar/index.tsx)
 
 ```tsx
 export { default } from './Avatar';
 export * from './Avatar';
 ```
-##### Component Stories
+#### Component Stories
 A [story](https://storybook.js.org/docs/react/get-started/whats-a-story) captures the rendered state of a UI component. We write multiple stories per component that describe all the interesting states a component can support.
 
- ##### ./core/components/atoms/avatar/\_\_stories\_\_/index.story.tsx
+ ##### Default Story
+ ###### [/core/components/atoms/avatar/\_\_stories\_\_/index.story.tsx](https://github.com/innovaccer/design-system/blob/master/core/components/atoms/avatar/__stories__/index.story.tsx).
  - Import component and story knobs.
 ```tsx
 import * as React from 'react';
 import { select, text } from '@storybook/addon-knobs';
-import Avatar from '../Avatar';
+import { Avatar } from '@/index';
 ```
-- Every named export in the file represents a story function by default. So, name of the story in this case will be `All`.
+- Every named export in the file represents the name of the story, in this case `All`.
 - Storybook knobs (e.g. select, text, boolean) allows to edit props dynamically using the Storybook UI.
 ```tsx
 export const all = () => {
@@ -337,7 +347,7 @@ export const all = () => {
   );
   
   const size = select('size', ['regular', 'tiny'], undefined);
-  const withTooltip = boolean('with tooltip', true);
+  const withTooltip = boolean('withTooltip', true);
 
   const children = text('children', 'JD');
 
@@ -353,15 +363,48 @@ export const all = () => {
 };
 ```
 - The default export defines metadata about component.
-- Title will show up in the navigation UI story hierarchy.
+- Title `Avatar/All` will show up in the navigation UI story hierarchy.
 ```jsx
 export default {
-  title: 'Atoms|Avatar',
+  title: 'Components/Avatar/All'',
   component: Avatar
 };
 ```
+##### Variant Story
+   
+   We write stories corresponding to each prop in the variants folder. For example: `size` and `appearance` are props of Avatar component. Let us look at an example of `size` variant story.
+ ###### [./core/components/atoms/avatar/\_\_stories\_\_/variants/size.story.tsx](https://github.com/innovaccer/design-system/blob/master/core/components/atoms/avatar/__stories__/variants/Size.story.tsx)
+ - Import the required components.
+```tsx
+import * as React from 'react';
+import { Avatar, Text} from '@/index';
+```
+- Name of the story in this case will be `Size`.
+- JSX corresponding to this story will look like this:
+```tsx
+export const size = () => (
+  <div className="d-flex">
+    <div className="mr-9 d-flex flex-column">
+      <Text weight="strong">Regular</Text> <br />
+      <Avatar firstName="John" lastName="Doe" />
+    </div>
+    <div className="d-flex flex-column">
+      <Text weight="strong">Tiny</Text> <br />
+      <Avatar firstName="John" lastName="Doe" size="tiny"/>
+    </div>
+  </div>
+);
+```
+- The default export defines metadata about component.
+```jsx
+export default {
+  title: 'Components/Avatar/Variants/Appearance',
+  component: Avatar,
+};
+```
 
-##### ./core/components/atoms/avatar/\_\_tests\_\_/Avatar.test.tsx
+#### Component Testing
+##### [./core/components/atoms/avatar/\_\_tests\_\_/Avatar.test.tsx](https://github.com/innovaccer/design-system/blob/master/core/components/atoms/avatar/__tests__/Avatar.test.tsx)
 Now we will add snapshot and unit testing.
 ###### Imports
 ```tsx
@@ -399,9 +442,180 @@ describe('Avatar component', () => {
 
   testHelper(mapper, testFunc);
 });
+```
+### DocPage Story
+   When our component has state or callbacks, we need to write custom code to render the story on docs page. Let us consider an example of `Controlled Checkbox` story.
+ ###### [./core/components/atoms/checkbox/\_\_stories\_\_/variants/controlledCheckbox.story.tsx](https://github.com/innovaccer/design-system/blob/master/core/components/atoms/checkbox/__stories__/variants/Uncontrolled.story.tsx)
+ - Import the required components.
+```tsx
+import * as React from 'react';
+import { Checkbox } from '@/index';
+```
+- Name of the story in this case will be `Controlled Checkbox`.
+- We will create a state `checked` which will be false initially (showing that checkbox is not selected) and will update it when checkbox is clicked.
+```tsx
+export const controlledCheckbox = () => {
+  const [checked, setChecked] = React.useState(false);
+
+  const handleParentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(event.target.checked);
+  };
+
+  return (
+      <Checkbox
+        label="Innovaccer"
+        value="Innovaccer"
+        checked={checked}
+        onChange={handleParentChange}
+      />
+  );
+};
+```
+- At this point, we will only see JSX in our live code editor. To fix this, we will write cutsom code for docs page.
+```
+const customCode = `() => {
+  const [checked, setChecked] = React.useState(false);
+
+  const handleParentChange = (event) => {
+    setChecked(event.target.checked);
+  };
+
+  return (
+      <Checkbox
+        label="Innovaccer"
+        value="Innovaccer"
+        checked={checked}
+        onChange={handleParentChange}
+      />
+  );
+}`;
+```
+- Now we will export metadata of our story. 
+```jsx
+export default {
+  title: 'Components/Checkbox/Variants/Controlled Checkbox',
+  component: Checkbox,
+  parameters: {
+    docs: {
+      docPage: {
+        customCode
+      }
+    }
+  }
+};
+```
+### Creating Patterns
+Patterns are best practice solutions for how a user achieves a goal. They show reusable combinations of components and templates that address common user objectives with sequences and flows.
+Note: Patterns are only shown in `docs tab`.
+
+Let us create a pattern for SideNav.
+ - Name of the pattern will be `Side Nav`.
+ - As patterns are shown only in docs tab, canvas tab will not render any element..
+```tsx
+import * as React from 'react';
+export const sideNav = () => <></>;
+```
+-  We will write custom code for docs tab.
+```
+const customCode = `() => {
+  const menus = [
+    {
+      name: 'patient_360',
+      label: 'Patient 360',
+      icon: 'assignment_ind',
+      link: '/patient360',
+    },
+    {
+      name: 'care_management',
+      label: 'Care Management and Resources',
+      icon: 'forum',
+      subMenu: [
+        {
+          name: 'care_management.timeline',
+          label: 'Timeline',
+          icon: 'events'
+        },
+        {
+          name: 'care_management.care_plans',
+          label: 'Care Plans',
+          icon: 'events'
+        }
+      ]
+    },
+    {
+      name: 'episodes',
+      label: 'Episodes',
+      disabled: true,
+      icon: 'airline_seat_flat_angled'
+    },
+    {
+      name: 'risk',
+      label: 'Risk',
+      icon: 'favorite',
+      subMenu: [
+        {
+          name: 'risk.timeline',
+          label: 'Timeline',
+          icon: 'events'
+        },
+        {
+          name: 'risk.care_plans',
+          label: 'Care Plans',
+          icon: 'events'
+        }
+      ]
+    },
+    {
+      name: 'claims',
+      label: 'Claims',
+      icon: 'receipt'
+    },
+  ];
+
+  const [expanded, setExpanded] = React.useState(false);
+  const [active, setActive] = React.useState({
+    name: 'care_management.timeline'
+  });
+
+  const onClickHandler = (menu) => {
+    console.log('menu-clicked: ', menu);
+    setActive(menu);
+  };
+
+  return (
+    <div style={{ height: 'calc(80vh)', background: 'var(--secondary-lightest)' }}>
+      <Collapsible expanded={expanded} onToggle={setExpanded}>
+        <VerticalNav
+          menus={menus}
+          expanded={expanded}
+          active={active}
+          onClick={onClickHandler}
+          hoverable={false}
+        />
+      </Collapsible>
+    </div>
+  );
+}`;
+```
+- We have created a mock data for side nav menus.
+- We then need `expanded` and `active` state to manage VerticalNav component props.
+- We will then return JSX from our sideNav component.
+- Now we will export metadata of our pattern. As we do not need props table for patterns, so we will add `noProps: true` in our metadata.
+```
+export default {
+  title: 'Patterns/VerticalNavigation/Side Nav',
+  parameters: {
+    docs: {
+      docPage: {
+        customCode,
+        title: 'Side Nav',
+        noProps: true
+      }
+    }
+  }
+};
 
 ```
-
 ### Submitting a Pull Request
 
 The following are the steps you should follow when creating a pull request.
