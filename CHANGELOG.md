@@ -1,3 +1,30 @@
+## 2.2.0-2  (2021-07-14) 
+
+### Highlights
+NA
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+NA
+
+### Fixes
+* Fixed table last page navigation and remember last page feature (e74cd502)
+
+### Improvements
+NA
+
+### Documentation
+NA
+
+-------------------
 
 ## 2.2.0-1  (2021-07-12) 
 
