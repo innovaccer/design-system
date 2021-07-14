@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1626097637659 
+   * Generated on: 1626266248993 
    *      Package: @innovaccer/design-system
-   *      Version: v2.2.0-1
+   *      Version: v2.2.0-2
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -12120,7 +12120,7 @@
         tight: 24
       };
       var totalPages = Math.ceil(totalRecords / pageSize);
-      var isLastPage = withPagination && page === totalPages - 1;
+      var isLastPage = withPagination && page === totalPages;
       var dataLength = isLastPage ? totalRecords - (page - 1) * pageSize : loading ? pageSize : withPagination ? Math.min(totalRecords, pageSize) : totalRecords;
 
       var renderItem = function renderItem(rowIndex) {
@@ -13913,7 +13913,7 @@
 
     VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-    var version = "2.2.0-1";
+    var version = "2.2.0-2";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;

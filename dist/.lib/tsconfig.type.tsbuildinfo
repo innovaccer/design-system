@@ -1267,7 +1267,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/grid/GridBody.tsx": {
-        "version": "a47a9fe99bf0d3487976bebd825994e5b325d4d420e25cc3b71779e32c963719",
+        "version": "24b7cfed1475e552ab71c34617e9a92a346d20e0be68a1877d4e6df797d3ec98",
         "signature": "037c2480cc3f115f239789c5948817b47246502d247d811cdc1efbd18eb7ec14",
         "affectsGlobalScope": false
       },
@@ -2972,8 +2972,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/buffer.d.ts": {
-        "version": "5129a3ed991a1de30a77462d41d3d27e945fa7213603114b65ce4de0ef297e6f",
-        "signature": "5129a3ed991a1de30a77462d41d3d27e945fa7213603114b65ce4de0ef297e6f",
+        "version": "c9ed7a82b6c15c29dd1f0350d5c8bd5b9b30fb07a8572c9e6addebf05944e160",
+        "signature": "c9ed7a82b6c15c29dd1f0350d5c8bd5b9b30fb07a8572c9e6addebf05944e160",
         "affectsGlobalScope": true
       },
       "../../node_modules/@types/node/child_process.d.ts": {

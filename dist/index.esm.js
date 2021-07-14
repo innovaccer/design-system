@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1626097637254 
+   * Generated on: 1626266248600 
    *      Package: @innovaccer/design-system
-   *      Version: v2.2.0-1
+   *      Version: v2.2.0-2
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -17408,7 +17408,7 @@ var GridBody = function GridBody(props) {
     tight: 24
   };
   var totalPages = Math.ceil(totalRecords / pageSize);
-  var isLastPage = withPagination && page === totalPages - 1;
+  var isLastPage = withPagination && page === totalPages;
   var dataLength = isLastPage ? totalRecords - (page - 1) * pageSize : loading ? pageSize : withPagination ? Math.min(totalRecords, pageSize) : totalRecords;
 
   var renderItem = function renderItem(rowIndex) {
@@ -19288,6 +19288,6 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
 
 VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-var version = "2.2.0-1";
+var version = "2.2.0-2";
 
 export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, CardBody, CardFooter, CardHeader, CardSubdued, ChatMessage, Checkbox, Chip, ChipGroup, ChipInput, Collapsible, Column, DatePicker, DateRangePicker, Dialog, Dropdown, Dropzone, EditableChipInput, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, HorizontalNav, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, MetricInput, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, Tabs, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, VerificationCodeInput, VerticalNav, version };
