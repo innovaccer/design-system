@@ -177,6 +177,9 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   }
 
   onToggleHandler = (o: boolean, type?: string) => {
+    const { disabled } = this.props.inputOptions;
+    if (disabled) return;
+
     switch (type) {
       case 'outsideClick':
         this.setState({ open: o });
