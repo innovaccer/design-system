@@ -62,6 +62,15 @@
     pointer-events: none;
 }
 
+.Radio:hover .Radio-wrapper {
+    border: var(--spacing-xs) solid var(--inverse-lightest);
+}
+
+.Radio:active .Radio-wrapper {
+    background-color: var(--secondary-light);
+    border: var(--spacing-xs) solid var(--inverse-lightest);
+}
+
 .Radio--disabled .Radio-wrapper {
     border: var(--spacing-xs) solid var(--secondary-light);
     background-color: var(--secondary-lightest);
@@ -97,8 +106,26 @@
     border: var(--spacing-xs) solid var(--primary);
 }
 
+.Radio-outerWrapper:hover .Radio-input:checked~.Radio-wrapper{
+    border: var(--spacing-xs) solid var(--primary-dark);
+}
+
+.Radio:hover .Radio-input:checked~.Radio-wrapper:after{
+    background: var(--primary-dark);
+}
+
+.Radio:active .Radio-input:checked~.Radio-wrapper{
+    background: var(--white);
+    border: var(--spacing-xs) solid var(--primary-darker);
+}
+
+.Radio-outerWrapper:active .Radio-input:checked~.Radio-wrapper:after{
+    background: var(--primary-darker);
+}
+
 .Radio--disabled .Radio-input:checked~.Radio-wrapper {
     border: var(--spacing-xs) solid var(--primary-lighter);
+    background-color: var(--white);
 }
 
 .Radio--disabled .Radio-input:checked~.Radio-wrapper:after {
