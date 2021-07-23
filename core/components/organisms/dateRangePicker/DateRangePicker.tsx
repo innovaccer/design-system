@@ -360,6 +360,19 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
   }
 
   onToggleHandler = (o: boolean, type?: string) => {
+    const {
+      singleInput,
+      inputOptions,
+      startInputOptions,
+      endInputOptions
+    } = this.props;
+
+    const disabled = singleInput ?
+      inputOptions.disabled :
+      startInputOptions.disabled || endInputOptions.disabled;
+
+    if (disabled) return;
+
     switch (type) {
       case 'outsideClick':
         this.setState({ open: o });
