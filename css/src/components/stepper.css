@@ -19,5 +19,6 @@
 }
 
 .Step--disabled {
-  pointer-events: none;
+  /* pointer-events: none; */
+  cursor: not-allowed;
 }

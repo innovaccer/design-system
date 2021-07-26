@@ -4775,7 +4775,8 @@ body {
 }
 
 .Step--disabled {
-  pointer-events: none;
+  /* pointer-events: none; */
+  cursor: not-allowed;
 }
 .Switch {
     display: inline-flex;
