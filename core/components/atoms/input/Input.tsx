@@ -252,8 +252,10 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
               {trigger}
             </Tooltip>
           )
-        ) : (
-          actionIcon
+        )
+        :
+        (
+          actionIcon && !disabled
             ? (
               actionIcon
             ) : (
