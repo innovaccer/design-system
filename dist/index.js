@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1626266248993 
+   * Generated on: 1627401100080 
    *      Package: @innovaccer/design-system
-   *      Version: v2.2.0-2
+   *      Version: v2.2.0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -11917,10 +11917,10 @@
               length = _this$props2.length,
               buffer = _this$props2.buffer;
               _this$props2.offset;
-              _this$props2.renderItems;
+              _this$props2.renderItem;
               _this$props2.minItemHeight;
               var forwardRef = _this$props2.forwardRef,
-              rest = _objectWithoutProperties(_this$props2, ["totalLength", "length", "buffer", "offset", "renderItems", "minItemHeight", "forwardRef"]);
+              rest = _objectWithoutProperties(_this$props2, ["totalLength", "length", "buffer", "offset", "renderItem", "minItemHeight", "forwardRef"]);
 
           var _this$state = this.state,
               init = _this$state.init,
@@ -13913,7 +13913,7 @@
 
     VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-    var version = "2.2.0-2";
+    var version = "2.2.0";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;

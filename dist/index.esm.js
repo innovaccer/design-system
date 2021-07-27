@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1626266248600 
+   * Generated on: 1627401099748 
    *      Package: @innovaccer/design-system
-   *      Version: v2.2.0-2
+   *      Version: v2.2.0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -17204,10 +17204,10 @@ var VirtualScroll = /*#__PURE__*/function (_React$Component) {
           length = _this$props2.length,
           buffer = _this$props2.buffer;
           _this$props2.offset;
-          _this$props2.renderItems;
+          _this$props2.renderItem;
           _this$props2.minItemHeight;
           var forwardRef = _this$props2.forwardRef,
-          rest = _objectWithoutProperties(_this$props2, ["totalLength", "length", "buffer", "offset", "renderItems", "minItemHeight", "forwardRef"]);
+          rest = _objectWithoutProperties(_this$props2, ["totalLength", "length", "buffer", "offset", "renderItem", "minItemHeight", "forwardRef"]);
 
       var _this$state = this.state,
           init = _this$state.init,
@@ -19288,6 +19288,6 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
 
 VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-var version = "2.2.0-2";
+var version = "2.2.0";
 
 export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, CardBody, CardFooter, CardHeader, CardSubdued, ChatMessage, Checkbox, Chip, ChipGroup, ChipInput, Collapsible, Column, DatePicker, DateRangePicker, Dialog, Dropdown, Dropzone, EditableChipInput, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, HorizontalNav, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, MetricInput, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, Tabs, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, VerificationCodeInput, VerticalNav, version };
