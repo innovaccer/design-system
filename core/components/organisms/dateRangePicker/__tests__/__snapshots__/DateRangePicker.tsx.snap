@@ -19,6 +19,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -58,6 +59,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -493,6 +495,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -532,6 +535,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -967,6 +971,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -1006,6 +1011,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -1441,6 +1447,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -1907,6 +1914,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -2335,6 +2343,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -2801,6 +2810,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -3236,6 +3246,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -4122,6 +4133,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -4582,6 +4594,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -5475,6 +5488,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -6182,6 +6196,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -6648,6 +6663,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -7076,6 +7092,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -7115,6 +7132,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -7550,6 +7568,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -7579,6 +7598,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -7770,6 +7790,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -7799,6 +7820,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -7990,6 +8012,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -8029,6 +8052,7 @@ exports[`DateRangePicker component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
