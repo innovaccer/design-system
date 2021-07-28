@@ -19,6 +19,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -58,6 +59,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -493,6 +495,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -533,6 +536,7 @@ exports[`Calendar component
             data-test="DesignSystem-Button"
             disabled=""
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -969,6 +973,7 @@ exports[`Calendar component
             data-test="DesignSystem-Button"
             disabled=""
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -1008,6 +1013,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -1444,6 +1450,7 @@ exports[`Calendar component
             data-test="DesignSystem-Button"
             disabled=""
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -1484,6 +1491,7 @@ exports[`Calendar component
             data-test="DesignSystem-Button"
             disabled=""
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -1919,6 +1927,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -1958,6 +1967,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -2418,6 +2428,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -2457,6 +2468,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -2892,6 +2904,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -2931,6 +2944,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -3391,6 +3405,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -3430,6 +3445,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -3865,6 +3881,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -3904,6 +3921,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -4339,6 +4357,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -4378,6 +4397,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -4813,6 +4833,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -4852,6 +4873,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -5287,6 +5309,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -5326,6 +5349,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -5761,6 +5785,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -6227,6 +6252,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -6655,6 +6681,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -7541,6 +7568,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -8001,6 +8029,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -8040,6 +8069,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -8475,6 +8505,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -8504,6 +8535,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -8695,6 +8727,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -8724,6 +8757,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -8915,6 +8949,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -8954,6 +8989,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -9389,6 +9425,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -9855,6 +9892,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -10283,6 +10321,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -11169,6 +11208,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -11629,6 +11669,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -11668,6 +11709,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -12103,6 +12145,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -12132,6 +12175,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -12323,6 +12367,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
@@ -12352,6 +12397,7 @@ exports[`Calendar component
             class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
+            type="button"
           >
             <div
               class="Button-icon"
