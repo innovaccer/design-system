@@ -84,6 +84,7 @@ const CopyComp = props => {
       }}
     >
       <Button
+        type="button"
         size="tiny"
         style={{ borderRadius: '0', borderBottomLeftRadius: '4px' }}
         appearance="basic"
@@ -114,6 +115,7 @@ const ShowMoreLessButton = ({ onClick, text = 'More' }) => (
       }}
     >
       <Button
+        type="button"
         size="tiny"
         style={buttonStyles}
         appearance="basic"

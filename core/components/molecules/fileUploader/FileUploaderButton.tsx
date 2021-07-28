@@ -54,7 +54,7 @@ export const FileUploaderButton = (props: FileUploaderButtonProps) => {
 
   return (
     <div {...baseProps} className={FileUploaderButtonClass}>
-      <Button disabled={disabled} icon="backup">
+      <Button type="button" disabled={disabled} icon="backup">
         {uploadButtonLabel}
       </Button>
       <input

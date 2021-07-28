@@ -57,6 +57,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
         onToggle={onToggleHandler}
         trigger={(
           <Button
+            type="button"
             ref={el => {
               setTriggerWidth(`${el?.clientWidth}px`);
             }}
@@ -115,8 +116,8 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
           })}
         </div>
         <div className="Dropdown-buttonWrapper">
-          <Button className="mr-4" size="tiny" onClick={onCancelHandler}>Cancel</Button>
-          <Button appearance="primary" size="tiny" onClick={onApplyHandler}>Apply</Button>
+          <Button type="button" className="mr-4" size="tiny" onClick={onCancelHandler}>Cancel</Button>
+          <Button type="button" appearance="primary" size="tiny" onClick={onApplyHandler}>Apply</Button>
         </div>
       </Popover>
     </div>

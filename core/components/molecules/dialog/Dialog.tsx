@@ -85,6 +85,7 @@ const Dialog = (props: DialogProps) => {
       footer={(
         <>
           <Button
+            type="button"
             data-test="DesignSystem-Dialog--SecondaryButton"
             appearance={secondaryButtonAppearance}
             onClick={secondaryButtonCallback}
@@ -92,6 +93,7 @@ const Dialog = (props: DialogProps) => {
             {secondaryButtonLabel}
           </Button>
           <Button
+            type="button"
             className="ml-4"
             data-test="DesignSystem-Dialog--PrimaryButton"
             appearance={primaryButtonAppearance}

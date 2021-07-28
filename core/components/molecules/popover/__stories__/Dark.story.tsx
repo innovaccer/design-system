@@ -7,7 +7,7 @@ export const darkPopover = () => (
       <Popover
         position="bottom"
         on="click"
-        trigger={<Button appearance="basic">Open Popup</Button>}
+        trigger={<Button type="button" appearance="basic">Open Popup</Button>}
         dark={true}
         open={true}
       >

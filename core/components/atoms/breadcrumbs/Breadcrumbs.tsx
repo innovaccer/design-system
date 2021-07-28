@@ -49,7 +49,17 @@ const renderDropdown = (list: BreadcrumbsProps['list'], onClick: BreadcrumbsProp
     value: item.link
   }));
 
-  const customTrigger = () => <Button size="tiny" appearance="transparent" icon="more_horiz_filled" data-test="DesignSystem-Breadcrumbs--Button" />;
+  const customTrigger = () => {
+    return (
+      <Button
+        type="button"
+        size="tiny"
+        appearance="transparent"
+        icon="more_horiz_filled"
+        data-test="DesignSystem-Breadcrumbs--Button"
+      />
+    );
+  };
 
   return (
     <Dropdown
@@ -93,25 +103,25 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
           );
         })
       ) : (
-          <>
-            <div className="Breadcrumbs-item" data-test="DesignSystem-Breadcrumbs-item">
-              <span className="Breadcrumbs-link">
-                {renderLink(list[0], onClick)}
-              </span>
-              <span className="Breadcrumbs-itemSeparator">/</span>
-            </div>
-            <div className="Breadcrumbs-dropdown">
-              {renderDropdown(list.slice(1, list.length - 1), onClick)}
-              <span className="Breadcrumbs-itemSeparator">/</span>
-            </div>
-            <div className="Breadcrumbs-item" data-test="DesignSystem-Breadcrumbs-item">
-              <span className="Breadcrumbs-link">
-                {renderLink(list[list.length - 1], onClick)}
-              </span>
-              <span className="Breadcrumbs-itemSeparator">/</span>
-            </div>
-          </>
-        )
+        <>
+          <div className="Breadcrumbs-item" data-test="DesignSystem-Breadcrumbs-item">
+            <span className="Breadcrumbs-link">
+              {renderLink(list[0], onClick)}
+            </span>
+            <span className="Breadcrumbs-itemSeparator">/</span>
+          </div>
+          <div className="Breadcrumbs-dropdown">
+            {renderDropdown(list.slice(1, list.length - 1), onClick)}
+            <span className="Breadcrumbs-itemSeparator">/</span>
+          </div>
+          <div className="Breadcrumbs-item" data-test="DesignSystem-Breadcrumbs-item">
+            <span className="Breadcrumbs-link">
+              {renderLink(list[list.length - 1], onClick)}
+            </span>
+            <span className="Breadcrumbs-itemSeparator">/</span>
+          </div>
+        </>
+      )
       }
     </div>
   );
