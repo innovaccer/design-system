@@ -491,6 +491,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     return (
       <Button
+        type="button"
         className={headerIconClass}
         appearance="transparent"
         icon={`arrow_${type === 'next' ? 'forward' : 'back'}`}
