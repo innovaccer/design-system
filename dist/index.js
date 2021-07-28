@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1627401100080 
+   * Generated on: 1627478630381 
    *      Package: @innovaccer/design-system
-   *      Version: v2.2.0
+   *      Version: v2.2.1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -3113,6 +3113,7 @@
             'Calendar-headerIcon': true
           }, _a["Calendar-headerIcon--" + type] = type, _a));
           return /*#__PURE__*/React__namespace.createElement(Button, {
+            type: "button",
             className: headerIconClass,
             appearance: "transparent",
             icon: "arrow_" + (type === 'next' ? 'forward' : 'back'),
@@ -13913,7 +13914,7 @@
 
     VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-    var version = "2.2.0";
+    var version = "2.2.1";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;

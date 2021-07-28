@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1627401099748 
+   * Generated on: 1627478629993 
    *      Package: @innovaccer/design-system
-   *      Version: v2.2.0
+   *      Version: v2.2.1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -3499,6 +3499,7 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         'Calendar-headerIcon': true
       }, "Calendar-headerIcon--".concat(type), type));
       return /*#__PURE__*/React.createElement(Button, {
+        type: "button",
         className: headerIconClass,
         appearance: "transparent",
         icon: "arrow_".concat(type === 'next' ? 'forward' : 'back'),
@@ -10765,6 +10766,8 @@ Popper$1.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
 Popper$1.placements = placements;
 Popper$1.Defaults = Defaults;
 
+var PopperJS = Popper$1;
+
 /** @license React v16.13.1
  * react-is.production.min.js
  *
@@ -11446,7 +11449,7 @@ function (_React$Component) {
 
       var referenceElement = _this.props.referenceElement;
       if (!referenceElement || !popperNode) return;
-      _this.popperInstance = new Popper$1(referenceElement, popperNode, _this.getOptions());
+      _this.popperInstance = new PopperJS(referenceElement, popperNode, _this.getOptions());
     });
 
     _defineProperty$1(_assertThisInitialized$1(_assertThisInitialized$1(_this)), "scheduleUpdate", function () {
@@ -11509,7 +11512,7 @@ _defineProperty$1(InnerPopper, "defaultProps", {
   positionFixed: false
 });
 
-Popper$1.placements;
+PopperJS.placements;
 function Popper(_ref) {
   var referenceElement = _ref.referenceElement,
       props = _objectWithoutPropertiesLoose$1(_ref, ["referenceElement"]);
@@ -19288,6 +19291,6 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
 
 VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-var version = "2.2.0";
+var version = "2.2.1";
 
 export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, CardBody, CardFooter, CardHeader, CardSubdued, ChatMessage, Checkbox, Chip, ChipGroup, ChipInput, Collapsible, Column, DatePicker, DateRangePicker, Dialog, Dropdown, Dropzone, EditableChipInput, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, HorizontalNav, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, MetricInput, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, Tabs, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, VerificationCodeInput, VerticalNav, version };
