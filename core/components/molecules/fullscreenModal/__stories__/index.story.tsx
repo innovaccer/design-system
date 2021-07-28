@@ -35,7 +35,7 @@ export const all = () => {
         <br />
       </Paragraph>
 
-      <Button appearance="primary" onClick={openModal}>
+      <Button type="button" appearance="primary" onClick={openModal}>
         Open modal
       </Button>
 
@@ -102,7 +102,7 @@ const customCode = `
         <br />
       </Paragraph>
 
-      <Button className="m-8" appearance="primary" onClick={openModal}>
+      <Button type="button" className="m-8" appearance="primary" onClick={openModal}>
         Open modal
       </Button>
 

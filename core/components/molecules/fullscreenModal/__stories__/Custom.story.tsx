@@ -27,7 +27,7 @@ export const customized = () => {
         <br />
       </Paragraph>
 
-      <Button appearance="primary" onClick={openModal}>
+      <Button type="button" appearance="primary" onClick={openModal}>
         Open modal
       </Button>
 
@@ -43,10 +43,10 @@ export const customized = () => {
         )}
         footer={(
           <>
-            <Button appearance="basic" onClick={action('Basic button click')}>
+            <Button type="button" appearance="basic" onClick={action('Basic button click')}>
               Basic
             </Button>
-            <Button appearance="primary" className="ml-4" onClick={action('Primary button click')}>
+            <Button type="button" appearance="primary" className="ml-4" onClick={action('Primary button click')}>
               Primary
             </Button>
           </>
@@ -91,7 +91,7 @@ const customCode = `
         <br />
       </Paragraph>
 
-      <Button className="m-8" appearance="primary" onClick={openModal}>
+      <Button type="button" type="button" className="m-8" appearance="primary" onClick={openModal}>
         Open modal
       </Button>
 
@@ -107,10 +107,10 @@ const customCode = `
         )}
         footer={(
           <>
-            <Button appearance="basic" onClick={ev => console.log('Basic button click', ev)}>
+            <Button type="button" type="button" appearance="basic" onClick={ev => console.log('Basic button click', ev)}>
               Basic
             </Button>
-            <Button appearance="primary" className="ml-4" onClick={ev => console.log('Primary button click', ev)}>
+            <Button type="button" type="button" appearance="primary" className="ml-4" onClick={ev => console.log('Primary button click', ev)}>
               Primary
             </Button>
           </>

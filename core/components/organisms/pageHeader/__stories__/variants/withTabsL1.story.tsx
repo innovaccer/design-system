@@ -80,7 +80,7 @@ export const withTabs = () => {
     ),
     actions: (
       <div className="d-flex justify-content-end align-items-center">
-        <Button appearance="primary">Primary</Button>
+        <Button type="button" appearance="primary">Primary</Button>
       </div>
     ),
     breadcrumbs: (
@@ -176,7 +176,7 @@ const customCode = `() => {
     ),
     actions: (
       <div className="d-flex justify-content-end align-items-center">
-        <Button appearance="primary">Primary</Button>
+        <Button type="button" appearance="primary">Primary</Button>
       </div>
     ),
     breadcrumbs: (
