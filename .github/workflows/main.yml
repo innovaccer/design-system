@@ -32,10 +32,6 @@ jobs:
       - name: bump module version
         if: steps.is_release_commit.outputs.result == 1
         run: npm version $(git log -1 --pretty=format:%s) -m "Released %s"
-        
-      - name: push module tags to github
-        if: steps.is_release_commit.outputs.result == 1
-        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:master --follow-tags
 
       - name: gnerate .npmrc
         if: steps.is_release_commit.outputs.result == 1
@@ -50,6 +46,21 @@ jobs:
       - name: remove .npmrc
         if: steps.is_release_commit.outputs.result == 1
         run: rm -rf .npmrc
+        
+      - name: push module tags to github
+        if: steps.is_release_commit.outputs.result == 1
+        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git $(git log -2 --pretty=format:%B | tail -n1)
+
+      - name: remove css/dist dist/ from commit
+        if: steps.is_release_commit.outputs.result == 1
+        run: |
+          git reset HEAD~1
+          git add package.json
+          git commit -m "Released $(git log -1 --pretty=format:%s)"
+
+      - name: push version to github
+        if: steps.is_release_commit.outputs.result == 1
+        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:master 
     
       - name: deploy storybook
         env:
