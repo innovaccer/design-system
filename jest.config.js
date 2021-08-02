@@ -24,7 +24,10 @@ const config = {
   ],
   globals: {
     window: true,
-    timers: "fake"
+    timers: "fake",
+    'ts-jest': {
+      diagnostics: false
+    }
   },
   moduleNameMapper: {
     '@/(.*)$': '<rootDir>/core/$1'

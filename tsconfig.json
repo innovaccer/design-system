@@ -33,6 +33,7 @@
     "dist",
     "build",
     "node_modules",
-    ".github"
+    ".github",
+    ".husky"
   ]
 }
