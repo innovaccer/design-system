@@ -1,0 +1,397 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider component 
+  
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Slider"
+    >
+      <div
+        class="Slider-wrapper"
+      >
+        <div
+          class="Slider-track"
+        >
+          <div
+            class="Slider-progress Slider-progress--inRange"
+            style="width: 0%;"
+          />
+          <div
+            class="Slider-progress"
+            style="width: 100%;"
+          />
+        </div>
+        <div
+          class="Slider-axis"
+        >
+          <div
+            class="Slider-label"
+            style="left: 0.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--default Text--small"
+              data-test="DesignSystem-Text"
+            >
+              0
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 10.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              1
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 20.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              2
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 30.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              3
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 40.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              4
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 50.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              5
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 60.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              6
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 70.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              7
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 80.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              8
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 90.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              9
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 100.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              10
+            </span>
+          </div>
+        </div>
+        <div
+          class="Slider-handle"
+          style="left: calc(0.00% - 0px);"
+          tabindex="1"
+        />
+        <div
+          class="Slider-tooltip Tooltip d-none"
+          style="left: calc(0.00% - 0px);"
+        >
+          0
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Slider component 
+  
+ 2`] = `
+<body>
+  <div>
+    <div
+      class="Slider"
+    >
+      <div
+        class="Slider-wrapper"
+      >
+        <div
+          class="Slider-track"
+        >
+          <div
+            class="Slider-progress Slider-progress--inRange"
+            style="width: 0%;"
+          />
+          <div
+            class="Slider-progress"
+            style="width: 100%;"
+          />
+        </div>
+        <div
+          class="Slider-axis"
+        >
+          <div
+            class="Slider-label"
+            style="left: 0.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--default Text--small"
+              data-test="DesignSystem-Text"
+            >
+              0
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 10.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              1
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 20.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              2
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 30.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              3
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 40.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              4
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 50.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              5
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 60.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              6
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 70.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              7
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 80.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              8
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 90.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              9
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            style="left: 100.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              10
+            </span>
+          </div>
+        </div>
+        <div
+          class="Slider-handle"
+          style="left: calc(0.00% - 0px);"
+          tabindex="1"
+        />
+        <div
+          class="Slider-tooltip Tooltip d-none"
+          style="left: calc(0.00% - 0px);"
+        >
+          0
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
