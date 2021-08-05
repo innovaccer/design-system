@@ -30,15 +30,21 @@ export const defaultWidth = () => {
         }}
         footer={(
           <>
-            <Button  onClick={action('Cancel button click')}>Cancel</Button>
-            <Button appearance="primary" className="ml-4" onClick={action('Next button click')}>Create</Button>
+            <Button onClick={action('Cancel button click')}>Cancel</Button>
+            <Button
+              appearance="primary"
+              className="ml-4"
+              onClick={action('Next button click')}
+            >
+              Create
+            </Button>
           </>
         )}
       >
         <Label withInput={true} required={true}>Name</Label>
-        <Input placeholder="Admin" className="mb-5"/>
+        <Input placeholder="Admin" className="mb-5" />
         <Label withInput={true}>Description</Label>
-        <Textarea placeholder="Write a description"/>
+        <Textarea placeholder="Write a description" />
       </FullscreenModal>
     </div>
   );

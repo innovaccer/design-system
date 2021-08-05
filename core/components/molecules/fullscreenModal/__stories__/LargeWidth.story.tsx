@@ -33,7 +33,13 @@ export const largeWidth = () => {
         footer={(
           <>
             <Button onClick={action('Cancel button click')}>Cancel</Button>
-            <Button appearance="primary" className="ml-3" onClick={action('Next button click')}>Create</Button>
+            <Button
+              appearance="primary"
+              className="ml-3"
+              onClick={action('Next button click')}
+            >
+              Create
+            </Button>
           </>
         )}
       >

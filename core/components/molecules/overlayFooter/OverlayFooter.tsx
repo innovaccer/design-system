@@ -42,7 +42,7 @@ export const OverlayFooter = (props: OverlayFooterProps) => {
     return (
       <div ref={wrapperRef} {...baseProps} className={classes}>
         {actions.map(({ label, ...options }, index) => {
-          return <Button {...options} key={index} />;
+          return <Button type="button" {...options} key={index} />;
         })}
       </div>
     );

@@ -40,8 +40,14 @@ export const scrolling = () => {
         }}
         footer={(
           <>
-            <Button  onClick={action('Cancel button click')}>Cancel</Button>
-            <Button appearance="primary" className="ml-4" onClick={action('Next button click')}>Next</Button>
+            <Button onClick={action('Cancel button click')}>Cancel</Button>
+            <Button
+              appearance="primary"
+              className="ml-4"
+              onClick={action('Next button click')}
+            >
+              Next
+            </Button>
           </>
         )}
       >
