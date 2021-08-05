@@ -242,28 +242,28 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         onClick={onClick}
         onFocus={onFocus}
       />
-      {(!value && !disabled) || (value && disabled) || (defaultValue && disabled)
-        ? (
-          info && (
-            <Tooltip
-              position="top"
-              tooltip={info}
-            >
-              {trigger}
-            </Tooltip>
-          )
-        ) : (
-          actionIcon
-            ? (
-              actionIcon
-            ) : (
-              (onClear && value && !disabled) && (
-                <div className={rightIconClass} onClick={e => onClear(e)}>
-                  <Icon name={'close'} size={sizeMapping[size]} />
-                </div>
-              )
-            )
+      {disabled ? '' :
+
+        info ? (
+          <Tooltip
+            position="top"
+            tooltip={info}
+          >
+            {trigger}
+          </Tooltip>
         )
+          : (
+            actionIcon && (value || defaultValue)
+              ? (
+                actionIcon
+              ) : (
+                (onClear && (value || defaultValue)) && (
+                  <div className={rightIconClass} onClick={e => onClear(e)}>
+                    <Icon name={'close'} size={sizeMapping[size]} />
+                  </div>
+                )
+              )
+          )
       }
     </div>
   );
