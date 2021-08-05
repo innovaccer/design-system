@@ -7,7 +7,7 @@ export const lightPopover = () => (
     <Popover
       position="bottom"
       on="click"
-      trigger={<Button type="button" appearance="basic">Open Popup</Button>}
+      trigger={<Button appearance="basic">Open Popup</Button>}
       open={true}
     >
       <div style={{ width: 'var(--spacing-7)' , height: 'var(--spacing-7)' }} />

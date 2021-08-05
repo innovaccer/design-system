@@ -70,7 +70,7 @@ export const withTabs = () => {
     actions: (
       <div className="d-flex justify-content-end align-items-center">
         <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
-        <Button type="button" appearance="primary">Primary</Button>
+        <Button appearance="primary">Primary</Button>
       </div>
     )
   };
@@ -139,7 +139,7 @@ const customCode = `() => {
     actions: (
       <div className="d-flex justify-content-end align-items-center">
         <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
-        <Button type="button" appearance="primary">Primary</Button>
+        <Button appearance="primary">Primary</Button>
       </div>
     )
   };

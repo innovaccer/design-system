@@ -40,9 +40,8 @@ export const scrolling = () => {
         }}
         footer={(
           <>
-            <Button type="button" onClick={action('Cancel button click')}>Cancel</Button>
+            <Button onClick={action('Cancel button click')}>Cancel</Button>
             <Button
-              type="button"
               appearance="primary"
               className="ml-4"
               onClick={action('Next button click')}
@@ -71,7 +70,7 @@ export const scrolling = () => {
                       {
                         object.options.map((option: string , ind: number) => {
                           return(
-                            <Button type="button" key={ind} className="mr-4 mt-4 d-inline" size="tiny">
+                            <Button key={ind} className="mr-4 mt-4 d-inline" size="tiny">
                               {option}
                             </Button>
                           );
@@ -117,7 +116,7 @@ const customCode = `() => {
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
         Excepteur sint occaecat cupidatat non proident,
         sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
-        <Button type="button" appearance="primary" onClick={() => setOpen(true)}>Open</Button>
+        <Button appearance="primary" onClick={() => setOpen(true)}>Open</Button>
       </Paragraph>
       <FullscreenModal
         open={open}
@@ -128,8 +127,8 @@ const customCode = `() => {
         }}
         footer={(
           <>
-            <Button type="button"  onClick={console.log('Cancel button click')}>Cancel</Button>
-            <Button type="button" appearance="primary" className="ml-4" onClick={console.log('Next button click')}>Next</Button>
+            <Button  onClick={console.log('Cancel button click')}>Cancel</Button>
+            <Button appearance="primary" className="ml-4" onClick={console.log('Next button click')}>Next</Button>
           </>
         )}
       >
@@ -152,7 +151,7 @@ const customCode = `() => {
                     {
                       object.options.map((option, ind) => {
                         return(
-                          <Button type="button" key={ind} className="mr-4 mt-4 d-inline" size="tiny">
+                          <Button key={ind} className="mr-4 mt-4 d-inline" size="tiny">
                             {option}
                           </Button>
                         );

@@ -27,7 +27,7 @@ export const large = () => {
         <br />
       </Paragraph>
 
-      <Button type="button" appearance="primary" onClick={openModal}>
+      <Button appearance="primary" onClick={openModal}>
         Open modal
       </Button>
 
@@ -94,7 +94,7 @@ const customCode = `
         <br />
       </Paragraph>
 
-      <Button type="button" className="m-8" appearance="primary" onClick={openModal}>
+      <Button className="m-8" appearance="primary" onClick={openModal}>
         Open modal
       </Button>
 
