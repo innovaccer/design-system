@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1627478629993 
+   * Generated on: 1628169684158 
    *      Package: @innovaccer/design-system
-   *      Version: v2.2.1
+   *      Version: v2.3.0-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -4456,6 +4456,9 @@ var DatePicker = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty$2(_assertThisInitialized$2(_this), "onToggleHandler", function (o, type) {
+      var disabled = _this.props.inputOptions.disabled;
+      if (disabled) return;
+
       switch (type) {
         case 'outsideClick':
           _this.setState({
@@ -14538,6 +14541,14 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty$2(_assertThisInitialized$2(_this), "onToggleHandler", function (o, type) {
+      var _this$props2 = _this.props,
+          singleInput = _this$props2.singleInput,
+          inputOptions = _this$props2.inputOptions,
+          startInputOptions = _this$props2.startInputOptions,
+          endInputOptions = _this$props2.endInputOptions;
+      var disabled = singleInput ? inputOptions.disabled : startInputOptions.disabled || endInputOptions.disabled;
+      if (disabled) return;
+
       switch (type) {
         case 'outsideClick':
           _this.setState({
@@ -14590,9 +14601,9 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
       if (prevProps.startDate !== this.props.startDate) {
-        var _this$props2 = this.props,
-            inputFormat = _this$props2.inputFormat,
-            validators = _this$props2.validators;
+        var _this$props3 = this.props,
+            inputFormat = _this$props3.inputFormat,
+            validators = _this$props3.validators;
         var d = convertToDate(this.props.startDate, inputFormat, validators);
         var val = translateToString(inputFormat, d);
         this.setState({
@@ -14602,9 +14613,9 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
       }
 
       if (prevProps.endDate !== this.props.endDate) {
-        var _this$props3 = this.props,
-            _inputFormat2 = _this$props3.inputFormat,
-            _validators = _this$props3.validators;
+        var _this$props4 = this.props,
+            _inputFormat2 = _this$props4.inputFormat,
+            _validators = _this$props4.validators;
 
         var _d = convertToDate(this.props.endDate, _inputFormat2, _validators);
 
@@ -14635,9 +14646,9 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
       }
 
       if (prevState.startDate !== this.state.startDate || prevState.endDate !== this.state.endDate) {
-        var _this$props4 = this.props,
-            onRangeChange = _this$props4.onRangeChange,
-            outputFormat = _this$props4.outputFormat;
+        var _this$props5 = this.props,
+            onRangeChange = _this$props5.onRangeChange,
+            outputFormat = _this$props5.outputFormat;
         var _this$state2 = this.state,
             _startDate3 = _this$state2.startDate,
             _endDate3 = _this$state2.endDate;
@@ -14667,24 +14678,24 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "renderCalendar",
     value: function renderCalendar() {
-      var _this$props5 = this.props;
-          _this$props5.startDate;
-          _this$props5.endDate;
-          _this$props5.yearNav;
-          _this$props5.monthNav;
-          _this$props5.open;
-          var inputFormat = _this$props5.inputFormat;
-          _this$props5.outputFormat;
-          _this$props5.startInputOptions;
-          _this$props5.endInputOptions;
-          var validators = _this$props5.validators;
-          _this$props5.withInput;
-          _this$props5.position;
-          var disabledBefore = _this$props5.disabledBefore,
-          disabledAfter = _this$props5.disabledAfter;
-          _this$props5.onRangeChange;
-          var rangeLimit = _this$props5.rangeLimit,
-          rest = _objectWithoutProperties$1(_this$props5, _excluded$3);
+      var _this$props6 = this.props;
+          _this$props6.startDate;
+          _this$props6.endDate;
+          _this$props6.yearNav;
+          _this$props6.monthNav;
+          _this$props6.open;
+          var inputFormat = _this$props6.inputFormat;
+          _this$props6.outputFormat;
+          _this$props6.startInputOptions;
+          _this$props6.endInputOptions;
+          var validators = _this$props6.validators;
+          _this$props6.withInput;
+          _this$props6.position;
+          var disabledBefore = _this$props6.disabledBefore,
+          disabledAfter = _this$props6.disabledAfter;
+          _this$props6.onRangeChange;
+          var rangeLimit = _this$props6.rangeLimit,
+          rest = _objectWithoutProperties$1(_this$props6, _excluded$3);
 
       var _this$state3 = this.state,
           startDate = _this$state3.startDate,
@@ -14709,17 +14720,17 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _classNames;
 
-      var _this$props6 = this.props,
-          withInput = _this$props6.withInput,
-          startInputOptions = _this$props6.startInputOptions,
-          endInputOptions = _this$props6.endInputOptions,
-          inputOptions = _this$props6.inputOptions,
-          inputFormat = _this$props6.inputFormat,
-          position = _this$props6.position,
-          validators = _this$props6.validators,
-          singleInput = _this$props6.singleInput,
-          contentAlign = _this$props6.contentAlign,
-          children = _this$props6.children;
+      var _this$props7 = this.props,
+          withInput = _this$props7.withInput,
+          startInputOptions = _this$props7.startInputOptions,
+          endInputOptions = _this$props7.endInputOptions,
+          inputOptions = _this$props7.inputOptions,
+          inputFormat = _this$props7.inputFormat,
+          position = _this$props7.position,
+          validators = _this$props7.validators,
+          singleInput = _this$props7.singleInput,
+          contentAlign = _this$props7.contentAlign,
+          children = _this$props7.children;
       var open = this.state.open;
       var RangePickerClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'DateRangePicker', true), _defineProperty$2(_classNames, "DateRangePicker--".concat(contentAlign), contentAlign), _classNames));
 
@@ -19291,6 +19302,6 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
 
 VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-var version = "2.2.1";
+var version = "2.3.0-0";
 
 export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, CardBody, CardFooter, CardHeader, CardSubdued, ChatMessage, Checkbox, Chip, ChipGroup, ChipInput, Collapsible, Column, DatePicker, DateRangePicker, Dialog, Dropdown, Dropzone, EditableChipInput, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, HorizontalNav, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, MetricInput, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, Tabs, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, VerificationCodeInput, VerticalNav, version };

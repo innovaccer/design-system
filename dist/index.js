@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1627478630381 
+   * Generated on: 1628169684564 
    *      Package: @innovaccer/design-system
-   *      Version: v2.2.1
+   *      Version: v2.3.0-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -4062,6 +4062,9 @@
         };
 
         _this.onToggleHandler = function (o, type) {
+          var disabled = _this.props.inputOptions.disabled;
+          if (disabled) return;
+
           switch (type) {
             case 'outsideClick':
               _this.setState({
@@ -9373,6 +9376,14 @@
         };
 
         _this.onToggleHandler = function (o, type) {
+          var _a = _this.props,
+              singleInput = _a.singleInput,
+              inputOptions = _a.inputOptions,
+              startInputOptions = _a.startInputOptions,
+              endInputOptions = _a.endInputOptions;
+          var disabled = singleInput ? inputOptions.disabled : startInputOptions.disabled || endInputOptions.disabled;
+          if (disabled) return;
+
           switch (type) {
             case 'outsideClick':
               _this.setState({
@@ -13914,7 +13925,7 @@
 
     VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-    var version = "2.2.1";
+    var version = "2.3.0-0";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
