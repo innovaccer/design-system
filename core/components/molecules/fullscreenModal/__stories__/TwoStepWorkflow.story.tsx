@@ -62,7 +62,7 @@ export const twoStepsWorkflow = () => {
         <br />
       </Paragraph>
 
-      <Button type="button" appearance="primary" onClick={openModal}>
+      <Button appearance="primary" onClick={openModal}>
         Open modal
       </Button>
 
@@ -75,20 +75,20 @@ export const twoStepsWorkflow = () => {
           <>
             {page === 0 && (
               <>
-                <Button type="button">
+                <Button>
                   Cancel
                 </Button>
-                <Button type="button" appearance="primary" onClick={() => setPage(1)} className="ml-4">
+                <Button appearance="primary" onClick={() => setPage(1)} className="ml-4">
                   Continue
                 </Button>
               </>
             )}
             {page === 1 && (
             <>
-                <Button type="button">
+                <Button>
                   Cancel
                 </Button>
-                <Button type="button" appearance="primary" className="ml-4">
+                <Button appearance="primary" className="ml-4">
                   Continue
                 </Button>
               </>
@@ -185,7 +185,7 @@ const customCode = `
         <br />
       </Paragraph>
 
-      <Button type="button" appearance="primary" onClick={openModal}>
+      <Button appearance="primary" onClick={openModal}>
         Open modal
       </Button>
 
@@ -198,20 +198,20 @@ const customCode = `
           <>
             {page === 0 && (
               <>
-                <Button type="button">
+                <Button>
                   Cancel
                 </Button>
-                <Button type="button" appearance="primary" onClick={() => setPage(1)} className="ml-4">
+                <Button appearance="primary" onClick={() => setPage(1)} className="ml-4">
                   Continue
                 </Button>
               </>
             )}
             {page === 1 && (
             <>
-                <Button type="button">
+                <Button>
                   Cancel
                 </Button>
-                <Button type="button" appearance="primary" className="ml-4">
+                <Button appearance="primary" className="ml-4">
                   Continue
                 </Button>
               </>

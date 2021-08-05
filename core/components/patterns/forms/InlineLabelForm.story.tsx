@@ -105,11 +105,10 @@ const customCode = `
                 <Text>Preferred Method of Contact</Text>
               </Column>
               <Column size={8} className="d-flex">
-                <Button type="button" className="mr-3" icon="call" onClick={() => this.onChange('phone', 'contact')}>Phone</Button>
-                <Button type="button" className="mr-3" icon="chat" onClick={() => this.onChange('message', 'contact')}>Message</Button>
-                <Button type="button" className="mr-3" icon="email" onClick={() => this.onChange('email', 'contact')}>Email</Button>
+                <Button className="mr-3" icon="call" onClick={() => this.onChange('phone', 'contact')}>Phone</Button>
+                <Button className="mr-3" icon="chat" onClick={() => this.onChange('message', 'contact')}>Message</Button>
+                <Button className="mr-3" icon="email" onClick={() => this.onChange('email', 'contact')}>Email</Button>
                 <Button
-                  type="button"
                   className="mr-3"
                   icon="markunread_mailbox"
                   onClick={() => this.onChange('letter', 'contact')}

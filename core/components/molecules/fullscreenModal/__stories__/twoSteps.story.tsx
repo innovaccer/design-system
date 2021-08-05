@@ -27,7 +27,7 @@ export const twoSteps = () => {
         <br />
       </Paragraph>
 
-      <Button type="button" appearance="primary" onClick={openModal}>
+      <Button appearance="primary" onClick={openModal}>
         Open modal
       </Button>
 
@@ -44,16 +44,16 @@ export const twoSteps = () => {
         footer={(
           <>
             {page === 0 && (
-              <Button type="button" appearance="primary" onClick={() => setPage(1)}>
+              <Button appearance="primary" onClick={() => setPage(1)}>
                 Next
               </Button>
             )}
             {page === 1 && (
               <>
-                <Button type="button" appearance="primary">
+                <Button appearance="primary">
                   Submit
                 </Button>
-                <Button type="button" appearance="basic" onClick={() => setPage(0)} className="ml-4">
+                <Button appearance="basic" onClick={() => setPage(0)} className="ml-4">
                   Back
                 </Button>
               </>
@@ -114,7 +114,7 @@ const customCode = `
         <br />
       </Paragraph>
 
-      <Button type="button" className="m-8" appearance="primary" onClick={openModal}>
+      <Button className="m-8" appearance="primary" onClick={openModal}>
         Open modal
       </Button>
 
@@ -131,16 +131,16 @@ const customCode = `
         footer={(
           <>
             {page === 0 && (
-              <Button type="button" appearance="primary" onClick={() => setPage(1)}>
+              <Button appearance="primary" onClick={() => setPage(1)}>
                 Next
               </Button>
             )}
             {page === 1 && (
               <>
-                <Button type="button" appearance="primary" onClick={() => console.log("Submit button clicked")}>
+                <Button appearance="primary" onClick={() => console.log("Submit button clicked")}>
                   Submit
                 </Button>
-                <Button type="button" appearance="basic" onClick={() => setPage(0)} className="ml-4">
+                <Button appearance="basic" onClick={() => setPage(0)} className="ml-4">
                   Back
                 </Button>
               </>

@@ -32,9 +32,8 @@ export const largeWidth = () => {
         }}
         footer={(
           <>
-            <Button type="button" onClick={action('Cancel button click')}>Cancel</Button>
+            <Button onClick={action('Cancel button click')}>Cancel</Button>
             <Button
-              type="button"
               appearance="primary"
               className="ml-3"
               onClick={action('Next button click')}
@@ -97,7 +96,7 @@ const customCode = `() => {
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
         Excepteur sint occaecat cupidatat non proident,
         sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
-        <Button type="button" appearance="primary" onClick={() => setOpen(true)}>Open</Button>
+        <Button appearance="primary" onClick={() => setOpen(true)}>Open</Button>
       </Paragraph>
       <FullscreenModal
         open={open}
@@ -108,8 +107,8 @@ const customCode = `() => {
         }}
         footer={(
           <>
-            <Button type="button" onClick={console.log('Cancel button click')}>Cancel</Button>
-            <Button type="button" appearance="primary" className="ml-3" onClick={console.log('Next button click')}>Create</Button>
+            <Button onClick={console.log('Cancel button click')}>Cancel</Button>
+            <Button appearance="primary" className="ml-3" onClick={console.log('Next button click')}>Create</Button>
           </>
         )}
       >

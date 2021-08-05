@@ -20,7 +20,7 @@ export const popoverWithInput = () => (
         </Label>
         <Textarea  name="Textarea" placeholder="Write a description" />
         <div  className="d-flex justify-content-end" >
-          <Button type="button" className="mt-5" appearance="primary">Save Filter</Button>
+          <Button className="mt-5" appearance="primary">Save Filter</Button>
         </div>
       </div>
     </Popover>

@@ -29,8 +29,8 @@ export const level0WithFilter = () => {
 
   const actions = (
     <div className="d-flex justify-content-end align-items-center">
-      <Button type="button" icon="get_app" className="mr-4">Download Records</Button>
-      <Button type="button" appearance="primary">Invite users</Button>
+      <Button icon="get_app" className="mr-4">Download Records</Button>
+      <Button appearance="primary">Invite users</Button>
     </div>
   );
 
@@ -74,8 +74,8 @@ const customCode = `() => {
 
   const actions = (
     <div className="d-flex justify-content-end align-items-center">
-      <Button type="button" icon="get_app" className="mr-4">Download Records</Button>
-      <Button type="button" appearance="primary">Invite users</Button>
+      <Button icon="get_app" className="mr-4">Download Records</Button>
+      <Button appearance="primary">Invite users</Button>
     </div>
   );
 

@@ -11,7 +11,6 @@ export const icon = () => {
         <Text weight="medium" size="large">Tiny</Text>
         <div className="d-flex align-items-center mt-4">
           <Button
-            type="button"
             onClick={action('button-clicked')}
             onMouseEnter={action('mouse-enter')}
             onMouseLeave={action('mouse-leave')}
@@ -21,7 +20,6 @@ export const icon = () => {
             largeIcon={false}
           />
           <Button
-            type="button"
             onClick={action('button-clicked')}
             onMouseEnter={action('mouse-enter')}
             onMouseLeave={action('mouse-leave')}
@@ -36,7 +34,6 @@ export const icon = () => {
         <Text weight="medium" size="large">Regular</Text>
         <div className="d-flex align-items-center mt-4">
           <Button
-            type="button"
             onClick={action('button-clicked')}
             onMouseEnter={action('mouse-enter')}
             onMouseLeave={action('mouse-leave')}
@@ -46,7 +43,6 @@ export const icon = () => {
             largeIcon={false}
           />
           <Button
-            type="button"
             onClick={action('button-clicked')}
             onMouseEnter={action('mouse-enter')}
             onMouseLeave={action('mouse-leave')}
@@ -61,7 +57,6 @@ export const icon = () => {
         <Text weight="medium" size="large">Large</Text>
         <div className="d-flex align-items-center mt-4">
           <Button
-            type="button"
             onClick={action('button-clicked')}
             onMouseEnter={action('mouse-enter')}
             onMouseLeave={action('mouse-leave')}
@@ -71,7 +66,6 @@ export const icon = () => {
             largeIcon={false}
           />
           <Button
-            type="button"
             onClick={action('button-clicked')}
             onMouseEnter={action('mouse-enter')}
             onMouseLeave={action('mouse-leave')}
