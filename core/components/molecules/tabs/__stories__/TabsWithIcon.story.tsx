@@ -1,28 +1,9 @@
 import * as React from 'react';
 import { action } from '@storybook/addon-actions';
-import { Tabs, Heading, Link } from '@/index';
+import { Tabs, Heading, Link, Tab } from '@/index';
 
 // CSF format story
 export const tabsWithIcon = () => {
-  const tabs = [
-    {
-      icon: 'warning',
-      label: '2020'
-    },
-    {
-      icon: 'check_circle',
-      label: '2019'
-    },
-    {
-      icon: 'warning',
-      label: '2018'
-    },
-    {
-      icon: 'check_circle',
-      label: '2017'
-    },
-  ];
-
   const onTabChangeHandler = (tabIndex: number) => {
     return action(`tab-change: ${tabIndex}`)();
   };
@@ -34,33 +15,26 @@ export const tabsWithIcon = () => {
         <Link className="ml-4">Measure definition</Link>
       </div>
       <Tabs
-        tabs={tabs}
         onTabChange={onTabChangeHandler}
-      />
+      >
+        <Tab label="2020" icon="warning">
+          <div>2020</div>
+        </Tab>
+        <Tab label="2019" icon="check_circle">
+          <div>2019</div>
+        </Tab>
+        <Tab label="2018" icon="warning">
+          <div>2018</div>
+        </Tab>
+        <Tab label="2017" icon="check_circle">
+          <div>2017</div>
+        </Tab>
+      </Tabs>
     </div>
   );
 };
 
 const customCode = `() => {
-  const tabs = [
-    {
-      icon: 'warning',
-      label: '2020'
-    },
-    {
-      icon: 'check_circle',
-      label: '2019'
-    },
-    {
-      icon: 'warning',
-      label: '2018'
-    },
-    {
-      icon: 'check_circle',
-      label: '2017'
-    },
-  ];
-
   return(
     <div>
       <div className="d-flex align-items-center">
@@ -68,9 +42,21 @@ const customCode = `() => {
         <Link className="ml-4">Measure definition</Link>
       </div>
       <Tabs
-        tabs={tabs}
         onTabChange={console.log}
-      />
+      >
+        <Tab label="2020" icon="warning">
+          <div>2020</div>
+        </Tab>
+        <Tab label="2019" icon="check_circle">
+          <div>2019</div>
+        </Tab>
+        <Tab label="2018" icon="warning">
+          <div>2018</div>
+        </Tab>
+        <Tab label="2017" icon="check_circle">
+          <div>2017</div>
+        </Tab>
+      </Tabs>
     </div>
   );
 }`;

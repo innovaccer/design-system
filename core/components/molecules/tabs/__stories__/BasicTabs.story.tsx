@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@storybook/addon-actions';
-import { Tabs, Heading, Dropdown } from '@/index';
+import { Tabs, Heading, Dropdown, Tab } from '@/index';
 
 // CSF format story
 export const basicTabs = () => {
@@ -28,18 +28,6 @@ export const basicTabs = () => {
     }
   ];
 
-  const tabs = [
-    {
-      label: 'Clinical Gaps'
-    },
-    {
-      label: 'Claim Gaps'
-    },
-    {
-      label: 'Billing Gaps'
-    },
-  ];
-
   const onTabChangeHandler = (tabIndex: number) => {
     return action(`tab-change: ${tabIndex}`)();
   };
@@ -53,9 +41,31 @@ export const basicTabs = () => {
         </div>
       </div>
       <Tabs
-        tabs={tabs}
         onTabChange={onTabChangeHandler}
-      />
+      >
+        <Tab
+          label="Clinical Gaps"
+        >
+          <div>
+            Clinical Gaps
+          </div>
+        </Tab>
+        <Tab
+          label="Billing Gaps"
+        >
+          <div>
+            Billing Gaps
+          </div>
+        </Tab>
+        <Tab
+          label="Claim Gaps"
+          disabled={true}
+        >
+          <div>
+            Claim Gaps
+          </div>
+        </Tab>
+      </Tabs>
     </div>
   );
 };
@@ -85,18 +95,6 @@ const customCode = `() => {
     }
   ];
 
-  const tabs = [
-    {
-      label: 'Clinical Gaps'
-    },
-    {
-      label: 'Claim Gaps'
-    },
-    {
-      label: 'Billing Gaps'
-    },
-  ];
-
   return(
     <div>
       <div className="d-flex justify-content-between">
@@ -105,10 +103,30 @@ const customCode = `() => {
           <Dropdown options={options} />
         </div>
       </div>
-      <Tabs
-        tabs={tabs}
-        onTabChange={console.log}
-      />
+      <Tabs>
+        <Tab
+          label="Clinical Gaps"
+        >
+          <div>
+            Clinical Gaps
+          </div>
+        </Tab>
+        <Tab
+          label="Billing Gaps"
+        >
+          <div>
+            Billing Gaps
+          </div>
+        </Tab>
+        <Tab
+          label="Claim Gaps"
+          disabled={true}
+        >
+          <div>
+            Claim Gaps
+          </div>
+        </Tab>
+      </Tabs>
     </div>
   );
 }`;
