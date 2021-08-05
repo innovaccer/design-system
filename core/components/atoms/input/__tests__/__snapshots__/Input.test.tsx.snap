@@ -354,6 +354,7 @@ exports[`Input component
         type="text"
         value="value"
       />
+      
     </div>
   </div>
 </body>
@@ -387,6 +388,7 @@ exports[`Input component
         type="text"
         value="value"
       />
+      
     </div>
   </div>
 </body>
@@ -410,6 +412,7 @@ exports[`Input component
         type="text"
         value="value"
       />
+      
     </div>
   </div>
 </body>
@@ -443,6 +446,7 @@ exports[`Input component
         type="text"
         value="value"
       />
+      
     </div>
   </div>
 </body>
