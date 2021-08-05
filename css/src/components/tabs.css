@@ -9,9 +9,12 @@
 .TabsWrapper-header {
     box-sizing: border-box;
     display: flex;
+    align-items: center;
     flex-direction: row;
+}
+
+.TabsWrapper-header--withSeparator {
     border-bottom: var(--border);
-    height: var(--spacing-4);
 }
 
 .Tab {
@@ -101,11 +104,11 @@
     border-bottom: var(--border);
 }
 
-.Tabs-pills {
+.Tab-pills {
     cursor: pointer;
     margin-right: var(--spacing);
 }
 
-.Tabs-pills--disabled {
+.Tab-pills--disabled {
     opacity: 60%;
 }

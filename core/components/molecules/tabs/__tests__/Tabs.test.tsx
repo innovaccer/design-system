@@ -133,7 +133,7 @@ describe('Tabs component', () => {
 
     expect(getAllByTestId('DesignSystem-Tabs--Tab')[activeTab]).not.toHaveClass('Tab--active');
     expect(getAllByTestId('DesignSystem-Tabs--Tab')[disabledTab]).toHaveClass('Tab--disabled');
-    expect(getAllByTestId('DesignSystem-Tabs--Pills')[1]).toHaveClass('Tabs-pills--disabled');
+    expect(getAllByTestId('DesignSystem-Tabs--Pills')[1]).toHaveClass('Tab-pills--disabled');
   });
 
 });
