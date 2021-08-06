@@ -7,7 +7,8 @@ import { OverlayHeader, OverlayHeaderProps } from '@/components/molecules/overla
 import { OverlayBody } from '@/components/molecules/overlayBody';
 import { Row, Column, Button } from '@/index';
 import { ColumnProps } from '@/index.type';
-import { getWrapperElement, getUpdatedZIndex } from '@/utils/overlayHelper';
+import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
+import OverlayManager from '@/utils/OverlayManager';
 
 export type Dimension = 'medium' | 'large';
 type FooterOptions = {
@@ -28,7 +29,7 @@ export interface FullscreenModalProps extends BaseProps {
   /**
    * onClose callback to be called on `Fullscreen Modal` close
    */
-  onClose?: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
+  onClose?: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent> , reason?: string) => void;
 
   /**
    * Header options (doesn't work if `header` prop is used)
@@ -116,20 +117,65 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
     };
   }
 
+  onOutsideClickHandler = (event: KeyboardEvent) => {
+
+    OverlayManager.remove(this.modalRef.current);
+
+    if (this.props.onClose) {
+      this.props.onClose(event, 'EscapePress');
+
+    } else {
+      this.setState(
+        {
+          animate: false
+        },
+        () => {
+          window.setTimeout(() => {
+            this.setState({
+              open: false
+            });
+          }, 120);
+        }
+      );
+    }
+  }
+
+  onCloseHandler = (event: KeyboardEvent) => {
+    const isTopOverlay = OverlayManager.isTopOverlay(this.modalRef.current);
+    closeOnEscapeKeypress(event, isTopOverlay, this.onOutsideClickHandler)
+  }
+
+  componentDidMount() {
+    if (this.state.open) {
+      OverlayManager.add(this.modalRef.current);
+    }
+    document.addEventListener('keydown', this.onCloseHandler)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.onCloseHandler)
+  }
+
   componentDidUpdate(prevProps: FullscreenModalProps) {
     if (prevProps.open !== this.props.open) {
       if (this.props.open) {
+
         const zIndex = getUpdatedZIndex({
           element: this.element,
           containerClassName: '.Overlay-container--open',
           elementRef: this.modalRef,
         });
+
         this.setState({
           zIndex,
           open: true,
           animate: true,
         });
+
+        OverlayManager.add(this.modalRef.current);
+
       } else {
+
         this.setState(
           {
             animate: false,
@@ -142,6 +188,9 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
             }, 120);
           }
         );
+
+        OverlayManager.remove(this.modalRef.current);
+
       }
     }
   }
